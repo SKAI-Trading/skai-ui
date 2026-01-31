@@ -79,12 +79,8 @@ export const TokenContextMenu: Story = {
           <ContextMenuShortcut>T</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuSeparator />
-        <ContextMenuItem>
-          ⭐ Add to Favorites
-        </ContextMenuItem>
-        <ContextMenuItem>
-          🔔 Set Price Alert
-        </ContextMenuItem>
+        <ContextMenuItem>⭐ Add to Favorites</ContextMenuItem>
+        <ContextMenuItem>🔔 Set Price Alert</ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuSub>
           <ContextMenuSubTrigger>📊 View Chart</ContextMenuSubTrigger>
@@ -117,9 +113,7 @@ export const TransactionContextMenu: Story = {
         </div>
         <div className="flex-1">
           <p className="font-medium">Swap</p>
-          <p className="text-sm text-muted-foreground">
-            1.5 ETH → 3,217 USDC
-          </p>
+          <p className="text-sm text-muted-foreground">1.5 ETH → 3,217 USDC</p>
         </div>
         <div className="text-right">
           <p className="text-sm text-green-500">✓ Success</p>
@@ -127,27 +121,17 @@ export const TransactionContextMenu: Story = {
         </div>
       </ContextMenuTrigger>
       <ContextMenuContent className="w-56">
-        <ContextMenuItem>
-          🔗 View on Explorer
-        </ContextMenuItem>
+        <ContextMenuItem>🔗 View on Explorer</ContextMenuItem>
         <ContextMenuItem>
           📋 Copy Transaction Hash
           <ContextMenuShortcut>⌘C</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuSeparator />
-        <ContextMenuItem>
-          🔄 Repeat Trade
-        </ContextMenuItem>
-        <ContextMenuItem>
-          ↩️ Reverse Trade
-        </ContextMenuItem>
+        <ContextMenuItem>🔄 Repeat Trade</ContextMenuItem>
+        <ContextMenuItem>↩️ Reverse Trade</ContextMenuItem>
         <ContextMenuSeparator />
-        <ContextMenuItem>
-          📤 Share
-        </ContextMenuItem>
-        <ContextMenuItem>
-          📥 Export Details
-        </ContextMenuItem>
+        <ContextMenuItem>📤 Share</ContextMenuItem>
+        <ContextMenuItem>📥 Export Details</ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>
   ),
@@ -160,7 +144,9 @@ export const PortfolioContextMenu: Story = {
       <ContextMenuTrigger className="p-4 rounded-lg border cursor-context-menu max-w-sm">
         <div className="flex items-center justify-between mb-4">
           <span className="text-sm text-muted-foreground">Total Balance</span>
-          <span className="text-xs px-2 py-0.5 bg-muted rounded">👁 Visible</span>
+          <span className="text-xs px-2 py-0.5 bg-muted rounded">
+            👁 Visible
+          </span>
         </div>
         <p className="text-3xl font-bold">$12,345.67</p>
         <p className="text-sm text-green-500">+$234.56 (1.94%)</p>
@@ -169,16 +155,10 @@ export const PortfolioContextMenu: Story = {
         <ContextMenuCheckboxItem checked>
           👁 Show Balance
         </ContextMenuCheckboxItem>
-        <ContextMenuCheckboxItem>
-          💵 Show in USD
-        </ContextMenuCheckboxItem>
+        <ContextMenuCheckboxItem>💵 Show in USD</ContextMenuCheckboxItem>
         <ContextMenuSeparator />
-        <ContextMenuItem>
-          📊 View Analytics
-        </ContextMenuItem>
-        <ContextMenuItem>
-          📈 Performance Report
-        </ContextMenuItem>
+        <ContextMenuItem>📊 View Analytics</ContextMenuItem>
+        <ContextMenuItem>📈 Performance Report</ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuSub>
           <ContextMenuSubTrigger>📤 Export</ContextMenuSubTrigger>
@@ -219,9 +199,7 @@ export const WalletContextMenu: Story = {
         <ContextMenuSub>
           <ContextMenuSubTrigger>🌐 Switch Network</ContextMenuSubTrigger>
           <ContextMenuSubContent className="w-48">
-            <ContextMenuCheckboxItem checked>
-              Ethereum
-            </ContextMenuCheckboxItem>
+            <ContextMenuCheckboxItem checked>Ethereum</ContextMenuCheckboxItem>
             <ContextMenuCheckboxItem>Base</ContextMenuCheckboxItem>
             <ContextMenuCheckboxItem>Arbitrum</ContextMenuCheckboxItem>
             <ContextMenuCheckboxItem>Polygon</ContextMenuCheckboxItem>

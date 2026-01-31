@@ -85,7 +85,9 @@ describe("Checkbox", () => {
   });
 
   it("supports name attribute", () => {
-    const { container } = render(<Checkbox aria-label="Test checkbox" name="agree-terms" />);
+    const { container } = render(
+      <Checkbox aria-label="Test checkbox" name="agree-terms" />,
+    );
     // Radix UI Checkbox renders a hidden input only when checked - verify name prop is passed
     const checkbox = screen.getByRole("checkbox");
     // We can verify the data attribute or the button is rendered with the component

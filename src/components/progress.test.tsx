@@ -35,7 +35,9 @@ describe("Progress", () => {
   });
 
   it("applies custom className", () => {
-    render(<Progress value={50} className="custom-class" data-testid="progress" />);
+    render(
+      <Progress value={50} className="custom-class" data-testid="progress" />,
+    );
     expect(screen.getByTestId("progress")).toHaveClass("custom-class");
   });
 
@@ -67,7 +69,9 @@ describe("Progress", () => {
   });
 
   it("handles null value gracefully", () => {
-    render(<Progress value={null as unknown as number} data-testid="progress" />);
+    render(
+      <Progress value={null as unknown as number} data-testid="progress" />,
+    );
     expect(screen.getByTestId("progress")).toBeInTheDocument();
   });
 });

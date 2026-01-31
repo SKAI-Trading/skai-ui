@@ -64,7 +64,10 @@ export const PortfolioSkeleton: Story = {
       </div>
       <div className="space-y-2">
         {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="flex items-center gap-3 p-3 border rounded-lg">
+          <div
+            key={i}
+            className="flex items-center gap-3 p-3 border rounded-lg"
+          >
             <Skeleton className="h-8 w-8 rounded-full" />
             <div className="flex-1 space-y-1">
               <Skeleton className="h-4 w-16" />

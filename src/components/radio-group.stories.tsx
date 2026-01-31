@@ -166,9 +166,27 @@ export const GasSpeed: Story = {
       <h3 className="font-semibold mb-3">Transaction Speed</h3>
       <RadioGroup defaultValue="standard" className="space-y-2">
         {[
-          { id: "slow", name: "Slow", time: "~10 min", gwei: "5 gwei", price: "$0.50" },
-          { id: "standard", name: "Standard", time: "~3 min", gwei: "15 gwei", price: "$1.50" },
-          { id: "fast", name: "Fast", time: "~30 sec", gwei: "30 gwei", price: "$3.00" },
+          {
+            id: "slow",
+            name: "Slow",
+            time: "~10 min",
+            gwei: "5 gwei",
+            price: "$0.50",
+          },
+          {
+            id: "standard",
+            name: "Standard",
+            time: "~3 min",
+            gwei: "15 gwei",
+            price: "$1.50",
+          },
+          {
+            id: "fast",
+            name: "Fast",
+            time: "~30 sec",
+            gwei: "30 gwei",
+            price: "$3.00",
+          },
         ].map((option) => (
           <div key={option.id} className="flex items-center">
             <RadioGroupItem

@@ -1,0 +1,157 @@
+{/* Introduction.mdx */}
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Getting Started/Introduction" />
+
+# SKAI UI Component Library
+
+Welcome to the **SKAI UI** component library — a collection of React components built for the SKAI Trading platform.
+
+<div
+  style={{
+    display: "flex",
+    gap: "12px",
+    marginTop: "24px",
+    marginBottom: "24px",
+  }}
+>
+  <a
+    href="https://app.skai.trade"
+    target="_blank"
+    style={{
+      padding: "12px 24px",
+      background: "hsl(217.2 91.2% 59.8%)",
+      color: "white",
+      borderRadius: "8px",
+      textDecoration: "none",
+      fontWeight: "600",
+    }}
+  >
+    View Live App →
+  </a>
+  <a
+    href="https://github.com/SKAI-Trading/skai-ui"
+    target="_blank"
+    style={{
+      padding: "12px 24px",
+      background: "transparent",
+      color: "hsl(217.2 91.2% 59.8%)",
+      borderRadius: "8px",
+      textDecoration: "none",
+      fontWeight: "600",
+      border: "1px solid hsl(217.2 91.2% 59.8%)",
+    }}
+  >
+    GitHub Repo
+  </a>
+</div>
+
+---
+
+## Quick Start
+
+### Installation
+
+```bash
+npm install @skai/ui
+```
+
+### Setup Tailwind CSS
+
+Add the SKAI UI content path to your `tailwind.config.ts`:
+
+```typescript
+// tailwind.config.ts
+export default {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@skai/ui/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  // ... rest of config
+};
+```
+
+### Import Components
+
+```tsx
+import { Button, Card, Input } from "@skai/ui";
+
+function MyComponent() {
+  return (
+    <Card>
+      <Input placeholder="Enter amount" />
+      <Button>Swap</Button>
+    </Card>
+  );
+}
+```
+
+---
+
+## What's Included
+
+### 🧩 30+ Components
+
+All components are built with:
+
+- **Radix UI** primitives for accessibility
+- **Tailwind CSS** for styling
+- **TypeScript** for type safety
+- **Dark mode** support by default
+
+### 🎨 Design Tokens
+
+A complete design system with:
+
+- Color palette (brand, semantic, trading)
+- Typography scale
+- Spacing system
+- Border radius
+- Shadows
+
+### 📚 Documentation
+
+- Component stories with live examples
+- Trading-specific use cases
+- Copy-paste code snippets
+
+---
+
+## Component Categories
+
+| Category     | Components                                                                         |
+| ------------ | ---------------------------------------------------------------------------------- |
+| **Inputs**   | Button, Input, Textarea, Checkbox, Switch, Slider, Select, RadioGroup              |
+| **Display**  | Card, Badge, Avatar, Progress, Skeleton, Table, Tabs                               |
+| **Overlay**  | Dialog, Sheet, Popover, Tooltip, HoverCard, AlertDialog, DropdownMenu, ContextMenu |
+| **Layout**   | Separator, ScrollArea                                                              |
+| **Feedback** | Alert, Progress                                                                    |
+
+---
+
+## Design Principles
+
+### 1. Trading-First
+
+Every component is designed with crypto/DeFi trading in mind. Colors, states, and patterns reflect trading workflows.
+
+### 2. Accessible
+
+Built on Radix UI primitives ensuring keyboard navigation, screen reader support, and ARIA compliance.
+
+### 3. Composable
+
+Small, focused components that combine to create complex interfaces.
+
+### 4. Dark Mode Default
+
+Designed for dark mode (trader preference) with light mode support.
+
+---
+
+## Need Help?
+
+- 📖 Browse components in the sidebar
+- 🎨 Check [Design Tokens](/docs/design-tokens-colors--docs) for colors
+- 📝 Read [CONTRIBUTING.md](https://github.com/SKAI-Trading/skai-ui/blob/main/CONTRIBUTING.md)
+- 💬 Ask in `#frontend-ui` Slack channel

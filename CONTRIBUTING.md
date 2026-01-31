@@ -41,15 +41,15 @@ Storybook will open at `http://localhost:6006`
 
 ### Key Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run storybook` | Start Storybook dev server |
-| `npm run build:storybook` | Build static Storybook site |
-| `npm run build` | Build the library (CJS, ESM, DTS) |
-| `npm run test` | Run component tests |
-| `npm run test:coverage` | Run tests with coverage report |
-| `npm run lint` | Run ESLint |
-| `npm run typecheck` | Run TypeScript type checking |
+| Command                   | Description                       |
+| ------------------------- | --------------------------------- |
+| `npm run storybook`       | Start Storybook dev server        |
+| `npm run build:storybook` | Build static Storybook site       |
+| `npm run build`           | Build the library (CJS, ESM, DTS) |
+| `npm run test`            | Run component tests               |
+| `npm run test:coverage`   | Run tests with coverage report    |
+| `npm run lint`            | Run ESLint                        |
+| `npm run typecheck`       | Run TypeScript type checking      |
 
 ---
 
@@ -84,6 +84,7 @@ npm run typecheck
 ### 5. Submit PR
 
 Create a pull request with:
+
 - Description of changes
 - Screenshots/videos if visual changes
 - Link to Storybook preview
@@ -108,8 +109,7 @@ src/components/
 import * as React from "react";
 import { cn } from "../lib/utils";
 
-export interface ComponentNameProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface ComponentNameProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Brief description of the prop */
   variant?: "default" | "outline" | "ghost";
   /** Another prop description */
@@ -136,12 +136,12 @@ const ComponentName = React.forwardRef<HTMLDivElement, ComponentNameProps>(
             md: "h-10 px-4",
             lg: "h-12 px-6 text-lg",
           }[size],
-          className
+          className,
         )}
         {...props}
       />
     );
-  }
+  },
 );
 ComponentName.displayName = "ComponentName";
 
@@ -214,9 +214,7 @@ export const TradingExample: Story = {
   name: "Trading Use Case",
   render: () => (
     <div className="p-4 bg-card rounded-lg">
-      <ComponentName variant="default">
-        Trade Example
-      </ComponentName>
+      <ComponentName variant="default">Trade Example</ComponentName>
     </div>
   ),
 };
@@ -243,11 +241,7 @@ export const TokenSwapInput: Story = {
   render: () => (
     <div className="max-w-sm">
       <label className="text-sm text-muted-foreground">You pay</label>
-      <Input 
-        type="text" 
-        placeholder="0.0" 
-        className="text-2xl font-mono"
-      />
+      <Input type="text" placeholder="0.0" className="text-2xl font-mono" />
       <p className="text-sm text-muted-foreground">≈ $0.00</p>
     </div>
   ),
@@ -288,9 +282,11 @@ describe("ComponentName", () => {
 
   // Variants
   it("renders all variants correctly", () => {
-    const { rerender } = render(<ComponentName variant="default">Test</ComponentName>);
+    const { rerender } = render(
+      <ComponentName variant="default">Test</ComponentName>,
+    );
     expect(screen.getByText("Test")).toHaveClass("bg-primary");
-    
+
     rerender(<ComponentName variant="outline">Test</ComponentName>);
     expect(screen.getByText("Test")).toHaveClass("border");
   });
@@ -299,7 +295,7 @@ describe("ComponentName", () => {
   it("renders all sizes correctly", () => {
     const { rerender } = render(<ComponentName size="sm">Test</ComponentName>);
     expect(screen.getByText("Test")).toHaveClass("h-8");
-    
+
     rerender(<ComponentName size="lg">Test</ComponentName>);
     expect(screen.getByText("Test")).toHaveClass("h-12");
   });
@@ -308,24 +304,26 @@ describe("ComponentName", () => {
   it("handles click events", async () => {
     const onClick = vi.fn();
     const user = userEvent.setup();
-    
+
     render(<ComponentName onClick={onClick}>Click me</ComponentName>);
     await user.click(screen.getByText("Click me"));
-    
+
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   // Edge cases
   it("handles empty children", () => {
     render(<ComponentName />);
-    expect(document.querySelector("[class*='inline-flex']")).toBeInTheDocument();
+    expect(
+      document.querySelector("[class*='inline-flex']"),
+    ).toBeInTheDocument();
   });
 
   // Accessibility
   it("is keyboard accessible", async () => {
     const user = userEvent.setup();
     render(<ComponentName tabIndex={0}>Focusable</ComponentName>);
-    
+
     await user.tab();
     expect(screen.getByText("Focusable")).toHaveFocus();
   });
@@ -349,17 +347,17 @@ describe("ComponentName", () => {
 
 Every component test MUST cover:
 
-| Category | Tests Required |
-|----------|---------------|
-| **Rendering** | Default render, with children, without children |
-| **Variants** | Every variant option |
-| **Sizes** | Every size option (if applicable) |
-| **Interactions** | Click, focus, blur, change events |
-| **States** | Disabled, loading, error states |
-| **Edge Cases** | Empty props, null values, max/min values |
-| **Accessibility** | Keyboard nav, ARIA attributes |
-| **Ref** | Ref forwarding works |
-| **ClassName** | Custom classes merge correctly |
+| Category          | Tests Required                                  |
+| ----------------- | ----------------------------------------------- |
+| **Rendering**     | Default render, with children, without children |
+| **Variants**      | Every variant option                            |
+| **Sizes**         | Every size option (if applicable)               |
+| **Interactions**  | Click, focus, blur, change events               |
+| **States**        | Disabled, loading, error states                 |
+| **Edge Cases**    | Empty props, null values, max/min values        |
+| **Accessibility** | Keyboard nav, ARIA attributes                   |
+| **Ref**           | Ref forwarding works                            |
+| **ClassName**     | Custom classes merge correctly                  |
 
 ### Running Tests
 
@@ -496,15 +494,18 @@ const Component = (props) => { const variant = props.variant || "default" }
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Type of Change
+
 - [ ] New component
 - [ ] Bug fix
 - [ ] Enhancement
 - [ ] Documentation
 
 ## Component Checklist
+
 - [ ] Story file created with all variants
 - [ ] Test file with >80% coverage
 - [ ] Exported from index.ts
@@ -512,9 +513,11 @@ Brief description of changes
 - [ ] Accessible (keyboard, ARIA)
 
 ## Screenshots
+
 [If visual changes, add before/after screenshots]
 
 ## Storybook
+
 [Link to deployed Storybook preview]
 ```
 

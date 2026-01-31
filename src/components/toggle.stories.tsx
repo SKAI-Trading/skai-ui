@@ -68,7 +68,10 @@ export const FavoriteToggle: Story = {
         <p className="text-sm text-muted-foreground">ETH</p>
       </div>
       <p className="font-mono">$2,145.32</p>
-      <Toggle aria-label="Add to favorites" className="data-[state=on]:text-yellow-500">
+      <Toggle
+        aria-label="Add to favorites"
+        className="data-[state=on]:text-yellow-500"
+      >
         <Star className="h-4 w-4" />
       </Toggle>
     </div>
@@ -82,7 +85,12 @@ export const WatchlistToggle: Story = {
       {[
         { symbol: "ETH", name: "Ethereum", price: "$2,145.32", watched: true },
         { symbol: "BTC", name: "Bitcoin", price: "$43,567.89", watched: true },
-        { symbol: "SKAI", name: "SKAI Token", price: "$0.0234", watched: false },
+        {
+          symbol: "SKAI",
+          name: "SKAI Token",
+          price: "$0.0234",
+          watched: false,
+        },
         { symbol: "USDC", name: "USD Coin", price: "$1.00", watched: false },
       ].map((token) => (
         <div
@@ -136,7 +144,11 @@ export const VisibilityToggle: Story = {
     <div className="p-4 border rounded-lg max-w-sm">
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm text-muted-foreground">Total Balance</span>
-        <Toggle aria-label="Toggle balance visibility" variant="outline" size="sm">
+        <Toggle
+          aria-label="Toggle balance visibility"
+          variant="outline"
+          size="sm"
+        >
           <Eye className="h-4 w-4" />
         </Toggle>
       </div>

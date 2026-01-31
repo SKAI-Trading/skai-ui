@@ -58,27 +58,35 @@ export const TokenAvatars: Story = {
       <div className="flex flex-col items-center gap-1">
         <Avatar className="h-10 w-10 border-2 border-primary">
           <AvatarImage src="https://cryptologos.cc/logos/ethereum-eth-logo.png" />
-          <AvatarFallback className="bg-blue-500 text-white">ETH</AvatarFallback>
+          <AvatarFallback className="bg-blue-500 text-white">
+            ETH
+          </AvatarFallback>
         </Avatar>
         <span className="text-xs">ETH</span>
       </div>
       <div className="flex flex-col items-center gap-1">
         <Avatar className="h-10 w-10 border-2">
           <AvatarImage src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" />
-          <AvatarFallback className="bg-orange-500 text-white">BTC</AvatarFallback>
+          <AvatarFallback className="bg-orange-500 text-white">
+            BTC
+          </AvatarFallback>
         </Avatar>
         <span className="text-xs">BTC</span>
       </div>
       <div className="flex flex-col items-center gap-1">
         <Avatar className="h-10 w-10 border-2">
           <AvatarImage src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" />
-          <AvatarFallback className="bg-blue-600 text-white">USDC</AvatarFallback>
+          <AvatarFallback className="bg-blue-600 text-white">
+            USDC
+          </AvatarFallback>
         </Avatar>
         <span className="text-xs">USDC</span>
       </div>
       <div className="flex flex-col items-center gap-1">
         <Avatar className="h-10 w-10 border-2">
-          <AvatarFallback className="bg-purple-500 text-white">SKAI</AvatarFallback>
+          <AvatarFallback className="bg-purple-500 text-white">
+            SKAI
+          </AvatarFallback>
         </Avatar>
         <span className="text-xs">SKAI</span>
       </div>
@@ -111,9 +119,19 @@ export const Leaderboard: Story = {
   render: () => (
     <div className="space-y-2 max-w-sm">
       {[
-        { rank: 1, name: "whale.eth", profit: "+$125,432", color: "bg-yellow-500" },
+        {
+          rank: 1,
+          name: "whale.eth",
+          profit: "+$125,432",
+          color: "bg-yellow-500",
+        },
         { rank: 2, name: "trader99", profit: "+$89,234", color: "bg-gray-400" },
-        { rank: 3, name: "defi_king", profit: "+$67,891", color: "bg-amber-600" },
+        {
+          rank: 3,
+          name: "defi_king",
+          profit: "+$67,891",
+          color: "bg-amber-600",
+        },
         { rank: 4, name: "anon123", profit: "+$45,678", color: "bg-muted" },
         { rank: 5, name: "skai_user", profit: "+$34,567", color: "bg-muted" },
       ].map((user) => (

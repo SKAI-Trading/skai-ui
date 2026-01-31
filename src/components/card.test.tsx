@@ -29,7 +29,9 @@ describe("Card", () => {
   it("renders CardDescription correctly", () => {
     render(<CardDescription>My Description</CardDescription>);
     expect(screen.getByText("My Description")).toBeInTheDocument();
-    expect(screen.getByText("My Description")).toHaveClass("text-muted-foreground");
+    expect(screen.getByText("My Description")).toHaveClass(
+      "text-muted-foreground",
+    );
   });
 
   it("renders CardContent correctly", () => {
