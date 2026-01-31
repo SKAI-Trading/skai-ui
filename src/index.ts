@@ -8,6 +8,7 @@ export * from "./components/textarea";
 
 // Components - Feedback
 export * from "./components/alert";
+export * from "./components/alert-dialog";
 export * from "./components/progress";
 export * from "./components/skeleton";
 export * from "./components/tooltip";
@@ -28,12 +29,16 @@ export * from "./components/scroll-area";
 export * from "./components/dialog";
 export * from "./components/dropdown-menu";
 export * from "./components/popover";
+export * from "./components/sheet";
+export * from "./components/hover-card";
+export * from "./components/context-menu";
 
 // Components - Navigation
 export * from "./components/tabs";
 
 // Components - Data Display
 export * from "./components/avatar";
+export * from "./components/table";
 
 // Utilities
 export { cn } from "./lib/utils";
