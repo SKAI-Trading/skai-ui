@@ -1,6 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "./badge";
-import { TrendingUp, TrendingDown, Check, Clock, AlertCircle, Star } from "lucide-react";
+import {
+  TrendingUp,
+  TrendingDown,
+  Check,
+  Clock,
+  AlertCircle,
+  Star,
+} from "lucide-react";
 
 const meta: Meta<typeof Badge> = {
   title: "Components/Badge",
@@ -9,7 +16,8 @@ const meta: Meta<typeof Badge> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A small badge component for displaying status, labels, or counts.",
+        component:
+          "A small badge component for displaying status, labels, or counts.",
       },
     },
   },
@@ -102,15 +110,25 @@ export const StatusBadges: Story = {
 export const TierBadges: Story = {
   render: () => (
     <div className="flex gap-2 flex-wrap">
-      <Badge variant="outline" className="border-gray-400 text-gray-400">Free</Badge>
-      <Badge variant="outline" className="border-green-400 text-green-400">Bronze</Badge>
-      <Badge variant="outline" className="border-gray-300 text-gray-300">Silver</Badge>
+      <Badge variant="outline" className="border-gray-400 text-gray-400">
+        Free
+      </Badge>
+      <Badge variant="outline" className="border-green-400 text-green-400">
+        Bronze
+      </Badge>
+      <Badge variant="outline" className="border-gray-300 text-gray-300">
+        Silver
+      </Badge>
       <Badge variant="outline" className="border-yellow-400 text-yellow-400">
         <Star className="mr-1 h-3 w-3 fill-yellow-400" />
         Gold
       </Badge>
-      <Badge variant="outline" className="border-blue-400 text-blue-400">Platinum</Badge>
-      <Badge variant="outline" className="border-purple-400 text-purple-400">Diamond</Badge>
+      <Badge variant="outline" className="border-blue-400 text-blue-400">
+        Platinum
+      </Badge>
+      <Badge variant="outline" className="border-purple-400 text-purple-400">
+        Diamond
+      </Badge>
     </div>
   ),
 };
@@ -145,7 +163,10 @@ export const CountBadge: Story = {
       </div>
       <div className="relative">
         <span className="text-sm">Messages</span>
-        <Badge variant="destructive" className="absolute -top-2 -right-4 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
+        <Badge
+          variant="destructive"
+          className="absolute -top-2 -right-4 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs"
+        >
           9
         </Badge>
       </div>
@@ -156,11 +177,21 @@ export const CountBadge: Story = {
 export const TransactionTypeBadges: Story = {
   render: () => (
     <div className="flex gap-2 flex-wrap">
-      <Badge variant="outline" className="border-green-500 text-green-500">Buy</Badge>
-      <Badge variant="outline" className="border-red-500 text-red-500">Sell</Badge>
-      <Badge variant="outline" className="border-blue-500 text-blue-500">Swap</Badge>
-      <Badge variant="outline" className="border-purple-500 text-purple-500">Bridge</Badge>
-      <Badge variant="outline" className="border-orange-500 text-orange-500">Stake</Badge>
+      <Badge variant="outline" className="border-green-500 text-green-500">
+        Buy
+      </Badge>
+      <Badge variant="outline" className="border-red-500 text-red-500">
+        Sell
+      </Badge>
+      <Badge variant="outline" className="border-blue-500 text-blue-500">
+        Swap
+      </Badge>
+      <Badge variant="outline" className="border-purple-500 text-purple-500">
+        Bridge
+      </Badge>
+      <Badge variant="outline" className="border-orange-500 text-orange-500">
+        Stake
+      </Badge>
     </div>
   ),
 };

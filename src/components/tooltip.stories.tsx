@@ -1,7 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./tooltip";
 import { Button } from "./button";
-import { Info, HelpCircle, Copy, Settings, AlertCircle, Eye } from "lucide-react";
+import {
+  Info,
+  HelpCircle,
+  Copy,
+  Settings,
+  AlertCircle,
+  Eye,
+} from "lucide-react";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Components/Tooltip",
@@ -17,7 +29,8 @@ const meta: Meta<typeof Tooltip> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A tooltip component for displaying additional information on hover.",
+        component:
+          "A tooltip component for displaying additional information on hover.",
       },
     },
   },
@@ -61,7 +74,9 @@ export const Positions: Story = {
     <div className="flex gap-8">
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline" size="sm">Top</Button>
+          <Button variant="outline" size="sm">
+            Top
+          </Button>
         </TooltipTrigger>
         <TooltipContent side="top">
           <p>Tooltip on top</p>
@@ -69,7 +84,9 @@ export const Positions: Story = {
       </Tooltip>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline" size="sm">Right</Button>
+          <Button variant="outline" size="sm">
+            Right
+          </Button>
         </TooltipTrigger>
         <TooltipContent side="right">
           <p>Tooltip on right</p>
@@ -77,7 +94,9 @@ export const Positions: Story = {
       </Tooltip>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline" size="sm">Bottom</Button>
+          <Button variant="outline" size="sm">
+            Bottom
+          </Button>
         </TooltipTrigger>
         <TooltipContent side="bottom">
           <p>Tooltip on bottom</p>
@@ -85,7 +104,9 @@ export const Positions: Story = {
       </Tooltip>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline" size="sm">Left</Button>
+          <Button variant="outline" size="sm">
+            Left
+          </Button>
         </TooltipTrigger>
         <TooltipContent side="left">
           <p>Tooltip on left</p>
@@ -106,7 +127,10 @@ export const GasFeeTooltip: Story = {
             <HelpCircle className="h-4 w-4 text-muted-foreground cursor-help" />
           </TooltipTrigger>
           <TooltipContent className="max-w-[250px]">
-            <p>Network fees are paid to validators to process your transaction. Fees vary based on network congestion.</p>
+            <p>
+              Network fees are paid to validators to process your transaction.
+              Fees vary based on network congestion.
+            </p>
           </TooltipContent>
         </Tooltip>
       </div>
@@ -169,8 +193,13 @@ export const WarningTooltip: Story = {
           <AlertCircle className="h-5 w-5 text-yellow-500 cursor-help" />
         </TooltipTrigger>
         <TooltipContent className="max-w-[300px]">
-          <p className="font-medium text-yellow-500 mb-1">High Slippage Warning</p>
-          <p className="text-sm">Your trade may experience significant price impact due to low liquidity. Consider reducing your trade size.</p>
+          <p className="font-medium text-yellow-500 mb-1">
+            High Slippage Warning
+          </p>
+          <p className="text-sm">
+            Your trade may experience significant price impact due to low
+            liquidity. Consider reducing your trade size.
+          </p>
         </TooltipContent>
       </Tooltip>
       <span className="text-sm text-yellow-500">Price impact: 4.5%</span>
@@ -181,7 +210,9 @@ export const WarningTooltip: Story = {
 export const TokenInfoTooltip: Story = {
   render: () => (
     <div className="flex items-center gap-3">
-      <div className="h-10 w-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">B</div>
+      <div className="h-10 w-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
+        B
+      </div>
       <div>
         <div className="flex items-center gap-2">
           <span className="font-medium">Bitcoin</span>
@@ -192,7 +223,10 @@ export const TokenInfoTooltip: Story = {
             <TooltipContent className="max-w-[300px]">
               <div className="space-y-2">
                 <p className="font-medium">Bitcoin (BTC)</p>
-                <p className="text-sm text-muted-foreground">The first and most widely recognized cryptocurrency, created by Satoshi Nakamoto in 2009.</p>
+                <p className="text-sm text-muted-foreground">
+                  The first and most widely recognized cryptocurrency, created
+                  by Satoshi Nakamoto in 2009.
+                </p>
                 <div className="text-xs text-muted-foreground">
                   <p>Market Cap: $1.32T</p>
                   <p>24h Volume: $32.5B</p>

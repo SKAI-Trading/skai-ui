@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./card";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Label } from "./label";
@@ -13,7 +19,8 @@ const meta: Meta<typeof Tabs> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A tab component for organizing content into different views.",
+        component:
+          "A tab component for organizing content into different views.",
       },
     },
   },
@@ -50,9 +57,7 @@ export const Default: Story = {
         <Card>
           <CardHeader>
             <CardTitle>Password</CardTitle>
-            <CardDescription>
-              Change your password here.
-            </CardDescription>
+            <CardDescription>Change your password here.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
@@ -85,14 +90,18 @@ export const TradeTabs: Story = {
           <Label>You Pay</Label>
           <div className="flex gap-2">
             <Input type="number" placeholder="0.00" className="flex-1" />
-            <Button variant="outline" className="w-24">USDC</Button>
+            <Button variant="outline" className="w-24">
+              USDC
+            </Button>
           </div>
         </div>
         <div className="space-y-2">
           <Label>You Receive</Label>
           <div className="flex gap-2">
             <Input type="number" placeholder="0.00" className="flex-1" />
-            <Button variant="outline" className="w-24">ETH</Button>
+            <Button variant="outline" className="w-24">
+              ETH
+            </Button>
           </div>
         </div>
         <Button className="w-full">Swap</Button>
@@ -113,7 +122,9 @@ export const TradeTabs: Story = {
           <Label>Amount (USD)</Label>
           <Input type="number" placeholder="0.00" />
         </div>
-        <Button className="w-full bg-green-600 hover:bg-green-700">Buy ETH</Button>
+        <Button className="w-full bg-green-600 hover:bg-green-700">
+          Buy ETH
+        </Button>
       </TabsContent>
       <TabsContent value="sell" className="space-y-4 pt-4">
         <div className="space-y-2">
@@ -132,27 +143,57 @@ export const PortfolioTabs: Story = {
       <TabsList>
         <TabsTrigger value="tokens">
           Tokens
-          <Badge variant="secondary" className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">5</Badge>
+          <Badge
+            variant="secondary"
+            className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs"
+          >
+            5
+          </Badge>
         </TabsTrigger>
         <TabsTrigger value="nfts">
           NFTs
-          <Badge variant="secondary" className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">3</Badge>
+          <Badge
+            variant="secondary"
+            className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs"
+          >
+            3
+          </Badge>
         </TabsTrigger>
         <TabsTrigger value="activity">Activity</TabsTrigger>
       </TabsList>
       <TabsContent value="tokens" className="pt-4">
         <div className="space-y-2">
           {[
-            { name: "Ethereum", symbol: "ETH", balance: "2.4532", value: "$8,234.50" },
-            { name: "USDC", symbol: "USDC", balance: "5,432.00", value: "$5,432.00" },
-            { name: "Bitcoin", symbol: "BTC", balance: "0.1234", value: "$8,321.00" },
+            {
+              name: "Ethereum",
+              symbol: "ETH",
+              balance: "2.4532",
+              value: "$8,234.50",
+            },
+            {
+              name: "USDC",
+              symbol: "USDC",
+              balance: "5,432.00",
+              value: "$5,432.00",
+            },
+            {
+              name: "Bitcoin",
+              symbol: "BTC",
+              balance: "0.1234",
+              value: "$8,321.00",
+            },
           ].map((token) => (
-            <div key={token.symbol} className="flex justify-between items-center p-3 bg-muted rounded-lg">
+            <div
+              key={token.symbol}
+              className="flex justify-between items-center p-3 bg-muted rounded-lg"
+            >
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-primary/20" />
                 <div>
                   <p className="font-medium">{token.name}</p>
-                  <p className="text-xs text-muted-foreground">{token.balance} {token.symbol}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {token.balance} {token.symbol}
+                  </p>
                 </div>
               </div>
               <p className="font-medium">{token.value}</p>
@@ -168,7 +209,9 @@ export const PortfolioTabs: Story = {
         </div>
       </TabsContent>
       <TabsContent value="activity" className="pt-4">
-        <p className="text-sm text-muted-foreground text-center py-8">No recent activity</p>
+        <p className="text-sm text-muted-foreground text-center py-8">
+          No recent activity
+        </p>
       </TabsContent>
     </Tabs>
   ),
@@ -186,11 +229,17 @@ export const GameTabs: Story = {
         <Card>
           <CardHeader>
             <CardTitle>Hi-Lo Game</CardTitle>
-            <CardDescription>Predict if the next number is higher or lower</CardDescription>
+            <CardDescription>
+              Predict if the next number is higher or lower
+            </CardDescription>
           </CardHeader>
           <CardContent className="flex gap-2">
-            <Button className="flex-1 bg-green-600 hover:bg-green-700">Higher</Button>
-            <Button className="flex-1 bg-red-600 hover:bg-red-700">Lower</Button>
+            <Button className="flex-1 bg-green-600 hover:bg-green-700">
+              Higher
+            </Button>
+            <Button className="flex-1 bg-red-600 hover:bg-red-700">
+              Lower
+            </Button>
           </CardContent>
         </Card>
       </TabsContent>
@@ -222,12 +271,24 @@ export const GameTabs: Story = {
 
 export const VerticalTabs: Story = {
   render: () => (
-    <Tabs defaultValue="general" orientation="vertical" className="flex w-[500px]">
+    <Tabs
+      defaultValue="general"
+      orientation="vertical"
+      className="flex w-[500px]"
+    >
       <TabsList className="flex flex-col h-auto w-48 bg-transparent">
-        <TabsTrigger value="general" className="w-full justify-start">General</TabsTrigger>
-        <TabsTrigger value="security" className="w-full justify-start">Security</TabsTrigger>
-        <TabsTrigger value="notifications" className="w-full justify-start">Notifications</TabsTrigger>
-        <TabsTrigger value="advanced" className="w-full justify-start">Advanced</TabsTrigger>
+        <TabsTrigger value="general" className="w-full justify-start">
+          General
+        </TabsTrigger>
+        <TabsTrigger value="security" className="w-full justify-start">
+          Security
+        </TabsTrigger>
+        <TabsTrigger value="notifications" className="w-full justify-start">
+          Notifications
+        </TabsTrigger>
+        <TabsTrigger value="advanced" className="w-full justify-start">
+          Advanced
+        </TabsTrigger>
       </TabsList>
       <div className="flex-1 pl-4">
         <TabsContent value="general" className="m-0">
@@ -259,7 +320,9 @@ export const VerticalTabs: Story = {
           <Card>
             <CardHeader>
               <CardTitle>Notification Preferences</CardTitle>
-              <CardDescription>Choose what notifications to receive</CardDescription>
+              <CardDescription>
+                Choose what notifications to receive
+              </CardDescription>
             </CardHeader>
           </Card>
         </TabsContent>

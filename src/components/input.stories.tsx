@@ -12,7 +12,8 @@ const meta: Meta<typeof Input> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A flexible input component for text, numbers, and other data entry.",
+        component:
+          "A flexible input component for text, numbers, and other data entry.",
       },
     },
   },
@@ -114,7 +115,11 @@ export const PasswordWithToggle: Story = {
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
           >
-            {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            {showPassword ? (
+              <EyeOff className="h-4 w-4" />
+            ) : (
+              <Eye className="h-4 w-4" />
+            )}
           </button>
         </div>
       </div>
@@ -152,11 +157,15 @@ export const TokenAmountInput: Story = {
     <div className="space-y-2 w-[350px]">
       <div className="flex justify-between">
         <Label>You Pay</Label>
-        <span className="text-xs text-muted-foreground">Balance: 1,234.56 USDC</span>
+        <span className="text-xs text-muted-foreground">
+          Balance: 1,234.56 USDC
+        </span>
       </div>
       <div className="flex gap-2">
         <Input type="number" placeholder="0.00" className="flex-1" />
-        <Button variant="outline" className="w-24">USDC</Button>
+        <Button variant="outline" className="w-24">
+          USDC
+        </Button>
       </div>
       <div className="flex justify-between text-xs text-muted-foreground">
         <span>≈ $1,234.56</span>
@@ -171,7 +180,10 @@ export const SearchTokens: Story = {
     <div className="w-[350px] space-y-4">
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input placeholder="Search by name or paste address" className="pl-10" />
+        <Input
+          placeholder="Search by name or paste address"
+          className="pl-10"
+        />
       </div>
       <div className="text-xs text-muted-foreground">
         Popular: BTC, ETH, SOL, USDC
@@ -191,7 +203,9 @@ export const FormExample: Story = {
         <Label htmlFor="amount">Amount</Label>
         <Input id="amount" type="number" placeholder="0.00" />
       </div>
-      <Button type="submit" className="w-full">Confirm Transfer</Button>
+      <Button type="submit" className="w-full">
+        Confirm Transfer
+      </Button>
     </form>
   ),
 };

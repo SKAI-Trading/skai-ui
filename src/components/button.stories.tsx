@@ -9,7 +9,8 @@ const meta: Meta<typeof Button> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A versatile button component with multiple variants, sizes, and states.",
+        component:
+          "A versatile button component with multiple variants, sizes, and states.",
       },
     },
   },
@@ -17,7 +18,14 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["default", "destructive", "outline", "secondary", "ghost", "link"],
+      options: [
+        "default",
+        "destructive",
+        "outline",
+        "secondary",
+        "ghost",
+        "link",
+      ],
       description: "The visual style of the button",
     },
     size: {
@@ -160,7 +168,9 @@ export const AllSizes: Story = {
       <Button size="sm">Small</Button>
       <Button size="default">Default</Button>
       <Button size="lg">Large</Button>
-      <Button size="icon"><Plus className="h-4 w-4" /></Button>
+      <Button size="icon">
+        <Plus className="h-4 w-4" />
+      </Button>
     </div>
   ),
 };

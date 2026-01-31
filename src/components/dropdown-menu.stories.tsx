@@ -17,12 +17,12 @@ import {
   DropdownMenuRadioItem,
 } from "./dropdown-menu";
 import { Button } from "./button";
-import { 
-  User, 
-  Settings, 
-  LogOut, 
-  MoreHorizontal, 
-  Copy, 
+import {
+  User,
+  Settings,
+  LogOut,
+  MoreHorizontal,
+  Copy,
   ExternalLink,
   Wallet,
   History,
@@ -45,7 +45,8 @@ const meta: Meta<typeof DropdownMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A dropdown menu component for displaying actions and options.",
+        component:
+          "A dropdown menu component for displaying actions and options.",
       },
     },
   },
@@ -166,7 +167,7 @@ export const WithCheckboxItems: Story = {
     const [showBalance, setShowBalance] = useState(true);
     const [showPnL, setShowPnL] = useState(true);
     const [notifications, setNotifications] = useState(false);
-    
+
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -205,7 +206,7 @@ export const WithCheckboxItems: Story = {
 export const WithRadioItems: Story = {
   render: function Render() {
     const [theme, setTheme] = useState("dark");
-    
+
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

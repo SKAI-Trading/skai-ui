@@ -20,8 +20,8 @@
 ## 🚀 Quick Start
 
 ```tsx
-import { Button, Card, CardContent, Input } from '@skai/ui';
-import '@skai/ui/styles'; // Import Tailwind styles
+import { Button, Card, CardContent, Input } from "@skai/ui";
+import "@skai/ui/styles"; // Import Tailwind styles
 
 function SwapCard() {
   return (
@@ -52,63 +52,63 @@ Add the styles import to your app's entry point:
 
 ```tsx
 // In your App.tsx or main.tsx
-import '@skai/ui/styles';
+import "@skai/ui/styles";
 ```
 
 ## 🧩 Available Components
 
 ### Layout & Containers
 
-| Component | Description | Usage |
-|-----------|-------------|-------|
-| `Card` | Container with header, content, footer | Grouping related content |
-| `Separator` | Visual divider | Separating sections |
-| `ScrollArea` | Custom scrollable container | Long lists, overflow content |
+| Component    | Description                            | Usage                        |
+| ------------ | -------------------------------------- | ---------------------------- |
+| `Card`       | Container with header, content, footer | Grouping related content     |
+| `Separator`  | Visual divider                         | Separating sections          |
+| `ScrollArea` | Custom scrollable container            | Long lists, overflow content |
 
 ### Forms & Inputs
 
-| Component | Description | Usage |
-|-----------|-------------|-------|
-| `Button` | Interactive button with variants | Actions, submissions |
-| `Input` | Text/number input field | Data entry |
-| `Textarea` | Multi-line text input | Long-form content |
-| `Label` | Form field label | Input labeling |
-| `Checkbox` | Binary selection | Toggleable options |
-| `RadioGroup` | Single selection from options | Mutually exclusive choices |
-| `Select` | Dropdown selection | Choosing from list |
-| `Slider` | Range input | Numeric ranges |
-| `Switch` | Toggle switch | On/off settings |
-| `Toggle` | Toggleable button | Binary state buttons |
+| Component    | Description                      | Usage                      |
+| ------------ | -------------------------------- | -------------------------- |
+| `Button`     | Interactive button with variants | Actions, submissions       |
+| `Input`      | Text/number input field          | Data entry                 |
+| `Textarea`   | Multi-line text input            | Long-form content          |
+| `Label`      | Form field label                 | Input labeling             |
+| `Checkbox`   | Binary selection                 | Toggleable options         |
+| `RadioGroup` | Single selection from options    | Mutually exclusive choices |
+| `Select`     | Dropdown selection               | Choosing from list         |
+| `Slider`     | Range input                      | Numeric ranges             |
+| `Switch`     | Toggle switch                    | On/off settings            |
+| `Toggle`     | Toggleable button                | Binary state buttons       |
 
 ### Feedback & Status
 
-| Component | Description | Usage |
-|-----------|-------------|-------|
-| `Alert` | Important messages | Warnings, errors, info |
-| `AlertDialog` | Confirmation dialogs | Critical actions |
-| `Badge` | Status indicators | Tags, labels, counts |
-| `Progress` | Progress indication | Loading, completion |
-| `Skeleton` | Loading placeholder | Content loading states |
-| `Tooltip` | Hover information | Help text, explanations |
+| Component     | Description          | Usage                   |
+| ------------- | -------------------- | ----------------------- |
+| `Alert`       | Important messages   | Warnings, errors, info  |
+| `AlertDialog` | Confirmation dialogs | Critical actions        |
+| `Badge`       | Status indicators    | Tags, labels, counts    |
+| `Progress`    | Progress indication  | Loading, completion     |
+| `Skeleton`    | Loading placeholder  | Content loading states  |
+| `Tooltip`     | Hover information    | Help text, explanations |
 
 ### Overlays & Modals
 
-| Component | Description | Usage |
-|-----------|-------------|-------|
-| `Dialog` | Modal window | Forms, confirmations |
-| `Sheet` | Slide-out panel | Side panels, drawers |
-| `DropdownMenu` | Action menu | Context actions |
-| `ContextMenu` | Right-click menu | Context-specific actions |
-| `Popover` | Floating content | Popovers, dropdowns |
-| `HoverCard` | Hover-triggered card | Preview content |
+| Component      | Description          | Usage                    |
+| -------------- | -------------------- | ------------------------ |
+| `Dialog`       | Modal window         | Forms, confirmations     |
+| `Sheet`        | Slide-out panel      | Side panels, drawers     |
+| `DropdownMenu` | Action menu          | Context actions          |
+| `ContextMenu`  | Right-click menu     | Context-specific actions |
+| `Popover`      | Floating content     | Popovers, dropdowns      |
+| `HoverCard`    | Hover-triggered card | Preview content          |
 
 ### Navigation & Display
 
-| Component | Description | Usage |
-|-----------|-------------|-------|
-| `Tabs` | Tabbed interface | Content organization |
-| `Table` | Data table | Tabular data |
-| `Avatar` | User/token images | Profile pictures |
+| Component | Description       | Usage                |
+| --------- | ----------------- | -------------------- |
+| `Tabs`    | Tabbed interface  | Content organization |
+| `Table`   | Data table        | Tabular data         |
+| `Avatar`  | User/token images | Profile pictures     |
 
 ## 📖 Storybook
 
@@ -176,11 +176,12 @@ const newComponentVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export interface NewComponentProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof newComponentVariants> {}
 
 const NewComponent = React.forwardRef<HTMLDivElement, NewComponentProps>(
@@ -190,7 +191,7 @@ const NewComponent = React.forwardRef<HTMLDivElement, NewComponentProps>(
       className={cn(newComponentVariants({ variant, size, className }))}
       {...props}
     />
-  )
+  ),
 );
 NewComponent.displayName = "NewComponent";
 

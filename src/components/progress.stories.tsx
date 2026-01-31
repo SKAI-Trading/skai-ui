@@ -70,7 +70,9 @@ export const SwapProgress: Story = {
     <div className="w-[400px] space-y-4">
       <div className="space-y-2">
         <div className="flex justify-between text-sm">
-          <span className="text-muted-foreground">Confirming transaction...</span>
+          <span className="text-muted-foreground">
+            Confirming transaction...
+          </span>
           <span className="text-muted-foreground">Step 2 of 3</span>
         </div>
         <Progress value={66} />
@@ -147,19 +149,31 @@ export const TierProgressBars: Story = {
     <div className="w-[400px] space-y-6">
       {[
         { tier: "Free", color: "bg-gray-500", progress: 100, volume: "$1,234" },
-        { tier: "Bronze", color: "bg-green-500", progress: 80, volume: "$8,000" },
-        { tier: "Silver", color: "bg-gray-300", progress: 45, volume: "$45,000" },
+        {
+          tier: "Bronze",
+          color: "bg-green-500",
+          progress: 80,
+          volume: "$8,000",
+        },
+        {
+          tier: "Silver",
+          color: "bg-gray-300",
+          progress: 45,
+          volume: "$45,000",
+        },
         { tier: "Gold", color: "bg-yellow-500", progress: 0, volume: "$0" },
         { tier: "Platinum", color: "bg-blue-400", progress: 0, volume: "$0" },
         { tier: "Diamond", color: "bg-purple-500", progress: 0, volume: "$0" },
       ].map((item) => (
         <div key={item.tier} className="space-y-1">
           <div className="flex justify-between text-sm">
-            <span className={item.progress > 0 ? "" : "text-muted-foreground"}>{item.tier}</span>
+            <span className={item.progress > 0 ? "" : "text-muted-foreground"}>
+              {item.tier}
+            </span>
             <span className="text-muted-foreground">{item.volume}</span>
           </div>
           <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-            <div 
+            <div
               className={`h-full ${item.color} rounded-full transition-all`}
               style={{ width: `${item.progress}%` }}
             />
@@ -184,18 +198,22 @@ export const TransactionSteps: Story = {
           { step: "Complete", status: "pending" },
         ].map((item, index) => (
           <div key={item.step} className="flex flex-col items-center gap-2">
-            <div 
+            <div
               className={`h-8 w-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                item.status === "complete" ? "bg-green-500 text-white" :
-                item.status === "active" ? "bg-primary text-primary-foreground" :
-                "bg-muted text-muted-foreground"
+                item.status === "complete"
+                  ? "bg-green-500 text-white"
+                  : item.status === "active"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-muted-foreground"
               }`}
             >
               {item.status === "complete" ? "✓" : index + 1}
             </div>
-            <span className={`text-xs ${
-              item.status === "pending" ? "text-muted-foreground" : ""
-            }`}>
+            <span
+              className={`text-xs ${
+                item.status === "pending" ? "text-muted-foreground" : ""
+              }`}
+            >
               {item.step}
             </span>
           </div>

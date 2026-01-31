@@ -1,5 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./card";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Label } from "./label";
@@ -13,7 +20,8 @@ const meta: Meta<typeof Card> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A flexible card component for grouping related content and actions.",
+        component:
+          "A flexible card component for grouping related content and actions.",
       },
     },
   },
@@ -43,7 +51,9 @@ export const Default: Story = {
 export const SimpleCard: Story = {
   render: () => (
     <Card className="w-[300px] p-6">
-      <p className="text-sm text-muted-foreground">Simple card with just content</p>
+      <p className="text-sm text-muted-foreground">
+        Simple card with just content
+      </p>
     </Card>
   ),
 };
@@ -55,7 +65,9 @@ export const TokenPriceCard: Story = {
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm">B</div>
+            <div className="h-8 w-8 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm">
+              B
+            </div>
             <div>
               <CardTitle className="text-base">Bitcoin</CardTitle>
               <CardDescription>BTC</CardDescription>
@@ -85,7 +97,10 @@ export const PortfolioCard: Story = {
       <CardContent>
         <div className="text-3xl font-bold">$124,532.00</div>
         <div className="flex items-center gap-2 mt-2">
-          <Badge variant="outline" className="text-green-500 border-green-500/50">
+          <Badge
+            variant="outline"
+            className="text-green-500 border-green-500/50"
+          >
             <TrendingUp className="mr-1 h-3 w-3" />
             +$2,430.00 (2.0%)
           </Badge>
@@ -93,8 +108,12 @@ export const PortfolioCard: Story = {
         </div>
       </CardContent>
       <CardFooter className="flex gap-2">
-        <Button size="sm" className="flex-1">Deposit</Button>
-        <Button size="sm" variant="outline" className="flex-1">Withdraw</Button>
+        <Button size="sm" className="flex-1">
+          Deposit
+        </Button>
+        <Button size="sm" variant="outline" className="flex-1">
+          Withdraw
+        </Button>
       </CardFooter>
     </Card>
   ),
@@ -161,7 +180,9 @@ export const LosingTradeCard: Story = {
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">E</div>
+            <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">
+              E
+            </div>
             <div>
               <CardTitle className="text-base">Ethereum</CardTitle>
               <CardDescription>ETH</CardDescription>

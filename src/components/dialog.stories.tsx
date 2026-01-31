@@ -22,7 +22,8 @@ const meta: Meta<typeof Dialog> = {
     layout: "centered",
     docs: {
       description: {
-        component: "A modal dialog component for important interactions and confirmations.",
+        component:
+          "A modal dialog component for important interactions and confirmations.",
       },
     },
   },
@@ -46,7 +47,9 @@ export const Default: Story = {
           </DialogDescription>
         </DialogHeader>
         <div className="py-4">
-          <p className="text-sm text-muted-foreground">Dialog content goes here.</p>
+          <p className="text-sm text-muted-foreground">
+            Dialog content goes here.
+          </p>
         </div>
         <DialogFooter>
           <DialogClose asChild>
@@ -74,12 +77,24 @@ export const FormDialog: Story = {
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">Name</Label>
-            <Input id="name" defaultValue="SKAI Trader" className="col-span-3" />
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input
+              id="name"
+              defaultValue="SKAI Trader"
+              className="col-span-3"
+            />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">Username</Label>
-            <Input id="username" defaultValue="@skaitrader" className="col-span-3" />
+            <Label htmlFor="username" className="text-right">
+              Username
+            </Label>
+            <Input
+              id="username"
+              defaultValue="@skaitrader"
+              className="col-span-3"
+            />
           </div>
         </div>
         <DialogFooter>
@@ -113,7 +128,9 @@ export const ConfirmSwapDialog: Story = {
             <Badge>USDC</Badge>
           </div>
           <div className="flex justify-center">
-            <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">↓</div>
+            <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+              ↓
+            </div>
           </div>
           <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
             <div>
@@ -139,7 +156,9 @@ export const ConfirmSwapDialog: Story = {
         </div>
         <DialogFooter className="flex gap-2">
           <DialogClose asChild>
-            <Button variant="outline" className="flex-1">Cancel</Button>
+            <Button variant="outline" className="flex-1">
+              Cancel
+            </Button>
           </DialogClose>
           <Button className="flex-1">Confirm Swap</Button>
         </DialogFooter>
@@ -172,8 +191,15 @@ export const SendTokenDialog: Story = {
           <div className="space-y-2">
             <Label htmlFor="amount">Amount</Label>
             <div className="flex gap-2">
-              <Input id="amount" type="number" placeholder="0.00" className="flex-1" />
-              <Button variant="outline" className="w-24">ETH</Button>
+              <Input
+                id="amount"
+                type="number"
+                placeholder="0.00"
+                className="flex-1"
+              />
+              <Button variant="outline" className="w-24">
+                ETH
+              </Button>
             </div>
             <p className="text-xs text-muted-foreground">Balance: 2.4532 ETH</p>
           </div>
@@ -200,17 +226,21 @@ export const SettingsDialog: Story = {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Swap Settings</DialogTitle>
-          <DialogDescription>
-            Configure your swap preferences
-          </DialogDescription>
+          <DialogDescription>Configure your swap preferences</DialogDescription>
         </DialogHeader>
         <div className="space-y-6 py-4">
           <div className="space-y-2">
             <Label>Slippage Tolerance</Label>
             <div className="flex gap-2">
-              <Button variant="outline" size="sm" className="flex-1">0.1%</Button>
-              <Button variant="secondary" size="sm" className="flex-1">0.5%</Button>
-              <Button variant="outline" size="sm" className="flex-1">1.0%</Button>
+              <Button variant="outline" size="sm" className="flex-1">
+                0.1%
+              </Button>
+              <Button variant="secondary" size="sm" className="flex-1">
+                0.5%
+              </Button>
+              <Button variant="outline" size="sm" className="flex-1">
+                1.0%
+              </Button>
               <Input className="w-20" placeholder="Custom" />
             </div>
           </div>
@@ -243,7 +273,8 @@ export const ConfirmationDialog: Story = {
             Confirm Deletion
           </DialogTitle>
           <DialogDescription>
-            This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="gap-2 sm:gap-0">
