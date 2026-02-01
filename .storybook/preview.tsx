@@ -8,6 +8,31 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    // Configure story sort order - Getting Started first
+    options: {
+      storySort: {
+        method: "alphabetical",
+        order: [
+          "Getting Started",
+          ["Introduction", "For Designers", "For Developers", "*"],
+          "Design System",
+          [
+            "Colors",
+            "Typography",
+            "Spacing",
+            "Icons",
+            "Brand Assets",
+            "Figma Reference",
+            "*",
+          ],
+          "Components",
+          "Trading",
+          "Patterns",
+          "Pages",
+          "*",
+        ],
+      },
+    },
     backgrounds: {
       default: "skai-dark",
       values: [

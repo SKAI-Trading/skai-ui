@@ -9,7 +9,7 @@ import "./addons/github-addon";
 const skaiTheme = create({
   base: "dark",
 
-  // Brand
+  // Brand - Custom SKAI branding (no Storybook references)
   brandTitle: "SKAI Design System",
   brandUrl: "https://skai.trade",
   brandImage: undefined, // Can add logo later
@@ -54,6 +54,8 @@ const skaiTheme = create({
 
 addons.setConfig({
   theme: skaiTheme,
+  // Set Introduction as the initial/default story
+  initialActive: "docs",
   sidebar: {
     showRoots: true,
     collapsedRoots: ["components"],
