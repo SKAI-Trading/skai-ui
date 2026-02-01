@@ -77,7 +77,9 @@ const navItems = [
 ];
 
 const MockSidebarHeader = ({ collapsed }: { collapsed?: boolean }) => (
-  <div className={`flex items-center ${collapsed ? "justify-center" : "gap-2"}`}>
+  <div
+    className={`flex items-center ${collapsed ? "justify-center" : "gap-2"}`}
+  >
     <div className="w-8 h-8 rounded-lg bg-skai-green flex items-center justify-center text-white font-bold">
       S
     </div>
@@ -161,7 +163,10 @@ const MockDashboardCards = () => (
       { label: "Open Positions", value: "3", change: "0" },
       { label: "PnL (30d)", value: "+$456.78", change: "+8.3%" },
     ].map((card) => (
-      <div key={card.label} className="p-4 bg-card rounded-lg border border-border">
+      <div
+        key={card.label}
+        className="p-4 bg-card rounded-lg border border-border"
+      >
         <div className="text-sm text-muted-foreground">{card.label}</div>
         <div className="text-2xl font-semibold mt-1">{card.value}</div>
         <div
@@ -239,10 +244,7 @@ export const CollapsedSidebar: Story = {
 export const NoSidebar: Story = {
   render: () => (
     <DashboardLayout header={<MockHeader />}>
-      <DashboardContent
-        title="Dashboard"
-        breadcrumb={<MockBreadcrumb />}
-      >
+      <DashboardContent title="Dashboard" breadcrumb={<MockBreadcrumb />}>
         <MockDashboardCards />
       </DashboardContent>
     </DashboardLayout>

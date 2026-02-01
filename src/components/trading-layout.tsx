@@ -24,7 +24,8 @@ const tradingLayoutVariants = cva("flex flex-col w-full", {
 // =============================================================================
 
 export interface TradingLayoutProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof tradingLayoutVariants> {
   /** Header slot (navigation, account menu) */
   header?: React.ReactNode;
@@ -109,7 +110,9 @@ const TradingPanel = React.forwardRef<HTMLDivElement, TradingPanelProps>(
             {title && (
               <h3 className="text-sm font-medium text-foreground">{title}</h3>
             )}
-            {actions && <div className="flex items-center gap-1">{actions}</div>}
+            {actions && (
+              <div className="flex items-center gap-1">{actions}</div>
+            )}
           </div>
         )}
         <div className={cn("flex-1 overflow-auto", !noPadding && "p-3")}>

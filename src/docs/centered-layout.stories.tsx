@@ -294,7 +294,10 @@ export const WithDecorations: Story = {
     variant: "muted",
     showDecorations: true,
     children: (
-      <AuthCard title="Reset Password" subtitle="Enter your email to receive a reset link">
+      <AuthCard
+        title="Reset Password"
+        subtitle="Enter your email to receive a reset link"
+      >
         <div className="space-y-4">
           <div>
             <label className="text-sm font-medium">Email</label>
@@ -325,7 +328,11 @@ export const LargerContent: Story = {
     size: "md",
     variant: "gradient",
     children: (
-      <AuthCard logo={<SkaiLogo />} title="Create your account" variant="bordered">
+      <AuthCard
+        logo={<SkaiLogo />}
+        title="Create your account"
+        variant="bordered"
+      >
         <MockRegisterForm />
       </AuthCard>
     ),
@@ -347,11 +354,17 @@ export const CardVariants: Story = {
   render: () => (
     <div className="min-h-screen bg-muted/30 p-8">
       <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <AuthCard title="Default" subtitle="No border or shadow" variant="default">
+        <AuthCard
+          title="Default"
+          subtitle="No border or shadow"
+          variant="default"
+        >
           <p className="text-sm text-muted-foreground">Default card style</p>
         </AuthCard>
         <AuthCard title="Bordered" subtitle="With border" variant="bordered">
-          <p className="text-sm text-muted-foreground">Standard bordered card</p>
+          <p className="text-sm text-muted-foreground">
+            Standard bordered card
+          </p>
         </AuthCard>
         <AuthCard title="Elevated" subtitle="With shadow" variant="elevated">
           <p className="text-sm text-muted-foreground">Elevated with shadow</p>
@@ -366,7 +379,8 @@ export const CardVariants: Story = {
     layout: "fullscreen",
     docs: {
       description: {
-        story: "AuthCard supports default, bordered, elevated, and glass variants.",
+        story:
+          "AuthCard supports default, bordered, elevated, and glass variants.",
       },
     },
   },
@@ -381,7 +395,9 @@ export const SimpleMessage: Story = {
         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-skai-green/20 flex items-center justify-center">
           <Mail className="h-8 w-8 text-skai-green" />
         </div>
-        <h1 className="text-2xl font-semibold text-foreground">Check your email</h1>
+        <h1 className="text-2xl font-semibold text-foreground">
+          Check your email
+        </h1>
         <p className="mt-2 text-muted-foreground max-w-sm">
           We've sent a verification link to <strong>you@example.com</strong>.
           Click the link to verify your account.

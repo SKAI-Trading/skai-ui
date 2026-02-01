@@ -13,7 +13,8 @@ const centeredLayoutVariants = cva(
       variant: {
         default: "bg-background",
         muted: "bg-muted/30",
-        gradient: "bg-gradient-to-br from-green-coal-900 via-background to-green-coal-800",
+        gradient:
+          "bg-gradient-to-br from-green-coal-900 via-background to-green-coal-800",
         pattern:
           "bg-background bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-coal-900/20 via-background to-background",
       },
@@ -51,7 +52,8 @@ const centeredContentVariants = cva("w-full", {
 // =============================================================================
 
 export interface CenteredLayoutProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof centeredLayoutVariants> {
   /** Header slot (logo, back button) */
   header?: React.ReactNode;
@@ -131,15 +133,15 @@ const AuthCard = React.forwardRef<HTMLDivElement, AuthCardProps>(
         {...props}
       >
         {/* Logo */}
-        {logo && (
-          <div className="flex justify-center mb-6">{logo}</div>
-        )}
+        {logo && <div className="flex justify-center mb-6">{logo}</div>}
 
         {/* Title & Subtitle */}
         {(title || subtitle) && (
           <div className="text-center mb-6">
             {title && (
-              <h1 className="text-2xl font-semibold text-foreground">{title}</h1>
+              <h1 className="text-2xl font-semibold text-foreground">
+                {title}
+              </h1>
             )}
             {subtitle && (
               <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>

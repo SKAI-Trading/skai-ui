@@ -24,7 +24,8 @@ const dashboardLayoutVariants = cva("flex min-h-screen w-full", {
 // =============================================================================
 
 export interface DashboardLayoutProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof dashboardLayoutVariants> {
   /** Sidebar content */
   sidebar?: React.ReactNode;
@@ -48,8 +49,7 @@ export interface DashboardLayoutProps
   mobileBreakpoint?: number;
 }
 
-export interface DashboardSidebarProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface DashboardSidebarProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Header slot (logo, branding) */
   header?: React.ReactNode;
   /** Navigation content */
@@ -60,8 +60,7 @@ export interface DashboardSidebarProps
   collapsed?: boolean;
 }
 
-export interface DashboardContentProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface DashboardContentProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Page title */
   title?: string;
   /** Page subtitle/description */
@@ -85,8 +84,14 @@ export interface DashboardContentProps
 /**
  * DashboardSidebar - Sidebar container with header/footer slots
  */
-const DashboardSidebar = React.forwardRef<HTMLDivElement, DashboardSidebarProps>(
-  ({ header, children, footer, collapsed = false, className, ...props }, ref) => {
+const DashboardSidebar = React.forwardRef<
+  HTMLDivElement,
+  DashboardSidebarProps
+>(
+  (
+    { header, children, footer, collapsed = false, className, ...props },
+    ref,
+  ) => {
     return (
       <div
         ref={ref}
@@ -109,7 +114,9 @@ const DashboardSidebar = React.forwardRef<HTMLDivElement, DashboardSidebarProps>
         )}
 
         {/* Sidebar Navigation */}
-        <nav className={cn("flex-1 overflow-y-auto", collapsed ? "p-2" : "p-3")}>
+        <nav
+          className={cn("flex-1 overflow-y-auto", collapsed ? "p-2" : "p-3")}
+        >
           {children}
         </nav>
 
@@ -137,7 +144,10 @@ DashboardSidebar.displayName = "DashboardSidebar";
 /**
  * DashboardContent - Main content area with title, breadcrumb, actions
  */
-const DashboardContent = React.forwardRef<HTMLDivElement, DashboardContentProps>(
+const DashboardContent = React.forwardRef<
+  HTMLDivElement,
+  DashboardContentProps
+>(
   (
     {
       title,
@@ -187,12 +197,16 @@ const DashboardContent = React.forwardRef<HTMLDivElement, DashboardContentProps>
                 <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
               )}
             </div>
-            {actions && <div className="flex items-center gap-2">{actions}</div>}
+            {actions && (
+              <div className="flex items-center gap-2">{actions}</div>
+            )}
           </div>
         )}
 
         {/* Main Content */}
-        <div className={cn("flex-1", maxWidthClasses[maxWidth])}>{children}</div>
+        <div className={cn("flex-1", maxWidthClasses[maxWidth])}>
+          {children}
+        </div>
       </div>
     );
   },
@@ -339,7 +353,9 @@ const DashboardLayout = React.forwardRef<HTMLDivElement, DashboardLayoutProps>(
                 <button
                   onClick={() => handleCollapsedChange(!isCollapsed)}
                   className="absolute -right-3 top-6 z-10 flex h-6 w-6 items-center justify-center rounded-full border bg-background shadow-sm hover:bg-accent transition-colors"
-                  aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+                  aria-label={
+                    isCollapsed ? "Expand sidebar" : "Collapse sidebar"
+                  }
                 >
                   {isCollapsed ? (
                     <ChevronRight className="h-4 w-4" />

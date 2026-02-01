@@ -343,7 +343,8 @@ export const PanelVariants: Story = {
     layout: "padded",
     docs: {
       description: {
-        story: "TradingPanel supports default, bordered, and elevated variants.",
+        story:
+          "TradingPanel supports default, bordered, and elevated variants.",
       },
     },
   },
