@@ -5,6 +5,7 @@
 ## Current State
 
 Layout components currently live in `src/components/layout/` in the main app:
+
 - `Layout.tsx` - Main app shell wrapper
 - `Header.tsx` - Top navigation header (~865 lines)
 - `Footer.tsx` - Site footer
@@ -22,6 +23,7 @@ Layout components currently live in `src/components/layout/` in the main app:
 **Principle**: Separate presentation (skai-ui) from business logic (app-specific)
 
 ### Phase 1: Core Layout Shell ⬜
+
 Create presentational layout components that accept slots/children:
 
 - [ ] `AppShell` - Main layout wrapper
@@ -34,7 +36,7 @@ Create presentational layout components that accept slots/children:
   - Slots for logo, nav items, right-side actions
   - Responsive behavior built-in
 
-- [ ] `AppFooter` - Footer container  
+- [ ] `AppFooter` - Footer container
   - Props: `links`, `social`, `copyright`, `className`
   - Standard footer layout
 
@@ -118,7 +120,7 @@ export const AppHeader = ({ logo, navigation, actions }: AppHeaderProps) => (
 export const Header = () => {
   const { isAdmin } = useAdmin();
   const { isConnected } = useWallet();
-  
+
   return (
     <AppHeader
       logo={<Logo />}
@@ -153,17 +155,17 @@ export const Header = () => {
 
 ## Files to Migrate
 
-| Source (main app) | Target (skai-ui) | Priority | Status |
-|-------------------|------------------|----------|--------|
-| `Layout.tsx` | `AppShell` | P0 | ⬜ |
-| `Header.tsx` | `AppHeader` | P0 | ⬜ |
-| `Footer.tsx` | `AppFooter` | P2 | ⬜ |
-| `BottomTickerBar.tsx` | `DockBar` + `TickerTape` | P1 | ⬜ |
-| `MobileBottomNav.tsx` | `MobileNav` | P1 | ⬜ |
-| `HeaderStatusBar.tsx` | `StatusBar` | P2 | ⬜ |
-| `AccountDropdown.tsx` | `AccountMenu` | P2 | ⬜ |
-| `EthBalanceDisplay.tsx` | `BalanceDisplay` | P3 | ⬜ |
-| `PageTransition.tsx` | (use existing animations) | P3 | ⬜ |
+| Source (main app)       | Target (skai-ui)          | Priority | Status |
+| ----------------------- | ------------------------- | -------- | ------ |
+| `Layout.tsx`            | `AppShell`                | P0       | ⬜     |
+| `Header.tsx`            | `AppHeader`               | P0       | ⬜     |
+| `Footer.tsx`            | `AppFooter`               | P2       | ⬜     |
+| `BottomTickerBar.tsx`   | `DockBar` + `TickerTape`  | P1       | ⬜     |
+| `MobileBottomNav.tsx`   | `MobileNav`               | P1       | ⬜     |
+| `HeaderStatusBar.tsx`   | `StatusBar`               | P2       | ⬜     |
+| `AccountDropdown.tsx`   | `AccountMenu`             | P2       | ⬜     |
+| `EthBalanceDisplay.tsx` | `BalanceDisplay`          | P3       | ⬜     |
+| `PageTransition.tsx`    | (use existing animations) | P3       | ⬜     |
 
 ## Testing Requirements
 

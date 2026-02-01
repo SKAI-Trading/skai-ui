@@ -100,6 +100,9 @@ export * from "./components/date-picker";
 // Components - Trading Advanced
 export * from "./components/order-book";
 export * from "./components/depth-chart";
+export * from "./components/candlestick-chart";
+export * from "./components/funding-rate";
+export * from "./components/liquidation-warning";
 
 // Components - Performance (Lazy-loaded)
 export * from "./components/lazy-chart";
@@ -107,6 +110,17 @@ export * from "./components/lazy-chart";
 // Components - Decorative
 export * from "./components/dock-icon";
 export * from "./components/particle-background";
+
+// Components - Layout Extended
+export * from "./components/carousel";
+export * from "./components/masonry";
+
+// Components - Feedback Extended
+export * from "./components/sonner";
+export * from "./components/tour";
+
+// Components - Data Display Extended
+export * from "./components/qr-code";
 
 // Components - Theme
 export * from "./components/theme-provider";
