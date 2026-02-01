@@ -1,0 +1,9 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="80" fill="#EF4444" fill-opacity="0.1" stroke="#EF4444" stroke-opacity="0.3" stroke-width="2"/>
+  <!-- Error X icon -->
+  <circle cx="100" cy="90" r="35" fill="none" stroke="#EF4444" stroke-width="3"/>
+  <path d="M85 75 L115 105 M115 75 L85 105" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <!-- Warning text line -->
+  <rect x="60" y="145" width="80" height="8" rx="4" fill="#EF4444" fill-opacity="0.3"/>
+  <rect x="70" y="160" width="60" height="6" rx="3" fill="#EF4444" fill-opacity="0.2"/>
+</svg>

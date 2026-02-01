@@ -1,0 +1,278 @@
+{/* For Designers - Design System Guide */}
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Getting Started/For Designers" />
+
+# 🎨 For Designers
+
+Welcome to the SKAI Design System! This guide will help you understand how our design system works and how to collaborate effectively with developers.
+
+---
+
+## What is SKAI UI?
+
+SKAI UI is our **single source of truth** for all user interface components, design tokens, patterns, and guidelines. Everything in this Storybook directly corresponds to our production code.
+
+### Key Principles
+
+| Principle         | Description                                                       |
+| ----------------- | ----------------------------------------------------------------- |
+| **Consistency**   | Same components used everywhere, same behavior expected           |
+| **Accessibility** | WCAG 2.1 AA compliant, keyboard navigable, screen reader friendly |
+| **Performance**   | Optimized bundle size, lazy loading, minimal re-renders           |
+| **Flexibility**   | Components adapt to different contexts via variants and slots     |
+
+---
+
+## Design Tokens
+
+Design tokens are the foundation of our visual language. They live in **Figma** and sync to code.
+
+### 📦 Token Categories
+
+#### Colors
+
+```
+Primary:    #6366F1 (Indigo-500)
+Secondary:  #EC4899 (Pink-500)
+Success:    #10B981 (Emerald-500)
+Warning:    #F59E0B (Amber-500)
+Error:      #EF4444 (Red-500)
+```
+
+#### Typography
+
+```
+Font Family:    Inter (primary), JetBrains Mono (code)
+Scale:          12, 14, 16, 18, 20, 24, 30, 36, 48, 60px
+Line Heights:   1.0, 1.25, 1.375, 1.5, 1.625, 2.0
+```
+
+#### Spacing
+
+```
+Base unit: 4px
+Scale: 0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128px
+```
+
+#### Border Radius
+
+```
+xs: 4px
+sm: 6px
+md: 8px (default)
+lg: 12px
+xl: 16px
+full: 9999px
+```
+
+> 📖 See **Design Tokens → Colors**, **Typography**, and **Spacing** in sidebar for full reference
+
+---
+
+## How to Use This Storybook
+
+### 1. Browse Components
+
+Navigate the sidebar to find components. Each component page shows:
+
+- **Preview** - Live, interactive component
+- **Docs** - Props, variants, usage guidelines
+- **Source** - Copy-paste ready code
+
+### 2. Test States
+
+Use the **Controls** panel to:
+
+- Change props (size, variant, disabled)
+- Test dark/light mode
+- Preview responsive behavior
+
+### 3. Copy Code
+
+When you've configured a component, click **"Show code"** to copy the exact implementation.
+
+---
+
+## Design ↔ Code Workflow
+
+### Token Sync (Figma → Code)
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│                 │     │                 │     │                 │
+│     FIGMA       │────▶│  design-tokens  │────▶│   Components    │
+│   (Tokens       │     │    .json        │     │   use tokens    │
+│    Studio)      │     │                 │     │                 │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+```
+
+1. **Designers** update tokens in Figma (Tokens Studio plugin)
+2. **Export** tokens to `design-tokens.json`
+3. **Build** automatically generates CSS variables
+4. **Components** use CSS variables for all styling
+
+### 🔄 Figma Token Sync Workflow
+
+We use **Tokens Studio for Figma** to manage design tokens. Here's the complete sync process:
+
+#### Setup (One-time)
+
+1. Install [Tokens Studio](https://tokens.studio/) plugin in Figma
+2. Create a new token set named "SKAI"
+3. Import base tokens from `design-tokens.json` in the codebase
+
+#### Making Token Changes
+
+1. **In Figma:** Update tokens using Tokens Studio plugin
+2. **Export:** Click "Export" → Save as JSON
+3. **Save file:** Copy to `modules/skai-ui/design-tokens.figma.json`
+4. **Sync:** Run the sync command:
+
+```bash
+cd modules/skai-ui
+npm run tokens:sync
+```
+
+5. **Verify:** Check generated files:
+   - `src/lib/design-tokens.json` - Token definitions
+   - `src/lib/design-tokens.css` - CSS custom properties
+
+#### Validation
+
+Before deploying, validate tokens match Figma:
+
+```bash
+npm run tokens:validate
+```
+
+This will show any discrepancies between Figma export and code.
+
+#### Token File Structure
+
+```
+modules/skai-ui/
+├── design-tokens.figma.json   # Figma export (gitignored)
+├── src/lib/
+│   ├── design-tokens.json     # Source of truth
+│   └── design-tokens.css      # Generated CSS variables
+└── scripts/
+    └── sync-figma-tokens.js   # Sync script
+```
+
+> ⚠️ **Important:** Always export from Figma before running sync. Never edit `design-tokens.json` directly!
+
+### Component Workflow
+
+When designing a new component:
+
+1. **Design in Figma** - Create component with all states
+2. **Document specs** - Note sizes, spacing, behavior
+3. **Review with dev** - Align on props and variants
+4. **Dev implements** - Component added to skai-ui
+5. **Design QA** - Verify implementation matches design
+6. **Ship!** - Available in Storybook and production
+
+---
+
+## Component Anatomy
+
+Every component should have documented:
+
+### States
+
+- **Default** - Normal resting state
+- **Hover** - Mouse over (desktop)
+- **Active/Pressed** - While clicking/tapping
+- **Focus** - Keyboard focused (visible ring)
+- **Disabled** - Non-interactive
+- **Loading** - Async operation in progress
+- **Error** - Validation failed
+
+### Variants
+
+Example Button variants:
+
+- `default` - Standard button
+- `destructive` - Dangerous action
+- `outline` - Secondary importance
+- `ghost` - Tertiary, inline actions
+- `link` - Text-only, navigational
+
+### Sizes
+
+Standard sizes across components:
+
+- `sm` - Compact UI, tables, dense layouts
+- `md` - Default, most contexts
+- `lg` - Hero sections, primary actions
+
+---
+
+## Accessibility Requirements
+
+All components must meet these requirements:
+
+### Visual
+
+- ✅ 4.5:1 contrast ratio for text
+- ✅ 3:1 contrast ratio for UI elements
+- ✅ Never rely on color alone for meaning
+- ✅ Focus indicators visible
+
+### Interactive
+
+- ✅ 44x44px minimum touch target
+- ✅ Keyboard navigable
+- ✅ Screen reader labels
+- ✅ Reduced motion support
+
+### Testing
+
+Designers should test with:
+
+- Figma a11y plugins (Stark, A11y Annotation Kit)
+- Color blindness simulators
+- High contrast mode
+
+---
+
+## Handoff Checklist
+
+When handing off designs to developers:
+
+- [ ] All states designed (default, hover, active, disabled, error, loading)
+- [ ] Responsive behavior specified (mobile, tablet, desktop)
+- [ ] Spacing uses design tokens (not arbitrary values)
+- [ ] Colors use semantic tokens (not hex values)
+- [ ] Typography uses type scale
+- [ ] Accessibility requirements noted
+- [ ] Edge cases covered (empty states, errors, long text)
+- [ ] Dark mode variant provided
+- [ ] Animation/transition specs if applicable
+
+---
+
+## Quick Links
+
+| Resource                                                           | Description            |
+| ------------------------------------------------------------------ | ---------------------- |
+| [Design Tokens → Colors](/docs/design-tokens-colors--docs)         | Complete color palette |
+| [Design Tokens → Typography](/docs/design-tokens-typography--docs) | Font scales and styles |
+| [Design Tokens → Spacing](/docs/design-tokens-spacing--docs)       | Spacing units          |
+| [Design Tokens → Icons](/docs/design-tokens-icons--docs)           | Icon library           |
+| [Patterns → Forms](/docs/patterns-forms--docs)                     | Form patterns          |
+| [Patterns → Web3](/docs/patterns-web3--docs)                       | Wallet & blockchain UI |
+| [Page Templates](/docs/page-templates-dashboard--docs)             | Full page layouts      |
+
+---
+
+## Getting Help
+
+- **Slack:** #design-system
+- **GitHub:** [skai-ui issues](https://github.com/SKAI-Trading/skai-ui/issues)
+- **Office Hours:** Fridays 2-3pm
+
+---
+
+_Happy designing! 🎨_

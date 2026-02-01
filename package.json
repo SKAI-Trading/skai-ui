@@ -32,7 +32,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "clean": "rimraf dist storybook-static",
-    "prepublishOnly": "npm run build:quiet"
+    "prepublishOnly": "npm run build:quiet",
+    "tokens:sync": "node scripts/sync-figma-tokens.js --from-figma",
+    "tokens:generate": "node scripts/sync-figma-tokens.js --generate",
+    "tokens:validate": "node scripts/sync-figma-tokens.js --validate"
   },
   "peerDependencies": {
     "react": "^18.0.0",

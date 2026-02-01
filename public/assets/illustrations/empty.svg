@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="emptyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="80" fill="url(#emptyGrad)" stroke="#6366F1" stroke-opacity="0.3" stroke-width="2"/>
+  <!-- Empty box icon -->
+  <rect x="60" y="70" width="80" height="60" rx="4" fill="none" stroke="#6B7280" stroke-width="2"/>
+  <path d="M60 85 L100 100 L140 85" stroke="#6B7280" stroke-width="2" fill="none"/>
+  <line x1="100" y1="100" x2="100" y2="130" stroke="#6B7280" stroke-width="2"/>
+  <!-- Dashed circle -->
+  <circle cx="100" cy="160" r="15" fill="none" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="100" y="165" font-family="Inter, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">?</text>
+</svg>

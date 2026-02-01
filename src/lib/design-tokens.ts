@@ -290,9 +290,291 @@ export function generateCSSVariables(): string {
 }
 
 // =============================================================================
+// COMPONENT TOKENS
+// =============================================================================
+
+/**
+ * Button/CTA component specs from Figma
+ * 4 sizes × 4 types with state variants
+ */
+export const skaiButton = {
+  sizes: {
+    massive: {
+      height: "72px",
+      padding: "20px 48px",
+      fontSize: "18px",
+      lineHeight: "24px",
+      borderRadius: "16px",
+      iconSize: "24px",
+    },
+    large: {
+      height: "64px",
+      padding: "20px 40px",
+      fontSize: "16px",
+      lineHeight: "22px",
+      borderRadius: "16px",
+      iconSize: "24px",
+    },
+    medium: {
+      height: "50px",
+      padding: "14px 32px",
+      fontSize: "14px",
+      lineHeight: "18px",
+      borderRadius: "12px",
+      iconSize: "16px",
+    },
+    small: {
+      height: "46px",
+      padding: "12px 24px",
+      fontSize: "14px",
+      lineHeight: "18px",
+      borderRadius: "12px",
+      iconSize: "16px",
+    },
+  },
+  types: {
+    primary: {
+      background: "#56C7F3", // Sky Blue
+      text: "#001615", // Green Coal 300
+      hoverBackground: "#17F9B4", // Alien Green
+      focusRing: "#17F9B4",
+    },
+    secondary: {
+      background: "transparent",
+      border: "#56C7F3",
+      text: "#56C7F3",
+      hoverBackground: "rgba(86, 199, 243, 0.1)",
+      focusRing: "#56C7F3",
+    },
+    tertiary: {
+      background: "transparent",
+      text: "#FFFFFF",
+      hoverText: "#17F9B4",
+      focusRing: "#17F9B4",
+    },
+    link: {
+      background: "transparent",
+      text: "#17F9B4",
+      hoverText: "#56C7F3",
+      textDecoration: "underline",
+    },
+  },
+} as const;
+
+/**
+ * Input component specs from Figma
+ * 3 sizes × 6 states × 2 modes
+ */
+export const skaiInput = {
+  sizes: {
+    large: {
+      height: "132px",
+      padding: "20px",
+      fontSize: "16px",
+      lineHeight: "22px",
+      borderRadius: "16px",
+      labelSize: "14px",
+    },
+    medium: {
+      height: "98px",
+      padding: "16px",
+      fontSize: "14px",
+      lineHeight: "18px",
+      borderRadius: "12px",
+      labelSize: "12px",
+    },
+    small: {
+      height: "88px",
+      padding: "12px",
+      fontSize: "14px",
+      lineHeight: "18px",
+      borderRadius: "12px",
+      labelSize: "12px",
+    },
+  },
+  states: {
+    normal: {
+      borderColor: "transparent",
+      borderWidth: "1.5px",
+    },
+    active: {
+      borderColor: "#17F9B4", // Alien Green
+      borderWidth: "1.5px",
+    },
+    focus: {
+      borderColor: "#56C7F3", // Sky Blue
+      borderWidth: "2px",
+      boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.24)",
+    },
+    completed: {
+      borderColor: "#17F9B4",
+      borderWidth: "1.5px",
+    },
+    error: {
+      borderColor: "#FF574A", // Red
+      borderWidth: "1.5px",
+    },
+  },
+  modes: {
+    dark: {
+      background: "#001615", // Green Coal 300
+      text: "#FFFFFF",
+      placeholder: "rgba(255, 255, 255, 0.6)",
+      label: "#FFFFFF",
+    },
+    light: {
+      background: "#FFFFFF",
+      text: "#001615",
+      placeholder: "rgba(0, 22, 21, 0.6)",
+      label: "#001615",
+    },
+  },
+} as const;
+
+/**
+ * Label/Tag component specs from Figma
+ * 3 sizes × 3 types
+ */
+export const skaiLabel = {
+  sizes: {
+    large: {
+      height: "18px",
+      padding: "2px 8px",
+      fontSize: "11px",
+      lineHeight: "14px",
+      iconSize: "10px",
+      gap: "4px",
+    },
+    medium: {
+      height: "14px",
+      padding: "2px 6px",
+      fontSize: "10px",
+      lineHeight: "12px",
+      iconSize: "8px",
+      gap: "3px",
+    },
+    small: {
+      height: "14px",
+      padding: "2px 6px",
+      fontSize: "10px",
+      lineHeight: "12px",
+      iconSize: "8px",
+      gap: "3px",
+    },
+  },
+  types: {
+    fill: {
+      background: "#17F9B4", // Alien Green
+      text: "#001615", // Green Coal 300
+      borderRadius: "9999px", // Full rounded
+    },
+    stroke: {
+      background: "transparent",
+      border: "#17F9B4",
+      text: "#17F9B4",
+      borderRadius: "9999px",
+    },
+    flag: {
+      background: "#17F9B4",
+      text: "#001615",
+      borderRadius: "4px", // Slightly rounded
+    },
+  },
+} as const;
+
+/**
+ * Icon sizes from Figma
+ */
+export const skaiIcons = {
+  sizes: {
+    xs: "10px",
+    sm: "16px",
+    md: "24px",
+    lg: "48px",
+  },
+  action: [
+    "close",
+    "hot",
+    "enter",
+    "back",
+    "forward",
+    "check-enclosed",
+    "copy",
+    "dot",
+    "loading",
+  ],
+  social: ["discord", "instagram", "x"],
+  wallets: [
+    "metamask",
+    "coinbase",
+    "walletconnect",
+    "phantom",
+    "google",
+    "apple",
+  ],
+} as const;
+
+/**
+ * Box shadow presets from Figma
+ */
+export const skaiShadows = {
+  inputHint: "0px 4px 12px rgba(0, 0, 0, 0.24)",
+  card: "0px 8px 24px rgba(0, 0, 0, 0.16)",
+  modal: "0px 16px 48px rgba(0, 0, 0, 0.24)",
+  button: "0px 4px 8px rgba(0, 0, 0, 0.12)",
+} as const;
+
+/**
+ * Border radius presets from Figma
+ */
+export const skaiBorderRadius = {
+  none: "0px",
+  sm: "4px",
+  md: "8px",
+  lg: "12px",
+  xl: "16px",
+  "2xl": "24px",
+  full: "9999px",
+} as const;
+
+/**
+ * Spacing scale (matches Figma s-* variables)
+ */
+export const skaiSpacing = {
+  "0.5": "2px", // s-0.5
+  "1": "4px", // s-1
+  "2": "8px", // s-2
+  "2.5": "10px", // s-2.5
+  "3": "12px", // s-3
+  "4": "16px", // s-4
+  "5": "20px", // s-5
+  "6": "24px", // s-6
+  "8": "32px", // s-8
+  "10": "40px", // s-10
+  "12": "48px", // s-12
+} as const;
+
+/**
+ * Letter spacing presets (-4% from Figma)
+ */
+export const skaiLetterSpacing = {
+  tight: "-0.04em", // -4% used across design
+  normal: "0",
+  wide: "0.02em",
+} as const;
+
+// =============================================================================
 // TYPE EXPORTS
 // =============================================================================
 
 export type SkaiColorKey = keyof typeof skaiColors;
 export type SkaiFontKey = keyof typeof skaiFonts;
 export type SkaiGradientKey = keyof typeof gradients;
+export type SkaiButtonSize = keyof typeof skaiButton.sizes;
+export type SkaiButtonType = keyof typeof skaiButton.types;
+export type SkaiInputSize = keyof typeof skaiInput.sizes;
+export type SkaiInputState = keyof typeof skaiInput.states;
+export type SkaiInputMode = keyof typeof skaiInput.modes;
+export type SkaiLabelSize = keyof typeof skaiLabel.sizes;
+export type SkaiLabelType = keyof typeof skaiLabel.types;
+export type SkaiIconSize = keyof typeof skaiIcons.sizes;

@@ -1,0 +1,494 @@
+{/* For Developers - Integration Guide */}
+import { Meta, Source } from '@storybook/blocks';
+
+<Meta title="Getting Started/For Developers" />
+
+# 👨‍💻 For Developers
+
+This guide covers how to integrate and use SKAI UI in your projects.
+
+---
+
+## Installation
+
+### From Submodule (Recommended)
+
+SKAI UI is included as a submodule in the monorepo:
+
+```bash
+# Already included in main repo
+modules/skai-ui/
+
+# Your package.json should have:
+{
+  "dependencies": {
+    "@skai/ui": "file:modules/skai-ui"
+  }
+}
+```
+
+### From npm (Coming Soon)
+
+```bash
+npm install @skai/ui
+```
+
+---
+
+## Quick Start
+
+### 1. Import Styles
+
+Add the CSS file to your app entry point:
+
+```tsx
+// main.tsx or App.tsx
+import "@skai/ui/dist/index.css";
+```
+
+### 2. Wrap with ThemeProvider
+
+```tsx
+// App.tsx
+import { ThemeProvider } from "@skai/ui";
+
+function App() {
+  return (
+    <ThemeProvider defaultTheme="dark">
+      <YourApp />
+    </ThemeProvider>
+  );
+}
+```
+
+### 3. Use Components
+
+```tsx
+import { Button, Card, Input, Badge } from "@skai/ui";
+
+function MyComponent() {
+  return (
+    <Card>
+      <Input placeholder="Enter amount" />
+      <Button variant="default" size="md">
+        Swap
+      </Button>
+      <Badge variant="success">Confirmed</Badge>
+    </Card>
+  );
+}
+```
+
+---
+
+## Component Categories
+
+### Primitives
+
+Core building blocks for any UI:
+
+```tsx
+import {
+  Button,
+  Input,
+  Label,
+  Checkbox,
+  Switch,
+  Select,
+  Textarea,
+  Badge,
+  Avatar,
+  Skeleton,
+  Separator,
+  Progress,
+} from "@skai/ui";
+```
+
+### Layout
+
+Structure and organization:
+
+```tsx
+import {
+  Card,
+  Tabs,
+  Accordion,
+  Sheet,
+  Dialog,
+  Popover,
+  DropdownMenu,
+  Tooltip,
+  HoverCard,
+  ScrollArea,
+} from "@skai/ui";
+```
+
+### Trading Components
+
+Crypto/DeFi specific components:
+
+```tsx
+import {
+  TokenIcon,
+  TokenSelect,
+  SwapInput,
+  PriceDisplay,
+  OrderBook,
+  DepthChart,
+  TierBadge,
+  WalletAddress,
+  GasPriceIndicator,
+  TransactionStatus,
+} from "@skai/ui";
+```
+
+### Feedback
+
+User notifications and status:
+
+```tsx
+import {
+  Alert,
+  AlertDialog,
+  Toast,
+  Toaster,
+  Spinner,
+  EmptyState,
+  ErrorBoundary,
+} from "@skai/ui";
+```
+
+### Actions
+
+Interactive elements:
+
+```tsx
+import {
+  LoadingButton,
+  CopyButton,
+  ConfirmDialog,
+  ThemeToggle,
+} from "@skai/ui";
+```
+
+---
+
+## Theming
+
+### Using the Theme
+
+```tsx
+import { useTheme } from "@skai/ui";
+
+function MyComponent() {
+  const { theme, setTheme, isDark } = useTheme();
+
+  return (
+    <Button onClick={() => setTheme(isDark ? "light" : "dark")}>
+      Toggle Theme
+    </Button>
+  );
+}
+```
+
+### Theme Toggle Component
+
+```tsx
+import { ThemeToggle } from '@skai/ui';
+
+// Simple toggle button
+<ThemeToggle />
+
+// With custom styling
+<ThemeToggle className="fixed top-4 right-4" />
+```
+
+### CSS Variables
+
+All design tokens are available as CSS variables:
+
+```css
+/* Colors */
+--skai-primary: 239 84% 67%;
+--skai-secondary: 328 86% 70%;
+--skai-background: 0 0% 100%;
+--skai-foreground: 222 47% 11%;
+
+/* Typography */
+--font-sans: 'Inter', sans-serif;
+--font-mono: 'JetBrains Mono', monospace;
+
+/* Spacing (use Tailwind classes) */
+p-4  /* 16px */
+m-8  /* 32px */
+gap-2  /* 8px */
+```
+
+---
+
+## Patterns
+
+### Form Pattern
+
+```tsx
+import { Button, Input, Label, Card } from "@skai/ui";
+
+function LoginForm() {
+  return (
+    <Card className="p-6 max-w-md">
+      <div className="space-y-4">
+        <div>
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" type="email" placeholder="you@example.com" />
+        </div>
+        <div>
+          <Label htmlFor="password">Password</Label>
+          <Input id="password" type="password" />
+        </div>
+        <Button className="w-full">Sign In</Button>
+      </div>
+    </Card>
+  );
+}
+```
+
+### Swap Pattern
+
+```tsx
+import { SwapInput, Button, Card } from "@skai/ui";
+import { useState } from "react";
+
+function SwapForm() {
+  const [fromAmount, setFromAmount] = useState("");
+  const [toAmount, setToAmount] = useState("");
+
+  return (
+    <Card className="p-4 space-y-4">
+      <SwapInput
+        label="From"
+        token={{ symbol: "ETH", icon: "/tokens/eth.svg" }}
+        value={fromAmount}
+        onChange={setFromAmount}
+        balance="1.5"
+      />
+
+      <SwapInput
+        label="To"
+        token={{ symbol: "USDC", icon: "/tokens/usdc.svg" }}
+        value={toAmount}
+        onChange={setToAmount}
+        balance="1500"
+        disabled
+      />
+
+      <Button className="w-full" size="lg">
+        Swap
+      </Button>
+    </Card>
+  );
+}
+```
+
+### Loading Pattern
+
+```tsx
+import { LoadingButton, Skeleton, Spinner } from '@skai/ui';
+
+// Button with loading state
+<LoadingButton loading={isLoading} onClick={handleSubmit}>
+  Submit Transaction
+</LoadingButton>
+
+// Skeleton placeholders
+<div className="space-y-2">
+  <Skeleton className="h-4 w-full" />
+  <Skeleton className="h-4 w-3/4" />
+</div>
+
+// Inline spinner
+<Spinner size="sm" />
+```
+
+### Error Handling Pattern
+
+```tsx
+import { Alert, ErrorBoundary, EmptyState } from '@skai/ui';
+
+// Error alert
+<Alert variant="destructive">
+  <AlertTitle>Transaction Failed</AlertTitle>
+  <AlertDescription>
+    Insufficient funds for gas
+  </AlertDescription>
+</Alert>
+
+// Error boundary wrapper
+<ErrorBoundary fallback={<ErrorPage />}>
+  <YourComponent />
+</ErrorBoundary>
+
+// Empty state
+<EmptyState
+  icon={<WalletIcon />}
+  title="No Transactions"
+  description="Your transaction history will appear here"
+  action={<Button>Make a Trade</Button>}
+/>
+```
+
+---
+
+## Best Practices
+
+### ✅ Do
+
+```tsx
+// Use semantic variants
+<Button variant="destructive">Delete</Button>
+
+// Use design tokens via Tailwind
+<div className="p-4 bg-background text-foreground" />
+
+// Use composition
+<Card>
+  <CardHeader>
+    <CardTitle>Title</CardTitle>
+  </CardHeader>
+  <CardContent>Content</CardContent>
+</Card>
+
+// Handle loading states
+<LoadingButton loading={isPending}>Submit</LoadingButton>
+```
+
+### ❌ Don't
+
+```tsx
+// Don't use inline styles with arbitrary values
+<div style={{ padding: '17px', color: '#333' }} />
+
+// Don't create custom primitives
+const MyButton = styled.button`...`; // Use Button from @skai/ui
+
+// Don't hardcode colors
+<div className="bg-[#6366F1]" /> // Use bg-primary instead
+
+// Don't ignore accessibility
+<div onClick={handleClick}>Click me</div> // Use Button instead
+```
+
+---
+
+## TypeScript
+
+All components are fully typed. Import types as needed:
+
+```tsx
+import type {
+  ButtonProps,
+  CardProps,
+  InputProps,
+  BadgeVariant,
+  TierConfig,
+} from "@skai/ui";
+
+// Extend component props
+interface MyButtonProps extends ButtonProps {
+  customProp?: string;
+}
+```
+
+---
+
+## Testing
+
+### Unit Tests
+
+```tsx
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { Button, ThemeProvider } from "@skai/ui";
+
+test("button click", async () => {
+  const handleClick = vi.fn();
+
+  render(
+    <ThemeProvider>
+      <Button onClick={handleClick}>Click Me</Button>
+    </ThemeProvider>,
+  );
+
+  await userEvent.click(screen.getByRole("button"));
+  expect(handleClick).toHaveBeenCalled();
+});
+```
+
+### Accessibility Tests
+
+```tsx
+import { axe, toHaveNoViolations } from "jest-axe";
+
+expect.extend(toHaveNoViolations);
+
+test("no a11y violations", async () => {
+  const { container } = render(<Button>Click</Button>);
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+});
+```
+
+---
+
+## Troubleshooting
+
+### Styles Not Loading
+
+Make sure you import the CSS:
+
+```tsx
+import "@skai/ui/dist/index.css";
+```
+
+### Theme Not Working
+
+Wrap your app with ThemeProvider:
+
+```tsx
+<ThemeProvider defaultTheme="dark">
+  <App />
+</ThemeProvider>
+```
+
+### TypeScript Errors
+
+Ensure `@skai/ui` is in your dependencies:
+
+```json
+{
+  "dependencies": {
+    "@skai/ui": "file:modules/skai-ui"
+  }
+}
+```
+
+### React Hook Errors
+
+If you get "Cannot read properties of null (reading 'useRef')":
+
+1. Make sure `modules/skai-ui/node_modules` doesn't exist
+2. Run `npm install` only from root repo
+
+---
+
+## Resources
+
+| Resource      | Link                                              |
+| ------------- | ------------------------------------------------- |
+| Storybook     | https://docs.skai.trade/ui/                       |
+| GitHub        | https://github.com/SKAI-Trading/skai-ui           |
+| Design Tokens | [Design Tokens](/docs/design-tokens-colors--docs) |
+| Patterns      | [Patterns](/docs/patterns-forms--docs)            |
+
+---
+
+_Happy coding! 🚀_

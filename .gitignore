@@ -9,3 +9,6 @@ coverage/
 .env.*
 !.env.example
 storybook-static/
+
+# Figma token exports (regenerated from Figma)
+design-tokens.figma.json

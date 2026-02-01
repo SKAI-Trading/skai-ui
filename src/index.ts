@@ -5,6 +5,7 @@ export * from "./components/input";
 export * from "./components/badge";
 export * from "./components/label";
 export * from "./components/textarea";
+export * from "./components/skai-icon";
 
 // Components - Feedback
 export * from "./components/alert";
@@ -85,6 +86,7 @@ export * from "./components/trade-settings";
 export * from "./components/gas-estimate";
 export * from "./components/status-indicator";
 export * from "./components/risk-gauge";
+export * from "./components/tier-badge";
 
 // Components - Composites
 export * from "./components/stat-card";
@@ -158,26 +160,73 @@ export type { Theme, ThemeColors, ThemeTypography } from "./lib/theme-config";
 // CSS Custom Property Fallbacks (for older browser support)
 export * from "./lib/css-fallbacks";
 
-// Design Tokens - SKAI color palette, typography, and spacing
+// Design Tokens - SKAI color palette, typography, spacing, and components
 export {
+  // Colors
   skaiColors,
-  skaiFonts,
-  skaiFontSizes,
-  skaiGrid,
-  gradients,
   coreColors,
   greenCoalColors,
   accentColors,
   semanticColors,
   earthColors,
   neutralColors,
+  gradients,
+  // Typography
+  skaiFonts,
+  skaiFontSizes,
+  skaiLetterSpacing,
+  // Layout
+  skaiGrid,
+  skaiSpacing,
+  skaiBorderRadius,
+  skaiShadows,
+  // Component Tokens
+  skaiButton,
+  skaiInput,
+  skaiLabel,
+  skaiIcons,
+  // Utilities
   generateCSSVariables,
 } from "./lib/design-tokens";
 export type {
   SkaiColorKey,
   SkaiFontKey,
   SkaiGradientKey,
+  SkaiButtonSize,
+  SkaiButtonType,
+  SkaiInputSize,
+  SkaiInputState,
+  SkaiInputMode,
+  SkaiLabelSize,
+  SkaiLabelType,
+  SkaiIconSize,
 } from "./lib/design-tokens";
+
+// Figma Design Tokens (from Skai Web App)
+export {
+  colors,
+  typography,
+  spacing,
+  shadows,
+  animation,
+  breakpoints,
+  zIndex,
+  tokens,
+} from "./lib/tokens";
+export type {
+  Colors,
+  Typography,
+  Spacing,
+  Shadows,
+  Animation,
+  Breakpoints,
+  ZIndex,
+  Tokens,
+  BrandColor,
+  GreenCoalShade,
+  AppColor,
+  SemanticColor,
+} from "./lib/tokens";
 
 // Styles - import this in your app's main CSS
 // import '@skai/ui/dist/styles.css';

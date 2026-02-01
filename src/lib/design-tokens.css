@@ -1,0 +1,195 @@
+/**
+ * SKAI Design Tokens - CSS Custom Properties
+ * Generated from Figma: Skai Web App (3sSzw1KewMtUbeLAv7uW0r)
+ * Last Synced: 2026-02-01
+ * 
+ * Usage:
+ *   color: var(--skai-sky-blue);
+ *   background: var(--skai-green-coal-300);
+ *   font-family: var(--font-body);
+ */
+
+:root {
+  /* ========================================
+   * Brand Colors (From Figma)
+   * ======================================== */
+  --skai-sky-blue: #56c7f3;
+  --skai-sky-blue-300: #56c7f3;
+
+  --skai-green-coal-100: #123f3c;
+  --skai-green-coal-200: #122524;
+  --skai-green-coal-300: #001615;
+  --skai-green-coal: #001615;
+
+  --skai-printers-gold: #999966;
+  --skai-printers-gold-300: #999966;
+
+  --skai-sun-yellow: #ffff16;
+  --skai-sun-yellow-300: #ffff16;
+
+  /* ========================================
+   * Core Colors (From Figma)
+   * ======================================== */
+  --skai-white: #ffffff;
+  --skai-black: #000000;
+
+  /* ========================================
+   * App Colors (From Figma)
+   * ======================================== */
+  --skai-ash: #95a09f;
+  --skai-ash-300: #95a09f;
+
+  --skai-app-green: #17f9b4;
+  --skai-app-green-300: #17f9b4;
+  --skai-app-green-o: #17f9b4;
+
+  --skai-app-red: #ff574a;
+  --skai-app-red-300: #ff574a;
+  --skai-app-red-o: #fb3324;
+
+  --skai-gray-100: #e0e0e0;
+
+  /* ========================================
+   * Semantic Colors (Trading)
+   * ======================================== */
+  --skai-success: #17f9b4;
+  --skai-warning: #ffff16;
+  --skai-error: #ff574a;
+  --skai-info: #56c7f3;
+  --skai-profit: #17f9b4;
+  --skai-loss: #ff574a;
+
+  /* ========================================
+   * Legacy Colors (For Compatibility)
+   * ======================================== */
+  --skai-primary-50: #eef2ff;
+  --skai-primary-100: #e0e7ff;
+  --skai-primary-200: #c7d2fe;
+  --skai-primary-300: #a5b4fc;
+  --skai-primary-400: #818cf8;
+  --skai-primary-500: #6366f1;
+  --skai-primary-600: #4f46e5;
+  --skai-primary-700: #4338ca;
+  --skai-primary-800: #3730a3;
+  --skai-primary-900: #312e81;
+  --skai-primary: #6366f1;
+
+  --skai-secondary-50: #fdf2f8;
+  --skai-secondary-100: #fce7f3;
+  --skai-secondary-200: #fbcfe8;
+  --skai-secondary-300: #f9a8d4;
+  --skai-secondary-400: #f472b6;
+  --skai-secondary-500: #ec4899;
+  --skai-secondary-600: #db2777;
+  --skai-secondary-700: #be185d;
+  --skai-secondary-800: #9d174d;
+  --skai-secondary-900: #831843;
+  --skai-secondary: #ec4899;
+
+  --skai-gray-50: #f9fafb;
+  --skai-gray-200: #e5e7eb;
+  --skai-gray-300: #d1d5db;
+  --skai-gray-400: #9ca3af;
+  --skai-gray-500: #6b7280;
+  --skai-gray-600: #4b5563;
+  --skai-gray-700: #374151;
+  --skai-gray-800: #1f2937;
+  --skai-gray-900: #111827;
+
+  /* ========================================
+   * Typography (From Figma)
+   * ======================================== */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* Figma Typography Presets */
+  --text-super-headline: 32px;
+  --text-super-headline-lh: 36px;
+  --text-super-headline-ls: -1.28px;
+
+  --text-sub-headline: 18px;
+  --text-sub-headline-lh: 24px;
+  --text-sub-headline-ls: -0.72px;
+
+  --text-paragraph-1: 16px;
+  --text-paragraph-1-lh: 22px;
+  --text-paragraph-1-ls: -0.64px;
+
+  --text-paragraph-2: 14px;
+  --text-paragraph-2-lh: 18px;
+  --text-paragraph-2-ls: -0.56px;
+
+  /* ========================================
+   * Border Radius (From Figma)
+   * ======================================== */
+  --radius-button: 16px;
+  --radius-input: 16px;
+  --radius-card: 24px;
+  --radius-modal: 24px;
+
+  /* ========================================
+   * Shadows (From Figma)
+   * ======================================== */
+  --shadow-modal: 0px 10px 80px 0px rgba(0, 0, 0, 0.25);
+
+  /* ========================================
+   * Spacing (From Figma)
+   * ======================================== */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.25rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;
+
+  /* Figma Component Spacing */
+  --space-input: 22px;
+  --space-button-h: 40px;
+  --space-button-v: 22px;
+  --space-modal: 32px;
+  --space-modal-bottom: 48px;
+  --space-section-gap: 24px;
+  --space-1.5: 0.375rem;
+  --space-2.5: 0.625rem;
+  --space-3.5: 0.875rem;
+
+  /* ========================================
+   * Border Radius
+   * ======================================== */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;
+  --radius-default: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+}
