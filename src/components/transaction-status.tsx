@@ -159,11 +159,11 @@ const TransactionProgress = React.forwardRef<
   HTMLDivElement,
   TransactionProgressProps
 >(({ currentStep, steps, failedStep, className, ...props }, ref) => {
-  const currentStepName = steps[currentStep - 1] || '';
+  const currentStepName = steps[currentStep - 1] || "";
   const statusMessage = failedStep
     ? `Transaction failed at step ${failedStep}: ${steps[failedStep - 1]}`
     : currentStep > steps.length
-      ? 'Transaction complete'
+      ? "Transaction complete"
       : `Step ${currentStep} of ${steps.length}: ${currentStepName}`;
 
   return (

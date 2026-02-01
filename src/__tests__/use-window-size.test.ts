@@ -70,7 +70,7 @@ describe("useWindowSize", () => {
 
     expect(removeEventListenerSpy).toHaveBeenCalledWith(
       "resize",
-      expect.any(Function)
+      expect.any(Function),
     );
 
     removeEventListenerSpy.mockRestore();
@@ -153,7 +153,7 @@ describe("useScrollPosition", () => {
 
     expect(removeEventListenerSpy).toHaveBeenCalledWith(
       "scroll",
-      expect.any(Function)
+      expect.any(Function),
     );
 
     removeEventListenerSpy.mockRestore();

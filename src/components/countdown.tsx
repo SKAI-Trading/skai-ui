@@ -113,7 +113,7 @@ const Countdown = React.forwardRef<HTMLDivElement, CountdownProps>(
           className={cn("flex items-start gap-2", className)}
           role="timer"
           aria-live="polite"
-          aria-label={`${label ? label + ' ' : ''}${days > 0 ? days + ' days ' : ''}${hours} hours ${minutes} minutes ${seconds} seconds remaining`}
+          aria-label={`${label ? label + " " : ""}${days > 0 ? days + " days " : ""}${hours} hours ${minutes} minutes ${seconds} seconds remaining`}
           {...props}
         >
           {label && (
@@ -136,7 +136,7 @@ const Countdown = React.forwardRef<HTMLDivElement, CountdownProps>(
         )}
         role="timer"
         aria-live="polite"
-        aria-label={`${label ? label + ' ' : ''}${formatCountdown(countdown, format)} remaining`}
+        aria-label={`${label ? label + " " : ""}${formatCountdown(countdown, format)} remaining`}
         {...props}
       >
         {label && (

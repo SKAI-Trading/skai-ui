@@ -1,5 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
+import {
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+  act,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { SearchInput } from "../components/search-input";
 
@@ -82,7 +88,9 @@ describe("SearchInput", () => {
     });
 
     it("should update internal value when controlled value changes", () => {
-      const { rerender } = render(<SearchInput value="initial" onChange={() => {}} />);
+      const { rerender } = render(
+        <SearchInput value="initial" onChange={() => {}} />,
+      );
       expect(screen.getByRole("searchbox")).toHaveValue("initial");
 
       rerender(<SearchInput value="updated" onChange={() => {}} />);
@@ -104,7 +112,9 @@ describe("SearchInput", () => {
 
     it("should call onClear when clear button is clicked", async () => {
       const handleClear = vi.fn();
-      render(<SearchInput value="test" onChange={() => {}} onClear={handleClear} />);
+      render(
+        <SearchInput value="test" onChange={() => {}} onClear={handleClear} />,
+      );
 
       const clearButton = screen.getByLabelText("Clear search");
       await act(async () => {
@@ -141,7 +151,11 @@ describe("SearchInput", () => {
 
     it("should hide clear button when showClearButton is false", () => {
       render(
-        <SearchInput value="test" onChange={() => {}} showClearButton={false} />
+        <SearchInput
+          value="test"
+          onChange={() => {}}
+          showClearButton={false}
+        />,
       );
       expect(screen.queryByLabelText("Clear search")).not.toBeInTheDocument();
     });
@@ -170,7 +184,9 @@ describe("SearchInput", () => {
   describe("keyboard interactions", () => {
     it("should clear value on Escape key", async () => {
       const handleClear = vi.fn();
-      render(<SearchInput value="test" onChange={() => {}} onClear={handleClear} />);
+      render(
+        <SearchInput value="test" onChange={() => {}} onClear={handleClear} />,
+      );
 
       const input = screen.getByRole("searchbox");
       await act(async () => {
@@ -182,7 +198,9 @@ describe("SearchInput", () => {
 
     it("should not clear on Escape when value is empty", async () => {
       const handleClear = vi.fn();
-      render(<SearchInput value="" onChange={() => {}} onClear={handleClear} />);
+      render(
+        <SearchInput value="" onChange={() => {}} onClear={handleClear} />,
+      );
 
       const input = screen.getByRole("searchbox");
       await act(async () => {
@@ -213,7 +231,7 @@ describe("SearchInput", () => {
         <SearchInput
           debounceMs={300}
           onDebouncedChange={handleDebouncedChange}
-        />
+        />,
       );
 
       const input = screen.getByRole("searchbox");
@@ -234,7 +252,7 @@ describe("SearchInput", () => {
         <SearchInput
           debounceMs={300}
           onDebouncedChange={handleDebouncedChange}
-        />
+        />,
       );
 
       const input = screen.getByRole("searchbox");
@@ -260,7 +278,7 @@ describe("SearchInput", () => {
         <SearchInput
           debounceMs={0}
           onDebouncedChange={handleDebouncedChange}
-        />
+        />,
       );
 
       const input = screen.getByRole("searchbox");
@@ -303,7 +321,9 @@ describe("SearchInput", () => {
   // Focus behavior
   describe("focus behavior", () => {
     it("should focus input after clearing", async () => {
-      render(<SearchInput value="test" onChange={() => {}} onClear={() => {}} />);
+      render(
+        <SearchInput value="test" onChange={() => {}} onClear={() => {}} />,
+      );
 
       const input = screen.getByRole("searchbox");
       const clearButton = screen.getByLabelText("Clear search");

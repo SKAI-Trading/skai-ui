@@ -10,6 +10,16 @@ const alertVariants = cva(
         default: "bg-background text-foreground",
         destructive:
           "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+        // Semantic variants
+        success:
+          "border-green-500/50 bg-green-500/10 text-green-500 [&>svg]:text-green-500",
+        warning:
+          "border-yellow-500/50 bg-yellow-500/10 text-yellow-500 [&>svg]:text-yellow-500",
+        info: "border-blue-500/50 bg-blue-500/10 text-blue-500 [&>svg]:text-blue-500",
+        // Trading-specific
+        profit:
+          "border-green-500/50 bg-green-500/10 text-green-400 [&>svg]:text-green-400",
+        loss: "border-red-500/50 bg-red-500/10 text-red-400 [&>svg]:text-red-400",
       },
     },
     defaultVariants: {

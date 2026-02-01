@@ -71,7 +71,10 @@ const PnLDisplay = React.forwardRef<HTMLDivElement, PnLDisplayProps>(
       maximumFractionDigits: decimals,
     });
     const resultText = isProfit ? "Profit" : isLoss ? "Loss" : "Breakeven";
-    const percentText = percentage !== undefined ? `, ${sign}${percentage.toFixed(2)} percent` : "";
+    const percentText =
+      percentage !== undefined
+        ? `, ${sign}${percentage.toFixed(2)} percent`
+        : "";
     const ariaLabel = `${label ? label + ": " : ""}${resultText} ${sign}${currency}${formattedValue}${percentText}`;
 
     return (

@@ -31,6 +31,8 @@ export * from "./components/input-otp";
 export * from "./components/number-input";
 export * from "./components/password-input";
 export * from "./components/search-input";
+export * from "./components/currency-input";
+export * from "./components/tag-input";
 
 // Components - Layout
 export * from "./components/separator";
@@ -40,6 +42,8 @@ export * from "./components/collapsible";
 export * from "./components/sidebar";
 export * from "./components/resizable";
 export * from "./components/drawer";
+export * from "./components/stepper";
+export * from "./components/scrolling-ticker";
 
 // Components - Overlay
 export * from "./components/dialog";
@@ -87,6 +91,15 @@ export * from "./components/stat-card";
 export * from "./components/confirm-dialog";
 export * from "./components/token-select";
 export * from "./components/swap-input";
+export * from "./components/autocomplete";
+export * from "./components/date-picker";
+
+// Components - Trading Advanced
+export * from "./components/order-book";
+export * from "./components/depth-chart";
+
+// Components - Performance (Lazy-loaded)
+export * from "./components/lazy-chart";
 
 // Components - Decorative
 export * from "./components/dock-icon";
@@ -141,6 +154,9 @@ export {
   applyTheme,
 } from "./lib/theme-config";
 export type { Theme, ThemeColors, ThemeTypography } from "./lib/theme-config";
+
+// CSS Custom Property Fallbacks (for older browser support)
+export * from "./lib/css-fallbacks";
 
 // Styles - import this in your app's main CSS
 // import '@skai/ui/dist/styles.css';

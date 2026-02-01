@@ -25,7 +25,7 @@ describe("useKeyboardShortcut", () => {
 
     expect(addEventListenerSpy).toHaveBeenCalledWith(
       "keydown",
-      expect.any(Function)
+      expect.any(Function),
     );
   });
 
@@ -37,7 +37,7 @@ describe("useKeyboardShortcut", () => {
 
     expect(removeEventListenerSpy).toHaveBeenCalledWith(
       "keydown",
-      expect.any(Function)
+      expect.any(Function),
     );
   });
 
@@ -87,7 +87,7 @@ describe("useKeyboardShortcut", () => {
     // With ctrl - should fire
     act(() => {
       document.dispatchEvent(
-        new KeyboardEvent("keydown", { key: "k", ctrlKey: true })
+        new KeyboardEvent("keydown", { key: "k", ctrlKey: true }),
       );
     });
     expect(callback).toHaveBeenCalledTimes(1);
@@ -106,7 +106,7 @@ describe("useKeyboardShortcut", () => {
     // With shift - should fire
     act(() => {
       document.dispatchEvent(
-        new KeyboardEvent("keydown", { key: "k", shiftKey: true })
+        new KeyboardEvent("keydown", { key: "k", shiftKey: true }),
       );
     });
     expect(callback).toHaveBeenCalledTimes(1);
@@ -125,7 +125,7 @@ describe("useKeyboardShortcut", () => {
     // With alt - should fire
     act(() => {
       document.dispatchEvent(
-        new KeyboardEvent("keydown", { key: "k", altKey: true })
+        new KeyboardEvent("keydown", { key: "k", altKey: true }),
       );
     });
     expect(callback).toHaveBeenCalledTimes(1);
@@ -144,7 +144,9 @@ describe("useKeyboardShortcut", () => {
 
   it("should prevent default when preventDefault is true", () => {
     const callback = vi.fn();
-    renderHook(() => useKeyboardShortcut("k", callback, { preventDefault: true }));
+    renderHook(() =>
+      useKeyboardShortcut("k", callback, { preventDefault: true }),
+    );
 
     const event = new KeyboardEvent("keydown", { key: "k" });
     const preventDefaultSpy = vi.spyOn(event, "preventDefault");
@@ -159,7 +161,7 @@ describe("useKeyboardShortcut", () => {
   it("should stop propagation when stopPropagation is true", () => {
     const callback = vi.fn();
     renderHook(() =>
-      useKeyboardShortcut("k", callback, { stopPropagation: true })
+      useKeyboardShortcut("k", callback, { stopPropagation: true }),
     );
 
     const event = new KeyboardEvent("keydown", { key: "k" });
@@ -199,7 +201,9 @@ describe("useKeyboardShortcut", () => {
     renderHook(() => useKeyboardShortcut(SHORTCUTS.ARROW_DOWN, callback));
 
     act(() => {
-      document.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown" }));
+      document.dispatchEvent(
+        new KeyboardEvent("keydown", { key: "ArrowDown" }),
+      );
     });
 
     expect(callback).toHaveBeenCalledTimes(1);
@@ -233,7 +237,7 @@ describe("useEscapeKey", () => {
     const callback = vi.fn();
     const { rerender } = renderHook(
       ({ enabled }) => useEscapeKey(callback, enabled),
-      { initialProps: { enabled: false } }
+      { initialProps: { enabled: false } },
     );
 
     act(() => {

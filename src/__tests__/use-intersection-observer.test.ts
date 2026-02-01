@@ -8,7 +8,10 @@ class MockIntersectionObserver {
   elements: Set<Element> = new Set();
   options: IntersectionObserverInit;
 
-  constructor(callback: IntersectionObserverCallback, options: IntersectionObserverInit = {}) {
+  constructor(
+    callback: IntersectionObserverCallback,
+    options: IntersectionObserverInit = {},
+  ) {
     this.callback = callback;
     this.options = options;
     MockIntersectionObserver.instances.push(this);
@@ -37,7 +40,7 @@ class MockIntersectionObserver {
         intersectionRect: el.getBoundingClientRect(),
         rootBounds: null,
         time: Date.now(),
-      })
+      }),
     );
     this.callback(entries, this as unknown as IntersectionObserver);
   }
@@ -53,11 +56,13 @@ describe("useIntersectionObserver", () => {
 
   beforeEach(() => {
     MockIntersectionObserver.clear();
-    (window as unknown as Record<string, unknown>).IntersectionObserver = MockIntersectionObserver;
+    (window as unknown as Record<string, unknown>).IntersectionObserver =
+      MockIntersectionObserver;
   });
 
   afterEach(() => {
-    (window as unknown as Record<string, unknown>).IntersectionObserver = originalIntersectionObserver;
+    (window as unknown as Record<string, unknown>).IntersectionObserver =
+      originalIntersectionObserver;
   });
 
   it("should return ref and initial state", () => {
@@ -86,7 +91,7 @@ describe("useIntersectionObserver", () => {
 
     // Re-render to trigger effect
     const { result: newResult, rerender } = renderHook(() =>
-      useIntersectionObserver()
+      useIntersectionObserver(),
     );
 
     // After element is attached and observer is created
@@ -94,7 +99,7 @@ describe("useIntersectionObserver", () => {
       if (MockIntersectionObserver.instances.length > 0) {
         const observer = MockIntersectionObserver.instances[0];
         observer.observe(element);
-        
+
         act(() => {
           observer.trigger(true);
         });
@@ -104,7 +109,7 @@ describe("useIntersectionObserver", () => {
 
   it("should handle disabled state", () => {
     const { result } = renderHook(() =>
-      useIntersectionObserver({ enabled: false })
+      useIntersectionObserver({ enabled: false }),
     );
 
     expect(result.current.isIntersecting).toBe(false);
@@ -121,7 +126,7 @@ describe("useIntersectionObserver", () => {
 
   it("should accept array of thresholds", () => {
     renderHook(() =>
-      useIntersectionObserver({ threshold: [0, 0.25, 0.5, 0.75, 1] })
+      useIntersectionObserver({ threshold: [0, 0.25, 0.5, 0.75, 1] }),
     );
 
     if (MockIntersectionObserver.instances.length > 0) {
@@ -136,14 +141,14 @@ describe("useIntersectionObserver", () => {
 
     if (MockIntersectionObserver.instances.length > 0) {
       expect(MockIntersectionObserver.instances[0].options.rootMargin).toBe(
-        "10px 20px"
+        "10px 20px",
       );
     }
   });
 
   it("should handle triggerOnce option", async () => {
     const { result } = renderHook(() =>
-      useIntersectionObserver({ triggerOnce: true })
+      useIntersectionObserver({ triggerOnce: true }),
     );
 
     const element = document.createElement("div");
@@ -163,7 +168,7 @@ describe("useIntersectionObserver", () => {
   it("should handle re-renders without creating duplicate observers", () => {
     const { rerender } = renderHook(
       ({ threshold }) => useIntersectionObserver({ threshold }),
-      { initialProps: { threshold: 0 } }
+      { initialProps: { threshold: 0 } },
     );
 
     const initialCount = MockIntersectionObserver.instances.length;
@@ -187,7 +192,9 @@ describe("useIntersectionObserver", () => {
     renderHook(() => useIntersectionObserver({ root: rootElement }));
 
     if (MockIntersectionObserver.instances.length > 0) {
-      expect(MockIntersectionObserver.instances[0].options.root).toBe(rootElement);
+      expect(MockIntersectionObserver.instances[0].options.root).toBe(
+        rootElement,
+      );
     }
   });
 });
@@ -196,10 +203,13 @@ describe("useIntersectionObserver with real IntersectionObserver", () => {
   // Skip if IntersectionObserver is not available
   const hasIntersectionObserver = typeof IntersectionObserver !== "undefined";
 
-  it.skipIf(!hasIntersectionObserver)("should work with real browser API", () => {
-    const { result } = renderHook(() => useIntersectionObserver());
+  it.skipIf(!hasIntersectionObserver)(
+    "should work with real browser API",
+    () => {
+      const { result } = renderHook(() => useIntersectionObserver());
 
-    expect(result.current.ref).toBeDefined();
-    expect(typeof result.current.isIntersecting).toBe("boolean");
-  });
+      expect(result.current.ref).toBeDefined();
+      expect(typeof result.current.isIntersecting).toBe("boolean");
+    },
+  );
 });

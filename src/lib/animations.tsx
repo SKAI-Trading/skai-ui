@@ -669,3 +669,380 @@ export const GradientText = React.forwardRef<
 );
 
 GradientText.displayName = "GradientText";
+
+// ============================================
+// FadeOut Animation Component
+// ============================================
+
+export interface FadeOutProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Whether to trigger fade out */
+  out?: boolean;
+  /** Animation duration (ms) */
+  duration?: number;
+  /** Direction of fade */
+  direction?: "up" | "down" | "left" | "right" | "none";
+  /** Distance to travel (px) */
+  distance?: number;
+  /** Callback when animation completes */
+  onAnimationEnd?: () => void;
+}
+
+export const FadeOut = React.forwardRef<HTMLDivElement, FadeOutProps>(
+  (
+    {
+      out = false,
+      duration = durations.normal,
+      direction = "up",
+      distance = 20,
+      onAnimationEnd,
+      className,
+      style,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
+    const reducedMotion = useReducedMotion();
+    const [isAnimating, setIsAnimating] = React.useState(false);
+
+    React.useEffect(() => {
+      if (out && !reducedMotion) {
+        setIsAnimating(true);
+        const timer = setTimeout(() => {
+          setIsAnimating(false);
+          onAnimationEnd?.();
+        }, duration);
+        return () => clearTimeout(timer);
+      } else if (out && reducedMotion) {
+        onAnimationEnd?.();
+      }
+    }, [out, duration, onAnimationEnd, reducedMotion]);
+
+    const transform = React.useMemo(() => {
+      if (!isAnimating) return "translate(0, 0)";
+      switch (direction) {
+        case "up":
+          return `translateY(-${distance}px)`;
+        case "down":
+          return `translateY(${distance}px)`;
+        case "left":
+          return `translateX(-${distance}px)`;
+        case "right":
+          return `translateX(${distance}px)`;
+        default:
+          return "translate(0, 0)";
+      }
+    }, [direction, distance, isAnimating]);
+
+    return (
+      <div
+        ref={ref}
+        className={className}
+        style={{
+          opacity: isAnimating ? 0 : 1,
+          transform: isAnimating ? transform : "translate(0, 0)",
+          transition: reducedMotion
+            ? "none"
+            : `opacity ${duration}ms ${easings.ease}, transform ${duration}ms ${easings.ease}`,
+          ...style,
+        }}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  },
+);
+
+FadeOut.displayName = "FadeOut";
+
+// ============================================
+// SlideIn/SlideOut Animation Components
+// ============================================
+
+export interface SlideProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Direction of slide */
+  direction?: "up" | "down" | "left" | "right";
+  /** Distance to travel (px) */
+  distance?: number;
+  /** Animation duration (ms) */
+  duration?: number;
+  /** Delay before animation (ms) */
+  delay?: number;
+  /** Whether animation has run */
+  animate?: boolean;
+}
+
+export const SlideIn = React.forwardRef<HTMLDivElement, SlideProps>(
+  (
+    {
+      direction = "left",
+      distance = 100,
+      duration = durations.normal,
+      delay = 0,
+      animate = true,
+      className,
+      style,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
+    const reducedMotion = useReducedMotion();
+    const [isVisible, setIsVisible] = React.useState(!animate);
+
+    React.useEffect(() => {
+      if (!animate) return;
+      const timer = setTimeout(() => setIsVisible(true), delay);
+      return () => clearTimeout(timer);
+    }, [animate, delay]);
+
+    const transform = React.useMemo(() => {
+      if (reducedMotion || isVisible) return "translate(0, 0)";
+      switch (direction) {
+        case "up":
+          return `translateY(${distance}px)`;
+        case "down":
+          return `translateY(-${distance}px)`;
+        case "left":
+          return `translateX(${distance}px)`;
+        case "right":
+          return `translateX(-${distance}px)`;
+        default:
+          return "translate(0, 0)";
+      }
+    }, [direction, distance, isVisible, reducedMotion]);
+
+    return (
+      <div
+        ref={ref}
+        className={className}
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform,
+          transition: reducedMotion
+            ? "none"
+            : `opacity ${duration}ms ${easings.ease}, transform ${duration}ms ${easings.ease}`,
+          ...style,
+        }}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  },
+);
+
+SlideIn.displayName = "SlideIn";
+
+export interface SlideOutProps extends SlideProps {
+  /** Whether to trigger slide out */
+  out?: boolean;
+  /** Callback when animation completes */
+  onAnimationEnd?: () => void;
+}
+
+export const SlideOut = React.forwardRef<HTMLDivElement, SlideOutProps>(
+  (
+    {
+      out = false,
+      direction = "left",
+      distance = 100,
+      duration = durations.normal,
+      onAnimationEnd,
+      className,
+      style,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
+    const reducedMotion = useReducedMotion();
+    const [isAnimating, setIsAnimating] = React.useState(false);
+
+    React.useEffect(() => {
+      if (out && !reducedMotion) {
+        setIsAnimating(true);
+        const timer = setTimeout(() => {
+          setIsAnimating(false);
+          onAnimationEnd?.();
+        }, duration);
+        return () => clearTimeout(timer);
+      } else if (out && reducedMotion) {
+        onAnimationEnd?.();
+      }
+    }, [out, duration, onAnimationEnd, reducedMotion]);
+
+    const transform = React.useMemo(() => {
+      if (!isAnimating) return "translate(0, 0)";
+      switch (direction) {
+        case "up":
+          return `translateY(-${distance}px)`;
+        case "down":
+          return `translateY(${distance}px)`;
+        case "left":
+          return `translateX(-${distance}px)`;
+        case "right":
+          return `translateX(${distance}px)`;
+        default:
+          return "translate(0, 0)";
+      }
+    }, [direction, distance, isAnimating]);
+
+    return (
+      <div
+        ref={ref}
+        className={className}
+        style={{
+          opacity: isAnimating ? 0 : 1,
+          transform: isAnimating ? transform : "translate(0, 0)",
+          transition: reducedMotion
+            ? "none"
+            : `opacity ${duration}ms ${easings.ease}, transform ${duration}ms ${easings.ease}`,
+          ...style,
+        }}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  },
+);
+
+SlideOut.displayName = "SlideOut";
+
+// ============================================
+// Animated List (for list reordering)
+// ============================================
+
+export interface AnimatedListProps<T> extends Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  "children"
+> {
+  /** List items */
+  items: T[];
+  /** Key extractor function */
+  keyExtractor: (item: T, index: number) => string | number;
+  /** Render function for each item */
+  renderItem: (item: T, index: number) => React.ReactNode;
+  /** Animation duration (ms) */
+  duration?: number;
+  /** Layout direction */
+  direction?: "vertical" | "horizontal";
+  /** Gap between items */
+  gap?: number | string;
+}
+
+export function AnimatedList<T>({
+  items,
+  keyExtractor,
+  renderItem,
+  duration = durations.normal,
+  direction = "vertical",
+  gap = 8,
+  className,
+  style,
+  ...props
+}: AnimatedListProps<T>) {
+  const reducedMotion = useReducedMotion();
+
+  return (
+    <div
+      className={cn(
+        "flex",
+        direction === "vertical" ? "flex-col" : "flex-row",
+        className,
+      )}
+      style={{
+        gap: typeof gap === "number" ? `${gap}px` : gap,
+        ...style,
+      }}
+      {...props}
+    >
+      {items.map((item, index) => (
+        <div
+          key={keyExtractor(item, index)}
+          style={{
+            transition: reducedMotion
+              ? "none"
+              : `all ${duration}ms ${easings.ease}`,
+          }}
+        >
+          {renderItem(item, index)}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+AnimatedList.displayName = "AnimatedList";
+
+// ============================================
+// Collapse Animation
+// ============================================
+
+export interface CollapseProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Whether content is expanded */
+  open?: boolean;
+  /** Animation duration (ms) */
+  duration?: number;
+}
+
+export const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
+  (
+    {
+      open = false,
+      duration = durations.normal,
+      className,
+      children,
+      style,
+      ...props
+    },
+    ref,
+  ) => {
+    const reducedMotion = useReducedMotion();
+    const contentRef = React.useRef<HTMLDivElement>(null);
+    const [height, setHeight] = React.useState<number | undefined>(
+      open ? undefined : 0,
+    );
+
+    React.useEffect(() => {
+      if (!contentRef.current) return;
+
+      if (open) {
+        const contentHeight = contentRef.current.scrollHeight;
+        setHeight(contentHeight);
+        // After animation, set to auto for dynamic content
+        const timer = setTimeout(() => setHeight(undefined), duration);
+        return () => clearTimeout(timer);
+      } else {
+        // First set explicit height, then animate to 0
+        const contentHeight = contentRef.current.scrollHeight;
+        setHeight(contentHeight);
+        requestAnimationFrame(() => {
+          setHeight(0);
+        });
+      }
+    }, [open, duration]);
+
+    return (
+      <div
+        ref={ref}
+        className={className}
+        style={{
+          height: height === undefined ? "auto" : height,
+          overflow: "hidden",
+          transition: reducedMotion
+            ? "none"
+            : `height ${duration}ms ${easings.ease}`,
+          ...style,
+        }}
+        {...props}
+      >
+        <div ref={contentRef}>{children}</div>
+      </div>
+    );
+  },
+);
+
+Collapse.displayName = "Collapse";

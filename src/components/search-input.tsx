@@ -36,7 +36,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
       placeholder = "Search...",
       ...props
     },
-    ref
+    ref,
   ) => {
     const [internalValue, setInternalValue] = React.useState(value || "");
     const debounceTimeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
@@ -72,12 +72,12 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
     const handleClear = () => {
       setInternalValue("");
       onClear?.();
-      
+
       // Create synthetic event for onChange
       if (onChange && inputRef.current) {
         const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
           window.HTMLInputElement.prototype,
-          "value"
+          "value",
         )?.set;
         nativeInputValueSetter?.call(inputRef.current, "");
         const event = new Event("input", { bubbles: true });
@@ -119,14 +119,15 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
 
     const combinedRef = React.useCallback(
       (node: HTMLInputElement | null) => {
-        (inputRef as React.MutableRefObject<HTMLInputElement | null>).current = node;
+        (inputRef as React.MutableRefObject<HTMLInputElement | null>).current =
+          node;
         if (typeof ref === "function") {
           ref(node);
         } else if (ref) {
           ref.current = node;
         }
       },
-      [ref]
+      [ref],
     );
 
     return (
@@ -135,7 +136,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
         <span
           className={cn(
             "absolute top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none",
-            sizeStyles[size].icon
+            sizeStyles[size].icon,
           )}
         >
           {icon || <Search className="h-full w-full" />}
@@ -152,7 +153,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
             sizeStyles[size].input,
             // Hide native search clear button
             "[&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden",
-            className
+            className,
           )}
           aria-label={props["aria-label"] || placeholder}
           {...props}
@@ -163,7 +164,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           <span
             className={cn(
               "absolute top-1/2 -translate-y-1/2 flex items-center",
-              sizeStyles[size].clear
+              sizeStyles[size].clear,
             )}
           >
             {isLoading ? (
@@ -185,7 +186,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
         )}
       </div>
     );
-  }
+  },
 );
 
 SearchInput.displayName = "SearchInput";

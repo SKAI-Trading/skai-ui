@@ -66,10 +66,9 @@ describe("usePrevious", () => {
   });
 
   it("should work with null and undefined", () => {
-    const { result, rerender } = renderHook(
-      ({ value }) => usePrevious(value),
-      { initialProps: { value: null as null | undefined | string } }
-    );
+    const { result, rerender } = renderHook(({ value }) => usePrevious(value), {
+      initialProps: { value: null as null | undefined | string },
+    });
 
     expect(result.current).toBeUndefined();
 
@@ -103,7 +102,7 @@ describe("useHasChanged", () => {
   it("should return true when value changes", () => {
     const { result, rerender } = renderHook(
       ({ value }) => useHasChanged(value),
-      { initialProps: { value: "first" } }
+      { initialProps: { value: "first" } },
     );
 
     rerender({ value: "second" });
@@ -113,7 +112,7 @@ describe("useHasChanged", () => {
   it("should return false when value stays the same", () => {
     const { result, rerender } = renderHook(
       ({ value }) => useHasChanged(value),
-      { initialProps: { value: "same" } }
+      { initialProps: { value: "same" } },
     );
 
     // First re-render with same value - previous was undefined
@@ -128,7 +127,7 @@ describe("useHasChanged", () => {
   it("should detect changes in numbers", () => {
     const { result, rerender } = renderHook(
       ({ value }) => useHasChanged(value),
-      { initialProps: { value: 0 } }
+      { initialProps: { value: 0 } },
     );
 
     rerender({ value: 1 });
@@ -144,7 +143,7 @@ describe("useHasChanged", () => {
 
     const { result, rerender } = renderHook(
       ({ value }) => useHasChanged(value),
-      { initialProps: { value: obj1 } }
+      { initialProps: { value: obj1 } },
     );
 
     // Same reference - no change
@@ -159,7 +158,7 @@ describe("useHasChanged", () => {
   it("should handle boolean changes", () => {
     const { result, rerender } = renderHook(
       ({ value }) => useHasChanged(value),
-      { initialProps: { value: false } }
+      { initialProps: { value: false } },
     );
 
     rerender({ value: true });
@@ -175,7 +174,7 @@ describe("useHasChanged", () => {
   it("should handle null/undefined transitions", () => {
     const { result, rerender } = renderHook(
       ({ value }) => useHasChanged(value),
-      { initialProps: { value: null as null | undefined | string } }
+      { initialProps: { value: null as null | undefined | string } },
     );
 
     rerender({ value: undefined });
