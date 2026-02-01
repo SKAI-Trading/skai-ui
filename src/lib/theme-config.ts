@@ -51,8 +51,8 @@ export const theme = {
 
     // Trading colors
     trading: {
-      long: "142 76% 36%", // #16A34A - Green (buy/profit)
-      longGlow: "142 76% 46%", // Glow variant
+      long: "142 71% 45%", // #22C55E - Green (buy/profit)
+      longGlow: "142 71% 55%", // Glow variant
       short: "0 84% 60%", // #EF4444 - Red (sell/loss)
       shortGlow: "0 84% 70%", // Glow variant
       neutral: "0 0% 50%", // Neutral/unchanged
@@ -60,7 +60,7 @@ export const theme = {
 
     // Semantic colors
     semantic: {
-      success: "142 76% 36%",
+      success: "142 71% 45%", // #22C55E
       warning: "38 92% 50%",
       error: "0 84% 60%",
       info: "199 90% 65%",
@@ -74,7 +74,7 @@ export const theme = {
     fonts: {
       sans: "'Poppins', system-ui, -apple-system, sans-serif",
       mono: "'JetBrains Mono', 'Fira Code', Consolas, monospace",
-      display: "'Manrope', system-ui, sans-serif",
+      display: "'Poppins', system-ui, sans-serif", // Per brand guidelines - Poppins Bold for headings
     },
 
     sizes: {

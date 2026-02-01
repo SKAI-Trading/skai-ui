@@ -11,23 +11,33 @@
       "primary": {
         "$value": "#56C0F6",
         "$type": "color",
-        "$description": "Primary brand color - Cyan - Use for primary CTAs and highlights"
+        "$description": "Primary brand color - Cyan - Use for primary CTAs, Trading, highlights"
       },
       "secondary": {
         "$value": "#2DEDAD",
         "$type": "color",
-        "$description": "Secondary brand color - Teal - Use for secondary actions"
+        "$description": "Secondary brand color - Teal - Use for Social, secondary actions"
+      },
+      "tertiary": {
+        "$value": "#A855F7",
+        "$type": "color",
+        "$description": "Tertiary brand color - Purple - Use for Gaming/Play features"
       },
       "background": {
         "$value": "#020717",
         "$type": "color",
         "$description": "Main background color - Deep navy"
+      },
+      "gradient": {
+        "$value": "linear-gradient(135deg, #56C0F6 0%, #2DEDAD 100%)",
+        "$type": "gradient",
+        "$description": "Primary brand gradient - Cyan to Teal - Use for CTAs and hero elements"
       }
     },
 
     "semantic": {
       "success": {
-        "$value": "#16A34A",
+        "$value": "#22C55E",
         "$type": "color",
         "$description": "Success color - Green - Profits, confirmations, buy actions"
       },
@@ -104,7 +114,7 @@
 
     "trading": {
       "long": {
-        "$value": "#16A34A",
+        "$value": "#22C55E",
         "$type": "color",
         "$description": "Long/Buy position color - Green"
       },
@@ -146,9 +156,9 @@
         "$description": "Monospace font for code and numbers"
       },
       "display": {
-        "$value": "'Manrope', system-ui, sans-serif",
+        "$value": "'Poppins', system-ui, sans-serif",
         "$type": "fontFamily",
-        "$description": "Display font for headings"
+        "$description": "Display font for headings - Poppins Bold per brand guidelines"
       }
     },
 

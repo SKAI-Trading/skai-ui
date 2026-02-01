@@ -42,8 +42,16 @@ Layout primitives for building flexible UI structures.
 export default meta;
 
 // Demo box for visibility
-const Box = ({ children, className = "" }: { children?: React.ReactNode; className?: string }) => (
-  <div className={`p-4 bg-primary/20 border border-primary/30 rounded-lg text-center ${className}`}>
+const Box = ({
+  children,
+  className = "",
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) => (
+  <div
+    className={`p-4 bg-primary/20 border border-primary/30 rounded-lg text-center ${className}`}
+  >
     {children}
   </div>
 );
@@ -90,25 +98,39 @@ export const StackAlignment: StoryObj = {
   render: () => (
     <VStack gap={8}>
       <div>
-        <p className="text-sm text-muted-foreground mb-2">justify=&quot;between&quot;</p>
+        <p className="text-sm text-muted-foreground mb-2">
+          justify=&quot;between&quot;
+        </p>
         <HStack justify="between" className="w-full p-4 bg-muted/30 rounded-lg">
           <Box>Left</Box>
           <Box>Right</Box>
         </HStack>
       </div>
-      
+
       <div>
-        <p className="text-sm text-muted-foreground mb-2">align=&quot;center&quot;</p>
-        <HStack align="center" gap={4} className="h-24 p-4 bg-muted/30 rounded-lg">
+        <p className="text-sm text-muted-foreground mb-2">
+          align=&quot;center&quot;
+        </p>
+        <HStack
+          align="center"
+          gap={4}
+          className="h-24 p-4 bg-muted/30 rounded-lg"
+        >
           <Box className="h-8">Short</Box>
           <Box className="h-16">Tall</Box>
           <Box className="h-12">Medium</Box>
         </HStack>
       </div>
-      
+
       <div>
-        <p className="text-sm text-muted-foreground mb-2">justify=&quot;center&quot; + align=&quot;center&quot;</p>
-        <HStack justify="center" align="center" className="h-32 p-4 bg-muted/30 rounded-lg">
+        <p className="text-sm text-muted-foreground mb-2">
+          justify=&quot;center&quot; + align=&quot;center&quot;
+        </p>
+        <HStack
+          justify="center"
+          align="center"
+          className="h-32 p-4 bg-muted/30 rounded-lg"
+        >
           <Box>Centered</Box>
         </HStack>
       </div>
@@ -127,7 +149,8 @@ export const StackWithWrap: StoryObj = {
   parameters: {
     docs: {
       description: {
-        story: "Stack with wrap enabled - items flow to next line when space runs out.",
+        story:
+          "Stack with wrap enabled - items flow to next line when space runs out.",
       },
     },
   },
@@ -173,13 +196,10 @@ export const ResponsiveGrid: StoryObj = {
   render: () => (
     <div>
       <p className="text-sm text-muted-foreground mb-4">
-        Resize window to see responsive behavior: 1 col → 2 cols → 3 cols → 4 cols
+        Resize window to see responsive behavior: 1 col → 2 cols → 3 cols → 4
+        cols
       </p>
-      <Grid 
-        cols={1} 
-        responsive={{ sm: 2, md: 3, lg: 4 }} 
-        gap={4}
-      >
+      <Grid cols={1} responsive={{ sm: 2, md: 3, lg: 4 }} gap={4}>
         {Array.from({ length: 8 }, (_, i) => (
           <Box key={i}>Item {i + 1}</Box>
         ))}
@@ -197,7 +217,9 @@ export const ContainerSizes: StoryObj = {
     <VStack gap={8}>
       {(["sm", "md", "lg", "xl", "2xl"] as const).map((size) => (
         <div key={size}>
-          <p className="text-sm text-muted-foreground mb-2">size=&quot;{size}&quot;</p>
+          <p className="text-sm text-muted-foreground mb-2">
+            size=&quot;{size}&quot;
+          </p>
           <Container size={size} className="bg-muted/30 py-4 rounded-lg">
             <Box>Container {size}</Box>
           </Container>
@@ -227,14 +249,16 @@ export const SpacerUsage: StoryObj = {
   render: () => (
     <VStack gap={4}>
       <div>
-        <p className="text-sm text-muted-foreground mb-2">Spacer pushes items apart</p>
+        <p className="text-sm text-muted-foreground mb-2">
+          Spacer pushes items apart
+        </p>
         <HStack className="w-full p-4 bg-muted/30 rounded-lg">
           <Box>Logo</Box>
           <Spacer flex />
           <Box>Navigation</Box>
         </HStack>
       </div>
-      
+
       <div>
         <p className="text-sm text-muted-foreground mb-2">Fixed size spacer</p>
         <HStack className="p-4 bg-muted/30 rounded-lg">
@@ -258,7 +282,7 @@ export const DividerVariants: StoryObj = {
           <Box>Below</Box>
         </VStack>
       </div>
-      
+
       <div>
         <p className="text-sm text-muted-foreground mb-4">Divider with label</p>
         <VStack gap={4}>
@@ -267,7 +291,7 @@ export const DividerVariants: StoryObj = {
           <Box>Below</Box>
         </VStack>
       </div>
-      
+
       <div>
         <p className="text-sm text-muted-foreground mb-4">Vertical divider</p>
         <HStack gap={4} className="h-24">
@@ -293,14 +317,14 @@ export const AspectRatioVariants: StoryObj = {
           <Center className="h-full">Square</Center>
         </AspectRatio>
       </div>
-      
+
       <div>
         <p className="text-sm text-muted-foreground mb-2">Video (16:9)</p>
         <AspectRatio ratio="video" className="bg-muted/30 rounded-lg">
           <Center className="h-full">16:9</Center>
         </AspectRatio>
       </div>
-      
+
       <div>
         <p className="text-sm text-muted-foreground mb-2">Wide (21:9)</p>
         <AspectRatio ratio="wide" className="bg-muted/30 rounded-lg">
@@ -321,26 +345,34 @@ export const ResponsiveVisibility: StoryObj = {
       <p className="text-sm text-muted-foreground">
         Resize the window to see elements appear/disappear
       </p>
-      
+
       <HStack gap={4} wrap>
         <Hide below="sm">
           <Box className="bg-red-500/20 border-red-500/30">Hidden below sm</Box>
         </Hide>
-        
+
         <Hide below="md">
-          <Box className="bg-yellow-500/20 border-yellow-500/30">Hidden below md</Box>
+          <Box className="bg-yellow-500/20 border-yellow-500/30">
+            Hidden below md
+          </Box>
         </Hide>
-        
+
         <Hide below="lg">
-          <Box className="bg-green-500/20 border-green-500/30">Hidden below lg</Box>
+          <Box className="bg-green-500/20 border-green-500/30">
+            Hidden below lg
+          </Box>
         </Hide>
-        
+
         <Show below="md">
-          <Box className="bg-blue-500/20 border-blue-500/30">Only on mobile</Box>
+          <Box className="bg-blue-500/20 border-blue-500/30">
+            Only on mobile
+          </Box>
         </Show>
-        
+
         <Show above="lg">
-          <Box className="bg-purple-500/20 border-purple-500/30">Only on desktop</Box>
+          <Box className="bg-purple-500/20 border-purple-500/30">
+            Only on desktop
+          </Box>
         </Show>
       </HStack>
     </VStack>
@@ -348,7 +380,8 @@ export const ResponsiveVisibility: StoryObj = {
   parameters: {
     docs: {
       description: {
-        story: "Use `Hide` and `Show` components to control visibility at different breakpoints.",
+        story:
+          "Use `Hide` and `Show` components to control visibility at different breakpoints.",
       },
     },
   },
@@ -360,12 +393,16 @@ export const ResponsiveVisibility: StoryObj = {
 
 export const HeaderLayout: StoryObj = {
   render: () => (
-    <HStack justify="between" align="center" className="p-4 bg-card border-b border-border">
+    <HStack
+      justify="between"
+      align="center"
+      className="p-4 bg-card border-b border-border"
+    >
       <HStack gap={4} align="center">
         <div className="w-8 h-8 bg-primary rounded-lg" />
         <span className="font-semibold">SKAI</span>
       </HStack>
-      
+
       <HStack gap={6}>
         <Hide below="md">
           <HStack gap={4}>
@@ -381,7 +418,8 @@ export const HeaderLayout: StoryObj = {
   parameters: {
     docs: {
       description: {
-        story: "Example header layout using Stack components with responsive navigation.",
+        story:
+          "Example header layout using Stack components with responsive navigation.",
       },
     },
   },
@@ -400,7 +438,7 @@ export const DashboardLayout: StoryObj = {
           </CardContent>
         </Card>
       </GridItem>
-      
+
       <GridItem colSpan={1}>
         <Card>
           <CardContent className="pt-6">
@@ -411,7 +449,7 @@ export const DashboardLayout: StoryObj = {
           </CardContent>
         </Card>
       </GridItem>
-      
+
       <GridItem colSpan={1}>
         <Card>
           <CardContent className="pt-6">
@@ -422,7 +460,7 @@ export const DashboardLayout: StoryObj = {
           </CardContent>
         </Card>
       </GridItem>
-      
+
       <GridItem colSpan={1}>
         <Card>
           <CardContent className="pt-6">
