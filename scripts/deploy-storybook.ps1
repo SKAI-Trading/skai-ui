@@ -1,4 +1,4 @@
-# Deploy Storybook to storybook.skai.trade
+# Deploy Storybook to docs.skai.trade/ui/
 # Includes authentication wrapper
 
 param(
@@ -14,11 +14,12 @@ Write-Host "║         SKAI-UI Storybook Deployment                      ║" -
 Write-Host "╚═══════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
 
-# Configuration
-$S3_BUCKET = "skai-storybook"
-$CLOUDFRONT_ID = "ET8L6FJV9D86M"
+# Configuration - Deploy to docs.skai.trade/ui/
+$S3_BUCKET = "skai-trade-docs"
+$S3_PATH = "ui"
+$CLOUDFRONT_ID = "E7J1XOWEK55NB"
 $REGION = "us-east-1"
-$STORYBOOK_URL = "https://storybook.skai.trade"
+$STORYBOOK_URL = "https://docs.skai.trade/ui/"
 
 # Paths
 $SCRIPT_DIR = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -105,56 +106,27 @@ catch {
     exit 1
 }
 
-# Step 8: Check if S3 bucket exists, create if not
-Write-Host "🪣 Checking S3 bucket..." -ForegroundColor Yellow
-$bucketExists = aws s3api head-bucket --bucket $S3_BUCKET 2>&1
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "   Creating bucket: $S3_BUCKET" -ForegroundColor Gray
-    aws s3api create-bucket --bucket $S3_BUCKET --region $REGION 2>&1 | Out-Null
-    
-    # Enable static website hosting
-    aws s3 website "s3://$S3_BUCKET" --index-document index.html --error-document index.html
-    
-    # Set bucket policy for CloudFront
-    $bucketPolicy = @"
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowCloudFrontAccess",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::$S3_BUCKET/*"
-        }
-    ]
-}
-"@
-    $bucketPolicy | aws s3api put-bucket-policy --bucket $S3_BUCKET --policy file:///dev/stdin
-    
-    Write-Host "   ✓ Bucket created and configured" -ForegroundColor Green
-} else {
-    Write-Host "   ✓ Bucket exists" -ForegroundColor Green
-}
+# Step 8: Docs bucket already exists, no need to create
+Write-Host "🪣 Using docs bucket: $S3_BUCKET/$S3_PATH" -ForegroundColor Yellow
+Write-Host "   ✓ Bucket exists" -ForegroundColor Green
 
-# Step 9: Sync to S3
+# Step 9: Sync to S3 under /ui/ path
 Write-Host "☁️  Syncing to S3..." -ForegroundColor Yellow
-aws s3 sync $DEPLOY_DIR "s3://$S3_BUCKET" --delete
+aws s3 sync $DEPLOY_DIR "s3://$S3_BUCKET/$S3_PATH" --delete
 if ($LASTEXITCODE -ne 0) {
     Write-Host "   ✗ S3 sync failed" -ForegroundColor Red
     exit 1
 }
 Write-Host "   ✓ Files uploaded to S3" -ForegroundColor Green
 
-# Step 10: Invalidate CloudFront cache
+# Step 10: Invalidate CloudFront cache for /ui/*
 Write-Host "🔄 Invalidating CloudFront cache..." -ForegroundColor Yellow
 try {
-    $invalidation = aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*" --output json 2>&1 | ConvertFrom-Json
+    $invalidation = aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/$S3_PATH/*" --output json 2>&1 | ConvertFrom-Json
     Write-Host "   ✓ Cache invalidation started: $($invalidation.Invalidation.Id)" -ForegroundColor Green
 }
 catch {
-    Write-Host "   ⚠ CloudFront invalidation failed (may need to create distribution)" -ForegroundColor Yellow
-    Write-Host "   Create CloudFront distribution pointing to: $S3_BUCKET.s3-website-$REGION.amazonaws.com" -ForegroundColor Gray
+    Write-Host "   ⚠ CloudFront invalidation failed" -ForegroundColor Yellow
 }
 
 # Step 11: Cleanup

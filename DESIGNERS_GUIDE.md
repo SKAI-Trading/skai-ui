@@ -2,9 +2,9 @@
 
 > **The complete reference for frontend designers working on the SKAI ecosystem.**
 
-## � Live Storybook
+## 🌐 Live Storybook
 
-**Access the live component library at: [storybook.skai.trade](https://storybook.skai.trade)**
+**Access the live component library at: [docs.skai.trade/ui/](https://docs.skai.trade/ui/)**
 
 > 🔐 **Authentication Required**: Connect your wallet to access. Contact team@skai.trade for access.
 
