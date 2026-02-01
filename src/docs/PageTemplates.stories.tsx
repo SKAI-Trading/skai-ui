@@ -17,6 +17,7 @@ import {
   Globe,
   Home,
   Menu,
+  MessageSquare,
   Plus,
   Search,
   Settings,
@@ -25,6 +26,7 @@ import {
   TrendingUp,
   Trophy,
   User,
+  Vault,
   Wallet,
   Zap,
 } from "lucide-react";
@@ -99,103 +101,140 @@ export default meta;
 /**
  * Header Component
  *
- * The SKAI header contains:
- * - Logo (SKAI with lightning icon)
- * - Primary navigation (Trade dropdown, Play, Predict, etc.)
- * - Global search
- * - Notifications
- * - Wallet/Account dropdown
+ * The SKAI header is a two-row layout:
+ * - Top row: Logo (wordmark), centered search bar, status pills (Points/Vault), ETH balance, notifications, account
+ * - Bottom row: Navigation links (AI, Trade, Predict, Play, Social dropdown, SKAI dropdown)
  *
  * Source: src/components/layout/Header.tsx (869 lines)
  */
 const SKAIHeader = () => (
-  <header className="h-14 border-b border-border/30 bg-background/95 backdrop-blur-xl flex items-center px-4 sticky top-0 z-50">
-    <div className="flex items-center gap-6 flex-1">
-      {/* Logo */}
-      <div className="flex items-center gap-2">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-          <Zap className="h-5 w-5 text-white" />
+  <header className="sticky top-0 z-50 backdrop-blur-xl bg-background border-b border-border/30 shadow-[0_1px_15px_rgba(44,236,173,0.02)]">
+    <div className="container mx-auto px-4">
+      {/* Top Row: Logo, Search, Status, Account */}
+      <div className="flex items-center justify-between h-14 border-b border-border/30">
+        {/* Logo - Wordmark (oversized and clipped like real app) */}
+        <div className="flex items-center group min-h-[44px] min-w-[44px] shrink-0 overflow-hidden cursor-pointer">
+          <div className="relative h-[168px] -my-[66px] flex items-center">
+            <span className="text-4xl font-black tracking-tight bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
+              SKAI
+            </span>
+            <span className="text-4xl font-black tracking-tight text-muted-foreground/30">
+              .trade
+            </span>
+          </div>
         </div>
-        <span className="font-bold text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-          SKAI
-        </span>
+
+        {/* Search Bar - Center */}
+        <div className="hidden md:flex flex-1 justify-center px-8 max-w-xl mx-auto">
+          <div className="relative w-full">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="Search markets, users, tokens..."
+              className="w-full pl-10 bg-muted/50 border-border/50 h-9 text-sm"
+            />
+          </div>
+        </div>
+
+        {/* Right Side: Status Pills, Notifications, Account */}
+        <div className="flex items-center gap-2">
+          {/* Status Pills - Points & Vault (connected state) */}
+          <div className="hidden lg:flex items-center gap-2">
+            {/* Points Pill */}
+            <button className="group relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-background/80 to-background/40 border border-border/40 hover:border-border/60 backdrop-blur-md transition-all duration-300 hover:scale-[1.02]">
+              <div className="relative">
+                <Trophy className="w-4 h-4 text-yellow-500" />
+              </div>
+              <span className="text-xs font-bold text-yellow-400">12,450</span>
+            </button>
+
+            {/* Vault Pill */}
+            <button className="group relative flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-background/80 to-background/40 border border-border/40 hover:border-border/60 backdrop-blur-md transition-all duration-300 hover:scale-[1.02]">
+              <div className="relative">
+                <Vault className="w-4 h-4 text-secondary" />
+              </div>
+              <span className="text-xs font-bold text-secondary">$1,234</span>
+            </button>
+          </div>
+
+          {/* ETH Balance */}
+          <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-muted/50 border border-border/50">
+            <div className="w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center text-[10px] font-bold text-white">
+              Ξ
+            </div>
+            <span className="text-xs font-medium">0.42 ETH</span>
+          </div>
+
+          {/* Notifications */}
+          <Button variant="ghost" size="icon" className="h-9 w-9 relative">
+            <Bell className="h-4 w-4" />
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-destructive rounded-full animate-pulse" />
+          </Button>
+
+          {/* Account Menu */}
+          <Button variant="ghost" size="sm" className="gap-2 h-9 px-2">
+            <Avatar className="h-7 w-7 ring-2 ring-secondary/30">
+              <AvatarFallback className="text-xs bg-gradient-to-br from-primary to-secondary text-white font-bold">
+                SK
+              </AvatarFallback>
+            </Avatar>
+            <span className="hidden md:inline text-sm font-mono">
+              0x1234...5678
+            </span>
+            <ChevronDown className="h-3 w-3 opacity-50" />
+          </Button>
+
+          {/* Mobile Menu */}
+          <Button variant="ghost" size="icon" className="lg:hidden h-9 w-9">
+            <Menu className="h-5 w-5" />
+          </Button>
+        </div>
       </div>
 
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-1">
-        {/* Trade Dropdown */}
+      {/* Bottom Row: Navigation Menu */}
+      <nav className="hidden lg:flex items-center gap-1 h-10 overflow-x-auto">
         <Button
           variant="ghost"
           size="sm"
-          className="gap-1 text-muted-foreground hover:text-foreground"
+          className="px-3 py-1.5 text-sm font-medium text-primary bg-primary/10"
         >
-          Trade <ChevronDown className="h-3 w-3" />
+          AI
         </Button>
-
         <Button
           variant="ghost"
           size="sm"
-          className="text-muted-foreground hover:text-foreground"
+          className="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
         >
-          Play
+          Trade
         </Button>
-
         <Button
           variant="ghost"
           size="sm"
-          className="text-muted-foreground hover:text-foreground"
+          className="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
         >
           Predict
         </Button>
-
-        {/* Social Dropdown */}
         <Button
           variant="ghost"
           size="sm"
-          className="gap-1 text-muted-foreground hover:text-foreground"
+          className="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
+        >
+          Play
+        </Button>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary gap-1"
         >
           Social <ChevronDown className="h-3 w-3" />
         </Button>
-
-        {/* SKAI Dropdown */}
         <Button
           variant="ghost"
           size="sm"
-          className="gap-1 text-muted-foreground hover:text-foreground"
+          className="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary gap-1"
         >
           SKAI <ChevronDown className="h-3 w-3" />
         </Button>
       </nav>
-    </div>
-
-    {/* Right Side Actions */}
-    <div className="flex items-center gap-2">
-      {/* Global Search */}
-      <Button variant="ghost" size="icon" className="hidden md:flex h-9 w-9">
-        <Search className="h-4 w-4" />
-      </Button>
-
-      {/* Notifications */}
-      <Button variant="ghost" size="icon" className="h-9 w-9 relative">
-        <Bell className="h-4 w-4" />
-        <span className="absolute top-1 right-1 w-2 h-2 bg-destructive rounded-full" />
-      </Button>
-
-      {/* Account Dropdown */}
-      <Button variant="ghost" size="sm" className="gap-2">
-        <Avatar className="h-6 w-6">
-          <AvatarFallback className="text-xs bg-gradient-to-br from-primary to-secondary text-white">
-            SK
-          </AvatarFallback>
-        </Avatar>
-        <span className="hidden md:inline text-sm">0x1234...5678</span>
-        <ChevronDown className="h-3 w-3" />
-      </Button>
-
-      {/* Mobile Menu */}
-      <Button variant="ghost" size="icon" className="md:hidden h-9 w-9">
-        <Menu className="h-5 w-5" />
-      </Button>
     </div>
   </header>
 );
@@ -209,7 +248,7 @@ const SKAIHeader = () => (
  * Source: src/components/layout/MobileBottomNav.tsx
  */
 const MobileBottomNav = () => (
-  <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border/30 backdrop-blur-xl bg-background/95 h-16">
+  <nav className="md:hidden fixed bottom-10 left-0 right-0 z-50 border-t border-border/30 backdrop-blur-xl bg-background/95 h-16">
     <div className="grid grid-cols-5 h-full">
       {[
         { icon: Home, label: "Home", active: true },
@@ -236,6 +275,155 @@ const MobileBottomNav = () => (
     </div>
   </nav>
 );
+
+// Brand Icons
+const DiscordIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
+  </svg>
+);
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+/**
+ * Bottom Ticker Bar - Dock-style navigation with crypto ticker
+ *
+ * The BottomTickerBar is always visible at the bottom:
+ * - Left: Social links (Discord, X)
+ * - Center: Scrolling crypto price ticker with AI signals
+ * - Right: Dock icons (AI, Games, Messages, Quests, Wallet)
+ *
+ * Source: src/components/layout/BottomTickerBar.tsx (1080 lines)
+ */
+const BottomTickerBar = () => {
+  const tickerItems = [
+    {
+      symbol: "BTC",
+      price: "$67,234",
+      change: "+2.4%",
+      isPositive: true,
+      signal: "BUY",
+    },
+    {
+      symbol: "ETH",
+      price: "$3,456",
+      change: "+1.8%",
+      isPositive: true,
+      signal: "HOLD",
+    },
+    {
+      symbol: "SOL",
+      price: "$142.50",
+      change: "-0.5%",
+      isPositive: false,
+      signal: "SELL",
+    },
+    {
+      symbol: "BNB",
+      price: "$567.89",
+      change: "+0.9%",
+      isPositive: true,
+      signal: null,
+    },
+    {
+      symbol: "XRP",
+      price: "$0.523",
+      change: "+3.2%",
+      isPositive: true,
+      signal: "BUY",
+    },
+    {
+      symbol: "ADA",
+      price: "$0.456",
+      change: "-1.2%",
+      isPositive: false,
+      signal: null,
+    },
+    {
+      symbol: "DOGE",
+      price: "$0.0891",
+      change: "+5.6%",
+      isPositive: true,
+      signal: "BUY",
+    },
+  ];
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-[100] h-10 bg-background/95 backdrop-blur-xl border-t border-border/50 flex items-center">
+      {/* Social Links - Left */}
+      <div className="flex items-center gap-1 px-2 border-r border-border/50">
+        <button className="p-2 rounded-lg hover:bg-accent/50 transition-colors">
+          <DiscordIcon className="w-4 h-4 text-[#5865F2]" />
+        </button>
+        <button className="p-2 rounded-lg hover:bg-accent/50 transition-colors">
+          <XIcon className="w-4 h-4" />
+        </button>
+      </div>
+
+      {/* Crypto Ticker - Center (scrolling) */}
+      <div className="flex-1 overflow-hidden border-r border-border/50">
+        <div className="flex items-center animate-ticker whitespace-nowrap">
+          {[...tickerItems, ...tickerItems].map((item, i) => (
+            <div key={i} className="flex items-center mx-4 text-xs">
+              <span className="mr-2 font-mono font-bold text-primary">
+                {item.symbol}
+              </span>
+              <span className="text-muted-foreground mr-2">{item.price}</span>
+              <span
+                className={`font-medium ${item.isPositive ? "text-green-500" : "text-red-500"}`}
+              >
+                {item.change}
+              </span>
+              {item.signal && (
+                <span
+                  className={`ml-1.5 text-[9px] font-bold px-1 py-0.5 rounded ${
+                    item.signal === "BUY"
+                      ? "text-green-400 bg-green-400/10"
+                      : item.signal === "SELL"
+                        ? "text-red-400 bg-red-400/10"
+                        : "text-yellow-400 bg-yellow-400/10"
+                  }`}
+                >
+                  {item.signal}
+                </span>
+              )}
+              <span className="mx-4 text-border/30">|</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dock Icons - Right */}
+      <div className="flex items-center gap-0.5 px-2">
+        <button className="group relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all">
+          <Brain className="w-4 h-4 text-primary" />
+        </button>
+        <button className="group relative flex items-center justify-center w-9 h-9 rounded-xl hover:bg-accent/50 transition-colors">
+          <Gamepad2 className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
+        </button>
+        <button className="group relative flex items-center justify-center w-9 h-9 rounded-xl hover:bg-accent/50 transition-colors">
+          <MessageSquare className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
+          <span className="absolute -top-1 -right-1 h-4 min-w-4 px-1 flex items-center justify-center bg-destructive text-white text-[10px] font-bold rounded-full">
+            3
+          </span>
+        </button>
+        <button className="group relative flex items-center justify-center w-9 h-9 rounded-xl hover:bg-accent/50 transition-colors">
+          <Target className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
+          <span className="absolute -top-1 -right-1 h-4 min-w-4 px-1 flex items-center justify-center bg-yellow-500 text-yellow-950 text-[10px] font-bold rounded-full">
+            2
+          </span>
+        </button>
+        <button className="group relative flex items-center justify-center w-9 h-9 rounded-xl hover:bg-accent/50 transition-colors">
+          <Wallet className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
+        </button>
+      </div>
+    </div>
+  );
+};
 
 /**
  * Dashboard / Home Page Layout
@@ -384,6 +572,7 @@ The SKAI home page (\`src/pages/Index.tsx\`) uses:
       </section>
 
       <MobileBottomNav />
+      <BottomTickerBar />
     </div>
   ),
 };
@@ -553,6 +742,7 @@ The SKAI swap interface (\`src/pages/trade/SwapNew.tsx\`) includes:
       </main>
 
       <MobileBottomNav />
+      <BottomTickerBar />
     </div>
   ),
 };
@@ -690,6 +880,7 @@ The prediction markets page features:
       </main>
 
       <MobileBottomNav />
+      <BottomTickerBar />
     </div>
   ),
 };
@@ -834,6 +1025,7 @@ The account page includes:
       </main>
 
       <MobileBottomNav />
+      <BottomTickerBar />
     </div>
   ),
 };
