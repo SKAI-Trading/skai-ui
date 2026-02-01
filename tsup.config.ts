@@ -7,6 +7,8 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   clean: true,
+  // Silent mode - we show our own build banner
+  silent: true,
   external: [
     "react",
     "react-dom",
