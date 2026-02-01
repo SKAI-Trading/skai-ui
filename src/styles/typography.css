@@ -1,0 +1,436 @@
+/**
+ * SKAI UI Typography Styles
+ * ==========================
+ * 
+ * Typography system based on Figma Design System.
+ * Import this file for access to all typography classes.
+ * 
+ * @import '@skai/ui/styles/typography.css';
+ * 
+ * FONTS:
+ * - Cormorant Garamond: Headlines (elegant serif)
+ * - Manrope: Sub-headlines, UI text (modern sans)
+ * - Mulish: Body text, numbers (readable sans)
+ * - JetBrains Mono: Code, monospace
+ * 
+ * @package @skai/ui
+ */
+
+/* =============================================================================
+ * BASE FONT FAMILIES
+ * ============================================================================= */
+
+.font-heading,
+.font-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-subheading,
+.font-sans {
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+.font-body {
+  font-family: "Mulish", system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", Menlo, monospace;
+}
+
+/* =============================================================================
+ * HEADLINE STYLES (Cormorant Garamond)
+ * ============================================================================= */
+
+/* Headline 2 - 82px */
+.skai-headline-2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 82px;
+  line-height: 90px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
+}
+
+.skai-headline-2-italic {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 82px;
+  line-height: 90px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Headline 3 - 54px / 40px / 30px */
+.skai-headline-3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 54px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
+}
+
+@media (max-width: 1023px) {
+  .skai-headline-3 {
+    font-size: 40px;
+    line-height: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skai-headline-3 {
+    font-size: 30px;
+    line-height: 28px;
+  }
+}
+
+/* Headline 4 - 40px / 30px / 26px */
+.skai-headline-4 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
+}
+
+@media (max-width: 1023px) {
+  .skai-headline-4 {
+    font-size: 30px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skai-headline-4 {
+    font-size: 26px;
+    line-height: 28px;
+  }
+}
+
+/* Headline 5 - 30px / 28px / 22px */
+.skai-headline-5 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 30px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
+}
+
+@media (max-width: 1023px) {
+  .skai-headline-5 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skai-headline-5 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+/* =============================================================================
+ * SUPER-HEADLINE STYLES (Manrope)
+ * ============================================================================= */
+
+/* Super-headline 1 - 30px / 24px / 20px */
+.skai-super-1 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+}
+
+@media (max-width: 1023px) {
+  .skai-super-1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skai-super-1 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+/* Super-headline 2 - 24px / 22px / 18px */
+.skai-super-2 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+}
+
+@media (max-width: 1023px) {
+  .skai-super-2 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skai-super-2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/* =============================================================================
+ * SUB-HEADLINE STYLES (Manrope)
+ * ============================================================================= */
+
+/* Sub-headline 1 - 20px / 18px / 16px */
+.skai-sub-1 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+@media (max-width: 1023px) {
+  .skai-sub-1 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skai-sub-1 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+/* Sub-headline 2 - 18px / 17px / 15px */
+.skai-sub-2 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+@media (max-width: 1023px) {
+  .skai-sub-2 {
+    font-size: 17px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skai-sub-2 {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+/* Sub-headline 3 - 16px */
+.skai-sub-3 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+/* Sub-headline 4 - 14px */
+.skai-sub-4 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+/* =============================================================================
+ * PARAGRAPH STYLES (Manrope)
+ * ============================================================================= */
+
+/* Paragraph 1 - 16px */
+.skai-para-1 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+
+/* Paragraph 2 - 14px */
+.skai-para-2 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+
+/* Paragraph 3 - 12px */
+.skai-para-3 {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+
+/* =============================================================================
+ * NUMBER STYLES (Mulish)
+ * ============================================================================= */
+
+/* Number 1 - 20px */
+.skai-number-1 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Number 2 - 16px */
+.skai-number-2 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Number 3 - 14px */
+.skai-number-3 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Number 4 - 12px */
+.skai-number-4 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Number 5 - 10px */
+.skai-number-5 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =============================================================================
+ * LABEL STYLES (Mulish)
+ * ============================================================================= */
+
+/* Label 1 - 14px */
+.skai-label-1 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+/* Label 2 - 12px */
+.skai-label-2 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+/* Label 3 - 10px */
+.skai-label-3 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+}
+
+/* Label 4 - 8px */
+.skai-label-4 {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 8px;
+  line-height: 10px;
+  font-weight: 400;
+}
+
+/* =============================================================================
+ * TAILWIND UTILITY ALIASES
+ * ============================================================================= */
+
+/* Text size utilities that map to typography scale */
+.text-headline-2 {
+  @extend .skai-headline-2;
+}
+.text-headline-3 {
+  @extend .skai-headline-3;
+}
+.text-headline-4 {
+  @extend .skai-headline-4;
+}
+.text-headline-5 {
+  @extend .skai-headline-5;
+}
+.text-super-1 {
+  @extend .skai-super-1;
+}
+.text-super-2 {
+  @extend .skai-super-2;
+}
+.text-sub-1 {
+  @extend .skai-sub-1;
+}
+.text-sub-2 {
+  @extend .skai-sub-2;
+}
+.text-sub-3 {
+  @extend .skai-sub-3;
+}
+.text-sub-4 {
+  @extend .skai-sub-4;
+}
+.text-para-1 {
+  @extend .skai-para-1;
+}
+.text-para-2 {
+  @extend .skai-para-2;
+}
+.text-para-3 {
+  @extend .skai-para-3;
+}
+.text-number-1 {
+  @extend .skai-number-1;
+}
+.text-number-2 {
+  @extend .skai-number-2;
+}
+.text-number-3 {
+  @extend .skai-number-3;
+}
+.text-number-4 {
+  @extend .skai-number-4;
+}
+.text-number-5 {
+  @extend .skai-number-5;
+}
+.text-label-1 {
+  @extend .skai-label-1;
+}
+.text-label-2 {
+  @extend .skai-label-2;
+}
+.text-label-3 {
+  @extend .skai-label-3;
+}
+.text-label-4 {
+  @extend .skai-label-4;
+}

@@ -1,0 +1,384 @@
+/**
+ * SKAI UI Utility Classes
+ * ========================
+ * 
+ * Additional utility classes for the SKAI design system.
+ * 
+ * @import '@skai/ui/styles/utilities.css';
+ * 
+ * @package @skai/ui
+ */
+
+/* =============================================================================
+ * SCROLLBAR UTILITIES
+ * ============================================================================= */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.2);
+  border-radius: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.4);
+}
+
+.scrollbar-thumb-primary\/20::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.2);
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =============================================================================
+ * MOBILE TOUCH OPTIMIZATIONS
+ * ============================================================================= */
+
+@media (max-width: 768px) {
+  /* Minimum touch target size (44x44px per iOS guidelines) */
+  button:not(.no-min-touch),
+  a:not(.no-min-touch),
+  input[type="button"]:not(.no-min-touch),
+  input[type="submit"]:not(.no-min-touch),
+  [role="button"]:not(.no-min-touch) {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Increase tap targets for small buttons */
+  .btn-sm,
+  .button-small {
+    min-height: 40px;
+    min-width: 40px;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Improve scrolling performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Disable iOS text size adjust */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Remove tap highlight on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Improve touch feedback */
+  button:active,
+  a:active,
+  [role="button"]:active {
+    opacity: 0.7;
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+  }
+
+  /* Optimize chart interactions */
+  canvas,
+  svg {
+    touch-action: pan-y pinch-zoom;
+  }
+
+  /* Improve form inputs on mobile */
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
+  }
+}
+
+/* =============================================================================
+ * PWA SAFE AREA SUPPORT
+ * ============================================================================= */
+
+@supports (padding: max(0px)) {
+  .safe-area-inset {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+
+  .safe-area-inset-all {
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Disable pull-to-refresh on mobile */
+.no-overscroll {
+  overscroll-behavior-y: contain;
+}
+
+/* =============================================================================
+ * WALLETCONNECT / WEB3MODAL OVERRIDES
+ * Hide URI display, show QR only
+ * ============================================================================= */
+
+/* Hide raw URI text in WalletConnect modal */
+[data-testid="wcm-wallet-connect-uri"],
+.wcm-wallet-connect-uri,
+w3m-text[class*="uri"],
+w3m-modal-content [class*="uri-container"],
+wcm-modal-content [class*="uri-container"],
+.wc-qr-modal__uri,
+[class*="CopyButton"] + [class*="uri"],
+[data-testid="qr-code-uri"],
+[data-tw-modal] input[readonly],
+[class*="CopyButton"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure QR code is visible */
+[data-testid="qr-code"],
+.wcm-qr-code,
+canvas[class*="qr"],
+[class*="QRCode"],
+w3m-qrcode {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Hide "Copy to clipboard" for URI */
+button[data-testid="copy-uri"],
+[aria-label*="Copy URI"],
+[aria-label*="copy uri"],
+[title*="Copy URI"] {
+  display: none !important;
+}
+
+/* Hide Thirdweb "Buy" button */
+.tw-highlight-button__buy {
+  display: none !important;
+}
+
+/* =============================================================================
+ * FOCUS STYLES
+ * ============================================================================= */
+
+/* Focus visible for accessibility */
+.focus-visible:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Remove default focus for non-keyboard users */
+.focus-none:focus {
+  outline: none;
+}
+
+/* =============================================================================
+ * SELECTION COLORS
+ * ============================================================================= */
+
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+::-moz-selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* =============================================================================
+ * BACKDROP BLUR UTILITIES
+ * ============================================================================= */
+
+.backdrop-blur-xs {
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* =============================================================================
+ * GRADIENT UTILITIES
+ * ============================================================================= */
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, hsl(199, 90%, 65%), hsl(166, 80%, 55%));
+}
+
+.bg-gradient-primary-vertical {
+  background: linear-gradient(180deg, hsl(199, 90%, 65%), hsl(166, 80%, 55%));
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #ffb547, #e8a027);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #001615, #00312d);
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, hsl(199, 90%, 65%), hsl(166, 80%, 55%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =============================================================================
+ * GLASS MORPHISM
+ * ============================================================================= */
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* =============================================================================
+ * GLOW EFFECTS
+ * ============================================================================= */
+
+.glow-border {
+  border: 1px solid hsl(var(--primary) / 0.3);
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+}
+
+.glow-primary {
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 30px hsl(var(--secondary) / 0.3);
+}
+
+.glow-success {
+  box-shadow: 0 0 30px hsl(var(--long) / 0.3);
+}
+
+.glow-error {
+  box-shadow: 0 0 30px hsl(var(--short) / 0.3);
+}
+
+/* =============================================================================
+ * TRADING-SPECIFIC UTILITIES
+ * ============================================================================= */
+
+/* Price change colors */
+.text-price-up {
+  color: hsl(var(--long));
+}
+
+.text-price-down {
+  color: hsl(var(--short));
+}
+
+.text-price-neutral {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Trade side badges */
+.badge-long {
+  background: hsl(var(--long) / 0.2);
+  color: hsl(var(--long));
+  border: 1px solid hsl(var(--long) / 0.3);
+}
+
+.badge-short {
+  background: hsl(var(--short) / 0.2);
+  color: hsl(var(--short));
+  border: 1px solid hsl(var(--short) / 0.3);
+}
+
+/* =============================================================================
+ * HIDE/SHOW UTILITIES
+ * ============================================================================= */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}

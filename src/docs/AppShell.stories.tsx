@@ -126,7 +126,10 @@ const tickerItems = [
 const MockTicker = () => (
   <div className="flex items-center gap-4 px-4 text-xs animate-marquee">
     {tickerItems.map((item) => (
-      <span key={item.symbol} className="flex items-center gap-2 whitespace-nowrap">
+      <span
+        key={item.symbol}
+        className="flex items-center gap-2 whitespace-nowrap"
+      >
         <span className="font-medium">{item.symbol}</span>
         <span className="text-muted-foreground">{item.price}</span>
         <span
@@ -372,8 +375,7 @@ export const MobileNavExample: Story = {
         logo={<SkaiLogo size="sm" variant="icon" />}
         mobileMenuTrigger={
           <Button variant="ghost" size="icon">
-            <span className="sr-only">Menu</span>
-            ≡
+            <span className="sr-only">Menu</span>≡
           </Button>
         }
         actions={

@@ -54,6 +54,9 @@ export * from "./components/app-footer";
 export * from "./components/mobile-nav";
 export * from "./components/dock-bar";
 
+// Components - Page Layouts (Standard page templates)
+export * from "./components/page-layouts";
+
 // Components - Overlay
 export * from "./components/dialog";
 export * from "./components/dropdown-menu";
@@ -249,6 +252,42 @@ export type {
   AppColor,
   SemanticColor,
 } from "./lib/tokens";
+
+// =============================================================================
+// TAILWIND PRESET - SINGLE SOURCE OF TRUTH
+// =============================================================================
+// Use this in consuming apps to inherit all SKAI design tokens:
+//
+// ```ts
+// // tailwind.config.ts
+// import { skaiPreset } from '@skai/ui';
+// export default { presets: [skaiPreset], ... } satisfies Config;
+// ```
+
+export { default as skaiPreset } from "./lib/tailwind-preset";
+export {
+  // Animation exports
+  skaiKeyframes,
+  skaiAnimations,
+  skaiTransitionDuration,
+  skaiTransitionTimingFunction,
+  // Layout exports
+  skaiScreens,
+  skaiZIndex,
+  // Gradient exports
+  skaiBackgroundImage,
+  // Semantic color exports
+  skaiSemanticColors,
+} from "./lib/tailwind-preset";
+export type {
+  SkaiPresetConfig,
+  SkaiKeyframe,
+  SkaiAnimation,
+  SkaiTransitionDuration,
+  SkaiTransitionTimingFunction,
+  SkaiScreen,
+  SkaiZIndexLevel,
+} from "./lib/tailwind-preset";
 
 // Styles - import this in your app's main CSS
 // import '@skai/ui/dist/styles.css';

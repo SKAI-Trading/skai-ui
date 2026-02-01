@@ -1,0 +1,647 @@
+/**
+ * SKAI UI Animations
+ * ===================
+ * 
+ * Reusable animation classes for the SKAI design system.
+ * Import this file for access to all standard SKAI animations.
+ * 
+ * @import '@skai/ui/styles/animations.css';
+ * 
+ * @package @skai/ui
+ */
+
+/* =============================================================================
+ * KEYFRAME DEFINITIONS
+ * ============================================================================= */
+
+/* Fade Animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page Transitions */
+@keyframes page-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes page-fade-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+}
+
+/* Slide Animations */
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-bottom {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Scale Animations */
+@keyframes scale-in {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Marquee/Ticker Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+@keyframes shimmer-bg {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Pulse Animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-green {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px hsl(var(--long) / 0.6);
+  }
+}
+
+@keyframes pulse-red {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px hsl(var(--short) / 0.6);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glow Pulse */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 10px rgba(44, 236, 173, 0.3),
+      0 0 20px rgba(86, 192, 246, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(44, 236, 173, 0.5),
+      0 0 30px rgba(86, 192, 246, 0.4);
+  }
+}
+
+/* Spin Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ping Animation */
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Accordion Animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* Slot Machine Animations */
+@keyframes slotSpin {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-10px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Celebration Animations */
+@keyframes celebration-flash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  30%,
+  50% {
+    opacity: 1;
+  }
+  20%,
+  40% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes celebration-slide {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  15% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* LED Pulse Effect */
+@keyframes ledPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px rgba(var(--primary), 0.2),
+      0 4px 20px rgba(var(--primary), 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(var(--primary), 0.5),
+      0 4px 40px rgba(var(--primary), 0.3);
+  }
+}
+
+/* Win Animation */
+@keyframes winPing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Exit Overlay Animations */
+@keyframes fadeOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+    letter-spacing: -0.05em;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: normal;
+    transform: translateY(0);
+  }
+}
+
+/* Message Highlight */
+@keyframes messageHighlight {
+  0% {
+    background-color: rgba(234, 179, 8, 0.3);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* =============================================================================
+ * ANIMATION CLASSES
+ * ============================================================================= */
+
+@layer utilities {
+  /* Fade Animations */
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  .animate-fade-out {
+    animation: fade-out 0.3s ease-in;
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  /* Page Transitions */
+  .page-fade-enter {
+    animation: page-fade-in 0.4s ease-in-out forwards;
+  }
+  .page-fade-exit {
+    animation: page-fade-out 0.3s ease-in-out forwards;
+  }
+
+  .page-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 300ms,
+      transform 300ms;
+  }
+  .page-exit {
+    opacity: 1;
+  }
+  .page-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  /* Slide Animations */
+  .animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+  }
+  .animate-slide-out-left {
+    animation: slide-out-left 0.3s ease-in;
+  }
+  .animate-slide-in-bottom {
+    animation: slide-in-bottom 0.3s ease-out;
+  }
+  .animate-slide-out-bottom {
+    animation: slide-out-bottom 0.3s ease-in;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+
+  /* Scale Animations */
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out;
+  }
+  .animate-scale-out {
+    animation: scale-out 0.2s ease-in;
+  }
+
+  /* Gradient Animation */
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  /* Marquee/Ticker */
+  .animate-marquee {
+    display: flex;
+    animation: marquee 60s linear infinite;
+    width: max-content;
+  }
+  .animate-ticker {
+    animation: ticker 30s linear infinite;
+  }
+
+  /* Shimmer */
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
+  .animate-shimmer-bg {
+    animation: shimmer-bg 2s linear infinite;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary) / 0.1),
+      transparent
+    );
+    background-size: 1000px 100%;
+  }
+
+  /* Pulse */
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  /* Float */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Spin */
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  /* Ping */
+  .animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Bounce */
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+
+  /* Accordion */
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+
+  /* Slot Machine */
+  .animate-slot-spin {
+    animation: slotSpin 0.1s ease-in-out;
+  }
+
+  /* Celebration */
+  .animate-celebration-flash {
+    animation: celebration-flash 0.6s ease-out;
+  }
+  .animate-celebration-slide {
+    animation: celebration-slide 3s ease-in-out forwards;
+  }
+
+  /* LED & Glow */
+  .animate-led-pulse {
+    animation: ledPulse 2s ease-in-out infinite;
+  }
+
+  /* Win */
+  .animate-win-ping {
+    animation: winPing 0.3s ease-out;
+  }
+
+  /* Overlay */
+  .animate-fadeOverlay {
+    animation: fadeOverlay 0.6s ease-in forwards;
+  }
+  .animate-typing {
+    animation: typing 0.8s ease-out forwards;
+  }
+
+  /* Hover Effects */
+  .hover-glow-text:hover {
+    animation: glowPulse 1.2s infinite ease-in-out;
+  }
+
+  /* Message Highlight */
+  .message-highlight {
+    animation: messageHighlight 2s ease-out forwards;
+    border-radius: 0.5rem;
+  }
+}

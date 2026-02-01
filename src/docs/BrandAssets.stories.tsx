@@ -275,35 +275,100 @@ export const LogoVariants: StoryObj = {
           </Card>
         </section>
 
-        {/* Favicon Sizes */}
+        {/* Favicon - Actual */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Favicon Sizes</h2>
+          <h2 className="text-2xl font-semibold mb-4">Favicon</h2>
+          <p className="text-muted-foreground mb-6">
+            The official SKAI favicon used across all pages. Features the bolt
+            icon with cyan-to-teal gradient.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Dark Background</CardTitle>
+              </CardHeader>
+              <CardContent className="flex items-center justify-center h-32 bg-[#020717] rounded-lg">
+                <img
+                  src="https://app.skai.trade/favicon.png"
+                  alt="SKAI Favicon"
+                  className="w-16 h-16"
+                />
+              </CardContent>
+              <div className="p-4 pt-2 flex items-center justify-between">
+                <Badge variant="outline">favicon.png</Badge>
+                <code className="text-xs text-muted-foreground">32×32</code>
+              </div>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Light Background</CardTitle>
+              </CardHeader>
+              <CardContent className="flex items-center justify-center h-32 bg-white rounded-lg">
+                <img
+                  src="https://app.skai.trade/favicon.png"
+                  alt="SKAI Favicon"
+                  className="w-16 h-16"
+                />
+              </CardContent>
+              <div className="p-4 pt-2 flex items-center justify-between">
+                <Badge variant="outline">Works on both</Badge>
+              </div>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Apple Touch Icon</CardTitle>
+              </CardHeader>
+              <CardContent className="flex items-center justify-center h-32 bg-[#020717] rounded-lg">
+                <img
+                  src="https://app.skai.trade/apple-touch-icon.png"
+                  alt="Apple Touch Icon"
+                  className="w-16 h-16 rounded-xl"
+                />
+              </CardContent>
+              <div className="p-4 pt-2 flex items-center justify-between">
+                <Badge variant="outline">apple-touch-icon.png</Badge>
+                <code className="text-xs text-muted-foreground">180×180</code>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        {/* PWA Icon Sizes */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">PWA Icon Sizes</h2>
+          <p className="text-muted-foreground mb-6">
+            Progressive Web App icons for various device contexts.
+          </p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {[
-              { size: 16, use: "Browser tab" },
-              { size: 32, use: "Browser tab @2x" },
-              { size: 72, use: "iOS/Android" },
-              { size: 96, use: "Google TV" },
-              { size: 128, use: "Chrome Web Store" },
-              { size: 144, use: "Windows 8 tile" },
-              { size: 152, use: "iPad touch" },
-              { size: 192, use: "Android Chrome" },
-              { size: 384, use: "PWA splash" },
-              { size: 512, use: "PWA icon" },
-            ].map(({ size, use }) => (
+              { size: 72, use: "iOS/Android", file: "icon-72x72.png" },
+              { size: 96, use: "Google TV", file: "icon-96x96.png" },
+              { size: 128, use: "Chrome Web Store", file: "icon-128x128.png" },
+              { size: 144, use: "Windows 8 tile", file: "icon-144x144.png" },
+              { size: 152, use: "iPad touch", file: "icon-152x152.png" },
+              { size: 192, use: "Android Chrome", file: "icon-192x192.png" },
+              { size: 384, use: "PWA splash", file: "icon-384x384.png" },
+              { size: 512, use: "PWA icon", file: "icon-512x512.png" },
+            ].map(({ size, use, file }) => (
               <Card key={size}>
                 <CardContent className="p-4 text-center">
                   <div
-                    className="mx-auto mb-2 rounded flex items-center justify-center"
+                    className="mx-auto mb-2 rounded-lg flex items-center justify-center bg-[#020717]"
                     style={{
                       width: Math.min(size, 64),
                       height: Math.min(size, 64),
-                      background: "linear-gradient(135deg, #56C0F6, #2DEDAD)",
                     }}
                   >
-                    <Zap
-                      className="text-white"
-                      size={Math.min(size * 0.6, 32)}
+                    <img
+                      src={`https://app.skai.trade/icons/${file}`}
+                      alt={`${size}px icon`}
+                      style={{
+                        width: Math.min(size, 64),
+                        height: Math.min(size, 64),
+                      }}
+                      className="rounded"
                     />
                   </div>
                   <p className="font-mono text-sm">

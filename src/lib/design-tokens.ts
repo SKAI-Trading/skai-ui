@@ -174,35 +174,135 @@ export const skaiFonts = {
 } as const;
 
 /**
- * Font sizes from Figma (desktop breakpoint)
+ * Typography scale from Figma Design System
+ * Each entry: [fontSize, { lineHeight, letterSpacing, fontWeight }]
+ * Responsive sizes are handled in CSS (see typography.css)
+ *
+ * USAGE GUIDE:
+ * - Headlines (Cormorant Garamond): Page titles, hero text, major headings
+ * - Super-headlines (Manrope): Section intros, impact statements
+ * - Sub-headlines (Manrope): Card titles, section headers, UI headings
+ * - Numbers (Mulish): Prices, stats, numerical data
+ * - Paragraphs (Manrope): Body text, descriptions
+ * - Labels (Mulish): Form labels, badges, captions
  */
 export const skaiFontSizes = {
-  // Headlines (Cormorant Garamond)
-  "headline-2": ["82px", { lineHeight: "90px", letterSpacing: "-0.02em" }],
-  "headline-3": ["54px", { lineHeight: "48px" }],
-  "headline-4": ["34px", { lineHeight: "24px" }],
+  // Headlines (Cormorant Garamond) - Desktop / Tablet / Mobile
+  // headline-2: 82px / 82px / 82px
+  "headline-2": [
+    "82px",
+    { lineHeight: "90px", letterSpacing: "-0.02em", fontWeight: "300" },
+  ],
+  "headline-2-italic": [
+    "82px",
+    {
+      lineHeight: "90px",
+      letterSpacing: "-0.02em",
+      fontWeight: "300",
+      fontStyle: "italic",
+    },
+  ],
+  // headline-3: 54px / 40px / 30px
+  "headline-3": [
+    "54px",
+    { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "300" },
+  ],
+  "headline-3-italic": [
+    "54px",
+    {
+      lineHeight: "48px",
+      letterSpacing: "-0.02em",
+      fontWeight: "300",
+      fontStyle: "italic",
+    },
+  ],
+  // headline-4: 34px / 34px / 34px
+  "headline-4": [
+    "34px",
+    { lineHeight: "24px", letterSpacing: "-0.02em", fontWeight: "300" },
+  ],
 
-  // Super-headlines (Manrope)
-  "super-3": ["42px", { lineHeight: "48px" }],
-  "super-4": ["32px", { lineHeight: "36px" }],
+  // Super-headlines (Manrope) - Desktop / Tablet / Mobile
+  // super-3: 42px / 32px / 24px
+  "super-3": [
+    "42px",
+    { lineHeight: "48px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  // super-4: 32px / 24px / 20px
+  "super-4": [
+    "32px",
+    { lineHeight: "36px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
 
-  // Sub-headlines (Manrope)
-  "sub-1": ["24px", { lineHeight: "28px" }],
-  "sub-2": ["18px", { lineHeight: "24px" }],
+  // Sub-headlines (Manrope) - Desktop / Tablet / Mobile
+  // sub-1: 24px / 18px / 16px
+  "sub-1": [
+    "24px",
+    { lineHeight: "28px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  // sub-2: 18px / 14px / 12px
+  "sub-2": [
+    "18px",
+    { lineHeight: "24px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  "sub-2-semibold": [
+    "18px",
+    { lineHeight: "24px", letterSpacing: "-0.04em", fontWeight: "600" },
+  ],
 
-  // Numbers (Mulish)
-  "number-1": ["42px", { lineHeight: "48px" }],
-  "number-2": ["32px", { lineHeight: "38px" }],
-  "number-3": ["22px", { lineHeight: "26px" }],
-  "number-4": ["14px", { lineHeight: "18px" }],
+  // Numbers (Mulish) - Desktop / Tablet / Mobile
+  // number-1: 42px / 32px / 24px
+  "number-1": [
+    "42px",
+    { lineHeight: "48px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  // number-2: 32px / 24px / 20px
+  "number-2": [
+    "32px",
+    { lineHeight: "38px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  // number-3: 22px / 16px / 14px
+  "number-3": [
+    "22px",
+    { lineHeight: "26px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  // number-4: 14px / 12px / 10px
+  "number-4": [
+    "14px",
+    { lineHeight: "18px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
 
-  // Paragraphs (Manrope/Mulish)
-  "para-1": ["16px", { lineHeight: "22px" }],
-  "para-2": ["14px", { lineHeight: "18px" }],
+  // Paragraphs (Manrope) - Desktop / Tablet / Mobile
+  // para-1: 16px / 14px / 12px
+  "para-1": [
+    "16px",
+    { lineHeight: "22px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  "para-1-semibold": [
+    "16px",
+    { lineHeight: "22px", letterSpacing: "-0.04em", fontWeight: "600" },
+  ],
+  // para-2: 14px / 12px / 10px
+  "para-2": [
+    "14px",
+    { lineHeight: "18px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  "para-2-semibold": [
+    "14px",
+    { lineHeight: "18px", letterSpacing: "-0.04em", fontWeight: "600" },
+  ],
 
-  // Labels (Mulish)
-  "label-1": ["16px", { lineHeight: "16px" }],
-  "label-2": ["11px", { lineHeight: "14px" }],
+  // Labels (Mulish) - Desktop / Tablet / Mobile
+  // label-1: 16px / 16px / 16px
+  "label-1": [
+    "16px",
+    { lineHeight: "16px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
+  // label-2: 11px / 8px / 8px
+  "label-2": [
+    "11px",
+    { lineHeight: "14px", letterSpacing: "-0.04em", fontWeight: "300" },
+  ],
 } as const;
 
 // =============================================================================

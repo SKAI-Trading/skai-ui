@@ -1,0 +1,567 @@
+/**
+ * SKAI UI Base Styles
+ * ====================
+ * 
+ * THIS FILE IS THE SINGLE SOURCE OF TRUTH FOR ALL SKAI APPLICATIONS.
+ * 
+ * Import this file in your app's entry point CSS:
+ *   @import '@skai/ui/styles/base.css';
+ * 
+ * Or import the complete bundle:
+ *   @import '@skai/ui/styles';
+ * 
+ * Includes:
+ * - CSS Reset/Normalize
+ * - CSS Custom Properties (design tokens)
+ * - Base element styles
+ * - Theme support (light/dark mode)
+ * 
+ * @package @skai/ui
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================================================
+ * FONT IMPORTS (from Figma Design System)
+ * - Cormorant Garamond: Headlines (elegant serif)
+ * - Manrope: Sub-headlines, UI text (modern sans)
+ * - Mulish: Body text, numbers (readable sans)
+ * - JetBrains Mono: Code, monospace
+ * ============================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+/* =============================================================================
+ * CSS CUSTOM PROPERTIES - Design Tokens
+ * ============================================================================= */
+
+@layer base {
+  :root {
+    /* ========================================
+     * BRAND COLORS (from BRAND_GUIDELINES.md)
+     * ======================================== */
+
+    /* Primary: Cyan (#56C0F6) */
+    --skai-cyan-h: 199;
+    --skai-cyan-s: 90%;
+    --skai-cyan-l: 65%;
+    --skai-cyan: hsl(
+      var(--skai-cyan-h),
+      var(--skai-cyan-s),
+      var(--skai-cyan-l)
+    );
+
+    /* Secondary: Teal/Green (#2DEDAD / #17F9B4) */
+    --skai-teal-h: 166;
+    --skai-teal-s: 80%;
+    --skai-teal-l: 55%;
+    --skai-teal: hsl(
+      var(--skai-teal-h),
+      var(--skai-teal-s),
+      var(--skai-teal-l)
+    );
+
+    /* Background: Dark Navy (#020717) */
+    --skai-navy-h: 225;
+    --skai-navy-s: 80%;
+    --skai-navy-l: 4%;
+    --skai-navy: hsl(
+      var(--skai-navy-h),
+      var(--skai-navy-s),
+      var(--skai-navy-l)
+    );
+
+    /* Green Coal Palette (from Figma) */
+    --skai-green-coal-300: #001615;
+    --skai-green-coal-200: #122524;
+    --skai-green-coal-100: #123f3c;
+
+    /* Alien Green */
+    --skai-alien-green: #17f9b4;
+
+    /* ========================================
+     * SEMANTIC COLORS (HSL for theme support)
+     * ======================================== */
+
+    /* Dark Mode Default */
+    --background: 225 80% 4%;
+    --foreground: 0 0% 100%;
+
+    /* Cards & Surfaces */
+    --card: 225 60% 8%;
+    --card-foreground: 0 0% 100%;
+    --glass: 225 50% 12%;
+
+    --popover: 225 60% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary Actions */
+    --primary: 199 90% 65%;
+    --primary-foreground: 225 80% 4%;
+    --primary-glow: 199 90% 75%;
+
+    /* Secondary Actions */
+    --secondary: 166 80% 55%;
+    --secondary-foreground: 225 80% 4%;
+    --secondary-glow: 166 80% 65%;
+
+    /* Trading - Long/Buy */
+    --long: 142 76% 36%;
+    --long-foreground: 180 100% 98%;
+    --long-glow: 142 76% 46%;
+
+    /* Trading - Short/Sell */
+    --short: 0 84% 60%;
+    --short-foreground: 180 100% 98%;
+    --short-glow: 0 84% 70%;
+
+    /* Muted */
+    --muted: 225 30% 15%;
+    --muted-foreground: 225 20% 70%;
+
+    /* Accent */
+    --accent: 199 90% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 180 100% 98%;
+
+    /* Input & Border */
+    --border: 225 30% 20%;
+    --input: 225 30% 15%;
+    --ring: 199 90% 65%;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* ========================================
+     * GRADIENTS
+     * ======================================== */
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary))
+    );
+    --gradient-glow: linear-gradient(
+      135deg,
+      hsl(var(--primary-glow)),
+      hsl(var(--secondary-glow))
+    );
+    --gradient-bg: linear-gradient(
+      180deg,
+      hsl(var(--background)),
+      hsl(222 47% 5%)
+    );
+
+    /* ========================================
+     * SHADOWS
+     * ======================================== */
+
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-strong: 0 10px 40px hsl(var(--primary) / 0.4);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    /* ========================================
+     * TRANSITIONS
+     * ======================================== */
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease;
+    --transition-slow: all 0.5s ease;
+
+    /* ========================================
+     * Z-INDEX SCALE
+     * ======================================== */
+
+    --z-dropdown: 50;
+    --z-sticky: 100;
+    --z-fixed: 150;
+    --z-modal-backdrop: 200;
+    --z-modal: 300;
+    --z-popover: 400;
+    --z-tooltip: 500;
+    --z-toast: 600;
+
+    /* ========================================
+     * SPACING SCALE (8px base)
+     * ======================================== */
+
+    --space-0: 0;
+    --space-1: 0.25rem; /* 4px */
+    --space-2: 0.5rem; /* 8px */
+    --space-3: 0.75rem; /* 12px */
+    --space-4: 1rem; /* 16px */
+    --space-5: 1.25rem; /* 20px */
+    --space-6: 1.5rem; /* 24px */
+    --space-8: 2rem; /* 32px */
+    --space-10: 2.5rem; /* 40px */
+    --space-12: 3rem; /* 48px */
+    --space-16: 4rem; /* 64px */
+    --space-20: 5rem; /* 80px */
+    --space-24: 6rem; /* 96px */
+  }
+
+  /* ========================================
+   * LIGHT MODE THEME
+   * ======================================== */
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 222 47% 11%;
+    --glass: 0 0% 96%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 169 89% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 169 89% 50%;
+
+    --secondary: 199 89% 48%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 199 89% 58%;
+
+    --long: 142 76% 32%;
+    --long-foreground: 0 0% 100%;
+    --long-glow: 142 76% 42%;
+
+    --short: 0 84% 55%;
+    --short-foreground: 0 0% 100%;
+    --short-glow: 0 84% 65%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 169 89% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 169 89% 40%;
+
+    /* Light mode gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary))
+    );
+    --gradient-glow: linear-gradient(
+      135deg,
+      hsl(var(--primary-glow)),
+      hsl(var(--secondary-glow))
+    );
+    --gradient-bg: linear-gradient(
+      180deg,
+      hsl(var(--background)),
+      hsl(220 14% 96%)
+    );
+
+    /* Light mode shadows */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.2);
+    --shadow-strong: 0 10px 40px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* =============================================================================
+ * BASE ELEMENT STYLES
+ * ============================================================================= */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background: hsl(225, 80%, 4%);
+    background-image:
+      radial-gradient(
+        ellipse 80% 50% at 50% 0%,
+        hsl(166, 80%, 55%, 0.04),
+        transparent
+      ),
+      linear-gradient(180deg, hsl(225, 80%, 4%) 0%, hsl(225, 60%, 6%) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  /* Number input spinner removal */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  /* Mobile touch targets */
+  @media (max-width: 768px) {
+    button:not(.no-min-size),
+    a:not(.no-min-size),
+    [role="button"]:not(.no-min-size) {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    input,
+    select,
+    textarea {
+      font-size: 16px; /* Prevents iOS zoom */
+    }
+  }
+}
+
+/* =============================================================================
+ * COMPONENT CLASSES
+ * ============================================================================= */
+
+@layer components {
+  /* Glass Panel Effect */
+  .glass-panel {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    @apply rounded-xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Glow Border */
+  .glow-border {
+    @apply border border-primary/30;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+
+  /* Glow Text */
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  /* Button Glow */
+  .btn-glow {
+    @apply relative overflow-hidden;
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-glow:hover {
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-2px);
+  }
+
+  /* Price Animations */
+  .price-up {
+    @apply text-long;
+    animation: pulse-green 0.5s ease-in-out;
+  }
+
+  .price-down {
+    @apply text-short;
+    animation: pulse-red 0.5s ease-in-out;
+  }
+
+  /* SKAI Glow Effects */
+  .glow-skai {
+    box-shadow: 0 0 15px rgba(44, 236, 173, 0.15);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-skai:hover {
+    box-shadow: 0 0 20px rgba(86, 192, 246, 0.25);
+  }
+
+  /* Grid Background */
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(166, 80%, 55%, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(166, 80%, 55%, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(
+      ellipse 100% 80% at 50% 30%,
+      black 0%,
+      transparent 70%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 100% 80% at 50% 30%,
+      black 0%,
+      transparent 70%
+    );
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow Orbs */
+  .glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .glow-orb-primary {
+    background: radial-gradient(
+      circle,
+      hsl(166, 80%, 55%, 0.08) 0%,
+      transparent 70%
+    );
+    filter: blur(80px);
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .glow-orb-secondary {
+    background: radial-gradient(
+      circle,
+      hsl(199, 90%, 65%, 0.06) 0%,
+      transparent 70%
+    );
+    filter: blur(100px);
+    width: 500px;
+    height: 500px;
+    top: 30%;
+    right: -100px;
+  }
+
+  /* Brand Semantic Classes */
+  .bg-brand {
+    background: hsl(225, 80%, 4%);
+  }
+  .bg-brand-dark {
+    background: hsl(225, 80%, 3%);
+  }
+  .bg-brand-elevated {
+    background: hsl(225, 60%, 8%);
+  }
+  .bg-brand-surface {
+    background: hsl(225, 50%, 12%);
+  }
+
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, hsl(199, 90%, 65%), hsl(166, 80%, 55%));
+  }
+
+  .text-brand-gradient {
+    background: linear-gradient(135deg, hsl(199, 90%, 65%), hsl(166, 80%, 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-brand-primary {
+    color: hsl(199, 90%, 65%);
+  }
+  .text-brand-secondary {
+    color: hsl(166, 80%, 55%);
+  }
+  .bg-brand-primary {
+    background: hsl(199, 90%, 65%);
+  }
+  .bg-brand-secondary {
+    background: hsl(166, 80%, 55%);
+  }
+  .border-brand-primary {
+    border-color: hsl(199, 90%, 65%);
+  }
+  .border-brand-secondary {
+    border-color: hsl(166, 80%, 55%);
+  }
+}
+
+/* =============================================================================
+ * UTILITY CLASSES
+ * ============================================================================= */
+
+@layer utilities {
+  /* Scrollbar Styling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.2);
+    border-radius: 2px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.4);
+  }
+
+  /* Smooth Scroll */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Touch Manipulation */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* PWA Safe Area */
+  @supports (padding: max(0px)) {
+    .safe-area-inset {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+      padding-bottom: max(0px, env(safe-area-inset-bottom));
+    }
+  }
+
+  /* Disable pull-to-refresh */
+  .no-overscroll {
+    overscroll-behavior-y: contain;
+  }
+}

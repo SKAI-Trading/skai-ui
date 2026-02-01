@@ -1,8 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap");
+/**
+ * SKAI UI Complete Styles Bundle
+ * ================================
+ * 
+ * This is the main entry point for all SKAI UI styles.
+ * Import this single file to get the complete design system.
+ * 
+ * @import '@skai/ui/styles';
+ * 
+ * Or import individual parts:
+ * @import '@skai/ui/styles/base.css';
+ * @import '@skai/ui/styles/typography.css';
+ * @import '@skai/ui/styles/animations.css';
+ * 
+ * @package @skai/ui
+ */
+
+/* SKAI Design System Fonts (from Figma) */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import additional style modules */
+@import "./animations.css";
+@import "./typography.css";
 
 @layer base {
   /* ============================================
