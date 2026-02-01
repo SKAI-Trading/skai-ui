@@ -1,0 +1,308 @@
+{
+  "$schema": "https://code.figma.com/v1/code-connect.schema.json",
+  "name": "@skai/ui",
+  "description": "SKAI UI Component Library - Code Connect configuration for Figma",
+  "version": "1.0.0",
+  "parser": "react",
+  "include": ["src/components/**/*.tsx"],
+  "exclude": ["**/*.test.tsx", "**/*.stories.tsx"],
+
+  "mappings": {
+    "components": {
+      "button": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=BUTTON_NODE_ID",
+        "source": "./src/components/button.tsx",
+        "component": "Button",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "values": [
+              "default",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ],
+            "description": "Visual style variant"
+          },
+          "size": {
+            "type": "enum",
+            "values": ["default", "sm", "lg", "icon"],
+            "description": "Button size"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          },
+          "children": {
+            "type": "text",
+            "description": "Button label"
+          }
+        }
+      },
+
+      "card": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=CARD_NODE_ID",
+        "source": "./src/components/card.tsx",
+        "component": "Card",
+        "props": {
+          "className": {
+            "type": "string",
+            "description": "Additional CSS classes"
+          }
+        },
+        "children": ["CardHeader", "CardContent", "CardFooter"]
+      },
+
+      "input": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=INPUT_NODE_ID",
+        "source": "./src/components/input.tsx",
+        "component": "Input",
+        "props": {
+          "type": {
+            "type": "enum",
+            "values": ["text", "email", "password", "number", "search"],
+            "description": "Input type"
+          },
+          "placeholder": {
+            "type": "string",
+            "description": "Placeholder text"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          }
+        }
+      },
+
+      "badge": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=BADGE_NODE_ID",
+        "source": "./src/components/badge.tsx",
+        "component": "Badge",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "values": ["default", "secondary", "destructive", "outline"],
+            "description": "Badge variant"
+          },
+          "children": {
+            "type": "text",
+            "description": "Badge text"
+          }
+        }
+      },
+
+      "token-icon": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=TOKEN_ICON_NODE_ID",
+        "source": "./src/components/token-icon.tsx",
+        "component": "TokenIcon",
+        "props": {
+          "symbol": {
+            "type": "string",
+            "description": "Token symbol (e.g., ETH, USDC)"
+          },
+          "size": {
+            "type": "enum",
+            "values": ["sm", "md", "lg"],
+            "description": "Icon size"
+          },
+          "src": {
+            "type": "string",
+            "description": "Custom image URL"
+          }
+        }
+      },
+
+      "price-display": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=PRICE_DISPLAY_NODE_ID",
+        "source": "./src/components/price-display.tsx",
+        "component": "PriceDisplay",
+        "props": {
+          "value": {
+            "type": "number",
+            "description": "Price value"
+          },
+          "currency": {
+            "type": "enum",
+            "values": ["USD", "EUR", "GBP", "ETH", "BTC"],
+            "description": "Currency symbol"
+          },
+          "change": {
+            "type": "number",
+            "description": "Price change percentage"
+          },
+          "trend": {
+            "type": "enum",
+            "values": ["up", "down", "neutral"],
+            "description": "Price trend"
+          },
+          "size": {
+            "type": "enum",
+            "values": ["sm", "md", "lg"],
+            "description": "Display size"
+          }
+        }
+      },
+
+      "loading-button": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=LOADING_BUTTON_NODE_ID",
+        "source": "./src/components/loading-button.tsx",
+        "component": "LoadingButton",
+        "props": {
+          "loading": {
+            "type": "boolean",
+            "description": "Loading state"
+          },
+          "loadingText": {
+            "type": "string",
+            "description": "Text shown while loading"
+          },
+          "variant": {
+            "type": "enum",
+            "values": [
+              "default",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost"
+            ],
+            "description": "Button variant"
+          },
+          "size": {
+            "type": "enum",
+            "values": ["default", "sm", "lg"],
+            "description": "Button size"
+          },
+          "children": {
+            "type": "text",
+            "description": "Button label"
+          }
+        }
+      },
+
+      "stat-card": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=STAT_CARD_NODE_ID",
+        "source": "./src/components/stat-card.tsx",
+        "component": "StatCard",
+        "props": {
+          "title": {
+            "type": "string",
+            "description": "Stat label"
+          },
+          "value": {
+            "type": "string",
+            "description": "Stat value"
+          },
+          "change": {
+            "type": "number",
+            "description": "Change percentage"
+          },
+          "changePeriod": {
+            "type": "string",
+            "description": "Time period for change"
+          },
+          "icon": {
+            "type": "component",
+            "description": "Icon component"
+          }
+        }
+      },
+
+      "swap-input": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=SWAP_INPUT_NODE_ID",
+        "source": "./src/components/swap-input.tsx",
+        "component": "SwapInput",
+        "props": {
+          "label": {
+            "type": "string",
+            "description": "Input label (From/To)"
+          },
+          "token": {
+            "type": "object",
+            "description": "Selected token"
+          },
+          "value": {
+            "type": "string",
+            "description": "Input value"
+          },
+          "balance": {
+            "type": "string",
+            "description": "Token balance"
+          },
+          "usdValue": {
+            "type": "string",
+            "description": "USD equivalent"
+          }
+        }
+      },
+
+      "dialog": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=DIALOG_NODE_ID",
+        "source": "./src/components/dialog.tsx",
+        "component": "Dialog",
+        "children": [
+          "DialogTrigger",
+          "DialogContent",
+          "DialogHeader",
+          "DialogFooter",
+          "DialogTitle",
+          "DialogDescription"
+        ]
+      },
+
+      "tabs": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=TABS_NODE_ID",
+        "source": "./src/components/tabs.tsx",
+        "component": "Tabs",
+        "children": ["TabsList", "TabsTrigger", "TabsContent"]
+      },
+
+      "avatar": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=AVATAR_NODE_ID",
+        "source": "./src/components/avatar.tsx",
+        "component": "Avatar",
+        "children": ["AvatarImage", "AvatarFallback"]
+      },
+
+      "select": {
+        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=SELECT_NODE_ID",
+        "source": "./src/components/select.tsx",
+        "component": "Select",
+        "children": [
+          "SelectTrigger",
+          "SelectContent",
+          "SelectItem",
+          "SelectValue"
+        ]
+      }
+    }
+  },
+
+  "tokens": {
+    "colors": {
+      "primary": "var(--primary)",
+      "secondary": "var(--secondary)",
+      "background": "var(--background)",
+      "foreground": "var(--foreground)",
+      "muted": "var(--muted)",
+      "accent": "var(--accent)",
+      "destructive": "var(--destructive)",
+      "border": "var(--border)"
+    },
+    "spacing": {
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "8": "2rem"
+    },
+    "radius": {
+      "sm": "calc(var(--radius) - 4px)",
+      "md": "calc(var(--radius) - 2px)",
+      "lg": "var(--radius)"
+    }
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/1.0.0/token-schema.json",
+  "name": "SKAI Design Tokens",
+  "description": "Design tokens for the SKAI Trading platform - syncs with Figma",
+  "version": "1.0.0",
+
+  "colors": {
+    "$description": "Color palette for SKAI brand and UI",
+
+    "brand": {
+      "primary": {
+        "$value": "#56C0F6",
+        "$type": "color",
+        "$description": "Primary brand color - Cyan - Use for primary CTAs and highlights"
+      },
+      "secondary": {
+        "$value": "#2DEDAD",
+        "$type": "color",
+        "$description": "Secondary brand color - Teal - Use for secondary actions"
+      },
+      "background": {
+        "$value": "#020717",
+        "$type": "color",
+        "$description": "Main background color - Deep navy"
+      }
+    },
+
+    "semantic": {
+      "success": {
+        "$value": "#16A34A",
+        "$type": "color",
+        "$description": "Success color - Green - Profits, confirmations, buy actions"
+      },
+      "error": {
+        "$value": "#EF4444",
+        "$type": "color",
+        "$description": "Error/Destructive color - Red - Losses, errors, sell actions"
+      },
+      "warning": {
+        "$value": "#F59E0B",
+        "$type": "color",
+        "$description": "Warning color - Amber - Caution states"
+      },
+      "info": {
+        "$value": "#56C0F6",
+        "$type": "color",
+        "$description": "Info color - Same as primary - Information states"
+      }
+    },
+
+    "surface": {
+      "background": {
+        "$value": "#020717",
+        "$type": "color",
+        "$description": "Main page background"
+      },
+      "card": {
+        "$value": "#0D1424",
+        "$type": "color",
+        "$description": "Card/panel background"
+      },
+      "glass": {
+        "$value": "#15213B",
+        "$type": "color",
+        "$description": "Glass morphism panel background"
+      },
+      "muted": {
+        "$value": "#1B2236",
+        "$type": "color",
+        "$description": "Muted/disabled background"
+      }
+    },
+
+    "text": {
+      "primary": {
+        "$value": "#FFFFFF",
+        "$type": "color",
+        "$description": "Primary text color"
+      },
+      "secondary": {
+        "$value": "#8B92A8",
+        "$type": "color",
+        "$description": "Secondary/muted text color"
+      },
+      "muted": {
+        "$value": "#64748B",
+        "$type": "color",
+        "$description": "Muted/hint text color"
+      }
+    },
+
+    "border": {
+      "default": {
+        "$value": "#2D3A54",
+        "$type": "color",
+        "$description": "Default border color"
+      },
+      "focus": {
+        "$value": "#56C0F6",
+        "$type": "color",
+        "$description": "Focus ring color"
+      }
+    },
+
+    "trading": {
+      "long": {
+        "$value": "#16A34A",
+        "$type": "color",
+        "$description": "Long/Buy position color - Green"
+      },
+      "short": {
+        "$value": "#EF4444",
+        "$type": "color",
+        "$description": "Short/Sell position color - Red"
+      },
+      "priceUp": {
+        "$value": "#22C55E",
+        "$type": "color",
+        "$description": "Price increase indicator"
+      },
+      "priceDown": {
+        "$value": "#EF4444",
+        "$type": "color",
+        "$description": "Price decrease indicator"
+      },
+      "priceNeutral": {
+        "$value": "#64748B",
+        "$type": "color",
+        "$description": "No price change indicator"
+      }
+    }
+  },
+
+  "typography": {
+    "$description": "Typography system for SKAI",
+
+    "fontFamily": {
+      "sans": {
+        "$value": "'Poppins', system-ui, -apple-system, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Primary font family for body text"
+      },
+      "mono": {
+        "$value": "'JetBrains Mono', 'Fira Code', Consolas, monospace",
+        "$type": "fontFamily",
+        "$description": "Monospace font for code and numbers"
+      },
+      "display": {
+        "$value": "'Manrope', system-ui, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Display font for headings"
+      }
+    },
+
+    "fontSize": {
+      "xs": { "$value": "12px", "$type": "dimension" },
+      "sm": { "$value": "14px", "$type": "dimension" },
+      "base": { "$value": "16px", "$type": "dimension" },
+      "lg": { "$value": "18px", "$type": "dimension" },
+      "xl": { "$value": "20px", "$type": "dimension" },
+      "2xl": { "$value": "24px", "$type": "dimension" },
+      "3xl": { "$value": "30px", "$type": "dimension" },
+      "4xl": { "$value": "36px", "$type": "dimension" },
+      "5xl": { "$value": "48px", "$type": "dimension" },
+      "6xl": { "$value": "60px", "$type": "dimension" }
+    },
+
+    "fontWeight": {
+      "light": { "$value": "300", "$type": "fontWeight" },
+      "normal": { "$value": "400", "$type": "fontWeight" },
+      "medium": { "$value": "500", "$type": "fontWeight" },
+      "semibold": { "$value": "600", "$type": "fontWeight" },
+      "bold": { "$value": "700", "$type": "fontWeight" }
+    },
+
+    "lineHeight": {
+      "none": { "$value": "1", "$type": "number" },
+      "tight": { "$value": "1.25", "$type": "number" },
+      "snug": { "$value": "1.375", "$type": "number" },
+      "normal": { "$value": "1.5", "$type": "number" },
+      "relaxed": { "$value": "1.625", "$type": "number" }
+    }
+  },
+
+  "spacing": {
+    "$description": "Spacing scale (4px base)",
+    "0": { "$value": "0px", "$type": "dimension" },
+    "1": { "$value": "4px", "$type": "dimension" },
+    "2": { "$value": "8px", "$type": "dimension" },
+    "3": { "$value": "12px", "$type": "dimension" },
+    "4": { "$value": "16px", "$type": "dimension" },
+    "5": { "$value": "20px", "$type": "dimension" },
+    "6": { "$value": "24px", "$type": "dimension" },
+    "8": { "$value": "32px", "$type": "dimension" },
+    "10": { "$value": "40px", "$type": "dimension" },
+    "12": { "$value": "48px", "$type": "dimension" },
+    "16": { "$value": "64px", "$type": "dimension" },
+    "20": { "$value": "80px", "$type": "dimension" },
+    "24": { "$value": "96px", "$type": "dimension" }
+  },
+
+  "borderRadius": {
+    "$description": "Border radius scale",
+    "none": { "$value": "0px", "$type": "dimension" },
+    "sm": { "$value": "4px", "$type": "dimension" },
+    "md": { "$value": "6px", "$type": "dimension" },
+    "lg": { "$value": "8px", "$type": "dimension" },
+    "xl": { "$value": "12px", "$type": "dimension" },
+    "2xl": { "$value": "16px", "$type": "dimension" },
+    "3xl": { "$value": "24px", "$type": "dimension" },
+    "full": { "$value": "9999px", "$type": "dimension" }
+  },
+
+  "shadow": {
+    "$description": "Shadow/elevation scale",
+    "sm": {
+      "$value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "$type": "shadow"
+    },
+    "md": {
+      "$value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+      "$type": "shadow"
+    },
+    "lg": {
+      "$value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+      "$type": "shadow"
+    },
+    "xl": {
+      "$value": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+      "$type": "shadow"
+    },
+    "glow": {
+      "$value": "0 0 30px rgba(86, 192, 246, 0.3)",
+      "$type": "shadow",
+      "$description": "Primary glow effect"
+    },
+    "glowStrong": {
+      "$value": "0 0 40px rgba(86, 192, 246, 0.5)",
+      "$type": "shadow",
+      "$description": "Strong glow for hover states"
+    }
+  },
+
+  "animation": {
+    "$description": "Animation/transition tokens",
+    "duration": {
+      "fast": { "$value": "150ms", "$type": "duration" },
+      "normal": { "$value": "300ms", "$type": "duration" },
+      "slow": { "$value": "500ms", "$type": "duration" }
+    },
+    "easing": {
+      "default": {
+        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$type": "cubicBezier"
+      },
+      "in": { "$value": "cubic-bezier(0.4, 0, 1, 1)", "$type": "cubicBezier" },
+      "out": { "$value": "cubic-bezier(0, 0, 0.2, 1)", "$type": "cubicBezier" },
+      "bounce": {
+        "$value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "$type": "cubicBezier"
+      }
+    }
+  },
+
+  "components": {
+    "$description": "Component-specific tokens - for Figma component properties",
+
+    "button": {
+      "height": {
+        "sm": { "$value": "32px", "$type": "dimension" },
+        "md": { "$value": "40px", "$type": "dimension" },
+        "lg": { "$value": "44px", "$type": "dimension" }
+      },
+      "padding": {
+        "sm": { "$value": "12px", "$type": "dimension" },
+        "md": { "$value": "16px", "$type": "dimension" },
+        "lg": { "$value": "24px", "$type": "dimension" }
+      },
+      "borderRadius": { "$value": "8px", "$type": "dimension" }
+    },
+
+    "input": {
+      "height": {
+        "sm": { "$value": "32px", "$type": "dimension" },
+        "md": { "$value": "40px", "$type": "dimension" },
+        "lg": { "$value": "48px", "$type": "dimension" }
+      },
+      "borderRadius": { "$value": "6px", "$type": "dimension" }
+    },
+
+    "card": {
+      "padding": { "$value": "24px", "$type": "dimension" },
+      "borderRadius": { "$value": "12px", "$type": "dimension" },
+      "borderWidth": { "$value": "1px", "$type": "dimension" }
+    },
+
+    "tokenIcon": {
+      "size": {
+        "sm": { "$value": "24px", "$type": "dimension" },
+        "md": { "$value": "32px", "$type": "dimension" },
+        "lg": { "$value": "40px", "$type": "dimension" },
+        "xl": { "$value": "48px", "$type": "dimension" }
+      }
+    },
+
+    "swapPanel": {
+      "inputHeight": { "$value": "64px", "$type": "dimension" },
+      "buttonHeight": { "$value": "48px", "$type": "dimension" },
+      "padding": { "$value": "24px", "$type": "dimension" },
+      "borderRadius": { "$value": "16px", "$type": "dimension" }
+    }
+  }
+}

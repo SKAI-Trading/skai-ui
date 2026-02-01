@@ -49,8 +49,51 @@ export * from "./components/avatar";
 export * from "./components/table";
 export * from "./components/calendar";
 
+// Components - Trading (SKAI-specific)
+export * from "./components/token-icon";
+export * from "./components/price-display";
+export * from "./components/loading-button";
+export * from "./components/copy-button";
+export * from "./components/wallet-address";
+export * from "./components/amount-input";
+
+// Components - Composites
+export * from "./components/stat-card";
+export * from "./components/confirm-dialog";
+export * from "./components/token-select";
+export * from "./components/swap-input";
+
+// Components - Theme
+export * from "./components/theme-provider";
+
 // Utilities
 export { cn } from "./lib/utils";
+
+// Animation System
+export * from "./lib/animations";
+
+// Accessibility Utilities
+export * from "./lib/accessibility";
+
+// Layout Primitives
+export * from "./lib/layout";
+
+// Content System (Text/Copy)
+export { content, interpolate, getContent } from "./lib/content";
+export type { Content, ContentPath } from "./lib/content";
+
+// Asset System (Images/Icons)
+export { assets, assetUrls, placeholders, getAsset } from "./lib/assets";
+export type { Assets, AssetCategory } from "./lib/assets";
+
+// Theme Configuration
+export {
+  theme,
+  createTheme,
+  themeToCssVars,
+  applyTheme,
+} from "./lib/theme-config";
+export type { Theme, ThemeColors, ThemeTypography } from "./lib/theme-config";
 
 // Styles - import this in your app's main CSS
 // import '@skai/ui/dist/styles.css';
