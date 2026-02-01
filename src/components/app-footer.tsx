@@ -40,7 +40,8 @@ const appFooterVariants = cva("w-full border-t", {
 // =============================================================================
 
 export interface AppFooterProps
-  extends React.HTMLAttributes<HTMLElement>,
+  extends
+    React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof appFooterVariants> {
   /** Logo/brand slot */
   logo?: React.ReactNode;
@@ -106,7 +107,7 @@ const AppFooter = React.forwardRef<HTMLElement, AppFooterProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <footer
@@ -114,15 +115,13 @@ const AppFooter = React.forwardRef<HTMLElement, AppFooterProps>(
         className={cn(appFooterVariants({ variant, size }), className)}
         {...props}
       >
-        <div className={cn("container mx-auto px-4", maxWidthClasses[maxWidth])}>
+        <div
+          className={cn("container mx-auto px-4", maxWidthClasses[maxWidth])}
+        >
           {/* Main footer content */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Logo and description */}
-            {logo && (
-              <div className="space-y-4">
-                {logo}
-              </div>
-            )}
+            {logo && <div className="space-y-4">{logo}</div>}
 
             {/* Navigation links */}
             {links}
@@ -148,7 +147,7 @@ const AppFooter = React.forwardRef<HTMLElement, AppFooterProps>(
         </div>
       </footer>
     );
-  }
+  },
 );
 
 AppFooter.displayName = "AppFooter";
@@ -157,8 +156,7 @@ AppFooter.displayName = "AppFooter";
 // FOOTER LINK GROUP
 // =============================================================================
 
-export interface FooterLinkGroupProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface FooterLinkGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Group title */
   title: string;
   /** Links in this group */
@@ -228,7 +226,7 @@ const FooterLinkGroup = React.forwardRef<HTMLDivElement, FooterLinkGroupProps>(
         </ul>
       </div>
     );
-  }
+  },
 );
 
 FooterLinkGroup.displayName = "FooterLinkGroup";
@@ -237,8 +235,7 @@ FooterLinkGroup.displayName = "FooterLinkGroup";
 // FOOTER SOCIAL LINK
 // =============================================================================
 
-export interface FooterSocialLinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface FooterSocialLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Social platform name (for accessibility) */
   platform: string;
   /** Icon to display */
@@ -266,7 +263,7 @@ const FooterSocialLink = React.forwardRef<
       ref={ref}
       className={cn(
         "flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
-        className
+        className,
       )}
       target="_blank"
       rel="noopener noreferrer"
@@ -284,9 +281,4 @@ FooterSocialLink.displayName = "FooterSocialLink";
 // EXPORTS
 // =============================================================================
 
-export {
-  AppFooter,
-  FooterLinkGroup,
-  FooterSocialLink,
-  appFooterVariants,
-};
+export { AppFooter, FooterLinkGroup, FooterSocialLink, appFooterVariants };

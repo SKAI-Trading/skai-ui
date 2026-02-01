@@ -47,6 +47,13 @@ export * from "./components/drawer";
 export * from "./components/stepper";
 export * from "./components/scrolling-ticker";
 
+// Components - App Shell (Layout System)
+export * from "./components/app-shell";
+export * from "./components/app-header";
+export * from "./components/app-footer";
+export * from "./components/mobile-nav";
+export * from "./components/dock-bar";
+
 // Components - Overlay
 export * from "./components/dialog";
 export * from "./components/dropdown-menu";

@@ -26,7 +26,8 @@ const tourSteps: TourStep[] = [
   {
     target: "#step-1",
     title: "Welcome to SKAI",
-    description: "This is your dashboard where you can see all your portfolio information.",
+    description:
+      "This is your dashboard where you can see all your portfolio information.",
     placement: "bottom",
   },
   {
@@ -50,7 +51,9 @@ const TourDemo = () => {
     <div className="p-8 min-h-screen bg-background">
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="flex justify-between items-center">
-          <h1 id="step-1" className="text-2xl font-bold">Dashboard</h1>
+          <h1 id="step-1" className="text-2xl font-bold">
+            Dashboard
+          </h1>
           <Button onClick={start}>Start Tour</Button>
         </div>
 
@@ -60,7 +63,9 @@ const TourDemo = () => {
               <CardTitle>Trade</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">Swap tokens or place limit orders</p>
+              <p className="text-muted-foreground">
+                Swap tokens or place limit orders
+              </p>
             </CardContent>
           </Card>
 
@@ -128,15 +133,25 @@ export const CustomPlacement: Story = {
 
       return (
         <div className="p-8 min-h-screen bg-background">
-          <Button onClick={start} className="mb-8">Start Tour</Button>
-          
+          <Button onClick={start} className="mb-8">
+            Start Tour
+          </Button>
+
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-32">
             <div />
-            <div id="top-element" className="p-4 border rounded text-center">Top</div>
+            <div id="top-element" className="p-4 border rounded text-center">
+              Top
+            </div>
             <div />
-            <div id="left-element" className="p-4 border rounded text-center">Left</div>
-            <div id="bottom-element" className="p-4 border rounded text-center">Bottom</div>
-            <div id="right-element" className="p-4 border rounded text-center">Right</div>
+            <div id="left-element" className="p-4 border rounded text-center">
+              Left
+            </div>
+            <div id="bottom-element" className="p-4 border rounded text-center">
+              Bottom
+            </div>
+            <div id="right-element" className="p-4 border rounded text-center">
+              Right
+            </div>
           </div>
 
           <Tour
@@ -157,8 +172,18 @@ export const CustomPlacement: Story = {
 export const NoSkipButton: Story = {
   render: () => {
     const steps: TourStep[] = [
-      { target: "#required-1", title: "Step 1", description: "You must complete this tour.", placement: "bottom" },
-      { target: "#required-2", title: "Step 2", description: "No skipping allowed!", placement: "bottom" },
+      {
+        target: "#required-1",
+        title: "Step 1",
+        description: "You must complete this tour.",
+        placement: "bottom",
+      },
+      {
+        target: "#required-2",
+        title: "Step 2",
+        description: "No skipping allowed!",
+        placement: "bottom",
+      },
     ];
 
     const Demo = () => {
@@ -166,11 +191,17 @@ export const NoSkipButton: Story = {
 
       return (
         <div className="p-8 bg-background">
-          <Button onClick={start} className="mb-8">Start Required Tour</Button>
-          
+          <Button onClick={start} className="mb-8">
+            Start Required Tour
+          </Button>
+
           <div className="flex gap-4">
-            <div id="required-1" className="p-4 border rounded">First Step</div>
-            <div id="required-2" className="p-4 border rounded">Second Step</div>
+            <div id="required-1" className="p-4 border rounded">
+              First Step
+            </div>
+            <div id="required-2" className="p-4 border rounded">
+              Second Step
+            </div>
           </div>
 
           <Tour

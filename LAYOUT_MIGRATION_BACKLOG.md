@@ -22,27 +22,27 @@ Layout components currently live in `src/components/layout/` in the main app:
 
 **Principle**: Separate presentation (skai-ui) from business logic (app-specific)
 
-### Phase 1: Core Layout Shell ⬜
+### Phase 1: Core Layout Shell ✅
 
 Create presentational layout components that accept slots/children:
 
-- [ ] `AppShell` - Main layout wrapper
+- [x] `AppShell` - Main layout wrapper
   - Props: `header`, `footer`, `sidebar`, `children`, `noPadding`
   - Handles viewport calculations, flex layout
   - No business logic, pure presentation
 
-- [ ] `AppHeader` - Header container
+- [x] `AppHeader` - Header container
   - Props: `logo`, `navigation`, `actions`, `mobileMenu`, `className`
   - Slots for logo, nav items, right-side actions
   - Responsive behavior built-in
 
-- [ ] `AppFooter` - Footer container
+- [x] `AppFooter` - Footer container
   - Props: `links`, `social`, `copyright`, `className`
   - Standard footer layout
 
-### Phase 2: Navigation Components ⬜
+### Phase 2: Navigation Components ✅
 
-- [ ] `NavItem` - Single navigation item
+- [x] `NavItem` - Single navigation item (as `AppHeaderNavItem`)
   - Props: `href`, `icon`, `label`, `badge`, `active`, `onClick`
   - Supports icons, badges, active states
 
@@ -50,22 +50,22 @@ Create presentational layout components that accept slots/children:
   - Props: `label`, `items`, `collapsible`
   - Dropdown/submenu support
 
-- [ ] `MobileNav` - Mobile bottom navigation
+- [x] `MobileNav` - Mobile bottom navigation
   - Props: `items`, `activeItem`, `onItemClick`
   - Touch-friendly, fixed bottom position
 
-- [ ] `Sidebar` - Collapsible sidebar
+- [ ] `Sidebar` - Collapsible sidebar (existing component, needs enhancement)
   - Props: `items`, `collapsed`, `onToggle`
   - Expandable/collapsible states
 
-### Phase 3: Dock & Ticker ⬜
+### Phase 3: Dock & Ticker ✅
 
-- [ ] `DockBar` - Bottom dock container (extends existing `DockIcon`)
+- [x] `DockBar` - Bottom dock container (extends existing `DockIcon`)
   - Props: `items`, `ticker`, `position`
   - Drag-and-drop reordering
   - Ticker tape integration
 
-- [ ] `TickerTape` - Scrolling ticker
+- [ ] `TickerTape` - Scrolling ticker (use existing `scrolling-ticker`)
   - Props: `items`, `speed`, `direction`, `pauseOnHover`
   - Smooth infinite scroll
   - Click-to-pause

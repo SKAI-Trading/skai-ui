@@ -90,7 +90,9 @@ export const MultipleItems: Story = {
               <Card>
                 <CardContent className="flex flex-col items-center justify-center p-4">
                   <span className="text-lg font-bold">{item.title}</span>
-                  <span className="text-xs text-muted-foreground">{item.value}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {item.value}
+                  </span>
                 </CardContent>
               </Card>
             </CarouselItem>

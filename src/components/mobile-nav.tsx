@@ -24,7 +24,7 @@ const mobileNavVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
+  },
 );
 
 // =============================================================================
@@ -51,7 +51,8 @@ export interface MobileNavItem {
 }
 
 export interface MobileNavProps
-  extends React.HTMLAttributes<HTMLElement>,
+  extends
+    React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof mobileNavVariants> {
   /** Navigation items */
   items: MobileNavItem[];
@@ -111,7 +112,7 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
       safeArea = true,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <nav
@@ -119,19 +120,21 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
         className={cn(
           mobileNavVariants({ variant }),
           safeArea && "safe-bottom pb-safe",
-          className
+          className,
         )}
         style={
           {
             "--mobile-nav-height": `${LAYOUT_HEIGHTS.mobileNav}px`,
-            height: variant === "floating" ? "auto" : `${LAYOUT_HEIGHTS.mobileNav}px`,
+            height:
+              variant === "floating" ? "auto" : `${LAYOUT_HEIGHTS.mobileNav}px`,
           } as React.CSSProperties
         }
         {...props}
       >
         {items.map((item) => {
           const isActive = activeItem === item.id || activeItem === item.href;
-          const Icon = isActive && item.activeIcon ? item.activeIcon : item.icon;
+          const Icon =
+            isActive && item.activeIcon ? item.activeIcon : item.icon;
 
           const content = (
             <>
@@ -143,7 +146,7 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
                       "absolute -top-1 -right-1 flex items-center justify-center rounded-full bg-primary text-primary-foreground",
                       item.badgeDot
                         ? "h-2 w-2"
-                        : "h-4 min-w-4 px-1 text-[10px] font-bold"
+                        : "h-4 min-w-4 px-1 text-[10px] font-bold",
                     )}
                   >
                     {!item.badgeDot && item.badge}
@@ -153,7 +156,7 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
               <span
                 className={cn(
                   "text-[10px] font-medium mt-1",
-                  isActive ? "text-primary" : "text-muted-foreground"
+                  isActive ? "text-primary" : "text-muted-foreground",
                 )}
               >
                 {item.label}
@@ -165,7 +168,7 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
             "flex flex-col items-center justify-center flex-1 py-2 min-h-[56px] transition-colors",
             isActive
               ? "text-primary"
-              : "text-muted-foreground hover:text-foreground"
+              : "text-muted-foreground hover:text-foreground",
           );
 
           if (item.href) {
@@ -196,7 +199,7 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
         })}
       </nav>
     );
-  }
+  },
 );
 
 MobileNav.displayName = "MobileNav";
@@ -220,8 +223,7 @@ const DefaultLink = ({
 // MOBILE NAV SPACER
 // =============================================================================
 
-export interface MobileNavSpacerProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export interface MobileNavSpacerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 /**
  * MobileNavSpacer - Adds bottom padding to account for MobileNav
@@ -248,7 +250,7 @@ const MobileNavSpacer = React.forwardRef<HTMLDivElement, MobileNavSpacerProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 MobileNavSpacer.displayName = "MobileNavSpacer";

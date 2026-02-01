@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FundingRateDisplay, FundingRateBadge } from "../components/funding-rate";
+import {
+  FundingRateDisplay,
+  FundingRateBadge,
+} from "../components/funding-rate";
 
 const meta: Meta<typeof FundingRateDisplay> = {
   title: "Trading/FundingRateDisplay",
@@ -142,11 +145,7 @@ export const TradingPanel: Story = {
           <p className="font-medium">$3,244.12</p>
         </div>
       </div>
-      <FundingRateDisplay
-        rate={0.0001}
-        nextFundingIn={3600}
-        showAnnualized
-      />
+      <FundingRateDisplay rate={0.0001} nextFundingIn={3600} showAnnualized />
     </div>
   ),
 };

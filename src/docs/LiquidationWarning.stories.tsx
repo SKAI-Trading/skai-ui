@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { LiquidationWarning, LiquidationIndicator } from "../components/liquidation-warning";
+import {
+  LiquidationWarning,
+  LiquidationIndicator,
+} from "../components/liquidation-warning";
 
 const meta: Meta<typeof LiquidationWarning> = {
   title: "Trading/LiquidationWarning",
@@ -180,7 +183,9 @@ export const AllRiskLevels: Story = {
         />
       </div>
       <div>
-        <h4 className="text-sm font-medium mb-2">Critical ({"<"} 5% from liq)</h4>
+        <h4 className="text-sm font-medium mb-2">
+          Critical ({"<"} 5% from liq)
+        </h4>
         <LiquidationWarning
           currentPrice={3200}
           liquidationPrice={3150}
@@ -206,7 +211,7 @@ export const PositionCard: Story = {
           <p className="text-xs text-muted-foreground">+7.5%</p>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-3 gap-2 text-sm">
         <div>
           <span className="text-muted-foreground">Entry</span>

@@ -37,7 +37,7 @@ const appHeaderVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 // =============================================================================
@@ -45,7 +45,8 @@ const appHeaderVariants = cva(
 // =============================================================================
 
 export interface AppHeaderProps
-  extends React.HTMLAttributes<HTMLElement>,
+  extends
+    React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof appHeaderVariants> {
   /** Logo/brand slot (left side) */
   logo?: React.ReactNode;
@@ -129,7 +130,7 @@ const AppHeader = React.forwardRef<HTMLElement, AppHeaderProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <header
@@ -137,7 +138,7 @@ const AppHeader = React.forwardRef<HTMLElement, AppHeaderProps>(
         className={cn(
           appHeaderVariants({ variant, size }),
           safeArea && "safe-top",
-          className
+          className,
         )}
         style={
           {
@@ -147,16 +148,13 @@ const AppHeader = React.forwardRef<HTMLElement, AppHeaderProps>(
         {...props}
       >
         <div
-          className={cn(
-            "container mx-auto px-4",
-            maxWidthClasses[maxWidth]
-          )}
+          className={cn("container mx-auto px-4", maxWidthClasses[maxWidth])}
         >
           {/* Main header row */}
           <div
             className={cn(
               "flex items-center justify-between gap-4",
-              sizeHeightClasses[size || "default"]
+              sizeHeightClasses[size || "default"],
             )}
           >
             {/* Left section: Logo + Mobile menu */}
@@ -172,7 +170,7 @@ const AppHeader = React.forwardRef<HTMLElement, AppHeaderProps>(
               <nav
                 className={cn(
                   "hidden md:flex items-center gap-1",
-                  centerNav ? "flex-1 justify-center" : ""
+                  centerNav ? "flex-1 justify-center" : "",
                 )}
               >
                 {navigation}
@@ -187,9 +185,7 @@ const AppHeader = React.forwardRef<HTMLElement, AppHeaderProps>(
             )}
 
             {/* Right section: Actions */}
-            <div className="flex items-center gap-2 shrink-0">
-              {actions}
-            </div>
+            <div className="flex items-center gap-2 shrink-0">{actions}</div>
           </div>
 
           {/* Additional content (sub-navigation, breadcrumbs, etc.) */}
@@ -197,7 +193,7 @@ const AppHeader = React.forwardRef<HTMLElement, AppHeaderProps>(
         </div>
       </header>
     );
-  }
+  },
 );
 
 AppHeader.displayName = "AppHeader";
@@ -206,8 +202,7 @@ AppHeader.displayName = "AppHeader";
 // APP HEADER NAV ITEM
 // =============================================================================
 
-export interface AppHeaderNavItemProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface AppHeaderNavItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Whether the item is currently active */
   active?: boolean;
   /** Icon to display */
@@ -235,25 +230,14 @@ const AppHeaderNavItem = React.forwardRef<
   AppHeaderNavItemProps
 >(
   (
-    {
-      className,
-      active,
-      icon,
-      badge,
-      asButton,
-      onSelect,
-      children,
-      ...props
-    },
-    ref
+    { className, active, icon, badge, asButton, onSelect, children, ...props },
+    ref,
   ) => {
     const baseClasses = cn(
       "relative flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
       "hover:bg-accent hover:text-accent-foreground",
-      active
-        ? "text-foreground bg-accent"
-        : "text-muted-foreground",
-      className
+      active ? "text-foreground bg-accent" : "text-muted-foreground",
+      className,
     );
 
     const content = (
@@ -270,11 +254,7 @@ const AppHeaderNavItem = React.forwardRef<
 
     if (asButton) {
       return (
-        <button
-          type="button"
-          className={baseClasses}
-          onClick={onSelect}
-        >
+        <button type="button" className={baseClasses} onClick={onSelect}>
           {content}
         </button>
       );
@@ -285,7 +265,7 @@ const AppHeaderNavItem = React.forwardRef<
         {content}
       </a>
     );
-  }
+  },
 );
 
 AppHeaderNavItem.displayName = "AppHeaderNavItem";
@@ -294,8 +274,7 @@ AppHeaderNavItem.displayName = "AppHeaderNavItem";
 // APP HEADER ACTIONS GROUP
 // =============================================================================
 
-export interface AppHeaderActionsProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface AppHeaderActionsProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Spacing between items */
   spacing?: "tight" | "normal" | "loose";
 }
@@ -309,19 +288,20 @@ const spacingClasses = {
 /**
  * AppHeaderActions - Container for header action items
  */
-const AppHeaderActions = React.forwardRef<HTMLDivElement, AppHeaderActionsProps>(
-  ({ className, spacing = "normal", children, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        className={cn("flex items-center", spacingClasses[spacing], className)}
-        {...props}
-      >
-        {children}
-      </div>
-    );
-  }
-);
+const AppHeaderActions = React.forwardRef<
+  HTMLDivElement,
+  AppHeaderActionsProps
+>(({ className, spacing = "normal", children, ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      className={cn("flex items-center", spacingClasses[spacing], className)}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+});
 
 AppHeaderActions.displayName = "AppHeaderActions";
 
@@ -329,9 +309,4 @@ AppHeaderActions.displayName = "AppHeaderActions";
 // EXPORTS
 // =============================================================================
 
-export {
-  AppHeader,
-  AppHeaderNavItem,
-  AppHeaderActions,
-  appHeaderVariants,
-};
+export { AppHeader, AppHeaderNavItem, AppHeaderActions, appHeaderVariants };

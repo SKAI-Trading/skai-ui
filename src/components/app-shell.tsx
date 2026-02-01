@@ -88,7 +88,8 @@ const appShellVariants = cva("min-h-screen flex flex-col", {
 // =============================================================================
 
 export interface AppShellProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof appShellVariants> {
   /** Header slot */
   header?: React.ReactNode;
@@ -157,7 +158,7 @@ const AppShell = React.forwardRef<HTMLDivElement, AppShellProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     // Mobile detection
     const [isMobile, setIsMobile] = React.useState(false);
@@ -174,7 +175,7 @@ const AppShell = React.forwardRef<HTMLDivElement, AppShellProps>(
           _setSidebarOpen(open);
         }
       },
-      [onSidebarChange]
+      [onSidebarChange],
     );
 
     const toggleSidebar = React.useCallback(() => {
@@ -200,18 +201,15 @@ const AppShell = React.forwardRef<HTMLDivElement, AppShellProps>(
         isMobile,
         showBottomBar,
       }),
-      [sidebarOpen, toggleSidebar, mobileMenuOpen, isMobile, showBottomBar]
+      [sidebarOpen, toggleSidebar, mobileMenuOpen, isMobile, showBottomBar],
     );
 
     // Calculate main content padding
-    const mainPadding = noPadding
-      ? ""
-      : showBottomBar
-        ? "pb-20 md:pb-12"
-        : "";
+    const mainPadding = noPadding ? "" : showBottomBar ? "pb-20 md:pb-12" : "";
 
     // Calculate min-height for main content
-    const mainMinHeight = variant === "trading" ? "" : "min-h-[calc(100vh-56px)]";
+    const mainMinHeight =
+      variant === "trading" ? "" : "min-h-[calc(100vh-56px)]";
 
     return (
       <AppShellContext.Provider value={contextValue}>
@@ -231,7 +229,7 @@ const AppShell = React.forwardRef<HTMLDivElement, AppShellProps>(
               <aside
                 className={cn(
                   "hidden md:flex flex-col border-r border-border bg-background transition-all duration-300",
-                  sidebarOpen ? "w-64" : "w-16"
+                  sidebarOpen ? "w-64" : "w-16",
                 )}
               >
                 {sidebar}
@@ -257,7 +255,7 @@ const AppShell = React.forwardRef<HTMLDivElement, AppShellProps>(
         </div>
       </AppShellContext.Provider>
     );
-  }
+  },
 );
 
 AppShell.displayName = "AppShell";
@@ -266,8 +264,7 @@ AppShell.displayName = "AppShell";
 // APP SHELL MAIN CONTENT
 // =============================================================================
 
-export interface AppShellContentProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface AppShellContentProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Use full viewport height (for trading pages) */
   fullHeight?: boolean;
   /** Center content horizontally */
@@ -310,7 +307,7 @@ const AppShellContent = React.forwardRef<HTMLDivElement, AppShellContentProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div
@@ -319,14 +316,14 @@ const AppShellContent = React.forwardRef<HTMLDivElement, AppShellContentProps>(
           fullHeight && FULL_HEIGHT_CLASS,
           centered && "mx-auto",
           maxWidthClasses[maxWidth],
-          className
+          className,
         )}
         {...props}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 
 AppShellContent.displayName = "AppShellContent";

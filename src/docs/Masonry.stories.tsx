@@ -41,7 +41,11 @@ export const Default: Story = {
           </CardHeader>
           <CardContent>
             <p className="text-2xl font-bold">{item.price}</p>
-            <p className={item.change.startsWith("+") ? "text-green-500" : "text-red-500"}>
+            <p
+              className={
+                item.change.startsWith("+") ? "text-green-500" : "text-red-500"
+              }
+            >
               {item.change}
             </p>
           </CardContent>
@@ -109,7 +113,13 @@ export const WithAnimation: Story = {
             </CardHeader>
             <CardContent>
               <p className="text-2xl font-bold">{item.price}</p>
-              <p className={item.change.startsWith("+") ? "text-green-500" : "text-red-500"}>
+              <p
+                className={
+                  item.change.startsWith("+")
+                    ? "text-green-500"
+                    : "text-red-500"
+                }
+              >
                 {item.change}
               </p>
             </CardContent>

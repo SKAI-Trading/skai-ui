@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CandlestickChart, formatCandleData } from "../components/candlestick-chart";
+import {
+  CandlestickChart,
+  formatCandleData,
+} from "../components/candlestick-chart";
 import type { Time } from "lightweight-charts";
 
 const meta: Meta<typeof CandlestickChart> = {
@@ -25,19 +28,19 @@ const generateCandleData = (days: number, startPrice: number) => {
   const data = [];
   let price = startPrice;
   const now = new Date();
-  
+
   for (let i = days; i >= 0; i--) {
     const date = new Date(now);
     date.setDate(date.getDate() - i);
     const dateStr = date.toISOString().split("T")[0] as Time;
-    
+
     const volatility = 0.02;
     const change = (Math.random() - 0.5) * 2 * volatility;
     const open = price;
     const close = price * (1 + change);
     const high = Math.max(open, close) * (1 + Math.random() * volatility);
     const low = Math.min(open, close) * (1 - Math.random() * volatility);
-    
+
     data.push({
       time: dateStr,
       open: Math.round(open * 100) / 100,
@@ -45,14 +48,16 @@ const generateCandleData = (days: number, startPrice: number) => {
       low: Math.round(low * 100) / 100,
       close: Math.round(close * 100) / 100,
     });
-    
+
     price = close;
   }
-  
+
   return data;
 };
 
-const generateVolumeData = (candleData: ReturnType<typeof generateCandleData>) => {
+const generateVolumeData = (
+  candleData: ReturnType<typeof generateCandleData>,
+) => {
   return candleData.map((candle) => ({
     time: candle.time,
     value: Math.random() * 1000000 + 500000,
@@ -143,7 +148,7 @@ export const BTCChart: Story = {
   render: () => {
     const btcData = generateCandleData(60, 65000);
     const btcVolume = generateVolumeData(btcData);
-    
+
     return (
       <div className="space-y-4 p-4 bg-card rounded-lg border">
         <div className="flex items-center justify-between">
@@ -172,7 +177,8 @@ export const WithCrosshairCallback: Story = {
     return (
       <div className="space-y-4">
         <p className="text-sm text-muted-foreground">
-          Hover over the chart to see crosshair callback in action (check console)
+          Hover over the chart to see crosshair callback in action (check
+          console)
         </p>
         <CandlestickChart
           data={sampleData}
