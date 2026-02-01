@@ -1,51 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* ============================================
+     SKAI Design System - CSS Variables
+     SOURCE OF TRUTH for @skai/ui components
+     
+     Brand Colors (from docs/BRAND_GUIDELINES.md):
+       Primary: #56C0F6 (HSL 199 90% 65%) - Cyan
+       Secondary: #2DEDAD (HSL 166 80% 55%) - Teal
+       Background: #020717 (HSL 225 80% 4%) - Dark Navy
+     
+     Last updated: 2026-01-31
+     ============================================ */
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 239 84% 67%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 239 84% 67%;
-    --radius: 0.5rem;
+    /* SKAI Brand Colors (HSL format) */
+    --background: 225 80% 4%; /* #020717 - Deep navy */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Card & Glass */
+    --card: 225 60% 8%; /* #0D1424 */
+    --card-foreground: 0 0% 100%;
+    --glass: 225 50% 12%; /* #15213B - Glass panel bg */
+    --popover: 225 60% 6%; /* #0A1120 */
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary & Secondary */
+    --primary: 199 90% 65%; /* #56C0F6 - SKAI Cyan */
+    --primary-glow: 199 90% 75%; /* Lighter for glow */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 166 80% 55%; /* #2DEDAD - SKAI Teal */
+    --secondary-glow: 166 80% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 199 90% 65%; /* Same as primary */
+    --accent-foreground: 0 0% 100%;
+
+    /* Trading Colors */
+    --long: 142 76% 36%; /* #16A34A - Buy/Long green */
+    --long-glow: 142 76% 46%;
+    --short: 0 84% 60%; /* #EF4444 - Sell/Short red */
+    --short-glow: 0 84% 70%;
+    --destructive: 0 84% 60%; /* Same as short */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Muted & Borders */
+    --muted: 225 30% 15%; /* #1B2236 */
+    --muted-foreground: 225 20% 60%; /* #8B92A8 */
+    --border: 225 30% 20%; /* #2D3A54 */
+    --input: 225 30% 15%;
+    --ring: 199 90% 65%; /* Primary color for focus */
+
+    /* Radius & Shadows */
+    --radius: 0.75rem; /* 12px */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-strong: 0 10px 40px hsl(var(--primary) / 0.4);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Glass morphism */
+    --glass-bg: hsl(var(--glass));
+    --glass-border: hsl(var(--border));
+    --glass-blur: blur(12px);
+
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(var(--primary) / 0.3);
+    --glow-secondary: 0 0 20px hsl(var(--secondary) / 0.3);
+    --glow-long: 0 0 20px hsl(var(--long-glow) / 0.4);
+    --glow-short: 0 0 20px hsl(var(--short-glow) / 0.4);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary))
+    );
+    --gradient-reverse: linear-gradient(
+      135deg,
+      hsl(var(--secondary)),
+      hsl(var(--primary))
+    );
   }
 
   .light {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 224 71% 4%; /* #020817 */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 224 71% 4%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 239 84% 67%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 239 84% 67%;
+    --popover-foreground: 224 71% 4%;
+    --primary: 199 90% 50%; /* Slightly darker for contrast */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 166 80% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 224 71% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 199 90% 50%;
+
+    /* Light mode glass */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -55,5 +117,140 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family:
+      "Poppins",
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+}
+
+/* ============================================
+   SKAI Component Utilities
+   Uses CSS variables from :root for consistency
+   ============================================ */
+
+@layer components {
+  /* Glass panel - uses --glass variable */
+  .glass-panel {
+    background: hsl(var(--glass));
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-panel:hover {
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Legacy glass-card (for backwards compatibility) */
+  .glass-card {
+    background: hsl(var(--glass));
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid hsl(var(--border));
+    border-radius: calc(var(--radius) * 2);
+  }
+
+  .glass-card:hover {
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  /* Gradient text - uses brand colors */
+  .gradient-text {
+    background: var(--gradient-primary);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-animated {
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  /* Primary button with glow */
+  .btn-skai-primary {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: var(--glow-primary);
+  }
+
+  .btn-skai-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  /* Trading buttons */
+  .btn-long {
+    background: hsl(var(--long));
+    color: white;
+    box-shadow: var(--glow-long);
+  }
+
+  .btn-short {
+    background: hsl(var(--short));
+    color: white;
+    box-shadow: var(--glow-short);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .glow-long {
+    box-shadow: var(--glow-long);
+  }
+
+  .glow-short {
+    box-shadow: var(--glow-short);
+  }
+}
+
+/* Animations */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(86, 192, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(86, 192, 246, 0.4);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }

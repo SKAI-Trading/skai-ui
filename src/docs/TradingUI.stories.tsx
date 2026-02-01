@@ -33,29 +33,34 @@ export const OrderBook: StoryObj = {
   name: "Order Book",
   render: () => {
     const asks = [
-      { price: 2152.50, amount: 0.234, total: 503.89 },
+      { price: 2152.5, amount: 0.234, total: 503.89 },
       { price: 2151.25, amount: 0.567, total: 1219.76 },
-      { price: 2150.00, amount: 1.234, total: 2653.10 },
-      { price: 2149.50, amount: 0.891, total: 1915.22 },
+      { price: 2150.0, amount: 1.234, total: 2653.1 },
+      { price: 2149.5, amount: 0.891, total: 1915.22 },
       { price: 2148.75, amount: 2.345, total: 5038.82 },
     ];
 
     const bids = [
-      { price: 2147.00, amount: 3.456, total: 7419.67 },
-      { price: 2146.50, amount: 1.234, total: 2648.74 },
+      { price: 2147.0, amount: 3.456, total: 7419.67 },
+      { price: 2146.5, amount: 1.234, total: 2648.74 },
       { price: 2145.25, amount: 0.678, total: 1454.48 },
-      { price: 2144.00, amount: 2.109, total: 4521.70 },
-      { price: 2143.50, amount: 0.456, total: 977.44 },
+      { price: 2144.0, amount: 2.109, total: 4521.7 },
+      { price: 2143.5, amount: 0.456, total: 977.44 },
     ];
 
-    const maxTotal = Math.max(...asks.map(a => a.total), ...bids.map(b => b.total));
+    const maxTotal = Math.max(
+      ...asks.map((a) => a.total),
+      ...bids.map((b) => b.total),
+    );
 
     return (
       <Card className="w-[350px]">
         <CardHeader className="pb-2">
           <div className="flex items-center justify-between">
             <CardTitle className="text-sm">Order Book</CardTitle>
-            <Badge variant="outline" className="text-xs">ETH/USDC</Badge>
+            <Badge variant="outline" className="text-xs">
+              ETH/USDC
+            </Badge>
           </div>
         </CardHeader>
         <CardContent>
@@ -75,10 +80,18 @@ export const OrderBook: StoryObj = {
               >
                 <div
                   className="absolute inset-0 bg-red-500/10"
-                  style={{ width: `${(ask.total / maxTotal) * 100}%`, right: 0, left: 'auto' }}
+                  style={{
+                    width: `${(ask.total / maxTotal) * 100}%`,
+                    right: 0,
+                    left: "auto",
+                  }}
                 />
-                <span className="text-red-500 relative">{ask.price.toFixed(2)}</span>
-                <span className="text-right relative">{ask.amount.toFixed(3)}</span>
+                <span className="text-red-500 relative">
+                  {ask.price.toFixed(2)}
+                </span>
+                <span className="text-right relative">
+                  {ask.amount.toFixed(3)}
+                </span>
                 <span className="text-right text-muted-foreground relative">
                   {ask.total.toFixed(2)}
                 </span>
@@ -89,7 +102,9 @@ export const OrderBook: StoryObj = {
           {/* Spread */}
           <div className="py-2 px-2 bg-muted/50 rounded text-center">
             <span className="text-lg font-bold font-mono">$2,148.00</span>
-            <span className="text-xs text-muted-foreground ml-2">Spread: 0.03%</span>
+            <span className="text-xs text-muted-foreground ml-2">
+              Spread: 0.03%
+            </span>
           </div>
 
           {/* Bids (Buys) */}
@@ -101,10 +116,18 @@ export const OrderBook: StoryObj = {
               >
                 <div
                   className="absolute inset-0 bg-green-500/10"
-                  style={{ width: `${(bid.total / maxTotal) * 100}%`, right: 0, left: 'auto' }}
+                  style={{
+                    width: `${(bid.total / maxTotal) * 100}%`,
+                    right: 0,
+                    left: "auto",
+                  }}
                 />
-                <span className="text-green-500 relative">{bid.price.toFixed(2)}</span>
-                <span className="text-right relative">{bid.amount.toFixed(3)}</span>
+                <span className="text-green-500 relative">
+                  {bid.price.toFixed(2)}
+                </span>
+                <span className="text-right relative">
+                  {bid.amount.toFixed(3)}
+                </span>
                 <span className="text-right text-muted-foreground relative">
                   {bid.total.toFixed(2)}
                 </span>
@@ -128,12 +151,16 @@ export const PriceTicker: StoryObj = {
         <CardContent className="p-4">
           <div className="flex items-center gap-3">
             <Avatar className="h-10 w-10">
-              <AvatarFallback className="bg-blue-500 text-white">E</AvatarFallback>
+              <AvatarFallback className="bg-blue-500 text-white">
+                E
+              </AvatarFallback>
             </Avatar>
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <span className="font-semibold">ETH</span>
-                <Badge variant="secondary" className="text-xs">Ethereum</Badge>
+                <Badge variant="secondary" className="text-xs">
+                  Ethereum
+                </Badge>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-mono font-bold">$2,148.32</span>
@@ -153,7 +180,9 @@ export const PriceTicker: StoryObj = {
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
               <Avatar className="h-12 w-12">
-                <AvatarFallback className="bg-blue-500 text-white text-lg">E</AvatarFallback>
+                <AvatarFallback className="bg-blue-500 text-white text-lg">
+                  E
+                </AvatarFallback>
               </Avatar>
               <div>
                 <div className="flex items-center gap-2">
@@ -178,7 +207,9 @@ export const PriceTicker: StoryObj = {
 
           <div className="h-16 bg-muted/50 rounded-lg flex items-center justify-center mb-4">
             <LineChart className="h-6 w-6 text-muted-foreground" />
-            <span className="text-sm text-muted-foreground ml-2">Price Chart</span>
+            <span className="text-sm text-muted-foreground ml-2">
+              Price Chart
+            </span>
           </div>
 
           <div className="grid grid-cols-3 gap-4 text-sm">
@@ -211,7 +242,9 @@ export const PriceTicker: StoryObj = {
           >
             <span className="font-semibold">{token.symbol}</span>
             <span className="font-mono text-sm">{token.price}</span>
-            <span className={`text-xs ${token.up ? "text-green-500" : "text-red-500"}`}>
+            <span
+              className={`text-xs ${token.up ? "text-green-500" : "text-red-500"}`}
+            >
               {token.change}
             </span>
           </div>
@@ -238,7 +271,9 @@ export const TradeForm: StoryObj = {
             <Button
               variant={side === "buy" ? "default" : "outline"}
               onClick={() => setSide("buy")}
-              className={side === "buy" ? "bg-green-500 hover:bg-green-600" : ""}
+              className={
+                side === "buy" ? "bg-green-500 hover:bg-green-600" : ""
+              }
             >
               Buy
             </Button>
@@ -252,7 +287,10 @@ export const TradeForm: StoryObj = {
           </div>
 
           {/* Order Type */}
-          <Tabs value={orderType} onValueChange={(v) => setOrderType(v as "market" | "limit")}>
+          <Tabs
+            value={orderType}
+            onValueChange={(v) => setOrderType(v as "market" | "limit")}
+          >
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="market">Market</TabsTrigger>
               <TabsTrigger value="limit">Limit</TabsTrigger>
@@ -282,14 +320,23 @@ export const TradeForm: StoryObj = {
               <span className="text-muted-foreground">Balance: 2.5 ETH</span>
             </div>
             <div className="relative">
-              <Input type="text" placeholder="0.00" className="font-mono pr-16" />
+              <Input
+                type="text"
+                placeholder="0.00"
+                className="font-mono pr-16"
+              />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
                 ETH
               </span>
             </div>
             <div className="flex gap-1">
               {[25, 50, 75, 100].map((pct) => (
-                <Button key={pct} variant="outline" size="sm" className="flex-1 text-xs">
+                <Button
+                  key={pct}
+                  variant="outline"
+                  size="sm"
+                  className="flex-1 text-xs"
+                >
                   {pct}%
                 </Button>
               ))}
@@ -303,7 +350,12 @@ export const TradeForm: StoryObj = {
               <span className="text-muted-foreground">Balance: $5,000</span>
             </div>
             <div className="relative">
-              <Input type="text" placeholder="0.00" className="font-mono pr-16" readOnly />
+              <Input
+                type="text"
+                placeholder="0.00"
+                className="font-mono pr-16"
+                readOnly
+              />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
                 USDC
               </span>
@@ -328,7 +380,9 @@ export const TradeForm: StoryObj = {
 
           <Button
             className={`w-full ${
-              side === "buy" ? "bg-green-500 hover:bg-green-600" : "bg-red-500 hover:bg-red-600"
+              side === "buy"
+                ? "bg-green-500 hover:bg-green-600"
+                : "bg-red-500 hover:bg-red-600"
             }`}
           >
             {side === "buy" ? "Buy ETH" : "Sell ETH"}
@@ -343,9 +397,27 @@ export const PortfolioBreakdown: StoryObj = {
   name: "Portfolio Breakdown",
   render: () => {
     const holdings = [
-      { token: "ETH", amount: "2.5", value: 5363, allocation: 43.4, change: 2.34 },
-      { token: "USDC", amount: "5,000", value: 5000, allocation: 40.5, change: 0 },
-      { token: "SKAI", amount: "10,000", value: 1982, allocation: 16.1, change: 15.2 },
+      {
+        token: "ETH",
+        amount: "2.5",
+        value: 5363,
+        allocation: 43.4,
+        change: 2.34,
+      },
+      {
+        token: "USDC",
+        amount: "5,000",
+        value: 5000,
+        allocation: 40.5,
+        change: 0,
+      },
+      {
+        token: "SKAI",
+        amount: "10,000",
+        value: 1982,
+        allocation: 16.1,
+        change: 15.2,
+      },
     ];
 
     const total = holdings.reduce((sum, h) => sum + h.value, 0);
@@ -383,8 +455,8 @@ export const PortfolioBreakdown: StoryObj = {
                       holding.token === "ETH"
                         ? "bg-blue-500"
                         : holding.token === "USDC"
-                        ? "bg-green-500"
-                        : "bg-purple-500"
+                          ? "bg-green-500"
+                          : "bg-purple-500"
                     } text-white`}
                   >
                     {holding.token[0]}
@@ -393,7 +465,9 @@ export const PortfolioBreakdown: StoryObj = {
                 <div className="flex-1">
                   <div className="flex justify-between">
                     <span className="font-medium">{holding.token}</span>
-                    <span className="font-mono">${holding.value.toLocaleString()}</span>
+                    <span className="font-mono">
+                      ${holding.value.toLocaleString()}
+                    </span>
                   </div>
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <span>{holding.amount}</span>
@@ -402,8 +476,8 @@ export const PortfolioBreakdown: StoryObj = {
                         holding.change > 0
                           ? "text-green-500"
                           : holding.change < 0
-                          ? "text-red-500"
-                          : ""
+                            ? "text-red-500"
+                            : ""
                       }
                     >
                       {holding.change > 0 ? "+" : ""}
@@ -430,10 +504,42 @@ export const TradeHistory: StoryObj = {
   name: "Trade History",
   render: () => {
     const trades = [
-      { type: "buy", pair: "ETH/USDC", amount: "1.5 ETH", price: "$2,145.00", total: "$3,217.50", time: "2m ago", status: "completed" },
-      { type: "sell", pair: "SKAI/USDC", amount: "5,000 SKAI", price: "$0.198", total: "$990.00", time: "15m ago", status: "completed" },
-      { type: "buy", pair: "SOL/USDC", amount: "10 SOL", price: "$98.50", total: "$985.00", time: "1h ago", status: "completed" },
-      { type: "sell", pair: "ETH/USDC", amount: "0.5 ETH", price: "$2,150.00", total: "$1,075.00", time: "2h ago", status: "completed" },
+      {
+        type: "buy",
+        pair: "ETH/USDC",
+        amount: "1.5 ETH",
+        price: "$2,145.00",
+        total: "$3,217.50",
+        time: "2m ago",
+        status: "completed",
+      },
+      {
+        type: "sell",
+        pair: "SKAI/USDC",
+        amount: "5,000 SKAI",
+        price: "$0.198",
+        total: "$990.00",
+        time: "15m ago",
+        status: "completed",
+      },
+      {
+        type: "buy",
+        pair: "SOL/USDC",
+        amount: "10 SOL",
+        price: "$98.50",
+        total: "$985.00",
+        time: "1h ago",
+        status: "completed",
+      },
+      {
+        type: "sell",
+        pair: "ETH/USDC",
+        amount: "0.5 ETH",
+        price: "$2,150.00",
+        total: "$1,075.00",
+        time: "2h ago",
+        status: "completed",
+      },
     ];
 
     return (
@@ -441,7 +547,9 @@ export const TradeHistory: StoryObj = {
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle className="text-sm">Trade History</CardTitle>
-            <Button variant="ghost" size="sm">View All</Button>
+            <Button variant="ghost" size="sm">
+              View All
+            </Button>
           </div>
         </CardHeader>
         <CardContent>

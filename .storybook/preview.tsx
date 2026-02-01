@@ -10,17 +10,30 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      default: "dark",
+      default: "skai-dark",
       values: [
         {
-          name: "dark",
-          value: "hsl(222.2 84% 4.9%)",
+          name: "skai-dark",
+          value: "#001615", // SKAI Green Coal
+        },
+        {
+          name: "skai-navy",
+          value: "#020717", // SKAI Dark Navy
         },
         {
           name: "light",
-          value: "hsl(0 0% 100%)",
+          value: "#FFFFFF",
         },
       ],
+    },
+    docs: {
+      theme: {
+        base: "dark",
+        appBg: "#001615",
+        appContentBg: "#020717",
+        textColor: "#E0E0E0",
+        barTextColor: "#E0E0E0",
+      },
     },
   },
   globalTypes: {
@@ -44,7 +57,14 @@ const preview: Preview = {
       const theme = context.globals.theme || "dark";
       return (
         <div className={theme === "dark" ? "dark" : ""}>
-          <div className="bg-background text-foreground p-4 min-h-screen">
+          <div
+            className="bg-background text-foreground min-h-screen"
+            style={{
+              padding: "24px",
+              fontFamily: "'Poppins', 'Manrope', system-ui, sans-serif",
+              background: theme === "dark" ? "#001615" : "#FFFFFF",
+            }}
+          >
             <Story />
           </div>
         </div>

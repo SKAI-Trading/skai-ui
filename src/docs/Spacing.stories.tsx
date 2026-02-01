@@ -55,7 +55,7 @@ export const SpacingScale: StoryObj = {
         <div className="mt-12 p-6 bg-card rounded-lg border">
           <h3 className="text-lg font-semibold mb-4">Usage</h3>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`// Tailwind classes
+            {`// Tailwind classes
 <div className="p-4">        {/* 16px padding */}
 <div className="mt-8">       {/* 32px margin-top */}
 <div className="gap-2">      {/* 8px gap */}
@@ -233,7 +233,9 @@ export const GridSystem: StoryObj = {
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Mobile (Single Column)</CardTitle>
+                <CardTitle className="text-sm">
+                  Mobile (Single Column)
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-12 gap-1 text-xs max-w-[150px] mx-auto">
@@ -332,7 +334,7 @@ export const Breakpoints: StoryObj = {
         <div className="mt-12 p-6 bg-card rounded-lg border">
           <h3 className="text-lg font-semibold mb-4">Responsive Example</h3>
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-{`// Mobile-first responsive grid
+            {`// Mobile-first responsive grid
 <div className="
   grid 
   grid-cols-1      // Mobile: 1 column

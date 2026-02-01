@@ -164,7 +164,9 @@ export const LoadingStates: StoryObj = {
               </div>
               <div className="flex-1">
                 <p className="font-medium">Approved</p>
-                <p className="text-sm text-muted-foreground">Token approval confirmed</p>
+                <p className="text-sm text-muted-foreground">
+                  Token approval confirmed
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -173,12 +175,16 @@ export const LoadingStates: StoryObj = {
               </div>
               <div className="flex-1">
                 <p className="font-medium">Swapping</p>
-                <p className="text-sm text-muted-foreground">Transaction in progress...</p>
+                <p className="text-sm text-muted-foreground">
+                  Transaction in progress...
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
-                <span className="text-xs font-medium text-muted-foreground">3</span>
+                <span className="text-xs font-medium text-muted-foreground">
+                  3
+                </span>
               </div>
               <div className="flex-1">
                 <p className="font-medium text-muted-foreground">Complete</p>
@@ -270,7 +276,9 @@ export const ErrorStates: StoryObj = {
                 <AlertCircle className="h-5 w-5 text-red-500" />
               </div>
               <div className="flex-1">
-                <h3 className="font-semibold text-red-500 mb-1">Transaction Failed</h3>
+                <h3 className="font-semibold text-red-500 mb-1">
+                  Transaction Failed
+                </h3>
                 <p className="text-sm text-muted-foreground mb-3">
                   The transaction was reverted. This usually happens when:
                 </p>
@@ -323,14 +331,18 @@ export const StatusIndicators: StoryObj = {
               <Wifi className="h-4 w-4 text-green-500" />
               <span>Connected</span>
             </div>
-            <Badge className="bg-green-500/20 text-green-500">Base Mainnet</Badge>
+            <Badge className="bg-green-500/20 text-green-500">
+              Base Mainnet
+            </Badge>
           </div>
           <div className="flex items-center justify-between p-3 bg-yellow-500/10 rounded-lg">
             <div className="flex items-center gap-2">
               <Loader2 className="h-4 w-4 text-yellow-500 animate-spin" />
               <span>Connecting...</span>
             </div>
-            <Badge className="bg-yellow-500/20 text-yellow-500">Switching</Badge>
+            <Badge className="bg-yellow-500/20 text-yellow-500">
+              Switching
+            </Badge>
           </div>
           <div className="flex items-center justify-between p-3 bg-red-500/10 rounded-lg">
             <div className="flex items-center gap-2">

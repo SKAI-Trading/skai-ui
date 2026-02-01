@@ -65,7 +65,9 @@ export const ValidationStates: StoryObj = {
           />
           <AlertCircle className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-red-500" />
         </div>
-        <p className="text-sm text-red-500">Please enter a valid email address</p>
+        <p className="text-sm text-red-500">
+          Please enter a valid email address
+        </p>
       </div>
 
       {/* Warning */}
@@ -98,9 +100,34 @@ export const PasswordInput: StoryObj = {
     const [show, setShow] = useState(false);
     const [password, setPassword] = useState("");
 
-    const strength = password.length === 0 ? 0 : password.length < 6 ? 25 : password.length < 10 ? 50 : password.length < 14 ? 75 : 100;
-    const strengthLabel = strength === 0 ? "" : strength <= 25 ? "Weak" : strength <= 50 ? "Fair" : strength <= 75 ? "Good" : "Strong";
-    const strengthColor = strength <= 25 ? "bg-red-500" : strength <= 50 ? "bg-yellow-500" : strength <= 75 ? "bg-blue-500" : "bg-green-500";
+    const strength =
+      password.length === 0
+        ? 0
+        : password.length < 6
+          ? 25
+          : password.length < 10
+            ? 50
+            : password.length < 14
+              ? 75
+              : 100;
+    const strengthLabel =
+      strength === 0
+        ? ""
+        : strength <= 25
+          ? "Weak"
+          : strength <= 50
+            ? "Fair"
+            : strength <= 75
+              ? "Good"
+              : "Strong";
+    const strengthColor =
+      strength <= 25
+        ? "bg-red-500"
+        : strength <= 50
+          ? "bg-yellow-500"
+          : strength <= 75
+            ? "bg-blue-500"
+            : "bg-green-500";
 
     return (
       <div className="w-[400px] space-y-4">
@@ -123,7 +150,11 @@ export const PasswordInput: StoryObj = {
               onClick={() => setShow(!show)}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
             >
-              {show ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              {show ? (
+                <EyeOff className="h-4 w-4" />
+              ) : (
+                <Eye className="h-4 w-4" />
+              )}
             </button>
           </div>
 
@@ -177,8 +208,8 @@ export const MultiStepForm: StoryObj = {
                     s < step
                       ? "bg-green-500 text-white"
                       : s === step
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-muted-foreground"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted text-muted-foreground"
                   }`}
                 >
                   {s < step ? <Check className="h-4 w-4" /> : s}
@@ -204,14 +235,23 @@ export const MultiStepForm: StoryObj = {
                 <Label htmlFor="email">Email</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input id="email" type="email" placeholder="you@example.com" className="pl-10" />
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    className="pl-10"
+                  />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="username">Username</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input id="username" placeholder="Choose a username" className="pl-10" />
+                  <Input
+                    id="username"
+                    placeholder="Choose a username"
+                    className="pl-10"
+                  />
                 </div>
               </div>
             </>
@@ -322,7 +362,10 @@ export const TokenAmountInput: StoryObj = {
 
             <div className="flex justify-between items-center">
               <span className="text-sm text-muted-foreground">
-                ≈ ${amount ? (parseFloat(amount) * price).toLocaleString() : "0.00"}
+                ≈ $
+                {amount
+                  ? (parseFloat(amount) * price).toLocaleString()
+                  : "0.00"}
               </span>
               <div className="flex gap-1">
                 {[25, 50, 75, 100].map((pct) => (
@@ -331,7 +374,9 @@ export const TokenAmountInput: StoryObj = {
                     variant="ghost"
                     size="sm"
                     className="h-6 px-2 text-xs"
-                    onClick={() => setAmount(((balance * pct) / 100).toString())}
+                    onClick={() =>
+                      setAmount(((balance * pct) / 100).toString())
+                    }
                   >
                     {pct === 100 ? "MAX" : `${pct}%`}
                   </Button>
@@ -355,7 +400,9 @@ export const TokenAmountInput: StoryObj = {
 export const FormWithSubmit: StoryObj = {
   name: "Form With Submit States",
   render: () => {
-    const [state, setState] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [state, setState] = useState<
+      "idle" | "loading" | "success" | "error"
+    >("idle");
 
     const handleSubmit = () => {
       setState("loading");
@@ -373,11 +420,20 @@ export const FormWithSubmit: StoryObj = {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Your name" disabled={state === "loading"} />
+            <Input
+              id="name"
+              placeholder="Your name"
+              disabled={state === "loading"}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="you@example.com" disabled={state === "loading"} />
+            <Input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              disabled={state === "loading"}
+            />
           </div>
           <div className="space-y-2">
             <Label htmlFor="message">Message</Label>

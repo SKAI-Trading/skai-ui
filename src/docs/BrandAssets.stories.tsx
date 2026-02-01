@@ -306,7 +306,9 @@ export const LogoVariants: StoryObj = {
                       size={Math.min(size * 0.6, 32)}
                     />
                   </div>
-                  <p className="font-mono text-sm">{size}×{size}</p>
+                  <p className="font-mono text-sm">
+                    {size}×{size}
+                  </p>
                   <p className="text-xs text-muted-foreground">{use}</p>
                 </CardContent>
               </Card>

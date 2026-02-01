@@ -36,13 +36,37 @@ export const TransitionDurations: StoryObj = {
             <h2 className="text-2xl font-semibold mb-4">Duration Scale</h2>
             <div className="space-y-4">
               {[
-                { name: "75ms", class: "duration-75", use: "Micro interactions" },
+                {
+                  name: "75ms",
+                  class: "duration-75",
+                  use: "Micro interactions",
+                },
                 { name: "100ms", class: "duration-100", use: "Quick feedback" },
-                { name: "150ms", class: "duration-150", use: "Buttons, toggles" },
-                { name: "200ms", class: "duration-200", use: "Default transitions" },
-                { name: "300ms", class: "duration-300", use: "Modals, dropdowns" },
-                { name: "500ms", class: "duration-500", use: "Page transitions" },
-                { name: "700ms", class: "duration-700", use: "Complex animations" },
+                {
+                  name: "150ms",
+                  class: "duration-150",
+                  use: "Buttons, toggles",
+                },
+                {
+                  name: "200ms",
+                  class: "duration-200",
+                  use: "Default transitions",
+                },
+                {
+                  name: "300ms",
+                  class: "duration-300",
+                  use: "Modals, dropdowns",
+                },
+                {
+                  name: "500ms",
+                  class: "duration-500",
+                  use: "Page transitions",
+                },
+                {
+                  name: "700ms",
+                  class: "duration-700",
+                  use: "Complex animations",
+                },
                 { name: "1000ms", class: "duration-1000", use: "Slow reveals" },
               ].map((item) => (
                 <div key={item.name} className="flex items-center gap-4">
@@ -65,7 +89,10 @@ export const TransitionDurations: StoryObj = {
             <h2 className="text-2xl font-semibold mb-4">Easing Functions</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                { name: "ease-linear", desc: "Constant speed, mechanical feel" },
+                {
+                  name: "ease-linear",
+                  desc: "Constant speed, mechanical feel",
+                },
                 { name: "ease-in", desc: "Slow start, fast end (exiting)" },
                 { name: "ease-out", desc: "Fast start, slow end (entering)" },
                 { name: "ease-in-out", desc: "Smooth start and end (default)" },
@@ -80,7 +107,9 @@ export const TransitionDurations: StoryObj = {
                       <div
                         className={`h-full w-8 bg-primary transition-transform duration-500 ${ease.name}`}
                         style={{
-                          transform: active ? "translateX(calc(100% * 4))" : "translateX(0)",
+                          transform: active
+                            ? "translateX(calc(100% * 4))"
+                            : "translateX(0)",
                         }}
                       />
                     </div>
@@ -149,7 +178,10 @@ export const LoadingStates: StoryObj = {
                 <CardTitle className="text-sm">Progress Bar</CardTitle>
               </CardHeader>
               <CardContent>
-                <Progress value={loading ? 33 : 100} className="transition-all duration-500" />
+                <Progress
+                  value={loading ? 33 : 100}
+                  className="transition-all duration-500"
+                />
                 <p className="text-sm text-muted-foreground mt-2">
                   {loading ? "Loading..." : "Complete!"}
                 </p>
@@ -204,7 +236,8 @@ export const LoadingStates: StoryObj = {
                   <div
                     className="absolute inset-0"
                     style={{
-                      background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)",
+                      background:
+                        "linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)",
                       animation: "shimmer 2s infinite",
                     }}
                   />
@@ -379,7 +412,11 @@ export const NumberAnimations: StoryObj = {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-4xl font-bold font-mono">
-                  ${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  $
+                  {value.toLocaleString(undefined, {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
                   Portfolio Value
@@ -395,7 +432,9 @@ export const NumberAnimations: StoryObj = {
               <CardContent>
                 <div className="flex items-center justify-center gap-4">
                   <div className="text-center p-4 rounded-lg transition-colors duration-300 bg-green-500/10">
-                    <p className="text-2xl font-mono text-green-500">$2,145.32</p>
+                    <p className="text-2xl font-mono text-green-500">
+                      $2,145.32
+                    </p>
                     <div className="flex items-center justify-center gap-1 text-green-500">
                       <TrendingUp className="h-4 w-4" />
                       <span>+2.34%</span>

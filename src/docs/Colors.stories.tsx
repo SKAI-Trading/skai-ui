@@ -5,6 +5,24 @@ const meta: Meta = {
   title: "Design Tokens/Colors",
   parameters: {
     layout: "fullscreen",
+    docs: {
+      description: {
+        component: `
+# SKAI Color System
+
+**Source of Truth:** \`src/index.css\` in the main Skai-Trading repo.
+
+All colors use **HSL format** for easy manipulation and theming.
+
+## Key Colors
+- **Background:** \`225 80% 4%\` (#020717) - Deep navy
+- **Primary:** \`199 90% 65%\` (#56C0F6) - SKAI Cyan
+- **Secondary:** \`166 80% 55%\` (#2DEDAD) - SKAI Teal
+- **Long/Buy:** \`142 76% 36%\` (#16A34A) - Trading green
+- **Short/Sell:** \`0 84% 60%\` (#EF4444) - Trading red
+        `,
+      },
+    },
   },
 };
 
@@ -73,35 +91,44 @@ export const AllColors: StoryObj = {
   render: () => (
     <div className="p-8 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-2">Color System</h1>
-        <p className="text-lg text-muted-foreground mb-8">
-          Click any color to copy its CSS variable. All colors support dark
-          mode.
+        <h1 className="text-4xl font-bold mb-2">SKAI Color System</h1>
+        <p className="text-lg text-muted-foreground mb-2">
+          Click any color to copy its CSS variable. Source:{" "}
+          <code className="text-cyan-400">src/index.css</code>
+        </p>
+        <p className="text-sm text-muted-foreground mb-8">
+          All colors use HSL format:{" "}
+          <code className="text-cyan-400">hsl(var(--primary))</code> or
+          Tailwind: <code className="text-cyan-400">bg-primary</code>
         </p>
 
         <ColorSection
           title="Brand Colors"
-          description="Primary brand colors used throughout the app"
+          description="Primary brand colors from the SKAI design system"
         >
           <ColorSwatch
             name="Primary"
-            value="hsl(217.2 91.2% 59.8%)"
+            value="hsl(199 90% 65%)"
             cssVar="hsl(var(--primary))"
           />
           <ColorSwatch
-            name="Primary Foreground"
-            value="hsl(222 47% 7%)"
-            cssVar="hsl(var(--primary-foreground))"
-            textColor="white"
+            name="Primary Glow"
+            value="hsl(199 90% 75%)"
+            cssVar="hsl(var(--primary-glow))"
           />
           <ColorSwatch
             name="Secondary"
-            value="hsl(217.2 32.6% 17.5%)"
+            value="hsl(166 80% 55%)"
             cssVar="hsl(var(--secondary))"
           />
           <ColorSwatch
+            name="Secondary Glow"
+            value="hsl(166 80% 65%)"
+            cssVar="hsl(var(--secondary-glow))"
+          />
+          <ColorSwatch
             name="Accent"
-            value="hsl(217.2 32.6% 17.5%)"
+            value="hsl(199 90% 65%)"
             cssVar="hsl(var(--accent))"
           />
         </ColorSection>
@@ -112,33 +139,38 @@ export const AllColors: StoryObj = {
         >
           <ColorSwatch
             name="Background"
-            value="hsl(222 47% 7%)"
+            value="hsl(225 80% 4%)"
             cssVar="hsl(var(--background))"
           />
           <ColorSwatch
             name="Foreground"
-            value="hsl(210 40% 98%)"
+            value="hsl(0 0% 100%)"
             cssVar="hsl(var(--foreground))"
             textColor="black"
           />
           <ColorSwatch
             name="Card"
-            value="hsl(222 47% 9%)"
+            value="hsl(225 60% 8%)"
             cssVar="hsl(var(--card))"
           />
           <ColorSwatch
+            name="Glass"
+            value="hsl(225 50% 12%)"
+            cssVar="hsl(var(--glass))"
+          />
+          <ColorSwatch
             name="Popover"
-            value="hsl(222 47% 9%)"
+            value="hsl(225 60% 6%)"
             cssVar="hsl(var(--popover))"
           />
           <ColorSwatch
             name="Muted"
-            value="hsl(217.2 32.6% 17.5%)"
+            value="hsl(225 30% 15%)"
             cssVar="hsl(var(--muted))"
           />
           <ColorSwatch
             name="Muted Foreground"
-            value="hsl(215 20.2% 65.1%)"
+            value="hsl(225 20% 60%)"
             cssVar="hsl(var(--muted-foreground))"
             textColor="black"
           />
@@ -146,63 +178,32 @@ export const AllColors: StoryObj = {
 
         <ColorSection
           title="Trading Colors"
-          description="Colors for buy/sell, profit/loss, and price movements"
+          description="Colors for buy/sell, long/short, and price movements"
         >
           <ColorSwatch
-            name="Buy / Profit"
+            name="Long / Buy"
             value="hsl(142 76% 36%)"
-            cssVar="--skai-buy"
+            cssVar="hsl(var(--long))"
           />
           <ColorSwatch
-            name="Buy Light"
-            value="hsl(142 76% 45%)"
-            cssVar="--skai-success-light"
+            name="Long Glow"
+            value="hsl(142 76% 46%)"
+            cssVar="hsl(var(--long-glow))"
           />
           <ColorSwatch
-            name="Sell / Loss"
+            name="Short / Sell"
             value="hsl(0 84% 60%)"
-            cssVar="--skai-sell"
+            cssVar="hsl(var(--short))"
           />
           <ColorSwatch
-            name="Sell Light"
+            name="Short Glow"
             value="hsl(0 84% 70%)"
-            cssVar="--skai-error-light"
+            cssVar="hsl(var(--short-glow))"
           />
-          <ColorSwatch
-            name="Warning"
-            value="hsl(38 92% 50%)"
-            cssVar="--skai-warning"
-          />
-          <ColorSwatch
-            name="Info"
-            value="hsl(217 91% 60%)"
-            cssVar="--skai-info"
-          />
-        </ColorSection>
-
-        <ColorSection
-          title="Semantic Colors"
-          description="Colors for feedback and status"
-        >
           <ColorSwatch
             name="Destructive"
             value="hsl(0 84% 60%)"
             cssVar="hsl(var(--destructive))"
-          />
-          <ColorSwatch
-            name="Success"
-            value="hsl(142 76% 36%)"
-            cssVar="--skai-success"
-          />
-          <ColorSwatch
-            name="Warning"
-            value="hsl(38 92% 50%)"
-            cssVar="--skai-warning"
-          />
-          <ColorSwatch
-            name="Info"
-            value="hsl(217 91% 60%)"
-            cssVar="--skai-info"
           />
         </ColorSection>
 
@@ -212,17 +213,17 @@ export const AllColors: StoryObj = {
         >
           <ColorSwatch
             name="Border"
-            value="hsl(217.2 32.6% 17.5%)"
+            value="hsl(225 30% 20%)"
             cssVar="hsl(var(--border))"
           />
           <ColorSwatch
             name="Input"
-            value="hsl(217.2 32.6% 17.5%)"
+            value="hsl(225 30% 15%)"
             cssVar="hsl(var(--input))"
           />
           <ColorSwatch
             name="Ring"
-            value="hsl(224.3 76.3% 48%)"
+            value="hsl(199 90% 65%)"
             cssVar="hsl(var(--ring))"
           />
         </ColorSection>
@@ -232,15 +233,21 @@ export const AllColors: StoryObj = {
           <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
             {`// Using Tailwind classes (recommended)
 <div className="bg-primary text-primary-foreground">
-  Primary button
+  Primary element
 </div>
 
-<span className="text-green-500">+$123.45</span>
-<span className="text-red-500">-$67.89</span>
+// Trading colors with glow
+<button className="bg-long shadow-[var(--glow-long)]">Buy</button>
+<button className="bg-short shadow-[var(--glow-short)]">Sell</button>
 
-// Using CSS variables
-<div style={{ backgroundColor: 'hsl(var(--card))' }}>
-  Card content
+// Using CSS variables directly
+<div style={{ backgroundColor: 'hsl(var(--glass))' }}>
+  Glass panel content
+</div>
+
+// HSL format allows easy opacity
+<div style={{ backgroundColor: 'hsl(var(--primary) / 0.2)' }}>
+  20% opacity primary
 </div>`}
           </pre>
         </div>
