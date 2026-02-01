@@ -46,9 +46,11 @@ Create presentational layout components that accept slots/children:
   - Props: `href`, `icon`, `label`, `badge`, `active`, `onClick`
   - Supports icons, badges, active states
 
-- [ ] `NavGroup` - Grouped navigation items
-  - Props: `label`, `items`, `collapsible`
-  - Dropdown/submenu support
+- [x] `NavGroup` - Grouped navigation items ✅
+  - Props: `label`, `items`, `collapsible`, `icon`, `badge`, `defaultExpanded`
+  - Collapsible sections with nested items
+  - Multiple variants (default, muted, bordered, elevated)
+  - Storybook: `nav-group.stories.tsx`
 
 - [x] `MobileNav` - Mobile bottom navigation
   - Props: `items`, `activeItem`, `onItemClick`
@@ -65,42 +67,67 @@ Create presentational layout components that accept slots/children:
   - Drag-and-drop reordering
   - Ticker tape integration
 
-- [ ] `TickerTape` - Scrolling ticker (use existing `scrolling-ticker`)
-  - Props: `items`, `speed`, `direction`, `pauseOnHover`
-  - Smooth infinite scroll
-  - Click-to-pause
+- [x] `TickerTape` - Scrolling ticker ✅
+  - Props: `items`, `speed`, `direction`, `pauseOnHover`, `showFade`, `gap`, `separator`
+  - Smooth infinite scroll animation
+  - Click handlers and links
+  - Change indicators (positive/negative/neutral)
+  - Edge fade gradients
+  - Storybook: `ticker-tape.stories.tsx`
 
-### Phase 4: Specialized Components ⬜
+### Phase 4: Specialized Components ✅
 
-- [ ] `StatusBar` - Header status display
-  - Props: `items` (array of { icon, value, label, onClick })
-  - Animated counters
-  - Tooltip support
+- [x] `StatusBar` - Header status display ✅
+  - Props: `items` (array of { icon, value, label, onClick, tooltip, highlight, loading })
+  - Multiple variants (default, muted, bordered, glass)
+  - Tooltip integration
+  - Highlight states (positive/negative)
+  - Storybook: `status-bar.stories.tsx`
 
-- [ ] `AccountMenu` - User account dropdown
-  - Props: `user`, `items`, `onLogout`
-  - Avatar, wallet address display
-  - Menu items with icons
+- [x] `AccountMenu` - User account dropdown ✅
+  - Props: `name`, `avatarUrl`, `walletAddress`, `items`, `groups`, `onLogout`
+  - Avatar with fallback initials
+  - Wallet address with copy button
+  - Grouped menu items
+  - Multiple trigger variants
+  - Storybook: `account-menu.stories.tsx`
 
-- [ ] `BalanceDisplay` - Token/currency balance
-  - Props: `balance`, `symbol`, `icon`, `loading`
-  - Formatted numbers
+- [x] `BalanceDisplay` - Token/currency balance ✅
+  - Props: `balance`, `symbol`, `icon`, `loading`, `decimals`, `compact`, `hideValue`
+  - Number formatting with locale support
+  - Compact notation (1K, 1M, etc.)
   - Loading skeleton
+  - Privacy mode (hide value)
+  - BalanceChange component for +/- styling
+  - Storybook: `balance-display.stories.tsx`
 
-### Phase 5: Layout Variants ⬜
+### Phase 5: Layout Variants ✅ COMPLETE
 
-- [ ] `TradingLayout` - Full-height trading view
-  - Built-in viewport calculations
-  - Resizable panels integration
-  - No padding mode
+- [x] `TradingLayout` - Full-height trading view
+  - Built-in viewport calculations (auto, full, viewport heights)
+  - Left/right sidebar slots with configurable widths
+  - Show/hide sidebars dynamically
+  - Gap and padding options
+  - `TradingPanel` component for panel styling
+  - Storybook: `trading-layout.stories.tsx`
 
-- [ ] `DashboardLayout` - Dashboard with sidebar
-  - Collapsible sidebar
-  - Breadcrumb support
+- [x] `DashboardLayout` - Dashboard with sidebar
+  - Collapsible sidebar (controlled/uncontrolled)
+  - Mobile responsive with overlay mode
+  - Header slot for top navigation
+  - `DashboardSidebar` with header/footer slots
+  - `DashboardContent` with title, breadcrumb, actions
+  - Max-width constraints for content
+  - Storybook: `dashboard-layout.stories.tsx`
 
-- [ ] `CenteredLayout` - Centered content (auth pages)
-  - Max-width container
-  - Optional background
+- [x] `CenteredLayout` - Centered content (auth pages)
+  - Multiple background variants (gradient, pattern, muted)
+  - Decorative blur elements
+  - Fixed header/footer slots
+  - Size variants (xs to xl)
+  - `AuthCard` component for auth forms
+  - Glass morphism card variant
+  - Storybook: `centered-layout.stories.tsx`
 
 ## Implementation Notes
 

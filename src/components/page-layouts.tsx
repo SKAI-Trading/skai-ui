@@ -12,7 +12,7 @@
 
 import * as React from "react";
 import { cn } from "../lib/utils";
-import { Container, Stack, VStack, HStack, Grid } from "../lib/layout";
+import { Container, VStack, HStack, Grid } from "../lib/layout";
 
 // =============================================================================
 // PAGE HEADER COMPONENT
@@ -400,7 +400,10 @@ export interface GridPageProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 export const GridPage = React.forwardRef<HTMLDivElement, GridPageProps>(
   ({ className, header, cols = 3, gap = 6, children, ...props }, ref) => {
-    const responsiveCols = {
+    const responsiveCols: Record<
+      1 | 2 | 3 | 4,
+      { sm: 1 | 2; md: 1 | 2; lg: 1 | 2 | 3 | 4 }
+    > = {
       1: { sm: 1, md: 1, lg: 1 },
       2: { sm: 1, md: 2, lg: 2 },
       3: { sm: 1, md: 2, lg: 3 },

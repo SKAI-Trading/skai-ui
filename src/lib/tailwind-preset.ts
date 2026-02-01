@@ -23,14 +23,12 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 import {
   skaiColors,
-  skaiFonts,
   skaiFontSizes,
   skaiSpacing,
   skaiBorderRadius,
   skaiShadows,
-  skaiGrid,
 } from "./design-tokens";
-import { breakpoints, zIndex, animation } from "./tokens";
+import { breakpoints, zIndex } from "./tokens";
 
 // =============================================================================
 // ANIMATION KEYFRAMES (From Figma motion specs)
@@ -319,7 +317,8 @@ const skaiPreset: Partial<Config> = {
         mono: ["JetBrains Mono", "Menlo", "monospace"],
         serif: ["Cormorant Garamond", "Georgia", "serif"],
       },
-      fontSize: skaiFontSizes,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      fontSize: skaiFontSizes as any,
 
       // Colors
       colors: {
@@ -363,37 +362,6 @@ const skaiPreset: Partial<Config> = {
 };
 
 export default skaiPreset;
-
-// =============================================================================
-// INDIVIDUAL EXPORTS FOR GRANULAR USE
-// =============================================================================
-
-export {
-  // Colors
-  skaiColors,
-  skaiSemanticColors,
-
-  // Typography
-  skaiFonts,
-  skaiFontSizes,
-
-  // Spacing & Layout
-  skaiSpacing,
-  skaiBorderRadius,
-  skaiShadows,
-  skaiGrid,
-  skaiScreens,
-  skaiZIndex,
-
-  // Animations
-  skaiKeyframes,
-  skaiAnimations,
-  skaiTransitionDuration,
-  skaiTransitionTimingFunction,
-
-  // Gradients
-  skaiBackgroundImage,
-};
 
 // =============================================================================
 // TYPE EXPORTS

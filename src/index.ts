@@ -53,9 +53,19 @@ export * from "./components/app-header";
 export * from "./components/app-footer";
 export * from "./components/mobile-nav";
 export * from "./components/dock-bar";
+export * from "./components/nav-group";
+export * from "./components/status-bar";
+export * from "./components/ticker-tape";
+export * from "./components/account-menu";
+export * from "./components/balance-display";
 
 // Components - Page Layouts (Standard page templates)
 export * from "./components/page-layouts";
+
+// Components - Layout Variants (Full-page layouts)
+export * from "./components/trading-layout";
+export * from "./components/dashboard-layout";
+export * from "./components/centered-layout";
 
 // Components - Overlay
 export * from "./components/dialog";
