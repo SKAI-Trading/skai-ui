@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { skaiColors, skaiFonts } from "./src/lib/design-tokens";
 
 const config: Config = {
   darkMode: ["class"],
@@ -12,19 +13,12 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: skaiFonts,
       colors: {
-        // SKAI Brand Colors
-        skai: {
-          primary: "#6366f1",
-          secondary: "#8b5cf6",
-          accent: "#06b6d4",
-          success: "#10b981",
-          warning: "#f59e0b",
-          error: "#ef4444",
-          dark: "#0f172a",
-          light: "#f8fafc",
-        },
-        // Semantic colors for components
+        // SKAI Design System Colors (from Figma)
+        ...skaiColors,
+
+        // Semantic colors for shadcn components (CSS variable based)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

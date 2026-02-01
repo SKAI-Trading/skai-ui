@@ -158,5 +158,26 @@ export type { Theme, ThemeColors, ThemeTypography } from "./lib/theme-config";
 // CSS Custom Property Fallbacks (for older browser support)
 export * from "./lib/css-fallbacks";
 
+// Design Tokens - SKAI color palette, typography, and spacing
+export {
+  skaiColors,
+  skaiFonts,
+  skaiFontSizes,
+  skaiGrid,
+  gradients,
+  coreColors,
+  greenCoalColors,
+  accentColors,
+  semanticColors,
+  earthColors,
+  neutralColors,
+  generateCSSVariables,
+} from "./lib/design-tokens";
+export type {
+  SkaiColorKey,
+  SkaiFontKey,
+  SkaiGradientKey,
+} from "./lib/design-tokens";
+
 // Styles - import this in your app's main CSS
 // import '@skai/ui/dist/styles.css';
