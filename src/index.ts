@@ -6,6 +6,7 @@ export * from "./components/badge";
 export * from "./components/label";
 export * from "./components/textarea";
 export * from "./components/skai-icon";
+export * from "./components/skai-logo";
 
 // Components - Feedback
 export * from "./components/alert";
