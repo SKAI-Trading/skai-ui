@@ -7,7 +7,22 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   clean: true,
-  external: ["react", "react-dom"],
+  external: [
+    "react",
+    "react-dom",
+    "react/jsx-runtime",
+    // Externalize all Radix packages to avoid duplicate React contexts
+    /^@radix-ui\/.*/,
+    // Externalize other shared dependencies
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge",
+    "cmdk",
+    "input-otp",
+    "react-day-picker",
+    "react-hook-form",
+    "lucide-react",
+  ],
   treeshake: true,
   minify: true,
 });
