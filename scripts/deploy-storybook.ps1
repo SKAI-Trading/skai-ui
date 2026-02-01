@@ -16,7 +16,7 @@ Write-Host ""
 
 # Configuration
 $S3_BUCKET = "skai-storybook"
-$CLOUDFRONT_ID = "E2XYZ123EXAMPLE" # TODO: Create and update with actual ID
+$CLOUDFRONT_ID = "ET8L6FJV9D86M"
 $REGION = "us-east-1"
 $STORYBOOK_URL = "https://storybook.skai.trade"
 

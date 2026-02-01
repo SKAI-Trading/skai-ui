@@ -146,7 +146,7 @@ if ($existingDist -and $existingDist -ne "" -and $existingDist -ne "None") {
             Items = @(
                 @{
                     ErrorCode = 403
-                    ResponseCode = 200
+                    ResponseCode = "200"
                     ResponsePagePath = "/index.html"
                     ErrorCachingMinTTL = 10
                 }
