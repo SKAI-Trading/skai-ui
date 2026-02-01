@@ -1,6 +1,9 @@
 import { addons } from "@storybook/manager-api";
 import { create } from "@storybook/theming/create";
 
+// Import GitHub addon for designer workflow
+import "./addons/github-addon";
+
 // SKAI Trading Design System Theme
 // Based on skai-landing dev branch design patterns
 const skaiTheme = create({

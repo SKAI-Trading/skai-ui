@@ -1,0 +1,81 @@
+name: Component Update Request
+description: Request changes to a UI component
+title: "[Component] "
+labels: ["design", "component"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component needs updating?
+      options:
+        - Button
+        - Card
+        - Input
+        - Badge
+        - Dialog
+        - Toast
+        - Select
+        - Tabs
+        - Table
+        - TokenIcon
+        - PriceDisplay
+        - SwapInput
+        - StatCard
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Type of Change
+      options:
+        - Style/Visual update
+        - New variant
+        - Bug fix
+        - Accessibility improvement
+        - New prop/feature
+        - Documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the change you'd like to make
+      placeholder: |
+        What: Describe the change
+        Why: Explain why this change is needed
+        Figma: Link to Figma design (if applicable)
+    validations:
+      required: true
+
+  - type: textarea
+    id: design-specs
+    attributes:
+      label: Design Specifications
+      description: Provide design details (colors, spacing, etc.)
+      placeholder: |
+        Colors: #hex or HSL values
+        Spacing: px or rem values
+        Typography: font-size, weight
+        Other: any other specs
+
+  - type: input
+    id: figma-link
+    attributes:
+      label: Figma Link
+      description: Link to the Figma design (optional)
+      placeholder: https://www.figma.com/file/...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I've checked existing components for similar functionality
+        - label: This change follows SKAI brand guidelines
+        - label: I've considered dark/light mode
+        - label: I've considered accessibility (contrast, focus states)

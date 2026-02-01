@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKAI Design System - Storybook</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Thirdweb SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/thirdweb@5/dist/thirdweb.umd.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg-primary: #0a0a0f;
+        --bg-secondary: #12121a;
+        --text-primary: #ffffff;
+        --text-secondary: #a1a1aa;
+        --accent-cyan: #56c0f6;
+        --accent-teal: #2dd4bf;
+        --border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+      }
+
+      .auth-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 2rem;
+        background:
+          radial-gradient(
+            ellipse at top,
+            rgba(86, 192, 246, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at bottom,
+            rgba(45, 212, 191, 0.05) 0%,
+            transparent 50%
+          ),
+          var(--bg-primary);
+      }
+
+      .auth-card {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        padding: 2.5rem;
+        max-width: 420px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      .logo {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 1.5rem;
+      }
+
+      .logo svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--accent-cyan),
+          var(--accent-teal)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+
+      .connect-btn {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--bg-primary);
+        background: linear-gradient(
+          135deg,
+          var(--accent-cyan),
+          var(--accent-teal)
+        );
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .connect-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 40px -10px rgba(86, 192, 246, 0.4);
+      }
+
+      .connect-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid transparent;
+        border-top-color: currentColor;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .error-msg {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        border-radius: 0.5rem;
+        color: #ef4444;
+        font-size: 0.875rem;
+      }
+
+      .success-msg {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        background: rgba(45, 212, 191, 0.1);
+        border: 1px solid rgba(45, 212, 191, 0.3);
+        border-radius: 0.5rem;
+        color: var(--accent-teal);
+        font-size: 0.875rem;
+      }
+
+      .footer {
+        margin-top: 2rem;
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+      }
+
+      .footer a {
+        color: var(--accent-cyan);
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Storybook iframe wrapper */
+      .storybook-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+
+      .storybook-wrapper.visible {
+        display: block;
+      }
+
+      .storybook-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .logout-btn {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 0.375rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: none;
+      }
+
+      .logout-btn.visible {
+        display: block;
+      }
+
+      .logout-btn:hover {
+        color: var(--text-primary);
+        border-color: var(--accent-cyan);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="auth-container" class="auth-container">
+      <div class="auth-card">
+        <div class="logo">
+          <svg
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="url(#gradient)"
+              stroke-width="3"
+              fill="none"
+            />
+            <path
+              d="M30 50 L45 65 L70 35"
+              stroke="url(#gradient)"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color: #56c0f6" />
+                <stop offset="100%" style="stop-color: #2dd4bf" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <h1>SKAI Design System</h1>
+        <p class="subtitle">
+          Connect your wallet to access the component library and design
+          documentation.
+        </p>
+
+        <button id="connect-btn" class="connect-btn" onclick="handleConnect()">
+          <span id="btn-text">Connect Wallet</span>
+          <div id="spinner" class="spinner" style="display: none"></div>
+        </button>
+
+        <div id="error-msg" class="error-msg" style="display: none"></div>
+        <div id="success-msg" class="success-msg" style="display: none"></div>
+
+        <div class="footer">
+          <p>
+            Need access? Contact
+            <a href="mailto:team@skai.trade">team@skai.trade</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button id="logout-btn" class="logout-btn" onclick="handleLogout()">
+      Disconnect
+    </button>
+
+    <div id="storybook-wrapper" class="storybook-wrapper">
+      <iframe id="storybook-frame" src="about:blank"></iframe>
+    </div>
+
+    <script>
+      // Configuration
+      const THIRDWEB_CLIENT_ID = "a4f592f110a8b77985b0b736c0a3c0e1"; // Same as landing page
+      const STORYBOOK_PATH = "./sb/"; // Storybook will be in /sb/ subdirectory
+
+      // Allowed wallets/emails for access (add team members here)
+      const ALLOWED_ACCESS = [
+        // Add wallet addresses or emails that should have access
+        // For now, allow any connected wallet (can be restricted later)
+      ];
+
+      // Check if already authenticated
+      function checkAuth() {
+        const authToken = sessionStorage.getItem("storybook_auth");
+        if (authToken) {
+          try {
+            const auth = JSON.parse(authToken);
+            if (auth.authenticated && auth.expiry > Date.now()) {
+              showStorybook(auth.address);
+              return true;
+            }
+          } catch (e) {
+            sessionStorage.removeItem("storybook_auth");
+          }
+        }
+        return false;
+      }
+
+      // Handle wallet connection
+      async function handleConnect() {
+        const btn = document.getElementById("connect-btn");
+        const btnText = document.getElementById("btn-text");
+        const spinner = document.getElementById("spinner");
+        const errorMsg = document.getElementById("error-msg");
+        const successMsg = document.getElementById("success-msg");
+
+        btn.disabled = true;
+        btnText.textContent = "Connecting...";
+        spinner.style.display = "block";
+        errorMsg.style.display = "none";
+        successMsg.style.display = "none";
+
+        try {
+          // Check if ethereum provider exists
+          if (typeof window.ethereum === "undefined") {
+            throw new Error(
+              "No wallet detected. Please install MetaMask or another Web3 wallet.",
+            );
+          }
+
+          // Request account access
+          const accounts = await window.ethereum.request({
+            method: "eth_requestAccounts",
+          });
+
+          if (!accounts || accounts.length === 0) {
+            throw new Error("No accounts found. Please connect your wallet.");
+          }
+
+          const address = accounts[0].toLowerCase();
+
+          // Check if address is allowed (if allowlist is configured)
+          if (ALLOWED_ACCESS.length > 0 && !ALLOWED_ACCESS.includes(address)) {
+            throw new Error(
+              "Access denied. Your wallet is not authorized to view this content.",
+            );
+          }
+
+          // Store auth token (expires in 24 hours)
+          const authToken = {
+            authenticated: true,
+            address: address,
+            expiry: Date.now() + 24 * 60 * 60 * 1000,
+          };
+          sessionStorage.setItem("storybook_auth", JSON.stringify(authToken));
+
+          successMsg.textContent = "Connected! Loading Storybook...";
+          successMsg.style.display = "block";
+
+          // Show storybook after brief delay
+          setTimeout(() => {
+            showStorybook(address);
+          }, 1000);
+        } catch (error) {
+          console.error("Connection error:", error);
+          errorMsg.textContent = error.message || "Failed to connect wallet";
+          errorMsg.style.display = "block";
+
+          btn.disabled = false;
+          btnText.textContent = "Connect Wallet";
+          spinner.style.display = "none";
+        }
+      }
+
+      // Show Storybook
+      function showStorybook(address) {
+        document.getElementById("auth-container").style.display = "none";
+        document.getElementById("storybook-wrapper").classList.add("visible");
+        document.getElementById("logout-btn").classList.add("visible");
+        document.getElementById("storybook-frame").src = STORYBOOK_PATH;
+      }
+
+      // Handle logout
+      function handleLogout() {
+        sessionStorage.removeItem("storybook_auth");
+        document
+          .getElementById("storybook-wrapper")
+          .classList.remove("visible");
+        document.getElementById("logout-btn").classList.remove("visible");
+        document.getElementById("auth-container").style.display = "flex";
+        document.getElementById("storybook-frame").src = "about:blank";
+
+        // Reset button state
+        const btn = document.getElementById("connect-btn");
+        const btnText = document.getElementById("btn-text");
+        const spinner = document.getElementById("spinner");
+
+        btn.disabled = false;
+        btnText.textContent = "Connect Wallet";
+        spinner.style.display = "none";
+        document.getElementById("error-msg").style.display = "none";
+        document.getElementById("success-msg").style.display = "none";
+      }
+
+      // Check auth on page load
+      document.addEventListener("DOMContentLoaded", checkAuth);
+    </script>
+  </body>
+</html>

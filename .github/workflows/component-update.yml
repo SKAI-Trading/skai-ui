@@ -1,0 +1,115 @@
+name: Component Update PR
+
+on:
+  workflow_dispatch:
+    inputs:
+      component:
+        description: "Component to update"
+        required: true
+        type: string
+      change_description:
+        description: "Description of the change"
+        required: true
+        type: string
+      figma_link:
+        description: "Figma design link (optional)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up branch name
+        id: branch
+        run: |
+          BRANCH_NAME="design/${{ github.event.inputs.component }}-$(date +%Y%m%d-%H%M%S)"
+          echo "name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+
+      - name: Create branch
+        run: |
+          git checkout -b ${{ steps.branch.outputs.name }}
+          git push origin ${{ steps.branch.outputs.name }}
+
+      - name: Create placeholder file
+        run: |
+          mkdir -p .design-updates
+          cat > ".design-updates/${{ github.event.inputs.component }}.md" << EOF
+          # Design Update: ${{ github.event.inputs.component }}
+
+          ## Description
+          ${{ github.event.inputs.change_description }}
+
+          ## Figma Link
+          ${{ github.event.inputs.figma_link || 'N/A' }}
+
+          ## Instructions
+          1. Use GitHub web editor to modify the component
+          2. Navigate to \`src/components/${{ github.event.inputs.component }}.tsx\`
+          3. Make your changes
+          4. Commit with a descriptive message
+          5. The PR will be automatically created
+
+          ## Files to Edit
+          - \`src/components/${{ github.event.inputs.component }}.tsx\` - Component source
+          - \`src/docs/${{ github.event.inputs.component }}.stories.tsx\` - Storybook stories
+          EOF
+
+          git add .
+          git commit -m "design: prepare update for ${{ github.event.inputs.component }}"
+          git push origin ${{ steps.branch.outputs.name }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.branch.outputs.name }}
+          base: main
+          title: "[Design] Update ${{ github.event.inputs.component }}"
+          body: |
+            ## Component Update
+
+            **Component:** `${{ github.event.inputs.component }}`
+
+            **Description:** ${{ github.event.inputs.change_description }}
+
+            **Figma:** ${{ github.event.inputs.figma_link || 'Not provided' }}
+
+            ---
+
+            ### For Designers
+
+            1. Click "Files changed" tab
+            2. Click the pencil icon (✏️) on the file you want to edit
+            3. Make your changes
+            4. Click "Commit changes"
+            5. Request review when ready
+
+            ### Files to Modify
+
+            - [ ] `src/components/${{ github.event.inputs.component }}.tsx`
+            - [ ] `src/docs/${{ github.event.inputs.component }}.stories.tsx`
+
+          labels: |
+            design
+            component
+          draft: true
+
+      - name: Output URLs
+        run: |
+          echo "## Created Resources" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🌿 **Branch:** ${{ steps.branch.outputs.name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📝 **Edit in GitHub:** https://github.dev/SKAI-Trading/skai-ui/tree/${{ steps.branch.outputs.name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✏️ **Component file:** https://github.com/SKAI-Trading/skai-ui/edit/${{ steps.branch.outputs.name }}/src/components/${{ github.event.inputs.component }}.tsx" >> $GITHUB_STEP_SUMMARY

@@ -12,6 +12,8 @@ export * from "./components/alert-dialog";
 export * from "./components/progress";
 export * from "./components/skeleton";
 export * from "./components/tooltip";
+export * from "./components/toast";
+export * from "./components/toaster";
 
 // Components - Forms
 export * from "./components/checkbox";
@@ -29,6 +31,7 @@ export * from "./components/scroll-area";
 export * from "./components/accordion";
 export * from "./components/collapsible";
 export * from "./components/sidebar";
+export * from "./components/resizable";
 
 // Components - Overlay
 export * from "./components/dialog";
@@ -48,6 +51,7 @@ export * from "./components/pagination";
 export * from "./components/avatar";
 export * from "./components/table";
 export * from "./components/calendar";
+export * from "./components/chart";
 
 // Components - Trading (SKAI-specific)
 export * from "./components/token-icon";
@@ -56,6 +60,8 @@ export * from "./components/loading-button";
 export * from "./components/copy-button";
 export * from "./components/wallet-address";
 export * from "./components/amount-input";
+export * from "./components/fee-display";
+export * from "./components/online-indicator";
 
 // Components - Composites
 export * from "./components/stat-card";
@@ -63,8 +69,15 @@ export * from "./components/confirm-dialog";
 export * from "./components/token-select";
 export * from "./components/swap-input";
 
+// Components - Decorative
+export * from "./components/dock-icon";
+export * from "./components/particle-background";
+
 // Components - Theme
 export * from "./components/theme-provider";
+
+// Hooks
+export * from "./hooks/use-toast";
 
 // Utilities
 export { cn } from "./lib/utils";
