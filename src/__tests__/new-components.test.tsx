@@ -341,7 +341,9 @@ describe("TransactionStatusBadge", () => {
         explorerUrl="https://etherscan.io"
       />,
     );
-    const link = screen.getByRole("link");
+    // The link has role="status" for accessibility, but it's still an anchor
+    const link = screen.getByRole("status");
+    expect(link.tagName).toBe("A");
     expect(link).toHaveAttribute("href", "https://etherscan.io/tx/0x123");
   });
 });

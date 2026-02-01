@@ -108,7 +108,9 @@ describe("StatusIndicator", () => {
     });
 
     it("applies glow effect for connecting status", () => {
-      const { container } = render(<StatusIndicator status="connecting" glow />);
+      const { container } = render(
+        <StatusIndicator status="connecting" glow />,
+      );
       const indicator = container.querySelector('[role="status"]');
       expect(indicator?.className).toContain("shadow-");
     });
@@ -126,7 +128,9 @@ describe("StatusIndicator", () => {
     });
 
     it("shows correct default labels for each status", () => {
-      const { rerender } = render(<StatusIndicator status="online" showLabel />);
+      const { rerender } = render(
+        <StatusIndicator status="online" showLabel />,
+      );
       expect(screen.getByText("Online")).toBeInTheDocument();
 
       rerender(<StatusIndicator status="offline" showLabel />);
@@ -146,7 +150,13 @@ describe("StatusIndicator", () => {
     });
 
     it("uses custom statusText when provided", () => {
-      render(<StatusIndicator status="online" showLabel statusText="Available now" />);
+      render(
+        <StatusIndicator
+          status="online"
+          showLabel
+          statusText="Available now"
+        />,
+      );
       expect(screen.getByText("Available now")).toBeInTheDocument();
     });
   });
@@ -159,7 +169,10 @@ describe("StatusIndicator", () => {
 
     it("has aria-label with default status text", () => {
       render(<StatusIndicator status="online" />);
-      expect(screen.getByRole("status")).toHaveAttribute("aria-label", "Online");
+      expect(screen.getByRole("status")).toHaveAttribute(
+        "aria-label",
+        "Online",
+      );
     });
 
     it("uses custom label for aria-label when provided", () => {
@@ -188,7 +201,9 @@ describe("StatusIndicator", () => {
     });
 
     it("spreads additional props", () => {
-      render(<StatusIndicator status="online" data-testid="custom-indicator" />);
+      render(
+        <StatusIndicator status="online" data-testid="custom-indicator" />,
+      );
       expect(screen.getByTestId("custom-indicator")).toBeInTheDocument();
     });
   });

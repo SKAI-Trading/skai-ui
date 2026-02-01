@@ -65,10 +65,21 @@ const PnLDisplay = React.forwardRef<HTMLDivElement, PnLDisplayProps>(
     const sign = isProfit ? "+" : "";
     const absValue = Math.abs(value);
 
+    // Format display value for aria
+    const formattedValue = absValue.toLocaleString(undefined, {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
+    const resultText = isProfit ? "Profit" : isLoss ? "Loss" : "Breakeven";
+    const percentText = percentage !== undefined ? `, ${sign}${percentage.toFixed(2)} percent` : "";
+    const ariaLabel = `${label ? label + ": " : ""}${resultText} ${sign}${currency}${formattedValue}${percentText}`;
+
     return (
       <div
         ref={ref}
         className={cn(pnlDisplayVariants({ size, result }), className)}
+        role="status"
+        aria-label={ariaLabel}
         {...props}
       >
         {label && (

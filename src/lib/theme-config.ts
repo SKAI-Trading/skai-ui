@@ -59,19 +59,19 @@ export const theme = {
       shortGlow: "0 84% 70%", // Glow variant
       shortMuted: "0 84% 50%", // Muted variant
       neutral: "0 0% 50%", // Neutral/unchanged
-      
+
       // Order book colors
       bid: "142 71% 45%", // Green - buy side
       bidBg: "142 71% 15%", // Background for bid depth
       ask: "0 84% 60%", // Red - sell side
       askBg: "0 84% 20%", // Background for ask depth
-      
+
       // PnL colors
       profit: "142 71% 45%", // Green - gains
       profitBg: "142 60% 10%", // Background for profit
       loss: "0 84% 60%", // Red - losses
       lossBg: "0 70% 12%", // Background for loss
-      
+
       // Price change colors
       priceUp: "142 71% 50%", // Brighter green for price increases
       priceDown: "0 84% 65%", // Brighter red for price decreases

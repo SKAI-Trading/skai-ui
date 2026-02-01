@@ -5,8 +5,7 @@ import { cn } from "../lib/utils";
  * Props for the Input component
  * Extends native input props with additional accessibility features
  */
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /** Error message to display - also sets aria-invalid */
   error?: string;
   /** ID for the error message element (auto-generated if not provided) */

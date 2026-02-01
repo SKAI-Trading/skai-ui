@@ -120,6 +120,9 @@ const TransactionStatusBadge = React.forwardRef<
             baseClassName,
             "cursor-pointer hover:opacity-80 transition-opacity",
           )}
+          role="status"
+          aria-live="polite"
+          aria-label={`Transaction ${displayLabel}. Click to view on explorer.`}
         >
           {content}
         </a>
@@ -127,7 +130,14 @@ const TransactionStatusBadge = React.forwardRef<
     }
 
     return (
-      <div ref={ref} className={baseClassName} {...props}>
+      <div
+        ref={ref}
+        className={baseClassName}
+        role="status"
+        aria-live="polite"
+        aria-label={`Transaction ${displayLabel}`}
+        {...props}
+      >
         {content}
       </div>
     );
@@ -149,8 +159,28 @@ const TransactionProgress = React.forwardRef<
   HTMLDivElement,
   TransactionProgressProps
 >(({ currentStep, steps, failedStep, className, ...props }, ref) => {
+  const currentStepName = steps[currentStep - 1] || '';
+  const statusMessage = failedStep
+    ? `Transaction failed at step ${failedStep}: ${steps[failedStep - 1]}`
+    : currentStep > steps.length
+      ? 'Transaction complete'
+      : `Step ${currentStep} of ${steps.length}: ${currentStepName}`;
+
   return (
-    <div ref={ref} className={cn("space-y-2", className)} {...props}>
+    <div
+      ref={ref}
+      className={cn("space-y-2", className)}
+      role="progressbar"
+      aria-valuenow={currentStep}
+      aria-valuemin={1}
+      aria-valuemax={steps.length}
+      aria-label={statusMessage}
+      {...props}
+    >
+      {/* Screen reader announcement */}
+      <span className="sr-only" aria-live="polite">
+        {statusMessage}
+      </span>
       <div className="flex justify-between">
         {steps.map((step, index) => {
           const stepNum = index + 1;

@@ -30,6 +30,7 @@ export * from "./components/form";
 export * from "./components/input-otp";
 export * from "./components/number-input";
 export * from "./components/password-input";
+export * from "./components/search-input";
 
 // Components - Layout
 export * from "./components/separator";

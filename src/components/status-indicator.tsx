@@ -68,7 +68,8 @@ const statusIndicatorVariants = cva(
  * Props for StatusIndicator component
  */
 export interface StatusIndicatorProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
+  extends
+    React.HTMLAttributes<HTMLSpanElement>,
     VariantProps<typeof statusIndicatorVariants> {
   /** Optional label for screen readers */
   label?: string;

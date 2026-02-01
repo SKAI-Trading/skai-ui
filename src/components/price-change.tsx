@@ -83,10 +83,16 @@ const PriceChange = React.forwardRef<HTMLSpanElement, PriceChangeProps>(
     const displayValue = Math.abs(value).toFixed(decimals);
     const percentSymbol = isPercentage ? "%" : "";
 
+    // Screen reader friendly description
+    const directionText = isPositive ? "up" : isNegative ? "down" : "unchanged";
+    const ariaLabel = `Price ${directionText} ${prefix}${displayValue}${percentSymbol}${suffix}`;
+
     return (
       <span
         ref={ref}
         className={cn(priceChangeVariants({ size, direction }), className)}
+        role="status"
+        aria-label={ariaLabel}
         {...props}
       >
         {showIcon && <Icon className="h-[1em] w-[1em]" />}

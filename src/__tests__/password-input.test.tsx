@@ -14,7 +14,9 @@ describe("PasswordInput", () => {
 
     it("renders toggle button", () => {
       render(<PasswordInput />);
-      expect(screen.getByRole("button", { name: /show password/i })).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: /show password/i }),
+      ).toBeInTheDocument();
     });
 
     it("applies custom className", () => {
@@ -33,15 +35,19 @@ describe("PasswordInput", () => {
     it("toggles password visibility on button click", async () => {
       const user = userEvent.setup();
       render(<PasswordInput />);
-      
+
       const input = document.querySelector("input") as HTMLInputElement;
-      const toggleButton = screen.getByRole("button", { name: /show password/i });
+      const toggleButton = screen.getByRole("button", {
+        name: /show password/i,
+      });
 
       expect(input.type).toBe("password");
 
       await user.click(toggleButton);
       expect(input.type).toBe("text");
-      expect(screen.getByRole("button", { name: /hide password/i })).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: /hide password/i }),
+      ).toBeInTheDocument();
 
       await user.click(toggleButton);
       expect(input.type).toBe("password");
@@ -50,14 +56,14 @@ describe("PasswordInput", () => {
     it("shows different icons for show/hide states", async () => {
       const user = userEvent.setup();
       const { container } = render(<PasswordInput />);
-      
+
       const toggleButton = screen.getByRole("button");
-      
+
       // Initially shows eye icon (show password)
       expect(container.querySelector("svg")).toBeInTheDocument();
 
       await user.click(toggleButton);
-      
+
       // After click shows eye-off icon (hide password)
       expect(container.querySelector("svg")).toBeInTheDocument();
     });
@@ -93,7 +99,7 @@ describe("PasswordInput", () => {
     it("shows strength indicator when showStrength is true", async () => {
       const user = userEvent.setup();
       render(<PasswordInput showStrength />);
-      
+
       const input = document.querySelector("input") as HTMLInputElement;
       await user.type(input, "test");
 
@@ -103,7 +109,7 @@ describe("PasswordInput", () => {
     it("hides strength indicator when showStrength is false", async () => {
       const user = userEvent.setup();
       render(<PasswordInput showStrength={false} />);
-      
+
       const input = document.querySelector("input") as HTMLInputElement;
       await user.type(input, "test");
 
@@ -113,9 +119,9 @@ describe("PasswordInput", () => {
     it("updates strength as user types", async () => {
       const user = userEvent.setup();
       render(<PasswordInput showStrength />);
-      
+
       const input = document.querySelector("input") as HTMLInputElement;
-      
+
       // Type weak password
       await user.type(input, "abc");
       expect(screen.getByText(/weak/i)).toBeInTheDocument();
@@ -129,9 +135,11 @@ describe("PasswordInput", () => {
     it("uses custom strength calculator when provided", async () => {
       const user = userEvent.setup();
       const customCalculator = vi.fn().mockReturnValue("strong");
-      
-      render(<PasswordInput showStrength strengthCalculator={customCalculator} />);
-      
+
+      render(
+        <PasswordInput showStrength strengthCalculator={customCalculator} />,
+      );
+
       const input = document.querySelector("input") as HTMLInputElement;
       await user.type(input, "x");
 
@@ -155,7 +163,7 @@ describe("PasswordInput", () => {
     it("strength indicator has aria-live for screen readers", async () => {
       const user = userEvent.setup();
       render(<PasswordInput showStrength />);
-      
+
       const input = document.querySelector("input") as HTMLInputElement;
       await user.type(input, "test");
 
@@ -173,9 +181,9 @@ describe("PasswordInput", () => {
     it("calls onChange when typing", async () => {
       const user = userEvent.setup();
       const handleChange = vi.fn();
-      
+
       render(<PasswordInput onChange={handleChange} />);
-      
+
       const input = document.querySelector("input") as HTMLInputElement;
       await user.type(input, "test");
 
@@ -222,7 +230,7 @@ describe("calculateStrength", () => {
     const short = calculateStrength("Aa1!");
     // Long with variety
     const long = calculateStrength("Aa1!Aa1!Aa1!Aa1!");
-    
+
     expect(short).not.toBe("strong");
     expect(long).toBe("strong");
   });
@@ -232,7 +240,7 @@ describe("calculateStrength", () => {
     const lowercase = calculateStrength("abcdefghij");
     // Mixed case + numbers + symbols
     const mixed = calculateStrength("aBcD1234!@");
-    
+
     expect(mixed).not.toBe("weak");
   });
 });

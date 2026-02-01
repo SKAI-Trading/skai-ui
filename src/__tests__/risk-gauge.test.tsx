@@ -64,7 +64,9 @@ describe("RiskGauge", () => {
 
     it("renders SVG with path elements for arc", () => {
       const { container } = render(<RiskGauge score={50} variant="arc" />);
-      expect(container.querySelectorAll("path").length).toBeGreaterThanOrEqual(2);
+      expect(container.querySelectorAll("path").length).toBeGreaterThanOrEqual(
+        2,
+      );
     });
   });
 
@@ -93,28 +95,38 @@ describe("RiskGauge", () => {
     it("renders circle gauge when variant is circle", () => {
       const { container } = render(<RiskGauge score={50} variant="circle" />);
       expect(container.querySelector("svg")).toBeInTheDocument();
-      expect(container.querySelectorAll("circle").length).toBeGreaterThanOrEqual(2);
+      expect(
+        container.querySelectorAll("circle").length,
+      ).toBeGreaterThanOrEqual(2);
     });
   });
 
   describe("Size Variants", () => {
     it("applies sm size class", () => {
-      const { container } = render(<RiskGauge score={50} size="sm" variant="circle" />);
+      const { container } = render(
+        <RiskGauge score={50} size="sm" variant="circle" />,
+      );
       expect(container.querySelector(".h-16.w-16")).toBeInTheDocument();
     });
 
     it("applies md size class (default)", () => {
-      const { container } = render(<RiskGauge score={50} size="md" variant="circle" />);
+      const { container } = render(
+        <RiskGauge score={50} size="md" variant="circle" />,
+      );
       expect(container.querySelector(".h-24.w-24")).toBeInTheDocument();
     });
 
     it("applies lg size class", () => {
-      const { container } = render(<RiskGauge score={50} size="lg" variant="circle" />);
+      const { container } = render(
+        <RiskGauge score={50} size="lg" variant="circle" />,
+      );
       expect(container.querySelector(".h-32.w-32")).toBeInTheDocument();
     });
 
     it("applies xl size class", () => {
-      const { container } = render(<RiskGauge score={50} size="xl" variant="circle" />);
+      const { container } = render(
+        <RiskGauge score={50} size="xl" variant="circle" />,
+      );
       expect(container.querySelector(".h-40.w-40")).toBeInTheDocument();
     });
   });

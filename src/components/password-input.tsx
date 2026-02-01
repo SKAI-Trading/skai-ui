@@ -6,8 +6,10 @@ import { Button } from "./button";
 /**
  * Props for the PasswordInput component
  */
-export interface PasswordInputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {
+export interface PasswordInputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "type"
+> {
   /** Error message to display */
   error?: string;
   /** ID for the error message element (for aria-describedby) */

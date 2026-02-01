@@ -57,6 +57,15 @@ const TokenSelect = React.forwardRef<HTMLButtonElement, TokenSelectProps>(
     ref,
   ) => {
     const [search, setSearch] = React.useState("");
+    const [open, setOpen] = React.useState(false);
+
+    const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setSearch("");
+      }
+      // Allow ArrowDown/ArrowUp to propagate to Select for navigation
+    };
 
     const filteredTokens = React.useMemo(() => {
       if (!search) return tokens;
@@ -77,7 +86,13 @@ const TokenSelect = React.forwardRef<HTMLButtonElement, TokenSelectProps>(
     };
 
     return (
-      <Select value={value} onValueChange={onValueChange} disabled={disabled}>
+      <Select
+        value={value}
+        onValueChange={onValueChange}
+        disabled={disabled}
+        open={open}
+        onOpenChange={setOpen}
+      >
         <SelectTrigger
           ref={ref}
           className={cn(sizeStyles[size], "min-w-[140px]", className)}
@@ -104,7 +119,9 @@ const TokenSelect = React.forwardRef<HTMLButtonElement, TokenSelectProps>(
                   placeholder="Search tokens..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
+                  onKeyDown={handleSearchKeyDown}
                   className="pl-8 h-8"
+                  aria-label="Search tokens"
                 />
               </div>
             </div>

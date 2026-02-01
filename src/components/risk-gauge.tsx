@@ -34,7 +34,8 @@ const riskGaugeVariants = cva("relative", {
  * Props for RiskGauge component
  */
 export interface RiskGaugeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof riskGaugeVariants> {
   /** Risk score from 0-100 */
   score: number;
@@ -63,29 +64,31 @@ function calculateRiskLevel(score: number): RiskLevel {
 /**
  * Risk level colors
  */
-const riskColors: Record<RiskLevel, { bg: string; text: string; fill: string }> =
-  {
-    low: {
-      bg: "bg-green-500/20",
-      text: "text-green-500",
-      fill: "stroke-green-500",
-    },
-    medium: {
-      bg: "bg-yellow-500/20",
-      text: "text-yellow-500",
-      fill: "stroke-yellow-500",
-    },
-    high: {
-      bg: "bg-orange-500/20",
-      text: "text-orange-500",
-      fill: "stroke-orange-500",
-    },
-    critical: {
-      bg: "bg-red-500/20",
-      text: "text-red-500",
-      fill: "stroke-red-500",
-    },
-  };
+const riskColors: Record<
+  RiskLevel,
+  { bg: string; text: string; fill: string }
+> = {
+  low: {
+    bg: "bg-green-500/20",
+    text: "text-green-500",
+    fill: "stroke-green-500",
+  },
+  medium: {
+    bg: "bg-yellow-500/20",
+    text: "text-yellow-500",
+    fill: "stroke-yellow-500",
+  },
+  high: {
+    bg: "bg-orange-500/20",
+    text: "text-orange-500",
+    fill: "stroke-orange-500",
+  },
+  critical: {
+    bg: "bg-red-500/20",
+    text: "text-red-500",
+    fill: "stroke-red-500",
+  },
+};
 
 /**
  * Risk level labels
