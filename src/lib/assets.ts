@@ -7,14 +7,21 @@
  * Usage:
  *   import { assets } from '@skai/ui';
  *   <img src={assets.logo.full} alt="SKAI" />
+ *
+ * Note: For icons, prefer using Lucide icons via `lucide-react`.
+ * Custom SVG icons are reserved for brand-specific graphics.
+ *
+ * @see docs/ASSET_AUDIT.md for asset status and usage
  */
 
 /**
  * Asset URLs - Update these to change images across the entire app
+ * Only includes assets that actually exist in public/assets/
  */
 export const assets = {
   /**
    * Brand logos and marks
+   * Location: public/assets/logo/
    */
   logo: {
     /** Full logo with text */
@@ -25,25 +32,12 @@ export const assets = {
     white: "/assets/logo/skai-logo-white.svg",
     /** Dark version for light backgrounds */
     dark: "/assets/logo/skai-logo-dark.svg",
-    /** Animated logo for loading states */
-    animated: "/assets/logo/skai-logo-animated.svg",
-  },
-
-  /**
-   * Common icons (for when Lucide icons aren't suitable)
-   */
-  icons: {
-    wallet: "/assets/icons/wallet.svg",
-    swap: "/assets/icons/swap.svg",
-    chart: "/assets/icons/chart.svg",
-    settings: "/assets/icons/settings.svg",
-    ai: "/assets/icons/ai.svg",
-    game: "/assets/icons/game.svg",
   },
 
   /**
    * Token/crypto icons
-   * Note: Most tokens use dynamic URLs, these are fallbacks
+   * Location: public/assets/tokens/
+   * Note: Most tokens use dynamic URLs from Trust Wallet or CoinGecko
    */
   tokens: {
     eth: "/assets/tokens/eth.svg",
@@ -56,6 +50,7 @@ export const assets = {
 
   /**
    * Chain/network icons
+   * Location: public/assets/chains/
    */
   chains: {
     ethereum: "/assets/chains/ethereum.svg",
@@ -67,6 +62,7 @@ export const assets = {
 
   /**
    * Wallet provider icons
+   * Location: public/assets/wallets/
    */
   wallets: {
     metamask: "/assets/wallets/metamask.svg",
@@ -77,52 +73,23 @@ export const assets = {
 
   /**
    * Illustrations and graphics
+   * Location: public/assets/illustrations/
    */
   illustrations: {
     hero: "/assets/illustrations/hero.svg",
     trading: "/assets/illustrations/trading.svg",
-    portfolio: "/assets/illustrations/portfolio.svg",
-    games: "/assets/illustrations/games.svg",
-    ai: "/assets/illustrations/ai.svg",
     empty: "/assets/illustrations/empty.svg",
     error: "/assets/illustrations/error.svg",
     success: "/assets/illustrations/success.svg",
-    onboarding: {
-      step1: "/assets/illustrations/onboarding-1.svg",
-      step2: "/assets/illustrations/onboarding-2.svg",
-      step3: "/assets/illustrations/onboarding-3.svg",
-    },
   },
 
   /**
    * Background images and patterns
+   * Location: public/assets/backgrounds/
    */
   backgrounds: {
-    gradient: "/assets/backgrounds/gradient.svg",
-    pattern: "/assets/backgrounds/pattern.svg",
-    mesh: "/assets/backgrounds/mesh.svg",
-    glow: "/assets/backgrounds/glow.svg",
-  },
-
-  /**
-   * Social media icons
-   */
-  social: {
-    twitter: "/assets/social/twitter.svg",
-    discord: "/assets/social/discord.svg",
-    telegram: "/assets/social/telegram.svg",
-    github: "/assets/social/github.svg",
-  },
-
-  /**
-   * Achievement/badge icons
-   */
-  badges: {
-    rookie: "/assets/badges/rookie.svg",
-    trader: "/assets/badges/trader.svg",
-    pro: "/assets/badges/pro.svg",
-    whale: "/assets/badges/whale.svg",
-    diamond: "/assets/badges/diamond.svg",
+    gradient: "/assets/backgrounds/gradient-1.svg",
+    pattern: "/assets/backgrounds/pattern-1.svg",
   },
 } as const;
 

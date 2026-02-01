@@ -122,7 +122,8 @@ export const WhiteVariant: Story = {
     backgrounds: { default: "dark" },
     docs: {
       description: {
-        story: "White variant for use on dark backgrounds (Green Coal 300: #001615).",
+        story:
+          "White variant for use on dark backgrounds (Green Coal 300: #001615).",
       },
     },
   },
@@ -169,7 +170,8 @@ export const IconOnly: Story = {
     backgrounds: { default: "dark" },
     docs: {
       description: {
-        story: "Icon-only mode for compact spaces like favicons, app icons, or mobile headers.",
+        story:
+          "Icon-only mode for compact spaces like favicons, app icons, or mobile headers.",
       },
     },
   },
@@ -212,10 +214,18 @@ export const FooterExample: Story = {
       <div className="flex flex-col gap-6">
         <SkaiLogo size="medium" variant="white" />
         <div className="flex gap-8 text-white/60 text-sm">
-          <a href="#" className="hover:text-white transition-colors">Terms</a>
-          <a href="#" className="hover:text-white transition-colors">Privacy</a>
-          <a href="#" className="hover:text-white transition-colors">Docs</a>
-          <a href="#" className="hover:text-white transition-colors">Support</a>
+          <a href="#" className="hover:text-white transition-colors">
+            Terms
+          </a>
+          <a href="#" className="hover:text-white transition-colors">
+            Privacy
+          </a>
+          <a href="#" className="hover:text-white transition-colors">
+            Docs
+          </a>
+          <a href="#" className="hover:text-white transition-colors">
+            Support
+          </a>
         </div>
         <p className="text-white/40 text-xs">
           © 2025 SKAI Trading. All rights reserved.

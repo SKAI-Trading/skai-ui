@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SkaiIcon, type SkaiIconName, type SkaiIconSize } from "../components/skai-icon";
+import {
+  SkaiIcon,
+  type SkaiIconName,
+  type SkaiIconSize,
+} from "../components/skai-icon";
 
 /**
  * SKAI Icon System
@@ -47,38 +51,121 @@ const meta: Meta<typeof SkaiIcon> = {
       control: "select",
       options: [
         // Navigation
-        "home", "menu", "close", "back", "forward", "enter",
-        "arrow-up", "arrow-down", "arrow-left", "arrow-right",
-        "chevron-up", "chevron-down", "chevron-left", "chevron-right",
-        "external-link", "refresh",
+        "home",
+        "menu",
+        "close",
+        "back",
+        "forward",
+        "enter",
+        "arrow-up",
+        "arrow-down",
+        "arrow-left",
+        "arrow-right",
+        "chevron-up",
+        "chevron-down",
+        "chevron-left",
+        "chevron-right",
+        "external-link",
+        "refresh",
         // Actions
-        "plus", "minus", "check", "check-enclosed", "copy", "edit", "delete",
-        "trash", "download", "upload", "share", "save", "filter", "sort",
-        "expand", "collapse",
+        "plus",
+        "minus",
+        "check",
+        "check-enclosed",
+        "copy",
+        "edit",
+        "delete",
+        "trash",
+        "download",
+        "upload",
+        "share",
+        "save",
+        "filter",
+        "sort",
+        "expand",
+        "collapse",
         // Trading
-        "chart", "chart-line", "chart-bar", "chart-candle", "swap", "order",
-        "limit", "market", "trending-up", "trending-down", "percentage",
+        "chart",
+        "chart-line",
+        "chart-bar",
+        "chart-candle",
+        "swap",
+        "order",
+        "limit",
+        "market",
+        "trending-up",
+        "trending-down",
+        "percentage",
         // Crypto
-        "wallet", "blockchain", "gas", "bridge", "stake", "unstake", "token",
-        "nft", "airdrop",
+        "wallet",
+        "blockchain",
+        "gas",
+        "bridge",
+        "stake",
+        "unstake",
+        "token",
+        "nft",
+        "airdrop",
         // Social
-        "user", "users", "message", "notification", "bell", "heart",
-        "heart-filled", "star", "star-filled", "bookmark", "bookmark-filled",
+        "user",
+        "users",
+        "message",
+        "notification",
+        "bell",
+        "heart",
+        "heart-filled",
+        "star",
+        "star-filled",
+        "bookmark",
+        "bookmark-filled",
         // System
-        "settings", "search", "lock", "unlock", "eye", "eye-off", "info",
-        "warning", "error", "success", "help", "dot", "loading", "spinner",
+        "settings",
+        "search",
+        "lock",
+        "unlock",
+        "eye",
+        "eye-off",
+        "info",
+        "warning",
+        "error",
+        "success",
+        "help",
+        "dot",
+        "loading",
+        "spinner",
         // Misc
-        "hot", "fire", "lightning", "clock", "calendar", "link", "qr-code",
-        "moon", "sun", "globe", "code",
+        "hot",
+        "fire",
+        "lightning",
+        "clock",
+        "calendar",
+        "link",
+        "qr-code",
+        "moon",
+        "sun",
+        "globe",
+        "code",
         // Wallets
-        "metamask", "coinbase", "phantom", "walletconnect", "rainbow",
+        "metamask",
+        "coinbase",
+        "phantom",
+        "walletconnect",
+        "rainbow",
         // Social (Figma)
-        "discord", "instagram", "x", "twitter",
+        "discord",
+        "instagram",
+        "x",
+        "twitter",
         // Brands
-        "google", "apple",
+        "google",
+        "apple",
         // Tiers
-        "tier-free", "tier-bronze", "tier-silver", "tier-gold",
-        "tier-platinum", "tier-diamond",
+        "tier-free",
+        "tier-bronze",
+        "tier-silver",
+        "tier-gold",
+        "tier-platinum",
+        "tier-diamond",
       ],
       description: "Icon name from the design system",
     },
@@ -118,7 +205,15 @@ export const Sizes: Story = {
         <div key={size} className="flex flex-col items-center gap-2">
           <SkaiIcon name="hot" size={size} />
           <span className="text-xs text-gray-500">
-            {size} ({size === "xs" ? "10px" : size === "sm" ? "16px" : size === "md" ? "24px" : "48px"})
+            {size} (
+            {size === "xs"
+              ? "10px"
+              : size === "sm"
+                ? "16px"
+                : size === "md"
+                  ? "24px"
+                  : "48px"}
+            )
           </span>
         </div>
       ))}
@@ -137,7 +232,15 @@ export const Sizes: Story = {
 // ACTION ICONS (from Figma icons/action)
 // =============================================================================
 const actionIcons: SkaiIconName[] = [
-  "close", "hot", "enter", "back", "forward", "check-enclosed", "copy", "dot", "loading",
+  "close",
+  "hot",
+  "enter",
+  "back",
+  "forward",
+  "check-enclosed",
+  "copy",
+  "dot",
+  "loading",
 ];
 
 export const ActionIcons: Story = {
@@ -145,9 +248,14 @@ export const ActionIcons: Story = {
   render: () => (
     <div className="grid grid-cols-5 gap-6">
       {actionIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
           <SkaiIcon name={name} size="md" />
-          <span className="text-xs text-gray-600 dark:text-gray-400">{name}</span>
+          <span className="text-xs text-gray-600 dark:text-gray-400">
+            {name}
+          </span>
         </div>
       ))}
     </div>
@@ -155,7 +263,8 @@ export const ActionIcons: Story = {
   parameters: {
     docs: {
       description: {
-        story: "**Figma:** `icons/action` (778:191) - Common UI action icons at 16px.",
+        story:
+          "**Figma:** `icons/action` (778:191) - Common UI action icons at 16px.",
       },
     },
   },
@@ -171,9 +280,14 @@ export const SocialIcons: Story = {
   render: () => (
     <div className="flex gap-6">
       {socialIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
           <SkaiIcon name={name} size="md" />
-          <span className="text-xs text-gray-600 dark:text-gray-400">{name}</span>
+          <span className="text-xs text-gray-600 dark:text-gray-400">
+            {name}
+          </span>
         </div>
       ))}
     </div>
@@ -181,7 +295,8 @@ export const SocialIcons: Story = {
   parameters: {
     docs: {
       description: {
-        story: "**Figma:** `logos/social` (778:216) - Discord, Instagram, X (Twitter) at 16px.",
+        story:
+          "**Figma:** `logos/social` (778:216) - Discord, Instagram, X (Twitter) at 16px.",
       },
     },
   },
@@ -191,7 +306,11 @@ export const SocialIcons: Story = {
 // WALLET PROVIDER ICONS (from Figma logos/others)
 // =============================================================================
 const walletIcons: SkaiIconName[] = [
-  "metamask", "coinbase", "walletconnect", "phantom", "rainbow",
+  "metamask",
+  "coinbase",
+  "walletconnect",
+  "phantom",
+  "rainbow",
 ];
 
 export const WalletIcons: Story = {
@@ -199,9 +318,14 @@ export const WalletIcons: Story = {
   render: () => (
     <div className="flex gap-6">
       {walletIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
           <SkaiIcon name={name} size="md" />
-          <span className="text-xs text-gray-600 dark:text-gray-400">{name}</span>
+          <span className="text-xs text-gray-600 dark:text-gray-400">
+            {name}
+          </span>
         </div>
       ))}
     </div>
@@ -209,7 +333,8 @@ export const WalletIcons: Story = {
   parameters: {
     docs: {
       description: {
-        story: "**Figma:** `logos/others` (778:78) - Wallet provider brand icons available in 24px and 16px.",
+        story:
+          "**Figma:** `logos/others` (778:78) - Wallet provider brand icons available in 24px and 16px.",
       },
     },
   },
@@ -225,9 +350,14 @@ export const BrandIcons: Story = {
   render: () => (
     <div className="flex gap-6">
       {brandIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
           <SkaiIcon name={name} size="md" />
-          <span className="text-xs text-gray-600 dark:text-gray-400">{name}</span>
+          <span className="text-xs text-gray-600 dark:text-gray-400">
+            {name}
+          </span>
         </div>
       ))}
     </div>
@@ -235,7 +365,8 @@ export const BrandIcons: Story = {
   parameters: {
     docs: {
       description: {
-        story: "**Figma:** `logos/others` (778:78) - Google and Apple brand icons for login buttons.",
+        story:
+          "**Figma:** `logos/others` (778:78) - Google and Apple brand icons for login buttons.",
       },
     },
   },
@@ -245,7 +376,12 @@ export const BrandIcons: Story = {
 // FEE TIER ICONS
 // =============================================================================
 const tierIcons: SkaiIconName[] = [
-  "tier-free", "tier-bronze", "tier-silver", "tier-gold", "tier-platinum", "tier-diamond",
+  "tier-free",
+  "tier-bronze",
+  "tier-silver",
+  "tier-gold",
+  "tier-platinum",
+  "tier-diamond",
 ];
 
 export const TierIcons: Story = {
@@ -253,10 +389,14 @@ export const TierIcons: Story = {
   render: () => (
     <div className="flex gap-4">
       {tierIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
           <SkaiIcon name={name} size="lg" />
           <span className="text-xs text-gray-600 dark:text-gray-400">
-            {name.replace("tier-", "").charAt(0).toUpperCase() + name.replace("tier-", "").slice(1)}
+            {name.replace("tier-", "").charAt(0).toUpperCase() +
+              name.replace("tier-", "").slice(1)}
           </span>
         </div>
       ))}
@@ -265,7 +405,8 @@ export const TierIcons: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Fee tier badges used throughout the SKAI platform for user status display.",
+        story:
+          "Fee tier badges used throughout the SKAI platform for user status display.",
       },
     },
   },
@@ -275,10 +416,22 @@ export const TierIcons: Story = {
 // NAVIGATION ICONS
 // =============================================================================
 const navIcons: SkaiIconName[] = [
-  "home", "menu", "close", "back", "forward", "enter",
-  "arrow-up", "arrow-down", "arrow-left", "arrow-right",
-  "chevron-up", "chevron-down", "chevron-left", "chevron-right",
-  "external-link", "refresh",
+  "home",
+  "menu",
+  "close",
+  "back",
+  "forward",
+  "enter",
+  "arrow-up",
+  "arrow-down",
+  "arrow-left",
+  "arrow-right",
+  "chevron-up",
+  "chevron-down",
+  "chevron-left",
+  "chevron-right",
+  "external-link",
+  "refresh",
 ];
 
 export const NavigationIcons: Story = {
@@ -286,7 +439,10 @@ export const NavigationIcons: Story = {
   render: () => (
     <div className="grid grid-cols-8 gap-4">
       {navIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
           <SkaiIcon name={name} size="md" />
           <span className="text-[10px] text-gray-500">{name}</span>
         </div>
@@ -299,8 +455,17 @@ export const NavigationIcons: Story = {
 // TRADING ICONS
 // =============================================================================
 const tradingIcons: SkaiIconName[] = [
-  "chart", "chart-line", "chart-bar", "chart-candle", "swap", "order",
-  "limit", "market", "trending-up", "trending-down", "percentage",
+  "chart",
+  "chart-line",
+  "chart-bar",
+  "chart-candle",
+  "swap",
+  "order",
+  "limit",
+  "market",
+  "trending-up",
+  "trending-down",
+  "percentage",
 ];
 
 export const TradingIcons: Story = {
@@ -308,7 +473,10 @@ export const TradingIcons: Story = {
   render: () => (
     <div className="grid grid-cols-6 gap-4">
       {tradingIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
           <SkaiIcon name={name} size="md" />
           <span className="text-[10px] text-gray-500">{name}</span>
         </div>
@@ -321,7 +489,15 @@ export const TradingIcons: Story = {
 // CRYPTO ICONS
 // =============================================================================
 const cryptoIcons: SkaiIconName[] = [
-  "wallet", "blockchain", "gas", "bridge", "stake", "unstake", "token", "nft", "airdrop",
+  "wallet",
+  "blockchain",
+  "gas",
+  "bridge",
+  "stake",
+  "unstake",
+  "token",
+  "nft",
+  "airdrop",
 ];
 
 export const CryptoIcons: Story = {
@@ -329,7 +505,10 @@ export const CryptoIcons: Story = {
   render: () => (
     <div className="grid grid-cols-5 gap-4">
       {cryptoIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
           <SkaiIcon name={name} size="md" />
           <span className="text-[10px] text-gray-500">{name}</span>
         </div>
@@ -342,8 +521,20 @@ export const CryptoIcons: Story = {
 // SYSTEM ICONS
 // =============================================================================
 const systemIcons: SkaiIconName[] = [
-  "settings", "search", "lock", "unlock", "eye", "eye-off", "info",
-  "warning", "error", "success", "help", "dot", "loading", "spinner",
+  "settings",
+  "search",
+  "lock",
+  "unlock",
+  "eye",
+  "eye-off",
+  "info",
+  "warning",
+  "error",
+  "success",
+  "help",
+  "dot",
+  "loading",
+  "spinner",
 ];
 
 export const SystemIcons: Story = {
@@ -351,7 +542,10 @@ export const SystemIcons: Story = {
   render: () => (
     <div className="grid grid-cols-7 gap-4">
       {systemIcons.map((name) => (
-        <div key={name} className="flex flex-col items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
           <SkaiIcon name={name} size="md" />
           <span className="text-[10px] text-gray-500">{name}</span>
         </div>
@@ -365,38 +559,121 @@ export const SystemIcons: Story = {
 // =============================================================================
 const allIcons: SkaiIconName[] = [
   // Navigation
-  "home", "menu", "close", "back", "forward", "enter",
-  "arrow-up", "arrow-down", "arrow-left", "arrow-right",
-  "chevron-up", "chevron-down", "chevron-left", "chevron-right",
-  "external-link", "refresh",
+  "home",
+  "menu",
+  "close",
+  "back",
+  "forward",
+  "enter",
+  "arrow-up",
+  "arrow-down",
+  "arrow-left",
+  "arrow-right",
+  "chevron-up",
+  "chevron-down",
+  "chevron-left",
+  "chevron-right",
+  "external-link",
+  "refresh",
   // Actions
-  "plus", "minus", "check", "check-enclosed", "copy", "edit", "delete",
-  "trash", "download", "upload", "share", "save", "filter", "sort",
-  "expand", "collapse",
+  "plus",
+  "minus",
+  "check",
+  "check-enclosed",
+  "copy",
+  "edit",
+  "delete",
+  "trash",
+  "download",
+  "upload",
+  "share",
+  "save",
+  "filter",
+  "sort",
+  "expand",
+  "collapse",
   // Trading
-  "chart", "chart-line", "chart-bar", "chart-candle", "swap", "order",
-  "limit", "market", "trending-up", "trending-down", "percentage",
+  "chart",
+  "chart-line",
+  "chart-bar",
+  "chart-candle",
+  "swap",
+  "order",
+  "limit",
+  "market",
+  "trending-up",
+  "trending-down",
+  "percentage",
   // Crypto
-  "wallet", "blockchain", "gas", "bridge", "stake", "unstake", "token",
-  "nft", "airdrop",
+  "wallet",
+  "blockchain",
+  "gas",
+  "bridge",
+  "stake",
+  "unstake",
+  "token",
+  "nft",
+  "airdrop",
   // Social
-  "user", "users", "message", "notification", "bell", "heart",
-  "heart-filled", "star", "star-filled", "bookmark", "bookmark-filled",
+  "user",
+  "users",
+  "message",
+  "notification",
+  "bell",
+  "heart",
+  "heart-filled",
+  "star",
+  "star-filled",
+  "bookmark",
+  "bookmark-filled",
   // System
-  "settings", "search", "lock", "unlock", "eye", "eye-off", "info",
-  "warning", "error", "success", "help", "dot", "loading", "spinner",
+  "settings",
+  "search",
+  "lock",
+  "unlock",
+  "eye",
+  "eye-off",
+  "info",
+  "warning",
+  "error",
+  "success",
+  "help",
+  "dot",
+  "loading",
+  "spinner",
   // Misc
-  "hot", "fire", "lightning", "clock", "calendar", "link", "qr-code",
-  "moon", "sun", "globe", "code",
+  "hot",
+  "fire",
+  "lightning",
+  "clock",
+  "calendar",
+  "link",
+  "qr-code",
+  "moon",
+  "sun",
+  "globe",
+  "code",
   // Wallets
-  "metamask", "coinbase", "phantom", "walletconnect", "rainbow",
+  "metamask",
+  "coinbase",
+  "phantom",
+  "walletconnect",
+  "rainbow",
   // Social (Figma)
-  "discord", "instagram", "x", "twitter",
+  "discord",
+  "instagram",
+  "x",
+  "twitter",
   // Brands
-  "google", "apple",
+  "google",
+  "apple",
   // Tiers
-  "tier-free", "tier-bronze", "tier-silver", "tier-gold",
-  "tier-platinum", "tier-diamond",
+  "tier-free",
+  "tier-bronze",
+  "tier-silver",
+  "tier-gold",
+  "tier-platinum",
+  "tier-diamond",
 ];
 
 export const FullGallery: Story = {
@@ -410,7 +687,9 @@ export const FullGallery: Story = {
           title={name}
         >
           <SkaiIcon name={name} size="md" />
-          <span className="text-[8px] text-gray-400 truncate max-w-full">{name}</span>
+          <span className="text-[8px] text-gray-400 truncate max-w-full">
+            {name}
+          </span>
         </div>
       ))}
     </div>
@@ -452,7 +731,8 @@ export const ColorVariants: Story = {
   parameters: {
     docs: {
       description: {
-        story: "Icons can be colored using the `color` prop or by inheriting from parent CSS color.",
+        story:
+          "Icons can be colored using the `color` prop or by inheriting from parent CSS color.",
       },
     },
   },

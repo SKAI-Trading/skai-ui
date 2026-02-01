@@ -748,6 +748,437 @@ The SKAI swap interface (\`src/pages/trade/SwapNew.tsx\`) includes:
 };
 
 /**
+ * Perpetual Trading Page
+ *
+ * Professional perp trading interface inspired by Hyperliquid, GMX, and Drift.
+ * Features a 3-panel resizable layout with AI integration.
+ *
+ * Layout: Resizable 3 columns + bottom positions panel
+ * - Left Panel (20%): OrderBook, Trades, Whales, AI Sentiment tabs
+ * - Center Panel (55%): AI Signal Banner + TradingView Chart
+ * - Right Panel (25%): Order Entry (Long/Short + leverage)
+ * - Bottom (200px): Positions, Orders, Trade History tabs
+ *
+ * Source: src/pages/trade/PerpTrading.tsx (263 lines)
+ */
+export const PerpTradingPage: StoryObj = {
+  name: "Perp Trading Page",
+  parameters: {
+    docs: {
+      description: {
+        story: `
+## Perpetual Trading Layout
+
+The SKAI perp trading page (\`src/pages/trade/PerpTrading.tsx\`) features:
+
+### Layout Structure
+\`\`\`
+┌───────────────────────────────────────────────────────────────┐
+│                    MARKET HEADER                               │
+│  [BTC-USD ▼] | $97,234.50 | +2.4% | Vol: $1.2B | OI: $890M   │
+├─────────┬─────────────────────────────────────┬───────────────┤
+│ Order   │     AI SIGNAL BANNER                │  ORDER        │
+│ Book    │  [🟢 BUY Signal | 78% Confidence]   │  ENTRY        │
+│ ─────── ├─────────────────────────────────────┤  ───────────  │
+│ Trades  │                                     │  [Long][Short]│
+│ ─────── │       TRADINGVIEW CHART             │  Leverage: 5x │
+│ Whales  │                                     │  ───────────  │
+│ ─────── │                                     │  Amount       │
+│ AI      │                                     │  TP/SL        │
+│ (tabs)  │                                     │  [Submit]     │
+├─────────┴─────────────────────────────────────┴───────────────┤
+│        POSITIONS | ORDERS | HISTORY (tabs)                    │
+└───────────────────────────────────────────────────────────────┘
+\`\`\`
+
+### AI-Powered Features
+- **AI Signal Widget**: 5-indicator aggregation (Cycle, Flow, Phase, Rhythm, Pattern)
+- **Whale Activity Feed**: Real-time large transaction tracking
+- **Sentiment Gauge**: Market sentiment analysis
+- **Smart Entry Suggestions**: AI-powered TP/SL recommendations
+
+### Key Components
+- \`PerpMarketHeader\` - Market selector with live stats
+- \`PerpOrderBook\` - Real-time order book display
+- \`PerpChart\` - TradingView integration
+- \`PerpOrderEntry\` - Long/Short order form with leverage
+- \`PerpPositionsPanel\` - Open positions & orders management
+- \`AISignalWidget\` - Trading signal aggregation
+- \`WhaleActivityFeed\` - Large transaction monitoring
+- \`SentimentGauge\` - Market mood indicator
+        `,
+      },
+    },
+  },
+  render: () => (
+    <div className="min-h-screen bg-[#020717] text-white">
+      <SKAIHeader />
+
+      {/* Page Content - Full height minus header */}
+      <div className="h-[calc(100vh-104px)] flex flex-col overflow-hidden">
+        {/* Market Header */}
+        <div className="h-14 px-4 flex items-center justify-between border-b border-white/5 bg-black/40">
+          {/* Market Selector */}
+          <div className="flex items-center gap-4">
+            <button className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+              <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-xs font-bold">
+                ₿
+              </div>
+              <span className="font-semibold">BTC-USD</span>
+              <ChevronDown className="w-4 h-4 text-gray-400" />
+            </button>
+            <span className="text-2xl font-bold">$97,234.50</span>
+            <Badge
+              variant="secondary"
+              className="bg-green-500/20 text-green-400"
+            >
+              +2.4%
+            </Badge>
+          </div>
+
+          {/* Market Stats */}
+          <div className="hidden lg:flex items-center gap-6 text-sm">
+            <div>
+              <span className="text-gray-500">24h Vol</span>
+              <span className="ml-2 font-medium">$1.2B</span>
+            </div>
+            <div>
+              <span className="text-gray-500">Open Interest</span>
+              <span className="ml-2 font-medium">$890M</span>
+            </div>
+            <div>
+              <span className="text-gray-500">Funding</span>
+              <span className="ml-2 font-medium text-green-400">+0.01%</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Trading Area - 3 Column Layout */}
+        <div className="flex-1 flex gap-1 px-2 py-1 overflow-hidden">
+          {/* Left Panel - Order Book / Trades / AI */}
+          <div className="w-[250px] min-w-[200px] flex flex-col bg-black/40 rounded-xl border border-white/5 overflow-hidden">
+            {/* Tab Navigation */}
+            <div className="flex border-b border-white/5">
+              {["Book", "Trades", "Whales", "AI"].map((tab, i) => (
+                <button
+                  key={tab}
+                  className={`flex-1 py-2.5 px-2 text-[11px] font-medium transition-colors ${
+                    i === 0
+                      ? "text-white bg-white/5 border-b-2 border-[#2cecad]"
+                      : "text-gray-500 hover:text-gray-300"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            {/* Order Book Content */}
+            <div className="flex-1 overflow-y-auto p-2">
+              <div className="text-[10px] text-gray-500 flex justify-between mb-2 px-1">
+                <span>Price (USD)</span>
+                <span>Size (BTC)</span>
+                <span>Total</span>
+              </div>
+              {/* Sell Orders (Red) */}
+              {[
+                { price: "97,280", size: "1.234", total: "12.34" },
+                { price: "97,270", size: "2.567", total: "25.67" },
+                { price: "97,260", size: "0.891", total: "8.91" },
+                { price: "97,250", size: "3.456", total: "34.56" },
+              ].map((order, i) => (
+                <div
+                  key={i}
+                  className="flex justify-between text-xs py-0.5 px-1 hover:bg-red-500/10 rounded relative"
+                >
+                  <div
+                    className="absolute inset-y-0 right-0 bg-red-500/20"
+                    style={{ width: `${20 + i * 15}%` }}
+                  />
+                  <span className="text-red-400 relative z-10">
+                    {order.price}
+                  </span>
+                  <span className="text-gray-300 relative z-10">
+                    {order.size}
+                  </span>
+                  <span className="text-gray-500 relative z-10">
+                    {order.total}
+                  </span>
+                </div>
+              ))}
+
+              {/* Spread */}
+              <div className="text-center py-2 border-y border-white/5 my-2">
+                <span className="text-lg font-bold text-white">97,234.50</span>
+                <span className="text-xs text-gray-500 ml-2">
+                  Spread: 0.02%
+                </span>
+              </div>
+
+              {/* Buy Orders (Green) */}
+              {[
+                { price: "97,220", size: "2.123", total: "21.23" },
+                { price: "97,210", size: "1.567", total: "15.67" },
+                { price: "97,200", size: "4.891", total: "48.91" },
+                { price: "97,190", size: "1.234", total: "12.34" },
+              ].map((order, i) => (
+                <div
+                  key={i}
+                  className="flex justify-between text-xs py-0.5 px-1 hover:bg-green-500/10 rounded relative"
+                >
+                  <div
+                    className="absolute inset-y-0 right-0 bg-green-500/20"
+                    style={{ width: `${30 + i * 10}%` }}
+                  />
+                  <span className="text-green-400 relative z-10">
+                    {order.price}
+                  </span>
+                  <span className="text-gray-300 relative z-10">
+                    {order.size}
+                  </span>
+                  <span className="text-gray-500 relative z-10">
+                    {order.total}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Center Panel - AI Signal + Chart */}
+          <div className="flex-1 flex flex-col gap-1 min-w-[400px]">
+            {/* AI Signal Banner */}
+            <div className="h-[80px] bg-black/40 rounded-xl border border-white/5 p-3 flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30 flex items-center justify-center">
+                  <Brain className="w-6 h-6 text-green-400" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <Badge className="bg-green-500/20 text-green-400 font-bold">
+                      BUY SIGNAL
+                    </Badge>
+                    <span className="text-sm text-gray-400">
+                      78% Confidence
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-1">
+                    4/5 indicators bullish • Volume surge detected • RSI
+                    oversold bounce
+                  </p>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-gray-400">Suggested Entry</div>
+                <div className="text-lg font-bold text-green-400">$97,150</div>
+              </div>
+            </div>
+
+            {/* Chart Area */}
+            <div className="flex-1 bg-black/40 rounded-xl border border-white/5 flex items-center justify-center">
+              <div className="text-center text-gray-500">
+                <BarChart3 className="w-16 h-16 mx-auto mb-4 opacity-30" />
+                <p className="text-lg font-medium">TradingView Chart</p>
+                <p className="text-sm">BTC/USD • 1H timeframe</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Panel - Order Entry */}
+          <div className="w-[300px] min-w-[250px] bg-black/40 rounded-xl border border-white/5 overflow-hidden">
+            {/* Long/Short Tabs */}
+            <div className="flex">
+              <button className="flex-1 py-3 text-sm font-semibold bg-green-500/20 text-green-400 border-b-2 border-green-500">
+                Long
+              </button>
+              <button className="flex-1 py-3 text-sm font-semibold text-gray-500 hover:text-gray-300">
+                Short
+              </button>
+            </div>
+
+            {/* Order Form */}
+            <div className="p-4 space-y-4">
+              {/* Leverage Slider */}
+              <div>
+                <div className="flex justify-between text-sm mb-2">
+                  <span className="text-gray-400">Leverage</span>
+                  <span className="font-bold text-primary">5.0x</span>
+                </div>
+                <div className="flex gap-1">
+                  {[1, 2, 5, 10, 20, 50].map((lev) => (
+                    <button
+                      key={lev}
+                      className={`flex-1 py-1 text-xs rounded ${
+                        lev === 5
+                          ? "bg-primary text-white"
+                          : "bg-white/5 text-gray-400 hover:bg-white/10"
+                      }`}
+                    >
+                      {lev}x
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Amount Input */}
+              <div>
+                <label className="text-sm text-gray-400 mb-2 block">
+                  Amount
+                </label>
+                <div className="relative">
+                  <Input
+                    type="text"
+                    placeholder="0.00"
+                    className="bg-white/5 border-white/10 pr-16"
+                  />
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-400">
+                    USD
+                  </span>
+                </div>
+                <div className="flex gap-2 mt-2">
+                  {["25%", "50%", "75%", "100%"].map((pct) => (
+                    <button
+                      key={pct}
+                      className="flex-1 py-1 text-xs bg-white/5 text-gray-400 rounded hover:bg-white/10"
+                    >
+                      {pct}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* TP/SL Inputs */}
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <label className="text-xs text-gray-500 mb-1 block">
+                    Take Profit
+                  </label>
+                  <Input
+                    placeholder="TP Price"
+                    className="bg-white/5 border-white/10 h-8 text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs text-gray-500 mb-1 block">
+                    Stop Loss
+                  </label>
+                  <Input
+                    placeholder="SL Price"
+                    className="bg-white/5 border-white/10 h-8 text-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Order Summary */}
+              <div className="space-y-2 text-sm border-t border-white/5 pt-3">
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Entry Price</span>
+                  <span>$97,234.50</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Liquidation</span>
+                  <span className="text-red-400">$77,787.60</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Est. Fee</span>
+                  <span>$4.86</span>
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <Button className="w-full h-12 text-lg font-bold bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500">
+                Long BTC-USD
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Panel - Positions */}
+        <div className="h-[180px] px-2 pb-2">
+          <div className="h-full bg-black/40 rounded-xl border border-white/5 overflow-hidden">
+            {/* Tabs */}
+            <div className="flex border-b border-white/5">
+              {["Positions (2)", "Open Orders (1)", "Trade History"].map(
+                (tab, i) => (
+                  <button
+                    key={tab}
+                    className={`px-4 py-2 text-sm font-medium transition-colors ${
+                      i === 0
+                        ? "text-white border-b-2 border-primary"
+                        : "text-gray-500 hover:text-gray-300"
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ),
+              )}
+            </div>
+
+            {/* Positions Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-gray-500 text-xs border-b border-white/5">
+                    <th className="text-left p-3">Market</th>
+                    <th className="text-left p-3">Side</th>
+                    <th className="text-right p-3">Size</th>
+                    <th className="text-right p-3">Entry</th>
+                    <th className="text-right p-3">Mark</th>
+                    <th className="text-right p-3">PnL</th>
+                    <th className="text-right p-3">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-white/5 hover:bg-white/5">
+                    <td className="p-3 font-medium">BTC-USD</td>
+                    <td className="p-3">
+                      <Badge className="bg-green-500/20 text-green-400">
+                        Long 5x
+                      </Badge>
+                    </td>
+                    <td className="p-3 text-right">0.5 BTC</td>
+                    <td className="p-3 text-right">$95,100</td>
+                    <td className="p-3 text-right">$97,234</td>
+                    <td className="p-3 text-right text-green-400">
+                      +$1,067 (+2.2%)
+                    </td>
+                    <td className="p-3 text-right">
+                      <Button variant="ghost" size="sm" className="text-xs h-6">
+                        Close
+                      </Button>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-white/5">
+                    <td className="p-3 font-medium">ETH-USD</td>
+                    <td className="p-3">
+                      <Badge className="bg-red-500/20 text-red-400">
+                        Short 3x
+                      </Badge>
+                    </td>
+                    <td className="p-3 text-right">2.0 ETH</td>
+                    <td className="p-3 text-right">$3,520</td>
+                    <td className="p-3 text-right">$3,456</td>
+                    <td className="p-3 text-right text-green-400">
+                      +$128 (+1.8%)
+                    </td>
+                    <td className="p-3 text-right">
+                      <Button variant="ghost" size="sm" className="text-xs h-6">
+                        Close
+                      </Button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <BottomTickerBar />
+    </div>
+  ),
+};
+
+/**
  * Prediction Markets Page
  *
  * The predict page shows:
