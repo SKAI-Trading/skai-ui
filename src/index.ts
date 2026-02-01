@@ -14,6 +14,10 @@ export * from "./components/skeleton";
 export * from "./components/tooltip";
 export * from "./components/toast";
 export * from "./components/toaster";
+export * from "./components/spinner";
+export * from "./components/empty-state";
+export * from "./components/error-boundary";
+export * from "./components/notification";
 
 // Components - Forms
 export * from "./components/checkbox";
@@ -24,6 +28,8 @@ export * from "./components/switch";
 export * from "./components/toggle";
 export * from "./components/form";
 export * from "./components/input-otp";
+export * from "./components/number-input";
+export * from "./components/password-input";
 
 // Components - Layout
 export * from "./components/separator";
@@ -32,6 +38,7 @@ export * from "./components/accordion";
 export * from "./components/collapsible";
 export * from "./components/sidebar";
 export * from "./components/resizable";
+export * from "./components/drawer";
 
 // Components - Overlay
 export * from "./components/dialog";
@@ -52,6 +59,8 @@ export * from "./components/avatar";
 export * from "./components/table";
 export * from "./components/calendar";
 export * from "./components/chart";
+export * from "./components/percentage-bar";
+export * from "./components/countdown";
 
 // Components - Trading (SKAI-specific)
 export * from "./components/token-icon";
@@ -62,6 +71,15 @@ export * from "./components/wallet-address";
 export * from "./components/amount-input";
 export * from "./components/fee-display";
 export * from "./components/online-indicator";
+export * from "./components/price-change";
+export * from "./components/pnl-display";
+export * from "./components/leverage-slider";
+export * from "./components/network-badge";
+export * from "./components/transaction-status";
+export * from "./components/trade-settings";
+export * from "./components/gas-estimate";
+export * from "./components/status-indicator";
+export * from "./components/risk-gauge";
 
 // Components - Composites
 export * from "./components/stat-card";
@@ -76,8 +94,20 @@ export * from "./components/particle-background";
 // Components - Theme
 export * from "./components/theme-provider";
 
-// Hooks
+// Hooks - Toast
 export * from "./hooks/use-toast";
+
+// Hooks - Utilities
+export * from "./hooks/use-debounce";
+export * from "./hooks/use-local-storage";
+export * from "./hooks/use-media-query";
+export * from "./hooks/use-copy-to-clipboard";
+export * from "./hooks/use-countdown";
+export * from "./hooks/use-click-outside";
+export * from "./hooks/use-keyboard-shortcut";
+export * from "./hooks/use-intersection-observer";
+export * from "./hooks/use-window-size";
+export * from "./hooks/use-previous";
 
 // Utilities
 export { cn } from "./lib/utils";
@@ -87,6 +117,9 @@ export * from "./lib/animations";
 
 // Accessibility Utilities
 export * from "./lib/accessibility";
+
+// Performance Utilities
+export * from "./lib/performance";
 
 // Layout Primitives
 export * from "./lib/layout";

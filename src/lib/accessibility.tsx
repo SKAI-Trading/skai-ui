@@ -1,355 +1,400 @@
 /**
- * SKAI Accessibility Utilities
- *
- * Helpers for building accessible components.
+ * Accessibility utilities for skai-ui components
+ * Provides helpers for ARIA attributes, keyboard navigation, and screen reader support
  */
 
-import * as React from "react";
+import { KeyboardEvent, useCallback, useRef, useState } from "react";
 
-// ============================================
-// Unique ID Generation
-// ============================================
+// ============================================================================
+// ARIA Helper Utilities
+// ============================================================================
 
+/**
+ * Generate unique IDs for ARIA relationships
+ */
 let idCounter = 0;
+export const generateId = (prefix = "skai"): string => {
+  idCounter += 1;
+  return `${prefix}-${idCounter}`;
+};
 
 /**
- * Generate a unique ID for form elements.
- * Uses React.useId when available (React 18+), falls back to counter.
+ * Create ARIA describedby relationship
  */
-export function useGeneratedId(providedId?: string): string {
-  const reactId = React.useId?.();
-  const fallbackId = React.useMemo(() => {
-    return providedId || reactId || `skai-${++idCounter}`;
-  }, [providedId, reactId]);
-
-  return fallbackId;
-}
-
-// ============================================
-// Form Field Context (Standalone - for custom form implementations)
-// ============================================
-
-interface A11yFormFieldContextValue {
+export interface AriaDescribedByProps {
   id: string;
-  labelId: string;
-  descriptionId: string;
-  errorId: string;
-  hasError: boolean;
+  describedById: string;
 }
 
-const A11yFormFieldContext = React.createContext<
-  A11yFormFieldContextValue | undefined
->(undefined);
-
-export function useA11yFormField() {
-  const context = React.useContext(A11yFormFieldContext);
-  if (!context) {
-    throw new Error(
-      "useA11yFormField must be used within a A11yFormFieldProvider",
-    );
-  }
-  return context;
-}
-
-export interface A11yFormFieldProviderProps {
-  children: React.ReactNode;
-  id?: string;
-  hasError?: boolean;
-}
-
-export function A11yFormFieldProvider({
-  children,
-  id: providedId,
-  hasError = false,
-}: A11yFormFieldProviderProps) {
-  const id = useGeneratedId(providedId);
-
-  const value = React.useMemo(
-    () => ({
-      id,
-      labelId: `${id}-label`,
-      descriptionId: `${id}-description`,
-      errorId: `${id}-error`,
-      hasError,
-    }),
-    [id, hasError],
-  );
-
-  return (
-    <A11yFormFieldContext.Provider value={value}>
-      {children}
-    </A11yFormFieldContext.Provider>
-  );
-}
-
-// ============================================
-// Focus Management
-// ============================================
+export const createAriaDescribedBy = (
+  baseId: string,
+): AriaDescribedByProps => ({
+  id: baseId,
+  describedById: `${baseId}-description`,
+});
 
 /**
- * Focus trap hook for modals and dialogs
+ * Create ARIA labelledby relationship
  */
-export function useFocusTrap(active: boolean = true) {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    if (!active || !containerRef.current) return;
-
-    const container = containerRef.current;
-    const focusableElements = container.querySelectorAll<HTMLElement>(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-    );
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-
-    // Focus first element on mount
-    firstElement?.focus();
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key !== "Tab") return;
-
-      if (e.shiftKey) {
-        if (document.activeElement === firstElement) {
-          e.preventDefault();
-          lastElement?.focus();
-        }
-      } else {
-        if (document.activeElement === lastElement) {
-          e.preventDefault();
-          firstElement?.focus();
-        }
-      }
-    };
-
-    container.addEventListener("keydown", handleKeyDown);
-    return () => container.removeEventListener("keydown", handleKeyDown);
-  }, [active]);
-
-  return containerRef;
+export interface AriaLabelledByProps {
+  id: string;
+  labelledById: string;
 }
+
+export const createAriaLabelledBy = (baseId: string): AriaLabelledByProps => ({
+  id: baseId,
+  labelledById: `${baseId}-label`,
+});
+
+// ============================================================================
+// Keyboard Navigation Utilities
+// ============================================================================
 
 /**
- * Return focus to previous element when component unmounts
+ * Common keyboard keys used in navigation
  */
-export function useReturnFocus(active: boolean = true) {
-  const previousElement = React.useRef<Element | null>(null);
-
-  React.useEffect(() => {
-    if (!active) return;
-
-    previousElement.current = document.activeElement;
-
-    return () => {
-      if (previousElement.current instanceof HTMLElement) {
-        previousElement.current.focus();
-      }
-    };
-  }, [active]);
-}
-
-// ============================================
-// Screen Reader Announcements
-// ============================================
+export const Keys = {
+  Enter: "Enter",
+  Space: " ",
+  Escape: "Escape",
+  Tab: "Tab",
+  ArrowUp: "ArrowUp",
+  ArrowDown: "ArrowDown",
+  ArrowLeft: "ArrowLeft",
+  ArrowRight: "ArrowRight",
+  Home: "Home",
+  End: "End",
+  PageUp: "PageUp",
+  PageDown: "PageDown",
+} as const;
 
 /**
- * Announce a message to screen readers
+ * Handle keyboard navigation for list items
  */
-export function announce(
-  message: string,
-  priority: "polite" | "assertive" = "polite",
-) {
-  const announcer = document.createElement("div");
-  announcer.setAttribute("role", "status");
-  announcer.setAttribute("aria-live", priority);
-  announcer.setAttribute("aria-atomic", "true");
-  announcer.className = "sr-only";
-  announcer.textContent = message;
-
-  document.body.appendChild(announcer);
-
-  // Remove after announcement
-  setTimeout(() => {
-    document.body.removeChild(announcer);
-  }, 1000);
+export interface UseRovingFocusOptions {
+  itemCount: number;
+  orientation?: "horizontal" | "vertical" | "both";
+  loop?: boolean;
+  onSelect?: (index: number) => void;
 }
 
-/**
- * Hook for managing announcements
- */
-export function useAnnounce() {
-  const announceRef = React.useRef<HTMLDivElement>(null);
+export function useRovingFocus({
+  itemCount,
+  orientation = "vertical",
+  loop = true,
+  onSelect,
+}: UseRovingFocusOptions) {
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const announceMessage = React.useCallback(
-    (message: string, priority: "polite" | "assertive" = "polite") => {
-      if (announceRef.current) {
-        announceRef.current.setAttribute("aria-live", priority);
-        announceRef.current.textContent = message;
-
-        // Clear after delay
-        setTimeout(() => {
-          if (announceRef.current) {
-            announceRef.current.textContent = "";
-          }
-        }, 1000);
-      }
-    },
-    [],
-  );
-
-  const AnnouncerElement = React.useMemo(
-    () => (
-      <div
-        ref={announceRef}
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-        className="sr-only"
-      />
-    ),
-    [],
-  );
-
-  return { announce: announceMessage, Announcer: AnnouncerElement };
-}
-
-// ============================================
-// Keyboard Navigation
-// ============================================
-
-type KeyHandler = (event: KeyboardEvent) => void;
-
-interface KeyHandlers {
-  [key: string]: KeyHandler;
-}
-
-/**
- * Hook for handling keyboard shortcuts
- */
-export function useKeyboardNavigation(
-  handlers: KeyHandlers,
-  active: boolean = true,
-) {
-  React.useEffect(() => {
-    if (!active) return;
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const handler = handlers[event.key];
-      if (handler) {
-        handler(event);
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [handlers, active]);
-}
-
-/**
- * Arrow key navigation for lists/grids
- */
-export function useArrowNavigation(
-  itemsRef: React.RefObject<HTMLElement[]>,
-  options: {
-    orientation?: "horizontal" | "vertical" | "both";
-    loop?: boolean;
-    onSelect?: (index: number) => void;
-  } = {},
-) {
-  const { orientation = "vertical", loop = true, onSelect } = options;
-  const [activeIndex, setActiveIndex] = React.useState(0);
-
-  const navigate = React.useCallback(
-    (direction: "next" | "prev") => {
-      const items = itemsRef.current;
-      if (!items || items.length === 0) return;
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      const isVertical = orientation === "vertical" || orientation === "both";
+      const isHorizontal =
+        orientation === "horizontal" || orientation === "both";
 
       let newIndex = activeIndex;
+      let handled = false;
 
-      if (direction === "next") {
-        newIndex = activeIndex + 1;
-        if (newIndex >= items.length) {
-          newIndex = loop ? 0 : items.length - 1;
-        }
-      } else {
-        newIndex = activeIndex - 1;
-        if (newIndex < 0) {
-          newIndex = loop ? items.length - 1 : 0;
-        }
+      switch (event.key) {
+        case Keys.ArrowUp:
+          if (isVertical) {
+            newIndex = activeIndex - 1;
+            handled = true;
+          }
+          break;
+        case Keys.ArrowDown:
+          if (isVertical) {
+            newIndex = activeIndex + 1;
+            handled = true;
+          }
+          break;
+        case Keys.ArrowLeft:
+          if (isHorizontal) {
+            newIndex = activeIndex - 1;
+            handled = true;
+          }
+          break;
+        case Keys.ArrowRight:
+          if (isHorizontal) {
+            newIndex = activeIndex + 1;
+            handled = true;
+          }
+          break;
+        case Keys.Home:
+          newIndex = 0;
+          handled = true;
+          break;
+        case Keys.End:
+          newIndex = itemCount - 1;
+          handled = true;
+          break;
+        case Keys.Enter:
+        case Keys.Space:
+          onSelect?.(activeIndex);
+          handled = true;
+          break;
       }
 
-      setActiveIndex(newIndex);
-      items[newIndex]?.focus();
+      if (handled) {
+        event.preventDefault();
+
+        // Handle loop behavior
+        if (loop) {
+          if (newIndex < 0) newIndex = itemCount - 1;
+          if (newIndex >= itemCount) newIndex = 0;
+        } else {
+          newIndex = Math.max(0, Math.min(itemCount - 1, newIndex));
+        }
+
+        setActiveIndex(newIndex);
+      }
     },
-    [activeIndex, itemsRef, loop],
+    [activeIndex, itemCount, loop, onSelect, orientation],
   );
 
-  const handlers = React.useMemo(() => {
-    const h: KeyHandlers = {};
+  return {
+    activeIndex,
+    setActiveIndex,
+    handleKeyDown,
+    getItemProps: (index: number) => ({
+      tabIndex: index === activeIndex ? 0 : -1,
+      "aria-selected": index === activeIndex,
+    }),
+  };
+}
 
-    if (orientation === "vertical" || orientation === "both") {
-      h.ArrowDown = () => navigate("next");
-      h.ArrowUp = () => navigate("prev");
+/**
+ * Trap focus within a container (for modals, dialogs)
+ */
+export function useFocusTrap(active = true) {
+  const containerRef = useRef<HTMLElement>(null);
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (!active || event.key !== Keys.Tab) return;
+
+      const container = containerRef.current;
+      if (!container) return;
+
+      const focusable = container.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+
+      const firstFocusable = focusable[0];
+      const lastFocusable = focusable[focusable.length - 1];
+
+      if (event.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          event.preventDefault();
+          lastFocusable?.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          event.preventDefault();
+          firstFocusable?.focus();
+        }
+      }
+    },
+    [active],
+  );
+
+  return { containerRef, handleKeyDown };
+}
+
+// ============================================================================
+// Screen Reader Utilities
+// ============================================================================
+
+/**
+ * Live region for announcements
+ */
+export interface UseLiveRegionOptions {
+  politeness?: "polite" | "assertive" | "off";
+  atomic?: boolean;
+}
+
+export function useLiveRegion({
+  politeness = "polite",
+  atomic = true,
+}: UseLiveRegionOptions = {}) {
+  const [message, setMessage] = useState("");
+
+  const announce = useCallback((text: string, clearAfter = 1000) => {
+    setMessage(text);
+    if (clearAfter > 0) {
+      setTimeout(() => setMessage(""), clearAfter);
     }
+  }, []);
 
-    if (orientation === "horizontal" || orientation === "both") {
-      h.ArrowRight = () => navigate("next");
-      h.ArrowLeft = () => navigate("prev");
-    }
+  const liveRegionProps = {
+    role: "status" as const,
+    "aria-live": politeness,
+    "aria-atomic": atomic,
+  };
 
-    h.Enter = () => onSelect?.(activeIndex);
-    h[" "] = () => onSelect?.(activeIndex);
-
-    return h;
-  }, [orientation, navigate, onSelect, activeIndex]);
-
-  useKeyboardNavigation(handlers);
-
-  return { activeIndex, setActiveIndex };
+  return { message, announce, liveRegionProps };
 }
 
-// ============================================
-// Skip Link Component
-// ============================================
+/**
+ * Visually hidden text for screen readers only
+ */
+export const visuallyHiddenStyles: React.CSSProperties = {
+  position: "absolute",
+  width: "1px",
+  height: "1px",
+  padding: 0,
+  margin: "-1px",
+  overflow: "hidden",
+  clip: "rect(0, 0, 0, 0)",
+  whiteSpace: "nowrap",
+  border: 0,
+};
 
-export interface SkipLinkProps {
-  /** Target element ID to skip to */
-  targetId: string;
-  /** Link text */
-  children?: React.ReactNode;
+/**
+ * Visually hidden component
+ */
+export function VisuallyHidden({ children }: { children: React.ReactNode }) {
+  return <span style={visuallyHiddenStyles}>{children}</span>;
 }
 
-export function SkipLink({
-  targetId,
-  children = "Skip to main content",
-}: SkipLinkProps) {
-  return (
-    <a
-      href={`#${targetId}`}
-      className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-background focus:border focus:rounded-md"
-    >
-      {children}
-    </a>
+// ============================================================================
+// Focus Management Utilities
+// ============================================================================
+
+/**
+ * Manage focus return when closing modals/dialogs
+ */
+export function useFocusReturn() {
+  const previousFocus = useRef<HTMLElement | null>(null);
+
+  const saveFocus = useCallback(() => {
+    previousFocus.current = document.activeElement as HTMLElement;
+  }, []);
+
+  const restoreFocus = useCallback(() => {
+    previousFocus.current?.focus();
+    previousFocus.current = null;
+  }, []);
+
+  return { saveFocus, restoreFocus };
+}
+
+/**
+ * Auto-focus an element on mount
+ */
+export function useAutoFocus(shouldFocus = true) {
+  const setRef = useCallback(
+    (element: HTMLElement | null) => {
+      if (shouldFocus && element) {
+        // Delay focus to ensure element is ready
+        requestAnimationFrame(() => {
+          element.focus();
+        });
+      }
+    },
+    [shouldFocus],
   );
+
+  return setRef;
 }
 
-// ============================================
-// Visually Hidden Component
-// ============================================
+// ============================================================================
+// ARIA Attribute Helpers
+// ============================================================================
 
-export interface VisuallyHiddenProps extends React.HTMLAttributes<HTMLSpanElement> {
-  /** Force visibility for debugging */
-  debug?: boolean;
+/**
+ * Props for expandable/collapsible elements
+ */
+export const getExpandedProps = (expanded: boolean, controlsId: string) => ({
+  "aria-expanded": expanded,
+  "aria-controls": controlsId,
+});
+
+/**
+ * Props for selected elements
+ */
+export const getSelectedProps = (selected: boolean) => ({
+  "aria-selected": selected,
+});
+
+/**
+ * Props for disabled elements
+ */
+export const getDisabledProps = (disabled: boolean) => ({
+  "aria-disabled": disabled,
+  tabIndex: disabled ? -1 : 0,
+});
+
+/**
+ * Props for loading states
+ */
+export const getLoadingProps = (
+  loading: boolean,
+  loadingText = "Loading...",
+) => ({
+  "aria-busy": loading,
+  "aria-label": loading ? loadingText : undefined,
+});
+
+/**
+ * Props for required form fields
+ */
+export const getRequiredProps = (required: boolean) => ({
+  "aria-required": required,
+  required,
+});
+
+/**
+ * Props for invalid form fields
+ */
+export const getInvalidProps = (
+  invalid: boolean,
+  errorMessage?: string,
+  errorId?: string,
+) => ({
+  "aria-invalid": invalid,
+  "aria-describedby": invalid && errorId ? errorId : undefined,
+  "aria-errormessage": invalid && errorMessage ? errorMessage : undefined,
+});
+
+// ============================================================================
+// Color Contrast Utilities
+// ============================================================================
+
+/**
+ * Get contrasting text color based on background
+ */
+export function getContrastColor(hexColor: string): "black" | "white" {
+  // Remove # if present
+  const hex = hexColor.replace("#", "");
+
+  // Convert to RGB
+  const r = parseInt(hex.substr(0, 2), 16);
+  const g = parseInt(hex.substr(2, 2), 16);
+  const b = parseInt(hex.substr(4, 2), 16);
+
+  // Calculate relative luminance
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Return black for light backgrounds, white for dark
+  return luminance > 0.5 ? "black" : "white";
 }
 
-export function VisuallyHidden({
-  debug = false,
-  className,
-  children,
-  ...props
-}: VisuallyHiddenProps) {
-  return (
-    <span className={debug ? className : "sr-only"} {...props}>
-      {children}
-    </span>
-  );
+// ============================================================================
+// Reduced Motion Utilities
+// ============================================================================
+
+// Note: usePrefersReducedMotion is available from "./hooks/use-media-query"
+// Import it as: import { usePrefersReducedMotion } from "@skai/ui";
+
+/**
+ * Get animation duration based on reduced motion preference
+ * Use with usePrefersReducedMotion from hooks/use-media-query
+ */
+export function getAnimationDuration(
+  prefersReducedMotion: boolean,
+  normalDuration: number,
+  reducedDuration = 0,
+): number {
+  return prefersReducedMotion ? reducedDuration : normalDuration;
 }

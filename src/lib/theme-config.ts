@@ -51,11 +51,31 @@ export const theme = {
 
     // Trading colors
     trading: {
+      // Position colors
       long: "142 71% 45%", // #22C55E - Green (buy/profit)
       longGlow: "142 71% 55%", // Glow variant
+      longMuted: "142 71% 35%", // Muted variant
       short: "0 84% 60%", // #EF4444 - Red (sell/loss)
       shortGlow: "0 84% 70%", // Glow variant
+      shortMuted: "0 84% 50%", // Muted variant
       neutral: "0 0% 50%", // Neutral/unchanged
+      
+      // Order book colors
+      bid: "142 71% 45%", // Green - buy side
+      bidBg: "142 71% 15%", // Background for bid depth
+      ask: "0 84% 60%", // Red - sell side
+      askBg: "0 84% 20%", // Background for ask depth
+      
+      // PnL colors
+      profit: "142 71% 45%", // Green - gains
+      profitBg: "142 60% 10%", // Background for profit
+      loss: "0 84% 60%", // Red - losses
+      lossBg: "0 70% 12%", // Background for loss
+      
+      // Price change colors
+      priceUp: "142 71% 50%", // Brighter green for price increases
+      priceDown: "0 84% 65%", // Brighter red for price decreases
+      priceFlat: "225 20% 60%", // Muted for no change
     },
 
     // Semantic colors
@@ -239,6 +259,40 @@ export const theme = {
     dialog: {
       borderRadius: "1rem",
       padding: "1.5rem",
+    },
+
+    badge: {
+      borderRadius: "9999px",
+      fontWeight: "500",
+      sizes: {
+        sm: { height: "1.25rem", padding: "0.5rem", fontSize: "0.625rem" },
+        md: { height: "1.5rem", padding: "0.625rem", fontSize: "0.75rem" },
+        lg: { height: "1.75rem", padding: "0.75rem", fontSize: "0.875rem" },
+      },
+    },
+
+    toast: {
+      borderRadius: "0.5rem",
+      padding: "1rem",
+      maxWidth: "24rem",
+    },
+
+    alert: {
+      borderRadius: "0.5rem",
+      padding: "1rem",
+      iconSize: "1rem",
+    },
+
+    table: {
+      borderRadius: "0.5rem",
+      headerBg: "225 30% 12%",
+      rowHoverBg: "225 30% 15%",
+      borderColor: "225 30% 20%",
+    },
+
+    gauge: {
+      trackColor: "225 30% 20%",
+      strokeWidth: "8",
     },
   },
 } as const;
