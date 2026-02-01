@@ -27,8 +27,6 @@
     "build:css": "tailwindcss -i ./src/styles/index.css -o ./dist/styles.css --minify",
     "build:quiet": "tsup && npm run build:css",
     "build:storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
-    "chromatic:ci": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes",
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
