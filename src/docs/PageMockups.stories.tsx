@@ -1,69 +1,42 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../components/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "../components/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Input } from "../components/input";
 import { Badge } from "../components/badge";
-import { Progress } from "../components/progress";
-import { Separator } from "../components/separator";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/avatar";
+import { Avatar, AvatarFallback } from "../components/avatar";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/tabs";
 import {
-  ArrowDown,
   ArrowRight,
-  ArrowUp,
   ArrowUpDown,
   BarChart3,
   Bell,
   Bot,
-  Brain,
-  Check,
   ChevronDown,
-  ChevronRight,
   Clock,
   Copy,
   CreditCard,
   Dice5,
   DollarSign,
-  ExternalLink,
-  Eye,
   Filter,
   Flame,
-  Gamepad2,
   Gift,
-  Globe,
-  Heart,
   Home,
   LineChart,
-  Loader2,
-  Lock,
-  Menu,
-  MessageCircle,
   Mic,
   MoreHorizontal,
   PieChart,
   Play,
   Plus,
-  Rocket,
   Search,
   Send,
   Settings,
   Share2,
   Shield,
-  Sparkles,
-  Star,
-  Target,
   TrendingDown,
   TrendingUp,
   Trophy,
   User,
   Users,
-  Wallet,
   Zap,
 } from "lucide-react";
 
