@@ -24,5 +24,7 @@ export default defineConfig({
     "lucide-react",
   ],
   treeshake: true,
-  minify: true,
+  // Disable minification to avoid variable initialization order issues
+  // that conflict with MetaMask's SES lockdown script
+  minify: false,
 });

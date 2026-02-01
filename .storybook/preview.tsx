@@ -14,26 +14,17 @@ const preview: Preview = {
       values: [
         {
           name: "skai-dark",
-          value: "#001615", // SKAI Green Coal
+          value: "#001615",
         },
         {
           name: "skai-navy",
-          value: "#020717", // SKAI Dark Navy
+          value: "#020717",
         },
         {
           name: "light",
           value: "#FFFFFF",
         },
       ],
-    },
-    docs: {
-      theme: {
-        base: "dark",
-        appBg: "#001615",
-        appContentBg: "#020717",
-        textColor: "#E0E0E0",
-        barTextColor: "#E0E0E0",
-      },
     },
   },
   globalTypes: {

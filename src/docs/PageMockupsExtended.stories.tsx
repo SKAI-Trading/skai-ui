@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../components/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "../components/card";
 import { Input } from "../components/input";
 import { Badge } from "../components/badge";
 import { Progress } from "../components/progress";
@@ -86,16 +92,32 @@ const Header = () => (
         </span>
       </div>
       <nav className="hidden md:flex items-center gap-1">
-        <Button variant="ghost" size="sm" className="gap-1 text-gray-400 hover:text-white">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="gap-1 text-gray-400 hover:text-white"
+        >
           Trade <ChevronDown className="h-3 w-3" />
         </Button>
-        <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-gray-400 hover:text-white"
+        >
           Play
         </Button>
-        <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-gray-400 hover:text-white"
+        >
           Predict
         </Button>
-        <Button variant="ghost" size="sm" className="gap-1 text-gray-400 hover:text-white">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="gap-1 text-gray-400 hover:text-white"
+        >
           Social <ChevronDown className="h-3 w-3" />
         </Button>
       </nav>
@@ -162,7 +184,7 @@ export const BridgePage: StoryObj = {
       <Header />
       <main className="p-4 pb-20 md:pb-4 max-w-xl mx-auto">
         <h1 className="text-2xl font-bold mb-6 text-center">Bridge</h1>
-        
+
         <Card className="bg-white/5 border-white/10 mb-4">
           <CardContent className="p-4 space-y-4">
             {/* From Chain */}
@@ -170,7 +192,9 @@ export const BridgePage: StoryObj = {
               <label className="text-sm text-gray-400 mb-2 block">From</label>
               <div className="flex gap-2">
                 <Button variant="outline" className="bg-white/5 gap-2 shrink-0">
-                  <div className="w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center text-xs">Ξ</div>
+                  <div className="w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center text-xs">
+                    Ξ
+                  </div>
                   Ethereum
                   <ChevronDown className="h-4 w-4" />
                 </Button>
@@ -180,7 +204,11 @@ export const BridgePage: StoryObj = {
                     placeholder="0.00"
                     className="pr-20 bg-white/5 border-white/10 text-lg h-12"
                   />
-                  <Button variant="ghost" size="sm" className="absolute right-2 top-1/2 -translate-y-1/2 h-8">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 h-8"
+                  >
                     ETH
                     <ChevronDown className="h-3 w-3 ml-1" />
                   </Button>
@@ -191,7 +219,11 @@ export const BridgePage: StoryObj = {
 
             {/* Swap Button */}
             <div className="flex justify-center -my-2">
-              <Button variant="outline" size="icon" className="h-10 w-10 rounded-full bg-white/5 border-white/10">
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-10 w-10 rounded-full bg-white/5 border-white/10"
+              >
                 <ArrowUpDown className="h-4 w-4" />
               </Button>
             </div>
@@ -201,7 +233,9 @@ export const BridgePage: StoryObj = {
               <label className="text-sm text-gray-400 mb-2 block">To</label>
               <div className="flex gap-2">
                 <Button variant="outline" className="bg-white/5 gap-2 shrink-0">
-                  <div className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center text-[8px] font-bold">B</div>
+                  <div className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center text-[8px] font-bold">
+                    B
+                  </div>
                   Base
                   <ChevronDown className="h-4 w-4" />
                 </Button>
@@ -213,7 +247,11 @@ export const BridgePage: StoryObj = {
                     readOnly
                     className="pr-20 bg-white/5 border-white/10 text-lg h-12"
                   />
-                  <Button variant="ghost" size="sm" className="absolute right-2 top-1/2 -translate-y-1/2 h-8">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 h-8"
+                  >
                     ETH
                   </Button>
                 </div>
@@ -228,7 +266,9 @@ export const BridgePage: StoryObj = {
             <div className="flex items-center justify-between text-sm">
               <span className="text-gray-400">Route</span>
               <div className="flex items-center gap-2">
-                <Badge className="bg-green-500/20 text-green-400">Best Price</Badge>
+                <Badge className="bg-green-500/20 text-green-400">
+                  Best Price
+                </Badge>
                 <span>Via Across</span>
               </div>
             </div>
@@ -265,24 +305,47 @@ export const BridgePage: StoryObj = {
           </CardHeader>
           <CardContent className="pt-0 space-y-2">
             {[
-              { from: "Ethereum", to: "Base", amount: "2.5 ETH", status: "Completed", time: "5 min ago" },
-              { from: "Arbitrum", to: "Ethereum", amount: "1,000 USDC", status: "Completed", time: "2h ago" },
+              {
+                from: "Ethereum",
+                to: "Base",
+                amount: "2.5 ETH",
+                status: "Completed",
+                time: "5 min ago",
+              },
+              {
+                from: "Arbitrum",
+                to: "Ethereum",
+                amount: "1,000 USDC",
+                status: "Completed",
+                time: "2h ago",
+              },
             ].map((tx, i) => (
-              <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-white/5">
+              <div
+                key={i}
+                className="flex items-center justify-between p-3 rounded-lg bg-white/5"
+              >
                 <div className="flex items-center gap-3">
                   <div className="flex items-center">
-                    <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-xs z-10">Ξ</div>
+                    <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-xs z-10">
+                      Ξ
+                    </div>
                     <ArrowRight className="h-4 w-4 text-gray-500 mx-1" />
-                    <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-[8px] font-bold">B</div>
+                    <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-[8px] font-bold">
+                      B
+                    </div>
                   </div>
                   <div>
-                    <div className="text-sm">{tx.from} → {tx.to}</div>
+                    <div className="text-sm">
+                      {tx.from} → {tx.to}
+                    </div>
                     <div className="text-xs text-gray-400">{tx.time}</div>
                   </div>
                 </div>
                 <div className="text-right">
                   <div className="text-sm">{tx.amount}</div>
-                  <Badge className="bg-green-500/20 text-green-400 text-xs">{tx.status}</Badge>
+                  <Badge className="bg-green-500/20 text-green-400 text-xs">
+                    {tx.status}
+                  </Badge>
                 </div>
               </div>
             ))}
@@ -369,25 +432,64 @@ export const LendingPage: StoryObj = {
                 <div className="grid grid-cols-[1fr,auto,auto,auto,auto] gap-4 p-4 border-b border-white/10 text-sm text-gray-400">
                   <span>Asset</span>
                   <span className="text-right">Supply APY</span>
-                  <span className="text-right hidden md:block">Total Supplied</span>
+                  <span className="text-right hidden md:block">
+                    Total Supplied
+                  </span>
                   <span className="text-right">Your Supply</span>
                   <span></span>
                 </div>
                 {[
-                  { name: "ETH", symbol: "Ξ", apy: "3.24%", total: "$45.6M", your: "$5,234.56", color: "bg-blue-500" },
-                  { name: "USDC", symbol: "$", apy: "5.67%", total: "$123.4M", your: "$2,000.00", color: "bg-green-500" },
-                  { name: "WBTC", symbol: "₿", apy: "1.89%", total: "$34.5M", your: "$0.00", color: "bg-orange-500" },
-                  { name: "DAI", symbol: "◈", apy: "4.56%", total: "$67.8M", your: "$0.00", color: "bg-yellow-500" },
+                  {
+                    name: "ETH",
+                    symbol: "Ξ",
+                    apy: "3.24%",
+                    total: "$45.6M",
+                    your: "$5,234.56",
+                    color: "bg-blue-500",
+                  },
+                  {
+                    name: "USDC",
+                    symbol: "$",
+                    apy: "5.67%",
+                    total: "$123.4M",
+                    your: "$2,000.00",
+                    color: "bg-green-500",
+                  },
+                  {
+                    name: "WBTC",
+                    symbol: "₿",
+                    apy: "1.89%",
+                    total: "$34.5M",
+                    your: "$0.00",
+                    color: "bg-orange-500",
+                  },
+                  {
+                    name: "DAI",
+                    symbol: "◈",
+                    apy: "4.56%",
+                    total: "$67.8M",
+                    your: "$0.00",
+                    color: "bg-yellow-500",
+                  },
                 ].map((asset) => (
-                  <div key={asset.name} className="grid grid-cols-[1fr,auto,auto,auto,auto] gap-4 p-4 items-center hover:bg-white/5 border-b border-white/5">
+                  <div
+                    key={asset.name}
+                    className="grid grid-cols-[1fr,auto,auto,auto,auto] gap-4 p-4 items-center hover:bg-white/5 border-b border-white/5"
+                  >
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-full ${asset.color} flex items-center justify-center font-bold`}>
+                      <div
+                        className={`w-10 h-10 rounded-full ${asset.color} flex items-center justify-center font-bold`}
+                      >
                         {asset.symbol}
                       </div>
                       <span className="font-medium">{asset.name}</span>
                     </div>
-                    <span className="text-right text-green-400">{asset.apy}</span>
-                    <span className="text-right hidden md:block text-gray-400">{asset.total}</span>
+                    <span className="text-right text-green-400">
+                      {asset.apy}
+                    </span>
+                    <span className="text-right hidden md:block text-gray-400">
+                      {asset.total}
+                    </span>
                     <span className="text-right">{asset.your}</span>
                     <Button variant="outline" size="sm" className="bg-white/5">
                       Supply
@@ -409,19 +511,49 @@ export const LendingPage: StoryObj = {
                   <span></span>
                 </div>
                 {[
-                  { name: "USDC", symbol: "$", apy: "7.89%", available: "$45.6M", your: "$3,000.00", color: "bg-green-500" },
-                  { name: "ETH", symbol: "Ξ", apy: "5.12%", available: "$12.3M", your: "$0.00", color: "bg-blue-500" },
-                  { name: "DAI", symbol: "◈", apy: "6.78%", available: "$23.4M", your: "$0.00", color: "bg-yellow-500" },
+                  {
+                    name: "USDC",
+                    symbol: "$",
+                    apy: "7.89%",
+                    available: "$45.6M",
+                    your: "$3,000.00",
+                    color: "bg-green-500",
+                  },
+                  {
+                    name: "ETH",
+                    symbol: "Ξ",
+                    apy: "5.12%",
+                    available: "$12.3M",
+                    your: "$0.00",
+                    color: "bg-blue-500",
+                  },
+                  {
+                    name: "DAI",
+                    symbol: "◈",
+                    apy: "6.78%",
+                    available: "$23.4M",
+                    your: "$0.00",
+                    color: "bg-yellow-500",
+                  },
                 ].map((asset) => (
-                  <div key={asset.name} className="grid grid-cols-[1fr,auto,auto,auto,auto] gap-4 p-4 items-center hover:bg-white/5 border-b border-white/5">
+                  <div
+                    key={asset.name}
+                    className="grid grid-cols-[1fr,auto,auto,auto,auto] gap-4 p-4 items-center hover:bg-white/5 border-b border-white/5"
+                  >
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-full ${asset.color} flex items-center justify-center font-bold`}>
+                      <div
+                        className={`w-10 h-10 rounded-full ${asset.color} flex items-center justify-center font-bold`}
+                      >
                         {asset.symbol}
                       </div>
                       <span className="font-medium">{asset.name}</span>
                     </div>
-                    <span className="text-right text-yellow-400">{asset.apy}</span>
-                    <span className="text-right hidden md:block text-gray-400">{asset.available}</span>
+                    <span className="text-right text-yellow-400">
+                      {asset.apy}
+                    </span>
+                    <span className="text-right hidden md:block text-gray-400">
+                      {asset.available}
+                    </span>
                     <span className="text-right">{asset.your}</span>
                     <Button variant="outline" size="sm" className="bg-white/5">
                       Borrow
@@ -471,7 +603,9 @@ export const GovernancePage: StoryObj = {
               <div>
                 <p className="text-gray-400 mb-1">Your Voting Power</p>
                 <p className="text-3xl font-bold">12,345.67 SKAI</p>
-                <p className="text-sm text-gray-400 mt-1">0.12% of total supply</p>
+                <p className="text-sm text-gray-400 mt-1">
+                  0.12% of total supply
+                </p>
               </div>
               <div className="flex gap-2">
                 <Button variant="outline" className="bg-white/10">
@@ -498,7 +632,8 @@ export const GovernancePage: StoryObj = {
               {
                 id: "SIP-12",
                 title: "Reduce Trading Fees for High Volume Users",
-                description: "Implement a tiered fee structure based on 30-day trading volume",
+                description:
+                  "Implement a tiered fee structure based on 30-day trading volume",
                 forVotes: 2345678,
                 againstVotes: 456789,
                 status: "Active",
@@ -507,7 +642,8 @@ export const GovernancePage: StoryObj = {
               {
                 id: "SIP-11",
                 title: "Add SOL/USDC Trading Pair",
-                description: "Enable trading for Solana against USDC on the platform",
+                description:
+                  "Enable trading for Solana against USDC on the platform",
                 forVotes: 1890234,
                 againstVotes: 234567,
                 status: "Active",
@@ -517,28 +653,41 @@ export const GovernancePage: StoryObj = {
               const total = proposal.forVotes + proposal.againstVotes;
               const forPct = Math.round((proposal.forVotes / total) * 100);
               return (
-                <Card key={proposal.id} className="bg-white/5 border-white/10 hover:border-[#56C0F6]/50 transition-colors">
+                <Card
+                  key={proposal.id}
+                  className="bg-white/5 border-white/10 hover:border-[#56C0F6]/50 transition-colors"
+                >
                   <CardContent className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          <Badge variant="outline" className="text-xs">{proposal.id}</Badge>
-                          <Badge className="bg-green-500/20 text-green-400">{proposal.status}</Badge>
+                          <Badge variant="outline" className="text-xs">
+                            {proposal.id}
+                          </Badge>
+                          <Badge className="bg-green-500/20 text-green-400">
+                            {proposal.status}
+                          </Badge>
                         </div>
-                        <h3 className="text-lg font-semibold">{proposal.title}</h3>
-                        <p className="text-sm text-gray-400 mt-1">{proposal.description}</p>
+                        <h3 className="text-lg font-semibold">
+                          {proposal.title}
+                        </h3>
+                        <p className="text-sm text-gray-400 mt-1">
+                          {proposal.description}
+                        </p>
                       </div>
                       <div className="text-right">
                         <p className="text-sm text-gray-400">Ends in</p>
                         <p className="font-medium">{proposal.endsIn}</p>
                       </div>
                     </div>
-                    
+
                     {/* Vote Progress */}
                     <div className="space-y-2 mb-4">
                       <div className="flex justify-between text-sm">
                         <span className="text-green-400">For ({forPct}%)</span>
-                        <span className="text-red-400">Against ({100 - forPct}%)</span>
+                        <span className="text-red-400">
+                          Against ({100 - forPct}%)
+                        </span>
                       </div>
                       <div className="h-3 bg-red-500/30 rounded-full overflow-hidden">
                         <div
@@ -547,8 +696,12 @@ export const GovernancePage: StoryObj = {
                         />
                       </div>
                       <div className="flex justify-between text-xs text-gray-400">
-                        <span>{(proposal.forVotes / 1000000).toFixed(2)}M SKAI</span>
-                        <span>{(proposal.againstVotes / 1000000).toFixed(2)}M SKAI</span>
+                        <span>
+                          {(proposal.forVotes / 1000000).toFixed(2)}M SKAI
+                        </span>
+                        <span>
+                          {(proposal.againstVotes / 1000000).toFixed(2)}M SKAI
+                        </span>
                       </div>
                     </div>
 
@@ -556,7 +709,10 @@ export const GovernancePage: StoryObj = {
                       <Button className="flex-1 bg-green-500/20 text-green-400 hover:bg-green-500/30">
                         <Check className="h-4 w-4 mr-2" /> Vote For
                       </Button>
-                      <Button variant="outline" className="flex-1 bg-red-500/10 text-red-400 border-red-500/30 hover:bg-red-500/20">
+                      <Button
+                        variant="outline"
+                        className="flex-1 bg-red-500/10 text-red-400 border-red-500/30 hover:bg-red-500/20"
+                      >
                         Vote Against
                       </Button>
                     </div>
@@ -607,14 +763,22 @@ export const UserProfilePage: StoryObj = {
                     <Check className="h-3 w-3 mr-1" /> Verified
                   </Badge>
                 </div>
-                <p className="font-mono text-sm text-gray-400 mb-2">0x1234...5678</p>
+                <p className="font-mono text-sm text-gray-400 mb-2">
+                  0x1234...5678
+                </p>
                 <p className="text-gray-300 mb-3">
                   Full-time degen. Riding the waves of crypto since 2017. 🌊
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs">🐋 Whale</Badge>
-                  <Badge variant="outline" className="text-xs">🏆 Top 10 Trader</Badge>
-                  <Badge variant="outline" className="text-xs">⭐ Early Adopter</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    🐋 Whale
+                  </Badge>
+                  <Badge variant="outline" className="text-xs">
+                    🏆 Top 10 Trader
+                  </Badge>
+                  <Badge variant="outline" className="text-xs">
+                    ⭐ Early Adopter
+                  </Badge>
                 </div>
               </div>
               <div className="flex gap-2 shrink-0">
@@ -659,22 +823,63 @@ export const UserProfilePage: StoryObj = {
             <Card className="bg-white/5 border-white/10">
               <CardContent className="p-0">
                 {[
-                  { pair: "ETH/USDC", type: "LONG", entry: "$2,089", exit: "$2,234", pnl: "+$1,234", pct: "+6.9%", time: "2h ago" },
-                  { pair: "BTC/USDC", type: "SHORT", entry: "$45,678", exit: "$44,123", pnl: "+$567", pct: "+3.4%", time: "5h ago" },
-                  { pair: "SOL/USDC", type: "LONG", entry: "$95.50", exit: "$92.30", pnl: "-$234", pct: "-3.3%", time: "1d ago" },
+                  {
+                    pair: "ETH/USDC",
+                    type: "LONG",
+                    entry: "$2,089",
+                    exit: "$2,234",
+                    pnl: "+$1,234",
+                    pct: "+6.9%",
+                    time: "2h ago",
+                  },
+                  {
+                    pair: "BTC/USDC",
+                    type: "SHORT",
+                    entry: "$45,678",
+                    exit: "$44,123",
+                    pnl: "+$567",
+                    pct: "+3.4%",
+                    time: "5h ago",
+                  },
+                  {
+                    pair: "SOL/USDC",
+                    type: "LONG",
+                    entry: "$95.50",
+                    exit: "$92.30",
+                    pnl: "-$234",
+                    pct: "-3.3%",
+                    time: "1d ago",
+                  },
                 ].map((trade, i) => (
-                  <div key={i} className="flex items-center justify-between p-4 hover:bg-white/5 border-b border-white/5">
+                  <div
+                    key={i}
+                    className="flex items-center justify-between p-4 hover:bg-white/5 border-b border-white/5"
+                  >
                     <div className="flex items-center gap-3">
-                      <Badge className={trade.type === "LONG" ? "bg-green-500/20 text-green-400" : "bg-red-500/20 text-red-400"}>
+                      <Badge
+                        className={
+                          trade.type === "LONG"
+                            ? "bg-green-500/20 text-green-400"
+                            : "bg-red-500/20 text-red-400"
+                        }
+                      >
                         {trade.type}
                       </Badge>
                       <div>
                         <div className="font-medium">{trade.pair}</div>
-                        <div className="text-xs text-gray-400">{trade.entry} → {trade.exit}</div>
+                        <div className="text-xs text-gray-400">
+                          {trade.entry} → {trade.exit}
+                        </div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className={trade.pnl.startsWith("+") ? "text-green-400" : "text-red-400"}>
+                      <div
+                        className={
+                          trade.pnl.startsWith("+")
+                            ? "text-green-400"
+                            : "text-red-400"
+                        }
+                      >
                         {trade.pnl} ({trade.pct})
                       </div>
                       <div className="text-xs text-gray-400">{trade.time}</div>
@@ -740,32 +945,53 @@ export const SettingsPage: StoryObj = {
             <Card className="bg-white/5 border-white/10">
               <CardHeader>
                 <CardTitle>Profile</CardTitle>
-                <CardDescription>Manage your public profile information</CardDescription>
+                <CardDescription>
+                  Manage your public profile information
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Avatar className="h-20 w-20">
-                    <AvatarFallback className="text-xl bg-gradient-to-br from-[#56C0F6] to-[#2DEDAD]">SK</AvatarFallback>
+                    <AvatarFallback className="text-xl bg-gradient-to-br from-[#56C0F6] to-[#2DEDAD]">
+                      SK
+                    </AvatarFallback>
                   </Avatar>
                   <div>
                     <Button variant="outline" size="sm" className="bg-white/5">
                       <Upload className="h-4 w-4 mr-2" /> Upload Photo
                     </Button>
-                    <p className="text-xs text-gray-400 mt-1">JPG, PNG. Max 5MB</p>
+                    <p className="text-xs text-gray-400 mt-1">
+                      JPG, PNG. Max 5MB
+                    </p>
                   </div>
                 </div>
                 <div className="grid gap-4">
                   <div>
-                    <label className="text-sm text-gray-400 mb-1 block">Display Name</label>
-                    <Input defaultValue="whale.eth" className="bg-white/5 border-white/10" />
+                    <label className="text-sm text-gray-400 mb-1 block">
+                      Display Name
+                    </label>
+                    <Input
+                      defaultValue="whale.eth"
+                      className="bg-white/5 border-white/10"
+                    />
                   </div>
                   <div>
-                    <label className="text-sm text-gray-400 mb-1 block">Bio</label>
-                    <Input defaultValue="Full-time degen 🌊" className="bg-white/5 border-white/10" />
+                    <label className="text-sm text-gray-400 mb-1 block">
+                      Bio
+                    </label>
+                    <Input
+                      defaultValue="Full-time degen 🌊"
+                      className="bg-white/5 border-white/10"
+                    />
                   </div>
                   <div>
-                    <label className="text-sm text-gray-400 mb-1 block">Email</label>
-                    <Input defaultValue="whale@crypto.io" className="bg-white/5 border-white/10" />
+                    <label className="text-sm text-gray-400 mb-1 block">
+                      Email
+                    </label>
+                    <Input
+                      defaultValue="whale@crypto.io"
+                      className="bg-white/5 border-white/10"
+                    />
                   </div>
                 </div>
                 <Button className="bg-[#56C0F6]">Save Changes</Button>
@@ -783,21 +1009,31 @@ export const SettingsPage: StoryObj = {
                   <div className="flex items-center gap-3">
                     <Shield className="h-5 w-5 text-green-400" />
                     <div>
-                      <div className="font-medium">Two-Factor Authentication</div>
-                      <div className="text-sm text-gray-400">Add extra security to your account</div>
+                      <div className="font-medium">
+                        Two-Factor Authentication
+                      </div>
+                      <div className="text-sm text-gray-400">
+                        Add extra security to your account
+                      </div>
                     </div>
                   </div>
-                  <Badge className="bg-green-500/20 text-green-400">Enabled</Badge>
+                  <Badge className="bg-green-500/20 text-green-400">
+                    Enabled
+                  </Badge>
                 </div>
                 <div className="flex items-center justify-between p-4 rounded-lg bg-white/5">
                   <div className="flex items-center gap-3">
                     <Key className="h-5 w-5 text-yellow-400" />
                     <div>
                       <div className="font-medium">Hardware Wallet</div>
-                      <div className="text-sm text-gray-400">Connect a hardware wallet for signing</div>
+                      <div className="text-sm text-gray-400">
+                        Connect a hardware wallet for signing
+                      </div>
                     </div>
                   </div>
-                  <Button variant="outline" size="sm" className="bg-white/5">Connect</Button>
+                  <Button variant="outline" size="sm" className="bg-white/5">
+                    Connect
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -842,9 +1078,13 @@ export const LearnPage: StoryObj = {
             <div className="flex items-center justify-between mb-3">
               <div>
                 <h2 className="font-semibold">Your Learning Progress</h2>
-                <p className="text-sm text-gray-400">3 of 8 courses completed</p>
+                <p className="text-sm text-gray-400">
+                  3 of 8 courses completed
+                </p>
               </div>
-              <Badge className="bg-purple-500/30 text-purple-300">Level 5</Badge>
+              <Badge className="bg-purple-500/30 text-purple-300">
+                Level 5
+              </Badge>
             </div>
             <Progress value={37.5} className="h-2" />
           </CardContent>
@@ -852,7 +1092,14 @@ export const LearnPage: StoryObj = {
 
         {/* Course Categories */}
         <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-          {["All", "Beginner", "Trading", "DeFi", "NFTs", "Technical Analysis"].map((cat, i) => (
+          {[
+            "All",
+            "Beginner",
+            "Trading",
+            "DeFi",
+            "NFTs",
+            "Technical Analysis",
+          ].map((cat, i) => (
             <Button
               key={cat}
               variant={i === 0 ? "default" : "outline"}
@@ -867,18 +1114,65 @@ export const LearnPage: StoryObj = {
         {/* Courses Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { title: "Crypto Basics", lessons: 12, duration: "2h", level: "Beginner", progress: 100, icon: "📚" },
-            { title: "Trading Fundamentals", lessons: 15, duration: "3h", level: "Beginner", progress: 100, icon: "📈" },
-            { title: "Technical Analysis", lessons: 20, duration: "4h", level: "Intermediate", progress: 65, icon: "📊" },
-            { title: "DeFi Deep Dive", lessons: 18, duration: "3.5h", level: "Intermediate", progress: 0, icon: "🏦" },
-            { title: "Advanced Trading", lessons: 25, duration: "5h", level: "Advanced", progress: 0, icon: "🎯" },
-            { title: "Risk Management", lessons: 10, duration: "2h", level: "Intermediate", progress: 0, icon: "🛡️" },
+            {
+              title: "Crypto Basics",
+              lessons: 12,
+              duration: "2h",
+              level: "Beginner",
+              progress: 100,
+              icon: "📚",
+            },
+            {
+              title: "Trading Fundamentals",
+              lessons: 15,
+              duration: "3h",
+              level: "Beginner",
+              progress: 100,
+              icon: "📈",
+            },
+            {
+              title: "Technical Analysis",
+              lessons: 20,
+              duration: "4h",
+              level: "Intermediate",
+              progress: 65,
+              icon: "📊",
+            },
+            {
+              title: "DeFi Deep Dive",
+              lessons: 18,
+              duration: "3.5h",
+              level: "Intermediate",
+              progress: 0,
+              icon: "🏦",
+            },
+            {
+              title: "Advanced Trading",
+              lessons: 25,
+              duration: "5h",
+              level: "Advanced",
+              progress: 0,
+              icon: "🎯",
+            },
+            {
+              title: "Risk Management",
+              lessons: 10,
+              duration: "2h",
+              level: "Intermediate",
+              progress: 0,
+              icon: "🛡️",
+            },
           ].map((course) => (
-            <Card key={course.title} className="bg-white/5 border-white/10 hover:border-[#56C0F6]/50 transition-colors cursor-pointer">
+            <Card
+              key={course.title}
+              className="bg-white/5 border-white/10 hover:border-[#56C0F6]/50 transition-colors cursor-pointer"
+            >
               <CardContent className="p-4">
                 <div className="flex items-start justify-between mb-3">
                   <div className="text-3xl">{course.icon}</div>
-                  <Badge variant="outline" className="text-xs">{course.level}</Badge>
+                  <Badge variant="outline" className="text-xs">
+                    {course.level}
+                  </Badge>
                 </div>
                 <h3 className="font-semibold mb-1">{course.title}</h3>
                 <p className="text-sm text-gray-400 mb-3">
@@ -888,14 +1182,24 @@ export const LearnPage: StoryObj = {
                   <div>
                     <div className="flex justify-between text-xs mb-1">
                       <span className="text-gray-400">Progress</span>
-                      <span className={course.progress === 100 ? "text-green-400" : "text-[#56C0F6]"}>
+                      <span
+                        className={
+                          course.progress === 100
+                            ? "text-green-400"
+                            : "text-[#56C0F6]"
+                        }
+                      >
                         {course.progress}%
                       </span>
                     </div>
                     <Progress value={course.progress} className="h-1" />
                   </div>
                 ) : (
-                  <Button variant="outline" size="sm" className="w-full bg-white/5">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full bg-white/5"
+                  >
                     Start Course
                   </Button>
                 )}
@@ -950,30 +1254,80 @@ export const NotificationsPage: StoryObj = {
         <Card className="bg-white/5 border-white/10">
           <CardContent className="p-0">
             {[
-              { icon: TrendingUp, title: "Position Closed", desc: "Your ETH/USDC long was closed at +12.3%", time: "2m ago", unread: true, type: "success" },
-              { icon: Users, title: "New Follower", desc: "degen.eth started following you", time: "15m ago", unread: true, type: "social" },
-              { icon: Bell, title: "Price Alert", desc: "BTC crossed above $45,000", time: "1h ago", unread: false, type: "alert" },
-              { icon: Gift, title: "Reward Claimed", desc: "You earned 100 XP from trading", time: "3h ago", unread: false, type: "reward" },
-              { icon: MessageCircle, title: "New Message", desc: "You have 3 unread messages", time: "5h ago", unread: false, type: "social" },
-              { icon: Shield, title: "Security Alert", desc: "New login from Chrome on Windows", time: "1d ago", unread: false, type: "warning" },
+              {
+                icon: TrendingUp,
+                title: "Position Closed",
+                desc: "Your ETH/USDC long was closed at +12.3%",
+                time: "2m ago",
+                unread: true,
+                type: "success",
+              },
+              {
+                icon: Users,
+                title: "New Follower",
+                desc: "degen.eth started following you",
+                time: "15m ago",
+                unread: true,
+                type: "social",
+              },
+              {
+                icon: Bell,
+                title: "Price Alert",
+                desc: "BTC crossed above $45,000",
+                time: "1h ago",
+                unread: false,
+                type: "alert",
+              },
+              {
+                icon: Gift,
+                title: "Reward Claimed",
+                desc: "You earned 100 XP from trading",
+                time: "3h ago",
+                unread: false,
+                type: "reward",
+              },
+              {
+                icon: MessageCircle,
+                title: "New Message",
+                desc: "You have 3 unread messages",
+                time: "5h ago",
+                unread: false,
+                type: "social",
+              },
+              {
+                icon: Shield,
+                title: "Security Alert",
+                desc: "New login from Chrome on Windows",
+                time: "1d ago",
+                unread: false,
+                type: "warning",
+              },
             ].map((notif, i) => (
               <div
                 key={i}
                 className={`flex items-start gap-3 p-4 hover:bg-white/5 border-b border-white/5 ${notif.unread ? "bg-white/5" : ""}`}
               >
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
-                  notif.type === "success" ? "bg-green-500/20 text-green-400" :
-                  notif.type === "social" ? "bg-blue-500/20 text-blue-400" :
-                  notif.type === "alert" ? "bg-yellow-500/20 text-yellow-400" :
-                  notif.type === "reward" ? "bg-purple-500/20 text-purple-400" :
-                  "bg-red-500/20 text-red-400"
-                }`}>
+                <div
+                  className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
+                    notif.type === "success"
+                      ? "bg-green-500/20 text-green-400"
+                      : notif.type === "social"
+                        ? "bg-blue-500/20 text-blue-400"
+                        : notif.type === "alert"
+                          ? "bg-yellow-500/20 text-yellow-400"
+                          : notif.type === "reward"
+                            ? "bg-purple-500/20 text-purple-400"
+                            : "bg-red-500/20 text-red-400"
+                  }`}
+                >
                   <notif.icon className="h-5 w-5" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <span className="font-medium">{notif.title}</span>
-                    {notif.unread && <span className="w-2 h-2 bg-[#56C0F6] rounded-full" />}
+                    {notif.unread && (
+                      <span className="w-2 h-2 bg-[#56C0F6] rounded-full" />
+                    )}
                   </div>
                   <p className="text-sm text-gray-400 truncate">{notif.desc}</p>
                   <p className="text-xs text-gray-500 mt-1">{notif.time}</p>
@@ -1010,7 +1364,9 @@ export const HelpCenterPage: StoryObj = {
         {/* Hero */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">How can we help?</h1>
-          <p className="text-gray-400 mb-6">Search our knowledge base or browse categories</p>
+          <p className="text-gray-400 mb-6">
+            Search our knowledge base or browse categories
+          </p>
           <div className="relative max-w-lg mx-auto">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
@@ -1030,7 +1386,10 @@ export const HelpCenterPage: StoryObj = {
             { icon: DollarSign, title: "Fees & Payments", count: 10 },
             { icon: HelpCircle, title: "Account Issues", count: 8 },
           ].map((cat) => (
-            <Card key={cat.title} className="bg-white/5 border-white/10 hover:border-[#56C0F6]/50 transition-colors cursor-pointer">
+            <Card
+              key={cat.title}
+              className="bg-white/5 border-white/10 hover:border-[#56C0F6]/50 transition-colors cursor-pointer"
+            >
               <CardContent className="p-4 text-center">
                 <cat.icon className="h-8 w-8 mx-auto mb-2 text-[#56C0F6]" />
                 <h3 className="font-medium">{cat.title}</h3>
@@ -1053,7 +1412,11 @@ export const HelpCenterPage: StoryObj = {
               "Setting up 2FA security",
               "Using leverage on perpetuals",
             ].map((article, i) => (
-              <Button key={i} variant="ghost" className="w-full justify-between text-left h-auto py-3">
+              <Button
+                key={i}
+                variant="ghost"
+                className="w-full justify-between text-left h-auto py-3"
+              >
                 <div className="flex items-center gap-2">
                   <Book className="h-4 w-4 text-gray-400" />
                   <span>{article}</span>
@@ -1069,7 +1432,9 @@ export const HelpCenterPage: StoryObj = {
           <CardContent className="p-6 text-center">
             <MessageCircle className="h-10 w-10 mx-auto mb-3 text-[#56C0F6]" />
             <h3 className="text-lg font-semibold mb-1">Still need help?</h3>
-            <p className="text-gray-400 mb-4">Our support team is available 24/7</p>
+            <p className="text-gray-400 mb-4">
+              Our support team is available 24/7
+            </p>
             <Button className="bg-[#56C0F6]">
               <Mail className="h-4 w-4 mr-2" /> Contact Support
             </Button>
