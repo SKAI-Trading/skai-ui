@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { TagInput } from "../components/tag-input";
+import { TagInput } from "../components/forms/tag-input";
 
 describe("TagInput", () => {
   describe("Rendering", () => {

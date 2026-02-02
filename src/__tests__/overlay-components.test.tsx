@@ -8,8 +8,8 @@ import {
   DialogFooter,
   DialogTitle,
   DialogDescription,
-} from "../components/dialog";
-import { Popover, PopoverTrigger, PopoverContent } from "../components/popover";
+} from "../components/overlays/dialog";
+import { Popover, PopoverTrigger, PopoverContent } from "../components/overlays/popover";
 import {
   Sheet,
   SheetTrigger,
@@ -18,7 +18,7 @@ import {
   SheetFooter,
   SheetTitle,
   SheetDescription,
-} from "../components/sheet";
+} from "../components/overlays/sheet";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -29,7 +29,7 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-} from "../components/dropdown-menu";
+} from "../components/overlays/dropdown-menu";
 
 describe("Dialog", () => {
   it("should render trigger button", () => {
