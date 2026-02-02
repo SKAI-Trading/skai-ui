@@ -7,7 +7,7 @@ import {
   act,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { SearchInput } from "../components/search-input";
+import { SearchInput } from "../components/forms/search-input";
 
 describe("SearchInput", () => {
   beforeEach(() => {

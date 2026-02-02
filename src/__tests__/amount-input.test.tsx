@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { AmountInput } from "../components/amount-input";
+import { AmountInput } from "../components/trading/amount-input";
 
 describe("AmountInput", () => {
   it("renders with value", () => {

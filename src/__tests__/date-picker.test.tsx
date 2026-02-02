@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { DatePicker } from "../components/date-picker";
+import { DatePicker } from "../components/forms/date-picker";
 
 // Mock date-fns format
 vi.mock("date-fns", async () => {

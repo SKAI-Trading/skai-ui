@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ConfirmDialog } from "../components/confirm-dialog";
+import { ConfirmDialog } from "../components/overlays/confirm-dialog";
 
 describe("ConfirmDialog", () => {
   it("renders when open", () => {

@@ -4,7 +4,7 @@ import {
   ScrollingTicker,
   TickerItem,
   type ScrollingTickerItem,
-} from "../components/scrolling-ticker";
+} from "../components/utility/scrolling-ticker";
 
 // Mock ResizeObserver
 beforeAll(() => {

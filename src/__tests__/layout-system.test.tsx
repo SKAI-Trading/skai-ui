@@ -6,15 +6,15 @@ import {
   AppShellContent,
   LAYOUT_HEIGHTS,
   FULL_HEIGHT_CLASS,
-} from "../components/app-shell";
-import { AppHeader } from "../components/app-header";
-import { AppFooter, FooterLinkGroup } from "../components/app-footer";
+} from "../components/layout/app-shell";
+import { AppHeader } from "../components/layout/app-header";
+import { AppFooter, FooterLinkGroup } from "../components/layout/app-footer";
 import {
   MobileNav,
   MobileNavSpacer,
   type MobileNavItem,
-} from "../components/mobile-nav";
-import { DockBar, DockBarIcon, DockBarSpacer } from "../components/dock-bar";
+} from "../components/navigation/mobile-nav";
+import { DockBar, DockBarIcon, DockBarSpacer } from "../components/navigation/dock-bar";
 
 // =============================================================================
 // MOCK WINDOW.MATCHMEDIA

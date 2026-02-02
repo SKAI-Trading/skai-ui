@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { CopyButton } from "../components/copy-button";
+import { CopyButton } from "../components/utility/copy-button";
 
 // Mock clipboard API
 const mockClipboard = {

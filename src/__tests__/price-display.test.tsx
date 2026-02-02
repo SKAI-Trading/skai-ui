@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { PriceDisplay } from "../components/price-display";
+import { PriceDisplay } from "../components/trading/price-display";
 
 describe("PriceDisplay", () => {
   it("renders price with default currency symbol", () => {

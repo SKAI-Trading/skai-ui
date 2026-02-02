@@ -5,7 +5,7 @@ import {
   CurrencyInput,
   formatCurrency,
   parseFormattedValue,
-} from "../components/currency-input";
+} from "../components/forms/currency-input";
 
 describe("CurrencyInput", () => {
   describe("formatCurrency utility", () => {

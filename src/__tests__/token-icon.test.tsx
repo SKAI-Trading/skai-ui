@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { TokenIcon } from "../components/token-icon";
+import { TokenIcon } from "../components/trading/token-icon";
 
 describe("TokenIcon", () => {
   it("renders with known token symbol", () => {

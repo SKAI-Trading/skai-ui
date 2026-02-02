@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import {
   StatusIndicator,
   statusIndicatorVariants,
-} from "../components/status-indicator";
+} from "../components/trading/status-indicator";
 
 describe("StatusIndicator", () => {
   describe("Status Variants", () => {

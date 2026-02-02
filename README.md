@@ -55,60 +55,170 @@ Add the styles import to your app's entry point:
 import "@skai/ui/styles";
 ```
 
-## 🧩 Available Components
+## 🧩 Available Components (145+)
+
+### Core Components
+
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `Button` | Interactive button with variants | ✅ |
+| `SkaiButton` | SKAI-branded button with Figma tokens | ✅ |
+| `Card` | Container with header, content, footer | ✅ |
+| `Input` | Text/number input field | ✅ |
+| `Badge` | Status indicators and tags | ✅ |
+| `Label` | Form field label | ✅ |
+| `Textarea` | Multi-line text input | ✅ |
+
+### Form Controls
+
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `Checkbox` | Binary selection | ✅ |
+| `RadioGroup` | Single selection from options | ✅ |
+| `Select` | Dropdown selection | ✅ |
+| `Slider` | Range input | ✅ |
+| `Switch` | Toggle switch | ✅ |
+| `Toggle` | Toggleable button | ✅ |
+| `Form` | Form wrapper with validation | ✅ |
+| `NumberInput` | Numeric input with formatting | ✅ |
+| `PasswordInput` | Password input with visibility toggle | ✅ |
+| `SearchInput` | Search input with icon | ✅ |
+| `CurrencyInput` | Currency-formatted input | ✅ |
+| `TagInput` | Multi-tag input | ✅ |
+| `InputOTP` | One-time password input | ✅ |
 
 ### Layout & Containers
 
-| Component    | Description                            | Usage                        |
-| ------------ | -------------------------------------- | ---------------------------- |
-| `Card`       | Container with header, content, footer | Grouping related content     |
-| `Separator`  | Visual divider                         | Separating sections          |
-| `ScrollArea` | Custom scrollable container            | Long lists, overflow content |
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `Separator` | Visual divider | ✅ |
+| `ScrollArea` | Custom scrollable container | ✅ |
+| `Accordion` | Collapsible sections | ✅ |
+| `Collapsible` | Single collapsible section | ✅ |
+| `Sidebar` | Navigation sidebar | ✅ |
+| `Resizable` | Resizable panels | ✅ |
+| `Drawer` | Side drawer panel | ✅ |
+| `Stepper` | Step-by-step progress | ✅ |
 
-### Forms & Inputs
+### App Shell & Navigation
 
-| Component    | Description                      | Usage                      |
-| ------------ | -------------------------------- | -------------------------- |
-| `Button`     | Interactive button with variants | Actions, submissions       |
-| `Input`      | Text/number input field          | Data entry                 |
-| `Textarea`   | Multi-line text input            | Long-form content          |
-| `Label`      | Form field label                 | Input labeling             |
-| `Checkbox`   | Binary selection                 | Toggleable options         |
-| `RadioGroup` | Single selection from options    | Mutually exclusive choices |
-| `Select`     | Dropdown selection               | Choosing from list         |
-| `Slider`     | Range input                      | Numeric ranges             |
-| `Switch`     | Toggle switch                    | On/off settings            |
-| `Toggle`     | Toggleable button                | Binary state buttons       |
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `AppShell` | Application wrapper layout | ✅ |
+| `AppHeader` | Main application header | ✅ |
+| `AppFooter` | Application footer | ✅ |
+| `MobileNav` | Mobile navigation menu | ✅ |
+| `NavGroup` | Collapsible navigation group | ✅ |
+| `DockBar` | Dock-style navigation bar | ✅ |
+| `DockIcon` | Individual dock icon | ✅ |
+| `Tabs` | Tabbed interface | ✅ |
+| `Breadcrumb` | Breadcrumb navigation | ✅ |
+| `Pagination` | Page navigation | ✅ |
 
 ### Feedback & Status
 
-| Component     | Description          | Usage                   |
-| ------------- | -------------------- | ----------------------- |
-| `Alert`       | Important messages   | Warnings, errors, info  |
-| `AlertDialog` | Confirmation dialogs | Critical actions        |
-| `Badge`       | Status indicators    | Tags, labels, counts    |
-| `Progress`    | Progress indication  | Loading, completion     |
-| `Skeleton`    | Loading placeholder  | Content loading states  |
-| `Tooltip`     | Hover information    | Help text, explanations |
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `Alert` | Important messages | ✅ |
+| `AlertDialog` | Confirmation dialogs | ✅ |
+| `Progress` | Progress indication | ✅ |
+| `Skeleton` | Loading placeholder | ✅ |
+| `Tooltip` | Hover information | ✅ |
+| `Toast` / `Sonner` | Toast notifications | ✅ |
+| `Spinner` | Loading spinner | ✅ |
+| `EmptyState` | Empty content placeholder | ✅ |
+| `ErrorBoundary` | Error boundary wrapper | ✅ |
+| `Notification` | Notification component | ✅ |
 
 ### Overlays & Modals
 
-| Component      | Description          | Usage                    |
-| -------------- | -------------------- | ------------------------ |
-| `Dialog`       | Modal window         | Forms, confirmations     |
-| `Sheet`        | Slide-out panel      | Side panels, drawers     |
-| `DropdownMenu` | Action menu          | Context actions          |
-| `ContextMenu`  | Right-click menu     | Context-specific actions |
-| `Popover`      | Floating content     | Popovers, dropdowns      |
-| `HoverCard`    | Hover-triggered card | Preview content          |
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `Dialog` | Modal window | ✅ |
+| `Sheet` | Slide-out panel | ✅ |
+| `DropdownMenu` | Action menu | ✅ |
+| `ContextMenu` | Right-click menu | ✅ |
+| `Popover` | Floating content | ✅ |
+| `HoverCard` | Hover-triggered card | ✅ |
+| `Command` | Command palette | ✅ |
+| `ConfirmDialog` | Confirmation dialog | ✅ |
 
-### Navigation & Display
+### Data Display
 
-| Component | Description       | Usage                |
-| --------- | ----------------- | -------------------- |
-| `Tabs`    | Tabbed interface  | Content organization |
-| `Table`   | Data table        | Tabular data         |
-| `Avatar`  | User/token images | Profile pictures     |
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `Table` | Data table | ✅ |
+| `Avatar` | User/token images | ✅ |
+| `Calendar` | Date calendar | ✅ |
+| `Chart` | Charts (recharts) | ✅ |
+| `LazyChart` | Lazy-loaded chart | ✅ |
+| `PercentageBar` | Percentage visualization | ✅ |
+| `Countdown` | Countdown timer | ✅ |
+| `StatCard` | Statistics card | ✅ |
+| `QRCode` | QR code generator | ✅ |
+| `Carousel` | Image/content carousel | ✅ |
+| `Masonry` | Masonry grid layout | ✅ |
+| `Tour` | Product tour guide | ✅ |
+
+### Trading Components
+
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `TokenIcon` | Token/crypto icon | ✅ |
+| `TokenSelect` | Token selector dropdown | ✅ |
+| `PriceDisplay` | Price with formatting | ✅ |
+| `PriceChange` | Price change indicator | ✅ |
+| `BalanceDisplay` | Balance with formatting | ✅ |
+| `PnLDisplay` | Profit/Loss display | ✅ |
+| `OrderBook` | Order book visualization | ✅ |
+| `DepthChart` | Market depth chart | ✅ |
+| `CandlestickChart` | Candlestick chart | ✅ |
+| `SwapInput` | Token swap input | ✅ |
+| `AmountInput` | Amount input with max | ✅ |
+| `FeeDisplay` | Transaction fee display | ✅ |
+| `GasEstimate` | Gas estimation display | ✅ |
+| `LeverageSlider` | Leverage selection | ✅ |
+| `NetworkBadge` | Network indicator | ✅ |
+| `TransactionStatus` | Transaction state | ✅ |
+| `TradeSettings` | Trade settings panel | ✅ |
+| `StatusIndicator` | Status dot indicator | ✅ |
+| `RiskGauge` | Risk level gauge | ✅ |
+| `TierBadge` | User tier badge | ✅ |
+| `FundingRate` | Funding rate display | ✅ |
+| `LiquidationWarning` | Liquidation warning | ✅ |
+| `WalletAddress` | Wallet address display | ✅ |
+| `AccountMenu` | Account dropdown menu | ✅ |
+
+### Layout Systems
+
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `TradingLayout` | Full trading view layout | ✅ |
+| `DashboardLayout` | Dashboard with sidebar | ✅ |
+| `CenteredLayout` | Centered content layout | ✅ |
+| `PageLayouts` | Page layout templates | ✅ |
+
+### Utility Components
+
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `ThemeProvider` | Theme context provider | ✅ |
+| `CopyButton` | Copy to clipboard button | ✅ |
+| `LoadingButton` | Button with loading state | ✅ |
+| `OnlineIndicator` | Online/offline indicator | ✅ |
+| `DatePicker` | Date picker | ✅ |
+| `Autocomplete` | Autocomplete input | ✅ |
+| `TickerTape` | Scrolling ticker | ✅ |
+| `ScrollingTicker` | Scrolling content | ✅ |
+| `StatusBar` | Status bar display | ✅ |
+| `ParticleBackground` | Animated background | ✅ |
+
+### Branding
+
+| Component | Description | Status |
+| --------- | ----------- | ------ |
+| `SkaiLogo` | SKAI logo component | ✅ |
+| `SkaiIcon` | SKAI icon set | ✅ |
 
 ## 📖 Storybook
 

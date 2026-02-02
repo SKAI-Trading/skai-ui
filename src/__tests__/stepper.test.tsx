@@ -4,7 +4,7 @@ import {
   Stepper,
   StepperContent,
   type StepperStep,
-} from "../components/stepper";
+} from "../components/layout/stepper";
 
 const defaultSteps: StepperStep[] = [
   { id: "1", title: "Account" },

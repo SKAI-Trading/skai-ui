@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { StatCard } from "../components/stat-card";
+import { StatCard } from "../components/data-display/stat-card";
 import { DollarSign } from "lucide-react";
 import * as React from "react";
 

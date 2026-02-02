@@ -1,28 +1,28 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import * as React from "react";
-import { Spinner, LoadingOverlay } from "../components/spinner";
+import { Spinner, LoadingOverlay } from "../components/feedback/spinner";
 import {
   EmptyState,
   NoResults,
   NoData,
   OfflineState,
-} from "../components/empty-state";
+} from "../components/feedback/empty-state";
 import {
   ErrorBoundary,
   DefaultErrorFallback,
-} from "../components/error-boundary";
+} from "../components/feedback/error-boundary";
 import {
   PriceChange,
   PercentageChange,
   USDChange,
-} from "../components/price-change";
-import { PnLDisplay } from "../components/pnl-display";
-import { NetworkBadge, NETWORK_CONFIGS } from "../components/network-badge";
+} from "../components/trading/price-change";
+import { PnLDisplay } from "../components/trading/pnl-display";
+import { NetworkBadge, NETWORK_CONFIGS } from "../components/trading/network-badge";
 import {
   TransactionStatusBadge,
   TransactionProgress,
-} from "../components/transaction-status";
+} from "../components/trading/transaction-status";
 
 describe("Spinner", () => {
   it("should render with default props", () => {

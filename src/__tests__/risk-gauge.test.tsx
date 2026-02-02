@@ -5,7 +5,7 @@ import {
   calculateRiskLevel,
   riskColors,
   riskLabels,
-} from "../components/risk-gauge";
+} from "../components/trading/risk-gauge";
 
 describe("RiskGauge", () => {
   describe("Score Display", () => {

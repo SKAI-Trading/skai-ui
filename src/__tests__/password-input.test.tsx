@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { PasswordInput, calculateStrength } from "../components/password-input";
+import { PasswordInput, calculateStrength } from "../components/forms/password-input";
 
 describe("PasswordInput", () => {
   describe("Rendering", () => {

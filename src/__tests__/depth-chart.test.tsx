@@ -4,7 +4,7 @@ import {
   DepthChart,
   DepthPoint,
   calculateDepthFromOrderBook,
-} from "../components/depth-chart";
+} from "../components/trading/depth-chart";
 
 const createMockBids = (): DepthPoint[] => [
   { price: 50000, cumulative: 10, side: "bid" },

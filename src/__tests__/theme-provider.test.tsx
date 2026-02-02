@@ -4,7 +4,7 @@ import {
   ThemeProvider,
   useTheme,
   ThemeToggle,
-} from "../components/theme-provider";
+} from "../components/utility/theme-provider";
 import * as React from "react";
 
 // Mock matchMedia

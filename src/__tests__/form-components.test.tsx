@@ -10,11 +10,11 @@ import {
   SelectGroup,
   SelectLabel,
   SelectSeparator,
-} from "../components/select";
-import { Slider } from "../components/slider";
-import { RadioGroup, RadioGroupItem } from "../components/radio-group";
-import { Switch } from "../components/switch";
-import { Label } from "../components/label";
+} from "../components/forms/select";
+import { Slider } from "../components/forms/slider";
+import { RadioGroup, RadioGroupItem } from "../components/forms/radio-group";
+import { Switch } from "../components/forms/switch";
+import { Label } from "../components/core/label";
 
 // Mock scrollIntoView for Radix Select
 beforeAll(() => {

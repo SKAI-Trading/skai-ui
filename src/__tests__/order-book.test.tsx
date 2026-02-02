@@ -4,7 +4,7 @@ import {
   OrderBook,
   OrderBookData,
   OrderBookLevel,
-} from "../components/order-book";
+} from "../components/trading/order-book";
 
 const createMockLevel = (
   id: string,

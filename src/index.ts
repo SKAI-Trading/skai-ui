@@ -1,149 +1,47 @@
-// Components - Core
-export * from "./components/button";
-export * from "./components/card";
-export * from "./components/input";
-export * from "./components/badge";
-export * from "./components/label";
-export * from "./components/textarea";
-export * from "./components/skai-icon";
-export * from "./components/skai-logo";
+// =============================================================================
+// SKAI UI COMPONENT LIBRARY
+// =============================================================================
+// A comprehensive, production-ready UI component library for SKAI Trading
+// applications built with React, TypeScript, Radix UI, and Tailwind CSS.
+// =============================================================================
 
-// Components - Feedback
-export * from "./components/alert";
-export * from "./components/alert-dialog";
-export * from "./components/progress";
-export * from "./components/skeleton";
-export * from "./components/tooltip";
-export * from "./components/toast";
-export * from "./components/toaster";
-export * from "./components/spinner";
-export * from "./components/empty-state";
-export * from "./components/error-boundary";
-export * from "./components/notification";
+// =============================================================================
+// COMPONENTS - Organized by Category
+// =============================================================================
 
-// Components - Forms
-export * from "./components/checkbox";
-export * from "./components/radio-group";
-export * from "./components/select";
-export * from "./components/slider";
-export * from "./components/switch";
-export * from "./components/toggle";
-export * from "./components/form";
-export * from "./components/input-otp";
-export * from "./components/number-input";
-export * from "./components/password-input";
-export * from "./components/search-input";
-export * from "./components/currency-input";
-export * from "./components/tag-input";
+// Core Components (Button, Card, Input, Badge, Label, Textarea)
+export * from "./components/core";
 
-// Components - Layout
-export * from "./components/separator";
-export * from "./components/scroll-area";
-export * from "./components/accordion";
-export * from "./components/collapsible";
-export * from "./components/sidebar";
-export * from "./components/resizable";
-export * from "./components/drawer";
-export * from "./components/stepper";
-export * from "./components/scrolling-ticker";
+// Form Components (Checkbox, Select, Slider, Switch, etc.)
+export * from "./components/forms";
 
-// Components - App Shell (Layout System)
-export * from "./components/app-shell";
-export * from "./components/app-header";
-export * from "./components/app-footer";
-export * from "./components/mobile-nav";
-export * from "./components/dock-bar";
-export * from "./components/nav-group";
-export * from "./components/status-bar";
-export * from "./components/ticker-tape";
-export * from "./components/account-menu";
-export * from "./components/balance-display";
+// Layout Components (Separator, ScrollArea, Accordion, Sidebar, etc.)
+export * from "./components/layout";
 
-// Components - Page Layouts (Standard page templates)
-export * from "./components/page-layouts";
+// Navigation Components (Tabs, Breadcrumb, Pagination, etc.)
+export * from "./components/navigation";
 
-// Components - Layout Variants (Full-page layouts)
-export * from "./components/trading-layout";
-export * from "./components/dashboard-layout";
-export * from "./components/centered-layout";
+// Feedback Components (Alert, Progress, Skeleton, Toast, etc.)
+export * from "./components/feedback";
 
-// Components - Overlay
-export * from "./components/dialog";
-export * from "./components/dropdown-menu";
-export * from "./components/popover";
-export * from "./components/sheet";
-export * from "./components/hover-card";
-export * from "./components/context-menu";
-export * from "./components/command";
+// Overlay Components (Dialog, Sheet, Dropdown, Popover, etc.)
+export * from "./components/overlays";
 
-// Components - Navigation
-export * from "./components/tabs";
-export * from "./components/breadcrumb";
-export * from "./components/pagination";
+// Data Display Components (Table, Avatar, Calendar, Chart, etc.)
+export * from "./components/data-display";
 
-// Components - Data Display
-export * from "./components/avatar";
-export * from "./components/table";
-export * from "./components/calendar";
-export * from "./components/chart";
-export * from "./components/percentage-bar";
-export * from "./components/countdown";
+// Trading Components (TokenIcon, PriceDisplay, OrderBook, etc.)
+export * from "./components/trading";
 
-// Components - Trading (SKAI-specific)
-export * from "./components/token-icon";
-export * from "./components/price-display";
-export * from "./components/loading-button";
-export * from "./components/copy-button";
-export * from "./components/wallet-address";
-export * from "./components/amount-input";
-export * from "./components/fee-display";
-export * from "./components/online-indicator";
-export * from "./components/price-change";
-export * from "./components/pnl-display";
-export * from "./components/leverage-slider";
-export * from "./components/network-badge";
-export * from "./components/transaction-status";
-export * from "./components/trade-settings";
-export * from "./components/gas-estimate";
-export * from "./components/status-indicator";
-export * from "./components/risk-gauge";
-export * from "./components/tier-badge";
+// Utility Components (ThemeProvider, CopyButton, etc.)
+export * from "./components/utility";
 
-// Components - Composites
-export * from "./components/stat-card";
-export * from "./components/confirm-dialog";
-export * from "./components/token-select";
-export * from "./components/swap-input";
-export * from "./components/autocomplete";
-export * from "./components/date-picker";
+// Branding Components (SkaiLogo, SkaiIcon)
+export * from "./components/branding";
 
-// Components - Trading Advanced
-export * from "./components/order-book";
-export * from "./components/depth-chart";
-export * from "./components/candlestick-chart";
-export * from "./components/funding-rate";
-export * from "./components/liquidation-warning";
-
-// Components - Performance (Lazy-loaded)
-export * from "./components/lazy-chart";
-
-// Components - Decorative
-export * from "./components/dock-icon";
-export * from "./components/particle-background";
-
-// Components - Layout Extended
-export * from "./components/carousel";
-export * from "./components/masonry";
-
-// Components - Feedback Extended
-export * from "./components/sonner";
-export * from "./components/tour";
-
-// Components - Data Display Extended
-export * from "./components/qr-code";
-
-// Components - Theme
-export * from "./components/theme-provider";
+// =============================================================================
+// HOOKS
+// =============================================================================
 
 // Hooks - Toast
 export * from "./hooks/use-toast";
@@ -159,6 +57,10 @@ export * from "./hooks/use-keyboard-shortcut";
 export * from "./hooks/use-intersection-observer";
 export * from "./hooks/use-window-size";
 export * from "./hooks/use-previous";
+
+// =============================================================================
+// UTILITIES & LIBRARIES
+// =============================================================================
 
 // Utilities
 export { cn } from "./lib/utils";
@@ -194,6 +96,10 @@ export type { Theme, ThemeColors, ThemeTypography } from "./lib/theme-config";
 
 // CSS Custom Property Fallbacks (for older browser support)
 export * from "./lib/css-fallbacks";
+
+// =============================================================================
+// DESIGN TOKENS
+// =============================================================================
 
 // Design Tokens - SKAI color palette, typography, spacing, and components
 export {
@@ -299,5 +205,8 @@ export type {
   SkaiZIndexLevel,
 } from "./lib/tailwind-preset";
 
-// Styles - import this in your app's main CSS
+// =============================================================================
+// STYLES
+// =============================================================================
+// Import this in your app's main CSS:
 // import '@skai/ui/dist/styles.css';
