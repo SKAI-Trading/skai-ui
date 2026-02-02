@@ -3,9 +3,9 @@ import {
   ThemeProvider,
   ThemeToggle,
   useTheme,
-} from "../components/theme-provider";
-import { Button } from "../components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
+} from "../components/utility/theme-provider";
+import { Button } from "../components/core/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
 
 const meta: Meta<typeof ThemeToggle> = {
   title: "Theme/ThemeToggle",

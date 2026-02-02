@@ -9,8 +9,8 @@ import {
   ChevronDown,
   ChevronRight,
 } from "lucide-react";
-import { Card } from "../components/card";
-import { Badge } from "../components/badge";
+import { Card } from "../components/core/card";
+import { Badge } from "../components/core/badge";
 
 /**
  * # Component Changelog

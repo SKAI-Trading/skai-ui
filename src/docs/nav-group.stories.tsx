@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NavGroup } from "../components/nav-group";
+import { NavGroup } from "../components/navigation/nav-group";
 import {
   Home,
   LineChart,

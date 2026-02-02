@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { LeverageSlider } from "../components/leverage-slider";
+import { LeverageSlider } from "../components/trading/leverage-slider";
 
 const meta: Meta<typeof LeverageSlider> = {
   title: "Trading/LeverageSlider",

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../components/button";
-import { Card } from "../components/card";
-import { Badge } from "../components/badge";
-import { Input } from "../components/input";
-import { Checkbox } from "../components/checkbox";
-import { Label } from "../components/label";
+import { Button } from "../components/core/button";
+import { Card } from "../components/core/card";
+import { Badge } from "../components/core/badge";
+import { Input } from "../components/core/input";
+import { Checkbox } from "../components/forms/checkbox";
+import { Label } from "../components/core/label";
 
 /**
  * # Design System Dashboard

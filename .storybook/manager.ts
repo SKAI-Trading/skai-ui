@@ -68,3 +68,6 @@ addons.setConfig({
     fullscreen: { hidden: false },
   },
 });
+
+// Set the page title
+document.title = "SKAI Design System";

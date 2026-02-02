@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import {
   ErrorBoundary,
   DefaultErrorFallback,
-} from "../components/error-boundary";
-import { Button } from "../components/button";
+} from "../components/feedback/error-boundary";
+import { Button } from "../components/core/button";
 import { useState } from "react";
 
 const meta: Meta<typeof ErrorBoundary> = {

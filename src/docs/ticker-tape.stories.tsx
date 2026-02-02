@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TickerTape } from "../components/ticker-tape";
+import { TickerTape } from "../components/utility/ticker-tape";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 
 const meta: Meta<typeof TickerTape> = {

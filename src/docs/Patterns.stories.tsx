@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Input } from "../components/input";
-import { Badge } from "../components/badge";
-import { Separator } from "../components/separator";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/avatar";
+import { Button } from "../components/core/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Input } from "../components/core/input";
+import { Badge } from "../components/core/badge";
+import { Separator } from "../components/layout/separator";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/data-display/avatar";
 import {
   ArrowDown,
   ArrowUpDown,

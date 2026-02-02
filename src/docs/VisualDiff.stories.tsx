@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { ArrowLeftRight, Check, X, Eye, EyeOff } from "lucide-react";
-import { Card } from "../components/card";
-import { Button } from "../components/button";
-import { Badge } from "../components/badge";
+import { Card } from "../components/core/card";
+import { Button } from "../components/core/button";
+import { Badge } from "../components/core/badge";
 
 /**
  * # Visual Diff Tool

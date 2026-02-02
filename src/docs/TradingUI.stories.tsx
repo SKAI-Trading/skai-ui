@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Button } from "../components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Input } from "../components/input";
-import { Badge } from "../components/badge";
-import { Progress } from "../components/progress";
-import { Separator } from "../components/separator";
-import { Avatar, AvatarFallback } from "../components/avatar";
-import { Tabs, TabsList, TabsTrigger } from "../components/tabs";
+import { Button } from "../components/core/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Input } from "../components/core/input";
+import { Badge } from "../components/core/badge";
+import { Progress } from "../components/feedback/progress";
+import { Separator } from "../components/layout/separator";
+import { Avatar, AvatarFallback } from "../components/data-display/avatar";
+import { Tabs, TabsList, TabsTrigger } from "../components/navigation/tabs";
 import {
   ArrowDown,
   ArrowUp,

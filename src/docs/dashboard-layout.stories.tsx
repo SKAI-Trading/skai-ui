@@ -3,7 +3,7 @@ import {
   DashboardLayout,
   DashboardSidebar,
   DashboardContent,
-} from "../components/dashboard-layout";
+} from "../components/layout/dashboard-layout";
 import {
   Home,
   BarChart3,

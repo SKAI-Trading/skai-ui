@@ -18,8 +18,8 @@ import {
   ThumbsUp,
   X,
 } from "lucide-react";
-import { Card } from "../components/card";
-import { Button } from "../components/button";
+import { Card } from "../components/core/card";
+import { Button } from "../components/core/button";
 
 /**
  * # Component Request Queue

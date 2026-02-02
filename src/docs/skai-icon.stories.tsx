@@ -3,7 +3,7 @@ import {
   SkaiIcon,
   type SkaiIconName,
   type SkaiIconSize,
-} from "../components/skai-icon";
+} from "../components/branding/skai-icon";
 
 /**
  * SKAI Icon System

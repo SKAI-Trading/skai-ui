@@ -5,11 +5,11 @@
  */
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Alert, AlertDescription, AlertTitle } from "../components/alert";
-import { Button } from "../components/button";
-import { Badge } from "../components/badge";
-import { SkaiIcon } from "../components/skai-icon";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Alert, AlertDescription, AlertTitle } from "../components/feedback/alert";
+import { Button } from "../components/core/button";
+import { Badge } from "../components/core/badge";
+import { SkaiIcon } from "../components/branding/skai-icon";
 import { useState } from "react";
 
 const meta: Meta = {

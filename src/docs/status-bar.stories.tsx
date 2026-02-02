@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StatusBar } from "../components/status-bar";
+import { StatusBar } from "../components/utility/status-bar";
 import { Wallet, Zap, Trophy, Clock, Flame } from "lucide-react";
 
 const meta: Meta<typeof StatusBar> = {

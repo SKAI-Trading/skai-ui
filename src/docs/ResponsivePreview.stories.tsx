@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState, type ReactNode } from "react";
-import { Button } from "../components/button";
-import { Card } from "../components/card";
+import { Button } from "../components/core/button";
+import { Card } from "../components/core/card";
 
 /**
  * # Responsive Preview System

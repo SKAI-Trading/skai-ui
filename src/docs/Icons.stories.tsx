@@ -71,7 +71,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { Input } from "../components/input";
+import { Input } from "../components/core/input";
 
 const meta: Meta = {
   title: "Design Tokens/Icons",
@@ -390,7 +390,7 @@ export const TradingIcons: StoryObj = {
 // =============================================================================
 // SKAI CUSTOM ICONS
 // =============================================================================
-import { SkaiIcon, SkaiIconName } from "../components/skai-icon";
+import { SkaiIcon, SkaiIconName } from "../components/branding/skai-icon";
 
 const skaiIconCategories: Record<string, SkaiIconName[]> = {
   Navigation: [

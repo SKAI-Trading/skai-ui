@@ -12,7 +12,7 @@ import {
   Hide,
   Show,
 } from "../lib/layout";
-import { Card, CardContent } from "../components/card";
+import { Card, CardContent } from "../components/core/card";
 
 const meta: Meta = {
   title: "Layout/Primitives",

@@ -6,12 +6,12 @@
  */
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Skeleton } from "../components/skeleton";
-import { Spinner, LoadingOverlay } from "../components/spinner";
-import { Button } from "../components/button";
-import { Badge } from "../components/badge";
-import { Progress } from "../components/progress";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Skeleton } from "../components/feedback/skeleton";
+import { Spinner, LoadingOverlay } from "../components/feedback/spinner";
+import { Button } from "../components/core/button";
+import { Badge } from "../components/core/badge";
+import { Progress } from "../components/feedback/progress";
 import { useState, useEffect } from "react";
 
 const meta: Meta = {

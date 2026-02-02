@@ -10,9 +10,9 @@ import {
   Download,
   Layers,
 } from "lucide-react";
-import { Card } from "../components/card";
-import { Button } from "../components/button";
-import { Badge } from "../components/badge";
+import { Card } from "../components/core/card";
+import { Button } from "../components/core/button";
+import { Badge } from "../components/core/badge";
 
 /**
  * # Analytics Dashboard

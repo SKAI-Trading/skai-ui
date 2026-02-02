@@ -6,8 +6,8 @@ import {
   CarouselPrevious,
   CarouselNext,
   CarouselDots,
-} from "../components/carousel";
-import { Card, CardContent } from "../components/card";
+} from "../components/data-display/carousel";
+import { Card, CardContent } from "../components/core/card";
 
 const meta: Meta<typeof Carousel> = {
   title: "Layout Extended/Carousel",

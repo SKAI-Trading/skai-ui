@@ -3,7 +3,7 @@ import {
   NetworkBadge,
   MultiChainBadge,
   NETWORK_CONFIGS,
-} from "../components/network-badge";
+} from "../components/trading/network-badge";
 
 const meta: Meta<typeof NetworkBadge> = {
   title: "Trading/NetworkBadge",

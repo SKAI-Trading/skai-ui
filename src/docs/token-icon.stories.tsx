@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TokenIcon } from "../components/token-icon";
+import { TokenIcon } from "../components/trading/token-icon";
 
 const meta: Meta<typeof TokenIcon> = {
   title: "Trading/TokenIcon",

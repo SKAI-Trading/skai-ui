@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SkaiLogo } from "../components/skai-logo";
+import { SkaiLogo } from "../components/branding/skai-logo";
 
 /**
  * SKAI Logo

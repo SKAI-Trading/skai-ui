@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { Copy, Check, Code2, Eye, Sliders, RotateCcw } from "lucide-react";
-import { Button } from "../components/button";
-import { Card } from "../components/card";
-import { Badge } from "../components/badge";
-import { Input } from "../components/input";
+import { Button } from "../components/core/button";
+import { Card } from "../components/core/card";
+import { Badge } from "../components/core/badge";
+import { Input } from "../components/core/input";
 
 /**
  * # Component Playground

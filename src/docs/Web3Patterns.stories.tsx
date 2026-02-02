@@ -6,10 +6,10 @@
  */
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Badge } from "../components/badge";
-import { Button } from "../components/button";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Badge } from "../components/core/badge";
+import { Button } from "../components/core/button";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/data-display/avatar";
 import {
   Wallet,
   Check,

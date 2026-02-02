@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AmountInput } from "../components/amount-input";
+import { AmountInput } from "../components/trading/amount-input";
 import * as React from "react";
 
 const meta: Meta<typeof AmountInput> = {

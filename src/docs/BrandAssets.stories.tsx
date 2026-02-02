@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Button } from "../components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Badge } from "../components/badge";
+import { Button } from "../components/core/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Badge } from "../components/core/badge";
 import { Download, Copy, Check } from "lucide-react";
 
 const meta: Meta = {

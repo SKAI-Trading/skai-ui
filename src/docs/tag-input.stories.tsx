@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TagInput } from "../components/tag-input";
+import { TagInput } from "../components/forms/tag-input";
 import { useState } from "react";
 
 const meta: Meta<typeof TagInput> = {

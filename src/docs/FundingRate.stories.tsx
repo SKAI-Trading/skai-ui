@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import {
   FundingRateDisplay,
   FundingRateBadge,
-} from "../components/funding-rate";
+} from "../components/trading/funding-rate";
 
 const meta: Meta<typeof FundingRateDisplay> = {
   title: "Trading/FundingRateDisplay",

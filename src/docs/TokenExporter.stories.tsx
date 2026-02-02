@@ -8,8 +8,8 @@ import {
   FileCode,
   Palette,
 } from "lucide-react";
-import { Card } from "../components/card";
-import { Button } from "../components/button";
+import { Card } from "../components/core/card";
+import { Button } from "../components/core/button";
 
 /**
  * # Design Token Exports

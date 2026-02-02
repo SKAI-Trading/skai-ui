@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { OnlineIndicator } from "../components/online-indicator";
+import { OnlineIndicator } from "../components/utility/online-indicator";
 
 const meta: Meta<typeof OnlineIndicator> = {
   title: "Display/OnlineIndicator",

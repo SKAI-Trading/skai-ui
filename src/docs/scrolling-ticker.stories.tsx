@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import {
   ScrollingTicker,
   type ScrollingTickerItem,
-} from "../components/scrolling-ticker";
+} from "../components/utility/scrolling-ticker";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
 const meta: Meta<typeof ScrollingTicker> = {

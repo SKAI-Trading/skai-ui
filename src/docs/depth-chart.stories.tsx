@@ -3,7 +3,7 @@ import {
   DepthChart,
   DepthPoint,
   calculateDepthFromOrderBook,
-} from "../components/depth-chart";
+} from "../components/trading/depth-chart";
 import { useState, useEffect } from "react";
 
 const meta: Meta<typeof DepthChart> = {

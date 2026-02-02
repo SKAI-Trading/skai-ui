@@ -3,7 +3,7 @@ import {
   OrderBook,
   OrderBookData,
   OrderBookLevel,
-} from "../components/order-book";
+} from "../components/trading/order-book";
 import { useState } from "react";
 
 const meta: Meta<typeof OrderBook> = {

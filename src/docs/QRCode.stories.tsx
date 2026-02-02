@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { QRCode, WalletQRCode } from "../components/qr-code";
+import { QRCode, WalletQRCode } from "../components/data-display/qr-code";
 
 const meta: Meta<typeof QRCode> = {
   title: "Data Display Extended/QRCode",

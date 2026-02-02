@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Stepper, StepperContent } from "../components/stepper";
+import { Stepper, StepperContent } from "../components/layout/stepper";
 import { useState } from "react";
 import { Wallet, Coins, CheckCircle } from "lucide-react";
 

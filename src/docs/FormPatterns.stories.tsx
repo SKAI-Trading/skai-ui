@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Button } from "../components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Input } from "../components/input";
-import { Label } from "../components/label";
-import { Checkbox } from "../components/checkbox";
-import { Progress } from "../components/progress";
+import { Button } from "../components/core/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Input } from "../components/core/input";
+import { Label } from "../components/core/label";
+import { Checkbox } from "../components/forms/checkbox";
+import { Progress } from "../components/feedback/progress";
 import {
   AlertCircle,
   Check,

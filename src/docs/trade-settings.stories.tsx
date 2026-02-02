@@ -3,8 +3,8 @@ import { useState } from "react";
 import {
   SlippageSelector,
   DeadlineSelector,
-} from "../components/trade-settings";
-import { Card } from "../components/card";
+} from "../components/trading/trade-settings";
+import { Card } from "../components/core/card";
 
 const meta: Meta<typeof SlippageSelector> = {
   title: "Trading/TradeSettings",

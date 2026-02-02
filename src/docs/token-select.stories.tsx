@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TokenSelect, type Token } from "../components/token-select";
+import { TokenSelect, type Token } from "../components/trading/token-select";
 import * as React from "react";
 
 const sampleTokens: Token[] = [
