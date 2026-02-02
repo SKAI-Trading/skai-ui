@@ -78,21 +78,16 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
   className,
 }) => {
   return (
-    <div
-      className={cn(
-        "w-full max-w-[480px] mx-auto",
-        className
-      )}
-    >
+    <div className={cn("mx-auto w-full max-w-[480px]", className)}>
       {/* Card Container */}
       <div className="rounded-[24px] border border-[#123F3C] bg-[#122524] p-6 shadow-[0px_8px_24px_rgba(0,0,0,0.16)]">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="font-['Manrope'] text-xl font-semibold text-white tracking-[-0.04em]">
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="font-['Manrope'] text-xl font-semibold tracking-[-0.04em] text-white">
             Swap
           </h2>
           <button
-            className="p-2 rounded-lg hover:bg-white/5 transition-colors"
+            className="rounded-lg p-2 transition-colors hover:bg-white/5"
             aria-label="Settings"
           >
             <svg
@@ -111,12 +106,12 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
         </div>
 
         {/* From Input */}
-        <div className="rounded-[16px] border border-transparent bg-[#001615] p-5 mb-2">
-          <div className="flex items-center justify-between mb-2">
-            <span className="font-['Manrope'] text-sm text-white tracking-[-0.04em]">
+        <div className="mb-2 rounded-[16px] border border-transparent bg-[#001615] p-5">
+          <div className="mb-2 flex items-center justify-between">
+            <span className="font-['Manrope'] text-sm tracking-[-0.04em] text-white">
               From
             </span>
-            <span className="font-['Manrope'] text-sm text-[#95A09F] tracking-[-0.04em]">
+            <span className="font-['Manrope'] text-sm tracking-[-0.04em] text-[#95A09F]">
               Balance: {fromToken.balance}
             </span>
           </div>
@@ -126,14 +121,14 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
               value={fromAmount}
               onChange={(e) => onFromAmountChange?.(e.target.value)}
               placeholder="0.00"
-              className="flex-1 bg-transparent text-2xl font-['Mulish'] font-bold text-white placeholder:text-white/40 outline-none"
+              className="flex-1 bg-transparent font-['Mulish'] text-2xl font-bold text-white outline-none placeholder:text-white/40"
               style={{ fontVariantNumeric: "tabular-nums" }}
             />
             <button
               onClick={onFromTokenSelect}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#123F3C] hover:bg-[#123F3C]/80 transition-colors"
+              className="flex items-center gap-2 rounded-xl bg-[#123F3C] px-3 py-2 transition-colors hover:bg-[#123F3C]/80"
             >
-              <div className="w-6 h-6 rounded-full bg-[#56C7F3] flex items-center justify-center text-xs font-bold text-[#001615]">
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#56C7F3] text-xs font-bold text-[#001615]">
                 {fromToken.symbol.charAt(0)}
               </div>
               <span className="font-['Manrope'] text-sm font-medium text-white">
@@ -155,10 +150,10 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
         </div>
 
         {/* Switch Button */}
-        <div className="flex justify-center -my-3 relative z-10">
+        <div className="relative z-10 -my-3 flex justify-center">
           <button
             onClick={onSwitchTokens}
-            className="w-10 h-10 rounded-xl bg-[#122524] border border-[#123F3C] flex items-center justify-center hover:bg-[#123F3C] transition-colors"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#123F3C] bg-[#122524] transition-colors hover:bg-[#123F3C]"
             aria-label="Switch tokens"
           >
             <svg
@@ -170,11 +165,7 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
               strokeWidth="1.5"
               className="text-[#17F9B4]"
             >
-              <path
-                d="M7 10L3 6L7 2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M7 10L3 6L7 2" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M21 6H3" strokeLinecap="round" />
               <path
                 d="M17 14L21 18L17 22"
@@ -187,12 +178,12 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
         </div>
 
         {/* To Input */}
-        <div className="rounded-[16px] border border-transparent bg-[#001615] p-5 mb-6">
-          <div className="flex items-center justify-between mb-2">
-            <span className="font-['Manrope'] text-sm text-white tracking-[-0.04em]">
+        <div className="mb-6 rounded-[16px] border border-transparent bg-[#001615] p-5">
+          <div className="mb-2 flex items-center justify-between">
+            <span className="font-['Manrope'] text-sm tracking-[-0.04em] text-white">
               To
             </span>
-            <span className="font-['Manrope'] text-sm text-[#95A09F] tracking-[-0.04em]">
+            <span className="font-['Manrope'] text-sm tracking-[-0.04em] text-[#95A09F]">
               Balance: {toToken.balance}
             </span>
           </div>
@@ -202,14 +193,14 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
               value={toAmount}
               onChange={(e) => onToAmountChange?.(e.target.value)}
               placeholder="0.00"
-              className="flex-1 bg-transparent text-2xl font-['Mulish'] font-bold text-white placeholder:text-white/40 outline-none"
+              className="flex-1 bg-transparent font-['Mulish'] text-2xl font-bold text-white outline-none placeholder:text-white/40"
               style={{ fontVariantNumeric: "tabular-nums" }}
             />
             <button
               onClick={onToTokenSelect}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#123F3C] hover:bg-[#123F3C]/80 transition-colors"
+              className="flex items-center gap-2 rounded-xl bg-[#123F3C] px-3 py-2 transition-colors hover:bg-[#123F3C]/80"
             >
-              <div className="w-6 h-6 rounded-full bg-[#17F9B4] flex items-center justify-center text-xs font-bold text-[#001615]">
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#17F9B4] text-xs font-bold text-[#001615]">
                 {toToken.symbol.charAt(0)}
               </div>
               <span className="font-['Manrope'] text-sm font-medium text-white">
@@ -231,28 +222,37 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
         </div>
 
         {/* Details */}
-        <div className="space-y-3 mb-6">
+        <div className="mb-6 space-y-3">
           <div className="flex items-center justify-between">
-            <span className="font-['Manrope'] text-sm text-[#95A09F] tracking-[-0.04em]">
+            <span className="font-['Manrope'] text-sm tracking-[-0.04em] text-[#95A09F]">
               Rate
             </span>
-            <span className="font-['Mulish'] text-sm text-white" style={{ fontVariantNumeric: "tabular-nums" }}>
+            <span
+              className="font-['Mulish'] text-sm text-white"
+              style={{ fontVariantNumeric: "tabular-nums" }}
+            >
               {exchangeRate}
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="font-['Manrope'] text-sm text-[#95A09F] tracking-[-0.04em]">
+            <span className="font-['Manrope'] text-sm tracking-[-0.04em] text-[#95A09F]">
               Estimated Gas
             </span>
-            <span className="font-['Mulish'] text-sm text-white" style={{ fontVariantNumeric: "tabular-nums" }}>
+            <span
+              className="font-['Mulish'] text-sm text-white"
+              style={{ fontVariantNumeric: "tabular-nums" }}
+            >
               {gasEstimate}
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="font-['Manrope'] text-sm text-[#95A09F] tracking-[-0.04em]">
+            <span className="font-['Manrope'] text-sm tracking-[-0.04em] text-[#95A09F]">
               Slippage
             </span>
-            <span className="font-['Mulish'] text-sm text-white" style={{ fontVariantNumeric: "tabular-nums" }}>
+            <span
+              className="font-['Mulish'] text-sm text-white"
+              style={{ fontVariantNumeric: "tabular-nums" }}
+            >
               {slippage}%
             </span>
           </div>
@@ -263,19 +263,15 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
           onClick={onSwap}
           disabled={isLoading}
           className={cn(
-            "w-full h-16 px-10 py-5 text-base font-['Manrope'] font-normal tracking-[-0.04em] rounded-[16px] transition-all duration-200",
+            "h-16 w-full rounded-[16px] px-10 py-5 font-['Manrope'] text-base font-normal tracking-[-0.04em] transition-all duration-200",
             "bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4]",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17F9B4] focus-visible:ring-offset-2 focus-visible:ring-offset-[#122524]",
-            "disabled:opacity-50 disabled:pointer-events-none"
+            "disabled:pointer-events-none disabled:opacity-50"
           )}
         >
           {isLoading ? (
             <span className="flex items-center justify-center gap-2">
-              <svg
-                className="animate-spin h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
+              <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none">
                 <circle
                   className="opacity-25"
                   cx="12"
