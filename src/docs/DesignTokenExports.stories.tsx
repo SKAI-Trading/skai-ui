@@ -81,8 +81,12 @@ const colorTokens = {
 
 const typographyTokens = {
   fontFamily: {
-    sans: "'Poppins', system-ui, sans-serif",
-    mono: "'JetBrains Mono', monospace",
+    heading: "'Cormorant Garamond', Georgia, serif",
+    subheading: "'Manrope', system-ui, sans-serif", 
+    body: "'Mulish', system-ui, sans-serif",
+    mono: "'JetBrains Mono', Menlo, monospace",
+    display: "'Cormorant Garamond', Georgia, serif",
+    sans: "'Manrope', system-ui, sans-serif",
   },
   fontSize: {
     xs: "0.75rem",
@@ -177,8 +181,12 @@ const generateCSSExport = () => {
   --color-foreground: ${colorTokens.ui.foreground};
   
   /* Typography */
-  --font-sans: ${typographyTokens.fontFamily.sans};
+  --font-heading: ${typographyTokens.fontFamily.heading};
+  --font-subheading: ${typographyTokens.fontFamily.subheading};
+  --font-body: ${typographyTokens.fontFamily.body};
   --font-mono: ${typographyTokens.fontFamily.mono};
+  --font-display: ${typographyTokens.fontFamily.display};
+  --font-sans: ${typographyTokens.fontFamily.sans};
   
   /* Font Sizes */
   --text-xs: ${typographyTokens.fontSize.xs};
@@ -237,8 +245,12 @@ export default {
         info: "${colorTokens.semantic.info}",
       },
       fontFamily: {
-        sans: ["Poppins", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        heading: ["Cormorant Garamond", "Georgia", "serif"],
+        subheading: ["Manrope", "system-ui", "sans-serif"],
+        body: ["Mulish", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "Menlo", "monospace"],
+        display: ["Cormorant Garamond", "Georgia", "serif"],
+        sans: ["Manrope", "system-ui", "sans-serif"],
       },
       boxShadow: {
         glow: "${shadowTokens.glow}",
@@ -276,8 +288,12 @@ const generateFigmaExport = () => {
         },
         typography: {
           fontFamily: {
-            sans: { value: "Poppins", type: "fontFamilies" },
+            heading: { value: "Cormorant Garamond", type: "fontFamilies" },
+            subheading: { value: "Manrope", type: "fontFamilies" },
+            body: { value: "Mulish", type: "fontFamilies" },
             mono: { value: "JetBrains Mono", type: "fontFamilies" },
+            display: { value: "Cormorant Garamond", type: "fontFamilies" },
+            sans: { value: "Manrope", type: "fontFamilies" },
           },
           fontSize: {
             xs: { value: "12", type: "fontSizes" },
@@ -669,8 +685,12 @@ export const TokenCategories: StoryObj = {
           <CardContent>
             <div className="space-y-2">
               <div className="flex justify-between items-baseline">
-                <span className="text-xs text-muted-foreground">Sans</span>
-                <span className="font-sans">Poppins</span>
+                <span className="text-xs text-muted-foreground">Heading</span>
+                <span className="font-heading">Cormorant</span>
+              </div>
+              <div className="flex justify-between items-baseline">
+                <span className="text-xs text-muted-foreground">Body</span>
+                <span className="font-body">Mulish</span>
               </div>
               <div className="flex justify-between items-baseline">
                 <span className="text-xs text-muted-foreground">Mono</span>
@@ -688,7 +708,7 @@ export const TokenCategories: StoryObj = {
               </div>
             </div>
             <Badge variant="outline" className="mt-4">
-              14 tokens
+              26 tokens
             </Badge>
           </CardContent>
         </Card>

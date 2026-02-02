@@ -158,19 +158,20 @@ export const skaiColors = {
 // =============================================================================
 
 /**
- * Font families from Figma design system
- * - Cormorant Garamond: Headlines (elegant serif)
- * - Manrope: Sub-headlines, UI text (modern sans)
- * - Mulish: Body text, numbers (readable sans)
+ * Font families from Figma design system - ALIGNED WITH TYPOGRAPHY.CSS
+ * - Cormorant Garamond: Headlines, display text (elegant serif)
+ * - Manrope: Sub-headlines, UI text (modern sans-serif) 
+ * - Mulish: Body text, numbers, labels (readable sans-serif)
+ * - JetBrains Mono: Code, technical data (monospace)
  */
 export const skaiFonts = {
   heading: ["Cormorant Garamond", "Georgia", "serif"],
   subheading: ["Manrope", "system-ui", "sans-serif"],
   body: ["Mulish", "system-ui", "sans-serif"],
-  // Aliases
+  mono: ["JetBrains Mono", "Menlo", "monospace"],
+  // Aliases for consistency
   display: ["Cormorant Garamond", "Georgia", "serif"],
   sans: ["Manrope", "system-ui", "sans-serif"],
-  mono: ["JetBrains Mono", "Menlo", "monospace"],
 } as const;
 
 /**
