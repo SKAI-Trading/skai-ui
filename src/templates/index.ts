@@ -1,2 +1,3 @@
 // Page Templates
-export * from "./swap-page";
+export { SwapPageTemplate } from "./swap-page";
+export type { SwapPageTemplateProps } from "./swap-page";

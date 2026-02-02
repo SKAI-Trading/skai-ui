@@ -304,4 +304,4 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
 SwapPageTemplate.displayName = "SwapPageTemplate";
 
 export { SwapPageTemplate };
-export type { SwapPageTemplateProps, Token };
+export type { SwapPageTemplateProps };
