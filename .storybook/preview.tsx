@@ -15,7 +15,7 @@ const preview: Preview = {
         order: [
           // 1. Getting Started - Onboarding docs
           "Getting Started",
-          ["Introduction", "For Designers", "For Developers", "*"],
+          ["Introduction", "Component Status", "For Designers", "For Developers", "*"],
           
           // 2. Brand - Logo, icons, assets
           "Brand",

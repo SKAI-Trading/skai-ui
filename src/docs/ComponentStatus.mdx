@@ -1,0 +1,217 @@
+{/* ComponentStatus.mdx */}
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Getting Started/Component Status" />
+
+# Component Status
+
+This page shows the maturity level of each component in the SKAI UI library.
+
+---
+
+## Status Legend
+
+<div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', marginBottom: '32px' }}>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+    <span style={{ 
+      padding: '4px 12px', 
+      borderRadius: '9999px', 
+      background: 'hsl(142 76% 36%)', 
+      color: 'white', 
+      fontSize: '12px', 
+      fontWeight: '600' 
+    }}>
+      Stable
+    </span>
+    <span style={{ color: 'hsl(215 20% 65%)' }}>Production-ready, fully tested</span>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+    <span style={{ 
+      padding: '4px 12px', 
+      borderRadius: '9999px', 
+      background: 'hsl(217.2 91.2% 59.8%)', 
+      color: 'white', 
+      fontSize: '12px', 
+      fontWeight: '600' 
+    }}>
+      Beta
+    </span>
+    <span style={{ color: 'hsl(215 20% 65%)' }}>Usable, API may change</span>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+    <span style={{ 
+      padding: '4px 12px', 
+      borderRadius: '9999px', 
+      background: 'hsl(38 92% 50%)', 
+      color: 'black', 
+      fontSize: '12px', 
+      fontWeight: '600' 
+    }}>
+      Experimental
+    </span>
+    <span style={{ color: 'hsl(215 20% 65%)' }}>Work in progress, not for production</span>
+  </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+    <span style={{ 
+      padding: '4px 12px', 
+      borderRadius: '9999px', 
+      background: 'hsl(0 84% 60%)', 
+      color: 'white', 
+      fontSize: '12px', 
+      fontWeight: '600' 
+    }}>
+      Deprecated
+    </span>
+    <span style={{ color: 'hsl(215 20% 65%)' }}>Will be removed, migrate away</span>
+  </div>
+</div>
+
+---
+
+## Core Components
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Button | 🟢 Stable | Production-ready with all variants |
+| Card | 🟢 Stable | Production-ready |
+| Input | 🟢 Stable | Production-ready |
+| Label | 🟢 Stable | Production-ready |
+| Badge | 🟢 Stable | Production-ready |
+| Textarea | 🟢 Stable | Production-ready |
+
+## Form Components
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Checkbox | 🟢 Stable | Production-ready |
+| Select | 🟢 Stable | Production-ready |
+| Switch | 🟢 Stable | Production-ready |
+| Slider | 🟢 Stable | Production-ready |
+| RadioGroup | 🟢 Stable | Production-ready |
+| Autocomplete | 🔵 Beta | API may change |
+| DatePicker | 🔵 Beta | Calendar integration in progress |
+| NumberInput | 🔵 Beta | Validation improvements pending |
+| CurrencyInput | 🔵 Beta | Locale support in progress |
+| TagInput | 🔵 Beta | API refinements expected |
+
+## Layout Components
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Separator | 🟢 Stable | Production-ready |
+| ScrollArea | 🟢 Stable | Production-ready |
+| Accordion | 🟢 Stable | Production-ready |
+| Tabs | 🟢 Stable | Production-ready |
+| Resizable | 🔵 Beta | Uses react-resizable-panels v4.5.7 |
+| Carousel | 🔵 Beta | Touch gestures in progress |
+| Masonry | 🟡 Experimental | Performance optimization needed |
+| Stepper | 🔵 Beta | API may change |
+
+## Overlay Components
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Dialog | 🟢 Stable | Production-ready |
+| Sheet | 🟢 Stable | Production-ready |
+| Popover | 🟢 Stable | Production-ready |
+| Tooltip | 🟢 Stable | Production-ready |
+| DropdownMenu | 🟢 Stable | Production-ready |
+| ContextMenu | 🟢 Stable | Production-ready |
+| HoverCard | 🟢 Stable | Production-ready |
+| AlertDialog | 🟢 Stable | Production-ready |
+| ConfirmDialog | 🟢 Stable | Production-ready |
+| Drawer | 🔵 Beta | Touch gestures in progress |
+
+## Feedback Components
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Alert | 🟢 Stable | Production-ready |
+| Progress | 🟢 Stable | Production-ready |
+| Skeleton | 🟢 Stable | Production-ready |
+| Spinner | 🟢 Stable | Production-ready |
+| Toast | 🟢 Stable | Using Sonner |
+| Notification | 🔵 Beta | API refinements expected |
+| EmptyState | 🟢 Stable | Production-ready |
+| ErrorBoundary | 🟢 Stable | Production-ready |
+
+## Data Display Components
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Avatar | 🟢 Stable | Production-ready |
+| Table | 🟢 Stable | Production-ready |
+| Calendar | 🔵 Beta | Date range selection in progress |
+| Chart | 🔵 Beta | Uses Recharts, lazy-loaded |
+| Countdown | 🟢 Stable | Production-ready |
+| QRCode | 🟢 Stable | Production-ready |
+| StatCard | 🟢 Stable | Production-ready |
+
+## Trading Components ⚠️
+
+> **Note:** Trading components are designed specifically for SKAI Trading platform. They may require specific context providers or trading-specific data structures.
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| TokenIcon | 🟢 Stable | Production-ready |
+| TokenSelect | 🟢 Stable | Production-ready |
+| PriceDisplay | 🟢 Stable | Production-ready |
+| PriceChange | 🟢 Stable | Production-ready |
+| AmountInput | 🟢 Stable | Production-ready |
+| SwapInput | 🟢 Stable | Production-ready |
+| BalanceDisplay | 🟢 Stable | Production-ready |
+| FeeDisplay | 🟢 Stable | Production-ready |
+| OrderBook | 🔵 Beta | WebSocket integration pending |
+| DepthChart | 🔵 Beta | Performance optimization needed |
+| CandlestickChart | 🔵 Beta | TradingView integration planned |
+| NetworkBadge | 🟢 Stable | Production-ready |
+| GasEstimate | 🔵 Beta | API updates expected |
+| TransactionStatus | 🟢 Stable | Production-ready |
+| LeverageSlider | 🔵 Beta | Advanced validation pending |
+| LiquidationWarning | 🔵 Beta | Risk calculations in review |
+| FundingRate | 🔵 Beta | Perps-specific |
+| TierBadge | 🟢 Stable | Production-ready |
+| RiskGauge | 🔵 Beta | Visualization updates planned |
+
+## Utility Components
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| ThemeProvider | 🟢 Stable | Production-ready |
+| ThemeToggle | 🟢 Stable | Production-ready |
+| LoadingButton | 🟢 Stable | Production-ready |
+| CopyButton | 🟢 Stable | Production-ready |
+| OnlineIndicator | 🟢 Stable | Production-ready |
+
+## Branding
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| SkaiLogo | 🟢 Stable | Official brand asset |
+| SkaiIcon | 🟢 Stable | Official brand asset |
+
+---
+
+## Tools & Documentation (Internal)
+
+These are development/documentation tools, **not for production use**:
+
+| Tool | Purpose |
+|------|---------|
+| Theme Configurator | Design token customization |
+| Color Palette Generator | Color scheme creation |
+| Animation Timeline | Animation preview |
+| Icon Library Manager | Icon asset management |
+| AI Component Generator | Experimental AI tooling |
+| Performance Profiler | Bundle analysis |
+| Figma Integration | Design handoff |
+| Mock Data Library | Testing utilities |
+| Component Playground | Interactive development |
+
+---
+
+## Questions?
+
+- 💬 **Slack:** `#frontend-ui`
+- 📧 **Email:** dev@skai.trade
+- 🐛 **Issues:** [GitHub Issues](https://github.com/SKAI-Trading/skai-ui/issues)
