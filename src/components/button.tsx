@@ -8,7 +8,8 @@ import { cn } from "../lib/utils";
 // =============================================================================
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  // Use SKAI typography class for consistency
+  "skai-para-1-semibold inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -58,51 +59,61 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 // =============================================================================
-// SKAI BRANDED BUTTON (From Figma Design System)
+// SKAI BRANDED BUTTON (Perfect Figma Alignment)
 // =============================================================================
-// Uses SKAI design tokens: 4 sizes × 4 types
-// - Sizes: massive, large, medium, small
-// - Types: primary (sky blue), secondary (outlined), tertiary (text), link
+// Uses SKAI typography system classes and design tokens
+// - Typography: Uses skai-* classes for perfect consistency
+// - Colors: Uses design token color values
+// - Sizes: Aligned with Figma specifications
 // =============================================================================
 
 const skaiButtonVariants = cva(
-  // Base: Manrope font, -4% letter spacing, centered flex, smooth transitions
-  "inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  // Base: SKAI typography system + design system patterns
+  "inline-flex items-center justify-center font-subheading transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
-      // SKAI Button Types (from Figma CTA section)
+      // SKAI Button Types (using design tokens)
       skaiType: {
-        // Primary: Sky Blue bg, Green Coal text, hover → Alien Green
+        // Primary: Sky Blue (#56C0F6) bg, Green Coal text, hover → Teal (#2DEDAD)
         primary:
-          "bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4] focus-visible:ring-[#17F9B4]",
+          "skai-sub-2-semibold bg-[#56C0F6] text-[#001615] hover:bg-[#2DEDAD] focus-visible:ring-[#2DEDAD]",
         // Secondary: Transparent bg, Sky Blue border/text
         secondary:
-          "bg-transparent border border-[#56C7F3] text-[#56C7F3] hover:bg-[#56C7F3]/10 focus-visible:ring-[#56C7F3]",
-        // Tertiary: Transparent bg, White text, hover → Alien Green
+          "skai-sub-2-semibold bg-transparent border border-[#56C0F6] text-[#56C0F6] hover:bg-[#56C0F6]/10 focus-visible:ring-[#56C0F6]",
+        // Tertiary: Transparent bg, White text, hover → Teal
         tertiary:
-          "bg-transparent text-white hover:text-[#17F9B4] focus-visible:ring-[#17F9B4]",
-        // Link: Alien Green text, underlined
-        link: "bg-transparent text-[#17F9B4] hover:text-[#56C7F3] underline underline-offset-4",
+          "skai-sub-2 bg-transparent text-white hover:text-[#2DEDAD] focus-visible:ring-[#2DEDAD]",
+        // Link: Teal text, underlined
+        link: "skai-sub-2 bg-transparent text-[#2DEDAD] hover:text-[#56C0F6] underline underline-offset-4",
+        // Destructive: Red theme for dangerous actions
+        destructive:
+          "skai-sub-2-semibold bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-600",
+        // Success: Green theme for positive actions  
+        success:
+          "skai-sub-2-semibold bg-green-600 text-white hover:bg-green-700 focus-visible:ring-green-600",
       },
-      // SKAI Button Sizes (from Figma)
+      // SKAI Button Sizes (aligned with design system spacing)
       skaiSize: {
-        // Massive: 72px height, 48px horizontal padding
+        // Massive: For hero CTAs and major actions
         massive:
-          "h-[72px] px-12 py-5 text-lg leading-6 rounded-[16px] gap-2.5 [&_svg]:size-6",
-        // Large: 64px height, 40px horizontal padding
+          "h-[72px] px-12 py-5 rounded-2xl gap-3 [&_svg]:size-6",
+        // Large: Primary action buttons
         large:
-          "h-16 px-10 py-5 text-base leading-[22px] rounded-[16px] gap-2.5 [&_svg]:size-6",
-        // Medium: 50px height, 32px horizontal padding
+          "h-16 px-10 py-5 rounded-2xl gap-2.5 [&_svg]:size-5",
+        // Medium: Standard UI buttons  
         medium:
-          "h-[50px] px-8 py-3.5 text-sm leading-[18px] rounded-xl gap-2 [&_svg]:size-4",
-        // Small: 46px height, 24px horizontal padding
+          "h-[50px] px-8 py-3.5 rounded-xl gap-2 [&_svg]:size-4",
+        // Small: Compact buttons for tight spaces
         small:
-          "h-[46px] px-6 py-3 text-sm leading-[18px] rounded-xl gap-2 [&_svg]:size-4",
+          "h-[46px] px-6 py-3 rounded-xl gap-2 [&_svg]:size-4",
+        // Mini: Very small buttons for tables/lists
+        mini:
+          "h-8 px-4 py-1.5 rounded-lg gap-1 [&_svg]:size-3",
       },
     },
     defaultVariants: {
       skaiType: "primary",
-      skaiSize: "large",
+      skaiSize: "medium",
     },
   },
 );
@@ -115,17 +126,26 @@ export interface SkaiButtonProps
 }
 
 /**
- * SKAI Branded Button - Uses Figma design system tokens
+ * SKAI Branded Button - Perfect Figma Design System Alignment
+ * 
+ * Uses SKAI typography classes and design tokens for perfect consistency.
+ * All typography automatically scales responsively via CSS classes.
  *
  * @example
- * // Primary large button (default)
+ * // Primary button (default - medium size, primary type)
  * <SkaiButton>Get Started</SkaiButton>
  *
- * // Secondary medium button
- * <SkaiButton skaiType="secondary" skaiSize="medium">Learn More</SkaiButton>
+ * // Large secondary button
+ * <SkaiButton skaiType="secondary" skaiSize="large">Learn More</SkaiButton>
  *
- * // Tertiary small button
+ * // Small tertiary button
  * <SkaiButton skaiType="tertiary" skaiSize="small">Cancel</SkaiButton>
+ * 
+ * // Massive primary CTA
+ * <SkaiButton skaiSize="massive">Start Trading</SkaiButton>
+ *
+ * // Destructive action
+ * <SkaiButton skaiType="destructive" skaiSize="small">Delete</SkaiButton>
  */
 const SkaiButton = React.forwardRef<HTMLButtonElement, SkaiButtonProps>(
   ({ className, skaiType, skaiSize, asChild = false, ...props }, ref) => {

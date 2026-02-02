@@ -262,20 +262,3 @@ export const ListItem = React.forwardRef<
   />
 ));
 ListItem.displayName = "ListItem";
-
-// =============================================================================
-// EXPORT ALL
-// =============================================================================
-
-export {
-  Typography,
-  // Specific components
-  H1, H2, H3, H4, P, Small, Price, Code,
-  // Composite components  
-  Blockquote, List, ListItem,
-  // Types
-  type TypographyProps,
-  type BlockquoteProps,
-  type ListProps,
-  type ListItemProps,
-};

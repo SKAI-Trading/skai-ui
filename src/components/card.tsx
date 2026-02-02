@@ -35,7 +35,8 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
+      // Use SKAI typography system - card-title semantic class
+      "skai-card-title",
       className,
     )}
     {...props}
@@ -49,7 +50,11 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn(
+      // Use SKAI typography system - small text for descriptions
+      "skai-small text-muted-foreground", 
+      className
+    )}
     {...props}
   />
 ));

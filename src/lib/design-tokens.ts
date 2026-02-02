@@ -749,12 +749,7 @@ export const skaiFontSizes = {
       fontFamily: "var(--font-mono)"
     },
   ],
-} as const;
-      letterSpacing: "-0.02em",
-      fontWeight: "300",
-      fontStyle: "italic",
-    },
-  ],
+  
   // headline-3: 54px / 40px / 30px
   "headline-3": [
     "54px",
