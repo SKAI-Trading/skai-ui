@@ -22,11 +22,11 @@
     "README.md"
   ],
   "scripts": {
-    "dev": "storybook dev -p 6006",
+    "dev": "STORYBOOK_TELEMETRY_DISABLED=true storybook dev -p 6006",
     "build": "node scripts/build.js",
     "build:css": "tailwindcss -i ./src/styles/index.css -o ./dist/styles.css --minify",
     "build:quiet": "tsup && npm run build:css",
-    "build:storybook": "storybook build",
+    "build:storybook": "STORYBOOK_TELEMETRY_DISABLED=true storybook build",
     "lint": "eslint src --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
@@ -70,7 +70,7 @@
     "postcss": "^8.4.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "STORYBOOK_TELEMETRY_DISABLED=true storybook dev -p 6006"
+    "storybook": "^8.0.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
