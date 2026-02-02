@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { LazyChart } from "../components/lazy-chart";
+import { LazyChart } from "../components/data-display/lazy-chart";
 
 const meta: Meta<typeof LazyChart> = {
-  title: "Data Display/LazyChart",
+  title: "Components/LazyChart",
   component: LazyChart,
   parameters: {
     layout: "padded",

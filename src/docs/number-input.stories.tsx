@@ -3,7 +3,7 @@ import { useState } from "react";
 import { NumberInput } from "../components/forms/number-input";
 
 const meta: Meta<typeof NumberInput> = {
-  title: "Form/NumberInput",
+  title: "Components/NumberInput",
   component: NumberInput,
   tags: ["autodocs"],
   parameters: {

@@ -156,8 +156,8 @@
   /* Glass panel - uses --glass variable */
   .glass-panel {
     background: hsl(var(--glass));
-    backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
     box-shadow: var(--shadow-card);
@@ -172,8 +172,8 @@
   /* Legacy glass-card (for backwards compatibility) */
   .glass-card {
     background: hsl(var(--glass));
-    backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
     border: 1px solid hsl(var(--border));
     border-radius: calc(var(--radius) * 2);
   }

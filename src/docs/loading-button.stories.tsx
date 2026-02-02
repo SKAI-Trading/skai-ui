@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { LoadingButton } from "../components/utility/loading-button";
 
 const meta: Meta<typeof LoadingButton> = {
-  title: "Trading/LoadingButton",
+  title: "Components/LoadingButton",
   component: LoadingButton,
   parameters: {
     layout: "centered",

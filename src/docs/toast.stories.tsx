@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../components/core/button";
-import { Toaster } from "../components/toaster";
+import { Toaster } from "../components/feedback/toaster";
 import { useToast } from "../hooks/use-toast";
 
 const meta: Meta = {
-  title: "Feedback/Toast",
+  title: "Components/Toast",
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
@@ -86,8 +86,7 @@ export const Destructive: Story = {
           toast({
             variant: "destructive",
             title: "Transaction Failed",
-            description:
-              "Insufficient balance. Please add funds and try again.",
+            description: "Insufficient balance. Please add funds and try again.",
           });
         }}
       >
@@ -243,8 +242,7 @@ export const TradingToasts: Story = {
             toast({
               variant: "warning",
               title: "Liquidation Warning",
-              description:
-                "Your ETH/USD position is approaching liquidation price.",
+              description: "Your ETH/USD position is approaching liquidation price.",
             })
           }
         >

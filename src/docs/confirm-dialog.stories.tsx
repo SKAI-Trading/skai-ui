@@ -4,7 +4,7 @@ import { ConfirmDialog } from "../components/overlays/confirm-dialog";
 import { Button } from "../components/core/button";
 
 const meta: Meta<typeof ConfirmDialog> = {
-  title: "Composites/ConfirmDialog",
+  title: "Components/ConfirmDialog",
   component: ConfirmDialog,
   parameters: {
     layout: "centered",

@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 const meta: Meta<typeof AccountMenu> = {
-  title: "Layout/AccountMenu",
+  title: "Trading/AccountMenu",
   component: AccountMenu,
   tags: ["autodocs"],
   parameters: {

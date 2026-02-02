@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const meta: Meta<typeof DockIcon> = {
-  title: "Navigation/DockIcon",
+  title: "Components/DockIcon",
   component: DockIcon,
   tags: ["autodocs"],
   parameters: {

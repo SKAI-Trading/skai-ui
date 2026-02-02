@@ -8,7 +8,7 @@ import { Button } from "../components/core/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
 
 const meta: Meta<typeof ThemeToggle> = {
-  title: "Theme/ThemeToggle",
+  title: "Components/ThemeToggle",
   component: ThemeToggle,
   parameters: {
     layout: "centered",

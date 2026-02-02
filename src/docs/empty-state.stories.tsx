@@ -9,7 +9,7 @@ import { Button } from "../components/core/button";
 import { PlusIcon, RefreshCwIcon } from "lucide-react";
 
 const meta: Meta<typeof EmptyState> = {
-  title: "Feedback/EmptyState",
+  title: "Components/EmptyState",
   component: EmptyState,
   tags: ["autodocs"],
   parameters: {

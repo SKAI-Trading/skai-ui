@@ -3,7 +3,7 @@ import { CurrencyInput } from "../components/forms/currency-input";
 import { useState } from "react";
 
 const meta: Meta<typeof CurrencyInput> = {
-  title: "Forms/CurrencyInput",
+  title: "Components/CurrencyInput",
   component: CurrencyInput,
   parameters: {
     layout: "centered",

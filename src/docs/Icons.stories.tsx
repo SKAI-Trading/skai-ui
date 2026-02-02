@@ -74,7 +74,7 @@ import {
 import { Input } from "../components/core/input";
 
 const meta: Meta = {
-  title: "Design Tokens/Icons",
+  title: "Brand/Icon Library",
   parameters: {
     layout: "fullscreen",
   },
@@ -188,7 +188,7 @@ const IconCard = ({
   return (
     <button
       onClick={copyImport}
-      className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border bg-card hover:bg-accent transition-colors cursor-pointer"
+      className="flex cursor-pointer flex-col items-center gap-2 rounded-lg border border-border bg-card p-4 transition-colors hover:bg-accent"
     >
       <Icon className="h-6 w-6" />
       <span className="text-xs text-muted-foreground">
@@ -207,22 +207,21 @@ export const AllIcons: StoryObj = {
     const categories = ["all", ...new Set(allIcons.map((i) => i.category))];
 
     const filtered = allIcons.filter((icon) => {
-      const matchesSearch = icon.name
-        .toLowerCase()
-        .includes(search.toLowerCase());
+      const matchesSearch = icon.name.toLowerCase().includes(search.toLowerCase());
       const matchesCategory = category === "all" || icon.category === category;
       return matchesSearch && matchesCategory;
     });
 
     return (
-      <div className="p-8 bg-background min-h-screen">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold mb-2">Icons</h1>
-          <p className="text-lg text-muted-foreground mb-8">
+      <div className="min-h-screen bg-background p-8">
+        <div className="mx-auto max-w-6xl">
+          <h1 className="mb-2 text-4xl font-bold">Icons</h1>
+          <p className="mb-8 text-lg text-muted-foreground">
             Click any icon to copy its import statement. We use{" "}
             <a
               href="https://lucide.dev/icons"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
               Lucide React
@@ -230,19 +229,19 @@ export const AllIcons: StoryObj = {
             .
           </p>
 
-          <div className="flex gap-4 mb-8 flex-wrap">
+          <div className="mb-8 flex flex-wrap gap-4">
             <Input
               placeholder="Search icons..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="max-w-xs"
             />
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setCategory(cat)}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                  className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
                     category === cat
                       ? "bg-primary text-primary-foreground"
                       : "bg-muted text-muted-foreground hover:bg-accent"
@@ -254,21 +253,21 @@ export const AllIcons: StoryObj = {
             </div>
           </div>
 
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3">
+          <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10">
             {filtered.map(({ name, icon: Icon }) => (
               <IconCard key={name} name={name} Icon={Icon} />
             ))}
           </div>
 
           {filtered.length === 0 && (
-            <p className="text-center text-muted-foreground py-12">
+            <p className="py-12 text-center text-muted-foreground">
               No icons found matching "{search}"
             </p>
           )}
 
-          <div className="mt-12 p-6 bg-card rounded-lg border">
-            <h3 className="text-lg font-semibold mb-4">Usage</h3>
-            <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
+          <div className="mt-12 rounded-lg border bg-card p-6">
+            <h3 className="mb-4 text-lg font-semibold">Usage</h3>
+            <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
               {`import { Wallet, TrendingUp, Copy } from "lucide-react";
 
 // Default size (24px)
@@ -296,9 +295,9 @@ export const AllIcons: StoryObj = {
 export const IconSizes: StoryObj = {
   name: "Icon Sizes",
   render: () => (
-    <div className="p-8 bg-background">
-      <h1 className="text-3xl font-bold mb-8">Icon Sizes</h1>
-      <div className="flex items-end gap-8 flex-wrap">
+    <div className="bg-background p-8">
+      <h1 className="mb-8 text-3xl font-bold">Icon Sizes</h1>
+      <div className="flex flex-wrap items-end gap-8">
         {[
           { size: "h-3 w-3", label: "12px (xs)" },
           { size: "h-4 w-4", label: "16px (sm)" },
@@ -322,64 +321,54 @@ export const IconSizes: StoryObj = {
 export const TradingIcons: StoryObj = {
   name: "Trading Icons",
   render: () => (
-    <div className="p-8 bg-background">
-      <h1 className="text-3xl font-bold mb-8">Trading Icon Examples</h1>
-      <div className="grid gap-6 max-w-2xl">
-        <div className="p-4 bg-card rounded-lg border flex items-center gap-4">
-          <div className="h-10 w-10 rounded-full bg-green-500/10 flex items-center justify-center">
+    <div className="bg-background p-8">
+      <h1 className="mb-8 text-3xl font-bold">Trading Icon Examples</h1>
+      <div className="grid max-w-2xl gap-6">
+        <div className="flex items-center gap-4 rounded-lg border bg-card p-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10">
             <TrendingUp className="h-5 w-5 text-green-500" />
           </div>
           <div>
             <p className="font-medium">Price Up</p>
-            <p className="text-sm text-muted-foreground">
-              Green background + icon
-            </p>
+            <p className="text-sm text-muted-foreground">Green background + icon</p>
           </div>
         </div>
 
-        <div className="p-4 bg-card rounded-lg border flex items-center gap-4">
-          <div className="h-10 w-10 rounded-full bg-red-500/10 flex items-center justify-center">
+        <div className="flex items-center gap-4 rounded-lg border bg-card p-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/10">
             <TrendingDown className="h-5 w-5 text-red-500" />
           </div>
           <div>
             <p className="font-medium">Price Down</p>
-            <p className="text-sm text-muted-foreground">
-              Red background + icon
-            </p>
+            <p className="text-sm text-muted-foreground">Red background + icon</p>
           </div>
         </div>
 
-        <div className="p-4 bg-card rounded-lg border flex items-center gap-4">
-          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+        <div className="flex items-center gap-4 rounded-lg border bg-card p-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
             <Repeat className="h-5 w-5 text-primary" />
           </div>
           <div>
             <p className="font-medium">Swap</p>
-            <p className="text-sm text-muted-foreground">
-              Primary color for actions
-            </p>
+            <p className="text-sm text-muted-foreground">Primary color for actions</p>
           </div>
         </div>
 
-        <div className="p-4 bg-card rounded-lg border flex items-center gap-4">
-          <div className="h-10 w-10 rounded-full bg-yellow-500/10 flex items-center justify-center">
+        <div className="flex items-center gap-4 rounded-lg border bg-card p-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-500/10">
             <AlertTriangle className="h-5 w-5 text-yellow-500" />
           </div>
           <div>
             <p className="font-medium">Warning</p>
-            <p className="text-sm text-muted-foreground">
-              High slippage, price impact
-            </p>
+            <p className="text-sm text-muted-foreground">High slippage, price impact</p>
           </div>
         </div>
 
-        <div className="p-4 bg-card rounded-lg border flex items-center gap-4">
+        <div className="flex items-center gap-4 rounded-lg border bg-card p-4">
           <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
           <div>
             <p className="font-medium">Loading State</p>
-            <p className="text-sm text-muted-foreground">
-              Spinner with animate-spin
-            </p>
+            <p className="text-sm text-muted-foreground">Spinner with animate-spin</p>
           </div>
         </div>
       </div>
@@ -532,7 +521,7 @@ export const SkaiCustomIcons: StoryObj = {
 
       if (search) {
         icons = icons.filter((icon) =>
-          icon.toLowerCase().includes(search.toLowerCase()),
+          icon.toLowerCase().includes(search.toLowerCase())
         );
       }
 
@@ -542,27 +531,27 @@ export const SkaiCustomIcons: StoryObj = {
     const filteredIcons = getFilteredIcons();
 
     return (
-      <div className="p-8 bg-background min-h-screen">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold mb-2">SKAI Custom Icons</h1>
-          <p className="text-lg text-muted-foreground mb-8">
-            Custom icons designed for the SKAI ecosystem. Click any icon to copy
-            usage code.
+      <div className="min-h-screen bg-background p-8">
+        <div className="mx-auto max-w-6xl">
+          <h1 className="mb-2 text-4xl font-bold">SKAI Custom Icons</h1>
+          <p className="mb-8 text-lg text-muted-foreground">
+            Custom icons designed for the SKAI ecosystem. Click any icon to copy usage
+            code.
           </p>
 
-          <div className="flex gap-4 mb-8 flex-wrap">
+          <div className="mb-8 flex flex-wrap gap-4">
             <Input
               placeholder="Search icons..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="max-w-xs"
             />
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setCategory(cat)}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                  className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
                     category === cat
                       ? "bg-primary text-primary-foreground"
                       : "bg-muted text-muted-foreground hover:bg-accent"
@@ -574,15 +563,15 @@ export const SkaiCustomIcons: StoryObj = {
             </div>
           </div>
 
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3">
+          <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10">
             {filteredIcons.map((iconName) => (
               <button
                 key={iconName}
                 onClick={() => handleCopy(iconName)}
-                className="flex flex-col items-center gap-2 p-4 rounded-lg border border-border bg-card hover:bg-accent transition-colors cursor-pointer"
+                className="flex cursor-pointer flex-col items-center gap-2 rounded-lg border border-border bg-card p-4 transition-colors hover:bg-accent"
               >
                 <SkaiIcon name={iconName} size="md" />
-                <span className="text-xs text-muted-foreground text-center">
+                <span className="text-center text-xs text-muted-foreground">
                   {copiedIcon === iconName ? "✓ Copied!" : iconName}
                 </span>
               </button>
@@ -590,14 +579,14 @@ export const SkaiCustomIcons: StoryObj = {
           </div>
 
           {filteredIcons.length === 0 && (
-            <p className="text-center text-muted-foreground py-12">
+            <p className="py-12 text-center text-muted-foreground">
               No icons found matching "{search}"
             </p>
           )}
 
-          <div className="mt-12 p-6 bg-card rounded-lg border">
-            <h3 className="text-lg font-semibold mb-4">Usage</h3>
-            <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
+          <div className="mt-12 rounded-lg border bg-card p-6">
+            <h3 className="mb-4 text-lg font-semibold">Usage</h3>
+            <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-sm">
               {`import { SkaiIcon } from "@skai/ui";
 
 // Default size (sm = 16px)
@@ -621,16 +610,16 @@ export const SkaiCustomIcons: StoryObj = {
             </pre>
           </div>
 
-          <div className="mt-8 p-6 bg-card rounded-lg border">
-            <h3 className="text-lg font-semibold mb-4">Icon Counts</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-8 rounded-lg border bg-card p-6">
+            <h3 className="mb-4 text-lg font-semibold">Icon Counts</h3>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {Object.entries(skaiIconCategories).map(([cat, icons]) => (
-                <div key={cat} className="text-center p-3 bg-muted rounded-lg">
+                <div key={cat} className="rounded-lg bg-muted p-3 text-center">
                   <p className="text-2xl font-bold">{icons.length}</p>
                   <p className="text-xs text-muted-foreground">{cat}</p>
                 </div>
               ))}
-              <div className="text-center p-3 bg-primary/10 rounded-lg">
+              <div className="rounded-lg bg-primary/10 p-3 text-center">
                 <p className="text-2xl font-bold text-primary">
                   {Object.values(skaiIconCategories).flat().length}
                 </p>
@@ -647,9 +636,9 @@ export const SkaiCustomIcons: StoryObj = {
 export const SkaiIconSizes: StoryObj = {
   name: "SKAI Icon Sizes",
   render: () => (
-    <div className="p-8 bg-background">
-      <h1 className="text-3xl font-bold mb-8">SKAI Icon Sizes</h1>
-      <div className="flex items-end gap-8 flex-wrap">
+    <div className="bg-background p-8">
+      <h1 className="mb-8 text-3xl font-bold">SKAI Icon Sizes</h1>
+      <div className="flex flex-wrap items-end gap-8">
         {[
           { size: "xs" as const, label: "10px", px: "xs" },
           { size: "sm" as const, label: "16px", px: "sm" },
@@ -664,8 +653,8 @@ export const SkaiIconSizes: StoryObj = {
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold mt-12 mb-6">Tier Icons</h2>
-      <div className="flex items-end gap-6 flex-wrap">
+      <h2 className="mb-6 mt-12 text-2xl font-bold">Tier Icons</h2>
+      <div className="flex flex-wrap items-end gap-6">
         {(
           [
             "tier-free",
@@ -678,31 +667,23 @@ export const SkaiIconSizes: StoryObj = {
         ).map((tier) => (
           <div key={tier} className="flex flex-col items-center gap-2">
             <SkaiIcon name={tier} size="lg" />
-            <span className="text-xs text-muted-foreground capitalize">
+            <span className="text-xs capitalize text-muted-foreground">
               {tier.replace("tier-", "")}
             </span>
           </div>
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold mt-12 mb-6">Wallet Provider Icons</h2>
-      <div className="flex items-end gap-6 flex-wrap">
-        {(
-          [
-            "metamask",
-            "coinbase",
-            "phantom",
-            "walletconnect",
-            "rainbow",
-          ] as const
-        ).map((wallet) => (
-          <div key={wallet} className="flex flex-col items-center gap-2">
-            <SkaiIcon name={wallet} size="lg" />
-            <span className="text-xs text-muted-foreground capitalize">
-              {wallet}
-            </span>
-          </div>
-        ))}
+      <h2 className="mb-6 mt-12 text-2xl font-bold">Wallet Provider Icons</h2>
+      <div className="flex flex-wrap items-end gap-6">
+        {(["metamask", "coinbase", "phantom", "walletconnect", "rainbow"] as const).map(
+          (wallet) => (
+            <div key={wallet} className="flex flex-col items-center gap-2">
+              <SkaiIcon name={wallet} size="lg" />
+              <span className="text-xs capitalize text-muted-foreground">{wallet}</span>
+            </div>
+          )
+        )}
       </div>
     </div>
   ),

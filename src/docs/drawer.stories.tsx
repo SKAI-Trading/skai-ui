@@ -15,7 +15,7 @@ import { Input } from "../components/core/input";
 import { Label } from "../components/core/label";
 
 const meta: Meta<typeof Drawer> = {
-  title: "Overlay/Drawer",
+  title: "Components/Drawer",
   component: Drawer,
   tags: ["autodocs"],
   parameters: {

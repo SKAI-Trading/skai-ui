@@ -3,7 +3,7 @@ import { StatCard } from "../components/data-display/stat-card";
 import { Activity, TrendingUp, Users, Wallet } from "lucide-react";
 
 const meta: Meta<typeof StatCard> = {
-  title: "Composites/StatCard",
+  title: "Components/StatCard",
   component: StatCard,
   parameters: {
     layout: "centered",

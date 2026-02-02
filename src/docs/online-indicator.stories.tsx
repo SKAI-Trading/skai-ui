@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { OnlineIndicator } from "../components/utility/online-indicator";
 
 const meta: Meta<typeof OnlineIndicator> = {
-  title: "Display/OnlineIndicator",
+  title: "Components/OnlineIndicator",
   component: OnlineIndicator,
   tags: ["autodocs"],
   parameters: {

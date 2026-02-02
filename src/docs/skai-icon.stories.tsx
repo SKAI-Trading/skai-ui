@@ -34,7 +34,7 @@ import {
  * ```
  */
 const meta: Meta<typeof SkaiIcon> = {
-  title: "Design System/Icons",
+  title: "Brand/Icons",
   component: SkaiIcon,
   tags: ["autodocs"],
   parameters: {

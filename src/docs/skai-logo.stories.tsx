@@ -32,7 +32,7 @@ import { SkaiLogo } from "../components/branding/skai-logo";
  * ```
  */
 const meta: Meta<typeof SkaiLogo> = {
-  title: "Design System/Logo",
+  title: "Brand/Logo",
   component: SkaiLogo,
   tags: ["autodocs"],
   parameters: {

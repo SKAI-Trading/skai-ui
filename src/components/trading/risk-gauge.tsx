@@ -380,4 +380,55 @@ const RiskGauge = React.forwardRef<HTMLDivElement, RiskGaugeProps>(
 
 RiskGauge.displayName = "RiskGauge";
 
-export { RiskGauge, calculateRiskLevel, riskColors, riskLabels };
+// Convenience aliases for specific variants
+const RiskBar = React.forwardRef<HTMLDivElement, Omit<RiskGaugeProps, 'variant'>>(
+  (props, ref) => <RiskGauge ref={ref} variant="bar" {...props} />
+);
+RiskBar.displayName = "RiskBar";
+
+const RiskMeter = React.forwardRef<HTMLDivElement, Omit<RiskGaugeProps, 'variant'>>(
+  (props, ref) => <RiskGauge ref={ref} variant="circle" {...props} />
+);
+RiskMeter.displayName = "RiskMeter";
+
+// RiskScoreCard - Card wrapper for risk display
+export interface RiskScoreCardProps extends Omit<RiskGaugeProps, 'variant' | 'size'> {
+  /** Card title */
+  title: string;
+  /** Optional description */
+  description?: string;
+}
+
+const RiskScoreCard = React.forwardRef<HTMLDivElement, RiskScoreCardProps>(
+  ({ title, description, score, className, ...props }, ref) => {
+    const level = props.level || calculateRiskLevel(score);
+    const colors = riskColors[level];
+    
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          "p-4 rounded-lg border bg-card flex flex-col gap-3",
+          className,
+        )}
+      >
+        <div className="flex items-center justify-between">
+          <span className="font-medium">{title}</span>
+          <span className={cn("text-xl font-bold", colors.text)}>{score}</span>
+        </div>
+        <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
+          <div
+            className={cn("h-full rounded-full transition-all duration-500", colors.bg.replace("/20", ""))}
+            style={{ width: `${Math.min(100, Math.max(0, score))}%` }}
+          />
+        </div>
+        {description && (
+          <p className="text-sm text-muted-foreground">{description}</p>
+        )}
+      </div>
+    );
+  }
+);
+RiskScoreCard.displayName = "RiskScoreCard";
+
+export { RiskGauge, RiskBar, RiskMeter, RiskScoreCard, calculateRiskLevel, riskColors, riskLabels };

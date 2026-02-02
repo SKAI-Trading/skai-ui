@@ -3,7 +3,7 @@ import { Spinner, LoadingOverlay } from "../components/feedback/spinner";
 import { Button } from "../components/core/button";
 
 const meta: Meta<typeof Spinner> = {
-  title: "Feedback/Spinner",
+  title: "Components/Spinner",
   component: Spinner,
   tags: ["autodocs"],
   parameters: {

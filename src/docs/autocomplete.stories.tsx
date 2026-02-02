@@ -3,7 +3,7 @@ import { Autocomplete, AutocompleteOption } from "../components/forms/autocomple
 import { useState } from "react";
 
 const meta: Meta<typeof Autocomplete> = {
-  title: "Forms/Autocomplete",
+  title: "Components/Autocomplete",
   component: Autocomplete,
   parameters: {
     layout: "centered",

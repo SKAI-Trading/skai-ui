@@ -155,4 +155,52 @@ const StatusIndicator = React.forwardRef<HTMLSpanElement, StatusIndicatorProps>(
 
 StatusIndicator.displayName = "StatusIndicator";
 
-export { StatusIndicator, statusIndicatorVariants };
+// StatusWithLabel - Convenience wrapper with visible label
+const StatusWithLabel = React.forwardRef<HTMLSpanElement, StatusIndicatorProps>(
+  (props, ref) => <StatusIndicator ref={ref} showLabel {...props} />
+);
+StatusWithLabel.displayName = "StatusWithLabel";
+
+// ConnectionStatus - Network connection indicator
+export interface ConnectionStatusProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Connection status */
+  status: 'connected' | 'connecting' | 'disconnected' | 'error';
+  /** Network name */
+  network: string;
+}
+
+const connectionStatusMap: Record<ConnectionStatusProps['status'], StatusIndicatorProps['status']> = {
+  connected: 'online',
+  connecting: 'connecting',
+  disconnected: 'offline',
+  error: 'error',
+};
+
+const ConnectionStatus = React.forwardRef<HTMLDivElement, ConnectionStatusProps>(
+  ({ status, network, className, ...props }, ref) => {
+    const indicatorStatus = connectionStatusMap[status];
+    const isConnecting = status === 'connecting';
+    
+    return (
+      <div
+        ref={ref}
+        className={cn("flex items-center gap-2 p-2 rounded-lg bg-card border", className)}
+        {...props}
+      >
+        <StatusIndicator
+          status={indicatorStatus}
+          pulse={isConnecting}
+          glow={status === 'connected'}
+          size="md"
+        />
+        <div className="flex flex-col">
+          <span className="text-sm font-medium capitalize">{status}</span>
+          <span className="text-xs text-muted-foreground">{network}</span>
+        </div>
+      </div>
+    );
+  }
+);
+ConnectionStatus.displayName = "ConnectionStatus";
+
+export { StatusIndicator, StatusWithLabel, ConnectionStatus, statusIndicatorVariants };

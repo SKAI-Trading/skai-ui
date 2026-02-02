@@ -3,7 +3,7 @@ import { SonnerToaster, sonnerToast } from "../components/feedback/sonner";
 import { Button } from "../components/core/button";
 
 const meta: Meta<typeof SonnerToaster> = {
-  title: "Feedback Extended/Sonner",
+  title: "Components/Sonner",
   component: SonnerToaster,
   parameters: {
     layout: "centered",

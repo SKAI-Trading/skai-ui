@@ -4,7 +4,7 @@ import { Notification, NotificationStack } from "../components/feedback/notifica
 import { Button } from "../components/core/button";
 
 const meta: Meta<typeof Notification> = {
-  title: "Feedback/Notification",
+  title: "Components/Notification",
   component: Notification,
   tags: ["autodocs"],
   parameters: {

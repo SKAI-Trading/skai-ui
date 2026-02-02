@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ParticleBackground } from "../components/utility/particle-background";
 
 const meta: Meta<typeof ParticleBackground> = {
-  title: "Decorative/ParticleBackground",
+  title: "Components/ParticleBackground",
   component: ParticleBackground,
   tags: ["autodocs"],
   parameters: {

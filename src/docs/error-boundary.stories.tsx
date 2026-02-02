@@ -7,7 +7,7 @@ import { Button } from "../components/core/button";
 import { useState } from "react";
 
 const meta: Meta<typeof ErrorBoundary> = {
-  title: "Feedback/ErrorBoundary",
+  title: "Components/ErrorBoundary",
   component: ErrorBoundary,
   tags: ["autodocs"],
   parameters: {

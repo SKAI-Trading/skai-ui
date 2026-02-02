@@ -6,7 +6,7 @@ import { Badge } from "../components/core/badge";
 import { Download, Copy, Check } from "lucide-react";
 
 const meta: Meta = {
-  title: "Brand/Assets",
+  title: "Brand/Guidelines",
   parameters: {
     layout: "fullscreen",
   },

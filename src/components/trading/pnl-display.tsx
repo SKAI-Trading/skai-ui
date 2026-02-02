@@ -128,4 +128,26 @@ const UnrealizedPnL = React.forwardRef<HTMLDivElement, UnrealizedPnLProps>(
 );
 UnrealizedPnL.displayName = "UnrealizedPnL";
 
-export { PnLDisplay, UnrealizedPnL, pnlDisplayVariants };
+// PnL Card component
+export interface PnLCardProps extends Omit<PnLDisplayProps, 'label'> {
+  /** Card title */
+  title: string;
+}
+
+const PnLCard = React.forwardRef<HTMLDivElement, PnLCardProps>(
+  ({ title, className, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(
+        "p-4 rounded-lg border bg-card flex flex-col gap-2",
+        className,
+      )}
+    >
+      <span className="text-sm text-muted-foreground">{title}</span>
+      <PnLDisplay {...props} />
+    </div>
+  ),
+);
+PnLCard.displayName = "PnLCard";
+
+export { PnLDisplay, UnrealizedPnL, PnLCard, pnlDisplayVariants };

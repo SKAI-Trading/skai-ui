@@ -3,7 +3,7 @@ import { Masonry, MasonryItem } from "../components/data-display/masonry";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
 
 const meta: Meta<typeof Masonry> = {
-  title: "Layout Extended/Masonry",
+  title: "Components/Masonry",
   component: Masonry,
   parameters: {
     layout: "padded",

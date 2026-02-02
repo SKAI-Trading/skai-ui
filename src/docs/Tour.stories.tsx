@@ -4,7 +4,7 @@ import { Button } from "../components/core/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
 
 const meta: Meta<typeof Tour> = {
-  title: "Feedback Extended/Tour",
+  title: "Components/Tour",
   component: Tour,
   parameters: {
     layout: "fullscreen",

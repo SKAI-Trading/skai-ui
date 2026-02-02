@@ -3,7 +3,7 @@ import { BalanceDisplay, BalanceChange } from "../components/trading/balance-dis
 import { Wallet, Zap, CircleDollarSign, Bitcoin, Coins } from "lucide-react";
 
 const meta: Meta<typeof BalanceDisplay> = {
-  title: "Layout/BalanceDisplay",
+  title: "Trading/BalanceDisplay",
   component: BalanceDisplay,
   tags: ["autodocs"],
   parameters: {

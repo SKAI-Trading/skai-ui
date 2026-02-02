@@ -852,7 +852,7 @@ const WalletPageMockup = () => {
 // =============================================================================
 
 const meta: Meta = {
-  title: "Production Pages/Mockups",
+  title: "Templates/Production Pages",
   parameters: {
     layout: "fullscreen",
     docs: {
