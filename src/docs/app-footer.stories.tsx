@@ -40,10 +40,15 @@ type Story = StoryObj<typeof AppFooter>;
 
 const Logo = () => (
   <div className="flex items-center gap-2">
-    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary font-bold text-primary-foreground">
-      S
-    </div>
-    <span className="font-bold">SKAI</span>
+    <img
+      src="/assets/logo/skai-logo-mark.svg"
+      alt="Skai"
+      className="h-8 w-8"
+    />
+    <span className="text-lg font-medium tracking-tight">
+      <span className="text-[#56C7F3]">Skai</span>
+      <span className="text-muted-foreground">.trade</span>
+    </span>
   </div>
 );
 
@@ -71,7 +76,7 @@ const SocialLinks = () => (
 export const Default: Story = {
   args: {
     logo: <Logo />,
-    copyright: "© 2026 SKAI Trading. All rights reserved.",
+    copyright: "© 2026 Skai.trade. All rights reserved.",
     social: <SocialLinks />,
   },
 };
@@ -85,43 +90,38 @@ export const WithLinks: Story = {
         <FooterLinkGroup
           title="Product"
           links={[
+            { label: "AI", href: "/ai" },
             { label: "Trade", href: "/trade" },
+            { label: "Predict", href: "/predict" },
             { label: "Play", href: "/play" },
-            { label: "AI Agent", href: "/ai" },
-            { label: "Portfolio", href: "/portfolio" },
           ]}
         />
         <FooterLinkGroup
-          title="Resources"
+          title="Social"
           links={[
-            { label: "Documentation", href: "/docs" },
-            { label: "API", href: "/api" },
-            { label: "Status", href: "/status" },
-            { label: "Changelog", href: "/changelog" },
+            { label: "Live", href: "/streaming" },
+            { label: "Discover", href: "/discover" },
+            { label: "Trading Groups", href: "/trading-groups" },
           ]}
         />
         <FooterLinkGroup
-          title="Company"
+          title="SKAI"
           links={[
-            { label: "About", href: "/about" },
-            { label: "Blog", href: "/blog" },
-            { label: "Careers", href: "/careers" },
-            { label: "Press Kit", href: "/press" },
+            { label: "Earn", href: "/earn" },
+            { label: "Governance", href: "/governance" },
           ]}
         />
         <FooterLinkGroup
           title="Legal"
           links={[
-            { label: "Privacy Policy", href: "/privacy" },
-            { label: "Terms of Service", href: "/terms" },
-            { label: "Cookie Policy", href: "/cookies" },
-            { label: "Security", href: "/security" },
+            { label: "Terms", href: "/terms" },
+            { label: "Privacy", href: "/privacy" },
           ]}
         />
       </div>
     ),
     social: <SocialLinks />,
-    copyright: "© 2026 SKAI Trading. All rights reserved.",
+    copyright: "© 2026 Skai.trade. All rights reserved.",
   },
 };
 
@@ -130,7 +130,7 @@ export const DarkVariant: Story = {
   args: {
     variant: "dark",
     logo: <Logo />,
-    copyright: "© 2026 SKAI Trading",
+    copyright: "© 2026 Skai.trade",
     social: <SocialLinks />,
   },
 };
@@ -140,7 +140,7 @@ export const GlassVariant: Story = {
   args: {
     variant: "glass",
     logo: <Logo />,
-    copyright: "© 2026 SKAI Trading",
+    copyright: "© 2026 Skai.trade",
     social: <SocialLinks />,
   },
   decorators: [
@@ -157,7 +157,7 @@ export const MinimalVariant: Story = {
   args: {
     variant: "minimal",
     size: "compact",
-    copyright: "© 2026 SKAI Trading",
+    copyright: "© 2026 Skai.trade",
     bottomContent: (
       <div className="flex items-center gap-4 text-sm text-muted-foreground">
         <a href="#" className="hover:text-foreground">
@@ -179,7 +179,7 @@ export const CompactSize: Story = {
   args: {
     size: "compact",
     logo: <Logo />,
-    copyright: "© 2026 SKAI Trading",
+    copyright: "© 2026 Skai.trade",
     social: <SocialLinks />,
   },
 };
@@ -218,7 +218,7 @@ export const LargeSize: Story = {
       </div>
     ),
     social: <SocialLinks />,
-    copyright: "© 2026 SKAI Trading. All rights reserved.",
+    copyright: "© 2026 Skai.trade. All rights reserved.",
     bottomContent: (
       <p className="text-xs text-muted-foreground">
         Trading involves risk. Please trade responsibly.
@@ -235,12 +235,17 @@ export const TradingPlatform: Story = {
       logo={
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 text-lg font-bold text-white">
-              S
-            </div>
+            <img
+              src="/assets/logo/skai-logo-mark.svg"
+              alt="Skai"
+              className="h-10 w-10"
+            />
             <div>
-              <p className="text-lg font-bold">SKAI Trading</p>
-              <p className="text-xs text-muted-foreground">DeFi Made Simple</p>
+              <p className="text-lg font-medium tracking-tight">
+                <span className="text-[#56C7F3]">Skai</span>
+                <span className="text-muted-foreground">.trade</span>
+              </p>
+              <p className="text-xs text-muted-foreground">Trade. Predict. Play.</p>
             </div>
           </div>
           <p className="max-w-xs text-sm text-muted-foreground">
@@ -281,7 +286,7 @@ export const TradingPlatform: Story = {
         </div>
       }
       social={<SocialLinks />}
-      copyright="© 2026 SKAI Trading. All rights reserved."
+      copyright="© 2026 Skai.trade. All rights reserved."
       bottomContent={
         <div className="flex flex-col items-center gap-4 text-xs text-muted-foreground sm:flex-row">
           <p>Trading cryptocurrency involves substantial risk of loss.</p>

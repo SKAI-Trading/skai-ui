@@ -54,22 +54,29 @@ export default meta;
 type Story = StoryObj<typeof AppHeader>;
 
 const Logo = () => (
-  <div className="flex items-center gap-2 text-lg font-bold">
-    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-      S
-    </div>
-    SKAI
+  <div className="flex items-center gap-2">
+    <img
+      src="/assets/logo/skai-logo-mark.svg"
+      alt="Skai"
+      className="h-8 w-8"
+    />
+    <span className="text-lg font-medium tracking-tight">
+      <span className="text-[#56C7F3]">Skai</span>
+      <span className="text-muted-foreground">.trade</span>
+    </span>
   </div>
 );
 
 const Nav = () => (
   <nav className="flex items-center gap-1">
+    <AppHeaderNavItem href="/ai">AI</AppHeaderNavItem>
     <AppHeaderNavItem href="/trade" active>
       Trade
     </AppHeaderNavItem>
+    <AppHeaderNavItem href="/predict">Predict</AppHeaderNavItem>
     <AppHeaderNavItem href="/play">Play</AppHeaderNavItem>
-    <AppHeaderNavItem href="/ai">AI</AppHeaderNavItem>
-    <AppHeaderNavItem href="/portfolio">Portfolio</AppHeaderNavItem>
+    <AppHeaderNavItem href="/social">Social</AppHeaderNavItem>
+    <AppHeaderNavItem href="/skai">SKAI</AppHeaderNavItem>
   </nav>
 );
 
@@ -197,26 +204,34 @@ export const TradingPlatform: Story = {
       variant="glass"
       logo={
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 font-bold text-white">
-            S
-          </div>
-          <span className="hidden text-lg font-bold sm:block">SKAI Trading</span>
+          <img
+            src="/assets/logo/skai-logo-mark.svg"
+            alt="Skai"
+            className="h-8 w-8"
+          />
+          <span className="hidden text-lg font-medium tracking-tight sm:block">
+            <span className="text-[#56C7F3]">Skai</span>
+            <span className="text-muted-foreground">.trade</span>
+          </span>
         </div>
       }
       navigation={
         <nav className="flex items-center gap-1">
-          <AppHeaderNavItem href="/trade" active>
-            <LineChart className="mr-1.5 h-4 w-4" />
-            Trade
-          </AppHeaderNavItem>
-          <AppHeaderNavItem href="/play">
-            <Gamepad2 className="mr-1.5 h-4 w-4" />
-            Play
-          </AppHeaderNavItem>
           <AppHeaderNavItem href="/ai">
             <Bot className="mr-1.5 h-4 w-4" />
             AI
           </AppHeaderNavItem>
+          <AppHeaderNavItem href="/trade" active>
+            <LineChart className="mr-1.5 h-4 w-4" />
+            Trade
+          </AppHeaderNavItem>
+          <AppHeaderNavItem href="/predict">Predict</AppHeaderNavItem>
+          <AppHeaderNavItem href="/play">
+            <Gamepad2 className="mr-1.5 h-4 w-4" />
+            Play
+          </AppHeaderNavItem>
+          <AppHeaderNavItem href="/social">Social</AppHeaderNavItem>
+          <AppHeaderNavItem href="/skai">SKAI</AppHeaderNavItem>
         </nav>
       }
       actions={
@@ -230,9 +245,9 @@ export const TradingPlatform: Story = {
           <Button variant="ghost" size="icon">
             <Settings className="h-5 w-5" />
           </Button>
-          <Button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600">
+          <Button className="bg-[#56C7F3] hover:bg-[#4ab8e4] text-[#001615]">
             <Wallet className="mr-2 h-4 w-4" />
-            0x7c3d...5f2a
+            Connect wallet
           </Button>
         </AppHeaderActions>
       }
