@@ -1,16 +1,39 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./button";
-import { Mail, Loader2, ChevronRight, Plus, Download } from "lucide-react";
+import { Mail, Loader2, ChevronRight, Plus, Download, CheckCircle } from "lucide-react";
 
 const meta: Meta<typeof Button> = {
-  title: "Components/Button",
+  title: "⚡ Components/Button",
   component: Button,
   parameters: {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A versatile button component with multiple variants, sizes, and states.",
+        component: `
+# Button Component
+
+A versatile button component with multiple variants, sizes, and states.
+
+## ✅ Usage Status: LIVE IN APP
+
+This component is **actively used** in the main SKAI application. Current usage includes:
+- **Trading interface**: Buy/Sell buttons, order actions
+- **Navigation**: Menu items, tab switching  
+- **Forms**: Submit actions, confirmations
+- **Modals**: Close buttons, action buttons
+
+## Import Usage
+\`\`\`typescript
+import { Button } from "@skai/ui";
+\`\`\`
+
+## Main App Locations
+- \`src/components/copytrading/TraderCard.tsx\`
+- \`src/components/trade/perp-v2/PerpChart.tsx\`
+- Multiple form and navigation components
+
+This is a **production-ready** component with proven reliability.
+        `,
       },
     },
   },
@@ -27,11 +50,17 @@ const meta: Meta<typeof Button> = {
         "link",
       ],
       description: "The visual style of the button",
+      table: {
+        defaultValue: { summary: "default" },
+      },
     },
     size: {
       control: "select",
       options: ["default", "sm", "lg", "icon"],
       description: "The size of the button",
+      table: {
+        defaultValue: { summary: "default" },
+      },
     },
     disabled: {
       control: "boolean",

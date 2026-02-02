@@ -220,3 +220,125 @@ By end of 8-hour session:
 6. **Handoff** - Complete documentation for team
 
 Let's build this the right way! 🚀
+
+---
+
+## 🚨 **UPDATE: COMPONENT UTILIZATION ANALYSIS**
+
+*Found during Phase 2 audit - February 1, 2026*
+
+### Critical Discovery: MASSIVE UNDER-UTILIZATION
+
+**Main App Component Usage**: Only **21 out of 100+** available skai-ui components
+
+#### Currently Imported Components (21):
+```
+Alert, AlertDescription, Badge, Button, Calendar, 
+Collapsible, CollapsibleContent, CollapsibleTrigger,
+Dialog, DialogContent, DialogTitle, DockContainer, DockIcon, 
+OnlineIndicator, ParticleBackground, Progress, ScrollArea, 
+SimpleDockIcon, Toaster, TooltipProvider, toast
+```
+
+#### Available But UNUSED Trading Components:
+```
+amount-input, balance-display, candlestick-chart, 
+currency-input, depth-chart, fee-display, funding-rate, 
+gas-estimate, leverage-slider, liquidation-warning, 
+order-book, pnl-display, price-change, price-display, 
+risk-gauge, stat-card, token-icon, token-select, 
+trade-settings, transaction-status, wallet-address
+```
+
+#### Available But UNUSED Core Components:
+```
+accordion, alert-dialog, app-footer, app-header, app-shell, 
+autocomplete, avatar, breadcrumb, card, carousel, chart, 
+checkbox, command, confirm-dialog, context-menu, copy-button, 
+countdown, dashboard-layout, date-picker, drawer, dropdown-menu, 
+empty-state, error-boundary, form, hover-card, input, input-otp, 
+label, lazy-chart, loading-button, masonry, mobile-nav, 
+nav-group, network-badge, notification, number-input, 
+pagination, password-input, percentage-bar, popover, 
+qr-code, radio-group, resizable, search-input, select, 
+separator, sheet, sidebar, skai-icon, skai-logo, skeleton, 
+slider, sonner, spinner, status-bar, status-indicator, 
+stepper, swap-input, switch, table, tabs, tag-input, 
+textarea, theme-provider, ticker-tape, tier-badge, 
+toggle, tooltip, tour
+```
+
+### Impact Assessment
+
+**CRITICAL PROBLEMS**:
+- ❌ **80% of design system unused** - massive waste of development effort
+- ❌ **Legacy components everywhere** - inconsistent UI patterns  
+- ❌ **Code duplication** - same functionality implemented multiple times
+- ❌ **Maintenance burden** - multiple component implementations to maintain
+- ❌ **Design inconsistency** - different styling patterns across app
+- ❌ **Performance impact** - loading unused skai-ui while using legacy components
+
+**ROOT CAUSE**: Main app was likely built before skai-ui was completed, and migration never happened.
+
+### Priority Migration Plan
+
+#### **PHASE 1 - High Impact (Week 1)**
+Replace most-used legacy components:
+1. **Card** → Replace all custom card implementations
+2. **Input** → Replace all input variants with skai-ui  
+3. **Avatar** → User profile displays
+4. **Table** → Trading tables, data displays
+5. **Tabs** → Navigation within pages
+
+#### **PHASE 2 - Trading Specific (Week 2)**
+Replace trading-specific components:
+1. **PriceDisplay** → All price rendering
+2. **TokenIcon** → All token displays
+3. **AmountInput** → Currency/token inputs
+4. **BalanceDisplay** → Wallet/portfolio displays
+5. **TransactionStatus** → Transaction feedback
+
+#### **PHASE 3 - Layout System (Week 3)**
+Replace layout with design system:
+1. **AppShell** → Main application layout
+2. **AppHeader** → Top navigation
+3. **DashboardLayout** → Dashboard pages
+4. **TradingLayout** → Trading interface
+5. **MobileNav** → Mobile navigation
+
+#### **PHASE 4 - Advanced Components (Week 4)**
+Replace complex components:
+1. **OrderBook** → Trading order book
+2. **DepthChart** → Market depth visualization
+3. **CandlestickChart** → Price charts
+4. **RiskGauge** → Risk indicators
+5. **Tour** → User onboarding
+
+### Expected Benefits
+
+**IMMEDIATE**:
+- ✅ **Design consistency** across entire app
+- ✅ **Reduced bundle size** by removing duplicate component code
+- ✅ **Better performance** with optimized components
+- ✅ **Improved accessibility** - skai-ui components include a11y
+
+**LONG TERM**:
+- ✅ **Faster development** - no custom component development needed
+- ✅ **Easier maintenance** - single source of truth for components
+- ✅ **Better testing** - skai-ui components already tested
+- ✅ **Consistent user experience** - all interactions follow same patterns
+
+---
+
+## 📊 **UPDATED SUCCESS METRICS**
+
+By end of audit + migration:
+
+- [ ] **Component Utilization**: Increase from 21% to 90%+ 
+- [ ] **Code Reduction**: Remove 80% of legacy component code
+- [ ] **Performance**: 20%+ bundle size reduction
+- [ ] **Design System Adoption**: 100% compliance with skai-ui
+- [ ] **Development Speed**: 50% faster component development
+- [ ] **Bug Reduction**: Fewer UI bugs due to consistent components
+
+This is a HUGE opportunity to dramatically improve the codebase quality and development experience! 🎯
