@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Toggle } from "../forms/toggle";
-import { Bold, Italic, Underline, Star, Bell, Eye, EyeOff } from "lucide-react";
+import { Toggle } from "./toggle";
+import { Bold, Italic, Underline, Star, Bell, Eye } from "lucide-react";
 
 const meta: Meta<typeof Toggle> = {
   title: "Components/Toggle",

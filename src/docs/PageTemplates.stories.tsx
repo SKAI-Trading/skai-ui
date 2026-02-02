@@ -3,9 +3,8 @@ import { Button } from "../components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Input } from "../components/input";
 import { Badge } from "../components/badge";
-import { Separator } from "../components/separator";
 import { Avatar, AvatarFallback } from "../components/avatar";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/tabs";
+import { Tabs, TabsList, TabsTrigger } from "../components/tabs";
 import {
   ArrowDown,
   ArrowUpDown,
@@ -259,7 +258,7 @@ const MobileBottomNav = () => (
       ].map((item) => (
         <button
           key={item.label}
-          className={`flex flex-col items-center justify-center gap-1 transition-all ${
+          className={`relative flex flex-col items-center justify-center gap-1 transition-all ${
             item.active
               ? "text-primary"
               : "text-muted-foreground hover:text-foreground"

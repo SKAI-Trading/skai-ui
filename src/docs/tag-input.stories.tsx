@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TagInput, Tag } from "../components/tag-input";
+import { TagInput } from "../components/tag-input";
 import { useState } from "react";
 
 const meta: Meta<typeof TagInput> = {
@@ -32,15 +32,12 @@ type Story = StoryObj<typeof TagInput>;
 
 export const Default: Story = {
   render: () => {
-    const [tags, setTags] = useState<Tag[]>([
-      { id: "1", value: "react" },
-      { id: "2", value: "typescript" },
-    ]);
+    const [tags, setTags] = useState<string[]>(["react", "typescript"]);
     return (
       <div className="w-[350px]">
         <TagInput
-          tags={tags}
-          onTagsChange={setTags}
+          value={tags}
+          onValueChange={setTags}
           placeholder="Add a tag..."
         />
       </div>
@@ -50,12 +47,12 @@ export const Default: Story = {
 
 export const Empty: Story = {
   render: () => {
-    const [tags, setTags] = useState<Tag[]>([]);
+    const [tags, setTags] = useState<string[]>([]);
     return (
       <div className="w-[350px]">
         <TagInput
-          tags={tags}
-          onTagsChange={setTags}
+          value={tags}
+          onValueChange={setTags}
           placeholder="Type and press Enter..."
         />
       </div>
@@ -65,16 +62,13 @@ export const Empty: Story = {
 
 export const WithMaxTags: Story = {
   render: () => {
-    const [tags, setTags] = useState<Tag[]>([
-      { id: "1", value: "tag1" },
-      { id: "2", value: "tag2" },
-    ]);
+    const [tags, setTags] = useState<string[]>(["tag1", "tag2"]);
     return (
       <div className="space-y-2 w-[350px]">
         <p className="text-sm text-muted-foreground">Maximum 5 tags allowed</p>
         <TagInput
-          tags={tags}
-          onTagsChange={setTags}
+          value={tags}
+          onValueChange={setTags}
           maxTags={5}
           placeholder="Add up to 5 tags..."
         />
@@ -85,22 +79,21 @@ export const WithMaxTags: Story = {
 
 export const WithValidation: Story = {
   render: () => {
-    const [tags, setTags] = useState<Tag[]>([]);
+    const [tags, setTags] = useState<string[]>([]);
 
     const validate = (value: string) => {
-      if (value.length < 2) return "Tag must be at least 2 characters";
-      if (value.length > 20) return "Tag must be less than 20 characters";
-      if (!/^[a-zA-Z0-9-]+$/.test(value))
-        return "Only alphanumeric and hyphens allowed";
+      if (value.length < 2) return false;
+      if (value.length > 20) return false;
+      if (!/^[a-zA-Z0-9-]+$/.test(value)) return false;
       return true;
     };
 
     return (
       <div className="w-[350px]">
         <TagInput
-          tags={tags}
-          onTagsChange={setTags}
-          validate={validate}
+          value={tags}
+          onValueChange={setTags}
+          validateTag={validate}
           placeholder="Enter valid tags..."
         />
       </div>
@@ -110,15 +103,15 @@ export const WithValidation: Story = {
 
 export const NoDuplicates: Story = {
   render: () => {
-    const [tags, setTags] = useState<Tag[]>([{ id: "1", value: "unique" }]);
+    const [tags, setTags] = useState<string[]>(["unique"]);
     return (
       <div className="space-y-2 w-[350px]">
         <p className="text-sm text-muted-foreground">
           Try adding "unique" again
         </p>
         <TagInput
-          tags={tags}
-          onTagsChange={setTags}
+          value={tags}
+          onValueChange={setTags}
           allowDuplicates={false}
           placeholder="Add unique tags..."
         />
@@ -129,15 +122,15 @@ export const NoDuplicates: Story = {
 
 export const Sizes: Story = {
   render: () => {
-    const [t1, setT1] = useState<Tag[]>([{ id: "1", value: "small" }]);
-    const [t2, setT2] = useState<Tag[]>([{ id: "1", value: "default" }]);
-    const [t3, setT3] = useState<Tag[]>([{ id: "1", value: "large" }]);
+    const [t1, setT1] = useState<string[]>(["small"]);
+    const [t2, setT2] = useState<string[]>(["default"]);
+    const [t3, setT3] = useState<string[]>(["large"]);
 
     return (
       <div className="space-y-4 w-[350px]">
-        <TagInput tags={t1} onTagsChange={setT1} size="sm" />
-        <TagInput tags={t2} onTagsChange={setT2} size="default" />
-        <TagInput tags={t3} onTagsChange={setT3} size="lg" />
+        <TagInput value={t1} onValueChange={setT1} />
+        <TagInput value={t2} onValueChange={setT2} />
+        <TagInput value={t3} onValueChange={setT3} />
       </div>
     );
   },
@@ -145,25 +138,20 @@ export const Sizes: Story = {
 
 export const Disabled: Story = {
   args: {
-    tags: [
-      { id: "1", value: "locked" },
-      { id: "2", value: "readonly" },
-    ],
+    value: ["locked", "readonly"],
     disabled: true,
   },
 };
 
 export const CryptoWallets: Story = {
   render: () => {
-    const [tags, setTags] = useState<Tag[]>([
-      { id: "1", value: "0x1234...5678" },
-    ]);
+    const [tags, setTags] = useState<string[]>(["0x1234...5678"]);
     return (
       <div className="space-y-2 w-[400px]">
         <p className="text-sm text-muted-foreground">Add wallet addresses</p>
         <TagInput
-          tags={tags}
-          onTagsChange={setTags}
+          value={tags}
+          onValueChange={setTags}
           placeholder="Paste wallet address..."
           maxTags={10}
         />

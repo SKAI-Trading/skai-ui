@@ -6,7 +6,6 @@ import {
 } from "../components/theme-provider";
 import { Button } from "../components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import * as React from "react";
 
 const meta: Meta<typeof ThemeToggle> = {
   title: "Theme/ThemeToggle",

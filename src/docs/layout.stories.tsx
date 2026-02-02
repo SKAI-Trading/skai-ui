@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
-  Stack,
   HStack,
   VStack,
   Grid,

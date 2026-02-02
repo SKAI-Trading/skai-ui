@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { DatePicker } from "../components/forms/date-picker";
 
@@ -208,10 +208,9 @@ describe("DatePicker", () => {
       fireEvent.click(screen.getByRole("button"));
 
       // Get current month text
-      const monthText = screen.getByText(
+      screen.getByText(
         /January|February|March|April|May|June|July|August|September|October|November|December/,
       );
-      const initialMonth = monthText.textContent;
 
       // Click previous month button
       const prevButton = screen

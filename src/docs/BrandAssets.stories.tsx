@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "../components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Badge } from "../components/badge";
-import { Download, Copy, Check, Zap } from "lucide-react";
+import { Download, Copy, Check } from "lucide-react";
 
 const meta: Meta = {
   title: "Brand/Assets",

@@ -24,8 +24,9 @@ type Story = StoryObj<typeof Notification>;
 export const Default: Story = {
   args: {
     title: "Notification",
-    description: "This is a default notification message.",
-    onClose: () => {},
+    message: "This is a default notification message.",
+    dismissible: true,
+    onDismiss: () => {},
   },
 };
 
@@ -33,8 +34,9 @@ export const Success: Story = {
   args: {
     variant: "success",
     title: "Success!",
-    description: "Your transaction has been confirmed.",
-    onClose: () => {},
+    message: "Your transaction has been confirmed.",
+    dismissible: true,
+    onDismiss: () => {},
   },
 };
 
@@ -42,8 +44,9 @@ export const Warning: Story = {
   args: {
     variant: "warning",
     title: "Warning",
-    description: "Your session will expire in 5 minutes.",
-    onClose: () => {},
+    message: "Your session will expire in 5 minutes.",
+    dismissible: true,
+    onDismiss: () => {},
   },
 };
 
@@ -51,8 +54,9 @@ export const Error: Story = {
   args: {
     variant: "error",
     title: "Error",
-    description: "Failed to complete the transaction. Please try again.",
-    onClose: () => {},
+    message: "Failed to complete the transaction. Please try again.",
+    dismissible: true,
+    onDismiss: () => {},
   },
 };
 
@@ -60,8 +64,9 @@ export const Info: Story = {
   args: {
     variant: "info",
     title: "Info",
-    description: "A new version is available.",
-    onClose: () => {},
+    message: "A new version is available.",
+    dismissible: true,
+    onDismiss: () => {},
   },
 };
 
@@ -69,13 +74,14 @@ export const WithAction: Story = {
   args: {
     variant: "info",
     title: "Update Available",
-    description: "A new version of the app is ready.",
+    message: "A new version of the app is ready.",
     action: (
       <Button size="sm" variant="outline">
         Update Now
       </Button>
     ),
-    onClose: () => {},
+    dismissible: true,
+    onDismiss: () => {},
   },
 };
 
@@ -83,14 +89,15 @@ export const TitleOnly: Story = {
   args: {
     title: "File uploaded successfully",
     variant: "success",
-    onClose: () => {},
+    dismissible: true,
+    onDismiss: () => {},
   },
 };
 
 export const NoClose: Story = {
   args: {
     title: "Important Notice",
-    description: "This notification cannot be dismissed.",
+    message: "This notification cannot be dismissed.",
     variant: "warning",
   },
 };
@@ -98,10 +105,11 @@ export const NoClose: Story = {
 export const LongContent: Story = {
   args: {
     title: "Transaction Details",
-    description:
+    message:
       "Your swap of 100 USDC for 0.0542 ETH has been confirmed. Transaction hash: 0x1234...abcd. Gas used: 150,000 gwei.",
     variant: "success",
-    onClose: () => {},
+    dismissible: true,
+    onDismiss: () => {},
   },
 };
 
@@ -110,32 +118,37 @@ export const AllVariants: Story = {
     <div className="flex flex-col gap-4 w-96">
       <Notification
         title="Default"
-        description="Default notification"
-        onClose={() => {}}
+        message="Default notification"
+        dismissible
+        onDismiss={() => {}}
       />
       <Notification
         variant="success"
         title="Success"
-        description="Success notification"
-        onClose={() => {}}
+        message="Success notification"
+        dismissible
+        onDismiss={() => {}}
       />
       <Notification
         variant="warning"
         title="Warning"
-        description="Warning notification"
-        onClose={() => {}}
+        message="Warning notification"
+        dismissible
+        onDismiss={() => {}}
       />
       <Notification
         variant="error"
         title="Error"
-        description="Error notification"
-        onClose={() => {}}
+        message="Error notification"
+        dismissible
+        onDismiss={() => {}}
       />
       <Notification
         variant="info"
         title="Info"
-        description="Info notification"
-        onClose={() => {}}
+        message="Info notification"
+        dismissible
+        onDismiss={() => {}}
       />
     </div>
   ),
@@ -144,24 +157,31 @@ export const AllVariants: Story = {
 // NotificationStack stories
 export const StackedNotifications: Story = {
   render: function StackedNotificationsStory() {
-    const [notifications, setNotifications] = useState([
+    const [notifications, setNotifications] = useState<
+      Array<{
+        id: string;
+        variant: "success" | "warning" | "info" | "error";
+        title: string;
+        message: string;
+      }>
+    >([
       {
         id: "1",
-        variant: "success" as const,
+        variant: "success",
         title: "Success",
-        description: "Transaction confirmed",
+        message: "Transaction confirmed",
       },
       {
         id: "2",
-        variant: "warning" as const,
+        variant: "warning",
         title: "Warning",
-        description: "Low balance",
+        message: "Low balance",
       },
       {
         id: "3",
-        variant: "info" as const,
+        variant: "info",
         title: "Info",
-        description: "New feature available",
+        message: "New feature available",
       },
     ]);
 
@@ -178,7 +198,7 @@ export const StackedNotifications: Story = {
           id: Date.now().toString(),
           variant,
           title: `${variant.charAt(0).toUpperCase() + variant.slice(1)} #${prev.length + 1}`,
-          description: "New notification added",
+          message: "New notification added",
         },
       ]);
     };
@@ -193,7 +213,8 @@ export const StackedNotifications: Story = {
             <Notification
               key={n.id}
               {...n}
-              onClose={() => removeNotification(n.id)}
+              dismissible
+              onDismiss={() => removeNotification(n.id)}
             />
           ))}
         </NotificationStack>
@@ -210,7 +231,12 @@ export const StackPositions: Story = {
           position="top-left"
           className="scale-50 origin-top-left"
         >
-          <Notification variant="info" title="Top Left" onClose={() => {}} />
+          <Notification
+            variant="info"
+            title="Top Left"
+            dismissible
+            onDismiss={() => {}}
+          />
         </NotificationStack>
       </div>
       <div className="relative h-48 w-48 bg-muted rounded-lg">
@@ -218,7 +244,12 @@ export const StackPositions: Story = {
           position="top-right"
           className="scale-50 origin-top-right"
         >
-          <Notification variant="info" title="Top Right" onClose={() => {}} />
+          <Notification
+            variant="info"
+            title="Top Right"
+            dismissible
+            onDismiss={() => {}}
+          />
         </NotificationStack>
       </div>
       <div className="relative h-48 w-48 bg-muted rounded-lg">
@@ -226,7 +257,12 @@ export const StackPositions: Story = {
           position="bottom-left"
           className="scale-50 origin-bottom-left"
         >
-          <Notification variant="info" title="Bottom Left" onClose={() => {}} />
+          <Notification
+            variant="info"
+            title="Bottom Left"
+            dismissible
+            onDismiss={() => {}}
+          />
         </NotificationStack>
       </div>
       <div className="relative h-48 w-48 bg-muted rounded-lg">
@@ -237,7 +273,8 @@ export const StackPositions: Story = {
           <Notification
             variant="info"
             title="Bottom Right"
-            onClose={() => {}}
+            dismissible
+            onDismiss={() => {}}
           />
         </NotificationStack>
       </div>

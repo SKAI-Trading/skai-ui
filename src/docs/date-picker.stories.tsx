@@ -159,7 +159,7 @@ export const ErrorState: Story = {
 
 export const NotClearable: Story = {
   render: () => {
-    const [date, setDate] = useState<Date>(new Date());
+    const [date, setDate] = useState<Date | undefined>(new Date());
 
     return (
       <div className="w-[300px]">

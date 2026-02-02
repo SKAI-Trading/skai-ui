@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeAll, afterEach } from "vitest";
+import { describe, it, expect, beforeAll } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import {
   ScrollingTicker,

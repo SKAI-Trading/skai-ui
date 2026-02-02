@@ -29,7 +29,7 @@ type Story = StoryObj<typeof ResizablePanelGroup>;
 export const Horizontal: Story = {
   render: () => (
     <div className="h-[400px] w-full border rounded-lg overflow-hidden">
-      <ResizablePanelGroup direction="horizontal">
+      <ResizablePanelGroup orientation="horizontal">
         <ResizablePanel defaultSize={25} minSize={15}>
           <div className="flex h-full items-center justify-center p-6 bg-muted/30">
             <span className="font-semibold">Sidebar</span>
@@ -52,7 +52,7 @@ export const Horizontal: Story = {
 export const Vertical: Story = {
   render: () => (
     <div className="h-[400px] w-full border rounded-lg overflow-hidden">
-      <ResizablePanelGroup direction="vertical">
+      <ResizablePanelGroup orientation="vertical">
         <ResizablePanel defaultSize={30} minSize={10}>
           <div className="flex h-full items-center justify-center p-6 bg-muted/30">
             <span className="font-semibold">Header</span>
@@ -75,7 +75,7 @@ export const Vertical: Story = {
 export const NestedLayout: Story = {
   render: () => (
     <div className="h-[500px] w-full border rounded-lg overflow-hidden">
-      <ResizablePanelGroup direction="horizontal">
+      <ResizablePanelGroup orientation="horizontal">
         <ResizablePanel defaultSize={20} minSize={15}>
           <div className="flex h-full items-center justify-center p-4 bg-muted/30">
             <span className="font-semibold text-sm">Navigation</span>
@@ -83,7 +83,7 @@ export const NestedLayout: Story = {
         </ResizablePanel>
         <ResizableHandle />
         <ResizablePanel defaultSize={60}>
-          <ResizablePanelGroup direction="vertical">
+          <ResizablePanelGroup orientation="vertical">
             <ResizablePanel defaultSize={70}>
               <div className="flex h-full items-center justify-center p-4">
                 <span className="font-semibold">Main Content</span>
@@ -114,9 +114,9 @@ export const NestedLayout: Story = {
 export const TradingLayout: Story = {
   render: () => (
     <div className="h-[500px] w-full border rounded-lg overflow-hidden bg-background">
-      <ResizablePanelGroup direction="horizontal">
+      <ResizablePanelGroup orientation="horizontal">
         <ResizablePanel defaultSize={65} minSize={40}>
-          <ResizablePanelGroup direction="vertical">
+          <ResizablePanelGroup orientation="vertical">
             <ResizablePanel defaultSize={70}>
               <div className="flex h-full items-center justify-center p-4 border-b border-r">
                 <div className="text-center">

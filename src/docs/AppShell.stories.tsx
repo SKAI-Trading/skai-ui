@@ -17,7 +17,6 @@ import {
 import { MobileNav, type MobileNavItem } from "../components/mobile-nav";
 import { DockBar, DockBarIcon, DockBarSeparator } from "../components/dock-bar";
 import { Button } from "../components/button";
-import { Input } from "../components/input";
 import { SkaiLogo } from "../components/skai-logo";
 import {
   Home,
@@ -27,7 +26,6 @@ import {
   MessageSquare,
   Settings,
   Bell,
-  Search,
   Wallet,
   Twitter,
   Github,
@@ -154,7 +152,7 @@ export const Default: Story = {
       header={
         <AppHeader
           variant="glass"
-          logo={<SkaiLogo size="sm" variant="full" />}
+          logo={<SkaiLogo size="small" variant="white" />}
           navigation={
             <>
               <AppHeaderNavItem href="/trade" active>
@@ -223,7 +221,7 @@ export const TradingLayout: Story = {
       header={
         <AppHeader
           variant="glass"
-          logo={<SkaiLogo size="sm" variant="full" />}
+          logo={<SkaiLogo size="small" variant="white" />}
           navigation={
             <>
               <AppHeaderNavItem href="/trade" active>
@@ -285,7 +283,7 @@ export const WithFooter: Story = {
     <AppShell
       header={
         <AppHeader
-          logo={<SkaiLogo size="sm" variant="full" />}
+          logo={<SkaiLogo size="small" variant="white" />}
           navigation={
             <>
               <AppHeaderNavItem href="/">Home</AppHeaderNavItem>
@@ -300,7 +298,7 @@ export const WithFooter: Story = {
           variant="dark"
           logo={
             <div className="space-y-4">
-              <SkaiLogo size="sm" variant="full" />
+              <SkaiLogo size="small" variant="white" />
               <p className="text-sm text-muted-foreground max-w-xs">
                 AI-powered trading platform for the next generation of traders.
               </p>
@@ -372,7 +370,7 @@ export const MobileNavExample: Story = {
     <div className="min-h-screen bg-background">
       <AppHeader
         variant="glass"
-        logo={<SkaiLogo size="sm" variant="icon" />}
+        logo={<SkaiLogo size="small" iconOnly />}
         mobileMenuTrigger={
           <Button variant="ghost" size="icon">
             <span className="sr-only">Menu</span>≡

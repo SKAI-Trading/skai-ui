@@ -9,7 +9,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Badge } from "../components/badge";
 import { Button } from "../components/button";
-import { Progress } from "../components/progress";
 import {
   Trophy,
   Flame,
@@ -17,18 +16,16 @@ import {
   TrendingDown,
   Zap,
   Target,
-  Gift,
   Star,
   Crown,
   Coins,
-  Dice1,
   Dice5,
   ArrowUp,
   ArrowDown,
   Timer,
   Users,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const meta: Meta = {
   title: "Documentation/Game UI Patterns",
@@ -70,7 +67,7 @@ const quickAmounts = [5, 10, 25, 50, 100];
 export const BetSlip: StoryObj = {
   render: () => {
     const [betAmount, setBetAmount] = useState(25);
-    const [odds, setOdds] = useState(1.95);
+    const [odds, _setOdds] = useState(1.95);
     const potentialWin = (betAmount * odds).toFixed(2);
 
     return (
@@ -126,7 +123,7 @@ export const BetSlip: StoryObj = {
                   <input
                     type="number"
                     value={betAmount}
-                    onChange={(e) => setBetAmount(Number(e.target.value))}
+                    onChange={(e) => setBetAmount(Number(e.target.value) || 0)}
                     className="w-full py-3 pl-8 pr-4 rounded-xl bg-black/40 border border-white/10 focus:border-cyan-500/50 focus:outline-none text-xl font-bold"
                   />
                 </div>
@@ -174,6 +171,25 @@ export const BetSlip: StoryObj = {
 // ============================================================================
 // GAME CARDS
 // ============================================================================
+
+// Color maps for Tailwind classes (dynamic classes are not compiled by Tailwind)
+const bgColorMap: Record<string, string> = {
+  cyan: "bg-cyan-500/20",
+  purple: "bg-purple-500/20",
+  amber: "bg-amber-500/20",
+  rose: "bg-rose-500/20",
+  green: "bg-green-500/20",
+  orange: "bg-orange-500/20",
+};
+
+const textColorMap: Record<string, string> = {
+  cyan: "text-cyan-400",
+  purple: "text-purple-400",
+  amber: "text-amber-400",
+  rose: "text-rose-400",
+  green: "text-green-400",
+  orange: "text-orange-400",
+};
 
 const games = [
   {
@@ -234,9 +250,11 @@ export const GameCards: StoryObj = {
             <CardContent className="py-6">
               <div className="flex items-start gap-4">
                 <div
-                  className={`w-14 h-14 rounded-2xl bg-${game.color}-500/20 flex items-center justify-center group-hover:scale-110 transition-transform`}
+                  className={`w-14 h-14 rounded-2xl ${bgColorMap[game.color] || "bg-gray-500/20"} flex items-center justify-center group-hover:scale-110 transition-transform`}
                 >
-                  <game.icon className={`h-7 w-7 text-${game.color}-400`} />
+                  <game.icon
+                    className={`h-7 w-7 ${textColorMap[game.color] || "text-gray-400"}`}
+                  />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -281,7 +299,9 @@ export const GameCards: StoryObj = {
               key={game.name}
               className="w-full flex items-center gap-3 p-3 rounded-lg bg-black/20 hover:bg-black/30 transition-colors text-left"
             >
-              <game.icon className={`h-5 w-5 text-${game.color}-400`} />
+              <game.icon
+                className={`h-5 w-5 ${textColorMap[game.color] || "text-gray-400"}`}
+              />
               <span className="font-semibold flex-1">{game.name}</span>
               {game.hot && <Flame className="h-4 w-4 text-orange-400" />}
               <span className="text-sm text-muted-foreground">
@@ -301,6 +321,8 @@ export const GameCards: StoryObj = {
 
 export const WinLossAnimations: StoryObj = {
   render: () => {
+    // Note: These state variables are for demo purposes - handlers are wired up but
+    // full animation overlay is shown as static examples below for documentation
     const [showWin, setShowWin] = useState(false);
     const [showLoss, setShowLoss] = useState(false);
 
@@ -310,17 +332,28 @@ export const WinLossAnimations: StoryObj = {
           <h2 className="text-2xl font-bold mb-2">Win/Loss Feedback</h2>
           <p className="text-muted-foreground mb-6">
             Animated visual feedback for game results with celebration effects.
+            {showWin && " (Win triggered!)"}
+            {showLoss && " (Loss triggered!)"}
           </p>
         </div>
 
         <div className="flex gap-4">
           <Button
-            onClick={() => setShowWin(true)}
+            onClick={() => {
+              setShowWin(true);
+              setTimeout(() => setShowWin(false), 2000);
+            }}
             className="bg-green-500 hover:bg-green-600"
           >
             Trigger Win
           </Button>
-          <Button onClick={() => setShowLoss(true)} variant="destructive">
+          <Button
+            onClick={() => {
+              setShowLoss(true);
+              setTimeout(() => setShowLoss(false), 2000);
+            }}
+            variant="destructive"
+          >
             Trigger Loss
           </Button>
         </div>
@@ -552,20 +585,27 @@ export const StreakCounter: StoryObj = {
                 { streak: 5, label: "On Fire", icon: Zap, color: "amber" },
                 { streak: 7, label: "Blazing", icon: Star, color: "orange" },
                 { streak: 10, label: "Legendary", icon: Crown, color: "rose" },
-              ].map((milestone) => (
-                <div
-                  key={milestone.streak}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full ${
-                    streak >= milestone.streak
-                      ? `bg-${milestone.color}-500/20 text-${milestone.color}-400`
-                      : "bg-white/5 text-muted-foreground"
-                  }`}
-                >
-                  <milestone.icon className="h-4 w-4" />
-                  <span className="font-semibold">{milestone.label}</span>
-                  <span className="text-sm">({milestone.streak}+)</span>
-                </div>
-              ))}
+              ].map((milestone) => {
+                const isActive = streak >= milestone.streak;
+                const activeBgClass =
+                  bgColorMap[milestone.color] || "bg-gray-500/20";
+                const activeTextClass =
+                  textColorMap[milestone.color] || "text-gray-400";
+                return (
+                  <div
+                    key={milestone.streak}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+                      isActive
+                        ? `${activeBgClass} ${activeTextClass}`
+                        : "bg-white/5 text-muted-foreground"
+                    }`}
+                  >
+                    <milestone.icon className="h-4 w-4" />
+                    <span className="font-semibold">{milestone.label}</span>
+                    <span className="text-sm">({milestone.streak}+)</span>
+                  </div>
+                );
+              })}
             </div>
           </CardContent>
         </Card>
@@ -770,10 +810,10 @@ export const PredictionMarketUI: StoryObj = {
               {/* Action Buttons */}
               <div className="grid grid-cols-2 gap-3">
                 <Button className="bg-green-500/20 text-green-400 hover:bg-green-500/30 border border-green-500/30">
-                  Buy Yes (${((100 / pred.yes) * 100).toFixed(0)}c)
+                  Buy Yes ({pred.yes}¢)
                 </Button>
                 <Button className="bg-red-500/20 text-red-400 hover:bg-red-500/30 border border-red-500/30">
-                  Buy No (${((100 / pred.no) * 100).toFixed(0)}c)
+                  Buy No ({pred.no}¢)
                 </Button>
               </div>
             </CardContent>

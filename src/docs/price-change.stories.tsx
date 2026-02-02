@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  PriceChange,
-  PercentageChange,
-  USDChange,
-} from "../components/price-change";
+import { PriceChange, USDChange } from "../components/price-change";
 import { PnLDisplay, UnrealizedPnL } from "../components/pnl-display";
 
 const meta: Meta<typeof PriceChange> = {

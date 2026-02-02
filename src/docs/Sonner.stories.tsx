@@ -94,11 +94,13 @@ export const Info: Story = {
   ),
 };
 
-export const Promise: Story = {
+export const PromiseToast: Story = {
   render: () => (
     <Button
       onClick={() => {
-        const promise = new Promise((resolve) => setTimeout(resolve, 2000));
+        const promise = new globalThis.Promise<void>((resolve) =>
+          setTimeout(resolve, 2000),
+        );
         sonnerToast.promise(promise, {
           loading: "Submitting transaction...",
           success: "Transaction confirmed!",

@@ -3,17 +3,15 @@ import { Button } from "../components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Input } from "../components/input";
 import { Badge } from "../components/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/avatar";
+import { Avatar, AvatarFallback } from "../components/avatar";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/tabs";
 import {
-  ArrowRight,
   ArrowUpDown,
   BarChart3,
   Bell,
   Bot,
   Brain,
   ChevronDown,
-  Clock,
   Copy,
   CreditCard,
   Dice5,
@@ -33,7 +31,6 @@ import {
   Search,
   Send,
   Settings,
-  Share2,
   Shield,
   Target,
   TrendingDown,
@@ -372,24 +369,25 @@ const BottomTickerBar = () => {
 /**
  * Footer - Simple terms/privacy footer
  * Matches src/components/layout/Footer.tsx
+ * Currently commented out - available for future use
  */
-const Footer = () => (
-  <footer className="border-t border-border/50 bg-background/50 backdrop-blur-xl mt-12 mb-10">
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="flex items-center gap-6 text-sm text-muted-foreground">
-          <button className="hover:text-primary transition-colors">
-            Terms
-          </button>
-          <button className="hover:text-primary transition-colors">
-            Privacy
-          </button>
-        </div>
-        <p className="text-sm text-muted-foreground">© 2026 SKAI</p>
-      </div>
-    </div>
-  </footer>
-);
+// const Footer = () => (
+//   <footer className="border-t border-border/50 bg-background/50 backdrop-blur-xl mt-12 mb-10">
+//     <div className="container mx-auto px-4 py-8">
+//       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+//         <div className="flex items-center gap-6 text-sm text-muted-foreground">
+//           <button className="hover:text-primary transition-colors">
+//             Terms
+//           </button>
+//           <button className="hover:text-primary transition-colors">
+//             Privacy
+//           </button>
+//         </div>
+//         <p className="text-sm text-muted-foreground">© 2026 SKAI</p>
+//       </div>
+//     </div>
+//   </footer>
+// );
 
 /** Mobile bottom navigation (shows on mobile only) */
 const MobileNav = () => (
@@ -501,29 +499,41 @@ export const TradePage: StoryObj = {
             <CardContent className="grid grid-cols-2 gap-4 pt-0">
               {/* Bids */}
               <div className="space-y-1">
-                {[2145.5, 2145.25, 2145.0, 2144.75, 2144.5].map((price, i) => (
+                {[
+                  { price: 2145.5, amount: "3.421" },
+                  { price: 2145.25, amount: "5.832" },
+                  { price: 2145.0, amount: "2.156" },
+                  { price: 2144.75, amount: "8.745" },
+                  { price: 2144.5, amount: "1.298" },
+                ].map((order, i) => (
                   <div
                     key={i}
                     className="flex justify-between text-xs font-mono"
                   >
-                    <span className="text-green-400">{price.toFixed(2)}</span>
-                    <span className="text-gray-400">
-                      {(Math.random() * 10).toFixed(3)}
+                    <span className="text-green-400">
+                      {order.price.toFixed(2)}
                     </span>
+                    <span className="text-gray-400">{order.amount}</span>
                   </div>
                 ))}
               </div>
               {/* Asks */}
               <div className="space-y-1">
-                {[2146.0, 2146.25, 2146.5, 2146.75, 2147.0].map((price, i) => (
+                {[
+                  { price: 2146.0, amount: "4.127" },
+                  { price: 2146.25, amount: "6.543" },
+                  { price: 2146.5, amount: "2.891" },
+                  { price: 2146.75, amount: "7.234" },
+                  { price: 2147.0, amount: "3.678" },
+                ].map((order, i) => (
                   <div
                     key={i}
                     className="flex justify-between text-xs font-mono"
                   >
-                    <span className="text-red-400">{price.toFixed(2)}</span>
-                    <span className="text-gray-400">
-                      {(Math.random() * 10).toFixed(3)}
+                    <span className="text-red-400">
+                      {order.price.toFixed(2)}
                     </span>
+                    <span className="text-gray-400">{order.amount}</span>
                   </div>
                 ))}
               </div>

@@ -4,8 +4,7 @@ import {
   ThemeProvider,
   useTheme,
   ThemeToggle,
-} from "../components/utility/theme-provider";
-import * as React from "react";
+} from "../components/theme-provider";
 
 // Mock matchMedia
 const mockMatchMedia = vi.fn().mockImplementation((query: string) => ({

@@ -15,7 +15,6 @@ import {
   MessageSquare,
   Send,
   Heart,
-  Share2,
   MoreHorizontal,
   Bell,
   Users,
@@ -28,8 +27,6 @@ import {
   Flame,
   Eye,
   EyeOff,
-  Copy,
-  ExternalLink,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -492,6 +489,21 @@ export const ChatInterface: StoryObj = {
 // NOTIFICATION PATTERNS
 // ============================================================================
 
+// Color maps for Tailwind classes (dynamic classes are not compiled by Tailwind)
+const notifBgColorMap: Record<string, string> = {
+  cyan: "bg-cyan-500/20",
+  green: "bg-green-500/20",
+  amber: "bg-amber-500/20",
+  purple: "bg-purple-500/20",
+};
+
+const notifTextColorMap: Record<string, string> = {
+  cyan: "text-cyan-400",
+  green: "text-green-400",
+  amber: "text-amber-400",
+  purple: "text-purple-400",
+};
+
 const notifications = [
   {
     type: "follow",
@@ -559,9 +571,11 @@ export const NotificationPatterns: StoryObj = {
                 }`}
               >
                 <div
-                  className={`w-10 h-10 rounded-full bg-${notif.color}-500/20 flex items-center justify-center flex-shrink-0`}
+                  className={`w-10 h-10 rounded-full ${notifBgColorMap[notif.color] || "bg-gray-500/20"} flex items-center justify-center flex-shrink-0`}
                 >
-                  <notif.icon className={`h-5 w-5 text-${notif.color}-400`} />
+                  <notif.icon
+                    className={`h-5 w-5 ${notifTextColorMap[notif.color] || "text-gray-400"}`}
+                  />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">

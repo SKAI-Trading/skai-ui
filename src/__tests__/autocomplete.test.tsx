@@ -10,17 +10,18 @@ const mockOptions = [
   { value: "svelte", label: "Svelte" },
 ];
 
-const groupedOptions = [
-  { value: "eth", label: "Ethereum", group: "Layer 1" },
-  { value: "btc", label: "Bitcoin", group: "Layer 1" },
-  { value: "arb", label: "Arbitrum", group: "Layer 2" },
-  { value: "op", label: "Optimism", group: "Layer 2" },
-];
-
-const optionsWithDetails = [
-  { value: "eth", label: "Ethereum", description: "Layer 1 blockchain" },
-  { value: "btc", label: "Bitcoin", description: "Digital gold" },
-];
+// Additional mock options available for future test expansion
+// const groupedOptions = [
+//   { value: "eth", label: "Ethereum", group: "Layer 1" },
+//   { value: "btc", label: "Bitcoin", group: "Layer 1" },
+//   { value: "arb", label: "Arbitrum", group: "Layer 2" },
+//   { value: "op", label: "Optimism", group: "Layer 2" },
+// ];
+//
+// const optionsWithDetails = [
+//   { value: "eth", label: "Ethereum", description: "Layer 1 blockchain" },
+//   { value: "btc", label: "Bitcoin", description: "Digital gold" },
+// ];
 
 describe("Autocomplete", () => {
   const user = userEvent.setup();

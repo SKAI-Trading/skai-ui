@@ -1,7 +1,7 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ConfirmDialog } from "../components/confirm-dialog";
 import { Button } from "../components/button";
-import * as React from "react";
 
 const meta: Meta<typeof ConfirmDialog> = {
   title: "Composites/ConfirmDialog",
@@ -108,7 +108,7 @@ export const Warning: Story = {
         <ConfirmDialog
           open={open}
           onOpenChange={setOpen}
-          variant="warning"
+          variant="destructive"
           title="Reset Settings"
           description="This will reset all settings to their default values. Your saved preferences will be lost."
           confirmText="Reset"

@@ -31,9 +31,9 @@ const meta: Meta<typeof NavGroup> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["default", "muted", "bordered", "elevated"],
+      options: ["default", "ghost", "bordered"],
     },
-    defaultExpanded: {
+    defaultCollapsed: {
       control: "boolean",
     },
     collapsible: {
@@ -59,7 +59,7 @@ export const Default: Story = {
       },
       { id: "orders", label: "Orders", icon: <FileText className="h-4 w-4" /> },
     ],
-    defaultExpanded: true,
+    defaultCollapsed: false,
   },
 };
 
@@ -85,8 +85,7 @@ export const WithBadges: Story = {
   args: {
     label: "Notifications",
     icon: <Bell className="h-4 w-4" />,
-    badge: "5",
-    defaultExpanded: true,
+    defaultCollapsed: false,
     items: [
       { id: "all", label: "All Notifications", badge: "12" },
       { id: "unread", label: "Unread", badge: "5" },
@@ -101,7 +100,7 @@ export const WithActiveItem: Story = {
   args: {
     label: "Games",
     icon: <Gamepad2 className="h-4 w-4" />,
-    defaultExpanded: true,
+    defaultCollapsed: false,
     items: [
       { id: "hilo", label: "HiLo", icon: <Zap className="h-4 w-4" /> },
       {
@@ -119,13 +118,13 @@ export const WithActiveItem: Story = {
   },
 };
 
-// Muted variant
-export const MutedVariant: Story = {
+// Ghost variant
+export const GhostVariant: Story = {
   args: {
     label: "Settings",
     icon: <Settings className="h-4 w-4" />,
-    variant: "muted",
-    defaultExpanded: true,
+    variant: "ghost",
+    defaultCollapsed: false,
     items: [
       { id: "profile", label: "Profile", icon: <Users className="h-4 w-4" /> },
       {
@@ -144,7 +143,7 @@ export const BorderedVariant: Story = {
     label: "Resources",
     icon: <FileText className="h-4 w-4" />,
     variant: "bordered",
-    defaultExpanded: true,
+    defaultCollapsed: false,
     items: [
       { id: "docs", label: "Documentation" },
       { id: "api", label: "API Reference" },
@@ -160,7 +159,7 @@ export const MultipleGroups: Story = {
       <NavGroup
         label="Trading"
         icon={<LineChart className="h-4 w-4" />}
-        defaultExpanded
+        defaultCollapsed={false}
         items={[
           { id: "swap", label: "Swap" },
           { id: "limit", label: "Limit Orders" },
@@ -194,6 +193,7 @@ export const SidebarSimulation: Story = {
   render: () => (
     <div className="w-64 p-4 bg-card rounded-lg border space-y-1">
       <NavGroup
+        label="Navigation"
         collapsible={false}
         items={[
           {
@@ -213,7 +213,7 @@ export const SidebarSimulation: Story = {
       <NavGroup
         label="Trading"
         icon={<LineChart className="h-4 w-4" />}
-        defaultExpanded
+        defaultCollapsed={false}
         items={[
           { id: "swap", label: "Swap" },
           { id: "limit", label: "Limit Orders" },
@@ -223,7 +223,6 @@ export const SidebarSimulation: Story = {
       <NavGroup
         label="Games"
         icon={<Gamepad2 className="h-4 w-4" />}
-        badge="Hot"
         items={[
           { id: "hilo", label: "HiLo" },
           { id: "prediction", label: "Prediction" },
@@ -231,6 +230,7 @@ export const SidebarSimulation: Story = {
       />
       <div className="h-px bg-border my-2" />
       <NavGroup
+        label="Other"
         collapsible={false}
         items={[
           {

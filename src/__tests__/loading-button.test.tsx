@@ -63,10 +63,31 @@ describe("LoadingButton", () => {
     expect(container.querySelector("button")).toHaveClass("h-11");
   });
 
-  it("supports icon position", () => {
-    const { container } = render(
-      <LoadingButton iconPosition="right">With Icon</LoadingButton>,
+  it("supports spinner position", () => {
+    const { container, getByText } = render(
+      <LoadingButton spinnerPosition="right" loading>
+        With Spinner
+      </LoadingButton>,
     );
-    expect(container).toBeInTheDocument();
+    const button = container.querySelector("button");
+    expect(button).toBeInTheDocument();
+    // Verify the text is rendered
+    const textSpan = getByText("With Spinner");
+    expect(textSpan).toBeInTheDocument();
+    // Verify spinner is rendered (it has animate-spin class)
+    const spinner = button?.querySelector(".animate-spin");
+    expect(spinner).toBeInTheDocument();
+    // When spinnerPosition="right", spinner should appear after text in DOM
+    // Check that text element comes before spinner in the button's children
+    const buttonChildren = Array.from(button!.children);
+    const textIndex = buttonChildren.findIndex((child) =>
+      child.textContent?.includes("With Spinner"),
+    );
+    const spinnerIndex = buttonChildren.findIndex(
+      (child) =>
+        child.classList.contains("animate-spin") ||
+        child.querySelector(".animate-spin"),
+    );
+    expect(spinnerIndex).toBeGreaterThan(textIndex);
   });
 });

@@ -7,16 +7,12 @@ import { Badge } from "../components/badge";
 import { Progress } from "../components/progress";
 import { Separator } from "../components/separator";
 import { Avatar, AvatarFallback } from "../components/avatar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
+import { Tabs, TabsList, TabsTrigger } from "../components/tabs";
 import {
   ArrowDown,
   ArrowUp,
-  ArrowUpDown,
-  BarChart3,
-  ChevronDown,
   LineChart,
   Settings,
-  TrendingDown,
   TrendingUp,
 } from "lucide-react";
 
@@ -115,11 +111,9 @@ export const OrderBook: StoryObj = {
                 className="grid grid-cols-3 text-xs font-mono relative px-2 py-1"
               >
                 <div
-                  className="absolute inset-0 bg-green-500/10"
+                  className="absolute top-0 bottom-0 right-0 bg-green-500/10"
                   style={{
                     width: `${(bid.total / maxTotal) * 100}%`,
-                    right: 0,
-                    left: "auto",
                   }}
                 />
                 <span className="text-green-500 relative">

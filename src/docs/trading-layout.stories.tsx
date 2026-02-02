@@ -1,12 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { TradingLayout, TradingPanel } from "../components/trading-layout";
-import {
-  TrendingUp,
-  TrendingDown,
-  Settings,
-  Maximize2,
-  LayoutGrid,
-} from "lucide-react";
+import { Settings, Maximize2, LayoutGrid } from "lucide-react";
 
 const meta: Meta<typeof TradingLayout> = {
   title: "Layout/TradingLayout",

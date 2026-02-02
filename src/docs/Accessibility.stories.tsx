@@ -9,8 +9,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Button } from "../components/button";
 import { Badge } from "../components/badge";
-import { Input } from "../components/input";
-import { Label } from "../components/label";
 import {
   Check,
   X,
@@ -22,7 +20,6 @@ import {
   CheckCircle,
   Info,
 } from "lucide-react";
-import { useState } from "react";
 
 const meta: Meta = {
   title: "Documentation/Accessibility",
@@ -982,14 +979,18 @@ export const AccessibilityChecklist: StoryObj = {
   ),
 };
 
-// Add keyframes for demo
-const style = document.createElement("style");
-style.textContent = `
+// Add keyframes for demo (with deduplication to prevent multiple injections)
+if (
+  typeof document !== "undefined" &&
+  !document.getElementById("accessibility-stories-styles")
+) {
+  const style = document.createElement("style");
+  style.id = "accessibility-stories-styles";
+  style.textContent = `
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.8; transform: scale(1.02); }
 }
 `;
-if (typeof document !== "undefined") {
   document.head.appendChild(style);
 }

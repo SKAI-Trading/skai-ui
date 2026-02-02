@@ -32,9 +32,9 @@ const meta: Meta<typeof PriceDisplay> = {
       options: ["sm", "md", "lg"],
       description: "Text size",
     },
-    showChange: {
+    showTrendIcon: {
       control: "boolean",
-      description: "Whether to show change percentage",
+      description: "Whether to show trend icon",
     },
     compact: {
       control: "boolean",
@@ -57,7 +57,7 @@ export const WithPositiveChange: Story = {
   args: {
     value: 2847.32,
     change: 5.24,
-    showChange: true,
+    showTrendIcon: true,
   },
 };
 
@@ -65,16 +65,16 @@ export const WithNegativeChange: Story = {
   args: {
     value: 2847.32,
     change: -3.18,
-    showChange: true,
+    showTrendIcon: true,
   },
 };
 
 export const AllSizes: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
-      <PriceDisplay value={1234.56} size="sm" showChange change={2.5} />
-      <PriceDisplay value={1234.56} size="md" showChange change={2.5} />
-      <PriceDisplay value={1234.56} size="lg" showChange change={2.5} />
+      <PriceDisplay value={1234.56} size="sm" change={2.5} showTrendIcon />
+      <PriceDisplay value={1234.56} size="md" change={2.5} showTrendIcon />
+      <PriceDisplay value={1234.56} size="lg" change={2.5} showTrendIcon />
     </div>
   ),
 };

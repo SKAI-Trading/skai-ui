@@ -14,7 +14,6 @@ import {
   TrendingDown,
   Activity,
   BarChart3,
-  RefreshCw,
   Clock,
 } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -161,38 +160,11 @@ export const ChartColorPalette: StoryObj = {
 // AREA CHART PATTERN
 // ============================================================================
 
-// Mock data generator for chart demos
-const generateMockData = (
-  days: number,
-  trend: "up" | "down" | "volatile" = "up",
-) => {
-  const data = [];
-  let price = 2000 + Math.random() * 500;
-
-  for (let i = 0; i < days; i++) {
-    const change = (Math.random() - 0.5) * 100;
-    if (trend === "up") price += Math.abs(change) * 0.7;
-    else if (trend === "down") price -= Math.abs(change) * 0.7;
-    else price += change;
-
-    data.push({
-      date: new Date(Date.now() - (days - i) * 86400000).toLocaleDateString(
-        "en-US",
-        {
-          month: "short",
-          day: "numeric",
-        },
-      ),
-      price: Math.max(1500, Math.min(3000, price)),
-    });
-  }
-  return data;
-};
-
 export const AreaChartPattern: StoryObj = {
   render: () => {
-    const upData = generateMockData(14, "up");
-    const downData = generateMockData(14, "down");
+    // Generate mock data for visualization - currently showing static mockups
+    // const upData = generateMockData(14, "up");
+    // const downData = generateMockData(14, "down");
 
     return (
       <div className="space-y-8">

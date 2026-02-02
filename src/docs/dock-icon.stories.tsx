@@ -7,7 +7,6 @@ import {
 import {
   Home,
   Settings,
-  Bell,
   Wallet,
   TrendingUp,
   Gamepad2,

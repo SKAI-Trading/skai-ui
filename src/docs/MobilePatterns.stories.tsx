@@ -24,7 +24,6 @@ import {
 } from "../components/drawer";
 import { SkaiIcon } from "../components/skai-icon";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
-import { useState } from "react";
 
 const meta: Meta = {
   title: "Patterns/Mobile First",

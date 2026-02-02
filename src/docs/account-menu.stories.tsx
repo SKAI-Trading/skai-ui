@@ -9,7 +9,6 @@ import {
   FileText,
   CreditCard,
   Gift,
-  LogOut,
 } from "lucide-react";
 
 const meta: Meta<typeof AccountMenu> = {

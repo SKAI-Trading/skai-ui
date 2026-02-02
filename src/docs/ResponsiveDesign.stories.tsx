@@ -8,7 +8,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Badge } from "../components/badge";
-import { Button } from "../components/button";
 import {
   Smartphone,
   Tablet,
@@ -63,11 +62,12 @@ export default meta;
 // BREAKPOINT VISUALIZATION
 // ============================================================================
 
-const breakpoints = [
-  { name: "Mobile", width: "< 640px", icon: Smartphone, color: "cyan" },
-  { name: "Tablet", width: "768px", icon: Tablet, color: "teal" },
-  { name: "Desktop", width: "1024px+", icon: Monitor, color: "green" },
-];
+// Breakpoint reference - currently using inline data in stories
+// const breakpoints = [
+//   { name: "Mobile", width: "< 640px", icon: Smartphone, color: "cyan" },
+//   { name: "Tablet", width: "768px", icon: Tablet, color: "teal" },
+//   { name: "Desktop", width: "1024px+", icon: Monitor, color: "green" },
+// ];
 
 export const BreakpointSystem: StoryObj = {
   render: () => (
@@ -713,9 +713,39 @@ export const ResponsiveUtilities: StoryObj = {
                     <td className="py-3 pr-4">
                       <code className="text-cyan-400 text-xs">{row.class}</code>
                     </td>
-                    <td className="py-3 pr-4">{row.mobile}</td>
-                    <td className="py-3 pr-4">{row.tablet}</td>
-                    <td className="py-3">{row.desktop}</td>
+                    <td className="py-3 pr-4">
+                      <span
+                        aria-label={
+                          row.mobile === "✅"
+                            ? "Visible on mobile"
+                            : "Hidden on mobile"
+                        }
+                      >
+                        {row.mobile}
+                      </span>
+                    </td>
+                    <td className="py-3 pr-4">
+                      <span
+                        aria-label={
+                          row.tablet === "✅"
+                            ? "Visible on tablet"
+                            : "Hidden on tablet"
+                        }
+                      >
+                        {row.tablet}
+                      </span>
+                    </td>
+                    <td className="py-3">
+                      <span
+                        aria-label={
+                          row.desktop === "✅"
+                            ? "Visible on desktop"
+                            : "Hidden on desktop"
+                        }
+                      >
+                        {row.desktop}
+                      </span>
+                    </td>
                   </tr>
                 ))}
               </tbody>

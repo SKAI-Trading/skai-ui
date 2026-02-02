@@ -45,21 +45,20 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: function Render() {
     const [amount, setAmount] = React.useState("");
-    const [token, setToken] = React.useState<Token | undefined>(
-      sampleTokens[0],
+    const [token, setToken] = React.useState<string | undefined>(
+      sampleTokens[0].symbol,
     );
 
     return (
       <div className="w-[400px]">
         <SwapInput
-          label="You pay"
+          side="from"
           amount={amount}
           onAmountChange={setAmount}
-          selectedToken={token}
-          onTokenSelect={setToken}
+          token={token}
+          onTokenChange={setToken}
           tokens={sampleTokens}
           balance="1.5432"
-          showMax
         />
       </div>
     );
@@ -69,22 +68,21 @@ export const Default: Story = {
 export const WithUsdValue: Story = {
   render: function Render() {
     const [amount, setAmount] = React.useState("0.5");
-    const [token, setToken] = React.useState<Token | undefined>(
-      sampleTokens[0],
+    const [token, setToken] = React.useState<string | undefined>(
+      sampleTokens[0].symbol,
     );
 
     return (
       <div className="w-[400px]">
         <SwapInput
-          label="You pay"
+          side="from"
           amount={amount}
           onAmountChange={setAmount}
-          selectedToken={token}
-          onTokenSelect={setToken}
+          token={token}
+          onTokenChange={setToken}
           tokens={sampleTokens}
           balance="1.5432"
-          usdValue="$1,423.66"
-          showMax
+          usdValue={1423.66}
         />
       </div>
     );
@@ -94,12 +92,12 @@ export const WithUsdValue: Story = {
 export const FullSwapInterface: Story = {
   render: function Render() {
     const [fromAmount, setFromAmount] = React.useState("0.5");
-    const [toAmount, setToAmount] = React.useState("1,423.66");
-    const [fromToken, setFromToken] = React.useState<Token | undefined>(
-      sampleTokens[0],
+    const [toAmount, setToAmount] = React.useState("1423.66");
+    const [fromToken, setFromToken] = React.useState<string | undefined>(
+      sampleTokens[0].symbol,
     );
-    const [toToken, setToToken] = React.useState<Token | undefined>(
-      sampleTokens[1],
+    const [toToken, setToToken] = React.useState<string | undefined>(
+      sampleTokens[1].symbol,
     );
 
     const handleFlip = () => {
@@ -107,35 +105,39 @@ export const FullSwapInterface: Story = {
       const tempAmount = fromAmount;
       setFromToken(toToken);
       setToToken(tempToken);
-      setFromAmount(toAmount.replace(",", ""));
+      setFromAmount(toAmount.replace(/,/g, ""));
       setToAmount(tempAmount);
     };
 
     return (
       <div className="w-[400px]">
-        <SwapContainer onFlip={handleFlip}>
-          <SwapInput
-            label="You pay"
-            amount={fromAmount}
-            onAmountChange={setFromAmount}
-            selectedToken={fromToken}
-            onTokenSelect={setFromToken}
-            tokens={sampleTokens}
-            balance="1.5432"
-            usdValue="$1,423.66"
-            showMax
-          />
-          <SwapInput
-            label="You receive"
-            amount={toAmount}
-            onAmountChange={setToAmount}
-            selectedToken={toToken}
-            onTokenSelect={setToToken}
-            tokens={sampleTokens}
-            balance="2,500.00"
-            usdValue="$1,423.66"
-          />
-        </SwapContainer>
+        <SwapContainer
+          onFlip={handleFlip}
+          fromInput={
+            <SwapInput
+              side="from"
+              amount={fromAmount}
+              onAmountChange={setFromAmount}
+              token={fromToken}
+              onTokenChange={setFromToken}
+              tokens={sampleTokens}
+              balance="1.5432"
+              usdValue={1423.66}
+            />
+          }
+          toInput={
+            <SwapInput
+              side="to"
+              amount={toAmount}
+              onAmountChange={setToAmount}
+              token={toToken}
+              onTokenChange={setToToken}
+              tokens={sampleTokens}
+              balance="2500.00"
+              usdValue={1423.66}
+            />
+          }
+        />
       </div>
     );
   },
@@ -154,11 +156,11 @@ export const Disabled: Story = {
     return (
       <div className="w-[400px]">
         <SwapInput
-          label="You pay"
+          side="from"
           amount="0.5"
           onAmountChange={() => {}}
-          selectedToken={sampleTokens[0]}
-          onTokenSelect={() => {}}
+          token={sampleTokens[0].symbol}
+          onTokenChange={() => {}}
           tokens={sampleTokens}
           balance="1.5432"
           disabled
@@ -171,22 +173,21 @@ export const Disabled: Story = {
 export const WithError: Story = {
   render: function Render() {
     const [amount, setAmount] = React.useState("10");
-    const [token, setToken] = React.useState<Token | undefined>(
-      sampleTokens[0],
+    const [token, setToken] = React.useState<string | undefined>(
+      sampleTokens[0].symbol,
     );
 
     return (
       <div className="w-[400px]">
         <SwapInput
-          label="You pay"
+          side="from"
           amount={amount}
           onAmountChange={setAmount}
-          selectedToken={token}
-          onTokenSelect={setToken}
+          token={token}
+          onTokenChange={setToken}
           tokens={sampleTokens}
           balance="1.5432"
           error="Insufficient balance"
-          showMax
         />
       </div>
     );

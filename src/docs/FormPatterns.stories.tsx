@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Input } from "../components/input";
 import { Label } from "../components/label";
 import { Checkbox } from "../components/checkbox";
-import { Badge } from "../components/badge";
 import { Progress } from "../components/progress";
 import {
   AlertCircle,

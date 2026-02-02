@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ScrollingTicker, TickerItem } from "../components/scrolling-ticker";
+import {
+  ScrollingTicker,
+  type ScrollingTickerItem,
+} from "../components/scrolling-ticker";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
 const meta: Meta<typeof ScrollingTicker> = {
@@ -30,13 +33,13 @@ Perfect for displaying live price feeds, news tickers, or promotional content.
 export default meta;
 type Story = StoryObj<typeof ScrollingTicker>;
 
-const cryptoPrices: TickerItem[] = [
-  { id: "btc", content: "BTC $50,234.56", meta: { change: 2.5 } },
-  { id: "eth", content: "ETH $3,456.78", meta: { change: -1.2 } },
-  { id: "sol", content: "SOL $123.45", meta: { change: 5.8 } },
-  { id: "avax", content: "AVAX $34.56", meta: { change: -0.5 } },
-  { id: "matic", content: "MATIC $0.89", meta: { change: 3.2 } },
-  { id: "arb", content: "ARB $1.23", meta: { change: 1.8 } },
+const cryptoPrices: ScrollingTickerItem[] = [
+  { id: "btc", content: "BTC $50,234.56" },
+  { id: "eth", content: "ETH $3,456.78" },
+  { id: "sol", content: "SOL $123.45" },
+  { id: "avax", content: "AVAX $34.56" },
+  { id: "matic", content: "MATIC $0.89" },
+  { id: "arb", content: "ARB $1.23" },
 ];
 
 export const Default: Story = {
@@ -81,36 +84,43 @@ export const CustomGap: Story = {
 };
 
 export const CustomRendering: Story = {
-  render: () => (
-    <ScrollingTicker
-      items={cryptoPrices}
-      renderItem={(item) => {
-        const change = item.meta?.change as number;
-        const isPositive = change >= 0;
-        return (
-          <div className="flex items-center gap-2 px-3 py-1 bg-card/50 rounded-full">
-            <span className="font-mono font-medium">{item.content}</span>
-            <span
-              className={`flex items-center text-xs ${isPositive ? "text-primary" : "text-destructive"}`}
-            >
-              {isPositive ? (
-                <TrendingUp className="w-3 h-3 mr-1" />
-              ) : (
-                <TrendingDown className="w-3 h-3 mr-1" />
-              )}
-              {isPositive ? "+" : ""}
-              {change}%
-            </span>
-          </div>
-        );
-      }}
-    />
-  ),
+  render: () => {
+    const pricesWithTrend: ScrollingTickerItem[] = [
+      {
+        id: "btc",
+        content: (
+          <span className="flex items-center gap-2">
+            <span className="font-mono font-medium">BTC $50,234.56</span>
+            <TrendingUp className="w-3 h-3 text-primary" />
+          </span>
+        ),
+      },
+      {
+        id: "eth",
+        content: (
+          <span className="flex items-center gap-2">
+            <span className="font-mono font-medium">ETH $3,456.78</span>
+            <TrendingDown className="w-3 h-3 text-destructive" />
+          </span>
+        ),
+      },
+      {
+        id: "sol",
+        content: (
+          <span className="flex items-center gap-2">
+            <span className="font-mono font-medium">SOL $123.45</span>
+            <TrendingUp className="w-3 h-3 text-primary" />
+          </span>
+        ),
+      },
+    ];
+    return <ScrollingTicker items={pricesWithTrend} />;
+  },
 };
 
 export const NewsHeadlines: Story = {
   render: () => {
-    const news: TickerItem[] = [
+    const news: ScrollingTickerItem[] = [
       { id: "1", content: "🚀 Bitcoin breaks $50k resistance" },
       { id: "2", content: "📊 DeFi TVL reaches new ATH" },
       { id: "3", content: "🔥 Ethereum gas fees at monthly low" },
@@ -128,7 +138,7 @@ export const NewsHeadlines: Story = {
 
 export const PromotionalBanner: Story = {
   render: () => {
-    const promos: TickerItem[] = [
+    const promos: ScrollingTickerItem[] = [
       { id: "1", content: "🎁 50% OFF trading fees this week!" },
       { id: "2", content: "✨ New token listing: SKAI" },
       { id: "3", content: "🏆 Trading competition live now" },

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import { render, screen } from "@testing-library/react";
 import {
@@ -118,7 +117,7 @@ describe("AppShell", () => {
 describe("AppShellContent", () => {
   it("renders with centered variant", () => {
     render(
-      <AppShellContent variant="centered" data-testid="content">
+      <AppShellContent centered data-testid="content">
         Centered Content
       </AppShellContent>,
     );

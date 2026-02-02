@@ -66,25 +66,33 @@ export const NoError: Story = {
 };
 
 export const CustomFallback: Story = {
-  render: () => (
-    <div className="w-80">
-      <ErrorBoundary
-        fallback={(error, reset) => (
-          <div className="p-4 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-lg text-center">
-            <h3 className="text-red-600 dark:text-red-400 font-bold mb-2">
-              Custom Error UI
-            </h3>
-            <p className="text-sm text-red-500 mb-4">{error.message}</p>
-            <Button variant="outline" size="sm" onClick={reset}>
-              Try Again
-            </Button>
-          </div>
-        )}
-      >
-        <BuggyComponent shouldError={true} />
-      </ErrorBoundary>
-    </div>
-  ),
+  render: () => {
+    const CustomFallbackComponent = ({
+      error,
+      resetErrorBoundary,
+    }: {
+      error: Error;
+      resetErrorBoundary: () => void;
+    }) => (
+      <div className="p-4 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-lg text-center">
+        <h3 className="text-red-600 dark:text-red-400 font-bold mb-2">
+          Custom Error UI
+        </h3>
+        <p className="text-sm text-red-500 mb-4">{error.message}</p>
+        <Button variant="outline" size="sm" onClick={resetErrorBoundary}>
+          Try Again
+        </Button>
+      </div>
+    );
+
+    return (
+      <div className="w-80">
+        <ErrorBoundary FallbackComponent={CustomFallbackComponent}>
+          <BuggyComponent shouldError={true} />
+        </ErrorBoundary>
+      </div>
+    );
+  },
 };
 
 export const WithOnError: Story = {
@@ -129,45 +137,52 @@ export const InteractiveError: Story = {
 };
 
 export const NestedErrorBoundaries: Story = {
-  render: () => (
-    <div className="w-96 space-y-4">
-      <p className="text-sm text-muted-foreground mb-4">
-        Nested error boundaries allow granular error isolation.
-      </p>
-      <ErrorBoundary
-        fallback={(error, reset) => (
-          <div className="p-4 bg-destructive/10 border border-destructive rounded-lg">
-            <p className="text-destructive font-bold">
-              Outer Boundary Caught Error
-            </p>
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={reset}
-              className="mt-2"
-            >
-              Reset Outer
-            </Button>
+  render: () => {
+    const OuterFallback = ({
+      resetErrorBoundary,
+    }: {
+      error: Error;
+      resetErrorBoundary: () => void;
+    }) => (
+      <div className="p-4 bg-destructive/10 border border-destructive rounded-lg">
+        <p className="text-destructive font-bold">
+          Outer Boundary Caught Error
+        </p>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={resetErrorBoundary}
+          className="mt-2"
+        >
+          Reset Outer
+        </Button>
+      </div>
+    );
+
+    return (
+      <div className="w-96 space-y-4">
+        <p className="text-sm text-muted-foreground mb-4">
+          Nested error boundaries allow granular error isolation.
+        </p>
+        <ErrorBoundary FallbackComponent={OuterFallback}>
+          <div className="grid grid-cols-2 gap-4">
+            <ErrorBoundary>
+              <div className="p-4 border rounded-lg">
+                <p className="text-sm mb-2">Widget A (OK)</p>
+                <BuggyComponent shouldError={false} />
+              </div>
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <div className="p-4 border rounded-lg">
+                <p className="text-sm mb-2">Widget B (Error)</p>
+                <BuggyComponent shouldError={true} />
+              </div>
+            </ErrorBoundary>
           </div>
-        )}
-      >
-        <div className="grid grid-cols-2 gap-4">
-          <ErrorBoundary>
-            <div className="p-4 border rounded-lg">
-              <p className="text-sm mb-2">Widget A (OK)</p>
-              <BuggyComponent shouldError={false} />
-            </div>
-          </ErrorBoundary>
-          <ErrorBoundary>
-            <div className="p-4 border rounded-lg">
-              <p className="text-sm mb-2">Widget B (Error)</p>
-              <BuggyComponent shouldError={true} />
-            </div>
-          </ErrorBoundary>
-        </div>
-      </ErrorBoundary>
-    </div>
-  ),
+        </ErrorBoundary>
+      </div>
+    );
+  },
 };
 
 export const DefaultFallbackComponent: Story = {
@@ -175,7 +190,7 @@ export const DefaultFallbackComponent: Story = {
     <div className="w-80">
       <DefaultErrorFallback
         error={new Error("Something went wrong while loading the data.")}
-        onReset={() => alert("Reset clicked")}
+        resetErrorBoundary={() => alert("Reset clicked")}
       />
     </div>
   ),

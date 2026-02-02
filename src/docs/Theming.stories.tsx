@@ -10,7 +10,6 @@
 
 import type { Meta, StoryObj } from "@storybook/react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Button } from "../components/button";
 import { Badge } from "../components/badge";
 import {
   Copy,
@@ -266,10 +265,15 @@ const cssVariables = {
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard API failed - silently ignore in demo context
+      console.warn("Clipboard write failed");
+    }
   };
 
   return (
@@ -288,17 +292,18 @@ function CopyButton({ text }: { text: string }) {
 }
 
 // Helper to convert HSL to displayable color
-function hslToStyle(hsl: string): string {
-  if (
-    hsl.startsWith("0 0 ") ||
-    hsl.includes("rgba") ||
-    hsl.includes("linear") ||
-    hsl === "N/A"
-  ) {
-    return hsl;
-  }
-  return `hsl(${hsl})`;
-}
+// Currently unused - available for future color preview features
+// function hslToStyle(hsl: string): string {
+//   if (
+//     hsl.startsWith("0 0 ") ||
+//     hsl.includes("rgba") ||
+//     hsl.includes("linear") ||
+//     hsl === "N/A"
+//   ) {
+//     return hsl;
+//   }
+//   return `hsl(${hsl})`;
+// }
 
 export const CSSVariablesReference: StoryObj = {
   render: () => (
@@ -1150,15 +1155,19 @@ export const DarkLightMode: StoryObj = {
   ),
 };
 
-// Add keyframes style
-const style = document.createElement("style");
-style.textContent = `
+// Add keyframes style (with deduplication to prevent multiple injections)
+if (
+  typeof document !== "undefined" &&
+  !document.getElementById("theming-stories-styles")
+) {
+  const style = document.createElement("style");
+  style.id = "theming-stories-styles";
+  style.textContent = `
 @keyframes gradient-shift {
   0% { background-position: 0% center; }
   50% { background-position: 100% center; }
   100% { background-position: 0% center; }
 }
 `;
-if (typeof document !== "undefined") {
   document.head.appendChild(style);
 }

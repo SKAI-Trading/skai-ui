@@ -11,9 +11,9 @@ const meta: Meta<typeof PercentageBar> = {
   argTypes: {
     size: {
       control: "select",
-      options: ["xs", "sm", "md", "lg"],
+      options: ["sm", "md", "lg", "xl"],
     },
-    variant: {
+    color: {
       control: "select",
       options: ["default", "success", "warning", "error", "gradient"],
     },
@@ -32,11 +32,11 @@ export const Default: Story = {
 export const Values: Story = {
   render: () => (
     <div className="w-64 space-y-3">
-      <PercentageBar value={0} showValue />
-      <PercentageBar value={25} showValue />
-      <PercentageBar value={50} showValue />
-      <PercentageBar value={75} showValue />
-      <PercentageBar value={100} showValue />
+      <PercentageBar value={0} showLabel />
+      <PercentageBar value={25} showLabel />
+      <PercentageBar value={50} showLabel />
+      <PercentageBar value={75} showLabel />
+      <PercentageBar value={100} showLabel />
     </div>
   ),
 };
@@ -44,11 +44,11 @@ export const Values: Story = {
 export const Variants: Story = {
   render: () => (
     <div className="w-64 space-y-3">
-      <PercentageBar value={60} variant="default" showValue />
-      <PercentageBar value={60} variant="success" showValue />
-      <PercentageBar value={60} variant="warning" showValue />
-      <PercentageBar value={60} variant="error" showValue />
-      <PercentageBar value={60} variant="gradient" showValue />
+      <PercentageBar value={60} color="default" showLabel />
+      <PercentageBar value={60} color="success" showLabel />
+      <PercentageBar value={60} color="warning" showLabel />
+      <PercentageBar value={60} color="error" showLabel />
+      <PercentageBar value={60} color="gradient" showLabel />
     </div>
   ),
 };
@@ -56,10 +56,6 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: () => (
     <div className="w-64 space-y-4">
-      <div>
-        <span className="text-xs text-muted-foreground">xs</span>
-        <PercentageBar value={60} size="xs" />
-      </div>
       <div>
         <span className="text-xs text-muted-foreground">sm</span>
         <PercentageBar value={60} size="sm" />
@@ -72,6 +68,10 @@ export const Sizes: Story = {
         <span className="text-xs text-muted-foreground">lg</span>
         <PercentageBar value={60} size="lg" />
       </div>
+      <div>
+        <span className="text-xs text-muted-foreground">xl</span>
+        <PercentageBar value={60} size="xl" />
+      </div>
     </div>
   ),
 };
@@ -79,8 +79,7 @@ export const Sizes: Story = {
 export const WithLabel: Story = {
   args: {
     value: 75,
-    showValue: true,
-    label: "Progress",
+    showLabel: true,
   },
 };
 
@@ -88,16 +87,15 @@ export const Animated: Story = {
   args: {
     value: 80,
     animated: true,
-    showValue: true,
+    showLabel: true,
   },
 };
 
-export const Striped: Story = {
+export const GradientAnimated: Story = {
   args: {
     value: 65,
-    striped: true,
     animated: true,
-    variant: "gradient",
+    color: "gradient",
   },
 };
 
@@ -111,7 +109,7 @@ export const SegmentedDefault: Story = {
           { value: 35, color: "bg-yellow-500", label: "In Progress" },
           { value: 25, color: "bg-red-500", label: "Failed" },
         ]}
-        showLegend
+        showTooltips
       />
     </div>
   ),
@@ -126,7 +124,7 @@ export const BuyVsSell: Story = {
           { value: 65, color: "bg-green-500", label: "Buy" },
           { value: 35, color: "bg-red-500", label: "Sell" },
         ]}
-        showLegend
+        showTooltips
       />
     </div>
   ),
@@ -144,7 +142,7 @@ export const MultipleSegments: Story = {
           { value: 15, color: "bg-green-500", label: "USDC" },
           { value: 10, color: "bg-gray-500", label: "Other" },
         ]}
-        showLegend
+        showTooltips
         size="md"
       />
     </div>
@@ -159,7 +157,7 @@ export const CompactSegmented: Story = {
           { value: 60, color: "bg-green-500" },
           { value: 40, color: "bg-red-500" },
         ]}
-        size="xs"
+        size="sm"
       />
     </div>
   ),
@@ -168,13 +166,6 @@ export const CompactSegmented: Story = {
 export const SegmentedSizes: Story = {
   render: () => (
     <div className="w-64 space-y-4">
-      <SegmentedBar
-        segments={[
-          { value: 60, color: "bg-blue-500" },
-          { value: 40, color: "bg-orange-500" },
-        ]}
-        size="xs"
-      />
       <SegmentedBar
         segments={[
           { value: 60, color: "bg-blue-500" },
@@ -195,6 +186,13 @@ export const SegmentedSizes: Story = {
           { value: 40, color: "bg-orange-500" },
         ]}
         size="lg"
+      />
+      <SegmentedBar
+        segments={[
+          { value: 60, color: "bg-blue-500" },
+          { value: 40, color: "bg-orange-500" },
+        ]}
+        size="xl"
       />
     </div>
   ),

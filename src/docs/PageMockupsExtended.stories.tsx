@@ -38,7 +38,6 @@ import {
   Search,
   Share2,
   Shield,
-  TrendingDown,
   TrendingUp,
   Trophy,
   Upload,

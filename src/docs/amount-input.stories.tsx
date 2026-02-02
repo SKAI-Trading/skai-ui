@@ -24,7 +24,7 @@ const meta: Meta<typeof AmountInput> = {
       control: "text",
       description: "Available balance to display",
     },
-    symbol: {
+    token: {
       control: "text",
       description: "Token symbol",
     },
@@ -36,11 +36,11 @@ const meta: Meta<typeof AmountInput> = {
       control: "text",
       description: "Error message",
     },
-    showMax: {
+    showMaxButton: {
       control: "boolean",
       description: "Show MAX button",
     },
-    showHalf: {
+    showHalfButton: {
       control: "boolean",
       description: "Show 50% button",
     },
@@ -63,8 +63,8 @@ export const WithBalance: Story = {
     value: "",
     onChange: () => {},
     balance: "1,234.56",
-    symbol: "ETH",
-    showMax: true,
+    token: "ETH",
+    showMaxButton: true,
   },
 };
 
@@ -73,9 +73,9 @@ export const WithMaxAndHalf: Story = {
     value: "500",
     onChange: () => {},
     balance: "1,000.00",
-    symbol: "USDC",
-    showMax: true,
-    showHalf: true,
+    token: "USDC",
+    showMaxButton: true,
+    showHalfButton: true,
   },
 };
 
@@ -84,9 +84,9 @@ export const WithError: Story = {
     value: "999999",
     onChange: () => {},
     balance: "100.00",
-    symbol: "ETH",
+    token: "ETH",
     error: "Insufficient balance",
-    showMax: true,
+    showMaxButton: true,
   },
 };
 
@@ -96,7 +96,7 @@ export const Disabled: Story = {
     onChange: () => {},
     disabled: true,
     balance: "500.00",
-    symbol: "DAI",
+    token: "DAI",
   },
 };
 
@@ -111,11 +111,10 @@ export const InteractiveDemo: Story = {
           value={value}
           onChange={setValue}
           balance={balance}
-          symbol="ETH"
-          showMax
-          showHalf
-          onMax={() => setValue(balance)}
-          onHalf={() => setValue((parseFloat(balance) / 2).toString())}
+          token="ETH"
+          showMaxButton
+          showHalfButton
+          onMaxClick={() => setValue(balance)}
           error={
             parseFloat(value) > parseFloat(balance)
               ? "Insufficient balance"

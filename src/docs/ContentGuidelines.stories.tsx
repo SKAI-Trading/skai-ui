@@ -8,17 +8,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Badge } from "../components/badge";
-import { Button } from "../components/button";
-import {
-  Check,
-  X,
-  MessageSquare,
-  AlertCircle,
-  DollarSign,
-  Clock,
-  Hash,
-  Type,
-} from "lucide-react";
+import { Check, X, AlertCircle, DollarSign, Clock, Hash } from "lucide-react";
 
 const meta: Meta = {
   title: "Documentation/Content Guidelines",

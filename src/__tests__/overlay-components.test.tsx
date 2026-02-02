@@ -1,6 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import {
   Dialog,
   DialogTrigger,
@@ -9,9 +8,8 @@ import {
   DialogFooter,
   DialogTitle,
   DialogDescription,
-  DialogClose,
-} from "../components/overlays/dialog";
-import { Popover, PopoverTrigger, PopoverContent } from "../components/overlays/popover";
+} from "../components/dialog";
+import { Popover, PopoverTrigger, PopoverContent } from "../components/popover";
 import {
   Sheet,
   SheetTrigger,
@@ -20,8 +18,7 @@ import {
   SheetFooter,
   SheetTitle,
   SheetDescription,
-  SheetClose,
-} from "../components/overlays/sheet";
+} from "../components/sheet";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -32,7 +29,7 @@ import {
   DropdownMenuCheckboxItem,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-} from "../components/overlays/dropdown-menu";
+} from "../components/dropdown-menu";
 
 describe("Dialog", () => {
   it("should render trigger button", () => {

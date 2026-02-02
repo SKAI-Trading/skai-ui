@@ -93,13 +93,13 @@ export const WithHighlights: Story = {
         id: "pnl",
         label: "Today P&L",
         value: "+$234.56",
-        highlight: "positive",
+        highlighted: true,
       },
       {
         id: "change",
         label: "24h Change",
         value: "-2.3%",
-        highlight: "negative",
+        highlighted: true,
       },
       {
         id: "volume",
@@ -292,7 +292,7 @@ export const HeaderContext: Story = {
             id: "streak",
             value: "5",
             icon: <Flame className="h-3 w-3" />,
-            highlight: "positive",
+            highlighted: true,
             tooltip: "Day Streak",
           },
         ]}

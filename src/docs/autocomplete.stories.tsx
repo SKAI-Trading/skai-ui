@@ -45,7 +45,7 @@ const tokens: AutocompleteOption[] = [
 
 export const Default: Story = {
   render: () => {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState<string | string[]>("");
     return (
       <div className="w-[300px]">
         <Autocomplete
@@ -61,7 +61,7 @@ export const Default: Story = {
 
 export const WithGroups: Story = {
   render: () => {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState<string | string[]>("");
     return (
       <div className="w-[300px]">
         <Autocomplete
@@ -69,7 +69,6 @@ export const WithGroups: Story = {
           value={value}
           onValueChange={setValue}
           placeholder="Search tokens..."
-          grouped={true}
         />
       </div>
     );
@@ -78,7 +77,7 @@ export const WithGroups: Story = {
 
 export const MultiSelect: Story = {
   render: () => {
-    const [values, setValues] = useState<string[]>([]);
+    const [values, setValues] = useState<string | string[]>([]);
     return (
       <div className="w-[300px]">
         <Autocomplete
@@ -89,7 +88,8 @@ export const MultiSelect: Story = {
           multiple={true}
         />
         <p className="mt-2 text-sm text-muted-foreground">
-          Selected: {values.join(", ") || "None"}
+          Selected:{" "}
+          {Array.isArray(values) ? values.join(", ") : values || "None"}
         </p>
       </div>
     );
@@ -98,7 +98,7 @@ export const MultiSelect: Story = {
 
 export const Clearable: Story = {
   render: () => {
-    const [value, setValue] = useState("eth");
+    const [value, setValue] = useState<string | string[]>("eth");
     return (
       <div className="w-[300px]">
         <Autocomplete
@@ -114,7 +114,7 @@ export const Clearable: Story = {
 
 export const Loading: Story = {
   render: () => {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState<string | string[]>("");
     return (
       <div className="w-[300px]">
         <Autocomplete
@@ -131,9 +131,9 @@ export const Loading: Story = {
 
 export const Sizes: Story = {
   render: () => {
-    const [v1, setV1] = useState("");
-    const [v2, setV2] = useState("");
-    const [v3, setV3] = useState("");
+    const [v1, setV1] = useState<string | string[]>("");
+    const [v2, setV2] = useState<string | string[]>("");
+    const [v3, setV3] = useState<string | string[]>("");
 
     return (
       <div className="space-y-4 w-[300px]">
@@ -141,21 +141,18 @@ export const Sizes: Story = {
           options={tokens}
           value={v1}
           onValueChange={setV1}
-          size="sm"
           placeholder="Small"
         />
         <Autocomplete
           options={tokens}
           value={v2}
           onValueChange={setV2}
-          size="default"
           placeholder="Default"
         />
         <Autocomplete
           options={tokens}
           value={v3}
           onValueChange={setV3}
-          size="lg"
           placeholder="Large"
         />
       </div>
@@ -165,7 +162,7 @@ export const Sizes: Story = {
 
 export const CustomRender: Story = {
   render: () => {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState<string | string[]>("");
 
     const tokensWithIcons = tokens.map((t) => ({
       ...t,
@@ -207,7 +204,7 @@ export const Disabled: Story = {
 
 export const AsyncSearch: Story = {
   render: () => {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState<string | string[]>("");
     const [options, setOptions] = useState<AutocompleteOption[]>([]);
     const [loading, setLoading] = useState(false);
 

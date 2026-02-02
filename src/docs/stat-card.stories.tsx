@@ -28,14 +28,13 @@ const meta: Meta<typeof StatCard> = {
       control: "number",
       description: "Change percentage (positive or negative)",
     },
-    changeLabel: {
+    changePeriod: {
       control: "text",
-      description: "Label for change (e.g., 'vs last week')",
+      description: "Period for the change (e.g., '24h', '7d')",
     },
-    variant: {
-      control: "select",
-      options: ["default", "compact"],
-      description: "Card variant",
+    compact: {
+      control: "boolean",
+      description: "Compact variant",
     },
     loading: {
       control: "boolean",
@@ -52,7 +51,7 @@ export const Default: Story = {
     title: "Total Revenue",
     value: "$45,231.89",
     change: 20.1,
-    changeLabel: "from last month",
+    changePeriod: "last month",
   },
 };
 
@@ -61,8 +60,8 @@ export const WithIcon: Story = {
     title: "Active Users",
     value: "2,350",
     change: 12.5,
-    changeLabel: "from last week",
-    icon: Users,
+    changePeriod: "last week",
+    icon: <Users className="h-4 w-4" />,
   },
 };
 
@@ -71,8 +70,8 @@ export const NegativeChange: Story = {
     title: "Bounce Rate",
     value: "42.3%",
     change: -5.2,
-    changeLabel: "from last month",
-    icon: Activity,
+    changePeriod: "last month",
+    icon: <Activity className="h-4 w-4" />,
   },
 };
 
@@ -81,8 +80,8 @@ export const CompactVariant: Story = {
     title: "Balance",
     value: "$12,450",
     change: 3.2,
-    variant: "compact",
-    icon: Wallet,
+    compact: true,
+    icon: <Wallet className="h-4 w-4" />,
   },
 };
 
@@ -101,29 +100,29 @@ export const StatGrid: Story = {
         title="Total Revenue"
         value="$45,231.89"
         change={20.1}
-        changeLabel="from last month"
-        icon={TrendingUp}
+        changePeriod="last month"
+        icon={<TrendingUp className="h-4 w-4" />}
       />
       <StatCard
         title="Active Users"
         value="2,350"
         change={12.5}
-        changeLabel="from last week"
-        icon={Users}
+        changePeriod="last week"
+        icon={<Users className="h-4 w-4" />}
       />
       <StatCard
         title="Portfolio Value"
         value="$128,430.00"
         change={-2.3}
-        changeLabel="24h change"
-        icon={Wallet}
+        changePeriod="24h"
+        icon={<Wallet className="h-4 w-4" />}
       />
       <StatCard
         title="Transactions"
         value="1,429"
         change={8.7}
-        changeLabel="this week"
-        icon={Activity}
+        changePeriod="this week"
+        icon={<Activity className="h-4 w-4" />}
       />
     </div>
   ),
@@ -132,14 +131,9 @@ export const StatGrid: Story = {
 export const CompactGrid: Story = {
   render: () => (
     <div className="flex gap-4">
-      <StatCard title="ETH" value="$2,847.32" change={5.2} variant="compact" />
-      <StatCard
-        title="BTC"
-        value="$67,432.10"
-        change={-1.8}
-        variant="compact"
-      />
-      <StatCard title="SOL" value="$142.56" change={12.3} variant="compact" />
+      <StatCard title="ETH" value="$2,847.32" change={5.2} compact />
+      <StatCard title="BTC" value="$67,432.10" change={-1.8} compact />
+      <StatCard title="SOL" value="$142.56" change={12.3} compact />
     </div>
   ),
 };

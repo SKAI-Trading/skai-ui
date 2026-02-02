@@ -25,7 +25,7 @@ const sampleTokens: Token[] = [
     symbol: "DAI",
     name: "Dai Stablecoin",
     balance: "500.00",
-    address: "0x6B175474E89094C44Da98b954EescdeCB5f07458",
+    address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
   },
   {
     symbol: "WBTC",
@@ -52,8 +52,8 @@ const meta: Meta<typeof TokenSelect> = {
     tokens: {
       description: "Array of available tokens",
     },
-    selectedToken: {
-      description: "Currently selected token",
+    value: {
+      description: "Currently selected token symbol",
     },
     showBalance: {
       control: "boolean",
@@ -75,13 +75,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: function Render() {
-    const [selected, setSelected] = React.useState<Token | undefined>();
+    const [selected, setSelected] = React.useState<string | undefined>();
     return (
       <div className="w-48">
         <TokenSelect
           tokens={sampleTokens}
-          selectedToken={selected}
-          onSelect={setSelected}
+          value={selected}
+          onValueChange={setSelected}
         />
       </div>
     );
@@ -90,15 +90,15 @@ export const Default: Story = {
 
 export const WithSelectedToken: Story = {
   render: function Render() {
-    const [selected, setSelected] = React.useState<Token | undefined>(
-      sampleTokens[0],
+    const [selected, setSelected] = React.useState<string | undefined>(
+      sampleTokens[0].symbol,
     );
     return (
       <div className="w-48">
         <TokenSelect
           tokens={sampleTokens}
-          selectedToken={selected}
-          onSelect={setSelected}
+          value={selected}
+          onValueChange={setSelected}
         />
       </div>
     );
@@ -107,13 +107,13 @@ export const WithSelectedToken: Story = {
 
 export const WithBalances: Story = {
   render: function Render() {
-    const [selected, setSelected] = React.useState<Token | undefined>();
+    const [selected, setSelected] = React.useState<string | undefined>();
     return (
       <div className="w-64">
         <TokenSelect
           tokens={sampleTokens}
-          selectedToken={selected}
-          onSelect={setSelected}
+          value={selected}
+          onValueChange={setSelected}
           showBalance
         />
       </div>
@@ -124,21 +124,21 @@ export const WithBalances: Story = {
 export const Disabled: Story = {
   args: {
     tokens: sampleTokens,
-    selectedToken: sampleTokens[0],
+    value: sampleTokens[0].symbol,
     disabled: true,
-    onSelect: () => {},
+    onValueChange: () => {},
   },
 };
 
 export const CustomPlaceholder: Story = {
   render: function Render() {
-    const [selected, setSelected] = React.useState<Token | undefined>();
+    const [selected, setSelected] = React.useState<string | undefined>();
     return (
       <div className="w-48">
         <TokenSelect
           tokens={sampleTokens}
-          selectedToken={selected}
-          onSelect={setSelected}
+          value={selected}
+          onValueChange={setSelected}
           placeholder="Choose token..."
         />
       </div>

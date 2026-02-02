@@ -1,8 +1,7 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { StatCard } from "../components/data-display/stat-card";
 import { DollarSign } from "lucide-react";
-import * as React from "react";
 
 describe("StatCard", () => {
   it("renders title and value", () => {

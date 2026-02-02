@@ -10,9 +10,12 @@ const meta: Meta<typeof NumberInput> = {
     layout: "centered",
   },
   argTypes: {
-    size: {
+    showButtons: {
+      control: "boolean",
+    },
+    buttonPosition: {
       control: "select",
-      options: ["sm", "md", "lg"],
+      options: ["sides", "right"],
     },
   },
 };
@@ -55,27 +58,31 @@ export const CustomStep: Story = {
   },
 };
 
-export const Sizes: Story = {
-  render: function SizesStory() {
+export const ButtonPositions: Story = {
+  render: function ButtonPositionsStory() {
     const [v1, setV1] = useState(5);
     const [v2, setV2] = useState(10);
-    const [v3, setV3] = useState(15);
     return (
       <div className="flex flex-col gap-4">
-        <NumberInput value={v1} onChange={setV1} size="sm" />
-        <NumberInput value={v2} onChange={setV2} size="md" />
-        <NumberInput value={v3} onChange={setV3} size="lg" />
+        <div>
+          <p className="text-xs text-muted-foreground mb-1">Sides (default)</p>
+          <NumberInput value={v1} onChange={setV1} buttonPosition="sides" />
+        </div>
+        <div>
+          <p className="text-xs text-muted-foreground mb-1">Right</p>
+          <NumberInput value={v2} onChange={setV2} buttonPosition="right" />
+        </div>
       </div>
     );
   },
 };
 
-export const NoControls: Story = {
-  render: function NoControlsStory() {
+export const NoButtons: Story = {
+  render: function NoButtonsStory() {
     const [value, setValue] = useState(10);
     return (
       <div className="w-32">
-        <NumberInput value={value} onChange={setValue} showControls={false} />
+        <NumberInput value={value} onChange={setValue} showButtons={false} />
       </div>
     );
   },
@@ -113,15 +120,15 @@ export const Currency: Story = {
           onChange={setValue}
           min={0}
           step={10}
-          prefix="$"
+          formatValue={(v) => `$${v.toFixed(2)}`}
         />
       </div>
     );
   },
 };
 
-export const WithSuffix: Story = {
-  render: function WithSuffixStory() {
+export const WithPercentage: Story = {
+  render: function WithPercentageStory() {
     const [value, setValue] = useState(50);
     return (
       <div className="w-48">
@@ -130,7 +137,7 @@ export const WithSuffix: Story = {
           onChange={setValue}
           min={0}
           max={100}
-          suffix="%"
+          formatValue={(v) => `${v}%`}
         />
       </div>
     );
@@ -146,7 +153,7 @@ export const Decimals: Story = {
           value={value}
           onChange={setValue}
           step={0.01}
-          decimals={2}
+          formatValue={(v) => v.toFixed(2)}
         />
       </div>
     );

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { PasswordInput, calculateStrength } from "../components/forms/password-input";
 
@@ -236,8 +236,8 @@ describe("calculateStrength", () => {
   });
 
   it("considers character variety", () => {
-    // Only lowercase
-    const lowercase = calculateStrength("abcdefghij");
+    // Only lowercase - verifies the function runs without error
+    calculateStrength("abcdefghij");
     // Mixed case + numbers + symbols
     const mixed = calculateStrength("aBcD1234!@");
 
