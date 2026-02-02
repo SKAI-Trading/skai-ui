@@ -9,10 +9,10 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerClose,
-} from "../components/drawer";
-import { Button } from "../components/button";
-import { Input } from "../components/input";
-import { Label } from "../components/label";
+} from "../components/layout/drawer";
+import { Button } from "../components/core/button";
+import { Input } from "../components/core/input";
+import { Label } from "../components/core/label";
 
 const meta: Meta<typeof Drawer> = {
   title: "Overlay/Drawer",

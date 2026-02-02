@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AccountMenu } from "../components/account-menu";
+import { AccountMenu } from "../components/trading/account-menu";
 import {
   User,
   Settings,

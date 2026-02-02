@@ -6,9 +6,9 @@
  */
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Button } from "../components/button";
-import { Badge } from "../components/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Button } from "../components/core/button";
+import { Badge } from "../components/core/badge";
 import {
   Check,
   X,

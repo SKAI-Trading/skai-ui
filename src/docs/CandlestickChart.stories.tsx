@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CandlestickChart } from "../components/candlestick-chart";
+import { CandlestickChart } from "../components/data-display/candlestick-chart";
 import type { Time } from "lightweight-charts";
 
 const meta: Meta<typeof CandlestickChart> = {

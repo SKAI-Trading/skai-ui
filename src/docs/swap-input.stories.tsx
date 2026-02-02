@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SwapInput, SwapContainer } from "../components/swap-input";
-import { type Token } from "../components/token-select";
+import { SwapInput, SwapContainer } from "../components/trading/swap-input";
+import { type Token } from "../components/trading/token-select";
 import * as React from "react";
 
 const sampleTokens: Token[] = [

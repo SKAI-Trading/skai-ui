@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StatCard } from "../components/stat-card";
+import { StatCard } from "../components/data-display/stat-card";
 import { Activity, TrendingUp, Users, Wallet } from "lucide-react";
 
 const meta: Meta<typeof StatCard> = {

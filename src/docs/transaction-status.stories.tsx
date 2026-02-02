@@ -3,8 +3,8 @@ import { useState } from "react";
 import {
   TransactionStatusBadge,
   TransactionProgress,
-} from "../components/transaction-status";
-import { Button } from "../components/button";
+} from "../components/trading/transaction-status";
+import { Button } from "../components/core/button";
 
 const meta: Meta<typeof TransactionStatusBadge> = {
   title: "Trading/TransactionStatus",

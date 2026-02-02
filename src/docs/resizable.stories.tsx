@@ -3,7 +3,7 @@ import {
   ResizablePanelGroup,
   ResizablePanel,
   ResizableHandle,
-} from "../components/resizable";
+} from "../components/layout/resizable";
 
 const meta: Meta<typeof ResizablePanelGroup> = {
   title: "Layout/Resizable",

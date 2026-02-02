@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { GasEstimate, GasSpeedSelector } from "../components/gas-estimate";
+import { GasEstimate, GasSpeedSelector } from "../components/trading/gas-estimate";
 
 const meta: Meta<typeof GasEstimate> = {
   title: "Trading/GasEstimate",

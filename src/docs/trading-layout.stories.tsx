@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TradingLayout, TradingPanel } from "../components/trading-layout";
+import { TradingLayout, TradingPanel } from "../components/layout/trading-layout";
 import { Settings, Maximize2, LayoutGrid } from "lucide-react";
 
 const meta: Meta<typeof TradingLayout> = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Autocomplete, AutocompleteOption } from "../components/autocomplete";
+import { Autocomplete, AutocompleteOption } from "../components/forms/autocomplete";
 import { useState } from "react";
 
 const meta: Meta<typeof Autocomplete> = {

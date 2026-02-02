@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CenteredLayout, AuthCard } from "../components/centered-layout";
+import { CenteredLayout, AuthCard } from "../components/layout/centered-layout";
 import { ArrowLeft, Github, Mail, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 

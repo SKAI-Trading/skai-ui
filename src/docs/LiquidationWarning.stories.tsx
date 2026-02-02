@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import {
   LiquidationWarning,
   LiquidationIndicator,
-} from "../components/liquidation-warning";
+} from "../components/trading/liquidation-warning";
 
 const meta: Meta<typeof LiquidationWarning> = {
   title: "Trading/LiquidationWarning",

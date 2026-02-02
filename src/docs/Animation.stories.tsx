@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState, useEffect } from "react";
-import { Button } from "../components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Badge } from "../components/badge";
-import { Progress } from "../components/progress";
+import { Button } from "../components/core/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Badge } from "../components/core/badge";
+import { Progress } from "../components/feedback/progress";
 import { Loader2, Check, ArrowRight, Zap, TrendingUp } from "lucide-react";
 
 const meta: Meta = {

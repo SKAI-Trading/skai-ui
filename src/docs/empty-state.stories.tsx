@@ -4,8 +4,8 @@ import {
   NoResults,
   NoData,
   OfflineState,
-} from "../components/empty-state";
-import { Button } from "../components/button";
+} from "../components/feedback/empty-state";
+import { Button } from "../components/core/button";
 import { PlusIcon, RefreshCwIcon } from "lucide-react";
 
 const meta: Meta<typeof EmptyState> = {

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tour, useTour, type TourStep } from "../components/tour";
-import { Button } from "../components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
+import { Tour, useTour, type TourStep } from "../components/data-display/tour";
+import { Button } from "../components/core/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
 
 const meta: Meta<typeof Tour> = {
   title: "Feedback Extended/Tour",

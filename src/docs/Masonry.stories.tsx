@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Masonry, MasonryItem } from "../components/masonry";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
+import { Masonry, MasonryItem } from "../components/data-display/masonry";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
 
 const meta: Meta<typeof Masonry> = {
   title: "Layout Extended/Masonry",

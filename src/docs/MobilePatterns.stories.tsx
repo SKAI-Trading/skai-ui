@@ -5,25 +5,25 @@
  */
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
-import { Button } from "../components/button";
-import { Badge } from "../components/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
+import { Button } from "../components/core/button";
+import { Badge } from "../components/core/badge";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../components/sheet";
+} from "../components/overlays/sheet";
 import {
   Drawer,
   DrawerContent,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "../components/drawer";
-import { SkaiIcon } from "../components/skai-icon";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
+} from "../components/layout/drawer";
+import { SkaiIcon } from "../components/branding/skai-icon";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/navigation/tabs";
 
 const meta: Meta = {
   title: "Patterns/Mobile First",

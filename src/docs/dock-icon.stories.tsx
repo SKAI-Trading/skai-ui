@@ -3,7 +3,7 @@ import {
   DockContainer,
   DockIcon,
   SimpleDockIcon,
-} from "../components/dock-icon";
+} from "../components/navigation/dock-icon";
 import {
   Home,
   Settings,

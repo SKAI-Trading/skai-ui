@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FeeDisplay, HouseEdgeDisplay } from "../components/fee-display";
+import { FeeDisplay, HouseEdgeDisplay } from "../components/trading/fee-display";
 
 const meta: Meta<typeof FeeDisplay> = {
   title: "Trading/FeeDisplay",

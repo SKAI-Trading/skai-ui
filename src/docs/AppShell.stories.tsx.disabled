@@ -3,21 +3,21 @@ import {
   AppShell,
   AppShellContent,
   LAYOUT_HEIGHTS,
-} from "../components/app-shell";
+} from "../components/layout/app-shell";
 import {
   AppHeader,
   AppHeaderNavItem,
   AppHeaderActions,
-} from "../components/app-header";
+} from "../components/layout/app-header";
 import {
   AppFooter,
   FooterLinkGroup,
   FooterSocialLink,
-} from "../components/app-footer";
-import { MobileNav, type MobileNavItem } from "../components/mobile-nav";
-import { DockBar, DockBarIcon, DockBarSeparator } from "../components/dock-bar";
-import { Button } from "../components/button";
-import { SkaiLogo } from "../components/skai-logo";
+} from "../components/layout/app-footer";
+import { MobileNav, type MobileNavItem } from "../components/navigation/mobile-nav";
+import { DockBar, DockBarIcon, DockBarSeparator } from "../components/navigation/dock-bar";
+import { Button } from "../components/core/button";
+import { SkaiLogo } from "../components/branding/skai-logo";
 import {
   Home,
   TrendingUp,

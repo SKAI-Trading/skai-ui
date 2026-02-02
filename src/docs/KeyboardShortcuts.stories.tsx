@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState, useEffect } from "react";
 import { Command, Keyboard, Search, Play, Eye } from "lucide-react";
-import { Card } from "../components/card";
+import { Card } from "../components/core/card";
 
 /**
  * # Keyboard Shortcuts

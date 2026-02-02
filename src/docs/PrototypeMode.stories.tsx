@@ -19,8 +19,8 @@ import {
   Plus,
   X,
 } from "lucide-react";
-import { Button } from "../components/button";
-import { Badge } from "../components/badge";
+import { Button } from "../components/core/button";
+import { Badge } from "../components/core/badge";
 
 /**
  * # Prototype Mode

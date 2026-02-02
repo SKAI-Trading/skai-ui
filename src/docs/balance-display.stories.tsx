@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { BalanceDisplay, BalanceChange } from "../components/balance-display";
+import { BalanceDisplay, BalanceChange } from "../components/trading/balance-display";
 import { Wallet, Zap, CircleDollarSign, Bitcoin, Coins } from "lucide-react";
 
 const meta: Meta<typeof BalanceDisplay> = {

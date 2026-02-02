@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Countdown } from "../components/countdown";
-import { Button } from "../components/button";
-import { Card } from "../components/card";
+import { Countdown } from "../components/data-display/countdown";
+import { Button } from "../components/core/button";
+import { Card } from "../components/core/card";
 
 const meta: Meta<typeof Countdown> = {
   title: "Data Display/Countdown",

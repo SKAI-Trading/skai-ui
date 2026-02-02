@@ -4,8 +4,8 @@ import {
   TierBadgeList,
   TIER_CONFIG,
   type TierLevel,
-} from "../components/tier-badge";
-import { SkaiIcon } from "../components/skai-icon";
+} from "../components/trading/tier-badge";
+import { SkaiIcon } from "../components/branding/skai-icon";
 
 // =============================================================================
 // TIER BADGE STORIES
