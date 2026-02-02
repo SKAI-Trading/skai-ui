@@ -30,19 +30,11 @@ export const Default: Story = {
           <div className="grid gap-2">
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="width">Width</Label>
-              <Input
-                id="width"
-                defaultValue="100%"
-                className="col-span-2 h-8"
-              />
+              <Input id="width" defaultValue="100%" className="col-span-2 h-8" />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
               <Label htmlFor="height">Height</Label>
-              <Input
-                id="height"
-                defaultValue="25px"
-                className="col-span-2 h-8"
-              />
+              <Input id="height" defaultValue="25px" className="col-span-2 h-8" />
             </div>
           </div>
         </div>
@@ -66,8 +58,8 @@ export const SlippagePopover: Story = {
           <div>
             <h4 className="font-medium">Slippage Tolerance</h4>
             <p className="text-sm text-muted-foreground">
-              Your transaction will revert if the price changes unfavorably by
-              more than this percentage.
+              Your transaction will revert if the price changes unfavorably by more than
+              this percentage.
             </p>
           </div>
           <div className="flex gap-2">
@@ -97,8 +89,8 @@ export const TokenInfoPopover: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
-        <button className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted">
-          <div className="h-6 w-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">
+        <button className="flex items-center gap-2 rounded-lg p-2 hover:bg-muted">
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white">
             E
           </div>
           <span className="font-medium">ETH</span>
@@ -108,7 +100,7 @@ export const TokenInfoPopover: Story = {
       <PopoverContent className="w-80">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 font-bold text-white">
               E
             </div>
             <div>
@@ -134,8 +126,8 @@ export const TokenInfoPopover: Story = {
               <span className="font-mono">$12.4B</span>
             </div>
           </div>
-          <div className="pt-2 border-t">
-            <p className="text-xs text-muted-foreground font-mono break-all">
+          <div className="border-t pt-2">
+            <p className="break-all font-mono text-xs text-muted-foreground">
               Contract: 0x0000...0000 (Native)
             </p>
           </div>
@@ -173,7 +165,7 @@ export const GasFeePopover: Story = {
             ].map((option) => (
               <button
                 key={option.speed}
-                className={`w-full flex items-center justify-between p-3 rounded-lg border ${
+                className={`flex w-full items-center justify-between rounded-lg border p-3 ${
                   option.speed === "Standard"
                     ? "border-primary bg-primary/5"
                     : "hover:bg-muted"
@@ -185,9 +177,7 @@ export const GasFeePopover: Story = {
                 </div>
                 <div className="text-right">
                   <p className="font-mono">{option.price}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {option.gwei} gwei
-                  </p>
+                  <p className="text-xs text-muted-foreground">{option.gwei} gwei</p>
                 </div>
               </button>
             ))}
@@ -219,9 +209,9 @@ export const WalletAddressPopover: Story = {
               <p className="text-sm text-muted-foreground">Base Network</p>
             </div>
           </div>
-          <div className="p-3 bg-muted rounded-lg">
-            <p className="text-xs text-muted-foreground mb-1">Address</p>
-            <p className="font-mono text-sm break-all">
+          <div className="rounded-lg bg-muted p-3">
+            <p className="mb-1 text-xs text-muted-foreground">Address</p>
+            <p className="break-all font-mono text-sm">
               0x1234567890abcdef1234567890abcdef12345678
             </p>
           </div>

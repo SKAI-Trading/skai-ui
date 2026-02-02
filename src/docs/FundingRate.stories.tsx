@@ -96,28 +96,28 @@ export const Badge: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="space-y-6 w-96">
+    <div className="w-96 space-y-6">
       <div>
-        <h4 className="text-sm font-medium mb-2">Full Display - Positive</h4>
+        <h4 className="mb-2 text-sm font-medium">Full Display - Positive</h4>
         <FundingRateDisplay rate={0.0001} nextFundingIn={3600} />
       </div>
       <div>
-        <h4 className="text-sm font-medium mb-2">Full Display - Negative</h4>
+        <h4 className="mb-2 text-sm font-medium">Full Display - Negative</h4>
         <FundingRateDisplay rate={-0.0002} nextFundingIn={5400} />
       </div>
       <div>
-        <h4 className="text-sm font-medium mb-2">With Annualized APR</h4>
+        <h4 className="mb-2 text-sm font-medium">With Annualized APR</h4>
         <FundingRateDisplay rate={0.0001} nextFundingIn={3600} showAnnualized />
       </div>
       <div>
-        <h4 className="text-sm font-medium mb-2">Compact Variants</h4>
+        <h4 className="mb-2 text-sm font-medium">Compact Variants</h4>
         <div className="flex gap-4">
           <FundingRateDisplay rate={0.0001} nextFundingIn={3600} compact />
           <FundingRateDisplay rate={-0.0002} nextFundingIn={5400} compact />
         </div>
       </div>
       <div>
-        <h4 className="text-sm font-medium mb-2">Badge Variants</h4>
+        <h4 className="mb-2 text-sm font-medium">Badge Variants</h4>
         <div className="flex gap-2">
           <FundingRateBadge rate={0.0001} />
           <FundingRateBadge rate={-0.0002} />
@@ -130,8 +130,8 @@ export const AllVariants: Story = {
 
 export const TradingPanel: Story = {
   render: () => (
-    <div className="p-4 bg-card border rounded-lg w-80 space-y-4">
-      <div className="flex justify-between items-center">
+    <div className="w-80 space-y-4 rounded-lg border bg-card p-4">
+      <div className="flex items-center justify-between">
         <h3 className="font-semibold">ETH-PERP</h3>
         <FundingRateBadge rate={0.0001} />
       </div>

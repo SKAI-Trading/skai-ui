@@ -95,9 +95,9 @@ export const HideWhenOffline: Story = {
 export const InContext: Story = {
   render: () => (
     <div className="space-y-4">
-      <div className="flex items-center gap-3 p-3 rounded-lg border">
+      <div className="flex items-center gap-3 rounded-lg border p-3">
         <div className="relative">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-teal-400" />
+          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-cyan-400 to-teal-400" />
           <div className="absolute -bottom-0.5 -right-0.5">
             <OnlineIndicator isOnline={true} size="sm" />
           </div>
@@ -108,9 +108,9 @@ export const InContext: Story = {
         </div>
       </div>
 
-      <div className="flex items-center gap-3 p-3 rounded-lg border">
+      <div className="flex items-center gap-3 rounded-lg border p-3">
         <div className="relative">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-400" />
+          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-400" />
           <div className="absolute -bottom-0.5 -right-0.5">
             <OnlineIndicator isOnline={false} size="sm" />
           </div>

@@ -80,11 +80,7 @@ export const NoQuickSelect: Story = {
     const [value, setValue] = useState(10);
     return (
       <div className="w-80">
-        <LeverageSlider
-          value={value}
-          onChange={setValue}
-          showQuickSelect={false}
-        />
+        <LeverageSlider value={value} onChange={setValue} showQuickSelect={false} />
       </div>
     );
   },
@@ -106,11 +102,7 @@ export const NoRiskIndicator: Story = {
     const [value, setValue] = useState(50);
     return (
       <div className="w-80">
-        <LeverageSlider
-          value={value}
-          onChange={setValue}
-          showRiskIndicator={false}
-        />
+        <LeverageSlider value={value} onChange={setValue} showRiskIndicator={false} />
       </div>
     );
   },

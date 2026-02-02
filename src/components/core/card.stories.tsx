@@ -51,9 +51,7 @@ export const Default: Story = {
 export const SimpleCard: Story = {
   render: () => (
     <Card className="w-[300px] p-6">
-      <p className="text-sm text-muted-foreground">
-        Simple card with just content
-      </p>
+      <p className="text-sm text-muted-foreground">Simple card with just content</p>
     </Card>
   ),
 };
@@ -65,7 +63,7 @@ export const TokenPriceCard: Story = {
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">
               B
             </div>
             <div>
@@ -81,7 +79,7 @@ export const TokenPriceCard: Story = {
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">$67,432.50</div>
-        <p className="text-xs text-muted-foreground mt-1">24h Volume: $32.5B</p>
+        <p className="mt-1 text-xs text-muted-foreground">24h Volume: $32.5B</p>
       </CardContent>
     </Card>
   ),
@@ -96,11 +94,8 @@ export const PortfolioCard: Story = {
       </CardHeader>
       <CardContent>
         <div className="text-3xl font-bold">$124,532.00</div>
-        <div className="flex items-center gap-2 mt-2">
-          <Badge
-            variant="outline"
-            className="text-green-500 border-green-500/50"
-          >
+        <div className="mt-2 flex items-center gap-2">
+          <Badge variant="outline" className="border-green-500/50 text-green-500">
             <TrendingUp className="mr-1 h-3 w-3" />
             +$2,430.00 (2.0%)
           </Badge>
@@ -180,7 +175,7 @@ export const LosingTradeCard: Story = {
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
               E
             </div>
             <div>
@@ -196,7 +191,7 @@ export const LosingTradeCard: Story = {
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">$3,245.80</div>
-        <p className="text-xs text-muted-foreground mt-1">24h Volume: $18.2B</p>
+        <p className="mt-1 text-xs text-muted-foreground">24h Volume: $18.2B</p>
       </CardContent>
     </Card>
   ),

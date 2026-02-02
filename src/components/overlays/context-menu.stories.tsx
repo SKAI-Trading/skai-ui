@@ -56,8 +56,8 @@ export const TokenContextMenu: Story = {
   name: "Token Row Actions",
   render: () => (
     <ContextMenu>
-      <ContextMenuTrigger className="flex items-center gap-3 p-4 rounded-lg border cursor-context-menu">
-        <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
+      <ContextMenuTrigger className="flex cursor-context-menu items-center gap-3 rounded-lg border p-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 font-bold text-white">
           E
         </div>
         <div className="flex-1">
@@ -107,8 +107,8 @@ export const TransactionContextMenu: Story = {
   name: "Transaction Actions",
   render: () => (
     <ContextMenu>
-      <ContextMenuTrigger className="flex items-center gap-3 p-4 rounded-lg border cursor-context-menu">
-        <div className="h-8 w-8 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center">
+      <ContextMenuTrigger className="flex cursor-context-menu items-center gap-3 rounded-lg border p-4">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/10 text-green-500">
           ↔
         </div>
         <div className="flex-1">
@@ -141,20 +141,16 @@ export const PortfolioContextMenu: Story = {
   name: "Portfolio Asset Actions",
   render: () => (
     <ContextMenu>
-      <ContextMenuTrigger className="p-4 rounded-lg border cursor-context-menu max-w-sm">
-        <div className="flex items-center justify-between mb-4">
+      <ContextMenuTrigger className="max-w-sm cursor-context-menu rounded-lg border p-4">
+        <div className="mb-4 flex items-center justify-between">
           <span className="text-sm text-muted-foreground">Total Balance</span>
-          <span className="text-xs px-2 py-0.5 bg-muted rounded">
-            👁 Visible
-          </span>
+          <span className="rounded bg-muted px-2 py-0.5 text-xs">👁 Visible</span>
         </div>
         <p className="text-3xl font-bold">$12,345.67</p>
         <p className="text-sm text-green-500">+$234.56 (1.94%)</p>
       </ContextMenuTrigger>
       <ContextMenuContent className="w-56">
-        <ContextMenuCheckboxItem checked>
-          👁 Show Balance
-        </ContextMenuCheckboxItem>
+        <ContextMenuCheckboxItem checked>👁 Show Balance</ContextMenuCheckboxItem>
         <ContextMenuCheckboxItem>💵 Show in USD</ContextMenuCheckboxItem>
         <ContextMenuSeparator />
         <ContextMenuItem>📊 View Analytics</ContextMenuItem>
@@ -182,7 +178,7 @@ export const WalletContextMenu: Story = {
   name: "Wallet Actions",
   render: () => (
     <ContextMenu>
-      <ContextMenuTrigger className="flex items-center gap-2 px-3 py-2 rounded-lg border cursor-context-menu">
+      <ContextMenuTrigger className="flex cursor-context-menu items-center gap-2 rounded-lg border px-3 py-2">
         <div className="h-6 w-6 rounded-full bg-gradient-to-br from-purple-500 to-blue-500" />
         <span className="font-mono text-sm">0x1234...5678</span>
       </ContextMenuTrigger>

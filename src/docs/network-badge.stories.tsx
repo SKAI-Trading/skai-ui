@@ -81,21 +81,17 @@ export const MultiChain: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
       <div>
-        <span className="text-sm text-muted-foreground block mb-2">
-          2 networks:
-        </span>
+        <span className="mb-2 block text-sm text-muted-foreground">2 networks:</span>
         <MultiChainBadge chainIds={[8453, 10]} />
       </div>
       <div>
-        <span className="text-sm text-muted-foreground block mb-2">
+        <span className="mb-2 block text-sm text-muted-foreground">
           5 networks (max 3 visible):
         </span>
         <MultiChainBadge chainIds={[1, 8453, 10, 42161, 137]} maxVisible={3} />
       </div>
       <div>
-        <span className="text-sm text-muted-foreground block mb-2">
-          All visible:
-        </span>
+        <span className="mb-2 block text-sm text-muted-foreground">All visible:</span>
         <MultiChainBadge chainIds={[1, 8453, 10, 42161, 137]} maxVisible={10} />
       </div>
     </div>

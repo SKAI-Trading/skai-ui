@@ -66,7 +66,7 @@ export const WithLabel: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 items-center">
+    <div className="flex flex-col items-center gap-4">
       <Countdown target={3600} size="sm" />
       <Countdown target={3600} size="md" />
       <Countdown target={3600} size="lg" />
@@ -77,14 +77,10 @@ export const Sizes: Story = {
 
 export const UrgentThreshold: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 items-center">
-      <span className="text-sm text-muted-foreground">
-        Normal (2 minutes left)
-      </span>
+    <div className="flex flex-col items-center gap-4">
+      <span className="text-sm text-muted-foreground">Normal (2 minutes left)</span>
       <Countdown target={120} />
-      <span className="text-sm text-muted-foreground">
-        Urgent (30 seconds left)
-      </span>
+      <span className="text-sm text-muted-foreground">Urgent (30 seconds left)</span>
       <Countdown target={30} />
     </div>
   ),
@@ -124,7 +120,7 @@ export const BoxFormatSizes: Story = {
 
 export const InCard: Story = {
   render: () => (
-    <Card className="p-6 text-center space-y-4">
+    <Card className="space-y-4 p-6 text-center">
       <h3 className="text-lg font-semibold">Flash Sale</h3>
       <Countdown target={7261} format="boxes" size="lg" />
       <p className="text-sm text-muted-foreground">Don't miss out!</p>
@@ -146,7 +142,7 @@ export const Interactive: Story = {
           format="boxes"
           onComplete={() => alert("Countdown complete!")}
         />
-        <div className="flex gap-2 justify-center">
+        <div className="flex justify-center gap-2">
           <Button
             size="sm"
             variant="outline"

@@ -10,18 +10,8 @@
  */
 
 import React, { useCallback, useEffect, useState } from "react";
-import {
-  addons,
-  types,
-  useParameter,
-  useStorybookApi,
-} from "@storybook/manager-api";
-import {
-  IconButton,
-  Icons,
-  TooltipLinkList,
-  WithTooltip,
-} from "@storybook/components";
+import { addons, types, useParameter, useStorybookApi } from "@storybook/manager-api";
+import { IconButton, Icons, TooltipLinkList, WithTooltip } from "@storybook/components";
 
 // GitHub repository configuration
 const GITHUB_CONFIG = {
@@ -40,9 +30,14 @@ const PANEL_ID = `${ADDON_ID}/panel`;
  * Get GitHub URLs for a component file
  */
 function getGitHubUrls(filePath: string) {
-  const { owner, repo, branch, basePath } = GITHUB_CONFIG;
-  const cleanPath = filePath.replace(/^\.\//, "").replace(/^src\//, "");
-  const fullPath = `${basePath}/${cleanPath}`;
+  const { owner, repo, branch } = GITHUB_CONFIG;
+  // filePath is already the full path from src/ (e.g., "docs/animations.stories.tsx")
+  // Remove any leading ./ or src/ if present, then prepend src/
+  const cleanPath = filePath
+    .replace(/^\.\//, "")
+    .replace(/^src\//, "")
+    .replace(/\.stories\.tsx$/, ".tsx"); // Convert story file to source file
+  const fullPath = `src/${cleanPath}`;
 
   return {
     view: `https://github.com/${owner}/${repo}/blob/${branch}/${fullPath}`,
@@ -56,31 +51,99 @@ function getGitHubUrls(filePath: string) {
 }
 
 /**
- * Extract file path from story parameters
+ * Extract file path from story title/parameters
+ * Maps story titles to actual source file locations
  */
-function getStoryFilePath(storyId: string): string | null {
-  // Convert story ID to likely file path
-  // e.g., "components-button--primary" -> "components/button.tsx"
-  const parts = storyId.split("--")[0].split("-");
+function getStoryFilePath(storyId: string, storyTitle?: string): string | null {
+  // First, try to map from story title (more accurate)
+  if (storyTitle) {
+    const titleParts = storyTitle.split("/");
+    const category = titleParts[0]?.toLowerCase() || "";
+    const componentName = titleParts[titleParts.length - 1]?.toLowerCase() || "";
 
-  if (parts.length >= 2) {
-    const category = parts[0];
-    const componentName = parts.slice(1).join("-");
-
-    // Map category to folder
-    const folderMap: Record<string, string> = {
-      components: "components",
-      trading: "components",
-      display: "components",
-      feedback: "components",
-      layout: "components",
-      navigation: "components",
-      decorative: "components",
+    // Map story categories to actual file paths
+    const categoryMap: Record<string, string> = {
+      components: "components/core",
+      trading: "components/trading",
+      layout: "components/layout",
+      "design tokens": "lib",
       patterns: "docs",
-      pages: "docs",
+      documentation: "docs",
+      templates: "docs",
+      tools: "docs",
+      "design system": "docs",
+      brand: "docs",
+      "getting started": "docs",
     };
 
-    const folder = folderMap[category.toLowerCase()] || "components";
+    // Special mappings for specific components
+    const specialMappings: Record<string, string> = {
+      animation: "lib/animations",
+      colors: "docs/Colors.stories",
+      typography: "docs/Typography.stories",
+      spacing: "docs/Spacing.stories",
+      theming: "docs/Theming.stories",
+      button: "components/core/button",
+      card: "components/core/card",
+      input: "components/core/input",
+      dialog: "components/overlays/dialog",
+      sheet: "components/overlays/sheet",
+      popover: "components/overlays/popover",
+      tooltip: "components/feedback/tooltip",
+      tabs: "components/navigation/tabs",
+      checkbox: "components/forms/checkbox",
+      select: "components/forms/select",
+      avatar: "components/data-display/avatar",
+      table: "components/data-display/table",
+      separator: "components/layout/separator",
+      "scroll-area": "components/layout/scroll-area",
+    };
+
+    // Check special mappings first
+    if (specialMappings[componentName]) {
+      return `${specialMappings[componentName]}.tsx`;
+    }
+
+    // Use category mapping
+    const folder = categoryMap[category] || "docs";
+    return `${folder}/${componentName}.tsx`;
+  }
+
+  // Fallback: parse from story ID
+  const parts = storyId.split("--")[0].split("-");
+  if (parts.length >= 2) {
+    // Handle multi-word categories like "design-tokens"
+    let category = parts[0];
+    let componentParts = parts.slice(1);
+
+    // Check for two-word categories
+    if (parts[0] === "design" && parts[1] === "tokens") {
+      category = "design-tokens";
+      componentParts = parts.slice(2);
+    } else if (parts[0] === "getting" && parts[1] === "started") {
+      category = "getting-started";
+      componentParts = parts.slice(2);
+    }
+
+    const componentName = componentParts.join("-");
+
+    const folderMap: Record<string, string> = {
+      components: "components/core",
+      trading: "components/trading",
+      layout: "components/layout",
+      "design-tokens": "lib",
+      patterns: "docs",
+      documentation: "docs",
+      "getting-started": "docs",
+    };
+
+    const folder = folderMap[category] || "docs";
+
+    // Special case for animation (the file is animations.tsx not animation.tsx)
+    if (componentName === "animation") {
+      return "lib/animations.tsx";
+    }
+
     return `${folder}/${componentName}.tsx`;
   }
 
@@ -92,13 +155,19 @@ function getStoryFilePath(storyId: string): string | null {
  */
 const GitHubTool = () => {
   const api = useStorybookApi();
-  const [currentStory, setCurrentStory] = useState<string | null>(null);
+  const [currentStory, setCurrentStory] = useState<{
+    id: string;
+    title?: string;
+  } | null>(null);
 
   useEffect(() => {
     const updateStory = () => {
       const story = api.getCurrentStoryData();
       if (story) {
-        setCurrentStory(story.id);
+        setCurrentStory({
+          id: story.id,
+          title: story.title,
+        });
       }
     };
 
@@ -114,7 +183,9 @@ const GitHubTool = () => {
     };
   }, [api]);
 
-  const filePath = currentStory ? getStoryFilePath(currentStory) : null;
+  const filePath = currentStory
+    ? getStoryFilePath(currentStory.id, currentStory.title)
+    : null;
   const urls = filePath ? getGitHubUrls(filePath) : null;
 
   const links = urls
@@ -173,9 +244,7 @@ const GitHubTool = () => {
       placement="top"
       trigger="click"
       closeOnOutsideClick
-      tooltip={
-        <TooltipLinkList links={links.filter((l) => l.title !== "---")} />
-      }
+      tooltip={<TooltipLinkList links={links.filter((l) => l.title !== "---")} />}
     >
       <IconButton key={TOOL_ID} title="GitHub Actions" disabled={!filePath}>
         <Icons icon="github" />

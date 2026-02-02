@@ -45,8 +45,7 @@ const meta: Meta<typeof DropdownMenu> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A dropdown menu component for displaying actions and options.",
+        component: "A dropdown menu component for displaying actions and options.",
       },
     },
   },
@@ -185,10 +184,7 @@ export const WithCheckboxItems: Story = {
           >
             Show Balance
           </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-            checked={showPnL}
-            onCheckedChange={setShowPnL}
-          >
+          <DropdownMenuCheckboxItem checked={showPnL} onCheckedChange={setShowPnL}>
             Show P&L
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem

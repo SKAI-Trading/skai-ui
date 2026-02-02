@@ -6,14 +6,7 @@ import {
   TooltipTrigger,
 } from "../feedback/tooltip";
 import { Button } from "../core/button";
-import {
-  Info,
-  HelpCircle,
-  Copy,
-  Settings,
-  AlertCircle,
-  Eye,
-} from "lucide-react";
+import { Info, HelpCircle, Copy, Settings, AlertCircle, Eye } from "lucide-react";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Components/Tooltip",
@@ -59,7 +52,7 @@ export const WithIcon: Story = {
       <span>Slippage Tolerance</span>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Info className="h-4 w-4 text-muted-foreground cursor-help" />
+          <Info className="h-4 w-4 cursor-help text-muted-foreground" />
         </TooltipTrigger>
         <TooltipContent>
           <p>The maximum price movement you're willing to accept</p>
@@ -119,17 +112,17 @@ export const Positions: Story = {
 // Trading-specific tooltips
 export const GasFeeTooltip: Story = {
   render: () => (
-    <div className="flex items-center justify-between w-[300px] p-3 bg-muted rounded-lg">
+    <div className="flex w-[300px] items-center justify-between rounded-lg bg-muted p-3">
       <div className="flex items-center gap-2">
         <span className="text-sm">Network Fee</span>
         <Tooltip>
           <TooltipTrigger asChild>
-            <HelpCircle className="h-4 w-4 text-muted-foreground cursor-help" />
+            <HelpCircle className="h-4 w-4 cursor-help text-muted-foreground" />
           </TooltipTrigger>
           <TooltipContent className="max-w-[250px]">
             <p>
-              Network fees are paid to validators to process your transaction.
-              Fees vary based on network congestion.
+              Network fees are paid to validators to process your transaction. Fees vary
+              based on network congestion.
             </p>
           </TooltipContent>
         </Tooltip>
@@ -187,18 +180,16 @@ export const IconButtonTooltips: Story = {
 
 export const WarningTooltip: Story = {
   render: () => (
-    <div className="flex items-center gap-2 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
+    <div className="flex items-center gap-2 rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-3">
       <Tooltip>
         <TooltipTrigger asChild>
-          <AlertCircle className="h-5 w-5 text-yellow-500 cursor-help" />
+          <AlertCircle className="h-5 w-5 cursor-help text-yellow-500" />
         </TooltipTrigger>
         <TooltipContent className="max-w-[300px]">
-          <p className="font-medium text-yellow-500 mb-1">
-            High Slippage Warning
-          </p>
+          <p className="mb-1 font-medium text-yellow-500">High Slippage Warning</p>
           <p className="text-sm">
-            Your trade may experience significant price impact due to low
-            liquidity. Consider reducing your trade size.
+            Your trade may experience significant price impact due to low liquidity.
+            Consider reducing your trade size.
           </p>
         </TooltipContent>
       </Tooltip>
@@ -210,7 +201,7 @@ export const WarningTooltip: Story = {
 export const TokenInfoTooltip: Story = {
   render: () => (
     <div className="flex items-center gap-3">
-      <div className="h-10 w-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 font-bold text-white">
         B
       </div>
       <div>
@@ -218,14 +209,14 @@ export const TokenInfoTooltip: Story = {
           <span className="font-medium">Bitcoin</span>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Info className="h-4 w-4 text-muted-foreground cursor-help" />
+              <Info className="h-4 w-4 cursor-help text-muted-foreground" />
             </TooltipTrigger>
             <TooltipContent className="max-w-[300px]">
               <div className="space-y-2">
                 <p className="font-medium">Bitcoin (BTC)</p>
                 <p className="text-sm text-muted-foreground">
-                  The first and most widely recognized cryptocurrency, created
-                  by Satoshi Nakamoto in 2009.
+                  The first and most widely recognized cryptocurrency, created by
+                  Satoshi Nakamoto in 2009.
                 </p>
                 <div className="text-xs text-muted-foreground">
                   <p>Market Cap: $1.32T</p>

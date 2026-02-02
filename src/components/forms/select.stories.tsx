@@ -44,7 +44,7 @@ export const Default: Story = {
 
 export const WithLabel: Story = {
   render: () => (
-    <div className="space-y-2 w-[200px]">
+    <div className="w-[200px] space-y-2">
       <Label htmlFor="framework">Framework</Label>
       <Select>
         <SelectTrigger id="framework">

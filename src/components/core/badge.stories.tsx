@@ -16,8 +16,7 @@ const meta: Meta<typeof Badge> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A small badge component for displaying status, labels, or counts.",
+        component: "A small badge component for displaying status, labels, or counts.",
       },
     },
   },
@@ -63,7 +62,7 @@ export const Outline: Story = {
 // All variants
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex gap-2 flex-wrap">
+    <div className="flex flex-wrap gap-2">
       <Badge>Default</Badge>
       <Badge variant="secondary">Secondary</Badge>
       <Badge variant="destructive">Destructive</Badge>
@@ -90,7 +89,7 @@ export const PriceChangeBadges: Story = {
 
 export const StatusBadges: Story = {
   render: () => (
-    <div className="flex gap-2 flex-wrap">
+    <div className="flex flex-wrap gap-2">
       <Badge className="bg-green-500/20 text-green-500">
         <Check className="mr-1 h-3 w-3" />
         Completed
@@ -109,7 +108,7 @@ export const StatusBadges: Story = {
 
 export const TierBadges: Story = {
   render: () => (
-    <div className="flex gap-2 flex-wrap">
+    <div className="flex flex-wrap gap-2">
       <Badge variant="outline" className="border-gray-400 text-gray-400">
         Free
       </Badge>
@@ -135,7 +134,7 @@ export const TierBadges: Story = {
 
 export const NetworkBadges: Story = {
   render: () => (
-    <div className="flex gap-2 flex-wrap">
+    <div className="flex flex-wrap gap-2">
       <Badge variant="secondary" className="bg-blue-500/20 text-blue-400">
         Base
       </Badge>
@@ -157,7 +156,7 @@ export const CountBadge: Story = {
     <div className="flex items-center gap-4">
       <div className="relative">
         <span className="text-sm">Notifications</span>
-        <Badge className="absolute -top-2 -right-6 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
+        <Badge className="absolute -right-6 -top-2 flex h-5 w-5 items-center justify-center rounded-full p-0 text-xs">
           3
         </Badge>
       </div>
@@ -165,7 +164,7 @@ export const CountBadge: Story = {
         <span className="text-sm">Messages</span>
         <Badge
           variant="destructive"
-          className="absolute -top-2 -right-4 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs"
+          className="absolute -right-4 -top-2 flex h-5 w-5 items-center justify-center rounded-full p-0 text-xs"
         >
           9
         </Badge>
@@ -176,7 +175,7 @@ export const CountBadge: Story = {
 
 export const TransactionTypeBadges: Story = {
   render: () => (
-    <div className="flex gap-2 flex-wrap">
+    <div className="flex flex-wrap gap-2">
       <Badge variant="outline" className="border-green-500 text-green-500">
         Buy
       </Badge>

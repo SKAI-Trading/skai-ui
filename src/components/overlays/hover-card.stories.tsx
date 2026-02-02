@@ -47,8 +47,8 @@ export const TokenHoverCard: Story = {
   render: () => (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <button className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted">
-          <div className="h-6 w-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">
+        <button className="flex items-center gap-2 rounded-lg p-2 hover:bg-muted">
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500 text-xs font-bold text-white">
             E
           </div>
           <span className="font-medium">ETH</span>
@@ -57,7 +57,7 @@ export const TokenHoverCard: Story = {
       <HoverCardContent className="w-80">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-full bg-blue-500 flex items-center justify-center text-white text-lg font-bold">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-lg font-bold text-white">
               E
             </div>
             <div className="flex-1">
@@ -119,7 +119,7 @@ export const WalletHoverCard: Story = {
               <p className="text-xs text-muted-foreground">Top Trader #12</p>
             </div>
           </div>
-          <div className="text-sm space-y-1">
+          <div className="space-y-1 text-sm">
             <div className="flex justify-between">
               <span className="text-muted-foreground">Total Volume</span>
               <span className="font-mono">$2.4M</span>
@@ -130,7 +130,7 @@ export const WalletHoverCard: Story = {
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Win Rate</span>
-              <span className="text-green-500 font-mono">67.8%</span>
+              <span className="font-mono text-green-500">67.8%</span>
             </div>
           </div>
           <div className="flex gap-2">
@@ -154,10 +154,10 @@ export const PoolHoverCard: Story = {
       <HoverCardTrigger asChild>
         <button className="flex items-center gap-2 font-medium hover:underline">
           <div className="flex -space-x-2">
-            <div className="h-6 w-6 rounded-full bg-blue-500 border-2 border-background flex items-center justify-center text-white text-xs">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-background bg-blue-500 text-xs text-white">
               E
             </div>
-            <div className="h-6 w-6 rounded-full bg-blue-600 border-2 border-background flex items-center justify-center text-white text-xs">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-background bg-blue-600 text-xs text-white">
               U
             </div>
           </div>
@@ -169,10 +169,10 @@ export const PoolHoverCard: Story = {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
-                <div className="h-8 w-8 rounded-full bg-blue-500 border-2 border-background flex items-center justify-center text-white text-sm font-bold">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-background bg-blue-500 text-sm font-bold text-white">
                   E
                 </div>
-                <div className="h-8 w-8 rounded-full bg-blue-600 border-2 border-background flex items-center justify-center text-white text-sm font-bold">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-background bg-blue-600 text-sm font-bold text-white">
                   U
                 </div>
               </div>
@@ -181,7 +181,7 @@ export const PoolHoverCard: Story = {
                 <p className="text-xs text-muted-foreground">0.3% fee tier</p>
               </div>
             </div>
-            <span className="px-2 py-1 text-xs bg-green-500/10 text-green-500 rounded">
+            <span className="rounded bg-green-500/10 px-2 py-1 text-xs text-green-500">
               Active
             </span>
           </div>
@@ -196,7 +196,7 @@ export const PoolHoverCard: Story = {
             </div>
             <div>
               <p className="text-muted-foreground">APR</p>
-              <p className="font-mono text-green-500 font-semibold">12.4%</p>
+              <p className="font-mono font-semibold text-green-500">12.4%</p>
             </div>
             <div>
               <p className="text-muted-foreground">Fees (24h)</p>
@@ -225,11 +225,11 @@ export const TransactionHoverCard: Story = {
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium">Transaction</span>
-            <span className="px-2 py-0.5 text-xs bg-green-500/10 text-green-500 rounded">
+            <span className="rounded bg-green-500/10 px-2 py-0.5 text-xs text-green-500">
               Success
             </span>
           </div>
-          <div className="text-sm space-y-2">
+          <div className="space-y-2 text-sm">
             <div className="flex justify-between">
               <span className="text-muted-foreground">Type</span>
               <span>Swap</span>

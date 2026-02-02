@@ -52,9 +52,7 @@ const generateCandleData = (days: number, startPrice: number) => {
   return data;
 };
 
-const generateVolumeData = (
-  candleData: ReturnType<typeof generateCandleData>,
-) => {
+const generateVolumeData = (candleData: ReturnType<typeof generateCandleData>) => {
   return candleData.map((candle) => ({
     time: candle.time,
     value: Math.random() * 1000000 + 500000,
@@ -119,15 +117,15 @@ export const CompactHeight: Story = {
 
 export const FullExample: Story = {
   render: () => (
-    <div className="space-y-4 p-4 bg-card rounded-lg border">
+    <div className="space-y-4 rounded-lg border bg-card p-4">
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-lg font-semibold">ETH/USDT</h3>
-          <p className="text-muted-foreground text-sm">Ethereum</p>
+          <p className="text-sm text-muted-foreground">Ethereum</p>
         </div>
         <div className="text-right">
           <p className="text-2xl font-bold">$3,245.67</p>
-          <p className="text-green-500 text-sm">+2.34%</p>
+          <p className="text-sm text-green-500">+2.34%</p>
         </div>
       </div>
       <CandlestickChart
@@ -147,15 +145,15 @@ export const BTCChart: Story = {
     const btcVolume = generateVolumeData(btcData);
 
     return (
-      <div className="space-y-4 p-4 bg-card rounded-lg border">
+      <div className="space-y-4 rounded-lg border bg-card p-4">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-lg font-semibold">BTC/USDT</h3>
-            <p className="text-muted-foreground text-sm">Bitcoin</p>
+            <p className="text-sm text-muted-foreground">Bitcoin</p>
           </div>
           <div className="text-right">
             <p className="text-2xl font-bold">$65,432.10</p>
-            <p className="text-red-500 text-sm">-1.23%</p>
+            <p className="text-sm text-red-500">-1.23%</p>
           </div>
         </div>
         <CandlestickChart
@@ -174,8 +172,7 @@ export const WithCrosshairCallback: Story = {
     return (
       <div className="space-y-4">
         <p className="text-sm text-muted-foreground">
-          Hover over the chart to see crosshair callback in action (check
-          console)
+          Hover over the chart to see crosshair callback in action (check console)
         </p>
         <CandlestickChart
           data={sampleData}

@@ -34,7 +34,7 @@ export const Horizontal: Story = {
         {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
-            className="shrink-0 w-[150px] h-[100px] rounded-md border bg-muted flex items-center justify-center"
+            className="flex h-[100px] w-[150px] shrink-0 items-center justify-center rounded-md border bg-muted"
           >
             Item {i + 1}
           </div>
@@ -127,9 +127,9 @@ export const TokenList: Story = {
           ].map((token) => (
             <div
               key={token.symbol}
-              className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted cursor-pointer"
+              className="flex cursor-pointer items-center gap-3 rounded-lg p-3 hover:bg-muted"
             >
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-bold">
                 {token.symbol.slice(0, 2)}
               </div>
               <div className="flex-1">
@@ -227,12 +227,9 @@ export const TransactionHistory: Story = {
               status: "success",
             },
           ].map((tx, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-3 p-3 rounded-lg border"
-            >
+            <div key={i} className="flex items-center gap-3 rounded-lg border p-3">
               <div
-                className={`h-8 w-8 rounded-full flex items-center justify-center text-xs ${
+                className={`flex h-8 w-8 items-center justify-center rounded-full text-xs ${
                   tx.status === "success"
                     ? "bg-green-500/10 text-green-500"
                     : "bg-red-500/10 text-red-500"
@@ -283,10 +280,10 @@ export const NetworkCarousel: Story = {
         ].map((network) => (
           <button
             key={network.name}
-            className="shrink-0 flex flex-col items-center gap-2 p-3 rounded-lg border hover:bg-muted transition-colors"
+            className="flex shrink-0 flex-col items-center gap-2 rounded-lg border p-3 transition-colors hover:bg-muted"
           >
             <div
-              className={`h-10 w-10 rounded-full ${network.color} flex items-center justify-center text-white text-lg`}
+              className={`h-10 w-10 rounded-full ${network.color} flex items-center justify-center text-lg text-white`}
             >
               {network.icon}
             </div>

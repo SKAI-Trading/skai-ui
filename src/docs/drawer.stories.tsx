@@ -64,7 +64,7 @@ export const RightSide: Story = {
           <DrawerTitle>Settings</DrawerTitle>
           <DrawerDescription>Adjust your settings here.</DrawerDescription>
         </DrawerHeader>
-        <div className="p-4 space-y-4">
+        <div className="space-y-4 p-4">
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
             <Input id="name" placeholder="Enter name" />
@@ -125,9 +125,7 @@ export const TopSide: Story = {
       <DrawerContent side="top">
         <DrawerHeader>
           <DrawerTitle>Announcement</DrawerTitle>
-          <DrawerDescription>
-            Important message for all users.
-          </DrawerDescription>
+          <DrawerDescription>Important message for all users.</DrawerDescription>
         </DrawerHeader>
         <div className="p-4 text-center">
           <p>New features have been released! Check them out.</p>
@@ -153,13 +151,10 @@ export const BottomSheet: Story = {
         <DrawerHeader>
           <DrawerTitle>Select Token</DrawerTitle>
         </DrawerHeader>
-        <div className="p-4 space-y-2">
+        <div className="space-y-2 p-4">
           {["ETH", "USDC", "WBTC", "DAI", "LINK"].map((token) => (
             <DrawerClose key={token} asChild>
-              <Button
-                variant="ghost"
-                className="w-full justify-start text-left"
-              >
+              <Button variant="ghost" className="w-full justify-start text-left">
                 {token}
               </Button>
             </DrawerClose>
@@ -182,11 +177,9 @@ export const WithForm: Story = {
         <DrawerContent side="right" className="w-96">
           <DrawerHeader>
             <DrawerTitle>Create New Wallet</DrawerTitle>
-            <DrawerDescription>
-              Set up a new wallet for your account.
-            </DrawerDescription>
+            <DrawerDescription>Set up a new wallet for your account.</DrawerDescription>
           </DrawerHeader>
-          <form className="p-4 space-y-4">
+          <form className="space-y-4 p-4">
             <div className="space-y-2">
               <Label htmlFor="wallet-name">Wallet Name</Label>
               <Input id="wallet-name" placeholder="My Trading Wallet" />
@@ -195,7 +188,7 @@ export const WithForm: Story = {
               <Label htmlFor="wallet-type">Wallet Type</Label>
               <select
                 id="wallet-type"
-                className="w-full h-10 px-3 rounded-md border bg-background"
+                className="h-10 w-full rounded-md border bg-background px-3"
               >
                 <option value="hot">Hot Wallet</option>
                 <option value="cold">Cold Wallet</option>
@@ -225,11 +218,11 @@ export const NestedContent: Story = {
           <DrawerTitle>Recent Transactions</DrawerTitle>
           <DrawerDescription>Your last 5 transactions</DrawerDescription>
         </DrawerHeader>
-        <div className="p-4 space-y-3">
+        <div className="space-y-3 p-4">
           {[1, 2, 3, 4, 5].map((i) => (
             <div
               key={i}
-              className="flex items-center justify-between p-3 rounded-lg bg-muted"
+              className="flex items-center justify-between rounded-lg bg-muted p-3"
             >
               <div>
                 <p className="font-medium">Swap #{i}</p>

@@ -116,9 +116,7 @@ export const InteractiveDemo: Story = {
           showHalfButton
           onMaxClick={() => setValue(balance)}
           error={
-            parseFloat(value) > parseFloat(balance)
-              ? "Insufficient balance"
-              : undefined
+            parseFloat(value) > parseFloat(balance) ? "Insufficient balance" : undefined
           }
         />
       </div>

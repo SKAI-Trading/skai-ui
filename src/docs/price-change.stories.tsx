@@ -95,11 +95,9 @@ export const NoIcon: Story = {
 export const InvertedColors: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
-      <span className="text-sm text-muted-foreground">
-        Regular (green = profit):
-      </span>
+      <span className="text-sm text-muted-foreground">Regular (green = profit):</span>
       <PriceChange value={5} />
-      <span className="text-sm text-muted-foreground mt-2">
+      <span className="mt-2 text-sm text-muted-foreground">
         Inverted (green = loss, for shorts):
       </span>
       <PriceChange value={5} invertColors />

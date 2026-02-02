@@ -108,25 +108,21 @@ export const LowHouseEdge: Story = {
  */
 export const FeeComparison: Story = {
   render: () => (
-    <div className="space-y-4 w-[300px]">
-      <div className="p-4 border rounded-lg">
-        <p className="text-sm text-muted-foreground mb-2">Free Tier (0.30%)</p>
+    <div className="w-[300px] space-y-4">
+      <div className="rounded-lg border p-4">
+        <p className="mb-2 text-sm text-muted-foreground">Free Tier (0.30%)</p>
         <FeeDisplay amount={1000} feePercent={0.3} tokenSymbol="USDC" />
       </div>
-      <div className="p-4 border rounded-lg">
-        <p className="text-sm text-muted-foreground mb-2">
-          Bronze Tier (0.25%)
-        </p>
+      <div className="rounded-lg border p-4">
+        <p className="mb-2 text-sm text-muted-foreground">Bronze Tier (0.25%)</p>
         <FeeDisplay amount={1000} feePercent={0.25} tokenSymbol="USDC" />
       </div>
-      <div className="p-4 border rounded-lg">
-        <p className="text-sm text-muted-foreground mb-2">Gold Tier (0.15%)</p>
+      <div className="rounded-lg border p-4">
+        <p className="mb-2 text-sm text-muted-foreground">Gold Tier (0.15%)</p>
         <FeeDisplay amount={1000} feePercent={0.15} tokenSymbol="USDC" />
       </div>
-      <div className="p-4 border rounded-lg">
-        <p className="text-sm text-muted-foreground mb-2">
-          Diamond Tier (0.05%)
-        </p>
+      <div className="rounded-lg border p-4">
+        <p className="mb-2 text-sm text-muted-foreground">Diamond Tier (0.05%)</p>
         <FeeDisplay amount={1000} feePercent={0.05} tokenSymbol="USDC" />
       </div>
     </div>

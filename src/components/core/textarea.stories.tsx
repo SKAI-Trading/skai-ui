@@ -29,7 +29,7 @@ export const Default: Story = {
 
 export const WithLabel: Story = {
   render: () => (
-    <div className="grid w-full gap-1.5 max-w-sm">
+    <div className="grid w-full max-w-sm gap-1.5">
       <Label htmlFor="message">Your message</Label>
       <Textarea placeholder="Type your message here." id="message" />
     </div>
@@ -45,7 +45,7 @@ export const Disabled: Story = {
 
 export const WithText: Story = {
   render: () => (
-    <div className="grid w-full gap-1.5 max-w-sm">
+    <div className="grid w-full max-w-sm gap-1.5">
       <Label htmlFor="message-2">Your Message</Label>
       <Textarea placeholder="Type your message here." id="message-2" />
       <p className="text-sm text-muted-foreground">
@@ -59,7 +59,7 @@ export const WithText: Story = {
 export const TokenDescription: Story = {
   name: "Token Description",
   render: () => (
-    <div className="grid w-full gap-1.5 max-w-md">
+    <div className="grid w-full max-w-md gap-1.5">
       <Label htmlFor="description">Token Description</Label>
       <Textarea
         id="description"
@@ -77,7 +77,7 @@ export const TokenDescription: Story = {
 export const TradeNotes: Story = {
   name: "Trade Notes",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-md space-y-4">
+    <div className="max-w-md space-y-4 rounded-lg border p-4">
       <h3 className="font-semibold">Add Trade Note</h3>
       <div className="grid gap-1.5">
         <Textarea
@@ -89,10 +89,10 @@ export const TradeNotes: Story = {
         </p>
       </div>
       <div className="flex justify-end gap-2">
-        <button className="px-4 py-2 text-sm border rounded hover:bg-muted">
+        <button className="rounded border px-4 py-2 text-sm hover:bg-muted">
           Cancel
         </button>
-        <button className="px-4 py-2 text-sm bg-primary text-primary-foreground rounded">
+        <button className="rounded bg-primary px-4 py-2 text-sm text-primary-foreground">
           Save Note
         </button>
       </div>
@@ -103,7 +103,7 @@ export const TradeNotes: Story = {
 export const SupportTicket: Story = {
   name: "Support Ticket",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-md space-y-4">
+    <div className="max-w-md space-y-4 rounded-lg border p-4">
       <h3 className="font-semibold">Contact Support</h3>
       <div className="space-y-4">
         <div className="grid gap-1.5">
@@ -126,12 +126,12 @@ export const SupportTicket: Story = {
           <Label htmlFor="tx-hash">Transaction Hash (optional)</Label>
           <input
             id="tx-hash"
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm font-mono"
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 font-mono text-sm"
             placeholder="0x..."
           />
         </div>
       </div>
-      <button className="w-full px-4 py-2 bg-primary text-primary-foreground rounded">
+      <button className="w-full rounded bg-primary px-4 py-2 text-primary-foreground">
         Submit Ticket
       </button>
     </div>
@@ -141,7 +141,7 @@ export const SupportTicket: Story = {
 export const BioEditor: Story = {
   name: "Profile Bio",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-md space-y-4">
+    <div className="max-w-md space-y-4 rounded-lg border p-4">
       <h3 className="font-semibold">Edit Profile</h3>
       <div className="grid gap-1.5">
         <Label htmlFor="bio">Bio</Label>

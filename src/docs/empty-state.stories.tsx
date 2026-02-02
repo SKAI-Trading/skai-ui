@@ -43,7 +43,7 @@ export const WithAction: Story = {
     description: "Create your first item to get started",
     action: (
       <Button size="sm">
-        <PlusIcon className="h-4 w-4 mr-1" />
+        <PlusIcon className="mr-1 h-4 w-4" />
         Add Item
       </Button>
     ),
@@ -69,7 +69,7 @@ export const NoDataState: Story = {
       description="There's no data to display at the moment"
       action={
         <Button variant="outline" size="sm">
-          <RefreshCwIcon className="h-4 w-4 mr-1" />
+          <RefreshCwIcon className="mr-1 h-4 w-4" />
           Refresh
         </Button>
       }
@@ -81,11 +81,7 @@ export const Offline: Story = {
   render: () => (
     <OfflineState
       action={
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => window.location.reload()}
-        >
+        <Button variant="outline" size="sm" onClick={() => window.location.reload()}>
           Retry
         </Button>
       }

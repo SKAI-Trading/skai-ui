@@ -5,7 +5,11 @@ import "../src/styles/index.css";
 const STATUS_BADGES: Record<string, { label: string; color: string; bg: string }> = {
   stable: { label: "Stable", color: "#22c55e", bg: "rgba(34, 197, 94, 0.1)" },
   beta: { label: "Beta", color: "#3b82f6", bg: "rgba(59, 130, 246, 0.1)" },
-  experimental: { label: "Experimental", color: "#eab308", bg: "rgba(234, 179, 8, 0.1)" },
+  experimental: {
+    label: "Experimental",
+    color: "#eab308",
+    bg: "rgba(234, 179, 8, 0.1)",
+  },
   deprecated: { label: "Deprecated", color: "#ef4444", bg: "rgba(239, 68, 68, 0.1)" },
   new: { label: "New", color: "#a855f7", bg: "rgba(168, 85, 247, 0.1)" },
 };
@@ -305,7 +309,10 @@ const preview: Preview = {
                   gap: "8px",
                   padding: "6px 12px",
                   borderRadius: "8px",
-                  backgroundColor: theme === "dark" ? "rgba(0, 22, 21, 0.9)" : "rgba(255, 255, 255, 0.9)",
+                  backgroundColor:
+                    theme === "dark"
+                      ? "rgba(0, 22, 21, 0.9)"
+                      : "rgba(255, 255, 255, 0.9)",
                   backdropFilter: "blur(8px)",
                   boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
                 }}

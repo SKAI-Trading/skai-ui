@@ -69,7 +69,7 @@ export const WithIconAndSymbol: Story = {
   args: {
     balance: 12450,
     symbol: "SKAI",
-    icon: <Zap className="h-4 w-4 text-skai-green" />,
+    icon: <Zap className="text-skai-green h-4 w-4" />,
   },
 };
 
@@ -229,7 +229,7 @@ export const IconRight: Story = {
 // All sizes comparison
 export const AllSizes: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 items-start">
+    <div className="flex flex-col items-start gap-4">
       <BalanceDisplay balance={1234.56} symbol="ETH" size="xs" />
       <BalanceDisplay balance={1234.56} symbol="ETH" size="sm" />
       <BalanceDisplay balance={1234.56} symbol="ETH" size="md" />
@@ -245,7 +245,7 @@ export const MultipleBalances: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between gap-8">
-        <span className="text-muted-foreground text-sm">ETH</span>
+        <span className="text-sm text-muted-foreground">ETH</span>
         <BalanceDisplay
           balance={2.45678}
           symbol="ETH"
@@ -254,16 +254,16 @@ export const MultipleBalances: Story = {
         />
       </div>
       <div className="flex items-center justify-between gap-8">
-        <span className="text-muted-foreground text-sm">SKAI</span>
+        <span className="text-sm text-muted-foreground">SKAI</span>
         <BalanceDisplay
           balance={12450}
           symbol="SKAI"
           decimals={0}
-          icon={<Zap className="h-4 w-4 text-skai-green" />}
+          icon={<Zap className="text-skai-green h-4 w-4" />}
         />
       </div>
       <div className="flex items-center justify-between gap-8">
-        <span className="text-muted-foreground text-sm">USD</span>
+        <span className="text-sm text-muted-foreground">USD</span>
         <BalanceDisplay
           balance={5678.9}
           symbol="$"
@@ -292,15 +292,15 @@ export const ChangeComparison: Story = {
   render: () => (
     <div className="flex flex-col gap-2">
       <div className="flex items-center gap-4">
-        <span className="text-muted-foreground w-20">Positive:</span>
+        <span className="w-20 text-muted-foreground">Positive:</span>
         <BalanceChange balance={12.45} asPercentage size="lg" />
       </div>
       <div className="flex items-center gap-4">
-        <span className="text-muted-foreground w-20">Negative:</span>
+        <span className="w-20 text-muted-foreground">Negative:</span>
         <BalanceChange balance={-8.32} asPercentage size="lg" />
       </div>
       <div className="flex items-center gap-4">
-        <span className="text-muted-foreground w-20">Neutral:</span>
+        <span className="w-20 text-muted-foreground">Neutral:</span>
         <BalanceChange balance={0} asPercentage size="lg" />
       </div>
     </div>
@@ -310,7 +310,7 @@ export const ChangeComparison: Story = {
 // Header context
 export const HeaderContext: Story = {
   render: () => (
-    <div className="flex items-center gap-6 p-4 bg-card rounded-lg border">
+    <div className="flex items-center gap-6 rounded-lg border bg-card p-4">
       <BalanceDisplay
         balance={2.45}
         symbol="ETH"
@@ -324,7 +324,7 @@ export const HeaderContext: Story = {
         symbol="SKAI"
         decimals={0}
         size="sm"
-        icon={<Zap className="h-3.5 w-3.5 text-skai-green" />}
+        icon={<Zap className="text-skai-green h-3.5 w-3.5" />}
       />
       <div className="h-4 w-px bg-border" />
       <BalanceChange balance={5.23} asPercentage size="sm" />
@@ -335,9 +335,9 @@ export const HeaderContext: Story = {
 // Wallet card context
 export const WalletCard: Story = {
   render: () => (
-    <div className="w-80 p-6 bg-gradient-to-br from-green-coal-800 to-green-coal-900 rounded-xl border border-green-coal-700">
-      <div className="flex items-center gap-2 mb-4">
-        <Coins className="h-5 w-5 text-skai-green" />
+    <div className="from-green-coal-800 to-green-coal-900 border-green-coal-700 w-80 rounded-xl border bg-gradient-to-br p-6">
+      <div className="mb-4 flex items-center gap-2">
+        <Coins className="text-skai-green h-5 w-5" />
         <span className="text-sm text-muted-foreground">Total Balance</span>
       </div>
       <BalanceDisplay

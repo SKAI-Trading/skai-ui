@@ -37,7 +37,7 @@ const items = [
 
 export const Default: Story = {
   render: () => (
-    <div className="w-full max-w-sm mx-auto">
+    <div className="mx-auto w-full max-w-sm">
       <Carousel className="w-full">
         <CarouselContent>
           {items.map((item) => (
@@ -60,7 +60,7 @@ export const Default: Story = {
 
 export const WithDots: Story = {
   render: () => (
-    <div className="w-full max-w-sm mx-auto">
+    <div className="mx-auto w-full max-w-sm">
       <Carousel className="w-full">
         <CarouselContent>
           {items.map((item) => (
@@ -82,17 +82,15 @@ export const WithDots: Story = {
 
 export const MultipleItems: Story = {
   render: () => (
-    <div className="w-full max-w-lg mx-auto">
+    <div className="mx-auto w-full max-w-lg">
       <Carousel className="w-full">
         <CarouselContent className="-ml-2 md:-ml-4">
           {items.map((item) => (
-            <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/3">
+            <CarouselItem key={item.id} className="basis-1/3 pl-2 md:pl-4">
               <Card>
                 <CardContent className="flex flex-col items-center justify-center p-4">
                   <span className="text-lg font-bold">{item.title}</span>
-                  <span className="text-xs text-muted-foreground">
-                    {item.value}
-                  </span>
+                  <span className="text-xs text-muted-foreground">{item.value}</span>
                 </CardContent>
               </Card>
             </CarouselItem>
@@ -107,11 +105,11 @@ export const MultipleItems: Story = {
 
 export const Vertical: Story = {
   render: () => (
-    <div className="h-80 mx-auto">
-      <Carousel orientation="vertical" className="w-full max-w-xs h-full">
+    <div className="mx-auto h-80">
+      <Carousel orientation="vertical" className="h-full w-full max-w-xs">
         <CarouselContent className="-mt-4 h-full">
           {items.map((item) => (
-            <CarouselItem key={item.id} className="pt-4 basis-1/2">
+            <CarouselItem key={item.id} className="basis-1/2 pt-4">
               <Card>
                 <CardContent className="flex flex-col items-center justify-center p-6">
                   <span className="text-xl font-bold">{item.title}</span>
@@ -130,7 +128,7 @@ export const Vertical: Story = {
 
 export const AutoLoop: Story = {
   render: () => (
-    <div className="w-full max-w-sm mx-auto">
+    <div className="mx-auto w-full max-w-sm">
       <Carousel opts={{ loop: true }} className="w-full">
         <CarouselContent>
           {items.map((item) => (

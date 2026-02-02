@@ -62,16 +62,13 @@ export const Sizes: Story = {
 export const FavoriteToggle: Story = {
   name: "Favorite Token",
   render: () => (
-    <div className="flex items-center gap-3 p-4 border rounded-lg max-w-sm">
+    <div className="flex max-w-sm items-center gap-3 rounded-lg border p-4">
       <div className="flex-1">
         <p className="font-medium">Ethereum</p>
         <p className="text-sm text-muted-foreground">ETH</p>
       </div>
       <p className="font-mono">$2,145.32</p>
-      <Toggle
-        aria-label="Add to favorites"
-        className="data-[state=on]:text-yellow-500"
-      >
+      <Toggle aria-label="Add to favorites" className="data-[state=on]:text-yellow-500">
         <Star className="h-4 w-4" />
       </Toggle>
     </div>
@@ -81,7 +78,7 @@ export const FavoriteToggle: Story = {
 export const WatchlistToggle: Story = {
   name: "Watchlist Tokens",
   render: () => (
-    <div className="space-y-2 max-w-md">
+    <div className="max-w-md space-y-2">
       {[
         { symbol: "ETH", name: "Ethereum", price: "$2,145.32", watched: true },
         { symbol: "BTC", name: "Bitcoin", price: "$43,567.89", watched: true },
@@ -95,9 +92,9 @@ export const WatchlistToggle: Story = {
       ].map((token) => (
         <div
           key={token.symbol}
-          className="flex items-center gap-3 p-3 border rounded-lg"
+          className="flex items-center gap-3 rounded-lg border p-3"
         >
-          <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center text-xs font-bold">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-xs font-bold">
             {token.symbol.slice(0, 2)}
           </div>
           <div className="flex-1">
@@ -121,7 +118,7 @@ export const WatchlistToggle: Story = {
 export const NotificationToggle: Story = {
   name: "Price Alert Toggle",
   render: () => (
-    <div className="flex items-center justify-between p-4 border rounded-lg max-w-sm">
+    <div className="flex max-w-sm items-center justify-between rounded-lg border p-4">
       <div className="flex items-center gap-3">
         <Bell className="h-5 w-5 text-muted-foreground" />
         <div>
@@ -141,14 +138,10 @@ export const NotificationToggle: Story = {
 export const VisibilityToggle: Story = {
   name: "Balance Visibility",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-sm">
-      <div className="flex items-center justify-between mb-4">
+    <div className="max-w-sm rounded-lg border p-4">
+      <div className="mb-4 flex items-center justify-between">
         <span className="text-sm text-muted-foreground">Total Balance</span>
-        <Toggle
-          aria-label="Toggle balance visibility"
-          variant="outline"
-          size="sm"
-        >
+        <Toggle aria-label="Toggle balance visibility" variant="outline" size="sm">
           <Eye className="h-4 w-4" />
         </Toggle>
       </div>
@@ -161,7 +154,7 @@ export const VisibilityToggle: Story = {
 export const TextFormattingToggles: Story = {
   name: "Text Formatting",
   render: () => (
-    <div className="flex items-center gap-1 p-1 border rounded-lg">
+    <div className="flex items-center gap-1 rounded-lg border p-1">
       <Toggle aria-label="Toggle bold" size="sm">
         <Bold className="h-4 w-4" />
       </Toggle>

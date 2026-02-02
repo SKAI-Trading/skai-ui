@@ -117,13 +117,7 @@ export const AllVariants: Story = {
       <QRCode value="0x1234...5678" label="Default" size={120} />
       <QRCode value="0x1234...5678" label="Copy" showCopy size={120} />
       <QRCode value="0x1234...5678" label="Download" showDownload size={120} />
-      <QRCode
-        value="0x1234...5678"
-        label="Both"
-        showCopy
-        showDownload
-        size={120}
-      />
+      <QRCode value="0x1234...5678" label="Both" showCopy showDownload size={120} />
     </div>
   ),
 };

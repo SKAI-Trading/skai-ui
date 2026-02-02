@@ -26,11 +26,7 @@ export const Default: Story = {
     const [date, setDate] = useState<Date | undefined>(new Date());
     return (
       <div className="rounded-md border">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-        />
+        <Calendar mode="single" selected={date} onSelect={setDate} />
       </div>
     );
   },
@@ -43,11 +39,7 @@ export const WithSelectedDate: Story = {
     return (
       <div className="space-y-4">
         <div className="rounded-md border">
-          <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-          />
+          <Calendar mode="single" selected={date} onSelect={setDate} />
         </div>
         <p className="text-sm text-muted-foreground">
           Selected: {date ? format(date, "PPP") : "None"}
@@ -75,7 +67,8 @@ export const DateRange: Story = {
           />
         </div>
         <p className="text-sm text-muted-foreground">
-          Range: {range?.from ? format(range.from, "PP") : ""} - {range?.to ? format(range.to, "PP") : "Select end date"}
+          Range: {range?.from ? format(range.from, "PP") : ""} -{" "}
+          {range?.to ? format(range.to, "PP") : "Select end date"}
         </p>
       </div>
     );
@@ -93,14 +86,10 @@ export const MultipleDates: Story = {
     return (
       <div className="space-y-4">
         <div className="rounded-md border">
-          <Calendar
-            mode="multiple"
-            selected={dates}
-            onSelect={setDates}
-          />
+          <Calendar mode="multiple" selected={dates} onSelect={setDates} />
         </div>
         <p className="text-sm text-muted-foreground">
-          Selected: {dates?.map(d => format(d, "MM/dd")).join(", ") || "None"}
+          Selected: {dates?.map((d) => format(d, "MM/dd")).join(", ") || "None"}
         </p>
       </div>
     );
@@ -140,12 +129,7 @@ export const TwoMonths: Story = {
     const [date, setDate] = useState<Date | undefined>(new Date());
     return (
       <div className="rounded-md border">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          numberOfMonths={2}
-        />
+        <Calendar mode="single" selected={date} onSelect={setDate} numberOfMonths={2} />
       </div>
     );
   },
@@ -157,12 +141,8 @@ export const WithFooter: Story = {
     const [date, setDate] = useState<Date | undefined>(new Date());
     return (
       <div className="rounded-md border p-4">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-        />
-        <div className="border-t mt-4 pt-4 flex justify-between items-center">
+        <Calendar mode="single" selected={date} onSelect={setDate} />
+        <div className="mt-4 flex items-center justify-between border-t pt-4">
           <button
             onClick={() => setDate(new Date())}
             className="text-sm text-primary hover:underline"
@@ -186,7 +166,7 @@ export const TradingContext: Story = {
   render: () => {
     const [date, setDate] = useState<Date | undefined>(new Date());
     return (
-      <div className="bg-card rounded-lg border p-4 space-y-4 w-fit">
+      <div className="w-fit space-y-4 rounded-lg border bg-card p-4">
         <div className="flex items-center justify-between">
           <h3 className="font-medium">Order Expiration</h3>
           <span className="text-xs text-muted-foreground">Optional</span>

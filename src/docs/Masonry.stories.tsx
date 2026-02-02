@@ -115,9 +115,7 @@ export const WithAnimation: Story = {
               <p className="text-2xl font-bold">{item.price}</p>
               <p
                 className={
-                  item.change.startsWith("+")
-                    ? "text-green-500"
-                    : "text-red-500"
+                  item.change.startsWith("+") ? "text-green-500" : "text-red-500"
                 }
               >
                 {item.change}

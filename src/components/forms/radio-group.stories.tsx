@@ -30,8 +30,8 @@ export const Default: Story = {
 export const SlippageOptions: Story = {
   name: "Slippage Presets",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-sm">
-      <h3 className="font-semibold mb-3">Slippage Tolerance</h3>
+    <div className="max-w-sm rounded-lg border p-4">
+      <h3 className="mb-3 font-semibold">Slippage Tolerance</h3>
       <RadioGroup defaultValue="0.5" className="flex gap-2">
         {["0.1", "0.5", "1.0", "3.0"].map((value) => (
           <div key={value} className="flex-1">
@@ -42,7 +42,7 @@ export const SlippageOptions: Story = {
             />
             <Label
               htmlFor={`slippage-${value}`}
-              className="flex items-center justify-center p-3 border rounded-lg cursor-pointer peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted transition-colors"
+              className="flex cursor-pointer items-center justify-center rounded-lg border p-3 transition-colors hover:bg-muted peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground"
             >
               {value}%
             </Label>
@@ -56,8 +56,8 @@ export const SlippageOptions: Story = {
 export const NetworkSelector: Story = {
   name: "Network Selection",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-sm">
-      <h3 className="font-semibold mb-3">Select Network</h3>
+    <div className="max-w-sm rounded-lg border p-4">
+      <h3 className="mb-3 font-semibold">Select Network</h3>
       <RadioGroup defaultValue="base" className="space-y-2">
         {[
           { id: "ethereum", name: "Ethereum", icon: "⟠", fee: "~$5.00" },
@@ -73,15 +73,13 @@ export const NetworkSelector: Story = {
             />
             <Label
               htmlFor={network.id}
-              className="flex items-center justify-between w-full p-3 border rounded-lg cursor-pointer peer-data-[state=checked]:bg-primary/10 peer-data-[state=checked]:border-primary hover:bg-muted transition-colors"
+              className="flex w-full cursor-pointer items-center justify-between rounded-lg border p-3 transition-colors hover:bg-muted peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10"
             >
               <div className="flex items-center gap-3">
                 <span className="text-xl">{network.icon}</span>
                 <span className="font-medium">{network.name}</span>
               </div>
-              <span className="text-sm text-muted-foreground">
-                {network.fee}
-              </span>
+              <span className="text-sm text-muted-foreground">{network.fee}</span>
             </Label>
           </div>
         ))}
@@ -93,13 +91,13 @@ export const NetworkSelector: Story = {
 export const OrderType: Story = {
   name: "Order Type",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-md">
-      <h3 className="font-semibold mb-3">Order Type</h3>
+    <div className="max-w-md rounded-lg border p-4">
+      <h3 className="mb-3 font-semibold">Order Type</h3>
       <RadioGroup defaultValue="market" className="space-y-3">
         <div className="flex items-start">
           <RadioGroupItem value="market" id="market" className="mt-1" />
           <div className="ml-3">
-            <Label htmlFor="market" className="font-medium cursor-pointer">
+            <Label htmlFor="market" className="cursor-pointer font-medium">
               Market Order
             </Label>
             <p className="text-sm text-muted-foreground">
@@ -110,7 +108,7 @@ export const OrderType: Story = {
         <div className="flex items-start">
           <RadioGroupItem value="limit" id="limit" className="mt-1" />
           <div className="ml-3">
-            <Label htmlFor="limit" className="font-medium cursor-pointer">
+            <Label htmlFor="limit" className="cursor-pointer font-medium">
               Limit Order
             </Label>
             <p className="text-sm text-muted-foreground">
@@ -121,7 +119,7 @@ export const OrderType: Story = {
         <div className="flex items-start">
           <RadioGroupItem value="stop" id="stop" className="mt-1" />
           <div className="ml-3">
-            <Label htmlFor="stop" className="font-medium cursor-pointer">
+            <Label htmlFor="stop" className="cursor-pointer font-medium">
               Stop Loss
             </Label>
             <p className="text-sm text-muted-foreground">
@@ -137,18 +135,14 @@ export const OrderType: Story = {
 export const TimeframeSelector: Story = {
   name: "Chart Timeframe",
   render: () => (
-    <div className="p-4 border rounded-lg">
+    <div className="rounded-lg border p-4">
       <RadioGroup defaultValue="1D" className="flex gap-1">
         {["1H", "4H", "1D", "1W", "1M", "ALL"].map((tf) => (
           <div key={tf}>
-            <RadioGroupItem
-              value={tf}
-              id={`tf-${tf}`}
-              className="peer sr-only"
-            />
+            <RadioGroupItem value={tf} id={`tf-${tf}`} className="peer sr-only" />
             <Label
               htmlFor={`tf-${tf}`}
-              className="flex items-center justify-center px-3 py-1.5 text-sm border rounded cursor-pointer peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground peer-data-[state=checked]:border-primary hover:bg-muted transition-colors"
+              className="flex cursor-pointer items-center justify-center rounded border px-3 py-1.5 text-sm transition-colors hover:bg-muted peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground"
             >
               {tf}
             </Label>
@@ -162,8 +156,8 @@ export const TimeframeSelector: Story = {
 export const GasSpeed: Story = {
   name: "Gas Speed",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-sm">
-      <h3 className="font-semibold mb-3">Transaction Speed</h3>
+    <div className="max-w-sm rounded-lg border p-4">
+      <h3 className="mb-3 font-semibold">Transaction Speed</h3>
       <RadioGroup defaultValue="standard" className="space-y-2">
         {[
           {
@@ -196,17 +190,17 @@ export const GasSpeed: Story = {
             />
             <Label
               htmlFor={`gas-${option.id}`}
-              className="flex items-center justify-between w-full p-3 border rounded-lg cursor-pointer peer-data-[state=checked]:bg-primary/10 peer-data-[state=checked]:border-primary hover:bg-muted transition-colors"
+              className="flex w-full cursor-pointer items-center justify-between rounded-lg border p-3 transition-colors hover:bg-muted peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10"
             >
               <div>
                 <span className="font-medium">{option.name}</span>
-                <span className="text-xs text-muted-foreground ml-2">
+                <span className="ml-2 text-xs text-muted-foreground">
                   {option.time}
                 </span>
               </div>
               <div className="text-right">
                 <span className="text-sm">{option.price}</span>
-                <span className="text-xs text-muted-foreground ml-1">
+                <span className="ml-1 text-xs text-muted-foreground">
                   ({option.gwei})
                 </span>
               </div>

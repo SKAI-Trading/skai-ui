@@ -38,7 +38,7 @@ export const WithCheckbox: Story = {
 export const FormLabels: Story = {
   name: "Trading Form Labels",
   render: () => (
-    <div className="space-y-4 max-w-sm">
+    <div className="max-w-sm space-y-4">
       <div className="grid gap-1.5">
         <Label htmlFor="amount">
           Amount <span className="text-destructive">*</span>
@@ -49,8 +49,7 @@ export const FormLabels: Story = {
         <Label htmlFor="slippage">Slippage Tolerance</Label>
         <Input id="slippage" type="number" placeholder="0.5" />
         <p className="text-xs text-muted-foreground">
-          Your transaction will revert if the price changes more than this
-          percentage.
+          Your transaction will revert if the price changes more than this percentage.
         </p>
       </div>
       <div className="grid gap-1.5">
@@ -67,7 +66,7 @@ export const FormLabels: Story = {
 export const RequiredLabel: Story = {
   name: "Required Field",
   render: () => (
-    <div className="grid gap-1.5 max-w-sm">
+    <div className="grid max-w-sm gap-1.5">
       <Label htmlFor="wallet">
         Wallet Address <span className="text-destructive">*</span>
       </Label>
@@ -79,7 +78,7 @@ export const RequiredLabel: Story = {
 export const DisabledLabel: Story = {
   name: "Disabled Field",
   render: () => (
-    <div className="grid gap-1.5 max-w-sm">
+    <div className="grid max-w-sm gap-1.5">
       <Label htmlFor="locked" className="text-muted-foreground">
         Locked Amount
       </Label>
@@ -94,11 +93,11 @@ export const DisabledLabel: Story = {
 export const LabelWithTooltip: Story = {
   name: "Label with Info",
   render: () => (
-    <div className="grid gap-1.5 max-w-sm">
+    <div className="grid max-w-sm gap-1.5">
       <Label htmlFor="impact" className="flex items-center gap-1">
         Price Impact
         <span
-          className="inline-flex items-center justify-center w-4 h-4 text-xs border rounded-full cursor-help"
+          className="inline-flex h-4 w-4 cursor-help items-center justify-center rounded-full border text-xs"
           title="The difference between market price and estimated price due to trade size"
         >
           ?

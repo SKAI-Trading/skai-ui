@@ -94,7 +94,7 @@ export const WithMinMax: Story = {
   render: () => {
     const [value, setValue] = useState<number | undefined>(undefined);
     return (
-      <div className="space-y-2 w-[250px]">
+      <div className="w-[250px] space-y-2">
         <p className="text-sm text-muted-foreground">Min: $10, Max: $1000</p>
         <CurrencyInput
           value={value}
@@ -115,22 +115,10 @@ export const Sizes: Story = {
     const [v3, setV3] = useState<number | undefined>(100);
 
     return (
-      <div className="space-y-4 w-[250px]">
-        <CurrencyInput
-          value={v1}
-          onValueChange={(v) => setV1(v)}
-          currency="USD"
-        />
-        <CurrencyInput
-          value={v2}
-          onValueChange={(v) => setV2(v)}
-          currency="USD"
-        />
-        <CurrencyInput
-          value={v3}
-          onValueChange={(v) => setV3(v)}
-          currency="USD"
-        />
+      <div className="w-[250px] space-y-4">
+        <CurrencyInput value={v1} onValueChange={(v) => setV1(v)} currency="USD" />
+        <CurrencyInput value={v2} onValueChange={(v) => setV2(v)} currency="USD" />
+        <CurrencyInput value={v3} onValueChange={(v) => setV3(v)} currency="USD" />
       </div>
     );
   },

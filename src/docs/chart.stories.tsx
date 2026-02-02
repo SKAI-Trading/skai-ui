@@ -64,7 +64,7 @@ const chartConfig = {
 export const LineChartExample: Story = {
   name: "Line Chart",
   render: () => (
-    <div className="w-full h-[300px]">
+    <div className="h-[300px] w-full">
       <ChartContainer config={chartConfig} className="h-full">
         <LineChart data={priceData}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -87,7 +87,7 @@ export const LineChartExample: Story = {
 export const AreaChartExample: Story = {
   name: "Area Chart",
   render: () => (
-    <div className="w-full h-[300px]">
+    <div className="h-[300px] w-full">
       <ChartContainer config={chartConfig} className="h-full">
         <AreaChart data={priceData}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -110,7 +110,7 @@ export const AreaChartExample: Story = {
 export const BarChartExample: Story = {
   name: "Bar Chart",
   render: () => (
-    <div className="w-full h-[300px]">
+    <div className="h-[300px] w-full">
       <ChartContainer config={chartConfig} className="h-full">
         <BarChart data={priceData}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -127,7 +127,7 @@ export const BarChartExample: Story = {
 export const MultipleLines: Story = {
   name: "Multiple Series",
   render: () => (
-    <div className="w-full h-[300px]">
+    <div className="h-[300px] w-full">
       <ChartContainer config={chartConfig} className="h-full">
         <LineChart data={priceData}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -174,7 +174,7 @@ const portfolioConfig = {
 export const PieChartExample: Story = {
   name: "Pie Chart (Portfolio)",
   render: () => (
-    <div className="w-full h-[300px]">
+    <div className="h-[300px] w-full">
       <ChartContainer config={portfolioConfig} className="h-full">
         <PieChart>
           <Pie
@@ -192,9 +192,7 @@ export const PieChartExample: Story = {
           </Pie>
           <ChartTooltip
             content={
-              <ChartTooltipContent
-                formatter={(value) => [`${value}%`, "Allocation"]}
-              />
+              <ChartTooltipContent formatter={(value) => [`${value}%`, "Allocation"]} />
             }
           />
           <ChartLegend content={<ChartLegendContent />} />
@@ -225,10 +223,10 @@ const performanceConfig = {
 export const TradingPerformance: Story = {
   name: "Trading Performance",
   render: () => (
-    <div className="bg-card rounded-lg border p-6 space-y-4">
-      <div className="flex justify-between items-center">
+    <div className="space-y-4 rounded-lg border bg-card p-6">
+      <div className="flex items-center justify-between">
         <h3 className="font-medium">Weekly Performance</h3>
-        <span className="text-sm text-green-500 font-medium">+$1,080</span>
+        <span className="text-sm font-medium text-green-500">+$1,080</span>
       </div>
       <div className="h-[200px]">
         <ChartContainer config={performanceConfig} className="h-full">
@@ -245,11 +243,7 @@ export const TradingPerformance: Story = {
                 />
               }
             />
-            <Bar
-              dataKey="pnl"
-              radius={[4, 4, 0, 0]}
-              fill="var(--color-pnl)"
-            >
+            <Bar dataKey="pnl" radius={[4, 4, 0, 0]} fill="var(--color-pnl)">
               {performanceData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
@@ -267,13 +261,13 @@ export const TradingPerformance: Story = {
 export const PriceHistory: Story = {
   name: "Price History Card",
   render: () => (
-    <div className="bg-card rounded-lg border p-6 space-y-4 max-w-lg">
-      <div className="flex justify-between items-start">
+    <div className="max-w-lg space-y-4 rounded-lg border bg-card p-6">
+      <div className="flex items-start justify-between">
         <div>
           <h3 className="font-medium">ETH/USD</h3>
           <p className="text-2xl font-bold">$3,456.78</p>
         </div>
-        <span className="text-sm text-green-500 bg-green-500/10 px-2 py-1 rounded">
+        <span className="rounded bg-green-500/10 px-2 py-1 text-sm text-green-500">
           +5.23%
         </span>
       </div>
@@ -290,9 +284,7 @@ export const PriceHistory: Story = {
             />
             <ChartTooltip
               content={
-                <ChartTooltipContent
-                  formatter={(value) => [`$${value}`, "Price"]}
-                />
+                <ChartTooltipContent formatter={(value) => [`$${value}`, "Price"]} />
               }
             />
           </AreaChart>

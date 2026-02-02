@@ -115,7 +115,7 @@ export const LongContent: Story = {
 
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 w-96">
+    <div className="flex w-96 flex-col gap-4">
       <Notification
         title="Default"
         message="Default notification"
@@ -204,7 +204,7 @@ export const StackedNotifications: Story = {
     };
 
     return (
-      <div className="relative h-96 w-96 bg-background border rounded-lg overflow-hidden">
+      <div className="relative h-96 w-96 overflow-hidden rounded-lg border bg-background">
         <div className="p-4">
           <Button onClick={addNotification}>Add Notification</Button>
         </div>
@@ -226,11 +226,8 @@ export const StackedNotifications: Story = {
 export const StackPositions: Story = {
   render: () => (
     <div className="grid grid-cols-2 gap-4">
-      <div className="relative h-48 w-48 bg-muted rounded-lg">
-        <NotificationStack
-          position="top-left"
-          className="scale-50 origin-top-left"
-        >
+      <div className="relative h-48 w-48 rounded-lg bg-muted">
+        <NotificationStack position="top-left" className="origin-top-left scale-50">
           <Notification
             variant="info"
             title="Top Left"
@@ -239,11 +236,8 @@ export const StackPositions: Story = {
           />
         </NotificationStack>
       </div>
-      <div className="relative h-48 w-48 bg-muted rounded-lg">
-        <NotificationStack
-          position="top-right"
-          className="scale-50 origin-top-right"
-        >
+      <div className="relative h-48 w-48 rounded-lg bg-muted">
+        <NotificationStack position="top-right" className="origin-top-right scale-50">
           <Notification
             variant="info"
             title="Top Right"
@@ -252,10 +246,10 @@ export const StackPositions: Story = {
           />
         </NotificationStack>
       </div>
-      <div className="relative h-48 w-48 bg-muted rounded-lg">
+      <div className="relative h-48 w-48 rounded-lg bg-muted">
         <NotificationStack
           position="bottom-left"
-          className="scale-50 origin-bottom-left"
+          className="origin-bottom-left scale-50"
         >
           <Notification
             variant="info"
@@ -265,10 +259,10 @@ export const StackPositions: Story = {
           />
         </NotificationStack>
       </div>
-      <div className="relative h-48 w-48 bg-muted rounded-lg">
+      <div className="relative h-48 w-48 rounded-lg bg-muted">
         <NotificationStack
           position="bottom-right"
-          className="scale-50 origin-bottom-right"
+          className="origin-bottom-right scale-50"
         >
           <Notification
             variant="info"

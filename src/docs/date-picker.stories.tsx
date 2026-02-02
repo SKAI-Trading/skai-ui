@@ -60,25 +60,15 @@ export const Sizes: Story = {
     const [date3, setDate3] = useState<Date>();
 
     return (
-      <div className="space-y-4 w-[300px]">
-        <DatePicker
-          value={date1}
-          onChange={setDate1}
-          size="sm"
-          placeholder="Small"
-        />
+      <div className="w-[300px] space-y-4">
+        <DatePicker value={date1} onChange={setDate1} size="sm" placeholder="Small" />
         <DatePicker
           value={date2}
           onChange={setDate2}
           size="default"
           placeholder="Default"
         />
-        <DatePicker
-          value={date3}
-          onChange={setDate3}
-          size="lg"
-          placeholder="Large"
-        />
+        <DatePicker value={date3} onChange={setDate3} size="lg" placeholder="Large" />
       </div>
     );
   },
@@ -92,7 +82,7 @@ export const WithConstraints: Story = {
     maxDate.setMonth(maxDate.getMonth() + 3);
 
     return (
-      <div className="space-y-2 w-[300px]">
+      <div className="w-[300px] space-y-2">
         <p className="text-sm text-muted-foreground">
           Only dates from today to 3 months from now are selectable
         </p>
@@ -111,11 +101,10 @@ export const WithConstraints: Story = {
 export const DisableWeekends: Story = {
   render: () => {
     const [date, setDate] = useState<Date>();
-    const isWeekend = (date: Date) =>
-      date.getDay() === 0 || date.getDay() === 6;
+    const isWeekend = (date: Date) => date.getDay() === 0 || date.getDay() === 6;
 
     return (
-      <div className="space-y-2 w-[300px]">
+      <div className="w-[300px] space-y-2">
         <p className="text-sm text-muted-foreground">Weekends are disabled</p>
         <DatePicker
           value={date}
@@ -133,7 +122,7 @@ export const WithManualInput: Story = {
     const [date, setDate] = useState<Date>();
 
     return (
-      <div className="space-y-2 w-[300px]">
+      <div className="w-[300px] space-y-2">
         <p className="text-sm text-muted-foreground">
           You can type a date or use the calendar
         </p>

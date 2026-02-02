@@ -151,9 +151,9 @@ export const Indicator: Story = {
 
 export const AllRiskLevels: Story = {
   render: () => (
-    <div className="space-y-6 max-w-md">
+    <div className="max-w-md space-y-6">
       <div>
-        <h4 className="text-sm font-medium mb-2">Safe ({">"} 20% from liq)</h4>
+        <h4 className="mb-2 text-sm font-medium">Safe ({">"} 20% from liq)</h4>
         <LiquidationWarning
           currentPrice={3200}
           liquidationPrice={2500}
@@ -163,7 +163,7 @@ export const AllRiskLevels: Story = {
         />
       </div>
       <div>
-        <h4 className="text-sm font-medium mb-2">Warning (10-20% from liq)</h4>
+        <h4 className="mb-2 text-sm font-medium">Warning (10-20% from liq)</h4>
         <LiquidationWarning
           currentPrice={3200}
           liquidationPrice={2900}
@@ -173,7 +173,7 @@ export const AllRiskLevels: Story = {
         />
       </div>
       <div>
-        <h4 className="text-sm font-medium mb-2">Danger (5-10% from liq)</h4>
+        <h4 className="mb-2 text-sm font-medium">Danger (5-10% from liq)</h4>
         <LiquidationWarning
           currentPrice={3200}
           liquidationPrice={3050}
@@ -183,9 +183,7 @@ export const AllRiskLevels: Story = {
         />
       </div>
       <div>
-        <h4 className="text-sm font-medium mb-2">
-          Critical ({"<"} 5% from liq)
-        </h4>
+        <h4 className="mb-2 text-sm font-medium">Critical ({"<"} 5% from liq)</h4>
         <LiquidationWarning
           currentPrice={3200}
           liquidationPrice={3150}
@@ -200,8 +198,8 @@ export const AllRiskLevels: Story = {
 
 export const PositionCard: Story = {
   render: () => (
-    <div className="p-4 bg-card border rounded-lg w-96 space-y-4">
-      <div className="flex justify-between items-center">
+    <div className="w-96 space-y-4 rounded-lg border bg-card p-4">
+      <div className="flex items-center justify-between">
         <div>
           <h3 className="font-semibold">ETH-PERP</h3>
           <span className="text-xs text-green-500">LONG 10x</span>

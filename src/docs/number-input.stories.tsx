@@ -40,7 +40,7 @@ export const WithMinMax: Story = {
     return (
       <div className="w-48">
         <NumberInput value={value} onChange={setValue} min={0} max={10} />
-        <p className="text-sm text-muted-foreground mt-2">Range: 0-10</p>
+        <p className="mt-2 text-sm text-muted-foreground">Range: 0-10</p>
       </div>
     );
   },
@@ -52,7 +52,7 @@ export const CustomStep: Story = {
     return (
       <div className="w-48">
         <NumberInput value={value} onChange={setValue} step={0.5} />
-        <p className="text-sm text-muted-foreground mt-2">Step: 0.5</p>
+        <p className="mt-2 text-sm text-muted-foreground">Step: 0.5</p>
       </div>
     );
   },
@@ -65,11 +65,11 @@ export const ButtonPositions: Story = {
     return (
       <div className="flex flex-col gap-4">
         <div>
-          <p className="text-xs text-muted-foreground mb-1">Sides (default)</p>
+          <p className="mb-1 text-xs text-muted-foreground">Sides (default)</p>
           <NumberInput value={v1} onChange={setV1} buttonPosition="sides" />
         </div>
         <div>
-          <p className="text-xs text-muted-foreground mb-1">Right</p>
+          <p className="mb-1 text-xs text-muted-foreground">Right</p>
           <NumberInput value={v2} onChange={setV2} buttonPosition="right" />
         </div>
       </div>

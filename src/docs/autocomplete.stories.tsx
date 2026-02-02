@@ -88,8 +88,7 @@ export const MultiSelect: Story = {
           multiple={true}
         />
         <p className="mt-2 text-sm text-muted-foreground">
-          Selected:{" "}
-          {Array.isArray(values) ? values.join(", ") : values || "None"}
+          Selected: {Array.isArray(values) ? values.join(", ") : values || "None"}
         </p>
       </div>
     );
@@ -136,7 +135,7 @@ export const Sizes: Story = {
     const [v3, setV3] = useState<string | string[]>("");
 
     return (
-      <div className="space-y-4 w-[300px]">
+      <div className="w-[300px] space-y-4">
         <Autocomplete
           options={tokens}
           value={v1}
@@ -181,7 +180,7 @@ export const CustomRender: Story = {
               <img
                 src={option.icon as string}
                 alt=""
-                className="w-5 h-5 rounded-full"
+                className="h-5 w-5 rounded-full"
                 onError={(e) => (e.currentTarget.style.display = "none")}
               />
               <span>{option.label}</span>
@@ -218,9 +217,7 @@ export const AsyncSearch: Story = {
       // Simulate API call
       await new Promise((r) => setTimeout(r, 500));
       setOptions(
-        tokens.filter((t) =>
-          t.label.toLowerCase().includes(query.toLowerCase()),
-        ),
+        tokens.filter((t) => t.label.toLowerCase().includes(query.toLowerCase()))
       );
       setLoading(false);
     };

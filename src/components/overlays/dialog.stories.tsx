@@ -47,9 +47,7 @@ export const Default: Story = {
           </DialogDescription>
         </DialogHeader>
         <div className="py-4">
-          <p className="text-sm text-muted-foreground">
-            Dialog content goes here.
-          </p>
+          <p className="text-sm text-muted-foreground">Dialog content goes here.</p>
         </div>
         <DialogFooter>
           <DialogClose asChild>
@@ -80,21 +78,13 @@ export const FormDialog: Story = {
             <Label htmlFor="name" className="text-right">
               Name
             </Label>
-            <Input
-              id="name"
-              defaultValue="SKAI Trader"
-              className="col-span-3"
-            />
+            <Input id="name" defaultValue="SKAI Trader" className="col-span-3" />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="username" className="text-right">
               Username
             </Label>
-            <Input
-              id="username"
-              defaultValue="@skaitrader"
-              className="col-span-3"
-            />
+            <Input id="username" defaultValue="@skaitrader" className="col-span-3" />
           </div>
         </div>
         <DialogFooter>
@@ -120,7 +110,7 @@ export const ConfirmSwapDialog: Story = {
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
-          <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
+          <div className="flex items-center justify-between rounded-lg bg-muted p-4">
             <div>
               <p className="text-sm text-muted-foreground">You pay</p>
               <p className="text-xl font-bold">1,000 USDC</p>
@@ -128,11 +118,11 @@ export const ConfirmSwapDialog: Story = {
             <Badge>USDC</Badge>
           </div>
           <div className="flex justify-center">
-            <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
               ↓
             </div>
           </div>
-          <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
+          <div className="flex items-center justify-between rounded-lg bg-muted p-4">
             <div>
               <p className="text-sm text-muted-foreground">You receive</p>
               <p className="text-xl font-bold">0.0149 ETH</p>
@@ -191,12 +181,7 @@ export const SendTokenDialog: Story = {
           <div className="space-y-2">
             <Label htmlFor="amount">Amount</Label>
             <div className="flex gap-2">
-              <Input
-                id="amount"
-                type="number"
-                placeholder="0.00"
-                className="flex-1"
-              />
+              <Input id="amount" type="number" placeholder="0.00" className="flex-1" />
               <Button variant="outline" className="w-24">
                 ETH
               </Button>
@@ -273,8 +258,8 @@ export const ConfirmationDialog: Story = {
             Confirm Deletion
           </DialogTitle>
           <DialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            This action cannot be undone. This will permanently delete your account and
+            remove your data from our servers.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="gap-2 sm:gap-0">
@@ -292,11 +277,11 @@ export const SuccessDialog: Story = {
   render: () => (
     <Dialog defaultOpen>
       <DialogContent className="sm:max-w-[400px]">
-        <div className="flex flex-col items-center text-center py-4">
-          <div className="h-16 w-16 rounded-full bg-green-500/20 flex items-center justify-center mb-4">
+        <div className="flex flex-col items-center py-4 text-center">
+          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20">
             <Check className="h-8 w-8 text-green-500" />
           </div>
-          <DialogTitle className="text-xl mb-2">Swap Successful!</DialogTitle>
+          <DialogTitle className="mb-2 text-xl">Swap Successful!</DialogTitle>
           <DialogDescription>
             Your swap has been completed successfully. You received 0.0149 ETH.
           </DialogDescription>

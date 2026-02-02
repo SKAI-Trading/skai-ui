@@ -135,26 +135,20 @@ export const TokenPricesTable: Story = {
             <TableRow key={token.symbol}>
               <TableCell>
                 <div className="flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-xs font-bold">
                     {token.symbol[0]}
                   </div>
                   <div>
                     <div className="font-medium">{token.name}</div>
-                    <div className="text-xs text-muted-foreground">
-                      {token.symbol}
-                    </div>
+                    <div className="text-xs text-muted-foreground">{token.symbol}</div>
                   </div>
                 </div>
               </TableCell>
-              <TableCell className="text-right font-medium">
-                {token.price}
-              </TableCell>
+              <TableCell className="text-right font-medium">{token.price}</TableCell>
               <TableCell className="text-right">
                 <span
                   className={`flex items-center justify-end gap-1 ${
-                    parseFloat(token.change) >= 0
-                      ? "text-green-500"
-                      : "text-red-500"
+                    parseFloat(token.change) >= 0 ? "text-green-500" : "text-red-500"
                   }`}
                 >
                   {parseFloat(token.change) >= 0 ? (
@@ -228,13 +222,9 @@ export const TransactionHistoryTable: Story = {
     const getStatusBadge = (status: string) => {
       switch (status) {
         case "completed":
-          return (
-            <Badge className="bg-green-500/20 text-green-500">Completed</Badge>
-          );
+          return <Badge className="bg-green-500/20 text-green-500">Completed</Badge>;
         case "pending":
-          return (
-            <Badge className="bg-yellow-500/20 text-yellow-500">Pending</Badge>
-          );
+          return <Badge className="bg-yellow-500/20 text-yellow-500">Pending</Badge>;
         case "failed":
           return <Badge className="bg-red-500/20 text-red-500">Failed</Badge>;
         default:
@@ -265,9 +255,7 @@ export const TransactionHistoryTable: Story = {
               <TableCell>{tx.from}</TableCell>
               <TableCell>{tx.to}</TableCell>
               <TableCell className="text-muted-foreground">{tx.time}</TableCell>
-              <TableCell className="text-right">
-                {getStatusBadge(tx.status)}
-              </TableCell>
+              <TableCell className="text-right">{getStatusBadge(tx.status)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -333,7 +321,7 @@ export const PortfolioTable: Story = {
             <TableRow key={holding.symbol}>
               <TableCell>
                 <div className="flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-xs font-bold">
                     {holding.symbol[0]}
                   </div>
                   <div>
@@ -344,15 +332,11 @@ export const PortfolioTable: Story = {
                   </div>
                 </div>
               </TableCell>
-              <TableCell className="text-right font-mono">
-                {holding.amount}
-              </TableCell>
+              <TableCell className="text-right font-mono">{holding.amount}</TableCell>
               <TableCell className="text-right text-muted-foreground">
                 {holding.avgCost}
               </TableCell>
-              <TableCell className="text-right">
-                {holding.currentPrice}
-              </TableCell>
+              <TableCell className="text-right">{holding.currentPrice}</TableCell>
               <TableCell className="text-right">
                 <div
                   className={
@@ -427,15 +411,11 @@ export const LeaderboardTable: Story = {
     const getRankBadge = (rank: number) => {
       switch (rank) {
         case 1:
-          return (
-            <Badge className="bg-yellow-500/20 text-yellow-500">🥇 1st</Badge>
-          );
+          return <Badge className="bg-yellow-500/20 text-yellow-500">🥇 1st</Badge>;
         case 2:
           return <Badge className="bg-gray-300/20 text-gray-300">🥈 2nd</Badge>;
         case 3:
-          return (
-            <Badge className="bg-orange-500/20 text-orange-500">🥉 3rd</Badge>
-          );
+          return <Badge className="bg-orange-500/20 text-orange-500">🥉 3rd</Badge>;
         default:
           return <Badge variant="outline">#{rank}</Badge>;
       }
@@ -460,7 +440,7 @@ export const LeaderboardTable: Story = {
               <TableCell>
                 <div>
                   <div className="font-medium">{trader.name}</div>
-                  <div className="text-xs text-muted-foreground font-mono">
+                  <div className="font-mono text-xs text-muted-foreground">
                     {trader.address}
                   </div>
                 </div>

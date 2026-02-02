@@ -19,8 +19,7 @@ const meta: Meta<typeof Tabs> = {
     layout: "centered",
     docs: {
       description: {
-        component:
-          "A tab component for organizing content into different views.",
+        component: "A tab component for organizing content into different views.",
       },
     },
   },
@@ -122,9 +121,7 @@ export const TradeTabs: Story = {
           <Label>Amount (USD)</Label>
           <Input type="number" placeholder="0.00" />
         </div>
-        <Button className="w-full bg-green-600 hover:bg-green-700">
-          Buy ETH
-        </Button>
+        <Button className="w-full bg-green-600 hover:bg-green-700">Buy ETH</Button>
       </TabsContent>
       <TabsContent value="sell" className="space-y-4 pt-4">
         <div className="space-y-2">
@@ -145,7 +142,7 @@ export const PortfolioTabs: Story = {
           Tokens
           <Badge
             variant="secondary"
-            className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs"
+            className="ml-2 flex h-5 w-5 items-center justify-center rounded-full p-0 text-xs"
           >
             5
           </Badge>
@@ -154,7 +151,7 @@ export const PortfolioTabs: Story = {
           NFTs
           <Badge
             variant="secondary"
-            className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs"
+            className="ml-2 flex h-5 w-5 items-center justify-center rounded-full p-0 text-xs"
           >
             3
           </Badge>
@@ -185,7 +182,7 @@ export const PortfolioTabs: Story = {
           ].map((token) => (
             <div
               key={token.symbol}
-              className="flex justify-between items-center p-3 bg-muted rounded-lg"
+              className="flex items-center justify-between rounded-lg bg-muted p-3"
             >
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-primary/20" />
@@ -204,12 +201,12 @@ export const PortfolioTabs: Story = {
       <TabsContent value="nfts" className="pt-4">
         <div className="grid grid-cols-3 gap-2">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="aspect-square bg-muted rounded-lg" />
+            <div key={i} className="aspect-square rounded-lg bg-muted" />
           ))}
         </div>
       </TabsContent>
       <TabsContent value="activity" className="pt-4">
-        <p className="text-sm text-muted-foreground text-center py-8">
+        <p className="py-8 text-center text-sm text-muted-foreground">
           No recent activity
         </p>
       </TabsContent>
@@ -234,12 +231,8 @@ export const GameTabs: Story = {
             </CardDescription>
           </CardHeader>
           <CardContent className="flex gap-2">
-            <Button className="flex-1 bg-green-600 hover:bg-green-700">
-              Higher
-            </Button>
-            <Button className="flex-1 bg-red-600 hover:bg-red-700">
-              Lower
-            </Button>
+            <Button className="flex-1 bg-green-600 hover:bg-green-700">Higher</Button>
+            <Button className="flex-1 bg-red-600 hover:bg-red-700">Lower</Button>
           </CardContent>
         </Card>
       </TabsContent>
@@ -271,12 +264,8 @@ export const GameTabs: Story = {
 
 export const VerticalTabs: Story = {
   render: () => (
-    <Tabs
-      defaultValue="general"
-      orientation="vertical"
-      className="flex w-[500px]"
-    >
-      <TabsList className="flex flex-col h-auto w-48 bg-transparent">
+    <Tabs defaultValue="general" orientation="vertical" className="flex w-[500px]">
+      <TabsList className="flex h-auto w-48 flex-col bg-transparent">
         <TabsTrigger value="general" className="w-full justify-start">
           General
         </TabsTrigger>
@@ -320,9 +309,7 @@ export const VerticalTabs: Story = {
           <Card>
             <CardHeader>
               <CardTitle>Notification Preferences</CardTitle>
-              <CardDescription>
-                Choose what notifications to receive
-              </CardDescription>
+              <CardDescription>Choose what notifications to receive</CardDescription>
             </CardHeader>
           </Card>
         </TabsContent>

@@ -47,7 +47,7 @@ export const Vertical: Story = {
 export const SwapDetails: Story = {
   name: "Swap Details Separator",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-sm space-y-4">
+    <div className="max-w-sm space-y-4 rounded-lg border p-4">
       <div className="flex justify-between">
         <span className="text-muted-foreground">Rate</span>
         <span>1 ETH = 2,145.32 USDC</span>
@@ -77,8 +77,8 @@ export const SwapDetails: Story = {
 export const TransactionSummary: Story = {
   name: "Transaction Summary",
   render: () => (
-    <div className="p-4 border rounded-lg max-w-sm">
-      <h3 className="font-semibold mb-4">Transaction Summary</h3>
+    <div className="max-w-sm rounded-lg border p-4">
+      <h3 className="mb-4 font-semibold">Transaction Summary</h3>
       <div className="space-y-3">
         <div className="flex justify-between">
           <span className="text-muted-foreground">From</span>
@@ -134,25 +134,25 @@ export const TransactionSummary: Story = {
 export const NavigationSeparator: Story = {
   name: "Navigation Menu",
   render: () => (
-    <div className="space-y-2 max-w-xs">
-      <button className="w-full text-left px-3 py-2 rounded hover:bg-muted">
+    <div className="max-w-xs space-y-2">
+      <button className="w-full rounded px-3 py-2 text-left hover:bg-muted">
         Dashboard
       </button>
-      <button className="w-full text-left px-3 py-2 rounded hover:bg-muted">
+      <button className="w-full rounded px-3 py-2 text-left hover:bg-muted">
         Portfolio
       </button>
-      <button className="w-full text-left px-3 py-2 rounded hover:bg-muted">
+      <button className="w-full rounded px-3 py-2 text-left hover:bg-muted">
         Trade
       </button>
       <Separator />
-      <button className="w-full text-left px-3 py-2 rounded hover:bg-muted">
+      <button className="w-full rounded px-3 py-2 text-left hover:bg-muted">
         Settings
       </button>
-      <button className="w-full text-left px-3 py-2 rounded hover:bg-muted">
+      <button className="w-full rounded px-3 py-2 text-left hover:bg-muted">
         Help
       </button>
       <Separator />
-      <button className="w-full text-left px-3 py-2 rounded hover:bg-muted text-destructive">
+      <button className="w-full rounded px-3 py-2 text-left text-destructive hover:bg-muted">
         Disconnect Wallet
       </button>
     </div>
@@ -162,7 +162,7 @@ export const NavigationSeparator: Story = {
 export const StatsRow: Story = {
   name: "Stats with Separators",
   render: () => (
-    <div className="flex items-center justify-center gap-0 p-4 border rounded-lg">
+    <div className="flex items-center justify-center gap-0 rounded-lg border p-4">
       <div className="px-6 text-center">
         <p className="text-2xl font-bold">$12.5M</p>
         <p className="text-xs text-muted-foreground">Total Volume</p>

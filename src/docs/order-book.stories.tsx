@@ -117,8 +117,7 @@ export const Interactive: Story = {
     return (
       <div className="space-y-4">
         <div className="text-sm text-muted-foreground">
-          Selected price:{" "}
-          {selectedPrice ? `$${selectedPrice.toFixed(2)}` : "None"}
+          Selected price: {selectedPrice ? `$${selectedPrice.toFixed(2)}` : "None"}
         </div>
         <div className="h-[500px]">
           <OrderBook
@@ -128,14 +127,14 @@ export const Interactive: Story = {
             onPriceClick={setSelectedPrice}
             onRowDoubleClick={(price, size, side) => {
               alert(
-                `Double-clicked: ${side} ${size.toFixed(4)} @ $${price.toFixed(2)}`,
+                `Double-clicked: ${side} ${size.toFixed(4)} @ $${price.toFixed(2)}`
               );
             }}
           />
         </div>
         <button
           onClick={() => setData(createMockOrderBook())}
-          className="px-4 py-2 bg-primary text-primary-foreground rounded"
+          className="rounded bg-primary px-4 py-2 text-primary-foreground"
         >
           Refresh Data
         </button>

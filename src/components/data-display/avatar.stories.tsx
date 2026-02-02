@@ -58,35 +58,27 @@ export const TokenAvatars: Story = {
       <div className="flex flex-col items-center gap-1">
         <Avatar className="h-10 w-10 border-2 border-primary">
           <AvatarImage src="https://cryptologos.cc/logos/ethereum-eth-logo.png" />
-          <AvatarFallback className="bg-blue-500 text-white">
-            ETH
-          </AvatarFallback>
+          <AvatarFallback className="bg-blue-500 text-white">ETH</AvatarFallback>
         </Avatar>
         <span className="text-xs">ETH</span>
       </div>
       <div className="flex flex-col items-center gap-1">
         <Avatar className="h-10 w-10 border-2">
           <AvatarImage src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" />
-          <AvatarFallback className="bg-orange-500 text-white">
-            BTC
-          </AvatarFallback>
+          <AvatarFallback className="bg-orange-500 text-white">BTC</AvatarFallback>
         </Avatar>
         <span className="text-xs">BTC</span>
       </div>
       <div className="flex flex-col items-center gap-1">
         <Avatar className="h-10 w-10 border-2">
           <AvatarImage src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" />
-          <AvatarFallback className="bg-blue-600 text-white">
-            USDC
-          </AvatarFallback>
+          <AvatarFallback className="bg-blue-600 text-white">USDC</AvatarFallback>
         </Avatar>
         <span className="text-xs">USDC</span>
       </div>
       <div className="flex flex-col items-center gap-1">
         <Avatar className="h-10 w-10 border-2">
-          <AvatarFallback className="bg-purple-500 text-white">
-            SKAI
-          </AvatarFallback>
+          <AvatarFallback className="bg-purple-500 text-white">SKAI</AvatarFallback>
         </Avatar>
         <span className="text-xs">SKAI</span>
       </div>
@@ -97,14 +89,14 @@ export const TokenAvatars: Story = {
 export const UserProfile: Story = {
   name: "User Profile",
   render: () => (
-    <div className="flex items-center gap-3 p-4 border rounded-lg max-w-sm">
+    <div className="flex max-w-sm items-center gap-3 rounded-lg border p-4">
       <Avatar className="h-12 w-12">
         <AvatarImage src="https://github.com/shadcn.png" />
         <AvatarFallback>SK</AvatarFallback>
       </Avatar>
       <div className="flex-1">
         <p className="font-medium">skai_trader.eth</p>
-        <p className="text-sm text-muted-foreground font-mono">0x1234...5678</p>
+        <p className="font-mono text-sm text-muted-foreground">0x1234...5678</p>
       </div>
       <div className="text-right">
         <p className="text-sm font-medium text-green-500">+$1,234.56</p>
@@ -117,7 +109,7 @@ export const UserProfile: Story = {
 export const Leaderboard: Story = {
   name: "Leaderboard Avatars",
   render: () => (
-    <div className="space-y-2 max-w-sm">
+    <div className="max-w-sm space-y-2">
       {[
         {
           rank: 1,
@@ -135,10 +127,7 @@ export const Leaderboard: Story = {
         { rank: 4, name: "anon123", profit: "+$45,678", color: "bg-muted" },
         { rank: 5, name: "skai_user", profit: "+$34,567", color: "bg-muted" },
       ].map((user) => (
-        <div
-          key={user.rank}
-          className="flex items-center gap-3 p-3 border rounded-lg"
-        >
+        <div key={user.rank} className="flex items-center gap-3 rounded-lg border p-3">
           <span className="w-6 text-center font-bold text-muted-foreground">
             #{user.rank}
           </span>
@@ -148,7 +137,7 @@ export const Leaderboard: Story = {
             </AvatarFallback>
           </Avatar>
           <span className="flex-1 font-medium">{user.name}</span>
-          <span className="text-green-500 font-mono">{user.profit}</span>
+          <span className="font-mono text-green-500">{user.profit}</span>
         </div>
       ))}
     </div>
@@ -162,34 +151,34 @@ export const AvatarStack: Story = {
       <div className="flex items-center gap-2">
         <div className="flex -space-x-2">
           <Avatar className="h-8 w-8 border-2 border-background">
-            <AvatarFallback className="bg-blue-500 text-white text-xs">
+            <AvatarFallback className="bg-blue-500 text-xs text-white">
               ETH
             </AvatarFallback>
           </Avatar>
           <Avatar className="h-8 w-8 border-2 border-background">
-            <AvatarFallback className="bg-blue-600 text-white text-xs">
+            <AvatarFallback className="bg-blue-600 text-xs text-white">
               USDC
             </AvatarFallback>
           </Avatar>
         </div>
         <span className="font-medium">ETH/USDC</span>
-        <span className="text-green-500 text-sm">+2.34%</span>
+        <span className="text-sm text-green-500">+2.34%</span>
       </div>
       <div className="flex items-center gap-2">
         <div className="flex -space-x-2">
           <Avatar className="h-8 w-8 border-2 border-background">
-            <AvatarFallback className="bg-orange-500 text-white text-xs">
+            <AvatarFallback className="bg-orange-500 text-xs text-white">
               BTC
             </AvatarFallback>
           </Avatar>
           <Avatar className="h-8 w-8 border-2 border-background">
-            <AvatarFallback className="bg-green-500 text-white text-xs">
+            <AvatarFallback className="bg-green-500 text-xs text-white">
               USDT
             </AvatarFallback>
           </Avatar>
         </div>
         <span className="font-medium">BTC/USDT</span>
-        <span className="text-red-500 text-sm">-0.87%</span>
+        <span className="text-sm text-red-500">-0.87%</span>
       </div>
     </div>
   ),

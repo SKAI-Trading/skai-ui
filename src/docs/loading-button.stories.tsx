@@ -25,14 +25,7 @@ const meta: Meta<typeof LoadingButton> = {
     },
     variant: {
       control: "select",
-      options: [
-        "default",
-        "destructive",
-        "outline",
-        "secondary",
-        "ghost",
-        "link",
-      ],
+      options: ["default", "destructive", "outline", "secondary", "ghost", "link"],
       description: "Button variant",
     },
     size: {

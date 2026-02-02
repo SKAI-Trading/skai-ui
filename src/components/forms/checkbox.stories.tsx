@@ -58,8 +58,8 @@ export const Disabled: Story = {
 export const AgreementCheckboxes: Story = {
   name: "Trading Agreements",
   render: () => (
-    <div className="space-y-4 p-4 border rounded-lg max-w-md">
-      <h3 className="font-semibold text-lg">Confirm Trade</h3>
+    <div className="max-w-md space-y-4 rounded-lg border p-4">
+      <h3 className="text-lg font-semibold">Confirm Trade</h3>
       <div className="space-y-3">
         <div className="flex items-start space-x-2">
           <Checkbox id="slippage" className="mt-1" />
@@ -87,8 +87,8 @@ export const AgreementCheckboxes: Story = {
 export const NotificationSettings: Story = {
   name: "Notification Preferences",
   render: () => (
-    <div className="space-y-4 p-4 border rounded-lg max-w-md">
-      <h3 className="font-semibold text-lg">Notifications</h3>
+    <div className="max-w-md space-y-4 rounded-lg border p-4">
+      <h3 className="text-lg font-semibold">Notifications</h3>
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <Label htmlFor="price-alerts">Price alerts</Label>
@@ -114,7 +114,7 @@ export const NotificationSettings: Story = {
 export const FilterOptions: Story = {
   name: "Token Filters",
   render: () => (
-    <div className="space-y-4 p-4 border rounded-lg max-w-sm">
+    <div className="max-w-sm space-y-4 rounded-lg border p-4">
       <h3 className="font-semibold">Filter Tokens</h3>
       <div className="space-y-2">
         <div className="flex items-center space-x-2">

@@ -70,9 +70,7 @@ export const Sides: Story = {
           <SheetContent side={side}>
             <SheetHeader>
               <SheetTitle>{side} Sheet</SheetTitle>
-              <SheetDescription>
-                This sheet opens from the {side}.
-              </SheetDescription>
+              <SheetDescription>This sheet opens from the {side}.</SheetDescription>
             </SheetHeader>
           </SheetContent>
         </Sheet>
@@ -94,7 +92,7 @@ export const WalletSheet: Story = {
           <SheetTitle>Wallet</SheetTitle>
           <SheetDescription>0x1234...5678</SheetDescription>
         </SheetHeader>
-        <div className="py-6 space-y-6">
+        <div className="space-y-6 py-6">
           <div className="text-center">
             <p className="text-sm text-muted-foreground">Total Balance</p>
             <p className="text-3xl font-bold">$12,345.67</p>
@@ -109,10 +107,10 @@ export const WalletSheet: Story = {
             ].map((token) => (
               <div
                 key={token.symbol}
-                className="flex items-center justify-between p-3 rounded-lg bg-muted"
+                className="flex items-center justify-between rounded-lg bg-muted p-3"
               >
                 <div className="flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-sm font-bold">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-sm font-bold">
                     {token.symbol.slice(0, 2)}
                   </div>
                   <span className="font-medium">{token.symbol}</span>
@@ -154,11 +152,9 @@ export const SettingsSheet: Story = {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Trading Settings</SheetTitle>
-          <SheetDescription>
-            Configure your trading preferences
-          </SheetDescription>
+          <SheetDescription>Configure your trading preferences</SheetDescription>
         </SheetHeader>
-        <div className="py-6 space-y-6">
+        <div className="space-y-6 py-6">
           <div className="space-y-2">
             <Label>Slippage Tolerance</Label>
             <div className="flex gap-2">
@@ -222,7 +218,7 @@ export const MobileMenu: Story = {
         <SheetHeader>
           <SheetTitle>SKAI Trading</SheetTitle>
         </SheetHeader>
-        <div className="py-6 space-y-2">
+        <div className="space-y-2 py-6">
           {[
             { icon: "📊", label: "Dashboard" },
             { icon: "💱", label: "Swap" },
@@ -233,7 +229,7 @@ export const MobileMenu: Story = {
           ].map((item) => (
             <button
               key={item.label}
-              className="flex items-center gap-3 w-full p-3 rounded-lg hover:bg-muted text-left"
+              className="flex w-full items-center gap-3 rounded-lg p-3 text-left hover:bg-muted"
             >
               <span className="text-xl">{item.icon}</span>
               <span className="font-medium">{item.label}</span>
