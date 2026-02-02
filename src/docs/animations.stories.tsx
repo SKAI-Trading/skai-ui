@@ -6,14 +6,15 @@ import {
   useReducedMotion,
   FadeIn,
   SlideIn,
-  ScaleIn,
   Stagger,
-  StaggerItem,
   Pulse,
-  Shimmer,
-  Bounce,
   Spin,
   Float,
+  Shake,
+  ScaleOnInteract,
+  NumberTicker,
+  GradientText,
+  Collapse,
 } from "../lib/animations";
 import { Button } from "../components/core/button";
 
@@ -31,18 +32,18 @@ export const DurationTokens: StoryObj = {
   render: () => (
     <div className="space-y-8">
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Duration Scale</h2>
-        <p className="text-muted-foreground mb-6">
+        <h2 className="mb-4 text-2xl font-semibold">Duration Scale</h2>
+        <p className="mb-6 text-muted-foreground">
           Consistent timing for animations across the design system.
         </p>
         <div className="space-y-4">
           {Object.entries(durations).map(([name, ms]) => (
             <div key={name} className="flex items-center gap-4">
-              <span className="w-24 text-sm font-mono">{name}</span>
+              <span className="w-24 font-mono text-sm">{name}</span>
               <span className="w-16 text-sm text-muted-foreground">{ms}ms</span>
-              <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+              <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
                 <div
-                  className="h-full bg-primary rounded-full"
+                  className="h-full rounded-full bg-primary"
                   style={{
                     width: `${Math.min((ms / 700) * 100, 100)}%`,
                     transition: `width ${ms}ms ease`,
@@ -54,14 +55,24 @@ export const DurationTokens: StoryObj = {
         </div>
       </div>
 
-      <div className="p-4 bg-card rounded-lg border">
-        <h3 className="font-semibold mb-2">Usage Guidelines</h3>
-        <ul className="text-sm text-muted-foreground space-y-1">
-          <li><strong>instant (0ms)</strong> - Immediate feedback, disabled animations</li>
-          <li><strong>fast (150ms)</strong> - Hover states, micro-interactions</li>
-          <li><strong>normal (300ms)</strong> - Standard transitions, modals</li>
-          <li><strong>slow (500ms)</strong> - Complex animations, page transitions</li>
-          <li><strong>slower (700ms)</strong> - Dramatic reveals, onboarding</li>
+      <div className="rounded-lg border bg-card p-4">
+        <h3 className="mb-2 font-semibold">Usage Guidelines</h3>
+        <ul className="space-y-1 text-sm text-muted-foreground">
+          <li>
+            <strong>instant (0ms)</strong> - Immediate feedback, disabled animations
+          </li>
+          <li>
+            <strong>fast (150ms)</strong> - Hover states, micro-interactions
+          </li>
+          <li>
+            <strong>normal (300ms)</strong> - Standard transitions, modals
+          </li>
+          <li>
+            <strong>slow (500ms)</strong> - Complex animations, page transitions
+          </li>
+          <li>
+            <strong>slower (700ms)</strong> - Dramatic reveals, onboarding
+          </li>
         </ul>
       </div>
     </div>
@@ -75,7 +86,7 @@ export const EasingFunctions: StoryObj = {
 
     return (
       <div className="space-y-8">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-semibold">Easing Functions</h2>
             <p className="text-muted-foreground">
@@ -90,10 +101,10 @@ export const EasingFunctions: StoryObj = {
         <div className="space-y-4">
           {Object.entries(easings).map(([name, curve]) => (
             <div key={name} className="flex items-center gap-4">
-              <span className="w-24 text-sm font-mono">{name}</span>
-              <div className="flex-1 h-10 bg-muted rounded-lg relative overflow-hidden">
+              <span className="w-24 font-mono text-sm">{name}</span>
+              <div className="relative h-10 flex-1 overflow-hidden rounded-lg bg-muted">
                 <div
-                  className="absolute top-1 bottom-1 w-8 bg-primary rounded"
+                  className="absolute bottom-1 top-1 w-8 rounded bg-primary"
                   style={{
                     left: animate ? "calc(100% - 36px)" : "4px",
                     transition: `left 1000ms ${curve}`,
@@ -104,8 +115,8 @@ export const EasingFunctions: StoryObj = {
           ))}
         </div>
 
-        <div className="p-4 bg-card rounded-lg border font-mono text-xs">
-          <p className="text-muted-foreground mb-2">Example CSS:</p>
+        <div className="rounded-lg border bg-card p-4 font-mono text-xs">
+          <p className="mb-2 text-muted-foreground">Example CSS:</p>
           <code>transition: transform 300ms {easings.ease};</code>
         </div>
       </div>
@@ -120,15 +131,15 @@ export const FadeAnimations: StoryObj = {
 
     return (
       <div className="space-y-8">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <h2 className="text-2xl font-semibold">Fade In</h2>
           <Button onClick={() => setKey((k) => k + 1)}>Replay</Button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4" key={key}>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4" key={key}>
           {(["up", "down", "left", "right"] as const).map((direction, i) => (
             <FadeIn key={direction} direction={direction} delay={i * 100}>
-              <div className="p-6 bg-card rounded-lg border text-center">
+              <div className="rounded-lg border bg-card p-6 text-center">
                 <p className="font-medium">Fade {direction}</p>
                 <p className="text-sm text-muted-foreground">delay: {i * 100}ms</p>
               </div>
@@ -136,8 +147,8 @@ export const FadeAnimations: StoryObj = {
           ))}
         </div>
 
-        <div className="p-4 bg-muted rounded-lg font-mono text-sm">
-          <p className="text-muted-foreground mb-2">Usage:</p>
+        <div className="rounded-lg bg-muted p-4 font-mono text-sm">
+          <p className="mb-2 text-muted-foreground">Usage:</p>
           <code>{`<FadeIn direction="up" delay={100}>`}</code>
         </div>
       </div>
@@ -152,7 +163,7 @@ export const SlideAnimations: StoryObj = {
 
     return (
       <div className="space-y-8">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <h2 className="text-2xl font-semibold">Slide In</h2>
           <Button onClick={() => setKey((k) => k + 1)}>Replay</Button>
         </div>
@@ -160,7 +171,7 @@ export const SlideAnimations: StoryObj = {
         <div className="grid grid-cols-2 gap-4" key={key}>
           {(["left", "right", "top", "bottom"] as const).map((direction, i) => (
             <SlideIn key={direction} direction={direction} delay={i * 100}>
-              <div className="p-6 bg-card rounded-lg border text-center">
+              <div className="rounded-lg border bg-card p-6 text-center">
                 <p className="font-medium">Slide from {direction}</p>
               </div>
             </SlideIn>
@@ -174,21 +185,24 @@ export const SlideAnimations: StoryObj = {
 export const ScaleAnimations: StoryObj = {
   name: "Scale Animations",
   render: () => {
-    const [key, setKey] = useState(0);
-
     return (
       <div className="space-y-8">
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-semibold">Scale In</h2>
-          <Button onClick={() => setKey((k) => k + 1)}>Replay</Button>
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-semibold">Scale on Interact</h2>
+          <p className="text-muted-foreground">Hover or tap to see effect</p>
         </div>
 
-        <div className="flex gap-8 justify-center" key={key}>
-          <ScaleIn>
-            <div className="w-24 h-24 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-semibold">Scale</span>
+        <div className="flex justify-center gap-8">
+          <ScaleOnInteract scale={1.1}>
+            <div className="flex h-24 w-24 cursor-pointer items-center justify-center rounded-lg bg-primary">
+              <span className="font-semibold text-primary-foreground">Hover</span>
             </div>
-          </ScaleIn>
+          </ScaleOnInteract>
+          <ScaleOnInteract scale={0.95}>
+            <div className="flex h-24 w-24 cursor-pointer items-center justify-center rounded-lg bg-secondary">
+              <span className="font-semibold text-secondary-foreground">Press</span>
+            </div>
+          </ScaleOnInteract>
         </div>
       </div>
     );
@@ -202,27 +216,23 @@ export const StaggeredLists: StoryObj = {
 
     return (
       <div className="space-y-8">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <h2 className="text-2xl font-semibold">Staggered Animation</h2>
           <Button onClick={() => setKey((k) => k + 1)}>Replay</Button>
         </div>
 
         <Stagger key={key} staggerDelay={80}>
           {[1, 2, 3, 4, 5].map((item) => (
-            <StaggerItem key={item}>
-              <div className="p-4 bg-card rounded-lg border mb-2">
-                List Item {item}
-              </div>
-            </StaggerItem>
+            <div key={item} className="mb-2 rounded-lg border bg-card p-4">
+              List Item {item}
+            </div>
           ))}
         </Stagger>
 
-        <div className="p-4 bg-muted rounded-lg font-mono text-sm">
+        <div className="rounded-lg bg-muted p-4 font-mono text-sm">
           <pre>{`<Stagger staggerDelay={80}>
   {items.map(item => (
-    <StaggerItem key={item.id}>
-      <Card>{item.content}</Card>
-    </StaggerItem>
+    <Card key={item.id}>{item.content}</Card>
   ))}
 </Stagger>`}</pre>
         </div>
@@ -237,29 +247,32 @@ export const LoopingAnimations: StoryObj = {
     <div className="space-y-8">
       <h2 className="text-2xl font-semibold">Continuous Animations</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
         <div className="flex flex-col items-center gap-4">
           <Pulse>
-            <div className="w-16 h-16 bg-green-500 rounded-full" />
+            <div className="h-16 w-16 rounded-full bg-green-500" />
           </Pulse>
           <span className="text-sm">Pulse</span>
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <Shimmer className="w-32 h-16 rounded-lg" />
+          <div
+            className="animate-shimmer h-16 w-32 rounded-lg bg-gradient-to-r from-muted via-muted-foreground/10 to-muted"
+            style={{ backgroundSize: "200% 100%" }}
+          />
           <span className="text-sm">Shimmer</span>
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <Bounce>
-            <div className="w-12 h-12 bg-primary rounded-lg" />
-          </Bounce>
-          <span className="text-sm">Bounce</span>
+          <Shake trigger>
+            <div className="h-12 w-12 rounded-lg bg-primary" />
+          </Shake>
+          <span className="text-sm">Shake</span>
         </div>
 
         <div className="flex flex-col items-center gap-4">
           <Spin>
-            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full" />
+            <div className="h-12 w-12 rounded-full border-4 border-primary border-t-transparent" />
           </Spin>
           <span className="text-sm">Spin</span>
         </div>
@@ -267,7 +280,7 @@ export const LoopingAnimations: StoryObj = {
 
       <div className="flex justify-center">
         <Float>
-          <div className="p-4 bg-card rounded-lg border shadow-lg">
+          <div className="rounded-lg border bg-card p-4 shadow-lg">
             Floating element
           </div>
         </Float>
@@ -285,8 +298,10 @@ export const ReducedMotion: StoryObj = {
       <div className="space-y-8">
         <h2 className="text-2xl font-semibold">Accessibility: Reduced Motion</h2>
 
-        <div className={`p-6 rounded-lg border ${reducedMotion ? "bg-yellow-500/10 border-yellow-500/30" : "bg-card"}`}>
-          <p className="font-semibold mb-2">
+        <div
+          className={`rounded-lg border p-6 ${reducedMotion ? "border-yellow-500/30 bg-yellow-500/10" : "bg-card"}`}
+        >
+          <p className="mb-2 font-semibold">
             {reducedMotion ? "⚠️ Reduced Motion Enabled" : "✓ Animations Enabled"}
           </p>
           <p className="text-sm text-muted-foreground">
@@ -296,8 +311,8 @@ export const ReducedMotion: StoryObj = {
           </p>
         </div>
 
-        <div className="p-4 bg-muted rounded-lg font-mono text-sm">
-          <p className="text-muted-foreground mb-2">Usage in components:</p>
+        <div className="rounded-lg bg-muted p-4 font-mono text-sm">
+          <p className="mb-2 text-muted-foreground">Usage in components:</p>
           <pre>{`const reducedMotion = useReducedMotion();
 
 return (

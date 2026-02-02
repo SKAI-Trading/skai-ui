@@ -14,7 +14,7 @@ import { Button } from "../components/core/button";
 import { ArrowUpDown, MoreHorizontal, TrendingUp, TrendingDown } from "lucide-react";
 
 const meta: Meta<typeof Table> = {
-  title: "Components/Table",
+  title: "Patterns/Data Tables",
   component: Table,
   tags: ["autodocs"],
   parameters: {
@@ -22,7 +22,7 @@ const meta: Meta<typeof Table> = {
     docs: {
       description: {
         component:
-          "A responsive table component for displaying tabular data. Includes header, body, footer, and caption subcomponents.",
+          "Table patterns for trading data including positions, transactions, and sortable data with pagination.",
       },
     },
   },
@@ -100,9 +100,33 @@ export const WithFooter: Story = {
 
 // Trading data
 const positions = [
-  { symbol: "ETH/USD", side: "Long", size: "2.5 ETH", entry: "$3,245.00", current: "$3,456.78", pnl: "+$529.45", pnlPercent: "+6.5%" },
-  { symbol: "BTC/USD", side: "Short", size: "0.15 BTC", entry: "$65,420.00", current: "$64,890.00", pnl: "+$79.50", pnlPercent: "+0.8%" },
-  { symbol: "SOL/USD", side: "Long", size: "45 SOL", entry: "$142.50", current: "$138.20", pnl: "-$193.50", pnlPercent: "-3.0%" },
+  {
+    symbol: "ETH/USD",
+    side: "Long",
+    size: "2.5 ETH",
+    entry: "$3,245.00",
+    current: "$3,456.78",
+    pnl: "+$529.45",
+    pnlPercent: "+6.5%",
+  },
+  {
+    symbol: "BTC/USD",
+    side: "Short",
+    size: "0.15 BTC",
+    entry: "$65,420.00",
+    current: "$64,890.00",
+    pnl: "+$79.50",
+    pnlPercent: "+0.8%",
+  },
+  {
+    symbol: "SOL/USD",
+    side: "Long",
+    size: "45 SOL",
+    entry: "$142.50",
+    current: "$138.20",
+    pnl: "-$193.50",
+    pnlPercent: "-3.0%",
+  },
 ];
 
 export const TradingPositions: Story = {
@@ -133,7 +157,9 @@ export const TradingPositions: Story = {
             <TableCell className="text-right font-mono">{position.entry}</TableCell>
             <TableCell className="text-right font-mono">{position.current}</TableCell>
             <TableCell className="text-right">
-              <div className={`flex items-center justify-end gap-1 ${position.pnl.startsWith("+") ? "text-green-500" : "text-red-500"}`}>
+              <div
+                className={`flex items-center justify-end gap-1 ${position.pnl.startsWith("+") ? "text-green-500" : "text-red-500"}`}
+              >
                 {position.pnl.startsWith("+") ? (
                   <TrendingUp className="h-4 w-4" />
                 ) : (
@@ -157,9 +183,36 @@ export const TradingPositions: Story = {
 
 // Transaction history
 const transactions = [
-  { hash: "0x1a2b...3c4d", type: "Swap", from: "ETH", to: "USDC", amount: "1.5 ETH", value: "$5,185.17", time: "2 min ago", status: "Confirmed" },
-  { hash: "0x5e6f...7g8h", type: "Transfer", from: "USDC", to: "-", amount: "2,500 USDC", value: "$2,500.00", time: "15 min ago", status: "Confirmed" },
-  { hash: "0x9i0j...1k2l", type: "Swap", from: "BTC", to: "ETH", amount: "0.1 BTC", value: "$6,489.00", time: "1 hr ago", status: "Pending" },
+  {
+    hash: "0x1a2b...3c4d",
+    type: "Swap",
+    from: "ETH",
+    to: "USDC",
+    amount: "1.5 ETH",
+    value: "$5,185.17",
+    time: "2 min ago",
+    status: "Confirmed",
+  },
+  {
+    hash: "0x5e6f...7g8h",
+    type: "Transfer",
+    from: "USDC",
+    to: "-",
+    amount: "2,500 USDC",
+    value: "$2,500.00",
+    time: "15 min ago",
+    status: "Confirmed",
+  },
+  {
+    hash: "0x9i0j...1k2l",
+    type: "Swap",
+    from: "BTC",
+    to: "ETH",
+    amount: "0.1 BTC",
+    value: "$6,489.00",
+    time: "1 hr ago",
+    status: "Pending",
+  },
 ];
 
 export const TransactionHistory: Story = {
@@ -186,7 +239,7 @@ export const TransactionHistory: Story = {
       <TableBody>
         {transactions.map((tx) => (
           <TableRow key={tx.hash}>
-            <TableCell className="font-mono text-primary hover:underline cursor-pointer">
+            <TableCell className="cursor-pointer font-mono text-primary hover:underline">
               {tx.hash}
             </TableCell>
             <TableCell>
@@ -195,7 +248,9 @@ export const TransactionHistory: Story = {
             <TableCell>{tx.from}</TableCell>
             <TableCell>{tx.to || "-"}</TableCell>
             <TableCell className="text-right font-mono">{tx.amount}</TableCell>
-            <TableCell className="text-right text-muted-foreground">{tx.value}</TableCell>
+            <TableCell className="text-right text-muted-foreground">
+              {tx.value}
+            </TableCell>
             <TableCell>
               <Badge variant={tx.status === "Confirmed" ? "default" : "secondary"}>
                 {tx.status}
