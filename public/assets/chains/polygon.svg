@@ -1,4 +1,5 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="16" cy="16" r="14" fill="#8247E5"/>
-  <path d="M20.3 13.2l-3.2-1.9c-.7-.4-1.5-.4-2.2 0l-3.2 1.9c-.7.4-1.1 1.1-1.1 1.9v3.8c0 .8.4 1.5 1.1 1.9l3.2 1.9c.7.4 1.5.4 2.2 0l3.2-1.9c.7-.4 1.1-1.1 1.1-1.9v-3.8c0-.8-.4-1.5-1.1-1.9z" fill="white"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16 8L20 10.5V15.5L16 18L12 15.5V10.5L16 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M8 6L12 8.5V13.5L8 16L4 13.5V8.5L8 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M12 10.5L12 15.5" stroke="currentColor" stroke-width="1.5"/>
 </svg>

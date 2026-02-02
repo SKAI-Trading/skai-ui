@@ -12,9 +12,6 @@ import {
   Float,
   Shake,
   ScaleOnInteract,
-  NumberTicker,
-  GradientText,
-  Collapse,
 } from "../lib/animations";
 import { Button } from "../components/core/button";
 
@@ -169,7 +166,7 @@ export const SlideAnimations: StoryObj = {
         </div>
 
         <div className="grid grid-cols-2 gap-4" key={key}>
-          {(["left", "right", "top", "bottom"] as const).map((direction, i) => (
+          {(["left", "right", "up", "down"] as const).map((direction, i) => (
             <SlideIn key={direction} direction={direction} delay={i * 100}>
               <div className="rounded-lg border bg-card p-6 text-center">
                 <p className="font-medium">Slide from {direction}</p>
@@ -193,12 +190,12 @@ export const ScaleAnimations: StoryObj = {
         </div>
 
         <div className="flex justify-center gap-8">
-          <ScaleOnInteract scale={1.1}>
+          <ScaleOnInteract hoverScale={1.1}>
             <div className="flex h-24 w-24 cursor-pointer items-center justify-center rounded-lg bg-primary">
               <span className="font-semibold text-primary-foreground">Hover</span>
             </div>
           </ScaleOnInteract>
-          <ScaleOnInteract scale={0.95}>
+          <ScaleOnInteract pressScale={0.95}>
             <div className="flex h-24 w-24 cursor-pointer items-center justify-center rounded-lg bg-secondary">
               <span className="font-semibold text-secondary-foreground">Press</span>
             </div>
@@ -264,7 +261,7 @@ export const LoopingAnimations: StoryObj = {
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <Shake trigger>
+          <Shake shake>
             <div className="h-12 w-12 rounded-lg bg-primary" />
           </Shake>
           <span className="text-sm">Shake</span>

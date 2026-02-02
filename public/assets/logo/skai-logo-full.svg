@@ -1,13 +1,6 @@
 <svg width="120" height="32" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="skaiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366F1"/>
-      <stop offset="100%" stop-color="#EC4899"/>
-    </linearGradient>
-  </defs>
-  <!-- Logo Mark -->
-  <path d="M4 8L16 4L28 8L16 28L4 8Z" fill="url(#skaiGradient)"/>
-  <path d="M10 10L16 8L22 10L16 22L10 10Z" fill="white" fill-opacity="0.9"/>
-  <!-- Text: SKAI -->
-  <text x="36" y="22" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="currentColor">SKAI</text>
+  <path d="M8 8C8 8 12 4 20 4C28 4 32 8 32 8V12C32 12 28 8 20 8C12 8 8 12 8 12V8Z" fill="currentColor"/>
+  <path d="M8 16C8 16 12 12 20 12C28 12 32 16 32 16V20C32 20 28 16 20 16C12 16 8 20 8 20V16Z" fill="currentColor"/>
+  <path d="M8 24C8 24 12 20 20 20C28 20 32 24 32 24V28C32 28 28 24 20 24C12 24 8 28 8 28V24Z" fill="currentColor"/>
+  <text x="40" y="22" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="currentColor">SKAI</text>
 </svg>

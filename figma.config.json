@@ -9,8 +9,21 @@
 
   "mappings": {
     "components": {
+      "typography": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=774:744",
+        "source": "./src/components/typography.tsx",
+        "component": "Typography",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "values": ["h1", "h2", "h3", "h4", "p", "small", "muted"],
+            "description": "Typography variant"
+          }
+        }
+      },
+
       "button": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=BUTTON_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:100",
         "source": "./src/components/button.tsx",
         "component": "Button",
         "props": {
@@ -43,7 +56,7 @@
       },
 
       "card": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=CARD_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:200",
         "source": "./src/components/card.tsx",
         "component": "Card",
         "props": {
@@ -56,7 +69,7 @@
       },
 
       "input": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=INPUT_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:300",
         "source": "./src/components/input.tsx",
         "component": "Input",
         "props": {
@@ -77,7 +90,7 @@
       },
 
       "badge": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=BADGE_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:400",
         "source": "./src/components/badge.tsx",
         "component": "Badge",
         "props": {
@@ -94,7 +107,7 @@
       },
 
       "token-icon": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=TOKEN_ICON_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:500",
         "source": "./src/components/token-icon.tsx",
         "component": "TokenIcon",
         "props": {
@@ -115,7 +128,7 @@
       },
 
       "price-display": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=PRICE_DISPLAY_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:600",
         "source": "./src/components/price-display.tsx",
         "component": "PriceDisplay",
         "props": {
@@ -146,7 +159,7 @@
       },
 
       "loading-button": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=LOADING_BUTTON_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:700",
         "source": "./src/components/loading-button.tsx",
         "component": "LoadingButton",
         "props": {
@@ -182,7 +195,7 @@
       },
 
       "stat-card": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=STAT_CARD_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:800",
         "source": "./src/components/stat-card.tsx",
         "component": "StatCard",
         "props": {
@@ -210,7 +223,7 @@
       },
 
       "swap-input": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=SWAP_INPUT_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:900",
         "source": "./src/components/swap-input.tsx",
         "component": "SwapInput",
         "props": {
@@ -238,7 +251,7 @@
       },
 
       "dialog": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=DIALOG_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1000",
         "source": "./src/components/dialog.tsx",
         "component": "Dialog",
         "children": [
@@ -252,21 +265,21 @@
       },
 
       "tabs": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=TABS_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1100",
         "source": "./src/components/tabs.tsx",
         "component": "Tabs",
         "children": ["TabsList", "TabsTrigger", "TabsContent"]
       },
 
       "avatar": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=AVATAR_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1200",
         "source": "./src/components/avatar.tsx",
         "component": "Avatar",
         "children": ["AvatarImage", "AvatarFallback"]
       },
 
       "select": {
-        "figmaNodeUrl": "https://www.figma.com/file/YOUR_FILE_KEY?node-id=SELECT_NODE_ID",
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1300",
         "source": "./src/components/select.tsx",
         "component": "Select",
         "children": [
@@ -274,6 +287,195 @@
           "SelectContent",
           "SelectItem",
           "SelectValue"
+        ]
+      },
+
+      "alert": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1400",
+        "source": "./src/components/alert.tsx",
+        "component": "Alert",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "values": ["default", "destructive"],
+            "description": "Alert variant"
+          }
+        },
+        "children": ["AlertTitle", "AlertDescription"]
+      },
+
+      "progress": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1500",
+        "source": "./src/components/progress.tsx",
+        "component": "Progress",
+        "props": {
+          "value": {
+            "type": "number",
+            "description": "Progress value (0-100)"
+          }
+        }
+      },
+
+      "skeleton": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1600",
+        "source": "./src/components/skeleton.tsx",
+        "component": "Skeleton",
+        "props": {
+          "className": {
+            "type": "string",
+            "description": "Additional CSS classes for sizing"
+          }
+        }
+      },
+
+      "toast": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1700",
+        "source": "./src/components/toast.tsx",
+        "component": "Toast",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "values": ["default", "destructive"],
+            "description": "Toast variant"
+          },
+          "title": {
+            "type": "string",
+            "description": "Toast title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Toast description"
+          }
+        },
+        "children": ["ToastAction", "ToastTitle", "ToastDescription"]
+      },
+
+      "tooltip": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1800",
+        "source": "./src/components/tooltip.tsx",
+        "component": "Tooltip",
+        "children": ["TooltipTrigger", "TooltipContent", "TooltipProvider"]
+      },
+
+      "checkbox": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:1900",
+        "source": "./src/components/checkbox.tsx",
+        "component": "Checkbox",
+        "props": {
+          "checked": {
+            "type": "boolean",
+            "description": "Checked state"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          }
+        }
+      },
+
+      "switch": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:2000",
+        "source": "./src/components/switch.tsx",
+        "component": "Switch",
+        "props": {
+          "checked": {
+            "type": "boolean",
+            "description": "Checked state"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          }
+        }
+      },
+
+      "slider": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:2100",
+        "source": "./src/components/slider.tsx",
+        "component": "Slider",
+        "props": {
+          "value": {
+            "type": "array",
+            "description": "Current value(s)"
+          },
+          "min": {
+            "type": "number",
+            "description": "Minimum value"
+          },
+          "max": {
+            "type": "number",
+            "description": "Maximum value"
+          },
+          "step": {
+            "type": "number",
+            "description": "Step increment"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          }
+        }
+      },
+
+      "radio-group": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:2200",
+        "source": "./src/components/radio-group.tsx",
+        "component": "RadioGroup",
+        "props": {
+          "value": {
+            "type": "string",
+            "description": "Selected value"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          }
+        },
+        "children": ["RadioGroupItem"]
+      },
+
+      "dropdown-menu": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:2300",
+        "source": "./src/components/dropdown-menu.tsx",
+        "component": "DropdownMenu",
+        "children": [
+          "DropdownMenuTrigger",
+          "DropdownMenuContent",
+          "DropdownMenuItem",
+          "DropdownMenuSeparator",
+          "DropdownMenuLabel",
+          "DropdownMenuGroup",
+          "DropdownMenuSub",
+          "DropdownMenuSubTrigger",
+          "DropdownMenuSubContent"
+        ]
+      },
+
+      "popover": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:2400",
+        "source": "./src/components/popover.tsx",
+        "component": "Popover",
+        "children": ["PopoverTrigger", "PopoverContent"]
+      },
+
+      "sheet": {
+        "figmaNodeUrl": "https://www.figma.com/file/TyX8YAtNDEIvsnSLQ3IXId?node-id=1:2500",
+        "source": "./src/components/sheet.tsx",
+        "component": "Sheet",
+        "props": {
+          "side": {
+            "type": "enum",
+            "values": ["top", "right", "bottom", "left"],
+            "description": "Side from which the sheet appears"
+          }
+        },
+        "children": [
+          "SheetTrigger",
+          "SheetContent",
+          "SheetHeader",
+          "SheetFooter",
+          "SheetTitle",
+          "SheetDescription"
         ]
       }
     }
