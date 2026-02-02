@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../core/button";
-import { Mail, Loader2, ChevronRight, Plus, Download } from "lucide-react";
+import { Button, SkaiButton } from "../core/button";
+import { Mail, Loader2, ChevronRight, Plus, Download, ArrowRight, Wallet } from "lucide-react";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
@@ -10,7 +10,7 @@ const meta: Meta<typeof Button> = {
     docs: {
       description: {
         component:
-          "A versatile button component with multiple variants, sizes, and states.",
+          "A versatile button component with multiple variants, sizes, and states. Includes both ShadCN-compatible Button and SKAI-branded SkaiButton variants.",
       },
     },
   },
@@ -185,4 +185,275 @@ export const DownloadButton: Story = {
       Download Report
     </Button>
   ),
+};
+
+// =============================================================================
+// SKAI BRANDED BUTTON STORIES
+// =============================================================================
+
+/**
+ * SKAI Branded Button - Primary type (default)
+ * Uses Sky Blue background (#56C7F3) with Green Coal text
+ * Hovers to Alien Green (#17F9B4)
+ */
+export const SkaiPrimary: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 items-start">
+      <SkaiButton skaiType="primary" skaiSize="massive">
+        Get Started <ArrowRight />
+      </SkaiButton>
+      <SkaiButton skaiType="primary" skaiSize="large">
+        Get Started <ArrowRight />
+      </SkaiButton>
+      <SkaiButton skaiType="primary" skaiSize="medium">
+        Get Started <ArrowRight />
+      </SkaiButton>
+      <SkaiButton skaiType="primary" skaiSize="small">
+        Get Started <ArrowRight />
+      </SkaiButton>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "SKAI Primary button with all 4 sizes from Figma design system.",
+      },
+    },
+  },
+};
+
+/**
+ * SKAI Branded Button - Secondary type
+ * Transparent with Sky Blue border and text
+ */
+export const SkaiSecondary: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 items-start bg-[#001615] p-8 rounded-xl">
+      <SkaiButton skaiType="secondary" skaiSize="massive">
+        Learn More
+      </SkaiButton>
+      <SkaiButton skaiType="secondary" skaiSize="large">
+        Learn More
+      </SkaiButton>
+      <SkaiButton skaiType="secondary" skaiSize="medium">
+        Learn More
+      </SkaiButton>
+      <SkaiButton skaiType="secondary" skaiSize="small">
+        Learn More
+      </SkaiButton>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "SKAI Secondary (outlined) button - best used on dark backgrounds.",
+      },
+    },
+  },
+};
+
+/**
+ * SKAI Branded Button - Tertiary type
+ * Transparent with white text, hovers to Alien Green
+ */
+export const SkaiTertiary: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 items-start bg-[#001615] p-8 rounded-xl">
+      <SkaiButton skaiType="tertiary" skaiSize="massive">
+        Cancel
+      </SkaiButton>
+      <SkaiButton skaiType="tertiary" skaiSize="large">
+        Cancel
+      </SkaiButton>
+      <SkaiButton skaiType="tertiary" skaiSize="medium">
+        Cancel
+      </SkaiButton>
+      <SkaiButton skaiType="tertiary" skaiSize="small">
+        Cancel
+      </SkaiButton>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "SKAI Tertiary (text-only) button for secondary actions.",
+      },
+    },
+  },
+};
+
+/**
+ * SKAI Branded Button - Link type
+ * Alien Green text with underline
+ */
+export const SkaiLink: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 items-start bg-[#001615] p-8 rounded-xl">
+      <SkaiButton skaiType="link" skaiSize="large">
+        View Documentation
+      </SkaiButton>
+      <SkaiButton skaiType="link" skaiSize="medium">
+        View Documentation
+      </SkaiButton>
+      <SkaiButton skaiType="link" skaiSize="small">
+        View Documentation
+      </SkaiButton>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "SKAI Link button for navigation-style actions.",
+      },
+    },
+  },
+};
+
+/**
+ * SKAI Button - All Types Comparison
+ */
+export const SkaiAllTypes: Story = {
+  render: () => (
+    <div className="bg-[#001615] p-8 rounded-xl">
+      <h3 className="text-white text-lg font-semibold mb-6">SKAI Button Types (Figma Design System)</h3>
+      <div className="flex flex-wrap gap-4 items-center">
+        <SkaiButton skaiType="primary" skaiSize="large">
+          Primary
+        </SkaiButton>
+        <SkaiButton skaiType="secondary" skaiSize="large">
+          Secondary
+        </SkaiButton>
+        <SkaiButton skaiType="tertiary" skaiSize="large">
+          Tertiary
+        </SkaiButton>
+        <SkaiButton skaiType="link" skaiSize="large">
+          Link
+        </SkaiButton>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "Comparison of all 4 SKAI button types from the Figma design system.",
+      },
+    },
+  },
+};
+
+/**
+ * SKAI Button - All Sizes Comparison
+ */
+export const SkaiAllSizes: Story = {
+  render: () => (
+    <div className="bg-[#001615] p-8 rounded-xl">
+      <h3 className="text-white text-lg font-semibold mb-6">SKAI Button Sizes (Figma Design System)</h3>
+      <div className="flex flex-col gap-4">
+        <div className="flex items-end gap-4">
+          <SkaiButton skaiSize="massive">Massive (72px)</SkaiButton>
+          <SkaiButton skaiSize="large">Large (64px)</SkaiButton>
+          <SkaiButton skaiSize="medium">Medium (50px)</SkaiButton>
+          <SkaiButton skaiSize="small">Small (46px)</SkaiButton>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "Comparison of all 4 SKAI button sizes: Massive (72px), Large (64px), Medium (50px), Small (46px).",
+      },
+    },
+  },
+};
+
+/**
+ * SKAI Button - With Icons
+ */
+export const SkaiWithIcons: Story = {
+  render: () => (
+    <div className="bg-[#001615] p-8 rounded-xl">
+      <h3 className="text-white text-lg font-semibold mb-6">SKAI Buttons with Icons</h3>
+      <div className="flex flex-wrap gap-4 items-center">
+        <SkaiButton skaiType="primary" skaiSize="large">
+          <Wallet /> Connect Wallet
+        </SkaiButton>
+        <SkaiButton skaiType="primary" skaiSize="medium">
+          Swap Now <ArrowRight />
+        </SkaiButton>
+        <SkaiButton skaiType="secondary" skaiSize="large">
+          <Download /> Export
+        </SkaiButton>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "SKAI buttons automatically size icons based on the button size.",
+      },
+    },
+  },
+};
+
+/**
+ * SKAI Button - Loading State
+ */
+export const SkaiLoading: Story = {
+  render: () => (
+    <div className="bg-[#001615] p-8 rounded-xl">
+      <h3 className="text-white text-lg font-semibold mb-6">SKAI Button Loading States</h3>
+      <div className="flex flex-wrap gap-4 items-center">
+        <SkaiButton skaiType="primary" skaiSize="large" disabled>
+          <Loader2 className="animate-spin" /> Processing...
+        </SkaiButton>
+        <SkaiButton skaiType="secondary" skaiSize="large" disabled>
+          <Loader2 className="animate-spin" /> Loading...
+        </SkaiButton>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "SKAI buttons in loading state with spinner icons.",
+      },
+    },
+  },
+};
+
+/**
+ * SKAI Button - Real Trading UI Example
+ */
+export const SkaiTradingExample: Story = {
+  render: () => (
+    <div className="bg-[#122524] p-6 rounded-3xl border border-[#123F3C] max-w-md">
+      <h3 className="text-white text-lg font-semibold mb-4">Swap ETH → USDC</h3>
+      <div className="space-y-4">
+        <div className="bg-[#001615] p-4 rounded-xl">
+          <div className="text-sm text-gray-400 mb-1">You pay</div>
+          <div className="text-2xl text-white font-mono">1.5 ETH</div>
+          <div className="text-sm text-gray-500">≈ $5,250.00</div>
+        </div>
+        <div className="bg-[#001615] p-4 rounded-xl">
+          <div className="text-sm text-gray-400 mb-1">You receive</div>
+          <div className="text-2xl text-white font-mono">5,187.50 USDC</div>
+          <div className="text-sm text-[#17F9B4]">Best rate via Uniswap</div>
+        </div>
+        <SkaiButton skaiType="primary" skaiSize="large" className="w-full">
+          Swap Now <ArrowRight />
+        </SkaiButton>
+        <SkaiButton skaiType="tertiary" skaiSize="small" className="w-full">
+          Cancel
+        </SkaiButton>
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: "Real-world example of SKAI buttons in a trading interface using the Green Coal card design.",
+      },
+    },
+  },
 };
