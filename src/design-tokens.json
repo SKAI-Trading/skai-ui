@@ -145,20 +145,35 @@
     "$description": "Typography system for SKAI",
 
     "fontFamily": {
-      "sans": {
-        "$value": "'Poppins', system-ui, -apple-system, sans-serif",
+      "heading": {
+        "$value": "'Cormorant Garamond', Georgia, serif",
         "$type": "fontFamily",
-        "$description": "Primary font family for body text"
+        "$description": "Headlines and display text - elegant serif"
+      },
+      "subheading": {
+        "$value": "'Manrope', system-ui, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Sub-headlines and UI text - modern sans-serif"
+      },
+      "body": {
+        "$value": "'Mulish', system-ui, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Body text, numbers, and labels - readable sans-serif"
       },
       "mono": {
-        "$value": "'JetBrains Mono', 'Fira Code', Consolas, monospace",
+        "$value": "'JetBrains Mono', Menlo, monospace",
         "$type": "fontFamily",
-        "$description": "Monospace font for code and numbers"
+        "$description": "Monospace font for code and technical data"
       },
       "display": {
-        "$value": "'Poppins', system-ui, sans-serif",
+        "$value": "'Cormorant Garamond', Georgia, serif",
         "$type": "fontFamily",
-        "$description": "Display font for headings - Poppins Bold per brand guidelines"
+        "$description": "Display font for major headings - elegant serif"
+      },
+      "sans": {
+        "$value": "'Manrope', system-ui, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Default sans-serif for UI elements"
       }
     },
 

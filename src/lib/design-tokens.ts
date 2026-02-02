@@ -158,150 +158,596 @@ export const skaiColors = {
 // =============================================================================
 
 /**
- * Font families from Figma design system
- * - Cormorant Garamond: Headlines (elegant serif)
- * - Manrope: Sub-headlines, UI text (modern sans)
- * - Mulish: Body text, numbers (readable sans)
+ * Font families from Figma design system - ALIGNED WITH TYPOGRAPHY.CSS
+ * - Cormorant Garamond: Headlines, display text (elegant serif)
+ * - Manrope: Sub-headlines, UI text (modern sans-serif) 
+ * - Mulish: Body text, numbers, labels (readable sans-serif)
+ * - JetBrains Mono: Code, technical data (monospace)
  */
 export const skaiFonts = {
   heading: ["Cormorant Garamond", "Georgia", "serif"],
   subheading: ["Manrope", "system-ui", "sans-serif"],
   body: ["Mulish", "system-ui", "sans-serif"],
-  // Aliases
+  mono: ["JetBrains Mono", "Menlo", "monospace"],
+  // Aliases for consistency
   display: ["Cormorant Garamond", "Georgia", "serif"],
   sans: ["Manrope", "system-ui", "sans-serif"],
-  mono: ["JetBrains Mono", "Menlo", "monospace"],
 } as const;
 
 /**
- * Typography scale from Figma Design System
- * Each entry: [fontSize, { lineHeight, letterSpacing, fontWeight }]
- * Responsive sizes are handled in CSS (see typography.css)
+ * Typography scale from SKAI typography.css - RESPONSIVE TOKENS
+ * Each entry includes responsive breakpoint variations to match typography.css exactly
+ * 
+ * BREAKPOINTS:
+ * - Desktop: 1024px+ (default sizes)
+ * - Tablet: 768px - 1023px 
+ * - Mobile: < 768px
  *
  * USAGE GUIDE:
  * - Headlines (Cormorant Garamond): Page titles, hero text, major headings
  * - Super-headlines (Manrope): Section intros, impact statements
  * - Sub-headlines (Manrope): Card titles, section headers, UI headings
- * - Numbers (Mulish): Prices, stats, numerical data
+ * - Numbers (Mulish): Prices, stats, numerical data (with tabular-nums)
  * - Paragraphs (Manrope): Body text, descriptions
  * - Labels (Mulish): Form labels, badges, captions
  */
 export const skaiFontSizes = {
-  // Headlines (Cormorant Garamond) - Desktop / Tablet / Mobile
-  // headline-2: 82px / 82px / 82px
+  // =============================================================================
+  // HEADLINES (Cormorant Garamond) - Elegant serif for display text
+  // =============================================================================
+  
+  // Headline 2: 82px (all breakpoints) - Largest headline
   "headline-2": [
-    "82px",
-    { lineHeight: "90px", letterSpacing: "-0.02em", fontWeight: "300" },
+    "5.125rem", // 82px
+    { 
+      lineHeight: "5.625rem", // 90px
+      letterSpacing: "-0.02em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-heading)"
+    },
   ],
   "headline-2-italic": [
-    "82px",
+    "5.125rem", // 82px
     {
-      lineHeight: "90px",
-      letterSpacing: "-0.02em",
+      lineHeight: "5.625rem", // 90px
+      letterSpacing: "-0.02em", 
       fontWeight: "300",
       fontStyle: "italic",
+      fontFamily: "var(--font-heading)"
     },
   ],
-  // headline-3: 54px / 40px / 30px
+  
+  // Headline 3: 54px / 40px / 30px - Responsive main headline
   "headline-3": [
-    "54px",
-    { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "300" },
+    "3.375rem", // 54px desktop
+    { 
+      lineHeight: "3rem", // 48px
+      letterSpacing: "-0.02em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-heading)"
+    },
+  ],
+  "headline-3-tablet": [
+    "2.5rem", // 40px tablet
+    { 
+      lineHeight: "2.25rem", // 36px
+      letterSpacing: "-0.02em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-heading)"
+    },
+  ],
+  "headline-3-mobile": [
+    "1.875rem", // 30px mobile
+    { 
+      lineHeight: "1.75rem", // 28px
+      letterSpacing: "-0.02em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-heading)"
+    },
   ],
   "headline-3-italic": [
-    "54px",
-    {
-      lineHeight: "48px",
-      letterSpacing: "-0.02em",
+    "3.375rem", // 54px desktop
+    { 
+      lineHeight: "3rem", // 48px
+      letterSpacing: "-0.02em", 
       fontWeight: "300",
       fontStyle: "italic",
+      fontFamily: "var(--font-heading)"
     },
   ],
-  // headline-4: 34px / 34px / 34px
+  
+  // Headline 4: 34px (all breakpoints) - Smaller headline
   "headline-4": [
-    "34px",
-    { lineHeight: "24px", letterSpacing: "-0.02em", fontWeight: "300" },
+    "2.125rem", // 34px
+    { 
+      lineHeight: "1.5rem", // 24px
+      letterSpacing: "-0.02em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-heading)"
+    },
   ],
 
-  // Super-headlines (Manrope) - Desktop / Tablet / Mobile
-  // super-3: 42px / 32px / 24px
+  // =============================================================================
+  // SUPER-HEADLINES (Manrope) - Bold sans-serif for impact
+  // =============================================================================
+  
+  // Super-headline 3: 42px / 32px / 24px - Large impact text
   "super-3": [
-    "42px",
-    { lineHeight: "48px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "2.625rem", // 42px desktop
+    { 
+      lineHeight: "3rem", // 48px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
-  // super-4: 32px / 24px / 20px
+  "super-3-tablet": [
+    "2rem", // 32px tablet  
+    { 
+      lineHeight: "2.25rem", // 36px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "super-3-mobile": [
+    "1.5rem", // 24px mobile
+    { 
+      lineHeight: "1.75rem", // 28px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  
+  // Super-headline 4: 32px / 24px / 20px - Medium impact text
   "super-4": [
-    "32px",
-    { lineHeight: "36px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "2rem", // 32px desktop
+    { 
+      lineHeight: "2.25rem", // 36px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "super-4-tablet": [
+    "1.5rem", // 24px tablet
+    { 
+      lineHeight: "1.75rem", // 28px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "super-4-mobile": [
+    "1.25rem", // 20px mobile
+    { 
+      lineHeight: "1.5rem", // 24px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
 
-  // Sub-headlines (Manrope) - Desktop / Tablet / Mobile
-  // sub-1: 24px / 18px / 16px
+  // =============================================================================
+  // SUB-HEADLINES (Manrope) - Modern sans for section headers
+  // =============================================================================
+  
+  // Sub-headline 1: 24px / 18px / 16px - Section headers
   "sub-1": [
-    "24px",
-    { lineHeight: "28px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "1.5rem", // 24px desktop
+    { 
+      lineHeight: "1.75rem", // 28px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
-  // sub-2: 18px / 14px / 12px
+  "sub-1-tablet": [
+    "1.125rem", // 18px tablet
+    { 
+      lineHeight: "1.375rem", // 22px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "sub-1-mobile": [
+    "1rem", // 16px mobile
+    { 
+      lineHeight: "1.25rem", // 20px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  
+  // Sub-headline 2: 18px / 14px / 12px - Card titles  
   "sub-2": [
-    "18px",
-    { lineHeight: "24px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "1.125rem", // 18px desktop
+    { 
+      lineHeight: "1.5rem", // 24px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
   "sub-2-semibold": [
-    "18px",
-    { lineHeight: "24px", letterSpacing: "-0.04em", fontWeight: "600" },
+    "1.125rem", // 18px desktop
+    { 
+      lineHeight: "1.5rem", // 24px
+      letterSpacing: "-0.04em", 
+      fontWeight: "600",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "sub-2-tablet": [
+    "0.875rem", // 14px tablet
+    { 
+      lineHeight: "1.125rem", // 18px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "sub-2-mobile": [
+    "0.75rem", // 12px mobile
+    { 
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
 
-  // Numbers (Mulish) - Desktop / Tablet / Mobile
-  // number-1: 42px / 32px / 24px
+  // =============================================================================
+  // NUMBERS (Mulish) - Tabular nums for data display
+  // =============================================================================
+  
+  // Number 1: 42px / 32px / 24px - Large numbers/prices
   "number-1": [
-    "42px",
-    { lineHeight: "48px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "2.625rem", // 42px desktop
+    { 
+      lineHeight: "3rem", // 48px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
   ],
-  // number-2: 32px / 24px / 20px
+  "number-1-tablet": [
+    "2rem", // 32px tablet
+    { 
+      lineHeight: "2.375rem", // 38px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  "number-1-mobile": [
+    "1.5rem", // 24px mobile
+    { 
+      lineHeight: "1.75rem", // 28px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  
+  // Number 2: 32px / 24px / 20px - Medium numbers
   "number-2": [
-    "32px",
-    { lineHeight: "38px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "2rem", // 32px desktop
+    { 
+      lineHeight: "2.375rem", // 38px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
   ],
-  // number-3: 22px / 16px / 14px
+  "number-2-tablet": [
+    "1.5rem", // 24px tablet
+    { 
+      lineHeight: "1.75rem", // 28px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  "number-2-mobile": [
+    "1.25rem", // 20px mobile
+    { 
+      lineHeight: "1.5rem", // 24px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  
+  // Number 3: 22px / 16px / 14px - Small numbers
   "number-3": [
-    "22px",
-    { lineHeight: "26px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "1.375rem", // 22px desktop
+    { 
+      lineHeight: "1.625rem", // 26px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
   ],
-  // number-4: 14px / 12px / 10px
+  "number-3-tablet": [
+    "1rem", // 16px tablet
+    { 
+      lineHeight: "1.25rem", // 20px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  "number-3-mobile": [
+    "0.875rem", // 14px mobile
+    { 
+      lineHeight: "1.125rem", // 18px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  
+  // Number 4: 14px / 12px / 10px - Very small numbers
   "number-4": [
-    "14px",
-    { lineHeight: "18px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "0.875rem", // 14px desktop
+    { 
+      lineHeight: "1.125rem", // 18px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  "number-4-tablet": [
+    "0.75rem", // 12px tablet
+    { 
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  "number-4-mobile": [
+    "0.625rem", // 10px mobile
+    { 
+      lineHeight: "0.875rem", // 14px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
   ],
 
-  // Paragraphs (Manrope) - Desktop / Tablet / Mobile
-  // para-1: 16px / 14px / 12px
+  // =============================================================================
+  // PARAGRAPHS (Manrope) - Body text for readability
+  // =============================================================================
+  
+  // Paragraph 1: 16px / 14px / 12px - Primary body text
   "para-1": [
-    "16px",
-    { lineHeight: "22px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "1rem", // 16px desktop
+    { 
+      lineHeight: "1.375rem", // 22px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
   "para-1-semibold": [
-    "16px",
-    { lineHeight: "22px", letterSpacing: "-0.04em", fontWeight: "600" },
+    "1rem", // 16px desktop
+    { 
+      lineHeight: "1.375rem", // 22px
+      letterSpacing: "-0.04em", 
+      fontWeight: "600",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
-  // para-2: 14px / 12px / 10px
+  "para-1-tablet": [
+    "0.875rem", // 14px tablet
+    { 
+      lineHeight: "1.125rem", // 18px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "para-1-mobile": [
+    "0.75rem", // 12px mobile
+    { 
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  
+  // Paragraph 2: 14px / 12px / 12px - Secondary body text (min 12px for WCAG)
   "para-2": [
-    "14px",
-    { lineHeight: "18px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "0.875rem", // 14px desktop
+    { 
+      lineHeight: "1.125rem", // 18px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
   "para-2-semibold": [
-    "14px",
-    { lineHeight: "18px", letterSpacing: "-0.04em", fontWeight: "600" },
+    "0.875rem", // 14px desktop
+    { 
+      lineHeight: "1.125rem", // 18px
+      letterSpacing: "-0.04em", 
+      fontWeight: "600",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "para-2-tablet": [
+    "0.75rem", // 12px tablet
+    { 
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  "para-2-mobile": [
+    "0.75rem", // 12px mobile (WCAG minimum)
+    { 
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
   ],
 
-  // Labels (Mulish) - Desktop / Tablet / Mobile
-  // label-1: 16px / 16px / 16px
+  // =============================================================================
+  // LABELS (Mulish) - UI labels and captions
+  // =============================================================================
+  
+  // Label 1: 16px (all breakpoints) - Form labels
   "label-1": [
-    "16px",
-    { lineHeight: "16px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "1rem", // 16px
+    { 
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-body)"
+    },
   ],
-  // label-2: 11px / 8px / 8px
+  
+  // Label 2: 11px / 8px / 8px - Badges and captions (uppercase)
   "label-2": [
-    "11px",
-    { lineHeight: "14px", letterSpacing: "-0.04em", fontWeight: "300" },
+    "0.6875rem", // 11px desktop
+    { 
+      lineHeight: "0.875rem", // 14px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      textTransform: "uppercase",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  "label-2-tablet": [
+    "0.5rem", // 8px tablet
+    { 
+      lineHeight: "0.625rem", // 10px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      textTransform: "uppercase",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  "label-2-mobile": [
+    "0.5rem", // 8px mobile
+    { 
+      lineHeight: "0.625rem", // 10px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      textTransform: "uppercase",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+
+  // =============================================================================
+  // SEMANTIC ALIASES (for common use cases)
+  // =============================================================================
+  
+  // Page titles - same as headline-3 with responsive behavior
+  "page-title": [
+    "3.375rem", // 54px desktop -> 40px tablet -> 30px mobile
+    { 
+      lineHeight: "3rem", // 48px
+      letterSpacing: "-0.02em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-heading)"
+    },
+  ],
+  
+  // Section titles - same as super-4 with responsive behavior  
+  "section-title": [
+    "2rem", // 32px desktop -> 24px tablet -> 20px mobile
+    { 
+      lineHeight: "2.25rem", // 36px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  
+  // Card titles - same as sub-2-semibold
+  "card-title": [
+    "1.125rem", // 18px desktop -> 14px tablet -> 12px mobile  
+    { 
+      lineHeight: "1.5rem", // 24px
+      letterSpacing: "-0.04em", 
+      fontWeight: "600",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  
+  // Default body text - same as para-1
+  "body": [
+    "1rem", // 16px desktop -> 14px tablet -> 12px mobile
+    { 
+      lineHeight: "1.375rem", // 22px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  
+  // Small text - same as para-2
+  "small": [
+    "0.875rem", // 14px desktop -> 12px tablet/mobile
+    { 
+      lineHeight: "1.125rem", // 18px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-subheading)"
+    },
+  ],
+  
+  // Price display - same as number-2 with tabular nums
+  "price": [
+    "2rem", // 32px desktop -> 24px tablet -> 20px mobile
+    { 
+      lineHeight: "2.375rem", // 38px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  
+  // Caption text - same as label-2  
+  "caption": [
+    "0.6875rem", // 11px desktop -> 8px tablet/mobile
+    { 
+      lineHeight: "0.875rem", // 14px
+      letterSpacing: "-0.04em", 
+      fontWeight: "300",
+      fontFamily: "var(--font-body)"
+    },
+  ],
+  
+  // Code/monospace text
+  "code": [
+    "0.875rem", // 14px
+    { 
+      lineHeight: "1.25rem", // 20px
+      fontFamily: "var(--font-mono)"
+    },
   ],
 } as const;
 

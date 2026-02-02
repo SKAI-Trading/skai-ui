@@ -68,12 +68,13 @@
    * TYPOGRAPHY
    * ============================================ */
 
-  /* Font Families */
-  --skai-font-sans:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --skai-font-mono:
-    "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
-  --skai-font-display: "Inter", var(--skai-font-sans);
+  /* Font Families - ALIGNED WITH TYPOGRAPHY.CSS */
+  --skai-font-heading: "Cormorant Garamond", Georgia, serif;
+  --skai-font-subheading: "Manrope", system-ui, sans-serif;
+  --skai-font-body: "Mulish", system-ui, sans-serif;
+  --skai-font-mono: "JetBrains Mono", Menlo, monospace;
+  --skai-font-display: "Cormorant Garamond", Georgia, serif;
+  --skai-font-sans: "Manrope", system-ui, sans-serif;
 
   /* Font Sizes */
   --skai-text-xs: 0.75rem; /* 12px */
