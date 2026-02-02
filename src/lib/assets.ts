@@ -91,6 +91,69 @@ export const assets = {
     gradient: "/assets/backgrounds/gradient-1.svg",
     pattern: "/assets/backgrounds/pattern-1.svg",
   },
+
+  /**
+   * Game thumbnails and assets
+   * Location: public/assets/games/
+   */
+  games: {
+    blackjack: "/assets/games/blackjack.png",
+    chicken: "/assets/games/chicken.png",
+    coinFlip: "/assets/games/coin-flip.png",
+    comingSoon: "/assets/games/coming-soon.png",
+    cosmicSlots: "/assets/games/cosmic-slots.png",
+    crash: "/assets/games/crash.png",
+    fortuneWheel: "/assets/games/fortune-wheel.png",
+    gems: "/assets/games/gems.png",
+    hilo: "/assets/games/hilo.png",
+    megaSlots: "/assets/games/mega-slots.png",
+    mines: "/assets/games/mines.png",
+    plinko: "/assets/games/plinko.png",
+    poker: "/assets/games/poker.png",
+    roulette: "/assets/games/roulette.png",
+    safariSlots: "/assets/games/safari-slots.png",
+    scratchers: "/assets/games/scratchers.png",
+    skaiCross: "/assets/games/skai-cross.svg",
+    skaiQuest: "/assets/games/skai-quest.png",
+    slots: "/assets/games/slots.png",
+    towers: "/assets/games/towers.png",
+  },
+
+  /**
+   * UI container assets (3D and pixel styles)
+   * Location: public/assets/ui/
+   */
+  ui: {
+    "3d": {
+      container: "/assets/ui/3d_style/container_3d.png",
+      clickable: "/assets/ui/3d_style/container_3d_clickable.png",
+      progressFill: "/assets/ui/3d_style/container_3d_progress_fill.png",
+      slot: "/assets/ui/3d_style/container_3d_slot.png",
+    },
+    pixel: {
+      container: "/assets/ui/pixel_style/container_pixel.png",
+      clickable: "/assets/ui/pixel_style/container_pixel_clickable.png",
+      progressFill: "/assets/ui/pixel_style/container_pixel_progress_fill.png",
+      slot: "/assets/ui/pixel_style/container_pixel_slot.png",
+    },
+  },
+
+  /**
+   * PWA app icons
+   * Location: public/assets/pwa/
+   */
+  pwa: {
+    icon72: "/assets/pwa/icon-72x72.png",
+    icon96: "/assets/pwa/icon-96x96.png",
+    icon128: "/assets/pwa/icon-128x128.png",
+    icon144: "/assets/pwa/icon-144x144.png",
+    icon152: "/assets/pwa/icon-152x152.png",
+    icon192: "/assets/pwa/icon-192x192.png",
+    icon384: "/assets/pwa/icon-384x384.png",
+    icon512: "/assets/pwa/icon-512x512.png",
+    maskable192: "/assets/pwa/icon-maskable-192x192.png",
+    maskable512: "/assets/pwa/icon-maskable-512x512.png",
+  },
 } as const;
 
 /**

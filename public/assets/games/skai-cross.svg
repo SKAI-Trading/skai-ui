@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1929"/>
+      <stop offset="50%" stop-color="#0d2d3d"/>
+      <stop offset="100%" stop-color="#1a3a4d"/>
+    </linearGradient>
+    <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bg)"/>
+  
+  <!-- Subtle grid -->
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#2CECAD" stroke-width="0.3" opacity="0.08"/>
+  </pattern>
+  <rect width="400" height="300" fill="url(#grid)"/>
+  
+  <!-- Horizontal road lanes (3 lanes stacked vertically) -->
+  <rect x="20" y="60" width="360" height="55" rx="6" fill="url(#roadGradient)" stroke="#333" stroke-width="1.5"/>
+  <rect x="20" y="125" width="360" height="55" rx="6" fill="url(#roadGradient)" stroke="#333" stroke-width="1.5"/>
+  <rect x="20" y="190" width="360" height="55" rx="6" fill="url(#roadGradient)" stroke="#333" stroke-width="1.5"/>
+  
+  <!-- Yellow lane markings (horizontal dashed lines in center of each lane) -->
+  <line x1="40" y1="87" x2="80" y2="87" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="87" x2="140" y2="87" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="160" y1="87" x2="200" y2="87" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="260" y1="87" x2="300" y2="87" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="320" y1="87" x2="360" y2="87" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  
+  <line x1="40" y1="152" x2="80" y2="152" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="100" y1="152" x2="140" y2="152" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="200" y1="152" x2="240" y2="152" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="260" y1="152" x2="300" y2="152" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="320" y1="152" x2="360" y2="152" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  
+  <line x1="100" y1="217" x2="140" y2="217" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="160" y1="217" x2="200" y2="217" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="260" y1="217" x2="300" y2="217" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  <line x1="320" y1="217" x2="360" y2="217" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Red car on top lane (right side) -->
+  <g transform="translate(290, 68)">
+    <rect x="0" y="8" width="45" height="16" rx="3" fill="#EF4444"/>
+    <rect x="8" y="2" width="22" height="10" rx="2" fill="#EF4444"/>
+    <circle cx="10" cy="24" r="5" fill="#1F2937"/>
+    <circle cx="35" cy="24" r="5" fill="#1F2937"/>
+    <circle cx="10" cy="24" r="2.5" fill="#4B5563"/>
+    <circle cx="35" cy="24" r="2.5" fill="#4B5563"/>
+    <rect x="10" y="4" width="7" height="5" rx="1" fill="#87CEEB" opacity="0.8"/>
+    <rect x="19" y="4" width="9" height="5" rx="1" fill="#87CEEB" opacity="0.8"/>
+    <rect x="41" y="12" width="4" height="4" rx="1" fill="#FCD34D"/>
+    <rect x="0" y="12" width="3" height="3" rx="1" fill="#FCA5A5"/>
+  </g>
+  
+  <!-- Blue car on middle lane (left side) -->
+  <g transform="translate(60, 133)">
+    <rect x="0" y="8" width="45" height="16" rx="3" fill="#3B82F6"/>
+    <rect x="8" y="2" width="22" height="10" rx="2" fill="#3B82F6"/>
+    <circle cx="10" cy="24" r="5" fill="#1F2937"/>
+    <circle cx="35" cy="24" r="5" fill="#1F2937"/>
+    <circle cx="10" cy="24" r="2.5" fill="#4B5563"/>
+    <circle cx="35" cy="24" r="2.5" fill="#4B5563"/>
+    <rect x="10" y="4" width="7" height="5" rx="1" fill="#87CEEB" opacity="0.8"/>
+    <rect x="19" y="4" width="9" height="5" rx="1" fill="#87CEEB" opacity="0.8"/>
+    <rect x="41" y="12" width="4" height="4" rx="1" fill="#FCD34D"/>
+    <rect x="0" y="12" width="3" height="3" rx="1" fill="#FCA5A5"/>
+  </g>
+  
+  <!-- SKAI Chicken Avatar on bottom lane (crossing) -->
+  <g transform="translate(30, 195)" filter="url(#glow)">
+    <!-- Glow effect -->
+    <ellipse cx="25" cy="25" rx="28" ry="26" fill="#2CECAD" opacity="0.25"/>
+    <!-- Body -->
+    <ellipse cx="25" cy="28" rx="16" ry="14" fill="#2CECAD"/>
+    <!-- Head -->
+    <circle cx="25" cy="16" r="12" fill="#1FD4A2"/>
+    <!-- Eyes -->
+    <circle cx="21" cy="14" r="3" fill="white"/>
+    <circle cx="29" cy="14" r="3" fill="white"/>
+    <circle cx="21" cy="14" r="1.5" fill="#000"/>
+    <circle cx="29" cy="14" r="1.5" fill="#000"/>
+    <!-- Beak -->
+    <path d="M23 18 L25 23 L27 18 Z" fill="#FFB74D"/>
+    <!-- Comb -->
+    <path d="M19 6 Q21 2 23 6 Q25 2 27 6 Q29 2 31 6" fill="#FF5252" stroke="#FF5252" stroke-width="2" stroke-linecap="round"/>
+    <!-- Wings -->
+    <ellipse cx="12" cy="28" rx="5" ry="7" fill="#25D9A6" opacity="0.85"/>
+    <ellipse cx="38" cy="28" rx="5" ry="7" fill="#25D9A6" opacity="0.85"/>
+    <!-- Feet -->
+    <path d="M18 40 L16 46 M18 40 L18 46 M18 40 L20 46" stroke="#FFB74D" stroke-width="2" stroke-linecap="round"/>
+    <path d="M32 40 L30 46 M32 40 L32 46 M32 40 L34 46" stroke="#FFB74D" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- START label (left side) -->
+  <rect x="2" y="55" width="14" height="195" rx="3" fill="#fff" opacity="0.15"/>
+  <text x="9" y="160" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="11" font-weight="bold" opacity="0.7" writing-mode="tb">START</text>
+  
+  <!-- FINISH label (right side) with trophy glow -->
+  <rect x="384" y="55" width="14" height="195" rx="3" fill="#2CECAD" opacity="0.7"/>
+  <text x="391" y="165" text-anchor="middle" fill="#000" font-family="Arial, sans-serif" font-size="11" font-weight="bold" writing-mode="tb">FINISH</text>
+  
+  <!-- Arrows showing direction (left to right) -->
+  <path d="M220 87 L235 87 L230 82 M235 87 L230 92" stroke="#2CECAD" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M155 152 L170 152 L165 147 M170 152 L165 157" stroke="#2CECAD" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M220 217 L235 217 L230 212 M235 217 L230 222" stroke="#2CECAD" stroke-width="2" fill="none" opacity="0.6"/>
+  
+  <!-- Title -->
+  <text x="200" y="285" text-anchor="middle" fill="#2CECAD" font-family="Arial, sans-serif" font-size="22" font-weight="bold" filter="url(#softGlow)">SKAI CROSS</text>
+</svg>
