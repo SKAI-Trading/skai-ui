@@ -22,7 +22,7 @@
 
 import { Panel, Group, Separator } from "react-resizable-panels";
 import type { GroupProps, SeparatorProps } from "react-resizable-panels";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 const ResizablePanelGroup = ({
   className,
