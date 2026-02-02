@@ -13,7 +13,7 @@ const meta: Meta<typeof QRCode> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
 };
 
 export default meta;

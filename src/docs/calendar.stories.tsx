@@ -6,7 +6,7 @@ import { addDays, format } from "date-fns";
 const meta: Meta<typeof Calendar> = {
   title: "Components/Calendar",
   component: Calendar,
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
   parameters: {
     layout: "centered",
     docs: {

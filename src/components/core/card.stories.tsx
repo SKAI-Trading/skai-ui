@@ -25,7 +25,7 @@ const meta: Meta<typeof Card> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
 };
 
 export default meta;

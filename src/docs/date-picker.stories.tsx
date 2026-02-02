@@ -24,7 +24,7 @@ The DatePicker component provides a calendar popup for selecting dates.
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;

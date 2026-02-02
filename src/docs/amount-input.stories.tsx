@@ -14,7 +14,7 @@ const meta: Meta<typeof AmountInput> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     value: {
       control: "text",

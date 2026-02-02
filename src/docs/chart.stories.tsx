@@ -25,7 +25,7 @@ import {
 const meta: Meta<typeof ChartContainer> = {
   title: "Components/Chart",
   component: ChartContainer,
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
   parameters: {
     layout: "padded",
     docs: {

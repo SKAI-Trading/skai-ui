@@ -5,7 +5,7 @@ import { Bold, Italic, Underline, Star, Bell, Eye } from "lucide-react";
 const meta: Meta<typeof Toggle> = {
   title: "Components/Toggle",
   component: Toggle,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     variant: {
       control: "select",

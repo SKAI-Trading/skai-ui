@@ -21,7 +21,7 @@ const meta: Meta<typeof Badge> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     variant: {
       control: "select",

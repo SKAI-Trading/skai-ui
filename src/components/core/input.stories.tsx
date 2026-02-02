@@ -17,7 +17,7 @@ const meta: Meta<typeof Input> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     type: {
       control: "select",

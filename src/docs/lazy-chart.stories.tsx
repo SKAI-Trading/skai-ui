@@ -23,7 +23,7 @@ This can save ~400KB from the initial bundle.
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;

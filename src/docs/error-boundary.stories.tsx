@@ -9,7 +9,7 @@ import { useState } from "react";
 const meta: Meta<typeof ErrorBoundary> = {
   title: "Components/ErrorBoundary",
   component: ErrorBoundary,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   parameters: {
     layout: "centered",
   },

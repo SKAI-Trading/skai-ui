@@ -34,7 +34,7 @@ const meta: Meta<typeof Tooltip> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
 };
 
 export default meta;

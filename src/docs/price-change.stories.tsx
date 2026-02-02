@@ -5,7 +5,7 @@ import { PnLDisplay, UnrealizedPnL } from "../components/trading/pnl-display";
 const meta: Meta<typeof PriceChange> = {
   title: "Trading/PriceChange",
   component: PriceChange,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   parameters: {
     layout: "centered",
   },

@@ -4,7 +4,7 @@ import { OnlineIndicator } from "../components/utility/online-indicator";
 const meta: Meta<typeof OnlineIndicator> = {
   title: "Components/OnlineIndicator",
   component: OnlineIndicator,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   parameters: {
     layout: "centered",
     docs: {

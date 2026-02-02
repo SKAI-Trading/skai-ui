@@ -13,7 +13,7 @@ const meta: Meta<typeof PriceDisplay> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     value: {
       control: "number",

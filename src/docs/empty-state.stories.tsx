@@ -11,7 +11,7 @@ import { PlusIcon, RefreshCwIcon } from "lucide-react";
 const meta: Meta<typeof EmptyState> = {
   title: "Components/EmptyState",
   component: EmptyState,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   parameters: {
     layout: "centered",
   },

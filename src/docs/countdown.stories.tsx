@@ -7,7 +7,7 @@ import { Card } from "../components/core/card";
 const meta: Meta<typeof Countdown> = {
   title: "Components/Countdown",
   component: Countdown,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   parameters: {
     layout: "centered",
   },

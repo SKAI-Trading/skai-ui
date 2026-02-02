@@ -5,7 +5,7 @@ import { GasEstimate, GasSpeedSelector } from "../components/trading/gas-estimat
 const meta: Meta<typeof GasEstimate> = {
   title: "Trading/GasEstimate",
   component: GasEstimate,
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
   parameters: {
     layout: "centered",
   },

@@ -28,7 +28,7 @@ Shows cumulative bid/ask volume at different price levels.
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;

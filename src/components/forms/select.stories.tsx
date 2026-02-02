@@ -21,7 +21,7 @@ const meta: Meta<typeof Select> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
 };
 
 export default meta;

@@ -8,7 +8,7 @@ import {
 const meta: Meta<typeof NetworkBadge> = {
   title: "Trading/NetworkBadge",
   component: NetworkBadge,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   parameters: {
     layout: "centered",
   },

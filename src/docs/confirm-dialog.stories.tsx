@@ -15,7 +15,7 @@ const meta: Meta<typeof ConfirmDialog> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     variant: {
       control: "select",

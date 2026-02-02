@@ -24,7 +24,7 @@ const meta: Meta<typeof Tabs> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
 };
 
 export default meta;

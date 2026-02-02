@@ -21,7 +21,7 @@ const meta: Meta<typeof Carousel> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;

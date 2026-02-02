@@ -4,7 +4,7 @@ import { FeeDisplay, HouseEdgeDisplay } from "../components/trading/fee-display"
 const meta: Meta<typeof FeeDisplay> = {
   title: "Trading/FeeDisplay",
   component: FeeDisplay,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   parameters: {
     layout: "centered",
     docs: {

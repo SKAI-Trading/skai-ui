@@ -5,7 +5,7 @@ import { Label } from "../core/label";
 const meta: Meta<typeof Textarea> = {
   title: "Components/Textarea",
   component: Textarea,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     placeholder: {
       control: "text",

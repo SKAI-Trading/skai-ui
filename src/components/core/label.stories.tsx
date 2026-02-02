@@ -6,7 +6,7 @@ import { Checkbox } from "../forms/checkbox";
 const meta: Meta<typeof Label> = {
   title: "Components/Label",
   component: Label,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
 };
 
 export default meta;

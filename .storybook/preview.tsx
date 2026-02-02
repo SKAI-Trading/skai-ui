@@ -1,6 +1,48 @@
 import type { Preview } from "@storybook/react";
 import "../src/styles/index.css";
 
+// Status badge configuration for component maturity
+const STATUS_BADGES: Record<string, { label: string; color: string; bg: string }> = {
+  stable: { label: "Stable", color: "#22c55e", bg: "rgba(34, 197, 94, 0.1)" },
+  beta: { label: "Beta", color: "#3b82f6", bg: "rgba(59, 130, 246, 0.1)" },
+  experimental: { label: "Experimental", color: "#eab308", bg: "rgba(234, 179, 8, 0.1)" },
+  deprecated: { label: "Deprecated", color: "#ef4444", bg: "rgba(239, 68, 68, 0.1)" },
+  new: { label: "New", color: "#a855f7", bg: "rgba(168, 85, 247, 0.1)" },
+};
+
+// Get status from story tags
+const getStatusFromTags = (tags: string[]): string | null => {
+  const statusTags = ["stable", "beta", "experimental", "deprecated", "new"];
+  return tags.find((tag) => statusTags.includes(tag)) || null;
+};
+
+// Status Badge Component
+const StatusBadge = ({ status }: { status: string }) => {
+  const badge = STATUS_BADGES[status];
+  if (!badge) return null;
+
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        padding: "2px 8px",
+        borderRadius: "9999px",
+        fontSize: "11px",
+        fontWeight: 600,
+        textTransform: "uppercase",
+        letterSpacing: "0.05em",
+        color: badge.color,
+        backgroundColor: badge.bg,
+        border: `1px solid ${badge.color}`,
+        marginLeft: "8px",
+      }}
+    >
+      {badge.label}
+    </span>
+  );
+};
+
 const preview: Preview = {
   parameters: {
     controls: {
@@ -237,6 +279,9 @@ const preview: Preview = {
   decorators: [
     (Story, context) => {
       const theme = context.globals.theme || "dark";
+      const tags = context.tags || [];
+      const status = getStatusFromTags(tags);
+
       return (
         <div className={theme === "dark" ? "dark" : ""}>
           <div
@@ -247,6 +292,38 @@ const preview: Preview = {
               background: theme === "dark" ? "#001615" : "#FFFFFF",
             }}
           >
+            {/* Status Badge - shown at top of story canvas */}
+            {status && (
+              <div
+                style={{
+                  position: "fixed",
+                  top: "12px",
+                  right: "12px",
+                  zIndex: 9999,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "6px 12px",
+                  borderRadius: "8px",
+                  backgroundColor: theme === "dark" ? "rgba(0, 22, 21, 0.9)" : "rgba(255, 255, 255, 0.9)",
+                  backdropFilter: "blur(8px)",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    color: theme === "dark" ? "#9ca3af" : "#6b7280",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  Status:
+                </span>
+                <StatusBadge status={status} />
+              </div>
+            )}
             <Story />
           </div>
         </div>

@@ -14,7 +14,7 @@ const meta: Meta<typeof CandlestickChart> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;

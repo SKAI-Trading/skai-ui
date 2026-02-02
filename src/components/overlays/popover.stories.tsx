@@ -7,7 +7,7 @@ import { Label } from "../core/label";
 const meta: Meta<typeof Popover> = {
   title: "Components/Popover",
   component: Popover,
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
 };
 
 export default meta;

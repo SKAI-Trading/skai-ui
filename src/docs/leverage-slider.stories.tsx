@@ -5,7 +5,7 @@ import { LeverageSlider } from "../components/trading/leverage-slider";
 const meta: Meta<typeof LeverageSlider> = {
   title: "Trading/LeverageSlider",
   component: LeverageSlider,
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
   parameters: {
     layout: "centered",
   },

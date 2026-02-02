@@ -25,7 +25,7 @@ Also exported as \`Combobox\` for semantic clarity.
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;

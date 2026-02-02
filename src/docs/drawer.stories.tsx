@@ -17,7 +17,7 @@ import { Label } from "../components/core/label";
 const meta: Meta<typeof Drawer> = {
   title: "Components/Drawer",
   component: Drawer,
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
   parameters: {
     layout: "centered",
   },

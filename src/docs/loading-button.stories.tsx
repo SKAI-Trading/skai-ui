@@ -13,7 +13,7 @@ const meta: Meta<typeof LoadingButton> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     loading: {
       control: "boolean",

@@ -6,7 +6,7 @@ import { Button } from "../components/core/button";
 const meta: Meta<typeof Notification> = {
   title: "Components/Notification",
   component: Notification,
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
   parameters: {
     layout: "centered",
   },

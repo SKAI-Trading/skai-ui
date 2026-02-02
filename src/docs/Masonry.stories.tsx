@@ -14,7 +14,7 @@ const meta: Meta<typeof Masonry> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "experimental"],
 };
 
 export default meta;

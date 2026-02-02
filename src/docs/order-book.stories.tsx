@@ -28,7 +28,7 @@ It's commonly used in trading interfaces to show market depth.
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;

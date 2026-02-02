@@ -14,7 +14,7 @@ const meta: Meta<typeof Button> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "stable"],
   argTypes: {
     variant: {
       control: "select",

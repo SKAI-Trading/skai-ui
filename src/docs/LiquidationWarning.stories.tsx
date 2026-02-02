@@ -16,7 +16,7 @@ const meta: Meta<typeof LiquidationWarning> = {
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;

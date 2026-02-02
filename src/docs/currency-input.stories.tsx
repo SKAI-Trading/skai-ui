@@ -23,7 +23,7 @@ The CurrencyInput component provides formatted currency input with locale suppor
       },
     },
   },
-  tags: ["autodocs"],
+  tags: ["autodocs", "beta"],
 };
 
 export default meta;
