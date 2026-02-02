@@ -35,6 +35,8 @@
     "test": "vitest run",
     "test:ci": "vitest run --coverage",
     "test:watch": "vitest",
+    "test:visual": "vitest run --config vitest.visual.config.ts",
+    "test:visual:update": "vitest run --config vitest.visual.config.ts --update",
     "clean": "rimraf dist storybook-static",
     "prepublishOnly": "npm run build:quiet",
     "tokens:sync": "node scripts/sync-figma-tokens.js --from-figma",

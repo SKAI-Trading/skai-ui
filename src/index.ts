@@ -39,6 +39,9 @@ export * from "./components/utility";
 // Branding Components (SkaiLogo, SkaiIcon)
 export * from "./components/branding";
 
+// Page Templates
+export * from "./templates";
+
 // =============================================================================
 // HOOKS
 // =============================================================================
