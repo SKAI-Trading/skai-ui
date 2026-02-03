@@ -21,6 +21,7 @@
 /* Import additional style modules - must come before @tailwind */
 @import "./animations.css";
 @import "./typography.css";
+@import "./backgrounds.css";
 
 @tailwind base;
 @tailwind components;

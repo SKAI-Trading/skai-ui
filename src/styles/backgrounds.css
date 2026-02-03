@@ -1,0 +1,356 @@
+/* =============================================================================
+   SKAI UI - Background Components Styles
+   =============================================================================
+   CSS styles for animated and decorative background components.
+   ============================================================================= */
+
+/* =============================================================================
+   ANIMATED STOCK TICKER BACKGROUND
+   =============================================================================
+   An animated stock ticker-style background with vertical bars that move
+   like a live trading chart.
+   ============================================================================= */
+
+/* Container for animated ticker bars */
+.stock-ticker-bg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  padding: 0 10px;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Individual ticker bar */
+.ticker-bar {
+  flex: 1;
+  max-width: 4px;
+  min-width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(86, 199, 243, 0.9) 0%,
+    rgba(86, 199, 243, 0.6) 40%,
+    rgba(23, 249, 180, 0.4) 100%
+  );
+  border-radius: 2px 2px 0 0;
+  transform-origin: bottom center;
+  animation: ticker-pulse var(--ticker-duration, 2s) ease-in-out infinite;
+  animation-delay: var(--ticker-delay, 0s);
+  box-shadow: 0 0 8px rgba(86, 199, 243, 0.3);
+}
+
+/* Stock ticker wave animation - smooth height oscillation */
+@keyframes ticker-pulse {
+  0%,
+  100% {
+    transform: scaleY(var(--bar-base-scale, 1));
+    opacity: 0.7;
+  }
+  50% {
+    transform: scaleY(var(--bar-peak-scale, 1.5));
+    opacity: 1;
+  }
+}
+
+/* Traveling wave effect - bars animate in sequence */
+@keyframes ticker-wave {
+  0% {
+    transform: scaleY(0.3);
+    opacity: 0.5;
+  }
+  15% {
+    transform: scaleY(1.2);
+    opacity: 0.9;
+  }
+  30% {
+    transform: scaleY(0.6);
+    opacity: 0.7;
+  }
+  45% {
+    transform: scaleY(1.4);
+    opacity: 1;
+  }
+  60% {
+    transform: scaleY(0.4);
+    opacity: 0.6;
+  }
+  75% {
+    transform: scaleY(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleY(0.3);
+    opacity: 0.5;
+  }
+}
+
+/* Glow effect that travels across the bars */
+.stock-ticker-bg::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(86, 199, 243, 0.3) 50%,
+    transparent 100%
+  );
+  animation: ticker-glow-sweep 4s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes ticker-glow-sweep {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+/* Blur overlay for depth */
+.stock-ticker-blur {
+  position: fixed;
+  bottom: -60px;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 22, 21, 0.3) 50%,
+    rgba(0, 22, 21, 0.8) 100%
+  );
+  filter: blur(20px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* CSS-only animated bars (no JS required) */
+.ticker-bars-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 2px;
+  padding: 0 5%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Generate many bars with CSS custom properties for varied animation */
+.ticker-bars-container .bar {
+  flex: 1;
+  max-width: 3px;
+  min-width: 1.5px;
+  background: linear-gradient(
+    to top,
+    rgba(23, 249, 180, 0.2) 0%,
+    rgba(86, 199, 243, 0.6) 50%,
+    rgba(86, 199, 243, 0.9) 100%
+  );
+  border-radius: 1.5px 1.5px 0 0;
+  transform-origin: bottom;
+  animation: bar-dance 3s ease-in-out infinite;
+  box-shadow:
+    0 0 4px rgba(86, 199, 243, 0.4),
+    0 -2px 8px rgba(86, 199, 243, 0.2);
+}
+
+/* Varied animations for each bar position - creates wave effect */
+.ticker-bars-container .bar:nth-child(4n + 1) {
+  animation-duration: 2.5s;
+  animation-delay: 0s;
+  --peak-height: 120px;
+  --base-height: 40px;
+}
+
+.ticker-bars-container .bar:nth-child(4n + 2) {
+  animation-duration: 3s;
+  animation-delay: 0.3s;
+  --peak-height: 100px;
+  --base-height: 50px;
+}
+
+.ticker-bars-container .bar:nth-child(4n + 3) {
+  animation-duration: 2.8s;
+  animation-delay: 0.6s;
+  --peak-height: 140px;
+  --base-height: 35px;
+}
+
+.ticker-bars-container .bar:nth-child(4n) {
+  animation-duration: 3.2s;
+  animation-delay: 0.9s;
+  --peak-height: 90px;
+  --base-height: 60px;
+}
+
+/* Create semi-random variations using more nth-child patterns */
+.ticker-bars-container .bar:nth-child(7n + 1) {
+  animation-delay: 0.1s;
+}
+.ticker-bars-container .bar:nth-child(7n + 2) {
+  animation-delay: 0.4s;
+}
+.ticker-bars-container .bar:nth-child(7n + 3) {
+  animation-delay: 0.7s;
+}
+.ticker-bars-container .bar:nth-child(7n + 4) {
+  animation-delay: 0.2s;
+}
+.ticker-bars-container .bar:nth-child(7n + 5) {
+  animation-delay: 0.5s;
+}
+.ticker-bars-container .bar:nth-child(7n + 6) {
+  animation-delay: 0.8s;
+}
+.ticker-bars-container .bar:nth-child(7n) {
+  animation-delay: 0.35s;
+}
+
+/* More height variations */
+.ticker-bars-container .bar:nth-child(5n + 1) {
+  --peak-height: 130px;
+  --base-height: 45px;
+}
+.ticker-bars-container .bar:nth-child(5n + 2) {
+  --peak-height: 95px;
+  --base-height: 55px;
+}
+.ticker-bars-container .bar:nth-child(5n + 3) {
+  --peak-height: 150px;
+  --base-height: 30px;
+}
+.ticker-bars-container .bar:nth-child(5n + 4) {
+  --peak-height: 85px;
+  --base-height: 65px;
+}
+.ticker-bars-container .bar:nth-child(5n) {
+  --peak-height: 110px;
+  --base-height: 50px;
+}
+
+@keyframes bar-dance {
+  0%,
+  100% {
+    height: var(--base-height, 50px);
+    opacity: 0.6;
+  }
+  25% {
+    height: calc(var(--peak-height, 100px) * 0.7);
+    opacity: 0.8;
+  }
+  50% {
+    height: var(--peak-height, 100px);
+    opacity: 1;
+  }
+  75% {
+    height: calc(var(--peak-height, 100px) * 0.5);
+    opacity: 0.7;
+  }
+}
+
+/* Subtle shimmer effect overlay */
+.ticker-shimmer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(86, 199, 243, 0.15) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-sweep 3s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* =============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================= */
+
+/* Mobile adjustments for ticker */
+@media (max-width: 768px) {
+  .ticker-bars-container {
+    height: 120px;
+    gap: 1.5px;
+  }
+
+  .ticker-bars-container .bar {
+    max-width: 2px;
+  }
+
+  .ticker-bars-container .bar:nth-child(5n + 1) {
+    --peak-height: 90px;
+    --base-height: 30px;
+  }
+  .ticker-bars-container .bar:nth-child(5n + 2) {
+    --peak-height: 65px;
+    --base-height: 40px;
+  }
+  .ticker-bars-container .bar:nth-child(5n + 3) {
+    --peak-height: 100px;
+    --base-height: 20px;
+  }
+  .ticker-bars-container .bar:nth-child(5n + 4) {
+    --peak-height: 55px;
+    --base-height: 45px;
+  }
+  .ticker-bars-container .bar:nth-child(5n) {
+    --peak-height: 75px;
+    --base-height: 35px;
+  }
+
+  .ticker-shimmer {
+    height: 120px;
+  }
+}
+
+/* =============================================================================
+   REDUCED MOTION
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-bar,
+  .ticker-bars-container .bar,
+  .stock-ticker-bg::before,
+  .ticker-shimmer {
+    animation: none;
+  }
+
+  .ticker-bars-container .bar {
+    height: var(--base-height, 50px);
+    opacity: 0.7;
+  }
+}
