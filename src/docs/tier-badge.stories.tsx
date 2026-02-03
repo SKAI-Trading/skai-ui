@@ -23,14 +23,15 @@ const meta: Meta<typeof TierBadge> = {
 **TierBadge** displays user tiers earned through points or purchased upgrades.
 
 ## Tier System
-| Tier | Points Required | Purchase Price | Swap Fee |
-|------|-----------------|----------------|----------|
-| Free | 0 | - | 0.30% |
-| Bronze | 1,000 | $9.99 | 0.25% |
-| Silver | 5,000 | $24.99 | 0.20% |
-| Gold | 15,000 | $49.99 | 0.15% |
-| Platinum | 50,000 | $99.99 | 0.10% |
-| Diamond | 150,000 | $249.99 | 0.05% |
+| Tier | Points Required | Purchase Price | Fee Discount |
+|------|-----------------|----------------|--------------|
+| Free | 0 | - | 0% |
+| Bronze | 100 | $9.99 | 0% (5% cashback) |
+| Silver | 1,000 | $24.99 | 10% |
+| Gold | 5,000 | $49.99 | 15% |
+| Platinum | 25,000 | $99.99 | 20% |
+| Diamond | 100,000 | $249.99 | 30% |
+| Legend | 500,000 | - (earned only) | 50% |
 
 ## Usage
 \`\`\`tsx
@@ -63,7 +64,7 @@ const tier = getTierFromPoints(userPoints);
   argTypes: {
     tier: {
       control: "select",
-      options: ["free", "bronze", "silver", "gold", "platinum", "diamond"],
+      options: ["free", "bronze", "silver", "gold", "platinum", "diamond", "legend"],
       description: "The tier level to display",
     },
     variant: {
@@ -199,6 +200,7 @@ export const AllTiers: Story = {
           "gold",
           "platinum",
           "diamond",
+          "legend",
         ] as TierLevel[]
       ).map((tier) => (
         <TierBadge key={tier} tier={tier} showFee showPoints />
@@ -225,6 +227,7 @@ export const AllTiersWithPrices: Story = {
           "gold",
           "platinum",
           "diamond",
+          "legend",
         ] as TierLevel[]
       ).map((tier) => (
         <TierBadge key={tier} tier={tier} showFee showPrice />
@@ -234,7 +237,7 @@ export const AllTiersWithPrices: Story = {
   parameters: {
     docs: {
       description: {
-        story: "All six tiers with their purchase prices and fees",
+        story: "All seven tiers with their purchase prices and fees",
       },
     },
   },
@@ -251,6 +254,7 @@ export const AllTiersCompact: Story = {
           "gold",
           "platinum",
           "diamond",
+          "legend",
         ] as TierLevel[]
       ).map((tier) => (
         <TierBadge key={tier} tier={tier} variant="compact" size="sm" />
@@ -270,6 +274,7 @@ export const AllTiersDetailed: Story = {
           "gold",
           "platinum",
           "diamond",
+          "legend",
         ] as TierLevel[]
       ).map((tier) => (
         <TierBadge
@@ -390,6 +395,10 @@ export const TierIcons: Story = {
         <div className="flex flex-col items-center gap-2">
           <SkaiIcon name="tier-diamond" size="lg" />
           <span className="text-xs text-muted-foreground">Diamond</span>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <SkaiIcon name="tier-legend" size="lg" />
+          <span className="text-xs text-muted-foreground">Legend</span>
         </div>
       </div>
     </div>

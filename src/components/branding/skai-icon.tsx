@@ -124,7 +124,8 @@ export type SkaiIconName =
   | "tier-silver"
   | "tier-gold"
   | "tier-platinum"
-  | "tier-diamond";
+  | "tier-diamond"
+  | "tier-legend";
 
 export type SkaiIconSize = "xs" | "sm" | "md" | "lg";
 
@@ -1382,6 +1383,30 @@ const iconPaths: Record<SkaiIconName, React.ReactNode> = {
       <path d="M12 4l4 4-4 12-4-12 4-4z" fill="white" fillOpacity="0.9" />
       <path d="M8 8h8l-4 12-4-12z" fill="#00ACC1" />
       <path d="M12 4l4 4H8l4-4z" fill="#4DD0E1" />
+    </>
+  ),
+  "tier-legend": (
+    <>
+      <defs>
+        <linearGradient id="legendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#A855F7" />
+          <stop offset="50%" stopColor="#9333EA" />
+          <stop offset="100%" stopColor="#7C3AED" />
+        </linearGradient>
+      </defs>
+      <circle cx="12" cy="12" r="9" fill="url(#legendGrad)" />
+      <path
+        d="M12 4l2 3h3l-2.5 3 1 4-3.5-2-3.5 2 1-4L7 7h3l2-3z"
+        fill="white"
+        fillOpacity="0.95"
+      />
+      <path
+        d="M12 19v-4M8 17l4-2 4 2"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
     </>
   ),
 };

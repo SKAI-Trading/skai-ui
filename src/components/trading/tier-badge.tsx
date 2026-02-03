@@ -15,7 +15,8 @@ export type TierLevel =
   | "silver"
   | "gold"
   | "platinum"
-  | "diamond";
+  | "diamond"
+  | "legend";
 
 export type TierUnlockMethod = "points" | "purchased" | "gifted";
 
@@ -40,69 +41,80 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     pointsRequired: 0,
     purchasePrice: null,
     feePercent: 0.3,
-    color: "#878787",
-    bgColor: "rgba(135, 135, 135, 0.1)",
-    borderColor: "rgba(135, 135, 135, 0.3)",
+    color: "#94a3b8",
+    bgColor: "rgba(148, 163, 184, 0.1)",
+    borderColor: "rgba(148, 163, 184, 0.3)",
     benefits: ["Basic trading access", "Community features"],
   },
   bronze: {
     label: "Bronze",
-    pointsRequired: 1000,
+    pointsRequired: 100,
     purchasePrice: 9.99,
     feePercent: 0.25,
     color: "#CD7F32",
     bgColor: "rgba(205, 127, 50, 0.1)",
     borderColor: "rgba(205, 127, 50, 0.3)",
-    benefits: ["0.25% swap fee", "Bronze badge", "Priority support"],
+    benefits: ["5% cashback", "Bronze badge", "Priority support"],
   },
   silver: {
     label: "Silver",
-    pointsRequired: 5000,
+    pointsRequired: 1000,
     purchasePrice: 24.99,
     feePercent: 0.2,
     color: "#C0C0C0",
     bgColor: "rgba(192, 192, 192, 0.15)",
     borderColor: "rgba(192, 192, 192, 0.4)",
-    benefits: ["0.20% swap fee", "Silver badge", "Early feature access"],
+    benefits: ["10% fee discount", "10% cashback", "1.2x points multiplier"],
   },
   gold: {
     label: "Gold",
-    pointsRequired: 15000,
+    pointsRequired: 5000,
     purchasePrice: 49.99,
     feePercent: 0.15,
     color: "#FFD700",
     bgColor: "rgba(255, 215, 0, 0.1)",
     borderColor: "rgba(255, 215, 0, 0.3)",
-    benefits: ["0.15% swap fee", "Gold badge", "Exclusive signals", "VIP chat"],
+    benefits: ["15% fee discount", "15% cashback", "1.4x points multiplier"],
   },
   platinum: {
     label: "Platinum",
-    pointsRequired: 50000,
+    pointsRequired: 25000,
     purchasePrice: 99.99,
     feePercent: 0.1,
     color: "#E5E4E2",
     bgColor: "rgba(229, 228, 226, 0.15)",
     borderColor: "rgba(229, 228, 226, 0.4)",
-    benefits: [
-      "0.10% swap fee",
-      "Platinum badge",
-      "API access",
-      "Custom alerts",
-    ],
+    benefits: ["20% fee discount", "18% cashback", "1.5x points multiplier"],
   },
   diamond: {
     label: "Diamond",
-    pointsRequired: 150000,
+    pointsRequired: 100000,
     purchasePrice: 249.99,
     feePercent: 0.05,
-    color: "#4DD0E1",
-    bgColor: "rgba(77, 208, 225, 0.1)",
-    borderColor: "rgba(77, 208, 225, 0.3)",
+    color: "#B9F2FF",
+    bgColor: "rgba(185, 242, 255, 0.1)",
+    borderColor: "rgba(185, 242, 255, 0.3)",
     benefits: [
-      "0.05% swap fee",
-      "Diamond badge",
-      "Direct founder access",
-      "Exclusive airdrops",
+      "30% fee discount",
+      "20% cashback",
+      "1.6x points multiplier",
+      "Priority support",
+    ],
+  },
+  legend: {
+    label: "Legend",
+    pointsRequired: 500000,
+    purchasePrice: null,
+    feePercent: 0.02,
+    color: "#9333EA",
+    bgColor: "rgba(147, 51, 234, 0.1)",
+    borderColor: "rgba(147, 51, 234, 0.3)",
+    benefits: [
+      "50% fee discount",
+      "25% cashback",
+      "2x points multiplier",
+      "Priority support",
+      "Legendary status",
     ],
   },
 };
@@ -111,11 +123,12 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
  * Get the tier level based on user points
  */
 export function getTierFromPoints(points: number): TierLevel {
-  if (points >= 150000) return "diamond";
-  if (points >= 50000) return "platinum";
-  if (points >= 15000) return "gold";
-  if (points >= 5000) return "silver";
-  if (points >= 1000) return "bronze";
+  if (points >= 500000) return "legend";
+  if (points >= 100000) return "diamond";
+  if (points >= 25000) return "platinum";
+  if (points >= 5000) return "gold";
+  if (points >= 1000) return "silver";
+  if (points >= 100) return "bronze";
   return "free";
 }
 
@@ -414,6 +427,7 @@ function getNextTier(current: TierLevel): TierLevel | null {
     "gold",
     "platinum",
     "diamond",
+    "legend",
   ];
   const currentIndex = tiers.indexOf(current);
   return currentIndex < tiers.length - 1 ? tiers[currentIndex + 1] : null;
@@ -450,6 +464,7 @@ export const TierBadgeList = React.forwardRef<
       "gold",
       "platinum",
       "diamond",
+      "legend",
     ];
 
     return (
