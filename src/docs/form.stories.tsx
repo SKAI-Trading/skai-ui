@@ -40,7 +40,7 @@ type Story = StoryObj<typeof Form>;
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(8, "Password must be at least 8 characters"),
-  remember: z.boolean().default(false),
+  remember: z.boolean(),
 });
 
 type LoginFormValues = z.infer<typeof loginSchema>;
@@ -128,7 +128,7 @@ export const LoginForm: Story = {
 const tradingSchema = z.object({
   slippage: z.number().min(0.1).max(50),
   deadline: z.string(),
-  expertMode: z.boolean().default(false),
+  expertMode: z.boolean(),
   gasPreset: z.enum(["slow", "standard", "fast"]),
 });
 
