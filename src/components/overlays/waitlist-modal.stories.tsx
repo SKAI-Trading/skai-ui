@@ -3,13 +3,15 @@ import { useState } from "react";
 import { WaitlistModal } from "./waitlist-modal";
 
 /**
- * WaitlistModal - Email capture modal for waitlist signup
+ * WaitlistModal - "Get early access to Skai" modal for waitlist signup
  *
  * This modal is used on the SKAI landing page to capture user emails for the waitlist.
  * It supports email input with validation, Google/Apple social login options, and loading states.
  *
  * ## Figma Reference
- * - Design: Skai-Design > Landing > Waitlist Modal
+ * - Design: Skai-Web-App > Onboarding
+ * - Node IDs: 2005:9301 (Desktop), 2005:17764 (Tablet), 2005:27956 (Mobile)
+ * - States: Empty, Active (with "↵ ENTER" hint), Loading
  *
  * ## Usage
  * ```tsx

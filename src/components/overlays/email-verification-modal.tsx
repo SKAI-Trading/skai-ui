@@ -272,7 +272,7 @@ export function EmailVerificationModal({
     >
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-[343px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-6 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
+        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Back and Close Buttons */}
@@ -311,15 +311,17 @@ export function EmailVerificationModal({
 
         {/* Code Input */}
         <div className="mb-6 md:mb-6 lg:mb-6">
-          <div className="mb-4 flex justify-center gap-1 px-1 md:mb-4 md:gap-2 md:px-0 lg:mb-4 lg:gap-3">
+          <div className="mb-4 flex justify-center gap-2 px-1 md:mb-4 md:gap-3 md:px-0 lg:mb-4 lg:gap-3">
             {code.map((digit, index) => (
               <div
                 key={index}
                 className={cn(
-                  "flex-shrink-0 rounded-[12px] border bg-[#001615] px-1 py-2.5 transition-colors md:rounded-[14px] md:px-2.5 md:py-4 lg:rounded-[16px] lg:px-4 lg:py-5",
+                  "flex h-[48px] w-[44px] flex-shrink-0 items-center justify-center rounded-[10px] border bg-[#001615] transition-colors md:h-[56px] md:w-[52px] md:rounded-[12px] lg:h-[60px] lg:w-[56px] lg:rounded-[14px]",
                   localError
                     ? "border-[#FF4444]"
-                    : "border-[#123f3c] focus-within:border-[#17F9B4]"
+                    : digit
+                      ? "border-[#17F9B4]"
+                      : "border-[#123f3c] focus-within:border-[#17F9B4]"
                 )}
               >
                 <input
@@ -334,7 +336,7 @@ export function EmailVerificationModal({
                   onKeyDown={(e) => handleKeyDown(index, e)}
                   onPaste={index === 0 ? handlePaste : undefined}
                   disabled={loading}
-                  className="font-manrope h-[32px] w-[32px] border-none bg-transparent text-center text-[18px] font-normal leading-none text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:h-[40px] md:w-[40px] md:text-[20px] lg:h-[38px] lg:w-5 lg:text-[24px]"
+                  className="font-manrope h-full w-full border-none bg-transparent text-center text-[20px] font-normal leading-none text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-[24px] lg:text-[28px]"
                   aria-label={`Digit ${index + 1}`}
                 />
               </div>
@@ -385,8 +387,8 @@ export function EmailVerificationModal({
           ) : (
             <p className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
               Resend code in{" "}
-              <span className="font-semibold text-[#56c7f3]">
-                {timer} {timer === 1 ? "second" : "seconds"}
+              <span className="font-medium text-[#56c7f3]">
+                {timer} seconds
               </span>
             </p>
           )}
