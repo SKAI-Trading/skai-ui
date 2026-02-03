@@ -157,3 +157,117 @@ export type {
   MessageReaction,
   Message,
 } from "./messages-page";
+
+// Admin Page Template
+export { AdminPageTemplate } from "./admin-page";
+export type {
+  AdminPageProps,
+  AdminTab,
+  AdminTabCategory,
+  AdminPermissions,
+  AdminSystemStatus,
+} from "./admin-page";
+
+// AI Agent Page Template
+export { AIAgentPageTemplate } from "./ai-agent-page";
+export type {
+  AIAgentPageProps,
+  AIAgentTabType,
+  AIMessage,
+  AISignal,
+  AIAgentInfo,
+  IntelligenceMetric,
+  AgentStatus,
+  SignalType,
+  SignalStrength,
+} from "./ai-agent-page";
+
+// Exchange Page Template
+export { ExchangePageTemplate } from "./exchange-page";
+export type {
+  ExchangePageProps,
+  ExchangeMode,
+  ExchangeChain,
+  ExchangeToken,
+  ExchangeQuote,
+  ExchangeStatus,
+} from "./exchange-page";
+
+// Streaming Page Template
+export { StreamingPageTemplate } from "./streaming-page";
+export type {
+  StreamingPageProps,
+  StreamStatus,
+  StreamerInfo,
+  LiveStream,
+  StreamChatMessage,
+  StreamingView,
+} from "./streaming-page";
+
+// Copy Trading Page Template
+export { CopyTradingPageTemplate } from "./copy-trading-page";
+export type {
+  CopyTradingPageProps,
+  LeaderboardPeriod,
+  LeaderboardSortBy,
+  TraderStats,
+  LeaderboardTrader,
+  FollowRelation,
+  CopiedTrade,
+  CopyTradingTab,
+} from "./copy-trading-page";
+
+// Governance Page Template
+export { GovernancePageTemplate } from "./governance-page";
+export type {
+  GovernancePageProps,
+  ProposalStatus,
+  VoteChoice,
+  Proposal,
+  GovernanceStats,
+  DelegationInfo,
+  GovernanceTab,
+} from "./governance-page";
+
+// Analytics Dashboard Page Template
+export { AnalyticsDashboardPageTemplate } from "./analytics-dashboard-page";
+export type {
+  AnalyticsDashboardPageProps,
+  TimeRange,
+  TradeType,
+  TradeStatus,
+  PortfolioValue,
+  PerformanceMetric,
+  RiskMetrics,
+  TradeRecord,
+  AssetAllocation,
+  AnalyticsTab,
+} from "./analytics-dashboard-page";
+
+// Lending Page Template
+export { LendingPageTemplate } from "./lending-page";
+export type {
+  LendingPageProps,
+  LendingProtocol,
+  LendingToken,
+  LendingMarket,
+  UserPosition as LendingUserPosition,
+  LendingStats,
+  LendingTab,
+  LendingAction,
+} from "./lending-page";
+
+// Predict Page Template
+export { PredictPageTemplate } from "./predict-page";
+export type {
+  PredictPageProps,
+  MarketStatus,
+  MarketCategory,
+  OutcomeType,
+  MarketOutcome,
+  PredictionMarket,
+  UserPosition as PredictUserPosition,
+  PredictStats,
+  PredictTab,
+  MarketSort,
+} from "./predict-page";
