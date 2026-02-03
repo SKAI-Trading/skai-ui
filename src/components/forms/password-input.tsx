@@ -98,7 +98,8 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
     const [showPassword, setShowPassword] = React.useState(false);
     const [value, setValue] = React.useState("");
 
-    const inputId = id || React.useId();
+    const generatedId = React.useId();
+    const inputId = id || generatedId;
     const generatedErrorId = React.useId();
     const effectiveErrorId = errorId || generatedErrorId;
     const strengthId = React.useId();
