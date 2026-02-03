@@ -140,13 +140,13 @@
 .ticker-bars-container {
   position: fixed;
   bottom: 0;
-  left: -5%;
-  right: -5%;
+  left: -20px;
+  right: -20px;
   height: 180px;
   display: flex;
   align-items: flex-end;
-  justify-content: space-around;
-  gap: 2px;
+  justify-content: space-between;
+  gap: 0;
   padding: 0;
   z-index: 1;
   pointer-events: none;
@@ -155,8 +155,8 @@
 /* Generate bars that look like a stock chart */
 .ticker-bars-container .bar {
   flex: 1;
-  max-width: 3px;
-  min-width: 1.5px;
+  max-width: 4px;
+  min-width: 2px;
   background: linear-gradient(
     to top,
     rgba(23, 249, 180, 0.1) 0%,
@@ -171,91 +171,75 @@
   --base-height: 50px;
 }
 
-/* Varied durations create organic, unsynchronized movement like real stocks */
-.ticker-bars-container .bar:nth-child(7n + 1) {
-  animation-duration: 11s;
-  --peak-height: 140px;
-  --base-height: 45px;
-}
-.ticker-bars-container .bar:nth-child(7n + 2) {
-  animation-duration: 14s;
-  --peak-height: 120px;
-  --base-height: 55px;
-}
-.ticker-bars-container .bar:nth-child(7n + 3) {
-  animation-duration: 10s;
-  --peak-height: 135px;
-  --base-height: 40px;
-}
-.ticker-bars-container .bar:nth-child(7n + 4) {
-  animation-duration: 13s;
-  --peak-height: 125px;
-  --base-height: 50px;
-}
-.ticker-bars-container .bar:nth-child(7n + 5) {
-  animation-duration: 15s;
-  --peak-height: 115px;
-  --base-height: 60px;
-}
-.ticker-bars-container .bar:nth-child(7n + 6) {
-  animation-duration: 9s;
-  --peak-height: 145px;
-  --base-height: 35px;
-}
-.ticker-bars-container .bar:nth-child(7n) {
-  animation-duration: 12s;
-  --peak-height: 130px;
-  --base-height: 48px;
-}
+/*
+ * RANDOMIZED DURATIONS - no pattern, pure chaos like real markets
+ * Using prime numbers to avoid repetition
+ */
+.ticker-bars-container .bar:nth-child(17n + 1) { animation-duration: 8.3s; }
+.ticker-bars-container .bar:nth-child(17n + 2) { animation-duration: 11.7s; }
+.ticker-bars-container .bar:nth-child(17n + 3) { animation-duration: 9.1s; }
+.ticker-bars-container .bar:nth-child(17n + 4) { animation-duration: 14.3s; }
+.ticker-bars-container .bar:nth-child(17n + 5) { animation-duration: 7.9s; }
+.ticker-bars-container .bar:nth-child(17n + 6) { animation-duration: 12.1s; }
+.ticker-bars-container .bar:nth-child(17n + 7) { animation-duration: 10.7s; }
+.ticker-bars-container .bar:nth-child(17n + 8) { animation-duration: 13.9s; }
+.ticker-bars-container .bar:nth-child(17n + 9) { animation-duration: 8.7s; }
+.ticker-bars-container .bar:nth-child(17n + 10) { animation-duration: 15.1s; }
+.ticker-bars-container .bar:nth-child(17n + 11) { animation-duration: 9.9s; }
+.ticker-bars-container .bar:nth-child(17n + 12) { animation-duration: 11.3s; }
+.ticker-bars-container .bar:nth-child(17n + 13) { animation-duration: 7.3s; }
+.ticker-bars-container .bar:nth-child(17n + 14) { animation-duration: 13.1s; }
+.ticker-bars-container .bar:nth-child(17n + 15) { animation-duration: 10.3s; }
+.ticker-bars-container .bar:nth-child(17n + 16) { animation-duration: 14.7s; }
+.ticker-bars-container .bar:nth-child(17n) { animation-duration: 8.9s; }
 
-/* Additional height variations */
-.ticker-bars-container .bar:nth-child(11n + 1) { --peak-height: 150px; }
-.ticker-bars-container .bar:nth-child(11n + 3) { --peak-height: 110px; }
-.ticker-bars-container .bar:nth-child(11n + 5) { --peak-height: 138px; }
-.ticker-bars-container .bar:nth-child(11n + 7) { --peak-height: 122px; }
-.ticker-bars-container .bar:nth-child(11n + 9) { --peak-height: 142px; }
+/* Randomized heights - different prime pattern */
+.ticker-bars-container .bar:nth-child(13n + 1) { --peak-height: 145px; --base-height: 42px; }
+.ticker-bars-container .bar:nth-child(13n + 2) { --peak-height: 118px; --base-height: 58px; }
+.ticker-bars-container .bar:nth-child(13n + 3) { --peak-height: 152px; --base-height: 38px; }
+.ticker-bars-container .bar:nth-child(13n + 4) { --peak-height: 125px; --base-height: 52px; }
+.ticker-bars-container .bar:nth-child(13n + 5) { --peak-height: 138px; --base-height: 45px; }
+.ticker-bars-container .bar:nth-child(13n + 6) { --peak-height: 112px; --base-height: 62px; }
+.ticker-bars-container .bar:nth-child(13n + 7) { --peak-height: 148px; --base-height: 40px; }
+.ticker-bars-container .bar:nth-child(13n + 8) { --peak-height: 122px; --base-height: 55px; }
+.ticker-bars-container .bar:nth-child(13n + 9) { --peak-height: 155px; --base-height: 35px; }
+.ticker-bars-container .bar:nth-child(13n + 10) { --peak-height: 130px; --base-height: 48px; }
+.ticker-bars-container .bar:nth-child(13n + 11) { --peak-height: 142px; --base-height: 44px; }
+.ticker-bars-container .bar:nth-child(13n + 12) { --peak-height: 115px; --base-height: 60px; }
+.ticker-bars-container .bar:nth-child(13n) { --peak-height: 135px; --base-height: 50px; }
 
 /*
- * RIGHT-TO-LEFT MOVEMENT with organic variation
- * Bars on right have smaller delays = they "lead"
- * Bars on left have larger delays = they "follow"
- * All negative so animation appears already running on page load
+ * FULLY RANDOMIZED DELAYS - already mid-animation on page load
+ * Large negative values spread across different points in cycle
+ * Using another prime pattern (19) for maximum randomness
  */
-
-/* Group 1: Rightmost (bars 181-200) - lead the movement */
-.ticker-bars-container .bar:nth-child(n + 181):nth-child(-n + 200) { animation-delay: -12s; }
-/* Group 2 */
-.ticker-bars-container .bar:nth-child(n + 161):nth-child(-n + 180) { animation-delay: -11.5s; }
-/* Group 3 */
-.ticker-bars-container .bar:nth-child(n + 141):nth-child(-n + 160) { animation-delay: -11s; }
-/* Group 4 */
-.ticker-bars-container .bar:nth-child(n + 121):nth-child(-n + 140) { animation-delay: -10.5s; }
-/* Group 5 */
-.ticker-bars-container .bar:nth-child(n + 101):nth-child(-n + 120) { animation-delay: -10s; }
-/* Group 6 */
-.ticker-bars-container .bar:nth-child(n + 81):nth-child(-n + 100) { animation-delay: -9.5s; }
-/* Group 7 */
-.ticker-bars-container .bar:nth-child(n + 61):nth-child(-n + 80) { animation-delay: -9s; }
-/* Group 8 */
-.ticker-bars-container .bar:nth-child(n + 41):nth-child(-n + 60) { animation-delay: -8.5s; }
-/* Group 9 */
-.ticker-bars-container .bar:nth-child(n + 21):nth-child(-n + 40) { animation-delay: -8s; }
-/* Group 10: Leftmost (bars 1-20) - follow the movement */
-.ticker-bars-container .bar:nth-child(-n + 20) { animation-delay: -7.5s; }
+.ticker-bars-container .bar:nth-child(19n + 1) { animation-delay: -3.7s; }
+.ticker-bars-container .bar:nth-child(19n + 2) { animation-delay: -11.2s; }
+.ticker-bars-container .bar:nth-child(19n + 3) { animation-delay: -7.8s; }
+.ticker-bars-container .bar:nth-child(19n + 4) { animation-delay: -1.4s; }
+.ticker-bars-container .bar:nth-child(19n + 5) { animation-delay: -9.6s; }
+.ticker-bars-container .bar:nth-child(19n + 6) { animation-delay: -5.3s; }
+.ticker-bars-container .bar:nth-child(19n + 7) { animation-delay: -13.1s; }
+.ticker-bars-container .bar:nth-child(19n + 8) { animation-delay: -2.9s; }
+.ticker-bars-container .bar:nth-child(19n + 9) { animation-delay: -10.4s; }
+.ticker-bars-container .bar:nth-child(19n + 10) { animation-delay: -6.7s; }
+.ticker-bars-container .bar:nth-child(19n + 11) { animation-delay: -14.2s; }
+.ticker-bars-container .bar:nth-child(19n + 12) { animation-delay: -4.1s; }
+.ticker-bars-container .bar:nth-child(19n + 13) { animation-delay: -8.5s; }
+.ticker-bars-container .bar:nth-child(19n + 14) { animation-delay: -0.8s; }
+.ticker-bars-container .bar:nth-child(19n + 15) { animation-delay: -12.3s; }
+.ticker-bars-container .bar:nth-child(19n + 16) { animation-delay: -5.9s; }
+.ticker-bars-container .bar:nth-child(19n + 17) { animation-delay: -9.1s; }
+.ticker-bars-container .bar:nth-child(19n + 18) { animation-delay: -2.2s; }
+.ticker-bars-container .bar:nth-child(19n) { animation-delay: -7.4s; }
 
 /* Stock-like animation - organic up and down movement */
 @keyframes stock-tick {
   0%, 100% {
     height: var(--base-height, 50px);
   }
-  25% {
-    height: calc(var(--peak-height, 130px) * 0.7);
-  }
   50% {
     height: var(--peak-height, 130px);
-  }
-  75% {
-    height: calc(var(--peak-height, 130px) * 0.55);
   }
 }
 
