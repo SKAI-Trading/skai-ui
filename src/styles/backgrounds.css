@@ -257,29 +257,27 @@
 .ticker-bars-container .bar:nth-child(13n) { --peak-height: 212px; --base-height: 80px; }
 
 /*
- * FULLY RANDOMIZED DELAYS - already mid-animation on page load
- * Large negative values spread across different points in cycle
- * Using another prime pattern (19) for maximum randomness
+ * CENTER-SPLIT WAVE - bars animate outward from center
+ * Center bars lead (smaller delay), edge bars follow (larger delay)
+ * Creates a symmetric ripple effect from the middle of the screen
  */
-.ticker-bars-container .bar:nth-child(19n + 1) { animation-delay: -3.7s; }
-.ticker-bars-container .bar:nth-child(19n + 2) { animation-delay: -11.2s; }
-.ticker-bars-container .bar:nth-child(19n + 3) { animation-delay: -7.8s; }
-.ticker-bars-container .bar:nth-child(19n + 4) { animation-delay: -1.4s; }
-.ticker-bars-container .bar:nth-child(19n + 5) { animation-delay: -9.6s; }
-.ticker-bars-container .bar:nth-child(19n + 6) { animation-delay: -5.3s; }
-.ticker-bars-container .bar:nth-child(19n + 7) { animation-delay: -13.1s; }
-.ticker-bars-container .bar:nth-child(19n + 8) { animation-delay: -2.9s; }
-.ticker-bars-container .bar:nth-child(19n + 9) { animation-delay: -10.4s; }
-.ticker-bars-container .bar:nth-child(19n + 10) { animation-delay: -6.7s; }
-.ticker-bars-container .bar:nth-child(19n + 11) { animation-delay: -14.2s; }
-.ticker-bars-container .bar:nth-child(19n + 12) { animation-delay: -4.1s; }
-.ticker-bars-container .bar:nth-child(19n + 13) { animation-delay: -8.5s; }
-.ticker-bars-container .bar:nth-child(19n + 14) { animation-delay: -0.8s; }
-.ticker-bars-container .bar:nth-child(19n + 15) { animation-delay: -12.3s; }
-.ticker-bars-container .bar:nth-child(19n + 16) { animation-delay: -5.9s; }
-.ticker-bars-container .bar:nth-child(19n + 17) { animation-delay: -9.1s; }
-.ticker-bars-container .bar:nth-child(19n + 18) { animation-delay: -2.2s; }
-.ticker-bars-container .bar:nth-child(19n) { animation-delay: -7.4s; }
+/* Center bars (91-110) - lead the wave */
+.ticker-bars-container .bar:nth-child(n + 91):nth-child(-n + 110) { animation-delay: -2s; }
+/* Adjacent to center */
+.ticker-bars-container .bar:nth-child(n + 71):nth-child(-n + 90) { animation-delay: -3s; }
+.ticker-bars-container .bar:nth-child(n + 111):nth-child(-n + 130) { animation-delay: -3s; }
+/* Next ring out */
+.ticker-bars-container .bar:nth-child(n + 51):nth-child(-n + 70) { animation-delay: -4s; }
+.ticker-bars-container .bar:nth-child(n + 131):nth-child(-n + 150) { animation-delay: -4s; }
+/* Outer ring */
+.ticker-bars-container .bar:nth-child(n + 31):nth-child(-n + 50) { animation-delay: -5s; }
+.ticker-bars-container .bar:nth-child(n + 151):nth-child(-n + 170) { animation-delay: -5s; }
+/* Edge ring */
+.ticker-bars-container .bar:nth-child(n + 11):nth-child(-n + 30) { animation-delay: -6s; }
+.ticker-bars-container .bar:nth-child(n + 171):nth-child(-n + 190) { animation-delay: -6s; }
+/* Outermost edges */
+.ticker-bars-container .bar:nth-child(-n + 10) { animation-delay: -7s; }
+.ticker-bars-container .bar:nth-child(n + 191) { animation-delay: -7s; }
 
 /* Stock-like animation - organic up and down movement */
 @keyframes stock-tick {
