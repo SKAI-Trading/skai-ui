@@ -160,113 +160,121 @@
   min-width: 1.5px;
   background: linear-gradient(
     to top,
-    rgba(23, 249, 180, 0.2) 0%,
-    rgba(86, 199, 243, 0.6) 50%,
-    rgba(86, 199, 243, 0.9) 100%
+    rgba(23, 249, 180, 0.15) 0%,
+    rgba(86, 199, 243, 0.5) 50%,
+    rgba(86, 199, 243, 0.8) 100%
   );
   border-radius: 1.5px 1.5px 0 0;
   transform-origin: bottom;
-  animation: bar-dance 3s ease-in-out infinite;
+  animation: bar-dance 8s ease-in-out infinite;
   box-shadow:
-    0 0 4px rgba(86, 199, 243, 0.4),
-    0 -2px 8px rgba(86, 199, 243, 0.2);
+    0 0 4px rgba(86, 199, 243, 0.3),
+    0 -2px 8px rgba(86, 199, 243, 0.15);
 }
 
-/* Varied animations for each bar position - creates wave effect */
+/* Varied animations for each bar position - creates slow wave effect */
 .ticker-bars-container .bar:nth-child(4n + 1) {
-  animation-duration: 2.5s;
-  animation-delay: 0s;
+  animation-duration: 7s;
   --peak-height: 120px;
-  --base-height: 40px;
-}
-
-.ticker-bars-container .bar:nth-child(4n + 2) {
-  animation-duration: 3s;
-  animation-delay: 0.3s;
-  --peak-height: 100px;
   --base-height: 50px;
 }
 
+.ticker-bars-container .bar:nth-child(4n + 2) {
+  animation-duration: 9s;
+  --peak-height: 100px;
+  --base-height: 55px;
+}
+
 .ticker-bars-container .bar:nth-child(4n + 3) {
-  animation-duration: 2.8s;
-  animation-delay: 0.6s;
-  --peak-height: 140px;
-  --base-height: 35px;
+  animation-duration: 8s;
+  --peak-height: 130px;
+  --base-height: 45px;
 }
 
 .ticker-bars-container .bar:nth-child(4n) {
-  animation-duration: 3.2s;
-  animation-delay: 0.9s;
+  animation-duration: 10s;
   --peak-height: 90px;
   --base-height: 60px;
 }
 
-/* Create semi-random variations using more nth-child patterns */
-.ticker-bars-container .bar:nth-child(7n + 1) {
-  animation-delay: 0.1s;
-}
-.ticker-bars-container .bar:nth-child(7n + 2) {
-  animation-delay: 0.4s;
-}
-.ticker-bars-container .bar:nth-child(7n + 3) {
-  animation-delay: 0.7s;
-}
-.ticker-bars-container .bar:nth-child(7n + 4) {
-  animation-delay: 0.2s;
-}
-.ticker-bars-container .bar:nth-child(7n + 5) {
-  animation-delay: 0.5s;
-}
-.ticker-bars-container .bar:nth-child(7n + 6) {
-  animation-delay: 0.8s;
-}
-.ticker-bars-container .bar:nth-child(7n) {
-  animation-delay: 0.35s;
-}
-
-/* More height variations */
+/* Gentle height variations */
 .ticker-bars-container .bar:nth-child(5n + 1) {
-  --peak-height: 130px;
-  --base-height: 45px;
+  --peak-height: 115px;
+  --base-height: 55px;
 }
 .ticker-bars-container .bar:nth-child(5n + 2) {
   --peak-height: 95px;
-  --base-height: 55px;
+  --base-height: 60px;
 }
 .ticker-bars-container .bar:nth-child(5n + 3) {
-  --peak-height: 150px;
-  --base-height: 30px;
+  --peak-height: 125px;
+  --base-height: 50px;
 }
 .ticker-bars-container .bar:nth-child(5n + 4) {
   --peak-height: 85px;
   --base-height: 65px;
 }
 .ticker-bars-container .bar:nth-child(5n) {
-  --peak-height: 110px;
-  --base-height: 50px;
+  --peak-height: 105px;
+  --base-height: 58px;
 }
+
+/* Traveling wave effect - staggered delays create RIGHT-TO-LEFT motion */
+/* Every 10th bar starts a new wave cycle - reversed order for RTL */
+.ticker-bars-container .bar:nth-child(10n + 1) { animation-delay: calc(var(--wave-offset, 0s) + 1.35s); }
+.ticker-bars-container .bar:nth-child(10n + 2) { animation-delay: calc(var(--wave-offset, 0s) + 1.2s); }
+.ticker-bars-container .bar:nth-child(10n + 3) { animation-delay: calc(var(--wave-offset, 0s) + 1.05s); }
+.ticker-bars-container .bar:nth-child(10n + 4) { animation-delay: calc(var(--wave-offset, 0s) + 0.9s); }
+.ticker-bars-container .bar:nth-child(10n + 5) { animation-delay: calc(var(--wave-offset, 0s) + 0.75s); }
+.ticker-bars-container .bar:nth-child(10n + 6) { animation-delay: calc(var(--wave-offset, 0s) + 0.6s); }
+.ticker-bars-container .bar:nth-child(10n + 7) { animation-delay: calc(var(--wave-offset, 0s) + 0.45s); }
+.ticker-bars-container .bar:nth-child(10n + 8) { animation-delay: calc(var(--wave-offset, 0s) + 0.3s); }
+.ticker-bars-container .bar:nth-child(10n + 9) { animation-delay: calc(var(--wave-offset, 0s) + 0.15s); }
+.ticker-bars-container .bar:nth-child(10n) { animation-delay: calc(var(--wave-offset, 0s) + 0s); }
+
+/* Offset wave groups - reversed for RTL (rightmost bars start first) */
+.ticker-bars-container .bar:nth-child(n + 191):nth-child(-n + 200) { --wave-offset: 0s; }
+.ticker-bars-container .bar:nth-child(n + 181):nth-child(-n + 190) { --wave-offset: 0.5s; }
+.ticker-bars-container .bar:nth-child(n + 171):nth-child(-n + 180) { --wave-offset: 1s; }
+.ticker-bars-container .bar:nth-child(n + 161):nth-child(-n + 170) { --wave-offset: 1.5s; }
+.ticker-bars-container .bar:nth-child(n + 151):nth-child(-n + 160) { --wave-offset: 2s; }
+.ticker-bars-container .bar:nth-child(n + 141):nth-child(-n + 150) { --wave-offset: 2.5s; }
+.ticker-bars-container .bar:nth-child(n + 131):nth-child(-n + 140) { --wave-offset: 3s; }
+.ticker-bars-container .bar:nth-child(n + 121):nth-child(-n + 130) { --wave-offset: 3.5s; }
+.ticker-bars-container .bar:nth-child(n + 111):nth-child(-n + 120) { --wave-offset: 4s; }
+.ticker-bars-container .bar:nth-child(n + 101):nth-child(-n + 110) { --wave-offset: 4.5s; }
+.ticker-bars-container .bar:nth-child(n + 91):nth-child(-n + 100) { --wave-offset: 5s; }
+.ticker-bars-container .bar:nth-child(n + 81):nth-child(-n + 90) { --wave-offset: 5.5s; }
+.ticker-bars-container .bar:nth-child(n + 71):nth-child(-n + 80) { --wave-offset: 6s; }
+.ticker-bars-container .bar:nth-child(n + 61):nth-child(-n + 70) { --wave-offset: 6.5s; }
+.ticker-bars-container .bar:nth-child(n + 51):nth-child(-n + 60) { --wave-offset: 7s; }
+.ticker-bars-container .bar:nth-child(n + 41):nth-child(-n + 50) { --wave-offset: 7.5s; }
+.ticker-bars-container .bar:nth-child(n + 31):nth-child(-n + 40) { --wave-offset: 8s; }
+.ticker-bars-container .bar:nth-child(n + 21):nth-child(-n + 30) { --wave-offset: 8.5s; }
+.ticker-bars-container .bar:nth-child(n + 11):nth-child(-n + 20) { --wave-offset: 9s; }
+.ticker-bars-container .bar:nth-child(-n + 10) { --wave-offset: 9.5s; }
 
 @keyframes bar-dance {
   0%,
   100% {
-    height: var(--base-height, 50px);
-    opacity: 0.6;
+    height: var(--base-height, 55px);
+    opacity: 0.5;
   }
-  25% {
-    height: calc(var(--peak-height, 100px) * 0.7);
-    opacity: 0.8;
+  30% {
+    height: calc(var(--peak-height, 100px) * 0.75);
+    opacity: 0.7;
   }
   50% {
     height: var(--peak-height, 100px);
-    opacity: 1;
+    opacity: 0.85;
   }
-  75% {
-    height: calc(var(--peak-height, 100px) * 0.5);
-    opacity: 0.7;
+  70% {
+    height: calc(var(--peak-height, 100px) * 0.65);
+    opacity: 0.65;
   }
 }
 
-/* Subtle shimmer effect overlay */
+/* Subtle shimmer effect overlay - slow sweep right to left */
 .ticker-shimmer {
   position: fixed;
   bottom: 0;
@@ -276,23 +284,25 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    transparent 40%,
-    rgba(86, 199, 243, 0.15) 50%,
-    transparent 60%,
+    transparent 35%,
+    rgba(86, 199, 243, 0.12) 45%,
+    rgba(86, 199, 243, 0.18) 50%,
+    rgba(86, 199, 243, 0.12) 55%,
+    transparent 65%,
     transparent 100%
   );
-  background-size: 200% 100%;
-  animation: shimmer-sweep 3s linear infinite;
+  background-size: 300% 100%;
+  animation: shimmer-sweep 12s ease-in-out infinite;
   pointer-events: none;
   z-index: 2;
 }
 
 @keyframes shimmer-sweep {
   0% {
-    background-position: 200% 0;
+    background-position: -150% 0;
   }
   100% {
-    background-position: -200% 0;
+    background-position: 150% 0;
   }
 }
 
