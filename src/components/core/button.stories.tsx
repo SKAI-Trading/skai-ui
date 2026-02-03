@@ -2,6 +2,34 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button, SkaiButton } from "../core/button";
 import { Mail, Loader2, ChevronRight, Plus, Download, ArrowRight, Wallet } from "lucide-react";
 
+/**
+ * Button Component - ShadCN Base + SKAI Branded Variants
+ *
+ * This component provides both standard ShadCN button variants and SKAI-branded
+ * button variants that follow the Figma design system exactly.
+ *
+ * ## Figma Reference (Skai-Design - TyX8YAtNDEIvsnSLQ3IXId)
+ * - CTA Section: 779:57
+ *   - Primary Buttons: 801:1059 (Sky Blue #56C7F3)
+ *   - Secondary Buttons: Outlined with Sky Blue border
+ *   - Tertiary Buttons: Text only, hover to Alien Green
+ *   - Link Buttons: Alien Green #17F9B4 with underline
+ *
+ * ## SKAI Button Specifications
+ * | Size    | Height | Padding    | Border Radius | Font Size |
+ * |---------|--------|------------|---------------|-----------|
+ * | Massive | 72px   | 48px / 20px| 16px          | 18px      |
+ * | Large   | 64px   | 40px / 20px| 16px          | 16px      |
+ * | Medium  | 50px   | 32px / 14px| 12px          | 14px      |
+ * | Small   | 46px   | 24px / 12px| 12px          | 14px      |
+ *
+ * ## Colors
+ * - Primary BG: #56C7F3 (Sky Blue 300)
+ * - Primary Text: #001615 (Green Coal 300)
+ * - Primary Hover: #17F9B4 (Alien Green)
+ * - Secondary Border: #56C7F3
+ * - Link Text: #17F9B4
+ */
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
@@ -10,7 +38,8 @@ const meta: Meta<typeof Button> = {
     docs: {
       description: {
         component:
-          "A versatile button component with multiple variants, sizes, and states. Includes both ShadCN-compatible Button and SKAI-branded SkaiButton variants.",
+          "A versatile button component with multiple variants, sizes, and states. Includes both ShadCN-compatible Button and SKAI-branded SkaiButton variants.\n\n" +
+          "**Figma Reference:** Skai-Design (TyX8YAtNDEIvsnSLQ3IXId) - CTA Section 779:57",
       },
     },
   },
