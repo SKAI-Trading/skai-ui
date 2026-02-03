@@ -22,6 +22,9 @@
 @import "./animations.css";
 @import "./typography.css";
 @import "./backgrounds.css";
+@import "./glass-cards.css";
+@import "./button-effects.css";
+@import "./cosmic-background.css";
 
 @tailwind base;
 @tailwind components;
