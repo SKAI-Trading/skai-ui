@@ -1,6 +1,6 @@
 /**
  * WaitlistModal - Email capture modal for waitlist signup
- * 
+ *
  * Features:
  * - Email input with validation
  * - Enter key submit support
@@ -40,12 +40,7 @@ export interface WaitlistModalProps {
 // =============================================================================
 
 const GoogleIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    className={className}
-    aria-hidden="true"
-  >
+  <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
     <path
       d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
       fill="#56C7F3"
@@ -115,7 +110,7 @@ const SpinnerIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 /**
  * WaitlistModal - Email capture modal for waitlist signup
- * 
+ *
  * @example
  * ```tsx
  * <WaitlistModal
@@ -182,34 +177,34 @@ export function WaitlistModal({
       {/* Loading Overlay */}
       {isLoading && (
         <div className="absolute inset-0 z-[10001] flex items-center justify-center bg-[#001615]/80">
-          <SpinnerIcon className="w-8 h-8 text-[#17F9B4]" />
+          <SpinnerIcon className="h-8 w-8 text-[#17F9B4]" />
         </div>
       )}
 
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-[343px] md:max-w-[468px] lg:max-w-[448px] bg-[#122524] border border-[#123f3c] rounded-[20px] md:rounded-[28px] lg:rounded-[32px] p-4 md:p-6 lg:p-6 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)]"
+        className="relative w-full max-w-[343px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-6 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
-        <div className="flex justify-end mb-4 md:mb-6 lg:mb-6">
+        <div className="mb-4 flex justify-end md:mb-6 lg:mb-6">
           <button
             onClick={onClose}
             disabled={isLoading}
-            className="w-4 h-4 flex items-center justify-center text-white hover:opacity-70 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex h-4 w-4 items-center justify-center text-white transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Close modal"
           >
-            <CloseIcon className="w-4 h-4" />
+            <CloseIcon className="h-4 w-4" />
           </button>
         </div>
 
         {/* Title */}
-        <h2 className="font-manrope font-light text-[24px] leading-[28px] md:text-[28px] md:leading-[32px] lg:text-[32px] lg:leading-[36px] tracking-[-0.96px] md:tracking-[-1.12px] lg:tracking-[-1.28px] text-white text-center mb-3 md:mb-4 lg:mb-4">
+        <h2 className="font-manrope mb-3 text-center text-[24px] font-light leading-[28px] tracking-[-0.96px] text-white md:mb-4 md:text-[28px] md:leading-[32px] md:tracking-[-1.12px] lg:mb-4 lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
           Join the waitlist
         </h2>
 
         {/* Description */}
-        <p className="font-manrope font-normal text-[14px] leading-[20px] md:text-[16px] md:leading-[22px] lg:text-[18px] lg:leading-[24px] text-[#E0E0E0] text-center mb-6 md:mb-8 lg:mb-8 px-2 md:px-4 lg:px-4">
+        <p className="font-manrope mb-6 px-2 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-8 md:px-4 md:text-[16px] md:leading-[22px] lg:mb-8 lg:px-4 lg:text-[18px] lg:leading-[24px]">
           Enter your email and we&apos;ll let you know when SKAI is ready
         </p>
 
@@ -226,17 +221,27 @@ export function WaitlistModal({
                 disabled={isLoading}
                 placeholder="Email"
                 autoComplete="email"
-                className="w-full bg-[#001615] border border-[#123f3c] focus:border-[#17F9B4] rounded-[12px] md:rounded-[14px] lg:rounded-[16px] px-4 py-3.5 md:px-5 md:py-4 lg:px-6 lg:py-5 font-manrope font-normal text-[14px] leading-[20px] md:text-[15px] md:leading-[21px] lg:text-[16px] lg:leading-[22px] text-white placeholder:text-[#5d6b6a] focus:outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed pr-20"
+                className="font-manrope w-full rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 py-3.5 pr-20 text-[14px] font-normal leading-[20px] text-white transition-colors placeholder:text-[#5d6b6a] focus:border-[#17F9B4] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:px-6 lg:py-5 lg:text-[16px] lg:leading-[22px]"
                 aria-label="Email address"
               />
               {/* Enter hint */}
               {email.trim() && !isLoading && (
                 <button
                   type="submit"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 px-2 py-1 rounded bg-[#17F9B4]/10 text-[#17F9B4] text-xs font-manrope hover:bg-[#17F9B4]/20 transition-colors"
+                  className="font-manrope absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1 rounded bg-[#17F9B4]/10 px-2 py-1 text-xs text-[#17F9B4] transition-colors hover:bg-[#17F9B4]/20"
                 >
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="h-3 w-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                   Enter
                 </button>
@@ -248,7 +253,7 @@ export function WaitlistModal({
           <button
             type="submit"
             disabled={!email.trim() || isLoading}
-            className="w-full bg-[#56c7f3] hover:bg-[#56c7f3]/90 disabled:opacity-50 disabled:cursor-not-allowed rounded-[12px] md:rounded-[14px] lg:rounded-[16px] px-6 py-4 md:px-8 md:py-4.5 lg:px-10 lg:py-5 font-manrope font-normal text-[14px] leading-[20px] md:text-[15px] md:leading-[21px] lg:text-[16px] lg:leading-[22px] tracking-[-0.56px] md:tracking-[-0.6px] lg:tracking-[-0.64px] text-[#001615] text-center transition-all mb-5 md:mb-5.5 lg:mb-6"
+            className="md:py-4.5 font-manrope md:mb-5.5 mb-5 w-full rounded-[12px] bg-[#56c7f3] px-6 py-4 text-center text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56c7f3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-8 md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:mb-6 lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
           >
             Continue
           </button>
@@ -257,12 +262,12 @@ export function WaitlistModal({
         {/* OR Divider */}
         {(onGoogleLogin || onAppleLogin) && (
           <>
-            <div className="flex items-center gap-4 md:gap-5 lg:gap-[19px] mb-5 md:mb-5.5 lg:mb-6">
-              <div className="flex-1 h-[1px] bg-[#123f3c]" />
-              <span className="font-manrope font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#95a09f]">
+            <div className="md:mb-5.5 mb-5 flex items-center gap-4 md:gap-5 lg:mb-6 lg:gap-[19px]">
+              <div className="h-[1px] flex-1 bg-[#123f3c]" />
+              <span className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#95a09f]">
                 OR
               </span>
-              <div className="flex-1 h-[1px] bg-[#123f3c]" />
+              <div className="h-[1px] flex-1 bg-[#123f3c]" />
             </div>
 
             {/* Social Login Buttons */}
@@ -272,10 +277,10 @@ export function WaitlistModal({
                 <button
                   onClick={onGoogleLogin}
                   disabled={isLoading}
-                  className="flex-1 bg-[#001615] border-[1.5px] border-[#56c7f3] hover:border-[#56c7f3]/80 rounded-[12px] md:rounded-[14px] lg:rounded-[16px] px-4 py-4 md:px-5 md:py-4.5 lg:px-[22px] lg:py-5 flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="md:py-4.5 flex flex-1 items-center justify-center gap-2 rounded-[12px] border-[1.5px] border-[#56c7f3] bg-[#001615] px-4 py-4 transition-all hover:border-[#56c7f3]/80 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 lg:rounded-[16px] lg:px-[22px] lg:py-5"
                 >
-                  <GoogleIcon className="w-5 h-5 md:w-[22px] md:h-[22px] lg:w-6 lg:h-6 shrink-0" />
-                  <span className="font-manrope font-normal text-[14px] leading-[20px] md:text-[15px] md:leading-[21px] lg:text-[16px] lg:leading-[22px] tracking-[-0.56px] md:tracking-[-0.6px] lg:tracking-[-0.64px] text-[#56c7f3]">
+                  <GoogleIcon className="h-5 w-5 shrink-0 md:h-[22px] md:w-[22px] lg:h-6 lg:w-6" />
+                  <span className="font-manrope text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#56c7f3] md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                     Google
                   </span>
                 </button>
@@ -286,10 +291,10 @@ export function WaitlistModal({
                 <button
                   onClick={onAppleLogin}
                   disabled={isLoading}
-                  className="flex-1 bg-[#001615] border-[1.5px] border-[#56c7f3] hover:border-[#56c7f3]/80 rounded-[12px] md:rounded-[14px] lg:rounded-[16px] px-4 py-4 md:px-5 md:py-4.5 lg:px-[22px] lg:py-5 flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="md:py-4.5 flex flex-1 items-center justify-center gap-2 rounded-[12px] border-[1.5px] border-[#56c7f3] bg-[#001615] px-4 py-4 transition-all hover:border-[#56c7f3]/80 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 lg:rounded-[16px] lg:px-[22px] lg:py-5"
                 >
-                  <AppleIcon className="w-5 h-5 md:w-[22px] md:h-[22px] lg:w-6 lg:h-6 shrink-0 text-[#56c7f3]" />
-                  <span className="font-manrope font-normal text-[14px] leading-[20px] md:text-[15px] md:leading-[21px] lg:text-[16px] lg:leading-[22px] tracking-[-0.56px] md:tracking-[-0.6px] lg:tracking-[-0.64px] text-[#56c7f3]">
+                  <AppleIcon className="h-5 w-5 shrink-0 text-[#56c7f3] md:h-[22px] md:w-[22px] lg:h-6 lg:w-6" />
+                  <span className="font-manrope text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#56c7f3] md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                     Apple
                   </span>
                 </button>

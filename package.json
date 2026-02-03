@@ -1,6 +1,11 @@
 {
-  "name": "@skai/ui",
+  "name": "@skai-trade/ui",
   "version": "0.1.0",
+  "private": false,
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
+  },
   "description": "SKAI UI Component Library - Shared React components for the SKAI ecosystem",
   "type": "module",
   "sideEffects": [

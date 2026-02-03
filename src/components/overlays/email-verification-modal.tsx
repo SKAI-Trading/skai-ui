@@ -1,6 +1,6 @@
 /**
  * EmailVerificationModal - OTP verification modal for email authentication
- * 
+ *
  * Features:
  * - 6-digit OTP input with auto-advance
  * - Auto-submit when complete
@@ -101,7 +101,7 @@ const SpinnerIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 /**
  * EmailVerificationModal - OTP verification modal for email authentication
- * 
+ *
  * @example
  * ```tsx
  * <EmailVerificationModal
@@ -200,10 +200,7 @@ export function EmailVerificationModal({
     }
   };
 
-  const handleKeyDown = (
-    index: number,
-    e: React.KeyboardEvent<HTMLInputElement>
-  ) => {
+  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
     // Handle backspace
     if (e.key === "Backspace" && !code[index] && index > 0) {
       inputRefs.current[index - 1]?.focus();
@@ -275,58 +272,60 @@ export function EmailVerificationModal({
     >
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-[343px] md:max-w-[468px] lg:max-w-[448px] bg-[#122524] border border-[#123f3c] rounded-[20px] md:rounded-[28px] lg:rounded-[32px] p-4 md:p-6 lg:p-6 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)]"
+        className="relative w-full max-w-[343px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-6 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Back and Close Buttons */}
-        <div className="flex items-center justify-between mb-4 md:mb-6 lg:mb-6">
+        <div className="mb-4 flex items-center justify-between md:mb-6 lg:mb-6">
           <button
             onClick={onBack}
             disabled={loading}
-            className="flex items-center gap-1.5 md:gap-2 text-white hover:opacity-70 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-1.5 text-white transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-50 md:gap-2"
             aria-label="Back"
           >
-            <BackIcon className="w-4 h-4" />
-            <span className="font-manrope font-normal text-[14px] leading-[18px] tracking-[-0.56px]">
+            <BackIcon className="h-4 w-4" />
+            <span className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px]">
               Back
             </span>
           </button>
           <button
             onClick={onClose}
             disabled={loading}
-            className="w-4 h-4 flex items-center justify-center text-white hover:opacity-70 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex h-4 w-4 items-center justify-center text-white transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Close modal"
           >
-            <CloseIcon className="w-4 h-4" />
+            <CloseIcon className="h-4 w-4" />
           </button>
         </div>
 
         {/* Title */}
-        <h2 className="font-manrope font-light text-[24px] leading-[28px] md:text-[28px] md:leading-[32px] lg:text-[32px] lg:leading-[36px] tracking-[-0.96px] md:tracking-[-1.12px] lg:tracking-[-1.28px] text-white text-center mb-3 md:mb-4 lg:mb-4">
+        <h2 className="font-manrope mb-3 text-center text-[24px] font-light leading-[28px] tracking-[-0.96px] text-white md:mb-4 md:text-[28px] md:leading-[32px] md:tracking-[-1.12px] lg:mb-4 lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
           Email verification
         </h2>
 
         {/* Description */}
-        <p className="font-manrope font-normal text-[14px] leading-[20px] md:text-[16px] md:leading-[22px] lg:text-[18px] lg:leading-[24px] text-[#E0E0E0] text-center mb-6 md:mb-6 lg:mb-6 px-1 md:px-2 lg:px-0">
+        <p className="font-manrope mb-6 px-1 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:px-2 md:text-[16px] md:leading-[22px] lg:mb-6 lg:px-0 lg:text-[18px] lg:leading-[24px]">
           Enter the verification code sent to <br />
-          <span className="text-white font-semibold">{email}</span>
+          <span className="font-semibold text-white">{email}</span>
         </p>
 
         {/* Code Input */}
         <div className="mb-6 md:mb-6 lg:mb-6">
-          <div className="flex justify-center gap-1 md:gap-2 lg:gap-3 mb-4 md:mb-4 lg:mb-4 px-1 md:px-0">
+          <div className="mb-4 flex justify-center gap-1 px-1 md:mb-4 md:gap-2 md:px-0 lg:mb-4 lg:gap-3">
             {code.map((digit, index) => (
               <div
                 key={index}
                 className={cn(
-                  "bg-[#001615] border rounded-[12px] md:rounded-[14px] lg:rounded-[16px] px-1 py-2.5 md:px-2.5 md:py-4 lg:px-4 lg:py-5 transition-colors flex-shrink-0",
+                  "flex-shrink-0 rounded-[12px] border bg-[#001615] px-1 py-2.5 transition-colors md:rounded-[14px] md:px-2.5 md:py-4 lg:rounded-[16px] lg:px-4 lg:py-5",
                   localError
                     ? "border-[#FF4444]"
                     : "border-[#123f3c] focus-within:border-[#17F9B4]"
                 )}
               >
                 <input
-                  ref={(el) => { inputRefs.current[index] = el; }}
+                  ref={(el) => {
+                    inputRefs.current[index] = el;
+                  }}
                   type="text"
                   inputMode="numeric"
                   maxLength={1}
@@ -335,7 +334,7 @@ export function EmailVerificationModal({
                   onKeyDown={(e) => handleKeyDown(index, e)}
                   onPaste={index === 0 ? handlePaste : undefined}
                   disabled={loading}
-                  className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] lg:w-5 lg:h-[38px] bg-transparent text-center font-manrope font-normal text-[18px] md:text-[20px] lg:text-[24px] leading-none text-white focus:outline-none border-none disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="font-manrope h-[32px] w-[32px] border-none bg-transparent text-center text-[18px] font-normal leading-none text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:h-[40px] md:w-[40px] md:text-[20px] lg:h-[38px] lg:w-5 lg:text-[24px]"
                   aria-label={`Digit ${index + 1}`}
                 />
               </div>
@@ -344,7 +343,7 @@ export function EmailVerificationModal({
 
           {/* Error Message */}
           {localError && (
-            <p className="text-center text-[#FF4444] font-manrope font-medium text-[14px] leading-[18px] tracking-[-0.56px] mb-8">
+            <p className="font-manrope mb-8 text-center text-[14px] font-medium leading-[18px] tracking-[-0.56px] text-[#FF4444]">
               {localError}
             </p>
           )}
@@ -358,11 +357,11 @@ export function EmailVerificationModal({
               }
             }}
             disabled={!code.every((digit) => digit !== "") || loading}
-            className="w-full bg-[#56c7f3] hover:bg-[#56c7f3]/90 disabled:opacity-50 disabled:cursor-not-allowed rounded-[12px] md:rounded-[14px] lg:rounded-[16px] px-6 py-4 md:px-10 md:py-5 lg:px-10 lg:py-5 font-manrope font-normal text-[14px] leading-[20px] md:text-[16px] md:leading-[22px] lg:text-[16px] lg:leading-[22px] tracking-[-0.56px] md:tracking-[-0.64px] lg:tracking-[-0.64px] text-[#001615] text-center transition-all flex items-center justify-center gap-2"
+            className="font-manrope flex w-full items-center justify-center gap-2 rounded-[12px] bg-[#56c7f3] px-6 py-4 text-center text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56c7f3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-10 md:py-5 md:text-[16px] md:leading-[22px] md:tracking-[-0.64px] lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
           >
             {loading ? (
               <>
-                <SpinnerIcon className="w-4 h-4 text-[#001615]" />
+                <SpinnerIcon className="h-4 w-4 text-[#001615]" />
                 <span>Verifying...</span>
               </>
             ) : (
@@ -378,15 +377,15 @@ export function EmailVerificationModal({
               <button
                 onClick={handleResend}
                 disabled={loading}
-                className="font-manrope font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#56c7f3] hover:text-[#56c7f3]/80 transition-colors underline disabled:opacity-50 disabled:cursor-not-allowed"
+                className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#56c7f3] underline transition-colors hover:text-[#56c7f3]/80 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Resend code
               </button>
             )
           ) : (
-            <p className="font-manrope font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+            <p className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
               Resend code in{" "}
-              <span className="text-[#56c7f3] font-semibold">
+              <span className="font-semibold text-[#56c7f3]">
                 {timer} {timer === 1 ? "second" : "seconds"}
               </span>
             </p>

@@ -1,11 +1,11 @@
 /**
  * ThirdwebOTPHandler - Utility component for Thirdweb OTP UX enhancement
- * 
+ *
  * Improves the UX of the Thirdweb OTP (One-Time Password) input:
  * 1. Auto-focuses the input when the modal appears.
  * 2. Allows typing immediately (captures keydown) even if input isn't focused.
  * 3. Auto-submits/verifies when the code is fully entered.
- * 
+ *
  * This component renders nothing - it just adds behavior via MutationObserver.
  */
 
@@ -32,15 +32,15 @@ export interface ThirdwebOTPHandlerProps {
 
 /**
  * ThirdwebOTPHandler - Utility component for Thirdweb OTP UX enhancement
- * 
+ *
  * Place this component anywhere in your tree when using Thirdweb's OTP modal.
  * It automatically detects OTP inputs and enhances the user experience.
- * 
+ *
  * @example
  * ```tsx
  * // In your app layout or near Thirdweb components
  * <ThirdwebOTPHandler />
- * 
+ *
  * // With custom configuration
  * <ThirdwebOTPHandler
  *   otpLength={6}
@@ -101,10 +101,7 @@ export function ThirdwebOTPHandler({
 
       // If user is already in an input/textarea, don't interfere
       const active = document.activeElement;
-      if (
-        active &&
-        (active.tagName === "INPUT" || active.tagName === "TEXTAREA")
-      )
+      if (active && (active.tagName === "INPUT" || active.tagName === "TEXTAREA"))
         return;
 
       // Focus the first empty input or the first one

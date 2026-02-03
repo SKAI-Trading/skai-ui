@@ -1,6 +1,6 @@
 /**
  * WalletChoiceModal - Modal for choosing wallet type
- * 
+ *
  * Features:
  * - Two wallet options: email wallet or external wallet
  * - SKAI branding with lightning bolt icon
@@ -47,12 +47,7 @@ const CloseIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 /** SKAI Lightning Bolt Icon */
 const SkaiLightningIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg
-    viewBox="0 0 48 48"
-    fill="none"
-    className={className}
-    aria-hidden="true"
-  >
+  <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
     <path
       d="M0 23.5543C0 10.5456 10.5456 0 23.5543 0C36.5629 0 47.1085 10.5456 47.1085 23.5543V24.4457C47.1085 37.4544 36.5629 48 23.5543 48C10.5456 48 0 37.4544 0 24.4457V23.5543Z"
       fill="#56C7F3"
@@ -70,12 +65,7 @@ const SkaiLightningIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 /** External Wallet Connect Icon */
 const ExternalWalletIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg
-    viewBox="0 0 48 48"
-    fill="none"
-    className={className}
-    aria-hidden="true"
-  >
+  <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
     <rect width="48" height="48" rx="24" fill="#56C7F3" fillOpacity="0.1" />
     <path
       d="M14 24C14 18.477 18.477 14 24 14C29.523 14 34 18.477 34 24C34 29.523 29.523 34 24 34"
@@ -105,7 +95,7 @@ const ExternalWalletIcon: React.FC<{ className?: string }> = ({ className }) => 
 
 /**
  * WalletChoiceModal - Modal for choosing wallet type
- * 
+ *
  * @example
  * ```tsx
  * <WalletChoiceModal
@@ -139,27 +129,27 @@ export function WalletChoiceModal({
     >
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-[343px] md:max-w-[468px] lg:max-w-[520px] bg-[#122524] border border-[#123f3c] rounded-[20px] md:rounded-[28px] lg:rounded-[32px] p-4 md:p-6 lg:p-6 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)]"
+        className="relative w-full max-w-[343px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-6 lg:max-w-[520px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
-        <div className="flex items-center justify-end mb-4 md:mb-5 lg:mb-6">
+        <div className="mb-4 flex items-center justify-end md:mb-5 lg:mb-6">
           <button
             onClick={onClose}
-            className="w-4 h-4 flex items-center justify-center text-white hover:opacity-70 transition-opacity"
+            className="flex h-4 w-4 items-center justify-center text-white transition-opacity hover:opacity-70"
             aria-label="Close modal"
           >
-            <CloseIcon className="w-4 h-4" />
+            <CloseIcon className="h-4 w-4" />
           </button>
         </div>
 
         {/* Title */}
-        <h2 className="font-manrope font-light text-white text-center text-[20px] leading-[24px] tracking-[-0.8px] md:text-[24px] md:leading-[28px] md:tracking-[-0.96px] lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px] mb-2 md:mb-3 lg:mb-4">
+        <h2 className="font-manrope mb-2 text-center text-[20px] font-light leading-[24px] tracking-[-0.8px] text-white md:mb-3 md:text-[24px] md:leading-[28px] md:tracking-[-0.96px] lg:mb-4 lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
           Choose your wallet
         </h2>
 
         {/* Subtitle */}
-        <p className="font-manrope font-normal text-[14px] leading-[20px] md:text-[16px] md:leading-[22px] lg:text-[18px] lg:leading-[24px] text-[#E0E0E0] text-center mb-5 md:mb-6 lg:mb-6 px-1 md:px-2 lg:px-0">
+        <p className="font-manrope mb-5 px-1 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:px-2 md:text-[16px] md:leading-[22px] lg:mb-6 lg:px-0 lg:text-[18px] lg:leading-[24px]">
           Choose how you&apos;d like to store your assets.
         </p>
 
@@ -168,21 +158,21 @@ export function WalletChoiceModal({
           {/* Email Wallet Option */}
           <button
             onClick={onSelectEmailWallet}
-            className="w-full bg-[#001615] border-[1.5px] border-[#56c7f3] hover:bg-[#56c7f3]/5 rounded-[12px] md:rounded-[14px] lg:rounded-[16px] p-4 md:p-5 lg:p-6 flex items-start gap-3 md:gap-4 lg:gap-4 transition-all text-left group"
+            className="group flex w-full items-start gap-3 rounded-[12px] border-[1.5px] border-[#56c7f3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56c7f3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:p-6"
           >
             {/* Icon */}
-            <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 flex-shrink-0 flex items-center justify-center">
-              <SkaiLightningIcon className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-14 lg:w-14">
+              <SkaiLightningIcon className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14" />
             </div>
 
-            <div className="self-stretch w-px border-l border-dashed border-[#123f3c] opacity-80" />
+            <div className="w-px self-stretch border-l border-dashed border-[#123f3c] opacity-80" />
 
             {/* Content */}
             <div className="flex-1 text-[#56C7F3]">
-              <h3 className="font-manrope font-normal text-[12px] leading-[16px] md:text-[14px] md:leading-[18px] lg:text-[16px] lg:leading-[22px] tracking-[-0.64px] md:tracking-[-0.72px] lg:tracking-[-0.8px] mb-1 md:mb-1.5 lg:mb-2">
+              <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.8px]">
                 Use built in email wallet
               </h3>
-              <p className="font-manrope font-normal text-[10px] leading-[14px] md:text-[12px] md:leading-[16px] lg:text-[16px] lg:leading-[22px] md:tracking-[-0.6px] lg:tracking-[-0.64px]">
+              <p className="font-manrope text-[10px] font-normal leading-[14px] md:text-[12px] md:leading-[16px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                 Secure wallet provided by Skai
               </p>
             </div>
@@ -191,21 +181,21 @@ export function WalletChoiceModal({
           {/* External Wallet Option */}
           <button
             onClick={onSelectExternalWallet}
-            className="w-full bg-[#001615] border-[1.5px] border-[#56c7f3] hover:bg-[#56c7f3]/5 rounded-[12px] md:rounded-[14px] lg:rounded-[16px] p-4 md:p-5 lg:p-6 flex items-start gap-3 md:gap-4 lg:gap-4 transition-all text-left group"
+            className="group flex w-full items-start gap-3 rounded-[12px] border-[1.5px] border-[#56c7f3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56c7f3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:p-6"
           >
             {/* Icon */}
-            <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 flex-shrink-0 flex items-center justify-center">
-              <ExternalWalletIcon className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-14 lg:w-14">
+              <ExternalWalletIcon className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14" />
             </div>
 
-            <div className="self-stretch w-px border-l border-dashed border-[#123f3c] opacity-80" />
+            <div className="w-px self-stretch border-l border-dashed border-[#123f3c] opacity-80" />
 
             {/* Content */}
             <div className="flex-1 text-[#56C7F3]">
-              <h3 className="font-manrope font-normal text-[12px] leading-[16px] md:text-[14px] md:leading-[18px] lg:text-[16px] lg:leading-[22px] tracking-[-0.64px] md:tracking-[-0.72px] lg:tracking-[-0.8px] mb-1 md:mb-1.5 lg:mb-2">
+              <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.8px]">
                 Link external wallet
               </h3>
-              <p className="font-manrope font-normal text-[10px] leading-[14px] md:text-[12px] md:leading-[16px] lg:text-[16px] lg:leading-[22px] md:tracking-[-0.6px] lg:tracking-[-0.64px]">
+              <p className="font-manrope text-[10px] font-normal leading-[14px] md:text-[12px] md:leading-[16px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                 Add Metamask, Coinbase, etc. to your account
               </p>
             </div>
