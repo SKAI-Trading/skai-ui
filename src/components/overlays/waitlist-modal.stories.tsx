@@ -9,8 +9,14 @@ import { WaitlistModal } from "./waitlist-modal";
  * It supports email input with validation, Google/Apple social login options, and loading states.
  *
  * ## Figma Reference
- * - Design: Skai-Web-App > Onboarding
- * - Node IDs: 2005:9301 (Desktop), 2005:17764 (Tablet), 2005:27956 (Mobile)
+ * - Design System: Skai-Design (TyX8YAtNDEIvsnSLQ3IXId)
+ *   - Input Components: 976:871 (Active), 976:872 (Focus)
+ *   - CTA Buttons: 801:1059 (Primary Large)
+ *   - Colors: 691:87 (Color palette)
+ * - App Designs: Skai-Web-App (3sSzw1KewMtUbeLAv7uW0r)
+ *   - Desktop (1440px): 2005:9301 (Empty), 2005:10032 (Active)
+ *   - Tablet (768px): 2005:17764 (Empty), 2005:18495 (Active)
+ *   - Mobile (375px): 2005:27956 (Empty), 2005:28687 (Active)
  * - States: Empty, Active (with "↵ ENTER" hint), Loading
  *
  * ## Usage

@@ -9,7 +9,13 @@ import { WalletChoiceModal } from "./wallet-choice-modal";
  * or connecting their own external wallet (MetaMask, etc.).
  *
  * ## Figma Reference
- * - Design: Skai-Design > Landing > Wallet Choice Modal
+ * - Design System: Skai-Design (TyX8YAtNDEIvsnSLQ3IXId)
+ *   - CTA Buttons: 801:1059 (Primary), 801:1061 (Secondary)
+ *   - Icons: 777:1306 (Icon directory)
+ * - App Designs: Skai-Web-App (3sSzw1KewMtUbeLAv7uW0r)
+ *   - Desktop (1440px): 2005:11493
+ *   - Tablet (768px): 2005:20686
+ *   - Mobile (375px): 2005:30878
  *
  * ## Usage
  * ```tsx

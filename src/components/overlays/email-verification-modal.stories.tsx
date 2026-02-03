@@ -9,7 +9,13 @@ import { EmailVerificationModal } from "./email-verification-modal";
  * It allows them to enter the OTP code sent to their email.
  *
  * ## Figma Reference
- * - Design: Skai-Design > Landing > Email Verification Modal
+ * - Design System: Skai-Design (TyX8YAtNDEIvsnSLQ3IXId)
+ *   - Input Components: 801:1386 (Input section)
+ *   - CTA Buttons: 779:57 (CTA section)
+ * - App Designs: Skai-Web-App (3sSzw1KewMtUbeLAv7uW0r)
+ *   - Desktop (1440px): 2005:10763
+ *   - Tablet (768px): 2005:19226
+ *   - Mobile (375px): 2005:30148
  *
  * ## Usage
  * ```tsx
