@@ -153,7 +153,7 @@
   pointer-events: none;
 }
 
-/* Generate many bars with CSS custom properties for varied animation */
+/* Generate many bars with CSS custom properties for traveling wave */
 .ticker-bars-container .bar {
   flex: 1;
   max-width: 3px;
@@ -166,87 +166,80 @@
   );
   border-radius: 1.5px 1.5px 0 0;
   transform-origin: bottom;
-  animation: bar-breathe 25s ease-in-out infinite;
+  /* All bars use same duration - wave created by delay offsets */
+  animation: wave-pulse 8s ease-in-out infinite;
   box-shadow: 0 0 6px rgba(86, 199, 243, 0.2);
+  --peak-height: 130px;
+  --base-height: 40px;
 }
 
-/* Very slow, varied animation durations for organic feel */
-.ticker-bars-container .bar:nth-child(4n + 1) {
-  animation-duration: 22s;
-  --peak-height: 110px;
-  --base-height: 60px;
+/* Height variations for visual interest */
+.ticker-bars-container .bar:nth-child(3n + 1) {
+  --peak-height: 140px;
+  --base-height: 35px;
 }
-
-.ticker-bars-container .bar:nth-child(4n + 2) {
-  animation-duration: 28s;
-  --peak-height: 95px;
-  --base-height: 65px;
-}
-
-.ticker-bars-container .bar:nth-child(4n + 3) {
-  animation-duration: 25s;
+.ticker-bars-container .bar:nth-child(3n + 2) {
   --peak-height: 120px;
-  --base-height: 55px;
+  --base-height: 45px;
+}
+.ticker-bars-container .bar:nth-child(3n) {
+  --peak-height: 130px;
+  --base-height: 40px;
 }
 
-.ticker-bars-container .bar:nth-child(4n) {
-  animation-duration: 30s;
-  --peak-height: 85px;
-  --base-height: 70px;
-}
+/*
+ * TRAVELING WAVE EFFECT
+ * Each bar's delay is based on its position from right to left.
+ * With 200 bars and 8s animation, we spread delays across the full cycle.
+ * Wave travels from right (bar 200) to left (bar 1).
+ * delay = (200 - barIndex) * (8s / 200) = position-based offset
+ */
 
-/* Gentle height variations - keep heights closer together for subtlety */
-.ticker-bars-container .bar:nth-child(5n + 1) {
-  --peak-height: 105px;
-  --base-height: 62px;
-}
-.ticker-bars-container .bar:nth-child(5n + 2) {
-  --peak-height: 90px;
-  --base-height: 68px;
-}
-.ticker-bars-container .bar:nth-child(5n + 3) {
-  --peak-height: 115px;
-  --base-height: 58px;
-}
-.ticker-bars-container .bar:nth-child(5n + 4) {
-  --peak-height: 82px;
-  --base-height: 72px;
-}
-.ticker-bars-container .bar:nth-child(5n) {
-  --peak-height: 100px;
-  --base-height: 65px;
-}
+/* Bars 191-200 (rightmost) - start first */
+.ticker-bars-container .bar:nth-child(n + 191) { animation-delay: calc((200 - 195) * 0.04s); }
 
-/* Continuous wave - spread delays evenly across full animation cycle */
-/* Each bar group gets a portion of the total animation time as delay */
-.ticker-bars-container .bar:nth-child(20n + 1) { animation-delay: 0s; }
-.ticker-bars-container .bar:nth-child(20n + 2) { animation-delay: 1.25s; }
-.ticker-bars-container .bar:nth-child(20n + 3) { animation-delay: 2.5s; }
-.ticker-bars-container .bar:nth-child(20n + 4) { animation-delay: 3.75s; }
-.ticker-bars-container .bar:nth-child(20n + 5) { animation-delay: 5s; }
-.ticker-bars-container .bar:nth-child(20n + 6) { animation-delay: 6.25s; }
-.ticker-bars-container .bar:nth-child(20n + 7) { animation-delay: 7.5s; }
-.ticker-bars-container .bar:nth-child(20n + 8) { animation-delay: 8.75s; }
-.ticker-bars-container .bar:nth-child(20n + 9) { animation-delay: 10s; }
-.ticker-bars-container .bar:nth-child(20n + 10) { animation-delay: 11.25s; }
-.ticker-bars-container .bar:nth-child(20n + 11) { animation-delay: 12.5s; }
-.ticker-bars-container .bar:nth-child(20n + 12) { animation-delay: 13.75s; }
-.ticker-bars-container .bar:nth-child(20n + 13) { animation-delay: 15s; }
-.ticker-bars-container .bar:nth-child(20n + 14) { animation-delay: 16.25s; }
-.ticker-bars-container .bar:nth-child(20n + 15) { animation-delay: 17.5s; }
-.ticker-bars-container .bar:nth-child(20n + 16) { animation-delay: 18.75s; }
-.ticker-bars-container .bar:nth-child(20n + 17) { animation-delay: 20s; }
-.ticker-bars-container .bar:nth-child(20n + 18) { animation-delay: 21.25s; }
-.ticker-bars-container .bar:nth-child(20n + 19) { animation-delay: 22.5s; }
-.ticker-bars-container .bar:nth-child(20n) { animation-delay: 23.75s; }
+/* Create wave by giving each bar a delay based on position */
+/* Using CSS calc with custom property set via nth-child */
+.ticker-bars-container .bar:nth-child(1) { animation-delay: 7.96s; }
+.ticker-bars-container .bar:nth-child(2) { animation-delay: 7.92s; }
+.ticker-bars-container .bar:nth-child(3) { animation-delay: 7.88s; }
+.ticker-bars-container .bar:nth-child(4) { animation-delay: 7.84s; }
+.ticker-bars-container .bar:nth-child(5) { animation-delay: 7.80s; }
+.ticker-bars-container .bar:nth-child(6) { animation-delay: 7.76s; }
+.ticker-bars-container .bar:nth-child(7) { animation-delay: 7.72s; }
+.ticker-bars-container .bar:nth-child(8) { animation-delay: 7.68s; }
+.ticker-bars-container .bar:nth-child(9) { animation-delay: 7.64s; }
+.ticker-bars-container .bar:nth-child(10) { animation-delay: 7.60s; }
 
-/* Very smooth breathing animation - minimal opacity change to prevent flicker */
-@keyframes bar-breathe {
+/* Use nth-child ranges to set delays for groups (more efficient) */
+/* Each group of 10 bars shares similar delay range */
+.ticker-bars-container .bar:nth-child(n + 11):nth-child(-n + 20) { animation-delay: 7.4s; }
+.ticker-bars-container .bar:nth-child(n + 21):nth-child(-n + 30) { animation-delay: 7.0s; }
+.ticker-bars-container .bar:nth-child(n + 31):nth-child(-n + 40) { animation-delay: 6.6s; }
+.ticker-bars-container .bar:nth-child(n + 41):nth-child(-n + 50) { animation-delay: 6.2s; }
+.ticker-bars-container .bar:nth-child(n + 51):nth-child(-n + 60) { animation-delay: 5.8s; }
+.ticker-bars-container .bar:nth-child(n + 61):nth-child(-n + 70) { animation-delay: 5.4s; }
+.ticker-bars-container .bar:nth-child(n + 71):nth-child(-n + 80) { animation-delay: 5.0s; }
+.ticker-bars-container .bar:nth-child(n + 81):nth-child(-n + 90) { animation-delay: 4.6s; }
+.ticker-bars-container .bar:nth-child(n + 91):nth-child(-n + 100) { animation-delay: 4.2s; }
+.ticker-bars-container .bar:nth-child(n + 101):nth-child(-n + 110) { animation-delay: 3.8s; }
+.ticker-bars-container .bar:nth-child(n + 111):nth-child(-n + 120) { animation-delay: 3.4s; }
+.ticker-bars-container .bar:nth-child(n + 121):nth-child(-n + 130) { animation-delay: 3.0s; }
+.ticker-bars-container .bar:nth-child(n + 131):nth-child(-n + 140) { animation-delay: 2.6s; }
+.ticker-bars-container .bar:nth-child(n + 141):nth-child(-n + 150) { animation-delay: 2.2s; }
+.ticker-bars-container .bar:nth-child(n + 151):nth-child(-n + 160) { animation-delay: 1.8s; }
+.ticker-bars-container .bar:nth-child(n + 161):nth-child(-n + 170) { animation-delay: 1.4s; }
+.ticker-bars-container .bar:nth-child(n + 171):nth-child(-n + 180) { animation-delay: 1.0s; }
+.ticker-bars-container .bar:nth-child(n + 181):nth-child(-n + 190) { animation-delay: 0.6s; }
+.ticker-bars-container .bar:nth-child(n + 191):nth-child(-n + 200) { animation-delay: 0.2s; }
+
+/* Wave animation - smooth sine-wave-like motion */
+@keyframes wave-pulse {
   0%, 100% {
-    height: var(--base-height, 65px);
+    height: var(--base-height, 40px);
   }
   50% {
-    height: var(--peak-height, 100px);
+    height: var(--peak-height, 130px);
   }
 }
 
