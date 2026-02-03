@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="platGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F0F0"/>
+      <stop offset="50%" stop-color="#E5E4E2"/>
+      <stop offset="100%" stop-color="#C9C9C9"/>
+    </linearGradient>
+  </defs>
+  <circle cx="12" cy="12" r="9" fill="url(#platGrad)"/>
+  <path d="M12 3l3 6h6l-5 4 2 7-6-4-6 4 2-7-5-4h6l3-6z" fill="white" fill-opacity="0.95"/>
+  <circle cx="12" cy="11" r="2" fill="#E5E4E2"/>
+</svg>

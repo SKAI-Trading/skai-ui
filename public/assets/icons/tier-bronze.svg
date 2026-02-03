@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A574"/>
+      <stop offset="50%" stop-color="#CD7F32"/>
+      <stop offset="100%" stop-color="#8B5A2B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="12" cy="12" r="9" fill="url(#bronzeGrad)"/>
+  <circle cx="12" cy="12" r="6" stroke="white" stroke-opacity="0.3" stroke-width="1" fill="none"/>
+  <path d="M12 6v12M8 10l4-4 4 4M8 14l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

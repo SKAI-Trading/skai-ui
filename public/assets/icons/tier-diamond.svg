@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="diamondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0FFFF"/>
+      <stop offset="50%" stop-color="#B9F2FF"/>
+      <stop offset="100%" stop-color="#87CEEB"/>
+    </linearGradient>
+  </defs>
+  <circle cx="12" cy="12" r="9" fill="url(#diamondGrad)"/>
+  <path d="M12 4L6 9l6 11 6-11-6-5z" fill="white" fill-opacity="0.95"/>
+  <path d="M6 9h12M9 9l3 11M15 9l-3 11" stroke="#B9F2FF" stroke-width="0.5" fill="none"/>
+</svg>
