@@ -139,39 +139,71 @@
 /* CSS-only animated bars (no JS required) */
 .ticker-bars-container {
   position: fixed;
-  bottom: -20px; /* Extend past viewport edge - bars go "into the ground" */
-  left: -20px;
-  right: -20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 200px;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 0;
-  padding: 0 0 20px 0; /* Bottom padding pushes bars up so they're visible */
-  z-index: 1;
+  padding: 0;
   pointer-events: none;
   overflow: hidden;
 }
 
-/* Generate bars that look like a stock chart */
+/* Back layer - green/teal tint, positioned behind */
+.ticker-bars-back {
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* Front layer - cyan/sky blue, positioned in front */
+.ticker-bars-front {
+  z-index: 2;
+}
+
+/* Base bar styles */
 .ticker-bars-container .bar {
   flex: 0 0 auto;
   width: 3px;
-  margin-right: 2px;
-  background: linear-gradient(
-    to top,
-    rgba(23, 249, 180, 0.15) 0%,
-    rgba(86, 199, 243, 0.5) 50%,
-    rgba(86, 199, 243, 0.85) 100%
-  );
+  margin-right: 3px;
   border-radius: 2px 2px 0 0;
   transform-origin: bottom;
   animation: stock-tick 20s ease-in-out infinite;
-  box-shadow:
-    0 0 8px rgba(86, 199, 243, 0.3),
-    0 0 20px rgba(86, 199, 243, 0.1);
   --peak-height: 150px;
-  --base-height: 60px;
+  --base-height: 50px;
+}
+
+/* Front layer bars - Cyan/Sky Blue (#56C7F3) */
+.ticker-bars-container .bar.bar-front {
+  background: linear-gradient(
+    to top,
+    rgba(86, 199, 243, 0.1) 0%,
+    rgba(86, 199, 243, 0.5) 40%,
+    rgba(86, 199, 243, 0.9) 100%
+  );
+  box-shadow:
+    0 0 8px rgba(86, 199, 243, 0.4),
+    0 0 16px rgba(86, 199, 243, 0.2);
+  --peak-height: 160px;
+  --base-height: 45px;
+}
+
+/* Back layer bars - Green/Alien Green (#17F9B4) tint */
+.ticker-bars-container .bar.bar-back {
+  background: linear-gradient(
+    to top,
+    rgba(23, 249, 180, 0.05) 0%,
+    rgba(23, 249, 180, 0.3) 40%,
+    rgba(45, 200, 160, 0.6) 100%
+  );
+  box-shadow:
+    0 0 6px rgba(23, 249, 180, 0.3),
+    0 0 12px rgba(23, 249, 180, 0.15);
+  --peak-height: 130px;
+  --base-height: 35px;
+  animation-duration: 25s; /* Slower for back layer */
 }
 
 /* Varied bar widths and spacing - like real stock charts */

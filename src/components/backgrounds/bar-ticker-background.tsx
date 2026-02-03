@@ -3,7 +3,7 @@ import { cn } from "../../lib/utils";
 
 export interface BarTickerBackgroundProps {
   /**
-   * Number of bars to render
+   * Number of bars to render per layer
    * @default 200
    */
   barCount?: number;
@@ -29,11 +29,11 @@ export interface BarTickerBackgroundProps {
 }
 
 /**
- * BarTickerBackground - Animated vertical bar background
+ * BarTickerBackground - Animated vertical bar background with layered colors
  *
- * Creates an animated stock ticker-style background with vertical bars
- * that oscillate like a live trading chart. Features a right-to-left
- * traveling wave effect with smooth, calm animations.
+ * Creates an animated stock ticker-style background with multiple layers of
+ * vertical bars in different colors (cyan front, green/teal back) that
+ * oscillate like a live trading chart.
  *
  * Requires backgrounds.css to be imported for animations.
  */
@@ -44,26 +44,46 @@ export function BarTickerBackground({
   showShimmer = false,
   showDepthBlur = true,
 }: BarTickerBackgroundProps) {
-  // Memoize the bars array to prevent unnecessary re-renders
-  const bars = React.useMemo(
+  // Memoize the bars arrays to prevent unnecessary re-renders
+  const frontBars = React.useMemo(
     () => Array.from({ length: barCount }, (_, i) => i),
+    [barCount]
+  );
+  const backBars = React.useMemo(
+    () => Array.from({ length: Math.floor(barCount * 0.8) }, (_, i) => i),
     [barCount]
   );
 
   return (
     <>
+      {/* Back layer - green/teal tint, shorter, slightly offset */}
       <div
         className={cn(
-          "ticker-bars-container transition-all duration-300",
+          "ticker-bars-container ticker-bars-back transition-all duration-300",
           isBlurred && "blur-md",
           className
         )}
         aria-hidden="true"
       >
-        {bars.map((i) => (
-          <div key={i} className="bar" />
+        {backBars.map((i) => (
+          <div key={i} className="bar bar-back" />
         ))}
       </div>
+
+      {/* Front layer - cyan/sky blue, taller */}
+      <div
+        className={cn(
+          "ticker-bars-container ticker-bars-front transition-all duration-300",
+          isBlurred && "blur-md",
+          className
+        )}
+        aria-hidden="true"
+      >
+        {frontBars.map((i) => (
+          <div key={i} className="bar bar-front" />
+        ))}
+      </div>
+
       {showShimmer && (
         <div
           className={cn(
