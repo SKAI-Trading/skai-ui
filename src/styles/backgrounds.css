@@ -139,17 +139,18 @@
 /* CSS-only animated bars (no JS required) */
 .ticker-bars-container {
   position: fixed;
-  bottom: 0;
+  bottom: -20px; /* Extend past viewport edge - bars go "into the ground" */
   left: -20px;
   right: -20px;
-  height: 180px;
+  height: 200px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 0;
-  padding: 0;
+  padding: 0 0 20px 0; /* Bottom padding pushes bars up so they're visible */
   z-index: 1;
   pointer-events: none;
+  overflow: hidden;
 }
 
 /* Generate bars that look like a stock chart */
@@ -159,16 +160,18 @@
   margin-right: 2px;
   background: linear-gradient(
     to top,
-    rgba(23, 249, 180, 0.1) 0%,
-    rgba(86, 199, 243, 0.4) 50%,
-    rgba(86, 199, 243, 0.7) 100%
+    rgba(23, 249, 180, 0.15) 0%,
+    rgba(86, 199, 243, 0.5) 50%,
+    rgba(86, 199, 243, 0.85) 100%
   );
-  border-radius: 1.5px 1.5px 0 0;
+  border-radius: 2px 2px 0 0;
   transform-origin: bottom;
-  animation: stock-tick 12s ease-in-out infinite;
-  box-shadow: 0 0 6px rgba(86, 199, 243, 0.2);
-  --peak-height: 130px;
-  --base-height: 50px;
+  animation: stock-tick 20s ease-in-out infinite;
+  box-shadow:
+    0 0 8px rgba(86, 199, 243, 0.3),
+    0 0 20px rgba(86, 199, 243, 0.1);
+  --peak-height: 150px;
+  --base-height: 60px;
 }
 
 /* Varied bar widths and spacing - like real stock charts */
@@ -185,41 +188,41 @@
 .ticker-bars-container .bar:nth-child(11n) { width: 3px; margin-right: 6px; }
 
 /*
- * RANDOMIZED DURATIONS - no pattern, pure chaos like real markets
+ * RANDOMIZED DURATIONS - slower, calmer movements
  * Using prime numbers to avoid repetition
  */
-.ticker-bars-container .bar:nth-child(17n + 1) { animation-duration: 8.3s; }
-.ticker-bars-container .bar:nth-child(17n + 2) { animation-duration: 11.7s; }
-.ticker-bars-container .bar:nth-child(17n + 3) { animation-duration: 9.1s; }
-.ticker-bars-container .bar:nth-child(17n + 4) { animation-duration: 14.3s; }
-.ticker-bars-container .bar:nth-child(17n + 5) { animation-duration: 7.9s; }
-.ticker-bars-container .bar:nth-child(17n + 6) { animation-duration: 12.1s; }
-.ticker-bars-container .bar:nth-child(17n + 7) { animation-duration: 10.7s; }
-.ticker-bars-container .bar:nth-child(17n + 8) { animation-duration: 13.9s; }
-.ticker-bars-container .bar:nth-child(17n + 9) { animation-duration: 8.7s; }
-.ticker-bars-container .bar:nth-child(17n + 10) { animation-duration: 15.1s; }
-.ticker-bars-container .bar:nth-child(17n + 11) { animation-duration: 9.9s; }
-.ticker-bars-container .bar:nth-child(17n + 12) { animation-duration: 11.3s; }
-.ticker-bars-container .bar:nth-child(17n + 13) { animation-duration: 7.3s; }
-.ticker-bars-container .bar:nth-child(17n + 14) { animation-duration: 13.1s; }
-.ticker-bars-container .bar:nth-child(17n + 15) { animation-duration: 10.3s; }
-.ticker-bars-container .bar:nth-child(17n + 16) { animation-duration: 14.7s; }
-.ticker-bars-container .bar:nth-child(17n) { animation-duration: 8.9s; }
+.ticker-bars-container .bar:nth-child(17n + 1) { animation-duration: 16s; }
+.ticker-bars-container .bar:nth-child(17n + 2) { animation-duration: 22s; }
+.ticker-bars-container .bar:nth-child(17n + 3) { animation-duration: 18s; }
+.ticker-bars-container .bar:nth-child(17n + 4) { animation-duration: 26s; }
+.ticker-bars-container .bar:nth-child(17n + 5) { animation-duration: 15s; }
+.ticker-bars-container .bar:nth-child(17n + 6) { animation-duration: 24s; }
+.ticker-bars-container .bar:nth-child(17n + 7) { animation-duration: 20s; }
+.ticker-bars-container .bar:nth-child(17n + 8) { animation-duration: 28s; }
+.ticker-bars-container .bar:nth-child(17n + 9) { animation-duration: 17s; }
+.ticker-bars-container .bar:nth-child(17n + 10) { animation-duration: 30s; }
+.ticker-bars-container .bar:nth-child(17n + 11) { animation-duration: 19s; }
+.ticker-bars-container .bar:nth-child(17n + 12) { animation-duration: 23s; }
+.ticker-bars-container .bar:nth-child(17n + 13) { animation-duration: 14s; }
+.ticker-bars-container .bar:nth-child(17n + 14) { animation-duration: 25s; }
+.ticker-bars-container .bar:nth-child(17n + 15) { animation-duration: 21s; }
+.ticker-bars-container .bar:nth-child(17n + 16) { animation-duration: 27s; }
+.ticker-bars-container .bar:nth-child(17n) { animation-duration: 18s; }
 
 /* Randomized heights - different prime pattern */
-.ticker-bars-container .bar:nth-child(13n + 1) { --peak-height: 145px; --base-height: 42px; }
-.ticker-bars-container .bar:nth-child(13n + 2) { --peak-height: 118px; --base-height: 58px; }
-.ticker-bars-container .bar:nth-child(13n + 3) { --peak-height: 152px; --base-height: 38px; }
-.ticker-bars-container .bar:nth-child(13n + 4) { --peak-height: 125px; --base-height: 52px; }
-.ticker-bars-container .bar:nth-child(13n + 5) { --peak-height: 138px; --base-height: 45px; }
-.ticker-bars-container .bar:nth-child(13n + 6) { --peak-height: 112px; --base-height: 62px; }
-.ticker-bars-container .bar:nth-child(13n + 7) { --peak-height: 148px; --base-height: 40px; }
-.ticker-bars-container .bar:nth-child(13n + 8) { --peak-height: 122px; --base-height: 55px; }
-.ticker-bars-container .bar:nth-child(13n + 9) { --peak-height: 155px; --base-height: 35px; }
-.ticker-bars-container .bar:nth-child(13n + 10) { --peak-height: 130px; --base-height: 48px; }
-.ticker-bars-container .bar:nth-child(13n + 11) { --peak-height: 142px; --base-height: 44px; }
-.ticker-bars-container .bar:nth-child(13n + 12) { --peak-height: 115px; --base-height: 60px; }
-.ticker-bars-container .bar:nth-child(13n) { --peak-height: 135px; --base-height: 50px; }
+.ticker-bars-container .bar:nth-child(13n + 1) { --peak-height: 165px; --base-height: 52px; }
+.ticker-bars-container .bar:nth-child(13n + 2) { --peak-height: 128px; --base-height: 68px; }
+.ticker-bars-container .bar:nth-child(13n + 3) { --peak-height: 172px; --base-height: 48px; }
+.ticker-bars-container .bar:nth-child(13n + 4) { --peak-height: 140px; --base-height: 62px; }
+.ticker-bars-container .bar:nth-child(13n + 5) { --peak-height: 155px; --base-height: 55px; }
+.ticker-bars-container .bar:nth-child(13n + 6) { --peak-height: 122px; --base-height: 72px; }
+.ticker-bars-container .bar:nth-child(13n + 7) { --peak-height: 168px; --base-height: 50px; }
+.ticker-bars-container .bar:nth-child(13n + 8) { --peak-height: 135px; --base-height: 65px; }
+.ticker-bars-container .bar:nth-child(13n + 9) { --peak-height: 178px; --base-height: 45px; }
+.ticker-bars-container .bar:nth-child(13n + 10) { --peak-height: 148px; --base-height: 58px; }
+.ticker-bars-container .bar:nth-child(13n + 11) { --peak-height: 160px; --base-height: 54px; }
+.ticker-bars-container .bar:nth-child(13n + 12) { --peak-height: 125px; --base-height: 70px; }
+.ticker-bars-container .bar:nth-child(13n) { --peak-height: 152px; --base-height: 60px; }
 
 /*
  * FULLY RANDOMIZED DELAYS - already mid-animation on page load
