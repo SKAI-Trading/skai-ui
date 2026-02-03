@@ -13,9 +13,7 @@ import {
   Settings,
   Wallet,
   User,
-  LineChart,
-  Gamepad2,
-  Bot,
+  ChevronDown,
 } from "lucide-react";
 
 const meta: Meta<typeof AppHeader> = {
@@ -67,28 +65,45 @@ const Logo = () => (
   </div>
 );
 
+// Figma Design Navigation: Trade (dropdown), Skai, Predict, Play, Social, Earn (dropdown), Coming soon (dropdown)
 const Nav = () => (
-  <nav className="flex items-center gap-1">
-    <AppHeaderNavItem href="/ai">AI</AppHeaderNavItem>
+  <nav className="flex items-center gap-6">
     <AppHeaderNavItem href="/trade" active>
       Trade
+      <ChevronDown className="ml-1 h-4 w-4" />
     </AppHeaderNavItem>
+    <AppHeaderNavItem href="/skai">Skai</AppHeaderNavItem>
     <AppHeaderNavItem href="/predict">Predict</AppHeaderNavItem>
     <AppHeaderNavItem href="/play">Play</AppHeaderNavItem>
     <AppHeaderNavItem href="/social">Social</AppHeaderNavItem>
-    <AppHeaderNavItem href="/skai">SKAI</AppHeaderNavItem>
+    <AppHeaderNavItem href="/earn">
+      Earn
+      <ChevronDown className="ml-1 h-4 w-4" />
+    </AppHeaderNavItem>
+    <AppHeaderNavItem href="/coming-soon">
+      Coming soon
+      <ChevronDown className="ml-1 h-4 w-4" />
+    </AppHeaderNavItem>
   </nav>
 );
 
+// Figma Design Search Bar
+const SearchBar = () => (
+  <div className="flex items-center gap-2 rounded-lg border border-[#123F3C] bg-[#001615] px-4 py-2 w-[236px]">
+    <Search className="h-4 w-4 text-[#95A09F]" />
+    <span className="text-sm text-[#95A09F] tracking-tight">Search anything...</span>
+  </div>
+);
+
+// Figma Design Actions: Connect wallet button (sky blue) + user avatar
 const Actions = () => (
   <AppHeaderActions>
-    <Button variant="ghost" size="icon">
-      <Bell className="h-5 w-5" />
+    <Button className="bg-[#56C7F3] hover:bg-[#4ab8e4] text-[#001615] px-10 py-5 rounded-2xl font-normal tracking-tight">
+      Connect wallet
     </Button>
-    <Button variant="outline">
-      <Wallet className="mr-2 h-4 w-4" />
-      Connect
-    </Button>
+    <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#56C7F3] to-[#17F9B4] flex items-center justify-center">
+      <User className="h-5 w-5 text-[#001615]" />
+    </div>
   </AppHeaderActions>
 );
 
@@ -96,6 +111,7 @@ export const Default: Story = {
   args: {
     logo: <Logo />,
     navigation: <Nav />,
+    search: <SearchBar />,
     actions: <Actions />,
   },
 };
@@ -197,11 +213,12 @@ export const WithMobileMenu: Story = {
   },
 };
 
+// Figma Design Exact Header: bg-[#001615], border-[#123F3C]
 export const TradingPlatform: Story = {
-  name: "Trading Platform Example",
+  name: "Figma Design (Exact Match)",
   render: () => (
     <AppHeader
-      variant="glass"
+      variant="solid"
       logo={
         <div className="flex items-center gap-2">
           <img
@@ -211,48 +228,55 @@ export const TradingPlatform: Story = {
           />
           <span className="hidden text-lg font-medium tracking-tight sm:block">
             <span className="text-[#56C7F3]">Skai</span>
-            <span className="text-muted-foreground">.trade</span>
+            <span className="text-white">.trade</span>
           </span>
         </div>
       }
       navigation={
-        <nav className="flex items-center gap-1">
-          <AppHeaderNavItem href="/ai">
-            <Bot className="mr-1.5 h-4 w-4" />
-            AI
-          </AppHeaderNavItem>
+        <nav className="flex items-center gap-9">
           <AppHeaderNavItem href="/trade" active>
-            <LineChart className="mr-1.5 h-4 w-4" />
             Trade
+            <ChevronDown className="ml-1 h-4 w-4" />
           </AppHeaderNavItem>
+          <AppHeaderNavItem href="/skai">Skai</AppHeaderNavItem>
           <AppHeaderNavItem href="/predict">Predict</AppHeaderNavItem>
-          <AppHeaderNavItem href="/play">
-            <Gamepad2 className="mr-1.5 h-4 w-4" />
-            Play
-          </AppHeaderNavItem>
+          <AppHeaderNavItem href="/play">Play</AppHeaderNavItem>
           <AppHeaderNavItem href="/social">Social</AppHeaderNavItem>
-          <AppHeaderNavItem href="/skai">SKAI</AppHeaderNavItem>
+          <AppHeaderNavItem href="/earn">
+            Earn
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </AppHeaderNavItem>
+          <AppHeaderNavItem href="/coming-soon">
+            Coming soon
+            <ChevronDown className="ml-1 h-4 w-4" />
+          </AppHeaderNavItem>
         </nav>
       }
+      search={
+        <div className="flex items-center gap-2.5 rounded-lg border border-[#123F3C] bg-[#001615] px-4 py-2 w-[236px]">
+          <Search className="h-4 w-4 text-[#95A09F]" />
+          <span className="text-sm text-[#95A09F] tracking-tight opacity-75">Search anything...</span>
+        </div>
+      }
       actions={
-        <AppHeaderActions>
-          <Button variant="ghost" size="icon" className="relative">
-            <Bell className="h-5 w-5" />
-            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] text-white">
-              3
-            </span>
-          </Button>
-          <Button variant="ghost" size="icon">
-            <Settings className="h-5 w-5" />
-          </Button>
-          <Button className="bg-[#56C7F3] hover:bg-[#4ab8e4] text-[#001615]">
-            <Wallet className="mr-2 h-4 w-4" />
+        <AppHeaderActions className="gap-4">
+          <Button className="bg-[#56C7F3] hover:bg-[#4ab8e4] text-[#001615] px-10 py-5 rounded-2xl font-normal tracking-tight text-base">
             Connect wallet
           </Button>
+          <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#56C7F3] to-[#17F9B4] flex items-center justify-center overflow-hidden">
+            <User className="h-5 w-5 text-[#001615]" />
+          </div>
         </AppHeaderActions>
       }
     />
   ),
+  decorators: [
+    (Story) => (
+      <div className="bg-[#001615]">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const MinimalHeader: Story = {
