@@ -71,7 +71,8 @@
   /* Font Families - ALIGNED WITH TYPOGRAPHY.CSS */
   --skai-font-heading: "Cormorant Garamond", Georgia, serif;
   --skai-font-subheading: "Manrope", system-ui, sans-serif;
-  --skai-font-body: "Mulish", system-ui, sans-serif;
+  --skai-font-body: "Manrope", system-ui, sans-serif;
+  --skai-font-numbers: "Mulish", system-ui, sans-serif;
   --skai-font-mono: "JetBrains Mono", Menlo, monospace;
   --skai-font-display: "Cormorant Garamond", Georgia, serif;
   --skai-font-sans: "Manrope", system-ui, sans-serif;

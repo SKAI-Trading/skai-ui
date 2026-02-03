@@ -160,19 +160,25 @@ export const skaiColors = {
 /**
  * Font families from Figma design system - ALIGNED WITH TYPOGRAPHY.CSS
  * - Cormorant Garamond: Headlines, display text (elegant serif)
- * - Manrope: Sub-headlines, UI text (modern sans-serif) 
- * - Mulish: Body text, numbers, labels (readable sans-serif)
+ * - Manrope: Default body text, paragraphs, UI text (modern sans-serif) 
+ * - Mulish: Numbers, labels, data (readable sans-serif for tabular data)
  * - JetBrains Mono: Code, technical data (monospace)
+ * 
+ * SINGLE SOURCE OF TRUTH: All font definitions come from here.
+ * The tailwind-preset.ts imports this object directly.
  */
-export const skaiFonts = {
+export const skaiFonts: Record<string, string[]> = {
+  // Primary fonts
   heading: ["Cormorant Garamond", "Georgia", "serif"],
   subheading: ["Manrope", "system-ui", "sans-serif"],
-  body: ["Mulish", "system-ui", "sans-serif"],
+  body: ["Manrope", "system-ui", "sans-serif"], // Default body text
+  numbers: ["Mulish", "system-ui", "sans-serif"], // Numbers & labels
   mono: ["JetBrains Mono", "Menlo", "monospace"],
-  // Aliases for consistency
+  // Tailwind aliases
   display: ["Cormorant Garamond", "Georgia", "serif"],
   sans: ["Manrope", "system-ui", "sans-serif"],
-} as const;
+  serif: ["Cormorant Garamond", "Georgia", "serif"],
+};
 
 /**
  * Typography scale from SKAI typography.css - RESPONSIVE TOKENS
@@ -1114,7 +1120,7 @@ export const skaiLetterSpacing = {
 // =============================================================================
 
 export type SkaiColorKey = keyof typeof skaiColors;
-export type SkaiFontKey = keyof typeof skaiFonts;
+export type SkaiFontKey = "heading" | "subheading" | "body" | "numbers" | "mono" | "display" | "sans" | "serif";
 export type SkaiGradientKey = keyof typeof gradients;
 export type SkaiButtonSize = keyof typeof skaiButton.sizes;
 export type SkaiButtonType = keyof typeof skaiButton.types;

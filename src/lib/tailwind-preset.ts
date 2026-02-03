@@ -23,6 +23,7 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 import {
   skaiColors,
+  skaiFonts,
   skaiFontSizes,
   skaiSpacing,
   skaiBorderRadius,
@@ -307,16 +308,9 @@ const skaiPreset: Partial<Config> = {
       },
     },
     extend: {
-      // Typography - directly define to avoid spread/reference issues with jiti
-      fontFamily: {
-        heading: ["Cormorant Garamond", "Georgia", "serif"],
-        subheading: ["Manrope", "system-ui", "sans-serif"],
-        body: ["Mulish", "system-ui", "sans-serif"],
-        display: ["Cormorant Garamond", "Georgia", "serif"],
-        sans: ["Manrope", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "Menlo", "monospace"],
-        serif: ["Cormorant Garamond", "Georgia", "serif"],
-      },
+      // Typography - from design-tokens.ts (SINGLE SOURCE OF TRUTH)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      fontFamily: skaiFonts as any,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       fontSize: skaiFontSizes as any,
 

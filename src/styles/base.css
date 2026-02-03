@@ -288,7 +288,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-sans;
     background: hsl(225, 80%, 4%);
     background-image:
       radial-gradient(

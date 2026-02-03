@@ -271,3 +271,141 @@ export type {
   PredictTab,
   MarketSort,
 } from "./predict-page";
+
+// Admin Analytics Page Template
+export { AdminAnalyticsPageTemplate } from "./admin-analytics-page";
+export type {
+  AdminAnalyticsPageTemplateProps,
+  ConversionStep,
+  CacheStats,
+  SecurityEvent,
+  EmailQueueStats,
+  BusinessMetric,
+  AnalyticsChartPoint,
+} from "./admin-analytics-page";
+
+// Admin Waitlist Page Template
+export { AdminWaitlistPageTemplate } from "./admin-waitlist-page";
+export type {
+  AdminWaitlistPageTemplateProps,
+  WaitlistEntry,
+  WaitlistStats,
+  SignupDataPoint,
+} from "./admin-waitlist-page";
+
+// Market Detail Page Template
+export { MarketDetailPageTemplate } from "./market-detail-page";
+export type {
+  MarketDetailPageTemplateProps,
+  Market as MarketDetail,
+  UserPosition as MarketUserPosition,
+  LPPosition,
+  RecentBet,
+  OddsHistoryPoint,
+} from "./market-detail-page";
+
+// Trench (Copy Trading) Page Template
+export { TrenchPageTemplate } from "./trench-page";
+export type {
+  TrenchPageTemplateProps,
+  SortOption as TrenchSortOption,
+  CopyTrader,
+  CopyRelationship,
+  PerformanceSummary,
+  CopySettings,
+} from "./trench-page";
+
+// Support Page Template
+export { SupportPageTemplate } from "./support-page";
+export type {
+  SupportPageTemplateProps,
+  SupportTicket,
+  SupportCategory,
+  TicketMessage,
+  TicketStatus,
+  TicketPriority,
+} from "./support-page";
+
+// Token Leaderboard Page Template
+export { TokenLeaderboardPageTemplate } from "./token-leaderboard-page";
+export type {
+  TokenLeaderboardPageTemplateProps,
+  TokenData,
+  TokenSortMetric,
+  TimeFrame as TokenTimeFrame,
+} from "./token-leaderboard-page";
+
+// AI Hub Page Template
+export { AIHubPageTemplate } from "./ai-hub-page";
+export type {
+  AIHubPageTemplateProps,
+  QuickSuggestion,
+  FeatureModule,
+  MarketSignal,
+  AIInsight,
+} from "./ai-hub-page";
+
+// Legal Page Template
+export { LegalPageTemplate } from "./legal-page";
+export type {
+  LegalPageTemplateProps,
+  LegalSection,
+  LegalSubsection,
+} from "./legal-page";
+
+// Trade Select Page Template
+export { TradeSelectPageTemplate } from "./trade-select-page";
+export type {
+  TradeSelectPageTemplateProps,
+  TradingMode,
+  TierInfo,
+} from "./trade-select-page";
+
+// Home Page Template
+export { HomePageTemplate } from "./home-page";
+export type {
+  HomePageTemplateProps,
+  UserStats,
+  QuickAction,
+  ActivityItem,
+  FeatureHighlight,
+} from "./home-page";
+
+// Challenges Page Template
+export { ChallengesPageTemplate } from "./challenges-page";
+export type {
+  ChallengesPageTemplateProps,
+  Challenge,
+  ChallengeType,
+  ChallengeCategory,
+  UserChallengeProgress,
+} from "./challenges-page";
+
+// Buy Page Template
+export { BuyPageTemplate } from "./buy-page";
+export type {
+  BuyPageTemplateProps,
+  BuyToken,
+  PaymentMethod,
+  TransactionQuote,
+} from "./buy-page";
+
+// Perp Trading Page Template
+export { PerpTradingPageTemplate } from "./perp-trading-page";
+export type {
+  PerpTradingPageTemplateProps,
+  OrderSide,
+  OrderType as PerpOrderType,
+  MarginType,
+  PerpMarket,
+  Position,
+} from "./perp-trading-page";
+
+// Pre-Launch Page Template
+export { PreLaunchPageTemplate } from "./prelaunch-page";
+export type {
+  PreLaunchPageTemplateProps,
+  FeaturePreview,
+  SocialLink,
+  PreLaunchCountdown,
+} from "./prelaunch-page";
