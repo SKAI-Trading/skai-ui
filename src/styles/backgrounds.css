@@ -140,20 +140,19 @@
 .ticker-bars-container {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: -5%;
+  right: -5%;
   height: 180px;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   gap: 2px;
-  padding: 0 5%;
-  overflow: hidden;
+  padding: 0;
   z-index: 1;
   pointer-events: none;
 }
 
-/* Generate many bars with CSS custom properties for traveling wave */
+/* Generate bars that look like a stock chart */
 .ticker-bars-container .bar {
   flex: 1;
   max-width: 3px;
@@ -166,80 +165,97 @@
   );
   border-radius: 1.5px 1.5px 0 0;
   transform-origin: bottom;
-  /* All bars use same duration - wave created by delay offsets */
-  animation: wave-pulse 8s ease-in-out infinite;
+  animation: stock-tick 12s ease-in-out infinite;
   box-shadow: 0 0 6px rgba(86, 199, 243, 0.2);
   --peak-height: 130px;
-  --base-height: 40px;
+  --base-height: 50px;
 }
 
-/* Height variations for visual interest */
-.ticker-bars-container .bar:nth-child(3n + 1) {
+/* Varied durations create organic, unsynchronized movement like real stocks */
+.ticker-bars-container .bar:nth-child(7n + 1) {
+  animation-duration: 11s;
   --peak-height: 140px;
-  --base-height: 35px;
-}
-.ticker-bars-container .bar:nth-child(3n + 2) {
-  --peak-height: 120px;
   --base-height: 45px;
 }
-.ticker-bars-container .bar:nth-child(3n) {
-  --peak-height: 130px;
+.ticker-bars-container .bar:nth-child(7n + 2) {
+  animation-duration: 14s;
+  --peak-height: 120px;
+  --base-height: 55px;
+}
+.ticker-bars-container .bar:nth-child(7n + 3) {
+  animation-duration: 10s;
+  --peak-height: 135px;
   --base-height: 40px;
 }
+.ticker-bars-container .bar:nth-child(7n + 4) {
+  animation-duration: 13s;
+  --peak-height: 125px;
+  --base-height: 50px;
+}
+.ticker-bars-container .bar:nth-child(7n + 5) {
+  animation-duration: 15s;
+  --peak-height: 115px;
+  --base-height: 60px;
+}
+.ticker-bars-container .bar:nth-child(7n + 6) {
+  animation-duration: 9s;
+  --peak-height: 145px;
+  --base-height: 35px;
+}
+.ticker-bars-container .bar:nth-child(7n) {
+  animation-duration: 12s;
+  --peak-height: 130px;
+  --base-height: 48px;
+}
+
+/* Additional height variations */
+.ticker-bars-container .bar:nth-child(11n + 1) { --peak-height: 150px; }
+.ticker-bars-container .bar:nth-child(11n + 3) { --peak-height: 110px; }
+.ticker-bars-container .bar:nth-child(11n + 5) { --peak-height: 138px; }
+.ticker-bars-container .bar:nth-child(11n + 7) { --peak-height: 122px; }
+.ticker-bars-container .bar:nth-child(11n + 9) { --peak-height: 142px; }
 
 /*
- * TRAVELING WAVE EFFECT
- * Each bar's delay is based on its position from right to left.
- * With 200 bars and 8s animation, we spread delays across the full cycle.
- * Wave travels from right (bar 200) to left (bar 1).
- * delay = (200 - barIndex) * (8s / 200) = position-based offset
+ * RIGHT-TO-LEFT MOVEMENT with organic variation
+ * Bars on right have smaller delays = they "lead"
+ * Bars on left have larger delays = they "follow"
+ * All negative so animation appears already running on page load
  */
 
-/* Bars 191-200 (rightmost) - start first */
-.ticker-bars-container .bar:nth-child(n + 191) { animation-delay: calc((200 - 195) * 0.04s); }
+/* Group 1: Rightmost (bars 181-200) - lead the movement */
+.ticker-bars-container .bar:nth-child(n + 181):nth-child(-n + 200) { animation-delay: -12s; }
+/* Group 2 */
+.ticker-bars-container .bar:nth-child(n + 161):nth-child(-n + 180) { animation-delay: -11.5s; }
+/* Group 3 */
+.ticker-bars-container .bar:nth-child(n + 141):nth-child(-n + 160) { animation-delay: -11s; }
+/* Group 4 */
+.ticker-bars-container .bar:nth-child(n + 121):nth-child(-n + 140) { animation-delay: -10.5s; }
+/* Group 5 */
+.ticker-bars-container .bar:nth-child(n + 101):nth-child(-n + 120) { animation-delay: -10s; }
+/* Group 6 */
+.ticker-bars-container .bar:nth-child(n + 81):nth-child(-n + 100) { animation-delay: -9.5s; }
+/* Group 7 */
+.ticker-bars-container .bar:nth-child(n + 61):nth-child(-n + 80) { animation-delay: -9s; }
+/* Group 8 */
+.ticker-bars-container .bar:nth-child(n + 41):nth-child(-n + 60) { animation-delay: -8.5s; }
+/* Group 9 */
+.ticker-bars-container .bar:nth-child(n + 21):nth-child(-n + 40) { animation-delay: -8s; }
+/* Group 10: Leftmost (bars 1-20) - follow the movement */
+.ticker-bars-container .bar:nth-child(-n + 20) { animation-delay: -7.5s; }
 
-/* Create wave by giving each bar a delay based on position */
-/* Using CSS calc with custom property set via nth-child */
-.ticker-bars-container .bar:nth-child(1) { animation-delay: 7.96s; }
-.ticker-bars-container .bar:nth-child(2) { animation-delay: 7.92s; }
-.ticker-bars-container .bar:nth-child(3) { animation-delay: 7.88s; }
-.ticker-bars-container .bar:nth-child(4) { animation-delay: 7.84s; }
-.ticker-bars-container .bar:nth-child(5) { animation-delay: 7.80s; }
-.ticker-bars-container .bar:nth-child(6) { animation-delay: 7.76s; }
-.ticker-bars-container .bar:nth-child(7) { animation-delay: 7.72s; }
-.ticker-bars-container .bar:nth-child(8) { animation-delay: 7.68s; }
-.ticker-bars-container .bar:nth-child(9) { animation-delay: 7.64s; }
-.ticker-bars-container .bar:nth-child(10) { animation-delay: 7.60s; }
-
-/* Use nth-child ranges to set delays for groups (more efficient) */
-/* Each group of 10 bars shares similar delay range */
-.ticker-bars-container .bar:nth-child(n + 11):nth-child(-n + 20) { animation-delay: 7.4s; }
-.ticker-bars-container .bar:nth-child(n + 21):nth-child(-n + 30) { animation-delay: 7.0s; }
-.ticker-bars-container .bar:nth-child(n + 31):nth-child(-n + 40) { animation-delay: 6.6s; }
-.ticker-bars-container .bar:nth-child(n + 41):nth-child(-n + 50) { animation-delay: 6.2s; }
-.ticker-bars-container .bar:nth-child(n + 51):nth-child(-n + 60) { animation-delay: 5.8s; }
-.ticker-bars-container .bar:nth-child(n + 61):nth-child(-n + 70) { animation-delay: 5.4s; }
-.ticker-bars-container .bar:nth-child(n + 71):nth-child(-n + 80) { animation-delay: 5.0s; }
-.ticker-bars-container .bar:nth-child(n + 81):nth-child(-n + 90) { animation-delay: 4.6s; }
-.ticker-bars-container .bar:nth-child(n + 91):nth-child(-n + 100) { animation-delay: 4.2s; }
-.ticker-bars-container .bar:nth-child(n + 101):nth-child(-n + 110) { animation-delay: 3.8s; }
-.ticker-bars-container .bar:nth-child(n + 111):nth-child(-n + 120) { animation-delay: 3.4s; }
-.ticker-bars-container .bar:nth-child(n + 121):nth-child(-n + 130) { animation-delay: 3.0s; }
-.ticker-bars-container .bar:nth-child(n + 131):nth-child(-n + 140) { animation-delay: 2.6s; }
-.ticker-bars-container .bar:nth-child(n + 141):nth-child(-n + 150) { animation-delay: 2.2s; }
-.ticker-bars-container .bar:nth-child(n + 151):nth-child(-n + 160) { animation-delay: 1.8s; }
-.ticker-bars-container .bar:nth-child(n + 161):nth-child(-n + 170) { animation-delay: 1.4s; }
-.ticker-bars-container .bar:nth-child(n + 171):nth-child(-n + 180) { animation-delay: 1.0s; }
-.ticker-bars-container .bar:nth-child(n + 181):nth-child(-n + 190) { animation-delay: 0.6s; }
-.ticker-bars-container .bar:nth-child(n + 191):nth-child(-n + 200) { animation-delay: 0.2s; }
-
-/* Wave animation - smooth sine-wave-like motion */
-@keyframes wave-pulse {
+/* Stock-like animation - organic up and down movement */
+@keyframes stock-tick {
   0%, 100% {
-    height: var(--base-height, 40px);
+    height: var(--base-height, 50px);
+  }
+  25% {
+    height: calc(var(--peak-height, 130px) * 0.7);
   }
   50% {
     height: var(--peak-height, 130px);
+  }
+  75% {
+    height: calc(var(--peak-height, 130px) * 0.55);
   }
 }
 
