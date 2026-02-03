@@ -139,6 +139,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "cmdk": "^1.0.0",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.31.0",
     "input-otp": "^1.2.4",
     "lightweight-charts": "^5.1.0",
     "qrcode.react": "^4.2.0",

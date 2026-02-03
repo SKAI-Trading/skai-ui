@@ -8,3 +8,6 @@ export * from "./scrolling-ticker";
 export * from "./status-bar";
 export * from "./particle-background";
 export * from "./thirdweb-otp-handler";
+
+// Interactive Utilities
+export * from "./terminal-chat";
