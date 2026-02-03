@@ -154,9 +154,9 @@
 
 /* Generate bars that look like a stock chart */
 .ticker-bars-container .bar {
-  flex: 1;
-  max-width: 4px;
-  min-width: 2px;
+  flex: 0 0 auto;
+  width: 3px;
+  margin-right: 2px;
   background: linear-gradient(
     to top,
     rgba(23, 249, 180, 0.1) 0%,
@@ -170,6 +170,19 @@
   --peak-height: 130px;
   --base-height: 50px;
 }
+
+/* Varied bar widths and spacing - like real stock charts */
+.ticker-bars-container .bar:nth-child(11n + 1) { width: 2px; margin-right: 4px; }
+.ticker-bars-container .bar:nth-child(11n + 2) { width: 4px; margin-right: 2px; }
+.ticker-bars-container .bar:nth-child(11n + 3) { width: 3px; margin-right: 3px; }
+.ticker-bars-container .bar:nth-child(11n + 4) { width: 5px; margin-right: 1px; }
+.ticker-bars-container .bar:nth-child(11n + 5) { width: 2px; margin-right: 5px; }
+.ticker-bars-container .bar:nth-child(11n + 6) { width: 4px; margin-right: 2px; }
+.ticker-bars-container .bar:nth-child(11n + 7) { width: 3px; margin-right: 4px; }
+.ticker-bars-container .bar:nth-child(11n + 8) { width: 6px; margin-right: 1px; }
+.ticker-bars-container .bar:nth-child(11n + 9) { width: 2px; margin-right: 3px; }
+.ticker-bars-container .bar:nth-child(11n + 10) { width: 4px; margin-right: 2px; }
+.ticker-bars-container .bar:nth-child(11n) { width: 3px; margin-right: 6px; }
 
 /*
  * RANDOMIZED DURATIONS - no pattern, pure chaos like real markets
