@@ -14,3 +14,6 @@ export * from "./trading-layout";
 export * from "./dashboard-layout";
 export * from "./centered-layout";
 export * from "./page-layouts";
+
+// Header System (SKAI branded)
+export * from "./header";
