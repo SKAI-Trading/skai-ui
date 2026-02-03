@@ -17,8 +17,8 @@ export interface BarTickerBackgroundProps {
    */
   className?: string;
   /**
-   * Show the shimmer sweep effect
-   * @default true
+   * Show the shimmer sweep effect (disabled by default to prevent flicker)
+   * @default false
    */
   showShimmer?: boolean;
   /**
@@ -41,7 +41,7 @@ export function BarTickerBackground({
   barCount = 200,
   isBlurred = false,
   className,
-  showShimmer = true,
+  showShimmer = false,
   showDepthBlur = true,
 }: BarTickerBackgroundProps) {
   // Memoize the bars array to prevent unnecessary re-renders
