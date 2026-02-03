@@ -103,3 +103,57 @@ export type {
   HelpArticle,
   HelpCenterView,
 } from "./help-center-page";
+
+// Notifications Page Template
+export { NotificationsPageTemplate } from "./notifications-page";
+export type {
+  NotificationsPageProps,
+  NotificationItem,
+  NotificationType,
+  AnnouncementType,
+} from "./notifications-page";
+
+// Referral Page Template
+export { ReferralPageTemplate } from "./referral-page";
+export type {
+  ReferralPageProps,
+  CommissionTier,
+  ReferralRecord,
+  ReferralStats,
+  SharePlatform,
+} from "./referral-page";
+
+// Trade Page Template
+export { TradePageTemplate } from "./trade-page";
+export type {
+  TradePageProps,
+  TradeSide,
+  OrderType,
+  MarketType,
+  MarketInfo,
+  OpenInterestData,
+  KeyboardShortcut,
+} from "./trade-page";
+
+// Earn Page Template
+export { EarnPageTemplate } from "./earn-page";
+export type {
+  EarnPageProps,
+  FaucetStats,
+  LotteryStats,
+  EarnTab,
+} from "./earn-page";
+
+// Messages Page Template
+export { MessagesPageTemplate } from "./messages-page";
+export type {
+  MessagesPageProps,
+  ConversationType,
+  MessageStatus,
+  InboxFilter,
+  ConversationParticipant,
+  Conversation,
+  MessageAttachment,
+  MessageReaction,
+  Message,
+} from "./messages-page";
