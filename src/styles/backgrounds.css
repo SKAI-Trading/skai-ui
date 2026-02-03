@@ -139,10 +139,10 @@
 /* CSS-only animated bars (no JS required) */
 .ticker-bars-container {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
+  bottom: -30px; /* Extend past viewport to eliminate dead space */
+  left: -3%;
+  right: -3%;
+  height: 280px; /* Taller to match Figma design (bars 241-446px range) */
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -155,7 +155,7 @@
 /* Back layer - green/teal tint, positioned behind */
 .ticker-bars-back {
   z-index: 1;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* Front layer - cyan/sky blue, positioned in front */
@@ -179,30 +179,30 @@
 .ticker-bars-container .bar.bar-front {
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.1) 0%,
-    rgba(86, 199, 243, 0.5) 40%,
-    rgba(86, 199, 243, 0.9) 100%
+    rgba(86, 199, 243, 0.08) 0%,
+    rgba(86, 199, 243, 0.45) 35%,
+    rgba(86, 199, 243, 0.85) 100%
   );
   box-shadow:
-    0 0 8px rgba(86, 199, 243, 0.4),
-    0 0 16px rgba(86, 199, 243, 0.2);
-  --peak-height: 160px;
-  --base-height: 45px;
+    0 0 8px rgba(86, 199, 243, 0.35),
+    0 0 14px rgba(86, 199, 243, 0.15);
+  --peak-height: 220px;
+  --base-height: 65px;
 }
 
 /* Back layer bars - Green/Alien Green (#17F9B4) tint */
 .ticker-bars-container .bar.bar-back {
   background: linear-gradient(
     to top,
-    rgba(23, 249, 180, 0.05) 0%,
-    rgba(23, 249, 180, 0.3) 40%,
-    rgba(45, 200, 160, 0.6) 100%
+    rgba(23, 249, 180, 0.04) 0%,
+    rgba(23, 249, 180, 0.28) 35%,
+    rgba(23, 249, 180, 0.55) 100%
   );
   box-shadow:
-    0 0 6px rgba(23, 249, 180, 0.3),
-    0 0 12px rgba(23, 249, 180, 0.15);
-  --peak-height: 130px;
-  --base-height: 35px;
+    0 0 5px rgba(23, 249, 180, 0.25),
+    0 0 10px rgba(23, 249, 180, 0.12);
+  --peak-height: 180px;
+  --base-height: 50px;
   animation-duration: 25s; /* Slower for back layer */
 }
 
@@ -241,20 +241,20 @@
 .ticker-bars-container .bar:nth-child(17n + 16) { animation-duration: 27s; }
 .ticker-bars-container .bar:nth-child(17n) { animation-duration: 18s; }
 
-/* Randomized heights - different prime pattern */
-.ticker-bars-container .bar:nth-child(13n + 1) { --peak-height: 165px; --base-height: 52px; }
-.ticker-bars-container .bar:nth-child(13n + 2) { --peak-height: 128px; --base-height: 68px; }
-.ticker-bars-container .bar:nth-child(13n + 3) { --peak-height: 172px; --base-height: 48px; }
-.ticker-bars-container .bar:nth-child(13n + 4) { --peak-height: 140px; --base-height: 62px; }
-.ticker-bars-container .bar:nth-child(13n + 5) { --peak-height: 155px; --base-height: 55px; }
-.ticker-bars-container .bar:nth-child(13n + 6) { --peak-height: 122px; --base-height: 72px; }
-.ticker-bars-container .bar:nth-child(13n + 7) { --peak-height: 168px; --base-height: 50px; }
-.ticker-bars-container .bar:nth-child(13n + 8) { --peak-height: 135px; --base-height: 65px; }
-.ticker-bars-container .bar:nth-child(13n + 9) { --peak-height: 178px; --base-height: 45px; }
-.ticker-bars-container .bar:nth-child(13n + 10) { --peak-height: 148px; --base-height: 58px; }
-.ticker-bars-container .bar:nth-child(13n + 11) { --peak-height: 160px; --base-height: 54px; }
-.ticker-bars-container .bar:nth-child(13n + 12) { --peak-height: 125px; --base-height: 70px; }
-.ticker-bars-container .bar:nth-child(13n) { --peak-height: 152px; --base-height: 60px; }
+/* Randomized heights - different prime pattern (matching Figma 241-446px range scaled) */
+.ticker-bars-container .bar:nth-child(13n + 1) { --peak-height: 230px; --base-height: 72px; }
+.ticker-bars-container .bar:nth-child(13n + 2) { --peak-height: 185px; --base-height: 88px; }
+.ticker-bars-container .bar:nth-child(13n + 3) { --peak-height: 245px; --base-height: 68px; }
+.ticker-bars-container .bar:nth-child(13n + 4) { --peak-height: 198px; --base-height: 82px; }
+.ticker-bars-container .bar:nth-child(13n + 5) { --peak-height: 218px; --base-height: 75px; }
+.ticker-bars-container .bar:nth-child(13n + 6) { --peak-height: 175px; --base-height: 92px; }
+.ticker-bars-container .bar:nth-child(13n + 7) { --peak-height: 238px; --base-height: 70px; }
+.ticker-bars-container .bar:nth-child(13n + 8) { --peak-height: 192px; --base-height: 85px; }
+.ticker-bars-container .bar:nth-child(13n + 9) { --peak-height: 252px; --base-height: 65px; }
+.ticker-bars-container .bar:nth-child(13n + 10) { --peak-height: 205px; --base-height: 78px; }
+.ticker-bars-container .bar:nth-child(13n + 11) { --peak-height: 225px; --base-height: 74px; }
+.ticker-bars-container .bar:nth-child(13n + 12) { --peak-height: 180px; --base-height: 90px; }
+.ticker-bars-container .bar:nth-child(13n) { --peak-height: 212px; --base-height: 80px; }
 
 /*
  * FULLY RANDOMIZED DELAYS - already mid-animation on page load
@@ -329,7 +329,8 @@
 /* Mobile adjustments for ticker */
 @media (max-width: 768px) {
   .ticker-bars-container {
-    height: 120px;
+    height: 160px;
+    bottom: -20px;
     gap: 1.5px;
   }
 
@@ -338,28 +339,28 @@
   }
 
   .ticker-bars-container .bar:nth-child(5n + 1) {
-    --peak-height: 90px;
-    --base-height: 30px;
-  }
-  .ticker-bars-container .bar:nth-child(5n + 2) {
-    --peak-height: 65px;
-    --base-height: 40px;
-  }
-  .ticker-bars-container .bar:nth-child(5n + 3) {
-    --peak-height: 100px;
-    --base-height: 20px;
-  }
-  .ticker-bars-container .bar:nth-child(5n + 4) {
-    --peak-height: 55px;
+    --peak-height: 130px;
     --base-height: 45px;
   }
+  .ticker-bars-container .bar:nth-child(5n + 2) {
+    --peak-height: 100px;
+    --base-height: 55px;
+  }
+  .ticker-bars-container .bar:nth-child(5n + 3) {
+    --peak-height: 145px;
+    --base-height: 40px;
+  }
+  .ticker-bars-container .bar:nth-child(5n + 4) {
+    --peak-height: 85px;
+    --base-height: 60px;
+  }
   .ticker-bars-container .bar:nth-child(5n) {
-    --peak-height: 75px;
-    --base-height: 35px;
+    --peak-height: 115px;
+    --base-height: 50px;
   }
 
   .ticker-shimmer {
-    height: 120px;
+    height: 160px;
   }
 }
 

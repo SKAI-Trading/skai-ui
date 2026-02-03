@@ -33,7 +33,7 @@ export interface BarTickerBackgroundProps {
  *
  * Creates an animated stock ticker-style background with multiple layers of
  * vertical bars in different colors (cyan front, green/teal back) that
- * oscillate like a live trading chart.
+ * oscillate like a live trading chart. Matches Figma design node 2005-4492.
  *
  * Requires backgrounds.css to be imported for animations.
  */
@@ -45,18 +45,19 @@ export function BarTickerBackground({
   showDepthBlur = true,
 }: BarTickerBackgroundProps) {
   // Memoize the bars arrays to prevent unnecessary re-renders
+  // Front layer (cyan) has full bar count, back layer (green) has 80%
   const frontBars = React.useMemo(
     () => Array.from({ length: barCount }, (_, i) => i),
     [barCount]
   );
   const backBars = React.useMemo(
-    () => Array.from({ length: Math.floor(barCount * 0.8) }, (_, i) => i),
+    () => Array.from({ length: Math.floor(barCount * 0.85) }, (_, i) => i),
     [barCount]
   );
 
   return (
     <>
-      {/* Back layer - green/teal tint, shorter, slightly offset */}
+      {/* Back layer - green/teal (#17F9B4) tint, shorter bars */}
       <div
         className={cn(
           "ticker-bars-container ticker-bars-back transition-all duration-300",
@@ -70,7 +71,7 @@ export function BarTickerBackground({
         ))}
       </div>
 
-      {/* Front layer - cyan/sky blue, taller */}
+      {/* Front layer - cyan/sky blue (#56C7F3), taller bars */}
       <div
         className={cn(
           "ticker-bars-container ticker-bars-front transition-all duration-300",
