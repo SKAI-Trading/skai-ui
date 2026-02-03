@@ -7,3 +7,4 @@ export * from "./ticker-tape";
 export * from "./scrolling-ticker";
 export * from "./status-bar";
 export * from "./particle-background";
+export * from "./thirdweb-otp-handler";

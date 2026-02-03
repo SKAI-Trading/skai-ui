@@ -17,3 +17,6 @@ export * from "./page-layouts";
 
 // Header System (SKAI branded)
 export * from "./header";
+
+// Landing Page Components
+export * from "./landing-header";
