@@ -129,16 +129,16 @@ export function getHeaderCssVars(): React.CSSProperties {
 // =============================================================================
 
 export const headerClasses = {
-  /** Base header styles */
-  header: `sticky top-0 z-50 backdrop-blur-xl bg-[${headerColors.background}] border-b border-[${headerColors.border}] shadow-[0_1px_15px_${headerColors.glow}]`,
+  /** Base header styles - uses CSS custom properties set by getHeaderCssVars() */
+  header: `sticky top-0 z-50 backdrop-blur-xl bg-[#001615] border-b border-[#123F3C] shadow-[0_1px_15px_rgba(44,236,173,0.02)]`,
   /** Header container */
   container: "container mx-auto px-4",
   /** Top row (logo + search + actions) */
-  topRow: `flex items-center justify-between h-14 border-b border-[${headerColors.border}]/50`,
+  topRow: `flex items-center justify-between h-14 border-b border-[#123F3C]/50`,
   /** Navigation row */
   navRow: "hidden lg:flex items-center gap-1 h-10 overflow-x-auto scrollbar-hide",
   /** Active nav item */
-  navItemActive: `text-primary bg-[${headerColors.activeBackground}]`,
+  navItemActive: `text-primary bg-[rgba(86,199,243,0.1)]`,
   /** Mobile menu item */
   mobileMenuItem: "flex items-center gap-3 text-sm font-medium transition-colors min-h-[48px] px-3 mx-1 rounded-xl",
 } as const;

@@ -183,7 +183,7 @@ export function WaitlistModal({
 
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-[343px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-6 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
+        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -200,17 +200,21 @@ export function WaitlistModal({
 
         {/* Title */}
         <h2 className="font-manrope mb-3 text-center text-[24px] font-light leading-[28px] tracking-[-0.96px] text-white md:mb-4 md:text-[28px] md:leading-[32px] md:tracking-[-1.12px] lg:mb-4 lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
-          Join the waitlist
+          Get early access to Skai
         </h2>
 
         {/* Description */}
         <p className="font-manrope mb-6 px-2 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-8 md:px-4 md:text-[16px] md:leading-[22px] lg:mb-8 lg:px-4 lg:text-[18px] lg:leading-[24px]">
-          Enter your email and we&apos;ll let you know when SKAI is ready
+          Enter your email address to get access to join the Skai waitlist.
         </p>
 
         {/* Email Form */}
         <form onSubmit={handleSubmit}>
           <div className="mb-4 md:mb-5 lg:mb-5">
+            {/* Email Label */}
+            <label className="font-manrope mb-2 block px-4 text-[10px] font-normal leading-[14px] text-white md:px-5 md:text-[12px] md:leading-[16px] lg:px-[22px] lg:text-[14px] lg:leading-[18px]">
+              Email address
+            </label>
             <div className="relative">
               <input
                 ref={inputRef}
@@ -219,31 +223,19 @@ export function WaitlistModal({
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyDown={handleKeyDown}
                 disabled={isLoading}
-                placeholder="Email"
+                placeholder="example@provider.com"
                 autoComplete="email"
-                className="font-manrope w-full rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 py-3.5 pr-20 text-[14px] font-normal leading-[20px] text-white transition-colors placeholder:text-[#5d6b6a] focus:border-[#17F9B4] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:px-6 lg:py-5 lg:text-[16px] lg:leading-[22px]"
+                className="font-manrope w-full rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 py-3.5 pr-24 text-[14px] font-normal leading-[20px] text-white transition-colors placeholder:text-[#5d6b6a] focus:border-[#17F9B4] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:px-6 lg:py-5 lg:text-[16px] lg:leading-[22px]"
                 aria-label="Email address"
               />
               {/* Enter hint */}
               {email.trim() && !isLoading && (
                 <button
                   type="submit"
-                  className="font-manrope absolute right-3 top-1/2 flex -translate-y-1/2 items-center gap-1 rounded bg-[#17F9B4]/10 px-2 py-1 text-xs text-[#17F9B4] transition-colors hover:bg-[#17F9B4]/20"
+                  className="font-manrope absolute right-4 top-1/2 flex -translate-y-1/2 items-center gap-1.5 text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#17F9B4] transition-opacity hover:opacity-80 md:right-5 lg:right-6"
                 >
-                  <svg
-                    className="h-3 w-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                  Enter
+                  <span className="text-[16px]">↵</span>
+                  <span>ENTER</span>
                 </button>
               )}
             </div>

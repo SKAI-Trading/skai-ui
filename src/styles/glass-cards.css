@@ -1,0 +1,147 @@
+/**
+ * SKAI UI - Glass Card Styles
+ * ============================
+ *
+ * Glassmorphism card components for the SKAI design system.
+ * These provide the premium, translucent card look used across SKAI.
+ *
+ * @import '@skai/ui/styles/glass-cards.css';
+ *
+ * @package @skai/ui
+ */
+
+/* =============================================================================
+ * BASE GLASS CARD
+ * ============================================================================= */
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+}
+
+/* Hover variant - adds glow and lift */
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(86, 192, 246, 0.3);
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(86, 192, 246, 0.1);
+}
+
+/* =============================================================================
+ * PREMIUM GLASS CARD (Enhanced for completion/celebration pages)
+ * ============================================================================= */
+
+.complete-glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 100px rgba(86, 192, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* =============================================================================
+ * FEATURE CARD
+ * ============================================================================= */
+
+.feature-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(86, 192, 246, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* =============================================================================
+ * INPUT GLASS
+ * ============================================================================= */
+
+.input-glass {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input-glass:focus {
+  border-color: rgba(86, 192, 246, 0.5);
+  box-shadow: 0 0 0 3px rgba(86, 192, 246, 0.1);
+}
+
+.input-glass::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* =============================================================================
+ * MOBILE RESPONSIVE
+ * ============================================================================= */
+
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.25rem;
+    border-radius: 20px;
+  }
+
+  .feature-card {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .input-glass {
+    padding: 0.875rem 1rem;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .glass-card {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+}
+
+/* Touch device hover states */
+@media (hover: none) and (pointer: coarse) {
+  .glass-card-hover:hover,
+  .feature-card:hover {
+    transform: none;
+  }
+
+  .glass-card-hover:active {
+    border-color: rgba(86, 192, 246, 0.3);
+  }
+}

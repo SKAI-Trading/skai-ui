@@ -1,0 +1,442 @@
+/**
+ * SKAI UI - Cosmic Background Styles
+ * ====================================
+ *
+ * Animated cosmic/space background with stars, orbs, aurora, and particles.
+ * Used for immersive full-page backgrounds in celebration and landing pages.
+ *
+ * @import '@skai/ui/styles/cosmic-background.css';
+ *
+ * @package @skai/ui
+ */
+
+/* =============================================================================
+ * MAIN CONTAINER
+ * ============================================================================= */
+
+.cosmic-bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, #0a1628 0%, #020717 100%);
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* =============================================================================
+ * STARS LAYERS
+ * ============================================================================= */
+
+/* Primary stars layer */
+.cosmic-stars {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(
+      2px 2px at 20px 30px,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 40px 70px,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 90px 40px,
+      rgba(255, 255, 255, 0.9),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 130px 80px,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 160px 120px,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 200px 50px,
+      rgba(86, 192, 246, 0.8),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 250px 150px,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 280px 90px,
+      rgba(45, 237, 173, 0.7),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 320px 200px,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 350px 160px,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+  background-size: 400px 300px;
+  animation: stars-drift 120s linear infinite;
+}
+
+@keyframes stars-drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Secondary stars layer - slower movement for depth */
+.cosmic-stars-2 {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(
+      1px 1px at 50px 60px,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 100px 120px,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 150px 40px,
+      rgba(86, 192, 246, 0.5),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 200px 180px,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 250px 80px,
+      rgba(45, 237, 173, 0.4),
+      transparent
+    ),
+    radial-gradient(
+      1px 1px at 300px 140px,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+  background-size: 350px 250px;
+  animation: stars-drift-2 180s linear infinite;
+}
+
+@keyframes stars-drift-2 {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* =============================================================================
+ * ANIMATED ORBS
+ * ============================================================================= */
+
+.cosmic-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: orb-float 20s ease-in-out infinite;
+}
+
+.cosmic-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(86, 192, 246, 0.4) 0%,
+    transparent 70%
+  );
+  top: -200px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.cosmic-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(45, 237, 173, 0.35) 0%,
+    transparent 70%
+  );
+  bottom: -150px;
+  left: -100px;
+  animation-delay: -10s;
+}
+
+.cosmic-orb-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(102, 126, 234, 0.3) 0%,
+    transparent 70%
+  );
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -5s;
+}
+
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-20px, 30px) scale(0.95);
+    opacity: 0.35;
+  }
+  75% {
+    transform: translate(40px, 20px) scale(1.05);
+    opacity: 0.45;
+  }
+}
+
+/* =============================================================================
+ * AURORA EFFECT
+ * ============================================================================= */
+
+.cosmic-aurora {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(45, 237, 173, 0.03) 30%,
+    rgba(86, 192, 246, 0.05) 60%,
+    rgba(45, 237, 173, 0.02) 100%
+  );
+  animation: aurora-wave 15s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes aurora-wave {
+  0%,
+  100% {
+    transform: scaleY(1) translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(1.2) translateX(5%);
+    opacity: 0.7;
+  }
+}
+
+/* =============================================================================
+ * PARTICLE SYSTEM
+ * ============================================================================= */
+
+.cosmic-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cosmic-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: particle-rise 8s ease-in infinite;
+}
+
+/* Particle positions with staggered delays */
+.cosmic-particle:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.cosmic-particle:nth-child(2) {
+  left: 20%;
+  animation-delay: 1s;
+}
+.cosmic-particle:nth-child(3) {
+  left: 30%;
+  animation-delay: 2s;
+}
+.cosmic-particle:nth-child(4) {
+  left: 40%;
+  animation-delay: 0.5s;
+}
+.cosmic-particle:nth-child(5) {
+  left: 50%;
+  animation-delay: 1.5s;
+}
+.cosmic-particle:nth-child(6) {
+  left: 60%;
+  animation-delay: 2.5s;
+}
+.cosmic-particle:nth-child(7) {
+  left: 70%;
+  animation-delay: 0.8s;
+}
+.cosmic-particle:nth-child(8) {
+  left: 80%;
+  animation-delay: 1.8s;
+}
+.cosmic-particle:nth-child(9) {
+  left: 90%;
+  animation-delay: 2.8s;
+}
+.cosmic-particle:nth-child(10) {
+  left: 95%;
+  animation-delay: 3.2s;
+}
+
+@keyframes particle-rise {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) scale(1);
+  }
+  90% {
+    opacity: 0.5;
+    transform: translateY(10vh) scale(0.5);
+  }
+  100% {
+    transform: translateY(-10vh) scale(0);
+    opacity: 0;
+  }
+}
+
+/* =============================================================================
+ * GLOWING GRID
+ * ============================================================================= */
+
+.cosmic-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(86, 192, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(86, 192, 246, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+  animation: grid-pulse 8s ease-in-out infinite;
+}
+
+@keyframes grid-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* =============================================================================
+ * GLOW ORBS (Simpler versions for general use)
+ * ============================================================================= */
+
+.glow-orb {
+  background: radial-gradient(
+    circle,
+    rgba(86, 192, 246, 0.2) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.glow-orb-secondary {
+  background: radial-gradient(
+    circle,
+    rgba(45, 237, 173, 0.15) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* =============================================================================
+ * CONTENT WRAPPER
+ * ============================================================================= */
+
+.complete-page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================================================
+ * MOBILE RESPONSIVE
+ * ============================================================================= */
+
+@media (max-width: 768px) {
+  .cosmic-orb-1 {
+    width: 300px;
+    height: 300px;
+  }
+  .cosmic-orb-2 {
+    width: 250px;
+    height: 250px;
+  }
+  .cosmic-orb-3 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .glow-orb,
+  .glow-orb-secondary {
+    opacity: 0.5;
+  }
+}
+
+/* =============================================================================
+ * REDUCED MOTION
+ * ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cosmic-stars,
+  .cosmic-stars-2,
+  .cosmic-orb,
+  .cosmic-aurora,
+  .cosmic-particle,
+  .cosmic-grid {
+    animation: none;
+  }
+
+  .cosmic-orb {
+    opacity: 0.3;
+  }
+}

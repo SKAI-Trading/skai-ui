@@ -1,0 +1,345 @@
+/**
+ * SKAI UI - Button Glow Effects
+ * ==============================
+ *
+ * Premium button hover effects with glowing gradients.
+ * Applies to CTA buttons, social buttons, and action buttons.
+ *
+ * @import '@skai/ui/styles/button-effects.css';
+ *
+ * @package @skai/ui
+ */
+
+/* =============================================================================
+ * GRADIENT ANIMATION (shared by all glow effects)
+ * ============================================================================= */
+
+@keyframes btn-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =============================================================================
+ * PRIMARY CTA GLOW (Cyan/Teal gradient)
+ * ============================================================================= */
+
+.cta-glow {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-glow::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(86, 192, 246, 0.4) 0%,
+    rgba(45, 237, 173, 0.3) 50%,
+    rgba(86, 192, 246, 0.4) 100%
+  );
+  background-size: 200% 200%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  filter: blur(8px);
+}
+
+.cta-glow:hover::before {
+  opacity: 0.5;
+  animation: btn-gradient-shift 3s ease infinite;
+}
+
+.cta-glow:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 24px rgba(86, 192, 246, 0.25),
+    0 0 12px rgba(86, 192, 246, 0.1);
+}
+
+.cta-glow:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(86, 192, 246, 0.2);
+}
+
+/* Subtle pulsing glow animation */
+@keyframes cta-glow-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 16px rgba(86, 192, 246, 0.2),
+      0 0 8px rgba(86, 192, 246, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 6px 24px rgba(86, 192, 246, 0.3),
+      0 0 16px rgba(86, 192, 246, 0.15);
+  }
+}
+
+.cta-glow-pulse {
+  animation: cta-glow-pulse 2s ease-in-out infinite;
+}
+
+/* =============================================================================
+ * PRIMARY BUTTON GLOW (Cyan/Teal gradient)
+ * ============================================================================= */
+
+.btn-glow-primary {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glow-primary::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(86, 192, 246, 0.5) 0%,
+    rgba(45, 237, 173, 0.4) 50%,
+    rgba(86, 192, 246, 0.5) 100%
+  );
+  background-size: 200% 200%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.btn-glow-primary:hover::before {
+  opacity: 0.4;
+  animation: btn-gradient-shift 3s ease infinite;
+}
+
+.btn-glow-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 20px rgba(86, 192, 246, 0.25),
+    0 0 12px rgba(86, 192, 246, 0.12);
+}
+
+/* =============================================================================
+ * TWITTER/X BUTTON GLOW (Twitter Blue)
+ * ============================================================================= */
+
+.btn-glow-twitter {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glow-twitter::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #1da1f2 0%, #56c0f6 50%, #1da1f2 100%);
+  background-size: 200% 200%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.btn-glow-twitter:hover::before {
+  opacity: 0.35;
+  animation: btn-gradient-shift 3s ease infinite;
+}
+
+.btn-glow-twitter:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 20px rgba(29, 161, 242, 0.25),
+    0 0 12px rgba(29, 161, 242, 0.12);
+}
+
+/* =============================================================================
+ * DISCORD BUTTON GLOW (Discord Purple)
+ * ============================================================================= */
+
+.btn-glow-discord {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glow-discord::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #5865f2 0%, #7289da 50%, #5865f2 100%);
+  background-size: 200% 200%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.btn-glow-discord:hover::before {
+  opacity: 0.35;
+  animation: btn-gradient-shift 3s ease infinite;
+}
+
+.btn-glow-discord:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 20px rgba(88, 101, 242, 0.25),
+    0 0 12px rgba(88, 101, 242, 0.12);
+}
+
+/* =============================================================================
+ * DARK BUTTON GLOW (For dark/black buttons)
+ * ============================================================================= */
+
+.btn-glow-dark {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glow-dark::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(200, 200, 200, 0.1) 100%
+  );
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.btn-glow-dark:hover::before {
+  opacity: 0.2;
+}
+
+.btn-glow-dark:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 12px rgba(255, 255, 255, 0.04),
+    0 0 6px rgba(255, 255, 255, 0.02);
+}
+
+/* =============================================================================
+ * SUCCESS/LONG BUTTON GLOW (Green)
+ * ============================================================================= */
+
+.btn-glow-success,
+.btn-glow-long {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glow-success::before,
+.btn-glow-long::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 50%, #16a34a 100%);
+  background-size: 200% 200%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.btn-glow-success:hover::before,
+.btn-glow-long:hover::before {
+  opacity: 0.35;
+  animation: btn-gradient-shift 3s ease infinite;
+}
+
+.btn-glow-success:hover,
+.btn-glow-long:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 20px rgba(22, 163, 74, 0.25),
+    0 0 12px rgba(22, 163, 74, 0.12);
+}
+
+/* =============================================================================
+ * DANGER/SHORT BUTTON GLOW (Red)
+ * ============================================================================= */
+
+.btn-glow-danger,
+.btn-glow-short {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glow-danger::before,
+.btn-glow-short::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #dc2626 100%);
+  background-size: 200% 200%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.btn-glow-danger:hover::before,
+.btn-glow-short:hover::before {
+  opacity: 0.35;
+  animation: btn-gradient-shift 3s ease infinite;
+}
+
+.btn-glow-danger:hover,
+.btn-glow-short:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 20px rgba(220, 38, 38, 0.25),
+    0 0 12px rgba(220, 38, 38, 0.12);
+}
+
+/* =============================================================================
+ * REDUCED MOTION
+ * ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow:hover::before,
+  .btn-glow-primary:hover::before,
+  .btn-glow-twitter:hover::before,
+  .btn-glow-discord:hover::before,
+  .btn-glow-success:hover::before,
+  .btn-glow-long:hover::before,
+  .btn-glow-danger:hover::before,
+  .btn-glow-short:hover::before,
+  .cta-glow-pulse {
+    animation: none;
+  }
+
+  .cta-glow:hover,
+  .btn-glow-primary:hover,
+  .btn-glow-twitter:hover,
+  .btn-glow-discord:hover,
+  .btn-glow-dark:hover,
+  .btn-glow-success:hover,
+  .btn-glow-long:hover,
+  .btn-glow-danger:hover,
+  .btn-glow-short:hover {
+    transform: none;
+  }
+}

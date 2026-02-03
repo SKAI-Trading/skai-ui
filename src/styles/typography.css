@@ -366,73 +366,187 @@
 }
 
 /* =============================================================================
- * TAILWIND UTILITY ALIASES
- * ============================================================================= */
+ * TYPOGRAPHY ALIASES (Valid CSS)
+ * =============================================================================
+ *
+ * Short class name aliases that duplicate the main typography styles.
+ * Users can use either .skai-* or .text-* classes interchangeably.
+ */
 
-/* Text size utilities that map to typography scale */
+/* Headline aliases */
 .text-headline-2 {
-  @extend .skai-headline-2;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 82px;
+  line-height: 90px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
 }
+
 .text-headline-3 {
-  @extend .skai-headline-3;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 54px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
 }
+
 .text-headline-4 {
-  @extend .skai-headline-4;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
 }
+
 .text-headline-5 {
-  @extend .skai-headline-5;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 30px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  font-weight: 300;
 }
+
+/* Super-headline aliases */
 .text-super-1 {
-  @extend .skai-super-1;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
 }
+
 .text-super-2 {
-  @extend .skai-super-2;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
 }
+
+/* Sub-headline aliases */
 .text-sub-1 {
-  @extend .skai-sub-1;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: -0.03em;
+  font-weight: 500;
 }
+
 .text-sub-2 {
-  @extend .skai-sub-2;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.03em;
+  font-weight: 500;
 }
+
 .text-sub-3 {
-  @extend .skai-sub-3;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
 }
+
 .text-sub-4 {
-  @extend .skai-sub-4;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
 }
+
+/* Paragraph aliases */
 .text-para-1 {
-  @extend .skai-para-1;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 }
+
 .text-para-2 {
-  @extend .skai-para-2;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
 }
+
 .text-para-3 {
-  @extend .skai-para-3;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
 }
+
+/* Number aliases */
 .text-number-1 {
-  @extend .skai-number-1;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
 }
+
 .text-number-2 {
-  @extend .skai-number-2;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
 }
+
 .text-number-3 {
-  @extend .skai-number-3;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
 }
+
 .text-number-4 {
-  @extend .skai-number-4;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
 }
+
 .text-number-5 {
-  @extend .skai-number-5;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
 }
+
+/* Label aliases */
 .text-label-1 {
-  @extend .skai-label-1;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .text-label-2 {
-  @extend .skai-label-2;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 .text-label-3 {
-  @extend .skai-label-3;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
+
 .text-label-4 {
-  @extend .skai-label-4;
+  font-family: "Mulish", system-ui, sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
