@@ -189,7 +189,9 @@ interface ChallengeCardProps {
 
 function ChallengeCard({ challenge, isClaimingId, onClaim, onClick }: ChallengeCardProps) {
   const isClaiming = isClaimingId === challenge.id;
-  const progressPercent = (challenge.progress / challenge.target) * 100;
+  const progressPercent = challenge.target > 0 
+    ? Math.min(100, Math.max(0, (challenge.progress / challenge.target) * 100))
+    : 0;
 
   const categoryColors = {
     trading: "text-blue-500 bg-blue-500/10",

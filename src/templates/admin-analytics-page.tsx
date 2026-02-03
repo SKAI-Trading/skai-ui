@@ -394,7 +394,11 @@ function SecurityEventsList({ events, isLoading }: SecurityEventsListProps) {
             <p className="text-sm font-medium">{event.description}</p>
             <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
               <span>{new Date(event.timestamp).toLocaleString()}</span>
-              {event.ip_address && <span>• IP: {event.ip_address}</span>}
+              {event.ip_address && (
+                <span>
+                  • IP: {event.ip_address.split(".").slice(0, 2).join(".")}.xxx.xxx
+                </span>
+              )}
             </div>
           </div>
         </div>

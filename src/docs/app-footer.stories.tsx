@@ -5,7 +5,6 @@ import {
   FooterSocialLink,
 } from "../components/layout/app-footer";
 import {
-  MessageCircle,
   Instagram,
   Bot,
   MessageSquare,

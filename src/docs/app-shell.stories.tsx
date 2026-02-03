@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   AppShell,
-  useAppShell,
   LAYOUT_HEIGHTS,
   FULL_HEIGHT_CLASS,
 } from "../components/layout/app-shell";
@@ -9,7 +8,7 @@ import { AppHeader, AppHeaderNavItem } from "../components/layout/app-header";
 import { AppFooter } from "../components/layout/app-footer";
 import { Button } from "../components/core/button";
 import { Card, CardHeader, CardTitle, CardContent } from "../components/core/card";
-import { Home, LineChart, Gamepad2, Settings, Wallet, Bell, Menu } from "lucide-react";
+import { Home, LineChart, Gamepad2, Settings, Wallet, Bell } from "lucide-react";
 
 const meta: Meta<typeof AppShell> = {
   title: "Layout/AppShell",

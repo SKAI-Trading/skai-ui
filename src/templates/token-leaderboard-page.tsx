@@ -142,7 +142,9 @@ function TokenRow({ token, rank, timeFrame, onTokenClick, onCreatorClick }: Toke
     ? token.price_change_24h 
     : timeFrame === "7d" 
     ? token.price_change_7d 
-    : token.price_change_30d;
+    : timeFrame === "30d"
+    ? token.price_change_30d
+    : null; // "all" timeFrame - no specific price change metric
 
   return (
     <div 
@@ -176,9 +178,9 @@ function TokenRow({ token, rank, timeFrame, onTokenClick, onCreatorClick }: Toke
         <p className="font-semibold">${token.price.toFixed(4)}</p>
         <p className={cn(
           "text-sm",
-          priceChange !== undefined && priceChange >= 0 ? "text-green-500" : "text-red-500"
+          priceChange != null && priceChange >= 0 ? "text-green-500" : "text-red-500"
         )}>
-          {priceChange !== undefined && (
+          {priceChange != null && (
             <>
               {priceChange >= 0 ? "+" : ""}{priceChange.toFixed(2)}%
             </>

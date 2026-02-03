@@ -8,7 +8,7 @@ import {
 } from "../components/layout/page-layouts";
 import { Button } from "../components/core/button";
 import { Card, CardHeader, CardTitle, CardContent } from "../components/core/card";
-import { Settings, Filter, Download, Plus, Wallet, ArrowLeft } from "lucide-react";
+import { Settings, Filter, Download, Plus, Wallet } from "lucide-react";
 
 const meta: Meta = {
   title: "Layout/PageLayouts",
@@ -297,7 +297,7 @@ export const AuthPageWithBackground: StoryObj<typeof AuthPage> = {
         }
         title="Sign In"
         subtitle="Access your SKAI Trading account"
-        backgroundImage="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200"
+        showPattern={true}
       >
         <div className="space-y-4">
           <Button className="w-full">
@@ -340,8 +340,10 @@ export const ContentPageLayout: StoryObj<typeof ContentPage> = {
             }
           />
         }
-        sidebar={
-          <nav className="space-y-2">
+      >
+        <div className="grid md:grid-cols-[200px_1fr_180px] gap-8">
+          {/* Sidebar */}
+          <nav className="space-y-2 hidden md:block">
             <h3 className="mb-3 font-semibold">Getting Started</h3>
             <a href="#" className="block text-sm text-primary hover:underline">
               Introduction
@@ -378,9 +380,25 @@ export const ContentPageLayout: StoryObj<typeof ContentPage> = {
               AI Agent
             </a>
           </nav>
-        }
-        toc={
-          <nav className="space-y-2">
+          
+          {/* Main Content */}
+          <article className="prose dark:prose-invert max-w-none">
+            <h2>Introduction</h2>
+            <p>
+              SKAI Trading is a next-generation trading platform combining DeFi swaps,
+              prediction markets, and gamified trading experiences.
+            </p>
+            <h3>Features</h3>
+            <ul>
+              <li>Token Swaps - Execute trades on Base network</li>
+              <li>Prediction Markets - Bet on market outcomes</li>
+              <li>Gaming - Play HiLo, Mines, and more</li>
+              <li>AI Agent - Get intelligent trading insights</li>
+            </ul>
+          </article>
+          
+          {/* Table of Contents */}
+          <nav className="space-y-2 hidden lg:block">
             <h3 className="mb-3 font-semibold">On this page</h3>
             <a
               href="#"
@@ -407,22 +425,7 @@ export const ContentPageLayout: StoryObj<typeof ContentPage> = {
               Configuration
             </a>
           </nav>
-        }
-      >
-        <article className="prose dark:prose-invert max-w-none">
-          <h2>Introduction</h2>
-          <p>
-            SKAI Trading is a next-generation trading platform combining DeFi swaps,
-            prediction markets, and gamified trading experiences.
-          </p>
-          <h3>Features</h3>
-          <ul>
-            <li>Token Swaps - Execute trades on Base network</li>
-            <li>Prediction Markets - Bet on market outcomes</li>
-            <li>Gaming - Play HiLo, Mines, and more</li>
-            <li>AI Agent - Get intelligent trading insights</li>
-          </ul>
-        </article>
+        </div>
       </ContentPage>
     </div>
   ),

@@ -7,11 +7,8 @@ import {
 import { Button } from "../components/core/button";
 import { Input } from "../components/core/input";
 import {
-  Bell,
   Menu,
   Search,
-  Settings,
-  Wallet,
   User,
   ChevronDown,
 } from "lucide-react";

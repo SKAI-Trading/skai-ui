@@ -210,7 +210,9 @@ function StatsCards({ stats, isLoading }: StatsCardsProps) {
             {stats.external_wallet_count.toLocaleString()}
           </div>
           <p className="text-xs text-muted-foreground mt-1">
-            {((stats.external_wallet_count / stats.total_signups) * 100).toFixed(1)}% of total
+            {stats.total_signups > 0 
+              ? ((stats.external_wallet_count / stats.total_signups) * 100).toFixed(1) 
+              : "0.0"}% of total
           </p>
         </CardContent>
       </Card>
@@ -226,7 +228,9 @@ function StatsCards({ stats, isLoading }: StatsCardsProps) {
             {stats.email_wallet_count.toLocaleString()}
           </div>
           <p className="text-xs text-muted-foreground mt-1">
-            {((stats.email_wallet_count / stats.total_signups) * 100).toFixed(1)}% of total
+            {stats.total_signups > 0 
+              ? ((stats.email_wallet_count / stats.total_signups) * 100).toFixed(1) 
+              : "0.0"}% of total
           </p>
         </CardContent>
       </Card>

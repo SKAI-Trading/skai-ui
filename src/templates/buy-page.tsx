@@ -178,9 +178,10 @@ interface AmountInputProps {
 }
 
 function AmountInput({ value = "", onChange, tokenSymbol, tokenPrice }: AmountInputProps) {
-  const estimatedTokens = tokenPrice && value 
-    ? (parseFloat(value) / tokenPrice).toFixed(4)
-    : "0";
+  const numericValue = parseFloat(value);
+  const estimatedTokens = tokenPrice && Number.isFinite(numericValue) && numericValue > 0
+    ? (numericValue / tokenPrice).toFixed(4)
+    : "0.0000";
 
   return (
     <div className="space-y-2">

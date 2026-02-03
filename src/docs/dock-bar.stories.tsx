@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import {
   DockBar,
   DockBarIcon,
-  DockBarIconProps,
 } from "../components/navigation/dock-bar";
 import {
   MessageSquare,
@@ -207,7 +206,7 @@ export const WithBadges: Story = {
           icon={<Wallet className="h-4 w-4" />}
           label="Wallet"
           badge="NEW"
-          badgeVariant="secondary"
+          badgeVariant="primary"
         />
         <DockBarIcon icon={<Settings className="h-4 w-4" />} label="Settings" />
       </div>
