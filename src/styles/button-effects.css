@@ -89,6 +89,24 @@
   animation: cta-glow-pulse 2s ease-in-out infinite;
 }
 
+/* CTA Pulse - Active flashing animation for high CTR (brand blue #56C7F3) */
+@keyframes cta-pulse {
+  0%, 100% {
+    box-shadow:
+      0 8px 32px rgba(86, 199, 243, 0.4),
+      0 0 0 0 rgba(86, 199, 243, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 8px 40px rgba(86, 199, 243, 0.6),
+      0 0 0 8px rgba(86, 199, 243, 0);
+  }
+}
+
+.cta-pulse {
+  animation: cta-pulse 2s ease-in-out infinite;
+}
+
 /* =============================================================================
  * PRIMARY BUTTON GLOW (Cyan/Teal gradient)
  * ============================================================================= */
