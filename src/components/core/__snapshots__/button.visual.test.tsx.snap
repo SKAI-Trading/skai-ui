@@ -1,0 +1,154 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button Visual Regression > SkaiButton sizes (Figma tokens) > renders large size with 64px height 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4] focus-visible:ring-[#17F9B4] h-16 px-10 py-5 text-base leading-[22px] rounded-[16px] gap-2.5 [&_svg]:size-6"
+>
+  Large
+</button>
+`;
+
+exports[`Button Visual Regression > SkaiButton sizes (Figma tokens) > renders massive size with 72px height 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4] focus-visible:ring-[#17F9B4] h-[72px] px-12 py-5 text-lg leading-6 rounded-[16px] gap-2.5 [&_svg]:size-6"
+>
+  Massive
+</button>
+`;
+
+exports[`Button Visual Regression > SkaiButton sizes (Figma tokens) > renders medium size with 50px height 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4] focus-visible:ring-[#17F9B4] h-[50px] px-8 py-3.5 text-sm leading-[18px] rounded-xl gap-2 [&_svg]:size-4"
+>
+  Medium
+</button>
+`;
+
+exports[`Button Visual Regression > SkaiButton sizes (Figma tokens) > renders small size with 46px height 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4] focus-visible:ring-[#17F9B4] h-[46px] px-6 py-3 text-sm leading-[18px] rounded-xl gap-2 [&_svg]:size-4"
+>
+  Small
+</button>
+`;
+
+exports[`Button Visual Regression > SkaiButton states > renders disabled state correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4] focus-visible:ring-[#17F9B4] h-16 px-10 py-5 text-base leading-[22px] rounded-[16px] gap-2.5 [&_svg]:size-6"
+  disabled=""
+>
+  Disabled
+</button>
+`;
+
+exports[`Button Visual Regression > SkaiButton types (Figma tokens) > renders link type with Alien Green (#17F9B4) 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-transparent text-[#17F9B4] hover:text-[#56C7F3] underline underline-offset-4 h-16 px-10 py-5 text-base leading-[22px] rounded-[16px] gap-2.5 [&_svg]:size-6"
+>
+  Link
+</button>
+`;
+
+exports[`Button Visual Regression > SkaiButton types (Figma tokens) > renders primary type with correct Sky Blue (#56C7F3) 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4] focus-visible:ring-[#17F9B4] h-16 px-10 py-5 text-base leading-[22px] rounded-[16px] gap-2.5 [&_svg]:size-6"
+>
+  Primary
+</button>
+`;
+
+exports[`Button Visual Regression > SkaiButton types (Figma tokens) > renders secondary type with correct border 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-transparent border border-[#56C7F3] text-[#56C7F3] hover:bg-[#56C7F3]/10 focus-visible:ring-[#56C7F3] h-16 px-10 py-5 text-base leading-[22px] rounded-[16px] gap-2.5 [&_svg]:size-6"
+>
+  Secondary
+</button>
+`;
+
+exports[`Button Visual Regression > SkaiButton types (Figma tokens) > renders tertiary type with white text 1`] = `
+<button
+  class="inline-flex items-center justify-center font-['Manrope'] font-normal tracking-[-0.04em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-transparent text-white hover:text-[#17F9B4] focus-visible:ring-[#17F9B4] h-16 px-10 py-5 text-base leading-[22px] rounded-[16px] gap-2.5 [&_svg]:size-6"
+>
+  Tertiary
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button sizes > renders default size correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+>
+  Default Size
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button sizes > renders icon size correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10"
+>
+  +
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button sizes > renders lg size correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8"
+>
+  Large
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button sizes > renders sm size correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+>
+  Small
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button variants > renders default variant correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+>
+  Default
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button variants > renders destructive variant correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 px-4 py-2"
+>
+  Destructive
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button variants > renders ghost variant correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+>
+  Ghost
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button variants > renders link variant correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary underline-offset-4 hover:underline h-10 px-4 py-2"
+>
+  Link
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button variants > renders outline variant correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+>
+  Outline
+</button>
+`;
+
+exports[`Button Visual Regression > Standard Button variants > renders secondary variant correctly 1`] = `
+<button
+  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2"
+>
+  Secondary
+</button>
+`;
