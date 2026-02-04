@@ -31,7 +31,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 450px; /* Matches Figma back layer height of 446px */
+  height: 500px; /* Extra height to ensure no cutoff */
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -40,13 +40,17 @@
 }
 
 /* BACK LAYER - positioned behind, taller bars */
+/* Figma: 8% opacity on the container */
 .ticker-bars-back {
   z-index: 1;
+  opacity: 0.08;
 }
 
 /* FRONT LAYER - positioned in front, shorter bars */
+/* Figma: 34% opacity on the container */
 .ticker-bars-front {
   z-index: 2;
+  opacity: 0.34;
 }
 
 /* LEFT half container - bars grow toward center (right) */
@@ -103,14 +107,14 @@
    ============================================================================= */
 
 .ticker-bars-back .bar-back {
-  /* Back layer: 8% opacity as per Figma */
+  /* Back layer bars - solid color, container has 8% opacity */
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.02) 0%,
-    rgba(86, 199, 243, 0.06) 40%,
-    rgba(86, 199, 243, 0.12) 100%
+    rgba(86, 199, 243, 0.3) 0%,
+    rgba(86, 199, 243, 0.6) 40%,
+    rgba(86, 199, 243, 1) 100%
   );
-  opacity: 0.08; /* Figma: 8% opacity */
+  /* No individual opacity - container handles it */
 }
 
 /* BACK LAYER HEIGHT DISTRIBUTION - Taller bars (Figma max: 446px) */
@@ -149,14 +153,14 @@
    ============================================================================= */
 
 .ticker-bars-front .bar-front {
-  /* Front layer: 34% opacity as per Figma */
+  /* Front layer bars - solid color, container has 34% opacity */
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.08) 0%,
-    rgba(86, 199, 243, 0.20) 40%,
-    rgba(86, 199, 243, 0.40) 100%
+    rgba(86, 199, 243, 0.3) 0%,
+    rgba(86, 199, 243, 0.6) 40%,
+    rgba(86, 199, 243, 1) 100%
   );
-  opacity: 0.34; /* Figma: 34% opacity */
+  /* No individual opacity - container handles it */
 }
 
 /* FRONT LAYER HEIGHT DISTRIBUTION - Shorter bars (Figma max: 162px) */
