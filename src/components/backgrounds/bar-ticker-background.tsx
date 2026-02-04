@@ -31,8 +31,14 @@ export interface BarTickerBackgroundProps {
 /**
  * BarTickerBackground - Animated vertical bar background matching Figma design
  *
- * Creates an animated stock ticker-style background using a MIRROR architecture
- * matching Figma node 2005-4492:
+ * Creates an animated stock ticker-style background with TWO LAYERS matching
+ * Figma node 2005-4492:
+ *
+ * LAYER STRUCTURE:
+ * - BACK layer: Taller bars (more visible on edges)
+ * - FRONT layer: Shorter bars (more visible in center)
+ *
+ * Each layer uses MIRROR architecture:
  * - LEFT half: bars grow from left edge toward center
  * - RIGHT half: mirrored copy (scaleX: -1) creating perfect symmetry
  *
@@ -59,10 +65,10 @@ export function BarTickerBackground({
 
   return (
     <>
-      {/* Main wrapper for the mirrored bar visualization */}
+      {/* BACK LAYER - Taller bars (behind front layer) */}
       <div
         className={cn(
-          "ticker-bars-wrapper transition-all duration-300",
+          "ticker-bars-wrapper ticker-bars-back transition-all duration-300",
           isBlurred && "blur-md",
           className
         )}
@@ -72,8 +78,8 @@ export function BarTickerBackground({
         <div className="ticker-bars-left">
           {bars.map((i) => (
             <div
-              key={`left-${i}`}
-              className="bar"
+              key={`back-left-${i}`}
+              className="bar bar-back"
               style={{ "--bar-index": i } as React.CSSProperties}
             />
           ))}
@@ -83,8 +89,39 @@ export function BarTickerBackground({
         <div className="ticker-bars-right">
           {bars.map((i) => (
             <div
-              key={`right-${i}`}
-              className="bar"
+              key={`back-right-${i}`}
+              className="bar bar-back"
+              style={{ "--bar-index": i } as React.CSSProperties}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* FRONT LAYER - Shorter bars (in front) */}
+      <div
+        className={cn(
+          "ticker-bars-wrapper ticker-bars-front transition-all duration-300",
+          isBlurred && "blur-md"
+        )}
+        aria-hidden="true"
+      >
+        {/* LEFT half - bars grow from left edge toward center */}
+        <div className="ticker-bars-left">
+          {bars.map((i) => (
+            <div
+              key={`front-left-${i}`}
+              className="bar bar-front"
+              style={{ "--bar-index": i } as React.CSSProperties}
+            />
+          ))}
+        </div>
+
+        {/* RIGHT half - mirrored copy via scaleX(-1) */}
+        <div className="ticker-bars-right">
+          {bars.map((i) => (
+            <div
+              key={`front-right-${i}`}
+              className="bar bar-front"
               style={{ "--bar-index": i } as React.CSSProperties}
             />
           ))}

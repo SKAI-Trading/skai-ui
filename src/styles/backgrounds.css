@@ -6,16 +6,26 @@
    ============================================================================= */
 
 /* =============================================================================
-   ANIMATED STOCK TICKER BACKGROUND - MIRROR ARCHITECTURE
+   ANIMATED STOCK TICKER BACKGROUND - TWO-LAYER MIRROR ARCHITECTURE
    =============================================================================
-   Creates a symmetric bar visualization with:
+   Creates a symmetric bar visualization with TWO overlapping layers:
+
+   BACK LAYER (ticker-bars-back):
+   - Taller bars visible in the background
+   - More transparent, provides depth
+
+   FRONT LAYER (ticker-bars-front):
+   - Shorter bars in the foreground
+   - More opaque, provides detail
+
+   Each layer uses MIRROR architecture:
    - LEFT half: bars grow from edge toward center
    - RIGHT half: mirrored copy (scaleX: -1) for perfect symmetry
 
    The green tint comes from Ellipse 24 (blurred green glow) behind the bars.
    ============================================================================= */
 
-/* Main wrapper - contains both halves */
+/* Main wrapper - contains both halves of a layer */
 .ticker-bars-wrapper {
   position: fixed;
   bottom: -50px;
@@ -26,8 +36,17 @@
   justify-content: center;
   align-items: flex-end;
   pointer-events: none;
-  z-index: 2;
   overflow: hidden;
+}
+
+/* BACK LAYER - positioned behind, taller bars */
+.ticker-bars-back {
+  z-index: 1;
+}
+
+/* FRONT LAYER - positioned in front, shorter bars */
+.ticker-bars-front {
+  z-index: 2;
 }
 
 /* LEFT half container - bars grow toward center (right) */
@@ -51,7 +70,10 @@
   transform: scaleX(-1);
 }
 
-/* Individual bar styles */
+/* =============================================================================
+   INDIVIDUAL BAR STYLES - Base styles for all bars
+   ============================================================================= */
+
 .ticker-bars-wrapper .bar {
   flex: 0 0 auto;
   width: 3px;
@@ -59,73 +81,117 @@
   border-radius: 2px 2px 0 0;
   transform-origin: bottom center;
 
-  /* Cyan gradient matching Figma (very transparent) */
+  /* Cyan gradient matching Figma */
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.03) 0%,
-    rgba(86, 199, 243, 0.12) 40%,
-    rgba(86, 199, 243, 0.25) 100%
+    rgba(86, 199, 243, 0.02) 0%,
+    rgba(86, 199, 243, 0.08) 40%,
+    rgba(86, 199, 243, 0.18) 100%
   );
 
   /* Subtle glow */
   box-shadow:
-    0 0 3px rgba(86, 199, 243, 0.15),
-    0 0 6px rgba(86, 199, 243, 0.06);
+    0 0 3px rgba(86, 199, 243, 0.1),
+    0 0 6px rgba(86, 199, 243, 0.05);
 
   /* Animation */
   animation: bar-pulse 20s ease-in-out infinite;
 }
 
 /* =============================================================================
-   HEIGHT DISTRIBUTION - bars grow from edge toward center (mountain effect)
-   Using --bar-index CSS variable (0 at edge, ~100 at center)
+   BACK LAYER BARS - Taller, more transparent
    ============================================================================= */
 
-/* Calculate height based on position - quadratic growth toward center */
-.ticker-bars-wrapper .bar {
-  /* Base heights - these get overridden by nth-child rules */
-  --edge-height: 40px;
-  --center-height: 380px;
+.ticker-bars-back .bar-back {
+  /* Slightly more transparent for depth effect */
+  background: linear-gradient(
+    to top,
+    rgba(86, 199, 243, 0.01) 0%,
+    rgba(86, 199, 243, 0.06) 40%,
+    rgba(86, 199, 243, 0.14) 100%
+  );
+  opacity: 0.7;
 }
 
-/* Height increases as index increases (toward center) */
-/* Edge bars (index 0-20): shortest */
-.ticker-bars-left .bar:nth-child(-n + 20),
-.ticker-bars-right .bar:nth-child(-n + 20) {
-  height: calc(40px + var(--bar-index, 0) * 3px);
-  --pulse-factor: 1.1;
+/* BACK LAYER HEIGHT DISTRIBUTION - Taller bars */
+/* Edge bars (index 0-20) */
+.ticker-bars-back .bar-back:nth-child(-n + 20) {
+  height: calc(60px + var(--bar-index, 0) * 4px);
+  --pulse-factor: 1.08;
 }
 
 /* Mid-edge bars (index 21-40) */
-.ticker-bars-left .bar:nth-child(n + 21):nth-child(-n + 40),
-.ticker-bars-right .bar:nth-child(n + 21):nth-child(-n + 40) {
-  height: calc(80px + (var(--bar-index, 20) - 20) * 5px);
-  --pulse-factor: 1.12;
+.ticker-bars-back .bar-back:nth-child(n + 21):nth-child(-n + 40) {
+  height: calc(120px + (var(--bar-index, 20) - 20) * 6px);
+  --pulse-factor: 1.1;
 }
 
 /* Mid bars (index 41-60) */
-.ticker-bars-left .bar:nth-child(n + 41):nth-child(-n + 60),
-.ticker-bars-right .bar:nth-child(n + 41):nth-child(-n + 60) {
-  height: calc(160px + (var(--bar-index, 40) - 40) * 6px);
-  --pulse-factor: 1.15;
+.ticker-bars-back .bar-back:nth-child(n + 41):nth-child(-n + 60) {
+  height: calc(220px + (var(--bar-index, 40) - 40) * 7px);
+  --pulse-factor: 1.12;
 }
 
 /* Near-center bars (index 61-80) */
-.ticker-bars-left .bar:nth-child(n + 61):nth-child(-n + 80),
-.ticker-bars-right .bar:nth-child(n + 61):nth-child(-n + 80) {
-  height: calc(260px + (var(--bar-index, 60) - 60) * 5px);
-  --pulse-factor: 1.18;
+.ticker-bars-back .bar-back:nth-child(n + 61):nth-child(-n + 80) {
+  height: calc(340px + (var(--bar-index, 60) - 60) * 5px);
+  --pulse-factor: 1.14;
 }
 
 /* Center bars (index 81-100): tallest */
-.ticker-bars-left .bar:nth-child(n + 81),
-.ticker-bars-right .bar:nth-child(n + 81) {
-  height: calc(340px + (var(--bar-index, 80) - 80) * 3px);
+.ticker-bars-back .bar-back:nth-child(n + 81) {
+  height: calc(420px + (var(--bar-index, 80) - 80) * 3px);
+  --pulse-factor: 1.15;
+}
+
+/* =============================================================================
+   FRONT LAYER BARS - Shorter, more opaque
+   ============================================================================= */
+
+.ticker-bars-front .bar-front {
+  /* More opaque for foreground visibility */
+  background: linear-gradient(
+    to top,
+    rgba(86, 199, 243, 0.03) 0%,
+    rgba(86, 199, 243, 0.12) 40%,
+    rgba(86, 199, 243, 0.25) 100%
+  );
+  opacity: 0.9;
+}
+
+/* FRONT LAYER HEIGHT DISTRIBUTION - Shorter bars */
+/* Edge bars (index 0-20) */
+.ticker-bars-front .bar-front:nth-child(-n + 20) {
+  height: calc(30px + var(--bar-index, 0) * 2px);
+  --pulse-factor: 1.12;
+}
+
+/* Mid-edge bars (index 21-40) */
+.ticker-bars-front .bar-front:nth-child(n + 21):nth-child(-n + 40) {
+  height: calc(60px + (var(--bar-index, 20) - 20) * 4px);
+  --pulse-factor: 1.14;
+}
+
+/* Mid bars (index 41-60) */
+.ticker-bars-front .bar-front:nth-child(n + 41):nth-child(-n + 60) {
+  height: calc(130px + (var(--bar-index, 40) - 40) * 5px);
+  --pulse-factor: 1.16;
+}
+
+/* Near-center bars (index 61-80) */
+.ticker-bars-front .bar-front:nth-child(n + 61):nth-child(-n + 80) {
+  height: calc(220px + (var(--bar-index, 60) - 60) * 4px);
+  --pulse-factor: 1.18;
+}
+
+/* Center bars (index 81-100) */
+.ticker-bars-front .bar-front:nth-child(n + 81) {
+  height: calc(290px + (var(--bar-index, 80) - 80) * 2px);
   --pulse-factor: 1.2;
 }
 
 /* =============================================================================
-   BAR WIDTH VARIATION - organic look
+   BAR WIDTH VARIATION - organic look (applies to both layers)
    ============================================================================= */
 
 .ticker-bars-wrapper .bar:nth-child(7n + 1) { width: 2px; margin-right: 4px; }
@@ -228,7 +294,7 @@
 
 @media (max-width: 768px) {
   .ticker-bars-wrapper {
-    height: 200px;
+    height: 250px;
     bottom: -30px;
   }
 
@@ -237,30 +303,46 @@
     margin-right: 2px;
   }
 
-  /* Reduced heights for mobile */
-  .ticker-bars-left .bar:nth-child(-n + 20),
-  .ticker-bars-right .bar:nth-child(-n + 20) {
-    height: calc(20px + var(--bar-index, 0) * 1.5px);
+  /* BACK LAYER - Reduced heights for mobile */
+  .ticker-bars-back .bar-back:nth-child(-n + 20) {
+    height: calc(30px + var(--bar-index, 0) * 2px);
   }
 
-  .ticker-bars-left .bar:nth-child(n + 21):nth-child(-n + 40),
-  .ticker-bars-right .bar:nth-child(n + 21):nth-child(-n + 40) {
-    height: calc(45px + (var(--bar-index, 20) - 20) * 2.5px);
+  .ticker-bars-back .bar-back:nth-child(n + 21):nth-child(-n + 40) {
+    height: calc(60px + (var(--bar-index, 20) - 20) * 3px);
   }
 
-  .ticker-bars-left .bar:nth-child(n + 41):nth-child(-n + 60),
-  .ticker-bars-right .bar:nth-child(n + 41):nth-child(-n + 60) {
-    height: calc(85px + (var(--bar-index, 40) - 40) * 3px);
+  .ticker-bars-back .bar-back:nth-child(n + 41):nth-child(-n + 60) {
+    height: calc(110px + (var(--bar-index, 40) - 40) * 3.5px);
   }
 
-  .ticker-bars-left .bar:nth-child(n + 61):nth-child(-n + 80),
-  .ticker-bars-right .bar:nth-child(n + 61):nth-child(-n + 80) {
-    height: calc(135px + (var(--bar-index, 60) - 60) * 2.5px);
+  .ticker-bars-back .bar-back:nth-child(n + 61):nth-child(-n + 80) {
+    height: calc(170px + (var(--bar-index, 60) - 60) * 2.5px);
   }
 
-  .ticker-bars-left .bar:nth-child(n + 81),
-  .ticker-bars-right .bar:nth-child(n + 81) {
-    height: calc(170px + (var(--bar-index, 80) - 80) * 1.5px);
+  .ticker-bars-back .bar-back:nth-child(n + 81) {
+    height: calc(210px + (var(--bar-index, 80) - 80) * 1.5px);
+  }
+
+  /* FRONT LAYER - Reduced heights for mobile */
+  .ticker-bars-front .bar-front:nth-child(-n + 20) {
+    height: calc(15px + var(--bar-index, 0) * 1px);
+  }
+
+  .ticker-bars-front .bar-front:nth-child(n + 21):nth-child(-n + 40) {
+    height: calc(30px + (var(--bar-index, 20) - 20) * 2px);
+  }
+
+  .ticker-bars-front .bar-front:nth-child(n + 41):nth-child(-n + 60) {
+    height: calc(65px + (var(--bar-index, 40) - 40) * 2.5px);
+  }
+
+  .ticker-bars-front .bar-front:nth-child(n + 61):nth-child(-n + 80) {
+    height: calc(110px + (var(--bar-index, 60) - 60) * 2px);
+  }
+
+  .ticker-bars-front .bar-front:nth-child(n + 81) {
+    height: calc(145px + (var(--bar-index, 80) - 80) * 1px);
   }
 }
 
