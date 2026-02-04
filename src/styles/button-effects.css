@@ -93,18 +93,20 @@
 @keyframes cta-pulse {
   0%, 100% {
     box-shadow:
-      0 8px 32px rgba(86, 199, 243, 0.4),
-      0 0 0 0 rgba(86, 199, 243, 0.4);
+      0 8px 32px rgba(86, 199, 243, 0.5),
+      0 0 0 0 rgba(86, 199, 243, 0.6);
+    transform: scale(1);
   }
   50% {
     box-shadow:
-      0 8px 40px rgba(86, 199, 243, 0.6),
-      0 0 0 8px rgba(86, 199, 243, 0);
+      0 12px 48px rgba(86, 199, 243, 0.8),
+      0 0 0 12px rgba(86, 199, 243, 0);
+    transform: scale(1.02);
   }
 }
 
 .cta-pulse {
-  animation: cta-pulse 2s ease-in-out infinite;
+  animation: cta-pulse 1.5s ease-in-out infinite;
 }
 
 /* =============================================================================
