@@ -178,6 +178,10 @@ export const skaiFonts: Record<string, string[]> = {
   display: ["Cormorant Garamond", "Georgia", "serif"],
   sans: ["Manrope", "system-ui", "sans-serif"],
   serif: ["Cormorant Garamond", "Georgia", "serif"],
+  // Direct font name aliases (for explicit use like font-manrope, font-cormorant)
+  manrope: ["Manrope", "system-ui", "sans-serif"],
+  cormorant: ["Cormorant Garamond", "Georgia", "serif"],
+  mulish: ["Mulish", "system-ui", "sans-serif"],
 };
 
 /**
