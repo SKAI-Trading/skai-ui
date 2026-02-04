@@ -31,7 +31,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 500px; /* Extra height to ensure no cutoff */
+  height: 600px; /* Tall enough for bars reaching ~50% viewport */
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -117,34 +117,35 @@
   /* No individual opacity - container handles it */
 }
 
-/* BACK LAYER HEIGHT DISTRIBUTION - Taller bars (Figma max: 446px) */
-/* Edge bars (index 0-20): 80px - 160px */
+/* BACK LAYER HEIGHT DISTRIBUTION - Taller bars reaching ~50% viewport */
+/* Heights are multiplied by --height-variation for stock-chart-like spikes */
+/* Edge bars (index 0-20): 120px - 220px base */
 .ticker-bars-back .bar-back:nth-child(-n + 20) {
-  height: calc(80px + var(--bar-index, 0) * 4px);
+  height: calc((120px + var(--bar-index, 0) * 5px) * var(--height-variation, 1));
   --pulse-factor: 1.08;
 }
 
-/* Mid-edge bars (index 21-40): 160px - 260px */
+/* Mid-edge bars (index 21-40): 220px - 370px base */
 .ticker-bars-back .bar-back:nth-child(n + 21):nth-child(-n + 40) {
-  height: calc(160px + (var(--bar-index, 20) - 20) * 5px);
+  height: calc((220px + (var(--bar-index, 20) - 20) * 7.5px) * var(--height-variation, 1));
   --pulse-factor: 1.1;
 }
 
-/* Mid bars (index 41-60): 260px - 360px */
+/* Mid bars (index 41-60): 370px - 470px base */
 .ticker-bars-back .bar-back:nth-child(n + 41):nth-child(-n + 60) {
-  height: calc(260px + (var(--bar-index, 40) - 40) * 5px);
+  height: calc((370px + (var(--bar-index, 40) - 40) * 5px) * var(--height-variation, 1));
   --pulse-factor: 1.12;
 }
 
-/* Near-center bars (index 61-80): 360px - 420px */
+/* Near-center bars (index 61-80): 470px - 520px base */
 .ticker-bars-back .bar-back:nth-child(n + 61):nth-child(-n + 80) {
-  height: calc(360px + (var(--bar-index, 60) - 60) * 3px);
+  height: calc((470px + (var(--bar-index, 60) - 60) * 2.5px) * var(--height-variation, 1));
   --pulse-factor: 1.14;
 }
 
-/* Center bars (index 81-100): 420px - 446px (Figma max) */
+/* Center bars (index 81-100): 520px - 550px base (tallest) */
 .ticker-bars-back .bar-back:nth-child(n + 81) {
-  height: calc(420px + (var(--bar-index, 80) - 80) * 1.3px);
+  height: calc((520px + (var(--bar-index, 80) - 80) * 1.5px) * var(--height-variation, 1));
   --pulse-factor: 1.15;
 }
 
@@ -163,34 +164,35 @@
   /* No individual opacity - container handles it */
 }
 
-/* FRONT LAYER HEIGHT DISTRIBUTION - Shorter bars (Figma max: 162px) */
-/* Edge bars (index 0-20): 25px - 50px */
+/* FRONT LAYER HEIGHT DISTRIBUTION - Shorter but still prominent bars */
+/* Heights are multiplied by --height-variation for stock-chart-like spikes */
+/* Edge bars (index 0-20): 50px - 100px base */
 .ticker-bars-front .bar-front:nth-child(-n + 20) {
-  height: calc(25px + var(--bar-index, 0) * 1.25px);
+  height: calc((50px + var(--bar-index, 0) * 2.5px) * var(--height-variation, 1));
   --pulse-factor: 1.12;
 }
 
-/* Mid-edge bars (index 21-40): 50px - 85px */
+/* Mid-edge bars (index 21-40): 100px - 160px base */
 .ticker-bars-front .bar-front:nth-child(n + 21):nth-child(-n + 40) {
-  height: calc(50px + (var(--bar-index, 20) - 20) * 1.75px);
+  height: calc((100px + (var(--bar-index, 20) - 20) * 3px) * var(--height-variation, 1));
   --pulse-factor: 1.14;
 }
 
-/* Mid bars (index 41-60): 85px - 120px */
+/* Mid bars (index 41-60): 160px - 210px base */
 .ticker-bars-front .bar-front:nth-child(n + 41):nth-child(-n + 60) {
-  height: calc(85px + (var(--bar-index, 40) - 40) * 1.75px);
+  height: calc((160px + (var(--bar-index, 40) - 40) * 2.5px) * var(--height-variation, 1));
   --pulse-factor: 1.16;
 }
 
-/* Near-center bars (index 61-80): 120px - 145px */
+/* Near-center bars (index 61-80): 210px - 245px base */
 .ticker-bars-front .bar-front:nth-child(n + 61):nth-child(-n + 80) {
-  height: calc(120px + (var(--bar-index, 60) - 60) * 1.25px);
+  height: calc((210px + (var(--bar-index, 60) - 60) * 1.75px) * var(--height-variation, 1));
   --pulse-factor: 1.18;
 }
 
-/* Center bars (index 81-100): 145px - 162px (Figma max) */
+/* Center bars (index 81-100): 245px - 270px base */
 .ticker-bars-front .bar-front:nth-child(n + 81) {
-  height: calc(145px + (var(--bar-index, 80) - 80) * 0.85px);
+  height: calc((245px + (var(--bar-index, 80) - 80) * 1.25px) * var(--height-variation, 1));
   --pulse-factor: 1.2;
 }
 
@@ -206,7 +208,7 @@
 }
 
 /* =============================================================================
-   ANIMATION - synchronized pulse with staggered timing
+   ANIMATION - independent timing for each layer
    ============================================================================= */
 
 @keyframes bar-pulse {
@@ -220,25 +222,45 @@
   }
 }
 
-/* Animation duration variation for organic feel */
-.ticker-bars-wrapper .bar:nth-child(11n + 1) { animation-duration: 18s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 2) { animation-duration: 22s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 3) { animation-duration: 16s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 4) { animation-duration: 24s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 5) { animation-duration: 20s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 6) { animation-duration: 26s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 7) { animation-duration: 17s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 8) { animation-duration: 23s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 9) { animation-duration: 19s; }
-.ticker-bars-wrapper .bar:nth-child(11n + 10) { animation-duration: 25s; }
-.ticker-bars-wrapper .bar:nth-child(11n) { animation-duration: 21s; }
+/* BACK LAYER - slower, more subtle animation */
+.ticker-bars-back .bar:nth-child(11n + 1) { animation-duration: 28s; }
+.ticker-bars-back .bar:nth-child(11n + 2) { animation-duration: 32s; }
+.ticker-bars-back .bar:nth-child(11n + 3) { animation-duration: 26s; }
+.ticker-bars-back .bar:nth-child(11n + 4) { animation-duration: 34s; }
+.ticker-bars-back .bar:nth-child(11n + 5) { animation-duration: 30s; }
+.ticker-bars-back .bar:nth-child(11n + 6) { animation-duration: 36s; }
+.ticker-bars-back .bar:nth-child(11n + 7) { animation-duration: 27s; }
+.ticker-bars-back .bar:nth-child(11n + 8) { animation-duration: 33s; }
+.ticker-bars-back .bar:nth-child(11n + 9) { animation-duration: 29s; }
+.ticker-bars-back .bar:nth-child(11n + 10) { animation-duration: 35s; }
+.ticker-bars-back .bar:nth-child(11n) { animation-duration: 31s; }
 
-/* Animation delay - center bars lead, edge bars follow */
-.ticker-bars-wrapper .bar:nth-child(-n + 20) { animation-delay: -5s; }
-.ticker-bars-wrapper .bar:nth-child(n + 21):nth-child(-n + 40) { animation-delay: -4s; }
-.ticker-bars-wrapper .bar:nth-child(n + 41):nth-child(-n + 60) { animation-delay: -3s; }
-.ticker-bars-wrapper .bar:nth-child(n + 61):nth-child(-n + 80) { animation-delay: -2s; }
-.ticker-bars-wrapper .bar:nth-child(n + 81) { animation-delay: -1s; }
+/* FRONT LAYER - faster, more dynamic animation */
+.ticker-bars-front .bar:nth-child(11n + 1) { animation-duration: 15s; }
+.ticker-bars-front .bar:nth-child(11n + 2) { animation-duration: 19s; }
+.ticker-bars-front .bar:nth-child(11n + 3) { animation-duration: 13s; }
+.ticker-bars-front .bar:nth-child(11n + 4) { animation-duration: 21s; }
+.ticker-bars-front .bar:nth-child(11n + 5) { animation-duration: 17s; }
+.ticker-bars-front .bar:nth-child(11n + 6) { animation-duration: 23s; }
+.ticker-bars-front .bar:nth-child(11n + 7) { animation-duration: 14s; }
+.ticker-bars-front .bar:nth-child(11n + 8) { animation-duration: 20s; }
+.ticker-bars-front .bar:nth-child(11n + 9) { animation-duration: 16s; }
+.ticker-bars-front .bar:nth-child(11n + 10) { animation-duration: 22s; }
+.ticker-bars-front .bar:nth-child(11n) { animation-duration: 18s; }
+
+/* BACK LAYER animation delays - offset from front */
+.ticker-bars-back .bar:nth-child(-n + 20) { animation-delay: -12s; }
+.ticker-bars-back .bar:nth-child(n + 21):nth-child(-n + 40) { animation-delay: -10s; }
+.ticker-bars-back .bar:nth-child(n + 41):nth-child(-n + 60) { animation-delay: -8s; }
+.ticker-bars-back .bar:nth-child(n + 61):nth-child(-n + 80) { animation-delay: -6s; }
+.ticker-bars-back .bar:nth-child(n + 81) { animation-delay: -4s; }
+
+/* FRONT LAYER animation delays - different offset */
+.ticker-bars-front .bar:nth-child(-n + 20) { animation-delay: -3s; }
+.ticker-bars-front .bar:nth-child(n + 21):nth-child(-n + 40) { animation-delay: -2s; }
+.ticker-bars-front .bar:nth-child(n + 41):nth-child(-n + 60) { animation-delay: -1s; }
+.ticker-bars-front .bar:nth-child(n + 61):nth-child(-n + 80) { animation-delay: 0s; }
+.ticker-bars-front .bar:nth-child(n + 81) { animation-delay: -5s; }
 
 /* =============================================================================
    DEPTH BLUR OVERLAY

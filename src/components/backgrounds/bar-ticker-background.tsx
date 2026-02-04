@@ -47,6 +47,20 @@ export interface BarTickerBackgroundProps {
  *
  * Requires backgrounds.css to be imported for animations.
  */
+// Seeded random function for consistent randomness
+function seededRandom(seed: number): number {
+  const x = Math.sin(seed * 9999) * 10000;
+  return x - Math.floor(x);
+}
+
+// Generate random height variation for stock-chart-like appearance
+function getHeightVariation(index: number, layer: "back" | "front"): number {
+  const seed = layer === "back" ? index * 1.5 : index * 2.7;
+  const random = seededRandom(seed);
+  // Random variation between -30% and +40% of base height
+  return 0.7 + random * 0.7;
+}
+
 export function BarTickerBackground({
   barCount = 200,
   isBlurred = false,
@@ -57,9 +71,20 @@ export function BarTickerBackground({
   // Create bars for one half only - right half will mirror via CSS
   const halfCount = Math.floor(barCount / 2);
 
-  // Memoize bar array to prevent unnecessary re-renders
-  const bars = React.useMemo(
-    () => Array.from({ length: halfCount }, (_, i) => i),
+  // Memoize bar array with random height variations for stock-chart appearance
+  const backBars = React.useMemo(
+    () => Array.from({ length: halfCount }, (_, i) => ({
+      index: i,
+      variation: getHeightVariation(i, "back"),
+    })),
+    [halfCount]
+  );
+
+  const frontBars = React.useMemo(
+    () => Array.from({ length: halfCount }, (_, i) => ({
+      index: i,
+      variation: getHeightVariation(i, "front"),
+    })),
     [halfCount]
   );
 
@@ -76,22 +101,28 @@ export function BarTickerBackground({
       >
         {/* LEFT half - bars grow from left edge toward center */}
         <div className="ticker-bars-left">
-          {bars.map((i) => (
+          {backBars.map((bar) => (
             <div
-              key={`back-left-${i}`}
+              key={`back-left-${bar.index}`}
               className="bar bar-back"
-              style={{ "--bar-index": i } as React.CSSProperties}
+              style={{
+                "--bar-index": bar.index,
+                "--height-variation": bar.variation,
+              } as React.CSSProperties}
             />
           ))}
         </div>
 
         {/* RIGHT half - mirrored copy via scaleX(-1) */}
         <div className="ticker-bars-right">
-          {bars.map((i) => (
+          {backBars.map((bar) => (
             <div
-              key={`back-right-${i}`}
+              key={`back-right-${bar.index}`}
               className="bar bar-back"
-              style={{ "--bar-index": i } as React.CSSProperties}
+              style={{
+                "--bar-index": bar.index,
+                "--height-variation": bar.variation,
+              } as React.CSSProperties}
             />
           ))}
         </div>
@@ -107,22 +138,28 @@ export function BarTickerBackground({
       >
         {/* LEFT half - bars grow from left edge toward center */}
         <div className="ticker-bars-left">
-          {bars.map((i) => (
+          {frontBars.map((bar) => (
             <div
-              key={`front-left-${i}`}
+              key={`front-left-${bar.index}`}
               className="bar bar-front"
-              style={{ "--bar-index": i } as React.CSSProperties}
+              style={{
+                "--bar-index": bar.index,
+                "--height-variation": bar.variation,
+              } as React.CSSProperties}
             />
           ))}
         </div>
 
         {/* RIGHT half - mirrored copy via scaleX(-1) */}
         <div className="ticker-bars-right">
-          {bars.map((i) => (
+          {frontBars.map((bar) => (
             <div
-              key={`front-right-${i}`}
+              key={`front-right-${bar.index}`}
               className="bar bar-front"
-              style={{ "--bar-index": i } as React.CSSProperties}
+              style={{
+                "--bar-index": bar.index,
+                "--height-variation": bar.variation,
+              } as React.CSSProperties}
             />
           ))}
         </div>
