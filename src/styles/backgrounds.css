@@ -175,32 +175,32 @@
   --base-height: 50px;
 }
 
-/* Front layer bars - Cyan/Sky Blue (#56C7F3) - SHORTER than back for contrast */
+/* Front layer bars - Cyan/Sky Blue (#56C7F3) - matching Figma node 2005:4515 */
 .ticker-bars-container .bar.bar-front {
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.08) 0%,
-    rgba(86, 199, 243, 0.45) 35%,
-    rgba(86, 199, 243, 0.85) 100%
+    rgba(86, 199, 243, 0.06) 0%,
+    rgba(86, 199, 243, 0.35) 35%,
+    rgba(86, 199, 243, 0.7) 100%
   );
   box-shadow:
-    0 0 8px rgba(86, 199, 243, 0.35),
-    0 0 14px rgba(86, 199, 243, 0.15);
+    0 0 6px rgba(86, 199, 243, 0.3),
+    0 0 12px rgba(86, 199, 243, 0.12);
   --peak-height: 180px;
   --base-height: 55px;
 }
 
-/* Back layer bars - Green/Alien Green (#17F9B4) - MUCH TALLER than front (Figma: 269-415px) */
+/* Back layer bars - ALSO Cyan/Sky Blue (#56C7F3) matching Figma - green tint comes from Ellipse 24 glow */
 .ticker-bars-container .bar.bar-back {
   background: linear-gradient(
     to top,
-    rgba(23, 249, 180, 0.08) 0%,
-    rgba(23, 249, 180, 0.4) 35%,
-    rgba(23, 249, 180, 0.75) 100%
+    rgba(86, 199, 243, 0.05) 0%,
+    rgba(86, 199, 243, 0.25) 35%,
+    rgba(86, 199, 243, 0.55) 100%
   );
   box-shadow:
-    0 0 8px rgba(23, 249, 180, 0.35),
-    0 0 16px rgba(23, 249, 180, 0.2);
+    0 0 6px rgba(86, 199, 243, 0.25),
+    0 0 12px rgba(86, 199, 243, 0.1);
   --peak-height: 400px;
   --base-height: 150px;
   animation-duration: 25s; /* Slower for back layer */

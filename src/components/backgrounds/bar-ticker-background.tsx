@@ -29,11 +29,14 @@ export interface BarTickerBackgroundProps {
 }
 
 /**
- * BarTickerBackground - Animated vertical bar background with layered colors
+ * BarTickerBackground - Animated vertical bar background matching Figma design
  *
- * Creates an animated stock ticker-style background with multiple layers of
- * vertical bars in different colors (cyan front, green/teal back) that
- * oscillate like a live trading chart. Matches Figma design node 2005-4492.
+ * Creates an animated stock ticker-style background with two layers of
+ * vertical bars in the same cyan/sky blue color (#56C7F3) that oscillate
+ * like a live trading chart. The green tint visible in Figma comes from
+ * Ellipse 24 (a green radial gradient glow) positioned behind the bars.
+ *
+ * Matches Figma design node 2005-4492 with file node 2005-4515 (bars).
  *
  * Requires backgrounds.css to be imported for animations.
  */
@@ -57,7 +60,7 @@ export function BarTickerBackground({
 
   return (
     <>
-      {/* Back layer - green/teal (#17F9B4) tint, shorter bars */}
+      {/* Back layer - cyan/sky blue (#56C7F3), taller bars for depth */}
       <div
         className={cn(
           "ticker-bars-container ticker-bars-back transition-all duration-300",
@@ -71,7 +74,7 @@ export function BarTickerBackground({
         ))}
       </div>
 
-      {/* Front layer - cyan/sky blue (#56C7F3), taller bars */}
+      {/* Front layer - cyan/sky blue (#56C7F3), shorter bars in front */}
       <div
         className={cn(
           "ticker-bars-container ticker-bars-front transition-all duration-300",
