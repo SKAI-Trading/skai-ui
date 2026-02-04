@@ -55,27 +55,25 @@
   opacity: 0.34;
 }
 
-/* LEFT half container - bars grow toward center (right) */
+/* LEFT half container - bars start from LEFT edge, grow toward center */
 .ticker-bars-left {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Start from left edge */
   flex: 1;
   height: 100%;
   gap: 0;
-  margin-right: -2px; /* Overlap slightly to eliminate center gap */
 }
 
-/* RIGHT half container - MIRRORED via scaleX(-1) */
+/* RIGHT half container - MIRRORED so bars also start from RIGHT edge */
 .ticker-bars-right {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start; /* Start from edge (right due to mirror) */
   flex: 1;
   height: 100%;
   gap: 0;
-  transform: scaleX(-1);
-  margin-left: -2px; /* Overlap slightly to eliminate center gap */
+  transform: scaleX(-1); /* Mirror flips so bars start from right edge */
 }
 
 /* =============================================================================
