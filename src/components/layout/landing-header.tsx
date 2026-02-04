@@ -126,8 +126,8 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
         ref={ref}
         className={cn(
           "fixed left-0 right-0 top-0 z-50",
-          "px-3 sm:px-4 md:px-8 lg:px-[88px]",
-          "py-3 sm:py-4 md:py-5 lg:py-6",
+          "px-4 sm:px-6 md:px-8",
+          "py-6 sm:py-7 md:py-8",
           "flex items-center justify-between",
           "transition-all duration-200",
           isBlurred && "bg-[#001615]/80 backdrop-blur-md",
@@ -152,7 +152,8 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
         </div>
 
         {/* Right Section - Social Icons (Rule of 5 for borrowed trust) */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        {/* Figma: 16x16 icons with 32px gap between them */}
+        <div className="flex items-center gap-6 sm:gap-8">
           {discordUrl && (
             <a
               href={discordUrl}
@@ -161,7 +162,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               className="text-white/60 transition-colors hover:text-white"
               aria-label="Discord"
             >
-              <DiscordIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              <DiscordIcon className="h-4 w-4" />
             </a>
           )}
           {instagramUrl && (
@@ -172,7 +173,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               className="text-white/60 transition-colors hover:text-white"
               aria-label="Instagram"
             >
-              <InstagramIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              <InstagramIcon className="h-4 w-4" />
             </a>
           )}
           {twitterUrl && (
@@ -183,7 +184,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               className="text-white/60 transition-colors hover:text-white"
               aria-label="X (Twitter)"
             >
-              <TwitterXIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              <TwitterXIcon className="h-4 w-4" />
             </a>
           )}
           {facebookUrl && (
@@ -194,7 +195,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               className="text-white/60 transition-colors hover:text-white"
               aria-label="Facebook"
             >
-              <FacebookIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              <FacebookIcon className="h-4 w-4" />
             </a>
           )}
           {youtubeUrl && (
@@ -205,7 +206,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               className="text-white/60 transition-colors hover:text-white"
               aria-label="YouTube"
             >
-              <YouTubeIcon className="h-4 w-4 sm:h-5 sm:w-5" />
+              <YouTubeIcon className="h-4 w-4" />
             </a>
           )}
         </div>
