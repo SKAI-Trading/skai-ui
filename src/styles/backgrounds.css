@@ -28,15 +28,15 @@
 /* Main wrapper - contains both halves of a layer */
 .ticker-bars-wrapper {
   position: fixed;
-  bottom: -50px;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 450px;
+  height: 450px; /* Matches Figma back layer height of 446px */
   display: flex;
   justify-content: center;
   align-items: flex-end;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible; /* Allow bars to extend to full height */
 }
 
 /* BACK LAYER - positioned behind, taller bars */
@@ -77,11 +77,11 @@
 .ticker-bars-wrapper .bar {
   flex: 0 0 auto;
   width: 3px;
-  margin-right: 3px;
+  margin-right: 5px; /* Figma: 5px spacing */
   border-radius: 2px 2px 0 0;
   transform-origin: bottom center;
 
-  /* Cyan gradient matching Figma */
+  /* Cyan gradient matching Figma - Sky Blue 300 (#56C7F3) */
   background: linear-gradient(
     to top,
     rgba(86, 199, 243, 0.02) 0%,
@@ -103,44 +103,44 @@
    ============================================================================= */
 
 .ticker-bars-back .bar-back {
-  /* Slightly more transparent for depth effect */
+  /* Back layer: 8% opacity as per Figma */
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.01) 0%,
+    rgba(86, 199, 243, 0.02) 0%,
     rgba(86, 199, 243, 0.06) 40%,
-    rgba(86, 199, 243, 0.14) 100%
+    rgba(86, 199, 243, 0.12) 100%
   );
-  opacity: 0.7;
+  opacity: 0.08; /* Figma: 8% opacity */
 }
 
-/* BACK LAYER HEIGHT DISTRIBUTION - Taller bars */
-/* Edge bars (index 0-20) */
+/* BACK LAYER HEIGHT DISTRIBUTION - Taller bars (Figma max: 446px) */
+/* Edge bars (index 0-20): 80px - 160px */
 .ticker-bars-back .bar-back:nth-child(-n + 20) {
-  height: calc(60px + var(--bar-index, 0) * 4px);
+  height: calc(80px + var(--bar-index, 0) * 4px);
   --pulse-factor: 1.08;
 }
 
-/* Mid-edge bars (index 21-40) */
+/* Mid-edge bars (index 21-40): 160px - 260px */
 .ticker-bars-back .bar-back:nth-child(n + 21):nth-child(-n + 40) {
-  height: calc(120px + (var(--bar-index, 20) - 20) * 6px);
+  height: calc(160px + (var(--bar-index, 20) - 20) * 5px);
   --pulse-factor: 1.1;
 }
 
-/* Mid bars (index 41-60) */
+/* Mid bars (index 41-60): 260px - 360px */
 .ticker-bars-back .bar-back:nth-child(n + 41):nth-child(-n + 60) {
-  height: calc(220px + (var(--bar-index, 40) - 40) * 7px);
+  height: calc(260px + (var(--bar-index, 40) - 40) * 5px);
   --pulse-factor: 1.12;
 }
 
-/* Near-center bars (index 61-80) */
+/* Near-center bars (index 61-80): 360px - 420px */
 .ticker-bars-back .bar-back:nth-child(n + 61):nth-child(-n + 80) {
-  height: calc(340px + (var(--bar-index, 60) - 60) * 5px);
+  height: calc(360px + (var(--bar-index, 60) - 60) * 3px);
   --pulse-factor: 1.14;
 }
 
-/* Center bars (index 81-100): tallest */
+/* Center bars (index 81-100): 420px - 446px (Figma max) */
 .ticker-bars-back .bar-back:nth-child(n + 81) {
-  height: calc(420px + (var(--bar-index, 80) - 80) * 3px);
+  height: calc(420px + (var(--bar-index, 80) - 80) * 1.3px);
   --pulse-factor: 1.15;
 }
 
@@ -149,44 +149,44 @@
    ============================================================================= */
 
 .ticker-bars-front .bar-front {
-  /* More opaque for foreground visibility */
+  /* Front layer: 34% opacity as per Figma */
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.03) 0%,
-    rgba(86, 199, 243, 0.12) 40%,
-    rgba(86, 199, 243, 0.25) 100%
+    rgba(86, 199, 243, 0.08) 0%,
+    rgba(86, 199, 243, 0.20) 40%,
+    rgba(86, 199, 243, 0.40) 100%
   );
-  opacity: 0.9;
+  opacity: 0.34; /* Figma: 34% opacity */
 }
 
-/* FRONT LAYER HEIGHT DISTRIBUTION - Shorter bars */
-/* Edge bars (index 0-20) */
+/* FRONT LAYER HEIGHT DISTRIBUTION - Shorter bars (Figma max: 162px) */
+/* Edge bars (index 0-20): 25px - 50px */
 .ticker-bars-front .bar-front:nth-child(-n + 20) {
-  height: calc(30px + var(--bar-index, 0) * 2px);
+  height: calc(25px + var(--bar-index, 0) * 1.25px);
   --pulse-factor: 1.12;
 }
 
-/* Mid-edge bars (index 21-40) */
+/* Mid-edge bars (index 21-40): 50px - 85px */
 .ticker-bars-front .bar-front:nth-child(n + 21):nth-child(-n + 40) {
-  height: calc(60px + (var(--bar-index, 20) - 20) * 4px);
+  height: calc(50px + (var(--bar-index, 20) - 20) * 1.75px);
   --pulse-factor: 1.14;
 }
 
-/* Mid bars (index 41-60) */
+/* Mid bars (index 41-60): 85px - 120px */
 .ticker-bars-front .bar-front:nth-child(n + 41):nth-child(-n + 60) {
-  height: calc(130px + (var(--bar-index, 40) - 40) * 5px);
+  height: calc(85px + (var(--bar-index, 40) - 40) * 1.75px);
   --pulse-factor: 1.16;
 }
 
-/* Near-center bars (index 61-80) */
+/* Near-center bars (index 61-80): 120px - 145px */
 .ticker-bars-front .bar-front:nth-child(n + 61):nth-child(-n + 80) {
-  height: calc(220px + (var(--bar-index, 60) - 60) * 4px);
+  height: calc(120px + (var(--bar-index, 60) - 60) * 1.25px);
   --pulse-factor: 1.18;
 }
 
-/* Center bars (index 81-100) */
+/* Center bars (index 81-100): 145px - 162px (Figma max) */
 .ticker-bars-front .bar-front:nth-child(n + 81) {
-  height: calc(290px + (var(--bar-index, 80) - 80) * 2px);
+  height: calc(145px + (var(--bar-index, 80) - 80) * 0.85px);
   --pulse-factor: 1.2;
 }
 
@@ -195,9 +195,10 @@
    ============================================================================= */
 
 /* All bars have uniform width and spacing so front/back layers align perfectly */
+/* Figma spacing: 5px between bars */
 .ticker-bars-wrapper .bar {
   width: 3px;
-  margin-right: 3px;
+  margin-right: 5px; /* Figma: 5px spacing */
 }
 
 /* =============================================================================
@@ -293,54 +294,54 @@
 @media (max-width: 768px) {
   .ticker-bars-wrapper {
     height: 250px;
-    bottom: -30px;
+    bottom: 0;
   }
 
   .ticker-bars-wrapper .bar {
     width: 2px;
-    margin-right: 2px;
+    margin-right: 3px;
   }
 
-  /* BACK LAYER - Reduced heights for mobile */
+  /* BACK LAYER - Reduced heights for mobile (proportional to 446px max) */
   .ticker-bars-back .bar-back:nth-child(-n + 20) {
-    height: calc(30px + var(--bar-index, 0) * 2px);
+    height: calc(45px + var(--bar-index, 0) * 2px);
   }
 
   .ticker-bars-back .bar-back:nth-child(n + 21):nth-child(-n + 40) {
-    height: calc(60px + (var(--bar-index, 20) - 20) * 3px);
+    height: calc(85px + (var(--bar-index, 20) - 20) * 2.5px);
   }
 
   .ticker-bars-back .bar-back:nth-child(n + 41):nth-child(-n + 60) {
-    height: calc(110px + (var(--bar-index, 40) - 40) * 3.5px);
+    height: calc(135px + (var(--bar-index, 40) - 40) * 2.5px);
   }
 
   .ticker-bars-back .bar-back:nth-child(n + 61):nth-child(-n + 80) {
-    height: calc(170px + (var(--bar-index, 60) - 60) * 2.5px);
+    height: calc(185px + (var(--bar-index, 60) - 60) * 1.5px);
   }
 
   .ticker-bars-back .bar-back:nth-child(n + 81) {
-    height: calc(210px + (var(--bar-index, 80) - 80) * 1.5px);
+    height: calc(215px + (var(--bar-index, 80) - 80) * 0.75px);
   }
 
-  /* FRONT LAYER - Reduced heights for mobile */
+  /* FRONT LAYER - Reduced heights for mobile (proportional to 162px max) */
   .ticker-bars-front .bar-front:nth-child(-n + 20) {
-    height: calc(15px + var(--bar-index, 0) * 1px);
+    height: calc(12px + var(--bar-index, 0) * 0.6px);
   }
 
   .ticker-bars-front .bar-front:nth-child(n + 21):nth-child(-n + 40) {
-    height: calc(30px + (var(--bar-index, 20) - 20) * 2px);
+    height: calc(24px + (var(--bar-index, 20) - 20) * 0.9px);
   }
 
   .ticker-bars-front .bar-front:nth-child(n + 41):nth-child(-n + 60) {
-    height: calc(65px + (var(--bar-index, 40) - 40) * 2.5px);
+    height: calc(42px + (var(--bar-index, 40) - 40) * 0.9px);
   }
 
   .ticker-bars-front .bar-front:nth-child(n + 61):nth-child(-n + 80) {
-    height: calc(110px + (var(--bar-index, 60) - 60) * 2px);
+    height: calc(60px + (var(--bar-index, 60) - 60) * 0.6px);
   }
 
   .ticker-bars-front .bar-front:nth-child(n + 81) {
-    height: calc(145px + (var(--bar-index, 80) - 80) * 1px);
+    height: calc(72px + (var(--bar-index, 80) - 80) * 0.4px);
   }
 }
 
