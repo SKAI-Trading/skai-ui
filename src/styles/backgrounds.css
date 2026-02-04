@@ -63,11 +63,7 @@
   flex: 1;
   height: 100%;
   gap: 0;
-}
-
-/* Remove margin from last bar in left half so it meets center seamlessly */
-.ticker-bars-left .bar:last-child {
-  margin-right: 0;
+  margin-right: -4px; /* Overlap slightly to eliminate center gap */
 }
 
 /* RIGHT half container - MIRRORED so bars grow toward center from right */
@@ -79,11 +75,7 @@
   height: 100%;
   gap: 0;
   transform: scaleX(-1); /* Mirror flips so bars visually come from right edge */
-}
-
-/* Remove margin from last bar in right half (which visually appears at center due to mirror) */
-.ticker-bars-right .bar:last-child {
-  margin-right: 0;
+  margin-left: -4px; /* Overlap slightly to eliminate center gap */
 }
 
 /* =============================================================================
