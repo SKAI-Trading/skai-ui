@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 export interface BarTickerBackgroundProps {
   /**
    * Number of bars to render (total across both halves)
-   * @default 400
+   * @default 600
    */
   barCount?: number;
   /**
@@ -62,7 +62,7 @@ function getHeightVariation(index: number, layer: "back" | "front"): number {
 }
 
 export function BarTickerBackground({
-  barCount = 400,
+  barCount = 600,
   isBlurred = false,
   className,
   showShimmer = false,
