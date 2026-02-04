@@ -30,9 +30,9 @@
 .ticker-bars-wrapper {
   position: fixed;
   bottom: 0;
-  left: -15%; /* Extend 15% beyond left edge */
-  right: -15%; /* Extend 15% beyond right edge */
-  width: 130%; /* Total width is 130% of viewport */
+  left: -25%; /* Extend 25% beyond left edge */
+  right: -25%; /* Extend 25% beyond right edge */
+  width: 150%; /* Total width is 150% of viewport */
   height: 600px; /* Tall enough for bars reaching ~50% viewport */
   display: flex;
   justify-content: center;
@@ -63,6 +63,7 @@
   flex: 1;
   height: 100%;
   gap: 0;
+  margin-right: -2px; /* Overlap slightly to eliminate center gap */
 }
 
 /* RIGHT half container - MIRRORED via scaleX(-1) */
@@ -74,6 +75,7 @@
   height: 100%;
   gap: 0;
   transform: scaleX(-1);
+  margin-left: -2px; /* Overlap slightly to eliminate center gap */
 }
 
 /* =============================================================================
@@ -83,7 +85,7 @@
 .ticker-bars-wrapper .bar {
   flex: 0 0 auto;
   width: 3px;
-  margin-right: 5px; /* Figma: 5px spacing */
+  margin-right: 3px; /* Tighter spacing for denser appearance */
   border-radius: 2px 2px 0 0;
   transform-origin: bottom center;
 
@@ -218,10 +220,9 @@
    ============================================================================= */
 
 /* All bars have uniform width and spacing so front/back layers align perfectly */
-/* Figma spacing: 5px between bars */
 .ticker-bars-wrapper .bar {
   width: 3px;
-  margin-right: 5px; /* Figma: 5px spacing */
+  margin-right: 3px; /* Tighter spacing for denser appearance */
 }
 
 /* =============================================================================
@@ -338,14 +339,14 @@
   .ticker-bars-wrapper {
     height: 250px;
     bottom: 0;
-    left: -20%; /* More extension on mobile */
-    right: -20%;
-    width: 140%;
+    left: -30%; /* More extension on mobile */
+    right: -30%;
+    width: 160%;
   }
 
   .ticker-bars-wrapper .bar {
     width: 2px;
-    margin-right: 3px;
+    margin-right: 2px;
   }
 
   /* BACK LAYER - Mobile heights with organic pattern */
