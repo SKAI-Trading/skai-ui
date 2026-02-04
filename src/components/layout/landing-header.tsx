@@ -136,16 +136,17 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
         {...props}
       >
         {/* Left Navigation - Terms & Privacy */}
+        {/* Figma: Manrope 14px/18px, letter-spacing -0.56px (-4%), color #E0E0E0 */}
         <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
           <Link
             to={termsUrl}
-            className="font-manrope text-xs tracking-tight text-white/80 transition-colors hover:text-white sm:text-sm"
+            className="font-manrope text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] transition-colors hover:text-white"
           >
             Terms
           </Link>
           <Link
             to={privacyUrl}
-            className="font-manrope text-xs tracking-tight text-white/80 transition-colors hover:text-white sm:text-sm"
+            className="font-manrope text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] transition-colors hover:text-white"
           >
             Privacy
           </Link>
