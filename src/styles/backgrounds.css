@@ -2,123 +2,179 @@
    SKAI UI - Background Components Styles
    =============================================================================
    CSS styles for animated and decorative background components.
+   Matches Figma design node 2005-4492.
    ============================================================================= */
 
 /* =============================================================================
-   ANIMATED STOCK TICKER BACKGROUND
+   ANIMATED STOCK TICKER BACKGROUND - MIRROR ARCHITECTURE
    =============================================================================
-   An animated stock ticker-style background with vertical bars that move
-   like a live trading chart.
+   Creates a symmetric bar visualization with:
+   - LEFT half: bars grow from edge toward center
+   - RIGHT half: mirrored copy (scaleX: -1) for perfect symmetry
+
+   The green tint comes from Ellipse 24 (blurred green glow) behind the bars.
    ============================================================================= */
 
-/* Container for animated ticker bars */
-.stock-ticker-bg {
+/* Main wrapper - contains both halves */
+.ticker-bars-wrapper {
   position: fixed;
-  bottom: 0;
+  bottom: -50px;
   left: 0;
   right: 0;
-  height: 200px;
+  height: 450px;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
-  gap: 3px;
-  padding: 0 10px;
-  overflow: hidden;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Individual ticker bar */
-.ticker-bar {
-  flex: 1;
-  max-width: 4px;
-  min-width: 2px;
-  background: linear-gradient(
-    180deg,
-    rgba(86, 199, 243, 0.9) 0%,
-    rgba(86, 199, 243, 0.6) 40%,
-    rgba(23, 249, 180, 0.4) 100%
-  );
-  border-radius: 2px 2px 0 0;
-  transform-origin: bottom center;
-  animation: ticker-pulse var(--ticker-duration, 2s) ease-in-out infinite;
-  animation-delay: var(--ticker-delay, 0s);
-  box-shadow: 0 0 8px rgba(86, 199, 243, 0.3);
-}
-
-/* Stock ticker wave animation - smooth height oscillation */
-@keyframes ticker-pulse {
-  0%,
-  100% {
-    transform: scaleY(var(--bar-base-scale, 1));
-    opacity: 0.7;
-  }
-  50% {
-    transform: scaleY(var(--bar-peak-scale, 1.5));
-    opacity: 1;
-  }
-}
-
-/* Traveling wave effect - bars animate in sequence */
-@keyframes ticker-wave {
-  0% {
-    transform: scaleY(0.3);
-    opacity: 0.5;
-  }
-  15% {
-    transform: scaleY(1.2);
-    opacity: 0.9;
-  }
-  30% {
-    transform: scaleY(0.6);
-    opacity: 0.7;
-  }
-  45% {
-    transform: scaleY(1.4);
-    opacity: 1;
-  }
-  60% {
-    transform: scaleY(0.4);
-    opacity: 0.6;
-  }
-  75% {
-    transform: scaleY(0.9);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scaleY(0.3);
-    opacity: 0.5;
-  }
-}
-
-/* Glow effect that travels across the bars */
-.stock-ticker-bg::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 200px;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(86, 199, 243, 0.3) 50%,
-    transparent 100%
-  );
-  animation: ticker-glow-sweep 4s linear infinite;
+  align-items: flex-end;
   pointer-events: none;
   z-index: 2;
+  overflow: hidden;
 }
 
-@keyframes ticker-glow-sweep {
-  0% {
-    transform: translateX(-200px);
+/* LEFT half container - bars grow toward center (right) */
+.ticker-bars-left {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 1;
+  height: 100%;
+  gap: 0;
+}
+
+/* RIGHT half container - MIRRORED via scaleX(-1) */
+.ticker-bars-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 1;
+  height: 100%;
+  gap: 0;
+  transform: scaleX(-1);
+}
+
+/* Individual bar styles */
+.ticker-bars-wrapper .bar {
+  flex: 0 0 auto;
+  width: 3px;
+  margin-right: 3px;
+  border-radius: 2px 2px 0 0;
+  transform-origin: bottom center;
+
+  /* Cyan gradient matching Figma (very transparent) */
+  background: linear-gradient(
+    to top,
+    rgba(86, 199, 243, 0.03) 0%,
+    rgba(86, 199, 243, 0.12) 40%,
+    rgba(86, 199, 243, 0.25) 100%
+  );
+
+  /* Subtle glow */
+  box-shadow:
+    0 0 3px rgba(86, 199, 243, 0.15),
+    0 0 6px rgba(86, 199, 243, 0.06);
+
+  /* Animation */
+  animation: bar-pulse 20s ease-in-out infinite;
+}
+
+/* =============================================================================
+   HEIGHT DISTRIBUTION - bars grow from edge toward center (mountain effect)
+   Using --bar-index CSS variable (0 at edge, ~100 at center)
+   ============================================================================= */
+
+/* Calculate height based on position - quadratic growth toward center */
+.ticker-bars-wrapper .bar {
+  /* Base heights - these get overridden by nth-child rules */
+  --edge-height: 40px;
+  --center-height: 380px;
+}
+
+/* Height increases as index increases (toward center) */
+/* Edge bars (index 0-20): shortest */
+.ticker-bars-left .bar:nth-child(-n + 20),
+.ticker-bars-right .bar:nth-child(-n + 20) {
+  height: calc(40px + var(--bar-index, 0) * 3px);
+  --pulse-factor: 1.1;
+}
+
+/* Mid-edge bars (index 21-40) */
+.ticker-bars-left .bar:nth-child(n + 21):nth-child(-n + 40),
+.ticker-bars-right .bar:nth-child(n + 21):nth-child(-n + 40) {
+  height: calc(80px + (var(--bar-index, 20) - 20) * 5px);
+  --pulse-factor: 1.12;
+}
+
+/* Mid bars (index 41-60) */
+.ticker-bars-left .bar:nth-child(n + 41):nth-child(-n + 60),
+.ticker-bars-right .bar:nth-child(n + 41):nth-child(-n + 60) {
+  height: calc(160px + (var(--bar-index, 40) - 40) * 6px);
+  --pulse-factor: 1.15;
+}
+
+/* Near-center bars (index 61-80) */
+.ticker-bars-left .bar:nth-child(n + 61):nth-child(-n + 80),
+.ticker-bars-right .bar:nth-child(n + 61):nth-child(-n + 80) {
+  height: calc(260px + (var(--bar-index, 60) - 60) * 5px);
+  --pulse-factor: 1.18;
+}
+
+/* Center bars (index 81-100): tallest */
+.ticker-bars-left .bar:nth-child(n + 81),
+.ticker-bars-right .bar:nth-child(n + 81) {
+  height: calc(340px + (var(--bar-index, 80) - 80) * 3px);
+  --pulse-factor: 1.2;
+}
+
+/* =============================================================================
+   BAR WIDTH VARIATION - organic look
+   ============================================================================= */
+
+.ticker-bars-wrapper .bar:nth-child(7n + 1) { width: 2px; margin-right: 4px; }
+.ticker-bars-wrapper .bar:nth-child(7n + 2) { width: 4px; margin-right: 2px; }
+.ticker-bars-wrapper .bar:nth-child(7n + 3) { width: 3px; margin-right: 3px; }
+.ticker-bars-wrapper .bar:nth-child(7n + 4) { width: 3px; margin-right: 4px; }
+.ticker-bars-wrapper .bar:nth-child(7n + 5) { width: 2px; margin-right: 3px; }
+.ticker-bars-wrapper .bar:nth-child(7n + 6) { width: 4px; margin-right: 2px; }
+.ticker-bars-wrapper .bar:nth-child(7n) { width: 3px; margin-right: 5px; }
+
+/* =============================================================================
+   ANIMATION - synchronized pulse with staggered timing
+   ============================================================================= */
+
+@keyframes bar-pulse {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 0.85;
   }
-  100% {
-    transform: translateX(calc(100vw + 200px));
+  50% {
+    transform: scaleY(var(--pulse-factor, 1.15));
+    opacity: 1;
   }
 }
 
-/* Blur overlay for depth */
+/* Animation duration variation for organic feel */
+.ticker-bars-wrapper .bar:nth-child(11n + 1) { animation-duration: 18s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 2) { animation-duration: 22s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 3) { animation-duration: 16s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 4) { animation-duration: 24s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 5) { animation-duration: 20s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 6) { animation-duration: 26s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 7) { animation-duration: 17s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 8) { animation-duration: 23s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 9) { animation-duration: 19s; }
+.ticker-bars-wrapper .bar:nth-child(11n + 10) { animation-duration: 25s; }
+.ticker-bars-wrapper .bar:nth-child(11n) { animation-duration: 21s; }
+
+/* Animation delay - center bars lead, edge bars follow */
+.ticker-bars-wrapper .bar:nth-child(-n + 20) { animation-delay: -5s; }
+.ticker-bars-wrapper .bar:nth-child(n + 21):nth-child(-n + 40) { animation-delay: -4s; }
+.ticker-bars-wrapper .bar:nth-child(n + 41):nth-child(-n + 60) { animation-delay: -3s; }
+.ticker-bars-wrapper .bar:nth-child(n + 61):nth-child(-n + 80) { animation-delay: -2s; }
+.ticker-bars-wrapper .bar:nth-child(n + 81) { animation-delay: -1s; }
+
+/* =============================================================================
+   DEPTH BLUR OVERLAY
+   ============================================================================= */
+
 .stock-ticker-blur {
   position: fixed;
   bottom: -60px;
@@ -128,185 +184,20 @@
   background: linear-gradient(
     180deg,
     transparent 0%,
-    rgba(0, 22, 21, 0.3) 50%,
-    rgba(0, 22, 21, 0.8) 100%
+    rgba(0, 22, 21, 0.2) 50%,
+    rgba(0, 22, 21, 0.6) 100%
   );
   filter: blur(20px);
   z-index: 0;
   pointer-events: none;
 }
 
-/* CSS-only animated bars (no JS required) */
-.ticker-bars-container {
-  position: fixed;
-  bottom: -50px; /* Extend past viewport to eliminate dead space */
-  left: -3%;
-  right: -3%;
-  height: 450px; /* Match Figma design (446px container, bars up to 415px) */
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  gap: 0;
-  padding: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
+/* =============================================================================
+   SHIMMER EFFECT (disabled by default)
+   ============================================================================= */
 
-/* Back layer - green/teal tint, positioned behind but TALLER (matches Figma) */
-.ticker-bars-back {
-  z-index: 1;
-  opacity: 0.85;
-}
-
-/* Front layer - cyan/sky blue, positioned in front */
-.ticker-bars-front {
-  z-index: 2;
-}
-
-/* Base bar styles */
-.ticker-bars-container .bar {
-  flex: 0 0 auto;
-  width: 3px;
-  margin-right: 3px;
-  border-radius: 2px 2px 0 0;
-  transform-origin: bottom;
-  animation: stock-tick 20s ease-in-out infinite;
-  --peak-height: 150px;
-  --base-height: 50px;
-}
-
-/* Front layer bars - Cyan/Sky Blue (#56C7F3) - matching Figma node 2005:4515 */
-.ticker-bars-container .bar.bar-front {
-  background: linear-gradient(
-    to top,
-    rgba(86, 199, 243, 0.04) 0%,
-    rgba(86, 199, 243, 0.20) 35%,
-    rgba(86, 199, 243, 0.45) 100%
-  );
-  box-shadow:
-    0 0 4px rgba(86, 199, 243, 0.2),
-    0 0 8px rgba(86, 199, 243, 0.08);
-  --peak-height: 180px;
-  --base-height: 55px;
-}
-
-/* Back layer bars - ALSO Cyan/Sky Blue (#56C7F3) matching Figma - green tint comes from Ellipse 24 glow */
-.ticker-bars-container .bar.bar-back {
-  background: linear-gradient(
-    to top,
-    rgba(86, 199, 243, 0.03) 0%,
-    rgba(86, 199, 243, 0.15) 35%,
-    rgba(86, 199, 243, 0.35) 100%
-  );
-  box-shadow:
-    0 0 3px rgba(86, 199, 243, 0.15),
-    0 0 6px rgba(86, 199, 243, 0.06);
-  --peak-height: 400px;
-  --base-height: 150px;
-  animation-duration: 25s; /* Slower for back layer */
-}
-
-/* Varied bar widths and spacing - like real stock charts */
-.ticker-bars-container .bar:nth-child(11n + 1) { width: 2px; margin-right: 4px; }
-.ticker-bars-container .bar:nth-child(11n + 2) { width: 4px; margin-right: 2px; }
-.ticker-bars-container .bar:nth-child(11n + 3) { width: 3px; margin-right: 3px; }
-.ticker-bars-container .bar:nth-child(11n + 4) { width: 5px; margin-right: 1px; }
-.ticker-bars-container .bar:nth-child(11n + 5) { width: 2px; margin-right: 5px; }
-.ticker-bars-container .bar:nth-child(11n + 6) { width: 4px; margin-right: 2px; }
-.ticker-bars-container .bar:nth-child(11n + 7) { width: 3px; margin-right: 4px; }
-.ticker-bars-container .bar:nth-child(11n + 8) { width: 6px; margin-right: 1px; }
-.ticker-bars-container .bar:nth-child(11n + 9) { width: 2px; margin-right: 3px; }
-.ticker-bars-container .bar:nth-child(11n + 10) { width: 4px; margin-right: 2px; }
-.ticker-bars-container .bar:nth-child(11n) { width: 3px; margin-right: 6px; }
-
-/*
- * RANDOMIZED DURATIONS - slower, calmer movements
- * Using prime numbers to avoid repetition
- */
-.ticker-bars-container .bar:nth-child(17n + 1) { animation-duration: 16s; }
-.ticker-bars-container .bar:nth-child(17n + 2) { animation-duration: 22s; }
-.ticker-bars-container .bar:nth-child(17n + 3) { animation-duration: 18s; }
-.ticker-bars-container .bar:nth-child(17n + 4) { animation-duration: 26s; }
-.ticker-bars-container .bar:nth-child(17n + 5) { animation-duration: 15s; }
-.ticker-bars-container .bar:nth-child(17n + 6) { animation-duration: 24s; }
-.ticker-bars-container .bar:nth-child(17n + 7) { animation-duration: 20s; }
-.ticker-bars-container .bar:nth-child(17n + 8) { animation-duration: 28s; }
-.ticker-bars-container .bar:nth-child(17n + 9) { animation-duration: 17s; }
-.ticker-bars-container .bar:nth-child(17n + 10) { animation-duration: 30s; }
-.ticker-bars-container .bar:nth-child(17n + 11) { animation-duration: 19s; }
-.ticker-bars-container .bar:nth-child(17n + 12) { animation-duration: 23s; }
-.ticker-bars-container .bar:nth-child(17n + 13) { animation-duration: 14s; }
-.ticker-bars-container .bar:nth-child(17n + 14) { animation-duration: 25s; }
-.ticker-bars-container .bar:nth-child(17n + 15) { animation-duration: 21s; }
-.ticker-bars-container .bar:nth-child(17n + 16) { animation-duration: 27s; }
-.ticker-bars-container .bar:nth-child(17n) { animation-duration: 18s; }
-
-/* Randomized heights for FRONT layer (cyan) - SHORTER for contrast (140-200px range) */
-.ticker-bars-container .bar.bar-front:nth-child(13n + 1) { --peak-height: 190px; --base-height: 60px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 2) { --peak-height: 155px; --base-height: 72px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 3) { --peak-height: 200px; --base-height: 55px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 4) { --peak-height: 165px; --base-height: 68px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 5) { --peak-height: 185px; --base-height: 62px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 6) { --peak-height: 145px; --base-height: 75px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 7) { --peak-height: 195px; --base-height: 58px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 8) { --peak-height: 160px; --base-height: 70px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 9) { --peak-height: 205px; --base-height: 52px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 10) { --peak-height: 170px; --base-height: 65px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 11) { --peak-height: 188px; --base-height: 60px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n + 12) { --peak-height: 150px; --base-height: 73px; }
-.ticker-bars-container .bar.bar-front:nth-child(13n) { --peak-height: 175px; --base-height: 66px; }
-
-/* Randomized heights for BACK layer (green) - MUCH TALLER to match Figma (269-415px range) */
-.ticker-bars-container .bar.bar-back:nth-child(13n + 1) { --peak-height: 420px; --base-height: 160px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 2) { --peak-height: 370px; --base-height: 180px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 3) { --peak-height: 450px; --base-height: 145px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 4) { --peak-height: 385px; --base-height: 170px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 5) { --peak-height: 410px; --base-height: 155px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 6) { --peak-height: 355px; --base-height: 185px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 7) { --peak-height: 435px; --base-height: 150px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 8) { --peak-height: 375px; --base-height: 175px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 9) { --peak-height: 445px; --base-height: 140px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 10) { --peak-height: 395px; --base-height: 165px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 11) { --peak-height: 425px; --base-height: 155px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n + 12) { --peak-height: 360px; --base-height: 180px; }
-.ticker-bars-container .bar.bar-back:nth-child(13n) { --peak-height: 400px; --base-height: 160px; }
-
-/*
- * CENTER-SPLIT WAVE - bars animate outward from center
- * Center bars lead (smaller delay), edge bars follow (larger delay)
- * Creates a symmetric ripple effect from the middle of the screen
- */
-/* Center bars (91-110) - lead the wave */
-.ticker-bars-container .bar:nth-child(n + 91):nth-child(-n + 110) { animation-delay: -2s; }
-/* Adjacent to center */
-.ticker-bars-container .bar:nth-child(n + 71):nth-child(-n + 90) { animation-delay: -3s; }
-.ticker-bars-container .bar:nth-child(n + 111):nth-child(-n + 130) { animation-delay: -3s; }
-/* Next ring out */
-.ticker-bars-container .bar:nth-child(n + 51):nth-child(-n + 70) { animation-delay: -4s; }
-.ticker-bars-container .bar:nth-child(n + 131):nth-child(-n + 150) { animation-delay: -4s; }
-/* Outer ring */
-.ticker-bars-container .bar:nth-child(n + 31):nth-child(-n + 50) { animation-delay: -5s; }
-.ticker-bars-container .bar:nth-child(n + 151):nth-child(-n + 170) { animation-delay: -5s; }
-/* Edge ring */
-.ticker-bars-container .bar:nth-child(n + 11):nth-child(-n + 30) { animation-delay: -6s; }
-.ticker-bars-container .bar:nth-child(n + 171):nth-child(-n + 190) { animation-delay: -6s; }
-/* Outermost edges */
-.ticker-bars-container .bar:nth-child(-n + 10) { animation-delay: -7s; }
-.ticker-bars-container .bar:nth-child(n + 191) { animation-delay: -7s; }
-
-/* Stock-like animation - organic up and down movement */
-@keyframes stock-tick {
-  0%, 100% {
-    height: var(--base-height, 50px);
-  }
-  50% {
-    height: var(--peak-height, 130px);
-  }
-}
-
-/* Shimmer disabled by default - very subtle if enabled */
 .ticker-shimmer {
-  display: none; /* Disabled to prevent flickering */
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -323,57 +214,53 @@
   background-size: 400% 100%;
   animation: shimmer-sweep 30s linear infinite;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 @keyframes shimmer-sweep {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 /* =============================================================================
    RESPONSIVE ADJUSTMENTS
    ============================================================================= */
 
-/* Mobile adjustments for ticker */
 @media (max-width: 768px) {
-  .ticker-bars-container {
-    height: 160px;
-    bottom: -20px;
-    gap: 1.5px;
+  .ticker-bars-wrapper {
+    height: 200px;
+    bottom: -30px;
   }
 
-  .ticker-bars-container .bar {
-    max-width: 2px;
+  .ticker-bars-wrapper .bar {
+    width: 2px;
+    margin-right: 2px;
   }
 
-  .ticker-bars-container .bar:nth-child(5n + 1) {
-    --peak-height: 130px;
-    --base-height: 45px;
-  }
-  .ticker-bars-container .bar:nth-child(5n + 2) {
-    --peak-height: 100px;
-    --base-height: 55px;
-  }
-  .ticker-bars-container .bar:nth-child(5n + 3) {
-    --peak-height: 145px;
-    --base-height: 40px;
-  }
-  .ticker-bars-container .bar:nth-child(5n + 4) {
-    --peak-height: 85px;
-    --base-height: 60px;
-  }
-  .ticker-bars-container .bar:nth-child(5n) {
-    --peak-height: 115px;
-    --base-height: 50px;
+  /* Reduced heights for mobile */
+  .ticker-bars-left .bar:nth-child(-n + 20),
+  .ticker-bars-right .bar:nth-child(-n + 20) {
+    height: calc(20px + var(--bar-index, 0) * 1.5px);
   }
 
-  .ticker-shimmer {
-    height: 160px;
+  .ticker-bars-left .bar:nth-child(n + 21):nth-child(-n + 40),
+  .ticker-bars-right .bar:nth-child(n + 21):nth-child(-n + 40) {
+    height: calc(45px + (var(--bar-index, 20) - 20) * 2.5px);
+  }
+
+  .ticker-bars-left .bar:nth-child(n + 41):nth-child(-n + 60),
+  .ticker-bars-right .bar:nth-child(n + 41):nth-child(-n + 60) {
+    height: calc(85px + (var(--bar-index, 40) - 40) * 3px);
+  }
+
+  .ticker-bars-left .bar:nth-child(n + 61):nth-child(-n + 80),
+  .ticker-bars-right .bar:nth-child(n + 61):nth-child(-n + 80) {
+    height: calc(135px + (var(--bar-index, 60) - 60) * 2.5px);
+  }
+
+  .ticker-bars-left .bar:nth-child(n + 81),
+  .ticker-bars-right .bar:nth-child(n + 81) {
+    height: calc(170px + (var(--bar-index, 80) - 80) * 1.5px);
   }
 }
 
@@ -382,15 +269,21 @@
    ============================================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .ticker-bar,
-  .ticker-bars-container .bar,
-  .stock-ticker-bg::before,
+  .ticker-bars-wrapper .bar,
   .ticker-shimmer {
     animation: none;
   }
 
-  .ticker-bars-container .bar {
-    height: var(--base-height, 50px);
+  .ticker-bars-wrapper .bar {
     opacity: 0.7;
   }
+}
+
+/* =============================================================================
+   LEGACY SUPPORT - keep old class names working during transition
+   ============================================================================= */
+
+/* Map old classes to new system for backward compatibility */
+.ticker-bars-container {
+  display: none; /* Hide old containers if they exist */
 }

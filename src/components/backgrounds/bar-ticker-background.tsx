@@ -3,7 +3,7 @@ import { cn } from "../../lib/utils";
 
 export interface BarTickerBackgroundProps {
   /**
-   * Number of bars to render per layer
+   * Number of bars to render (total across both halves)
    * @default 200
    */
   barCount?: number;
@@ -31,12 +31,13 @@ export interface BarTickerBackgroundProps {
 /**
  * BarTickerBackground - Animated vertical bar background matching Figma design
  *
- * Creates an animated stock ticker-style background with two layers of
- * vertical bars in the same cyan/sky blue color (#56C7F3) that oscillate
- * like a live trading chart. The green tint visible in Figma comes from
- * Ellipse 24 (a green radial gradient glow) positioned behind the bars.
+ * Creates an animated stock ticker-style background using a MIRROR architecture
+ * matching Figma node 2005-4492:
+ * - LEFT half: bars grow from left edge toward center
+ * - RIGHT half: mirrored copy (scaleX: -1) creating perfect symmetry
  *
- * Matches Figma design node 2005-4492 with file node 2005-4515 (bars).
+ * The green tint visible in Figma comes from Ellipse 24 (a blurred green
+ * circle glow) positioned behind the bars in LandingWaitlist.tsx.
  *
  * Requires backgrounds.css to be imported for animations.
  */
@@ -47,45 +48,47 @@ export function BarTickerBackground({
   showShimmer = false,
   showDepthBlur = true,
 }: BarTickerBackgroundProps) {
-  // Memoize the bars arrays to prevent unnecessary re-renders
-  // Front layer (cyan) has full bar count, back layer (green) has 80%
-  const frontBars = React.useMemo(
-    () => Array.from({ length: barCount }, (_, i) => i),
-    [barCount]
-  );
-  const backBars = React.useMemo(
-    () => Array.from({ length: Math.floor(barCount * 0.85) }, (_, i) => i),
-    [barCount]
+  // Create bars for one half only - right half will mirror via CSS
+  const halfCount = Math.floor(barCount / 2);
+
+  // Memoize bar array to prevent unnecessary re-renders
+  const bars = React.useMemo(
+    () => Array.from({ length: halfCount }, (_, i) => i),
+    [halfCount]
   );
 
   return (
     <>
-      {/* Back layer - cyan/sky blue (#56C7F3), taller bars for depth */}
+      {/* Main wrapper for the mirrored bar visualization */}
       <div
         className={cn(
-          "ticker-bars-container ticker-bars-back transition-all duration-300",
+          "ticker-bars-wrapper transition-all duration-300",
           isBlurred && "blur-md",
           className
         )}
         aria-hidden="true"
       >
-        {backBars.map((i) => (
-          <div key={i} className="bar bar-back" />
-        ))}
-      </div>
+        {/* LEFT half - bars grow from left edge toward center */}
+        <div className="ticker-bars-left">
+          {bars.map((i) => (
+            <div
+              key={`left-${i}`}
+              className="bar"
+              style={{ "--bar-index": i } as React.CSSProperties}
+            />
+          ))}
+        </div>
 
-      {/* Front layer - cyan/sky blue (#56C7F3), shorter bars in front */}
-      <div
-        className={cn(
-          "ticker-bars-container ticker-bars-front transition-all duration-300",
-          isBlurred && "blur-md",
-          className
-        )}
-        aria-hidden="true"
-      >
-        {frontBars.map((i) => (
-          <div key={i} className="bar bar-front" />
-        ))}
+        {/* RIGHT half - mirrored copy via scaleX(-1) */}
+        <div className="ticker-bars-right">
+          {bars.map((i) => (
+            <div
+              key={`right-${i}`}
+              className="bar"
+              style={{ "--bar-index": i } as React.CSSProperties}
+            />
+          ))}
+        </div>
       </div>
 
       {showShimmer && (
