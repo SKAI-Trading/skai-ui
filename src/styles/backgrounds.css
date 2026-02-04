@@ -191,16 +191,14 @@
 }
 
 /* =============================================================================
-   BAR WIDTH VARIATION - organic look (applies to both layers)
+   BAR WIDTH - Uniform width for perfect layer alignment
    ============================================================================= */
 
-.ticker-bars-wrapper .bar:nth-child(7n + 1) { width: 2px; margin-right: 4px; }
-.ticker-bars-wrapper .bar:nth-child(7n + 2) { width: 4px; margin-right: 2px; }
-.ticker-bars-wrapper .bar:nth-child(7n + 3) { width: 3px; margin-right: 3px; }
-.ticker-bars-wrapper .bar:nth-child(7n + 4) { width: 3px; margin-right: 4px; }
-.ticker-bars-wrapper .bar:nth-child(7n + 5) { width: 2px; margin-right: 3px; }
-.ticker-bars-wrapper .bar:nth-child(7n + 6) { width: 4px; margin-right: 2px; }
-.ticker-bars-wrapper .bar:nth-child(7n) { width: 3px; margin-right: 5px; }
+/* All bars have uniform width and spacing so front/back layers align perfectly */
+.ticker-bars-wrapper .bar {
+  width: 3px;
+  margin-right: 3px;
+}
 
 /* =============================================================================
    ANIMATION - synchronized pulse with staggered timing
