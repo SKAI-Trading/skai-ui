@@ -117,46 +117,11 @@
     rgba(86, 199, 243, 1) 100%
   );
   /* No individual opacity - container handles it */
-}
 
-/* BACK LAYER HEIGHT DISTRIBUTION - Organic stock-chart pattern like Figma */
-/* Heights use --height-variation for random spikes, NOT a linear slope */
-/* Pattern: Low edges → plateau → gradual rise → peak center with variation */
-
-/* Far edge bars (index 0-15): Very short, starting low */
-.ticker-bars-back .bar-back:nth-child(-n + 15) {
-  height: calc((80px + var(--bar-index, 0) * 8px) * var(--height-variation, 1));
-  --pulse-factor: 1.06;
-}
-
-/* Edge-to-plateau transition (index 16-30): Quick rise to plateau */
-.ticker-bars-back .bar-back:nth-child(n + 16):nth-child(-n + 30) {
-  height: calc((200px + (var(--bar-index, 15) - 15) * 6px) * var(--height-variation, 1));
-  --pulse-factor: 1.08;
-}
-
-/* Lower plateau (index 31-50): Relatively flat with variation */
-.ticker-bars-back .bar-back:nth-child(n + 31):nth-child(-n + 50) {
-  height: calc((290px + (var(--bar-index, 30) - 30) * 3px) * var(--height-variation, 1));
-  --pulse-factor: 1.1;
-}
-
-/* Mid-rise (index 51-70): Gradual climb toward peak */
-.ticker-bars-back .bar-back:nth-child(n + 51):nth-child(-n + 70) {
-  height: calc((350px + (var(--bar-index, 50) - 50) * 5px) * var(--height-variation, 1));
+  /* FLAT HEIGHT - Same base for all bars, only random variation creates spikes */
+  /* Base height ~350px with variation creating stock-chart-like appearance */
+  height: calc(350px * var(--height-variation, 1));
   --pulse-factor: 1.12;
-}
-
-/* Upper plateau (index 71-85): Near-peak area */
-.ticker-bars-back .bar-back:nth-child(n + 71):nth-child(-n + 85) {
-  height: calc((450px + (var(--bar-index, 70) - 70) * 4px) * var(--height-variation, 1));
-  --pulse-factor: 1.14;
-}
-
-/* Peak center (index 86+): Tallest bars with high variation */
-.ticker-bars-back .bar-back:nth-child(n + 86) {
-  height: calc((510px + (var(--bar-index, 85) - 85) * 2px) * var(--height-variation, 1));
-  --pulse-factor: 1.15;
 }
 
 /* =============================================================================
@@ -172,45 +137,11 @@
     rgba(86, 199, 243, 1) 100%
   );
   /* No individual opacity - container handles it */
-}
 
-/* FRONT LAYER HEIGHT DISTRIBUTION - Organic stock-chart pattern like Figma */
-/* Shorter layer but follows same organic pattern as back layer */
-
-/* Far edge bars (index 0-15): Very short */
-.ticker-bars-front .bar-front:nth-child(-n + 15) {
-  height: calc((25px + var(--bar-index, 0) * 3px) * var(--height-variation, 1));
-  --pulse-factor: 1.1;
-}
-
-/* Edge-to-plateau transition (index 16-30): Quick rise */
-.ticker-bars-front .bar-front:nth-child(n + 16):nth-child(-n + 30) {
-  height: calc((70px + (var(--bar-index, 15) - 15) * 2.5px) * var(--height-variation, 1));
-  --pulse-factor: 1.12;
-}
-
-/* Lower plateau (index 31-50): Relatively flat */
-.ticker-bars-front .bar-front:nth-child(n + 31):nth-child(-n + 50) {
-  height: calc((107px + (var(--bar-index, 30) - 30) * 1.5px) * var(--height-variation, 1));
-  --pulse-factor: 1.14;
-}
-
-/* Mid-rise (index 51-70): Gradual climb */
-.ticker-bars-front .bar-front:nth-child(n + 51):nth-child(-n + 70) {
-  height: calc((137px + (var(--bar-index, 50) - 50) * 2px) * var(--height-variation, 1));
-  --pulse-factor: 1.16;
-}
-
-/* Upper plateau (index 71-85): Near-peak area */
-.ticker-bars-front .bar-front:nth-child(n + 71):nth-child(-n + 85) {
-  height: calc((177px + (var(--bar-index, 70) - 70) * 1.5px) * var(--height-variation, 1));
-  --pulse-factor: 1.18;
-}
-
-/* Peak center (index 86+): Tallest front bars */
-.ticker-bars-front .bar-front:nth-child(n + 86) {
-  height: calc((200px + (var(--bar-index, 85) - 85) * 1px) * var(--height-variation, 1));
-  --pulse-factor: 1.2;
+  /* FLAT HEIGHT - Same base for all bars, only random variation creates spikes */
+  /* Base height ~120px with variation creating stock-chart-like appearance */
+  height: calc(120px * var(--height-variation, 1));
+  --pulse-factor: 1.15;
 }
 
 /* =============================================================================
@@ -347,54 +278,14 @@
     margin-right: 3px;
   }
 
-  /* BACK LAYER - Mobile heights with organic pattern */
-  .ticker-bars-back .bar-back:nth-child(-n + 15) {
-    height: calc((30px + var(--bar-index, 0) * 3px) * var(--height-variation, 1));
+  /* BACK LAYER - Mobile flat heights with random variation */
+  .ticker-bars-back .bar-back {
+    height: calc(140px * var(--height-variation, 1));
   }
 
-  .ticker-bars-back .bar-back:nth-child(n + 16):nth-child(-n + 30) {
-    height: calc((75px + (var(--bar-index, 15) - 15) * 2px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-back .bar-back:nth-child(n + 31):nth-child(-n + 50) {
-    height: calc((105px + (var(--bar-index, 30) - 30) * 1px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-back .bar-back:nth-child(n + 51):nth-child(-n + 70) {
-    height: calc((125px + (var(--bar-index, 50) - 50) * 1.5px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-back .bar-back:nth-child(n + 71):nth-child(-n + 85) {
-    height: calc((155px + (var(--bar-index, 70) - 70) * 1.2px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-back .bar-back:nth-child(n + 86) {
-    height: calc((173px + (var(--bar-index, 85) - 85) * 0.5px) * var(--height-variation, 1));
-  }
-
-  /* FRONT LAYER - Mobile heights with organic pattern */
-  .ticker-bars-front .bar-front:nth-child(-n + 15) {
-    height: calc((10px + var(--bar-index, 0) * 1px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-front .bar-front:nth-child(n + 16):nth-child(-n + 30) {
-    height: calc((25px + (var(--bar-index, 15) - 15) * 0.8px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-front .bar-front:nth-child(n + 31):nth-child(-n + 50) {
-    height: calc((37px + (var(--bar-index, 30) - 30) * 0.5px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-front .bar-front:nth-child(n + 51):nth-child(-n + 70) {
-    height: calc((47px + (var(--bar-index, 50) - 50) * 0.6px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-front .bar-front:nth-child(n + 71):nth-child(-n + 85) {
-    height: calc((59px + (var(--bar-index, 70) - 70) * 0.4px) * var(--height-variation, 1));
-  }
-
-  .ticker-bars-front .bar-front:nth-child(n + 86) {
-    height: calc((65px + (var(--bar-index, 85) - 85) * 0.3px) * var(--height-variation, 1));
+  /* FRONT LAYER - Mobile flat heights with random variation */
+  .ticker-bars-front .bar-front {
+    height: calc(50px * var(--height-variation, 1));
   }
 }
 
