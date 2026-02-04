@@ -200,12 +200,12 @@ export function WaitlistModal({
 
         {/* Title */}
         <h2 className="font-manrope mb-3 text-center text-[24px] font-light leading-[28px] tracking-[-0.96px] text-white md:mb-4 md:text-[28px] md:leading-[32px] md:tracking-[-1.12px] lg:mb-4 lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
-          Get Early Access
+          Get early access to Skai
         </h2>
 
         {/* Description */}
         <p className="font-manrope mb-6 px-2 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-8 md:px-4 md:text-[16px] md:leading-[22px] lg:mb-8 lg:px-4 lg:text-[18px] lg:leading-[24px]">
-          Enter your email address to get exclusive access to the Skai waitlist.
+          Enter your email address to get access to join the Skai waitlist.
         </p>
 
         {/* Email Form */}
@@ -223,7 +223,7 @@ export function WaitlistModal({
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyDown={handleKeyDown}
                 disabled={isLoading}
-                placeholder="Enter your email"
+                placeholder="example@provider.com"
                 autoComplete="email"
                 className="font-manrope w-full rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] text-white transition-colors placeholder:text-[#5d6b6a] focus:border-[#17F9B4] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:px-6 lg:py-5 lg:text-[16px] lg:leading-[22px]"
                 aria-label="Email address"
