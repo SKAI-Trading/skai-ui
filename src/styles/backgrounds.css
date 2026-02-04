@@ -179,13 +179,13 @@
 .ticker-bars-container .bar.bar-front {
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.06) 0%,
-    rgba(86, 199, 243, 0.35) 35%,
-    rgba(86, 199, 243, 0.7) 100%
+    rgba(86, 199, 243, 0.04) 0%,
+    rgba(86, 199, 243, 0.20) 35%,
+    rgba(86, 199, 243, 0.45) 100%
   );
   box-shadow:
-    0 0 6px rgba(86, 199, 243, 0.3),
-    0 0 12px rgba(86, 199, 243, 0.12);
+    0 0 4px rgba(86, 199, 243, 0.2),
+    0 0 8px rgba(86, 199, 243, 0.08);
   --peak-height: 180px;
   --base-height: 55px;
 }
@@ -194,13 +194,13 @@
 .ticker-bars-container .bar.bar-back {
   background: linear-gradient(
     to top,
-    rgba(86, 199, 243, 0.05) 0%,
-    rgba(86, 199, 243, 0.25) 35%,
-    rgba(86, 199, 243, 0.55) 100%
+    rgba(86, 199, 243, 0.03) 0%,
+    rgba(86, 199, 243, 0.15) 35%,
+    rgba(86, 199, 243, 0.35) 100%
   );
   box-shadow:
-    0 0 6px rgba(86, 199, 243, 0.25),
-    0 0 12px rgba(86, 199, 243, 0.1);
+    0 0 3px rgba(86, 199, 243, 0.15),
+    0 0 6px rgba(86, 199, 243, 0.06);
   --peak-height: 400px;
   --base-height: 150px;
   animation-duration: 25s; /* Slower for back layer */
