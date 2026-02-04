@@ -63,19 +63,27 @@
   flex: 1;
   height: 100%;
   gap: 0;
-  margin-right: -4px; /* Overlap slightly to eliminate center gap */
+}
+
+/* Remove margin from last bar so left half meets center cleanly */
+.ticker-bars-left .bar:last-child {
+  margin-right: 0;
 }
 
 /* RIGHT half container - MIRRORED so bars grow toward center from right */
 .ticker-bars-right {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end; /* Push bars toward center (left due to mirror) */
+  justify-content: flex-start; /* Bars start from left edge (which is center after mirror) */
   flex: 1;
   height: 100%;
   gap: 0;
   transform: scaleX(-1); /* Mirror flips so bars visually come from right edge */
-  margin-left: -4px; /* Overlap slightly to eliminate center gap */
+}
+
+/* Remove margin from first bar so right half meets center cleanly */
+.ticker-bars-right .bar:first-child {
+  margin-right: 0;
 }
 
 /* =============================================================================
