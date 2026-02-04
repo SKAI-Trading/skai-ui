@@ -152,10 +152,10 @@
   overflow: hidden;
 }
 
-/* Back layer - green/teal tint, positioned behind */
+/* Back layer - green/teal tint, positioned behind but TALLER (matches Figma) */
 .ticker-bars-back {
   z-index: 1;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 /* Front layer - cyan/sky blue, positioned in front */
@@ -190,19 +190,19 @@
   --base-height: 65px;
 }
 
-/* Back layer bars - Green/Alien Green (#17F9B4) tint */
+/* Back layer bars - Green/Alien Green (#17F9B4) - TALLER than front (matches Figma) */
 .ticker-bars-container .bar.bar-back {
   background: linear-gradient(
     to top,
-    rgba(23, 249, 180, 0.04) 0%,
-    rgba(23, 249, 180, 0.28) 35%,
-    rgba(23, 249, 180, 0.55) 100%
+    rgba(23, 249, 180, 0.06) 0%,
+    rgba(23, 249, 180, 0.35) 35%,
+    rgba(23, 249, 180, 0.65) 100%
   );
   box-shadow:
-    0 0 5px rgba(23, 249, 180, 0.25),
-    0 0 10px rgba(23, 249, 180, 0.12);
-  --peak-height: 180px;
-  --base-height: 50px;
+    0 0 6px rgba(23, 249, 180, 0.3),
+    0 0 12px rgba(23, 249, 180, 0.15);
+  --peak-height: 300px;
+  --base-height: 100px;
   animation-duration: 25s; /* Slower for back layer */
 }
 
@@ -241,20 +241,35 @@
 .ticker-bars-container .bar:nth-child(17n + 16) { animation-duration: 27s; }
 .ticker-bars-container .bar:nth-child(17n) { animation-duration: 18s; }
 
-/* Randomized heights - different prime pattern (matching Figma 241-446px range scaled) */
-.ticker-bars-container .bar:nth-child(13n + 1) { --peak-height: 230px; --base-height: 72px; }
-.ticker-bars-container .bar:nth-child(13n + 2) { --peak-height: 185px; --base-height: 88px; }
-.ticker-bars-container .bar:nth-child(13n + 3) { --peak-height: 245px; --base-height: 68px; }
-.ticker-bars-container .bar:nth-child(13n + 4) { --peak-height: 198px; --base-height: 82px; }
-.ticker-bars-container .bar:nth-child(13n + 5) { --peak-height: 218px; --base-height: 75px; }
-.ticker-bars-container .bar:nth-child(13n + 6) { --peak-height: 175px; --base-height: 92px; }
-.ticker-bars-container .bar:nth-child(13n + 7) { --peak-height: 238px; --base-height: 70px; }
-.ticker-bars-container .bar:nth-child(13n + 8) { --peak-height: 192px; --base-height: 85px; }
-.ticker-bars-container .bar:nth-child(13n + 9) { --peak-height: 252px; --base-height: 65px; }
-.ticker-bars-container .bar:nth-child(13n + 10) { --peak-height: 205px; --base-height: 78px; }
-.ticker-bars-container .bar:nth-child(13n + 11) { --peak-height: 225px; --base-height: 74px; }
-.ticker-bars-container .bar:nth-child(13n + 12) { --peak-height: 180px; --base-height: 90px; }
-.ticker-bars-container .bar:nth-child(13n) { --peak-height: 212px; --base-height: 80px; }
+/* Randomized heights for FRONT layer (cyan) - prime pattern */
+.ticker-bars-container .bar.bar-front:nth-child(13n + 1) { --peak-height: 230px; --base-height: 72px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 2) { --peak-height: 185px; --base-height: 88px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 3) { --peak-height: 245px; --base-height: 68px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 4) { --peak-height: 198px; --base-height: 82px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 5) { --peak-height: 218px; --base-height: 75px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 6) { --peak-height: 175px; --base-height: 92px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 7) { --peak-height: 238px; --base-height: 70px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 8) { --peak-height: 192px; --base-height: 85px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 9) { --peak-height: 252px; --base-height: 65px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 10) { --peak-height: 205px; --base-height: 78px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 11) { --peak-height: 225px; --base-height: 74px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n + 12) { --peak-height: 180px; --base-height: 90px; }
+.ticker-bars-container .bar.bar-front:nth-child(13n) { --peak-height: 212px; --base-height: 80px; }
+
+/* Randomized heights for BACK layer (green) - TALLER than front to match Figma */
+.ticker-bars-container .bar.bar-back:nth-child(13n + 1) { --peak-height: 320px; --base-height: 110px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 2) { --peak-height: 280px; --base-height: 125px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 3) { --peak-height: 340px; --base-height: 105px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 4) { --peak-height: 295px; --base-height: 118px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 5) { --peak-height: 310px; --base-height: 112px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 6) { --peak-height: 270px; --base-height: 130px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 7) { --peak-height: 335px; --base-height: 108px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 8) { --peak-height: 288px; --base-height: 122px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 9) { --peak-height: 350px; --base-height: 100px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 10) { --peak-height: 302px; --base-height: 115px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 11) { --peak-height: 325px; --base-height: 110px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n + 12) { --peak-height: 275px; --base-height: 128px; }
+.ticker-bars-container .bar.bar-back:nth-child(13n) { --peak-height: 308px; --base-height: 118px; }
 
 /*
  * CENTER-SPLIT WAVE - bars animate outward from center
