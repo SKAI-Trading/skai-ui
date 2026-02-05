@@ -18,10 +18,10 @@ export const headerColors = {
   borderHover: "#1a5a55",
   /** Brand primary (cyan) */
   brandPrimary: "#56C7F3",
-  /** Brand secondary (teal) */
-  brandSecondary: "#2CECAD",
+  /** Brand secondary (Alien Green) */
+  brandSecondary: "#17F9B4",
   /** Glow color for status pills */
-  glow: "rgba(44, 236, 173, 0.02)",
+  glow: "rgba(23, 249, 180, 0.02)",
   /** Text primary */
   textPrimary: "#FFFFFF",
   /** Text muted */

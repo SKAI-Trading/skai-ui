@@ -43,20 +43,20 @@
      * BRAND COLORS (from BRAND_GUIDELINES.md)
      * ======================================== */
 
-    /* Primary: Cyan (#56C0F6) */
-    --skai-cyan-h: 199;
-    --skai-cyan-s: 90%;
-    --skai-cyan-l: 65%;
+    /* Primary: Sky Blue (#56C7F3) */
+    --skai-cyan-h: 197;
+    --skai-cyan-s: 87%;
+    --skai-cyan-l: 64%;
     --skai-cyan: hsl(
       var(--skai-cyan-h),
       var(--skai-cyan-s),
       var(--skai-cyan-l)
     );
 
-    /* Secondary: Teal/Green (#2DEDAD / #17F9B4) */
-    --skai-teal-h: 166;
-    --skai-teal-s: 80%;
-    --skai-teal-l: 55%;
+    /* Secondary: Alien Green (#17F9B4) */
+    --skai-teal-h: 158;
+    --skai-teal-s: 95%;
+    --skai-teal-l: 53%;
     --skai-teal: hsl(
       var(--skai-teal-h),
       var(--skai-teal-s),
@@ -85,27 +85,27 @@
      * SEMANTIC COLORS (HSL for theme support)
      * ======================================== */
 
-    /* Dark Mode Default */
-    --background: 225 80% 4%;
-    --foreground: 0 0% 100%;
+    /* Dark Mode Default - Green Coal #001615 */
+    --background: 173 100% 4%;
+    --foreground: 60 100% 97%; /* Cloud #FFFFEE */
 
     /* Cards & Surfaces */
-    --card: 225 60% 8%;
-    --card-foreground: 0 0% 100%;
-    --glass: 225 50% 12%;
+    --card: 170 40% 7%;
+    --card-foreground: 60 100% 97%;
+    --glass: 170 30% 12%;
 
-    --popover: 225 60% 8%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 170 40% 7%;
+    --popover-foreground: 60 100% 97%;
 
-    /* Primary Actions */
-    --primary: 199 90% 65%;
-    --primary-foreground: 225 80% 4%;
-    --primary-glow: 199 90% 75%;
+    /* Primary Actions - Sky Blue #56C7F3 */
+    --primary: 197 87% 64%;
+    --primary-foreground: 173 100% 4%;
+    --primary-glow: 197 87% 75%;
 
-    /* Secondary Actions */
-    --secondary: 166 80% 55%;
-    --secondary-foreground: 225 80% 4%;
-    --secondary-glow: 166 80% 65%;
+    /* Secondary Actions - Alien Green #17F9B4 */
+    --secondary: 158 95% 53%;
+    --secondary-foreground: 173 100% 4%;
+    --secondary-glow: 158 95% 65%;
 
     /* Trading - Long/Buy */
     --long: 142 76% 36%;

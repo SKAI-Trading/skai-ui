@@ -11,9 +11,9 @@
  *   In tailwind.config.ts, extend theme with these tokens
  * 
  * Brand Colors (from BRAND_GUIDELINES.md):
- *   Primary Accent: #56C0F6 (HSL 199 90% 65%) - Cyan
- *   Secondary Accent: #2DEDAD (HSL 166 80% 55%) - Teal
- *   Background: #020717 (HSL 225 80% 4%) - Dark Navy
+ *   Sky Blue: #56C7F3 (HSL 197 87% 64%) - Primary actions
+ *   Alien Green: #17F9B4 (HSL 158 95% 53%) - Secondary accents
+ *   Green Coal: #001615 - Dark background
  */
 
 :root {
@@ -22,9 +22,9 @@
    * ============================================ */
 
   /* Brand Colors - Official SKAI palette */
-  --skai-brand-primary: 199 90% 65%; /* #56C0F6 - Cyan - Primary actions */
-  --skai-brand-secondary: 166 80% 55%; /* #2DEDAD - Teal - Secondary accents */
-  --skai-brand-background: 225 80% 4%; /* #020717 - Dark Navy background */
+  --skai-brand-primary: 197 87% 64%; /* #56C7F3 - Sky Blue - Primary actions */
+  --skai-brand-secondary: 158 95% 53%; /* #17F9B4 - Alien Green - Secondary accents */
+  --skai-brand-background: 174 100% 4%; /* #001615 - Green Coal background */
   --skai-brand-accent: 199 90% 75%; /* Lighter cyan for glow effects */
 
   /* Semantic Colors - Success/Error/Warning */
@@ -56,12 +56,12 @@
   --skai-price-neutral: 0 0% 50%; /* No change */
 
   /* Chart Colors */
-  --skai-chart-primary: 217.2 91.2% 59.8%;
-  --skai-chart-secondary: 270 76% 60%;
-  --skai-chart-tertiary: 173 80% 40%;
-  --skai-chart-quaternary: 38 92% 50%;
-  --skai-chart-line: 217 91% 60%;
-  --skai-chart-area: 217 91% 60% / 0.2;
+  --skai-chart-primary: 197 87% 64%; /* Sky Blue #56C7F3 */
+  --skai-chart-secondary: 158 95% 53%; /* Alien Green #17F9B4 */
+  --skai-chart-tertiary: 17 100% 65%; /* Coral #FF7E50 */
+  --skai-chart-quaternary: 49 33% 50%; /* Printer's Gold #999966 */
+  --skai-chart-line: 197 87% 64%; /* Sky Blue */
+  --skai-chart-area: 197 87% 64% / 0.2;
   --skai-chart-grid: 0 0% 20%;
 
   /* ============================================
@@ -244,39 +244,40 @@
 
 .dark,
 :root {
-  /* Background colors */
-  --background: 222 47% 7%; /* Main background */
-  --foreground: 210 40% 98%; /* Main text */
+  /* Background colors - Green Coal #001615 */
+  --background: 173 100% 4%;
+  --foreground: 60 100% 97%; /* Cloud #FFFFEE */
 
-  --card: 222 47% 9%; /* Card background */
-  --card-foreground: 210 40% 98%;
+  --card: 170 40% 7%;
+  --card-foreground: 60 100% 97%;
 
-  --popover: 222 47% 9%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 170 40% 7%;
+  --popover-foreground: 60 100% 97%;
 
-  /* Primary colors */
-  --primary: 217.2 91.2% 59.8%;
-  --primary-foreground: 222 47% 7%;
+  /* Primary colors - Sky Blue #56C7F3 */
+  --primary: 197 87% 64%;
+  --primary-foreground: 173 100% 4%;
 
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
+  /* Secondary - Alien Green #17F9B4 */
+  --secondary: 158 95% 53%;
+  --secondary-foreground: 173 100% 4%;
 
   /* Muted colors */
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
+  --muted: 170 20% 15%;
+  --muted-foreground: 170 10% 60%;
 
-  /* Accent colors */
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  /* Accent colors - Coral #FF7E50 */
+  --accent: 17 100% 65%;
+  --accent-foreground: 60 100% 97%;
 
-  /* Destructive (error) */
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
+  /* Destructive (error) - Coral */
+  --destructive: 17 100% 65%;
+  --destructive-foreground: 60 100% 97%;
 
   /* Border & Ring */
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 224.3 76.3% 48%;
+  --border: 170 20% 15%;
+  --input: 170 20% 15%;
+  --ring: 197 87% 64%; /* Sky Blue */
 
   /* Radius */
   --radius: 0.5rem;
@@ -287,33 +288,33 @@
  * ============================================ */
 
 .light {
-  --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
+  --background: 60 100% 97%; /* Cloud #FFFFEE */
+  --foreground: 173 100% 4%; /* Green Coal #001615 */
 
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 173 100% 4%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
+  --popover-foreground: 173 100% 4%;
 
-  --primary: 217.2 91.2% 59.8%;
+  --primary: 197 87% 64%; /* Sky Blue #56C7F3 */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 11%;
+  --secondary: 158 95% 53%; /* Alien Green #17F9B4 */
+  --secondary-foreground: 173 100% 4%;
 
   --muted: 210 40% 96%;
-  --muted-foreground: 215 16% 47%;
+  --muted-foreground: 170 10% 40%;
 
-  --accent: 210 40% 96%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 17 100% 65%; /* Coral #FF7E50 */
+  --accent-foreground: 173 100% 4%;
 
-  --destructive: 0 84% 60%;
+  --destructive: 17 100% 65%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 217.2 91.2% 59.8%;
+  --border: 170 15% 85%;
+  --input: 170 15% 85%;
+  --ring: 197 87% 64%; /* Sky Blue */
 }
 
 /* ============================================

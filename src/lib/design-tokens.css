@@ -60,31 +60,34 @@
   --skai-loss: #ff574a;
 
   /* ========================================
-   * Legacy Colors (For Compatibility)
+   * Brand Colors - Sky Blue Scale (Primary)
    * ======================================== */
-  --skai-primary-50: #eef2ff;
-  --skai-primary-100: #e0e7ff;
-  --skai-primary-200: #c7d2fe;
-  --skai-primary-300: #a5b4fc;
-  --skai-primary-400: #818cf8;
-  --skai-primary-500: #6366f1;
-  --skai-primary-600: #4f46e5;
-  --skai-primary-700: #4338ca;
-  --skai-primary-800: #3730a3;
-  --skai-primary-900: #312e81;
-  --skai-primary: #6366f1;
+  --skai-primary-50: #e8f7fd;
+  --skai-primary-100: #d1eefb;
+  --skai-primary-200: #a3ddf7;
+  --skai-primary-300: #7acef4;
+  --skai-primary-400: #56C7F3;
+  --skai-primary-500: #56C7F3;
+  --skai-primary-600: #3da8d4;
+  --skai-primary-700: #2e89b5;
+  --skai-primary-800: #1f6a96;
+  --skai-primary-900: #104b77;
+  --skai-primary: #56C7F3;
 
-  --skai-secondary-50: #fdf2f8;
-  --skai-secondary-100: #fce7f3;
-  --skai-secondary-200: #fbcfe8;
-  --skai-secondary-300: #f9a8d4;
-  --skai-secondary-400: #f472b6;
-  --skai-secondary-500: #ec4899;
-  --skai-secondary-600: #db2777;
-  --skai-secondary-700: #be185d;
-  --skai-secondary-800: #9d174d;
-  --skai-secondary-900: #831843;
-  --skai-secondary: #ec4899;
+  /* ========================================
+   * Brand Colors - Alien Green Scale (Secondary)
+   * ======================================== */
+  --skai-secondary-50: #e6fef5;
+  --skai-secondary-100: #ccfdeb;
+  --skai-secondary-200: #99fbd7;
+  --skai-secondary-300: #66fac3;
+  --skai-secondary-400: #33f9af;
+  --skai-secondary-500: #17F9B4;
+  --skai-secondary-600: #12c790;
+  --skai-secondary-700: #0e956c;
+  --skai-secondary-800: #096348;
+  --skai-secondary-900: #053124;
+  --skai-secondary: #17F9B4;
 
   --skai-gray-50: #f9fafb;
   --skai-gray-200: #e5e7eb;

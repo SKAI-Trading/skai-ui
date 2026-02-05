@@ -20,8 +20,8 @@ export const theme = {
   colors: {
     // Brand colors
     brand: {
-      primary: "199 90% 65%", // #56C0F6 - Main brand cyan
-      secondary: "166 80% 55%", // #2DEDAD - Teal accent
+      primary: "197 87% 64%", // #56C7F3 - Sky Blue
+      secondary: "158 95% 53%", // #17F9B4 - Alien Green
       tertiary: "270 76% 60%", // Purple accent
     },
 
@@ -92,9 +92,9 @@ export const theme = {
    */
   typography: {
     fonts: {
-      sans: "'Poppins', system-ui, -apple-system, sans-serif",
+      sans: "'Manrope', system-ui, -apple-system, sans-serif",
       mono: "'JetBrains Mono', 'Fira Code', Consolas, monospace",
-      display: "'Poppins', system-ui, sans-serif", // Per brand guidelines - Poppins Bold for headings
+      display: "'Cormorant Garamond', Georgia, serif", // Per brand guide v2.1 - headings
     },
 
     sizes: {

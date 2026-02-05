@@ -36,33 +36,33 @@
      SOURCE OF TRUTH for @skai/ui components
      
      Brand Colors (from docs/BRAND_GUIDELINES.md):
-       Primary: #56C0F6 (HSL 199 90% 65%) - Cyan
-       Secondary: #2DEDAD (HSL 166 80% 55%) - Teal
-       Background: #020717 (HSL 225 80% 4%) - Dark Navy
+       Sky Blue: #56C7F3 (HSL 197 87% 64%) - Primary actions
+       Alien Green: #17F9B4 (HSL 158 95% 53%) - Secondary accents
+       Green Coal: #001615 - Dark background
      
      Last updated: 2026-01-31
      ============================================ */
   :root {
     /* SKAI Brand Colors (HSL format) */
-    --background: 225 80% 4%; /* #020717 - Deep navy */
-    --foreground: 0 0% 100%; /* #FFFFFF */
+    --background: 173 100% 4%; /* #001615 - Green Coal */
+    --foreground: 60 100% 97%; /* #FFFFEE - Cloud */
 
     /* Card & Glass */
-    --card: 225 60% 8%; /* #0D1424 */
-    --card-foreground: 0 0% 100%;
-    --glass: 225 50% 12%; /* #15213B - Glass panel bg */
-    --popover: 225 60% 6%; /* #0A1120 */
-    --popover-foreground: 0 0% 100%;
+    --card: 170 40% 7%;
+    --card-foreground: 60 100% 97%;
+    --glass: 170 30% 12%;
+    --popover: 170 40% 7%;
+    --popover-foreground: 60 100% 97%;
 
     /* Primary & Secondary */
-    --primary: 199 90% 65%; /* #56C0F6 - SKAI Cyan */
-    --primary-glow: 199 90% 75%; /* Lighter for glow */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 166 80% 55%; /* #2DEDAD - SKAI Teal */
-    --secondary-glow: 166 80% 65%;
-    --secondary-foreground: 0 0% 100%;
-    --accent: 199 90% 65%; /* Same as primary */
-    --accent-foreground: 0 0% 100%;
+    --primary: 197 87% 64%; /* #56C7F3 - Sky Blue */
+    --primary-glow: 197 87% 74%; /* Lighter for glow */
+    --primary-foreground: 173 100% 4%;
+    --secondary: 158 95% 53%; /* #17F9B4 - Alien Green */
+    --secondary-glow: 158 95% 63%;
+    --secondary-foreground: 173 100% 4%;
+    --accent: 17 100% 65%; /* #FF7E50 - Coral */
+    --accent-foreground: 60 100% 97%;
 
     /* Trading Colors */
     --long: 142 76% 36%; /* #16A34A - Buy/Long green */
@@ -144,7 +144,7 @@
   body {
     @apply bg-background text-foreground;
     font-family:
-      "Poppins",
+      "Manrope",
       system-ui,
       -apple-system,
       sans-serif;

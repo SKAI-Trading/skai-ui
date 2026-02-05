@@ -9,7 +9,7 @@
  * import { cssVar, cssVarWithFallback, injectFallbackStyles } from "@skai/ui";
  *
  * // Use in inline styles
- * <div style={{ color: cssVar("--primary", "#2cecad") }} />
+ * <div style={{ color: cssVar("--primary", "#17F9B4") }} />
  *
  * // Generate fallback stylesheet
  * injectFallbackStyles();
@@ -20,21 +20,21 @@
  * Default fallback values for common design tokens
  */
 export const defaultFallbacks: Record<string, string> = {
-  // Colors - Background
-  "--background": "hsl(222, 47%, 11%)",
-  "--foreground": "hsl(180, 100%, 98%)",
-  "--card": "hsl(222, 47%, 11%)",
-  "--card-foreground": "hsl(180, 100%, 98%)",
-  "--popover": "hsl(222, 47%, 11%)",
-  "--popover-foreground": "hsl(180, 100%, 98%)",
+  // Colors - Background (Green Coal #001615)
+  "--background": "hsl(173, 100%, 4%)",
+  "--foreground": "hsl(60, 100%, 97%)",
+  "--card": "hsl(170, 40%, 7%)",
+  "--card-foreground": "hsl(60, 100%, 97%)",
+  "--popover": "hsl(170, 40%, 7%)",
+  "--popover-foreground": "hsl(60, 100%, 97%)",
 
-  // Colors - Primary
-  "--primary": "hsl(169, 89%, 56%)",
-  "--primary-foreground": "hsl(222, 47%, 11%)",
+  // Colors - Primary (Sky Blue #56C7F3)
+  "--primary": "hsl(197, 87%, 64%)",
+  "--primary-foreground": "hsl(173, 100%, 4%)",
 
-  // Colors - Secondary
-  "--secondary": "hsl(180, 25%, 25%)",
-  "--secondary-foreground": "hsl(180, 100%, 98%)",
+  // Colors - Secondary (Alien Green #17F9B4)
+  "--secondary": "hsl(158, 95%, 53%)",
+  "--secondary-foreground": "hsl(173, 100%, 4%)",
 
   // Colors - Muted
   "--muted": "hsl(215, 25%, 17%)",
@@ -91,7 +91,7 @@ export function supportsCSSVariables(): boolean {
  *
  * @example
  * ```tsx
- * <div style={{ backgroundColor: cssVar("--primary", "#2cecad") }} />
+ * <div style={{ backgroundColor: cssVar("--primary", "#17F9B4") }} />
  * ```
  */
 export function cssVar(property: string, fallback?: string): string {

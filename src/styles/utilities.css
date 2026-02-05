@@ -248,11 +248,11 @@ button[data-testid="copy-uri"],
 }
 
 .bg-gradient-primary-vertical {
-  background: linear-gradient(180deg, hsl(199, 90%, 65%), hsl(166, 80%, 55%));
+  background: linear-gradient(180deg, hsl(197, 87%, 64%), hsl(158, 95%, 53%));
 }
 
 .bg-gradient-gold {
-  background: linear-gradient(135deg, #ffb547, #e8a027);
+  background: linear-gradient(135deg, #999966, #7a7a52); /* Printer's Gold */
 }
 
 .bg-gradient-dark {

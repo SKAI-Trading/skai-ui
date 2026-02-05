@@ -29,16 +29,16 @@
 /* Wider than viewport so bars extend off screen edges like Figma */
 .ticker-bars-wrapper {
   position: fixed;
-  bottom: 0;
-  left: -25%; /* Extend 25% beyond left edge */
-  right: -25%; /* Extend 25% beyond right edge */
-  width: 150%; /* Total width is 150% of viewport */
-  height: 600px; /* Tall enough for bars reaching ~50% viewport */
+  bottom: -149px; /* Bars extend 149px below viewport per Figma */
+  left: -35%; /* Extend 35% beyond left edge (Figma: 503px on 1440px) */
+  right: -35%;
+  width: 170%; /* Figma: 2446px on 1440px = 170% */
+  height: 446px; /* Figma bar container height: 446px */
   display: flex;
   justify-content: center;
   align-items: flex-end;
   pointer-events: none;
-  overflow: visible; /* Allow bars to extend to full height */
+  overflow: visible;
 }
 
 /* BACK LAYER - positioned behind, taller bars */
@@ -92,12 +92,12 @@
 
 .ticker-bars-wrapper .bar {
   flex: 0 0 auto;
-  width: 4px; /* Thicker bars to match Figma */
-  margin-right: 4px; /* Figma: ~7.65px total spacing (4px bar + 4px gap) */
-  border-radius: 2px 2px 0 0;
+  width: 3px; /* Figma: 3.06px bar width */
+  margin-right: 4.6px; /* Figma: ~7.6px total slot (3px + 4.6px gap) */
+  border-radius: 1px 1px 0 0;
   transform-origin: bottom center;
 
-  /* Cyan gradient matching Figma - Sky Blue 300 (#56C7F3) */
+  /* Cyan gradient matching Figma - Sky Blue (#56C7F3) */
   background: linear-gradient(
     to top,
     rgba(86, 199, 243, 0.05) 0%,
@@ -107,8 +107,8 @@
 
   /* Subtle glow for thickness appearance */
   box-shadow:
-    0 0 4px rgba(86, 199, 243, 0.15),
-    0 0 8px rgba(86, 199, 243, 0.08);
+    0 0 3px rgba(86, 199, 243, 0.12),
+    0 0 6px rgba(86, 199, 243, 0.06);
 
   /* Animation */
   animation: bar-pulse 20s ease-in-out infinite;
@@ -126,12 +126,10 @@
     rgba(86, 199, 243, 0.6) 40%,
     rgba(86, 199, 243, 1) 100%
   );
-  /* No individual opacity - container handles it */
 
-  /* FLAT HEIGHT - Same base for all bars, only random variation creates spikes */
-  /* Base height ~350px with variation creating stock-chart-like appearance */
-  height: calc(350px * var(--height-variation, 1));
-  --pulse-factor: 1.12;
+  /* Figma: max bar height 446px at variation 1.0 */
+  height: calc(446px * var(--height-variation, 1));
+  --pulse-factor: 1.08;
 }
 
 /* =============================================================================
@@ -146,12 +144,10 @@
     rgba(86, 199, 243, 0.6) 40%,
     rgba(86, 199, 243, 1) 100%
   );
-  /* No individual opacity - container handles it */
 
-  /* FLAT HEIGHT - Same base for all bars, only random variation creates spikes */
-  /* Base height ~120px with variation creating stock-chart-like appearance */
-  height: calc(120px * var(--height-variation, 1));
-  --pulse-factor: 1.15;
+  /* Figma: max front bar ~160px, variation max 0.958 → base 167px */
+  height: calc(167px * var(--height-variation, 1));
+  --pulse-factor: 1.10;
 }
 
 /* =============================================================================
@@ -160,8 +156,8 @@
 
 /* All bars have uniform width and spacing so front/back layers align perfectly */
 .ticker-bars-wrapper .bar {
-  width: 4px; /* Thicker bars to match Figma */
-  margin-right: 4px; /* Figma: ~8px total spacing */
+  width: 3px; /* Figma: 3.06px */
+  margin-right: 4.6px; /* Figma: 7.6px total slot */
 }
 
 /* =============================================================================
@@ -225,15 +221,15 @@
 
 .stock-ticker-blur {
   position: fixed;
-  bottom: -60px;
+  bottom: -80px;
   left: 0;
   right: 0;
-  height: 300px;
+  height: 250px;
   background: linear-gradient(
     180deg,
     transparent 0%,
-    rgba(0, 22, 21, 0.2) 50%,
-    rgba(0, 22, 21, 0.6) 100%
+    rgba(0, 22, 21, 0.3) 50%,
+    rgba(0, 22, 21, 0.7) 100%
   );
   filter: blur(20px);
   z-index: 0;
@@ -274,28 +270,51 @@
    RESPONSIVE ADJUSTMENTS
    ============================================================================= */
 
-@media (max-width: 768px) {
+/* Tablet: 768x1024 - Figma node 2005:12956 */
+@media (max-width: 1024px) {
   .ticker-bars-wrapper {
-    height: 250px;
-    bottom: 0;
-    left: -30%; /* More extension on mobile */
-    right: -30%;
-    width: 160%;
+    height: 442px; /* Figma: 441.7px */
+    bottom: -142px; /* Bars extend 142px below viewport */
+    left: -52%; /* Figma: 396px on 768px = 51.6% */
+    right: -52%;
+    width: 203%; /* Figma: 1560px on 768px = 203% */
   }
 
   .ticker-bars-wrapper .bar {
-    width: 3px;
-    margin-right: 3px;
+    width: 2px; /* Figma: 1.74-2.17px */
+    margin-right: 2.9px; /* Figma: ~4.9px total slot */
   }
 
-  /* BACK LAYER - Mobile flat heights with random variation */
   .ticker-bars-back .bar-back {
-    height: calc(140px * var(--height-variation, 1));
+    height: calc(442px * var(--height-variation, 1));
   }
 
-  /* FRONT LAYER - Mobile flat heights with random variation */
   .ticker-bars-front .bar-front {
-    height: calc(50px * var(--height-variation, 1));
+    height: calc(167px * var(--height-variation, 1));
+  }
+}
+
+/* Mobile: <768px - scaled down proportionally from tablet */
+@media (max-width: 767px) {
+  .ticker-bars-wrapper {
+    height: 300px;
+    bottom: -100px;
+    left: -55%;
+    right: -55%;
+    width: 210%;
+  }
+
+  .ticker-bars-wrapper .bar {
+    width: 2px;
+    margin-right: 2px;
+  }
+
+  .ticker-bars-back .bar-back {
+    height: calc(300px * var(--height-variation, 1));
+  }
+
+  .ticker-bars-front .bar-front {
+    height: calc(115px * var(--height-variation, 1));
   }
 }
 

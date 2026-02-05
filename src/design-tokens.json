@@ -9,12 +9,12 @@
 
     "brand": {
       "primary": {
-        "$value": "#56C0F6",
+        "$value": "#56C7F3",
         "$type": "color",
         "$description": "Primary brand color - Cyan - Use for primary CTAs, Trading, highlights"
       },
       "secondary": {
-        "$value": "#2DEDAD",
+        "$value": "#17F9B4",
         "$type": "color",
         "$description": "Secondary brand color - Teal - Use for Social, secondary actions"
       },
@@ -24,12 +24,12 @@
         "$description": "Tertiary brand color - Purple - Use for Gaming/Play features"
       },
       "background": {
-        "$value": "#020717",
+        "$value": "#001615",
         "$type": "color",
-        "$description": "Main background color - Deep navy"
+        "$description": "Main background color - Green Coal"
       },
       "gradient": {
-        "$value": "linear-gradient(135deg, #56C0F6 0%, #2DEDAD 100%)",
+        "$value": "linear-gradient(135deg, #56C7F3 0%, #17F9B4 100%)",
         "$type": "gradient",
         "$description": "Primary brand gradient - Cyan to Teal - Use for CTAs and hero elements"
       }
@@ -52,7 +52,7 @@
         "$description": "Warning color - Amber - Caution states"
       },
       "info": {
-        "$value": "#56C0F6",
+        "$value": "#56C7F3",
         "$type": "color",
         "$description": "Info color - Same as primary - Information states"
       }
@@ -106,7 +106,7 @@
         "$description": "Default border color"
       },
       "focus": {
-        "$value": "#56C0F6",
+        "$value": "#56C7F3",
         "$type": "color",
         "$description": "Focus ring color"
       }
@@ -255,12 +255,12 @@
       "$type": "shadow"
     },
     "glow": {
-      "$value": "0 0 30px rgba(86, 192, 246, 0.3)",
+      "$value": "0 0 30px rgba(86, 199, 243, 0.3)",
       "$type": "shadow",
       "$description": "Primary glow effect"
     },
     "glowStrong": {
-      "$value": "0 0 40px rgba(86, 192, 246, 0.5)",
+      "$value": "0 0 40px rgba(86, 199, 243, 0.5)",
       "$type": "shadow",
       "$description": "Strong glow for hover states"
     }
