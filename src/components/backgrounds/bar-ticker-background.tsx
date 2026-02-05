@@ -47,18 +47,31 @@ export interface BarTickerBackgroundProps {
  *
  * Requires backgrounds.css to be imported for animations.
  */
-// Seeded random function for consistent randomness
+// Seeded random for small per-bar noise
 function seededRandom(seed: number): number {
   const x = Math.sin(seed * 9999) * 10000;
   return x - Math.floor(x);
 }
 
-// Generate random height variation for stock-chart-like appearance
+// Generate stock-chart wave pattern with smooth peaks and valleys
 function getHeightVariation(index: number, layer: "back" | "front"): number {
-  const seed = layer === "back" ? index * 1.5 : index * 2.7;
-  const random = seededRandom(seed);
-  // Random variation between -30% and +40% of base height
-  return 0.7 + random * 0.7;
+  const totalBars = 300;
+  const t = index / totalBars; // Normalized position 0..1
+
+  // Multi-frequency sine waves create realistic stock chart pattern
+  // Primary trend wave
+  const wave1 = Math.sin(t * Math.PI * 2.5 + (layer === "back" ? 0 : 0.5)) * 0.3;
+  // Secondary wave for valleys
+  const wave2 = Math.sin(t * Math.PI * 5.2 + (layer === "back" ? 1.2 : 0.8)) * 0.15;
+  // Tertiary detail wave
+  const wave3 = Math.sin(t * Math.PI * 11 + (layer === "back" ? 0.3 : 1.5)) * 0.05;
+
+  // Small per-bar noise for organic feel
+  const noise = (seededRandom(index * (layer === "back" ? 1.5 : 2.7)) - 0.5) * 0.08;
+
+  // Combine: base 0.85 + waves + noise, clamped to 0.4..1.4
+  const height = 0.85 + wave1 + wave2 + wave3 + noise;
+  return Math.max(0.4, Math.min(1.4, height));
 }
 
 export function BarTickerBackground({
