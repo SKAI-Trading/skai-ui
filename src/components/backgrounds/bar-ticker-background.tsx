@@ -3,11 +3,6 @@ import { cn } from "../../lib/utils";
 
 export interface BarTickerBackgroundProps {
   /**
-   * Number of bars to render (total across both halves)
-   * @default 600
-   */
-  barCount?: number;
-  /**
    * Whether to blur the background (e.g., when modal is open)
    * @default false
    */
@@ -31,74 +26,128 @@ export interface BarTickerBackgroundProps {
 /**
  * BarTickerBackground - Animated vertical bar background matching Figma design
  *
- * Creates an animated stock ticker-style background with TWO LAYERS matching
- * Figma node 2005-4492:
+ * Bar heights are extracted directly from Figma node 2005:4515 (320 vectors
+ * per layer). The pattern is mirrored (left half = reversed right half).
  *
  * LAYER STRUCTURE:
- * - BACK layer: Taller bars (more visible on edges)
- * - FRONT layer: Shorter bars (more visible in center)
+ * - BACK layer: Taller bars with stepped heights (volume-chart style)
+ * - FRONT layer: Shorter bars with occasional spikes (candlestick wicks)
  *
  * Each layer uses MIRROR architecture:
- * - LEFT half: bars grow from left edge toward center
+ * - LEFT half: bars rendered from edge toward center
  * - RIGHT half: mirrored copy (scaleX: -1) creating perfect symmetry
- *
- * The green tint visible in Figma comes from Ellipse 24 (a blurred green
- * circle glow) positioned behind the bars in LandingWaitlist.tsx.
  *
  * Requires backgrounds.css to be imported for animations.
  */
-// Seeded random for small per-bar noise
-function seededRandom(seed: number): number {
-  const x = Math.sin(seed * 9999) * 10000;
-  return x - Math.floor(x);
+
+// Figma bar heights extracted from node 2005:4515 vectors.
+// Run-length encoded as [normalizedHeight, barCount] pairs.
+// 160 bars per half, mirrored for right side.
+
+// Back layer (tall bars) - max height 441.7px in Figma
+const BACK_PATTERN: [number, number][] = [
+  [0.67, 3],
+  [0.798, 5],
+  [0.844, 4],
+  [0.894, 8],
+  [0.93, 3],
+  [0.629, 6],
+  [0.54, 8],
+  [0.598, 6],
+  [0.629, 7],
+  [0.714, 3],
+  [0.798, 5],
+  [0.862, 5],
+  [0.894, 5],
+  [0.93, 4],
+  [0.956, 5],
+  [1.0, 6],
+  [0.956, 5],
+  [0.93, 4],
+  [0.894, 5],
+  [0.862, 5],
+  [0.798, 5],
+  [0.714, 3],
+  [0.629, 7],
+  [0.598, 6],
+  [0.54, 8],
+  [0.629, 6],
+  [0.93, 3],
+  [0.894, 8],
+  [0.844, 4],
+  [0.798, 5],
+  [0.67, 3],
+];
+
+// Front layer (short bars with occasional spikes) - max height 160.3px in Figma
+const FRONT_PATTERN: [number, number][] = [
+  [0.321, 3],
+  [0.381, 5],
+  [0.404, 4],
+  [0.428, 8],
+  [0.445, 3],
+  [0.301, 6],
+  [0.258, 8],
+  [0.286, 6],
+  [0.301, 7],
+  [0.342, 3],
+  [0.381, 5],
+  [0.412, 5],
+  [0.428, 5],
+  [0.445, 4],
+  [0.457, 5],
+  [0.664, 1],
+  [0.765, 1],
+  [0.958, 1],
+  [0.702, 1],
+  [0.478, 2],
+  [0.457, 5],
+  [0.445, 4],
+  [0.428, 5],
+  [0.412, 5],
+  [0.381, 5],
+  [0.342, 3],
+  [0.301, 7],
+  [0.286, 6],
+  [0.258, 2],
+  [0.492, 2],
+  [0.258, 4],
+  [0.301, 6],
+  [0.445, 3],
+  [0.428, 8],
+  [0.404, 4],
+  [0.381, 5],
+  [0.321, 3],
+];
+
+// Expand run-length encoded pattern into per-bar height array
+function expandPattern(pattern: [number, number][]): number[] {
+  const result: number[] = [];
+  for (const [height, count] of pattern) {
+    for (let i = 0; i < count; i++) {
+      result.push(height);
+    }
+  }
+  return result;
 }
 
-// Generate stock-chart wave pattern with smooth peaks and valleys
-function getHeightVariation(index: number, layer: "back" | "front"): number {
-  const totalBars = 300;
-  const t = index / totalBars; // Normalized position 0..1
-
-  // Multi-frequency sine waves create realistic stock chart pattern
-  // Primary trend wave
-  const wave1 = Math.sin(t * Math.PI * 2.5 + (layer === "back" ? 0 : 0.5)) * 0.3;
-  // Secondary wave for valleys
-  const wave2 = Math.sin(t * Math.PI * 5.2 + (layer === "back" ? 1.2 : 0.8)) * 0.15;
-  // Tertiary detail wave
-  const wave3 = Math.sin(t * Math.PI * 11 + (layer === "back" ? 0.3 : 1.5)) * 0.05;
-
-  // Small per-bar noise for organic feel
-  const noise = (seededRandom(index * (layer === "back" ? 1.5 : 2.7)) - 0.5) * 0.08;
-
-  // Combine: base 0.85 + waves + noise, clamped to 0.4..1.4
-  const height = 0.85 + wave1 + wave2 + wave3 + noise;
-  return Math.max(0.4, Math.min(1.4, height));
-}
+const backHeights = expandPattern(BACK_PATTERN);
+const frontHeights = expandPattern(FRONT_PATTERN);
 
 export function BarTickerBackground({
-  barCount = 600,
   isBlurred = false,
   className,
   showShimmer = false,
   showDepthBlur = true,
 }: BarTickerBackgroundProps) {
-  // Create bars for one half only - right half will mirror via CSS
-  const halfCount = Math.floor(barCount / 2);
-
-  // Memoize bar array with random height variations for stock-chart appearance
   const backBars = React.useMemo(
-    () => Array.from({ length: halfCount }, (_, i) => ({
-      index: i,
-      variation: getHeightVariation(i, "back"),
-    })),
-    [halfCount]
+    () => backHeights.map((h, i) => ({ index: i, variation: h })),
+    []
   );
 
   const frontBars = React.useMemo(
-    () => Array.from({ length: halfCount }, (_, i) => ({
-      index: i,
-      variation: getHeightVariation(i, "front"),
-    })),
-    [halfCount]
+    () => frontHeights.map((h, i) => ({ index: i, variation: h })),
+    []
   );
 
   return (
