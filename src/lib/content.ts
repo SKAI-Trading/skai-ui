@@ -131,12 +131,158 @@ export const content = {
     },
 
     footer: {
-      copyright: "© 2026 SKAI Trading. All rights reserved.",
+      copyright: "© 2026 SKAI.trade. All rights reserved.",
       links: {
-        terms: "Terms of Service",
-        privacy: "Privacy Policy",
+        terms: "Terms",
+        privacy: "Privacy",
+        termsOfService: "Terms of Service",
+        privacyPolicy: "Privacy Policy",
         docs: "Documentation",
         support: "Support",
+      },
+    },
+
+    /**
+     * Waitlist / Onboarding flow content
+     * Used by skai-landing pages: OnboardingPage, LandingWaitlist,
+     * CompletionPage, DashboardPage, ExternalWallet, UsernamePage
+     */
+    waitlist: {
+      /** Shared across OnboardingPage + LandingWaitlist hero */
+      shared: {
+        headline: {
+          prefix: "Join the global ",
+          emphasis: "AI-powered",
+          suffix: " trading ecosystem",
+        },
+        subheading:
+          "Discover the new world of perpetual trading, swaps, prediction markets, memes, launchpads, and a catalog of casino-style gaming.",
+        cta: "Get early access",
+        counterSuffix: "Traders are already on the list",
+        defaultCount: "800",
+      },
+
+      /** OnboardingPage-specific */
+      onboarding: {
+        logoText: "Skai",
+        logoDomain: ".trade",
+      },
+
+      /** CompletionPage */
+      completion: {
+        titleWithUsername: "@{{username}} is yours!",
+        titleFallback: "Welcome Pioneer!",
+        subtitle: "Welcome to the Skai pioneer universe!",
+        rewardAmount: "+500 SKAI Points",
+        giftMessage: "We gifted you ",
+        giftHighlight: "+500 SKAI Points",
+        giftSuffix: " tokens!",
+      },
+
+      /** ExternalWallet page */
+      externalWallet: {
+        title: "Link external wallet",
+        subtitle: "Connect your existing wallet to your Skai account.",
+        skipLabel: "Skip for now",
+        wallets: {
+          metamask: "Metamask",
+          coinbase: "Coinbase wallet",
+          walletconnect: "WalletConnect",
+          phantom: "Phantom",
+        },
+        errors: {
+          walletAlreadyLinked:
+            "🔒 This wallet is already linked to another account ({{username}}). Each wallet can only be linked to one SKAI account.",
+          connectionCancelled:
+            "Connection cancelled. Click a wallet to try again.",
+        },
+      },
+
+      /** UsernamePage */
+      username: {
+        title: "Reserve your username",
+        subtitle: 'Your profile URL will be "skai.trade/{{username}}"',
+        subtitleDefault: 'Your profile URL will be "skai.trade/username"',
+        inputPrefix: "skai.trade/",
+        inputPlaceholder: "username",
+        claimButton: "Claim @{{username}}",
+        claimButtonDefault: "Claim @username",
+        savingButton: "Saving...",
+        availableMessage: "is available!",
+        validation: {
+          tooLong: "Username must be 20 characters or less",
+          invalidChars:
+            "Only letters, numbers, underscores, and hyphens allowed",
+          notAvailable: "This username is not available",
+          premiumReserved: "You can register this name soon with SKAI",
+          alreadyTaken: "Username already taken",
+          chooseValid: "Please choose a valid username",
+          tooShort: "👤 Username must be at least 3 characters long.",
+          tooLongEmoji: "👤 Username must be 20 characters or less.",
+          invalidCharsEmoji:
+            "👤 Username can only contain letters, numbers, underscores, and hyphens.",
+        },
+        errors: {
+          missingInfo:
+            "Missing required information. Please go back and complete the wallet connection.",
+          emailRequired:
+            "📧 Email is required for registration. Please use an email wallet or reconnect.",
+          walletRegistered:
+            "🔒 This wallet is already registered! You're already a Pioneer. Check your email for updates.",
+          usernameTaken:
+            "👤 This username is already taken. Please try a different one!",
+          accountExists:
+            "⚠️ Account already exists. Please use different credentials or contact support.",
+          createFailed:
+            "❌ Unable to create account. Please try again or contact support.",
+          saveFailed:
+            "❌ Unable to save account. Please try again.",
+        },
+      },
+
+      /** DashboardPage */
+      dashboard: {
+        welcome: "Welcome, {{username}}!",
+        welcomeFallback: "Welcome, ...!",
+        checkEmail: "Check email for launch updates.",
+        launchApp: "Launch app",
+        comingSoon: "Coming soon",
+        daysToLaunch: "Days to launch",
+
+        badge: {
+          title: "Pioneer badge",
+          subtitle: "Early adopter status.",
+          reward: "+500 SKAI Points",
+          status: "Credited",
+        },
+
+        referral: {
+          title: "Invite friends and earn rewards",
+          subtitle: "Earn 100 SKAI Points for each friend that joins.",
+          linkLabel: "Referral link",
+          shareLabel: "Connect to share referral link",
+          copyButton: "COPY",
+          shareToX: "Share to X",
+          shareToInstagram: "Share to Instagram",
+          instagramCopied: "Link Copied! Paste on Instagram",
+          joinDiscord: "Join Skai on Discord",
+          shareText:
+            'Trade. Predict. Play. 📊🎯🎰\n\nJoin the @SkaiTrade waitlist to claim 500 SKAI Points: https://skai.trade/ref/{{username}}',
+        },
+
+        imageFailed: "Image failed to load",
+      },
+
+      /** LandingWaitlist completion overlay */
+      completionOverlay: {
+        usernameConfirm: "@{{username}} is yours!",
+        welcomeMessage: "Welcome to the SKAI Pioneer family 🚀",
+        reward: "+500 SKAI Points",
+      },
+
+      /** LandingWaitlist modal titles */
+      modal: {
+        joinTitle: "Join SKAI Waitlist",
       },
     },
   },
