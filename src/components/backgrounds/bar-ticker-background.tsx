@@ -134,42 +134,24 @@ function expandPattern(pattern: [number, number][]): number[] {
 // The full 160-bar pattern is symmetric:
 //   edge(0.67) → rise(0.93) → dip(0.54) → peak(1.0) → dip(0.54) → rise(0.93) → edge(0.67)
 //
-// Figma shows two peak clusters (one per half of viewport) with a valley at center.
-// This is achieved by using the FIRST HALF (80 bars) per side:
-//   Left half: edge(0.67) at outer edge → peak(1.0) at center seam
-//   Right half: mirror of left = peak(1.0) at center seam → edge(0.67) at outer edge
+// Each half renders all 160 bars. The center seam = bar 159 = 0.67 (moderate).
+// Peaks (1.0) at bar ~80 (midpoint of each half).
+// The mirror creates the symmetric shape across the full viewport.
 //
-// For wider screens (>1440px), extend outward with organic variation
-// that continues the edge character without looking flat or introducing new peaks.
+// For wider screens (>1440px), extend outward by prepending edge-height bars.
+// The edge bars (0.67) are moderate and blend naturally.
 
-function halfPattern(heights: number[]): number[] {
-  return heights.slice(0, Math.ceil(heights.length / 2));
+function extendPattern(fullHeights: number[], minBars: number): number[] {
+  if (fullHeights.length >= minBars) return fullHeights;
+  const needed = minBars - fullHeights.length;
+  // Prepend with edge-height bars (first bar value) for seamless extension
+  const edgeHeight = fullHeights[0];
+  const padding = new Array(needed).fill(edgeHeight);
+  return [...padding, ...fullHeights];
 }
 
-// Generate organic-looking extension bars around a base height
-// Uses a simple deterministic variation to avoid flat appearance
-function organicPad(halfHeights: number[], minBars: number): number[] {
-  if (halfHeights.length >= minBars) return halfHeights;
-  const needed = minBars - halfHeights.length;
-  const edgeHeight = halfHeights[0]; // 0.67 for back, 0.321 for front
-
-  // Create gentle organic variation around the edge height
-  // Variation range: ±15% of edge height, using a simple wave pattern
-  const padding: number[] = [];
-  for (let i = 0; i < needed; i++) {
-    // Combine two sine waves at different frequencies for organic feel
-    const wave1 = Math.sin(i * 0.15) * 0.08;
-    const wave2 = Math.sin(i * 0.37 + 1.5) * 0.05;
-    const variation = edgeHeight + (wave1 + wave2) * edgeHeight;
-    // Clamp to reasonable range
-    padding.push(Math.max(edgeHeight * 0.7, Math.min(edgeHeight * 1.3, variation)));
-  }
-
-  return [...padding, ...halfHeights];
-}
-
-const backHeights = halfPattern(expandPattern(BACK_PATTERN));
-const frontHeights = halfPattern(expandPattern(FRONT_PATTERN));
+const backHeights = expandPattern(BACK_PATTERN);
+const frontHeights = expandPattern(FRONT_PATTERN);
 
 export function BarTickerBackground({
   isBlurred = false,
@@ -194,12 +176,12 @@ export function BarTickerBackground({
   }, []);
 
   const backBars = React.useMemo(
-    () => organicPad(backHeights, barsPerHalf).map((h, i) => ({ index: i, variation: h })),
+    () => extendPattern(backHeights, barsPerHalf).map((h, i) => ({ index: i, variation: h })),
     [barsPerHalf]
   );
 
   const frontBars = React.useMemo(
-    () => organicPad(frontHeights, barsPerHalf).map((h, i) => ({ index: i, variation: h })),
+    () => extendPattern(frontHeights, barsPerHalf).map((h, i) => ({ index: i, variation: h })),
     [barsPerHalf]
   );
 
