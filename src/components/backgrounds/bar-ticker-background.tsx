@@ -138,15 +138,17 @@ function expandPattern(pattern: [number, number][]): number[] {
 // Peaks (1.0) at bar ~80 (midpoint of each half).
 // The mirror creates the symmetric shape across the full viewport.
 //
-// For wider screens (>1440px), extend outward by prepending edge-height bars.
-// The edge bars (0.67) are moderate and blend naturally.
+// For wider screens (>1440px), extend outward by tiling the pattern.
+// This prevents flat/uniform bars at the edges on ultrawide displays.
 
 function extendPattern(fullHeights: number[], minBars: number): number[] {
   if (fullHeights.length >= minBars) return fullHeights;
   const needed = minBars - fullHeights.length;
-  // Prepend with edge-height bars (first bar value) for seamless extension
-  const edgeHeight = fullHeights[0];
-  const padding = new Array(needed).fill(edgeHeight);
+  // Tile from the start of the pattern so extra bars have natural variation
+  const padding: number[] = [];
+  for (let i = 0; i < needed; i++) {
+    padding.push(fullHeights[i % fullHeights.length]);
+  }
   return [...padding, ...fullHeights];
 }
 
