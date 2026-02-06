@@ -11,3 +11,6 @@ export * from "./thirdweb-otp-handler";
 
 // Interactive Utilities
 export * from "./terminal-chat";
+
+// Permission Utilities
+export * from "./permission-gate";
