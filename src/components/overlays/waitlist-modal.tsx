@@ -29,6 +29,8 @@ export interface WaitlistModalProps {
   onAppleLogin?: () => void;
   /** Whether in loading state */
   isLoading?: boolean;
+  /** Callback to cancel an in-progress auth attempt */
+  onCancelAuth?: () => void;
   /** Initial email value */
   initialEmail?: string;
   /** Custom class name */
@@ -130,6 +132,7 @@ export function WaitlistModal({
   onGoogleLogin,
   onAppleLogin,
   isLoading = false,
+  onCancelAuth,
   initialEmail = "",
   className,
 }: WaitlistModalProps) {
@@ -176,8 +179,17 @@ export function WaitlistModal({
     >
       {/* Loading Overlay */}
       {isLoading && (
-        <div className="absolute inset-0 z-[10001] flex items-center justify-center bg-[#001615]/80">
+        <div className="absolute inset-0 z-[10001] flex flex-col items-center justify-center gap-3 bg-[#001615]/80">
           <SpinnerIcon className="h-8 w-8 text-[#17F9B4]" />
+          <p className="font-manrope text-sm text-white/70">Authenticating...</p>
+          {onCancelAuth && (
+            <button
+              onClick={onCancelAuth}
+              className="font-manrope mt-1 text-xs text-white/40 underline transition-colors hover:text-white/70"
+            >
+              Cancel
+            </button>
+          )}
         </div>
       )}
 

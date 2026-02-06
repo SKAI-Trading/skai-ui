@@ -115,6 +115,50 @@ export function ThirdwebOTPHandler({
       }
     };
 
+    // Global paste listener to distribute pasted OTP code across inputs
+    const handlePaste = (e: ClipboardEvent) => {
+      const otpInputs = findOTPInputs();
+      if (otpInputs.length === 0) return;
+
+      const pastedText = e.clipboardData?.getData("text")?.trim() || "";
+      // Only handle if the pasted content looks like an OTP code (digits only, correct length)
+      const digitsOnly = pastedText.replace(/\D/g, "");
+      if (digitsOnly.length < otpLength) return;
+
+      const code = digitsOnly.slice(0, otpLength);
+
+      // Prevent default paste behavior
+      e.preventDefault();
+
+      if (otpInputs.length === 1) {
+        // Single input case - set value directly
+        const input = otpInputs[0] as HTMLInputElement;
+        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+          HTMLInputElement.prototype, "value"
+        )?.set;
+        nativeInputValueSetter?.call(input, code);
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+      } else {
+        // Multiple inputs case - distribute digits across inputs
+        otpInputs.forEach((input, i) => {
+          const htmlInput = input as HTMLInputElement;
+          const digit = code[i] || "";
+          const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+            HTMLInputElement.prototype, "value"
+          )?.set;
+          nativeInputValueSetter?.call(htmlInput, digit);
+          htmlInput.dispatchEvent(new Event("input", { bubbles: true }));
+          htmlInput.dispatchEvent(new Event("change", { bubbles: true }));
+        });
+        // Focus last filled input
+        const lastInput = otpInputs[Math.min(code.length - 1, otpInputs.length - 1)];
+        if (lastInput) lastInput.focus();
+      }
+
+      console.log("📋 OTP code pasted successfully");
+    };
+
     // Observer to handle auto-focus and auto-submit
     const observer = new MutationObserver(() => {
       const otpInputs = findOTPInputs();
@@ -166,10 +210,12 @@ export function ThirdwebOTPHandler({
     });
 
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("paste", handlePaste);
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("paste", handlePaste);
       observer.disconnect();
     };
   }, [enabled, otpLength, verifyButtonPatterns, autoSubmitDelay]);
