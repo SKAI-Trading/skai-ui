@@ -11,7 +11,7 @@ import {
 } from "../data-display/table";
 import { Badge } from "../core/badge";
 import { Button } from "../core/button";
-import { TrendingUp, TrendingDown, MoreHorizontal } from "lucide-react";
+import { TrendingUp, TrendingDown, MoreHorizontal, ArrowUpDown } from "lucide-react";
 
 const meta: Meta<typeof Table> = {
   title: "Components/Table",
@@ -458,4 +458,144 @@ export const LeaderboardTable: Story = {
       </Table>
     );
   },
+};
+
+// Trading positions with PnL
+const positions = [
+  {
+    symbol: "ETH/USD",
+    side: "Long",
+    size: "2.5 ETH",
+    entry: "$3,245.00",
+    current: "$3,456.78",
+    pnl: "+$529.45",
+    pnlPercent: "+6.5%",
+  },
+  {
+    symbol: "BTC/USD",
+    side: "Short",
+    size: "0.15 BTC",
+    entry: "$65,420.00",
+    current: "$64,890.00",
+    pnl: "+$79.50",
+    pnlPercent: "+0.8%",
+  },
+  {
+    symbol: "SOL/USD",
+    side: "Long",
+    size: "45 SOL",
+    entry: "$142.50",
+    current: "$138.20",
+    pnl: "-$193.50",
+    pnlPercent: "-3.0%",
+  },
+];
+
+export const TradingPositions: Story = {
+  name: "Trading Positions",
+  render: () => (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Symbol</TableHead>
+          <TableHead>Side</TableHead>
+          <TableHead>Size</TableHead>
+          <TableHead className="text-right">Entry</TableHead>
+          <TableHead className="text-right">Current</TableHead>
+          <TableHead className="text-right">PnL</TableHead>
+          <TableHead className="w-[50px]"></TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {positions.map((position) => (
+          <TableRow key={position.symbol}>
+            <TableCell className="font-medium">{position.symbol}</TableCell>
+            <TableCell>
+              <Badge variant={position.side === "Long" ? "default" : "secondary"}>
+                {position.side}
+              </Badge>
+            </TableCell>
+            <TableCell>{position.size}</TableCell>
+            <TableCell className="text-right font-mono">{position.entry}</TableCell>
+            <TableCell className="text-right font-mono">{position.current}</TableCell>
+            <TableCell className="text-right">
+              <div
+                className={`flex items-center justify-end gap-1 ${position.pnl.startsWith("+") ? "text-green-500" : "text-red-500"}`}
+              >
+                {position.pnl.startsWith("+") ? (
+                  <TrendingUp className="h-4 w-4" />
+                ) : (
+                  <TrendingDown className="h-4 w-4" />
+                )}
+                <span className="font-mono">{position.pnl}</span>
+                <span className="text-xs">({position.pnlPercent})</span>
+              </div>
+            </TableCell>
+            <TableCell>
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                <MoreHorizontal className="h-4 w-4" />
+              </Button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  ),
+};
+
+export const Empty: Story = {
+  name: "Empty State",
+  render: () => (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Symbol</TableHead>
+          <TableHead>Side</TableHead>
+          <TableHead className="text-right">Amount</TableHead>
+          <TableHead className="text-right">PnL</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell colSpan={4} className="h-24 text-center text-muted-foreground">
+            No open positions
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  ),
+};
+
+const invoices = [
+  { id: "INV001", status: "Paid", method: "Credit Card", amount: "$250.00" },
+  { id: "INV002", status: "Pending", method: "PayPal", amount: "$150.00" },
+  { id: "INV003", status: "Unpaid", method: "Bank Transfer", amount: "$350.00" },
+  { id: "INV004", status: "Paid", method: "Credit Card", amount: "$450.00" },
+  { id: "INV005", status: "Paid", method: "PayPal", amount: "$550.00" },
+];
+
+export const Striped: Story = {
+  name: "Striped Rows",
+  render: () => (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-[100px]">Invoice</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead>Method</TableHead>
+          <TableHead className="text-right">Amount</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {invoices.map((invoice, i) => (
+          <TableRow key={invoice.id} className={i % 2 === 0 ? "bg-muted/50" : ""}>
+            <TableCell className="font-medium">{invoice.id}</TableCell>
+            <TableCell>{invoice.status}</TableCell>
+            <TableCell>{invoice.method}</TableCell>
+            <TableCell className="text-right">{invoice.amount}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  ),
 };

@@ -69,7 +69,7 @@ function getStoryFilePath(storyId: string, storyTitle?: string): string | null {
       "design tokens": "lib",
       patterns: "docs",
       documentation: "docs",
-      templates: "docs",
+      templates: "templates",
       tools: "docs",
       "design system": "docs",
       brand: "docs",
@@ -86,17 +86,47 @@ function getStoryFilePath(storyId: string, storyTitle?: string): string | null {
       button: "components/core/button",
       card: "components/core/card",
       input: "components/core/input",
+
+      // Forms
+      checkbox: "components/forms/checkbox",
+      select: "components/forms/select",
+      switch: "components/forms/switch",
+      slider: "components/forms/slider",
+      "radio-group": "components/forms/radio-group",
+      toggle: "components/forms/toggle",
+      autocomplete: "components/forms/autocomplete",
+
+      // Feedback
+      alert: "components/feedback/alert",
+      "alert-dialog": "components/feedback/alert-dialog",
+      progress: "components/feedback/progress",
+      skeleton: "components/feedback/skeleton",
+      tooltip: "components/feedback/tooltip",
+
+      // Overlays
       dialog: "components/overlays/dialog",
       sheet: "components/overlays/sheet",
       popover: "components/overlays/popover",
-      tooltip: "components/feedback/tooltip",
-      tabs: "components/navigation/tabs",
-      checkbox: "components/forms/checkbox",
-      select: "components/forms/select",
+      "dropdown-menu": "components/overlays/dropdown-menu",
+      "context-menu": "components/overlays/context-menu",
+      "hover-card": "components/overlays/hover-card",
+
+      // Data Display
       avatar: "components/data-display/avatar",
       table: "components/data-display/table",
+
+      // Layout
       separator: "components/layout/separator",
       "scroll-area": "components/layout/scroll-area",
+      "app-shell": "components/layout/app-shell",
+
+      // Navigation
+      tabs: "components/navigation/tabs",
+
+      // Backgrounds
+      "tickerbackground": "components/backgrounds/ticker-background",
+      "barttickerbackground": "components/backgrounds/bar-ticker-background",
+      "cosmicbackground": "components/backgrounds/cosmic-background",
     };
 
     // Check special mappings first
@@ -134,6 +164,7 @@ function getStoryFilePath(storyId: string, storyTitle?: string): string | null {
       "design-tokens": "lib",
       patterns: "docs",
       documentation: "docs",
+      templates: "templates",
       "getting-started": "docs",
     };
 
