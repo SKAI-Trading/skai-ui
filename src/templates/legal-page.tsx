@@ -1,162 +1,221 @@
 /**
  * Legal Page Template
- * 
- * Shared template for legal documents:
- * - Privacy Policy
- * - Terms of Service
- * - Cookie Policy
- * - Other legal documents
- * 
+ *
+ * Matches Figma designs for Privacy Policy and Terms of Service pages.
+ * Figma nodes: 2311:7088 (Privacy Desktop), 2311:7680 (Terms Desktop),
+ *              2311:5968 (Privacy Tablet), 2311:8793 (Terms Tablet),
+ *              2311:8199 (Privacy Mobile), 2311:6560 (Terms Mobile)
+ *
+ * Features:
+ * - Full-page dark layout with Green Coal background
+ * - Green glow orb (Ellipse 24) + BarTickerBackground
+ * - Header with title + Skai logo
+ * - Numbered sections with subsections
+ * - Footer with nav links + social icons
+ * - Responsive: Desktop (1440+), Tablet (768-1439), Mobile (<768)
+ *
  * @example
  * ```tsx
  * <LegalPageTemplate
  *   title="Privacy Policy"
- *   lastUpdated="2026-01-15"
+ *   lastUpdated="February 6, 2025"
  *   sections={privacySections}
- *   tableOfContents={true}
+ *   LinkComponent={Link}
  * />
  * ```
  */
 
 import * as React from "react";
-import { Button } from "../components/core/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/core/card";
 import { cn } from "../lib/utils";
+import { BarTickerBackground } from "../components/backgrounds/bar-ticker-background";
+import { SkaiLogo } from "../components/branding/skai-logo";
 
 // =============================================================================
 // Types
 // =============================================================================
 
 export interface LegalSection {
+  /** Unique section identifier for anchoring */
   id: string;
+  /** Display number: "1", "2", etc. */
+  number: string;
+  /** Section title */
   title: string;
-  content: string | React.ReactNode;
+  /** Section body content (JSX) */
+  content: React.ReactNode;
+  /** Optional subsections */
   subsections?: LegalSubsection[];
 }
 
 export interface LegalSubsection {
+  /** Unique subsection identifier */
   id: string;
+  /** Display number: "1.1", "1.2", etc. */
+  number: string;
+  /** Subsection title */
   title: string;
-  content: string | React.ReactNode;
+  /** Subsection body content (JSX) */
+  content: React.ReactNode;
+}
+
+export interface LegalFooterLink {
+  /** Link display text */
+  label: string;
+  /** Link URL or route */
+  href: string;
 }
 
 export interface LegalPageTemplateProps {
-  /** Document title */
+  /** Page title: "Privacy Policy" or "Terms of Service" */
   title: string;
-  /** Document subtitle/type */
-  subtitle?: string;
-  /** Last updated date */
+  /** Last updated date string: "February 6, 2025" */
   lastUpdated: string;
-  /** Effective date (if different from last updated) */
-  effectiveDate?: string;
-  /** Legal sections */
+  /** Document sections */
   sections: LegalSection[];
-  /** Show table of contents */
-  showTableOfContents?: boolean;
-  /** Company/organization name */
-  companyName?: string;
-  /** Contact email */
-  contactEmail?: string;
-  /** Document version */
-  version?: string;
-  /** Back button handler */
-  onBack?: () => void;
-  /** Print handler */
-  onPrint?: () => void;
-  /** Download handler */
-  onDownload?: () => void;
-  /** Section click handler (for table of contents) */
-  onSectionClick?: (sectionId: string) => void;
-  /** Custom header content */
-  headerContent?: React.ReactNode;
-  /** Custom footer content */
-  footerContent?: React.ReactNode;
+  /** Optional notice badge at top (e.g. "Important notice" pill for Terms) */
+  noticeBadge?: React.ReactNode;
+  /** Optional callout box below header (e.g. risk warning for Terms) */
+  headerCallout?: React.ReactNode;
+  /** Footer navigation links */
+  footerLinks?: LegalFooterLink[];
+  /** Discord URL */
+  discordUrl?: string;
+  /** Telegram URL */
+  telegramUrl?: string;
+  /** Twitter/X URL */
+  twitterUrl?: string;
+  /** Instagram URL */
+  instagramUrl?: string;
+  /** LinkedIn URL */
+  linkedinUrl?: string;
+  /** YouTube URL */
+  youtubeUrl?: string;
+  /** Custom logo element for header (defaults to SkaiLogo) */
+  headerLogo?: React.ReactNode;
+  /** Custom link component for internal routing (React Router Link) */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  LinkComponent?: React.ComponentType<any>;
   /** Additional CSS classes */
   className?: string;
 }
 
 // =============================================================================
-// Sub-components
+// Social Icon Components (matching landing-header.tsx)
 // =============================================================================
 
-interface TableOfContentsProps {
-  sections: LegalSection[];
-  onSectionClick?: (sectionId: string) => void;
-}
+const DiscordIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.947 2.418-2.157 2.418z" />
+  </svg>
+);
 
-function TableOfContents({ sections, onSectionClick }: TableOfContentsProps) {
+const TelegramIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+  </svg>
+);
+
+const TwitterXIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const InstagramIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+  </svg>
+);
+
+const LinkedInIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  </svg>
+);
+
+const YouTubeIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+  </svg>
+);
+
+// =============================================================================
+// Green Glow Orb (Ellipse 24)
+// =============================================================================
+
+/**
+ * Self-contained green glow orb matching Figma Ellipse 24.
+ * Uses CSS media queries via style tag for responsive sizing.
+ */
+function GreenGlowOrb() {
   return (
-    <Card className="sticky top-4">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-sm">Table of Contents</CardTitle>
-      </CardHeader>
-      <CardContent className="pt-0">
-        <nav className="space-y-1">
-          {sections.map((section, index) => (
-            <div key={section.id}>
-              <button
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left w-full py-1"
-                onClick={() => onSectionClick?.(section.id)}
-              >
-                {index + 1}. {section.title}
-              </button>
-              {section.subsections && section.subsections.length > 0 && (
-                <div className="pl-4 space-y-0.5">
-                  {section.subsections.map((sub, subIndex) => (
-                    <button
-                      key={sub.id}
-                      className="text-xs text-muted-foreground hover:text-foreground transition-colors text-left w-full py-0.5"
-                      onClick={() => onSectionClick?.(sub.id)}
-                    >
-                      {index + 1}.{subIndex + 1}. {sub.title}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </nav>
-      </CardContent>
-    </Card>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .legal-green-orb {
+          position: fixed;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #17F9B4;
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 1;
+          width: 700px;
+          height: 700px;
+          bottom: -550px;
+          opacity: 0.12;
+          filter: blur(100px);
+        }
+        @media (min-width: 768px) {
+          .legal-green-orb {
+            width: 1148px;
+            height: 1148px;
+            bottom: -944px;
+            opacity: 0.19;
+            filter: blur(180px);
+          }
+        }
+        @media (min-width: 1024px) {
+          .legal-green-orb {
+            width: 1800px;
+            height: 1800px;
+            bottom: -1554px;
+            opacity: 0.19;
+            filter: blur(272px);
+          }
+        }
+      `}} />
+      <div className="legal-green-orb" aria-hidden="true" />
+    </>
   );
 }
 
-interface LegalSectionContentProps {
-  section: LegalSection;
-  index: number;
-}
+// =============================================================================
+// Section Components
+// =============================================================================
 
-function LegalSectionContent({ section, index }: LegalSectionContentProps) {
+function LegalSectionBlock({ section }: { section: LegalSection }) {
   return (
     <section id={section.id} className="scroll-mt-8">
-      <h2 className="text-xl font-bold mb-4">
-        {index + 1}. {section.title}
-      </h2>
-      <div className="prose prose-slate dark:prose-invert max-w-none">
-        {typeof section.content === "string" ? (
-          <p className="text-muted-foreground whitespace-pre-wrap">{section.content}</p>
-        ) : (
-          section.content
-        )}
+      {/* Section heading: number + title */}
+      <div className="flex items-baseline gap-3 mb-4">
+        <span className="font-mulish text-[14px] md:text-[16px] text-[#E0E0E0] w-8 shrink-0">
+          {section.number}
+        </span>
+        <h2 className="font-manrope text-[12px] md:text-[14px] text-[#E0E0E0]">
+          {section.title}
+        </h2>
       </div>
-      
+
+      {/* Section content */}
+      <div className="pl-11 font-manrope text-[10px] md:text-[12px] leading-[14px] md:leading-[16px] text-[#E0E0E0] tracking-[-0.48px]">
+        {section.content}
+      </div>
+
+      {/* Subsections */}
       {section.subsections && section.subsections.length > 0 && (
-        <div className="mt-6 space-y-6 pl-4 border-l-2 border-muted">
-          {section.subsections.map((subsection, subIndex) => (
-            <div key={subsection.id} id={subsection.id} className="scroll-mt-8">
-              <h3 className="text-lg font-semibold mb-2">
-                {index + 1}.{subIndex + 1}. {subsection.title}
-              </h3>
-              <div className="prose prose-slate dark:prose-invert max-w-none">
-                {typeof subsection.content === "string" ? (
-                  <p className="text-muted-foreground whitespace-pre-wrap">
-                    {subsection.content}
-                  </p>
-                ) : (
-                  subsection.content
-                )}
-              </div>
-            </div>
+        <div className="mt-6 space-y-6">
+          {section.subsections.map((sub) => (
+            <LegalSubsectionBlock key={sub.id} subsection={sub} />
           ))}
         </div>
       )}
@@ -164,169 +223,205 @@ function LegalSectionContent({ section, index }: LegalSectionContentProps) {
   );
 }
 
+function LegalSubsectionBlock({ subsection }: { subsection: LegalSubsection }) {
+  return (
+    <div id={subsection.id} className="scroll-mt-8">
+      {/* Sub-section heading: number + title */}
+      <div className="flex items-baseline gap-3 mb-2 pl-11">
+        <span className="font-mulish text-[10px] md:text-[12px] text-[#E0E0E0] w-8 shrink-0">
+          {subsection.number}
+        </span>
+        <h3 className="font-manrope font-bold text-[10px] md:text-[12px] text-[#E0E0E0]">
+          {subsection.title}
+        </h3>
+      </div>
+
+      {/* Sub-section content */}
+      <div className="pl-[5.75rem] font-manrope text-[10px] md:text-[12px] leading-[14px] md:leading-[16px] text-[#E0E0E0] tracking-[-0.48px]">
+        {subsection.content}
+      </div>
+    </div>
+  );
+}
+
+// =============================================================================
+// Default Footer Links
+// =============================================================================
+
+const DEFAULT_FOOTER_LINKS: LegalFooterLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Docs", href: "/docs" },
+  { label: "Terms", href: "/terms" },
+  { label: "Privacy", href: "/privacy" },
+];
+
 // =============================================================================
 // Main Component
 // =============================================================================
 
 export function LegalPageTemplate({
   title,
-  subtitle,
   lastUpdated,
-  effectiveDate,
   sections,
-  showTableOfContents = true,
-  companyName = "SKAI Trading",
-  contactEmail,
-  version,
-  onBack,
-  onPrint,
-  onDownload,
-  onSectionClick,
-  headerContent,
-  footerContent,
+  noticeBadge,
+  headerCallout,
+  footerLinks = DEFAULT_FOOTER_LINKS,
+  discordUrl,
+  telegramUrl,
+  twitterUrl,
+  instagramUrl,
+  linkedinUrl,
+  youtubeUrl,
+  headerLogo,
+  LinkComponent,
   className,
 }: LegalPageTemplateProps) {
-  const handleSectionClick = (sectionId: string) => {
-    if (onSectionClick) {
-      onSectionClick(sectionId);
-    } else {
-      // Default scroll behavior
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
+  // Fallback link component (plain <a> if no router Link provided)
+  const NavLink =
+    LinkComponent ||
+    (({
+      to,
+      className,
+      children,
+    }: {
+      to: string;
+      className?: string;
+      children: React.ReactNode;
+    }) => (
+      <a href={to} className={className}>
+        {children}
+      </a>
+    ));
 
   return (
-    <div className={cn("min-h-screen", className)}>
-      {/* Header */}
-      <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-10">
-        <div className="container max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              {onBack && (
-                <Button variant="ghost" size="sm" onClick={onBack}>
-                  ← Back
-                </Button>
-              )}
-              <div>
-                <h1 className="text-xl font-bold">{title}</h1>
-                {subtitle && (
-                  <p className="text-sm text-muted-foreground">{subtitle}</p>
-                )}
+    <div className={cn("relative min-h-screen bg-[#001615] overflow-hidden", className)}>
+      {/* Background Elements */}
+      <GreenGlowOrb />
+      <BarTickerBackground />
+
+      {/* Content Layer */}
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* ================================================================
+            HEADER - Title left, Logo right
+            ================================================================ */}
+        <header className="px-6 md:px-16 pt-10 md:pt-16">
+          <div className="flex items-start justify-between max-w-[896px] mx-auto w-full">
+            <div>
+              {/* Page title - Manrope Light */}
+              <h1 className="font-manrope font-light text-[24px] md:text-[32px] tracking-[-1.28px] text-[#FFFFEE]">
+                {title}
+              </h1>
+
+              {/* Last Updated */}
+              <div className="flex items-center gap-2 mt-2">
+                <span className="font-mulish text-[10px] md:text-[12px] text-[#95A09F]">
+                  Last Updated
+                </span>
+                <span className="font-mulish text-[10px] md:text-[12px] text-[#56C7F3]">
+                  {lastUpdated}
+                </span>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              {onPrint && (
-                <Button variant="outline" size="sm" onClick={onPrint}>
-                  Print
-                </Button>
-              )}
-              {onDownload && (
-                <Button variant="outline" size="sm" onClick={onDownload}>
-                  Download PDF
-                </Button>
-              )}
+
+            {/* Logo */}
+            <div className="shrink-0">
+              {headerLogo || <SkaiLogo size="small" variant="white" />}
             </div>
           </div>
-        </div>
-      </div>
+        </header>
 
-      {/* Main Content */}
-      <div className="container max-w-6xl mx-auto px-4 py-8">
-        <div className={cn(
-          "grid gap-8",
-          showTableOfContents ? "lg:grid-cols-[1fr_250px]" : ""
-        )}>
-          {/* Document Content */}
-          <div className="space-y-8">
-            {/* Meta Info */}
-            <Card>
-              <CardContent className="py-6">
-                <div className="grid gap-4 sm:grid-cols-3 text-sm">
-                  <div>
-                    <p className="text-muted-foreground">Last Updated</p>
-                    <p className="font-medium">
-                      {new Date(lastUpdated).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </p>
-                  </div>
-                  {effectiveDate && (
-                    <div>
-                      <p className="text-muted-foreground">Effective Date</p>
-                      <p className="font-medium">
-                        {new Date(effectiveDate).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
-                      </p>
-                    </div>
-                  )}
-                  {version && (
-                    <div>
-                      <p className="text-muted-foreground">Version</p>
-                      <p className="font-medium">{version}</p>
-                    </div>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
+        {/* Optional Notice Badge (e.g. "Important notice" pill) */}
+        {noticeBadge && (
+          <div className="px-6 md:px-16 mt-4">
+            <div className="max-w-[896px] mx-auto w-full">
+              {noticeBadge}
+            </div>
+          </div>
+        )}
 
-            {headerContent}
+        {/* Optional Header Callout (e.g. risk warning) */}
+        {headerCallout && (
+          <div className="px-6 md:px-16 mt-6">
+            <div className="max-w-[896px] mx-auto w-full">
+              {headerCallout}
+            </div>
+          </div>
+        )}
 
-            {/* Sections */}
-            <div className="space-y-12">
-              {sections.map((section, index) => (
-                <LegalSectionContent
-                  key={section.id}
-                  section={section}
-                  index={index}
-                />
+        {/* ================================================================
+            CONTENT - Numbered sections
+            ================================================================ */}
+        <main className="flex-1 w-full max-w-[896px] mx-auto px-6 md:px-16 lg:px-0 py-8 md:py-12">
+          <div className="space-y-10">
+            {sections.map((section) => (
+              <LegalSectionBlock key={section.id} section={section} />
+            ))}
+          </div>
+        </main>
+
+        {/* ================================================================
+            FOOTER - Nav links left, Social icons right, Copyright center
+            ================================================================ */}
+        <footer className="w-full max-w-[896px] mx-auto px-6 md:px-16 lg:px-0 pb-10">
+          {/* Divider */}
+          <div className="border-t border-[#123F3C]" />
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
+            {/* Left: Navigation links */}
+            <nav className="flex items-center gap-1 font-manrope text-[12px] text-[#95A09F]">
+              {footerLinks.map((link, i) => (
+                <React.Fragment key={link.href}>
+                  {i > 0 && <span className="mx-1">|</span>}
+                  <NavLink
+                    to={link.href}
+                    className="hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </NavLink>
+                </React.Fragment>
               ))}
-            </div>
+            </nav>
 
-            {/* Contact Info */}
-            {contactEmail && (
-              <Card>
-                <CardContent className="py-6">
-                  <h3 className="font-semibold mb-2">Questions?</h3>
-                  <p className="text-sm text-muted-foreground">
-                    If you have any questions about this {title.toLowerCase()}, 
-                    please contact us at{" "}
-                    <a 
-                      href={`mailto:${contactEmail}`}
-                      className="text-primary hover:underline"
-                    >
-                      {contactEmail}
-                    </a>
-                  </p>
-                </CardContent>
-              </Card>
-            )}
-
-            {footerContent}
-
-            {/* Footer */}
-            <div className="text-center text-sm text-muted-foreground pt-8 border-t">
-              <p>© {new Date().getFullYear()} {companyName}. All rights reserved.</p>
+            {/* Right: Social icons */}
+            <div className="flex items-center gap-4">
+              {discordUrl && (
+                <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Discord">
+                  <DiscordIcon className="h-4 w-4" />
+                </a>
+              )}
+              {telegramUrl && (
+                <a href={telegramUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Telegram">
+                  <TelegramIcon className="h-4 w-4" />
+                </a>
+              )}
+              {twitterUrl && (
+                <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="X (Twitter)">
+                  <TwitterXIcon className="h-4 w-4" />
+                </a>
+              )}
+              {instagramUrl && (
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Instagram">
+                  <InstagramIcon className="h-4 w-4" />
+                </a>
+              )}
+              {linkedinUrl && (
+                <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="LinkedIn">
+                  <LinkedInIcon className="h-4 w-4" />
+                </a>
+              )}
+              {youtubeUrl && (
+                <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="YouTube">
+                  <YouTubeIcon className="h-4 w-4" />
+                </a>
+              )}
             </div>
           </div>
 
-          {/* Table of Contents Sidebar */}
-          {showTableOfContents && (
-            <div className="hidden lg:block">
-              <TableOfContents 
-                sections={sections} 
-                onSectionClick={handleSectionClick}
-              />
-            </div>
-          )}
-        </div>
+          {/* Copyright */}
+          <p className="text-center font-mulish text-[10px] text-[#95A09F] mt-6">
+            &copy; {new Date().getFullYear()} SKAI.trade. All rights reserved.
+          </p>
+        </footer>
       </div>
     </div>
   );

@@ -351,6 +351,7 @@ export type {
   LegalPageTemplateProps,
   LegalSection,
   LegalSubsection,
+  LegalFooterLink,
 } from "./legal-page";
 
 // Trade Select Page Template
