@@ -6,6 +6,7 @@
  */
 
 import { spawn } from "child_process";
+import { cpSync, existsSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -95,6 +96,14 @@ async function build() {
     console.log(
       `  ${c.green}✓${c.reset} CSS compiled ${c.dim}(${formatTime(Date.now() - cssStart)})${c.reset}`,
     );
+
+    // Step 3: Copy static assets (share images, etc.)
+    const assetsDir = path.join(__dirname, "..", "assets");
+    const distAssetsDir = path.join(__dirname, "..", "dist", "assets");
+    if (existsSync(assetsDir)) {
+      cpSync(assetsDir, distAssetsDir, { recursive: true });
+      console.log(`  ${c.green}✓${c.reset} Static assets copied`);
+    }
 
     console.log();
 

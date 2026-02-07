@@ -362,3 +362,16 @@ const InstagramShareModal = React.forwardRef<
 InstagramShareModal.displayName = "InstagramShareModal";
 
 export { InstagramShareModal };
+
+// =============================================================================
+// DEFAULT SHARE IMAGES
+// =============================================================================
+// Source images live in skai-ui/assets/share/
+// Consuming apps must copy them to their public dir at /assets/share/
+
+/** Default Instagram share images included with skai-ui */
+export const DEFAULT_INSTAGRAM_IMAGES: InstagramShareImage[] = [
+  { label: "Bars", postSrc: "/assets/share/post-bars.jpg", storySrc: "/assets/share/story-bars.jpg" },
+  { label: "Laptop", postSrc: "/assets/share/post-laptop.jpg", storySrc: "/assets/share/story-laptop.jpg" },
+  { label: "Brain", postSrc: "/assets/share/post-brain.jpg", storySrc: "/assets/share/story-brain.jpg" },
+];
