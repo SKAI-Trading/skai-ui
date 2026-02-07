@@ -6,7 +6,7 @@ import { LandingHeader } from "./landing-header";
  * LandingHeader - Simple header for landing/marketing pages
  *
  * A minimal header component designed for the SKAI landing pages.
- * Features Terms/Privacy links on the left and social icons (Discord, Instagram, X) on the right.
+ * Features Terms/Privacy links on the left and social icons (Discord, Telegram, X, IG, LinkedIn, YouTube) on the right.
  *
  * ## Figma Reference
  * - Design: Skai-Design > Landing > Header Navigation
@@ -54,6 +54,10 @@ const meta: Meta<typeof LandingHeader> = {
       control: "text",
       description: "Discord URL",
     },
+    telegramUrl: {
+      control: "text",
+      description: "Telegram URL",
+    },
     instagramUrl: {
       control: "text",
       description: "Instagram URL",
@@ -61,6 +65,14 @@ const meta: Meta<typeof LandingHeader> = {
     twitterUrl: {
       control: "text",
       description: "Twitter/X URL",
+    },
+    linkedinUrl: {
+      control: "text",
+      description: "LinkedIn URL",
+    },
+    youtubeUrl: {
+      control: "text",
+      description: "YouTube URL",
     },
   },
 };
@@ -124,9 +136,12 @@ export const Default: Story = {
     isBlurred: false,
     termsUrl: "/terms",
     privacyUrl: "/privacy",
-    discordUrl: "https://discord.gg/skai",
-    instagramUrl: "https://instagram.com/skai.trade",
+    discordUrl: "https://discord.gg/skaitrade",
+    telegramUrl: "https://t.me/skaitrade",
     twitterUrl: "https://x.com/SkaiTrade",
+    instagramUrl: "https://instagram.com/skai.trade",
+    linkedinUrl: "https://www.linkedin.com/company/skaitrade/",
+    youtubeUrl: "https://www.youtube.com/@skaitrade",
   },
   decorators: [
     (Story) => (
@@ -145,9 +160,12 @@ export const Blurred: Story = {
     isBlurred: true,
     termsUrl: "/terms",
     privacyUrl: "/privacy",
-    discordUrl: "https://discord.gg/skai",
-    instagramUrl: "https://instagram.com/skai.trade",
+    discordUrl: "https://discord.gg/skaitrade",
+    telegramUrl: "https://t.me/skaitrade",
     twitterUrl: "https://x.com/SkaiTrade",
+    instagramUrl: "https://instagram.com/skai.trade",
+    linkedinUrl: "https://www.linkedin.com/company/skaitrade/",
+    youtubeUrl: "https://www.youtube.com/@skaitrade",
   },
   decorators: [
     (Story) => (
@@ -197,9 +215,12 @@ export const Mobile: Story = {
     isBlurred: false,
     termsUrl: "/terms",
     privacyUrl: "/privacy",
-    discordUrl: "https://discord.gg/skai",
-    instagramUrl: "https://instagram.com/skai.trade",
+    discordUrl: "https://discord.gg/skaitrade",
+    telegramUrl: "https://t.me/skaitrade",
     twitterUrl: "https://x.com/SkaiTrade",
+    instagramUrl: "https://instagram.com/skai.trade",
+    linkedinUrl: "https://www.linkedin.com/company/skaitrade/",
+    youtubeUrl: "https://www.youtube.com/@skaitrade",
   },
   parameters: {
     viewport: {
@@ -223,9 +244,12 @@ export const Tablet: Story = {
     isBlurred: false,
     termsUrl: "/terms",
     privacyUrl: "/privacy",
-    discordUrl: "https://discord.gg/skai",
-    instagramUrl: "https://instagram.com/skai.trade",
+    discordUrl: "https://discord.gg/skaitrade",
+    telegramUrl: "https://t.me/skaitrade",
     twitterUrl: "https://x.com/SkaiTrade",
+    instagramUrl: "https://instagram.com/skai.trade",
+    linkedinUrl: "https://www.linkedin.com/company/skaitrade/",
+    youtubeUrl: "https://www.youtube.com/@skaitrade",
   },
   parameters: {
     viewport: {
