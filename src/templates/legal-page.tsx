@@ -379,69 +379,80 @@ export function LegalPageTemplate({
         </main>
 
         {/* ================================================================
-            FOOTER - Matches Figma: clean links left, social icons right
+            FOOTER - Pixel-perfect match to Figma nodes:
+            Desktop 2311:6560 | Tablet 2311:7680 | Mobile 2311:8793
+            - No divider line, no copyright
+            - Desktop: pb-[24px] px-[32px], Manrope 14px, gap-[32px]
+            - Tablet: pb-[30px] px-[30px], Manrope 12px, gap-[32px]
+            - Mobile: pb-[25px] px-[24px], column centered, gap-[24px]/[32px]
             ================================================================ */}
         <footer className="relative w-full mt-auto">
           {/* Solid background to prevent bar ticker from bleeding through */}
           <div className="absolute inset-0 bg-[#001615]" />
 
-          <div className="relative w-full max-w-[896px] mx-auto px-6 md:px-16 lg:px-0">
-            {/* Divider */}
-            <div className="border-t border-[#123F3C]" />
+          {/* Mobile: column centered | Tablet+: row space-between */}
+          <div className={cn(
+            "relative w-full flex",
+            // Mobile: column, centered, full-width with padding
+            "flex-col items-center gap-[24px] px-[24px] pb-[25px] pt-[16px]",
+            // Tablet: row, space-between
+            "md:flex-row md:items-center md:justify-between md:gap-0 md:px-[30px] md:pb-[30px] md:pt-[12px]",
+            // Desktop: wider padding
+            "lg:px-[32px] lg:pb-[24px] lg:pt-[12px]"
+          )}>
+            {/* Navigation links */}
+            <nav className={cn(
+              "flex items-center font-manrope text-[#E0E0E0]",
+              // Mobile: 12px, gap-[24px]
+              "text-[12px] leading-[16px] tracking-[-0.48px] gap-[24px]",
+              // Desktop: 14px, gap-[32px]
+              "md:gap-[32px]",
+              "lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]"
+            )}>
+              {footerLinks.map((link) => (
+                <NavLink
+                  key={link.href}
+                  to={link.href}
+                  className="hover:text-white transition-colors"
+                >
+                  {link.label}
+                </NavLink>
+              ))}
+            </nav>
 
-            <div className="flex items-center justify-between py-4">
-              {/* Left: Navigation links — clean spacing, no pipes */}
-              <nav className="flex items-center gap-6 font-manrope text-[12px] text-[#95A09F]">
-                {footerLinks.map((link) => (
-                  <NavLink
-                    key={link.href}
-                    to={link.href}
-                    className="hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </NavLink>
-                ))}
-              </nav>
-
-              {/* Right: Social icons */}
-              <div className="flex items-center gap-5">
-                {discordUrl && (
-                  <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Discord">
-                    <DiscordIcon className="h-[14px] w-[14px]" />
-                  </a>
-                )}
-                {telegramUrl && (
-                  <a href={telegramUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Telegram">
-                    <TelegramIcon className="h-[14px] w-[14px]" />
-                  </a>
-                )}
-                {twitterUrl && (
-                  <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="X (Twitter)">
-                    <TwitterXIcon className="h-[14px] w-[14px]" />
-                  </a>
-                )}
-                {instagramUrl && (
-                  <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Instagram">
-                    <InstagramIcon className="h-[14px] w-[14px]" />
-                  </a>
-                )}
-                {linkedinUrl && (
-                  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="LinkedIn">
-                    <LinkedInIcon className="h-[14px] w-[14px]" />
-                  </a>
-                )}
-                {youtubeUrl && (
-                  <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="YouTube">
-                    <YouTubeIcon className="h-[14px] w-[14px]" />
-                  </a>
-                )}
-              </div>
+            {/* Social icons — 16px, gap-[32px] at all breakpoints */}
+            <div className="flex items-center gap-[32px]">
+              {discordUrl && (
+                <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="Discord">
+                  <DiscordIcon className="h-[16px] w-[16px]" />
+                </a>
+              )}
+              {telegramUrl && (
+                <a href={telegramUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="Telegram">
+                  <TelegramIcon className="h-[16px] w-[16px]" />
+                </a>
+              )}
+              {twitterUrl && (
+                <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="X (Twitter)">
+                  <TwitterXIcon className="h-[16px] w-[16px]" />
+                </a>
+              )}
+              {instagramUrl && (
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="Instagram">
+                  <InstagramIcon className="h-[16px] w-[16px]" />
+                </a>
+              )}
+              {linkedinUrl && (
+                <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="LinkedIn">
+                  <LinkedInIcon className="h-[16px] w-[16px]" />
+                </a>
+              )}
+              {youtubeUrl && (
+                <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="YouTube">
+                  <YouTubeIcon className="h-[16px] w-[16px]" />
+                </a>
+              )}
             </div>
-
-            {/* Copyright — subtle, centered */}
-            <p className="text-center font-mulish text-[10px] text-[#95A09F]/60 pb-4">
-              &copy; {new Date().getFullYear()} Skai.trade. All rights reserved.
-            </p>
           </div>
         </footer>
       </div>
