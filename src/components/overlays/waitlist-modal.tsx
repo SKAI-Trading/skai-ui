@@ -137,29 +137,58 @@ export function WaitlistModal({
   className,
 }: WaitlistModalProps) {
   const [email, setEmail] = React.useState(initialEmail);
+  const [emailError, setEmailError] = React.useState("");
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  // Reset email when modal opens
+  // Simple email format validation
+  const isValidEmail = (value: string): boolean => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  };
+
+  // Reset email and error when modal opens
   React.useEffect(() => {
     if (isOpen) {
       setEmail(initialEmail);
+      setEmailError("");
       // Focus the input when modal opens
       const timer = setTimeout(() => inputRef.current?.focus(), 100);
       return () => clearTimeout(timer);
     }
   }, [isOpen, initialEmail]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      onEmailSubmit(email.trim());
+  // Clear error when user starts typing
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    if (emailError) {
+      setEmailError("");
     }
   };
 
+  const validateAndSubmit = () => {
+    const trimmed = email.trim();
+    if (!trimmed) {
+      setEmailError("Please enter your email address.");
+      inputRef.current?.focus();
+      return;
+    }
+    if (!isValidEmail(trimmed)) {
+      setEmailError("Please enter a valid email address.");
+      inputRef.current?.focus();
+      return;
+    }
+    setEmailError("");
+    onEmailSubmit(trimmed);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    validateAndSubmit();
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && email.trim() && !isLoading) {
+    if (e.key === "Enter" && !isLoading) {
       e.preventDefault();
-      onEmailSubmit(email.trim());
+      validateAndSubmit();
     }
   };
 
@@ -232,15 +261,31 @@ export function WaitlistModal({
                 ref={inputRef}
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmailChange}
                 onKeyDown={handleKeyDown}
                 disabled={isLoading}
                 placeholder="example@provider.com"
                 autoComplete="email"
-                className="font-manrope w-full rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] text-white transition-colors placeholder:text-[#5d6b6a] focus:border-[#17F9B4] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:px-6 lg:py-5 lg:text-[16px] lg:leading-[22px]"
+                className={cn(
+                  "font-manrope w-full rounded-[12px] border bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] text-white transition-colors placeholder:text-[#5d6b6a] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:px-6 lg:py-5 lg:text-[16px] lg:leading-[22px]",
+                  emailError
+                    ? "border-[#FF7E50] focus:border-[#FF7E50]"
+                    : "border-[#123f3c] focus:border-[#17F9B4]"
+                )}
                 aria-label="Email address"
+                aria-invalid={!!emailError}
+                aria-describedby={emailError ? "email-error" : undefined}
               />
             </div>
+            {emailError && (
+              <p
+                id="email-error"
+                className="font-manrope mt-2 px-4 text-[11px] font-normal leading-[14px] text-[#FF7E50] md:px-5 md:text-[12px] md:leading-[16px] lg:px-[22px] lg:text-[13px] lg:leading-[16px]"
+                role="alert"
+              >
+                {emailError}
+              </p>
+            )}
           </div>
 
           {/* Continue Button */}
