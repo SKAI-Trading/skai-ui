@@ -87,6 +87,9 @@ export * from "./lib/layout";
 export { content, interpolate, getContent } from "./lib/content";
 export type { Content, ContentPath } from "./lib/content";
 
+// Platform Constants (URLs, Social Links, Brand)
+export { urls, brand } from "./lib/constants";
+
 // Asset System (Images/Icons)
 export { assets, assetUrls, placeholders, getAsset } from "./lib/assets";
 export type { Assets, AssetCategory } from "./lib/assets";

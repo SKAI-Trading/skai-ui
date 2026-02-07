@@ -33,7 +33,20 @@ export const content = {
       earn: "Earn",
       play: "Play",
       ai: "AI Agent",
+      aiShort: "AI",
       settings: "Settings",
+      predict: "Predict",
+      swap: "Swap",
+      leaderboard: "Leaders",
+      account: "Account",
+      discover: "Discover",
+      streaming: "Live",
+      tradingGroups: "Trading Groups",
+      governance: "Governance",
+      learn: "Learn",
+      launchpad: "Launchpad",
+      dao: "DAO",
+      docs: "Documentation",
     },
 
     actions: {
@@ -514,6 +527,56 @@ export const content = {
       viewOnExplorer: "View on Explorer",
       copyAddress: "Copy Address",
       disconnect: "Disconnect",
+    },
+  },
+
+  /**
+   * App content (main trading app: app.skai.trade)
+   */
+  app: {
+    hero: {
+      titleLine1: "Trade Smarter.",
+      titleLine2: "Win Bigger.",
+      subtitle:
+        "AI-powered perpetual trading, prediction markets, and provably fair gaming.",
+      subtitleAccent: "All in one decentralized ecosystem.",
+    },
+
+    features: {
+      sectionTitle: "One Platform.",
+      sectionTitleAccent: "Infinite Possibilities.",
+      sectionSubtitle:
+        "Three powerful modules working together, powered by cutting-edge AI",
+      trade: {
+        title: "Trade",
+        description:
+          "Perpetual contracts with up to 100x leverage. AI signals guide every move.",
+        badges: ["100x Leverage", "AI Signals"],
+      },
+      predict: {
+        title: "Predict",
+        description:
+          "Prediction markets for crypto, sports, politics, and real-world events.",
+        badges: ["Live Markets", "Fair Odds"],
+      },
+      play: {
+        title: "Play",
+        description:
+          "Provably fair casino games. Verify every roll on-chain. 1% house edge.",
+        badges: ["Provably Fair", "Instant Payouts"],
+      },
+    },
+
+    stats: {
+      totalVolume: "Total Volume",
+      predictionsMade: "Predictions Made",
+      gamesPlayed: "Games Played",
+      activeUsers: "Active Users",
+    },
+
+    init: {
+      loading: "INITIALIZING SYSTEM...",
+      progress: "LOADING MODULES: [\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588] 100%",
     },
   },
 } as const;

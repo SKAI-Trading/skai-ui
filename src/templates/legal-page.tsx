@@ -252,6 +252,7 @@ function LegalSubsectionBlock({ subsection }: { subsection: LegalSubsection }) {
 
 const DEFAULT_FOOTER_LINKS: LegalFooterLink[] = [
   { label: "Home", href: "/" },
+  { label: "Docs", href: "https://docs.skai.trade" },
   { label: "Terms", href: "/terms" },
   { label: "Privacy", href: "/privacy" },
 ];
@@ -378,67 +379,70 @@ export function LegalPageTemplate({
         </main>
 
         {/* ================================================================
-            FOOTER - Nav links left, Social icons right, Copyright center
+            FOOTER - Matches Figma: clean links left, social icons right
             ================================================================ */}
-        <footer className="w-full max-w-[896px] mx-auto px-6 md:px-16 lg:px-0 pb-10">
-          {/* Divider */}
-          <div className="border-t border-[#123F3C]" />
+        <footer className="relative w-full mt-auto">
+          {/* Solid background to prevent bar ticker from bleeding through */}
+          <div className="absolute inset-0 bg-[#001615]" />
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
-            {/* Left: Navigation links */}
-            <nav className="flex items-center gap-1 font-manrope text-[12px] text-[#95A09F]">
-              {footerLinks.map((link, i) => (
-                <React.Fragment key={link.href}>
-                  {i > 0 && <span className="mx-1">|</span>}
+          <div className="relative w-full max-w-[896px] mx-auto px-6 md:px-16 lg:px-0">
+            {/* Divider */}
+            <div className="border-t border-[#123F3C]" />
+
+            <div className="flex items-center justify-between py-4">
+              {/* Left: Navigation links — clean spacing, no pipes */}
+              <nav className="flex items-center gap-6 font-manrope text-[12px] text-[#95A09F]">
+                {footerLinks.map((link) => (
                   <NavLink
+                    key={link.href}
                     to={link.href}
                     className="hover:text-white transition-colors"
                   >
                     {link.label}
                   </NavLink>
-                </React.Fragment>
-              ))}
-            </nav>
+                ))}
+              </nav>
 
-            {/* Right: Social icons */}
-            <div className="flex items-center gap-4">
-              {discordUrl && (
-                <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Discord">
-                  <DiscordIcon className="h-4 w-4" />
-                </a>
-              )}
-              {telegramUrl && (
-                <a href={telegramUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Telegram">
-                  <TelegramIcon className="h-4 w-4" />
-                </a>
-              )}
-              {twitterUrl && (
-                <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="X (Twitter)">
-                  <TwitterXIcon className="h-4 w-4" />
-                </a>
-              )}
-              {instagramUrl && (
-                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Instagram">
-                  <InstagramIcon className="h-4 w-4" />
-                </a>
-              )}
-              {linkedinUrl && (
-                <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="LinkedIn">
-                  <LinkedInIcon className="h-4 w-4" />
-                </a>
-              )}
-              {youtubeUrl && (
-                <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="YouTube">
-                  <YouTubeIcon className="h-4 w-4" />
-                </a>
-              )}
+              {/* Right: Social icons */}
+              <div className="flex items-center gap-5">
+                {discordUrl && (
+                  <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Discord">
+                    <DiscordIcon className="h-[14px] w-[14px]" />
+                  </a>
+                )}
+                {telegramUrl && (
+                  <a href={telegramUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Telegram">
+                    <TelegramIcon className="h-[14px] w-[14px]" />
+                  </a>
+                )}
+                {twitterUrl && (
+                  <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="X (Twitter)">
+                    <TwitterXIcon className="h-[14px] w-[14px]" />
+                  </a>
+                )}
+                {instagramUrl && (
+                  <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="Instagram">
+                    <InstagramIcon className="h-[14px] w-[14px]" />
+                  </a>
+                )}
+                {linkedinUrl && (
+                  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="LinkedIn">
+                    <LinkedInIcon className="h-[14px] w-[14px]" />
+                  </a>
+                )}
+                {youtubeUrl && (
+                  <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-[#95A09F] hover:text-white transition-colors" aria-label="YouTube">
+                    <YouTubeIcon className="h-[14px] w-[14px]" />
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
 
-          {/* Copyright */}
-          <p className="text-center font-mulish text-[10px] text-[#95A09F] mt-6">
-            &copy; {new Date().getFullYear()} Skai.trade. All rights reserved.
-          </p>
+            {/* Copyright — subtle, centered */}
+            <p className="text-center font-mulish text-[10px] text-[#95A09F]/60 pb-4">
+              &copy; {new Date().getFullYear()} Skai.trade. All rights reserved.
+            </p>
+          </div>
         </footer>
       </div>
     </div>
