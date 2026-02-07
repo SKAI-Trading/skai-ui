@@ -184,12 +184,12 @@ export const content = {
       /** CompletionPage */
       completion: {
         titleWithUsername: "@{{username}} is yours!",
-        titleFallback: "Welcome Pioneer!",
-        subtitle: "Welcome to the Skai pioneer universe!",
+        titleFallback: "You're in!",
+        subtitle: "Welcome Skai Pioneer!",
         rewardAmount: "+500 SKAI Points",
-        giftMessage: "We gifted you ",
-        giftHighlight: "+500 SKAI Points",
-        giftSuffix: " tokens!",
+        giftMessage: "We gifted you",
+        giftHighlight: "",
+        giftSuffix: "",
       },
 
       /** ExternalWallet page */
