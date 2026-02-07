@@ -20,3 +20,7 @@ export * from "./header";
 
 // Landing Page Components
 export * from "./landing-header";
+
+// Main App Layout (Figma designs)
+export * from "./main-app-header";
+export * from "./main-app-footer";

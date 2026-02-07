@@ -95,6 +95,8 @@ export interface LegalPageTemplateProps {
   /** Custom link component for internal routing (React Router Link) */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   LinkComponent?: React.ComponentType<any>;
+  /** Show back navigation button */
+  showBackButton?: boolean;
   /** Additional CSS classes */
   className?: string;
 }
@@ -250,7 +252,6 @@ function LegalSubsectionBlock({ subsection }: { subsection: LegalSubsection }) {
 
 const DEFAULT_FOOTER_LINKS: LegalFooterLink[] = [
   { label: "Home", href: "/" },
-  { label: "Docs", href: "/docs" },
   { label: "Terms", href: "/terms" },
   { label: "Privacy", href: "/privacy" },
 ];
@@ -274,6 +275,7 @@ export function LegalPageTemplate({
   youtubeUrl,
   headerLogo,
   LinkComponent,
+  showBackButton = true,
   className,
 }: LegalPageTemplateProps) {
   // Fallback link component (plain <a> if no router Link provided)
@@ -302,30 +304,46 @@ export function LegalPageTemplate({
       {/* Content Layer */}
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* ================================================================
-            HEADER - Title left, Logo right
+            HEADER - Back button, Title left, Logo right
             ================================================================ */}
         <header className="px-6 md:px-16 pt-10 md:pt-16">
-          <div className="flex items-start justify-between max-w-[896px] mx-auto w-full">
-            <div>
-              {/* Page title - Manrope Light */}
-              <h1 className="font-manrope font-light text-[24px] md:text-[32px] tracking-[-1.28px] text-[#FFFFEE]">
-                {title}
-              </h1>
-
-              {/* Last Updated */}
-              <div className="flex items-center gap-2 mt-2">
-                <span className="font-mulish text-[10px] md:text-[12px] text-[#95A09F]">
-                  Last Updated
-                </span>
-                <span className="font-mulish text-[10px] md:text-[12px] text-[#56C7F3]">
-                  {lastUpdated}
-                </span>
+          <div className="max-w-[896px] mx-auto w-full">
+            {/* Back navigation */}
+            {showBackButton && (
+              <div className="mb-4">
+                <NavLink
+                  to="/"
+                  className="inline-flex items-center gap-1.5 font-manrope text-[12px] md:text-[14px] text-[#95A09F] hover:text-white transition-colors"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                  </svg>
+                  Back
+                </NavLink>
               </div>
-            </div>
+            )}
+            <div className="flex items-start justify-between">
+              <div>
+                {/* Page title - Manrope Light */}
+                <h1 className="font-manrope font-light text-[24px] md:text-[32px] tracking-[-1.28px] text-[#FFFFEE]">
+                  {title}
+                </h1>
 
-            {/* Logo */}
-            <div className="shrink-0">
-              {headerLogo || <SkaiLogo size="small" variant="white" />}
+                {/* Last Updated */}
+                <div className="flex items-center gap-2 mt-2">
+                  <span className="font-mulish text-[10px] md:text-[12px] text-[#95A09F]">
+                    Last Updated
+                  </span>
+                  <span className="font-mulish text-[10px] md:text-[12px] text-[#56C7F3]">
+                    {lastUpdated}
+                  </span>
+                </div>
+              </div>
+
+              {/* Logo */}
+              <div className="shrink-0">
+                {headerLogo || <SkaiLogo size="medium" variant="white" />}
+              </div>
             </div>
           </div>
         </header>
@@ -349,10 +367,10 @@ export function LegalPageTemplate({
         )}
 
         {/* ================================================================
-            CONTENT - Numbered sections
+            CONTENT - Numbered sections with backdrop for readability
             ================================================================ */}
         <main className="flex-1 w-full max-w-[896px] mx-auto px-6 md:px-16 lg:px-0 py-8 md:py-12">
-          <div className="space-y-10">
+          <div className="space-y-10 relative rounded-xl bg-[#001615]/70 backdrop-blur-sm p-6 md:p-8">
             {sections.map((section) => (
               <LegalSectionBlock key={section.id} section={section} />
             ))}
@@ -419,7 +437,7 @@ export function LegalPageTemplate({
 
           {/* Copyright */}
           <p className="text-center font-mulish text-[10px] text-[#95A09F] mt-6">
-            &copy; {new Date().getFullYear()} SKAI.trade. All rights reserved.
+            &copy; {new Date().getFullYear()} Skai.trade. All rights reserved.
           </p>
         </footer>
       </div>
