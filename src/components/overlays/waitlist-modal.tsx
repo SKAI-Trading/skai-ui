@@ -33,6 +33,8 @@ export interface WaitlistModalProps {
   onCancelAuth?: () => void;
   /** Initial email value */
   initialEmail?: string;
+  /** Backend error message to display */
+  error?: string;
   /** Custom class name */
   className?: string;
 }
@@ -134,6 +136,7 @@ export function WaitlistModal({
   isLoading = false,
   onCancelAuth,
   initialEmail = "",
+  error,
   className,
 }: WaitlistModalProps) {
   const [email, setEmail] = React.useState(initialEmail);
@@ -144,6 +147,13 @@ export function WaitlistModal({
   const isValidEmail = (value: string): boolean => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   };
+
+  // Clear local validation error when backend error arrives
+  React.useEffect(() => {
+    if (error) {
+      setEmailError("");
+    }
+  }, [error]);
 
   // Reset email and error when modal opens
   React.useEffect(() => {
@@ -248,6 +258,16 @@ export function WaitlistModal({
         <p className="font-manrope mb-6 px-2 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-8 md:px-4 md:text-[16px] md:leading-[22px] lg:mb-8 lg:px-4 lg:text-[18px] lg:leading-[24px]">
           Enter your email address to get access to join the Skai waitlist.
         </p>
+
+        {/* Backend Error */}
+        {error && (
+          <div
+            className="font-manrope mb-4 rounded-[12px] border border-[#FF7E50]/30 bg-[#FF7E50]/10 px-4 py-3 text-center text-[13px] font-normal leading-[18px] text-[#FF7E50]"
+            role="alert"
+          >
+            {error}
+          </div>
+        )}
 
         {/* Email Form */}
         <form onSubmit={handleSubmit}>
