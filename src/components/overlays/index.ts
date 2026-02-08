@@ -18,3 +18,4 @@ export * from "./waitlist-modal";
 export * from "./wallet-choice-modal";
 export * from "./email-verification-modal";
 export * from "./instagram-share-modal";
+export * from "./x-share-modal";

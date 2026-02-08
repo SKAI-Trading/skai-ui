@@ -278,7 +278,7 @@ export const content = {
           shareToX: "Share to X",
           shareToInstagram: "Share to Instagram",
           instagramCopied: "Link Copied! Paste on Instagram",
-          joinDiscord: "Join Skai on Discord",
+          joinDiscord: "Join Skai Community",
           shareText:
             'Trade. Predict. Play. 📊🎯🎰\n\nJoin the @SkaiTrade waitlist to claim 500 SKAI Points: https://skai.trade/ref/{{username}}',
         },
