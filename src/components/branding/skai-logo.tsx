@@ -22,14 +22,15 @@ export interface SkaiLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   iconOnly?: boolean;
 }
 
-// Size dimensions — proportional to the Figma onboarding logo (267x64)
+// Size dimensions — match Figma logo bounding boxes (Small 101x24, Medium 201x48, Large 267x64)
+// Text viewBox is 203x35, aspect ratio 5.8:1 — textWidth must preserve this ratio
 const sizeConfig: Record<
   SkaiLogoSize,
   { height: number; iconHeight: number; iconWidth: number; textHeight: number; textWidth: number; gap: number }
 > = {
-  small: { height: 24, iconHeight: 24, iconWidth: 21.7, textHeight: 12, textWidth: 55, gap: 4 },
-  medium: { height: 48, iconHeight: 48, iconWidth: 43.4, textHeight: 24, textWidth: 110, gap: 8 },
-  large: { height: 64, iconHeight: 64, iconWidth: 57.8, textHeight: 32, textWidth: 146, gap: 10 },
+  small: { height: 24, iconHeight: 24, iconWidth: 21.4, textHeight: 12, textWidth: 70, gap: 9 },
+  medium: { height: 48, iconHeight: 48, iconWidth: 42.8, textHeight: 24, textWidth: 139, gap: 19 },
+  large: { height: 64, iconHeight: 64, iconWidth: 57.1, textHeight: 32, textWidth: 186, gap: 24 },
 };
 
 // =============================================================================

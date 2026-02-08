@@ -24,8 +24,8 @@ export const headerColors = {
   glow: "rgba(23, 249, 180, 0.02)",
   /** Text primary */
   textPrimary: "#FFFFFF",
-  /** Text muted */
-  textMuted: "#9CA3AF",
+  /** Text muted (Ash — Figma design system) */
+  textMuted: "#95A09F",
   /** Active state background */
   activeBackground: "rgba(86, 199, 243, 0.1)",
 } as const;

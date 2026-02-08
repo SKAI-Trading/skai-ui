@@ -30,8 +30,8 @@ export interface MainAppFooterProps extends React.HTMLAttributes<HTMLElement> {
     connected: boolean;
     label?: string;
   };
-  /** Footer page links (right section) */
-  footerLinks?: Array<{ label: string; href?: string }>;
+  /** Footer page links (right section) — supports href or onClick for modals */
+  footerLinks?: Array<{ label: string; href?: string; onClick?: () => void }>;
   /** Custom link component for routing */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   LinkComponent?: React.ComponentType<any>;
@@ -177,15 +177,47 @@ const MainAppFooter = React.forwardRef<HTMLElement, MainAppFooterProps>(
 
           {/* Right: Page Links */}
           <div className="flex items-center gap-6 shrink-0">
-            {footerLinks.map((link) => (
-              <NavLink
-                key={link.label}
-                to={link.href || "#"}
-                className="font-manrope text-[12px] leading-[16px] tracking-[-0.48px] text-white hover:text-[#56C7F3] transition-colors"
-              >
-                {link.label}
-              </NavLink>
-            ))}
+            {footerLinks.map((link) => {
+              const linkClass = "font-manrope text-[12px] leading-[16px] tracking-[-0.48px] text-white hover:text-[#56C7F3] transition-colors";
+
+              if (link.onClick) {
+                return (
+                  <button
+                    type="button"
+                    key={link.label}
+                    onClick={link.onClick}
+                    className={linkClass}
+                  >
+                    {link.label}
+                  </button>
+                );
+              }
+
+              // External links bypass the router LinkComponent
+              if (link.href?.startsWith("http")) {
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
+
+              return (
+                <NavLink
+                  key={link.label}
+                  to={link.href || "#"}
+                  className={linkClass}
+                >
+                  {link.label}
+                </NavLink>
+              );
+            })}
           </div>
         </div>
       </footer>
