@@ -217,7 +217,7 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
           {/* Header */}
           <div className="flex items-center justify-between px-6 pt-5 pb-3">
             <h2 className="font-manrope text-[18px] leading-[24px] tracking-[-0.72px] text-white">
-              Share to X
+              Share
             </h2>
             <button
               onClick={onClose}

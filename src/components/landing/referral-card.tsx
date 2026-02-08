@@ -103,15 +103,12 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           className="w-full py-[16px] px-[16px] rounded-[12px] bg-[#0a2a2e] hover:bg-[#0d3538] transition-all font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[10px] mb-4 border-[1.5px] border-[#56C7F3] text-[#56C7F3] shadow-[0_0_12px_rgba(86,199,243,0.15)]"
         >
           <SkaiIcon name="x" size="sm" />
-          <span>Share to X</span>
+          <span>Share</span>
           <span className="bg-[#0a1a19] px-[10px] py-[3px] rounded-full font-manrope font-normal text-[10px] leading-[14px] lg:text-[11px] lg:leading-[14px]">
             {hasClaimedToday ? (
-              <span className="text-[#17F9B4]">+{shareTweetPoints} pts claimed</span>
+              <span className="text-[#17F9B4]">+{shareTweetPoints} SKAI Points claimed</span>
             ) : (
-              <>
-                <span className="text-[#8B9E9D]">earn </span>
-                <span className="text-[#17F9B4]">{shareTweetPoints} pts</span>
-              </>
+              <span className="text-[#17F9B4]">Claim {shareTweetPoints} SKAI Points</span>
             )}
           </span>
         </button>

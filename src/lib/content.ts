@@ -275,7 +275,7 @@ export const content = {
           linkLabel: "Referral link",
           shareLabel: "Connect to share referral link",
           copyButton: "COPY",
-          shareToX: "Share to X",
+          shareToX: "Share",
           shareToInstagram: "Share to Instagram",
           instagramCopied: "Link Copied! Paste on Instagram",
           joinDiscord: "Join Skai Community",
