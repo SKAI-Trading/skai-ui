@@ -24,3 +24,8 @@ export * from "./landing-header";
 // Main App Layout (Figma designs)
 export * from "./main-app-header";
 export * from "./main-app-footer";
+
+// Mobile Components
+export * from "./floating-action-bar";
+export * from "./mobile-bottom-nav";
+export * from "./page-transition";

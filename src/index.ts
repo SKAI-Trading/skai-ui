@@ -42,6 +42,9 @@ export * from "./components/branding";
 // Background Components (TickerBackground, etc.)
 export * from "./components/backgrounds";
 
+// Landing Page Components (WelcomeCard, BadgeCard, ReferralCard, etc.)
+export * from "./components/landing";
+
 // Page Templates
 export * from "./templates";
 
@@ -105,6 +108,12 @@ export type { Theme, ThemeColors, ThemeTypography } from "./lib/theme-config";
 
 // CSS Custom Property Fallbacks (for older browser support)
 export * from "./lib/css-fallbacks";
+
+// Format Utilities (Currency, Percent, Date, Address)
+export * from "./lib/format";
+
+// Math Utilities (Clamp, Round, Safe parsing)
+export * from "./lib/math";
 
 // =============================================================================
 // DESIGN TOKENS

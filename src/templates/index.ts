@@ -402,6 +402,10 @@ export type {
   Position,
 } from "./perp-trading-page";
 
+// Coming Soon Page Template
+export { ComingSoonPageTemplate } from "./coming-soon-page";
+export type { ComingSoonPageTemplateProps } from "./coming-soon-page";
+
 // Pre-Launch Page Template
 export { PreLaunchPageTemplate } from "./prelaunch-page";
 export type {

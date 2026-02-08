@@ -35,7 +35,7 @@ export interface CurrencyInputProps extends Omit<
 /**
  * Format a number as a currency string
  */
-function formatCurrency(
+function formatCurrencyInput(
   value: number | undefined,
   decimals: number,
   thousandSeparator: string,
@@ -130,7 +130,7 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
 
     // Track internal display value
     const [displayValue, setDisplayValue] = React.useState(() =>
-      formatCurrency(
+      formatCurrencyInput(
         numericValue,
         decimals,
         thousandSeparator,
@@ -145,7 +145,7 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
     React.useEffect(() => {
       if (!isEditing) {
         setDisplayValue(
-          formatCurrency(
+          formatCurrencyInput(
             numericValue,
             decimals,
             thousandSeparator,
@@ -243,7 +243,7 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
           finalValue = max;
         }
 
-        const formatted = formatCurrency(
+        const formatted = formatCurrencyInput(
           finalValue,
           decimals,
           thousandSeparator,
@@ -314,4 +314,4 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
 
 CurrencyInput.displayName = "CurrencyInput";
 
-export { CurrencyInput, formatCurrency, parseFormattedValue };
+export { CurrencyInput, formatCurrencyInput, parseFormattedValue };
