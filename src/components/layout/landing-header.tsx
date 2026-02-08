@@ -181,6 +181,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
 
         {/* Right Section - Social Icons */}
         {/* Order: Discord / Telegram / X / IG / TikTok / FB / LinkedIn / YouTube */}
+        {/* Mobile: only Discord + X shown; others hidden below sm breakpoint */}
         <div className="flex items-center gap-6 sm:gap-8">
           {discordUrl && (
             <a
@@ -198,7 +199,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               href={telegramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 transition-colors hover:text-white"
+              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
               aria-label="Telegram"
             >
               <TelegramIcon className="h-4 w-4" />
@@ -220,7 +221,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 transition-colors hover:text-white"
+              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
               aria-label="Instagram"
             >
               <InstagramIcon className="h-4 w-4" />
@@ -231,7 +232,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               href={tiktokUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 transition-colors hover:text-white"
+              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
               aria-label="TikTok"
             >
               <TikTokIcon className="h-4 w-4" />
@@ -242,7 +243,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               href={facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 transition-colors hover:text-white"
+              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
               aria-label="Facebook"
             >
               <FacebookIcon className="h-4 w-4" />
@@ -253,7 +254,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 transition-colors hover:text-white"
+              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
               aria-label="LinkedIn"
             >
               <LinkedInIcon className="h-4 w-4" />
@@ -264,7 +265,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               href={youtubeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 transition-colors hover:text-white"
+              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
               aria-label="YouTube"
             >
               <YouTubeIcon className="h-4 w-4" />

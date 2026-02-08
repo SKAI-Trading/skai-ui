@@ -437,7 +437,7 @@ export function LegalPageTemplate({
               ))}
             </nav>
 
-            {/* Social icons — 16px, gap-[32px] at all breakpoints */}
+            {/* Social icons — 16px, gap-[32px]; mobile: Discord + X only */}
             <div className="flex items-center gap-[32px]">
               {discordUrl && (
                 <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="Discord">
@@ -445,7 +445,7 @@ export function LegalPageTemplate({
                 </a>
               )}
               {telegramUrl && (
-                <a href={telegramUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="Telegram">
+                <a href={telegramUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex text-[#E0E0E0] hover:text-white transition-colors" aria-label="Telegram">
                   <TelegramIcon className="h-[16px] w-[16px]" />
                 </a>
               )}
@@ -455,27 +455,27 @@ export function LegalPageTemplate({
                 </a>
               )}
               {instagramUrl && (
-                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="Instagram">
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex text-[#E0E0E0] hover:text-white transition-colors" aria-label="Instagram">
                   <InstagramIcon className="h-[16px] w-[16px]" />
                 </a>
               )}
               {tiktokUrl && (
-                <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="TikTok">
+                <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex text-[#E0E0E0] hover:text-white transition-colors" aria-label="TikTok">
                   <TikTokIcon className="h-[16px] w-[16px]" />
                 </a>
               )}
               {facebookUrl && (
-                <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="Facebook">
+                <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex text-[#E0E0E0] hover:text-white transition-colors" aria-label="Facebook">
                   <FacebookIcon className="h-[16px] w-[16px]" />
                 </a>
               )}
               {linkedinUrl && (
-                <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="LinkedIn">
+                <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex text-[#E0E0E0] hover:text-white transition-colors" aria-label="LinkedIn">
                   <LinkedInIcon className="h-[16px] w-[16px]" />
                 </a>
               )}
               {youtubeUrl && (
-                <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="text-[#E0E0E0] hover:text-white transition-colors" aria-label="YouTube">
+                <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex text-[#E0E0E0] hover:text-white transition-colors" aria-label="YouTube">
                   <YouTubeIcon className="h-[16px] w-[16px]" />
                 </a>
               )}
