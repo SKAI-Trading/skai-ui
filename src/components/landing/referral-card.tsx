@@ -100,7 +100,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
         <button
           type="button"
           onClick={onShareToX}
-          className="w-full py-[16px] px-[16px] rounded-[12px] bg-[#001615] hover:bg-[rgba(255,255,255,0.05)] transition-all font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[10px] mb-4 border border-[#56C7F3] text-[#56C7F3]"
+          className="w-full py-[16px] px-[16px] rounded-[12px] bg-[#0a2a2e] hover:bg-[#0d3538] transition-all font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[10px] mb-4 border-[1.5px] border-[#56C7F3] text-[#56C7F3] shadow-[0_0_12px_rgba(86,199,243,0.15)]"
         >
           <SkaiIcon name="x" size="sm" />
           <span>Share to X</span>
