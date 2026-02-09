@@ -221,6 +221,7 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
             </h2>
             <button
               onClick={onClose}
+              aria-label="Close share modal"
               className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
             >
               <CloseIcon className="w-4 h-4 text-white/60" />
