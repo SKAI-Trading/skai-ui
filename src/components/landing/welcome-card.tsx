@@ -14,6 +14,9 @@ export interface WelcomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   launchWords?: string[];
   comingSoonLabel?: string;
   skaiPoints?: number | null;
+  twitterHandle?: string | null;
+  referralCount?: number | null;
+  email?: string | null;
 }
 
 const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
@@ -25,6 +28,9 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
       launchWords = DEFAULT_LAUNCH_WORDS,
       comingSoonLabel = d.comingSoon,
       skaiPoints,
+      twitterHandle,
+      referralCount,
+      email,
       className,
       ...props
     },
@@ -59,6 +65,27 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
         <p className="font-manrope font-normal text-[#E0E0E0] text-[10px] md:text-[12px] lg:text-[14px] leading-[14px] md:leading-[16px] lg:leading-[18px] tracking-[-0.4px] md:tracking-[-0.48px] lg:tracking-[-0.56px] mb-[8px]">
           {subtitle}
         </p>
+
+        {/* Connected accounts & stats row */}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-[8px]">
+          {twitterHandle && (
+            <span className="flex items-center gap-[5px] font-manrope font-normal text-[#56C7F3] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px]">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              @{twitterHandle}
+            </span>
+          )}
+          {typeof referralCount === "number" && referralCount > 0 && (
+            <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px]">
+              {referralCount} referral{referralCount !== 1 ? "s" : ""}
+            </span>
+          )}
+          {email && (
+            <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px] truncate max-w-[180px]" title={email}>
+              {email}
+            </span>
+          )}
+        </div>
+
         {typeof skaiPoints === "number" && (
           <div className="flex items-baseline gap-[6px] mb-[16px]">
             <span className="font-manrope font-light text-[#17F9B4] text-[24px] md:text-[28px] lg:text-[36px] leading-[28px] md:leading-[32px] lg:leading-[40px] tracking-[-0.96px]">

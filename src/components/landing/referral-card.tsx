@@ -16,6 +16,7 @@ export interface ReferralCardProps extends React.HTMLAttributes<HTMLDivElement> 
   onShareToX?: () => void;
   discordUrl?: string;
   title?: string;
+  referralCount?: number | null;
 }
 
 const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
@@ -29,6 +30,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
       onShareToX,
       discordUrl = urls.social.discord,
       title = d.referral.title,
+      referralCount,
       className,
       ...props
     },
@@ -60,6 +62,9 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
         </h3>
         <p className="font-manrope font-normal text-[#E0E0E0] text-[10px] leading-[20px] md:text-[12px] md:leading-[16px] lg:text-[14px] lg:leading-[18px] mb-6">
           Earn {referralPoints} SKAI Points for each friend that joins.
+          {typeof referralCount === "number" && referralCount > 0 && (
+            <span className="text-[#17F9B4]"> You've referred {referralCount} friend{referralCount !== 1 ? "s" : ""}!</span>
+          )}
         </p>
 
         {/* Referral Link Label */}
