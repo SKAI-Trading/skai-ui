@@ -40,7 +40,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
 
     const handleCopy = async () => {
       try {
-        await navigator.clipboard.writeText(`https://${referralLink}`);
+        await navigator.clipboard.writeText(referralLink);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       } catch (err) {
