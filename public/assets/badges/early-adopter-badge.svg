@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150" fill="none">
+  <!-- Early Adopter Badge — composed from Figma design node 688:3 -->
+
+  <!-- Layer 1: Outer dark hexagon (#001615) -->
+  <svg x="10.05" y="3.72" width="129.9" height="142.56" viewBox="0 0 129.904 142.574" preserveAspectRatio="none">
+    <path d="M52.9519 3.21539C60.3775 -1.0718 69.5263 -1.0718 76.9519 3.21539L117.904 26.859C125.329 31.1462 129.904 39.0692 129.904 47.6436V94.9308C129.904 103.505 125.329 111.428 117.904 115.715L76.9519 139.359C69.5263 143.646 60.3775 143.646 52.9519 139.359L12 115.715C4.57438 111.428 0 103.505 0 94.9308V47.6436C0 39.0692 4.57437 31.1462 12 26.859L52.9519 3.21539Z" fill="#001615"/>
+  </svg>
+
+  <!-- Layer 2: Coral hexagon with inner shadow -->
+  <svg x="16.11" y="9.79" width="117.78" height="130.42" viewBox="0 0 117.779 130.431" preserveAspectRatio="none">
+    <defs>
+      <filter id="ea_f2" x="0" y="0" width="117.779" height="138.431" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dy="8"/>
+        <feGaussianBlur stdDeviation="12"/>
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.26 0"/>
+        <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+      </filter>
+    </defs>
+    <g filter="url(#ea_f2)">
+      <path d="M49.8897 2.41154C55.4589 -0.803848 62.3205 -0.803847 67.8897 2.41154L108.779 26.0192C114.349 29.2346 117.779 35.1769 117.779 41.6077V88.8231C117.779 95.2539 114.349 101.196 108.779 104.412L67.8897 128.019C62.3205 131.235 55.4589 131.235 49.8897 128.019L9 104.412C3.43078 101.196 0 95.2539 0 88.8231V41.6077C0 35.1769 3.43078 29.2346 9 26.0192L49.8897 2.41154Z" fill="#FF7E50"/>
+    </g>
+  </svg>
+
+  <!-- Layer 3: Gradient hexagon with drop shadow + inner shadow + white stroke -->
+  <svg x="18.44" y="13.79" width="113.12" height="124.42" viewBox="0 0 113.119 124.431" preserveAspectRatio="none">
+    <defs>
+      <filter id="ea_f3" x="0" y="0" width="113.119" height="124.431" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dy="1"/>
+        <feGaussianBlur stdDeviation="1"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.44 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dy="3"/>
+        <feGaussianBlur stdDeviation="6"/>
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.8 0"/>
+        <feBlend mode="normal" in2="shape" result="effect2_innerShadow"/>
+      </filter>
+      <linearGradient id="ea_grad3" x1="56.5596" y1="-1.78461" x2="56.5596" y2="124.215" gradientUnits="userSpaceOnUse">
+        <stop offset="0.211538" stop-color="#FFBAA2"/>
+        <stop offset="0.365385" stop-color="#FF7E50"/>
+      </linearGradient>
+    </defs>
+    <g filter="url(#ea_f3)">
+      <path d="M47.5596 3.41154C53.1288 0.196153 59.9904 0.196152 65.5596 3.41154L102.119 24.5192C107.688 27.7346 111.119 33.6769 111.119 40.1077V82.3231C111.119 88.7539 107.688 94.6962 102.119 97.9115L65.5596 119.019C59.9904 122.235 53.1288 122.235 47.5596 119.019L11 97.9115C5.43078 94.6962 2 88.7539 2 82.3231V40.1077C2 33.6769 5.43078 27.7346 11 24.5192L47.5596 3.41154Z" fill="url(#ea_grad3)"/>
+      <path d="M47.8096 3.8443C53.2241 0.718309 59.8951 0.718309 65.3096 3.8443L101.869 24.9527C107.284 28.0788 110.619 33.8559 110.619 40.108V82.3228C110.619 88.5749 107.284 94.352 101.869 97.4781L65.3096 118.586C59.8951 121.712 53.2241 121.712 47.8096 118.586L11.25 97.4781C5.83561 94.352 2.50003 88.5749 2.50003 82.3228V40.108C2.50003 33.8559 5.83561 28.0788 11.25 24.9527L47.8096 3.8443Z" stroke="white"/>
+    </g>
+  </svg>
+
+  <!-- Layer 4: Crosshair/grid pattern (masked inside hexagon) -->
+  <svg x="12" y="12" width="126" height="126" viewBox="0 0 126 126" preserveAspectRatio="none">
+    <defs>
+      <mask id="ea_mask4" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="2" width="110" height="122">
+        <path d="M54.25 5.62891C59.6645 2.50292 66.3355 2.50292 71.75 5.62891L108.31 26.7373C113.724 29.8634 117.06 35.6405 117.06 41.8926V84.1074C117.06 90.3595 113.724 96.1366 108.31 99.2627L71.75 120.371C66.3355 123.497 59.6645 123.497 54.25 120.371L17.6904 99.2627C12.276 96.1366 8.94043 90.3595 8.94043 84.1074V41.8926C8.94043 35.6405 12.276 29.8634 17.6904 26.7373L54.25 5.62891Z" fill="#56C7F3" stroke="#123F3C"/>
+      </mask>
+    </defs>
+    <g mask="url(#ea_mask4)">
+      <path d="M83.1697 42.8001L65.2416 42.8001" stroke="white"/>
+      <path d="M105.184 42.8001L87.2562 42.8001" stroke="white" stroke-width="0.5"/>
+      <path d="M74.0764 73.9106L74.0764 55.9825" stroke="white" stroke-width="0.5"/>
+      <path d="M34.5266 73.9106L34.5266 55.9825" stroke="white" stroke-width="0.5"/>
+      <path d="M113.621 73.9106L113.621 55.9825" stroke="white" stroke-width="0.5"/>
+      <path d="M60.8914 42.8001L42.9634 42.8001" stroke="white" stroke-width="0.5"/>
+      <path d="M26.0899 42.8001L8.16184 42.8001" stroke="white" stroke-width="0.5"/>
+      <path d="M80.9287 84.9838L67.219 84.9838" stroke="white"/>
+      <path d="M30.3083 42.8027L38.745 42.8027" stroke="white"/>
+      <path d="M109.403 42.8027L117.839 42.8027" stroke="white"/>
+      <path d="M74.2082 51.7667L74.2082 33.8386" stroke="white"/>
+      <path d="M74.0738 91.8386L74.0738 78.1289" stroke="white"/>
+      <path d="M34.5266 47.021V38.5843" stroke="white"/>
+      <path d="M113.621 47.021V38.5843" stroke="white"/>
+    </g>
+  </svg>
+
+  <!-- Layer 5: Rocket icon -->
+  <svg x="53" y="38.86" width="44" height="74.856" viewBox="0 0 44 74.856" preserveAspectRatio="none">
+    <g>
+      <path d="M32.2587 63.2629C35.8878 58.8272 37.4672 50.9977 37.8032 47.6374C38.4753 47.9734 41.3347 50.337 43.3478 57.7183C45.1348 64.271 42.8437 71.8317 41.3316 74.856C41.7348 67.1945 35.451 63.9349 32.2587 63.2629Z" fill="#122524"/>
+      <path d="M11.7413 63.2629C8.11217 58.8272 6.53281 50.9977 6.19678 47.6374C5.52472 47.9734 2.66533 50.337 0.65224 57.7183C-1.13484 64.271 1.15629 71.8317 2.66844 74.856C2.2652 67.1945 8.54901 63.9349 11.7413 63.2629Z" fill="#122524"/>
+      <path d="M17.9555 2.08285C20.025 -0.694284 23.9738 -0.694284 26.0434 2.08285C30.486 8.04455 36.9994 18.5839 36.9994 29.1375C36.9994 40.9577 35.8273 54.9385 31.0268 61.453C30.152 62.6401 28.685 63.1521 27.2104 63.1522H16.7885C15.3139 63.1521 13.8469 62.6401 12.9721 61.453C8.17157 54.9385 6.99944 40.9577 6.99943 29.1375C6.99943 18.5839 13.5128 8.04455 17.9555 2.08285ZM21.9994 21.1375C18.6857 21.1375 15.9994 23.8238 15.9994 27.1375C15.9995 30.4512 18.6858 33.1375 21.9994 33.1375C25.3131 33.1375 27.9993 30.4512 27.9994 27.1375C27.9994 23.8238 25.3131 21.1375 21.9994 21.1375Z" fill="#122524"/>
+    </g>
+  </svg>
+</svg>

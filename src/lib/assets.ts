@@ -139,6 +139,15 @@ export const assets = {
   },
 
   /**
+   * Badge icons (onboarding, achievement, etc.)
+   * Location: public/assets/badges/
+   */
+  badges: {
+    pioneer: "/assets/badges/pioneer-badge.svg",
+    earlyAdopter: "/assets/badges/early-adopter-badge.svg",
+  },
+
+  /**
    * PWA app icons
    * Location: public/assets/pwa/
    */
@@ -201,7 +210,8 @@ export const assetUrls = {
    * Generate gradient avatar from address
    */
   gradientAvatar: (address: string): string => {
-    return `https://avatar.vercel.sh/${address}?size=200`;
+    // Generate a deterministic color-based avatar URL using DiceBear
+    return `https://api.dicebear.com/7.x/shapes/svg?seed=${address}&size=200`;
   },
 };
 

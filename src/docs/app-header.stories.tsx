@@ -56,7 +56,7 @@ const Logo = () => (
       className="h-8 w-8"
     />
     <span className="text-lg font-medium tracking-tight">
-      <span className="text-[#56C7F3]">Skai</span>
+      <span className="text-sky-blue">Skai</span>
       <span className="text-muted-foreground">.trade</span>
     </span>
   </div>
@@ -86,20 +86,20 @@ const Nav = () => (
 
 // Figma Design Search Bar
 const SearchBar = () => (
-  <div className="flex items-center gap-2 rounded-lg border border-[#123F3C] bg-[#001615] px-4 py-2 w-[236px]">
-    <Search className="h-4 w-4 text-[#95A09F]" />
-    <span className="text-sm text-[#95A09F] tracking-tight">Search anything...</span>
+  <div className="flex items-center gap-2 rounded-lg border border-green-coal-100 bg-green-coal px-4 py-2 w-[236px]">
+    <Search className="h-4 w-4 text-ash" />
+    <span className="text-sm text-ash tracking-tight">Search anything...</span>
   </div>
 );
 
 // Figma Design Actions: Connect wallet button (sky blue) + user avatar
 const Actions = () => (
   <AppHeaderActions>
-    <Button className="bg-[#56C7F3] hover:bg-[#4ab8e4] text-[#001615] px-10 py-5 rounded-2xl font-normal tracking-tight">
+    <Button className="bg-sky-blue hover:bg-[#4ab8e4] text-green-coal px-10 py-5 rounded-2xl font-normal tracking-tight">
       Connect wallet
     </Button>
-    <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#56C7F3] to-[#17F9B4] flex items-center justify-center">
-      <User className="h-5 w-5 text-[#001615]" />
+    <div className="h-9 w-9 rounded-full bg-gradient-to-br from-sky-blue to-alien-green flex items-center justify-center">
+      <User className="h-5 w-5 text-green-coal" />
     </div>
   </AppHeaderActions>
 );
@@ -210,7 +210,7 @@ export const WithMobileMenu: Story = {
   },
 };
 
-// Figma Design Exact Header: bg-[#001615], border-[#123F3C]
+// Figma Design Exact Header: bg-green-coal, border-green-coal-100
 export const TradingPlatform: Story = {
   name: "Figma Design (Exact Match)",
   render: () => (
@@ -224,7 +224,7 @@ export const TradingPlatform: Story = {
             className="h-8 w-8"
           />
           <span className="hidden text-lg font-medium tracking-tight sm:block">
-            <span className="text-[#56C7F3]">Skai</span>
+            <span className="text-sky-blue">Skai</span>
             <span className="text-white">.trade</span>
           </span>
         </div>
@@ -250,18 +250,18 @@ export const TradingPlatform: Story = {
         </nav>
       }
       search={
-        <div className="flex items-center gap-2.5 rounded-lg border border-[#123F3C] bg-[#001615] px-4 py-2 w-[236px]">
-          <Search className="h-4 w-4 text-[#95A09F]" />
-          <span className="text-sm text-[#95A09F] tracking-tight opacity-75">Search anything...</span>
+        <div className="flex items-center gap-2.5 rounded-lg border border-green-coal-100 bg-green-coal px-4 py-2 w-[236px]">
+          <Search className="h-4 w-4 text-ash" />
+          <span className="text-sm text-ash tracking-tight opacity-75">Search anything...</span>
         </div>
       }
       actions={
         <AppHeaderActions className="gap-4">
-          <Button className="bg-[#56C7F3] hover:bg-[#4ab8e4] text-[#001615] px-10 py-5 rounded-2xl font-normal tracking-tight text-base">
+          <Button className="bg-sky-blue hover:bg-[#4ab8e4] text-green-coal px-10 py-5 rounded-2xl font-normal tracking-tight text-base">
             Connect wallet
           </Button>
-          <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#56C7F3] to-[#17F9B4] flex items-center justify-center overflow-hidden">
-            <User className="h-5 w-5 text-[#001615]" />
+          <div className="h-9 w-9 rounded-full bg-gradient-to-br from-sky-blue to-alien-green flex items-center justify-center overflow-hidden">
+            <User className="h-5 w-5 text-green-coal" />
           </div>
         </AppHeaderActions>
       }
@@ -269,7 +269,7 @@ export const TradingPlatform: Story = {
   ),
   decorators: [
     (Story) => (
-      <div className="bg-[#001615]">
+      <div className="bg-green-coal">
         <Story />
       </div>
     ),

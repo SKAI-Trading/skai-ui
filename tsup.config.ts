@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["src/index.ts"],
+  entry: ["src/index.ts", "src/icons.ts", "src/motion.ts"],
   format: ["cjs", "esm"],
   dts: true,
   splitting: false,
@@ -24,6 +24,9 @@ export default defineConfig({
     "react-day-picker",
     "react-hook-form",
     "lucide-react",
+    "framer-motion",
+    "sonner",
+    "recharts",
   ],
   treeshake: true,
   // Disable minification to avoid variable initialization order issues

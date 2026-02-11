@@ -1,4 +1,5 @@
 import { cn } from "../../lib/utils";
+import { assets } from "../../lib/assets";
 
 // =============================================================================
 // BADGE ICON TYPES
@@ -44,10 +45,21 @@ export interface BadgeIconDefinition {
  */
 export const BADGE_DEFINITIONS: Record<string, BadgeIconDefinition> = {
   // Onboarding Badges
+  pioneer: {
+    id: "pioneer",
+    name: "Pioneer",
+    emoji: "🦅",
+    imageUrl: assets.badges.pioneer,
+    category: "onboarding",
+    rarity: "rare",
+    description: "One of the first to join the SKAI ecosystem",
+    color: "text-sky-400",
+  },
   early_adopter: {
     id: "early_adopter",
     name: "Early Adopter",
     emoji: "🌅",
+    imageUrl: assets.badges.earlyAdopter,
     category: "onboarding",
     rarity: "rare",
     description: "Joined during the early access period",

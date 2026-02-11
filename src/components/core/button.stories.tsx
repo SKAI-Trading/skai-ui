@@ -257,7 +257,7 @@ export const SkaiPrimary: Story = {
  */
 export const SkaiSecondary: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 items-start bg-[#001615] p-8 rounded-xl">
+    <div className="flex flex-col gap-4 items-start bg-green-coal p-8 rounded-xl">
       <SkaiButton skaiType="secondary" skaiSize="massive">
         Learn More
       </SkaiButton>
@@ -287,7 +287,7 @@ export const SkaiSecondary: Story = {
  */
 export const SkaiTertiary: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 items-start bg-[#001615] p-8 rounded-xl">
+    <div className="flex flex-col gap-4 items-start bg-green-coal p-8 rounded-xl">
       <SkaiButton skaiType="tertiary" skaiSize="massive">
         Cancel
       </SkaiButton>
@@ -317,7 +317,7 @@ export const SkaiTertiary: Story = {
  */
 export const SkaiLink: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 items-start bg-[#001615] p-8 rounded-xl">
+    <div className="flex flex-col gap-4 items-start bg-green-coal p-8 rounded-xl">
       <SkaiButton skaiType="link" skaiSize="large">
         View Documentation
       </SkaiButton>
@@ -343,7 +343,7 @@ export const SkaiLink: Story = {
  */
 export const SkaiAllTypes: Story = {
   render: () => (
-    <div className="bg-[#001615] p-8 rounded-xl">
+    <div className="bg-green-coal p-8 rounded-xl">
       <h3 className="text-white text-lg font-semibold mb-6">SKAI Button Types (Figma Design System)</h3>
       <div className="flex flex-wrap gap-4 items-center">
         <SkaiButton skaiType="primary" skaiSize="large">
@@ -375,7 +375,7 @@ export const SkaiAllTypes: Story = {
  */
 export const SkaiAllSizes: Story = {
   render: () => (
-    <div className="bg-[#001615] p-8 rounded-xl">
+    <div className="bg-green-coal p-8 rounded-xl">
       <h3 className="text-white text-lg font-semibold mb-6">SKAI Button Sizes (Figma Design System)</h3>
       <div className="flex flex-col gap-4">
         <div className="flex items-end gap-4">
@@ -401,7 +401,7 @@ export const SkaiAllSizes: Story = {
  */
 export const SkaiWithIcons: Story = {
   render: () => (
-    <div className="bg-[#001615] p-8 rounded-xl">
+    <div className="bg-green-coal p-8 rounded-xl">
       <h3 className="text-white text-lg font-semibold mb-6">SKAI Buttons with Icons</h3>
       <div className="flex flex-wrap gap-4 items-center">
         <SkaiButton skaiType="primary" skaiSize="large">
@@ -430,7 +430,7 @@ export const SkaiWithIcons: Story = {
  */
 export const SkaiLoading: Story = {
   render: () => (
-    <div className="bg-[#001615] p-8 rounded-xl">
+    <div className="bg-green-coal p-8 rounded-xl">
       <h3 className="text-white text-lg font-semibold mb-6">SKAI Button Loading States</h3>
       <div className="flex flex-wrap gap-4 items-center">
         <SkaiButton skaiType="primary" skaiSize="large" disabled>
@@ -456,18 +456,18 @@ export const SkaiLoading: Story = {
  */
 export const SkaiTradingExample: Story = {
   render: () => (
-    <div className="bg-[#122524] p-6 rounded-3xl border border-[#123F3C] max-w-md">
+    <div className="bg-green-coal-200 p-6 rounded-3xl border border-green-coal-100 max-w-md">
       <h3 className="text-white text-lg font-semibold mb-4">Swap ETH → USDC</h3>
       <div className="space-y-4">
-        <div className="bg-[#001615] p-4 rounded-xl">
+        <div className="bg-green-coal p-4 rounded-xl">
           <div className="text-sm text-gray-400 mb-1">You pay</div>
           <div className="text-2xl text-white font-mono">1.5 ETH</div>
           <div className="text-sm text-gray-500">≈ $5,250.00</div>
         </div>
-        <div className="bg-[#001615] p-4 rounded-xl">
+        <div className="bg-green-coal p-4 rounded-xl">
           <div className="text-sm text-gray-400 mb-1">You receive</div>
           <div className="text-2xl text-white font-mono">5,187.50 USDC</div>
-          <div className="text-sm text-[#17F9B4]">Best rate via Uniswap</div>
+          <div className="text-sm text-alien-green">Best rate via Uniswap</div>
         </div>
         <SkaiButton skaiType="primary" skaiSize="large" className="w-full">
           Swap Now <ArrowRight />

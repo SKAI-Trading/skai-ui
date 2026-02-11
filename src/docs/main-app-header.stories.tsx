@@ -58,9 +58,9 @@ type Story = StoryObj<typeof MainAppHeader>;
 export const Default: Story = {
   args: {
     stats: [
-      { icon: <SkaiIcon name="star" size="sm" className="text-[#17F9B4]" />, value: "800" },
-      { icon: <SkaiIcon name="trending-up" size="sm" className="text-[#FFFF16]" />, value: "11.2k" },
-      { icon: <SkaiIcon name="wallet" size="sm" className="text-[#56C7F3]" />, value: "0.0036 ETH" },
+      { icon: <SkaiIcon name="star" size="sm" className="text-alien-green" />, value: "800" },
+      { icon: <SkaiIcon name="trending-up" size="sm" className="text-sun-yellow" />, value: "11.2k" },
+      { icon: <SkaiIcon name="wallet" size="sm" className="text-sky-blue" />, value: "0.0036 ETH" },
     ],
   },
   parameters: {
@@ -82,9 +82,9 @@ export const WalletConnected: Story = {
     walletLabel: "0x1234...5678",
     userName: "artofofiare",
     stats: [
-      { icon: <SkaiIcon name="star" size="sm" className="text-[#17F9B4]" />, value: "800" },
-      { icon: <SkaiIcon name="trending-up" size="sm" className="text-[#FFFF16]" />, value: "11.2k" },
-      { icon: <SkaiIcon name="wallet" size="sm" className="text-[#56C7F3]" />, value: "0.0036 ETH" },
+      { icon: <SkaiIcon name="star" size="sm" className="text-alien-green" />, value: "800" },
+      { icon: <SkaiIcon name="trending-up" size="sm" className="text-sun-yellow" />, value: "11.2k" },
+      { icon: <SkaiIcon name="wallet" size="sm" className="text-sky-blue" />, value: "0.0036 ETH" },
     ],
   },
   parameters: {
@@ -129,7 +129,7 @@ export const CustomNav: Story = {
     walletLabel: "Connected",
     userName: "trader42",
     stats: [
-      { icon: <SkaiIcon name="star" size="sm" className="text-[#17F9B4]" />, value: "1,250" },
+      { icon: <SkaiIcon name="star" size="sm" className="text-alien-green" />, value: "1,250" },
     ],
   },
   parameters: {

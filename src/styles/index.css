@@ -65,11 +65,11 @@
     --accent-foreground: 60 100% 97%;
 
     /* Trading Colors */
-    --long: 142 76% 36%; /* #16A34A - Buy/Long green */
+    --long: 142 76% 36%; /* #16A34A - Buy/Long green (intentionally darker than brand green for UI readability) */
     --long-glow: 142 76% 46%;
-    --short: 0 84% 60%; /* #EF4444 - Sell/Short red */
-    --short-glow: 0 84% 70%;
-    --destructive: 0 84% 60%; /* Same as short */
+    --short: 4 100% 65%; /* #FF574A - Sell/Short red (from design-tokens.ts semanticColors.red) */
+    --short-glow: 4 100% 75%;
+    --destructive: 4 100% 65%; /* #FF574A - Same as short, aligned with design-tokens.ts */
     --destructive-foreground: 0 0% 100%;
 
     /* Muted & Borders */
@@ -125,7 +125,7 @@
     --muted-foreground: 220 9% 46%;
     --accent: 220 14% 96%;
     --accent-foreground: 224 71% 4%;
-    --destructive: 0 84% 60%;
+    --destructive: 4 100% 65%; /* #FF574A - aligned with design-tokens.ts */
     --destructive-foreground: 0 0% 100%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;

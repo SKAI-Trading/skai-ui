@@ -126,9 +126,13 @@ export {
   coreColors,
   greenCoalColors,
   accentColors,
+  extendedAccentColors,
   semanticColors,
   earthColors,
   neutralColors,
+  surfaceColors,
+  brandColors,
+  gamingSurfaceColors,
   gradients,
   // Typography
   skaiFonts,

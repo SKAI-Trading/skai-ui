@@ -89,6 +89,79 @@ export const neutralColors = {
 } as const;
 
 /**
+ * Extended accent colors (UI-specific)
+ */
+export const extendedAccentColors = {
+  neonPink: "#FF006E", // Hot pink accent
+  neonMint: "#2CECAD", // Bright mint accent
+  teal: "#1FB89A", // Teal/emerald accent
+  skyBlueLight: "#56C0F6", // Light sky blue variant
+} as const;
+
+/**
+ * Surface/background colors (dark theme surfaces)
+ */
+export const surfaceColors = {
+  deepNavy: "#0A0F1C", // Deep navy background
+  nightBlue: "#1A1A2E", // Night blue surface
+  surfaceDark: "#1F1F1F", // Dark surface/card
+  surfaceMedium: "#2A2A2A", // Medium dark surface
+} as const;
+
+/**
+ * Third-party brand colors
+ */
+export const brandColors = {
+  discord: "#5865F2", // Discord blurple
+  telegram: "#0088CC", // Telegram blue
+  twitter: "#1DA1F2", // Twitter/X blue
+  bitcoin: "#F7931A", // Bitcoin orange
+  solanaPurple: "#9945FF", // Solana purple
+  solanaGreen: "#14F195", // Solana green
+} as const;
+
+/**
+ * Gaming-specific surface colors (dark game UI)
+ */
+export const gamingSurfaceColors = {
+  gameDark: "#0F1923", // Primary game background
+  gameCard: "#1A2C3D", // Game card/panel surface
+  gameBorder: "#2A3A4A", // Game element borders
+  gameElevated: "#252B33", // Elevated surface
+} as const;
+
+/**
+ * UI utility colors (common dark-theme values)
+ */
+export const utilityColors = {
+  blackSurface: "#0A0A0A", // Near-black dropdown/modal backgrounds
+  chartBg: "#050505", // Chart/TradingView container backgrounds
+  lossPink: "#FF4976", // Negative price change indicator
+} as const;
+
+/**
+ * Hover state colors (derived from base colors for :hover variants)
+ */
+export const hoverColors = {
+  skyBlueHover: "#3A9FD8", // sky-blue darkened for hover
+  nightBlueHover: "#252532", // night-blue lighter for hover
+  nightBlueHoverAlt: "#1E1E36", // night-blue subtle hover variant
+  discordHover: "#4752C4", // discord blurple darkened for hover
+  discordTextHover: "#7289DA", // discord lighter for text hover
+  twitterHover: "#1A8CD8", // twitter blue darkened for hover
+  dropdownDark: "#1A1A24", // dropdown background (near night-blue)
+} as const;
+
+/**
+ * Gradient colors (for multi-stop gradient backgrounds)
+ */
+export const gradientColors = {
+  darkSpaceFrom: "#0A0A1A", // Deep space gradient start
+  darkSpaceVia: "#1A1A3E", // Deep space gradient midpoint
+  darkSpaceTo: "#0F0F2E", // Deep space gradient end
+} as const;
+
+/**
  * Gradient definitions
  */
 export const gradients = {
@@ -151,6 +224,51 @@ export const skaiColors = {
     300: neutralColors.gray[300],
     100: neutralColors.gray[100],
   },
+
+  // Extended accents
+  "neon-pink": extendedAccentColors.neonPink,
+  "neon-mint": extendedAccentColors.neonMint,
+  teal: extendedAccentColors.teal,
+  "sky-blue-light": extendedAccentColors.skyBlueLight,
+
+  // Surfaces
+  "deep-navy": surfaceColors.deepNavy,
+  "night-blue": surfaceColors.nightBlue,
+  "surface-dark": surfaceColors.surfaceDark,
+  "surface-medium": surfaceColors.surfaceMedium,
+
+  // Third-party brands
+  discord: brandColors.discord,
+  telegram: brandColors.telegram,
+  twitter: brandColors.twitter,
+  bitcoin: brandColors.bitcoin,
+  "solana-purple": brandColors.solanaPurple,
+  "solana-green": brandColors.solanaGreen,
+
+  // Gaming surfaces
+  "game-dark": gamingSurfaceColors.gameDark,
+  "game-card": gamingSurfaceColors.gameCard,
+  "game-border": gamingSurfaceColors.gameBorder,
+  "game-elevated": gamingSurfaceColors.gameElevated,
+
+  // Utility colors
+  "black-surface": utilityColors.blackSurface,
+  "chart-bg": utilityColors.chartBg,
+  "loss-pink": utilityColors.lossPink,
+
+  // Hover state colors
+  "sky-blue-hover": hoverColors.skyBlueHover,
+  "night-blue-hover": hoverColors.nightBlueHover,
+  "night-blue-hover-alt": hoverColors.nightBlueHoverAlt,
+  "discord-hover": hoverColors.discordHover,
+  "discord-text-hover": hoverColors.discordTextHover,
+  "twitter-hover": hoverColors.twitterHover,
+  "dropdown-dark": hoverColors.dropdownDark,
+
+  // Gradient colors
+  "dark-space-from": gradientColors.darkSpaceFrom,
+  "dark-space-via": gradientColors.darkSpaceVia,
+  "dark-space-to": gradientColors.darkSpaceTo,
 } as const;
 
 // =============================================================================
@@ -890,28 +1008,28 @@ export const skaiButton = {
   },
   types: {
     primary: {
-      background: "#56C7F3", // Sky Blue
-      text: "#001615", // Green Coal 300
-      hoverBackground: "#17F9B4", // Alien Green
-      focusRing: "#17F9B4",
+      background: accentColors.skyBlue,
+      text: greenCoalColors[300],
+      hoverBackground: accentColors.alienGreen,
+      focusRing: accentColors.alienGreen,
     },
     secondary: {
       background: "transparent",
-      border: "#56C7F3",
-      text: "#56C7F3",
+      border: accentColors.skyBlue,
+      text: accentColors.skyBlue,
       hoverBackground: "rgba(86, 199, 243, 0.1)",
-      focusRing: "#56C7F3",
+      focusRing: accentColors.skyBlue,
     },
     tertiary: {
       background: "transparent",
-      text: "#FFFFFF",
-      hoverText: "#17F9B4",
-      focusRing: "#17F9B4",
+      text: coreColors.white,
+      hoverText: accentColors.alienGreen,
+      focusRing: accentColors.alienGreen,
     },
     link: {
       background: "transparent",
-      text: "#17F9B4",
-      hoverText: "#56C7F3",
+      text: accentColors.alienGreen,
+      hoverText: accentColors.skyBlue,
       textDecoration: "underline",
     },
   },
@@ -954,35 +1072,35 @@ export const skaiInput = {
       borderWidth: "1.5px",
     },
     active: {
-      borderColor: "#17F9B4", // Alien Green
+      borderColor: accentColors.alienGreen,
       borderWidth: "1.5px",
     },
     focus: {
-      borderColor: "#56C7F3", // Sky Blue
+      borderColor: accentColors.skyBlue,
       borderWidth: "2px",
       boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.24)",
     },
     completed: {
-      borderColor: "#17F9B4",
+      borderColor: accentColors.alienGreen,
       borderWidth: "1.5px",
     },
     error: {
-      borderColor: "#FF574A", // Red
+      borderColor: semanticColors.red[300],
       borderWidth: "1.5px",
     },
   },
   modes: {
     dark: {
-      background: "#001615", // Green Coal 300
-      text: "#FFFFFF",
+      background: greenCoalColors[300],
+      text: coreColors.white,
       placeholder: "rgba(255, 255, 255, 0.6)",
-      label: "#FFFFFF",
+      label: coreColors.white,
     },
     light: {
-      background: "#FFFFFF",
-      text: "#001615",
+      background: coreColors.white,
+      text: greenCoalColors[300],
       placeholder: "rgba(0, 22, 21, 0.6)",
-      label: "#001615",
+      label: greenCoalColors[300],
     },
   },
 } as const;
@@ -1020,19 +1138,19 @@ export const skaiLabel = {
   },
   types: {
     fill: {
-      background: "#17F9B4", // Alien Green
-      text: "#001615", // Green Coal 300
+      background: accentColors.alienGreen,
+      text: greenCoalColors[300],
       borderRadius: "9999px", // Full rounded
     },
     stroke: {
       background: "transparent",
-      border: "#17F9B4",
-      text: "#17F9B4",
+      border: accentColors.alienGreen,
+      text: accentColors.alienGreen,
       borderRadius: "9999px",
     },
     flag: {
-      background: "#17F9B4",
-      text: "#001615",
+      background: accentColors.alienGreen,
+      text: greenCoalColors[300],
       borderRadius: "4px", // Slightly rounded
     },
   },

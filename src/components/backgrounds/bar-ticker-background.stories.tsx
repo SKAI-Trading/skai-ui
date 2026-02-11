@@ -39,7 +39,7 @@ const meta: Meta<typeof BarTickerBackground> = {
   },
   decorators: [
     (Story) => (
-      <div className="h-[400px] relative bg-[#001615] overflow-hidden">
+      <div className="h-[400px] relative bg-green-coal overflow-hidden">
         <Story />
       </div>
     ),

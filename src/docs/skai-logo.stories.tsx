@@ -174,15 +174,15 @@ export const WhiteAllSizes: Story = {
   name: "White / All Sizes (Figma 1105-773)",
   render: () => (
     <div className="flex gap-12 items-start">
-      <div className="bg-[#001615] p-6 rounded-lg flex flex-col gap-2 min-w-[300px]">
+      <div className="bg-green-coal p-6 rounded-lg flex flex-col gap-2 min-w-[300px]">
         <span className="text-xs text-gray-400 mb-2">Large</span>
         <SkaiLogo size="large" variant="white" />
       </div>
-      <div className="bg-[#001615] p-6 rounded-lg flex flex-col gap-2 min-w-[240px]">
+      <div className="bg-green-coal p-6 rounded-lg flex flex-col gap-2 min-w-[240px]">
         <span className="text-xs text-gray-400 mb-2">Medium</span>
         <SkaiLogo size="medium" variant="white" />
       </div>
-      <div className="bg-[#001615] p-6 rounded-lg flex flex-col gap-2 min-w-[180px]">
+      <div className="bg-green-coal p-6 rounded-lg flex flex-col gap-2 min-w-[180px]">
         <span className="text-xs text-gray-400 mb-2">Small</span>
         <SkaiLogo size="small" variant="white" />
       </div>
@@ -269,7 +269,7 @@ export const IconOnly: Story = {
 export const HeaderExample: Story = {
   name: "Use Case: App Header",
   render: () => (
-    <div className="w-full max-w-5xl bg-[#001615] border-b border-[#123F3C] px-5 py-3">
+    <div className="w-full max-w-5xl bg-green-coal border-b border-green-coal-100 px-5 py-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6">
           <SkaiLogo size="small" variant="white" />
@@ -282,7 +282,7 @@ export const HeaderExample: Story = {
             <span className="text-white">More</span>
           </nav>
         </div>
-        <button className="px-10 py-5 bg-[#56C7F3] text-[#001615] rounded-2xl text-[16px] font-manrope tracking-[-0.64px]">
+        <button className="px-10 py-5 bg-sky-blue text-green-coal rounded-2xl text-[16px] font-manrope tracking-[-0.64px]">
           Connect wallet
         </button>
       </div>
@@ -306,7 +306,7 @@ export const HeaderExample: Story = {
 export const FooterExample: Story = {
   name: "Use Case: App Footer",
   render: () => (
-    <div className="w-full max-w-5xl bg-[#001615] border-t border-[#123F3C] px-4 py-1.5">
+    <div className="w-full max-w-5xl bg-green-coal border-t border-green-coal-100 px-4 py-1.5">
       <div className="flex items-center justify-between font-manrope text-[12px] tracking-[-0.48px]">
         <div className="flex items-center gap-8 text-white">
           <span>Discord</span>
@@ -319,9 +319,9 @@ export const FooterExample: Story = {
           <span>Mini games</span>
           <span>Wallet</span>
         </div>
-        <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#17F9B4]">
-          <span className="w-1 h-1 rounded-full bg-[#001615]" />
-          <span className="font-mulish text-[11px] tracking-[-0.44px] text-[#001615]">
+        <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-alien-green">
+          <span className="w-1 h-1 rounded-full bg-green-coal" />
+          <span className="font-mulish text-[11px] tracking-[-0.44px] text-green-coal">
             Connection is stable
           </span>
         </div>

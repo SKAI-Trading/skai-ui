@@ -240,7 +240,7 @@ export const FormExample: Story = {
 export const SkaiAllSizes: Story = {
   name: "SKAI: All Sizes",
   render: () => (
-    <div className="bg-[#122524] p-8 rounded-3xl border border-[#123F3C] space-y-6">
+    <div className="bg-green-coal-200 p-8 rounded-3xl border border-green-coal-100 space-y-6">
       <h3 className="text-white text-lg font-semibold mb-4">SKAI Input Sizes (Figma Design System)</h3>
       <div className="space-y-4">
         <SkaiInput
@@ -277,7 +277,7 @@ export const SkaiAllSizes: Story = {
 export const SkaiStates: Story = {
   name: "SKAI: Input States",
   render: () => (
-    <div className="bg-[#122524] p-8 rounded-3xl border border-[#123F3C] space-y-6 w-[450px]">
+    <div className="bg-green-coal-200 p-8 rounded-3xl border border-green-coal-100 space-y-6 w-[450px]">
       <h3 className="text-white text-lg font-semibold mb-4">SKAI Input States</h3>
       <div className="space-y-4">
         <SkaiInput
@@ -328,7 +328,7 @@ export const SkaiModes: Story = {
   name: "SKAI: Dark vs Light Mode",
   render: () => (
     <div className="flex gap-6">
-      <div className="bg-[#122524] p-6 rounded-3xl border border-[#123F3C] w-[300px]">
+      <div className="bg-green-coal-200 p-6 rounded-3xl border border-green-coal-100 w-[300px]">
         <h3 className="text-white text-sm font-semibold mb-4">Dark Mode</h3>
         <SkaiInput
           label="Amount"
@@ -339,7 +339,7 @@ export const SkaiModes: Story = {
         />
       </div>
       <div className="bg-white p-6 rounded-3xl border border-gray-200 w-[300px]">
-        <h3 className="text-[#001615] text-sm font-semibold mb-4">Light Mode</h3>
+        <h3 className="text-green-coal text-sm font-semibold mb-4">Light Mode</h3>
         <SkaiInput
           label="Amount"
           mode="light"
@@ -366,7 +366,7 @@ export const SkaiModes: Story = {
 export const SkaiTradingExample: Story = {
   name: "SKAI: Trading Interface",
   render: () => (
-    <div className="bg-[#122524] p-6 rounded-3xl border border-[#123F3C] w-[420px]">
+    <div className="bg-green-coal-200 p-6 rounded-3xl border border-green-coal-100 w-[420px]">
       <h3 className="text-white text-lg font-semibold mb-4">Swap</h3>
       <div className="space-y-3">
         <SkaiInput
@@ -377,8 +377,8 @@ export const SkaiTradingExample: Story = {
           secondaryValue="Balance: 2.5 ETH"
         />
         <div className="flex justify-center">
-          <div className="bg-[#001615] p-2 rounded-full border border-[#123F3C]">
-            <svg className="w-4 h-4 text-[#56C7F3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="bg-green-coal p-2 rounded-full border border-green-coal-100">
+            <svg className="w-4 h-4 text-sky-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>

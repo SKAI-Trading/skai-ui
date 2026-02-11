@@ -185,7 +185,7 @@ export const content = {
       completion: {
         titleWithUsername: "@{{username}} is yours!",
         titleFallback: "You're in!",
-        subtitle: "Welcome Skai Pioneer!",
+        subtitle: "Welcome to SKAI!",
         rewardAmount: "+500 SKAI Points",
         giftMessage: "We gifted you",
         giftHighlight: "",
@@ -241,7 +241,7 @@ export const content = {
           emailRequired:
             "📧 Email is required for registration. Please use an email wallet or reconnect.",
           walletRegistered:
-            "🔒 This wallet is already registered! You're already a Pioneer. Check your email for updates.",
+            "🔒 This wallet is already registered! You're already a member. Check your email for updates.",
           usernameTaken:
             "👤 This username is already taken. Please try a different one!",
           accountExists:
@@ -263,7 +263,7 @@ export const content = {
         daysToLaunch: "Days to launch",
 
         badge: {
-          title: "Pioneer badge",
+          title: "Badge",
           subtitle: "Early adopter status.",
           reward: "+500 SKAI Points",
           status: "Credited",
@@ -289,7 +289,7 @@ export const content = {
       /** LandingWaitlist completion overlay */
       completionOverlay: {
         usernameConfirm: "@{{username}} is yours!",
-        welcomeMessage: "Welcome to the SKAI Pioneer family 🚀",
+        welcomeMessage: "Welcome to the SKAI family 🚀",
         reward: "+500 SKAI Points",
       },
 
@@ -297,6 +297,169 @@ export const content = {
       modal: {
         joinTitle: "Join SKAI Waitlist",
       },
+    },
+  },
+
+  /**
+   * Error boundary and app-level error content
+   */
+  errors: {
+    /** ErrorBoundary component - wallet/SES conflict */
+    walletConflict: {
+      title: "Wallet Extension Conflict Detected",
+      description:
+        "Your browser has a wallet extension (like MetaMask Flask or Snaps) that uses security features incompatible with this app. Please try one of the following:",
+      steps: {
+        disableFlask: "Disable MetaMask Flask and use regular MetaMask",
+        incognito: "Open in an Incognito/Private window",
+        differentBrowser: "Use a different browser without the extension",
+      },
+    },
+
+    /** ErrorBoundary - circular dependency / loading error */
+    loadingError: {
+      title: "Loading Error",
+      description:
+        "The app encountered a loading error. This is usually temporary. Please try refreshing the page. If the problem persists, try clearing your browser cache.",
+      steps: {
+        hardRefresh:
+          "Press Ctrl+Shift+R (or Cmd+Shift+R on Mac) to hard refresh",
+        clearCache: "Clear your browser cache and try again",
+        incognito: "Try an Incognito/Private window",
+      },
+    },
+
+    /** ErrorBoundary - chunk load / update available */
+    updateAvailable: {
+      title: "Update Available",
+      description:
+        "A new version of the app is available. Please refresh to load the latest version. This happens when the app was updated while you had a tab open.",
+      steps: {
+        refresh: "Click Refresh Page below to load the latest version",
+        hardRefresh:
+          "If the issue persists, press Ctrl+Shift+R (or Cmd+Shift+R on Mac)",
+      },
+    },
+
+    /** ErrorBoundary - generic fallback */
+    generic: {
+      title: "Something went wrong",
+      description:
+        "We encountered an unexpected error. Please try refreshing the page.",
+      technicalDetails: "Technical details",
+    },
+
+    /** ErrorBoundary action buttons */
+    actions: {
+      refreshPage: "Refresh Page",
+      goHome: "Go to Home",
+      tryAgain: "Try Again",
+    },
+
+    /** main.tsx bootstrap failure */
+    bootstrap: {
+      title: "App Failed to Load",
+      description:
+        "A browser extension (likely MetaMask) is interfering with this app.",
+      errorPrefix: "Error: {{message}}",
+      solutionsHeading: "Try one of these solutions:",
+      steps: {
+        disableMetaMask: "Disable MetaMask temporarily and refresh",
+        useChrome: "Use Chrome or a Chromium-based browser",
+        incognito: "Open in a private/incognito window",
+      },
+    },
+  },
+
+  /**
+   * Legal disclaimers and compliance content
+   */
+  legal: {
+    /** RiskDisclaimer component */
+    risk: {
+      title: "High Risk Warning",
+      compactDescription:
+        "Trading cryptocurrencies involves substantial risk of loss. You may lose all or more than your initial investment.",
+      compactTermsLink: "Read our Terms of Service for full risk disclosure.",
+      fullDescription:
+        "Trading cryptocurrencies and digital assets involves substantial risk of loss and is not suitable for every investor.",
+      bullets: {
+        totalLoss: "You may lose all funds deposited or traded",
+        volatility:
+          "Cryptocurrency prices are highly volatile and unpredictable",
+        noGuarantees:
+          "Past performance does not guarantee future results",
+        leverageRisk:
+          "Leveraged trading amplifies both gains and losses",
+        smartContractRisk:
+          "Code vulnerabilities may result in loss of funds",
+      },
+      bulletLabels: {
+        totalLoss: "Total Loss Risk:",
+        volatility: "Volatility:",
+        noGuarantees: "No Guarantees:",
+        leverageRisk: "Leverage Risk:",
+        smartContractRisk: "Smart Contract Risk:",
+      },
+      neverInvest:
+        "Never invest more than you can afford to lose. This is not financial advice.",
+      termsAgreement: "By using this platform, you agree to our",
+      termsOfService: "Terms of Service",
+      and: "and",
+      privacyPolicy: "Privacy Policy",
+    },
+
+    /** LegalReviewBanner component */
+    review: {
+      noticeLabel: "Legal & Compliance Notice:",
+      defaultMessage:
+        "This feature is pending legal and compliance review. Use at your own risk. This platform does not provide financial, legal, or investment advice.",
+      compactMessage: "Feature pending legal review",
+      bannerTitle: "Feature Pending Legal & Compliance Review",
+      bannerDescription:
+        "This feature is currently under legal and regulatory compliance review. Availability may vary by jurisdiction. Please ensure compliance with your local laws before use.",
+    },
+
+    /** NotFinancialAdviceDisclaimer component */
+    notFinancialAdvice: {
+      label: "Disclaimer:",
+      description:
+        "Nothing on this platform constitutes financial, investment, legal, or tax advice. All information is provided for educational purposes only. You are solely responsible for your own financial decisions. Always conduct your own research and consult with qualified professionals before making any investment decisions.",
+    },
+  },
+
+  /**
+   * Footer content
+   */
+  footer: {
+    terms: "Terms",
+    privacy: "Privacy",
+    copyright: "\u00A9 {{year}} Skai.trade",
+  },
+
+  /**
+   * Landing page waitlist form (app.skai.trade/landing)
+   */
+  landingForm: {
+    emailPlaceholder: "Insert Email...",
+    submitButton: "Enter",
+    submittingButton: "Entering...",
+    validation: {
+      invalidEmail: "Invalid Email",
+    },
+    success: {
+      title: "Welcome!",
+      description:
+        "You're now on the waitlist. Enjoy exploring the platform!",
+    },
+    duplicate: {
+      title: "Already Registered",
+      description:
+        "This email is already on our waitlist. Welcome back!",
+    },
+    error: {
+      title: "Error",
+      fallback: "Something went wrong. Please try again.",
     },
   },
 

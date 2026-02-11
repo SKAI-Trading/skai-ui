@@ -67,7 +67,7 @@ const Logo = () => (
       className="h-8 w-8"
     />
     <span className="text-lg font-medium tracking-tight">
-      <span className="text-[#56C7F3]">Skai</span>
+      <span className="text-sky-blue">Skai</span>
       <span className="text-muted-foreground">.trade</span>
     </span>
   </div>
@@ -118,19 +118,19 @@ const FooterNav = () => (
 
 // Figma Design: Connection status badge (green #17F9B4)
 const ConnectionStatus = () => (
-  <div className="flex items-center gap-1 rounded-full bg-[#17F9B4] px-2 py-0.5">
-    <Circle className="h-2.5 w-2.5 fill-[#001615] text-[#001615]" />
-    <span className="text-[11px] text-[#001615] tracking-tight">Connection is stable</span>
+  <div className="flex items-center gap-1 rounded-full bg-alien-green px-2 py-0.5">
+    <Circle className="h-2.5 w-2.5 fill-green-coal text-green-coal" />
+    <span className="text-[11px] text-green-coal tracking-tight">Connection is stable</span>
   </div>
 );
 
 // Figma Design: Footer links - Home, Docs, Privacy, Terms
 const FooterLinks = () => (
   <div className="flex items-center gap-6 text-xs text-white tracking-tight">
-    <a href="/" className="hover:text-[#56C7F3]">Home</a>
-    <a href="/docs" className="hover:text-[#56C7F3]">Docs</a>
-    <a href="/privacy" className="hover:text-[#56C7F3]">Privacy</a>
-    <a href="/terms" className="hover:text-[#56C7F3]">Terms</a>
+    <a href="/" className="hover:text-sky-blue">Home</a>
+    <a href="/docs" className="hover:text-sky-blue">Docs</a>
+    <a href="/privacy" className="hover:text-sky-blue">Privacy</a>
+    <a href="/terms" className="hover:text-sky-blue">Terms</a>
   </div>
 );
 
@@ -303,7 +303,7 @@ export const TradingPlatform: Story = {
             />
             <div>
               <p className="text-lg font-medium tracking-tight">
-                <span className="text-[#56C7F3]">Skai</span>
+                <span className="text-sky-blue">Skai</span>
                 <span className="text-muted-foreground">.trade</span>
               </p>
               <p className="text-xs text-muted-foreground">Trade. Predict. Play.</p>
@@ -368,12 +368,12 @@ export const TradingPlatform: Story = {
   ),
 };
 
-// Figma Design Exact Footer: bg-[#001615], border-[#123F3C]
+// Figma Design Exact Footer: bg-green-coal, border-green-coal-100
 // Layout: Social icons | Nav items (AI, Chat, Mini games, Wallet) | Connection status | Links (Home, Docs, Privacy, Terms)
 export const FigmaDesign: Story = {
   name: "Figma Design (Exact Match)",
   render: () => (
-    <div className="w-full bg-[#001615] border border-[#123F3C] px-4 py-1.5">
+    <div className="w-full bg-green-coal border border-green-coal-100 px-4 py-1.5">
       <div className="flex items-center justify-between">
         {/* Social Icons */}
         <SocialLinks />
@@ -391,7 +391,7 @@ export const FigmaDesign: Story = {
   ),
   decorators: [
     (Story) => (
-      <div className="bg-[#001615] p-4">
+      <div className="bg-green-coal p-4">
         <Story />
       </div>
     ),

@@ -208,4 +208,7 @@ function useToast() {
   };
 }
 
-export { useToast, toast };
+// Note: standalone `toast` removed to avoid conflict with sonner's `toast` export.
+// Use `const { toast } = useToast()` for the Radix toast API, or
+// `import { toast } from '@skai/ui'` for the Sonner toast API (toast.success, toast.error, etc.)
+export { useToast };

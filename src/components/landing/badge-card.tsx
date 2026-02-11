@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
+import { assets } from "../../lib/assets";
 
 const d = content.landing.waitlist.dashboard;
 
@@ -18,7 +19,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
       badgeName,
       badgeSubtitle,
       badgePoints,
-      badgeIcon = "/icons/pioneer-badge.svg",
+      badgeIcon = assets.badges.pioneer,
       statusLabel = d.badge.status,
       className,
       ...props

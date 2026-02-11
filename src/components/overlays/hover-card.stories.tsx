@@ -21,13 +21,13 @@ export const Default: Story = {
       <HoverCardContent className="w-80">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage src="https://github.com/vercel.png" />
-            <AvatarFallback>VC</AvatarFallback>
+            <AvatarImage src="https://github.com/github.png" />
+            <AvatarFallback>GH</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
-            <h4 className="text-sm font-semibold">@nextjs</h4>
+            <h4 className="text-sm font-semibold">@skai-trading</h4>
             <p className="text-sm">
-              The React Framework – created and maintained by @vercel.
+              The SKAI Trading Platform – DeFi made simple.
             </p>
             <div className="flex items-center pt-2">
               <span className="text-xs text-muted-foreground">

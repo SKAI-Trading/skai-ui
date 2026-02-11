@@ -1,6 +1,6 @@
 "use client";
 
-import { Toaster as Sonner, toast as sonnerToast } from "sonner";
+import { Toaster as Sonner, toast as sonnerToast, toast } from "sonner";
 import { cn } from "../../lib/utils";
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
@@ -56,5 +56,6 @@ const SonnerToaster = ({ className, ...props }: ToasterProps) => {
   );
 };
 
-// Re-export toast for convenience with distinct name
-export { SonnerToaster, sonnerToast };
+// Re-export toast for convenience - `toast` is the sonner toast API (toast.success, toast.error, etc.)
+// `sonnerToast` is an alias for backward compatibility
+export { SonnerToaster, sonnerToast, toast };

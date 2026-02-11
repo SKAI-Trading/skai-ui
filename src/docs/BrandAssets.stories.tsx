@@ -116,7 +116,7 @@ export const LogoVariants: StoryObj = {
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm">Gradient (Primary)</CardTitle>
               </CardHeader>
-              <CardContent className="flex items-center justify-center h-32 bg-[#020717] rounded-lg">
+              <CardContent className="flex items-center justify-center h-32 bg-background rounded-lg">
                 <SkaiLogo variant="gradient" size="lg" />
               </CardContent>
               <div className="p-4 pt-2">
@@ -128,7 +128,7 @@ export const LogoVariants: StoryObj = {
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm">White</CardTitle>
               </CardHeader>
-              <CardContent className="flex items-center justify-center h-32 bg-[#020717] rounded-lg">
+              <CardContent className="flex items-center justify-center h-32 bg-background rounded-lg">
                 <SkaiLogo variant="white" size="lg" />
               </CardContent>
               <div className="p-4 pt-2">
@@ -287,7 +287,7 @@ export const LogoVariants: StoryObj = {
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm">Dark Background</CardTitle>
               </CardHeader>
-              <CardContent className="flex items-center justify-center h-32 bg-[#020717] rounded-lg">
+              <CardContent className="flex items-center justify-center h-32 bg-background rounded-lg">
                 <img
                   src="https://app.skai.trade/favicon.png"
                   alt="SKAI Favicon"
@@ -320,7 +320,7 @@ export const LogoVariants: StoryObj = {
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm">Apple Touch Icon</CardTitle>
               </CardHeader>
-              <CardContent className="flex items-center justify-center h-32 bg-[#020717] rounded-lg">
+              <CardContent className="flex items-center justify-center h-32 bg-background rounded-lg">
                 <img
                   src="https://app.skai.trade/apple-touch-icon.png"
                   alt="Apple Touch Icon"
@@ -355,7 +355,7 @@ export const LogoVariants: StoryObj = {
               <Card key={size}>
                 <CardContent className="p-4 text-center">
                   <div
-                    className="mx-auto mb-2 rounded-lg flex items-center justify-center bg-[#020717]"
+                    className="mx-auto mb-2 rounded-lg flex items-center justify-center bg-background"
                     style={{
                       width: Math.min(size, 64),
                       height: Math.min(size, 64),
@@ -426,13 +426,13 @@ export const UsageGuidelines: StoryObj = {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex gap-4 items-start">
-                <div className="w-24 h-16 bg-[#020717] rounded flex items-center justify-center shrink-0">
+                <div className="w-24 h-16 bg-background rounded flex items-center justify-center shrink-0">
                   <SkaiLogo variant="gradient" size="sm" />
                 </div>
                 <p>Use the gradient logo on dark backgrounds (#020717)</p>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-24 h-16 bg-[#020717] rounded flex items-center justify-center shrink-0">
+                <div className="w-24 h-16 bg-background rounded flex items-center justify-center shrink-0">
                   <SkaiLogo variant="white" size="sm" />
                 </div>
                 <p>Use the white logo when gradient isn't possible</p>
@@ -444,7 +444,7 @@ export const UsageGuidelines: StoryObj = {
                 <p>Use the black logo on light backgrounds only</p>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-24 h-16 bg-[#020717] rounded flex items-center justify-center shrink-0 p-2">
+                <div className="w-24 h-16 bg-background rounded flex items-center justify-center shrink-0 p-2">
                   <SkaiLogo variant="gradient" size="sm" showText={false} />
                 </div>
                 <p>Maintain clear space around the logo (minimum 8px)</p>
@@ -474,7 +474,7 @@ export const UsageGuidelines: StoryObj = {
                 <p>Don't distort, stretch, or rotate the logo</p>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-24 h-16 bg-[#020717] rounded flex items-center justify-center shrink-0 opacity-50">
+                <div className="w-24 h-16 bg-background rounded flex items-center justify-center shrink-0 opacity-50">
                   <SkaiLogo variant="gradient" size="sm" />
                 </div>
                 <p>Don't reduce opacity or add effects to the logo</p>
@@ -496,14 +496,14 @@ export const UsageGuidelines: StoryObj = {
             <CardContent>
               <div className="flex items-end gap-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-[#020717] rounded flex items-center justify-center mb-2">
+                  <div className="w-16 h-16 bg-background rounded flex items-center justify-center mb-2">
                     <SkaiLogo variant="gradient" size="sm" showText={false} />
                   </div>
                   <p className="text-sm font-medium">24px</p>
                   <p className="text-xs text-muted-foreground">Icon only</p>
                 </div>
                 <div className="text-center">
-                  <div className="h-16 px-4 bg-[#020717] rounded flex items-center justify-center mb-2">
+                  <div className="h-16 px-4 bg-background rounded flex items-center justify-center mb-2">
                     <SkaiLogo variant="gradient" size="sm" />
                   </div>
                   <p className="text-sm font-medium">80px wide</p>

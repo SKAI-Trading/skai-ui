@@ -250,14 +250,14 @@ export const SkaiSwapCard: Story = {
     <SkaiCard className="w-[420px]">
       <SkaiCardHeader>
         <SkaiCardTitle className="flex items-center gap-2">
-          <ArrowDownUp className="h-5 w-5 text-[#56C7F3]" />
+          <ArrowDownUp className="h-5 w-5 text-sky-blue" />
           Swap
         </SkaiCardTitle>
         <SkaiCardDescription>Trade tokens instantly</SkaiCardDescription>
       </SkaiCardHeader>
       <SkaiCardContent className="space-y-4">
         {/* From Token */}
-        <div className="bg-[#001615] rounded-xl p-4">
+        <div className="bg-green-coal rounded-xl p-4">
           <div className="flex justify-between mb-2">
             <span className="text-sm text-gray-400">You pay</span>
             <span className="text-sm text-gray-500">Balance: 2.5 ETH</span>
@@ -269,7 +269,7 @@ export const SkaiSwapCard: Story = {
               className="bg-transparent text-2xl text-white font-mono w-1/2 outline-none"
               readOnly
             />
-            <div className="flex items-center gap-2 bg-[#122524] px-3 py-2 rounded-xl">
+            <div className="flex items-center gap-2 bg-green-coal-200 px-3 py-2 rounded-xl">
               <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold">E</div>
               <span className="text-white font-medium">ETH</span>
             </div>
@@ -279,13 +279,13 @@ export const SkaiSwapCard: Story = {
 
         {/* Swap Direction */}
         <div className="flex justify-center -my-2">
-          <div className="w-10 h-10 rounded-full bg-[#123F3C] border border-[#17F9B4]/30 flex items-center justify-center">
-            <ArrowDownUp className="h-4 w-4 text-[#17F9B4]" />
+          <div className="w-10 h-10 rounded-full bg-green-coal-100 border border-alien-green/30 flex items-center justify-center">
+            <ArrowDownUp className="h-4 w-4 text-alien-green" />
           </div>
         </div>
 
         {/* To Token */}
-        <div className="bg-[#001615] rounded-xl p-4">
+        <div className="bg-green-coal rounded-xl p-4">
           <div className="flex justify-between mb-2">
             <span className="text-sm text-gray-400">You receive</span>
             <span className="text-sm text-gray-500">Balance: 1,250 USDC</span>
@@ -297,12 +297,12 @@ export const SkaiSwapCard: Story = {
               className="bg-transparent text-2xl text-white font-mono w-1/2 outline-none"
               readOnly
             />
-            <div className="flex items-center gap-2 bg-[#122524] px-3 py-2 rounded-xl">
+            <div className="flex items-center gap-2 bg-green-coal-200 px-3 py-2 rounded-xl">
               <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold">U</div>
               <span className="text-white font-medium">USDC</span>
             </div>
           </div>
-          <div className="text-sm text-[#17F9B4] mt-1">Best rate via Uniswap V3</div>
+          <div className="text-sm text-alien-green mt-1">Best rate via Uniswap V3</div>
         </div>
 
         {/* Rate Info */}
@@ -336,7 +336,7 @@ export const SkaiPortfolioCard: Story = {
     <SkaiCard className="w-[380px]">
       <SkaiCardHeader>
         <SkaiCardTitle className="flex items-center gap-2">
-          <Wallet className="h-5 w-5 text-[#56C7F3]" />
+          <Wallet className="h-5 w-5 text-sky-blue" />
           Portfolio
         </SkaiCardTitle>
         <SkaiCardDescription>Your total holdings</SkaiCardDescription>
@@ -344,7 +344,7 @@ export const SkaiPortfolioCard: Story = {
       <SkaiCardContent>
         <div className="text-4xl font-bold text-white mb-2">$45,231.89</div>
         <div className="flex items-center gap-2 mb-6">
-          <Badge className="bg-[#17F9B4]/20 text-[#17F9B4] border-0">
+          <Badge className="bg-alien-green/20 text-alien-green border-0">
             <TrendingUp className="mr-1 h-3 w-3" />
             +12.5%
           </Badge>
@@ -353,7 +353,7 @@ export const SkaiPortfolioCard: Story = {
 
         {/* Holdings List */}
         <div className="space-y-3">
-          <div className="flex items-center justify-between p-3 bg-[#001615] rounded-xl">
+          <div className="flex items-center justify-between p-3 bg-green-coal rounded-xl">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white text-sm font-bold">B</div>
               <div>
@@ -363,10 +363,10 @@ export const SkaiPortfolioCard: Story = {
             </div>
             <div className="text-right">
               <div className="text-white font-medium">$35,128.50</div>
-              <div className="text-xs text-[#17F9B4]">+8.2%</div>
+              <div className="text-xs text-alien-green">+8.2%</div>
             </div>
           </div>
-          <div className="flex items-center justify-between p-3 bg-[#001615] rounded-xl">
+          <div className="flex items-center justify-between p-3 bg-green-coal rounded-xl">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold">E</div>
               <div>
@@ -376,7 +376,7 @@ export const SkaiPortfolioCard: Story = {
             </div>
             <div className="text-right">
               <div className="text-white font-medium">$10,103.39</div>
-              <div className="text-xs text-[#FF574A]">-2.1%</div>
+              <div className="text-xs text-skai-red">-2.1%</div>
             </div>
           </div>
         </div>
@@ -418,8 +418,8 @@ export const SkaiTokenCard: Story = {
           </div>
           <div className="text-2xl font-bold text-white">$67,432</div>
           <div className="flex items-center gap-1 mt-1">
-            <TrendingUp className="h-3 w-3 text-[#17F9B4]" />
-            <span className="text-sm text-[#17F9B4]">+5.2%</span>
+            <TrendingUp className="h-3 w-3 text-alien-green" />
+            <span className="text-sm text-alien-green">+5.2%</span>
           </div>
         </SkaiCardContent>
       </SkaiCard>
@@ -435,8 +435,8 @@ export const SkaiTokenCard: Story = {
           </div>
           <div className="text-2xl font-bold text-white">$3,608</div>
           <div className="flex items-center gap-1 mt-1">
-            <TrendingDown className="h-3 w-3 text-[#FF574A]" />
-            <span className="text-sm text-[#FF574A]">-1.8%</span>
+            <TrendingDown className="h-3 w-3 text-skai-red" />
+            <span className="text-sm text-skai-red">-1.8%</span>
           </div>
         </SkaiCardContent>
       </SkaiCard>
@@ -457,42 +457,42 @@ export const SkaiTokenCard: Story = {
  */
 export const SkaiCardVariations: Story = {
   render: () => (
-    <div className="space-y-6 p-8 bg-[#001615] rounded-2xl">
+    <div className="space-y-6 p-8 bg-green-coal rounded-2xl">
       <h3 className="text-white text-xl font-semibold mb-4">SKAI Card Design Tokens</h3>
 
       <div className="grid grid-cols-2 gap-4">
         <div>
           <h4 className="text-sm text-gray-400 mb-2">Card Background</h4>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded bg-[#122524] border border-[#123F3C]"></div>
-            <code className="text-xs text-[#17F9B4]">#122524</code>
+            <div className="w-8 h-8 rounded bg-green-coal-200 border border-green-coal-100"></div>
+            <code className="text-xs text-alien-green">#122524</code>
           </div>
         </div>
         <div>
           <h4 className="text-sm text-gray-400 mb-2">Card Border</h4>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded bg-[#123F3C]"></div>
-            <code className="text-xs text-[#17F9B4]">#123F3C</code>
+            <div className="w-8 h-8 rounded bg-green-coal-100"></div>
+            <code className="text-xs text-alien-green">#123F3C</code>
           </div>
         </div>
         <div>
           <h4 className="text-sm text-gray-400 mb-2">Inner Background</h4>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded bg-[#001615] border border-[#123F3C]"></div>
-            <code className="text-xs text-[#17F9B4]">#001615</code>
+            <div className="w-8 h-8 rounded bg-green-coal border border-green-coal-100"></div>
+            <code className="text-xs text-alien-green">#001615</code>
           </div>
         </div>
         <div>
           <h4 className="text-sm text-gray-400 mb-2">Border Radius</h4>
           <div className="flex items-center gap-2">
-            <code className="text-xs text-[#17F9B4]">24px</code>
+            <code className="text-xs text-alien-green">24px</code>
           </div>
         </div>
       </div>
 
-      <div className="pt-4 border-t border-[#123F3C]">
+      <div className="pt-4 border-t border-green-coal-100">
         <h4 className="text-sm text-gray-400 mb-3">Shadow</h4>
-        <code className="text-xs text-[#56C7F3] block">0px 8px 24px rgba(0, 0, 0, 0.16)</code>
+        <code className="text-xs text-sky-blue block">0px 8px 24px rgba(0, 0, 0, 0.16)</code>
       </div>
     </div>
   ),

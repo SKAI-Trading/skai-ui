@@ -153,7 +153,7 @@ export const LabelWithTooltip: Story = {
 export const SkaiTagTypes: Story = {
   name: "SKAI Tag: All Types",
   render: () => (
-    <div className="bg-[#001615] p-8 rounded-xl">
+    <div className="bg-green-coal p-8 rounded-xl">
       <h3 className="text-white text-lg font-semibold mb-6">SKAI Tag Types (Figma Design System)</h3>
       <div className="flex flex-wrap gap-4 items-center">
         <SkaiTag tagType="fill">Fill Tag</SkaiTag>
@@ -178,7 +178,7 @@ export const SkaiTagTypes: Story = {
 export const SkaiTagSizes: Story = {
   name: "SKAI Tag: All Sizes",
   render: () => (
-    <div className="bg-[#001615] p-8 rounded-xl">
+    <div className="bg-green-coal p-8 rounded-xl">
       <h3 className="text-white text-lg font-semibold mb-6">SKAI Tag Sizes</h3>
       <div className="space-y-4">
         <div className="flex items-center gap-4">
@@ -218,7 +218,7 @@ export const SkaiTagSizes: Story = {
 export const SkaiTagWithIcons: Story = {
   name: "SKAI Tag: With Icons",
   render: () => (
-    <div className="bg-[#001615] p-8 rounded-xl">
+    <div className="bg-green-coal p-8 rounded-xl">
       <h3 className="text-white text-lg font-semibold mb-6">SKAI Tags with Icons</h3>
       <div className="flex flex-wrap gap-4 items-center">
         <SkaiTag
@@ -273,13 +273,13 @@ export const SkaiTagWithIcons: Story = {
 export const SkaiTagTradingExamples: Story = {
   name: "SKAI Tag: Trading Examples",
   render: () => (
-    <div className="bg-[#122524] p-6 rounded-3xl border border-[#123F3C] space-y-6">
+    <div className="bg-green-coal-200 p-6 rounded-3xl border border-green-coal-100 space-y-6">
       <h3 className="text-white text-lg font-semibold">Trading Status Tags</h3>
 
       {/* Token List Item */}
-      <div className="bg-[#001615] p-4 rounded-xl flex items-center justify-between">
+      <div className="bg-green-coal p-4 rounded-xl flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-[#56C7F3] rounded-full flex items-center justify-center text-[#001615] font-bold text-sm">
+          <div className="w-8 h-8 bg-sky-blue rounded-full flex items-center justify-center text-green-coal font-bold text-sm">
             E
           </div>
           <div>
@@ -292,16 +292,16 @@ export const SkaiTagTradingExamples: Story = {
         </div>
         <div className="text-right">
           <div className="text-white font-mono">$3,456.78</div>
-          <div className="text-[#17F9B4] text-sm">+2.34%</div>
+          <div className="text-alien-green text-sm">+2.34%</div>
         </div>
       </div>
 
       {/* Pool Example */}
-      <div className="bg-[#001615] p-4 rounded-xl flex items-center justify-between">
+      <div className="bg-green-coal p-4 rounded-xl flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex -space-x-2">
-            <div className="w-6 h-6 bg-[#56C7F3] rounded-full border-2 border-[#001615]" />
-            <div className="w-6 h-6 bg-[#17F9B4] rounded-full border-2 border-[#001615]" />
+            <div className="w-6 h-6 bg-sky-blue rounded-full border-2 border-green-coal" />
+            <div className="w-6 h-6 bg-alien-green rounded-full border-2 border-green-coal" />
           </div>
           <div>
             <div className="text-white font-medium flex items-center gap-2">
@@ -313,7 +313,7 @@ export const SkaiTagTradingExamples: Story = {
         </div>
         <div className="text-right">
           <div className="text-white">TVL $12.5M</div>
-          <div className="text-[#17F9B4] text-sm">APY 24.5%</div>
+          <div className="text-alien-green text-sm">APY 24.5%</div>
         </div>
       </div>
 

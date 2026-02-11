@@ -34,7 +34,7 @@ const meta: Meta<typeof TickerBackground> = {
   },
   decorators: [
     (Story) => (
-      <div className="h-[400px] relative bg-[#001615]">
+      <div className="h-[400px] relative bg-green-coal">
         <Story />
       </div>
     ),
