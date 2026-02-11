@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Header Theme Configuration
  * 
  * Centralized theme tokens for the SKAI header system.
@@ -17,9 +17,9 @@ export const headerColors = {
   /** Border hover/active */
   borderHover: "#1a5a55",
   /** Brand primary (cyan) */
-  brandPrimary: "#56C7F3",
+  brandPrimary: "#56C0F6",
   /** Brand secondary (Alien Green) */
-  brandSecondary: "#17F9B4",
+  brandSecondary: "#2DEDAD",
   /** Glow color for status pills */
   glow: "rgba(23, 249, 180, 0.02)",
   /** Text primary */

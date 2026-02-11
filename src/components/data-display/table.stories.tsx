@@ -11,7 +11,7 @@ import {
 } from "../data-display/table";
 import { Badge } from "../core/badge";
 import { Button } from "../core/button";
-import { TrendingUp, TrendingDown, MoreHorizontal, ArrowUpDown } from "lucide-react";
+import { TrendingUp, TrendingDown, MoreHorizontal } from "lucide-react";
 
 const meta: Meta<typeof Table> = {
   title: "Components/Table",

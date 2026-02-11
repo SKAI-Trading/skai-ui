@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Legal Page Template
  *
  * Matches Figma designs for Privacy Policy and Terms of Service pages.
@@ -173,7 +173,7 @@ function GreenGlowOrb() {
           position: fixed;
           left: 50%;
           transform: translateX(-50%);
-          background-color: #17F9B4;
+          background-color: #2DEDAD;
           border-radius: 50%;
           pointer-events: none;
           z-index: 1;
@@ -352,7 +352,7 @@ export function LegalPageTemplate({
                   <span className="font-mulish text-[10px] md:text-[12px] text-[#95A09F]">
                     Last Updated
                   </span>
-                  <span className="font-mulish text-[10px] md:text-[12px] text-[#56C7F3]">
+                  <span className="font-mulish text-[10px] md:text-[12px] text-[#56C0F6]">
                     {lastUpdated}
                   </span>
                 </div>

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Swap Page Template
  *
  * A complete swap interface matching the Figma design system.
@@ -133,7 +133,7 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
               onClick={onFromTokenSelect}
               className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#123F3C] hover:bg-[#123F3C]/80 transition-colors"
             >
-              <div className="w-6 h-6 rounded-full bg-[#56C7F3] flex items-center justify-center text-xs font-bold text-[#001615]">
+              <div className="w-6 h-6 rounded-full bg-[#56C0F6] flex items-center justify-center text-xs font-bold text-[#001615]">
                 {fromToken.symbol.charAt(0)}
               </div>
               <span className="font-['Manrope'] text-sm font-medium text-white">
@@ -168,7 +168,7 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
-              className="text-[#17F9B4]"
+              className="text-[#2DEDAD]"
             >
               <path
                 d="M7 10L3 6L7 2"
@@ -209,7 +209,7 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
               onClick={onToTokenSelect}
               className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#123F3C] hover:bg-[#123F3C]/80 transition-colors"
             >
-              <div className="w-6 h-6 rounded-full bg-[#17F9B4] flex items-center justify-center text-xs font-bold text-[#001615]">
+              <div className="w-6 h-6 rounded-full bg-[#2DEDAD] flex items-center justify-center text-xs font-bold text-[#001615]">
                 {toToken.symbol.charAt(0)}
               </div>
               <span className="font-['Manrope'] text-sm font-medium text-white">
@@ -264,8 +264,8 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
           disabled={isLoading}
           className={cn(
             "w-full h-16 px-10 py-5 text-base font-['Manrope'] font-normal tracking-[-0.04em] rounded-[16px] transition-all duration-200",
-            "bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4]",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17F9B4] focus-visible:ring-offset-2 focus-visible:ring-offset-[#122524]",
+            "bg-[#56C0F6] text-[#001615] hover:bg-[#2DEDAD]",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2DEDAD] focus-visible:ring-offset-2 focus-visible:ring-offset-[#122524]",
             "disabled:opacity-50 disabled:pointer-events-none"
           )}
         >

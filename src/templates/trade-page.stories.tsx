@@ -23,12 +23,13 @@ export const Default: Story = {
     oneClickEnabled: false,
     marketInfo: {
       symbol: "ETH-USD",
+      baseAsset: "ETH",
+      quoteAsset: "USD",
       price: 3456.78,
-      change24h: 2.34,
+      priceChange24h: 2.34,
       high24h: 3520.0,
       low24h: 3380.0,
       volume24h: 1200000000,
-      fundingRate: 0.0012,
     },
     shortcuts: [
       { keys: "Ctrl+Enter", description: "Place order", category: "Trading" },

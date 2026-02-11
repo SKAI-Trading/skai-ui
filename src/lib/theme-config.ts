@@ -20,8 +20,8 @@ export const theme = {
   colors: {
     // Brand colors
     brand: {
-      primary: "197 87% 64%", // #56C7F3 - Sky Blue
-      secondary: "158 95% 53%", // #17F9B4 - Alien Green
+      primary: "200 90% 65%", // #56C0F6 - Sky Blue
+      secondary: "160 84% 55%", // #2DEDAD - Alien Green
       tertiary: "270 76% 60%", // Purple accent
     },
 
@@ -46,7 +46,7 @@ export const theme = {
     border: {
       default: "225 30% 20%", // #2D3A54
       subtle: "225 30% 15%", // Subtle borders
-      focus: "199 90% 65%", // Focus ring (primary)
+      focus: "200 90% 65%", // Focus ring (primary)
     },
 
     // Trading colors
@@ -83,7 +83,7 @@ export const theme = {
       success: "142 71% 45%", // #22C55E
       warning: "38 92% 50%",
       error: "0 84% 60%",
-      info: "199 90% 65%",
+      info: "200 90% 65%",
     },
   },
 
@@ -179,8 +179,8 @@ export const theme = {
     lg: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
     xl: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
     "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
-    glow: "0 0 30px hsl(199 90% 65% / 0.3)",
-    glowStrong: "0 0 40px hsl(199 90% 65% / 0.5)",
+    glow: "0 0 30px hsl(200 90% 65% / 0.3)",
+    glowStrong: "0 0 40px hsl(200 90% 65% / 0.5)",
   },
 
   /**

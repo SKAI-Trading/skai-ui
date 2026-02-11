@@ -1,4 +1,4 @@
-/**
+﻿/**
  * LandingPageTemplate - Waitlist / Entry Landing Page
  *
  * Pure presentational component for the landing page.
@@ -126,10 +126,10 @@ export function LandingPageTemplate({
             />
           </div>
           <div className="group relative">
-            <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-[#17F9B4] to-[#56C7F3] opacity-50 blur transition duration-300 group-hover:opacity-75" />
+            <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-[#2DEDAD] to-[#56C0F6] opacity-50 blur transition duration-300 group-hover:opacity-75" />
             <Button
               type="submit"
-              className="relative h-14 w-full bg-gradient-to-r from-[#17F9B4] to-[#56C7F3] text-xl font-bold text-black transition-all duration-300 hover:scale-[1.02] hover:opacity-90"
+              className="relative h-14 w-full bg-gradient-to-r from-[#2DEDAD] to-[#56C0F6] text-xl font-bold text-black transition-all duration-300 hover:scale-[1.02] hover:opacity-90"
               disabled={isLoading}
             >
               {isLoading ? loadingText : buttonText}

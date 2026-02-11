@@ -715,7 +715,7 @@ export const ColorVariants: Story = {
         <span className="text-xs text-gray-500">Error</span>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <SkaiIcon name="check-enclosed" size="lg" color="#17F9B4" />
+        <SkaiIcon name="check-enclosed" size="lg" color="#2DEDAD" />
         <span className="text-xs text-gray-500">Success</span>
       </div>
       <div className="flex flex-col items-center gap-2">
@@ -723,7 +723,7 @@ export const ColorVariants: Story = {
         <span className="text-xs text-gray-500">Warning</span>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <SkaiIcon name="info" size="lg" color="#56C7F3" />
+        <SkaiIcon name="info" size="lg" color="#56C0F6" />
         <span className="text-xs text-gray-500">Info</span>
       </div>
     </div>

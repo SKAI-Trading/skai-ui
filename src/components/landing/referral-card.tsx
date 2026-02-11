@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import { useState } from "react";
 import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
@@ -63,7 +63,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
         <p className="font-manrope font-normal text-[#E0E0E0] text-[10px] leading-[20px] md:text-[12px] md:leading-[16px] lg:text-[14px] lg:leading-[18px] mb-6">
           Earn {referralPoints} SKAI Points for each friend that joins.
           {typeof referralCount === "number" && referralCount > 0 && (
-            <span className="text-[#17F9B4]"> You've referred {referralCount} friend{referralCount !== 1 ? "s" : ""}!</span>
+            <span className="text-[#2DEDAD]"> You've referred {referralCount} friend{referralCount !== 1 ? "s" : ""}!</span>
           )}
         </p>
 
@@ -73,7 +73,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
         </label>
 
         {/* Referral Link Input */}
-        <div className="flex items-center mb-6 rounded-[12px] border border-[#56C7F3] bg-[#001615] overflow-hidden">
+        <div className="flex items-center mb-6 rounded-[12px] border border-[#56C0F6] bg-[#001615] overflow-hidden">
           <span className="font-manrope font-normal text-white text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex-1 px-[22px] py-4 truncate">
             {referralLink}
           </span>
@@ -84,7 +84,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
             disabled={isLoadingUser}
             className={cn(
               "px-[16px] py-[12px] font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] transition-all whitespace-nowrap flex items-center gap-[8px] border-none bg-transparent disabled:opacity-50 disabled:cursor-not-allowed",
-              copied ? "text-[#17F9B4]" : "text-[#56C7F3]",
+              copied ? "text-[#2DEDAD]" : "text-[#56C0F6]",
             )}
           >
             {copied ? (
@@ -103,7 +103,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
 
         {/* Claim Points Label */}
         <div className="flex items-center gap-[8px] mb-[10px]">
-          <span className="font-manrope font-normal text-[#17F9B4] text-[12px] lg:text-[14px] leading-[16px] lg:leading-[18px]">
+          <span className="font-manrope font-normal text-[#2DEDAD] text-[12px] lg:text-[14px] leading-[16px] lg:leading-[18px]">
             {hasClaimedToday
               ? `+${shareTweetPoints} SKAI Points claimed ✓`
               : `Claim ${shareTweetPoints} SKAI Points`}
@@ -114,7 +114,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
         <button
           type="button"
           onClick={onShareToX}
-          className="w-full py-[16px] px-[16px] rounded-[12px] bg-[#0a2a2e] hover:bg-[#0d3538] transition-all font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[10px] mb-4 border-[1.5px] border-[#56C7F3] text-[#56C7F3] shadow-[0_0_12px_rgba(86,199,243,0.15)]"
+          className="w-full py-[16px] px-[16px] rounded-[12px] bg-[#0a2a2e] hover:bg-[#0d3538] transition-all font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[10px] mb-4 border-[1.5px] border-[#56C0F6] text-[#56C0F6] shadow-[0_0_12px_rgba(86,199,243,0.15)]"
         >
           <SkaiIcon name="x" size="sm" />
           <span>Share With Friends</span>
@@ -124,7 +124,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
         <button
           type="button"
           onClick={() => window.open(discordUrl, "_blank")}
-          className="w-full py-[21px] px-[16px] rounded-[12px] font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[8px] transition-all bg-[#56C7F3] text-[#001615] border-none"
+          className="w-full py-[21px] px-[16px] rounded-[12px] font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[8px] transition-all bg-[#56C0F6] text-[#001615] border-none"
         >
           <SkaiIcon name="discord" size="sm" className="w-5 h-5" />
           Join Skai Community

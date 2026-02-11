@@ -24,8 +24,7 @@ export const Default: Story = {
     isRecording: false,
     agent: {
       name: "SKAI Agent",
-      description: "AI-powered trading assistant with real-time market analysis",
-      status: "active",
+      status: "online",
       capabilities: [
         "Market Analysis",
         "Trade Execution",
@@ -43,40 +42,42 @@ export const Default: Story = {
         role: "assistant",
         content:
           "Hello! I'm your SKAI trading agent. I can help you analyze markets, execute trades, and manage your portfolio. What would you like to do today?",
-        timestamp: new Date(Date.now() - 300000).toISOString(),
+        timestamp: new Date(Date.now() - 300000),
       },
       {
         id: "2",
         role: "user",
         content: "What's the current market sentiment for ETH?",
-        timestamp: new Date(Date.now() - 240000).toISOString(),
+        timestamp: new Date(Date.now() - 240000),
       },
       {
         id: "3",
         role: "assistant",
         content:
           "ETH is showing bullish momentum with strong buying pressure. The RSI is at 62 (neutral-bullish), and the MACD just crossed above the signal line. Key levels to watch: Support at $3,400, Resistance at $3,600.",
-        timestamp: new Date(Date.now() - 180000).toISOString(),
+        timestamp: new Date(Date.now() - 180000),
       },
     ],
     signals: [
       {
         id: "s1",
         type: "BUY",
+        token: "Ethereum",
         symbol: "ETH-USD",
-        strength: "strong",
+        strength: "STRONG",
         price: 3456.78,
-        timestamp: new Date().toISOString(),
-        reason: "MACD crossover with strong volume confirmation",
+        timestamp: new Date(),
+        message: "MACD crossover with strong volume confirmation",
       },
       {
         id: "s2",
         type: "SELL",
+        token: "Solana",
         symbol: "SOL-USD",
-        strength: "moderate",
+        strength: "MODERATE",
         price: 198.45,
-        timestamp: new Date(Date.now() - 600000).toISOString(),
-        reason: "Overbought RSI with bearish divergence",
+        timestamp: new Date(Date.now() - 600000),
+        message: "Overbought RSI with bearish divergence",
       },
     ],
     intelligence: [

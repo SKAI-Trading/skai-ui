@@ -39,6 +39,42 @@ async function copyToClipboard(text: string) {
   }
 }
 
+/** Human-readable descriptions for each top-level content section */
+const SECTION_DESCRIPTIONS: Record<string, string> = {
+  global: "Brand info, nav labels, actions, and error messages used across the entire app",
+  landing: "Landing page hero, features, waitlist, footer, and form copy",
+  errors: "Error page content (500, maintenance, etc.)",
+  legal: "Terms of service and privacy policy text",
+  footer: "Global footer links and copyright",
+  landingForm: "Landing-specific form labels and validation messages",
+  trading: "Spot trading, swap, and order-related content",
+  portfolio: "Portfolio overview, positions, and history labels",
+  play: "Gaming section (HiLo, Coin Flip, Slots, Poker, etc.)",
+  ai: "AI agent sidebar, signals, and subscription content",
+  settings: "Settings page section labels and form fields",
+  wallet: "Wallet connection, balance, and transaction messages",
+  app: "Main app shell (hero, features, modules, stats, init)",
+  perp: "Perpetual trading DEX (positions, leverage, funding, orders)",
+  predict: "Prediction markets (categories, bets, odds, resolution)",
+  account: "Account page tabs and loading states",
+  leaderboard: "Rankings, tiers, points breakdown",
+  earn: "Earn page (faucet, lottery, referral tabs)",
+  notFound: "404 page content",
+  social: "Social features (discover, messages, trading groups, profiles)",
+  governance: "DAO governance (proposals, voting, delegation)",
+  streaming: "Live streaming (browse, chat, controls, donations)",
+  copyTrading: "Copy trading (leaderboard, trader cards, settings)",
+  support: "Support tickets, help center, priorities",
+  emptyStates: "Generic empty/loading state messages",
+  toasts: "Common toast/notification messages",
+  placeholders: "Common input field placeholders",
+  aiPage: "AI page hero, quick suggestions, module cards, tools section",
+  mobileMenu: "Mobile sidebar/menu labels",
+  referral: "Referral program (tiers, commissions, share actions)",
+  bridge: "Cross-chain bridge form labels",
+  lending: "Lending page (supply, borrow, positions)",
+};
+
 // ---------------------------------------------------------------------------
 // Sub-components
 // ---------------------------------------------------------------------------
@@ -173,6 +209,7 @@ const SectionCard = ({
 }) => {
   const keyCount = countKeys(data);
   const [expanded, setExpanded] = useState(false);
+  const description = SECTION_DESCRIPTIONS[name] || "";
 
   return (
     <div className="bg-card rounded-lg border border-border overflow-hidden">
@@ -181,15 +218,20 @@ const SectionCard = ({
         onClick={() => setExpanded(!expanded)}
         className="w-full flex items-center justify-between px-5 py-4 hover:bg-muted/30 transition-colors text-left"
       >
-        <div className="flex items-center gap-3">
-          <span className="text-lg font-semibold text-foreground capitalize">
-            {name}
-          </span>
-          <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-mono">
-            {keyCount} strings
-          </span>
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-3">
+            <span className="text-lg font-semibold text-foreground capitalize">
+              {name}
+            </span>
+            <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full font-mono">
+              {keyCount} strings
+            </span>
+          </div>
+          {description && (
+            <span className="text-xs text-muted-foreground">{description}</span>
+          )}
         </div>
-        <span className="text-muted-foreground text-sm">
+        <span className="text-muted-foreground text-sm shrink-0 ml-4">
           {expanded ? "Collapse" : "Expand"}
         </span>
       </button>
@@ -221,49 +263,75 @@ type Story = StoryObj;
 export const Overview: Story = {
   name: "Content Overview",
   render: () => {
-    const sections = Object.entries(content) as [string, unknown][];
+    const OverviewPage = () => {
+      const sections = Object.entries(content) as [string, unknown][];
+      const [filter, setFilter] = useState("");
+      const filtered = filter
+        ? sections.filter(([name]) =>
+            name.toLowerCase().includes(filter.toLowerCase()),
+          )
+        : sections;
 
-    return (
-      <div className="p-8 bg-background min-h-screen">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-2 text-foreground">
-            Content System
-          </h1>
-          <p className="text-lg text-muted-foreground mb-2">
-            Centralized text/copy for the entire SKAI platform. Modify content
-            here without touching component code.
-          </p>
-          <code className="text-sm text-primary font-mono block mb-8">
-            {"import { content, interpolate, getContent } from '@skai/ui';"}
-          </code>
+      return (
+        <div className="p-8 bg-background min-h-screen">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold mb-2 text-foreground">
+              Content System
+            </h1>
+            <p className="text-lg text-muted-foreground mb-2">
+              Centralized text/copy for the entire SKAI platform. Modify content
+              here without touching component code.
+            </p>
+            <code className="text-sm text-primary font-mono block mb-8">
+              {"import { content, interpolate, getContent } from '@skai/ui';"}
+            </code>
 
-          {/* Stats bar */}
-          <div className="flex gap-6 mb-8 flex-wrap">
-            <div className="bg-card border border-border rounded-lg px-5 py-3">
-              <div className="text-2xl font-bold text-foreground font-mono">
-                {sections.length}
+            {/* Stats bar */}
+            <div className="flex gap-6 mb-6 flex-wrap">
+              <div className="bg-card border border-border rounded-lg px-5 py-3">
+                <div className="text-2xl font-bold text-foreground font-mono">
+                  {sections.length}
+                </div>
+                <div className="text-xs text-muted-foreground">Top Sections</div>
               </div>
-              <div className="text-xs text-muted-foreground">Top Sections</div>
+              <div className="bg-card border border-border rounded-lg px-5 py-3">
+                <div className="text-2xl font-bold text-foreground font-mono">
+                  {countKeys(content)}
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  Total Strings
+                </div>
+              </div>
             </div>
-            <div className="bg-card border border-border rounded-lg px-5 py-3">
-              <div className="text-2xl font-bold text-foreground font-mono">
-                {countKeys(content)}
-              </div>
-              <div className="text-xs text-muted-foreground">
-                Total Strings
-              </div>
-            </div>
-          </div>
 
-          {/* Sections */}
-          <div className="space-y-3">
-            {sections.map(([name, data]) => (
-              <SectionCard key={name} name={name} data={data} />
-            ))}
+            {/* Filter input */}
+            <div className="mb-6">
+              <input
+                type="text"
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                placeholder="Filter sections..."
+                className="w-full max-w-sm bg-muted border border-border rounded-md px-3 py-2 text-sm text-foreground font-mono focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              {filter && (
+                <span className="text-xs text-muted-foreground ml-3">
+                  Showing {filtered.length} of {sections.length} sections
+                </span>
+              )}
+            </div>
+
+            {/* Sections */}
+            <div className="space-y-3">
+              {filtered.map(([name, data]) => (
+                <SectionCard key={name} name={name} data={data} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    };
+
+    return <OverviewPage />;
   },
 };
 
@@ -318,6 +386,31 @@ export const InterpolateDemo: Story = {
           label: "Referral share text",
           template: content.landing.waitlist.dashboard.referral.shareText,
           vars: { username: "casey" },
+        },
+        {
+          label: "Perp order action",
+          template: content.perp.actions.placeOrder,
+          vars: { side: "Long", type: "Market" },
+        },
+        {
+          label: "Prediction results count",
+          template: content.predict.resultsCount,
+          vars: { count: "42" },
+        },
+        {
+          label: "Earn faucet next claim",
+          template: content.earn.faucet.nextClaim,
+          vars: { time: "4h 23m" },
+        },
+        {
+          label: "Streaming viewer count",
+          template: content.streaming.viewers,
+          vars: { count: "1,247" },
+        },
+        {
+          label: "Footer copyright year",
+          template: content.footer.copyright,
+          vars: { year: "2026" },
         },
       ];
 
@@ -430,23 +523,62 @@ export const GetContentDemo: Story = {
       const result = getContent(path);
 
       const presets = [
+        // Global
         "global.brand.name",
         "global.brand.tagline",
+        "global.actions.connect",
+        "global.errors.generic",
+        // App
         "app.hero.titleLine1",
         "app.hero.subtitle",
+        // Landing
         "landing.hero.title",
         "landing.hero.cta",
         "landing.footer.copyright",
+        // Trading
         "trading.swap.title",
         "trading.swap.button",
+        // Portfolio
         "portfolio.overview.title",
+        // Play
         "play.hilo.title",
+        // AI
         "ai.title",
+        // Perp
+        "perp.badge",
+        "perp.side.long",
+        "perp.labels.leverage",
+        "perp.actions.openLong",
+        // Predict
+        "predict.title",
+        "predict.categories.all",
+        // Leaderboard
+        "leaderboard.title",
+        "leaderboard.tiers.diamond",
+        // Earn
+        "earn.title",
+        "earn.faucet.title",
+        // Social
+        "social.discover.title",
+        "social.messages.title",
+        // Account
+        "account.tabs.profile",
+        // Governance
+        "governance.title",
+        // Streaming
+        "streaming.title",
+        // Copy Trading
+        "copyTrading.title",
+        // Support
+        "support.title",
+        // Referral
+        "referral.title",
+        // Settings
         "settings.title",
+        // Wallet
         "wallet.connect.title",
-        "global.actions.connect",
-        "global.errors.generic",
-        "landing.waitlist.shared.headline.prefix",
+        // Empty States
+        "emptyStates.noResults",
       ];
 
       return (
@@ -542,5 +674,86 @@ export const GetContentDemo: Story = {
     };
 
     return <GetContentPlayground />;
+  },
+};
+
+export const CoverageMap: Story = {
+  name: "Coverage Map",
+  render: () => {
+    const sections = Object.entries(content) as [string, unknown][];
+    const totalStrings = countKeys(content);
+
+    return (
+      <div className="p-8 bg-background min-h-screen">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-4xl font-bold mb-2 text-foreground">
+            Content Coverage Map
+          </h1>
+          <p className="text-lg text-muted-foreground mb-8">
+            All {sections.length} content sections with {totalStrings} total
+            strings. Each card shows a top-level section, its description, and
+            string count.
+          </p>
+
+          {/* Grid of section cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            {sections.map(([name, data]) => {
+              const count = countKeys(data);
+              return (
+                <div
+                  key={name}
+                  className="bg-card border border-border rounded-lg p-4 hover:border-primary/40 transition-colors"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-base font-semibold text-foreground capitalize">
+                      {name}
+                    </span>
+                    <span className="text-xs font-mono bg-primary/10 text-primary px-2 py-0.5 rounded-full">
+                      {count}
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {SECTION_DESCRIPTIONS[name] || "No description available"}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Usage guide */}
+          <div className="bg-card border border-border rounded-lg p-6">
+            <h2 className="text-xl font-semibold mb-4 text-foreground">
+              How to Use
+            </h2>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h3 className="font-medium text-foreground mb-1">
+                  1. Direct access (recommended)
+                </h3>
+                <code className="text-xs text-primary font-mono bg-muted px-2 py-1 rounded block">
+                  {`import { content } from "@skai/ui";\nconst title = content.perp.badge; // "SKAI PERP DEX"`}
+                </code>
+              </div>
+              <div>
+                <h3 className="font-medium text-foreground mb-1">
+                  2. With interpolation
+                </h3>
+                <code className="text-xs text-primary font-mono bg-muted px-2 py-1 rounded block">
+                  {`import { content, interpolate } from "@skai/ui";\ninterpolate(content.perp.actions.placeOrder, { side: "Long", type: "Market" });`}
+                </code>
+              </div>
+              <div>
+                <h3 className="font-medium text-foreground mb-1">
+                  3. Dynamic path access
+                </h3>
+                <code className="text-xs text-primary font-mono bg-muted px-2 py-1 rounded block">
+                  {`import { getContent } from "@skai/ui";\nconst label = getContent("predict.categories.crypto"); // "Crypto"`}
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   },
 };

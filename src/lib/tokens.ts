@@ -20,9 +20,9 @@
 export const colors = {
   /** Primary brand colors */
   brand: {
-    /** Primary CTA color - #56C7F3 */
-    skyBlue: "#56C7F3",
-    skyBlue300: "#56C7F3",
+    /** Primary CTA color - #56C0F6 (Figma canonical) */
+    skyBlue: "#56C0F6",
+    skyBlue300: "#56C0F6",
 
     /** Premium/gold accent - #999966 */
     printersGold: "#999966",
@@ -57,10 +57,10 @@ export const colors = {
     ash: "#95A09F",
     ash300: "#95A09F",
 
-    /** Success/profit/long - #17F9B4 */
-    green: "#17F9B4",
-    green300: "#17F9B4",
-    greenO: "#17F9B4",
+    /** Success/profit/long - #2DEDAD (Figma primary), bright variant #17F9B4 */
+    green: "#2DEDAD",
+    green300: "#2DEDAD",
+    greenBright: "#17F9B4",
 
     /** Error/loss/short - #FF574A */
     red: "#FF574A",
@@ -73,11 +73,11 @@ export const colors = {
 
   /** Semantic color aliases */
   semantic: {
-    success: "#17F9B4",
+    success: "#2DEDAD",
     warning: "#FFFF16",
     error: "#FF574A",
-    info: "#56C7F3",
-    profit: "#17F9B4",
+    info: "#56C0F6",
+    profit: "#2DEDAD",
     loss: "#FF574A",
   },
 } as const;

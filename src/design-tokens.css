@@ -11,8 +11,8 @@
  *   In tailwind.config.ts, extend theme with these tokens
  * 
  * Brand Colors (from BRAND_GUIDELINES.md):
- *   Sky Blue: #56C7F3 (HSL 197 87% 64%) - Primary actions
- *   Alien Green: #17F9B4 (HSL 158 95% 53%) - Secondary accents
+ *   Sky Blue: #56C0F6 (HSL 200 90% 65%) - Primary actions
+ *   Alien Green: #2DEDAD (HSL 160 84% 55%) - Secondary accents
  *   Green Coal: #001615 - Dark background
  */
 
@@ -22,10 +22,10 @@
    * ============================================ */
 
   /* Brand Colors - Official SKAI palette */
-  --skai-brand-primary: 197 87% 64%; /* #56C7F3 - Sky Blue - Primary actions */
-  --skai-brand-secondary: 158 95% 53%; /* #17F9B4 - Alien Green - Secondary accents */
+  --skai-brand-primary: 200 90% 65%; /* #56C0F6 - Sky Blue - Primary actions */
+  --skai-brand-secondary: 160 84% 55%; /* #2DEDAD - Alien Green - Secondary accents */
   --skai-brand-background: 174 100% 4%; /* #001615 - Green Coal background */
-  --skai-brand-accent: 199 90% 75%; /* Lighter cyan for glow effects */
+  --skai-brand-accent: 200 90% 75%; /* Lighter cyan for glow effects */
 
   /* Semantic Colors - Success/Error/Warning */
   --skai-success: 142 76% 36%; /* Green - Profits, confirmations */
@@ -40,7 +40,7 @@
   --skai-warning-light: 38 92% 60%;
   --skai-warning-dark: 38 92% 40%;
 
-  --skai-info: 199 90% 65%; /* Cyan - Information (matches brand primary) */
+  --skai-info: 200 90% 65%; /* Cyan - Information (matches brand primary) */
 
   /* ============================================
    * COLOR PALETTE - Trading Specific
@@ -56,12 +56,12 @@
   --skai-price-neutral: 0 0% 50%; /* No change */
 
   /* Chart Colors */
-  --skai-chart-primary: 197 87% 64%; /* Sky Blue #56C7F3 */
-  --skai-chart-secondary: 158 95% 53%; /* Alien Green #17F9B4 */
+  --skai-chart-primary: 200 90% 65%; /* Sky Blue #56C0F6 */
+  --skai-chart-secondary: 160 84% 55%; /* Alien Green #2DEDAD */
   --skai-chart-tertiary: 17 100% 65%; /* Coral #FF7E50 */
   --skai-chart-quaternary: 49 33% 50%; /* Printer's Gold #999966 */
-  --skai-chart-line: 197 87% 64%; /* Sky Blue */
-  --skai-chart-area: 197 87% 64% / 0.2;
+  --skai-chart-line: 200 90% 65%; /* Sky Blue */
+  --skai-chart-area: 200 90% 65% / 0.2;
   --skai-chart-grid: 0 0% 20%;
 
   /* ============================================
@@ -254,12 +254,12 @@
   --popover: 170 40% 7%;
   --popover-foreground: 60 100% 97%;
 
-  /* Primary colors - Sky Blue #56C7F3 */
-  --primary: 197 87% 64%;
+  /* Primary colors - Sky Blue #56C0F6 */
+  --primary: 200 90% 65%;
   --primary-foreground: 173 100% 4%;
 
-  /* Secondary - Alien Green #17F9B4 */
-  --secondary: 158 95% 53%;
+  /* Secondary - Alien Green #2DEDAD */
+  --secondary: 160 84% 55%;
   --secondary-foreground: 173 100% 4%;
 
   /* Muted colors */
@@ -277,7 +277,7 @@
   /* Border & Ring */
   --border: 170 20% 15%;
   --input: 170 20% 15%;
-  --ring: 197 87% 64%; /* Sky Blue */
+  --ring: 200 90% 65%; /* Sky Blue */
 
   /* Radius */
   --radius: 0.5rem;
@@ -297,10 +297,10 @@
   --popover: 0 0% 100%;
   --popover-foreground: 173 100% 4%;
 
-  --primary: 197 87% 64%; /* Sky Blue #56C7F3 */
+  --primary: 200 90% 65%; /* Sky Blue #56C0F6 */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 158 95% 53%; /* Alien Green #17F9B4 */
+  --secondary: 160 84% 55%; /* Alien Green #2DEDAD */
   --secondary-foreground: 173 100% 4%;
 
   --muted: 210 40% 96%;
@@ -314,7 +314,7 @@
 
   --border: 170 15% 85%;
   --input: 170 15% 85%;
-  --ring: 197 87% 64%; /* Sky Blue */
+  --ring: 200 90% 65%; /* Sky Blue */
 }
 
 /* ============================================

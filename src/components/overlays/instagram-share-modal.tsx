@@ -243,7 +243,7 @@ const InstagramShareModal = React.forwardRef<
               className={cn(
                 "flex-1 py-2 rounded-md font-manrope text-[13px] leading-[16px] tracking-[-0.52px] transition-all",
                 format === "post"
-                  ? "bg-[#56C7F3] text-[#001615]"
+                  ? "bg-[#56C0F6] text-[#001615]"
                   : "text-white/60 hover:text-white",
               )}
             >
@@ -254,7 +254,7 @@ const InstagramShareModal = React.forwardRef<
               className={cn(
                 "flex-1 py-2 rounded-md font-manrope text-[13px] leading-[16px] tracking-[-0.52px] transition-all",
                 format === "story"
-                  ? "bg-[#56C7F3] text-[#001615]"
+                  ? "bg-[#56C0F6] text-[#001615]"
                   : "text-white/60 hover:text-white",
               )}
             >
@@ -290,7 +290,7 @@ const InstagramShareModal = React.forwardRef<
                   className={cn(
                     "relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all",
                     idx === selectedIndex
-                      ? "border-[#56C7F3]"
+                      ? "border-[#56C0F6]"
                       : "border-[#123F3C] hover:border-white/30",
                   )}
                 >
@@ -300,8 +300,8 @@ const InstagramShareModal = React.forwardRef<
                     className="w-full h-full object-cover"
                   />
                   {idx === selectedIndex && (
-                    <div className="absolute inset-0 bg-[#56C7F3]/20 flex items-center justify-center">
-                      <CheckIcon className="w-5 h-5 text-[#56C7F3]" />
+                    <div className="absolute inset-0 bg-[#56C0F6]/20 flex items-center justify-center">
+                      <CheckIcon className="w-5 h-5 text-[#56C0F6]" />
                     </div>
                   )}
                 </button>
@@ -316,7 +316,7 @@ const InstagramShareModal = React.forwardRef<
           <button
             onClick={handleShare}
             disabled={status === "sharing"}
-            className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#56C7F3] hover:bg-[#6dd4ff] disabled:opacity-70 text-[#001615] font-manrope text-[14px] leading-[18px] tracking-[-0.56px] font-medium transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#56C0F6] hover:bg-[#6dd4ff] disabled:opacity-70 text-[#001615] font-manrope text-[14px] leading-[18px] tracking-[-0.56px] font-medium transition-colors"
           >
             {status === "sharing" ? (
               "Preparing..."

@@ -49,9 +49,9 @@ window.IntersectionObserver = IntersectionObserverMock as unknown as typeof Inte
 const style = document.createElement('style');
 style.innerHTML = `
   :root {
-    --primary: 199 90% 65%;
+    --primary: 200 90% 65%;
     --primary-foreground: 225 80% 4%;
-    --secondary: 166 80% 55%;
+    --secondary: 160 84% 55%;
     --secondary-foreground: 225 80% 4%;
     --background: 225 80% 4%;
     --foreground: 0 0% 100%;
@@ -64,8 +64,8 @@ style.innerHTML = `
     --skai-green-coal-300: #001615;
     --skai-green-coal-200: #122524;
     --skai-green-coal-100: #123f3c;
-    --skai-alien-green: #17f9b4;
-    --skai-sky-blue: #56C7F3;
+    --skai-alien-green: #2dedad;
+    --skai-sky-blue: #56C0F6;
   }
 `;
 document.head.appendChild(style);

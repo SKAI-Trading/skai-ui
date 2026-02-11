@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import { cn } from "../../lib/utils";
 
 // =============================================================================
@@ -1412,7 +1412,7 @@ const iconPaths: Record<SkaiIconName, React.ReactNode> = {
  * <SkaiIcon name="hot" size="lg" />
  *
  * // Custom color
- * <SkaiIcon name="check-enclosed" color="#17F9B4" />
+ * <SkaiIcon name="check-enclosed" color="#2DEDAD" />
  *
  * // With className for additional styling
  * <SkaiIcon name="loading" className="animate-spin text-primary" />

@@ -2,16 +2,17 @@ import type { Preview } from "@storybook/react";
 import "../src/styles/index.css";
 
 // Status badge configuration for component maturity
+// stable = production-ready, new = recently added, beta = in testing, deprecated = being removed
 const STATUS_BADGES: Record<string, { label: string; color: string; bg: string }> = {
   stable: { label: "Stable", color: "#22c55e", bg: "rgba(34, 197, 94, 0.1)" },
-  beta: { label: "Beta", color: "#3b82f6", bg: "rgba(59, 130, 246, 0.1)" },
+  new: { label: "New", color: "#3b82f6", bg: "rgba(59, 130, 246, 0.1)" },
+  beta: { label: "Beta", color: "#eab308", bg: "rgba(234, 179, 8, 0.1)" },
   experimental: {
     label: "Experimental",
-    color: "#eab308",
-    bg: "rgba(234, 179, 8, 0.1)",
+    color: "#f97316",
+    bg: "rgba(249, 115, 22, 0.1)",
   },
   deprecated: { label: "Deprecated", color: "#ef4444", bg: "rgba(239, 68, 68, 0.1)" },
-  new: { label: "New", color: "#a855f7", bg: "rgba(168, 85, 247, 0.1)" },
 };
 
 // Get status from story tags
@@ -54,46 +55,53 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    // Configure story sort order - Organized hierarchy for easy navigation
+    // Configure story sort order - Designer-first hierarchy
+    // Priority: Brand identity > Content > Components > Trading > Templates > Tokens > Patterns > Figma
     options: {
       storySort: {
         method: "alphabetical",
         order: [
-          // 1. Getting Started - Onboarding docs
+          // 0. Welcome - Landing page (always first)
+          "Welcome",
+
+          // 0.5. Getting Started - Onboarding docs (MDX pages)
           "Getting Started",
           ["Introduction", "Component Status", "For Designers", "For Developers", "*"],
 
-          // 2. Brand - Logo, icons, assets
+          // 1. Brand & Identity - Colors, typography, logos, assets, guidelines
           "Brand",
-          ["Logo", "Icons", "Assets", "Guidelines", "*"],
+          ["Logo", "Icons", "Icon Library", "Guidelines", "Assets", "*"],
 
-          // 3. Design Tokens - Foundation
-          "Design Tokens",
-          ["Colors", "Typography", "Spacing", "Animation", "Theming", "*"],
+          // 2. Content Management - All editable text/copy
+          "Content",
+          ["Content System", "Content Guidelines", "Platform Constants", "Asset System", "*"],
 
-          // 4. Components - Core UI by category
+          // 3. Components - Core UI organized by function
           "Components",
           [
-            // Primitives
+            // Core primitives
             "Button",
             "Input",
             "Label",
             "Badge",
             "Card",
             "Textarea",
-            // Forms
+            "Form",
+            // Form controls
             "Checkbox",
             "Select",
             "Switch",
             "Slider",
-            "Radio",
+            "RadioGroup",
+            "Toggle",
             "Autocomplete",
             "DatePicker",
             "NumberInput",
             "CurrencyInput",
             "TagInput",
-            // Feedback
+            // Feedback & status
             "Alert",
+            "AlertDialog",
             "Progress",
             "Skeleton",
             "Spinner",
@@ -102,49 +110,74 @@ const preview: Preview = {
             "Notification",
             "EmptyState",
             "ErrorBoundary",
-            // Overlay
+            // Overlays & dialogs
             "Dialog",
             "Sheet",
+            "Drawer",
             "Popover",
             "Tooltip",
             "DropdownMenu",
             "ContextMenu",
             "HoverCard",
             "ConfirmDialog",
-            "Drawer",
-            // Data Display
+            // Data display
             "Avatar",
             "Table",
             "Calendar",
             "Chart",
+            "LazyChart",
             "Countdown",
             "QRCode",
             "StatCard",
             "PercentageBar",
-            "LazyChart",
-            // Layout
+            // Layout helpers
             "Separator",
             "ScrollArea",
             "Accordion",
             "Tabs",
-            "Resizable",
             "Carousel",
             "Masonry",
+            "Resizable",
             "Stepper",
-            // Navigation
-            "Breadcrumb",
-            "Pagination",
-            "DockIcon",
-            "NavGroup",
+            "Tour",
             // Utility
             "ThemeToggle",
             "LoadingButton",
             "OnlineIndicator",
-            "CopyButton",
+            "DockIcon",
+            "ParticleBackground",
+            "TickerBackground",
+            "BarTickerBackground",
+            "CosmicBackground",
             "*",
           ],
 
-          // 5. Trading - Crypto/DeFi specific
+          // 4. Forms - Dedicated form components and patterns
+          "Forms",
+          ["InputOTP", "SearchInput", "PasswordInput", "*"],
+
+          // 5. Overlays - Modal and overlay components
+          "Overlays",
+          [
+            "Command",
+            "WalletChoiceModal",
+            "WaitlistModal",
+            "EmailVerificationModal",
+            "EmojiPicker",
+            "SpotlightOverlay",
+            "SpectatorOverlay",
+            "*",
+          ],
+
+          // 6. Feedback - Toast and notification components
+          "Feedback",
+          ["Toaster", "*"],
+
+          // 7. Navigation - Nav components
+          "Navigation",
+          ["Breadcrumb", "Pagination", "DockBar", "MobileNav", "*"],
+
+          // 8. Trading - Crypto/DeFi specific components
           "Trading",
           [
             "TokenIcon",
@@ -155,91 +188,123 @@ const preview: Preview = {
             "SwapInput",
             "BalanceDisplay",
             "FeeDisplay",
+            "PnLDisplay",
             "OrderBook",
             "DepthChart",
             "CandlestickChart",
-            "TradingLayout",
             "NetworkBadge",
             "GasEstimate",
             "TransactionStatus",
             "LeverageSlider",
             "LiquidationWarning",
-            "FundingRate",
+            "FundingRateDisplay",
+            "RiskGauge",
+            "StatusIndicator",
             "TierBadge",
             "TradeSettings",
+            "WalletAddress",
             "AccountMenu",
             "*",
           ],
 
-          // 6. Layout Templates
+          // 9. Layout - Page structures and layout primitives
           "Layout",
           [
             "Primitives",
+            "PageLayouts",
+            "AppShell",
+            "AppHeader",
+            "Main App Header",
+            "AppFooter",
+            "Main App Footer",
+            "LandingHeader",
+            "Sidebar",
             "CenteredLayout",
             "DashboardLayout",
             "TradingLayout",
             "ScrollingTicker",
             "TickerTape",
             "StatusBar",
+            "NavGroup",
+            "Collapsible",
+            "Stepper",
+            "Accordion",
+            "Resizable",
             "*",
           ],
 
-          // 7. Patterns - Best practices
+          // 10. Templates - Full page compositions
+          "Templates",
+          [
+            "Home",
+            "Trade",
+            "Swap",
+            "Portfolio",
+            "Account",
+            "AI Agent",
+            "Predict",
+            "Earn",
+            "Governance",
+            "Leaderboard",
+            "*",
+          ],
+
+          // 11. Design Tokens - Spacing, animation, etc.
+          "Design Tokens",
+          ["Typography", "Spacing & Layout", "Animation", "Animation & Motion", "*"],
+
+          // 12. Patterns - Best practice guides
           "Patterns",
           [
             "Common",
             "Forms",
             "Feedback",
             "Loading States",
-            "Notifications",
+            "Notifications & Alerts",
             "Mobile First",
-            "Web3",
-            "Game UI",
+            "Trading",
             "*",
           ],
 
-          // 8. Documentation - Guides
+          // 13. Documentation - Reference guides
           "Documentation",
           [
             "Accessibility",
             "Responsive Design",
             "Content Guidelines",
+            "Content System",
             "Data Visualization",
             "Theming",
+            "Design Token Exports",
             "Social Features",
+            "Game UI Patterns",
+            "Platform Constants",
+            "Web3 Patterns",
+            "Asset System",
             "*",
           ],
 
-          // 9. Templates - Full page examples
-          "Templates",
-          ["Page Mockups", "Production Pages", "*"],
-
-          // 10. Tools - Utilities for development
-          "Tools",
-          [
-            "Theme Configurator",
-            "Color Palette Generator",
-            "Animation Timeline",
-            "Icon Library",
-            "AI Generator",
-            "Performance Profiler",
-            "Visual Regression",
-            "*",
-          ],
-
-          // 11. Design System - Internal tooling
+          // 14. Design System - Internal tooling, Figma integration
           "Design System",
           [
-            "Dashboard",
-            "Analytics",
-            "Changelog",
-            "NPM Dashboard",
+            "Design Tokens",
             "Figma Integration",
-            "Component Playground",
-            "Mock Data",
-            "Request Queue",
+            "Figma Reference",
+            "Token Sync",
+            "Token Exports",
+            "Theme Validator",
+            "Responsive Preview",
+            "Keyboard Shortcuts",
+            "Composition Guide",
+            "Changelog",
             "*",
           ],
+
+          // 15. Utility - Dev utilities
+          "Utility",
+          ["ThemeProvider", "CopyButton", "ThirdwebOTPHandler", "*"],
+
+          "Utilities",
 
           // Catch-all
           "*",

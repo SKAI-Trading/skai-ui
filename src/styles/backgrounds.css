@@ -97,7 +97,7 @@
   border-radius: 1px 1px 0 0;
   transform-origin: bottom center;
 
-  /* Cyan gradient matching Figma - Sky Blue (#56C7F3) */
+  /* Cyan gradient matching Figma - Sky Blue (#56C0F6) */
   background: linear-gradient(
     to top,
     rgba(86, 199, 243, 0.05) 0%,

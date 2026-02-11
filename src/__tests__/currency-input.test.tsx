@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import {
   CurrencyInput,
-  formatCurrency,
+  formatCurrencyInput as formatCurrency,
   parseFormattedValue,
 } from "../components/forms/currency-input";
 

@@ -9,7 +9,7 @@
  * import { cssVar, cssVarWithFallback, injectFallbackStyles } from "@skai/ui";
  *
  * // Use in inline styles
- * <div style={{ color: cssVar("--primary", "#17F9B4") }} />
+ * <div style={{ color: cssVar("--primary", "#2DEDAD") }} />
  *
  * // Generate fallback stylesheet
  * injectFallbackStyles();
@@ -28,12 +28,12 @@ export const defaultFallbacks: Record<string, string> = {
   "--popover": "hsl(170, 40%, 7%)",
   "--popover-foreground": "hsl(60, 100%, 97%)",
 
-  // Colors - Primary (Sky Blue #56C7F3)
-  "--primary": "hsl(197, 87%, 64%)",
+  // Colors - Primary (Sky Blue #56C0F6)
+  "--primary": "hsl(200, 90%, 65%)",
   "--primary-foreground": "hsl(173, 100%, 4%)",
 
-  // Colors - Secondary (Alien Green #17F9B4)
-  "--secondary": "hsl(158, 95%, 53%)",
+  // Colors - Secondary (Alien Green #2DEDAD)
+  "--secondary": "hsl(160, 84%, 55%)",
   "--secondary-foreground": "hsl(173, 100%, 4%)",
 
   // Colors - Muted
@@ -91,7 +91,7 @@ export function supportsCSSVariables(): boolean {
  *
  * @example
  * ```tsx
- * <div style={{ backgroundColor: cssVar("--primary", "#17F9B4") }} />
+ * <div style={{ backgroundColor: cssVar("--primary", "#2DEDAD") }} />
  * ```
  */
 export function cssVar(property: string, fallback?: string): string {

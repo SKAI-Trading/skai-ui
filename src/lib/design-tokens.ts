@@ -46,8 +46,9 @@ export const greenCoalColors = {
  * Accent colors
  */
 export const accentColors = {
-  alienGreen: "#17F9B4", // Primary accent (same as green.300)
-  skyBlue: "#56C7F3", // Secondary accent
+  alienGreen: "#2DEDAD", // Primary accent (Figma canonical)
+  alienGreenBright: "#17F9B4", // Bright variant (used in semantic/trading)
+  skyBlue: "#56C0F6", // Primary CTA (Figma canonical)
   printersGold: "#999966", // Gold accent
 } as const;
 
@@ -56,8 +57,9 @@ export const accentColors = {
  */
 export const semanticColors = {
   green: {
-    300: "#17F9B4", // Profit, success, buy, long
-    opacity24: "rgba(23, 249, 180, 0.24)", // Transparent green
+    300: "#2DEDAD", // Profit, success, buy, long (Figma primary)
+    bright: "#17F9B4", // Bright variant for high-visibility states
+    opacity24: "rgba(45, 237, 173, 0.24)", // Transparent green (matches #2DEDAD)
   },
   red: {
     300: "#FF574A", // Loss, error, sell, short
@@ -95,7 +97,7 @@ export const extendedAccentColors = {
   neonPink: "#FF006E", // Hot pink accent
   neonMint: "#2CECAD", // Bright mint accent
   teal: "#1FB89A", // Teal/emerald accent
-  skyBlueLight: "#56C0F6", // Light sky blue variant
+  alienGreenBright: "#17F9B4", // Bright alien green variant (legacy semantic green)
 } as const;
 
 /**
@@ -143,7 +145,7 @@ export const utilityColors = {
  * Hover state colors (derived from base colors for :hover variants)
  */
 export const hoverColors = {
-  skyBlueHover: "#3A9FD8", // sky-blue darkened for hover
+  skyBlueHover: "#3A9BD4", // sky-blue (#56C0F6) darkened for hover
   nightBlueHover: "#252532", // night-blue lighter for hover
   nightBlueHoverAlt: "#1E1E36", // night-blue subtle hover variant
   discordHover: "#4752C4", // discord blurple darkened for hover
@@ -166,9 +168,9 @@ export const gradientColors = {
  */
 export const gradients = {
   primary: {
-    from: "#56C7F3", // Sky Blue
-    to: "#17F9B4", // Alien Green
-    css: "linear-gradient(135deg, #56C7F3 0%, #17F9B4 100%)",
+    from: "#56C0F6", // Sky Blue (Figma canonical)
+    to: "#2DEDAD", // Alien Green (Figma canonical)
+    css: "linear-gradient(135deg, #56C0F6 0%, #2DEDAD 100%)",
   },
 } as const;
 
@@ -229,7 +231,7 @@ export const skaiColors = {
   "neon-pink": extendedAccentColors.neonPink,
   "neon-mint": extendedAccentColors.neonMint,
   teal: extendedAccentColors.teal,
-  "sky-blue-light": extendedAccentColors.skyBlueLight,
+  "alien-green-bright": extendedAccentColors.alienGreenBright,
 
   // Surfaces
   "deep-navy": surfaceColors.deepNavy,
@@ -1017,7 +1019,7 @@ export const skaiButton = {
       background: "transparent",
       border: accentColors.skyBlue,
       text: accentColors.skyBlue,
-      hoverBackground: "rgba(86, 199, 243, 0.1)",
+      hoverBackground: "rgba(86, 192, 246, 0.1)",
       focusRing: accentColors.skyBlue,
     },
     tertiary: {

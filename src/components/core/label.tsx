@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/utils";
@@ -36,11 +36,11 @@ const skaiTagVariants = cva(
       // SKAI Tag Types (from Figma Labels section)
       tagType: {
         // Fill: Solid Alien Green background
-        fill: "bg-[#17F9B4] text-[#001615]",
+        fill: "bg-[#2DEDAD] text-[#001615]",
         // Stroke: Transparent with Alien Green border
-        stroke: "bg-transparent border border-[#17F9B4] text-[#17F9B4]",
+        stroke: "bg-transparent border border-[#2DEDAD] text-[#2DEDAD]",
         // Flag: Solid background with slight radius
-        flag: "bg-[#17F9B4] text-[#001615]",
+        flag: "bg-[#2DEDAD] text-[#001615]",
       },
       // SKAI Tag Sizes (from Figma)
       tagSize: {

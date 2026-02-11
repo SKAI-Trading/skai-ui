@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import { cn } from "../../lib/utils";
 import { SkaiIcon, type SkaiIconName } from "../branding/skai-icon";
 
@@ -98,7 +98,7 @@ const MainAppFooter = React.forwardRef<HTMLElement, MainAppFooterProps>(
                 href={socialLinks.discord}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#56C7F3] transition-colors"
+                className="text-white hover:text-[#56C0F6] transition-colors"
                 aria-label="Discord"
               >
                 <SkaiIcon name="discord" size="sm" />
@@ -109,7 +109,7 @@ const MainAppFooter = React.forwardRef<HTMLElement, MainAppFooterProps>(
                 href={socialLinks.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#56C7F3] transition-colors"
+                className="text-white hover:text-[#56C0F6] transition-colors"
                 aria-label="Telegram"
               >
                 <SkaiIcon name="message" size="sm" />
@@ -120,7 +120,7 @@ const MainAppFooter = React.forwardRef<HTMLElement, MainAppFooterProps>(
                 href={socialLinks.x}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#56C7F3] transition-colors"
+                className="text-white hover:text-[#56C0F6] transition-colors"
                 aria-label="X (Twitter)"
               >
                 <SkaiIcon name="x" size="sm" />
@@ -134,7 +134,7 @@ const MainAppFooter = React.forwardRef<HTMLElement, MainAppFooterProps>(
               <NavLink
                 key={item.label}
                 to={item.href || "#"}
-                className="flex items-center gap-1.5 text-white hover:text-[#56C7F3] transition-colors"
+                className="flex items-center gap-1.5 text-white hover:text-[#56C0F6] transition-colors"
               >
                 {item.icon && <SkaiIcon name={item.icon} size="sm" />}
                 <span className="font-manrope text-[12px] leading-[16px] tracking-[-0.48px]">
@@ -150,7 +150,7 @@ const MainAppFooter = React.forwardRef<HTMLElement, MainAppFooterProps>(
               className={cn(
                 "flex items-center gap-1 px-2 py-0.5 rounded-full",
                 connectionStatus.connected
-                  ? "bg-[#17F9B4]"
+                  ? "bg-[#2DEDAD]"
                   : "bg-[#FF574A]",
               )}
             >
@@ -178,7 +178,7 @@ const MainAppFooter = React.forwardRef<HTMLElement, MainAppFooterProps>(
           {/* Right: Page Links */}
           <div className="flex items-center gap-6 shrink-0">
             {footerLinks.map((link) => {
-              const linkClass = "font-manrope text-[12px] leading-[16px] tracking-[-0.48px] text-white hover:text-[#56C7F3] transition-colors";
+              const linkClass = "font-manrope text-[12px] leading-[16px] tracking-[-0.48px] text-white hover:text-[#56C0F6] transition-colors";
 
               if (link.onClick) {
                 return (

@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import { cn } from "../../lib/utils";
 
 // =============================================================================
@@ -69,12 +69,12 @@ const SkaiLogoIcon: React.FC<{ width: number; height: number; fill: string; vari
       {useGradient && (
         <defs>
           <linearGradient id="skai-icon-grad-0" x1="0" y1="0" x2="46" y2="64" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#56C7F3" />
-            <stop offset="1" stopColor="#17F9B4" />
+            <stop stopColor="#56C0F6" />
+            <stop offset="1" stopColor="#2DEDAD" />
           </linearGradient>
           <linearGradient id="skai-icon-grad-1" x1="11" y1="22" x2="57" y2="64" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#56C7F3" />
-            <stop offset="1" stopColor="#17F9B4" />
+            <stop stopColor="#56C0F6" />
+            <stop offset="1" stopColor="#2DEDAD" />
           </linearGradient>
         </defs>
       )}
@@ -173,7 +173,7 @@ const SkaiLogoText: React.FC<{ width: number; height: number; fill: string }> = 
  * SKAI Logo - Official brand logo matching Figma design system
  *
  * Lightning bolt icon + "Skai.trade" wordmark.
- * Uses Sky Blue (#56C7F3) → Alien Green (#17F9B4) gradient on icon.
+ * Uses Sky Blue (#56C0F6) → Alien Green (#2DEDAD) gradient on icon.
  *
  * @example
  * // Default (medium, white variant)

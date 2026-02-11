@@ -50,7 +50,7 @@ const SkaiLightningIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
     <path
       d="M0 23.5543C0 10.5456 10.5456 0 23.5543 0C36.5629 0 47.1085 10.5456 47.1085 23.5543V24.4457C47.1085 37.4544 36.5629 48 23.5543 48C10.5456 48 0 37.4544 0 24.4457V23.5543Z"
-      fill="#56C7F3"
+      fill="#56C0F6"
     />
     <path
       d="M21.8472 27.2045L24.0223 25.0294C24.1929 24.8588 24.0725 24.5649 23.8301 24.5649H21.3396C20.8937 24.5649 20.6499 24.0444 20.9367 23.7017L29.8551 13.0714C30.0042 12.895 29.878 12.624 29.6471 12.624H25.3027C24.7091 12.624 24.1413 12.8606 23.7226 13.2807L13.7002 23.3633C13.3575 23.7089 13.3575 24.2667 13.7016 24.6108L15.9212 26.8303C16.2839 27.1931 16.7743 27.3967 17.2862 27.3967H21.3812C21.5547 27.3967 21.7224 27.3279 21.8457 27.2045H21.8472Z"
@@ -66,23 +66,23 @@ const SkaiLightningIcon: React.FC<{ className?: string }> = ({ className }) => (
 /** External Wallet Connect Icon */
 const ExternalWalletIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
-    <rect width="48" height="48" rx="24" fill="#56C7F3" fillOpacity="0.1" />
+    <rect width="48" height="48" rx="24" fill="#56C0F6" fillOpacity="0.1" />
     <path
       d="M14 24C14 18.477 18.477 14 24 14C29.523 14 34 18.477 34 24C34 29.523 29.523 34 24 34"
-      stroke="#56C7F3"
+      stroke="#56C0F6"
       strokeWidth="2"
       strokeLinecap="round"
     />
     <path
       d="M24 20V24L27 27"
-      stroke="#56C7F3"
+      stroke="#56C0F6"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M14 30L18 34M14 34L18 30"
-      stroke="#56C7F3"
+      stroke="#56C0F6"
       strokeWidth="2"
       strokeLinecap="round"
     />
@@ -158,7 +158,7 @@ export function WalletChoiceModal({
           {/* Email Wallet Option */}
           <button
             onClick={onSelectEmailWallet}
-            className="group flex w-full items-start gap-3 rounded-[12px] border-[1.5px] border-[#56c7f3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56c7f3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:p-6"
+            className="group flex w-full items-start gap-3 rounded-[12px] border-[1.5px] border-[#56C0F6] bg-[#001615] p-4 text-left transition-all hover:bg-[#56C0F6]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:p-6"
           >
             {/* Icon */}
             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-14 lg:w-14">
@@ -168,7 +168,7 @@ export function WalletChoiceModal({
             <div className="w-px self-stretch border-l border-dashed border-[#123f3c] opacity-80" />
 
             {/* Content */}
-            <div className="flex-1 text-[#56C7F3]">
+            <div className="flex-1 text-[#56C0F6]">
               <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.8px]">
                 Use built in email wallet
               </h3>
@@ -181,7 +181,7 @@ export function WalletChoiceModal({
           {/* External Wallet Option */}
           <button
             onClick={onSelectExternalWallet}
-            className="group flex w-full items-start gap-3 rounded-[12px] border-[1.5px] border-[#56c7f3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56c7f3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:p-6"
+            className="group flex w-full items-start gap-3 rounded-[12px] border-[1.5px] border-[#56C0F6] bg-[#001615] p-4 text-left transition-all hover:bg-[#56C0F6]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:p-6"
           >
             {/* Icon */}
             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-14 lg:w-14">
@@ -191,7 +191,7 @@ export function WalletChoiceModal({
             <div className="w-px self-stretch border-l border-dashed border-[#123f3c] opacity-80" />
 
             {/* Content */}
-            <div className="flex-1 text-[#56C7F3]">
+            <div className="flex-1 text-[#56C0F6]">
               <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.8px]">
                 Link external wallet
               </h3>

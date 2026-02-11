@@ -1,7 +1,13 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)", "../src/**/*.mdx"],
+  stories: [
+    // Welcome page first
+    "../src/docs/Welcome.stories.tsx",
+    // Then all other stories and docs
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../src/**/*.mdx",
+  ],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -14,9 +20,8 @@ const config: StorybookConfig = {
   viteFinal: async (config) => {
     return config;
   },
-  // GitHub integration for designers
+  // External references for designers
   refs: {
-    // Link to main design docs
     "design-docs": {
       title: "Design Docs",
       url: "https://docs.skai.trade",

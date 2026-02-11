@@ -1,4 +1,4 @@
-/**
+﻿/**
  * WaitlistModal - Email capture modal for waitlist signup
  *
  * Features:
@@ -47,19 +47,19 @@ const GoogleIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
     <path
       d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-      fill="#56C7F3"
+      fill="#56C0F6"
     />
     <path
       d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-      fill="#56C7F3"
+      fill="#56C0F6"
     />
     <path
       d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-      fill="#56C7F3"
+      fill="#56C0F6"
     />
     <path
       d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-      fill="#56C7F3"
+      fill="#56C0F6"
     />
   </svg>
 );
@@ -219,7 +219,7 @@ export function WaitlistModal({
       {/* Loading Overlay */}
       {isLoading && (
         <div className="absolute inset-0 z-[10001] flex flex-col items-center justify-center gap-3 bg-[#001615]/80">
-          <SpinnerIcon className="h-8 w-8 text-[#17F9B4]" />
+          <SpinnerIcon className="h-8 w-8 text-[#2DEDAD]" />
           <p className="font-manrope text-sm text-white/70">Authenticating...</p>
           {onCancelAuth && (
             <button
@@ -290,7 +290,7 @@ export function WaitlistModal({
                   "font-manrope w-full rounded-[12px] border bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] text-white transition-colors placeholder:text-[#5d6b6a] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:px-6 lg:py-5 lg:text-[16px] lg:leading-[22px]",
                   emailError
                     ? "border-[#FF7E50] focus:border-[#FF7E50]"
-                    : "border-[#123f3c] focus:border-[#17F9B4]"
+                    : "border-[#123f3c] focus:border-[#2DEDAD]"
                 )}
                 aria-label="Email address"
                 aria-invalid={!!emailError}
@@ -312,7 +312,7 @@ export function WaitlistModal({
           <button
             type="submit"
             disabled={!email.trim() || isLoading}
-            className="md:py-4.5 font-manrope md:mb-5.5 mb-5 w-full rounded-[12px] bg-[#56c7f3] px-6 py-4 text-center text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56c7f3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-8 md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:mb-6 lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
+            className="md:py-4.5 font-manrope md:mb-5.5 mb-5 w-full rounded-[12px] bg-[#56C0F6] px-6 py-4 text-center text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C0F6]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-8 md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:mb-6 lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
           >
             Continue
           </button>
@@ -336,10 +336,10 @@ export function WaitlistModal({
                 <button
                   onClick={onGoogleLogin}
                   disabled={isLoading}
-                  className="md:py-4.5 flex flex-1 items-center justify-center gap-2 rounded-[12px] border-[1.5px] border-[#56c7f3] bg-[#001615] px-4 py-4 transition-all hover:border-[#56c7f3]/80 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 lg:rounded-[16px] lg:px-[22px] lg:py-5"
+                  className="md:py-4.5 flex flex-1 items-center justify-center gap-2 rounded-[12px] border-[1.5px] border-[#56C0F6] bg-[#001615] px-4 py-4 transition-all hover:border-[#56C0F6]/80 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 lg:rounded-[16px] lg:px-[22px] lg:py-5"
                 >
                   <GoogleIcon className="h-5 w-5 shrink-0 md:h-[22px] md:w-[22px] lg:h-6 lg:w-6" />
-                  <span className="font-manrope text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#56c7f3] md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
+                  <span className="font-manrope text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#56C0F6] md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                     Google
                   </span>
                 </button>
@@ -350,10 +350,10 @@ export function WaitlistModal({
                 <button
                   onClick={onAppleLogin}
                   disabled={isLoading}
-                  className="md:py-4.5 flex flex-1 items-center justify-center gap-2 rounded-[12px] border-[1.5px] border-[#56c7f3] bg-[#001615] px-4 py-4 transition-all hover:border-[#56c7f3]/80 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 lg:rounded-[16px] lg:px-[22px] lg:py-5"
+                  className="md:py-4.5 flex flex-1 items-center justify-center gap-2 rounded-[12px] border-[1.5px] border-[#56C0F6] bg-[#001615] px-4 py-4 transition-all hover:border-[#56C0F6]/80 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 lg:rounded-[16px] lg:px-[22px] lg:py-5"
                 >
-                  <AppleIcon className="h-5 w-5 shrink-0 text-[#56c7f3] md:h-[22px] md:w-[22px] lg:h-6 lg:w-6" />
-                  <span className="font-manrope text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#56c7f3] md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
+                  <AppleIcon className="h-5 w-5 shrink-0 text-[#56C0F6] md:h-[22px] md:w-[22px] lg:h-6 lg:w-6" />
+                  <span className="font-manrope text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#56C0F6] md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                     Apple
                   </span>
                 </button>

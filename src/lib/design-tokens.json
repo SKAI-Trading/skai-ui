@@ -11,9 +11,9 @@
   "colors": {
     "brand": {
       "skyBlue": {
-        "300": "#56C7F3",
-        "DEFAULT": "#56C7F3",
-        "description": "Primary brand color - CTAs, links, highlights"
+        "300": "#56C0F6",
+        "DEFAULT": "#56C0F6",
+        "description": "Primary brand color - CTAs, links, highlights (Figma canonical)"
       },
       "greenCoal": {
         "100": "#123F3C",
@@ -44,10 +44,10 @@
         "description": "Placeholder text, muted content"
       },
       "green": {
-        "300": "#17F9B4",
-        "o": "#17F9B4",
-        "DEFAULT": "#17F9B4",
-        "description": "Success states, profit, long positions"
+        "300": "#2DEDAD",
+        "bright": "#17F9B4",
+        "DEFAULT": "#2DEDAD",
+        "description": "Success states, profit, long positions (Figma primary: #2DEDAD, bright: #17F9B4)"
       },
       "red": {
         "300": "#FF574A",
@@ -61,11 +61,11 @@
       "description": "Secondary text, descriptions"
     },
     "semantic": {
-      "success": "#17F9B4",
+      "success": "#2DEDAD",
       "warning": "#FFFF16",
       "error": "#FF574A",
-      "info": "#56C7F3",
-      "profit": "#17F9B4",
+      "info": "#56C0F6",
+      "profit": "#2DEDAD",
       "loss": "#FF574A"
     },
     "legacy": {

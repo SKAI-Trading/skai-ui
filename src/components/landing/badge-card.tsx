@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
 import { assets } from "../../lib/assets";
@@ -56,10 +56,10 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
 
         {/* Reward and Status */}
         <div className="flex flex-col md:flex-row items-end gap-[6px] md:gap-[10px] flex-shrink-0">
-          <span className="font-manrope font-normal text-[#17F9B4] text-[14px] md:text-[16px] lg:text-[22px] leading-[18px] md:leading-[20px] lg:leading-[26px] whitespace-nowrap">
+          <span className="font-manrope font-normal text-[#2DEDAD] text-[14px] md:text-[16px] lg:text-[22px] leading-[18px] md:leading-[20px] lg:leading-[26px] whitespace-nowrap">
             +{badgePoints} SKAI Points
           </span>
-          <span className="font-manrope text-[10px] md:text-[8px] lg:text-[11px] leading-[12px] md:leading-[10px] lg:leading-[14px] px-[8px] md:px-[8px] lg:px-[12px] py-[3px] md:py-[2px] lg:py-[4px] rounded-[8px] bg-[#17F9B4] text-[#001615] whitespace-nowrap">
+          <span className="font-manrope text-[10px] md:text-[8px] lg:text-[11px] leading-[12px] md:leading-[10px] lg:leading-[14px] px-[8px] md:px-[8px] lg:px-[12px] py-[3px] md:py-[2px] lg:py-[4px] rounded-[8px] bg-[#2DEDAD] text-[#001615] whitespace-nowrap">
             {statusLabel}
           </span>
         </div>

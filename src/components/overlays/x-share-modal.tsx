@@ -250,7 +250,7 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
                     className={cn(
                       "relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all",
                       idx === selectedIndex
-                        ? "border-[#56C7F3]"
+                        ? "border-[#56C0F6]"
                         : "border-[#123F3C] hover:border-white/30",
                     )}
                   >
@@ -260,8 +260,8 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
                       className="w-full h-full object-cover"
                     />
                     {idx === selectedIndex && (
-                      <div className="absolute inset-0 bg-[#56C7F3]/20 flex items-center justify-center">
-                        <CheckIcon className="w-5 h-5 text-[#56C7F3]" />
+                      <div className="absolute inset-0 bg-[#56C0F6]/20 flex items-center justify-center">
+                        <CheckIcon className="w-5 h-5 text-[#56C0F6]" />
                       </div>
                     )}
                   </button>
@@ -280,7 +280,7 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
               onChange={(e) => setEditableText(e.target.value)}
               maxLength={280}
               rows={3}
-              className="w-full rounded-xl bg-[#0a1a19] border border-[#123F3C] focus:border-[#56C7F3] outline-none px-4 py-3 font-manrope text-[13px] leading-[18px] tracking-[-0.52px] text-white resize-none transition-colors placeholder:text-white/30"
+              className="w-full rounded-xl bg-[#0a1a19] border border-[#123F3C] focus:border-[#56C0F6] outline-none px-4 py-3 font-manrope text-[13px] leading-[18px] tracking-[-0.52px] text-white resize-none transition-colors placeholder:text-white/30"
               placeholder="Write your post..."
             />
             <div className="flex justify-end mt-1">
@@ -301,7 +301,7 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
             <button
               onClick={handleShare}
               disabled={status === "sharing"}
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#56C7F3] hover:bg-[#6dd4ff] disabled:opacity-70 text-[#001615] font-manrope text-[14px] leading-[18px] tracking-[-0.56px] font-medium transition-colors"
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#56C0F6] hover:bg-[#6dd4ff] disabled:opacity-70 text-[#001615] font-manrope text-[14px] leading-[18px] tracking-[-0.56px] font-medium transition-colors"
             >
               {status === "sharing" ? (
                 "Posting..."

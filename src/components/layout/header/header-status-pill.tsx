@@ -103,7 +103,7 @@ export interface HeaderStatusPillProps extends React.ButtonHTMLAttributes<HTMLBu
  *   label="SKAI Points"
  *   formatFn={(n) => n.toLocaleString()}
  *   glowColor="rgba(86, 199, 243, 0.3)"
- *   iconColor="#56C7F3"
+ *   iconColor="#56C0F6"
  *   tooltip="Click to view leaderboard"
  *   onClick={() => navigate("/leaderboard")}
  * />
@@ -117,7 +117,7 @@ const HeaderStatusPill = React.forwardRef<HTMLButtonElement, HeaderStatusPillPro
     label,
     formatFn,
     glowColor = "rgba(86, 199, 243, 0.3)",
-    iconColor = "#56C7F3",
+    iconColor = "#56C0F6",
     isLoading,
     tooltip,
     animationDuration = 500,

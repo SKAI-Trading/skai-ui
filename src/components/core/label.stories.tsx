@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+﻿import type { Meta, StoryObj } from "@storybook/react";
 import { Label, SkaiTag } from "../core/label";
 import { Input } from "../core/input";
 import { Checkbox } from "../forms/checkbox";
@@ -11,7 +11,7 @@ import { Checkbox } from "../forms/checkbox";
  *
  * ## Figma Reference (Skai-Design - TyX8YAtNDEIvsnSLQ3IXId)
  * - Labels Section: 691:236
- *   - Fill Tags: Solid Alien Green #17F9B4 background
+ *   - Fill Tags: Solid Alien Green #2DEDAD background
  *   - Stroke Tags: Transparent with Alien Green border
  *   - Flag Tags: Solid with smaller border radius
  *
@@ -23,10 +23,10 @@ import { Checkbox } from "../forms/checkbox";
  * | Small  | 14px   | 6px / 2px | 10px      | Mulish      |
  *
  * ## Colors
- * - Fill BG: #17F9B4 (Alien Green)
+ * - Fill BG: #2DEDAD (Alien Green)
  * - Fill Text: #001615 (Green Coal 300)
- * - Stroke Border: #17F9B4
- * - Stroke Text: #17F9B4
+ * - Stroke Border: #2DEDAD
+ * - Stroke Text: #2DEDAD
  */
 const meta: Meta<typeof Label> = {
   title: "Components/Label",

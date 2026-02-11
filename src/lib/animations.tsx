@@ -634,7 +634,7 @@ export const GradientText = React.forwardRef<
 >(
   (
     {
-      colors = ["#56C7F3", "#17F9B4", "#FF7E50", "#56C7F3"],
+      colors = ["#56C0F6", "#2DEDAD", "#FF7E50", "#56C0F6"],
       duration = 3000,
       animated = true,
       className,

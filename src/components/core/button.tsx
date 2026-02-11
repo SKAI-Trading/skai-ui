@@ -74,15 +74,15 @@ const skaiButtonVariants = cva(
       skaiType: {
         // Primary: Sky Blue bg, Green Coal text, hover → Alien Green
         primary:
-          "bg-[#56C7F3] text-[#001615] hover:bg-[#17F9B4] focus-visible:ring-[#17F9B4]",
+          "bg-[#56C0F6] text-[#001615] hover:bg-[#2DEDAD] focus-visible:ring-[#2DEDAD]",
         // Secondary: Transparent bg, Sky Blue border/text
         secondary:
-          "bg-transparent border border-[#56C7F3] text-[#56C7F3] hover:bg-[#56C7F3]/10 focus-visible:ring-[#56C7F3]",
+          "bg-transparent border border-[#56C0F6] text-[#56C0F6] hover:bg-[#56C0F6]/10 focus-visible:ring-[#56C0F6]",
         // Tertiary: Transparent bg, White text, hover → Alien Green
         tertiary:
-          "bg-transparent text-white hover:text-[#17F9B4] focus-visible:ring-[#17F9B4]",
+          "bg-transparent text-white hover:text-[#2DEDAD] focus-visible:ring-[#2DEDAD]",
         // Link: Alien Green text, underlined
-        link: "bg-transparent text-[#17F9B4] hover:text-[#56C7F3] underline underline-offset-4",
+        link: "bg-transparent text-[#2DEDAD] hover:text-[#56C0F6] underline underline-offset-4",
       },
       // SKAI Button Sizes (from Figma)
       skaiSize: {

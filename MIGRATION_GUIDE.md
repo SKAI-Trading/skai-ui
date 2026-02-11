@@ -166,7 +166,7 @@ import { SkaiIcon } from "@skai/ui";
 
 // Usage
 <SkaiIcon name="home" size="md" />
-<SkaiIcon name="swap" size="lg" className="text-[#17F9B4]" />
+<SkaiIcon name="swap" size="lg" className="text-[#2DEDAD]" />
 <SkaiIcon name="eth" size="sm" />
 ```
 
@@ -251,8 +251,8 @@ Use semantic colors that respond to theme:
 <span className="text-short" />        // Loss/Short (Red)
 
 // SKAI brand colors (explicit)
-<span className="text-[#56C7F3]" />    // Sky Blue
-<span className="text-[#17F9B4]" />    // Alien Green
+<span className="text-[#56C0F6]" />    // Sky Blue
+<span className="text-[#2DEDAD]" />    // Alien Green
 <span className="text-[#FF574A]" />    // Error Red
 <span className="text-[#95A09F]" />    // Ash (muted)
 ```

@@ -89,7 +89,7 @@
   animation: cta-glow-pulse 2s ease-in-out infinite;
 }
 
-/* CTA Pulse - Active flashing animation for high CTR (brand blue #56C7F3) */
+/* CTA Pulse - Active flashing animation for high CTR (brand blue #56C0F6) */
 @keyframes cta-pulse {
   0%, 100% {
     box-shadow:

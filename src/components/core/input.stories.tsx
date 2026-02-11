@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+﻿import type { Meta, StoryObj } from "@storybook/react";
 import { Input, SkaiInput } from "../core/input";
 import { Label } from "../core/label";
 import { Button } from "../core/button";
@@ -26,8 +26,8 @@ import { useState } from "react";
  *
  * ## States
  * - Normal: transparent border
- * - Active/Focus: #17F9B4 (Alien Green) or #56C7F3 (Sky Blue) border
- * - Completed: #17F9B4 border
+ * - Active/Focus: #2DEDAD (Alien Green) or #56C0F6 (Sky Blue) border
+ * - Completed: #2DEDAD border
  * - Error: #FF574A border
  */
 const meta: Meta<typeof Input> = {
