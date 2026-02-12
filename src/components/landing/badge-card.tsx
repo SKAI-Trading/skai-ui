@@ -40,6 +40,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
           src={badgeIcon}
           alt={badgeName}
           className="w-12 h-12 md:w-[80px] md:h-[80px] lg:w-[150px] lg:h-[150px] object-contain"
+          onError={(e) => { (e.target as HTMLImageElement).src = assets.badges.earlyAdopter; }}
         />
       </div>
 
