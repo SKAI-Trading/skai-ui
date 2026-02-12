@@ -141,17 +141,18 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
         <DropdownMenuTrigger asChild>
           <button
             className={cn(
-              "px-3 py-1.5 text-sm font-medium transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
+              "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1.5",
               "hover:text-primary",
               open ? "text-primary" : "text-muted-foreground"
             )}
+            style={{ letterSpacing: "-0.64px" }}
           >
             {label}
-            <svg 
-              className="w-3 h-3" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-4 h-4 opacity-70"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
               strokeWidth="2"
             >
               <path d="M6 9l6 6 6-6" />

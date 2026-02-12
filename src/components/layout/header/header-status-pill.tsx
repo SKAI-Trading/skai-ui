@@ -90,6 +90,8 @@ export interface HeaderStatusPillProps extends React.ButtonHTMLAttributes<HTMLBu
   tooltip?: string;
   /** Animation duration */
   animationDuration?: number;
+  /** Visual variant: "default" (glow) or "minimal" (bordered, flat) */
+  variant?: "default" | "minimal";
 }
 
 /**
@@ -110,7 +112,7 @@ export interface HeaderStatusPillProps extends React.ButtonHTMLAttributes<HTMLBu
  * ```
  */
 const HeaderStatusPill = React.forwardRef<HTMLButtonElement, HeaderStatusPillProps>(
-  ({ 
+  ({
     className,
     icon,
     value,
@@ -121,49 +123,64 @@ const HeaderStatusPill = React.forwardRef<HTMLButtonElement, HeaderStatusPillPro
     isLoading,
     tooltip,
     animationDuration = 500,
-    ...props 
+    variant = "default",
+    ...props
   }, ref) => {
+    const isMinimal = variant === "minimal";
+
     const pill = (
       <button
         ref={ref}
         aria-label={label}
         className={cn(
-          "group relative flex items-center gap-2 px-3 py-1.5 rounded-full",
-          "bg-gradient-to-r from-background/80 to-background/40",
-          "border border-border/40 hover:border-border/60",
-          "backdrop-blur-md transition-all duration-300",
-          "hover:scale-[1.02] active:scale-[0.98]",
+          "group relative flex items-center gap-1.5 transition-all",
           "focus:outline-none focus:ring-2 focus:ring-primary/50",
+          isMinimal
+            ? "px-1.5 pr-3 py-1.5 rounded-lg border border-[#123f3c] bg-[#001615] hover:border-[#1a5c58]"
+            : cn(
+                "gap-2 px-3 py-1.5 rounded-full",
+                "bg-gradient-to-r from-background/80 to-background/40",
+                "border border-border/40 hover:border-border/60",
+                "backdrop-blur-md duration-300",
+                "hover:scale-[1.02] active:scale-[0.98]",
+              ),
           className
         )}
-        style={{
+        style={isMinimal ? undefined : {
           boxShadow: `0 0 20px ${glowColor}`,
         }}
         {...props}
       >
-        {/* Glow effect on hover */}
-        <div
-          className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          style={{
-            background: `radial-gradient(circle at center, ${glowColor} 0%, transparent 70%)`,
-          }}
-        />
+        {/* Glow effect on hover (default variant only) */}
+        {!isMinimal && (
+          <div
+            className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{
+              background: `radial-gradient(circle at center, ${glowColor} 0%, transparent 70%)`,
+            }}
+          />
+        )}
 
         {/* Icon */}
-        <span 
+        <span
           className="relative z-10 shrink-0"
-          style={{ color: iconColor }}
+          style={{ color: isMinimal ? undefined : iconColor }}
         >
           {icon}
         </span>
 
         {/* Value */}
-        <span className="relative z-10 text-sm font-semibold tabular-nums text-foreground">
+        <span className={cn(
+          "relative z-10 tabular-nums",
+          isMinimal
+            ? "text-[16px] font-normal leading-4 tracking-[-0.64px] text-white"
+            : "text-sm font-semibold text-foreground"
+        )}>
           {isLoading ? (
             <span className="inline-block w-12 h-4 bg-muted/50 rounded animate-pulse" />
           ) : (
-            <AnimatedNumber 
-              value={value} 
+            <AnimatedNumber
+              value={value}
               formatFn={formatFn}
               duration={animationDuration}
             />
