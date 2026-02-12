@@ -86,8 +86,8 @@ const DockContainer: React.FC<DockContainerProps> = ({
     const itemCenter = itemRect.left + itemRect.width / 2 - containerRect.left;
 
     const distance = Math.abs(mouseX - itemCenter);
-    const maxDistance = 80; // pixels
-    const maxScale = 1.4;
+    const maxDistance = 60; // pixels
+    const maxScale = 1.15;
     const minScale = 1;
 
     if (distance > maxDistance) return minScale;
@@ -206,7 +206,7 @@ const DockIcon: React.FC<DockIconProps & { _dockIndex?: number }> = ({
           className,
         )}
         style={{
-          transform: `scale(${scale}) translateY(${(scale - 1) * -8}px)`,
+          transform: `scale(${scale})`,
           boxShadow: isNearby
             ? "0 4px 20px 0 rgba(255,255,255,0.1)"
             : undefined,
@@ -329,7 +329,7 @@ const SimpleDockIcon: React.FC<Omit<DockIconProps, "_dockIndex">> = ({
           disabled && "opacity-50 cursor-not-allowed",
           isHovered &&
             !disabled && [
-              "scale-110 bg-white/10 border-white/20 -translate-y-1",
+              "scale-105 bg-white/10 border-white/20",
               "shadow-lg shadow-white/10",
             ],
           className,
