@@ -30,12 +30,15 @@ export interface HeaderNavLinkProps extends React.AnchorHTMLAttributes<HTMLAncho
   /** Custom link component (for React Router) */
   LinkComponent?: React.ComponentType<{
     to: string;
+    end?: boolean;
     className?: string | ((props: { isActive: boolean }) => string);
     children: React.ReactNode;
     "data-quest-target"?: string;
   }>;
   /** Route path */
   to: string;
+  /** Only match exact path (for NavLink `end` prop) */
+  end?: boolean;
   /** Quest target ID for tutorials */
   questTarget?: string;
 }
@@ -44,7 +47,7 @@ export interface HeaderNavLinkProps extends React.AnchorHTMLAttributes<HTMLAncho
  * HeaderNavLink - Individual navigation link
  */
 const HeaderNavLink = React.forwardRef<HTMLAnchorElement, HeaderNavLinkProps>(
-  ({ className, active, LinkComponent, to, questTarget, children, ...props }, ref) => {
+  ({ className, active, LinkComponent, to, end, questTarget, children, ...props }, ref) => {
     const baseClasses = cn(
       "px-3 py-1.5 text-sm font-medium transition-colors rounded-md flex items-center whitespace-nowrap",
       "hover:text-primary",
@@ -56,8 +59,9 @@ const HeaderNavLink = React.forwardRef<HTMLAnchorElement, HeaderNavLinkProps>(
 
     if (LinkComponent) {
       return (
-        <LinkComponent 
+        <LinkComponent
           to={to}
+          end={end}
           className={({ isActive }: { isActive: boolean }) => cn(
             "px-3 py-1.5 text-sm font-medium transition-colors rounded-md flex items-center whitespace-nowrap",
             "hover:text-primary",

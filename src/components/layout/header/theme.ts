@@ -133,10 +133,16 @@ export const headerClasses = {
   header: `sticky top-0 z-50 backdrop-blur-xl bg-[#001615] border-b border-[#123F3C] shadow-[0_1px_15px_rgba(44,236,173,0.02)]`,
   /** Header container */
   container: "container mx-auto px-4",
-  /** Top row (logo + search + actions) */
+  /** Single-row layout (Figma design) — logo, nav, search, stats, CTAs all in one line */
+  singleRow: "flex items-center h-14 gap-6",
+  /** Top row (logo + search + actions) — legacy two-row layout */
   topRow: `flex items-center justify-between h-14 border-b border-[#123F3C]/50`,
-  /** Navigation row */
+  /** Navigation row — legacy two-row layout */
   navRow: "hidden lg:flex items-center gap-1 h-10 overflow-x-auto scrollbar-hide",
+  /** Inline nav (for single-row layout, sits next to logo) */
+  inlineNav: "hidden lg:flex items-center gap-1 shrink-0",
+  /** Stat pill matching Figma: border-[#123f3c] rounded-lg */
+  statPill: "border border-[#123F3C] flex items-center gap-1.5 pl-1.5 pr-3 py-1.5 rounded-lg",
   /** Active nav item */
   navItemActive: `text-primary bg-[rgba(86,199,243,0.1)]`,
   /** Mobile menu item */
