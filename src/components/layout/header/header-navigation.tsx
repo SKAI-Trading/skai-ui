@@ -51,9 +51,9 @@ const HeaderNavLink = React.forwardRef<HTMLAnchorElement, HeaderNavLinkProps>(
     const baseClasses = cn(
       "px-3 py-1.5 text-sm font-medium transition-colors rounded-md flex items-center whitespace-nowrap",
       "hover:text-primary",
-      active 
-        ? "text-primary bg-primary/10" 
-        : "text-muted-foreground",
+      active
+        ? "text-primary bg-primary/10"
+        : "text-white",
       className
     );
 
@@ -65,9 +65,9 @@ const HeaderNavLink = React.forwardRef<HTMLAnchorElement, HeaderNavLinkProps>(
           className={({ isActive }: { isActive: boolean }) => cn(
             "px-3 py-1.5 text-sm font-medium transition-colors rounded-md flex items-center whitespace-nowrap",
             "hover:text-primary",
-            isActive 
-              ? "text-primary bg-primary/10" 
-              : "text-muted-foreground",
+            isActive
+              ? "text-primary bg-primary/10"
+              : "text-white",
             className
           )}
           data-quest-target={questTarget}
@@ -143,7 +143,7 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
             className={cn(
               "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1.5",
               "hover:text-primary",
-              open ? "text-primary" : "text-muted-foreground"
+              open ? "text-primary" : "text-white"
             )}
             style={{ letterSpacing: "-0.64px" }}
           >
