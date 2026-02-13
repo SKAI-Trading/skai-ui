@@ -775,8 +775,8 @@ export const content = {
     },
 
     init: {
-      loading: "INITIALIZING SYSTEM...",
-      progress: "LOADING MODULES: [\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588] 100%",
+      loading: "Preparing your dashboard",
+      progress: "Connecting to markets...",
     },
   },
 
