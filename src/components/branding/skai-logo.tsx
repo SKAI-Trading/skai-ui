@@ -85,6 +85,11 @@ const SkaiLogoIcon: React.FC<{ width: number; height: number; fill: string; vari
 // =============================================================================
 // Skai.trade Wordmark Text — from the Figma logo
 // Contains: S, k, a, i, dot, t, r, a, d, e letterforms
+//
+// IMPORTANT: Letters with counter-shapes (holes) — a, d, e — MUST use compound
+// paths (single <path> with "ZM" joining outer + counter). Splitting them into
+// separate <path> elements fills the holes solid, breaking transparency.
+// Reference: skai-landing/public/icons/skai-logo-onboarding.svg
 // =============================================================================
 
 const SkaiLogoText: React.FC<{ width: number; height: number; fill: string }> = ({
