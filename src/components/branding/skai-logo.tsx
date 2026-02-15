@@ -10,11 +10,11 @@ import { cn } from "../../lib/utils";
 // Variants: White, Black
 // =============================================================================
 
-export type SkaiLogoSize = "small" | "medium" | "large";
+export type SkaiLogoSize = "small" | "compact" | "medium" | "large";
 export type SkaiLogoVariant = "white" | "black";
 
 export interface SkaiLogoProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Size preset: small (24px height), medium (48px height), large (64px height) */
+  /** Size preset: small (24px), compact (32px), medium (48px), large (64px) */
   size?: SkaiLogoSize;
   /** Color variant: white (for dark backgrounds) or black (for light backgrounds) */
   variant?: SkaiLogoVariant;
@@ -29,6 +29,7 @@ const sizeConfig: Record<
   { height: number; iconHeight: number; iconWidth: number; textHeight: number; textWidth: number; gap: number }
 > = {
   small: { height: 24, iconHeight: 24, iconWidth: 21.4, textHeight: 12, textWidth: 70, gap: 9 },
+  compact: { height: 32, iconHeight: 32, iconWidth: 28.6, textHeight: 16, textWidth: 93, gap: 12 },
   medium: { height: 48, iconHeight: 48, iconWidth: 42.8, textHeight: 24, textWidth: 139, gap: 19 },
   large: { height: 64, iconHeight: 64, iconWidth: 57.1, textHeight: 32, textWidth: 186, gap: 24 },
 };
@@ -69,12 +70,12 @@ const SkaiLogoIcon: React.FC<{ width: number; height: number; fill: string; vari
       {useGradient && (
         <defs>
           <linearGradient id="skai-icon-grad-0" x1="0" y1="0" x2="46" y2="64" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#56C0F6" />
-            <stop offset="1" stopColor="#2DEDAD" />
+            <stop stopColor="#56C7F3" />
+            <stop offset="1" stopColor="#17F9B4" />
           </linearGradient>
           <linearGradient id="skai-icon-grad-1" x1="11" y1="22" x2="57" y2="64" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#56C0F6" />
-            <stop offset="1" stopColor="#2DEDAD" />
+            <stop stopColor="#56C7F3" />
+            <stop offset="1" stopColor="#17F9B4" />
           </linearGradient>
         </defs>
       )}
@@ -162,7 +163,7 @@ const SkaiLogoText: React.FC<{ width: number; height: number; fill: string }> = 
  * SKAI Logo - Official brand logo matching Figma design system
  *
  * Lightning bolt icon + "Skai.trade" wordmark.
- * Uses Sky Blue (#56C0F6) → Alien Green (#2DEDAD) gradient on icon.
+ * Uses Sky Blue (#56C7F3) → Alien Green Bright (#17F9B4) gradient on icon.
  *
  * @example
  * // Default (medium, white variant)

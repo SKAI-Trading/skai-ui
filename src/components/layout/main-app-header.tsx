@@ -120,8 +120,8 @@ const MainAppHeader = React.forwardRef<HTMLElement, MainAppHeaderProps>(
                 key={item.label}
                 to={item.href || "#"}
                 className={cn(
-                  "flex items-center gap-2.5 py-3 text-white transition-colors hover:text-[#56C0F6]",
-                  item.active && "text-[#56C0F6]",
+                  "flex items-center gap-2.5 py-3 text-white transition-colors hover:text-[#56C7F3]",
+                  item.active && "text-[#56C7F3]",
                 )}
               >
                 <span>{item.label}</span>
@@ -171,8 +171,8 @@ const MainAppHeader = React.forwardRef<HTMLElement, MainAppHeaderProps>(
             className={cn(
               "flex items-center gap-2.5 px-10 py-5 rounded-2xl transition-colors",
               walletConnected
-                ? "bg-[#001615] border-[1.5px] border-[#56C0F6] text-white"
-                : "bg-[#56C0F6] text-[#001615]",
+                ? "bg-[#001615] border-[1.5px] border-[#56C7F3] text-white"
+                : "bg-[#56C7F3] text-[#001615]",
             )}
           >
             <span className="text-[16px] leading-[22px] tracking-[-0.64px] font-manrope">
@@ -187,7 +187,7 @@ const MainAppHeader = React.forwardRef<HTMLElement, MainAppHeaderProps>(
           {userName && (
             <button
               onClick={onProfileClick}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg border-[1.5px] border-[#56C0F6] bg-[#001615]"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg border-[1.5px] border-[#56C7F3] bg-[#001615]"
             >
               {userAvatar ? (
                 <img

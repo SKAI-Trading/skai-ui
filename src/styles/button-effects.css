@@ -42,9 +42,9 @@
   border-radius: inherit;
   background: linear-gradient(
     135deg,
-    rgba(86, 192, 246, 0.4) 0%,
+    rgba(86, 199, 243, 0.4) 0%,
     rgba(45, 237, 173, 0.3) 50%,
-    rgba(86, 192, 246, 0.4) 100%
+    rgba(86, 199, 243, 0.4) 100%
   );
   background-size: 200% 200%;
   opacity: 0;
@@ -61,13 +61,13 @@
 .cta-glow:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 8px 24px rgba(86, 192, 246, 0.25),
-    0 0 12px rgba(86, 192, 246, 0.1);
+    0 8px 24px rgba(86, 199, 243, 0.25),
+    0 0 12px rgba(86, 199, 243, 0.1);
 }
 
 .cta-glow:active {
   transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(86, 192, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(86, 199, 243, 0.2);
 }
 
 /* Subtle pulsing glow animation */
@@ -75,13 +75,13 @@
   0%,
   100% {
     box-shadow:
-      0 4px 16px rgba(86, 192, 246, 0.2),
-      0 0 8px rgba(86, 192, 246, 0.1);
+      0 4px 16px rgba(86, 199, 243, 0.2),
+      0 0 8px rgba(86, 199, 243, 0.1);
   }
   50% {
     box-shadow:
-      0 6px 24px rgba(86, 192, 246, 0.3),
-      0 0 16px rgba(86, 192, 246, 0.15);
+      0 6px 24px rgba(86, 199, 243, 0.3),
+      0 0 16px rgba(86, 199, 243, 0.15);
   }
 }
 
@@ -89,7 +89,7 @@
   animation: cta-glow-pulse 2s ease-in-out infinite;
 }
 
-/* CTA Pulse - Active flashing animation for high CTR (brand blue #56C0F6) */
+/* CTA Pulse - Active flashing animation for high CTR (brand blue #56C7F3) */
 @keyframes cta-pulse {
   0%, 100% {
     box-shadow:
@@ -125,9 +125,9 @@
   border-radius: inherit;
   background: linear-gradient(
     135deg,
-    rgba(86, 192, 246, 0.5) 0%,
+    rgba(86, 199, 243, 0.5) 0%,
     rgba(45, 237, 173, 0.4) 50%,
-    rgba(86, 192, 246, 0.5) 100%
+    rgba(86, 199, 243, 0.5) 100%
   );
   background-size: 200% 200%;
   opacity: 0;
@@ -145,8 +145,8 @@
 .btn-glow-primary:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 6px 20px rgba(86, 192, 246, 0.25),
-    0 0 12px rgba(86, 192, 246, 0.12);
+    0 6px 20px rgba(86, 199, 243, 0.25),
+    0 0 12px rgba(86, 199, 243, 0.12);
 }
 
 /* =============================================================================
@@ -163,7 +163,7 @@
   position: absolute;
   inset: -3px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #1da1f2 0%, #56c0f6 50%, #1da1f2 100%);
+  background: linear-gradient(135deg, #1da1f2 0%, #56c7f3 50%, #1da1f2 100%);
   background-size: 200% 200%;
   opacity: 0;
   z-index: -1;

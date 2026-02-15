@@ -156,6 +156,30 @@ const meta: Meta<typeof SkaiIcon> = {
         "instagram",
         "x",
         "twitter",
+        // Platform
+        "ai",
+        "games",
+        "skai-ai",
+        "chat",
+        "vault",
+        "ether",
+        "skai",
+        "signal",
+        "agent",
+        // Graphical / Trading Tools
+        "zoom-in",
+        "crosshair",
+        "trendline",
+        "fib-retracement",
+        "reward",
+        "xabcd-pattern",
+        "long-position",
+        "brush",
+        "text",
+        "magnet",
+        "measure",
+        "secure",
+        "fast",
         // Brands
         "google",
         "apple",
@@ -382,6 +406,7 @@ const tierIcons: SkaiIconName[] = [
   "tier-gold",
   "tier-platinum",
   "tier-diamond",
+  "tier-legend",
 ];
 
 export const TierIcons: Story = {
@@ -466,6 +491,13 @@ const tradingIcons: SkaiIconName[] = [
   "trending-up",
   "trending-down",
   "percentage",
+  "trendline",
+  "fib-retracement",
+  "xabcd-pattern",
+  "long-position",
+  "crosshair",
+  "zoom-in",
+  "measure",
 ];
 
 export const TradingIcons: Story = {
@@ -515,6 +547,90 @@ export const CryptoIcons: Story = {
       ))}
     </div>
   ),
+};
+
+// =============================================================================
+// PLATFORM ICONS (from Figma design system)
+// =============================================================================
+const platformIcons: SkaiIconName[] = [
+  "ai",
+  "games",
+  "skai-ai",
+  "chat",
+  "vault",
+  "ether",
+  "skai",
+  "signal",
+  "agent",
+];
+
+export const PlatformIcons: Story = {
+  name: "Platform Icons",
+  render: () => (
+    <div className="grid grid-cols-5 gap-4">
+      {platformIcons.map((name) => (
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <SkaiIcon name={name} size="md" />
+          <span className="text-xs text-gray-600 dark:text-gray-400">
+            {name}
+          </span>
+        </div>
+      ))}
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "**Figma:** `icons/platform` - Platform-specific icons for AI, gaming, vault, and other Skai ecosystem features.",
+      },
+    },
+  },
+};
+
+// =============================================================================
+// GRAPHICAL / TRADING TOOLS (from Figma design system)
+// =============================================================================
+const graphicalIcons: SkaiIconName[] = [
+  "brush",
+  "text",
+  "magnet",
+  "measure",
+  "crosshair",
+  "zoom-in",
+  "reward",
+  "secure",
+  "fast",
+];
+
+export const GraphicalToolIcons: Story = {
+  name: "Graphical Tool Icons",
+  render: () => (
+    <div className="grid grid-cols-5 gap-4">
+      {graphicalIcons.map((name) => (
+        <div
+          key={name}
+          className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          <SkaiIcon name={name} size="md" />
+          <span className="text-xs text-gray-600 dark:text-gray-400">
+            {name}
+          </span>
+        </div>
+      ))}
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "**Figma:** `icons/graphical` - Chart drawing tools, annotation tools, and utility icons for the trading interface.",
+      },
+    },
+  },
 };
 
 // =============================================================================
@@ -653,6 +769,30 @@ const allIcons: SkaiIconName[] = [
   "sun",
   "globe",
   "code",
+  // Platform
+  "ai",
+  "games",
+  "skai-ai",
+  "chat",
+  "vault",
+  "ether",
+  "skai",
+  "signal",
+  "agent",
+  // Graphical / Trading Tools
+  "zoom-in",
+  "crosshair",
+  "trendline",
+  "fib-retracement",
+  "reward",
+  "xabcd-pattern",
+  "long-position",
+  "brush",
+  "text",
+  "magnet",
+  "measure",
+  "secure",
+  "fast",
   // Wallets
   "metamask",
   "coinbase",
@@ -723,7 +863,7 @@ export const ColorVariants: Story = {
         <span className="text-xs text-gray-500">Warning</span>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <SkaiIcon name="info" size="lg" color="#56C0F6" />
+        <SkaiIcon name="info" size="lg" color="#56C7F3" />
         <span className="text-xs text-gray-500">Info</span>
       </div>
     </div>

@@ -58,7 +58,7 @@ Open `src/design-tokens.css` or `src/styles/index.css`:
 ```css
 :root {
   /* Brand Colors */
-  --primary: 199 90% 65%; /* Change these HSL values */
+  --primary: 197 87% 55%; /* Change these HSL values */
   --secondary: 166 80% 55%;
 
   /* Trading Colors */
@@ -80,7 +80,7 @@ Open `src/design-tokens.json`:
   "colors": {
     "brand": {
       "primary": {
-        "$value": "#56C0F6",
+        "$value": "#56C7F3",
         "$type": "color"
       }
     }
@@ -92,9 +92,9 @@ Open `src/design-tokens.json`:
 
 | Format | Example             | Use In             |
 | ------ | ------------------- | ------------------ |
-| HSL    | `199 90% 65%`       | CSS variables      |
-| Hex    | `#56C0F6`           | JSON tokens, Figma |
-| RGB    | `rgb(86, 192, 246)` | Direct styles      |
+| HSL    | `197 87% 55%`       | CSS variables      |
+| Hex    | `#56C7F3`           | JSON tokens, Figma |
+| RGB    | `rgb(86, 199, 243)` | Direct styles      |
 
 ---
 

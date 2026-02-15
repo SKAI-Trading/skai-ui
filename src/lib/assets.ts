@@ -235,7 +235,7 @@ export const placeholders = {
 
   /** Chart placeholder */
   chart:
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' fill='%231B2236'%3E%3Crect width='400' height='200' rx='8'/%3E%3Cpolyline points='20,150 80,100 140,120 200,60 260,80 320,40 380,70' stroke='%2356C0F6' stroke-width='2' fill='none'/%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' fill='%231B2236'%3E%3Crect width='400' height='200' rx='8'/%3E%3Cpolyline points='20,150 80,100 140,120 200,60 260,80 320,40 380,70' stroke='%2356C7F3' stroke-width='2' fill='none'/%3E%3C/svg%3E",
 };
 
 /**

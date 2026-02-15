@@ -352,7 +352,7 @@ export function LegalPageTemplate({
                   <span className="font-mulish text-[10px] md:text-[12px] text-[#95A09F]">
                     Last Updated
                   </span>
-                  <span className="font-mulish text-[10px] md:text-[12px] text-[#56C0F6]">
+                  <span className="font-mulish text-[10px] md:text-[12px] text-[#56C7F3]">
                     {lastUpdated}
                   </span>
                 </div>

@@ -10,7 +10,7 @@ import { Mail, Loader2, ChevronRight, Plus, Download, ArrowRight, Wallet } from 
  *
  * ## Figma Reference (Skai-Design - TyX8YAtNDEIvsnSLQ3IXId)
  * - CTA Section: 779:57
- *   - Primary Buttons: 801:1059 (Sky Blue #56C0F6)
+ *   - Primary Buttons: 801:1059 (Sky Blue #56C7F3)
  *   - Secondary Buttons: Outlined with Sky Blue border
  *   - Tertiary Buttons: Text only, hover to Alien Green
  *   - Link Buttons: Alien Green #2DEDAD with underline
@@ -24,10 +24,10 @@ import { Mail, Loader2, ChevronRight, Plus, Download, ArrowRight, Wallet } from 
  * | Small   | 46px   | 24px / 12px| 12px          | 14px      |
  *
  * ## Colors
- * - Primary BG: #56C0F6 (Sky Blue 300)
+ * - Primary BG: #56C7F3 (Sky Blue 300)
  * - Primary Text: #001615 (Green Coal 300)
  * - Primary Hover: #2DEDAD (Alien Green)
- * - Secondary Border: #56C0F6
+ * - Secondary Border: #56C7F3
  * - Link Text: #2DEDAD
  */
 const meta: Meta<typeof Button> = {
@@ -222,7 +222,7 @@ export const DownloadButton: Story = {
 
 /**
  * SKAI Branded Button - Primary type (default)
- * Uses Sky Blue background (#56C0F6) with Green Coal text
+ * Uses Sky Blue background (#56C7F3) with Green Coal text
  * Hovers to Alien Green (#2DEDAD)
  */
 export const SkaiPrimary: Story = {

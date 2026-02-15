@@ -48,7 +48,7 @@ export const greenCoalColors = {
 export const accentColors = {
   alienGreen: "#2DEDAD", // Primary accent (Figma canonical)
   alienGreenBright: "#17F9B4", // Bright variant (used in semantic/trading)
-  skyBlue: "#56C0F6", // Primary CTA (Figma canonical)
+  skyBlue: "#56C7F3", // Primary CTA — Sky Blue 300 (Figma canonical: hsl 197 87% 55%)
   printersGold: "#999966", // Gold accent
 } as const;
 
@@ -145,7 +145,7 @@ export const utilityColors = {
  * Hover state colors (derived from base colors for :hover variants)
  */
 export const hoverColors = {
-  skyBlueHover: "#3A9BD4", // sky-blue (#56C0F6) darkened for hover
+  skyBlueHover: "#3A9BD4", // sky-blue (#56C7F3) darkened for hover
   nightBlueHover: "#252532", // night-blue lighter for hover
   nightBlueHoverAlt: "#1E1E36", // night-blue subtle hover variant
   discordHover: "#4752C4", // discord blurple darkened for hover
@@ -168,9 +168,9 @@ export const gradientColors = {
  */
 export const gradients = {
   primary: {
-    from: "#56C0F6", // Sky Blue (Figma canonical)
-    to: "#2DEDAD", // Alien Green (Figma canonical)
-    css: "linear-gradient(135deg, #56C0F6 0%, #2DEDAD 100%)",
+    from: "#56C7F3", // Sky Blue 300 (Figma canonical)
+    to: "#17F9B4", // Alien Green Bright (Figma canonical)
+    css: "linear-gradient(135deg, #56C7F3 0%, #17F9B4 100%)",
   },
 } as const;
 
@@ -1019,7 +1019,7 @@ export const skaiButton = {
       background: "transparent",
       border: accentColors.skyBlue,
       text: accentColors.skyBlue,
-      hoverBackground: "rgba(86, 192, 246, 0.1)",
+      hoverBackground: "rgba(86, 199, 243, 0.1)",
       focusRing: accentColors.skyBlue,
     },
     tertiary: {

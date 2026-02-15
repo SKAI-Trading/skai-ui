@@ -65,7 +65,7 @@ style.innerHTML = `
     --skai-green-coal-200: #122524;
     --skai-green-coal-100: #123f3c;
     --skai-alien-green: #2dedad;
-    --skai-sky-blue: #56C0F6;
+    --skai-sky-blue: #56C7F3;
   }
 `;
 document.head.appendChild(style);

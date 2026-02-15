@@ -187,7 +187,7 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
     const stateClasses = {
       normal: "border-transparent",
       active: "border-[#2DEDAD]",
-      focus: "border-[#56C0F6] shadow-[0px_4px_12px_rgba(0,0,0,0.24)]",
+      focus: "border-[#56C7F3] shadow-[0px_4px_12px_rgba(0,0,0,0.24)]",
       completed: "border-[#2DEDAD]",
       error: "border-[#FF574A]",
     };

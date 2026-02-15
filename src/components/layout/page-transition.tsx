@@ -3,6 +3,10 @@
  *
  * Presentational component - receives location key from parent.
  * The consuming app passes location.key from its router.
+ *
+ * Replays the fade-in CSS animation on each route change WITHOUT
+ * remounting children, so persistent elements (Header, BottomTickerBar)
+ * rendered outside this wrapper stay mounted.
  */
 
 import * as React from "react";
@@ -15,39 +19,33 @@ export interface PageTransitionProps {
 }
 
 /**
- * PageTransition - Smooth fade animation between page changes
+ * PageTransition - Smooth fade-in animation between page changes
+ *
+ * Uses CSS animation class toggling (remove + re-add via rAF) to
+ * replay the entry animation without destroying React component tree.
  */
 export function PageTransition({
   locationKey,
   children,
 }: PageTransitionProps) {
-  const [displayKey, setDisplayKey] = React.useState(locationKey);
-  const [transitionStage, setTransitionStage] = React.useState<
-    "fade-in" | "fade-out"
-  >("fade-in");
+  const [animate, setAnimate] = React.useState(true);
+  const prevKey = React.useRef(locationKey);
 
   React.useEffect(() => {
-    if (locationKey !== displayKey) {
-      setTransitionStage("fade-out");
+    if (locationKey !== prevKey.current) {
+      prevKey.current = locationKey;
+      // Remove animation class, then re-add on next frame to restart CSS animation
+      setAnimate(false);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setAnimate(true);
+        });
+      });
     }
-  }, [locationKey, displayKey]);
-
-  const handleAnimationEnd = () => {
-    if (transitionStage === "fade-out") {
-      setDisplayKey(locationKey);
-      setTransitionStage("fade-in");
-    }
-  };
+  }, [locationKey]);
 
   return (
-    <div
-      className={
-        transitionStage === "fade-in"
-          ? "page-fade-enter"
-          : "page-fade-exit"
-      }
-      onAnimationEnd={handleAnimationEnd}
-    >
+    <div className={animate ? "page-fade-enter" : "opacity-0"}>
       {children}
     </div>
   );

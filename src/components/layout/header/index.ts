@@ -35,9 +35,11 @@ export {
   HeaderNavigation,
   HeaderNavLink,
   HeaderNavDropdown,
+  HeaderNavRichDropdown,
   type HeaderNavigationProps,
   type HeaderNavLinkProps,
   type HeaderNavDropdownProps,
+  type HeaderNavRichDropdownProps,
 } from "./header-navigation";
 
 // Mobile Menu

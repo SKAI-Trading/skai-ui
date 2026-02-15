@@ -68,7 +68,7 @@ $faviconSvg = @"
   <circle cx="50" cy="50" r="45" stroke="url(#g)" stroke-width="3" fill="none"/>
   <path d="M30 50 L45 65 L70 35" stroke="url(#g)" stroke-width="4" stroke-linecap="round" fill="none"/>
   <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#56c0f6"/><stop offset="100%" style="stop-color:#2dd4bf"/>
+    <stop offset="0%" style="stop-color:#56c7f3"/><stop offset="100%" style="stop-color:#2dd4bf"/>
   </linearGradient></defs>
 </svg>
 "@

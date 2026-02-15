@@ -43,7 +43,7 @@
      * BRAND COLORS (from BRAND_GUIDELINES.md)
      * ======================================== */
 
-    /* Primary: Sky Blue (#56C0F6) - Figma canonical */
+    /* Primary: Sky Blue (#56C7F3) - Figma canonical */
     --skai-cyan-h: 200;
     --skai-cyan-s: 90%;
     --skai-cyan-l: 65%;
@@ -97,7 +97,7 @@
     --popover: 170 40% 7%;
     --popover-foreground: 60 100% 97%;
 
-    /* Primary Actions - Sky Blue #56C0F6 */
+    /* Primary Actions - Sky Blue #56C7F3 */
     --primary: 200 90% 65%;
     --primary-foreground: 173 100% 4%;
     --primary-glow: 200 90% 75%;
@@ -401,7 +401,7 @@
   }
 
   .glow-skai:hover {
-    box-shadow: 0 0 20px rgba(86, 192, 246, 0.25);
+    box-shadow: 0 0 20px rgba(86, 199, 243, 0.25);
   }
 
   /* Grid Background */

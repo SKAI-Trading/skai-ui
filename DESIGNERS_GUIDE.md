@@ -79,7 +79,7 @@ npm run dev
 export const theme = {
   colors: {
     brand: {
-      primary: "199 90% 65%", // Change HSL values
+      primary: "197 87% 55%", // Change HSL values
       secondary: "166 80% 55%",
       tertiary: "270 76% 60%",
     },
@@ -100,7 +100,7 @@ export const theme = {
   "colors": {
     "brand": {
       "primary": {
-        "$value": "#56C0F6",
+        "$value": "#56C7F3",
         "$type": "color"
       }
     }

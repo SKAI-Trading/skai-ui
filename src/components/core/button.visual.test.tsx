@@ -65,10 +65,10 @@ describe('Button Visual Regression', () => {
   });
 
   describe('SkaiButton types (Figma tokens)', () => {
-    it('renders primary type with correct Sky Blue (#56C0F6)', () => {
+    it('renders primary type with correct Sky Blue (#56C7F3)', () => {
       const { container } = render(<SkaiButton skaiType="primary">Primary</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('bg-[#56C0F6]');
+      expect(button.className).toContain('bg-[#56C7F3]');
       expect(button.className).toContain('text-[#001615]');
       expect(container.firstChild).toMatchSnapshot();
     });
@@ -76,7 +76,7 @@ describe('Button Visual Regression', () => {
     it('renders secondary type with correct border', () => {
       const { container } = render(<SkaiButton skaiType="secondary">Secondary</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('border-[#56C0F6]');
+      expect(button.className).toContain('border-[#56C7F3]');
       expect(container.firstChild).toMatchSnapshot();
     });
 

@@ -203,8 +203,8 @@ export const skaiBackgroundImage = {
   "gradient-primary": "var(--gradient-primary)",
   "gradient-glow": "var(--gradient-glow)",
   "gradient-bg": "var(--gradient-bg)",
-  "skai-gradient": "linear-gradient(135deg, #56C0F6, #2DEDAD)",
-  "skai-gradient-vertical": "linear-gradient(180deg, #56C0F6, #2DEDAD)",
+  "skai-gradient": "linear-gradient(135deg, #56C7F3, #17F9B4)",
+  "skai-gradient-vertical": "linear-gradient(180deg, #56C7F3, #17F9B4)",
   "skai-gradient-gold": "linear-gradient(135deg, #FFB547, #E8A027)",
   "skai-gradient-dark": "linear-gradient(135deg, #001615, #00312D)",
 } as const;

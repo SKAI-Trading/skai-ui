@@ -17,7 +17,7 @@ export const headerColors = {
   /** Border hover/active */
   borderHover: "#1a5a55",
   /** Brand primary (cyan) */
-  brandPrimary: "#56C0F6",
+  brandPrimary: "#56C7F3",
   /** Brand secondary (Alien Green) */
   brandSecondary: "#2DEDAD",
   /** Glow color for status pills */
@@ -95,6 +95,10 @@ export interface HeaderNavItemConfig {
   to: string;
   label: string;
   icon?: string;
+  /** SkaiIcon name for rich dropdown items (e.g. "candlesticks") */
+  iconName?: string;
+  /** Subtitle text for rich dropdown items */
+  description?: string;
   badge?: string | number;
   external?: boolean;
 }
@@ -129,7 +133,7 @@ export function getHeaderCssVars(): React.CSSProperties {
 // =============================================================================
 
 export const headerClasses = {
-  /** Base header styles - uses CSS custom properties set by getHeaderCssVars() */
+  /** Base header styles */
   header: `sticky top-0 z-50 backdrop-blur-xl bg-[#001615] border-b border-[#123F3C] shadow-[0_1px_15px_rgba(44,236,173,0.02)]`,
   /** Header container */
   container: "container mx-auto px-4",
@@ -141,10 +145,10 @@ export const headerClasses = {
   navRow: "hidden lg:flex items-center gap-1 h-10 overflow-x-auto scrollbar-hide",
   /** Inline nav (for single-row layout, sits next to logo) */
   inlineNav: "hidden lg:flex items-center gap-1 shrink-0",
-  /** Stat pill matching Figma: border-[#123f3c] rounded-lg */
+  /** Stat pill matching Figma */
   statPill: "border border-[#123F3C] flex items-center gap-1.5 pl-1.5 pr-3 py-1.5 rounded-lg",
   /** Active nav item */
-  navItemActive: `text-primary bg-[rgba(86,199,243,0.1)]`,
+  navItemActive: `text-primary bg-[#56C7F3]/10`,
   /** Mobile menu item */
   mobileMenuItem: "flex items-center gap-3 text-sm font-medium transition-colors min-h-[48px] px-3 mx-1 rounded-xl",
 } as const;

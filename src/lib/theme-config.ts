@@ -20,7 +20,7 @@ export const theme = {
   colors: {
     // Brand colors
     brand: {
-      primary: "200 90% 65%", // #56C0F6 - Sky Blue
+      primary: "200 90% 65%", // #56C7F3 - Sky Blue
       secondary: "160 84% 55%", // #2DEDAD - Alien Green
       tertiary: "270 76% 60%", // Purple accent
     },

@@ -20,9 +20,9 @@
 export const colors = {
   /** Primary brand colors */
   brand: {
-    /** Primary CTA color - #56C0F6 (Figma canonical) */
-    skyBlue: "#56C0F6",
-    skyBlue300: "#56C0F6",
+    /** Primary CTA color - #56C7F3 (Figma canonical) */
+    skyBlue: "#56C7F3",
+    skyBlue300: "#56C7F3",
 
     /** Premium/gold accent - #999966 */
     printersGold: "#999966",
@@ -76,7 +76,7 @@ export const colors = {
     success: "#2DEDAD",
     warning: "#FFFF16",
     error: "#FF574A",
-    info: "#56C0F6",
+    info: "#56C7F3",
     profit: "#2DEDAD",
     loss: "#FF574A",
   },

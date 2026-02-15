@@ -5,7 +5,7 @@ import { create } from "@storybook/theming/create";
 import "./addons/github-addon";
 
 // SKAI Trading Design System Theme
-// Brand colors: Green Coal (#001615), Alien Green (#2DEDAD), Sky Blue (#56C0F6)
+// Brand colors: Green Coal (#001615), Alien Green (#2DEDAD), Sky Blue (#56C7F3)
 const skaiTheme = create({
   base: "dark",
 
@@ -16,7 +16,7 @@ const skaiTheme = create({
   brandTarget: "_blank",
 
   // Colors - SKAI palette
-  colorPrimary: "#56C0F6", // Sky Blue - links, highlights
+  colorPrimary: "#56C7F3", // Sky Blue - links, highlights
   colorSecondary: "#2DEDAD", // Alien Green - accent, selected state
 
   // UI - Deep space background
@@ -33,7 +33,7 @@ const skaiTheme = create({
 
   // Toolbar
   barTextColor: "#E0E0E0",
-  barHoverColor: "#56C0F6", // Sky Blue on hover
+  barHoverColor: "#56C7F3", // Sky Blue on hover
   barSelectedColor: "#2DEDAD", // Alien Green when selected
   barBg: "#001615", // Green Coal toolbar
 
@@ -41,7 +41,7 @@ const skaiTheme = create({
   buttonBg: "#2DEDAD",
   buttonBorder: "rgba(45, 237, 173, 0.3)",
   inputBg: "rgba(255, 255, 255, 0.05)",
-  inputBorder: "rgba(86, 192, 246, 0.2)",
+  inputBorder: "rgba(86, 199, 243, 0.2)",
   inputTextColor: "#E0E0E0",
   inputBorderRadius: 8,
 

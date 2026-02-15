@@ -26,7 +26,7 @@ import { useState } from "react";
  *
  * ## States
  * - Normal: transparent border
- * - Active/Focus: #2DEDAD (Alien Green) or #56C0F6 (Sky Blue) border
+ * - Active/Focus: #2DEDAD (Alien Green) or #56C7F3 (Sky Blue) border
  * - Completed: #2DEDAD border
  * - Error: #FF574A border
  */

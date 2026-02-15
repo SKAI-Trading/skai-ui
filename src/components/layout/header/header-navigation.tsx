@@ -11,13 +11,14 @@
 
 import * as React from "react";
 import { cn } from "../../../lib/utils";
-import { 
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../../overlays/dropdown-menu";
 import { Badge } from "../../core/badge";
+import { SkaiIcon, type SkaiIconName } from "../../branding/skai-icon";
 import type { HeaderNavItemConfig, HeaderNavGroupConfig } from "./theme";
 
 // =============================================================================
@@ -49,10 +50,10 @@ export interface HeaderNavLinkProps extends React.AnchorHTMLAttributes<HTMLAncho
 const HeaderNavLink = React.forwardRef<HTMLAnchorElement, HeaderNavLinkProps>(
   ({ className, active, LinkComponent, to, end, questTarget, children, ...props }, ref) => {
     const baseClasses = cn(
-      "px-3 py-1.5 text-sm font-medium transition-colors rounded-md flex items-center whitespace-nowrap",
+      "px-3 py-1.5 text-sm font-medium transition-colors flex items-center whitespace-nowrap",
       "hover:text-primary",
       active
-        ? "text-primary bg-primary/10"
+        ? "text-primary"
         : "text-white",
       className
     );
@@ -63,10 +64,10 @@ const HeaderNavLink = React.forwardRef<HTMLAnchorElement, HeaderNavLinkProps>(
           to={to}
           end={end}
           className={({ isActive }: { isActive: boolean }) => cn(
-            "px-3 py-1.5 text-sm font-medium transition-colors rounded-md flex items-center whitespace-nowrap",
+            "px-3 py-1.5 text-sm font-medium transition-colors flex items-center whitespace-nowrap",
             "hover:text-primary",
             isActive
-              ? "text-primary bg-primary/10"
+              ? "text-primary"
               : "text-white",
             className
           )}
@@ -126,7 +127,7 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
   };
 
   const handleLeave = () => {
-    timeoutRef.current = setTimeout(() => setOpen(false), 150);
+    timeoutRef.current = setTimeout(() => setOpen(false), 300);
   };
 
   React.useEffect(() => {
@@ -136,7 +137,7 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
   }, []);
 
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen}>
+    <DropdownMenu open={open} onOpenChange={(v) => { if (!v) { if (timeoutRef.current) clearTimeout(timeoutRef.current); setOpen(false); } }} modal={false}>
       <div onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
         <DropdownMenuTrigger asChild>
           <button
@@ -162,9 +163,11 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
       </div>
       <DropdownMenuContent
         align="start"
-        className="w-48"
+        sideOffset={2}
+        className="w-[200px] bg-[#122524] border-[#123f3c] rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] p-4 gap-4 flex flex-col"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
+        onCloseAutoFocus={(e) => e.preventDefault()}
       >
         {items.map(({ to, label: itemLabel, icon, badge }) => (
           <DropdownMenuItem
@@ -175,10 +178,10 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
                 onNavigate(to);
               }
             }}
-            className="cursor-pointer flex items-center gap-2 w-full"
+            className="cursor-pointer flex items-center gap-2 w-full px-0 py-0 font-manrope text-base leading-[22px] tracking-[-0.64px] text-white hover:text-primary focus:text-primary hover:bg-transparent focus:bg-transparent"
           >
             {icon && <span>{icon}</span>}
-            <span className="text-foreground">{itemLabel}</span>
+            <span>{itemLabel}</span>
             {(badge || showBadges) && (
               <Badge variant="secondary" className="ml-auto text-[10px] px-1.5 py-0">
                 {badge || "Soon"}
@@ -192,6 +195,115 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
 };
 
 HeaderNavDropdown.displayName = "HeaderNavDropdown";
+
+// =============================================================================
+// NAV RICH DROPDOWN (Trade dropdown - Figma node 1362:1813)
+// =============================================================================
+
+export interface HeaderNavRichDropdownProps {
+  /** Dropdown trigger label */
+  label: string;
+  /** Nav items with iconName + description */
+  items: HeaderNavItemConfig[];
+  /** Navigation handler */
+  onNavigate?: (to: string) => void;
+}
+
+/**
+ * HeaderNavRichDropdown - Dropdown with icon + title + description items
+ * Matches Figma Trade dropdown: bg-[#122524], w-[300px], rounded-xl
+ */
+const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
+  label,
+  items,
+  onNavigate,
+}) => {
+  const [open, setOpen] = React.useState(false);
+  const timeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
+
+  const handleEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 300);
+  };
+
+  React.useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  return (
+    <DropdownMenu open={open} onOpenChange={(v) => { if (!v) { if (timeoutRef.current) clearTimeout(timeoutRef.current); setOpen(false); } }} modal={false}>
+      <div onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+        <DropdownMenuTrigger asChild>
+          <button
+            className={cn(
+              "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1.5",
+              "hover:text-primary",
+              open ? "text-primary" : "text-white"
+            )}
+            style={{ letterSpacing: "-0.64px" }}
+          >
+            {label}
+            <svg
+              className="w-4 h-4 opacity-70"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </DropdownMenuTrigger>
+      </div>
+      <DropdownMenuContent
+        align="start"
+        sideOffset={2}
+        className="w-[300px] bg-[#122524] border-[#123f3c] rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+        onCloseAutoFocus={(e) => e.preventDefault()}
+      >
+        {items.map(({ to, label: itemLabel, iconName, description }) => (
+          <DropdownMenuItem
+            key={to}
+            onSelect={() => {
+              setOpen(false);
+              if (onNavigate) {
+                onNavigate(to);
+              }
+            }}
+            className="cursor-pointer flex gap-2 items-start w-full px-0 py-0 hover:bg-transparent focus:bg-transparent"
+          >
+            {iconName && (
+              <SkaiIcon
+                name={iconName as SkaiIconName}
+                className="w-6 h-6 text-[#56C7F3] shrink-0"
+              />
+            )}
+            <div className="flex flex-col gap-0.5 min-w-0">
+              <span className="font-manrope text-base leading-[22px] tracking-[-0.64px] text-white">
+                {itemLabel}
+              </span>
+              {description && (
+                <span className="font-manrope text-xs leading-4 tracking-[-0.48px] text-white/64">
+                  {description}
+                </span>
+              )}
+            </div>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
+
+HeaderNavRichDropdown.displayName = "HeaderNavRichDropdown";
 
 // =============================================================================
 // FULL NAVIGATION BAR
@@ -289,4 +401,4 @@ const HeaderNavigation = React.forwardRef<HTMLElement, HeaderNavigationProps>(
 
 HeaderNavigation.displayName = "HeaderNavigation";
 
-export { HeaderNavLink, HeaderNavDropdown, HeaderNavigation };
+export { HeaderNavLink, HeaderNavDropdown, HeaderNavRichDropdown, HeaderNavigation };

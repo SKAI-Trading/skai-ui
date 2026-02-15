@@ -11,8 +11,8 @@
   "colors": {
     "brand": {
       "skyBlue": {
-        "300": "#56C0F6",
-        "DEFAULT": "#56C0F6",
+        "300": "#56C7F3",
+        "DEFAULT": "#56C7F3",
         "description": "Primary brand color - CTAs, links, highlights (Figma canonical)"
       },
       "greenCoal": {
@@ -64,7 +64,7 @@
       "success": "#2DEDAD",
       "warning": "#FFFF16",
       "error": "#FF574A",
-      "info": "#56C0F6",
+      "info": "#56C7F3",
       "profit": "#2DEDAD",
       "loss": "#FF574A"
     },

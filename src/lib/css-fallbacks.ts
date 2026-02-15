@@ -28,7 +28,7 @@ export const defaultFallbacks: Record<string, string> = {
   "--popover": "hsl(170, 40%, 7%)",
   "--popover-foreground": "hsl(60, 100%, 97%)",
 
-  // Colors - Primary (Sky Blue #56C0F6)
+  // Colors - Primary (Sky Blue #56C7F3)
   "--primary": "hsl(200, 90%, 65%)",
   "--primary-foreground": "hsl(173, 100%, 4%)",
 

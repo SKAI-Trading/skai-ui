@@ -36,7 +36,7 @@
      SOURCE OF TRUTH for @skai/ui components
      
      Brand Colors (from Figma - source of truth):
-       Sky Blue: #56C0F6 (HSL 200 90% 65%) - Primary actions
+       Sky Blue: #56C7F3 (HSL 200 90% 65%) - Primary actions
        Alien Green: #2DEDAD (HSL 160 84% 55%) - Secondary accents
        Green Coal: #001615 - Dark background
      
@@ -55,7 +55,7 @@
     --popover-foreground: 60 100% 97%;
 
     /* Primary & Secondary */
-    --primary: 200 90% 65%; /* #56C0F6 - Sky Blue (Figma canonical) */
+    --primary: 200 90% 65%; /* #56C7F3 - Sky Blue (Figma canonical) */
     --primary-glow: 200 90% 75%; /* Lighter for glow */
     --primary-foreground: 173 100% 4%;
     --secondary: 160 84% 55%; /* #2DEDAD - Alien Green (Figma canonical) */
@@ -77,7 +77,7 @@
     --muted-foreground: 225 20% 60%; /* #8B92A8 */
     --border: 225 30% 20%; /* #2D3A54 */
     --input: 225 30% 15%;
-    --ring: 200 90% 65%; /* Primary color for focus (#56C0F6) */
+    --ring: 200 90% 65%; /* Primary color for focus (#56C7F3) */
 
     /* Radius & Shadows */
     --radius: 0.75rem; /* 12px */
@@ -264,10 +264,10 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(86, 192, 246, 0.2); /* #56C0F6 */
+    box-shadow: 0 0 20px rgba(86, 199, 243, 0.2); /* #56C7F3 */
   }
   50% {
-    box-shadow: 0 0 30px rgba(86, 192, 246, 0.4); /* #56C0F6 */
+    box-shadow: 0 0 30px rgba(86, 199, 243, 0.4); /* #56C7F3 */
   }
 }
 

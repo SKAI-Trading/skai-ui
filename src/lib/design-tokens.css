@@ -13,8 +13,8 @@
   /* ========================================
    * Brand Colors (From Figma)
    * ======================================== */
-  --skai-sky-blue: #56c0f6;
-  --skai-sky-blue-300: #56c0f6;
+  --skai-sky-blue: #56c7f3;
+  --skai-sky-blue-300: #56c7f3;
 
   --skai-green-coal-100: #123f3c;
   --skai-green-coal-200: #122524;
@@ -55,7 +55,7 @@
   --skai-success: #2dedad;
   --skai-warning: #ffff16;
   --skai-error: #ff574a;
-  --skai-info: #56c0f6;
+  --skai-info: #56c7f3;
   --skai-profit: #2dedad;
   --skai-loss: #ff574a;
 
@@ -67,12 +67,12 @@
   --skai-primary-200: #a3ddf7;
   --skai-primary-300: #7acef4;
   --skai-primary-400: #79cef8;
-  --skai-primary-500: #56C0F6;
+  --skai-primary-500: #56C7F3;
   --skai-primary-600: #3da8d4;
   --skai-primary-700: #2e89b5;
   --skai-primary-800: #1f6a96;
   --skai-primary-900: #104b77;
-  --skai-primary: #56C0F6; /* Figma canonical Sky Blue */
+  --skai-primary: #56C7F3; /* Figma canonical Sky Blue */
 
   /* ========================================
    * Brand Colors - Alien Green Scale (Secondary)

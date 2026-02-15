@@ -359,7 +359,7 @@ export function EmailVerificationModal({
               }
             }}
             disabled={!code.every((digit) => digit !== "") || loading}
-            className="font-manrope flex w-full items-center justify-center gap-2 rounded-[12px] bg-[#56C0F6] px-6 py-4 text-center text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C0F6]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-10 md:py-5 md:text-[16px] md:leading-[22px] md:tracking-[-0.64px] lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
+            className="font-manrope flex w-full items-center justify-center gap-2 rounded-[12px] bg-[#56C7F3] px-6 py-4 text-center text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-10 md:py-5 md:text-[16px] md:leading-[22px] md:tracking-[-0.64px] lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
           >
             {loading ? (
               <>
@@ -379,7 +379,7 @@ export function EmailVerificationModal({
               <button
                 onClick={handleResend}
                 disabled={loading}
-                className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#56C0F6] underline transition-colors hover:text-[#56C0F6]/80 disabled:cursor-not-allowed disabled:opacity-50"
+                className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#56C7F3] underline transition-colors hover:text-[#56C7F3]/80 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Resend code
               </button>
@@ -387,7 +387,7 @@ export function EmailVerificationModal({
           ) : (
             <p className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
               Resend code in{" "}
-              <span className="font-medium text-[#56C0F6]">
+              <span className="font-medium text-[#56C7F3]">
                 {timer} seconds
               </span>
             </p>

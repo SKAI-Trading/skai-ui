@@ -17,7 +17,7 @@ This document tracks the validation of design tokens between Figma and the codeb
 
 | Token Name | Figma Value | Code Value | File | Status |
 |------------|-------------|------------|------|--------|
-| Sky Blue (Primary CTA) | #56C0F6 | #56C0F6 | tokens.ts:24 | MATCH |
+| Sky Blue (Primary CTA) | #56C7F3 | #56C7F3 | tokens.ts:24 | MATCH |
 | Alien Green (Success/Accent) | #2DEDAD | #2DEDAD | tokens.ts:62 | MATCH |
 | Printers Gold | #999966 | #999966 | design-tokens.ts:51 | MATCH |
 | Sun Yellow | #FFFF16 | #FFFF16 | tokens.ts:33 | MATCH |
@@ -37,7 +37,7 @@ This document tracks the validation of design tokens between Figma and the codeb
 | Success/Profit | #2DEDAD | #2DEDAD | tokens.ts:76 | MATCH |
 | Error/Loss | #FF574A | #FF574A | tokens.ts:78 | MATCH |
 | Warning | #FFFF16 | #FFFF16 | tokens.ts:77 | MATCH |
-| Info | #56C0F6 | #56C0F6 | tokens.ts:79 | MATCH |
+| Info | #56C7F3 | #56C7F3 | tokens.ts:79 | MATCH |
 
 ### Neutral Colors - VERIFIED
 
@@ -199,8 +199,8 @@ This document tracks the validation of design tokens between Figma and the codeb
 
 | Type | Figma BG | Code BG | Status |
 |------|----------|---------|--------|
-| Primary | #56C0F6 | #56C0F6 | MATCH |
-| Secondary | transparent + #56C0F6 border | transparent + #56C0F6 border | MATCH |
+| Primary | #56C7F3 | #56C7F3 | MATCH |
+| Secondary | transparent + #56C7F3 border | transparent + #56C7F3 border | MATCH |
 | Tertiary | transparent | transparent | MATCH |
 | Link | transparent + #2DEDAD text | transparent + #2DEDAD text | MATCH |
 
@@ -258,5 +258,5 @@ The design system is connected to Figma through:
 
 ### Last Validated
 
-Date: 2026-02-11 (brand token audit: Sky Blue #56C0F6, Alien Green #2DEDAD)
+Date: 2026-02-13 (brand token audit: Sky Blue #56C7F3, Alien Green #2DEDAD, Alien Green Bright #17F9B4)
 Figma Files: TyX8YAtNDEIvsnSLQ3IXId, 3sSzw1KewMtUbeLAv7uW0r

@@ -57,7 +57,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
       >
         <h2 className="font-manrope font-light text-white text-[20px] md:text-[24px] lg:text-[32px] leading-[24px] md:leading-[28px] lg:leading-[36px] tracking-[-0.8px] md:tracking-[-0.96px] lg:tracking-[-1.28px] mb-[8px]">
           Welcome,{" "}
-          <span className="text-[#56C0F6]">
+          <span className="text-[#56C7F3]">
             {isLoading ? "..." : username}
           </span>
           !
@@ -69,7 +69,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
         {/* Connected accounts & stats row */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-[8px]">
           {twitterHandle && (
-            <span className="flex items-center gap-[5px] font-manrope font-normal text-[#56C0F6] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px]">
+            <span className="flex items-center gap-[5px] font-manrope font-normal text-[#56C7F3] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px]">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               @{twitterHandle}
             </span>
@@ -104,7 +104,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
           <span className="font-manrope font-normal text-[#123F3C] text-[12px] leading-[16px] md:text-[14px] md:leading-[18px] lg:text-[16px] lg:leading-[22px] inline-block min-w-[80px] transition-opacity duration-300">
             {launchWords[currentWordIndex]}
           </span>
-          <span className="bg-[#122524] px-[8px] py-[2px] rounded-full font-manrope font-normal text-[#56C0F6] text-[8px] leading-[10px] lg:text-[11px] lg:leading-[14px]">
+          <span className="bg-[#122524] px-[8px] py-[2px] rounded-full font-manrope font-normal text-[#56C7F3] text-[8px] leading-[10px] lg:text-[11px] lg:leading-[14px]">
             {comingSoonLabel}
           </span>
         </button>

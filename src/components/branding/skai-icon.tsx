@@ -116,6 +116,32 @@ export type SkaiIconName =
   | "x"
   | "twitter"
   | "telegram"
+  // Platform icons (from Figma design system)
+  | "ai"
+  | "games"
+  | "skai-ai"
+  | "chat"
+  | "vault"
+  | "ether"
+  | "skai"
+  | "signal"
+  | "agent"
+  | "information"
+  | "candlesticks"
+  // Graphical / Trading tools (from Figma design system)
+  | "zoom-in"
+  | "crosshair"
+  | "trendline"
+  | "fib-retracement"
+  | "reward"
+  | "xabcd-pattern"
+  | "long-position"
+  | "brush"
+  | "text"
+  | "magnet"
+  | "measure"
+  | "secure"
+  | "fast"
   // Brand icons
   | "google"
   | "apple"
@@ -975,6 +1001,320 @@ const iconPaths: Record<SkaiIconName, React.ReactNode> = {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+    />
+  ),
+  // =============================================================================
+  // PLATFORM ICONS (from Figma design system)
+  // =============================================================================
+  ai: (
+    <g transform="translate(2.15, 2.15) scale(1.59)">
+      <path
+        d="M5.55875 0.415032C5.81701 -0.138344 6.60389 -0.138344 6.86215 0.415032L8.38828 3.68507C8.45972 3.83814 8.58276 3.96118 8.73583 4.03262L12.0059 5.55875C12.5592 5.81701 12.5592 6.60389 12.0059 6.86215L8.73583 8.38828C8.58276 8.45972 8.45972 8.58276 8.38828 8.73583L6.86215 12.0059C6.60389 12.5592 5.81701 12.5592 5.55875 12.0059L4.03262 8.73583C3.96118 8.58276 3.83814 8.45972 3.68507 8.38828L0.415032 6.86215C-0.138344 6.60389 -0.138344 5.81701 0.415032 5.55875L3.68507 4.03262C3.83814 3.96118 3.96118 3.83814 4.03262 3.68507L5.55875 0.415032Z"
+        fill="currentColor"
+      />
+    </g>
+  ),
+  games: (
+    <>
+      <rect
+        x="4"
+        y="4"
+        width="16"
+        height="16"
+        rx="3"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+      />
+      <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+      <circle cx="15.5" cy="8.5" r="1.5" fill="currentColor" />
+      <circle cx="8.5" cy="15.5" r="1.5" fill="currentColor" />
+      <circle cx="15.5" cy="15.5" r="1.5" fill="currentColor" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </>
+  ),
+  "skai-ai": (
+    <g transform="translate(2, 2.77) scale(1.538)">
+      <path
+        d="M8.81489 4.20703C9.08479 4.20704 9.34331 4.31463 9.53462 4.50586L10.7055 5.67578V5.67773C10.887 5.85923 10.8872 6.15369 10.7065 6.33594L5.42036 11.6533C5.19955 11.8748 4.89939 12 4.58638 12H2.29536C2.17386 11.9998 2.10759 11.8566 2.18599 11.7637L6.89009 6.15527C7.04104 5.97464 6.91303 5.70052 6.67817 5.7002H5.36372C5.23648 5.6996 5.17353 5.54492 5.26314 5.45508L6.40962 4.30859C6.47451 4.2437 6.56345 4.2072 6.65474 4.20703H8.81489ZM8.54634 0C8.66785 0.000299409 8.73428 0.143409 8.65571 0.236328L3.95161 5.84277C3.80083 6.02344 3.92963 6.29762 4.1645 6.29785H5.47798C5.60567 6.29791 5.66932 6.45297 5.57954 6.54297L4.4311 7.69043C4.3661 7.75523 4.27732 7.79102 4.18599 7.79102H2.02681C1.75694 7.79094 1.49736 7.68442 1.3061 7.49316L0.136182 6.32227C-0.0451202 6.14081 -0.0453415 5.84628 0.135206 5.66406L5.42134 0.34668C5.64204 0.125222 5.94145 0.000134329 6.25435 0H8.54634ZM10.7905 0.133789C10.8736 -0.0444188 11.1272 -0.0444188 11.2104 0.133789L11.7016 1.18652C11.7246 1.23571 11.7638 1.2758 11.8129 1.29883L12.8667 1.79004C13.0447 1.87324 13.0447 2.12676 12.8667 2.20996L11.8129 2.70117C11.7638 2.7242 11.7246 2.76429 11.7016 2.81348L11.2104 3.86621C11.1272 4.04442 10.8736 4.04442 10.7905 3.86621L10.2993 2.81348C10.2763 2.76418 10.2363 2.72418 10.187 2.70117L9.13423 2.20996C8.95602 2.12679 8.95602 1.87321 9.13423 1.79004L10.187 1.29883C10.2363 1.27582 10.2763 1.23582 10.2993 1.18652L10.7905 0.133789Z"
+        fill="currentColor"
+      />
+    </g>
+  ),
+  chat: (
+    <path
+      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  vault: (
+    <>
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="16"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+      />
+      <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="2" fill="none" />
+      <path
+        d="M12 10v-2m0 10v2"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M7 3v2m10-2v2"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </>
+  ),
+  ether: (
+    <path
+      d="M12 2l7 10-7 4-7-4 7-10zm0 14l7-4-7 10-7-10 7 4z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  skai: (
+    <>
+      <path
+        d="M12 2l7 10-7 4-7-4 7-10z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <path
+        d="M5 12l7 4 7-4-7 10-7-10z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </>
+  ),
+  signal: (
+    <path
+      d="M2 12a10 10 0 0118 0M6 12a6 6 0 0112 0M10 12a2 2 0 014 0M12 12v6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  agent: (
+    <>
+      <rect
+        x="5"
+        y="8"
+        width="14"
+        height="12"
+        rx="3"
+        stroke="currentColor"
+        strokeWidth="2"
+        fill="none"
+      />
+      <circle cx="9" cy="14" r="1.5" fill="currentColor" />
+      <circle cx="15" cy="14" r="1.5" fill="currentColor" />
+      <path
+        d="M12 4v4M8 4h8"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </>
+  ),
+  information: (
+    <g transform="translate(2, 2) scale(1.5)">
+      <path
+        d="M6.63333 10.6667C6.86667 10.6667 7.064 10.586 7.22533 10.4247C7.38667 10.2633 7.46711 10.0662 7.46667 9.83334C7.46622 9.60045 7.38578 9.40311 7.22533 9.24134C7.06489 9.07956 6.86756 8.99911 6.63333 9C6.39911 9.00089 6.202 9.08156 6.042 9.242C5.882 9.40245 5.80133 9.59956 5.8 9.83334C5.79867 10.0671 5.87933 10.2644 6.042 10.4253C6.20467 10.5862 6.40178 10.6667 6.63333 10.6667ZM6.03333 8.1H7.26667C7.26667 7.73334 7.30845 7.44445 7.392 7.23334C7.47556 7.02223 7.71156 6.73334 8.1 6.36667C8.38889 6.07778 8.61667 5.80267 8.78333 5.54134C8.95 5.28 9.03333 4.96623 9.03333 4.6C9.03333 3.97778 8.80556 3.5 8.35 3.16667C7.89445 2.83334 7.35556 2.66667 6.73333 2.66667C6.1 2.66667 5.58622 2.83334 5.192 3.16667C4.79778 3.5 4.52267 3.9 4.36667 4.36667L5.46667 4.8C5.52222 4.6 5.64733 4.38334 5.842 4.15C6.03667 3.91667 6.33378 3.8 6.73333 3.8C7.08889 3.8 7.35556 3.89734 7.53333 4.092C7.71111 4.28667 7.8 4.50045 7.8 4.73334C7.8 4.95556 7.73333 5.164 7.6 5.35867C7.46667 5.55334 7.3 5.73378 7.1 5.9C6.61111 6.33334 6.31111 6.66111 6.2 6.88334C6.08889 7.10556 6.03333 7.51111 6.03333 8.1ZM6.66667 13.3333C5.74445 13.3333 4.87778 13.1584 4.06667 12.8087C3.25556 12.4589 2.55 11.9838 1.95 11.3833C1.35 10.7829 0.875112 10.0773 0.525334 9.26667C0.175556 8.456 0.000445288 7.58934 8.43882e-07 6.66667C-0.000443601 5.744 0.174668 4.87734 0.525334 4.06667C0.876001 3.256 1.35089 2.55045 1.95 1.95C2.54911 1.34956 3.25467 0.87467 4.06667 0.525337C4.87867 0.176003 5.74533 0.000892256 6.66667 3.367e-06C7.588 -0.000885522 8.45467 0.174226 9.26667 0.525337C10.0787 0.876448 10.7842 1.35134 11.3833 1.95C11.9824 2.54867 12.4576 3.25423 12.8087 4.06667C13.1598 4.87912 13.3347 5.74578 13.3333 6.66667C13.332 7.58756 13.1569 8.45423 12.808 9.26667C12.4591 10.0791 11.9842 10.7847 11.3833 11.3833C10.7824 11.982 10.0769 12.4571 9.26667 12.8087C8.45645 13.1602 7.58978 13.3351 6.66667 13.3333Z"
+        fill="currentColor"
+      />
+    </g>
+  ),
+  candlesticks: (
+    <g transform="translate(5.5, 2) scale(1.167)">
+      <path
+        d="M7.71428 6V11.1429H10.2857V6H7.71428ZM7.28571 5.14286H10.7143C10.8279 5.14286 10.937 5.18801 11.0173 5.26839C11.0977 5.34876 11.1429 5.45777 11.1429 5.57143V11.5714C11.1429 11.6851 11.0977 11.7941 11.0173 11.8745C10.937 11.9549 10.8279 12 10.7143 12H7.28571C7.17205 12 7.06304 11.9549 6.98267 11.8745C6.90229 11.7941 6.85714 11.6851 6.85714 11.5714V5.57143C6.85714 5.45777 6.90229 5.34876 6.98267 5.26839C7.06304 5.18801 7.17205 5.14286 7.28571 5.14286Z"
+        fill="currentColor"
+      />
+      <path
+        d="M8.57142 2.57142H9.42856V5.57142H8.57142V2.57142ZM8.57142 11.5714H9.42856V14.5714H8.57142V11.5714Z"
+        fill="currentColor"
+      />
+      <path
+        d="M0.857143 3.42856V13.7143H3.42857V3.42856H0.857143ZM0.428571 2.57142H3.85714C3.97081 2.57142 4.07982 2.61657 4.16019 2.69694C4.24056 2.77732 4.28571 2.88633 4.28571 2.99999V14.1428C4.28571 14.2565 4.24056 14.3655 4.16019 14.4459C4.07982 14.5263 3.97081 14.5714 3.85714 14.5714H0.428571C0.314907 14.5714 0.205898 14.5263 0.125525 14.4459C0.0451526 14.3655 0 14.2565 0 14.1428V2.99999C0 2.88633 0.0451526 2.77732 0.125525 2.69694C0.205898 2.61657 0.314907 2.57142 0.428571 2.57142Z"
+        fill="currentColor"
+      />
+      <path
+        d="M1.71428 0H2.57142V3H1.71428V0ZM1.71428 14.1429H2.57142V17.1429H1.71428V14.1429Z"
+        fill="currentColor"
+      />
+    </g>
+  ),
+  // =============================================================================
+  // GRAPHICAL / TRADING TOOL ICONS (from Figma design system)
+  // =============================================================================
+  "zoom-in": (
+    <>
+      <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" fill="none" />
+      <path
+        d="M21 21l-4.35-4.35M11 8v6m-3-3h6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </>
+  ),
+  crosshair: (
+    <>
+      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2" fill="none" />
+      <path
+        d="M12 2v4m0 12v4M2 12h4m12 0h4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </>
+  ),
+  trendline: (
+    <path
+      d="M3 20L10 10l4 6 7-13"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  "fib-retracement": (
+    <path
+      d="M3 4h18M3 8.5h18M3 12h18M3 16.5h18M3 20h18"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  ),
+  reward: (
+    <>
+      <path
+        d="M6 9H4V4h4m10 5h2V4h-4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <path
+        d="M4 9h16v2a6 6 0 01-6 6h-4a6 6 0 01-6-6V9z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <path
+        d="M9 17v3h6v-3"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </>
+  ),
+  "xabcd-pattern": (
+    <path
+      d="M3 6l5 12 4-8 4 8 5-12"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  "long-position": (
+    <path
+      d="M12 20V4m0 0l-6 6m6-6l6 6M4 20h16"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  brush: (
+    <path
+      d="M18.37 2.63a2.12 2.12 0 013 3L14 13l-4 1 1-4 7.37-7.37zM5 17a3 3 0 00-3 3c1 0 2.5-.5 3-2 .5 1.5 2 2 3 2a3 3 0 00-3-3z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  text: (
+    <path
+      d="M6 4h12M12 4v16m-4 0h8"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+  magnet: (
+    <path
+      d="M6 3v7a6 6 0 1012 0V3M6 3h4v7a2 2 0 104 0V3h4M6 8h4m4 0h4"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  measure: (
+    <path
+      d="M3 21L21 3M3 21h6v-2M3 21v-6h2m16-12h-6v2M21 3v6h-2M9 15l2-2m2-2l2-2"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  secure: (
+    <path
+      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+  ),
+  fast: (
+    <path
+      d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
     />
   ),
   // =============================================================================
