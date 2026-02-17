@@ -222,7 +222,7 @@ export const content = {
       completion: {
         titleWithUsername: "@{{username}} is yours!",
         titleFallback: "You're in!",
-        subtitle: "Welcome to SKAI!",
+        subtitle: "Welcome Skai Early Adopter!",
         rewardAmount: "+500 SKAI Points",
         giftMessage: "We gifted you",
         giftHighlight: "",
