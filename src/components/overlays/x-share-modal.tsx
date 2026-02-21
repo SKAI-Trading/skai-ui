@@ -212,7 +212,7 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
         {/* Modal */}
         <div
           ref={ref}
-          className="relative w-full max-w-[480px] rounded-2xl bg-[#001615] border border-[#123F3C] overflow-hidden"
+          className="relative w-full max-w-[480px] max-h-[90dvh] rounded-2xl bg-[#001615] border border-[#123F3C] overflow-y-auto overflow-x-hidden"
         >
           {/* Header */}
           <div className="flex items-center justify-between px-6 pt-5 pb-3">
