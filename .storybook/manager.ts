@@ -12,7 +12,7 @@ const skaiTheme = create({
   // Brand - Custom SKAI branding
   brandTitle: "SKAI Design System",
   brandUrl: "https://skai.trade",
-  brandImage: undefined, // TODO: add SKAI logo SVG here
+  brandImage: "./assets/logo/skai-logo-dark.svg",
   brandTarget: "_blank",
 
   // Colors - SKAI palette
