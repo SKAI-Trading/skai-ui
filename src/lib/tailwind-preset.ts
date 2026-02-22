@@ -180,10 +180,14 @@ export const skaiAnimations = {
 
 export const skaiTransitionDuration = {
   instant: "0ms",
+  micro: "75ms", // Micro interactions (Figma)
+  quick: "100ms", // Quick feedback (Figma)
   fast: "150ms",
+  default: "200ms", // Default transitions (Figma)
   normal: "300ms",
   slow: "500ms",
   slower: "700ms",
+  slowest: "1000ms", // Slow reveals (Figma)
 } as const;
 
 export const skaiTransitionTimingFunction = {
@@ -192,6 +196,9 @@ export const skaiTransitionTimingFunction = {
   out: "cubic-bezier(0, 0, 0.2, 1)",
   "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
   bounce: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+  "bounce-in": "cubic-bezier(0.6, -0.28, 0.735, 0.045)", // Figma bounceIn
+  "bounce-out": "cubic-bezier(0.175, 0.885, 0.32, 1.275)", // Figma bounceOut
+  sharp: "cubic-bezier(0.4, 0, 0.6, 1)", // Figma sharp
   spring: "cubic-bezier(0.175, 0.885, 0.32, 1.1)",
 } as const;
 
@@ -347,6 +354,15 @@ const skaiPreset: Partial<Config> = {
       // Transitions
       transitionDuration: skaiTransitionDuration,
       transitionTimingFunction: skaiTransitionTimingFunction,
+
+      // 24-column grid system (Figma)
+      gridTemplateColumns: {
+        "24": "repeat(24, minmax(0, 1fr))",
+      },
+      gridColumn: {
+        "span-16": "span 16 / span 16",
+        "span-24": "span 24 / span 24",
+      },
 
       // Screens/breakpoints
       screens: skaiScreens,

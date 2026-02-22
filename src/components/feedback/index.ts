@@ -11,3 +11,5 @@ export * from "./spinner";
 export * from "./empty-state";
 export * from "./error-boundary";
 export * from "./notification";
+export * from "./bouncing-dots";
+export * from "./circular-progress";

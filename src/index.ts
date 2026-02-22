@@ -66,6 +66,7 @@ export * from "./hooks/use-keyboard-shortcut";
 export * from "./hooks/use-intersection-observer";
 export * from "./hooks/use-window-size";
 export * from "./hooks/use-previous";
+export * from "./hooks/use-count-up";
 
 // =============================================================================
 // UTILITIES & LIBRARIES

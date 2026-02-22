@@ -1228,6 +1228,9 @@ export const skaiSpacing = {
   "8": "32px", // s-8
   "10": "40px", // s-10
   "12": "48px", // s-12
+  "16": "64px", // s-16 (Figma)
+  "20": "80px", // s-20 (Figma)
+  "24": "96px", // s-24 (Figma)
 } as const;
 
 /**

@@ -756,4 +756,80 @@
     animation: messageHighlight 2s ease-out forwards;
     border-radius: 0.5rem;
   }
+
+  /* =========================================================================
+   * MICRO INTERACTIONS (Figma: Animation & Motion)
+   * ========================================================================= */
+
+  /* Hover scale — cards, buttons (Figma: transform scale 1.05, 150ms ease-out) */
+  .hover-scale {
+    transition: transform 150ms ease-out;
+  }
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Hover lift + shadow — elevated cards (Figma: translateY -2px, shadow) */
+  .hover-lift {
+    transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Active press — tactile feedback (Figma: scale 0.98) */
+  .active-press:active {
+    transform: scale(0.98);
+  }
+
+  /* Focus ring — keyboard navigation (Figma: 2px solid ring, 2px offset) */
+  .focus-ring:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* =========================================================================
+   * STAGGER ANIMATION DELAYS (Figma: Staggered animation)
+   * ========================================================================= */
+
+  .stagger-1 { animation-delay: 0ms; }
+  .stagger-2 { animation-delay: 100ms; }
+  .stagger-3 { animation-delay: 200ms; }
+  .stagger-4 { animation-delay: 300ms; }
+  .stagger-5 { animation-delay: 400ms; }
+  .stagger-6 { animation-delay: 500ms; }
+
+  /* =========================================================================
+   * PRICE FLASH (Figma: Number & value animations)
+   * ========================================================================= */
+
+  .price-flash-green {
+    animation: price-flash-green 0.6s ease-out;
+  }
+  .price-flash-red {
+    animation: price-flash-red 0.6s ease-out;
+  }
+
+  /* Bouncing dots loader (Figma: Loading states) */
+  .animate-bounce-dot {
+    animation: bounce-dot 1.4s ease-in-out infinite;
+  }
+}
+
+/* Price flash keyframes */
+@keyframes price-flash-green {
+  0% { background-color: rgba(45, 237, 173, 0.3); }
+  100% { background-color: transparent; }
+}
+
+@keyframes price-flash-red {
+  0% { background-color: rgba(255, 87, 74, 0.3); }
+  100% { background-color: transparent; }
+}
+
+/* Bouncing dot keyframes */
+@keyframes bounce-dot {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
 }
