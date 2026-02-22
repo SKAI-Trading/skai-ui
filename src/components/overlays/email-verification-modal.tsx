@@ -226,6 +226,8 @@ export function EmailVerificationModal({
         if (newCode.every((digit) => digit !== "")) {
           onVerify(newCode.join(""));
         }
+      }).catch(() => {
+        // Clipboard read permission denied - silently ignore
       });
     }
   };
