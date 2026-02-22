@@ -44,11 +44,8 @@ interface ChatMessage {
 
 export interface ChartAICardProps extends React.HTMLAttributes<HTMLDivElement> {
   username: string;
-  /** Called to analyze a chart image. Returns the AI analysis result. */
   onAnalyzeChart: (imageBase64: string) => Promise<ChartAnalysisResult>;
-  /** Called to ask a follow-up question. Returns the AI text response. */
   onAskFollowUp: (question: string, analysisContext: string) => Promise<string>;
-  /** Maximum number of interactions allowed (default 5) */
   maxInteractions?: number;
 }
 
@@ -98,13 +95,12 @@ function AnalysisSummary({ analysis }: { analysis: ChartAnalysisResult }) {
   const bias = analysis.overallAssessment.bias;
 
   return (
-    <div className="space-y-3 mt-3">
-      {/* Overall */}
+    <div className="flex flex-col gap-[8px] mt-2">
+      {/* Overall bias + confidence */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-[13px] font-semibold text-white">
-          {BIAS_ICONS[bias] || "◆"} Overall:{" "}
+        <span className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+          {BIAS_ICONS[bias] || "◆"}{" "}
           <span
-            className="capitalize"
             style={{
               color:
                 bias === "bullish"
@@ -114,7 +110,7 @@ function AnalysisSummary({ analysis }: { analysis: ChartAnalysisResult }) {
                     : "#E0E0E0",
             }}
           >
-            {bias}
+            {bias.charAt(0).toUpperCase() + bias.slice(1)}
           </span>
         </span>
         <span
@@ -124,31 +120,30 @@ function AnalysisSummary({ analysis }: { analysis: ChartAnalysisResult }) {
             color: conf >= 70 ? "#2DEDAD" : conf >= 40 ? "#F5A623" : "#FF6B6B",
           }}
         >
-          {conf}% confidence
+          {conf}%
         </span>
       </div>
 
       {/* Trend */}
-      <div className="text-[12px] text-[#B0B0B0]">
-        <span className="text-[#E0E0E0] font-medium">Trend:</span>{" "}
-        {analysis.trendAnalysis.direction}, {analysis.trendAnalysis.strength} —{" "}
-        {analysis.trendAnalysis.description}
-      </div>
+      <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+        <span className="font-bold">Trend:</span>{" "}
+        {analysis.trendAnalysis.direction}, {analysis.trendAnalysis.strength}
+      </p>
 
-      {/* Patterns */}
+      {/* Patterns as inline badges */}
       {analysis.patterns.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
           {analysis.patterns.map((p, i) => (
             <span
               key={i}
-              className="text-[10px] px-2 py-1 rounded-lg border font-medium"
+              className="text-[11px] px-2 py-0.5 rounded-[4px] font-medium"
               style={{
                 borderColor: CONFIDENCE_COLORS[p.confidence] + "44",
                 color: CONFIDENCE_COLORS[p.confidence],
-                backgroundColor: CONFIDENCE_COLORS[p.confidence] + "11",
+                backgroundColor: CONFIDENCE_COLORS[p.confidence] + "15",
               }}
             >
-              {p.name} ({p.confidence})
+              {p.name}
             </span>
           ))}
         </div>
@@ -156,30 +151,33 @@ function AnalysisSummary({ analysis }: { analysis: ChartAnalysisResult }) {
 
       {/* Key Levels */}
       {analysis.keyLevels.length > 0 && (
-        <div className="text-[12px] text-[#B0B0B0]">
-          <span className="text-[#E0E0E0] font-medium">Key Levels:</span>{" "}
+        <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+          <span className="font-bold">Levels:</span>{" "}
           {analysis.keyLevels
-            .map((l) => `${l.type === "support" ? "S" : l.type === "resistance" ? "R" : "P"}: ${l.price || l.description}`)
-            .join(" | ")}
-        </div>
+            .slice(0, 4)
+            .map(
+              (l) =>
+                `${l.type === "support" ? "S" : l.type === "resistance" ? "R" : "P"}: ${l.price || l.description}`,
+            )
+            .join(" · ")}
+        </p>
       )}
 
       {/* Summary */}
-      <p className="text-[12px] text-[#B0B0B0] leading-[18px]">
+      <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
         {analysis.overallAssessment.summary}
       </p>
 
       {/* Recommendations */}
       {analysis.overallAssessment.recommendations.length > 0 && (
-        <div className="space-y-1">
+        <div className="flex flex-col gap-1">
           {analysis.overallAssessment.recommendations.map((rec, i) => (
-            <div
+            <p
               key={i}
-              className="text-[11px] text-[#2DEDAD] flex items-start gap-1.5"
+              className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#2DEDAD]"
             >
-              <span className="mt-0.5 flex-shrink-0">→</span>
-              <span>{rec}</span>
-            </div>
+              → {rec}
+            </p>
           ))}
         </div>
       )}
@@ -210,7 +208,6 @@ function DropZone({
     [onImageSelected],
   );
 
-  // Clipboard paste handler
   useEffect(() => {
     const handlePaste = (e: ClipboardEvent) => {
       const items = e.clipboardData?.items;
@@ -230,9 +227,9 @@ function DropZone({
 
   if (isAnalyzing) {
     return (
-      <div className="border border-dashed border-[#56C7F3]/30 rounded-xl p-6 flex flex-col items-center justify-center gap-3 bg-[#56C7F3]/5 min-h-[120px]">
-        <div className="w-6 h-6 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin" />
-        <span className="text-[12px] text-[#56C7F3] font-medium">
+      <div className="flex items-center gap-3 py-2">
+        <div className="w-5 h-5 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin flex-shrink-0" />
+        <span className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
           Analyzing your chart...
         </span>
       </div>
@@ -243,10 +240,10 @@ function DropZone({
     <>
       <div
         className={cn(
-          "border border-dashed rounded-xl p-6 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all min-h-[120px]",
+          "border border-dashed rounded-lg p-4 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all",
           isDragging
             ? "border-[#56C7F3] bg-[#56C7F3]/10"
-            : "border-[rgba(255,255,255,0.15)] bg-[rgba(255,255,255,0.02)] hover:border-[#56C7F3]/50 hover:bg-[#56C7F3]/5",
+            : "border-[#95A09F]/30 bg-[#001615]/40 hover:border-[#56C7F3]/50 hover:bg-[#56C7F3]/5",
         )}
         onClick={() => fileInputRef.current?.click()}
         onDragOver={(e) => {
@@ -262,11 +259,11 @@ function DropZone({
         }}
       >
         <svg
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
-          className="text-[#56C7F3] opacity-60"
+          className="text-[#95A09F]"
         >
           <path
             d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"
@@ -276,10 +273,10 @@ function DropZone({
             strokeLinejoin="round"
           />
         </svg>
-        <span className="text-[13px] text-[#E0E0E0] text-center">
+        <span className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] text-center">
           Drop or paste a chart image
         </span>
-        <span className="text-[11px] text-[#808080]">
+        <span className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[18px] text-[#95A09F]">
           or click to upload
         </span>
       </div>
@@ -324,18 +321,16 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
     const isLocked = usedCount >= maxInteractions;
     const remaining = Math.max(0, maxInteractions - usedCount);
 
-    // Scroll to bottom on new messages
     useEffect(() => {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
-    // Add greeting on mount
     useEffect(() => {
       setMessages([
         {
           id: "greeting",
           role: "assistant",
-          content: `Hey ${username}! Upload or paste a trading chart and I'll give you a full technical analysis with pattern detection, key levels, and trade recommendations.`,
+          content: `Hey ${username}! Upload or paste any trading chart and I'll analyze patterns, key levels, and give you trade recommendations.`,
         },
       ]);
     }, [username]);
@@ -351,7 +346,6 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
         if (isLocked) return;
         setIsAnalyzing(true);
 
-        // Add user message with chart
         const userMsg: ChatMessage = {
           id: `user_${Date.now()}`,
           role: "user",
@@ -373,7 +367,7 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
           };
           setMessages((prev) => [...prev, assistantMsg]);
           incrementUsed();
-        } catch (err) {
+        } catch {
           const errorMsg: ChatMessage = {
             id: `error_${Date.now()}`,
             role: "assistant",
@@ -430,20 +424,21 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex flex-col rounded-[24px] border border-[#123F3C] bg-[#122524] overflow-hidden",
+          "bg-[#123F3C] flex flex-col gap-[20px] rounded-lg p-[16px] relative",
           className,
         )}
         {...props}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-[rgba(255,255,255,0.06)]">
-          <div className="flex items-center gap-2">
+        {/* Header row — title + usage counter + close-style icon */}
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-[8px]">
+            {/* Chart pulse icon */}
             <svg
-              width="18"
-              height="18"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
-              className="text-[#56C7F3]"
+              className="text-[#56C7F3] flex-shrink-0"
             >
               <path
                 d="M22 12h-4l-3 9L9 3l-3 9H2"
@@ -453,154 +448,130 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="font-manrope font-semibold text-white text-[14px] md:text-[16px] tracking-[-0.32px]">
+            <p className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
               SKAI Chart AI
-            </h3>
-            <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#56C7F3]/15 text-[#56C7F3] font-medium">
+            </p>
+            <span className="text-[10px] px-1.5 py-0.5 rounded-[4px] bg-[#56C7F3]/15 text-[#56C7F3] font-medium font-['Manrope',sans-serif]">
               DEMO
             </span>
           </div>
           <span
             className={cn(
-              "text-[11px] font-medium px-2 py-0.5 rounded-full",
+              "font-['Manrope',sans-serif] font-bold text-[11px] leading-[18px] tracking-[-0.56px] px-2 py-0.5 rounded-[4px]",
               isLocked
                 ? "bg-[#FF6B6B]/15 text-[#FF6B6B]"
-                : "bg-[rgba(255,255,255,0.06)] text-[#B0B0B0]",
+                : "bg-[#001615]/40 text-[#95A09F]",
             )}
           >
             {remaining}/{maxInteractions}
           </span>
         </div>
 
-        {/* Chat Messages */}
-        <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4 max-h-[500px] min-h-[200px]">
+        {/* Messages area */}
+        <div className="flex flex-col gap-[8px] overflow-y-auto max-h-[400px]">
           {messages.map((msg) => (
-            <div
-              key={msg.id}
-              className={cn(
-                "flex",
-                msg.role === "user" ? "justify-end" : "justify-start",
-              )}
-            >
-              <div
-                className={cn(
-                  "max-w-[90%] rounded-2xl px-4 py-3",
-                  msg.role === "user"
-                    ? "bg-[#56C7F3]/10 text-[#E0E0E0]"
-                    : "bg-[rgba(255,255,255,0.04)] text-[#E0E0E0]",
-                )}
-              >
-                {/* User chart image thumbnail */}
-                {msg.role === "user" && msg.chartImage && (
-                  <img
-                    src={msg.chartImage}
-                    alt="Uploaded chart"
-                    className="w-full max-w-[300px] rounded-lg mb-2"
-                  />
-                )}
-
-                <p className="text-[13px] leading-[20px] font-manrope whitespace-pre-wrap">
-                  {msg.content}
-                </p>
-
-                {/* Analysis result with overlay */}
-                {msg.analysis && msg.chartImage && (
-                  <div className="mt-3 space-y-3">
-                    <ChartOverlayCanvas
-                      imageSrc={msg.chartImage}
-                      keyLevels={msg.analysis.keyLevels}
-                      patternRegions={msg.analysis.patternRegions}
-                      className="rounded-lg overflow-hidden"
-                    />
-                    <AnalysisSummary analysis={msg.analysis} />
+            <div key={msg.id}>
+              {msg.role === "user" ? (
+                <div className="flex justify-end">
+                  <div className="bg-[#001615]/60 rounded-lg p-[12px] max-w-[85%]">
+                    {msg.chartImage && (
+                      <img
+                        src={msg.chartImage}
+                        alt="Uploaded chart"
+                        className="w-full max-w-[280px] rounded-[4px] mb-2"
+                      />
+                    )}
+                    <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+                      {msg.content}
+                    </p>
                   </div>
-                )}
-              </div>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-[8px]">
+                  <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] whitespace-pre-wrap">
+                    {msg.content}
+                  </p>
+
+                  {/* Chart overlay + analysis */}
+                  {msg.analysis && msg.chartImage && (
+                    <>
+                      <ChartOverlayCanvas
+                        imageSrc={msg.chartImage}
+                        keyLevels={msg.analysis.keyLevels}
+                        patternRegions={msg.analysis.patternRegions}
+                        className="rounded-[4px] overflow-hidden"
+                      />
+                      <AnalysisSummary analysis={msg.analysis} />
+                    </>
+                  )}
+                </div>
+              )}
             </div>
           ))}
 
-          {/* Analyzing spinner inline */}
-          {isAnalyzing && (
-            <div className="flex justify-start">
-              <div className="bg-[rgba(255,255,255,0.04)] rounded-2xl px-4 py-3 flex items-center gap-2">
-                <div className="w-4 h-4 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin" />
-                <span className="text-[12px] text-[#B0B0B0]">
-                  Analyzing chart...
-                </span>
-              </div>
-            </div>
-          )}
-
-          {/* Sending spinner */}
-          {isSending && (
-            <div className="flex justify-start">
-              <div className="bg-[rgba(255,255,255,0.04)] rounded-2xl px-4 py-3 flex items-center gap-2">
-                <div className="w-4 h-4 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin" />
-                <span className="text-[12px] text-[#B0B0B0]">
-                  Thinking...
-                </span>
-              </div>
+          {/* Spinners */}
+          {(isAnalyzing || isSending) && (
+            <div className="flex items-center gap-3 py-1">
+              <div className="w-4 h-4 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin flex-shrink-0" />
+              <span className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+                {isAnalyzing ? "Analyzing chart..." : "Thinking..."}
+              </span>
             </div>
           )}
 
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Area */}
-        <div className="px-5 py-4 border-t border-[rgba(255,255,255,0.06)]">
-          {isLocked ? (
-            <div className="text-center py-3">
-              <p className="text-[13px] text-[#B0B0B0] mb-2">
-                You've used all {maxInteractions} free analyses!
-              </p>
-              <p className="text-[12px] text-[#56C7F3]">
-                Full access coming soon at public launch.
-              </p>
-            </div>
-          ) : !analysis ? (
-            <DropZone
-              onImageSelected={handleImageSelected}
-              isAnalyzing={isAnalyzing}
+        {/* Input area */}
+        {isLocked ? (
+          <div className="flex flex-col gap-[8px] items-center py-1">
+            <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] text-center">
+              You've used all {maxInteractions} free analyses!
+            </p>
+            <p className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#56C7F3]">
+              Full access at public launch
+            </p>
+          </div>
+        ) : !analysis ? (
+          <DropZone
+            onImageSelected={handleImageSelected}
+            isAnalyzing={isAnalyzing}
+          />
+        ) : (
+          <div className="flex items-center gap-[8px]">
+            <input
+              type="text"
+              value={followUpInput}
+              onChange={(e) => setFollowUpInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleFollowUp();
+                }
+              }}
+              placeholder="Ask a follow-up question..."
+              className="flex-1 bg-[#001615]/60 border border-[#95A09F]/20 rounded-lg px-3 py-2.5 font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] placeholder:text-[#95A09F] outline-none focus:border-[#56C7F3]/50 transition-colors"
+              disabled={isSending}
             />
-          ) : (
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                value={followUpInput}
-                onChange={(e) => setFollowUpInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    handleFollowUp();
-                  }
-                }}
-                placeholder="Ask a follow-up question..."
-                className="flex-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.1)] rounded-xl px-4 py-3 text-[13px] text-white placeholder:text-[#808080] outline-none focus:border-[#56C7F3]/50 transition-colors font-manrope"
-                disabled={isSending}
-              />
-              <button
-                onClick={handleFollowUp}
-                disabled={!followUpInput.trim() || isSending}
-                className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#56C7F3]/15 text-[#56C7F3] flex items-center justify-center hover:bg-[#56C7F3]/25 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          )}
-        </div>
+            <button
+              type="button"
+              title="Send message"
+              onClick={handleFollowUp}
+              disabled={!followUpInput.trim() || isSending}
+              className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#001615]/60 text-[#56C7F3] flex items-center justify-center hover:bg-[#001615]/80 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     );
   },
