@@ -4,3 +4,5 @@ export * from "./badge-card";
 export * from "./referral-card";
 export * from "./media-slider";
 export * from "./landing-footer";
+export * from "./chart-overlay-canvas";
+export * from "./chart-ai-card";
