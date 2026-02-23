@@ -31,6 +31,8 @@ export interface ChartAnalysisResult {
     recommendations: string[];
   };
   patternRegions?: PatternRegion[];
+  detectedSymbol?: string;
+  detectedTimeframe?: string;
   warnings?: string[];
 }
 
@@ -46,6 +48,8 @@ export interface ChartAICardProps extends React.HTMLAttributes<HTMLDivElement> {
   username: string;
   onAnalyzeChart: (imageBase64: string) => Promise<ChartAnalysisResult>;
   onAskFollowUp: (question: string, analysisContext: string) => Promise<string>;
+  onResetChart?: () => void;
+  onShareAnalysis?: (analysis: ChartAnalysisResult, chartImage: string) => void;
   maxInteractions?: number;
 }
 
@@ -69,6 +73,9 @@ function normalizeConfidence(raw: number): number {
 }
 
 function getStorageKey(username: string): string {
+  if (!username) {
+    return `skai_chart_ai_used_anon_${typeof window !== "undefined" ? window.location.hostname : "unknown"}`;
+  }
   return `skai_chart_ai_used_${username}`;
 }
 
@@ -90,96 +97,214 @@ function setUsedCount(username: string, count: number): void {
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
-function AnalysisSummary({ analysis }: { analysis: ChartAnalysisResult }) {
+function CollapsibleSection({
+  title,
+  defaultExpanded = true,
+  children,
+}: {
+  title: string;
+  defaultExpanded?: boolean;
+  children: React.ReactNode;
+}) {
+  const [expanded, setExpanded] = useState(defaultExpanded);
+
+  return (
+    <div className="flex flex-col">
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        className="flex items-center gap-1 text-left group"
+      >
+        <span className={cn(
+          "text-[11px] text-[#95A09F] transition-transform duration-200 inline-block",
+          expanded ? "rotate-90" : "rotate-0",
+        )}>
+          ▸
+        </span>
+        <span className="font-['Manrope',sans-serif] font-bold text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] group-hover:text-[#56C7F3] transition-colors">
+          {title}
+        </span>
+      </button>
+      <div
+        className={cn(
+          "grid transition-[grid-template-rows] duration-200 ease-in-out",
+          expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+        )}
+      >
+        <div className="overflow-hidden">
+          <div className="pt-1">{children}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AnalysisSummary({
+  analysis,
+  chartImage,
+  onShareAnalysis,
+}: {
+  analysis: ChartAnalysisResult;
+  chartImage?: string;
+  onShareAnalysis?: (analysis: ChartAnalysisResult, chartImage: string) => void;
+}) {
   const conf = normalizeConfidence(analysis.overallAssessment.confidence);
   const bias = analysis.overallAssessment.bias;
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = useCallback(() => {
+    const text = [
+      "SKAI Chart AI Analysis",
+      `${bias.charAt(0).toUpperCase() + bias.slice(1)} (${conf}%)`,
+      `Trend: ${analysis.trendAnalysis.direction}, ${analysis.trendAnalysis.strength}`,
+      analysis.patterns.length > 0
+        ? `Patterns: ${analysis.patterns.map((p) => p.name).join(", ")}`
+        : null,
+      analysis.keyLevels.length > 0
+        ? `Levels: ${analysis.keyLevels.slice(0, 4).map((l) => `${l.type === "support" ? "S" : l.type === "resistance" ? "R" : "P"}: ${l.price || l.description}`).join(", ")}`
+        : null,
+      `Summary: ${analysis.overallAssessment.summary}`,
+      analysis.overallAssessment.recommendations.length > 0
+        ? `Recommendations: ${analysis.overallAssessment.recommendations.join("; ")}`
+        : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }, [analysis, bias, conf]);
+
+  const handleShare = useCallback(() => {
+    if (onShareAnalysis && chartImage) {
+      onShareAnalysis(analysis, chartImage);
+    }
+  }, [onShareAnalysis, analysis, chartImage]);
 
   return (
     <div className="flex flex-col gap-[8px] mt-2">
-      {/* Overall bias + confidence */}
+      {/* Overall bias + confidence + action buttons */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+        <span className="font-['Manrope',sans-serif] font-bold text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
           {BIAS_ICONS[bias] || "◆"}{" "}
           <span
-            style={{
-              color:
-                bias === "bullish"
-                  ? "#2DEDAD"
-                  : bias === "bearish"
-                    ? "#FF6B6B"
-                    : "#E0E0E0",
-            }}
+            className={cn(
+              bias === "bullish" && "text-[#2DEDAD]",
+              bias === "bearish" && "text-[#FF6B6B]",
+              bias === "neutral" && "text-[#E0E0E0]",
+            )}
           >
             {bias.charAt(0).toUpperCase() + bias.slice(1)}
           </span>
         </span>
         <span
-          className="text-[11px] px-2 py-0.5 rounded-full font-medium"
-          style={{
-            backgroundColor: `${conf >= 70 ? "#2DEDAD" : conf >= 40 ? "#F5A623" : "#FF6B6B"}22`,
-            color: conf >= 70 ? "#2DEDAD" : conf >= 40 ? "#F5A623" : "#FF6B6B",
-          }}
+          className={cn(
+            "text-[11px] px-2 py-0.5 rounded-full font-medium",
+            conf >= 70 && "bg-[#2DEDAD]/[0.13] text-[#2DEDAD]",
+            conf >= 40 && conf < 70 && "bg-[#F5A623]/[0.13] text-[#F5A623]",
+            conf < 40 && "bg-[#FF6B6B]/[0.13] text-[#FF6B6B]",
+          )}
         >
           {conf}%
         </span>
+
+        {/* Copy button */}
+        <button
+          type="button"
+          title={copied ? "Copied!" : "Copy analysis"}
+          onClick={handleCopy}
+          className="ml-auto flex-shrink-0 w-7 h-7 rounded-md bg-[#001615]/40 text-[#95A09F] flex items-center justify-center hover:bg-[#001615]/60 hover:text-[#56C7F3] transition-colors"
+        >
+          {copied ? (
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+              <path d="M20 6L9 17l-5-5" stroke="#2DEDAD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          ) : (
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+              <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="2" />
+              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" strokeWidth="2" />
+            </svg>
+          )}
+        </button>
+
+        {/* Share button */}
+        {onShareAnalysis && chartImage && (
+          <button
+            type="button"
+            title="Share analysis"
+            onClick={handleShare}
+            className="flex-shrink-0 w-7 h-7 rounded-md bg-[#001615]/40 text-[#95A09F] flex items-center justify-center hover:bg-[#001615]/60 hover:text-[#56C7F3] transition-colors"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+              <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        )}
       </div>
 
       {/* Trend */}
-      <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+      <p className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
         <span className="font-bold">Trend:</span>{" "}
         {analysis.trendAnalysis.direction}, {analysis.trendAnalysis.strength}
       </p>
 
-      {/* Patterns as inline badges */}
+      {/* Patterns — collapsible */}
       {analysis.patterns.length > 0 && (
-        <div className="flex flex-wrap gap-1.5">
-          {analysis.patterns.map((p, i) => (
-            <span
-              key={i}
-              className="text-[11px] px-2 py-0.5 rounded-[4px] font-medium"
-              style={{
-                borderColor: CONFIDENCE_COLORS[p.confidence] + "44",
-                color: CONFIDENCE_COLORS[p.confidence],
-                backgroundColor: CONFIDENCE_COLORS[p.confidence] + "15",
-              }}
-            >
-              {p.name}
-            </span>
-          ))}
-        </div>
+        <CollapsibleSection title="Patterns">
+          <div className="flex flex-wrap gap-1.5">
+            {analysis.patterns.map((p, i) => (
+              <span
+                key={i}
+                className="text-[11px] px-2 py-0.5 rounded-[4px] font-medium"
+                style={{
+                  borderColor: CONFIDENCE_COLORS[p.confidence] + "44",
+                  color: CONFIDENCE_COLORS[p.confidence],
+                  backgroundColor: CONFIDENCE_COLORS[p.confidence] + "15",
+                }}
+              >
+                {p.name}
+              </span>
+            ))}
+          </div>
+        </CollapsibleSection>
       )}
 
-      {/* Key Levels */}
+      {/* Key Levels — collapsible */}
       {analysis.keyLevels.length > 0 && (
-        <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
-          <span className="font-bold">Levels:</span>{" "}
-          {analysis.keyLevels
-            .slice(0, 4)
-            .map(
-              (l) =>
-                `${l.type === "support" ? "S" : l.type === "resistance" ? "R" : "P"}: ${l.price || l.description}`,
-            )
-            .join(" · ")}
-        </p>
+        <CollapsibleSection title="Key Levels">
+          <p className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+            {analysis.keyLevels
+              .slice(0, 4)
+              .map(
+                (l) =>
+                  `${l.type === "support" ? "S" : l.type === "resistance" ? "R" : "P"}: ${l.price || l.description}`,
+              )
+              .join(" · ")}
+          </p>
+        </CollapsibleSection>
       )}
 
       {/* Summary */}
-      <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+      <p className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
         {analysis.overallAssessment.summary}
       </p>
 
-      {/* Recommendations */}
+      {/* Recommendations — collapsible */}
       {analysis.overallAssessment.recommendations.length > 0 && (
-        <div className="flex flex-col gap-1">
-          {analysis.overallAssessment.recommendations.map((rec, i) => (
-            <p
-              key={i}
-              className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#2DEDAD]"
-            >
-              → {rec}
-            </p>
-          ))}
-        </div>
+        <CollapsibleSection title="Recommendations">
+          <div className="flex flex-col gap-1">
+            {analysis.overallAssessment.recommendations.map((rec, i) => (
+              <p
+                key={i}
+                className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#2DEDAD]"
+              >
+                → {rec}
+              </p>
+            ))}
+          </div>
+        </CollapsibleSection>
       )}
     </div>
   );
@@ -227,9 +352,16 @@ function DropZone({
 
   if (isAnalyzing) {
     return (
-      <div className="flex items-center gap-3 py-2">
-        <div className="w-5 h-5 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin flex-shrink-0" />
-        <span className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+      <div className="flex flex-col gap-3 py-2">
+        {/* Skeleton shimmer: chart area */}
+        <div className="w-full rounded-lg bg-[#001615]/40 animate-pulse aspect-video" />
+        {/* Skeleton shimmer: text lines */}
+        <div className="flex flex-col gap-2">
+          <div className="h-3 w-3/4 rounded bg-[#001615]/40 animate-pulse" />
+          <div className="h-3 w-1/2 rounded bg-[#001615]/40 animate-pulse" />
+          <div className="h-3 w-2/3 rounded bg-[#001615]/40 animate-pulse" />
+        </div>
+        <span className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[18px] text-[#95A09F]">
           Analyzing your chart...
         </span>
       </div>
@@ -240,7 +372,7 @@ function DropZone({
     <>
       <div
         className={cn(
-          "border border-dashed rounded-lg p-4 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all",
+          "border border-dashed rounded-lg p-3 md:p-4 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all",
           isDragging
             ? "border-[#56C7F3] bg-[#56C7F3]/10"
             : "border-[#95A09F]/30 bg-[#001615]/40 hover:border-[#56C7F3]/50 hover:bg-[#56C7F3]/5",
@@ -276,8 +408,8 @@ function DropZone({
         <span className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] text-center">
           Drop or paste a chart image
         </span>
-        <span className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[18px] text-[#95A09F]">
-          or click to upload
+        <span className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[18px] text-[#95A09F] text-center">
+          or click to upload &middot; Best results with chart-only screenshots
         </span>
       </div>
       <input
@@ -302,6 +434,8 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
       username,
       onAnalyzeChart,
       onAskFollowUp,
+      onResetChart,
+      onShareAnalysis,
       maxInteractions = 5,
       className,
       ...props
@@ -317,13 +451,25 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
       getUsedCount(username),
     );
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     const isLocked = usedCount >= maxInteractions;
     const remaining = Math.max(0, maxInteractions - usedCount);
 
+    const scrollToBottom = useCallback(() => {
+      requestAnimationFrame(() => {
+        // Scroll the chat container to the bottom
+        if (chatContainerRef.current) {
+          chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+        // Also scroll the page so the card's bottom is visible
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    }, []);
+
     useEffect(() => {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, [messages]);
+      scrollToBottom();
+    }, [messages, isAnalyzing, isSending, scrollToBottom]);
 
     useEffect(() => {
       setMessages([
@@ -340,6 +486,19 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
       setUsedCountState(next);
       setUsedCount(username, next);
     }, [usedCount, username]);
+
+    const handleReset = useCallback(() => {
+      setMessages([
+        {
+          id: "greeting",
+          role: "assistant",
+          content: `Hey ${username}! Upload or paste any trading chart and I'll analyze patterns, key levels, and give you trade recommendations.`,
+        },
+      ]);
+      setAnalysis(null);
+      setFollowUpInput("");
+      onResetChart?.();
+    }, [username, onResetChart]);
 
     const handleImageSelected = useCallback(
       async (base64: string) => {
@@ -468,7 +627,7 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
         </div>
 
         {/* Messages area */}
-        <div className="flex flex-col gap-[8px] overflow-y-auto max-h-[400px]">
+        <div ref={chatContainerRef} className="flex flex-col gap-[8px] overflow-y-auto max-h-[300px] md:max-h-[400px]">
           {messages.map((msg) => (
             <div key={msg.id}>
               {msg.role === "user" ? (
@@ -499,9 +658,15 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
                         imageSrc={msg.chartImage}
                         keyLevels={msg.analysis.keyLevels}
                         patternRegions={msg.analysis.patternRegions}
+                        detectedSymbol={msg.analysis.detectedSymbol}
+                        detectedTimeframe={msg.analysis.detectedTimeframe}
                         className="rounded-[4px] overflow-hidden"
                       />
-                      <AnalysisSummary analysis={msg.analysis} />
+                      <AnalysisSummary
+                        analysis={msg.analysis}
+                        chartImage={msg.chartImage}
+                        onShareAnalysis={onShareAnalysis}
+                      />
                     </>
                   )}
                 </div>
@@ -509,12 +674,27 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
             </div>
           ))}
 
-          {/* Spinners */}
-          {(isAnalyzing || isSending) && (
+          {/* Analyzing skeleton */}
+          {isAnalyzing && (
+            <div className="flex flex-col gap-3 py-1">
+              <div className="w-full rounded-lg bg-[#001615]/40 animate-pulse aspect-video" />
+              <div className="flex flex-col gap-2">
+                <div className="h-3 w-3/4 rounded bg-[#001615]/40 animate-pulse" />
+                <div className="h-3 w-1/2 rounded bg-[#001615]/40 animate-pulse" />
+                <div className="h-3 w-2/3 rounded bg-[#001615]/40 animate-pulse" />
+              </div>
+              <span className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[18px] text-[#95A09F]">
+                Analyzing chart...
+              </span>
+            </div>
+          )}
+
+          {/* Follow-up spinner */}
+          {isSending && (
             <div className="flex items-center gap-3 py-1">
               <div className="w-4 h-4 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin flex-shrink-0" />
               <span className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
-                {isAnalyzing ? "Analyzing chart..." : "Thinking..."}
+                Thinking...
               </span>
             </div>
           )}
@@ -538,7 +718,7 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
             isAnalyzing={isAnalyzing}
           />
         ) : (
-          <div className="flex items-center gap-[8px]">
+          <div className="flex items-center gap-[6px] md:gap-[8px]">
             <input
               type="text"
               value={followUpInput}
@@ -550,7 +730,7 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
                 }
               }}
               placeholder="Ask a follow-up question..."
-              className="flex-1 bg-[#001615]/60 border border-[#95A09F]/20 rounded-lg px-3 py-2.5 font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] placeholder:text-[#95A09F] outline-none focus:border-[#56C7F3]/50 transition-colors"
+              className="flex-1 bg-[#001615]/60 border border-[#95A09F]/20 rounded-lg px-2.5 py-2 md:px-3 md:py-2.5 font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] placeholder:text-[#95A09F] outline-none focus:border-[#56C7F3]/50 transition-colors"
               disabled={isSending}
             />
             <button
@@ -569,6 +749,17 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
                   strokeLinejoin="round"
                 />
               </svg>
+            </button>
+            <button
+              type="button"
+              title="New chart"
+              onClick={handleReset}
+              className="flex-shrink-0 h-9 px-2.5 rounded-lg bg-[#001615]/60 text-[#95A09F] flex items-center justify-center gap-1.5 hover:bg-[#001615]/80 hover:text-[#56C7F3] transition-colors font-['Manrope',sans-serif] font-medium text-[12px]"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span className="hidden sm:inline">New</span>
             </button>
           </div>
         )}

@@ -18,6 +18,8 @@ export interface ChartOverlayCanvasProps {
   imageSrc: string;
   keyLevels: KeyLevel[];
   patternRegions?: PatternRegion[];
+  detectedSymbol?: string;
+  detectedTimeframe?: string;
   className?: string;
 }
 
@@ -41,7 +43,7 @@ const REGION_COLORS = [
 const ChartOverlayCanvas = React.forwardRef<
   HTMLDivElement,
   ChartOverlayCanvasProps
->(({ imageSrc, keyLevels, patternRegions, className }, ref) => {
+>(({ imageSrc, keyLevels, patternRegions, detectedSymbol, detectedTimeframe, className }, ref) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -129,7 +131,32 @@ const ChartOverlayCanvas = React.forwardRef<
       ctx.fillStyle = "#001615";
       ctx.fillText(label, labelX + padding, labelY + 13);
     });
-  }, [keyLevels, patternRegions]);
+
+    // Draw symbol/timeframe badge in top-left corner
+    if (detectedSymbol) {
+      const badgeText = detectedTimeframe
+        ? `${detectedSymbol} \u00b7 ${detectedTimeframe}`
+        : detectedSymbol;
+      ctx.font = "bold 12px Manrope, sans-serif";
+      const badgeTextWidth = ctx.measureText(badgeText).width;
+      const badgePadH = 8;
+      const badgePadV = 4;
+      const badgeX = 8;
+      const badgeY = 8;
+      const badgeW = badgeTextWidth + badgePadH * 2;
+      const badgeH = 12 + badgePadV * 2;
+
+      // Background pill
+      ctx.fillStyle = "rgba(0, 22, 21, 0.85)";
+      ctx.beginPath();
+      ctx.roundRect(badgeX, badgeY, badgeW, badgeH, 6);
+      ctx.fill();
+
+      // Badge text
+      ctx.fillStyle = "#56C7F3";
+      ctx.fillText(badgeText, badgeX + badgePadH, badgeY + badgePadV + 11);
+    }
+  }, [keyLevels, patternRegions, detectedSymbol, detectedTimeframe]);
 
   // Redraw on mount and when data changes
   useEffect(() => {

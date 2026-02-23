@@ -6,3 +6,4 @@ export * from "./media-slider";
 export * from "./landing-footer";
 export * from "./chart-overlay-canvas";
 export * from "./chart-ai-card";
+export * from "./share-analysis-image";
