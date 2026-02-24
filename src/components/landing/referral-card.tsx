@@ -17,6 +17,9 @@ export interface ReferralCardProps extends React.HTMLAttributes<HTMLDivElement> 
   discordUrl?: string;
   title?: string;
   referralCount?: number | null;
+  onDiscordConnect?: () => void;
+  discordHandle?: string | null;
+  twitterHandle?: string | null;
 }
 
 const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
@@ -31,6 +34,9 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
       discordUrl = urls.social.discord,
       title = d.referral.title,
       referralCount,
+      onDiscordConnect,
+      discordHandle,
+      twitterHandle,
       className,
       ...props
     },
@@ -114,20 +120,30 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
         <button
           type="button"
           onClick={onShareToX}
-          className="w-full py-[16px] px-[16px] rounded-[12px] bg-[#0a2a2e] hover:bg-[#0d3538] transition-all font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[10px] mb-4 border-[1.5px] border-[#56C7F3] text-[#56C7F3] shadow-[0_0_12px_rgba(86,199,243,0.15)]"
+          className={cn(
+            "w-full py-[16px] px-[16px] rounded-[12px] transition-all font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[10px] mb-4",
+            twitterHandle
+              ? "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/30"
+              : "bg-[#0a2a2e] hover:bg-[#0d3538] border-[1.5px] border-[#56C7F3] text-[#56C7F3] shadow-[0_0_12px_rgba(86,199,243,0.15)]",
+          )}
         >
           <SkaiIcon name="x" size="sm" />
-          <span>Share With Friends</span>
+          <span>{twitterHandle ? `@${twitterHandle} connected` : "Share With Friends"}</span>
         </button>
 
         {/* Discord Button */}
         <button
           type="button"
-          onClick={() => window.open(discordUrl, "_blank")}
-          className="w-full py-[21px] px-[16px] rounded-[12px] font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[8px] transition-all bg-[#56C7F3] text-[#001615] border-none"
+          onClick={discordHandle ? () => window.open(discordUrl, "_blank") : (onDiscordConnect || (() => window.open(discordUrl, "_blank")))}
+          className={cn(
+            "w-full py-[21px] px-[16px] rounded-[12px] font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[8px] transition-all border-none",
+            discordHandle
+              ? "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/30"
+              : "bg-[#56C7F3] text-[#001615]",
+          )}
         >
           <SkaiIcon name="discord" size="sm" className="w-5 h-5" />
-          Join Skai Community
+          {discordHandle ? `${discordHandle} connected` : "Join Skai Community"}
         </button>
       </div>
     );

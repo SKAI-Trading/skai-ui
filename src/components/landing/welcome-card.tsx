@@ -1,23 +1,29 @@
 ﻿import * as React from "react";
-import { useState, useEffect } from "react";
 import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
 
 const d = content.landing.waitlist.dashboard;
 
-const DEFAULT_LAUNCH_WORDS = ["Trade", "Predict", "Play", "SKAI Agent"];
+export type DashboardTab = "trade" | "play" | "ai" | "predict";
 
 export interface WelcomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   username: string;
   isLoading?: boolean;
   subtitle?: string;
-  launchWords?: string[];
-  comingSoonLabel?: string;
+  activeTab?: DashboardTab;
+  onTabChange?: (tab: DashboardTab) => void;
   skaiPoints?: number | null;
   twitterHandle?: string | null;
   referralCount?: number | null;
   email?: string | null;
 }
+
+const TAB_LABELS: Record<DashboardTab, string> = {
+  trade: "Trade",
+  play: "Play",
+  ai: "AI",
+  predict: "Predict",
+};
 
 const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
   (
@@ -25,8 +31,8 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
       username,
       isLoading = false,
       subtitle = d.checkEmail,
-      launchWords = DEFAULT_LAUNCH_WORDS,
-      comingSoonLabel = d.comingSoon,
+      activeTab = "ai",
+      onTabChange,
       skaiPoints,
       twitterHandle,
       referralCount,
@@ -36,15 +42,6 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
     },
     ref,
   ) => {
-    const [currentWordIndex, setCurrentWordIndex] = useState(0);
-
-    useEffect(() => {
-      if (launchWords.length <= 1) return;
-      const interval = setInterval(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % launchWords.length);
-      }, 2000);
-      return () => clearInterval(interval);
-    }, [launchWords.length]);
 
     return (
       <div
@@ -96,18 +93,23 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
             </span>
           </div>
         )}
-        <button
-          type="button"
-          disabled
-          className="w-full py-[12px] px-[16px] rounded-[12px] bg-[#001615] border-none font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] cursor-not-allowed transition-opacity flex items-center justify-center gap-2"
-        >
-          <span className="font-manrope font-normal text-[#123F3C] text-[12px] leading-[16px] md:text-[14px] md:leading-[18px] lg:text-[16px] lg:leading-[22px] inline-block min-w-[80px] transition-opacity duration-300">
-            {launchWords[currentWordIndex]}
-          </span>
-          <span className="bg-[#122524] px-[8px] py-[2px] rounded-full font-manrope font-normal text-[#56C7F3] text-[8px] leading-[10px] lg:text-[11px] lg:leading-[14px]">
-            {comingSoonLabel}
-          </span>
-        </button>
+        <div className="flex w-full gap-2">
+          {(["trade", "play", "ai", "predict"] as const).map((tab) => (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => onTabChange?.(tab)}
+              className={cn(
+                "flex-1 py-[10px] px-[12px] rounded-[10px] font-manrope font-medium text-[12px] md:text-[13px] lg:text-[14px] leading-[16px] transition-all duration-200",
+                activeTab === tab
+                  ? "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/30 shadow-[0_0_12px_rgba(45,237,173,0.1)]"
+                  : "bg-[#001615] text-[#8B9E9D] border border-transparent hover:border-[rgba(255,255,255,0.1)] hover:text-[#B0C4C3]",
+              )}
+            >
+              {TAB_LABELS[tab]}
+            </button>
+          ))}
+        </div>
       </div>
     );
   },
