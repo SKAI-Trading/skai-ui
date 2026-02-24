@@ -23,6 +23,44 @@ export type ChatAction =
   | { type: "deposit" }
   | { type: "link"; url: string; label: string };
 
+// ─── Intent Detection ───────────────────────────────────────────────────────
+// Route tool-specific requests directly to the UI instead of the AI backend
+
+type ToolIntent = "scan" | "swap" | "bridge" | "portfolio" | null;
+
+const INTENT_PATTERNS: { pattern: RegExp; tool: ToolIntent; reply: string }[] = [
+  {
+    pattern: /\b(scan|analyze|analy[sz]e|read)\b.*\b(chart|candle|graph|pattern)\b/i,
+    tool: "scan",
+    reply: "Opening the chart scanner — upload or paste a chart and I'll analyze the patterns, key levels, and give you a bias.",
+  },
+  {
+    pattern: /\b(chart|candle|graph|pattern)\b.*\b(scan|analyze|analy[sz]e|read)\b/i,
+    tool: "scan",
+    reply: "Opening the chart scanner — upload or paste a chart and I'll analyze the patterns, key levels, and give you a bias.",
+  },
+  {
+    pattern: /\b(swap|exchange|convert|trade)\b.*\b(token|coin|eth|usdc|btc|crypto)\b/i,
+    tool: "swap",
+    reply: "Opening the swap interface — you can swap between any supported tokens on Base.",
+  },
+  {
+    pattern: /\b(token|coin|eth|usdc|btc|crypto)\b.*\b(swap|exchange|convert|trade)\b/i,
+    tool: "swap",
+    reply: "Opening the swap interface — you can swap between any supported tokens on Base.",
+  },
+  {
+    pattern: /\b(bridge|cross.?chain|transfer.*chain)\b/i,
+    tool: "bridge",
+    reply: "Opening the bridge — you can move assets between Ethereum and Base.",
+  },
+  {
+    pattern: /\b(portfolio|balance|holdings|my wallet|my tokens)\b/i,
+    tool: "portfolio",
+    reply: "Opening your portfolio — here's a breakdown of your wallet holdings.",
+  },
+];
+
 type Chain = "base" | "ethereum";
 
 export interface TradeChatCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -262,6 +300,14 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
       scrollToBottom();
     }, [messages, scrollToBottom]);
 
+    /** Check if message matches a tool intent — if so, open tool directly */
+    const detectIntent = useCallback((text: string): typeof INTENT_PATTERNS[number] | null => {
+      for (const entry of INTENT_PATTERNS) {
+        if (entry.pattern.test(text)) return entry;
+      }
+      return null;
+    }, []);
+
     const handleSend = useCallback(async (text: string) => {
       const trimmed = text.trim();
       if (!trimmed || isLoading) return;
@@ -273,15 +319,32 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
         content: trimmed,
         timestamp: Date.now(),
       };
-      // Create a placeholder for the assistant reply (will be updated as tokens stream in)
-      const assistantId = nextId();
       setMessages((prev) => [...prev, userMsg]);
       setInput("");
+
+      // Check for tool intent — route directly instead of calling the AI
+      const intent = detectIntent(trimmed);
+      if (intent?.tool && onOpenTool) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: nextId(),
+            role: "assistant" as const,
+            content: intent.reply,
+            timestamp: Date.now(),
+          },
+        ]);
+        // Small delay so the user sees the reply before the tool opens
+        setTimeout(() => onOpenTool(intent.tool!), 400);
+        return;
+      }
+
+      // No intent match — send to AI backend
+      const assistantId = nextId();
       setIsLoading(true);
 
       try {
         if (onSendMessage) {
-          // Add empty placeholder so streaming chunks can update it
           setMessages((prev) => [
             ...prev,
             { id: assistantId, role: "assistant" as const, content: "", timestamp: Date.now() },
@@ -297,7 +360,6 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
             },
           });
 
-          // Ensure final content is set (in case onChunk wasn't called)
           setMessages((prev) =>
             prev.map((m) =>
               m.id === assistantId ? { ...m, content: response } : m,
@@ -328,7 +390,7 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
         setIsLoading(false);
         inputRef.current?.focus();
       }
-    }, [isLoading, onSendMessage]);
+    }, [isLoading, onSendMessage, onOpenTool, detectIntent]);
 
     const handleSuggestionClick = (suggestion: typeof SUGGESTIONS[number]) => {
       handleSend(suggestion.message);
