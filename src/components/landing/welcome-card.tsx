@@ -4,7 +4,7 @@ import { content } from "../../lib/content";
 
 const d = content.landing.waitlist.dashboard;
 
-export type DashboardTab = "trade" | "play" | "ai" | "predict";
+export type DashboardTab = "trade" | "play" | "predict";
 
 export interface WelcomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   username: string;
@@ -21,7 +21,6 @@ export interface WelcomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
 const TAB_LABELS: Record<DashboardTab, string> = {
   trade: "Trade",
   play: "Play",
-  ai: "AI",
   predict: "Predict",
 };
 
@@ -31,7 +30,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
       username,
       isLoading = false,
       subtitle = d.checkEmail,
-      activeTab = "ai",
+      activeTab = "trade",
       onTabChange,
       skaiPoints,
       twitterHandle,
@@ -94,7 +93,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
           </div>
         )}
         <div className="flex w-full gap-2">
-          {(["trade", "play", "ai", "predict"] as const).map((tab) => (
+          {(["trade", "play", "predict"] as const).map((tab) => (
             <button
               key={tab}
               type="button"

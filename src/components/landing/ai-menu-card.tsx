@@ -5,7 +5,7 @@ import { SkaiIcon } from "../branding/skai-icon";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-export type AIToolOption = "scan" | "portfolio" | "swap" | "bridge";
+export type AIToolOption = "scan" | "portfolio" | "swap" | "bridge" | "buy";
 
 export interface AIMenuCardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Called when user selects a tool option */
@@ -18,18 +18,21 @@ export interface AIMenuCardProps extends React.HTMLAttributes<HTMLDivElement> {
   hasDeposit?: boolean;
   /** Called when user clicks a deposit-gated tool without a deposit */
   onNeedDeposit?: () => void;
+  /** Compact mode — hides question input for embedded use */
+  compact?: boolean;
 }
 
 const TOOL_OPTIONS: Array<{
   id: AIToolOption;
   label: string;
-  icon: "chart" | "wallet" | "swap" | "bridge";
+  icon: "chart" | "wallet" | "swap" | "bridge" | "token";
   requiresDeposit: boolean;
 }> = [
   { id: "scan", label: "Scan a chart", icon: "chart", requiresDeposit: false },
-  { id: "portfolio", label: "Analyze portfolio", icon: "wallet", requiresDeposit: true },
-  { id: "swap", label: "Swap", icon: "swap", requiresDeposit: true },
-  { id: "bridge", label: "Bridge", icon: "bridge", requiresDeposit: true },
+  { id: "portfolio", label: "Analyze portfolio", icon: "wallet", requiresDeposit: false },
+  { id: "swap", label: "Swap", icon: "swap", requiresDeposit: false },
+  { id: "bridge", label: "Bridge", icon: "bridge", requiresDeposit: false },
+  { id: "buy", label: "Buy USDC / ETH", icon: "token", requiresDeposit: false },
 ];
 
 // ─── Component ───────────────────────────────────────────────────────────────
@@ -42,6 +45,7 @@ const AIMenuCard = React.forwardRef<HTMLDivElement, AIMenuCardProps>(
       isAsking = false,
       hasDeposit = false,
       onNeedDeposit,
+      compact = false,
       className,
       ...props
     },
@@ -84,8 +88,8 @@ const AIMenuCard = React.forwardRef<HTMLDivElement, AIMenuCardProps>(
           </span>
         </div>
 
-        {/* Tool options grid */}
-        <div className="grid grid-cols-2 gap-[8px]">
+        {/* Tool options grid — 5 items: 3 + 2 rows */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-[8px]">
           {TOOL_OPTIONS.map((tool) => (
             <button
               key={tool.id}
@@ -105,44 +109,46 @@ const AIMenuCard = React.forwardRef<HTMLDivElement, AIMenuCardProps>(
           ))}
         </div>
 
-        {/* Question input */}
-        <div className="flex items-center gap-[6px] md:gap-[8px]">
-          <input
-            type="text"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                handleSubmit();
-              }
-            }}
-            placeholder="or ask a question..."
-            disabled={isAsking}
-            className="flex-1 bg-[#001615]/60 border border-[#95A09F]/20 rounded-lg px-2.5 py-2 md:px-3 md:py-2.5 font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] placeholder:text-[#95A09F]/60 outline-none focus:border-[#56C7F3]/50 transition-colors"
-          />
-          <button
-            type="button"
-            title="Send"
-            onClick={handleSubmit}
-            disabled={!question.trim() || isAsking}
-            className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#001615]/60 text-[#56C7F3] flex items-center justify-center hover:bg-[#001615]/80 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-          >
-            {isAsking ? (
-              <div className="w-4 h-4 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin" />
-            ) : (
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
+        {/* Question input — hidden in compact mode */}
+        {!compact && (
+          <div className="flex items-center gap-[6px] md:gap-[8px]">
+            <input
+              type="text"
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSubmit();
+                }
+              }}
+              placeholder="or ask a question..."
+              disabled={isAsking}
+              className="flex-1 bg-[#001615]/60 border border-[#95A09F]/20 rounded-lg px-2.5 py-2 md:px-3 md:py-2.5 font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] placeholder:text-[#95A09F]/60 outline-none focus:border-[#56C7F3]/50 transition-colors"
+            />
+            <button
+              type="button"
+              title="Send"
+              onClick={handleSubmit}
+              disabled={!question.trim() || isAsking}
+              className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#001615]/60 text-[#56C7F3] flex items-center justify-center hover:bg-[#001615]/80 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              {isAsking ? (
+                <div className="w-4 h-4 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin" />
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     );
   },
