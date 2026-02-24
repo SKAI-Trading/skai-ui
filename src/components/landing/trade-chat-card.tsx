@@ -183,22 +183,18 @@ function DepositBubble({
       </div>
 
       {/* QR Code — compact */}
-      <div className="flex justify-center mb-[6px]">
+      <div className="flex justify-center mb-[4px]">
         <WalletQRCode
           address={walletAddress}
           chainName={chain === "base" ? "Base" : "Ethereum"}
           showAddress
           showCopy
-          size={110}
+          size={80}
           bordered={false}
           bgColor="#ffffff"
           fgColor="#000000"
         />
       </div>
-
-      <p className="text-[11px] text-[#2DEDAD] leading-[14px] text-center">
-        Send USDC to your wallet · Ask me anything below ↓
-      </p>
     </div>
   );
 }
@@ -255,7 +251,11 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
     }, []);
 
     const scrollToBottom = useCallback(() => {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      // Scroll only the messages container, not the page
+      const el = messagesEndRef.current;
+      if (el?.parentElement) {
+        el.parentElement.scrollTop = el.parentElement.scrollHeight;
+      }
     }, []);
 
     useEffect(() => {
@@ -338,7 +338,7 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
       <div
         ref={ref}
         className={cn(
-          "bg-[#123F3C] flex flex-col rounded-lg overflow-hidden relative",
+          "bg-[#123F3C] flex flex-col rounded-lg overflow-hidden relative max-h-[520px]",
           className,
         )}
         {...props}
@@ -373,7 +373,7 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
         </div>
 
         {/* Messages */}
-        <div className="flex flex-col gap-[8px] px-[16px] py-[12px] min-h-[180px] max-h-[420px] overflow-y-auto scrollbar-thin scrollbar-thumb-[#95A09F]/20 scrollbar-track-transparent">
+        <div className="flex flex-col gap-[8px] px-[16px] py-[12px] flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar-thumb-[#95A09F]/20 scrollbar-track-transparent">
           {messages.map((msg) => {
             // Deposit bubble — special render
             if (msg.role === "deposit" && walletAddress) {

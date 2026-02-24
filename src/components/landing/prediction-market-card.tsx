@@ -41,9 +41,18 @@ interface HistoryEntry {
   priceChangePercent: number;
 }
 
+/** Persisted active bet — survives refresh / navigation */
+interface StoredBet {
+  entryPrice: number;
+  betAmount: number;
+  direction: "up" | "down";
+  marketEnd: number; // epoch ms
+  pointsBeforeBet: number;
+}
+
 /* ─── Constants ──────────────────────────────────────────────────────── */
 
-const MARKET_DURATION = 300; // 5 minutes
+const MARKET_DURATION = 180; // 3 minutes
 const POLL_ACTIVE_MS = 10_000;
 const POLL_IDLE_MS = 30_000;
 const BET_OPTIONS = [1, 2, 5, 10, 25] as const;
@@ -59,6 +68,21 @@ const BINANCE_API = "https://api.binance.com/api/v3";
 const COINGECKO_API = "https://api.coingecko.com/api/v3";
 
 /* ─── Helpers ────────────────────────────────────────────────────────── */
+
+const BET_STORAGE_KEY = (uid: string) => `skai_pred_active_${uid}`;
+
+const saveBet = (uid: string, bet: StoredBet) => {
+  try { localStorage.setItem(BET_STORAGE_KEY(uid), JSON.stringify(bet)); } catch { /* non-critical */ }
+};
+const loadBet = (uid: string): StoredBet | null => {
+  try {
+    const s = localStorage.getItem(BET_STORAGE_KEY(uid));
+    return s ? JSON.parse(s) : null;
+  } catch { return null; }
+};
+const clearBet = (uid: string) => {
+  try { localStorage.removeItem(BET_STORAGE_KEY(uid)); } catch { /* non-critical */ }
+};
 
 const fmtTime = (s: number) => {
   const m = Math.floor(s / 60);
@@ -368,6 +392,35 @@ const PredictionMarketCard = React.forwardRef<
       };
     }, [fetchPrice, fetchHistory]);
 
+    /* ── restore persisted bet on mount ── */
+    useEffect(() => {
+      if (!userId || chartLoading) return;          // wait for initial price
+      const stored = loadBet(userId);
+      if (!stored) return;
+
+      const now = Date.now();
+      if (now >= stored.marketEnd) {
+        // Bet expired while away — trigger immediate resolution
+        setEntryPrice(stored.entryPrice);
+        setBetAmount(stored.betAmount);
+        setDirection(stored.direction);
+        marketEndRef.current = stored.marketEnd;
+        setTimeRemaining(0);
+        setPhase("active");
+        // The countdown effect will see rem <= 0 and fire shouldResolve
+        setShouldResolve(true);
+      } else {
+        // Bet still active — resume mid-flight
+        setEntryPrice(stored.entryPrice);
+        setBetAmount(stored.betAmount);
+        setDirection(stored.direction);
+        marketEndRef.current = stored.marketEnd;
+        setTimeRemaining(Math.floor((stored.marketEnd - now) / 1000));
+        setPhase("active");
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [userId, chartLoading]);
+
     /* ── idle price polling ── */
     useEffect(() => {
       if (phase !== "idle") return;
@@ -480,6 +533,7 @@ const PredictionMarketCard = React.forwardRef<
 
           setResult(predResult);
           setPhase("resolved");
+          if (userId) clearBet(userId);
 
           if (payout > 0) onPointsChange?.(skaiPoints + payout);
 
@@ -510,6 +564,7 @@ const PredictionMarketCard = React.forwardRef<
           }, 5000);
         } catch (err) {
           console.error("Market resolution failed:", err);
+          if (userId) clearBet(userId);
           onPointsChange?.(skaiPoints + betAmount);
           setPhase("idle");
           setDirection(null);
@@ -529,13 +584,15 @@ const PredictionMarketCard = React.forwardRef<
           return;
         try {
           const price = await fetchPrice();
+          const end = Date.now() + MARKET_DURATION * 1000;
           setEthPrice(price);
           setEntryPrice(price);
           setDirection(dir);
-          marketEndRef.current = Date.now() + MARKET_DURATION * 1000;
+          marketEndRef.current = end;
           setTimeRemaining(MARKET_DURATION);
           setPhase("active");
           onPointsChange?.(skaiPoints - betAmount);
+          saveBet(userId, { entryPrice: price, betAmount, direction: dir, marketEnd: end, pointsBeforeBet: skaiPoints });
         } catch (err) {
           console.error("Failed to start prediction:", err);
         }
@@ -709,7 +766,7 @@ const PredictionMarketCard = React.forwardRef<
         {phase === "idle" && (
           <>
             <p className="font-manrope font-normal text-[#8B9E9D] text-[13px] md:text-[14px] text-center mb-[10px]">
-              Will ETH be higher or lower in 5 minutes?
+              Will ETH be higher or lower in 3 minutes?
             </p>
 
             {/* Bet chips */}

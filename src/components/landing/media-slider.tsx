@@ -28,6 +28,7 @@ const MediaSlider = React.forwardRef<HTMLDivElement, MediaSliderProps>(
     const [currentSlide, setCurrentSlide] = useState(0);
     const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
     const [isAutoPlayPaused, setIsAutoPlayPaused] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
     const autoPlayTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
       null,
     );
@@ -41,16 +42,17 @@ const MediaSlider = React.forwardRef<HTMLDivElement, MediaSliderProps>(
       [],
     );
 
-    // Play/pause videos when slide changes
+    // Play/pause videos when slide changes, sync mute state
     useEffect(() => {
       videoRefs.current.forEach((video, index) => {
+        video.muted = isMuted;
         if (index === currentSlide) {
           video.play().catch(() => {});
         } else {
           video.pause();
         }
       });
-    }, [currentSlide]);
+    }, [currentSlide, isMuted]);
 
     // Auto-play
     useEffect(() => {
@@ -177,6 +179,30 @@ const MediaSlider = React.forwardRef<HTMLDivElement, MediaSliderProps>(
                 </svg>
               </button>
             </>
+          )}
+
+          {/* Mute/Unmute toggle — visible only on video slides */}
+          {slides[currentSlide]?.type === "video" && (
+            <button
+              type="button"
+              onClick={() => setIsMuted((m) => !m)}
+              className="absolute right-3 bottom-14 z-20 w-8 h-8 rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.7)] border border-[rgba(255,255,255,0.2)] flex items-center justify-center transition-all"
+              aria-label={isMuted ? "Unmute" : "Mute"}
+            >
+              {isMuted ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <line x1="23" y1="9" x2="17" y2="15" />
+                  <line x1="17" y1="9" x2="23" y2="15" />
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path d="M19.07 4.93a10 10 0 010 14.14" />
+                  <path d="M15.54 8.46a5 5 0 010 7.07" />
+                </svg>
+              )}
+            </button>
           )}
 
           {/* Dot Indicators */}
