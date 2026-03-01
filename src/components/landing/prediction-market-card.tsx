@@ -52,16 +52,15 @@ interface StoredBet {
 
 /* ─── Constants ──────────────────────────────────────────────────────── */
 
-const MARKET_DURATION = 180; // 3 minutes
+const MARKET_DURATION = 300; // 5 minutes
 const POLL_ACTIVE_MS = 10_000;
 const POLL_IDLE_MS = 30_000;
-const BET_OPTIONS = [1, 2, 5, 10, 25] as const;
 // Push zone: price must move >0.03% to count as a win.
 // This gives ~47% win probability per side (matching HiLo's ~4700/10000 odds).
 // Remaining ~6% falls into push zone → house edge.
 const PUSH_THRESHOLD = 0.03;
 const WIN_MULTIPLIER = 2;
-const HISTORY_MINUTES = 60;
+const HISTORY_MINUTES = 10; // Show last 10 min for tighter chart
 const MAX_CHART_PTS = 120;
 
 const BINANCE_API = "https://api.binance.com/api/v3";
@@ -91,9 +90,6 @@ const fmtTime = (s: number) => {
 
 const fmtPrice = (p: number) =>
   `$${p.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-
-const fmtHHMM = (ms: number) =>
-  new Date(ms).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
 /* ─── Default data fetchers (Binance → CoinGecko) ───────────────────── */
 
@@ -147,10 +143,10 @@ const defaultFetchHistory = async (
   }));
 };
 
-/* ─── PriceChart (pure SVG) ──────────────────────────────────────────── */
+/* ─── PriceChart (Polymarket-style full-bleed SVG with axes) ─────────── */
 
-const CHART_VB_W = 600;
-const CHART_VB_H = 180;
+const CHART_VB_W = 700;
+const CHART_VB_H = 280;
 
 function PriceChart({
   data,
@@ -165,7 +161,8 @@ function PriceChart({
 
   const W = CHART_VB_W;
   const H = CHART_VB_H;
-  const pad = { top: 10, bottom: 22 };
+  const pad = { top: 12, bottom: 28, left: 0, right: 72 };
+  const cW = W - pad.left - pad.right;
   const cH = H - pad.top - pad.bottom;
 
   const prices = data.map((d) => d.price);
@@ -173,11 +170,12 @@ function PriceChart({
   const minP = Math.min(...allPrices);
   const maxP = Math.max(...allPrices);
   const range = maxP - minP;
-  const buf = range > 0 ? range * 0.08 : maxP * 0.001;
+  const buf = range > 0 ? range * 0.1 : maxP * 0.002;
   const adjMin = minP - buf;
-  const adjRange = maxP + buf - adjMin;
+  const adjMax = maxP + buf;
+  const adjRange = adjMax - adjMin;
 
-  const toX = (i: number) => (i / (data.length - 1)) * W;
+  const toX = (i: number) => pad.left + (i / (data.length - 1)) * cW;
   const toY = (p: number) => pad.top + cH - ((p - adjMin) / adjRange) * cH;
 
   const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.price) }));
@@ -191,38 +189,54 @@ function PriceChart({
   const last = pts[pts.length - 1];
   const entryY = entryPrice != null ? toY(entryPrice) : null;
 
-  // Time labels: first, middle, last
-  const tIdx = [0, Math.floor(data.length / 2), data.length - 1];
-  const tLabels = tIdx.map((i) => ({
-    x: toX(i),
-    label: fmtHHMM(data[i].time),
-  }));
+  // Y-axis price labels (5 levels)
+  const yTicks = 5;
+  const yLabels = Array.from({ length: yTicks }, (_, i) => {
+    const frac = i / (yTicks - 1);
+    const price = adjMax - frac * adjRange;
+    return { y: toY(price), label: price.toFixed(2) };
+  });
+
+  // X-axis time labels — distribute evenly, formatted as HH:MM:SS
+  const timeSpan = data[data.length - 1].time - data[0].time;
+  const xCount = Math.min(7, data.length);
+  const xLabels: { x: number; label: string }[] = [];
+  for (let i = 0; i < xCount; i++) {
+    const frac = i / (xCount - 1);
+    const idx = Math.round(frac * (data.length - 1));
+    const t = new Date(data[idx].time);
+    // Show seconds if timespan < 15 min
+    const fmt = timeSpan < 900_000
+      ? t.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })
+      : t.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    xLabels.push({ x: toX(idx), label: fmt });
+  }
 
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
       className="w-full"
-      style={{ height: 180 }}
-      preserveAspectRatio="xMidYMid meet"
+      style={{ height: "100%" }}
+      preserveAspectRatio="none"
     >
       <defs>
         <linearGradient id="pred-area-grad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={color} stopOpacity="0.25" />
-          <stop offset="100%" stopColor={color} stopOpacity="0.02" />
+          <stop offset="0%" stopColor={color} stopOpacity="0.18" />
+          <stop offset="100%" stopColor={color} stopOpacity="0.01" />
         </linearGradient>
       </defs>
 
-      {/* Subtle grid lines */}
-      {[0.25, 0.5, 0.75].map((frac) => (
+      {/* Horizontal grid lines */}
+      {yLabels.map((t, i) => (
         <line
-          key={frac}
-          x1="0"
-          y1={pad.top + cH * frac}
-          x2={W}
-          y2={pad.top + cH * frac}
+          key={`grid-${i}`}
+          x1={pad.left}
+          y1={t.y}
+          x2={pad.left + cW}
+          y2={t.y}
           stroke="#ffffff"
           strokeWidth="0.5"
-          opacity="0.04"
+          opacity="0.06"
         />
       ))}
 
@@ -243,32 +257,32 @@ function PriceChart({
       {entryY !== null && isActive && (
         <>
           <line
-            x1="0"
+            x1={pad.left}
             y1={entryY}
-            x2={W}
+            x2={pad.left + cW}
             y2={entryY}
             stroke="#F5A623"
             strokeWidth="1"
             strokeDasharray="6 3"
-            opacity="0.7"
+            opacity="0.6"
           />
           <rect
-            x={W - 70}
-            y={entryY - 10}
-            width="66"
-            height="16"
-            rx="3"
+            x={pad.left + cW + 4}
+            y={entryY - 9}
+            width={pad.right - 8}
+            height="18"
+            rx="4"
             fill="#F5A623"
-            opacity="0.15"
+            opacity="0.2"
           />
           <text
-            x={W - 37}
-            y={entryY + 1}
+            x={pad.left + cW + pad.right / 2}
+            y={entryY + 3}
             fill="#F5A623"
-            fontSize="9"
+            fontSize="10"
             textAnchor="middle"
             fontFamily="Manrope, sans-serif"
-            fontWeight="500"
+            fontWeight="600"
           >
             Entry
           </text>
@@ -278,31 +292,68 @@ function PriceChart({
       {/* Pulsing current-price dot */}
       <circle cx={last.x} cy={last.y} r="4" fill={color} />
       <circle cx={last.x} cy={last.y} r="4" fill={color} opacity="0.4">
-        <animate
-          attributeName="r"
-          values="4;12;4"
-          dur="2s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="opacity"
-          values="0.4;0;0.4"
-          dur="2s"
-          repeatCount="indefinite"
-        />
+        <animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite" />
       </circle>
 
-      {/* Time labels */}
-      {tLabels.map((t, i) => (
+      {/* Current price horizontal line to Y-axis */}
+      <line
+        x1={last.x}
+        y1={last.y}
+        x2={pad.left + cW}
+        y2={last.y}
+        stroke={color}
+        strokeWidth="1"
+        strokeDasharray="3 3"
+        opacity="0.5"
+      />
+
+      {/* Current price label on Y-axis */}
+      <rect
+        x={pad.left + cW + 2}
+        y={last.y - 10}
+        width={pad.right - 4}
+        height="20"
+        rx="4"
+        fill={color}
+        opacity="0.15"
+      />
+      <text
+        x={pad.left + cW + pad.right / 2}
+        y={last.y + 4}
+        fill={color}
+        fontSize="10"
+        textAnchor="middle"
+        fontFamily="Manrope, sans-serif"
+        fontWeight="600"
+      >
+        {prices[prices.length - 1].toFixed(2)}
+      </text>
+
+      {/* Y-axis price labels (right side) */}
+      {yLabels.map((t, i) => (
         <text
-          key={i}
+          key={`ylabel-${i}`}
+          x={pad.left + cW + 8}
+          y={t.y + 3}
+          fill="#5A7170"
+          fontSize="9"
+          fontFamily="Manrope, sans-serif"
+          textAnchor="start"
+        >
+          {t.label}
+        </text>
+      ))}
+
+      {/* X-axis time labels */}
+      {xLabels.map((t, i) => (
+        <text
+          key={`xlabel-${i}`}
           x={t.x}
-          y={H - 4}
-          fill="#8B9E9D"
-          fontSize="10"
-          textAnchor={
-            i === 0 ? "start" : i === tLabels.length - 1 ? "end" : "middle"
-          }
+          y={H - 6}
+          fill="#5A7170"
+          fontSize="9"
+          textAnchor={i === 0 ? "start" : i === xLabels.length - 1 ? "end" : "middle"}
           fontFamily="Manrope, sans-serif"
         >
           {t.label}
@@ -337,7 +388,7 @@ const PredictionMarketCard = React.forwardRef<
     const [chartLoading, setChartLoading] = useState(true);
     const [priceError, setPriceError] = useState(false);
     const [entryPrice, setEntryPrice] = useState<number | null>(null);
-    const [betAmount, setBetAmount] = useState<number>(1);
+    const [betAmount] = useState<number>(1);
     const [direction, setDirection] = useState<"up" | "down" | null>(null);
     const [timeRemaining, setTimeRemaining] = useState(MARKET_DURATION);
     const [result, setResult] = useState<PredictionResult | null>(null);
@@ -402,7 +453,6 @@ const PredictionMarketCard = React.forwardRef<
       if (now >= stored.marketEnd) {
         // Bet expired while away — trigger immediate resolution
         setEntryPrice(stored.entryPrice);
-        setBetAmount(stored.betAmount);
         setDirection(stored.direction);
         marketEndRef.current = stored.marketEnd;
         setTimeRemaining(0);
@@ -412,7 +462,6 @@ const PredictionMarketCard = React.forwardRef<
       } else {
         // Bet still active — resume mid-flight
         setEntryPrice(stored.entryPrice);
-        setBetAmount(stored.betAmount);
         setDirection(stored.direction);
         marketEndRef.current = stored.marketEnd;
         setTimeRemaining(Math.floor((stored.marketEnd - now) / 1000));
@@ -640,7 +689,7 @@ const PredictionMarketCard = React.forwardRef<
               <span className="text-white text-[14px] font-bold">Ξ</span>
             </div>
             <h3 className="font-manrope font-medium text-white text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] tracking-[-0.5px]">
-              ETH Price Prediction
+              Ethereum Up or Down — 5 Minutes
             </h3>
           </div>
           <span className="font-manrope font-normal text-[#8B9E9D] text-[12px] md:text-[13px] leading-[16px]">
@@ -702,18 +751,16 @@ const PredictionMarketCard = React.forwardRef<
         </div>
 
         {/* ── Live Chart ── */}
-        <div className="relative mb-[12px] rounded-[12px] overflow-hidden bg-[#001615]/50 border border-[rgba(255,255,255,0.05)]">
+        <div className="relative mb-[12px] rounded-[12px] overflow-hidden bg-[#001615]/50 border border-[rgba(255,255,255,0.05)] flex-1 min-h-[220px]">
           {chartLoading ? (
             <div
-              className="flex items-center justify-center"
-              style={{ height: 180 }}
+              className="flex items-center justify-center h-full"
             >
               <div className="w-6 h-6 border-2 border-[#56C7F3]/30 border-t-[#56C7F3] rounded-full animate-spin" />
             </div>
           ) : priceError || chartData.length < 2 ? (
             <div
-              className="flex items-center justify-center"
-              style={{ height: 180 }}
+              className="flex items-center justify-center h-full"
             >
               <span className="font-manrope text-[#8B9E9D] text-[13px]">
                 {priceError
@@ -752,46 +799,14 @@ const PredictionMarketCard = React.forwardRef<
             </div>
           )}
 
-          {/* 1H label */}
-          {!chartLoading && !priceError && chartData.length >= 2 && (
-            <div className="absolute top-[8px] left-[8px] px-[8px] py-[2px] rounded-[6px] bg-[#001615]/60 border border-[rgba(255,255,255,0.08)]">
-              <span className="font-manrope font-medium text-[#8B9E9D] text-[10px]">
-                1H
-              </span>
-            </div>
-          )}
         </div>
 
         {/* ── IDLE: bet controls ── */}
         {phase === "idle" && (
           <>
             <p className="font-manrope font-normal text-[#8B9E9D] text-[13px] md:text-[14px] text-center mb-[10px]">
-              Will ETH be higher or lower in 3 minutes?
+              Will ETH be higher or lower in 5 minutes? · 1 pt bet
             </p>
-
-            {/* Bet chips */}
-            <div className="flex items-center gap-[6px] mb-[12px]">
-              <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] leading-[14px] mr-[4px]">
-                Bet:
-              </span>
-              {BET_OPTIONS.map((amt) => (
-                <button
-                  key={amt}
-                  type="button"
-                  disabled={skaiPoints < amt}
-                  onClick={() => setBetAmount(amt)}
-                  className={cn(
-                    "px-[10px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150",
-                    betAmount === amt
-                      ? "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/40"
-                      : "bg-[#001615] text-[#8B9E9D] border border-transparent hover:border-[rgba(255,255,255,0.1)]",
-                    skaiPoints < amt && "opacity-40 cursor-not-allowed",
-                  )}
-                >
-                  {amt}
-                </button>
-              ))}
-            </div>
 
             {/* Direction buttons */}
             <div className="flex gap-3">
