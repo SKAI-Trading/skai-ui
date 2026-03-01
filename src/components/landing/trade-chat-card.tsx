@@ -87,12 +87,12 @@ export interface TradeChatCardProps extends React.HTMLAttributes<HTMLDivElement>
 }
 
 const SUGGESTIONS = [
-  { label: "Scan a chart", icon: "chart" as const, message: "I want to scan and analyze a chart" },
-  { label: "Swap tokens", icon: "swap" as const, message: "I want to swap tokens" },
+  { label: "Market signals", icon: "signal" as const, message: "What are the current market signals for ETH and BTC? Give me the latest buy/sell indicators." },
+  { label: "Trade ideas", icon: "trending-up" as const, message: "Give me your top trade ideas right now. What setups look promising?" },
+  { label: "Chart analysis", icon: "chart" as const, message: "I want to scan and analyze a chart" },
   { label: "Buy USDC", icon: "token" as const, message: "How do I buy USDC on Base?" },
-  { label: "My portfolio", icon: "wallet" as const, message: "Show me my portfolio" },
-  { label: "Bridge assets", icon: "bridge" as const, message: "I want to bridge assets" },
-  { label: "Market prices", icon: "trending-up" as const, message: "What are the current ETH and USDC prices?" },
+  { label: "Swap tokens", icon: "swap" as const, message: "I want to swap tokens" },
+  { label: "Market intel", icon: "information" as const, message: "Give me the latest market intel — what's moving, major news, and key levels to watch today." },
 ];
 
 let msgCounter = 0;
@@ -280,7 +280,7 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
         role: "assistant",
         content: username
           ? `Hey ${username}! I'm your AI trading assistant. Ask me anything — swap tokens, buy USDC or ETH, analyze charts, check your portfolio, or bridge assets.`
-          : "Hey! I'm your AI trading assistant. Ask me anything — swap tokens, buy USDC or ETH, analyze charts, check your portfolio, or bridge assets.",
+          : "Hey! I'm your AI trading assistant. Ask me anything — market signals, trade ideas, chart analysis, swap tokens, or buy USDC.",
         timestamp: Date.now(),
       });
 

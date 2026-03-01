@@ -25,12 +25,12 @@ export interface AIMenuCardProps extends React.HTMLAttributes<HTMLDivElement> {
 const TOOL_OPTIONS: Array<{
   id: AIToolOption;
   label: string;
-  icon: "chart" | "wallet" | "swap" | "bridge" | "token";
+  icon: "chart" | "wallet" | "swap" | "bridge" | "token" | "signal" | "trending-up" | "information";
   requiresDeposit: boolean;
 }> = [
-  { id: "scan", label: "Scan a chart", icon: "chart", requiresDeposit: false },
+  { id: "scan", label: "Chart analysis", icon: "chart", requiresDeposit: false },
   { id: "portfolio", label: "Analyze portfolio", icon: "wallet", requiresDeposit: false },
-  { id: "swap", label: "Swap", icon: "swap", requiresDeposit: false },
+  { id: "swap", label: "Swap tokens", icon: "swap", requiresDeposit: false },
   { id: "bridge", label: "Bridge", icon: "bridge", requiresDeposit: false },
   { id: "buy", label: "Buy USDC / ETH", icon: "token", requiresDeposit: false },
 ];
