@@ -93,7 +93,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
           </div>
         )}
         <div className="flex w-full gap-2">
-          {(["trade", "play", "predict"] as const).map((tab) => (
+          {(["trade", "predict", "play"] as const).map((tab) => (
             <button
               key={tab}
               type="button"
