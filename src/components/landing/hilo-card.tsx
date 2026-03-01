@@ -25,11 +25,11 @@ interface HistoryEntry {
   push: boolean;
 }
 
-const BET_OPTIONS = [1, 2, 3, 4, 5] as const;
+const BET_OPTIONS = [1] as const;
 
 const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
   ({ skaiPoints, userId, onPlayBet, onPointsChange, className, ...props }, ref) => {
-    const [betAmount, setBetAmount] = useState(1);
+    const [betAmount] = useState(1);
     const [isPlaying, setIsPlaying] = useState(false);
     const [lastResult, setLastResult] = useState<HiLoResult | null>(null);
     const [lastChoice, setLastChoice] = useState<"hi" | "lo" | null>(null);
@@ -127,14 +127,10 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
             <button
               key={amt}
               type="button"
-              disabled={skaiPoints < amt}
-              onClick={() => setBetAmount(amt)}
+              disabled
               className={cn(
                 "w-[32px] h-[32px] md:w-[36px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150",
-                betAmount === amt
-                  ? "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/40"
-                  : "bg-[#001615] text-[#8B9E9D] border border-transparent hover:border-[rgba(255,255,255,0.1)]",
-                skaiPoints < amt && "opacity-40 cursor-not-allowed",
+                "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/40",
               )}
             >
               {amt}
