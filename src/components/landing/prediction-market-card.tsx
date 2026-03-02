@@ -53,8 +53,9 @@ interface StoredBet {
 /* ─── Constants ──────────────────────────────────────────────────────── */
 
 const MARKET_DURATION = 300; // 5 minutes
-const POLL_ACTIVE_MS = 10_000;
-const POLL_IDLE_MS = 30_000;
+const POLL_ACTIVE_MS = 3_000;   // 3 s while bet is live — feels real-time
+const POLL_IDLE_MS = 8_000;     // 8 s idle — keeps chart fresh
+const INTERP_TICK_MS = 1_000;   // 1 s interpolated frames between polls
 // Push zone: price must move >0.03% to count as a win.
 // This gives ~47% win probability per side (matching HiLo's ~4700/10000 odds).
 // Remaining ~6% falls into push zone → house edge.
@@ -198,17 +199,14 @@ function PriceChart({
   });
 
   // X-axis time labels — distribute evenly, formatted as HH:MM:SS
-  const timeSpan = data[data.length - 1].time - data[0].time;
   const xCount = Math.min(7, data.length);
   const xLabels: { x: number; label: string }[] = [];
   for (let i = 0; i < xCount; i++) {
     const frac = i / (xCount - 1);
     const idx = Math.round(frac * (data.length - 1));
     const t = new Date(data[idx].time);
-    // Show seconds if timespan < 15 min
-    const fmt = timeSpan < 900_000
-      ? t.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })
-      : t.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    // Always show seconds for a live-ticker feel
+    const fmt = t.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
     xLabels.push({ x: toX(idx), label: fmt });
   }
 
@@ -383,6 +381,7 @@ const PredictionMarketCard = React.forwardRef<
   ) => {
     /* ── state ── */
     const [phase, setPhase] = useState<Phase>("idle");
+    const [showRules, setShowRules] = useState(false);
     const [ethPrice, setEthPrice] = useState<number | null>(null);
     const [chartData, setChartData] = useState<PricePoint[]>([]);
     const [chartLoading, setChartLoading] = useState(true);
@@ -488,6 +487,26 @@ const PredictionMarketCard = React.forwardRef<
       }, POLL_IDLE_MS);
       return () => clearInterval(id);
     }, [phase, fetchPrice]);
+
+    /* ── 1-second interpolation ticks (makes chart feel live) ── */
+    useEffect(() => {
+      // Only interpolate during idle & active phases when we have data
+      if (phase === "resolving" || phase === "resolved") return;
+      const id = setInterval(() => {
+        setChartData((prev) => {
+          if (prev.length < 2) return prev;
+          const last = prev[prev.length - 1];
+          const secondLast = prev[prev.length - 2];
+          // Small random jitter (±0.01% of price) to simulate tick movement
+          const trend = last.price - secondLast.price;
+          const jitter = last.price * (Math.random() - 0.5) * 0.0002;
+          const interp = last.price + trend * 0.05 + jitter;
+          const next = [...prev, { time: Date.now(), price: parseFloat(interp.toFixed(2)) }];
+          return next.length > MAX_CHART_PTS ? next.slice(-MAX_CHART_PTS) : next;
+        });
+      }, INTERP_TICK_MS);
+      return () => clearInterval(id);
+    }, [phase]);
 
     /* ── active market countdown ── */
     useEffect(() => {
@@ -684,21 +703,56 @@ const PredictionMarketCard = React.forwardRef<
       >
         {/* ── Header ── */}
         <div className="flex items-center justify-between mb-[8px]">
-          <div className="flex items-center gap-[8px]">
-            <div className="w-[28px] h-[28px] rounded-full bg-[#627EEA] flex items-center justify-center">
-              <span className="text-white text-[14px] font-bold">Ξ</span>
+          <div className="flex items-center gap-[8px] min-w-0">
+            <div className="w-[28px] h-[28px] rounded-full bg-[#627EEA] flex items-center justify-center overflow-hidden shrink-0">
+              <svg width="18" height="18" viewBox="0 0 256 417" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                <path fill="#fff" d="M127.961 0l-2.795 9.5v275.668l2.795 2.79 127.962-75.638z"/>
+                <path fill="#ccc" d="M127.962 0L0 212.32l127.962 75.639V154.158z"/>
+                <path fill="#fff" d="M127.961 312.187l-1.575 1.92v98.199l1.575 4.6L256 236.587z"/>
+                <path fill="#ccc" d="M127.962 416.905v-104.72L0 236.585z"/>
+              </svg>
             </div>
-            <h3 className="font-manrope font-medium text-white text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] tracking-[-0.5px]">
-              Ethereum Up or Down — 5 Minutes
+            <h3 className="font-manrope font-medium text-white text-[14px] md:text-[18px] lg:text-[20px] leading-[20px] tracking-[-0.5px] truncate">
+              Ethereum Up or Down — 5 Min
             </h3>
           </div>
-          <span className="font-manrope font-normal text-[#8B9E9D] text-[12px] md:text-[13px] leading-[16px]">
-            Balance:{" "}
-            <span className="text-[#2DEDAD] font-medium">
-              {skaiPoints.toLocaleString()} pts
+          <div className="flex items-center gap-[6px] shrink-0 ml-[8px]">
+            <button
+              type="button"
+              onClick={() => setShowRules((v) => !v)}
+              className={cn(
+                "w-[20px] h-[20px] rounded-full flex items-center justify-center text-[11px] font-bold transition-all duration-200 shrink-0",
+                showRules
+                  ? "bg-[#627EEA] text-white"
+                  : "bg-[#ffffff10] text-[#8B9E9D] hover:bg-[#ffffff18] hover:text-white",
+              )}
+              aria-label="How to play"
+            >
+              ?
+            </button>
+            <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[13px] whitespace-nowrap">
+              <span className="text-[#2DEDAD] font-semibold">
+                {skaiPoints.toLocaleString()}
+              </span>{" "}
+              pts
             </span>
-          </span>
+          </div>
         </div>
+
+        {/* How to Play rules */}
+        {showRules && (
+          <div className="mb-[8px] p-[12px] rounded-[12px] bg-[#0A2A28] border border-[#627EEA]/15 animate-in fade-in slide-in-from-top-2 duration-200">
+            <p className="font-manrope font-semibold text-[#627EEA] text-[12px] mb-[6px]">How to Play</p>
+            <ol className="font-manrope text-[#8B9E9D] text-[11px] leading-[16px] list-decimal list-inside space-y-[3px]">
+              <li>The live <span className="text-white font-medium">ETH price</span> is shown on the chart</li>
+              <li>Pick <span className="text-[#2DEDAD] font-medium">▲ HIGHER</span> if you think ETH goes <span className="text-white font-medium">up</span> in 5 min</li>
+              <li>Pick <span className="text-[#F04438] font-medium">▼ LOWER</span> if you think ETH goes <span className="text-white font-medium">down</span> in 5 min</li>
+              <li>After 5 minutes, the price is checked automatically</li>
+              <li>Correct = <span className="text-[#2DEDAD] font-medium">2× your bet</span> · Wrong = lose bet · Tiny move = <span className="text-[#F5A623] font-medium">Push</span></li>
+            </ol>
+            <p className="font-manrope text-[#5A7170] text-[10px] mt-[6px]">1 SKAI Point per bet · Uses real Binance ETH/USDT price · No deposits needed</p>
+          </div>
+        )}
 
         {/* ── Live price + 1h change ── */}
         <div className="flex items-baseline gap-[8px] mb-[4px]">

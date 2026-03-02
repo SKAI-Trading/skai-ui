@@ -30,6 +30,7 @@ const BET_OPTIONS = [1] as const;
 const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
   ({ skaiPoints, userId, onPlayBet, onPointsChange, className, ...props }, ref) => {
     const [betAmount] = useState(1);
+    const [showRules, setShowRules] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
     const [lastResult, setLastResult] = useState<HiLoResult | null>(null);
     const [lastChoice, setLastChoice] = useState<"hi" | "lo" | null>(null);
@@ -107,9 +108,33 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-[12px]">
-          <h3 className="font-manrope font-medium text-white text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] tracking-[-0.64px]">
-            Hi / Lo
-          </h3>
+          <div className="flex items-center gap-[6px]">
+            {/* Dice icon */}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+              <rect x="3" y="3" width="18" height="18" rx="3" stroke="#2DEDAD" strokeWidth="1.8" />
+              <circle cx="8.5" cy="8.5" r="1.5" fill="#2DEDAD" />
+              <circle cx="15.5" cy="8.5" r="1.5" fill="#2DEDAD" />
+              <circle cx="12" cy="12" r="1.5" fill="#2DEDAD" />
+              <circle cx="8.5" cy="15.5" r="1.5" fill="#2DEDAD" />
+              <circle cx="15.5" cy="15.5" r="1.5" fill="#2DEDAD" />
+            </svg>
+            <h3 className="font-manrope font-medium text-white text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] tracking-[-0.64px]">
+              Hi / Lo
+            </h3>
+            <button
+              type="button"
+              onClick={() => setShowRules((v) => !v)}
+              className={cn(
+                "w-[20px] h-[20px] rounded-full flex items-center justify-center text-[11px] font-bold transition-all duration-200 shrink-0",
+                showRules
+                  ? "bg-[#2DEDAD] text-[#001615]"
+                  : "bg-[#ffffff10] text-[#8B9E9D] hover:bg-[#ffffff18] hover:text-white",
+              )}
+              aria-label="How to play"
+            >
+              ?
+            </button>
+          </div>
           <span className="font-manrope font-normal text-[#8B9E9D] text-[12px] md:text-[13px] leading-[16px]">
             Balance:{" "}
             <span className="text-[#2DEDAD] font-medium">
@@ -117,6 +142,21 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
             </span>
           </span>
         </div>
+
+        {/* How to Play rules */}
+        {showRules && (
+          <div className="mb-[12px] p-[12px] rounded-[12px] bg-[#0A2A28] border border-[#2DEDAD]/15 animate-in fade-in slide-in-from-top-2 duration-200">
+            <p className="font-manrope font-semibold text-[#2DEDAD] text-[12px] mb-[6px]">How to Play</p>
+            <ol className="font-manrope text-[#8B9E9D] text-[11px] leading-[16px] list-decimal list-inside space-y-[3px]">
+              <li>A random number from <span className="text-white font-medium">0 – 9,999</span> is rolled</li>
+              <li>Pick <span className="text-[#2DEDAD] font-medium">HI</span> if you think it will be <span className="text-white font-medium">above 5,000</span></li>
+              <li>Pick <span className="text-[#56C7F3] font-medium">LO</span> if you think it will be <span className="text-white font-medium">below 5,000</span></li>
+              <li>Win = <span className="text-[#2DEDAD] font-medium">2× your bet</span> returned · Wrong = <span className="text-[#F04438] font-medium">lose bet</span></li>
+              <li>Exactly 5,000 = <span className="text-[#F5A623] font-medium">Push</span> (bet returned)</li>
+            </ol>
+            <p className="font-manrope text-[#5A7170] text-[10px] mt-[6px]">1 SKAI Point per bet · Provably fair · Results verifiable on-chain</p>
+          </div>
+        )}
 
         {/* Bet selector */}
         <div className="flex items-center gap-[6px] mb-[16px]">
@@ -129,11 +169,11 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
               type="button"
               disabled
               className={cn(
-                "w-[32px] h-[32px] md:w-[36px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150",
+                "px-[10px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150",
                 "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/40",
               )}
             >
-              {amt}
+              {amt} pt
             </button>
           ))}
         </div>
