@@ -21,12 +21,12 @@ const DEFAULT_TIER_COLOR = TIER_COLORS.standard;
 
 /** All tier definitions with point thresholds and rewards */
 const ALL_TIERS = [
-  { key: "standard", name: "Standard", min: 0,       rewards: ["Basic access", "All games", "Welcome bonus"] },
-  { key: "bronze",   name: "Bronze",   min: 1_000,   rewards: ["Base fee rates", "Daily login bonus"] },
-  { key: "silver",   name: "Silver",   min: 5_000,   rewards: ["10% fee discount", "Silver badge NFT", "Priority AI access"] },
-  { key: "gold",     name: "Gold",     min: 25_000,  rewards: ["15% fee discount", "Gold badge NFT", "VIP AI insights"] },
-  { key: "platinum", name: "Platinum", min: 100_000, rewards: ["20% fee discount", "Platinum badge NFT", "Priority support"] },
-  { key: "diamond",  name: "Diamond",  min: 500_000, rewards: ["30% fee discount", "Diamond badge NFT", "Early feature access"] },
+  { key: "standard", name: "Standard", min: 0,       rewards: ["All 20+ games", "AI chat (25/day)", "Welcome bonus"] },
+  { key: "bronze",   name: "Bronze",   min: 1_000,   rewards: ["5% fee cashback", "Daily login bonus", "Game recommendations"] },
+  { key: "silver",   name: "Silver",   min: 5_000,   rewards: ["10% fee discount", "1.2× points", "Whale alerts & copy trading"] },
+  { key: "gold",     name: "Gold",     min: 25_000,  rewards: ["15% fee discount", "GPT-4.1 AI (100/day)", "Real-time signals"] },
+  { key: "platinum", name: "Platinum", min: 100_000, rewards: ["20% fee discount", "1.5× points", "Priority support"] },
+  { key: "diamond",  name: "Diamond",  min: 500_000, rewards: ["30% fee discount", "Premium AI (250/day)", "Auto-trading bots"] },
 ] as const;
 
 function formatPts(n: number): string {
