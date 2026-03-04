@@ -450,6 +450,7 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
     const [usedCount, setUsedCountState] = useState(() =>
       getUsedCount(username),
     );
+    const [expandedImage, setExpandedImage] = useState<string | null>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -588,9 +589,22 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
         )}
         {...props}
       >
-        {/* Header row — title + usage counter + close-style icon */}
+        {/* Header row — back + title + usage counter */}
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-[8px]">
+            {/* Back button */}
+            {onResetChart && (
+              <button
+                type="button"
+                title="Back"
+                onClick={onResetChart}
+                className="flex-shrink-0 w-6 h-6 rounded-md bg-[#001615]/40 text-[#95A09F] flex items-center justify-center hover:bg-[#001615]/60 hover:text-[#56C7F3] transition-colors"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            )}
             {/* Chart pulse icon */}
             <svg
               width="16"
@@ -626,19 +640,54 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
           </span>
         </div>
 
+        {/* Expanded image lightbox */}
+        {expandedImage && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-pointer"
+            onClick={() => setExpandedImage(null)}
+          >
+            <div className="relative max-w-[90vw] max-h-[85vh]">
+              <img
+                src={expandedImage}
+                alt="Expanded chart"
+                className="max-w-full max-h-[85vh] rounded-lg object-contain"
+              />
+              <button
+                type="button"
+                onClick={() => setExpandedImage(null)}
+                className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[#001615]/80 text-white flex items-center justify-center hover:bg-[#001615] transition-colors"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Messages area */}
-        <div ref={chatContainerRef} className="flex flex-col gap-[8px] overflow-y-auto max-h-[300px] md:max-h-[400px]">
+        <div ref={chatContainerRef} className="flex flex-col gap-[8px] overflow-y-auto max-h-[50vh] md:max-h-[60vh]">
           {messages.map((msg) => (
             <div key={msg.id}>
               {msg.role === "user" ? (
                 <div className="flex justify-end">
                   <div className="bg-[#001615]/60 rounded-lg p-[12px] max-w-[85%]">
                     {msg.chartImage && (
-                      <img
-                        src={msg.chartImage}
-                        alt="Uploaded chart"
-                        className="w-full max-w-[280px] rounded-[4px] mb-2"
-                      />
+                      <div
+                        className="relative max-w-[160px] rounded-[4px] mb-2 cursor-pointer group"
+                        onClick={() => setExpandedImage(msg.chartImage!)}
+                      >
+                        <img
+                          src={msg.chartImage}
+                          alt="Uploaded chart"
+                          className="w-full rounded-[4px] max-h-[100px] object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-[4px] flex items-center justify-center">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </div>
                     )}
                     <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
                       {msg.content}
@@ -651,17 +700,27 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
                     {msg.content}
                   </p>
 
-                  {/* Chart overlay + analysis */}
+                  {/* Chart overlay + analysis — compact thumbnail with expand */}
                   {msg.analysis && msg.chartImage && (
                     <>
-                      <ChartOverlayCanvas
-                        imageSrc={msg.chartImage}
-                        keyLevels={msg.analysis.keyLevels}
-                        patternRegions={msg.analysis.patternRegions}
-                        detectedSymbol={msg.analysis.detectedSymbol}
-                        detectedTimeframe={msg.analysis.detectedTimeframe}
-                        className="rounded-[4px] overflow-hidden"
-                      />
+                      <div
+                        className="relative max-w-[240px] rounded-[4px] overflow-hidden cursor-pointer group"
+                        onClick={() => setExpandedImage(msg.chartImage!)}
+                      >
+                        <ChartOverlayCanvas
+                          imageSrc={msg.chartImage}
+                          keyLevels={msg.analysis.keyLevels}
+                          patternRegions={msg.analysis.patternRegions}
+                          detectedSymbol={msg.analysis.detectedSymbol}
+                          detectedTimeframe={msg.analysis.detectedTimeframe}
+                          className="rounded-[4px] overflow-hidden"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </div>
                       <AnalysisSummary
                         analysis={msg.analysis}
                         chartImage={msg.chartImage}

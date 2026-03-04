@@ -729,14 +729,12 @@ const PredictionMarketCard = React.forwardRef<
               ?
             </button>
           </div>
-          <div className="flex items-center gap-[6px] shrink-0 ml-[8px]">
-            <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[13px] whitespace-nowrap">
-              <span className="text-[#2DEDAD] font-semibold">
-                {skaiPoints.toLocaleString()}
-              </span>{" "}
-              pts
+          <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[13px] whitespace-nowrap shrink-0 ml-[8px]">
+            Balance:{" "}
+            <span className="text-[#2DEDAD] font-semibold">
+              {skaiPoints.toLocaleString()} pts
             </span>
-          </div>
+          </span>
         </div>
 
         {/* How to Play rules */}

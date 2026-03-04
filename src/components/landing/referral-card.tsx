@@ -107,15 +107,6 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           </button>
         </div>
 
-        {/* Claim Points Label */}
-        <div className="flex items-center gap-[8px] mb-[10px]">
-          <span className="font-manrope font-normal text-[#2DEDAD] text-[12px] lg:text-[14px] leading-[16px] lg:leading-[18px]">
-            {hasClaimedToday
-              ? `+${shareTweetPoints} SKAI Points claimed ✓`
-              : `Claim ${shareTweetPoints} SKAI Points`}
-          </span>
-        </div>
-
         {/* Share on X Button */}
         <button
           type="button"
