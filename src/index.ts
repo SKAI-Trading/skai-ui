@@ -78,6 +78,9 @@ export { cn } from "./lib/utils";
 // Animation System
 export * from "./lib/animations";
 
+// Sound Effects (Web Audio API)
+export { playBetSound, playRollSound, playWinSound, playLoseSound, playPushSound } from "./lib/sounds";
+
 // Accessibility Utilities
 export * from "./lib/accessibility";
 

@@ -52,7 +52,7 @@ interface StoredBet {
 
 /* ─── Constants ──────────────────────────────────────────────────────── */
 
-const MARKET_DURATION = 300; // 5 minutes
+const MARKET_DURATION = 60; // 1 minute
 const POLL_ACTIVE_MS = 3_000;   // 3 s while bet is live — feels real-time
 const POLL_IDLE_MS = 8_000;     // 8 s idle — keeps chart fresh
 const INTERP_TICK_MS = 1_000;   // 1 s interpolated frames between polls
@@ -713,10 +713,8 @@ const PredictionMarketCard = React.forwardRef<
               </svg>
             </div>
             <h3 className="font-manrope font-medium text-white text-[14px] md:text-[18px] lg:text-[20px] leading-[20px] tracking-[-0.5px] truncate">
-              Ethereum Up or Down — 5 Min
+              Ethereum Up or Down — 1 Min
             </h3>
-          </div>
-          <div className="flex items-center gap-[6px] shrink-0 ml-[8px]">
             <button
               type="button"
               onClick={() => setShowRules((v) => !v)}
@@ -730,6 +728,8 @@ const PredictionMarketCard = React.forwardRef<
             >
               ?
             </button>
+          </div>
+          <div className="flex items-center gap-[6px] shrink-0 ml-[8px]">
             <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[13px] whitespace-nowrap">
               <span className="text-[#2DEDAD] font-semibold">
                 {skaiPoints.toLocaleString()}
@@ -745,9 +745,9 @@ const PredictionMarketCard = React.forwardRef<
             <p className="font-manrope font-semibold text-[#627EEA] text-[12px] mb-[6px]">How to Play</p>
             <ol className="font-manrope text-[#8B9E9D] text-[11px] leading-[16px] list-decimal list-inside space-y-[3px]">
               <li>The live <span className="text-white font-medium">ETH price</span> is shown on the chart</li>
-              <li>Pick <span className="text-[#2DEDAD] font-medium">▲ HIGHER</span> if you think ETH goes <span className="text-white font-medium">up</span> in 5 min</li>
-              <li>Pick <span className="text-[#F04438] font-medium">▼ LOWER</span> if you think ETH goes <span className="text-white font-medium">down</span> in 5 min</li>
-              <li>After 5 minutes, the price is checked automatically</li>
+              <li>Pick <span className="text-[#2DEDAD] font-medium">▲ HIGHER</span> if you think ETH goes <span className="text-white font-medium">up</span> in 1 min</li>
+              <li>Pick <span className="text-[#F04438] font-medium">▼ LOWER</span> if you think ETH goes <span className="text-white font-medium">down</span> in 1 min</li>
+              <li>After 1 minute, the price is checked automatically</li>
               <li>Correct = <span className="text-[#2DEDAD] font-medium">2× your bet</span> · Wrong = lose bet · Tiny move = <span className="text-[#F5A623] font-medium">Push</span></li>
             </ol>
             <p className="font-manrope text-[#5A7170] text-[10px] mt-[6px]">1 SKAI Point per bet · Uses real Binance ETH/USDT price · No deposits needed</p>
@@ -805,7 +805,7 @@ const PredictionMarketCard = React.forwardRef<
         </div>
 
         {/* ── Live Chart ── */}
-        <div className="relative mb-[12px] rounded-[12px] overflow-hidden bg-[#001615]/50 border border-[rgba(255,255,255,0.05)] flex-1 min-h-[220px]">
+        <div className="relative mb-[12px] rounded-[12px] overflow-hidden bg-[#001615] border border-[rgba(255,255,255,0.05)] flex-1 min-h-[220px]">
           {chartLoading ? (
             <div
               className="flex items-center justify-center h-full"
@@ -859,7 +859,7 @@ const PredictionMarketCard = React.forwardRef<
         {phase === "idle" && (
           <>
             <p className="font-manrope font-normal text-[#8B9E9D] text-[13px] md:text-[14px] text-center mb-[10px]">
-              Will ETH be higher or lower in 5 minutes? · 1 pt bet
+              Will ETH be higher or lower in 1 minute? · 1 pt bet
             </p>
 
             {/* Direction buttons */}

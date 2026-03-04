@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState, useCallback } from "react";
 import { cn } from "../../lib/utils";
+import { playBetSound, playRollSound, playWinSound, playLoseSound, playPushSound } from "../../lib/sounds";
 
 export interface HiLoResult {
   roll: number;
@@ -53,10 +54,19 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
         setLastResult(null);
         setLastChoice(choice);
 
+        // Sound: click + roll
+        playBetSound();
+        setTimeout(() => playRollSound(), 80);
+
         try {
           const result = await onPlayBet(betAmount, choice);
           setLastResult(result);
           onPointsChange?.(result.newBalance);
+
+          // Sound: outcome
+          if (result.result === "win") playWinSound();
+          else if (result.result === "lose") playLoseSound();
+          else playPushSound();
 
           const entry: HistoryEntry = {
             roll: result.roll,
