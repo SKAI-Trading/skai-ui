@@ -44,7 +44,7 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     color: "#94a3b8",
     bgColor: "rgba(148, 163, 184, 0.1)",
     borderColor: "rgba(148, 163, 184, 0.3)",
-    benefits: ["Basic trading access", "Community features"],
+    benefits: ["Basic trading access", "AI trade assistant", "Community features"],
   },
   bronze: {
     label: "Bronze",
@@ -54,7 +54,7 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     color: "#CD7F32",
     bgColor: "rgba(205, 127, 50, 0.1)",
     borderColor: "rgba(205, 127, 50, 0.3)",
-    benefits: ["5% cashback", "Bronze badge", "Priority support"],
+    benefits: ["5% fee cashback", "Daily login bonus", "Priority queue"],
   },
   silver: {
     label: "Silver",
@@ -64,7 +64,7 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     color: "#C0C0C0",
     bgColor: "rgba(192, 192, 192, 0.15)",
     borderColor: "rgba(192, 192, 192, 0.4)",
-    benefits: ["10% fee discount", "10% cashback", "1.2x points multiplier"],
+    benefits: ["10% fee discount", "1.2× points multiplier", "Whale alerts"],
   },
   gold: {
     label: "Gold",
@@ -74,7 +74,7 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     color: "#FFD700",
     bgColor: "rgba(255, 215, 0, 0.1)",
     borderColor: "rgba(255, 215, 0, 0.3)",
-    benefits: ["15% fee discount", "15% cashback", "1.4x points multiplier"],
+    benefits: ["15% fee discount", "1.4× points multiplier", "Smart money signals"],
   },
   platinum: {
     label: "Platinum",
@@ -84,7 +84,7 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     color: "#E5E4E2",
     bgColor: "rgba(229, 228, 226, 0.15)",
     borderColor: "rgba(229, 228, 226, 0.4)",
-    benefits: ["20% fee discount", "18% cashback", "1.5x points multiplier"],
+    benefits: ["20% fee discount", "1.5× points multiplier", "VIP events & airdrops"],
   },
   diamond: {
     label: "Diamond",
@@ -96,8 +96,8 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     borderColor: "rgba(185, 242, 255, 0.3)",
     benefits: [
       "30% fee discount",
-      "20% cashback",
-      "1.6x points multiplier",
+      "Real-time price updates",
+      "1.6× points multiplier",
       "Priority support",
     ],
   },
@@ -111,9 +111,9 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     borderColor: "rgba(147, 51, 234, 0.3)",
     benefits: [
       "50% fee discount",
-      "25% cashback",
-      "2x points multiplier",
-      "Priority support",
+      "Real-time price updates",
+      "2× points multiplier",
+      "Exclusive alpha channel",
       "Legendary status",
     ],
   },
