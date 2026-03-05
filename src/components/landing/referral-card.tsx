@@ -107,6 +107,13 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           </button>
         </div>
 
+        {/* Points incentive */}
+        {!hasClaimedToday && shareTweetPoints > 0 && !twitterHandle && (
+          <p className="font-manrope font-medium text-[#2DEDAD] text-[12px] lg:text-[14px] leading-[16px] lg:leading-[18px] mb-[8px]">
+            Claim {shareTweetPoints} SKAI Points
+          </p>
+        )}
+
         {/* Share on X Button */}
         <button
           type="button"

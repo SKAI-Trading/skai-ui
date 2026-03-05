@@ -35,6 +35,7 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
     const [isPlaying, setIsPlaying] = useState(false);
     const [lastResult, setLastResult] = useState<HiLoResult | null>(null);
     const [lastChoice, setLastChoice] = useState<"hi" | "lo" | null>(null);
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
     const [history, setHistory] = useState<HistoryEntry[]>(() => {
       if (!userId) return [];
       try {
@@ -53,6 +54,7 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
         setIsPlaying(true);
         setLastResult(null);
         setLastChoice(choice);
+        setErrorMsg(null);
 
         // Sound: click + roll
         playBetSound();
@@ -84,6 +86,8 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
           } catch { /* localStorage full — non-critical */ }
         } catch (err) {
           console.error("HiLo play failed:", err);
+          const msg = err instanceof Error ? err.message : "Something went wrong";
+          setErrorMsg(msg.includes("Insufficient") ? "Not enough SKAI Points to play" : msg);
         } finally {
           setIsPlaying(false);
         }
@@ -188,6 +192,18 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
           ))}
         </div>
 
+        {/* Insufficient points banner — above the buttons for visibility */}
+        {canPlay && skaiPoints < betAmount && (
+          <div className="mb-[12px] px-[12px] py-[10px] rounded-[10px] bg-[#1A0A00] border border-[#F5A623]/20 text-center">
+            <p className="font-manrope font-medium text-[#F5A623] text-[12px] md:text-[13px] leading-[16px]">
+              You need at least {betAmount} SKAI Point to play
+            </p>
+            <p className="font-manrope font-normal text-[#8B9E9D] text-[10px] md:text-[11px] leading-[14px] mt-[4px]">
+              Earn points by sharing on X, joining Discord, or referring friends
+            </p>
+          </div>
+        )}
+
         {/* Hi / Lo buttons */}
         <div className="flex gap-3 mb-[16px]">
           <button
@@ -232,6 +248,13 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
             </span>
           </div>
         )}
+        {errorMsg && !isPlaying && (
+          <div className="flex items-center justify-center gap-[6px] py-[8px] mb-[8px] rounded-[8px] bg-[#1A0A00] border border-[#F04438]/20">
+            <span className="font-manrope font-medium text-[#F04438] text-[12px] md:text-[13px]">
+              {errorMsg}
+            </span>
+          </div>
+        )}
         {lastResult && !isPlaying && (
           <div className="flex items-center justify-center gap-[8px] py-[8px] mb-[8px] rounded-[8px] bg-[#001615]">
             <span className="font-manrope font-bold text-white text-[18px] md:text-[20px] tracking-wide">
@@ -272,13 +295,6 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
         {!canPlay && (
           <p className="font-manrope font-normal text-[#8B9E9D] text-[12px] md:text-[13px] leading-[16px] text-center mt-[4px]">
             Connect your wallet and sign up to play Hi / Lo
-          </p>
-        )}
-
-        {/* No balance state */}
-        {canPlay && skaiPoints <= 0 && (
-          <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] leading-[16px] text-center mt-[8px]">
-            You need SKAI Points to play. Earn points by sharing or depositing USDC.
           </p>
         )}
       </div>

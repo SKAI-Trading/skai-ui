@@ -250,9 +250,30 @@ function AnalysisSummary({
         {analysis.trendAnalysis.direction}, {analysis.trendAnalysis.strength}
       </p>
 
-      {/* Patterns — collapsible */}
+      {/* Summary — always visible, this is the primary output */}
+      <p className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+        {analysis.overallAssessment.summary}
+      </p>
+
+      {/* Recommendations — visible by default, most actionable */}
+      {analysis.overallAssessment.recommendations.length > 0 && (
+        <CollapsibleSection title="Recommendations" defaultExpanded={true}>
+          <div className="flex flex-col gap-1">
+            {analysis.overallAssessment.recommendations.map((rec, i) => (
+              <p
+                key={i}
+                className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#2DEDAD]"
+              >
+                → {rec}
+              </p>
+            ))}
+          </div>
+        </CollapsibleSection>
+      )}
+
+      {/* Patterns — collapsed by default to reduce overwhelm */}
       {analysis.patterns.length > 0 && (
-        <CollapsibleSection title="Patterns">
+        <CollapsibleSection title="Patterns" defaultExpanded={false}>
           <div className="flex flex-wrap gap-1.5">
             {analysis.patterns.map((p, i) => (
               <span
@@ -271,9 +292,9 @@ function AnalysisSummary({
         </CollapsibleSection>
       )}
 
-      {/* Key Levels — collapsible */}
+      {/* Key Levels — collapsed by default */}
       {analysis.keyLevels.length > 0 && (
-        <CollapsibleSection title="Key Levels">
+        <CollapsibleSection title="Key Levels" defaultExpanded={false}>
           <p className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
             {analysis.keyLevels
               .slice(0, 4)
@@ -283,27 +304,6 @@ function AnalysisSummary({
               )
               .join(" · ")}
           </p>
-        </CollapsibleSection>
-      )}
-
-      {/* Summary */}
-      <p className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
-        {analysis.overallAssessment.summary}
-      </p>
-
-      {/* Recommendations — collapsible */}
-      {analysis.overallAssessment.recommendations.length > 0 && (
-        <CollapsibleSection title="Recommendations">
-          <div className="flex flex-col gap-1">
-            {analysis.overallAssessment.recommendations.map((rec, i) => (
-              <p
-                key={i}
-                className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#2DEDAD]"
-              >
-                → {rec}
-              </p>
-            ))}
-          </div>
         </CollapsibleSection>
       )}
     </div>
@@ -696,9 +696,12 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
                 </div>
               ) : (
                 <div className="flex flex-col gap-[8px]">
-                  <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] whitespace-pre-wrap">
-                    {msg.content}
-                  </p>
+                  {/* Show text content only for non-analysis messages (avoids duplicating the summary shown in AnalysisSummary) */}
+                  {!msg.analysis && (
+                    <p className="font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] whitespace-pre-wrap">
+                      {msg.content}
+                    </p>
+                  )}
 
                   {/* Chart overlay + analysis — compact thumbnail with expand */}
                   {msg.analysis && msg.chartImage && (
