@@ -5,7 +5,7 @@ import { SkaiIcon } from "../branding/skai-icon";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-export type AIToolOption = "scan" | "portfolio" | "swap" | "bridge" | "buy";
+export type AIToolOption = "scan" | "deposit" | "swap" | "bridge";
 
 export interface AIMenuCardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Called when user selects a tool option */
@@ -29,10 +29,9 @@ const TOOL_OPTIONS: Array<{
   requiresDeposit: boolean;
 }> = [
   { id: "scan", label: "Chart analysis", icon: "chart", requiresDeposit: false },
-  { id: "portfolio", label: "Analyze portfolio", icon: "wallet", requiresDeposit: false },
+  { id: "deposit", label: "Deposit", icon: "wallet", requiresDeposit: false },
   { id: "swap", label: "Swap tokens", icon: "swap", requiresDeposit: false },
   { id: "bridge", label: "Bridge", icon: "bridge", requiresDeposit: false },
-  { id: "buy", label: "Buy USDC / ETH", icon: "token", requiresDeposit: false },
 ];
 
 // ─── Component ───────────────────────────────────────────────────────────────

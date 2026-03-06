@@ -69,7 +69,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
       walletAddress,
       usdcBalance,
       onBack,
-      renderPayWidget,
+      renderPayWidget: _renderPayWidget,
       className,
       ...props
     },
@@ -77,7 +77,6 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
   ) => {
     const hasBalance = typeof usdcBalance === "number" && usdcBalance > 0;
     const [copied, setCopied] = React.useState(false);
-    const [activeView, setActiveView] = React.useState<"receive" | "buy">("receive");
 
     const handleCopy = React.useCallback(() => {
       if (!walletAddress) return;
@@ -110,7 +109,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
           )}
           <SkaiIcon name="wallet" size="sm" className="text-[#56C7F3] flex-shrink-0" />
           <p className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
-            Portfolio
+            Deposit
           </p>
         </div>
 
@@ -129,36 +128,8 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
           </div>
         )}
 
-        {/* Tab toggle: Receive / Buy */}
-        <div className="flex gap-[4px] bg-[#001615]/40 rounded-lg p-[3px]">
-          <button
-            type="button"
-            onClick={() => setActiveView("receive")}
-            className={cn(
-              "flex-1 py-[7px] rounded-md font-['Manrope',sans-serif] font-medium text-[12px] leading-[16px] transition-all duration-200 text-center",
-              activeView === "receive"
-                ? "bg-[#56C7F3]/15 text-[#56C7F3] border border-[#56C7F3]/25"
-                : "text-[#95A09F] hover:text-[#E0E0E0]",
-            )}
-          >
-            Receive Crypto
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveView("buy")}
-            className={cn(
-              "flex-1 py-[7px] rounded-md font-['Manrope',sans-serif] font-medium text-[12px] leading-[16px] transition-all duration-200 text-center",
-              activeView === "buy"
-                ? "bg-[#2DEDAD]/15 text-[#2DEDAD] border border-[#2DEDAD]/25"
-                : "text-[#95A09F] hover:text-[#E0E0E0]",
-            )}
-          >
-            Buy Crypto
-          </button>
-        </div>
-
-        {/* ═══ RECEIVE VIEW: QR + Address + Copy ═══ */}
-        {activeView === "receive" && walletAddress && (
+        {/* ═══ DEPOSIT VIEW: QR + Address + Copy ═══ */}
+        {walletAddress ? (
           <div className="flex flex-col items-center gap-[12px]">
             {/* QR Code */}
             <div className="bg-white rounded-xl p-[8px] shadow-lg">
@@ -166,7 +137,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
             </div>
 
             <p className="font-['Manrope',sans-serif] font-normal text-[11px] leading-[14px] text-[#95A09F] text-center">
-              Scan or copy address to send USDC (Base network)
+              Scan or copy address to deposit into your wallet (Base network)
             </p>
 
             {/* Address + Copy */}
@@ -186,34 +157,12 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
               </span>
             </button>
           </div>
-        )}
-
-        {/* ═══ RECEIVE — no wallet ═══ */}
-        {activeView === "receive" && !walletAddress && (
+        ) : (
           <div className="flex flex-col items-center gap-[10px] bg-[#001615]/40 rounded-lg px-[14px] py-[20px]">
             <SkaiIcon name="wallet" size="md" className="text-[#95A09F]/50" />
             <p className="font-['Manrope',sans-serif] font-normal text-[13px] leading-[18px] text-[#95A09F] text-center">
               Connect your wallet to view your deposit address
             </p>
-          </div>
-        )}
-
-        {/* ═══ BUY VIEW ═══ */}
-        {activeView === "buy" && (
-          <div className="flex flex-col items-center gap-[10px]">
-            {renderPayWidget ? (
-              renderPayWidget()
-            ) : (
-              <div className="flex flex-col items-center gap-[10px] bg-[#001615]/40 rounded-lg px-[14px] py-[20px] w-full">
-                <SkaiIcon name="swap" size="md" className="text-[#95A09F]/50" />
-                <p className="font-['Manrope',sans-serif] font-normal text-[13px] leading-[18px] text-[#95A09F] text-center">
-                  Buy crypto with card or transfer
-                </p>
-                <span className="font-['Manrope',sans-serif] font-medium text-[12px] leading-[16px] text-[#2DEDAD]">
-                  Coming soon
-                </span>
-              </div>
-            )}
           </div>
         )}
 
