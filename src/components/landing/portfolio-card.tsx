@@ -1,66 +1,19 @@
 import * as React from "react";
+import { useState, useMemo, useCallback } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import { cn } from "../../lib/utils";
 import { SkaiIcon } from "../branding/skai-icon";
+
+type Chain = "base" | "ethereum";
 
 export interface PortfolioCardProps extends React.HTMLAttributes<HTMLDivElement> {
   walletAddress?: string | null;
   usdcBalance?: number | null;
+  /** Whether the user has already claimed the one-time first-deposit reward */
+  hasClaimedDeposit?: boolean;
   onBack?: () => void;
   /** Render prop for embedding a Thirdweb PayEmbed or similar widget */
   renderPayWidget?: () => React.ReactNode;
-}
-
-/** Simple QR code rendered purely with CSS grid — no external lib needed */
-function MiniQR({ value, size = 120 }: { value: string; size?: number }) {
-  // Deterministic bit matrix from address string (visual representation, not scannable)
-  // For a real scannable QR we'd need a library — this gives a recognisable pattern
-  const modules = 21; // QR v1 = 21×21
-  const grid: boolean[][] = [];
-  let hash = 0;
-  for (let i = 0; i < value.length; i++) {
-    hash = ((hash << 5) - hash + value.charCodeAt(i)) | 0;
-  }
-  const seed = Math.abs(hash);
-  for (let r = 0; r < modules; r++) {
-    grid[r] = [];
-    for (let c = 0; c < modules; c++) {
-      // Finder patterns (top-left, top-right, bottom-left)
-      const inFinder =
-        (r < 7 && c < 7) || (r < 7 && c >= modules - 7) || (r >= modules - 7 && c < 7);
-      if (inFinder) {
-        const borderTL = r < 7 && c < 7 && (r === 0 || r === 6 || c === 0 || c === 6 || (r >= 2 && r <= 4 && c >= 2 && c <= 4));
-        const borderTR = r < 7 && c >= modules - 7 && (r === 0 || r === 6 || c === modules - 1 || c === modules - 7 || (r >= 2 && r <= 4 && c >= modules - 5 && c <= modules - 3));
-        const borderBL = r >= modules - 7 && c < 7 && (r === modules - 1 || r === modules - 7 || c === 0 || c === 6 || (r >= modules - 5 && r <= modules - 3 && c >= 2 && c <= 4));
-        grid[r][c] = borderTL || borderTR || borderBL;
-      } else {
-        // Pseudo-random data from address hash
-        const v = ((seed * (r * modules + c + 1)) >>> 0) % 3;
-        grid[r][c] = v === 0;
-      }
-    }
-  }
-
-  const cellSize = size / modules;
-
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="rounded-lg">
-      <rect width={size} height={size} fill="white" />
-      {grid.map((row, r) =>
-        row.map((cell, c) =>
-          cell ? (
-            <rect
-              key={`${r}-${c}`}
-              x={c * cellSize}
-              y={r * cellSize}
-              width={cellSize}
-              height={cellSize}
-              fill="#001615"
-            />
-          ) : null,
-        ),
-      )}
-    </svg>
-  );
 }
 
 const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
@@ -68,6 +21,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
     {
       walletAddress,
       usdcBalance,
+      hasClaimedDeposit,
       onBack,
       renderPayWidget: _renderPayWidget,
       className,
@@ -76,9 +30,10 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
     ref,
   ) => {
     const hasBalance = typeof usdcBalance === "number" && usdcBalance > 0;
-    const [copied, setCopied] = React.useState(false);
+    const [copied, setCopied] = useState(false);
+    const [selectedChain, setSelectedChain] = useState<Chain>("base");
 
-    const handleCopy = React.useCallback(() => {
+    const handleCopy = useCallback(() => {
       if (!walletAddress) return;
       navigator.clipboard.writeText(walletAddress).then(() => {
         setCopied(true);
@@ -86,11 +41,34 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
       });
     }, [walletAddress]);
 
+    // Memoize QR so it only re-renders when address changes
+    const qrCode = useMemo(() => {
+      if (!walletAddress) return null;
+      return (
+        <QRCodeSVG
+          value={walletAddress}
+          size={180}
+          bgColor="#ffffff"
+          fgColor="#000000"
+          level="H"
+          includeMargin={false}
+          imageSettings={{
+            src: "/favicon.png",
+            x: undefined,
+            y: undefined,
+            height: 36,
+            width: 36,
+            excavate: true,
+          }}
+        />
+      );
+    }, [walletAddress]);
+
     return (
       <div
         ref={ref}
         className={cn(
-          "bg-[#123F3C] flex flex-col gap-[14px] rounded-lg p-[16px] relative",
+          "bg-[#0D3331] flex flex-col gap-[14px] rounded-2xl border border-[#123F3C] p-[16px] relative",
           className,
         )}
         {...props}
@@ -107,7 +85,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
               <SkaiIcon name="back" size="xs" />
             </button>
           )}
-          <SkaiIcon name="wallet" size="sm" className="text-[#56C7F3] flex-shrink-0" />
+          <SkaiIcon name="wallet" size="sm" className="text-[#2DEDAD] flex-shrink-0" />
           <p className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
             Deposit
           </p>
@@ -122,22 +100,55 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
             <span className="font-['Manrope',sans-serif] font-light text-[28px] leading-[32px] tracking-[-1.12px] text-white">
               ${usdcBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </span>
-            <span className="font-['Manrope',sans-serif] font-normal text-[11px] leading-[14px] text-[#2DEDAD]">
-              Earning 1 SKAI Point per $1 USDC
-            </span>
           </div>
         )}
+
+        {/* One-time SKAI Points reward banner — USDC on Base only */}
+        {!hasClaimedDeposit && (
+          <div className="flex items-center gap-[8px] px-[12px] py-[10px] rounded-lg bg-[#0D3D3A]/60 border border-[#2DEDAD]/15">
+            <span className="font-['Manrope',sans-serif] font-bold text-[#2DEDAD] text-[18px]">+100</span>
+            <div className="flex flex-col gap-[1px]">
+              <span className="font-['Manrope',sans-serif] font-medium text-[#E0E0E0] text-[12px] leading-[16px]">
+                SKAI Points on your first USDC deposit
+              </span>
+              <span className="font-['Manrope',sans-serif] font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
+                One-time reward &middot; USDC on Base only &middot; Any amount
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* Chain toggle */}
+        <div className="flex gap-2">
+          {(["base", "ethereum"] as const).map((chain) => (
+            <button
+              key={chain}
+              type="button"
+              onClick={() => setSelectedChain(chain)}
+              className={cn(
+                "flex-1 py-[8px] px-[12px] rounded-[8px] font-['Manrope',sans-serif] font-medium text-[12px] md:text-[13px] leading-[16px] transition-all duration-200",
+                selectedChain === chain
+                  ? "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/30"
+                  : "bg-[#001615] text-[#8B9E9D] border border-transparent hover:border-[rgba(255,255,255,0.1)]",
+              )}
+            >
+              {chain === "base" ? "Base" : "Ethereum"}
+            </button>
+          ))}
+        </div>
 
         {/* ═══ DEPOSIT VIEW: QR + Address + Copy ═══ */}
         {walletAddress ? (
           <div className="flex flex-col items-center gap-[12px]">
-            {/* QR Code */}
-            <div className="bg-white rounded-xl p-[8px] shadow-lg">
-              <MiniQR value={walletAddress} size={140} />
+            {/* QR Code — real scannable QR matching wallet.skai.trade */}
+            <div className="p-4 bg-white rounded-2xl shadow-lg shadow-white/10 inline-block">
+              {qrCode}
             </div>
 
             <p className="font-['Manrope',sans-serif] font-normal text-[11px] leading-[14px] text-[#95A09F] text-center">
-              Scan or copy address to deposit into your wallet (Base network)
+              {selectedChain === "base"
+                ? "Scan or copy address to deposit ETH or USDC on Base"
+                : "Scan or copy address to deposit ETH or USDC on Ethereum"}
             </p>
 
             {/* Address + Copy */}
@@ -156,6 +167,18 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
                 {copied ? "Copied!" : "Copy"}
               </span>
             </button>
+
+            {/* Accepted assets info */}
+            <div className="w-full flex flex-col gap-[4px] px-[4px]">
+              <span className="font-['Manrope',sans-serif] font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
+                Accepted: ETH &amp; USDC on {selectedChain === "base" ? "Base" : "Ethereum Mainnet"}
+              </span>
+              {selectedChain === "base" && !hasClaimedDeposit && (
+                <span className="font-['Manrope',sans-serif] font-normal text-[#2DEDAD] text-[10px] leading-[14px]">
+                  Deposit USDC on Base to earn +100 SKAI Points
+                </span>
+              )}
+            </div>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-[10px] bg-[#001615]/40 rounded-lg px-[14px] py-[20px]">
@@ -163,16 +186,6 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
             <p className="font-['Manrope',sans-serif] font-normal text-[13px] leading-[18px] text-[#95A09F] text-center">
               Connect your wallet to view your deposit address
             </p>
-          </div>
-        )}
-
-        {/* Points incentive */}
-        {!hasBalance && (
-          <div className="flex items-center justify-center gap-[6px] px-[8px] py-[6px] bg-[#2DEDAD]/8 rounded-lg border border-[#2DEDAD]/15">
-            <SkaiIcon name="star" size="xs" className="text-[#2DEDAD]" />
-            <span className="font-['Manrope',sans-serif] font-medium text-[11px] leading-[14px] text-[#2DEDAD]">
-              Deposit USDC → Earn 1 SKAI Point per $1
-            </span>
           </div>
         )}
       </div>
