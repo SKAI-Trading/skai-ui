@@ -454,6 +454,7 @@ const PredictionMarketCard = React.forwardRef<
       if (now >= stored.marketEnd) {
         // Bet expired while away — trigger immediate resolution
         setEntryPrice(stored.entryPrice);
+        setBetAmount(stored.betAmount);
         setDirection(stored.direction);
         marketEndRef.current = stored.marketEnd;
         setTimeRemaining(0);
@@ -463,6 +464,7 @@ const PredictionMarketCard = React.forwardRef<
       } else {
         // Bet still active — resume mid-flight
         setEntryPrice(stored.entryPrice);
+        setBetAmount(stored.betAmount);
         setDirection(stored.direction);
         marketEndRef.current = stored.marketEnd;
         setTimeRemaining(Math.floor((stored.marketEnd - now) / 1000));

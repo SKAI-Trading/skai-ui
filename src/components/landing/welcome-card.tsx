@@ -22,7 +22,7 @@ const DEFAULT_TIER_COLOR = TIER_COLORS.standard;
 /** All tier definitions with point thresholds and rewards */
 const ALL_TIERS = [
   { key: "standard", name: "Standard", min: 0,       rewards: ["All 20+ games", "AI trade assistant", "Welcome bonus"] },
-  { key: "bronze",   name: "Bronze",   min: 1_000,   rewards: ["5% fee cashback", "Daily login bonus", "Priority queue"] },
+  { key: "bronze",   name: "Bronze",   min: 1_000,   rewards: ["5% fee discount", "Daily login bonus", "Priority queue"] },
   { key: "silver",   name: "Silver",   min: 5_000,   rewards: ["10% fee discount", "1.2× points", "Whale alerts"] },
   { key: "gold",     name: "Gold",     min: 25_000,  rewards: ["15% fee discount", "1.4× points", "Smart money signals"] },
   { key: "platinum", name: "Platinum", min: 100_000, rewards: ["20% fee discount", "1.5× points", "VIP events & airdrops"] },
