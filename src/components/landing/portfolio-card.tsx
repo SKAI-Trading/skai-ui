@@ -106,13 +106,13 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
         {/* One-time SKAI Points reward banner — USDC on Base only */}
         {!hasClaimedDeposit && (
           <div className="flex items-center gap-[8px] px-[12px] py-[10px] rounded-lg bg-[#0D3D3A]/60 border border-[#2DEDAD]/15">
-            <span className="font-['Manrope',sans-serif] font-bold text-[#2DEDAD] text-[18px]">+100</span>
+            <span className="font-['Manrope',sans-serif] font-bold text-[#2DEDAD] text-[18px]">1:1</span>
             <div className="flex flex-col gap-[1px]">
               <span className="font-['Manrope',sans-serif] font-medium text-[#E0E0E0] text-[12px] leading-[16px]">
-                SKAI Points on your first USDC deposit
+                1 SKAI Point for every USDC on your first deposit
               </span>
               <span className="font-['Manrope',sans-serif] font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
-                One-time reward &middot; USDC on Base only &middot; Any amount
+                One-time reward &middot; USDC on Base only
               </span>
             </div>
           </div>
@@ -175,7 +175,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
               </span>
               {selectedChain === "base" && !hasClaimedDeposit && (
                 <span className="font-['Manrope',sans-serif] font-normal text-[#2DEDAD] text-[10px] leading-[14px]">
-                  Deposit USDC on Base to earn +100 SKAI Points
+                  Deposit USDC on Base to earn 1 SKAI Point per USDC
                 </span>
               )}
             </div>

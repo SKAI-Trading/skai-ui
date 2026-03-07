@@ -69,13 +69,13 @@ const DepositIncentiveCard = React.forwardRef<HTMLDivElement, DepositIncentiveCa
         {/* One-time deposit reward banner — only if not yet claimed */}
         {!hasClaimedDeposit && (
           <div className="flex items-center gap-[8px] mb-[12px] px-[12px] py-[10px] rounded-lg bg-[#0D3D3A]/60 border border-[#2DEDAD]/15">
-            <span className="font-manrope font-bold text-[#2DEDAD] text-[18px]">+100</span>
+            <span className="font-manrope font-bold text-[#2DEDAD] text-[18px]">1:1</span>
             <div className="flex flex-col gap-[1px]">
               <span className="font-manrope font-medium text-[#E0E0E0] text-[12px] leading-[16px]">
-                SKAI Points for your first deposit
+                1 SKAI Point for every USDC on your first deposit
               </span>
               <span className="font-manrope font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
-                One-time reward — any amount of USDC
+                One-time reward &middot; USDC on Base only
               </span>
             </div>
           </div>

@@ -20,11 +20,33 @@ export interface PredictionResult {
   priceChangePercent: number;
 }
 
+/** Server-side bet placement result */
+export interface PlaceBetResponse {
+  betId: string;
+  entryPrice: number;
+  marketEnd: string;
+}
+
+/** Server-side bet settlement result */
+export interface SettleBetResponse {
+  outcome: "win" | "lose" | "push";
+  payout: number;
+  entryPrice: number;
+  exitPrice: number;
+  priceChange: number;
+  priceChangePercent: number;
+  newBalance: number;
+}
+
 export interface PredictionMarketCardProps
   extends React.HTMLAttributes<HTMLDivElement> {
   skaiPoints: number;
   userId?: string | null;
   onPointsChange?: (newBalance: number) => void;
+  /** Server-side bet placement — when provided, prices + outcomes are server-authoritative. */
+  onPlaceBet?: (betAmount: number, direction: "up" | "down") => Promise<PlaceBetResponse>;
+  /** Server-side bet settlement — called when timer expires. */
+  onSettleBet?: (betId: string) => Promise<SettleBetResponse>;
   /** Override the default price fetcher (for testing). */
   onFetchPrice?: () => Promise<number>;
   /** Override the default price-history fetcher (for testing). */
@@ -372,6 +394,8 @@ const PredictionMarketCard = React.forwardRef<
       skaiPoints,
       userId,
       onPointsChange,
+      onPlaceBet,
+      onSettleBet,
       onFetchPrice,
       onFetchPriceHistory,
       className,
@@ -406,6 +430,9 @@ const PredictionMarketCard = React.forwardRef<
 
     const pricePollRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const marketEndRef = useRef<number | null>(null);
+    const isBettingRef = useRef(false);
+    const betIdRef = useRef<string | null>(null);
+    const useServerSide = !!(onPlaceBet && onSettleBet);
 
     /* ── fetch wrappers ── */
     const fetchPrice = useCallback(
@@ -559,7 +586,51 @@ const PredictionMarketCard = React.forwardRef<
         if (pricePollRef.current) clearInterval(pricePollRef.current);
 
         try {
-          const exitPrice = await fetchPrice();
+          let exitPrice: number;
+          let priceChange: number;
+          let priceChangePercent: number;
+          let outcome: "win" | "lose" | "push";
+          let payout: number;
+
+          if (useServerSide && betIdRef.current) {
+            // Server-side settlement: authoritative outcome from Edge Function
+            const settled = await onSettleBet!(betIdRef.current);
+            exitPrice = settled.exitPrice;
+            priceChange = settled.priceChange;
+            priceChangePercent = settled.priceChangePercent;
+            outcome = settled.outcome;
+            payout = settled.payout;
+            // Update balance from server (authoritative)
+            onPointsChange?.(settled.newBalance);
+          } else {
+            // Client-side fallback (legacy)
+            exitPrice = await fetchPrice();
+
+            if (entryPrice === null || direction === null) {
+              setPhase("idle");
+              return;
+            }
+
+            priceChange = exitPrice - entryPrice;
+            priceChangePercent = (priceChange / entryPrice) * 100;
+
+            if (Math.abs(priceChangePercent) < PUSH_THRESHOLD) {
+              outcome = "push";
+              payout = betAmount;
+            } else if (
+              (direction === "up" && priceChange > 0) ||
+              (direction === "down" && priceChange < 0)
+            ) {
+              outcome = "win";
+              payout = betAmount * WIN_MULTIPLIER;
+            } else {
+              outcome = "lose";
+              payout = 0;
+            }
+
+            if (payout > 0) onPointsChange?.(skaiPoints + payout);
+          }
+
           setEthPrice(exitPrice);
           setChartData((prev) =>
             [...prev, { time: Date.now(), price: exitPrice }].slice(
@@ -567,35 +638,10 @@ const PredictionMarketCard = React.forwardRef<
             ),
           );
 
-          if (entryPrice === null || direction === null) {
-            setPhase("idle");
-            return;
-          }
-
-          const priceChange = exitPrice - entryPrice;
-          const priceChangePercent = (priceChange / entryPrice) * 100;
-
-          let outcome: "win" | "lose" | "push";
-          let payout: number;
-
-          if (Math.abs(priceChangePercent) < PUSH_THRESHOLD) {
-            outcome = "push";
-            payout = betAmount;
-          } else if (
-            (direction === "up" && priceChange > 0) ||
-            (direction === "down" && priceChange < 0)
-          ) {
-            outcome = "win";
-            payout = betAmount * WIN_MULTIPLIER;
-          } else {
-            outcome = "lose";
-            payout = 0;
-          }
-
           const predResult: PredictionResult = {
-            entryPrice,
+            entryPrice: entryPrice ?? 0,
             exitPrice,
-            direction,
+            direction: direction ?? "up",
             outcome,
             payout,
             betAmount,
@@ -606,11 +652,10 @@ const PredictionMarketCard = React.forwardRef<
           setResult(predResult);
           setPhase("resolved");
           if (userId) clearBet(userId);
-
-          if (payout > 0) onPointsChange?.(skaiPoints + payout);
+          betIdRef.current = null;
 
           const entry: HistoryEntry = {
-            direction,
+            direction: direction ?? "up",
             outcome,
             payout,
             betAmount,
@@ -637,7 +682,11 @@ const PredictionMarketCard = React.forwardRef<
         } catch (err) {
           console.error("Market resolution failed:", err);
           if (userId) clearBet(userId);
-          onPointsChange?.(skaiPoints + betAmount);
+          betIdRef.current = null;
+          if (!useServerSide) {
+            // Only refund client-side — server-side handles its own refunds
+            onPointsChange?.(skaiPoints + betAmount);
+          }
           setPhase("idle");
           setDirection(null);
           setEntryPrice(null);
@@ -652,21 +701,45 @@ const PredictionMarketCard = React.forwardRef<
     /* ── place bet ── */
     const handlePlaceBet = useCallback(
       async (dir: "up" | "down") => {
-        if (!userId || phase !== "idle" || skaiPoints < betAmount || !ethPrice)
-          return;
+        if (isBettingRef.current) return;
+        if (!userId || phase !== "idle" || !ethPrice) return;
+        // Validate bet amount: must be a positive integer within bounds
+        if (!Number.isInteger(betAmount) || betAmount < PRED_MIN_BET) return;
+        if (betAmount > PRED_MAX_BET) return;
+        if (betAmount > skaiPoints) return;
+        isBettingRef.current = true;
         try {
-          const price = await fetchPrice();
-          const end = Date.now() + MARKET_DURATION * 1000;
-          setEthPrice(price);
-          setEntryPrice(price);
-          setDirection(dir);
-          marketEndRef.current = end;
-          setTimeRemaining(MARKET_DURATION);
-          setPhase("active");
-          onPointsChange?.(skaiPoints - betAmount);
-          saveBet(userId, { entryPrice: price, betAmount, direction: dir, marketEnd: end, pointsBeforeBet: skaiPoints });
+          if (useServerSide) {
+            // Server-side: Edge Function fetches authoritative entry price
+            const result = await onPlaceBet!(betAmount, dir);
+            const end = new Date(result.marketEnd).getTime();
+            setEthPrice(result.entryPrice);
+            setEntryPrice(result.entryPrice);
+            setDirection(dir);
+            marketEndRef.current = end;
+            betIdRef.current = result.betId;
+            setTimeRemaining(Math.max(0, Math.floor((end - Date.now()) / 1000)));
+            setPhase("active");
+            onPointsChange?.(skaiPoints - betAmount);
+            saveBet(userId, { entryPrice: result.entryPrice, betAmount, direction: dir, marketEnd: end, pointsBeforeBet: skaiPoints });
+          } else {
+            // Client-side fallback (legacy)
+            const price = await fetchPrice();
+            const end = Date.now() + MARKET_DURATION * 1000;
+            setEthPrice(price);
+            setEntryPrice(price);
+            setDirection(dir);
+            marketEndRef.current = end;
+            betIdRef.current = null;
+            setTimeRemaining(MARKET_DURATION);
+            setPhase("active");
+            onPointsChange?.(skaiPoints - betAmount);
+            saveBet(userId, { entryPrice: price, betAmount, direction: dir, marketEnd: end, pointsBeforeBet: skaiPoints });
+          }
         } catch (err) {
           console.error("Failed to start prediction:", err);
+        } finally {
+          isBettingRef.current = false;
         }
       },
       [
@@ -677,6 +750,8 @@ const PredictionMarketCard = React.forwardRef<
         ethPrice,
         fetchPrice,
         onPointsChange,
+        useServerSide,
+        onPlaceBet,
       ],
     );
 

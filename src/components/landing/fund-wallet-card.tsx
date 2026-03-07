@@ -47,7 +47,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
           Fund Your Wallet
         </h3>
         <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px] mb-[12px]">
-          Deposit USDC to earn SKAI Points
+          Deposit USDC to earn 1 SKAI Point per USDC
         </p>
 
         {/* Chain toggle */}
