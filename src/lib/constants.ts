@@ -16,7 +16,7 @@ export const urls = {
     telegram: "https://t.me/skaitrade",
     instagram: "https://instagram.com/skai.trade",
     tiktok: "https://www.tiktok.com/@skai.trade",
-    facebook: "https://www.facebook.com/share/183QDmyhwF/",
+    facebook: "https://www.facebook.com/share/1B2YE8yBua/",
     linkedin: "https://www.linkedin.com/company/skaitrade/",
     youtube: "https://www.youtube.com/@skaitrade",
     twitterIntent: "https://twitter.com/intent/tweet",
