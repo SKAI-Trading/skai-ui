@@ -265,7 +265,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                disabled={isUploadingAvatar || (typeof skaiPoints === "number" && skaiPoints < 50)}
+                disabled={isUploadingAvatar}
                 className="font-manrope font-normal text-[#56C7F3] text-[10px] md:text-[11px] leading-[14px] mt-[2px] text-left hover:text-[#2DEDAD] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Upload avatar · 50 pts
@@ -288,11 +288,6 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
           {typeof referralCount === "number" && referralCount > 0 && (
             <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px]">
               {referralCount} referral{referralCount !== 1 ? "s" : ""}
-            </span>
-          )}
-          {email && (
-            <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px] truncate max-w-[180px]" title={email}>
-              {email}
             </span>
           )}
         </div>
