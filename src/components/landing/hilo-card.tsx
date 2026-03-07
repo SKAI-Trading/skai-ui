@@ -26,11 +26,12 @@ interface HistoryEntry {
   push: boolean;
 }
 
-const BET_OPTIONS = [1] as const;
+const MIN_BET = 1;
+const MAX_BET = 1000;
 
 const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
   ({ skaiPoints, userId, onPlayBet, onPointsChange, className, ...props }, ref) => {
-    const [betAmount] = useState(1);
+    const [betAmount, setBetAmount] = useState(1);
     const [showRules, setShowRules] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
     const [lastResult, setLastResult] = useState<HiLoResult | null>(null);
@@ -168,7 +169,7 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
               <li>Win = <span className="text-[#2DEDAD] font-medium">2× your bet</span> returned · Wrong = <span className="text-[#F04438] font-medium">lose bet</span></li>
               <li>Exactly 5,000 = <span className="text-[#F5A623] font-medium">Push</span> (bet returned)</li>
             </ol>
-            <p className="font-manrope text-[#5A7170] text-[10px] mt-[6px]">1 SKAI Point per bet · Provably fair · Results verifiable on-chain</p>
+            <p className="font-manrope text-[#5A7170] text-[10px] mt-[6px]">1–1,000 SKAI Points per bet · Provably fair · Results verifiable on-chain</p>
           </div>
         )}
 
@@ -177,19 +178,25 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
           <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] leading-[14px] mr-[4px]">
             Bet:
           </span>
-          {BET_OPTIONS.map((amt) => (
-            <button
-              key={amt}
-              type="button"
-              disabled
-              className={cn(
-                "px-[10px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150",
-                "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/40",
-              )}
-            >
-              {amt} pt
-            </button>
-          ))}
+          <button
+            type="button"
+            disabled={isPlaying || betAmount <= MIN_BET}
+            onClick={() => setBetAmount((v) => Math.max(MIN_BET, Math.floor(v / 2)))}
+            className="px-[8px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150 bg-[#001615] text-[#8B9E9D] border border-[#123F3C] hover:border-[#2DEDAD]/40 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            ½
+          </button>
+          <span className="px-[10px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/40 flex items-center justify-center min-w-[60px]">
+            {betAmount} pt{betAmount !== 1 ? "s" : ""}
+          </span>
+          <button
+            type="button"
+            disabled={isPlaying || betAmount >= MAX_BET || betAmount * 2 > skaiPoints}
+            onClick={() => setBetAmount((v) => Math.min(MAX_BET, Math.min(skaiPoints, v * 2)))}
+            className="px-[8px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150 bg-[#001615] text-[#8B9E9D] border border-[#123F3C] hover:border-[#2DEDAD]/40 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            2×
+          </button>
         </div>
 
         {/* Insufficient points banner — above the buttons for visibility */}

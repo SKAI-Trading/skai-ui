@@ -387,7 +387,9 @@ const PredictionMarketCard = React.forwardRef<
     const [chartLoading, setChartLoading] = useState(true);
     const [priceError, setPriceError] = useState(false);
     const [entryPrice, setEntryPrice] = useState<number | null>(null);
-    const [betAmount] = useState<number>(1);
+    const [betAmount, setBetAmount] = useState<number>(1);
+    const PRED_MIN_BET = 1;
+    const PRED_MAX_BET = 1000;
     const [direction, setDirection] = useState<"up" | "down" | null>(null);
     const [timeRemaining, setTimeRemaining] = useState(MARKET_DURATION);
     const [result, setResult] = useState<PredictionResult | null>(null);
@@ -857,8 +859,34 @@ const PredictionMarketCard = React.forwardRef<
         {phase === "idle" && (
           <>
             <p className="font-manrope font-normal text-[#8B9E9D] text-[13px] md:text-[14px] text-center mb-[10px]">
-              Will ETH be higher or lower in 1 minute? · 1 pt bet
+              Will ETH be higher or lower in 1 minute?
             </p>
+
+            {/* Bet amount selector */}
+            <div className="flex items-center justify-center gap-[6px] mb-[12px]">
+              <span className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] leading-[14px] mr-[4px]">
+                Bet:
+              </span>
+              <button
+                type="button"
+                disabled={betAmount <= PRED_MIN_BET}
+                onClick={() => setBetAmount((v) => Math.max(PRED_MIN_BET, Math.floor(v / 2)))}
+                className="px-[8px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150 bg-[#001615] text-[#8B9E9D] border border-[#123F3C] hover:border-[#56C7F3]/40 disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                ½
+              </button>
+              <span className="px-[10px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] bg-[#0D3D3A] text-[#56C7F3] border border-[#56C7F3]/40 flex items-center justify-center min-w-[60px]">
+                {betAmount} pt{betAmount !== 1 ? "s" : ""}
+              </span>
+              <button
+                type="button"
+                disabled={betAmount >= PRED_MAX_BET || betAmount * 2 > skaiPoints}
+                onClick={() => setBetAmount((v) => Math.min(PRED_MAX_BET, Math.min(skaiPoints, v * 2)))}
+                className="px-[8px] h-[32px] md:h-[36px] rounded-[8px] font-manrope font-medium text-[13px] md:text-[14px] transition-all duration-150 bg-[#001615] text-[#8B9E9D] border border-[#123F3C] hover:border-[#56C7F3]/40 disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                2×
+              </button>
+            </div>
 
             {/* Direction buttons */}
             <div className="flex gap-3">
