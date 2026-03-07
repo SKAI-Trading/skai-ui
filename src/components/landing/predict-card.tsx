@@ -9,7 +9,7 @@ const PredictCard = React.forwardRef<HTMLDivElement, PredictCardProps>(
       <div
         ref={ref}
         className={cn(
-          "relative flex flex-col p-[16px] rounded-2xl border border-[rgba(255,255,255,0.1)] bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)] overflow-hidden",
+          "relative flex flex-col p-[16px] rounded-2xl border border-[#123F3C] bg-[#0D3331] overflow-hidden",
           className,
         )}
         {...props}

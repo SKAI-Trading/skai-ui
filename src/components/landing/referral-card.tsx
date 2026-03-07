@@ -58,7 +58,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
       <div
         ref={ref}
         className={cn(
-          "bg-[#122524] border border-[#123F3C] rounded-[32px] p-6",
+          "bg-[#0D3331] border border-[#123F3C] rounded-[32px] p-6",
           className,
         )}
         {...props}

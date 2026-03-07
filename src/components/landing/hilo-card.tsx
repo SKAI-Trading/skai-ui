@@ -115,7 +115,7 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex flex-col p-[16px] rounded-2xl border border-[rgba(255,255,255,0.1)] bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)]",
+          "flex flex-col p-[16px] rounded-2xl border border-[#123F3C] bg-[#0D3331]",
           className,
         )}
         {...props}

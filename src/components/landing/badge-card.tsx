@@ -39,7 +39,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex flex-col gap-3 md:gap-4 px-4 md:px-8 py-4 md:py-[33px] rounded-[24px] border border-[#123F3C] bg-[#122524] relative",
+          "flex flex-col gap-3 md:gap-4 px-4 md:px-8 py-4 md:py-[33px] rounded-[24px] border border-[#123F3C] bg-[#0D3331] relative",
           className,
         )}
         {...props}

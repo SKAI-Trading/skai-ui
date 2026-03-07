@@ -52,15 +52,16 @@
 
 /* BACK LAYER - positioned behind, taller bars */
 /* Figma: 8% opacity on the container */
+/* z-index: 0 keeps bars behind all page content (content wrapper uses z-10) */
 .ticker-bars-back {
-  z-index: 1;
+  z-index: 0;
   opacity: 0.08;
 }
 
 /* FRONT LAYER - positioned in front, shorter bars */
 /* Figma: 34% opacity on the container */
 .ticker-bars-front {
-  z-index: 2;
+  z-index: 0;
   opacity: 0.34;
 }
 
@@ -267,7 +268,7 @@
   background-size: 400% 100%;
   animation: shimmer-sweep 30s linear infinite;
   pointer-events: none;
-  z-index: 3;
+  z-index: 0;
 }
 
 @keyframes shimmer-sweep {
