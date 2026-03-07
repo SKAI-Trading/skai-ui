@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
+import { BarTickerBackground } from "../backgrounds/bar-ticker-background";
 
 const d = content.landing.waitlist.dashboard;
 
@@ -179,11 +180,14 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex flex-col justify-center px-8 py-[33px] rounded-2xl border border-[rgba(255,255,255,0.1)] bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)]",
+          "relative overflow-hidden flex flex-col justify-center px-8 py-[33px] rounded-2xl border border-[rgba(255,255,255,0.1)] bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)]",
           className,
         )}
         {...props}
       >
+        {/* Decorative bar pattern — contained inside card per Figma */}
+        <BarTickerBackground contained showDepthBlur={false} />
+        <div className="relative z-10 flex flex-col justify-center">
         <h2 className="font-manrope font-light text-white text-[20px] md:text-[24px] lg:text-[32px] leading-[24px] md:leading-[28px] lg:leading-[36px] tracking-[-0.8px] md:tracking-[-0.96px] lg:tracking-[-1.28px] mb-[12px]">
           Welcome,{" "}
           <span className="text-[#56C7F3]">
@@ -303,6 +307,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
               {TAB_LABELS[tab]}
             </button>
           ))}
+        </div>
         </div>
       </div>
     );

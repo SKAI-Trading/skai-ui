@@ -21,6 +21,12 @@ export interface BarTickerBackgroundProps {
    * @default true
    */
   showDepthBlur?: boolean;
+  /**
+   * Render as a contained element (position: absolute) instead of fixed.
+   * Use when embedding inside a card with overflow-hidden.
+   * @default false
+   */
+  contained?: boolean;
 }
 
 /**
@@ -160,7 +166,11 @@ export function BarTickerBackground({
   className,
   showShimmer = false,
   showDepthBlur = true,
+  contained = false,
 }: BarTickerBackgroundProps) {
+  const containedStyle = contained
+    ? "ticker-bars-wrapper--contained"
+    : "";
   // Calculate how many bars per half are needed to fill the wrapper.
   // Wrapper is 170% of viewport. Each half is 50% of wrapper = 85% of viewport.
   // Bar slot = 7.6px (3px bar + 4.6px gap).
@@ -193,6 +203,7 @@ export function BarTickerBackground({
       <div
         className={cn(
           "ticker-bars-wrapper ticker-bars-back transition-all duration-300",
+          containedStyle,
           isBlurred && "blur-md",
           className
         )}
@@ -231,6 +242,7 @@ export function BarTickerBackground({
       <div
         className={cn(
           "ticker-bars-wrapper ticker-bars-front transition-all duration-300",
+          containedStyle,
           isBlurred && "blur-md"
         )}
         aria-hidden="true"

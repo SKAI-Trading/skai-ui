@@ -41,6 +41,15 @@
   overflow: visible;
 }
 
+/* Contained variant — used when bars are embedded inside a card with overflow-hidden */
+.ticker-bars-wrapper--contained {
+  position: absolute;
+  bottom: -80px;
+  left: -20%;
+  right: -20%;
+  width: 140%;
+}
+
 /* BACK LAYER - positioned behind, taller bars */
 /* Figma: 8% opacity on the container */
 .ticker-bars-back {
