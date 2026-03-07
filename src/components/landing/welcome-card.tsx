@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
 
@@ -52,6 +52,12 @@ export interface WelcomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   nextTierPoints?: number | null;
   /** Progress fraction 0-1 toward next tier */
   tierProgress?: number | null;
+  /** User's avatar URL (Google/social or custom upload) */
+  avatarUrl?: string | null;
+  /** Whether avatar is currently uploading */
+  isUploadingAvatar?: boolean;
+  /** Callback when user selects a file to upload as avatar. Costs 50 pts. */
+  onAvatarUpload?: (file: File) => void;
 }
 
 const TAB_LABELS: Record<DashboardTab, string> = {
@@ -165,6 +171,9 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
       nextTierName,
       nextTierPoints,
       tierProgress,
+      avatarUrl,
+      isUploadingAvatar = false,
+      onAvatarUpload,
       className,
       ...props
     },
@@ -174,6 +183,18 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
     const tierColor = TIER_COLORS[tierKey] ?? DEFAULT_TIER_COLOR;
     const progressPct = tierProgress != null ? Math.min(Math.max(tierProgress * 100, 0), 100) : 0;
     const showTier = currentTierName != null;
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      if (!file.type.startsWith("image/")) return;
+      if (file.size > 5 * 1024 * 1024) return;
+      onAvatarUpload?.(file);
+      e.target.value = "";
+    };
+
+    const avatarInitial = username ? username[0].toUpperCase() : "?";
 
     return (
       <div
@@ -185,13 +206,73 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
         {...props}
       >
         <div className="relative z-10 flex flex-col justify-center">
-        <h2 className="font-manrope font-light text-white text-[20px] md:text-[24px] lg:text-[32px] leading-[24px] md:leading-[28px] lg:leading-[36px] tracking-[-0.8px] md:tracking-[-0.96px] lg:tracking-[-1.28px] mb-[12px]">
-          Welcome,{" "}
-          <span className="text-[#56C7F3]">
-            {isLoading ? "..." : username}
-          </span>
-          !
-        </h2>
+        {/* Avatar + Welcome */}
+        <div className="flex items-center gap-[12px] md:gap-[16px] mb-[12px]">
+          {/* Avatar */}
+          <div
+            className={cn(
+              "relative shrink-0 w-[48px] h-[48px] md:w-[56px] md:h-[56px] lg:w-[64px] lg:h-[64px] rounded-full overflow-hidden border-2 transition-all",
+              onAvatarUpload && !isUploadingAvatar
+                ? "border-[#56C7F3]/30 cursor-pointer group hover:border-[#56C7F3]/60"
+                : "border-[#123F3C]",
+            )}
+            onClick={() => onAvatarUpload && !isUploadingAvatar && fileInputRef.current?.click()}
+          >
+            {avatarUrl ? (
+              <img src={avatarUrl} alt={username} className="w-full h-full object-cover" />
+            ) : (
+              <div className="w-full h-full bg-[#0A2A28] flex items-center justify-center">
+                <span className="font-manrope font-semibold text-[#56C7F3] text-[18px] md:text-[20px] lg:text-[24px]">
+                  {avatarInitial}
+                </span>
+              </div>
+            )}
+            {/* Upload overlay */}
+            {onAvatarUpload && !isUploadingAvatar && (
+              <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                  <circle cx="12" cy="13" r="4" />
+                </svg>
+              </div>
+            )}
+            {isUploadingAvatar && (
+              <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                <div className="w-[20px] h-[20px] border-2 border-[#56C7F3] border-t-transparent rounded-full animate-spin" />
+              </div>
+            )}
+          </div>
+          {onAvatarUpload && (
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleFileSelect}
+              className="hidden"
+              aria-label="Upload avatar image"
+            />
+          )}
+
+          <div className="flex flex-col min-w-0">
+            <h2 className="font-manrope font-light text-white text-[20px] md:text-[24px] lg:text-[32px] leading-[24px] md:leading-[28px] lg:leading-[36px] tracking-[-0.8px] md:tracking-[-0.96px] lg:tracking-[-1.28px]">
+              Welcome,{" "}
+              <span className="text-[#56C7F3]">
+                {isLoading ? "..." : username}
+              </span>
+              !
+            </h2>
+            {onAvatarUpload && !avatarUrl && (
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={isUploadingAvatar || (typeof skaiPoints === "number" && skaiPoints < 50)}
+                className="font-manrope font-normal text-[#56C7F3] text-[10px] md:text-[11px] leading-[14px] mt-[2px] text-left hover:text-[#2DEDAD] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                Upload avatar · 50 pts
+              </button>
+            )}
+          </div>
+        </div>
         <p className="font-manrope font-normal text-[#E0E0E0] text-[10px] md:text-[12px] lg:text-[14px] leading-[14px] md:leading-[16px] lg:leading-[18px] tracking-[-0.4px] md:tracking-[-0.48px] lg:tracking-[-0.56px] mb-[6px]">
           {subtitle}
         </p>
