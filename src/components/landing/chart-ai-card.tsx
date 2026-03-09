@@ -271,9 +271,9 @@ function AnalysisSummary({
         </CollapsibleSection>
       )}
 
-      {/* Patterns — collapsed by default to reduce overwhelm */}
+      {/* Patterns */}
       {analysis.patterns.length > 0 && (
-        <CollapsibleSection title="Patterns" defaultExpanded={false}>
+        <CollapsibleSection title="Patterns" defaultExpanded={true}>
           <div className="flex flex-wrap gap-1.5">
             {analysis.patterns.map((p, i) => (
               <span
@@ -292,9 +292,9 @@ function AnalysisSummary({
         </CollapsibleSection>
       )}
 
-      {/* Key Levels — collapsed by default */}
+      {/* Key Levels */}
       {analysis.keyLevels.length > 0 && (
-        <CollapsibleSection title="Key Levels" defaultExpanded={false}>
+        <CollapsibleSection title="Key Levels" defaultExpanded={true}>
           <p className="font-['Manrope',sans-serif] font-normal text-[13px] md:text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
             {analysis.keyLevels
               .slice(0, 4)
