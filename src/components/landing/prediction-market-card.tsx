@@ -79,10 +79,9 @@ const MARKET_DURATION = 60; // 1 minute
 const POLL_ACTIVE_MS = 3_000;   // 3 s while bet is live — feels real-time
 const POLL_IDLE_MS = 8_000;     // 8 s idle — keeps chart fresh
 const INTERP_TICK_MS = 1_000;   // 1 s interpolated frames between polls
-// Push zone: price must move >0.03% to count as a win.
-// This gives ~47% win probability per side (matching HiLo's ~4700/10000 odds).
-// Remaining ~6% falls into push zone → house edge.
-const PUSH_THRESHOLD = 0.03;
+// Push zone: price must move >0.005% to count as a win/loss.
+// At $2100, 0.005% ≈ $0.10 — only truly flat markets push.
+const PUSH_THRESHOLD = 0.005;
 const WIN_MULTIPLIER = 2;
 const HISTORY_MINUTES = 10; // Show last 10 min for tighter chart
 const MAX_CHART_PTS = 120;
@@ -411,6 +410,7 @@ const PredictionMarketCard = React.forwardRef<
     const marketEndRef = useRef<number | null>(null);
     const isBettingRef = useRef(false);
     const betIdRef = useRef<string | null>(null);
+    const retryCountRef = useRef(0);
     const useServerSide = !!(onPlaceBet && onSettleBet);
 
     /* ── fetch wrappers ── */
@@ -456,10 +456,16 @@ const PredictionMarketCard = React.forwardRef<
       const stored = loadBet(userId);
       if (!stored) return;
 
+      // If stored bet is way past expiry (>2min), discard stale localStorage data
+      const now = Date.now();
+      if (now > stored.marketEnd + 120_000) {
+        clearBet(userId);
+        return;
+      }
+
       // Restore server-side betId so settlement works after refresh
       if (stored.betId) betIdRef.current = stored.betId;
 
-      const now = Date.now();
       if (now >= stored.marketEnd) {
         // Bet expired while away — trigger immediate resolution
         setEntryPrice(stored.entryPrice);
@@ -694,6 +700,7 @@ const PredictionMarketCard = React.forwardRef<
         isBettingRef.current = true;
         setBetError(null);
         try {
+          retryCountRef.current = 0;
           if (useServerSide) {
             // Server-side: Edge Function fetches authoritative entry price
             const result = await onPlaceBet!(betAmount, dir);
@@ -724,10 +731,24 @@ const PredictionMarketCard = React.forwardRef<
         } catch (err) {
           console.error("Failed to start prediction:", err);
           const msg = err instanceof Error ? err.message : "Failed to place bet";
-          setBetError(msg.includes("active prediction bet")
-            ? "Previous bet still settling — try again in a moment"
+          const isStuckBet = msg.includes("active prediction bet") || msg.includes("active bet");
+
+          if (isStuckBet && retryCountRef.current < 1) {
+            // Server auto-settled the stuck bet during this request — retry once
+            retryCountRef.current++;
+            if (userId) clearBet(userId);
+            setBetError("Clearing previous bet…");
+            isBettingRef.current = false;
+            setTimeout(() => handlePlaceBet(dir), 1500);
+            return;
+          }
+
+          retryCountRef.current = 0;
+          if (userId) clearBet(userId);
+          setBetError(isStuckBet
+            ? "Previous bet still settling — please wait a moment and try again"
             : "Something went wrong. Please try again.");
-          setTimeout(() => setBetError(null), 5000);
+          setTimeout(() => setBetError(null), 6000);
         } finally {
           isBettingRef.current = false;
         }
