@@ -70,6 +70,7 @@ interface StoredBet {
   direction: "up" | "down";
   marketEnd: number; // epoch ms
   pointsBeforeBet: number;
+  betId?: string; // server-side bet ID for settlement after refresh
 }
 
 /* ─── Constants ──────────────────────────────────────────────────────── */
@@ -86,7 +87,6 @@ const WIN_MULTIPLIER = 2;
 const HISTORY_MINUTES = 10; // Show last 10 min for tighter chart
 const MAX_CHART_PTS = 120;
 
-const BINANCE_API = "https://api.binance.com/api/v3";
 const COINGECKO_API = "https://api.coingecko.com/api/v3";
 
 /* ─── Helpers ────────────────────────────────────────────────────────── */
@@ -117,16 +117,7 @@ const fmtPrice = (p: number) =>
 /* ─── Default data fetchers (Binance → CoinGecko) ───────────────────── */
 
 const defaultFetchPrice = async (): Promise<number> => {
-  try {
-    const res = await fetch(`${BINANCE_API}/ticker/price?symbol=ETHUSDT`);
-    if (res.ok) {
-      const d: { price: string } = await res.json();
-      const p = parseFloat(d.price);
-      if (!isNaN(p) && p > 0) return p;
-    }
-  } catch {
-    /* fallback */
-  }
+  // CoinGecko public API supports browser CORS (Binance does not)
   const res = await fetch(
     `${COINGECKO_API}/simple/price?ids=ethereum&vs_currencies=usd`,
   );
@@ -140,20 +131,7 @@ const defaultFetchPrice = async (): Promise<number> => {
 const defaultFetchHistory = async (
   minutes = 60,
 ): Promise<PricePoint[]> => {
-  try {
-    const res = await fetch(
-      `${BINANCE_API}/klines?symbol=ETHUSDT&interval=1m&limit=${minutes}`,
-    );
-    if (res.ok) {
-      const data: unknown[][] = await res.json();
-      return data.map((k) => ({
-        time: Number(k[0]),
-        price: parseFloat(String(k[4])),
-      }));
-    }
-  } catch {
-    /* fallback */
-  }
+  // CoinGecko public API supports browser CORS (Binance does not)
   const hours = Math.max(minutes / 60, 0.1);
   const res = await fetch(
     `${COINGECKO_API}/coins/ethereum/market_chart?vs_currency=usd&days=${(hours / 24).toFixed(4)}`,
@@ -418,6 +396,7 @@ const PredictionMarketCard = React.forwardRef<
     const [timeRemaining, setTimeRemaining] = useState(MARKET_DURATION);
     const [result, setResult] = useState<PredictionResult | null>(null);
     const [shouldResolve, setShouldResolve] = useState(false);
+    const [betError, setBetError] = useState<string | null>(null);
     const [history, setHistory] = useState<HistoryEntry[]>(() => {
       if (!userId) return [];
       try {
@@ -477,6 +456,9 @@ const PredictionMarketCard = React.forwardRef<
       const stored = loadBet(userId);
       if (!stored) return;
 
+      // Restore server-side betId so settlement works after refresh
+      if (stored.betId) betIdRef.current = stored.betId;
+
       const now = Date.now();
       if (now >= stored.marketEnd) {
         // Bet expired while away — trigger immediate resolution
@@ -531,8 +513,10 @@ const PredictionMarketCard = React.forwardRef<
           // Small random jitter (±0.01% of price) to simulate tick movement
           const trend = last.price - secondLast.price;
           const jitter = last.price * (Math.random() - 0.5) * 0.0002;
-          const interp = last.price + trend * 0.05 + jitter;
-          const next = [...prev, { time: Date.now(), price: parseFloat(interp.toFixed(2)) }];
+          const interp = parseFloat((last.price + trend * 0.05 + jitter).toFixed(2));
+          // Keep header price in sync with chart's latest interpolated value
+          setEthPrice(interp);
+          const next = [...prev, { time: Date.now(), price: interp }];
           return next.length > MAX_CHART_PTS ? next.slice(-MAX_CHART_PTS) : next;
         });
       }, INTERP_TICK_MS);
@@ -708,6 +692,7 @@ const PredictionMarketCard = React.forwardRef<
         if (betAmount > PRED_MAX_BET) return;
         if (betAmount > skaiPoints) return;
         isBettingRef.current = true;
+        setBetError(null);
         try {
           if (useServerSide) {
             // Server-side: Edge Function fetches authoritative entry price
@@ -721,7 +706,7 @@ const PredictionMarketCard = React.forwardRef<
             setTimeRemaining(Math.max(0, Math.floor((end - Date.now()) / 1000)));
             setPhase("active");
             onPointsChange?.(skaiPoints - betAmount);
-            saveBet(userId, { entryPrice: result.entryPrice, betAmount, direction: dir, marketEnd: end, pointsBeforeBet: skaiPoints });
+            saveBet(userId, { entryPrice: result.entryPrice, betAmount, direction: dir, marketEnd: end, pointsBeforeBet: skaiPoints, betId: result.betId });
           } else {
             // Client-side fallback (legacy)
             const price = await fetchPrice();
@@ -738,6 +723,11 @@ const PredictionMarketCard = React.forwardRef<
           }
         } catch (err) {
           console.error("Failed to start prediction:", err);
+          const msg = err instanceof Error ? err.message : "Failed to place bet";
+          setBetError(msg.includes("active prediction bet")
+            ? "Previous bet still settling — try again in a moment"
+            : "Something went wrong. Please try again.");
+          setTimeout(() => setBetError(null), 5000);
         } finally {
           isBettingRef.current = false;
         }
@@ -1001,6 +991,13 @@ const PredictionMarketCard = React.forwardRef<
               </button>
             </div>
           </>
+        )}
+
+        {/* ── Bet error message ── */}
+        {betError && phase === "idle" && (
+          <p className="font-manrope text-[#F04438] text-[12px] text-center mt-[-4px] mb-[4px] animate-in fade-in duration-200">
+            {betError}
+          </p>
         )}
 
         {/* ── ACTIVE: position info + progress bar ── */}
