@@ -198,7 +198,7 @@ function PriceChart({
   });
 
   // X-axis time labels — distribute evenly, formatted as HH:MM:SS
-  const xCount = Math.min(7, data.length);
+  const xCount = Math.min(5, data.length);
   const xLabels: { x: number; label: string }[] = [];
   for (let i = 0; i < xCount; i++) {
     const frac = i / (xCount - 1);
@@ -245,7 +245,7 @@ function PriceChart({
         d={line}
         fill="none"
         stroke={color}
-        strokeWidth="2"
+        strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -274,9 +274,9 @@ function PriceChart({
           />
           <text
             x={pad.left + cW + pad.right / 2}
-            y={entryY + 3}
+            y={entryY + 4}
             fill="#F5A623"
-            fontSize="10"
+            fontSize="12"
             textAnchor="middle"
             fontFamily="Manrope, sans-serif"
             fontWeight="600"
@@ -319,7 +319,7 @@ function PriceChart({
         x={pad.left + cW + pad.right / 2}
         y={last.y + 4}
         fill={color}
-        fontSize="10"
+        fontSize="12"
         textAnchor="middle"
         fontFamily="Manrope, sans-serif"
         fontWeight="600"
@@ -334,7 +334,7 @@ function PriceChart({
           x={pad.left + cW + 8}
           y={t.y + 3}
           fill="#5A7170"
-          fontSize="9"
+          fontSize="11"
           fontFamily="Manrope, sans-serif"
           textAnchor="start"
         >
@@ -349,7 +349,7 @@ function PriceChart({
           x={t.x}
           y={H - 6}
           fill="#5A7170"
-          fontSize="9"
+          fontSize="11"
           textAnchor={i === 0 ? "start" : i === xLabels.length - 1 ? "end" : "middle"}
           fontFamily="Manrope, sans-serif"
         >
@@ -893,7 +893,7 @@ const PredictionMarketCard = React.forwardRef<
         </div>
 
         {/* ── Live Chart ── */}
-        <div className="relative mb-[12px] rounded-[12px] overflow-hidden bg-[#001615] border border-[rgba(255,255,255,0.05)] flex-1 min-h-[220px]">
+        <div className="relative mb-[12px] rounded-[12px] overflow-hidden bg-[#001615] border border-[rgba(255,255,255,0.05)] flex-1 min-h-[280px] sm:min-h-[260px] md:min-h-[220px]">
           {chartLoading ? (
             <div
               className="flex items-center justify-center h-full"
