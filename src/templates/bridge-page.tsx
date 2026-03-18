@@ -223,6 +223,16 @@ export type BridgeStatus =
   | "success"
   | "error";
 
+/** Status of a pending timelock withdrawal for the track-withdrawal feature */
+export interface TimelockDisplayInfo {
+  requestId: number;
+  tokenSymbol: string;
+  amount: string;
+  status: "pending" | "ready" | "executed" | "cancelled";
+  remainingSeconds: number;
+  destChainId: number;
+}
+
 export interface BridgePageTemplateProps {
   /** Whether wallet is connected */
   isConnected: boolean;
@@ -277,6 +287,25 @@ export interface BridgePageTemplateProps {
   onReset?: () => void;
   /** Optional class name */
   className?: string;
+
+  // ── Extended props for full bridge info (Task 16, 17, 18) ──
+
+  /** Whether the bridge contract is paused */
+  bridgePaused?: boolean;
+  /** Whether the relayer is healthy */
+  relayerHealthy?: boolean;
+  /** Whether bridge status data is loading */
+  bridgeStatusLoading?: boolean;
+  /** Per-transaction limit in human-readable form (e.g. "100 ETH") */
+  maxPerTxDisplay?: string | null;
+  /** Remaining daily volume for the selected token */
+  remainingDailyVolumeDisplay?: string | null;
+  /** Pending timelock withdrawals for the user (Task 18) */
+  pendingTimelocks?: TimelockDisplayInfo[];
+  /** Callback when user wants to execute a ready timelock */
+  onExecuteTimelock?: (requestId: number) => void;
+  /** Callback when user wants to cancel a pending timelock */
+  onCancelTimelock?: (requestId: number) => void;
 }
 
 // ============================================================================
@@ -295,6 +324,19 @@ export function BridgePageSkeleton() {
 // ============================================================================
 // MAIN COMPONENT
 // ============================================================================
+
+/**
+ * Format seconds into a human-readable countdown string.
+ */
+function formatCountdown(seconds: number): string {
+  if (seconds <= 0) return "Ready";
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  if (h > 0) return `${h}h ${m}m`;
+  if (m > 0) return `${m}m ${s}s`;
+  return `${s}s`;
+}
 
 export function BridgePageTemplate({
   isConnected,
@@ -324,11 +366,21 @@ export function BridgePageTemplate({
   onBridge,
   onReset,
   className,
+  // Extended props
+  bridgePaused,
+  relayerHealthy,
+  bridgeStatusLoading,
+  maxPerTxDisplay,
+  remainingDailyVolumeDisplay,
+  pendingTimelocks,
+  onExecuteTimelock,
+  onCancelTimelock,
 }: BridgePageTemplateProps) {
   const isLoading =
     status === "quoting" || status === "approving" || status === "bridging";
   const isSuccess = status === "success";
   const isError = status === "error";
+  const isBridgeDisabled = bridgePaused || relayerHealthy === false;
 
   return (
     <div className={cn("container mx-auto max-w-xl px-4 py-8", className)}>
@@ -343,13 +395,57 @@ export function BridgePageTemplate({
         </p>
       </div>
 
+      {/* Bridge Status Loading (Task 17) */}
+      {bridgeStatusLoading && (
+        <div className="mb-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          <Icons.Loader2 className="h-4 w-4 animate-spin" />
+          Loading bridge status...
+        </div>
+      )}
+
+      {/* Bridge Paused Warning (Task 16) */}
+      {bridgePaused && (
+        <Alert variant="destructive" className="mb-4">
+          <Icons.AlertCircle className="h-4 w-4" />
+          <AlertTitle>Bridge Paused</AlertTitle>
+          <AlertDescription>
+            The bridge is currently paused for maintenance. Please check back later.
+          </AlertDescription>
+        </Alert>
+      )}
+
+      {/* Relayer Down Warning (Task 15, 17) */}
+      {relayerHealthy === false && !bridgePaused && (
+        <Alert className="mb-4 border-yellow-500/30 bg-yellow-500/10">
+          <Icons.AlertCircle className="h-4 w-4 text-yellow-500" />
+          <AlertTitle className="text-yellow-500">Relayer Offline</AlertTitle>
+          <AlertDescription>
+            The bridge relayer is not responding. Deposits may not be processed
+            until the relayer is restored.
+          </AlertDescription>
+        </Alert>
+      )}
+
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
             <span>Cross-Chain Bridge</span>
-            <Badge variant="outline" className="font-normal">
-              {bridgeFeePercent}% Fee
-            </Badge>
+            <div className="flex items-center gap-2">
+              {relayerHealthy !== undefined && (
+                <Badge
+                  variant="outline"
+                  className={cn(
+                    "font-normal",
+                    relayerHealthy ? "border-green-500/30 text-green-500" : "border-red-500/30 text-red-500"
+                  )}
+                >
+                  {relayerHealthy ? "Online" : "Offline"}
+                </Badge>
+              )}
+              <Badge variant="outline" className="font-normal">
+                {bridgeFeePercent}% Fee
+              </Badge>
+            </div>
           </CardTitle>
           <CardDescription>
             Bridge your tokens between supported networks
@@ -362,7 +458,7 @@ export function BridgePageTemplate({
             <Select
               value={fromChain.id.toString()}
               onValueChange={onFromChainChange}
-              disabled={isLoading}
+              disabled={isLoading || isBridgeDisabled}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select source chain" />
@@ -390,7 +486,7 @@ export function BridgePageTemplate({
               variant="outline"
               size="icon"
               onClick={onSwapChains}
-              disabled={isLoading}
+              disabled={isLoading || isBridgeDisabled}
               className="rounded-full"
             >
               <Icons.ArrowDown className="h-4 w-4" />
@@ -403,7 +499,7 @@ export function BridgePageTemplate({
             <Select
               value={toChain.id.toString()}
               onValueChange={onToChainChange}
-              disabled={isLoading}
+              disabled={isLoading || isBridgeDisabled}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select destination chain" />
@@ -431,7 +527,7 @@ export function BridgePageTemplate({
             <Select
               value={selectedToken.symbol}
               onValueChange={onTokenChange}
-              disabled={isLoading}
+              disabled={isLoading || isBridgeDisabled}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select token" />
@@ -472,18 +568,36 @@ export function BridgePageTemplate({
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   onAmountChange(e.target.value)
                 }
-                disabled={isLoading}
+                disabled={isLoading || isBridgeDisabled}
                 className="flex-1"
               />
               <Button
                 variant="outline"
                 onClick={onMaxAmount}
-                disabled={isLoading || !balance}
+                disabled={isLoading || !balance || isBridgeDisabled}
               >
                 Max
               </Button>
             </div>
           </div>
+
+          {/* Bridge Limits Display (Task 16) */}
+          {(maxPerTxDisplay || remainingDailyVolumeDisplay) && (
+            <div className="space-y-1 text-xs text-muted-foreground">
+              {maxPerTxDisplay && (
+                <div className="flex justify-between">
+                  <span>Max per transaction</span>
+                  <span>{maxPerTxDisplay}</span>
+                </div>
+              )}
+              {remainingDailyVolumeDisplay && (
+                <div className="flex justify-between">
+                  <span>Remaining daily limit</span>
+                  <span>{remainingDailyVolumeDisplay}</span>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Estimate Details */}
           {estimatedReceive && (
@@ -536,7 +650,7 @@ export function BridgePageTemplate({
             </Alert>
           )}
 
-          {/* Error State */}
+          {/* Error State (Task 17) */}
           {isError && error && (
             <Alert variant="destructive">
               <Icons.AlertCircle className="h-4 w-4" />
@@ -559,11 +673,13 @@ export function BridgePageTemplate({
           ) : (
             <Button
               onClick={onBridge}
-              disabled={isLoading || !amount || parseFloat(amount) <= 0}
+              disabled={isLoading || !amount || parseFloat(amount) <= 0 || isBridgeDisabled}
               className="w-full"
               size="lg"
             >
-              {status === "quoting" ? (
+              {bridgePaused ? (
+                "Bridge Paused"
+              ) : status === "quoting" ? (
                 <>
                   <Icons.Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Getting Quote...
@@ -597,6 +713,75 @@ export function BridgePageTemplate({
           </div>
         </CardContent>
       </Card>
+
+      {/* Pending Timelock Withdrawals (Task 18) */}
+      {pendingTimelocks && pendingTimelocks.length > 0 && (
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <Icons.Clock className="h-5 w-5" />
+              Pending Withdrawals
+            </CardTitle>
+            <CardDescription>
+              Large withdrawals are held in a timelock for security
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {pendingTimelocks.map((tl) => (
+              <div
+                key={tl.requestId}
+                className="flex items-center justify-between rounded-lg border p-3"
+              >
+                <div className="space-y-1">
+                  <div className="text-sm font-medium">
+                    {tl.amount} {tl.tokenSymbol}
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Badge
+                      variant="outline"
+                      className={cn(
+                        "text-xs",
+                        tl.status === "ready"
+                          ? "border-green-500/30 text-green-500"
+                          : tl.status === "pending"
+                          ? "border-yellow-500/30 text-yellow-500"
+                          : tl.status === "executed"
+                          ? "border-blue-500/30 text-blue-500"
+                          : "border-red-500/30 text-red-500"
+                      )}
+                    >
+                      {tl.status === "pending"
+                        ? `Unlocks in ${formatCountdown(tl.remainingSeconds)}`
+                        : tl.status === "ready"
+                        ? "Ready to execute"
+                        : tl.status}
+                    </Badge>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  {tl.status === "ready" && onExecuteTimelock && (
+                    <Button
+                      size="sm"
+                      onClick={() => onExecuteTimelock(tl.requestId)}
+                    >
+                      Execute
+                    </Button>
+                  )}
+                  {(tl.status === "pending" || tl.status === "ready") && onCancelTimelock && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => onCancelTimelock(tl.requestId)}
+                    >
+                      Cancel
+                    </Button>
+                  )}
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }
