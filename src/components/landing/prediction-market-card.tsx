@@ -25,6 +25,7 @@ export interface PlaceBetResponse {
   betId: string;
   entryPrice: number;
   marketEnd: string;
+  newBalance?: number | null;
 }
 
 /** Server-side bet settlement result */
@@ -712,7 +713,7 @@ const PredictionMarketCard = React.forwardRef<
             betIdRef.current = result.betId;
             setTimeRemaining(Math.max(0, Math.floor((end - Date.now()) / 1000)));
             setPhase("active");
-            onPointsChange?.(skaiPoints - betAmount);
+            onPointsChange?.(result.newBalance != null ? result.newBalance : skaiPoints - betAmount);
             saveBet(userId, { entryPrice: result.entryPrice, betAmount, direction: dir, marketEnd: end, pointsBeforeBet: skaiPoints, betId: result.betId });
           } else {
             // Client-side fallback (legacy)
