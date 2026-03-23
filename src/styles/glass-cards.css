@@ -15,15 +15,9 @@
  * ============================================================================= */
 
 .glass-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.06) 0%,
-    rgba(255, 255, 255, 0.02) 100%
-  );
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: hsl(225 60% 7% / 0.97);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  border-radius: 8px;
 }
 
 /* Hover variant - adds glow and lift */
@@ -32,11 +26,8 @@
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(86, 199, 243, 0.3);
-  transform: translateY(-2px);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.3),
-    0 0 60px rgba(86, 199, 243, 0.1);
+  border-color: rgba(86, 199, 243, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* =============================================================================
@@ -112,25 +103,25 @@
 @media (max-width: 768px) {
   .glass-card {
     padding: 1.25rem;
-    border-radius: 20px;
+    border-radius: 8px;
   }
 
   .feature-card {
     padding: 1rem;
-    border-radius: 14px;
+    border-radius: 8px;
   }
 
   .input-glass {
     padding: 0.875rem 1rem;
     font-size: 16px; /* Prevents iOS zoom on focus */
-    border-radius: 14px;
+    border-radius: 8px;
   }
 }
 
 @media (max-width: 380px) {
   .glass-card {
     padding: 1rem;
-    border-radius: 16px;
+    border-radius: 8px;
   }
 }
 
