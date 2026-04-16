@@ -11,6 +11,7 @@ export interface ReferralCardProps extends React.HTMLAttributes<HTMLDivElement> 
   referralLink: string;
   referralPoints: number;
   shareTweetPoints: number;
+  discordConnectPoints?: number;
   hasClaimedToday?: boolean;
   isLoadingUser?: boolean;
   onShareToX?: () => void;
@@ -28,6 +29,13 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
       referralLink,
       referralPoints,
       shareTweetPoints,
+      // Discord signup incentive defaults to 0 (hidden). Callers must
+      // explicitly opt in by passing discordConnectPoints > 0 to show the
+      // "Claim X SKAI Points" incentive text. The "Join Skai Community"
+      // button itself is always visible — it's a link to the Discord
+      // server, not a signup path. Per 2026-04-16: signup removed from
+      // landing dashboard; only /verify role-gate uses Discord OAuth.
+      discordConnectPoints = 0,
       hasClaimedToday = false,
       isLoadingUser = false,
       onShareToX,
@@ -129,10 +137,17 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           <span>{twitterHandle ? `@${twitterHandle} connected` : "Share With Friends"}</span>
         </button>
 
+        {/* Discord points incentive */}
+        {discordConnectPoints > 0 && !discordHandle && (
+          <p className="font-manrope font-medium text-[#2DEDAD] text-[12px] lg:text-[14px] leading-[16px] lg:leading-[18px] mb-[8px]">
+            Claim {discordConnectPoints} SKAI Points
+          </p>
+        )}
+
         {/* Discord Button */}
         <button
           type="button"
-          onClick={discordHandle ? () => window.open(discordUrl, "_blank") : (onDiscordConnect || (() => window.open(discordUrl, "_blank")))}
+          onClick={() => window.open(discordUrl, "_blank")}
           className={cn(
             "w-full py-[21px] px-[16px] rounded-[12px] font-manrope font-normal text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] flex items-center justify-center gap-[8px] transition-all border-none",
             discordHandle
