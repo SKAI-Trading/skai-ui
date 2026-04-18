@@ -1172,7 +1172,7 @@ const PredictionMarketCard = React.forwardRef<
         {canPlay && skaiPoints <= 0 && phase === "idle" && (
           <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] leading-[16px] text-center mt-[8px]">
             You need SKAI Points to predict. Earn points by sharing or
-            depositing USDC.
+            depositing skaiUSD.
           </p>
         )}
       </div>

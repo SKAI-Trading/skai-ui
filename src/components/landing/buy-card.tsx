@@ -20,16 +20,16 @@ export interface BuyCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const QUICK_ACTIONS = [
-  { label: "Buy $50 USDC", message: "I want to buy $50 worth of USDC on Base" },
-  { label: "Buy $100 USDC", message: "I want to buy $100 worth of USDC on Base" },
+  { label: "Buy $50 skaiUSD", message: "I want to buy $50 worth of skaiUSD on Base" },
+  { label: "Buy $100 skaiUSD", message: "I want to buy $100 worth of skaiUSD on Base" },
   { label: "Buy 0.05 ETH", message: "I want to buy 0.05 ETH on Base" },
-  { label: "Compare prices", message: "Compare current USDC and ETH prices and recommend the best buy" },
+  { label: "Compare prices", message: "Compare current skaiUSD and ETH prices and recommend the best buy" },
 ];
 
 const INITIAL_MESSAGES: BuyCardMessage[] = [
   {
     role: "assistant",
-    content: "I can help you buy USDC or ETH. Tell me what you'd like to buy and how much, or use a quick action below.",
+    content: "I can help you buy skaiUSD or ETH. Tell me what you'd like to buy and how much, or use a quick action below.",
   },
 ];
 
@@ -74,7 +74,7 @@ const BuyCard = React.forwardRef<HTMLDivElement, BuyCardProps>(
             {
               role: "assistant",
               content:
-                "To buy USDC or ETH, deposit funds to your wallet using the QR code on the Trade tab, or use a fiat on-ramp service. Once funded, you can swap between tokens using the Swap tool.",
+                "To buy skaiUSD or ETH, deposit funds to your wallet using the QR code on the Trade tab, or use a fiat on-ramp service. Once funded, you can swap between tokens using the Swap tool.",
             },
           ]);
         }
@@ -114,7 +114,7 @@ const BuyCard = React.forwardRef<HTMLDivElement, BuyCardProps>(
           )}
           <SkaiIcon name="token" size="sm" className="text-[#56C7F3] flex-shrink-0" />
           <p className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
-            Buy USDC / ETH
+            Buy skaiUSD / ETH
           </p>
           <span className="text-[10px] px-1.5 py-0.5 rounded-[4px] bg-[#56C7F3]/15 text-[#56C7F3] font-medium font-['Manrope',sans-serif] ml-auto">
             AI

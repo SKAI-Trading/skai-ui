@@ -95,7 +95,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
         {hasBalance && (
           <div className="flex flex-col gap-[2px] bg-[#001615]/40 rounded-lg px-[14px] py-[10px]">
             <span className="font-['Manrope',sans-serif] font-normal text-[11px] leading-[14px] text-[#95A09F]">
-              USDC Balance
+              skaiUSD Balance
             </span>
             <span className="font-['Manrope',sans-serif] font-light text-[28px] leading-[32px] tracking-[-1.12px] text-white">
               ${usdcBalance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -103,16 +103,16 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
           </div>
         )}
 
-        {/* One-time SKAI Points reward banner — USDC on Base only */}
+        {/* One-time SKAI Points reward banner — skaiUSD on Base only */}
         {!hasClaimedDeposit && (
           <div className="flex items-center gap-[8px] px-[12px] py-[10px] rounded-lg bg-[#0D3D3A]/60 border border-[#2DEDAD]/15">
             <span className="font-['Manrope',sans-serif] font-bold text-[#2DEDAD] text-[18px]">1:1</span>
             <div className="flex flex-col gap-[1px]">
               <span className="font-['Manrope',sans-serif] font-medium text-[#E0E0E0] text-[12px] leading-[16px]">
-                1 SKAI Point for every USDC on your first deposit
+                1 SKAI Point for every skaiUSD on your first deposit
               </span>
               <span className="font-['Manrope',sans-serif] font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
-                One-time reward &middot; USDC on Base only
+                One-time reward &middot; skaiUSD on Base only
               </span>
             </div>
           </div>
@@ -147,8 +147,8 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
 
             <p className="font-['Manrope',sans-serif] font-normal text-[11px] leading-[14px] text-[#95A09F] text-center">
               {selectedChain === "base"
-                ? "Scan or copy address to deposit ETH or USDC on Base"
-                : "Scan or copy address to deposit ETH or USDC on Ethereum"}
+                ? "Scan or copy address to deposit ETH or skaiUSD on Base"
+                : "Scan or copy address to deposit ETH or skaiUSD on Ethereum"}
             </p>
 
             {/* Address + Copy */}
@@ -171,11 +171,11 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
             {/* Accepted assets info */}
             <div className="w-full flex flex-col gap-[4px] px-[4px]">
               <span className="font-['Manrope',sans-serif] font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
-                Accepted: ETH &amp; USDC on {selectedChain === "base" ? "Base" : "Ethereum Mainnet"}
+                Accepted: ETH &amp; skaiUSD on {selectedChain === "base" ? "Base" : "Ethereum Mainnet"}
               </span>
               {selectedChain === "base" && !hasClaimedDeposit && (
                 <span className="font-['Manrope',sans-serif] font-normal text-[#2DEDAD] text-[10px] leading-[14px]">
-                  Deposit USDC on Base to earn 1 SKAI Point per USDC
+                  Deposit skaiUSD on Base to earn 1 SKAI Point per skaiUSD
                 </span>
               )}
             </div>

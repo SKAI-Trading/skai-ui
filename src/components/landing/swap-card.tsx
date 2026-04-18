@@ -57,7 +57,7 @@ const SwapCard = React.forwardRef<HTMLDivElement, SwapCardProps>(
                 From
               </span>
               <span className="font-['Manrope',sans-serif] font-medium text-[16px] leading-[20px] text-white">
-                USDC
+                skaiUSD
               </span>
             </div>
             {hasBalance && (
@@ -92,7 +92,7 @@ const SwapCard = React.forwardRef<HTMLDivElement, SwapCardProps>(
           <div className="flex items-start gap-[8px] bg-[#001615]/40 rounded-lg px-[12px] py-[10px]">
             <SkaiIcon name="info" size="xs" className="text-[#2DEDAD] flex-shrink-0 mt-0.5" />
             <p className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[16px] text-[#95A09F]">
-              Deposit USDC to start swapping. Earn <span className="text-[#2DEDAD] font-medium">1 SKAI Point per $1 USDC</span> deposited.
+              Deposit skaiUSD to start swapping. Earn <span className="text-[#2DEDAD] font-medium">1 SKAI Point per $1 skaiUSD</span> deposited.
             </p>
           </div>
         )}
