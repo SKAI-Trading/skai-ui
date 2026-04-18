@@ -5,7 +5,7 @@ import { SkaiIcon } from "../branding/skai-icon";
 const CHAINS = ["Base", "Ethereum", "Arbitrum", "Optimism", "Polygon"] as const;
 type Chain = (typeof CHAINS)[number];
 
-const TOKENS = ["skaiUSD", "ETH", "WETH"] as const;
+const TOKENS = ["sUSDC", "ETH", "WETH"] as const;
 type Token = (typeof TOKENS)[number];
 
 export interface BridgeCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -29,7 +29,7 @@ const BridgeCard = React.forwardRef<HTMLDivElement, BridgeCardProps>(
 
     const [fromChain, setFromChain] = React.useState<Chain>("Base");
     const [toChain, setToChain] = React.useState<Chain>("Ethereum");
-    const [selectedToken, setSelectedToken] = React.useState<Token>("skaiUSD");
+    const [selectedToken, setSelectedToken] = React.useState<Token>("sUSDC");
     const [showFromPicker, setShowFromPicker] = React.useState(false);
     const [showToPicker, setShowToPicker] = React.useState(false);
 
@@ -186,7 +186,7 @@ const BridgeCard = React.forwardRef<HTMLDivElement, BridgeCardProps>(
           <div className="flex items-start gap-[8px] bg-[#001615]/40 rounded-lg px-[12px] py-[10px]">
             <SkaiIcon name="info" size="xs" className="text-[#2DEDAD] flex-shrink-0 mt-0.5" />
             <p className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[16px] text-[#95A09F]">
-              Deposit {selectedToken} to start bridging across chains. Earn <span className="text-[#2DEDAD] font-medium">1 SKAI Point per $1 skaiUSD</span> deposited.
+              Deposit {selectedToken} to start bridging across chains. Earn <span className="text-[#2DEDAD] font-medium">1 SKAI Point per $1 sUSDC</span> deposited.
             </p>
           </div>
         )}

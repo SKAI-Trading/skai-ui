@@ -61,10 +61,10 @@ interface SwapPageTemplateProps {
 
 const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
   fromToken = { symbol: "ETH", name: "Ethereum", balance: "0.00" },
-  toToken = { symbol: "skaiUSD", name: "USD", balance: "0.00" },
+  toToken = { symbol: "sUSDC", name: "USD", balance: "0.00" },
   fromAmount = "",
   toAmount = "",
-  exchangeRate = "1 ETH = 2,500 skaiUSD",
+  exchangeRate = "1 ETH = 2,500 sUSDC",
   gasEstimate = "~$2.50",
   slippage = 0.5,
   isLoading = false,

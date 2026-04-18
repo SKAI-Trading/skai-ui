@@ -111,7 +111,7 @@ export interface ReferralPageProps {
   commissionTiers?: CommissionTier[];
   /** Whether data is loading */
   isLoading?: boolean;
-  /** Currency symbol for earnings (default: skaiUSD) */
+  /** Currency symbol for earnings (default: sUSDC) */
   currencySymbol?: string;
   /** Callback when copying referral link */
   onCopyLink?: () => void;
@@ -218,7 +218,7 @@ function HowItWorksDialog({ tiers }: HowItWorksDialogProps) {
             <li>• Earn a percentage of your referrals' trading fees</li>
             <li>• Higher tiers unlock better commission rates and lower fees for you</li>
             <li>• Referrals must be active traders (minimum $100 volume/month)</li>
-            <li>• Earnings are paid out weekly in skaiUSD</li>
+            <li>• Earnings are paid out weekly in sUSDC</li>
             <li>• No limits on how much you can earn</li>
           </ul>
         </div>
@@ -443,7 +443,7 @@ export function ReferralPageTemplate({
   referrals = [],
   commissionTiers = defaultTiers,
   isLoading = false,
-  currencySymbol = "skaiUSD",
+  currencySymbol = "sUSDC",
   onCopyLink,
   onShare,
   formatAddress = defaultFormatAddress,
