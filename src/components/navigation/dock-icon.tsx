@@ -81,8 +81,9 @@ const DockContainer: React.FC<DockContainerProps> = ({
     const item = itemRefs.current.get(index);
     if (!item || !containerRef.current) return 1;
 
-    const itemRect = item.getBoundingClientRect();
-    const containerRect = containerRef.current.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect?.();
+    const containerRect = containerRef.current.getBoundingClientRect?.();
+    if (!itemRect || !containerRect) return 1;
     const itemCenter = itemRect.left + itemRect.width / 2 - containerRect.left;
 
     const distance = Math.abs(mouseX - itemCenter);
