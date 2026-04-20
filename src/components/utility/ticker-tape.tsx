@@ -193,8 +193,9 @@ const TickerTape = React.forwardRef<HTMLDivElement, TickerTapeProps>(
       ) : item.onClick ? (
         <button
           key={`${item.id}-${index}`}
+          type="button"
           onClick={item.onClick}
-          className="inline-flex items-center"
+          className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
         >
           {itemContent}
         </button>
@@ -226,9 +227,16 @@ const TickerTape = React.forwardRef<HTMLDivElement, TickerTapeProps>(
     return (
       <div
         ref={ref}
-        className={cn(tickerTapeVariants({ variant, size }), className)}
+        className={cn(
+          tickerTapeVariants({ variant, size }),
+          "motion-reduce:[&_*]:!animate-none",
+          className,
+        )}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        role="region"
+        aria-roledescription="ticker"
+        aria-live="off"
         {...props}
       >
         {/* Left fade gradient */}

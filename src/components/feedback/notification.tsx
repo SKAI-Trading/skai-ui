@@ -30,7 +30,14 @@ const notificationVariants = cva(
   },
 );
 
-const variantIcons: Record<string, LucideIcon> = {
+type NotificationVariant =
+  | "default"
+  | "success"
+  | "warning"
+  | "error"
+  | "info";
+
+const variantIcons: Record<NotificationVariant, LucideIcon> = {
   default: InfoIcon,
   success: CheckCircleIcon,
   warning: AlertTriangleIcon,
@@ -77,7 +84,8 @@ const Notification = React.forwardRef<HTMLDivElement, NotificationProps>(
     },
     ref,
   ) => {
-    const Icon = icon || variantIcons[variant || "default"];
+    const Icon =
+      icon || variantIcons[(variant ?? "default") as NotificationVariant] || InfoIcon;
 
     // Auto-dismiss
     React.useEffect(() => {
@@ -87,14 +95,19 @@ const Notification = React.forwardRef<HTMLDivElement, NotificationProps>(
       }
     }, [duration, onDismiss]);
 
+    const isUrgent = variant === "error" || variant === "warning";
+
     return (
       <div
         ref={ref}
-        role="alert"
+        role={isUrgent ? "alert" : "status"}
+        aria-live={isUrgent ? "assertive" : "polite"}
         className={cn(notificationVariants({ variant }), className)}
         {...props}
       >
-        {!hideIcon && <Icon className="h-5 w-5 shrink-0 mt-0.5" />}
+        {!hideIcon && (
+          <Icon className="h-5 w-5 shrink-0 mt-0.5" aria-hidden="true" />
+        )}
         <div className="flex-1 space-y-1">
           <p className="text-sm font-semibold leading-none">{title}</p>
           {message && <p className="text-sm opacity-90">{message}</p>}
@@ -102,11 +115,12 @@ const Notification = React.forwardRef<HTMLDivElement, NotificationProps>(
         </div>
         {dismissible && onDismiss && (
           <button
+            type="button"
             onClick={onDismiss}
-            className="absolute right-2 top-2 rounded-md p-1 opacity-70 hover:opacity-100 transition-opacity"
+            className="absolute right-2 top-2 rounded-md p-1 opacity-70 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-opacity"
             aria-label="Dismiss notification"
           >
-            <XIcon className="h-4 w-4" />
+            <XIcon className="h-4 w-4" aria-hidden="true" />
           </button>
         )}
       </div>

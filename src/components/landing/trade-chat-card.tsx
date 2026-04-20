@@ -409,7 +409,7 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
         <div className="flex items-center gap-[8px] px-[16px] py-[12px] border-b border-[#95A09F]/10">
           <SkaiIcon name="skai-ai" size="sm" className="text-[#56C7F3] flex-shrink-0" />
           <p className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
-            SKAI AI
+            SKAI-AI
           </p>
           <span className="text-[10px] px-1.5 py-0.5 rounded-[4px] bg-[#56C7F3]/15 text-[#56C7F3] font-medium font-['Manrope',sans-serif]">
             TRADING

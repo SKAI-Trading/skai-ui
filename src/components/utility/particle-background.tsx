@@ -61,6 +61,15 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
   useEffect(() => {
     if (!enabled) return;
 
+    // Respect user's motion preference — skip animation if reduced motion is requested.
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -138,6 +147,8 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
+      role="presentation"
       className={`absolute inset-0 w-full h-full pointer-events-none ${className || ""}`}
       style={{ zIndex: 1 }}
     />

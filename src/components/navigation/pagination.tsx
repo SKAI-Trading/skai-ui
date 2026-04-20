@@ -7,7 +7,7 @@ import { ButtonProps, buttonVariants } from "../core/button";
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
     role="navigation"
-    aria-label="pagination"
+    aria-label="Pagination"
     className={cn("mx-auto flex w-full justify-center", className)}
     {...props}
   />
@@ -69,7 +69,7 @@ const PaginationPrevious = ({
     className={cn("gap-1 pl-2.5", className)}
     {...props}
   >
-    <ChevronLeft className="h-4 w-4" />
+    <ChevronLeft className="h-4 w-4" aria-hidden="true" />
     <span>Previous</span>
   </PaginationLink>
 );
@@ -86,7 +86,7 @@ const PaginationNext = ({
     {...props}
   >
     <span>Next</span>
-    <ChevronRight className="h-4 w-4" />
+    <ChevronRight className="h-4 w-4" aria-hidden="true" />
   </PaginationLink>
 );
 PaginationNext.displayName = "PaginationNext";

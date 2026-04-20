@@ -118,11 +118,15 @@ const ScrollingTicker = React.forwardRef<HTMLDivElement, ScrollingTickerProps>(
     return (
       <div
         ref={ref}
-        className={cn("relative overflow-hidden", className)}
+        className={cn(
+          "relative overflow-hidden motion-reduce:[&_*]:!animate-none",
+          className,
+        )}
         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
-        role="marquee"
+        role="region"
         aria-live="off"
+        aria-roledescription="ticker"
         aria-label="Scrolling ticker"
       >
         {/* Left fade gradient */}

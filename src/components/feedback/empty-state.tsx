@@ -78,7 +78,7 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
         {...props}
       >
         {!hideIcon && (
-          <div className="rounded-full bg-muted p-4">
+          <div aria-hidden="true" className="rounded-full bg-muted p-4">
             <Icon
               className="text-muted-foreground"
               size={iconSize}

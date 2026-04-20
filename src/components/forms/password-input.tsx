@@ -147,9 +147,9 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
             tabIndex={-1}
           >
             {showPassword ? (
-              <EyeOffIcon className="h-4 w-4 text-muted-foreground" />
+              <EyeOffIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             ) : (
-              <EyeIcon className="h-4 w-4 text-muted-foreground" />
+              <EyeIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             )}
           </Button>
         </div>
@@ -168,10 +168,26 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
         {/* Strength indicator */}
         {showStrength && value && (
           <div className="space-y-1">
-            <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+            <div
+              className="h-1.5 w-full rounded-full bg-muted overflow-hidden"
+              role="progressbar"
+              aria-label="Password strength"
+              aria-valuemin={0}
+              aria-valuemax={4}
+              aria-valuenow={
+                strength === "weak"
+                  ? 1
+                  : strength === "fair"
+                    ? 2
+                    : strength === "good"
+                      ? 3
+                      : 4
+              }
+              aria-valuetext={strengthLabels[strength]}
+            >
               <div
                 className={cn(
-                  "h-full transition-all duration-300",
+                  "h-full transition-all duration-300 motion-reduce:transition-none",
                   strengthColors[strength],
                   strengthWidths[strength],
                 )}

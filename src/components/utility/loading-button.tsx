@@ -31,13 +31,18 @@ const LoadingButton = React.forwardRef<HTMLButtonElement, LoadingButtonProps>(
     const isDisabled = disabled || loading;
 
     const spinnerElement = spinner || (
-      <Loader2 className="h-4 w-4 animate-spin" />
+      <Loader2
+        className="h-4 w-4 animate-spin motion-reduce:animate-none"
+        aria-hidden="true"
+      />
     );
 
     return (
       <Button
         ref={ref}
         disabled={isDisabled}
+        aria-busy={loading || undefined}
+        aria-live={loading ? "polite" : undefined}
         className={cn(loading && "cursor-wait", className)}
         {...props}
       >

@@ -21,7 +21,7 @@ const dotSizes = {
 const BouncingDots = React.forwardRef<HTMLDivElement, BouncingDotsProps>(
   ({ className, dotClassName, size = "md" }, ref) => {
     const dot = cn(
-      "rounded-full bg-primary animate-bounce-dot",
+      "rounded-full bg-primary animate-bounce-dot motion-reduce:animate-none",
       dotSizes[size],
       dotClassName,
     );
@@ -31,11 +31,13 @@ const BouncingDots = React.forwardRef<HTMLDivElement, BouncingDotsProps>(
         ref={ref}
         className={cn("inline-flex items-center gap-1.5", className)}
         role="status"
+        aria-live="polite"
         aria-label="Loading"
       >
-        <span className={dot} style={{ animationDelay: "0ms" }} />
-        <span className={dot} style={{ animationDelay: "160ms" }} />
-        <span className={dot} style={{ animationDelay: "320ms" }} />
+        <span aria-hidden="true" className={dot} style={{ animationDelay: "0ms" }} />
+        <span aria-hidden="true" className={dot} style={{ animationDelay: "160ms" }} />
+        <span aria-hidden="true" className={dot} style={{ animationDelay: "320ms" }} />
+        <span className="sr-only">Loading</span>
       </div>
     );
   },

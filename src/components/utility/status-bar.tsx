@@ -99,29 +99,11 @@ const StatusBarItemComponent: React.FC<StatusBarItemComponentProps> = ({
 }) => {
   const isClickable = clickable || !!item.onClick;
 
-  const content = (
-    <div
-      className={cn(
-        "flex items-center gap-1.5 shrink-0",
-        isClickable && "cursor-pointer hover:opacity-80 transition-opacity",
-        item.className,
-      )}
-      onClick={item.onClick}
-      role={isClickable ? "button" : undefined}
-      tabIndex={isClickable ? 0 : undefined}
-      onKeyDown={
-        isClickable
-          ? (e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                item.onClick?.();
-              }
-            }
-          : undefined
-      }
-    >
+  const innerContent = (
+    <>
       {item.icon && (
         <span
+          aria-hidden="true"
           className={cn(
             "shrink-0 text-muted-foreground",
             iconSizeClasses[size],
@@ -131,7 +113,11 @@ const StatusBarItemComponent: React.FC<StatusBarItemComponentProps> = ({
         </span>
       )}
       {item.loading ? (
-        <span className="h-4 w-12 animate-pulse rounded bg-muted" />
+        <span
+          role="status"
+          aria-label="Loading value"
+          className="h-4 w-12 animate-pulse rounded bg-muted motion-reduce:animate-none"
+        />
       ) : (
         <span
           className={cn(
@@ -149,6 +135,30 @@ const StatusBarItemComponent: React.FC<StatusBarItemComponentProps> = ({
           {item.label}
         </span>
       )}
+    </>
+  );
+
+  const content = isClickable ? (
+    <button
+      type="button"
+      onClick={item.onClick}
+      className={cn(
+        "flex items-center gap-1.5 shrink-0",
+        "cursor-pointer hover:opacity-80 transition-opacity motion-reduce:transition-none",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm",
+        item.className,
+      )}
+    >
+      {innerContent}
+    </button>
+  ) : (
+    <div
+      className={cn(
+        "flex items-center gap-1.5 shrink-0",
+        item.className,
+      )}
+    >
+      {innerContent}
     </div>
   );
 

@@ -39,7 +39,9 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
     ref,
   ) => {
     const [internalValue, setInternalValue] = React.useState(value || "");
-    const debounceTimeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
+    const debounceTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(
+      null,
+    );
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     // Sync internal value with controlled value
@@ -134,6 +136,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
       <div className="relative">
         {/* Search icon or custom icon */}
         <span
+          aria-hidden="true"
           className={cn(
             "absolute top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none",
             sizeStyles[size].icon,
@@ -169,17 +172,18 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           >
             {isLoading ? (
               <Loader2
-                className="h-full w-full text-muted-foreground animate-spin"
+                role="status"
                 aria-label="Loading"
+                className="h-full w-full text-muted-foreground animate-spin motion-reduce:animate-none"
               />
             ) : shouldShowClear && hasValue ? (
               <button
                 type="button"
                 onClick={handleClear}
-                className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+                className="text-muted-foreground hover:text-foreground transition-colors motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                 aria-label="Clear search"
               >
-                <X className="h-full w-full" />
+                <X className="h-full w-full" aria-hidden="true" />
               </button>
             ) : null}
           </span>

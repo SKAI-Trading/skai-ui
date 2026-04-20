@@ -48,9 +48,14 @@ const OnlineIndicator = React.forwardRef<HTMLSpanElement, OnlineIndicatorProps>(
       lg: "w-3 h-3",
     };
 
+    const statusLabel = isOnline ? "Online" : "Offline";
+
     return (
       <span
         ref={ref}
+        role="status"
+        aria-label={statusLabel}
+        title={statusLabel}
         className={cn(
           "rounded-full ring-2 ring-background flex-shrink-0",
           isOnline ? "bg-green-500" : "bg-gray-400",
@@ -58,8 +63,9 @@ const OnlineIndicator = React.forwardRef<HTMLSpanElement, OnlineIndicatorProps>(
           absolute && "absolute bottom-0 right-0",
           className,
         )}
-        title={isOnline ? "Online" : "Offline"}
-      />
+      >
+        <span className="sr-only">{statusLabel}</span>
+      </span>
     );
   },
 );

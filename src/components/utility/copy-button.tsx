@@ -42,6 +42,13 @@ const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
     ref,
   ) => {
     const [copied, setCopied] = React.useState(false);
+    const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    React.useEffect(() => {
+      return () => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      };
+    }, []);
 
     const handleCopy = React.useCallback(async () => {
       try {
@@ -49,12 +56,14 @@ const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
         setCopied(true);
         onCopySuccess?.(value);
 
-        setTimeout(() => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
           setCopied(false);
         }, successDuration);
       } catch (err) {
         const error = err instanceof Error ? err : new Error("Failed to copy");
         onCopyError?.(error);
+        // eslint-disable-next-line no-console
         console.error("Copy failed:", error);
       }
     }, [value, successDuration, onCopySuccess, onCopyError]);
@@ -62,19 +71,21 @@ const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
     return (
       <Button
         ref={ref}
+        type="button"
         variant={variant}
         size={showLabel ? "sm" : size}
         onClick={handleCopy}
         className={cn("transition-all", copied && "text-green-500", className)}
         aria-label={copied ? labels.copied : labels.copy}
+        aria-live="polite"
         {...props}
       >
         {children || (
           <>
             {copied ? (
-              <Check className="h-4 w-4" />
+              <Check className="h-4 w-4" aria-hidden="true" />
             ) : (
-              <Copy className="h-4 w-4" />
+              <Copy className="h-4 w-4" aria-hidden="true" />
             )}
             {showLabel && (
               <span className="ml-1">

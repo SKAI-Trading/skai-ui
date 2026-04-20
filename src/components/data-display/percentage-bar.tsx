@@ -88,6 +88,7 @@ const PercentageBar = React.forwardRef<HTMLDivElement, PercentageBarProps>(
           aria-valuenow={percentage}
           aria-valuemin={0}
           aria-valuemax={100}
+          aria-valuetext={`${percentage.toFixed(0)} percent`}
           {...props}
         >
           <div
@@ -131,23 +132,26 @@ const SegmentedBar = React.forwardRef<HTMLDivElement, SegmentedBarProps>(
         ref={ref}
         className={cn(percentageBarVariants({ size }), "flex", className)}
         role="meter"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={total > 0 ? 100 : 0}
         {...props}
       >
         {segments.map((segment, i) => {
           const width = total > 0 ? (segment.value / total) * 100 : 0;
+          const segmentKey = `${segment.label ?? "segment"}-${i}`;
+          const tooltipText = `${segment.label || ""}: ${width.toFixed(1)}%`;
           return (
             <div
-              key={i}
+              key={segmentKey}
+              role="presentation"
               className={cn(
                 "h-full transition-all duration-500 ease-out first:rounded-l-full last:rounded-r-full",
                 showTooltips && "cursor-help",
               )}
               style={{ width: `${width}%`, backgroundColor: segment.color }}
-              title={
-                showTooltips
-                  ? `${segment.label || ""}: ${width.toFixed(1)}%`
-                  : undefined
-              }
+              title={showTooltips ? tooltipText : undefined}
+              aria-label={showTooltips ? tooltipText : undefined}
             />
           );
         })}

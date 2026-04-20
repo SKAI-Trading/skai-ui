@@ -43,8 +43,14 @@ const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
       <div
         ref={ref}
         role="status"
+        aria-busy="true"
+        aria-live="polite"
         aria-label={label}
-        className={cn(spinnerVariants({ size, variant }), className)}
+        className={cn(
+          spinnerVariants({ size, variant }),
+          "motion-reduce:animate-none",
+          className,
+        )}
         {...props}
       >
         <span className="sr-only">{label}</span>

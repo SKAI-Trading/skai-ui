@@ -65,6 +65,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
       return (
         <div
           ref={ref}
+          aria-busy={loading || undefined}
           className={cn(
             "flex items-center justify-between p-3 rounded-lg border bg-card",
             className,
@@ -73,14 +74,21 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
         >
           <div className="flex items-center gap-2">
             {icon && (
-              <div className="flex items-center justify-center w-8 h-8 rounded-md bg-primary/10 text-primary">
+              <div
+                aria-hidden="true"
+                className="flex items-center justify-center w-8 h-8 rounded-md bg-primary/10 text-primary"
+              >
                 {icon}
               </div>
             )}
             <div>
               <p className="text-xs text-muted-foreground">{title}</p>
               {loading ? (
-                <div className="h-5 w-16 bg-muted animate-pulse rounded" />
+                <div
+                  role="status"
+                  aria-label="Loading value"
+                  className="h-5 w-16 bg-muted animate-pulse rounded"
+                />
               ) : (
                 <p className="font-semibold">{value}</p>
               )}
@@ -88,7 +96,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
           </div>
           {change !== undefined && (
             <div className={cn("flex items-center gap-1 text-sm", trendColor)}>
-              <TrendIcon className="h-4 w-4" />
+              <TrendIcon className="h-4 w-4" aria-hidden="true" />
               <span>
                 {change > 0 ? "+" : ""}
                 {change.toFixed(2)}%
@@ -100,16 +108,20 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
     }
 
     return (
-      <Card ref={ref} className={className} {...props}>
+      <Card ref={ref} aria-busy={loading || undefined} className={className} {...props}>
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <CardTitle className="text-sm font-medium text-muted-foreground">
             {title}
           </CardTitle>
-          {icon && <div className="text-muted-foreground">{icon}</div>}
+          {icon && (
+            <div aria-hidden="true" className="text-muted-foreground">
+              {icon}
+            </div>
+          )}
         </CardHeader>
         <CardContent>
           {loading ? (
-            <div className="space-y-2">
+            <div role="status" aria-label="Loading stat" className="space-y-2">
               <div className="h-8 w-24 bg-muted animate-pulse rounded" />
               <div className="h-4 w-16 bg-muted animate-pulse rounded" />
             </div>
@@ -122,7 +134,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
                     <span
                       className={cn("flex items-center text-xs", trendColor)}
                     >
-                      <TrendIcon className="h-3 w-3 mr-0.5" />
+                      <TrendIcon className="h-3 w-3 mr-0.5" aria-hidden="true" />
                       {change > 0 ? "+" : ""}
                       {change.toFixed(2)}%
                       {changePeriod && (

@@ -93,7 +93,7 @@ const DefaultErrorFallback: React.FC<FallbackProps> = ({
         "rounded-lg border border-destructive/20 bg-destructive/5",
       )}
     >
-      <div className="rounded-full bg-destructive/10 p-3">
+      <div aria-hidden="true" className="rounded-full bg-destructive/10 p-3">
         <AlertTriangleIcon className="h-8 w-8 text-destructive" />
       </div>
       <div className="space-y-1">
@@ -107,10 +107,11 @@ const DefaultErrorFallback: React.FC<FallbackProps> = ({
       <Button
         variant="outline"
         size="sm"
+        type="button"
         onClick={resetErrorBoundary}
         className="gap-2"
       >
-        <RefreshCwIcon className="h-4 w-4" />
+        <RefreshCwIcon className="h-4 w-4" aria-hidden="true" />
         Try again
       </Button>
       {process.env.NODE_ENV === "development" && (
@@ -126,6 +127,8 @@ const DefaultErrorFallback: React.FC<FallbackProps> = ({
     </div>
   );
 };
+
+DefaultErrorFallback.displayName = "DefaultErrorFallback";
 
 /**
  * Hook to programmatically show error boundary

@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { Toaster as Sonner, toast as sonnerToastOriginal } from "sonner";
 import { cn } from "../../lib/utils";
 
@@ -32,9 +33,12 @@ function isShadcnToastObject(arg: unknown): arg is ShadcnToastOptions {
  * Wrapped toast that auto-converts shadcn-style `toast({title, description, variant})`
  * to proper sonner calls while preserving native sonner API for strings.
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- ExternalToast options shape from sonner is structurally any
+type SonnerOptions = any;
+
 function adaptiveToast(messageOrOptions: string | ShadcnToastOptions, options?: Record<string, unknown>) {
   if (typeof messageOrOptions === "string") {
-    return sonnerToastOriginal(messageOrOptions, options as any);
+    return sonnerToastOriginal(messageOrOptions, options as SonnerOptions);
   }
 
   if (isShadcnToastObject(messageOrOptions)) {
@@ -57,7 +61,10 @@ function adaptiveToast(messageOrOptions: string | ShadcnToastOptions, options?: 
   }
 
   // Fallback: pass through to sonner directly
-  return sonnerToastOriginal(messageOrOptions as any, options as any);
+  return sonnerToastOriginal(
+    messageOrOptions as SonnerOptions,
+    options as SonnerOptions,
+  );
 }
 
 // Copy all sonner methods onto the adaptive wrapper

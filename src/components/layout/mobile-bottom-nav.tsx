@@ -21,6 +21,16 @@ export interface MobileBottomNavItem {
   questTarget?: string;
 }
 
+export interface MobileBottomNavRenderLinkArgs {
+  key: string;
+  href: string;
+  className: string;
+  children: React.ReactNode;
+  questTarget?: string;
+  "aria-current"?: "page" | undefined;
+  "aria-label"?: string;
+}
+
 export interface MobileBottomNavProps {
   /** Navigation items */
   items: MobileBottomNavItem[];
@@ -29,14 +39,11 @@ export interface MobileBottomNavProps {
   /** Whether the nav is visible */
   visible?: boolean;
   /** Render function for navigation links */
-  renderLink: (props: {
-    href: string;
-    className: string;
-    children: React.ReactNode;
-    questTarget?: string;
-  }) => React.ReactNode;
+  renderLink: (props: MobileBottomNavRenderLinkArgs) => React.ReactNode;
   /** Additional className */
   className?: string;
+  /** Accessible label for the nav landmark (default: "Primary"). */
+  ariaLabel?: string;
 }
 
 function isActive(currentPath: string, itemHref: string): boolean {
@@ -55,11 +62,13 @@ export function MobileBottomNav({
   visible = true,
   renderLink,
   className,
+  ariaLabel = "Primary",
 }: MobileBottomNavProps) {
   if (!visible) return null;
 
   return (
     <nav
+      aria-label={ariaLabel}
       className={cn(
         "md:hidden fixed bottom-0 left-0 right-0 z-50",
         "border-t border-border/30 backdrop-blur-xl bg-background/95",
@@ -73,12 +82,14 @@ export function MobileBottomNav({
         {items.map((item) => {
           const active = isActive(currentPath, item.href);
 
-          return renderLink({
+          const args: MobileBottomNavRenderLinkArgs = {
             key: item.href,
             href: item.href,
             questTarget: item.questTarget,
+            "aria-current": active ? "page" : undefined,
+            "aria-label": item.label,
             className: cn(
-              "flex flex-col items-center justify-center gap-1 relative transition-all duration-200",
+              "flex flex-col items-center justify-center gap-1 relative transition-all duration-200 motion-reduce:transition-none",
               "min-h-[44px] min-w-[44px]",
               "active:scale-95",
               active
@@ -89,25 +100,32 @@ export function MobileBottomNav({
               <>
                 <div className="relative">
                   <div
+                    aria-hidden="true"
                     className={cn(
-                      "transition-transform duration-200",
+                      "transition-transform duration-200 motion-reduce:transition-none",
                       active && "scale-110",
                     )}
                   >
                     {item.icon}
                   </div>
                   {item.badge && (
-                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                    <span
+                      aria-label={`${item.badge} notifications`}
+                      className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground"
+                    >
                       {item.badge}
                     </span>
                   )}
                   {active && (
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary" />
+                    <div
+                      aria-hidden="true"
+                      className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
+                    />
                   )}
                 </div>
                 <span
                   className={cn(
-                    "text-xs font-medium transition-all duration-200",
+                    "text-xs font-medium transition-all duration-200 motion-reduce:transition-none",
                     active ? "scale-105" : "scale-100",
                   )}
                 >
@@ -115,7 +133,9 @@ export function MobileBottomNav({
                 </span>
               </>
             ),
-          } as any);
+          };
+
+          return renderLink(args);
         })}
       </div>
     </nav>

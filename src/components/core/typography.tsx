@@ -234,16 +234,26 @@ export const List = React.forwardRef<
   HTMLUListElement | HTMLOListElement,
   ListProps
 >(({ className, ordered = false, ...props }, ref) => {
-  const Component = ordered ? "ol" : "ul";
-  
+  const baseClasses = cn(
+    "skai-para-1 list-inside space-y-2",
+    ordered ? "list-decimal" : "list-disc",
+    className,
+  );
+
+  if (ordered) {
+    return (
+      <ol
+        ref={ref as React.Ref<HTMLOListElement>}
+        className={baseClasses}
+        {...(props as React.HTMLAttributes<HTMLOListElement>)}
+      />
+    );
+  }
   return (
-    <Component
-      ref={ref as any}
-      className={cn("skai-para-1 list-inside space-y-2", {
-        "list-decimal": ordered,
-        "list-disc": !ordered,
-      }, className)}
-      {...props}
+    <ul
+      ref={ref as React.Ref<HTMLUListElement>}
+      className={baseClasses}
+      {...(props as React.HTMLAttributes<HTMLUListElement>)}
     />
   );
 });
