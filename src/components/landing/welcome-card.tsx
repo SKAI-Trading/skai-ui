@@ -61,7 +61,7 @@ export interface WelcomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const TAB_LABELS: Record<DashboardTab, string> = {
-  trade: "AI Trading",
+  trade: "AI",
   play: "Play",
   predict: "Predict",
 };
