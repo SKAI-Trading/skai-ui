@@ -149,7 +149,7 @@ function AnalysisSummary({
   onShareAnalysis?: (analysis: ChartAnalysisResult, chartImage: string) => void;
 }) {
   const conf = normalizeConfidence(analysis.overallAssessment.confidence);
-  const bias = analysis.overallAssessment.bias;
+  const bias = analysis.overallAssessment.bias ?? "neutral";
   const [copied, setCopied] = useState(false);
 
   const handleCopy = useCallback(() => {
