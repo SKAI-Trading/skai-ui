@@ -7,26 +7,34 @@ const d = content.landing.waitlist.dashboard;
 
 export type DashboardTab = "trade" | "play" | "predict";
 
-/** Tier-specific gradient and text colors (matches main app TierProgressCard) */
+/** Tier-specific gradient and text colors. The canonical tier ladder lives
+ *  in main-repo `src/services/chain/chainTierService.ts` (POINTS_THRESHOLDS)
+ *  + `src/services/core/tierService.ts` (multipliers, discounts, cashback).
+ *  Keep this map and ALL_TIERS below in sync with those — drift caused a
+ *  user-visible bug where Free was labeled "Standard" and the entire ladder
+ *  was shifted one slot too low. */
 const TIER_COLORS: Record<string, { from: string; to: string; text: string }> = {
-  standard: { from: "#64748b", to: "#94a3b8", text: "#94a3b8" },
+  free:     { from: "#64748b", to: "#94a3b8", text: "#94a3b8" },
   bronze:   { from: "#92400e", to: "#b45309", text: "#b45309" },
   silver:   { from: "#6b7280", to: "#9ca3af", text: "#9ca3af" },
   gold:     { from: "#ca8a04", to: "#eab308", text: "#eab308" },
   platinum: { from: "#cbd5e1", to: "#e2e8f0", text: "#e2e8f0" },
   diamond:  { from: "#06b6d4", to: "#22d3ee", text: "#22d3ee" },
+  legend:   { from: "#7e22ce", to: "#9333ea", text: "#a855f7" },
 };
 
-const DEFAULT_TIER_COLOR = TIER_COLORS.standard;
+const DEFAULT_TIER_COLOR = TIER_COLORS.free;
 
-/** All tier definitions with point thresholds and rewards */
+/** Canonical 7-tier ladder. min_points + rewards come from tierService.ts:
+ *   Free(0) Bronze(100) Silver(1K) Gold(5K) Platinum(25K) Diamond(100K) Legend(500K) */
 const ALL_TIERS = [
-  { key: "standard", name: "Standard", min: 0,       rewards: ["All 20+ games", "AI trade assistant", "Welcome bonus"] },
-  { key: "bronze",   name: "Bronze",   min: 1_000,   rewards: ["5% fee discount", "Daily login bonus", "Priority queue"] },
-  { key: "silver",   name: "Silver",   min: 5_000,   rewards: ["10% fee discount", "1.2× points", "Whale alerts"] },
-  { key: "gold",     name: "Gold",     min: 25_000,  rewards: ["15% fee discount", "1.4× points", "Smart money signals"] },
-  { key: "platinum", name: "Platinum", min: 100_000, rewards: ["20% fee discount", "1.5× points", "VIP events & airdrops"] },
-  { key: "diamond",  name: "Diamond",  min: 500_000, rewards: ["30% fee discount", "Real-time price updates", "1.6× points"] },
+  { key: "free",     name: "Free",     min: 0,       rewards: ["All 20+ games", "AI trade assistant", "Welcome bonus"] },
+  { key: "bronze",   name: "Bronze",   min: 100,     rewards: ["5% cashback", "Daily login bonus", "Priority queue"] },
+  { key: "silver",   name: "Silver",   min: 1_000,   rewards: ["10% fee discount", "1.2× points", "Whale alerts"] },
+  { key: "gold",     name: "Gold",     min: 5_000,   rewards: ["15% fee discount", "1.4× points", "Smart money signals"] },
+  { key: "platinum", name: "Platinum", min: 25_000,  rewards: ["20% fee discount", "1.5× points", "VIP events & airdrops"] },
+  { key: "diamond",  name: "Diamond",  min: 100_000, rewards: ["30% fee discount", "1.6× points", "Real-time price updates"] },
+  { key: "legend",   name: "Legend",   min: 500_000, rewards: ["50% fee discount", "2.0× points", "VIP support + max airdrops"] },
 ] as const;
 
 function formatPts(n: number): string {
