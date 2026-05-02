@@ -137,10 +137,20 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
   }, []);
 
   return (
-    <DropdownMenu open={open} onOpenChange={(v) => { if (!v) { if (timeoutRef.current) clearTimeout(timeoutRef.current); setOpen(false); } }} modal={false}>
+    <DropdownMenu
+      open={open}
+      onOpenChange={(v) => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        setOpen(v);
+      }}
+      modal={false}
+    >
       <div onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
         <DropdownMenuTrigger asChild>
           <button
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded={open}
             className={cn(
               "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1.5",
               "hover:text-primary",
@@ -237,10 +247,20 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
   }, []);
 
   return (
-    <DropdownMenu open={open} onOpenChange={(v) => { if (!v) { if (timeoutRef.current) clearTimeout(timeoutRef.current); setOpen(false); } }} modal={false}>
+    <DropdownMenu
+      open={open}
+      onOpenChange={(v) => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        setOpen(v);
+      }}
+      modal={false}
+    >
       <div onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
         <DropdownMenuTrigger asChild>
           <button
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded={open}
             className={cn(
               "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1.5",
               "hover:text-primary",
