@@ -12,6 +12,12 @@ import { cn } from "../../lib/utils";
 
 export type SkaiLogoSize = "small" | "compact" | "medium" | "large";
 export type SkaiLogoVariant = "white" | "black";
+/**
+ * Wordmark form:
+ * - "full"  → "Skai.trade" + gradient lightning icon (logos/skai)
+ * - "short" → "Skai" + solid sky-blue lightning icon, with Figma overlap (logos/skai-short)
+ */
+export type SkaiLogoWordmark = "full" | "short";
 
 export interface SkaiLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Size preset: small (24px), compact (32px), medium (48px), large (64px) */
@@ -20,6 +26,8 @@ export interface SkaiLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: SkaiLogoVariant;
   /** Show icon only (without text) */
   iconOnly?: boolean;
+  /** Wordmark form — defaults to "full" for backward compatibility */
+  wordmark?: SkaiLogoWordmark;
 }
 
 // Size dimensions — match Figma logo bounding boxes (Small 101x24, Medium 201x48, Large 267x64)
@@ -159,18 +167,108 @@ const SkaiLogoText: React.FC<{ width: number; height: number; fill: string }> = 
   );
 };
 
+// =============================================================================
+// SHORT FORM — Figma logos/skai-short (node 1580:740 child of 1084:839)
+// Single composed <svg> with viewBox 0 0 58.898 32. Bolt sits at (0,0) in
+// solid #56C7F3; "Skai" wordmark is translated to (17.87, 3.12) in solid
+// white, matching Figma's exact frame coordinates. Composed inline so the
+// rendering does NOT depend on workspace SVG asset URLs (which fail to
+// resolve when @skai/ui is consumed as a pre-built package).
+// =============================================================================
+
+const SkaiLogoComposedShort: React.FC<{ width: number; height: number; textFill: string }> = ({
+  width,
+  height,
+  textFill,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 81.028 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    {/* Lightning bolt — Figma `icon` (28.913×32) at (0,0), solid #56C7F3 */}
+    <path
+      d="M11.8198 20.5072L14.879 17.4479C15.119 17.208 14.9496 16.7946 14.6088 16.7946H11.1059C10.4787 16.7946 10.1359 16.0625 10.5392 15.5805L23.0827 0.629191C23.2924 0.381144 23.115 0 22.7903 0H16.6799C15.845 0 15.0464 0.332745 14.4575 0.92362L0.361242 15.1046C-0.120734 15.5906 -0.120734 16.3751 0.363259 16.8591L3.48501 19.9808C3.99522 20.4911 4.68491 20.7774 5.40485 20.7774H11.1644C11.4084 20.7774 11.6443 20.6806 11.8178 20.5072H11.8198Z"
+      fill="#56C7F3"
+    />
+    <path
+      d="M28.5494 15.1369L25.4276 12.0151C24.9174 11.5049 24.2277 11.2186 23.5078 11.2186H17.7483C17.5043 11.2186 17.2683 11.3154 17.0949 11.4888L14.0357 14.548C13.7957 14.788 13.9651 15.2014 14.3059 15.2014H17.8088C18.436 15.2014 18.7788 15.9335 18.3755 16.4154L5.82997 31.3708C5.62024 31.6189 5.7977 32 6.12238 32H12.2328C13.0677 32 13.8663 31.6673 14.4551 31.0764L28.5514 16.8954C29.0334 16.4094 29.0334 15.6249 28.5494 15.1409V15.1369Z"
+      fill="#56C7F3"
+    />
+    {/* "Skai" wordmark — translated to (40, 3.12) so the textual "S" starts
+        ~11px past the bolt's right edge (28.913). Earlier 3px gap still read
+        as "close together / looks weird" in feedback; this matches the
+        breathing room you see between the bolt and the rest of a typical
+        wordmark logotype lockup. Inner viewBox widened to 81×32 and outer
+        frame widened to 90px to fit. */}
+    <g transform="translate(40 3.12)">
+      <path
+        d="M11.5473 8.57299C11.0875 8.24832 10.6075 7.99624 10.1114 7.81474C9.61331 7.63324 9.16562 7.49006 8.76431 7.3852L5.84623 6.57047C5.47719 6.47166 5.11218 6.35066 4.75523 6.20344C4.39627 6.05623 4.09781 5.85658 3.85581 5.6045C3.61382 5.35242 3.49282 5.02573 3.49282 4.62643C3.49282 4.20294 3.63398 3.8339 3.91631 3.51728C4.19864 3.20067 4.57172 2.95666 5.03554 2.78726C5.49937 2.61786 6.00353 2.5372 6.54601 2.54325C7.10461 2.55736 7.63096 2.67231 8.12503 2.88204C8.61911 3.09379 9.03655 3.40032 9.3814 3.80365C9.72423 4.20697 9.95614 4.695 10.0771 5.26974L13.0073 4.76155C12.7653 3.75928 12.3519 2.90221 11.763 2.19437C11.1742 1.48451 10.4422 0.944055 9.56895 0.570977C8.69373 0.197899 7.6975 0.0063188 6.5823 0.000268886C5.48122 -0.00779766 4.47895 0.165633 3.57953 0.520561C2.67809 0.875489 1.96219 1.40788 1.4298 2.12177C0.897406 2.83364 0.631208 3.71491 0.631208 4.76357C0.631208 5.47947 0.750191 6.08245 0.988154 6.56846C1.22612 7.05447 1.53063 7.45376 1.90371 7.76835C2.27678 8.08093 2.67204 8.32696 3.09151 8.50443C3.51097 8.68189 3.90018 8.82306 4.26317 8.92994L8.4719 10.1742C8.77439 10.265 9.03857 10.3718 9.27048 10.4969C9.50038 10.6219 9.68994 10.759 9.83514 10.9103C9.98034 11.0615 10.0933 11.2329 10.1699 11.4245C10.2445 11.6161 10.2828 11.8258 10.2828 12.0517C10.2828 12.5579 10.1235 12.9834 9.80287 13.3302C9.48223 13.6771 9.06479 13.9413 8.55256 14.1228C8.04033 14.3043 7.49181 14.395 6.91303 14.395C5.93295 14.395 5.06781 14.1308 4.31762 13.6025C3.56743 13.0741 3.07134 12.328 2.82934 11.362L0 11.7915C0.165364 12.8543 0.556594 13.7739 1.17167 14.5463C1.78674 15.3186 2.57121 15.9136 3.52508 16.329C4.47895 16.7424 5.5518 16.9501 6.74364 16.9501C7.58054 16.9501 8.38316 16.8452 9.14747 16.6335C9.91379 16.4217 10.5934 16.1051 11.1903 15.6837C11.7852 15.2622 12.2591 14.7318 12.61 14.0945C12.9609 13.4573 13.1364 12.7152 13.1364 11.8722C13.1364 11.0293 12.9871 10.386 12.6887 9.85759C12.3902 9.32923 12.0111 8.90372 11.5513 8.57904L11.5473 8.57299Z"
+        fill={textFill}
+      />
+      <path
+        d="M25.3152 4.38849H21.9091L17.4402 10.271V0.31488H14.6794L14.6572 16.6073H17.4402V10.7227L22.1127 16.6073H25.7225L20.574 10.4969L25.3152 4.38849Z"
+        fill={textFill}
+      />
+      <path
+        d="M35.977 6.32244C35.5777 5.51578 34.9647 4.93499 34.1378 4.58006C33.311 4.22513 32.3551 4.04767 31.2702 4.04767C29.8303 4.04767 28.6849 4.36025 27.8359 4.98742C26.9868 5.6146 26.4121 6.44343 26.1096 7.47595L28.5981 8.25639C28.8018 7.63123 29.1608 7.18959 29.673 6.93348C30.1852 6.67736 30.7176 6.5483 31.2682 6.5483C32.1797 6.5483 32.829 6.74795 33.2142 7.14724C33.5349 7.47999 33.7164 7.96801 33.7648 8.60729C33.2727 8.67988 32.7927 8.75047 32.3269 8.815C31.5545 8.9239 30.8366 9.04288 30.1772 9.17194C29.5177 9.30101 28.943 9.44419 28.4509 9.60149C27.8016 9.81928 27.2752 10.1016 26.8679 10.4444C26.4605 10.7873 26.158 11.1946 25.9624 11.6665C25.7668 12.1384 25.668 12.6668 25.668 13.2556C25.668 13.9272 25.8253 14.5422 26.1378 15.1009C26.4504 15.6595 26.9122 16.1051 27.5233 16.4419C28.1343 16.7767 28.8805 16.9461 29.7638 16.9461C30.8648 16.9461 31.7824 16.7404 32.5185 16.329C33.0852 16.0124 33.5954 15.5546 34.0511 14.9597V16.6053H36.4388V9.1054C36.4388 8.57704 36.4166 8.08901 36.3703 7.6393C36.3259 7.19161 36.1928 6.75198 35.975 6.32244H35.977ZM33.7083 11.5556C33.6902 12.0053 33.6075 12.4026 33.4643 12.7495C33.3735 13.0278 33.1981 13.3262 32.9379 13.6428C32.6778 13.9594 32.3289 14.2277 31.8913 14.4455C31.4537 14.6632 30.9253 14.7742 30.3082 14.7742C29.8787 14.7742 29.5177 14.7056 29.2273 14.5705C28.9369 14.4354 28.7171 14.2519 28.5659 14.022C28.4146 13.7921 28.34 13.5259 28.34 13.2234C28.34 12.9592 28.3985 12.7293 28.5155 12.5337C28.6324 12.3381 28.7998 12.1646 29.0196 12.0134C29.2374 11.8621 29.5056 11.7311 29.8222 11.6181C30.1469 11.5133 30.52 11.4165 30.9415 11.3297C31.363 11.243 31.8691 11.1503 32.458 11.0535C32.8331 10.991 33.2606 10.9224 33.7305 10.8478C33.7264 11.0555 33.7184 11.2894 33.7063 11.5576L33.7083 11.5556Z"
+        fill={textFill}
+      />
+      <path d="M41.0282 4.38849H38.3018V16.6073H41.0282V4.38849Z" fill={textFill} />
+      <path d="M41.0282 0.032547H38.3018V2.53318H41.0282V0.032547Z" fill={textFill} />
+    </g>
+  </svg>
+);
+
+const SkaiLogoIconShort: React.FC<{ width: number; height: number; fill: string }> = ({
+  width,
+  height,
+  fill,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 28.9126 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M11.8198 20.5072L14.879 17.4479C15.119 17.208 14.9496 16.7946 14.6088 16.7946H11.1059C10.4787 16.7946 10.1359 16.0625 10.5392 15.5805L23.0827 0.629191C23.2924 0.381144 23.115 0 22.7903 0H16.6799C15.845 0 15.0464 0.332745 14.4575 0.92362L0.361242 15.1046C-0.120734 15.5906 -0.120734 16.3751 0.363259 16.8591L3.48501 19.9808C3.99522 20.4911 4.68491 20.7774 5.40485 20.7774H11.1644C11.4084 20.7774 11.6443 20.6806 11.8178 20.5072H11.8198Z"
+      fill={fill}
+    />
+    <path
+      d="M28.5494 15.1369L25.4276 12.0151C24.9174 11.5049 24.2277 11.2186 23.5078 11.2186H17.7483C17.5043 11.2186 17.2683 11.3154 17.0949 11.4888L14.0357 14.548C13.7957 14.788 13.9651 15.2014 14.3059 15.2014H17.8088C18.436 15.2014 18.7788 15.9335 18.3755 16.4154L5.82997 31.3708C5.62024 31.6189 5.7977 32 6.12238 32H12.2328C13.0677 32 13.8663 31.6673 14.4551 31.0764L28.5514 16.8954C29.0334 16.4094 29.0334 15.6249 28.5494 15.1409V15.1409Z"
+      fill={fill}
+    />
+  </svg>
+);
+
+// Short-form size config — only `height` matters; the composed SkaiLogoShort
+// SVG enforces the Figma 58.898×32 bounding ratio internally.
+const shortSizeConfig: Record<SkaiLogoSize, { height: number }> = {
+  small: { height: 24 },
+  compact: { height: 32 },
+  medium: { height: 48 },
+  large: { height: 64 },
+};
+
 /**
  * SKAI Logo - Official brand logo matching Figma design system
  *
- * Lightning bolt icon + "Skai.trade" wordmark.
- * Uses Sky Blue (#56C7F3) → Alien Green Bright (#17F9B4) gradient on icon.
+ * Two wordmark forms:
+ * - "full"  (default) → lightning icon with Sky Blue → Alien Green gradient + "Skai.trade"
+ * - "short"           → solid sky-blue lightning icon + "Skai" (Figma logos/skai-short)
  *
  * @example
- * // Default (medium, white variant)
+ * // Default full wordmark
  * <SkaiLogo />
  *
- * // Small white logo for headers
- * <SkaiLogo size="small" variant="white" />
+ * // Short wordmark for headers (Figma node 1084:839)
+ * <SkaiLogo size="compact" variant="white" wordmark="short" />
  *
  * // Icon only (no text)
  * <SkaiLogo iconOnly size="small" />
@@ -181,6 +279,7 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
       size = "medium",
       variant = "white",
       iconOnly = false,
+      wordmark = "full",
       className,
       ...props
     },
@@ -190,6 +289,7 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
     const fill = variant === "white" ? "#FFFFFF" : "#001615";
 
     if (iconOnly) {
+      // Icon-only follows the active wordmark style: short → solid blue, full → gradient
       return (
         <div
           ref={ref}
@@ -197,7 +297,34 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
           style={{ height: config.iconHeight, width: config.iconWidth }}
           {...props}
         >
-          <SkaiLogoIcon width={config.iconWidth} height={config.iconHeight} fill={fill} variant={variant} />
+          {wordmark === "short" ? (
+            <SkaiLogoIconShort width={config.iconWidth} height={config.iconHeight} fill="#56C7F3" />
+          ) : (
+            <SkaiLogoIcon width={config.iconWidth} height={config.iconHeight} fill={fill} variant={variant} />
+          )}
+        </div>
+      );
+    }
+
+    if (wordmark === "short") {
+      const s = shortSizeConfig[size];
+      // Inner SVG viewBox is 81.028×32 (bolt 28.913 + 11px gap + wordmark
+      // 41.028, no overlap). Outer wrapper widened to 90×32 so the logo gets
+      // proper breathing room from the next header element. Earlier 77×32
+      // frame with 3px inner gap consistently read as "crammed" in feedback.
+      const FIGMA_FRAME_WIDTH = 90;
+      const FIGMA_FRAME_HEIGHT = 32;
+      const scale = s.height / FIGMA_FRAME_HEIGHT;
+      const frameWidth = FIGMA_FRAME_WIDTH * scale;
+      const innerWidth = 81.028 * scale;
+      return (
+        <div
+          ref={ref}
+          className={cn("inline-block shrink-0", className)}
+          style={{ height: s.height, width: frameWidth }}
+          {...props}
+        >
+          <SkaiLogoComposedShort width={innerWidth} height={s.height} textFill={fill} />
         </div>
       );
     }

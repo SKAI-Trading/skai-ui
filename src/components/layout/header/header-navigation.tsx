@@ -160,7 +160,10 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
           >
             {label}
             <svg
-              className="w-4 h-4 opacity-70"
+              className={cn(
+                "w-4 h-4 opacity-70 transition-transform duration-200",
+                open && "rotate-180",
+              )}
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -270,7 +273,10 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
           >
             {label}
             <svg
-              className="w-4 h-4 opacity-70"
+              className={cn(
+                "w-4 h-4 opacity-70 transition-transform duration-200",
+                open && "rotate-180",
+              )}
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -298,7 +304,7 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
                 onNavigate(to);
               }
             }}
-            className="cursor-pointer flex gap-2 items-start w-full px-0 py-0 hover:bg-transparent focus:bg-transparent"
+            className="group cursor-pointer flex gap-2 items-start w-full px-0 py-0 hover:bg-transparent focus:bg-transparent data-[highlighted]:bg-transparent"
           >
             {iconName && (
               <SkaiIcon
@@ -307,11 +313,11 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
               />
             )}
             <div className="flex flex-col gap-0.5 min-w-0">
-              <span className="font-manrope text-base leading-[22px] tracking-[-0.64px] text-white">
+              <span className="font-manrope text-base leading-[22px] tracking-[-0.64px] text-white group-hover:text-[#56C7F3] group-focus:text-[#56C7F3] group-data-[highlighted]:text-[#56C7F3] transition-colors">
                 {itemLabel}
               </span>
               {description && (
-                <span className="font-manrope text-xs leading-4 tracking-[-0.48px] text-white/64">
+                <span className="font-manrope text-xs leading-4 tracking-[-0.48px] text-white/64 group-hover:text-white/80 group-focus:text-white/80 group-data-[highlighted]:text-white/80 transition-colors">
                   {description}
                 </span>
               )}
