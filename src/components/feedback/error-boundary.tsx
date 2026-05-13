@@ -3,6 +3,33 @@ import { cn } from "../../lib/utils";
 import { AlertTriangleIcon, RefreshCwIcon } from "lucide-react";
 import { Button } from "../core/button";
 
+/**
+ * Cross-runtime "is development" check. The skai-ui bundle does not have
+ * `process.env.NODE_ENV` statically replaced (see tsup.config.ts), and some
+ * consumers may run where `process` is undefined. Falling back via try/catch
+ * keeps the boundary itself from throwing inside `render()`.
+ */
+function isDevelopmentEnv(): boolean {
+  try {
+    if (
+      typeof process !== "undefined" &&
+      process?.env?.NODE_ENV === "development"
+    ) {
+      return true;
+    }
+  } catch {
+    /* sandboxed environments may throw on process access */
+  }
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- import.meta typing varies
+    const meta: any = (import.meta as any) ?? {};
+    if (meta?.env?.DEV === true) return true;
+  } catch {
+    /* CJS or unavailable */
+  }
+  return false;
+}
+
 export interface ErrorBoundaryProps {
   /** Child components to render */
   children: React.ReactNode;
@@ -114,7 +141,7 @@ const DefaultErrorFallback: React.FC<FallbackProps> = ({
         <RefreshCwIcon className="h-4 w-4" aria-hidden="true" />
         Try again
       </Button>
-      {process.env.NODE_ENV === "development" && (
+      {isDevelopmentEnv() && (
         <details className="mt-4 w-full max-w-md text-left">
           <summary className="cursor-pointer text-xs text-muted-foreground hover:text-foreground">
             Error details

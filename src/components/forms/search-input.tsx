@@ -51,19 +51,23 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
       }
     }, [value]);
 
-    // Handle debounced callback
+    // Handle debounced callback. Always clear any pending timer on re-run or
+    // unmount, even when the active branch didn't schedule one (e.g. toggling
+    // debounceMs from N to 0 used to leak the previously-armed timeout).
     React.useEffect(() => {
       if (debounceMs > 0 && onDebouncedChange) {
-        debounceTimeoutRef.current = setTimeout(() => {
+        const handle = setTimeout(() => {
           onDebouncedChange(String(internalValue));
         }, debounceMs);
-
-        return () => {
-          if (debounceTimeoutRef.current) {
-            clearTimeout(debounceTimeoutRef.current);
-          }
-        };
+        debounceTimeoutRef.current = handle;
+        return () => clearTimeout(handle);
       }
+      // Branch where no new timer is scheduled — still cancel any prior one.
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+        debounceTimeoutRef.current = null;
+      }
+      return undefined;
     }, [internalValue, debounceMs, onDebouncedChange]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

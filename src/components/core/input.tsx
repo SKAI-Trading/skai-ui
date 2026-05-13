@@ -159,11 +159,24 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
       secondaryValue,
       onFocus,
       onBlur,
+      id,
       ...props
     },
     ref,
   ) => {
     const [isFocused, setIsFocused] = React.useState(false);
+    // Accessibility: associate the label with the input via htmlFor/id, and
+    // wire error/secondary value into aria-describedby + aria-invalid so screen
+    // readers announce them. Auto-generate ids when caller doesn't provide one.
+    const generatedId = React.useId();
+    const inputId = id || generatedId;
+    const errorId = `${inputId}-error`;
+    const secondaryId = `${inputId}-secondary`;
+    const describedByParts: string[] = [];
+    if (error) describedByParts.push(errorId);
+    if (secondaryValue && !error) describedByParts.push(secondaryId);
+    const ariaDescribedBy =
+      describedByParts.length > 0 ? describedByParts.join(" ") : undefined;
 
     // Determine current state
     const currentState = error
@@ -222,6 +235,7 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
           <div className="flex items-center justify-between">
             {label && (
               <label
+                htmlFor={inputId}
                 className={cn(
                   "font-['Manrope'] tracking-[-0.04em]",
                   labelSizeClasses[skaiSize],
@@ -240,6 +254,9 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
         {/* Input */}
         <input
           ref={ref}
+          id={inputId}
+          aria-invalid={!!error}
+          aria-describedby={ariaDescribedBy}
           className={cn(
             "bg-transparent outline-none font-['Manrope'] tracking-[-0.04em] w-full",
             "placeholder:opacity-60",
@@ -258,6 +275,8 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
         {/* Footer: Secondary Value or Error */}
         {(secondaryValue || error) && (
           <div
+            id={error ? errorId : secondaryId}
+            role={error ? "alert" : undefined}
             className={cn(
               "text-xs font-['Manrope'] tracking-[-0.04em]",
               error ? "text-[#FF574A]" : "text-white/60",

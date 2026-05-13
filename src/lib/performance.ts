@@ -79,17 +79,52 @@ export function useBatchedState<T>(
 }
 
 /**
- * Track render count for debugging
+ * Track render count for debugging.
+ *
+ * Safe across bundlers: tsup does not statically replace `process.env.NODE_ENV`
+ * for this library, and consuming apps may run in environments where `process`
+ * is undefined (browser, Deno, Workers). We guard the access so the helper
+ * never throws a ReferenceError when imported by such consumers.
  */
 export function useRenderCount(componentName?: string): number {
   const countRef = useRef(0);
   countRef.current += 1;
 
-  if (process.env.NODE_ENV === "development" && componentName) {
+  if (isDevelopmentEnv() && componentName) {
+    // eslint-disable-next-line no-console -- intentional dev-only debug log
     console.log(`[${componentName}] Render count: ${countRef.current}`);
   }
 
   return countRef.current;
+}
+
+/**
+ * Cross-runtime `NODE_ENV === "development"` check.
+ *
+ * - Browser bundles where `process` is undefined → returns false (no throw).
+ * - Vite consumers that statically replace `import.meta.env.DEV` → respected.
+ * - Node / SSR / test runners where `process.env.NODE_ENV` is set → respected.
+ */
+function isDevelopmentEnv(): boolean {
+  try {
+    if (
+      typeof process !== "undefined" &&
+      process?.env?.NODE_ENV === "development"
+    ) {
+      return true;
+    }
+  } catch {
+    // `process` may be a getter that throws in some sandboxed envs; ignore.
+  }
+  try {
+    // Vite / esbuild may inline this at build time in consumer apps.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- import.meta typing varies
+    const meta: any = (import.meta as any) ?? {};
+    if (meta?.env?.DEV === true) return true;
+  } catch {
+    // import.meta may be unavailable in CJS builds; ignore.
+  }
+  return false;
 }
 
 /**
