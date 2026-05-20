@@ -52,7 +52,29 @@ const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
 
     const handleCopy = React.useCallback(async () => {
       try {
-        await navigator.clipboard.writeText(value);
+        // navigator.clipboard is undefined in non-secure contexts (http://
+        // without localhost) and some sandboxed iframes. Fall back to the
+        // deprecated execCommand path so the button still works.
+        if (
+          typeof navigator !== "undefined" &&
+          navigator.clipboard &&
+          typeof navigator.clipboard.writeText === "function"
+        ) {
+          await navigator.clipboard.writeText(value);
+        } else if (typeof document !== "undefined") {
+          const ta = document.createElement("textarea");
+          ta.value = value;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          const ok = document.execCommand("copy");
+          document.body.removeChild(ta);
+          if (!ok) throw new Error("execCommand copy returned false");
+        } else {
+          throw new Error("Clipboard API unavailable");
+        }
         setCopied(true);
         onCopySuccess?.(value);
 

@@ -124,7 +124,7 @@ const ScrollingTicker = React.forwardRef<HTMLDivElement, ScrollingTickerProps>(
         )}
         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
-        role="region"
+        role="marquee"
         aria-live="off"
         aria-roledescription="ticker"
         aria-label="Scrolling ticker"
