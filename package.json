@@ -100,6 +100,9 @@
     "vitest": "^4.0.18",
     "zod": "^4.3.6"
   },
+  "overrides": {
+    "react-resizable-panels": "3.0.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SKAI-Trading/skai-ui.git"
