@@ -167,10 +167,10 @@ const TagInput = React.forwardRef<HTMLInputElement, TagInputProps>(
                     e.stopPropagation();
                     removeTag(index);
                   }}
-                  className="ml-1 rounded-full outline-none ring-offset-background hover:bg-muted focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  className="ml-1 rounded-full outline-none ring-offset-background hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   aria-label={`Remove ${tag}`}
                 >
-                  <X className="h-3 w-3" />
+                  <X className="h-3 w-3" aria-hidden="true" />
                 </button>
               )}
             </Badge>

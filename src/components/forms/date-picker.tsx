@@ -141,7 +141,7 @@ const SimpleCalendar = ({
                 className={cn(
                   "w-full h-full rounded-md text-sm transition-colors",
                   "hover:bg-accent hover:text-accent-foreground",
-                  "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                   "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent",
                   isToday(date) && "border border-primary",
                   selected &&
