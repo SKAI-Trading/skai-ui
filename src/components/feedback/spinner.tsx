@@ -100,9 +100,8 @@ const LoadingOverlay = React.forwardRef<HTMLDivElement, LoadingOverlayProps>(
             "bg-background/80",
             blur && "backdrop-blur-sm",
           )}
-          role="status"
-          aria-live="polite"
         >
+          {/* Spinner already provides role=status + aria-live=polite */}
           <Spinner size={spinnerSize} />
           {text && (
             <p className="text-sm text-muted-foreground animate-pulse motion-reduce:animate-none">
