@@ -100,4 +100,40 @@ describe("Button", () => {
     );
     expect(screen.getByTestId("child")).toBeInTheDocument();
   });
+
+  describe("loading prop", () => {
+    it("sets aria-busy and disables when loading", () => {
+      render(<Button loading>Save</Button>);
+      const btn = screen.getByRole("button");
+      expect(btn).toHaveAttribute("aria-busy", "true");
+      expect(btn).toBeDisabled();
+      expect(btn).toHaveAttribute("data-loading", "true");
+    });
+
+    it("renders loadingText when provided", () => {
+      render(
+        <Button loading loadingText="Saving...">
+          Save
+        </Button>,
+      );
+      expect(screen.getByRole("button")).toHaveTextContent("Saving...");
+    });
+
+    it("does not render loading affordances when not loading", () => {
+      render(<Button>Idle</Button>);
+      const btn = screen.getByRole("button");
+      expect(btn).not.toHaveAttribute("aria-busy");
+      expect(btn).not.toHaveAttribute("data-loading");
+    });
+
+    it("ignores loading when asChild is true", () => {
+      render(
+        <Button asChild loading>
+          <a href="/x">Link</a>
+        </Button>,
+      );
+      // No spinner because Slot bypass — only the link rendered
+      expect(screen.getByRole("link")).toBeInTheDocument();
+    });
+  });
 });
