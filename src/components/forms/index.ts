@@ -5,6 +5,7 @@ export * from "./select";
 export * from "./slider";
 export * from "./switch";
 export * from "./toggle";
+export * from "./toggle-group";
 export * from "./form";
 export * from "./number-input";
 export * from "./password-input";
