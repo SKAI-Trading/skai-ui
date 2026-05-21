@@ -82,9 +82,9 @@ const SlippageSelector = React.forwardRef<
                 isError && "text-red-500",
               )}
             >
-              <SettingsIcon className="h-3 w-3" />
+              <SettingsIcon className="h-3 w-3" aria-hidden="true" />
               {value}%
-              <ChevronDownIcon className="h-3 w-3" />
+              <ChevronDownIcon className="h-3 w-3" aria-hidden="true" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-64 p-3" align="end">
@@ -298,7 +298,7 @@ const DeadlineSelector = React.forwardRef<
               className="gap-1 h-7 px-2 text-xs"
             >
               {formatDeadline(value)}
-              <ChevronDownIcon className="h-3 w-3" />
+              <ChevronDownIcon className="h-3 w-3" aria-hidden="true" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-64 p-3" align="end">

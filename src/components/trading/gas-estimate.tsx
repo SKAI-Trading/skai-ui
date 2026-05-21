@@ -119,7 +119,7 @@ const GasEstimate = React.forwardRef<HTMLDivElement, GasEstimateProps>(
           )}
           {...props}
         >
-          <AlertTriangleIcon className="h-3 w-3" />
+          <AlertTriangleIcon className="h-3 w-3" aria-hidden="true" />
           <span>Error</span>
         </div>
       );
@@ -131,7 +131,7 @@ const GasEstimate = React.forwardRef<HTMLDivElement, GasEstimateProps>(
         className={cn(gasEstimateVariants({ size, variant }), className)}
         {...props}
       >
-        {showIcon && <FuelIcon className="h-3 w-3" />}
+        {showIcon && <FuelIcon className="h-3 w-3" aria-hidden="true" />}
         {gasPrice !== undefined && <span>{formatGasPrice(gasPrice)} gwei</span>}
         {estimatedCost !== undefined && (
           <>

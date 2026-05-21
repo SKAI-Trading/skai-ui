@@ -96,11 +96,14 @@ const TransactionStatusBadge = React.forwardRef<
           (status === "pending" ? (
             <Spinner size="xs" variant="muted" />
           ) : (
-            <Icon className="h-4 w-4" />
+            <Icon className="h-4 w-4" aria-hidden="true" />
           ))}
         <span>{displayLabel}</span>
         {txHash && explorerUrl && (
-          <ExternalLinkIcon className="h-3 w-3 opacity-60" />
+          <ExternalLinkIcon
+            className="h-3 w-3 opacity-60"
+            aria-hidden="true"
+          />
         )}
       </>
     );

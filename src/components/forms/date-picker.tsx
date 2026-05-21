@@ -310,7 +310,10 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>(
                     error && "border-destructive",
                   )}
                 >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  <CalendarIcon
+                    className="mr-2 h-4 w-4"
+                    aria-hidden="true"
+                  />
                   {value && isValid(value)
                     ? format(value, dateFormat)
                     : placeholder}
@@ -321,14 +324,18 @@ export const DatePicker = React.forwardRef<HTMLDivElement, DatePickerProps>(
                 <button
                   type="button"
                   onClick={handleClear}
+                  aria-label="Clear date"
                   className="absolute right-8 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 >
-                  <X className="h-4 w-4" />
+                  <X className="h-4 w-4" aria-hidden="true" />
                 </button>
               )}
 
               {allowInput && (
-                <CalendarIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                <CalendarIcon
+                  className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none"
+                  aria-hidden="true"
+                />
               )}
             </div>
           </PopoverTrigger>

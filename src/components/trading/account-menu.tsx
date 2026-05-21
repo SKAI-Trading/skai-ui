@@ -247,7 +247,10 @@ const AccountMenu = React.forwardRef<HTMLButtonElement, AccountMenuProps>(
           </div>
         )}
         {showChevron && (
-          <ChevronDown className="h-4 w-4 text-muted-foreground" />
+          <ChevronDown
+            className="h-4 w-4 text-muted-foreground"
+            aria-hidden="true"
+          />
         )}
       </button>
     );

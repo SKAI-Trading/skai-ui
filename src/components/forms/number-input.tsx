@@ -98,7 +98,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         disabled={disabled || value <= min}
         aria-label="Decrease value"
       >
-        <MinusIcon className="h-4 w-4" />
+        <MinusIcon className="h-4 w-4" aria-hidden="true" />
       </Button>
     );
 
@@ -112,7 +112,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         disabled={disabled || value >= max}
         aria-label="Increase value"
       >
-        <PlusIcon className="h-4 w-4" />
+        <PlusIcon className="h-4 w-4" aria-hidden="true" />
       </Button>
     );
 

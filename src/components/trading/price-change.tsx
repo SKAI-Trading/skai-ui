@@ -95,7 +95,9 @@ const PriceChange = React.forwardRef<HTMLSpanElement, PriceChangeProps>(
         aria-label={ariaLabel}
         {...props}
       >
-        {showIcon && <Icon className="h-[1em] w-[1em]" />}
+        {showIcon && (
+          <Icon className="h-[1em] w-[1em]" aria-hidden="true" />
+        )}
         <span>
           {sign}
           {prefix}
