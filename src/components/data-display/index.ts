@@ -12,3 +12,4 @@ export * from "./carousel";
 export * from "./masonry";
 export * from "./tour";
 export * from "./candlestick-chart";
+export * from "./kbd";

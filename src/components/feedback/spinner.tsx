@@ -87,7 +87,12 @@ const LoadingOverlay = React.forwardRef<HTMLDivElement, LoadingOverlayProps>(
     if (!loading) return <>{children}</>;
 
     return (
-      <div ref={ref} className={cn("relative", className)} {...props}>
+      <div
+        ref={ref}
+        className={cn("relative", className)}
+        aria-busy="true"
+        {...props}
+      >
         {children}
         <div
           className={cn(
@@ -95,10 +100,12 @@ const LoadingOverlay = React.forwardRef<HTMLDivElement, LoadingOverlayProps>(
             "bg-background/80",
             blur && "backdrop-blur-sm",
           )}
+          role="status"
+          aria-live="polite"
         >
           <Spinner size={spinnerSize} />
           {text && (
-            <p className="text-sm text-muted-foreground animate-pulse">
+            <p className="text-sm text-muted-foreground animate-pulse motion-reduce:animate-none">
               {text}
             </p>
           )}

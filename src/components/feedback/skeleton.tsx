@@ -15,7 +15,10 @@ const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>(
         aria-busy="true"
         aria-live="polite"
         aria-label={label}
-        className={cn("animate-pulse rounded-md bg-muted", className)}
+        className={cn(
+          "animate-pulse motion-reduce:animate-none rounded-md bg-muted",
+          className,
+        )}
         {...props}
       />
     );
