@@ -3,7 +3,9 @@
  * Provides helpers for ARIA attributes, keyboard navigation, and screen reader support
  */
 
+import * as React from "react";
 import { KeyboardEvent, useCallback, useRef, useState } from "react";
+import { Slot } from "@radix-ui/react-slot";
 
 // ============================================================================
 // ARIA Helper Utilities
@@ -247,15 +249,41 @@ export const visuallyHiddenStyles: React.CSSProperties = {
   overflow: "hidden",
   clip: "rect(0, 0, 0, 0)",
   whiteSpace: "nowrap",
+  wordWrap: "normal",
   border: 0,
 };
 
-/**
- * Visually hidden component
- */
-export function VisuallyHidden({ children }: { children: React.ReactNode }) {
-  return <span style={visuallyHiddenStyles}>{children}</span>;
+export interface VisuallyHiddenProps
+  extends React.HTMLAttributes<HTMLSpanElement> {
+  /** Render the child element instead of a wrapping <span> (Radix Slot). */
+  asChild?: boolean;
 }
+
+/**
+ * VisuallyHidden — content available to assistive tech but hidden from sighted
+ * users. Implements the WAI-ARIA sr-only recipe (1px clipped + absolute) so it
+ * works even when consumers haven't loaded the Tailwind preset.
+ *
+ * @example
+ * <button>
+ *   <TrashIcon aria-hidden="true" />
+ *   <VisuallyHidden>Delete row</VisuallyHidden>
+ * </button>
+ */
+export const VisuallyHidden = React.forwardRef<
+  HTMLSpanElement,
+  VisuallyHiddenProps
+>(({ asChild = false, style, ...props }, ref) => {
+  const Comp: React.ElementType = asChild ? Slot : "span";
+  return (
+    <Comp
+      ref={ref}
+      style={{ ...visuallyHiddenStyles, ...style }}
+      {...props}
+    />
+  );
+});
+VisuallyHidden.displayName = "VisuallyHidden";
 
 // ============================================================================
 // Focus Management Utilities

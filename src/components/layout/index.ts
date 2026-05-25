@@ -1,7 +1,6 @@
 // Layout Components
 export * from "./separator";
 export * from "./scroll-area";
-export * from "./aspect-ratio";
 export * from "./accordion";
 export * from "./collapsible";
 export * from "./sidebar";

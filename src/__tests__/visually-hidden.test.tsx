@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { VisuallyHidden } from "../components/utility/visually-hidden";
+import { VisuallyHidden } from "../lib/accessibility";
 
 describe("VisuallyHidden", () => {
   it("renders content readable by screen readers", () => {

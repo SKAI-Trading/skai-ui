@@ -449,8 +449,13 @@ export const AspectRatio = React.forwardRef<HTMLDivElement, AspectRatioProps>(
       <div
         ref={ref}
         className={cn("relative w-full", className)}
+        // Use the modern `aspect-ratio` property (Baseline 2021+, supported in
+        // Safari 15 / Chromium 88 / Firefox 89). Falls back gracefully because
+        // the inner absolutely-positioned child still fills whatever box the
+        // parent ends up rendering. Previously used a paddingBottom hack which
+        // broke when consumers wanted `height: auto` on the child.
         style={{
-          paddingBottom: `${100 / numericRatio}%`,
+          aspectRatio: `${numericRatio}`,
           ...style,
         }}
         {...props}

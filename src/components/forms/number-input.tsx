@@ -96,7 +96,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         variant="outline"
         size="icon"
         className="h-8 w-8 shrink-0"
-        onClick={decrement}
+        onClick={(e) => decrement(e.shiftKey ? 10 : 1)}
         disabled={disabled || value <= min}
         aria-label="Decrease value"
       >
@@ -110,7 +110,7 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         variant="outline"
         size="icon"
         className="h-8 w-8 shrink-0"
-        onClick={increment}
+        onClick={(e) => increment(e.shiftKey ? 10 : 1)}
         disabled={disabled || value >= max}
         aria-label="Increase value"
       >
