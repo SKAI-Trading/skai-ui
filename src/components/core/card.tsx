@@ -1,19 +1,31 @@
 import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "../../lib/utils";
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
-      className,
-    )}
-    {...props}
-  />
-));
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** When true, renders the child as the root element (Radix Slot). Useful for
+   * wrapping anchors / Links without nested interactive elements. */
+  asChild?: boolean;
+  /** Optional alternative element to render (e.g., "article", "section"). Ignored
+   * when `asChild` is true. */
+  as?: React.ElementType;
+}
+
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, asChild = false, as, ...props }, ref) => {
+    const Comp: React.ElementType = asChild ? Slot : (as ?? "div");
+    return (
+      <Comp
+        ref={ref}
+        className={cn(
+          "rounded-lg border bg-card text-card-foreground shadow-sm",
+          className,
+        )}
+        {...props}
+      />
+    );
+  },
+);
 Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<
@@ -28,19 +40,24 @@ const CardHeader = React.forwardRef<
 ));
 CardHeader.displayName = "CardHeader";
 
-const CardTitle = React.forwardRef<
-  HTMLHeadingElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className,
-    )}
-    {...props}
-  />
-));
+export interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  /** Heading level / element ("h1"-"h6", default "h3"). Lets consumers preserve
+   * a proper document outline without re-styling. */
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+}
+
+const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
+  ({ className, as: Comp = "h3", ...props }, ref) => (
+    <Comp
+      ref={ref}
+      className={cn(
+        "text-2xl font-semibold leading-none tracking-tight",
+        className,
+      )}
+      {...props}
+    />
+  ),
+);
 CardTitle.displayName = "CardTitle";
 
 const CardDescription = React.forwardRef<
@@ -81,19 +98,28 @@ CardFooter.displayName = "CardFooter";
 // Uses SKAI design tokens: 24px border radius, Green Coal backgrounds
 // =============================================================================
 
-const SkaiCard = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-[24px] border border-[#123F3C] bg-[#122524] text-white shadow-[0px_8px_24px_rgba(0,0,0,0.16)]",
-      className,
-    )}
-    {...props}
-  />
-));
+export interface SkaiCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Render as Radix Slot (wrap a child element like <a>). */
+  asChild?: boolean;
+  /** Alternative element. Ignored when asChild is true. */
+  as?: React.ElementType;
+}
+
+const SkaiCard = React.forwardRef<HTMLDivElement, SkaiCardProps>(
+  ({ className, asChild = false, as, ...props }, ref) => {
+    const Comp: React.ElementType = asChild ? Slot : (as ?? "div");
+    return (
+      <Comp
+        ref={ref}
+        className={cn(
+          "rounded-[24px] border border-[#123F3C] bg-[#122524] text-white shadow-[0px_8px_24px_rgba(0,0,0,0.16)]",
+          className,
+        )}
+        {...props}
+      />
+    );
+  },
+);
 SkaiCard.displayName = "SkaiCard";
 
 const SkaiCardHeader = React.forwardRef<
@@ -108,19 +134,23 @@ const SkaiCardHeader = React.forwardRef<
 ));
 SkaiCardHeader.displayName = "SkaiCardHeader";
 
-const SkaiCardTitle = React.forwardRef<
-  HTMLHeadingElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "font-['Manrope'] text-lg font-semibold leading-6 tracking-[-0.04em] text-white",
-      className,
-    )}
-    {...props}
-  />
-));
+export interface SkaiCardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  /** Heading level / element ("h1"-"h6", default "h3"). */
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+}
+
+const SkaiCardTitle = React.forwardRef<HTMLHeadingElement, SkaiCardTitleProps>(
+  ({ className, as: Comp = "h3", ...props }, ref) => (
+    <Comp
+      ref={ref}
+      className={cn(
+        "font-['Manrope'] text-lg font-semibold leading-6 tracking-[-0.04em] text-white",
+        className,
+      )}
+      {...props}
+    />
+  ),
+);
 SkaiCardTitle.displayName = "SkaiCardTitle";
 
 const SkaiCardDescription = React.forwardRef<
