@@ -102,6 +102,7 @@ const Notification = React.forwardRef<HTMLDivElement, NotificationProps>(
         ref={ref}
         role={isUrgent ? "alert" : "status"}
         aria-live={isUrgent ? "assertive" : "polite"}
+        aria-atomic="true"
         className={cn(notificationVariants({ variant }), className)}
         {...props}
       >
