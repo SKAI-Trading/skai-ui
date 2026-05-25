@@ -114,6 +114,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
         )}
         role="list"
         aria-label="Progress steps"
+        aria-orientation={orientation}
       >
         {steps.map((step, index) => {
           const status = getStepStatus(index);
@@ -172,13 +173,13 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
                   }${status === "current" ? " (current)" : ""}`}
                 >
                   {status === "completed" ? (
-                    <Check className="h-4 w-4" />
+                    <Check className="h-4 w-4" aria-hidden="true" />
                   ) : showNumbers ? (
                     index + 1
                   ) : step.icon ? (
                     step.icon
                   ) : (
-                    <div className="h-2 w-2 rounded-full bg-current" />
+                    <div className="h-2 w-2 rounded-full bg-current" aria-hidden="true" />
                   )}
                 </button>
 

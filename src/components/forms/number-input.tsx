@@ -55,13 +55,13 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
 
     const clamp = (v: number) => Math.min(max, Math.max(min, v));
 
-    const increment = () => {
-      const newValue = clamp(value + step);
+    const increment = (factor = 1) => {
+      const newValue = clamp(value + step * factor);
       onChange(newValue);
     };
 
-    const decrement = () => {
-      const newValue = clamp(value - step);
+    const decrement = (factor = 1) => {
+      const newValue = clamp(value - step * factor);
       onChange(newValue);
     };
 
@@ -78,13 +78,15 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
       setInputValue(formatValue(value));
     };
 
+    // ArrowUp / ArrowDown step the value. Shift increases the step 10x to match
+    // spinbutton conventions in most UI kits (Material / Carbon / FAST).
     const handleKeyDown = (e: React.KeyboardEvent) => {
       if (e.key === "ArrowUp") {
         e.preventDefault();
-        increment();
+        increment(e.shiftKey ? 10 : 1);
       } else if (e.key === "ArrowDown") {
         e.preventDefault();
-        decrement();
+        decrement(e.shiftKey ? 10 : 1);
       }
     };
 
@@ -123,6 +125,10 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
             ref={ref}
             type="text"
             inputMode="numeric"
+            role="spinbutton"
+            aria-valuenow={value}
+            aria-valuemin={Number.isFinite(min) ? min : undefined}
+            aria-valuemax={Number.isFinite(max) ? max : undefined}
             value={inputValue}
             onChange={handleChange}
             onBlur={handleBlur}
