@@ -16,13 +16,12 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
 
-interface OnlineIndicatorProps {
+interface OnlineIndicatorProps
+  extends Omit<React.HTMLAttributes<HTMLSpanElement>, "children"> {
   /** Whether the user/item is online */
   isOnline: boolean;
   /** Size of the indicator dot */
   size?: "sm" | "md" | "lg";
-  /** Additional CSS classes */
-  className?: string;
   /** Position absolutely in corner of parent */
   absolute?: boolean;
   /** Hide when offline instead of showing gray dot */
@@ -37,6 +36,7 @@ const OnlineIndicator = React.forwardRef<HTMLSpanElement, OnlineIndicatorProps>(
       className,
       absolute = false,
       hideWhenOffline = false,
+      ...rest
     },
     ref,
   ) => {
@@ -54,8 +54,9 @@ const OnlineIndicator = React.forwardRef<HTMLSpanElement, OnlineIndicatorProps>(
       <span
         ref={ref}
         role="status"
-        aria-label={statusLabel}
-        title={statusLabel}
+        aria-label={rest["aria-label"] ?? statusLabel}
+        title={rest.title ?? statusLabel}
+        {...rest}
         className={cn(
           "rounded-full ring-2 ring-background flex-shrink-0",
           isOnline ? "bg-green-500" : "bg-gray-400",

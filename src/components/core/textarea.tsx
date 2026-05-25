@@ -1,19 +1,89 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
 
-type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+/**
+ * Props for the Textarea component
+ * Extends native textarea props with the same accessibility wiring as Input
+ * (error / description + aria-invalid + aria-describedby).
+ */
+export interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  /** Error message to display - also sets aria-invalid */
+  error?: string;
+  /** ID for the error message element (auto-generated if not provided) */
+  errorId?: string;
+  /** Description text under the textarea */
+  description?: string;
+  /** ID for the description element (auto-generated if not provided) */
+  descriptionId?: string;
+}
 
+/**
+ * Textarea — multi-line text input with the same a11y affordances as Input.
+ *
+ * @example
+ * <Textarea description="Max 500 characters" />
+ * <Textarea error="This field is required" />
+ */
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
+  (
+    {
+      className,
+      error,
+      errorId,
+      description,
+      descriptionId,
+      "aria-describedby": ariaDescribedBy,
+      ...props
+    },
+    ref,
+  ) => {
+    const generatedErrorId = React.useId();
+    const generatedDescriptionId = React.useId();
+
+    const effectiveErrorId = errorId || generatedErrorId;
+    const effectiveDescriptionId = descriptionId || generatedDescriptionId;
+
+    const hasError = !!error;
+
+    const describedByParts: string[] = [];
+    if (ariaDescribedBy) describedByParts.push(ariaDescribedBy);
+    if (description) describedByParts.push(effectiveDescriptionId);
+    if (hasError) describedByParts.push(effectiveErrorId);
+    const finalDescribedBy =
+      describedByParts.length > 0 ? describedByParts.join(" ") : undefined;
+
     return (
-      <textarea
-        className={cn(
-          "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className,
+      <div className={description || hasError ? "space-y-1" : undefined}>
+        <textarea
+          className={cn(
+            "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            hasError && "border-destructive focus-visible:ring-destructive",
+            className,
+          )}
+          ref={ref}
+          aria-invalid={hasError || undefined}
+          aria-describedby={finalDescribedBy}
+          {...props}
+        />
+        {description && !hasError && (
+          <p
+            id={effectiveDescriptionId}
+            className="text-xs text-muted-foreground"
+          >
+            {description}
+          </p>
         )}
-        ref={ref}
-        {...props}
-      />
+        {hasError && (
+          <p
+            id={effectiveErrorId}
+            className="text-xs text-destructive"
+            role="alert"
+          >
+            {error}
+          </p>
+        )}
+      </div>
     );
   },
 );

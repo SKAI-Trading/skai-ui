@@ -1,15 +1,14 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
 
-interface CircularProgressProps {
+interface CircularProgressProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "children"> {
   /** Progress value (0–100). Values outside the range are clamped. */
   value: number;
   /** Size in pixels. Default: 64. */
   size?: number;
   /** Stroke width in pixels. Default: 4. */
   strokeWidth?: number;
-  /** Additional className for the wrapper. */
-  className?: string;
   /** Show the centered percentage label. */
   showLabel?: boolean;
   /** Track (background ring) className. */
@@ -24,8 +23,11 @@ interface CircularProgressProps {
  * CircularProgress — SVG circular progress indicator (Figma: Loading states)
  *
  * Displays a circular progress ring with optional percentage label.
+ *
+ * `ref` points at the wrapper `<div>` so consumers can read/measure it; the
+ * inner `<svg>` carries the progressbar ARIA role.
  */
-const CircularProgress = React.forwardRef<SVGSVGElement, CircularProgressProps>(
+const CircularProgress = React.forwardRef<HTMLDivElement, CircularProgressProps>(
   (
     {
       value,
@@ -36,6 +38,7 @@ const CircularProgress = React.forwardRef<SVGSVGElement, CircularProgressProps>(
       trackClassName,
       indicatorClassName,
       label = "Progress",
+      ...rest
     },
     ref,
   ) => {
@@ -45,9 +48,15 @@ const CircularProgress = React.forwardRef<SVGSVGElement, CircularProgressProps>(
     const offset = circumference - (clamped / 100) * circumference;
 
     return (
-      <div className={cn("relative inline-flex items-center justify-center", className)}>
+      <div
+        ref={ref}
+        {...rest}
+        className={cn(
+          "relative inline-flex items-center justify-center",
+          className,
+        )}
+      >
         <svg
-          ref={ref}
           width={size}
           height={size}
           viewBox={`0 0 ${size} ${size}`}
@@ -85,7 +94,10 @@ const CircularProgress = React.forwardRef<SVGSVGElement, CircularProgressProps>(
           />
         </svg>
         {showLabel && (
-          <span className="absolute text-xs font-numbers tabular-nums text-foreground">
+          <span
+            aria-hidden="true"
+            className="absolute text-xs font-numbers tabular-nums text-foreground"
+          >
             {Math.round(clamped)}%
           </span>
         )}
