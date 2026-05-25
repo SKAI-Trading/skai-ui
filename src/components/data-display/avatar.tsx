@@ -20,9 +20,14 @@ Avatar.displayName = AvatarPrimitive.Root.displayName;
 const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
+>(({ className, alt = "", ...props }, ref) => (
+  // Radix forwards `alt` to the inner <img>. We default it to "" so the image
+  // is treated as decorative (the AvatarFallback / surrounding context usually
+  // supplies the accessible name). Consumers should still pass a real `alt`
+  // when the avatar is the sole identifier of the user.
   <AvatarPrimitive.Image
     ref={ref}
+    alt={alt}
     className={cn("aspect-square h-full w-full", className)}
     {...props}
   />
