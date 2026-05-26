@@ -46,12 +46,27 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
     },
     ref,
   ) => {
-    const [inputValue, setInputValue] = React.useState(formatValue(value));
-
-    // Sync input value when prop changes
+    // Hold the latest format/parse callbacks in refs so consumers can pass
+    // inline `formatValue={(v) => v.toFixed(2)}` without re-firing the sync
+    // effect on every parent render (which would wipe in-flight keystrokes
+    // and break controlled typing). The callback identity drifts every
+    // render; the underlying behaviour is captured at call time instead.
+    const formatValueRef = React.useRef(formatValue);
+    const parseValueRef = React.useRef(parseValue);
     React.useEffect(() => {
-      setInputValue(formatValue(value));
-    }, [value, formatValue]);
+      formatValueRef.current = formatValue;
+      parseValueRef.current = parseValue;
+    });
+
+    const [inputValue, setInputValue] = React.useState(() =>
+      formatValueRef.current(value),
+    );
+
+    // Sync input value when the numeric prop changes. Intentionally NOT
+    // depending on the formatter — see ref dance above.
+    React.useEffect(() => {
+      setInputValue(formatValueRef.current(value));
+    }, [value]);
 
     const clamp = (v: number) => Math.min(max, Math.max(min, v));
 
@@ -68,14 +83,14 @@ const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const raw = e.target.value;
       setInputValue(raw);
-      const parsed = parseValue(raw);
+      const parsed = parseValueRef.current(raw);
       if (!isNaN(parsed)) {
         onChange(clamp(parsed));
       }
     };
 
     const handleBlur = () => {
-      setInputValue(formatValue(value));
+      setInputValue(formatValueRef.current(value));
     };
 
     // ArrowUp / ArrowDown step the value. Shift increases the step 10x to match
