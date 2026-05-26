@@ -155,6 +155,27 @@ export const hoverColors = {
 } as const;
 
 /**
+ * Tier metallic colors (subscription tier accent colors)
+ *
+ * These match `TIER_CONFIG` in `components/trading/tier-badge.tsx` and are exposed
+ * as standalone Tailwind tokens (`tier-bronze`, `tier-silver`, …) so the
+ * tier-upgrade-feature wave (3sSzw1KewMtUbeLAv7uW0r) can use them without
+ * inlining hex codes. Figma itself does NOT visually encode tier with these
+ * metallic accents on the upgrade screens (it uses `icons/tiers/*` glyphs +
+ * the standard Sky Blue CTA); these tokens exist for in-app surfaces that DO
+ * need an accent — e.g. progress bars, tier-card outlines, tier chips.
+ */
+export const tierColors = {
+  free: "#94A3B8",      // Slate-400 (no metallic)
+  bronze: "#CD7F32",    // Classic bronze
+  silver: "#C0C0C0",    // Classic silver
+  gold: "#FFD700",      // Classic gold
+  platinum: "#E5E4E2",  // Pale platinum
+  diamond: "#B9F2FF",   // Diamond blue (matches Figma cool cast)
+  legend: "#9333EA",    // Purple legend
+} as const;
+
+/**
  * Gradient colors (for multi-stop gradient backgrounds)
  */
 export const gradientColors = {
@@ -271,6 +292,15 @@ export const skaiColors = {
   "dark-space-from": gradientColors.darkSpaceFrom,
   "dark-space-via": gradientColors.darkSpaceVia,
   "dark-space-to": gradientColors.darkSpaceTo,
+
+  // Tier metallic accents (subscription tiers — see tierColors + TIER_CONFIG)
+  "tier-free": tierColors.free,
+  "tier-bronze": tierColors.bronze,
+  "tier-silver": tierColors.silver,
+  "tier-gold": tierColors.gold,
+  "tier-platinum": tierColors.platinum,
+  "tier-diamond": tierColors.diamond,
+  "tier-legend": tierColors.legend,
 } as const;
 
 // =============================================================================
@@ -1007,6 +1037,21 @@ export const skaiButton = {
       borderRadius: "12px",
       iconSize: "16px",
     },
+    /**
+     * Pill (Figma tier-upgrade) — used for inner-toggle pairs inside a rounded-full
+     * container (e.g. "My wallet | Send tokens" payment-method toggle on checkout).
+     * Asymmetric corner radii (24px outer / 8px inner) are applied per-button by
+     * the caller via rounded-tl/rounded-tr utilities — this token only holds the
+     * shared size/typography. From Figma node 2988:16799 / 2988:16800.
+     */
+    pill: {
+      height: "40px",
+      padding: "14px 24px", // py-3.5 px-6
+      fontSize: "14px",
+      lineHeight: "18px",
+      borderRadius: "8px", // inner corner; outer is rounded-3xl on caller
+      iconSize: "16px",
+    },
   },
   types: {
     primary: {
@@ -1167,6 +1212,14 @@ export const skaiIcons = {
     sm: "16px",
     md: "24px",
     lg: "48px",
+    /**
+     * Tier-celebration sizes used by the tier-upgrade wave (Figma `icons/tiers`).
+     * `xl` (40px) — checkout summary tier glyph (node 6014:84835 enclosure was 18px
+     * inside a 24px hit-area; the larger token-row tier glyph is 40px).
+     * `2xl` (90px) — welcome-modal centerpiece glyph (node 2992:19212).
+     */
+    xl: "40px",
+    "2xl": "90px",
   },
   action: [
     "close",

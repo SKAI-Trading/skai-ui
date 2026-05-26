@@ -154,12 +154,12 @@ export type SkaiIconName =
   | "tier-diamond"
   | "tier-legend";
 
-export type SkaiIconSize = "xs" | "sm" | "md" | "lg";
+export type SkaiIconSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 
 export interface SkaiIconProps extends React.SVGAttributes<SVGSVGElement> {
   /** Icon name from the SKAI design system */
   name: SkaiIconName;
-  /** Size preset from Figma: xs (10px), sm (16px), md (24px), lg (48px) */
+  /** Size preset from Figma: xs (10px), sm (16px), md (24px), lg (48px), xl (40px tier celebration), 2xl (90px modal centerpiece) */
   size?: SkaiIconSize;
   /** Custom color (defaults to currentColor) */
   color?: string;
@@ -170,6 +170,8 @@ const sizeMap: Record<SkaiIconSize, number> = {
   sm: 16,
   md: 24,
   lg: 48,
+  xl: 40, // tier-upgrade summary glyph (Figma node 6014:84835)
+  "2xl": 90, // tier-upgrade welcome-modal centerpiece (Figma node 2992:19212)
 };
 
 // SVG path data for each icon
