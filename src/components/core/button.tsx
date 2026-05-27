@@ -146,6 +146,9 @@ const skaiButtonVariants = cva(
         // Small: 46px height, 24px horizontal padding
         small:
           "h-[46px] px-6 py-3 text-sm leading-[18px] rounded-xl gap-2 [&_svg]:size-4",
+        // Pill: 40px height, 24px horizontal padding (compact action surface)
+        pill:
+          "h-[40px] px-6 py-3.5 text-sm leading-[18px] rounded-xl gap-2 [&_svg]:size-4",
       },
     },
     defaultVariants: {
