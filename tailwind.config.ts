@@ -18,6 +18,20 @@ const config: Config = {
         // SKAI Design System Colors (from Figma)
         ...skaiColors,
 
+        // Tier metallic accent namespace — nested form of the flat `tier-*` keys
+        // in skaiColors so `bg-tier-bronze`, `ring-tier-silver`, etc. resolve.
+        // Hex values come from src/lib/design-tokens.ts → tierColors.
+        // Do NOT inline new hex codes — extend design-tokens.ts instead.
+        tier: {
+          free: "#94A3B8",
+          bronze: "#CD7F32",
+          silver: "#C0C0C0",
+          gold: "#FFD700",
+          platinum: "#E5E4E2",
+          diamond: "#B9F2FF",
+          legend: "#9333EA",
+        },
+
         // Semantic colors for shadcn components (CSS variable based)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
