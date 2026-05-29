@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useRef } from "react";
 
 export interface KeyboardShortcutOptions {
   /** Whether Ctrl/Cmd key is required */
@@ -38,8 +38,21 @@ export function useKeyboardShortcut(
     stopPropagation = false,
   } = options;
 
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent) => {
+  // Keep the latest callback in a ref so consumers can pass inline closures
+  // (`useKeyboardShortcut("k", () => openCommand(searchTerm))`) without
+  // re-attaching the document-level keydown listener on every render. The
+  // previous version put `callback` directly in the effect deps, so each
+  // parent render detached + re-attached — at 60fps this is a measurable
+  // perf cost and racy under React 18 batched setState bursts (W60-UI-01).
+  const callbackRef = useRef(callback);
+  useEffect(() => {
+    callbackRef.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    if (!enabled) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
       // Check if modifiers match
       const ctrlMatch = ctrl
         ? event.ctrlKey || event.metaKey
@@ -58,18 +71,13 @@ export function useKeyboardShortcut(
         if (stopPropagation) {
           event.stopPropagation();
         }
-        callback(event);
+        callbackRef.current(event);
       }
-    },
-    [key, ctrl, shift, alt, meta, preventDefault, stopPropagation, callback],
-  );
-
-  useEffect(() => {
-    if (!enabled) return;
+    };
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [enabled, handleKeyDown]);
+  }, [enabled, key, ctrl, shift, alt, meta, preventDefault, stopPropagation]);
 }
 
 /**

@@ -11,6 +11,15 @@ export function useClickOutside<T extends HTMLElement = HTMLElement>(
   enabled: boolean = true,
 ): RefObject<T> {
   const ref = useRef<T>(null);
+  // Inline-closure consumers (`useClickOutside(() => setOpen(false))`) used to
+  // detach + re-attach the document-level mousedown/touchstart listeners on
+  // every render because `handler` was in the deps array. Latest-callback ref
+  // keeps the listener stable while still always calling the freshest closure
+  // (W60-UI-01).
+  const handlerRef = useRef(handler);
+  useEffect(() => {
+    handlerRef.current = handler;
+  }, [handler]);
 
   useEffect(() => {
     if (!enabled) return;
@@ -20,7 +29,7 @@ export function useClickOutside<T extends HTMLElement = HTMLElement>(
       if (!el || el.contains(event.target as Node)) {
         return;
       }
-      handler(event);
+      handlerRef.current(event);
     };
 
     document.addEventListener("mousedown", listener);
@@ -30,7 +39,7 @@ export function useClickOutside<T extends HTMLElement = HTMLElement>(
       document.removeEventListener("mousedown", listener);
       document.removeEventListener("touchstart", listener);
     };
-  }, [handler, enabled]);
+  }, [enabled]);
 
   return ref;
 }
@@ -46,17 +55,24 @@ export function useClickOutsideMultiple(
   handler: (event: MouseEvent | TouchEvent) => void,
   enabled: boolean = true,
 ): void {
+  const handlerRef = useRef(handler);
+  const refsRef = useRef(refs);
+  useEffect(() => {
+    handlerRef.current = handler;
+    refsRef.current = refs;
+  });
+
   useEffect(() => {
     if (!enabled) return;
 
     const listener = (event: MouseEvent | TouchEvent) => {
-      const isInside = refs.some((ref) => {
+      const isInside = refsRef.current.some((ref) => {
         const el = ref.current;
         return el && el.contains(event.target as Node);
       });
 
       if (!isInside) {
-        handler(event);
+        handlerRef.current(event);
       }
     };
 
@@ -67,5 +83,5 @@ export function useClickOutsideMultiple(
       document.removeEventListener("mousedown", listener);
       document.removeEventListener("touchstart", listener);
     };
-  }, [refs, handler, enabled]);
+  }, [enabled]);
 }
