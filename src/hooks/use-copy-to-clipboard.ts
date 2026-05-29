@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 
 export interface UseCopyToClipboardReturn {
   /** The currently copied text */
@@ -21,8 +21,29 @@ export function useCopyToClipboard(
 ): UseCopyToClipboardReturn {
   const [copiedText, setCopiedText] = useState<string | null>(null);
   const [isCopied, setIsCopied] = useState(false);
+  // Track the in-flight reset timer + mounted state so we never set state
+  // after unmount (React 18 warning) and so rapid successive copy() calls
+  // don't accumulate stale timers (W60-UI-01).
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isMountedRef = useRef(true);
+
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+      if (resetTimerRef.current) {
+        clearTimeout(resetTimerRef.current);
+        resetTimerRef.current = null;
+      }
+    };
+  }, []);
 
   const reset = useCallback(() => {
+    if (resetTimerRef.current) {
+      clearTimeout(resetTimerRef.current);
+      resetTimerRef.current = null;
+    }
+    if (!isMountedRef.current) return;
     setCopiedText(null);
     setIsCopied(false);
   }, []);
@@ -36,17 +57,24 @@ export function useCopyToClipboard(
 
       try {
         await navigator.clipboard.writeText(text);
+        if (!isMountedRef.current) return true;
         setCopiedText(text);
         setIsCopied(true);
 
-        // Auto-reset after delay
+        // Auto-reset after delay — cancel any prior pending reset first so
+        // rapid back-to-back copy() calls don't leave a stale timer running.
+        if (resetTimerRef.current) {
+          clearTimeout(resetTimerRef.current);
+          resetTimerRef.current = null;
+        }
         if (resetDelay > 0) {
-          setTimeout(reset, resetDelay);
+          resetTimerRef.current = setTimeout(reset, resetDelay);
         }
 
         return true;
       } catch (error) {
         console.warn("Copy failed", error);
+        if (!isMountedRef.current) return false;
         setCopiedText(null);
         setIsCopied(false);
         return false;
