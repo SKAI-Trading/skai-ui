@@ -286,11 +286,26 @@ export function Autocomplete({
           {renderDisplayValue()}
           <div className="ml-2 flex shrink-0 items-center gap-1">
             {clearable && selectedOptions.length > 0 && !disabled && (
-              <X
-                className="h-4 w-4 opacity-50 hover:opacity-100"
+              // a11y: render an actual button — lucide's <X> is an inert SVG and
+              // onClick alone is unreachable by keyboard and not exposed to AT.
+              <span
+                role="button"
+                tabIndex={0}
                 onClick={handleClear}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleClear(
+                      e as unknown as React.MouseEvent<HTMLSpanElement>,
+                    );
+                  }
+                }}
                 aria-label="Clear selection"
-              />
+                className="rounded-sm opacity-50 hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
+              </span>
             )}
             {loading ? (
               <Loader2 className="h-4 w-4 animate-spin opacity-50" />
