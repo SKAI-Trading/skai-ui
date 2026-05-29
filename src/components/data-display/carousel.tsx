@@ -286,14 +286,18 @@ const CarouselDots = React.forwardRef<
       {scrollSnaps.map((_, index) => (
         <button
           key={index}
+          // type="button" prevents accidental form submission when carousels
+          // are nested in <form>; aria-current marks the active slide for AT.
+          type="button"
           className={cn(
-            "h-2 w-2 rounded-full transition-colors",
+            "h-2 w-2 rounded-full transition-colors motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
             index === selectedIndex
               ? "bg-primary"
               : "bg-muted-foreground/30 hover:bg-muted-foreground/50",
           )}
           onClick={() => api?.scrollTo(index)}
           aria-label={`Go to slide ${index + 1}`}
+          aria-current={index === selectedIndex ? "true" : undefined}
         />
       ))}
     </div>
