@@ -96,7 +96,18 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
     ref,
   ) => {
     const [showPassword, setShowPassword] = React.useState(false);
-    const [value, setValue] = React.useState("");
+    // When the caller controls `value` (or `defaultValue`), use that for the
+    // strength meter — the previous version only tracked keystrokes via local
+    // state, so a controlled `<PasswordInput value={pw} />` never updated the
+    // strength bar and "showStrength && value" was always false on first paint.
+    const [uncontrolledValue, setUncontrolledValue] = React.useState(() =>
+      typeof props.defaultValue === "string" ? props.defaultValue : "",
+    );
+    const controlledValue = props.value;
+    const isControlled = controlledValue !== undefined;
+    const trackedValue = isControlled
+      ? String(controlledValue ?? "")
+      : uncontrolledValue;
 
     const generatedId = React.useId();
     const inputId = id || generatedId;
@@ -104,19 +115,21 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
     const effectiveErrorId = errorId || generatedErrorId;
     const strengthId = React.useId();
 
-    const strength = strengthCalculator(value);
+    const strength = strengthCalculator(trackedValue);
     const hasError = !!error;
 
     // Build aria-describedby
     const describedByParts: string[] = [];
     if (ariaDescribedBy) describedByParts.push(ariaDescribedBy);
     if (hasError) describedByParts.push(effectiveErrorId);
-    if (showStrength && value) describedByParts.push(strengthId);
+    if (showStrength && trackedValue) describedByParts.push(strengthId);
     const finalDescribedBy =
       describedByParts.length > 0 ? describedByParts.join(" ") : undefined;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
+      if (!isControlled) {
+        setUncontrolledValue(e.target.value);
+      }
       props.onChange?.(e);
     };
 
@@ -166,7 +179,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
         )}
 
         {/* Strength indicator */}
-        {showStrength && value && (
+        {showStrength && trackedValue && (
           <div className="space-y-1">
             <div
               className="h-1.5 w-full rounded-full bg-muted overflow-hidden"
