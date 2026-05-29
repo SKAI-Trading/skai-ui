@@ -58,22 +58,37 @@ export function useLocalStorage<T>(
     }
   }, [key, initialValue]);
 
-  // Sync with other tabs/windows
+  // Sync with other tabs/windows. Both listeners MUST be named handlers so
+  // the corresponding removeEventListener actually unregisters them — passing
+  // an inline arrow on both sides creates two different Function identities
+  // and leaks the original handler on every effect re-run (W60-UI-01).
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === key && e.newValue !== null) {
-        setStoredValue(JSON.parse(e.newValue));
+      if (e.key !== key || e.newValue === null) return;
+      try {
+        setStoredValue(JSON.parse(e.newValue) as T);
+      } catch (error) {
+        // Cross-tab write produced un-parseable JSON — keep the current value
+        // rather than blowing up inside a global event handler.
+        console.warn(
+          `Error parsing cross-tab localStorage value for "${key}":`,
+          error,
+        );
       }
     };
 
+    const handleLocalChange = () => {
+      setStoredValue(readValue());
+    };
+
     window.addEventListener("storage", handleStorageChange);
-    window.addEventListener("local-storage", () => setStoredValue(readValue()));
+    window.addEventListener("local-storage", handleLocalChange);
 
     return () => {
       window.removeEventListener("storage", handleStorageChange);
-      window.removeEventListener("local-storage", () =>
-        setStoredValue(readValue()),
-      );
+      window.removeEventListener("local-storage", handleLocalChange);
     };
   }, [key, readValue]);
 
