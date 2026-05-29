@@ -45,8 +45,27 @@ export function useCountdown(
 
   const [totalSeconds, setTotalSeconds] = useState(calculateTimeLeft);
   const [isRunning, setIsRunning] = useState(autoStart);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const initialSecondsRef = useRef(calculateTimeLeft());
+
+  // Latest onComplete in a ref — inline `onComplete={() => navigate('/done')}`
+  // would otherwise tear down + recreate the interval every parent render,
+  // dropping ticks and making the countdown visibly stutter (W60-UI-01).
+  const onCompleteRef = useRef(onComplete);
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
+
+  // If the consumer swaps `targetDate` (e.g. user picks a new deadline) the
+  // hook used to keep counting from the OLD target's totalSeconds because the
+  // initializer only ran at mount. Now we recalc whenever targetDate
+  // identity changes, and the visible totalSeconds catches up in the same
+  // render so the UI never shows stale data for a frame.
+  useEffect(() => {
+    const fresh = calculateTimeLeft();
+    initialSecondsRef.current = fresh;
+    setTotalSeconds(fresh);
+  }, [calculateTimeLeft]);
 
   const isComplete = totalSeconds <= 0;
 
@@ -69,7 +88,7 @@ export function useCountdown(
       setTotalSeconds((prev) => {
         const next = prev - 1;
         if (next <= 0) {
-          onComplete?.();
+          onCompleteRef.current?.();
           return 0;
         }
         return next;
@@ -81,7 +100,7 @@ export function useCountdown(
         clearInterval(intervalRef.current);
       }
     };
-  }, [isRunning, isComplete, interval, onComplete]);
+  }, [isRunning, isComplete, interval]);
 
   const start = useCallback(() => setIsRunning(true), []);
   const pause = useCallback(() => setIsRunning(false), []);
