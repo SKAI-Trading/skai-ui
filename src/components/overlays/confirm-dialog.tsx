@@ -54,9 +54,24 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
   disableCancel = false,
 }) => {
   const handleConfirm = async () => {
-    await onConfirm();
-    if (!loading) {
-      onOpenChange(false);
+    // onConfirm may be an async action that rejects (RPC error, signing
+    // refusal, etc.). The previous version awaited the promise without a
+    // catch, so a rejection unwound past Radix's event handler and surfaced
+    // as an "unhandled promise rejection" Sentry event with no useful frame.
+    // Leave the dialog open on failure so the user can retry; the consumer
+    // is responsible for showing the error inside the dialog (e.g. via the
+    // `error` prop pattern used elsewhere in skai-ui).
+    try {
+      await onConfirm();
+      if (!loading) {
+        onOpenChange(false);
+      }
+    } catch (err) {
+      // Keep the dialog open on failure so the user can retry; the consumer is
+      // responsible for showing the error inside the dialog. Do NOT swallow
+      // silently (no-silent-failures policy) — log so the failure is at least
+      // visible in the console / any global error-capture wired by the host.
+      console.error("ConfirmDialog onConfirm failed:", err);
     }
   };
 
