@@ -59,6 +59,13 @@ const TokenSelect = React.forwardRef<HTMLButtonElement, TokenSelectProps>(
     const [search, setSearch] = React.useState("");
     const [open, setOpen] = React.useState(false);
 
+    // Reset the search query whenever the dropdown closes so the next open
+    // starts from the full token list instead of a stale filtered view.
+    const handleOpenChange = React.useCallback((next: boolean) => {
+      setOpen(next);
+      if (!next) setSearch("");
+    }, []);
+
     const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "Escape") {
         e.preventDefault();
@@ -91,7 +98,7 @@ const TokenSelect = React.forwardRef<HTMLButtonElement, TokenSelectProps>(
         onValueChange={onValueChange}
         disabled={disabled}
         open={open}
-        onOpenChange={setOpen}
+        onOpenChange={handleOpenChange}
       >
         <SelectTrigger
           ref={ref}

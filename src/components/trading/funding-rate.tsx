@@ -59,14 +59,25 @@ const FundingRateDisplay = React.forwardRef<
   ) => {
     const [timeLeft, setTimeLeft] = React.useState(nextFundingIn);
 
-    // Countdown timer
+    // Keep the live rate + callback in refs so a frequently-changing `rate`
+    // (or an inline `onRateUpdate` closure) does NOT tear down and recreate
+    // the interval — which would also call setTimeLeft(nextFundingIn) on every
+    // rate tick and make the visible countdown jump back to the prop value.
+    const rateRef = React.useRef(rate);
+    const onRateUpdateRef = React.useRef(onRateUpdate);
+    React.useEffect(() => {
+      rateRef.current = rate;
+      onRateUpdateRef.current = onRateUpdate;
+    }, [rate, onRateUpdate]);
+
+    // Countdown timer — only restarts when the funding window itself changes.
     React.useEffect(() => {
       setTimeLeft(nextFundingIn);
 
       const interval = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev <= 0) {
-            onRateUpdate?.(rate);
+            onRateUpdateRef.current?.(rateRef.current);
             return intervalHours * 60 * 60;
           }
           return prev - 1;
@@ -74,7 +85,7 @@ const FundingRateDisplay = React.forwardRef<
       }, 1000);
 
       return () => clearInterval(interval);
-    }, [nextFundingIn, intervalHours, rate, onRateUpdate]);
+    }, [nextFundingIn, intervalHours]);
 
     // Format time as HH:MM:SS
     const formatTime = (seconds: number): string => {

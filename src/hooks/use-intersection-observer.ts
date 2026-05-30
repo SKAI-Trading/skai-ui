@@ -81,6 +81,16 @@ export function useLazyLoad(
   });
 }
 
+// Stable threshold array (0, 0.01, …, 1) for scroll-progress tracking.
+// Hoisted to module scope so its identity never changes between renders —
+// passing a fresh `Array.from(...)` inline would re-create the
+// IntersectionObserver on every render because `threshold` is in the effect
+// deps of useIntersectionObserver.
+const SCROLL_PROGRESS_THRESHOLDS = Array.from(
+  { length: 101 },
+  (_, i) => i / 100,
+);
+
 /**
  * Track scroll progress through an element
  */
@@ -89,7 +99,7 @@ export function useScrollProgress(): {
   progress: number;
 } {
   const { ref, entry } = useIntersectionObserver({
-    threshold: Array.from({ length: 101 }, (_, i) => i / 100),
+    threshold: SCROLL_PROGRESS_THRESHOLDS,
   });
 
   const progress = entry?.intersectionRatio ?? 0;

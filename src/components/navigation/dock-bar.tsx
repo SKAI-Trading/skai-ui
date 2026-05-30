@@ -214,7 +214,10 @@ const DockBarIcon = React.forwardRef<HTMLButtonElement, DockBarIconProps>(
           className,
         )}
         title={label}
-        aria-label={label}
+        aria-label={
+          badge !== undefined ? `${label}, ${badge} notifications` : label
+        }
+        aria-pressed={active}
         {...props}
       >
         {icon}
@@ -224,6 +227,7 @@ const DockBarIcon = React.forwardRef<HTMLButtonElement, DockBarIconProps>(
               "absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[10px] font-bold",
               badgeVariantClasses[badgeVariant],
             )}
+            aria-hidden="true"
           >
             {badge}
           </span>

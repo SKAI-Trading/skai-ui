@@ -88,6 +88,9 @@ const SwapInput = React.forwardRef<HTMLDivElement, SwapInputProps>(
                 onChange={(e) => onAmountChange(e.target.value)}
                 placeholder="0"
                 disabled={disabled || side === "to"}
+                aria-label={label}
+                aria-invalid={!!error || undefined}
+                readOnly={side === "to"}
                 className={cn(
                   "w-full bg-transparent text-2xl font-medium outline-none",
                   "placeholder:text-muted-foreground",
@@ -114,6 +117,7 @@ const SwapInput = React.forwardRef<HTMLDivElement, SwapInputProps>(
                 size="sm"
                 onClick={() => onAmountChange(String(balance))}
                 disabled={disabled}
+                aria-label="Use maximum balance"
                 className="h-7 px-2 text-xs text-primary"
               >
                 MAX
@@ -131,7 +135,11 @@ const SwapInput = React.forwardRef<HTMLDivElement, SwapInputProps>(
           </div>
         </div>
 
-        {error && <p className="text-xs text-destructive mt-2">{error}</p>}
+        {error && (
+          <p className="text-xs text-destructive mt-2" role="alert">
+            {error}
+          </p>
+        )}
       </div>
     );
   },
@@ -164,6 +172,7 @@ const SwapContainer: React.FC<SwapContainerProps> = ({
             variant="outline"
             size="icon"
             onClick={onFlip}
+            aria-label="Flip swap direction"
             className="h-10 w-10 rounded-full border-4 border-background bg-card hover:bg-accent"
           >
             <ArrowDownUp className="h-4 w-4" />

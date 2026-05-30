@@ -109,6 +109,15 @@ const CandlestickChart = React.forwardRef<
     );
     const volumeSeriesRef = React.useRef<ISeriesApi<"Histogram"> | null>(null);
 
+    // The chart is created once on mount, so the crosshair callback captured
+    // there would otherwise be frozen to the first render's closure. Mirror it
+    // through a ref so consumers passing an inline `onCrosshairMove` always get
+    // the latest handler without forcing a full chart re-create.
+    const onCrosshairMoveRef = React.useRef(onCrosshairMove);
+    React.useEffect(() => {
+      onCrosshairMoveRef.current = onCrosshairMove;
+    }, [onCrosshairMove]);
+
     // Initialize chart
     React.useEffect(() => {
       if (!containerRef.current) return;
@@ -196,22 +205,20 @@ const CandlestickChart = React.forwardRef<
       // Fit content
       chart.timeScale().fitContent();
 
-      // Subscribe to crosshair move
-      if (onCrosshairMove) {
-        chart.subscribeCrosshairMove((param: MouseEventParams<Time>) => {
-          if (param.time && param.seriesData.size > 0) {
-            const data = param.seriesData.get(candlestickSeries);
-            if (data && "close" in data) {
-              onCrosshairMove(
-                (data as CandlestickData<Time>).close,
-                param.time,
-              );
-            }
-          } else {
-            onCrosshairMove(null, null);
+      // Always subscribe and dispatch through the ref so a later-supplied or
+      // updated callback still fires (the callback may be undefined at mount).
+      chart.subscribeCrosshairMove((param: MouseEventParams<Time>) => {
+        const cb = onCrosshairMoveRef.current;
+        if (!cb) return;
+        if (param.time && param.seriesData.size > 0) {
+          const seriesPoint = param.seriesData.get(candlestickSeries);
+          if (seriesPoint && "close" in seriesPoint) {
+            cb((seriesPoint as CandlestickData<Time>).close, param.time);
           }
-        });
-      }
+        } else {
+          cb(null, null);
+        }
+      });
 
       // Auto-resize
       if (autoResize) {

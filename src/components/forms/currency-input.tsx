@@ -121,6 +121,12 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
       showCurrencySymbol = true,
       disabled,
       placeholder,
+      // Pull the consumer's blur/focus handlers OUT of the rest spread.
+      // Otherwise `{...props}` re-applies them after our own
+      // `onBlur={handleBlur}` / `onFocus={handleFocus}`, overriding them and
+      // silently breaking the format-on-blur + isEditing logic.
+      onBlur: onBlurProp,
+      onFocus: onFocusProp,
       ...props
     },
     ref,
@@ -253,12 +259,12 @@ const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputProps>(
         onValueChange?.(finalValue, formatted);
       }
 
-      props.onBlur?.(e);
+      onBlurProp?.(e);
     };
 
     const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
       setIsEditing(true);
-      props.onFocus?.(e);
+      onFocusProp?.(e);
     };
 
     // Build the display with currency symbol

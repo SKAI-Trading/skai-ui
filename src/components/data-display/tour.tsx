@@ -131,13 +131,27 @@ const Tour = React.forwardRef<HTMLDivElement, TourProps>(
     React.useEffect(() => {
       updatePositions();
       window.addEventListener("resize", updatePositions);
-      window.addEventListener("scroll", updatePositions);
+      // Passive listener — this handler only reads layout + sets state, never
+      // calls preventDefault, so marking it passive lets the browser keep
+      // scrolling smooth instead of waiting on each handler.
+      window.addEventListener("scroll", updatePositions, { passive: true });
 
       return () => {
         window.removeEventListener("resize", updatePositions);
         window.removeEventListener("scroll", updatePositions);
       };
     }, [updatePositions]);
+
+    // Close on Escape — a spotlight overlay that can't be dismissed by keyboard
+    // traps keyboard-only users.
+    React.useEffect(() => {
+      if (!open) return;
+      const onKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") onClose?.();
+      };
+      document.addEventListener("keydown", onKeyDown);
+      return () => document.removeEventListener("keydown", onKeyDown);
+    }, [open, onClose]);
 
     const goToStep = (index: number) => {
       if (onStepChange) {
@@ -217,6 +231,9 @@ const Tour = React.forwardRef<HTMLDivElement, TourProps>(
 
         {/* Tooltip */}
         <div
+          role="dialog"
+          aria-modal="false"
+          aria-label={step.title}
           className={cn(
             "absolute w-80 bg-popover text-popover-foreground rounded-lg shadow-xl border p-4",
             tooltipClassName,
@@ -228,10 +245,12 @@ const Tour = React.forwardRef<HTMLDivElement, TourProps>(
         >
           {/* Close button */}
           <button
+            type="button"
             onClick={handleSkip}
+            aria-label="Close tour"
             className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4" aria-hidden="true" />
           </button>
 
           {/* Content */}
@@ -250,6 +269,7 @@ const Tour = React.forwardRef<HTMLDivElement, TourProps>(
                 {steps.map((_, index) => (
                   <button
                     key={index}
+                    type="button"
                     onClick={() => goToStep(index)}
                     className={cn(
                       "h-2 w-2 rounded-full transition-colors",
@@ -258,6 +278,7 @@ const Tour = React.forwardRef<HTMLDivElement, TourProps>(
                         : "bg-muted-foreground/30 hover:bg-muted-foreground/50",
                     )}
                     aria-label={`Go to step ${index + 1}`}
+                    aria-current={index === currentStep ? "step" : undefined}
                   />
                 ))}
               </div>

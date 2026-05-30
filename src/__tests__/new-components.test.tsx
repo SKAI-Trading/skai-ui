@@ -271,10 +271,16 @@ describe("PnLDisplay", () => {
     expect(container).toHaveClass("text-green-500");
   });
 
-  it("should render loss in red", () => {
+  it("should render loss in red with a minus sign", () => {
     render(<PnLDisplay value={-250} />);
-    const container = screen.getByText("$250.00").closest("div");
+    // A loss must show "-$250.00" — color alone fails WCAG 1.4.1.
+    const container = screen.getByText("-$250.00").closest("div");
     expect(container).toHaveClass("text-red-500");
+  });
+
+  it("should not double-sign a loss percentage passed as a negative", () => {
+    render(<PnLDisplay value={-250} percentage={-10.5} />);
+    expect(screen.getByText("(-10.50%)")).toBeInTheDocument();
   });
 
   it("should render percentage when provided", () => {

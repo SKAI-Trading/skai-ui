@@ -356,10 +356,12 @@ const SpotlightOverlay = React.forwardRef<HTMLDivElement, SpotlightOverlayProps>
                 <span className="text-sm font-medium text-gray-300">{quest.title}</span>
               </div>
               <button
+                type="button"
                 onClick={onClose}
+                aria-label="Close tutorial"
                 className="text-gray-500 hover:text-white transition-colors p-1 hover:bg-gray-800 rounded"
               >
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
 
@@ -436,9 +438,10 @@ const SpotlightOverlay = React.forwardRef<HTMLDivElement, SpotlightOverlayProps>
                     variant="ghost"
                     size="sm"
                     onClick={onPrevious}
+                    aria-label="Previous step"
                     className="text-gray-400 hover:text-white px-2"
                   >
-                    <ChevronLeft className="w-4 h-4" />
+                    <ChevronLeft className="w-4 h-4" aria-hidden="true" />
                   </Button>
                 )}
                 

@@ -135,6 +135,20 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       Record<string, "up" | "down" | null>
     >({});
     const prevPricesRef = React.useRef<Map<string, number>>(new Map());
+    // Track every flash-clear timer so we can cancel them on unmount. A live
+    // order book fires these continuously; without cleanup each unmount leaks
+    // a pending setTimeout that calls setState on an unmounted component.
+    const flashTimersRef = React.useRef<Set<ReturnType<typeof setTimeout>>>(
+      new Set(),
+    );
+
+    React.useEffect(() => {
+      const timers = flashTimersRef.current;
+      return () => {
+        timers.forEach((t) => clearTimeout(t));
+        timers.clear();
+      };
+    }, []);
 
     // Track price changes for animation
     React.useEffect(() => {
@@ -142,14 +156,20 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
 
       const newChanges: Record<string, "up" | "down" | null> = {};
 
+      const scheduleClear = (key: string) => {
+        const timer = setTimeout(() => {
+          flashTimersRef.current.delete(timer);
+          setPriceChanges((prev) => ({ ...prev, [key]: null }));
+        }, 300);
+        flashTimersRef.current.add(timer);
+      };
+
       data.bids.forEach((bid, idx) => {
         const key = `bid-${idx}`;
         const prevPrice = prevPricesRef.current.get(key);
         if (prevPrice !== undefined && prevPrice !== bid.price) {
           newChanges[key] = bid.price > prevPrice ? "up" : "down";
-          setTimeout(() => {
-            setPriceChanges((prev) => ({ ...prev, [key]: null }));
-          }, 300);
+          scheduleClear(key);
         }
         prevPricesRef.current.set(key, bid.price);
       });
@@ -159,9 +179,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
         const prevPrice = prevPricesRef.current.get(key);
         if (prevPrice !== undefined && prevPrice !== ask.price) {
           newChanges[key] = ask.price > prevPrice ? "up" : "down";
-          setTimeout(() => {
-            setPriceChanges((prev) => ({ ...prev, [key]: null }));
-          }, 300);
+          scheduleClear(key);
         }
         prevPricesRef.current.set(key, ask.price);
       });
@@ -202,13 +220,33 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       const maxTotal = isAsk ? maxAskTotal : maxBidTotal;
       const depthPercent = showDepthBars ? (level.total / maxTotal) * 100 : 0;
 
+      const isInteractive = !!onPriceClick || !!onRowDoubleClick;
+
       return (
         <div
           key={level.id}
           role="row"
+          tabIndex={isInteractive ? 0 : undefined}
+          aria-label={
+            isInteractive
+              ? `${side === "ask" ? "Ask" : "Bid"} ${level.price.toFixed(
+                  pricePrecision,
+                )}, size ${level.size.toFixed(sizePrecision)}`
+              : undefined
+          }
           onClick={() => onPriceClick?.(level.price)}
           onDoubleClick={() =>
             onRowDoubleClick?.(level.price, level.size, side)
+          }
+          onKeyDown={
+            isInteractive
+              ? (e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onPriceClick?.(level.price);
+                  }
+                }
+              : undefined
           }
           className={cn(
             "relative grid grid-cols-3 gap-2 px-3 py-1 text-xs transition-all duration-200 cursor-pointer select-none font-mono",
@@ -267,7 +305,10 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             />
             {onLiveToggle && (
               <button
+                type="button"
                 onClick={onLiveToggle}
+                aria-pressed={isLive}
+                aria-label={isLive ? "Pause live feed" : "Resume live feed"}
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 {isLive ? "Live" : "Paused"}

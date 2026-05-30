@@ -172,6 +172,8 @@ const LeverageSlider = React.forwardRef<HTMLDivElement, LeverageSliderProps>(
                 type="button"
                 onClick={() => onChange(v)}
                 disabled={disabled}
+                aria-pressed={value === v}
+                aria-label={`Set leverage to ${v}x`}
                 className={cn(
                   "px-3 py-1 text-xs font-medium rounded-md border transition-colors",
                   value === v

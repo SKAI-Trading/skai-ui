@@ -63,12 +63,25 @@ const QRCode = React.forwardRef<HTMLDivElement, QRCodeProps>(
   ) => {
     const [copied, setCopied] = React.useState(false);
     const canvasRef = React.useRef<HTMLCanvasElement>(null);
+    const copiedTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(
+      null,
+    );
+
+    // Cancel the "copied" reset timer on unmount so we never setState on an
+    // unmounted component.
+    React.useEffect(
+      () => () => {
+        if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current);
+      },
+      [],
+    );
 
     const handleCopy = async () => {
       try {
         await navigator.clipboard.writeText(value);
         setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
+        if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current);
+        copiedTimerRef.current = setTimeout(() => setCopied(false), 2000);
       } catch (err) {
         console.error("Failed to copy:", err);
       }

@@ -65,6 +65,8 @@ export interface MobileNavProps
     href: string;
     className?: string;
     children: React.ReactNode;
+    /** Active-page marker forwarded for a11y */
+    "aria-current"?: React.AriaAttributes["aria-current"];
   }>;
   /** Safe area padding for iOS */
   safeArea?: boolean;
@@ -148,6 +150,12 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
                         ? "h-2 w-2"
                         : "h-4 min-w-4 px-1 text-[10px] font-bold",
                     )}
+                    aria-label={
+                      item.badgeDot
+                        ? `${item.label} has notifications`
+                        : `${item.badge} notifications`
+                    }
+                    role="status"
                   >
                     {!item.badgeDot && item.badge}
                   </span>
@@ -177,6 +185,7 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
                 key={item.id}
                 href={item.href}
                 className={baseClasses}
+                aria-current={isActive ? "page" : undefined}
               >
                 {content}
               </LinkComponent>
@@ -188,6 +197,7 @@ const MobileNav = React.forwardRef<HTMLElement, MobileNavProps>(
               key={item.id}
               type="button"
               className={baseClasses}
+              aria-current={isActive ? "page" : undefined}
               onClick={() => {
                 item.onClick?.();
                 onItemSelect?.(item);
@@ -209,12 +219,14 @@ const DefaultLink = ({
   href,
   className,
   children,
+  "aria-current": ariaCurrent,
 }: {
   href: string;
   className?: string;
   children: React.ReactNode;
+  "aria-current"?: React.AriaAttributes["aria-current"];
 }) => (
-  <a href={href} className={className}>
+  <a href={href} className={className} aria-current={ariaCurrent}>
     {children}
   </a>
 );

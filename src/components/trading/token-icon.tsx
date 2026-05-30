@@ -60,6 +60,14 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
     const pixelSize = typeof size === "number" ? size : sizeMap[size];
     const iconUrl = src || TOKEN_ICONS[symbol.toUpperCase()];
 
+    // Reset load/error state when the underlying image URL changes — otherwise
+    // a TokenIcon that errored for one token keeps showing the fallback
+    // initials after the consumer swaps in a different (valid) token.
+    React.useEffect(() => {
+      setHasError(false);
+      setIsLoading(true);
+    }, [iconUrl]);
+
     // Generate consistent color from symbol for fallback
     const generateColor = (str: string) => {
       let hash = 0;

@@ -62,7 +62,11 @@ const PnLDisplay = React.forwardRef<HTMLDivElement, PnLDisplayProps>(
     const isLoss = value < -breakevenThreshold;
     const result = isProfit ? "profit" : isLoss ? "loss" : "breakeven";
 
-    const sign = isProfit ? "+" : "";
+    // A loss MUST render a minus sign — relying on red color alone fails
+    // WCAG 1.4.1 (use of color) and silently drops the negative sign for
+    // screen-reader users who only hear "Loss $50". The percentage uses the
+    // same sign so the parenthetical never disagrees with the headline.
+    const sign = isProfit ? "+" : isLoss ? "-" : "";
     const absValue = Math.abs(value);
 
     // Format display value for aria
@@ -71,9 +75,14 @@ const PnLDisplay = React.forwardRef<HTMLDivElement, PnLDisplayProps>(
       maximumFractionDigits: decimals,
     });
     const resultText = isProfit ? "Profit" : isLoss ? "Loss" : "Breakeven";
+    // Use the magnitude of percentage so a caller passing a signed value
+    // (e.g. -5) can't produce a double sign ("--5.00%") now that loss has a
+    // real "-" prefix.
+    const absPercentage =
+      percentage !== undefined ? Math.abs(percentage) : undefined;
     const percentText =
-      percentage !== undefined
-        ? `, ${sign}${percentage.toFixed(2)} percent`
+      absPercentage !== undefined
+        ? `, ${sign}${absPercentage.toFixed(2)} percent`
         : "";
     const ariaLabel = `${label ? label + ": " : ""}${resultText} ${sign}${currency}${formattedValue}${percentText}`;
 
@@ -98,10 +107,10 @@ const PnLDisplay = React.forwardRef<HTMLDivElement, PnLDisplayProps>(
             maximumFractionDigits: decimals,
           })}
         </span>
-        {percentage !== undefined && (
+        {absPercentage !== undefined && (
           <span className="text-[0.8em] opacity-80">
             ({sign}
-            {percentage.toFixed(2)}%)
+            {absPercentage.toFixed(2)}%)
           </span>
         )}
       </div>

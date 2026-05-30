@@ -152,6 +152,36 @@ describe("CurrencyInput", () => {
       expect(input).toHaveValue("1,234.00");
     });
 
+    it("should still format on blur AND fire a consumer onBlur handler", async () => {
+      // Regression: a consumer onBlur used to override the internal
+      // handleBlur via the {...props} spread, breaking format-on-blur.
+      const handleBlur = vi.fn();
+      render(
+        <CurrencyInput
+          decimals={2}
+          onBlur={handleBlur}
+          data-testid="currency-input"
+        />,
+      );
+
+      const input = screen.getByTestId("currency-input");
+      fireEvent.change(input, { target: { value: "1234" } });
+      fireEvent.blur(input);
+
+      expect(input).toHaveValue("1,234.00");
+      expect(handleBlur).toHaveBeenCalledTimes(1);
+    });
+
+    it("should fire a consumer onFocus handler", async () => {
+      const handleFocus = vi.fn();
+      render(
+        <CurrencyInput onFocus={handleFocus} data-testid="currency-input" />,
+      );
+
+      fireEvent.focus(screen.getByTestId("currency-input"));
+      expect(handleFocus).toHaveBeenCalledTimes(1);
+    });
+
     it("should allow clearing the input", async () => {
       const handleValueChange = vi.fn();
       render(

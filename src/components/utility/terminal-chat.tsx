@@ -120,6 +120,13 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
 
     const colors = colorSchemes[variant];
 
+    // Keep the local input mirror in sync with a controlled `input` prop —
+    // without this the component silently ignores external updates (e.g. a
+    // parent clearing or pre-filling the field) after the first render.
+    React.useEffect(() => {
+      setInternalInput(input);
+    }, [input]);
+
     // Initialize with external lines
     React.useEffect(() => {
       setCurrentLines(lines);
@@ -261,6 +268,9 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
           ref={scrollRef}
           className="p-4 overflow-y-auto"
           style={{ height: "calc(100% - 100px)" }}
+          role="log"
+          aria-live="polite"
+          aria-label={`${title} output`}
         >
           <AnimatePresence mode="wait">
             {currentLines.map((line) => (
@@ -328,6 +338,7 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
             onChange={handleInputChange}
             placeholder={placeholder}
             disabled={disabled || isProcessing}
+            aria-label={placeholder || "Terminal command input"}
             className={cn(
               "flex-1 bg-transparent border-none outline-none font-mono",
               colors.text,
@@ -338,6 +349,7 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
           <Button
             type="submit"
             size="sm"
+            aria-label="Send command"
             disabled={disabled || isProcessing || !internalInput.trim()}
             className={cn(
               "bg-transparent border hover:bg-white/10",
@@ -345,7 +357,7 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
               colors.text
             )}
           >
-            <Send className="w-4 h-4" />
+            <Send className="w-4 h-4" aria-hidden="true" />
           </Button>
         </form>
 

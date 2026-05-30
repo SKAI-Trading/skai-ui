@@ -57,6 +57,10 @@ export function ThirdwebOTPHandler({
 }: ThirdwebOTPHandlerProps): null {
   // Track if we've already auto-submitted for the current code to prevent loops
   const lastSubmittedCode = React.useRef<string>("");
+  // Track the pending auto-submit timer so we can cancel it on unmount.
+  const submitTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
 
   React.useEffect(() => {
     if (!enabled) return;
@@ -196,11 +200,16 @@ export function ThirdwebOTPHandler({
 
       if (isComplete && currentCode !== lastSubmittedCode.current) {
         const verifyBtn = findVerifyButton();
-        if (verifyBtn && !verifyBtn.disabled) {
-          // Small delay to ensure state is updated and UI is ready
-          setTimeout(() => {
+        if (verifyBtn && !verifyBtn.disabled && submitTimerRef.current === null) {
+          // Mark as submitted SYNCHRONOUSLY. The MutationObserver fires on
+          // every DOM mutation; if we only set this inside the timeout, the
+          // observer re-fires before the delay elapses and schedules another
+          // verifyBtn.click() — double-submitting the OTP. Guarding on both the
+          // code and a single in-flight timer makes it fire exactly once.
+          lastSubmittedCode.current = currentCode;
+          submitTimerRef.current = setTimeout(() => {
+            submitTimerRef.current = null;
             verifyBtn.click();
-            lastSubmittedCode.current = currentCode;
           }, autoSubmitDelay);
         }
       } else if (!isComplete) {
@@ -217,6 +226,10 @@ export function ThirdwebOTPHandler({
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("paste", handlePaste);
       observer.disconnect();
+      if (submitTimerRef.current !== null) {
+        clearTimeout(submitTimerRef.current);
+        submitTimerRef.current = null;
+      }
     };
   }, [enabled, otpLength, verifyButtonPatterns, autoSubmitDelay]);
 

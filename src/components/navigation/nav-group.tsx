@@ -100,9 +100,14 @@ const NavGroupItemComponent: React.FC<NavGroupItemComponentProps> = ({
     item.active && "bg-accent text-accent-foreground font-medium",
     !item.active &&
       "hover:bg-accent/50 text-muted-foreground hover:text-foreground",
-    depth > 0 && `ml-${depth * 4}`,
     className,
   );
+
+  // Depth indentation must be an inline style: a dynamic `ml-${depth * 4}`
+  // class can't be emitted by Tailwind's JIT, so nested items would never
+  // indent. 1rem per depth level matches the Tailwind `ml-4` scale.
+  const indentStyle =
+    depth > 0 ? { marginLeft: `${depth * 1}rem` } : undefined;
 
   const content = (
     <>
@@ -119,6 +124,7 @@ const NavGroupItemComponent: React.FC<NavGroupItemComponentProps> = ({
       )}
       {hasChildren && (
         <ChevronRight
+          aria-hidden="true"
           className={cn(
             "ml-auto h-4 w-4 shrink-0 transition-transform duration-200",
             isOpen && "rotate-90",
@@ -132,7 +138,12 @@ const NavGroupItemComponent: React.FC<NavGroupItemComponentProps> = ({
     return (
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CollapsibleTrigger asChild>
-          <button type="button" className={baseClasses}>
+          <button
+            type="button"
+            className={baseClasses}
+            style={indentStyle}
+            disabled={item.disabled}
+          >
             {content}
           </button>
         </CollapsibleTrigger>
@@ -155,14 +166,28 @@ const NavGroupItemComponent: React.FC<NavGroupItemComponentProps> = ({
 
   if (item.href) {
     return (
-      <a href={item.href} className={baseClasses} onClick={item.onClick}>
+      <a
+        href={item.disabled ? undefined : item.href}
+        className={baseClasses}
+        style={indentStyle}
+        onClick={item.onClick}
+        aria-current={item.active ? "page" : undefined}
+        aria-disabled={item.disabled || undefined}
+      >
         {content}
       </a>
     );
   }
 
   return (
-    <button type="button" className={baseClasses} onClick={item.onClick}>
+    <button
+      type="button"
+      className={baseClasses}
+      style={indentStyle}
+      onClick={item.onClick}
+      disabled={item.disabled}
+      aria-current={item.active ? "page" : undefined}
+    >
       {content}
     </button>
   );
@@ -259,6 +284,7 @@ const NavGroup = React.forwardRef<HTMLDivElement, NavGroupProps>(
         <span className="flex-1 truncate">{label}</span>
         {collapsible && (
           <ChevronDown
+            aria-hidden="true"
             className={cn(
               "h-4 w-4 shrink-0 transition-transform duration-200",
               currentCollapsed && "-rotate-90",

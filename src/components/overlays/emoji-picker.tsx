@@ -170,17 +170,25 @@ const EmojiPicker = React.forwardRef<HTMLDivElement, EmojiPickerProps>(
     // Handle GIF search with debouncing
     React.useEffect(() => {
       if (!onGifSearch || !searchQuery || activeTab !== "gifs") return;
-      
+
+      // Guard against a slow in-flight request resolving after a newer query
+      // has been issued and overwriting the fresher results (stale-promise
+      // clobber). The debounce timer alone only cancels not-yet-started work.
+      let cancelled = false;
+
       const timeout = setTimeout(async () => {
         try {
           const results = await onGifSearch(searchQuery);
-          setGifs(results);
+          if (!cancelled) setGifs(results);
         } catch (error) {
-          console.error("GIF search failed:", error);
+          if (!cancelled) console.error("GIF search failed:", error);
         }
       }, 500);
 
-      return () => clearTimeout(timeout);
+      return () => {
+        cancelled = true;
+        clearTimeout(timeout);
+      };
     }, [searchQuery, onGifSearch, activeTab]);
 
     return (
@@ -252,8 +260,11 @@ const EmojiPicker = React.forwardRef<HTMLDivElement, EmojiPickerProps>(
                             className="h-8 w-8 p-0 hover:bg-gray-100 dark:hover:bg-gray-800"
                             onClick={() => onEmojiSelect?.(item.emoji)}
                             title={item.name}
+                            aria-label={item.name}
                           >
-                            <span className="text-lg">{item.emoji}</span>
+                            <span className="text-lg" aria-hidden="true">
+                              {item.emoji}
+                            </span>
                           </Button>
                         ))}
                       </div>

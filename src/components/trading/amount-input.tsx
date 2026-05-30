@@ -163,6 +163,8 @@ const AmountInput = React.forwardRef<HTMLInputElement, AmountInputProps>(
             onChange={handleChange}
             placeholder="0.00"
             disabled={disabled}
+            aria-invalid={hasError || undefined}
+            aria-label={props["aria-label"] ?? (label || token || "Amount")}
             className="border-0 bg-transparent p-0 text-lg font-mono focus-visible:ring-0 focus-visible:ring-offset-0"
             {...props}
           />
@@ -176,6 +178,7 @@ const AmountInput = React.forwardRef<HTMLInputElement, AmountInputProps>(
                 size="sm"
                 onClick={handleHalf}
                 disabled={disabled}
+                aria-label="Use half of balance"
                 className="h-7 px-2 text-xs"
               >
                 50%
@@ -188,6 +191,7 @@ const AmountInput = React.forwardRef<HTMLInputElement, AmountInputProps>(
                 size="sm"
                 onClick={handleMax}
                 disabled={disabled}
+                aria-label="Use maximum balance"
                 className="h-7 px-2 text-xs text-primary hover:text-primary"
               >
                 MAX
@@ -208,7 +212,7 @@ const AmountInput = React.forwardRef<HTMLInputElement, AmountInputProps>(
             </span>
           )}
           {hasError && (
-            <span className="text-destructive ml-auto">
+            <span className="text-destructive ml-auto" role="alert">
               {error ||
                 (isOverMax
                   ? "Exceeds balance"

@@ -80,7 +80,14 @@ const LiquidationWarning = React.forwardRef<
 
     // Calculate distance to liquidation
     const distanceToLiq = Math.abs(currentPrice - liquidationPrice);
-    const distancePercent = distanceToLiq / currentPrice;
+    // Guard the divisor: a 0/NaN currentPrice would make distancePercent NaN,
+    // and every `NaN <= threshold` comparison is false — silently reporting
+    // "safe" for what is actually an unknown/critical position (NaN-poison).
+    const rawDistancePercent =
+      currentPrice !== 0 ? distanceToLiq / currentPrice : 0;
+    const distancePercent = Number.isFinite(rawDistancePercent)
+      ? rawDistancePercent
+      : 0;
 
     // Determine risk level
     const getRiskLevel = (): RiskLevel => {
@@ -256,7 +263,10 @@ const LiquidationWarning = React.forwardRef<
         {/* Warning message for critical */}
         {riskLevel === "critical" && (
           <div className="mt-3 pt-3 border-t border-red-500/30">
-            <div className="flex items-center gap-2 text-red-500 text-sm">
+            <div
+              className="flex items-center gap-2 text-red-500 text-sm"
+              role="alert"
+            >
               <XCircle className="h-4 w-4" />
               <span className="font-medium">
                 Position at extreme risk! Consider reducing size or adding

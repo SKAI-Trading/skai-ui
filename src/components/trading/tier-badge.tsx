@@ -266,13 +266,20 @@ export const TierBadge = React.forwardRef<HTMLDivElement, TierBadgeProps>(
     if (variant === "detailed") {
       const nextTier = getNextTier(tier);
       const nextConfig = nextTier ? TIER_CONFIG[nextTier] : null;
+      const tierSpan = nextConfig
+        ? nextConfig.pointsRequired - config.pointsRequired
+        : 0;
       const progress =
-        nextConfig && currentPoints !== undefined
-          ? Math.min(
-              100,
-              ((currentPoints - config.pointsRequired) /
-                (nextConfig.pointsRequired - config.pointsRequired)) *
+        nextConfig && currentPoints !== undefined && tierSpan > 0
+          ? // Clamp both ends: below the current tier floor would otherwise
+            // produce a negative width, and a zero/equal tier span would
+            // divide by zero into NaN.
+            Math.max(
+              0,
+              Math.min(
                 100,
+                ((currentPoints - config.pointsRequired) / tierSpan) * 100,
+              ),
             )
           : 100;
 

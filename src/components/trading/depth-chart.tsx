@@ -163,7 +163,14 @@ export const DepthChart = React.forwardRef<HTMLDivElement, DepthChartProps>(
     const allData = [...bids, ...asks];
     const minPrice = Math.min(...allData.map((d) => d.price));
     const maxPrice = Math.max(...allData.map((d) => d.price));
-    const maxCumulative = Math.max(...allData.map((d) => d.cumulative));
+    // Guard against a 0 (or NaN) max — otherwise the depth ratio divides by
+    // zero and emits NaN coordinates, producing an invalid SVG path string
+    // that silently renders nothing.
+    const rawMaxCumulative = Math.max(...allData.map((d) => d.cumulative));
+    const maxCumulative =
+      Number.isFinite(rawMaxCumulative) && rawMaxCumulative > 0
+        ? rawMaxCumulative
+        : 1;
     const priceRange = maxPrice - minPrice || 1;
 
     // SVG path generators
@@ -273,7 +280,10 @@ export const DepthChart = React.forwardRef<HTMLDivElement, DepthChartProps>(
             />
             {onLiveToggle && (
               <button
+                type="button"
                 onClick={onLiveToggle}
+                aria-pressed={isLive}
+                aria-label={isLive ? "Pause live feed" : "Resume live feed"}
                 className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 {isLive ? "Live" : "Paused"}

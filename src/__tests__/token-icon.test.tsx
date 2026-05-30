@@ -63,4 +63,24 @@ describe("TokenIcon", () => {
     // Should show fallback after error
     expect(screen.getByText("ET")).toBeInTheDocument();
   });
+
+  it("recovers from an error state when the image URL changes", () => {
+    // Regression: hasError used to persist across symbol/src swaps, so a token
+    // whose icon errored kept showing the fallback even after switching to a
+    // valid token.
+    const { rerender } = render(
+      <TokenIcon symbol="TEST" src="https://example.com/broken.png" />,
+    );
+    fireEvent.error(screen.getByRole("img"));
+    // Fallback initials are shown after the error.
+    expect(screen.getByText("TE")).toBeInTheDocument();
+
+    // Swap to a new image URL — the component should reset and try to render
+    // the image again instead of staying on the fallback.
+    rerender(
+      <TokenIcon symbol="NEW" src="https://example.com/working.png" />,
+    );
+    const img = screen.getByRole("img");
+    expect(img).toHaveAttribute("src", "https://example.com/working.png");
+  });
 });

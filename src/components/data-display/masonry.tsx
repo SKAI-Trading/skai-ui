@@ -29,6 +29,48 @@ interface MasonryProps extends React.HTMLAttributes<HTMLDivElement> {
  *   {items.map(item => <Card key={item.id}>{item.content}</Card>)}
  * </Masonry>
  */
+// Static class lookups so Tailwind's JIT can actually see (and emit) every
+// breakpoint/column combination. Interpolating `sm:columns-${n}` at runtime
+// produces class names the content scanner never sees, so the CSS is never
+// generated and responsive masonry silently collapses to a single column.
+const COLUMN_CLASSES: Record<
+  "sm" | "md" | "lg" | "xl",
+  Record<number, string>
+> = {
+  sm: {
+    1: "sm:columns-1",
+    2: "sm:columns-2",
+    3: "sm:columns-3",
+    4: "sm:columns-4",
+    5: "sm:columns-5",
+    6: "sm:columns-6",
+  },
+  md: {
+    1: "md:columns-1",
+    2: "md:columns-2",
+    3: "md:columns-3",
+    4: "md:columns-4",
+    5: "md:columns-5",
+    6: "md:columns-6",
+  },
+  lg: {
+    1: "lg:columns-1",
+    2: "lg:columns-2",
+    3: "lg:columns-3",
+    4: "lg:columns-4",
+    5: "lg:columns-5",
+    6: "lg:columns-6",
+  },
+  xl: {
+    1: "xl:columns-1",
+    2: "xl:columns-2",
+    3: "xl:columns-3",
+    4: "xl:columns-4",
+    5: "xl:columns-5",
+    6: "xl:columns-6",
+  },
+};
+
 const Masonry = React.forwardRef<HTMLDivElement, MasonryProps>(
   ({ columns = 3, gap = 16, children, className, style, ...props }, ref) => {
     const getResponsiveClasses = () => {
@@ -37,10 +79,15 @@ const Masonry = React.forwardRef<HTMLDivElement, MasonryProps>(
       }
 
       const classes: string[] = [];
-      if (columns.sm) classes.push(`sm:columns-${columns.sm}`);
-      if (columns.md) classes.push(`md:columns-${columns.md}`);
-      if (columns.lg) classes.push(`lg:columns-${columns.lg}`);
-      if (columns.xl) classes.push(`xl:columns-${columns.xl}`);
+      (["sm", "md", "lg", "xl"] as const).forEach((bp) => {
+        const count = columns[bp];
+        if (count) {
+          // Fall back to a literal class only when within the static range;
+          // out-of-range counts simply use the closest emitted class.
+          const cls = COLUMN_CLASSES[bp][count] ?? COLUMN_CLASSES[bp][6];
+          classes.push(cls);
+        }
+      });
 
       return classes.join(" ");
     };

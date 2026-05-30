@@ -1,6 +1,9 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { renderHook, act, waitFor } from "@testing-library/react";
-import { useIntersectionObserver } from "../hooks/use-intersection-observer";
+import {
+  useIntersectionObserver,
+  useScrollProgress,
+} from "../hooks/use-intersection-observer";
 
 // Mock IntersectionObserver
 class MockIntersectionObserver {
@@ -288,6 +291,45 @@ describe("useIntersectionObserver", () => {
     if (observer) {
       expect(observer.options.root).toBe(rootElement);
     }
+  });
+});
+
+describe("useScrollProgress", () => {
+  const originalIntersectionObserver = window.IntersectionObserver;
+
+  beforeEach(() => {
+    MockIntersectionObserver.clear();
+    (window as unknown as Record<string, unknown>).IntersectionObserver =
+      MockIntersectionObserver;
+  });
+
+  afterEach(() => {
+    (window as unknown as Record<string, unknown>).IntersectionObserver =
+      originalIntersectionObserver;
+  });
+
+  it("does not re-create the observer on re-render (stable threshold)", () => {
+    const element = document.createElement("div");
+    const { result, rerender } = renderHook(() => useScrollProgress());
+
+    act(() => {
+      Object.defineProperty(result.current.ref, "current", {
+        value: element,
+        writable: true,
+        configurable: true,
+      });
+    });
+    rerender();
+
+    const countAfterFirst = MockIntersectionObserver.instances.length;
+
+    // Several extra renders with no prop change must NOT spin up new observers.
+    rerender();
+    rerender();
+    rerender();
+
+    expect(MockIntersectionObserver.instances.length).toBe(countAfterFirst);
+    expect(result.current.progress).toBe(0);
   });
 });
 
