@@ -107,10 +107,11 @@ export function useRenderCount(componentName?: string): number {
  */
 function isDevelopmentEnv(): boolean {
   try {
-    if (
-      typeof process !== "undefined" &&
-      process?.env?.NODE_ENV === "development"
-    ) {
+    // Access `process` via globalThis so this lib needs no @types/node in its
+    // dts build (it ships to browsers; the runtime guard handles undefined).
+    const proc = (globalThis as { process?: { env?: { NODE_ENV?: string } } })
+      .process;
+    if (proc?.env?.NODE_ENV === "development") {
       return true;
     }
   } catch {

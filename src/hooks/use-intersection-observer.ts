@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, RefObject } from "react";
+import { useState, useEffect, useMemo, useRef, RefObject } from "react";
 
 export interface UseIntersectionObserverOptions {
   /** Root element for intersection (default: viewport) */
@@ -44,6 +44,16 @@ export function useIntersectionObserver(
 
   const isIntersecting = entry?.isIntersecting ?? false;
 
+  // Serialize the threshold to a stable primitive so callers passing an inline
+  // array literal (e.g. `threshold={[0, 0.5, 1]}`) don't tear down and re-create
+  // the IntersectionObserver on every render. Without this, a fresh array
+  // identity each render busts the effect deps even though the values are equal.
+  const thresholdKey = Array.isArray(threshold)
+    ? threshold.join(",")
+    : String(threshold);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const stableThreshold = useMemo(() => threshold, [thresholdKey]);
+
   useEffect(() => {
     const element = ref.current;
     if (!element || !enabled || (triggerOnce && hasTriggered)) return;
@@ -56,7 +66,7 @@ export function useIntersectionObserver(
           observer.disconnect();
         }
       },
-      { root, rootMargin, threshold },
+      { root, rootMargin, threshold: stableThreshold },
     );
 
     observer.observe(element);
@@ -64,7 +74,7 @@ export function useIntersectionObserver(
     return () => {
       observer.disconnect();
     };
-  }, [root, rootMargin, threshold, enabled, triggerOnce, hasTriggered]);
+  }, [root, rootMargin, stableThreshold, enabled, triggerOnce, hasTriggered]);
 
   return { ref, isIntersecting, entry };
 }

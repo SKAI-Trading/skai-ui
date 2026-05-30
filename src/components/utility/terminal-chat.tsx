@@ -82,9 +82,21 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
     height = "400px",
     className,
   }, ref) => {
-    const [currentLines, setCurrentLines] = React.useState<TerminalLine[]>([]);
+    // Lines generated locally inside the terminal (typed init messages + user
+    // submissions). These are kept SEPARATE from the controlled `lines` prop so
+    // that syncing the prop never destroys a locally-appended user/typed line.
+    // The rendered output is `[...lines, ...localLines]`.
+    const [localLines, setLocalLines] = React.useState<TerminalLine[]>([]);
     const [internalInput, setInternalInput] = React.useState(input);
     const scrollRef = React.useRef<HTMLDivElement>(null);
+    // Monotonic counter so two submissions in the same millisecond can't
+    // collide on `user-${Date.now()}` and clobber each other's React key.
+    const lineSeqRef = React.useRef(0);
+
+    const currentLines = React.useMemo(
+      () => [...lines, ...localLines],
+      [lines, localLines],
+    );
 
     // Color schemes
     const colorSchemes = {
@@ -127,11 +139,6 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
       setInternalInput(input);
     }, [input]);
 
-    // Initialize with external lines
-    React.useEffect(() => {
-      setCurrentLines(lines);
-    }, [lines]);
-
     // Auto-scroll to bottom
     React.useEffect(() => {
       if (scrollRef.current) {
@@ -139,29 +146,34 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
       }
     }, [currentLines, isProcessing]);
 
-    // Initial typing animation
+    // Initial typing animation. Re-running this effect (e.g. `initialMessages`
+    // identity changes) must NOT duplicate already-typed lines nor wipe out
+    // user submissions, so we clear only the prior `init-*` lines and re-type.
     React.useEffect(() => {
-      if (initialMessages.length > 0 && isTyping) {
-        let currentIndex = 0;
-        const interval = setInterval(() => {
-          if (currentIndex < initialMessages.length) {
-            setCurrentLines(prev => [
-              ...prev,
-              {
-                id: `init-${currentIndex}`,
-                text: initialMessages[currentIndex],
-                type: "system",
-                timestamp: new Date(),
-              },
-            ]);
-            currentIndex++;
-          } else {
-            clearInterval(interval);
-          }
-        }, 600);
+      if (initialMessages.length === 0 || !isTyping) return;
 
-        return () => clearInterval(interval);
-      }
+      setLocalLines((prev) => prev.filter((l) => !l.id.startsWith("init-")));
+
+      let currentIndex = 0;
+      const interval = setInterval(() => {
+        if (currentIndex < initialMessages.length) {
+          const idx = currentIndex;
+          setLocalLines((prev) => [
+            ...prev,
+            {
+              id: `init-${idx}`,
+              text: initialMessages[idx],
+              type: "system",
+              timestamp: new Date(),
+            },
+          ]);
+          currentIndex++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 600);
+
+      return () => clearInterval(interval);
     }, [initialMessages, isTyping]);
 
     // Handle input changes
@@ -177,19 +189,27 @@ const TerminalChat = React.forwardRef<HTMLDivElement, TerminalChatProps>(
       const trimmed = internalInput.trim();
       if (!trimmed || disabled || isProcessing) return;
 
-      // Add user line
+      // Add user line. The seq suffix guarantees a unique React key even for
+      // back-to-back submissions inside the same millisecond.
       const userLine: TerminalLine = {
-        id: `user-${Date.now()}`,
+        id: `user-${Date.now()}-${lineSeqRef.current++}`,
         text: `> ${trimmed}`,
         type: "user",
         timestamp: new Date(),
       };
-      
-      setCurrentLines(prev => [...prev, userLine]);
+
+      setLocalLines((prev) => [...prev, userLine]);
       setInternalInput("");
-      
-      // Call submit handler
-      await onSubmit?.(trimmed);
+
+      // Call submit handler. Never let a rejected handler bubble as an
+      // unhandled rejection out of the form's submit — surface it to the
+      // console so callers without their own catch still get visibility.
+      try {
+        await onSubmit?.(trimmed);
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.error("[TerminalChat] onSubmit handler rejected:", err);
+      }
     };
 
     // Get line color based on type

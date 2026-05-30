@@ -80,6 +80,7 @@ const Countdown = React.forwardRef<HTMLDivElement, CountdownProps>(
           )}
           role="timer"
           aria-live="polite"
+          aria-atomic="true"
           aria-label={`Countdown complete: ${completeText}`}
           {...props}
         >
@@ -112,7 +113,10 @@ const Countdown = React.forwardRef<HTMLDivElement, CountdownProps>(
           ref={ref}
           className={cn("flex items-start gap-2", className)}
           role="timer"
-          aria-live="polite"
+          // No aria-live: a `role="timer"` is an implicit OFF live region.
+          // Setting aria-live="polite" here made screen readers announce the
+          // full remaining time every single second. The accessible label is
+          // still available on focus / virtual-cursor read.
           aria-label={`${label ? label + " " : ""}${days > 0 ? days + " days " : ""}${hours} hours ${minutes} minutes ${seconds} seconds remaining`}
           {...props}
         >
@@ -135,7 +139,8 @@ const Countdown = React.forwardRef<HTMLDivElement, CountdownProps>(
           className,
         )}
         role="timer"
-        aria-live="polite"
+        // No aria-live: see note above — a ticking timer must not be a polite
+        // live region or screen readers announce it every second.
         aria-label={`${label ? label + " " : ""}${formatCountdown(countdown, format)} remaining`}
         {...props}
       >

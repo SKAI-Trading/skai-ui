@@ -181,26 +181,9 @@ const CandlestickChart = React.forwardRef<
       candlestickSeriesRef.current = candlestickSeries;
       candlestickSeries.setData(data);
 
-      // Add volume series if enabled
-      if (showVolume && volumeData) {
-        const volumeSeries = chart.addSeries(HistogramSeries, {
-          color: "#26a69a",
-          priceFormat: {
-            type: "volume",
-          },
-          priceScaleId: "",
-        });
-
-        volumeSeries.priceScale().applyOptions({
-          scaleMargins: {
-            top: 0.8,
-            bottom: 0,
-          },
-        });
-
-        volumeSeriesRef.current = volumeSeries;
-        volumeSeries.setData(volumeData);
-      }
+      // NOTE: the volume series is created/removed in a dedicated effect keyed
+      // on `showVolume` (below) so it can be toggled on/off after mount. The
+      // mount effect intentionally no longer creates it inline.
 
       // Fit content
       chart.timeScale().fitContent();
@@ -238,11 +221,17 @@ const CandlestickChart = React.forwardRef<
         return () => {
           resizeObserver.disconnect();
           chart.remove();
+          chartRef.current = null;
+          candlestickSeriesRef.current = null;
+          volumeSeriesRef.current = null;
         };
       }
 
       return () => {
         chart.remove();
+        chartRef.current = null;
+        candlestickSeriesRef.current = null;
+        volumeSeriesRef.current = null;
       };
     }, []); // Only run once on mount
 
@@ -254,12 +243,35 @@ const CandlestickChart = React.forwardRef<
       }
     }, [data]);
 
-    // Update volume data when it changes
+    // Manage the volume series lifecycle so it can be added/removed AFTER mount
+    // when `showVolume` toggles. Previously the series was only created in the
+    // mount-only effect, so flipping showVolume false->true did nothing.
     React.useEffect(() => {
+      const chart = chartRef.current;
+      if (!chart) return;
+
+      const shouldShow = showVolume && !!volumeData;
+
+      if (shouldShow && !volumeSeriesRef.current) {
+        const volumeSeries = chart.addSeries(HistogramSeries, {
+          color: "#26a69a",
+          priceFormat: { type: "volume" },
+          priceScaleId: "",
+        });
+        volumeSeries.priceScale().applyOptions({
+          scaleMargins: { top: 0.8, bottom: 0 },
+        });
+        volumeSeriesRef.current = volumeSeries;
+      } else if (!shouldShow && volumeSeriesRef.current) {
+        chart.removeSeries(volumeSeriesRef.current);
+        volumeSeriesRef.current = null;
+      }
+
+      // Keep the (possibly just-created) series in sync with the latest data.
       if (volumeSeriesRef.current && volumeData) {
         volumeSeriesRef.current.setData(volumeData);
       }
-    }, [volumeData]);
+    }, [showVolume, volumeData]);
 
     // Combine refs
     React.useImperativeHandle(

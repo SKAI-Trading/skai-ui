@@ -79,7 +79,6 @@ interface StoredBet {
 const MARKET_DURATION = 60; // 1 minute
 const POLL_ACTIVE_MS = 3_000;   // 3 s while bet is live — feels real-time
 const POLL_IDLE_MS = 8_000;     // 8 s idle — keeps chart fresh
-const INTERP_TICK_MS = 1_000;   // 1 s interpolated frames between polls
 // Push zone: price must move >0.005% to count as a win/loss.
 // At $2100, 0.005% ≈ $0.10 — only truly flat markets push.
 const PUSH_THRESHOLD = 0.005;
@@ -508,27 +507,13 @@ const PredictionMarketCard = React.forwardRef<
       return () => clearInterval(id);
     }, [phase, fetchPrice]);
 
-    /* ── 1-second interpolation ticks (makes chart feel live) ── */
-    useEffect(() => {
-      // Only interpolate during idle & active phases when we have data
-      if (phase === "resolving" || phase === "resolved") return;
-      const id = setInterval(() => {
-        setChartData((prev) => {
-          if (prev.length < 2) return prev;
-          const last = prev[prev.length - 1];
-          const secondLast = prev[prev.length - 2];
-          // Small random jitter (±0.01% of price) to simulate tick movement
-          const trend = last.price - secondLast.price;
-          const jitter = last.price * (Math.random() - 0.5) * 0.0002;
-          const interp = parseFloat((last.price + trend * 0.05 + jitter).toFixed(2));
-          // Keep header price in sync with chart's latest interpolated value
-          setEthPrice(interp);
-          const next = [...prev, { time: Date.now(), price: interp }];
-          return next.length > MAX_CHART_PTS ? next.slice(-MAX_CHART_PTS) : next;
-        });
-      }, INTERP_TICK_MS);
-      return () => clearInterval(id);
-    }, [phase]);
+    /* ── NO-MOCK-DATA: the chart and the displayed price reflect ONLY real
+     * polled prices. A previous build synthesized fake `Math.random()` jitter
+     * ticks between polls and wrote them into `ethPrice` — which contaminated
+     * the price shown to the user and the live PnL (`priceDelta` /
+     * `priceChangePercent`) while real money (skaiPoints) was at stake. That
+     * fabricated price-motion is removed; the chart now updates on actual
+     * polls (3s active / 8s idle) instead of fictional interpolated frames. */
 
     /* ── active market countdown ── */
     useEffect(() => {
