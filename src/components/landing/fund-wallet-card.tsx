@@ -8,12 +8,12 @@ type Chain = "base" | "ethereum";
 const USDC_INFO: Record<Chain, { address: string; label: string; decimals: number }> = {
   base: {
     address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-    label: "sUSDC (Base)",
+    label: "sUSD (Base)",
     decimals: 6,
   },
   ethereum: {
     address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    label: "sUSDC (Ethereum)",
+    label: "sUSD (Ethereum)",
     decimals: 6,
   },
 };
@@ -47,7 +47,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
           Fund Your Wallet
         </h3>
         <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px] mb-[12px]">
-          Deposit sUSDC to earn 1 SKAI Point per sUSDC
+          Deposit sUSD to earn 1 SKAI Point per sUSD
         </p>
 
         {/* Chain toggle */}
@@ -85,13 +85,13 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
               />
             </div>
 
-            {/* sUSDC info */}
+            {/* sUSD info */}
             <div className="flex flex-col gap-[4px] px-[8px]">
               <span className="font-manrope font-normal text-[#8B9E9D] text-[10px] md:text-[11px] leading-[14px]">
                 {usdc.label} · {usdc.decimals} decimals
               </span>
               <span className="font-manrope font-normal text-[#2DEDAD] text-[11px] md:text-[12px] leading-[16px]">
-                1 SKAI Point per $1 sUSDC
+                1 SKAI Point per $1 sUSD
               </span>
             </div>
           </>
@@ -101,7 +101,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
               Loading your wallet address...
             </span>
             <span className="font-manrope font-normal text-[#56C7F3] text-[11px] md:text-[12px] leading-[16px]">
-              {usdc.label} · 1 SKAI Point per $1 sUSDC
+              {usdc.label} · 1 SKAI Point per $1 sUSD
             </span>
           </div>
         )}

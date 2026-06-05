@@ -20,16 +20,16 @@ export interface BuyCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const QUICK_ACTIONS = [
-  { label: "Buy $50 sUSDC", message: "I want to buy $50 worth of sUSDC on Base" },
-  { label: "Buy $100 sUSDC", message: "I want to buy $100 worth of sUSDC on Base" },
+  { label: "Buy $50 sUSD", message: "I want to buy $50 worth of sUSD on Base" },
+  { label: "Buy $100 sUSD", message: "I want to buy $100 worth of sUSD on Base" },
   { label: "Buy 0.05 ETH", message: "I want to buy 0.05 ETH on Base" },
-  { label: "Compare prices", message: "Compare current sUSDC and ETH prices and recommend the best buy" },
+  { label: "Compare prices", message: "Compare current sUSD and ETH prices and recommend the best buy" },
 ];
 
 const INITIAL_MESSAGES: BuyCardMessage[] = [
   {
     role: "assistant",
-    content: "I can help you buy sUSDC or ETH. Tell me what you'd like to buy and how much, or use a quick action below.",
+    content: "I can help you buy sUSD or ETH. Tell me what you'd like to buy and how much, or use a quick action below.",
   },
 ];
 
@@ -74,7 +74,7 @@ const BuyCard = React.forwardRef<HTMLDivElement, BuyCardProps>(
             {
               role: "assistant",
               content:
-                "To buy sUSDC or ETH, deposit funds to your wallet using the QR code on the Trade tab, or use a fiat on-ramp service. Once funded, you can swap between tokens using the Swap tool.",
+                "To buy sUSD or ETH, deposit funds to your wallet using the QR code on the Trade tab, or use a fiat on-ramp service. Once funded, you can swap between tokens using the Swap tool.",
             },
           ]);
         }
@@ -114,7 +114,7 @@ const BuyCard = React.forwardRef<HTMLDivElement, BuyCardProps>(
           )}
           <SkaiIcon name="token" size="sm" className="text-[#56C7F3] flex-shrink-0" />
           <p className="font-['Manrope',sans-serif] font-bold text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
-            Buy sUSDC / ETH
+            Buy sUSD / ETH
           </p>
           <span className="text-[10px] px-1.5 py-0.5 rounded-[4px] bg-[#56C7F3]/15 text-[#56C7F3] font-medium font-['Manrope',sans-serif] ml-auto">
             AI

@@ -9,12 +9,12 @@ type Chain = "base" | "ethereum";
 const USDC_INFO: Record<Chain, { address: string; label: string; decimals: number }> = {
   base: {
     address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-    label: "sUSDC (Base)",
+    label: "sUSD (Base)",
     decimals: 6,
   },
   ethereum: {
     address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    label: "sUSDC (Ethereum)",
+    label: "sUSD (Ethereum)",
     decimals: 6,
   },
 };
@@ -62,8 +62,8 @@ const DepositIncentiveCard = React.forwardRef<HTMLDivElement, DepositIncentiveCa
 
         <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px] mb-[12px]">
           {hasClaimedDeposit
-            ? "Deposit sUSDC to fund your wallet and unlock AI trading tools"
-            : "Deposit sUSDC to earn SKAI Points and unlock AI trading tools"}
+            ? "Deposit sUSD to fund your wallet and unlock AI trading tools"
+            : "Deposit sUSD to earn SKAI Points and unlock AI trading tools"}
         </p>
 
         {/* One-time deposit reward banner — only if not yet claimed */}
@@ -72,10 +72,10 @@ const DepositIncentiveCard = React.forwardRef<HTMLDivElement, DepositIncentiveCa
             <span className="font-manrope font-bold text-[#2DEDAD] text-[18px]">1:1</span>
             <div className="flex flex-col gap-[1px]">
               <span className="font-manrope font-medium text-[#E0E0E0] text-[12px] leading-[16px]">
-                1 SKAI Point for every sUSDC on your first deposit
+                1 SKAI Point for every sUSD on your first deposit
               </span>
               <span className="font-manrope font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
-                One-time reward &middot; sUSDC on Base only
+                One-time reward &middot; sUSD on Base only
               </span>
             </div>
           </div>
@@ -116,13 +116,13 @@ const DepositIncentiveCard = React.forwardRef<HTMLDivElement, DepositIncentiveCa
               />
             </div>
 
-            {/* sUSDC info */}
+            {/* sUSD info */}
             <div className="flex flex-col gap-[4px] px-[8px] mb-[12px]">
               <span className="font-manrope font-normal text-[#8B9E9D] text-[10px] md:text-[11px] leading-[14px]">
                 {usdc.label} · {usdc.decimals} decimals
               </span>
               <span className="font-manrope font-normal text-[#2DEDAD] text-[11px] md:text-[12px] leading-[16px]">
-                Send sUSDC to this address to get started
+                Send sUSD to this address to get started
               </span>
             </div>
           </>

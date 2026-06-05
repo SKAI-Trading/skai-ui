@@ -90,7 +90,7 @@ const SUGGESTIONS = [
   { label: "Market signals", icon: "signal" as const, message: "What are the current market signals for ETH and BTC? Give me the latest buy/sell indicators." },
   { label: "Trade ideas", icon: "trending-up" as const, message: "Give me your top trade ideas right now. What setups look promising?" },
   { label: "Chart analysis", icon: "chart" as const, message: "I want to scan and analyze a chart" },
-  { label: "Buy sUSDC", icon: "token" as const, message: "How do I buy sUSDC on Base?" },
+  { label: "Buy sUSD", icon: "token" as const, message: "How do I buy sUSD on Base?" },
   { label: "Swap tokens", icon: "swap" as const, message: "I want to swap tokens" },
   { label: "Market intel", icon: "information" as const, message: "Give me the latest market intel — what's moving, major news, and key levels to watch today." },
 ];
@@ -187,8 +187,8 @@ function DepositBubble({
       {/* Intro text */}
       <p className="text-[13px] leading-[18px] text-[#E0E0E0] mb-[8px]">
         {hasClaimedDeposit
-          ? "Deposit sUSDC to fund your wallet and start trading with AI."
-          : "Welcome! Deposit sUSDC to earn 1 SKAI Point per sUSDC and start trading with AI."}
+          ? "Deposit sUSD to fund your wallet and start trading with AI."
+          : "Welcome! Deposit sUSD to earn 1 SKAI Point per sUSD and start trading with AI."}
       </p>
 
       {/* One-time reward badge — only shown if not yet claimed */}
@@ -196,7 +196,7 @@ function DepositBubble({
         <div className="flex items-center gap-[6px] mb-[8px] px-[8px] py-[6px] rounded-md bg-[#0D3D3A]/60 border border-[#2DEDAD]/15">
           <span className="text-[#2DEDAD] font-bold text-[14px]">1:1</span>
           <span className="text-[#8B9E9D] text-[11px] leading-[14px]">
-            1 SKAI Point per sUSDC on your first deposit (one-time reward)
+            1 SKAI Point per sUSD on your first deposit (one-time reward)
           </span>
         </div>
       )}
@@ -279,8 +279,8 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
         id: "welcome",
         role: "assistant",
         content: username
-          ? `Hey ${username}! I'm your AI trading assistant. Ask me anything — swap tokens, buy sUSDC or ETH, analyze charts, check your portfolio, or bridge assets.`
-          : "Hey! I'm your AI trading assistant. Ask me anything — market signals, trade ideas, chart analysis, swap tokens, or buy sUSDC.",
+          ? `Hey ${username}! I'm your AI trading assistant. Ask me anything — swap tokens, buy sUSD or ETH, analyze charts, check your portfolio, or bridge assets.`
+          : "Hey! I'm your AI trading assistant. Ask me anything — market signals, trade ideas, chart analysis, swap tokens, or buy sUSD.",
         timestamp: Date.now(),
       });
 
@@ -371,7 +371,7 @@ const TradeChatCard = React.forwardRef<HTMLDivElement, TradeChatCardProps>(
             {
               id: nextId(),
               role: "assistant" as const,
-              content: "I'm not connected to the AI backend yet. Try using the quick actions below or deposit sUSDC to get started.",
+              content: "I'm not connected to the AI backend yet. Try using the quick actions below or deposit sUSD to get started.",
               timestamp: Date.now(),
             },
           ]);
