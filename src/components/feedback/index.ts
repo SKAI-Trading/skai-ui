@@ -8,6 +8,7 @@ export * from "./toast";
 export * from "./toaster";
 export * from "./sonner";
 export * from "./spinner";
+export * from "./skai-loader";
 export * from "./empty-state";
 export * from "./error-boundary";
 export * from "./notification";
