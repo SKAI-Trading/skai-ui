@@ -75,8 +75,26 @@ export * from "./hooks/use-count-up";
 // Utilities
 export { cn } from "./lib/utils";
 
-// Animation System
+// Animation System (includes motion-tokens re-exports: durations, easings,
+// springs, interaction, transitions, motionCssVars + legacy aliases)
 export * from "./lib/animations";
+
+// Motion Tokens — explicit named re-exports so feature code can import the
+// canonical names. `motionCssVars` / `springs` / `interaction` / `transitions`
+// already flow through the `lib/animations` re-export above; the names below
+// are role-suffixed aliases for callers that prefer the explicit form.
+export {
+  durations as motionDurationTokens,
+  easings as motionEasingTokens,
+  springs as motionSprings,
+  interaction as motionInteraction,
+  transitions as motionTransitions,
+} from "./lib/motion-tokens";
+export type {
+  DurationToken,
+  EasingToken,
+  SpringToken,
+} from "./lib/motion-tokens";
 
 // Sound Effects (Web Audio API)
 export { playBetSound, playRollSound, playWinSound, playLoseSound, playPushSound } from "./lib/sounds";

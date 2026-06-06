@@ -9,6 +9,9 @@ export * from "./status-bar";
 export * from "./particle-background";
 export * from "./thirdweb-otp-handler";
 
+// Interaction primitives (motion system)
+export * from "./pressable";
+
 // Interactive Utilities
 export * from "./terminal-chat";
 

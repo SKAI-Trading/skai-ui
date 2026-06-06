@@ -30,6 +30,7 @@ import {
   skaiShadows,
 } from "./design-tokens";
 import { breakpoints, zIndex } from "./tokens";
+import { durations, easings, easingToCss } from "./motion-tokens";
 
 // =============================================================================
 // ANIMATION KEYFRAMES (From Figma motion specs)
@@ -178,27 +179,49 @@ export const skaiAnimations = {
 // TRANSITION PRESETS
 // =============================================================================
 
+// Canonical motion duration ladder — sourced from motion-tokens.ts.
+// Tailwind reads these as `duration-fast` / `duration-base` / etc. The legacy
+// names ("quick", "default", "normal", "slowest") are preserved as aliases for
+// any feature code still using them.
 export const skaiTransitionDuration = {
-  instant: "0ms",
-  micro: "75ms", // Micro interactions (Figma)
-  quick: "100ms", // Quick feedback (Figma)
-  fast: "150ms",
-  default: "200ms", // Default transitions (Figma)
-  normal: "300ms",
-  slow: "500ms",
-  slower: "700ms",
-  slowest: "1000ms", // Slow reveals (Figma)
+  instant: `${durations.instant}ms`,
+  micro: `${durations.micro}ms`, // 75ms
+  fast: `${durations.fast}ms`, // 100ms (the new canonical "fast")
+  base: `${durations.base}ms`, // 200ms (the dominant UI beat)
+  slow: `${durations.slow}ms`, // 300ms
+  slower: `${durations.slower}ms`, // 500ms
+  slowest: `${durations.slowest}ms`, // 800ms
+
+  // Legacy aliases — kept for backwards compat with existing Tailwind classes.
+  // New code should reach for `fast` / `base` / `slow` instead.
+  quick: `${durations.fast}ms`, // alias → fast
+  default: `${durations.base}ms`, // alias → base
+  normal: `${durations.slow}ms`, // alias → slow (was 300ms; still 300)
 } as const;
 
+// Canonical easing curves — sourced from motion-tokens.ts. Tailwind's
+// `transitionTimingFunction` consumes CSS strings; the tuples from motion-tokens
+// are stringified to `cubic-bezier(...)` via `easingToCss`. (Tuples are the
+// framer-motion-typed form; CSS needs the string form.)
+// New code should reach for the role-based names (standard / emphasized /
+// decelerate / accelerate / expressive). Legacy names preserved as aliases.
 export const skaiTransitionTimingFunction = {
-  DEFAULT: "cubic-bezier(0.4, 0, 0.2, 1)",
-  in: "cubic-bezier(0.4, 0, 1, 1)",
-  out: "cubic-bezier(0, 0, 0.2, 1)",
-  "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
-  bounce: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
-  "bounce-in": "cubic-bezier(0.6, -0.28, 0.735, 0.045)", // Figma bounceIn
-  "bounce-out": "cubic-bezier(0.175, 0.885, 0.32, 1.275)", // Figma bounceOut
-  sharp: "cubic-bezier(0.4, 0, 0.6, 1)", // Figma sharp
+  // Canonical
+  standard: easingToCss(easings.standard),
+  emphasized: easingToCss(easings.emphasized),
+  decelerate: easingToCss(easings.decelerate),
+  accelerate: easingToCss(easings.accelerate),
+  expressive: easingToCss(easings.expressive),
+
+  // Legacy aliases — preserved so existing class names keep working.
+  DEFAULT: easingToCss(easings.standard),
+  in: easingToCss(easings.accelerate),
+  out: easingToCss(easings.decelerate),
+  "in-out": easingToCss(easings.standard),
+  bounce: easingToCss(easings.expressive),
+  "bounce-in": "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+  "bounce-out": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+  sharp: "cubic-bezier(0.4, 0, 0.6, 1)",
   spring: "cubic-bezier(0.175, 0.885, 0.32, 1.1)",
 } as const;
 

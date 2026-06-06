@@ -7,41 +7,56 @@
 
 import * as React from "react";
 import { cn } from "../lib/utils";
+import {
+  durations as motionDurations,
+  durationsLegacy,
+  easingsLegacy,
+} from "./motion-tokens";
+
+// Re-export the canonical motion tokens so feature code can keep importing
+// from `@skai/ui` directly. The motion-tokens module is the source of truth;
+// these aliases preserve backwards compat for existing callers of
+// `durations.fast` / `easings.easeOut`.
+export {
+  durations as motionDurations,
+  easings as motionEasings,
+  springs,
+  interaction,
+  transitions,
+  motionCssVars,
+} from "./motion-tokens";
+export type {
+  DurationToken,
+  EasingToken,
+  SpringToken,
+} from "./motion-tokens";
 
 // ============================================
-// Animation Duration Tokens
+// Animation Duration Tokens (legacy names)
 // ============================================
+//
+// Existing code uses `durations.fast` / `durations.normal` etc. The legacy
+// alias map keeps those names but maps them to the new canonical values
+// (fast: 150→100, normal: 300→200, slow: 500→300, slower: 700→500). This is
+// a deliberate, system-wide tightening — see motion-tokens.ts for rationale.
 
-export const durations = {
-  instant: 0,
-  fast: 150,
-  normal: 300,
-  slow: 500,
-  slower: 700,
-} as const;
+export const durations = durationsLegacy;
 
 // ============================================
-// Easing Functions
+// Easing Functions (legacy names)
 // ============================================
+//
+// Existing code uses `easings.easeOut` / `easings.bounceOut` etc. The legacy
+// alias map preserves the old names; new code should use the role-based names
+// from `motionEasings` (standard / emphasized / decelerate / accelerate /
+// expressive) — they make intent obvious at the call site.
 
-export const easings = {
-  // Standard easing
-  ease: "cubic-bezier(0.4, 0, 0.2, 1)",
-  easeIn: "cubic-bezier(0.4, 0, 1, 1)",
-  easeOut: "cubic-bezier(0, 0, 0.2, 1)",
-  easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
+export const easings = easingsLegacy;
 
-  // Bouncy easing for playful elements
-  bounce: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
-  bounceIn: "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
-  bounceOut: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-
-  // Sharp easing for UI feedback
-  sharp: "cubic-bezier(0.4, 0, 0.6, 1)",
-
-  // Spring-like easing
-  spring: "cubic-bezier(0.175, 0.885, 0.32, 1.1)",
-} as const;
+// Sentinel re-export so direct `motionDurations.base` reads work even if a
+// caller is destructuring from `@skai/ui/lib/animations` rather than the
+// motion-tokens module.
+void motionDurations;
 
 // ============================================
 // Reduced Motion Hook
