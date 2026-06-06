@@ -35,17 +35,30 @@ export interface SpinnerProps
     VariantProps<typeof spinnerVariants> {
   /** Accessible label for screen readers */
   label?: string;
+  /**
+   * Render as a decorative icon (aria-hidden, no status/live region). Use for
+   * spinners inside a button or next to text that already conveys the loading
+   * state — this matches a plain inline icon's semantics and avoids announcing
+   * "Loading" from every transient inline spinner. Defaults to false, which
+   * keeps the announced role="status" behavior for standalone region loaders.
+   */
+  decorative?: boolean;
 }
 
 const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
-  ({ className, size, variant, label = "Loading", ...props }, ref) => {
+  ({ className, size, variant, label = "Loading", decorative = false, ...props }, ref) => {
+    const a11yProps = decorative
+      ? ({ "aria-hidden": true } as const)
+      : ({
+          role: "status",
+          "aria-busy": true,
+          "aria-live": "polite",
+          "aria-label": label,
+        } as const);
     return (
       <div
         ref={ref}
-        role="status"
-        aria-busy="true"
-        aria-live="polite"
-        aria-label={label}
+        {...a11yProps}
         className={cn(
           spinnerVariants({ size, variant }),
           "motion-reduce:animate-none",
@@ -53,7 +66,7 @@ const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
         )}
         {...props}
       >
-        <span className="sr-only">{label}</span>
+        {!decorative && <span className="sr-only">{label}</span>}
       </div>
     );
   },
