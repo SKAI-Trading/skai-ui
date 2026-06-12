@@ -233,8 +233,10 @@ export const skaiBackgroundImage = {
   "gradient-primary": "var(--gradient-primary)",
   "gradient-glow": "var(--gradient-glow)",
   "gradient-bg": "var(--gradient-bg)",
-  "skai-gradient": "linear-gradient(135deg, #56C7F3, #17F9B4)",
-  "skai-gradient-vertical": "linear-gradient(180deg, #56C7F3, #17F9B4)",
+  // 2026-06-12 green-theme directive: brand gradient is green-on-green
+  // (alien green -> bright); the old blue end is retired.
+  "skai-gradient": "linear-gradient(135deg, #2DEDAD, #17F9B4)",
+  "skai-gradient-vertical": "linear-gradient(180deg, #2DEDAD, #17F9B4)",
   "skai-gradient-gold": "linear-gradient(135deg, #FFB547, #E8A027)",
   "skai-gradient-dark": "linear-gradient(135deg, #001615, #00312D)",
 } as const;

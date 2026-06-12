@@ -48,7 +48,12 @@ export const greenCoalColors = {
 export const accentColors = {
   alienGreen: "#2DEDAD", // Primary accent (Figma canonical)
   alienGreenBright: "#17F9B4", // Bright variant (used in semantic/trading)
-  skyBlue: "#56C7F3", // Primary CTA — Sky Blue 300 (Figma canonical: hsl 197 87% 55%)
+  // 2026-06-12 green-theme directive: CTAs/active states render alien green
+  // platform-wide (blue was overused and is retired as an accent). The token
+  // keeps its `skyBlue`/`sky-blue` name so the hundreds of existing class
+  // usages restyle without a repo-wide rename; Figma's Sky Blue 300 #56C7F3
+  // is intentionally no longer referenced.
+  skyBlue: "#2DEDAD",
   printersGold: "#999966", // Gold accent
 } as const;
 
@@ -145,7 +150,7 @@ export const utilityColors = {
  * Hover state colors (derived from base colors for :hover variants)
  */
 export const hoverColors = {
-  skyBlueHover: "#3A9BD4", // sky-blue (#56C7F3) darkened for hover
+  skyBlueHover: "#22C28C", // sky-blue token (now alien green #2DEDAD) darkened for hover
   nightBlueHover: "#252532", // night-blue lighter for hover
   nightBlueHoverAlt: "#1E1E36", // night-blue subtle hover variant
   discordHover: "#4752C4", // discord blurple darkened for hover
