@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import { cn } from "../../lib/utils";
 import { playBetSound, playRollSound, playWinSound, playLoseSound, playPushSound } from "../../lib/sounds";
 
@@ -15,7 +15,7 @@ export interface HiLoResult {
 export interface HiLoCardProps extends React.HTMLAttributes<HTMLDivElement> {
   skaiPoints: number;
   userId?: string | null;
-  onPlayBet?: (betAmount: number, choice: "hi" | "lo") => Promise<HiLoResult>;
+  onPlayBet?: (betAmount: number, choice: "hi" | "lo", idempotencyKey?: string) => Promise<HiLoResult>;
   onPointsChange?: (newBalance: number) => void;
 }
 
@@ -49,9 +49,22 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
 
     const canPlay = !!userId && !!onPlayBet;
 
+    // Synchronous re-entrancy guard + per-bet sequence (see handlePlay).
+    const inFlightRef = useRef(false);
+    const betSeqRef = useRef(0);
+
     const handlePlay = useCallback(
       async (choice: "hi" | "lo") => {
+        // `isPlaying` is React state — it only updates on the next render, so
+        // two events in the same tick (a mobile ghost-click / double-fired tap)
+        // both read isPlaying===false, both pass the guard, and both place a
+        // bet — debiting the stake twice. A ref flips synchronously and rejects
+        // the duplicate before it can reach the server. (Discord users reported
+        // every 1-pt Hi/Lo bet logging two "bet placed" debits ~300-570ms apart,
+        // every bet, all on skai-landing.)
+        if (inFlightRef.current) return;
         if (!onPlayBet || !userId || isPlaying || skaiPoints < betAmount) return;
+        inFlightRef.current = true;
         setIsPlaying(true);
         setLastResult(null);
         setLastChoice(choice);
@@ -62,7 +75,14 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
         setTimeout(() => playRollSound(), 80);
 
         try {
-          const result = await onPlayBet(betAmount, choice);
+          // Stable-per-bet idempotency key — a second-layer safety net so that
+          // if the same bet still reaches the server twice (network retry, two
+          // tabs), `place_points_bet` replays the cached settlement instead of
+          // charging again. betSeq advances only on a returned settlement, so a
+          // re-attempt of the SAME bet reuses the key.
+          const idempotencyKey = `hilo:${userId}:${betSeqRef.current}:${choice}:${betAmount}`;
+          const result = await onPlayBet(betAmount, choice, idempotencyKey);
+          betSeqRef.current += 1;
           setLastResult(result);
           onPointsChange?.(result.newBalance);
 
@@ -90,6 +110,7 @@ const HiLoCard = React.forwardRef<HTMLDivElement, HiLoCardProps>(
           const msg = err instanceof Error ? err.message : "Something went wrong";
           setErrorMsg(msg.includes("Insufficient") ? "Not enough SKAI Points to play" : msg);
         } finally {
+          inFlightRef.current = false;
           setIsPlaying(false);
         }
       },
