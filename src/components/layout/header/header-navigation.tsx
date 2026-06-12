@@ -152,24 +152,25 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
             aria-haspopup="menu"
             aria-expanded={open}
             className={cn(
-              "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1.5",
+              "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
               "hover:text-primary",
               open ? "text-primary" : "text-white"
             )}
             style={{ letterSpacing: "-0.64px" }}
           >
             {label}
+            {/* Figma nav caret — solid triangle (8×4), matches @skai/ui
+                FigmaChevronDownIcon used across every redesign surface. */}
             <svg
               className={cn(
-                "w-4 h-4 opacity-70 transition-transform duration-200",
+                "w-2 opacity-70 transition-transform duration-200",
                 open && "rotate-180",
               )}
-              viewBox="0 0 24 24"
+              viewBox="0 0 8 4"
               fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
+              aria-hidden="true"
             >
-              <path d="M6 9l6 6 6-6" />
+              <path d="M0 0L4 4L8 0H0Z" fill="currentColor" />
             </svg>
           </button>
         </DropdownMenuTrigger>
@@ -265,24 +266,25 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
             aria-haspopup="menu"
             aria-expanded={open}
             className={cn(
-              "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1.5",
+              "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
               "hover:text-primary",
               open ? "text-primary" : "text-white"
             )}
             style={{ letterSpacing: "-0.64px" }}
           >
             {label}
+            {/* Figma nav caret — solid triangle (8×4), matches @skai/ui
+                FigmaChevronDownIcon used across every redesign surface. */}
             <svg
               className={cn(
-                "w-4 h-4 opacity-70 transition-transform duration-200",
+                "w-2 opacity-70 transition-transform duration-200",
                 open && "rotate-180",
               )}
-              viewBox="0 0 24 24"
+              viewBox="0 0 8 4"
               fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
+              aria-hidden="true"
             >
-              <path d="M6 9l6 6 6-6" />
+              <path d="M0 0L4 4L8 0H0Z" fill="currentColor" />
             </svg>
           </button>
         </DropdownMenuTrigger>
