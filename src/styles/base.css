@@ -98,9 +98,9 @@
     --popover-foreground: 60 100% 97%;
 
     /* Primary Actions - Sky Blue #56C7F3 */
-    --primary: 200 90% 65%;
+    --primary: 160 84% 55%;
     --primary-foreground: 173 100% 4%;
-    --primary-glow: 200 90% 75%;
+    --primary-glow: 160 84% 65%;
 
     /* Secondary Actions - Alien Green #2DEDAD */
     --secondary: 160 84% 55%;
@@ -122,7 +122,7 @@
     --muted-foreground: 225 20% 70%;
 
     /* Accent */
-    --accent: 200 90% 65%;
+    --accent: 160 84% 55%;
     --accent-foreground: 0 0% 100%;
 
     /* Destructive */
@@ -132,7 +132,7 @@
     /* Input & Border */
     --border: 225 30% 20%;
     --input: 225 30% 15%;
-    --ring: 200 90% 65%;
+    --ring: 160 84% 55%;
 
     /* Radius */
     --radius: 0.75rem;
@@ -220,13 +220,13 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 169 89% 40%;
+    --primary: 160 84% 40%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 169 89% 50%;
+    --primary-glow: 160 84% 50%;
 
-    --secondary: 199 89% 48%;
+    --secondary: 160 84% 48%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 199 89% 58%;
+    --secondary-glow: 160 84% 58%;
 
     --long: 142 76% 32%;
     --long-foreground: 0 0% 100%;
@@ -239,7 +239,7 @@
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 169 89% 40%;
+    --accent: 160 84% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 55%;
@@ -247,7 +247,7 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 169 89% 40%;
+    --ring: 160 84% 40%;
 
     /* Light mode gradients */
     --gradient-primary: linear-gradient(
