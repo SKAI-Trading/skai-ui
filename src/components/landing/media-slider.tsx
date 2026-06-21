@@ -105,7 +105,12 @@ const MediaSlider = React.forwardRef<HTMLDivElement, MediaSliderProps>(
         )}
         {...props}
       >
-        <div className="relative w-full aspect-[16/10] overflow-hidden">
+        {/* aspect-video (16:9) matches the 1920x1080 teaser source exactly. A
+            16:10 frame around a 16:9 video left dead letterbox bars top+bottom
+            (object-contain fits to width), which read as the video being "cut
+            off on top and bottom" (report c3b1dc3b). Matching the source aspect
+            fills the frame edge-to-edge with no letterbox and no crop. */}
+        <div className="relative w-full aspect-video overflow-hidden">
           <div className="relative w-full h-full">
             {slides.map((item, index) => (
               <div
