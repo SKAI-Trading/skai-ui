@@ -17,7 +17,15 @@ const TOKEN_ICONS: Record<string, string> = {
   LINK: "https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png",
   UNI: "https://assets.coingecko.com/coins/images/12504/small/uniswap-logo.png",
   AAVE: "https://assets.coingecko.com/coins/images/12645/small/AAVE.png",
-  SKAI: "/assets/skai-icon.png",
+  // SKAI brand mark — the canonical circular bolt that ships in the consuming
+  // app's public root (`/skai-logo-mark.svg`). The old `/assets/skai-icon.png`
+  // path 404s (no such asset is bundled) so SKAI tokens fell back to "SK"
+  // initials, leaving SKAI logos inconsistent across surfaces.
+  SKAI: "/skai-logo-mark.svg",
+  // sUSD is SKAI's native stablecoin (not a bridged asset) — brand it with the
+  // same SKAI mark instead of falling back to "SU" initials. Keyed uppercase
+  // because lookups normalize via `symbol.toUpperCase()` (so "sUSD" → "SUSD").
+  SUSD: "/skai-logo-mark.svg",
 };
 
 export interface TokenIconProps extends React.HTMLAttributes<HTMLDivElement> {
