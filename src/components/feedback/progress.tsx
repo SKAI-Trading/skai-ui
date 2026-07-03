@@ -19,7 +19,7 @@ const Progress = React.forwardRef<
       value={safeValue}
       aria-valuetext={`${Math.round(safeValue)} percent`}
       className={cn(
-        "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
+        "relative h-4 w-full overflow-hidden rounded-full bg-muted",
         className,
       )}
       {...props}
