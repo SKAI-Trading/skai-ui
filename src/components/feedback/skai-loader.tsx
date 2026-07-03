@@ -118,8 +118,14 @@ const SkaiLoader = React.forwardRef<HTMLDivElement, SkaiLoaderProps>(
             50% { opacity: 0.9; }
           }
           @keyframes skai-loader-shimmer {
-            0% { transform: translateX(0) rotate(18deg); }
-            100% { transform: translateX(96px) rotate(18deg); }
+            /* Fade the white band in as it enters the bolt and out as it leaves,
+               so the very first/last frame (and any quick "loaded too fast"
+               freeze-frame) never shows a hard white sliver at the bolt edge
+               (bug 7e381d5a — "glitchy white pixel line"). */
+            0% { transform: translateX(0) rotate(18deg); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateX(96px) rotate(18deg); opacity: 0; }
           }
           .skai-loader__bolt {
             animation: skai-loader-pulse 1.6s ease-in-out infinite;
@@ -133,6 +139,10 @@ const SkaiLoader = React.forwardRef<HTMLDivElement, SkaiLoaderProps>(
             animation: skai-loader-shimmer 1.4s ease-in-out infinite;
             transform-box: fill-box;
             transform-origin: center;
+            /* Hidden at rest so a first paint before the animation's first frame
+               — and the static prefers-reduced-motion state below — never flash
+               the white band as a stray line. */
+            opacity: 0;
           }
           @media (prefers-reduced-motion: reduce) {
             .skai-loader__bolt,
