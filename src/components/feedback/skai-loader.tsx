@@ -5,16 +5,14 @@ import {
   SKAI_BOLT_VIEWBOX,
   SKAI_BOLT_PATH_1,
   SKAI_BOLT_PATH_2,
-  SKAI_BOLT_GRADIENT_FROM,
-  SKAI_BOLT_GRADIENT_TO,
 } from "../branding/skai-bolt-paths";
 
 // =============================================================================
 // SKAI LOADER
 // =============================================================================
 // Branded loading screen matching Figma "load effect" (nodes 2713:4119 desktop,
-// 6393:53747 mobile): the gradient Skai bolt pulses and shimmers over the dark
-// green-coal base with a soft green glow rising from the bottom.
+// 6393:53747 mobile): the solid Sky Blue Skai bolt pulses and shimmers over the
+// dark green-coal base with a soft green glow rising from the bottom.
 //
 // Animation lives in a component-scoped <style> block (precedent:
 // MinimalPageSkeleton) so it never depends on Tailwind content-scanning, which
@@ -30,7 +28,6 @@ const SkaiLoaderMark: React.FC<{ size: "md" | "lg" }> = ({ size }) => {
   // useId is SSR-safe and unique per instance; strip colons so the value is a
   // valid id for url(#...) fragment references inside the SVG.
   const uid = React.useId().replace(/:/g, "");
-  const gradId = `${uid}-grad`;
   const clipId = `${uid}-clip`;
   const height = boltHeightMap[size];
   const width = height * BOLT_ASPECT;
@@ -46,17 +43,16 @@ const SkaiLoaderMark: React.FC<{ size: "md" | "lg" }> = ({ size }) => {
       className="skai-loader__bolt block"
     >
       <defs>
-        <linearGradient id={gradId} x1="0" y1="0" x2="57" y2="64" gradientUnits="userSpaceOnUse">
-          <stop stopColor={SKAI_BOLT_GRADIENT_FROM} />
-          <stop offset="1" stopColor={SKAI_BOLT_GRADIENT_TO} />
-        </linearGradient>
         <clipPath id={clipId}>
           <path d={SKAI_BOLT_PATH_1} />
           <path d={SKAI_BOLT_PATH_2} />
         </clipPath>
       </defs>
-      <path d={SKAI_BOLT_PATH_1} fill={`url(#${gradId})`} />
-      <path d={SKAI_BOLT_PATH_2} fill={`url(#${gradId})`} />
+      {/* Solid Sky Blue bolt — Figma load-effect frame 2713:4119 shows a flat
+          #56C7F3 fill, not the brand Sky Blue -> Alien Green gradient. Scoped
+          to the loader; the shared brand gradient (skai-bolt-paths) is unchanged. */}
+      <path d={SKAI_BOLT_PATH_1} fill="#56C7F3" />
+      <path d={SKAI_BOLT_PATH_2} fill="#56C7F3" />
       {/* Shimmer: a soft white band swept across the bolt, clipped to its shape. */}
       <g clipPath={`url(#${clipId})`}>
         <rect className="skai-loader__shimmer" x="-30" y="-12" width="22" height="88" fill="rgba(255,255,255,0.6)" />
