@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    // TypeScript 6.0.x is hoisted at the repo root (skai-ui pins ^5.3.3 but the
+    // root wins). TS 6 deprecates `baseUrl` (implicitly enabled by `paths`) and
+    // the tsup dts build fails with TS5101 during deploy_main STEP 3. This
+    // silences the deprecation until skai-ui migrates off path aliases.
+    "ignoreDeprecations": "6.0",
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
