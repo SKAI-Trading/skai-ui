@@ -51,7 +51,11 @@ const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
     <Comp
       ref={ref}
       className={cn(
-        "text-2xl font-semibold leading-none tracking-tight",
+        // font-sans (Manrope) so card/section titles match the design system
+        // ("UI headings = Manrope"); without it they inherit the global h1-h6
+        // Cormorant display serif. A consumer can still pass font-serif to opt a
+        // deliberate display title back in. (bugs c0151f91/61628e71/863868ef)
+        "font-sans text-2xl font-semibold leading-none tracking-tight",
         className,
       )}
       {...props}

@@ -89,7 +89,7 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
         <div className="space-y-1">
           <h3
             className={cn(
-              "font-semibold text-foreground",
+              "font-sans font-semibold text-foreground",
               size === "sm" && "text-sm",
               size === "lg" && "text-lg",
             )}
