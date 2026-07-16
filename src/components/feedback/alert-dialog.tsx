@@ -18,7 +18,7 @@ const AlertDialogOverlay = React.forwardRef<
     className={cn(
       // Closed-state exit animation dropped so the dialog unmounts on close
       // synchronously and the body pointer-events lock releases (bug c4c83e9a).
-      "fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 bg-black/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=open]:fade-in-0",
       className,
     )}
     {...props}

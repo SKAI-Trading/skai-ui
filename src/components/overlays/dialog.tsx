@@ -23,7 +23,7 @@ const DialogOverlay = React.forwardRef<
       // (~200ms), swallowing the first click after close ("laggy / click twice
       // to close", bug c4c83e9a). Dropping the closed classes unmounts on close
       // synchronously and releases the lock immediately. Entry animation stays.
-      "fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none",
+      "fixed inset-0 z-50 bg-black/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=open]:fade-in-0 motion-reduce:animate-none",
       className,
     )}
     {...props}
