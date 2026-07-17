@@ -39,4 +39,35 @@ describe("referralUrl", () => {
     // /ref/:code is served by skai.trade (and skai-landing), not app.skai.trade.
     expect(referralUrl("a")).toMatch(/^https:\/\/skai\.trade\//);
   });
+
+  // `users.username` has NO db constraint and no client-side charset check, so it
+  // can hold anything. Raw interpolation lets a crafted username escape its path
+  // segment — the link then reads like a referral and resolves elsewhere.
+  describe("keeps a hostile username inside its path segment", () => {
+    it("cannot climb the path", () => {
+      const url = referralUrl("alice/../admin");
+      expect(url).toBe("https://skai.trade/ref/alice%2F..%2Fadmin");
+      expect(url).not.toContain("/ref/alice/");
+    });
+
+    it("cannot open a query string", () => {
+      const url = referralUrl("alice?next=https://evil.example");
+      expect(url).not.toContain("?next=");
+      expect(url!.slice("https://skai.trade/ref/".length)).not.toContain("?");
+    });
+
+    it("cannot open a fragment", () => {
+      expect(referralUrl("alice#frag")).not.toContain("#frag");
+    });
+
+    it("cannot inject an extra param", () => {
+      expect(referralUrl("a&utm_source=x")).not.toContain("&utm_source=");
+    });
+
+    it("leaves an ordinary username untouched (encoding is a no-op there)", () => {
+      // The guard must not disfigure the 99% case.
+      expect(referralUrl("vassimo_125")).toBe("https://skai.trade/ref/vassimo_125");
+      expect(referralUrl("a-b.c")).toBe("https://skai.trade/ref/a-b.c");
+    });
+  });
 });
