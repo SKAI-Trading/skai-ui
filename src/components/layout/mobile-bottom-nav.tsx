@@ -4,10 +4,16 @@
  * Presentational component - receives items and active state via props.
  * The consuming app provides its own navigation link rendering.
  *
- * Figma parity (Skai-Web-App 6704:26136 / 6415:44306 "Bottom-navigation-tablet"):
- * a 52px bar, translucent green-coal fill with a 10px blur and a 1px
- * green-coal-100 top border, holding equal-width tabs that lay their 16px icon
- * and 14px Mulish label out HORIZONTALLY (icon then label, side by side).
+ * Figma ships TWO distinct components here, and the tab layout differs between
+ * them — this bar renders both:
+ *   - below md: "Bottom-navigation-mobile" (6419:46381, 375x54) — icon ABOVE label
+ *   - md..lg:   "Bottom-navigation-tablet" (6704:26136 / 6415:44306, 768x53) —
+ *               icon BESIDE label
+ * Common to both: a 52px bar, translucent green-coal fill with a 10px blur and a
+ * 1px green-coal-100 top border, holding equal-width tabs with a 16px icon and a
+ * 14px Mulish label. This was built from the tablet frame alone and shipped the
+ * horizontal tabs to phones (report efbaaa08). The consuming app hides the bar
+ * entirely at lg+, where the left rail takes over.
  */
 
 import * as React from "react";
@@ -108,8 +114,12 @@ export function MobileBottomNav({
           "aria-current": active ? "page" : undefined,
           "aria-label": item.label,
           className: cn(
-            // Figma "list": flex-1, horizontal icon+label, gap-1.5, centred.
-            "flex flex-1 min-w-0 items-center justify-center gap-1.5 h-full rounded-lg",
+            // Figma "list": flex-1, centred. Icon stacks ABOVE the label on
+            // phones (Bottom-navigation-mobile) and sits BESIDE it from md up
+            // (Bottom-navigation-tablet). Fits the 52px bar either way: py-2
+            // leaves a 36px box, and icon(16) + gap-0.5(2) + label leading-4(16)
+            // = 34px stacked.
+            "flex flex-1 min-w-0 flex-col items-center justify-center gap-0.5 h-full rounded-lg md:flex-row md:gap-1.5",
             "transition-colors duration-200 motion-reduce:transition-none active:scale-95",
             active ? "text-primary" : "text-white/90 hover:text-white",
           ),
