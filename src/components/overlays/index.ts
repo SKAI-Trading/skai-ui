@@ -19,3 +19,7 @@ export * from "./wallet-choice-modal";
 export * from "./email-verification-modal";
 export * from "./instagram-share-modal";
 export * from "./x-share-modal";
+
+// Scrim + centred panel for hand-rolled overlays: owns backdrop-click and
+// Escape dismissal so each caller cannot forget them (bug 232862b0).
+export * from "./ModalScrim";
