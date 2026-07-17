@@ -1717,28 +1717,45 @@ const iconPaths: Record<SkaiIconName, React.ReactNode> = {
       <path d="M12 4l4 4H8l4-4z" fill="#4DD0E1" />
     </>
   ),
+  /**
+   * Legend tier badge — bug 15fabce2 "Legends badge does not match Figma UI".
+   *
+   * Figma (2939:10761, the Upgrade plan cards) draws this as a PALE PEACH disc
+   * with a CORAL SWORD. Colours are pixel-sampled from that frame, not guessed:
+   * disc #F8E1D8, sword #FF7E50 (accents #FBAF94 / #FE8459 appear only as
+   * antialiasing).
+   *
+   * It previously shipped as a PURPLE gradient disc (#A855F7 -> #7C3AED) with a
+   * star — wrong hue family and wrong glyph, i.e. not a near-miss but a different
+   * badge. "Legend = purple" still survives elsewhere and those are NOT authority:
+   * tierData.ts:42, welcome-card.tsx:23 and WelcomeSuccessModal.tsx:60 all carry
+   * purple legend gradients. Figma is the tiebreaker (Casey 2026-07-16, "just
+   * match figma"); those sites are flagged, not silently changed, because they are
+   * different surfaces and may have their own frames.
+   */
   "tier-legend": (
     <>
-      <defs>
-        <linearGradient id="legendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#A855F7" />
-          <stop offset="50%" stopColor="#9333EA" />
-          <stop offset="100%" stopColor="#7C3AED" />
-        </linearGradient>
-      </defs>
-      <circle cx="12" cy="12" r="9" fill="url(#legendGrad)" />
+      <circle cx="12" cy="12" r="9" fill="#F8E1D8" />
+      {/* Sword: blade up the centre, crossguard, pommel — matches the Figma glyph. */}
       <path
-        d="M12 4l2 3h3l-2.5 3 1 4-3.5-2-3.5 2 1-4L7 7h3l2-3z"
-        fill="white"
-        fillOpacity="0.95"
+        d="M12 5.25l1.15 1.9v5.4h-2.3v-5.4L12 5.25z"
+        fill="#FF7E50"
       />
       <path
-        d="M12 19v-4M8 17l4-2 4 2"
-        stroke="white"
+        d="M8.9 13.05h6.2"
+        stroke="#FF7E50"
         strokeWidth="1.5"
         strokeLinecap="round"
         fill="none"
       />
+      <path
+        d="M12 13.05v3.05"
+        stroke="#FF7E50"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <circle cx="12" cy="17.1" r="1.35" fill="#FF7E50" />
     </>
   ),
 };
