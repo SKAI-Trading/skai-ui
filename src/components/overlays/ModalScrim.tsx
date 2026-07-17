@@ -1,4 +1,5 @@
 import * as React from "react";
+import { cn } from "../../lib/utils";
 
 /**
  * ModalScrim — the dimmed backdrop + centred panel that every hand-rolled modal
@@ -36,7 +37,14 @@ export interface ModalScrimProps {
   /** Accessible name for the dialog (`aria-label`). */
   label: string;
   children: React.ReactNode;
-  /** Extra classes for the BACKDROP (z-index, padding). Panel styling belongs on the child. */
+  /**
+   * Classes for the BACKDROP, merged over the defaults with tailwind-merge — so a
+   * caller can OVERRIDE, not just add: pass `items-end sm:items-center` for a
+   * mobile bottom-sheet and it replaces the default `items-center`; pass
+   * `bg-black/90` and it replaces `bg-black/80`. This is what lets the varied
+   * hand-rolled scrims (some bottom-sheet, some /90) migrate without changing how
+   * they look. Panel styling belongs on the child, not here.
+   */
   className?: string;
   /** `data-testid` for the backdrop. */
   testId?: string;
@@ -85,7 +93,10 @@ export function ModalScrim({
       role="dialog"
       aria-modal="true"
       aria-label={label}
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 ${className}`}
+      className={cn(
+        "fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4",
+        className,
+      )}
       onClick={dismissible ? onBackdropClick : undefined}
     >
       {children}

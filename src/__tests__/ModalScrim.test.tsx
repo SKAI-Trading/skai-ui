@@ -69,6 +69,22 @@ describe("ModalScrim", () => {
     expect(onClose).not.toHaveBeenCalled();
   });
 
+  it("lets className OVERRIDE the default scrim utilities, not just append", () => {
+    // The bottom-sheet overlays are items-end on mobile and some are bg-black/90.
+    // tailwind-merge must drop the default items-center / bg-black/80 rather than
+    // emit both — otherwise migrating them would change their layout.
+    render(
+      <ModalScrim onClose={vi.fn()} label="Sheet" testId="scrim" className="items-end bg-black/90">
+        <div>x</div>
+      </ModalScrim>,
+    );
+    const cls = screen.getByTestId("scrim").className;
+    expect(cls).toContain("items-end");
+    expect(cls).not.toContain("items-center");
+    expect(cls).toContain("bg-black/90");
+    expect(cls).not.toContain("bg-black/80");
+  });
+
   it("carries the dialog semantics the hand-rolled overlays each re-declared", () => {
     render(<Fixture onClose={vi.fn()} />);
     const scrim = screen.getByTestId("scrim");
