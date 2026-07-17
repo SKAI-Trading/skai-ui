@@ -10,6 +10,7 @@
 
 import * as React from "react";
 import { cn } from "../../lib/utils";
+import { urls } from "../../lib/constants";
 
 // =============================================================================
 // TYPES
@@ -108,7 +109,7 @@ const FacebookIcon: React.FC<{ className?: string }> = ({ className }) => (
  *   isBlurred={scrollY > 50}
  *   termsUrl="/terms"
  *   privacyUrl="/privacy"
- *   discordUrl="https://discord.gg/skai"
+ *   discordUrl={urls.social.discord}
  * />
  * ```
  */
@@ -119,10 +120,18 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
       isBlurred = false,
       termsUrl = "/terms",
       privacyUrl = "/privacy",
-      discordUrl = "https://discord.gg/skai",
+      // Defaults come from lib/constants so they cannot contradict the rest of
+      // the design system. They previously hardcoded discord.gg/skai,
+      // instagram.com/skai and x.com/skai — none of which are SKAI's accounts,
+      // and all of which disagreed with `urls.social` in this same package.
+      // Only skai-landing consumes this today and it passes every prop, so the
+      // wrong values never shipped; the next consumer would not have been so
+      // lucky. "Footer discord link goes to wrong discord" (cc5fe223) is what
+      // this class of bug looks like when it does reach users.
+      discordUrl = urls.social.discord,
       telegramUrl,
-      instagramUrl = "https://instagram.com/skai",
-      twitterUrl = "https://x.com/skai",
+      instagramUrl = urls.social.instagram,
+      twitterUrl = urls.social.twitter,
       linkedinUrl,
       youtubeUrl,
       tiktokUrl,
