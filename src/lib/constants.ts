@@ -33,6 +33,28 @@ export const urls = {
   },
 } as const;
 
+/**
+ * Build a user's referral link.
+ *
+ * `/ref/{code}` is the route that exists: it captures the code into localStorage
+ * and forwards on. `/referral` is registered with NO param, so `/referral/alice`
+ * matches nothing — and BOTH share surfaces hand-rolled that dead URL in slightly
+ * different ways before this existed (the wallet's ShareCard emitted a flat
+ * /wallet link; the app's SharePortfolioModal emitted /referral/{username}). One
+ * builder so a third surface cannot invent a fourth wrong shape.
+ *
+ * The code is a USERNAME (attribution resolves it with `.eq("username", …)`), and
+ * it is matched literally, so it is lowercased here rather than at each call site.
+ *
+ * Returns null when there is no username: such a user has no attributable code,
+ * and callers should fall back to a plain product link rather than emit
+ * `/ref/null`.
+ */
+export function referralUrl(username: string | null | undefined): string | null {
+  const code = username?.trim().toLowerCase();
+  return code ? `${urls.app.landing}/ref/${code}` : null;
+}
+
 export const brand = {
   name: "SKAI",
   domain: "skai.trade",

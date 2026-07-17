@@ -113,7 +113,7 @@ export { content, interpolate, getContent } from "./lib/content";
 export type { Content, ContentPath } from "./lib/content";
 
 // Platform Constants (URLs, Social Links, Brand)
-export { urls, brand } from "./lib/constants";
+export { urls, brand, referralUrl } from "./lib/constants";
 
 // Asset System (Images/Icons)
 export { assets, assetUrls, placeholders, getAsset } from "./lib/assets";
