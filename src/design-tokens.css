@@ -277,7 +277,7 @@
   /* Border & Ring */
   --border: 170 20% 15%;
   --input: 170 20% 15%;
-  --ring: 200 90% 65%; /* Sky Blue */
+  --ring: 160 84% 55%; /* Sky Blue = #2DEDAD, which is GREEN in this system */
 
   /* Radius */
   --radius: 0.5rem;
@@ -314,7 +314,7 @@
 
   --border: 170 15% 85%;
   --input: 170 15% 85%;
-  --ring: 200 90% 65%; /* Sky Blue */
+  --ring: 160 84% 55%; /* Sky Blue = #2DEDAD, which is GREEN in this system */
 }
 
 /* ============================================

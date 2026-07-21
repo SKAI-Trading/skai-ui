@@ -77,7 +77,14 @@
     --muted-foreground: 225 20% 60%; /* #8B92A8 */
     --border: 225 30% 20%; /* #2D3A54 */
     --input: 225 30% 15%;
-    --ring: 200 90% 65%; /* Primary color for focus (#56C7F3) */
+    /* Brand green, matching --primary and styles/base.css. This was
+       200 90% 65% (#56C7F3), a literal blue, and the source of the "blue box
+       inside the text boxes" report. Trap worth knowing: the brand colour NAMED
+       "Sky Blue" in this system is #2DEDAD, which is GREEN - .ring-sky-blue
+       compiles to rgb(45 237 173). design-tokens.css carried the same literal
+       blue under a Sky Blue label; the label was right, the value was not.
+       Figma shows a green focus treatment. */
+    --ring: 160 84% 55%;
 
     /* Radius & Shadows */
     --radius: 0.75rem; /* 12px */
@@ -129,7 +136,7 @@
     --destructive-foreground: 0 0% 100%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 200 90% 50%;
+    --ring: 160 84% 40%; /* light theme: brand green, darkened for contrast */
 
     /* Light mode glass */
     --glass-bg: rgba(255, 255, 255, 0.8);
