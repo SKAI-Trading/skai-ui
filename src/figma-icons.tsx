@@ -20,7 +20,15 @@ type IconProps = React.SVGProps<SVGSVGElement>;
 // HEADER (2713:4828) — pill + chrome icons
 // =============================================================================
 
-/** Skai Points pill — diamond outline (gradient #2DEDAD → #17F9B4). 14×14. */
+/** Skai Points pill — diamond outline (gradient #56C7F3 → #17F9B4). 14×14.
+ *
+ *  The first stop is Sky Blue 300, NOT #2DEDAD. Figma Header-desktop 7710:92977
+ *  exports this gem as `#56C7F3 → #17F9B4`, i.e. it reads blue-into-teal across
+ *  the glyph; it had been transcribed as `#2DEDAD → #17F9B4`, which is green
+ *  into green, so the pill rendered flat green. Because the fill is a gradient
+ *  `url(...)` reference it also IGNORES the caller's text color — HomeTopBar's
+ *  StatPill already asks for `text-[#56C7F3]` and could never win — so the
+ *  correction has to live here on the stop itself. */
 export const FigmaPointsIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 14 14" fill="none" aria-hidden="true" {...props}>
     <path
@@ -31,7 +39,7 @@ export const FigmaPointsIcon: React.FC<IconProps> = (props) => (
     />
     <defs>
       <linearGradient id="figma-points-gradient" x1="0.59646" y1="-1.49083" x2="17.7701" y2="4.20608" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#2DEDAD" />
+        <stop stopColor="#56C7F3" />
         <stop offset="1" stopColor="#17F9B4" />
       </linearGradient>
     </defs>
@@ -50,10 +58,15 @@ export const FigmaVaultIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-/** sUSD pill icon — `$` glyph in cyan #2DEDAD. The Figma reference renders an
+/** sUSD pill icon — `$` glyph in Sky Blue 300 #56C7F3. The Figma reference renders an
  * Ethereum diamond shape and labels the pill "0.0036 ETH" as placeholder text,
  * but on SKAI we use sUSD (per CLAUDE.md) and a `$` glyph reads cleaner than a
- * coin/diamond. The mark is set in Mulish Bold to match the pill's value text. */
+ * coin/diamond. The mark is set in Mulish Bold to match the pill's value text.
+ *
+ * The fill is #56C7F3, not #2DEDAD: the `$` in Figma Header-desktop 7710:92977
+ * is solid Sky Blue 300, the same tint as the pill's SKAI mark beside it. A
+ * hardcoded fill also beats the caller's text color, so HomeTopBar's
+ * `text-[#56C7F3]` on this pill was dead — the hex has to be right here. */
 export const FigmaSusdIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 14 14" fill="none" aria-hidden="true" {...props}>
     <text
@@ -63,7 +76,7 @@ export const FigmaSusdIcon: React.FC<IconProps> = (props) => (
       fontFamily="Mulish, system-ui, sans-serif"
       fontSize="13"
       fontWeight="700"
-      fill="#2DEDAD"
+      fill="#56C7F3"
     >
       $
     </text>

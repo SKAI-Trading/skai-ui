@@ -265,10 +265,19 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
             type="button"
             aria-haspopup="menu"
             aria-expanded={open}
+            // Figma Header-desktop 7710:92977 paints the hovered / open nav trigger
+            // and its caret Sky Blue 300 #56C7F3 — the same literal the menu rows
+            // below already use. This was `text-primary`, and in the main app
+            // `--primary` is 160 84% 55% = #2DEDAD Alien Green (src/index.css:386),
+            // so Trade / Predict / Play / Social / More lit up GREEN on hover while
+            // the menu they opened lit up blue. Do NOT reach for the `sky-blue`
+            // token to fix this — in this codebase that one ALSO resolves to green
+            // #2DEDAD. The caret follows via its `fill="currentColor"`, matching the
+            // frame where the active caret is #56C7F3 as well.
             className={cn(
               "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
-              "hover:text-primary",
-              open ? "text-primary" : "text-white"
+              "hover:text-[#56C7F3]",
+              open ? "text-[#56C7F3]" : "text-white"
             )}
             style={{ letterSpacing: "-0.64px" }}
           >
