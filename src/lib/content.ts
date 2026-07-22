@@ -205,10 +205,16 @@ export const content = {
           emphasis: "AI-powered",
           suffix: " trading ecosystem",
         },
+        // Copy is verbatim from Figma 2005:4512 / 2005:9321 (Skai > Onboarding
+        // 1VH). The previous wording ("Discover the new world ... prediction
+        // markets ... a catalog of casino-style gaming") predates the approved
+        // onboarding design and was the "old skai.trade messaging" in bug
+        // 419bd2b4.
         subheading:
-          "Discover the new world of perpetual trading, swaps, prediction markets, memes, launchpads, and a catalog of casino-style gaming.",
+          "Tap into our brave new world of perpetual trading, swaps, prediction, memes, launchpads, and our catalog of casino style gaming.",
         cta: "Get early access",
-        counterSuffix: "Traders are already on the list",
+        // Figma 2005:5169 / 2005:9978.
+        counterSuffix: "Users are already on this list",
         defaultCount: "800",
       },
 

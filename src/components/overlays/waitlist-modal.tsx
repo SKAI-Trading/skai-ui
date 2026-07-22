@@ -263,8 +263,12 @@ export function WaitlistModal({
           Get early access to Skai
         </h2>
 
-        {/* Description */}
-        <p className="font-manrope mb-6 px-2 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-8 md:px-4 md:text-[16px] md:leading-[22px] lg:mb-8 lg:px-4 lg:text-[18px] lg:leading-[24px]">
+        {/* Description — Figma 2005:10003. Full-width (the frame's text box is
+            the modal's 400px content width, with no inner inset) and tracked at
+            -4% like every other Manrope run in the frame. The old px-2/px-4
+            inset narrowed it to 366px and re-wrapped the sentence. The 24px gap
+            down to the email field is the modal's own flex gap in Figma. */}
+        <p className="font-manrope mb-6 text-center text-[14px] font-normal leading-[20px] tracking-[-0.04em] text-[#E0E0E0] md:mb-6 md:text-[16px] md:leading-[22px] lg:mb-6 lg:text-[18px] lg:leading-[24px]">
           Enter your email address to get access to join the Skai waitlist.
         </p>
 
@@ -280,9 +284,11 @@ export function WaitlistModal({
 
         {/* Email Form */}
         <form onSubmit={handleSubmit}>
-          <div className="mb-4 md:mb-5 lg:mb-5">
-            {/* Email Label */}
-            <label className="font-manrope mb-2 block px-4 text-[10px] font-normal leading-[14px] text-white md:px-5 md:text-[12px] md:leading-[16px] lg:px-[22px] lg:text-[14px] lg:leading-[18px]">
+          {/* 24px down to the Continue button — Figma 2005:9995 lays the modal
+              out as a 24px-gap column; this was 20px. */}
+          <div className="mb-4 md:mb-6 lg:mb-6">
+            {/* Email Label — Figma 2005:10007, Manrope Regular 14/18 at -4%. */}
+            <label className="font-manrope mb-2 block px-4 text-[10px] font-normal leading-[14px] tracking-[-0.04em] text-white md:px-5 md:text-[12px] md:leading-[16px] lg:px-[22px] lg:text-[14px] lg:leading-[18px]">
               Email address
             </label>
             <div className="relative">
@@ -295,11 +301,19 @@ export function WaitlistModal({
                 disabled={isLoading}
                 placeholder="example@provider.com"
                 autoComplete="email"
+                /* Figma 2005:10008 — 22px padding all round (66px tall at
+                   16/22 type, not 64), and the placeholder is App/Ash 300
+                   #95A09F. #5d6b6a sat well under the frame's contrast. */
                 className={cn(
-                  "font-manrope w-full rounded-[12px] border bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] text-white transition-colors placeholder:text-[#5d6b6a] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:px-6 lg:py-5 lg:text-[16px] lg:leading-[22px]",
+                  "font-manrope w-full rounded-[12px] border bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] tracking-[-0.04em] text-white transition-colors placeholder:text-[#95a09f] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:p-[22px] lg:text-[16px] lg:leading-[22px]",
                   emailError
                     ? "border-[#FF7E50] focus:border-[#FF7E50]"
-                    : "border-[#123f3c] focus:border-[#2DEDAD]"
+                    // Sky Blue 300 on focus, not Alien Green. The modal
+                    // auto-focuses this field on open, so #2DEDAD was the
+                    // first thing on screen and it is not a colour the frame
+                    // (2005:9995) uses anywhere — every accent there is
+                    // #56C7F3, including the two social buttons right below.
+                    : "border-[#123f3c] focus:border-[#56C7F3]"
                 )}
                 aria-label="Email address"
                 aria-invalid={!!emailError}
@@ -317,10 +331,15 @@ export function WaitlistModal({
             )}
           </div>
 
-          {/* Continue Button */}
+          {/* Continue Button — Figma 2005:10015 draws this at full strength
+              alongside an empty (placeholder-only) field. Disabling it on an
+              empty email both greyed out the frame's primary CTA on open and
+              made `validateAndSubmit`'s "Please enter your email address."
+              branch unreachable, so an empty submit gave the user no feedback
+              at all. Empty input still cannot reach onEmailSubmit. */}
           <button
             type="submit"
-            disabled={!email.trim() || isLoading}
+            disabled={isLoading}
             className="md:py-4.5 font-manrope md:mb-5.5 mb-5 w-full rounded-[12px] bg-[#56C7F3] px-6 py-4 text-center text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-8 md:text-[15px] md:leading-[21px] md:tracking-[-0.6px] lg:mb-6 lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
           >
             Continue
@@ -338,8 +357,9 @@ export function WaitlistModal({
               <div className="h-[1px] flex-1 bg-[#123f3c]" />
             </div>
 
-            {/* Social Login Buttons */}
-            <div className="flex flex-row gap-2 md:gap-2.5">
+            {/* Social Login Buttons — Figma 2005:10021 puts an 8px gutter
+                between the two 196px halves of the 400px content width. */}
+            <div className="flex flex-row gap-2">
               {/* Google Button */}
               {onGoogleLogin && (
                 <button
