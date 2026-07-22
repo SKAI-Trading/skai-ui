@@ -283,10 +283,18 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
           >
             {label}
             {/* Figma nav caret — solid triangle (8×4), matches @skai/ui
-                FigmaChevronDownIcon used across every redesign surface. */}
+                FigmaChevronDownIcon used across every redesign surface.
+                FULL opacity, deliberately. This carried `opacity-70`, which is
+                why the caret still read off-colour after the trigger hex above
+                was corrected: at 70% over the #001615 bar a white caret
+                composites to #B3BAB9 and a hovered one to #3C93B1, so the nav
+                never actually reached either colour the frame specifies.
+                Frame 7710:92977 draws all five carets at full strength —
+                sampled from the export, each is 12 core pixels of #FFFFFF
+                (Predict / Play / Social / More) or #56C7F3 (Trade). */}
             <svg
               className={cn(
-                "w-2 opacity-70 transition-transform duration-200",
+                "w-2 transition-transform duration-200",
                 open && "rotate-180",
               )}
               viewBox="0 0 8 4"
