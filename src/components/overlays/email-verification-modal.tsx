@@ -313,12 +313,16 @@ export function EmailVerificationModal({
 
         {/* Code Input */}
         <div className="mb-6 md:mb-6 lg:mb-6">
-          <div className="mb-4 flex justify-center gap-2 px-1 md:mb-4 md:gap-3 md:px-0 lg:mb-4 lg:gap-3">
+          {/* Figma 2005:20664 — the six inputs are `flex-[1_0_0]`, i.e. they
+              split the modal's full content width evenly (8px gutter), not a
+              narrow centred cluster of fixed 44/52/56px boxes. That fixed-width
+              layout was the "pop up size do not match" report (8658d6a4). */}
+          <div className="mb-4 flex justify-center gap-2 px-1 md:mb-4 md:px-0 lg:mb-4">
             {code.map((digit, index) => (
               <div
                 key={index}
                 className={cn(
-                  "flex h-[48px] w-[44px] flex-shrink-0 items-center justify-center rounded-[10px] border bg-[#001615] transition-colors md:h-[56px] md:w-[52px] md:rounded-[12px] lg:h-[60px] lg:w-[56px] lg:rounded-[14px]",
+                  "flex h-[48px] flex-1 min-w-0 items-center justify-center rounded-[10px] border bg-[#001615] transition-colors md:h-[56px] md:rounded-[12px] lg:h-[60px] lg:rounded-[14px]",
                   localError
                     ? "border-[#FF4444]"
                     : digit
@@ -338,7 +342,11 @@ export function EmailVerificationModal({
                   onKeyDown={(e) => handleKeyDown(index, e)}
                   onPaste={index === 0 ? handlePaste : undefined}
                   disabled={loading}
-                  className="font-manrope h-full w-full border-none bg-transparent text-center text-[20px] font-normal leading-none text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-[24px] lg:text-[28px]"
+                  /* Figma 2005:20667 — the OTP digits are the "Numbers" ramp
+                     (Mulish Light), not Manrope. Manrope rendered the code in
+                     the body face, which was the "text font do not match"
+                     half of report 8658d6a4. */
+                  className="font-mulish h-full w-full border-none bg-transparent text-center text-[20px] font-light leading-none text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-[24px] lg:text-[28px]"
                   aria-label={`Digit ${index + 1}`}
                 />
               </div>
