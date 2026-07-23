@@ -57,7 +57,15 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       <div className={description || hasError ? "space-y-1" : undefined}>
         <textarea
           className={cn(
-            "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            // `text-base md:text-sm` (16px on mobile, 14px from md up) — NOT a bare
+            // `text-sm`. iOS Safari auto-zooms the viewport when a focused field's
+            // font is < 16px, and (unlike a blur) it does NOT zoom back out when the
+            // field is UNMOUNTED while still focused — e.g. the bug-report form swaps
+            // to its success panel on submit, leaving the page stuck zoomed in
+            // (report f08095a9). Matching the Input primitive (which already uses
+            // this exact pattern) keeps the whole textarea family zoom-safe on phones
+            // while unchanged at 14px on desktop.
+            "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base md:text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
             hasError && "border-destructive focus-visible:ring-destructive",
             className,
           )}
