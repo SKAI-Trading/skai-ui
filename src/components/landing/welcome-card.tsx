@@ -105,13 +105,20 @@ function TierRoadmap({ currentTierKey, currentPoints }: { currentTierKey: string
                 isCurrent && "ring-1 ring-[rgba(255,255,255,0.12)]",
               )}
             >
+              {/* Every tier keeps its own brand colour so the ladder reads as
+                  one consistent set (report 46503623: Platinum/Diamond/Legend
+                  rendered as flat grey blobs, out of step with the coloured
+                  lower tiers). A locked tier is dimmed via opacity rather than
+                  stripped of its colour — the reached/unreached distinction is
+                  still carried by the dim, the current-tier ring, and the
+                  rewards row's "✓ Unlocked" / "N pts required" line below. */}
               <div
                 className="w-[6px] h-[6px] rounded-full flex-shrink-0"
-                style={{ backgroundColor: unlocked ? color.to : "rgba(139,158,157,0.3)" }}
+                style={{ backgroundColor: color.to, opacity: unlocked ? 1 : 0.4 }}
               />
               <span
                 className="font-manrope font-medium text-[8px] md:text-[9px] leading-tight truncate w-full"
-                style={{ color: unlocked ? color.text : "#5A7170" }}
+                style={{ color: color.text, opacity: unlocked ? 1 : 0.55 }}
               >
                 {tier.name}
               </span>
