@@ -63,29 +63,26 @@ const SkaiLightningIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-/** External Wallet Connect Icon */
+/**
+ * External Wallet Connect Icon
+ *
+ * Same solid Sky Blue disc as the email-wallet icon, with the chain-link
+ * glyph (icon24/link) inset at the coordinates the design uses.
+ */
 const ExternalWalletIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
-    <rect width="48" height="48" rx="24" fill="#56C7F3" fillOpacity="0.1" />
     <path
-      d="M14 24C14 18.477 18.477 14 24 14C29.523 14 34 18.477 34 24C34 29.523 29.523 34 24 34"
-      stroke="#56C7F3"
-      strokeWidth="2"
-      strokeLinecap="round"
+      d="M0 23.5543C0 10.5456 10.5456 0 23.5543 0C36.5629 0 47.1085 10.5456 47.1085 23.5543V24.4457C47.1085 37.4544 36.5629 48 23.5543 48C10.5456 48 0 37.4544 0 24.4457V23.5543Z"
+      fill="#56C7F3"
     />
-    <path
-      d="M24 20V24L27 27"
-      stroke="#56C7F3"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M14 30L18 34M14 34L18 30"
-      stroke="#56C7F3"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
+    <g transform="translate(11.4434 11.7217)">
+      <path
+        d="M4.61717 19.9392C7.18743 22.3867 10.2478 21.4075 11.4726 20.416C12.1049 19.9034 12.3904 19.5719 12.6349 19.3263C13.4913 18.5313 13.4371 17.7353 12.8805 17.0988C12.6564 16.8441 11.227 15.4709 9.85592 14.063C9.14583 13.3529 8.65674 12.8516 8.23723 12.4464C7.67754 11.8877 7.18743 11.2472 6.45278 11.2656C5.77952 11.2656 5.29043 11.8591 4.67754 12.472C3.97358 13.1759 3.4538 14.063 3.27065 14.8591C2.71915 17.1848 3.57658 18.8372 4.61717 19.9392ZM4.61717 19.9392L2.04589 22.5095M19.9385 4.61997C17.3672 2.17044 14.317 3.16703 13.0933 4.15953C12.4589 4.67317 12.1745 5.00469 11.9289 5.25026C11.0725 6.0463 11.1267 6.84234 11.6844 7.47877C11.7642 7.57086 12.0016 7.80619 12.3341 8.13771M19.9385 4.61997C20.9791 5.72195 21.8477 7.39282 21.2962 9.72059C21.1121 10.5166 20.5923 11.4037 19.8883 12.1087C19.2765 12.7206 18.7864 13.3151 18.1131 13.3151C17.3784 13.3335 16.9978 12.8014 16.4361 12.2428M19.9385 4.61997L22.5098 2.04664M12.3341 8.13771C12.9286 8.72604 13.831 9.61315 14.7089 10.5156C15.419 11.2257 16.0166 11.8376 16.4361 12.2417L14.8379 13.8021M12.3341 8.13771L10.7553 9.7257"
+        stroke="#001615"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </g>
   </svg>
 );
 
@@ -149,30 +146,30 @@ export function WalletChoiceModal({
         </h2>
 
         {/* Subtitle */}
-        <p className="font-manrope mb-5 px-1 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:px-2 md:text-[16px] md:leading-[22px] lg:mb-6 lg:px-0 lg:text-[18px] lg:leading-[24px]">
+        <p className="font-manrope mb-5 px-1 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:px-2 md:text-[16px] md:leading-[22px] lg:mb-6 lg:px-0 lg:text-[18px] lg:leading-[24px] lg:tracking-[-0.72px]">
           Choose how you&apos;d like to store your assets.
         </p>
 
         {/* Wallet Options */}
-        <div className="flex flex-col gap-3 md:gap-4 lg:gap-4">
+        <div className="flex flex-col gap-3 md:gap-4 lg:gap-6">
           {/* Email Wallet Option */}
           <button
             onClick={onSelectEmailWallet}
-            className="group flex w-full items-start gap-3 rounded-[12px] border-[1.5px] border-[#56C7F3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56C7F3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:p-6"
+            className="group flex w-full items-center gap-3 rounded-[12px] border-[1.5px] border-[#56C7F3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56C7F3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:px-[22px] lg:py-5"
           >
             {/* Icon */}
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-14 lg:w-14">
-              <SkaiLightningIcon className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14" />
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-12 lg:w-12">
+              <SkaiLightningIcon className="h-10 w-10 md:h-12 md:w-12 lg:h-12 lg:w-12" />
             </div>
 
-            <div className="w-px self-stretch border-l border-dashed border-[#123f3c] opacity-80" />
+            <div className="h-10 w-px border-l border-dashed border-[#56C7F3]" />
 
             {/* Content */}
             <div className="flex-1 text-[#56C7F3]">
-              <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.8px]">
+              <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                 Use built in email wallet
               </h3>
-              <p className="font-manrope text-[10px] font-normal leading-[14px] md:text-[12px] md:leading-[16px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
+              <p className="font-manrope text-[10px] font-normal leading-[14px] md:text-[12px] md:leading-[16px] md:tracking-[-0.6px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
                 Secure wallet provided by Skai
               </p>
             </div>
@@ -181,22 +178,22 @@ export function WalletChoiceModal({
           {/* External Wallet Option */}
           <button
             onClick={onSelectExternalWallet}
-            className="group flex w-full items-start gap-3 rounded-[12px] border-[1.5px] border-[#56C7F3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56C7F3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:p-6"
+            className="group flex w-full items-center gap-3 rounded-[12px] border-[1.5px] border-[#56C7F3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56C7F3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:px-[22px] lg:py-5"
           >
             {/* Icon */}
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-14 lg:w-14">
-              <ExternalWalletIcon className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14" />
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-12 lg:w-12">
+              <ExternalWalletIcon className="h-10 w-10 md:h-12 md:w-12 lg:h-12 lg:w-12" />
             </div>
 
-            <div className="w-px self-stretch border-l border-dashed border-[#123f3c] opacity-80" />
+            <div className="h-10 w-px border-l border-dashed border-[#56C7F3]" />
 
             {/* Content */}
             <div className="flex-1 text-[#56C7F3]">
-              <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.8px]">
+              <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                 Link external wallet
               </h3>
-              <p className="font-manrope text-[10px] font-normal leading-[14px] md:text-[12px] md:leading-[16px] md:tracking-[-0.6px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
-                Add Metamask, Coinbase, etc. to your account
+              <p className="font-manrope text-[10px] font-normal leading-[14px] md:text-[12px] md:leading-[16px] md:tracking-[-0.6px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
+                Add Metamask, Coinbase, etc., to your account
               </p>
             </div>
           </button>

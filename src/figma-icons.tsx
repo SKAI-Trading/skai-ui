@@ -58,28 +58,26 @@ export const FigmaVaultIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-/** sUSD pill icon — `$` glyph in Sky Blue 300 #56C7F3. The Figma reference renders an
- * Ethereum diamond shape and labels the pill "0.0036 ETH" as placeholder text,
- * but on SKAI we use sUSD (per CLAUDE.md) and a `$` glyph reads cleaner than a
- * coin/diamond. The mark is set in Mulish Bold to match the pill's value text.
+/** sUSD pill icon — the `$` mark, Sky Blue 300 #56C7F3. 7.476×13.216.
+ *
+ * This is the VECTOR Figma ships for Header-desktop pill 3 (2713:4828, node
+ * I2713:4828;1176:1145), traced verbatim. It used to be an SVG `<text>` node
+ * drawing a Mulish-Bold "$", which was wrong three ways: the weight and the
+ * bar's overshoot do not match the drawn glyph, the shape depended on the
+ * Mulish webfont having loaded inside the SVG (system-ui otherwise), and a
+ * `<text>` node lands in text selection and innerText — the header literally
+ * read "$ $0.00" to a screen reader and to copy/paste. Report 58ca0ba7.
  *
  * The fill is #56C7F3, not #2DEDAD: the `$` in Figma Header-desktop 7710:92977
  * is solid Sky Blue 300, the same tint as the pill's SKAI mark beside it. A
  * hardcoded fill also beats the caller's text color, so HomeTopBar's
- * `text-[#56C7F3]` on this pill was dead — the hex has to be right here. */
+ * `text-[#56C7F3]` on this pill is dead — the hex has to be right here. */
 export const FigmaSusdIcon: React.FC<IconProps> = (props) => (
-  <svg viewBox="0 0 14 14" fill="none" aria-hidden="true" {...props}>
-    <text
-      x="7"
-      y="11.5"
-      textAnchor="middle"
-      fontFamily="Mulish, system-ui, sans-serif"
-      fontSize="13"
-      fontWeight="700"
+  <svg viewBox="0 0 7.476 13.216" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M3.738 11.704C2.99133 11.704 2.296 11.606 1.652 11.41C1.01733 11.2047 0.466667 10.9107 0 10.528L0.616 9.226C1.092 9.59 1.57733 9.856 2.072 10.024C2.56667 10.192 3.10333 10.276 3.682 10.276C4.326 10.276 4.82067 10.1547 5.166 9.912C5.51133 9.66 5.684 9.30067 5.684 8.834C5.684 8.54467 5.58133 8.316 5.376 8.148C5.18 7.97067 4.914 7.83067 4.578 7.728C4.25133 7.616 3.892 7.51333 3.5 7.42C3.108 7.31733 2.716 7.20533 2.324 7.084C1.932 6.96267 1.568 6.79933 1.232 6.594C0.905333 6.37933 0.644 6.10867 0.448 5.782C0.252 5.446 0.154 5.01667 0.154 4.494C0.154 3.91533 0.312667 3.402 0.63 2.954C0.956667 2.506 1.4 2.156 1.96 1.904C2.52 1.64267 3.15467 1.512 3.864 1.512C4.30267 1.512 4.732 1.55867 5.152 1.652C5.58133 1.74533 5.978 1.88067 6.342 2.058C6.71533 2.226 7.03733 2.43133 7.308 2.674L6.692 3.99C5.824 3.29 4.886 2.94 3.878 2.94C3.29 2.94 2.82333 3.066 2.478 3.318C2.13267 3.57 1.96 3.92933 1.96 4.396C1.96 4.71333 2.058 4.97 2.254 5.166C2.45 5.35267 2.71133 5.50667 3.038 5.628C3.374 5.74 3.738 5.84267 4.13 5.936C4.522 6.02933 4.914 6.13667 5.306 6.258C5.698 6.37933 6.05733 6.538 6.384 6.734C6.72 6.93 6.986 7.19133 7.182 7.518C7.378 7.84467 7.476 8.26 7.476 8.764C7.476 9.352 7.31733 9.86533 7 10.304C6.692 10.7427 6.25333 11.088 5.684 11.34C5.124 11.5827 4.47533 11.704 3.738 11.704ZM3.15 13.216V11.41L3.262 10.584V2.45L3.15 1.75V0H4.578V1.75L4.48 2.45V10.584L4.578 11.41V13.216H3.15Z"
       fill="#56C7F3"
-    >
-      $
-    </text>
+    />
   </svg>
 );
 
