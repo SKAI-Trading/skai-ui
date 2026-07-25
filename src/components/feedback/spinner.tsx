@@ -14,7 +14,24 @@ const spinnerVariants = cva(
         xl: "h-12 w-12 border-4",
       },
       variant: {
-        default: "text-primary",
+        // Sky Blue #56C7F3 as a LITERAL, not `text-primary`.
+        //
+        // This library defines --primary AS #56C7F3 (styles/index.css: "Sky Blue,
+        // Figma canonical"), so `text-primary` is correct here in isolation. But
+        // the main app OVERRIDES --primary to the retired alien-green #2DEDAD
+        // (skai-interface src/index.css), so every spinner that does not name a
+        // variant rendered GREEN inside that app — 419 bare <Spinner> usages.
+        //
+        // That made it the single largest remaining green surface, and it is why
+        // "the greens are fixed" kept getting contradicted: the tester auth gate
+        // had its shield/refresh icons repainted blue while the spinner beside
+        // them stayed green (reports 81c8d04b, 489f515c, 28577d7f, 18305822 —
+        // "verifying access still has a green loading circle", "green circle over
+        // the blue submit button").
+        //
+        // A literal is override-proof, which is the point. Fixing the consumer's
+        // --primary instead would repaint ~2589 other usages — far too broad.
+        default: "text-[#56C7F3]",
         muted: "text-muted-foreground",
         white: "text-white",
         success: "text-green-500",
