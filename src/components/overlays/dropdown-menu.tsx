@@ -1,3 +1,20 @@
+/**
+ * Item highlight is Sky Blue #56C7F3 as a LITERAL, not `bg-accent`.
+ *
+ * Report feeca90f: "Menu items and other options still hover green on main
+ * dashboard. Match all UI to new Skai blue UI to match Figma." Every item here
+ * highlighted with `focus:bg-accent`, and the consuming app overrides `--accent`
+ * to the retired alien-green #2DEDAD (skai-interface src/index.css:414, comment
+ * "matches --primary") — so all 32 files using DropdownMenuItem highlighted green.
+ *
+ * A literal is used because there is no correct token to restore: this library
+ * defines `--accent` as coral #FF7E50, so `bg-accent` is wrong here either way.
+ * The `/10` wash + white text is the blue-hover treatment already established
+ * elsewhere in the app (e.g. the bug-report modal's Cancel button), so menus now
+ * match rather than introducing a third convention.
+ *
+ * Keep this literal. Swapping back to `bg-accent` reintroduces the green.
+ */
 import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Check, ChevronRight, Circle } from "lucide-react";
@@ -24,7 +41,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[state=open]:bg-accent focus:bg-accent",
+      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[state=open]:bg-[#56C7F3]/10 focus:bg-[#56C7F3]/10 focus:text-white",
       inset && "pl-8",
       className,
     )}
@@ -81,7 +98,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground",
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-[#56C7F3]/10 focus:text-white",
       inset && "pl-8",
       className,
     )}
@@ -97,7 +114,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-[#56C7F3]/10 focus:text-white",
       className,
     )}
     checked={checked}
@@ -121,7 +138,7 @@ const DropdownMenuRadioItem = React.forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-[#56C7F3]/10 focus:text-white",
       className,
     )}
     {...props}
