@@ -221,6 +221,28 @@ export interface HeaderNavRichDropdownProps {
   items: HeaderNavItemConfig[];
   /** Navigation handler */
   onNavigate?: (to: string) => void;
+  /**
+   * Make the TRIGGER itself a navigation target, so the label is a pathway in
+   * its own right alongside the menu rows (Figma "Skai > Play - dropdown"
+   * 4765:65172 — clicking "Play" lands on the Play page, hovering discloses
+   * Casino / Sportsbook).
+   *
+   * When set, the trigger renders as a real `<a href>` (so middle-click and
+   * "open in new tab" work) and Radix's click-to-toggle is suppressed:
+   * hover/ArrowDown disclose the menu, click/Enter navigate. When omitted the
+   * trigger stays a plain toggle `<button>` — Trade / Social / More pass
+   * nothing and are unchanged.
+   *
+   * Routing stays with the consumer: this component has no router dependency
+   * (see `LinkComponent` above), so the href is used for semantics only and the
+   * actual navigation goes through `onNavigate`.
+   */
+  triggerTo?: string;
+  /**
+   * Whether the trigger's own route is active. Supplied by the consumer, which
+   * owns the router — the component cannot resolve this itself.
+   */
+  triggerActive?: boolean;
 }
 
 /**
@@ -231,9 +253,12 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
   label,
   items,
   onNavigate,
+  triggerTo,
+  triggerActive,
 }) => {
   const [open, setOpen] = React.useState(false);
   const timeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
+  const triggerRef = React.useRef<HTMLElement | null>(null);
 
   const handleEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -261,10 +286,70 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
     >
       <div onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
         <DropdownMenuTrigger asChild>
+          {/* `triggerTo` turns the label itself into a pathway: an <a href> that
+              navigates on click while hover / ArrowDown still disclose the menu
+              (Figma "Skai > Play - dropdown" 4765:65172). Without it the trigger
+              is the original click-to-toggle button, so Trade / Social / More
+              are untouched. */}
+          {triggerTo ? (
+            <a
+              href={triggerTo}
+              ref={(n) => {
+                triggerRef.current = n;
+              }}
+              aria-haspopup="menu"
+              aria-expanded={open}
+              onClick={(e) => {
+                // Modified clicks (new tab / window) and non-primary buttons fall
+                // through to the browser so the href behaves like a real link.
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+                e.preventDefault();
+                setOpen(false);
+                onNavigate?.(triggerTo);
+              }}
+              onKeyDown={(e) => {
+                // Radix's trigger opens on Enter/Space. Here Enter must NAVIGATE,
+                // so disclosure moves to ArrowDown (and Space) — that keeps both
+                // menu rows reachable without a pointer.
+                if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setOpen(true);
+                } else if (e.key === "Enter") {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setOpen(false);
+                  onNavigate?.(triggerTo);
+                } else if (e.key === " ") {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setOpen((v) => !v);
+                }
+              }}
+              className={cn(
+                "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1 cursor-pointer",
+                "hover:text-[#56C7F3]",
+                open || triggerActive ? "text-[#56C7F3]" : "text-white"
+              )}
+              style={{ letterSpacing: "-0.64px" }}
+            >
+              {label}
+              <svg
+                className={cn("w-2 transition-transform duration-200", open && "rotate-180")}
+                viewBox="0 0 8 4"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M0 0L4 4L8 0H0Z" fill="currentColor" />
+              </svg>
+            </a>
+          ) : (
           <button
             type="button"
             aria-haspopup="menu"
             aria-expanded={open}
+            // NOTE: when `triggerTo` is set the branch above renders an <a> instead
+            // of this button — keep the two class lists in sync.
             // Figma Header-desktop 7710:92977 paints the hovered / open nav trigger
             // and its caret Sky Blue 300 #56C7F3 — the same literal the menu rows
             // below already use. This was `text-primary`, and in the main app
@@ -304,6 +389,7 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
               <path d="M0 0L4 4L8 0H0Z" fill="currentColor" />
             </svg>
           </button>
+          )}
         </DropdownMenuTrigger>
       </div>
       <DropdownMenuContent

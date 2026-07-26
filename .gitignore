@@ -1,5 +1,7 @@
 node_modules/
 dist/
+# dist held aside while the install-time build runs (scripts/ensure-dist.js)
+.dist-prepare-backup/
 .turbo/
 coverage/
 *.log

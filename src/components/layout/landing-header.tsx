@@ -188,8 +188,12 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
           </Link>
         </div>
 
-        {/* Right Section - Social Icons */}
-        {/* Order: Discord / Telegram / X / IG / TikTok / FB / LinkedIn / YouTube */}
+        {/* Right Section - Social Icons — the TOP FIVE only.
+            Order: Discord / X / IG / TikTok / FB.
+            Report 752e313b: eight icons caused decision fatigue and lowered
+            conversion; the ticket names the five to keep. Telegram, LinkedIn and
+            YouTube are no longer rendered — their props remain on the interface
+            so no caller breaks, they simply have no icon slot. */}
         {/* Mobile: only Discord + X shown; others hidden below sm breakpoint */}
         <div className="flex items-center gap-6 sm:gap-8">
           {discordUrl && (
@@ -201,17 +205,6 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               aria-label="Discord"
             >
               <DiscordIcon className="h-4 w-4" />
-            </a>
-          )}
-          {telegramUrl && (
-            <a
-              href={telegramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
-              aria-label="Telegram"
-            >
-              <TelegramIcon className="h-4 w-4" />
             </a>
           )}
           {twitterUrl && (
@@ -256,28 +249,6 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               aria-label="Facebook"
             >
               <FacebookIcon className="h-4 w-4" />
-            </a>
-          )}
-          {linkedinUrl && (
-            <a
-              href={linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon className="h-4 w-4" />
-            </a>
-          )}
-          {youtubeUrl && (
-            <a
-              href={youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
-              aria-label="YouTube"
-            >
-              <YouTubeIcon className="h-4 w-4" />
             </a>
           )}
         </div>

@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    // TypeScript 6.0.x is hoisted at the repo root (skai-ui pins ^5.3.3 but the
-    // root wins). TS 6 deprecates `baseUrl` (implicitly enabled by `paths`) and
-    // the tsup dts build fails with TS5101 during deploy_main STEP 3. This
-    // silences the deprecation until skai-ui migrates off path aliases.
-    "ignoreDeprecations": "6.0",
+    // No `paths` here on purpose: `paths` implicitly enables `baseUrl`, which
+    // TS 6 deprecates (the tsup dts build then fails TS5101 under the TS 6.0.x
+    // hoisted at the consuming repo root). The previous workaround,
+    // `"ignoreDeprecations": "6.0"`, is itself rejected by TS 5.x with TS5103 —
+    // so it broke the dts build for any standalone clone, which installs the
+    // pinned ^5.3.3. Dropping the alias satisfies both: nothing in src imports
+    // via `@/`, so it bought nothing.
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -22,10 +24,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
-    "declarationMap": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "declarationMap": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
