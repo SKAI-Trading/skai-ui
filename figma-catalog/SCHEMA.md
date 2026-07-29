@@ -195,8 +195,23 @@ the `modules/skai-ui/` prefix.
 node modules/skai-ui/figma-catalog/build-registry.mjs   # frames + titles + citations → registry.json
 node modules/skai-ui/figma-catalog/families.mjs         # roll frames → families.json (+ proposedStatus prior)
 node modules/skai-ui/figma-catalog/apply-status.mjs     # fold status.<section>.tsv → per-frame status/route/notes
+node modules/skai-ui/figma-catalog/apply-verify.mjs     # fold vverify.<section>.tsv → visual verdicts  ← MUST FOLLOW apply-status
 node modules/skai-ui/figma-catalog/catalog-view.mjs > modules/skai-ui/figma-catalog/figma-frame-catalog.md
 ```
+
+### ⚠ `apply-verify` MUST run AFTER `apply-status`, and this list used to omit it
+
+Both scripts write the **same** `status` and `notes` fields. `apply-status` rewrites `notes`
+wholesale from `status.<section>.tsv`, so running it *after* `apply-verify` **strips every
+`[vverify: …]` marker and overwrites the visual verdicts** — observed 2026-07-28: a bare
+`apply-status` run removed **920** vverify markers and flipped `partial` → `done`, i.e. it
+manufactured false "finished" verdicts on screens a screenshot pass had judged incomplete.
+
+`apply-verify.mjs` was missing from this list entirely, so following the documented
+pipeline after any verification sweep destroyed that sweep's output. **If you run
+`apply-status`, you must re-run `apply-verify` behind it.** If a rebuild shows `registry.json`
+losing `vverify:` occurrences (`grep -c 'vverify:' registry.json` — expect ~920), that is
+this bug, not a data change: `git checkout -- registry.json` and re-run in the right order.
 
 `catalog-view.mjs` writes to the stdout **stream** and also accepts an explicit output path
 (`node … catalog-view.mjs out.md`). It previously wrote to the literal path `/dev/stdout`,
