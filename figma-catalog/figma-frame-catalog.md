@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-07-29T02:32:25.662Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-07-29T02:36:18.699Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -140,12 +140,12 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | Spot | 99 | desktop, tablet, mobile | chart expanded; dropdown; Order book - Trades; trade dropdown; pro - trigger - ALT; full … | done/partial | [7710-91527](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7710-91527&m=dev) |
-| Perpetual Futures | 50 | tablet, mobile | user not signed in; Market long; Market long ALT; full; Order history; Assets - collapsed … | unknown | [9135-80712](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9135-80712&m=dev) |
+| Perpetual Futures | 50 | tablet, mobile | user not signed in; Market long; Market long ALT; full; Order history; Assets - collapsed … | partial/done | [9135-80712](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9135-80712&m=dev) |
 | Trench | 18 | desktop, mobile, tablet | hover; actual + With left float scrollable; actual; actual - settings collapsed; One-click trade settings - modal sell; actual + With left float ALT | partial | [4282-44687](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4282-44687&m=dev) |
-| Trench > Tables | 16 | mobile, tablet | Transactions; Dev tokens - full; Bubble maps; Holders; Top holders; Positions … | unknown | [9854-77330](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9854-77330&m=dev) |
+| Trench > Tables | 16 | mobile, tablet | Transactions; Dev tokens - full; Bubble maps; Holders; Top holders; Positions … | partial | [9854-77330](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9854-77330&m=dev) |
 | Bridge | 15 | tablet, mobile, desktop | with info > Start bridge; with info > Start bridge > Post wallet interaction; with info; with info > Start bridge > Bridge settings | partial | [9101-285632](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9101-285632&m=dev) |
 | Swap | 13 | mobile, desktop, tablet | active; with info; Swap settings | partial | [9081-277053](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9081-277053&m=dev) |
-| Trench > Chart | 13 | mobile, tablet | Market; Instant > AI Bullish; Instant > AI Bearish; Instant trade settings; Limit; Instant - sell … | unknown | [9570-136716](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9570-136716&m=dev) |
+| Trench > Chart | 13 | mobile, tablet | Market; Instant > AI Bullish; Instant > AI Bearish; Instant trade settings; Limit; Instant - sell … | partial | [9570-136716](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9570-136716&m=dev) |
 | Launch | 11 | desktop, tablet, mobile | - | partial | [8493-31691](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8493-31691&m=dev) |
 | Trench > Discover | 11 | tablet, mobile, desktop | DEX Scanner; Trending; Top; Live - display settings; Live | done/partial | [9917-107895](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9917-107895&m=dev) |
 | Margin | 9 | tablet, mobile, desktop | with info; with info > review limit | partial | [9094-281783](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9094-281783&m=dev) |
@@ -154,12 +154,12 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 | Launch > Sample token > Dashboard | 6 | desktop, tablet, mobile | positive; negative | partial | [4437-112320](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4437-112320&m=dev) |
 | Launch > Live | 6 | desktop, tablet, mobile | - | not-started | [4423-94942](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4423-94942&m=dev) |
 | Trench > Alerts | 6 | tablet, mobile, desktop | toggle on; toggle off | not-started | [9896-101351](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9896-101351&m=dev) |
-| Trench > Trackers > X accounts | 6 | tablet, mobile | My list; Popular; empty | unknown | [9917-116925](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9917-116925&m=dev) |
+| Trench > Trackers > X accounts | 6 | tablet, mobile | My list; Popular; empty | partial | [9917-116925](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9917-116925&m=dev) |
 | Trench > Trackers > Live trades | 6 | tablet, desktop, mobile | - | not-started | [9917-116641](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9917-116641&m=dev) |
 | Perpetual futures | 4 | desktop | user not signed | partial | [3903-24462](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3903-24462&m=dev) |
-| Trench > Trackers > Wallets Manager | 4 | mobile, tablet | import wallet | unknown | [9934-147629](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9934-147629&m=dev) |
-| Trench > Trackers > Wallets | 4 | tablet, mobile | add wallet; empty | unknown | [9917-115557](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9917-115557&m=dev) |
-| Spot > Sidebar | 3 | tablet, mobile | - | unknown | [9002-158964](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9002-158964&m=dev) |
+| Trench > Trackers > Wallets Manager | 4 | mobile, tablet | import wallet | partial | [9934-147629](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9934-147629&m=dev) |
+| Trench > Trackers > Wallets | 4 | tablet, mobile | add wallet; empty | partial | [9917-115557](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9917-115557&m=dev) |
+| Spot > Sidebar | 3 | tablet, mobile | - | partial | [9002-158964](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9002-158964&m=dev) |
 | Dashboard > News | 3 | mobile, desktop, tablet | - | partial | [9081-267604](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9081-267604&m=dev) |
 | Dashboard > Whale activity | 3 | tablet, desktop, mobile | - | partial | [9081-266657](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9081-266657&m=dev) |
 | Dashboard > Reports | 3 | mobile, tablet, desktop | - | partial | [9081-266034](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9081-266034&m=dev) |
@@ -174,23 +174,23 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 | Trench > Snipe settings | 3 | mobile, desktop, tablet | - | not-started | [9861-146566](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9861-146566&m=dev) |
 | Trench > Filters | 3 | tablet, mobile, desktop | - | done/partial | [9896-104373](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9896-104373&m=dev) |
 | Trench > Trackers > KOLs | 3 | mobile, tablet, desktop | - | not-started | [9864-174108](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9864-174108&m=dev) |
-| Spot ALT | 3 | mobile | - | unknown | [8845-36223](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8845-36223&m=dev) |
+| Spot ALT | 3 | mobile | - | partial | [8845-36223](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8845-36223&m=dev) |
 | Spot > Limit > Search pairs > Trench | 2 | desktop, tablet | search | not-started | [3962-35261](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3962-35261&m=dev) |
-| Spot > Trades | 2 | mobile | - | unknown | [9777-102315](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9777-102315&m=dev) |
-| Spot > Selected pairs | 2 | mobile | - | unknown | [9061-240412](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9061-240412&m=dev) |
-| Perpetual Futures > Order history | 2 | tablet | collapsed | unknown | [9152-86271](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-86271&m=dev) |
-| Perpetual Futures > Positions | 2 | tablet | collapsed | unknown | [9934-141532](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9934-141532&m=dev) |
+| Spot > Trades | 2 | mobile | - | partial | [9777-102315](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9777-102315&m=dev) |
+| Spot > Selected pairs | 2 | mobile | - | partial | [9061-240412](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9061-240412&m=dev) |
+| Perpetual Futures > Order history | 2 | tablet | collapsed | partial | [9152-86271](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-86271&m=dev) |
+| Perpetual Futures > Positions | 2 | tablet | collapsed | partial | [9934-141532](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9934-141532&m=dev) |
 | Perpetual futures > Market > Search pairs | 2 | tablet, desktop | - | partial | [9148-79309](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9148-79309&m=dev) |
 | Spot > Layout adjustment | 2 | desktop | sidecar | not-started | [4144-65909](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4144-65909&m=dev) |
 | Trench > Trade > Holders | 2 | desktop | full screen | partial | [8234-115019](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8234-115019&m=dev) |
 | dropdown | 2 | desktop | - | not-started | [4026-55735](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4026-55735&m=dev) |
-| Trench > Community | 2 | mobile, tablet | - | unknown | [9852-109547](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9852-109547&m=dev) |
-| Trench > Token info | 2 | mobile, tablet | - | unknown | [9852-107973](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9852-107973&m=dev) |
-| > Trade > Trench | 2 | mobile, tablet | actual | unknown | [9860-94002](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9860-94002&m=dev) |
-| Trench > Similar tokens | 2 | tablet, mobile | - | unknown | [9890-83471](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9890-83471&m=dev) |
-| Nav bar | 2 | tablet, mobile | - | unknown | [9917-128993](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9917-128993&m=dev) |
-| Launch > create token > preview | 2 | tablet, mobile | - | unknown | [9346-97279](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9346-97279&m=dev) |
-| > Trade > Trench > Display settings | 2 | mobile, tablet | - | unknown | [9860-95322](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9860-95322&m=dev) |
+| Trench > Community | 2 | mobile, tablet | - | partial | [9852-109547](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9852-109547&m=dev) |
+| Trench > Token info | 2 | mobile, tablet | - | partial | [9852-107973](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9852-107973&m=dev) |
+| > Trade > Trench | 2 | mobile, tablet | actual | partial | [9860-94002](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9860-94002&m=dev) |
+| Trench > Similar tokens | 2 | tablet, mobile | - | partial | [9890-83471](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9890-83471&m=dev) |
+| Nav bar | 2 | tablet, mobile | - | partial | [9917-128993](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9917-128993&m=dev) |
+| Launch > create token > preview | 2 | tablet, mobile | - | not-started | [9346-97279](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9346-97279&m=dev) |
+| > Trade > Trench > Display settings | 2 | mobile, tablet | - | partial | [9860-95322](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9860-95322&m=dev) |
 | Trench > Display settings | 2 | desktop | colour row | not-started | [4341-23384](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4341-23384&m=dev) |
 | Trench > Discover > Live | 2 | desktop | display settings | not-started | [4400-60963](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4400-60963&m=dev) |
 | Trench > Trackers | 2 | desktop | empty > Add wallet; empty | not-started | [4405-71105](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4405-71105&m=dev) |
@@ -198,28 +198,28 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 | Spot > Info | 1 | desktop | - | not-started | [3896-31118](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3896-31118&m=dev) |
 | Spot > Limit > Search pairs ALT | 1 | desktop | - | not-started | [4144-61610](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4144-61610&m=dev) |
 | Spot > Limit > Search pairs | 1 | desktop | - | not-started | [3962-8774](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3962-8774&m=dev) |
-| Spot chart tools collapsed | 1 | tablet | - | unknown | [9780-145861](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9780-145861&m=dev) |
-| Spot > Search pairs | 1 | tablet | - | unknown | [9048-190933](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9048-190933&m=dev) |
-| Spot > Order book | 1 | mobile | - | unknown | [9777-99794](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9777-99794&m=dev) |
-| Perpetual Futures > Assets | 1 | tablet | - | unknown | [9152-84122](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-84122&m=dev) |
+| Spot chart tools collapsed | 1 | tablet | - | partial | [9780-145861](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9780-145861&m=dev) |
+| Spot > Search pairs | 1 | tablet | - | partial | [9048-190933](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9048-190933&m=dev) |
+| Spot > Order book | 1 | mobile | - | partial | [9777-99794](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9777-99794&m=dev) |
+| Perpetual Futures > Assets | 1 | tablet | - | partial | [9152-84122](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-84122&m=dev) |
 | Perpetual futures > Assets | 1 | desktop | - | partial | [4020-49491](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4020-49491&m=dev) |
-| Spot > layout settings | 1 | tablet | - | unknown | [9050-214062](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9050-214062&m=dev) |
-| Perpetual Futures > Funding history | 1 | tablet | - | unknown | [9152-90527](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-90527&m=dev) |
-| Perpetual Futures > Trade history | 1 | tablet | - | unknown | [9152-89103](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-89103&m=dev) |
+| Spot > layout settings | 1 | tablet | - | partial | [9050-214062](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9050-214062&m=dev) |
+| Perpetual Futures > Funding history | 1 | tablet | - | done | [9152-90527](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-90527&m=dev) |
+| Perpetual Futures > Trade history | 1 | tablet | - | partial | [9152-89103](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-89103&m=dev) |
 | Perpetual futures > Orders | 1 | desktop | - | done | [4020-47586](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4020-47586&m=dev) |
-| Perpetual Futures > Orders | 1 | tablet | - | unknown | [9152-81364](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-81364&m=dev) |
+| Perpetual Futures > Orders | 1 | tablet | - | partial | [9152-81364](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-81364&m=dev) |
 | Perpetual futures > Positions > Edit running SL/TP | 1 | desktop | - | partial | [4020-44966](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4020-44966&m=dev) |
 | Perpetual futures > Trade history > share PnL | 1 | desktop | - | partial | [4207-133479](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4207-133479&m=dev) |
-| Perpetual Futures > Positions > Edit running SL/TP | 1 | tablet | - | unknown | [9152-79912](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-79912&m=dev) |
+| Perpetual Futures > Positions > Edit running SL/TP | 1 | tablet | - | partial | [9152-79912](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9152-79912&m=dev) |
 | Perpetual futures > Trade history | 1 | desktop | - | done | [4191-123643](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4191-123643&m=dev) |
 | Perpetual futures > Funding history | 1 | desktop | - | partial | [4201-128723](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4201-128723&m=dev) |
-| Perpetual Futures > Order confirmation | 1 | tablet | - | unknown | [9148-80746](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9148-80746&m=dev) |
+| Perpetual Futures > Order confirmation | 1 | tablet | - | partial | [9148-80746](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9148-80746&m=dev) |
 | Perpetual futures > cross/isolated | 1 | desktop | - | partial | [3928-83147](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3928-83147&m=dev) |
-| Perpetual Futures > cross/isolated | 1 | tablet | - | unknown | [9137-88222](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9137-88222&m=dev) |
+| Perpetual Futures > cross/isolated | 1 | tablet | - | partial | [9137-88222](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9137-88222&m=dev) |
 | Perpetual futures > Order confirmation | 1 | desktop | - | not-started | [3976-39045](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3976-39045&m=dev) |
 | Perpetual futures > Order history | 1 | desktop | - | partial | [4191-121191](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4191-121191&m=dev) |
 | Perpetual futures > Positions | 1 | desktop | - | partial | [4018-40830](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4018-40830&m=dev) |
-| Spot > Layout settings | 1 | mobile | - | unknown | [9780-112196](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9780-112196&m=dev) |
+| Spot > Layout settings | 1 | mobile | - | partial | [9780-112196](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9780-112196&m=dev) |
 | Trench > Trade > Dev tokens | 1 | desktop | - | partial | [8324-54882](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8324-54882&m=dev) |
 | Trench > Trade > Instant trade settings | 1 | desktop | - | partial | [8225-105405](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8225-105405&m=dev) |
 | Trench > Trade > Transactions | 1 | desktop | - | partial | [8225-112421](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8225-112421&m=dev) |
