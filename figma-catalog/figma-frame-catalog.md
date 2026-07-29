@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-07-29T02:29:05.762Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-07-29T02:32:25.662Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -302,11 +302,11 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Install to homescreen | 3 | desktop, tablet, mobile | - | unknown | [9746-171660](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9746-171660&m=dev) |
-| Install to homescreen ALT | 2 | desktop, mobile | - | unknown | [9747-174084](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9747-174084&m=dev) |
+| Install to homescreen | 3 | desktop, tablet, mobile | - | done | [9746-171660](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9746-171660&m=dev) |
+| Install to homescreen ALT | 2 | desktop, mobile | - | done | [9747-174084](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9747-174084&m=dev) |
 
 ## Crash
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Crash | 12 | desktop, tablet, mobile | Alt; Extended LB; Auto; Auto Advanced; Skai > Play > Casino > Dice Mobile; Desktop … | unknown | [9003-94116](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-94116&m=dev) |
+| Casino > Crash | 12 | desktop, tablet, mobile | Alt; Extended LB; Auto; Auto Advanced; Skai > Play > Casino > Dice Mobile; Desktop … | partial/done | [9003-94116](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-94116&m=dev) |

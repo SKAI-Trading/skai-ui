@@ -1,0 +1,1 @@
+Casino > Plinko	done	modules/skai-gaming/src/components/play/games/instant/PlinkoGame.tsx	/originals -> PlayOriginals (skai-gaming App.tsx)	Mounted by pages/play/PlayOriginals.tsx and the Play hub. NOTE no vverify.plinko.tsv exists - this section was only cataloged 2026-07-28, so the code is confirmed present and routed but no visual pass has run against its 13 frames

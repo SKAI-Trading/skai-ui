@@ -1,0 +1,1 @@
+Casino > Blackjack	done	modules/skai-gaming/src/components/play/games/cards/BlackjackGame.tsx	/play -> BlackjackPage (skai-gaming App.tsx)	Full blackjack implementation mounted by pages/play/BlackjackPage.tsx and the Play hub; vverify.blackjack.tsv already records 18 match / 3 partial / 15 deferred

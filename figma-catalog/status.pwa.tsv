@@ -1,0 +1,2 @@
+Install to homescreen	done	src/components/common/install/InstallToHomescreenModal.tsx	global (InstallPrompt lazy-mounted in App.tsx:253)	InstallPrompt is lazy-loaded and mounted app-wide; the modal plus InstallStepIcons render the per-platform steps. All 5 pwa frames are vverify match
+Install to homescreen ALT	done	src/components/common/install/InstallToHomescreenModal.tsx	global (InstallPrompt lazy-mounted in App.tsx:253)	ALT breakpoints of the same modal; covered by the same component and vverify match
