@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-07-29T02:36:18.699Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-07-29T04:36:51.862Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -11,8 +11,8 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 | home | 348 | 348 | 231 | 117 | 51 | 119 |
 | wallet | 369 | 369 | 278 | 91 | 56 | 82 |
 | trade | 824 | 824 | 436 | 388 | 93 | 27 |
-| predict | 99 | 99 | 33 | 66 | 25 | 21 |
-| play | 118 | 118 | 33 | 85 | 24 | 40 |
+| predict | 138 | 138 | 46 | 92 | 26 | 21 |
+| play | 176 | 176 | 41 | 135 | 26 | 40 |
 | dice | 34 | 34 | 22 | 12 | 1 | 0 |
 | pwa | 5 | 5 | 5 | 0 | 2 | 0 |
 | crash | 17 | 17 | 12 | 5 | 1 | 0 |
@@ -237,12 +237,13 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| sample market | 5 | desktop | dollar only; all expanded; all expanded > Add rewards | done | [3322-6501](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3322-6501&m=dev) |
+| ALT | 9 | mobile | - | unknown | [10199-104649](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10199-104649&m=dev) |
+| sample market | 6 | desktop | dollar only; all expanded; all expanded > Add rewards | done | [3322-6501](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3322-6501&m=dev) |
+| (section root) | 4 | desktop, mobile | - | done | [8583-127820](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8583-127820&m=dev) |
 | sports > Futures > Sample futures | 3 | desktop | with resolved | not-started | [3471-7251](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3471-7251&m=dev) |
-| (section root) | 2 | desktop | - | done | [8583-127820](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8583-127820&m=dev) |
 | Dashboard | 2 | desktop | - | not-started | [3562-40397](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3562-40397&m=dev) |
+| layout 2 ALT | 2 | desktop | - | not-started | [3269-17599](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3269-17599&m=dev) |
 | on:click | 1 | desktop | - | partial | [8583-131053](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8583-131053&m=dev) |
-| layout 2 ALT | 1 | desktop | - | not-started | [3269-17599](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3269-17599&m=dev) |
 | Dashboard > Elections | 1 | desktop | - | not-started | [3620-47881](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3620-47881&m=dev) |
 | Dashboard > Sports | 1 | desktop | - | not-started | [3631-56374](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3631-56374&m=dev) |
 | Dashboard > Economy | 1 | desktop | - | not-started | [3624-51447](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3624-51447&m=dev) |
@@ -267,13 +268,14 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
+| Casino > Sample game | 7 | desktop, tablet, mobile | - | partial | [4758-59299](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4758-59299&m=dev) |
 | Sportsbook | 4 | desktop | right sidepanel / betslip; right sidepanel / betslip ALT | partial | [4841-72059](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4841-72059&m=dev) |
 | (section root) | 2 | desktop | - | done | [4595-49807](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4595-49807&m=dev) |
 | dropdown | 2 | desktop | - | partial | [4768-66183](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4768-66183&m=dev) |
 | Resume play | 2 | desktop | - | done | [4676-39553](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4676-39553&m=dev) |
 | Sportsbook > My bets | 2 | desktop | empty; with values | not-started | [4896-83645](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4896-83645&m=dev) |
-| Casino > Sample game | 2 | desktop | - | partial | [4758-59299](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4758-59299&m=dev) |
 | Casino > Bookie | 2 | desktop | referral; tiers | not-started | [4798-57445](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4798-57445&m=dev) |
+| Casino > Sample game ALT | 2 | tablet | - | unknown | [8525-129365](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=8525-129365&m=dev) |
 | ALT | 1 | desktop | - | not-started | [4595-50243](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4595-50243&m=dev) |
 | Casino | 1 | desktop | - | done | [4711-28434](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4711-28434&m=dev) |
 | Casino > Trending games | 1 | desktop | - | done | [4714-51085](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4714-51085&m=dev) |
@@ -291,6 +293,7 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 | Casino > Sample game > Game info | 1 | desktop | - | partial | [4792-10647](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4792-10647&m=dev) |
 | Sportsbook > Side panel | 1 | desktop | Lawn tennis | not-started | [4913-97944](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4913-97944&m=dev) |
 | unsupported region | 1 | desktop | - | unknown | [10012-134986](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10012-134986&m=dev) |
+| unsupported region ALT | 1 | desktop | - | unknown | [10183-270971](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10183-270971&m=dev) |
 
 ## Dice
 

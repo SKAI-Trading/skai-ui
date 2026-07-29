@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-29T02:36:18.776Z",
+  "generated": "2026-07-29T04:36:51.704Z",
   "families": {
     "home/welcome": {
       "section": "home",
@@ -5057,13 +5057,16 @@
     "predict/(section root)": {
       "section": "predict",
       "family": "(section root)",
-      "frameCount": 2,
+      "frameCount": 4,
       "frames": [
         "8583-127820",
-        "8610-163972"
+        "8610-163972",
+        "10100-103339",
+        "10202-110892"
       ],
       "devices": [
-        "desktop"
+        "desktop",
+        "mobile"
       ],
       "variants": [],
       "citedFileCount": 2,
@@ -5097,9 +5100,10 @@
     "predict/layout 2 ALT": {
       "section": "predict",
       "family": "layout 2 ALT",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "3269-17599"
+        "3269-17599",
+        "10097-220101"
       ],
       "devices": [
         "desktop"
@@ -5113,13 +5117,14 @@
     "predict/sample market": {
       "section": "predict",
       "family": "sample market",
-      "frameCount": 5,
+      "frameCount": 6,
       "frames": [
         "3322-6501",
         "3288-23300",
         "3325-19591",
         "8909-138276",
-        "8909-140523"
+        "8909-140523",
+        "10217-104775"
       ],
       "devices": [
         "desktop"
@@ -5474,6 +5479,30 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
+    "predict/ALT": {
+      "section": "predict",
+      "family": "ALT",
+      "frameCount": 9,
+      "frames": [
+        "10199-104649",
+        "10202-112785",
+        "10211-14686",
+        "10252-79268",
+        "10252-84286",
+        "10252-82221",
+        "10259-85182",
+        "10240-16029",
+        "10252-79831"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
     "play/ALT": {
       "section": "play",
       "family": "ALT",
@@ -5708,13 +5737,20 @@
     "play/Casino > Sample game": {
       "section": "play",
       "family": "Casino > Sample game",
-      "frameCount": 2,
+      "frameCount": 7,
       "frames": [
         "4758-59299",
-        "4723-52636"
+        "4723-52636",
+        "8524-80494",
+        "8524-125386",
+        "8524-125621",
+        "8526-131011",
+        "8526-132331"
       ],
       "devices": [
-        "desktop"
+        "desktop",
+        "tablet",
+        "mobile"
       ],
       "variants": [],
       "citedFileCount": 2,
@@ -5905,6 +5941,39 @@
       "frameCount": 1,
       "frames": [
         "10012-134986"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Casino > Sample game ALT": {
+      "section": "play",
+      "family": "Casino > Sample game ALT",
+      "frameCount": 2,
+      "frames": [
+        "8525-129365",
+        "8525-128840"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/unsupported region ALT": {
+      "section": "play",
+      "family": "unsupported region ALT",
+      "frameCount": 1,
+      "frames": [
+        "10183-270971"
       ],
       "devices": [
         "desktop"
