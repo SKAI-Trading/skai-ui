@@ -16,7 +16,21 @@ import { fileURLToPath } from "url";
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const regPath = path.join(DIR, "registry.json");
 const reg = JSON.parse(fs.readFileSync(regPath, "utf8"));
-const SECTIONS = ["home", "wallet", "trade", "predict", "play", "dice", "pwa", "crash"];
+// DISCOVER the sections from the status files actually on disk, rather than a
+// hardcoded list. The old literal was
+//   ["home","wallet","trade","predict","play","dice","pwa","crash"]
+// which had drifted behind build-registry.mjs's SECTIONS: it omitted onboarding,
+// legal, master-sheet, mines, blackjack, coinflip, skratch, missing-play-images
+// and plinko. A status.<section>.tsv for any of those was **silently ignored** —
+// no warning, the section just stayed `unknown`, which reads as "nobody audited
+// it" when in fact someone had. Deriving the list means a new section's verdicts
+// are picked up with no code edit and no second place to keep in sync.
+const SECTIONS = fs
+  .readdirSync(DIR)
+  .map((f) => /^status\.(.+)\.tsv$/.exec(f))
+  .filter(Boolean)
+  .map((m) => m[1])
+  .sort();
 const VALID = new Set(["done", "partial", "not-started", "unknown"]);
 
 // family key -> {status, primaryFile, route, reason}
