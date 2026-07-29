@@ -209,7 +209,7 @@ const HeaderMobileMenu: React.FC<HeaderMobileMenuProps> = ({
   const handleClose = () => onOpenChange(false);
 
   const defaultTrigger = (
-    <Button variant="ghost" size="icon" className="h-11 w-11 min-h-[44px] min-w-[44px]">
+    <Button variant="ghost" size="icon" className="h-11 w-11 min-h-[44px] min-w-[44px] rounded-full border border-border bg-card hover:bg-accent/10">
       <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M4 6h16M4 12h16M4 18h16" />
       </svg>
