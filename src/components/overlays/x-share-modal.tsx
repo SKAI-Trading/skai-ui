@@ -139,13 +139,34 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
       }
     };
 
+    // Open the X web-intent composer so the user can always post manually.
+    const openXIntent = () => {
+      window.open(
+        `https://x.com/intent/post?text=${encodeURIComponent(editableText)}`,
+        "_blank",
+        "noopener,noreferrer",
+      );
+    };
+
+    // Normalize whatever the onShare caller returns as an error into a readable
+    // string. Bug fix: callers sometimes returned an Error/object in `error`,
+    // and rendering `{errorMsg}` printed a literal "[object Object]" on the CTA.
+    const toErrorText = (error: unknown): string => {
+      if (typeof error === "string" && error.trim()) return error;
+      if (error && typeof error === "object") {
+        const m = (error as { message?: unknown }).message;
+        if (typeof m === "string" && m.trim()) return m;
+      }
+      return "Couldn't auto-post to X — opening X so you can post it";
+    };
+
     // Primary: Post tweet via API (with image) or fall back to intent URL
     const handleShare = async () => {
       setStatus("sharing");
       setErrorMsg("");
 
       if (onShare) {
-        // Use the API to post directly with the image
+        // Use the API to post directly with the image.
         try {
           const imageUrl = window.location.origin + selectedImage.src;
           const result = await onShare(editableText, imageUrl);
@@ -154,21 +175,25 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
             setStatus("shared");
             setTimeout(() => setStatus("idle"), 3000);
           } else {
-            setErrorMsg(result.error || "Failed to post tweet");
+            // API post failed (e.g. X not connected). Never dead-end on an
+            // opaque error: copy the link, open the X intent composer so the
+            // post can still go out, and surface a readable reason.
+            setErrorMsg(toErrorText(result.error));
+            await copyReferralLink();
+            openXIntent();
             setStatus("error");
             setTimeout(() => setStatus("idle"), 4000);
           }
-        } catch {
-          setErrorMsg("Failed to post tweet. Please try again.");
+        } catch (err) {
+          setErrorMsg(toErrorText(err));
+          await copyReferralLink();
+          openXIntent();
           setStatus("error");
           setTimeout(() => setStatus("idle"), 4000);
         }
       } else {
-        // Fallback: open X intent URL immediately (synchronous — avoids popup blocker)
-        window.open(
-          `https://x.com/intent/post?text=${encodeURIComponent(editableText)}`,
-          "_blank",
-        );
+        // No API wired: open X intent immediately (synchronous — avoids popup blocker).
+        openXIntent();
         await copyReferralLink();
         setStatus("shared");
         setTimeout(() => setStatus("idle"), 3000);
