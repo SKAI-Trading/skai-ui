@@ -96,24 +96,12 @@
 2883-9692	match	-	ConversationView vision upload-conversation desktop cited 2883:9692
 2733-18374	match	-	ConversationView extended transcript desktop cited 2733:18374
 6736-36413	match	-	ConversationView extended mobile sibling of cited 2733:18700
-7301-77180	match	-	WhaleSelectorModal add-whale input tablet sibling of cited 2939:9939
-7298-74628	match	-	WhaleSelectorModal add-whale mobile sibling of cited 6001:59873
-7298-74565	match	-	WhaleSelectorModal add-whale tablet sibling of cited 6001:59873
-7303-77756	match	-	WhaleSelectorModal input-to-conversation5 mobile sibling of 2939:10485
 6244-76796	match	-	ReplicateStrategyModal custom-code JSON-expanded cited 6244:76796
-2939-10182	match	-	WhaleSelectorModal add-whale desktop base sibling of cited 2939:9939
-2939-9939	match	-	WhaleSelectorModal add-whale input desktop cited 2939:9939
 6244-15349	match	-	backtestMessage backtest conversation6 cited 6244:15349
 6244-90352	match	-	SearchStrategiesModal all-backtests cited 6244:90352
 6244-64788	match	-	ReplicateStrategyModal replicate-strategy cited 6244:64788
-7301-76568	match	-	WhaleSelectorModal select-whale mobile sibling of cited 6001:59873
-7303-77704	match	-	WhaleSelectorModal input-to-conversation5 tablet sibling of 2939:10485
-2939-10485	match	-	WhaleSelectorModal input-to-conversation5 desktop cited 2939:10485
-6001-59873	match	-	WhaleSelectorModal select-whale browse desktop cited 6001:59873
 6244-15246	match	-	BacktestResponseCard backtest conversation6 cited 6244:15246
 6244-77476	match	-	CandlestickFullscreen chart-sample custom-code cited 6244:77476
-7301-77235	match	-	WhaleSelectorModal add-whale input mobile sibling of cited 2939:9939
-7298-74917	match	-	WhaleSelectorModal select-whale tablet sibling of cited 6001:59873
 7332-64781	match	-	backtestMessage backtest conversation6 mobile sibling of 6244:15349
 7332-66385	match	-	ReplicateStrategyModal custom-code mobile sibling of cited 6244:76796
 7332-65746	match	-	ReplicateStrategyModal replicate mobile sibling of cited 6244:64788
@@ -140,34 +128,20 @@
 6702-25577	match	-	tablet expanded sidebar via MobileNavSheet drawer rendering HomeSidebarExpanded
 6750-43337	match	-	tablet chat-history via ChatHistoryModal, drawer-hosted
 2737-27044	match	-	desktop chat-history via ChatHistoryModal (historyOpen from Search chats row)
-6317-40206	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-flow.png	Flow filters verified open (All types/All sizes, SizePanel custom input 6317:40769, NFA callout, technicals rail)
-7291-67959	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-import.png	ImportWalletsModal verified open (role=dialog) on whale; mobile stacks per code
-7298-70026	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales tablet market-technicals rail wired; responsive match to Figma
-7298-73203	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales mobile market-technicals; strong responsive match
-5965-53498	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-kols.png	Live trades sub-tab wired (getWhaleActivity, real columns); ActivityView verified
-7290-60558	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Live trades tablet wired via ActivityView sub-tabs
-6965-87675	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales no-data mobile 1VH matches empty state
-5965-53115	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-import.png	Import wallet modal verified open desktop
-7290-61206	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Live trades mobile wired via ActivityView
-6965-89928	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales no-data add-wallet tablet 1VH; empty state match
-6965-91751	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales tablet base matches Figma layout
-7291-67562	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-import.png	Import wallet modal wired; tablet width
-7298-71656	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales mobile 1VH matches Figma
-7294-69326	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales tablet base match
-7294-68763	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-1440.png	Whales desktop 1VH strong match vs Figma no-data ref (sub-tabs, toolbar, X accounts)
-6001-59103	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-flow.png	Flow desktop 1VH wired (accumulating/distributing sections, volume bars, offline honest)
-6965-87440	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales no-data tablet 1VH empty state match
-7290-64605	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-kols.png	KOLs sub-tab verified open mobile; ActivityView KOL rows wired
-6965-89579	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales no-data mobile empty state match
-7290-63431	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-kols.png	KOLs sub-tab verified open (tablet width); real whale service enrichment
-2857-11664	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-flow.png	Whales desktop 1VH + All-types dropdown (2857:11664) wired and verified
-2773-10396	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-1440.png	Whales no-data desktop matches Figma ref closely (both empty panels, toolbar, toggle)
-7298-72782	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales mobile base match
-5965-52763	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-1440.png	Whales Activity desktop 1VH wired (WhalesScreen source frame) strong match
-6965-90015	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-add.png	No-data add-wallet mobile; AddWalletSheet verified open
-6965-91838	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales no-data mobile empty state match
-5965-53763	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-kols.png	KOLs desktop 1VH verified open; ActivityView KOL sub-tab wired
-7298-71221	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales tablet 1VH match
+7298-70026	deferred	-	Whales market-technicals tablet. NOT re-measured as a frame. RELATED KNOWN GAP: at <=768 Figma replaces the technicals card with a 'Market technicals' LINK (right of the filter row on tablet); code stacks the full card. Needs MarketTechnicalsCard.tsx
+7298-73203	deferred	-	Whales market-technicals mobile. NOT re-measured. Same gap: Figma draws a centred link below the filter row, code stacks the full card
+6965-87675	deferred	-	Whales no-data mobile. NOT individually re-measured 2026-07-29 (budget)
+6965-89928	deferred	-	Whales no-data > Add wallet tablet. NOT re-measured; also inherits the AddWalletSheet/SheetOverlay scrim blocker from 5965-54546
+6965-91751	deferred	-	Whales tablet. NOT individually re-measured 2026-07-29 (agent budget). Chrome is the shared header that WAS corrected; body is ActivityView/XAccountsPanel which WERE re-measured. Remaining risk is frame-specific layout only
+7294-69326	match	agent-measured-2026-07-29	Whales tablet. COMPOSITIONAL coverage 2026-07-29. Not opened individually
+7294-68763	match	agent-measured-2026-07-29	Whales desktop. COMPOSITIONAL coverage 2026-07-29 (shared header re-measured + ActivityView/XAccountsPanel re-measured). Not opened individually
+6965-87440	deferred	-	Whales no-data tablet. NOT individually re-measured 2026-07-29 (budget)
+6965-89579	deferred	-	Whales no-data mobile. NOT individually re-measured 2026-07-29 (budget)
+2773-10396	match	agent-measured-2026-07-29	Whales no-data desktop. COMPOSITIONAL coverage 2026-07-29. Empty states are the design here, not a bug; body components re-measured
+7298-72782	deferred	-	Whales mobile. NOT individually re-measured 2026-07-29 (budget). Same compositional caveat as 6965-91751
+5965-52763	match	agent-measured-2026-07-29	Whales Activity desktop. COMPOSITIONAL coverage 2026-07-29, not a direct frame open: the header (title 32/36, tab row, Display settings) was re-measured on 6001:59107/58416 and corrected, and the body is ActivityView + XAccountsPanel, both individually re-measured this pass. No frame-specific gap known
+6965-90015	deferred	-	Whales no-data > Add wallet mobile. NOT re-measured; inherits the SheetOverlay scrim blocker
+6965-91838	deferred	-	Whales no-data mobile. NOT individually re-measured 2026-07-29 (budget)
 7319-61172	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-checkout-375.png	mobile step-1 payment method, wired via CheckoutPage, single-col stack renders
 7319-60937	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-checkout-768.png	tablet step-1 payment method, picker + summary stack, wired
 7329-62749	match	-	mobile welcome-to-gold confirmed state, code-wired via WelcomeModal (status confirmed)
@@ -227,4 +201,40 @@
 6736-40379	partial	/tmp/home-lane/addmenu-375.png	upload image ALT: the AddMenu Upload an image row is present at 375 and 3 file inputs exist. AskComposer renders the Figma staged-file chip at :396-427 -- 40px thumbnail, middle-ellipsed name, size in Ash 11, remove X -- and AiHome passes liveAttachments. Could not stage real files through the headless file chooser, so the two-chip state Figma shows is unconfirmed visually
 6702-24782	partial	/tmp/home-lane/sb3-768.png	tablet sidebar normal: measured at 768 there is NO left rail at all -- zero tall left-edge columns, and the bottom nav is present instead. At 1440 both the 58px collapsed rail and the 248px expanded nav measure correctly. This is a documented deviation not a regression: HomeShellLayout.tsx:152-159 makes the rail lg:block only, citing iPad frames 6782-25030 and 6899-54798 plus report 0f2f60f8
 6419-47130	partial	/tmp/home-lane/sb3-768.png	tablet collapsed rail: same lg-only gate. The collapsed 58px rail exists and measures right at 1440 but never renders at 768
-5965-54546	partial	/tmp/home-lane/whaleadd-1440.png	Whales no-data Add wallet sheet drives open: panel measured 442px at x=998 right-flush, bg rgb(18,38,37), with Wallet address, Wallet name, Folder, Complete. SURPLUS confirmed numerically: a full-screen rgba(0,0,0,0.8) fixed scrim at z-50 that the Figma frame does not carry, which is report f074bd05. CROSS-LANE: the scrim is hardcoded in modules/skai-ui SheetOverlay, outside this lane
+5965-54546	partial	agent-measured-2026-07-29	Whales no-data > Add wallet desktop. UNCHANGED blocker: @skai/ui SheetOverlay hardcodes a full-screen rgba(0,0,0,0.8) z-50 scrim this frame does not draw (report f074bd05). Cross-repo - cannot be fixed from this repo. AddWalletSheet itself was not re-measured this pass
+6001-59103	match	agent-measured-2026-07-29	Flow desktop. Re-measured 2026-07-29: title 32/36, Display-settings filled #122524 no border r8, filter pill 120x34 r8, NFA r16, flow row r12 + percent opacity-44. All corrected from the Figma-token radius trap (Figma rounded-xl=12 vs app 16)
+2857-11664	match	agent-measured-2026-07-29	Flow + All-types dropdown. Right group gap 12, Display 147x32, AI Analysis 158x36 w/ 24px glyph. Corrected
+2889-14314	match	agent-measured-2026-07-29	Types dropdown-3 COMPONENT (newly classified). Panel 200px p8 gap8 r12 shadow 0 4px 12px; rows 30px r4 gap16; tags Mulish 11/14; measured fills All/Buy .24, Sell .34, Transfer .14. All corrected
+2889-14378	match	agent-measured-2026-07-29	Sizes dropdown-3 COMPONENT (newly classified). Panel 120px = trigger width (was w-44/176); Custom row is WHITE not blue. Corrected
+6317-40206	match	agent-measured-2026-07-29	Filter custom input. Panel bg rgba(18,37,36,.8) + backdrop-blur 2.5px + shadow; field/CTA r16; chips outer r8 w/ 4px middle padding. Corrected
+7298-71221	partial	agent-measured-2026-07-29	Tablet Flow. Fixed: title 24/28, Display 32x32 icon-only, AI 131x34, right-group gap 8, single-column at 768. UNFIXED: the reduced tablet type ramp inside flow rows (instrument 12/16, value 14/16, percent 18/20, row height 64) - a whole second ramp, deliberately not half-applied
+7298-71656	partial	agent-measured-2026-07-29	Mobile Flow. Fixed: filter pills split full width as equal halves; AI + gear icon-only. UNFIXED: frame turns the tab row into a 'Flow' select and the technicals card into a centred link
+5965-53498	match	agent-measured-2026-07-29	Live trades desktop. Header 14/18 ash (was 12/16); row pitch 48 via 8px divider clearance; time col 62px (was 88); name gaps 8; token coin 24px (was 20); token labels Mulish; market cap 16/16. Corrected
+7290-60558	match	agent-measured-2026-07-29	Live trades tablet. Row pitch 38 (4px divider gaps), name gaps 6, coin 24. no-min-size applied to sub-tab 22px / search 32px / Jump-to-trench 30px
+7290-61206	partial	agent-measured-2026-07-29	Live trades mobile. Toolbar + header glyph pitch 32 corrected. NOTE the designer reused this frame - its table body is the WALLET-MANAGER table, so it is not a mobile spec for trades columns. UNFIXED: Figma scrolls a 692px table inside a 347px panel; ours compresses
+5965-53763	match	agent-measured-2026-07-29	KOLs desktop. Header 14/18 ash; row pitch 38; action cluster 32px pitch already correct
+7290-64605	match	agent-measured-2026-07-29	KOLs mobile. Row pitch 40 - confirms KOL rows do NOT tighten below lg, unlike trades
+7290-63431	deferred	-	KOLs tablet - not fetched (budget). Bracketed by the desktop and mobile frames, which agree on 8px divider clearance and 32px action pitch
+5965-53115	match	agent-measured-2026-07-29	Import wallet desktop. THREE radius-trap hits (type row 12, field 16, CTA 16 all one step out); title offset 64px from modal top. Everything else measured matching
+7291-67959	match	agent-measured-2026-07-29	Import wallet mobile. The modal only ever drew the desktop spec - the phone is a DIFFERENT layout not a scale: 354px, pt-6 px-2 pb-2, r16, flat 20px gaps, 18/22 title, 12/14 subtitle, 44px CTA. Built
+7291-67562	deferred	-	Import wallet tablet - not fetched. Breakpoint deliberately set at sm(640) so 768 keeps the desktop spec rather than guessing
+5965-54259	match	agent-measured-2026-07-29	X accounts My-list desktop COMPONENT (newly classified, never verified before). Panel top r16/bottom r24 (was 24 all round); row pitch 44; inset 24; heart 16; person-check 12; trash 16 (was 28); toggle ring 0.5px; search 181x32 r8; CTA 124x30 Manrope 14/18 regular
+7290-57976	match	agent-measured-2026-07-29	X accounts My-list tablet COMPONENT. Pitch 40; title column 80; search must NOT stretch (fixed 181x32)
+7290-59768	match	agent-measured-2026-07-29	X accounts My-list mobile COMPONENT. Header is TWO rows (title alone, then search 153.5 + CTA 153.5); row inset 16; pitch 40; toggles 24 and trash 16 both under the 44px floor
+5965-54314	match	agent-measured-2026-07-29	Add handle desktop COMPONENT. Outline-heart slot 16; pitch 44; inset 24; gap 8. Add pill already correct
+7290-58356	match	agent-measured-2026-07-29	Add handle tablet COMPONENT. Pitch 40; labels/tag 53x22; action group 125
+7290-60059	match	agent-measured-2026-07-29	Add handle mobile COMPONENT. labels/tag 51x24; input was inflated by the index.css input rule that had no no-min-size escape - fixed at source this pass
+2889-10073	match	agent-measured-2026-07-29	Technicals BUY COMPONENT (newly classified). Measured from exported vectors: track annulus 4.808 and lit arc 7.393 at outer r99 (code drew one 6px stroke at r93); needle is a 6-to-2px trapezoid r4.7-61.7 (code drew a triangle to r54); large-arc-flag forced the >180deg sweep on every buy reading; signal tag used hex 24 as if it were 24% (it is 14.1%). All corrected. Prior claims: 198px dial CONFIRMED, needle 57px CONFIRMED but not implemented, annulus 'about 5-6px' IMPRECISE - there are two
+2889-10018	match	agent-measured-2026-07-29	Technicals SELL COMPONENT (newly classified). Sell unlit track #FB3324@0.34 CONFIRMED byte-exactly. NEUTRAL track was WRONG in code: 6001-59404 exports solid #123F3C with no opacity, code painted green@24%. Corrected
+6001-59873	match	agent-measured-2026-07-29	Select whale desktop. Modal r32/p24/gap16/796w/shadow; row name+address INLINE (were stacked); copy icon inline after address (was trailing); value Mulish 16/16 regular; last-active white centered w100
+7298-74917	match	agent-measured-2026-07-29	Select whale tablet. r24, p16/24, 708w, placeholder 14/18, close inset 24
+7301-76568	match	agent-measured-2026-07-29	Select whale mobile. r16, p12/16, 360w, value+last-active ABSENT per 7301:76849 (empty placeholder). Also fixed a live bug: sm:p-6 and sm:rounded-lg were leaking from the @skai/ui DialogContent base because an unprefixed class cannot tailwind-merge a prefixed one away
+2939-10182	deferred	-	Add whale desktop - implementer is src/components/home-redesign/AddMenu.tsx (composer + dropdown), NOT a whales/ file. Out of this pass's ownership; needs its own pass
+7298-74565	deferred	-	Add whale tablet - implementer AddMenu.tsx. Out of ownership
+7298-74628	deferred	-	Add whale mobile - implementer AddMenu.tsx. Out of ownership
+2939-9939	deferred	-	Add whale input desktop - implementer AiHome.tsx (whale staged as AI-prompt context; AiHome.tsx:336 already cites this node). Out of ownership
+7301-77180	deferred	-	Add whale input tablet - implementer AiHome.tsx. Out of ownership
+7301-77235	deferred	-	Add whale input mobile - implementer AiHome.tsx. Out of ownership
+2939-10485	deferred	-	Add whale conversation-5 desktop - implementer conversation/ConversationView.tsx. Out of ownership
+7303-77704	deferred	-	Add whale conversation-5 tablet - implementer ConversationView.tsx. Out of ownership
+7303-77756	deferred	-	Add whale conversation-5 mobile - implementer ConversationView.tsx. Out of ownership

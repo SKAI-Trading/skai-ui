@@ -80,8 +80,16 @@ for (const sec of SECTIONS) {
 }
 
 let applied = 0;
+// `component` frames are real designs that do not follow the "Skai > ..." screen
+// title convention (see component-aliases.tsv) and CAN be visually verified, so
+// they must be stamped too. Filtering on `kind !== "screen"` silently discarded
+// their verdicts — a vverify row was read, counted in the "lines loaded" tally,
+// and then dropped, which is precisely the invisible failure this file's header
+// warns about for SECTIONS. Same shape, different axis. `scaffold` stays excluded:
+// Directory / Notes / Breakpoint frames are canvas furniture with nothing to verify.
+const VERIFIABLE_KINDS = new Set(["screen", "component"]);
 for (const f of Object.values(reg.frames)) {
-  if (f.kind !== "screen") continue;
+  if (!VERIFIABLE_KINDS.has(f.kind)) continue;
   const rec = byKey[`${f.section}/${f.node}`];
   if (!rec) continue;
   f.verifiedAt = now;
@@ -108,7 +116,7 @@ fs.writeFileSync(regPath, JSON.stringify(reg, null, 2));
 
 const byVerdict = {};
 for (const f of Object.values(reg.frames)) {
-  if (f.kind !== "screen" || !f.verifiedAt) continue;
+  if (!VERIFIABLE_KINDS.has(f.kind) || !f.verifiedAt) continue;
   const m = (f.notes || "").match(/\[vverify:\s*(match|partial|deferred|not-wired)\b/);
   const v = m ? m[1] : "(verifiedAt set, no marker)";
   byVerdict[v] = (byVerdict[v] || 0) + 1;
