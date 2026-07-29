@@ -1,0 +1,14 @@
+9222-26192	deferred	-	Play-tile ARTWORK, not a UI frame: Plinko desktop card art 195x277. get_metadata returns zero children - it is a single image-fill card with no structure to implement. 195x277 is exactly the card slot the game pages already render via FIGMA_GAME_ART, so the work here is dropping a .webp into assets/games/figma/ and adding one line to playGameArt.ts, not building a component. Nothing to render or screenshot.
+9222-26203	deferred	-	Play-tile ARTWORK: Crash desktop card art 195x277. Leaf frame, no children. Same handling as the other tiles - an asset drop, not a component.
+9220-26176	deferred	-	Play-tile ARTWORK: Dice desktop card art 195x277. Leaf frame, no children.
+9222-26345	deferred	-	Play-tile ARTWORK: Scratchers desktop card art 195x277. Leaf frame, no children. Relevant to the Scratchers page shipped this pass, which currently uses the existing scratchers art rather than this export.
+9222-26323	deferred	-	Play-tile ARTWORK: Blackjack desktop card art 195x277. Leaf frame, no children. Note the game pages' info cards were shipped pointing at the real Blackjack art because Figma's own frames embed a stale Cards-ALT-Chicken thumbnail.
+9222-26334	deferred	-	Play-tile ARTWORK: Coinflip desktop card art 195x277. Leaf frame, no children.
+9222-26214	deferred	-	Play-tile ARTWORK: Mines desktop card art 195x277. Leaf frame, no children.
+9220-26181	deferred	-	Play-tile ARTWORK: Dice mobile card art 76x108. Leaf frame, no children. 76x108 matches the mobile info-card art box measured on the shipped pages.
+9222-26197	deferred	-	Play-tile ARTWORK: Plinko mobile card art 76x108. Leaf frame, no children.
+9222-26312	deferred	-	Play-tile ARTWORK: Mines mobile card art 76x108. Leaf frame, no children.
+9222-26208	deferred	-	Play-tile ARTWORK: Crash mobile card art 76x108. Leaf frame, no children.
+9222-26350	deferred	-	Play-tile ARTWORK: Scratchers mobile card art 76x108. Leaf frame, no children.
+9222-26328	deferred	-	Play-tile ARTWORK: Blackjack mobile card art 76x108. Leaf frame, no children.
+9222-26339	deferred	-	Play-tile ARTWORK: Coinflip mobile card art 76x108. Leaf frame, no children.

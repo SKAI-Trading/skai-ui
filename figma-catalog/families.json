@@ -1,0 +1,6741 @@
+{
+  "generated": "2026-07-29T01:39:11.928Z",
+  "families": {
+    "home/welcome": {
+      "section": "home",
+      "family": "welcome",
+      "frameCount": 13,
+      "frames": [
+        "5777-28765",
+        "6379-18450",
+        "6381-20617",
+        "6379-18643",
+        "6330-55267",
+        "6379-18340",
+        "6330-54599",
+        "6379-18604",
+        "2713-4301",
+        "2713-4240",
+        "6381-20578",
+        "2713-4362",
+        "2713-4179"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "with CTA",
+        "end CTA",
+        "scroll"
+      ],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "src/components/home-redesign/SignedOutWelcome.tsx",
+        "src/services/onboarding/questionnaireService.ts",
+        "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/SignedOutWelcome.tsx",
+        "src/components/home-redesign/onboarding",
+        "src/services/onboarding/questionnaireService.ts"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/sidebar normal": {
+      "section": "home",
+      "family": "sidebar normal",
+      "frameCount": 3,
+      "frames": [
+        "6702-24782",
+        "2720-7877",
+        "6702-25218"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/AiHome.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AiHome.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/(section root)": {
+      "section": "home",
+      "family": "(section root)",
+      "frameCount": 3,
+      "frames": [
+        "6415-45107",
+        "2713-4800",
+        "6415-45113"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "src/components/home-redesign/HomeShellLayout.tsx",
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/HomeSidebarRail.tsx",
+        "src/components/home-redesign/AskComposer.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/AskComposer.tsx",
+        "src/components/home-redesign/HomeShellLayout.tsx",
+        "src/components/home-redesign/HomeSidebarRail.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/welcome > onboarding Qs": {
+      "section": "home",
+      "family": "welcome > onboarding Qs",
+      "frameCount": 19,
+      "frames": [
+        "6413-21006",
+        "6388-21892",
+        "6405-20479",
+        "6385-21390",
+        "6393-53747",
+        "6383-20999",
+        "6405-20667",
+        "2713-4584",
+        "6385-21358",
+        "6394-54418",
+        "2713-4119",
+        "6405-20293",
+        "5778-29088",
+        "2713-4425",
+        "5780-45728",
+        "2713-4052",
+        "6383-21006",
+        "6388-21725",
+        "2713-3947"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "load effect > Quests",
+        "with default PFP 1",
+        "load effect",
+        "2",
+        "1",
+        "load effect > Badge reward",
+        "2 ALT"
+      ],
+      "citedFileCount": 5,
+      "citedFiles": [
+        "src/components/home-redesign/HomeOnboarding.tsx",
+        "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+        "src/services/onboarding/questionnaireService.ts",
+        "src/App.tsx",
+        "src/components/notifications/WelcomeModal.tsx"
+      ],
+      "dirs": [
+        "src/App.tsx",
+        "src/components/home-redesign/HomeOnboarding.tsx",
+        "src/components/home-redesign/onboarding",
+        "src/components/notifications/WelcomeModal.tsx",
+        "src/services/onboarding/questionnaireService.ts"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/sidebar": {
+      "section": "home",
+      "family": "sidebar",
+      "frameCount": 3,
+      "frames": [
+        "6419-47130",
+        "2713-4884",
+        "6419-47275"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home/AI Feed": {
+      "section": "home",
+      "family": "AI Feed",
+      "frameCount": 9,
+      "frames": [
+        "2725-6765",
+        "2836-17050",
+        "6710-25832",
+        "5854-80845",
+        "6704-26096",
+        "6704-29359",
+        "6711-27811",
+        "6711-32989",
+        "6704-27342"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "actionable",
+        "empty"
+      ],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "src/components/home-redesign/feed/AiSignalsCards.tsx",
+        "src/components/home-redesign/feed/CopyTradingCard.tsx",
+        "src/components/home-redesign/feed/AiFeed.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/feed"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/query": {
+      "section": "home",
+      "family": "query",
+      "frameCount": 5,
+      "frames": [
+        "3346-32028",
+        "2713-5014",
+        "6419-46299",
+        "6419-46017",
+        "6419-45976"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "focus",
+        "focus ALT"
+      ],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/ai/ChatInterface.tsx",
+        "src/components/home-redesign/AskComposer.tsx",
+        "src/App.tsx"
+      ],
+      "dirs": [
+        "src/App.tsx",
+        "src/components/ai/ChatInterface.tsx",
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/AskComposer.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/conversation": {
+      "section": "home",
+      "family": "conversation",
+      "frameCount": 4,
+      "frames": [
+        "6715-34377",
+        "2726-10653",
+        "6715-34717",
+        "6736-37217"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "src/components/home-redesign/conversation/ConversationView.tsx",
+        "src/components/home-redesign/conversation/AssistantBody.tsx",
+        "src/components/home-redesign/AskComposer.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AskComposer.tsx",
+        "src/components/home-redesign/conversation"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/sidebar normal > Group chats": {
+      "section": "home",
+      "family": "sidebar normal > Group chats",
+      "frameCount": 1,
+      "frames": [
+        "6250-93084"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/chatFolders.ts",
+        "src/components/home-redesign/CreateChatFolderModal.tsx",
+        "src/components/home-redesign/HomeSidebarExpanded.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/CreateChatFolderModal.tsx",
+        "src/components/home-redesign/HomeSidebarExpanded.tsx",
+        "src/components/home-redesign/chatFolders.ts"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/AI Feed > Market intel": {
+      "section": "home",
+      "family": "AI Feed > Market intel",
+      "frameCount": 4,
+      "frames": [
+        "5812-123481",
+        "6706-24261",
+        "6710-24624",
+        "6707-23360"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/market-intel/intelMappers.ts",
+        "src/components/home-redesign/market-intel/MarketIntelScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/market-intel"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/AI Feed > Market intel > Manage intel": {
+      "section": "home",
+      "family": "AI Feed > Market intel > Manage intel",
+      "frameCount": 3,
+      "frames": [
+        "5854-51123",
+        "6710-24970",
+        "6706-22658"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/market-intel/ManageIntelPanel.tsx",
+        "src/components/home-redesign/market-intel/MarketIntelScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/market-intel"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/ALT": {
+      "section": "home",
+      "family": "ALT",
+      "frameCount": 2,
+      "frames": [
+        "2733-19908",
+        "6419-45553"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/ComposerSuggestions.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/ComposerSuggestions.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/sidebar normal > Group chats > Folder name": {
+      "section": "home",
+      "family": "sidebar normal > Group chats > Folder name",
+      "frameCount": 3,
+      "frames": [
+        "6250-93916",
+        "6702-25618",
+        "6702-25577"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "src/components/home-redesign/chatFolders.ts",
+        "src/components/home-redesign/CreateChatFolderModal.tsx",
+        "src/components/home-redesign/HomeSidebarExpanded.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/CreateChatFolderModal.tsx",
+        "src/components/home-redesign/HomeSidebarExpanded.tsx",
+        "src/components/home-redesign/chatFolders.ts"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Voice prompt > chat history": {
+      "section": "home",
+      "family": "Voice prompt > chat history",
+      "frameCount": 3,
+      "frames": [
+        "6750-43675",
+        "6750-43337",
+        "2737-27044"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/ChatHistoryModal.tsx",
+        "src/components/home-redesign/conversation/backtest/SearchStrategiesModal.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/ChatHistoryModal.tsx",
+        "src/components/home-redesign/conversation"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Add > upload image > conversation 4": {
+      "section": "home",
+      "family": "Add > upload image > conversation 4",
+      "frameCount": 4,
+      "frames": [
+        "6736-40095",
+        "6736-39936",
+        "2883-9692",
+        "2736-25840"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/conversation/ConversationView.tsx",
+        "src/components/home-redesign/conversation/AssistantBody.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/conversation"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/conversation extended": {
+      "section": "home",
+      "family": "conversation extended",
+      "frameCount": 3,
+      "frames": [
+        "6715-35126",
+        "6715-34899",
+        "2733-18374"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/conversation/ConversationView.tsx",
+        "src/components/home-redesign/conversation/AssistantBody.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/conversation"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/conversation 3 > edit chat": {
+      "section": "home",
+      "family": "conversation 3 > edit chat",
+      "frameCount": 3,
+      "frames": [
+        "6736-37714",
+        "2733-20178",
+        "6736-37955"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/conversation/ConversationView.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/conversation"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Portfolio > Export private key > private key displayed": {
+      "section": "home",
+      "family": "Portfolio > Export private key > private key displayed",
+      "frameCount": 3,
+      "frames": [
+        "6828-36970",
+        "2753-8176",
+        "6828-37572"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/ExportKeyModal.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/conversation 3": {
+      "section": "home",
+      "family": "conversation 3",
+      "frameCount": 3,
+      "frames": [
+        "6736-37059",
+        "5787-74313",
+        "2733-19382"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "with costs"
+      ],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/conversation/useMessageCosts.ts",
+        "src/components/home-redesign/conversation/ConversationView.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/conversation"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Portfolio > Tiers": {
+      "section": "home",
+      "family": "Portfolio > Tiers",
+      "frameCount": 6,
+      "frames": [
+        "6942-74270",
+        "6937-71607",
+        "2773-7535",
+        "2770-16271",
+        "6942-72954",
+        "6942-74751"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Portfolio > Social": {
+      "section": "home",
+      "family": "Portfolio > Social",
+      "frameCount": 7,
+      "frames": [
+        "6925-68955",
+        "2899-16515",
+        "6918-64949",
+        "2769-15250",
+        "6925-67023",
+        "6925-67953",
+        "6934-70311"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "with vesting"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home/Portfolio": {
+      "section": "home",
+      "family": "Portfolio",
+      "frameCount": 9,
+      "frames": [
+        "6795-31004",
+        "6782-24811",
+        "2764-13970",
+        "2760-12240",
+        "2737-28177",
+        "6782-26825",
+        "6811-32268",
+        "6795-30496",
+        "6782-25160"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "invisible"
+      ],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/privacy.tsx",
+        "src/components/home-redesign/portfolio/PortfolioScreen.tsx",
+        "src/components/home-redesign/SiteFooter.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/SiteFooter.tsx",
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Portfolio > Defi": {
+      "section": "home",
+      "family": "Portfolio > Defi",
+      "frameCount": 2,
+      "frames": [
+        "6918-62834",
+        "2769-14707"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/ads > Add": {
+      "section": "home",
+      "family": "ads > Add",
+      "frameCount": 3,
+      "frames": [
+        "6736-38635",
+        "6736-38442",
+        "2733-20819"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/AddMenu.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AddMenu.tsx",
+        "src/components/home-redesign/AiHome.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Add > upload image": {
+      "section": "home",
+      "family": "Add > upload image",
+      "frameCount": 3,
+      "frames": [
+        "6736-39279",
+        "6736-39216",
+        "2735-25298"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/AskComposer.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/AskComposer.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Portfolio > Vault": {
+      "section": "home",
+      "family": "Portfolio > Vault",
+      "frameCount": 7,
+      "frames": [
+        "6828-38811",
+        "6899-54796",
+        "2760-9935",
+        "2899-15797",
+        "6910-59407",
+        "6918-64538",
+        "6918-63866"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "deposit"
+      ],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Portfolio > Add wallet > Name wallet": {
+      "section": "home",
+      "family": "Portfolio > Add wallet > Name wallet",
+      "frameCount": 3,
+      "frames": [
+        "6811-34522",
+        "2753-4954",
+        "6811-35119"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/WalletCreateModal.tsx",
+        "src/components/home-redesign/portfolio/privacy.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Portfolio > Tiers > Share portfolio": {
+      "section": "home",
+      "family": "Portfolio > Tiers > Share portfolio",
+      "frameCount": 1,
+      "frames": [
+        "6259-95454"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/SharePortfolioModal.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Voice prompt": {
+      "section": "home",
+      "family": "Voice prompt",
+      "frameCount": 3,
+      "frames": [
+        "6750-42546",
+        "6736-41729",
+        "2736-26122"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/AskComposer.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/AskComposer.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/conversation 2 extended": {
+      "section": "home",
+      "family": "conversation 2 extended",
+      "frameCount": 3,
+      "frames": [
+        "2733-18700",
+        "6715-36037",
+        "6736-36413"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/conversation/ConversationView.tsx",
+        "src/components/home-redesign/conversation/GameCardsBlock.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/conversation"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/ads > Tool tip": {
+      "section": "home",
+      "family": "ads > Tool tip",
+      "frameCount": 1,
+      "frames": [
+        "6736-38996"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home/Portfolio > Add wallet": {
+      "section": "home",
+      "family": "Portfolio > Add wallet",
+      "frameCount": 3,
+      "frames": [
+        "2752-4678",
+        "6811-32792",
+        "6811-33593"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/WalletCreateModal.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Portfolio > Export private key": {
+      "section": "home",
+      "family": "Portfolio > Export private key",
+      "frameCount": 3,
+      "frames": [
+        "2752-5814",
+        "6811-35764",
+        "6811-36029"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/ExportKeyModal.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Portfolio > Badges > Badge preview": {
+      "section": "home",
+      "family": "Portfolio > Badges > Badge preview",
+      "frameCount": 3,
+      "frames": [
+        "6965-82190",
+        "5926-13672",
+        "6965-86368"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/BadgePreviewModal.tsx",
+        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/query ALT": {
+      "section": "home",
+      "family": "query ALT",
+      "frameCount": 1,
+      "frames": [
+        "6419-46340"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home/Portfolio > Badges": {
+      "section": "home",
+      "family": "Portfolio > Badges",
+      "frameCount": 3,
+      "frames": [
+        "6962-75733",
+        "2853-9675",
+        "6962-80042"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/portfolio"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Add > upload image ALT": {
+      "section": "home",
+      "family": "Add > upload image ALT",
+      "frameCount": 1,
+      "frames": [
+        "6736-40379"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home/Whales > filter": {
+      "section": "home",
+      "family": "Whales > filter",
+      "frameCount": 1,
+      "frames": [
+        "6317-40206"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "custom input"
+      ],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/whales/WhalesScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/whales"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Pro > checkout": {
+      "section": "home",
+      "family": "Pro > checkout",
+      "frameCount": 9,
+      "frames": [
+        "7319-61172",
+        "7320-63495",
+        "7319-60937",
+        "2946-15136",
+        "7321-64964",
+        "7320-64189",
+        "7323-65507",
+        "2990-18205",
+        "2989-17608"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "send tokens - step 1",
+        "send tokens - step 2",
+        "send tokens - step 3"
+      ],
+      "citedFileCount": 10,
+      "citedFiles": [
+        "src/components/home-redesign/upgrade/SendTokensScreen.tsx",
+        "src/components/upgrade/checkout/PaymentMethodPicker.tsx",
+        "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx",
+        "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+        "src/pages/upgrade/CheckoutPage.tsx",
+        "src/hooks/user/useSubscribeContract.ts",
+        "src/components/upgrade/checkout/TxStatusPanel.tsx",
+        "src/components/home-redesign/upgrade/useSendPaymentVerification.ts",
+        "src/components/home-redesign/upgrade/VerifyPaymentScreen.tsx",
+        "src/components/home-redesign/upgrade/PlanSummaryCard.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/upgrade",
+        "src/components/upgrade/checkout",
+        "src/hooks/user/useSubscribeContract.ts",
+        "src/pages/upgrade/CheckoutPage.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Add > Add whale": {
+      "section": "home",
+      "family": "Add > Add whale",
+      "frameCount": 9,
+      "frames": [
+        "7301-77180",
+        "7298-74628",
+        "7298-74565",
+        "7303-77756",
+        "2939-10182",
+        "2939-9939",
+        "7303-77704",
+        "2939-10485",
+        "7301-77235"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [
+        "input",
+        "input > conversation 5"
+      ],
+      "citedFileCount": 5,
+      "citedFiles": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/whales/whalesShared.tsx",
+        "src/components/home-redesign/whales/WhaleSelectorModal.tsx",
+        "src/components/home-redesign/RedesignHome.tsx",
+        "src/components/home-redesign/AskComposer.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/AiHome.tsx",
+        "src/components/home-redesign/AskComposer.tsx",
+        "src/components/home-redesign/RedesignHome.tsx",
+        "src/components/home-redesign/whales"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Whales > Wallet manager > Import wallet": {
+      "section": "home",
+      "family": "Whales > Wallet manager > Import wallet",
+      "frameCount": 3,
+      "frames": [
+        "7291-67959",
+        "5965-53115",
+        "7291-67562"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/whales/useWhaleLists.ts",
+        "src/components/home-redesign/whales/ImportWalletsModal.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/whales"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Whales": {
+      "section": "home",
+      "family": "Whales",
+      "frameCount": 19,
+      "frames": [
+        "7298-70026",
+        "7298-73203",
+        "6965-87675",
+        "5965-54546",
+        "6965-89928",
+        "6965-91751",
+        "7298-71656",
+        "7294-69326",
+        "7294-68763",
+        "6001-59103",
+        "6965-87440",
+        "6965-89579",
+        "2857-11664",
+        "2773-10396",
+        "7298-72782",
+        "5965-52763",
+        "6965-90015",
+        "6965-91838",
+        "7298-71221"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [
+        "market technicals",
+        "no data",
+        "no data > Add wallet"
+      ],
+      "citedFileCount": 6,
+      "citedFiles": [
+        "src/components/home-redesign/whales/useWhaleLists.ts",
+        "src/components/home-redesign/whales/AddWalletSheet.tsx",
+        "src/components/home-redesign/whales/whalesShared.tsx",
+        "src/components/home-redesign/whales/WhalesScreen.tsx",
+        "src/components/home-redesign/whales/XAccountsPanel.tsx",
+        "src/components/home-redesign/whales/ActivityView.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/whales"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Agentic support": {
+      "section": "home",
+      "family": "Agentic support",
+      "frameCount": 18,
+      "frames": [
+        "6244-76796",
+        "6244-15349",
+        "6244-90352",
+        "6244-64788",
+        "6244-15246",
+        "6244-77476",
+        "7332-64781",
+        "7332-66385",
+        "7332-65746",
+        "7329-64060",
+        "7332-65159",
+        "7333-69083",
+        "7333-70379",
+        "7332-65938",
+        "7332-66266",
+        "7329-63441",
+        "7333-70285",
+        "7333-67878"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "Backtesting > conversation 6 > Replicate Sample Strategy > Custom code",
+        "Backtesting > conversation 6",
+        "Backtesting > conversation 6 > All backtests",
+        "Backtesting > conversation 6 > Replicate Sample Strategy",
+        "Backtesting > conversation 6 > Replicate Sample Strategy > Custom code > Chart sample"
+      ],
+      "citedFileCount": 18,
+      "citedFiles": [
+        "src/components/home-redesign/conversation/strategy/index.ts",
+        "src/components/home-redesign/conversation/strategy/ReplicateStrategyModal.tsx",
+        "src/components/home-redesign/conversation/ConversationView.tsx",
+        "src/components/home-redesign/conversation/chart/SignalChartCard.tsx",
+        "src/components/home-redesign/conversation/chart/useSignalChart.ts",
+        "src/components/home-redesign/conversation/backtest/BacktestResponseCard.tsx",
+        "src/components/home-redesign/conversation/backtest/index.ts",
+        "src/components/home-redesign/conversation/backtest/BacktestProse.tsx",
+        "src/components/home-redesign/conversation/backtest/backtestMessage.tsx",
+        "src/components/home-redesign/conversation/backtest/NetProfitAreaChart.tsx",
+        "src/components/home-redesign/conversation/backtest/SearchStrategiesModal.tsx",
+        "src/components/trade/native-chart/CandleChartCanvas.tsx",
+        "src/components/home-redesign/conversation/chart/CandlestickFullscreen.tsx",
+        "src/components/home-redesign/conversation/chart/candlestickTypes.ts",
+        "src/components/home-redesign/conversation/chart/WIRING.md",
+        "src/lib/chart/lightweightChartsTheme.ts",
+        "src/lib/chart/rechartsTheme.tsx",
+        "src/lib/chart/chartTheme.ts"
+      ],
+      "dirs": [
+        "src/components/home-redesign/conversation",
+        "src/components/trade/native-chart",
+        "src/lib/chart/chartTheme.ts",
+        "src/lib/chart/lightweightChartsTheme.ts",
+        "src/lib/chart/rechartsTheme.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Whales > Live trades": {
+      "section": "home",
+      "family": "Whales > Live trades",
+      "frameCount": 3,
+      "frames": [
+        "5965-53498",
+        "7290-60558",
+        "7290-61206"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/whales/ActivityView.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/whales"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Pro": {
+      "section": "home",
+      "family": "Pro",
+      "frameCount": 4,
+      "frames": [
+        "7307-78311",
+        "2941-14522",
+        "2939-10760",
+        "7309-79234"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "expanded"
+      ],
+      "citedFileCount": 6,
+      "citedFiles": [
+        "src/components/upgrade/TierCard.tsx",
+        "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx",
+        "src/components/home-redesign/upgrade/TierCard.tsx",
+        "src/components/home-redesign/upgrade/shared.ts",
+        "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+        "src/pages/upgrade/UpgradePage.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/upgrade",
+        "src/components/upgrade/TierCard.tsx",
+        "src/pages/upgrade/UpgradePage.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Pro > checkout > welcome to gold": {
+      "section": "home",
+      "family": "Pro > checkout > welcome to gold",
+      "frameCount": 3,
+      "frames": [
+        "7329-62749",
+        "7325-61983",
+        "2992-18923"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "src/components/upgrade/checkout/WelcomeModal.tsx",
+        "src/components/home-redesign/upgrade/shared.ts",
+        "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+        "src/components/home-redesign/upgrade/WelcomeSuccessModal.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/upgrade",
+        "src/components/upgrade/checkout"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Add > Add whale > Select whale": {
+      "section": "home",
+      "family": "Add > Add whale > Select whale",
+      "frameCount": 3,
+      "frames": [
+        "7301-76568",
+        "6001-59873",
+        "7298-74917"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/whales/WhaleSelectorModal.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/whales"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Pro > checkout ALT": {
+      "section": "home",
+      "family": "Pro > checkout ALT",
+      "frameCount": 1,
+      "frames": [
+        "2988-17224"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 5,
+      "citedFiles": [
+        "src/components/upgrade/checkout/PlanSummary.tsx",
+        "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx",
+        "src/components/home-redesign/upgrade/shared.ts",
+        "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+        "src/components/home-redesign/upgrade/PlanSummaryCard.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/upgrade",
+        "src/components/upgrade/checkout"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Whales > KOLs": {
+      "section": "home",
+      "family": "Whales > KOLs",
+      "frameCount": 3,
+      "frames": [
+        "7290-64605",
+        "7290-63431",
+        "5965-53763"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/whales/ActivityView.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/whales"
+      ],
+      "proposedStatus": "partial"
+    },
+    "home/Pro ALT stretched": {
+      "section": "home",
+      "family": "Pro ALT stretched",
+      "frameCount": 1,
+      "frames": [
+        "6336-56093"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "src/components/upgrade/PlansLayout4.tsx",
+        "src/components/upgrade/PlansLayout6.tsx",
+        "src/components/home-redesign/upgrade/TierCard.tsx",
+        "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/upgrade",
+        "src/components/upgrade/PlansLayout4.tsx",
+        "src/components/upgrade/PlansLayout6.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "home/Pro ALT": {
+      "section": "home",
+      "family": "Pro ALT",
+      "frameCount": 1,
+      "frames": [
+        "6008-71803"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/upgrade/PlansLayout4.tsx",
+        "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/upgrade",
+        "src/components/upgrade/PlansLayout4.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/(section root)": {
+      "section": "wallet",
+      "family": "(section root)",
+      "frameCount": 3,
+      "frames": [
+        "7727-14906",
+        "7675-51300",
+        "2998-19599"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/welcome/WelcomeHero.tsx",
+        "modules/skai-wallet/src/components/SKAIAuth.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home": {
+      "section": "wallet",
+      "family": "continue on web > home",
+      "frameCount": 30,
+      "frames": [
+        "8045-104041",
+        "3118-25969",
+        "7920-116649",
+        "7920-116338",
+        "3153-19889",
+        "8045-104658",
+        "7774-63646",
+        "8370-72613",
+        "7728-60058",
+        "7704-46353",
+        "3070-775",
+        "7713-13706",
+        "7774-12119",
+        "8320-71829",
+        "8370-73407",
+        "7709-10525",
+        "7491-148345",
+        "3070-517",
+        "7704-47027",
+        "3026-16493",
+        "7774-62886",
+        "8490-33232",
+        "7774-64736",
+        "7774-68711",
+        "3123-3046",
+        "8490-33071",
+        "7774-68124",
+        "7713-13398",
+        "3163-21315",
+        "7774-70768"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "skin 2 > Share net worth",
+        "skin 3",
+        "skin2",
+        "skin 2",
+        "skin3"
+      ],
+      "citedFileCount": 6,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/buy/BuyForm.tsx",
+        "modules/skai-wallet/src/components/ShareCard.tsx",
+        "modules/skai-wallet/src/components/wallet/send/SendTokenSelect.tsx",
+        "modules/skai-wallet/src/components/wallet/dashboard/TokenListTable.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletSend.tsx",
+        "modules/skai-wallet/src/components/wallet/nft/NftCollectionView.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > chart": {
+      "section": "wallet",
+      "family": "continue on web > home > chart",
+      "frameCount": 3,
+      "frames": [
+        "8045-106048",
+        "8045-104960",
+        "3153-20193"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/history/ActivityFeed.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > unlock": {
+      "section": "wallet",
+      "family": "continue on web > unlock",
+      "frameCount": 6,
+      "frames": [
+        "7727-14937",
+        "2999-19674",
+        "7675-51350",
+        "3012-15180",
+        "7727-14974",
+        "7675-51418"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [
+        "password"
+      ],
+      "citedFileCount": 6,
+      "citedFiles": [
+        "modules/skai-wallet/src/__tests__/components/UnlockForm.test.tsx",
+        "modules/skai-wallet/src/__tests__/pages/WalletUnlock.test.tsx",
+        "modules/skai-wallet/src/components/wallet/auth/UnlockForm.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletUnlock.tsx",
+        "modules/skai-wallet/src/components/wallet/send/SendDetails.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletSend.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/__tests__",
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > buy": {
+      "section": "wallet",
+      "family": "continue on web > home > buy",
+      "frameCount": 3,
+      "frames": [
+        "7926-21018",
+        "7926-20708",
+        "3124-2302"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/__tests__/components/OnRampModal.test.tsx",
+        "modules/skai-wallet/src/components/wallet/bridge/BridgeProviderCard.tsx",
+        "modules/skai-wallet/src/components/OnRampModal.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/__tests__",
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > insights": {
+      "section": "wallet",
+      "family": "continue on web > home > insights",
+      "frameCount": 3,
+      "frames": [
+        "8045-106349",
+        "8045-105580",
+        "3154-3246"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/insights/SpendingAnalytics.tsx",
+        "modules/skai-wallet/src/components/wallet/insights/TokenAllocation.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > swap": {
+      "section": "wallet",
+      "family": "continue on web > home > swap",
+      "frameCount": 3,
+      "frames": [
+        "7935-65189",
+        "7935-65088",
+        "3145-2711"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/__tests__/components/SwapModal.test.tsx",
+        "modules/skai-wallet/src/components/wallet/buy/BuyConfirmation.tsx",
+        "modules/skai-wallet/src/components/SwapModal.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/__tests__",
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > spending": {
+      "section": "wallet",
+      "family": "continue on web > home > spending",
+      "frameCount": 3,
+      "frames": [
+        "8045-105616",
+        "3154-3850",
+        "8045-106380"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/SpendingChart.tsx",
+        "modules/skai-wallet/src/components/wallet/utilities/TokenApprovals.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > send": {
+      "section": "wallet",
+      "family": "continue on web > home > send",
+      "frameCount": 16,
+      "frames": [
+        "7935-65748",
+        "8490-39089",
+        "3149-2903",
+        "7935-65586",
+        "7935-66768",
+        "7935-66663",
+        "7528-155716",
+        "7935-66302",
+        "7935-66144",
+        "3149-17882",
+        "7935-70064",
+        "7935-69362",
+        "7935-69910",
+        "7935-69066",
+        "3149-18278",
+        "3150-18637"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [
+        "step 1",
+        "step 1 - alternative view for steps",
+        "step 2 > Address lookup",
+        "step 2",
+        "processing",
+        "step 3"
+      ],
+      "citedFileCount": 6,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/bridge/BridgeForm.tsx",
+        "modules/skai-wallet/src/components/SendModal.tsx",
+        "modules/skai-wallet/src/components/wallet/swap/SwapConfirmation.tsx",
+        "modules/skai-wallet/src/components/wallet/swap/SwapReview.tsx",
+        "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/get the app > new user": {
+      "section": "wallet",
+      "family": "get the app > new user",
+      "frameCount": 3,
+      "frames": [
+        "7676-51506",
+        "3012-15897",
+        "7727-15382"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/welcome/WelcomeBackground.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletShellWelcome.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > request with QR": {
+      "section": "wallet",
+      "family": "continue on web > home > request with QR",
+      "frameCount": 6,
+      "frames": [
+        "8045-106411",
+        "8045-105652",
+        "3154-4635",
+        "8045-105688",
+        "8045-106442",
+        "3154-5092"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "step 1",
+        "step 2"
+      ],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/RequestPayment.tsx",
+        "modules/skai-wallet/src/components/wallet/utilities/ShareWalletCard.tsx",
+        "modules/skai-wallet/src/components/wallet/utilities/BatchTransactions.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/get the app > new user > create new wallet > Google auth": {
+      "section": "wallet",
+      "family": "get the app > new user > create new wallet > Google auth",
+      "frameCount": 1,
+      "frames": [
+        "3026-16563"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/get the app > new user > create new wallet": {
+      "section": "wallet",
+      "family": "get the app > new user > create new wallet",
+      "frameCount": 3,
+      "frames": [
+        "7676-51711",
+        "3023-11938",
+        "7727-15482"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/send/SendDetails.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletSend.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > unlock > Forgot password": {
+      "section": "wallet",
+      "family": "continue on web > unlock > Forgot password",
+      "frameCount": 3,
+      "frames": [
+        "7683-7930",
+        "7473-130910",
+        "7727-15699"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
+        "modules/skai-wallet/src/components/SKAIAuth.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > share": {
+      "section": "wallet",
+      "family": "continue on web > home > share",
+      "frameCount": 11,
+      "frames": [
+        "8045-112509",
+        "8045-105940",
+        "8045-106535",
+        "8529-35743",
+        "8529-36630",
+        "8611-123242",
+        "3158-8296",
+        "3155-6023",
+        "3158-9906",
+        "3158-4524",
+        "8045-106012"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [
+        "Expand",
+        "2nd combination",
+        "3rd combination"
+      ],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/insights/PortfolioPerformance.tsx",
+        "modules/skai-wallet/src/components/wallet/settings/NetworkSelector.tsx",
+        "modules/skai-wallet/src/components/wallet/utilities/BackupWallet.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > request from user": {
+      "section": "wallet",
+      "family": "continue on web > home > request from user",
+      "frameCount": 6,
+      "frames": [
+        "8045-105868",
+        "8045-106473",
+        "3154-5798",
+        "3154-5542",
+        "8045-105904",
+        "8045-106504"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [
+        "step 1",
+        "step 2"
+      ],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/utilities/RequestPayment.tsx",
+        "modules/skai-wallet/src/components/wallet/utilities/BatchTransactions.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > unlock > Forgot password > OTP > Set new password": {
+      "section": "wallet",
+      "family": "continue on web > unlock > Forgot password > OTP > Set new password",
+      "frameCount": 3,
+      "frames": [
+        "7728-59766",
+        "7473-133033",
+        "7683-34510"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
+        "modules/skai-wallet/src/components/SKAIAuth.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > unlock > Forgot password > OTP": {
+      "section": "wallet",
+      "family": "continue on web > unlock > Forgot password > OTP",
+      "frameCount": 3,
+      "frames": [
+        "7728-59382",
+        "7473-131013",
+        "7683-33892"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
+        "modules/skai-wallet/src/components/SKAIAuth.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > receive": {
+      "section": "wallet",
+      "family": "continue on web > home > receive",
+      "frameCount": 12,
+      "frames": [
+        "7935-72636",
+        "7935-73094",
+        "7935-72101",
+        "7935-72913",
+        "7935-71767",
+        "7935-70792",
+        "7935-71574",
+        "7935-70612",
+        "3153-19232",
+        "3153-19677",
+        "3153-19488",
+        "3153-19055"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "set amount - step 2",
+        "set amount - step 1",
+        "step 2",
+        "step 1",
+        "set amount"
+      ],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/bridge/BridgeSuccess.tsx",
+        "modules/skai-wallet/src/components/wallet/bridge/BridgeProcessing.tsx",
+        "modules/skai-wallet/src/components/wallet/tokens/TokenPriceChart.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > batch": {
+      "section": "wallet",
+      "family": "continue on web > home > batch",
+      "frameCount": 16,
+      "frames": [
+        "8091-48931",
+        "8045-115649",
+        "8572-50096",
+        "8045-116170",
+        "8045-115167",
+        "3161-18913",
+        "8045-115989",
+        "8091-48732",
+        "8045-115804",
+        "3161-20243",
+        "7532-160779",
+        "3161-19548",
+        "8045-115490",
+        "8045-116369",
+        "8045-115331",
+        "3161-20000"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "step 2b > input amount",
+        "step 2",
+        "step 1",
+        "step 3",
+        "step 2b"
+      ],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/connections/SendFlow.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > bridge": {
+      "section": "wallet",
+      "family": "continue on web > home > bridge",
+      "frameCount": 7,
+      "frames": [
+        "8611-28596",
+        "8045-113267",
+        "8045-114969",
+        "8045-114368",
+        "8045-113082",
+        "3161-4184",
+        "3158-11566"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/common/ConfirmationDialog.tsx",
+        "modules/skai-wallet/src/components/wallet/settings/LanguageCurrencyPanel.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > bridge > Start bridge": {
+      "section": "wallet",
+      "family": "continue on web > home > bridge > Start bridge",
+      "frameCount": 3,
+      "frames": [
+        "8045-113604",
+        "8045-113447",
+        "7528-159859"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > bridge > bridge settings": {
+      "section": "wallet",
+      "family": "continue on web > home > bridge > bridge settings",
+      "frameCount": 3,
+      "frames": [
+        "8045-114061",
+        "3161-3923",
+        "8045-114218"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx",
+        "modules/skai-wallet/src/components/wallet/common/GasSelectorDialog.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > account > logout": {
+      "section": "wallet",
+      "family": "continue on web > home > account > logout",
+      "frameCount": 3,
+      "frames": [
+        "7911-42996",
+        "7911-42701",
+        "3167-25811"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/staking/StakingDetail.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > account": {
+      "section": "wallet",
+      "family": "continue on web > home > account",
+      "frameCount": 3,
+      "frames": [
+        "7911-42432",
+        "7911-42082",
+        "3166-24676"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/settings/WalletLockSection.tsx",
+        "modules/skai-wallet/src/components/wallet/dapp/DAppCard.tsx",
+        "modules/skai-wallet/src/components/wallet/dapp/DAppBrowser.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > streaks": {
+      "section": "wallet",
+      "family": "continue on web > home > streaks",
+      "frameCount": 3,
+      "frames": [
+        "8490-37038",
+        "7892-18412",
+        "3163-21620"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/connections/PermissionRequest.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > notifications": {
+      "section": "wallet",
+      "family": "continue on web > home > notifications",
+      "frameCount": 9,
+      "frames": [
+        "7892-19337",
+        "7892-23422",
+        "7892-19704",
+        "7892-23952",
+        "3164-22754",
+        "3165-23175",
+        "3163-21998",
+        "7892-22848",
+        "7892-20209"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "sample notification",
+        "settings"
+      ],
+      "citedFileCount": 7,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/dapp/DAppConnectionPanel.tsx",
+        "modules/skai-wallet/src/components/wallet/nft/NftGallery.tsx",
+        "modules/skai-wallet/src/shell/TopHeader.tsx",
+        "modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx",
+        "modules/skai-wallet/src/components/wallet/connections/TransactionSigningModal.tsx",
+        "modules/skai-wallet/src/components/wallet/connections/WalletConnectSessions.tsx",
+        "modules/skai-wallet/src/services/userNotifications.ts"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/services",
+        "modules/skai-wallet/src/shell"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet multi menu > Remove walletl": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet multi menu > Remove walletl",
+      "frameCount": 14,
+      "frames": [
+        "9685-101103",
+        "7774-69004",
+        "9685-100712",
+        "9685-99496",
+        "9685-98528",
+        "9545-97477",
+        "9545-97933",
+        "9685-100027",
+        "7774-68417",
+        "9685-98877",
+        "7774-69886",
+        "7774-70474",
+        "7774-70180",
+        "7774-69592"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet multi menu > Export private key": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet multi menu > Export private key",
+      "frameCount": 6,
+      "frames": [
+        "7774-67001",
+        "7774-66509",
+        "7479-135805",
+        "7479-136195",
+        "7713-16630",
+        "7713-16984"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [
+        "reveal"
+      ],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/shell"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet accounts": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet accounts",
+      "frameCount": 3,
+      "frames": [
+        "7774-65029",
+        "3080-811",
+        "7713-14212"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > account > edit": {
+      "section": "wallet",
+      "family": "continue on web > home > account > edit",
+      "frameCount": 3,
+      "frames": [
+        "7911-42551",
+        "7911-42851",
+        "3167-25382"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/staking/StakingOverview.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet multi menu > Remove wallet": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet multi menu > Remove wallet",
+      "frameCount": 3,
+      "frames": [
+        "7774-67295",
+        "7713-17399",
+        "7479-136955"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/shell"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase",
+      "frameCount": 16,
+      "frames": [
+        "7482-142212",
+        "7717-10565",
+        "9940-233940",
+        "9940-233959",
+        "9940-234006",
+        "9940-234067",
+        "9940-234128",
+        "9940-234315",
+        "9940-234772",
+        "9940-234852",
+        "9941-235776",
+        "9941-235994",
+        "9941-236456",
+        "9941-236536",
+        "9941-237075",
+        "9941-237786"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "phrase modal - empty 12-word grid",
+        "phrase modal - words 1-2 filled",
+        "phrase modal - 3 filled - typing partial word",
+        "phrase modal - 3 filled - typing complete word",
+        "phrase modal - all 12 filled",
+        "phrase modal - all 24 filled",
+        "phrase modal - words 1-2 filled - typing"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > Add wallet": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > Add wallet",
+      "frameCount": 1,
+      "frames": [
+        "7479-137328"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/shell"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > bridge > Start bridge > Post wallet interaction": {
+      "section": "wallet",
+      "family": "continue on web > home > bridge > Start bridge > Post wallet interaction",
+      "frameCount": 3,
+      "frames": [
+        "8045-113911",
+        "7528-160277",
+        "8045-113754"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet multi menu > Add wallet": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet multi menu > Add wallet",
+      "frameCount": 1,
+      "frames": [
+        "7713-18212"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > Add wallet > Create new": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > Add wallet > Create new",
+      "frameCount": 1,
+      "frames": [
+        "7479-137772"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/__tests__/shell/AddWalletDrawer.test.tsx",
+        "modules/skai-wallet/src/services/multiChainWallet.ts",
+        "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/__tests__",
+        "modules/skai-wallet/src/services",
+        "modules/skai-wallet/src/shell"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet multi menu": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet multi menu",
+      "frameCount": 3,
+      "frames": [
+        "7477-133171",
+        "7713-15272",
+        "7774-65519"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet multi menu > Add walletl": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet multi menu > Add walletl",
+      "frameCount": 1,
+      "frames": [
+        "7713-17805"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet multi menu > rename wallet": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet multi menu > rename wallet",
+      "frameCount": 1,
+      "frames": [
+        "7479-135318"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > Approvals": {
+      "section": "wallet",
+      "family": "continue on web > home > Approvals",
+      "frameCount": 3,
+      "frames": [
+        "8045-116552",
+        "3163-20939",
+        "8045-116862"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > rename wallet": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > rename wallet",
+      "frameCount": 2,
+      "frames": [
+        "7713-15682",
+        "7774-65942"
+      ],
+      "devices": [
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > Add wallet > Import existing": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > Add wallet > Import existing",
+      "frameCount": 1,
+      "frames": [
+        "7482-141833"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > wallet multi menu > Import existing": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > wallet multi menu > Import existing",
+      "frameCount": 1,
+      "frames": [
+        "7717-10153"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > crypto > sample token": {
+      "section": "wallet",
+      "family": "continue on web > home > crypto > sample token",
+      "frameCount": 5,
+      "frames": [
+        "8554-115129",
+        "7808-89289",
+        "3083-1328",
+        "7804-74178",
+        "7871-18184"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/bridge/BridgeReview.tsx",
+        "modules/skai-wallet/src/pages/wallet/WalletTokenDetailRoute.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/pages"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase > Wallet name": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase > Wallet name",
+      "frameCount": 2,
+      "frames": [
+        "7482-143789",
+        "7717-11907"
+      ],
+      "devices": [
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > Add wallet > Connect hardware wallet": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > Add wallet > Connect hardware wallet",
+      "frameCount": 3,
+      "frames": [
+        "7482-145038",
+        "7717-14343",
+        "7717-13587"
+      ],
+      "devices": [
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > Add wallet > Import existing > Private key": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Private key",
+      "frameCount": 3,
+      "frames": [
+        "7717-12740",
+        "7482-144255",
+        "7717-13147"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > Add wallet > Import existing > Keystore": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Keystore",
+      "frameCount": 1,
+      "frames": [
+        "7482-144645"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "wallet/continue on web > home > right-sidecar > portfolio preview": {
+      "section": "wallet",
+      "family": "continue on web > home > right-sidecar > portfolio preview",
+      "frameCount": 1,
+      "frames": [
+        "3082-13100"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/buy/BuyForm.tsx",
+        "modules/skai-wallet/src/shell/panels/PortfolioPreviewPanel.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/shell"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > Activity": {
+      "section": "wallet",
+      "family": "continue on web > home > Activity",
+      "frameCount": 8,
+      "frames": [
+        "7882-20079",
+        "7528-153701",
+        "3118-21935",
+        "3118-25004",
+        "7807-87715",
+        "3118-25371",
+        "7882-21333",
+        "7807-88748"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [
+        "empty ALT",
+        "empty",
+        "show details"
+      ],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/dashboard/ActivityTable.tsx",
+        "modules/skai-wallet/src/shell/panels/TxDetailPanel.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components",
+        "modules/skai-wallet/src/shell"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > NFTs": {
+      "section": "wallet",
+      "family": "continue on web > home > NFTs",
+      "frameCount": 13,
+      "frames": [
+        "7871-19838",
+        "7882-19831",
+        "7807-87137",
+        "8540-29853",
+        "7806-83761",
+        "3082-13515",
+        "7871-20688",
+        "7807-86912",
+        "7523-152924",
+        "7806-82974",
+        "3083-905",
+        "7882-21085",
+        "8540-29692"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "empty",
+        "empty ALT",
+        "empty > Import NFT"
+      ],
+      "citedFileCount": 4,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/dashboard/QuickActionsPanel.tsx",
+        "modules/skai-wallet/src/components/wallet/dashboard/PortfolioSkinPanel.tsx",
+        "modules/skai-wallet/src/components/wallet/dashboard/DashboardNotifications.tsx",
+        "modules/skai-wallet/src/components/NftDisplay.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "wallet/continue on web > home > NFTs > sample NFT": {
+      "section": "wallet",
+      "family": "continue on web > home > NFTs > sample NFT",
+      "frameCount": 5,
+      "frames": [
+        "7806-84981",
+        "3089-19811",
+        "7882-19257",
+        "7882-18863",
+        "7882-17627"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/common/FeeBreakdown.tsx",
+        "modules/skai-wallet/src/components/NftDisplay.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > crypto > sample token > sidecar": {
+      "section": "wallet",
+      "family": "continue on web > home > crypto > sample token > sidecar",
+      "frameCount": 2,
+      "frames": [
+        "7805-80831",
+        "3089-18289"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "swap settings"
+      ],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > NFTs > sample NFT > expand": {
+      "section": "wallet",
+      "family": "continue on web > home > NFTs > sample NFT > expand",
+      "frameCount": 2,
+      "frames": [
+        "7528-153278",
+        "7807-86028"
+      ],
+      "devices": [
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/NftDisplay.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "wallet/continue on web > home > NFTs > sample NFT > Send": {
+      "section": "wallet",
+      "family": "continue on web > home > NFTs > sample NFT > Send",
+      "frameCount": 2,
+      "frames": [
+        "7807-86527",
+        "3116-21416"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-wallet/src/components/wallet/nft/NftDetail.tsx",
+        "modules/skai-wallet/src/components/wallet/nft/NftSendPanel.tsx",
+        "modules/skai-wallet/src/components/NftDisplay.tsx"
+      ],
+      "dirs": [
+        "modules/skai-wallet/src/components"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "trade/Spot": {
+      "section": "trade",
+      "family": "Spot",
+      "frameCount": 99,
+      "frames": [
+        "7710-91527",
+        "3928-78877",
+        "4144-64244",
+        "8558-134024",
+        "3931-90224",
+        "3886-15237",
+        "3963-39739",
+        "9045-186284",
+        "9042-164814",
+        "9045-188835",
+        "9045-187547",
+        "9045-167521",
+        "9045-171162",
+        "9002-163670",
+        "3969-43609",
+        "3972-28764",
+        "9050-208186",
+        "9002-157018",
+        "9002-161563",
+        "9045-168925",
+        "9042-164168",
+        "9777-104193",
+        "9050-212503",
+        "9050-209536",
+        "9061-243175",
+        "9050-215425",
+        "9803-131052",
+        "9774-83802",
+        "9772-80915",
+        "9777-106388",
+        "9772-75651",
+        "9803-129761",
+        "9780-110815",
+        "9775-95209",
+        "9777-109337",
+        "4020-42901",
+        "9780-113550",
+        "9776-96834",
+        "3972-32663",
+        "9775-91911",
+        "9775-93615",
+        "9770-133659",
+        "9772-78152",
+        "9777-107863",
+        "9774-82207",
+        "9774-89981",
+        "8558-139280",
+        "8650-44853",
+        "8822-65362",
+        "8833-71578",
+        "8941-77699",
+        "8837-63445",
+        "8846-63794",
+        "8859-66157",
+        "8833-68646",
+        "8828-62762",
+        "8931-64499",
+        "8684-163505",
+        "8687-101463",
+        "8684-167264",
+        "8666-108146",
+        "8570-143200",
+        "8650-46141",
+        "8626-61565",
+        "8684-164665",
+        "8626-85537",
+        "8833-72738",
+        "8828-62440",
+        "9490-145643",
+        "9490-147063",
+        "9490-148310",
+        "9490-149563",
+        "9500-151115",
+        "9500-163410",
+        "9500-164534",
+        "9500-165924",
+        "9500-167048",
+        "8941-78943",
+        "8650-94501",
+        "8684-166194",
+        "8833-69806",
+        "8828-63922",
+        "8650-94724",
+        "8931-65660",
+        "8626-131650",
+        "8650-94950",
+        "8684-166395",
+        "8687-102751",
+        "8626-130555",
+        "8684-166596",
+        "8566-141675",
+        "8666-109490",
+        "8684-162077",
+        "8684-162456",
+        "8687-99711",
+        "8687-103072",
+        "8700-103509",
+        "9553-131170",
+        "9553-133106"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "chart expanded",
+        "dropdown",
+        "Order book - Trades",
+        "trade dropdown",
+        "pro - trigger - ALT",
+        "full",
+        "pro - scaled order - ALT",
+        "pro - TP/SL - ALT",
+        "market",
+        "pro - dropdown",
+        "order book",
+        "indicator dropdown",
+        "simlified chart",
+        "info",
+        "limit",
+        "trades",
+        "timeframe dropdown",
+        "candles dropdown",
+        "new layout",
+        "Limit",
+        "chart tools collapsed",
+        "pair price details collapsed",
+        "time dropdown",
+        "Pro > Scaled order",
+        "hidden order book",
+        "Pro > Trigger",
+        "Pro > TP/SL",
+        "candle dropdown",
+        "Market",
+        "Pro",
+        "modal"
+      ],
+      "citedFileCount": 7,
+      "citedFiles": [
+        "src/components/trade/native-chart/CandleChart.tsx",
+        "src/components/trade/PortfolioTabs.tsx",
+        "src/components/trade/TradingChart.tsx",
+        "src/components/trade/MarketHeader.tsx",
+        "src/components/trade/AIConfidenceStrip.tsx",
+        "src/components/trade/PositionsTable.tsx",
+        "src/pages/trade/Spot.tsx"
+      ],
+      "dirs": [
+        "src/components/trade/AIConfidenceStrip.tsx",
+        "src/components/trade/MarketHeader.tsx",
+        "src/components/trade/PortfolioTabs.tsx",
+        "src/components/trade/PositionsTable.tsx",
+        "src/components/trade/TradingChart.tsx",
+        "src/components/trade/native-chart",
+        "src/pages/trade/Spot.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "trade/Spot > Limit": {
+      "section": "trade",
+      "family": "Spot > Limit",
+      "frameCount": 1,
+      "frames": [
+        "3931-93237"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Info": {
+      "section": "trade",
+      "family": "Spot > Info",
+      "frameCount": 1,
+      "frames": [
+        "3896-31118"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Limit > Search pairs ALT": {
+      "section": "trade",
+      "family": "Spot > Limit > Search pairs ALT",
+      "frameCount": 1,
+      "frames": [
+        "4144-61610"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Limit > Search pairs": {
+      "section": "trade",
+      "family": "Spot > Limit > Search pairs",
+      "frameCount": 1,
+      "frames": [
+        "3962-8774"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Limit > Search pairs > Trench": {
+      "section": "trade",
+      "family": "Spot > Limit > Search pairs > Trench",
+      "frameCount": 2,
+      "frames": [
+        "3962-35261",
+        "9050-206715"
+      ],
+      "devices": [
+        "desktop",
+        "tablet"
+      ],
+      "variants": [
+        "search"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Sidebar": {
+      "section": "trade",
+      "family": "Spot > Sidebar",
+      "frameCount": 3,
+      "frames": [
+        "9002-158964",
+        "9081-271543",
+        "9780-144397"
+      ],
+      "devices": [
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot chart tools collapsed": {
+      "section": "trade",
+      "family": "Spot chart tools collapsed",
+      "frameCount": 1,
+      "frames": [
+        "9780-145861"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Search pairs": {
+      "section": "trade",
+      "family": "Spot > Search pairs",
+      "frameCount": 1,
+      "frames": [
+        "9048-190933"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Trades": {
+      "section": "trade",
+      "family": "Spot > Trades",
+      "frameCount": 2,
+      "frames": [
+        "9777-102315",
+        "9777-101670"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Order book": {
+      "section": "trade",
+      "family": "Spot > Order book",
+      "frameCount": 1,
+      "frames": [
+        "9777-99794"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Selected pairs": {
+      "section": "trade",
+      "family": "Spot > Selected pairs",
+      "frameCount": 2,
+      "frames": [
+        "9061-240412",
+        "9059-238855"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures > Order history": {
+      "section": "trade",
+      "family": "Perpetual Futures > Order history",
+      "frameCount": 2,
+      "frames": [
+        "9152-86271",
+        "9934-144131"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [
+        "collapsed"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures > Assets": {
+      "section": "trade",
+      "family": "Perpetual Futures > Assets",
+      "frameCount": 1,
+      "frames": [
+        "9152-84122"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures": {
+      "section": "trade",
+      "family": "Perpetual Futures",
+      "frameCount": 50,
+      "frames": [
+        "9135-80712",
+        "9135-85233",
+        "9102-300724",
+        "9135-77637",
+        "9137-86763",
+        "9153-80772",
+        "9135-79087",
+        "9804-149370",
+        "9804-147360",
+        "9804-136992",
+        "9156-140326",
+        "9154-121608",
+        "9804-150628",
+        "9153-116609",
+        "9804-145379",
+        "9801-123930",
+        "9804-152885",
+        "9804-143394",
+        "9804-154738",
+        "9153-86643",
+        "9154-119891",
+        "9801-112095",
+        "9804-135230",
+        "9803-133258",
+        "9803-125791",
+        "9803-128424",
+        "9801-122252",
+        "9801-121092",
+        "9804-141566",
+        "9154-128095",
+        "9156-141722",
+        "9804-139692",
+        "9264-89796",
+        "9403-139616",
+        "9403-143235",
+        "9403-146317",
+        "9477-67940",
+        "9477-72630",
+        "9550-128469",
+        "9477-71040",
+        "9414-148035",
+        "9477-69530",
+        "9422-152634",
+        "9403-144446",
+        "9432-157179",
+        "9264-91009",
+        "9380-78308",
+        "9380-79739",
+        "9379-131684",
+        "9373-129956"
+      ],
+      "devices": [
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "user not signed in",
+        "Market long",
+        "Market long ALT",
+        "full",
+        "Order history",
+        "Assets - collapsed",
+        "Positions - dropdown",
+        "Order history - collapsed",
+        "Assets",
+        "Price Collapsed",
+        "Trade history",
+        "Orders - collapsed",
+        "Funding history",
+        "Positions - collapsed",
+        "Positions",
+        "Market long - user not signed in",
+        "Orders"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Assets": {
+      "section": "trade",
+      "family": "Perpetual futures > Assets",
+      "frameCount": 1,
+      "frames": [
+        "4020-49491"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > layout settings": {
+      "section": "trade",
+      "family": "Spot > layout settings",
+      "frameCount": 1,
+      "frames": [
+        "9050-214062"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures > Funding history": {
+      "section": "trade",
+      "family": "Perpetual Futures > Funding history",
+      "frameCount": 1,
+      "frames": [
+        "9152-90527"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures > Trade history": {
+      "section": "trade",
+      "family": "Perpetual Futures > Trade history",
+      "frameCount": 1,
+      "frames": [
+        "9152-89103"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures > Positions": {
+      "section": "trade",
+      "family": "Perpetual Futures > Positions",
+      "frameCount": 2,
+      "frames": [
+        "9934-141532",
+        "9148-82614"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [
+        "collapsed"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Orders": {
+      "section": "trade",
+      "family": "Perpetual futures > Orders",
+      "frameCount": 1,
+      "frames": [
+        "4020-47586"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Market > Search pairs": {
+      "section": "trade",
+      "family": "Perpetual futures > Market > Search pairs",
+      "frameCount": 2,
+      "frames": [
+        "9148-79309",
+        "3962-32706"
+      ],
+      "devices": [
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "src/components/trade/MarketSelector.tsx",
+        "src/components/trade/MarketSearchModal.tsx",
+        "src/components/trade/MarketHeader.tsx"
+      ],
+      "dirs": [
+        "src/components/trade/MarketHeader.tsx",
+        "src/components/trade/MarketSearchModal.tsx",
+        "src/components/trade/MarketSelector.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "trade/Perpetual Futures > Orders": {
+      "section": "trade",
+      "family": "Perpetual Futures > Orders",
+      "frameCount": 1,
+      "frames": [
+        "9152-81364"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Positions > Edit running SL/TP": {
+      "section": "trade",
+      "family": "Perpetual futures > Positions > Edit running SL/TP",
+      "frameCount": 1,
+      "frames": [
+        "4020-44966"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Trade history > share PnL": {
+      "section": "trade",
+      "family": "Perpetual futures > Trade history > share PnL",
+      "frameCount": 1,
+      "frames": [
+        "4207-133479"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures > Positions > Edit running SL/TP": {
+      "section": "trade",
+      "family": "Perpetual Futures > Positions > Edit running SL/TP",
+      "frameCount": 1,
+      "frames": [
+        "9152-79912"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures": {
+      "section": "trade",
+      "family": "Perpetual futures",
+      "frameCount": 4,
+      "frames": [
+        "3903-24462",
+        "3908-39491",
+        "3903-21478",
+        "3903-22970"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "user not signed"
+      ],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "src/components/trade/perp-v2/parts/CollateralInput.tsx",
+        "src/components/trade/perp-v2/PerpPositionsPanel.tsx",
+        "src/pages/trade/PerpTrading.tsx"
+      ],
+      "dirs": [
+        "src/components/trade/perp-v2",
+        "src/pages/trade/PerpTrading.tsx"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "trade/Perpetual futures > Trade history": {
+      "section": "trade",
+      "family": "Perpetual futures > Trade history",
+      "frameCount": 1,
+      "frames": [
+        "4191-123643"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Funding history": {
+      "section": "trade",
+      "family": "Perpetual futures > Funding history",
+      "frameCount": 1,
+      "frames": [
+        "4201-128723"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures > Order confirmation": {
+      "section": "trade",
+      "family": "Perpetual Futures > Order confirmation",
+      "frameCount": 1,
+      "frames": [
+        "9148-80746"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > cross/isolated": {
+      "section": "trade",
+      "family": "Perpetual futures > cross/isolated",
+      "frameCount": 1,
+      "frames": [
+        "3928-83147"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual Futures > cross/isolated": {
+      "section": "trade",
+      "family": "Perpetual Futures > cross/isolated",
+      "frameCount": 1,
+      "frames": [
+        "9137-88222"
+      ],
+      "devices": [
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Order confirmation": {
+      "section": "trade",
+      "family": "Perpetual futures > Order confirmation",
+      "frameCount": 1,
+      "frames": [
+        "3976-39045"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Layout adjustment": {
+      "section": "trade",
+      "family": "Spot > Layout adjustment",
+      "frameCount": 2,
+      "frames": [
+        "4144-65909",
+        "4144-67562"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "sidecar"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Order history": {
+      "section": "trade",
+      "family": "Perpetual futures > Order history",
+      "frameCount": 1,
+      "frames": [
+        "4191-121191"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Perpetual futures > Positions": {
+      "section": "trade",
+      "family": "Perpetual futures > Positions",
+      "frameCount": 1,
+      "frames": [
+        "4018-40830"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Layout settings": {
+      "section": "trade",
+      "family": "Spot > Layout settings",
+      "frameCount": 1,
+      "frames": [
+        "9780-112196"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Dashboard > News": {
+      "section": "trade",
+      "family": "Dashboard > News",
+      "frameCount": 3,
+      "frames": [
+        "9081-267604",
+        "4459-127765",
+        "9081-266293"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Bridge": {
+      "section": "trade",
+      "family": "Bridge",
+      "frameCount": 15,
+      "frames": [
+        "9101-285632",
+        "9101-286764",
+        "9101-285196",
+        "7838-55747",
+        "9101-284957",
+        "9100-284083",
+        "9101-286163",
+        "9101-286392",
+        "4141-60595",
+        "9101-286886",
+        "4141-60314",
+        "4141-59893",
+        "7838-55165",
+        "9101-285923",
+        "9100-284341"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [
+        "with info > Start bridge",
+        "with info > Start bridge > Post wallet interaction",
+        "with info",
+        "with info > Start bridge > Bridge settings"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Swap": {
+      "section": "trade",
+      "family": "Swap",
+      "frameCount": 13,
+      "frames": [
+        "9081-277053",
+        "4026-57535",
+        "9094-280250",
+        "9081-278869",
+        "9093-279897",
+        "9093-279708",
+        "9094-280527",
+        "4026-56768",
+        "9794-98626",
+        "9081-279304",
+        "4026-57167",
+        "9081-275608",
+        "4026-53896"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [
+        "active",
+        "with info",
+        "Swap settings"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Margin": {
+      "section": "trade",
+      "family": "Margin",
+      "frameCount": 9,
+      "frames": [
+        "9094-281783",
+        "9098-283625",
+        "9098-283804",
+        "4141-59209",
+        "9094-281524",
+        "4141-58475",
+        "4141-58066",
+        "9098-282408",
+        "9098-283877"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [
+        "with info",
+        "with info > review limit"
+      ],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/trade/TokenSelector.tsx",
+        "src/pages/trade/TradeUnified.tsx"
+      ],
+      "dirs": [
+        "src/components/trade/TokenSelector.tsx",
+        "src/pages/trade/TradeUnified.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "trade/Dashboard > Whale activity": {
+      "section": "trade",
+      "family": "Dashboard > Whale activity",
+      "frameCount": 3,
+      "frames": [
+        "9081-266657",
+        "4451-126554",
+        "9081-267988"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Dashboard > Reports": {
+      "section": "trade",
+      "family": "Dashboard > Reports",
+      "frameCount": 3,
+      "frames": [
+        "9081-266034",
+        "9081-265572",
+        "4451-126989"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot > Chart settings": {
+      "section": "trade",
+      "family": "Spot > Chart settings",
+      "frameCount": 3,
+      "frames": [
+        "9780-143009",
+        "9069-259546",
+        "3931-88039"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Dashboard": {
+      "section": "trade",
+      "family": "Dashboard",
+      "frameCount": 3,
+      "frames": [
+        "4437-112650",
+        "9069-263248",
+        "9069-261150"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "positive"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench": {
+      "section": "trade",
+      "family": "Trench",
+      "frameCount": 18,
+      "frames": [
+        "4282-44687",
+        "4207-145167",
+        "8050-141624",
+        "8050-121808",
+        "9852-102734",
+        "9890-86063",
+        "9892-91176",
+        "9852-112660",
+        "9264-84556",
+        "8092-159106",
+        "9860-92642",
+        "9852-101602",
+        "9264-85987",
+        "9403-133956",
+        "9403-140971",
+        "9419-149915",
+        "9419-151234",
+        "9403-142103"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "hover",
+        "actual + With left float scrollable",
+        "actual",
+        "actual - settings collapsed",
+        "One-click trade settings - modal sell",
+        "actual + With left float ALT"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade > Dev tokens": {
+      "section": "trade",
+      "family": "Trench > Trade > Dev tokens",
+      "frameCount": 1,
+      "frames": [
+        "8324-54882"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade > Instant trade settings": {
+      "section": "trade",
+      "family": "Trench > Trade > Instant trade settings",
+      "frameCount": 1,
+      "frames": [
+        "8225-105405"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade > Transactions": {
+      "section": "trade",
+      "family": "Trench > Trade > Transactions",
+      "frameCount": 1,
+      "frames": [
+        "8225-112421"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > One-click trade settings": {
+      "section": "trade",
+      "family": "Trench > One-click trade settings",
+      "frameCount": 8,
+      "frames": [
+        "4317-36063",
+        "4317-12483",
+        "4317-39625",
+        "4317-37993",
+        "9892-89548",
+        "9892-87850",
+        "9860-91323",
+        "9860-87365"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "modal buy",
+        "modal off",
+        "modal buy > updated new pairs CTA",
+        "modal sell"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade": {
+      "section": "trade",
+      "family": "Trench > Trade",
+      "frameCount": 3,
+      "frames": [
+        "8222-55405",
+        "8222-52086",
+        "8092-153939"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "layout 2 with instant trade",
+        "layout 2"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade > Bubblemaps": {
+      "section": "trade",
+      "family": "Trench > Trade > Bubblemaps",
+      "frameCount": 1,
+      "frames": [
+        "8324-58606"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade > Holders": {
+      "section": "trade",
+      "family": "Trench > Trade > Holders",
+      "frameCount": 2,
+      "frames": [
+        "8234-115019",
+        "8489-61109"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "full screen"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade > KOLs": {
+      "section": "trade",
+      "family": "Trench > Trade > KOLs",
+      "frameCount": 1,
+      "frames": [
+        "8247-118637"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/dropdown": {
+      "section": "trade",
+      "family": "dropdown",
+      "frameCount": 2,
+      "frames": [
+        "4026-55735",
+        "4414-83859"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade > Positions": {
+      "section": "trade",
+      "family": "Trench > Trade > Positions",
+      "frameCount": 1,
+      "frames": [
+        "8225-109708"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trade > Transactions > Adjust maker filter": {
+      "section": "trade",
+      "family": "Trench > Trade > Transactions > Adjust maker filter",
+      "frameCount": 1,
+      "frames": [
+        "8489-28776"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Tables": {
+      "section": "trade",
+      "family": "Trench > Tables",
+      "frameCount": 16,
+      "frames": [
+        "9854-77330",
+        "9858-85977",
+        "9858-86395",
+        "9854-77806",
+        "9917-96159",
+        "9917-91066",
+        "9854-74722",
+        "9917-92472",
+        "9917-97793",
+        "9917-95042",
+        "9858-84908",
+        "9854-76137",
+        "9917-88517",
+        "9917-98893",
+        "9856-81373",
+        "9854-76724"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "Transactions",
+        "Dev tokens - full",
+        "Bubble maps",
+        "Holders",
+        "Top holders",
+        "Positions",
+        "Dev tokens - collapsed",
+        "Positions - collapsed"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Chart": {
+      "section": "trade",
+      "family": "Trench > Chart",
+      "frameCount": 13,
+      "frames": [
+        "9570-136716",
+        "9889-84104",
+        "9888-82522",
+        "9264-87119",
+        "9875-183815",
+        "9873-181829",
+        "9852-105967",
+        "9873-180218",
+        "9570-135593",
+        "9852-104788",
+        "9899-106438",
+        "9852-114208",
+        "9570-138196"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "Market",
+        "Instant > AI Bullish",
+        "Instant > AI Bearish",
+        "Instant trade settings",
+        "Limit",
+        "Instant - sell",
+        "Instant",
+        "Instant - buy"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Community": {
+      "section": "trade",
+      "family": "Trench > Community",
+      "frameCount": 2,
+      "frames": [
+        "9852-109547",
+        "9890-82868"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Token info": {
+      "section": "trade",
+      "family": "Trench > Token info",
+      "frameCount": 2,
+      "frames": [
+        "9852-107973",
+        "9889-85685"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/> Trade > Trench": {
+      "section": "trade",
+      "family": "> Trade > Trench",
+      "frameCount": 2,
+      "frames": [
+        "9860-94002",
+        "9893-92991"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "actual"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Similar tokens": {
+      "section": "trade",
+      "family": "Trench > Similar tokens",
+      "frameCount": 2,
+      "frames": [
+        "9890-83471",
+        "9852-110686"
+      ],
+      "devices": [
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Launch": {
+      "section": "trade",
+      "family": "Launch",
+      "frameCount": 11,
+      "frames": [
+        "8493-31691",
+        "4419-86274",
+        "8493-30183",
+        "4405-82330",
+        "9346-88943",
+        "9346-88026",
+        "9346-91644",
+        "9346-89860",
+        "9346-90446",
+        "9431-156328",
+        "9346-91058"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/screens/ScreenerScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/screens"
+      ],
+      "proposedStatus": "partial"
+    },
+    "trade/Launch > create token": {
+      "section": "trade",
+      "family": "Launch > create token",
+      "frameCount": 7,
+      "frames": [
+        "4437-116944",
+        "4437-115199",
+        "9346-97930",
+        "9346-96983",
+        "9535-96826",
+        "9346-94072",
+        "9346-94908"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/insightx/InsightXScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/insightx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "trade/Launch > Sample token > Dashboard": {
+      "section": "trade",
+      "family": "Launch > Sample token > Dashboard",
+      "frameCount": 6,
+      "frames": [
+        "4437-112320",
+        "4423-104542",
+        "9346-96798",
+        "9346-96613",
+        "9346-93918",
+        "9346-95222"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "positive",
+        "negative"
+      ],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/markets/BubbleMap.tsx",
+        "src/components/home-redesign/insightx/InsightXScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/insightx",
+        "src/components/markets/BubbleMap.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "trade/Launch > Display settings": {
+      "section": "trade",
+      "family": "Launch > Display settings",
+      "frameCount": 1,
+      "frames": [
+        "8493-33199"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/screens/ScreenerScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/screens"
+      ],
+      "proposedStatus": "partial"
+    },
+    "trade/Launch > new token": {
+      "section": "trade",
+      "family": "Launch > new token",
+      "frameCount": 3,
+      "frames": [
+        "4446-118984",
+        "9917-134047",
+        "9917-127190"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/pages/trade/TokenTradeDetail.tsx"
+      ],
+      "dirs": [
+        "src/pages/trade/TokenTradeDetail.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "trade/Launch > Sample token": {
+      "section": "trade",
+      "family": "Launch > Sample token",
+      "frameCount": 3,
+      "frames": [
+        "4423-102648",
+        "9917-132465",
+        "9917-125841"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Launch > Live": {
+      "section": "trade",
+      "family": "Launch > Live",
+      "frameCount": 6,
+      "frames": [
+        "4423-94942",
+        "4423-91869",
+        "9346-85694",
+        "9346-86870",
+        "9931-136758",
+        "9354-163250"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Launch > create token > buy test": {
+      "section": "trade",
+      "family": "Launch > create token > buy test",
+      "frameCount": 3,
+      "frames": [
+        "4446-118388",
+        "9917-128531",
+        "9346-94599"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/components/home-redesign/insightx/InsightXScreen.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/insightx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "trade/Nav bar": {
+      "section": "trade",
+      "family": "Nav bar",
+      "frameCount": 2,
+      "frames": [
+        "9917-128993",
+        "9917-124672"
+      ],
+      "devices": [
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Launch > create token > preview": {
+      "section": "trade",
+      "family": "Launch > create token > preview",
+      "frameCount": 2,
+      "frames": [
+        "9346-97279",
+        "9346-94331"
+      ],
+      "devices": [
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/> Trade > Trench > Display settings": {
+      "section": "trade",
+      "family": "> Trade > Trench > Display settings",
+      "frameCount": 2,
+      "frames": [
+        "9860-95322",
+        "9893-94731"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Blacklist": {
+      "section": "trade",
+      "family": "Trench > Blacklist",
+      "frameCount": 3,
+      "frames": [
+        "9893-96368",
+        "9860-108448",
+        "4367-38197"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Display settings": {
+      "section": "trade",
+      "family": "Trench > Display settings",
+      "frameCount": 2,
+      "frames": [
+        "4341-23384",
+        "8336-98579"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "colour row"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Alerts": {
+      "section": "trade",
+      "family": "Trench > Alerts",
+      "frameCount": 6,
+      "frames": [
+        "9896-101351",
+        "9861-145309",
+        "4380-44369",
+        "9861-143857",
+        "9896-99730",
+        "4380-42651"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [
+        "toggle on",
+        "toggle off"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Hotkeys": {
+      "section": "trade",
+      "family": "Trench > Hotkeys",
+      "frameCount": 3,
+      "frames": [
+        "4372-40162",
+        "9896-98005",
+        "9861-114088"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Snipe settings": {
+      "section": "trade",
+      "family": "Trench > Snipe settings",
+      "frameCount": 3,
+      "frames": [
+        "9861-146566",
+        "4380-46165",
+        "9896-102883"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Discover": {
+      "section": "trade",
+      "family": "Trench > Discover",
+      "frameCount": 11,
+      "frames": [
+        "9917-107895",
+        "9862-161377",
+        "9917-105922",
+        "9861-151828",
+        "4397-52198",
+        "9915-86377",
+        "9862-160516",
+        "9864-165213",
+        "9864-163960",
+        "9917-111548",
+        "9917-109612"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [
+        "DEX Scanner",
+        "Trending",
+        "Top",
+        "Live - display settings",
+        "Live"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Filters": {
+      "section": "trade",
+      "family": "Trench > Filters",
+      "frameCount": 3,
+      "frames": [
+        "9896-104373",
+        "9861-149712",
+        "4397-47886"
+      ],
+      "devices": [
+        "tablet",
+        "mobile",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Discover > Trending": {
+      "section": "trade",
+      "family": "Trench > Discover > Trending",
+      "frameCount": 1,
+      "frames": [
+        "4400-59959"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Discover > DEX Screener": {
+      "section": "trade",
+      "family": "Trench > Discover > DEX Screener",
+      "frameCount": 1,
+      "frames": [
+        "4400-64434"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trackers > Wallets Manager": {
+      "section": "trade",
+      "family": "Trench > Trackers > Wallets Manager",
+      "frameCount": 4,
+      "frames": [
+        "9934-147629",
+        "9864-168286",
+        "9934-147866",
+        "9917-114860"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "import wallet"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trackers > X accounts": {
+      "section": "trade",
+      "family": "Trench > Trackers > X accounts",
+      "frameCount": 6,
+      "frames": [
+        "9917-116925",
+        "9917-115051",
+        "9864-169745",
+        "9864-173056",
+        "9917-114503",
+        "9864-167289"
+      ],
+      "devices": [
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "My list",
+        "Popular",
+        "empty"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trackers > Wallets": {
+      "section": "trade",
+      "family": "Trench > Trackers > Wallets",
+      "frameCount": 4,
+      "frames": [
+        "9917-115557",
+        "9917-112346",
+        "9864-166123",
+        "9864-167663"
+      ],
+      "devices": [
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "add wallet",
+        "empty"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trackers > Live trades": {
+      "section": "trade",
+      "family": "Trench > Trackers > Live trades",
+      "frameCount": 6,
+      "frames": [
+        "9917-116641",
+        "8360-127832",
+        "9864-173336",
+        "9917-121108",
+        "9864-176271",
+        "4405-73126"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trackers > KOLs": {
+      "section": "trade",
+      "family": "Trench > Trackers > KOLs",
+      "frameCount": 3,
+      "frames": [
+        "9864-174108",
+        "9917-118201",
+        "4405-74427"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Discover > Live": {
+      "section": "trade",
+      "family": "Trench > Discover > Live",
+      "frameCount": 2,
+      "frames": [
+        "4400-60963",
+        "4400-65556"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "display settings"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trackers": {
+      "section": "trade",
+      "family": "Trench > Trackers",
+      "frameCount": 2,
+      "frames": [
+        "4405-71105",
+        "4405-69980"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "empty > Add wallet",
+        "empty"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trackers > Wallet manager > Import wallet": {
+      "section": "trade",
+      "family": "Trench > Trackers > Wallet manager > Import wallet",
+      "frameCount": 1,
+      "frames": [
+        "4405-75656"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Trench > Trackers > Wallet manager": {
+      "section": "trade",
+      "family": "Trench > Trackers > Wallet manager",
+      "frameCount": 1,
+      "frames": [
+        "4400-68072"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/Spot ALT": {
+      "section": "trade",
+      "family": "Spot ALT",
+      "frameCount": 3,
+      "frames": [
+        "8845-36223",
+        "8846-64165",
+        "8936-38729"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/on:click": {
+      "section": "predict",
+      "family": "on:click",
+      "frameCount": 1,
+      "frames": [
+        "8583-131053"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/(section root)": {
+      "section": "predict",
+      "family": "(section root)",
+      "frameCount": 2,
+      "frames": [
+        "8583-127820",
+        "8610-163972"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/pages/predict/PredictPage.tsx",
+        "src/lib/predict/categorize.ts"
+      ],
+      "dirs": [
+        "src/lib/predict/categorize.ts",
+        "src/pages/predict/PredictPage.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "predict/Dashboard": {
+      "section": "predict",
+      "family": "Dashboard",
+      "frameCount": 2,
+      "frames": [
+        "3562-40397",
+        "3554-10890"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/layout 2 ALT": {
+      "section": "predict",
+      "family": "layout 2 ALT",
+      "frameCount": 1,
+      "frames": [
+        "3269-17599"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sample market": {
+      "section": "predict",
+      "family": "sample market",
+      "frameCount": 5,
+      "frames": [
+        "3322-6501",
+        "3288-23300",
+        "3325-19591",
+        "8909-138276",
+        "8909-140523"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "dollar only",
+        "all expanded",
+        "all expanded > Add rewards"
+      ],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/predict/detail/MarketDetailHeader.tsx",
+        "src/pages/predict/PredictMarketDetail.tsx"
+      ],
+      "dirs": [
+        "src/components/predict/detail",
+        "src/pages/predict/PredictMarketDetail.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "predict/Dashboard > Elections": {
+      "section": "predict",
+      "family": "Dashboard > Elections",
+      "frameCount": 1,
+      "frames": [
+        "3620-47881"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Dashboard > Sports": {
+      "section": "predict",
+      "family": "Dashboard > Sports",
+      "frameCount": 1,
+      "frames": [
+        "3631-56374"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Dashboard > Economy": {
+      "section": "predict",
+      "family": "Dashboard > Economy",
+      "frameCount": 1,
+      "frames": [
+        "3624-51447"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Rewards": {
+      "section": "predict",
+      "family": "Rewards",
+      "frameCount": 1,
+      "frames": [
+        "8911-163462"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/pages/predict/PredictRewards.tsx"
+      ],
+      "dirs": [
+        "src/pages/predict/PredictRewards.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "predict/Rewards > drop downs": {
+      "section": "predict",
+      "family": "Rewards > drop downs",
+      "frameCount": 1,
+      "frames": [
+        "3558-39458"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/breaking": {
+      "section": "predict",
+      "family": "breaking",
+      "frameCount": 1,
+      "frames": [
+        "8687-54504"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Dashboard > Oscars": {
+      "section": "predict",
+      "family": "Dashboard > Oscars",
+      "frameCount": 1,
+      "frames": [
+        "3640-58287"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/politics": {
+      "section": "predict",
+      "family": "politics",
+      "frameCount": 1,
+      "frames": [
+        "3358-34467"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/breaking > sample market 2": {
+      "section": "predict",
+      "family": "breaking > sample market 2",
+      "frameCount": 1,
+      "frames": [
+        "3344-30618"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/new": {
+      "section": "predict",
+      "family": "new",
+      "frameCount": 1,
+      "frames": [
+        "3350-32943"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Rewards > Open orders": {
+      "section": "predict",
+      "family": "Rewards > Open orders",
+      "frameCount": 1,
+      "frames": [
+        "8937-48702"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/predict/rewards/OpenOrdersTable.tsx",
+        "src/pages/predict/PredictRewards.tsx"
+      ],
+      "dirs": [
+        "src/components/predict/rewards",
+        "src/pages/predict/PredictRewards.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "predict/sports": {
+      "section": "predict",
+      "family": "sports",
+      "frameCount": 1,
+      "frames": [
+        "3445-64375"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sports > Futures": {
+      "section": "predict",
+      "family": "sports > Futures",
+      "frameCount": 1,
+      "frames": [
+        "3456-3142"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sports > Futures > Sample futures": {
+      "section": "predict",
+      "family": "sports > Futures > Sample futures",
+      "frameCount": 3,
+      "frames": [
+        "3471-7251",
+        "3531-21220",
+        "8864-48712"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "with resolved"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sports > Futures > Sample futures > Chart settings": {
+      "section": "predict",
+      "family": "sports > Futures > Sample futures > Chart settings",
+      "frameCount": 1,
+      "frames": [
+        "8909-133735"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sports > Futures > Sample futures > Parameter settings": {
+      "section": "predict",
+      "family": "sports > Futures > Sample futures > Parameter settings",
+      "frameCount": 1,
+      "frames": [
+        "8909-132564"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Crypto": {
+      "section": "predict",
+      "family": "Crypto",
+      "frameCount": 1,
+      "frames": [
+        "3538-22735"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Climate and Science": {
+      "section": "predict",
+      "family": "Climate and Science",
+      "frameCount": 1,
+      "frames": [
+        "3553-5220"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Finance": {
+      "section": "predict",
+      "family": "Finance",
+      "frameCount": 1,
+      "frames": [
+        "3546-25568"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Tech": {
+      "section": "predict",
+      "family": "Tech",
+      "frameCount": 1,
+      "frames": [
+        "3550-4727"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/ALT": {
+      "section": "play",
+      "family": "ALT",
+      "frameCount": 1,
+      "frames": [
+        "4595-50243"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/(section root)": {
+      "section": "play",
+      "family": "(section root)",
+      "frameCount": 2,
+      "frames": [
+        "4595-49807",
+        "9099-146637"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 3,
+      "citedFiles": [
+        "modules/skai-gaming/src/components/play/ui/PlayAboutFaq.tsx",
+        "modules/skai-gaming/src/components/play/ui/PlaySportsRail.tsx",
+        "modules/skai-gaming/src/components/play/ui/PlayLogoSlots.tsx"
+      ],
+      "dirs": [
+        "modules/skai-gaming/src/components"
+      ],
+      "proposedStatus": "likely-done"
+    },
+    "play/Casino": {
+      "section": "play",
+      "family": "Casino",
+      "frameCount": 1,
+      "frames": [
+        "4711-28434"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "modules/skai-gaming/src/components/play/ui/PlayFilterBar.tsx"
+      ],
+      "dirs": [
+        "modules/skai-gaming/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "play/dropdown": {
+      "section": "play",
+      "family": "dropdown",
+      "frameCount": 2,
+      "frames": [
+        "4768-66183",
+        "4765-64029"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Sportsbook": {
+      "section": "play",
+      "family": "Sportsbook",
+      "frameCount": 4,
+      "frames": [
+        "4841-72059",
+        "4799-60925",
+        "4914-99876",
+        "9191-105864"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "right sidepanel / betslip",
+        "right sidepanel / betslip ALT"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Casino > Trending games": {
+      "section": "play",
+      "family": "Casino > Trending games",
+      "frameCount": 1,
+      "frames": [
+        "4714-51085"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Sportsbook > Soccer > AVL CHE": {
+      "section": "play",
+      "family": "Sportsbook > Soccer > AVL CHE",
+      "frameCount": 1,
+      "frames": [
+        "9170-114084"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Sidebar": {
+      "section": "play",
+      "family": "Sidebar",
+      "frameCount": 1,
+      "frames": [
+        "4601-63484"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Casino > New games": {
+      "section": "play",
+      "family": "Casino > New games",
+      "frameCount": 1,
+      "frames": [
+        "4714-31722"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Sportsbook > Bet slip settings": {
+      "section": "play",
+      "family": "Sportsbook > Bet slip settings",
+      "frameCount": 1,
+      "frames": [
+        "9170-81771"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Favorite games": {
+      "section": "play",
+      "family": "Favorite games",
+      "frameCount": 1,
+      "frames": [
+        "4689-45587"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Resume play": {
+      "section": "play",
+      "family": "Resume play",
+      "frameCount": 2,
+      "frames": [
+        "4676-39553",
+        "4677-40779"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Sportsbook > My bets": {
+      "section": "play",
+      "family": "Sportsbook > My bets",
+      "frameCount": 2,
+      "frames": [
+        "4896-83645",
+        "4911-89419"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "empty",
+        "with values"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Casino > Sample game": {
+      "section": "play",
+      "family": "Casino > Sample game",
+      "frameCount": 2,
+      "frames": [
+        "4758-59299",
+        "4723-52636"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-gaming/src/components/play/game-detail/GameDetailHeader.tsx",
+        "modules/skai-gaming/src/components/play/game-detail/index.ts"
+      ],
+      "dirs": [
+        "modules/skai-gaming/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "play/Sportsbook > Bet notifcation": {
+      "section": "play",
+      "family": "Sportsbook > Bet notifcation",
+      "frameCount": 1,
+      "frames": [
+        "4896-86341"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+        "modules/skai-gaming/src/components/play/sportsbook/BetNotification.tsx"
+      ],
+      "dirs": [
+        "modules/skai-gaming/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "play/Casino > Sample game > My Stats": {
+      "section": "play",
+      "family": "Casino > Sample game > My Stats",
+      "frameCount": 1,
+      "frames": [
+        "4758-60305"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-gaming/src/components/play/game-detail/GameStatsPanel.tsx",
+        "modules/skai-gaming/src/components/play/game-detail/index.ts"
+      ],
+      "dirs": [
+        "modules/skai-gaming/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "play/Sportsbook > Soccer > AVL CHE > Player props": {
+      "section": "play",
+      "family": "Sportsbook > Soccer > AVL CHE > Player props",
+      "frameCount": 1,
+      "frames": [
+        "9215-15732"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Casino > Bookie": {
+      "section": "play",
+      "family": "Casino > Bookie",
+      "frameCount": 2,
+      "frames": [
+        "4798-57445",
+        "4792-34490"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "referral",
+        "tiers"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Casino > Live RTP": {
+      "section": "play",
+      "family": "Casino > Live RTP",
+      "frameCount": 1,
+      "frames": [
+        "4792-31202"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "return to player"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Sportsbook > Starting soon": {
+      "section": "play",
+      "family": "Sportsbook > Starting soon",
+      "frameCount": 1,
+      "frames": [
+        "4911-92925"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Casino > Sample game > Close game": {
+      "section": "play",
+      "family": "Casino > Sample game > Close game",
+      "frameCount": 1,
+      "frames": [
+        "4758-62997"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-gaming/src/components/play/game-detail/CloseGameDialog.tsx",
+        "modules/skai-gaming/src/components/play/game-detail/index.ts"
+      ],
+      "dirs": [
+        "modules/skai-gaming/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "play/Casino > Sample game > Game info": {
+      "section": "play",
+      "family": "Casino > Sample game > Game info",
+      "frameCount": 1,
+      "frames": [
+        "4792-10647"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "modules/skai-gaming/src/components/play/game-detail/index.ts",
+        "modules/skai-gaming/src/components/play/game-detail/GameInfoPanel.tsx"
+      ],
+      "dirs": [
+        "modules/skai-gaming/src/components"
+      ],
+      "proposedStatus": "partial"
+    },
+    "play/Sportsbook > Side panel": {
+      "section": "play",
+      "family": "Sportsbook > Side panel",
+      "frameCount": 1,
+      "frames": [
+        "4913-97944"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "Lawn tennis"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/unsupported region": {
+      "section": "play",
+      "family": "unsupported region",
+      "frameCount": 1,
+      "frames": [
+        "10012-134986"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "dice/Casino > Dice": {
+      "section": "dice",
+      "family": "Casino > Dice",
+      "frameCount": 22,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:2736-25840",
+        "M6r9FEn042UWTQD1zvy6GM:9003-43516",
+        "M6r9FEn042UWTQD1zvy6GM:9003-44223",
+        "M6r9FEn042UWTQD1zvy6GM:9003-44542",
+        "M6r9FEn042UWTQD1zvy6GM:9003-44847",
+        "M6r9FEn042UWTQD1zvy6GM:9062-16886",
+        "M6r9FEn042UWTQD1zvy6GM:9062-17693",
+        "M6r9FEn042UWTQD1zvy6GM:9069-1068",
+        "M6r9FEn042UWTQD1zvy6GM:9065-1579",
+        "M6r9FEn042UWTQD1zvy6GM:9069-859",
+        "M6r9FEn042UWTQD1zvy6GM:9069-1343",
+        "M6r9FEn042UWTQD1zvy6GM:9069-1458",
+        "M6r9FEn042UWTQD1zvy6GM:9069-2257",
+        "M6r9FEn042UWTQD1zvy6GM:9069-2378",
+        "M6r9FEn042UWTQD1zvy6GM:9069-1141",
+        "M6r9FEn042UWTQD1zvy6GM:9069-959",
+        "M6r9FEn042UWTQD1zvy6GM:9088-4654",
+        "M6r9FEn042UWTQD1zvy6GM:9088-4795",
+        "M6r9FEn042UWTQD1zvy6GM:9088-4801",
+        "M6r9FEn042UWTQD1zvy6GM:9100-5928",
+        "M6r9FEn042UWTQD1zvy6GM:9175-9500",
+        "M6r9FEn042UWTQD1zvy6GM:9175-9528"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Skai > Home > Add > upload image > conversation 4 1VH",
+        "Tablet",
+        "Tablet Alt",
+        "Mobile",
+        "Auto Advanced Extended",
+        "Auto",
+        "Auto No Infinity",
+        "Auto Advanced Displayed",
+        "Desktop Full Game",
+        "Desktop Full Game Adjusted Slider",
+        "Desktop Full Game Roll Over",
+        "Desktop Full Game Win Chance",
+        "Desktop Full Game Multiplier",
+        "Desktop First Roll",
+        "Desktop Pre Game",
+        "CTA/button",
+        "card"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "pwa/Install to homescreen ALT": {
+      "section": "pwa",
+      "family": "Install to homescreen ALT",
+      "frameCount": 2,
+      "frames": [
+        "9747-174084",
+        "9747-175217"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "pwa/Install to homescreen": {
+      "section": "pwa",
+      "family": "Install to homescreen",
+      "frameCount": 3,
+      "frames": [
+        "9746-171660",
+        "9746-172340",
+        "9746-173030"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "crash/Casino > Crash": {
+      "section": "crash",
+      "family": "Casino > Crash",
+      "frameCount": 12,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9003-94116",
+        "M6r9FEn042UWTQD1zvy6GM:9003-96041",
+        "M6r9FEn042UWTQD1zvy6GM:9003-98680",
+        "M6r9FEn042UWTQD1zvy6GM:9137-13564",
+        "M6r9FEn042UWTQD1zvy6GM:9142-16809",
+        "M6r9FEn042UWTQD1zvy6GM:9142-19197",
+        "M6r9FEn042UWTQD1zvy6GM:9142-15687",
+        "M6r9FEn042UWTQD1zvy6GM:9142-18315",
+        "M6r9FEn042UWTQD1zvy6GM:9142-19454",
+        "M6r9FEn042UWTQD1zvy6GM:9156-1198",
+        "M6r9FEn042UWTQD1zvy6GM:9156-1371",
+        "M6r9FEn042UWTQD1zvy6GM:9156-1558"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Alt",
+        "Extended LB",
+        "Auto",
+        "Auto Advanced",
+        "Skai > Play > Casino > Dice Mobile",
+        "Desktop",
+        "LB With Header",
+        "Mobile Extended LB",
+        "Mobile Auto",
+        "Mobile Auto Advanced"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "mines/Casino > Mines": {
+      "section": "mines",
+      "family": "Casino > Mines",
+      "frameCount": 9,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9003-110110",
+        "M6r9FEn042UWTQD1zvy6GM:9003-111181",
+        "M6r9FEn042UWTQD1zvy6GM:9163-4529",
+        "M6r9FEn042UWTQD1zvy6GM:9163-4859",
+        "M6r9FEn042UWTQD1zvy6GM:9163-5572",
+        "M6r9FEn042UWTQD1zvy6GM:9163-6955",
+        "M6r9FEn042UWTQD1zvy6GM:9163-7155",
+        "M6r9FEn042UWTQD1zvy6GM:9163-7972",
+        "M6r9FEn042UWTQD1zvy6GM:9163-8804"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Mines all features",
+        "Skai > Play > Casino > Dice",
+        "Skai > Play > Casino > Dice Mobile",
+        "Mobile",
+        "Advanced",
+        "Advanced Auto",
+        "Image for Cover"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "blackjack/Casino > Blackjack": {
+      "section": "blackjack",
+      "family": "Casino > Blackjack",
+      "frameCount": 14,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9003-117337",
+        "M6r9FEn042UWTQD1zvy6GM:9003-118852",
+        "M6r9FEn042UWTQD1zvy6GM:9003-119356",
+        "M6r9FEn042UWTQD1zvy6GM:9003-119858",
+        "M6r9FEn042UWTQD1zvy6GM:9178-4037",
+        "M6r9FEn042UWTQD1zvy6GM:9178-8446",
+        "M6r9FEn042UWTQD1zvy6GM:9178-8439",
+        "M6r9FEn042UWTQD1zvy6GM:9178-4169",
+        "M6r9FEn042UWTQD1zvy6GM:9178-8146",
+        "M6r9FEn042UWTQD1zvy6GM:9178-6080",
+        "M6r9FEn042UWTQD1zvy6GM:9178-9840",
+        "M6r9FEn042UWTQD1zvy6GM:9178-10465",
+        "M6r9FEn042UWTQD1zvy6GM:9178-10677",
+        "M6r9FEn042UWTQD1zvy6GM:9178-12508"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Mid Game button actions",
+        "Side Bet Tab",
+        "Pointer",
+        "Desktop",
+        "Desktop Start",
+        "Desktop Split",
+        "Mobile",
+        "Side Bet Mobile"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "coinflip/Casino > Coinflip": {
+      "section": "coinflip",
+      "family": "Casino > Coinflip",
+      "frameCount": 26,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9208-20412",
+        "M6r9FEn042UWTQD1zvy6GM:9204-16958",
+        "M6r9FEn042UWTQD1zvy6GM:9190-15379",
+        "M6r9FEn042UWTQD1zvy6GM:9178-14783",
+        "M6r9FEn042UWTQD1zvy6GM:9190-16004",
+        "M6r9FEn042UWTQD1zvy6GM:9190-16383",
+        "M6r9FEn042UWTQD1zvy6GM:9190-14969",
+        "M6r9FEn042UWTQD1zvy6GM:9178-14731",
+        "M6r9FEn042UWTQD1zvy6GM:9204-17182",
+        "M6r9FEn042UWTQD1zvy6GM:9208-20462",
+        "M6r9FEn042UWTQD1zvy6GM:9204-17308",
+        "M6r9FEn042UWTQD1zvy6GM:9190-14926",
+        "M6r9FEn042UWTQD1zvy6GM:9003-132438",
+        "M6r9FEn042UWTQD1zvy6GM:9204-17690",
+        "M6r9FEn042UWTQD1zvy6GM:9003-130613",
+        "M6r9FEn042UWTQD1zvy6GM:9003-132031",
+        "M6r9FEn042UWTQD1zvy6GM:9178-14134",
+        "M6r9FEn042UWTQD1zvy6GM:9208-20333",
+        "M6r9FEn042UWTQD1zvy6GM:9206-19612",
+        "M6r9FEn042UWTQD1zvy6GM:9204-18220",
+        "M6r9FEn042UWTQD1zvy6GM:9204-18090",
+        "M6r9FEn042UWTQD1zvy6GM:9204-17982",
+        "M6r9FEn042UWTQD1zvy6GM:9204-18489",
+        "M6r9FEn042UWTQD1zvy6GM:9207-20110",
+        "M6r9FEn042UWTQD1zvy6GM:9206-19903",
+        "M6r9FEn042UWTQD1zvy6GM:9206-19430"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Tails",
+        "Target Tab Auto",
+        "Desktop Target",
+        "Continuous Tab",
+        "Desktop Post Bet Target",
+        "Target Tab",
+        "Desktop",
+        "Auto Classic Tab",
+        "Heads",
+        "Desktop Auto Classic",
+        "Desktop Continuous",
+        "Skai > Play > Casino > Blackjack",
+        "Mobile",
+        "Auto Advanced Classic Tab",
+        "Target Tab Auto Advanced"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "skratch/Casino > Scratchers": {
+      "section": "skratch",
+      "family": "Casino > Scratchers",
+      "frameCount": 11,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9220-26173",
+        "M6r9FEn042UWTQD1zvy6GM:9220-26119",
+        "M6r9FEn042UWTQD1zvy6GM:9003-142707",
+        "M6r9FEn042UWTQD1zvy6GM:9212-22275",
+        "M6r9FEn042UWTQD1zvy6GM:9212-20910",
+        "M6r9FEn042UWTQD1zvy6GM:9220-26174",
+        "M6r9FEn042UWTQD1zvy6GM:9003-139146",
+        "M6r9FEn042UWTQD1zvy6GM:9003-149392",
+        "M6r9FEn042UWTQD1zvy6GM:9003-148466",
+        "M6r9FEn042UWTQD1zvy6GM:9212-24967",
+        "M6r9FEn042UWTQD1zvy6GM:9212-23847"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Screenshot 2026-07-27 at 8.19.39 PM 1",
+        "modal",
+        "Card out",
+        "Desktop",
+        "Screenshot 2026-07-27 at 8.20.03 PM 1",
+        "Mobile",
+        "Skai > Play > Casino > Blackjack"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "missing-play-images/Casino > Play art": {
+      "section": "missing-play-images",
+      "family": "Casino > Play art",
+      "frameCount": 14,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9222-26192",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26203",
+        "M6r9FEn042UWTQD1zvy6GM:9220-26176",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26345",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26323",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26334",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26214",
+        "M6r9FEn042UWTQD1zvy6GM:9220-26181",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26197",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26312",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26208",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26350",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26328",
+        "M6r9FEn042UWTQD1zvy6GM:9222-26339"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Plinko Desktop",
+        "Crash Desktop",
+        "Dice Desktop",
+        "Scratchers Desktop",
+        "Blackjack Desktop",
+        "Coinflip Desktop",
+        "Mines Desktop",
+        "Dice Mobile",
+        "Plinko Mobile",
+        "Mines Mobile",
+        "Crash Mobile",
+        "Scratchers Mobile",
+        "Blackjack Mobile",
+        "Coinflip Mobile"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding": {
+      "section": "onboarding",
+      "family": "Onboarding",
+      "frameCount": 3,
+      "frames": [
+        "2005-4492",
+        "2005-12956",
+        "2005-21410"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding i2": {
+      "section": "onboarding",
+      "family": "Onboarding i2",
+      "frameCount": 3,
+      "frames": [
+        "2662-2597",
+        "2662-3299",
+        "2662-3992"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding i5": {
+      "section": "onboarding",
+      "family": "Onboarding i5",
+      "frameCount": 3,
+      "frames": [
+        "2665-8843",
+        "2665-9536",
+        "2665-10229"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding i4": {
+      "section": "onboarding",
+      "family": "Onboarding i4",
+      "frameCount": 3,
+      "frames": [
+        "2664-6764",
+        "2664-7457",
+        "2664-8150"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding i6": {
+      "section": "onboarding",
+      "family": "Onboarding i6",
+      "frameCount": 3,
+      "frames": [
+        "2667-11004",
+        "2667-11697",
+        "2667-12390"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding i3": {
+      "section": "onboarding",
+      "family": "Onboarding i3",
+      "frameCount": 3,
+      "frames": [
+        "2664-4685",
+        "2664-5378",
+        "2664-6071"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Temporary landing": {
+      "section": "onboarding",
+      "family": "Temporary landing",
+      "frameCount": 3,
+      "frames": [
+        "2065-110",
+        "2065-8549",
+        "2065-16978"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding > Get early access > Verification > Choose wallet > Link wallet": {
+      "section": "onboarding",
+      "family": "Onboarding > Get early access > Verification > Choose wallet > Link wallet",
+      "frameCount": 3,
+      "frames": [
+        "2005-5185",
+        "2005-13649",
+        "2005-22103"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Temporary landing > Login > Verification > Choose wallet > Link wallet": {
+      "section": "onboarding",
+      "family": "Temporary landing > Login > Verification > Choose wallet > Link wallet",
+      "frameCount": 3,
+      "frames": [
+        "2086-39242",
+        "2065-9242",
+        "2065-17671"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name": {
+      "section": "onboarding",
+      "family": "Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name",
+      "frameCount": 3,
+      "frames": [
+        "2005-5908",
+        "2005-14372",
+        "2005-22826"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name": {
+      "section": "onboarding",
+      "family": "Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name",
+      "frameCount": 3,
+      "frames": [
+        "2517-22923",
+        "2065-9965",
+        "2065-18394"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "closed off"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations": {
+      "section": "onboarding",
+      "family": "Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations",
+      "frameCount": 17,
+      "frames": [
+        "2422-2075",
+        "2005-7482",
+        "2422-2943",
+        "2481-11481",
+        "2459-9389",
+        "2005-8588",
+        "2005-15075",
+        "2005-15790",
+        "2005-16658",
+        "2424-4081",
+        "2481-14785",
+        "2005-23529",
+        "2005-24244",
+        "2005-25112",
+        "2424-7715",
+        "2481-15918",
+        "2005-26526"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Slide 2",
+        "Slide 2 > Pre-launch dashboard",
+        "Slide 2 > Pre-launch dashboard Live",
+        "Slide 2 > Pre-launch dashboard - Tooltip",
+        "Slide 2 > Pre-launch dashboard Live - video",
+        "Slide 1",
+        "Slide 2 > Pre-launch dashboard Live - Tooltip",
+        "Slide 2 > Pre-launch dashboard - Live"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name > Congratulations": {
+      "section": "onboarding",
+      "family": "Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name > Congratulations",
+      "frameCount": 6,
+      "frames": [
+        "2065-2229",
+        "2065-4181",
+        "2065-10668",
+        "2065-11383",
+        "2065-19097",
+        "2065-19812"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "slide 2",
+        "Slide 1",
+        "Slide 2"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding > Get early access": {
+      "section": "onboarding",
+      "family": "Onboarding > Get early access",
+      "frameCount": 6,
+      "frames": [
+        "2005-9301",
+        "2005-10032",
+        "2005-17764",
+        "2005-18495",
+        "2005-27956",
+        "2005-28687"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "with input"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Temporary landing > Login": {
+      "section": "onboarding",
+      "family": "Temporary landing > Login",
+      "frameCount": 6,
+      "frames": [
+        "2086-28860",
+        "2086-30488",
+        "2088-1668",
+        "2088-3176",
+        "2065-23474",
+        "2065-24205"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "with input"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding > Get early access > Verification": {
+      "section": "onboarding",
+      "family": "Onboarding > Get early access > Verification",
+      "frameCount": 6,
+      "frames": [
+        "2005-10763",
+        "2005-12217",
+        "2005-19226",
+        "2005-19956",
+        "2005-29418",
+        "2005-30148"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "with input"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Temporary landing > Login > Verification": {
+      "section": "onboarding",
+      "family": "Temporary landing > Login > Verification",
+      "frameCount": 6,
+      "frames": [
+        "2086-32903",
+        "2086-36048",
+        "2598-2383",
+        "2598-3863",
+        "2065-24936",
+        "2065-25666"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "with input"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Onboarding > Get early access > Verification > Choose wallet": {
+      "section": "onboarding",
+      "family": "Onboarding > Get early access > Verification > Choose wallet",
+      "frameCount": 3,
+      "frames": [
+        "2005-11493",
+        "2005-20686",
+        "2005-30878"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Temporary landing > Login > Verification > Choose wallet": {
+      "section": "onboarding",
+      "family": "Temporary landing > Login > Verification > Choose wallet",
+      "frameCount": 3,
+      "frames": [
+        "2086-37672",
+        "2065-16254",
+        "2065-26396"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "plinko/Casino > Plinko": {
+      "section": "plinko",
+      "family": "Casino > Plinko",
+      "frameCount": 13,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9104-6283",
+        "M6r9FEn042UWTQD1zvy6GM:9137-10215",
+        "M6r9FEn042UWTQD1zvy6GM:9095-5369",
+        "M6r9FEn042UWTQD1zvy6GM:9069-5304",
+        "M6r9FEn042UWTQD1zvy6GM:9137-10217",
+        "M6r9FEn042UWTQD1zvy6GM:9095-4812",
+        "M6r9FEn042UWTQD1zvy6GM:9137-10213",
+        "M6r9FEn042UWTQD1zvy6GM:9003-79079",
+        "M6r9FEn042UWTQD1zvy6GM:9104-6170",
+        "M6r9FEn042UWTQD1zvy6GM:9003-82836",
+        "M6r9FEn042UWTQD1zvy6GM:9003-83784",
+        "M6r9FEn042UWTQD1zvy6GM:9137-11578",
+        "M6r9FEn042UWTQD1zvy6GM:9175-9939"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Plinko Old",
+        "Plinko Ball Medium",
+        "Plinko Medium Mode",
+        "Plinko Easy Mode",
+        "Plinko Ball Hard",
+        "Plinko Hard Mode",
+        "Plinko Ball Easy",
+        "Plinko Panel Auto",
+        "Skai > Play > Casino > Dice Mobile",
+        "signals"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    }
+  }
+}

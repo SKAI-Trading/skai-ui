@@ -1,0 +1,89 @@
+4397-52198	partial	-	Discover table. FIXED headers to Figma (Pairs/Market cap/Liquidity/Volume/Transactions/Action; chart track unlabelled per Figma Pairs span x=0..411). Verified exit0 1440px + DOM. SURPLUS none in header now. MISSING: rich card row (Figma row h=78 w/ 52px art, socials cluster, MC/FDV pair, Token info col x=568 w=140) vs built flat row h=64 imgs=1 svg=1; 24 rows render.
+4400-59959	partial	-	Discover>Trending. Tab set built and correct (4 tabs: Trending/New Pairs/Graduating/Migrated, aria-selected wired). Same flat-row gap as 4397-52198.
+4397-47886	match	-	Filters panel. Sub-state opens (frame-verify-steps exit0, role=dialog). Labels verified 1:1 vs Figma: Adjust filters/Customize table, Metrics/Protocols/Socials, Dex paid, CA ends in 'pump' (curly quotes). Apply+Reset present. No SURPLUS controls.
+4282-44687	partial	-	Hover 1VH. Intel rail IS built and hover-wired (aside aria-label=Intel, computed width 280px, visible at 1440). MISSING: Figma hover frame also drives a per-row expanded state, not just the side rail.
+4400-60963	deferred	-	Discover>Live. No Live tab exists in code (TrenchTab union is trending|new|graduating|migrated only). Unbuilt scope: needs a live-trade stream source; Figma frame shows per-trade social feed rows.
+4405-69980	deferred	-	Trackers empty. Surface is a literal stub ("Trackers redesign coming soon", confirmed via steps waitFor exit0). Figma scope = Tracker settings + Wallet manager + Live trades + KOLs + X accounts, all absent from code.
+4405-71105	deferred	-	Trackers>Add Wallet. Depends on the unbuilt Trackers surface above.
+4405-73126	deferred	-	Trackers>Live trades. Depends on unbuilt Trackers + a live trade feed.
+8360-127832	deferred	-	Trackers>Live Trades 1VH. Same unbuilt dependency.
+4400-68072	deferred	-	Trackers>Wallet Manager 1VH. No Trench wallet-manager code ("Wallet Manager" = 0 files under trench-redesign).
+4405-72692	deferred	-	Trackers>Wallet Manager X accounts. Same unbuilt dependency.
+4405-75656	deferred	-	Trackers>Wallet Manager Import Wallet. Same; also touches key custody.
+4405-75551	deferred	-	Wallet Manager X accounts add handle. Same unbuilt dependency.
+8050-141059	deferred	-	Market Lighthouse. Grep verified: 0 files repo-wide. Entirely unbuilt surface, not a defect.
+8050-141438	deferred	-	Market lighthouse sample section. Same; 0 files.
+8200-50571	deferred	-	Alpha Tracker. Grep verified: 0 files repo-wide. Unbuilt.
+4341-23128	deferred	-	Pulse Card Intel. Grep verified: "Pulse Card" 0 files. Unbuilt. Attachment on 1c87353d is a designer note only.
+4339-22828	deferred	-	Pulse Card Intel Alt. Unbuilt (0 files).
+7923-54557	deferred	-	Pulse Card Intel Cashback Coins. Unbuilt; "Cashback" 0 files under trench-redesign.
+9225-85196	deferred	-	Pulse card intel cashback coins. Unbuilt.
+9225-85343	deferred	-	Card Intel Cashback Coins. Unbuilt.
+9695-96416	deferred	-	Boost status. No Boost-status UI under trench-redesign discover; unbuilt.
+9695-96107	deferred	-	Boost status Expanded. Unbuilt.
+9695-96682	deferred	-	Boost status. Unbuilt.
+9695-96601	deferred	-	Boost status alt. Unbuilt.
+9695-96707	deferred	-	Boost Status more info. Unbuilt.
+9695-97825	deferred	-	Boost Status 50%. Unbuilt.
+7923-55008	deferred	-	Charity. "Charity" 0 files repo-wide. Unbuilt.
+8046-47534	deferred	-	Creator Rewards. Only admin-fee/contract refs exist; no Trench creator-rewards UI. Unbuilt.
+4400-64434	deferred	-	Discover Dex Screener view. Code has dexId/dexPaid filter fields only, no Dex Screener view. Unbuilt.
+4341-23384	deferred	-	Display Settings. Built code has a "Customize table" column-visibility tab only; no standalone Display Settings right menu. Unbuilt.
+8336-98579	deferred	-	Display Settings Colour Row. Unbuilt (no colour-picker UI in discover).
+4367-37344	deferred	-	Display Settings Colour Picker on click. Unbuilt.
+4367-37809	deferred	-	Display Settings Colour Picker on click. Unbuilt.
+4363-35865	deferred	-	Display settings right menu layout. Unbuilt.
+8501-30653	deferred	-	Display Settings Right Menu Layout Text Size Alt. Unbuilt.
+4363-36786	deferred	-	Display Settings Right Menu Metrics. Unbuilt.
+4367-37974	deferred	-	Display Settings Right Menu Row. Unbuilt.
+4400-65556	deferred	-	Discover Live Display Settings. Unbuilt (both Live and Display Settings absent).
+4367-37354	deferred	-	Right Menu. No right-menu component in discover. Unbuilt.
+4397-50201	deferred	-	Right Menu Metrics. Unbuilt.
+4397-49826	deferred	-	Filters Right Menu Audit. Filters exist as a Sheet; the audit right-menu variant does not. Unbuilt.
+8340-68594	deferred	-	Filters Right menu protocols. Protocol filtering exists in the Sheet, not as a right menu. Unbuilt.
+8371-28144	deferred	-	Live Trades Right Menu General. Unbuilt (Live + right menu).
+8371-28272	deferred	-	Live Trades Right Menu Toasts display. Unbuilt; no toast surface in discover.
+8377-57193	deferred	-	Live Trades Right Menu Toasts display. Unbuilt.
+8377-57395	deferred	-	Live Trades Right Menu Toasts misc. Unbuilt.
+8377-57731	deferred	-	Live Trades Right Menu Toasts one click. Unbuilt.
+4372-40162	deferred	-	Hotkeys. Hotkey code exists only in trade/ (other lane); none in discover. Unbuilt here.
+4377-42106	deferred	-	Hotkeys Right Menu Expanded. Unbuilt.
+4367-38197	deferred	-	Blacklist. No blacklist UI in discover. Unbuilt.
+4380-46165	deferred	-	Snipe Settings. No snipe UI in discover. Unbuilt.
+4380-42651	deferred	-	Alerts Toggle OFF. "Alert" 0 files under trench-redesign. Unbuilt.
+4380-44369	deferred	-	Alerts toggle on. Unbuilt.
+9226-85533	deferred	-	n/a: report accb9c82 targets a bare "Frame 445" - Figma layout scaffolding (a 1318x652 wrapper frame), not implementable UI.
+8092-153939	partial	-	Desktop terminal renders at 1440 (header+stats+chart+6 panel tabs+order rail). MISSING vs Figma: right rail is 360px wide vs Figma 313px; bottom menu is 6 green pill tabs vs Figma plain-text row (white active / #95a09f inactive, gap 24px); no Top traders tab; header lacks the 3 action icons, the 7-icon social cluster, Blacklist dev and Hide token chips; stats strip lacks Supply, Global fees paid, Tax and B. Curve; stat values render Mulish 14px vs Figma 16px. SURPLUS: chart carries 8 drawing tools plus 7 range buttons and a timezone button that the Figma frame does not show.
+8222-52086	deferred	-	Trade Layout 2 alt arrangement not built; only the single 1fr+rail layout exists in TradeTerminal.
+8222-55405	deferred	-	Layout 2 with instant trade not built; no alternate layout and no inline instant-trade bar.
+8110-175524	deferred	-	Multi Panel not built. Repo-wide grep for Multi.?Panel returns 0 files.
+8110-174652	deferred	-	Multi Panel Data not built. Repo-wide grep returns 0 files.
+8110-174839	deferred	-	Multi Panel Data variant not built. Repo-wide grep returns 0 files.
+8102-165595	deferred	-	Multi Panel not built. Repo-wide grep returns 0 files.
+8225-109708	partial	-	PositionsPanel built with the real 8-column Figma header via C.columns. Loading skeleton now emits 8 cells to match; was fixed at 5 so rows sat short of the header. Bought and Sold render an explicit marker because lifetime fill totals have no indexer.
+8234-115019	partial	-	HoldersPanel built, 5 columns, wired to useTokenHolders with an honest offline state. Dense per-holder Figma columns absent; no real per-token holder source.
+8489-61109	deferred	-	Holders full-screen variant not built; grep for fullScreen/Maximize in trench-redesign returns 0 hits.
+8225-112421	partial	-	TransactionsPanel matches the 6 Figma headers word-for-word but hardcodes status offline, so no row, loading or empty branch is reachable; there is no live per-token swap feed.
+8489-28776	deferred	-	Adjust maker filter not built. Repo-wide grep for aker.?Filter returns 0 files.
+8491-29200	deferred	-	Transactions unrecommended-edit variant not built; no maker-filter surface exists to edit.
+8324-58606	partial	-	BubblemapsPanel built, delegates to the shared BubbleMap at height 420 with an honest offline state; no synthetic clusters drawn per the no-mock policy.
+8324-54882	partial	-	DevTokensPanel built with 5 Figma headers, but status is hardcoded offline; migration donut and dense columns absent, no per-token dev-token source.
+8489-65469	deferred	-	Dev tokens percentage-bigger variant not built; the panel renders no rows, so there is no percentage cell to enlarge.
+8247-118637	partial	-	KOLsPanel built, 5 columns, wired to the real whale-activity feed via useTokenKols with honest offline and empty states. Column set is a mappable subset of the dense Figma table.
+8092-158016	deferred	-	Token preview surface not built; no preview affordance exists on the terminal.
+8092-146386	partial	-	Base chart region renders through the shared CandleChart at 420px with a real honest offline state. Cannot compare candle styling here: outbound DNS is blocked on this box so the candle feed returns no data.
+8087-146200	partial	-	BTC chart is the same CandleChart region parameterised by symbol; no BTC-specific chrome exists. Candle rendering unverifiable locally, feed offline.
+8092-146434	partial	-	SOL chart is the same CandleChart region parameterised by symbol. Candle rendering unverifiable locally, feed offline.
+8225-61062	partial	-	Instant trade exists only as the settings sheet reached from the order ticket gear. Figma inline instant-trade bar with per-preset buy and sell chips is not built.
+8491-29932	deferred	-	Instant trade variant not built; no inline instant-trade bar exists.
+8489-28020	deferred	-	Instant trade stacked variant not built; no inline instant-trade bar exists to stack.
+8225-105405	partial	-	InstantTradeSettingsModal ships the real sniper config plus localStorage display prefs. Deliberate documented divergence: Figma depicts display-only toggles with no persistence, so real functionality was kept rather than discarded.
+4317-36063	deferred	-	One-click trade settings modal buy not built; grep for one.?click in trench-redesign returns 2 incidental hits and no modal.
+4317-37993	deferred	-	One-click trade settings modal sell not built.
+8324-76830	deferred	-	One-click trade settings init-selected state not built.
+4317-39625	deferred	-	One-click buy updated new-pairs CTA not built.
+4317-12483	deferred	-	One-click settings modal off state not built.
+8110-172873	deferred	-	Trade dropdown add not built; no dropdown affordance on the terminal header or bottom menu.
+8102-166418	partial	-	Hover-and-clicks sidepanel. Attachment confirms a designer note dated Jun 30 2026 that this frame documents every hover, toggle and click state of the 313x1164 sidepanel. Order rail exists with Buy and Sell, Market and Limit, 3 presets, amount field and CTA. MISSING: 5m/1h/6h/24h change strip, Pro selector, wallet-balance chip, add-preset plus, slippage and priority icon row, Advanced trading strategy checkbox with TP and SL and Amount rows, and the documented hover and toggle states themselves.
+8110-173120	deferred	-	Trade unpaid dex not built; grep for npaid in trench-redesign returns 0 hits. DEX paid renders only as a Yes, No or Unavailable row in TokenInfoPanel.
+8200-50476	deferred	-	Standalone PNL surface not built. PnL appears only as a row inside PositionReadout and two columns in PositionsPanel.

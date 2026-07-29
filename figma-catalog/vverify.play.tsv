@@ -1,0 +1,32 @@
+4595-50243	not-wired	/home/skai/.claude/jobs/6c09754a/tmp/shots/fig-4595-alt.png	ALT hero-layout variant; hub shipped to 4595-49807 layout, ALT not built
+4595-49807	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/play-hub.png	redesigned Play hub shell renders (header active Play, left rail, ticker); grid behind region-verify offline gate in headless, legit offline state; prior-mapped DONE
+9099-146637	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/play-hub.png	same Play hub route; prior-mapped DONE
+4711-28434	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/play-casino.png	Casino view renders redesigned shell via Play section=casino; prior-mapped DONE
+4768-66183	partial	-	PlayDropdown component built (nodes 9099-131647 / 9099-146602); not routed standalone
+4841-72059	partial	/home/skai/.claude/jobs/6c09754a/tmp/shots/fig-4841-sportsbook.png	only bet-slip fragments built (BetSlip/QuickBet/BetPanel/BetNotification); full sportsbook page not built or routed
+4765-64029	partial	-	PlayDropdown bets-variant built (9099-146602); not routed standalone
+4799-60925	partial	-	sportsbook 1VH; only bet-slip fragments built, full page not routed
+4714-51085	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/play-hub.png	TrendingGames built and wired in hub; prior-mapped DONE
+9170-114084	not-wired	-	sportsbook soccer match-detail (AVL CHE); full sportsbook page not built
+4601-63484	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/play-hub.png	Sidebar frame equals shipped /play hub (left rail built)
+4714-31722	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/play-casino.png	New games section built and wired in casino; prior-mapped DONE
+9170-81771	not-wired	-	sportsbook bet-slip settings view; QuickBet exposes a settings cog only, settings panel not built
+4689-45587	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/fig-4689-favorite.png	Favorites filter built and wired into hub grid (useFavoriteGames, chip shows when count greater than 0)
+4676-39553	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/play-hub.png	Resume play (ContinuePlaying) built and wired; prior-mapped DONE
+4677-40779	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/play-hub.png	Resume play built and wired; prior-mapped DONE
+4896-83645	not-wired	-	sportsbook My bets empty state; full sportsbook page not built
+4758-59299	partial	-	GameDetailHeader built (node 4758-59299); game-detail dir orphaned, not routed
+4896-86341	partial	-	BetNotification built (node 4896-86341); not routed
+4758-60305	partial	-	GameStatsPanel built (node 4758-60305); game-detail orphaned, not routed
+9215-15732	not-wired	-	sportsbook player-props view; full sportsbook page not built
+4723-52636	partial	-	GameDetailHeader built (node 4723-52636); game-detail orphaned, not routed
+4798-57445	partial	-	PlayReferralBanner built and wired in hub; standalone bookie-referral view not a separate route
+4792-31202	not-wired	-	Live-RTP page; per-game RTP shows on GameCard but no standalone Live-RTP view built
+4792-34490	not-wired	-	bookie tiers view not built
+4911-89419	not-wired	-	sportsbook My bets with values; full sportsbook page not built
+4911-92925	not-wired	-	sportsbook Starting-soon view; full sportsbook page not built
+4758-62997	partial	-	CloseGameDialog built (node 4758-62997); game-detail orphaned, not routed
+4792-10647	partial	-	GameInfoPanel built (node 4792-10647); game-detail orphaned, not routed
+4913-97944	not-wired	-	sportsbook side-panel Lawn-tennis; full sportsbook page not built
+4914-99876	partial	-	BetSlip built (sportsbook right-panel betslip); not routed
+9191-105864	partial	-	BetSlip ALT built (sportsbook betslip ALT); not routed

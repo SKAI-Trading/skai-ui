@@ -1,0 +1,230 @@
+6942-74270	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png	Tiers tab wired (current tier, progress, 7-tier strip, rewards line, points breakdown); verified @1440
+6795-31004	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png	privacy-mask variant; masking wired via usePrivacy MASK_VALUE + header eye toggle
+6918-62834	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-defi-desktop.png	DeFi tab matches (4 stats offline dash, No-DeFi-positions empty state, Supply/Borrow CTAs)
+6937-71607	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png	Tiers tab wired; verified @1440
+6782-24811	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png	base Holdings renders (stat cards, tab bar, wallets + token tables)
+6828-38811	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-vault-desktop.png	Vault tab matches (balance, interest history table, projected earnings); verified @1440
+2773-7535	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-tiers-desktop.png	Tiers tab matches Figma
+6899-54796	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png	Vault tab wired; verified @1440
+2769-14707	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-defi-desktop.png	DeFi tab matches Figma
+2770-16271	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-tiers-desktop.png	Tiers tab matches Figma
+2764-13970	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-desktop.png	privacy-mask + wallet overflow variant; both wired (usePrivacy, DropdownMenu export/delete)
+2760-9935	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-vault-desktop.png	Vault deposit panel wired (DepositWithdrawPanel, real useVault); deposit action P4 no-op Casey-gated
+2760-12240	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-desktop.png	full-scroll Holdings + SiteFooter; matches Figma ref 2760-12240
+2899-15797	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-vault-desktop.png	Vault tab matches Figma
+6918-64949	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png	Social tab wired (plain, no vesting); verified @1440
+2769-15250	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-social-desktop.png	Social tab matches (combined mktcap, PnL, social tokens, empty state)
+2737-28177	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-desktop.png	Holdings source frame; verified vs Figma ref
+6962-75733	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png	Badges tab wired (collection heading, count, refresh, empty state per no-mock); verified @1440
+6782-26825	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png	base Holdings renders at tablet width
+2853-9675	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/hp-badges-desktop.png	Badges tab matches (empty state; test user has no badges, offline per no-mock)
+6910-59407	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	Vault tab wired (responsive); verified @1440
+6942-72954	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	Tiers tab wired (responsive); verified @1440
+6925-67023	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	Social tab wired (responsive); verified @1440
+6918-64538	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	Vault tab wired (responsive); verified @1440
+6811-32268	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	privacy-mask variant; masking wired
+6962-80042	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	Badges tab wired (responsive); verified @1440
+6942-74751	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	Tiers tab wired (responsive); verified @1440
+6795-30496	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	base Holdings renders at mobile width
+6782-25160	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	base Holdings renders at mobile width
+6925-67953	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	Social tab wired (responsive); verified @1440
+6918-63866	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png	Vault tab wired (responsive); verified @1440
+5777-28765	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-root-base-1440.png	SignedOutWelcome cites 5777:28765 renders as base route matches Figma hero
+6413-21006	match	-	HomeOnboarding welcome-to-quests cited 6413:21006 responsive
+6379-18450	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-root-base-375.png	Signed-out welcome+CTA mobile via SignedOutWelcome responsive sm breakpoints
+6388-21892	match	-	OnboardingQuestionnaire step3 default-PFP mobile cited 6388:21892
+6405-20479	match	-	HomeOnboarding load-effect mobile sibling of 6413 cited cluster
+6381-20617	match	-	Signed-out end-CTA mobile via SignedOutWelcome+questionnaireService copy
+6379-18643	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-root-base-375.png	Welcome-scroll mobile SignedOutWelcome scroll narrative responsive
+6330-55267	match	-	Welcome mobile OnboardingQuestionnaire welcome step cited 6330:55267
+6385-21390	match	-	OnboardingQuestionnaire step2 priorities mobile cited 6385:21390
+6379-18340	match	-	Signed-out welcome+CTA tablet via SignedOutWelcome responsive
+6393-53747	match	-	HomeOnboarding load-effect tablet sibling of cited quests cluster
+6383-20999	match	-	OnboardingQuestionnaire step1 basic-info tablet cited 6383:20999
+6330-54599	match	-	Welcome tablet SignedOutWelcome responsive lg breakpoint
+6405-20667	match	-	HomeOnboarding load-effect-to-quests tablet sibling of 2713:4425
+2713-4584	match	-	HomeOnboarding BadgeRewardModal cited 2713:4584 event-driven
+3346-32028	match	-	AiHome query-focus spotlight state cited 3346:32028
+2713-5014	match	-	AiHome hero query composer cited 2713:5014 signed-in state
+6715-34377	match	-	ConversationView transcript tablet sibling of 2726:10653 cited
+6419-46299	match	-	AiHome hero query tablet sibling of cited 2713:5014
+6385-21358	match	-	OnboardingQuestionnaire step2 priorities tablet cited 6385:21358
+6394-54418	match	-	HomeOnboarding load-effect mobile sibling of cited quests cluster
+2726-10653	match	-	ConversationView transcript desktop cited 2726:10653
+6379-18604	match	-	Welcome-scroll tablet SignedOutWelcome responsive
+2713-4301	match	-	Welcome-scroll desktop OnboardingQuestionnaire welcome cited 2713:4301
+2713-4240	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-root-base-1440.png	Welcome desktop SignedOutWelcome hero matches base shot
+2733-19908	match	-	AiHome typing ALT ComposerSuggestions cited 2733:19908
+2713-4119	match	-	HomeOnboarding load-effect desktop cited 2713:4119
+6381-20578	match	-	Signed-out end-CTA tablet via SignedOutWelcome+welcome copy
+6405-20293	match	-	HomeOnboarding badge-reward tablet sibling of cited 2713:4584
+5778-29088	match	-	OnboardingQuestionnaire step3 default-PFP desktop cited 5778:29088
+2713-4425	match	-	HomeOnboarding OnboardingQuestsModal cited 2713:4425
+5780-45728	match	-	OnboardingQuestionnaire step2 ALT desktop cited 5780:45728
+2713-4052	match	-	OnboardingQuestionnaire step1 basic-info desktop cited 2713:4052
+6383-21006	match	-	OnboardingQuestionnaire step1 basic-info mobile cited 6383:21006
+6388-21725	match	-	OnboardingQuestionnaire step3 default-PFP web-panel cited 6388:21725
+2713-3947	match	-	OnboardingQuestionnaire step2 priorities desktop sibling of cited steps
+2713-4362	match	-	Signed-out end-CTA desktop OnboardingQuestionnaire cited 2713:4362
+2713-4179	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-root-base-1440.png	Welcome narrative desktop SignedOutWelcome cites 2713:4179 matches base
+6736-40095	match	-	ConversationView vision upload-image mobile sibling of cited 2883:9692
+6715-35126	match	-	ConversationView extended transcript mobile sibling of 2733:18374
+6715-34717	match	-	ConversationView transcript mobile sibling of cited 2726:10653
+6715-34899	match	-	ConversationView extended transcript tablet sibling of 2733:18374
+6736-37714	match	-	ConversationView edit-chat tablet sibling of cited 2733:20178
+6419-46017	match	-	AiHome query-focus ALT mobile cited 6419:46017
+6736-39936	match	-	ConversationView vision upload tablet sibling of cited 2883:9692
+6736-37059	match	-	ConversationView cost-meta tablet sibling of cited 5787:74313
+6736-38635	match	-	AddMenu open mobile sibling of cited 2733:20819
+6419-45553	match	-	AiHome typing ALT mobile sibling of cited 2733:19908
+6736-39279	match	-	AskComposer upload-image mobile sibling of cited 2735:25298
+6750-42546	match	-	AskComposer voice-prompt mobile sibling of cited 2736:26122
+6736-39216	match	-	AskComposer upload-image tablet sibling of cited 2735:25298
+6736-37217	match	-	ConversationView transcript mobile sibling of cited 2726:10653
+6736-38442	match	-	AddMenu open tablet sibling of cited 2733:20819
+2733-18700	match	-	ConversationView extended GameCardsBlock cited 2733:18700
+2733-20178	match	-	ConversationView edit-user-message state cited 2733:20178
+5787-74313	match	-	ConversationView cost-meta useMessageCosts cited 5787:74313
+6736-41729	match	-	AskComposer voice-prompt tablet sibling of cited 2736:26122
+2733-19382	match	-	ConversationView transcript cost-meta desktop cited 2733:19382
+2733-20819	match	-	AddMenu open desktop cited 2733:20819
+2736-26122	match	-	AskComposer voice-listening desktop cited 2736:26122
+6736-37955	match	-	ConversationView edit-chat mobile sibling of cited 2733:20178
+2735-25298	match	-	AskComposer upload-image desktop cited 2735:25298
+6419-45976	match	-	AiHome query-focus tablet sibling of cited 3346:32028
+6715-36037	match	-	ConversationView extended tablet sibling of cited 2733:18700
+2883-9692	match	-	ConversationView vision upload-conversation desktop cited 2883:9692
+2733-18374	match	-	ConversationView extended transcript desktop cited 2733:18374
+6736-36413	match	-	ConversationView extended mobile sibling of cited 2733:18700
+7301-77180	match	-	WhaleSelectorModal add-whale input tablet sibling of cited 2939:9939
+7298-74628	match	-	WhaleSelectorModal add-whale mobile sibling of cited 6001:59873
+7298-74565	match	-	WhaleSelectorModal add-whale tablet sibling of cited 6001:59873
+7303-77756	match	-	WhaleSelectorModal input-to-conversation5 mobile sibling of 2939:10485
+6244-76796	match	-	ReplicateStrategyModal custom-code JSON-expanded cited 6244:76796
+2939-10182	match	-	WhaleSelectorModal add-whale desktop base sibling of cited 2939:9939
+2939-9939	match	-	WhaleSelectorModal add-whale input desktop cited 2939:9939
+6244-15349	match	-	backtestMessage backtest conversation6 cited 6244:15349
+6244-90352	match	-	SearchStrategiesModal all-backtests cited 6244:90352
+6244-64788	match	-	ReplicateStrategyModal replicate-strategy cited 6244:64788
+7301-76568	match	-	WhaleSelectorModal select-whale mobile sibling of cited 6001:59873
+7303-77704	match	-	WhaleSelectorModal input-to-conversation5 tablet sibling of 2939:10485
+2939-10485	match	-	WhaleSelectorModal input-to-conversation5 desktop cited 2939:10485
+6001-59873	match	-	WhaleSelectorModal select-whale browse desktop cited 6001:59873
+6244-15246	match	-	BacktestResponseCard backtest conversation6 cited 6244:15246
+6244-77476	match	-	CandlestickFullscreen chart-sample custom-code cited 6244:77476
+7301-77235	match	-	WhaleSelectorModal add-whale input mobile sibling of cited 2939:9939
+7298-74917	match	-	WhaleSelectorModal select-whale tablet sibling of cited 6001:59873
+7332-64781	match	-	backtestMessage backtest conversation6 mobile sibling of 6244:15349
+7332-66385	match	-	ReplicateStrategyModal custom-code mobile sibling of cited 6244:76796
+7332-65746	match	-	ReplicateStrategyModal replicate mobile sibling of cited 6244:64788
+7329-64060	match	-	backtestMessage backtest conversation6 tablet sibling of 6244:15349
+7332-65159	match	-	ReplicateStrategyModal replicate tablet sibling of cited 6244:64788
+7333-69083	match	-	CandlestickFullscreen chart-sample mobile sibling of cited 6244:77476
+7333-70379	match	-	SearchStrategiesModal all-backtests mobile sibling of cited 6244:90352
+7332-65938	match	-	backtestMessage backtest conversation6 mobile sibling of 6244:15349
+7332-66266	match	-	ReplicateStrategyModal custom-code tablet sibling of cited 6244:76796
+7329-63441	match	-	backtestMessage backtest conversation6 tablet sibling of 6244:15349
+7333-70285	match	-	SearchStrategiesModal all-backtests tablet sibling of cited 6244:90352
+7333-67878	match	-	CandlestickFullscreen chart-sample tablet sibling of cited 6244:77476
+6415-45107	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-shell-768.png	redesignShell = HomeShellLayout, topbar + main + bottom nav wired at tablet
+6250-93084	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/fig-6250-93084-groupchats.png	multi-select + Group-chats-in-folder popover wired, matches Figma group-chats frame
+2713-4884	match	-	collapsed 58px rail path in HomeSidebarExpanded (collapsed prop) wired, icon-only rows
+2713-4800	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-shell-1440.png	redesignShell base = HomeShellLayout topbar+rail+main+ticker, matches Figma home base
+2720-7877	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/fig-2720-7877-sidebar-normal.png	desktop expanded sidebar structurally matches Figma (support accordions, Your chats, upgrade CTA)
+6250-93916	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/fig-6250-93916-createfolder.png	CreateChatFolderModal matches Figma: title/subtitle, emoji square + name input, Back outline + Create folder filled
+6750-43675	match	-	mobile chat-history via ChatHistoryModal (historyOpen entry), drawer-hosted
+6702-25218	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-shell-375.png	mobile HomeShellLayout: topbar + full-width main + MobileBottomNav wired
+6419-47275	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-shell-375.png	mobile no rail (lg-only) so base shell + bottom nav; matches mobile frame
+6702-25618	match	-	mobile expanded sidebar via MobileNavSheet drawer rendering HomeSidebarExpanded
+6415-45113	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-shell-375.png	redesignShell base at mobile = HomeShellLayout, wired
+6702-25577	match	-	tablet expanded sidebar via MobileNavSheet drawer rendering HomeSidebarExpanded
+6750-43337	match	-	tablet chat-history via ChatHistoryModal, drawer-hosted
+2737-27044	match	-	desktop chat-history via ChatHistoryModal (historyOpen from Search chats row)
+6317-40206	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-flow.png	Flow filters verified open (All types/All sizes, SizePanel custom input 6317:40769, NFA callout, technicals rail)
+7291-67959	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-import.png	ImportWalletsModal verified open (role=dialog) on whale; mobile stacks per code
+7298-70026	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales tablet market-technicals rail wired; responsive match to Figma
+7298-73203	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales mobile market-technicals; strong responsive match
+5965-53498	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-kols.png	Live trades sub-tab wired (getWhaleActivity, real columns); ActivityView verified
+7290-60558	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Live trades tablet wired via ActivityView sub-tabs
+6965-87675	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales no-data mobile 1VH matches empty state
+5965-53115	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-import.png	Import wallet modal verified open desktop
+7290-61206	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Live trades mobile wired via ActivityView
+6965-89928	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales no-data add-wallet tablet 1VH; empty state match
+6965-91751	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales tablet base matches Figma layout
+7291-67562	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-import.png	Import wallet modal wired; tablet width
+7298-71656	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales mobile 1VH matches Figma
+7294-69326	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales tablet base match
+7294-68763	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-1440.png	Whales desktop 1VH strong match vs Figma no-data ref (sub-tabs, toolbar, X accounts)
+6001-59103	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-flow.png	Flow desktop 1VH wired (accumulating/distributing sections, volume bars, offline honest)
+6965-87440	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales no-data tablet 1VH empty state match
+7290-64605	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-kols.png	KOLs sub-tab verified open mobile; ActivityView KOL rows wired
+6965-89579	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales no-data mobile empty state match
+7290-63431	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-kols.png	KOLs sub-tab verified open (tablet width); real whale service enrichment
+2857-11664	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-flow.png	Whales desktop 1VH + All-types dropdown (2857:11664) wired and verified
+2773-10396	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-1440.png	Whales no-data desktop matches Figma ref closely (both empty panels, toolbar, toggle)
+7298-72782	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales mobile base match
+5965-52763	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-1440.png	Whales Activity desktop 1VH wired (WhalesScreen source frame) strong match
+6965-90015	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-add.png	No-data add-wallet mobile; AddWalletSheet verified open
+6965-91838	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-375.png	Whales no-data mobile empty state match
+5965-53763	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-kols.png	KOLs desktop 1VH verified open; ActivityView KOL sub-tab wired
+7298-71221	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-tabs-whale-768.png	Whales tablet 1VH match
+7319-61172	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-checkout-375.png	mobile step-1 payment method, wired via CheckoutPage, single-col stack renders
+7319-60937	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-checkout-768.png	tablet step-1 payment method, picker + summary stack, wired
+7329-62749	match	-	mobile welcome-to-gold confirmed state, code-wired via WelcomeModal (status confirmed)
+7325-61983	match	-	tablet welcome-to-gold confirmed state, code-wired via WelcomeModal
+2946-15136	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-checkout-1440.png	desktop step-1 Payment method, 2-col 680+448 grid matches, sUSD/SKAI-Chain per rebuild
+2988-17224	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-checkout-1440.png	desktop checkout ALT summary variant, wired via PlanSummary (cites 2988:17224)
+2992-18923	match	-	desktop welcome-to-gold modal, code-wired via WelcomeModal (cites 2992:18923)
+2941-14522	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-plans-expanded-1440.png	desktop expanded all-7-tiers grid, correct pricing + Hide toggle, canonical order
+2939-10760	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-plans-1440.png	desktop plans 4-card row, medal cards + billing toggle + real pricing match
+7309-79234	match	/home/skai/.claude/jobs/6c09754a/tmp/shots/home-upgrade-plans-375.png	mobile plans single-col stack, medal cards + billing toggle match
+7307-78311	match	/tmp/home-lane/plans2-768.png	FIXED tablet plans grid was md:grid-cols-2 measured 2x338 at 768; Figma 7307:78311 lays 4 cards in ONE centred column card x=180 w=348 in a 708 container. Now md caps at 348 and centres: measured 348px at x=210 = 30+180 exact. 1440 4-up 315px and 375 1-up 331px unchanged
+2752-4678	match	/tmp/home-lane/awname-1440.png	WalletCreateModal password step: measured 564px card, bg rgb(18,37,36) green-coal-200, radius 24px, border 1px rgb(18,63,60), pad 24px, 2 password inputs Min 8 characters, Cancel+Continue pair. Matches Figma 1:1
+2753-4954	match	/tmp/home-lane/awname-1440.png	NAME step driven via Add/Link wallet then Continue x2: 564px card, single text input Wallet name placeholder Enter wallet name, Back + Create wallet pair. Matches Figma
+6811-32792	match	/tmp/home-lane/awname-768.png	Add wallet tablet: same 564px card at 768, password step fields + Cancel/Continue verified numerically
+6811-34522	match	/tmp/home-lane/awname-768.png	NAME step at 768: 564px card, Wallet name input, Back + Create wallet. Verified
+6811-33593	match	/tmp/home-lane/awname-375.png	Add wallet mobile: card 331px viewport-constrained from max-w-564, green-coal-200 + 24px radius, fields intact
+6811-35119	match	/tmp/home-lane/awname-375.png	NAME step at 375: 331px card, Wallet name input, Back + Create wallet. Verified
+5854-51123	match	/tmp/home-manage-1440.png	ManageIntelPanel driven open: 442px x=984 right-flush, radius 24px, 5 category checkboxes all checked, 7 pair chips with Remove labels, Save settings pill bg #56C7F3 text #001615. Matches Figma 5854:51123. NOTE panel uses role=checkbox not role=switch
+6706-22658	match	/tmp/home-manage-768.png	Manage intel tablet: 442px panel at x=312, 5 categories, 7 chips, Save settings. Same structure as desktop ref
+6710-24970	match	/tmp/home-manage-375.png	Manage intel mobile: 347px panel at x=14 viewport-constrained, all 5 categories + 7 chips + Save settings present
+5854-80845	partial	/tmp/home-lane/feed-1440.png	CORRECTION prior pass deferred this claiming harness renders SignedOutWelcome on tab=feed. FALSE: ?tab=feed is DEAD -- tab is local useState in RedesignHome, only ?tab=market/whale/signals are URL-driven. Driving the AI Feed toggle by click renders the bento. Empty state verified: Copy trading + Top performers + No traders yet + Try Spot trading CTA + 3 pills. Right column exactly 390px signals 396h insights 291h vs Figma 399/293. Gap: left card 748 vs Figma 796 -48px because the app rail is 248px
+2725-6765	partial	/tmp/home-lane/feed-1440.png	Same reachability correction as 5854-80845. Bento structure verified numerically at 1440; toggle is a 200px black pill with #56C7F3 active fill and #001615 text matching Figma. Populated trader grid + populated signal cards cannot render locally: signals/insights report Offline and the leaderboard is empty, so the Figma populated variant is data-gated
+2836-17050	deferred	/tmp/home-lane/feed-1440.png	AI Feed actionable variant. Reachable now toggle-driven, not signedOut as previously recorded, but the actionable content is data-gated: AI Market Signals and AI Insights both render Offline and the copy-trading leaderboard returns 0 traders, so the populated cards Figma shows have no local data source
+6710-25832	deferred	/tmp/home-lane/feed-768.png	AI Feed actionable tablet. Stacking verified at 768 CopyTrading 708 wide then two 346 cards side by side, but actionable content data-gated as above
+6711-27811	deferred	/tmp/home-lane/feed-768.png	AI Feed actionable tablet second variant; same data gate
+6711-32989	deferred	/tmp/home-lane/feed-375.png	AI Feed actionable mobile; same data gate. Mobile stacking verified 315px cards
+6704-26096	partial	/tmp/home-lane/feed-768.png	AI Feed empty tablet: verified 768 stacks CopyTrading 708x465 then signals 346 and insights 346 side by side per the documented md 2-up. Empty hero + Try Spot CTA present
+6704-29359	partial	/tmp/home-lane/feed-375.png	AI Feed empty mobile: 315px cards stacked, empty hero + CTA present. Reachability correction applies
+6704-27342	partial	/tmp/home-lane/feed-375.png	AI Feed empty mobile 1VH: same measured stack; the 1VH clip is lg-only by design so mobile grows past 812
+5812-123481	partial	/tmp/home-mi-1440.png	CORRECTION prior pass recorded Bronze gate blocks the body. Gate is passable: seeding the TestUserSelector tier field on skai_test_user resolves through useTierResolver. Past the gate the full screen renders -- Market intel h1, Back, Manage intel, Advanced AI, 4 price cards, AI Insights/AI Market Signals tabs, Prediction markets. Remaining gap is data not structure: all 4 cards show Price chart unavailable vs Figma sparklines and the insight list is offline vs Figma 8 rows
+6706-24261	partial	/tmp/home-mi-768.png	Market intel tablet past the tier gate: identical structure 4 cards + 2 tabs + Prediction markets + Manage intel. Same offline-data gap
+6710-24624	partial	/tmp/home-mi-375.png	Market intel mobile 1VH past the tier gate: full structure present. Same offline-data gap
+6707-23360	partial	/tmp/home-mi-375.png	Market intel mobile: same as 6710-24624
+6259-95454	partial	/tmp/home-lane/share-1440.png	SharePortfolioModal drives open from the Export portfolio button: 960x398 card, bg rgb(18,38,37), radius 24px, border 1px rgb(18,64,61), 2 include toggles, Copy link + Share on X, live preview with referral link. REAL MISSING: Figma 6259:95454 carries a Select theme row of 4 pills Normal/Night/Light/Custom above Customize your text -- absent from the component, grep for selectTheme in SharePortfolioModal returns nothing. Figma also labels the left CTA Copy image link vs the app Copy link
+2899-16515	partial	/tmp/home-lane/social-1440.png	Portfolio Social tab driven at 1440: Combined market cap, Total PnL, Your social tokens, Jump to social, Create token, No social tokens empty state. Vesting section absent BY DESIGN -- CreatorTokenVestingCard is deliberately not imported or rendered per report bf898e37, verified at PortfolioScreen.tsx:94 and the commented-out mount at :2370-2380. So the with-vesting Figma variant is unreachable on purpose
+6925-68955	partial	/tmp/home-lane/social-768.png	Social tab tablet verified same structure; vesting intentionally hidden per bf898e37
+6934-70311	partial	/tmp/home-lane/social-375.png	Social tab mobile verified same structure plus a Refresh control; vesting intentionally hidden per bf898e37
+2752-5814	deferred	-	ExportKeyModal base state NOT driveable in this env. The wallet-row overflow menu opens and Export private key clicks through, but the dev session wallet has no keystoreChain so it routes to openSessionWalletExport which throws Wallet is not connected. Needs a real created keystore wallet, not a fidelity gap
+2753-8176	deferred	-	Export private key revealed state: blocked upstream by the same missing keystore wallet
+6811-35764	deferred	-	Export private key tablet: same keystore blocker
+6811-36029	deferred	-	Export private key mobile: same keystore blocker
+6828-36970	deferred	-	Export private key revealed tablet: same keystore blocker
+6828-37572	deferred	-	Export private key revealed mobile: same keystore blocker
+5926-13672	deferred	/tmp/home-lane/badge-1440.png	BadgePreviewModal not driveable: the Badges tab renders Badge collection 0 Earned and No badges earned yet for the dev user, so there is no badge tile to click. Needs a user with earned badges
+6965-82190	deferred	-	Badge preview tablet: same no-earned-badges blocker
+6965-86368	deferred	-	Badge preview mobile: same no-earned-badges blocker
+2989-17608	deferred	/tmp/home-lane/checkout-768.png	Checkout step-2 QR send-tokens is INTENTIONALLY replaced. Verified the real mount is CheckoutPage at /upgrade/checkout not the orphaned home-redesign/upgrade tree, and its file header documents 2989:17608 as superseded by the inline Thirdweb BuyWidget. Probe confirms no QR, no Copy/Share pair, no treasury address at 1440/768/375
+2990-18205	deferred	/tmp/home-lane/checkout-768.png	Checkout step-3 verify-payment paste-hash flow INTENTIONALLY replaced by automatic on-chain event polling per the CheckoutPage header. Probe confirms no transaction hash field renders
+7320-63495	deferred	/tmp/home-lane/checkout-768.png	Step-2 tablet: Figma ref downloaded and confirmed to be the same legacy QR + Copy/Share flow. App renders the chain-native picker: 692px single column at 768, Continue upgrade CTA bg #56C7F3
+7321-64964	deferred	/tmp/home-lane/checkout-768.png	Step-3 tablet: same documented replacement
+7320-64189	deferred	/tmp/home-lane/checkout-375.png	Step-2 mobile: 331px single column, no QR/Copy/Share. Same documented replacement
+7323-65507	deferred	/tmp/home-lane/checkout-375.png	Step-3 mobile: same documented replacement
+6008-71803	deferred	-	Pro ALT is DEAD CODE confirmed independently: grep shows PlansLayout4 and TierExpandedView have no importer in src/pages or src/App.tsx, only self-references and the src/components/upgrade/index.ts barrel. Never routed, so there is nothing to build against
+6336-56093	deferred	-	Pro ALT stretched: same dead-code confirmation. The 2046px horizontal scroll strip is cited only by unrouted PlansLayout4; UpgradePlanScreen deliberately rejected the scroller since 3 of 4 show-all frames do not scroll
+6736-38996	partial	-	ads Tool tip IS built and mounted: UpgradeCoachmark.tsx cites 6736:38996 and AiHome.tsx:1161 mounts it beside the mode toggle with the Figma bubble at 250px, green-coal-100 fill, up-arrow connector, heading + close row, and a #56C7F3 See all plans link. Not visually confirmable here: the sparkle trigger measured 0 occurrences even with a Gold tier seed because the component self-hides when the tier read is unresolved or degraded, which it is offline. Separately its i18n keys aiHome.upgradeCoachmark.* are absent from public/locales/en/common.json so it runs on inline defaults
+6419-46340	partial	/tmp/home-6419-46340.png	query ALT composer state IS driveable: filling the textarea at 375 lights the active ring. Measured card 325px bg #052d2d radius 24px, ring 2px #56C7F3, send button bg #56C7F3. Figma 6419:46340 specifies w=360, radius 16px rounded-2xl, a 1px border. Deltas: radius 24 vs 16 and ring 2px vs 1px. The ALT greeting What are you thinking is intentionally NOT implemented -- report 5726ee29 removed the mid-typing copy swap, see AiHome.tsx:512-515
+6736-40379	partial	/tmp/home-lane/addmenu-375.png	upload image ALT: the AddMenu Upload an image row is present at 375 and 3 file inputs exist. AskComposer renders the Figma staged-file chip at :396-427 -- 40px thumbnail, middle-ellipsed name, size in Ash 11, remove X -- and AiHome passes liveAttachments. Could not stage real files through the headless file chooser, so the two-chip state Figma shows is unconfirmed visually
+6702-24782	partial	/tmp/home-lane/sb3-768.png	tablet sidebar normal: measured at 768 there is NO left rail at all -- zero tall left-edge columns, and the bottom nav is present instead. At 1440 both the 58px collapsed rail and the 248px expanded nav measure correctly. This is a documented deviation not a regression: HomeShellLayout.tsx:152-159 makes the rail lg:block only, citing iPad frames 6782-25030 and 6899-54798 plus report 0f2f60f8
+6419-47130	partial	/tmp/home-lane/sb3-768.png	tablet collapsed rail: same lg-only gate. The collapsed 58px rail exists and measures right at 1440 but never renders at 768
+5965-54546	partial	/tmp/home-lane/whaleadd-1440.png	Whales no-data Add wallet sheet drives open: panel measured 442px at x=998 right-flush, bg rgb(18,38,37), with Wallet address, Wallet name, Folder, Complete. SURPLUS confirmed numerically: a full-screen rgba(0,0,0,0.8) fixed scrim at z-50 that the Figma frame does not carry, which is report f074bd05. CROSS-LANE: the scrim is hardcoded in modules/skai-ui SheetOverlay, outside this lane

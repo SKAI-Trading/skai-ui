@@ -1,0 +1,23 @@
+(section root)	2f	cited=3	proposed=likely-done	dirs=modules/skai-gaming/src/components
+Casino > Sample game	2f	cited=2	proposed=partial	dirs=modules/skai-gaming/src/components
+Sportsbook > Bet notifcation	1f	cited=2	proposed=partial	dirs=modules/skai-gaming/src/components
+Casino > Sample game > My Stats	1f	cited=2	proposed=partial	dirs=modules/skai-gaming/src/components
+Casino > Sample game > Close game	1f	cited=2	proposed=partial	dirs=modules/skai-gaming/src/components
+Casino > Sample game > Game info	1f	cited=2	proposed=partial	dirs=modules/skai-gaming/src/components
+Casino	1f	cited=1	proposed=partial	dirs=modules/skai-gaming/src/components
+ALT	1f	cited=0	proposed=not-started	dirs=-
+dropdown	2f	cited=0	proposed=not-started	dirs=-
+Sportsbook	4f	cited=0	proposed=not-started	dirs=-
+Casino > Trending games	1f	cited=0	proposed=not-started	dirs=-
+Sportsbook > Soccer > AVL CHE	1f	cited=0	proposed=not-started	dirs=-
+Sidebar	1f	cited=0	proposed=not-started	dirs=-
+Casino > New games	1f	cited=0	proposed=not-started	dirs=-
+Sportsbook > Bet slip settings	1f	cited=0	proposed=not-started	dirs=-
+Favorite games	1f	cited=0	proposed=not-started	dirs=-
+Resume play	2f	cited=0	proposed=not-started	dirs=-
+Sportsbook > My bets	2f	cited=0	proposed=not-started	dirs=-
+Sportsbook > Soccer > AVL CHE > Player props	1f	cited=0	proposed=not-started	dirs=-
+Casino > Bookie	2f	cited=0	proposed=not-started	dirs=-
+Casino > Live RTP	1f	cited=0	proposed=not-started	dirs=-
+Sportsbook > Starting soon	1f	cited=0	proposed=not-started	dirs=-
+Sportsbook > Side panel	1f	cited=0	proposed=not-started	dirs=-

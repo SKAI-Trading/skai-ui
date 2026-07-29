@@ -1,0 +1,23 @@
+(section root)	done	modules/skai-gaming/src/pages/play/Play.tsx	/play	Play landing hub built + routed; mounts cited PlayAboutFaq/PlaySportsRail/PlayLogoSlots plus hero/ticker/rails/grid/referral/bets — real impl, renders substance.
+Casino	done	modules/skai-gaming/src/pages/play/Play.tsx	/play/casino	Casino variant reachable via <Play section="casino"/>; swaps casino header, adds Popular/Arcade shelves + Providers slots + cited PlayFilterBar.
+Casino > Trending games	done	modules/skai-gaming/src/components/play/ui/TrendingGames.tsx	/play	TrendingGames rail built (reads real chain/presence data) and mounted in Play.tsx landing (line 1370); no citation in catalog but wired.
+Casino > New games	done	modules/skai-gaming/src/components/play/ui/PlayFilterBar.tsx	/play/casino	"New games" is a live filter chip (filter==="new" → game.new===true) on the featured grid; reachable + functional, not a separate screen.
+Resume play	done	modules/skai-gaming/src/components/play/ui/ContinuePlaying.tsx	/play	ContinuePlaying rail built + mounted (line 1367); renders recently-played games for signed-in users, self-hides when empty. Uncited but wired.
+Casino > Sample game	partial	modules/skai-gaming/src/components/play/game-detail/GameDetailHeader.tsx	none	Cited game-detail component real + prop-driven, but game-detail/ is orphaned — no importer; games still open in a modal, no detail page/route.
+Casino > Sample game > My Stats	partial	modules/skai-gaming/src/components/play/game-detail/GameStatsPanel.tsx	none	Real stats-panel component (no fabricated data), but unmounted/unrouted and header notes per-(user,game) rollup backend not wired.
+Casino > Sample game > Close game	partial	modules/skai-gaming/src/components/play/game-detail/CloseGameDialog.tsx	none	CloseGameDialog built as a standalone dialog but not imported anywhere; belongs to the unbuilt game-detail page.
+Casino > Sample game > Game info	partial	modules/skai-gaming/src/components/play/game-detail/GameInfoPanel.tsx	none	GameInfoPanel built + exported but orphaned (no importer); no detail page/route mounts it.
+dropdown	partial	modules/skai-gaming/src/components/play/ui/PlayDropdown.tsx	none	Redesign dropdown primitive built (cites nodes 9099:131647/146602) but unmounted anywhere; QuickPlayMenu in Play.tsx is defined-but-unused. Node ids differ from this family's frame.
+Sportsbook	partial	modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx	none	Redesign sportsbook components (BetSlip/BetPanel/QuickBet) built + prop-driven but "not wired into a route yet" per index.ts; legacy /sports is a separate pre-existing product, not this redesign screen.
+Sportsbook > Bet notifcation	partial	modules/skai-gaming/src/components/play/sportsbook/BetNotification.tsx	none	Cited BetNotification toast built (all 3 modes) but orphaned — no importer/route; UI-only pending sportsbook backend.
+ALT	not-started	—	—	Frame 4595-50243 has no citation and no code reference anywhere; alternate layout variant not implemented.
+Sidebar	not-started	—	—	No Play-redesign sidebar component found in skai-gaming; app-shell sidebar is a separate home-redesign concern.
+Favorite games	not-started	—	—	No favorites shelf/screen on the Play landing; only per-game favorite-bet localStorage (SafariSlots) and a star in PlayStateCard — not this family.
+Sportsbook > Bet slip settings	not-started	—	—	No settings panel built; redesign BetSlip only exposes an onSettings() callback prop (a hook point), no implementing screen.
+Sportsbook > My bets	not-started	—	—	No redesign "My bets" component in skai-gaming; legacy src/pages/sports MyBets.tsx is the separate pre-existing product, not the Figma redesign screen.
+Sportsbook > Soccer > AVL CHE	not-started	—	—	No redesign match/event view built; legacy /sports/event/:eventId GameDetail is the separate product, not this redesign screen.
+Sportsbook > Soccer > AVL CHE > Player props	not-started	—	—	No redesign player-props screen; legacy src/pages/sports PlayerPropsPanel exists separately in the old product only.
+Sportsbook > Starting soon	not-started	—	—	No redesign component; legacy src/pages/sports StartingSoonBar exists separately in the old product, not this redesign screen.
+Sportsbook > Side panel	not-started	—	—	Frame 4913-97944 (Lawn tennis variant) has no citation and no redesign code found.
+Casino > Bookie	not-started	—	—	No casino bookie/pool-operator code in skai-gaming; PLAY_REDESIGN lists Bookie (~10 frames) as unbuilt (needs pool infra). Legacy /sports BookieDashboard is unrelated sports product.
+Casino > Live RTP	not-started	—	—	No Live-RTP screen/component; RTP appears only as static text blurbs in game metadata (PlayOriginals/PlayScratch), not this family's screen.

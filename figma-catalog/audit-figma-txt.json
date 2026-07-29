@@ -1,0 +1,242 @@
+{
+  "generated": "2026-07-29T01:39:12.104Z",
+  "source": "C:\\Users\\casey\\Documents\\GitHub\\Skai-Trading\\modules\\skai-ui\\figma-catalog\\figma.txt",
+  "grandTotal": 2311,
+  "grandMissing": 0,
+  "report": [
+    {
+      "heading": "Home",
+      "key": "home",
+      "links": 347,
+      "unique": 347,
+      "inRegistry": 347,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Wallet",
+      "key": "wallet",
+      "links": 355,
+      "unique": 355,
+      "inRegistry": 355,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Trade",
+      "key": "trade",
+      "links": 219,
+      "unique": 219,
+      "inRegistry": 219,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Predict",
+      "key": "predict",
+      "links": 99,
+      "unique": 99,
+      "inRegistry": 99,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Play",
+      "key": "play",
+      "links": 117,
+      "unique": 117,
+      "inRegistry": 117,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Dice",
+      "key": "dice",
+      "links": 26,
+      "unique": 26,
+      "inRegistry": 26,
+      "missing": 0,
+      "fileKeys": [
+        "M6r9FEn042UWTQD1zvy6GM"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "PWA",
+      "key": "pwa",
+      "links": 5,
+      "unique": 5,
+      "inRegistry": 5,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Crash",
+      "key": "crash",
+      "links": 8,
+      "unique": 8,
+      "inRegistry": 8,
+      "missing": 0,
+      "fileKeys": [
+        "M6r9FEn042UWTQD1zvy6GM"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Wallet import",
+      "key": "wallet",
+      "links": 32,
+      "unique": 32,
+      "inRegistry": 32,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Mines",
+      "key": "mines",
+      "links": 15,
+      "unique": 15,
+      "inRegistry": 15,
+      "missing": 0,
+      "fileKeys": [
+        "M6r9FEn042UWTQD1zvy6GM"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Trench",
+      "key": "trade",
+      "links": 285,
+      "unique": 285,
+      "inRegistry": 285,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Blackjack",
+      "key": "blackjack",
+      "links": 18,
+      "unique": 18,
+      "inRegistry": 18,
+      "missing": 0,
+      "fileKeys": [
+        "M6r9FEn042UWTQD1zvy6GM"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "coinflip",
+      "key": "coinflip",
+      "links": 37,
+      "unique": 37,
+      "inRegistry": 37,
+      "missing": 0,
+      "fileKeys": [
+        "M6r9FEn042UWTQD1zvy6GM"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Skratch",
+      "key": "skratch",
+      "links": 19,
+      "unique": 19,
+      "inRegistry": 19,
+      "missing": 0,
+      "fileKeys": [
+        "M6r9FEn042UWTQD1zvy6GM"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Missing play images",
+      "key": "missing-play-images",
+      "links": 16,
+      "unique": 16,
+      "inRegistry": 16,
+      "missing": 0,
+      "fileKeys": [
+        "M6r9FEn042UWTQD1zvy6GM"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Trade (7/27 update)",
+      "key": "trade",
+      "links": 692,
+      "unique": 692,
+      "inRegistry": 692,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Play Region Message popup",
+      "key": "play",
+      "links": 1,
+      "unique": 1,
+      "inRegistry": 1,
+      "missing": 0,
+      "fileKeys": [
+        "3sSzw1KewMtUbeLAv7uW0r"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    },
+    {
+      "heading": "Plinko",
+      "key": "plinko",
+      "links": 20,
+      "unique": 20,
+      "inRegistry": 20,
+      "missing": 0,
+      "fileKeys": [
+        "M6r9FEn042UWTQD1zvy6GM"
+      ],
+      "inCatalog": true,
+      "missingNodes": []
+    }
+  ]
+}

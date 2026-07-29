@@ -1,0 +1,4450 @@
+{
+  "generated": "2026-07-21T22:52:32.887Z",
+  "roots": [
+    "src",
+    "modules/skai-gaming/src",
+    "modules/skai-wallet/src"
+  ],
+  "fileToNodes": [
+    {
+      "file": "src/hooks/market/usePredictionMarket.ts",
+      "nodes": [
+        "777-810"
+      ]
+    },
+    {
+      "file": "src/hooks/user/useSubscribeContract.ts",
+      "nodes": [
+        "2989-17608",
+        "2990-18205",
+        "225-235"
+      ]
+    },
+    {
+      "file": "src/hooks/sports/useBetSlip.ts",
+      "nodes": [
+        "100-200"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/PlansLayout4.tsx",
+      "nodes": [
+        "6008-71803",
+        "6336-56093"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/TierExpandedView.tsx",
+      "nodes": [
+        "6008-72292"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/TierCard.tsx",
+      "nodes": [
+        "2941-14522"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/PlansLayout7.tsx",
+      "nodes": [
+        "6008-72292",
+        "6008-72661",
+        "6014-85228"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/PlansLayout6.tsx",
+      "nodes": [
+        "6336-56093"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/checkout/TxStatusPanel.tsx",
+      "nodes": [
+        "2989-17608",
+        "2990-18205",
+        "2990-18551",
+        "2990-18597",
+        "2990-18558"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/checkout/WelcomeModal.tsx",
+      "nodes": [
+        "2992-18923",
+        "2992-19086"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/checkout/PlanSummary.tsx",
+      "nodes": [
+        "2988-17224",
+        "6014-84754",
+        "6014-84799"
+      ]
+    },
+    {
+      "file": "src/components/upgrade/checkout/PaymentMethodPicker.tsx",
+      "nodes": [
+        "2989-17516",
+        "2946-15136",
+        "2989-17535"
+      ]
+    },
+    {
+      "file": "src/components/predict/PredictHero.tsx",
+      "nodes": [
+        "8610-162260",
+        "8827-134453"
+      ]
+    },
+    {
+      "file": "src/components/predict/TopicChipRow.tsx",
+      "nodes": [
+        "8583-128113",
+        "8583-128135",
+        "8583-128136"
+      ]
+    },
+    {
+      "file": "src/components/predict/PredictInsightsPanel.tsx",
+      "nodes": [
+        "8583-127991",
+        "8623-55287"
+      ]
+    },
+    {
+      "file": "src/components/predict/rewards/RewardsMarketTable.tsx",
+      "nodes": [
+        "8911-165814"
+      ]
+    },
+    {
+      "file": "src/components/predict/rewards/OpenOrdersTable.tsx",
+      "nodes": [
+        "8937-48702"
+      ]
+    },
+    {
+      "file": "src/components/predict/rewards/RewardsStatTiles.tsx",
+      "nodes": [
+        "8911-163474"
+      ]
+    },
+    {
+      "file": "src/components/predict/UnifiedMarketCard.tsx",
+      "nodes": [
+        "3550-5095",
+        "8610-163937",
+        "8610-163940",
+        "8610-163942",
+        "8610-163951",
+        "8610-163938",
+        "8610-163948"
+      ]
+    },
+    {
+      "file": "src/components/predict/detail/PriceChartPanel.tsx",
+      "nodes": [
+        "8623-56597",
+        "8627-56772"
+      ]
+    },
+    {
+      "file": "src/components/predict/detail/RulesPanel.tsx",
+      "nodes": [
+        "3325-19518",
+        "3350-32896"
+      ]
+    },
+    {
+      "file": "src/components/predict/detail/MarketDetailHeader.tsx",
+      "nodes": [
+        "3288-23300"
+      ]
+    },
+    {
+      "file": "src/components/predict/detail/OrderBookPanel.tsx",
+      "nodes": [
+        "8664-116403"
+      ]
+    },
+    {
+      "file": "src/components/predict/detail/RelatedEvents.tsx",
+      "nodes": [
+        "3320-21024"
+      ]
+    },
+    {
+      "file": "src/components/predict/detail/TradePanel.tsx",
+      "nodes": [
+        "3288-23425"
+      ]
+    },
+    {
+      "file": "src/components/predict/detail/FaqPanel.tsx",
+      "nodes": [
+        "8659-71553",
+        "3345-31352"
+      ]
+    },
+    {
+      "file": "src/components/predict/detail/MarketModules.tsx",
+      "nodes": [
+        "3345-31427",
+        "8659-72238",
+        "3345-31522",
+        "8657-53763"
+      ]
+    },
+    {
+      "file": "src/components/predict/CommentsModule.tsx",
+      "nodes": [
+        "8657-53763",
+        "8610-162260"
+      ]
+    },
+    {
+      "file": "src/components/launchpad/create/create-token-icons.tsx",
+      "nodes": [
+        "4442-118145"
+      ]
+    },
+    {
+      "file": "src/components/launchpad/create/TokenDataInfoCallout.tsx",
+      "nodes": [
+        "8493-128242",
+        "4442-118145"
+      ]
+    },
+    {
+      "file": "src/components/launchpad/create/TokenMediaCard.tsx",
+      "nodes": [
+        "4442-118145"
+      ]
+    },
+    {
+      "file": "src/components/launchpad/create/TokenBannerUploader.tsx",
+      "nodes": [
+        "4442-118145"
+      ]
+    },
+    {
+      "file": "src/components/launchpad/create/TokenImageUploader.tsx",
+      "nodes": [
+        "4442-118145"
+      ]
+    },
+    {
+      "file": "src/components/trade/MarketSelector.tsx",
+      "nodes": [
+        "3962-32706"
+      ]
+    },
+    {
+      "file": "src/components/trade/TradePanel500x.tsx",
+      "nodes": [
+        "4020-49442"
+      ]
+    },
+    {
+      "file": "src/components/trade/perp-v2/PerpOrderBook.tsx",
+      "nodes": [
+        "7712-29470",
+        "7712-29575",
+        "7712-29452",
+        "7712-29465"
+      ]
+    },
+    {
+      "file": "src/components/trade/perp-v2/parts/CollateralInput.tsx",
+      "nodes": [
+        "3903-21478"
+      ]
+    },
+    {
+      "file": "src/components/trade/perp-v2/PerpPositionsPanel.tsx",
+      "nodes": [
+        "3903-21478"
+      ]
+    },
+    {
+      "file": "src/components/trade/perp-v2/PerpMarketHeader.tsx",
+      "nodes": [
+        "3886-15109"
+      ]
+    },
+    {
+      "file": "src/components/trade/perp-v2/PerpOrderEntry.tsx",
+      "nodes": [
+        "3903-25954",
+        "3962-8653",
+        "3903-26142",
+        "4020-49442",
+        "3903-26048"
+      ]
+    },
+    {
+      "file": "src/components/trade/native-chart/CandleChartCanvas.tsx",
+      "nodes": [
+        "6244-77476"
+      ]
+    },
+    {
+      "file": "src/components/trade/native-chart/CandleChart.tsx",
+      "nodes": [
+        "7681-72488",
+        "3886-15237"
+      ]
+    },
+    {
+      "file": "src/components/trade/MarketSearchModal.tsx",
+      "nodes": [
+        "3962-32706"
+      ]
+    },
+    {
+      "file": "src/components/trade/TokenSelector.tsx",
+      "nodes": [
+        "4141-58066"
+      ]
+    },
+    {
+      "file": "src/components/trade/PortfolioTabs.tsx",
+      "nodes": [
+        "3886-15237"
+      ]
+    },
+    {
+      "file": "src/components/trade/BotPredictionOverlay.tsx",
+      "nodes": [
+        "7681-72461",
+        "7681-72454"
+      ]
+    },
+    {
+      "file": "src/components/trade/order/OrderEntryPanel.tsx",
+      "nodes": [
+        "4020-49442",
+        "3899-7131",
+        "3900-7416",
+        "3962-8653"
+      ]
+    },
+    {
+      "file": "src/components/trade/tradeCtaStyles.ts",
+      "nodes": [
+        "4020-49442"
+      ]
+    },
+    {
+      "file": "src/components/trade/TradingChart.tsx",
+      "nodes": [
+        "3886-15237",
+        "3927-56677"
+      ]
+    },
+    {
+      "file": "src/components/trade/TradePanelSwap.tsx",
+      "nodes": [
+        "4020-49442",
+        "7746-213141",
+        "7746-213173"
+      ]
+    },
+    {
+      "file": "src/components/trade/MarketHeader.tsx",
+      "nodes": [
+        "3962-32706",
+        "3886-15109",
+        "3886-15237"
+      ]
+    },
+    {
+      "file": "src/components/trade/MarketHeader500x.tsx",
+      "nodes": [
+        "3886-15109"
+      ]
+    },
+    {
+      "file": "src/components/trade/parts/TicketPercentSlider.tsx",
+      "nodes": [
+        "3903-25954",
+        "3903-26048",
+        "3903-26142",
+        "3899-7131",
+        "3900-7416",
+        "3962-8653"
+      ]
+    },
+    {
+      "file": "src/components/trade/AIConfidenceStrip.tsx",
+      "nodes": [
+        "3886-15237"
+      ]
+    },
+    {
+      "file": "src/components/trade/perp/PerpTradePanel.tsx",
+      "nodes": [
+        "4020-49442"
+      ]
+    },
+    {
+      "file": "src/components/trade/PositionsTable.tsx",
+      "nodes": [
+        "3886-15237"
+      ]
+    },
+    {
+      "file": "src/components/trade/TradePanelPerp.tsx",
+      "nodes": [
+        "4020-49442",
+        "7746-213141",
+        "7746-213180",
+        "7746-213173"
+      ]
+    },
+    {
+      "file": "src/components/layout/AccountDropdown.tsx",
+      "nodes": [
+        "2713-4828"
+      ]
+    },
+    {
+      "file": "src/components/layout/LeftSidebar.tsx",
+      "nodes": [
+        "2718-9291",
+        "2836-15857",
+        "2718-9629",
+        "2713-4864"
+      ]
+    },
+    {
+      "file": "src/components/layout/HeaderStatusBar.tsx",
+      "nodes": [
+        "2713-4828"
+      ]
+    },
+    {
+      "file": "src/components/layout/Header.tsx",
+      "nodes": [
+        "2713-4828"
+      ]
+    },
+    {
+      "file": "src/components/layout/BottomTickerBar.tsx",
+      "nodes": [
+        "2713-5043",
+        "2713-4830"
+      ]
+    },
+    {
+      "file": "src/components/layout/MobileBottomNav.tsx",
+      "nodes": [
+        "6704-26136",
+        "6419-47409",
+        "768-1023"
+      ]
+    },
+    {
+      "file": "src/components/icons/figma-icons.tsx",
+      "nodes": [
+        "2713-4828",
+        "2713-4864"
+      ]
+    },
+    {
+      "file": "src/components/messaging/__tests__/useMessageRequests.test.ts",
+      "nodes": [
+        "1111-1111",
+        "2222-2222"
+      ]
+    },
+    {
+      "file": "src/components/ai/ChatInterface.tsx",
+      "nodes": [
+        "2713-5014",
+        "2713-4885",
+        "2713-5016",
+        "2720-8566",
+        "2693-7921",
+        "2713-5028",
+        "2713-4888",
+        "2732-11375",
+        "2713-4899"
+      ]
+    },
+    {
+      "file": "src/components/notifications/WelcomeModal.tsx",
+      "nodes": [
+        "3436-53580",
+        "2713-4425",
+        "2713-4581"
+      ]
+    },
+    {
+      "file": "src/components/markets/BubbleMap.tsx",
+      "nodes": [
+        "4437-112320"
+      ]
+    },
+    {
+      "file": "src/components/account/VaultTab.tsx",
+      "nodes": [
+        "5902-144187",
+        "2768-14508"
+      ]
+    },
+    {
+      "file": "src/components/account/VaultInterestHistoryTable.tsx",
+      "nodes": [
+        "5902-144187"
+      ]
+    },
+    {
+      "file": "src/components/account/BadgesTab.tsx",
+      "nodes": [
+        "858-6157"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/HomeShellLayout.tsx",
+      "nodes": [
+        "2713-4828",
+        "2713-4829",
+        "2713-4800",
+        "2719-4999",
+        "5812-112809",
+        "5810-111233",
+        "5812-117161",
+        "768-1023",
+        "6782-25030",
+        "6899-54798",
+        "6704-26136"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/HomeBottomTicker.tsx",
+      "nodes": [
+        "2713-4829",
+        "2760-12436",
+        "2760-12437",
+        "2760-12438",
+        "2713-4946"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/AiHome.tsx",
+      "nodes": [
+        "2713-4801",
+        "2713-4800",
+        "2713-4802",
+        "2720-8590",
+        "2713-4803",
+        "2713-4804",
+        "6250-93084",
+        "2713-5014",
+        "2745-3552",
+        "2745-3577",
+        "2733-20819",
+        "2734-21134",
+        "2735-25298",
+        "2733-19908",
+        "2720-8554",
+        "2736-26122",
+        "3346-32028",
+        "2939-9939",
+        "6419-46017",
+        "2720-7877",
+        "6415-45109",
+        "2713-5029",
+        "2720-7892"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx",
+      "nodes": [
+        "2988-17224",
+        "2946-15136",
+        "2989-17516"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/SendTokensScreen.tsx",
+      "nodes": [
+        "2989-17608",
+        "7320-63495"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/TierCard.tsx",
+      "nodes": [
+        "2939-10760",
+        "6008-72292",
+        "6336-56093",
+        "7310-79494",
+        "6377-18092",
+        "3436-56611",
+        "3436-56609",
+        "7310-79500",
+        "6377-18098",
+        "3436-56656",
+        "3436-56626",
+        "7310-79513",
+        "6377-18111",
+        "3436-56630",
+        "3436-56632",
+        "6377-18114",
+        "6377-18115",
+        "7310-79519",
+        "6377-18116",
+        "3436-56674",
+        "3436-56635",
+        "7310-79520",
+        "6377-18118",
+        "3436-56638"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/shared.ts",
+      "nodes": [
+        "2939-10760",
+        "2988-17224",
+        "2992-18923"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx",
+      "nodes": [
+        "2939-10760",
+        "2941-14522",
+        "6008-71803",
+        "6336-56093",
+        "6008-72292",
+        "6377-18216"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+      "nodes": [
+        "2939-10760",
+        "2988-17224",
+        "2946-15136",
+        "2989-17608",
+        "2990-18205",
+        "2992-18923"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/useSendPaymentVerification.ts",
+      "nodes": [
+        "2990-18205",
+        "2990-18551",
+        "2990-18597"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/VerifyPaymentScreen.tsx",
+      "nodes": [
+        "2990-18205",
+        "2990-18551",
+        "2990-18597"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/PlanSummaryCard.tsx",
+      "nodes": [
+        "2988-17224",
+        "2989-17608",
+        "2990-18205"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/upgrade/WelcomeSuccessModal.tsx",
+      "nodes": [
+        "2992-18923"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/portfolio/BadgePreviewModal.tsx",
+      "nodes": [
+        "5926-13672",
+        "5948-33187"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/portfolio/WalletCreateModal.tsx",
+      "nodes": [
+        "2987-16294",
+        "2752-4678",
+        "2753-4954",
+        "2987-16322",
+        "2753-5228"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/portfolio/ExportKeyModal.tsx",
+      "nodes": [
+        "2752-5814",
+        "2753-8176"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/portfolio/SharePortfolioModal.tsx",
+      "nodes": [
+        "6259-95454"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/portfolio/privacy.tsx",
+      "nodes": [
+        "2764-13970",
+        "2753-4954"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/portfolio/PortfolioScreen.tsx",
+      "nodes": [
+        "2737-28177",
+        "2760-12240",
+        "2764-13970",
+        "2769-14707",
+        "2853-9846",
+        "2853-9853",
+        "2853-9860",
+        "6962-80054",
+        "2746-6646",
+        "6962-80108",
+        "2853-9675",
+        "2770-16271",
+        "5889-14807",
+        "6782-26156",
+        "768-1023",
+        "5889-14818",
+        "2769-15228",
+        "2769-15229",
+        "6962-75733",
+        "6962-80042",
+        "1024-1279",
+        "2769-15326",
+        "2769-15320",
+        "2769-15768",
+        "5902-145389",
+        "5902-145390",
+        "5902-145397",
+        "5902-147818",
+        "2773-10240",
+        "6317-18854",
+        "2899-15860",
+        "6899-54796",
+        "6910-59407",
+        "2769-14589",
+        "2899-16010",
+        "6899-54957",
+        "2899-16034",
+        "6910-57838",
+        "2899-15874",
+        "2899-15884",
+        "5926-13672",
+        "6962-80089",
+        "5889-14794"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/whalesShared.tsx",
+      "nodes": [
+        "2773-10396",
+        "5965-52763",
+        "2857-11664",
+        "2939-9939"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/useWhaleLists.ts",
+      "nodes": [
+        "2773-10396",
+        "5965-52763",
+        "5965-54259",
+        "5965-54546",
+        "5965-53115"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/WhalesScreen.tsx",
+      "nodes": [
+        "5965-52763",
+        "6317-40206",
+        "6317-40249",
+        "6317-40244",
+        "2857-11664",
+        "6317-40769",
+        "6317-40808",
+        "6317-40226",
+        "6001-59387",
+        "6001-56538"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/XAccountsPanel.tsx",
+      "nodes": [
+        "2773-10396",
+        "5965-52763",
+        "5965-54259"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/MarketTechnicalsCard.tsx",
+      "nodes": [
+        "6001-59387",
+        "2889-10088",
+        "6001-59403",
+        "6001-59389",
+        "6001-59415"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/AddWalletSheet.tsx",
+      "nodes": [
+        "5965-54546"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/ActivityView.tsx",
+      "nodes": [
+        "2773-10396",
+        "5965-52763",
+        "5965-53498",
+        "5965-53763",
+        "5965-52861",
+        "2773-10397"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/ImportWalletsModal.tsx",
+      "nodes": [
+        "5965-53115"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/whales/WhaleSelectorModal.tsx",
+      "nodes": [
+        "6001-59873",
+        "2939-9939"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/RedesignHome.tsx",
+      "nodes": [
+        "2939-9939"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/HomeOnboarding.tsx",
+      "nodes": [
+        "2713-4425",
+        "2713-4584",
+        "2713-4510",
+        "2713-4511",
+        "2713-4512",
+        "5786-48044",
+        "2713-4523",
+        "5786-48045",
+        "6405-20716",
+        "6405-20852",
+        "2713-4540",
+        "2713-4550",
+        "2713-4559",
+        "6413-21006",
+        "2713-4581",
+        "2713-4669",
+        "2713-4671",
+        "2713-4681",
+        "2713-4718",
+        "2713-4726"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/HomeTopBar.tsx",
+      "nodes": [
+        "2713-4828",
+        "6419-47409",
+        "6419-47731",
+        "6419-47408",
+        "6846-39802",
+        "6415-45111",
+        "6415-45117",
+        "6846-39818"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/useMessageCosts.ts",
+      "nodes": [
+        "5787-74313"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/ConversationView.tsx",
+      "nodes": [
+        "2726-10653",
+        "2733-18374",
+        "2733-18700",
+        "2733-19382",
+        "2733-20178",
+        "2733-19312",
+        "5787-74313",
+        "2883-9692",
+        "6244-77476",
+        "2733-20418",
+        "2733-20420",
+        "2733-18376",
+        "2885-9932",
+        "2733-18377",
+        "2734-21134",
+        "6244-64788",
+        "321-324",
+        "6244-15349"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/chart/CandlestickFullscreen.tsx",
+      "nodes": [
+        "6244-77476"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/chart/candlestickTypes.ts",
+      "nodes": [
+        "6244-77476"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/chart/SignalChartCard.tsx",
+      "nodes": [
+        "6244-15349",
+        "6244-77476"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/chart/WIRING.md",
+      "nodes": [
+        "6244-77476"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/chart/useSignalChart.ts",
+      "nodes": [
+        "6244-77476",
+        "6244-15349"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/GameCardsBlock.tsx",
+      "nodes": [
+        "2733-18700",
+        "2733-19015"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/AssistantBody.tsx",
+      "nodes": [
+        "2726-10653",
+        "2733-18374",
+        "2883-9692",
+        "2733-18651",
+        "6244-77402"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/strategy/index.ts",
+      "nodes": [
+        "6244-64788",
+        "6244-76796",
+        "6244-77402"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/strategy/ReplicateStrategyModal.tsx",
+      "nodes": [
+        "6244-64788",
+        "6244-76796",
+        "6244-77402",
+        "6244-77429"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/backtest/BacktestResponseCard.tsx",
+      "nodes": [
+        "6244-15349",
+        "6244-15246",
+        "6244-64481"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/backtest/backtestTypes.ts",
+      "nodes": [
+        "6244-15350"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/backtest/index.ts",
+      "nodes": [
+        "6244-15349",
+        "6244-15246",
+        "6244-90352",
+        "6244-92641"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/backtest/WIRING.md",
+      "nodes": [
+        "6244-15350"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/backtest/BacktestProse.tsx",
+      "nodes": [
+        "6244-15349",
+        "6244-15246"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/backtest/SearchStrategiesModal.tsx",
+      "nodes": [
+        "6244-90352",
+        "2737-27044"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/backtest/backtestMessage.tsx",
+      "nodes": [
+        "6244-15246",
+        "6244-64481",
+        "6244-90352",
+        "6244-92641",
+        "6244-15349"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/conversation/backtest/NetProfitAreaChart.tsx",
+      "nodes": [
+        "6244-46594",
+        "6244-15349"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/chatFolders.ts",
+      "nodes": [
+        "6250-93706",
+        "6250-93084",
+        "6250-93916",
+        "6250-94739"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+      "nodes": [
+        "6383-20999",
+        "6383-21006",
+        "6385-21358",
+        "6385-21390",
+        "6388-21725",
+        "6388-21892",
+        "2713-4362",
+        "2713-4179",
+        "6330-55267",
+        "2713-4183",
+        "2713-4052",
+        "5780-45728"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/HomeSidebarRail.tsx",
+      "nodes": [
+        "5812-112809",
+        "2713-4800"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/SignedOutWelcome.tsx",
+      "nodes": [
+        "5777-28765",
+        "2713-4179",
+        "2713-4183"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/screens/ScreenerScreen.tsx",
+      "nodes": [
+        "8493-30183",
+        "4405-82330",
+        "4419-86274",
+        "8493-30187",
+        "8493-30186",
+        "8493-30363",
+        "8493-30192",
+        "8493-34859",
+        "8493-33199",
+        "8493-35986",
+        "8493-30227"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/SiteFooter.tsx",
+      "nodes": [
+        "2760-12240"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/market-intel/ManageIntelPanel.tsx",
+      "nodes": [
+        "5854-51123",
+        "5854-62644"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/market-intel/intelMappers.ts",
+      "nodes": [
+        "5854-86633",
+        "5812-123481",
+        "2836-18364"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/market-intel/MarketIntelScreen.tsx",
+      "nodes": [
+        "5812-123481",
+        "768-1023",
+        "6706-24262",
+        "5854-51123"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/ComposerSuggestions.tsx",
+      "nodes": [
+        "2733-19908"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/insightx/InsightXScreen.tsx",
+      "nodes": [
+        "4437-112320",
+        "4437-115199",
+        "4437-116944",
+        "4446-118388"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/CreateChatFolderModal.tsx",
+      "nodes": [
+        "6250-93916",
+        "6250-93084",
+        "6250-94739"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/ChatHistoryModal.tsx",
+      "nodes": [
+        "2737-27044",
+        "6750-43337"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/AddMenu.tsx",
+      "nodes": [
+        "2733-20819",
+        "2736-26094",
+        "2734-21134",
+        "2733-21079"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/markets/MarketCard.tsx",
+      "nodes": [
+        "4423-91823",
+        "8493-30411",
+        "8493-30227",
+        "976-1137",
+        "1083-406"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/feed/AiSignalsCards.tsx",
+      "nodes": [
+        "5854-85503",
+        "2725-6765",
+        "5854-80845",
+        "2836-18364",
+        "5854-86633"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/feed/CopyTradingCard.tsx",
+      "nodes": [
+        "2836-17050",
+        "2725-6765",
+        "5854-80845",
+        "5854-85503",
+        "6704-26913"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/feed/AiFeed.tsx",
+      "nodes": [
+        "5854-85503",
+        "2725-6765",
+        "6704-26240",
+        "6704-26930"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/HomeSidebarExpanded.tsx",
+      "nodes": [
+        "5863-89110",
+        "5810-111233",
+        "5810-111638",
+        "5810-111037",
+        "5812-117161",
+        "6250-92865",
+        "6250-93706",
+        "6250-94544",
+        "6250-93084",
+        "6250-93916",
+        "2719-4952",
+        "6250-94739",
+        "2719-4999",
+        "6001-56786",
+        "2720-8186",
+        "6419-47408",
+        "5863-89115",
+        "5812-117366",
+        "5810-111039",
+        "5812-112819",
+        "5812-112829"
+      ]
+    },
+    {
+      "file": "src/components/home-redesign/AskComposer.tsx",
+      "nodes": [
+        "2713-4804",
+        "2713-4800",
+        "2713-5014",
+        "2745-3552",
+        "2745-3577",
+        "2735-25298",
+        "2736-26122",
+        "2939-9939",
+        "2726-10653",
+        "321-324",
+        "2713-4801",
+        "2732-11413"
+      ]
+    },
+    {
+      "file": "src/pages/upgrade/UpgradePage.tsx",
+      "nodes": [
+        "2939-10760"
+      ]
+    },
+    {
+      "file": "src/pages/upgrade/CheckoutPage.tsx",
+      "nodes": [
+        "2946-15136",
+        "2989-17608",
+        "2990-18205"
+      ]
+    },
+    {
+      "file": "src/pages/predict/PredictRewards.tsx",
+      "nodes": [
+        "8911-163462",
+        "8937-48702",
+        "3558-39692",
+        "3650-63719"
+      ]
+    },
+    {
+      "file": "src/pages/predict/PredictPage.tsx",
+      "nodes": [
+        "8583-127820",
+        "8575-81655",
+        "3553-5509"
+      ]
+    },
+    {
+      "file": "src/pages/predict/PredictMarketDetail.tsx",
+      "nodes": [
+        "3288-23300",
+        "8623-55287"
+      ]
+    },
+    {
+      "file": "src/pages/Index.tsx",
+      "nodes": [
+        "2718-9291"
+      ]
+    },
+    {
+      "file": "src/pages/trade/TradeUnified.tsx",
+      "nodes": [
+        "4141-58066",
+        "7816-51575",
+        "7816-51592",
+        "7816-51610",
+        "7816-51566",
+        "7816-51567",
+        "7816-51634",
+        "7816-51635",
+        "7816-51643"
+      ]
+    },
+    {
+      "file": "src/pages/trade/PerpTrading.tsx",
+      "nodes": [
+        "3903-21478"
+      ]
+    },
+    {
+      "file": "src/pages/trade/Spot.tsx",
+      "nodes": [
+        "3886-15237"
+      ]
+    },
+    {
+      "file": "src/pages/trade/Trench.tsx",
+      "nodes": [
+        "9223-83974"
+      ]
+    },
+    {
+      "file": "src/pages/trade/TokenTradeDetail.tsx",
+      "nodes": [
+        "4446-118984",
+        "8493-130768",
+        "8493-130813",
+        "8493-132995",
+        "8493-132273",
+        "8493-132412"
+      ]
+    },
+    {
+      "file": "src/pages/sports/components/ResponsibleGaming.tsx",
+      "nodes": [
+        "800-522"
+      ]
+    },
+    {
+      "file": "src/pages/sports/components/AIInsightsPanel.tsx",
+      "nodes": [
+        "800-522"
+      ]
+    },
+    {
+      "file": "src/pages/sports/Sports.tsx",
+      "nodes": [
+        "800-522"
+      ]
+    },
+    {
+      "file": "src/constants/tierPricing.ts",
+      "nodes": [
+        "219-225"
+      ]
+    },
+    {
+      "file": "src/services/predict/commentsService.ts",
+      "nodes": [
+        "8657-53763"
+      ]
+    },
+    {
+      "file": "src/services/onboarding/onboardingService.ts",
+      "nodes": [
+        "6405-20716"
+      ]
+    },
+    {
+      "file": "src/services/onboarding/questionnaireService.ts",
+      "nodes": [
+        "2713-4362",
+        "6381-20578",
+        "6381-20617",
+        "2713-4179",
+        "6385-21358",
+        "6385-21390",
+        "6388-21725",
+        "6388-21892"
+      ]
+    },
+    {
+      "file": "src/services/sports/sportsChainService.ts",
+      "nodes": [
+        "200-400"
+      ]
+    },
+    {
+      "file": "src/services/ai/chatService.ts",
+      "nodes": [
+        "638-658"
+      ]
+    },
+    {
+      "file": "src/App.tsx",
+      "nodes": [
+        "2713-5014",
+        "2713-5016",
+        "2713-4119"
+      ]
+    },
+    {
+      "file": "src/lib/predict/thumbnail.ts",
+      "nodes": [
+        "8610-163937"
+      ]
+    },
+    {
+      "file": "src/lib/predict/categorize.ts",
+      "nodes": [
+        "8583-127820",
+        "3553-5509"
+      ]
+    },
+    {
+      "file": "src/lib/predict/sortModes.ts",
+      "nodes": [
+        "8575-81655"
+      ]
+    },
+    {
+      "file": "src/lib/predict/topics.ts",
+      "nodes": [
+        "8583-128113"
+      ]
+    },
+    {
+      "file": "src/lib/chart/lightweightChartsTheme.ts",
+      "nodes": [
+        "6244-77476"
+      ]
+    },
+    {
+      "file": "src/lib/chart/rechartsTheme.tsx",
+      "nodes": [
+        "6244-77476"
+      ]
+    },
+    {
+      "file": "src/lib/chart/chartTheme.ts",
+      "nodes": [
+        "6244-77476"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/games/slots/CosmicSlots/scenes/TitleScreen.ts",
+      "nodes": [
+        "923-453"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "nodes": [
+        "4851-78844",
+        "4865-79010",
+        "4891-82254",
+        "4891-82125",
+        "4892-82479",
+        "4892-82838",
+        "4896-83198",
+        "4892-82761",
+        "4896-86320",
+        "4725-55110",
+        "4725-54861",
+        "4725-55198",
+        "4911-89072",
+        "4911-89092",
+        "4911-89112",
+        "4896-86341"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/sportsbook/BetNotification.tsx",
+      "nodes": [
+        "4911-89072",
+        "4911-89092",
+        "4911-89112",
+        "4896-86341"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx",
+      "nodes": [
+        "4851-78844",
+        "4865-79010",
+        "4891-82254",
+        "4891-82125",
+        "4896-83198",
+        "4892-82479",
+        "4892-82838",
+        "4891-82113",
+        "4891-81699",
+        "4891-82083",
+        "4891-81814",
+        "4891-82023"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/sportsbook/BetPanel.tsx",
+      "nodes": [
+        "4725-55110",
+        "4725-54861",
+        "4725-55198"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/sportsbook/QuickBet.tsx",
+      "nodes": [
+        "4892-82761",
+        "4896-86320",
+        "4851-78844",
+        "4865-79010"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx",
+      "nodes": [
+        "9185-15873",
+        "9185-15853",
+        "4595-48921",
+        "9185-15876",
+        "9185-15885",
+        "9185-15860",
+        "9185-15861",
+        "9185-15855",
+        "9185-15875",
+        "9185-15863",
+        "9185-15884",
+        "9185-15888"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayDropdown.tsx",
+      "nodes": [
+        "9099-131647",
+        "9099-146602",
+        "9099-131652"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayPromoStrip.tsx",
+      "nodes": [
+        "4601-56478",
+        "4595-49338",
+        "4601-56477"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayNewsTicker.tsx",
+      "nodes": [
+        "8977-141185",
+        "8987-141590"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayAboutFaq.tsx",
+      "nodes": [
+        "9099-146637"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayBetsTable.tsx",
+      "nodes": [
+        "4599-53456",
+        "4758-62172"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayFilterBar.tsx",
+      "nodes": [
+        "4711-28434"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlaySportsRail.tsx",
+      "nodes": [
+        "9099-146637"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayGameCard.tsx",
+      "nodes": [
+        "4601-60611",
+        "274-388"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayHero.tsx",
+      "nodes": [
+        "4595-50253"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayTooltip.tsx",
+      "nodes": [
+        "9170-113382",
+        "9170-113296",
+        "1243-947"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayLogoSlots.tsx",
+      "nodes": [
+        "9099-146637"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx",
+      "nodes": [
+        "4714-29697",
+        "9112-13728",
+        "4714-29705",
+        "4714-31611",
+        "4714-29698",
+        "9112-13729",
+        "4714-29699",
+        "9112-13745",
+        "4714-29704",
+        "9113-76034"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/shared/useGameAudio.ts",
+      "nodes": [
+        "800-1200"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/game-detail/GameDetailHeader.tsx",
+      "nodes": [
+        "4723-52636",
+        "4758-59299"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/game-detail/GameStatsPanel.tsx",
+      "nodes": [
+        "4758-60305"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/game-detail/CloseGameDialog.tsx",
+      "nodes": [
+        "4758-62997"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/game-detail/index.ts",
+      "nodes": [
+        "4723-52636",
+        "4758-59299",
+        "4758-60305",
+        "4792-10647",
+        "4758-62540",
+        "9132-93239",
+        "4758-62997"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/game-detail/GameLiveChat.tsx",
+      "nodes": [
+        "4758-62540",
+        "9132-93239"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/components/play/game-detail/GameInfoPanel.tsx",
+      "nodes": [
+        "4792-10647"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/pages/play/legal/TermsAndConditions.tsx",
+      "nodes": [
+        "102-957839"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/pages/play/legal/AmlPolicy.tsx",
+      "nodes": [
+        "102-957839"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/pages/play/legal/GamingLicense.tsx",
+      "nodes": [
+        "102-957839"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/services/gaming/crashCoinflipService.ts",
+      "nodes": [
+        "9901-10000",
+        "5000-10000"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/services/gaming/gamingKeeperService.ts",
+      "nodes": [
+        "1999-2005"
+      ]
+    },
+    {
+      "file": "modules/skai-gaming/src/services/gaming/gameSettlementService.ts",
+      "nodes": [
+        "308-538"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/__tests__/components/OnRampModal.test.tsx",
+      "nodes": [
+        "3124-2302",
+        "3124-2653"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/__tests__/components/UnlockForm.test.tsx",
+      "nodes": [
+        "2999-19674",
+        "3012-15180"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/__tests__/components/SwapModal.test.tsx",
+      "nodes": [
+        "3145-2711"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/__tests__/pages/WalletUnlock.test.tsx",
+      "nodes": [
+        "2999-19674",
+        "3012-15180"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/__tests__/services/userNotifications.test.ts",
+      "nodes": [
+        "3164-22351"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/__tests__/services/evmWalletImport.test.ts",
+      "nodes": [
+        "995-494234"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/__tests__/shell/AddWalletDrawer.test.tsx",
+      "nodes": [
+        "7479-137772"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/__tests__/shell/QuickActionsBar.test.tsx",
+      "nodes": [
+        "7492-150434"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/RequestPayment.tsx",
+      "nodes": [
+        "3154-4635"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/SpendingChart.tsx",
+      "nodes": [
+        "3154-3850"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/receive/ReceiveTokenSelect.tsx",
+      "nodes": [
+        "3089-21251"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/receive/ReceiveAmount.tsx",
+      "nodes": [
+        "3089-18177"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/receive/ReceiveQRCode.tsx",
+      "nodes": [
+        "3089-18101"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/common/AddContactDialog.tsx",
+      "nodes": [
+        "3158-7576"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/common/ConfirmationDialog.tsx",
+      "nodes": [
+        "3161-4184"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/common/FeeBreakdown.tsx",
+      "nodes": [
+        "3089-19811"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/common/AddressBookDialog.tsx",
+      "nodes": [
+        "3158-6856"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/common/GasSelectorDialog.tsx",
+      "nodes": [
+        "3161-3923"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/welcome/WelcomeHero.tsx",
+      "nodes": [
+        "2998-19599"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/welcome/WelcomeBackground.tsx",
+      "nodes": [
+        "3012-15897",
+        "3026-15920"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/send/SendTokenSelect.tsx",
+      "nodes": [
+        "3026-16469",
+        "3026-16493"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/send/SendDetails.tsx",
+      "nodes": [
+        "3012-15180",
+        "3023-11938"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/settings/NetworkSelector.tsx",
+      "nodes": [
+        "3158-9906"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/settings/LanguageCurrencyPanel.tsx",
+      "nodes": [
+        "3158-11566"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/settings/WalletLockSection.tsx",
+      "nodes": [
+        "3166-24676"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/settings/SettingsPanel.tsx",
+      "nodes": [
+        "3158-11542"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/settings/NotificationsPanel.tsx",
+      "nodes": [
+        "3158-5416"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/settings/SecurityPanel.tsx",
+      "nodes": [
+        "3158-6136"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/history/TransactionDetail.tsx",
+      "nodes": [
+        "3154-3666"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/history/ActivityFeed.tsx",
+      "nodes": [
+        "3153-20193"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
+      "nodes": [
+        "7473-130910",
+        "7473-131013",
+        "7473-133033"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/auth/UnlockForm.tsx",
+      "nodes": [
+        "2999-19674",
+        "3012-15180"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/staking/StakingOverview.tsx",
+      "nodes": [
+        "3167-25382"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/staking/StakingDetail.tsx",
+      "nodes": [
+        "3167-25811"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/utilities/RequestPayment.tsx",
+      "nodes": [
+        "3154-5798"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/utilities/ShareWalletCard.tsx",
+      "nodes": [
+        "3154-4635"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/utilities/BatchTransactions.tsx",
+      "nodes": [
+        "3154-5092",
+        "3154-5542"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/utilities/TokenApprovals.tsx",
+      "nodes": [
+        "3154-3850"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/utilities/ExportData.tsx",
+      "nodes": [
+        "3153-21838"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/utilities/BackupWallet.tsx",
+      "nodes": [
+        "3158-4524"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/buy/BuyForm.tsx",
+      "nodes": [
+        "3082-13100",
+        "3118-25969"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/buy/BuyConfirmation.tsx",
+      "nodes": [
+        "3145-2711",
+        "3118-25311"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
+      "nodes": [
+        "3080-811",
+        "3123-2073",
+        "3149-18278"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/swap/SwapConfirmation.tsx",
+      "nodes": [
+        "3149-17882"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/swap/SwapTokenSelect.tsx",
+      "nodes": [
+        "3149-3062"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/swap/SwapReview.tsx",
+      "nodes": [
+        "3149-17882"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/tokens/TokenPriceChart.tsx",
+      "nodes": [
+        "3153-19677",
+        "3118-23758"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx",
+      "nodes": [
+        "3089-18289",
+        "3118-23732",
+        "3118-24732",
+        "3154-3729"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/connections/TransactionSigningModal.tsx",
+      "nodes": [
+        "3165-23175"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/connections/PermissionRequest.tsx",
+      "nodes": [
+        "3163-21620"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/connections/ConnectedDApps.tsx",
+      "nodes": [
+        "3163-21313"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/connections/SendFlow.tsx",
+      "nodes": [
+        "3161-18913"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/connections/WalletConnectSessions.tsx",
+      "nodes": [
+        "3163-21998",
+        "155-8453"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/connections/WalletOverview.tsx",
+      "nodes": [
+        "3118-22162"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/bridge/BridgeSuccess.tsx",
+      "nodes": [
+        "3153-19232"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/bridge/BridgeHistory.tsx",
+      "nodes": [
+        "3086-17437"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/bridge/BridgeProviderCard.tsx",
+      "nodes": [
+        "3124-2302"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx",
+      "nodes": [
+        "3161-3923",
+        "8045-114061",
+        "8045-114218",
+        "3149-18174",
+        "3161-4082",
+        "3161-4097"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/bridge/BridgeSettings.tsx",
+      "nodes": [
+        "3149-18174"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/bridge/BridgeProcessing.tsx",
+      "nodes": [
+        "3153-19232"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/bridge/BridgeForm.tsx",
+      "nodes": [
+        "3149-2903"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/bridge/BridgeReview.tsx",
+      "nodes": [
+        "3083-1328",
+        "3086-17928"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/insights/SpendingAnalytics.tsx",
+      "nodes": [
+        "3154-3246"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/insights/TokenAllocation.tsx",
+      "nodes": [
+        "3149-3184",
+        "3154-3246"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/insights/PortfolioPerformance.tsx",
+      "nodes": [
+        "3158-8296"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/TokenListTable.tsx",
+      "nodes": [
+        "3026-16493"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/QuickActionsPanel.tsx",
+      "nodes": [
+        "3082-13515",
+        "3083-905"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/walletIcons.tsx",
+      "nodes": [
+        "7492-150438",
+        "3050-17524",
+        "3050-17537",
+        "7479-137527",
+        "7492-150460",
+        "7492-150466"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/QuickActionsBar.tsx",
+      "nodes": [
+        "7492-150434"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/ActivityTable.tsx",
+      "nodes": [
+        "3118-21935"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/WalletAccountsPanel.tsx",
+      "nodes": [
+        "3118-23642",
+        "3123-3590"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/NetWorthCard.tsx",
+      "nodes": [
+        "3026-16856",
+        "7482-141338"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/PortfolioSkinPanel.tsx",
+      "nodes": [
+        "3082-13515",
+        "3083-905"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dashboard/DashboardNotifications.tsx",
+      "nodes": [
+        "3082-13515"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dapp/DAppCard.tsx",
+      "nodes": [
+        "3166-24676"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dapp/DAppConnectionPanel.tsx",
+      "nodes": [
+        "3164-22754"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/dapp/DAppBrowser.tsx",
+      "nodes": [
+        "3166-24676"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/nft/NftDetail.tsx",
+      "nodes": [
+        "3116-21416",
+        "3163-21310"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/nft/NftGallery.tsx",
+      "nodes": [
+        "3164-22754"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/nft/NftCollectionView.tsx",
+      "nodes": [
+        "3163-21315"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/wallet/nft/NftSendPanel.tsx",
+      "nodes": [
+        "3116-21416"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/SwapModal.tsx",
+      "nodes": [
+        "3145-2711"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/SKAIAuth.tsx",
+      "nodes": [
+        "2998-19599",
+        "7473-130910",
+        "7473-131013",
+        "7473-133033"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/SendModal.tsx",
+      "nodes": [
+        "3149-2903",
+        "7935-67765"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/OnRampModal.tsx",
+      "nodes": [
+        "3124-2302",
+        "3124-2628"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/NftDisplay.tsx",
+      "nodes": [
+        "7523-152924",
+        "3089-19811",
+        "3116-21416",
+        "7528-153278"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/components/ShareCard.tsx",
+      "nodes": [
+        "7491-148345",
+        "7709-10525",
+        "1024-1439"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx",
+      "nodes": [
+        "3154-5092",
+        "3154-3850",
+        "3154-5542",
+        "3158-4524"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx",
+      "nodes": [
+        "3166-24676",
+        "3167-25382"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletUnlock.tsx",
+      "nodes": [
+        "2999-19674",
+        "3012-15180"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx",
+      "nodes": [
+        "2998-19599",
+        "3012-15897",
+        "3023-15434",
+        "3879-38331",
+        "3023-15416"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletTokenDetailRoute.tsx",
+      "nodes": [
+        "3083-1328"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletShellWelcome.tsx",
+      "nodes": [
+        "3012-15897"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx",
+      "nodes": [
+        "3080-811",
+        "3149-3062",
+        "3123-2073",
+        "3149-18278"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletReceive.tsx",
+      "nodes": [
+        "3089-21251",
+        "3089-18101",
+        "3089-18177",
+        "3120-27415"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/pages/wallet/WalletSend.tsx",
+      "nodes": [
+        "3026-16493",
+        "3012-15180",
+        "3023-11938",
+        "3026-16469"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/services/userNotifications.ts",
+      "nodes": [
+        "3163-21998",
+        "3164-22351"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/services/multiChainWallet.ts",
+      "nodes": [
+        "7479-137772"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/shell/TopHeader.tsx",
+      "nodes": [
+        "3163-21998",
+        "3164-22754"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/shell/panels/TxDetailPanel.tsx",
+      "nodes": [
+        "3118-25371"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx",
+      "nodes": [
+        "7477-133370",
+        "7479-135732",
+        "7479-135805",
+        "7479-136955"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/shell/panels/WalletAccountsPanel.tsx",
+      "nodes": [
+        "7713-15130",
+        "7713-15147",
+        "7713-15150",
+        "3080-1066",
+        "7477-133370",
+        "7713-15174"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx",
+      "nodes": [
+        "7479-137328",
+        "7482-141800",
+        "7479-137772"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/shell/panels/PortfolioPreviewPanel.tsx",
+      "nodes": [
+        "3082-13100"
+      ]
+    },
+    {
+      "file": "modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx",
+      "nodes": [
+        "3163-21998",
+        "3164-22302",
+        "3164-22754",
+        "3164-22456",
+        "3164-22329"
+      ]
+    }
+  ],
+  "nodeToFiles": {
+    "777-810": [
+      "src/hooks/market/usePredictionMarket.ts"
+    ],
+    "2989-17608": [
+      "src/hooks/user/useSubscribeContract.ts",
+      "src/components/upgrade/checkout/TxStatusPanel.tsx",
+      "src/components/home-redesign/upgrade/SendTokensScreen.tsx",
+      "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+      "src/components/home-redesign/upgrade/PlanSummaryCard.tsx",
+      "src/pages/upgrade/CheckoutPage.tsx"
+    ],
+    "2990-18205": [
+      "src/hooks/user/useSubscribeContract.ts",
+      "src/components/upgrade/checkout/TxStatusPanel.tsx",
+      "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+      "src/components/home-redesign/upgrade/useSendPaymentVerification.ts",
+      "src/components/home-redesign/upgrade/VerifyPaymentScreen.tsx",
+      "src/components/home-redesign/upgrade/PlanSummaryCard.tsx",
+      "src/pages/upgrade/CheckoutPage.tsx"
+    ],
+    "225-235": [
+      "src/hooks/user/useSubscribeContract.ts"
+    ],
+    "100-200": [
+      "src/hooks/sports/useBetSlip.ts"
+    ],
+    "6008-71803": [
+      "src/components/upgrade/PlansLayout4.tsx",
+      "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
+    ],
+    "6336-56093": [
+      "src/components/upgrade/PlansLayout4.tsx",
+      "src/components/upgrade/PlansLayout6.tsx",
+      "src/components/home-redesign/upgrade/TierCard.tsx",
+      "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
+    ],
+    "6008-72292": [
+      "src/components/upgrade/TierExpandedView.tsx",
+      "src/components/upgrade/PlansLayout7.tsx",
+      "src/components/home-redesign/upgrade/TierCard.tsx",
+      "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
+    ],
+    "2941-14522": [
+      "src/components/upgrade/TierCard.tsx",
+      "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
+    ],
+    "6008-72661": [
+      "src/components/upgrade/PlansLayout7.tsx"
+    ],
+    "6014-85228": [
+      "src/components/upgrade/PlansLayout7.tsx"
+    ],
+    "2990-18551": [
+      "src/components/upgrade/checkout/TxStatusPanel.tsx",
+      "src/components/home-redesign/upgrade/useSendPaymentVerification.ts",
+      "src/components/home-redesign/upgrade/VerifyPaymentScreen.tsx"
+    ],
+    "2990-18597": [
+      "src/components/upgrade/checkout/TxStatusPanel.tsx",
+      "src/components/home-redesign/upgrade/useSendPaymentVerification.ts",
+      "src/components/home-redesign/upgrade/VerifyPaymentScreen.tsx"
+    ],
+    "2990-18558": [
+      "src/components/upgrade/checkout/TxStatusPanel.tsx"
+    ],
+    "2992-18923": [
+      "src/components/upgrade/checkout/WelcomeModal.tsx",
+      "src/components/home-redesign/upgrade/shared.ts",
+      "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+      "src/components/home-redesign/upgrade/WelcomeSuccessModal.tsx"
+    ],
+    "2992-19086": [
+      "src/components/upgrade/checkout/WelcomeModal.tsx"
+    ],
+    "2988-17224": [
+      "src/components/upgrade/checkout/PlanSummary.tsx",
+      "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx",
+      "src/components/home-redesign/upgrade/shared.ts",
+      "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+      "src/components/home-redesign/upgrade/PlanSummaryCard.tsx"
+    ],
+    "6014-84754": [
+      "src/components/upgrade/checkout/PlanSummary.tsx"
+    ],
+    "6014-84799": [
+      "src/components/upgrade/checkout/PlanSummary.tsx"
+    ],
+    "2989-17516": [
+      "src/components/upgrade/checkout/PaymentMethodPicker.tsx",
+      "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx"
+    ],
+    "2946-15136": [
+      "src/components/upgrade/checkout/PaymentMethodPicker.tsx",
+      "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx",
+      "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+      "src/pages/upgrade/CheckoutPage.tsx"
+    ],
+    "2989-17535": [
+      "src/components/upgrade/checkout/PaymentMethodPicker.tsx"
+    ],
+    "8610-162260": [
+      "src/components/predict/PredictHero.tsx",
+      "src/components/predict/CommentsModule.tsx"
+    ],
+    "8827-134453": [
+      "src/components/predict/PredictHero.tsx"
+    ],
+    "8583-128113": [
+      "src/components/predict/TopicChipRow.tsx",
+      "src/lib/predict/topics.ts"
+    ],
+    "8583-128135": [
+      "src/components/predict/TopicChipRow.tsx"
+    ],
+    "8583-128136": [
+      "src/components/predict/TopicChipRow.tsx"
+    ],
+    "8583-127991": [
+      "src/components/predict/PredictInsightsPanel.tsx"
+    ],
+    "8623-55287": [
+      "src/components/predict/PredictInsightsPanel.tsx",
+      "src/pages/predict/PredictMarketDetail.tsx"
+    ],
+    "8911-165814": [
+      "src/components/predict/rewards/RewardsMarketTable.tsx"
+    ],
+    "8937-48702": [
+      "src/components/predict/rewards/OpenOrdersTable.tsx",
+      "src/pages/predict/PredictRewards.tsx"
+    ],
+    "8911-163474": [
+      "src/components/predict/rewards/RewardsStatTiles.tsx"
+    ],
+    "3550-5095": [
+      "src/components/predict/UnifiedMarketCard.tsx"
+    ],
+    "8610-163937": [
+      "src/components/predict/UnifiedMarketCard.tsx",
+      "src/lib/predict/thumbnail.ts"
+    ],
+    "8610-163940": [
+      "src/components/predict/UnifiedMarketCard.tsx"
+    ],
+    "8610-163942": [
+      "src/components/predict/UnifiedMarketCard.tsx"
+    ],
+    "8610-163951": [
+      "src/components/predict/UnifiedMarketCard.tsx"
+    ],
+    "8610-163938": [
+      "src/components/predict/UnifiedMarketCard.tsx"
+    ],
+    "8610-163948": [
+      "src/components/predict/UnifiedMarketCard.tsx"
+    ],
+    "8623-56597": [
+      "src/components/predict/detail/PriceChartPanel.tsx"
+    ],
+    "8627-56772": [
+      "src/components/predict/detail/PriceChartPanel.tsx"
+    ],
+    "3325-19518": [
+      "src/components/predict/detail/RulesPanel.tsx"
+    ],
+    "3350-32896": [
+      "src/components/predict/detail/RulesPanel.tsx"
+    ],
+    "3288-23300": [
+      "src/components/predict/detail/MarketDetailHeader.tsx",
+      "src/pages/predict/PredictMarketDetail.tsx"
+    ],
+    "8664-116403": [
+      "src/components/predict/detail/OrderBookPanel.tsx"
+    ],
+    "3320-21024": [
+      "src/components/predict/detail/RelatedEvents.tsx"
+    ],
+    "3288-23425": [
+      "src/components/predict/detail/TradePanel.tsx"
+    ],
+    "8659-71553": [
+      "src/components/predict/detail/FaqPanel.tsx"
+    ],
+    "3345-31352": [
+      "src/components/predict/detail/FaqPanel.tsx"
+    ],
+    "3345-31427": [
+      "src/components/predict/detail/MarketModules.tsx"
+    ],
+    "8659-72238": [
+      "src/components/predict/detail/MarketModules.tsx"
+    ],
+    "3345-31522": [
+      "src/components/predict/detail/MarketModules.tsx"
+    ],
+    "8657-53763": [
+      "src/components/predict/detail/MarketModules.tsx",
+      "src/components/predict/CommentsModule.tsx",
+      "src/services/predict/commentsService.ts"
+    ],
+    "4442-118145": [
+      "src/components/launchpad/create/create-token-icons.tsx",
+      "src/components/launchpad/create/TokenDataInfoCallout.tsx",
+      "src/components/launchpad/create/TokenMediaCard.tsx",
+      "src/components/launchpad/create/TokenBannerUploader.tsx",
+      "src/components/launchpad/create/TokenImageUploader.tsx"
+    ],
+    "8493-128242": [
+      "src/components/launchpad/create/TokenDataInfoCallout.tsx"
+    ],
+    "3962-32706": [
+      "src/components/trade/MarketSelector.tsx",
+      "src/components/trade/MarketSearchModal.tsx",
+      "src/components/trade/MarketHeader.tsx"
+    ],
+    "4020-49442": [
+      "src/components/trade/TradePanel500x.tsx",
+      "src/components/trade/perp-v2/PerpOrderEntry.tsx",
+      "src/components/trade/order/OrderEntryPanel.tsx",
+      "src/components/trade/tradeCtaStyles.ts",
+      "src/components/trade/TradePanelSwap.tsx",
+      "src/components/trade/perp/PerpTradePanel.tsx",
+      "src/components/trade/TradePanelPerp.tsx"
+    ],
+    "7712-29470": [
+      "src/components/trade/perp-v2/PerpOrderBook.tsx"
+    ],
+    "7712-29575": [
+      "src/components/trade/perp-v2/PerpOrderBook.tsx"
+    ],
+    "7712-29452": [
+      "src/components/trade/perp-v2/PerpOrderBook.tsx"
+    ],
+    "7712-29465": [
+      "src/components/trade/perp-v2/PerpOrderBook.tsx"
+    ],
+    "3903-21478": [
+      "src/components/trade/perp-v2/parts/CollateralInput.tsx",
+      "src/components/trade/perp-v2/PerpPositionsPanel.tsx",
+      "src/pages/trade/PerpTrading.tsx"
+    ],
+    "3886-15109": [
+      "src/components/trade/perp-v2/PerpMarketHeader.tsx",
+      "src/components/trade/MarketHeader.tsx",
+      "src/components/trade/MarketHeader500x.tsx"
+    ],
+    "3903-25954": [
+      "src/components/trade/perp-v2/PerpOrderEntry.tsx",
+      "src/components/trade/parts/TicketPercentSlider.tsx"
+    ],
+    "3962-8653": [
+      "src/components/trade/perp-v2/PerpOrderEntry.tsx",
+      "src/components/trade/order/OrderEntryPanel.tsx",
+      "src/components/trade/parts/TicketPercentSlider.tsx"
+    ],
+    "3903-26142": [
+      "src/components/trade/perp-v2/PerpOrderEntry.tsx",
+      "src/components/trade/parts/TicketPercentSlider.tsx"
+    ],
+    "3903-26048": [
+      "src/components/trade/perp-v2/PerpOrderEntry.tsx",
+      "src/components/trade/parts/TicketPercentSlider.tsx"
+    ],
+    "6244-77476": [
+      "src/components/trade/native-chart/CandleChartCanvas.tsx",
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/conversation/chart/CandlestickFullscreen.tsx",
+      "src/components/home-redesign/conversation/chart/candlestickTypes.ts",
+      "src/components/home-redesign/conversation/chart/SignalChartCard.tsx",
+      "src/components/home-redesign/conversation/chart/WIRING.md",
+      "src/components/home-redesign/conversation/chart/useSignalChart.ts",
+      "src/lib/chart/lightweightChartsTheme.ts",
+      "src/lib/chart/rechartsTheme.tsx",
+      "src/lib/chart/chartTheme.ts"
+    ],
+    "7681-72488": [
+      "src/components/trade/native-chart/CandleChart.tsx"
+    ],
+    "3886-15237": [
+      "src/components/trade/native-chart/CandleChart.tsx",
+      "src/components/trade/PortfolioTabs.tsx",
+      "src/components/trade/TradingChart.tsx",
+      "src/components/trade/MarketHeader.tsx",
+      "src/components/trade/AIConfidenceStrip.tsx",
+      "src/components/trade/PositionsTable.tsx",
+      "src/pages/trade/Spot.tsx"
+    ],
+    "4141-58066": [
+      "src/components/trade/TokenSelector.tsx",
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "7681-72461": [
+      "src/components/trade/BotPredictionOverlay.tsx"
+    ],
+    "7681-72454": [
+      "src/components/trade/BotPredictionOverlay.tsx"
+    ],
+    "3899-7131": [
+      "src/components/trade/order/OrderEntryPanel.tsx",
+      "src/components/trade/parts/TicketPercentSlider.tsx"
+    ],
+    "3900-7416": [
+      "src/components/trade/order/OrderEntryPanel.tsx",
+      "src/components/trade/parts/TicketPercentSlider.tsx"
+    ],
+    "3927-56677": [
+      "src/components/trade/TradingChart.tsx"
+    ],
+    "7746-213141": [
+      "src/components/trade/TradePanelSwap.tsx",
+      "src/components/trade/TradePanelPerp.tsx"
+    ],
+    "7746-213173": [
+      "src/components/trade/TradePanelSwap.tsx",
+      "src/components/trade/TradePanelPerp.tsx"
+    ],
+    "7746-213180": [
+      "src/components/trade/TradePanelPerp.tsx"
+    ],
+    "2713-4828": [
+      "src/components/layout/AccountDropdown.tsx",
+      "src/components/layout/HeaderStatusBar.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/icons/figma-icons.tsx",
+      "src/components/home-redesign/HomeShellLayout.tsx",
+      "src/components/home-redesign/HomeTopBar.tsx"
+    ],
+    "2718-9291": [
+      "src/components/layout/LeftSidebar.tsx",
+      "src/pages/Index.tsx"
+    ],
+    "2836-15857": [
+      "src/components/layout/LeftSidebar.tsx"
+    ],
+    "2718-9629": [
+      "src/components/layout/LeftSidebar.tsx"
+    ],
+    "2713-4864": [
+      "src/components/layout/LeftSidebar.tsx",
+      "src/components/icons/figma-icons.tsx"
+    ],
+    "2713-5043": [
+      "src/components/layout/BottomTickerBar.tsx"
+    ],
+    "2713-4830": [
+      "src/components/layout/BottomTickerBar.tsx"
+    ],
+    "6704-26136": [
+      "src/components/layout/MobileBottomNav.tsx",
+      "src/components/home-redesign/HomeShellLayout.tsx"
+    ],
+    "6419-47409": [
+      "src/components/layout/MobileBottomNav.tsx",
+      "src/components/home-redesign/HomeTopBar.tsx"
+    ],
+    "768-1023": [
+      "src/components/layout/MobileBottomNav.tsx",
+      "src/components/home-redesign/HomeShellLayout.tsx",
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx",
+      "src/components/home-redesign/market-intel/MarketIntelScreen.tsx"
+    ],
+    "1111-1111": [
+      "src/components/messaging/__tests__/useMessageRequests.test.ts"
+    ],
+    "2222-2222": [
+      "src/components/messaging/__tests__/useMessageRequests.test.ts"
+    ],
+    "2713-5014": [
+      "src/components/ai/ChatInterface.tsx",
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/AskComposer.tsx",
+      "src/App.tsx"
+    ],
+    "2713-4885": [
+      "src/components/ai/ChatInterface.tsx"
+    ],
+    "2713-5016": [
+      "src/components/ai/ChatInterface.tsx",
+      "src/App.tsx"
+    ],
+    "2720-8566": [
+      "src/components/ai/ChatInterface.tsx"
+    ],
+    "2693-7921": [
+      "src/components/ai/ChatInterface.tsx"
+    ],
+    "2713-5028": [
+      "src/components/ai/ChatInterface.tsx"
+    ],
+    "2713-4888": [
+      "src/components/ai/ChatInterface.tsx"
+    ],
+    "2732-11375": [
+      "src/components/ai/ChatInterface.tsx"
+    ],
+    "2713-4899": [
+      "src/components/ai/ChatInterface.tsx"
+    ],
+    "3436-53580": [
+      "src/components/notifications/WelcomeModal.tsx"
+    ],
+    "2713-4425": [
+      "src/components/notifications/WelcomeModal.tsx",
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4581": [
+      "src/components/notifications/WelcomeModal.tsx",
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "4437-112320": [
+      "src/components/markets/BubbleMap.tsx",
+      "src/components/home-redesign/insightx/InsightXScreen.tsx"
+    ],
+    "5902-144187": [
+      "src/components/account/VaultTab.tsx",
+      "src/components/account/VaultInterestHistoryTable.tsx"
+    ],
+    "2768-14508": [
+      "src/components/account/VaultTab.tsx"
+    ],
+    "858-6157": [
+      "src/components/account/BadgesTab.tsx"
+    ],
+    "2713-4829": [
+      "src/components/home-redesign/HomeShellLayout.tsx",
+      "src/components/home-redesign/HomeBottomTicker.tsx"
+    ],
+    "2713-4800": [
+      "src/components/home-redesign/HomeShellLayout.tsx",
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/HomeSidebarRail.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "2719-4999": [
+      "src/components/home-redesign/HomeShellLayout.tsx",
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5812-112809": [
+      "src/components/home-redesign/HomeShellLayout.tsx",
+      "src/components/home-redesign/HomeSidebarRail.tsx"
+    ],
+    "5810-111233": [
+      "src/components/home-redesign/HomeShellLayout.tsx",
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5812-117161": [
+      "src/components/home-redesign/HomeShellLayout.tsx",
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "6782-25030": [
+      "src/components/home-redesign/HomeShellLayout.tsx"
+    ],
+    "6899-54798": [
+      "src/components/home-redesign/HomeShellLayout.tsx"
+    ],
+    "2760-12436": [
+      "src/components/home-redesign/HomeBottomTicker.tsx"
+    ],
+    "2760-12437": [
+      "src/components/home-redesign/HomeBottomTicker.tsx"
+    ],
+    "2760-12438": [
+      "src/components/home-redesign/HomeBottomTicker.tsx"
+    ],
+    "2713-4946": [
+      "src/components/home-redesign/HomeBottomTicker.tsx"
+    ],
+    "2713-4801": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "2713-4802": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "2720-8590": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "2713-4803": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "2713-4804": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "6250-93084": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/chatFolders.ts",
+      "src/components/home-redesign/CreateChatFolderModal.tsx",
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "2745-3552": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "2745-3577": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "2733-20819": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/AddMenu.tsx"
+    ],
+    "2734-21134": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/AddMenu.tsx"
+    ],
+    "2735-25298": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "2733-19908": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/ComposerSuggestions.tsx"
+    ],
+    "2720-8554": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "2736-26122": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "3346-32028": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "2939-9939": [
+      "src/components/home-redesign/AiHome.tsx",
+      "src/components/home-redesign/whales/whalesShared.tsx",
+      "src/components/home-redesign/whales/WhaleSelectorModal.tsx",
+      "src/components/home-redesign/RedesignHome.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "6419-46017": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "2720-7877": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "6415-45109": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "2713-5029": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "2720-7892": [
+      "src/components/home-redesign/AiHome.tsx"
+    ],
+    "7320-63495": [
+      "src/components/home-redesign/upgrade/SendTokensScreen.tsx"
+    ],
+    "2939-10760": [
+      "src/components/home-redesign/upgrade/TierCard.tsx",
+      "src/components/home-redesign/upgrade/shared.ts",
+      "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx",
+      "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
+      "src/pages/upgrade/UpgradePage.tsx"
+    ],
+    "7310-79494": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "6377-18092": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56611": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56609": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "7310-79500": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "6377-18098": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56656": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56626": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "7310-79513": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "6377-18111": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56630": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56632": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "6377-18114": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "6377-18115": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "7310-79519": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "6377-18116": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56674": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56635": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "7310-79520": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "6377-18118": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "3436-56638": [
+      "src/components/home-redesign/upgrade/TierCard.tsx"
+    ],
+    "6377-18216": [
+      "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
+    ],
+    "5926-13672": [
+      "src/components/home-redesign/portfolio/BadgePreviewModal.tsx",
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "5948-33187": [
+      "src/components/home-redesign/portfolio/BadgePreviewModal.tsx"
+    ],
+    "2987-16294": [
+      "src/components/home-redesign/portfolio/WalletCreateModal.tsx"
+    ],
+    "2752-4678": [
+      "src/components/home-redesign/portfolio/WalletCreateModal.tsx"
+    ],
+    "2753-4954": [
+      "src/components/home-redesign/portfolio/WalletCreateModal.tsx",
+      "src/components/home-redesign/portfolio/privacy.tsx"
+    ],
+    "2987-16322": [
+      "src/components/home-redesign/portfolio/WalletCreateModal.tsx"
+    ],
+    "2753-5228": [
+      "src/components/home-redesign/portfolio/WalletCreateModal.tsx"
+    ],
+    "2752-5814": [
+      "src/components/home-redesign/portfolio/ExportKeyModal.tsx"
+    ],
+    "2753-8176": [
+      "src/components/home-redesign/portfolio/ExportKeyModal.tsx"
+    ],
+    "6259-95454": [
+      "src/components/home-redesign/portfolio/SharePortfolioModal.tsx"
+    ],
+    "2764-13970": [
+      "src/components/home-redesign/portfolio/privacy.tsx",
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2737-28177": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2760-12240": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx",
+      "src/components/home-redesign/SiteFooter.tsx"
+    ],
+    "2769-14707": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2853-9846": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2853-9853": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2853-9860": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6962-80054": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2746-6646": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6962-80108": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2853-9675": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2770-16271": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "5889-14807": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6782-26156": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "5889-14818": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2769-15228": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2769-15229": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6962-75733": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6962-80042": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "1024-1279": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2769-15326": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2769-15320": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2769-15768": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "5902-145389": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "5902-145390": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "5902-145397": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "5902-147818": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2773-10240": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6317-18854": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2899-15860": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6899-54796": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6910-59407": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2769-14589": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2899-16010": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6899-54957": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2899-16034": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6910-57838": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2899-15874": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2899-15884": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "6962-80089": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "5889-14794": [
+      "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
+    ],
+    "2773-10396": [
+      "src/components/home-redesign/whales/whalesShared.tsx",
+      "src/components/home-redesign/whales/useWhaleLists.ts",
+      "src/components/home-redesign/whales/XAccountsPanel.tsx",
+      "src/components/home-redesign/whales/ActivityView.tsx"
+    ],
+    "5965-52763": [
+      "src/components/home-redesign/whales/whalesShared.tsx",
+      "src/components/home-redesign/whales/useWhaleLists.ts",
+      "src/components/home-redesign/whales/WhalesScreen.tsx",
+      "src/components/home-redesign/whales/XAccountsPanel.tsx",
+      "src/components/home-redesign/whales/ActivityView.tsx"
+    ],
+    "2857-11664": [
+      "src/components/home-redesign/whales/whalesShared.tsx",
+      "src/components/home-redesign/whales/WhalesScreen.tsx"
+    ],
+    "5965-54259": [
+      "src/components/home-redesign/whales/useWhaleLists.ts",
+      "src/components/home-redesign/whales/XAccountsPanel.tsx"
+    ],
+    "5965-54546": [
+      "src/components/home-redesign/whales/useWhaleLists.ts",
+      "src/components/home-redesign/whales/AddWalletSheet.tsx"
+    ],
+    "5965-53115": [
+      "src/components/home-redesign/whales/useWhaleLists.ts",
+      "src/components/home-redesign/whales/ImportWalletsModal.tsx"
+    ],
+    "6317-40206": [
+      "src/components/home-redesign/whales/WhalesScreen.tsx"
+    ],
+    "6317-40249": [
+      "src/components/home-redesign/whales/WhalesScreen.tsx"
+    ],
+    "6317-40244": [
+      "src/components/home-redesign/whales/WhalesScreen.tsx"
+    ],
+    "6317-40769": [
+      "src/components/home-redesign/whales/WhalesScreen.tsx"
+    ],
+    "6317-40808": [
+      "src/components/home-redesign/whales/WhalesScreen.tsx"
+    ],
+    "6317-40226": [
+      "src/components/home-redesign/whales/WhalesScreen.tsx"
+    ],
+    "6001-59387": [
+      "src/components/home-redesign/whales/WhalesScreen.tsx",
+      "src/components/home-redesign/whales/MarketTechnicalsCard.tsx"
+    ],
+    "6001-56538": [
+      "src/components/home-redesign/whales/WhalesScreen.tsx"
+    ],
+    "2889-10088": [
+      "src/components/home-redesign/whales/MarketTechnicalsCard.tsx"
+    ],
+    "6001-59403": [
+      "src/components/home-redesign/whales/MarketTechnicalsCard.tsx"
+    ],
+    "6001-59389": [
+      "src/components/home-redesign/whales/MarketTechnicalsCard.tsx"
+    ],
+    "6001-59415": [
+      "src/components/home-redesign/whales/MarketTechnicalsCard.tsx"
+    ],
+    "5965-53498": [
+      "src/components/home-redesign/whales/ActivityView.tsx"
+    ],
+    "5965-53763": [
+      "src/components/home-redesign/whales/ActivityView.tsx"
+    ],
+    "5965-52861": [
+      "src/components/home-redesign/whales/ActivityView.tsx"
+    ],
+    "2773-10397": [
+      "src/components/home-redesign/whales/ActivityView.tsx"
+    ],
+    "6001-59873": [
+      "src/components/home-redesign/whales/WhaleSelectorModal.tsx"
+    ],
+    "2713-4584": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4510": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4511": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4512": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "5786-48044": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4523": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "5786-48045": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "6405-20716": [
+      "src/components/home-redesign/HomeOnboarding.tsx",
+      "src/services/onboarding/onboardingService.ts"
+    ],
+    "6405-20852": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4540": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4550": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4559": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "6413-21006": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4669": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4671": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4681": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4718": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "2713-4726": [
+      "src/components/home-redesign/HomeOnboarding.tsx"
+    ],
+    "6419-47731": [
+      "src/components/home-redesign/HomeTopBar.tsx"
+    ],
+    "6419-47408": [
+      "src/components/home-redesign/HomeTopBar.tsx",
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "6846-39802": [
+      "src/components/home-redesign/HomeTopBar.tsx"
+    ],
+    "6415-45111": [
+      "src/components/home-redesign/HomeTopBar.tsx"
+    ],
+    "6415-45117": [
+      "src/components/home-redesign/HomeTopBar.tsx"
+    ],
+    "6846-39818": [
+      "src/components/home-redesign/HomeTopBar.tsx"
+    ],
+    "5787-74313": [
+      "src/components/home-redesign/conversation/useMessageCosts.ts",
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "2726-10653": [
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/conversation/AssistantBody.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "2733-18374": [
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/conversation/AssistantBody.tsx"
+    ],
+    "2733-18700": [
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/conversation/GameCardsBlock.tsx"
+    ],
+    "2733-19382": [
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "2733-20178": [
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "2733-19312": [
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "2883-9692": [
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/conversation/AssistantBody.tsx"
+    ],
+    "2733-20418": [
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "2733-20420": [
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "2733-18376": [
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "2885-9932": [
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "2733-18377": [
+      "src/components/home-redesign/conversation/ConversationView.tsx"
+    ],
+    "6244-64788": [
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/conversation/strategy/index.ts",
+      "src/components/home-redesign/conversation/strategy/ReplicateStrategyModal.tsx"
+    ],
+    "321-324": [
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "6244-15349": [
+      "src/components/home-redesign/conversation/ConversationView.tsx",
+      "src/components/home-redesign/conversation/chart/SignalChartCard.tsx",
+      "src/components/home-redesign/conversation/chart/useSignalChart.ts",
+      "src/components/home-redesign/conversation/backtest/BacktestResponseCard.tsx",
+      "src/components/home-redesign/conversation/backtest/index.ts",
+      "src/components/home-redesign/conversation/backtest/BacktestProse.tsx",
+      "src/components/home-redesign/conversation/backtest/backtestMessage.tsx",
+      "src/components/home-redesign/conversation/backtest/NetProfitAreaChart.tsx"
+    ],
+    "2733-19015": [
+      "src/components/home-redesign/conversation/GameCardsBlock.tsx"
+    ],
+    "2733-18651": [
+      "src/components/home-redesign/conversation/AssistantBody.tsx"
+    ],
+    "6244-77402": [
+      "src/components/home-redesign/conversation/AssistantBody.tsx",
+      "src/components/home-redesign/conversation/strategy/index.ts",
+      "src/components/home-redesign/conversation/strategy/ReplicateStrategyModal.tsx"
+    ],
+    "6244-76796": [
+      "src/components/home-redesign/conversation/strategy/index.ts",
+      "src/components/home-redesign/conversation/strategy/ReplicateStrategyModal.tsx"
+    ],
+    "6244-77429": [
+      "src/components/home-redesign/conversation/strategy/ReplicateStrategyModal.tsx"
+    ],
+    "6244-15246": [
+      "src/components/home-redesign/conversation/backtest/BacktestResponseCard.tsx",
+      "src/components/home-redesign/conversation/backtest/index.ts",
+      "src/components/home-redesign/conversation/backtest/BacktestProse.tsx",
+      "src/components/home-redesign/conversation/backtest/backtestMessage.tsx"
+    ],
+    "6244-64481": [
+      "src/components/home-redesign/conversation/backtest/BacktestResponseCard.tsx",
+      "src/components/home-redesign/conversation/backtest/backtestMessage.tsx"
+    ],
+    "6244-15350": [
+      "src/components/home-redesign/conversation/backtest/backtestTypes.ts",
+      "src/components/home-redesign/conversation/backtest/WIRING.md"
+    ],
+    "6244-90352": [
+      "src/components/home-redesign/conversation/backtest/index.ts",
+      "src/components/home-redesign/conversation/backtest/SearchStrategiesModal.tsx",
+      "src/components/home-redesign/conversation/backtest/backtestMessage.tsx"
+    ],
+    "6244-92641": [
+      "src/components/home-redesign/conversation/backtest/index.ts",
+      "src/components/home-redesign/conversation/backtest/backtestMessage.tsx"
+    ],
+    "2737-27044": [
+      "src/components/home-redesign/conversation/backtest/SearchStrategiesModal.tsx",
+      "src/components/home-redesign/ChatHistoryModal.tsx"
+    ],
+    "6244-46594": [
+      "src/components/home-redesign/conversation/backtest/NetProfitAreaChart.tsx"
+    ],
+    "6250-93706": [
+      "src/components/home-redesign/chatFolders.ts",
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "6250-93916": [
+      "src/components/home-redesign/chatFolders.ts",
+      "src/components/home-redesign/CreateChatFolderModal.tsx",
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "6250-94739": [
+      "src/components/home-redesign/chatFolders.ts",
+      "src/components/home-redesign/CreateChatFolderModal.tsx",
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "6383-20999": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx"
+    ],
+    "6383-21006": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx"
+    ],
+    "6385-21358": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+      "src/services/onboarding/questionnaireService.ts"
+    ],
+    "6385-21390": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+      "src/services/onboarding/questionnaireService.ts"
+    ],
+    "6388-21725": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+      "src/services/onboarding/questionnaireService.ts"
+    ],
+    "6388-21892": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+      "src/services/onboarding/questionnaireService.ts"
+    ],
+    "2713-4362": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+      "src/services/onboarding/questionnaireService.ts"
+    ],
+    "2713-4179": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+      "src/components/home-redesign/SignedOutWelcome.tsx",
+      "src/services/onboarding/questionnaireService.ts"
+    ],
+    "6330-55267": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx"
+    ],
+    "2713-4183": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
+      "src/components/home-redesign/SignedOutWelcome.tsx"
+    ],
+    "2713-4052": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx"
+    ],
+    "5780-45728": [
+      "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx"
+    ],
+    "5777-28765": [
+      "src/components/home-redesign/SignedOutWelcome.tsx"
+    ],
+    "8493-30183": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "4405-82330": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "4419-86274": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "8493-30187": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "8493-30186": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "8493-30363": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "8493-30192": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "8493-34859": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "8493-33199": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "8493-35986": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx"
+    ],
+    "8493-30227": [
+      "src/components/home-redesign/screens/ScreenerScreen.tsx",
+      "src/components/home-redesign/markets/MarketCard.tsx"
+    ],
+    "5854-51123": [
+      "src/components/home-redesign/market-intel/ManageIntelPanel.tsx",
+      "src/components/home-redesign/market-intel/MarketIntelScreen.tsx"
+    ],
+    "5854-62644": [
+      "src/components/home-redesign/market-intel/ManageIntelPanel.tsx"
+    ],
+    "5854-86633": [
+      "src/components/home-redesign/market-intel/intelMappers.ts",
+      "src/components/home-redesign/feed/AiSignalsCards.tsx"
+    ],
+    "5812-123481": [
+      "src/components/home-redesign/market-intel/intelMappers.ts",
+      "src/components/home-redesign/market-intel/MarketIntelScreen.tsx"
+    ],
+    "2836-18364": [
+      "src/components/home-redesign/market-intel/intelMappers.ts",
+      "src/components/home-redesign/feed/AiSignalsCards.tsx"
+    ],
+    "6706-24262": [
+      "src/components/home-redesign/market-intel/MarketIntelScreen.tsx"
+    ],
+    "4437-115199": [
+      "src/components/home-redesign/insightx/InsightXScreen.tsx"
+    ],
+    "4437-116944": [
+      "src/components/home-redesign/insightx/InsightXScreen.tsx"
+    ],
+    "4446-118388": [
+      "src/components/home-redesign/insightx/InsightXScreen.tsx"
+    ],
+    "6750-43337": [
+      "src/components/home-redesign/ChatHistoryModal.tsx"
+    ],
+    "2736-26094": [
+      "src/components/home-redesign/AddMenu.tsx"
+    ],
+    "2733-21079": [
+      "src/components/home-redesign/AddMenu.tsx"
+    ],
+    "4423-91823": [
+      "src/components/home-redesign/markets/MarketCard.tsx"
+    ],
+    "8493-30411": [
+      "src/components/home-redesign/markets/MarketCard.tsx"
+    ],
+    "976-1137": [
+      "src/components/home-redesign/markets/MarketCard.tsx"
+    ],
+    "1083-406": [
+      "src/components/home-redesign/markets/MarketCard.tsx"
+    ],
+    "5854-85503": [
+      "src/components/home-redesign/feed/AiSignalsCards.tsx",
+      "src/components/home-redesign/feed/CopyTradingCard.tsx",
+      "src/components/home-redesign/feed/AiFeed.tsx"
+    ],
+    "2725-6765": [
+      "src/components/home-redesign/feed/AiSignalsCards.tsx",
+      "src/components/home-redesign/feed/CopyTradingCard.tsx",
+      "src/components/home-redesign/feed/AiFeed.tsx"
+    ],
+    "5854-80845": [
+      "src/components/home-redesign/feed/AiSignalsCards.tsx",
+      "src/components/home-redesign/feed/CopyTradingCard.tsx"
+    ],
+    "2836-17050": [
+      "src/components/home-redesign/feed/CopyTradingCard.tsx"
+    ],
+    "6704-26913": [
+      "src/components/home-redesign/feed/CopyTradingCard.tsx"
+    ],
+    "6704-26240": [
+      "src/components/home-redesign/feed/AiFeed.tsx"
+    ],
+    "6704-26930": [
+      "src/components/home-redesign/feed/AiFeed.tsx"
+    ],
+    "5863-89110": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5810-111638": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5810-111037": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "6250-92865": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "6250-94544": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "2719-4952": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "6001-56786": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "2720-8186": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5863-89115": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5812-117366": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5810-111039": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5812-112819": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "5812-112829": [
+      "src/components/home-redesign/HomeSidebarExpanded.tsx"
+    ],
+    "2732-11413": [
+      "src/components/home-redesign/AskComposer.tsx"
+    ],
+    "8911-163462": [
+      "src/pages/predict/PredictRewards.tsx"
+    ],
+    "3558-39692": [
+      "src/pages/predict/PredictRewards.tsx"
+    ],
+    "3650-63719": [
+      "src/pages/predict/PredictRewards.tsx"
+    ],
+    "8583-127820": [
+      "src/pages/predict/PredictPage.tsx",
+      "src/lib/predict/categorize.ts"
+    ],
+    "8575-81655": [
+      "src/pages/predict/PredictPage.tsx",
+      "src/lib/predict/sortModes.ts"
+    ],
+    "3553-5509": [
+      "src/pages/predict/PredictPage.tsx",
+      "src/lib/predict/categorize.ts"
+    ],
+    "7816-51575": [
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "7816-51592": [
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "7816-51610": [
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "7816-51566": [
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "7816-51567": [
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "7816-51634": [
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "7816-51635": [
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "7816-51643": [
+      "src/pages/trade/TradeUnified.tsx"
+    ],
+    "9223-83974": [
+      "src/pages/trade/Trench.tsx"
+    ],
+    "4446-118984": [
+      "src/pages/trade/TokenTradeDetail.tsx"
+    ],
+    "8493-130768": [
+      "src/pages/trade/TokenTradeDetail.tsx"
+    ],
+    "8493-130813": [
+      "src/pages/trade/TokenTradeDetail.tsx"
+    ],
+    "8493-132995": [
+      "src/pages/trade/TokenTradeDetail.tsx"
+    ],
+    "8493-132273": [
+      "src/pages/trade/TokenTradeDetail.tsx"
+    ],
+    "8493-132412": [
+      "src/pages/trade/TokenTradeDetail.tsx"
+    ],
+    "800-522": [
+      "src/pages/sports/components/ResponsibleGaming.tsx",
+      "src/pages/sports/components/AIInsightsPanel.tsx",
+      "src/pages/sports/Sports.tsx"
+    ],
+    "219-225": [
+      "src/constants/tierPricing.ts"
+    ],
+    "6381-20578": [
+      "src/services/onboarding/questionnaireService.ts"
+    ],
+    "6381-20617": [
+      "src/services/onboarding/questionnaireService.ts"
+    ],
+    "200-400": [
+      "src/services/sports/sportsChainService.ts"
+    ],
+    "638-658": [
+      "src/services/ai/chatService.ts"
+    ],
+    "2713-4119": [
+      "src/App.tsx"
+    ],
+    "923-453": [
+      "modules/skai-gaming/src/components/play/games/slots/CosmicSlots/scenes/TitleScreen.ts"
+    ],
+    "4851-78844": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx",
+      "modules/skai-gaming/src/components/play/sportsbook/QuickBet.tsx"
+    ],
+    "4865-79010": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx",
+      "modules/skai-gaming/src/components/play/sportsbook/QuickBet.tsx"
+    ],
+    "4891-82254": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4891-82125": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4892-82479": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4892-82838": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4896-83198": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4892-82761": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/QuickBet.tsx"
+    ],
+    "4896-86320": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/QuickBet.tsx"
+    ],
+    "4725-55110": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetPanel.tsx"
+    ],
+    "4725-54861": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetPanel.tsx"
+    ],
+    "4725-55198": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetPanel.tsx"
+    ],
+    "4911-89072": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetNotification.tsx"
+    ],
+    "4911-89092": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetNotification.tsx"
+    ],
+    "4911-89112": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetNotification.tsx"
+    ],
+    "4896-86341": [
+      "modules/skai-gaming/src/components/play/sportsbook/types.ts",
+      "modules/skai-gaming/src/components/play/sportsbook/BetNotification.tsx"
+    ],
+    "4891-82113": [
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4891-81699": [
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4891-82083": [
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4891-81814": [
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "4891-82023": [
+      "modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx"
+    ],
+    "9185-15873": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15853": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "4595-48921": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15876": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15885": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15860": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15861": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15855": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15875": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15863": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15884": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9185-15888": [
+      "modules/skai-gaming/src/components/play/ui/PlayStateCard.tsx"
+    ],
+    "9099-131647": [
+      "modules/skai-gaming/src/components/play/ui/PlayDropdown.tsx"
+    ],
+    "9099-146602": [
+      "modules/skai-gaming/src/components/play/ui/PlayDropdown.tsx"
+    ],
+    "9099-131652": [
+      "modules/skai-gaming/src/components/play/ui/PlayDropdown.tsx"
+    ],
+    "4601-56478": [
+      "modules/skai-gaming/src/components/play/ui/PlayPromoStrip.tsx"
+    ],
+    "4595-49338": [
+      "modules/skai-gaming/src/components/play/ui/PlayPromoStrip.tsx"
+    ],
+    "4601-56477": [
+      "modules/skai-gaming/src/components/play/ui/PlayPromoStrip.tsx"
+    ],
+    "8977-141185": [
+      "modules/skai-gaming/src/components/play/ui/PlayNewsTicker.tsx"
+    ],
+    "8987-141590": [
+      "modules/skai-gaming/src/components/play/ui/PlayNewsTicker.tsx"
+    ],
+    "9099-146637": [
+      "modules/skai-gaming/src/components/play/ui/PlayAboutFaq.tsx",
+      "modules/skai-gaming/src/components/play/ui/PlaySportsRail.tsx",
+      "modules/skai-gaming/src/components/play/ui/PlayLogoSlots.tsx"
+    ],
+    "4599-53456": [
+      "modules/skai-gaming/src/components/play/ui/PlayBetsTable.tsx"
+    ],
+    "4758-62172": [
+      "modules/skai-gaming/src/components/play/ui/PlayBetsTable.tsx"
+    ],
+    "4711-28434": [
+      "modules/skai-gaming/src/components/play/ui/PlayFilterBar.tsx"
+    ],
+    "4601-60611": [
+      "modules/skai-gaming/src/components/play/ui/PlayGameCard.tsx"
+    ],
+    "274-388": [
+      "modules/skai-gaming/src/components/play/ui/PlayGameCard.tsx"
+    ],
+    "4595-50253": [
+      "modules/skai-gaming/src/components/play/ui/PlayHero.tsx"
+    ],
+    "9170-113382": [
+      "modules/skai-gaming/src/components/play/ui/PlayTooltip.tsx"
+    ],
+    "9170-113296": [
+      "modules/skai-gaming/src/components/play/ui/PlayTooltip.tsx"
+    ],
+    "1243-947": [
+      "modules/skai-gaming/src/components/play/ui/PlayTooltip.tsx"
+    ],
+    "4714-29697": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "9112-13728": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "4714-29705": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "4714-31611": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "4714-29698": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "9112-13729": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "4714-29699": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "9112-13745": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "4714-29704": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "9113-76034": [
+      "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+    ],
+    "800-1200": [
+      "modules/skai-gaming/src/components/play/shared/useGameAudio.ts"
+    ],
+    "4723-52636": [
+      "modules/skai-gaming/src/components/play/game-detail/GameDetailHeader.tsx",
+      "modules/skai-gaming/src/components/play/game-detail/index.ts"
+    ],
+    "4758-59299": [
+      "modules/skai-gaming/src/components/play/game-detail/GameDetailHeader.tsx",
+      "modules/skai-gaming/src/components/play/game-detail/index.ts"
+    ],
+    "4758-60305": [
+      "modules/skai-gaming/src/components/play/game-detail/GameStatsPanel.tsx",
+      "modules/skai-gaming/src/components/play/game-detail/index.ts"
+    ],
+    "4758-62997": [
+      "modules/skai-gaming/src/components/play/game-detail/CloseGameDialog.tsx",
+      "modules/skai-gaming/src/components/play/game-detail/index.ts"
+    ],
+    "4792-10647": [
+      "modules/skai-gaming/src/components/play/game-detail/index.ts",
+      "modules/skai-gaming/src/components/play/game-detail/GameInfoPanel.tsx"
+    ],
+    "4758-62540": [
+      "modules/skai-gaming/src/components/play/game-detail/index.ts",
+      "modules/skai-gaming/src/components/play/game-detail/GameLiveChat.tsx"
+    ],
+    "9132-93239": [
+      "modules/skai-gaming/src/components/play/game-detail/index.ts",
+      "modules/skai-gaming/src/components/play/game-detail/GameLiveChat.tsx"
+    ],
+    "102-957839": [
+      "modules/skai-gaming/src/pages/play/legal/TermsAndConditions.tsx",
+      "modules/skai-gaming/src/pages/play/legal/AmlPolicy.tsx",
+      "modules/skai-gaming/src/pages/play/legal/GamingLicense.tsx"
+    ],
+    "9901-10000": [
+      "modules/skai-gaming/src/services/gaming/crashCoinflipService.ts"
+    ],
+    "5000-10000": [
+      "modules/skai-gaming/src/services/gaming/crashCoinflipService.ts"
+    ],
+    "1999-2005": [
+      "modules/skai-gaming/src/services/gaming/gamingKeeperService.ts"
+    ],
+    "308-538": [
+      "modules/skai-gaming/src/services/gaming/gameSettlementService.ts"
+    ],
+    "3124-2302": [
+      "modules/skai-wallet/src/__tests__/components/OnRampModal.test.tsx",
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeProviderCard.tsx",
+      "modules/skai-wallet/src/components/OnRampModal.tsx"
+    ],
+    "3124-2653": [
+      "modules/skai-wallet/src/__tests__/components/OnRampModal.test.tsx"
+    ],
+    "2999-19674": [
+      "modules/skai-wallet/src/__tests__/components/UnlockForm.test.tsx",
+      "modules/skai-wallet/src/__tests__/pages/WalletUnlock.test.tsx",
+      "modules/skai-wallet/src/components/wallet/auth/UnlockForm.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletUnlock.tsx"
+    ],
+    "3012-15180": [
+      "modules/skai-wallet/src/__tests__/components/UnlockForm.test.tsx",
+      "modules/skai-wallet/src/__tests__/pages/WalletUnlock.test.tsx",
+      "modules/skai-wallet/src/components/wallet/send/SendDetails.tsx",
+      "modules/skai-wallet/src/components/wallet/auth/UnlockForm.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletUnlock.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletSend.tsx"
+    ],
+    "3145-2711": [
+      "modules/skai-wallet/src/__tests__/components/SwapModal.test.tsx",
+      "modules/skai-wallet/src/components/wallet/buy/BuyConfirmation.tsx",
+      "modules/skai-wallet/src/components/SwapModal.tsx"
+    ],
+    "3164-22351": [
+      "modules/skai-wallet/src/__tests__/services/userNotifications.test.ts",
+      "modules/skai-wallet/src/services/userNotifications.ts"
+    ],
+    "995-494234": [
+      "modules/skai-wallet/src/__tests__/services/evmWalletImport.test.ts"
+    ],
+    "7479-137772": [
+      "modules/skai-wallet/src/__tests__/shell/AddWalletDrawer.test.tsx",
+      "modules/skai-wallet/src/services/multiChainWallet.ts",
+      "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx"
+    ],
+    "7492-150434": [
+      "modules/skai-wallet/src/__tests__/shell/QuickActionsBar.test.tsx",
+      "modules/skai-wallet/src/components/wallet/dashboard/QuickActionsBar.tsx"
+    ],
+    "3154-4635": [
+      "modules/skai-wallet/src/components/RequestPayment.tsx",
+      "modules/skai-wallet/src/components/wallet/utilities/ShareWalletCard.tsx"
+    ],
+    "3154-3850": [
+      "modules/skai-wallet/src/components/SpendingChart.tsx",
+      "modules/skai-wallet/src/components/wallet/utilities/TokenApprovals.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
+    ],
+    "3089-21251": [
+      "modules/skai-wallet/src/components/wallet/receive/ReceiveTokenSelect.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletReceive.tsx"
+    ],
+    "3089-18177": [
+      "modules/skai-wallet/src/components/wallet/receive/ReceiveAmount.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletReceive.tsx"
+    ],
+    "3089-18101": [
+      "modules/skai-wallet/src/components/wallet/receive/ReceiveQRCode.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletReceive.tsx"
+    ],
+    "3158-7576": [
+      "modules/skai-wallet/src/components/wallet/common/AddContactDialog.tsx"
+    ],
+    "3161-4184": [
+      "modules/skai-wallet/src/components/wallet/common/ConfirmationDialog.tsx"
+    ],
+    "3089-19811": [
+      "modules/skai-wallet/src/components/wallet/common/FeeBreakdown.tsx",
+      "modules/skai-wallet/src/components/NftDisplay.tsx"
+    ],
+    "3158-6856": [
+      "modules/skai-wallet/src/components/wallet/common/AddressBookDialog.tsx"
+    ],
+    "3161-3923": [
+      "modules/skai-wallet/src/components/wallet/common/GasSelectorDialog.tsx",
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx"
+    ],
+    "2998-19599": [
+      "modules/skai-wallet/src/components/wallet/welcome/WelcomeHero.tsx",
+      "modules/skai-wallet/src/components/SKAIAuth.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx"
+    ],
+    "3012-15897": [
+      "modules/skai-wallet/src/components/wallet/welcome/WelcomeBackground.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletShellWelcome.tsx"
+    ],
+    "3026-15920": [
+      "modules/skai-wallet/src/components/wallet/welcome/WelcomeBackground.tsx"
+    ],
+    "3026-16469": [
+      "modules/skai-wallet/src/components/wallet/send/SendTokenSelect.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletSend.tsx"
+    ],
+    "3026-16493": [
+      "modules/skai-wallet/src/components/wallet/send/SendTokenSelect.tsx",
+      "modules/skai-wallet/src/components/wallet/dashboard/TokenListTable.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletSend.tsx"
+    ],
+    "3023-11938": [
+      "modules/skai-wallet/src/components/wallet/send/SendDetails.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletSend.tsx"
+    ],
+    "3158-9906": [
+      "modules/skai-wallet/src/components/wallet/settings/NetworkSelector.tsx"
+    ],
+    "3158-11566": [
+      "modules/skai-wallet/src/components/wallet/settings/LanguageCurrencyPanel.tsx"
+    ],
+    "3166-24676": [
+      "modules/skai-wallet/src/components/wallet/settings/WalletLockSection.tsx",
+      "modules/skai-wallet/src/components/wallet/dapp/DAppCard.tsx",
+      "modules/skai-wallet/src/components/wallet/dapp/DAppBrowser.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx"
+    ],
+    "3158-11542": [
+      "modules/skai-wallet/src/components/wallet/settings/SettingsPanel.tsx"
+    ],
+    "3158-5416": [
+      "modules/skai-wallet/src/components/wallet/settings/NotificationsPanel.tsx"
+    ],
+    "3158-6136": [
+      "modules/skai-wallet/src/components/wallet/settings/SecurityPanel.tsx"
+    ],
+    "3154-3666": [
+      "modules/skai-wallet/src/components/wallet/history/TransactionDetail.tsx"
+    ],
+    "3153-20193": [
+      "modules/skai-wallet/src/components/wallet/history/ActivityFeed.tsx"
+    ],
+    "7473-130910": [
+      "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
+      "modules/skai-wallet/src/components/SKAIAuth.tsx"
+    ],
+    "7473-131013": [
+      "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
+      "modules/skai-wallet/src/components/SKAIAuth.tsx"
+    ],
+    "7473-133033": [
+      "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
+      "modules/skai-wallet/src/components/SKAIAuth.tsx"
+    ],
+    "3167-25382": [
+      "modules/skai-wallet/src/components/wallet/staking/StakingOverview.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx"
+    ],
+    "3167-25811": [
+      "modules/skai-wallet/src/components/wallet/staking/StakingDetail.tsx"
+    ],
+    "3154-5798": [
+      "modules/skai-wallet/src/components/wallet/utilities/RequestPayment.tsx"
+    ],
+    "3154-5092": [
+      "modules/skai-wallet/src/components/wallet/utilities/BatchTransactions.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
+    ],
+    "3154-5542": [
+      "modules/skai-wallet/src/components/wallet/utilities/BatchTransactions.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
+    ],
+    "3153-21838": [
+      "modules/skai-wallet/src/components/wallet/utilities/ExportData.tsx"
+    ],
+    "3158-4524": [
+      "modules/skai-wallet/src/components/wallet/utilities/BackupWallet.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
+    ],
+    "3082-13100": [
+      "modules/skai-wallet/src/components/wallet/buy/BuyForm.tsx",
+      "modules/skai-wallet/src/shell/panels/PortfolioPreviewPanel.tsx"
+    ],
+    "3118-25969": [
+      "modules/skai-wallet/src/components/wallet/buy/BuyForm.tsx"
+    ],
+    "3118-25311": [
+      "modules/skai-wallet/src/components/wallet/buy/BuyConfirmation.tsx"
+    ],
+    "3080-811": [
+      "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx"
+    ],
+    "3123-2073": [
+      "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx"
+    ],
+    "3149-18278": [
+      "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx"
+    ],
+    "3149-17882": [
+      "modules/skai-wallet/src/components/wallet/swap/SwapConfirmation.tsx",
+      "modules/skai-wallet/src/components/wallet/swap/SwapReview.tsx"
+    ],
+    "3149-3062": [
+      "modules/skai-wallet/src/components/wallet/swap/SwapTokenSelect.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx"
+    ],
+    "3153-19677": [
+      "modules/skai-wallet/src/components/wallet/tokens/TokenPriceChart.tsx"
+    ],
+    "3118-23758": [
+      "modules/skai-wallet/src/components/wallet/tokens/TokenPriceChart.tsx"
+    ],
+    "3089-18289": [
+      "modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx"
+    ],
+    "3118-23732": [
+      "modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx"
+    ],
+    "3118-24732": [
+      "modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx"
+    ],
+    "3154-3729": [
+      "modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx"
+    ],
+    "3165-23175": [
+      "modules/skai-wallet/src/components/wallet/connections/TransactionSigningModal.tsx"
+    ],
+    "3163-21620": [
+      "modules/skai-wallet/src/components/wallet/connections/PermissionRequest.tsx"
+    ],
+    "3163-21313": [
+      "modules/skai-wallet/src/components/wallet/connections/ConnectedDApps.tsx"
+    ],
+    "3161-18913": [
+      "modules/skai-wallet/src/components/wallet/connections/SendFlow.tsx"
+    ],
+    "3163-21998": [
+      "modules/skai-wallet/src/components/wallet/connections/WalletConnectSessions.tsx",
+      "modules/skai-wallet/src/services/userNotifications.ts",
+      "modules/skai-wallet/src/shell/TopHeader.tsx",
+      "modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx"
+    ],
+    "155-8453": [
+      "modules/skai-wallet/src/components/wallet/connections/WalletConnectSessions.tsx"
+    ],
+    "3118-22162": [
+      "modules/skai-wallet/src/components/wallet/connections/WalletOverview.tsx"
+    ],
+    "3153-19232": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeSuccess.tsx",
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeProcessing.tsx"
+    ],
+    "3086-17437": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeHistory.tsx"
+    ],
+    "8045-114061": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx"
+    ],
+    "8045-114218": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx"
+    ],
+    "3149-18174": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx",
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeSettings.tsx"
+    ],
+    "3161-4082": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx"
+    ],
+    "3161-4097": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx"
+    ],
+    "3149-2903": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeForm.tsx",
+      "modules/skai-wallet/src/components/SendModal.tsx"
+    ],
+    "3083-1328": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeReview.tsx",
+      "modules/skai-wallet/src/pages/wallet/WalletTokenDetailRoute.tsx"
+    ],
+    "3086-17928": [
+      "modules/skai-wallet/src/components/wallet/bridge/BridgeReview.tsx"
+    ],
+    "3154-3246": [
+      "modules/skai-wallet/src/components/wallet/insights/SpendingAnalytics.tsx",
+      "modules/skai-wallet/src/components/wallet/insights/TokenAllocation.tsx"
+    ],
+    "3149-3184": [
+      "modules/skai-wallet/src/components/wallet/insights/TokenAllocation.tsx"
+    ],
+    "3158-8296": [
+      "modules/skai-wallet/src/components/wallet/insights/PortfolioPerformance.tsx"
+    ],
+    "3082-13515": [
+      "modules/skai-wallet/src/components/wallet/dashboard/QuickActionsPanel.tsx",
+      "modules/skai-wallet/src/components/wallet/dashboard/PortfolioSkinPanel.tsx",
+      "modules/skai-wallet/src/components/wallet/dashboard/DashboardNotifications.tsx"
+    ],
+    "3083-905": [
+      "modules/skai-wallet/src/components/wallet/dashboard/QuickActionsPanel.tsx",
+      "modules/skai-wallet/src/components/wallet/dashboard/PortfolioSkinPanel.tsx"
+    ],
+    "7492-150438": [
+      "modules/skai-wallet/src/components/wallet/dashboard/walletIcons.tsx"
+    ],
+    "3050-17524": [
+      "modules/skai-wallet/src/components/wallet/dashboard/walletIcons.tsx"
+    ],
+    "3050-17537": [
+      "modules/skai-wallet/src/components/wallet/dashboard/walletIcons.tsx"
+    ],
+    "7479-137527": [
+      "modules/skai-wallet/src/components/wallet/dashboard/walletIcons.tsx"
+    ],
+    "7492-150460": [
+      "modules/skai-wallet/src/components/wallet/dashboard/walletIcons.tsx"
+    ],
+    "7492-150466": [
+      "modules/skai-wallet/src/components/wallet/dashboard/walletIcons.tsx"
+    ],
+    "3118-21935": [
+      "modules/skai-wallet/src/components/wallet/dashboard/ActivityTable.tsx"
+    ],
+    "3118-23642": [
+      "modules/skai-wallet/src/components/wallet/dashboard/WalletAccountsPanel.tsx"
+    ],
+    "3123-3590": [
+      "modules/skai-wallet/src/components/wallet/dashboard/WalletAccountsPanel.tsx"
+    ],
+    "3026-16856": [
+      "modules/skai-wallet/src/components/wallet/dashboard/NetWorthCard.tsx"
+    ],
+    "7482-141338": [
+      "modules/skai-wallet/src/components/wallet/dashboard/NetWorthCard.tsx"
+    ],
+    "3164-22754": [
+      "modules/skai-wallet/src/components/wallet/dapp/DAppConnectionPanel.tsx",
+      "modules/skai-wallet/src/components/wallet/nft/NftGallery.tsx",
+      "modules/skai-wallet/src/shell/TopHeader.tsx",
+      "modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx"
+    ],
+    "3116-21416": [
+      "modules/skai-wallet/src/components/wallet/nft/NftDetail.tsx",
+      "modules/skai-wallet/src/components/wallet/nft/NftSendPanel.tsx",
+      "modules/skai-wallet/src/components/NftDisplay.tsx"
+    ],
+    "3163-21310": [
+      "modules/skai-wallet/src/components/wallet/nft/NftDetail.tsx"
+    ],
+    "3163-21315": [
+      "modules/skai-wallet/src/components/wallet/nft/NftCollectionView.tsx"
+    ],
+    "7935-67765": [
+      "modules/skai-wallet/src/components/SendModal.tsx"
+    ],
+    "3124-2628": [
+      "modules/skai-wallet/src/components/OnRampModal.tsx"
+    ],
+    "7523-152924": [
+      "modules/skai-wallet/src/components/NftDisplay.tsx"
+    ],
+    "7528-153278": [
+      "modules/skai-wallet/src/components/NftDisplay.tsx"
+    ],
+    "7491-148345": [
+      "modules/skai-wallet/src/components/ShareCard.tsx"
+    ],
+    "7709-10525": [
+      "modules/skai-wallet/src/components/ShareCard.tsx"
+    ],
+    "1024-1439": [
+      "modules/skai-wallet/src/components/ShareCard.tsx"
+    ],
+    "3023-15434": [
+      "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx"
+    ],
+    "3879-38331": [
+      "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx"
+    ],
+    "3023-15416": [
+      "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx"
+    ],
+    "3120-27415": [
+      "modules/skai-wallet/src/pages/wallet/WalletReceive.tsx"
+    ],
+    "3118-25371": [
+      "modules/skai-wallet/src/shell/panels/TxDetailPanel.tsx"
+    ],
+    "7477-133370": [
+      "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx",
+      "modules/skai-wallet/src/shell/panels/WalletAccountsPanel.tsx"
+    ],
+    "7479-135732": [
+      "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx"
+    ],
+    "7479-135805": [
+      "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx"
+    ],
+    "7479-136955": [
+      "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx"
+    ],
+    "7713-15130": [
+      "modules/skai-wallet/src/shell/panels/WalletAccountsPanel.tsx"
+    ],
+    "7713-15147": [
+      "modules/skai-wallet/src/shell/panels/WalletAccountsPanel.tsx"
+    ],
+    "7713-15150": [
+      "modules/skai-wallet/src/shell/panels/WalletAccountsPanel.tsx"
+    ],
+    "3080-1066": [
+      "modules/skai-wallet/src/shell/panels/WalletAccountsPanel.tsx"
+    ],
+    "7713-15174": [
+      "modules/skai-wallet/src/shell/panels/WalletAccountsPanel.tsx"
+    ],
+    "7479-137328": [
+      "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx"
+    ],
+    "7482-141800": [
+      "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx"
+    ],
+    "3164-22302": [
+      "modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx"
+    ],
+    "3164-22456": [
+      "modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx"
+    ],
+    "3164-22329": [
+      "modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx"
+    ]
+  }
+}

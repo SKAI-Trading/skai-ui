@@ -1,0 +1,62 @@
+Spot	11f	cited=7	proposed=likely-done	dirs=src/components/trade/native-chart | src/components/trade/PortfolioTabs.tsx | src/components/trade/TradingChart.tsx
+Perpetual futures	4f	cited=3	proposed=likely-done	dirs=src/components/trade/perp-v2 | src/pages/trade/PerpTrading.tsx
+Perpetual futures > Market > Search pairs	1f	cited=3	proposed=likely-done	dirs=src/components/trade/MarketSelector.tsx | src/components/trade/MarketSearchModal.tsx | src/components/trade/MarketHeader.tsx
+Margin	3f	cited=2	proposed=partial	dirs=src/components/trade/TokenSelector.tsx | src/pages/trade/TradeUnified.tsx
+Launch > Sample token > Dashboard	2f	cited=2	proposed=partial	dirs=src/components/markets/BubbleMap.tsx | src/components/home-redesign/insightx
+Launch > new token	1f	cited=1	proposed=partial	dirs=src/pages/trade/TokenTradeDetail.tsx
+Launch > Display settings	1f	cited=1	proposed=partial	dirs=src/components/home-redesign/screens
+Launch > create token	2f	cited=1	proposed=partial	dirs=src/components/home-redesign/insightx
+Launch	4f	cited=1	proposed=partial	dirs=src/components/home-redesign/screens
+Launch > create token > buy test	1f	cited=1	proposed=partial	dirs=src/components/home-redesign/insightx
+Spot > Limit	1f	cited=0	proposed=not-started	dirs=-
+Spot > Info	1f	cited=0	proposed=not-started	dirs=-
+Spot > Limit > Search pairs ALT	1f	cited=0	proposed=not-started	dirs=-
+Spot > Limit > Search pairs	1f	cited=0	proposed=not-started	dirs=-
+Spot > Layout adjustment	2f	cited=0	proposed=not-started	dirs=-
+Spot > Limit > Search pairs > Trench	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Trade history > share PnL	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Order history	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > cross/isolated	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Funding history	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Order confirmation	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Trade history	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Assets	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Positions	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Positions > Edit running SL/TP	1f	cited=0	proposed=not-started	dirs=-
+Perpetual futures > Orders	1f	cited=0	proposed=not-started	dirs=-
+Spot > Chart settings	1f	cited=0	proposed=not-started	dirs=-
+Dashboard > News	1f	cited=0	proposed=not-started	dirs=-
+Dashboard	1f	cited=0	proposed=not-started	dirs=-
+Dashboard > Whale activity	1f	cited=0	proposed=not-started	dirs=-
+Dashboard > Reports	1f	cited=0	proposed=not-started	dirs=-
+Swap	4f	cited=0	proposed=not-started	dirs=-
+dropdown	2f	cited=0	proposed=not-started	dirs=-
+Bridge	5f	cited=0	proposed=not-started	dirs=-
+Launch > Live	2f	cited=0	proposed=not-started	dirs=-
+Launch > Sample token	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trade	3f	cited=0	proposed=not-started	dirs=-
+Trench	5f	cited=0	proposed=not-started	dirs=-
+Trench > Trade > Transactions > Adjust maker filter	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trade > Holders	2f	cited=0	proposed=not-started	dirs=-
+Trench > One-click trade settings	4f	cited=0	proposed=not-started	dirs=-
+Trench > Display settings	2f	cited=0	proposed=not-started	dirs=-
+Trench > Trade > Dev tokens	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trade > Positions	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trade > KOLs	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trade > Instant trade settings	1f	cited=0	proposed=not-started	dirs=-
+Trench > Blacklist	1f	cited=0	proposed=not-started	dirs=-
+Trench > Hotkeys	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trade > Bubblemaps	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trade > Transactions	1f	cited=0	proposed=not-started	dirs=-
+Trench > Alerts	2f	cited=0	proposed=not-started	dirs=-
+Trench > Trackers	2f	cited=0	proposed=not-started	dirs=-
+Trench > Trackers > Live trades	2f	cited=0	proposed=not-started	dirs=-
+Trench > Discover > Live	2f	cited=0	proposed=not-started	dirs=-
+Trench > Snipe settings	1f	cited=0	proposed=not-started	dirs=-
+Trench > Discover > DEX Screener	1f	cited=0	proposed=not-started	dirs=-
+Trench > Discover	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trackers > Wallet manager	1f	cited=0	proposed=not-started	dirs=-
+Trench > Discover > Trending	1f	cited=0	proposed=not-started	dirs=-
+Trench > Filters	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trackers > KOLs	1f	cited=0	proposed=not-started	dirs=-
+Trench > Trackers > Wallet manager > Import wallet	1f	cited=0	proposed=not-started	dirs=-

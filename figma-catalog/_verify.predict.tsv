@@ -1,0 +1,25 @@
+(section root)	2f	cited=2	proposed=partial	dirs=src/pages/predict/PredictPage.tsx | src/lib/predict/categorize.ts
+sample market	5f	cited=2	proposed=partial	dirs=src/components/predict/detail | src/pages/predict/PredictMarketDetail.tsx
+Rewards > Open orders	1f	cited=2	proposed=partial	dirs=src/components/predict/rewards | src/pages/predict/PredictRewards.tsx
+Rewards	1f	cited=1	proposed=partial	dirs=src/pages/predict/PredictRewards.tsx
+on:click	1f	cited=0	proposed=not-started	dirs=-
+Dashboard	2f	cited=0	proposed=not-started	dirs=-
+layout 2 ALT	1f	cited=0	proposed=not-started	dirs=-
+Dashboard > Elections	1f	cited=0	proposed=not-started	dirs=-
+Dashboard > Sports	1f	cited=0	proposed=not-started	dirs=-
+Dashboard > Economy	1f	cited=0	proposed=not-started	dirs=-
+Rewards > drop downs	1f	cited=0	proposed=not-started	dirs=-
+breaking	1f	cited=0	proposed=not-started	dirs=-
+Dashboard > Oscars	1f	cited=0	proposed=not-started	dirs=-
+politics	1f	cited=0	proposed=not-started	dirs=-
+breaking > sample market 2	1f	cited=0	proposed=not-started	dirs=-
+new	1f	cited=0	proposed=not-started	dirs=-
+sports	1f	cited=0	proposed=not-started	dirs=-
+sports > Futures	1f	cited=0	proposed=not-started	dirs=-
+sports > Futures > Sample futures	3f	cited=0	proposed=not-started	dirs=-
+sports > Futures > Sample futures > Chart settings	1f	cited=0	proposed=not-started	dirs=-
+sports > Futures > Sample futures > Parameter settings	1f	cited=0	proposed=not-started	dirs=-
+Crypto	1f	cited=0	proposed=not-started	dirs=-
+Climate and Science	1f	cited=0	proposed=not-started	dirs=-
+Finance	1f	cited=0	proposed=not-started	dirs=-
+Tech	1f	cited=0	proposed=not-started	dirs=-

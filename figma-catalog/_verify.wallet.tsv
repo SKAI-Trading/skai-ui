@@ -1,0 +1,56 @@
+continue on web > home > notifications	9f	cited=7	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/shell | modules/skai-wallet/src/services
+continue on web > home	30f	cited=6	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > unlock	6f	cited=6	proposed=likely-done	dirs=modules/skai-wallet/src/__tests__ | modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > send	16f	cited=6	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > request with QR	6f	cited=4	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > share	11f	cited=4	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > account	3f	cited=4	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > NFTs	13f	cited=4	proposed=likely-done	dirs=modules/skai-wallet/src/components
+(section root)	3f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > buy	3f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/__tests__ | modules/skai-wallet/src/components
+continue on web > home > swap	3f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/__tests__ | modules/skai-wallet/src/components
+continue on web > home > spending	3f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+get the app > new user	3f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > request from user	6f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > receive	12f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/components
+continue on web > home > right-sidecar > Add wallet > Create new	1f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/__tests__ | modules/skai-wallet/src/services | modules/skai-wallet/src/shell
+continue on web > home > NFTs > sample NFT > Send	2f	cited=3	proposed=likely-done	dirs=modules/skai-wallet/src/components
+continue on web > home > insights	3f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components
+get the app > new user > create new wallet	3f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > unlock > Forgot password	3f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > unlock > Forgot password > OTP > Set new password	3f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > unlock > Forgot password > OTP	3f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > bridge	7f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > bridge > bridge settings	3f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > right-sidecar > wallet accounts	3f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > account > edit	3f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > crypto > sample token	5f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/pages
+continue on web > home > right-sidecar > portfolio preview	1f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/shell
+continue on web > home > Activity	8f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components | modules/skai-wallet/src/shell
+continue on web > home > NFTs > sample NFT	5f	cited=2	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > chart	3f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > batch	16f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > account > logout	3f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > streaks	3f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > right-sidecar > wallet multi menu > Export private key	6f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/shell
+continue on web > home > right-sidecar > wallet multi menu > Remove wallet	3f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/shell
+continue on web > home > right-sidecar > Add wallet	1f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/shell
+continue on web > home > crypto > sample token > sidecar	2f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/components
+continue on web > home > NFTs > sample NFT > expand	2f	cited=1	proposed=partial	dirs=modules/skai-wallet/src/components
+get the app > new user > create new wallet > Google auth	1f	cited=0	proposed=not-started	dirs=-
+continue on web > home > bridge > Start bridge	3f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > wallet multi menu > Remove walletl	14f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase	2f	cited=0	proposed=not-started	dirs=-
+continue on web > home > bridge > Start bridge > Post wallet interaction	3f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > wallet multi menu > Add wallet	1f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > wallet multi menu	3f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > wallet multi menu > Add walletl	1f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > wallet multi menu > rename wallet	1f	cited=0	proposed=not-started	dirs=-
+continue on web > home > Approvals	3f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > rename wallet	2f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > Add wallet > Import existing	1f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > wallet multi menu > Import existing	1f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase > Wallet name	2f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > Add wallet > Connect hardware wallet	3f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > Add wallet > Import existing > Private key	3f	cited=0	proposed=not-started	dirs=-
+continue on web > home > right-sidecar > Add wallet > Import existing > Keystore	1f	cited=0	proposed=not-started	dirs=-

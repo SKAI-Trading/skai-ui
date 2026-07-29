@@ -1,0 +1,22 @@
+4451-126554	deferred	-	Frame is the DASHBOARD whale-activity TABLE (design-context text runs: Dashboard, AI Analysis, Token pair, Skai sentiment, See why?, Bullish, Verdict, Great buy!, Bubble map, News, Whale activity with Date/Name, Balance, Activity, Pair columns), i.e. the InsightX dashboard surface - NOT the perps right-column WhaleActivityFeed. Out of this lane; belongs to whoever owns InsightXScreen.tsx
+4201-128723	deferred	-	Funding panel node not in figma-catalog registry; fixed the masked-zero defect instead (derived 0 rates now dash). Layout parity unverified against this node.
+3903-26048	partial	-	Perps order ticket empty short state, same component as 3903-26142. Amount card border-transparent until a value is entered, CTA dark until submittable, both measured
+9081-278869	partial	-	tablet swap 1VH: footer suppressed below lg and tab-row spacing/size matched; AI-insights + alert stack above the card column is still SURPLUS vs frame (design decision, not removed)
+4026-53896	deferred	-	desktop 1440 frame resolves live despite being absent from figma-catalog; NOT numerically diffed. One finding acted on: 4026-57128 draws a Home/Help/Terms/Privacy row, so the footer fix is scoped to below-lg instead of unconditional
+9081-278869	partial	-	swap 768 renders (exit0, root=103168); SURPLUS vs frame: footer links + AI banner + 4th Lend tab; all owned by src/pages/trade/TradeUnified.tsx not my lane
+4026-53896	deferred	-	desktop swap frame absent from figma-catalog; no node title to diff against
+4026-56768	deferred	-	desktop swap with-info frame absent from figma-catalog
+4026-57167	deferred	-	desktop swap active-1 frame absent from figma-catalog
+4026-57535	deferred	-	desktop swap active-1VH frame absent from figma-catalog
+4026-55735	deferred	-	trade dropdown 1VH frame absent from figma-catalog
+4141-58066	partial	-	swap card column cited in-code at TradeUnified.tsx:387; green-theme override documented
+4141-58475	deferred	-	margin with-info frame absent from figma-catalog
+4141-59209	deferred	-	margin/review-limit frame absent from figma-catalog
+4141-59893	deferred	-	trade bridge frame absent from figma-catalog
+4141-60314	deferred	-	bridge with-info frame absent from figma-catalog
+4141-60595	deferred	-	bridge settings frame absent from figma-catalog
+7816-51721	partial	-	limit closed-warning; collapse state cited in-code as limitNoticeOpen TradeUnified.tsx:2059
+7838-55165	deferred	-	start-bridge frame absent from figma-catalog; withdrawals flag off blocks the flow
+7838-55747	deferred	-	post-wallet-interaction bridge frame needs connected wallet; unreachable under DEV bypass
+7886-84166	deferred	-	bridge error frame absent from figma-catalog
+4414-83859	deferred	-	Launch dropdown not built. Repo-wide grep for Launch.?Dropdown returns 0 files.

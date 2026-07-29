@@ -1,0 +1,51 @@
+Agentic support	18f	cited=18	proposed=likely-done	dirs=src/components/home-redesign/conversation | src/components/trade/native-chart | src/lib/chart/lightweightChartsTheme.ts
+Pro > checkout	9f	cited=10	proposed=likely-done	dirs=src/components/home-redesign/upgrade | src/components/upgrade/checkout | src/pages/upgrade/CheckoutPage.tsx
+Whales	19f	cited=6	proposed=likely-done	dirs=src/components/home-redesign/whales
+Pro	4f	cited=6	proposed=likely-done	dirs=src/components/upgrade/TierCard.tsx | src/components/home-redesign/upgrade | src/pages/upgrade/UpgradePage.tsx
+welcome > onboarding Qs	19f	cited=5	proposed=likely-done	dirs=src/components/home-redesign/HomeOnboarding.tsx | src/components/home-redesign/onboarding | src/services/onboarding/questionnaireService.ts
+Add > Add whale	9f	cited=5	proposed=likely-done	dirs=src/components/home-redesign/AiHome.tsx | src/components/home-redesign/whales | src/components/home-redesign/RedesignHome.tsx
+Pro > checkout ALT	1f	cited=5	proposed=likely-done	dirs=src/components/upgrade/checkout | src/components/home-redesign/upgrade
+(section root)	3f	cited=4	proposed=likely-done	dirs=src/components/home-redesign/HomeShellLayout.tsx | src/components/home-redesign/AiHome.tsx | src/components/home-redesign/HomeSidebarRail.tsx
+query	5f	cited=4	proposed=likely-done	dirs=src/components/home-redesign/AiHome.tsx | src/components/ai/ChatInterface.tsx | src/components/home-redesign/AskComposer.tsx
+sidebar normal > Group chats	1f	cited=4	proposed=likely-done	dirs=src/components/home-redesign/AiHome.tsx | src/components/home-redesign/chatFolders.ts | src/components/home-redesign/CreateChatFolderModal.tsx
+Pro > checkout > welcome to gold	3f	cited=4	proposed=likely-done	dirs=src/components/upgrade/checkout | src/components/home-redesign/upgrade
+Pro ALT stretched	1f	cited=4	proposed=likely-done	dirs=src/components/upgrade/PlansLayout4.tsx | src/components/upgrade/PlansLayout6.tsx | src/components/home-redesign/upgrade
+welcome	13f	cited=3	proposed=likely-done	dirs=src/components/home-redesign/SignedOutWelcome.tsx | src/services/onboarding/questionnaireService.ts | src/components/home-redesign/onboarding
+AI Feed	9f	cited=3	proposed=likely-done	dirs=src/components/home-redesign/feed
+conversation	4f	cited=3	proposed=likely-done	dirs=src/components/home-redesign/conversation | src/components/home-redesign/AskComposer.tsx
+sidebar normal > Group chats > Folder name	3f	cited=3	proposed=likely-done	dirs=src/components/home-redesign/chatFolders.ts | src/components/home-redesign/CreateChatFolderModal.tsx | src/components/home-redesign/HomeSidebarExpanded.tsx
+Portfolio	9f	cited=3	proposed=likely-done	dirs=src/components/home-redesign/portfolio | src/components/home-redesign/SiteFooter.tsx
+AI Feed > Market intel	4f	cited=2	proposed=partial	dirs=src/components/home-redesign/market-intel
+AI Feed > Market intel > Manage intel	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/market-intel
+ALT	2f	cited=2	proposed=partial	dirs=src/components/home-redesign/AiHome.tsx | src/components/home-redesign/ComposerSuggestions.tsx
+Voice prompt > chat history	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/ChatHistoryModal.tsx | src/components/home-redesign/conversation
+Add > upload image > conversation 4	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/conversation
+conversation extended	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/conversation
+conversation 3	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/conversation
+ads > Add	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/AiHome.tsx | src/components/home-redesign/AddMenu.tsx
+Add > upload image	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/AiHome.tsx | src/components/home-redesign/AskComposer.tsx
+Portfolio > Add wallet > Name wallet	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/portfolio
+Voice prompt	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/AiHome.tsx | src/components/home-redesign/AskComposer.tsx
+conversation 2 extended	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/conversation
+Portfolio > Badges > Badge preview	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/portfolio
+Whales > Wallet manager > Import wallet	3f	cited=2	proposed=partial	dirs=src/components/home-redesign/whales
+Pro ALT	1f	cited=2	proposed=partial	dirs=src/components/upgrade/PlansLayout4.tsx | src/components/home-redesign/upgrade
+sidebar normal	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/AiHome.tsx
+conversation 3 > edit chat	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/conversation
+Portfolio > Export private key > private key displayed	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/portfolio
+Portfolio > Tiers	6f	cited=1	proposed=partial	dirs=src/components/home-redesign/portfolio
+Portfolio > Defi	2f	cited=1	proposed=partial	dirs=src/components/home-redesign/portfolio
+Portfolio > Vault	7f	cited=1	proposed=partial	dirs=src/components/home-redesign/portfolio
+Portfolio > Tiers > Share portfolio	1f	cited=1	proposed=partial	dirs=src/components/home-redesign/portfolio
+Portfolio > Add wallet	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/portfolio
+Portfolio > Export private key	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/portfolio
+Portfolio > Badges	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/portfolio
+Whales > filter	1f	cited=1	proposed=partial	dirs=src/components/home-redesign/whales
+Whales > Live trades	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/whales
+Add > Add whale > Select whale	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/whales
+Whales > KOLs	3f	cited=1	proposed=partial	dirs=src/components/home-redesign/whales
+sidebar	3f	cited=0	proposed=not-started	dirs=-
+Portfolio > Social	7f	cited=0	proposed=not-started	dirs=-
+ads > Tool tip	1f	cited=0	proposed=not-started	dirs=-
+query ALT	1f	cited=0	proposed=not-started	dirs=-
+Add > upload image ALT	1f	cited=0	proposed=not-started	dirs=-

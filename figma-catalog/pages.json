@@ -1,0 +1,59 @@
+{
+  "_comment": [
+    "LIVE page inventory for every Figma file the catalog tracks, harvested directly",
+    "from Figma rather than from ~/Desktop/figma.txt. This exists because the catalog's",
+    "node lists are parsed from that hand-pasted txt, so any page never pasted into it is",
+    "structurally invisible - which is the single root cause of every coverage gap found",
+    "on 2026-07-28 (Social, Governance and Utilities, Plinko, Hi-Lo, Chicken, Towers).",
+    "build-registry.mjs reads this to stamp `page` and `readiness` on every frame and to",
+    "REPORT pages that no section covers, so the next missing page announces itself.",
+    "",
+    "readiness comes from the leading emoji of the page NAME, which is the convention the",
+    "team actually uses (Casey, 2026-07-28). Figma's real Dev Mode devStatus flag is not",
+    "readable here: the MCP plugin sandbox rejects the getter and get_metadata omits it.",
+    "",
+    "liveChildren = count of TOP-LEVEL children on the page, including furniture",
+    "(Directory / Breakpoint / Rectangle N / Vector N), so it is NOT directly comparable",
+    "to a section's frame count. null means not counted. Counting REQUIRES",
+    "setCurrentPageAsync per page: an unloaded page reports children.length === 0 rather",
+    "than throwing, so a bulk read silently reports an empty file."
+  ],
+  "harvested": "2026-07-28",
+  "method": "use_figma read-only: figma.root.children for the page list, then setCurrentPageAsync per page for children.length",
+  "readinessLegend": {
+    "✅": "ready",
+    "🚧": "wip",
+    "📍": "meta",
+    "🌎": "meta"
+  },
+  "pages": [
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "2001:2",      "pageName": "Thumbnail",                        "readiness": "meta",  "liveChildren": null, "sections": [] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "3422:20110",  "pageName": "📍 Master sheet",                   "readiness": "meta",  "liveChildren": 46,   "sections": ["master-sheet"] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "3:2",         "pageName": "✅ Onboarding and Authentication",  "readiness": "ready", "liveChildren": 113,  "sections": ["onboarding"] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "2311:5967",   "pageName": "✅ Privacy and Terms",              "readiness": "ready", "liveChildren": 10,   "sections": ["legal"] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "2003:674",    "pageName": "✅ Home",                           "readiness": "ready", "liveChildren": 353,  "sections": ["home", "pwa"] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "2998:19593",  "pageName": "✅ Wallet",                         "readiness": "ready", "liveChildren": 361,  "sections": ["wallet"] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "3:3",         "pageName": "✅ Trade",                          "readiness": "ready", "liveChildren": 824,  "sections": ["trade"] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "3173:26018",  "pageName": "🚧 Predict",                        "readiness": "wip",   "liveChildren": 138,  "sections": ["predict"] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "4459:128102", "pageName": "🚧 Play",                           "readiness": "wip",   "liveChildren": 176,  "sections": ["play"] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "4914:113562", "pageName": "🚧 Social",                         "readiness": "wip",   "liveChildren": 147,  "sections": [] },
+    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "5210:118077", "pageName": "🚧 Governance and Utilities",       "readiness": "wip",   "liveChildren": 155,  "sections": [] },
+
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "2001:2",      "pageName": "Thumbnail",                         "readiness": "meta",  "liveChildren": null, "sections": [] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "3422:20110",  "pageName": "📍 Games master sheet",             "readiness": "meta",  "liveChildren": null, "sections": [] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9220:26175",  "pageName": "🌎 Cover Images - Skai Originals",  "readiness": "meta",  "liveChildren": 16,   "sections": [] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "2003:674",    "pageName": "✅ Dice - Skai originals",          "readiness": "ready", "liveChildren": 34,   "sections": ["dice"] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:72411",  "pageName": "✅ Plinko - Skai originals",        "readiness": "ready", "liveChildren": 20,   "sections": ["plinko"] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:85754",  "pageName": "✅ Crash - Skai originals",         "readiness": "ready", "liveChildren": 17,   "sections": ["crash"] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:102080", "pageName": "✅ Mines - Skai originals",         "readiness": "ready", "liveChildren": 16,   "sections": ["mines"] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:112414", "pageName": "✅ Blackjack - Skai originals",     "readiness": "ready", "liveChildren": 19,   "sections": ["blackjack"] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:122027", "pageName": "✅ Coinflip - Skai originals",      "readiness": "ready", "liveChildren": 37,   "sections": ["coinflip"] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:133221", "pageName": "✅ Scratchers - Skai originals",    "readiness": "ready", "liveChildren": 19,   "sections": ["skratch"] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9058:1819",   "pageName": "🚧 Hi-Lo - Skai originals",         "readiness": "wip",   "liveChildren": 16,   "sections": [] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9061:15464",  "pageName": "🚧 Chicken - Skai originals",       "readiness": "wip",   "liveChildren": 5,    "sections": [] },
+    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9061:15449",  "pageName": "🚧 Towers - Skai originals",        "readiness": "wip",   "liveChildren": 117,  "sections": [] }
+  ],
+  "unmappedSections": {
+    "missing-play-images": "A play-art gap list in Skai-Games, not a Figma page. Which page its 16 nodes sit on has not been established, so it is deliberately left unmapped rather than guessed; build-registry reports it."
+  }
+}

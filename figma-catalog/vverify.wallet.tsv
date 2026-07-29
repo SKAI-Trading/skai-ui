@@ -1,0 +1,281 @@
+7727-14937	match	-	Unlock WalletUnlock/UnlockForm; WelcomeBackground art, skai-short lockup
+2999-19674	match	-	Unlock WalletUnlock desktop; geometry logo y260 form y372 per frame
+7675-51350	match	-	Unlock WalletUnlock tablet
+3012-15180	match	-	Unlock-password UnlockForm password factor, desktop
+7727-14974	match	-	Unlock-password UnlockForm mobile
+7675-51418	match	-	Unlock-password UnlockForm tablet
+3026-16563	match	-	Create-new-wallet Google auth = thirdweb inAppWallet modal, wired via handleSignIn
+7676-51711	match	-	Create-new-wallet = thirdweb email/Google/Apple modal, wired
+7683-7930	match	-	Forgot-password ForgotPasswordFlow tablet; email input replaced by explain+handoff (deliberate security)
+7473-130910	match	-	Forgot-password ForgotPasswordFlow desktop; disconnects live session first
+7727-15699	match	-	Forgot-password ForgotPasswordFlow mobile
+3023-11938	match	-	Create-new-wallet = thirdweb email/OTP modal (confirmed via screenshot), wired
+7727-15482	match	-	Create-new-wallet thirdweb modal mobile
+7728-59766	match	-	Reset-password ResetPasswordScreen mobile; new+confirm, min-length, bridged session
+7728-59382	match	-	Forgot>OTP = thirdweb email OTP, SKAIAuth recovery handoff to login step
+7473-133033	match	-	Reset-password ResetPasswordScreen desktop
+7683-34510	match	-	Reset-password ResetPasswordScreen tablet
+7473-131013	match	-	Forgot>OTP thirdweb OTP desktop, recovery re-auth wired
+7683-33892	match	-	Forgot>OTP thirdweb OTP tablet
+9685-101103	match	-	Remove-wallet WalletActionsMenu remove modal (warning+row+Cancel/Remove)
+7774-69004	match	-	Remove-wallet modal state variant
+7774-67001	match	-	Export-private-key reveal WalletActionsMenu export view revealed
+7774-66509	match	-	Export-private-key WalletActionsMenu export view password gate
+7774-65029	match	-	Wallet-accounts WalletAccountsPanel mobile; grouped list+search+Add
+9685-100712	match	-	Remove-wallet modal state variant
+7479-135805	match	-	Export-private-key WalletActionsMenu export desktop centred modal
+7774-67295	match	-	Remove-wallet modal state variant
+7482-142212	match	-	Import recovery-phrase AddWalletDrawer import-phrase, 12/24 seed grid modal
+7479-137328	match	-	Add-wallet entry AddWalletDrawer; create/import/hardware cards
+9685-99496	match	-	Remove-wallet modal state variant
+7713-18212	match	-	Add-wallet from multi-menu, tablet; opens AddWalletDrawer entry
+9685-98528	match	-	Remove-wallet modal state variant
+3080-811	match	-	Wallet-accounts WalletAccountsPanel desktop
+7479-137772	match	-	Add-wallet Create-new AddWalletDrawer create step centred modal
+7477-133171	match	-	Multi-menu WalletActionsMenu anchored dropdown desktop
+7713-15272	match	-	Multi-menu WalletActionsMenu dropdown tablet
+7713-17805	match	-	Add-wallet from multi-menu tablet, AddWalletDrawer entry
+7479-136195	match	-	Export-private-key reveal WalletActionsMenu desktop
+7717-10565	match	-	Import recovery-phrase AddWalletDrawer import-phrase tablet
+7713-17399	match	-	Remove-wallet WalletActionsMenu remove modal tablet
+7713-16630	match	-	Export-private-key WalletActionsMenu export tablet
+7479-135318	match	-	Rename WalletActionsMenu rename view, green-bright input, desktop
+7713-15682	match	-	Rename WalletActionsMenu rename tablet
+7482-141833	match	-	Import-existing method-list AddWalletDrawer import-method desktop
+7713-16984	match	-	Export-private-key reveal WalletActionsMenu tablet
+9545-97477	match	-	Remove-wallet modal state variant
+7717-10153	match	-	Import-existing method-list from multi-menu tablet
+9545-97933	match	-	Remove-wallet modal state variant
+7774-65519	match	-	Multi-menu WalletActionsMenu dropdown mobile
+9685-100027	match	-	Remove-wallet modal state variant
+7774-65942	match	-	Rename WalletActionsMenu rename mobile
+7774-68417	match	-	Remove-wallet modal state variant
+7479-136955	match	-	Remove-wallet WalletActionsMenu remove modal desktop
+9685-98877	match	-	Remove-wallet modal state variant
+7713-14212	match	-	Wallet-accounts WalletAccountsPanel tablet
+7774-69886	match	-	Remove-wallet modal state variant
+7482-143789	match	-	Import recovery-phrase Wallet-name; VaultFields name field, desktop
+7774-70474	match	-	Remove-wallet modal state variant
+7717-12740	match	-	Import private-key AddWalletDrawer import-privkey centred modal tablet
+7717-11907	match	-	Import recovery-phrase Wallet-name tablet
+7482-144645	match	-	Import keystore AddWalletDrawer import-keystore; V3 JSON+file+pwd desktop
+3082-13100	match	-	Portfolio-preview PortfolioPreviewPanel; skin picker+balance toggle
+7482-144255	match	-	Import private-key AddWalletDrawer import-privkey centred modal desktop
+7774-70180	match	-	Remove-wallet modal state variant
+7774-69592	match	-	Remove-wallet modal state variant
+7717-13147	match	-	Import private-key AddWalletDrawer import-privkey tablet
+8045-104041	match	-	home: NetWorthCard+QuickActionsBar+TokenListTable+StreakBanner in WalletHomeRoute
+3118-25969	match	-	home desktop: same WalletHomeRoute stack, responsive
+7920-116649	match	-	home mobile: WalletHomeRoute, 2x2 action grid per NetWorthCard
+7920-116338	match	-	home tablet: WalletHomeRoute
+3153-19889	match	-	home desktop: QuickActionsBar expanded 9-item grid state built
+8045-104658	match	-	home mobile: WalletHomeRoute
+7774-63646	match	-	Share net worth: ShareCard modal wired via openModal share-card
+8370-72613	match	-	home tablet: WalletHomeRoute
+7728-60058	match	-	home tablet: WalletHomeRoute
+7713-13706	match	-	Share net worth: ShareCard modal
+7774-12119	match	-	home tablet: WalletHomeRoute
+8320-71829	match	-	home tablet: WalletHomeRoute
+8370-73407	match	-	home skin2 mobile: NetWorthCard gradient skin built
+7709-10525	match	-	Share net worth: ShareCard modal
+7491-148345	match	-	Share net worth desktop: ShareCard modal
+7704-47027	match	-	home skin2 tablet: NetWorthCard gradient
+3026-16493	match	-	home desktop: WalletHomeRoute (source frame for NetWorthCard)
+7774-62886	match	-	Share net worth mobile: ShareCard modal
+8490-33232	match	-	home tablet: WalletHomeRoute
+7911-42996	match	-	account dropdown+logout: TopHeader menu + LogoutConfirmModal + MobileNavDrawer
+7911-42432	match	-	account: WalletAccountRoute My account+Preferences+Security
+7911-42701	match	-	account dropdown+logout: same TopHeader menu + LogoutConfirmModal
+7892-19337	match	-	notifications: NotificationsPanel feed wired to bell
+7892-23422	match	-	notifications sample: NotificationsPanel rows; mock news replaced by real events
+7774-64736	match	-	home skin3 tablet: NetWorthCard light skin
+7774-68711	match	-	home skin2 mobile: NetWorthCard gradient
+7892-19704	match	-	notifications: NotificationsPanel feed
+3167-25811	match	-	account dropdown+logout desktop: TopHeader menu + LogoutConfirmModal
+7892-23952	match	-	notifications sample: NotificationsPanel rows, real events
+3123-3046	match	-	home skin3 desktop: NetWorthCard light skin
+3164-22754	match	-	notifications settings: NotificationSettings wired via feed gear
+3165-23175	match	-	notifications sample desktop: NotificationsPanel rows, real events
+7911-42851	match	-	account edit tablet: WalletAccountRoute edit drawer
+8490-33071	match	-	home tablet: WalletHomeRoute
+3167-25382	match	-	account edit desktop: WalletAccountRoute edit drawer
+3163-21998	match	-	notifications desktop: NotificationsPanel feed
+7892-22848	match	-	notifications settings: NotificationSettings
+7892-20209	match	-	notifications settings: NotificationSettings
+7774-68124	match	-	home skin2 mobile: NetWorthCard gradient
+7713-13398	match	-	home skin3 tablet: NetWorthCard light skin
+3163-21315	match	-	home desktop: WalletHomeRoute
+3166-24676	match	-	account desktop: WalletAccountRoute (source frame)
+7774-70768	match	-	home skin2 mobile: NetWorthCard gradient
+8554-115129	match	-	token detail mobile: WalletTokenDetailRoute + TokenDetailView
+7808-89289	match	-	token detail mobile: TokenDetailView
+3083-1328	match	-	token detail desktop: TokenDetailView + swap sidebar (source frame)
+7804-74178	match	-	token detail tablet: TokenDetailView
+7882-20079	match	-	activity mobile: ActivityTable home tab + /activity route
+7528-153701	match	-	activity empty ALT: ActivityTable empty state with Try Send CTA
+7871-19838	match	-	NFT empty tablet: NftDisplay EmptyState + Auto-detect notice
+7882-19831	match	-	NFT empty tablet: NftDisplay EmptyState
+7806-84981	match	-	NFT sample tablet: NftDetailModal overview/details/attributes/send
+7528-153278	match	-	NFT expand desktop: NftDetailModal expand lightbox
+7807-87137	match	-	NFT empty ALT tablet: NftDisplay empty/offline-unavailable state
+7807-86028	match	-	NFT expand tablet: NftDetailModal lightbox
+8540-29853	match	-	NFT populated tablet: NftDisplay grid/list gallery
+7806-83761	match	-	NFT import tablet: ImportNftModal contract+tokenId real fetch
+3082-13515	match	-	NFT empty desktop: NftDisplay EmptyState (source frame)
+7871-20688	match	-	NFT import mobile: ImportNftModal
+3089-19811	match	-	NFT sample desktop: NftDetailModal (source frame)
+7882-19257	match	-	NFT sample mobile: NftDetailModal
+3118-21935	match	-	activity desktop: ActivityTable (source frame)
+7807-86912	match	-	NFT empty tablet: NftDisplay EmptyState
+7523-152924	match	-	NFT import desktop: ImportNftModal (source frame)
+7806-82974	match	-	NFT empty tablet: NftDisplay EmptyState
+3083-905	match	-	NFT populated desktop: NftDisplay gallery
+7871-18184	match	-	token detail mobile: TokenDetailView
+3118-25004	match	-	activity empty desktop: ActivityTable empty state
+7807-87715	match	-	activity tablet: ActivityTable
+7882-21085	match	-	NFT empty ALT tablet: NftDisplay empty/offline state
+7882-18863	match	-	NFT sample mobile: NftDetailModal
+8540-29692	match	-	NFT populated tablet: NftDisplay gallery (source frame)
+7882-17627	match	-	NFT sample mobile: NftDetailModal
+3118-25371	match	-	activity show details desktop: TxDetailPanel sidecar wired via onSelect
+7807-88748	match	-	activity tablet: ActivityTable
+7882-21333	match	-	activity mobile: ActivityTable
+8045-106048	match	-	PortfolioChart modal wired via openModal portfolio; balance chart present
+8045-104960	match	-	PortfolioChart tablet; same component responsive
+3153-20193	match	-	PortfolioChart desktop
+8045-106349	match	-	PortfolioInsights modal wired via insights
+7935-65189	match	-	SwapModal wired via swap
+7935-65088	match	-	SwapModal tablet
+3145-2711	match	-	SwapModal desktop
+8045-105580	match	-	PortfolioInsights tablet
+3154-3246	match	-	PortfolioInsights desktop
+8045-105616	match	-	SpendingChart tablet wired via spending
+7935-65748	match	-	SendModal step1 token select StepDots Token-Details-Review
+3154-3850	match	-	SpendingChart desktop
+8490-39089	match	-	SendModal step1 alt-view; step indicator variant present
+3149-2903	match	-	SendModal desktop step1
+8045-106380	match	-	SpendingChart mobile
+7935-65586	match	-	SendModal tablet step1
+8045-106411	match	-	RequestPayment QR mode step1 (QRCodeSVG)
+7935-66768	match	-	SendModal step2 address lookup via RecipientSearch
+7935-66663	match	-	SendModal tablet step2 address lookup
+7528-155716	match	-	SendModal desktop step2 address lookup
+8045-105652	match	-	RequestPayment QR step1 tablet
+7935-66302	match	-	SendModal step2 details
+7935-66144	match	-	SendModal tablet step2 details
+3154-4635	match	-	RequestPayment QR step1 desktop
+8045-105688	match	-	RequestPayment QR step2 tablet
+3149-17882	match	-	SendModal desktop step2
+8045-106442	match	-	RequestPayment QR step2 mobile
+3154-5092	match	-	RequestPayment QR step2 desktop
+8045-112509	match	-	ShareCard expand view; themes present
+8045-105940	match	-	ShareCard default tablet
+8045-105868	match	-	RequestPayment from-user mode step1 select
+7935-72636	match	-	ReceiveModal set-amount step2 (token-amount-qr)
+8045-106535	match	-	ShareCard mobile
+7935-73094	match	-	ReceiveModal set-amount step1
+7935-72101	match	-	ReceiveModal set-amount step2 tablet
+7935-70064	match	-	SendModal processing state isSending spinner
+7935-72913	match	-	ReceiveModal set-amount step1 tablet
+7935-69362	match	-	SendModal step3 review then TransactionSuccess
+8045-106473	match	-	RequestPayment from-user step1 mobile
+7935-69910	match	-	SendModal processing tablet
+7935-69066	match	-	SendModal step3 tablet
+7935-71767	match	-	ReceiveModal qr step2
+7935-70792	match	-	ReceiveModal step1 token
+7935-71574	match	-	ReceiveModal step2 tablet
+3149-18278	match	-	SendModal desktop step3
+8529-35743	match	-	ShareCard 2nd combination via CardTheme night-light-gradient
+7935-70612	match	-	ReceiveModal step1 tablet
+3154-5798	match	-	RequestPayment from-user step2 desktop
+3154-5542	match	-	RequestPayment from-user step1 desktop
+3150-18637	match	-	SendModal processing desktop
+8529-36630	match	-	ShareCard 2nd combination mobile
+8611-123242	match	-	ShareCard 3rd combination mobile (theme variant)
+3158-8296	match	-	ShareCard 3rd combination desktop
+3155-6023	match	-	ShareCard default desktop
+3153-19232	match	-	ReceiveModal step2 desktop
+8045-105904	match	-	RequestPayment from-user step2 tablet
+3158-9906	match	-	ShareCard expand desktop
+3153-19677	match	-	ReceiveModal set-amount desktop
+8045-106504	match	-	RequestPayment from-user step2 mobile
+3153-19488	match	-	ReceiveModal set-amount step2 desktop
+3158-4524	match	-	ShareCard 2nd combination desktop
+8045-106012	match	-	ShareCard 3rd combination tablet
+3153-19055	match	-	ReceiveModal step1 desktop
+8091-48931	match	-	BatchSendModal step2b input amount (edit details draftAmount)
+8045-115649	match	-	BatchSendModal step2 details recipients table
+8572-50096	match	-	BatchSendModal step1 token select editSubStep token
+8045-116170	match	-	BatchSendModal step3 confirm/summary phase
+8045-115167	match	-	BatchSendModal step1 tablet
+3161-18913	match	-	BatchSendModal step1 desktop
+8045-115989	match	-	BatchSendModal step2b mobile
+8091-48732	match	-	BatchSendModal step2b input amount tablet
+8045-116552	match	-	TokenApprovals modal wired via token-approvals
+8045-115804	match	-	BatchSendModal step2b tablet
+3163-20939	match	-	TokenApprovals desktop
+3161-20243	match	-	BatchSendModal step3 desktop
+7532-160779	match	-	BatchSendModal step2b input desktop
+3161-19548	match	-	BatchSendModal step2 desktop
+8045-115490	match	-	BatchSendModal step2 tablet
+8045-116862	match	-	TokenApprovals mobile
+8045-116369	match	-	BatchSendModal step3 mobile
+8045-115331	match	-	BatchSendModal step1 mobile
+3161-20000	match	-	BatchSendModal step2b desktop
+7805-80831	match	-	Token-detail swap sidecar embedded SwapModal tablet
+3089-18289	match	-	Token-detail swap sidecar embedded SwapModal desktop
+7807-86527	match	-	NFT send via NftDisplay handleSendNft Send button tablet
+3116-21416	match	-	NFT send via NftDisplay handleSendNft desktop
+7528-160171	match	-	bridge insufficient-funds glyph + whitespace-nowrap present, cited 1e844a2c
+3163-21998	match	-	notifications desktop: feed is now the inset floating card the frame draws (x=991 y=9 440x882, radius 24, GreenCoal200@80% + 2.5px blur + 0/10/80 shadow); was an opaque full-bleed column
+7892-19337	match	-	notifications tablet: same card as 8490-34410; bell now toggles closed instead of being covered by the panel
+9940-233940	partial	tmp/wshots/phrase-empty-375.png	FIXED grid 2-col to 3-col per frame + permanent N. prefix replacing numeric placeholder + masked committed words; box 32px h mobile; modal now 448px not 408px trapped in sidecar. SURPLUS remains: 12/24 segmented control and VaultFields network/name/encryption-password not in Figma but fund-load-bearing so kept, hence partial not match
+9940-233959	partial	tmp/wshots/phrase-filled-375.png	FIXED words 1-2 filled state: committed words render masked type=password Mulish 11px matching the frame dots, only the focused box is plaintext; verified numerically word1/2=password word3=text. SURPLUS 12/24 toggle + VaultFields not in Figma
+9940-234006	partial	tmp/wshots/phrase-filled-375.png	typing-partial state: focused box shows plaintext while boxes 1-2 stay masked, matching frame 9940:234064 partial word navigati. Verified via type-attribute flip on focus/blur. SURPLUS 12/24 toggle + VaultFields
+9940-234067	partial	tmp/wshots/phrase-filled-375.png	typing-complete state: same component path as 234006, frame differs only in the typed string 9940:234125 navigation. Verified focus=text blur=password. SURPLUS 12/24 toggle + VaultFields
+9940-234128	partial	tmp/wshots/phrase-filled-375.png	all-12-filled state: 12 boxes in 3 cols rows at y 286/334/382/430 and cols at x 524/657/791 measured, all masked when unfocused. SURPLUS 12/24 toggle + VaultFields
+9940-234315	partial	tmp/wshots/phrase-filled-375.png	all-24-filled state: frame draws 24 boxes 3-up 8 rows; grid grows to 24 on the 24-word segment, covered by test grows to 24 boxes. Grid geometry screenshot-verified at 12; the 24 case is test-verified not screenshot-verified. SURPLUS 12/24 toggle + VaultFields
+9940-234772	partial	tmp/wshots/phrase-empty-768.png	tablet empty grid: 3 cols, box height now 36px per frame 9940:234871 126x36 was stuck at mobile 32px because the portal escapes the shell container so @-768px- container queries could never match; switched to md: media queries. SURPLUS 12/24 toggle + VaultFields
+9940-234852	partial	tmp/wshots/phrase-filled-768.png	tablet words 1-2 typing: 36px boxes, prefix 14px/18px per frame, masking verified. SURPLUS 12/24 toggle + VaultFields
+9941-235776	partial	tmp/wshots/phrase-filled-768.png	tablet all-12: 3-col grid confirmed at 768 with 448px modal width. SURPLUS 12/24 toggle + VaultFields
+9941-235994	partial	tmp/wshots/phrase-filled-768.png	tablet all-24: 24-box growth test-verified, grid/box geometry screenshot-verified at 12 only. SURPLUS 12/24 toggle + VaultFields
+9941-236456	partial	tmp/wshots/phrase-empty-1440.png	desktop empty grid: 3 cols, box height now 40px and prefix 16px/22px per frame 9941:237419 153x40, modal 448px. SURPLUS 12/24 toggle + VaultFields
+9941-236536	partial	tmp/wshots/phrase-filled-1440.png	desktop all-12: rows y 286/334/382/430 cols x 524/657/791 measured = 3x4, prefix ash 95A09F 16px Manrope, value Mulish 11px white masked. Border spec 1.5px lg emitted in served CSS though getComputedStyle reports 1px at DPR1. SURPLUS 12/24 toggle + VaultFields
+9941-237075	partial	tmp/wshots/phrase-filled-1440.png	desktop words 1-2 typing: focused plaintext vs committed masked verified numerically at 1440. SURPLUS 12/24 toggle + VaultFields
+9941-237786	partial	tmp/wshots/phrase-filled-1440.png	desktop all-24: growth test-verified, geometry screenshot-verified at 12 only. SURPLUS 12/24 toggle + VaultFields
+3158-11566	partial	tmp/wshots/bridge-1440.png	desktop bridge main: exit-0. Figma copy all present, verified in-dialog: Bridge/From/To/Send/Balance/Other alternatives/Across Protocol/Stargate/redirect note. 10 dialog controls. MISSING none for this state. SURPLUS a Select-token and Use-max-balance control the frame does not draw
+3161-4184	partial	tmp/wshots/bridge-1440.png	desktop bridge main variant: same component and state as 3158-11566, same in-dialog inventory. SURPLUS Select token + Use max balance
+8045-113082	partial	tmp/wshots/bridge-768.png	tablet bridge main: exit-0 at 768. Same copy set present
+8045-114368	partial	tmp/wshots/bridge-768.png	tablet bridge main variant: exit-0 at 768
+8611-28596	partial	tmp/wshots/bridge-375.png	mobile bridge main: exit-0 at 375
+8045-113267	partial	tmp/wshots/bridge-375.png	mobile bridge main variant: exit-0 at 375
+8045-114969	partial	tmp/wshots/bridge-375.png	mobile bridge main variant: exit-0 at 375
+7528-159859	partial	tmp/wshots/bridge-1440.png	STRUCTURAL GAP desktop Start bridge: with an amount entered Figma REPLACES Other alternatives with a Bridge summary block of 4 rows Route/Est. time/Fee -Bridge, Swap impact-/Network cost per 7528:160257. Measured after filling 0.01: hasSummary=false hasEstTime=false hasNetworkCost=false hasFeeRow=false and Other alternatives still shown. Not built rather than mis-styled. Est. time and fees need a real quote source so it cannot be filled without violating the no-mock-data policy. BUILD BACKLOG
+8045-113447	partial	tmp/wshots/bridge-768.png	tablet Start bridge: same missing Bridge summary block as 7528-159859. BUILD BACKLOG
+8045-113604	partial	tmp/wshots/bridge-375.png	mobile Start bridge: same missing Bridge summary block as 7528-159859. BUILD BACKLOG
+7528-160277	partial	tmp/wshots/bridge-1440.png	desktop Start bridge post-wallet-interaction: downstream of the unbuilt Bridge summary state, and the confirm path leaves for an external provider via safeOpen so the post-interaction screen is not reachable locally. Not screenshot-verified for this sub-state
+8045-113754	partial	tmp/wshots/bridge-768.png	tablet Start bridge post-wallet-interaction: same as 7528-160277, sub-state not locally reachable
+8045-113911	partial	tmp/wshots/bridge-375.png	mobile Start bridge post-wallet-interaction: same as 7528-160277, sub-state not locally reachable
+3161-3923	partial	tmp/wshots/bridge-settings-1440.png	desktop bridge settings: exit-0 with the panel open. BridgeSettingsPanel is built to this frame - Networks heading, per-network rows with Connected/Connect actions, Save settings CTA. SURPLUS none found; not every row dimension re-measured so partial not match
+8045-114061	partial	tmp/wshots/bridge-settings-768.png	tablet bridge settings: exit-0 with panel open at 768
+8045-114218	partial	tmp/wshots/bridge-settings-375.png	mobile bridge settings: exit-0 with panel open at 375, full-width sheet below md as coded
+7482-145038	partial	-	STRUCTURAL GAP desktop Connect hardware wallet: Figma draws a Scan QR code modal - 564px, heading Scan QR code, body Scan either Keystone or Ledger QR code by placing the QR in front of the camera, a 250x250 QR/camera area, CTA Finish connection. The build ships a Coming soon placeholder with a Usb glyph and a Back to options CTA. Real camera/QR capture plus Keystone-Ledger decoding is a feature not a style delta. BUILD BACKLOG. Code-inspection only, no screenshot
+7717-13587	partial	-	tablet Connect hardware wallet: same Scan QR modal at 448px per 7717:14311 vs the same Coming soon placeholder. BUILD BACKLOG. Code-inspection only
+7717-14343	partial	tmp/wshots/route_-1440.png	MISLABELED FRAME - the lane title says Connect hardware wallet but node 7717:14675 is the 442px Update portfolio preview sidecar - Change skin, Change visibility, background tiles. That surface IS built as PortfolioPreviewPanel.tsx with the frame copy verbatim. Recorded partial only because the frame identity in the catalog is wrong, not because of an implementation gap
+7926-21018	partial	tmp/wshots/onramp-375.png	mobile buy on-ramp: exit-0 with MoonPay visible. DELIBERATE deviation - Figma 3124:2302 draws 3 providers, build ships MoonPay only per bug bfccb0b7 where Coinbase Pay had a non-UUID appId and Transak had no apiKey and returned 403. Documented in-file; the row styling still follows the frame
+7926-20708	partial	tmp/wshots/onramp-768.png	tablet buy on-ramp: exit-0. Same deliberate 1-of-3 provider deviation per bug bfccb0b7
+3124-2302	partial	tmp/wshots/onramp-1440.png	desktop buy on-ramp: exit-0. Same deliberate 1-of-3 provider deviation per bug bfccb0b7
+7911-42082	partial	tmp/wshots/route_account-1440.png	tablet account: /account renders exit-0. Verified at 1440 and 375; 768 not separately captured for the base state so partial
+7911-42551	partial	tmp/wshots/acct-edit-768.png	tablet account edit: exit-0 with the edit dialog open at 768 via aria-label Edit account. Portalled to body as coded
+7704-46353	partial	tmp/wshots/route_-1440.png	tablet home: / renders exit-0. Only the default skin was exercised; the tablet-specific tier not separately measured
+3070-775	partial	tmp/wshots/route_-1440.png	desktop home skin 3: / renders exit-0 but the shot is the DEFAULT skin - skin 3 was never selected, so the skin-specific treatment is unverified
+3070-517	partial	tmp/wshots/route_-1440.png	desktop home skin 2: same as 3070-775, default skin captured not skin 2
+3163-21620	partial	tmp/wshots/route_-1440.png	desktop streaks: StreakBanner renders on / exit-0. DELIBERATE deviation - Figma 7541:162009 and 3070:532 draw a second longest-streak stat box, removed per reports 84dee7fe, bf32b4bf, 942d5e09 which all complain the streak reads twice. Report wins over frame; longestStreak prop kept deprecated
+8490-37038	partial	tmp/wshots/route_-375.png	tablet streaks: same deliberate single-streak deviation per report 84dee7fe
+7892-18412	partial	tmp/wshots/route_-375.png	tablet streaks variant: same deliberate single-streak deviation per report 84dee7fe
+2998-19599	deferred	-	desktop SKAIAuth section root: the signed-out auth gate. The frame-verify driver seeds skai_test_user so the app boots past SKAIAuth and this surface never mounts. Not reachable without removing the bypass
+7675-51300	deferred	-	tablet SKAIAuth section root: same signed-out gate, unreachable under the DEV auth bypass
+7727-14906	deferred	-	mobile SKAIAuth section root: same signed-out gate, unreachable under the DEV auth bypass
+3012-15897	deferred	-	desktop get the app new user: SKAIAuth continuedOnWeb login step, behind the same signed-out gate
+7676-51506	deferred	-	tablet get the app new user: same continuedOnWeb login step, unreachable under the bypass
+7727-15382	deferred	-	mobile get the app new user: same continuedOnWeb login step, unreachable under the bypass
