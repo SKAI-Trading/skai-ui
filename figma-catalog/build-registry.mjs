@@ -101,6 +101,33 @@ const GAME_BY_SECTION = {
 const readLines = (p) =>
   fs.existsSync(p) ? fs.readFileSync(p, "utf8").split("\n").map((l) => l.trim()).filter(Boolean) : [];
 
+/**
+ * component-aliases.tsv — classify frames the "Skai > ..." title grammar cannot.
+ *
+ * A frame named for WHAT IT IS ("X accounts - My list - tablet", "Technicals -
+ * Buy") instead of where it lives parses as kind:non-screen / family:null, which
+ * drops it out of families.mjs, catalog-view.mjs and every audit — present in the
+ * registry, absent from the category system. This map assigns those frames a
+ * real family (kind:"component") or marks them as canvas furniture
+ * (kind:"scaffold") so they are accounted for either way.
+ */
+const COMPONENT_ALIASES = (() => {
+  const out = {};
+  for (const line of readLines(path.join(DIR, "component-aliases.tsv"))) {
+    if (line.startsWith("#")) continue;
+    const [node, section, kind, family, device, note] = line.split("\t").map((s) => (s || "").trim());
+    if (!node || !kind) continue;
+    out[node] = {
+      section,
+      kind,
+      family: family && family !== "-" ? family : null,
+      device: device && device !== "-" ? device : null,
+      note: note || "",
+    };
+  }
+  return out;
+})();
+
 // title -> {screen, variant, viewport, device, kind, vh, family}
 // Grammar: a real top-level SCREEN is titled "Skai > <Section> ...". Everything
 // else (Notes, Breakpoint, Directory, Rectangle N, profile image, icons/*, Code,
@@ -297,6 +324,17 @@ for (const section of SECTIONS) {
       readiness: pg ? pg.readiness : "unknown",
       gone: GONE.has(id) || undefined, // deleted upstream; kept for the record
       ...parsed,
+      // Hand-classified overrides for frames the title grammar cannot place.
+      // Applied AFTER ...parsed so they win, and only for the section the alias
+      // was declared against (node-ids are unique per file, not globally).
+      ...(COMPONENT_ALIASES[id] && COMPONENT_ALIASES[id].section === section
+        ? {
+            kind: COMPONENT_ALIASES[id].kind,
+            family: COMPONENT_ALIASES[id].family,
+            device: COMPONENT_ALIASES[id].device ?? parsed.device ?? null,
+            aliasNote: COMPONENT_ALIASES[id].note || undefined,
+          }
+        : {}),
       citedByFiles: cited,
       implFiles: p.implFiles || [],
       status: p.status || "unknown",

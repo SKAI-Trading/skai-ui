@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-29T04:36:51.704Z",
+  "generated": "2026-07-29T07:13:21.672Z",
   "families": {
     "home/welcome": {
       "section": "home",
@@ -987,9 +987,11 @@
     "home/Whales > filter": {
       "section": "home",
       "family": "Whales > filter",
-      "frameCount": 1,
+      "frameCount": 3,
       "frames": [
-        "6317-40206"
+        "6317-40206",
+        "2889-14378",
+        "2889-14314"
       ],
       "devices": [
         "desktop"
@@ -1091,6 +1093,51 @@
         "src/components/home-redesign/whales"
       ],
       "proposedStatus": "likely-done"
+    },
+    "home/Whales > X accounts > Add handle": {
+      "section": "home",
+      "family": "Whales > X accounts > Add handle",
+      "frameCount": 3,
+      "frames": [
+        "7290-60059",
+        "7290-58356",
+        "5965-54314"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home/Whales > X accounts": {
+      "section": "home",
+      "family": "Whales > X accounts",
+      "frameCount": 3,
+      "frames": [
+        "7290-59768",
+        "5965-54259",
+        "7290-57976"
+      ],
+      "devices": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/home-redesign/whales/useWhaleLists.ts",
+        "src/components/home-redesign/whales/XAccountsPanel.tsx"
+      ],
+      "dirs": [
+        "src/components/home-redesign/whales"
+      ],
+      "proposedStatus": "partial"
     },
     "home/Whales > Wallet manager > Import wallet": {
       "section": "home",
@@ -1255,6 +1302,23 @@
         "src/components/home-redesign/whales"
       ],
       "proposedStatus": "partial"
+    },
+    "home/Whales > Market technicals": {
+      "section": "home",
+      "family": "Whales > Market technicals",
+      "frameCount": 2,
+      "frames": [
+        "2889-10018",
+        "2889-10073"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Pro": {
       "section": "home",

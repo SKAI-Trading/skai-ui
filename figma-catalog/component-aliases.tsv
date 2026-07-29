@@ -1,0 +1,37 @@
+# component-aliases.tsv — classify frames the title grammar cannot.
+#
+# build-registry derives kind/family from the "Skai > <Section> ..." title
+# convention. Frames named for what they ARE rather than where they live
+# ("X accounts - My list - tablet", "Technicals - Buy", "dropdown-3") therefore
+# land as kind:non-screen / family:null, which drops them out of families.mjs
+# (it skips anything that is not kind:"screen"), out of catalog-view.mjs, and out
+# of every audit. They are in the registry but outside the category system.
+#
+# This file closes that gap declaratively — same role bugref-aliases.tsv plays
+# for deep-linked child ids. Two kinds are assigned here:
+#
+#   component — a real design that must be implemented and can be parity-checked.
+#               Rolls up into the whale families alongside its screens.
+#   scaffold  — Figma canvas furniture (Directory / Notes / Breakpoint /
+#               sidebar-open). NOT a design. Recorded explicitly so a later audit
+#               does not re-flag it as an unimplemented gap, which is the same
+#               reason bugref-aliases.tsv exists.
+#
+# node	section	kind	family	device	note
+2773-10391	home	scaffold	-	-	Figma page directory index, not a design
+2773-10394	home	scaffold	-	-	Breakpoint marker frame
+5965-54862	home	scaffold	-	-	Designer notes annotation
+6001-58381	home	scaffold	-	-	Designer notes annotation
+6001-56786	home	scaffold	-	-	Shared AI-Home sidebar state, owned by the Home shell not Whales
+6965-87436	home	scaffold	-	-	Breakpoint marker frame
+6965-87438	home	scaffold	-	-	Breakpoint marker frame
+5965-54259	home	component	Whales > X accounts	desktop	X-accounts My-list panel (XAccountsPanel)
+7290-57976	home	component	Whales > X accounts	tablet	X-accounts My-list panel, 768 tier
+7290-59768	home	component	Whales > X accounts	mobile	X-accounts My-list panel, 375 tier
+5965-54314	home	component	Whales > X accounts > Add handle	desktop	Add-handle affordance in XAccountsPanel
+7290-58356	home	component	Whales > X accounts > Add handle	tablet	Add-handle, 768 tier
+7290-60059	home	component	Whales > X accounts > Add handle	mobile	Add-handle, 375 tier
+2889-10073	home	component	Whales > Market technicals	desktop	Technicals gauge, BUY reading (MarketTechnicalsCard)
+2889-10018	home	component	Whales > Market technicals	desktop	Technicals gauge, SELL reading — red unlit track
+2889-14314	home	component	Whales > filter	desktop	All-types filter dropdown
+2889-14378	home	component	Whales > filter	desktop	All-types filter dropdown, alternate state

@@ -19,7 +19,13 @@ const reg = JSON.parse(fs.readFileSync(path.join(DIR, "registry.json"), "utf8"))
 
 const fams = {};
 for (const [id, f] of Object.entries(reg.frames)) {
-  if (f.kind !== "screen") continue;
+  // "component" frames are real designs that happen not to follow the
+  // "Skai > ..." screen-title convention (see component-aliases.tsv). Skipping
+  // every non-screen kind is what kept them out of families.json — and so out of
+  // catalog-view and every audit — despite being in the registry. Scaffolding
+  // (kind:"scaffold") stays excluded: it is canvas furniture, not a design.
+  if (f.kind !== "screen" && f.kind !== "component") continue;
+  if (!f.family) continue;
   const key = `${f.section}/${f.family}`;
   const e = (fams[key] = fams[key] || {
     section: f.section,
