@@ -1647,13 +1647,13 @@ const iconPaths: Record<SkaiIconName, React.ReactNode> = {
       />
       <text
         x="12"
-        y="16"
+        y="14"
         textAnchor="middle"
         fill="#878787"
-        fontSize="10"
+        fontSize="6"
         fontWeight="bold"
       >
-        F
+        FREE
       </text>
     </>
   ),
