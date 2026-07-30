@@ -66,21 +66,15 @@ const TwitterXIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-// TelegramIcon / LinkedInIcon / YouTubeIcon were dropped here: bab5753 removed
-// the footer links that rendered them but left the declarations behind, and
-// `noUnusedLocals` turns three orphans into a dts BUILD failure (not a warning),
-// which blocks dist/*.d.ts for every consumer. Restore alongside their links if
-// those social rows come back.
-
-const TikTokIcon: React.FC<{ className?: string }> = ({ className }) => (
+// Telegram is one of the four core channels kept per report 752e313b, so its
+// icon is declared and rendered below. LinkedIn / YouTube stay dropped, and
+// TikTok / Facebook were removed alongside their slots: `noUnusedLocals` turns
+// an unused icon local into a dts BUILD failure (not a warning), so only declare
+// an icon that is actually rendered. Their props remain on the interface so no
+// caller breaks; they simply have no icon slot (same as LinkedIn / YouTube).
+const TelegramIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
-  </svg>
-);
-
-const FacebookIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
   </svg>
 );
 
@@ -117,7 +111,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
       // lucky. "Footer discord link goes to wrong discord" (cc5fe223) is what
       // this class of bug looks like when it does reach users.
       discordUrl = urls.social.discord,
-      telegramUrl,
+      telegramUrl = urls.social.telegram,
       instagramUrl = urls.social.instagram,
       twitterUrl = urls.social.twitter,
       linkedinUrl,
@@ -176,12 +170,13 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
           </Link>
         </div>
 
-        {/* Right Section - Social Icons — the TOP FIVE only.
-            Order: Discord / X / IG / TikTok / FB.
+        {/* Right Section - Social Icons — the four core channels only.
+            Order: Discord / X / Telegram / IG.
             Report 752e313b: eight icons caused decision fatigue and lowered
-            conversion; the ticket names the five to keep. Telegram, LinkedIn and
-            YouTube are no longer rendered — their props remain on the interface
-            so no caller breaks, they simply have no icon slot. */}
+            conversion. Per Casey's decision the kept set is X, Discord, Telegram
+            and Instagram. TikTok, Facebook, LinkedIn and YouTube are no longer
+            rendered — their props remain on the interface so no caller breaks,
+            they simply have no icon slot. */}
         {/* Mobile: only Discord + X shown; others hidden below sm breakpoint */}
         <div className="flex items-center gap-6 sm:gap-8">
           {discordUrl && (
@@ -206,6 +201,17 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               <TwitterXIcon className="h-4 w-4" />
             </a>
           )}
+          {telegramUrl && (
+            <a
+              href={telegramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
+              aria-label="Telegram"
+            >
+              <TelegramIcon className="h-4 w-4" />
+            </a>
+          )}
           {instagramUrl && (
             <a
               href={instagramUrl}
@@ -215,28 +221,6 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               aria-label="Instagram"
             >
               <InstagramIcon className="h-4 w-4" />
-            </a>
-          )}
-          {tiktokUrl && (
-            <a
-              href={tiktokUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
-              aria-label="TikTok"
-            >
-              <TikTokIcon className="h-4 w-4" />
-            </a>
-          )}
-          {facebookUrl && (
-            <a
-              href={facebookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
-              aria-label="Facebook"
-            >
-              <FacebookIcon className="h-4 w-4" />
             </a>
           )}
         </div>
