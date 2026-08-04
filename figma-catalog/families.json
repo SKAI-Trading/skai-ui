@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-29T13:22:29.768Z",
+  "generated": "2026-08-04T21:45:58.898Z",
   "families": {
     "home/welcome": {
       "section": "home",
@@ -6864,6 +6864,135 @@
         "Plinko Panel Auto",
         "Skai > Play > Casino > Dice Mobile",
         "signals"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "darts/Casino > Darts": {
+      "section": "darts",
+      "family": "Casino > Darts",
+      "frameCount": 8,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9392-1798",
+        "M6r9FEn042UWTQD1zvy6GM:9411-7933",
+        "M6r9FEn042UWTQD1zvy6GM:9411-7955",
+        "M6r9FEn042UWTQD1zvy6GM:9411-7977",
+        "M6r9FEn042UWTQD1zvy6GM:9433-16420",
+        "M6r9FEn042UWTQD1zvy6GM:9442-17258",
+        "M6r9FEn042UWTQD1zvy6GM:9455-19001",
+        "M6r9FEn042UWTQD1zvy6GM:9467-19582"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Skai > Play > Casino > Hi-Lo Start",
+        "Easy Desktop Full Game",
+        "Medium Desktop Full Game",
+        "Hard Desktop Full Game",
+        "Easy Desktop - In Play",
+        "Skai > Play > Casino > Blackjack",
+        "Mobile Medium",
+        "Mobile Hard"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "chicken/Casino > Chicken": {
+      "section": "chicken",
+      "family": "Casino > Chicken",
+      "frameCount": 21,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9363-1963",
+        "M6r9FEn042UWTQD1zvy6GM:9363-2936",
+        "M6r9FEn042UWTQD1zvy6GM:9429-2661",
+        "M6r9FEn042UWTQD1zvy6GM:9364-3821",
+        "M6r9FEn042UWTQD1zvy6GM:9364-3823",
+        "M6r9FEn042UWTQD1zvy6GM:9368-3825",
+        "M6r9FEn042UWTQD1zvy6GM:9368-3826",
+        "M6r9FEn042UWTQD1zvy6GM:9368-3827",
+        "M6r9FEn042UWTQD1zvy6GM:9368-3828",
+        "M6r9FEn042UWTQD1zvy6GM:9368-3829",
+        "M6r9FEn042UWTQD1zvy6GM:9368-3833",
+        "M6r9FEn042UWTQD1zvy6GM:9380-7138",
+        "M6r9FEn042UWTQD1zvy6GM:9429-2075",
+        "M6r9FEn042UWTQD1zvy6GM:9380-10169",
+        "M6r9FEn042UWTQD1zvy6GM:9428-6660",
+        "M6r9FEn042UWTQD1zvy6GM:9428-8535",
+        "M6r9FEn042UWTQD1zvy6GM:9431-3268",
+        "M6r9FEn042UWTQD1zvy6GM:9432-5358",
+        "M6r9FEn042UWTQD1zvy6GM:9432-8016",
+        "M6r9FEn042UWTQD1zvy6GM:9432-8667",
+        "M6r9FEn042UWTQD1zvy6GM:9432-9285"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Skai > Play > Casino > Hi-Lo Start",
+        "Skai > Play > Casino > Blackjack",
+        "Mobile ALT",
+        "taxi car 1",
+        "sports car 1",
+        "hotdog 1",
+        "minivan 1",
+        "police car 1",
+        "truck 1",
+        "boxtruck 1",
+        "chicken character 1",
+        "Road Block",
+        "Hard Desktop",
+        "flat chick 1",
+        "Medium Desktop",
+        "Medium Desktop - In Play",
+        "Easy Desktop"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "hilo/Casino > Hi-Lo": {
+      "section": "hilo",
+      "family": "Casino > Hi-Lo",
+      "frameCount": 12,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9058-1833",
+        "M6r9FEn042UWTQD1zvy6GM:9058-2367",
+        "M6r9FEn042UWTQD1zvy6GM:9061-10499",
+        "M6r9FEn042UWTQD1zvy6GM:9061-9472",
+        "M6r9FEn042UWTQD1zvy6GM:9058-4372",
+        "M6r9FEn042UWTQD1zvy6GM:9058-5154",
+        "M6r9FEn042UWTQD1zvy6GM:9058-6701",
+        "M6r9FEn042UWTQD1zvy6GM:9079-3253",
+        "M6r9FEn042UWTQD1zvy6GM:9332-27318",
+        "M6r9FEn042UWTQD1zvy6GM:9332-27319",
+        "M6r9FEn042UWTQD1zvy6GM:9332-27320",
+        "M6r9FEn042UWTQD1zvy6GM:9351-4708"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Desktop",
+        "Card out",
+        "Start",
+        "Loss",
+        "Skai > Play > Casino > Scratchers",
+        "Layout",
+        "Screenshot 2026-07-23 at 9.53.47 PM 1",
+        "IMG_4939 2 1",
+        "IMG_4940 2 1",
+        "Mobile",
+        "Skai > Play > Casino > Blackjack"
       ],
       "citedFileCount": 0,
       "citedFiles": [],

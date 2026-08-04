@@ -58,6 +58,10 @@ const SECTION_FILE = {
   "master-sheet": "3sSzw1KewMtUbeLAv7uW0r",
   // plinko = the Plinko casino game; Skai-Games file alongside the other games.
   plinko: "M6r9FEn042UWTQD1zvy6GM",
+  // 2026-07-29 ready-for-dev promotions + one new page, all Skai-Games.
+  darts: "M6r9FEn042UWTQD1zvy6GM",
+  chicken: "M6r9FEn042UWTQD1zvy6GM",
+  hilo: "M6r9FEn042UWTQD1zvy6GM",
 };
 // NOTE (2026-07-27): `trench` and `trade-bugrefs` are RETIRED as sections. The
 // "Trade (7/27 update)" list in figma.txt (692 links) is now the sole approved
@@ -77,6 +81,10 @@ const SECTIONS = [
   // the whole page — a ✅ ready-for-dev one — was uncataloged. Found by the
   // uncovered-page report in this script, confirmed by audit-figma-txt.mjs.
   "plinko",
+  // 2026-07-29: three Games pages became ready-for-dev overnight — Chicken and
+  // Hi-Lo were promoted from 🚧, Darts arrived already ✅. None is in figma.txt,
+  // so these were harvested live from Figma rather than parsed from the txt.
+  "darts", "chicken", "hilo",
 ];
 // The main file uses the "Skai > <Section> ..." convention. The Skai-Games file
 // does NOT — its game frames are plain component/screen names, so we detect a
@@ -89,6 +97,14 @@ const SECTIONS = [
 const NON_SKAI_SECTIONS = new Set([
   "dice", "crash", "mines", "blackjack", "coinflip", "skratch", "missing-play-images",
   "plinko",
+  // 2026-07-29. These three matter DOUBLY: not only do their frames use plain
+  // design-state names ("Easy Desktop Full Game", "Card out", "Mobile Medium"),
+  // their `Skai > …` titles are COPY-PASTE ARTIFACTS naming the WRONG GAME —
+  // the Darts page contains "Skai > Play > Casino > Hi-Lo Start" and
+  // "… > Blackjack", Chicken the same, Hi-Lo a "… > Scratchers". The pages were
+  // duplicated and never renamed. Parsing them with the Skai grammar would both
+  // demote every real frame to non-screen AND file them under the wrong game.
+  "darts", "chicken", "hilo",
 ]);
 // For a Skai-Games (non-Skai-convention) section, the product/game family name.
 // A section's frames fold into one canonical "Casino > <game>" family.
@@ -96,6 +112,7 @@ const GAME_BY_SECTION = {
   dice: "Dice", crash: "Crash", mines: "Mines", blackjack: "Blackjack",
   coinflip: "Coinflip", skratch: "Scratchers", "missing-play-images": "Play art",
   plinko: "Plinko",
+  darts: "Darts", chicken: "Chicken", hilo: "Hi-Lo",
 };
 
 const readLines = (p) =>

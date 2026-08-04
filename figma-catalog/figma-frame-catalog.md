@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-07-29T13:22:29.690Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-08-04T21:45:58.618Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -23,13 +23,13 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | welcome > onboarding Qs | 19 | mobile, tablet, desktop | load effect > Quests; with default PFP 1; load effect; 2; 1; load effect > Badge reward … | done | [6413-21006](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6413-21006&m=dev) |
-| Whales | 19 | tablet, mobile, desktop | market technicals; no data; no data > Add wallet | done/partial | [7298-70026](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7298-70026&m=dev) |
+| Whales | 19 | tablet, mobile, desktop | market technicals; no data; no data > Add wallet | partial/done | [7298-70026](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7298-70026&m=dev) |
 | Agentic support | 18 | desktop, mobile, tablet | Backtesting > conversation 6 > Replicate Sample Strategy > Custom code; Backtesting > conversation 6; Backtesting > conversation 6 > All backtests; Backtesting > conversation 6 > Replicate Sample Strategy; Backtesting > conversation 6 > Replicate Sample Strategy > Custom code > Chart sample | done | [6244-76796](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6244-76796&m=dev) |
 | welcome | 13 | desktop, mobile, tablet | with CTA; end CTA; scroll | done | [5777-28765](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5777-28765&m=dev) |
 | AI Feed | 9 | desktop, tablet, mobile | actionable; empty | partial | [2725-6765](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2725-6765&m=dev) |
 | Portfolio | 9 | tablet, desktop, mobile | invisible | done | [6795-31004](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6795-31004&m=dev) |
 | Pro > checkout | 9 | mobile, tablet, desktop | send tokens - step 1; send tokens - step 2; send tokens - step 3 | done/partial | [7319-61172](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7319-61172&m=dev) |
-| Add > Add whale | 9 | tablet, mobile, desktop | input; input > conversation 5 | done | [7301-77180](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7301-77180&m=dev) |
+| Add > Add whale | 9 | tablet, mobile, desktop | input; input > conversation 5 | partial | [7301-77180](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7301-77180&m=dev) |
 | Portfolio > Social | 7 | tablet, desktop, mobile | with vesting | partial/done | [6925-68955](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6925-68955&m=dev) |
 | Portfolio > Vault | 7 | tablet, desktop, mobile | deposit | done | [6828-38811](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6828-38811&m=dev) |
 | Portfolio > Tiers | 6 | tablet, desktop, mobile | - | done | [6942-74270](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6942-74270&m=dev) |
@@ -57,11 +57,11 @@ Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-vi
 | Portfolio > Export private key | 3 | desktop, tablet, mobile | - | partial | [2752-5814](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2752-5814&m=dev) |
 | Portfolio > Badges > Badge preview | 3 | tablet, desktop, mobile | - | partial | [6965-82190](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6965-82190&m=dev) |
 | Portfolio > Badges | 3 | tablet, desktop, mobile | - | done | [6962-75733](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6962-75733&m=dev) |
-| Whales > Wallet manager > Import wallet | 3 | mobile, desktop, tablet | - | done | [7291-67959](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7291-67959&m=dev) |
-| Whales > Live trades | 3 | desktop, tablet, mobile | - | done | [5965-53498](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5965-53498&m=dev) |
+| Whales > Wallet manager > Import wallet | 3 | mobile, desktop, tablet | - | done/partial | [7291-67959](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7291-67959&m=dev) |
+| Whales > Live trades | 3 | desktop, tablet, mobile | - | done/partial | [5965-53498](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5965-53498&m=dev) |
 | Pro > checkout > welcome to gold | 3 | mobile, tablet, desktop | - | done | [7329-62749](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7329-62749&m=dev) |
 | Add > Add whale > Select whale | 3 | mobile, desktop, tablet | - | done | [7301-76568](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7301-76568&m=dev) |
-| Whales > KOLs | 3 | mobile, tablet, desktop | - | done | [7290-64605](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7290-64605&m=dev) |
+| Whales > KOLs | 3 | mobile, tablet, desktop | - | done/partial | [7290-64605](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=7290-64605&m=dev) |
 | ALT | 2 | desktop, mobile | - | done | [2733-19908](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2733-19908&m=dev) |
 | Portfolio > Defi | 2 | tablet, desktop | - | done | [6918-62834](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6918-62834&m=dev) |
 | sidebar normal > Group chats | 1 | desktop | - | done | [6250-93084](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=6250-93084&m=dev) |

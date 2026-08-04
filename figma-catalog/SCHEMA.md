@@ -209,9 +209,22 @@ manufactured false "finished" verdicts on screens a screenshot pass had judged i
 
 `apply-verify.mjs` was missing from this list entirely, so following the documented
 pipeline after any verification sweep destroyed that sweep's output. **If you run
-`apply-status`, you must re-run `apply-verify` behind it.** If a rebuild shows `registry.json`
-losing `vverify:` occurrences (`grep -c 'vverify:' registry.json` — expect ~920), that is
-this bug, not a data change: `git checkout -- registry.json` and re-run in the right order.
+`apply-status`, you must re-run `apply-verify` behind it.**
+
+**Canary — compare, do not memorise a number.** The check is that the marker count must
+never DROP across a rebuild:
+
+```sh
+cp registry.json /tmp/reg.before.json     # before the pipeline
+# …run build-registry → families → apply-status → apply-verify → catalog-view…
+python -c "print(open('/tmp/reg.before.json',encoding='utf-8').read().count('vverify:'), \
+                 open('registry.json',encoding='utf-8').read().count('vverify:'))"
+```
+
+Equal is correct; higher is fine (new frames matched existing verdicts); **a drop toward 0
+is this bug** — `git checkout -- registry.json` and re-run in the right order. An absolute
+figure rots: this doc said "expect ~920" and was already wrong by 2026-07-29 (930) simply
+because the catalog had grown, which briefly looked like a defect and was not.
 
 `catalog-view.mjs` writes to the stdout **stream** and also accepts an explicit output path
 (`node … catalog-view.mjs out.md`). It previously wrote to the literal path `/dev/stdout`,
