@@ -19,4 +19,4 @@
 7838-55165	deferred	-	start-bridge frame absent from figma-catalog; withdrawals flag off blocks the flow
 7838-55747	deferred	-	post-wallet-interaction bridge frame needs connected wallet; unreachable under DEV bypass
 7886-84166	deferred	-	bridge error frame absent from figma-catalog
-4414-83859	deferred	-	Launch dropdown not built. Repo-wide grep for Launch.?Dropdown returns 0 files.
+4414-83859	deferred	-	CORRECTED 2026-08-04: the Launch row IS built (HomeTopBar.tsx:137) — this verdict was wrong. Repo-wide grep for Launch.?Dropdown returns 0 files.
