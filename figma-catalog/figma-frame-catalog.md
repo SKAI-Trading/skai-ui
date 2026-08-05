@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-08-05T08:21:07.079Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-08-05T09:54:16.295Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -15,14 +15,14 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | home | ✅ | 349 | 232 | 117 | 51 | 168 | 62 | 0 | 2 | 119 |
 | predict | ✅ | 284 | 144 | 140 | 33 | 70 | 49 | 5 | 20 | 21 |
 | onboarding | ✅ | 129 | 96 | 33 | 20 | 50 | 28 | 18 | 0 | 0 |
-| coinflip | ✅ | 37 | 26 | 11 | 1 | 22 | 4 | 0 | 0 | 0 |
+| coinflip | ✅ | 37 | 26 | 11 | 1 | 25 | 1 | 0 | 0 | 0 |
 | dice | ✅ | 34 | 22 | 12 | 1 | 0 | 22 | 0 | 0 | 0 |
 | chicken | ✅ | 31 | 21 | 10 | 1 | 0 | 21 | 0 | 0 | 0 |
 | blackjack | ✅ | 19 | 14 | 5 | 1 | 0 | 14 | 0 | 0 | 0 |
 | plinko | ✅ | 20 | 13 | 7 | 1 | 0 | 13 | 0 | 0 | 0 |
 | crash | ✅ | 17 | 12 | 5 | 1 | 0 | 12 | 0 | 0 | 0 |
 | hilo | ✅ | 20 | 12 | 8 | 1 | 0 | 12 | 0 | 0 | 0 |
-| skratch | ✅ | 19 | 11 | 8 | 1 | 4 | 7 | 0 | 0 | 0 |
+| skratch | ✅ | 19 | 11 | 8 | 1 | 7 | 4 | 0 | 0 | 0 |
 | mines | ✅ | 16 | 9 | 7 | 1 | 0 | 9 | 0 | 0 | 0 |
 | darts | ✅ | 31 | 8 | 23 | 1 | 0 | 8 | 0 | 0 | 0 |
 | pwa | ✅ | 5 | 5 | 0 | 2 | 5 | 0 | 0 | 0 | 0 |
@@ -35,7 +35,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | user-flow | 🚧 | 3 | 3 | 0 | 2 | 0 | 0 | 0 | 3 | 0 |
 | missing-play-images | 📍 | 16 | 14 | 2 | 1 | 0 | 14 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
-| **all** | | **2823** | **1590** | | | **712** | **602** | **57** | **219** | **289** |
+| **all** | | **2823** | **1590** | | | **718** | **596** | **57** | **219** | **289** |
 
 ### Drift against live Figma
 
