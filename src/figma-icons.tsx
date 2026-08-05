@@ -1125,34 +1125,40 @@ export const FigmaQuestionCircleIcon: React.FC<IconProps> = (props) => (
 );
 
 /** Solana chain badge — Import-wallets "Wallet type" (brand #14F195). */
+// report 05bbedc4: official Solana logomark — green ring + #9945FF→#14F195 gradient tri-bar (was flat solid green disc).
 export const FigmaSolanaIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-    <circle cx="8" cy="8" r="8" fill="#14F195" />
+    <defs>
+      <linearGradient id="skaiSolBars" x1="3.4" y1="11.6" x2="12.6" y2="4.4" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#9945FF" />
+        <stop offset="1" stopColor="#14F195" />
+      </linearGradient>
+    </defs>
+    <circle cx="8" cy="8" r="7.35" stroke="#14F195" strokeWidth="1.1" />
     <path
       d="M5.2 4.9a.45.45 0 0 1 .32-.13h5.9c.2 0 .3.24.16.38l-1.16 1.17a.45.45 0 0 1-.32.13h-5.9c-.2 0-.3-.24-.16-.38L5.2 4.9ZM5.2 11.1a.45.45 0 0 0 .32.13h5.9c.2 0 .3-.24.16-.38l-1.16-1.17a.45.45 0 0 0-.32-.13h-5.9c-.2 0-.3.24-.16.38l1.16 1.17ZM10.8 7.42a.45.45 0 0 0-.32-.14h-5.9c-.2 0-.3.24-.16.38l1.16 1.17c.08.09.2.14.32.14h5.9c.2 0 .3-.24.16-.38L10.8 7.42Z"
-      fill="#04211F"
+      fill="url(#skaiSolBars)"
     />
   </svg>
 );
 
 /** Base chain badge — Import-wallets "Wallet type" (brand #0052FF). */
+// report 05bbedc4: official Base logomark — #0052FF disc + white circle with a vertical flat right edge.
 export const FigmaBaseChainIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
     <circle cx="8" cy="8" r="8" fill="#0052FF" />
-    <path
-      d="M7.97 13.5a5.5 5.5 0 1 0-5.47-6.06h7.27v1.12H2.5A5.5 5.5 0 0 0 7.97 13.5Z"
-      fill="#FFFFFF"
-    />
+    <path d="M11.1 3.95A5.1 5.1 0 1 0 11.1 12.05Z" fill="#FFFFFF" />
   </svg>
 );
 
 /** BNB chain badge — Import-wallets "Wallet type" (brand #F0B90B). */
+// report 05bbedc4: official BNB logomark — dark disc + gold #F0B90B diamond mark (was gold disc + white diamonds).
 export const FigmaBnbIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-    <circle cx="8" cy="8" r="8" fill="#F0B90B" />
+    <circle cx="8" cy="8" r="8" fill="#181A20" />
     <path
       d="M8 3.4 9.7 5.1 8 6.8 6.3 5.1 8 3.4ZM4.55 6.85 5.7 8 4.55 9.15 3.4 8l1.15-1.15ZM11.45 6.85 12.6 8l-1.15 1.15L10.3 8l1.15-1.15ZM8 6.55 9.45 8 8 9.45 6.55 8 8 6.55ZM8 9.2l1.7 1.7L8 12.6l-1.7-1.7L8 9.2Z"
-      fill="#FFFFFF"
+      fill="#F0B90B"
     />
   </svg>
 );
