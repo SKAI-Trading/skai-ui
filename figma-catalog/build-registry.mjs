@@ -26,6 +26,16 @@ const FILE_KEYS = {
 };
 // Which Figma file each section's nodes come from.
 const SECTION_FILE = {
+  // 2026-08-05: the five 🚧 under-construction pages that had NO section, so every
+  // frame on them was structurally invisible to this catalog. Harvested LIVE from
+  // Figma (PageNode.loadAsync), not from figma.txt — which is a Jul-28 snapshot and
+  // never listed them. Cataloguing a WIP page is not the same as calling it ready:
+  // `readiness` still comes from the page's 🚧 emoji, so they report as wip.
+  social: "3sSzw1KewMtUbeLAv7uW0r",
+  governance: "3sSzw1KewMtUbeLAv7uW0r",
+  "user-flow": "3sSzw1KewMtUbeLAv7uW0r",
+  towers: "M6r9FEn042UWTQD1zvy6GM",
+  keno: "M6r9FEn042UWTQD1zvy6GM",
   home: "3sSzw1KewMtUbeLAv7uW0r",
   wallet: "3sSzw1KewMtUbeLAv7uW0r",
   trade: "3sSzw1KewMtUbeLAv7uW0r",
@@ -85,6 +95,11 @@ const SECTIONS = [
   // Hi-Lo were promoted from 🚧, Darts arrived already ✅. None is in figma.txt,
   // so these were harvested live from Figma rather than parsed from the txt.
   "darts", "chicken", "hilo",
+  // 2026-08-05: the previously-uncovered 🚧 pages. Towers excludes its 51
+  // "Rectangle 346246xx" grid-cell nodes (tower rungs, pure furniture); Bingo,
+  // Fortune Wheel and Rock Paper Scissors are omitted because those pages are
+  // genuinely EMPTY in Figma (0 top-level children), so there is nothing to catalog.
+  "social", "governance", "user-flow", "towers", "keno",
 ];
 // The main file uses the "Skai > <Section> ..." convention. The Skai-Games file
 // does NOT — its game frames are plain component/screen names, so we detect a
@@ -97,6 +112,11 @@ const SECTIONS = [
 const NON_SKAI_SECTIONS = new Set([
   "dice", "crash", "mines", "blackjack", "coinflip", "skratch", "missing-play-images",
   "plinko",
+  // 2026-08-05: Towers and Keno are Skai-Games pages whose frames are plain design
+  // names ("Desktop Full Game", "Mobile", "Desktop Selection"). Keno's frames are
+  // additionally MIS-TITLED — they read "Scratchers" and "Blackjack" — the
+  // wrong-game-title issue already recorded for the newer game pages.
+  "towers", "keno",
   // 2026-07-29. These three matter DOUBLY: not only do their frames use plain
   // design-state names ("Easy Desktop Full Game", "Card out", "Mobile Medium"),
   // their `Skai > …` titles are COPY-PASTE ARTIFACTS naming the WRONG GAME —

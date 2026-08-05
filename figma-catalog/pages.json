@@ -31,38 +31,335 @@
     "🌎": "meta"
   },
   "pages": [
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "2001:2",      "pageName": "Thumbnail",                        "readiness": "meta",  "liveChildren": null, "sections": [] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "3422:20110",  "pageName": "📍 Master sheet",                   "readiness": "meta",  "liveChildren": 46,   "sections": ["master-sheet"] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "3:2",         "pageName": "✅ Onboarding and Authentication",  "readiness": "ready", "liveChildren": 141,  "sections": ["onboarding"] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "2311:5967",   "pageName": "✅ Privacy and Terms",              "readiness": "ready", "liveChildren": 10,   "sections": ["legal"] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "2003:674",    "pageName": "✅ Home",                           "readiness": "ready", "liveChildren": 354,  "sections": ["home", "pwa"] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "2998:19593",  "pageName": "✅ Wallet",                         "readiness": "ready", "liveChildren": 361,  "sections": ["wallet"] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "3:3",         "pageName": "✅ Trade",                          "readiness": "ready", "liveChildren": 827,  "sections": ["trade"] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "3173:26018",  "pageName": "✅ Predict",                        "readiness": "ready", "liveChildren": 284,  "sections": ["predict"] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "4459:128102", "pageName": "🚧 Play",                           "readiness": "wip",   "liveChildren": 176,  "sections": ["play"] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "4914:113562", "pageName": "🚧 Social",                         "readiness": "wip",   "liveChildren": 147,  "sections": [] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "5210:118077", "pageName": "🚧 Governance and Utilities",       "readiness": "wip",   "liveChildren": 155,  "sections": [] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "10385:2",     "pageName": "🚧 Titles + Emblems",               "readiness": "wip",   "liveChildren": 1157, "sections": [] },
-    { "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "pageId": "10438:15679", "pageName": "🚧 User Flow",                      "readiness": "wip",   "liveChildren": 3,    "sections": [] },
-
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "2001:2",      "pageName": "Thumbnail",                         "readiness": "meta",  "liveChildren": null, "sections": [] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "3422:20110",  "pageName": "📍 Games master sheet",             "readiness": "meta",  "liveChildren": null, "sections": [] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9220:26175",  "pageName": "🌎 Cover Images - Skai Originals",  "readiness": "meta",  "liveChildren": 16,   "sections": ["missing-play-images"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "2003:674",    "pageName": "✅ Dice - Skai originals",          "readiness": "ready", "liveChildren": 34,   "sections": ["dice"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:72411",  "pageName": "✅ Plinko - Skai originals",        "readiness": "ready", "liveChildren": 20,   "sections": ["plinko"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:85754",  "pageName": "✅ Crash - Skai originals",         "readiness": "ready", "liveChildren": 17,   "sections": ["crash"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:102080", "pageName": "✅ Mines - Skai originals",         "readiness": "ready", "liveChildren": 16,   "sections": ["mines"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:112414", "pageName": "✅ Blackjack - Skai originals",     "readiness": "ready", "liveChildren": 19,   "sections": ["blackjack"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:122027", "pageName": "✅ Coinflip - Skai originals",      "readiness": "ready", "liveChildren": 37,   "sections": ["coinflip"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9003:133221", "pageName": "✅ Scratchers - Skai originals",    "readiness": "ready", "liveChildren": 19,   "sections": ["skratch"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9061:15464",  "pageName": "✅ Chicken - Skai originals",       "readiness": "ready", "liveChildren": 31,   "sections": ["chicken"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9058:1819",   "pageName": "✅ Hi-Lo - Skai originals",         "readiness": "ready", "liveChildren": 20,   "sections": ["hilo"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9390:18294",  "pageName": "✅ Darts - Skai originals",         "readiness": "ready", "liveChildren": 31,   "sections": ["darts"] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9061:15449",  "pageName": "🚧 Towers - Skai originals",        "readiness": "wip",   "liveChildren": 63,   "sections": [] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9390:18295",  "pageName": "🚧 Keno - Skai originals",          "readiness": "wip",   "liveChildren": 27,   "sections": [] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9390:18296",  "pageName": "🚧 Bingo - Skai originals",         "readiness": "wip",   "liveChildren": 0,    "sections": [] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9390:18297",  "pageName": "🚧 Fortune Wheel - Skai originals", "readiness": "wip",   "liveChildren": 0,    "sections": [] },
-    { "fileKey": "M6r9FEn042UWTQD1zvy6GM", "pageId": "9390:18298",  "pageName": "🚧 Rock Paper Scissors - Skai originals", "readiness": "wip", "liveChildren": 0, "sections": [] }
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "2001:2",
+      "pageName": "Thumbnail",
+      "readiness": "meta",
+      "liveChildren": null,
+      "sections": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "3422:20110",
+      "pageName": "📍 Master sheet",
+      "readiness": "meta",
+      "liveChildren": 46,
+      "sections": [
+        "master-sheet"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "3:2",
+      "pageName": "✅ Onboarding and Authentication",
+      "readiness": "ready",
+      "liveChildren": 129,
+      "sections": [
+        "onboarding"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "2311:5967",
+      "pageName": "✅ Privacy and Terms",
+      "readiness": "ready",
+      "liveChildren": 10,
+      "sections": [
+        "legal"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "2003:674",
+      "pageName": "✅ Home",
+      "readiness": "ready",
+      "liveChildren": 354,
+      "sections": [
+        "home",
+        "pwa"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "2998:19593",
+      "pageName": "✅ Wallet",
+      "readiness": "ready",
+      "liveChildren": 361,
+      "sections": [
+        "wallet"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "3:3",
+      "pageName": "✅ Trade",
+      "readiness": "ready",
+      "liveChildren": 827,
+      "sections": [
+        "trade"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "3173:26018",
+      "pageName": "✅ Predict",
+      "readiness": "ready",
+      "liveChildren": 284,
+      "sections": [
+        "predict"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "4459:128102",
+      "pageName": "🚧 Play",
+      "readiness": "wip",
+      "liveChildren": 178,
+      "sections": [
+        "play"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "4914:113562",
+      "pageName": "🚧 Social",
+      "readiness": "wip",
+      "liveChildren": 162,
+      "sections": [
+        "social"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "5210:118077",
+      "pageName": "🚧 Governance and Utilities",
+      "readiness": "wip",
+      "liveChildren": 159,
+      "sections": [
+        "governance"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "10385:2",
+      "pageName": "🚧 Titles + Emblems",
+      "readiness": "wip",
+      "liveChildren": 1157,
+      "sections": [],
+      "outOfScope": "Asset library, not screens: 1157 top-level icon/emblem nodes. Cataloguing them would swamp the registry with art no code path implements. Revisit only if titles/emblems become a product surface."
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "10438:15679",
+      "pageName": "🚧 User Flow",
+      "readiness": "wip",
+      "liveChildren": 3,
+      "sections": [
+        "user-flow"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "2001:2",
+      "pageName": "Thumbnail",
+      "readiness": "meta",
+      "liveChildren": null,
+      "sections": []
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "3422:20110",
+      "pageName": "📍 Games master sheet",
+      "readiness": "meta",
+      "liveChildren": null,
+      "sections": []
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9220:26175",
+      "pageName": "🌎 Cover Images - Skai Originals",
+      "readiness": "meta",
+      "liveChildren": 16,
+      "sections": [
+        "missing-play-images"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "2003:674",
+      "pageName": "✅ Dice - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 34,
+      "sections": [
+        "dice"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:72411",
+      "pageName": "✅ Plinko - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 20,
+      "sections": [
+        "plinko"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:85754",
+      "pageName": "✅ Crash - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 17,
+      "sections": [
+        "crash"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:102080",
+      "pageName": "✅ Mines - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 16,
+      "sections": [
+        "mines"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:112414",
+      "pageName": "✅ Blackjack - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 19,
+      "sections": [
+        "blackjack"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:122027",
+      "pageName": "✅ Coinflip - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 37,
+      "sections": [
+        "coinflip"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:133221",
+      "pageName": "✅ Scratchers - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 19,
+      "sections": [
+        "skratch"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9061:15464",
+      "pageName": "✅ Chicken - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 31,
+      "sections": [
+        "chicken"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9058:1819",
+      "pageName": "✅ Hi-Lo - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 20,
+      "sections": [
+        "hilo"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18294",
+      "pageName": "✅ Darts - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 31,
+      "sections": [
+        "darts"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9061:15449",
+      "pageName": "🚧 Towers - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 63,
+      "sections": [
+        "towers"
+      ],
+      "expectedDelta": 51,
+      "deltaExplained": [
+        "★ 2026-08-05: the 51-node delta on this page is DELIBERATE, not drift. All 63 live",
+        "top-level children were re-harvested; the 12 catalogued rows already cover EVERY",
+        "frame-like node on the page (Directory, 3x Breakpoint, the Rectangle 147 backdrop,",
+        "the one real screen 'Skai > Play > Casino > Towers (1440 x 900px)', both 'Desktop",
+        "Full Game' frames, the 'Frame 1000004081' board, both hf_* reference images and the",
+        "Screenshot rectangle). The 51 uncatalogued nodes are 100% bare RECTANGLE — zero",
+        "FRAMEs, zero screens, zero named design states. Cataloguing them would add 51 rows",
+        "that no code path can ever implement and would bury the one screen this page has.",
+        "",
+        "What they actually are:",
+        "  - 45 loose board tiles, 100x50, cornerRadius 8, fill rgb(0,22,21) - IDENTICAL to",
+        "    the 36 rectangles already nested inside 'Frame 1000004081' (9079-3251), which is",
+        "    the assembled 4-wide Towers board. They sit on bare canvas in two unassembled",
+        "    grids, both 9 rows tall at a 66px pitch, i.e. the other two difficulty widths:",
+        "      * 27 = 3 cols x 9 rows  (9079-3120 .. 9079-3154, x -688/-568/-448, y 3721-4249)",
+        "      * 18 = 2 cols x 9 rows  (9079-3157 .. 9079-3182, x -1246/-1126, y 4390-4918)",
+        "    Only the 4-wide variant was ever wrapped in a frame; these two were left loose.",
+        "  - 5 annotation blocks over the AI reference image, fill rgb(35,60,63), parked at",
+        "    x ~ -14300..-14500 beside hf_20260802_175310 (9391-19746): 9391-19737 (672x189)",
+        "    plus 9391-19738/19740/19742/19744 (20x52 each).",
+        "  - 1 stray tile 9494-4451 (151x132, r8, same fill) at -713,5258 - the same size as",
+        "    Keno's 'Frame 1000004105', so scratch geometry shared across the two WIP pages.",
+        "",
+        "Re-check the moment a real FRAME appears on this page: `expectedDelta` above is the",
+        "agreed number, so a delta of anything OTHER than 51 means the page genuinely moved."
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18295",
+      "pageName": "🚧 Keno - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 27,
+      "sections": [
+        "keno"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18296",
+      "pageName": "🚧 Bingo - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 0,
+      "sections": [],
+      "outOfScope": "Page is EMPTY in Figma (0 top-level children) — nothing to catalog yet."
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18297",
+      "pageName": "🚧 Fortune Wheel - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 0,
+      "sections": [],
+      "outOfScope": "Page is EMPTY in Figma (0 top-level children) — nothing to catalog yet."
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18298",
+      "pageName": "🚧 Rock Paper Scissors - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 0,
+      "sections": [],
+      "outOfScope": "Page is EMPTY in Figma (0 top-level children) — nothing to catalog yet."
+    }
   ],
   "figmaChangeLog": {
     "2026-07-29": {
@@ -89,7 +386,14 @@
       "shrank": {
         "Towers": "117 -> 63 (-54). Frames were DELETED, not added. Anything catalogued or built from the old set may now point at nodes that no longer resolve."
       },
-      "unchanged": ["Wallet 361", "Privacy and Terms 10", "Play 176", "Social 147", "Governance and Utilities 155", "Master sheet 46"],
+      "unchanged": [
+        "Wallet 361",
+        "Privacy and Terms 10",
+        "Play 176",
+        "Social 147",
+        "Governance and Utilities 155",
+        "Master sheet 46"
+      ],
       "★ frameNamesAreUnreliableOnNewGamePages": [
         "The Darts, Chicken and Hi-Lo pages were duplicated from existing game pages and their",
         "frame TITLES were never renamed. Darts contains frames literally named",
@@ -102,5 +406,6 @@
         "build the WRONG GAME. Flagged to Casey 2026-07-29."
       ]
     }
-  }
+  },
+  "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29."
 }

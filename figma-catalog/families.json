@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-04T22:13:27.726Z",
+  "generated": "2026-08-05T08:21:06.849Z",
   "families": {
     "home/welcome": {
       "section": "home",
@@ -70,11 +70,12 @@
     "home/(section root)": {
       "section": "home",
       "family": "(section root)",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "6415-45107",
         "2713-4800",
-        "6415-45113"
+        "6415-45113",
+        "10458-98552"
       ],
       "devices": [
         "tablet",
@@ -5102,6 +5103,61 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
+    "predict/sample market 2": {
+      "section": "predict",
+      "family": "sample market 2",
+      "frameCount": 6,
+      "frames": [
+        "10594-61136",
+        "10594-58911",
+        "10654-198325",
+        "10654-199581",
+        "10654-200390",
+        "10594-60147"
+      ],
+      "devices": [
+        "mobile",
+        "tablet",
+        "desktop"
+      ],
+      "variants": [
+        "market",
+        "full"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/(section root)": {
+      "section": "predict",
+      "family": "(section root)",
+      "frameCount": 6,
+      "frames": [
+        "8583-127820",
+        "8610-163972",
+        "10100-103339",
+        "10202-110892",
+        "10509-18892",
+        "10642-186083"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/pages/predict/PredictPage.tsx",
+        "src/lib/predict/categorize.ts"
+      ],
+      "dirs": [
+        "src/lib/predict/categorize.ts",
+        "src/pages/predict/PredictPage.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
     "predict/on:click": {
       "section": "predict",
       "family": "on:click",
@@ -5118,42 +5174,22 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "predict/(section root)": {
-      "section": "predict",
-      "family": "(section root)",
-      "frameCount": 4,
-      "frames": [
-        "8583-127820",
-        "8610-163972",
-        "10100-103339",
-        "10202-110892"
-      ],
-      "devices": [
-        "desktop",
-        "mobile"
-      ],
-      "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/pages/predict/PredictPage.tsx",
-        "src/lib/predict/categorize.ts"
-      ],
-      "dirs": [
-        "src/lib/predict/categorize.ts",
-        "src/pages/predict/PredictPage.tsx"
-      ],
-      "proposedStatus": "partial"
-    },
     "predict/Dashboard": {
       "section": "predict",
       "family": "Dashboard",
-      "frameCount": 2,
+      "frameCount": 6,
       "frames": [
+        "3554-10890",
         "3562-40397",
-        "3554-10890"
+        "10635-78589",
+        "10657-215932",
+        "10657-217688",
+        "10635-79861"
       ],
       "devices": [
-        "desktop"
+        "desktop",
+        "mobile",
+        "tablet"
       ],
       "variants": [],
       "citedFileCount": 0,
@@ -5161,16 +5197,157 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "predict/layout 2 ALT": {
+    "predict/Rewards": {
       "section": "predict",
-      "family": "layout 2 ALT",
-      "frameCount": 2,
+      "family": "Rewards",
+      "frameCount": 3,
       "frames": [
-        "3269-17599",
-        "10097-220101"
+        "8911-163462",
+        "10640-28003",
+        "10657-232076"
       ],
       "devices": [
-        "desktop"
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 1,
+      "citedFiles": [
+        "src/pages/predict/PredictRewards.tsx"
+      ],
+      "dirs": [
+        "src/pages/predict/PredictRewards.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "predict/Rewards > Open orders": {
+      "section": "predict",
+      "family": "Rewards > Open orders",
+      "frameCount": 3,
+      "frames": [
+        "8937-48702",
+        "10657-234836",
+        "10640-30558"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 2,
+      "citedFiles": [
+        "src/components/predict/rewards/OpenOrdersTable.tsx",
+        "src/pages/predict/PredictRewards.tsx"
+      ],
+      "dirs": [
+        "src/components/predict/rewards",
+        "src/pages/predict/PredictRewards.tsx"
+      ],
+      "proposedStatus": "partial"
+    },
+    "predict/Dashboard > Elections": {
+      "section": "predict",
+      "family": "Dashboard > Elections",
+      "frameCount": 7,
+      "frames": [
+        "3620-47881",
+        "10636-84554",
+        "10657-218210",
+        "10657-221762",
+        "10657-224620",
+        "10636-87947",
+        "10636-96920"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Dashboard > Economy": {
+      "section": "predict",
+      "family": "Dashboard > Economy",
+      "frameCount": 7,
+      "frames": [
+        "3624-51447",
+        "10636-101271",
+        "10657-221494",
+        "10657-227941",
+        "10657-228292",
+        "10637-195039",
+        "10637-195507"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Dashboard > Sports": {
+      "section": "predict",
+      "family": "Dashboard > Sports",
+      "frameCount": 3,
+      "frames": [
+        "3631-56374",
+        "10636-91677",
+        "10657-228631"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Dashboard > Oscars": {
+      "section": "predict",
+      "family": "Dashboard > Oscars",
+      "frameCount": 3,
+      "frames": [
+        "3640-58287",
+        "10636-95404",
+        "10657-230090"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Rewards > drop downs": {
+      "section": "predict",
+      "family": "Rewards > drop downs",
+      "frameCount": 3,
+      "frames": [
+        "3558-39458",
+        "10657-233202",
+        "10640-75179"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
       ],
       "variants": [],
       "citedFileCount": 0,
@@ -5181,22 +5358,61 @@
     "predict/sample market": {
       "section": "predict",
       "family": "sample market",
-      "frameCount": 6,
+      "frameCount": 32,
       "frames": [
-        "3322-6501",
         "3288-23300",
+        "3322-6501",
         "3325-19591",
         "8909-138276",
         "8909-140523",
-        "10217-104775"
+        "10516-20372",
+        "10516-20920",
+        "10217-104775",
+        "10657-233689",
+        "10657-234017",
+        "10640-75727",
+        "10640-76274",
+        "10509-19476",
+        "10518-23341",
+        "10516-19202",
+        "10647-186764",
+        "10654-194997",
+        "10654-196060",
+        "10710-141600",
+        "10710-133855",
+        "10651-188965",
+        "10654-190511",
+        "10654-192089",
+        "10654-191300",
+        "10654-192878",
+        "10647-187992",
+        "10594-49361",
+        "10594-48510",
+        "10594-56645",
+        "10509-20117",
+        "10594-53620",
+        "10594-54294"
       ],
       "devices": [
-        "desktop"
+        "desktop",
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "dollar only",
         "all expanded",
-        "all expanded > Add rewards"
+        "all expanded > Add rewards",
+        "line chart",
+        "candle chart",
+        "full",
+        "order book",
+        "instant",
+        "outcome",
+        "market - up",
+        "market",
+        "limt - up",
+        "limit - up",
+        "scroll"
       ],
       "citedFileCount": 2,
       "citedFiles": [
@@ -5209,144 +5425,13 @@
       ],
       "proposedStatus": "partial"
     },
-    "predict/Dashboard > Elections": {
+    "predict/layout 2 ALT": {
       "section": "predict",
-      "family": "Dashboard > Elections",
-      "frameCount": 1,
+      "family": "layout 2 ALT",
+      "frameCount": 2,
       "frames": [
-        "3620-47881"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/Dashboard > Sports": {
-      "section": "predict",
-      "family": "Dashboard > Sports",
-      "frameCount": 1,
-      "frames": [
-        "3631-56374"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/Dashboard > Economy": {
-      "section": "predict",
-      "family": "Dashboard > Economy",
-      "frameCount": 1,
-      "frames": [
-        "3624-51447"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/Rewards": {
-      "section": "predict",
-      "family": "Rewards",
-      "frameCount": 1,
-      "frames": [
-        "8911-163462"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/pages/predict/PredictRewards.tsx"
-      ],
-      "dirs": [
-        "src/pages/predict/PredictRewards.tsx"
-      ],
-      "proposedStatus": "partial"
-    },
-    "predict/Rewards > drop downs": {
-      "section": "predict",
-      "family": "Rewards > drop downs",
-      "frameCount": 1,
-      "frames": [
-        "3558-39458"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/breaking": {
-      "section": "predict",
-      "family": "breaking",
-      "frameCount": 1,
-      "frames": [
-        "8687-54504"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/Dashboard > Oscars": {
-      "section": "predict",
-      "family": "Dashboard > Oscars",
-      "frameCount": 1,
-      "frames": [
-        "3640-58287"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/politics": {
-      "section": "predict",
-      "family": "politics",
-      "frameCount": 1,
-      "frames": [
-        "3358-34467"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/breaking > sample market 2": {
-      "section": "predict",
-      "family": "breaking > sample market 2",
-      "frameCount": 1,
-      "frames": [
-        "3344-30618"
+        "3269-17599",
+        "10097-220101"
       ],
       "devices": [
         "desktop"
@@ -5373,27 +5458,21 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "predict/Rewards > Open orders": {
+    "predict/politics": {
       "section": "predict",
-      "family": "Rewards > Open orders",
+      "family": "politics",
       "frameCount": 1,
       "frames": [
-        "8937-48702"
+        "3358-34467"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/predict/rewards/OpenOrdersTable.tsx",
-        "src/pages/predict/PredictRewards.tsx"
-      ],
-      "dirs": [
-        "src/components/predict/rewards",
-        "src/pages/predict/PredictRewards.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "predict/sports": {
       "section": "predict",
@@ -5427,83 +5506,21 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "predict/sports > Futures > Sample futures": {
-      "section": "predict",
-      "family": "sports > Futures > Sample futures",
-      "frameCount": 3,
-      "frames": [
-        "3471-7251",
-        "3531-21220",
-        "8864-48712"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [
-        "with resolved"
-      ],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/sports > Futures > Sample futures > Chart settings": {
-      "section": "predict",
-      "family": "sports > Futures > Sample futures > Chart settings",
-      "frameCount": 1,
-      "frames": [
-        "8909-133735"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/sports > Futures > Sample futures > Parameter settings": {
-      "section": "predict",
-      "family": "sports > Futures > Sample futures > Parameter settings",
-      "frameCount": 1,
-      "frames": [
-        "8909-132564"
-      ],
-      "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
     "predict/Crypto": {
       "section": "predict",
       "family": "Crypto",
-      "frameCount": 1,
+      "frameCount": 5,
       "frames": [
-        "3538-22735"
+        "3538-22735",
+        "10597-73252",
+        "10657-213639",
+        "10710-133257",
+        "10597-76565"
       ],
       "devices": [
-        "desktop"
-      ],
-      "variants": [],
-      "citedFileCount": 0,
-      "citedFiles": [],
-      "dirs": [],
-      "proposedStatus": "not-started"
-    },
-    "predict/Climate and Science": {
-      "section": "predict",
-      "family": "Climate and Science",
-      "frameCount": 1,
-      "frames": [
-        "3553-5220"
-      ],
-      "devices": [
-        "desktop"
+        "desktop",
+        "mobile",
+        "tablet"
       ],
       "variants": [],
       "citedFileCount": 0,
@@ -5543,20 +5560,258 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
+    "predict/Climate and Science": {
+      "section": "predict",
+      "family": "Climate and Science",
+      "frameCount": 1,
+      "frames": [
+        "3553-5220"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/breaking": {
+      "section": "predict",
+      "family": "breaking",
+      "frameCount": 1,
+      "frames": [
+        "8687-54504"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/breaking > sample market 2": {
+      "section": "predict",
+      "family": "breaking > sample market 2",
+      "frameCount": 1,
+      "frames": [
+        "3344-30618"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sports > Futures > Sample futures": {
+      "section": "predict",
+      "family": "sports > Futures > Sample futures",
+      "frameCount": 7,
+      "frames": [
+        "3471-7251",
+        "8864-48712",
+        "3531-21220",
+        "10597-69175",
+        "10597-70807",
+        "10657-210195",
+        "10657-211010"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "with resolved",
+        "full"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sports > Futures > Sample futures > Parameter settings": {
+      "section": "predict",
+      "family": "sports > Futures > Sample futures > Parameter settings",
+      "frameCount": 3,
+      "frames": [
+        "8909-132564",
+        "10597-71622",
+        "10657-211823"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sports > Futures > Sample futures > Chart settings": {
+      "section": "predict",
+      "family": "sports > Futures > Sample futures > Chart settings",
+      "frameCount": 3,
+      "frames": [
+        "8909-133735",
+        "10597-72437",
+        "10657-212636"
+      ],
+      "devices": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
     "predict/ALT": {
       "section": "predict",
       "family": "ALT",
-      "frameCount": 9,
+      "frameCount": 18,
       "frames": [
         "10199-104649",
         "10202-112785",
         "10211-14686",
         "10252-79268",
+        "10315-19769",
+        "10318-25330",
+        "10318-26211",
+        "10318-27037",
+        "10318-27634",
+        "10315-21225",
+        "10315-23180",
+        "10315-24206",
+        "10315-22106",
         "10252-84286",
         "10252-82221",
         "10259-85182",
         "10240-16029",
         "10252-79831"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/full": {
+      "section": "predict",
+      "family": "full",
+      "frameCount": 2,
+      "frames": [
+        "10509-18308",
+        "10642-185390"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Sports live": {
+      "section": "predict",
+      "family": "Sports live",
+      "frameCount": 4,
+      "frames": [
+        "10597-63994",
+        "10654-203686",
+        "10654-206593",
+        "10597-64475"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [
+        "full"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Breaking": {
+      "section": "predict",
+      "family": "Breaking",
+      "frameCount": 4,
+      "frames": [
+        "10539-46305",
+        "10654-197572",
+        "10710-132119",
+        "10545-47421"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/Sports futures": {
+      "section": "predict",
+      "family": "Sports futures",
+      "frameCount": 4,
+      "frames": [
+        "10597-66077",
+        "10710-131349",
+        "10654-208482",
+        "10710-132635"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sports > Futures > Sample futures > show resolved": {
+      "section": "predict",
+      "family": "sports > Futures > Sample futures > show resolved",
+      "frameCount": 2,
+      "frames": [
+        "10597-69990",
+        "10654-207667"
+      ],
+      "devices": [
+        "mobile",
+        "tablet"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "predict/sample market ALT": {
+      "section": "predict",
+      "family": "sample market ALT",
+      "frameCount": 1,
+      "frames": [
+        "10659-165267"
       ],
       "devices": [
         "mobile"
@@ -6520,11 +6775,12 @@
     "onboarding/Temporary landing": {
       "section": "onboarding",
       "family": "Temporary landing",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "2065-110",
         "2065-8549",
-        "2065-16978"
+        "2065-16978",
+        "10767-307473"
       ],
       "devices": [
         "desktop",
@@ -6600,9 +6856,10 @@
     "onboarding/Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name": {
       "section": "onboarding",
       "family": "Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "2517-22923",
+        "10734-78750",
         "2065-9965",
         "2065-18394"
       ],
@@ -6665,10 +6922,12 @@
     "onboarding/Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name > Congratulations": {
       "section": "onboarding",
       "family": "Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name > Congratulations",
-      "frameCount": 6,
+      "frameCount": 8,
       "frames": [
         "2065-2229",
+        "10734-79425",
         "2065-4181",
+        "10734-80273",
         "2065-10668",
         "2065-11383",
         "2065-19097",
@@ -6717,9 +6976,10 @@
     "onboarding/Temporary landing > Login": {
       "section": "onboarding",
       "family": "Temporary landing > Login",
-      "frameCount": 6,
+      "frameCount": 7,
       "frames": [
         "2086-28860",
+        "10730-80518",
         "2086-30488",
         "2088-1668",
         "2088-3176",
@@ -6733,6 +6993,27 @@
       ],
       "variants": [
         "with input"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "onboarding/Temporary landing > Sign up": {
+      "section": "onboarding",
+      "family": "Temporary landing > Sign up",
+      "frameCount": 3,
+      "frames": [
+        "10734-73582",
+        "10734-75560",
+        "10734-76366"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "referral open",
+        "referral open > with external wallet - Phantom"
       ],
       "citedFileCount": 0,
       "citedFiles": [],
@@ -6767,10 +7048,12 @@
     "onboarding/Temporary landing > Login > Verification": {
       "section": "onboarding",
       "family": "Temporary landing > Login > Verification",
-      "frameCount": 6,
+      "frameCount": 8,
       "frames": [
         "2086-32903",
+        "10734-77246",
         "2086-36048",
+        "10734-77935",
         "2598-2383",
         "2598-3863",
         "2065-24936",
@@ -6993,6 +7276,2127 @@
         "IMG_4940 2 1",
         "Mobile",
         "Skai > Play > Casino > Blackjack"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Discover": {
+      "section": "social",
+      "family": "Social > Discover",
+      "frameCount": 6,
+      "frames": [
+        "5110-187509",
+        "5110-188367",
+        "5111-189292",
+        "5111-190761",
+        "5111-192551",
+        "5111-190017"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "search",
+        "search > Favourite",
+        "search > Posts",
+        "search > Top 20 trends",
+        "search > Creators - empty"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social": {
+      "section": "social",
+      "family": "Social",
+      "frameCount": 6,
+      "frames": [
+        "5100-183573",
+        "10232-201644",
+        "5101-186045",
+        "5194-271601",
+        "9657-215247",
+        "9657-216084"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "dropdown",
+        "with \"tweets\"",
+        "with \"tweets\" > comment thread",
+        "with \"tweets\" > comment thread ALT"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > create story": {
+      "section": "social",
+      "family": "Social > create story",
+      "frameCount": 1,
+      "frames": [
+        "10324-107023"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > create post > drafts": {
+      "section": "social",
+      "family": "Social > create post > drafts",
+      "frameCount": 2,
+      "frames": [
+        "10335-235331",
+        "10335-236189"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > create post > empty": {
+      "section": "social",
+      "family": "Social > create post > empty",
+      "frameCount": 1,
+      "frames": [
+        "10328-215524"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > create post": {
+      "section": "social",
+      "family": "Social > create post",
+      "frameCount": 2,
+      "frames": [
+        "10335-233638",
+        "10335-234351"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "with attached image"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > create story > prepare story > posting": {
+      "section": "social",
+      "family": "Social > create story > prepare story > posting",
+      "frameCount": 1,
+      "frames": [
+        "10328-199155"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > create story > prepare story": {
+      "section": "social",
+      "family": "Social > create story > prepare story",
+      "frameCount": 1,
+      "frames": [
+        "10324-107730"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > share post": {
+      "section": "social",
+      "family": "Social > share post",
+      "frameCount": 1,
+      "frames": [
+        "10256-150766"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile": {
+      "section": "social",
+      "family": "Social > Sample creator profile",
+      "frameCount": 2,
+      "frames": [
+        "4948-143477",
+        "4954-147061"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile ALT": {
+      "section": "social",
+      "family": "Social > Sample creator profile ALT",
+      "frameCount": 1,
+      "frames": [
+        "9640-213001"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile > Following": {
+      "section": "social",
+      "family": "Social > Sample creator profile > Following",
+      "frameCount": 1,
+      "frames": [
+        "5118-200749"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "modal"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile > Holders": {
+      "section": "social",
+      "family": "Social > Sample creator profile > Holders",
+      "frameCount": 1,
+      "frames": [
+        "9640-214177"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "modal"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile > Followers": {
+      "section": "social",
+      "family": "Social > Sample creator profile > Followers",
+      "frameCount": 1,
+      "frames": [
+        "5120-201706"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "modal"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile > Tokens": {
+      "section": "social",
+      "family": "Social > Sample creator profile > Tokens",
+      "frameCount": 1,
+      "frames": [
+        "4966-147666"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile > Creator overview": {
+      "section": "social",
+      "family": "Social > Sample creator profile > Creator overview",
+      "frameCount": 1,
+      "frames": [
+        "4972-150250"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile > Posts": {
+      "section": "social",
+      "family": "Social > Sample creator profile > Posts",
+      "frameCount": 1,
+      "frames": [
+        "4979-154471"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample creator profile > Groups": {
+      "section": "social",
+      "family": "Social > Sample creator profile > Groups",
+      "frameCount": 1,
+      "frames": [
+        "4997-155172"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live": {
+      "section": "social",
+      "family": "Social > Live",
+      "frameCount": 2,
+      "frames": [
+        "4998-155882",
+        "4943-129014"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages": {
+      "section": "social",
+      "family": "Social > Messages",
+      "frameCount": 3,
+      "frames": [
+        "5152-203838",
+        "5154-206768",
+        "5153-206244"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "empty",
+        "Sample conversation"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation",
+      "frameCount": 2,
+      "frames": [
+        "5153-205032",
+        "10215-137087"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "scroll effect"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > attachment": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > attachment",
+      "frameCount": 1,
+      "frames": [
+        "10216-138151"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > Dropdown options": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > Dropdown options",
+      "frameCount": 1,
+      "frames": [
+        "5162-265801"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > Unread messages": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > Unread messages",
+      "frameCount": 2,
+      "frames": [
+        "5164-266351",
+        "5198-9151"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > Chat settings": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > Chat settings",
+      "frameCount": 1,
+      "frames": [
+        "5165-269440"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > Groups": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > Groups",
+      "frameCount": 1,
+      "frames": [
+        "5164-266951"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > Message requests": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > Message requests",
+      "frameCount": 1,
+      "frames": [
+        "5164-267630"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > Message requests > Sample message": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > Message requests > Sample message",
+      "frameCount": 1,
+      "frames": [
+        "5171-270124"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > multi-select / profile": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > multi-select / profile",
+      "frameCount": 1,
+      "frames": [
+        "5160-207895"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > multi-select / profile > Disappearing message options": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > multi-select / profile > Disappearing message options",
+      "frameCount": 1,
+      "frames": [
+        "5161-209418"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Messages > Sample Conversation > multi-select / profile > Block screenshots": {
+      "section": "social",
+      "family": "Social > Messages > Sample Conversation > multi-select / profile > Block screenshots",
+      "frameCount": 1,
+      "frames": [
+        "5162-265168"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Stream type modal": {
+      "section": "social",
+      "family": "Social > Live > Stream type modal",
+      "frameCount": 1,
+      "frames": [
+        "4998-157146"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Launch > create token": {
+      "section": "social",
+      "family": "Launch > create token",
+      "frameCount": 2,
+      "frames": [
+        "4948-141994",
+        "4948-142325"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Sample post / token": {
+      "section": "social",
+      "family": "Social > Sample post / token",
+      "frameCount": 3,
+      "frames": [
+        "5114-194778",
+        "5116-199727",
+        "9640-211967"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "chart",
+        "chart ALT"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > My post / token": {
+      "section": "social",
+      "family": "Social > My post / token",
+      "frameCount": 3,
+      "frames": [
+        "9658-217019",
+        "5222-11064",
+        "5222-11708"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "chart ALT",
+        "chart",
+        "chart > upload image"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Stream type modal > Sample stream": {
+      "section": "social",
+      "family": "Social > Live > Stream type modal > Sample stream",
+      "frameCount": 3,
+      "frames": [
+        "5000-158255",
+        "5015-179843",
+        "5000-163464"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Go live": {
+      "section": "social",
+      "family": "Social > Live > Go live",
+      "frameCount": 1,
+      "frames": [
+        "10094-247131"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Go live > setup stream": {
+      "section": "social",
+      "family": "Social > Live > Go live > setup stream",
+      "frameCount": 1,
+      "frames": [
+        "10094-250637"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Go live > setup stream > Skai studio > select thumbnail": {
+      "section": "social",
+      "family": "Social > Live > Go live > setup stream > Skai studio > select thumbnail",
+      "frameCount": 1,
+      "frames": [
+        "10094-253395"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream": {
+      "section": "social",
+      "family": "Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream",
+      "frameCount": 1,
+      "frames": [
+        "10102-259223"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager": {
+      "section": "social",
+      "family": "Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager",
+      "frameCount": 1,
+      "frames": [
+        "10136-262502"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager > invite guests": {
+      "section": "social",
+      "family": "Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager > invite guests",
+      "frameCount": 1,
+      "frames": [
+        "10155-268046"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Go live > setup stream > OBS": {
+      "section": "social",
+      "family": "Social > Live > Go live > setup stream > OBS",
+      "frameCount": 1,
+      "frames": [
+        "10094-256369"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Stream type modal > Sample stream > Chat settings": {
+      "section": "social",
+      "family": "Social > Live > Stream type modal > Sample stream > Chat settings",
+      "frameCount": 1,
+      "frames": [
+        "10025-225705"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Stream type modal > Sample stream > Stream viewers": {
+      "section": "social",
+      "family": "Social > Live > Stream type modal > Sample stream > Stream viewers",
+      "frameCount": 1,
+      "frames": [
+        "10025-228194"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Stream type modal > Sample stream > Pop out chat": {
+      "section": "social",
+      "family": "Social > Live > Stream type modal > Sample stream > Pop out chat",
+      "frameCount": 1,
+      "frames": [
+        "10091-230847"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Live > Stream type modal > Sample stream > Share stream": {
+      "section": "social",
+      "family": "Social > Live > Stream type modal > Sample stream > Share stream",
+      "frameCount": 1,
+      "frames": [
+        "10094-244396"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "social/Social > Groups": {
+      "section": "social",
+      "family": "Social > Groups",
+      "frameCount": 10,
+      "frames": [
+        "5194-270743",
+        "5198-47891",
+        "5198-51022",
+        "5198-50314",
+        "5198-47082",
+        "5198-62746",
+        "5202-63932",
+        "5203-64550",
+        "5204-65392",
+        "10232-200912"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "search",
+        "search > Discover",
+        "search > Discover > Join gated group",
+        "search > Created",
+        "search - empty",
+        "search - empty > Create group",
+        "search > Discover > View group",
+        "search > Discover > View group > Adjust settings"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn": {
+      "section": "governance",
+      "family": "Earn",
+      "frameCount": 4,
+      "frames": [
+        "5220-10996",
+        "5243-69438",
+        "10517-38187",
+        "5243-73398"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "with pagination",
+        "Liquidity only"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance": {
+      "section": "governance",
+      "family": "Governance",
+      "frameCount": 1,
+      "frames": [
+        "5370-61920"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Courses": {
+      "section": "governance",
+      "family": "Learn > Courses",
+      "frameCount": 1,
+      "frames": [
+        "5393-86875"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Airdrop": {
+      "section": "governance",
+      "family": "Airdrop",
+      "frameCount": 3,
+      "frames": [
+        "5480-32393",
+        "5481-50934",
+        "5481-49179"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "not eligible"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer": {
+      "section": "governance",
+      "family": "Explorer",
+      "frameCount": 2,
+      "frames": [
+        "5539-93683",
+        "5539-100875"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Address": {
+      "section": "governance",
+      "family": "Explorer > Address",
+      "frameCount": 1,
+      "frames": [
+        "5638-112382"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Address > Holdings": {
+      "section": "governance",
+      "family": "Explorer > Address > Holdings",
+      "frameCount": 1,
+      "frames": [
+        "5660-114498"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Address > Staking": {
+      "section": "governance",
+      "family": "Explorer > Address > Staking",
+      "frameCount": 1,
+      "frames": [
+        "5662-124997"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Address > Lending": {
+      "section": "governance",
+      "family": "Explorer > Address > Lending",
+      "frameCount": 1,
+      "frames": [
+        "5664-127101"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Address > Perps": {
+      "section": "governance",
+      "family": "Explorer > Address > Perps",
+      "frameCount": 1,
+      "frames": [
+        "5661-118252"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Address > Orders": {
+      "section": "governance",
+      "family": "Explorer > Address > Orders",
+      "frameCount": 2,
+      "frames": [
+        "5662-120139",
+        "5662-122540"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Address > Others": {
+      "section": "governance",
+      "family": "Explorer > Address > Others",
+      "frameCount": 1,
+      "frames": [
+        "5664-127738"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Analytics": {
+      "section": "governance",
+      "family": "Explorer > Analytics",
+      "frameCount": 1,
+      "frames": [
+        "5669-128901"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Tokens": {
+      "section": "governance",
+      "family": "Explorer > Tokens",
+      "frameCount": 2,
+      "frames": [
+        "5675-131659",
+        "5694-140556"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > AI": {
+      "section": "governance",
+      "family": "Explorer > AI",
+      "frameCount": 1,
+      "frames": [
+        "5695-142802"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Launchpad": {
+      "section": "governance",
+      "family": "Explorer > Launchpad",
+      "frameCount": 1,
+      "frames": [
+        "5702-143785"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Gaming": {
+      "section": "governance",
+      "family": "Explorer > Gaming",
+      "frameCount": 1,
+      "frames": [
+        "5702-144185"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Governance": {
+      "section": "governance",
+      "family": "Explorer > Governance",
+      "frameCount": 1,
+      "frames": [
+        "5707-145880"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Points": {
+      "section": "governance",
+      "family": "Explorer > Points",
+      "frameCount": 1,
+      "frames": [
+        "5711-148542"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Addresses": {
+      "section": "governance",
+      "family": "Explorer > Addresses",
+      "frameCount": 1,
+      "frames": [
+        "5720-152742"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > DeFi": {
+      "section": "governance",
+      "family": "Explorer > DeFi",
+      "frameCount": 1,
+      "frames": [
+        "5711-150322"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Lending": {
+      "section": "governance",
+      "family": "Explorer > Lending",
+      "frameCount": 1,
+      "frames": [
+        "5711-147902"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Social": {
+      "section": "governance",
+      "family": "Explorer > Social",
+      "frameCount": 1,
+      "frames": [
+        "5707-146891"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Blocks": {
+      "section": "governance",
+      "family": "Explorer > Blocks",
+      "frameCount": 1,
+      "frames": [
+        "5689-136816"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Transactions": {
+      "section": "governance",
+      "family": "Explorer > Transactions",
+      "frameCount": 1,
+      "frames": [
+        "5689-136235"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Gas tracker": {
+      "section": "governance",
+      "family": "Explorer > Gas tracker",
+      "frameCount": 1,
+      "frames": [
+        "5691-138387"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Explorer > Dashboard": {
+      "section": "governance",
+      "family": "Explorer > Dashboard",
+      "frameCount": 1,
+      "frames": [
+        "5570-102478"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "transactions"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Yield vaults": {
+      "section": "governance",
+      "family": "Yield vaults",
+      "frameCount": 1,
+      "frames": [
+        "5492-53877"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Yield vaults > Sample vault item": {
+      "section": "governance",
+      "family": "Yield vaults > Sample vault item",
+      "frameCount": 2,
+      "frames": [
+        "5515-92313",
+        "5515-93883"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Gauge voting": {
+      "section": "governance",
+      "family": "Gauge voting",
+      "frameCount": 2,
+      "frames": [
+        "5515-95455",
+        "5515-96095"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "empty"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Leaderboard": {
+      "section": "governance",
+      "family": "Leaderboard",
+      "frameCount": 1,
+      "frames": [
+        "5531-76408"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Rewards": {
+      "section": "governance",
+      "family": "Rewards",
+      "frameCount": 1,
+      "frames": [
+        "5531-77640"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Rewards > My referrals": {
+      "section": "governance",
+      "family": "Rewards > My referrals",
+      "frameCount": 1,
+      "frames": [
+        "5534-92868"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Skai university": {
+      "section": "governance",
+      "family": "Learn > Skai university",
+      "frameCount": 2,
+      "frames": [
+        "5411-117451",
+        "5442-39147"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "about"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Skai university > Purchase modal": {
+      "section": "governance",
+      "family": "Learn > Skai university > Purchase modal",
+      "frameCount": 1,
+      "frames": [
+        "5443-69711"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Skai university > Sample course > Purchased": {
+      "section": "governance",
+      "family": "Learn > Skai university > Sample course > Purchased",
+      "frameCount": 2,
+      "frames": [
+        "5443-69253",
+        "5446-86451"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Getting started with crypto": {
+      "section": "governance",
+      "family": "Learn > Getting started with crypto",
+      "frameCount": 1,
+      "frames": [
+        "5467-91593"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Skai university > Create course": {
+      "section": "governance",
+      "family": "Learn > Skai university > Create course",
+      "frameCount": 1,
+      "frames": [
+        "5460-87941"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Articles > Create article": {
+      "section": "governance",
+      "family": "Learn > Articles > Create article",
+      "frameCount": 3,
+      "frames": [
+        "5480-20528",
+        "5480-21556",
+        "5480-21885"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "empty"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Skai university > Sample course > Purchased > Sample video": {
+      "section": "governance",
+      "family": "Learn > Skai university > Sample course > Purchased > Sample video",
+      "frameCount": 2,
+      "frames": [
+        "5446-83004",
+        "5446-85963"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "show transcript"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Skai university > Sample course": {
+      "section": "governance",
+      "family": "Learn > Skai university > Sample course",
+      "frameCount": 1,
+      "frames": [
+        "5442-42904"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Articles": {
+      "section": "governance",
+      "family": "Learn > Articles",
+      "frameCount": 1,
+      "frames": [
+        "5468-92781"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn": {
+      "section": "governance",
+      "family": "Learn",
+      "frameCount": 1,
+      "frames": [
+        "5410-112561"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance > Proposals": {
+      "section": "governance",
+      "family": "Governance > Proposals",
+      "frameCount": 2,
+      "frames": [
+        "5371-63275",
+        "5371-64317"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance > Proposals > New proposal": {
+      "section": "governance",
+      "family": "Governance > Proposals > New proposal",
+      "frameCount": 1,
+      "frames": [
+        "5373-68430"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance > Proposals > Delegation": {
+      "section": "governance",
+      "family": "Governance > Proposals > Delegation",
+      "frameCount": 2,
+      "frames": [
+        "5383-73349",
+        "5385-74400"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance > Proposals > Financials": {
+      "section": "governance",
+      "family": "Governance > Proposals > Financials",
+      "frameCount": 2,
+      "frames": [
+        "5387-76925",
+        "5387-77602"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance > Proposals > About": {
+      "section": "governance",
+      "family": "Governance > Proposals > About",
+      "frameCount": 1,
+      "frames": [
+        "5389-78508"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance > Proposals > Sample proposal": {
+      "section": "governance",
+      "family": "Governance > Proposals > Sample proposal",
+      "frameCount": 2,
+      "frames": [
+        "5390-80080",
+        "5392-82015"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "view"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Articles > Sample article": {
+      "section": "governance",
+      "family": "Learn > Articles > Sample article",
+      "frameCount": 1,
+      "frames": [
+        "5477-97603"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance > Proposals > Delegation > Delegate modal": {
+      "section": "governance",
+      "family": "Governance > Proposals > Delegation > Delegate modal",
+      "frameCount": 1,
+      "frames": [
+        "5385-75416"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Governance > Proposals > Staking": {
+      "section": "governance",
+      "family": "Governance > Proposals > Staking",
+      "frameCount": 2,
+      "frames": [
+        "5376-71276",
+        "5383-72757"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Vaults": {
+      "section": "governance",
+      "family": "Earn > Vaults",
+      "frameCount": 1,
+      "frames": [
+        "5259-80297"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > My positions": {
+      "section": "governance",
+      "family": "Earn > My positions",
+      "frameCount": 2,
+      "frames": [
+        "5248-76804",
+        "5278-80860"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "empty"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Faucet": {
+      "section": "governance",
+      "family": "Earn > Faucet",
+      "frameCount": 1,
+      "frames": [
+        "5280-87638"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Faucet > Tickets": {
+      "section": "governance",
+      "family": "Earn > Faucet > Tickets",
+      "frameCount": 1,
+      "frames": [
+        "5315-92101"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Faucet > Winners": {
+      "section": "governance",
+      "family": "Earn > Faucet > Winners",
+      "frameCount": 1,
+      "frames": [
+        "5370-46761"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Faucet > Earn more": {
+      "section": "governance",
+      "family": "Earn > Faucet > Earn more",
+      "frameCount": 1,
+      "frames": [
+        "5370-47867"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Referral": {
+      "section": "governance",
+      "family": "Earn > Referral",
+      "frameCount": 1,
+      "frames": [
+        "5370-59619"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Vault > Trading vault": {
+      "section": "governance",
+      "family": "Earn > Vault > Trading vault",
+      "frameCount": 1,
+      "frames": [
+        "5280-82910"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Vault > House vault": {
+      "section": "governance",
+      "family": "Earn > Vault > House vault",
+      "frameCount": 1,
+      "frames": [
+        "5280-86949"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Stake": {
+      "section": "governance",
+      "family": "Earn > Stake",
+      "frameCount": 1,
+      "frames": [
+        "5243-74665"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > Stake > confirm stake": {
+      "section": "governance",
+      "family": "Earn > Stake > confirm stake",
+      "frameCount": 1,
+      "frames": [
+        "5243-76144"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Earn > My positions > View details": {
+      "section": "governance",
+      "family": "Earn > My positions > View details",
+      "frameCount": 1,
+      "frames": [
+        "5258-78625"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Learn > Skai university > Articles": {
+      "section": "governance",
+      "family": "Learn > Skai university > Articles",
+      "frameCount": 1,
+      "frames": [
+        "5480-22549"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Account": {
+      "section": "governance",
+      "family": "Account",
+      "frameCount": 2,
+      "frames": [
+        "5518-101256",
+        "5518-100072"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Account > Performance overview": {
+      "section": "governance",
+      "family": "Account > Performance overview",
+      "frameCount": 1,
+      "frames": [
+        "5523-103993"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Account > Account settings": {
+      "section": "governance",
+      "family": "Account > Account settings",
+      "frameCount": 2,
+      "frames": [
+        "5526-47972",
+        "5529-72564"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Account > Account settings > Private key": {
+      "section": "governance",
+      "family": "Account > Account settings > Private key",
+      "frameCount": 2,
+      "frames": [
+        "5529-73867",
+        "5529-76029"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "step 2"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Account > Account settings > Security": {
+      "section": "governance",
+      "family": "Account > Account settings > Security",
+      "frameCount": 1,
+      "frames": [
+        "5529-49244"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "governance/Account > Account settings > Preferences": {
+      "section": "governance",
+      "family": "Account > Account settings > Preferences",
+      "frameCount": 1,
+      "frames": [
+        "5529-73119"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "user-flow/(section root)": {
+      "section": "user-flow",
+      "family": "(section root)",
+      "frameCount": 2,
+      "frames": [
+        "10439-43649",
+        "10442-7290"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "user-flow/Perpetual futures": {
+      "section": "user-flow",
+      "family": "Perpetual futures",
+      "frameCount": 1,
+      "frames": [
+        "10440-1985"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "user not signed"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "towers/Casino > Dice": {
+      "section": "towers",
+      "family": "Casino > Dice",
+      "frameCount": 6,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9079-2001",
+        "M6r9FEn042UWTQD1zvy6GM:9391-18698",
+        "M6r9FEn042UWTQD1zvy6GM:9079-2977",
+        "M6r9FEn042UWTQD1zvy6GM:9391-19091",
+        "M6r9FEn042UWTQD1zvy6GM:9391-19746",
+        "M6r9FEn042UWTQD1zvy6GM:9391-19912"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "Skai > Play > Casino > Towers",
+        "hf_20260802_165842_f42a9cf4-60cf-420b-8bce-8e64f2274a83 1",
+        "Desktop Full Game",
+        "hf_20260802_175310_1d541834-3870-4f8d-a2d4-58053874368e 1",
+        "Screenshot 2026-08-02 at 1.45.27 PM 1"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "keno/Casino > Dice": {
+      "section": "keno",
+      "family": "Casino > Dice",
+      "frameCount": 10,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9433-12187",
+        "M6r9FEn042UWTQD1zvy6GM:9433-14563",
+        "M6r9FEn042UWTQD1zvy6GM:9433-15177",
+        "M6r9FEn042UWTQD1zvy6GM:9481-20645",
+        "M6r9FEn042UWTQD1zvy6GM:9481-20647",
+        "M6r9FEn042UWTQD1zvy6GM:9481-20950",
+        "M6r9FEn042UWTQD1zvy6GM:9481-21777",
+        "M6r9FEn042UWTQD1zvy6GM:9481-21797",
+        "M6r9FEn042UWTQD1zvy6GM:9481-21885",
+        "M6r9FEn042UWTQD1zvy6GM:9494-7002"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Skai > Play > Casino > Scratchers",
+        "Skai > Play > Casino > Blackjack",
+        "Mobile",
+        "Desktop Selection",
+        "8",
+        "Desktop",
+        "Screenshot 2026-08-03 at 8.31.39 PM 1",
+        "Mines all features",
+        "GEM 2 KENO 1"
       ],
       "citedFileCount": 0,
       "citedFiles": [],

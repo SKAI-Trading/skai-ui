@@ -21,7 +21,29 @@ const link = (f) => {
   const node = (f && f.node) || (f && f.id) || f;
   return `https://www.figma.com/design/${fk}/${name}?node-id=${node}&m=dev`;
 };
-const SECTIONS = ["home", "wallet", "trade", "predict", "play", "dice", "pwa", "crash"];
+// DERIVE the section list from the registry rather than hardcoding it. The old
+// literal was
+//   ["home","wallet","trade","predict","play","dice","pwa","crash"]
+// — the same stale eight that apply-status.mjs carried before it was fixed, and
+// stale in the same way: build-registry.mjs had grown to 24 sections and this
+// view silently rendered only those 8. onboarding, legal, master-sheet, mines,
+// blackjack, coinflip, skratch, missing-play-images, plinko, darts, chicken,
+// hilo, social, governance, user-flow, towers and keno were all catalogued,
+// tracked and statused, yet absent from the generated Markdown — which reads as
+// "not catalogued" to anyone browsing the doc instead of the JSON.
+//
+// Ordering: readiness first (ready > wip > meta) so ready-for-dev work is at the
+// top, then by screen count, so the biggest outstanding surface leads.
+const RANK = { ready: 0, wip: 1, meta: 2 };
+const readinessOf = (s) => {
+  const f = Object.values(reg.frames).find((x) => x.section === s);
+  return (f && f.readiness) || "meta";
+};
+const SECTIONS = Object.keys(reg.stats.bySection).sort((a, b) => {
+  const r = RANK[readinessOf(a)] - RANK[readinessOf(b)];
+  if (r) return r;
+  return (reg.stats.bySection[b].screens ?? 0) - (reg.stats.bySection[a].screens ?? 0);
+});
 
 const out = [];
 out.push("# Figma Frame Catalog — SKAI redesign\n");
@@ -33,19 +55,64 @@ out.push(
 out.push(`Rebuild: \`node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md\`\n`);
 
 // overall tally
+const screensOf = (s) =>
+  Object.values(reg.frames).filter((f) => f.section === s && f.kind === "screen");
+const tally = (arr) => {
+  const t = { done: 0, partial: 0, "not-started": 0, unknown: 0 };
+  for (const f of arr) if (f.status in t) t[f.status]++;
+  return t;
+};
+
 out.push("## Coverage\n");
-out.push("| Section | Frames | Titled | Screens | Scaffolding | Families | Code-cited |");
-out.push("|---------|-------:|-------:|--------:|------------:|---------:|-----------:|");
+out.push(
+  "Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` under construction, " +
+    "`📍`/`🌎` reference). Status counts **screens only** — scaffolding (dropdowns, notes, breakpoints, " +
+    "master modules) is on the canvas but is not a surface to build.\n",
+);
+out.push("| Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |");
+out.push("|---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|");
+let gt = { done: 0, partial: 0, "not-started": 0, unknown: 0 };
 for (const s of SECTIONS) {
   const st = reg.stats.bySection[s];
-  const fams = new Set(
-    Object.values(reg.frames).filter((f) => f.section === s && f.kind === "screen").map((f) => f.family),
-  );
+  const scr = screensOf(s);
+  const fams = new Set(scr.map((f) => f.family));
+  const t = tally(scr);
+  for (const k of Object.keys(gt)) gt[k] += t[k];
+  const mark = { ready: "✅", wip: "🚧", meta: "📍" }[readinessOf(s)] || "";
   out.push(
-    `| ${s} | ${st.frames} | ${st.titled} | ${st.screens ?? "?"} | ${st.nonScreen ?? "?"} | ${fams.size} | ${st.cited} |`,
+    `| ${s} | ${mark} | ${st.frames} | ${st.screens ?? "?"} | ${st.nonScreen ?? "?"} | ${fams.size} | ` +
+      `${t.done} | ${t.partial} | ${t["not-started"]} | ${t.unknown} | ${st.cited} |`,
   );
 }
+const gTot = gt.done + gt.partial + gt["not-started"] + gt.unknown;
+out.push(
+  `| **all** | | **${reg.stats.total}** | **${gTot}** | | | **${gt.done}** | **${gt.partial}** | ` +
+    `**${gt["not-started"]}** | **${gt.unknown}** | **${reg.stats.cited}** |`,
+);
 out.push("");
+
+// Page-level drift + out-of-scope, so the doc carries the same truth as the registry.
+const cov = reg.stats.pageCoverage || [];
+const drifted = cov.filter((p) => p.delta);
+out.push("### Drift against live Figma\n");
+if (!drifted.length) {
+  out.push("Every catalogued page matches its live child count. No drift.\n");
+} else {
+  out.push("Frames that exist in Figma but are not in the catalog:\n");
+  out.push("| Page | Catalogued | Live | Delta |");
+  out.push("|------|-----------:|-----:|------:|");
+  for (const p of drifted) out.push(`| ${p.page} | ${p.rows} | ${p.live} | ${p.delta} |`);
+  out.push("");
+}
+const unc = reg.stats.uncoveredPages || [];
+if (unc.length) {
+  out.push("### Pages with no section\n");
+  out.push("Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):\n");
+  out.push("| Page | Top-level nodes |");
+  out.push("|------|----------------:|");
+  for (const p of unc) out.push(`| ${p.page} | ${p.live} |`);
+  out.push("");
+}
 
 // Per-section family breakdown
 for (const s of SECTIONS) {

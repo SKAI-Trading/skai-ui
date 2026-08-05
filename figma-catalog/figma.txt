@@ -1,3 +1,23 @@
+# RETIRED 2026-08-05 — HISTORICAL SNAPSHOT, NOT AN INPUT.
+#
+# This flat dump of Figma links was how the redesign was tracked before the
+# catalog existed. It is a point-in-time capture from 2026-07-28 and it does
+# NOT update itself. Nothing in the build reads it: build-registry.mjs builds
+# from the per-section <section>.nodes.txt + <section>.titles.tsv pairs, and
+# those are re-harvested live from Figma. The only consumer is
+# audit-figma-txt.mjs, which exists purely to prove this file has been fully
+# absorbed — it reports every link here that the registry lacks.
+#
+# Last audit: 0 MISSING. Every design listed below is in the catalog.
+#
+# Do NOT add to this file, and do NOT treat its counts ("Implement these 347
+# designs") as current — they are stale by construction. Predict alone has
+# since grown 138 -> 284 frames. Add new work to the catalog instead:
+#   1. append node ids to <section>.nodes.txt and titles to <section>.titles.tsv
+#   2. node build-registry.mjs
+# Kept in the tree only so the audit can keep proving absorption, and as a
+# record of the original scope.
+#
 https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?m=auto&t=mOEsWJkpXyk2VBbC-6
 
 Home:

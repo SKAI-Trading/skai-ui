@@ -381,3 +381,13 @@ CuCgVP8PSgDNTcbt8mNJLd:2720-8186	2720-7877	copy-file	1	0	29887c90
 9685-100027	-	gone	0	0	-
 9685-100712	-	gone	0	0	-
 9685-101103	-	gone	0	0	-
+# 2026-08-05: 3 Trade frames re-created upstream, so the old node-ids no longer resolve.
+# Found by the live re-harvest of the ✅ Trade page: 6 top-level children were missing from
+# the catalog while 3 catalogued rows were absent from the page. Three of the six carry the
+# SAME frame names as the three missing rows (Frame 267 / 1356 / 1357), i.e. David deleted
+# and re-drew them and Figma minted new ids. All 3 confirmed non-resolving via
+# getNodeByIdAsync. Replacements are catalogued as 10706-128843 / 10706-128950 /
+# 10706-129546; the other three (10706-127734/128107/128199 = Frame 1372/1373/1374) are new.
+9856-80726	-	gone	0	0	-
+9856-82102	-	gone	0	0	-
+9858-84603	-	gone	0	0	-
