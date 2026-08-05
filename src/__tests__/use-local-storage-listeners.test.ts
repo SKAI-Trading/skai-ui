@@ -27,7 +27,7 @@ describe("useLocalStorage — listener cleanup (regression)", () => {
     const { unmount } = renderHook(() => useLocalStorage("k", "v"));
 
     const localStorageAdds = addSpy.mock.calls.filter(
-      ([type]: [string]) => type === "local-storage",
+      (call: unknown[]) => call[0] === "local-storage",
     );
     expect(localStorageAdds.length).toBe(1);
     const addedHandler = localStorageAdds[0][1];
@@ -35,7 +35,7 @@ describe("useLocalStorage — listener cleanup (regression)", () => {
     unmount();
 
     const localStorageRemoves = removeSpy.mock.calls.filter(
-      ([type]: [string]) => type === "local-storage",
+      (call: unknown[]) => call[0] === "local-storage",
     );
     expect(localStorageRemoves.length).toBe(1);
     // Must be the EXACT same Function identity that was registered.

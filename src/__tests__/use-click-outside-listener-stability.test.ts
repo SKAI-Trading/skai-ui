@@ -41,7 +41,7 @@ describe("useClickOutside — listener stability across re-renders", () => {
     );
 
     const countAddsFor = (type: string) =>
-      addSpy.mock.calls.filter(([t]: [string]) => t === type).length;
+      addSpy.mock.calls.filter((call: unknown[]) => call[0] === type).length;
 
     expect(countAddsFor("mousedown")).toBe(1);
     expect(countAddsFor("touchstart")).toBe(1);
@@ -58,7 +58,7 @@ describe("useClickOutside — listener stability across re-renders", () => {
     unmount();
 
     const countRemovesFor = (type: string) =>
-      removeSpy.mock.calls.filter(([t]: [string]) => t === type).length;
+      removeSpy.mock.calls.filter((call: unknown[]) => call[0] === type).length;
     expect(countRemovesFor("mousedown")).toBe(1);
     expect(countRemovesFor("touchstart")).toBe(1);
   });
@@ -88,7 +88,7 @@ describe("useKeyboardShortcut — listener stability across re-renders", () => {
     );
 
     const countAdds = () =>
-      addSpy.mock.calls.filter(([t]: [string]) => t === "keydown").length;
+      addSpy.mock.calls.filter((call: unknown[]) => call[0] === "keydown").length;
 
     expect(countAdds()).toBe(1);
 
@@ -99,7 +99,7 @@ describe("useKeyboardShortcut — listener stability across re-renders", () => {
 
     unmount();
     expect(
-      removeSpy.mock.calls.filter(([t]: [string]) => t === "keydown").length,
+      removeSpy.mock.calls.filter((call: unknown[]) => call[0] === "keydown").length,
     ).toBe(1);
   });
 
