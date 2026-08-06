@@ -45,9 +45,16 @@ const CloseIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-/** SKAI Lightning Bolt Icon */
+/**
+ * SKAI Lightning Bolt Icon
+ *
+ * viewBox is the artwork's own 47.1085x48 box, not a padded 48x48 square, so a
+ * 47.11px-wide container renders it 1:1 — that is the width Figma gives the
+ * option-row icon (2005:12210 / 2005:21403 / 2005:31595) and the 0.9px it frees
+ * is part of the budget the second row's subtitle needs to stay on one line.
+ */
 const SkaiLightningIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
+  <svg viewBox="0 0 47.1085 48" fill="none" className={className} aria-hidden="true">
     <path
       d="M0 23.5543C0 10.5456 10.5456 0 23.5543 0C36.5629 0 47.1085 10.5456 47.1085 23.5543V24.4457C47.1085 37.4544 36.5629 48 23.5543 48C10.5456 48 0 37.4544 0 24.4457V23.5543Z"
       fill="#56C7F3"
@@ -70,7 +77,7 @@ const SkaiLightningIcon: React.FC<{ className?: string }> = ({ className }) => (
  * glyph (icon24/link) inset at the coordinates the design uses.
  */
 const ExternalWalletIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden="true">
+  <svg viewBox="0 0 47.1085 48" fill="none" className={className} aria-hidden="true">
     <path
       d="M0 23.5543C0 10.5456 10.5456 0 23.5543 0C36.5629 0 47.1085 10.5456 47.1085 23.5543V24.4457C47.1085 37.4544 36.5629 48 23.5543 48C10.5456 48 0 37.4544 0 24.4457V23.5543Z"
       fill="#56C7F3"
@@ -115,7 +122,9 @@ export function WalletChoiceModal({
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[10001] flex items-center justify-center p-4 sm:p-6",
+        /* 8px scrim inset below sm — Figma 2005:31572 puts the 358px modal at
+           x=8 in a 375 frame, the same as the verification modal. */
+        "fixed inset-0 z-[10001] flex items-center justify-center p-2 sm:p-6",
         className
       )}
       style={{
@@ -126,11 +135,15 @@ export function WalletChoiceModal({
     >
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
+        /* Internal padding 8h/16v at 375 (2005:31572), 16 at 768 and 24 at
+           1440 — the mobile step gives the option rows the frame's full 342px
+           content width. */
+        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] px-2 py-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <div className="mb-4 flex items-center justify-end md:mb-5 lg:mb-6">
+        {/* Close Button — the frame's `controls` row keeps its own 8px inset at
+            375 (2005:31573) so the close glyph still sits 16px off the edge. */}
+        <div className="mb-5 flex items-center justify-end px-2 md:mb-6 md:px-0 lg:mb-6">
           <button
             onClick={onClose}
             className="flex h-4 w-4 items-center justify-center text-white transition-opacity hover:opacity-70"
@@ -141,35 +154,54 @@ export function WalletChoiceModal({
         </div>
 
         {/* Title */}
-        <h2 className="font-manrope mb-2 text-center text-[20px] font-light leading-[24px] tracking-[-0.8px] text-white md:mb-3 md:text-[24px] md:leading-[28px] md:tracking-[-0.96px] lg:mb-4 lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
+        <h2 className="font-manrope mb-2 text-center text-[20px] font-light leading-[24px] tracking-[-0.8px] text-white md:mb-4 md:text-[24px] md:leading-[28px] md:tracking-[-0.96px] lg:mb-4 lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
           Choose your wallet
         </h2>
 
         {/* Subtitle */}
-        <p className="font-manrope mb-5 px-1 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:px-2 md:text-[16px] md:leading-[22px] lg:mb-6 lg:px-0 lg:text-[18px] lg:leading-[24px] lg:tracking-[-0.72px]">
+        <p className="font-manrope mb-5 px-0 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:text-[16px] md:leading-[22px] lg:mb-6 lg:text-[18px] lg:leading-[24px] lg:tracking-[-0.72px]">
           Choose how you&apos;d like to store your assets.
         </p>
 
-        {/* Wallet Options */}
-        <div className="flex flex-col gap-3 md:gap-4 lg:gap-6">
+        {/* Wallet Options — Figma 2005:31582 / 2005:21390 / 2005:12197 draw a
+            MATCHED PAIR of 342x60, 436x70 and 400x88 rows. The app was
+            rendering 309x74 + 309x82, 434x90 + 434x90 and 398x90 + 398x108:
+            every row ran tall because the icon column was sized off the
+            desktop step, and the second row grew another 18-20px because "Add
+            Metamask, Coinbase, etc., to your account" wrapped.
+
+            Three things hold the pair now. (1) Padding is border-compensated:
+            Figma strokes sit outside the layout box, CSS borders inside it, so
+            13 + 1 = 14, 14.5 + 1.5 = 16 and 20.5 + 1.5 = 22 put the icon at
+            exactly the frame's inset and give the text column back the 3px the
+            border was eating. (2) The icon boxes are the frame's own
+            23.55/31.41/47.11 widths and the divider is a zero-width rule like
+            the frame's Vector 360. (3) The two text lines are
+            `whitespace-nowrap`, which is how the frame sets them (both text
+            nodes hug); at 1440 the longest subtitle measures 276.95px against
+            a 276.89px column, so the pair no longer depends on font metrics
+            landing inside a 6px margin. Row gaps are 16/18/24. */}
+        <div className="flex flex-col gap-4 md:gap-[18px] lg:gap-6">
           {/* Email Wallet Option */}
           <button
             onClick={onSelectEmailWallet}
-            className="group flex w-full items-center gap-3 rounded-[12px] border-[1.5px] border-[#56C7F3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56C7F3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:px-[22px] lg:py-5"
+            className="group flex w-full items-center gap-[10px] rounded-[12px] border border-[#56C7F3] bg-[#001615] p-[13px] text-left transition-all hover:bg-[#56C7F3]/5 md:gap-4 md:rounded-[12px] md:border-[1.5px] md:p-[14.5px] lg:gap-4 lg:rounded-[16px] lg:px-[20.5px] lg:py-[18.5px]"
           >
             {/* Icon */}
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-12 lg:w-12">
-              <SkaiLightningIcon className="h-10 w-10 md:h-12 md:w-12 lg:h-12 lg:w-12" />
+            <div className="h-6 w-[23.55px] flex-shrink-0 md:h-8 md:w-[31.41px] lg:h-12 lg:w-[47.11px]">
+              <SkaiLightningIcon className="h-full w-full" />
             </div>
 
-            <div className="h-10 w-px border-l border-dashed border-[#56C7F3]" />
+            <div className="relative h-6 w-0 flex-shrink-0 md:h-8 lg:h-10">
+              <div className="absolute inset-y-0 left-0 border-l border-dashed border-[#56C7F3]" />
+            </div>
 
             {/* Content */}
-            <div className="flex-1 text-[#56C7F3]">
-              <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
+            <div className="min-w-0 flex-1 text-[#56C7F3]">
+              <h3 className="font-manrope mb-[2px] whitespace-nowrap text-[14px] font-bold leading-[16px] tracking-[-0.56px] md:mb-1 md:text-[14px] md:font-normal md:leading-[18px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                 Use built in email wallet
               </h3>
-              <p className="font-manrope text-[10px] font-normal leading-[14px] md:text-[12px] md:leading-[16px] md:tracking-[-0.6px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
+              <p className="font-manrope whitespace-nowrap text-[12px] font-normal leading-[14px] tracking-[-0.48px] md:leading-[16px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
                 Secure wallet provided by Skai
               </p>
             </div>
@@ -178,21 +210,23 @@ export function WalletChoiceModal({
           {/* External Wallet Option */}
           <button
             onClick={onSelectExternalWallet}
-            className="group flex w-full items-center gap-3 rounded-[12px] border-[1.5px] border-[#56C7F3] bg-[#001615] p-4 text-left transition-all hover:bg-[#56C7F3]/5 md:gap-4 md:rounded-[14px] md:p-5 lg:gap-4 lg:rounded-[16px] lg:px-[22px] lg:py-5"
+            className="group flex w-full items-center gap-[10px] rounded-[12px] border border-[#56C7F3] bg-[#001615] p-[13px] text-left transition-all hover:bg-[#56C7F3]/5 md:gap-4 md:rounded-[12px] md:border-[1.5px] md:p-[14.5px] lg:gap-4 lg:rounded-[16px] lg:px-[20.5px] lg:py-[18.5px]"
           >
             {/* Icon */}
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center md:h-12 md:w-12 lg:h-12 lg:w-12">
-              <ExternalWalletIcon className="h-10 w-10 md:h-12 md:w-12 lg:h-12 lg:w-12" />
+            <div className="h-6 w-[23.55px] flex-shrink-0 md:h-8 md:w-[31.41px] lg:h-12 lg:w-[47.11px]">
+              <ExternalWalletIcon className="h-full w-full" />
             </div>
 
-            <div className="h-10 w-px border-l border-dashed border-[#56C7F3]" />
+            <div className="relative h-6 w-0 flex-shrink-0 md:h-8 lg:h-10">
+              <div className="absolute inset-y-0 left-0 border-l border-dashed border-[#56C7F3]" />
+            </div>
 
             {/* Content */}
-            <div className="flex-1 text-[#56C7F3]">
-              <h3 className="font-manrope mb-1 text-[12px] font-normal leading-[16px] tracking-[-0.64px] md:mb-1.5 md:text-[14px] md:leading-[18px] md:tracking-[-0.72px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
+            <div className="min-w-0 flex-1 text-[#56C7F3]">
+              <h3 className="font-manrope mb-[2px] whitespace-nowrap text-[14px] font-bold leading-[16px] tracking-[-0.56px] md:mb-1 md:text-[14px] md:font-normal md:leading-[18px] lg:mb-2 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]">
                 Link external wallet
               </h3>
-              <p className="font-manrope text-[10px] font-normal leading-[14px] md:text-[12px] md:leading-[16px] md:tracking-[-0.6px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
+              <p className="font-manrope whitespace-nowrap text-[12px] font-normal leading-[14px] tracking-[-0.48px] md:leading-[16px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
                 Add Metamask, Coinbase, etc., to your account
               </p>
             </div>

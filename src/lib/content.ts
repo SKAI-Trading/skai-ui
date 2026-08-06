@@ -310,6 +310,12 @@ export const content = {
           subtitle: "Early adopter status.",
           reward: "+500 SKAI Points",
           status: "Credited",
+          // Coachmark opened by the "?" on the badge subtitle line — Figma
+          // 2481:14734 (1440), 2481:17333 (375). Copy is verbatim from the
+          // frame's bubble.
+          helpLabel: "What is Skai?",
+          helpBody:
+            "Skai is one app where you can trade, predict outcomes, and play casino-style games without jumping between platforms. Instead of guessing, you can ask SKAI to show what's happening and recommend what to do next based on risk. Everything works together in a single account",
         },
 
         referral: {

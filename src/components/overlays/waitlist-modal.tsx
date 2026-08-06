@@ -92,6 +92,19 @@ const CloseIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
+/**
+ * icon/enter — Figma 2005:10012 / 2005:18475 / 2005:28667. Exported vector,
+ * 16x16, filled with `currentColor` so it inherits the ENTER label's colour.
+ */
+const EnterIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
+    <path
+      d="M14.1667 2.66667C14.2993 2.66667 14.4265 2.71935 14.5203 2.81311C14.6141 2.90688 14.6667 3.03406 14.6667 3.16667V7.5C14.6667 8.16304 14.4033 8.79893 13.9345 9.26777C13.4657 9.73661 12.8298 10 12.1667 10H3.05807L5.53807 12.48C5.62265 12.5647 5.67401 12.677 5.68282 12.7964C5.69162 12.9158 5.65729 13.0344 5.58607 13.1307L5.53807 13.1867C5.45337 13.2715 5.341 13.3231 5.22144 13.332C5.10189 13.341 4.9831 13.3067 4.88673 13.2353L4.83073 13.1867L1.4974 9.85333C1.41272 9.76867 1.36124 9.65644 1.3523 9.53703C1.34337 9.41763 1.37759 9.29898 1.44873 9.20267L1.4974 9.14667L4.83073 5.81333C4.92007 5.7247 5.03954 5.673 5.16531 5.66857C5.29107 5.66415 5.41389 5.70731 5.50923 5.78944C5.60458 5.87157 5.66545 5.98664 5.67969 6.11168C5.69393 6.23672 5.6605 6.36253 5.58607 6.464L5.53807 6.52L3.05807 9H12.1681C12.548 8.99988 12.9138 8.85556 13.1915 8.59619C13.4692 8.33683 13.6381 7.98174 13.6641 7.60267L13.6681 7.5V3.16667C13.6681 3.03406 13.7207 2.90688 13.8145 2.81311C13.9083 2.71935 14.0355 2.66667 14.1681 2.66667"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 const SpinnerIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg
     className={cn("animate-spin", className)}
@@ -305,7 +318,11 @@ export function WaitlistModal({
                    16/22 type, not 64), and the placeholder is App/Ash 300
                    #95A09F. #5d6b6a sat well under the frame's contrast. */
                 className={cn(
-                  "font-manrope w-full rounded-[12px] border bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] tracking-[-0.04em] text-white transition-colors placeholder:text-[#95a09f] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:p-[22px] lg:text-[16px] lg:leading-[22px]",
+                  /* pr-* reserves the enter affordance's column (its own width
+                     plus the 8px gutter plus the field padding) so a long email
+                     scrolls behind nothing — the frame lays the field out as a
+                     two-up row for the same reason. */
+                  "font-manrope w-full rounded-[12px] border bg-[#001615] px-4 py-3.5 pr-[88px] text-[14px] font-normal leading-[20px] tracking-[-0.04em] text-white transition-colors placeholder:text-[#95a09f] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:pr-[99px] md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:p-[22px] lg:pr-[101px] lg:text-[16px] lg:leading-[22px]",
                   emailError
                     ? "border-[#FF7E50] focus:border-[#FF7E50]"
                     // Sky Blue 300 on focus, not Alien Green. The modal
@@ -319,6 +336,32 @@ export function WaitlistModal({
                 aria-invalid={!!emailError}
                 aria-describedby={emailError ? "email-error" : undefined}
               />
+              {/* In-field enter affordance — Figma 2005:10011 (1440),
+                  2005:18474 (768), 2005:28666 (375). A 16px icon/enter plus an
+                  uppercase ENTER label, 8px apart, pinned to the input's
+                  content right edge (so `right-*` tracks the input's own
+                  horizontal padding: 16 / 20 / 22). It is STATE-GATED, not
+                  always-on: the empty frames draw the group at opacity 0 and
+                  only the "with input" twins (2005:10032 / 2005:18495 /
+                  2005:28687) reveal it. Type is 12/16 at 375 and 16/22 from 768
+                  up, both at -4% tracking, per the frames. The visible twin
+                  paints it App/Green 300 #17F9B4; we keep Primary/Sky Blue 300
+                  because this field's focus ring is deliberately Sky Blue (see
+                  the border comment above) and a green label beside a blue ring
+                  reads as two accents. Decorative — the Enter key and the
+                  Continue button are the real controls. */}
+              <div
+                className={cn(
+                  "pointer-events-none absolute inset-y-0 right-4 flex items-center gap-2 transition-opacity duration-150 md:right-5 lg:right-[22px]",
+                  email.trim() ? "opacity-100" : "opacity-0"
+                )}
+                aria-hidden="true"
+              >
+                <EnterIcon className="h-4 w-4 shrink-0 text-[#56C7F3]" />
+                <span className="font-manrope text-[12px] font-normal uppercase leading-[16px] tracking-[-0.48px] text-[#56C7F3] md:text-[16px] md:leading-[22px] md:tracking-[-0.64px]">
+                  Enter
+                </span>
+              </div>
             </div>
             {emailError && (
               <p

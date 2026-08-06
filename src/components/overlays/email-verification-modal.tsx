@@ -263,7 +263,11 @@ export function EmailVerificationModal({
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6",
+        /* 8px scrim inset below sm — Figma 2005:30112 puts the 358px modal at
+           x=8 in a 375 frame. p-4 capped it at 343 and every child inherited
+           the 15px shortfall (the OTP boxes rendered 43.5 wide against the
+           frame's 50.33). */
+        "fixed inset-0 z-[10000] flex items-center justify-center p-2 sm:p-6",
         className
       )}
       style={{
@@ -274,11 +278,18 @@ export function EmailVerificationModal({
     >
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
+        /* Figma 2005:30112 / 2005:19920 / 2005:11457 — internal padding is
+           8 / 16 / 24 horizontally. At 375 the frame keeps the vertical inset
+           at 16 (controls sit at y=16, the resend line ends 16 off the floor)
+           while the horizontal inset drops to 8, so the six OTP boxes get the
+           modal's full 342px content width. */
+        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] px-2 py-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Back and Close Buttons */}
-        <div className="mb-4 flex items-center justify-between md:mb-6 lg:mb-6">
+        {/* Back and Close Buttons — the frame's `controls` row carries its own
+            8px inset at 375 (2005:30113), which is what keeps Back and close
+            16px off the modal edge once the modal itself drops to 8. */}
+        <div className="mb-4 flex items-center justify-between px-2 md:mb-6 md:px-0 lg:mb-6">
           <button
             onClick={onBack}
             disabled={loading}
@@ -306,7 +317,7 @@ export function EmailVerificationModal({
         </h2>
 
         {/* Description */}
-        <p className="font-manrope mb-6 px-1 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:px-2 md:text-[16px] md:leading-[22px] lg:mb-6 lg:px-0 lg:text-[18px] lg:leading-[24px]">
+        <p className="font-manrope mb-5 px-0 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:text-[16px] md:leading-[22px] lg:mb-6 lg:text-[18px] lg:leading-[24px]">
           Enter the verification code sent to <br />
           <span className="font-semibold text-white">{email}</span>
         </p>
@@ -317,12 +328,20 @@ export function EmailVerificationModal({
               split the modal's full content width evenly (8px gutter), not a
               narrow centred cluster of fixed 44/52/56px boxes. That fixed-width
               layout was the "pop up size do not match" report (8658d6a4). */}
-          <div className="mb-4 flex justify-center gap-2 px-1 md:mb-4 md:px-0 lg:mb-4">
+          <div className="mb-5 flex justify-center gap-2 md:mb-6 lg:mb-6">
             {code.map((digit, index) => (
               <div
                 key={index}
+                /* Box height is the frame's, not a square: Figma 2005:30127
+                   draws 50.33x72 at 375, 2005:19935 66x76 at 768 and
+                   2005:11472 60x78 at 1440 — px-16/py-24, px-16/py-24 and
+                   px-16/py-20 around a single centred digit. The old
+                   48/56/60 heights ran 18-24px short at every width while the
+                   x-grid already matched. Radius is 12/12/16 per those nodes.
+                   The `px-1` that used to sit on this row is gone — the frame
+                   gives the six inputs the modal's full content width. */
                 className={cn(
-                  "flex h-[48px] flex-1 min-w-0 items-center justify-center rounded-[10px] border bg-[#001615] transition-colors md:h-[56px] md:rounded-[12px] lg:h-[60px] lg:rounded-[14px]",
+                  "flex h-[72px] flex-1 min-w-0 items-center justify-center rounded-[12px] border bg-[#001615] transition-colors md:h-[76px] md:rounded-[12px] lg:h-[78px] lg:rounded-[16px]",
                   localError
                     ? "border-[#FF4444]"
                     : digit
@@ -345,8 +364,10 @@ export function EmailVerificationModal({
                   /* Figma 2005:20667 — the OTP digits are the "Numbers" ramp
                      (Mulish Light), not Manrope. Manrope rendered the code in
                      the body face, which was the "text font do not match"
-                     half of report 8658d6a4. */
-                  className="font-mulish h-full w-full border-none bg-transparent text-center text-[20px] font-light leading-none text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-[24px] lg:text-[28px]"
+                     half of report 8658d6a4. Sizes are 20 / 24 / 32 at -4%
+                     tracking (2005:30129, 2005:19937, 2005:11474); the desktop
+                     step was rendering 28. */
+                  className="font-mulish h-full w-full border-none bg-transparent text-center text-[20px] font-light leading-none tracking-[-0.8px] text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-[24px] md:tracking-[-0.96px] lg:text-[32px] lg:tracking-[-1.28px]"
                   aria-label={`Digit ${index + 1}`}
                 />
               </div>
@@ -369,7 +390,11 @@ export function EmailVerificationModal({
               }
             }}
             disabled={!code.every((digit) => digit !== "") || loading}
-            className="font-manrope flex w-full items-center justify-center gap-2 rounded-[12px] bg-[#56C7F3] px-6 py-4 text-center text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-10 md:py-5 md:text-[16px] md:leading-[22px] md:tracking-[-0.64px] lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
+            /* Button/large — 342x44 (2005:30145), 436x54 (2005:19953) and
+               400x62 (2005:11490). The desktop 62 already matched; the tablet
+               and mobile steps were both rendering 62/52 because they carried
+               the desktop py. 14+16+14 and 16+22+16 land the frame heights. */
+            className="font-manrope flex w-full items-center justify-center gap-2 rounded-[12px] bg-[#56C7F3] px-6 py-[14px] text-center text-[14px] font-normal leading-[16px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-10 md:py-4 md:text-[16px] md:leading-[22px] md:tracking-[-0.64px] lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
           >
             {loading ? (
               <>

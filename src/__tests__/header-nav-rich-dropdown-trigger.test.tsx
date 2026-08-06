@@ -38,10 +38,12 @@ const ITEMS = [
 ];
 
 describe("HeaderNavRichDropdown — triggerTo", () => {
-  let onNavigate: ReturnType<typeof vi.fn>;
+  // Typed mock: bare `vi.fn()` widens to Mock<Procedure | Constructable> under
+  // vitest 4, which no longer satisfies HeaderNavRichDropdown's onNavigate.
+  let onNavigate: ReturnType<typeof vi.fn<(to: string) => void>>;
 
   beforeEach(() => {
-    onNavigate = vi.fn();
+    onNavigate = vi.fn<(to: string) => void>();
   });
 
   function renderWithTrigger() {
