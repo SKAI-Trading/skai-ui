@@ -35,3 +35,20 @@
 2889-10018	home	component	Whales > Market technicals	desktop	Technicals gauge, SELL reading — red unlit track
 2889-14314	home	component	Whales > filter	desktop	All-types filter dropdown
 2889-14378	home	component	Whales > filter	desktop	All-types filter dropdown, alternate state
+#
+# ── 2026-08-05: Hi-Lo page re-filing (content over title) ────────────────────
+# The 🚧→✅ Hi-Lo page carries four frames whose CONTENT is Scratchers, three
+# that are captures of stake.us (a competitor), and one shared strip. They stay
+# in section `hilo` because that is the Figma page they physically sit on;
+# re-pointing their section would claim they live on a page they do not. What is
+# corrected here is their FAMILY, so the Hi-Lo worklist stops counting eight
+# frames it must never build. Per-frame evidence is in vverify.hilo.tsv.
+9058-1833	hilo	component	Casino > Scratchers	-	NOT HI-LO. 708x461 board component: 3x3 match-3 symbol grid under a "Match 3 to Win!" header with a six-symbol 1.98x paytable. Scratchers, filed on the Hi-Lo page.
+9058-7261	hilo	component	Casino > Scratchers	-	NOT HI-LO. The paytable row of 9058-1833 (six symbols at 1.98x). Scratchers.
+9058-2367	hilo	component	Casino > Scratchers	-	NOT HI-LO. 516x781 bare Manual/Auto bet panel - Bet amount, 1/2 2X Max, Balance, Bet - with NO higher/lower control, no odds rows and no card. Named "Card out" but draws no card. Matches the shared instant-game panel the Scratchers frames use.
+9058-5154	hilo	component	Casino > Scratchers	tablet	NOT HI-LO, and correctly titled: 768x1607 Scratchers page - match-3 board, Manual/Auto, Bet/Target.
+9332-27318	hilo	scaffold	-	-	NOT SKAI. Phone photo of stake.us Hi-Lo (Stake wordmark, Login/Register, "stake.us - Private" in the browser bar). Reference material. NEVER BUILD.
+9332-27319	hilo	scaffold	-	-	NOT SKAI. Second phone photo of the same stake.us Hi-Lo screen. Reference material. NEVER BUILD.
+9079-3253	hilo	scaffold	-	-	NOT SKAI - correcting the 2026-08-05 verdict that called this a SKAI reference capture. It is a THIRD stake.us capture, desktop this time: its paytable reads Profit Higher 1.07x / 12.87x, the exact pair on the stake.us phone photo 9332-27318 (Net Gain Higher 12.87x / Lower 1.07x), and its palette is Stake navy #0F212E + Stake green, not SKAI #001615 / #56C7F3 / #17F9B4. Those two numbers appear nowhere in SKAI. NEVER BUILD.
+9058-6701	hilo	component	Casino > Game detail strip	-	NEITHER GAME. The shared stats/fairness sub-bar every game detail page draws: help, Practice mode off, refresh, favourite, sound, fullscreen, Skai mark, Provably fair. 698x54.
+9351-3397	hilo	component	Casino > Hi-Lo	-	Hi-Lo COVER ART, 1080x1350: 6-of-hearts over 10-of-spades with the HIGHER/LOWER arrow pair. This is the tile the casino grid and the game-info card draw (shipped as modules/skai-gaming/src/assets/games/figma/hilo.webp, mapped in playGameArt.ts). A real SKAI asset, not a screen.
