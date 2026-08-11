@@ -1,24 +1,24 @@
 {
-  "generated": "2026-08-06T04:27:25.404Z",
+  "generated": "2026-08-11T23:45:45.354Z",
   "families": {
     "home/welcome": {
       "section": "home",
       "family": "welcome",
       "frameCount": 13,
       "frames": [
-        "5777-28765",
-        "6379-18450",
-        "6381-20617",
-        "6379-18643",
-        "6330-55267",
-        "6379-18340",
-        "6330-54599",
-        "6379-18604",
-        "2713-4301",
-        "2713-4240",
-        "6381-20578",
-        "2713-4362",
-        "2713-4179"
+        "mhF3BkzlTaGiLzJ7kvpmVc:5777-28765",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6379-18450",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6381-20617",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6379-18643",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6330-55267",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6379-18340",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6330-54599",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6379-18604",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4301",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4240",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6381-20578",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4362",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4179"
       ],
       "devices": [
         "desktop",
@@ -30,27 +30,19 @@
         "end CTA",
         "scroll"
       ],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "src/components/home-redesign/SignedOutWelcome.tsx",
-        "src/services/onboarding/questionnaireService.ts",
-        "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/SignedOutWelcome.tsx",
-        "src/components/home-redesign/onboarding",
-        "src/services/onboarding/questionnaireService.ts"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/sidebar normal": {
       "section": "home",
       "family": "sidebar normal",
       "frameCount": 3,
       "frames": [
-        "6702-24782",
-        "2720-7877",
-        "6702-25218"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6702-24782",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2720-7877",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6702-25218"
       ],
       "devices": [
         "tablet",
@@ -58,24 +50,20 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/AiHome.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AiHome.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/(section root)": {
       "section": "home",
       "family": "(section root)",
       "frameCount": 4,
       "frames": [
-        "6415-45107",
-        "2713-4800",
-        "6415-45113",
-        "10458-98552"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6415-45107",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4800",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6415-45113",
+        "mhF3BkzlTaGiLzJ7kvpmVc:10458-98552"
       ],
       "devices": [
         "tablet",
@@ -83,45 +71,35 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "src/components/home-redesign/HomeShellLayout.tsx",
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/HomeSidebarRail.tsx",
-        "src/components/home-redesign/AskComposer.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/AskComposer.tsx",
-        "src/components/home-redesign/HomeShellLayout.tsx",
-        "src/components/home-redesign/HomeSidebarRail.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/welcome > onboarding Qs": {
       "section": "home",
       "family": "welcome > onboarding Qs",
       "frameCount": 19,
       "frames": [
-        "6413-21006",
-        "6388-21892",
-        "6405-20479",
-        "6385-21390",
-        "6393-53747",
-        "6383-20999",
-        "6405-20667",
-        "2713-4584",
-        "6385-21358",
-        "6394-54418",
-        "2713-4119",
-        "6405-20293",
-        "5778-29088",
-        "2713-4425",
-        "5780-45728",
-        "2713-4052",
-        "6383-21006",
-        "6388-21725",
-        "2713-3947"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6413-21006",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6388-21892",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6405-20479",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6385-21390",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6393-53747",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6383-20999",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6405-20667",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4584",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6385-21358",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6394-54418",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4119",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6405-20293",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5778-29088",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4425",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5780-45728",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4052",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6383-21006",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6388-21725",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-3947"
       ],
       "devices": [
         "mobile",
@@ -137,31 +115,19 @@
         "load effect > Badge reward",
         "2 ALT"
       ],
-      "citedFileCount": 5,
-      "citedFiles": [
-        "src/components/home-redesign/HomeOnboarding.tsx",
-        "src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx",
-        "src/services/onboarding/questionnaireService.ts",
-        "src/App.tsx",
-        "src/components/notifications/WelcomeModal.tsx"
-      ],
-      "dirs": [
-        "src/App.tsx",
-        "src/components/home-redesign/HomeOnboarding.tsx",
-        "src/components/home-redesign/onboarding",
-        "src/components/notifications/WelcomeModal.tsx",
-        "src/services/onboarding/questionnaireService.ts"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/sidebar": {
       "section": "home",
       "family": "sidebar",
       "frameCount": 3,
       "frames": [
-        "6419-47130",
-        "2713-4884",
-        "6419-47275"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6419-47130",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-4884",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6419-47275"
       ],
       "devices": [
         "tablet",
@@ -179,15 +145,15 @@
       "family": "AI Feed",
       "frameCount": 9,
       "frames": [
-        "2725-6765",
-        "2836-17050",
-        "6710-25832",
-        "5854-80845",
-        "6704-26096",
-        "6704-29359",
-        "6711-27811",
-        "6711-32989",
-        "6704-27342"
+        "mhF3BkzlTaGiLzJ7kvpmVc:2725-6765",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2836-17050",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6710-25832",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5854-80845",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6704-26096",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6704-29359",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6711-27811",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6711-32989",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6704-27342"
       ],
       "devices": [
         "desktop",
@@ -198,27 +164,21 @@
         "actionable",
         "empty"
       ],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "src/components/home-redesign/feed/AiSignalsCards.tsx",
-        "src/components/home-redesign/feed/CopyTradingCard.tsx",
-        "src/components/home-redesign/feed/AiFeed.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/feed"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/query": {
       "section": "home",
       "family": "query",
       "frameCount": 5,
       "frames": [
-        "3346-32028",
-        "2713-5014",
-        "6419-46299",
-        "6419-46017",
-        "6419-45976"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3346-32028",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2713-5014",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6419-46299",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6419-46017",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6419-45976"
       ],
       "devices": [
         "desktop",
@@ -229,30 +189,20 @@
         "focus",
         "focus ALT"
       ],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/ai/ChatInterface.tsx",
-        "src/components/home-redesign/AskComposer.tsx",
-        "src/App.tsx"
-      ],
-      "dirs": [
-        "src/App.tsx",
-        "src/components/ai/ChatInterface.tsx",
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/AskComposer.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/conversation": {
       "section": "home",
       "family": "conversation",
       "frameCount": 4,
       "frames": [
-        "6715-34377",
-        "2726-10653",
-        "6715-34717",
-        "6736-37217"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6715-34377",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2726-10653",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6715-34717",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-37217"
       ],
       "devices": [
         "tablet",
@@ -260,53 +210,36 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "src/components/home-redesign/conversation/ConversationView.tsx",
-        "src/components/home-redesign/conversation/AssistantBody.tsx",
-        "src/components/home-redesign/AskComposer.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AskComposer.tsx",
-        "src/components/home-redesign/conversation"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/sidebar normal > Group chats": {
       "section": "home",
       "family": "sidebar normal > Group chats",
       "frameCount": 1,
       "frames": [
-        "6250-93084"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6250-93084"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/chatFolders.ts",
-        "src/components/home-redesign/CreateChatFolderModal.tsx",
-        "src/components/home-redesign/HomeSidebarExpanded.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/CreateChatFolderModal.tsx",
-        "src/components/home-redesign/HomeSidebarExpanded.tsx",
-        "src/components/home-redesign/chatFolders.ts"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/AI Feed > Market intel": {
       "section": "home",
       "family": "AI Feed > Market intel",
       "frameCount": 4,
       "frames": [
-        "5812-123481",
-        "6706-24261",
-        "6710-24624",
-        "6707-23360"
+        "mhF3BkzlTaGiLzJ7kvpmVc:5812-123481",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6706-24261",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6710-24624",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6707-23360"
       ],
       "devices": [
         "desktop",
@@ -314,24 +247,19 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/market-intel/intelMappers.ts",
-        "src/components/home-redesign/market-intel/MarketIntelScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/market-intel"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/AI Feed > Market intel > Manage intel": {
       "section": "home",
       "family": "AI Feed > Market intel > Manage intel",
       "frameCount": 3,
       "frames": [
-        "5854-51123",
-        "6710-24970",
-        "6706-22658"
+        "mhF3BkzlTaGiLzJ7kvpmVc:5854-51123",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6710-24970",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6706-22658"
       ],
       "devices": [
         "desktop",
@@ -339,48 +267,37 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/market-intel/ManageIntelPanel.tsx",
-        "src/components/home-redesign/market-intel/MarketIntelScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/market-intel"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/ALT": {
       "section": "home",
       "family": "ALT",
       "frameCount": 2,
       "frames": [
-        "2733-19908",
-        "6419-45553"
+        "mhF3BkzlTaGiLzJ7kvpmVc:2733-19908",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6419-45553"
       ],
       "devices": [
         "desktop",
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/ComposerSuggestions.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/ComposerSuggestions.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/sidebar normal > Group chats > Folder name": {
       "section": "home",
       "family": "sidebar normal > Group chats > Folder name",
       "frameCount": 3,
       "frames": [
-        "6250-93916",
-        "6702-25618",
-        "6702-25577"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6250-93916",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6702-25618",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6702-25577"
       ],
       "devices": [
         "desktop",
@@ -388,27 +305,19 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "src/components/home-redesign/chatFolders.ts",
-        "src/components/home-redesign/CreateChatFolderModal.tsx",
-        "src/components/home-redesign/HomeSidebarExpanded.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/CreateChatFolderModal.tsx",
-        "src/components/home-redesign/HomeSidebarExpanded.tsx",
-        "src/components/home-redesign/chatFolders.ts"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Voice prompt > chat history": {
       "section": "home",
       "family": "Voice prompt > chat history",
       "frameCount": 3,
       "frames": [
-        "6750-43675",
-        "6750-43337",
-        "2737-27044"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6750-43675",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6750-43337",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2737-27044"
       ],
       "devices": [
         "mobile",
@@ -416,26 +325,20 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/ChatHistoryModal.tsx",
-        "src/components/home-redesign/conversation/backtest/SearchStrategiesModal.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/ChatHistoryModal.tsx",
-        "src/components/home-redesign/conversation"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Add > upload image > conversation 4": {
       "section": "home",
       "family": "Add > upload image > conversation 4",
       "frameCount": 4,
       "frames": [
-        "6736-40095",
-        "6736-39936",
-        "2883-9692",
-        "2736-25840"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-40095",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-39936",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2883-9692",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2736-25840"
       ],
       "devices": [
         "mobile",
@@ -443,24 +346,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/conversation/ConversationView.tsx",
-        "src/components/home-redesign/conversation/AssistantBody.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/conversation"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/conversation extended": {
       "section": "home",
       "family": "conversation extended",
       "frameCount": 3,
       "frames": [
-        "6715-35126",
-        "6715-34899",
-        "2733-18374"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6715-35126",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6715-34899",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2733-18374"
       ],
       "devices": [
         "mobile",
@@ -468,24 +366,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/conversation/ConversationView.tsx",
-        "src/components/home-redesign/conversation/AssistantBody.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/conversation"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/conversation 3 > edit chat": {
       "section": "home",
       "family": "conversation 3 > edit chat",
       "frameCount": 3,
       "frames": [
-        "6736-37714",
-        "2733-20178",
-        "6736-37955"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-37714",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2733-20178",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-37955"
       ],
       "devices": [
         "tablet",
@@ -493,23 +386,19 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/conversation/ConversationView.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/conversation"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Export private key > private key displayed": {
       "section": "home",
       "family": "Portfolio > Export private key > private key displayed",
       "frameCount": 3,
       "frames": [
-        "6828-36970",
-        "2753-8176",
-        "6828-37572"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6828-36970",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2753-8176",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6828-37572"
       ],
       "devices": [
         "tablet",
@@ -517,23 +406,19 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/ExportKeyModal.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/conversation 3": {
       "section": "home",
       "family": "conversation 3",
       "frameCount": 3,
       "frames": [
-        "6736-37059",
-        "5787-74313",
-        "2733-19382"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-37059",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5787-74313",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2733-19382"
       ],
       "devices": [
         "tablet",
@@ -542,27 +427,22 @@
       "variants": [
         "with costs"
       ],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/conversation/useMessageCosts.ts",
-        "src/components/home-redesign/conversation/ConversationView.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/conversation"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Tiers": {
       "section": "home",
       "family": "Portfolio > Tiers",
       "frameCount": 6,
       "frames": [
-        "6942-74270",
-        "6937-71607",
-        "2773-7535",
-        "2770-16271",
-        "6942-72954",
-        "6942-74751"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6942-74270",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6937-71607",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2773-7535",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2770-16271",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6942-72954",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6942-74751"
       ],
       "devices": [
         "tablet",
@@ -570,27 +450,23 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Social": {
       "section": "home",
       "family": "Portfolio > Social",
       "frameCount": 7,
       "frames": [
-        "6925-68955",
-        "2899-16515",
-        "6918-64949",
-        "2769-15250",
-        "6925-67023",
-        "6925-67953",
-        "6934-70311"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6925-68955",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2899-16515",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6918-64949",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2769-15250",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6925-67023",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6925-67953",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6934-70311"
       ],
       "devices": [
         "tablet",
@@ -610,15 +486,15 @@
       "family": "Portfolio",
       "frameCount": 9,
       "frames": [
-        "6795-31004",
-        "6782-24811",
-        "2764-13970",
-        "2760-12240",
-        "2737-28177",
-        "6782-26825",
-        "6811-32268",
-        "6795-30496",
-        "6782-25160"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6795-31004",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6782-24811",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2764-13970",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2760-12240",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2737-28177",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6782-26825",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6811-32268",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6795-30496",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6782-25160"
       ],
       "devices": [
         "tablet",
@@ -628,48 +504,37 @@
       "variants": [
         "invisible"
       ],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/privacy.tsx",
-        "src/components/home-redesign/portfolio/PortfolioScreen.tsx",
-        "src/components/home-redesign/SiteFooter.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/SiteFooter.tsx",
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Defi": {
       "section": "home",
       "family": "Portfolio > Defi",
       "frameCount": 2,
       "frames": [
-        "6918-62834",
-        "2769-14707"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6918-62834",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2769-14707"
       ],
       "devices": [
         "tablet",
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/ads > Add": {
       "section": "home",
       "family": "ads > Add",
       "frameCount": 3,
       "frames": [
-        "6736-38635",
-        "6736-38442",
-        "2733-20819"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-38635",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-38442",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2733-20819"
       ],
       "devices": [
         "mobile",
@@ -677,25 +542,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/AddMenu.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AddMenu.tsx",
-        "src/components/home-redesign/AiHome.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Add > upload image": {
       "section": "home",
       "family": "Add > upload image",
       "frameCount": 3,
       "frames": [
-        "6736-39279",
-        "6736-39216",
-        "2735-25298"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-39279",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-39216",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2735-25298"
       ],
       "devices": [
         "mobile",
@@ -703,29 +562,23 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/AskComposer.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/AskComposer.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Vault": {
       "section": "home",
       "family": "Portfolio > Vault",
       "frameCount": 7,
       "frames": [
-        "6828-38811",
-        "6899-54796",
-        "2760-9935",
-        "2899-15797",
-        "6910-59407",
-        "6918-64538",
-        "6918-63866"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6828-38811",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6899-54796",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2760-9935",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2899-15797",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6910-59407",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6918-64538",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6918-63866"
       ],
       "devices": [
         "tablet",
@@ -735,23 +588,19 @@
       "variants": [
         "deposit"
       ],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Add wallet > Name wallet": {
       "section": "home",
       "family": "Portfolio > Add wallet > Name wallet",
       "frameCount": 3,
       "frames": [
-        "6811-34522",
-        "2753-4954",
-        "6811-35119"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6811-34522",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2753-4954",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6811-35119"
       ],
       "devices": [
         "tablet",
@@ -759,44 +608,35 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/WalletCreateModal.tsx",
-        "src/components/home-redesign/portfolio/privacy.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Tiers > Share portfolio": {
       "section": "home",
       "family": "Portfolio > Tiers > Share portfolio",
       "frameCount": 1,
       "frames": [
-        "6259-95454"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6259-95454"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/SharePortfolioModal.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Voice prompt": {
       "section": "home",
       "family": "Voice prompt",
       "frameCount": 3,
       "frames": [
-        "6750-42546",
-        "6736-41729",
-        "2736-26122"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6750-42546",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-41729",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2736-26122"
       ],
       "devices": [
         "mobile",
@@ -804,25 +644,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/AskComposer.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/AskComposer.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/conversation 2 extended": {
       "section": "home",
       "family": "conversation 2 extended",
       "frameCount": 3,
       "frames": [
-        "2733-18700",
-        "6715-36037",
-        "6736-36413"
+        "mhF3BkzlTaGiLzJ7kvpmVc:2733-18700",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6715-36037",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-36413"
       ],
       "devices": [
         "desktop",
@@ -830,22 +664,17 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/conversation/ConversationView.tsx",
-        "src/components/home-redesign/conversation/GameCardsBlock.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/conversation"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/ads > Tool tip": {
       "section": "home",
       "family": "ads > Tool tip",
       "frameCount": 1,
       "frames": [
-        "6736-38996"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-38996"
       ],
       "devices": [
         "tablet"
@@ -861,9 +690,9 @@
       "family": "Portfolio > Add wallet",
       "frameCount": 3,
       "frames": [
-        "2752-4678",
-        "6811-32792",
-        "6811-33593"
+        "mhF3BkzlTaGiLzJ7kvpmVc:2752-4678",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6811-32792",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6811-33593"
       ],
       "devices": [
         "desktop",
@@ -871,23 +700,19 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/WalletCreateModal.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Export private key": {
       "section": "home",
       "family": "Portfolio > Export private key",
       "frameCount": 3,
       "frames": [
-        "2752-5814",
-        "6811-35764",
-        "6811-36029"
+        "mhF3BkzlTaGiLzJ7kvpmVc:2752-5814",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6811-35764",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6811-36029"
       ],
       "devices": [
         "desktop",
@@ -895,23 +720,19 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/ExportKeyModal.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Portfolio > Badges > Badge preview": {
       "section": "home",
       "family": "Portfolio > Badges > Badge preview",
       "frameCount": 3,
       "frames": [
-        "6965-82190",
-        "5926-13672",
-        "6965-86368"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-82190",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5926-13672",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-86368"
       ],
       "devices": [
         "tablet",
@@ -919,22 +740,17 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/BadgePreviewModal.tsx",
-        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/query ALT": {
       "section": "home",
       "family": "query ALT",
       "frameCount": 1,
       "frames": [
-        "6419-46340"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6419-46340"
       ],
       "devices": [
         "mobile"
@@ -950,9 +766,9 @@
       "family": "Portfolio > Badges",
       "frameCount": 3,
       "frames": [
-        "6962-75733",
-        "2853-9675",
-        "6962-80042"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6962-75733",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2853-9675",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6962-80042"
       ],
       "devices": [
         "tablet",
@@ -960,21 +776,17 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/portfolio"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Add > upload image ALT": {
       "section": "home",
       "family": "Add > upload image ALT",
       "frameCount": 1,
       "frames": [
-        "6736-40379"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6736-40379"
       ],
       "devices": [
         "mobile"
@@ -990,9 +802,9 @@
       "family": "Whales > filter",
       "frameCount": 3,
       "frames": [
-        "6317-40206",
-        "2889-14378",
-        "2889-14314"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6317-40206",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2889-14378",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2889-14314"
       ],
       "devices": [
         "desktop"
@@ -1000,29 +812,25 @@
       "variants": [
         "custom input"
       ],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/whales/WhalesScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/whales"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Pro > checkout": {
       "section": "home",
       "family": "Pro > checkout",
       "frameCount": 9,
       "frames": [
-        "7319-61172",
-        "7320-63495",
-        "7319-60937",
-        "2946-15136",
-        "7321-64964",
-        "7320-64189",
-        "7323-65507",
-        "2990-18205",
-        "2989-17608"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7319-61172",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7320-63495",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7319-60937",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2946-15136",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7321-64964",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7320-64189",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7323-65507",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2990-18205",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2989-17608"
       ],
       "devices": [
         "mobile",
@@ -1034,41 +842,25 @@
         "send tokens - step 2",
         "send tokens - step 3"
       ],
-      "citedFileCount": 10,
-      "citedFiles": [
-        "src/components/home-redesign/upgrade/SendTokensScreen.tsx",
-        "src/components/upgrade/checkout/PaymentMethodPicker.tsx",
-        "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx",
-        "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
-        "src/pages/upgrade/CheckoutPage.tsx",
-        "src/hooks/user/useSubscribeContract.ts",
-        "src/components/upgrade/checkout/TxStatusPanel.tsx",
-        "src/components/home-redesign/upgrade/useSendPaymentVerification.ts",
-        "src/components/home-redesign/upgrade/VerifyPaymentScreen.tsx",
-        "src/components/home-redesign/upgrade/PlanSummaryCard.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/upgrade",
-        "src/components/upgrade/checkout",
-        "src/hooks/user/useSubscribeContract.ts",
-        "src/pages/upgrade/CheckoutPage.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Add > Add whale": {
       "section": "home",
       "family": "Add > Add whale",
       "frameCount": 9,
       "frames": [
-        "7301-77180",
-        "7298-74628",
-        "7298-74565",
-        "7303-77756",
-        "2939-10182",
-        "2939-9939",
-        "7303-77704",
-        "2939-10485",
-        "7301-77235"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7301-77180",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7298-74628",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7298-74565",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7303-77756",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2939-10182",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2939-9939",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7303-77704",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2939-10485",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7301-77235"
       ],
       "devices": [
         "tablet",
@@ -1079,30 +871,19 @@
         "input",
         "input > conversation 5"
       ],
-      "citedFileCount": 5,
-      "citedFiles": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/whales/whalesShared.tsx",
-        "src/components/home-redesign/whales/WhaleSelectorModal.tsx",
-        "src/components/home-redesign/RedesignHome.tsx",
-        "src/components/home-redesign/AskComposer.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/AiHome.tsx",
-        "src/components/home-redesign/AskComposer.tsx",
-        "src/components/home-redesign/RedesignHome.tsx",
-        "src/components/home-redesign/whales"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Whales > X accounts > Add handle": {
       "section": "home",
       "family": "Whales > X accounts > Add handle",
       "frameCount": 3,
       "frames": [
-        "7290-60059",
-        "7290-58356",
-        "5965-54314"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7290-60059",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7290-58356",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5965-54314"
       ],
       "devices": [
         "mobile",
@@ -1120,9 +901,9 @@
       "family": "Whales > X accounts",
       "frameCount": 3,
       "frames": [
-        "7290-59768",
-        "5965-54259",
-        "7290-57976"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7290-59768",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5965-54259",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7290-57976"
       ],
       "devices": [
         "mobile",
@@ -1130,24 +911,19 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/whales/useWhaleLists.ts",
-        "src/components/home-redesign/whales/XAccountsPanel.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/whales"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Whales > Wallet manager > Import wallet": {
       "section": "home",
       "family": "Whales > Wallet manager > Import wallet",
       "frameCount": 3,
       "frames": [
-        "7291-67959",
-        "5965-53115",
-        "7291-67562"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7291-67959",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5965-53115",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7291-67562"
       ],
       "devices": [
         "mobile",
@@ -1155,40 +931,35 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/home-redesign/whales/useWhaleLists.ts",
-        "src/components/home-redesign/whales/ImportWalletsModal.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/whales"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Whales": {
       "section": "home",
       "family": "Whales",
       "frameCount": 19,
       "frames": [
-        "7298-70026",
-        "7298-73203",
-        "6965-87675",
-        "5965-54546",
-        "6965-89928",
-        "6965-91751",
-        "7298-71656",
-        "7294-69326",
-        "7294-68763",
-        "6001-59103",
-        "6965-87440",
-        "6965-89579",
-        "2857-11664",
-        "2773-10396",
-        "7298-72782",
-        "5965-52763",
-        "6965-90015",
-        "6965-91838",
-        "7298-71221"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7298-70026",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7298-73203",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-87675",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5965-54546",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-89928",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-91751",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7298-71656",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7294-69326",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7294-68763",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6001-59103",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-87440",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-89579",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2857-11664",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2773-10396",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7298-72782",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5965-52763",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-90015",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-91838",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7298-71221"
       ],
       "devices": [
         "tablet",
@@ -1200,43 +971,34 @@
         "no data",
         "no data > Add wallet"
       ],
-      "citedFileCount": 6,
-      "citedFiles": [
-        "src/components/home-redesign/whales/useWhaleLists.ts",
-        "src/components/home-redesign/whales/AddWalletSheet.tsx",
-        "src/components/home-redesign/whales/whalesShared.tsx",
-        "src/components/home-redesign/whales/WhalesScreen.tsx",
-        "src/components/home-redesign/whales/XAccountsPanel.tsx",
-        "src/components/home-redesign/whales/ActivityView.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/whales"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Agentic support": {
       "section": "home",
       "family": "Agentic support",
       "frameCount": 18,
       "frames": [
-        "6244-76796",
-        "6244-15349",
-        "6244-90352",
-        "6244-64788",
-        "6244-15246",
-        "6244-77476",
-        "7332-64781",
-        "7332-66385",
-        "7332-65746",
-        "7329-64060",
-        "7332-65159",
-        "7333-69083",
-        "7333-70379",
-        "7332-65938",
-        "7332-66266",
-        "7329-63441",
-        "7333-70285",
-        "7333-67878"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6244-76796",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6244-15349",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6244-90352",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6244-64788",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6244-15246",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6244-77476",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7332-64781",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7332-66385",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7332-65746",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7329-64060",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7332-65159",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7333-69083",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7333-70379",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7332-65938",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7332-66266",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7329-63441",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7333-70285",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7333-67878"
       ],
       "devices": [
         "desktop",
@@ -1250,44 +1012,19 @@
         "Backtesting > conversation 6 > Replicate Sample Strategy",
         "Backtesting > conversation 6 > Replicate Sample Strategy > Custom code > Chart sample"
       ],
-      "citedFileCount": 18,
-      "citedFiles": [
-        "src/components/home-redesign/conversation/strategy/index.ts",
-        "src/components/home-redesign/conversation/strategy/ReplicateStrategyModal.tsx",
-        "src/components/home-redesign/conversation/ConversationView.tsx",
-        "src/components/home-redesign/conversation/chart/SignalChartCard.tsx",
-        "src/components/home-redesign/conversation/chart/useSignalChart.ts",
-        "src/components/home-redesign/conversation/backtest/BacktestResponseCard.tsx",
-        "src/components/home-redesign/conversation/backtest/index.ts",
-        "src/components/home-redesign/conversation/backtest/BacktestProse.tsx",
-        "src/components/home-redesign/conversation/backtest/backtestMessage.tsx",
-        "src/components/home-redesign/conversation/backtest/NetProfitAreaChart.tsx",
-        "src/components/home-redesign/conversation/backtest/SearchStrategiesModal.tsx",
-        "src/components/trade/native-chart/CandleChartCanvas.tsx",
-        "src/components/home-redesign/conversation/chart/CandlestickFullscreen.tsx",
-        "src/components/home-redesign/conversation/chart/candlestickTypes.ts",
-        "src/components/home-redesign/conversation/chart/WIRING.md",
-        "src/lib/chart/lightweightChartsTheme.ts",
-        "src/lib/chart/rechartsTheme.tsx",
-        "src/lib/chart/chartTheme.ts"
-      ],
-      "dirs": [
-        "src/components/home-redesign/conversation",
-        "src/components/trade/native-chart",
-        "src/lib/chart/chartTheme.ts",
-        "src/lib/chart/lightweightChartsTheme.ts",
-        "src/lib/chart/rechartsTheme.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Whales > Live trades": {
       "section": "home",
       "family": "Whales > Live trades",
       "frameCount": 3,
       "frames": [
-        "5965-53498",
-        "7290-60558",
-        "7290-61206"
+        "mhF3BkzlTaGiLzJ7kvpmVc:5965-53498",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7290-60558",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7290-61206"
       ],
       "devices": [
         "desktop",
@@ -1295,22 +1032,18 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/whales/ActivityView.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/whales"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Whales > Market technicals": {
       "section": "home",
       "family": "Whales > Market technicals",
       "frameCount": 2,
       "frames": [
-        "2889-10018",
-        "2889-10073"
+        "mhF3BkzlTaGiLzJ7kvpmVc:2889-10018",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2889-10073"
       ],
       "devices": [
         "desktop"
@@ -1326,10 +1059,10 @@
       "family": "Pro",
       "frameCount": 4,
       "frames": [
-        "7307-78311",
-        "2941-14522",
-        "2939-10760",
-        "7309-79234"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7307-78311",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2941-14522",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2939-10760",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7309-79234"
       ],
       "devices": [
         "tablet",
@@ -1339,30 +1072,19 @@
       "variants": [
         "expanded"
       ],
-      "citedFileCount": 6,
-      "citedFiles": [
-        "src/components/upgrade/TierCard.tsx",
-        "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx",
-        "src/components/home-redesign/upgrade/TierCard.tsx",
-        "src/components/home-redesign/upgrade/shared.ts",
-        "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
-        "src/pages/upgrade/UpgradePage.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/upgrade",
-        "src/components/upgrade/TierCard.tsx",
-        "src/pages/upgrade/UpgradePage.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Pro > checkout > welcome to gold": {
       "section": "home",
       "family": "Pro > checkout > welcome to gold",
       "frameCount": 3,
       "frames": [
-        "7329-62749",
-        "7325-61983",
-        "2992-18923"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7329-62749",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7325-61983",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2992-18923"
       ],
       "devices": [
         "mobile",
@@ -1370,27 +1092,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "src/components/upgrade/checkout/WelcomeModal.tsx",
-        "src/components/home-redesign/upgrade/shared.ts",
-        "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
-        "src/components/home-redesign/upgrade/WelcomeSuccessModal.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/upgrade",
-        "src/components/upgrade/checkout"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Add > Add whale > Select whale": {
       "section": "home",
       "family": "Add > Add whale > Select whale",
       "frameCount": 3,
       "frames": [
-        "7301-76568",
-        "6001-59873",
-        "7298-74917"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7301-76568",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6001-59873",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7298-74917"
       ],
       "devices": [
         "mobile",
@@ -1398,48 +1112,35 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/whales/WhaleSelectorModal.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/whales"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Pro > checkout ALT": {
       "section": "home",
       "family": "Pro > checkout ALT",
       "frameCount": 1,
       "frames": [
-        "2988-17224"
+        "mhF3BkzlTaGiLzJ7kvpmVc:2988-17224"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 5,
-      "citedFiles": [
-        "src/components/upgrade/checkout/PlanSummary.tsx",
-        "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx",
-        "src/components/home-redesign/upgrade/shared.ts",
-        "src/components/home-redesign/upgrade/UpgradeFlow.tsx",
-        "src/components/home-redesign/upgrade/PlanSummaryCard.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/upgrade",
-        "src/components/upgrade/checkout"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Whales > KOLs": {
       "section": "home",
       "family": "Whales > KOLs",
       "frameCount": 3,
       "frames": [
-        "7290-64605",
-        "7290-63431",
-        "5965-53763"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7290-64605",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7290-63431",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5965-53763"
       ],
       "devices": [
         "mobile",
@@ -1447,70 +1148,51 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/whales/ActivityView.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/whales"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Pro ALT stretched": {
       "section": "home",
       "family": "Pro ALT stretched",
       "frameCount": 1,
       "frames": [
-        "6336-56093"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6336-56093"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "src/components/upgrade/PlansLayout4.tsx",
-        "src/components/upgrade/PlansLayout6.tsx",
-        "src/components/home-redesign/upgrade/TierCard.tsx",
-        "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/upgrade",
-        "src/components/upgrade/PlansLayout4.tsx",
-        "src/components/upgrade/PlansLayout6.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "home/Pro ALT": {
       "section": "home",
       "family": "Pro ALT",
       "frameCount": 1,
       "frames": [
-        "6008-71803"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6008-71803"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/upgrade/PlansLayout4.tsx",
-        "src/components/home-redesign/upgrade/UpgradePlanScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/upgrade",
-        "src/components/upgrade/PlansLayout4.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/(section root)": {
       "section": "wallet",
       "family": "(section root)",
       "frameCount": 3,
       "frames": [
-        "7727-14906",
-        "7675-51300",
-        "2998-19599"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7727-14906",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7675-51300",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2998-19599"
       ],
       "devices": [
         "mobile",
@@ -1518,53 +1200,46 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/welcome/WelcomeHero.tsx",
-        "modules/skai-wallet/src/components/SKAIAuth.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home": {
       "section": "wallet",
       "family": "continue on web > home",
       "frameCount": 30,
       "frames": [
-        "8045-104041",
-        "3118-25969",
-        "7920-116649",
-        "7920-116338",
-        "3153-19889",
-        "8045-104658",
-        "7774-63646",
-        "8370-72613",
-        "7728-60058",
-        "7704-46353",
-        "3070-775",
-        "7713-13706",
-        "7774-12119",
-        "8320-71829",
-        "8370-73407",
-        "7709-10525",
-        "7491-148345",
-        "3070-517",
-        "7704-47027",
-        "3026-16493",
-        "7774-62886",
-        "8490-33232",
-        "7774-64736",
-        "7774-68711",
-        "3123-3046",
-        "8490-33071",
-        "7774-68124",
-        "7713-13398",
-        "3163-21315",
-        "7774-70768"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-104041",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3118-25969",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7920-116649",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7920-116338",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3153-19889",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-104658",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-63646",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8370-72613",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7728-60058",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7704-46353",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3070-775",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-13706",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-12119",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8320-71829",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8370-73407",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7709-10525",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7491-148345",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3070-517",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7704-47027",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3026-16493",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-62886",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8490-33232",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-64736",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-68711",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3123-3046",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8490-33071",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-68124",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-13398",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3163-21315",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-70768"
       ],
       "devices": [
         "tablet",
@@ -1578,29 +1253,19 @@
         "skin 2",
         "skin3"
       ],
-      "citedFileCount": 6,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/buy/BuyForm.tsx",
-        "modules/skai-wallet/src/components/ShareCard.tsx",
-        "modules/skai-wallet/src/components/wallet/send/SendTokenSelect.tsx",
-        "modules/skai-wallet/src/components/wallet/dashboard/TokenListTable.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletSend.tsx",
-        "modules/skai-wallet/src/components/wallet/nft/NftCollectionView.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > chart": {
       "section": "wallet",
       "family": "continue on web > home > chart",
       "frameCount": 3,
       "frames": [
-        "8045-106048",
-        "8045-104960",
-        "3153-20193"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106048",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-104960",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3153-20193"
       ],
       "devices": [
         "mobile",
@@ -1608,26 +1273,22 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/history/ActivityFeed.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > unlock": {
       "section": "wallet",
       "family": "continue on web > unlock",
       "frameCount": 6,
       "frames": [
-        "7727-14937",
-        "2999-19674",
-        "7675-51350",
-        "3012-15180",
-        "7727-14974",
-        "7675-51418"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7727-14937",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2999-19674",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7675-51350",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3012-15180",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7727-14974",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7675-51418"
       ],
       "devices": [
         "mobile",
@@ -1637,30 +1298,19 @@
       "variants": [
         "password"
       ],
-      "citedFileCount": 6,
-      "citedFiles": [
-        "modules/skai-wallet/src/__tests__/components/UnlockForm.test.tsx",
-        "modules/skai-wallet/src/__tests__/pages/WalletUnlock.test.tsx",
-        "modules/skai-wallet/src/components/wallet/auth/UnlockForm.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletUnlock.tsx",
-        "modules/skai-wallet/src/components/wallet/send/SendDetails.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletSend.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/__tests__",
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > buy": {
       "section": "wallet",
       "family": "continue on web > home > buy",
       "frameCount": 3,
       "frames": [
-        "7926-21018",
-        "7926-20708",
-        "3124-2302"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7926-21018",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7926-20708",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3124-2302"
       ],
       "devices": [
         "mobile",
@@ -1668,26 +1318,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/__tests__/components/OnRampModal.test.tsx",
-        "modules/skai-wallet/src/components/wallet/bridge/BridgeProviderCard.tsx",
-        "modules/skai-wallet/src/components/OnRampModal.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/__tests__",
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > insights": {
       "section": "wallet",
       "family": "continue on web > home > insights",
       "frameCount": 3,
       "frames": [
-        "8045-106349",
-        "8045-105580",
-        "3154-3246"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106349",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-105580",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3154-3246"
       ],
       "devices": [
         "mobile",
@@ -1695,24 +1338,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/insights/SpendingAnalytics.tsx",
-        "modules/skai-wallet/src/components/wallet/insights/TokenAllocation.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > swap": {
       "section": "wallet",
       "family": "continue on web > home > swap",
       "frameCount": 3,
       "frames": [
-        "7935-65189",
-        "7935-65088",
-        "3145-2711"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-65189",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-65088",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3145-2711"
       ],
       "devices": [
         "mobile",
@@ -1720,26 +1358,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/__tests__/components/SwapModal.test.tsx",
-        "modules/skai-wallet/src/components/wallet/buy/BuyConfirmation.tsx",
-        "modules/skai-wallet/src/components/SwapModal.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/__tests__",
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > spending": {
       "section": "wallet",
       "family": "continue on web > home > spending",
       "frameCount": 3,
       "frames": [
-        "8045-105616",
-        "3154-3850",
-        "8045-106380"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-105616",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3154-3850",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106380"
       ],
       "devices": [
         "tablet",
@@ -1747,39 +1378,32 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/SpendingChart.tsx",
-        "modules/skai-wallet/src/components/wallet/utilities/TokenApprovals.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > send": {
       "section": "wallet",
       "family": "continue on web > home > send",
       "frameCount": 16,
       "frames": [
-        "7935-65748",
-        "8490-39089",
-        "3149-2903",
-        "7935-65586",
-        "7935-66768",
-        "7935-66663",
-        "7528-155716",
-        "7935-66302",
-        "7935-66144",
-        "3149-17882",
-        "7935-70064",
-        "7935-69362",
-        "7935-69910",
-        "7935-69066",
-        "3149-18278",
-        "3150-18637"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-65748",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8490-39089",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3149-2903",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-65586",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-66768",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-66663",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7528-155716",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-66302",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-66144",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3149-17882",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-70064",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-69362",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-69910",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-69066",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3149-18278",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3150-18637"
       ],
       "devices": [
         "mobile",
@@ -1794,29 +1418,19 @@
         "processing",
         "step 3"
       ],
-      "citedFileCount": 6,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/bridge/BridgeForm.tsx",
-        "modules/skai-wallet/src/components/SendModal.tsx",
-        "modules/skai-wallet/src/components/wallet/swap/SwapConfirmation.tsx",
-        "modules/skai-wallet/src/components/wallet/swap/SwapReview.tsx",
-        "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/get the app > new user": {
       "section": "wallet",
       "family": "get the app > new user",
       "frameCount": 3,
       "frames": [
-        "7676-51506",
-        "3012-15897",
-        "7727-15382"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7676-51506",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3012-15897",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7727-15382"
       ],
       "devices": [
         "tablet",
@@ -1824,29 +1438,22 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/welcome/WelcomeBackground.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletShellLanding.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletShellWelcome.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > request with QR": {
       "section": "wallet",
       "family": "continue on web > home > request with QR",
       "frameCount": 6,
       "frames": [
-        "8045-106411",
-        "8045-105652",
-        "3154-4635",
-        "8045-105688",
-        "8045-106442",
-        "3154-5092"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106411",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-105652",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3154-4635",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-105688",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106442",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3154-5092"
       ],
       "devices": [
         "mobile",
@@ -1857,25 +1464,17 @@
         "step 1",
         "step 2"
       ],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/RequestPayment.tsx",
-        "modules/skai-wallet/src/components/wallet/utilities/ShareWalletCard.tsx",
-        "modules/skai-wallet/src/components/wallet/utilities/BatchTransactions.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/get the app > new user > create new wallet > Google auth": {
       "section": "wallet",
       "family": "get the app > new user > create new wallet > Google auth",
       "frameCount": 1,
       "frames": [
-        "3026-16563"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3026-16563"
       ],
       "devices": [
         "desktop"
@@ -1891,9 +1490,9 @@
       "family": "get the app > new user > create new wallet",
       "frameCount": 3,
       "frames": [
-        "7676-51711",
-        "3023-11938",
-        "7727-15482"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7676-51711",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3023-11938",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7727-15482"
       ],
       "devices": [
         "tablet",
@@ -1901,25 +1500,19 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/send/SendDetails.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletSend.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > unlock > Forgot password": {
       "section": "wallet",
       "family": "continue on web > unlock > Forgot password",
       "frameCount": 3,
       "frames": [
-        "7683-7930",
-        "7473-130910",
-        "7727-15699"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7683-7930",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7473-130910",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7727-15699"
       ],
       "devices": [
         "tablet",
@@ -1927,32 +1520,27 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
-        "modules/skai-wallet/src/components/SKAIAuth.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > share": {
       "section": "wallet",
       "family": "continue on web > home > share",
       "frameCount": 11,
       "frames": [
-        "8045-112509",
-        "8045-105940",
-        "8045-106535",
-        "8529-35743",
-        "8529-36630",
-        "8611-123242",
-        "3158-8296",
-        "3155-6023",
-        "3158-9906",
-        "3158-4524",
-        "8045-106012"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-112509",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-105940",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106535",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8529-35743",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8529-36630",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8611-123242",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3158-8296",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3155-6023",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3158-9906",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3158-4524",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106012"
       ],
       "devices": [
         "tablet",
@@ -1964,30 +1552,22 @@
         "2nd combination",
         "3rd combination"
       ],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/insights/PortfolioPerformance.tsx",
-        "modules/skai-wallet/src/components/wallet/settings/NetworkSelector.tsx",
-        "modules/skai-wallet/src/components/wallet/utilities/BackupWallet.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > request from user": {
       "section": "wallet",
       "family": "continue on web > home > request from user",
       "frameCount": 6,
       "frames": [
-        "8045-105868",
-        "8045-106473",
-        "3154-5798",
-        "3154-5542",
-        "8045-105904",
-        "8045-106504"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-105868",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106473",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3154-5798",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3154-5542",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-105904",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-106504"
       ],
       "devices": [
         "tablet",
@@ -1998,26 +1578,19 @@
         "step 1",
         "step 2"
       ],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/utilities/RequestPayment.tsx",
-        "modules/skai-wallet/src/components/wallet/utilities/BatchTransactions.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletUtilities.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > unlock > Forgot password > OTP > Set new password": {
       "section": "wallet",
       "family": "continue on web > unlock > Forgot password > OTP > Set new password",
       "frameCount": 3,
       "frames": [
-        "7728-59766",
-        "7473-133033",
-        "7683-34510"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7728-59766",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7473-133033",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7683-34510"
       ],
       "devices": [
         "mobile",
@@ -2025,24 +1598,19 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
-        "modules/skai-wallet/src/components/SKAIAuth.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > unlock > Forgot password > OTP": {
       "section": "wallet",
       "family": "continue on web > unlock > Forgot password > OTP",
       "frameCount": 3,
       "frames": [
-        "7728-59382",
-        "7473-131013",
-        "7683-33892"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7728-59382",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7473-131013",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7683-33892"
       ],
       "devices": [
         "mobile",
@@ -2050,33 +1618,28 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/auth/ForgotPasswordFlow.tsx",
-        "modules/skai-wallet/src/components/SKAIAuth.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > receive": {
       "section": "wallet",
       "family": "continue on web > home > receive",
       "frameCount": 12,
       "frames": [
-        "7935-72636",
-        "7935-73094",
-        "7935-72101",
-        "7935-72913",
-        "7935-71767",
-        "7935-70792",
-        "7935-71574",
-        "7935-70612",
-        "3153-19232",
-        "3153-19677",
-        "3153-19488",
-        "3153-19055"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-72636",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-73094",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-72101",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-72913",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-71767",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-70792",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-71574",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7935-70612",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3153-19232",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3153-19677",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3153-19488",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3153-19055"
       ],
       "devices": [
         "mobile",
@@ -2090,38 +1653,32 @@
         "step 1",
         "set amount"
       ],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/bridge/BridgeSuccess.tsx",
-        "modules/skai-wallet/src/components/wallet/bridge/BridgeProcessing.tsx",
-        "modules/skai-wallet/src/components/wallet/tokens/TokenPriceChart.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > batch": {
       "section": "wallet",
       "family": "continue on web > home > batch",
       "frameCount": 16,
       "frames": [
-        "8091-48931",
-        "8045-115649",
-        "8572-50096",
-        "8045-116170",
-        "8045-115167",
-        "3161-18913",
-        "8045-115989",
-        "8091-48732",
-        "8045-115804",
-        "3161-20243",
-        "7532-160779",
-        "3161-19548",
-        "8045-115490",
-        "8045-116369",
-        "8045-115331",
-        "3161-20000"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8091-48931",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-115649",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8572-50096",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-116170",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-115167",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3161-18913",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-115989",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8091-48732",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-115804",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3161-20243",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7532-160779",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3161-19548",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-115490",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-116369",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-115331",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3161-20000"
       ],
       "devices": [
         "mobile",
@@ -2135,27 +1692,23 @@
         "step 3",
         "step 2b"
       ],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/connections/SendFlow.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > bridge": {
       "section": "wallet",
       "family": "continue on web > home > bridge",
       "frameCount": 7,
       "frames": [
-        "8611-28596",
-        "8045-113267",
-        "8045-114969",
-        "8045-114368",
-        "8045-113082",
-        "3161-4184",
-        "3158-11566"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8611-28596",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-113267",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-114969",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-114368",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-113082",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3161-4184",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3158-11566"
       ],
       "devices": [
         "mobile",
@@ -2163,24 +1716,19 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/common/ConfirmationDialog.tsx",
-        "modules/skai-wallet/src/components/wallet/settings/LanguageCurrencyPanel.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > bridge > Start bridge": {
       "section": "wallet",
       "family": "continue on web > home > bridge > Start bridge",
       "frameCount": 3,
       "frames": [
-        "8045-113604",
-        "8045-113447",
-        "7528-159859"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-113604",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-113447",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7528-159859"
       ],
       "devices": [
         "mobile",
@@ -2198,9 +1746,9 @@
       "family": "continue on web > home > bridge > bridge settings",
       "frameCount": 3,
       "frames": [
-        "8045-114061",
-        "3161-3923",
-        "8045-114218"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-114061",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3161-3923",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-114218"
       ],
       "devices": [
         "tablet",
@@ -2208,103 +1756,82 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/bridge/BridgeSettingsPanel.tsx",
-        "modules/skai-wallet/src/components/wallet/common/GasSelectorDialog.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > account > logout": {
       "section": "wallet",
       "family": "continue on web > home > account > logout",
       "frameCount": 3,
       "frames": [
-        "7911-42996",
-        "7911-42701",
-        "3167-25811"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7911-42996",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7911-42701",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3167-25811"
       ],
       "devices": [
         "tablet",
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/staking/StakingDetail.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > account": {
       "section": "wallet",
       "family": "continue on web > home > account",
       "frameCount": 3,
       "frames": [
-        "7911-42432",
-        "7911-42082",
-        "3166-24676"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7911-42432",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7911-42082",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3166-24676"
       ],
       "devices": [
         "tablet",
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/settings/WalletLockSection.tsx",
-        "modules/skai-wallet/src/components/wallet/dapp/DAppCard.tsx",
-        "modules/skai-wallet/src/components/wallet/dapp/DAppBrowser.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > streaks": {
       "section": "wallet",
       "family": "continue on web > home > streaks",
       "frameCount": 3,
       "frames": [
-        "8490-37038",
-        "7892-18412",
-        "3163-21620"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8490-37038",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7892-18412",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3163-21620"
       ],
       "devices": [
         "tablet",
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/connections/PermissionRequest.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > notifications": {
       "section": "wallet",
       "family": "continue on web > home > notifications",
       "frameCount": 9,
       "frames": [
-        "7892-19337",
-        "7892-23422",
-        "7892-19704",
-        "7892-23952",
-        "3164-22754",
-        "3165-23175",
-        "3163-21998",
-        "7892-22848",
-        "7892-20209"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7892-19337",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7892-23422",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7892-19704",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7892-23952",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3164-22754",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3165-23175",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3163-21998",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7892-22848",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7892-20209"
       ],
       "devices": [
         "tablet",
@@ -2314,42 +1841,30 @@
         "sample notification",
         "settings"
       ],
-      "citedFileCount": 7,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/dapp/DAppConnectionPanel.tsx",
-        "modules/skai-wallet/src/components/wallet/nft/NftGallery.tsx",
-        "modules/skai-wallet/src/shell/TopHeader.tsx",
-        "modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx",
-        "modules/skai-wallet/src/components/wallet/connections/TransactionSigningModal.tsx",
-        "modules/skai-wallet/src/components/wallet/connections/WalletConnectSessions.tsx",
-        "modules/skai-wallet/src/services/userNotifications.ts"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/services",
-        "modules/skai-wallet/src/shell"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > right-sidecar > wallet multi menu > Remove walletl": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > wallet multi menu > Remove walletl",
       "frameCount": 14,
       "frames": [
-        "9685-101103",
-        "7774-69004",
-        "9685-100712",
-        "9685-99496",
-        "9685-98528",
-        "9545-97477",
-        "9545-97933",
-        "9685-100027",
-        "7774-68417",
-        "9685-98877",
-        "7774-69886",
-        "7774-70474",
-        "7774-70180",
-        "7774-69592"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9685-101103",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-69004",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9685-100712",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9685-99496",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9685-98528",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9545-97477",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9545-97933",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9685-100027",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-68417",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9685-98877",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-69886",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-70474",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-70180",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-69592"
       ],
       "devices": [
         "mobile"
@@ -2365,12 +1880,12 @@
       "family": "continue on web > home > right-sidecar > wallet multi menu > Export private key",
       "frameCount": 6,
       "frames": [
-        "7774-67001",
-        "7774-66509",
-        "7479-135805",
-        "7479-136195",
-        "7713-16630",
-        "7713-16984"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-67001",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-66509",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7479-135805",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7479-136195",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-16630",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-16984"
       ],
       "devices": [
         "mobile",
@@ -2380,23 +1895,19 @@
       "variants": [
         "reveal"
       ],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/shell"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > right-sidecar > wallet accounts": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > wallet accounts",
       "frameCount": 3,
       "frames": [
-        "7774-65029",
-        "3080-811",
-        "7713-14212"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65029",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3080-811",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-14212"
       ],
       "devices": [
         "mobile",
@@ -2404,50 +1915,38 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletSwap.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > account > edit": {
       "section": "wallet",
       "family": "continue on web > home > account > edit",
       "frameCount": 3,
       "frames": [
-        "7911-42551",
-        "7911-42851",
-        "3167-25382"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7911-42551",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7911-42851",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3167-25382"
       ],
       "devices": [
         "tablet",
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/staking/StakingOverview.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > right-sidecar > wallet multi menu > Remove wallet": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > wallet multi menu > Remove wallet",
       "frameCount": 3,
       "frames": [
-        "7774-67295",
-        "7713-17399",
-        "7479-136955"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-67295",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-17399",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7479-136955"
       ],
       "devices": [
         "mobile",
@@ -2455,36 +1954,32 @@
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/shell/panels/WalletActionsMenu.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/shell"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase",
       "frameCount": 16,
       "frames": [
-        "7482-142212",
-        "7717-10565",
-        "9940-233940",
-        "9940-233959",
-        "9940-234006",
-        "9940-234067",
-        "9940-234128",
-        "9940-234315",
-        "9940-234772",
-        "9940-234852",
-        "9941-235776",
-        "9941-235994",
-        "9941-236456",
-        "9941-236536",
-        "9941-237075",
-        "9941-237786"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7482-142212",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7717-10565",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9940-233940",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9940-233959",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9940-234006",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9940-234067",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9940-234128",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9940-234315",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9940-234772",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9940-234852",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9941-235776",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9941-235994",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9941-236456",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9941-236536",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9941-237075",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9941-237786"
       ],
       "devices": [
         "desktop",
@@ -2510,29 +2005,25 @@
       "family": "continue on web > home > right-sidecar > Add wallet",
       "frameCount": 1,
       "frames": [
-        "7479-137328"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7479-137328"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/shell"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > bridge > Start bridge > Post wallet interaction": {
       "section": "wallet",
       "family": "continue on web > home > bridge > Start bridge > Post wallet interaction",
       "frameCount": 3,
       "frames": [
-        "8045-113911",
-        "7528-160277",
-        "8045-113754"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-113911",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7528-160277",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-113754"
       ],
       "devices": [
         "mobile",
@@ -2550,7 +2041,7 @@
       "family": "continue on web > home > right-sidecar > wallet multi menu > Add wallet",
       "frameCount": 1,
       "frames": [
-        "7713-18212"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-18212"
       ],
       "devices": [
         "tablet"
@@ -2566,33 +2057,25 @@
       "family": "continue on web > home > right-sidecar > Add wallet > Create new",
       "frameCount": 1,
       "frames": [
-        "7479-137772"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7479-137772"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/__tests__/shell/AddWalletDrawer.test.tsx",
-        "modules/skai-wallet/src/services/multiChainWallet.ts",
-        "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/__tests__",
-        "modules/skai-wallet/src/services",
-        "modules/skai-wallet/src/shell"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > right-sidecar > wallet multi menu": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > wallet multi menu",
       "frameCount": 3,
       "frames": [
-        "7477-133171",
-        "7713-15272",
-        "7774-65519"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7477-133171",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-15272",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65519"
       ],
       "devices": [
         "desktop",
@@ -2610,7 +2093,7 @@
       "family": "continue on web > home > right-sidecar > wallet multi menu > Add walletl",
       "frameCount": 1,
       "frames": [
-        "7713-17805"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-17805"
       ],
       "devices": [
         "tablet"
@@ -2626,7 +2109,7 @@
       "family": "continue on web > home > right-sidecar > wallet multi menu > rename wallet",
       "frameCount": 1,
       "frames": [
-        "7479-135318"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7479-135318"
       ],
       "devices": [
         "desktop"
@@ -2642,9 +2125,9 @@
       "family": "continue on web > home > Approvals",
       "frameCount": 3,
       "frames": [
-        "8045-116552",
-        "3163-20939",
-        "8045-116862"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-116552",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3163-20939",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8045-116862"
       ],
       "devices": [
         "tablet",
@@ -2662,8 +2145,8 @@
       "family": "continue on web > home > right-sidecar > rename wallet",
       "frameCount": 2,
       "frames": [
-        "7713-15682",
-        "7774-65942"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-15682",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65942"
       ],
       "devices": [
         "tablet",
@@ -2680,7 +2163,7 @@
       "family": "continue on web > home > right-sidecar > Add wallet > Import existing",
       "frameCount": 1,
       "frames": [
-        "7482-141833"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7482-141833"
       ],
       "devices": [
         "desktop"
@@ -2696,7 +2179,7 @@
       "family": "continue on web > home > right-sidecar > wallet multi menu > Import existing",
       "frameCount": 1,
       "frames": [
-        "7717-10153"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7717-10153"
       ],
       "devices": [
         "tablet"
@@ -2712,11 +2195,11 @@
       "family": "continue on web > home > crypto > sample token",
       "frameCount": 5,
       "frames": [
-        "8554-115129",
-        "7808-89289",
-        "3083-1328",
-        "7804-74178",
-        "7871-18184"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8554-115129",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7808-89289",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3083-1328",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7804-74178",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7871-18184"
       ],
       "devices": [
         "mobile",
@@ -2724,24 +2207,18 @@
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/bridge/BridgeReview.tsx",
-        "modules/skai-wallet/src/pages/wallet/WalletTokenDetailRoute.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/pages"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase > Wallet name": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase > Wallet name",
       "frameCount": 2,
       "frames": [
-        "7482-143789",
-        "7717-11907"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7482-143789",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7717-11907"
       ],
       "devices": [
         "desktop",
@@ -2758,9 +2235,9 @@
       "family": "continue on web > home > right-sidecar > Add wallet > Connect hardware wallet",
       "frameCount": 3,
       "frames": [
-        "7482-145038",
-        "7717-14343",
-        "7717-13587"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7482-145038",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7717-14343",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7717-13587"
       ],
       "devices": [
         "desktop",
@@ -2777,9 +2254,9 @@
       "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Private key",
       "frameCount": 3,
       "frames": [
-        "7717-12740",
-        "7482-144255",
-        "7717-13147"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7717-12740",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7482-144255",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7717-13147"
       ],
       "devices": [
         "tablet",
@@ -2796,7 +2273,7 @@
       "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Keystore",
       "frameCount": 1,
       "frames": [
-        "7482-144645"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7482-144645"
       ],
       "devices": [
         "desktop"
@@ -2812,36 +2289,30 @@
       "family": "continue on web > home > right-sidecar > portfolio preview",
       "frameCount": 1,
       "frames": [
-        "3082-13100"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3082-13100"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/buy/BuyForm.tsx",
-        "modules/skai-wallet/src/shell/panels/PortfolioPreviewPanel.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/shell"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > Activity": {
       "section": "wallet",
       "family": "continue on web > home > Activity",
       "frameCount": 8,
       "frames": [
-        "7882-20079",
-        "7528-153701",
-        "3118-21935",
-        "3118-25004",
-        "7807-87715",
-        "3118-25371",
-        "7882-21333",
-        "7807-88748"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7882-20079",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7528-153701",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3118-21935",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3118-25004",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7807-87715",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3118-25371",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7882-21333",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7807-88748"
       ],
       "devices": [
         "mobile",
@@ -2853,35 +2324,29 @@
         "empty",
         "show details"
       ],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/dashboard/ActivityTable.tsx",
-        "modules/skai-wallet/src/shell/panels/TxDetailPanel.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components",
-        "modules/skai-wallet/src/shell"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > NFTs": {
       "section": "wallet",
       "family": "continue on web > home > NFTs",
       "frameCount": 13,
       "frames": [
-        "7871-19838",
-        "7882-19831",
-        "7807-87137",
-        "8540-29853",
-        "7806-83761",
-        "3082-13515",
-        "7871-20688",
-        "7807-86912",
-        "7523-152924",
-        "7806-82974",
-        "3083-905",
-        "7882-21085",
-        "8540-29692"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7871-19838",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7882-19831",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7807-87137",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8540-29853",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7806-83761",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3082-13515",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7871-20688",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7807-86912",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7523-152924",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7806-82974",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3083-905",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7882-21085",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8540-29692"
       ],
       "devices": [
         "tablet",
@@ -2893,28 +2358,21 @@
         "empty ALT",
         "empty > Import NFT"
       ],
-      "citedFileCount": 4,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/dashboard/QuickActionsPanel.tsx",
-        "modules/skai-wallet/src/components/wallet/dashboard/PortfolioSkinPanel.tsx",
-        "modules/skai-wallet/src/components/wallet/dashboard/DashboardNotifications.tsx",
-        "modules/skai-wallet/src/components/NftDisplay.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > NFTs > sample NFT": {
       "section": "wallet",
       "family": "continue on web > home > NFTs > sample NFT",
       "frameCount": 5,
       "frames": [
-        "7806-84981",
-        "3089-19811",
-        "7882-19257",
-        "7882-18863",
-        "7882-17627"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7806-84981",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3089-19811",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7882-19257",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7882-18863",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7882-17627"
       ],
       "devices": [
         "tablet",
@@ -2922,23 +2380,18 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/common/FeeBreakdown.tsx",
-        "modules/skai-wallet/src/components/NftDisplay.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > crypto > sample token > sidecar": {
       "section": "wallet",
       "family": "continue on web > home > crypto > sample token > sidecar",
       "frameCount": 2,
       "frames": [
-        "7805-80831",
-        "3089-18289"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7805-80831",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3089-18289"
       ],
       "devices": [
         "tablet",
@@ -2947,165 +2400,151 @@
       "variants": [
         "swap settings"
       ],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > NFTs > sample NFT > expand": {
       "section": "wallet",
       "family": "continue on web > home > NFTs > sample NFT > expand",
       "frameCount": 2,
       "frames": [
-        "7528-153278",
-        "7807-86028"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7528-153278",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7807-86028"
       ],
       "devices": [
         "desktop",
         "tablet"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/NftDisplay.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "wallet/continue on web > home > NFTs > sample NFT > Send": {
       "section": "wallet",
       "family": "continue on web > home > NFTs > sample NFT > Send",
       "frameCount": 2,
       "frames": [
-        "7807-86527",
-        "3116-21416"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7807-86527",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3116-21416"
       ],
       "devices": [
         "tablet",
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "modules/skai-wallet/src/components/wallet/nft/NftDetail.tsx",
-        "modules/skai-wallet/src/components/wallet/nft/NftSendPanel.tsx",
-        "modules/skai-wallet/src/components/NftDisplay.tsx"
-      ],
-      "dirs": [
-        "modules/skai-wallet/src/components"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Spot": {
       "section": "trade",
       "family": "Spot",
       "frameCount": 99,
       "frames": [
-        "7710-91527",
-        "3928-78877",
-        "4144-64244",
-        "8558-134024",
-        "3931-90224",
-        "3886-15237",
-        "3963-39739",
-        "9045-186284",
-        "9042-164814",
-        "9045-188835",
-        "9045-187547",
-        "9045-167521",
-        "9045-171162",
-        "9002-163670",
-        "3969-43609",
-        "3972-28764",
-        "9050-208186",
-        "9002-157018",
-        "9002-161563",
-        "9045-168925",
-        "9042-164168",
-        "9777-104193",
-        "9050-212503",
-        "9050-209536",
-        "9061-243175",
-        "9050-215425",
-        "9803-131052",
-        "9774-83802",
-        "9772-80915",
-        "9777-106388",
-        "9772-75651",
-        "9803-129761",
-        "9780-110815",
-        "9775-95209",
-        "9777-109337",
-        "4020-42901",
-        "9780-113550",
-        "9776-96834",
-        "3972-32663",
-        "9775-91911",
-        "9775-93615",
-        "9770-133659",
-        "9772-78152",
-        "9777-107863",
-        "9774-82207",
-        "9774-89981",
-        "8558-139280",
-        "8650-44853",
-        "8822-65362",
-        "8833-71578",
-        "8941-77699",
-        "8837-63445",
-        "8846-63794",
-        "8859-66157",
-        "8833-68646",
-        "8828-62762",
-        "8931-64499",
-        "8684-163505",
-        "8687-101463",
-        "8684-167264",
-        "8666-108146",
-        "8570-143200",
-        "8650-46141",
-        "8626-61565",
-        "8684-164665",
-        "8626-85537",
-        "8833-72738",
-        "8828-62440",
-        "9490-145643",
-        "9490-147063",
-        "9490-148310",
-        "9490-149563",
-        "9500-151115",
-        "9500-163410",
-        "9500-164534",
-        "9500-165924",
-        "9500-167048",
-        "8941-78943",
-        "8650-94501",
-        "8684-166194",
-        "8833-69806",
-        "8828-63922",
-        "8650-94724",
-        "8931-65660",
-        "8626-131650",
-        "8650-94950",
-        "8684-166395",
-        "8687-102751",
-        "8626-130555",
-        "8684-166596",
-        "8566-141675",
-        "8666-109490",
-        "8684-162077",
-        "8684-162456",
-        "8687-99711",
-        "8687-103072",
-        "8700-103509",
-        "9553-131170",
-        "9553-133106"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7710-91527",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3928-78877",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4144-64244",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8558-134024",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3931-90224",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3886-15237",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3963-39739",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9045-186284",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9042-164814",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9045-188835",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9045-187547",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9045-167521",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9045-171162",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-163670",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3969-43609",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3972-28764",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-208186",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-157018",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-161563",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9045-168925",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9042-164168",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-104193",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-212503",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-209536",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9061-243175",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-215425",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9803-131052",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9774-83802",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9772-80915",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-106388",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9772-75651",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9803-129761",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-110815",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9775-95209",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-109337",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4020-42901",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-113550",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9776-96834",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3972-32663",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9775-91911",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9775-93615",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9770-133659",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9772-78152",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-107863",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9774-82207",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9774-89981",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8558-139280",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8650-44853",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8822-65362",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8833-71578",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8941-77699",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8837-63445",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8846-63794",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8859-66157",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8833-68646",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8828-62762",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8931-64499",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8684-163505",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8687-101463",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8684-167264",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8666-108146",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8570-143200",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8650-46141",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8626-61565",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8684-164665",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8626-85537",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8833-72738",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8828-62440",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9490-145643",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9490-147063",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9490-148310",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9490-149563",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9500-151115",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9500-163410",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9500-164534",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9500-165924",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9500-167048",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8941-78943",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8650-94501",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8684-166194",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8833-69806",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8828-63922",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8650-94724",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8931-65660",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8626-131650",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8650-94950",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8684-166395",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8687-102751",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8626-130555",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8684-166596",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8566-141675",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8666-109490",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8684-162077",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8684-162456",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8687-99711",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8687-103072",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8700-103509",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9553-131170",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9553-133106"
       ],
       "devices": [
         "desktop",
@@ -3145,33 +2584,17 @@
         "Pro",
         "modal"
       ],
-      "citedFileCount": 7,
-      "citedFiles": [
-        "src/components/trade/native-chart/CandleChart.tsx",
-        "src/components/trade/PortfolioTabs.tsx",
-        "src/components/trade/TradingChart.tsx",
-        "src/components/trade/MarketHeader.tsx",
-        "src/components/trade/AIConfidenceStrip.tsx",
-        "src/components/trade/PositionsTable.tsx",
-        "src/pages/trade/Spot.tsx"
-      ],
-      "dirs": [
-        "src/components/trade/AIConfidenceStrip.tsx",
-        "src/components/trade/MarketHeader.tsx",
-        "src/components/trade/PortfolioTabs.tsx",
-        "src/components/trade/PositionsTable.tsx",
-        "src/components/trade/TradingChart.tsx",
-        "src/components/trade/native-chart",
-        "src/pages/trade/Spot.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Spot > Limit": {
       "section": "trade",
       "family": "Spot > Limit",
       "frameCount": 1,
       "frames": [
-        "3931-93237"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3931-93237"
       ],
       "devices": [
         "desktop"
@@ -3187,7 +2610,7 @@
       "family": "Spot > Info",
       "frameCount": 1,
       "frames": [
-        "3896-31118"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3896-31118"
       ],
       "devices": [
         "desktop"
@@ -3203,7 +2626,7 @@
       "family": "Spot > Limit > Search pairs ALT",
       "frameCount": 1,
       "frames": [
-        "4144-61610"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4144-61610"
       ],
       "devices": [
         "desktop"
@@ -3219,7 +2642,7 @@
       "family": "Spot > Limit > Search pairs",
       "frameCount": 1,
       "frames": [
-        "3962-8774"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3962-8774"
       ],
       "devices": [
         "desktop"
@@ -3235,8 +2658,8 @@
       "family": "Spot > Limit > Search pairs > Trench",
       "frameCount": 2,
       "frames": [
-        "3962-35261",
-        "9050-206715"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3962-35261",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-206715"
       ],
       "devices": [
         "desktop",
@@ -3255,9 +2678,9 @@
       "family": "Spot > Sidebar",
       "frameCount": 3,
       "frames": [
-        "9002-158964",
-        "9081-271543",
-        "9780-144397"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-158964",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-271543",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-144397"
       ],
       "devices": [
         "tablet",
@@ -3274,7 +2697,7 @@
       "family": "Spot chart tools collapsed",
       "frameCount": 1,
       "frames": [
-        "9780-145861"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-145861"
       ],
       "devices": [
         "tablet"
@@ -3290,7 +2713,7 @@
       "family": "Spot > Search pairs",
       "frameCount": 1,
       "frames": [
-        "9048-190933"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9048-190933"
       ],
       "devices": [
         "tablet"
@@ -3306,8 +2729,8 @@
       "family": "Spot > Trades",
       "frameCount": 2,
       "frames": [
-        "9777-102315",
-        "9777-101670"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-102315",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-101670"
       ],
       "devices": [
         "mobile"
@@ -3323,7 +2746,7 @@
       "family": "Spot > Order book",
       "frameCount": 1,
       "frames": [
-        "9777-99794"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-99794"
       ],
       "devices": [
         "mobile"
@@ -3339,8 +2762,8 @@
       "family": "Spot > Selected pairs",
       "frameCount": 2,
       "frames": [
-        "9061-240412",
-        "9059-238855"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9061-240412",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9059-238855"
       ],
       "devices": [
         "mobile"
@@ -3356,8 +2779,8 @@
       "family": "Perpetual Futures > Order history",
       "frameCount": 2,
       "frames": [
-        "9152-86271",
-        "9934-144131"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9152-86271",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9934-144131"
       ],
       "devices": [
         "tablet"
@@ -3375,7 +2798,7 @@
       "family": "Perpetual Futures > Assets",
       "frameCount": 1,
       "frames": [
-        "9152-84122"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9152-84122"
       ],
       "devices": [
         "tablet"
@@ -3391,56 +2814,56 @@
       "family": "Perpetual Futures",
       "frameCount": 50,
       "frames": [
-        "9135-80712",
-        "9135-85233",
-        "9102-300724",
-        "9135-77637",
-        "9137-86763",
-        "9153-80772",
-        "9135-79087",
-        "9804-149370",
-        "9804-147360",
-        "9804-136992",
-        "9156-140326",
-        "9154-121608",
-        "9804-150628",
-        "9153-116609",
-        "9804-145379",
-        "9801-123930",
-        "9804-152885",
-        "9804-143394",
-        "9804-154738",
-        "9153-86643",
-        "9154-119891",
-        "9801-112095",
-        "9804-135230",
-        "9803-133258",
-        "9803-125791",
-        "9803-128424",
-        "9801-122252",
-        "9801-121092",
-        "9804-141566",
-        "9154-128095",
-        "9156-141722",
-        "9804-139692",
-        "9264-89796",
-        "9403-139616",
-        "9403-143235",
-        "9403-146317",
-        "9477-67940",
-        "9477-72630",
-        "9550-128469",
-        "9477-71040",
-        "9414-148035",
-        "9477-69530",
-        "9422-152634",
-        "9403-144446",
-        "9432-157179",
-        "9264-91009",
-        "9380-78308",
-        "9380-79739",
-        "9379-131684",
-        "9373-129956"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9135-80712",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9135-85233",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9102-300724",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9135-77637",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9137-86763",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9153-80772",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9135-79087",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-149370",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-147360",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-136992",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9156-140326",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9154-121608",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-150628",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9153-116609",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-145379",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9801-123930",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-152885",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-143394",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-154738",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9153-86643",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9154-119891",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9801-112095",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-135230",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9803-133258",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9803-125791",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9803-128424",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9801-122252",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9801-121092",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-141566",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9154-128095",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9156-141722",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-139692",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9264-89796",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9403-139616",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9403-143235",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9403-146317",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9477-67940",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9477-72630",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9550-128469",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9477-71040",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9414-148035",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9477-69530",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9422-152634",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9403-144446",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9432-157179",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9264-91009",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9380-78308",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9380-79739",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9379-131684",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9373-129956"
       ],
       "devices": [
         "tablet",
@@ -3475,7 +2898,7 @@
       "family": "Perpetual futures > Assets",
       "frameCount": 1,
       "frames": [
-        "4020-49491"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4020-49491"
       ],
       "devices": [
         "desktop"
@@ -3491,7 +2914,7 @@
       "family": "Spot > layout settings",
       "frameCount": 1,
       "frames": [
-        "9050-214062"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-214062"
       ],
       "devices": [
         "tablet"
@@ -3507,7 +2930,7 @@
       "family": "Perpetual Futures > Funding history",
       "frameCount": 1,
       "frames": [
-        "9152-90527"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9152-90527"
       ],
       "devices": [
         "tablet"
@@ -3523,7 +2946,7 @@
       "family": "Perpetual Futures > Trade history",
       "frameCount": 1,
       "frames": [
-        "9152-89103"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9152-89103"
       ],
       "devices": [
         "tablet"
@@ -3539,8 +2962,8 @@
       "family": "Perpetual Futures > Positions",
       "frameCount": 2,
       "frames": [
-        "9934-141532",
-        "9148-82614"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9934-141532",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9148-82614"
       ],
       "devices": [
         "tablet"
@@ -3558,7 +2981,7 @@
       "family": "Perpetual futures > Orders",
       "frameCount": 1,
       "frames": [
-        "4020-47586"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4020-47586"
       ],
       "devices": [
         "desktop"
@@ -3574,33 +2997,25 @@
       "family": "Perpetual futures > Market > Search pairs",
       "frameCount": 2,
       "frames": [
-        "9148-79309",
-        "3962-32706"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9148-79309",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3962-32706"
       ],
       "devices": [
         "tablet",
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "src/components/trade/MarketSelector.tsx",
-        "src/components/trade/MarketSearchModal.tsx",
-        "src/components/trade/MarketHeader.tsx"
-      ],
-      "dirs": [
-        "src/components/trade/MarketHeader.tsx",
-        "src/components/trade/MarketSearchModal.tsx",
-        "src/components/trade/MarketSelector.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Perpetual Futures > Orders": {
       "section": "trade",
       "family": "Perpetual Futures > Orders",
       "frameCount": 1,
       "frames": [
-        "9152-81364"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9152-81364"
       ],
       "devices": [
         "tablet"
@@ -3616,7 +3031,7 @@
       "family": "Perpetual futures > Positions > Edit running SL/TP",
       "frameCount": 1,
       "frames": [
-        "4020-44966"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4020-44966"
       ],
       "devices": [
         "desktop"
@@ -3632,7 +3047,7 @@
       "family": "Perpetual futures > Trade history > share PnL",
       "frameCount": 1,
       "frames": [
-        "4207-133479"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4207-133479"
       ],
       "devices": [
         "desktop"
@@ -3648,7 +3063,7 @@
       "family": "Perpetual Futures > Positions > Edit running SL/TP",
       "frameCount": 1,
       "frames": [
-        "9152-79912"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9152-79912"
       ],
       "devices": [
         "tablet"
@@ -3664,10 +3079,10 @@
       "family": "Perpetual futures",
       "frameCount": 4,
       "frames": [
-        "3903-24462",
-        "3908-39491",
-        "3903-21478",
-        "3903-22970"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3903-24462",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3908-39491",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3903-21478",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3903-22970"
       ],
       "devices": [
         "desktop"
@@ -3675,24 +3090,17 @@
       "variants": [
         "user not signed"
       ],
-      "citedFileCount": 3,
-      "citedFiles": [
-        "src/components/trade/perp-v2/parts/CollateralInput.tsx",
-        "src/components/trade/perp-v2/PerpPositionsPanel.tsx",
-        "src/pages/trade/PerpTrading.tsx"
-      ],
-      "dirs": [
-        "src/components/trade/perp-v2",
-        "src/pages/trade/PerpTrading.tsx"
-      ],
-      "proposedStatus": "likely-done"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Perpetual futures > Trade history": {
       "section": "trade",
       "family": "Perpetual futures > Trade history",
       "frameCount": 1,
       "frames": [
-        "4191-123643"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4191-123643"
       ],
       "devices": [
         "desktop"
@@ -3708,7 +3116,7 @@
       "family": "Perpetual futures > Funding history",
       "frameCount": 1,
       "frames": [
-        "4201-128723"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4201-128723"
       ],
       "devices": [
         "desktop"
@@ -3724,7 +3132,7 @@
       "family": "Perpetual Futures > Order confirmation",
       "frameCount": 1,
       "frames": [
-        "9148-80746"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9148-80746"
       ],
       "devices": [
         "tablet"
@@ -3740,7 +3148,7 @@
       "family": "Perpetual futures > cross/isolated",
       "frameCount": 1,
       "frames": [
-        "3928-83147"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3928-83147"
       ],
       "devices": [
         "desktop"
@@ -3756,7 +3164,7 @@
       "family": "Perpetual Futures > cross/isolated",
       "frameCount": 1,
       "frames": [
-        "9137-88222"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9137-88222"
       ],
       "devices": [
         "tablet"
@@ -3772,7 +3180,7 @@
       "family": "Perpetual futures > Order confirmation",
       "frameCount": 1,
       "frames": [
-        "3976-39045"
+        "mhF3BkzlTaGiLzJ7kvpmVc:3976-39045"
       ],
       "devices": [
         "desktop"
@@ -3788,8 +3196,8 @@
       "family": "Spot > Layout adjustment",
       "frameCount": 2,
       "frames": [
-        "4144-65909",
-        "4144-67562"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4144-65909",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4144-67562"
       ],
       "devices": [
         "desktop"
@@ -3807,7 +3215,7 @@
       "family": "Perpetual futures > Order history",
       "frameCount": 1,
       "frames": [
-        "4191-121191"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4191-121191"
       ],
       "devices": [
         "desktop"
@@ -3823,7 +3231,7 @@
       "family": "Perpetual futures > Positions",
       "frameCount": 1,
       "frames": [
-        "4018-40830"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4018-40830"
       ],
       "devices": [
         "desktop"
@@ -3839,7 +3247,7 @@
       "family": "Spot > Layout settings",
       "frameCount": 1,
       "frames": [
-        "9780-112196"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-112196"
       ],
       "devices": [
         "mobile"
@@ -3855,9 +3263,9 @@
       "family": "Dashboard > News",
       "frameCount": 3,
       "frames": [
-        "9081-267604",
-        "4459-127765",
-        "9081-266293"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-267604",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4459-127765",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-266293"
       ],
       "devices": [
         "mobile",
@@ -3875,21 +3283,21 @@
       "family": "Bridge",
       "frameCount": 15,
       "frames": [
-        "9101-285632",
-        "9101-286764",
-        "9101-285196",
-        "7838-55747",
-        "9101-284957",
-        "9100-284083",
-        "9101-286163",
-        "9101-286392",
-        "4141-60595",
-        "9101-286886",
-        "4141-60314",
-        "4141-59893",
-        "7838-55165",
-        "9101-285923",
-        "9100-284341"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9101-285632",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9101-286764",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9101-285196",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7838-55747",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9101-284957",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9100-284083",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9101-286163",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9101-286392",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4141-60595",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9101-286886",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4141-60314",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4141-59893",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7838-55165",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9101-285923",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9100-284341"
       ],
       "devices": [
         "tablet",
@@ -3912,19 +3320,19 @@
       "family": "Swap",
       "frameCount": 13,
       "frames": [
-        "9081-277053",
-        "4026-57535",
-        "9094-280250",
-        "9081-278869",
-        "9093-279897",
-        "9093-279708",
-        "9094-280527",
-        "4026-56768",
-        "9794-98626",
-        "9081-279304",
-        "4026-57167",
-        "9081-275608",
-        "4026-53896"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-277053",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4026-57535",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9094-280250",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-278869",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9093-279897",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9093-279708",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9094-280527",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4026-56768",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9794-98626",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-279304",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4026-57167",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-275608",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4026-53896"
       ],
       "devices": [
         "mobile",
@@ -3946,15 +3354,15 @@
       "family": "Margin",
       "frameCount": 9,
       "frames": [
-        "9094-281783",
-        "9098-283625",
-        "9098-283804",
-        "4141-59209",
-        "9094-281524",
-        "4141-58475",
-        "4141-58066",
-        "9098-282408",
-        "9098-283877"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9094-281783",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9098-283625",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9098-283804",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4141-59209",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9094-281524",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4141-58475",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4141-58066",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9098-282408",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9098-283877"
       ],
       "devices": [
         "tablet",
@@ -3965,25 +3373,19 @@
         "with info",
         "with info > review limit"
       ],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/trade/TokenSelector.tsx",
-        "src/pages/trade/TradeUnified.tsx"
-      ],
-      "dirs": [
-        "src/components/trade/TokenSelector.tsx",
-        "src/pages/trade/TradeUnified.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Dashboard > Whale activity": {
       "section": "trade",
       "family": "Dashboard > Whale activity",
       "frameCount": 3,
       "frames": [
-        "9081-266657",
-        "4451-126554",
-        "9081-267988"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-266657",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4451-126554",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-267988"
       ],
       "devices": [
         "tablet",
@@ -4001,9 +3403,9 @@
       "family": "Dashboard > Reports",
       "frameCount": 3,
       "frames": [
-        "9081-266034",
-        "9081-265572",
-        "4451-126989"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-266034",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-265572",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4451-126989"
       ],
       "devices": [
         "mobile",
@@ -4021,9 +3423,9 @@
       "family": "Spot > Chart settings",
       "frameCount": 3,
       "frames": [
-        "9780-143009",
-        "9069-259546",
-        "3931-88039"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-143009",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9069-259546",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3931-88039"
       ],
       "devices": [
         "mobile",
@@ -4041,9 +3443,9 @@
       "family": "Dashboard",
       "frameCount": 3,
       "frames": [
-        "4437-112650",
-        "9069-263248",
-        "9069-261150"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4437-112650",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9069-263248",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9069-261150"
       ],
       "devices": [
         "desktop",
@@ -4063,24 +3465,24 @@
       "family": "Trench",
       "frameCount": 18,
       "frames": [
-        "4282-44687",
-        "4207-145167",
-        "8050-141624",
-        "8050-121808",
-        "9852-102734",
-        "9890-86063",
-        "9892-91176",
-        "9852-112660",
-        "9264-84556",
-        "8092-159106",
-        "9860-92642",
-        "9852-101602",
-        "9264-85987",
-        "9403-133956",
-        "9403-140971",
-        "9419-149915",
-        "9419-151234",
-        "9403-142103"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4282-44687",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4207-145167",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8050-141624",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8050-121808",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-102734",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9890-86063",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9892-91176",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-112660",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9264-84556",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8092-159106",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9860-92642",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-101602",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9264-85987",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9403-133956",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9403-140971",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9419-149915",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9419-151234",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9403-142103"
       ],
       "devices": [
         "desktop",
@@ -4105,7 +3507,7 @@
       "family": "Trench > Trade > Dev tokens",
       "frameCount": 1,
       "frames": [
-        "8324-54882"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8324-54882"
       ],
       "devices": [
         "desktop"
@@ -4121,7 +3523,7 @@
       "family": "Trench > Trade > Instant trade settings",
       "frameCount": 1,
       "frames": [
-        "8225-105405"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8225-105405"
       ],
       "devices": [
         "desktop"
@@ -4137,7 +3539,7 @@
       "family": "Trench > Trade > Transactions",
       "frameCount": 1,
       "frames": [
-        "8225-112421"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8225-112421"
       ],
       "devices": [
         "desktop"
@@ -4153,14 +3555,14 @@
       "family": "Trench > One-click trade settings",
       "frameCount": 8,
       "frames": [
-        "4317-36063",
-        "4317-12483",
-        "4317-39625",
-        "4317-37993",
-        "9892-89548",
-        "9892-87850",
-        "9860-91323",
-        "9860-87365"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4317-36063",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4317-12483",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4317-39625",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4317-37993",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9892-89548",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9892-87850",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9860-91323",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9860-87365"
       ],
       "devices": [
         "desktop",
@@ -4183,9 +3585,9 @@
       "family": "Trench > Trade",
       "frameCount": 3,
       "frames": [
-        "8222-55405",
-        "8222-52086",
-        "8092-153939"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8222-55405",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8222-52086",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8092-153939"
       ],
       "devices": [
         "desktop"
@@ -4204,7 +3606,7 @@
       "family": "Trench > Trade > Bubblemaps",
       "frameCount": 1,
       "frames": [
-        "8324-58606"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8324-58606"
       ],
       "devices": [
         "desktop"
@@ -4220,8 +3622,8 @@
       "family": "Trench > Trade > Holders",
       "frameCount": 2,
       "frames": [
-        "8234-115019",
-        "8489-61109"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8234-115019",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8489-61109"
       ],
       "devices": [
         "desktop"
@@ -4239,7 +3641,7 @@
       "family": "Trench > Trade > KOLs",
       "frameCount": 1,
       "frames": [
-        "8247-118637"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8247-118637"
       ],
       "devices": [
         "desktop"
@@ -4255,8 +3657,8 @@
       "family": "dropdown",
       "frameCount": 2,
       "frames": [
-        "4026-55735",
-        "4414-83859"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4026-55735",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4414-83859"
       ],
       "devices": [
         "desktop"
@@ -4272,7 +3674,7 @@
       "family": "Trench > Trade > Positions",
       "frameCount": 1,
       "frames": [
-        "8225-109708"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8225-109708"
       ],
       "devices": [
         "desktop"
@@ -4288,7 +3690,7 @@
       "family": "Trench > Trade > Transactions > Adjust maker filter",
       "frameCount": 1,
       "frames": [
-        "8489-28776"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8489-28776"
       ],
       "devices": [
         "desktop"
@@ -4304,22 +3706,22 @@
       "family": "Trench > Tables",
       "frameCount": 16,
       "frames": [
-        "9854-77330",
-        "9858-85977",
-        "9858-86395",
-        "9854-77806",
-        "9917-96159",
-        "9917-91066",
-        "9854-74722",
-        "9917-92472",
-        "9917-97793",
-        "9917-95042",
-        "9858-84908",
-        "9854-76137",
-        "9917-88517",
-        "9917-98893",
-        "9856-81373",
-        "9854-76724"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9854-77330",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9858-85977",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9858-86395",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9854-77806",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-96159",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-91066",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9854-74722",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-92472",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-97793",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-95042",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9858-84908",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9854-76137",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-88517",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-98893",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9856-81373",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9854-76724"
       ],
       "devices": [
         "mobile",
@@ -4345,19 +3747,19 @@
       "family": "Trench > Chart",
       "frameCount": 13,
       "frames": [
-        "9570-136716",
-        "9889-84104",
-        "9888-82522",
-        "9264-87119",
-        "9875-183815",
-        "9873-181829",
-        "9852-105967",
-        "9873-180218",
-        "9570-135593",
-        "9852-104788",
-        "9899-106438",
-        "9852-114208",
-        "9570-138196"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9570-136716",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9889-84104",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9888-82522",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9264-87119",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9875-183815",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9873-181829",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-105967",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9873-180218",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9570-135593",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-104788",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9899-106438",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-114208",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9570-138196"
       ],
       "devices": [
         "mobile",
@@ -4383,8 +3785,8 @@
       "family": "Trench > Community",
       "frameCount": 2,
       "frames": [
-        "9852-109547",
-        "9890-82868"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-109547",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9890-82868"
       ],
       "devices": [
         "mobile",
@@ -4401,8 +3803,8 @@
       "family": "Trench > Token info",
       "frameCount": 2,
       "frames": [
-        "9852-107973",
-        "9889-85685"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-107973",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9889-85685"
       ],
       "devices": [
         "mobile",
@@ -4419,8 +3821,8 @@
       "family": "> Trade > Trench",
       "frameCount": 2,
       "frames": [
-        "9860-94002",
-        "9893-92991"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9860-94002",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9893-92991"
       ],
       "devices": [
         "mobile",
@@ -4439,8 +3841,8 @@
       "family": "Trench > Similar tokens",
       "frameCount": 2,
       "frames": [
-        "9890-83471",
-        "9852-110686"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9890-83471",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9852-110686"
       ],
       "devices": [
         "tablet",
@@ -4457,17 +3859,17 @@
       "family": "Launch",
       "frameCount": 11,
       "frames": [
-        "8493-31691",
-        "4419-86274",
-        "8493-30183",
-        "4405-82330",
-        "9346-88943",
-        "9346-88026",
-        "9346-91644",
-        "9346-89860",
-        "9346-90446",
-        "9431-156328",
-        "9346-91058"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8493-31691",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4419-86274",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8493-30183",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4405-82330",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-88943",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-88026",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-91644",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-89860",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-90446",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9431-156328",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-91058"
       ],
       "devices": [
         "desktop",
@@ -4475,27 +3877,23 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/screens"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Launch > create token": {
       "section": "trade",
       "family": "Launch > create token",
       "frameCount": 7,
       "frames": [
-        "4437-116944",
-        "4437-115199",
-        "9346-97930",
-        "9346-96983",
-        "9535-96826",
-        "9346-94072",
-        "9346-94908"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4437-116944",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4437-115199",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-97930",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-96983",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9535-96826",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-94072",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-94908"
       ],
       "devices": [
         "desktop",
@@ -4503,26 +3901,22 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/insightx/InsightXScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/insightx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Launch > Sample token > Dashboard": {
       "section": "trade",
       "family": "Launch > Sample token > Dashboard",
       "frameCount": 6,
       "frames": [
-        "4437-112320",
-        "4423-104542",
-        "9346-96798",
-        "9346-96613",
-        "9346-93918",
-        "9346-95222"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4437-112320",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4423-104542",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-96798",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-96613",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-93918",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-95222"
       ],
       "devices": [
         "desktop",
@@ -4533,45 +3927,35 @@
         "positive",
         "negative"
       ],
-      "citedFileCount": 2,
-      "citedFiles": [
-        "src/components/markets/BubbleMap.tsx",
-        "src/components/home-redesign/insightx/InsightXScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/insightx",
-        "src/components/markets/BubbleMap.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Launch > Display settings": {
       "section": "trade",
       "family": "Launch > Display settings",
       "frameCount": 1,
       "frames": [
-        "8493-33199"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8493-33199"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/screens"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Launch > new token": {
       "section": "trade",
       "family": "Launch > new token",
       "frameCount": 3,
       "frames": [
-        "4446-118984",
-        "9917-134047",
-        "9917-127190"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4446-118984",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-134047",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-127190"
       ],
       "devices": [
         "desktop",
@@ -4579,23 +3963,19 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/pages/trade/TokenTradeDetail.tsx"
-      ],
-      "dirs": [
-        "src/pages/trade/TokenTradeDetail.tsx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Launch > Sample token": {
       "section": "trade",
       "family": "Launch > Sample token",
       "frameCount": 3,
       "frames": [
-        "4423-102648",
-        "9917-132465",
-        "9917-125841"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4423-102648",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-132465",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-125841"
       ],
       "devices": [
         "desktop",
@@ -4613,12 +3993,12 @@
       "family": "Launch > Live",
       "frameCount": 6,
       "frames": [
-        "4423-94942",
-        "4423-91869",
-        "9346-85694",
-        "9346-86870",
-        "9931-136758",
-        "9354-163250"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4423-94942",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4423-91869",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-85694",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-86870",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9931-136758",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9354-163250"
       ],
       "devices": [
         "desktop",
@@ -4636,9 +4016,9 @@
       "family": "Launch > create token > buy test",
       "frameCount": 3,
       "frames": [
-        "4446-118388",
-        "9917-128531",
-        "9346-94599"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4446-118388",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-128531",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-94599"
       ],
       "devices": [
         "desktop",
@@ -4646,22 +4026,18 @@
         "mobile"
       ],
       "variants": [],
-      "citedFileCount": 1,
-      "citedFiles": [
-        "src/components/home-redesign/insightx/InsightXScreen.tsx"
-      ],
-      "dirs": [
-        "src/components/home-redesign/insightx"
-      ],
-      "proposedStatus": "partial"
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Nav bar": {
       "section": "trade",
       "family": "Nav bar",
       "frameCount": 2,
       "frames": [
-        "9917-128993",
-        "9917-124672"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-128993",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-124672"
       ],
       "devices": [
         "tablet",
@@ -4678,8 +4054,8 @@
       "family": "Launch > create token > preview",
       "frameCount": 2,
       "frames": [
-        "9346-97279",
-        "9346-94331"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-97279",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9346-94331"
       ],
       "devices": [
         "tablet",
@@ -4696,8 +4072,8 @@
       "family": "> Trade > Trench > Display settings",
       "frameCount": 2,
       "frames": [
-        "9860-95322",
-        "9893-94731"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9860-95322",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9893-94731"
       ],
       "devices": [
         "mobile",
@@ -4714,9 +4090,9 @@
       "family": "Trench > Blacklist",
       "frameCount": 3,
       "frames": [
-        "9893-96368",
-        "9860-108448",
-        "4367-38197"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9893-96368",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9860-108448",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4367-38197"
       ],
       "devices": [
         "tablet",
@@ -4734,8 +4110,8 @@
       "family": "Trench > Display settings",
       "frameCount": 2,
       "frames": [
-        "4341-23384",
-        "8336-98579"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4341-23384",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8336-98579"
       ],
       "devices": [
         "desktop"
@@ -4753,12 +4129,12 @@
       "family": "Trench > Alerts",
       "frameCount": 6,
       "frames": [
-        "9896-101351",
-        "9861-145309",
-        "4380-44369",
-        "9861-143857",
-        "9896-99730",
-        "4380-42651"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9896-101351",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9861-145309",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4380-44369",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9861-143857",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9896-99730",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4380-42651"
       ],
       "devices": [
         "tablet",
@@ -4779,9 +4155,9 @@
       "family": "Trench > Hotkeys",
       "frameCount": 3,
       "frames": [
-        "4372-40162",
-        "9896-98005",
-        "9861-114088"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4372-40162",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9896-98005",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9861-114088"
       ],
       "devices": [
         "desktop",
@@ -4799,9 +4175,9 @@
       "family": "Trench > Snipe settings",
       "frameCount": 3,
       "frames": [
-        "9861-146566",
-        "4380-46165",
-        "9896-102883"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9861-146566",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4380-46165",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9896-102883"
       ],
       "devices": [
         "mobile",
@@ -4819,17 +4195,17 @@
       "family": "Trench > Discover",
       "frameCount": 11,
       "frames": [
-        "9917-107895",
-        "9862-161377",
-        "9917-105922",
-        "9861-151828",
-        "4397-52198",
-        "9915-86377",
-        "9862-160516",
-        "9864-165213",
-        "9864-163960",
-        "9917-111548",
-        "9917-109612"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-107895",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9862-161377",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-105922",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9861-151828",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4397-52198",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9915-86377",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9862-160516",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-165213",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-163960",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-111548",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-109612"
       ],
       "devices": [
         "tablet",
@@ -4853,9 +4229,9 @@
       "family": "Trench > Filters",
       "frameCount": 3,
       "frames": [
-        "9896-104373",
-        "9861-149712",
-        "4397-47886"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9896-104373",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9861-149712",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4397-47886"
       ],
       "devices": [
         "tablet",
@@ -4873,7 +4249,7 @@
       "family": "Trench > Discover > Trending",
       "frameCount": 1,
       "frames": [
-        "4400-59959"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4400-59959"
       ],
       "devices": [
         "desktop"
@@ -4889,7 +4265,7 @@
       "family": "Trench > Discover > DEX Screener",
       "frameCount": 1,
       "frames": [
-        "4400-64434"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4400-64434"
       ],
       "devices": [
         "desktop"
@@ -4905,10 +4281,10 @@
       "family": "Trench > Trackers > Wallets Manager",
       "frameCount": 4,
       "frames": [
-        "9934-147629",
-        "9864-168286",
-        "9934-147866",
-        "9917-114860"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9934-147629",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-168286",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9934-147866",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-114860"
       ],
       "devices": [
         "mobile",
@@ -4927,12 +4303,12 @@
       "family": "Trench > Trackers > X accounts",
       "frameCount": 6,
       "frames": [
-        "9917-116925",
-        "9917-115051",
-        "9864-169745",
-        "9864-173056",
-        "9917-114503",
-        "9864-167289"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-116925",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-115051",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-169745",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-173056",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-114503",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-167289"
       ],
       "devices": [
         "tablet",
@@ -4953,10 +4329,10 @@
       "family": "Trench > Trackers > Wallets",
       "frameCount": 4,
       "frames": [
-        "9917-115557",
-        "9917-112346",
-        "9864-166123",
-        "9864-167663"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-115557",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-112346",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-166123",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-167663"
       ],
       "devices": [
         "tablet",
@@ -4976,12 +4352,12 @@
       "family": "Trench > Trackers > Live trades",
       "frameCount": 6,
       "frames": [
-        "9917-116641",
-        "8360-127832",
-        "9864-173336",
-        "9917-121108",
-        "9864-176271",
-        "4405-73126"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-116641",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8360-127832",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-173336",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-121108",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-176271",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4405-73126"
       ],
       "devices": [
         "tablet",
@@ -4999,9 +4375,9 @@
       "family": "Trench > Trackers > KOLs",
       "frameCount": 3,
       "frames": [
-        "9864-174108",
-        "9917-118201",
-        "4405-74427"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9864-174108",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9917-118201",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4405-74427"
       ],
       "devices": [
         "mobile",
@@ -5019,8 +4395,8 @@
       "family": "Trench > Discover > Live",
       "frameCount": 2,
       "frames": [
-        "4400-60963",
-        "4400-65556"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4400-60963",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4400-65556"
       ],
       "devices": [
         "desktop"
@@ -5038,8 +4414,8 @@
       "family": "Trench > Trackers",
       "frameCount": 2,
       "frames": [
-        "4405-71105",
-        "4405-69980"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4405-71105",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4405-69980"
       ],
       "devices": [
         "desktop"
@@ -5058,7 +4434,7 @@
       "family": "Trench > Trackers > Wallet manager > Import wallet",
       "frameCount": 1,
       "frames": [
-        "4405-75656"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4405-75656"
       ],
       "devices": [
         "desktop"
@@ -5074,7 +4450,7 @@
       "family": "Trench > Trackers > Wallet manager",
       "frameCount": 1,
       "frames": [
-        "4400-68072"
+        "mhF3BkzlTaGiLzJ7kvpmVc:4400-68072"
       ],
       "devices": [
         "desktop"
@@ -5090,9 +4466,9 @@
       "family": "Spot ALT",
       "frameCount": 3,
       "frames": [
-        "8845-36223",
-        "8846-64165",
-        "8936-38729"
+        "mhF3BkzlTaGiLzJ7kvpmVc:8845-36223",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8846-64165",
+        "mhF3BkzlTaGiLzJ7kvpmVc:8936-38729"
       ],
       "devices": [
         "mobile"
@@ -6365,8 +5741,8 @@
       "family": "Install to homescreen ALT",
       "frameCount": 2,
       "frames": [
-        "9747-174084",
-        "9747-175217"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9747-174084",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9747-175217"
       ],
       "devices": [
         "desktop",
@@ -6383,9 +5759,9 @@
       "family": "Install to homescreen",
       "frameCount": 3,
       "frames": [
-        "9746-171660",
-        "9746-172340",
-        "9746-173030"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9746-171660",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9746-172340",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9746-173030"
       ],
       "devices": [
         "desktop",
@@ -9425,6 +8801,504 @@
         "Screenshot 2026-08-03 at 8.31.39 PM 1",
         "Mines all features",
         "GEM 2 KENO 1"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Whales": {
+      "section": "home-2",
+      "family": "Whales",
+      "frameCount": 19,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-110742",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-110870",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-111263",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-112079",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-115137",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-116645",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-119988",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-120275",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-120579",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-120883",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-121237",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-122460",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-122582",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-122676",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-122979",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-123282",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-123374",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-123503",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-123798"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "no data",
+        "no data > Add wallet",
+        "market technicals"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Whales > filter": {
+      "section": "home-2",
+      "family": "Whales > filter",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-111656"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "custom input"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Pro": {
+      "section": "home-2",
+      "family": "Pro",
+      "frameCount": 4,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-112491",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-114086",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-120075",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-123597"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "expanded"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Pro ALT": {
+      "section": "home-2",
+      "family": "Pro ALT",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-112676"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Pro ALT stretched": {
+      "section": "home-2",
+      "family": "Pro ALT stretched",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-112937"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Pro > checkout": {
+      "section": "home-2",
+      "family": "Pro > checkout",
+      "frameCount": 9,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-113481",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-113591",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-113728",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125755",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125890",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-126050",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-126358",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-126494",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-126656"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "send tokens - step 1",
+        "send tokens - step 2",
+        "send tokens - step 3"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Pro > checkout > welcome to gold": {
+      "section": "home-2",
+      "family": "Pro > checkout > welcome to gold",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-113803",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-126152",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-126758"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Pro > checkout ALT": {
+      "section": "home-2",
+      "family": "Pro > checkout ALT",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-114000"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Add > Add whale": {
+      "section": "home-2",
+      "family": "Add > Add whale",
+      "frameCount": 9,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-114473",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-114889",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-115013",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125093",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125298",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125494",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125552",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125612",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125682"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "input > conversation 5",
+        "input"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Whales > Wallet manager > Import wallet": {
+      "section": "home-2",
+      "family": "Whales > Wallet manager > Import wallet",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-115463",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-121696",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-124726"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Whales > Live trades": {
+      "section": "home-2",
+      "family": "Whales > Live trades",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-115820",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-121515",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-124524"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Whales > KOLs": {
+      "section": "home-2",
+      "family": "Whales > KOLs",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-116049",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-121906",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-124086"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Add > Add whale > Select whale": {
+      "section": "home-2",
+      "family": "Add > Add whale > Select whale",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-116983",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125156",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125362"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Agentic support": {
+      "section": "home-2",
+      "family": "Agentic support",
+      "frameCount": 18,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-117799",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-117924",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-118096",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-118266",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-118480",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-118798",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-126988",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-127063",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-128068",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-128187",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-128328",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-128548",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-128626",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-129631",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-129753",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-129897",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-130123",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-130217"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Backtesting > conversation 6",
+        "Backtesting > conversation 6 > All backtests",
+        "Backtesting > conversation 6 > Replicate Sample Strategy",
+        "Backtesting > conversation 6 > Replicate Sample Strategy > Custom code",
+        "Backtesting > conversation 6 > Replicate Sample Strategy > Custom code > Chart sample"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/(section root)": {
+      "section": "home-2",
+      "family": "(section root)",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-130964"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "fortune-wheel/Casino > Dice": {
+      "section": "fortune-wheel",
+      "family": "Casino > Dice",
+      "frameCount": 11,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9691-12630",
+        "M6r9FEn042UWTQD1zvy6GM:9691-13343",
+        "M6r9FEn042UWTQD1zvy6GM:9691-14020",
+        "M6r9FEn042UWTQD1zvy6GM:9730-3561",
+        "M6r9FEn042UWTQD1zvy6GM:9730-3562",
+        "M6r9FEn042UWTQD1zvy6GM:9730-3563",
+        "M6r9FEn042UWTQD1zvy6GM:9730-3565",
+        "M6r9FEn042UWTQD1zvy6GM:9730-3564",
+        "M6r9FEn042UWTQD1zvy6GM:9733-6371",
+        "M6r9FEn042UWTQD1zvy6GM:9733-7000",
+        "M6r9FEn042UWTQD1zvy6GM:9736-9149"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Skai > Play > Casino > Scratchers",
+        "Skai > Play > Casino > Blackjack",
+        "Starting",
+        "Screenshot 2026-08-10 at 11.44.07 AM 1",
+        "Screenshot 2026-08-10 at 11.44.19 AM 1",
+        "Screenshot 2026-08-10 at 11.44.41 AM 1",
+        "Screenshot 2026-08-10 at 11.45.18 AM 1",
+        "Screenshot 2026-08-10 at 11.45.00 AM 1",
+        "Win",
+        "Mobile"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "skai-cross/Casino > Dice": {
+      "section": "skai-cross",
+      "family": "Casino > Dice",
+      "frameCount": 15,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9660-3",
+        "M6r9FEn042UWTQD1zvy6GM:9660-4",
+        "M6r9FEn042UWTQD1zvy6GM:9661-10",
+        "M6r9FEn042UWTQD1zvy6GM:9662-21",
+        "M6r9FEn042UWTQD1zvy6GM:9662-28",
+        "M6r9FEn042UWTQD1zvy6GM:9662-38",
+        "M6r9FEn042UWTQD1zvy6GM:9662-39",
+        "M6r9FEn042UWTQD1zvy6GM:9663-457",
+        "M6r9FEn042UWTQD1zvy6GM:9669-153",
+        "M6r9FEn042UWTQD1zvy6GM:9669-518",
+        "M6r9FEn042UWTQD1zvy6GM:9669-1019",
+        "M6r9FEn042UWTQD1zvy6GM:9669-1520",
+        "M6r9FEn042UWTQD1zvy6GM:9669-2026",
+        "M6r9FEn042UWTQD1zvy6GM:9669-2492",
+        "M6r9FEn042UWTQD1zvy6GM:9669-2966"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "SKAI Cross",
+        "Page notes",
+        "SkaiCross/Currency Tab",
+        "SkaiCross/Difficulty Card",
+        "SkaiCross/Lane Marker",
+        "SkaiCross/HUD Chip",
+        "SkaiCross/Stat Row",
+        "Desktop - Betting — Medium",
+        "SkaiCross/Car",
+        "Desktop - Playing — Medium",
+        "Desktop - Won — Medium",
+        "Desktop - Lost — Medium",
+        "Desktop - Difficulty Easy",
+        "Desktop - Difficulty Hard",
+        "Local components"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "video-poker/Casino > Dice": {
+      "section": "video-poker",
+      "family": "Casino > Dice",
+      "frameCount": 4,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9738-13101",
+        "M6r9FEn042UWTQD1zvy6GM:9738-13811",
+        "M6r9FEn042UWTQD1zvy6GM:9738-14501",
+        "M6r9FEn042UWTQD1zvy6GM:9738-14502"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Skai > Play > Casino > Scratchers",
+        "Skai > Play > Casino > Blackjack",
+        "Screenshot 2026-08-10 at 6.36.25 PM 1",
+        "Starting"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "bingo/Casino > Dice": {
+      "section": "bingo",
+      "family": "Casino > Dice",
+      "frameCount": 3,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9691-11229",
+        "M6r9FEn042UWTQD1zvy6GM:9691-11942",
+        "M6r9FEn042UWTQD1zvy6GM:9746-14703"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Skai > Play > Casino > Scratchers",
+        "Skai > Play > Casino > Blackjack",
+        "Starting"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "rock-paper-scissors/Casino > Dice": {
+      "section": "rock-paper-scissors",
+      "family": "Casino > Dice",
+      "frameCount": 2,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:9737-11685",
+        "M6r9FEn042UWTQD1zvy6GM:9737-12395"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "Skai > Play > Casino > Scratchers",
+        "Skai > Play > Casino > Blackjack"
       ],
       "citedFileCount": 0,
       "citedFiles": [],

@@ -22,7 +22,7 @@
     "`figmaChangeLog` at the bottom. Web App went 11 -> 13 pages, Games 13 -> 18, and",
     "THREE pages were promoted to ready-for-dev (Predict, Chicken, Hi-Lo)."
   ],
-  "harvested": "2026-07-29",
+  "harvested": "2026-08-11",
   "method": "use_figma read-only: figma.root.children for the page list, then setCurrentPageAsync per page for children.length",
   "readinessLegend": {
     "✅": "ready",
@@ -54,7 +54,7 @@
       "pageId": "3:2",
       "pageName": "✅ Onboarding and Authentication",
       "readiness": "ready",
-      "liveChildren": 129,
+      "liveChildren": 151,
       "sections": [
         "onboarding"
       ]
@@ -71,37 +71,6 @@
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-      "pageId": "2003:674",
-      "pageName": "✅ Home",
-      "readiness": "ready",
-      "liveChildren": 354,
-      "sections": [
-        "home",
-        "pwa"
-      ]
-    },
-    {
-      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-      "pageId": "2998:19593",
-      "pageName": "✅ Wallet",
-      "readiness": "ready",
-      "liveChildren": 361,
-      "sections": [
-        "wallet"
-      ]
-    },
-    {
-      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-      "pageId": "3:3",
-      "pageName": "✅ Trade",
-      "readiness": "ready",
-      "liveChildren": 827,
-      "sections": [
-        "trade"
-      ]
-    },
-    {
-      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "3173:26018",
       "pageName": "✅ Predict",
       "readiness": "ready",
@@ -112,10 +81,10 @@
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-      "pageId": "4459:128102",
-      "pageName": "🚧 Play",
-      "readiness": "wip",
-      "liveChildren": 178,
+      "pageId": null,
+      "pageName": "✅ Play",
+      "readiness": "ready",
+      "liveChildren": 345,
       "sections": [
         "play"
       ]
@@ -125,7 +94,7 @@
       "pageId": "4914:113562",
       "pageName": "🚧 Social",
       "readiness": "wip",
-      "liveChildren": 162,
+      "liveChildren": 161,
       "sections": [
         "social"
       ]
@@ -135,19 +104,10 @@
       "pageId": "5210:118077",
       "pageName": "🚧 Governance and Utilities",
       "readiness": "wip",
-      "liveChildren": 159,
+      "liveChildren": 186,
       "sections": [
         "governance"
       ]
-    },
-    {
-      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-      "pageId": "10385:2",
-      "pageName": "🚧 Titles + Emblems",
-      "readiness": "wip",
-      "liveChildren": 1157,
-      "sections": [],
-      "outOfScope": "Asset library, not screens: 1157 top-level icon/emblem nodes. Cataloguing them would swamp the registry with art no code path implements. Revisit only if titles/emblems become a product surface."
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -157,6 +117,107 @@
       "liveChildren": 3,
       "sections": [
         "user-flow"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "10385:2",
+      "pageName": "🚧 Titles + Emblems",
+      "readiness": "wip",
+      "liveChildren": 1157,
+      "sections": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": null,
+      "pageName": "✝️ Home (moved to \"Skai Web App 2\")",
+      "readiness": "meta",
+      "liveChildren": 20,
+      "sections": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": null,
+      "pageName": "✝️ Wallet (moved to \"Skai Web App 2\")",
+      "readiness": "meta",
+      "liveChildren": 13,
+      "sections": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": null,
+      "pageName": "✝️ Trade (moved to \"Skai Web App 2\")",
+      "readiness": "meta",
+      "liveChildren": 154,
+      "sections": []
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": null,
+      "pageName": "Thumbnail",
+      "readiness": "meta",
+      "liveChildren": null,
+      "sections": []
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": null,
+      "pageName": "✅ Home 1",
+      "readiness": "ready",
+      "liveChildren": 227,
+      "sections": [
+        "home",
+        "pwa"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": null,
+      "pageName": "✅ Wallet 1",
+      "readiness": "ready",
+      "liveChildren": 179,
+      "sections": [
+        "wallet"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": null,
+      "pageName": "✅ Trade 1",
+      "readiness": "ready",
+      "liveChildren": 420,
+      "sections": [
+        "trade"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": null,
+      "pageName": "✅ Home 2",
+      "readiness": "ready",
+      "liveChildren": 127,
+      "sections": [
+        "home-2"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": null,
+      "pageName": "✅ Wallet 2",
+      "readiness": "ready",
+      "liveChildren": 182,
+      "sections": [
+        "wallet-2"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": null,
+      "pageName": "✅ Trade 2",
+      "readiness": "ready",
+      "liveChildren": 407,
+      "sections": [
+        "trade-2"
       ]
     },
     {
@@ -172,7 +233,7 @@
       "pageId": "3422:20110",
       "pageName": "📍 Games master sheet",
       "readiness": "meta",
-      "liveChildren": null,
+      "liveChildren": 3,
       "sections": []
     },
     {
@@ -180,7 +241,7 @@
       "pageId": "9220:26175",
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
-      "liveChildren": 16,
+      "liveChildren": 24,
       "sections": [
         "missing-play-images"
       ]
@@ -250,7 +311,7 @@
       "pageId": "9003:133221",
       "pageName": "✅ Scratchers - Skai originals",
       "readiness": "ready",
-      "liveChildren": 19,
+      "liveChildren": 20,
       "sections": [
         "skratch"
       ]
@@ -287,47 +348,9 @@
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-      "pageId": "9061:15449",
-      "pageName": "🚧 Towers - Skai originals",
-      "readiness": "wip",
-      "liveChildren": 63,
-      "sections": [
-        "towers"
-      ],
-      "expectedDelta": 51,
-      "deltaExplained": [
-        "★ 2026-08-05: the 51-node delta on this page is DELIBERATE, not drift. All 63 live",
-        "top-level children were re-harvested; the 12 catalogued rows already cover EVERY",
-        "frame-like node on the page (Directory, 3x Breakpoint, the Rectangle 147 backdrop,",
-        "the one real screen 'Skai > Play > Casino > Towers (1440 x 900px)', both 'Desktop",
-        "Full Game' frames, the 'Frame 1000004081' board, both hf_* reference images and the",
-        "Screenshot rectangle). The 51 uncatalogued nodes are 100% bare RECTANGLE — zero",
-        "FRAMEs, zero screens, zero named design states. Cataloguing them would add 51 rows",
-        "that no code path can ever implement and would bury the one screen this page has.",
-        "",
-        "What they actually are:",
-        "  - 45 loose board tiles, 100x50, cornerRadius 8, fill rgb(0,22,21) - IDENTICAL to",
-        "    the 36 rectangles already nested inside 'Frame 1000004081' (9079-3251), which is",
-        "    the assembled 4-wide Towers board. They sit on bare canvas in two unassembled",
-        "    grids, both 9 rows tall at a 66px pitch, i.e. the other two difficulty widths:",
-        "      * 27 = 3 cols x 9 rows  (9079-3120 .. 9079-3154, x -688/-568/-448, y 3721-4249)",
-        "      * 18 = 2 cols x 9 rows  (9079-3157 .. 9079-3182, x -1246/-1126, y 4390-4918)",
-        "    Only the 4-wide variant was ever wrapped in a frame; these two were left loose.",
-        "  - 5 annotation blocks over the AI reference image, fill rgb(35,60,63), parked at",
-        "    x ~ -14300..-14500 beside hf_20260802_175310 (9391-19746): 9391-19737 (672x189)",
-        "    plus 9391-19738/19740/19742/19744 (20x52 each).",
-        "  - 1 stray tile 9494-4451 (151x132, r8, same fill) at -713,5258 - the same size as",
-        "    Keno's 'Frame 1000004105', so scratch geometry shared across the two WIP pages.",
-        "",
-        "Re-check the moment a real FRAME appears on this page: `expectedDelta` above is the",
-        "agreed number, so a delta of anything OTHER than 51 means the page genuinely moved."
-      ]
-    },
-    {
-      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-      "pageId": "9390:18295",
-      "pageName": "🚧 Keno - Skai originals",
-      "readiness": "wip",
+      "pageId": null,
+      "pageName": "✅ Keno - Skai originals",
+      "readiness": "ready",
       "liveChildren": 27,
       "sections": [
         "keno"
@@ -335,30 +358,80 @@
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-      "pageId": "9390:18296",
-      "pageName": "🚧 Bingo - Skai originals",
+      "pageId": "9061:15449",
+      "pageName": "🚧 Towers - Skai originals",
       "readiness": "wip",
-      "liveChildren": 0,
-      "sections": [],
-      "outOfScope": "Page is EMPTY in Figma (0 top-level children) — nothing to catalog yet."
+      "liveChildren": 63,
+      "expectedDelta": 51,
+      "sections": [
+        "towers"
+      ]
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-      "pageId": "9390:18297",
-      "pageName": "🚧 Fortune Wheel - Skai originals",
+      "pageId": null,
+      "pageName": "✅ Fortune Wheel - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 25,
+      "sections": [
+        "fortune-wheel"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": null,
+      "pageName": "🚧 SKAI Cross - Skai originals",
       "readiness": "wip",
-      "liveChildren": 0,
-      "sections": [],
-      "outOfScope": "Page is EMPTY in Figma (0 top-level children) — nothing to catalog yet."
+      "liveChildren": 15,
+      "sections": [
+        "skai-cross"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": null,
+      "pageName": "🚧 Video Poker - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 11,
+      "sections": [
+        "video-poker"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18296",
+      "pageName": "🚧 Bingo - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 8,
+      "sections": [
+        "bingo"
+      ]
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "9390:18298",
       "pageName": "🚧 Rock Paper Scissors - Skai originals",
       "readiness": "wip",
+      "liveChildren": 6,
+      "sections": [
+        "rock-paper-scissors"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": null,
+      "pageName": "🚧 Roulette - Skai originals",
+      "readiness": "wip",
       "liveChildren": 0,
-      "sections": [],
-      "outOfScope": "Page is EMPTY in Figma (0 top-level children) — nothing to catalog yet."
+      "sections": []
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": null,
+      "pageName": "🚧 Baccarat - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 0,
+      "sections": []
     }
   ],
   "figmaChangeLog": {
@@ -407,5 +480,10 @@
       ]
     }
   },
-  "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29."
+  "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.",
+  "outOfScope": {
+    "🚧 Titles + Emblems": "Not SKAI screens. A 1,157-node REFERENCE board for a future titles/emblems system: badge tiles at 188x40 / 67x64, node names 'image 2'..'image N', and descriptions copied verbatim from Call of Duty achievements (\"Complete the 'Collateral Damage' challenge. Kill 2 or more enemies with a single sniper rifle bullet\"). Zero frames match a screen convention. This is the same 'examples of what the reporter likes' material Casey flagged 2026-08-05 — inspiration, not a spec. Re-scope only if SKAI authors its own emblem screens.",
+    "🚧 Roulette - Skai originals": "Page exists but holds ZERO frames — design has not started. Nothing to catalogue.",
+    "🚧 Baccarat - Skai originals": "Page exists but holds ZERO frames. NOTE: the 2026-08-11 team status list marks Baccarat as in-progress, but the Figma page is empty."
+  }
 }

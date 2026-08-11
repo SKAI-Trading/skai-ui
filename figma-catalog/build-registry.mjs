@@ -20,8 +20,21 @@ const DIR = path.dirname(fileURLToPath(import.meta.url));
 const FILE_KEY = "3sSzw1KewMtUbeLAv7uW0r";
 // Multi-file catalog: each Figma file we track, key -> display name (used for
 // per-frame links). Dice frames live in the SEPARATE "Skai-Games" file.
+//
+// 2026-08-11: Home, Wallet and Trade were MOVED OUT of Skai-Web-App into a new
+// "Skai-Web-App-2" file. The three source pages are still present in the old
+// file but are now tombstones — renamed with a ✝️ prefix, emptied down to a
+// handful of leftover Rectangles, and carrying a "Goto File Now" hyperlink
+// whose href is where this key came from.
+//
+// Figma PRESERVED the node-ids across the move, so no re-harvest was needed:
+// every id in home/wallet/trade/pwa.nodes.txt still resolves, just in the new
+// file. Only the key was wrong — which is worse than it sounds, because a
+// wrong key still produces a well-formed URL. All 1,553 of those rows linked
+// to a valid-looking node in a file that no longer contains it.
 const FILE_KEYS = {
   "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
+  "mhF3BkzlTaGiLzJ7kvpmVc": "Skai-Web-App-2",
   "M6r9FEn042UWTQD1zvy6GM": "Skai-Games",
 };
 // Which Figma file each section's nodes come from.
@@ -36,15 +49,37 @@ const SECTION_FILE = {
   "user-flow": "3sSzw1KewMtUbeLAv7uW0r",
   towers: "M6r9FEn042UWTQD1zvy6GM",
   keno: "M6r9FEn042UWTQD1zvy6GM",
-  home: "3sSzw1KewMtUbeLAv7uW0r",
-  wallet: "3sSzw1KewMtUbeLAv7uW0r",
-  trade: "3sSzw1KewMtUbeLAv7uW0r",
+  // 2026-08-11: five Games pages that no section covered. Only skai-cross holds
+  // real designs. The other four are page SCAFFOLDING — each opens with frames
+  // still titled "Skai > Play > Casino > Scratchers/Blackjack", copied when the
+  // page was created and never renamed, plus raw "Screenshot 2026-08-10..."
+  // captures. Rock Paper Scissors is nothing BUT that scaffolding. Catalogued
+  // because the nodes are real; do not read the page's ✅/🚧 as design progress.
+  "fortune-wheel": "M6r9FEn042UWTQD1zvy6GM",
+  "skai-cross": "M6r9FEn042UWTQD1zvy6GM",
+  "video-poker": "M6r9FEn042UWTQD1zvy6GM",
+  bingo: "M6r9FEn042UWTQD1zvy6GM",
+  "rock-paper-scissors": "M6r9FEn042UWTQD1zvy6GM",
+  // Moved to Skai-Web-App-2 on 2026-08-11 (ids preserved — see FILE_KEYS).
+  home: "mhF3BkzlTaGiLzJ7kvpmVc",
+  wallet: "mhF3BkzlTaGiLzJ7kvpmVc",
+  trade: "mhF3BkzlTaGiLzJ7kvpmVc",
+  // Skai-Web-App-2 did not just re-home these surfaces, it EXTENDED them: each
+  // one gained a second page of entirely new frames in a fresh id range
+  // (13008-* for Home/Wallet, 13006-* for Trade). They are separate sections
+  // because a section maps to one page — and because "Home 2" is not a mobile
+  // port of Home. It is Whales, Skai Pro (plans / checkout / PDF invoices) and
+  // Agentic Backtesting, drawn at 1440 / 768 / 375.
+  "home-2": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "wallet-2": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "trade-2": "mhF3BkzlTaGiLzJ7kvpmVc",
   predict: "3sSzw1KewMtUbeLAv7uW0r",
   play: "3sSzw1KewMtUbeLAv7uW0r",
   dice: "M6r9FEn042UWTQD1zvy6GM",
-  // pwa = "Install to homescreen" screens; they live in the primary Skai-Web-App
-  // file and follow the "Skai > Home > ..." convention like the rest of Home.
-  pwa: "3sSzw1KewMtUbeLAv7uW0r",
+  // pwa = "Install to homescreen" screens. They follow the "Skai > Home > ..."
+  // convention like the rest of Home, and they moved WITH Home on 2026-08-11 —
+  // all five ids now resolve on the "✅ Home 1" page of Skai-Web-App-2.
+  pwa: "mhF3BkzlTaGiLzJ7kvpmVc",
   // crash = the Crash casino game; lives in the Skai-Games file alongside dice.
   crash: "M6r9FEn042UWTQD1zvy6GM",
   // mines = the Mines casino game; Skai-Games file alongside dice + crash.
@@ -100,7 +135,39 @@ const SECTIONS = [
   // Fortune Wheel and Rock Paper Scissors are omitted because those pages are
   // genuinely EMPTY in Figma (0 top-level children), so there is nothing to catalog.
   "social", "governance", "user-flow", "towers", "keno",
+  // 2026-08-11: the new second pages in Skai-Web-App-2. See SECTION_FILE.
+  // TODO wallet-2 and trade-2 have no .titles.tsv yet, so their 589 frames are
+  // catalogued but unclassified (screens/nonScreen both 0). Harvest titles.
+  "home-2", "wallet-2", "trade-2",
+  // 2026-08-11: five previously-uncovered Games pages. See SECTION_FILE.
+  "fortune-wheel", "skai-cross", "video-poker", "bingo", "rock-paper-scissors",
 ];
+
+// The list above is an ORDERING hint, not the source of truth.
+//
+// Adding a section used to mean editing three separate places — the nodes.txt
+// file, SECTION_FILE, and this array — and forgetting the third failed SILENTLY:
+// the ids sat on disk, the page reported zero rows, and nothing said why. That
+// is the same stale-literal defect that hid 16 of 24 sections in catalog-view.
+//
+// So: trust the filesystem, and make any disagreement announce itself.
+const DISCOVERED = fs
+  .readdirSync(DIR)
+  .filter((f) => f.endsWith(".nodes.txt"))
+  .map((f) => f.slice(0, -".nodes.txt".length));
+
+const unlisted = DISCOVERED.filter((s) => !SECTIONS.includes(s)).sort();
+if (unlisted.length) {
+  console.warn(`\n!! ${unlisted.length} section file(s) on disk are not in the SECTIONS order list — appending:`);
+  for (const s of unlisted) console.warn(`   ${s}.nodes.txt`);
+  SECTIONS.push(...unlisted);
+}
+
+const phantom = SECTIONS.filter((s) => !DISCOVERED.includes(s));
+if (phantom.length) {
+  console.warn(`\n!! ${phantom.length} section(s) are listed but have NO <section>.nodes.txt — they contribute nothing:`);
+  for (const s of phantom) console.warn(`   ${s}`);
+}
 // The main file uses the "Skai > <Section> ..." convention. The Skai-Games file
 // does NOT — its game frames are plain component/screen names, so we detect a
 // "screen" for those sections by other means (see parseTitle `opts.skaiConvention`).
@@ -117,6 +184,13 @@ const NON_SKAI_SECTIONS = new Set([
   // additionally MIS-TITLED — they read "Scratchers" and "Blackjack" — the
   // wrong-game-title issue already recorded for the newer game pages.
   "towers", "keno",
+  // 2026-08-11: the same story again, now confirmed as a page TEMPLATE rather
+  // than a one-off slip. Every newer Games page is created by duplicating an
+  // existing one, so it opens with "Skai > Play > Casino > Scratchers" and
+  // "… > Blackjack" frames that were never renamed. Fortune Wheel, Video Poker,
+  // Bingo and Rock Paper Scissors all carry that pair verbatim; SKAI Cross is
+  // the only one of the five with genuinely authored frames.
+  "fortune-wheel", "skai-cross", "video-poker", "bingo", "rock-paper-scissors",
   // 2026-07-29. These three matter DOUBLY: not only do their frames use plain
   // design-state names ("Easy Desktop Full Game", "Card out", "Mobile Medium"),
   // their `Skai > …` titles are COPY-PASTE ARTIFACTS naming the WRONG GAME —
@@ -408,12 +482,24 @@ for (const f of Object.values(frames)) {
   rowsByPage[k] = (rowsByPage[k] || 0) + 1;
 }
 const uncovered = [];
+const outOfScope = [];
 const pageReport = [];
 for (const pg of PAGES.pages || []) {
   const rows = rowsByPage[`${pg.fileKey}|${pg.pageName}`] || 0;
   if (!pg.sections.length) {
     // A page no section covers. Meta pages (Thumbnail / master sheet / cover
     // art) are expected to be empty; a ready/wip page with 0 rows is a real gap.
+    //
+    // ...unless someone has written down WHY it is not catalogued. Without this
+    // the report cries wolf forever on pages that were deliberately excluded —
+    // and a warning nobody can silence is a warning everybody learns to skip.
+    // outOfScope is keyed by pageName and the reason is carried into the
+    // registry so the decision travels with the data.
+    const reason = (PAGES.outOfScope || {})[pg.pageName];
+    if (reason) {
+      outOfScope.push({ page: pg.pageName, live: pg.liveChildren, reason });
+      continue;
+    }
     if (pg.readiness !== "meta") uncovered.push({ page: pg.pageName, live: pg.liveChildren });
     continue;
   }
@@ -431,6 +517,41 @@ for (const pg of PAGES.pages || []) {
 }
 stats.pageCoverage = pageReport;
 stats.uncoveredPages = uncovered;
+stats.outOfScopePages = outOfScope;
+
+// Under-coverage detection.
+//
+// Having a section is not the same as being covered BY it. Only "this page has
+// no section at all" was ever warned about, so a page that WAS mapped could sit
+// half-catalogued indefinitely and still look healthy: Towers carried 12 rows
+// against 63 live frames, and the delta was written to stats.pageCoverage where
+// nobody read it.
+//
+// `live` counts top-level children including furniture, so a small positive
+// delta is normal and warning on every one would be noise. Flag only when the
+// gap is big in BOTH absolute and relative terms, and let a page acknowledge a
+// known gap with `expectedDelta` in pages.json rather than going quiet forever.
+const DRIFT_MIN_ABS = 10; // ignore small gaps — furniture accounts for those
+const DRIFT_MIN_PCT = 0.25; // ...unless a quarter of the page is uncatalogued
+const drift = [];
+for (const pg of PAGES.pages || []) {
+  if (!pg.sections.length || pg.liveChildren == null || pg.readiness === "meta") continue;
+  const rows = rowsByPage[`${pg.fileKey}|${pg.pageName}`] || 0;
+  const unexplained = pg.liveChildren - rows - (pg.expectedDelta || 0);
+  if (unexplained >= DRIFT_MIN_ABS && unexplained >= pg.liveChildren * DRIFT_MIN_PCT) {
+    drift.push({
+      page: pg.pageName,
+      readiness: pg.readiness,
+      rows,
+      live: pg.liveChildren,
+      expectedDelta: pg.expectedDelta || 0,
+      unexplained,
+      sections: pg.sections,
+    });
+  }
+}
+drift.sort((a, b) => b.unexplained - a.unexplained);
+stats.driftingPages = drift;
 
 const out = { generated: new Date().toISOString(), fileKey: FILE_KEY, fileKeys: FILE_KEYS, sectionFile: SECTION_FILE, pagesHarvested: PAGES.harvested || null, stats, frames };
 fs.writeFileSync(regPath, JSON.stringify(out, null, 2));
@@ -446,4 +567,15 @@ const unmapped = Object.keys(PAGES.unmappedSections || {});
 if (unmapped.length) {
   console.warn(`\n!! ${unmapped.length} section(s) map to no page, so their frames have readiness 'unknown':`);
   for (const s of unmapped) console.warn(`   ${s} — ${PAGES.unmappedSections[s]}`);
+}
+
+if (drift.length) {
+  console.warn(`\n!! ${drift.length} page(s) are mapped but UNDER-COVERED — the section exists, the frames are not in it:`);
+  for (const d of drift) {
+    const exp = d.expectedDelta ? ` (allowing ${d.expectedDelta})` : "";
+    console.warn(
+      `   ${d.page}  ${d.rows}/${d.live} rows${exp} — ${d.unexplained} uncatalogued  [${d.sections.join(", ")}]`,
+    );
+  }
+  console.warn("   Harvest the missing ids into <section>.nodes.txt, or set expectedDelta in pages.json with a reason.");
 }
