@@ -63,22 +63,23 @@ for (const line of RAW.split("\n")) {
   bugs.set(k, (bugs.get(k) || 0) + Number(n));
 }
 
-// section -> set of routes it claims, from status.<section>.tsv column 4
+// section -> set of routes it owns, from routes.tsv.
+//
+// This deliberately does NOT infer ownership from the `route` column of
+// status.<section>.tsv. That column is per-family detail ("/ -> openModal(...)")
+// and inferring section ownership from it was wrong twice over: four sections
+// looked like they claimed "/" (it is the root of three different deployed
+// apps), and /launchpad + /sports looked unowned despite being catalogued.
+//
+// Bug reports carry a url from the MAIN app, so only app=main rows can match.
 const sectionRoutes = new Map();
-for (const f of fs.readdirSync(DIR)) {
-  const m = /^status\.(.+)\.tsv$/.exec(f);
-  if (!m) continue;
-  const section = m[1];
-  const set = new Set();
-  for (const line of fs.readFileSync(path.join(DIR, f), "utf8").split(/\r?\n/)) {
-    if (!line.trim() || line.startsWith("#")) continue;
-    const col = line.split("\t");
-    const route = (col[3] || "").trim();
-    if (!route || !route.startsWith("/")) continue;
-    // a cell can list several routes
-    for (const r of route.split(/[,\s]+/)) if (r.startsWith("/")) set.add(norm(r));
-  }
-  if (set.size) sectionRoutes.set(section, set);
+const APP = "main";
+for (const line of fs.readFileSync(path.join(DIR, "routes.tsv"), "utf8").split(/\r?\n/)) {
+  if (!line.trim() || line.startsWith("#") || line.startsWith("app\t")) continue;
+  const [app, section, route] = line.split("\t").map((s) => (s || "").trim());
+  if (app !== APP || !route.startsWith("/")) continue;
+  if (!sectionRoutes.has(section)) sectionRoutes.set(section, new Set());
+  sectionRoutes.get(section).add(norm(route));
 }
 
 const reg = JSON.parse(fs.readFileSync(path.join(DIR, "registry.json"), "utf8"));
@@ -119,10 +120,6 @@ for (const [route, n] of bugs) {
     }
   }
   if (!winners.length) { unmatched.push(`${route} (${n})`); continue; }
-  // Four sections claim "/". Crediting those bugs to whichever has the most
-  // frames would put 162 reports against `trade` and make it look like the
-  // dominant hotspot on evidence that does not support it. Hold them out.
-  if (route === "/" && winners.length > 1) continue;
   // Equal specificity: attribute to the section that actually owns the surface —
   // the one with the most frames — and record the tie rather than hiding it.
   // Without this a 24-frame cover-art section outbids the 345-frame Play section
@@ -134,9 +131,6 @@ for (const [route, n] of bugs) {
   }
   claimed.set(winner, (claimed.get(winner) || 0) + n);
 }
-// Ambiguity at the ROOT is a data problem, not a tie to be broken. Several
-// sections list "/" as their route, so 147 bugs cannot be honestly assigned to
-// any of them by counting frames. Surface it instead of picking.
 const rootClaimants = [...sectionRoutes].filter(([, r]) => r.has("/")).map(([s]) => s);
 
 const rows = [...claimed.entries()]
@@ -149,24 +143,35 @@ const rows = [...claimed.entries()]
 const totalBugs = [...bugs.values()].reduce((a, b) => a + b, 0);
 const matched = [...claimed.values()].reduce((a, b) => a + b, 0);
 
-const header = `#\tOpen Figma bugs per catalog section, joined on the route column of
-#\tstatus.<section>.tsv. Bug data: ${totalBugs} open reports (status new/needs_info,
-#\tfigma_link set), harvested 2026-08-11.
+const header = `#\tOpen Figma bugs per catalog section, joined through routes.tsv (app=main).
+#\tBug data: ${totalBugs} open reports (status new/needs_info, figma_link set),
+#\tharvested 2026-08-11. Regenerate with: node hotspots.mjs
 #
-#\tMatched ${matched}/${totalBugs}. A bug route is matched to the MOST SPECIFIC section
-#\troute that prefixes it, so /play/scratchers lands on scratchers, not /play.
+#\tMatched ${matched}/${totalBugs}. A bug route matches the MOST SPECIFIC owning route,
+#\tso /play/scratchers lands on skratch rather than play, and a :param segment
+#\tmatches exactly one url segment so /crypto/TOADUS lands on /crypto/:symbol.
 #
-#\tUNMATCHED — NO catalog section claims these routes, so these bugs land on a
-#\tsurface the catalog cannot describe. Each one is a coverage gap:
-${unmatched.map((u) => "#\t  " + u).join("\n")}
+#\tA previous version inferred ownership from the route column of individual
+#\tstatus.<section>.tsv rows and reported a triumphant ${totalBugs}/${totalBugs} that was
+#\tFALSE: "/" has zero path segments, so a prefix test made it a catch-all that
+#\tsilently swallowed /launchpad and /sports. 100% here is only meaningful
+#\tbecause every route below is declared explicitly in routes.tsv.
+#
+#\tUNMATCHED — no section owns these routes; each is a coverage gap:
+${(unmatched.length ? unmatched : ["(none)"]).map((u) => "#\t  " + u).join("\n")}
+#
+#\tRESIDUAL GAP not visible in this table: 14 of the 56 /launchpad bugs point at
+#\tSkai-Web-App file-1 nodes (4414/4423/7909/8489/8493) that no section covers.
+#\tThe route is attributed to trade-2 on the strength of the other 42, so those
+#\t14 are counted but their FRAMES are still uncatalogued.
 #
 #\tTIES — several sections claim the same route at equal specificity; attributed
 #\tto the section with the most frames:
 ${(ties.length ? ties : ["(none)"]).map((u) => "#\t  " + u).join("\n")}
 #
-#\tROOT AMBIGUITY — ${rootClaimants.length} sections list "/" as their route
-#\t(${rootClaimants.join(", ")}), so the ${bugs.get("/") || 0} bugs reported on "/" cannot be
-#\thonestly attributed to one of them. Fix the route column, do not break the tie.
+#\tROOT — ${rootClaimants.length} main-app section(s) own "/" (${rootClaimants.join(", ") || "none"}),
+#\tcarrying ${bugs.get("/") || 0} bugs. The skai-wallet and skai-landing roots are separate
+#\tapps and are excluded by the app column in routes.tsv.
 #
 open_bugs\tsection\tframes\troutes`;
 

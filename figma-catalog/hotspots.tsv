@@ -1,32 +1,43 @@
-#	Open Figma bugs per catalog section, joined on the route column of
-#	status.<section>.tsv. Bug data: 603 open reports (status new/needs_info,
-#	figma_link set), harvested 2026-08-11.
+#	Open Figma bugs per catalog section, joined through routes.tsv (app=main).
+#	Bug data: 603 open reports (status new/needs_info, figma_link set),
+#	harvested 2026-08-11. Regenerate with: node hotspots.mjs
 #
-#	Matched 348/603. A bug route is matched to the MOST SPECIFIC section
-#	route that prefixes it, so /play/scratchers lands on scratchers, not /play.
+#	Matched 603/603. A bug route matches the MOST SPECIFIC owning route,
+#	so /play/scratchers lands on skratch rather than play, and a :param segment
+#	matches exactly one url segment so /crypto/TOADUS lands on /crypto/:symbol.
 #
-#	UNMATCHED — NO catalog section claims these routes, so these bugs land on a
-#	surface the catalog cannot describe. Each one is a coverage gap:
-#	  /launchpad (56)
-#	  /sports (37)
+#	A previous version inferred ownership from the route column of individual
+#	status.<section>.tsv rows and reported a triumphant 603/603 that was
+#	FALSE: "/" has zero path segments, so a prefix test made it a catch-all that
+#	silently swallowed /launchpad and /sports. 100% here is only meaningful
+#	because every route below is declared explicitly in routes.tsv.
+#
+#	UNMATCHED — no section owns these routes; each is a coverage gap:
+#	  (none)
+#
+#	RESIDUAL GAP not visible in this table: 14 of the 56 /launchpad bugs point at
+#	Skai-Web-App file-1 nodes (4414/4423/7909/8489/8493) that no section covers.
+#	The route is attributed to trade-2 on the strength of the other 42, so those
+#	14 are counted but their FRAMES are still uncatalogued.
 #
 #	TIES — several sections claim the same route at equal specificity; attributed
 #	to the section with the most frames:
-#	  /play (35) -> play  [also claimed by: missing-play-images]
+#	  (none)
 #
-#	ROOT AMBIGUITY — 4 sections list "/" as their route
-#	(home, onboarding, trade, wallet), so the 162 bugs reported on "/" cannot be
-#	honestly attributed to one of them. Fix the route column, do not break the tie.
+#	ROOT — 1 main-app section(s) own "/" (home),
+#	carrying 162 bugs. The skai-wallet and skai-landing roots are separate
+#	apps and are excluded by the app column in routes.tsv.
 #
 open_bugs	section	frames	routes
-130	trade	830	/ /bridge /crypto/:symbol /insightx /launchpad/create /spot /swap /trade/live /trade/perps /trade/trench /trench
+190	home	349	/ /portfolio /upgrade /upgrade/checkout
+108	trade-2	407	/launchpad /launchpad/create /trade/trench /trench
+94	play	345	/play /play/casino /play/game/:gameId /sports
+78	trade	830	/bridge /crypto/:symbol /insightx /spot /swap /trade/live /trade/perps
 63	predict	284	/predict /predict/all /predict/futures /predict/market/:id /predict/market/:marketType/:marketId /predict/rewards
-57	play	345	/play /play/casino /play/game/:gameId
-28	home	349	/ /portfolio /upgrade /upgrade/checkout
-23	skratch	20	/play/scratchers /scratch
+23	skratch	20	/play/scratchers
 20	coinflip	37	/play/coinflip
 11	blackjack	19	/play/blackjack
 10	mines	16	/play/mines
 3	plinko	20	/play/plinko
 2	dice	34	/play/dice
-1	wallet	369	/ /account /activity /token/:symbol
+1	wallet	369	/account /activity /token/:symbol

@@ -1,0 +1,80 @@
+#	Authoritative route ownership: which catalog section describes the screen a
+#	user is standing on. Written 2026-08-11.
+#
+#	WHY THIS FILE EXISTS
+#	Route ownership used to be inferred from the `route` column of individual
+#	family rows in status.<section>.tsv. That column is per-family detail
+#	("/ -> openModal('bridge')"), not a section-level claim, and inferring
+#	ownership from it produced two wrong answers:
+#
+#	  1. FOUR sections appeared to claim "/" — home, onboarding, trade, wallet —
+#	     leaving 162 bugs unattributable. The reason is that "/" is not one route.
+#	     It is the root of THREE DIFFERENT DEPLOYED APPS:
+#	       home      -> the main app root            (src/…)
+#	       wallet    -> the skai-wallet app root     (modules/skai-wallet/src/pages/wallet/WalletHomeRoute.tsx)
+#	       onboarding-> the skai-landing root        (marked "(skai-landing)" in its route cells)
+#	     A bug url from skai.trade "/" belongs to exactly one of those. Without an
+#	     app column there is no way to say which.
+#	  2. /launchpad (56 bugs) and /sports (37) appeared to be claimed by NOBODY,
+#	     because no family row happened to name them — even though both surfaces
+#	     are fully catalogued.
+#
+#	app = which deployed surface the route lives on. Bug reports carry a url from
+#	the main app, so only app=main rows are eligible to match them.
+#
+#	EVIDENCE for the two routes that had no owner:
+#	  /sports   -> play.   All 15 sampled node-ids from the 37 /sports bugs are in
+#	               play.nodes.txt. The sportsbook screens sit on the ✅ Play page.
+#	  /launchpad-> trade-2. 42 of the 56 bugs point at Skai-Web-App-2 nodes
+#	               (13006-146xxx/147xxx/148858) that resolve to "Skai > Launch 1VH",
+#	               "Skai > Launch > create token" and "Skai > Launch > Live" on the
+#	               ✅ Trade 2 page. The other 14 point at Skai-Web-App file-1 nodes
+#	               (4414/4423/7909/8489/8493) that NO section currently covers —
+#	               a residual gap, recorded rather than papered over.
+#
+app	section	route
+main	home	/
+main	home	/portfolio
+main	home	/upgrade
+main	home	/upgrade/checkout
+main	trade	/spot
+main	trade	/swap
+main	trade	/bridge
+main	trade	/trade/perps
+main	trade	/trade/live
+main	trade	/crypto/:symbol
+main	trade	/insightx
+main	trade-2	/trench
+main	trade-2	/trade/trench
+main	trade-2	/launchpad
+main	trade-2	/launchpad/create
+main	predict	/predict
+main	predict	/predict/all
+main	predict	/predict/futures
+main	predict	/predict/rewards
+main	predict	/predict/market/:id
+main	predict	/predict/market/:marketType/:marketId
+main	play	/play
+main	play	/play/casino
+main	play	/play/game/:gameId
+main	play	/sports
+main	skratch	/play/scratchers
+main	coinflip	/play/coinflip
+main	blackjack	/play/blackjack
+main	mines	/play/mines
+main	plinko	/play/plinko
+main	dice	/play/dice
+main	crash	/play/crash
+main	hilo	/play/hilo
+main	chicken	/play/chicken
+main	darts	/play/darts
+main	keno	/play/keno
+main	towers	/play/towers
+main	wallet	/account
+main	wallet	/activity
+main	wallet	/token/:symbol
+main	legal	/terms
+main	legal	/privacy
+wallet	wallet	/
+landing	onboarding	/
+landing	onboarding	/ref/:code
