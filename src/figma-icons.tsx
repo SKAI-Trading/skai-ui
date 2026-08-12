@@ -1155,6 +1155,90 @@ export const FigmaPersonCheckIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
+// =============================================================================
+// X-ACCOUNTS "MY LIST" ACTION GROUP (Skai-Web-App-2 mhF3BkzlTaGiLzJ7kvpmVc,
+// node 13008:115961 "Frame 594", 88×24) — report c7042893.
+//
+// The three glyphs the frame actually draws. They are ADDITIONS, not edits to
+// FigmaBellIcon / FigmaPersonCheckIcon / FigmaTrashIcon, because each of those
+// is correct where it is already used and is used somewhere else:
+//   FigmaBellIcon        HomeTopBar.tsx:807 — the header notification bell,
+//                        Figma 2713:4828 chrome. A bell there is right.
+//   FigmaPersonCheckIcon HomeOnboarding.tsx:718 — the `complete_profile` quest
+//                        ("Profile" / "SET UP NOW"), pinned by
+//                        tests/unit/components/home-redesign/HomeOnboarding.questsFrame.test.tsx.
+//                        A person-with-CHECK is right for completing a profile.
+//   FigmaTrashIcon       ActivityView.tsx:316 and HomeSidebarExpanded.tsx:846,
+//                        neither of which reported a wrong glyph.
+// Repointing any of them would have fixed one surface and silently broken two.
+//
+// All three take `currentColor` with NO baked default, unlike
+// FigmaSidebarAIBoltIcon above. That is deliberate: the sole consumer drives
+// their colour from state. XAccountsPanel's `GreenToggle` tints
+// `on ? "text-alien-green-bright" : "text-ash hover:text-foreground"`, and the
+// remove control ramps `text-foreground hover:text-ash`. A `color` attribute on
+// the svg would outrank the inherited value and freeze both.
+// (`text-alien-green-bright` already resolves to the frame's #17F9B4, so the
+// tint was never the defect here — only the shape was.)
+//
+// Path data is verbatim from the Figma SVG exports fetched via
+// get_design_context asset URLs. Nothing here was traced or re-derived.
+// =============================================================================
+
+/** Ghost — X-accounts "My list" alerts toggle (13008:115963). Filled, 12×12.
+ *  The frame fills it App/Green #17F9B4; the caller supplies that via
+ *  currentColor. Replaces the outline bell that shipped on this control. */
+export const FigmaGhostIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" {...props}>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.55057 2.01133C4.61179 2.01133 3.71146 2.38426 3.04765 3.04808C2.38383 3.71189 2.01091 4.61222 2.01091 5.55099V9.90984C2.01089 9.94505 2.02007 9.97967 2.03753 10.0102C2.055 10.0408 2.08015 10.0663 2.11049 10.0842C2.14083 10.1021 2.17532 10.1117 2.21053 10.1122C2.24575 10.1126 2.28047 10.1039 2.31127 10.0868L2.78811 9.82236C3.09217 9.65338 3.43467 9.56567 3.78252 9.56771C4.13037 9.56974 4.47181 9.66146 4.77387 9.83399L5.04895 9.99125C5.20172 10.0785 5.37462 10.1244 5.55057 10.1244C5.72651 10.1244 5.89941 10.0785 6.05219 9.99125L6.32727 9.83449C6.62928 9.66189 6.97071 9.57009 7.31855 9.56796C7.6664 9.56583 8.00892 9.65345 8.31302 9.82236L8.78986 10.0868C8.82066 10.1039 8.85539 10.1126 8.8906 10.1122C8.92582 10.1117 8.9603 10.1021 8.99065 10.0842C9.02099 10.0663 9.04614 10.0408 9.0636 10.0102C9.08107 9.97967 9.09025 9.94505 9.09023 9.90984V5.55099C9.09023 5.08616 8.99867 4.62588 8.82079 4.19642C8.64291 3.76697 8.38218 3.37676 8.05349 3.04808C7.7248 2.71939 7.33459 2.45866 6.90514 2.28077C6.47569 2.10289 6.0154 2.01133 5.55057 2.01133ZM0.999574 5.55099C0.999574 4.344 1.47905 3.18643 2.33253 2.33296C3.18601 1.47948 4.34357 1 5.55057 1C6.75757 1 7.91513 1.47948 8.76861 2.33296C9.62208 3.18643 10.1016 4.344 10.1016 5.55099V9.90984C10.1016 10.8352 9.10742 11.4203 8.29886 10.9712L7.82202 10.7063C7.66994 10.6218 7.49863 10.5779 7.32466 10.579C7.15069 10.5801 6.97993 10.626 6.82889 10.7123L6.55432 10.8691C6.24864 11.0438 5.90265 11.1357 5.55057 11.1357C5.19848 11.1357 4.8525 11.0438 4.54682 10.8691L4.27224 10.7123C4.12121 10.626 3.95045 10.5801 3.77648 10.579C3.6025 10.5779 3.4312 10.6218 3.27912 10.7063L2.80278 10.9712C1.99371 11.4203 0.999574 10.8352 0.999574 9.90984V5.55099ZM4.79207 5.29816C4.79207 5.49933 4.71216 5.69226 4.56991 5.8345C4.42766 5.97675 4.23474 6.05666 4.03357 6.05666C3.8324 6.05666 3.63948 5.97675 3.49723 5.8345C3.35498 5.69226 3.27507 5.49933 3.27507 5.29816C3.27507 5.097 3.35498 4.90407 3.49723 4.76182C3.63948 4.61958 3.8324 4.53966 4.03357 4.53966C4.23474 4.53966 4.42766 4.61958 4.56991 4.76182C4.71216 4.90407 4.79207 5.097 4.79207 5.29816ZM7.06757 6.05666C7.26873 6.05666 7.46166 5.97675 7.60391 5.8345C7.74615 5.69226 7.82607 5.49933 7.82607 5.29816C7.82607 5.097 7.74615 4.90407 7.60391 4.76182C7.46166 4.61958 7.26873 4.53966 7.06757 4.53966C6.8664 4.53966 6.67347 4.61958 6.53123 4.76182C6.38898 4.90407 6.30907 5.097 6.30907 5.29816C6.30907 5.49933 6.38898 5.69226 6.53123 5.8345C6.67347 5.97675 6.8664 6.05666 7.06757 6.05666Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+/** Person outline + star — X-accounts "My list" follow toggle (13008:115966).
+ *  12×12. The person is STROKED and the star is FILLED, which is how the export
+ *  draws it; the 1px stroke is the export's default and is left implicit rather
+ *  than restated at some rounder number. Replaces the person-with-check that
+ *  shipped on this control. */
+export const FigmaPersonStarIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M7.7089 10.5945H2.00115V8.30913C2.00115 6.9779 4.66934 6.30942 6.00058 6.30942C6.66612 6.30942 7.66581 6.4765 8.4992 6.80994M6.00058 5.16673C6.94901 5.16673 7.7089 4.40113 7.7089 3.45269C7.7089 2.50426 6.94901 1.73865 6.00058 1.73865C5.05214 1.73865 4.28654 2.50426 4.28654 3.45269C4.28654 4.40113 5.05214 5.16673 6.00058 5.16673Z"
+      stroke="currentColor"
+    />
+    <path
+      d="M10 7L10.5878 8.19098L11.9021 8.38197L10.9511 9.30902L11.1756 10.618L10 10L8.82443 10.618L9.04894 9.30902L8.09789 8.38197L9.41221 8.19098L10 7Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+/** Solid trash — X-accounts "My list" remove control (13008:115969). Native
+ *  13×14.333 inside a 16px slot, so give it a 16px box and let the viewBox
+ *  letterbox rather than stretching it.
+ *
+ *  This path is not new to the repo: it is byte-identical to
+ *  `CreateTokenTrashIcon` in
+ *  `src/components/launchpad/create/create-token-icons.tsx`, which was exported
+ *  from Figma independently (node 4442:118145) and whose docblock already notes
+ *  it is "distinct from the outline FigmaTrashIcon". Two separate exports of the
+ *  same glyph agreeing to the digit is about as good as provenance gets, and it
+ *  means the shared library now owns the solid trash the app had been keeping a
+ *  private copy of. The export paints it Core/White; that stays with the caller
+ *  through currentColor, because the one consumer ramps it on hover. */
+export const FigmaTrashSolidIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 13 14.333" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M9.33301 2H13V3H11.5986L9.99414 13.9062L9.93164 14.333H3.06738L3.00488 13.9062L1.40137 3H0V2H3.66699V0H9.33301V2ZM3.93164 13.333H9.06738L10.5879 3H2.41211L3.93164 13.333ZM7 11.667H6V4.66699H7V11.667ZM4.66699 2H8.33301V1H4.66699V2Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 /** Question-mark circle — section help affordance ("Smart money …"). Outline. */
 export const FigmaQuestionCircleIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
