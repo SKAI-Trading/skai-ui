@@ -160,6 +160,47 @@ Next, in value order:
 5. Titles for the 623 still-untitled frames, and `status.*.tsv` for the 15 sections
    that have none (1,200 frames inventoried but never assessed).
 
+## 13 of 26 shipped casino games have no Figma screen (2026-08-11)
+
+The render switch is `modules/skai-gaming/src/pages/play/Play.tsx:1402-1457`. Cross
+referencing every game it can mount against all 3,206 **titled** frames in the three
+files:
+
+**Designed (12)** — hilo, mines, plinko, chicken, crash, blackjack, coinflip, dice,
+towers, darts, keno, scratchers.
+
+**Shipped with NO game screen (13)** — baccarat, poker, video-poker, rps, slots
+(Vegas), fortune-wheel-pro, roulette-pro, gem-slots, bingo, safari-slots,
+cosmic-slots, mega-slots, price-grid.
+
+The only Figma mentions of those thirteen anywhere in the corpus are Play-browser
+**tile artwork** — `Cards - Fortune Wheel`, `Cards Large - Fortune Wheel On:hover`,
+`Cards - Cosmic Slots`. Thumbnails, not screens. This is the largest undesigned
+surface in the product.
+
+Do not be reassured by the catalog sections named after four of them. `bingo`,
+`fortune-wheel`, `video-poker` and `rock-paper-scissors` contain ONLY duplicated
+scaffolding — `bingo.titles.tsv:5-6` is literally
+`Skai > Play > Casino > Scratchers (1440 x 900px)` and
+`Skai > Play > Casino > Blackjack (375 x 812px)`, copied when the page was created
+and never renamed. A page-level ✅ on those is not design progress.
+
+Two nuances that are Casey's call, not an auditor's assumption:
+
+- **SKAI Cross** has real *component* design (`skai-cross.titles.tsv`:
+  `SkaiCross/Currency Tab`, `Difficulty Card`, `Lane Marker`, `HUD Chip`, `Car`,
+  `Stat Row`) but no assembled screen.
+- `Skai > Play > Casino > Sample game` (+ `> Close game`, `> Game info`,
+  `> My Stats`, `ALT`) may be a **generic shell every game inherits**. If that is the
+  intent, the thirteen are "shell-covered, content-undesigned" rather than wholly
+  undesigned — a much smaller job.
+
+Stated bound on the evidence: 623 of the 3,829 catalogued frames are untitled, so
+"no frame mentions this game" is evidence over **84%** of the corpus, not 100%.
+
+The decision is design-or-pull, and it is a product call. Nothing here should be
+built from the tile artwork.
+
 ## Rules the catalog enforces
 
 - A page with no section is reported unless `pages.json.outOfScope` records **why**.

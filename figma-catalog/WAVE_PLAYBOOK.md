@@ -83,6 +83,48 @@ forbidden    paths this agent must not touch
 acceptance   see below
 ```
 
+## ★ Never remove, never lose code (Casey, 2026-08-12)
+
+Standing rule for every wave from here. Parallel agents make both failures easy
+and both expensive.
+
+**Deleting is the last resort, not the first.** A frame not drawing something is
+weak evidence on its own — the node may be a placeholder, the frame may cover a
+different route, or the element may be live at a breakpoint you did not open.
+Before removing anything:
+
+1. Open the frame's **complete child list**, not a screenshot of it. The spot/perps
+   lane did this correctly: it enumerated every child of the approved frame and
+   named the exact geometry of each before deleting four widgets.
+2. Check the element is absent at **all three breakpoints**, not just 1440.
+3. Prefer moving over deleting. When the launchpad lane retired
+   `TokenProfileRow.tsx`, it first moved that file's `FullScreenPreview` into
+   `TokenPreviewPanel.tsx` and left a comment naming the move. Nothing was lost.
+4. If a control loses its trigger, give it one rather than orphaning it. Removing
+   the desktop token-details band left the Layout drawer's toggle controlling
+   nothing, so it was re-pointed at the tablet Info tab — a real switch, not a
+   dead one.
+5. When unsure, **leave it and report it**. Several lanes correctly declined:
+   Trench kept a live `dexId`-driven Protocol filter a placeholder frame omitted;
+   spot/perps left `/trade/pro` alone because no frame covers that route.
+
+**Losing code is a different failure, and the wave mechanics are the defence.**
+Agents write only inside their lane; nobody runs `git add -A`; nobody commits
+(the orchestrator does, in scoped batches, with explicit paths). A concurrent
+session shares this working tree — a commit that sweeps unrelated files has
+already happened here once.
+
+After every wave, run the deletion audit before reporting success:
+
+```bash
+git log --diff-filter=D --name-only --format="%h %s" <base>..HEAD -- src/
+git show --numstat <commit> -- src/ | sort -k2 -rn | head
+```
+
+The first lists files removed; the second ranks in-file deletions so a large
+`-N` gets read deliberately rather than discovered later. A healthy parity wave
+is strongly net-additive — this one was +3,818 / −1,151.
+
 ## Acceptance criteria
 
 An agent may only report done when all of these hold:
