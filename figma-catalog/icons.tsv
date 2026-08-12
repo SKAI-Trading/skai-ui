@@ -1,0 +1,71 @@
+#	Figma icon sets -> @skai/ui icon exports. Harvested 2026-08-11.
+#
+#	icons/* is 27,591 of the design system's 54,047 placements — over half of it.
+#	The Figma sets carry 126 distinct icons:
+#	  icons/action 56 · icons/graphical 33 · icons/wallet 13 · icons/platform 12
+#	  icons/tiers 7 · icons/warnings 4 · icons/games 1
+#	src/figma-icons.tsx exports 90 `Figma*Icon` components, and src/icons.ts calls
+#	them "traced from the design file... what parity is measured against".
+#
+#	★ THE TWO SETS ARE NOT NAME-ALIGNED. Of the 36 icons in the five sets that were
+#	  fully enumerated, exactly FIVE have a same-named code export (info, people,
+#	  share, vault, warning). The code vocabulary is sidebar/social/chain heavy
+#	  (sidebar*, discord, instagram, solana, bnb, basechain, xlogo, backtest,
+#	  crystalball); the Figma vocabulary is wallet-action and tier heavy (Buy,
+#	  Receive, Bridge, Approvals, Batch, Backup, Spending, Insight, Request,
+#	  Bronze..Legend).
+#
+#	  So nobody can currently tell whether a given Figma icon is implemented. A
+#	  name mismatch here is NOT proof an icon is missing — the code may draw the
+#	  same glyph under another name — but it does mean coverage is unverifiable by
+#	  inspection, which is why "wrong icon" is 12% of the open bug backlog.
+#
+#	  Resolving a `candidate` row means opening both glyphs and comparing. Do not
+#	  promote one on name similarity alone.
+#
+#	match:
+#	  exact     — same name in both. Safe to rely on.
+#	  candidate — plausible counterpart by role; UNVERIFIED, compare the glyphs.
+#	  none      — no plausible code export found. Likely genuinely unimplemented.
+#
+#	Only the five fully-enumerated sets are listed. icons/action (56) and
+#	icons/graphical (33) still need their variant lists harvested.
+#
+figma_set	figma_icon	code_export	match
+icons/warnings	Info	FigmaInfoIcon	exact
+icons/warnings	Warning	FigmaWarningIcon	exact
+icons/warnings	Error	-	none
+icons/warnings	Success	FigmaCheckIcon	candidate
+icons/platform	People	FigmaPeopleIcon	exact
+icons/platform	Vault	FigmaVaultIcon	exact
+icons/platform	SKAI	FigmaSkaiMarkIcon	candidate
+icons/platform	Skai AI	FigmaSidebarAiBoltIcon	candidate
+icons/platform	AI	FigmaSidebarAgenticIcon	candidate
+icons/platform	Agent	FigmaRobotIcon	candidate
+icons/platform	Chat	FigmaSidebarChatIcon	candidate
+icons/platform	Games	FigmaSidebarGamesIcon	candidate
+icons/platform	Wallet	FigmaSidebarWalletIcon	candidate
+icons/platform	Signal	FigmaSignalsIcon	candidate
+icons/platform	USD	FigmaDollarIcon	candidate
+icons/platform	Ether	-	none
+icons/wallet	Share	FigmaShareIcon	exact
+icons/wallet	Chart	FigmaChartLineIcon	candidate
+icons/wallet	Chat	FigmaSidebarChatIcon	candidate
+icons/wallet	Add	FigmaPlusIcon	candidate
+icons/wallet	Buy	-	none
+icons/wallet	Receive	-	none
+icons/wallet	Bridge	-	none
+icons/wallet	Backup	-	none
+icons/wallet	Batch	-	none
+icons/wallet	Approvals	-	none
+icons/wallet	Spending	-	none
+icons/wallet	Insight	-	none
+icons/wallet	Request	-	none
+icons/tiers	Free	-	none
+icons/tiers	Bronze	-	none
+icons/tiers	Silver	-	none
+icons/tiers	Gold	-	none
+icons/tiers	Platinum	-	none
+icons/tiers	Diamond	-	none
+icons/tiers	Legend	-	none
+icons/games	New	-	none
