@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-08-11T23:45:46.227Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-08-12T00:14:16.405Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -14,7 +14,8 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | wallet | ✅ | 369 | 278 | 91 | 56 | 234 | 44 | 0 | 0 | 0 |
 | home | ✅ | 349 | 232 | 117 | 51 | 187 | 45 | 0 | 0 | 0 |
 | predict | ✅ | 284 | 144 | 140 | 33 | 3 | 91 | 50 | 0 | 21 |
-| onboarding | ✅ | 129 | 96 | 33 | 20 | 0 | 78 | 18 | 0 | 0 |
+| wallet-2 | ✅ | 182 | 131 | 51 | 22 | 0 | 0 | 0 | 131 | 0 |
+| onboarding | ✅ | 151 | 96 | 33 | 20 | 0 | 78 | 18 | 0 | 0 |
 | home-2 | ✅ | 127 | 79 | 48 | 15 | 0 | 0 | 0 | 79 | 0 |
 | play | ✅ | 345 | 41 | 137 | 26 | 16 | 13 | 12 | 0 | 40 |
 | coinflip | ✅ | 37 | 26 | 11 | 1 | 25 | 1 | 0 | 0 | 0 |
@@ -23,17 +24,16 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | blackjack | ✅ | 19 | 14 | 5 | 1 | 12 | 2 | 0 | 0 | 0 |
 | plinko | ✅ | 20 | 13 | 7 | 1 | 0 | 13 | 0 | 0 | 0 |
 | crash | ✅ | 17 | 12 | 5 | 1 | 0 | 12 | 0 | 0 | 0 |
+| skratch | ✅ | 20 | 12 | 8 | 1 | 8 | 4 | 0 | 0 | 0 |
 | hilo | ✅ | 20 | 12 | 8 | 1 | 0 | 5 | 0 | 0 | 0 |
-| skratch | ✅ | 19 | 11 | 8 | 1 | 7 | 4 | 0 | 0 | 0 |
 | fortune-wheel | ✅ | 25 | 11 | 14 | 1 | 0 | 0 | 0 | 11 | 0 |
 | keno | ✅ | 27 | 10 | 17 | 1 | 0 | 0 | 0 | 10 | 0 |
 | mines | ✅ | 16 | 9 | 7 | 1 | 7 | 2 | 0 | 0 | 0 |
 | darts | ✅ | 31 | 8 | 23 | 1 | 0 | 8 | 0 | 0 | 0 |
 | pwa | ✅ | 5 | 5 | 0 | 2 | 5 | 0 | 0 | 0 | 0 |
 | legal | ✅ | 10 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 0 |
-| wallet-2 | ✅ | 182 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | trade-2 | ✅ | 407 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| governance | 🚧 | 159 | 95 | 64 | 71 | 0 | 0 | 0 | 95 | 0 |
+| governance | 🚧 | 186 | 95 | 64 | 71 | 0 | 0 | 0 | 95 | 0 |
 | social | 🚧 | 162 | 82 | 80 | 48 | 0 | 0 | 0 | 82 | 0 |
 | skai-cross | 🚧 | 15 | 15 | 0 | 1 | 0 | 0 | 0 | 15 | 0 |
 | towers | 🚧 | 12 | 6 | 6 | 1 | 0 | 0 | 0 | 6 | 0 |
@@ -41,9 +41,9 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | user-flow | 🚧 | 3 | 3 | 0 | 2 | 0 | 0 | 0 | 3 | 0 |
 | bingo | 🚧 | 8 | 3 | 5 | 1 | 0 | 0 | 0 | 3 | 0 |
 | rock-paper-scissors | 🚧 | 6 | 2 | 4 | 1 | 0 | 0 | 0 | 2 | 0 |
-| missing-play-images | 📍 | 16 | 14 | 2 | 1 | 0 | 14 | 0 | 0 | 0 |
+| missing-play-images | 📍 | 24 | 22 | 2 | 1 | 8 | 14 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
-| **all** | | **3771** | **1697** | | | **543** | **735** | **108** | **311** | **61** |
+| **all** | | **3829** | **1837** | | | **552** | **735** | **108** | **442** | **61** |
 
 ### Drift against live Figma
 
@@ -51,14 +51,10 @@ Frames that exist in Figma but are not in the catalog:
 
 | Page | Catalogued | Live | Delta |
 |------|-----------:|-----:|------:|
-| ✅ Onboarding and Authentication | 129 | 151 | 22 |
 | 🚧 Social | 162 | 161 | -1 |
-| 🚧 Governance and Utilities | 159 | 186 | 27 |
 | ✅ Home 1 | 354 | 227 | -127 |
 | ✅ Wallet 1 | 361 | 179 | -182 |
 | ✅ Trade 1 | 827 | 420 | -407 |
-| 🌎 Cover Images - Skai Originals | 16 | 24 | 8 |
-| ✅ Scratchers - Skai originals | 19 | 20 | 1 |
 | 🚧 Towers - Skai originals | 12 | 63 | 51 |
 
 
@@ -315,6 +311,33 @@ Frames that exist in Figma but are not in the catalog:
 | breaking > sample market 2 | 1 | desktop | - | partial | [3344-30618](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3344-30618&m=dev) |
 | sample market ALT | 1 | mobile | - | not-started | [10659-165267](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10659-165267&m=dev) |
 
+## Wallet-2
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| continue on web > home > batch | 16 | desktop, tablet, mobile | step 1; step 2; step 2b; step 2b > input amount; step 3 | unknown | [13008-36677](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36677&m=dev) |
+| continue on web > home > send | 16 | desktop, tablet, mobile | step 1; step 2; step 2 > Address lookup; step 3; processing; step 1 - alternative view for steps | unknown | [13008-37942](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-37942&m=dev) |
+| continue on web > home > receive | 12 | desktop, tablet, mobile | step 1; set amount; step 2; set amount - step 2; set amount - step 1 | unknown | [13008-38053](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-38053&m=dev) |
+| continue on web > home > share | 11 | desktop, tablet, mobile | 3rd combination; Expand; 2nd combination | unknown | [13008-30018](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-30018&m=dev) |
+| continue on web > home | 9 | desktop, tablet, mobile | - | unknown | [13008-26985](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-26985&m=dev) |
+| continue on web > home > notifications | 9 | desktop, tablet | settings; sample notification | unknown | [13008-27989](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27989&m=dev) |
+| continue on web > home > bridge | 7 | desktop, tablet, mobile | - | unknown | [13008-29014](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29014&m=dev) |
+| continue on web > home > request with QR | 6 | desktop, tablet, mobile | step 1; step 2 | unknown | [13008-36562](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36562&m=dev) |
+| continue on web > home > request from user | 6 | desktop, tablet, mobile | step 1; step 2 | unknown | [13008-37430](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-37430&m=dev) |
+| continue on web > home > account | 3 | desktop, tablet | - | unknown | [13008-27689](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27689&m=dev) |
+| continue on web > home > account > logout | 3 | desktop, tablet | - | unknown | [13008-27781](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27781&m=dev) |
+| continue on web > home > account > edit | 3 | desktop, tablet | - | unknown | [13008-27879](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27879&m=dev) |
+| continue on web > home > streaks | 3 | desktop, tablet | - | unknown | [13008-28453](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28453&m=dev) |
+| continue on web > home > buy | 3 | desktop, tablet, mobile | - | unknown | [13008-28694](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28694&m=dev) |
+| continue on web > home > swap | 3 | desktop, tablet, mobile | - | unknown | [13008-28765](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28765&m=dev) |
+| continue on web > home > chart | 3 | desktop, tablet, mobile | - | unknown | [13008-28886](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28886&m=dev) |
+| continue on web > home > bridge > Start bridge | 3 | desktop, tablet, mobile | - | unknown | [13008-29226](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29226&m=dev) |
+| continue on web > home > bridge > Start bridge > Post wallet interaction | 3 | desktop, tablet, mobile | - | unknown | [13008-29347](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29347&m=dev) |
+| continue on web > home > bridge > bridge settings | 3 | desktop, tablet, mobile | - | unknown | [13008-29693](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29693&m=dev) |
+| continue on web > home > insights | 3 | desktop, tablet, mobile | - | unknown | [13008-29837](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29837&m=dev) |
+| continue on web > home > spending | 3 | desktop, tablet, mobile | - | unknown | [13008-36166](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36166&m=dev) |
+| continue on web > home > Approvals | 3 | desktop, tablet, mobile | - | unknown | [13008-36367](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36367&m=dev) |
+
 ## Onboarding
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
@@ -427,17 +450,17 @@ Frames that exist in Figma but are not in the catalog:
 |--------|-------:|---------|----------|---------------|---------|
 | Casino > Crash | 12 | desktop, tablet, mobile | Alt; Extended LB; Auto; Auto Advanced; Skai > Play > Casino > Dice Mobile; Desktop … | partial | [9003-94116](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-94116&m=dev) |
 
+## Skratch
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| Casino > Scratchers | 12 | desktop, tablet, mobile | Card out; Desktop; Skai > Play > Casino > Blackjack; Mobile; Mobile ALT; modal … | done/partial | [9003-139146](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-139146&m=dev) |
+
 ## Hilo
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | Casino > Hi-Lo | 5 | desktop, tablet, mobile | Start; Loss; Skai > Play > Casino > Scratchers; Mobile; Skai > Play > Casino > Blackjack | partial | [9061-10499](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9061-10499&m=dev) |
-
-## Skratch
-
-| Family | Frames | Devices | Variants | Impl / status | Example |
-|--------|-------:|---------|----------|---------------|---------|
-| Casino > Scratchers | 11 | desktop, tablet, mobile | Screenshot 2026-07-27 at 8.19.39 PM 1; modal; Card out; Desktop; Screenshot 2026-07-27 at 8.20.03 PM 1; Mobile … | partial/done | [9220-26173](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9220-26173&m=dev) |
 
 ## Fortune-wheel
 
@@ -471,11 +494,6 @@ Frames that exist in Figma but are not in the catalog:
 | Install to homescreen ALT | 2 | desktop, mobile | - | done | [9747-174084](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9747-174084&m=dev) |
 
 ## Legal
-
-_No titled screens yet._
-
-
-## Wallet-2
 
 _No titled screens yet._
 
@@ -655,7 +673,7 @@ _No titled screens yet._
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Play art | 14 | desktop, mobile | Plinko Desktop; Crash Desktop; Dice Desktop; Scratchers Desktop; Blackjack Desktop; Coinflip Desktop … | partial | [9222-26192](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9222-26192&m=dev) |
+| Casino > Play art | 22 | desktop, mobile | Dice Desktop; Dice Mobile; Plinko Desktop; Plinko Mobile; Crash Desktop; Crash Mobile … | partial/done | [9220-26176](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9220-26176&m=dev) |
 
 ## Master-sheet
 
