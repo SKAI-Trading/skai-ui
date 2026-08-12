@@ -16,6 +16,7 @@ export {
 
 // Currency and number formatting
 export {
+  formatAmountWithSymbol,
   formatBytes,
   formatCompact,
   formatCryptoAmount,
@@ -24,6 +25,8 @@ export {
   formatNumber,
   formatTokenAmount,
   formatUsdChange,
+  hasDisplayAlias,
+  tokenDisplaySymbol,
 } from "./currency";
 
 // Date and time formatting

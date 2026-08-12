@@ -230,3 +230,101 @@ export function formatCryptoAmount(
 
   return symbol ? `${formatted} ${symbol}` : formatted;
 }
+
+// ============================================================================
+// Token DISPLAY labels — what a user reads, not what the chain calls it
+// ============================================================================
+//
+// Casey's ruling, 2026-08-12: **"always show USD for a user's balance for sUSD
+// everywhere. sUSD is just the technical term."**
+//
+// `sUSD` is SKAI's native stablecoin (predeploy 0x5B41…0002, 1:1 with the
+// dollar). The ticker is an implementation detail of the chain. A user holding
+// it holds dollars, and every balance, amount and denomination they read should
+// say so.
+//
+// ★ THIS IS A LABEL CHANGE, NOT AN IDENTITY CHANGE. The symbol `sUSD` must keep
+// its exact spelling everywhere it *identifies* the token rather than *presents*
+// it:
+//
+//   KEEP `sUSD`                          USE `tokenDisplaySymbol()`
+//   ─────────────────────────────────    ─────────────────────────────────
+//   contract + predeploy addresses       "Balance: 120.00 USD"
+//   type unions, e.g. "sUSD" | "SKAI"    amount inputs and their suffixes
+//   service args, RPC and query keys     token pickers on user surfaces
+//   chain explorer + tx detail           deposit / withdraw / send / receive
+//   Command Center and admin panels      game bet and payout denominations
+//   analytics events, logs, Sentry       portfolio and wallet rows
+//   docs and runbooks                    marketing and landing copy
+//
+// The rule of thumb: if changing the string could break a lookup, a comparison,
+// a route, or an operator's ability to reason about the chain, it is an
+// identity and must stay `sUSD`. If it is read by a person deciding what they
+// own or what they are about to spend, it is a presentation and becomes `USD`.
+//
+// Deliberately a mapping rather than a rename: the token keeps one name in code,
+// so there is exactly one place to change if the ruling ever moves, and no
+// call site has to remember the policy.
+
+/** Token symbols whose user-facing label differs from their on-chain ticker. */
+const DISPLAY_SYMBOL_OVERRIDES: Readonly<Record<string, string>> = {
+  sUSD: "USD",
+  SUSD: "USD",
+};
+
+/**
+ * The label to show a user for a token symbol.
+ *
+ * Pass the on-chain symbol; get back what belongs on screen. Unknown symbols
+ * are returned unchanged, so this is safe to apply broadly — it can only affect
+ * symbols that have a deliberate override.
+ *
+ * @example
+ * tokenDisplaySymbol("sUSD")  // "USD"
+ * tokenDisplaySymbol("SKAI")  // "SKAI"
+ * tokenDisplaySymbol("ETH")   // "ETH"
+ */
+export function tokenDisplaySymbol(symbol: string | null | undefined): string {
+  if (!symbol) return "";
+  return DISPLAY_SYMBOL_OVERRIDES[symbol] ?? symbol;
+}
+
+/**
+ * True when a symbol is presented under a different name than it carries
+ * on-chain. Useful where a surface wants to show the technical ticker as
+ * secondary detail (a tooltip, an explorer link) alongside the display label.
+ */
+export function hasDisplayAlias(symbol: string | null | undefined): boolean {
+  return Boolean(symbol && symbol in DISPLAY_SYMBOL_OVERRIDES);
+}
+
+/**
+ * Join an ALREADY-FORMATTED amount to its DISPLAY symbol.
+ *
+ * @example
+ * formatAmountWithSymbol("120.00", "sUSD")  // "120.00 USD"
+ * formatAmountWithSymbol("0.42", "ETH")     // "0.42 ETH"
+ *
+ * Deliberately does NOT format the number. Call sites already decide their own
+ * precision — a balance row, a bet slip and a fee line all round differently —
+ * and this function's job is the label, not the maths. Note in particular that
+ * `formatTokenAmount`'s second parameter is the token's ON-CHAIN DECIMALS (18),
+ * not a display precision; wiring it in here would silently mis-scale every
+ * caller that passed a display precision instead.
+ *
+ * An empty or unknown amount is returned as-is, so an offline em dash stays an
+ * em dash rather than becoming "— USD".
+ */
+export function formatAmountWithSymbol(
+  formattedAmount: string | null | undefined,
+  symbol: string | null | undefined,
+): string {
+  const value = formattedAmount ?? "";
+  const label = tokenDisplaySymbol(symbol);
+  if (!value) return "";
+  if (!label) return value;
+  // Never append a denomination to a placeholder: "— USD" reads as a real
+  // quantity in an unknown currency rather than as an unknown quantity.
+  if (value === "—" || value === "-" || value === "…") return value;
+  return `${value} ${label}`;
+}
