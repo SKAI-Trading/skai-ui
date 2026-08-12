@@ -30,6 +30,24 @@
 #	  against". Whether those 90 cover the six icons/* Figma sets is UNVERIFIED and
 #	  is the single most valuable thing to check next.
 #
+#	★ CORRECTED 2026-08-11 — the Header and Bottom-navigation rows pointed at files
+#	  that NEVER RENDER, which is the worst kind of wrong for an ownership table:
+#	  a developer opens the cited file, edits it, and nothing changes on screen.
+#	    Header-*        was src/components/layout/Header.tsx. That is gated at
+#	                    src/App.tsx:881 behind `!redesignShell`, and REDESIGN_HOME is
+#	                    enabled at 100%, so it is dead. Live header is
+#	                    src/components/home-redesign/HomeTopBar.tsx (44 KB vs 28 KB).
+#	    Bottom-nav-*    was src/components/ai/MobileBottomNav.tsx — the 7.9 KB AI-only
+#	                    one mounted solely by src/pages/ai/AIAgent.tsx. The main shell
+#	                    uses the 27.7 KB src/components/layout/MobileBottomNav.tsx
+#	                    (HomeShellLayout.tsx:28, which cites Figma 6704:26136).
+#	  BOTH bottom navs ship simultaneously. That is a real duplication to resolve,
+#	  not a mapping question.
+#
+#	  Lesson for the rest of this table: a file existing and having a matching name
+#	  does not make it the owner. Check whether the route/shell actually MOUNTS it,
+#	  and whether a feature flag has retired it.
+#
 instances	component	pages	impl	confidence
 17152	icons/action	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/figma-icons.tsx (Figma*Icon set, 90 exports)	likely
 15560	CTA/button	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/core/button.tsx	likely
@@ -41,14 +59,14 @@ instances	component	pages	impl	confidence
 1037	icons/wallet	Home 1,Wallet 1,Wallet 2,Trade 1,Trade 2	src/figma-icons.tsx	likely
 534	input/selection	Home 1,Home 2,Wallet 2,Trade 1,Trade 2	src/components/forms/{select,checkbox,radio-group}.tsx	split
 518	input/primary-inputs	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/core/input.tsx	likely
-342	Header-mobile	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/layout/Header.tsx (main)	outside
-276	Header-tablet	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/layout/Header.tsx (main)	outside
+342	Header-mobile	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/home-redesign/HomeTopBar.tsx (main)	outside
+276	Header-tablet	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/home-redesign/HomeTopBar.tsx (main)	outside
 259	logos/skai-short	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/branding/skai-logo.tsx	likely
-257	Bottom-navigation-mobile	Home 1,Home 2,Trade 1,Trade 2	src/components/ai/MobileBottomNav.tsx (main)	outside
+257	Bottom-navigation-mobile	Home 1,Home 2,Trade 1,Trade 2	src/components/layout/MobileBottomNav.tsx (main)	outside
 249	Badges150	Home 1,Wallet 2	src/components/core/{badge,badge-icons}.tsx	split
 228	input/toggle	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/forms/{toggle,switch}.tsx	split
-201	Bottom-navigation-tablet	Home 1,Home 2,Trade 1,Trade 2	src/components/ai/MobileBottomNav.tsx (main)	outside
-196	Header-desktop	Home 1,Home 2,Trade 1,Trade 2	src/components/layout/Header.tsx (main)	outside
+201	Bottom-navigation-tablet	Home 1,Home 2,Trade 1,Trade 2	src/components/layout/MobileBottomNav.tsx (main)	outside
+196	Header-desktop	Home 1,Home 2,Trade 1,Trade 2	src/components/home-redesign/HomeTopBar.tsx (main)	outside
 191	icons/tiers	Home 1,Home 2	src/figma-icons.tsx	likely
 181	icons/warnings	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/figma-icons.tsx	likely
 140	logos/others	Home 1,Trade 1,Trade 2	-	none
