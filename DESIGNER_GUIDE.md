@@ -6,13 +6,39 @@
 
 ### What You Can Safely Modify
 
+> ## 🛑 STOP — most of this table is currently FALSE (verified 2026-08-11)
+>
+> **The main app never loads this library's stylesheet.** The import is commented
+> out at `src/index.ts:256` (`// import '@skai/ui/dist/styles.css';`), and the only
+> line the app pulls from here is `src/index.css:12` →
+> `modules/skai-ui/src/styles/typography.css`.
+>
+> So `design-tokens.css`, `styles/index.css` and `styles/base.css` **do not reach
+> production**. Editing them, rebuilding and deploying changes **zero pixels** — the
+> worst kind of failure, because everything reports success.
+>
+> The theme that actually renders is defined in the MAIN app at
+> `src/index.css:372-472`, and it disagrees with this library's copies:
+> `--primary` is `#2DEDAD` green here vs `#56C7F3` blue in `styles/index.css:58`;
+> `--radius` is `0.75rem` in the app vs `0.5rem` in `design-tokens.css:283`. That
+> divergence is the proof — if these files were live, every corner in the product
+> would be the wrong size.
+>
+> **Until `@import "../modules/skai-ui/src/styles/index.css"` is added to the app's
+> `src/index.css` and the duplicate `:root` blocks are removed**, a colour change is
+> a two-repo job: edit `src/index.css` in skai-interface AND the copies here, then
+> rebuild `dist`.
+>
+> Rows below marked ❌ do not work today. Rows marked ✅ do.
+
 | What                | Where                                      | Impact                      |
 | ------------------- | ------------------------------------------ | --------------------------- |
-| **Colors**          | `design-tokens.json` / `design-tokens.css` | Global color changes        |
-| **Typography**      | `design-tokens.json` / `design-tokens.css` | Fonts, sizes, weights       |
-| **Spacing**         | `design-tokens.json` / `design-tokens.css` | Margins, paddings, gaps     |
-| **Border Radius**   | `design-tokens.json` / `design-tokens.css` | Corner rounding             |
-| **Shadows**         | `design-tokens.json` / `design-tokens.css` | Elevation/depth             |
+| ❌ **Colors**        | `design-tokens.json` / `design-tokens.css` | NOT LOADED — edit `src/index.css` in the main app |
+| ❌ **Typography**    | `design-tokens.json` / `design-tokens.css` | NOT LOADED — but `styles/typography.css` IS. Note the webfont `<link>` lives in the app's `index.html:209-222`, so swapping a typeface is still a two-repo change |
+| ❌ **Spacing**       | `design-tokens.json` / `design-tokens.css` | NOT LOADED — page spacing is literals in page components |
+| ❌ **Border Radius** | `design-tokens.json` / `design-tokens.css` | NOT LOADED — app ships `--radius: 0.75rem` from `src/index.css:446` |
+| ❌ **Shadows**       | `design-tokens.json` / `design-tokens.css` | NOT LOADED |
+| ✅ **Token scale**   | `src/tokens-export` (Tailwind preset)      | WORKS — the app consumes `skaiPreset`, so `bg-alien-green`, `text-headline-1`, `rounded-lg` all resolve from here |
 | **Text Content**    | `lib/content.ts`                           | All UI text/copy            |
 | **Images**          | `lib/assets.ts`                            | Logos, icons, illustrations |
 | **Component Props** | Storybook                                  | Visual variants             |

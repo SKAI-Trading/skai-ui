@@ -288,7 +288,14 @@
 
     <script>
       // Configuration
-      const STORYBOOK_PATH = "./sb/";
+      // Must be the explicit index.html, NOT the directory "./sb/".
+      //
+      // The CloudFront origin is an S3 *REST* origin, which does not resolve
+      // directory indexes. So "./sb/" 403s, the distribution's 403 ->
+      // /index.html custom error rule catches it, and the visitor lands back
+      // on this password screen — an infinite loop that made the whole
+      // Storybook unreachable after login. "./sb/index.html" is served fine.
+      const STORYBOOK_PATH = "./sb/index.html";
       const SESSION_KEY = "skai_storybook_auth";
       const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours
       // Simple hash of "skailife"

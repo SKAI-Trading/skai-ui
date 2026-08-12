@@ -4,9 +4,31 @@
 
 ## 🌐 Live Storybook
 
-**Access the live component library at: [docs.skai.trade/ui/](https://docs.skai.trade/ui/)**
+**Access the live component library at: [storybook.skai.trade](https://storybook.skai.trade/)**
 
-> 🔐 **Authentication Required**: Connect your wallet to access. Contact team@skai.trade for access.
+> 🔐 **Access**: a shared password, entered on the gate page. Contact team@skai.trade
+> for it. (It is not wallet auth — an earlier version of this guide said so and was
+> wrong.)
+
+<!-- Corrected 2026-08-11. This section previously pointed at docs.skai.trade/ui/,
+     which is an EMPTY S3 path: the URL returns 200 but serves the docs-portal SPA,
+     not Storybook. The deploy script had been repointed at the docs bucket and the
+     built artifacts live in `skai-storybook`, behind storybook.skai.trade.
+
+     Note ui.skai.trade is NOT the design system either — it has no DNS record of its
+     own and is caught by the *.skai.trade wildcard, which serves the main trading
+     app. Any unclaimed *.skai.trade label does the same. -->
+
+⚠️ **The published Storybook is stale** (last deployed 2026-02-01) and covers
+**86 of 203 components**. Notable gaps: every landing card (0/19) and all four
+header parts (0/4). If a component is missing there, read it in
+`src/components/**` — the source is the truth, the published site is a snapshot.
+
+⚠️ **Do not run `npm run tokens:generate`.** It does not read Figma. It rewrites
+the token files from hardcoded Tailwind defaults and would replace the SKAI brand
+(`#001615` Green Coal, `#2DEDAD` Alien Green, Poppins/Manrope) with indigo, pink
+and Inter. The command is disabled as of 2026-08-11 and now exits with an
+explanation. Edit `src/lib/design-tokens.{json,css}` directly.
 
 ---
 

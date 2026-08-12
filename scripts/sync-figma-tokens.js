@@ -380,22 +380,46 @@ function syncFromFigma() {
  * Generate fresh tokens (regenerate from source of truth)
  */
 function generateTokens() {
-  console.log("\n🔄 Generating design tokens...");
-
-  // Ensure directory exists
-  if (!fs.existsSync(TOKENS_DIR)) {
-    fs.mkdirSync(TOKENS_DIR, { recursive: true });
-  }
-
-  // Generate JSON
-  fs.writeFileSync(JSON_TOKENS_PATH, generateJsonTokens());
-  console.log("   ✅ Generated:", JSON_TOKENS_PATH);
-
-  // Generate CSS
-  fs.writeFileSync(CSS_TOKENS_PATH, generateCssTokens());
-  console.log("   ✅ Generated:", CSS_TOKENS_PATH);
-
-  console.log("\n✨ Token generation complete!");
+  // ── DISABLED 2026-08-11 — this branch overwrote the brand ──────────────
+  // It writes design-tokens.json / design-tokens.css from the SKAI_COLORS and
+  // TYPOGRAPHY constants at the top of this file. Those constants are NOT the
+  // SKAI brand — they are stock Tailwind defaults:
+  //
+  //     primary   #6366F1  (Tailwind indigo)   real brand: #001615 Green Coal
+  //     secondary #EC4899  (pink)              real brand: #2DEDAD Alien Green
+  //     sans      "Inter"                      real brand: Poppins / Manrope
+  //
+  // (Brand values confirmed in .storybook/manager.ts:8,19-20.) So running
+  // `npm run tokens:generate` replaced the design system's tokens with another
+  // product's palette — silently, and reporting success.
+  //
+  // The name also promises something this file cannot do: there is NO Figma
+  // API call anywhere in it. `--from-figma` reads a local export that does not
+  // exist at the path it looks for, and even when that file IS found it parses
+  // it and then discards the result, writing these same constants instead.
+  //
+  // Failing loudly beats writing the wrong thing. A real implementation should
+  // pull Figma Variables (GET /v1/files/:key/variables/local) and write from
+  // THAT; until it does, the tokens are edited by hand and this must not run.
+  console.error(
+    [
+      "",
+      "✖ tokens:generate is DISABLED.",
+      "",
+      "  It regenerated the token files from hardcoded Tailwind defaults",
+      "  (#6366F1 indigo / #EC4899 pink / Inter), overwriting the real SKAI",
+      "  brand (#001615 Green Coal / #2DEDAD Alien Green / Poppins+Manrope).",
+      "",
+      "  There is no Figma API call in this script, so it cannot regenerate",
+      "  anything from the design file. Edit the token files directly, or",
+      "  implement a real sync against Figma Variables:",
+      "      GET /v1/files/:key/variables/local",
+      "",
+      "  Token files: src/lib/design-tokens.json, src/lib/design-tokens.css",
+      "",
+    ].join("\n"),
+  );
+  process.exitCode = 1;
 }
 
 /**
