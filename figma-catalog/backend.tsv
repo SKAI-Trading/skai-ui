@@ -22,17 +22,26 @@
 #	                    shipping state until the backend exists. Do NOT synthesize.
 #	  blocked         — do not start; an external dependency is broken.
 #
-#	★ The three headline surfaces on the NEW "Home 2" page — Whales, Skai Pro
-#	  invoicing, and Agentic Backtesting — have NO tables. A query for any table
-#	  matching whale / backtest / invoice / receipt / kol / watch / strateg /
-#	  tracked returns ZERO rows. Those are ~60 designed frames with nothing to
-#	  render from.
+#	★ TWO of the three headline surfaces on the NEW "Home 2" page — Whales and
+#	  Skai Pro invoicing — have NO tables. A query for any table matching whale /
+#	  invoice / receipt / kol / watch / tracked returns ZERO rows.
+#
+#	★★ AND A WARNING ABOUT HOW THIS FILE WAS BUILT. The same query said
+#	  Backtesting was MISSING. It was not. There is an 840-line engine in
+#	  skai-bot and the runs persist — inside `chat_sessions.messages` JSONB,
+#	  under a table whose name contains neither "backtest" nor "strategy".
+#	  Searching for a feature by its EXPECTED TABLE NAME and concluding absence
+#	  is a false-negative generator, and here it would have sent a backend agent
+#	  to rebuild an engine that already had Monte Carlo and walk-forward in it.
+#	  Before trusting any MISSING row below, grep the submodules for the
+#	  feature's VERBS (runBacktest, not "backtest table") and check whether the
+#	  state is riding in a JSONB column somewhere.
 #
 surface	figma_frames	required_backend	backend	evidence	wave_action
 Home > Whales	Whales, Whales - no data, Add whale, Add whale > Select whale, Wallet manager > Import wallet, Live trades, KOLs, X accounts - My list, filter - custom input	table for tracked wallets + per-user watchlist; live trade feed	MISSING	No table matches whale/watch/tracked/kol. Reads today go through etherscan-proxy / alchemy-proxy / evm-token-holders, which are stateless proxies — nothing persists a user's tracked set, so "Add whale" and "Import wallet" have nowhere to write.	build-backend
 Home > Skai Pro > plans + checkout	Pro, Pro ALT, Pro ALT stretched, Plans - long view, Pro - expanded, checkout - send tokens step 1/2/3, checkout > welcome to gold, checkout 1VH ALT	subscription pricing, entitlement check, payment capture	ready	subscription_pricing table; check_user_subscription + get_user_tier_info RPCs; create-stripe-checkout, stripe-webhook, verify-crypto-payment edge functions all ACTIVE.	build-ui
 Home > Skai Pro > invoices	Skai PDF Invoice, Skai PDF Receipt, and their darkmode variants (4 frames, 612x792px)	invoice/receipt record + PDF render	MISSING	No invoice/receipt table and no PDF-generating edge function among the 90 deployed. Checkout can take money but nothing issues a document for it.	build-backend
-Home > Agentic Backtesting	conversation 6, All backtests, Replicate Sample Strategy, Custom code, Chart sample (x3 breakpoints)	stored strategies + backtest runs + results	MISSING	No backtest/strategy table. bot-proxy reaches skai-bot, so an execution path MAY exist there — verify before assuming absence — but there is no persistence in this project, so "All backtests" has no list to read.	build-backend
+Home > Agentic Backtesting	conversation 6, All backtests, Replicate Sample Strategy, Custom code, Chart sample (x3 breakpoints)	strategy DSL on followUps; real OHLC provider; persist ?tab=backtest runs	partial	CORRECTED 2026-08-11 — this row said MISSING and was WRONG. The engine AND persistence both exist; the table-name search missed them because NO TABLE IS NAMED backtest/strategy — runs persist inside chat_sessions.messages JSONB (migration 20260708220514, `messages jsonb`; ChatContext.tsx:664-672 upserts serialized toolCalls). Engine: modules/skai-bot/src/services/trading/backtestService.ts, 840 lines, 7 strategies, Sharpe/Sortino/Calmar, Monte Carlo (:682), walk-forward (:742), and it already refuses to fabricate (requireRealData :21-27 returns [] rather than a random walk). UI is largely built too: BacktestScreen.tsx 696 lines, plus SearchStrategiesModal / ReplicateStrategyModal / CandlestickFullscreen wired in ConversationView. Route is ai-chat?action=proxy (allowlisted at ai-chat/index.ts:487) — NOT bot-proxy, which is admin-only and does not allowlist the path. Remaining gaps: (1) followUps carry only {label,kind} so the Custom-code card always renders empty (ConversationView.tsx:1621); (2) no trader attribution behind the design's "@DrewTrader"; (3) getPriceHistory is close-only so Chart sample has no real OHLC; (4) ?tab=backtest runs live in useState only and never reach "All backtests"; (5) a first-class backtest_runs table is needed only for uncapped/sortable/shareable history (chat_sessions caps at 50).	build-backend-partial
 Play > Sportsbook	the /sports screens on the Play page (all 15 sampled bug nodes are in play.nodes.txt)	odds feed, bet placement, settlement	degraded	Backend is substantial and deployed: sports_bets, sports_cashouts, sports_promos, sports_settlement_logs tables; place_sports_bet / settle_sports_bet / list_sportsbook_events RPCs; sports-betting, sports-keeper, sports-settlement, odds-proxy functions. BUT the ODDS API key was revoked — see p0-sportsbook-dead memory. Odds do not flow.	blocked
 Trade-2 > Launch	Skai > Launch 1VH, > create token, > Live	token launch records + media	partial	token_launches and launchpad_token_media tables exist; get-token-launches, token-launch-analysis, check-token-honeypot, verify-contract-worker deployed. Advanced launch options in the design have no contract-side counterpart (recorded earlier as the Launch advanced-options gap).	ui+offline
 Trade-2 > Trench	Skai > Trench + Display settings, Hotkeys, Alerts, Blacklist, One-click trade settings, Trade	token intel, per-user display/hotkey/alert settings	partial	trench-token-intel, token-dev-history, solana-token-holders, evm-token-holders deployed. Per-user Trench SETTINGS (display columns, hotkeys, blacklist, one-click config) have no table — those modals have nowhere to persist.	build-backend
