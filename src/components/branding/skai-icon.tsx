@@ -174,6 +174,35 @@ const sizeMap: Record<SkaiIconSize, number> = {
   "2xl": 90, // tier-upgrade welcome-modal centerpiece (Figma node 2992:19212)
 };
 
+/**
+ * Tier-badge geometry, transcribed from the Figma `icons/tiers` component set
+ * (6014:72726-72731) rather than approximated by hand — reports 7e5be04a
+ * (Bronze), d7213cb1 (Silver), 6aad9c99 (Gold), 23da23f7 (Platinum), 8924f60b
+ * (Diamond), fd496624 (Legend), all "plan icon does not match Figma".
+ *
+ * The export draws a 48px frame holding a 36px `enclosure` disc at (6,6) and a
+ * glyph in a 22px slot at (13,13). This registry's viewBox is 24x24, so every
+ * measurement is halved: the disc becomes r=8.625 at (12,12) with a 0.75 stroke,
+ * and each glyph keeps its EXACT exported path data inside a
+ * `translate(...) scale(0.5)` group. Re-deriving path coordinates by hand is
+ * what produced the badges these reports were filed against; the transform
+ * wrapper means the vectors below are the shipped Figma bytes, unmodified.
+ */
+const TIER_ENCLOSURE = {
+  cx: 12,
+  cy: 12,
+  r: 8.625,
+  strokeWidth: 0.75,
+} as const;
+
+/**
+ * Bronze and Gold share one five-point star (Figma exports byte-identical
+ * geometry for both, differing only in fill). Silver's is a separate path —
+ * it is stroked as well as filled, so it sits marginally heavier.
+ */
+const TIER_STAR_FILLED_D =
+  "M8.70868 0.496701C9.09441 -0.165566 10.0512 -0.165568 10.4369 0.4967L12.9071 4.73777C13.0484 4.98037 13.2852 5.1524 13.5596 5.21182L18.3564 6.25056C19.1055 6.41276 19.4011 7.32269 18.8905 7.8942L15.6203 11.5541C15.4332 11.7634 15.3428 12.0418 15.3711 12.3211L15.8655 17.2041C15.9427 17.9667 15.1687 18.529 14.4673 18.22L9.97604 16.2408C9.71913 16.1276 9.42646 16.1276 9.16954 16.2408L4.67827 18.22C3.97693 18.529 3.2029 17.9667 3.2801 17.2041L3.77451 12.3211C3.80279 12.0418 3.71235 11.7634 3.52529 11.5541L0.255122 7.8942C-0.255532 7.32269 0.0401192 6.41276 0.789172 6.25056L5.58601 5.21182C5.8604 5.1524 6.09717 4.98037 6.23848 4.73777L8.70868 0.496701Z";
+
 // SVG path data for each icon
 const iconPaths: Record<SkaiIconName, React.ReactNode> = {
   close: (
@@ -1659,75 +1688,73 @@ const iconPaths: Record<SkaiIconName, React.ReactNode> = {
   ),
   "tier-bronze": (
     <>
-      <circle cx="12" cy="12" r="9" fill="#CD7F32" />
-      <path
-        d="M12 6l2 4h4l-3.5 3 1.5 5-4-3-4 3 1.5-5L6 10h4l2-4z"
-        fill="#8B4513"
-      />
+      <circle {...TIER_ENCLOSURE} fill="#E7AA8A" stroke="#A56B4D" />
+      <g transform="translate(7.2139 6.9939) scale(0.5)">
+        <path d={TIER_STAR_FILLED_D} fill="#A56B4D" />
+      </g>
     </>
   ),
   "tier-silver": (
     <>
-      <circle cx="12" cy="12" r="9" fill="#C0C0C0" />
-      <path
-        d="M12 6l2 4h4l-3.5 3 1.5 5-4-3-4 3 1.5-5L6 10h4l2-4z"
-        fill="#808080"
-      />
+      <circle {...TIER_ENCLOSURE} fill="#E2E2E2" stroke="#9C9C9C" />
+      <g transform="translate(7.2139 6.9939) scale(0.5)">
+        <path
+          d="M9.14115 0.748463C9.33404 0.417458 9.81155 0.417459 10.0044 0.748463L12.4751 4.98967C12.6871 5.35343 13.0422 5.61149 13.4537 5.70061L18.2505 6.73967C18.625 6.8208 18.7724 7.27522 18.5171 7.56096L15.2476 11.2211C14.967 11.5351 14.8312 11.9525 14.8736 12.3715L15.3677 17.2543C15.4063 17.6356 15.0192 17.9167 14.6685 17.7621L10.1773 15.7836C9.79202 15.6139 9.35356 15.6139 8.9683 15.7836L4.47709 17.7621C4.12642 17.9167 3.73927 17.6356 3.77787 17.2543L4.27201 12.3715C4.31443 11.9525 4.17856 11.5351 3.89799 11.2211L0.628455 7.56096C0.373134 7.27521 0.520554 6.82079 0.895057 6.73967L5.69193 5.70061C6.1034 5.61149 6.45849 5.35343 6.67045 4.98967L9.14115 0.748463Z"
+          fill="#9C9C9C"
+          stroke="#9C9C9C"
+        />
+      </g>
     </>
   ),
   "tier-gold": (
     <>
-      <circle cx="12" cy="12" r="9" fill="#FFD700" />
-      <path
-        d="M12 6l2 4h4l-3.5 3 1.5 5-4-3-4 3 1.5-5L6 10h4l2-4z"
-        fill="#B8860B"
-      />
+      <circle {...TIER_ENCLOSURE} fill="#FFD258" stroke="#C18D00" />
+      <g transform="translate(7.2139 6.9939) scale(0.5)">
+        <path d={TIER_STAR_FILLED_D} fill="#C18D00" />
+      </g>
     </>
   ),
   "tier-platinum": (
     <>
-      <defs>
-        <linearGradient id="platinumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#E5E4E2" />
-          <stop offset="50%" stopColor="#A9A9A9" />
-          <stop offset="100%" stopColor="#E5E4E2" />
-        </linearGradient>
-      </defs>
-      <circle cx="12" cy="12" r="9" fill="url(#platinumGrad)" />
-      <path
-        d="M12 5l2.5 5h5l-4 3.5 1.5 5.5-5-3.5-5 3.5 1.5-5.5-4-3.5h5l2.5-5z"
-        fill="#696969"
-        stroke="#505050"
-        strokeWidth="0.5"
-      />
+      <circle {...TIER_ENCLOSURE} fill="#C7D4DC" stroke="#75838B" />
+      {/* Platinum's glyph is an EIGHT-point starburst, not the five-point star
+          the other metal tiers use, and its frame box differs (18.01x20.49 at
+          inset 3.43%/9.06% of the same 22px icon slot) — hence its own
+          transform. Report 23da23f7. */}
+      <g transform="translate(7.4966 6.8773) scale(0.5)">
+        <path
+          d="M8.18527 0.430285C8.58298 -0.143429 9.43125 -0.143428 9.82895 0.430286L12.2032 3.85523C12.3735 4.10087 12.6447 4.25746 12.9426 4.28211L17.0958 4.62577C17.7915 4.68334 18.2156 5.41797 17.9176 6.04925L16.1386 9.81786C16.011 10.0881 16.011 10.4013 16.1386 10.6716L17.9176 14.4402C18.2156 15.0715 17.7915 15.8061 17.0958 15.8637L12.9426 16.2074C12.6447 16.232 12.3735 16.3886 12.2032 16.6342L9.82895 20.0592C9.43125 20.6329 8.58298 20.6329 8.18527 20.0592L5.81104 16.6342C5.64076 16.3886 5.36954 16.232 5.07167 16.2074L0.918469 15.8637C0.222764 15.8061 -0.20137 15.0715 0.0966277 14.4402L1.8756 10.6716C2.00319 10.4013 2.00319 10.0881 1.8756 9.81786L0.0966273 6.04925C-0.20137 5.41796 0.222766 4.68334 0.918471 4.62577L5.07167 4.28211C5.36954 4.25746 5.64076 4.10087 5.81105 3.85523L8.18527 0.430285Z"
+          fill="#75838B"
+        />
+      </g>
     </>
   ),
   "tier-diamond": (
     <>
-      <defs>
-        <linearGradient id="diamondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#B9F2FF" />
-          <stop offset="50%" stopColor="#4DD0E1" />
-          <stop offset="100%" stopColor="#00BCD4" />
-        </linearGradient>
-      </defs>
-      <circle cx="12" cy="12" r="9" fill="url(#diamondGrad)" />
-      <path d="M12 4l4 4-4 12-4-12 4-4z" fill="white" fillOpacity="0.9" />
-      <path d="M8 8h8l-4 12-4-12z" fill="#00ACC1" />
-      <path d="M12 4l4 4H8l4-4z" fill="#4DD0E1" />
+      <circle {...TIER_ENCLOSURE} fill="#BDEDFF" stroke="#3AAFDD" />
+      {/* Brilliant-cut gem: a trapezoid crown band ABOVE the pavilion point.
+          Shipping only the pavilion is what made this read as a bare triangle
+          (report 8924f60b, "appears incomplete and looks like a triangle"). */}
+      <g transform="translate(7.075 8) scale(0.5)">
+        <path
+          d="M10.6092 17.8175C10.2098 18.2896 9.48188 18.2896 9.08243 17.8175L0.238537 7.36567C-0.311394 6.71575 0.150561 5.71973 1.00192 5.71973H18.6897C19.5411 5.71973 20.003 6.71575 19.4531 7.36567L10.6092 17.8175ZM19.0456 2.96446C19.6868 3.59101 19.2432 4.67969 18.3467 4.67969H1.43967C0.543188 4.67969 0.0995895 3.59101 0.74078 2.96446L3.4831 0.284773C3.66993 0.102211 3.92077 0 4.18199 0H15.6044C15.8656 0 16.1164 0.102211 16.3033 0.284773L19.0456 2.96446Z"
+          fill="#3AAFDD"
+        />
+      </g>
     </>
   ),
   /**
-   * Legend tier badge — bug 15fabce2 "Legends badge does not match Figma UI".
+   * Legend tier badge — bug 15fabce2 "Legends badge does not match Figma UI",
+   * re-cut from the real export for report fd496624 ("the sword is completely
+   * different from Figma").
    *
-   * Figma (2939:10761, the Upgrade plan cards) draws this as a PALE PEACH disc
-   * with a CORAL SWORD. Colours are pixel-sampled from that frame, not guessed:
-   * disc #F8E1D8, sword #FF7E50 (accents #FBAF94 / #FE8459 appear only as
-   * antialiasing).
+   * Unlike every other tier the Legend glyph is drawn edge-to-edge in its own
+   * 32px box and CLIPPED by a circle — the blade runs off the bottom of the
+   * frame (the path reaches y=53 in source space) and the disc is what cuts it
+   * off. Approximating it with a blade+crossguard+pommel inside the disc, as
+   * this previously did, produces a different silhouette entirely.
    *
-   * It previously shipped as a PURPLE gradient disc (#A855F7 -> #7C3AED) with a
-   * star — wrong hue family and wrong glyph, i.e. not a near-miss but a different
-   * badge. "Legend = purple" still survives elsewhere and those are NOT authority:
+   * "Legend = purple" still survives elsewhere and those are NOT authority:
    * tierData.ts:42, welcome-card.tsx:23 and WelcomeSuccessModal.tsx:60 all carry
    * purple legend gradients. Figma is the tiebreaker (Casey 2026-07-16, "just
    * match figma"); those sites are flagged, not silently changed, because they are
@@ -1735,27 +1762,26 @@ const iconPaths: Record<SkaiIconName, React.ReactNode> = {
    */
   "tier-legend": (
     <>
-      <circle cx="12" cy="12" r="9" fill="#F8E1D8" />
-      {/* Sword: blade up the centre, crossguard, pommel — matches the Figma glyph. */}
-      <path
-        d="M12 5.25l1.15 1.9v5.4h-2.3v-5.4L12 5.25z"
-        fill="#FF7E50"
-      />
-      <path
-        d="M8.9 13.05h6.2"
-        stroke="#FF7E50"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <path
-        d="M12 13.05v3.05"
-        stroke="#FF7E50"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      <circle cx="12" cy="17.1" r="1.35" fill="#FF7E50" />
+      <defs>
+        <clipPath id="skaiTierLegendClip">
+          {/* The export masks with r=16 of a 32px box → r=8 here, i.e. just
+              inside the 8.625 enclosure, leaving the disc's rim visible. */}
+          <circle cx="12" cy="12" r="8" />
+        </clipPath>
+      </defs>
+      <circle {...TIER_ENCLOSURE} fill="#F8E1D8" stroke="#FF7E50" />
+      <g clipPath="url(#skaiTierLegendClip)">
+        <g transform="translate(4 4) scale(0.5)">
+          <path
+            d="M15.2785 19.0892C15.6986 19.0299 16.125 19.0299 16.5451 19.0892C18.8622 19.4163 20.5494 21.4537 20.4391 23.7911L19.06 53H12.7637L11.3845 23.7911C11.2742 21.4537 12.9615 19.4163 15.2785 19.0892Z"
+            fill="#FF7E50"
+          />
+          <path
+            d="M15.9118 2C17.4766 2 18.7452 3.26853 18.7452 4.83333C18.7452 5.97573 18.0687 6.95954 17.0948 7.4078L17.433 14.7113C19.9443 15.0419 22.1656 16.0718 23.7834 17.5452L22.8451 19.1703C20.7956 18.2381 18.3316 17.694 15.6806 17.694C13.2105 17.694 10.9025 18.166 8.94101 18.9846L7.93262 17.2372C9.61779 15.8425 11.8725 14.9007 14.3925 14.659L14.7282 7.4078C13.7546 6.95943 13.0785 5.97553 13.0785 4.83333C13.0785 3.26853 14.347 2 15.9118 2Z"
+            fill="#FF7E50"
+          />
+        </g>
+      </g>
     </>
   ),
 };
