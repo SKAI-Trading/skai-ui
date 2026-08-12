@@ -26,14 +26,28 @@ const TIER_COLORS: Record<string, { from: string; to: string; text: string }> = 
 const DEFAULT_TIER_COLOR = TIER_COLORS.free;
 
 /** Canonical 7-tier ladder. min_points + rewards come from tierService.ts:
- *   Free(0) Bronze(100) Silver(1K) Gold(5K) Platinum(25K) Diamond(100K) Legend(500K) */
+ *   Free(0) Bronze(100) Silver(1K) Gold(5K) Platinum(25K) Diamond(100K) Legend(500K)
+ *
+ * ⚠️ EVERY PERCENTAGE AND MULTIPLIER BELOW IS A PROMISE ABOUT MONEY, and the
+ * table that keeps it is Supabase `tier_config` — `accrue_pending_cashback`
+ * picks the band with `ORDER BY tc.min_points DESC LIMIT 1` and writes that
+ * row's `cashback_percent` into `cashback_ledger`. These strings were verified
+ * against the live rows on 2026-08-12 and four of them were wrong: Bronze
+ * advertised "5% cashback" when 5 is its FEE DISCOUNT and its cashback is 10%,
+ * and Diamond advertised "30% fee discount / 1.6× points" against a live
+ * 35% / 1.8×. Re-verify against `tier_config` before editing — do not copy a
+ * number out of a Figma frame or a sibling component.
+ *
+ * Note Platinum's cashback (18%) is LOWER than Gold's (20%). That inversion is
+ * live config, so this strip deliberately shows Platinum's FEE DISCOUNT rather
+ * than implying a cashback increase that does not happen. */
 const ALL_TIERS = [
   { key: "free",     name: "Free",     min: 0,       rewards: ["All 20+ games", "AI trade assistant", "Welcome bonus"] },
-  { key: "bronze",   name: "Bronze",   min: 100,     rewards: ["5% cashback", "Daily login bonus", "Priority queue"] },
+  { key: "bronze",   name: "Bronze",   min: 100,     rewards: ["10% cashback", "Daily login bonus", "Priority queue"] },
   { key: "silver",   name: "Silver",   min: 1_000,   rewards: ["10% fee discount", "1.2× points", "Whale alerts"] },
   { key: "gold",     name: "Gold",     min: 5_000,   rewards: ["15% fee discount", "1.4× points", "Smart money signals"] },
   { key: "platinum", name: "Platinum", min: 25_000,  rewards: ["20% fee discount", "1.5× points", "VIP events & airdrops"] },
-  { key: "diamond",  name: "Diamond",  min: 100_000, rewards: ["30% fee discount", "1.6× points", "Real-time price updates"] },
+  { key: "diamond",  name: "Diamond",  min: 100_000, rewards: ["35% fee discount", "1.8× points", "Real-time price updates"] },
   { key: "legend",   name: "Legend",   min: 500_000, rewards: ["50% fee discount", "2.0× points", "VIP support + max airdrops"] },
 ] as const;
 

@@ -35,6 +35,22 @@ export interface TierConfig {
   benefits: string[];
 }
 
+/**
+ * ⚠️ `benefits` strings are PROMISES ABOUT MONEY. The table that keeps them is
+ * Supabase `tier_config` — `accrue_pending_cashback` selects the band with
+ * `ORDER BY tc.min_points DESC LIMIT 1` and writes that row's
+ * `cashback_percent` into `cashback_ledger`. Verified against the live rows
+ * 2026-08-12; Bronze and Diamond were both understating what is paid. Note
+ * Platinum's cashback (18%) is LOWER than Gold's (20%) — live config, not a
+ * typo, which is why the Platinum row advertises its fee discount instead.
+ *
+ * ⚠️ `purchasePrice` here is a THIRD price ladder, and it does NOT match the
+ * canonical subscription pricing in the main repo's `src/constants/tierPricing.ts`
+ * (which mirrors `SKAISubscription.sol`): that file has Bronze $1.99, Silver
+ * $29.99, Diamond $99.99 and Platinum $299.99, and it also ranks Platinum ABOVE
+ * Diamond. These numbers are NOT authoritative for checkout and are left as-is
+ * pending a ruling — do not wire them to a payment path.
+ */
 export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
   free: {
     label: "Free",
@@ -54,7 +70,10 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     color: "#CD7F32",
     bgColor: "rgba(205, 127, 50, 0.1)",
     borderColor: "rgba(205, 127, 50, 0.3)",
-    benefits: ["5% fee cashback", "Daily login bonus", "Priority queue"],
+    // 5 is Bronze's FEE DISCOUNT, not its cashback — `tier_config` pays Bronze
+    // 10% cashback. Calling the discount "fee cashback" halved the advertised
+    // rate. See the TIER_CONFIG note above.
+    benefits: ["10% fee cashback", "Daily login bonus", "Priority queue"],
   },
   silver: {
     label: "Silver",
@@ -95,9 +114,9 @@ export const TIER_CONFIG: Record<TierLevel, TierConfig> = {
     bgColor: "rgba(185, 242, 255, 0.1)",
     borderColor: "rgba(185, 242, 255, 0.3)",
     benefits: [
-      "30% fee discount",
+      "35% fee discount",
       "Real-time price updates",
-      "1.6× points multiplier",
+      "1.8× points multiplier",
       "Priority support",
     ],
   },
