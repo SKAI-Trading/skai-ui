@@ -31,12 +31,34 @@ const DialogOverlay = React.forwardRef<
 ));
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
+interface DialogContentProps
+  extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
+  /**
+   * Classes for the scrim behind the dialog.
+   *
+   * `DialogContent` mounts its own `DialogOverlay`, so before this existed the
+   * scrim was unreachable from a caller: `bg-black/80` was final no matter what
+   * the frame drew. That is not a hypothetical — three surfaces documented the
+   * dead end in a source comment, and two of them PAID for it:
+   * `src/components/home-redesign/whales/AddWalletSheet.tsx` abandoned the
+   * shared primitive and hand-rolled Radix Dialog because its frame shows no
+   * dimming at all, and `src/components/trench-redesign/discover/rightMenuChrome.tsx`
+   * says outright "it cannot be reached from here".
+   *
+   * Merged through `cn`, so anything passed here beats the default: `bg-black/40`
+   * for a lighter scrim, `bg-transparent backdrop-blur-none` for none at all.
+   * Omitting it keeps the existing `bg-black/80 backdrop-blur-sm`, so every one
+   * of the ~219 files using `DialogContent` is unchanged.
+   */
+  overlayClassName?: string;
+}
+
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+  DialogContentProps
+>(({ className, overlayClassName, children, ...props }, ref) => (
   <DialogPortal>
-    <DialogOverlay />
+    <DialogOverlay className={overlayClassName} />
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
@@ -111,6 +133,8 @@ const DialogDescription = React.forwardRef<
   />
 ));
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
+
+export type { DialogContentProps };
 
 export {
   Dialog,

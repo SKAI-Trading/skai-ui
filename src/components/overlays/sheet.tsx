@@ -52,14 +52,31 @@ const sheetVariants = cva(
 interface SheetContentProps
   extends
     React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> {}
+    VariantProps<typeof sheetVariants> {
+  /**
+   * Classes for the scrim behind the sheet.
+   *
+   * `SheetContent` mounts its own `SheetOverlay`, so until this existed the
+   * `bg-black/80` scrim was final and unreachable from a caller — the exact
+   * complaint recorded at
+   * `src/components/trench-redesign/discover/rightMenuChrome.tsx`: "SheetContent
+   * renders <SheetOverlay /> with no className passthrough, so it cannot be
+   * reached from here. The frames draw NO scrim at all."
+   *
+   * Merged through `cn`, so what is passed here wins over the default:
+   * `bg-transparent` for the frames that show the page at full brightness
+   * behind the panel. Omitting it keeps `bg-black/80`, so the ~31 files using
+   * `SheetContent` are unchanged.
+   */
+  overlayClassName?: string;
+}
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({ side = "right", className, children, ...props }, ref) => (
+>(({ side = "right", className, overlayClassName, children, ...props }, ref) => (
   <SheetPortal>
-    <SheetOverlay />
+    <SheetOverlay className={overlayClassName} />
     <SheetPrimitive.Content
       ref={ref}
       className={cn(sheetVariants({ side }), className)}
@@ -126,6 +143,8 @@ const SheetDescription = React.forwardRef<
   />
 ));
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
+
+export type { SheetContentProps };
 
 export {
   Sheet,

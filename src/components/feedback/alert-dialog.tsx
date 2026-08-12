@@ -27,12 +27,31 @@ const AlertDialogOverlay = React.forwardRef<
 ));
 AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName;
 
+interface AlertDialogContentProps
+  extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content> {
+  /**
+   * Classes for the scrim behind the alert dialog. Sibling parity with
+   * `DialogContent` / `SheetContent`, which gained the same prop.
+   *
+   * The cost of not having it is visible in
+   * `modules/skai-gaming/src/components/play/shared/{GameExitConfirm,GamingOfflineDialog}.tsx`:
+   * both need the scrim at `z-[60]`, and because `AlertDialogContent` mounted a
+   * bare `AlertDialogOverlay`, both had to stop using it and re-compose
+   * `AlertDialogPortal` + `AlertDialogOverlay` + `AlertDialogPrimitive.Content`
+   * by hand — duplicating the content classes, which is how a primitive drifts.
+   *
+   * Merged through `cn`, so it wins over the default. Omitting it changes
+   * nothing.
+   */
+  overlayClassName?: string;
+}
+
 const AlertDialogContent = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
->(({ className, ...props }, ref) => (
+  AlertDialogContentProps
+>(({ className, overlayClassName, ...props }, ref) => (
   <AlertDialogPortal>
-    <AlertDialogOverlay />
+    <AlertDialogOverlay className={overlayClassName} />
     <AlertDialogPrimitive.Content
       ref={ref}
       className={cn(
@@ -125,6 +144,8 @@ const AlertDialogCancel = React.forwardRef<
   />
 ));
 AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;
+
+export type { AlertDialogContentProps };
 
 export {
   AlertDialog,
