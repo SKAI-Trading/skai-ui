@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-12T01:37:48.643Z",
+  "generated": "2026-08-12T01:45:31.699Z",
   "families": {
     "home/welcome": {
       "section": "home",
@@ -8755,9 +8755,9 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "towers/Casino > Dice": {
+    "towers/Casino > Towers": {
       "section": "towers",
-      "family": "Casino > Dice",
+      "family": "Casino > Towers",
       "frameCount": 6,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9079-2001",
@@ -8771,7 +8771,6 @@
         "desktop"
       ],
       "variants": [
-        "Skai > Play > Casino > Towers",
         "hf_20260802_165842_f42a9cf4-60cf-420b-8bce-8e64f2274a83 1",
         "Desktop Full Game",
         "hf_20260802_175310_1d541834-3870-4f8d-a2d4-58053874368e 1",
@@ -8782,9 +8781,9 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "keno/Casino > Dice": {
+    "keno/Casino > Keno": {
       "section": "keno",
-      "family": "Casino > Dice",
+      "family": "Casino > Keno",
       "frameCount": 10,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9433-12187",
@@ -9695,9 +9694,9 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "fortune-wheel/Casino > Dice": {
+    "fortune-wheel/Casino > Fortune Wheel": {
       "section": "fortune-wheel",
-      "family": "Casino > Dice",
+      "family": "Casino > Fortune Wheel",
       "frameCount": 11,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9691-12630",
@@ -9733,9 +9732,9 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "skai-cross/Casino > Dice": {
+    "skai-cross/Casino > SKAI Cross": {
       "section": "skai-cross",
-      "family": "Casino > Dice",
+      "family": "Casino > SKAI Cross",
       "frameCount": 15,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9660-3",
@@ -9779,9 +9778,9 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "video-poker/Casino > Dice": {
+    "video-poker/Casino > Video Poker": {
       "section": "video-poker",
-      "family": "Casino > Dice",
+      "family": "Casino > Video Poker",
       "frameCount": 4,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9738-13101",
@@ -9804,9 +9803,9 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "bingo/Casino > Dice": {
+    "bingo/Casino > Bingo": {
       "section": "bingo",
-      "family": "Casino > Dice",
+      "family": "Casino > Bingo",
       "frameCount": 3,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9691-11229",
@@ -9827,9 +9826,9 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "rock-paper-scissors/Casino > Dice": {
+    "rock-paper-scissors/Casino > Rock Paper Scissors": {
       "section": "rock-paper-scissors",
-      "family": "Casino > Dice",
+      "family": "Casino > Rock Paper Scissors",
       "frameCount": 2,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9737-11685",

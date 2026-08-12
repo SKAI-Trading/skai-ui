@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-08-12T01:37:49.548Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-08-12T01:44:14.058Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -466,13 +466,13 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Dice | 11 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack; Starting; Screenshot 2026-08-10 at 11.44.07 AM 1; Screenshot 2026-08-10 at 11.44.19 AM 1; Screenshot 2026-08-10 at 11.44.41 AM 1 … | unknown | [9691-12630](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9691-12630&m=dev) |
+| Casino > Fortune Wheel | 11 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack; Starting; Screenshot 2026-08-10 at 11.44.07 AM 1; Screenshot 2026-08-10 at 11.44.19 AM 1; Screenshot 2026-08-10 at 11.44.41 AM 1 … | unknown | [9691-12630](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9691-12630&m=dev) |
 
 ## Keno
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Dice | 10 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack; Mobile; Desktop Selection; 8; Desktop … | unknown | [9433-12187](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9433-12187&m=dev) |
+| Casino > Keno | 10 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack; Mobile; Desktop Selection; 8; Desktop … | unknown | [9433-12187](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9433-12187&m=dev) |
 
 ## Mines
 
@@ -636,19 +636,19 @@ _No titled screens yet._
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Dice | 15 | desktop | SKAI Cross; Page notes; SkaiCross/Currency Tab; SkaiCross/Difficulty Card; SkaiCross/Lane Marker; SkaiCross/HUD Chip … | unknown | [9660-3](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9660-3&m=dev) |
+| Casino > SKAI Cross | 15 | desktop | SKAI Cross; Page notes; SkaiCross/Currency Tab; SkaiCross/Difficulty Card; SkaiCross/Lane Marker; SkaiCross/HUD Chip … | unknown | [9660-3](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9660-3&m=dev) |
 
 ## Towers
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Dice | 6 | desktop | Skai > Play > Casino > Towers; hf_20260802_165842_f42a9cf4-60cf-420b-8bce-8e64f2274a83 1; Desktop Full Game; hf_20260802_175310_1d541834-3870-4f8d-a2d4-58053874368e 1; Screenshot 2026-08-02 at 1.45.27 PM 1 | unknown | [9079-2001](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9079-2001&m=dev) |
+| Casino > Towers | 6 | desktop | hf_20260802_165842_f42a9cf4-60cf-420b-8bce-8e64f2274a83 1; Desktop Full Game; hf_20260802_175310_1d541834-3870-4f8d-a2d4-58053874368e 1; Screenshot 2026-08-02 at 1.45.27 PM 1 | unknown | [9079-2001](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9079-2001&m=dev) |
 
 ## Video-poker
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Dice | 4 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack; Screenshot 2026-08-10 at 6.36.25 PM 1; Starting | unknown | [9738-13101](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9738-13101&m=dev) |
+| Casino > Video Poker | 4 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack; Screenshot 2026-08-10 at 6.36.25 PM 1; Starting | unknown | [9738-13101](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9738-13101&m=dev) |
 
 ## User-flow
 
@@ -661,13 +661,13 @@ _No titled screens yet._
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Dice | 3 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack; Starting | unknown | [9691-11229](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9691-11229&m=dev) |
+| Casino > Bingo | 3 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack; Starting | unknown | [9691-11229](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9691-11229&m=dev) |
 
 ## Rock-paper-scissors
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Dice | 2 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack | unknown | [9737-11685](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9737-11685&m=dev) |
+| Casino > Rock Paper Scissors | 2 | desktop, mobile | Skai > Play > Casino > Scratchers; Skai > Play > Casino > Blackjack | unknown | [9737-11685](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9737-11685&m=dev) |
 
 ## Missing-play-images
 

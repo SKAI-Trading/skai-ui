@@ -207,6 +207,18 @@ const GAME_BY_SECTION = {
   coinflip: "Coinflip", skratch: "Scratchers", "missing-play-images": "Play art",
   plinko: "Plinko",
   darts: "Darts", chicken: "Chicken", hilo: "Hi-Lo",
+  // 2026-08-05 / 08-11 game pages. Without an entry each fell through to the
+  // `opts.game || "Dice"` fallback in parseTitle, so their catalog family read
+  // "Casino > Dice" instead of their own game — SKAI Cross, Towers, Keno,
+  // Fortune Wheel, Video Poker, Bingo and Rock Paper Scissors were all mislinked
+  // to Dice. Naming each here folds its frames into "Casino > <game>". (Some of
+  // these pages were duplicated from Dice/Scratchers/Blackjack and their frame
+  // TITLES still name the wrong game — an upstream Figma rename gap — but the
+  // family link is now correct.)
+  towers: "Towers", keno: "Keno",
+  "fortune-wheel": "Fortune Wheel", "skai-cross": "SKAI Cross",
+  "video-poker": "Video Poker", bingo: "Bingo",
+  "rock-paper-scissors": "Rock Paper Scissors",
 };
 
 const readLines = (p) =>
