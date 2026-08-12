@@ -48,12 +48,26 @@ export const greenCoalColors = {
 export const accentColors = {
   alienGreen: "#2DEDAD", // Primary accent (Figma canonical)
   alienGreenBright: "#17F9B4", // Bright variant (used in semantic/trading)
-  // 2026-06-12 green-theme directive: CTAs/active states render alien green
-  // platform-wide (blue was overused and is retired as an accent). The token
-  // keeps its `skyBlue`/`sky-blue` name so the hundreds of existing class
-  // usages restyle without a repo-wide rename; Figma's Sky Blue 300 #56C7F3
-  // is intentionally no longer referenced.
-  skyBlue: "#2DEDAD",
+  // 2026-08-12 — Casey ruling: "Match figma always." This SUPERSEDES the
+  // 2026-06-12 green-theme directive that retired blue and pointed this token
+  // at alien green. Figma's Sky Blue 300 IS #56C7F3, so the token now holds the
+  // value its name has always claimed.
+  //
+  // Why this is one line and not a 1,243-site find/replace: every consumer
+  // resolves through here — the `sky-blue` Tailwind class (see colors map
+  // below), the `--skai-sky-blue` CSS var, and the component tokens. The ~1,243
+  // hardcoded `#56C7F3` literals scattered across the app were people working
+  // AROUND the green value; they now agree with the token instead of fighting
+  // it, and can be collapsed onto `sky-blue` opportunistically.
+  //
+  // DO NOT "fix" this back to #2DEDAD. A green sky-blue was the anomaly, and it
+  // flip-flopped twice in one session because comments in the codebase asserted
+  // the green was intentional. Anything that must be GREEN should use
+  // `alien-green` / `semanticColors.green` — which are separate classes and are
+  // deliberately unaffected by this value. That separation also fixes a real
+  // hazard: while skyBlue === alienGreen, an accent control was pixel-identical
+  // to a buy/long control on trading surfaces.
+  skyBlue: "#56C7F3",
   printersGold: "#999966", // Gold accent
 } as const;
 
@@ -150,7 +164,11 @@ export const utilityColors = {
  * Hover state colors (derived from base colors for :hover variants)
  */
 export const hoverColors = {
-  skyBlueHover: "#22C28C", // sky-blue token (now alien green #2DEDAD) darkened for hover
+  // Must track accentColors.skyBlue. Was #22C28C — alien green darkened — back
+  // when skyBlue held #2DEDAD; leaving it green after the 2026-08-12 flip would
+  // make every sky-blue control change COLOUR FAMILY on hover (blue → green).
+  // #46A3C7 is #56C7F3 at the same ~0.82 brightness ratio the old pair used.
+  skyBlueHover: "#46A3C7", // sky-blue (#56C7F3) darkened for hover
   nightBlueHover: "#252532", // night-blue lighter for hover
   nightBlueHoverAlt: "#1E1E36", // night-blue subtle hover variant
   discordHover: "#4752C4", // discord blurple darkened for hover
