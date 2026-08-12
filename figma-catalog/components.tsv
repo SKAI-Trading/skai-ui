@@ -1,0 +1,42 @@
+#	The Figma design system, harvested live 2026-08-11 from Skai-Web-App-2
+#	(mhF3BkzlTaGiLzJ7kvpmVc) across Home 1/2, Wallet 1/2, Trade 1/2.
+#
+#	instances = how many times the component is placed across those six pages.
+#	Resolved via INSTANCE.getMainComponentAsync(), collapsing each variant to its
+#	COMPONENT_SET so "CTA/button" counts every size/state/colour variant as one
+#	component.
+#
+#	TWENTY-FIVE components account for 54,047 placements. That ratio is the whole
+#	story behind the Figma bug backlog: a wrong radius or hex on CTA/button is
+#	wrong 15,560 times, and gets re-reported once per screen a tester opens. Fix
+#	the component, not the screen.
+#
+#	impl = the @skai/ui counterpart. UNMAPPED means nobody has established which
+#	code component owns it — that is the gap to close before parity is checkable.
+#
+instances	component	pages	impl
+17152	icons/action	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+15560	CTA/button	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+6381	icons/graphical	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+3417	labels/tag	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+3316	images/circle	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+1848	logos/social	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+1646	icons/platform	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+1037	icons/wallet	Home 1,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+534	input/selection	Home 1,Home 2,Wallet 2,Trade 1,Trade 2	UNMAPPED
+518	input/primary-inputs	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+342	Header-mobile	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+276	Header-tablet	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+259	logos/skai-short	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+257	Bottom-navigation-mobile	Home 1,Home 2,Trade 1,Trade 2	UNMAPPED
+249	Badges150	Home 1,Wallet 2	UNMAPPED
+228	input/toggle	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+201	Bottom-navigation-tablet	Home 1,Home 2,Trade 1,Trade 2	UNMAPPED
+196	Header-desktop	Home 1,Home 2,Trade 1,Trade 2	UNMAPPED
+191	icons/tiers	Home 1,Home 2	UNMAPPED
+181	icons/warnings	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
+140	logos/others	Home 1,Trade 1,Trade 2	UNMAPPED
+57	logos/skai-icon	Home 1,Home 2,Wallet 1	UNMAPPED
+49	tool-tip	Home 1,Trade 1,Trade 2	UNMAPPED
+9	logos/flag	Wallet 2	UNMAPPED
+3	icons/games	Trade 2	UNMAPPED
