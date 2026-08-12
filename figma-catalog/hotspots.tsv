@@ -1,0 +1,32 @@
+#	Open Figma bugs per catalog section, joined on the route column of
+#	status.<section>.tsv. Bug data: 603 open reports (status new/needs_info,
+#	figma_link set), harvested 2026-08-11.
+#
+#	Matched 348/603. A bug route is matched to the MOST SPECIFIC section
+#	route that prefixes it, so /play/scratchers lands on scratchers, not /play.
+#
+#	UNMATCHED — NO catalog section claims these routes, so these bugs land on a
+#	surface the catalog cannot describe. Each one is a coverage gap:
+#	  /launchpad (56)
+#	  /sports (37)
+#
+#	TIES — several sections claim the same route at equal specificity; attributed
+#	to the section with the most frames:
+#	  /play (35) -> play  [also claimed by: missing-play-images]
+#
+#	ROOT AMBIGUITY — 4 sections list "/" as their route
+#	(home, onboarding, trade, wallet), so the 162 bugs reported on "/" cannot be
+#	honestly attributed to one of them. Fix the route column, do not break the tie.
+#
+open_bugs	section	frames	routes
+130	trade	830	/ /bridge /crypto/:symbol /insightx /launchpad/create /spot /swap /trade/live /trade/perps /trade/trench /trench
+63	predict	284	/predict /predict/all /predict/futures /predict/market/:id /predict/market/:marketType/:marketId /predict/rewards
+57	play	345	/play /play/casino /play/game/:gameId
+28	home	349	/ /portfolio /upgrade /upgrade/checkout
+23	skratch	20	/play/scratchers /scratch
+20	coinflip	37	/play/coinflip
+11	blackjack	19	/play/blackjack
+10	mines	16	/play/mines
+3	plinko	20	/play/plinko
+2	dice	34	/play/dice
+1	wallet	369	/ /account /activity /token/:symbol

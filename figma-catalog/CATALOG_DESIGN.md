@@ -40,13 +40,64 @@ Every `INSTANCE` across Home 1/2, Wallet 1/2, Trade 1/2 was resolved to its
 `icons/action` 17,152 · `CTA/button` 15,560 · `icons/graphical` 6,381 ·
 `labels/tag` 3,417 · `images/circle` 3,316 · full table in `components.tsv`.
 
-This reframes the backlog. A keyword pass over the 603 open bugs classifies 35% as
-colour, 16% spacing/alignment, 12% icon/asset. Those are not 603 independent defects —
-they are a small number of component-level defects, re-reported once per screen a
-tester happens to open. **A wrong hex on `CTA/button` is wrong 15,560 times.**
+A wrong hex on `CTA/button` is wrong 15,560 times, so a single component defect arrives
+as many bug numbers. **But that is not the whole backlog, and the first draft of this
+document overstated it.** Classifying the 603 by whether they name a component:
 
-The corollary for effort: fixing screens one at a time can never converge. Fixing 25
-components can.
+| | open bugs | share |
+|---|---|---|
+| names a component | 261 | **43%** |
+| names none | 342 | **57%** |
+
+The 43% is the component-shaped half — `icons/*` 90, `CTA/button` 62,
+`input/selection` 31, `Header-*` 26, `input/primary-inputs` 20 — and it does collapse
+into 25 fixes.
+
+The 57% is **section-level scope divergence**, and reading it changes the plan. It
+splits three ways:
+
+- *sections missing* — "missing multiple sections entirely", "to be completely redone"
+- *sections EXTRA* — the app has surfaces Figma does not: "Remove SKAI AI SignalWidget
+  … it is not in the figma design", "Remove AI Confidence Trend Widget", "Remove
+  account widget", "Remove token details and market details". These are **deletions**,
+  not styling drift, and no amount of component work touches them.
+- *section geometry and background* — overlay/background styling, chart line weights
+
+So the honest statement: fixing 25 components addresses about two fifths of the
+backlog and is the highest-leverage single move. The other three fifths is per-surface
+reconciliation — including removing things we built that the design never asked for.
+
+## Where the work is — `hotspots.tsv`
+
+`node hotspots.mjs` joins open bug counts onto catalog sections through the `route`
+column that `status.<section>.tsv` already carries, and writes `hotspots.tsv`:
+
+```text
+130  trade    63  predict   57  play    28  home
+23   skratch  20  coinflip  11  blackjack  10  mines  3 plinko  2 dice  1 wallet
+```
+
+Three numbers are deliberately held OUT of that ranking rather than smoothed into it:
+
+- **`/` — 162 bugs, unattributable.** Four sections (home, onboarding, trade, wallet)
+  list `/` as their route. Breaking that tie by frame count would have put 162 reports
+  against `trade` and made it look like the dominant hotspot on evidence that does not
+  support it. Fix the route column; do not break the tie.
+- **`/launchpad` — 56 bugs, and `/sports` — 37. No catalog section claims either
+  route.** 93 open bugs on surfaces the catalog cannot describe. That is a coverage
+  gap, not a rounding error.
+
+Two matcher traps are worth knowing, because both produced confident wrong answers
+before being caught:
+
+1. A catalog route is a *pattern* (`/crypto/:symbol`), a reported url is *concrete*
+   (`/crypto/TOADUS`). Literal prefix matching silently drops every dynamic route — 26
+   `/crypto/*` bugs came back "unmatched" until the matcher compared segment by segment.
+2. `/` has zero segments, so a prefix test makes it a **catch-all**. That version
+   reported a triumphant `603/603` match with "unmatched: none" — because `/launchpad`
+   and `/sports` had been absorbed by whichever section claimed the root. A matcher
+   that reaches 100% deserves the same suspicion as a test that never fails; the tell
+   was `trade` jumping 104 → 385, a number moving further than the change justified.
 
 ## The layered model
 
