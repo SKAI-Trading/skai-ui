@@ -11,32 +11,48 @@
 #	wrong 15,560 times, and gets re-reported once per screen a tester opens. Fix
 #	the component, not the screen.
 #
-#	impl = the @skai/ui counterpart. UNMAPPED means nobody has established which
-#	code component owns it — that is the gap to close before parity is checkable.
+#	confidence:
+#	  likely   — a code component with a matching name AND role exists; the file
+#	             was verified to exist. It has NOT been compared variant-by-variant
+#	             against the Figma component set, so treat it as the place to look,
+#	             not as proof of parity.
+#	  split    — the Figma component maps to more than one code component.
+#	  outside  — owned by the MAIN app, not @skai/ui. These are the dangerous ones:
+#	             they are shared in Figma but NOT shared in code, so they drift per
+#	             surface with nothing to stop them.
+#	  none     — no code owner identified. Either unbuilt or unfindable by name.
 #
-instances	component	pages	impl
-17152	icons/action	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-15560	CTA/button	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-6381	icons/graphical	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-3417	labels/tag	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-3316	images/circle	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-1848	logos/social	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-1646	icons/platform	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-1037	icons/wallet	Home 1,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-534	input/selection	Home 1,Home 2,Wallet 2,Trade 1,Trade 2	UNMAPPED
-518	input/primary-inputs	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-342	Header-mobile	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-276	Header-tablet	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-259	logos/skai-short	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-257	Bottom-navigation-mobile	Home 1,Home 2,Trade 1,Trade 2	UNMAPPED
-249	Badges150	Home 1,Wallet 2	UNMAPPED
-228	input/toggle	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-201	Bottom-navigation-tablet	Home 1,Home 2,Trade 1,Trade 2	UNMAPPED
-196	Header-desktop	Home 1,Home 2,Trade 1,Trade 2	UNMAPPED
-191	icons/tiers	Home 1,Home 2	UNMAPPED
-181	icons/warnings	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	UNMAPPED
-140	logos/others	Home 1,Trade 1,Trade 2	UNMAPPED
-57	logos/skai-icon	Home 1,Home 2,Wallet 1	UNMAPPED
-49	tool-tip	Home 1,Trade 1,Trade 2	UNMAPPED
-9	logos/flag	Wallet 2	UNMAPPED
-3	icons/games	Trade 2	UNMAPPED
+#	Paths are relative to modules/skai-ui unless marked (main).
+#
+#	★ icons/* is 27,591 of the 54,047 placements — over half the design system is
+#	  icons. src/figma-icons.tsx exports 90 `Figma*Icon` components, described in
+#	  src/icons.ts as "traced from the design file... what parity is measured
+#	  against". Whether those 90 cover the six icons/* Figma sets is UNVERIFIED and
+#	  is the single most valuable thing to check next.
+#
+instances	component	pages	impl	confidence
+17152	icons/action	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/figma-icons.tsx (Figma*Icon set, 90 exports)	likely
+15560	CTA/button	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/core/button.tsx	likely
+6381	icons/graphical	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/figma-icons.tsx	likely
+3417	labels/tag	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/core/tag.tsx	likely
+3316	images/circle	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/data-display/avatar.tsx	likely
+1848	logos/social	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	-	none
+1646	icons/platform	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/figma-icons.tsx	likely
+1037	icons/wallet	Home 1,Wallet 1,Wallet 2,Trade 1,Trade 2	src/figma-icons.tsx	likely
+534	input/selection	Home 1,Home 2,Wallet 2,Trade 1,Trade 2	src/components/forms/{select,checkbox,radio-group}.tsx	split
+518	input/primary-inputs	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/core/input.tsx	likely
+342	Header-mobile	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/layout/Header.tsx (main)	outside
+276	Header-tablet	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/layout/Header.tsx (main)	outside
+259	logos/skai-short	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/branding/skai-logo.tsx	likely
+257	Bottom-navigation-mobile	Home 1,Home 2,Trade 1,Trade 2	src/components/ai/MobileBottomNav.tsx (main)	outside
+249	Badges150	Home 1,Wallet 2	src/components/core/{badge,badge-icons}.tsx	split
+228	input/toggle	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/components/forms/{toggle,switch}.tsx	split
+201	Bottom-navigation-tablet	Home 1,Home 2,Trade 1,Trade 2	src/components/ai/MobileBottomNav.tsx (main)	outside
+196	Header-desktop	Home 1,Home 2,Trade 1,Trade 2	src/components/layout/Header.tsx (main)	outside
+191	icons/tiers	Home 1,Home 2	src/figma-icons.tsx	likely
+181	icons/warnings	Home 1,Home 2,Wallet 1,Wallet 2,Trade 1,Trade 2	src/figma-icons.tsx	likely
+140	logos/others	Home 1,Trade 1,Trade 2	-	none
+57	logos/skai-icon	Home 1,Home 2,Wallet 1	src/components/branding/skai-icon.tsx	likely
+49	tool-tip	Home 1,Trade 1,Trade 2	src/components/feedback/tooltip.tsx	likely
+9	logos/flag	Wallet 2	-	none
+3	icons/games	Trade 2	src/figma-icons.tsx	likely
