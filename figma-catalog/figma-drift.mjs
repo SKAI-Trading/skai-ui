@@ -96,13 +96,39 @@ for (const frame of Object.values(registry.frames || {})) {
   bySection.get(frame.section).add(id);
 }
 
-/** Hand-set fields worth rescuing when a node disappears. */
+/**
+ * Hand-set fields worth rescuing when a node disappears.
+ *
+ * `status` is listed here so it is PRESERVED in figma-drift.json, but it is
+ * deliberately NOT evidence of human work — see below.
+ */
 const HAND_SET = ["implFiles", "status", "notes", "verifiedAt"];
-const hasHandSetWork = (row) =>
-  HAND_SET.some((k) => {
-    const v = row?.[k];
-    return Array.isArray(v) ? v.length > 0 : Boolean(v);
-  });
+
+/**
+ * A DEFAULT is not a decision.
+ *
+ * `build-registry.mjs:475` assigns `status: p.status || "unknown"`, so every row
+ * that nobody has triaged still carries a truthy `status`. Treating that as
+ * "somebody did work here" put **2,453 of 3,885 rows (63%)** one deletion away
+ * from the REMOVED-WITH-WORK class — the highest-ranked, most-alarming class in
+ * figma-todo.tsv, the one whose entire job is to stop a reader before they
+ * delete something.
+ *
+ * Caught on the first real run: all 12 of keno's REMOVED-WITH-WORK rows had
+ * `implFiles: []`, `notes: null`, `verifiedAt: null`. Twelve false alarms in the
+ * top class is how you teach someone to skim the top class.
+ *
+ * So `status` only counts when it is something a human chose. Everything else
+ * must be non-empty in its own right.
+ */
+const UNTRIAGED_STATUS = new Set(["unknown", "", null, undefined]);
+const hasHandSetWork = (row) => {
+  if (!row) return false;
+  if (Array.isArray(row.implFiles) && row.implFiles.length) return true;
+  if (row.notes) return true;
+  if (row.verifiedAt) return true;
+  return !UNTRIAGED_STATUS.has(row.status);
+};
 
 const todo = [];
 const drift = { generated: new Date().toISOString(), sections: {} };
@@ -244,13 +270,31 @@ const RANK = {
 };
 todo.sort((a, b) => (RANK[a[2]] ?? 9) - (RANK[b[2]] ?? 9) || a[0].localeCompare(b[0]));
 
+/**
+ * Output names derive from the SNAPSHOT name, so parallel lanes cannot clobber
+ * each other.
+ *
+ * The first real run had two lanes (games, webapp) writing one shared
+ * `figma-todo.tsv`. Whichever finished last silently replaced the other's
+ * findings, and because the loser's sections then appear as NOT-HARVESTED in
+ * the winner's file, the result LOOKS complete and self-consistent. A partial
+ * log that reads as a whole one is worse than an obviously missing file.
+ *
+ * `snapshot.games.json` -> `figma-todo.games.tsv` + `figma-drift.games.json`.
+ * A snapshot not named `snapshot.<lane>.json` keeps the plain names.
+ */
+const snapBase = path.basename(snapshotPath).replace(/\.json$/i, "");
+const lane = /^snapshot\.(.+)$/i.exec(snapBase)?.[1];
+const todoOut = lane ? `figma-todo.${lane}.tsv` : "figma-todo.tsv";
+const driftOut = lane ? `figma-drift.${lane}.json` : "figma-drift.json";
+
 const header = ["section", "nodeId", "change", "title", "why", "implFiles"];
 fs.writeFileSync(
-  path.join(DIR, "figma-todo.tsv"),
+  path.join(DIR, todoOut),
   [header, ...todo].map((r) => r.join("\t")).join("\n") + "\n",
 );
 fs.writeFileSync(
-  path.join(DIR, "figma-drift.json"),
+  path.join(DIR, driftOut),
   JSON.stringify(drift, null, 2) + "\n",
 );
 
@@ -259,7 +303,7 @@ console.log(
   `registry: ${byId.size} live rows` +
     (alreadyGone.size ? ` (+${alreadyGone.size} already flagged gone, skipped)` : ""),
 );
-console.log(`figma-todo.tsv: ${todo.length} rows`);
+console.log(`${todoOut}: ${todo.length} rows`);
 for (const [k, v] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {
   console.log(`  ${k.padEnd(20)} ${v}`);
 }

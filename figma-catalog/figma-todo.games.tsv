@@ -1,16 +1,4 @@
 section	nodeId	change	title	why	implFiles
-keno	9433-15177	REMOVED-WITH-WORK	Mobile	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9481-20647	REMOVED-WITH-WORK	8	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9481-20834	REMOVED-WITH-WORK	Frame 1000003949	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9481-20845	REMOVED-WITH-WORK	Frame 1000003950	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9481-21772	REMOVED-WITH-WORK	Frame 1000003947	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9481-21774	REMOVED-WITH-WORK	Frame 1000003996	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9481-21777	REMOVED-WITH-WORK	Screenshot 2026-08-03 at 8.31.39 PM 1	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9481-21778	REMOVED-WITH-WORK	Frame 1000003986	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9481-21885	REMOVED-WITH-WORK	Mines all features	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9494-4466	REMOVED-WITH-WORK	Frame 1000004105	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9494-4467	REMOVED-WITH-WORK	Frame 1000004103	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
-keno	9494-7002	REMOVED-WITH-WORK	GEM 2 KENO 1	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	
 keno	9494-2150 -> 9680-3956	RETARGET	Frame 1000004044	Same title, new node-id: the frame was REBUILT, not deleted. Repoint the catalog row and KEEP its implFiles/status/verifiedAt -- the code still implements it.	
 bingo	9794-12191	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 bingo	9794-12346	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
@@ -27,6 +15,18 @@ keno	9690-9544	ADDED	Starting	New frame in Figma with no catalog row -- needs im
 keno	9690-9912	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 keno	9690-10413	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 keno	9690-10777	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+keno	9433-15177	REMOVED	Mobile	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9481-20647	REMOVED	8	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9481-20834	REMOVED	Frame 1000003949	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9481-20845	REMOVED	Frame 1000003950	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9481-21772	REMOVED	Frame 1000003947	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9481-21774	REMOVED	Frame 1000003996	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9481-21777	REMOVED	Screenshot 2026-08-03 at 8.31.39 PM 1	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9481-21778	REMOVED	Frame 1000003986	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9481-21885	REMOVED	Mines all features	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9494-4466	REMOVED	Frame 1000004105	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9494-4467	REMOVED	Frame 1000004103	Frame gone from Figma with no same-title replacement; catalog row is stale	
+keno	9494-7002	REMOVED	GEM 2 KENO 1	Frame gone from Figma with no same-title replacement; catalog row is stale	
 keno	9481-20950	RETITLED	Starting	was: Desktop	
 keno	9481-21797	RETITLED	Desktop win	was: Desktop Selection	
 governance	-	NOT-HARVESTED	-	186 catalogued frames were not covered by this snapshot; drift unknown	
