@@ -60,6 +60,14 @@ const SECTION_FILE = {
   "video-poker": "M6r9FEn042UWTQD1zvy6GM",
   bingo: "M6r9FEn042UWTQD1zvy6GM",
   "rock-paper-scissors": "M6r9FEn042UWTQD1zvy6GM",
+  // 2026-08-13: "🌎 Cover Images - Skai Originals" (9220:26175). NOT a screen
+  // page -- it holds the marketing cover art each game tile uses, in Desktop
+  // (195x277) and Mobile (76x108) pairs. Catalogued because those frames are
+  // the source of truth for the tile art the Play hub ships, and nothing else
+  // in this catalog covered them. Two pages in Skai-Games are deliberately
+  // ABSENT instead: Roulette (9737:13085) and Baccarat (9737:13088) have 0
+  // children, so there is nothing to harvest -- see the readiness note below.
+  "cover-images": "M6r9FEn042UWTQD1zvy6GM",
   // Moved to Skai-Web-App-2 on 2026-08-11 (ids preserved — see FILE_KEYS).
   home: "mhF3BkzlTaGiLzJ7kvpmVc",
   wallet: "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -141,6 +149,9 @@ const SECTIONS = [
   "home-2", "wallet-2", "trade-2",
   // 2026-08-11: five previously-uncovered Games pages. See SECTION_FILE.
   "fortune-wheel", "skai-cross", "video-poker", "bingo", "rock-paper-scissors",
+  // 2026-08-13: the cover-art page. See SECTION_FILE for why it is catalogued
+  // and why Roulette / Baccarat are not.
+  "cover-images",
 ];
 
 // The list above is an ORDERING hint, not the source of truth.
@@ -219,6 +230,7 @@ const GAME_BY_SECTION = {
   "fortune-wheel": "Fortune Wheel", "skai-cross": "SKAI Cross",
   "video-poker": "Video Poker", bingo: "Bingo",
   "rock-paper-scissors": "Rock Paper Scissors",
+  "cover-images": "Cover Images",
 };
 
 const readLines = (p) =>
