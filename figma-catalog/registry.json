@@ -36394,9 +36394,9 @@
       "family": null,
       "citedByFiles": [],
       "implFiles": [],
-      "status": "unknown",
+      "status": "superseded",
       "route": null,
-      "notes": "",
+      "notes": "SUPERSEDED by 8909-137997 per Casey's ruling of 2026-08-13. Do not implement this frame. It is the open panel for the older header 8575-81619 and draws a fixed three-item menu — New (active, clock icon) / Culture / Mentions. The canonical frame 8909-137997 disagrees on every item: 'New' is a SORT tab inline in the row (alongside Trending and Breaking, left of the divider), and 'Culture' and 'Mentions' do not exist in its taxonomy at all. Under 8909-137997 the More menu is the OVERFLOW of the category row — Iran and Geo-politics are drawn inline, so the menu holds News, Pop Culture, Entertainment, Community, Other. Implementing this row's three items instead would have orphaned all five of those, whose only affordance is that menu. Row KEPT for the record, per this catalog's convention. Its panel chrome is NOT in dispute (8909-137997 draws only the closed trigger) and matches what ships: green-coal-200 #122524 fill, green-coal-100 #123F3C border, 8px padding and gap, 12px panel radius, 4px item radius, Manrope 14/18 -0.04em, active item filled green-coal-100.",
       "verifiedAt": null
     },
     "10312-16920": {
@@ -62988,11 +62988,13 @@
       "kind": "non-screen",
       "family": null,
       "citedByFiles": [],
-      "implFiles": [],
-      "status": "unknown",
+      "implFiles": [
+        "src/components/defi/vault/VaultCard.tsx"
+      ],
+      "status": "done",
       "route": null,
-      "notes": "",
-      "verifiedAt": null
+      "notes": "Yield-vault deposited card. Radius converted by VALUE not name (Figma 16->rounded-xl, 12->rounded-lg, 6->rounded-[6px]). Deposit CTA deliberately kept: the frame is a detached 395x266 fragment with no CTA and this is the only route into /earn/vault/:address.",
+      "verifiedAt": "2026-08-13T00:00:00.000Z"
     },
     "5515-92313": {
       "section": "governance",
