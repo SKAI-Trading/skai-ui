@@ -70292,20 +70292,24 @@
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "fileName": "Skai-Web-App-2",
       "node": "13006-146207",
-      "title": null,
+      "title": "Skai > Trade > top-bar dropdown (5 rows: Perps / Spot / Swaps / Trench / Launch; each glyph a 24px icons/graphical ring)",
       "page": "✅ Trade 2",
       "readiness": "ready",
-      "kind": "untitled",
+      "kind": "screen",
       "citedByFiles": [
         "src/components/home-redesign/HomeTopBar.tsx"
       ],
       "implFiles": [
-        "src/components/home-redesign/HomeTopBar.tsx"
+        "src/components/home-redesign/HomeTopBar.tsx",
+        "modules/skai-ui/src/components/branding/skai-icon.tsx",
+        "modules/skai-ui/src/components/layout/header/header-navigation.tsx"
       ],
-      "status": "unknown",
-      "route": null,
-      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
-      "verifiedAt": null
+      "status": "match",
+      "route": "(global chrome)",
+      "notes": "Report 3cb4cd3b. Measured 2026-08-13: geometry already matched (300x344 panel, 16/32 padding, 24px gap, 24px icon + 8px gap, 22px title over 16px desc). The delta was the ICON FAMILY: every row is a 24px `icons/graphical` instance holding a 21x21 ring at (1.5,1.5), while the rows passed the bare glyphs candlesticks/crosshair/swap/measure/fast. Fixed by adding the five exported vectors to @skai/ui as SkaiIcon `trade-perps|spot|swaps|trench|launch` and repointing the rows. Icon nodes: 13006:146209/146214/146219/146224/146229. The 16px `icons/action` cut of the same family is 9081:273544 (sidebar trade column, src/components/home-redesign/tradeNavIcons.tsx).",
+      "verifiedAt": "2026-08-13",
+      "screen": "top-bar dropdown",
+      "family": "dropdown"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-147429": {
       "section": "trade-2",
