@@ -11,11 +11,14 @@ import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 import {
+  FigmaBaseChainIcon,
   FigmaBellIcon,
+  FigmaBnbIcon,
   FigmaGhostIcon,
   FigmaPersonCheckIcon,
   FigmaPersonStarIcon,
   FigmaSidebarAIBoltIcon,
+  FigmaSolanaIcon,
   FigmaSusdIcon,
   FigmaTrashIcon,
   FigmaTrashSolidIcon,
@@ -327,5 +330,125 @@ describe("scrim pass-through", () => {
     // get. tailwind-merge drops the default z-50 in favour of it.
     expect(overlay!.className).toContain("z-[60]");
     expect(overlay!.className).not.toMatch(/(^|\s)z-50(\s|$)/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Chain badges — reports 82fda67c / 4f582d84 (BNB), 10ba5a8f / c2a43c8b
+// (Solana), 24eb10ba / 4c512f03 (Base), 35bff67c (all three, Import-wallets).
+//
+// ORACLE. These badges are RASTER `<img>` fills in Figma, not vectors, so the
+// witness here is the exported PNG rather than an SVG string: nodes
+// 13006:134372/3/4 (32px trench badges, exported at 68/64/64px) and
+// 13008:115806/7/8 (the 40px import-wallets badges, exported at 84/80/80px) in
+// file mhF3BkzlTaGiLzJ7kvpmVc. Every constant below is a modal pixel value read
+// off those PNGs — two independent exports of the same art, which agreed
+// exactly on all four colours. Nothing here is read back out of the component.
+// ---------------------------------------------------------------------------
+
+/** BNB badge disc. (58,58,58) is 49.8% of the 80px export and 48.6% of the
+ *  independent 64px one. */
+const FIGMA_BNB_DISC = "#3A3A3A";
+/** BNB cube. (241,185,10) — note it is NOT the Binance brand deck's #F0B90B. */
+const FIGMA_BNB_GOLD = "#F1B90A";
+/** The disc + mark this badge WRONGLY shipped: a #181A20 disc carrying the
+ *  retired four-diamond Binance *exchange* logo. Pinned so a revert to the old
+ *  glyph fails loudly rather than silently reinstating the wrong brand. */
+const RETIRED_BINANCE_DISC = "#181A20";
+
+/** Solana ring. (23,249,180) in both exports, and the same get_design_context
+ *  response names the style `Primary/Alien Green 300: #17F9B4`. */
+const FIGMA_SOL_RING = "#17F9B4";
+/** The ring hex this badge shipped — the published brand green, one shade off
+ *  the frame. */
+const SOL_BRAND_GREEN_NOT_THE_FRAME = "#14F195";
+/** The frame's disc behind the tri-bars: pure black, 39–43% of both exports.
+ *  Its ABSENCE was the reported defect — the badge read see-through. */
+const FIGMA_SOL_DISC = "#000000";
+
+/** Base disc. (0,82,255), 69.3% of the 80px export and 69.4% of the 64px one. */
+const FIGMA_BASE_BLUE = "#0052FF";
+
+const fills = (c: HTMLElement) =>
+  Array.from(c.querySelectorAll("path, circle")).map((n) =>
+    (n.getAttribute("fill") ?? "").toUpperCase(),
+  );
+
+describe("chain badges (13006:134372-4 / 13008:115806-8)", () => {
+  it("BNB draws the BNB-Chain cube on the frame's disc, not the retired Binance diamonds", () => {
+    const { container } = render(<FigmaBnbIcon />);
+    const disc = container.querySelector("circle")!;
+    const glyph = container.querySelector("path")!;
+
+    expect(disc.getAttribute("fill")?.toUpperCase()).toBe(FIGMA_BNB_DISC);
+    expect(disc.getAttribute("fill")?.toUpperCase()).not.toBe(
+      RETIRED_BINANCE_DISC,
+    );
+    expect(glyph.getAttribute("fill")?.toUpperCase()).toBe(FIGMA_BNB_GOLD);
+
+    // Shape, not just colour: the retired mark is five diamonds (5 subpaths of
+    // 4 corners each); the cube the frame draws is a 10-piece isometric
+    // outline. Counting subpaths is the cheapest witness that survives any
+    // re-tracing of the individual segments.
+    const subpaths = (glyph.getAttribute("d")!.match(/M/g) ?? []).length;
+    expect(subpaths).toBe(10);
+  });
+
+  it("Solana fills its disc and uses the frame's ring, not the brand green", () => {
+    const { container } = render(<FigmaSolanaIcon />);
+    const circles = Array.from(container.querySelectorAll("circle"));
+
+    // The whole reported defect: there was no disc at all, so on a dark panel
+    // the badge read see-through behind the tri-bars.
+    expect(fills(container as HTMLElement)).toContain(FIGMA_SOL_DISC);
+
+    const ring = circles.find((c) => c.getAttribute("stroke"))!;
+    expect(ring.getAttribute("stroke")?.toUpperCase()).toBe(FIGMA_SOL_RING);
+    expect(ring.getAttribute("stroke")?.toUpperCase()).not.toBe(
+      SOL_BRAND_GREEN_NOT_THE_FRAME,
+    );
+
+    // The disc has to sit UNDER the ring, or a fill painted last would hide it.
+    const discIndex = circles.findIndex(
+      (c) => c.getAttribute("fill")?.toUpperCase() === FIGMA_SOL_DISC,
+    );
+    expect(discIndex).toBeLessThan(circles.indexOf(ring));
+  });
+
+  it("Base keeps the real brandmark — the Figma asset for this one is broken", () => {
+    // 24eb10ba / 4c512f03 both ask for "the exact Base asset from Figma". That
+    // asset is a flat #0052FF disc with a rectangular slot knocked fully
+    // transparent (x 0→41 of 64, y 29→34 on the alpha channel) — a broken
+    // export, not the brandmark. This test exists to stop a future "match
+    // Figma" sweep from copying it. The disc colour IS taken from the frame,
+    // because that part of the export is correct.
+    const { container } = render(<FigmaBaseChainIcon />);
+    expect(
+      container.querySelector("circle")!.getAttribute("fill")?.toUpperCase(),
+    ).toBe(FIGMA_BASE_BLUE);
+    expect(
+      container.querySelector("path")!.getAttribute("fill")?.toUpperCase(),
+    ).toBe("#FFFFFF");
+  });
+
+  it("all three badges fill the same box, so a row of them reads level", () => {
+    for (const Icon of [FigmaSolanaIcon, FigmaBaseChainIcon, FigmaBnbIcon]) {
+      const { container } = render(<Icon />);
+      expect(container.querySelector("svg")!.getAttribute("viewBox")).toBe(
+        "0 0 16 16",
+      );
+    }
+    // Solana's ring overflows its 32px node in Figma (`inset:-3.13%`), which a
+    // 0 0 16 16 viewBox would clip. It is drawn at r=7.5 + strokeWidth 1 so the
+    // outer edge lands on the box: same 1-unit thickness, same disc size, and
+    // the badge still measures 16 units across like its two siblings instead of
+    // rendering ~6% small next to them.
+    const { container } = render(<FigmaSolanaIcon />);
+    const ring = Array.from(container.querySelectorAll("circle")).find((c) =>
+      c.getAttribute("stroke"),
+    )!;
+    const r = Number(ring.getAttribute("r"));
+    const w = Number(ring.getAttribute("strokeWidth") ?? ring.getAttribute("stroke-width"));
+    expect(r + w / 2).toBe(8);
   });
 });

@@ -1253,26 +1253,77 @@ export const FigmaQuestionCircleIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-/** Solana chain badge — Import-wallets "Wallet type" (brand #14F195). */
-// report 05bbedc4: official Solana logomark — green ring + #9945FF→#14F195 gradient tri-bar (was flat solid green disc).
+/**
+ * Solana chain badge — Trench title row (Figma 13006:134372) and Import-wallets
+ * "Wallet type" (13008:115806).
+ *
+ * Reports 10ba5a8f / c2a43c8b / 35bff67c. Every number below was measured off
+ * the two PNGs Figma exports for those nodes (68px for the 32px trench badge,
+ * 84px for the 40px import badge) — two independent exports of the same art,
+ * used as a cross-check on each other. What changed:
+ *
+ *  - **The disc had no fill at all.** The frame paints a solid #000000 disc
+ *    behind the bars; we stroked a ring over `fill="none"`, so on a Trench card
+ *    the badge read see-through and the tri-bars sat straight on the panel.
+ *    That was the visible half of the report.
+ *  - **Ring #14F195 → #17F9B4.** The exported ring pixels are (23,249,180)
+ *    exactly, and Figma names the style `Primary/Alien Green 300: #17F9B4` in
+ *    the same response — so this is the token colour, not a near-miss.
+ *  - **The tri-bars were the wrong size and in the wrong place.** The old path
+ *    scored an IoU of only 0.45 against the exported mask. It is now the
+ *    official Solana logomark outline (397.7×311.7) mapped onto the frame's
+ *    box, which scores 0.92 / 0.89 — i.e. the frame IS the official mark, scaled
+ *    NON-uniformly (9.48 wide × 8.35 tall, an ~11% horizontal squash against
+ *    the official 1.276 aspect). Reproduce the squash; it is what makes the
+ *    mark sit inside the ring.
+ *  - **Gradient stops are the frame's, not the brand deck's.** Regressing the
+ *    exported bar pixels on position gives a perfectly linear ramp (residual
+ *    RMS 0.5/255) along a true 45° axis, teal at top-right → purple at
+ *    bottom-left, ending at #0DC395 / #8952F3. Those are NOT the published
+ *    #14F195 / #9945FF, and the teal end is *darker* than #14F195, which a
+ *    clamped ramp between the published stops cannot produce. So the axis is
+ *    pinned in user space to the glyph's own extremes with the measured
+ *    colours rather than re-derived from brand values.
+ *
+ * The ring in the frame overflows its box (the node carries `inset:-3.13%`),
+ * which a `0 0 16 16` viewBox would clip. Drawing it at r=7.5/strokeWidth=1
+ * keeps the same 1-unit thickness and the same disc size while landing the
+ * outer edge exactly on the box — so this badge still measures 16 units across
+ * like its BNB and Base siblings instead of rendering ~6% small beside them.
+ */
 export const FigmaSolanaIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
     <defs>
-      <linearGradient id="skaiSolBars" x1="3.4" y1="11.6" x2="12.6" y2="4.4" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#9945FF" />
-        <stop offset="1" stopColor="#14F195" />
+      <linearGradient id="skaiSolBars" x1="11.5" y1="4.5" x2="4.5" y2="11.5" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#0DC395" />
+        <stop offset="1" stopColor="#8952F3" />
       </linearGradient>
     </defs>
-    <circle cx="8" cy="8" r="7.35" stroke="#14F195" strokeWidth="1.1" />
+    <circle cx="8" cy="8" r="7.5" fill="#000000" />
+    <circle cx="8" cy="8" r="7.5" stroke="#17F9B4" strokeWidth="1" />
     <path
-      d="M5.2 4.9a.45.45 0 0 1 .32-.13h5.9c.2 0 .3.24.16.38l-1.16 1.17a.45.45 0 0 1-.32.13h-5.9c-.2 0-.3-.24-.16-.38L5.2 4.9ZM5.2 11.1a.45.45 0 0 0 .32.13h5.9c.2 0 .3-.24.16-.38l-1.16-1.17a.45.45 0 0 0-.32-.13h-5.9c-.2 0-.3.24-.16.38l1.16 1.17ZM10.8 7.42a.45.45 0 0 0-.32-.14h-5.9c-.2 0-.3.24-.16.38l1.16 1.17c.08.09.2.14.32.14h5.9c.2 0 .3-.24.16-.38L10.8 7.42Z"
+      d="M4.8 10.2C4.86 10.13 4.94 10.1 5.02 10.1L12.58 10.1C12.72 10.1 12.79 10.28 12.69 10.39L11.2 12.07C11.14 12.14 11.06 12.18 10.98 12.18L3.42 12.18C3.28 12.18 3.21 11.99 3.31 11.88L4.8 10.2ZM4.8 3.93C4.86 3.86 4.94 3.83 5.02 3.83L12.58 3.83C12.72 3.83 12.79 4.01 12.69 4.12L11.2 5.8C11.14 5.87 11.06 5.9 10.98 5.9L3.42 5.9C3.28 5.9 3.21 5.72 3.31 5.61L4.8 3.93ZM11.2 7.04C11.14 6.98 11.06 6.94 10.98 6.94L3.42 6.94C3.28 6.94 3.21 7.13 3.31 7.24L4.8 8.92C4.86 8.98 4.94 9.02 5.02 9.02L12.58 9.02C12.72 9.02 12.79 8.83 12.69 8.72L11.2 7.04Z"
       fill="url(#skaiSolBars)"
     />
   </svg>
 );
 
-/** Base chain badge — Import-wallets "Wallet type" (brand #0052FF). */
-// report 05bbedc4: official Base logomark — #0052FF disc + white circle with a vertical flat right edge.
+/**
+ * Base chain badge — Trench title row (Figma 13006:134373) and Import-wallets
+ * "Wallet type" (13008:115807). Official Base logomark: #0052FF disc + white
+ * circle with a vertical flat right edge.
+ *
+ * ⚠️ **DELIBERATELY NOT MATCHED TO THE FRAME — the frame is the stale side.**
+ * Reports 24eb10ba and 4c512f03 both ask for "the exact Base asset from Figma".
+ * The asset those nodes export is a flat #0052FF disc with a straight
+ * RECTANGULAR slot knocked fully transparent (x 0→41 of 64, y 29→34 — verified
+ * on the alpha channel, and the 80px export of the sibling node has the same
+ * defect scaled). That is not the Base brandmark; it is a broken export, and
+ * copying it would ship a visibly wrong logo to close a "logo is wrong" report.
+ *
+ * If the Figma asset is ever re-exported correctly, re-measure before changing
+ * anything here — do NOT assume the frame won the argument.
+ */
 export const FigmaBaseChainIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
     <circle cx="8" cy="8" r="8" fill="#0052FF" />
@@ -1280,14 +1331,31 @@ export const FigmaBaseChainIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-/** BNB chain badge — Import-wallets "Wallet type" (brand #F0B90B). */
-// report 05bbedc4: official BNB logomark — dark disc + gold #F0B90B diamond mark (was gold disc + white diamonds).
+/**
+ * BNB chain badge — Trench title row (Figma 13006:134374) and Import-wallets
+ * "Wallet type" (13008:115808).
+ *
+ * Reports 82fda67c / 4f582d84 / 35bff67c. This was the **wrong logo**, not a
+ * wrong shade: it drew the retired four-diamond *Binance exchange* mark, while
+ * both frames draw the modern **BNB Chain isometric cube**. The disc was
+ * #181A20 against the frame's #3A3A3A, and the gold #F0B90B against #F1B90A.
+ *
+ * The cube is reconstructed from the exported PNGs rather than hand-drawn: the
+ * gold coverage field was traced at subpixel precision, every edge snapped to
+ * the mark's own 30° isometric lattice (fitting the slope as a free parameter
+ * recovered 0.575 ≈ tan30°, which is what says the construction really is
+ * isometric), then mirrored about x=8 because the mark is symmetric and the
+ * raster's ±0.1-unit left/right drift is a rendering artifact. It scores IoU
+ * 0.961 against the 80px export and 0.963 against the *independent* 64px one —
+ * agreeing to within 0.002 on two different rasters is the check that this is
+ * the shape and not an overfit to one PNG's antialiasing.
+ */
 export const FigmaBnbIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-    <circle cx="8" cy="8" r="8" fill="#181A20" />
+    <circle cx="8" cy="8" r="8" fill="#3A3A3A" />
     <path
-      d="M8 3.4 9.7 5.1 8 6.8 6.3 5.1 8 3.4ZM4.55 6.85 5.7 8 4.55 9.15 3.4 8l1.15-1.15ZM11.45 6.85 12.6 8l-1.15 1.15L10.3 8l1.15-1.15ZM8 6.55 9.45 8 8 9.45 6.55 8 8 6.55ZM8 9.2l1.7 1.7L8 12.6l-1.7-1.7L8 9.2Z"
-      fill="#F0B90B"
+      d="M8 1.96 5.02 3.67v.21l.97.56L8 3.29l2.01 1.15.97-.56v-.21ZM2.84 4.93v1.36l1.14.65V5.62l1.19-.68-1.17-.68ZM12 4.26l-1.17.68 1.19.68v1.32l1.14-.65V4.93ZM8 4.26l-1.17.67L8 5.6l1.17-.67ZM5.99 5.44l-1.13.65v1.36l1.99 1.15v2.33L8 11.59l1.15-.66V8.6l1.99-1.15V6.09l-1.13-.65L8 6.59ZM11.98 7.92v2.33l-1.97 1.13v1.34l3.17-1.83V7.24ZM2.82 7.24v3.65l3.17 1.83v-1.34l-1.97-1.13V7.92ZM4.84 9.75l1.13.65V9.09l-1.13-.66ZM11.16 8.43l-1.13.66v1.31l1.13-.65ZM6.86 11.95v1.27L8 13.83l1.14-.61v-1.27L8 12.54Z"
+      fill="#F1B90A"
     />
   </svg>
 );
