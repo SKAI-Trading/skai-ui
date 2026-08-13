@@ -1,0 +1,165 @@
+{
+  "generated": "2026-08-13T01:03:11.955Z",
+  "sections": {
+    "home": {
+      "status": "not-harvested",
+      "catalogued": 349
+    },
+    "wallet": {
+      "status": "not-harvested",
+      "catalogued": 361
+    },
+    "trade": {
+      "status": "not-harvested",
+      "catalogued": 827
+    },
+    "predict": {
+      "status": "not-harvested",
+      "catalogued": 284
+    },
+    "play": {
+      "status": "not-harvested",
+      "catalogued": 345
+    },
+    "dice": {
+      "status": "not-harvested",
+      "catalogued": 34
+    },
+    "pwa": {
+      "status": "not-harvested",
+      "catalogued": 5
+    },
+    "crash": {
+      "status": "not-harvested",
+      "catalogued": 17
+    },
+    "mines": {
+      "status": "not-harvested",
+      "catalogued": 16
+    },
+    "blackjack": {
+      "status": "not-harvested",
+      "catalogued": 19
+    },
+    "coinflip": {
+      "status": "not-harvested",
+      "catalogued": 37
+    },
+    "skratch": {
+      "status": "not-harvested",
+      "catalogued": 20
+    },
+    "cover-images": {
+      "status": "clean",
+      "catalogued": 24,
+      "live": 24,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "onboarding": {
+      "status": "not-harvested",
+      "catalogued": 151
+    },
+    "legal": {
+      "status": "not-harvested",
+      "catalogued": 10
+    },
+    "master-sheet": {
+      "status": "not-harvested",
+      "catalogued": 46
+    },
+    "plinko": {
+      "status": "not-harvested",
+      "catalogued": 20
+    },
+    "darts": {
+      "status": "not-harvested",
+      "catalogued": 31
+    },
+    "chicken": {
+      "status": "not-harvested",
+      "catalogued": 31
+    },
+    "hilo": {
+      "status": "not-harvested",
+      "catalogued": 20
+    },
+    "social": {
+      "status": "not-harvested",
+      "catalogued": 162
+    },
+    "governance": {
+      "status": "not-harvested",
+      "catalogued": 186
+    },
+    "user-flow": {
+      "status": "not-harvested",
+      "catalogued": 3
+    },
+    "towers": {
+      "status": "clean",
+      "catalogued": 63,
+      "live": 63,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "keno": {
+      "status": "not-harvested",
+      "catalogued": 27
+    },
+    "home-2": {
+      "status": "not-harvested",
+      "catalogued": 127
+    },
+    "wallet-2": {
+      "status": "not-harvested",
+      "catalogued": 182
+    },
+    "trade-2": {
+      "status": "not-harvested",
+      "catalogued": 407
+    },
+    "fortune-wheel": {
+      "status": "not-harvested",
+      "catalogued": 25
+    },
+    "skai-cross": {
+      "status": "not-harvested",
+      "catalogued": 15
+    },
+    "video-poker": {
+      "status": "clean",
+      "catalogued": 14,
+      "live": 14,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "bingo": {
+      "status": "clean",
+      "catalogued": 10,
+      "live": 10,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "rock-paper-scissors": {
+      "status": "not-harvested",
+      "catalogued": 6
+    }
+  }
+}
