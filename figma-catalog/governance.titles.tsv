@@ -55,12 +55,15 @@
 5539-100875	Skai > Explorer (1440 x 900px)
 5570-102478	Skai > Explorer > Dashboard - transactions (1440 x 900px)
 5492-53877	Skai > Yield vaults 1VH (1440 x 900px)
+11259-40720	Skai YV - deposited
 5515-92313	Skai > Yield vaults > Sample vault item 1VH (1440 x 900px)
 5515-95455	Skai > Gauge voting - empty 1VH (1440 x 900px)
 5515-96095	Skai > Gauge voting 1VH (1440 x 900px)
 5515-98548	Notes
 5515-93883	Skai > Yield vaults > Sample vault item (1440 x 900px)
+11259-44415	Withdraw from vault
 5481-50934	Skai > Airdrop - not eligible 1VH (1440 x 900px)
+11206-98479	Skai > Airdrop - not eligible > wallets 1VH (1440 x 900px)
 5481-49179	Skai > Airdrop (1440 x 900px)
 5531-76408	Skai > Leaderboard (1440 x 900px)
 5531-77640	Skai > Rewards (1440 x 900px)
@@ -104,29 +107,48 @@
 5243-69438	Skai > Earn (1440 x 900px)
 10517-38187	Skai > Earn - with pagination (1440 x 900px)
 5243-73398	Skai > Earn - Liquidity only (1440 x 900px)
+10838-362076	Skai > Earn - Liquidity only - liquidity added (1440 x 900px)
 5259-80297	Skai > Earn > Vaults (1440 x 900px)
+11151-80952	House vault - if low
 5248-76804	Skai > Earn > My positions (1440 x 900px)
+10841-138986	Skai > Earn > Sample opportunity (1440 x 900px)
+11135-77182	Skai > Earn > My positions > Update position (1440 x 900px)
+10852-361479	Skai > Earn > Sample opportunity > Add liquidity (1440 x 900px)
+11022-18418	Add liquidity - no value
 5280-87638	Skai > Earn > Faucet (1440 x 900px)
+11193-90739	Skai > Earn > Faucet (1440 x 900px)
+11161-82180	With winners
+11156-82051	Lottery - rolls finished
 5315-92101	Skai > Earn > Faucet > Tickets (1440 x 900px)
 5370-46761	Skai > Earn > Faucet > Winners (1440 x 900px)
+11198-97038	Winners - with date position shifted
 5370-47867	Skai > Earn > Faucet > Earn more (1440 x 900px)
 5370-59619	Skai > Earn > Referral (1440 x 900px)
 5370-46501	Tickets - empty
 5313-92097	Blackjack cards
 5291-89531	Lottery other values
 5280-82910	Skai > Earn > Vault > Trading vault (1440 x 900px)
+11151-79923	Lock - with percentage
+11151-18953	Skai > Earn > Vault > Trading vault ALT (1440 x 900px)
 5280-86949	Skai > Earn > Vault > House vault (1440 x 900px)
+11151-80178	Skai > Earn > Vault > House vault ALT (1440 x 900px)
 5280-87614	Notes
 5278-80860	Skai > Earn > My positions - empty (1440 x 900px)
 5243-74665	Skai > Earn > Stake (1440 x 900px)
 5243-76144	Skai > Earn > Stake > confirm stake (1440 x 900px)
+11128-107161	Skai > Earn > Sample opportunity > Add liquidity > Confirm liquidity add (1440 x 900px)
 10517-39043	Stake summary with fees
 5258-78625	Skai > Earn > My positions > View details (1440 x 900px)
+11134-109360	Skai > Earn > My positions - on:hover (1440 x 900px)
 5243-75704	Swap - no value
 5243-76681	Notes
 5248-76723	Notes
 5248-76747	dropdown-1
 5248-76770	dropdown-2
+10841-118147	dropdown-activity
+11193-91907	dropdown-pool and treasury
+11198-97230	dropdown-winners
+11198-97007	dropdown-tickets
 5370-46716	Notes
 5376-71202	Notes
 5370-60318	sidebar - open earn
@@ -146,14 +168,33 @@
 5518-100072	Skai > Account (1440 x 900px)
 5523-103993	Skai > Account > Performance overview (1440 x 900px)
 5526-47972	Skai > Account > Account settings (1440 x 900px)
+11267-125024	input/primary-inputs - with warning
 5529-72564	Skai > Account > Account settings (1440 x 900px)
 5529-73867	Skai > Account > Account settings > Private key (1440 x 900px)
 5529-76029	Skai > Account > Account settings > Private key - step 2 (1440 x 900px)
 5529-49244	Skai > Account > Account settings > Security (1440 x 900px)
+11267-125066	input/primary-inputs - on:hover
 5529-73119	Skai > Account > Account settings > Preferences (1440 x 900px)
 5529-76362	Notes
 5662-123391	Notes
 5711-148470	Notes
 7528-156426	Nav of chart
 10335-237326	Rectangle 163
+11198-97290	Rectangle 164
+11212-20127	Rectangle 165
+11260-123576	Rectangle 166
 10517-38160	dropdown-multiselect
+11128-109012	Notes
+11193-91860	Notes
+11198-91923	Skai > Earn > Faucet > Winners > Share outcome (1440 x 900px)
+11212-20103	dropdown-multiselect
+11212-20117	dropdown-Snapshot list
+11259-40697	dropdown-yield vaults
+11260-123586	dropdown-account
+11266-123769	dropdown-account overview 2
+11260-123547	dropdown-yield vaults
+11260-123562	dropdown-multiselect
+11266-123753	dropdown-account overview 1
+11267-123785	Skai > Account > Performance overview > Share networth (1440 x 900px)
+11271-125083	Skai > Account > Performance overview > Share networth (1440 x 900px)
+11272-125846	image 1
