@@ -30,6 +30,36 @@ So for four of every five bugs, the catalog cannot answer "what is this, and whi
 screen is it on". That is why it has never been usable for closing bugs, and it is the
 single most important gap.
 
+### ✅ CLOSED 2026-08-13 — `bug-node-index.tsv`
+
+Re-measured against the current open backlog (488 open reports carrying a `figma_link`,
+445 distinct links, **430 distinct `(fileKey, node)` pairs**):
+
+| | before | after |
+|---|---|---|
+| resolvable to a catalogued screen | 105 (24%) | **373 (87%)** |
+| unresolvable | 325 (76%) | **0** |
+| — of which confirmed deleted upstream | — | 57, recorded as `gone` |
+
+The "before" figure is quoted **conservatively**. Measured at the start of this session
+it was 98/430; by the end it was 105/430, because a concurrent lane grew
+`registry.json` from 3,170 to 3,176 frames while the sweep was running. The higher
+number is used so the improvement is not overstated. If you re-derive this, expect the
+baseline to drift again — the delta is the durable part, not the absolute.
+
+Every one of the 430 is now accounted for: 75 point at a catalogued screen directly,
+231 are children resolved to their owning screen, 53 pointed at the **wrong file** and
+carry the corrected `resolvedFileKey`, 14 were already aliased, and 57 resolve in no
+file at all and are marked `gone` (verified twice — `getNodeByIdAsync` **and**
+`get_metadata`, which are independent code paths).
+
+The method is the one sketched below and it is fully mechanical:
+`figma.getNodeByIdAsync(id)` → walk `.parent` to the `PAGE` → the last node before the
+page is the owning screen. Deep nodes reach **depth 12**; the median is 2–4.
+
+The 53 wrong-file rows are not reporter error — they are the file move, and the rule
+everyone was given for handling it is itself wrong. See `FILE_ROUTING.md`.
+
 ### Measurement 2 — 25 components generate the whole surface
 
 Every `INSTANCE` across Home 1/2, Wallet 1/2, Trade 1/2 was resolved to its
@@ -108,8 +138,8 @@ The catalog is five layers. Only the first two existed before today.
 | **A. Pages** | What surfaces exist, and are they ready for dev? | `pages.json` — complete, 42 pages across 3 files |
 | **B. Screens** | What screens exist on each page, and are they built? | `<section>.nodes.txt` / `.titles.tsv` / `status.*.tsv` — 3,829 frames, 100% inventoried |
 | **C. Components** | What is the design system, and where is each piece used? | `components.tsv` — **new**, 25 components, all `impl` UNMAPPED |
-| **D. Nodes** | What is node X, and which screen owns it? | **partial** — needed to make bug links resolvable |
-| **E. Tokens** | What is the real hex/radius/spacing, and what does code call it? | **not started** — the 35% colour bucket lives here |
+| **D. Nodes** | What is node X, and which screen owns it? | **DONE for the open backlog (2026-08-13)** — `bug-node-index.tsv`, 430/430 accounted for |
+| **E. Tokens** | What is the real hex/radius/spacing, and what does code call it? | **radius DONE (2026-08-13)** — `TOKENS.md`; colour still open |
 
 ### Why layer C is the highest-value one to finish
 
@@ -147,17 +177,25 @@ Done today:
 Next, in value order:
 
 1. **Fill `components.tsv` impl column** (25 rows). Highest leverage in the repo.
-2. **Finish layer D** — 179 bug nodes remain (151 unresolved in chunk B, 28 that
-   resolved in neither app file and may be deleted, 7 in the Games file). Method:
-   extract `node-id` from `figma_link`, `getNodeByIdAsync`, walk `parent` to the PAGE
-   and record the last node before it as the owning screen. Try Skai-Web-App first,
-   then Skai-Web-App-2 — ids were preserved across the move, so Home/Wallet/Trade ids
-   resolve only in the latter.
-3. **Layer E** — `get_variable_defs` per surface, mapped to repo tokens, with a
+2. ~~Finish layer D~~ — **DONE 2026-08-13**, see `bug-node-index.tsv` and the CLOSED
+   block above. The "try Skai-Web-App first, then Skai-Web-App-2" advice that used to
+   sit here was **wrong** and is superseded by `FILE_ROUTING.md`: which file to query is
+   determined by the SECTION, not by trial order, and Predict/Play/Onboarding/Social/
+   Governance exist **only** in the old file.
+3. **Layer E** — radius is done (`TOKENS.md`, measured off 473 bound variables).
+   Colour remains: `get_variable_defs` per surface, mapped to repo tokens, with a
    validator in the pipeline.
-4. **Join bug counts onto rows** so every screen and component shows its open-mismatch
-   count, and the catalog can be read as a worklist.
-5. Titles for the 623 still-untitled frames, and `status.*.tsv` for the 15 sections
+4. **Ingest the snapshot harvest.** `build-registry.mjs:417-418` builds frames only from
+   `<section>.nodes.txt`, so anything harvested but never pasted into a node list is
+   invisible to `registry.json`. As of 2026-08-13 `snapshot.webapp.json` +
+   `snapshot.games.json` hold **3,173** live top-level nodes and **1,216 of them have no
+   registry entry**. The catalog therefore *understates* its own coverage — the data is
+   on disk, the assembler just does not read it. Either feed the snapshots into
+   `build-registry.mjs` or regenerate the `.nodes.txt` files from them; do not hand-add.
+5. **Join bug counts onto rows** so every screen and component shows its open-mismatch
+   count, and the catalog can be read as a worklist. `bug-node-index.tsv` now carries the
+   `owningScreenNode` + `openRefs` columns this needs, so it is a join, not a harvest.
+6. Titles for the 623 still-untitled frames, and `status.*.tsv` for the 15 sections
    that have none (1,200 frames inventoried but never assessed).
 
 ## 13 of 26 shipped casino games have no Figma screen (2026-08-11)

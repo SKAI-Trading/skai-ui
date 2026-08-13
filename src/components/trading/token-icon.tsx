@@ -2,21 +2,39 @@ import * as React from "react";
 import { cn } from "../../lib/utils";
 
 // Common token icons mapping (can be extended)
+//
+// ⚠️ CoinGecko serves every one of these at three fixed sizes, selected by the
+// path segment: `/thumb/` = 25x25, `/small/` = 50x50, `/large/` = 250x250
+// (measured 2026-08-13, all 14 URLs below). This map used `/small/`, i.e. a
+// 50px raster, while the largest slot `sizeMap.xl` paints 40 CSS px — 80
+// PHYSICAL px on a 2x display and 120 on a 3x. A 50px source into an 80px box
+// is a 1.6x upscale, and that is the visible softness reported on the Portfolio
+// wallet rows (report 1e78983e, whose screenshot shows the SOL and BTC marks
+// blurred while the neighbouring avatar — a vector SVG — stays crisp).
+//
+// The reporter asked for "PNGs so the icons look professional"; these already
+// ARE PNGs, so format was never the problem and converting anything would not
+// have helped. Resolution was. `/large/` is the same asset at 250px, which
+// covers every slot in `sizeMap` at 3x with room to spare, costs no new
+// committed art, and needs no code beyond the URL.
+//
+// Do NOT "optimise" these back down to `/small/`: the saving is a few KB on a
+// CDN-cached image and the cost is a permanently soft logo on every token row.
 const TOKEN_ICONS: Record<string, string> = {
-  ETH: "https://assets.coingecko.com/coins/images/279/small/ethereum.png",
-  WETH: "https://assets.coingecko.com/coins/images/2518/small/weth.png",
-  BTC: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png",
-  WBTC: "https://assets.coingecko.com/coins/images/7598/small/wrapped_bitcoin_wbtc.png",
-  USDC: "https://assets.coingecko.com/coins/images/6319/small/usdc.png",
-  USDT: "https://assets.coingecko.com/coins/images/325/small/Tether.png",
-  DAI: "https://assets.coingecko.com/coins/images/9956/small/Badge_Dai.png",
-  SOL: "https://assets.coingecko.com/coins/images/4128/small/solana.png",
-  MATIC: "https://assets.coingecko.com/coins/images/4713/small/polygon.png",
-  ARB: "https://assets.coingecko.com/coins/images/16547/small/photo_2023-03-29_21.47.00.jpeg",
-  OP: "https://assets.coingecko.com/coins/images/25244/small/Optimism.png",
-  LINK: "https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png",
-  UNI: "https://assets.coingecko.com/coins/images/12504/small/uniswap-logo.png",
-  AAVE: "https://assets.coingecko.com/coins/images/12645/small/AAVE.png",
+  ETH: "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+  WETH: "https://assets.coingecko.com/coins/images/2518/large/weth.png",
+  BTC: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
+  WBTC: "https://assets.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png",
+  USDC: "https://assets.coingecko.com/coins/images/6319/large/usdc.png",
+  USDT: "https://assets.coingecko.com/coins/images/325/large/Tether.png",
+  DAI: "https://assets.coingecko.com/coins/images/9956/large/Badge_Dai.png",
+  SOL: "https://assets.coingecko.com/coins/images/4128/large/solana.png",
+  MATIC: "https://assets.coingecko.com/coins/images/4713/large/polygon.png",
+  ARB: "https://assets.coingecko.com/coins/images/16547/large/photo_2023-03-29_21.47.00.jpeg",
+  OP: "https://assets.coingecko.com/coins/images/25244/large/Optimism.png",
+  LINK: "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png",
+  UNI: "https://assets.coingecko.com/coins/images/12504/large/uniswap-logo.png",
+  AAVE: "https://assets.coingecko.com/coins/images/12645/large/AAVE.png",
   // SKAI brand mark — the canonical circular bolt that ships in the consuming
   // app's public root (`/skai-logo-mark.svg`). The old `/assets/skai-icon.png`
   // path 404s (no such asset is bundled) so SKAI tokens fell back to "SK"

@@ -355,6 +355,39 @@ const skaiPreset: Partial<Config> = {
       // Spacing (extends Tailwind defaults)
       spacing: skaiSpacing,
 
+      /**
+       * Opacity scale — every integer percentage, 0..100.
+       *
+       * GitHub issue #1261. Tailwind v3's default opacity scale only carries
+       * MULTIPLES OF FIVE, and a colour opacity modifier (`text-white/64`,
+       * `bg-white/3`) resolves its `/NN` against this scale. An off-scale value
+       * does not fall back and does not warn — Tailwind emits NO RULE AT ALL,
+       * and the element quietly inherits its ancestor's colour.
+       *
+       * That is a render-wrong / gate-green failure of the worst kind: the class
+       * in the source reads exactly like the Figma spec, the diff looks correct
+       * to a reviewer, no build step complains, and the only way to catch it is
+       * to measure rendered pixels. It was found that way — a paragraph marked
+       * `text-white/64` measured (224,224,224), i.e. the inherited
+       * `--text-primary`, where Figma specifies (170,176,176).
+       *
+       * Measured before this change, with `npx tailwindcss -c tailwind.config.ts`:
+       *   text-white/65   -> emitted     (65 is a multiple of 5)
+       *   text-white/64   -> NOT EMITTED
+       *   text-white/44   -> NOT EMITTED
+       *   bg-white/3 /8 /12 /14 /24 /32 /84 /98 -> NOT EMITTED
+       * 194 `text-white/64` call sites were live in the tree at that point.
+       *
+       * Filling the whole scale rather than adding the eleven values currently
+       * in use is deliberate: Figma hands out arbitrary percentages, so an
+       * allowlist reopens the same silent hole the next time a frame specifies
+       * 37%. Tailwind is JIT — an unused entry emits nothing, so a complete
+       * scale costs no CSS.
+       */
+      opacity: Object.fromEntries(
+        Array.from({ length: 101 }, (_, n) => [String(n), String(n / 100)]),
+      ),
+
       // Border radius
       borderRadius: {
         ...skaiBorderRadius,

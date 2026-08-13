@@ -84,3 +84,64 @@ describe("TokenIcon", () => {
     expect(img).toHaveAttribute("src", "https://example.com/working.png");
   });
 });
+
+/**
+ * Report 1e78983e — "the Ticker icons in portfolio are very blurry".
+ *
+ * The reporter asked for PNGs; the icons already WERE PNGs, so the fix is not a
+ * format change. CoinGecko serves each asset at three fixed sizes chosen by the
+ * path segment, and the built-in map was pinned to the 50px one while the
+ * widest slot paints 40 CSS px — 80 physical px on the 2x display the report's
+ * screenshot was taken on.
+ *
+ * These sizes are an INDEPENDENT ORACLE, not a re-read of the source: they were
+ * measured on 2026-08-13 by fetching all 14 URLs and reading the decoded image
+ * dimensions, so this table cannot drift into agreement with a regression the
+ * way a constant imported from the component would.
+ */
+const COINGECKO_VARIANT_PX: Record<string, number> = {
+  thumb: 25,
+  small: 50,
+  large: 250,
+};
+
+/** Widest slot the component paints (`sizeMap.xl`), at a 2x device pixel ratio. */
+const WIDEST_SLOT_PHYSICAL_PX = 40 * 2;
+
+describe("TokenIcon — built-in art is high enough resolution for its slot", () => {
+  const BUILT_IN_SYMBOLS = [
+    "ETH", "WETH", "BTC", "WBTC", "USDC", "USDT", "DAI",
+    "SOL", "MATIC", "ARB", "OP", "LINK", "UNI", "AAVE",
+  ];
+
+  it.each(BUILT_IN_SYMBOLS)(
+    "%s resolves to art at least as wide as the widest slot it is painted in",
+    (symbol) => {
+      render(<TokenIcon symbol={symbol} />);
+      // Assert on the RENDERED src — the artifact the browser actually fetches —
+      // rather than on the TOKEN_ICONS map, so wiring the map to the <img>
+      // incorrectly would also fail here.
+      const src = screen.getByRole("img").getAttribute("src") ?? "";
+
+      const variant = src.match(
+        /assets\.coingecko\.com\/coins\/images\/\d+\/([a-z]+)\//,
+      )?.[1];
+      expect(
+        variant,
+        `${symbol} should resolve to a recognised CoinGecko size variant, got: ${src}`,
+      ).toBeDefined();
+
+      const px = COINGECKO_VARIANT_PX[variant as string];
+      expect(
+        px,
+        `${symbol} uses unknown CoinGecko variant "${variant}" — add its measured size to COINGECKO_VARIANT_PX`,
+      ).toBeDefined();
+
+      // Reverting any URL to /small/ (50px) or /thumb/ (25px) fails here.
+      expect(
+        px,
+        `${symbol} ships ${px}px art into an ${WIDEST_SLOT_PHYSICAL_PX}px physical slot — it will render blurry (report 1e78983e)`,
+      ).toBeGreaterThanOrEqual(WIDEST_SLOT_PHYSICAL_PX);
+    },
+  );
+});

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-13T01:34:02.005Z",
+  "generated": "2026-08-13T06:06:53.915Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -44,8 +44,8 @@
   },
   "pagesHarvested": "2026-08-11",
   "stats": {
-    "total": 3915,
-    "titled": 3319,
+    "total": 3921,
+    "titled": 3325,
     "cited": 61,
     "bySection": {
       "home": {
@@ -238,9 +238,9 @@
         "cited": 0
       },
       "trade-2": {
-        "frames": 407,
-        "titled": 0,
-        "screens": 0,
+        "frames": 413,
+        "titled": 6,
+        "screens": 6,
         "nonScreen": 0,
         "cited": 0
       },
@@ -288,7 +288,7 @@
       }
     },
     "byReadiness": {
-      "ready": 2628,
+      "ready": 2634,
       "unknown": 24,
       "meta": 46,
       "wip": 472
@@ -401,10 +401,10 @@
       {
         "page": "✅ Trade 2",
         "readiness": "ready",
-        "rows": 407,
+        "rows": 413,
         "gone": 0,
         "live": 407,
-        "delta": 0
+        "delta": -6
       },
       {
         "page": "🌎 Cover Images - Skai Originals",
@@ -27457,7 +27457,10 @@
       "page": "✅ Trade 2",
       "readiness": "ready",
       "kind": "untitled",
-      "citedByFiles": [],
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/rightMenuChrome.test.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
       "implFiles": [
         "src/components/trench-redesign/discover/HotkeysMenu.tsx"
       ],
@@ -28517,7 +28520,9 @@
       "page": "✅ Trade 2",
       "readiness": "ready",
       "kind": "untitled",
-      "citedByFiles": [],
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
       "implFiles": [
         "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
       ],
@@ -34236,12 +34241,13 @@
         "src/pages/predict/PredictRewards.tsx"
       ],
       "implFiles": [
+        "src/components/rewards/PredictRewardsSection.tsx",
         "src/pages/predict/PredictRewards.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Structure shipped + real market list/prices/SKAI-points. THE 375/768 REGRESSION IS FIXED 2026-08-05. RewardsMarketTable used to reach small screens by HIDING cells - Min. Shares and Competitiveness below lg, Reward and Earnings below md - so a phone lost all four of the figures this screen is built around, silently, with no heading and no reason left behind. That is strictly worse than the honest em dash those cells carry, because an absent row reads as 'this screen has nothing to say' rather than 'this number has no source yet'. The row is now ONE DOM structure that restyles: a two-column stacked card below lg where every figure carries its own inline label, snapping to the frame's seven-column table at lg where the header strip returns. Two rendered copies behind lg:hidden / hidden lg:block was rejected - it duplicates every question, price and link in the a11y tree. Pinned by 4 new tests in tests/pages/predict/PredictRewards.test.tsx (labels present and not bare-hidden, no md:block/lg:block anywhere in a row, prices survive, header strip is lg-only). STILL PARTIAL: the rewards-program figures themselves (daily rewards, this month, min shares, competitiveness, reward, earnings) remain honest em dashes because no accrual backend exists; and the mobile frame's All/Elections/Primaries/Sports/Oscars chip row (OutcomeMarket has no category field), its All time-period select, its Open positions / Mergeable toggles, and the card '+' affordance (nothing in the repo defines what it adds) are not built. [vverify: partial | tmp/shots-predict/pv-rewards.png | Rewards renders exit-0. Verified numerically: header title plus subtitle, the two-tab segmented control Rewards/Open orders, Ask SKAI AI CTA, three stat tiles Daily rewards / This month / SKAI points each rendering an em dash with an explicit reason rather than a fake zero, search box, sort select, and the full Figma column set Market, Min. Shares, Competitiveness, Reward, Earnings, Price, Action. 2026-08-05: that full column set now survives every breakpoint - the four reward cells no longer carry a bare 'hidden', they restyle into a labelled 2x2 block below lg. MISSING vs Figma: the Sports/Oscars/Crypto/Business chip row is deliberately absent since OutcomeMarket has no category field; row-level content unverifiable, the binary venue returned no open markets locally.]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Structure shipped + real market list/prices/SKAI-points. THE 375/768 REGRESSION IS FIXED 2026-08-05. RewardsMarketTable used to reach small screens by HIDING cells - Min. Shares and Competitiveness below lg, Reward and Earnings below md - so a phone lost all four of the figures this screen is built around, silently, with no heading and no reason left behind. That is strictly worse than the honest em dash those cells carry, because an absent row reads as 'this screen has nothing to say' rather than 'this number has no source yet'. The row is now ONE DOM structure that restyles: a two-column stacked card below lg where every figure carries its own inline label, snapping to the frame's seven-column table at lg where the header strip returns. Two rendered copies behind lg:hidden / hidden lg:block was rejected - it duplicates every question, price and link in the a11y tree. Pinned by 4 new tests in tests/pages/predict/PredictRewards.test.tsx (labels present and not bare-hidden, no md:block/lg:block anywhere in a row, prices survive, header strip is lg-only). STILL PARTIAL: the rewards-program figures themselves (daily rewards, this month, min shares, competitiveness, reward, earnings) remain honest em dashes because no accrual backend exists; and the mobile frame's All/Elections/Primaries/Sports/Oscars chip row (OutcomeMarket has no category field), its All time-period select, its Open positions / Mergeable toggles, and the card '+' affordance (nothing in the repo defines what it adds) are not built. [vverify: partial | tmp/shots-predict/pv-rewards.png | Rewards renders exit-0. Verified numerically: header title plus subtitle, the two-tab segmented control Rewards/Open orders, Ask SKAI AI CTA, three stat tiles Daily rewards / This month / SKAI points each rendering an em dash with an explicit reason rather than a fake zero, search box, sort select, and the full Figma column set Market, Min. Shares, Competitiveness, Reward, Earnings, Price, Action. 2026-08-05: that full column set now survives every breakpoint - the four reward cells no longer carry a bare 'hidden', they restyle into a labelled 2x2 block below lg. MISSING vs Figma: the Sports/Oscars/Crypto/Business chip row is deliberately absent since OutcomeMarket has no category field; row-level content unverifiable, the binary venue returned no open markets locally.] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "8937-48702": {
       "section": "predict",
@@ -34263,12 +34269,13 @@
         "src/pages/predict/PredictRewards.tsx"
       ],
       "implFiles": [
-        "src/components/predict/rewards/OpenOrdersTable.tsx"
+        "src/components/predict/rewards/OpenOrdersTable.tsx",
+        "src/components/rewards/PredictRewardsSection.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Orders tab is routed + built but renders column headers + an honest 'no order book / limit orders not live' shell instead of the frame's order rows (both venues are CPMM, no resting orders); substance cannot render until an on-chain book ships. MOBILE FIXED 2026-08-05: the heading strip carried the same breakpoint-hiding as the Rewards table (Filled + Total below md, Expiration below lg), so at 375 only Market and Action survived. With no rows underneath, those five headings ARE this tab's content - the only place it says what an order will consist of once the book exists - so hiding three of five turned a stated-empty panel into a blank one. The strip now wraps at small widths and only snaps to the frame's fixed column geometry at lg. Pinned by a test that asserts all five headings render with no bare 'hidden'. [vverify: match | Rewards > Open orders. Tab switch driven and inventoried numerically: aria-selected moves to Open orders and the panel renders its own Figma column set Market, Filled, Total, Expiration, Action plus an explicit no-open-orders state explaining both venues are constant-product AMMs with no resting-order book. No fabricated order rows, no surplus controls]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Orders tab is routed + built but renders column headers + an honest 'no order book / limit orders not live' shell instead of the frame's order rows (both venues are CPMM, no resting orders); substance cannot render until an on-chain book ships. MOBILE FIXED 2026-08-05: the heading strip carried the same breakpoint-hiding as the Rewards table (Filled + Total below md, Expiration below lg), so at 375 only Market and Action survived. With no rows underneath, those five headings ARE this tab's content - the only place it says what an order will consist of once the book exists - so hiding three of five turned a stated-empty panel into a blank one. The strip now wraps at small widths and only snaps to the frame's fixed column geometry at lg. Pinned by a test that asserts all five headings render with no bare 'hidden'. [vverify: match | Rewards > Open orders. Tab switch driven and inventoried numerically: aria-selected moves to Open orders and the panel renders its own Figma column set Market, Filled, Total, Expiration, Action plus an explicit no-open-orders state explaining both venues are constant-product AMMs with no resting-order book. No fabricated order rows, no surplus controls] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "3562-40397": {
       "section": "predict",
@@ -34451,12 +34458,13 @@
       "family": "Rewards > drop downs",
       "citedByFiles": [],
       "implFiles": [
+        "src/components/rewards/PredictRewardsSection.tsx",
         "src/pages/predict/PredictRewards.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Dropdown-state frame; the rewards page ships a real sort Select + search control (SORT_LABELS), so the dropdown controls exist. The mobile open-state (10640-75179) sits over the stacked card layout, which now exists as of 2026-08-05, but this specific open-state frame is still not separately rendered or diffed. [vverify: match | Rewards > drop downs. Sub-state driven with frame-verify-steps exit-0 and inventoried numerically: the sort dropdown opens with exactly 3 real options Newest, Closing soonest, Highest Yes price, with aria-selected true on Newest. No surplus options, no dead entries. Honours designer note 3650-63719 that the control is now usable]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Dropdown-state frame; the rewards page ships a real sort Select + search control (SORT_LABELS), so the dropdown controls exist. The mobile open-state (10640-75179) sits over the stacked card layout, which now exists as of 2026-08-05, but this specific open-state frame is still not separately rendered or diffed. [vverify: match | Rewards > drop downs. Sub-state driven with frame-verify-steps exit-0 and inventoried numerically: the sort dropdown opens with exactly 3 real options Newest, Closing soonest, Highest Yes price, with aria-selected true on Newest. No surplus options, no dead entries. Honours designer note 3650-63719 that the control is now usable] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "3288-23300": {
       "section": "predict",
@@ -35410,12 +35418,13 @@
       "family": "new",
       "citedByFiles": [],
       "implFiles": [
-        "src/lib/predict/sortModes.ts"
+        "src/pages/predict/PredictCategoryPage.tsx",
+        "src/lib/predict/categoryViews.ts"
       ],
-      "status": "partial",
-      "route": "/predict/all",
-      "notes": "`new` sorts by createdAt and self-heals on availability; frame 3350-32943 is structurally the root. [vverify: partial | new sort mode. Available only when a venue reports createdAt; on the local feed no market does, so the tab renders disabled with its reason. Cannot verify the active-new ordering without markets]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "status": "ready",
+      "route": "/predict/new",
+      "notes": "`new` sorts by createdAt and self-heals on availability; frame 3350-32943 is structurally the root. [vverify: partial | new sort mode. Available only when a venue reports createdAt; on the local feed no market does, so the tab renders disabled with its reason. Cannot verify the active-new ordering without markets] CATALOG CORRECTED 2026-08-13 (wave-4 predict lane): this row said route=/predict/all impl=src/pages/predict/PredictPage.tsx, which was true while each category was an in-place filter on the merged grid. It is not true now. The seven frames ship as ONE component, src/pages/predict/PredictCategoryPage.tsx, routed per-slug from PREDICT_CATEGORY_VIEWS (src/lib/predict/categoryViews.ts) in src/App.tsx, and the pills that reach them go through predictCategoryHref. Verified against the frame: Frame 337 heading + the three icons/action (search/sliders/heart), Frame 403 second-row nav, the 390x224 3-up grid, 'Show more markets' and Frame 417 (Home/Help/Terms/Privacy + socials) all render. 427 predict tests pass; reverting predictCategoryHref turns 7 of them red.",
+      "verifiedAt": "2026-08-13"
     },
     "3358-34467": {
       "section": "predict",
@@ -35434,13 +35443,13 @@
       "family": "politics",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/predict/PredictPage.tsx",
-        "src/pages/predict/PredictPage.tsx + src/lib/predict/categorize.ts"
+        "src/pages/predict/PredictCategoryPage.tsx",
+        "src/lib/predict/categoryViews.ts"
       ],
-      "status": "partial",
-      "route": "/predict/all",
-      "notes": "Tab state, not a bespoke screen: the frame is the root skeleton with a different tab active. Verified by dumping the Figma subtree. [vverify: partial | politics category view. Verified numerically that clicking Politics moves aria-pressed and re-filters, and that the category row is computed from PREDICT_CATEGORIES so it is open-ended per designer note 3553-5509. The populated card grid could not be compared, feed empty locally]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "status": "ready",
+      "route": "/predict/politics",
+      "notes": "Tab state, not a bespoke screen: the frame is the root skeleton with a different tab active. Verified by dumping the Figma subtree. [vverify: partial | politics category view. Verified numerically that clicking Politics moves aria-pressed and re-filters, and that the category row is computed from PREDICT_CATEGORIES so it is open-ended per designer note 3553-5509. The populated card grid could not be compared, feed empty locally] CATALOG CORRECTED 2026-08-13 (wave-4 predict lane): this row said route=/predict/all impl=src/pages/predict/PredictPage.tsx, which was true while each category was an in-place filter on the merged grid. It is not true now. The seven frames ship as ONE component, src/pages/predict/PredictCategoryPage.tsx, routed per-slug from PREDICT_CATEGORY_VIEWS (src/lib/predict/categoryViews.ts) in src/App.tsx, and the pills that reach them go through predictCategoryHref. Verified against the frame: Frame 337 heading + the three icons/action (search/sliders/heart), Frame 403 second-row nav, the 390x224 3-up grid, 'Show more markets' and Frame 417 (Home/Help/Terms/Privacy + socials) all render. 427 predict tests pass; reverting predictCategoryHref turns 7 of them red.",
+      "verifiedAt": "2026-08-13"
     },
     "8823-130383": {
       "section": "predict",
@@ -35481,13 +35490,13 @@
       "family": "sports",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/predict/PredictPage.tsx",
-        "src/pages/predict/PredictPage.tsx + src/lib/predict/categorize.ts"
+        "src/pages/predict/PredictCategoryPage.tsx",
+        "src/lib/predict/categoryViews.ts"
       ],
-      "status": "partial",
-      "route": "/predict/all",
-      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | sports category view of /predict/all. Sports tab present and filterable; populated grid unverifiable on an empty feed]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "status": "ready",
+      "route": "/predict/sports",
+      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | sports category view of /predict/all. Sports tab present and filterable; populated grid unverifiable on an empty feed] CATALOG CORRECTED 2026-08-13 (wave-4 predict lane): this row said route=/predict/all impl=src/pages/predict/PredictPage.tsx, which was true while each category was an in-place filter on the merged grid. It is not true now. The seven frames ship as ONE component, src/pages/predict/PredictCategoryPage.tsx, routed per-slug from PREDICT_CATEGORY_VIEWS (src/lib/predict/categoryViews.ts) in src/App.tsx, and the pills that reach them go through predictCategoryHref. Verified against the frame: Frame 337 heading + the three icons/action (search/sliders/heart), Frame 403 second-row nav, the 390x224 3-up grid, 'Show more markets' and Frame 417 (Home/Help/Terms/Privacy + socials) all render. 427 predict tests pass; reverting predictCategoryHref turns 7 of them red.",
+      "verifiedAt": "2026-08-13"
     },
     "3456-3142": {
       "section": "predict",
@@ -35509,9 +35518,9 @@
         "src/components/predict-redesign/futures/PredictFuturesScreen.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 3456-3142; routed at App.tsx:968. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | tmp/shots-predict/pv-futures.png | CORRECTION to the earlier wired-verify pass: Futures is NOT zero-impl with no route. Built at src/components/predict-redesign/futures/PredictFuturesScreen.tsx mounted at /predict/futures behind REDESIGN_PREDICT. Verified exit-0 with the flag on: title Sports futures, category tab row derived from live events, and a futures-empty state stating there are no binary outcome markets on SKAI Chain yet. Ranking cards unverifiable, no markets locally. Note the data-model reconciliation is already documented in-file: Figma draws Futures as a multi-candidate ranking market which is the BINARY outcome model, not scalar]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 3456-3142; routed at App.tsx:968. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | tmp/shots-predict/pv-futures.png | CORRECTION to the earlier wired-verify pass: Futures is NOT zero-impl with no route. Built at src/components/predict-redesign/futures/PredictFuturesScreen.tsx mounted at /predict/futures behind REDESIGN_PREDICT. Verified exit-0 with the flag on: title Sports futures, category tab row derived from live events, and a futures-empty state stating there are no binary outcome markets on SKAI Chain yet. Ranking cards unverifiable, no markets locally. Note the data-model reconciliation is already documented in-file: Figma draws Futures as a multi-candidate ranking market which is the BINARY outcome model, not scalar] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "3538-22735": {
       "section": "predict",
@@ -35530,13 +35539,13 @@
       "family": "Crypto",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/predict/PredictPage.tsx",
-        "src/pages/predict/PredictPage.tsx + src/lib/predict/categorize.ts"
+        "src/pages/predict/PredictCategoryPage.tsx",
+        "src/lib/predict/categoryViews.ts"
       ],
-      "status": "partial",
-      "route": "/predict/all",
-      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | Crypto category view. Tab present in the inline row and filterable; populated grid unverifiable on an empty feed]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "status": "ready",
+      "route": "/predict/crypto",
+      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | Crypto category view. Tab present in the inline row and filterable; populated grid unverifiable on an empty feed] CATALOG CORRECTED 2026-08-13 (wave-4 predict lane): this row said route=/predict/all impl=src/pages/predict/PredictPage.tsx, which was true while each category was an in-place filter on the merged grid. It is not true now. The seven frames ship as ONE component, src/pages/predict/PredictCategoryPage.tsx, routed per-slug from PREDICT_CATEGORY_VIEWS (src/lib/predict/categoryViews.ts) in src/App.tsx, and the pills that reach them go through predictCategoryHref. Verified against the frame: Frame 337 heading + the three icons/action (search/sliders/heart), Frame 403 second-row nav, the 390x224 3-up grid, 'Show more markets' and Frame 417 (Home/Help/Terms/Privacy + socials) all render. 427 predict tests pass; reverting predictCategoryHref turns 7 of them red.",
+      "verifiedAt": "2026-08-13"
     },
     "3546-25568": {
       "section": "predict",
@@ -35555,13 +35564,13 @@
       "family": "Finance",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/predict/PredictPage.tsx",
-        "src/pages/predict/PredictPage.tsx + src/lib/predict/categorize.ts"
+        "src/pages/predict/PredictCategoryPage.tsx",
+        "src/lib/predict/categoryViews.ts"
       ],
-      "status": "partial",
-      "route": "/predict/all",
-      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | Finance category view. Tab present in the inline row; populated grid unverifiable on an empty feed]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "status": "ready",
+      "route": "/predict/finance",
+      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | Finance category view. Tab present in the inline row; populated grid unverifiable on an empty feed] CATALOG CORRECTED 2026-08-13 (wave-4 predict lane): this row said route=/predict/all impl=src/pages/predict/PredictPage.tsx, which was true while each category was an in-place filter on the merged grid. It is not true now. The seven frames ship as ONE component, src/pages/predict/PredictCategoryPage.tsx, routed per-slug from PREDICT_CATEGORY_VIEWS (src/lib/predict/categoryViews.ts) in src/App.tsx, and the pills that reach them go through predictCategoryHref. Verified against the frame: Frame 337 heading + the three icons/action (search/sliders/heart), Frame 403 second-row nav, the 390x224 3-up grid, 'Show more markets' and Frame 417 (Home/Help/Terms/Privacy + socials) all render. 427 predict tests pass; reverting predictCategoryHref turns 7 of them red.",
+      "verifiedAt": "2026-08-13"
     },
     "3550-4727": {
       "section": "predict",
@@ -35580,13 +35589,13 @@
       "family": "Tech",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/predict/PredictPage.tsx",
-        "src/pages/predict/PredictPage.tsx + src/lib/predict/categorize.ts"
+        "src/pages/predict/PredictCategoryPage.tsx",
+        "src/lib/predict/categoryViews.ts"
       ],
-      "status": "partial",
-      "route": "/predict/all",
-      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | Tech category view. Tab present with the Figma label Tech not Technology; populated grid unverifiable on an empty feed]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "status": "ready",
+      "route": "/predict/technology",
+      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | Tech category view. Tab present with the Figma label Tech not Technology; populated grid unverifiable on an empty feed] CATALOG CORRECTED 2026-08-13 (wave-4 predict lane): this row said route=/predict/all impl=src/pages/predict/PredictPage.tsx, which was true while each category was an in-place filter on the merged grid. It is not true now. The seven frames ship as ONE component, src/pages/predict/PredictCategoryPage.tsx, routed per-slug from PREDICT_CATEGORY_VIEWS (src/lib/predict/categoryViews.ts) in src/App.tsx, and the pills that reach them go through predictCategoryHref. Verified against the frame: Frame 337 heading + the three icons/action (search/sliders/heart), Frame 403 second-row nav, the 390x224 3-up grid, 'Show more markets' and Frame 417 (Home/Help/Terms/Privacy + socials) all render. 427 predict tests pass; reverting predictCategoryHref turns 7 of them red.",
+      "verifiedAt": "2026-08-13"
     },
     "3553-5220": {
       "section": "predict",
@@ -35605,13 +35614,13 @@
       "family": "Climate and Science",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/predict/PredictPage.tsx",
-        "src/pages/predict/PredictPage.tsx + src/lib/predict/categorize.ts"
+        "src/pages/predict/PredictCategoryPage.tsx",
+        "src/lib/predict/categoryViews.ts"
       ],
-      "status": "partial",
-      "route": "/predict/all",
-      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | Climate and Science category view. Tab present with the exact Figma label Climate & Science; populated grid unverifiable on an empty feed]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "status": "ready",
+      "route": "/predict/climate-science",
+      "notes": "Tab state of the root — verified against the Figma subtree. [vverify: partial | Climate and Science category view. Tab present with the exact Figma label Climate & Science; populated grid unverifiable on an empty feed] CATALOG CORRECTED 2026-08-13 (wave-4 predict lane): this row said route=/predict/all impl=src/pages/predict/PredictPage.tsx, which was true while each category was an in-place filter on the merged grid. It is not true now. The seven frames ship as ONE component, src/pages/predict/PredictCategoryPage.tsx, routed per-slug from PREDICT_CATEGORY_VIEWS (src/lib/predict/categoryViews.ts) in src/App.tsx, and the pills that reach them go through predictCategoryHref. Verified against the frame: Frame 337 heading + the three icons/action (search/sliders/heart), Frame 403 second-row nav, the 390x224 3-up grid, 'Show more markets' and Frame 417 (Home/Help/Terms/Privacy + socials) all render. 427 predict tests pass; reverting predictCategoryHref turns 7 of them red.",
+      "verifiedAt": "2026-08-13"
     },
     "3538-24807": {
       "section": "predict",
@@ -35843,9 +35852,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures detail. FuturesDetail.tsx exists and reuses the shared panels, chart, candidate rows and both settings gears. Reachable only by clicking a ranking card, and no futures events exist locally, so the detail could not be screenshotted. FIXED this pass: the two settings-gear buttons hand-drew their glyphs as inline svg paths; now FigmaGearIcon and FigmaSlidersIcon from @skai/ui/icons, zero hand-drawn path elements left in the file]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures detail. FuturesDetail.tsx exists and reuses the shared panels, chart, candidate rows and both settings gears. Reachable only by clicking a ranking card, and no futures events exist locally, so the detail could not be screenshotted. FIXED this pass: the two settings-gear buttons hand-drew their glyphs as inline svg paths; now FigmaGearIcon and FigmaSlidersIcon from @skai/ui/icons, zero hand-drawn path elements left in the file] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "8864-48712": {
       "section": "predict",
@@ -35867,9 +35876,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | tmp/shots-predict/pv-futures.png | Futures 1VH compact sample. Same route as 3456-3142 and renders exit-0; the compact-vs-full difference is unverifiable with no cards on the board]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | tmp/shots-predict/pv-futures.png | Futures 1VH compact sample. Same route as 3456-3142 and renders exit-0; the compact-vs-full difference is unverifiable with no cards on the board] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "8909-132564": {
       "section": "predict",
@@ -35891,9 +35900,9 @@
         "src/components/predict-redesign/futures/ParameterSettingsModal.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 8909-132564; per-candidate toggles drive the chart's real visibleMap. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: deferred | sports > Futures > Sample futures > Parameter settings. ParameterSettingsModal.tsx is built and wired, same reachability blocker as 8909-133735]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 8909-132564; per-candidate toggles drive the chart's real visibleMap. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: deferred | sports > Futures > Sample futures > Parameter settings. ParameterSettingsModal.tsx is built and wired, same reachability blocker as 8909-133735] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "8909-133735": {
       "section": "predict",
@@ -35915,9 +35924,9 @@
         "src/components/predict-redesign/futures/ChartSettingsModal.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 8909-133735; 6 real toggles wired to ChartToggles. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: deferred | sports > Futures > Sample futures > Chart settings. ChartSettingsModal.tsx is built and wired to a gear in FuturesDetail, but the modal sits two levels behind a futures event that does not exist locally, so it could not be opened for an exit-0 verify]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 8909-133735; 6 real toggles wired to ChartToggles. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: deferred | sports > Futures > Sample futures > Chart settings. ChartSettingsModal.tsx is built and wired to a gear in FuturesDetail, but the modal sits two levels behind a futures event that does not exist locally, so it could not be opened for an exit-0 verify] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "8909-138276": {
       "section": "predict",
@@ -35987,9 +35996,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: deferred | sports > Futures > Sample futures with resolved. The resolved branch in FuturesDetail renders a Yes/No settled pill instead of the buy buttons, but reaching it needs a resolved on-chain market, which this environment has none of]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: deferred | sports > Futures > Sample futures with resolved. The resolved branch in FuturesDetail renders a Yes/No settled pill instead of the buy buttons, but reaching it needs a resolved on-chain market, which this environment has none of] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "3345-31427": {
       "section": "predict",
@@ -36396,8 +36405,8 @@
       "implFiles": [],
       "status": "superseded",
       "route": null,
-      "notes": "SUPERSEDED by 8909-137997 per Casey's ruling of 2026-08-13. Do not implement this frame. It is the open panel for the older header 8575-81619 and draws a fixed three-item menu — New (active, clock icon) / Culture / Mentions. The canonical frame 8909-137997 disagrees on every item: 'New' is a SORT tab inline in the row (alongside Trending and Breaking, left of the divider), and 'Culture' and 'Mentions' do not exist in its taxonomy at all. Under 8909-137997 the More menu is the OVERFLOW of the category row — Iran and Geo-politics are drawn inline, so the menu holds News, Pop Culture, Entertainment, Community, Other. Implementing this row's three items instead would have orphaned all five of those, whose only affordance is that menu. Row KEPT for the record, per this catalog's convention. Its panel chrome is NOT in dispute (8909-137997 draws only the closed trigger) and matches what ships: green-coal-200 #122524 fill, green-coal-100 #123F3C border, 8px padding and gap, 12px panel radius, 4px item radius, Manrope 14/18 -0.04em, active item filled green-coal-100.",
-      "verifiedAt": null
+      "notes": "SUPERSEDED by 8909-137997 per Casey's ruling of 2026-08-13. Do not implement this frame. It is the open panel for the older header 8575-81619 and draws a fixed three-item menu — New (active, clock icon) / Culture / Mentions. The canonical frame 8909-137997 disagrees on every item: 'New' is a SORT tab inline in the row (alongside Trending and Breaking, left of the divider), and 'Culture' and 'Mentions' do not exist in its taxonomy at all. Under 8909-137997 the More menu is the OVERFLOW of the category row — Iran and Geo-politics are drawn inline, so the menu holds News, Pop Culture, Entertainment, Community, Other. Implementing this row's three items instead would have orphaned all five of those, whose only affordance is that menu. Row KEPT for the record, per this catalog's convention. Its panel chrome is NOT in dispute (8909-137997 draws only the closed trigger) and matches what ships: green-coal-200 #122524 fill, green-coal-100 #123F3C border, 8px padding and gap, 12px panel radius, 4px item radius, Manrope 14/18 -0.04em, active item filled green-coal-100. OWNER RULING 2026-08-13: node 8909-137997 is CANONICAL for the 'More' menu and THIS node ('dropdown-more', New / Culture / Mentions) is SUPERSEDED. They disagree on every measurement. 'Culture' and 'Mentions' are not filters or routes the app implements; More is the derived overflow of taxonomy categories with no dedicated view (categoriesWithoutView(), src/lib/predict/categoryViews.ts). Report 5a0cfeaf asked for the New/Culture/Mentions triple and is closed against this ruling.",
+      "verifiedAt": "2026-08-13"
     },
     "10312-16920": {
       "section": "predict",
@@ -38471,12 +38480,13 @@
       "family": "Rewards",
       "citedByFiles": [],
       "implFiles": [
+        "src/components/rewards/PredictRewardsSection.tsx",
         "src/pages/predict/PredictRewards.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Structure shipped + real market list/prices/SKAI-points. THE 375/768 REGRESSION IS FIXED 2026-08-05. RewardsMarketTable used to reach small screens by HIDING cells - Min. Shares and Competitiveness below lg, Reward and Earnings below md - so a phone lost all four of the figures this screen is built around, silently, with no heading and no reason left behind. That is strictly worse than the honest em dash those cells carry, because an absent row reads as 'this screen has nothing to say' rather than 'this number has no source yet'. The row is now ONE DOM structure that restyles: a two-column stacked card below lg where every figure carries its own inline label, snapping to the frame's seven-column table at lg where the header strip returns. Two rendered copies behind lg:hidden / hidden lg:block was rejected - it duplicates every question, price and link in the a11y tree. Pinned by 4 new tests in tests/pages/predict/PredictRewards.test.tsx (labels present and not bare-hidden, no md:block/lg:block anywhere in a row, prices survive, header strip is lg-only). STILL PARTIAL: the rewards-program figures themselves (daily rewards, this month, min shares, competitiveness, reward, earnings) remain honest em dashes because no accrual backend exists; and the mobile frame's All/Elections/Primaries/Sports/Oscars chip row (OutcomeMarket has no category field), its All time-period select, its Open positions / Mergeable toggles, and the card '+' affordance (nothing in the repo defines what it adds) are not built. [vverify: partial | Rewards, mobile 375x812. THE REAL MOBILE GAP THIS ROW NAMED IS FIXED 2026-08-05. The frame keeps every figure at 375 by turning each market into a stacked CARD - Min. Shares, Competitiveness, Reward, a plus affordance, then Yes/No prices and a View market link - where RewardsMarketTable.tsx shipped a desktop TABLE that HID those columns on small screens (Min. Shares + Competitiveness below lg, Reward + Earnings below md), so at 375 the user lost exactly the four numbers the frame is built around. The row is now ONE DOM structure that restyles rather than two rendered copies: a two-column grid card below lg where each figure carries its own inline label and the Yes/No prices span the width, overridden by lg:flex into the frame's seven-column table at lg where the header strip returns. Rendering a card subtree and a table subtree behind lg:hidden / hidden lg:block was rejected because it duplicates every question, price and link in the a11y tree. Guarded by 4 tests. STILL MISSING vs this frame: the All/Elections/Primaries/Sports/Oscars chip row (OutcomeMarket has no category field - an existing deliberate omission), the All time-period select, the Open positions / Mergeable toggles, and the card '+' affordance (no defined action anywhere in src, and a control that does nothing is a lie told with a button). The reward figures themselves stay honest em dashes; no accrual backend exists.]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Structure shipped + real market list/prices/SKAI-points. THE 375/768 REGRESSION IS FIXED 2026-08-05. RewardsMarketTable used to reach small screens by HIDING cells - Min. Shares and Competitiveness below lg, Reward and Earnings below md - so a phone lost all four of the figures this screen is built around, silently, with no heading and no reason left behind. That is strictly worse than the honest em dash those cells carry, because an absent row reads as 'this screen has nothing to say' rather than 'this number has no source yet'. The row is now ONE DOM structure that restyles: a two-column stacked card below lg where every figure carries its own inline label, snapping to the frame's seven-column table at lg where the header strip returns. Two rendered copies behind lg:hidden / hidden lg:block was rejected - it duplicates every question, price and link in the a11y tree. Pinned by 4 new tests in tests/pages/predict/PredictRewards.test.tsx (labels present and not bare-hidden, no md:block/lg:block anywhere in a row, prices survive, header strip is lg-only). STILL PARTIAL: the rewards-program figures themselves (daily rewards, this month, min shares, competitiveness, reward, earnings) remain honest em dashes because no accrual backend exists; and the mobile frame's All/Elections/Primaries/Sports/Oscars chip row (OutcomeMarket has no category field), its All time-period select, its Open positions / Mergeable toggles, and the card '+' affordance (nothing in the repo defines what it adds) are not built. [vverify: partial | Rewards, mobile 375x812. THE REAL MOBILE GAP THIS ROW NAMED IS FIXED 2026-08-05. The frame keeps every figure at 375 by turning each market into a stacked CARD - Min. Shares, Competitiveness, Reward, a plus affordance, then Yes/No prices and a View market link - where RewardsMarketTable.tsx shipped a desktop TABLE that HID those columns on small screens (Min. Shares + Competitiveness below lg, Reward + Earnings below md), so at 375 the user lost exactly the four numbers the frame is built around. The row is now ONE DOM structure that restyles rather than two rendered copies: a two-column grid card below lg where each figure carries its own inline label and the Yes/No prices span the width, overridden by lg:flex into the frame's seven-column table at lg where the header strip returns. Rendering a card subtree and a table subtree behind lg:hidden / hidden lg:block was rejected because it duplicates every question, price and link in the a11y tree. Guarded by 4 tests. STILL MISSING vs this frame: the All/Elections/Primaries/Sports/Oscars chip row (OutcomeMarket has no category field - an existing deliberate omission), the All time-period select, the Open positions / Mergeable toggles, and the card '+' affordance (no defined action anywhere in src, and a control that does nothing is a lie told with a button). The reward figures themselves stay honest em dashes; no accrual backend exists.] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10657-232076": {
       "section": "predict",
@@ -38495,12 +38505,13 @@
       "family": "Rewards",
       "citedByFiles": [],
       "implFiles": [
+        "src/components/rewards/PredictRewardsSection.tsx",
         "src/pages/predict/PredictRewards.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Structure shipped + real market list/prices/SKAI-points. THE 375/768 REGRESSION IS FIXED 2026-08-05. RewardsMarketTable used to reach small screens by HIDING cells - Min. Shares and Competitiveness below lg, Reward and Earnings below md - so a phone lost all four of the figures this screen is built around, silently, with no heading and no reason left behind. That is strictly worse than the honest em dash those cells carry, because an absent row reads as 'this screen has nothing to say' rather than 'this number has no source yet'. The row is now ONE DOM structure that restyles: a two-column stacked card below lg where every figure carries its own inline label, snapping to the frame's seven-column table at lg where the header strip returns. Two rendered copies behind lg:hidden / hidden lg:block was rejected - it duplicates every question, price and link in the a11y tree. Pinned by 4 new tests in tests/pages/predict/PredictRewards.test.tsx (labels present and not bare-hidden, no md:block/lg:block anywhere in a row, prices survive, header strip is lg-only). STILL PARTIAL: the rewards-program figures themselves (daily rewards, this month, min shares, competitiveness, reward, earnings) remain honest em dashes because no accrual backend exists; and the mobile frame's All/Elections/Primaries/Sports/Oscars chip row (OutcomeMarket has no category field), its All time-period select, its Open positions / Mergeable toggles, and the card '+' affordance (nothing in the repo defines what it adds) are not built. [vverify: partial | Rewards 1VH, tablet 768. The column-hiding gap this row inherited from 10640-28003 is FIXED 2026-08-05 and it is fixed AT 768 specifically: the stacked-card layout runs below lg, so a 768 viewport now renders Min. Shares and Competitiveness with inline labels instead of dropping them. Same remaining gaps as 10640-28003. Classified against 10640-28003, not separately rendered.]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Structure shipped + real market list/prices/SKAI-points. THE 375/768 REGRESSION IS FIXED 2026-08-05. RewardsMarketTable used to reach small screens by HIDING cells - Min. Shares and Competitiveness below lg, Reward and Earnings below md - so a phone lost all four of the figures this screen is built around, silently, with no heading and no reason left behind. That is strictly worse than the honest em dash those cells carry, because an absent row reads as 'this screen has nothing to say' rather than 'this number has no source yet'. The row is now ONE DOM structure that restyles: a two-column stacked card below lg where every figure carries its own inline label, snapping to the frame's seven-column table at lg where the header strip returns. Two rendered copies behind lg:hidden / hidden lg:block was rejected - it duplicates every question, price and link in the a11y tree. Pinned by 4 new tests in tests/pages/predict/PredictRewards.test.tsx (labels present and not bare-hidden, no md:block/lg:block anywhere in a row, prices survive, header strip is lg-only). STILL PARTIAL: the rewards-program figures themselves (daily rewards, this month, min shares, competitiveness, reward, earnings) remain honest em dashes because no accrual backend exists; and the mobile frame's All/Elections/Primaries/Sports/Oscars chip row (OutcomeMarket has no category field), its All time-period select, its Open positions / Mergeable toggles, and the card '+' affordance (nothing in the repo defines what it adds) are not built. [vverify: partial | Rewards 1VH, tablet 768. The column-hiding gap this row inherited from 10640-28003 is FIXED 2026-08-05 and it is fixed AT 768 specifically: the stacked-card layout runs below lg, so a 768 viewport now renders Min. Shares and Competitiveness with inline labels instead of dropping them. Same remaining gaps as 10640-28003. Classified against 10640-28003, not separately rendered.] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10657-233202": {
       "section": "predict",
@@ -38519,12 +38530,13 @@
       "family": "Rewards > drop downs",
       "citedByFiles": [],
       "implFiles": [
+        "src/components/rewards/PredictRewardsSection.tsx",
         "src/pages/predict/PredictRewards.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Dropdown-state frame; the rewards page ships a real sort Select + search control (SORT_LABELS), so the dropdown controls exist. The mobile open-state (10640-75179) sits over the stacked card layout, which now exists as of 2026-08-05, but this specific open-state frame is still not separately rendered or diffed. [vverify: partial | Rewards > drop downs 1VH, tablet 768. Same as 10640-75179. Classified, not separately rendered]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Dropdown-state frame; the rewards page ships a real sort Select + search control (SORT_LABELS), so the dropdown controls exist. The mobile open-state (10640-75179) sits over the stacked card layout, which now exists as of 2026-08-05, but this specific open-state frame is still not separately rendered or diffed. [vverify: partial | Rewards > drop downs 1VH, tablet 768. Same as 10640-75179. Classified, not separately rendered] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10657-233689": {
       "section": "predict",
@@ -38591,12 +38603,13 @@
       "family": "Rewards > Open orders",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/predict/rewards/OpenOrdersTable.tsx"
+        "src/components/predict/rewards/OpenOrdersTable.tsx",
+        "src/components/rewards/PredictRewardsSection.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Orders tab is routed + built but renders column headers + an honest 'no order book / limit orders not live' shell instead of the frame's order rows (both venues are CPMM, no resting orders); substance cannot render until an on-chain book ships. MOBILE FIXED 2026-08-05: the heading strip carried the same breakpoint-hiding as the Rewards table (Filled + Total below md, Expiration below lg), so at 375 only Market and Action survived. With no rows underneath, those five headings ARE this tab's content - the only place it says what an order will consist of once the book exists - so hiding three of five turned a stated-empty panel into a blank one. The strip now wraps at small widths and only snaps to the frame's fixed column geometry at lg. Pinned by a test that asserts all five headings render with no bare 'hidden'. [vverify: partial | Rewards > Open orders 1VH, tablet 768. Same fix as 10640-30558 applies here: Expiration was hidden below lg and is now visible at 768. Remaining gap is the one that cannot be closed in this repo - no resting-order book exists on a CPMM venue. Classified, not separately rendered.]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Orders tab is routed + built but renders column headers + an honest 'no order book / limit orders not live' shell instead of the frame's order rows (both venues are CPMM, no resting orders); substance cannot render until an on-chain book ships. MOBILE FIXED 2026-08-05: the heading strip carried the same breakpoint-hiding as the Rewards table (Filled + Total below md, Expiration below lg), so at 375 only Market and Action survived. With no rows underneath, those five headings ARE this tab's content - the only place it says what an order will consist of once the book exists - so hiding three of five turned a stated-empty panel into a blank one. The strip now wraps at small widths and only snaps to the frame's fixed column geometry at lg. Pinned by a test that asserts all five headings render with no bare 'hidden'. [vverify: partial | Rewards > Open orders 1VH, tablet 768. Same fix as 10640-30558 applies here: Expiration was hidden below lg and is now visible at 768. Remaining gap is the one that cannot be closed in this repo - no resting-order book exists on a CPMM venue. Classified, not separately rendered.] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10640-75179": {
       "section": "predict",
@@ -38615,12 +38628,13 @@
       "family": "Rewards > drop downs",
       "citedByFiles": [],
       "implFiles": [
+        "src/components/rewards/PredictRewardsSection.tsx",
         "src/pages/predict/PredictRewards.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Dropdown-state frame; the rewards page ships a real sort Select + search control (SORT_LABELS), so the dropdown controls exist. The mobile open-state (10640-75179) sits over the stacked card layout, which now exists as of 2026-08-05, but this specific open-state frame is still not separately rendered or diffed. [vverify: partial | Rewards > drop downs 1VH, mobile 375. The sort control itself is real - three live options, verified on desktop as 3558-39458 - and as of 2026-08-05 the mobile card layout this open state sits over DOES now exist (RewardsMarketTable stacks below lg). Held at partial only because this open-state frame has still not been separately rendered or diffed. Classified against 10640-28003.]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Dropdown-state frame; the rewards page ships a real sort Select + search control (SORT_LABELS), so the dropdown controls exist. The mobile open-state (10640-75179) sits over the stacked card layout, which now exists as of 2026-08-05, but this specific open-state frame is still not separately rendered or diffed. [vverify: partial | Rewards > drop downs 1VH, mobile 375. The sort control itself is real - three live options, verified on desktop as 3558-39458 - and as of 2026-08-05 the mobile card layout this open state sits over DOES now exist (RewardsMarketTable stacks below lg). Held at partial only because this open-state frame has still not been separately rendered or diffed. Classified against 10640-28003.] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10640-75727": {
       "section": "predict",
@@ -38687,12 +38701,13 @@
       "family": "Rewards > Open orders",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/predict/rewards/OpenOrdersTable.tsx"
+        "src/components/predict/rewards/OpenOrdersTable.tsx",
+        "src/components/rewards/PredictRewardsSection.tsx"
       ],
       "status": "partial",
-      "route": "/predict/rewards",
-      "notes": "Orders tab is routed + built but renders column headers + an honest 'no order book / limit orders not live' shell instead of the frame's order rows (both venues are CPMM, no resting orders); substance cannot render until an on-chain book ships. MOBILE FIXED 2026-08-05: the heading strip carried the same breakpoint-hiding as the Rewards table (Filled + Total below md, Expiration below lg), so at 375 only Market and Action survived. With no rows underneath, those five headings ARE this tab's content - the only place it says what an order will consist of once the book exists - so hiding three of five turned a stated-empty panel into a blank one. The strip now wraps at small widths and only snaps to the frame's fixed column geometry at lg. Pinned by a test that asserts all five headings render with no bare 'hidden'. [vverify: partial | Rewards > Open orders 1VH, mobile 375. The panel is built and renders an honest no-resting-orders notice because both venues are CPMM, so the frame's order rows cannot exist - that part is correct and unfixable here. The mobile-specific gap this row named IS FIXED 2026-08-05: OpenOrdersTable hid Filled and Total below md and Expiration below lg, so at 375 only Market and Action survived. With no rows underneath, the five headings ARE this tab's content - the only place it states what an order will consist of once a book ships - so the strip now wraps at small widths and snaps to the frame's fixed column geometry only at lg. Guarded by a test asserting all five headings render with no bare 'hidden'.]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/rewards",
+      "notes": "Orders tab is routed + built but renders column headers + an honest 'no order book / limit orders not live' shell instead of the frame's order rows (both venues are CPMM, no resting orders); substance cannot render until an on-chain book ships. MOBILE FIXED 2026-08-05: the heading strip carried the same breakpoint-hiding as the Rewards table (Filled + Total below md, Expiration below lg), so at 375 only Market and Action survived. With no rows underneath, those five headings ARE this tab's content - the only place it says what an order will consist of once the book exists - so hiding three of five turned a stated-empty panel into a blank one. The strip now wraps at small widths and only snaps to the frame's fixed column geometry at lg. Pinned by a test that asserts all five headings render with no bare 'hidden'. [vverify: partial | Rewards > Open orders 1VH, mobile 375. The panel is built and renders an honest no-resting-orders notice because both venues are CPMM, so the frame's order rows cannot exist - that part is correct and unfixable here. The mobile-specific gap this row named IS FIXED 2026-08-05: OpenOrdersTable hid Filled and Total below md and Expiration below lg, so at 375 only Market and Action survived. With no rows underneath, the five headings ARE this tab's content - the only place it states what an order will consist of once a book ships - so the strip now wraps at small widths and snaps to the frame's fixed column geometry only at lg. Guarded by a test asserting all five headings render with no bare 'hidden'.] ROUTE CORRECTED 2026-08-13 (owner ruling): predict rewards is a SECTION of the one system-wide /rewards page — src/components/rewards/PredictRewardsSection.tsx, rendered by src/pages/rewards/Rewards.tsx. /predict/rewards stays routed and redirects there (src/App.tsx), so old links land. Every element moved verbatim: RewardsStatTiles, RewardsMarketTable, OpenOrdersTable. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10636-87947": {
       "section": "predict",
@@ -39508,9 +39523,9 @@
         "src/components/predict-redesign/futures/PredictFuturesScreen.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Mobile (10597-66077, 10710-131349) and tablet (10654-208482, 10710-132635) tier of the futures list: heading, three-tab nav, and ranking cards (\"Premier League winner\", \"2nd/3rd Place winner\", \"Last place\", \"Relegated club\") whose rows are avatar + percentage + probability bar - which is FuturesMarketCard, and the screen grid collapses to one column below lg. Held at partial because /predict/futures only renders this screen when REDESIGN_PREDICT is on (src/config/features.ts:210, defaults OFF; the route otherwise falls back to legacy <Predict/>), and no 375/768 composition was authored or diffed against these frames. [vverify: partial | Sports futures, mobile 375. PredictFuturesScreen collapses to one column below lg and FuturesMarketCard is the frame's avatar + percentage + probability-bar ranking row. Held at partial: flag-gated OFF, and the board has no binary outcome markets so the screen renders its futures-empty state - the ranking cards themselves could not be compared at 375. Classified from source, not rendered]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Mobile (10597-66077, 10710-131349) and tablet (10654-208482, 10710-132635) tier of the futures list: heading, three-tab nav, and ranking cards (\"Premier League winner\", \"2nd/3rd Place winner\", \"Last place\", \"Relegated club\") whose rows are avatar + percentage + probability bar - which is FuturesMarketCard, and the screen grid collapses to one column below lg. Held at partial because /predict/futures only renders this screen when REDESIGN_PREDICT is on (src/config/features.ts:210, defaults OFF; the route otherwise falls back to legacy <Predict/>), and no 375/768 composition was authored or diffed against these frames. [vverify: partial | Sports futures, mobile 375. PredictFuturesScreen collapses to one column below lg and FuturesMarketCard is the frame's avatar + percentage + probability-bar ranking row. Held at partial: flag-gated OFF, and the board has no binary outcome markets so the screen renders its futures-empty state - the ranking cards themselves could not be compared at 375. Classified from source, not rendered] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10710-131349": {
       "section": "predict",
@@ -39532,9 +39547,9 @@
         "src/components/predict-redesign/futures/PredictFuturesScreen.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Mobile (10597-66077, 10710-131349) and tablet (10654-208482, 10710-132635) tier of the futures list: heading, three-tab nav, and ranking cards (\"Premier League winner\", \"2nd/3rd Place winner\", \"Last place\", \"Relegated club\") whose rows are avatar + percentage + probability bar - which is FuturesMarketCard, and the screen grid collapses to one column below lg. Held at partial because /predict/futures only renders this screen when REDESIGN_PREDICT is on (src/config/features.ts:210, defaults OFF; the route otherwise falls back to legacy <Predict/>), and no 375/768 composition was authored or diffed against these frames. [vverify: partial | Sports futures 1VH, mobile 375. Same as 10597-66077]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Mobile (10597-66077, 10710-131349) and tablet (10654-208482, 10710-132635) tier of the futures list: heading, three-tab nav, and ranking cards (\"Premier League winner\", \"2nd/3rd Place winner\", \"Last place\", \"Relegated club\") whose rows are avatar + percentage + probability bar - which is FuturesMarketCard, and the screen grid collapses to one column below lg. Held at partial because /predict/futures only renders this screen when REDESIGN_PREDICT is on (src/config/features.ts:210, defaults OFF; the route otherwise falls back to legacy <Predict/>), and no 375/768 composition was authored or diffed against these frames. [vverify: partial | Sports futures 1VH, mobile 375. Same as 10597-66077] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10654-208482": {
       "section": "predict",
@@ -39556,9 +39571,9 @@
         "src/components/predict-redesign/futures/PredictFuturesScreen.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Mobile (10597-66077, 10710-131349) and tablet (10654-208482, 10710-132635) tier of the futures list: heading, three-tab nav, and ranking cards (\"Premier League winner\", \"2nd/3rd Place winner\", \"Last place\", \"Relegated club\") whose rows are avatar + percentage + probability bar - which is FuturesMarketCard, and the screen grid collapses to one column below lg. Held at partial because /predict/futures only renders this screen when REDESIGN_PREDICT is on (src/config/features.ts:210, defaults OFF; the route otherwise falls back to legacy <Predict/>), and no 375/768 composition was authored or diffed against these frames. [vverify: partial | Sports futures, tablet 768. Same as 10597-66077]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Mobile (10597-66077, 10710-131349) and tablet (10654-208482, 10710-132635) tier of the futures list: heading, three-tab nav, and ranking cards (\"Premier League winner\", \"2nd/3rd Place winner\", \"Last place\", \"Relegated club\") whose rows are avatar + percentage + probability bar - which is FuturesMarketCard, and the screen grid collapses to one column below lg. Held at partial because /predict/futures only renders this screen when REDESIGN_PREDICT is on (src/config/features.ts:210, defaults OFF; the route otherwise falls back to legacy <Predict/>), and no 375/768 composition was authored or diffed against these frames. [vverify: partial | Sports futures, tablet 768. Same as 10597-66077] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10710-132635": {
       "section": "predict",
@@ -39580,9 +39595,9 @@
         "src/components/predict-redesign/futures/PredictFuturesScreen.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Mobile (10597-66077, 10710-131349) and tablet (10654-208482, 10710-132635) tier of the futures list: heading, three-tab nav, and ranking cards (\"Premier League winner\", \"2nd/3rd Place winner\", \"Last place\", \"Relegated club\") whose rows are avatar + percentage + probability bar - which is FuturesMarketCard, and the screen grid collapses to one column below lg. Held at partial because /predict/futures only renders this screen when REDESIGN_PREDICT is on (src/config/features.ts:210, defaults OFF; the route otherwise falls back to legacy <Predict/>), and no 375/768 composition was authored or diffed against these frames. [vverify: partial | Sports futures 1VH, tablet 768. Same as 10597-66077]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Mobile (10597-66077, 10710-131349) and tablet (10654-208482, 10710-132635) tier of the futures list: heading, three-tab nav, and ranking cards (\"Premier League winner\", \"2nd/3rd Place winner\", \"Last place\", \"Relegated club\") whose rows are avatar + percentage + probability bar - which is FuturesMarketCard, and the screen grid collapses to one column below lg. Held at partial because /predict/futures only renders this screen when REDESIGN_PREDICT is on (src/config/features.ts:210, defaults OFF; the route otherwise falls back to legacy <Predict/>), and no 375/768 composition was authored or diffed against these frames. [vverify: partial | Sports futures 1VH, tablet 768. Same as 10597-66077] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10657-228631": {
       "section": "predict",
@@ -39652,9 +39667,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures - full, mobile 375. FuturesDetail.tsx is a real build and DetailRow carries sm: breakpoints so the candidate rows reflow. Held at partial because /predict/futures only renders it when REDESIGN_PREDICT is on and that flag defaults OFF, and because the screen is reachable only through a futures event, of which the chain has none - so no populated 375 composition could be compared. Classified from source, not rendered]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures - full, mobile 375. FuturesDetail.tsx is a real build and DetailRow carries sm: breakpoints so the candidate rows reflow. Held at partial because /predict/futures only renders it when REDESIGN_PREDICT is on and that flag defaults OFF, and because the screen is reachable only through a futures event, of which the chain has none - so no populated 375 composition could be compared. Classified from source, not rendered] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10597-70807": {
       "section": "predict",
@@ -39676,9 +39691,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures 1VH, mobile 375. Same as 10597-69175]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures 1VH, mobile 375. Same as 10597-69175] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10597-71622": {
       "section": "predict",
@@ -39700,9 +39715,9 @@
         "src/components/predict-redesign/futures/ParameterSettingsModal.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 8909-132564; per-candidate toggles drive the chart's real visibleMap. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures > Parameter settings 1VH, mobile 375. ParameterSettingsModal.tsx is built and wired to a real gear, and its toggles drive the chart's visibleMap. Two levels behind a futures event that does not exist, so the 375 modal could not be opened. Classified from source, not rendered]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 8909-132564; per-candidate toggles drive the chart's real visibleMap. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures > Parameter settings 1VH, mobile 375. ParameterSettingsModal.tsx is built and wired to a real gear, and its toggles drive the chart's visibleMap. Two levels behind a futures event that does not exist, so the 375 modal could not be opened. Classified from source, not rendered] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10597-72437": {
       "section": "predict",
@@ -39724,9 +39739,9 @@
         "src/components/predict-redesign/futures/ChartSettingsModal.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 8909-133735; 6 real toggles wired to ChartToggles. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures > Chart settings 1VH, mobile 375. ChartSettingsModal.tsx is built with 6 real toggles wired to ChartToggles. Same reachability blocker. Classified from source, not rendered]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 8909-133735; 6 real toggles wired to ChartToggles. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures > Chart settings 1VH, mobile 375. ChartSettingsModal.tsx is built with 6 real toggles wired to ChartToggles. Same reachability blocker. Classified from source, not rendered] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10597-69990": {
       "section": "predict",
@@ -39748,9 +39763,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Mobile (10597-69990) and tablet (10654-207667) state of the resolved-candidate reveal. FuturesDetail.tsx:136 and 215-229 implement the real control - \"Show resolved (N)\" / \"Hide resolved\" over live markets whose status is resolved - and DetailRow carries sm: breakpoints so it reflows. Partial for the same two reasons as its parent screen: gated behind REDESIGN_PREDICT (default OFF) and never diffed at 375/768. [vverify: partial | sports > Futures > Sample futures > show resolved, mobile 375. FuturesDetail.tsx:136 and 215-229 implement the real Show resolved N / Hide resolved control over markets whose status is resolved. Same two blockers as its parent: REDESIGN_PREDICT defaults OFF and no resolved futures market exists to reveal. Classified from source, not rendered]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Mobile (10597-69990) and tablet (10654-207667) state of the resolved-candidate reveal. FuturesDetail.tsx:136 and 215-229 implement the real control - \"Show resolved (N)\" / \"Hide resolved\" over live markets whose status is resolved - and DetailRow carries sm: breakpoints so it reflows. Partial for the same two reasons as its parent screen: gated behind REDESIGN_PREDICT (default OFF) and never diffed at 375/768. [vverify: partial | sports > Futures > Sample futures > show resolved, mobile 375. FuturesDetail.tsx:136 and 215-229 implement the real Show resolved N / Hide resolved control over markets whose status is resolved. Same two blockers as its parent: REDESIGN_PREDICT defaults OFF and no resolved futures market exists to reveal. Classified from source, not rendered] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10654-207667": {
       "section": "predict",
@@ -39772,9 +39787,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Mobile (10597-69990) and tablet (10654-207667) state of the resolved-candidate reveal. FuturesDetail.tsx:136 and 215-229 implement the real control - \"Show resolved (N)\" / \"Hide resolved\" over live markets whose status is resolved - and DetailRow carries sm: breakpoints so it reflows. Partial for the same two reasons as its parent screen: gated behind REDESIGN_PREDICT (default OFF) and never diffed at 375/768. [vverify: partial | sports > Futures > Sample futures > show resolved, tablet 768. Same as 10597-69990]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Mobile (10597-69990) and tablet (10654-207667) state of the resolved-candidate reveal. FuturesDetail.tsx:136 and 215-229 implement the real control - \"Show resolved (N)\" / \"Hide resolved\" over live markets whose status is resolved - and DetailRow carries sm: breakpoints so it reflows. Partial for the same two reasons as its parent screen: gated behind REDESIGN_PREDICT (default OFF) and never diffed at 375/768. [vverify: partial | sports > Futures > Sample futures > show resolved, tablet 768. Same as 10597-69990] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10657-210195": {
       "section": "predict",
@@ -39796,9 +39811,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures - full, tablet 768. Same as 10597-69175]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures - full, tablet 768. Same as 10597-69175] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10657-211010": {
       "section": "predict",
@@ -39820,9 +39835,9 @@
         "src/components/predict-redesign/futures/FuturesDetail.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures 1VH, tablet 768. Same as 10597-69175]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 3471-7251, 3531-21220, 8864-48712. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures 1VH, tablet 768. Same as 10597-69175] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10657-211823": {
       "section": "predict",
@@ -39844,9 +39859,9 @@
         "src/components/predict-redesign/futures/ParameterSettingsModal.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 8909-132564; per-candidate toggles drive the chart's real visibleMap. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures > Parameter settings 1VH, tablet 768. Same as 10597-71622]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 8909-132564; per-candidate toggles drive the chart's real visibleMap. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures > Parameter settings 1VH, tablet 768. Same as 10597-71622] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10657-212636": {
       "section": "predict",
@@ -39868,9 +39883,9 @@
         "src/components/predict-redesign/futures/ChartSettingsModal.tsx"
       ],
       "status": "partial",
-      "route": "/predict/futures",
-      "notes": "Cites 8909-133735; 6 real toggles wired to ChartToggles. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures > Chart settings 1VH, tablet 768. Same as 10597-72437]",
-      "verifiedAt": "2026-08-12T01:37:49.548Z"
+      "route": "/predict/all?type=futures",
+      "notes": "Cites 8909-133735; 6 real toggles wired to ChartToggles. ★ Behind REDESIGN_PREDICT, which DEFAULTS OFF (src/config/features.ts:210) — built and merged but not visible in production. Flip via the feature_flags table, no redeploy. [vverify: partial | sports > Futures > Sample futures > Chart settings 1VH, tablet 768. Same as 10597-72437] ROUTE CORRECTED 2026-08-13 (owner ruling): /predict/futures is now a REDIRECT to /predict/all?type=futures (src/App.tsx). Futures was never a fourth venue — it is a market-TYPE view of the merged grid. The screen itself is unchanged and still mounted: PredictPage renders src/components/predict-redesign/futures/PredictFuturesScreen.tsx for that type. A re-home, not a delete.",
+      "verifiedAt": "2026-08-13"
     },
     "10594-58911": {
       "section": "predict",
@@ -41133,8 +41148,8 @@
         "modules/skai-gaming/src/pages/play/SportsbookPage.tsx"
       ],
       "status": "partial",
-      "route": "none",
-      "notes": "BUILT READ-ONLY BY CONSTRUCTION and deliberately NOT routed. onPlace/onSubmit are never passed, so no path reaches relay-bet. ★ Three verified blockers: odds-proxy returns live HTTP 401 (key provisioned, value revoked); sports_settlement_logs silent since 2026-04-27 while its crons report ~32k successes; SKAISportsbook reports eventCount()=0 and betCount()=0. Plus the pricing multiplies AMERICAN odds by the wager (odds -106 x 50 stored potential_payout -5300). Route it when the key is replaced and events sync. [vverify: partial | /home/skai/.claude/jobs/6c09754a/tmp/shots/fig-4841-sportsbook.png | only bet-slip fragments built (BetSlip/QuickBet/BetPanel/BetNotification); full sportsbook page not built or routed]",
+      "route": "/play/sportsbook",
+      "notes": "BUILT READ-ONLY BY CONSTRUCTION and ROUTED at /play/sportsbook (src/App.tsx:1345-1355) — the earlier \"deliberately NOT routed\" note was stale, corrected 2026-08-13. onPlace/onSubmit are never passed, so no path reaches relay-bet. ★ Three verified blockers: odds-proxy returns live HTTP 401 (key provisioned, value revoked); sports_settlement_logs silent since 2026-04-27 while its crons report ~32k successes; SKAISportsbook reports eventCount()=0 and betCount()=0. Plus the pricing multiplies AMERICAN odds by the wager (odds -106 x 50 stored potential_payout -5300). Route it when the key is replaced and events sync. [vverify: partial | /home/skai/.claude/jobs/6c09754a/tmp/shots/fig-4841-sportsbook.png | only bet-slip fragments built (BetSlip/QuickBet/BetPanel/BetNotification); full sportsbook page not built or routed]",
       "verifiedAt": "2026-08-12T01:37:49.548Z"
     },
     "4765-64029": {
@@ -41386,8 +41401,8 @@
         "modules/skai-gaming/src/pages/play/SportsbookPage.tsx"
       ],
       "status": "partial",
-      "route": "none",
-      "notes": "BUILT READ-ONLY BY CONSTRUCTION and deliberately NOT routed. onPlace/onSubmit are never passed, so no path reaches relay-bet. ★ Three verified blockers: odds-proxy returns live HTTP 401 (key provisioned, value revoked); sports_settlement_logs silent since 2026-04-27 while its crons report ~32k successes; SKAISportsbook reports eventCount()=0 and betCount()=0. Plus the pricing multiplies AMERICAN odds by the wager (odds -106 x 50 stored potential_payout -5300). Route it when the key is replaced and events sync. [vverify: partial | sportsbook 1VH; only bet-slip fragments built, full page not routed]",
+      "route": "/play/sportsbook",
+      "notes": "BUILT READ-ONLY BY CONSTRUCTION and ROUTED at /play/sportsbook (src/App.tsx:1345-1355) — the earlier \"deliberately NOT routed\" note was stale, corrected 2026-08-13. onPlace/onSubmit are never passed, so no path reaches relay-bet. ★ Three verified blockers: odds-proxy returns live HTTP 401 (key provisioned, value revoked); sports_settlement_logs silent since 2026-04-27 while its crons report ~32k successes; SKAISportsbook reports eventCount()=0 and betCount()=0. Plus the pricing multiplies AMERICAN odds by the wager (odds -106 x 50 stored potential_payout -5300). Route it when the key is replaced and events sync. [vverify: partial | sportsbook 1VH; only bet-slip fragments built, full page not routed]",
       "verifiedAt": "2026-08-12T01:37:49.548Z"
     },
     "4601-61559": {
@@ -41666,7 +41681,7 @@
       ],
       "status": "not-started",
       "route": "—",
-      "notes": "BUILT (pure client prefs, no backend). Not mounted — host owns persistence. Blocked only by the sportsbook page being unrouted. [vverify: not-wired | sportsbook bet-slip settings view; QuickBet exposes a settings cog only, settings panel not built]",
+      "notes": "BUILT (pure client prefs, no backend). Not mounted — host owns persistence. NOT blocked by routing — SportsbookPage is routed at /play/sportsbook (src/App.tsx:1345-1355); this drawer simply has no mount site yet because no host owns the colour preference. Corrected 2026-08-13. [vverify: not-wired | sportsbook bet-slip settings view; QuickBet exposes a settings cog only, settings panel not built]",
       "verifiedAt": "2026-08-12T01:37:49.548Z"
     },
     "4689-45587": {
@@ -42126,8 +42141,8 @@
         "modules/skai-gaming/src/components/play/sportsbook/BetNotification.tsx"
       ],
       "status": "partial",
-      "route": "none",
-      "notes": "Mounted by SportsbookPage (unrouted). Uses its message override so it never composes a money value. [vverify: partial | BetNotification built (node 4896-86341); not routed]",
+      "route": "/play/sportsbook",
+      "notes": "Mounted by SportsbookPage, which IS routed at /play/sportsbook (src/App.tsx:1345-1355) — the earlier \"(unrouted)\" note was stale, corrected 2026-08-13. Uses its message override so it never composes a money value. [vverify: partial | BetNotification built (node 4896-86341); not routed]",
       "verifiedAt": "2026-08-12T01:37:49.548Z"
     },
     "9103-162908": {
@@ -43142,8 +43157,8 @@
         "modules/skai-gaming/src/pages/play/SportsbookPage.tsx"
       ],
       "status": "partial",
-      "route": "none",
-      "notes": "BUILT READ-ONLY BY CONSTRUCTION and deliberately NOT routed. onPlace/onSubmit are never passed, so no path reaches relay-bet. ★ Three verified blockers: odds-proxy returns live HTTP 401 (key provisioned, value revoked); sports_settlement_logs silent since 2026-04-27 while its crons report ~32k successes; SKAISportsbook reports eventCount()=0 and betCount()=0. Plus the pricing multiplies AMERICAN odds by the wager (odds -106 x 50 stored potential_payout -5300). Route it when the key is replaced and events sync. [vverify: partial | BetSlip built (sportsbook right-panel betslip); not routed]",
+      "route": "/play/sportsbook",
+      "notes": "BUILT READ-ONLY BY CONSTRUCTION and ROUTED at /play/sportsbook (src/App.tsx:1345-1355) — the earlier \"deliberately NOT routed\" note was stale, corrected 2026-08-13. onPlace/onSubmit are never passed, so no path reaches relay-bet. ★ Three verified blockers: odds-proxy returns live HTTP 401 (key provisioned, value revoked); sports_settlement_logs silent since 2026-04-27 while its crons report ~32k successes; SKAISportsbook reports eventCount()=0 and betCount()=0. Plus the pricing multiplies AMERICAN odds by the wager (odds -106 x 50 stored potential_payout -5300). Route it when the key is replaced and events sync. [vverify: partial | BetSlip built (sportsbook right-panel betslip); not routed]",
       "verifiedAt": "2026-08-12T01:37:49.548Z"
     },
     "9191-105864": {
@@ -43167,8 +43182,8 @@
         "modules/skai-gaming/src/pages/play/SportsbookPage.tsx"
       ],
       "status": "partial",
-      "route": "none",
-      "notes": "BUILT READ-ONLY BY CONSTRUCTION and deliberately NOT routed. onPlace/onSubmit are never passed, so no path reaches relay-bet. ★ Three verified blockers: odds-proxy returns live HTTP 401 (key provisioned, value revoked); sports_settlement_logs silent since 2026-04-27 while its crons report ~32k successes; SKAISportsbook reports eventCount()=0 and betCount()=0. Plus the pricing multiplies AMERICAN odds by the wager (odds -106 x 50 stored potential_payout -5300). Route it when the key is replaced and events sync. [vverify: partial | BetSlip ALT built (sportsbook betslip ALT); not routed]",
+      "route": "/play/sportsbook",
+      "notes": "BUILT READ-ONLY BY CONSTRUCTION and ROUTED at /play/sportsbook (src/App.tsx:1345-1355) — the earlier \"deliberately NOT routed\" note was stale, corrected 2026-08-13. onPlace/onSubmit are never passed, so no path reaches relay-bet. ★ Three verified blockers: odds-proxy returns live HTTP 401 (key provisioned, value revoked); sports_settlement_logs silent since 2026-04-27 while its crons report ~32k successes; SKAISportsbook reports eventCount()=0 and betCount()=0. Plus the pricing multiplies AMERICAN odds by the wager (odds -106 x 50 stored potential_payout -5300). Route it when the key is replaced and events sync. [vverify: partial | BetSlip ALT built (sportsbook betslip ALT); not routed]",
       "verifiedAt": "2026-08-12T01:37:49.548Z"
     },
     "4896-83571": {
@@ -68166,6 +68181,145 @@
       "notes": "",
       "verifiedAt": null
     },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7909-43414": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "7909-43414",
+      "title": "Skai > Trade > Perpetual futures > side bar collapsed rail (8 icons, Perps active)",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "screen": "Perpetual futures > side bar collapsed rail",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "Perpetual futures > side bar collapsed rail",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:9081-273544": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "9081-273544",
+      "title": "Skai > Trade > side bar - open - spot (8 rows: New chat / Perps / Spot / Swaps / Trench / Launch / Dashboard / Layout settings)",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "screen": "side bar - open - spot",
+      "variant": "open - spot",
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "side bar",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-252239": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-252239",
+      "title": "Skai > Trade > side bar > Trench disclosure header (OPEN state, green glyph on #052d2d)",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "screen": "side bar > Trench disclosure header",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "side bar > Trench disclosure header",
+      "citedByFiles": [
+        "src/components/home-redesign/HomeSidebarExpanded.surfaces.test.tsx",
+        "src/components/home-redesign/HomeSidebarExpanded.tsx",
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "implFiles": [
+        "src/components/home-redesign/HomeSidebarExpanded.tsx",
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:4018-42130": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "4018-42130",
+      "title": "Skai > Trade > Perpetual futures > positions panel, filled (no trailing refresh control)",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "screen": "Perpetual futures > positions panel, filled",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "Perpetual futures > positions panel, filled",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7890-134142": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "7890-134142",
+      "title": "Skai > Trade > Perpetual futures > order ticket checkbox block (Take profit/Stop loss, Hidden Order, Reduce Only)",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "screen": "Perpetual futures > order ticket checkbox block",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "Perpetual futures > order ticket checkbox block",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:3928-84939": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "3928-84939",
+      "title": "Skai > Trade > Perpetual futures > Adjust trade settings > Margin Mode (Cross / Isolated)",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "screen": "Perpetual futures > Adjust trade settings > Margin Mode",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "Perpetual futures > Adjust trade settings > Margin Mode",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null
+    },
     "M6r9FEn042UWTQD1zvy6GM:9691-12618": {
       "section": "fortune-wheel",
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -69704,6 +69858,1704 @@
       "status": "unknown",
       "route": null,
       "notes": "",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134366": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134366",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx",
+        "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx",
+        "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134370": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134370",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134371": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134371",
+      "title": "Trench title row — three chain badges (Solana / Base / BNB), 32x32 on an 8px gap",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "screen",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/networkIcons.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/networkIcons.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134372": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134372",
+      "title": "Chain badge — Solana (32px): black disc, #17F9B4 ring, gradient tri-bars",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "screen",
+      "citedByFiles": [
+        "modules/skai-ui/src/__tests__/figma-parity-shared-primitives.test.tsx",
+        "modules/skai-ui/src/figma-icons.tsx",
+        "src/components/trench-redesign/discover/networkIcons.tsx"
+      ],
+      "implFiles": [
+        "modules/skai-ui/src/figma-icons.tsx",
+        "src/components/trench-redesign/discover/networkIcons.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134373": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134373",
+      "title": "Chain badge — Base (32px): ⚠ BROKEN EXPORT, a flat #0052FF disc with a rectangular alpha slot, not the Base brandmark",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "screen",
+      "citedByFiles": [
+        "modules/skai-ui/src/figma-icons.tsx"
+      ],
+      "implFiles": [
+        "modules/skai-ui/src/figma-icons.tsx"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed. ⚠ DELIBERATELY NOT MATCHED (reports 24eb10ba / 4c512f03). Re-verified 2026-08-13 by rendering the node at 32px: the export is a flat #0052FF disc with a horizontal transparent slot knocked through its left half — not the Base brandmark. modules/skai-ui/src/figma-icons.tsx FigmaBaseChainIcon draws the real mark and is correct. FIX THE FIGMA ASSET, not the code.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134374": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134374",
+      "title": "Chain badge — BNB (32px): #3A3A3A disc + the modern BNB-Chain isometric cube in #F1B90A",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "screen",
+      "citedByFiles": [
+        "modules/skai-ui/src/figma-icons.tsx"
+      ],
+      "implFiles": [
+        "modules/skai-ui/src/figma-icons.tsx"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134382": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134382",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134384": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134384",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134387": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134387",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134400": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134400",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/MarketPulseBoard.tsx",
+        "src/components/trench-redesign/discover/TrenchColumn.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/MarketPulseBoard.tsx",
+        "src/components/trench-redesign/discover/TrenchColumn.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134402": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134402",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TrenchColumn.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TrenchColumn.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134411": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134411",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TrenchColumn.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TrenchColumn.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134417": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134417",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TrenchColumn.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TrenchColumn.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134424": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134424",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134427": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134427",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134428": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134428",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134436": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134436",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134451": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134451",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134456": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134456",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134459": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134459",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-134461": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-134461",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/TokenCard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-146207": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-146207",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/home-redesign/HomeTopBar.tsx"
+      ],
+      "implFiles": [
+        "src/components/home-redesign/HomeTopBar.tsx"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-147429": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-147429",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/home-redesign/HomeSidebarExpanded.surfaces.test.tsx"
+      ],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-147438": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-147438",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/home-redesign/HomeSidebarRail.tsx"
+      ],
+      "implFiles": [
+        "src/components/home-redesign/HomeSidebarRail.tsx"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-158489": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-158489",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.test.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-158510": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-158510",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-158556": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-158556",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-158563": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-158563",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-158615": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-158615",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-165048": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-165048",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/rightMenuChrome.test.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-165084": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-165084",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-165129": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-165129",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-165136": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-165136",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/hotkeyPrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/hotkeyPrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-165139": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-165139",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-165149": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-165149",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/HotkeysMenu.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.test.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/HotkeysMenu.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-165150": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-165150",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/rightMenuChrome.test.tsx"
+      ],
+      "implFiles": [],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-188668": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-188668",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx",
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx",
+        "src/components/trench-redesign/discover/TrenchColumn.tsx",
+        "src/components/trench-redesign/discover/pulsePrefs.ts",
+        "src/components/trench-redesign/discover/switchTheme.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx",
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx",
+        "src/components/trench-redesign/discover/TrenchColumn.tsx",
+        "src/components/trench-redesign/discover/pulsePrefs.ts",
+        "src/components/trench-redesign/discover/switchTheme.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-188669": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-188669",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-188671": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-188671",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-188676": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-188676",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-188681": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-188681",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-191509": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-191509",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx",
+        "src/components/trench-redesign/discover/TrenchColumn.tsx",
+        "src/components/trench-redesign/discover/pulsePrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx",
+        "src/components/trench-redesign/discover/TrenchColumn.tsx",
+        "src/components/trench-redesign/discover/pulsePrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-191527": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-191527",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/switchTheme.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/switchTheme.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-191528": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-191528",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-191552": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-191552",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-191558": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-191558",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx",
+        "src/components/trench-redesign/discover/TrenchColumn.tsx",
+        "src/components/trench-redesign/discover/pulsePrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx",
+        "src/components/trench-redesign/discover/TrenchColumn.tsx",
+        "src/components/trench-redesign/discover/pulsePrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-191568": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-191568",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/rightMenuChrome.test.tsx"
+      ],
+      "implFiles": [],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-191570": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-191570",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx",
+        "src/components/trench-redesign/discover/rightMenuChrome.test.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AlertsModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194608": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194608",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.test.tsx",
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194611": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194611",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194615": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194615",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.test.tsx",
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194616": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194616",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194629": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194629",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.test.tsx",
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194631": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194631",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194635": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194635",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194650": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194650",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/BlacklistModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194971": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194971",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/TokenCard.tsx",
+        "src/components/trench-redesign/discover/metricBands.ts",
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/TokenCard.tsx",
+        "src/components/trench-redesign/discover/metricBands.ts",
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194996": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194996",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-194999": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-194999",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-195005": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-195005",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-195011": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-195011",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-195126": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-195126",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-195245": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-195245",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-195269": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-195269",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-195278": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-195278",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+      ],
+      "status": "unknown",
+      "route": "/trench",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-201800": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-201800",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.test.tsx",
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-201813": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-201813",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-201814": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-201814",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-201815": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-201815",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-201816": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-201816",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-204639": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-204639",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-204656": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-204656",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-207496": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-207496",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx",
+        "src/components/trench-redesign/trade/instantTradePrefs.ts"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/OneClickTradeModal.tsx",
+        "src/components/trench-redesign/trade/instantTradePrefs.ts"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-210578": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-210578",
+      "title": "Token detail > Frame 443 — header row + chart (x=8 y=26 w=1047 h=608)",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "screen",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/PanelTabs.test.tsx",
+        "src/components/trench-redesign/trade/PanelTabs.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/PanelTabs.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-210579": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-210579",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/TradeHeader.tsx",
+        "src/components/trench-redesign/trade/TradeTerminal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/TradeHeader.tsx",
+        "src/components/trench-redesign/trade/TradeTerminal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-212012": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-212012",
+      "title": "Token detail > Frame 444 — trading-details section (x=8 y=640 w=1047 h=277), stacked UNDER Frame 443",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "screen",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/PanelTabs.test.tsx",
+        "src/components/trench-redesign/trade/PanelTabs.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/PanelTabs.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed. Report 19be4435. This section is stacked 6px UNDER Frame 443 (header + chart) in the same x=8 / w=1047 column, so the chart and the trading-details tables are on screen TOGETHER on the 1440 board. The app had them as mutually-exclusive primary tabs, which is why the space below the chart read as empty. Fixed >=lg in src/components/trench-redesign/trade/PanelTabs.tsx; the five-way switcher of 9899-106528 stays intact below lg (reports 2da42540 / 1be40cd0 / c3f30859).",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-212076": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-212076",
+      "title": "Token detail > Multi-panel - combined — right rail (x=1061 y=26 w=313 h=1740)",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "screen",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/PanelTabs.test.tsx",
+        "src/components/trench-redesign/trade/PanelTabs.tsx",
+        "src/components/trench-redesign/trade/TradeTerminal.test.tsx",
+        "src/components/trench-redesign/trade/TradeTerminal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/PanelTabs.tsx",
+        "src/components/trench-redesign/trade/TradeTerminal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-219554": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-219554",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/trench-redesign/trade/InstantTradeSettingsModal.tsx"
+      ],
+      "implFiles": [
+        "src/components/trench-redesign/trade/InstantTradeSettingsModal.tsx"
+      ],
+      "status": "unknown",
+      "route": "/crypto/:symbol",
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-252244": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-252244",
+      "title": "Skai > Trade > side bar > Trench disclosure children (\"internal\"): Alpha / PnL / Market Pulse",
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "screen",
+      "citedByFiles": [
+        "src/components/home-redesign/HomeSidebarExpanded.surfaces.test.tsx",
+        "src/components/home-redesign/HomeSidebarExpanded.tsx",
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "implFiles": [
+        "src/components/home-redesign/HomeSidebarExpanded.tsx",
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed. Report 7f6e79bc. The frame draws THREE children — Alpha (13006:252249), PnL (13006:252257) and Market Pulse (13006:252263). TRENCH_ROWS ships Alpha and Market Pulse only; PnL is withheld because it has no token-less destination — PositionsPanel filters on the token symbol and a sidebar row cannot supply one.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-252249": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-252249",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "implFiles": [
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-252257": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-252257",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "implFiles": [
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006-252263": {
+      "section": "trade-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13006-252263",
+      "title": null,
+      "page": "✅ Trade 2",
+      "readiness": "ready",
+      "kind": "untitled",
+      "citedByFiles": [
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "implFiles": [
+        "src/components/home-redesign/sidebarSurfaces.ts"
+      ],
+      "status": "unknown",
+      "route": null,
+      "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
       "verifiedAt": null
     }
   }

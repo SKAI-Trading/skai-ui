@@ -88,6 +88,9 @@ frames with plain design-state names like `Desktop Full Game - Roll Over`).
 | `pages.json` | **live page inventory** for every tracked file: pageId, pageName, readiness, liveChildren, which sections cover it | `use_figma` harvest | yes |
 | `registry.json` | **the master record** — one entry per frame (see below) | assembled from the above | no (assembly only) |
 | `components.tsv` | Figma published/local components: `name <TAB> id <TAB> variantProps` | `use_figma` enumeration | yes |
+| `bug-node-index.tsv` | **layer D** — every node-id referenced by an OPEN bug report, resolved to `{type, name, depth, owning screen, page, section}` | `getNodeByIdAsync` + parent walk | yes |
+| `FILE_ROUTING.md` | which Figma FILE each page really lives in, and why the "old file / retry in the live file" rule is wrong for most sections | `figma.root.children` per file | yes |
+| `TOKENS.md` | **layer E (started)** — Figma's radius scale vs the class we ship, with the conversion table | bound-variable read off 473 nodes | yes |
 
 ## registry.json — per-frame record
 
