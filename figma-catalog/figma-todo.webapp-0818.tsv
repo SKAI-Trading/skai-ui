@@ -1,0 +1,255 @@
+section	nodeId	change	title	why	implFiles
+governance	5370-60318 -> 11364-165058	RETARGET	sidebar - open earn	Same title, new node-id: the frame was REBUILT, not deleted. Repoint the catalog row and KEEP its implFiles/status/verifiedAt -- the code still implements it.	
+governance	11345-144081	ADDED	Skai > Explorer - customise 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11349-147772	ADDED	Transactions - with arrow	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11349-148815	ADDED	Active Projects - with data	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11345-145018	ADDED	With success/failure	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11345-146431	ADDED	Truncated ALT - NOT recommended	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11364-149679	ADDED	Skai > Yield vaults 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11303-133324	ADDED	Skai > Rewards > My referrals - empty (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11343-142862	ADDED	Skai > Learn > Skai university > Create course - Step 2 (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11343-142585	ADDED	Corser details - with video	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11342-142483	ADDED	Videoframe - before playing	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11307-134317	ADDED	Skai > Governance > Proposals ALT 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11309-136820	ADDED	Right menu	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11309-136155	ADDED	Governance settings	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11307-135124	ADDED	Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-138830	ADDED	Vault actions - deposit and unclaimed	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11405-100106	ADDED	Skai > Earn > Sample opportunity - save (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11405-103640	ADDED	Skai > Earn > Sample opportunity - save > Save (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11405-105088	ADDED	Skai > Earn > Sample opportunity - save > Save > Confirm save (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11405-100880	ADDED	Skai > Earn > Sample opportunity - Lend (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11405-101828	ADDED	Skai > Earn > Sample opportunity - Lend > Lend (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11405-102823	ADDED	Skai > Earn > Sample opportunity - Lend > Lend > Confirm lend (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11304-134283	ADDED	dropdown-proposals	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11306-134305	ADDED	dropdown-proposals	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11307-135045	ADDED	dropdown-proposals	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11364-165916	ADDED	sidebar - open governance	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11370-169091	ADDED	sidebar - open learn	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11370-182316	ADDED	sidebar - open explorer	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11303-134282	ADDED	Rectangle 167	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-139175	ADDED	Rectangle 168	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11344-144022	ADDED	Rectangle 169	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11405-103319	ADDED	Notes	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11302-129670	ADDED	dropdown-tiers	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11303-133248	ADDED	dropdown-tiers	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11303-134267	ADDED	dropdown-period	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11301-127843	ADDED	Skai > Account > Account settings > Security > 2FA > SMS (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11302-128586	ADDED	Skai > Account > Account settings > Security > Delete account (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11302-129536	ADDED	Notes	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11302-129701	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11303-133263	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11302-129708	ADDED	Skai > Leaderboard > Share portfolio 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11307-135079	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11307-135103	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-138124	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11309-136994	ADDED	Skai > Governance > Proposals > New proposal 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-138082	ADDED	DAO boost - met	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-138141	ADDED	dropdown-staking	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-139095	ADDED	dropdown-delegates	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-139110	ADDED	dropdown-delegate type	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-139153	ADDED	dropdown-delegate type	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-138452	ADDED	Claimed - not 100% represented	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-138456	ADDED	Claimed - not 100% represented - claimed	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11314-139131	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11322-142230	ADDED	dropdown-courses	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11344-143602	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11345-144023	ADDED	dropdown-main	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11345-146380	ADDED	dropdown-Active TWAPs	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11345-146410	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11349-148487	ADDED	Additional information	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11349-148646	ADDED	dropdown-multiselect	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11349-148686	ADDED	dropdown-addresses	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11349-148702	ADDED	dropdown-Chart	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11370-187312	ADDED	sidebar - open airdrop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	11370-188203	ADDED	sidebar - open yield vaults	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	13346-161181	ADDED	Directory	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	13346-161188	ADDED	Rectangle 162	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11410-140747	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11410-140757	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11410-140557	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11410-140559	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11341-20652	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11341-20654	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-85185	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-85187	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-169953	ADDED	modal	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-177484	ADDED	modal	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11407-106086	ADDED	Skai > Social > view story 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11407-107575	ADDED	Skai > Social > view story - my story 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11407-148353	ADDED	Skai > Social > view story - my story > Story settings 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11459-187396	ADDED	content	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11380-24252	ADDED	dropdown - right click	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-73530	ADDED	dropdown - right click	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-85209	ADDED	dropdown - tridots - reply	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-85199	ADDED	dropdown-group filter	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-85189	ADDED	dropdown-members	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11341-85236	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11341-88388	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11367-22805	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11380-23801	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11380-24302	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11365-21892	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11373-23253	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11365-22320	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11368-23343	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11373-23529	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11380-24565	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-74801	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11380-24969	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11373-22600	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11369-24298	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11373-22256	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11373-22885	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11341-88224	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-77450	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-79350	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-79037	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-78648	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-77014	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-81115	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-82297	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11400-90110	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11399-89108	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11400-90438	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11400-91695	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11400-92142	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11400-91347	ADDED	section	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-83498	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-84195	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-84777	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-84004	ADDED	section	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-81312	ADDED	Right menu	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-81450	ADDED	Right menu	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11396-76652	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-77975	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-85223	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-86869	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-87644	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-87282	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-86245	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-88883	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-85878	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11341-86042	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11381-26920	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-72789	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-73334	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11385-27845	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-72046	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11385-28161	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-29051	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-72346	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-73630	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-74491	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-74043	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-28789	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-70777	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-71039	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11387-71301	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11385-27529	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11381-26299	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11341-86906	ADDED	sidebar - open casino	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11341-87042	ADDED	sidebar - open casino	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11398-88650	ADDED	Right menu - token gated + rules	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11410-138568	ADDED	Skai > Launch > Live  (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11435-158497	ADDED	Skai > Launch > Live  (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-160938	ADDED	Skai > Launch > Live  (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11410-139136	ADDED	Skai > Launch > Live 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11438-159797	ADDED	Skai > Launch > Live 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-162043	ADDED	Skai > Launch > Live 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11407-148276	ADDED	dropdown-story tile	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11407-148320	ADDED	dropdown-story view	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-163219	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-164766	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-195806	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-197022	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-197684	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-198346	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-199116	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-199709	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-174134	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-175333	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-176880	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-175841	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-176349	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-177647	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-178053	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-178673	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-179814	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-179297	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-191228	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-174603	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-173646	ADDED	Skai > Play 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-163273	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-164397	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11455-183352	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-187585	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-188711	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-189346	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11459-185505	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-189925	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-165902	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-167339	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-168505	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-169153	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-170034	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-170567	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-171056	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-171969	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-172515	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-173004	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-167934	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-166576	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-173579	ADDED	modal	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-167200	ADDED	modal	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-165355	ADDED	Skai > Play 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-167104	ADDED	Caption - upload - AI generated	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11442-175111	ADDED	Caption - upload - AI generated	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-191825	ADDED	Skai > Launch > create token 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-192084	ADDED	Skai > Launch > create token > preview 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-192352	ADDED	Skai > Launch > create token 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-192611	ADDED	Skai > Launch > create token 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-192857	ADDED	Token image - with input	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-192912	ADDED	Token image - with input	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-192960	ADDED	Skai > Launch > create token 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-193256	ADDED	Skai > Launch > create token > preview 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-193561	ADDED	Skai > Launch > create token 1VH (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+social	11461-193857	ADDED	Token image - with input	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+governance	5460-89208	REMOVED	sidebar - open earn	Frame gone from Figma with no same-title replacement; catalog row is stale	
+governance	7528-156426	REMOVED	Nav of chart	Frame gone from Figma with no same-title replacement; catalog row is stale	
+governance	11272-125846	REMOVED	image 1	Frame gone from Figma with no same-title replacement; catalog row is stale	
+governance	5373-68430	RETITLED	Skai > Governance > Proposals > New proposal ALT 1VH (1440 x 900px)	was: Skai > Governance > Proposals > New proposal 1VH (1440 x 900px)	
+governance	10841-138986	RETITLED	Skai > Earn > Sample opportunity - liquidity (1440 x 900px)	was: Skai > Earn > Sample opportunity (1440 x 900px)	
+governance	10852-361479	RETITLED	Skai > Earn > Sample opportunity - liquidity > Add liquidity (1440 x 900px)	was: Skai > Earn > Sample opportunity > Add liquidity (1440 x 900px)	
+governance	11128-107161	RETITLED	Skai > Earn > Sample opportunity - liquidity > Add liquidity > Confirm liquidity add (1440 x 900px)	was: Skai > Earn > Sample opportunity > Add liquidity > Confirm liquidity add (1440 x 900px)	
+governance	11271-125083	RETITLED	Skai > Account > Account settings > Security > 2FA > Auth app (1440 x 900px)	was: Skai > Account > Performance overview > Share networth (1440 x 900px)	
+bingo	-	NOT-HARVESTED	-	10 catalogued frames were not covered by this snapshot; drift unknown	
+blackjack	-	NOT-HARVESTED	-	19 catalogued frames were not covered by this snapshot; drift unknown	
+chicken	-	NOT-HARVESTED	-	31 catalogued frames were not covered by this snapshot; drift unknown	
+coinflip	-	NOT-HARVESTED	-	37 catalogued frames were not covered by this snapshot; drift unknown	
+cover-images	-	NOT-HARVESTED	-	24 catalogued frames were not covered by this snapshot; drift unknown	
+crash	-	NOT-HARVESTED	-	17 catalogued frames were not covered by this snapshot; drift unknown	
+darts	-	NOT-HARVESTED	-	31 catalogued frames were not covered by this snapshot; drift unknown	
+dice	-	NOT-HARVESTED	-	34 catalogued frames were not covered by this snapshot; drift unknown	
+fortune-wheel	-	NOT-HARVESTED	-	25 catalogued frames were not covered by this snapshot; drift unknown	
+hilo	-	NOT-HARVESTED	-	20 catalogued frames were not covered by this snapshot; drift unknown	
+home	-	NOT-HARVESTED	-	222 catalogued frames were not covered by this snapshot; drift unknown	
+keno	-	NOT-HARVESTED	-	27 catalogued frames were not covered by this snapshot; drift unknown	
+legal	-	NOT-HARVESTED	-	10 catalogued frames were not covered by this snapshot; drift unknown	
+master-sheet	-	NOT-HARVESTED	-	46 catalogued frames were not covered by this snapshot; drift unknown	
+mines	-	NOT-HARVESTED	-	16 catalogued frames were not covered by this snapshot; drift unknown	
+onboarding	-	NOT-HARVESTED	-	151 catalogued frames were not covered by this snapshot; drift unknown	
+play	-	NOT-HARVESTED	-	345 catalogued frames were not covered by this snapshot; drift unknown	
+plinko	-	NOT-HARVESTED	-	20 catalogued frames were not covered by this snapshot; drift unknown	
+predict	-	NOT-HARVESTED	-	284 catalogued frames were not covered by this snapshot; drift unknown	
+pwa	-	NOT-HARVESTED	-	5 catalogued frames were not covered by this snapshot; drift unknown	
+rock-paper-scissors	-	NOT-HARVESTED	-	6 catalogued frames were not covered by this snapshot; drift unknown	
+skai-cross	-	NOT-HARVESTED	-	15 catalogued frames were not covered by this snapshot; drift unknown	
+skratch	-	NOT-HARVESTED	-	20 catalogued frames were not covered by this snapshot; drift unknown	
+towers	-	NOT-HARVESTED	-	63 catalogued frames were not covered by this snapshot; drift unknown	
+trade	-	NOT-HARVESTED	-	420 catalogued frames were not covered by this snapshot; drift unknown	
+trade-2	-	NOT-HARVESTED	-	495 catalogued frames were not covered by this snapshot; drift unknown	
+user-flow	-	NOT-HARVESTED	-	3 catalogued frames were not covered by this snapshot; drift unknown	
+video-poker	-	NOT-HARVESTED	-	14 catalogued frames were not covered by this snapshot; drift unknown	
+wallet	-	NOT-HARVESTED	-	178 catalogued frames were not covered by this snapshot; drift unknown	
+wallet-2	-	NOT-HARVESTED	-	182 catalogued frames were not covered by this snapshot; drift unknown	

@@ -1,17 +1,33 @@
 {
-  "generated": "2026-08-13T01:12:02.554Z",
+  "generated": "2026-08-19T04:09:36.261Z",
   "sections": {
     "home": {
       "status": "not-harvested",
-      "catalogued": 349
+      "catalogued": 222
+    },
+    "pwa": {
+      "status": "not-harvested",
+      "catalogued": 5
+    },
+    "home-2": {
+      "status": "not-harvested",
+      "catalogued": 127
     },
     "wallet": {
       "status": "not-harvested",
-      "catalogued": 361
+      "catalogued": 178
+    },
+    "wallet-2": {
+      "status": "not-harvested",
+      "catalogued": 182
     },
     "trade": {
       "status": "not-harvested",
-      "catalogued": 827
+      "catalogued": 420
+    },
+    "trade-2": {
+      "status": "not-harvested",
+      "catalogued": 495
     },
     "predict": {
       "status": "not-harvested",
@@ -22,25 +38,21 @@
       "catalogued": 345
     },
     "dice": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 34,
-      "live": 34,
-      "added": 0,
+      "live": 36,
+      "added": 2,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
-    "pwa": {
-      "status": "not-harvested",
-      "catalogued": 5
-    },
     "crash": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 17,
-      "live": 17,
-      "added": 0,
+      "live": 20,
+      "added": 3,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
@@ -48,10 +60,10 @@
       "retargets": []
     },
     "mines": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 16,
-      "live": 16,
-      "added": 0,
+      "live": 19,
+      "added": 3,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
@@ -59,10 +71,10 @@
       "retargets": []
     },
     "blackjack": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 19,
-      "live": 19,
-      "added": 0,
+      "live": 20,
+      "added": 1,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
@@ -115,13 +127,24 @@
       "catalogued": 46
     },
     "plinko": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 20,
-      "live": 20,
-      "added": 0,
-      "removed": 0,
+      "live": 22,
+      "added": 3,
+      "removed": 1,
       "retitled": 0,
-      "removedRows": [],
+      "removedRows": [
+        {
+          "id": "9104-6283",
+          "title": "Plinko Old",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/PlinkoGame.tsx"
+          ],
+          "status": "partial",
+          "notes": "★ 2026-08-05: the four board/panel defects recorded on 2026-08-05 are FIXED IN SOURCE against the frames; still `partial` because nothing was render-measured and the tablet/mobile tier is unbuilt. WHAT WAS FIXED. (1) PER-DIFFICULTY PALETTE. PlinkoGame.tsx now carries three ramps in PLINKO_BUCKET_RAMPS, each sampled bucket-by-bucket off its own frame: Easy (low) #90E3E7 #7DD4E7 #69C6E6 #57B8E6 #46ACE6 #349EE6 #2391E6 #1184E6 #0078E6 from 9069:6513; Medium #A1E03C #8ED639 #7ACD37 #67C334 #55BB31 #44B12F #34A72C #34A72C #1A9627 from 9095:5889; Hard (high) #E590F2 #DB85EE #D17CEB #C771E7 #BE68E3 #B45EE0 #AA55DC #A04CD9 #9744D5 from 9095:5332. Previously ONE ramp - the Easy one - was hardcoded and painted on all three, so Medium and Hard rendered the wrong colourway outright. (2) THE RAMP IS MIRRORED. Each array runs EDGE->CENTRE and getMultiplierSlotColor indexes it by distance from the centre bucket, so the row is symmetric exactly as all three frames draw it. The old getMultiplierSlotColors mapped t = index/(total-1) monotonically and colour-inverted the right half of every board; the comment asserting the frame was \"NOT a symmetric center-out ramp\" was itself the bug and is replaced - those nine stops were precisely the nine distinct colours of the mirrored HALF row. Resampling still works for the 8- and 12-row boards. Bucket chrome now matches too: flat fill instead of a vertical gradient, radius/border/foot held as the frame's ratios (4.565, 1.712 and 13.55 over 31.952 of slot height), inset bottom foot at rgba(0,0,0,0.2), the white 15% top highlight dropped (the frame has none), and text pinned to Green Coal 300 #001615 on every bucket rather than luminance-picked. (3) THREE BALL VARIANTS BUILT. 9137-10213/10215/10217 are flat 10px discs - confirmed from the exported SVGs, `<circle r=\"5\">` with a single fill - at #56C7F3 Easy, #3BFF00 Medium, #DC4CE9 Hard. drawGame drew one r=7 orange-red radial gradient with a 14px glow and a white specular for all three; it now draws a flat r=5 disc keyed off riskLevel. Ball hues are NOT the bucket hues (the balls are more saturated), so they live in their own PLINKO_BALL_COLOR map. (4) AUTO PANEL. Label is the frame's \"Number of Bets:\", the field accepts 0, an infinity affordance sits at its trailing edge where the frame's 16x7 glyph is, and 0 now genuinely means unlimited - burstDrop runs to POSITIVE_INFINITY, placing one REAL playPlinko settlement per ball until stopped. The 25-ball cap is now understood as a RENDER budget: long and unlimited runs WAIT for headroom per tick instead of being trimmed, so the \"Burst Trimmed\" toast is gone. CTA relabelled \"Bet\" per 9104:6251. (5) PEGS, found while verifying the above and fixed with it. The peg SVGs export byte-identical from the Easy and Medium frames (9069:5872 vs 9095:5373), so pegs are NOT per-difficulty - the board's risk colour is carried entirely by the buckets and the ball. The frame draws a FLAT WHITE circle, r=3.42339 on a 34.234 column pitch, i.e. exactly 0.1 of the pitch. The code painted #EAF7FE (near-white with a blue tint) at a hardcoded r=3; it now paints #ffffff and derives the radius as pegSpacingX * 0.1 so the ratio holds at 8, 12 and 16 rows rather than being right at one row count. The sky-blue glow is KEPT: the frame's peg group contains a second ellipse (\"Ellipse 38\") that exports EMPTY, which is how a blur/glow effect layer comes back, so the frame does have a glow layer whose parameters could not be read - the existing rgba(86,199,243,0.30) stands in for it and is the one peg property still unverified. Board-shaping controls (currency, difficulty, rows, arrow shortcuts) now gate on `boardLocked` = activeBallCount > 0 OR an Auto run still queueing, because an unlimited run outlives any one screenful of balls and the board could otherwise be empty mid-run. ★ DELIBERATE DEVIATIONS, each a judgement call not an oversight: the CTA reads \"Stop\" while an Auto run is queueing (the frame draws no stop state; an unlimited autobet cannot ship without one); Auto defaults to 1 bet rather than the frame's drawn 0, because that 0 is a placeholder of the same class as the frame's \"100\" bet amount and \"100.11 SKAI\" balance - the code has always defaulted the bet to 0.10, not 100 - and defaulting a real-money autobet to unlimited is not a default anyone chose; and the POINTS/SKAI/sUSD row is kept though the frame draws a single SKAI field, since the panel is the only place to pick the settlement rail. ★ FRAMES DECLINED, NOT BUILT. 9104-6283 \"Plinko Old\" is the superseded rainbow board that the three Mode frames replace. 9003-83784 is a mis-assembled tablet whose details card reads \"Crash  Skai Originals\" over BLACKJACK art with Crash body copy and Blackjack community-wins rows; its sibling 9003-82836 covers the same 768 viewport and is the tablet of record. 9175-9939 \"signals\" is a loose 135x18 design-system fragment (the \"100\" + coin row already implemented inside the bet-amount field), not a screen. 9137-12640 is 1080x1350 - a social-asset aspect, not a viewport - and is purple-gradient/orange-ball promo art in another product's visual language entirely, not SKAI's green-coal/sky-blue; it is borrowed reference art. 9137-10219 is a rival auto panel using \"Risk: Low/Medium/High\", the retired vocabulary that the three Mode frames (named Easy/Medium/Hard) and the canonical panel 9104-6170 (labelled \"Difficulty\") both supersede; the same retired segment appears on 9003-82836, 9003-83784 and 9137-11578 and is deliberately not reproduced anywhere. The five furniture frames 9003-72412 Directory, 9003-72420 Rectangle 147 and 9003-72418/72421/72423 Breakpoint are canvas scaffolding. ★ MIS-TITLED, KEPT: 9137-11578 is catalogued \"Skai > Play > Casino > Dice Mobile (375 x 812px)\" but is neither Dice nor 812 tall - it is a genuine Plinko mobile page at 375x1605 with correct Plinko copy. Fix the title upstream. ★ WHAT KEEPS THIS OFF `done`. No render/DOM measurement was taken this pass, so every verdict in vverify.plinko.tsv is source-verified only. The tablet and mobile tier draws the CTA ABOVE the fields with the board above the panel - the same inversion Mines ships at mobile, and a real device-tier difference - while the route still renders one left-panel layout at every width. Both tablet frames carry leftover Crash/Blackjack details-card copy, so the page furniture below the game cannot be built from them as drawn. ★ WHAT WAS ALREADY RIGHT AND IS UNTOUCHED: the detail page IS built and routed (/play/plinko -> PlinkoPage + PlinkoPageSections, same widget as the modal at variant=fullscreen), and the bucket VALUES match the frames element-for-element (Easy 16-row = 16x 9x 2x 1.4x 1.4x 1.2x 1.1x 1x 0.5x mirrored; Medium = 110x 41x 10x 5x 3x 1.5x 1x 0.5x 0.3x mirrored; Hard = 1K 130x 26x 9x 4x 2x 0.2x x5 mirrored), RE-VERIFIED THIS PASS by parsing both files: PlinkoGame.tsx and PlinkoTypes.ts:47 agree on all 9 risk/row tables with zero mismatches, and every row is symmetric about its centre - which independently corroborates that a MIRRORED colour ramp is the right model for the board. The other three copies (points-game:195, game-settlement:2488, and the Go chain plinkoBPS in gaming_settle_models.go:612) are carried over from the earlier audit and were NOT re-parsed this pass. Bucket selection is server-authoritative on both live rails; the client Math.random path is cosmetic and discarded before payout. Casino settles on POINTS, so an empty on-chain bet table is correct here, not a defect. ★ CAVEAT 1 (unchanged, still open): a SIXTH copy in gridGamesService.ts:753 has low/12 wrong in 11 of 13 buckets (31.2% edge vs the canonical 1.02%) and mints serverSeed in the browser - it is dead, and must never be wired up. ★ CAVEAT 2 (unchanged, still open): PlinkoGame.test.ts declares CLIENT_MULTIPLIERS and SERVER_MULTIPLIERS as two hardcoded literals INSIDE the test and compares them to each other, importing neither real source - exactly how the gridGames divergence survived. No _shared/plinko.ts exists, unlike every other game. ★ ACCESSIBILITY, shipped as-drawn and flagged for a designer decision: all 51 buckets across the three frames print #001615, including the deep centre stops, so the luminance-based white-text switch was removed. #001615 on Hard's #9744D5 measures about 2.8:1, under WCAG AA for 11px bold. ★ 2026-08-05 THE THREE PER-DIFFICULTY RAMPS ARE VERIFIED RENDERING, by sampling the live canvas rather than by reading source. /play/plinko loaded at 1440 (600x500 canvas, 1:1 backing store), and the bucket row was pixel-sampled at nine x positions across y = 0.92h after clicking each difficulty. Easy: #7dd4e7 #57b8e6 ... #0078e6 (centre) ... #57b8e6 #7dd4e7. Medium: #8ed639 #67c334 ... #1a9627 ... #67c334 #8ed639. Hard: #db85ee #c771e7 ... #9744d5 ... #c771e7 #db85ee. Every sampled stop is a literal member of that difficulty's PLINKO_BUCKET_RAMPS array, the three sets are disjoint, and each row is symmetric about the centre bucket (position 0 == 8, 1 == 7, 3 == 5) - which confirms BOTH fixes at once: the ramps are genuinely per-difficulty (Medium and Hard no longer paint the Easy colourway) and they are mirrored edge-to-centre rather than running monotonically and colour-inverting the right half. Difficulty switching repaints immediately. Stays partial: the tablet/mobile tier is still unbuilt and the peg/ball geometry has not been render-measured. ★★★ 2026-08-05: THREE REAL DEFECTS FOUND AND FIXED, and the board colourways closed against pixels rather than source. STILL PARTIAL, but only because of the three ball frames, which cannot be exercised on a 0-POINTS box. ★ DEFECT 1 - PLINKO WAS UNPLAYABLE ON A PHONE, and nobody had recorded it. PlinkoGame's widget body was `flex flex-row` at EVERY width while the bet panel is `shrink-0` at up to 356px, so at 375 the game area was left ~19px and, after its own px-4, the canvas MEASURED 0px WIDE - a player on a phone saw no board at all. This is the identical bug DiceGame had already fixed and Plinko never got. Now `flex flex-col lg:flex-row` with the board `order-1 lg:order-2` above the panel `order-2 lg:order-1`, the 356px cap and the divider border made lg-only, and the route's 720px height cap made lg-only so the stacked layout is not clipped by `overflow-hidden`. ★ DEFECT 2 - THE CANVAS NEVER RE-MEASURED. `setCanvasRef` is a ref callback: it fired once at mount and pinned the canvas to whatever the slot measured then, so the board was frozen for the life of the component and a rotate or a window drag never moved it. Worse, it overwrites `node.width`, which IS the element's intrinsic size, so a canvas that had once shrunk could only ever shrink further, never grow back. Fixed by measuring the SLOT's CONTENT BOX, fitting the largest 600x500-aspect box that fits, capping at the design size, and re-running it from a ResizeObserver gated on NO balls in flight (ball paths are generated in canvas coordinates at drop time, so resizing mid-flight would move a live bet's ball off its own path). ★ DEFECT 3 - the first fix measured `clientWidth`, which INCLUDES the slot's px-4; fitting against it over-measured by 32px, flex-shrink then clawed back only the width, and the board rendered at a 1.09 aspect instead of its 1.2. The padding is now subtracted explicitly and the canvas carries `shrink-0`. VERIFIED by a live round trip 1440 -> 375 -> 768 -> 1440: 600x500 -> 305x254 -> 379x316 -> 600x500, every one at the 1.2 design aspect, 0px overflow and exactly one CTA throughout. ★ THE MOBILE/TABLET CTA INVERSION IS BUILT, read off the frame rather than assumed: the mobile panel 9137:12151 orders its children CTA (9137:12152, y=12) -> bet amount + balance (9178:9330, y=80) -> risk (9137:12184, y=186) -> rows (9137:12200, y=266) -> Manual|Auto (9137:12209, y=348), with the board above it. Reproduced and measured at 375 (CTA 597, Bet amount 725, Balance 839, Difficulty 885, Rows 969, Manual|Auto 1029) and at 768, while desktop keeps its verified Manual|Auto-first / CTA-last order. ★ ALL THREE PER-DIFFICULTY BUCKET RAMPS ARE NOW RENDER-VERIFIED by reading the canvas back with getImageData - Easy, Medium and Hard each recover all nine stops in EDGE->CENTRE order, mirrored across 17 buckets, and Figma's #90CBE7 edge slip appears nowhere. That also retires the original defect on this family (the code used to paint Easy's cyan ramp on all three difficulties). Auto panel 9104-6170 verified by driving the real tab. REMAINING: 9137-10213 / 10215 / 10217, the three ball discs - a ball only exists while a drop is in flight and this box has a 0-POINTS balance, so the painted disc has never been seen. A funded rail closes them; nothing in the layout does. 9003-83784 and 9104-6283 stay deferred (mis-assembled rival, superseded 'Plinko Old'). [vverify: deferred | \"Plinko Old\" - declined by name and by content. Screenshot shows the SUPERSEDED board: a green/yellow/orange/red rainbow bucket row rather than any of the three per-difficulty ramps, on the same peg field. It is the direct ancestor of 9069-5304 / 9095-5369 / 9095-4812, which are the frames actually implemented. Building it would regress the board.]",
+          "verifiedAt": "2026-08-12T01:37:49.548Z"
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },
@@ -160,24 +183,177 @@
     },
     "social": {
       "status": "not-harvested",
-      "catalogued": 162
+      "catalogued": 161
     },
     "governance": {
       "status": "not-harvested",
-      "catalogued": 186
+      "catalogued": 200
     },
     "user-flow": {
       "status": "not-harvested",
       "catalogued": 3
     },
     "towers": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 63,
-      "live": 63,
-      "added": 0,
-      "removed": 0,
+      "live": 48,
+      "added": 4,
+      "removed": 19,
       "retitled": 0,
-      "removedRows": [],
+      "removedRows": [
+        {
+          "id": "9079-3157",
+          "title": "Rectangle 34624655",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3158",
+          "title": "Rectangle 34624656",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3160",
+          "title": "Rectangle 34624658",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3161",
+          "title": "Rectangle 34624659",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3163",
+          "title": "Rectangle 34624661",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3164",
+          "title": "Rectangle 34624662",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3166",
+          "title": "Rectangle 34624664",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3167",
+          "title": "Rectangle 34624665",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3169",
+          "title": "Rectangle 34624667",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3170",
+          "title": "Rectangle 34624668",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3172",
+          "title": "Rectangle 34624670",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3173",
+          "title": "Rectangle 34624671",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3175",
+          "title": "Rectangle 34624673",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3176",
+          "title": "Rectangle 34624674",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3178",
+          "title": "Rectangle 34624676",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3179",
+          "title": "Rectangle 34624677",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3181",
+          "title": "Rectangle 34624679",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3182",
+          "title": "Rectangle 34624680",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9494-4451",
+          "title": "Rectangle 34624758",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },
@@ -303,18 +479,6 @@
         }
       ]
     },
-    "home-2": {
-      "status": "not-harvested",
-      "catalogued": 127
-    },
-    "wallet-2": {
-      "status": "not-harvested",
-      "catalogued": 182
-    },
-    "trade-2": {
-      "status": "not-harvested",
-      "catalogued": 407
-    },
     "fortune-wheel": {
       "status": "clean",
       "catalogued": 25,
@@ -327,13 +491,134 @@
       "retargets": []
     },
     "skai-cross": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 15,
-      "live": 15,
-      "added": 0,
-      "removed": 0,
+      "live": 20,
+      "added": 20,
+      "removed": 15,
       "retitled": 0,
-      "removedRows": [],
+      "removedRows": [
+        {
+          "id": "9660-3",
+          "title": "SKAI Cross",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9660-4",
+          "title": "Page notes",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9661-10",
+          "title": "SkaiCross/Currency Tab",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9662-21",
+          "title": "SkaiCross/Difficulty Card",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9662-28",
+          "title": "SkaiCross/Lane Marker",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9662-38",
+          "title": "SkaiCross/HUD Chip",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9662-39",
+          "title": "SkaiCross/Stat Row",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9663-457",
+          "title": "Desktop - Betting — Medium (50%, 10 rows)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9669-153",
+          "title": "SkaiCross/Car",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9669-518",
+          "title": "Desktop - Playing — Medium (row 3 of 10)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9669-1019",
+          "title": "Desktop - Won — Medium (road complete, 972.80x)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9669-1520",
+          "title": "Desktop - Lost — Medium (crashed on row 3)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9669-2026",
+          "title": "Desktop - Difficulty Easy (75%, 10 rows, max 16.9x)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9669-2492",
+          "title": "Desktop - Difficulty Hard (25%, 6 rows, max 3891x)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9669-2966",
+          "title": "Local components",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },
@@ -351,24 +636,124 @@
     "bingo": {
       "status": "drift",
       "catalogued": 10,
-      "live": 13,
-      "added": 3,
-      "removed": 0,
+      "live": 16,
+      "added": 7,
+      "removed": 1,
       "retitled": 0,
-      "removedRows": [],
+      "removedRows": [
+        {
+          "id": "9750-1837",
+          "title": "Frame 1000004193",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },
     "rock-paper-scissors": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 6,
-      "live": 6,
-      "added": 0,
-      "removed": 0,
+      "live": 24,
+      "added": 24,
+      "removed": 6,
       "retitled": 0,
-      "removedRows": [],
-      "retargeted": 0,
-      "retargets": []
+      "removedRows": [
+        {
+          "id": "9737-11673",
+          "title": "Directory",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9737-11679",
+          "title": "Breakpoint",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9737-11681",
+          "title": "Breakpoint",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9737-11683",
+          "title": "Breakpoint",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9737-11685",
+          "title": "Skai > Play > Casino > Scratchers (1440 x 900px)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9737-12395",
+          "title": "Skai > Play > Casino > Blackjack (375 x 812px)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 5,
+      "retargets": [
+        {
+          "oldId": "9737-11673",
+          "newId": "9907-1583",
+          "title": "Directory"
+        },
+        {
+          "oldId": "9737-11679",
+          "newId": "9907-1589",
+          "title": "Breakpoint"
+        },
+        {
+          "oldId": "9737-11681",
+          "newId": "9907-1591",
+          "title": "Breakpoint"
+        },
+        {
+          "oldId": "9737-11683",
+          "newId": "9907-1593",
+          "title": "Breakpoint"
+        },
+        {
+          "oldId": "9737-12395",
+          "newId": "9907-2356",
+          "title": "Skai > Play > Casino > Blackjack (375 x 812px)"
+        }
+      ]
+    },
+    "limbo": {
+      "status": "new-section",
+      "live": 14
+    },
+    "slide": {
+      "status": "new-section",
+      "live": 17
+    },
+    "baccarat": {
+      "status": "new-section",
+      "live": 19
+    },
+    "roulette": {
+      "status": "new-section",
+      "live": 19
     }
   }
 }

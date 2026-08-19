@@ -1,8 +1,28 @@
 section	nodeId	change	title	why	implFiles
+plinko	9104-6283	REMOVED-WITH-WORK	Plinko Old	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	modules/skai-gaming/src/components/play/games/instant/PlinkoGame.tsx
 keno	9494-2150 -> 9680-3956	RETARGET	Frame 1000004044	Same title, new node-id: the frame was REBUILT, not deleted. Repoint the catalog row and KEEP its implFiles/status/verifiedAt -- the code still implements it.	
+rock-paper-scissors	9737-11673 -> 9907-1583	RETARGET	Directory	Same title, new node-id: the frame was REBUILT, not deleted. Repoint the catalog row and KEEP its implFiles/status/verifiedAt -- the code still implements it.	
+rock-paper-scissors	9737-11679 -> 9907-1589	RETARGET	Breakpoint	Same title, new node-id: the frame was REBUILT, not deleted. Repoint the catalog row and KEEP its implFiles/status/verifiedAt -- the code still implements it.	
+rock-paper-scissors	9737-11681 -> 9907-1591	RETARGET	Breakpoint	Same title, new node-id: the frame was REBUILT, not deleted. Repoint the catalog row and KEEP its implFiles/status/verifiedAt -- the code still implements it.	
+rock-paper-scissors	9737-11683 -> 9907-1593	RETARGET	Breakpoint	Same title, new node-id: the frame was REBUILT, not deleted. Repoint the catalog row and KEEP its implFiles/status/verifiedAt -- the code still implements it.	
+rock-paper-scissors	9737-12395 -> 9907-2356	RETARGET	Skai > Play > Casino > Blackjack (375 x 812px)	Same title, new node-id: the frame was REBUILT, not deleted. Repoint the catalog row and KEEP its implFiles/status/verifiedAt -- the code still implements it.	
+baccarat	-	NEW-SECTION	-	19 frames on a page with no catalog section at all	
+limbo	-	NEW-SECTION	-	14 frames on a page with no catalog section at all	
+roulette	-	NEW-SECTION	-	19 frames on a page with no catalog section at all	
+slide	-	NEW-SECTION	-	17 frames on a page with no catalog section at all	
+bingo	9807-5523	ADDED	Starting ALT	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 bingo	9794-12191	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 bingo	9794-12346	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-bingo	9794-12481	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+bingo	9798-12672	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+bingo	9798-13370	ADDED	Frame 1000004107	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+bingo	9798-13459	ADDED	Frame 1000004106	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+bingo	9798-13760	ADDED	Frame 1000004218	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+blackjack	10120-2358	ADDED	Screenshot 2026-08-18 at 11.14.31 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+crash	10120-3087	ADDED	Screenshot 2026-08-18 at 11.16.32 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+crash	10120-3088	ADDED	Screenshot 2026-08-18 at 11.17.21 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+crash	10120-3089	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+dice	10120-1004	ADDED	Screenshot 2026-08-18 at 11.10.54 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+dice	10120-1005	ADDED	Screenshot 2026-08-18 at 11.11.55 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 keno	9679-1296	ADDED	Group 306	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 keno	9680-5126	ADDED	Frame 1000004107	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 keno	9680-5236	ADDED	Frame 1000004108	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
@@ -15,6 +35,56 @@ keno	9690-9544	ADDED	Starting	New frame in Figma with no catalog row -- needs im
 keno	9690-9912	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 keno	9690-10413	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
 keno	9690-10777	ADDED	Starting	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+mines	10120-4312	ADDED	Screenshot 2026-08-18 at 11.19.46 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+mines	10120-4313	ADDED	Mines win	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+mines	10120-6768	ADDED	Screenshot 2026-08-18 at 11.25.22 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+plinko	10120-1679	ADDED	Screenshot 2026-08-18 at 11.12.43 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+plinko	10120-1680	ADDED	Screenshot 2026-08-18 at 11.13.20 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+plinko	10120-1681	ADDED	Screenshot 2026-08-18 at 11.13.42 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9907-1595	ADDED	Skai > Play > Casino > Blackjack (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9907-10355	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9929-16698	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9929-16830	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9935-17641	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9935-17766	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9935-17987	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9935-18096	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9937-18748	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9937-19871	ADDED	Rock icon 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9937-19990	ADDED	Frame 1000004104	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9937-21778	ADDED	Desktop Target	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9937-22037	ADDED	Desktop Target	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9937-22205	ADDED	Paper icon 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9941-22220	ADDED	Scissors icon 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9941-22458	ADDED	Frame 1000004283	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9941-22637	ADDED	Frame 1000004289	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9948-24339	ADDED	Frame 1000004291	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+rock-paper-scissors	9948-24437	ADDED	Frame 1000004292	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	9907-7997	ADDED	Directory	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	9907-8003	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	9907-8005	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	9907-8007	ADDED	Breakpoint	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-30838	ADDED	Skai > Play > Casino > Blackjack (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	9907-8770	ADDED	Skai > Play > Casino > Blackjack (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-32824	ADDED	Ellipse 209	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-32839	ADDED	Ellipse 224	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-32854	ADDED	Ellipse 239	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-32869	ADDED	Ellipse 254	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-32884	ADDED	Ellipse 269	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-32899	ADDED	Ellipse 284	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-32914	ADDED	Ellipse 299	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-32929	ADDED	Ellipse 314	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-33518	ADDED	Group 316	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-34600	ADDED	Group 317	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-36934	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-39086	ADDED	Skai > Play > Casino > Blackjack (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10030-40751	ADDED	Desktop	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+skai-cross	10120-8782	ADDED	Frame 1000004285	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+towers	10120-9846	ADDED	Frame 1000004088	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+towers	9903-1128	ADDED	Frame 1000004083	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+towers	10120-8434	ADDED	Frame 1000004082	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+towers	10120-9847	ADDED	Screenshot 2026-08-18 at 11.57.32 PM 1	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+bingo	9750-1837	REMOVED	Frame 1000004193	Frame gone from Figma with no same-title replacement; catalog row is stale	
 keno	9433-15177	REMOVED	Mobile	Frame gone from Figma with no same-title replacement; catalog row is stale	
 keno	9481-20647	REMOVED	8	Frame gone from Figma with no same-title replacement; catalog row is stale	
 keno	9481-20834	REMOVED	Frame 1000003949	Frame gone from Figma with no same-title replacement; catalog row is stale	
@@ -27,10 +97,45 @@ keno	9481-21885	REMOVED	Mines all features	Frame gone from Figma with no same-ti
 keno	9494-4466	REMOVED	Frame 1000004105	Frame gone from Figma with no same-title replacement; catalog row is stale	
 keno	9494-4467	REMOVED	Frame 1000004103	Frame gone from Figma with no same-title replacement; catalog row is stale	
 keno	9494-7002	REMOVED	GEM 2 KENO 1	Frame gone from Figma with no same-title replacement; catalog row is stale	
+rock-paper-scissors	9737-11685	REMOVED	Skai > Play > Casino > Scratchers (1440 x 900px)	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9660-3	REMOVED	SKAI Cross	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9660-4	REMOVED	Page notes	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9661-10	REMOVED	SkaiCross/Currency Tab	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9662-21	REMOVED	SkaiCross/Difficulty Card	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9662-28	REMOVED	SkaiCross/Lane Marker	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9662-38	REMOVED	SkaiCross/HUD Chip	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9662-39	REMOVED	SkaiCross/Stat Row	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9663-457	REMOVED	Desktop - Betting — Medium (50%, 10 rows)	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9669-153	REMOVED	SkaiCross/Car	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9669-518	REMOVED	Desktop - Playing — Medium (row 3 of 10)	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9669-1019	REMOVED	Desktop - Won — Medium (road complete, 972.80x)	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9669-1520	REMOVED	Desktop - Lost — Medium (crashed on row 3)	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9669-2026	REMOVED	Desktop - Difficulty Easy (75%, 10 rows, max 16.9x)	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9669-2492	REMOVED	Desktop - Difficulty Hard (25%, 6 rows, max 3891x)	Frame gone from Figma with no same-title replacement; catalog row is stale	
+skai-cross	9669-2966	REMOVED	Local components	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3157	REMOVED	Rectangle 34624655	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3158	REMOVED	Rectangle 34624656	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3160	REMOVED	Rectangle 34624658	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3161	REMOVED	Rectangle 34624659	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3163	REMOVED	Rectangle 34624661	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3164	REMOVED	Rectangle 34624662	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3166	REMOVED	Rectangle 34624664	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3167	REMOVED	Rectangle 34624665	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3169	REMOVED	Rectangle 34624667	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3170	REMOVED	Rectangle 34624668	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3172	REMOVED	Rectangle 34624670	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3173	REMOVED	Rectangle 34624671	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3175	REMOVED	Rectangle 34624673	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3176	REMOVED	Rectangle 34624674	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3178	REMOVED	Rectangle 34624676	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3179	REMOVED	Rectangle 34624677	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3181	REMOVED	Rectangle 34624679	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9079-3182	REMOVED	Rectangle 34624680	Frame gone from Figma with no same-title replacement; catalog row is stale	
+towers	9494-4451	REMOVED	Rectangle 34624758	Frame gone from Figma with no same-title replacement; catalog row is stale	
 keno	9481-20950	RETITLED	Starting	was: Desktop	
 keno	9481-21797	RETITLED	Desktop win	was: Desktop Selection	
-governance	-	NOT-HARVESTED	-	186 catalogued frames were not covered by this snapshot; drift unknown	
-home	-	NOT-HARVESTED	-	349 catalogued frames were not covered by this snapshot; drift unknown	
+governance	-	NOT-HARVESTED	-	200 catalogued frames were not covered by this snapshot; drift unknown	
+home	-	NOT-HARVESTED	-	222 catalogued frames were not covered by this snapshot; drift unknown	
 home-2	-	NOT-HARVESTED	-	127 catalogued frames were not covered by this snapshot; drift unknown	
 legal	-	NOT-HARVESTED	-	10 catalogued frames were not covered by this snapshot; drift unknown	
 master-sheet	-	NOT-HARVESTED	-	46 catalogued frames were not covered by this snapshot; drift unknown	
@@ -38,9 +143,9 @@ onboarding	-	NOT-HARVESTED	-	151 catalogued frames were not covered by this snap
 play	-	NOT-HARVESTED	-	345 catalogued frames were not covered by this snapshot; drift unknown	
 predict	-	NOT-HARVESTED	-	284 catalogued frames were not covered by this snapshot; drift unknown	
 pwa	-	NOT-HARVESTED	-	5 catalogued frames were not covered by this snapshot; drift unknown	
-social	-	NOT-HARVESTED	-	162 catalogued frames were not covered by this snapshot; drift unknown	
-trade	-	NOT-HARVESTED	-	827 catalogued frames were not covered by this snapshot; drift unknown	
-trade-2	-	NOT-HARVESTED	-	407 catalogued frames were not covered by this snapshot; drift unknown	
+social	-	NOT-HARVESTED	-	161 catalogued frames were not covered by this snapshot; drift unknown	
+trade	-	NOT-HARVESTED	-	420 catalogued frames were not covered by this snapshot; drift unknown	
+trade-2	-	NOT-HARVESTED	-	495 catalogued frames were not covered by this snapshot; drift unknown	
 user-flow	-	NOT-HARVESTED	-	3 catalogued frames were not covered by this snapshot; drift unknown	
-wallet	-	NOT-HARVESTED	-	361 catalogued frames were not covered by this snapshot; drift unknown	
+wallet	-	NOT-HARVESTED	-	178 catalogued frames were not covered by this snapshot; drift unknown	
 wallet-2	-	NOT-HARVESTED	-	182 catalogued frames were not covered by this snapshot; drift unknown	

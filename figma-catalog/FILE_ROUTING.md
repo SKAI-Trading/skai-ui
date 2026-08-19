@@ -114,3 +114,44 @@ Note `9163:4859` on the **Mines** page is titled `Skai > Play > Casino > Dice
 These are the duplicated-scaffolding artefacts CATALOG_DESIGN.md warns about: the page
 emoji is ✅ but the frame was copied from another game and never renamed. Do not read a
 game's name off a frame title without checking which page owns it.
+
+## The wallet set was REGENERATED — old ids are dead, replacements are in this repo
+
+Measured 2026-08-18 while working the wallet bug lane. Every id in the **3154 / 3164 /
+3166** range now 404s in BOTH files. That is not deletion — those frames were re-exported
+under new ids in the **13008** range, and the new ids are already committed here in
+`wallet.titles.tsv`.
+
+Five reports were parked on "the node 404s, so there is no spec to measure against".
+That blocker is false. Grep the frame NAME in the TSVs before concluding a spec is gone:
+
+| Surface | Dead id (as cited in reports/code) | Live id (`mhF3BkzlTaGiLzJ7kvpmVc`) |
+|---|---|---|
+| Notifications panel | `3164:22302` | `13008:27989` (tablet `13008:42806`) |
+| Notification settings | `3164:22925` | `13008:28216` |
+| Account dropdown | `3166:25085`, `7911:41913` | `13008:27689` (streak card = `dropdown-3` `13008:27757`) |
+| Streaks | — | `13008:28453` |
+| Quick actions, edit state | `7492:150434` | `13008:27159` |
+| Progress / stepper | `3154:4650` | not located; no candidate found |
+| Wallet-accounts sidecar | — | `3080:811` (never moved, still live) |
+
+## Two frames that are in mhF3 despite looking like `3sSz` nodes
+
+The rule above ("Home / Wallet / Trade moved, everything else stayed") is right, but it is
+applied by *page*, and some frames that read as Portfolio or Home content moved with the
+Wallet pages. Both of these were recorded as deleted by earlier passes because only the
+file named in the report's link was tried:
+
+| Node | What it is | Report link says | Actually in |
+|---|---|---|---|
+| `2752:5211` | Create non-custodial wallet card | `3sSz` | `mhF3` |
+| `2760:12291` | Tier medallion (Bronze) | `3sSz` | `mhF3` |
+| `2899:15797` | Home > Portfolio > Vault (1440x900) | — | `mhF3` |
+
+★ Retry an id against BOTH files before writing "deleted". A 404 in one file is not an
+answer; it is half of one.
+
+⚠️ And `2899:15849`, cited on report 50810f73 as "the Portfolio Vault tab", does not
+resolve in either file. The page frame is `2899:15797`; the 15849 id is a child that no
+longer exists. A child id going stale while its parent page survives is the normal
+outcome of a re-export — prefer the page-level id from `*.titles.tsv`.

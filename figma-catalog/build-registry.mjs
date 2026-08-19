@@ -60,13 +60,50 @@ const SECTION_FILE = {
   "video-poker": "M6r9FEn042UWTQD1zvy6GM",
   bingo: "M6r9FEn042UWTQD1zvy6GM",
   "rock-paper-scissors": "M6r9FEn042UWTQD1zvy6GM",
+  // 2026-08-18: page 9660:2 was RENAMED "🚧 SKAI Cross" -> "✅ Price Grid" AND
+  // its contents were replaced wholesale — all 15 old ids are gone and the 20
+  // now on it share no title with any of them.
+  //
+  // This is NOT the harmless slug-vs-page-title mismatch the catalog already
+  // tolerates elsewhere (`skratch` <-> "Scratchers"). SKAI Cross and Price Grid
+  // are TWO SEPARATE LIVE GAMES: Play.tsx mounts `SkaiCrossGame` (id
+  // "skai-cross", its own art + accent #1297C8) at :1610 and `PriceGridGame`
+  // (id "price-grid", flag `price_grid_enabled`, accent #0E6E78) at :1625, and
+  // price-grid has its own route (PlayPriceGrid.tsx) and 8-file component dir.
+  // So keeping these 20 frames under the `skai-cross` key would tell anyone
+  // implementing SkaiCrossGame.tsx to build the wrong game.
+  //
+  // `skai-cross` is therefore NOT deleted — it is kept as a TOMBSTONE. Its 15
+  // ids stay in skai-cross.nodes.txt and are recorded `gone` in
+  // bugref-aliases.tsv, so the rows survive for the record but are excluded
+  // from page-coverage math. It maps to no live page: see `unmappedSections`
+  // in pages.json for the reason, which this script reports on every run.
+  //
+  // ★ The finding that matters more than the rename: SKAI Cross is a SHIPPING
+  // game that no longer has ANY Figma page. That is a design-coverage gap on
+  // live code, not a catalog bookkeeping detail.
+  "price-grid": "M6r9FEn042UWTQD1zvy6GM",
+  // 2026-08-18: four Games pages that no section covered. Limbo and Slide are
+  // brand new. Baccarat and Roulette are the two pages this file previously
+  // recorded as out-of-scope for holding ZERO frames — see the note below.
+  limbo: "M6r9FEn042UWTQD1zvy6GM",
+  slide: "M6r9FEn042UWTQD1zvy6GM",
+  baccarat: "M6r9FEn042UWTQD1zvy6GM",
+  roulette: "M6r9FEn042UWTQD1zvy6GM",
   // 2026-08-13: "🌎 Cover Images - Skai Originals" (9220:26175). NOT a screen
   // page -- it holds the marketing cover art each game tile uses, in Desktop
   // (195x277) and Mobile (76x108) pairs. Catalogued because those frames are
   // the source of truth for the tile art the Play hub ships, and nothing else
-  // in this catalog covered them. Two pages in Skai-Games are deliberately
-  // ABSENT instead: Roulette (9737:13085) and Baccarat (9737:13088) have 0
-  // children, so there is nothing to harvest -- see the readiness note below.
+  // in this catalog covered them.
+  //
+  // ★ CORRECTED 2026-08-18. This comment used to end by recording Roulette
+  // (9737:13085) and Baccarat (9737:13088) as deliberately ABSENT because they
+  // "have 0 children, so there is nothing to harvest". That was true on 08-13
+  // and is FALSE now: both pages have since been designed AND promoted to ✅,
+  // and they hold 19 frames each. The note outlived the fact it described, and
+  // for five days it read as a standing decision rather than a stale
+  // measurement — which is exactly how 38 real frames stay invisible forever.
+  // Both are now catalogued sections; see SECTION_FILE above.
   "cover-images": "M6r9FEn042UWTQD1zvy6GM",
   // Moved to Skai-Web-App-2 on 2026-08-11 (ids preserved — see FILE_KEYS).
   home: "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -149,9 +186,12 @@ const SECTIONS = [
   "home-2", "wallet-2", "trade-2",
   // 2026-08-11: five previously-uncovered Games pages. See SECTION_FILE.
   "fortune-wheel", "skai-cross", "video-poker", "bingo", "rock-paper-scissors",
-  // 2026-08-13: the cover-art page. See SECTION_FILE for why it is catalogued
-  // and why Roulette / Baccarat are not.
+  // 2026-08-13: the cover-art page. See SECTION_FILE for why it is catalogued.
   "cover-images",
+  // 2026-08-18: four new/uncovered Games pages, plus `price-grid` — the live
+  // contents of page 9660:2, which `skai-cross` used to hold. See SECTION_FILE
+  // for why that is a new section rather than a rename of the old one.
+  "limbo", "slide", "baccarat", "roulette", "price-grid",
 ];
 
 // The list above is an ORDERING hint, not the source of truth.
@@ -202,6 +242,15 @@ const NON_SKAI_SECTIONS = new Set([
   // Bingo and Rock Paper Scissors all carry that pair verbatim; SKAI Cross is
   // the only one of the five with genuinely authored frames.
   "fortune-wheel", "skai-cross", "video-poker", "bingo", "rock-paper-scissors",
+  // 2026-08-18: the same page-template story, now measured rather than assumed.
+  // Every one of these five opens with the duplicated "Skai > Play > Casino >
+  // Blackjack" desktop+mobile pair (Slide's desktop copy still says "Towers",
+  // Roulette's still says "Scratchers"), and everything the designer actually
+  // authored uses plain design-state names — "Desktop Full Game", "Starting",
+  // "Extended LB", "Auto Advanced", "Mobile Auto Advanced", "Frame 270".
+  // Parsing these with the Skai grammar would demote every authored frame to
+  // non-screen AND file it under Blackjack.
+  "limbo", "slide", "baccarat", "roulette", "price-grid",
   // 2026-07-29. These three matter DOUBLY: not only do their frames use plain
   // design-state names ("Easy Desktop Full Game", "Card out", "Mobile Medium"),
   // their `Skai > …` titles are COPY-PASTE ARTIFACTS naming the WRONG GAME —
@@ -231,6 +280,12 @@ const GAME_BY_SECTION = {
   "video-poker": "Video Poker", bingo: "Bingo",
   "rock-paper-scissors": "Rock Paper Scissors",
   "cover-images": "Cover Images",
+  // 2026-08-18. `price-grid` is its own family, NOT an alias of SKAI Cross —
+  // the two ship as separate games (see SECTION_FILE). Without an entry each of
+  // these would fall through to the `opts.game || "Dice"` default and file its
+  // frames under "Casino > Dice".
+  limbo: "Limbo", slide: "Slide", baccarat: "Baccarat", roulette: "Roulette",
+  "price-grid": "Price Grid",
 };
 
 const readLines = (p) =>

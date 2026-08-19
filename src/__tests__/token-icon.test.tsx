@@ -145,3 +145,71 @@ describe("TokenIcon — built-in art is high enough resolution for its slot", ()
     },
   );
 });
+
+/**
+ * Report bd9e3b2c — "the Skai ticker preview images have the old logo that is
+ * squished".
+ *
+ * INDEPENDENT ORACLE. These aspect ratios are not read back out of the
+ * component; they were measured on 2026-08-13 from the committed artwork:
+ *
+ *   main app  public/skai-logo-mark.svg          width 57  height 64,
+ *                                                viewBox "0 0 57.1 64"  -> 0.892
+ *   wallet    src/assets/wallet/skai-mark.svg    viewBox "0 0 28.9126 32" -> 0.903
+ *   CoinGecko every URL in TOKEN_ICONS                                    -> 1.000
+ *
+ * and cross-checked against the reporter's 2x screenshot, where the blue pixels
+ * of the SKAI and sUSD marks measured 64x64 (ratio 1.000) instead of the 58x64
+ * (ratio 0.906) the same asset occupies when it is drawn un-cropped.
+ *
+ * `object-cover` on a portrait source in a square box clips the overflow off
+ * the top and bottom, which is what produced the 1.000. `object-contain` fits
+ * it whole. Square sources are unaffected either way, so cover stays for them —
+ * they rely on it to fill the circle to its edges.
+ */
+describe("TokenIcon — non-square brand art is fitted, not cropped", () => {
+  const PORTRAIT_SOURCES = [
+    // How the main app and @skai/ui's own TOKEN_ICONS map spell it.
+    "/skai-logo-mark.svg",
+    // How skai-wallet bundles the same bolt: Vite content-hashes the filename.
+    "/assets/skai-mark-DhK2p9xQ.svg",
+    "/assets/wallet/skai-mark.svg",
+  ];
+
+  it.each(PORTRAIT_SOURCES)(
+    "fits %s instead of cropping it",
+    (src) => {
+      render(<TokenIcon symbol="SKAI" src={src} />);
+      const img = screen.getByRole("img");
+      // Assert on the rendered class — the artifact that decides the pixels —
+      // and on BOTH halves: contain present, cover absent. Asserting only the
+      // absence of cover would also pass if the class list were empty.
+      expect(img).toHaveClass("object-contain");
+      expect(img).not.toHaveClass("object-cover");
+    },
+  );
+
+  it.each(["ETH", "BTC", "USDC"])(
+    "keeps %s (square CoinGecko art) on object-cover so it fills the circle",
+    (symbol) => {
+      // Positive twin for the assertion above: same two literals, opposite
+      // condition. Without this, changing the component to emit `object-contain`
+      // unconditionally would still pass the portrait cases.
+      render(<TokenIcon symbol={symbol} />);
+      const img = screen.getByRole("img");
+      expect(img).toHaveClass("object-cover");
+      expect(img).not.toHaveClass("object-contain");
+    },
+  );
+
+  it("fits the SKAI and sUSD marks resolved from the built-in map", () => {
+    // The built-in map is the path the wallet and the trade surfaces take when
+    // no `src` override is passed, so it needs its own coverage: a regression
+    // that only rewired the map would not be caught by the `src` cases above.
+    const { rerender } = render(<TokenIcon symbol="SKAI" />);
+    expect(screen.getByRole("img")).toHaveClass("object-contain");
+
+    rerender(<TokenIcon symbol="sUSD" />);
+    expect(screen.getByRole("img")).toHaveClass("object-contain");
+  });
+});

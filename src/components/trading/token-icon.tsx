@@ -67,6 +67,27 @@ const sizeMap = {
   xl: 40,
 };
 
+/**
+ * Sources whose artwork is NOT square, and therefore must not be cropped.
+ *
+ * Every CoinGecko mark above is square, so `object-cover` and `object-contain`
+ * are indistinguishable on them. The SKAI brand mark is not: the main app ships
+ * `public/skai-logo-mark.svg` at 57.1x64 and skai-wallet bundles the same bolt
+ * at viewBox 28.9126x32 — both PORTRAIT, ~0.89-0.90 aspect. Covering a square
+ * box scales a portrait source until it fills the WIDTH and then clips the
+ * overflow off the top and bottom, so the bolt renders at 1:1 and reads
+ * visibly wider than the mark actually is.
+ *
+ * Report bd9e3b2c is exactly that: measured on the reporter's 2x screenshot,
+ * the blue pixels of the SKAI and sUSD marks occupy 64x64 (ratio 1.000) where
+ * the same asset drawn un-cropped occupies 58x64 (ratio 0.906).
+ *
+ * Matched on the resolved URL rather than on the symbol, because consumers pass
+ * the same bolt through `src` under different filenames — skai-wallet bundles
+ * it via Vite as a content-hashed `skai-mark-<hash>.svg`.
+ */
+const PORTRAIT_ART = /skai(?:-logo)?-mark(?:[.-][^/]*)?\.svg$/i;
+
 const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
   (
     {
@@ -133,7 +154,11 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
               src={iconUrl}
               alt={`${symbol} icon`}
               className={cn(
-                "w-full h-full object-cover",
+                "w-full h-full",
+                // Square art keeps `cover` so it fills the circle edge to edge;
+                // portrait art must be `contain` or it is cropped (see
+                // PORTRAIT_ART).
+                PORTRAIT_ART.test(iconUrl) ? "object-contain" : "object-cover",
                 isLoading && "opacity-0",
               )}
               onLoad={() => setIsLoading(false)}
