@@ -18,10 +18,25 @@ const AccordionItem = React.forwardRef<
 ));
 AccordionItem.displayName = "AccordionItem";
 
+export interface AccordionTriggerProps
+  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
+  /**
+   * Replaces the default rotating chevron. Some Figma frames draw a plus /
+   * minus pair instead (the casino detail pages' FAQ, report 2951009c), and
+   * those cannot be expressed by rotating a chevron.
+   *
+   * Note the trigger's `[&[data-state=open]>svg]:rotate-180` rule only reaches
+   * a DIRECT `<svg>` child, so an indicator wrapped in a `<span>` is not
+   * rotated — which is what a plus/minus pair wants. Callers pick their own
+   * open/closed rendering off the trigger's `data-state`.
+   */
+  indicator?: React.ReactNode;
+}
+
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+  AccordionTriggerProps
+>(({ className, children, indicator, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
@@ -32,10 +47,12 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <ChevronDown
-        className="h-4 w-4 shrink-0 transition-transform duration-200 motion-reduce:transition-none"
-        aria-hidden="true"
-      />
+      {indicator ?? (
+        <ChevronDown
+          className="h-4 w-4 shrink-0 transition-transform duration-200 motion-reduce:transition-none"
+          aria-hidden="true"
+        />
+      )}
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

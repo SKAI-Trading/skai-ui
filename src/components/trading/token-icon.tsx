@@ -35,6 +35,19 @@ const TOKEN_ICONS: Record<string, string> = {
   LINK: "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png",
   UNI: "https://assets.coingecko.com/coins/images/12504/large/uniswap-logo.png",
   AAVE: "https://assets.coingecko.com/coins/images/12645/large/AAVE.png",
+  // Report 002f10ee — "missing token icons on some of the AI Insights".
+  // Correct: without these five, a row for any of them fell through to the
+  // generated-colour initials disc, so the list showed real logos beside plain
+  // lettered circles. They are exactly the tokens Figma's insight rows draw
+  // (5854:51186: BTC, AVAX, ETH, BTC, DOGE, LTC, XRP, ADA, SOL) that this map
+  // did not already carry. Each URL was fetched before being added — all five
+  // return 200 image/png — rather than pattern-matched off the others, because
+  // a 404 here is indistinguishable from "no mapping": both render initials.
+  AVAX: "https://assets.coingecko.com/coins/images/12559/large/Avalanche_Circle_RedWhite_Trans.png",
+  DOGE: "https://assets.coingecko.com/coins/images/5/large/dogecoin.png",
+  LTC: "https://assets.coingecko.com/coins/images/2/large/litecoin.png",
+  XRP: "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png",
+  ADA: "https://assets.coingecko.com/coins/images/975/large/cardano.png",
   // SKAI brand mark — the canonical circular bolt that ships in the consuming
   // app's public root (`/skai-logo-mark.svg`). The old `/assets/skai-icon.png`
   // path 404s (no such asset is bundled) so SKAI tokens fell back to "SK"

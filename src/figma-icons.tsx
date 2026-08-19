@@ -352,20 +352,75 @@ export const FigmaPredictionsIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-/** Onboarding "Predict" priority card glyph — crystal ball + sparkle on a
- * stand (Figma 6385:21536, "Sports, politics, etc."). Outline, 24×24. */
+/**
+ * Onboarding "Predict" priority card glyph — a crystal ball whose lower half
+ * opens into a stand, with a 4-point sparkle off its top-right corner.
+ *
+ * ★ THIS IS THE EXPORTED VECTOR, not a redraw. Report 4844ce83 ("Predict option
+ * icon in onboarding Qs does not match Figma — replace the Predict icon with the
+ * correct Figma asset, ensuring proper size, color, spacing, and alignment"),
+ * exported from `2713:3976` (`icons/graphical` → child `I2713:3976;1709:662`),
+ * a single 19.0793 x 20 filled path.
+ *
+ * What it replaced, and why the old one read as a different glyph: three
+ * hand-drawn primitives on a 24x24 grid — a `<circle r=6>`, a detached
+ * `M6 18.5h9` bar and a small diamond. So the "ball" was a plain ring, the
+ * "stand" was a floating rule several pixels below it rather than the body the
+ * ball opens into, and the sparkle was a four-sided diamond instead of the
+ * frame's concave 4-point star. Nothing about it was measurable against the
+ * frame, which is exactly why it survived a Figma pass.
+ *
+ * `fill="currentColor"` (the export ships #95A09F hard-coded) so the card's
+ * selected/unselected colouring still drives it.
+ */
 export const FigmaCrystalBallIcon: React.FC<IconProps> = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-    <circle cx="10.5" cy="10.5" r="6" stroke="currentColor" strokeWidth="1.2" />
+  <svg viewBox="0 0 19.0793 20" fill="none" aria-hidden="true" {...props}>
     <path
-      d="M6 18.5h9"
-      stroke="currentColor"
-      strokeWidth="1.2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M15.25 4.75l.55 1.45 1.45.55-1.45.55-.55 1.45-.55-1.45-1.45-.55 1.45-.55.55-1.45Z"
+      d="M8.5 0C10.2721 6.9904e-08 11.9188 0.543134 13.2812 1.47168L12.7188 2.29785C11.517 1.4788 10.065 1 8.5 1C4.35786 1 1 4.35787 1 8.5C1 12.6421 4.35786 16 8.5 16C12.6421 16 16 12.6421 16 8.5H17C17 10.5981 16.2384 12.5174 14.9785 14H15V18.5C15 19.3284 14.3284 20 13.5 20H3.5C2.67157 20 2 19.3284 2 18.5V14H2.02148C0.761572 12.5174 9.17097e-08 10.5981 0 8.5C6.43229e-08 3.80558 3.80558 2.052e-07 8.5 0ZM14 14.9775C12.5173 16.2377 10.5983 17 8.5 17C6.4017 17 4.48267 16.2377 3 14.9775V18.5C3 18.7761 3.22386 19 3.5 19H13.5C13.7761 19 14 18.7761 14 18.5V14.9775ZM8.5 3C5.46243 3 3 5.46243 3 8.5H2C2 4.91015 4.91015 2 8.5 2V3ZM14.8916 0.75293C15.0492 0.415467 15.5299 0.415467 15.6875 0.75293L16.6182 2.74902C16.6617 2.84223 16.7369 2.91737 16.8301 2.96094L18.8262 3.8916C19.1636 4.04924 19.1636 4.52986 18.8262 4.6875L16.8301 5.61816C16.7369 5.66173 16.6617 5.73688 16.6182 5.83008L15.6875 7.82617C15.5299 8.16363 15.0492 8.16363 14.8916 7.82617L13.9609 5.83008C13.9174 5.73688 13.8422 5.66173 13.749 5.61816L11.7529 4.6875C11.4155 4.52986 11.4155 4.04924 11.7529 3.8916L13.749 2.96094C13.8422 2.91737 13.9174 2.84223 13.9609 2.74902L14.8916 0.75293Z"
       fill="currentColor"
+    />
+  </svg>
+);
+
+/**
+ * Onboarding "Social" priority card glyph — an outlined speech bubble with a
+ * down-left tail holding three dots.
+ *
+ * ★ EXPORTED VECTOR from `2713:4007` (`icons/platform`), 24x24. Report f63b76af
+ * ("Icons for social in onboarding Qs do not match Figma — replace the Social
+ * icon with the correct Figma asset with consistent sizing and alignment").
+ *
+ * ADDED, NOT REPOINTED, and that is the whole judgement. The card was drawing
+ * `FigmaSidebarChatIcon`, which is a DIFFERENT glyph serving six other surfaces
+ * (the sidebar Messages row, the rail, ChatHistoryModal, SearchStrategiesModal
+ * and two LeftSidebar rows). Repointing it to fix one onboarding card would have
+ * silently restyled all six — the same trap skai-bot commit 96f68a2 records for
+ * FigmaBellIcon / FigmaPersonCheckIcon / FigmaTrashIcon. One report's glyph is
+ * not the library's glyph.
+ *
+ * The export is a stroke-expanded outline that relies on an outside mask to
+ * knock out the bubble's interior; both are inlined verbatim. The mask id is
+ * namespaced so it cannot collide with another inlined Figma export on the same
+ * page.
+ */
+export const FigmaSocialBubbleIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+    <mask
+      id="skai-social-bubble-outline"
+      maskUnits="userSpaceOnUse"
+      x="1.76904"
+      y="2"
+      width="21"
+      height="22"
+      fill="black"
+    >
+      <rect fill="white" x="1.76904" y="2" width="21" height="22" />
+      <path d="M13.8462 3C15.8047 3 17.683 3.7782 19.0679 5.16309C20.4527 6.54796 21.231 8.42627 21.231 10.3848C21.2309 12.3432 20.4527 14.2216 19.0679 15.6064C17.683 16.9913 15.8047 17.7695 13.8462 17.7695V21.75C9.23085 19.9039 2.76915 16.3847 2.76904 10.3848C2.76904 8.4263 3.54732 6.54796 4.93213 5.16309C6.31699 3.77822 8.19532 3.00002 10.1538 3H13.8462ZM7.50049 9C6.67206 9 6.00049 9.67157 6.00049 10.5C6.00049 11.3284 6.67206 12 7.50049 12C8.32869 11.9997 9.00049 11.3283 9.00049 10.5C9.00049 9.67174 8.32869 9.00026 7.50049 9ZM12.0005 9C11.1721 9 10.5005 9.67157 10.5005 10.5C10.5005 11.3284 11.1721 12 12.0005 12C12.8287 11.9997 13.5005 11.3283 13.5005 10.5C13.5005 9.67174 12.8287 9.00026 12.0005 9ZM16.5005 9C15.6721 9 15.0005 9.67157 15.0005 10.5C15.0005 11.3284 15.6721 12 16.5005 12C17.3287 11.9997 18.0005 11.3283 18.0005 10.5C18.0005 9.67174 17.3287 9.00026 16.5005 9Z" />
+    </mask>
+    <path
+      d="M19.0679 5.16309L19.775 4.45599L19.775 4.45598L19.0679 5.16309ZM21.231 10.3848L22.231 10.3848V10.3848H21.231ZM19.0679 15.6064L19.775 16.3136L19.775 16.3136L19.0679 15.6064ZM13.8462 17.7695V16.7695H12.8462V17.7695H13.8462ZM13.8462 21.75L13.4748 22.6785L14.8462 23.227V21.75H13.8462ZM2.76904 10.3848H1.76904V10.3848L2.76904 10.3848ZM4.93213 5.16309L4.22502 4.45598L4.22501 4.456L4.93213 5.16309ZM10.1538 3V2H10.1538L10.1538 3ZM7.50049 9L7.50081 8H7.50049V9ZM7.50049 12V13H7.50081L7.50049 12ZM12.0005 9L12.0008 8H12.0005V9ZM12.0005 12V13H12.0008L12.0005 12ZM16.5005 9L16.5008 8H16.5005V9ZM16.5005 12V13H16.5008L16.5005 12ZM13.8462 3V4C15.5394 4 17.1634 4.6728 18.3608 5.87019L19.0679 5.16309L19.775 4.45598C18.2026 2.88361 16.07 2 13.8462 2V3ZM19.0679 5.16309L18.3608 5.87018C19.5581 7.06758 20.231 8.69157 20.231 10.3848H21.231H22.231C22.231 8.16098 21.3473 6.02834 19.775 4.45599L19.0679 5.16309ZM21.231 10.3848L20.231 10.3847C20.2309 12.078 19.5581 13.702 18.3608 14.8993L19.0679 15.6064L19.775 16.3136C21.3473 14.7412 22.2309 12.6085 22.231 10.3848L21.231 10.3848ZM19.0679 15.6064L18.3608 14.8993C17.1634 16.0967 15.5394 16.7695 13.8462 16.7695V17.7695V18.7695C16.07 18.7695 18.2026 17.8859 19.775 16.3136L19.0679 15.6064ZM13.8462 17.7695H12.8462V21.75H13.8462H14.8462V17.7695H13.8462ZM13.8462 21.75L14.2176 20.8215C11.9484 19.9138 9.29519 18.6204 7.22396 16.8626C5.1585 15.1097 3.76909 12.9841 3.76904 10.3847L2.76904 10.3848L1.76904 10.3848C1.7691 13.7854 3.6106 16.4192 5.92985 18.3875C8.24332 20.3508 11.1287 21.74 13.4748 22.6785L13.8462 21.75ZM2.76904 10.3848H3.76904C3.76904 8.6916 4.44191 7.06758 5.63925 5.87018L4.93213 5.16309L4.22501 4.456C2.65274 6.02834 1.76904 8.161 1.76904 10.3848H2.76904ZM4.93213 5.16309L5.63924 5.87019C6.8366 4.67283 8.4606 4.00002 10.1538 4L10.1538 3L10.1538 2C7.93004 2.00003 5.79738 2.88362 4.22502 4.45598L4.93213 5.16309ZM10.1538 3V4H13.8462V3V2H10.1538V3ZM7.50049 9V8C6.11978 8 5.00049 9.11929 5.00049 10.5H6.00049H7.00049C7.00049 10.2239 7.22435 10 7.50049 10V9ZM6.00049 10.5H5.00049C5.00049 11.8807 6.11978 13 7.50049 13V12V11C7.22435 11 7.00049 10.7761 7.00049 10.5H6.00049ZM7.50049 12L7.50081 13C8.88073 12.9996 10.0005 11.8809 10.0005 10.5H9.00049H8.00049C8.00049 10.7757 7.77665 10.9999 7.50017 11L7.50049 12ZM9.00049 10.5H10.0005C10.0005 9.11913 8.88073 8.00044 7.50081 8L7.50049 9L7.50017 10C7.77665 10.0001 8.00049 10.2243 8.00049 10.5H9.00049ZM12.0005 9V8C10.6198 8 9.50049 9.11929 9.50049 10.5H10.5005H11.5005C11.5005 10.2239 11.7243 10 12.0005 10V9ZM10.5005 10.5H9.50049C9.50049 11.8807 10.6198 13 12.0005 13V12V11C11.7243 11 11.5005 10.7761 11.5005 10.5H10.5005ZM12.0005 12L12.0008 13C13.3807 12.9996 14.5005 11.8809 14.5005 10.5H13.5005H12.5005C12.5005 10.7757 12.2767 10.9999 12.0002 11L12.0005 12ZM13.5005 10.5H14.5005C14.5005 9.11913 13.3807 8.00044 12.0008 8L12.0005 9L12.0002 10C12.2767 10.0001 12.5005 10.2243 12.5005 10.5H13.5005ZM16.5005 9V8C15.1198 8 14.0005 9.11929 14.0005 10.5H15.0005H16.0005C16.0005 10.2239 16.2243 10 16.5005 10V9ZM15.0005 10.5H14.0005C14.0005 11.8807 15.1198 13 16.5005 13V12V11C16.2243 11 16.0005 10.7761 16.0005 10.5H15.0005ZM16.5005 12L16.5008 13C17.8807 12.9996 19.0005 11.8809 19.0005 10.5H18.0005H17.0005C17.0005 10.7757 16.7767 10.9999 16.5002 11L16.5005 12ZM18.0005 10.5H19.0005C19.0005 9.11913 17.8807 8.00044 16.5008 8L16.5005 9L16.5002 10C16.7767 10.0001 17.0005 10.2243 17.0005 10.5H18.0005Z"
+      fill="currentColor"
+      mask="url(#skai-social-bubble-outline)"
     />
   </svg>
 );
@@ -561,6 +616,34 @@ export const FigmaCornerArrowIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
     <path
       d="M4 3V8.5A2 2 0 0 0 6 10.5H12M12 10.5L9 7.5M12 10.5L9 13.5"
+      stroke="currentColor"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+/**
+ * Enter / return key ("↵") — the "press Enter to submit" mark on a text field.
+ * Outline.
+ *
+ * Report d121a8cd. This is NOT the same glyph as `FigmaCornerArrowIcon` above,
+ * and the difference is the whole bug: `↳` runs DOWN then right with its head
+ * pointing RIGHT (it marks a follow-up suggestion, per its own docstring), while
+ * `↵` runs right along the top, turns down, and points LEFT — the direction the
+ * design draws and the direction every keyboard prints on the Return key.
+ * ManageIntelPanel's "Pairs to watch" field had reached for the follow-up bullet;
+ * its own comment already said it wanted "↵ ADD", so the intent was recorded and
+ * only the glyph was wrong.
+ *
+ * Kept as a separate export rather than reshaping FigmaCornerArrowIcon, whose
+ * other call sites legitimately want the follow-up arrow.
+ */
+export const FigmaEnterKeyIcon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M12 3V8.5A2 2 0 0 1 10 10.5H4M4 10.5L7 7.5M4 10.5L7 13.5"
       stroke="currentColor"
       strokeWidth="1.3"
       strokeLinecap="round"
@@ -1310,24 +1393,50 @@ export const FigmaSolanaIcon: React.FC<IconProps> = (props) => (
 
 /**
  * Base chain badge — Trench title row (Figma 13006:134373) and Import-wallets
- * "Wallet type" (13008:115807). Official Base logomark: #0052FF disc + white
- * circle with a vertical flat right edge.
+ * "Wallet type" (13008:115807). A flat #0052FF disc with a horizontal bar
+ * knocked fully transparent from the left edge.
  *
- * ⚠️ **DELIBERATELY NOT MATCHED TO THE FRAME — the frame is the stale side.**
- * Reports 24eb10ba and 4c512f03 both ask for "the exact Base asset from Figma".
- * The asset those nodes export is a flat #0052FF disc with a straight
- * RECTANGULAR slot knocked fully transparent (x 0→41 of 64, y 29→34 — verified
- * on the alpha channel, and the 80px export of the sibling node has the same
- * defect scaled). That is not the Base brandmark; it is a broken export, and
- * copying it would ship a visibly wrong logo to close a "logo is wrong" report.
+ * ⚠️ **THIS REVERSES THE PRIOR RULING RECORDED HERE (2026-08-18, report
+ * 78e962e4).** The previous note called the Figma export "a broken export" —
+ * "a flat #0052FF disc with a straight RECTANGULAR slot knocked fully
+ * transparent (x 0→41 of 64, y 29→34)" — and kept a hand-drawn alternative
+ * instead. Two things settle it the other way:
  *
- * If the Figma asset is ever re-exported correctly, re-measure before changing
- * anything here — do NOT assume the frame won the argument.
+ *   1. Report 78e962e4 attached the mark the reporter wants and wrote "I have
+ *      also attached the correct PNG file, just replace it from here". Measured
+ *      on that 80x80 PNG: disc inscribed edge-to-edge in #0052FF (sampled
+ *      literally (0,82,255)), with the bar knocked out over rows y 37→42 and
+ *      x 0→51. As fractions that is y .4625→.5375, x →.65 — the SAME mark the
+ *      prior note measured off Figma (29/64=.453→34/64=.531, 41/64=.641). So
+ *      the frame and the reporter's own reference agree, and the "broken
+ *      export" theory was a lone inference against both.
+ *   2. The replacement it justified did not render what its own docblock said.
+ *      `M11.1 3.95A5.1 5.1 0 1 0 11.1 12.05Z` is a radius-5.1 segment covering
+ *      most of a radius-8 disc, so it painted a WHITE field inside a thin blue
+ *      RING — not "a white circle with a vertical flat right edge". That is the
+ *      grey-centred badge photographed in report 78e962e4 (the grey is this
+ *      white at the unselected badge's `opacity-60` over #001615: 255*.6+0*.4,
+ *      255*.6+22*.4, 255*.6+21*.4 = (153,162,161), which is the pixel sampled
+ *      from the screenshot exactly).
+ *
+ * Geometry below is the reporter's PNG scaled to the 16px viewBox: bar
+ * y 7.4→8.6 (37/80*16, 43/80*16), right edge x 10.4 (52/80*16). It is a real
+ * knockout (`fillRule="evenodd"`), not a background-coloured bar, so the badge
+ * stays correct on any surface. Starting the bar at x=0 is safe: at y=7.4 the
+ * circle's own left boundary is x≈0.02, and area outside the disc is unfilled
+ * either way.
+ *
+ * ⚠️ This app resolves `@skai/ui` from `dist/`, not `src/` — the change is only
+ * visible once dist is rebuilt (the `prepare` hook does it on npm install).
  */
 export const FigmaBaseChainIcon: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-    <circle cx="8" cy="8" r="8" fill="#0052FF" />
-    <path d="M11.1 3.95A5.1 5.1 0 1 0 11.1 12.05Z" fill="#FFFFFF" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8 0A8 8 0 0 1 8 16A8 8 0 0 1 8 0ZM0 7.4H10.4V8.6H0Z"
+      fill="#0052FF"
+    />
   </svg>
 );
 

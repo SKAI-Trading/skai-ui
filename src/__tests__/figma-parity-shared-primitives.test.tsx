@@ -415,20 +415,37 @@ describe("chain badges (13006:134372-4 / 13008:115806-8)", () => {
     expect(discIndex).toBeLessThan(circles.indexOf(ring));
   });
 
-  it("Base keeps the real brandmark — the Figma asset for this one is broken", () => {
-    // 24eb10ba / 4c512f03 both ask for "the exact Base asset from Figma". That
-    // asset is a flat #0052FF disc with a rectangular slot knocked fully
-    // transparent (x 0→41 of 64, y 29→34 on the alpha channel) — a broken
-    // export, not the brandmark. This test exists to stop a future "match
-    // Figma" sweep from copying it. The disc colour IS taken from the frame,
-    // because that part of the export is correct.
+  it("Base is the Figma export — a disc with the bar knocked THROUGH it", () => {
+    // ⚠️ THIS TEST ASSERTED THE OPPOSITE UNTIL 2026-08-19, AND THE REVERSAL IS
+    // THE POINT. It previously pinned a hand-drawn substitute on the grounds
+    // that the Figma export was "broken" — a #0052FF disc with a rectangular
+    // slot knocked fully transparent.
+    //
+    // Re-measured against the REPORTER'S OWN attached PNG (24eb10ba /
+    // 4c512f03): the export matches it once scaled, and the knockout IS the
+    // brandmark — Base's mark is a disc with the bar removed, showing the page
+    // behind it, not a white bar painted on top. The substitute rendered a
+    // white field inside a thin blue ring, which is not what its own docblock
+    // claimed it drew.
+    //
+    // So the oracle here is the reporter's raster, not a reading of the frame:
+    // one `evenodd` path, filled Base blue, whose `d` carries BOTH the disc and
+    // the bar. A white `<path>` or a separate `<circle>` means someone has
+    // reinstated the substitute.
     const { container } = render(<FigmaBaseChainIcon />);
-    expect(
-      container.querySelector("circle")!.getAttribute("fill")?.toUpperCase(),
-    ).toBe(FIGMA_BASE_BLUE);
-    expect(
-      container.querySelector("path")!.getAttribute("fill")?.toUpperCase(),
-    ).toBe("#FFFFFF");
+    const paths = container.querySelectorAll("path");
+    expect(paths).toHaveLength(1);
+    expect(paths[0].getAttribute("fill")?.toUpperCase()).toBe(FIGMA_BASE_BLUE);
+    // evenodd is what makes the bar a hole rather than a second shape.
+    expect(paths[0].getAttribute("fill-rule")).toBe("evenodd");
+    const d = paths[0].getAttribute("d")!;
+    expect(d).toContain("A8 8 0 0 1"); // the disc
+    expect(d).toMatch(/H10\.4|H10,4/); // the bar subpath
+    // Negative twin: nothing is painted white, which is how the substitute drew
+    // the bar. Paired with the positive assertions above so it cannot pass
+    // vacuously on an empty render.
+    expect(container.querySelector('[fill="#FFFFFF"]')).toBeNull();
+    expect(container.querySelector("circle")).toBeNull();
   });
 
   it("all three badges fill the same box, so a row of them reads level", () => {
