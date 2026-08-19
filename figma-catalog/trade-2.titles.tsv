@@ -5,3 +5,85 @@
 9081-273544	Skai > Trade > side bar - open - spot (8 rows: New chat / Perps / Spot / Swaps / Trench / Launch / Dashboard / Layout settings)
 13006-146207	Skai > Trade > top-bar dropdown (5 rows: Perps / Spot / Swaps / Trench / Launch; each glyph a 24px icons/graphical ring)
 13006-252239	Skai > Trade > side bar > Trench disclosure header (OPEN state, green glyph on #052d2d)
+13006-134366	
+13006-134370	
+13006-134371	Trench title row — three chain badges (Solana / Base / BNB), 32x32 on an 8px gap
+13006-134372	Chain badge — Solana (32px): black disc, #17F9B4 ring, gradient tri-bars
+13006-134373	Chain badge — Base (32px): ⚠ BROKEN EXPORT, a flat #0052FF disc with a rectangular alpha slot, not the Base brandmark
+13006-134374	Chain badge — BNB (32px): #3A3A3A disc + the modern BNB-Chain isometric cube in #F1B90A
+13006-134382	
+13006-134384	
+13006-134387	
+13006-134400	
+13006-134402	
+13006-134411	
+13006-134417	
+13006-134424	
+13006-134427	
+13006-134428	
+13006-134436	
+13006-134451	
+13006-134456	
+13006-134459	
+13006-134461	
+13006-146207	Skai > Trade > top-bar dropdown (5 rows: Perps / Spot / Swaps / Trench / Launch; each glyph a 24px icons/graphical ring)
+13006-147438	
+13006-158489	
+13006-158510	
+13006-158556	
+13006-158563	
+13006-158615	
+13006-165048	
+13006-165084	
+13006-165129	
+13006-165136	
+13006-165139	
+13006-165149	
+13006-188668	
+13006-188669	
+13006-188671	
+13006-188676	
+13006-188681	
+13006-191509	
+13006-191527	
+13006-191528	
+13006-191552	
+13006-191558	
+13006-191570	
+13006-194608	
+13006-194611	
+13006-194615	
+13006-194616	
+13006-194629	
+13006-194631	
+13006-194635	
+13006-194650	
+13006-194971	
+13006-194996	
+13006-194999	
+13006-195005	
+13006-195011	
+13006-195126	
+13006-195245	
+13006-195269	
+13006-195278	
+13006-201800	
+13006-201813	
+13006-201814	
+13006-201815	
+13006-201816	
+13006-204639	
+13006-204656	
+13006-207496	
+13006-210578	Token detail > Frame 443 — header row + chart (x=8 y=26 w=1047 h=608)
+13006-210579	
+13006-212012	Token detail > Frame 444 — trading-details section (x=8 y=640 w=1047 h=277), stacked UNDER Frame 443
+13006-212076	Token detail > Multi-panel - combined — right rail (x=1061 y=26 w=313 h=1740)
+13006-219554	
+13006-252244	Skai > Trade > side bar > Trench disclosure children ("internal"): Alpha / PnL / Market Pulse
+13006-252249	
+13006-252257	
+13006-252263	
+13006-147429	
+13006-165150	
+13006-191568	

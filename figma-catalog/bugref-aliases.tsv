@@ -736,3 +736,70 @@ mhF3BkzlTaGiLzJ7kvpmVc:13008-37537	13008-37523	child	1	1
 mhF3BkzlTaGiLzJ7kvpmVc:13008-37635	13008-37621	child	1	1	
 mhF3BkzlTaGiLzJ7kvpmVc:13008-37660	13008-37621	child	1	1	
 mhF3BkzlTaGiLzJ7kvpmVc:13008-37672	13008-37621	child	1	1	
+# 2026-08-18: the 15 SKAI Cross frames. Figma page 9660:2 was renamed to
+# "Price Grid" and its contents replaced wholesale — these ids no longer
+# resolve. Recorded gone (NOT deleted) so the rows survive for the record and
+# leave page-coverage math. None carried implFiles, notes or a triaged status.
+M6r9FEn042UWTQD1zvy6GM:9660-3	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9660-4	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9661-10	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9662-21	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9662-28	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9662-38	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9662-39	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9663-457	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9669-153	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9669-518	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9669-1019	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9669-1520	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9669-2026	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9669-2492	-	gone	0	0	-
+M6r9FEn042UWTQD1zvy6GM:9669-2966	-	gone	0	0	-
+# 2026-08-18: ids dropped by the live re-harvest of this date. Kept in their
+# section files and recorded gone, so no catalog row is deleted. Per-row
+# detail (including the hand-set work each carried) is in figma-drift.games.json
+# and figma-drift.webapp-0818.json.
+9104-6283	-	gone	0	0	-
+9079-3157	-	gone	0	0	-
+9079-3158	-	gone	0	0	-
+9079-3160	-	gone	0	0	-
+9079-3161	-	gone	0	0	-
+9079-3163	-	gone	0	0	-
+9079-3164	-	gone	0	0	-
+9079-3166	-	gone	0	0	-
+9079-3167	-	gone	0	0	-
+9079-3169	-	gone	0	0	-
+9079-3170	-	gone	0	0	-
+9079-3172	-	gone	0	0	-
+9079-3173	-	gone	0	0	-
+9079-3175	-	gone	0	0	-
+9079-3176	-	gone	0	0	-
+9079-3178	-	gone	0	0	-
+9079-3179	-	gone	0	0	-
+9079-3181	-	gone	0	0	-
+9079-3182	-	gone	0	0	-
+9494-4451	-	gone	0	0	-
+9433-15177	-	gone	0	0	-
+9481-20647	-	gone	0	0	-
+9481-20834	-	gone	0	0	-
+9481-20845	-	gone	0	0	-
+9481-21772	-	gone	0	0	-
+9481-21774	-	gone	0	0	-
+9481-21777	-	gone	0	0	-
+9481-21778	-	gone	0	0	-
+9481-21885	-	gone	0	0	-
+9494-2150	-	gone	0	0	-
+9494-4466	-	gone	0	0	-
+9494-4467	-	gone	0	0	-
+9494-7002	-	gone	0	0	-
+9750-1837	-	gone	0	0	-
+9737-11673	-	gone	0	0	-
+9737-11679	-	gone	0	0	-
+9737-11681	-	gone	0	0	-
+9737-11683	-	gone	0	0	-
+9737-11685	-	gone	0	0	-
+9737-12395	-	gone	0	0	-
+5370-60318	-	gone	0	0	-
+5460-89208	-	gone	0	0	-
+7528-156426	-	gone	0	0	-
+11272-125846	-	gone	0	0	-
