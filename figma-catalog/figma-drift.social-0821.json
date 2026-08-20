@@ -1,0 +1,225 @@
+{
+  "generated": "2026-08-20T11:36:21.218Z",
+  "sections": {
+    "home": {
+      "status": "not-harvested",
+      "catalogued": 226
+    },
+    "pwa": {
+      "status": "not-harvested",
+      "catalogued": 5
+    },
+    "home-2": {
+      "status": "not-harvested",
+      "catalogued": 129
+    },
+    "wallet": {
+      "status": "not-harvested",
+      "catalogued": 179
+    },
+    "wallet-2": {
+      "status": "not-harvested",
+      "catalogued": 182
+    },
+    "trade": {
+      "status": "not-harvested",
+      "catalogued": 420
+    },
+    "trade-2": {
+      "status": "not-harvested",
+      "catalogued": 495
+    },
+    "predict": {
+      "status": "not-harvested",
+      "catalogued": 284
+    },
+    "play": {
+      "status": "not-harvested",
+      "catalogued": 345
+    },
+    "dice": {
+      "status": "not-harvested",
+      "catalogued": 36
+    },
+    "crash": {
+      "status": "not-harvested",
+      "catalogued": 20
+    },
+    "mines": {
+      "status": "not-harvested",
+      "catalogued": 19
+    },
+    "blackjack": {
+      "status": "not-harvested",
+      "catalogued": 20
+    },
+    "coinflip": {
+      "status": "not-harvested",
+      "catalogued": 37
+    },
+    "skratch": {
+      "status": "not-harvested",
+      "catalogued": 20
+    },
+    "cover-images": {
+      "status": "not-harvested",
+      "catalogued": 24
+    },
+    "onboarding": {
+      "status": "not-harvested",
+      "catalogued": 151
+    },
+    "legal": {
+      "status": "not-harvested",
+      "catalogued": 10
+    },
+    "master-sheet": {
+      "status": "not-harvested",
+      "catalogued": 46
+    },
+    "plinko": {
+      "status": "not-harvested",
+      "catalogued": 22
+    },
+    "darts": {
+      "status": "not-harvested",
+      "catalogued": 31
+    },
+    "chicken": {
+      "status": "not-harvested",
+      "catalogued": 31
+    },
+    "hilo": {
+      "status": "not-harvested",
+      "catalogued": 20
+    },
+    "social": {
+      "status": "drift",
+      "catalogued": 311,
+      "live": 442,
+      "added": 139,
+      "removed": 8,
+      "retitled": 109,
+      "removedRows": [
+        {
+          "id": "11442-177484",
+          "title": "modal",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11459-187396",
+          "title": "content",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11398-78648",
+          "title": "Skai > Play 1VH (375 x 812px)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11398-84004",
+          "title": "section",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11398-77975",
+          "title": "Skai > Play 1VH (375 x 812px)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11398-85223",
+          "title": "Skai > Play 1VH (375 x 812px)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11435-158497",
+          "title": "Skai > Launch > Live  (768 x 1024px)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11442-173579",
+          "title": "modal",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "governance": {
+      "status": "not-harvested",
+      "catalogued": 260
+    },
+    "user-flow": {
+      "status": "not-harvested",
+      "catalogued": 3
+    },
+    "towers": {
+      "status": "not-harvested",
+      "catalogued": 48
+    },
+    "keno": {
+      "status": "not-harvested",
+      "catalogued": 27
+    },
+    "fortune-wheel": {
+      "status": "not-harvested",
+      "catalogued": 25
+    },
+    "video-poker": {
+      "status": "not-harvested",
+      "catalogued": 14
+    },
+    "bingo": {
+      "status": "not-harvested",
+      "catalogued": 16
+    },
+    "rock-paper-scissors": {
+      "status": "not-harvested",
+      "catalogued": 24
+    },
+    "limbo": {
+      "status": "not-harvested",
+      "catalogued": 14
+    },
+    "slide": {
+      "status": "not-harvested",
+      "catalogued": 17
+    },
+    "baccarat": {
+      "status": "not-harvested",
+      "catalogued": 19
+    },
+    "roulette": {
+      "status": "not-harvested",
+      "catalogued": 19
+    },
+    "price-grid": {
+      "status": "not-harvested",
+      "catalogued": 20
+    }
+  }
+}

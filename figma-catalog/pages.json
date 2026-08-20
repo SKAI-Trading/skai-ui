@@ -92,9 +92,11 @@
   {
    "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
    "pageId": "4914:113562",
-   "pageName": "🚧 Social",
-   "readiness": "wip",
-   "liveChildren": 311,
+   "pageName": "✅ Social",
+   "readiness": "ready",
+   "liveChildren": 442,
+   "harvested": "2026-08-20",
+   "harvestNote": "Re-read live 2026-08-20 (page.children on 4914:113562). The page was RENAMED 🚧 -> ✅ upstream, so readiness moves wip -> ready; every social frame's `page` stamp changes with it. 311 -> 442 top-level children. Full enumeration: social.live-0821.tsv. Drift logged before anything was overwritten: figma-todo.social-0821.tsv.",
    "sections": [
     "social"
    ]
@@ -544,9 +546,43 @@
     "ready-for-dev frames structurally invisible to this catalog. When recording a",
     "page as out of scope, record the DATE and the MEASUREMENT, not a verdict."
    ]
+  },
+  "2026-08-20": {
+   "note": "Targeted re-harvest of the Social page ONLY (4914:113562). No other page was re-read, so every other pageName/liveChildren in this file still carries its 2026-08-18 value. Drift was logged before anything was overwritten: figma-todo.social-0821.tsv.",
+   "promotedToReady": {
+    "Social": "was 🚧 with 311 frames, now ✅ with 442 (+131 net; 139 added, 8 ids stopped resolving). Readiness moves wip -> ready, which re-stamps all 450 social rows."
+   },
+   "grew": {
+    "Social": "311 -> 442 (+131 net). 139 ADDED, 8 REMOVED, 109 RETITLED."
+   },
+   "★ theRenameIsTheStory": [
+    "99 of the 109 retitles are the 'Skai > Play 1VH' cluster the 08-18 pass",
+    "recorded as '~110 mobile/tablet Play frames drawn on the Social page'. Casey",
+    "has since renamed them in Figma to real Social breadcrumbs (Messages, Groups,",
+    "Discover, stories, create post, creator profile, post/token). The dead name",
+    "survived only in registry.json and snapshot.webapp-0818.json.",
+    "",
+    "This matters beyond tidiness. figma-drift.mjs joins a REMOVED old id to an",
+    "ADDED new id by EXACT TITLE to recognise a rebuild (RETARGET). That join reads",
+    "the title from the REGISTRY on one side and from LIVE FIGMA on the other, so a",
+    "registry title that no longer equals the live name silently disables the",
+    "rescue for that frame — it would report as REMOVED and its implFiles would",
+    "look orphaned. Leaving a stale title in place is therefore not the safe",
+    "option; it is the failure mode. The rule that protects the join is 'the",
+    "registry title must equal the live Figma name', which is why titles are",
+    "re-harvested from <section>.titles.tsv on every build and are NOT in",
+    "build-registry's preserved-hand-set list. What must never happen is a",
+    "hand-authored 'more accurate' title that matches neither.",
+    "",
+    "The 109 before/after pairs are preserved verbatim in",
+    "figma-drift.social-0821.json, so no prior name is lost by this update."
+   ],
+   "shrank": {
+    "Social": "8 catalogued ids stopped resolving: 11442-177484, 11459-187396, 11398-78648, 11398-84004, 11398-77975, 11398-85223, 11435-158497, 11442-173579. NONE carried implFiles, notes, verifiedAt or a triaged status, so no implementation record was orphaned. They are kept as `gone` rows in bugref-aliases.tsv rather than dropped."
+   }
   }
  },
- "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.",
+ "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.",
  "outOfScope": {
   "🚧 Titles + Emblems": "Not SKAI screens. A 1,157-node REFERENCE board for a future titles/emblems system: badge tiles at 188x40 / 67x64, node names 'image 2'..'image N', and descriptions copied verbatim from Call of Duty achievements (\"Complete the 'Collateral Damage' challenge. Kill 2 or more enemies with a single sniper rifle bullet\"). Zero frames match a screen convention. This is the same 'examples of what the reporter likes' material Casey flagged 2026-08-05 — inspiration, not a spec. Re-scope only if SKAI authors its own emblem screens."
  },

@@ -467,6 +467,62 @@ const GONE = new Set();
 }
 
 const frames = {};
+
+/**
+ * Registry keys are "<fileKey>:<node>" (a bare node-id for the primary file), so
+ * two SECTIONS that share a fileKey and list the same node-id COLLIDE: the later
+ * section overwrites the earlier and the frames map ends up holding one row, not
+ * two. That de-duplication is correct — but the stats used to be incremented
+ * per-id while the node lists were read, which counted the overwritten losers as
+ * well as the survivors.
+ *
+ * Measured 2026-08-20: `stats.total` read **4373** against **3628** actual rows
+ * in `frames`. The 745-row overcount decomposes exactly, with no remainder:
+ *   home    -> home-2   127     wallet -> wallet-2 182
+ *   trade   -> trade-2  407     missing-play-images -> cover-images 24
+ *   home    -> pwa        5
+ * `missing-play-images` was the worst case: all 24 of its ids collided, so it
+ * reported 24 frames while owning ZERO rows — and `status.missing-play-images.tsv`
+ * and `vverify.missing-play-images.tsv` were therefore folding onto nothing.
+ *
+ * Two changes: stats are DERIVED from the frames map after the loop (so they can
+ * only ever describe rows that exist), and every collision is recorded in
+ * `stats.keyCollisions` so an overwrite announces itself instead of being
+ * silently absorbed into a bigger number.
+ */
+const collisions = [];
+
+/**
+ * Which fileKey(s) claim each bare node-id — needed to attribute code citations.
+ *
+ * `code-node-citations.json` is keyed by BARE node-id, and a bare id is unique
+ * only WITHIN a Figma file. The old rule was "attribute citations only for the
+ * primary file"; safe, but it silently became wrong the moment home / wallet /
+ * trade moved to Skai-Web-App-2. Those three sections then reported `cited: 0` —
+ * which reads as "no code references these frames" when the truth was "the
+ * attribution rule refused to look". Verified live 2026-08-20: all eight sampled
+ * home ids that src/ cites (2713-4179, 5777-28765, …) resolve in
+ * Skai-Web-App-2 with exactly the catalogued titles, and resolve NOWHERE in the
+ * primary file — so there was never a primary-file node to confuse them with.
+ *
+ * The rule that is both safe and correct is UNIQUE OWNERSHIP: attribute a bare id
+ * when exactly one catalogued fileKey claims it. Measured 2026-08-20: of 3,761
+ * distinct catalogued ids only SIX are claimed by two files — 2713-3937,
+ * 2713-3943, 2736-25840, 2738-28626, 6330-54594, 6330-54596, every one of them
+ * Skai-Web-App-2 vs Skai-Games, and 6330-54594 is the exact collision the old
+ * comment named. None of the 577 ids in the citation index is one of the six, so
+ * this attributes 192 ids (was 61) and refuses none. Any future refusal is
+ * recorded in `stats.citationRefusals` rather than being dropped in silence.
+ */
+const fileKeysById = {};
+for (const s of SECTIONS) {
+  const fk = SECTION_FILE[s] || FILE_KEY;
+  for (const id of readLines(path.join(DIR, `${s}.nodes.txt`))) {
+    (fileKeysById[id] = fileKeysById[id] || new Set()).add(fk);
+  }
+}
+const citationRefusals = [];
+
 let stats = { total: 0, titled: 0, cited: 0, bySection: {} };
 
 for (const section of SECTIONS) {
@@ -480,21 +536,30 @@ for (const section of SECTIONS) {
     const tab = line.indexOf("\t");
     if (tab > 0) titles[line.slice(0, tab).trim()] = line.slice(tab + 1).trim();
   }
-  stats.bySection[section] = { frames: ids.length, titled: 0, screens: 0, nonScreen: 0, cited: 0 };
   for (const id of ids) {
     const title = titles[id] || null;
     const parsed = parseTitle(title, {
       skaiConvention: !NON_SKAI_SECTIONS.has(section),
       game: GAME_BY_SECTION[section],
     });
-    // The code-citation index is keyed by bare node-id and was built from the
-    // PRIMARY file only. For a secondary-file section (dice), a bare id can
-    // collide with a primary-file node (e.g. 6330-54594 = home scaffolding), so
-    // never attribute primary-file citations to a secondary-file frame.
-    const cited = isPrimary ? nodeToFiles[id] || [] : [];
+    // Attribute code citations by UNIQUE OWNERSHIP of the bare node-id — see the
+    // `fileKeysById` note above for why "primary file only" was the wrong rule.
+    // A contested id is refused AND recorded, never dropped silently.
+    const citeFiles = nodeToFiles[id] || [];
+    const owners = fileKeysById[id];
+    let cited = [];
+    if (citeFiles.length) {
+      if (owners && owners.size === 1) cited = citeFiles;
+      else citationRefusals.push({ id, section, owners: owners ? [...owners] : [], files: citeFiles });
+    }
     // Frames in a secondary file get a compound registry key so they can't
     // clobber a primary-file frame with the same bare node-id.
     const regKey = isPrimary ? id : `${fileKey}:${id}`;
+    // A later section is about to overwrite an earlier section's row under the
+    // same key. Record it — see the `collisions` note above.
+    if (frames[regKey]) {
+      collisions.push({ regKey, lostSection: frames[regKey].section, keptSection: section });
+    }
     const p = prior[regKey] || {};
     // Ready-for-dev. The team's signal is the leading emoji on the Figma PAGE
     // name (✅ ready / 🚧 wip) — Casey 2026-07-28. Figma's own Dev Mode
@@ -532,19 +597,63 @@ for (const section of SECTIONS) {
       notes: p.notes || "",
       verifiedAt: p.verifiedAt || null,
     };
-    stats.total++;
-    if (title && title !== "ERROR") {
-      stats.titled++;
-      stats.bySection[section].titled++;
-      if (parsed.kind === "non-screen") stats.bySection[section].nonScreen++;
-      else stats.bySection[section].screens++;
-    }
-    if (cited.length) {
-      stats.cited++;
-      stats.bySection[section].cited++;
-    }
   }
 }
+
+// Stats, derived from the rows that actually SURVIVED into `frames`.
+//
+// Every section is pre-seeded at zero so a section whose rows were all
+// overwritten still appears — reporting `frames: 0` is the useful signal, and it
+// is what makes the missing-play-images case visible instead of absent.
+stats = { total: 0, titled: 0, cited: 0, bySection: {} };
+for (const section of SECTIONS) {
+  stats.bySection[section] = { frames: 0, titled: 0, screens: 0, nonScreen: 0, cited: 0 };
+}
+for (const f of Object.values(frames)) {
+  const b =
+    stats.bySection[f.section] ||
+    (stats.bySection[f.section] = { frames: 0, titled: 0, screens: 0, nonScreen: 0, cited: 0 });
+  stats.total++;
+  b.frames++;
+  if (f.title && f.title !== "ERROR") {
+    stats.titled++;
+    b.titled++;
+    if (f.kind === "non-screen") b.nonScreen++;
+    else b.screens++;
+  }
+  if (f.citedByFiles.length) {
+    stats.cited++;
+    b.cited++;
+  }
+}
+
+// Which section lost rows to which, and how many. `total` here is the exact
+// difference between "ids listed across all <section>.nodes.txt" and
+// `stats.total`, so the two numbers reconcile without a remainder.
+{
+  const byPair = {};
+  for (const c of collisions) {
+    const k = `${c.lostSection} -> ${c.keptSection}`;
+    byPair[k] = (byPair[k] || 0) + 1;
+  }
+  const listedIds = SECTIONS.reduce(
+    (n, s) => n + readLines(path.join(DIR, `${s}.nodes.txt`)).length,
+    0,
+  );
+  stats.keyCollisions = {
+    total: collisions.length,
+    idsListed: listedIds,
+    rowsKept: stats.total,
+    reconciles: listedIds - collisions.length === stats.total,
+    bySectionPair: byPair,
+  };
+}
+
+// Citations the unique-ownership rule declined to attribute. Empty is the normal
+// state; a non-empty list means a bare id is claimed by two catalogued files and
+// somebody must say which one the code comment meant. `cited: 0` on a section is
+// only meaningful once this is empty — otherwise it may just be a refusal.
+stats.citationRefusals = citationRefusals;
 
 // Readiness rollup, and the coverage report that makes a missing page announce
 // itself instead of being silently absent.

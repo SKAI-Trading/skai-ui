@@ -1,0 +1,145 @@
+# The 139 frames live on Figma page 4914:113562 that registry.json did NOT hold before
+# the 2026-08-20 re-harvest. Derived: ADDED rows of figma-todo.social-0821.tsv joined to
+# social.live-0821.tsv. Regenerate, do not hand-edit.
+# device is read from the TITLE, which is wrong on two rows — see the ★ notes in
+# SOCIAL_LABEL_CORRECTIONS_2026-08-20.md. Trust the WxH column over the title.
+# nodeId	type	WxH	x,y	device(from title)	live title
+11530:303299	FRAME	160x124	37438,4001	-	dropdown - tridots
+11530:303318	FRAME	160x124	40227,4001	-	dropdown - tridots
+11530:303337	FRAME	200x196	40187,5201	-	dropdown - tridots - reply
+11530:303366	FRAME	200x196	37398,5201	-	dropdown - tridots - reply
+11530:303043	FRAME	220x160	6819,11538	-	dropdown-creators
+11530:303066	FRAME	200x160	11752,11211	-	dropdown-creators
+11530:302842	FRAME	220x196	6819,5074	-	dropdown-post select
+11530:302866	FRAME	200x196	10977,5074	-	dropdown-post select
+11530:303089	FRAME	220x196	6819,15285	-	dropdown-posts
+11530:303116	FRAME	200x196	11752,15285	-	dropdown-posts
+11530:303143	FRAME	220x160	6819,17273	-	dropdown-tokens
+11530:303164	FRAME	200x160	11725,17273	-	dropdown-tokens
+11530:303185	FRAME	220x196	6819,27838	-	dropdown-balances
+11530:303236	FRAME	200x196	11752,27781	-	dropdown-balances
+11530:303208	FRAME	220x160	6819,29327	-	dropdown-tokens
+11530:303259	FRAME	200x160	11752,29327	-	dropdown-tokens
+11530:303287	FRAME	220x88	6819,32784	-	dropdown-followers/following
+11530:303293	FRAME	200x84	11752,32793	-	dropdown-followers/following
+11529:293029	FRAME	220x160	26219,7552	-	dropdown-creators
+11529:293244	FRAME	200x160	28803,7552	-	dropdown-creators
+11530:302910	FRAME	120x224	6819,8692	-	dropdown-time
+11530:302923	FRAME	120x212	11752,7974	-	dropdown-time
+11530:302936	FRAME	180x116	5671,8788	-	dropdown-main
+11530:302943	FRAME	160x110	11017,8068	-	dropdown-main
+11530:303652	FRAME	375x812	40012,6401	mobile	Skai > Social > Messages > Sample Conversation > attachment 1VH (375 x 812px)
+11526:290354	FRAME	375x812	51001,5201	mobile	Skai > Social > Groups - search > Discover 1VH (375 x 812px)
+11526:290070	FRAME	375x812	51001,6401	mobile	Skai > Social > Groups - search > Created 1VH (375 x 812px)
+11526:289885	FRAME	343x670	51491,11840	-	Members - with requests
+11526:288877	FRAME	375x812	51001,2801	mobile	Skai > Social > Groups - search 1VH (375 x 812px)
+11530:304239	FRAME	768x1024	47926,2801	tablet	Skai > Social > Groups - search 1VH (768 x 1024px)
+11530:303909	FRAME	768x1024	36830,6401	desktop	Skai > Social > Messages > Sample Conversation > attachment 1VH (1440 x 900px)
+11530:301774	FRAME	296x812	27489,4001	-	sidebar - open casino
+11530:301872	FRAME	318x1024	24125,4001	-	sidebar - open casino
+11526:290681	FRAME	768x1024	24543,2801	tablet	Skai > Social > Live 1VH (768 x 1024px)
+11477:236128	FRAME	768x2036	24543,8752	tablet	Skai > Social > Live > Stream type modal > Sample stream (768 x 1024px)
+11529:298704	FRAME	768x1409	25411,9180	tablet	Skai > Social > Live > Stream type modal > Sample stream > Stream viewers (768 x 1024px)
+11529:292610	FRAME	708x396	25411,12790	-	Multi-panel - live chat
+11529:292890	FRAME	708x404	25411,7552	-	Multi-panel - live chat
+11529:292425	FRAME	708x436	25411,13286	-	Multi-panel - live chat - with rewards
+11477:238522	FRAME	768x1024	24543,7552	tablet	Skai > Social > Live > Stream type modal > Sample stream 1VH (768 x 1024px)
+11529:293878	FRAME	768x1024	25411,8056	tablet	Skai > Social > Live > Stream type modal > Sample stream > Chat settings 1VH (768 x 1024px)
+11477:254411	FRAME	768x1024	24543,20323	tablet	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager - guests expanded 1VH (768 x 1024px)
+11477:257758	FRAME	768x1190	25411,20323	tablet	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager - activity feed expanded (768 x 1024px)
+11477:255979	FRAME	768x1024	24543,21513	tablet	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager > invite guests 1VH (768 x 1024px)
+11477:245788	FRAME	768x1024	24543,14373	tablet	Skai > Social > Live > Go live 1VH (768 x 1024px)
+11481:269077	FRAME	354x518	27431,14373	-	Terms and conditions - Agree
+11477:247775	FRAME	768x1024	24543,15563	tablet	Skai > Social > Live > Go live > setup stream 1VH (768 x 1024px)
+11477:249372	FRAME	768x1024	24543,16753	tablet	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail 1VH (768 x 1024px)
+11477:250868	FRAME	768x1024	24543,17943	tablet	Skai > Social > Live > Go live > setup stream > OBS 1VH (768 x 1024px)
+11477:252566	FRAME	768x1024	24543,19133	tablet	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream 1VH (768 x 1024px)
+11477:254210	FRAME	676x392	23767,19133	-	Stream states - stream ended
+11477:247744	FRAME	448x498	23995,14373	-	Terms and conditions - Agree
+11477:243654	FRAME	768x1417	24543,12790	tablet	Skai > Social > Live > Stream type modal > Sample stream 1VH (768 x 1024px)
+11529:292728	FRAME	708x662	26219,12790	-	Multi-panel - live chat > Gift streamer
+11477:241691	FRAME	768x1024	24543,11600	tablet	Skai > Social > Live > Stream type modal > Sample stream > Share stream 1VH (768 x 1024px)
+11477:240087	FRAME	768x1024	23675,7552	tablet	Skai > Social > Live > Stream type modal > Sample stream 1VH (768 x 1024px)
+11477:243256	FRAME	708x474	23735,8676	-	Stream panel - followed
+11481:261891	FRAME	375x812	27885,7552	mobile	Skai > Social > Live > Stream type modal > Sample stream 1VH (375 x 812px)
+11529:297447	FRAME	375x812	28360,8066	mobile	Skai > Social > Live > Stream type modal > Sample stream > Chat settings 1VH (375 x 812px)
+11529:293126	FRAME	343x414	28360,7552	-	Multi-panel - live chat
+11529:293265	FRAME	343x406	28360,12790	-	Multi-panel - live chat
+11529:293404	FRAME	343x446	28360,13296	-	Multi-panel - live chat - with rewards
+11481:284085	FRAME	375x812	27885,21513	mobile	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager > invite guests 1VH (375 x 812px)
+11481:280102	FRAME	375x939	27885,20323	mobile	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager - guests expanded 1VH (375 x 812px)
+11481:282550	FRAME	375x1008	28360,20323	mobile	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream > stream manager - activity feed expanded (375 x 812px)
+11481:273266	FRAME	375x812	27885,14373	mobile	Skai > Social > Live > Go live 1VH (375 x 812px)
+11481:274581	FRAME	375x812	27885,15563	mobile	Skai > Social > Live > Go live > setup stream 1VH (375 x 812px)
+11481:275802	FRAME	375x812	27885,16753	mobile	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail 1VH (375 x 812px)
+11481:277023	FRAME	375x812	27885,17943	mobile	Skai > Social > Live > Go live > setup stream > OBS 1VH (375 x 812px)
+11481:278244	FRAME	375x812	27885,19119	mobile	Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream 1VH (375 x 812px)
+11481:279749	FRAME	319x200	27466,19119	-	Stream states - stream ended
+11481:265530	FRAME	375x812	27885,11600	mobile	Skai > Social > Live > Stream type modal > Sample stream > Share stream 1VH (375 x 812px)
+11481:266994	FRAME	375x1243	27885,12790	mobile	Skai > Social > Live > Stream type modal > Sample stream (375 x 812px)
+11529:293522	FRAME	343x644	28803,12790	-	Multi-panel - live chat > Gift streamer
+11481:264273	FRAME	375x812	27410,7552	mobile	Skai > Social > Live > Stream type modal > Sample stream 1VH (375 x 812px)
+11529:293050	FRAME	343x320	27426,8464	-	Stream panel - followed
+11481:262931	FRAME	375x1628	27885,8752	mobile	Skai > Social > Live > Stream type modal > Sample stream (375 x 812px)
+11529:300393	FRAME	375x1220	28360,8978	mobile	Skai > Social > Live > Stream type modal > Sample stream > Stream viewers (375 x 812px)
+11530:302963	FRAME	220x124	8555,12515	-	dropdown-story tile
+11530:302976	FRAME	220x124	8555,13715	-	dropdown-story view
+11530:303003	FRAME	200x124	12702,12515	-	dropdown-story tile
+11530:303016	FRAME	220x124	12702,13715	-	dropdown-story view
+11529:291953	FRAME	375x3439	11752,4065	mobile	Skai > Social - show more comments (375 x 812px)
+11530:302957	INSTANCE	125x44	11017,7974	-	CTA/button
+11474:204840	FRAME	375x1275	11277,23324	mobile	Skai > Social > Sample post / token (375 x 812px)
+11474:206222	FRAME	375x812	12227,23324	mobile	Skai > Social > Sample post / token - market 1VH (375 x 812px)
+11474:207758	FRAME	375x812	11752,23324	mobile	Skai > Social > Sample post / token 1VH (375 x 812px)
+11474:205859	FRAME	375x1275	11277,24904	mobile	Skai > Social > Sample post / token - chart (375 x 812px)
+11474:212827	FRAME	375x1262	11277,27781	mobile	Skai > Social > Sample creator profile (375 x 812px)
+11474:215215	FRAME	375x1354	11277,29327	mobile	Skai > Social > Sample creator profile > Tokens (375 x 812px)
+11474:220999	FRAME	375x1258	11277,35321	mobile	Skai > Social > Sample creator profile > Groups (375 x 812px)
+11474:222012	FRAME	375x1365	11277,36808	desktop	Skai > Social > Sample creator profile > Posts (1440 x 900px)
+11474:224415	FRAME	343x392	10834,37684	-	Posts - hover
+11474:215821	FRAME	375x1633	11277,30910	mobile	Skai > Social > Sample creator profile > Creator overview (375 x 812px)
+11474:213159	FRAME	375x812	11277,26574	mobile	Skai > Social > Sample creator profile 1VH (375 x 812px)
+11524:286515	FRAME	375x812	11752,26574	mobile	Skai > Social > Sample creator profile 1VH (375 x 812px)
+11474:218523	FRAME	375x812	11277,32793	mobile	Skai > Social > Sample creator profile > Following - modal 1VH (375 x 812px)
+11474:219363	FRAME	375x812	10802,30910	mobile	Skai > Social > Sample creator profile > Holders - modal 1VH (375 x 812px)
+11474:218943	FRAME	375x812	11277,33834	mobile	Skai > Social > Sample creator profile > Followers - modal 1VH (375 x 812px)
+11474:206406	FRAME	375x812	11752,24904	mobile	Skai > Social > Sample post / token - chart 1VH (375 x 812px)
+11474:222766	FRAME	375x812	11277,42428	mobile	Skai > Social > My post / token - chart 1VH (375 x 812px)
+11474:223997	FRAME	375x812	11277,43628	mobile	Skai > Social > My post / token - chart > upload image 1VH (375 x 812px)
+11527:291862	FRAME	354x792	12702,8915	-	Create post - two images
+11527:291792	FRAME	354x792	12702,4065	-	Caption - empty
+11530:302951	INSTANCE	125x46	5671,8692	-	CTA/button
+11474:201388	FRAME	768x1430	5951,23324	tablet	Skai > Social > Sample post / token (768 x 1024px)
+11474:204230	FRAME	708x556	8555,23324	-	Comments - dropdown
+11474:211130	FRAME	768x1249	5951,27838	tablet	Skai > Social > Sample creator profile (768 x 1024px)
+11474:214001	FRAME	768x1343	5951,29327	tablet	Skai > Social > Sample creator profile > Tokens (768 x 1024px)
+11474:220336	FRAME	768x1247	5951,35321	tablet	Skai > Social > Sample creator profile > Groups (768 x 1024px)
+11474:221594	FRAME	768x1595	5951,36808	tablet	Skai > Social > Sample creator profile > Posts (768 x 1024px)
+11474:224337	FRAME	708x644	5143,37671	-	Posts - hover
+11474:214610	FRAME	768x1643	5951,30910	tablet	Skai > Social > Sample creator profile > Creator overview (768 x 1024px)
+11474:202449	FRAME	768x1430	5951,24904	tablet	Skai > Social > Sample post / token - chart (768 x 1024px)
+11474:213441	FRAME	768x1024	5951,26574	tablet	Skai > Social > Sample creator profile - created tokens expanded 1VH (768 x 1024px)
+11520:286072	FRAME	768x1024	6819,26574	tablet	Skai > Social > Sample creator profile - created tokens collapsed 1VH (768 x 1024px)
+11474:216389	FRAME	768x1024	5951,32793	tablet	Skai > Social > Sample creator profile > Following - modal 1VH (768 x 1024px)
+11474:217233	FRAME	768x1024	5083,30910	tablet	Skai > Social > Sample creator profile > Holders - modal 1VH (768 x 1024px)
+11474:216811	FRAME	768x1024	5951,34057	tablet	Skai > Social > Sample creator profile > Followers - modal 1VH (768 x 1024px)
+11474:202779	FRAME	768x1024	7687,23324	tablet	Skai > Social > Sample post / token - market 1VH (768 x 1024px)
+11474:207421	FRAME	768x1024	6819,23324	tablet	Skai > Social > Sample post / token 1VH (768 x 1024px)
+11474:204464	FRAME	708x684	8555,23980	-	SRP - bottom - Holders
+11474:204570	FRAME	708x620	8555,24764	-	SRP - bottom - Activity
+11474:202951	FRAME	768x1024	6819,24904	tablet	Skai > Social > Sample post / token - chart 1VH (768 x 1024px)
+11474:204687	FRAME	708x334	8555,25484	-	SRP - bottom - Details
+11474:222950	FRAME	768x1024	5951,42428	tablet	Skai > Social > My post / token - chart 1VH (768 x 1024px)
+11474:223492	FRAME	768x1024	5951,43628	tablet	Skai > Social > My post / token - chart > upload image 1VH (768 x 1024px)
+11474:207013	FRAME	343x676	12673,23936	-	SRP - bottom - Holders
+11474:207119	FRAME	343x596	12673,24712	-	SRP - bottom - Activity
+11474:207236	FRAME	343x314	12673,25408	-	SRP - bottom - Details
+11474:208090	FRAME	343x512	12673,23324	-	Comments - dropdown
+11474:224476	FRAME	375x812	10802,38519	mobile	Skai > Social - with "tweets" > comment thread 1VH (375 x 812px)
+11474:225924	FRAME	375x812	10802,39719	mobile	Skai > Social - with "tweets" > comment thread ALT 1VH (375 x 812px)
+11474:224727	FRAME	768x1024	5083,38519	tablet	Skai > Social - with "tweets" > comment thread 1VH (768 x 1024px)
+11474:225435	FRAME	768x1024	5083,39719	tablet	Skai > Social - with "tweets" > comment thread ALT 1VH (768 x 1024px)
+11474:226906	FRAME	375x2894	11277,38519	mobile	Skai > Social - with "tweets" (375 x 812px)
+11474:227157	FRAME	768x3615	5951,38519	tablet	Skai > Social - with "tweets" (768 x 1024px)
+11530:302327	FRAME	296x812	10881,4065	-	sidebar - open casino
+11530:302439	FRAME	318x1024	5533,4065	-	sidebar - open casino
