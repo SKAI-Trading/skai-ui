@@ -68,8 +68,17 @@ main	crash	/play/crash
 main	hilo	/play/hilo
 main	chicken	/play/chicken
 main	darts	/play/darts
-main	keno	/play/keno
-main	towers	/play/towers
+#	⚠️ CORRECTED 2026-08-19: /play/keno and /play/towers were listed here as
+#	live routes. Neither exists in src/App.tsx. Verified by enumerating every
+#	route in that file: the ONLY games with a routed page are blackjack,
+#	chicken, coinflip, crash, darts, dice, hilo, mines, plinko and scratchers
+#	— exactly the ten that have a *PageSections.tsx. Keno, towers, rps,
+#	fortune-wheel, roulette, baccarat, bingo, video-poker, limbo and slide are
+#	MODAL-ONLY: reachable from the Play hub, with no URL of their own.
+#	The rows are kept below, commented, because the sections are real and a
+#	route may still be wanted — they were just never wired.
+#main	keno	/play/keno	(NOT ROUTED — modal-only)
+#main	towers	/play/towers	(NOT ROUTED — modal-only)
 main	wallet	/account
 main	wallet	/activity
 main	wallet	/token/:symbol
