@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19T11:08:16.634Z",
+  "generated": "2026-08-20T04:41:01.021Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -51396,7 +51396,7 @@
       ],
       "status": "done",
       "route": "/play (game tiles + in-game art)",
-      "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent",
+      "notes": "ACTUAL GAME: HI-LO (desktop cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
       "verifiedAt": null
     },
     "M6r9FEn042UWTQD1zvy6GM:9351-3413": {
@@ -51420,7 +51420,7 @@
       ],
       "status": "done",
       "route": "/play (game tiles + in-game art)",
-      "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent",
+      "notes": "ACTUAL GAME: HI-LO (mobile cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
       "verifiedAt": null
     },
     "M6r9FEn042UWTQD1zvy6GM:9393-514": {
@@ -51444,7 +51444,7 @@
       ],
       "status": "done",
       "route": "/play (game tiles + in-game art)",
-      "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent",
+      "notes": "ACTUAL GAME: CHICKEN (desktop cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
       "verifiedAt": null
     },
     "M6r9FEn042UWTQD1zvy6GM:9393-519": {
@@ -51468,7 +51468,7 @@
       ],
       "status": "done",
       "route": "/play (game tiles + in-game art)",
-      "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent",
+      "notes": "ACTUAL GAME: CHICKEN (mobile cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
       "verifiedAt": null
     },
     "M6r9FEn042UWTQD1zvy6GM:9479-19858": {
@@ -51492,7 +51492,7 @@
       ],
       "status": "done",
       "route": "/play (game tiles + in-game art)",
-      "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent",
+      "notes": "ACTUAL GAME: DARTS (desktop cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
       "verifiedAt": null
     },
     "M6r9FEn042UWTQD1zvy6GM:9479-19863": {
@@ -51516,7 +51516,7 @@
       ],
       "status": "done",
       "route": "/play (game tiles + in-game art)",
-      "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent",
+      "notes": "ACTUAL GAME: DARTS (mobile cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
       "verifiedAt": null
     },
     "M6r9FEn042UWTQD1zvy6GM:9737-11662": {
@@ -51540,7 +51540,7 @@
       ],
       "status": "done",
       "route": "/play (game tiles + in-game art)",
-      "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent",
+      "notes": "ACTUAL GAME: FORTUNE WHEEL (desktop cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
       "verifiedAt": null
     },
     "M6r9FEn042UWTQD1zvy6GM:9737-11667": {
@@ -51564,7 +51564,7 @@
       ],
       "status": "done",
       "route": "/play (game tiles + in-game art)",
-      "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent",
+      "notes": "ACTUAL GAME: FORTUNE WHEEL (mobile cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
       "verifiedAt": null
     },
     "2005-4492": {
