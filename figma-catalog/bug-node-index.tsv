@@ -461,3 +461,22 @@ refNode	linkFileKey	resolvedFileKey	status	section	type	name	depth	page	owningSc
 13008-37635	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Main container	1	✅ Wallet 2	13008-37621	Skai > Wallet > continue on web > home > request from user - step 2 1VH (1440 x 900px)	1
 13008-37660	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 366	4	✅ Wallet 2	13008-37621	Skai > Wallet > continue on web > home > request from user - step 2 1VH (1440 x 900px)	1
 13008-37672	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	input/primary-inputs	4	✅ Wallet 2	13008-37621	Skai > Wallet > continue on web > home > request from user - step 2 1VH (1440 x 900px)	1
+#
+# APPENDED 2026-08-19 - 7 new /rewards reports (552faf00, 2d17587a, b216f949, 757d795c,
+# edcbc1d6, 3236d523, 9c5e45f9) post-date the 2026-08-13 build above, so none of their
+# nodes were in it. Resolved by hand via get_metadata rather than the .parent walk:
+#   8911-163463/163817/163781 tile the 1440x900 Rewards screen exactly (main x=58 y=92,
+#     sidebar x=0 w=58, header y=0 h=92), which is how the owning screen was established.
+#   8911-163781 is an INSTANCE of the shared Header-desktop-two-layer component - app-wide
+#     chrome, NOT a rewards-specific frame. Treat b216f949 as a header-component question.
+#   8911-161038 is the account menu ('dropdown-3'); its parent was NOT walked, so the
+#     owningScreen columns are deliberately blank rather than guessed.
+#   8909-139269 / 8909-141201 are both full 1440x900 overlay frames (the Sponsor market
+#     rewards modal, steps 1 and 2) and are recorded as screens in their own right.
+#
+8911-163463	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	8911-163462	Skai > Predict > Rewards 1VH (1440 x 900px)	1
+8911-163817	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	sidebar	1	✅ Predict	8911-163462	Skai > Predict > Rewards 1VH (1440 x 900px)	1
+8911-163781	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	INSTANCE	Header-desktop-two-layer	1	✅ Predict	8911-163462	Skai > Predict > Rewards 1VH (1440 x 900px)	1
+8911-161038	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	dropdown-3					1
+8909-139269	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	predict	FRAME	Overlay	0	✅ Predict	8909-139269	Sponsor market rewards - step 1 (disclosure) 1440x900	1
+8909-141201	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	predict	FRAME	Overlay	0	✅ Predict	8909-141201	Sponsor market rewards - step 2 (deposit) 1440x900	1
