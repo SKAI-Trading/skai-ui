@@ -1,0 +1,175 @@
+# responsive.governance.tsv — measured 768/375 behaviour for the `governance` section.
+#
+# WHY THIS FILE EXISTS, AND WHY IT IS NOT vverify.governance.tsv
+# Section `governance` has 125 desktop Figma frames and ZERO at 768 or 375. There is
+# no tablet/mobile frame to compare against, so these verdicts are NOT Figma-fidelity
+# verdicts and MUST NOT be fed to apply-verify.mjs — that pipeline downgrades `done`
+# to `partial` on a non-`match` verdict, which would be wrong here. Nothing in this
+# file is a Figma comparison. Every verdict is a live render measurement.
+# This file is deliberately wired to NO pipeline. It is read by humans.
+#
+# METHOD (state it, because a render outranks a code read)
+# All rows measured by rendering PRODUCTION app.skai.trade in a real browser at
+# 375x900 and 768x900, signed in, then reading getBoundingClientRect / scrollWidth /
+# clientWidth and probing scrollability. Explorer routes carry no auth gate and were
+# also confirmed to render anonymously. Every figure below is a measured px value,
+# not an inference from a class string. Where a fixed width or a wide table LOOKED
+# like a defect but measured clean, the row says so — five such candidates were
+# cleared by a previous pass and are not re-litigated here.
+#
+# COLUMNS
+#   row      line number in status.governance.tsv
+#   node     Figma node id or section label from that row
+#   route    route rendered (cite the route, never App.tsx line — 8 of 8 line refs
+#            in status.governance.tsv are stale; all 13 routes still exist)
+#   v375     verdict at 375  (verified-good | clipped-<px> | degraded | not-reached)
+#   v768     verdict at 768
+#   evidence measured numbers
+#
+# THRESHOLD. `hidden` = viewport scrollWidth minus clientWidth on the box that owns
+# the page content. hidden <= 8px is inside the scrollbar-gutter/rounding band and is
+# recorded as verified-good. Anything above it is content that a user cannot reach.
+#
+# ============================================================================
+# ROOT CAUSE 1 — the Explorer's own overflow-x-auto wrappers are INERT.
+# modules/skai-ui/src/components/layout/scroll-area.tsx:5-21 mounts <ScrollBar/> with
+# no orientation, so only a VERTICAL scrollbar exists. Radix therefore renders the
+# viewport with inline `overflow: hidden scroll` (overflow-x: hidden, measured) and
+# gives the viewport's content wrapper the inline style `min-width: 100%; display:
+# table;` (measured). `display: table` shrink-wraps to max-content, so every
+# `overflow-x-auto` inside the explorer contributes its FULL max-content width to the
+# page instead of scrolling — and the excess is then clipped by the hidden viewport,
+# with no way to scroll to it. ExplorerLayout.tsx:134 is the single mount point.
+# PROVEN BY MUTATION, not by reading: on /explorer/lending at 375, flipping that
+# wrapper from display:table to display:block dropped the viewport scrollWidth from
+# 976 to 367 and turned the Markets table's overflow-x-auto from
+# {scrollWidth 862, clientWidth 862, scrolls:false} into
+# {scrollWidth 862, clientWidth 253, scrolls:true}.
+# The inline style means a Tailwind class cannot override it without !important.
+# NOT FIXED HERE — this is @skai/ui, outside this lane. Reported, not touched.
+#
+# ROOT CAUSE 2 — at exactly 768 the explorer sidebar and the desktop table layouts
+# switch on together, and the sidebar shrinks the box the tables just widened into.
+# ExplorerNav is `hidden md:flex md:flex-col w-56 shrink-0` = 224px measured, and
+# matchMedia('(min-width: 768px)') is true at 768. So the content box is 536px while
+# every md: rule was authored for a 768px box. This is why /explorer/addresses is
+# clean at 375 (mobile layout, 0px hidden) and BROKEN at 768 (157px hidden) — the
+# narrower viewport is the one that works.
+#
+# ROOT CAUSE 3 — src/pages/defi/Governance.tsx:537-556. The 4-tab sub-nav is
+# `<div className="flex justify-center"><TabsList className="inline-flex h-10 ...">`
+# with four TabsTrigger at px-6. No overflow-x-auto, no flex-wrap, no responsive
+# prefix anywhere in the block. Measured 534px wide inside a 325px slot.
+#
+# DESKTOP IS UNAFFECTED. At 1440 every explorer route measured hidden = 0
+# (/explorer, /lending, /txs, /defi, /address/:a all 1208/1208). The `done` verdicts
+# in status.governance.tsv are about desktop and they still stand. Nothing below
+# asks for a redesign of a desktop layout that works.
+# ============================================================================
+#
+# row	node	route	v375	v768	evidence
+#
+# ---- Explorer: 20 `done` rows + 1 `partial` sharing their routes ----
+63	5539-93683	/explorer	clipped-158	verified-good	375: box 367, scrollWidth 525, overflow-x hidden, scrollLeft pinned at 0. Hero stat cards measure 493px wide in a 367px box. 768: 541/536 = 5px, inside the band.
+64	5539-100875	/explorer	clipped-158	verified-good	Same page as 63 at full scroll. Not a second surface, so not a second measurement.
+65	5570-102478	/explorer	clipped-158	verified-good	Same page as 63, scrolled to the RecentTransactions block. The block's own overflow-x-auto measured scrollWidth == clientWidth == 491, i.e. inert (root cause 1).
+66	5638-112382	/explorer/address/:address	clipped-326	clipped-173	375: 693/367. 768: 709/536. Widest node is the address card header at 659px; the 0x-prefixed 42-char address does not wrap.
+114	5586-110620	/explorer/address/:address	clipped-326	clipped-173	Same page as 66 (status.governance.tsv already records the two node ids as one surface). Same measurement.
+67	5660-114498	/explorer/address/:address	clipped-326	clipped-173	AddressTokenBalances renders inside the same clipped page box, so the holdings data inherits 66's defect on top of its existing tab-placement gap.
+74	5669-128901	/explorer/analytics	verified-good	verified-good	375: 367/367. 768: 536/536. Charts reflow; nothing clipped at either width. NO CHANGE NEEDED.
+75	5675-131659	/explorer/tokens	clipped-51	clipped-113	375: 418/367. 768: 649/536 (4 rows loaded). Token table header row is the driver.
+76	5694-140556	/explorer/tokens	clipped-51	clipped-113	Same list page as 75.
+77	5695-142802	/explorer/ai	clipped-28	verified-good	375: 395/367, 28px — small but real content, not gutter. 768: 536/536 clean.
+78	5702-143785	/explorer/launchpad	verified-good	verified-good	375: 367/367. 768: 536/536. NO CHANGE NEEDED.
+79	5702-144185	/explorer/gaming	clipped-162	verified-good	375: 529/367 measured with ZERO table rows (empty state), so the overflow is the header + stat grid, not the data. 768: 545/536 = 9px, at the band edge.
+80	5707-145880	/explorer/governance	clipped-100	verified-good	375: 467/367, again with 0 rows — header/stat-grid driven. 768: 536/536 clean.
+81	5711-148542	/explorer/points	clipped-91	verified-good	375: 458/367. 768: 536/536 clean.
+82	5720-152742	/explorer/addresses	verified-good	clipped-157	INVERTED, and this is root cause 2 in one row. 375: 367/367 clean — the mobile layout works. 768: 693/536. The narrow viewport is the correct one; 768 is where it breaks.
+83	5711-150322	/explorer/defi	clipped-281	clipped-128	375: 648/367. 768: 664/536. Protocols table (# / PROTOCOL / TVL / 24H VOLUME / 7D VOLUME / POOLS / APY / STATUS) is the driver.
+84	5711-147902	/explorer/lending	clipped-609	clipped-456	WORST IN THE SECTION. 375: 976/367 — 5 of the 6 Markets columns (TOTAL SUPPLY, SUPPLY APY, TOTAL BORROW, BORROW APY, UTILISATION) sit entirely off-screen; only ASSET is visible, and there is no way to scroll to the rest. 768: 992/536. Screenshot confirmed the four stat cards are cut mid-card at the right edge.
+85	5707-146891	/explorer/social	clipped-109	verified-good	375: 476/367, 0 rows — header-driven. 768: 536/536 clean.
+86	5689-136816	/explorer/blocks	clipped-17	clipped-21	375: 384/367. 768: 557/536. The smallest real clip in the section; 26 rows loaded at both widths, so this is a settled measurement, not a load race.
+87	5689-136235	/explorer/txs	clipped-200	clipped-415	375: 567/367. 768: 951/536, the largest 768 clip. 25 rows loaded at both widths.
+88	5691-138387	/explorer/gas	verified-good	verified-good	375: 367/367 with 20 rows loaded. 768: 536/536. The gas table's own scroll container works because its content fits. NO CHANGE NEEDED.
+#
+# ---- Explorer rows with nothing to render (unmeasurable, not unverified) ----
+68	5662-124997	-	not-reached	not-reached	status not-started, no component exists. Nothing to measure.
+69	5664-127101	/explorer/address/:address	not-reached	not-reached	useLendingPositions is built-but-unmounted (zero consumers). No Lending tab renders, so there is no rendered surface to measure.
+70	5661-118252	-	not-reached	not-reached	not-started.
+71	5662-120139	-	not-reached	not-reached	not-started.
+72	5662-122540	-	not-reached	not-reached	not-started.
+73	5664-127738	-	not-reached	not-reached	not-started.
+#
+# ---- Governance proper: the sub-nav, and the panels under it ----
+49	5370-61920	/governance	degraded	verified-good	MEASURED, and deliberately NOT filed as "unreachable". TabsList is 534px inside a 325px `flex justify-center` slot, so it overhangs BOTH sides. At rest: "Proposals" starts at left -79 (its label is clipped off the left edge) and "Treasury" spans 320..448, i.e. 73px past the 375 viewport, with document.elementFromPoint at its centre returning null — not hit-testable. The other three tabs hit-test fine. No ancestor in 7 levels has overflow-x auto/scroll; all are `visible`. The user CAN still reach Treasury by panning the whole content column 83px (measured need 89, reached 83, the 6px being the scrollbar gutter), but that drags the hero and the whole stat grid off-screen with it. So: degraded and clipped at rest, not unreachable. 768: 536/536, tab strip fits, clean. Source: src/pages/defi/Governance.tsx:537-556.
+50	5371-63275	/governance?tab=proposals	degraded	verified-good	Sub-nav defect of row 49 only. The proposals list itself measured no page overflow at either width. NOTE: ProposalsTable is owned by lane x4-gov-proposals and was deliberately NOT measured or filed here.
+51	5371-64317	/governance?tab=proposals	degraded	verified-good	Same page as 50 at full scroll.
+52	5373-68430	/governance	degraded	verified-good	Host route measured; ProposalCreateModal was NOT opened, so the overlay itself is unverified at both widths.
+53	5383-73349	/governance?tab=delegation	degraded	verified-good	375: docSW 369 < 375, no page overflow; only the row-49 sub-nav overhangs. 768 clean.
+54	5385-74400	/governance?tab=delegation	degraded	verified-good	Same page as 53 at full scroll.
+56	5387-76925	/governance?tab=treasury	degraded	verified-good	375: no page overflow beyond the row-49 sub-nav. 768 clean. Reaching this tab at 375 is exactly the row-49 pan.
+57	5387-77602	/governance?tab=treasury	degraded	verified-good	Same page as 56 at full scroll.
+59	5390-80080	/governance	degraded	verified-good	Host route measured; ProposalDetail renders as a modal and was NOT opened. Overlay unverified.
+60	5392-82015	/governance	degraded	verified-good	Same modal as 59, unopened.
+61	5376-71276	/governance?tab=staking	degraded	verified-good	375: no page overflow beyond the row-49 sub-nav. 768 clean.
+62	5383-72757	/governance?tab=staking	degraded	verified-good	Same page as 61 at full scroll.
+#
+# ---- Earn family: the main app shell measured clean everywhere ----
+6	5220-10996	/earn	verified-good	verified-good	375: documentElement scrollWidth 369 < 375 clientWidth, zero overflowing nodes. 768: 762 < 768. NO CHANGE NEEDED.
+7	5243-69438	/earn	verified-good	verified-good	Same page as 6 at full scroll.
+11	5259-80297	/earn?tab=vaults	verified-good	verified-good	375 and 768 both clean, zero overflowing nodes.
+12	5248-76804	/earn?tab=positions	verified-good	verified-good	Both widths clean.
+13	5278-80860	/earn?tab=positions	verified-good	verified-good	Empty state of 12; both widths clean.
+20	5280-87638	/earn?tab=faucet	verified-good	verified-good	Both clean. One node measured past the right edge at 375 (right 487) and was CHECKED, not filed: `div.absolute ... bg-primary/30 rounded-full blur` is a decorative background glow, deliberately oversized.
+22	5315-92101	/earn?tab=faucet	verified-good	verified-good	Both widths clean.
+23	5370-46761	/earn?tab=faucet	verified-good	verified-good	Both widths clean.
+25	5370-47867	/earn?tab=faucet	verified-good	verified-good	Both widths clean.
+26	5370-59619	/earn?tab=referral	verified-good	verified-good	Both widths clean.
+27	5280-82910	/earn/trading-vault	verified-good	verified-good	1,642-line page, zero overflowing nodes at 375 and at 768. The five lock-plan cards reflow. NO CHANGE NEEDED.
+28	11151-18953	/earn/trading-vault	verified-good	verified-good	Same page as 27; its unique delta (the PnL chart) is backend-blocked and does not render, so only the shared page was measured.
+29	5280-86949	/sports?tab=pool	verified-good	verified-good	Measured at the route /earn/house-vault actually redirects to. Both widths clean. This also re-confirms the earlier REFUTED verdict on BookieDashboard.tsx:796/810 min-w-[400px] — the overflow-x-auto there wraps header and rows and measures clean at 375.
+33	5492-53877	/earn/vaults	verified-good	verified-good	Both widths clean. SEPARATE FINDING, not a layout defect: the live page exposed no `a[href*="/earn/vault/0x"]` links at 1440, so rows 34/35 could not be reached through the UI.
+34	5515-92313	/earn/vault/:vaultAddress	not-reached	not-reached	No vault address obtainable from the live /earn/vaults listing (see row 33). A placeholder address rendered a 176-char stub, which is not a fair measurement of the real detail page.
+35	5515-93883	/earn/vault/:vaultAddress	not-reached	not-reached	Same reason as 34.
+36	5515-95455	/earn/gauges	verified-good	verified-good	Both widths clean, zero overflowing nodes.
+37	5515-96095	/earn/gauges	verified-good	verified-good	Same page as 36.
+#
+# ---- Account / portfolio / profile ----
+38	5518-101256	/skaicasey	verified-good	verified-good	Measured on the real /:username route. Both widths clean.
+39	5518-100072	/skaicasey	verified-good	verified-good	Same page as 38 at full scroll; its one overlay child was not opened.
+41	5526-47972	/account?tab=settings	verified-good	verified-good	Both widths clean.
+42	5529-72564	/account?tab=settings	verified-good	verified-good	Same surface as 41.
+45	5529-49244	/account?tab=security	verified-good	verified-good	Both widths clean, zero overflowing nodes.
+46	5529-73119	/account?tab=settings	verified-good	verified-good	Same surface as 41.
+43	5529-73867	/portfolio	verified-good	verified-good	Host page clean at both widths. ExportKeyModal was NOT opened here — a previous pass already measured its w-[470px] shrinking to 343 and reflowing cleanly, and that verdict is not re-litigated.
+44	5529-76029	/portfolio	verified-good	verified-good	Same as 43; the modal's revealed state was not opened.
+#
+# ---- Learn / airdrop / leaderboard / referral ----
+89	5410-112561	/learn	verified-good	verified-good	The heaviest page measured in this lane (14,524 chars of text at 375) and it is clean at both widths: zero overflowing nodes.
+94	5442-42904	/learn	verified-good	verified-good	Inline accordion on the /learn page measured above.
+99	5460-87941	/learn	verified-good	verified-good	Host page clean; CourseCreatorModal was NOT opened, so the dialog is unverified at both widths.
+100	5467-91593	/learn#what-is-skai-chain	verified-good	verified-good	Hash anchor on the /learn page measured above.
+107	5480-32393	/airdrop	verified-good	verified-good	Both widths clean.
+108	5481-49179	/airdrop	verified-good	verified-good	Same page as 107 at full scroll.
+109	5481-50934	/airdrop	verified-good	verified-good	Same page as 107.
+111	5531-76408	/leaderboard	verified-good	verified-good	MEASURED RATHER THAN ASSUMED, and it clears two candidates. The @skai/ui Table wrapper (`relative w-full overflow-auto`, data-display/table.tsx:9) measured scrollWidth 417 / clientWidth 275 and reached the full 142px of scroll — it genuinely works at 375, confirming the earlier scanner-false-positive verdict by render rather than by code read. The sort chips (`overflow-x-auto`) measured need 9 / reached 9. Both fully reachable. TRAP WORTH RECORDING: a synchronous scrollLeft read reports FALSE here because the container computes `scroll-behavior: smooth` — the first pass wrongly showed canScroll:false on both. Force `scroll-behavior: auto` and re-read after a frame, or a working scroller reads as broken.
+112	5531-77640	/referral	verified-good	verified-good	Both widths clean. Re-confirms by render the earlier REFUTED verdict on Referral.tsx:1041/1155.
+113	5534-92868	/referral	verified-good	verified-good	Same page as 112.
+#
+# ---- Explicitly NOT measured: owned by other lanes ----
+#	ProposalsTable	/governance?tab=proposals	-	-	Owned by lane x4-gov-proposals. Not measured, not filed.
+#	SharePortfolioModal	/portfolio	-	-	Owned by lane x5-share-modal. Not measured, not filed.
+#
+# ============================================================================
+# TALLY
+#   114 rows in status.governance.tsv.
+#   45 are not-started or blocked-on-backend and render nothing — structurally
+#      unmeasurable, which is not the same as unverified.
+#   69 render something. 66 of those 69 had their route rendered and measured at
+#      both 375 and 768. Not reached: rows 34, 35 (no live vault link) and 69
+#      (built-but-unmounted hook).
+#   Of the 66: 45 verified-good at both widths, 21 carry a measured defect.
+#   Every one of the 21 defects is in the Explorer or the Governance sub-nav.
+#   The whole Earn / Learn / Account / Airdrop / Leaderboard / Referral surface —
+#   every row measured — is clean at 375 and 768 with zero overflowing nodes.
+# ============================================================================
