@@ -52,6 +52,26 @@ main	predict	/predict
 main	predict	/predict/all
 main	predict	/predict/futures
 main	predict	/predict/rewards
+#	The re-homed rewards family. Owner ruling 2026-08-13 folded four
+#	destinations into ONE page: /predict/rewards -> /rewards, /quests ->
+#	/rewards?tab=quests, /challenges -> /rewards?tab=challenges (App.tsx
+#	declares all three as redirects; src/pages/rewards/rehomedRewardsRoutes.test.tsx
+#	pins them). /predict/rewards above is now only that redirect.
+#
+#	These three were UNOWNED until 2026-08-20, and the cost was concrete rather
+#	than bookkeeping: a bug filed from app.skai.trade/rewards joined to no
+#	section, so reports 2d17587a and b216f949 were both triaged against the
+#	wrong components — LeftSidebar.tsx and Header.tsx, which are the LEGACY
+#	chrome and render for nobody while REDESIGN_HOME is on.
+#
+#	Predict is the owning section because Figma files the screen there:
+#	8911:163462 is titled "Skai > Predict > Rewards 1VH" and sits on the
+#	Predict page. The PAGE is wider than that today (Overview / Predict /
+#	Quests / Challenges tabs), so if the catalog ever gains a "rewards"
+#	section these three rows move together.
+main	predict	/rewards
+main	predict	/quests
+main	predict	/challenges
 main	predict	/predict/market/:id
 main	predict	/predict/market/:marketType/:marketId
 main	play	/play

@@ -29,15 +29,15 @@
 #	apps and are excluded by the app column in routes.tsv.
 #
 open_bugs	section	frames	routes
-190	home	349	/ /portfolio /upgrade /upgrade/checkout
-108	trade-2	407	/launchpad /launchpad/create /trade/trench /trench
+190	home	226	/ /portfolio /upgrade /upgrade/checkout
+108	trade-2	495	/launchpad /launchpad/create /trade/trench /trench
 94	play	345	/play /play/casino /play/game/:gameId /sports
-78	trade	830	/bridge /crypto/:symbol /insightx /spot /swap /trade/live /trade/perps
-63	predict	284	/predict /predict/all /predict/futures /predict/market/:id /predict/market/:marketType/:marketId /predict/rewards
+78	trade	420	/bridge /crypto/:symbol /insightx /spot /swap /trade/live /trade/perps
+63	predict	284	/challenges /predict /predict/all /predict/futures /predict/market/:id /predict/market/:marketType/:marketId /predict/rewards /quests /rewards
 23	skratch	20	/play/scratchers
 20	coinflip	37	/play/coinflip
-11	blackjack	19	/play/blackjack
-10	mines	16	/play/mines
-3	plinko	20	/play/plinko
-2	dice	34	/play/dice
-1	wallet	369	/account /activity /token/:symbol
+11	blackjack	20	/play/blackjack
+10	mines	19	/play/mines
+3	plinko	23	/play/plinko
+2	dice	36	/play/dice
+1	wallet	179	/account /activity /token/:symbol
