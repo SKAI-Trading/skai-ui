@@ -424,10 +424,17 @@ if (fs.existsSync(citPath)) {
 
 // Preserve hand-set fields from prior registry
 let prior = {};
+// The family-level breakpoint map is written by apply-status.mjs from column 6
+// of status.<section>.tsv. It is fully derivable, but it is carried across a
+// rebuild anyway so `registry.json` is never momentarily missing the whole
+// breakpoint dimension for any consumer that reads it between the two steps.
+let priorBreakpoints = null;
 const regPath = path.join(DIR, "registry.json");
 if (fs.existsSync(regPath)) {
   try {
-    prior = JSON.parse(fs.readFileSync(regPath, "utf8")).frames || {};
+    const j = JSON.parse(fs.readFileSync(regPath, "utf8"));
+    prior = j.frames || {};
+    priorBreakpoints = j.breakpoints || null;
   } catch {}
 }
 
@@ -596,6 +603,12 @@ for (const section of SECTIONS) {
       route: p.route || null,
       notes: p.notes || "",
       verifiedAt: p.verifiedAt || null,
+      // Per-breakpoint verdict at THIS frame's own device. Carried across a
+      // rebuild for the same reason `status` is: apply-status.mjs rewrites it
+      // from status.<section>.tsv, but a build-registry run on its own would
+      // otherwise reset every width verdict to "unknown" — the same shape of
+      // silent-wipe bug that destroyed 920 vverify markers on 2026-07-28.
+      bpStatus: p.bpStatus || "unknown",
     };
   }
 }
@@ -741,7 +754,7 @@ for (const pg of PAGES.pages || []) {
 drift.sort((a, b) => b.unexplained - a.unexplained);
 stats.driftingPages = drift;
 
-const out = { generated: new Date().toISOString(), fileKey: FILE_KEY, fileKeys: FILE_KEYS, sectionFile: SECTION_FILE, pagesHarvested: PAGES.harvested || null, stats, frames };
+const out = { generated: new Date().toISOString(), fileKey: FILE_KEY, fileKeys: FILE_KEYS, sectionFile: SECTION_FILE, pagesHarvested: PAGES.harvested || null, stats, breakpoints: priorBreakpoints || {}, frames };
 fs.writeFileSync(regPath, JSON.stringify(out, null, 2));
 console.log("registry.json written:", regPath);
 console.log(JSON.stringify(stats, null, 2));

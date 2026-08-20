@@ -91,6 +91,8 @@ frames with plain design-state names like `Desktop Full Game - Roll Over`).
 | `bug-node-index.tsv` | **layer D** — every node-id referenced by an OPEN bug report, resolved to `{type, name, depth, owning screen, page, section}` | `getNodeByIdAsync` + parent walk | yes |
 | `FILE_ROUTING.md` | which Figma FILE each page really lives in, and why the "old file / retry in the live file" rule is wrong for most sections | `figma.root.children` per file | yes |
 | `TOKENS.md` | **layer E (started)** — Figma's radius scale vs the class we ship, with the conversion table | bound-variable read off 473 nodes | yes |
+| `bp.mjs` | **the breakpoint dimension** — width constants, the verdict vocabulary, the column-6 parser, and the derived design-coverage helper. Imported by `apply-status.mjs` and `bp-report.mjs`; not runnable on its own | — | no |
+| `bp-report.mjs` | breakpoint coverage report **and** the column-6 validator. Exits 1 on a malformed cell. `--gaps` lists every actionable row, `--hygiene` lists orphan and duplicate rows | reads `status.*.tsv` + `registry.json` | no |
 
 ## registry.json — per-frame record
 
@@ -112,10 +114,21 @@ frames with plain design-state names like `Desktop Full Game - Roll Over`).
       "readiness": "ready|wip|meta|unknown", // ready-for-dev, from the page-name emoji — see below
       "citedByFiles": ["src/..."],      // files whose comments cite this node-id (from code-node-citations.json)
       "implFiles": ["src/..."],         // hand-verified implementing file(s) — set during mapping pass
-      "status": "done|partial|not-started|unknown",
+      "status": "done|partial|not-started|unknown",  // ⚠ carries NO width — see the breakpoint section
+      "bpStatus": "unknown",             // the breakpoint verdict at THIS frame's own `device`
       "route": "/... or ?tab=...",      // where it renders in the app (if routed)
       "notes": "",                       // gaps, backend deps, deviations
       "verifiedAt": null                 // iso when last render-verified against Figma
+    }
+  },
+  "breakpoints": {                       // family-level, written by apply-status.mjs
+    "<section>/<family>": {
+      "desktop": "renders", "tablet": "renders", "mobile": "missing",
+      "worst": "missing",                // worst CODE verdict across the three
+      "design": { "desktop": 46, "tablet": 64, "mobile": 108, "unplaced": 0 }, // DERIVED
+      "designMissing": [],               // widths with zero frames — derived, not typed
+      "at": "2026-08-20",                // provenance date of the verdicts
+      "source": "route-overflow-sweep"   // which sweep produced them
     }
   }
 }
@@ -182,6 +195,206 @@ Node-id citation in code (`citedByFiles`) is a *hint*, not proof of `done` — a
 can be implemented without its node-id in a comment, and a cited node may be
 aspirational. `status` is set only by the mapping pass, never inferred from citations alone.
 
+## Breakpoint dimension (added 2026-08-20)
+
+### The hole this closes
+
+`status` above has **no width in it**. Measured across all 24 `status.*.tsv` on
+2026-08-20: of **262 rows marked `done`, 223 said nothing about any viewport**,
+and six sections — `governance`, `governance-account`, `governance-vaults`,
+`social`, `wallet`, `play` — mentioned a width on **zero** rows.
+
+So `status: done` meant *"done at whatever width the author happened to open"*,
+overwhelmingly 1440. A responsive gap sitting behind a `done` row was invisible
+to every report the catalog could produce, and therefore could never be
+scheduled. It was not that the answer was wrong; there was no place to put one.
+
+★ **`status` still carries no width, and must never be read as a desktop
+verdict.** It is the legacy aggregate. The width answers live in their own
+column, and they start at `unknown`.
+
+### Two axes, and only one of them is typed
+
+A width question has two independent halves. The old single column collapsed both:
+
+| Axis | Question | Where it comes from |
+|------|----------|---------------------|
+| **DESIGN** | Is there a Figma frame at this width? | **DERIVED** from `registry.json` — every frame already stores a `device` parsed from its title's viewport |
+| **CODE** | Does the implementation work at this width? | **Hand-authored**, column 6 of `status.<section>.tsv` |
+
+Deriving the design axis is what makes this cheap: `governance`'s 114 desktop
+frames / 0 tablet / 0 mobile becomes a `design-missing` verdict on ~70 rows with
+**zero hand edits**, and it self-corrects the day those frames are drawn.
+Nobody can typo it out of sync, and nobody has to re-type it.
+
+⚠ **The derived counts are asymmetric in trustworthiness.** `section`, `family`
+and `device` are all parsed from frame titles, and titles are labels, not
+identities — roughly ten games carry a 375 frame *titled* as a different game
+(`9442-17258` is titled Blackjack and is actually Darts). A **zero is strong
+evidence** (nobody mistitles a frame into non-existence); a **nonzero count is a
+hint**. Also count `kind === "screen"` only: `towers` has 67 frames of which 60
+are furniture (`Rectangle N`, `Vector N`, `Screenshot …`).
+
+### The breakpoints
+
+`desktop 1440` · `tablet 768` · `mobile 375`. Confirmed from the catalogued
+frame titles: 712 frames at 1440, 504 at 768, 578 at 375. Constants live in
+`BP_WIDTHS` in `bp.mjs` — do not re-hardcode them.
+
+### The column
+
+`status.<section>.tsv` gains an **optional sixth column**:
+
+```text
+family <TAB> status <TAB> primaryFile <TAB> route <TAB> reason <TAB> bp
+```
+
+Grammar (whitespace-separated, order-independent):
+
+```text
+<width>=<verdict> [<width>=<verdict> …] [@<YYYY-MM-DD>[/<source-slug>]]
+
+desktop=done tablet=renders mobile=broken @2026-08-20/games-375-sweep
+```
+
+**Why column 6 and not a sidecar file or three columns:**
+
+- **Absent means `unknown`, so all 500+ existing rows default correctly with
+  zero edits.** That was the hard requirement: 605 rows cannot be re-verified by
+  hand, and a migration that made them *assert* something would be worse than
+  the silence it replaced.
+- Co-located with the row it qualifies, so it cannot drift and cannot orphan the
+  way a parallel `bp.<section>.tsv` would.
+- Column 5 (`reason`) used to absorb every remaining tab via `rest.join("\t")`.
+  Verified before claiming column 6: **zero rows across all 24 files had more
+  than five tab-separated fields**, so the slot was genuinely free. `reason` is
+  now strictly column 5, and a row with a seventh field is **refused with an
+  error**, not silently misparsed as a verdict.
+
+### ★ The default is `unknown`, and it is NEVER inherited from `status`
+
+A row with no column 6 reads `unknown` at all three widths. It does **not**
+inherit column 2. If it did, every row someone marked `done` after checking 1440
+would start asserting `done` at 375 — which is strictly worse than today's
+silence, because it would *look verified*. `unknown` is the honest answer to a
+question nobody asked, and it is what the coverage report counts as an
+outstanding gap.
+
+Likewise `apply-status.mjs` writes `bpStatus: "unknown"` onto every screen frame
+**explicitly** rather than leaving the field absent, so a consumer cannot
+mistake "no opinion" for "this build predates the field" and fall back to the
+width-less `status`.
+
+### The verdict vocabulary
+
+| Verdict | Means |
+|---------|-------|
+| `unknown` | Nobody has looked at this width. **The default.** |
+| `missing` | The surface does not render at this width **at all** — absent, not merely broken. |
+| `renders` | Lays out at this width: no horizontal overflow, no clipped controls. **NOT compared to a Figma frame.** |
+| `partial` | Usable at this width, named gaps remain — put them in the reason column. |
+| `done` | Implemented **and** render-verified against the Figma frame at this width. |
+| `broken` | Reachable but unusable — overflow, clipped controls, or the flow cannot be completed. |
+| `not-started` | Verified that no responsive handling exists here (e.g. a fixed-width container). |
+| `n-a` | This width is deliberately out of scope for this surface. **Never** use it to mean "not checked". |
+
+Severity for worst-of rollups, worst first:
+`missing` → `broken` → `not-started` → `partial` → `renders` → `done`.
+`unknown` and `n-a` are excluded from that ordering on purpose — neither is a
+code judgement, so neither may win a worst-of comparison and hide a real one.
+
+`design-missing` is deliberately **not** in this list. It is derived, never typed.
+
+#### `renders` is the rung an automated sweep is allowed to write
+
+A Playwright pass that finds no horizontal overflow proves the page **lays
+out**; it does not compare a single pixel to Figma. Writing `done` off such a
+sweep is exactly the overclaim this dimension exists to stop. A later auditor
+who actually compares the frame upgrades `renders` → `done`, and the coverage
+report shows that climb happening.
+
+#### ★ Worked example 1 — why `missing` is separate from `broken`
+
+`/swap` measured **zero horizontal overflow at 375** on 2026-08-20. It passed
+because there is no swap UI at 375 at all: the string "Swap" appears 6× at 1440,
+6× at 768 and **0× at 375** — the route resolves to `/portfolio` and the panel
+never mounts.
+
+**"No overflow" and "the feature is there" are different facts, and one `status`
+column cannot tell them apart.** Neither can an overflow number. `missing` is
+the rung that separates them, and it ranks *worst of all*: a broken feature is
+at least reachable and gets reported by its users, whereas an absent one looks
+healthy from every automated angle.
+
+#### ★ Worked example 2 — wired ≠ renders
+
+`status.slide.tsv` says the Slide route is **"FULLY WIRED"**, and warns against
+correcting it. True, and irrelevant: the route registers and the page then
+throws into the error boundary (`DialogTitle` outside a `Dialog`) at 1440, 768
+**and** 375. Seeding it `mobile=broken` with desktop passing would have been
+wrong in the direction that hides an outage — hence `desktop=broken
+tablet=broken mobile=broken`.
+
+### Provenance tags — where the scope of a claim lives
+
+The `@YYYY-MM-DD/source-slug` token is not decoration. **A verdict is bounded by
+its tag**, which is what lets a weak rung like `renders` be applied in bulk
+without overclaiming. Tags in use:
+
+| Tag | Method, and what it does NOT cover |
+|-----|------------------------------------|
+| `@2026-08-20/route-overflow-sweep` | Route loaded in its **default state** at 1440/768/375 on real production DOM in a signed-in session. Measured `documentElement.scrollWidth − innerWidth`, every element whose box escapes the viewport **excluding** those inside an `overflow-x:auto/scroll/hidden` ancestor, and hard-clipped text. ⚠ **States reached by interaction were not entered**, and nothing was compared to Figma. |
+| `@2026-08-20/games-375-sweep` | Whether a game's bet→settle flow is **completable** at 375. ⚠ Says nothing about Figma parity, and (except where a width is written explicitly) nothing about 1440/768. |
+
+When you run a new sweep, add a row here. A tag with no entry is a verdict
+nobody can audit.
+
+### How a future auditor records a per-width verdict
+
+1. Open the row in `status.<section>.tsv` for the family you verified.
+2. Append (or edit) column 6 — a real TAB, then the cell. Write **only** the
+   widths you actually measured; leave the rest off, and they stay `unknown`.
+   Serialising an `unknown` back out is not an error, it is just noise —
+   `formatBpCell` omits them.
+3. Stamp provenance: `@<the date you measured>/<sweep-slug>`, and add the slug
+   to the tag table above if it is new.
+4. Run `node figma-catalog/bp-report.mjs`. It **exits 1** on a malformed cell,
+   so a typo cannot become a silent blind spot.
+5. Re-run the pipeline below so `registry.json` picks it up.
+
+Do **not** batch-fill widths you did not measure. A row left `unknown` shows up
+as an outstanding gap in the coverage report, which is the entire point; an
+invented verdict does not, which is the failure being fixed.
+
+### Reading it back
+
+- `registry.frames[<node>].bpStatus` — the verdict at **that frame's own
+  `device`**. A frame whose title carried no parseable viewport gets `unknown`:
+  that is a title-grammar gap, not a responsive gap.
+- `registry.breakpoints["<section>/<family>"]` — the full triple, the `worst`
+  rollup, the derived `design` counts, `designMissing`, and the provenance.
+- `node figma-catalog/bp-report.mjs [--gaps] [--hygiene]` — the coverage table,
+  the design gaps, and the actionable list.
+
+`build-registry.mjs` carries `bpStatus` across a rebuild the same way it carries
+`status`. It has to: a bare `build-registry` run would otherwise reset every
+width verdict to `unknown`, which is the same shape of silent-wipe bug that
+destroyed 920 `vverify` markers on 2026-07-28.
+
+### Baseline, so drift is measurable
+
+Immediately after the dimension was introduced (2026-08-20):
+
+```text
+COVERAGE: 116/595 rows (19%) carry a verdict at ≥1 width.
+  desktop   97/595    96 renders, 1 broken
+  tablet    98/595    96 renders, 2 broken
+  mobile   116/595   104 renders, 10 broken, 2 missing
+```
+
+Compare, do not memorise — the denominator grows as sections are added. **The
+number that must never fall is the count of rows carrying a verdict.**
+
 ## Rebuild
 
 `node modules/skai-ui/figma-catalog/build-registry.mjs` (from the Skai-Trading working
@@ -200,7 +413,12 @@ node modules/skai-ui/figma-catalog/families.mjs         # roll frames → famili
 node modules/skai-ui/figma-catalog/apply-status.mjs     # fold status.<section>.tsv → per-frame status/route/notes
 node modules/skai-ui/figma-catalog/apply-verify.mjs     # fold vverify.<section>.tsv → visual verdicts  ← MUST FOLLOW apply-status
 node modules/skai-ui/figma-catalog/catalog-view.mjs > modules/skai-ui/figma-catalog/figma-frame-catalog.md
+node modules/skai-ui/figma-catalog/bp-report.mjs        # breakpoint coverage; EXITS 1 on a malformed column 6
 ```
+
+`bp-report.mjs` writes nothing, so its position is free — but run it after any
+edit to `status.<section>.tsv`, because it is the only thing that validates
+column 6 outside of `apply-status.mjs` itself.
 
 ### ⚠ `apply-verify` MUST run AFTER `apply-status`, and this list used to omit it
 
@@ -233,8 +451,12 @@ because the catalog had grown, which briefly looked like a defect and was not.
 (`node … catalog-view.mjs out.md`). It previously wrote to the literal path `/dev/stdout`,
 which throws `ENOENT C:\dev\stdout` on Windows — see `recurring-issues.md §271`.
 
-- `status.<section>.tsv` (family <TAB> status <TAB> primaryFile <TAB> route <TAB> reason)
-  is the DURABLE source of verified status — hand/agent-authored per `VERIFY_BRIEF.md`.
+- `status.<section>.tsv` (family <TAB> status <TAB> primaryFile <TAB> route <TAB> reason
+  [<TAB> bp]) is the DURABLE source of verified status — hand/agent-authored per
+  `VERIFY_BRIEF.md`. The optional sixth column carries the per-breakpoint
+  verdicts; see **Breakpoint dimension** above. `reason` is now strictly column
+  5 and **must not contain a TAB** — a seventh field is refused with an error
+  rather than misparsed as a width verdict.
   `apply-status.mjs` is what writes authoritative `status` into registry.json;
   build-registry alone leaves frames `unknown` until apply-status runs.
 - `families.json.proposedStatus` (likely-done/partial/not-started) is only a
