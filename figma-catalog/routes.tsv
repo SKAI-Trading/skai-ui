@@ -73,10 +73,16 @@ main	darts	/play/darts
 #	route in that file: the ONLY games with a routed page are blackjack,
 #	chicken, coinflip, crash, darts, dice, hilo, mines, plinko and scratchers
 #	— exactly the ten that have a *PageSections.tsx. Keno, towers, rps,
-#	fortune-wheel, roulette, baccarat, bingo, video-poker, limbo and slide are
+#	fortune-wheel, roulette, baccarat, bingo, video-poker and slide are
 #	MODAL-ONLY: reachable from the Play hub, with no URL of their own.
+#	(Limbo WAS in that list and left it later the same day — it was routed
+#	2026-08-19, so the routed count is now eleven, not ten.)
 #	The rows are kept below, commented, because the sections are real and a
 #	route may still be wanted — they were just never wired.
+main	limbo	/play/limbo
+#	↑ Limbo was wired 2026-08-19: LimboPage + a geo-gated route in
+#	src/App.tsx. It is the ELEVENTH routed game, joining blackjack, chicken,
+#	coinflip, crash, darts, dice, hilo, mines, plinko and scratchers.
 #main	keno	/play/keno	(NOT ROUTED — modal-only)
 #main	towers	/play/towers	(NOT ROUTED — modal-only)
 main	wallet	/account
