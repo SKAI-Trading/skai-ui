@@ -13,6 +13,11 @@ import { cn } from "../../lib/utils";
 export type SkaiLogoSize = "small" | "compact" | "medium" | "large";
 export type SkaiLogoVariant = "white" | "black";
 /**
+ * Brand colour of the lightning mark. Independent of `variant`, which only ever
+ * governed the WORDMARK — see the `monochrome` prop below.
+ */
+const BOLT_SKY_BLUE = "#56C7F3";
+/**
  * Wordmark form:
  * - "full"  → "Skai.trade" + gradient lightning icon (logos/skai)
  * - "short" → "Skai" + solid sky-blue lightning icon, with Figma overlap (logos/skai-short)
@@ -28,6 +33,22 @@ export interface SkaiLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   iconOnly?: boolean;
   /** Wordmark form — defaults to "full" for backward compatibility */
   wordmark?: SkaiLogoWordmark;
+  /**
+   * Draw the lightning mark in the SAME colour as the wordmark (`variant`)
+   * instead of its brand fill — solid Sky Blue on the short form, the Sky
+   * Blue → Alien Green gradient on the full one.
+   *
+   * `variant` alone never did this. It has only ever set the WORDMARK fill, so
+   * `variant="white"` produced a white "Skai" beside a sky-blue bolt. That is
+   * correct for a header lockup and wrong for a watermark: Figma's `logos/skai`
+   * (3562:40435 and its siblings on every Predict card) is one flat colour at
+   * 24% opacity, and the two-tone version reads as a stray blue speck — bug
+   * report 0622e026, whose predecessor ad78f7e0 fixed the wrong half.
+   *
+   * Off by default: the branded bolt stays the default everywhere it already
+   * ships.
+   */
+  monochrome?: boolean;
 }
 
 // Size dimensions — match Figma logo bounding boxes (Small 101x24, Medium 201x48, Large 267x64)
@@ -47,14 +68,16 @@ const sizeConfig: Record<
 // Two interlocking lightning bolt paths with Sky Blue → Alien Green gradient
 // =============================================================================
 
-const SkaiLogoIcon: React.FC<{ width: number; height: number; fill: string; variant: SkaiLogoVariant }> = ({
-  width,
-  height,
-  fill,
-  variant,
-}) => {
-  // Use gradient for white variant (on dark bg), solid fill for black variant
-  const useGradient = variant === "white";
+const SkaiLogoIcon: React.FC<{
+  width: number;
+  height: number;
+  fill: string;
+  variant: SkaiLogoVariant;
+  monochrome?: boolean;
+}> = ({ width, height, fill, variant, monochrome = false }) => {
+  // Use gradient for white variant (on dark bg), solid fill for black variant.
+  // `monochrome` collapses both to the wordmark's own fill.
+  const useGradient = variant === "white" && !monochrome;
   const fillValue = useGradient ? "url(#skai-icon-grad-0)" : fill;
   const fillValue2 = useGradient ? "url(#skai-icon-grad-1)" : fill;
 
@@ -176,11 +199,13 @@ const SkaiLogoText: React.FC<{ width: number; height: number; fill: string }> = 
 // resolve when @skai/ui is consumed as a pre-built package).
 // =============================================================================
 
-const SkaiLogoComposedShort: React.FC<{ width: number; height: number; textFill: string }> = ({
-  width,
-  height,
-  textFill,
-}) => (
+const SkaiLogoComposedShort: React.FC<{
+  width: number;
+  height: number;
+  textFill: string;
+  /** Lightning mark fill. Brand Sky Blue unless the caller asks for monochrome. */
+  boltFill?: string;
+}> = ({ width, height, textFill, boltFill = BOLT_SKY_BLUE }) => (
   <svg
     width={width}
     height={height}
@@ -189,14 +214,14 @@ const SkaiLogoComposedShort: React.FC<{ width: number; height: number; textFill:
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
-    {/* Lightning bolt — Figma `icon` (28.913×32) at (0,0), solid #56C7F3 */}
+    {/* Lightning bolt — Figma `icon` (28.913×32) at (0,0), brand Sky Blue */}
     <path
       d="M11.8198 20.5072L14.879 17.4479C15.119 17.208 14.9496 16.7946 14.6088 16.7946H11.1059C10.4787 16.7946 10.1359 16.0625 10.5392 15.5805L23.0827 0.629191C23.2924 0.381144 23.115 0 22.7903 0H16.6799C15.845 0 15.0464 0.332745 14.4575 0.92362L0.361242 15.1046C-0.120734 15.5906 -0.120734 16.3751 0.363259 16.8591L3.48501 19.9808C3.99522 20.4911 4.68491 20.7774 5.40485 20.7774H11.1644C11.4084 20.7774 11.6443 20.6806 11.8178 20.5072H11.8198Z"
-      fill="#56C7F3"
+      fill={boltFill}
     />
     <path
       d="M28.5494 15.1369L25.4276 12.0151C24.9174 11.5049 24.2277 11.2186 23.5078 11.2186H17.7483C17.5043 11.2186 17.2683 11.3154 17.0949 11.4888L14.0357 14.548C13.7957 14.788 13.9651 15.2014 14.3059 15.2014H17.8088C18.436 15.2014 18.7788 15.9335 18.3755 16.4154L5.82997 31.3708C5.62024 31.6189 5.7977 32 6.12238 32H12.2328C13.0677 32 13.8663 31.6673 14.4551 31.0764L28.5514 16.8954C29.0334 16.4094 29.0334 15.6249 28.5494 15.1409V15.1369Z"
-      fill="#56C7F3"
+      fill={boltFill}
     />
     {/* "Skai" wordmark — translated to (40, 7.7). x=40 sets the horizontal gap
         so the textual "S" starts ~11px past the bolt's right edge (28.913);
@@ -274,6 +299,10 @@ const shortSizeConfig: Record<SkaiLogoSize, { height: number }> = {
  *
  * // Icon only (no text)
  * <SkaiLogo iconOnly size="small" />
+ *
+ * // Flat one-colour watermark (Figma logos/skai on a card) — bolt takes the
+ * // wordmark's colour instead of brand Sky Blue
+ * <SkaiLogo size="small" variant="white" wordmark="short" monochrome />
  */
 const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
   (
@@ -282,6 +311,7 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
       variant = "white",
       iconOnly = false,
       wordmark = "full",
+      monochrome = false,
       className,
       ...props
     },
@@ -289,6 +319,9 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
   ) => {
     const config = sizeConfig[size];
     const fill = variant === "white" ? "#FFFFFF" : "#001615";
+    // The bolt's own colour. `monochrome` is the ONLY thing that changes it —
+    // `variant` governs the wordmark and always has.
+    const boltFill = monochrome ? fill : BOLT_SKY_BLUE;
 
     if (iconOnly) {
       // Icon-only follows the active wordmark style: short → solid blue, full → gradient
@@ -300,9 +333,15 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
           {...props}
         >
           {wordmark === "short" ? (
-            <SkaiLogoIconShort width={config.iconWidth} height={config.iconHeight} fill="#56C7F3" />
+            <SkaiLogoIconShort width={config.iconWidth} height={config.iconHeight} fill={boltFill} />
           ) : (
-            <SkaiLogoIcon width={config.iconWidth} height={config.iconHeight} fill={fill} variant={variant} />
+            <SkaiLogoIcon
+              width={config.iconWidth}
+              height={config.iconHeight}
+              fill={fill}
+              variant={variant}
+              monochrome={monochrome}
+            />
           )}
         </div>
       );
@@ -326,7 +365,12 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
           style={{ height: s.height, width: frameWidth }}
           {...props}
         >
-          <SkaiLogoComposedShort width={innerWidth} height={s.height} textFill={fill} />
+          <SkaiLogoComposedShort
+            width={innerWidth}
+            height={s.height}
+            textFill={fill}
+            boltFill={boltFill}
+          />
         </div>
       );
     }
@@ -338,7 +382,13 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
         style={{ height: config.height, gap: config.gap }}
         {...props}
       >
-        <SkaiLogoIcon width={config.iconWidth} height={config.iconHeight} fill={fill} variant={variant} />
+        <SkaiLogoIcon
+          width={config.iconWidth}
+          height={config.iconHeight}
+          fill={fill}
+          variant={variant}
+          monochrome={monochrome}
+        />
         <SkaiLogoText width={config.textWidth} height={config.textHeight} fill={fill} />
       </div>
     );
