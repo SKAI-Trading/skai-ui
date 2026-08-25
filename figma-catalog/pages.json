@@ -1,592 +1,652 @@
 {
- "_comment": [
-  "LIVE page inventory for every Figma file the catalog tracks, harvested directly",
-  "from Figma rather than from figma.txt. This exists because the catalog's node lists are",
-  "parsed from that hand-maintained link dump, so any page never pasted into it is",
-  "structurally invisible - the root cause of every coverage gap found on 2026-07-28.",
-  "build-registry.mjs reads this to stamp `page` and `readiness` on every frame and to",
-  "REPORT pages that no section covers, so the next missing page announces itself.",
-  "",
-  "readiness comes from the leading emoji of the page NAME, which is the convention the",
-  "team actually uses (Casey, 2026-07-28). Figma's real Dev Mode devStatus flag is not",
-  "readable here: the MCP plugin sandbox rejects the getter and get_metadata omits it.",
-  "",
-  "liveChildren = count of TOP-LEVEL children on the page, including furniture",
-  "(Directory / Breakpoint / Rectangle N / Vector N), so it is NOT directly comparable",
-  "to a section's frame count. null means not counted. Counting REQUIRES",
-  "setCurrentPageAsync per page: an unloaded page reports children.length === 0 rather",
-  "than throwing, so a bulk read silently reports an empty file. Every count below was",
-  "taken with an explicit page switch.",
-  "",
-  "★ 2026-07-29 RE-HARVEST. The design moved substantially overnight - see",
-  "`figmaChangeLog` at the bottom. Web App went 11 -> 13 pages, Games 13 -> 18, and",
-  "THREE pages were promoted to ready-for-dev (Predict, Chicken, Hi-Lo)."
- ],
- "harvested": "2026-08-18",
- "method": "use_figma read-only: figma.root.children for the page list, then setCurrentPageAsync per page for children.length",
- "readinessLegend": {
-  "✅": "ready",
-  "🚧": "wip",
-  "📍": "meta",
-  "🌎": "meta"
- },
- "pages": [
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "2001:2",
-   "pageName": "Thumbnail",
-   "readiness": "meta",
-   "liveChildren": null,
-   "sections": []
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "3422:20110",
-   "pageName": "📍 Master sheet",
-   "readiness": "meta",
-   "liveChildren": 46,
-   "sections": [
-    "master-sheet"
-   ]
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "3:2",
-   "pageName": "✅ Onboarding and Authentication",
-   "readiness": "ready",
-   "liveChildren": 151,
-   "sections": [
-    "onboarding"
-   ]
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "2311:5967",
-   "pageName": "✅ Privacy and Terms",
-   "readiness": "ready",
-   "liveChildren": 10,
-   "sections": [
-    "legal"
-   ]
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "3173:26018",
-   "pageName": "✅ Predict",
-   "readiness": "ready",
-   "liveChildren": 284,
-   "sections": [
-    "predict"
-   ]
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "4459:128102",
-   "pageName": "✅ Play",
-   "readiness": "ready",
-   "liveChildren": 345,
-   "sections": [
-    "play"
-   ]
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "4914:113562",
-   "pageName": "✅ Social",
-   "readiness": "ready",
-   "liveChildren": 442,
-   "harvested": "2026-08-20",
-   "harvestNote": "Re-read live 2026-08-20 (page.children on 4914:113562). The page was RENAMED 🚧 -> ✅ upstream, so readiness moves wip -> ready; every social frame's `page` stamp changes with it. 311 -> 442 top-level children. Full enumeration: social.live-0821.tsv. Drift logged before anything was overwritten: figma-todo.social-0821.tsv.",
-   "sections": [
-    "social"
-   ]
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "5210:118077",
-   "pageName": "🚧 Governance and Utilities",
-   "readiness": "wip",
-   "liveChildren": 260,
-   "sections": [
-    "governance"
-   ]
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "10438:15679",
-   "pageName": "🚧 User Flow",
-   "readiness": "wip",
-   "liveChildren": 3,
-   "sections": [
-    "user-flow"
-   ]
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": "10385:2",
-   "pageName": "🚧 Titles + Emblems",
-   "readiness": "wip",
-   "liveChildren": 1157,
-   "sections": []
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": null,
-   "pageName": "✝️ Home (moved to \"Skai Web App 2\")",
-   "readiness": "meta",
-   "liveChildren": 20,
-   "sections": []
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": null,
-   "pageName": "✝️ Wallet (moved to \"Skai Web App 2\")",
-   "readiness": "meta",
-   "liveChildren": 13,
-   "sections": []
-  },
-  {
-   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-   "pageId": null,
-   "pageName": "✝️ Trade (moved to \"Skai Web App 2\")",
-   "readiness": "meta",
-   "liveChildren": 154,
-   "sections": []
-  },
-  {
-   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
-   "pageId": null,
-   "pageName": "Thumbnail",
-   "readiness": "meta",
-   "liveChildren": null,
-   "sections": []
-  },
-  {
-   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
-   "pageId": "2003:674",
-   "pageName": "✅ Home 1",
-   "readiness": "ready",
-   "liveChildren": 227,
-   "sections": [
-    "home",
-    "pwa"
-   ]
-  },
-  {
-   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
-   "pageId": "2998:19593",
-   "pageName": "✅ Wallet 1",
-   "readiness": "ready",
-   "liveChildren": 179,
-   "sections": [
-    "wallet"
-   ]
-  },
-  {
-   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
-   "pageId": "3:3",
-   "pageName": "✅ Trade 1",
-   "readiness": "ready",
-   "liveChildren": 420,
-   "sections": [
-    "trade"
-   ]
-  },
-  {
-   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
-   "pageId": "13008:110718",
-   "pageName": "✅ Home 2",
-   "readiness": "ready",
-   "liveChildren": 129,
-   "sections": [
-    "home-2"
-   ]
-  },
-  {
-   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
-   "pageId": "13008:26951",
-   "pageName": "✅ Wallet 2",
-   "readiness": "ready",
-   "liveChildren": 182,
-   "sections": [
-    "wallet-2"
-   ]
-  },
-  {
-   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
-   "pageId": "13006:134300",
-   "pageName": "✅ Trade 2",
-   "readiness": "ready",
-   "liveChildren": 407,
-   "sections": [
-    "trade-2"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "2001:2",
-   "pageName": "Thumbnail",
-   "readiness": "meta",
-   "liveChildren": null,
-   "sections": []
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "3422:20110",
-   "pageName": "📍 Games master sheet",
-   "readiness": "meta",
-   "liveChildren": 3,
-   "sections": []
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9220:26175",
-   "pageName": "🌎 Cover Images - Skai Originals",
-   "readiness": "meta",
-   "liveChildren": 24,
-   "sections": [
-    "cover-images",
-    "missing-play-images"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "2003:674",
-   "pageName": "✅ Dice - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 36,
-   "sections": [
-    "dice"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9003:72411",
-   "pageName": "✅ Plinko - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 22,
-   "sections": [
-    "plinko"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9003:85754",
-   "pageName": "✅ Crash - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 20,
-   "sections": [
-    "crash"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9003:102080",
-   "pageName": "✅ Mines - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 19,
-   "sections": [
-    "mines"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9003:112414",
-   "pageName": "✅ Blackjack - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 20,
-   "sections": [
-    "blackjack"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9003:122027",
-   "pageName": "✅ Coinflip - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 37,
-   "sections": [
-    "coinflip"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9003:133221",
-   "pageName": "✅ Scratchers - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 20,
-   "sections": [
-    "skratch"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9061:15464",
-   "pageName": "✅ Chicken - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 31,
-   "sections": [
-    "chicken"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9058:1819",
-   "pageName": "✅ Hi-Lo - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 20,
-   "sections": [
-    "hilo"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9390:18294",
-   "pageName": "✅ Darts - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 31,
-   "sections": [
-    "darts"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9390:18295",
-   "pageName": "✅ Keno - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 27,
-   "sections": [
-    "keno"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9061:15449",
-   "pageName": "🚧 Towers - Skai originals",
-   "readiness": "wip",
-   "liveChildren": 48,
-   "expectedDelta": 0,
-   "sections": [
-    "towers"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9390:18297",
-   "pageName": "✅ Fortune Wheel - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 25,
-   "sections": [
-    "fortune-wheel"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9660:2",
-   "pageName": "✅ Price Grid - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 20,
-   "sections": [
-    "price-grid"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9929:16390",
-   "pageName": "✅ Limbo - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 14,
-   "sections": [
-    "limbo"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9929:16391",
-   "pageName": "✅ Slide - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 17,
-   "sections": [
-    "slide"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9737:13087",
-   "pageName": "✅ Video Poker - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 14,
-   "sections": [
-    "video-poker"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9390:18296",
-   "pageName": "✅ Bingo - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 16,
-   "sections": [
-    "bingo"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9390:18298",
-   "pageName": "✅ Rock Paper Scissors - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 24,
-   "sections": [
-    "rock-paper-scissors"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9737:13085",
-   "pageName": "✅ Roulette - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 19,
-   "sections": [
-    "roulette"
-   ]
-  },
-  {
-   "fileKey": "M6r9FEn042UWTQD1zvy6GM",
-   "pageId": "9737:13088",
-   "pageName": "✅ Baccarat - Skai originals",
-   "readiness": "ready",
-   "liveChildren": 19,
-   "sections": [
-    "baccarat"
-   ]
-  }
- ],
- "figmaChangeLog": {
-  "2026-07-29": {
-   "note": "Re-harvest against the 2026-07-28 snapshot. The design moved a lot overnight; the catalog committed yesterday is stale by ~180 ready-for-dev frames.",
-   "promotedToReady": {
-    "Predict": "was 🚧 with 138 frames, now ✅ with 284 (+146). The single largest new ready-for-dev surface.",
-    "Chicken": "was 🚧 with 5 frames, now ✅ with 31 (+26).",
-    "Hi-Lo": "was 🚧 with 16 frames, now ✅ with 20 (+4)."
-   },
-   "newPages": {
-    "Darts": "31 frames, born ready-for-dev (✅).",
-    "Keno": "27 frames, 🚧.",
-    "Bingo": "0 frames - EMPTY placeholder page, 🚧.",
-    "Fortune Wheel": "0 frames - EMPTY placeholder page, 🚧.",
-    "Rock Paper Scissors": "0 frames - EMPTY placeholder page, 🚧.",
-    "Titles + Emblems": "1,157 frames, 🚧. Almost certainly an asset/emblem library rather than screens - do NOT catalog as screens without checking.",
-    "User Flow": "3 frames, 🚧."
-   },
-   "grew": {
-    "Trade": "824 -> 827 (+3)",
-    "Onboarding and Authentication": "113 -> 141 (+28)",
-    "Home": "353 -> 354 (+1)"
-   },
-   "shrank": {
-    "Towers": "117 -> 63 (-54). Frames were DELETED, not added. Anything catalogued or built from the old set may now point at nodes that no longer resolve."
-   },
-   "unchanged": [
-    "Wallet 361",
-    "Privacy and Terms 10",
-    "Play 176",
-    "Social 147",
-    "Governance and Utilities 155",
-    "Master sheet 46"
-   ],
-   "★ frameNamesAreUnreliableOnNewGamePages": [
-    "The Darts, Chicken and Hi-Lo pages were duplicated from existing game pages and their",
-    "frame TITLES were never renamed. Darts contains frames literally named",
-    "'Skai > Play > Casino > Hi-Lo Start (1440 x 900px)' and",
-    "'Skai > Play > Casino > Blackjack (375 x 812px)'. Chicken contains the same two names.",
-    "Hi-Lo contains 'Skai > Play > Casino > Scratchers (768 x 1024px)'.",
-    "The PAGE name is the truth; the breadcrumb is a copy-paste artifact. This is exactly",
-    "why the Games file uses page-name grouping (NON_SKAI_SECTIONS) rather than the",
-    "title breadcrumb - but it also means a human or agent reading frame names will",
-    "build the WRONG GAME. Flagged to Casey 2026-07-29."
-   ]
-  },
-  "2026-08-18": {
-   "note": "Large upstream design update. Four Games pages became catalogable, six pages were promoted 🚧 -> ✅, and one page was renamed AND rebuilt. Nothing here was applied blind — see figma-todo.games.tsv / figma-todo.webapp-0818.tsv for the per-frame log.",
-   "newPages": {
-    "Limbo": "14 frames (9929:16390), born ready-for-dev (✅).",
-    "Slide": "17 frames (9929:16391), born ready-for-dev (✅). The richest naming of the four — 'Extended LB', 'Auto Advanced', 'Mobile Auto Advanced' mirror the Crash page's vocabulary exactly."
-   },
-   "promotedToReady": {
-    "Baccarat": "was 🚧 and EMPTY, now ✅ with 19 frames.",
-    "Roulette": "was 🚧 and EMPTY, now ✅ with 19 frames.",
-    "Bingo": "was 🚧 with 8 live children, now ✅ with 16.",
-    "Rock Paper Scissors": "was 🚧 with 6, now ✅ with 24 (+18) — and REBUILT: 5 of the old 6 ids retargeted from 9737-* to 9907-*.",
-    "Video Poker": "🚧 -> ✅, 14 frames, unchanged in content.",
-    "Price Grid": "🚧 -> ✅ (formerly the SKAI Cross page). See `renamed` below."
-   },
-   "grew": {
-    "Social": "161 -> 311 (+150). The largest single change in this pass; ~110 of the additions are mobile/tablet 'Skai > Play 1VH' frames drawn on the Social page.",
-    "Governance and Utilities": "200 -> 260 (+60).",
-    "Dice": "34 -> 36",
-    "Plinko": "20 -> 22",
-    "Blackjack": "19 -> 20",
-    "Crash": "17 -> 20",
-    "Mines": "16 -> 19",
-    "Bingo": "10 -> 16",
-    "Rock Paper Scissors": "6 -> 24",
-    "Home 2": "127 -> 129"
-   },
-   "shrank": {
-    "Towers": "63 -> 48 (-15), and 4 frames were ADDED, so 19 ids stopped resolving. None of the 19 carried implFiles, notes or a triaged status. NOTE: the briefed figure for this pass was 46; the live count is 48. Measured, not assumed."
-   },
-   "renamed": {
-    "9660:2": "'🚧 SKAI Cross - Skai originals' -> '✅ Price Grid - Skai originals'. NOT a cosmetic rename: the page contents were replaced wholesale (15 ids gone, 20 new, zero title matches), and SKAI Cross and Price Grid are two separate live games in Play.tsx. Catalogued as a NEW `price-grid` section; the old `skai-cross` section is kept as a tombstone. See unmappedSections."
-   },
-   "★ correctionToThisFile": [
-    "The outOfScope entries for Roulette and Baccarat ('Page exists but holds ZERO",
-    "frames — design has not started') were TRUE on 2026-08-13 and FALSE by",
-    "2026-08-18. They are removed. A measurement that is written down as a decision",
-    "does not expire on its own: for five days those two lines kept 38 real,",
-    "ready-for-dev frames structurally invisible to this catalog. When recording a",
-    "page as out of scope, record the DATE and the MEASUREMENT, not a verdict."
-   ]
-  },
-  "2026-08-20": {
-   "note": "Targeted re-harvest of the Social page ONLY (4914:113562). No other page was re-read, so every other pageName/liveChildren in this file still carries its 2026-08-18 value. Drift was logged before anything was overwritten: figma-todo.social-0821.tsv.",
-   "promotedToReady": {
-    "Social": "was 🚧 with 311 frames, now ✅ with 442 (+131 net; 139 added, 8 ids stopped resolving). Readiness moves wip -> ready, which re-stamps all 450 social rows."
-   },
-   "grew": {
-    "Social": "311 -> 442 (+131 net). 139 ADDED, 8 REMOVED, 109 RETITLED."
-   },
-   "★ theRenameIsTheStory": [
-    "99 of the 109 retitles are the 'Skai > Play 1VH' cluster the 08-18 pass",
-    "recorded as '~110 mobile/tablet Play frames drawn on the Social page'. Casey",
-    "has since renamed them in Figma to real Social breadcrumbs (Messages, Groups,",
-    "Discover, stories, create post, creator profile, post/token). The dead name",
-    "survived only in registry.json and snapshot.webapp-0818.json.",
+  "_comment": [
+    "LIVE page inventory for every Figma file the catalog tracks, harvested directly",
+    "from Figma rather than from figma.txt. This exists because the catalog's node lists are",
+    "parsed from that hand-maintained link dump, so any page never pasted into it is",
+    "structurally invisible - the root cause of every coverage gap found on 2026-07-28.",
+    "build-registry.mjs reads this to stamp `page` and `readiness` on every frame and to",
+    "REPORT pages that no section covers, so the next missing page announces itself.",
     "",
-    "This matters beyond tidiness. figma-drift.mjs joins a REMOVED old id to an",
-    "ADDED new id by EXACT TITLE to recognise a rebuild (RETARGET). That join reads",
-    "the title from the REGISTRY on one side and from LIVE FIGMA on the other, so a",
-    "registry title that no longer equals the live name silently disables the",
-    "rescue for that frame — it would report as REMOVED and its implFiles would",
-    "look orphaned. Leaving a stale title in place is therefore not the safe",
-    "option; it is the failure mode. The rule that protects the join is 'the",
-    "registry title must equal the live Figma name', which is why titles are",
-    "re-harvested from <section>.titles.tsv on every build and are NOT in",
-    "build-registry's preserved-hand-set list. What must never happen is a",
-    "hand-authored 'more accurate' title that matches neither.",
+    "readiness comes from the leading emoji of the page NAME, which is the convention the",
+    "team actually uses (Casey, 2026-07-28). Figma's real Dev Mode devStatus flag is not",
+    "readable here: the MCP plugin sandbox rejects the getter and get_metadata omits it.",
     "",
-    "The 109 before/after pairs are preserved verbatim in",
-    "figma-drift.social-0821.json, so no prior name is lost by this update."
-   ],
-   "shrank": {
-    "Social": "8 catalogued ids stopped resolving: 11442-177484, 11459-187396, 11398-78648, 11398-84004, 11398-77975, 11398-85223, 11435-158497, 11442-173579. NONE carried implFiles, notes, verifiedAt or a triaged status, so no implementation record was orphaned. They are kept as `gone` rows in bugref-aliases.tsv rather than dropped."
-   }
+    "liveChildren = count of TOP-LEVEL children on the page, including furniture",
+    "(Directory / Breakpoint / Rectangle N / Vector N), so it is NOT directly comparable",
+    "to a section's frame count. null means not counted. Counting REQUIRES",
+    "setCurrentPageAsync per page: an unloaded page reports children.length === 0 rather",
+    "than throwing, so a bulk read silently reports an empty file. Every count below was",
+    "taken with an explicit page switch.",
+    "",
+    "★ 2026-07-29 RE-HARVEST. The design moved substantially overnight - see",
+    "`figmaChangeLog` at the bottom. Web App went 11 -> 13 pages, Games 13 -> 18, and",
+    "THREE pages were promoted to ready-for-dev (Predict, Chicken, Hi-Lo)."
+  ],
+  "harvested": "2026-08-18",
+  "method": "use_figma read-only: figma.root.children for the page list, then setCurrentPageAsync per page for children.length",
+  "readinessLegend": {
+    "✅": "ready",
+    "🚧": "wip",
+    "📍": "meta",
+    "🌎": "meta"
+  },
+  "pages": [
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "2001:2",
+      "pageName": "Thumbnail",
+      "readiness": "meta",
+      "liveChildren": null,
+      "sections": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "3422:20110",
+      "pageName": "📍 Master sheet",
+      "readiness": "meta",
+      "liveChildren": 46,
+      "sections": [
+        "master-sheet"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "3:2",
+      "pageName": "✅ Onboarding and Authentication",
+      "readiness": "ready",
+      "liveChildren": 151,
+      "sections": [
+        "onboarding"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "2311:5967",
+      "pageName": "✅ Privacy and Terms",
+      "readiness": "ready",
+      "liveChildren": 10,
+      "sections": [
+        "legal"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "3173:26018",
+      "pageName": "✅ Predict",
+      "readiness": "ready",
+      "liveChildren": 284,
+      "sections": [
+        "predict"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "4459:128102",
+      "pageName": "✅ Play",
+      "readiness": "ready",
+      "liveChildren": 345,
+      "sections": [
+        "play"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "4914:113562",
+      "pageName": "✅ Social",
+      "readiness": "ready",
+      "liveChildren": 442,
+      "harvested": "2026-08-20",
+      "harvestNote": "Re-read live 2026-08-20 (page.children on 4914:113562). The page was RENAMED 🚧 -> ✅ upstream, so readiness moves wip -> ready; every social frame's `page` stamp changes with it. 311 -> 442 top-level children. Full enumeration: social.live-0821.tsv. Drift logged before anything was overwritten: figma-todo.social-0821.tsv.",
+      "sections": [
+        "social"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "5210:118077",
+      "pageName": "🚧 Governance and Utilities",
+      "readiness": "wip",
+      "liveChildren": 260,
+      "sections": [
+        "governance"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "10438:15679",
+      "pageName": "🚧 User Flow",
+      "readiness": "wip",
+      "liveChildren": 3,
+      "sections": [
+        "user-flow"
+      ]
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": "10385:2",
+      "pageName": "🚧 Titles + Emblems",
+      "readiness": "wip",
+      "liveChildren": 1157,
+      "sections": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": null,
+      "pageName": "✝️ Home (moved to \"Skai Web App 2\")",
+      "readiness": "meta",
+      "liveChildren": 20,
+      "sections": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": null,
+      "pageName": "✝️ Wallet (moved to \"Skai Web App 2\")",
+      "readiness": "meta",
+      "liveChildren": 13,
+      "sections": []
+    },
+    {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "pageId": null,
+      "pageName": "✝️ Trade (moved to \"Skai Web App 2\")",
+      "readiness": "meta",
+      "liveChildren": 154,
+      "sections": []
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": null,
+      "pageName": "Thumbnail",
+      "readiness": "meta",
+      "liveChildren": null,
+      "sections": []
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": "2003:674",
+      "pageName": "✅ Home 1",
+      "readiness": "ready",
+      "liveChildren": 227,
+      "sections": [
+        "home",
+        "pwa"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": "2998:19593",
+      "pageName": "✅ Wallet 1",
+      "readiness": "ready",
+      "liveChildren": 179,
+      "sections": [
+        "wallet"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": "3:3",
+      "pageName": "✅ Trade 1",
+      "readiness": "ready",
+      "liveChildren": 420,
+      "sections": [
+        "trade"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": "13008:110718",
+      "pageName": "✅ Home 2",
+      "readiness": "ready",
+      "liveChildren": 129,
+      "sections": [
+        "home-2"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": "13008:26951",
+      "pageName": "✅ Wallet 2",
+      "readiness": "ready",
+      "liveChildren": 182,
+      "sections": [
+        "wallet-2"
+      ]
+    },
+    {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "pageId": "13006:134300",
+      "pageName": "✅ Trade 2",
+      "readiness": "ready",
+      "liveChildren": 407,
+      "sections": [
+        "trade-2"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "2001:2",
+      "pageName": "Thumbnail",
+      "readiness": "meta",
+      "liveChildren": null,
+      "sections": []
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "3422:20110",
+      "pageName": "📍 Games master sheet",
+      "readiness": "meta",
+      "liveChildren": 3,
+      "sections": []
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9220:26175",
+      "pageName": "🌎 Cover Images - Skai Originals",
+      "readiness": "meta",
+      "liveChildren": 24,
+      "sections": [
+        "cover-images",
+        "missing-play-images"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "2003:674",
+      "pageName": "✅ Dice - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 36,
+      "sections": [
+        "dice"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:72411",
+      "pageName": "✅ Plinko - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 22,
+      "sections": [
+        "plinko"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:85754",
+      "pageName": "✅ Crash - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 20,
+      "sections": [
+        "crash"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:102080",
+      "pageName": "✅ Mines - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 19,
+      "sections": [
+        "mines"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:112414",
+      "pageName": "✅ Blackjack - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 20,
+      "sections": [
+        "blackjack"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:122027",
+      "pageName": "✅ Coinflip - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 37,
+      "sections": [
+        "coinflip"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9003:133221",
+      "pageName": "✅ Scratchers - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 20,
+      "sections": [
+        "skratch"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9061:15464",
+      "pageName": "✅ Chicken - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 31,
+      "sections": [
+        "chicken"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9058:1819",
+      "pageName": "✅ Hi-Lo - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 20,
+      "sections": [
+        "hilo"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18294",
+      "pageName": "✅ Darts - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 31,
+      "sections": [
+        "darts"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18295",
+      "pageName": "✅ Keno - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 27,
+      "sections": [
+        "keno"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9061:15449",
+      "pageName": "✅ Towers - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 30,
+      "expectedDelta": 0,
+      "sections": [
+        "towers"
+      ],
+      "note": "Re-measured 2026-08-25: 48 -> 30 live, readiness WIP -> ready. The missing 18 are not deleted; a separate page 'Towars Draft (Disregard)' (10120:10113, 51 frames) now holds the exploration. Harvest the 30, never the draft page."
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18297",
+      "pageName": "✅ Fortune Wheel - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 25,
+      "sections": [
+        "fortune-wheel"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9660:2",
+      "pageName": "✅ Price Grid - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 20,
+      "sections": [
+        "price-grid"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9929:16390",
+      "pageName": "✅ Limbo - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 14,
+      "sections": [
+        "limbo"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9929:16391",
+      "pageName": "✅ Slide - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 17,
+      "sections": [
+        "slide"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9737:13087",
+      "pageName": "✅ Video Poker - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 14,
+      "sections": [
+        "video-poker"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18296",
+      "pageName": "✅ Bingo - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 16,
+      "sections": [
+        "bingo"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9390:18298",
+      "pageName": "✅ Rock Paper Scissors - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 24,
+      "sections": [
+        "rock-paper-scissors"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9737:13085",
+      "pageName": "✅ Roulette - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 19,
+      "sections": [
+        "roulette"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "9737:13088",
+      "pageName": "✅ Baccarat - Skai originals",
+      "readiness": "ready",
+      "liveChildren": 19,
+      "sections": [
+        "baccarat"
+      ]
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "10120:10113",
+      "pageName": "Towars Draft (Disregard)",
+      "readiness": "out-of-scope",
+      "liveChildren": 51,
+      "sections": [],
+      "note": "Explicitly marked Disregard by the designer. Holds the Towers exploration moved out when that page was promoted to ready. DO NOT HARVEST."
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "10265:2",
+      "pageName": "WIP Safari Slots - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 10,
+      "sections": [],
+      "note": "MOSTLY REFERENCE, NOT DESIGN. 3 of 10 children are pasted screenshots named 'Screen Shot 2026-08-25 at ...'. Exactly ONE real frame exists: 'Skai > Play > Casino > Safari slots (768 x 1024px)'. Plus Directory and 3 Breakpoint banners."
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "10266:5",
+      "pageName": "WIP Cosmic Slots - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 6,
+      "sections": [],
+      "note": "REFERENCE ONLY. All 6 children are pasted screenshots dated 2026-08-25. No design frame yet."
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "10266:6",
+      "pageName": "WIP Vegas fortune - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 1,
+      "sections": [],
+      "note": "REFERENCE ONLY. Its single child is a pasted screenshot dated 2026-08-25. No design frame yet."
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "10266:7",
+      "pageName": "WIP Gem Slots - Skai originals",
+      "readiness": "wip",
+      "liveChildren": 4,
+      "sections": [],
+      "note": "REFERENCE ONLY. All 4 children are pasted screenshots dated 2026-08-25. No design frame yet."
+    }
+  ],
+  "figmaChangeLog": {
+    "2026-07-29": {
+      "note": "Re-harvest against the 2026-07-28 snapshot. The design moved a lot overnight; the catalog committed yesterday is stale by ~180 ready-for-dev frames.",
+      "promotedToReady": {
+        "Predict": "was 🚧 with 138 frames, now ✅ with 284 (+146). The single largest new ready-for-dev surface.",
+        "Chicken": "was 🚧 with 5 frames, now ✅ with 31 (+26).",
+        "Hi-Lo": "was 🚧 with 16 frames, now ✅ with 20 (+4)."
+      },
+      "newPages": {
+        "Darts": "31 frames, born ready-for-dev (✅).",
+        "Keno": "27 frames, 🚧.",
+        "Bingo": "0 frames - EMPTY placeholder page, 🚧.",
+        "Fortune Wheel": "0 frames - EMPTY placeholder page, 🚧.",
+        "Rock Paper Scissors": "0 frames - EMPTY placeholder page, 🚧.",
+        "Titles + Emblems": "1,157 frames, 🚧. Almost certainly an asset/emblem library rather than screens - do NOT catalog as screens without checking.",
+        "User Flow": "3 frames, 🚧."
+      },
+      "grew": {
+        "Trade": "824 -> 827 (+3)",
+        "Onboarding and Authentication": "113 -> 141 (+28)",
+        "Home": "353 -> 354 (+1)"
+      },
+      "shrank": {
+        "Towers": "117 -> 63 (-54). Frames were DELETED, not added. Anything catalogued or built from the old set may now point at nodes that no longer resolve."
+      },
+      "unchanged": [
+        "Wallet 361",
+        "Privacy and Terms 10",
+        "Play 176",
+        "Social 147",
+        "Governance and Utilities 155",
+        "Master sheet 46"
+      ],
+      "★ frameNamesAreUnreliableOnNewGamePages": [
+        "The Darts, Chicken and Hi-Lo pages were duplicated from existing game pages and their",
+        "frame TITLES were never renamed. Darts contains frames literally named",
+        "'Skai > Play > Casino > Hi-Lo Start (1440 x 900px)' and",
+        "'Skai > Play > Casino > Blackjack (375 x 812px)'. Chicken contains the same two names.",
+        "Hi-Lo contains 'Skai > Play > Casino > Scratchers (768 x 1024px)'.",
+        "The PAGE name is the truth; the breadcrumb is a copy-paste artifact. This is exactly",
+        "why the Games file uses page-name grouping (NON_SKAI_SECTIONS) rather than the",
+        "title breadcrumb - but it also means a human or agent reading frame names will",
+        "build the WRONG GAME. Flagged to Casey 2026-07-29."
+      ]
+    },
+    "2026-08-18": {
+      "note": "Large upstream design update. Four Games pages became catalogable, six pages were promoted 🚧 -> ✅, and one page was renamed AND rebuilt. Nothing here was applied blind — see figma-todo.games.tsv / figma-todo.webapp-0818.tsv for the per-frame log.",
+      "newPages": {
+        "Limbo": "14 frames (9929:16390), born ready-for-dev (✅).",
+        "Slide": "17 frames (9929:16391), born ready-for-dev (✅). The richest naming of the four — 'Extended LB', 'Auto Advanced', 'Mobile Auto Advanced' mirror the Crash page's vocabulary exactly."
+      },
+      "promotedToReady": {
+        "Baccarat": "was 🚧 and EMPTY, now ✅ with 19 frames.",
+        "Roulette": "was 🚧 and EMPTY, now ✅ with 19 frames.",
+        "Bingo": "was 🚧 with 8 live children, now ✅ with 16.",
+        "Rock Paper Scissors": "was 🚧 with 6, now ✅ with 24 (+18) — and REBUILT: 5 of the old 6 ids retargeted from 9737-* to 9907-*.",
+        "Video Poker": "🚧 -> ✅, 14 frames, unchanged in content.",
+        "Price Grid": "🚧 -> ✅ (formerly the SKAI Cross page). See `renamed` below."
+      },
+      "grew": {
+        "Social": "161 -> 311 (+150). The largest single change in this pass; ~110 of the additions are mobile/tablet 'Skai > Play 1VH' frames drawn on the Social page.",
+        "Governance and Utilities": "200 -> 260 (+60).",
+        "Dice": "34 -> 36",
+        "Plinko": "20 -> 22",
+        "Blackjack": "19 -> 20",
+        "Crash": "17 -> 20",
+        "Mines": "16 -> 19",
+        "Bingo": "10 -> 16",
+        "Rock Paper Scissors": "6 -> 24",
+        "Home 2": "127 -> 129"
+      },
+      "shrank": {
+        "Towers": "63 -> 48 (-15), and 4 frames were ADDED, so 19 ids stopped resolving. None of the 19 carried implFiles, notes or a triaged status. NOTE: the briefed figure for this pass was 46; the live count is 48. Measured, not assumed."
+      },
+      "renamed": {
+        "9660:2": "'🚧 SKAI Cross - Skai originals' -> '✅ Price Grid - Skai originals'. NOT a cosmetic rename: the page contents were replaced wholesale (15 ids gone, 20 new, zero title matches), and SKAI Cross and Price Grid are two separate live games in Play.tsx. Catalogued as a NEW `price-grid` section; the old `skai-cross` section is kept as a tombstone. See unmappedSections."
+      },
+      "★ correctionToThisFile": [
+        "The outOfScope entries for Roulette and Baccarat ('Page exists but holds ZERO",
+        "frames — design has not started') were TRUE on 2026-08-13 and FALSE by",
+        "2026-08-18. They are removed. A measurement that is written down as a decision",
+        "does not expire on its own: for five days those two lines kept 38 real,",
+        "ready-for-dev frames structurally invisible to this catalog. When recording a",
+        "page as out of scope, record the DATE and the MEASUREMENT, not a verdict."
+      ]
+    },
+    "2026-08-20": {
+      "note": "Targeted re-harvest of the Social page ONLY (4914:113562). No other page was re-read, so every other pageName/liveChildren in this file still carries its 2026-08-18 value. Drift was logged before anything was overwritten: figma-todo.social-0821.tsv.",
+      "promotedToReady": {
+        "Social": "was 🚧 with 311 frames, now ✅ with 442 (+131 net; 139 added, 8 ids stopped resolving). Readiness moves wip -> ready, which re-stamps all 450 social rows."
+      },
+      "grew": {
+        "Social": "311 -> 442 (+131 net). 139 ADDED, 8 REMOVED, 109 RETITLED."
+      },
+      "★ theRenameIsTheStory": [
+        "99 of the 109 retitles are the 'Skai > Play 1VH' cluster the 08-18 pass",
+        "recorded as '~110 mobile/tablet Play frames drawn on the Social page'. Casey",
+        "has since renamed them in Figma to real Social breadcrumbs (Messages, Groups,",
+        "Discover, stories, create post, creator profile, post/token). The dead name",
+        "survived only in registry.json and snapshot.webapp-0818.json.",
+        "",
+        "This matters beyond tidiness. figma-drift.mjs joins a REMOVED old id to an",
+        "ADDED new id by EXACT TITLE to recognise a rebuild (RETARGET). That join reads",
+        "the title from the REGISTRY on one side and from LIVE FIGMA on the other, so a",
+        "registry title that no longer equals the live name silently disables the",
+        "rescue for that frame — it would report as REMOVED and its implFiles would",
+        "look orphaned. Leaving a stale title in place is therefore not the safe",
+        "option; it is the failure mode. The rule that protects the join is 'the",
+        "registry title must equal the live Figma name', which is why titles are",
+        "re-harvested from <section>.titles.tsv on every build and are NOT in",
+        "build-registry's preserved-hand-set list. What must never happen is a",
+        "hand-authored 'more accurate' title that matches neither.",
+        "",
+        "The 109 before/after pairs are preserved verbatim in",
+        "figma-drift.social-0821.json, so no prior name is lost by this update."
+      ],
+      "shrank": {
+        "Social": "8 catalogued ids stopped resolving: 11442-177484, 11459-187396, 11398-78648, 11398-84004, 11398-77975, 11398-85223, 11435-158497, 11442-173579. NONE carried implFiles, notes, verifiedAt or a triaged status, so no implementation record was orphaned. They are kept as `gone` rows in bugref-aliases.tsv rather than dropped."
+      }
+    },
+    "2026-08-25": {
+      "note": "Drift re-check across all three Figma files after Casey reported an update.",
+      "noDriftConfirmed": {
+        "predict": "284 live = 284 registry",
+        "play": "345 = 345",
+        "social": "442 live (+8 gone rows) = 450 registry"
+      },
+      "changed": {
+        "Towers": "Promoted WIP -> ready and trimmed 48 -> 30 live. The other 18 were MOVED, not deleted: 'Towars Draft (Disregard)' (10120:10113) now holds 51 exploration frames.",
+        "Four new slots pages": "Safari (10265:2), Cosmic (10266:5), Vegas fortune (10266:6), Gem (10266:7). All WIP."
+      },
+      "readThisBeforePlanningSlots": "The slots pages are almost entirely PASTED SCREENSHOTS, frame-named 'Screen Shot 2026-08-25 at ...'. Of their 21 children only ONE is a Skai design frame (Safari's 768x1024). The rest are reference images of other products. Treat them as a mood board: NOT ready-for-dev, and building from them would mean reproducing someone else's UI. Same family as the placeholder-nodes-are-not-specs rule.",
+      "method": "figma.root.children per file, then setCurrentPageAsync once per page. NOTE: an UNLOADED page reports children.length === 0 — Predict read 0 that way minutes after measuring 284. Never treat an unloaded page as empty."
+    }
+  },
+  "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.",
+  "outOfScope": {
+    "🚧 Titles + Emblems": "Not SKAI screens. A 1,157-node REFERENCE board for a future titles/emblems system: badge tiles at 188x40 / 67x64, node names 'image 2'..'image N', and descriptions copied verbatim from Call of Duty achievements (\"Complete the 'Collateral Damage' challenge. Kill 2 or more enemies with a single sniper rifle bullet\"). Zero frames match a screen convention. This is the same 'examples of what the reporter likes' material Casey flagged 2026-08-05 — inspiration, not a spec. Re-scope only if SKAI authors its own emblem screens."
+  },
+  "unmappedSections": {
+    "skai-cross": "TOMBSTONE. Figma page 9660:2 was renamed '🚧 SKAI Cross' -> '✅ Price Grid' on 2026-08-18 and its contents replaced wholesale: all 15 catalogued ids are gone and the 20 now on the page share no title with any of them. Those 20 are Price Grid designs and are catalogued under the separate `price-grid` section, because SKAI Cross and Price Grid are two SEPARATE LIVE GAMES (Play.tsx mounts SkaiCrossGame at :1610 and PriceGridGame at :1625, each with its own id, art, accent and feature flag). The 15 rows are KEPT — recorded `gone` in bugref-aliases.tsv — so nothing is deleted. ★ The consequence worth acting on: SKAI Cross is a SHIPPING game that now has NO Figma page at all."
   }
- },
- "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.",
- "outOfScope": {
-  "🚧 Titles + Emblems": "Not SKAI screens. A 1,157-node REFERENCE board for a future titles/emblems system: badge tiles at 188x40 / 67x64, node names 'image 2'..'image N', and descriptions copied verbatim from Call of Duty achievements (\"Complete the 'Collateral Damage' challenge. Kill 2 or more enemies with a single sniper rifle bullet\"). Zero frames match a screen convention. This is the same 'examples of what the reporter likes' material Casey flagged 2026-08-05 — inspiration, not a spec. Re-scope only if SKAI authors its own emblem screens."
- },
- "unmappedSections": {
-  "skai-cross": "TOMBSTONE. Figma page 9660:2 was renamed '🚧 SKAI Cross' -> '✅ Price Grid' on 2026-08-18 and its contents replaced wholesale: all 15 catalogued ids are gone and the 20 now on the page share no title with any of them. Those 20 are Price Grid designs and are catalogued under the separate `price-grid` section, because SKAI Cross and Price Grid are two SEPARATE LIVE GAMES (Play.tsx mounts SkaiCrossGame at :1610 and PriceGridGame at :1625, each with its own id, art, accent and feature flag). The 15 rows are KEPT — recorded `gone` in bugref-aliases.tsv — so nothing is deleted. ★ The consequence worth acting on: SKAI Cross is a SHIPPING game that now has NO Figma page at all."
- }
 }
