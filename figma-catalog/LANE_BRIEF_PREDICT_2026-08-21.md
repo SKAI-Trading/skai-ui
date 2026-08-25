@@ -186,3 +186,109 @@ something, say so plainly rather than implying you did.
 
 ★ **A claim about the tree has a shelf life of minutes in a wave this parallel.**
 Where a claim is checkable, land a guard instead of prose.
+
+---
+
+# CORRECTIONS — measured by completed lanes, 2026-08-25
+
+Everything below overrides the text above. Each item was measured, not inferred.
+
+## My frame counts were wrong, and so was an axis
+
+- **The ticket frames are n = 31, not 25.** Enumerate from `registry.json`
+  yourself and report your own count — treat every `n ≈` above as a hint.
+- ★★★ **`Up - long` / `Down - Short` are NOT a side pair.** Every frame draws
+  *both* direction buttons, so side is a control INSIDE the ticket. What differs
+  is **Buy vs Sell**, proven three ways: the input label (`Amount` vs `Shares`),
+  the chip row (`+$1/+$5/+$20/+$100/Max` vs `5/25/50/75/100%`), and decisively
+  the active-tab underline at **x=14 vs x=60** — centred under Buy in one and
+  Sell in the other. Reading them as up/down builds the wrong control.
+- **`Market` and `Limit` are not tickets** — they are 375x166 header fragments
+  holding only the tab row and the direction row.
+- **The 16 desktop ticket rows are 8 unique states drawn TWICE.** The `10312-*`
+  cluster pairs against the `3322/8652/8656-*` originals; all 8 heights match
+  pairwise. Nobody needs to open the second copy.
+
+## "1VH" has TWO different cuts under one title
+
+Measured on the same page, same title format:
+
+    10199-104649  "ALT 1VH (375 x 812px)"   is 1982 tall  <- grown to full scroll
+    10202-112785  "ALT 1VH (375 x 812px)"   is  812 tall  <- cropped to viewport;
+                                                             inner column overflows by 1042
+    10642-186083  "1VH (768 x 1024px)"      is 1024 tall  <- overflows by 724
+    3269-17599    "layout 2 ALT (1440x900)" is 2842 tall
+
+★ A title tells you the VIEWPORT, never the frame height, and two frames with the
+identical title may be cut two different ways. **Nothing is absent merely because
+a screenshot ends.** Read `get_metadata`.
+
+## The render bleed is exactly +160w / +109h
+
+`get_screenshot`'s `original_width` includes the drop shadow. Verified across all
+three widths: 432->592, 375->535, 768->928. **Subtract it or use `get_metadata`.**
+A screenshot is a render, not a measurement.
+
+## ★★★ Defects drawn INTO the frames — do not copy these
+
+The artwork is wrong in specific, checkable ways. Build from the venue, not the
+picture:
+
+- `Up - limit - long` prints `Total $20.00` and `To win: $20.00` — **the same
+  number twice.** That is literally report `c019e403`'s "stop quoting stake as
+  payout", rendered as a spec.
+- `Down - Short` is a SELL ticket carrying a **"To win:"** label.
+- `Up - one-click` shows **exactly 100x stake** on all three presets. A flat 100x
+  is not a quote from any venue.
+- Every ticket carries **"Avg. Price 100c"** — at 100c a share costs a dollar and
+  can never pay more than one, so the caption contradicts every payout figure
+  beside it and cannot be used to back out the formula.
+- ★ **The four 1VH chart screens draw the ASSET-PRICE axis (81,990...81,920) —
+  including both LINE frames, whose readout is the blue `1% chance`.** Only the
+  master `8623:56597` pairs that readout with the 40/30/20/10/0 **%** axis. The
+  same blue curve therefore claims to be a probability on one frame and a price
+  on another. **Casey's call — do not follow either blindly.** Take the unit from
+  the loader's `kind`, never from the frame.
+- **The candle axis is not a scale.** `8627:56829` prints 81,990 / 81,980 /
+  81,960 / 81,940 / 81,920 at five *evenly spaced* offsets — steps of 10, 20, 20,
+  20. Uniform pixels carrying non-uniform values put every point at the wrong
+  height. The bottom four are a clean step-20 ladder, so the top label is the slip.
+
+**The payout meaning, established from the venue rather than the art:**
+`quoteBuy` returns shares-out, `quoteSell` returns sUSD-out, and a winning share
+redeems for exactly 1 sUSD. So Buy's "To win" is **TOTAL RETURN including the
+stake**, and Sell's "You receive" is proceeds paid win or lose — **not a payout**.
+
+## ⚠️ Your scoped `tsc` may be checking NOTHING
+
+`config/typescript/tsconfig.app.json` lists `modules/skai-gaming` in `exclude`,
+and **`exclude` beats `include`** — so a lane config extending it compiles
+**zero** files under that module and still exits clean. For anything under
+`modules/skai-gaming`, extend `config/typescript/tsconfig.gaming.json`.
+
+★ **Prove non-vacuity every time, whichever config you use:**
+
+    npx tsc -p <your config> --noEmit --listFiles | grep -c "<your dir>"
+
+A non-zero count is the evidence. Without it, "0 errors" and "0 files checked"
+are the same output. That is the THIRD vacuous green in this repo, after vitest's
+`Type Errors` line and a suite that fails to collect.
+
+## ⚠️ Mutation checks: two ways to fool yourself
+
+- **A patch can silently no-op on line endings.** These files are CRLF; a patch
+  assuming LF fails to apply and the suite stays green — which reads exactly like
+  "the assertion does not bite". **Verify the mutation is present in the file**
+  before trusting a red OR a green run.
+- ★★★ **NEVER take a whole-file backup in this tree.** A lane's restore silently
+  reverted ~9 bytes a concurrent writer had added to
+  `supabase/functions/points-game/index.ts` — no conflict, no failed test, the
+  change simply gone. Worse: a peer's mutation was live on disk during that
+  restore, so had the backup been taken seconds later it would have written a
+  **deliberate catch-0 payout back into a live money file**, looking committed.
+
+  Copy the harness that has no such failure mode: **surgical single-substring
+  replace on an exact target, refusing unless it occurs EXACTLY once, re-reading
+  from disk to prove the replacement landed and the original is gone.** Compare
+  sha at restore as a REPORT, never as grounds to overwrite. *Never write bytes
+  you did not just read.*
