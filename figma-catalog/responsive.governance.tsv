@@ -26,6 +26,16 @@
 #   v768     verdict at 768
 #   evidence measured numbers
 #
+# PROVENANCE, AND THE ONE WAY THESE NUMBERS GO STALE
+# Every figure here was read from DEPLOYED production, not from the working tree.
+# That is what makes them trustworthy about what users actually get, and it is also
+# the one way they expire: a fix that has landed in source but not shipped will still
+# measure broken here, and a surface that has been rewritten in source is described
+# in its OLD shape. That already happened once during this lane — commit 53e434951
+# rewrote the proposals list after these measurements were taken, so rows 50 and 51
+# are marked `superseded` rather than silently left to read as current. Before acting
+# on any row below, check whether the file it names has moved since this deploy.
+#
 # THRESHOLD. `hidden` = viewport scrollWidth minus clientWidth on the box that owns
 # the page content. hidden <= 8px is inside the scrollbar-gutter/rounding band and is
 # recorded as verified-good. Anything above it is content that a user cannot reach.
@@ -82,7 +92,7 @@
 77	5695-142802	/explorer/ai	clipped-28	verified-good	375: 395/367, 28px — small but real content, not gutter. 768: 536/536 clean.
 78	5702-143785	/explorer/launchpad	verified-good	verified-good	375: 367/367. 768: 536/536. NO CHANGE NEEDED.
 79	5702-144185	/explorer/gaming	clipped-162	verified-good	375: 529/367 measured with ZERO table rows (empty state), so the overflow is the header + stat grid, not the data. 768: 545/536 = 9px, at the band edge.
-80	5707-145880	/explorer/governance	clipped-100	verified-good	375: 467/367, again with 0 rows — header/stat-grid driven. 768: 536/536 clean.
+80	5707-145880	/explorer/governance	clipped-100	verified-good	375: 467/367, again with 0 rows — header/stat-grid driven. 768: 536/536 clean. ★ SEPARATE NON-LAYOUT DEFECT FOUND ON THIS ROW'S PAGE, and it is a fabrication, not a responsive issue: src/pages/explorer/GovernancePage.tsx:238 does `const uniqueVoters = proposal.unique_voters ?? 0;` and :355 renders it as `{formatNumber(uniqueVoters)} voter{s}`. The field is `unique_voters: number | null` on the Supabase governance_proposals row (src/integrations/supabase/types.ts:7745), so `?? 0` turns an explicit NULL — unknown — into a confident "0 voters". This is the repo's named `?? 0` anti-pattern on a read the page never established. HONEST LIMIT ON THIS ONE: the live chain returned zero proposals at both widths, so I confirmed the code path by reading it and did NOT observe the string render. Not fixed here — GovernancePage.tsx is outside this lane.
 81	5711-148542	/explorer/points	clipped-91	verified-good	375: 458/367. 768: 536/536 clean.
 82	5720-152742	/explorer/addresses	verified-good	clipped-157	INVERTED, and this is root cause 2 in one row. 375: 367/367 clean — the mobile layout works. 768: 693/536. The narrow viewport is the correct one; 768 is where it breaks.
 83	5711-150322	/explorer/defi	clipped-281	clipped-128	375: 648/367. 768: 664/536. Protocols table (# / PROTOCOL / TVL / 24H VOLUME / 7D VOLUME / POOLS / APY / STATUS) is the driver.
@@ -102,15 +112,15 @@
 #
 # ---- Governance proper: the sub-nav, and the panels under it ----
 49	5370-61920	/governance	degraded	verified-good	MEASURED, and deliberately NOT filed as "unreachable". TabsList is 534px inside a 325px `flex justify-center` slot, so it overhangs BOTH sides. At rest: "Proposals" starts at left -79 (its label is clipped off the left edge) and "Treasury" spans 320..448, i.e. 73px past the 375 viewport, with document.elementFromPoint at its centre returning null — not hit-testable. The other three tabs hit-test fine. No ancestor in 7 levels has overflow-x auto/scroll; all are `visible`. The user CAN still reach Treasury by panning the whole content column 83px (measured need 89, reached 83, the 6px being the scrollbar gutter), but that drags the hero and the whole stat grid off-screen with it. So: degraded and clipped at rest, not unreachable. 768: 536/536, tab strip fits, clean. Source: src/pages/defi/Governance.tsx:537-556.
-50	5371-63275	/governance?tab=proposals	degraded	verified-good	Sub-nav defect of row 49 only. The proposals list itself measured no page overflow at either width. NOTE: ProposalsTable is owned by lane x4-gov-proposals and was deliberately NOT measured or filed here.
-51	5371-64317	/governance?tab=proposals	degraded	verified-good	Same page as 50 at full scroll.
+50	5371-63275	/governance?tab=proposals	degraded/superseded	verified-good/superseded	MEASUREMENT IS STALE BY DESIGN — READ THIS BEFORE USING IT. The row-49 sub-nav verdict still holds. The PROPOSALS LIST verdict does not: commit 53e434951 landed after these measurements were taken and rewrote the presentation. GovernanceProposals.tsx:98 now defines PROPOSAL_TABLE_MIN_PX = 1280 and switches to a ProposalsCardList below it via window.matchMedia (a JS media query, deliberately a number and not an `xl:` class, with a no-matchMedia fallback of `table`). So in the CURRENT TREE both 375 and 768 render cards, not the table. My figures came from production app.skai.trade, which was still serving the pre-53e434951 table, so they describe a shape that no longer exists in source. Re-measure after the next deploy; do not carry these two numbers forward. ProposalsTable remains owned by lane x4-gov-proposals and was not measured or filed here.
+51	5371-64317	/governance?tab=proposals	degraded/superseded	verified-good/superseded	Same page as 50 at full scroll, and superseded for the same reason.
 52	5373-68430	/governance	degraded	verified-good	Host route measured; ProposalCreateModal was NOT opened, so the overlay itself is unverified at both widths.
 53	5383-73349	/governance?tab=delegation	degraded	verified-good	375: docSW 369 < 375, no page overflow; only the row-49 sub-nav overhangs. 768 clean.
 54	5385-74400	/governance?tab=delegation	degraded	verified-good	Same page as 53 at full scroll.
 56	5387-76925	/governance?tab=treasury	degraded	verified-good	375: no page overflow beyond the row-49 sub-nav. 768 clean. Reaching this tab at 375 is exactly the row-49 pan.
 57	5387-77602	/governance?tab=treasury	degraded	verified-good	Same page as 56 at full scroll.
-59	5390-80080	/governance	degraded	verified-good	Host route measured; ProposalDetail renders as a modal and was NOT opened. Overlay unverified.
-60	5392-82015	/governance	degraded	verified-good	Same modal as 59, unopened.
+59	5390-80080	/governance	degraded	verified-good	Host route measured; ProposalDetail renders as a modal and was NOT opened, so its layout is unverified at both widths. ★ CARRIED FORWARD FROM THE 53e434951 LANE, which fixed this class in GovernanceProposals and left this instance deliberately out of scope: src/components/governance/ProposalDetail.tsx:612 renders `{proposal.unique_voters}` under a "Voters" label on a LIVE surface. `unique_voters` is a hard-coded 0 — GovernanceProposals.tsx:263 sets `unique_voters: 0` in onChainToUI and services/defi/governanceService.ts:381 carries `unique_voters: 0, // populated from metrics or votes list when available`. There is no chain source. That lane removed the identical stat from its own card grid for exactly this reason (see the block comment at GovernanceProposals.tsx:764), so the detail modal is now the surviving copy of a defect its sibling already retired. A confident "Voters 0" is a claim; omitting it is honest. Not fixed here — ProposalDetail.tsx belongs to the governance-proposals lane.
+60	5392-82015	/governance	degraded	verified-good	Same modal as 59, unopened, and carrying the same ProposalDetail.tsx:612 fabrication.
 61	5376-71276	/governance?tab=staking	degraded	verified-good	375: no page overflow beyond the row-49 sub-nav. 768 clean.
 62	5383-72757	/governance?tab=staking	degraded	verified-good	Same page as 61 at full scroll.
 #
@@ -168,8 +178,26 @@
 #   69 render something. 66 of those 69 had their route rendered and measured at
 #      both 375 and 768. Not reached: rows 34, 35 (no live vault link) and 69
 #      (built-but-unmounted hook).
+#   COUNTING NOTE, so nobody re-derives this wrong: this file carries 75 data rows,
+#      not 69. The extra six are listed for completeness and are NOT part of the 69 —
+#      row 28 is blocked-on-backend and was measured only because it shares row 27's
+#      page, and rows 68, 70, 71, 72, 73 are not-started and render nothing. So a
+#      grep for `not-reached` returns 8 rows, of which only 3 (34, 35, 69) are
+#      renderable surfaces this lane failed to reach.
 #   Of the 66: 45 verified-good at both widths, 21 carry a measured defect.
 #   Every one of the 21 defects is in the Explorer or the Governance sub-nav.
 #   The whole Earn / Learn / Account / Airdrop / Leaderboard / Referral surface —
 #   every row measured — is clean at 375 and 768 with zero overflowing nodes.
+#   Rows 50 and 51 are superseded by 53e434951 and their list verdicts do not count
+#   toward either figure.
+#
+# NON-LAYOUT DEFECTS FOUND WHILE MEASURING — reported, not fixed, both outside
+# this lane. Recorded here because a responsive sweep is the only pass that opens
+# every one of these surfaces, and neither would be found by looking for overflow.
+#   src/pages/explorer/GovernancePage.tsx:238  `unique_voters ?? 0` -> "0 voters"
+#     on /explorer/governance, off a nullable Supabase column. Row 80.
+#   src/components/governance/ProposalDetail.tsx:612  `{proposal.unique_voters}`
+#     -> "Voters 0" off a hard-coded 0 with no chain source. Rows 59, 60.
+#   Both are the same bug in two places, and 53e434951 already retired the third
+#   copy. Fixing the two survivors is one lane's afternoon, not a design job.
 # ============================================================================
