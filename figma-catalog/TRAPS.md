@@ -253,6 +253,33 @@ Nothing threw. The output was a plausible, actionable-looking list.
 until proven otherwise — print the hit count and eyeball it before you believe
 the miss list.
 
+### In a shared tree the same bug reads as "a peer clobbered my work" — and that is worse
+
+Nineteen lanes are editing this checkout, so a false negative does not arrive as
+"my query is wrong". It arrives as *"my content is gone."* The natural response
+is to restore the file from a backup, which is precisely the move that has
+already nearly deleted a peer's edits here (`LANE_BRIEF_V2`: never restore a
+whole-file backup; a peer's edit lands between your backup and your restore).
+**So a bad oracle does not merely mislead you — it recommends a destructive fix.**
+
+Two instances, both on 2026-08-26, from different mechanisms:
+
+- The towers lane grepped its status rows for `Advanced OFF` and
+  `3,208 points staked`. Both strings are real — but they live in a **code
+  comment** and a **bug report**, never in the `.tsv`. Two claims reported
+  missing; nothing was missing.
+- Then this file's author, writing an "anchored" integrity check *specifically to
+  avoid that*, searched `TRAPS.md` for `felt-diligence` with a case-sensitive
+  `includes()`. The text says `Felt-diligence` — sentence-initial. Reported MISS
+  on a file that was byte-identical to HEAD.
+
+★ **Before raising a clobbering alarm, ask git, not your grep.**
+`git diff HEAD -- <file>` (empty output = unmodified) and `git status --short`
+answer *"was this file changed"* directly. They do not depend on your pattern,
+your casing, or your memory of which artifact you wrote a sentence into — which
+is the whole reason a grep failed twice in one afternoon. Confirm the file
+actually changed **before** you go looking for what changed in it.
+
 ## 8. `registry.json` is DERIVED — diffing against it dates the last rebuild
 
 When the compound-key bug (§1) made 34 screens look absent, my second hypothesis
