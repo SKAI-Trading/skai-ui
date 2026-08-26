@@ -112,6 +112,26 @@ Directory, never the registry `notes`.
 returns nothing for these twelve, which reads as *"this game has no Figma
 design."* It has one. See §4.
 
+### The debris is not only in titles — it is in the CONTENT, and transcribing it violates the no-mock-data rule
+
+The H1 oracle identifies the frame. It does **not** certify everything inside it.
+
+Towers' mobile page `10130-14171` is genuinely Towers, but its Community-wins rows
+all read **"Blackjack"**, with named players and dollar payouts, and it carries a
+**"Try Blackjack in Fun Mode"** CTA. That is copy-paste debris from the page the
+frame was duplicated from — surfaced by the towers/rps/keno/bingo lane, which
+correctly refused to transcribe it.
+
+Why this one is sharper than a wrong title: **a wrong title wastes your time; a
+transcribed sample row ships fabricated winnings.** Named players with dollar
+payouts, rendered as real, is exactly what the no-mock-data rule
+(`CLAUDE.md`) forbids, and it would arrive looking like a faithful Figma
+implementation.
+
+So: identify the frame by page + H1, then treat **sample data, leaderboard rows,
+community-wins entries and cross-game CTAs inside it as unverified** until the
+content matches the game. If a row names a different game, it is debris, not spec.
+
 ## 4. "13 of 26 shipped casino games have no Figma screen" is WRONG
 
 `CATALOG_DESIGN.md` carries that claim, and its own method line explains the
@@ -334,3 +354,30 @@ Two things to take from it:
   a defect invisible to any check that exercises a single rail.
 
 ★ Anything phrased as a money path deserves a played round, not a screenshot.
+
+### The class was swept, and POSITION matters more than the name
+
+The by-rail field-name class was swept across all 12 game components by the
+towers/rps/keno/bingo lane; three named cases spot-checked here. **Bingo was the
+only refusal gate on a field the points rail does not emit.** Do not go looking
+for a wave of these — the sweep is done.
+
+What it found, and why the result is the useful part:
+
+| Read | Where | Consequence |
+|---|---|---|
+| Bingo `result.drawnNumbers` | **refusal gate**, after the debit | round settles, UI says "Failed to play" |
+| FortuneWheelPro `result.isBonus` | display | history label shows `${multiplier}x` instead of "BONUS" |
+| Cosmic/SafariSlots `result.stats` | display, guarded | session counters silently do not update |
+
+`GemSlotsGame`'s `result.hadWins` looks like a fourth and is **not**: that
+`result` is `executeCascade`'s own local return type
+(`GemSlotsGame.tsx:1722`, `{newGrid, hadWins, totalPayout}`), not a settlement
+envelope. Verified here — a name-only grep flags it.
+
+★ **The generalisation to keep: a mismatch in a DISPLAY read degrades, a mismatch
+in a GATE lies.** The audit worth running on any new game is therefore *"does
+anything gate the round on a field name?"* — not *"do the field names match?"*
+The second question returns noise; the first returns money bugs. And the gate is
+only severe because it sits **after** the debit: it cannot refuse the bet, it can
+only hide a round that already completed.
