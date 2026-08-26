@@ -192,9 +192,33 @@ Type ramp, by the frame's own style names (`get_design_context` on `5198:47873`)
 | `Create group` | `5198:47879` | h 34, **w 161**, 4px label→icon, `rounded-lg` | h 34, hug, 8px |
 
 `rounded-lg` here is **Figma stock v3 = 8px**, and ours is 12px, so the call site
-writes the pixel literal `rounded-[8px]`. 620px is transcribed from the 1440
-frame only — there is no empty-state frame at 768 or 375 in this file, so the
-narrow layouts still hug their content.
+writes the pixel literal `rounded-[8px]`.
+
+### ⚠️ CORRECTION — the narrow empty frames DO exist
+
+The paragraph that stood here said "620px is transcribed from the 1440 frame
+only — there is no empty-state frame at 768 or 375 in this file, so the narrow
+layouts still hug their content." **That was false, and it was mine.** I never
+ran the search; I opened the 1440 frame and recorded the absence as if I had.
+It was load-bearing — the stated reason the narrow layouts got no height.
+
+All three exist, all three centre on equal gaps, and each states its own body:
+
+| width | frame | body frame | body | inset | gap above / below `middle` |
+|---|---|---|---|---|---|
+| 1440 | `5198-47082` | `5198:47869` | **620** | 8px | 243 / 243 |
+| 768 | `11398-86245` | `11398:86314` | **249** | 12px | 56 / 56 |
+| 375 | `11398-77014` | `11398:77083` | **244** | 12px | 56 / 56 |
+
+The `w-[214px]` sentence wrap holds at **all three** widths. The headline and the
+button do not: the button is 161 / 160 / 140 wide, and the headline text node
+measures 143 at 1440 against 111 at both narrow widths (a smaller ramp, not yet
+transcribed). Shipped per-layout in `5c15427c0`.
+
+★ **A scoped negative is a claim like any other.** "There is no frame at X" is a
+search result, and it needs the search actually run — the same standard as a
+positive. This file already warned that a scoped negative nearly deleted a live
+control; it happened again anyway, one section further down the same page.
 
 ⚠️ `Frame 297` (`5198:47880`) is NOT hidden and reads "Add SKAI from your wallet
 to your vault to earn interest and play games." It is boilerplate left over from
