@@ -131,7 +131,7 @@
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-      "pageId": null,
+      "pageId": "2003:674",
       "pageName": "✝️ Home (moved to \"Skai Web App 2\")",
       "readiness": "meta",
       "liveChildren": 20,
@@ -139,7 +139,7 @@
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-      "pageId": null,
+      "pageId": "2998:19593",
       "pageName": "✝️ Wallet (moved to \"Skai Web App 2\")",
       "readiness": "meta",
       "liveChildren": 13,
@@ -147,7 +147,7 @@
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
-      "pageId": null,
+      "pageId": "3:3",
       "pageName": "✝️ Trade (moved to \"Skai Web App 2\")",
       "readiness": "meta",
       "liveChildren": 154,
@@ -155,7 +155,7 @@
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
-      "pageId": null,
+      "pageId": "2001:2",
       "pageName": "Thumbnail",
       "readiness": "meta",
       "liveChildren": null,
@@ -505,6 +505,15 @@
       "liveChildren": 4,
       "sections": [],
       "note": "REFERENCE ONLY. All 4 children are pasted screenshots dated 2026-08-25. No design frame yet."
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "10265:3",
+      "pageName": "----------",
+      "readiness": "meta",
+      "liveChildren": null,
+      "sections": [],
+      "note": "A visual separator page, not content. Recorded so a page-ID set comparison reports zero drift instead of one perpetual live-only entry."
     }
   ],
   "figmaChangeLog": {
@@ -640,7 +649,18 @@
       },
       "readThisBeforePlanningSlots": "The slots pages are almost entirely PASTED SCREENSHOTS, frame-named 'Screen Shot 2026-08-25 at ...'. Of their 21 children only ONE is a Skai design frame (Safari's 768x1024). The rest are reference images of other products. Treat them as a mood board: NOT ready-for-dev, and building from them would mean reproducing someone else's UI. Same family as the placeholder-nodes-are-not-specs rule.",
       "method": "figma.root.children per file, then setCurrentPageAsync once per page. NOTE: an UNLOADED page reports children.length === 0 — Predict read 0 that way minutes after measuring 284. Never treat an unloaded page as empty."
-    }
+    },
+    "2026-08-26": [
+      "Live page-ID sets re-measured for all three files via figma.root.children (13 + 7 + 30 = 50 pages).",
+      "Filled in four pageIds that were null: the three ✝️ moved-page tombstones in Skai-Web-App (Home 2003:674, Wallet 2998:19593, Trade 3:3) and the Thumbnail in Skai-Web-App-2 (2001:2). They were recorded by NAME only, so every ID-set comparison reported them as live-only drift forever.",
+      "Added the games file separator page 10265:3 (\"----------\") for the same reason.",
+      "RESULT: page-ID drift is now zero in all three files. No content page is missing from the catalog.",
+      "⚠️ get_metadata with no nodeId is NOT reliable for listing pages - it reported 1 page (Thumbnail) for Skai-Web-App, which has 13. Use figma.root.children.map(p => ({id: p.id, name: p.name})) via use_figma instead.",
+      "⚠️ trade-2.titles.tsv is MISFILED: 89 rows of 3928-*/4018-*/7890-* ids, but the live Trade 2 page (13006:134300) has 407 children ALL prefixed 13006:. It is a harvest of something else and must not be used to scope Trade 2 work. Re-harvest live.",
+      "Trade 2 real families measured live: Skai > Trade 127, non-Skai FRAME 170, Launch 42, Trench 39 (+4 variants), Trade - dropdown 2, WIDGET 12, RECTANGLE 6, INSTANCE 1, unnamed 4.",
+      "GAP FOUND: Home 2 (129), Wallet 2 (182) and Trade 2 (407) had NO status file at all - 718 frames with zero parity assessment. Casey ruled 2026-08-26 that these v2 pages are the CURRENT design and file 1 is superseded. Wave dispatched.",
+      "Governance (121 rows) HELD by Casey: its page is 🚧 wip, not ✅ ready."
+    ]
   },
   "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.",
   "outOfScope": {
