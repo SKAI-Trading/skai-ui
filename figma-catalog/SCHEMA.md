@@ -345,9 +345,43 @@ without overclaiming. Tags in use:
 |-----|------------------------------------|
 | `@2026-08-20/route-overflow-sweep` | Route loaded in its **default state** at 1440/768/375 on real production DOM in a signed-in session. Measured `documentElement.scrollWidth − innerWidth`, every element whose box escapes the viewport **excluding** those inside an `overflow-x:auto/scroll/hidden` ancestor, and hard-clipped text. ⚠ **States reached by interaction were not entered**, and nothing was compared to Figma. |
 | `@2026-08-20/games-375-sweep` | Whether a game's bet→settle flow is **completable** at 375. ⚠ Says nothing about Figma parity, and (except where a width is written explicitly) nothing about 1440/768. |
+| `@2026-08-25/games-375-routing` | The seven modal-only casino games (keno, towers, bingo, video-poker, rps, fortune-wheel, roulette) after each was given a `/play/<slug>` route. Loaded each route at 375×812 in a signed-in dev session and measured, on the **mounted** game surface: the effective transform scale, the rendered box of every control (`getBoundingClientRect`, already post-transform), and **reachability** — for every control, whether a clipping ancestor puts it past the edge with no user-scrollable path to it. Bar: bet amount, currency toggle, primary action and result all reachable, no horizontal page scroll, primary CTA ≥ 44px. ⚠ Nothing compared to Figma — six of the seven have a mobile frame and none was opened. ⚠ Nothing measured at 1440/768. |
 
 When you run a new sweep, add a row here. A tag with no entry is a verdict
 nobody can audit.
+
+### ★ Three traps that made this dimension lie, all found on 2026-08-25
+
+Every one of them returned a **reassuring** answer, which is why none was
+caught by review — nobody audits a green result. Any future sweep writing
+column 6 should be checked against all three.
+
+1. **Selecting a component by a class its parent contributes.** A sweep keyed
+   off `.rounded-2xl.border.border-green-coal-100` found *nothing* on four
+   games — because `cn` is tailwind-merge, so a child that passes its own
+   `border-*` DROPS the parent's class. It fails as "surface not found", which
+   reads like a broken route. **Never identify a component by a class the child
+   can override.**
+2. **`scrollLeft` writes succeed on `overflow:hidden`.** The value sticks, so a
+   probe that writes and reads back reports a *clipped* container as
+   scrollable. `hidden` gives the user no scrollbar, no wheel and no touch pan.
+   Require a computed `overflow-x` of `auto`/`scroll` before counting anything
+   as reachable — script-reachable is not user-reachable. (Related: a
+   *synchronous* read after the write reports 0 even on a container that does
+   scroll, because `scroll-behavior` is `smooth`. Force `auto`, write, wait a
+   frame, then read.)
+3. **A probe that measures an absent component finds no defects in it.** Zero
+   and not-present are the same number. One run reported "all controls
+   reachable" on four games because it measured before the game mounted and
+   scored the app shell. **Every probe needs a positive control** — assert the
+   subject is present, and emit a distinct `NOT-MOUNTED` outcome rather than a
+   zero.
+
+★ And the reason a clipped control survives a page-level check: an
+`overflow-hidden` ancestor **swallows its own overflow**, so
+`documentElement.scrollWidth − clientWidth` stays ≤ 0 while controls sit off the
+edge of an inner panel. **Neither control size nor document overflow is
+evidence of reachability.**
 
 ### How a future auditor records a per-width verdict
 

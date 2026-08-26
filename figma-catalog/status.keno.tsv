@@ -1,1 +1,1 @@
-Casino > Keno	unknown	-	-	Row created 2026-08-20 solely to carry the 375 completability verdict; no implementation assessment has been made, hence status=unknown. No /play/<slug> route exists for this game.	mobile=broken @2026-08-20/games-375-sweep
+Casino > Keno	unknown	-	-	Routed 2026-08-25 at /play/keno; the fixed 1024x720 dialog no longer scales (was 0.348 at 375, Bet 347.2x16.7). Measured at 375: scale 1, Bet 307x48, currency 63x44, bet input 141.5x44, all controls reachable, no horizontal page overflow.	mobile=renders @2026-08-25/games-375-routing
