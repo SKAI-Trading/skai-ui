@@ -156,3 +156,58 @@ the same reason.
 The neighbouring clause at `5198:63516` / `10232:201401` ("Only invited members
 can join, members can also request to join") **was** withheld for the same class
 of reason and is now shipped — the rail exists as of 2026-08-26.
+
+## `5198-47082` — the empty panel is 620px and the centring is a spec
+
+The empty Groups frame is one of the closest matches in this family: the copy
+already agreed word for word, which is why the previous pass reported no defect
+against report `a2eeeba5`. The one thing it could not settle was whether the
+frame's very tall panel was a stated height or a canvas artefact, and it
+declined to guess. The node tree settles it.
+
+| node | name | geometry |
+|---|---|---|
+| `5198:47138` | `Frame 429` — the table panel | 1144 x 676 |
+| `5198:47139` | `Frame 299` — the tab / filter row | h 56 |
+| `5198:47869` | `Frame 301` — the panel **body** | **h 620** |
+| `5198:47870` | `Frame 280` — the body's 8px inset | h 604 |
+| `5198:47873` | `middle` — the message block | y 243, h 118 |
+
+604 − 243 − 118 = **243**, exactly the gap above it. Equal gaps top and bottom
+is a centring nobody reaches by accident, so 620px is the body height and the
+message centres in it. Shipped 2026-08-26 on the loading, error, sign-in **and**
+empty arms alike — the earlier objection to a min-height was that the sibling
+states "would then look short beside it", which is answered by giving all four
+one body rather than by leaving all four short. It also removes a double resize
+on a cold load.
+
+Type ramp, by the frame's own style names (`get_design_context` on `5198:47873`):
+
+| element | node | frame | was |
+|---|---|---|---|
+| `No groups to show` | `5198:47875` | Lg/Sub-headline 2 300 = 18px / 24, Core/White | `text-base/6` (16px) |
+| the sentence | `5198:47876` | Lg/Paragraph 3 300 = 12px / 16, App/Ash 300, wrap `w-[214px]` | `text-sm/5` at `max-w-[260px]` |
+| gap inside `description` | `5198:47874` | 4px | 8px |
+| gap block → button | `5198:47873` | 24px | 16px |
+| `Create group` | `5198:47879` | h 34, **w 161**, 4px label→icon, `rounded-lg` | h 34, hug, 8px |
+
+`rounded-lg` here is **Figma stock v3 = 8px**, and ours is 12px, so the call site
+writes the pixel literal `rounded-[8px]`. 620px is transcribed from the 1440
+frame only — there is no empty-state frame at 768 or 375 in this file, so the
+narrow layouts still hug their content.
+
+⚠️ `Frame 297` (`5198:47880`) is NOT hidden and reads "Add SKAI from your wallet
+to your vault to earn interest and play games." It is boilerplate left over from
+whatever frame this one was duplicated from, not groups copy. Do not build it.
+
+## `10232-201473` is a rail card, not a groups-table badge
+
+Correcting an assumption an earlier pass carried: the `Member requests · 4 new`
+string belongs to **card 3 of the group-info right rail**, not to a badge on the
+groups table. Nothing was added to the table.
+
+That rail is still blocked (two of its three cards have no data source, above),
+so as of 2026-08-26 the string is drawn on the surface that does exist — the
+owner-only `Requests` panel heading on `TradingGroupProfile.tsx`. Before that
+`memberRequestsBadge` had no call site at all: green under its own unit test,
+rendering nowhere, and free to drift from `pendingCount` unnoticed.
