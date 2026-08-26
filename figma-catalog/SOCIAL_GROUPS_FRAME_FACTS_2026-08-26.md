@@ -200,14 +200,34 @@ narrow layouts still hug their content.
 to your vault to earn interest and play games." It is boilerplate left over from
 whatever frame this one was duplicated from, not groups copy. Do not build it.
 
-## `10232-201473` is a rail card, not a groups-table badge
+## `10232-201473` is a rail card, and it draws a label beside a PILL
 
-Correcting an assumption an earlier pass carried: the `Member requests · 4 new`
-string belongs to **card 3 of the group-info right rail**, not to a badge on the
-groups table. Nothing was added to the table.
+Two corrections here, the second one mine.
 
-That rail is still blocked (two of its three cards have no data source, above),
-so as of 2026-08-26 the string is drawn on the surface that does exist — the
-owner-only `Requests` panel heading on `TradingGroupProfile.tsx`. Before that
-`memberRequestsBadge` had no call site at all: green under its own unit test,
-rendering nowhere, and free to drift from `pendingCount` unnoticed.
+**First**, this node is **card 3 of the group-info right rail**, not a badge on
+the groups table. Nothing belongs on the table.
+
+**Second — probed 2026-08-26, and it contradicts what the reports say.** Every
+note in this family writes the card as the single string
+`Member requests · 4 new`. The frame draws **two nodes**:
+
+| node | kind | content | geometry |
+|---|---|---|---|
+| `10232:201478` | text | `Member requests` | w 137 |
+| `10232:201511` | **Tag** | — | 42 x 18 at x=143 (6px gap) |
+| `10232:201512` | text | `4 new` | w 30, inset 6px |
+
+A label beside a **pill**, with the word `new` inside the tag. There is **no
+middle dot anywhere in the frame** — the `·` comes from our own
+`memberRequestsBadge` helper, and an earlier pass (mine) cited the frame as its
+source without probing the node. Shipped as label + pill in `c09074b63`; the
+combined phrase survives only as the heading's accessible name.
+
+The card's own frame is 367 x 116, and its second row (`10232:201481`) is a
+three-circle avatar stack (24px each, 16px overlap) beside
+`@CryptosTraderX, @DeFiNewsAlerts, etc.` — not built, since the rail is blocked.
+
+★ **A node id inherited from a report's notes is not a measurement.** This file
+key's page listing returns a single `Thumbnail` page so it reads as dead, and
+direct node lookups resolve for some ids and 404 for others — probe the id
+rather than concluding from the listing, in either direction.
