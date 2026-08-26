@@ -168,6 +168,42 @@ Two consequences already banked:
   on the baccarat felt would have printed **Blackjack's paytable** behind
   "Tie Pays 8 to 1", visible only on render.
 
+#### So how DO you check outlined copy? Read the paths.
+
+The cards lane built this for `b6a6e296`; reproduced independently here.
+
+Parse the `d` attribute into absolute points, collect the on-curve points **and**
+the cubic control points, take min/max. That is the **control hull**. Compare it
+against Figma's vector bbox. Reusable ~35-line `hull()` in
+`modules/skai-gaming/src/components/play/games/cards/blackjack/blackjackRibbonLabelParity.test.ts`
+(mutation-checked: a +3px shift of the Perfect Pairs outline fails it).
+
+My independent run against Figma `9178-8240/8241/8242`:
+
+| | dx | dw | dh |
+|---|---|---|---|
+| `Path 293` "Blackjack pays 3 to 2" | -0.0003 | -0.0001 | 0.0000 |
+| `Path 294` "Perfect Pairs" | 0.0000 | -0.0001 | 0.0000 |
+| `Path 295` "21+3" | +0.0003 | 0.0000 | 0.0000 |
+
+Three caveats, all load-bearing:
+
+1. **It is a HULL, not a bbox.** The control hull *contains* the true outline. It
+   is near-exact for glyphs because their control points hug the curve; on art
+   with wide-swinging beziers it will read larger than Figma. The method is
+   "compare hulls, expect near-agreement **on type**", not "this is the bbox".
+2. **Establish a common origin first.** Raw `y` disagreed by **201.6178** on all
+   three labels here — because Figma's `x`/`y` are parent-relative and the SVG has
+   its own space. The tell that this is an origin shift and not movement is that
+   the offset is **constant**: spread across the three was 0.0001. A *varying*
+   offset is real drift. Compare the spread, not the offset.
+3. **Do not hand-roll the number tokenizer.** `felt-ribbon.svg` contains
+   `3.88007e-05`. The common shortcut `-?[\d.]+` splits that into `3.88007` and
+   `-05` — two tokens where there was one, which knocks every later coordinate in
+   that path out of pairing. Verified: the shipped regex
+   `-?\d*\.?\d+(?:[eE][-+]?\d+)?` handles it; the naive one does not. One `e` in
+   50KB of path data is enough to corrupt a whole path silently.
+
 ## 4. "13 of 26 shipped casino games have no Figma screen" is WRONG
 
 `CATALOG_DESIGN.md` carries that claim, and its own method line explains the
@@ -521,12 +557,45 @@ The real shape is a clean 2x2, and it is worth having because it settles a repor
 | desktop 356w | `10130-13720` 621h, 19 text nodes | `10130-14013` 777.33h, 35 |
 | mobile 347w | `10130-14946` 621h, 19 text nodes | `10130-14802` 777.33h, 35 |
 
-Delta is **156.33px** and +16 text nodes in both rows, identically — exactly the
-On Win / On Loss / Stop on Win / Stop on Loss block. **"Advanced" appears as a
-label in all four frames**, and the designer drew both states at both widths. A
-button does not get a second frame showing the panel grown by its own disclosure,
-so this is a disclosure toggle. That closes report `176075a8` from the frames
-rather than by inference.
+Delta is **156.33px** and +16 text nodes in both rows, identically.
+**"Advanced" appears as a label in all four frames**, and the designer drew both
+states at both widths. Better still, the towers lane confirmed the label *and* its
+toggle are present in the collapsed frames (`10130:15019`/`15020`) with none of
+the rows they reveal — direct evidence, not an argument about button semantics.
+That closes report `176075a8` from the frames rather than by inference.
+
+#### ⚠️ CORRECTION: 156.33 is NOT the size of the disclosed block
+
+This section previously said the 156.33 delta was "exactly the On Win / On Loss /
+Stop-on block". **That is false, and I repeated it from the towers lane without
+testing it.** They caught it and I re-measured:
+
+| | content ends | frame height | trailing slack | CTA y |
+|---|---|---|---|---|
+| collapsed `10130-13720` | 433.33 | 621 | **187.67** | 381.33 |
+| expanded `10130-14013` | 761.33 | 777.33 | **16** | 709.33 |
+
+The disclosed block is **328px** — the CTA moves 381.33 → 709.33, which is
+4 rows x 66 + 4 gaps x 16. The frame grows only 156.33 because the collapsed
+frames carry 187.67 of trailing slack against the expanded pair's 16, and
+`187.67 - 16 = 171.67 = 328 - 156.33`. Both numbers are real; they measure
+different things.
+
+★★ **A DERIVED claim needs its own check, even when every input to it is
+verified.** This is the purest instance in the file and the one none of the other
+rules catch. There was no bad instrument and no bad oracle: 156.33 was correctly
+measured, the block was correctly identified, and "156.33 *is* the block" was a
+**third proposition** resting on two true ones, which nothing was ever pointed at.
+It got asserted because the two numbers sat next to each other and the equation
+looked tidy.
+
+§7's "compare values, don't count" does not help here — both values were right.
+The only thing that catches it is noticing that a *relationship between two
+measurements is itself a claim*, and measuring the relationship directly (here:
+where does the CTA actually move to?).
+
+The conclusion never rested on the arithmetic, which is why this is a correction
+rather than a retraction.
 
 ★ Two things worth taking: report geometry at the precision you measured it, not
 a prettier one — a rounded number is a claim. And when a lane builds on your
@@ -668,3 +737,54 @@ coordinate are a stronger oracle than one — if a measurement reproduces across
 both twins it is the spec, and if the twins disagree, that disagreement is itself
 the finding. When an alias says `child`, it is worth one call to check whether it
 is really a sibling: compare sizes and child geometry before assuming hierarchy.
+
+---
+
+## 14. A single frame of a ROTATING part cannot establish its rest orientation
+
+Raised by the roulette/fortune-wheel lane. New class, and the discriminator is
+clean.
+
+Roulette's wheel turret was transcribed off `9925:16308`, and the shipped code put
+it at 45°. The static frame `9948:22957` puts the tips on the cardinals; the
+transcribed frame caught it around 16.5°, because the turret rides *inside* the
+rotating wheel and that frame is a spin-state capture.
+
+Checking it here made the mechanism sharper than "it's a different state":
+**`9925:16308` is a `RECTANGLE`, 1334x1380, with zero children.** It is a pasted
+render, not a live frame — so there is no turret node to read an angle from at
+all, and any angle taken from it was measured off pixels of a frozen animation.
+
+★ **The tell: ratios agree, the angle does not.** Divide the rotation out and the
+two frames match on every proportion — tip 0.447 vs 0.454 of the inner disc,
+waist 0.153 vs 0.150, hole 0.093 vs 0.099. Two frames that agree on all ratios and
+disagree only on angle are **the same design mid-animation**, not two designs.
+Treat the one whose features land on the cardinals as rest state.
+
+Related, and the reason `get_metadata` alone will not save you: Fortune Wheel's
+`9733:7556` is a 50-tick **annulus** — one stroked circle split into 50
+round-capped arcs — but its nodes are all named `Ellipse` and all sized alike, so
+the layer list reads as 50 overlapping full-size ellipses. (Confirmed to one level:
+`Group 319` holds `Ellipse 202` 446.06², `Group 315` 399.595², `Frame 1000004188`
+185.858². The 50 arcs sit below that; I did not descend further.) **Layer names
+describe the construction, not the render.**
+
+### One component, instanced per game — verified pixel-identical
+
+The fairness sub-bar is a single component placed on every game page, not a
+look-alike rebuilt per game. Confirmed by comparing children:
+
+| | Roulette `9799-15326` | Dice `9061-16828` |
+|---|---|---|
+| frame | `Frame 656` 163.333 x 30 | `Frame 656` 163.333 x 30 |
+| `icons/action` | x=0 w=13.333 | x=0 w=13.333 |
+| `CTA/button` x3 | x=23.333 / 63.333 / 103.333, w=30 | identical |
+| `icons/graphical` | x=143.333 w=20 | identical |
+
+A 10px pitch, matching to the pixel. That is why Limbo/Mines/Plinko already import
+the sub-bar glyphs from `assets/games/dice/` — same glyphs, correctly shared.
+
+⚠️ Note the citation for the Dice side was given as `9061-16826`. That id is the
+**1318 x 54 wrapper**; the 163.333 x 30 cluster is `9061-16828` inside it. Exactly
+§12's container-for-child pattern, and the dimension check is what surfaced it —
+`1318 x 54` was never going to be the same object as a `163.33 x 30` cluster.
