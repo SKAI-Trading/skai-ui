@@ -253,3 +253,35 @@ design. `bug-node-index.tsv` now holds 578 data rows.
 Note the free-text sweep (figma.com URLs in `title`/`description`) added **0**
 reports beyond the `figma_link` column this time. It cost nothing to check and
 it found 14 last time — keep running it, but do not assume it always yields.
+
+---
+
+## 9. Two shared-tree git traps that both bit during this wave
+
+Not measurement traps, but they destroyed information today and one of them has
+now caught two different agents.
+
+**`@'...'@` is PowerShell. The Bash tool is Git Bash.** Pasting a PowerShell
+here-string into `git commit -m` does not error — it commits a message whose
+first line is a literal `@`, pushing the real subject to line 2. The reflog shows
+this happening twice in this wave (`85a63c2 commit: @`, `4b6102c commit: @`).
+`git log --oneline` then reads `@` where the subject should be. Use a real
+heredoc: `git commit -F - <<'MSG' … MSG`.
+
+**`git commit --amend` is unsafe in a shared checkout, and fails silently.**
+Nineteen lanes commit into this tree. In the ~2 minutes between my commit and my
+`--amend` to fix the `@` subject, a peer committed. `--amend` rewrites whatever
+HEAD points at *now*, so it rewrote **the peer's commit**, replacing their
+message with mine. Their content was untouched and I restored their message from
+`git reflog` (which is the recovery path — the old commit object survives), but
+nothing warned me: the amend reported success and `git log --oneline -1` showed a
+plausible result.
+
+★ Before `--amend`, confirm HEAD is still the commit you think it is:
+
+```sh
+git log -1 --format=%H   # compare against the hash your commit printed
+```
+
+Prefer a new follow-up commit over amending. A bad subject line is much cheaper
+than silently overwriting a peer's work.
