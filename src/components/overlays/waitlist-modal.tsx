@@ -220,7 +220,17 @@ export function WaitlistModal({
       {/* Loading Overlay */}
       {isLoading && (
         <div className="absolute inset-0 z-[10001] flex flex-col items-center justify-center gap-3 bg-[#001615]/80">
-          <SpinnerIcon className="h-8 w-8 text-[#2DEDAD]" />
+          {/* Primary/Sky Blue 300 #56C7F3 — report 2e84facb ("when signing in
+              ... the circle is green which is not the same as the other loading
+              circles"). This was the last #2DEDAD (Alien Green) left in the
+              modal: the Continue button, the focused input border, the ENTER
+              hint and all three social buttons below already moved to the brand
+              blue, so the authenticating spinner was the one control still
+              painting the retired accent — on the most-watched frame in the
+              whole sign-in flow. Literal, not the `sky-blue` Tailwind token,
+              which resolves to alien-green #2DEDAD in this codebase (see the
+              input-border comment further down). */}
+          <SpinnerIcon className="h-8 w-8 text-[#56C7F3]" />
           <p className="font-manrope text-sm text-white/70">Authenticating...</p>
           {onCancelAuth && (
             <button

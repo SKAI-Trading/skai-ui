@@ -77,3 +77,51 @@ describe("WaitlistModal — empty submit (Figma 2005:10015)", () => {
     expect(screen.getByRole("button", { name: "Continue" })).toBeDisabled();
   });
 });
+
+/**
+ * Report 2e84facb — "when signing in ... the circle is green which is not the
+ * same as the other loading circles ... change the rotating circle to blue to
+ * match the new Skai blue".
+ *
+ * The expectation is not re-derived from the component: #56C7F3 is Primary/Sky
+ * Blue 300 as named by the Figma frame this modal is built from, and #2DEDAD is
+ * the Alien Green the rest of the modal had already left behind. Both literals
+ * are written out here so a revert to the green cannot pass.
+ */
+describe("WaitlistModal — authenticating spinner colour (report 2e84facb)", () => {
+  const SKY_BLUE_300 = "text-[#56C7F3]";
+  const RETIRED_ALIEN_GREEN = "text-[#2DEDAD]";
+
+  const loadingProps = {
+    isOpen: true,
+    onClose: () => {},
+    onEmailSubmit: vi.fn(),
+    isLoading: true,
+  };
+
+  function spinner(container: HTMLElement): SVGElement {
+    const el = container.querySelector("svg.animate-spin");
+    if (!el) throw new Error("no spinning svg rendered while isLoading");
+    return el as SVGElement;
+  }
+
+  it("paints the authenticating spinner Sky Blue 300, not the retired green", () => {
+    const { container } = render(<WaitlistModal {...loadingProps} />);
+
+    const cls = spinner(container).getAttribute("class") ?? "";
+    expect(cls, "spinner is not on the brand blue").toContain(SKY_BLUE_300);
+    expect(cls, "spinner regressed to the retired alien green").not.toContain(
+      RETIRED_ALIEN_GREEN,
+    );
+  });
+
+  it("renders that spinner only while an auth attempt is in flight", () => {
+    // Guards the selector above: if the spinner stopped rendering entirely the
+    // colour assertion would throw rather than pass vacuously, and this proves
+    // the idle state is the discriminating case.
+    const { container } = render(
+      <WaitlistModal {...loadingProps} isLoading={false} />,
+    );
+    expect(container.querySelector("svg.animate-spin")).toBeNull();
+  });
+});

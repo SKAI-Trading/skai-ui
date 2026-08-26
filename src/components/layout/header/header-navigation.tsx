@@ -44,6 +44,26 @@ export interface HeaderNavLinkProps extends React.AnchorHTMLAttributes<HTMLAncho
   questTarget?: string;
 }
 
+/*
+ * LIGHT-MODE INK ON THE TRIGGERS (report 481f3137)
+ * ------------------------------------------------
+ * Every nav TRIGGER below carries `text-white [.light_&]:text-green-coal-300`.
+ * The triggers sit on the app shell's header bar, which is themed, so a pinned
+ * `text-white` painted white-on-white the moment a user switched to light —
+ * the labels simply vanished.
+ *
+ * Why `[.light_&]:` and not `dark:`: the app writes `.light` OR `.dark` on
+ * <html> from an EFFECT (src/hooks/ui/useTheme.ts), so on the first paint
+ * neither class is present. Keeping the dark value unprefixed makes dark the
+ * default and light the explicit override, which is the safe direction — the
+ * alternative flashes light chrome on a dark app. Same variant the app already
+ * uses in QuestsSection.tsx.
+ *
+ * The dropdown PANELS are deliberately NOT touched: Figma draws them
+ * #122524 with white rows in both themes, so they stay a dark panel that
+ * happens to open from a light bar.
+ */
+
 /**
  * HeaderNavLink - Individual navigation link
  */
@@ -54,7 +74,7 @@ const HeaderNavLink = React.forwardRef<HTMLAnchorElement, HeaderNavLinkProps>(
       "hover:text-primary",
       active
         ? "text-primary"
-        : "text-white",
+        : "text-white [.light_&]:text-green-coal-300",
       className
     );
 
@@ -68,7 +88,7 @@ const HeaderNavLink = React.forwardRef<HTMLAnchorElement, HeaderNavLinkProps>(
             "hover:text-primary",
             isActive
               ? "text-primary"
-              : "text-white",
+              : "text-white [.light_&]:text-green-coal-300",
             className
           )}
           data-quest-target={questTarget}
@@ -154,7 +174,7 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
             className={cn(
               "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
               "hover:text-primary",
-              open ? "text-primary" : "text-white"
+              open ? "text-primary" : "text-white [.light_&]:text-green-coal-300"
             )}
             style={{ letterSpacing: "-0.64px" }}
           >
@@ -329,7 +349,7 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
               className={cn(
                 "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1 cursor-pointer",
                 "hover:text-[#56C7F3]",
-                open || triggerActive ? "text-[#56C7F3]" : "text-white"
+                open || triggerActive ? "text-[#56C7F3]" : "text-white [.light_&]:text-green-coal-300"
               )}
               style={{ letterSpacing: "-0.64px" }}
             >
@@ -362,7 +382,7 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
             className={cn(
               "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
               "hover:text-[#56C7F3]",
-              open ? "text-[#56C7F3]" : "text-white"
+              open ? "text-[#56C7F3]" : "text-white [.light_&]:text-green-coal-300"
             )}
             style={{ letterSpacing: "-0.64px" }}
           >
