@@ -280,6 +280,43 @@ your casing, or your memory of which artifact you wrote a sentence into — whic
 is the whole reason a grep failed twice in one afternoon. Confirm the file
 actually changed **before** you go looking for what changed in it.
 
+#### That is only step one, and on its own it answers the wrong question
+
+The towers lane made the correction, and it matters: with nineteen lanes editing,
+**`M` is the expected state.** `git diff HEAD` is non-empty on every file worth
+checking, so it tells you the file moved and nothing about whether *your* content
+survived. It settles the alarm only in the case where nothing happened.
+
+The check that actually settles it compares **values, not strings**: pull your
+own committed version with `git show <your-sha>:<file>`, extract the field you
+care about, extract the same field from the working tree, and diff the two. It
+never names a search string, so it cannot fail on casing or on which artifact you
+were remembering.
+
+Run on the three rows in question — `git show e881819:` and `6812b8c:` against
+the tree, comparing column 5 — it returns an unambiguous answer:
+
+| | col 5 before | after | original intact? |
+|---|---|---|---|
+| `status.towers.tsv` | 4000 | 4179 | verbatim, as a prefix |
+| `status.bingo.tsv` | 930 | 1109 | verbatim, as a prefix |
+| `status.rock-paper-scissors.tsv` | 980 | 1159 | verbatim, as a prefix |
+
+All three gained the **same +179 characters** (a `CORRECTED 2026-08-26 (was
+unknown)` note), appended; columns 2–5 changed; nothing was removed or altered.
+Additive, not destructive.
+
+**So: `git diff HEAD` to learn the file moved. Value-diff against your own commit
+to learn whether it moved AT YOUR EXPENSE.** Only the second distinguishes *"a
+peer edited this"* from *"a peer clobbered this"* — and that is the distinction
+deciding whether anyone reaches for a backup.
+
+⚠️ Even this needs care with the numbers. The verbal summary of that run reported
+"towers gained exactly 175 chars" and said the other two had column 5 "left
+alone". It was **+179**, and **all three** were appended to identically. The
+conclusion held; two of the figures did not. Read the value-diff's output rather
+than paraphrasing it.
+
 ## 8. `registry.json` is DERIVED — diffing against it dates the last rebuild
 
 When the compound-key bug (§1) made 34 screens look absent, my second hypothesis
