@@ -132,6 +132,42 @@ So: identify the frame by page + H1, then treat **sample data, leaderboard rows,
 community-wins entries and cross-game CTAs inside it as unverified** until the
 content matches the game. If a row names a different game, it is debris, not spec.
 
+### ⚠️ Where the TEXT oracle itself fails: OUTLINED COPY
+
+The oracle this whole section recommends assumes copy is a `TEXT` node. On
+artwork it often is not, and then it fails silently — raised by the cards lane,
+measured here.
+
+`modules/skai-gaming/src/assets/games/blackjack/felt-ribbon.svg`: **0 `<text>`,
+0 `<tspan>`, 30 `<path>`.** Grepping it for `Perfect Pairs`, `Blackjack pays` or
+`21+3` returns **0 hits each** — the copy is outlined into the paths and is on
+screen the whole time.
+
+The Figma side matches. The Blackjack board frames `9178-8146` / `9178-8257`
+carry **5 TEXT nodes between them, every one a digit** (`3`,`3`,`6`,`3`,`3`) —
+against **69 VECTOR nodes**. Ask those frames for their first TEXT and the answer
+is `3`.
+
+So scope the oracle honestly:
+
+| Level | TEXT oracle |
+|---|---|
+| page / screen frames (`9738-13101` etc.) | **works** — the game name is a real TEXT node |
+| board & felt artwork | **fails** — copy is outlined into vectors |
+
+★ **A text-node count, a title grep and a string grep over the asset all come
+back clean on copy that is plainly visible.** Three independent-looking checks,
+one shared blind spot — none of them reads paths.
+
+Two consequences already banked:
+
+- Report `b6a6e296` ("payout labels positioned slightly differently") is **not
+  reproducible, and that is the finding**: nothing in the app places those
+  strings. Moving them means re-exporting the asset.
+- `BaccaratGame.tsx:1677-1700` records the sharp end — reusing that same export
+  on the baccarat felt would have printed **Blackjack's paytable** behind
+  "Tie Pays 8 to 1", visible only on render.
+
 ## 4. "13 of 26 shipped casino games have no Figma screen" is WRONG
 
 `CATALOG_DESIGN.md` carries that claim, and its own method line explains the
@@ -294,28 +330,46 @@ never names a search string, so it cannot fail on casing or on which artifact yo
 were remembering.
 
 Run on the three rows in question — `git show e881819:` and `6812b8c:` against
-the tree, comparing column 5 — it returns an unambiguous answer:
-
-| | col 5 before | after | original intact? |
-|---|---|---|---|
-| `status.towers.tsv` | 4000 | 4179 | verbatim, as a prefix |
-| `status.bingo.tsv` | 930 | 1109 | verbatim, as a prefix |
-| `status.rock-paper-scissors.tsv` | 980 | 1159 | verbatim, as a prefix |
-
-All three gained the **same +179 characters** (a `CORRECTED 2026-08-26 (was
-unknown)` note), appended; columns 2–5 changed; nothing was removed or altered.
-Additive, not destructive.
+the tree, comparing column 5 — it returns an unambiguous answer. **All three**
+gained the same appended `CORRECTED 2026-08-26 (was unknown)` note, with the
+original prose intact as an exact prefix; columns 1–5 changed; nothing was
+removed or altered. Additive, not destructive.
 
 **So: `git diff HEAD` to learn the file moved. Value-diff against your own commit
 to learn whether it moved AT YOUR EXPENSE.** Only the second distinguishes *"a
 peer edited this"* from *"a peer clobbered this"* — and that is the distinction
 deciding whether anyone reaches for a backup.
 
-⚠️ Even this needs care with the numbers. The verbal summary of that run reported
-"towers gained exactly 175 chars" and said the other two had column 5 "left
-alone". It was **+179**, and **all three** were appended to identically. The
-conclusion held; two of the figures did not. Read the value-diff's output rather
-than paraphrasing it.
+#### ⚠️ A bare integer is not a measurement — state the unit, or use no number at all
+
+Two lanes measured that same append and reported **+175** and **+179**. Each
+then treated the other's figure as an error. Neither was wrong:
+
+| Unit | towers col 5 | delta |
+|---|---|---|
+| UTF-8 **bytes** (`Buffer.byteLength`, or a `latin1` read) | 4000 → 4179 | **+179** |
+| **code points** / JS code units (a `utf8` read) | 3992 → 4167 | **+175** |
+
+The appended text opens `U+0020 U+26A0 U+FE0F` — `⚠️` is two code points at
+three bytes each, so bytes exceed characters by exactly 4. Reading a file with
+`latin1` yields **byte** counts while looking exactly like character counts, and
+that is how one of these was reported as characters.
+
+★ The values were never in conflict; only the units were, and neither side
+stated one. So the closing form of this whole file's lesson: **a number without
+its unit is not a measurement**, and "which unit am I counting in" is part of the
+checker's state — the thing §12 says a real check must not depend on.
+
+**The fix is to stop counting.** The prefix test —
+
+```js
+current.startsWith(mine)   // true
+```
+
+— answers *"is my content still intact"* exactly, needs no length, no unit and no
+encoding decision, and would have been immune to all of it. Prefer a value
+comparison over a count every time; a count invites a unit argument that the
+comparison cannot have.
 
 ## 8. `registry.json` is DERIVED — diffing against it dates the last rebuild
 
@@ -577,3 +631,40 @@ its strongest form: attention was not the missing ingredient, and adding more of
 it would not have helped. Only a check that does not depend on the checker's
 state catches this — which is what the dimension test is, and what "read it
 carefully" is not.
+
+---
+
+## 13. A `child` alias is true and still hides the more useful relationship: TWINS
+
+Raised by the cards lane, verified here with `getNodeByIdAsync` plus a
+`findAll` descendant test.
+
+`bugref-aliases.tsv:496` maps `M6r9FEn042UWTQD1zvy6GM:9178-8257` to the page
+frame `9003-117337` with reason `child`. **That row is correct** — `9178-8257`
+really does sit at depth 6 under `9003-117337`. Nothing to fix.
+
+But the relationship that answers questions about it is a different one:
+
+| | `9178-8146` | `9178-8257` |
+|---|---|---|
+| name | `Desktop Start` | `Desktop` |
+| size | 954 x 621 | 954 x 621 |
+| depth | **0** (child of the page) | **6** (under `Frame 658`) |
+| children | `Frame 1000004005` @ 764,-72 · 130 x 143.6842 | *identical* |
+| | `Frame 1000004100` @ 230.88,65 · 492.2396 x 491 | *identical* |
+| TEXT / VECTOR | 5 / 69 | 5 / 69 |
+
+Descendant test: **`9178-8257` is NOT inside `9178-8146`** (`findAll` returns
+nothing). They are **twins** — same board, drawn twice, in different places in
+the tree, at different depths, under different parents.
+
+★ **An alias schema with only `child` / `page` / `gone` cannot express "duplicate
+of", so a true `child` row silently becomes the only recorded relationship.**
+Reading it, you go looking for a parent-child explanation of a difference that
+has none.
+
+**And the duplicate is an asset, not a nuisance.** Two frames that agree on every
+coordinate are a stronger oracle than one — if a measurement reproduces across
+both twins it is the spec, and if the twins disagree, that disagreement is itself
+the finding. When an alias says `child`, it is worth one call to check whether it
+is really a sibling: compare sizes and child geometry before assuming hierarchy.
