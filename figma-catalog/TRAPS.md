@@ -185,6 +185,22 @@ Both land wrong, in the direction of *looking* deliberate.
 **Always write the pixel literal** (`rounded-[8px]`), never the token name, and
 say which you used. Full conversion table + sourcing: `TOKENS.md`.
 
+### …but the override is PARTIAL, and over-applying it flags false deltas
+
+Independently derived by the towers/rps/keno/bingo lane, and worth stating
+because it caused the opposite error. Only **`sm`, `md` and `lg`** are
+overridden. **`xl` (16px) and `2xl` (24px) survive the spread untouched.**
+
+So a frame specifying **16px** maps correctly to `rounded-xl`, and that is **not**
+a delta. An earlier triage note on report `f1bca2ea` listed `rounded-xl` as a
+mismatch against an RPS frame's 16px and nearly had it "fixed" to something else.
+
+Reading "the preset overrides the spread" and applying it to the whole ramp is
+the mirror image of trusting the dead declaration — both end in a wrong class.
+The rule that survives both: **match on the resolved pixel VALUE.** If you must
+read a token, `xl`/`2xl` are safe to read from `design-tokens.ts`; `sm`/`md`/`lg`
+from that same table are lies.
+
 ## 6. Plugin-API getters throw on access — you cannot feature-detect them
 
 `typeof node.findAllWithCriteria === 'function'` **throws** on a `RECTANGLE`:
@@ -285,3 +301,36 @@ git log -1 --format=%H   # compare against the hash your commit printed
 
 Prefer a new follow-up commit over amending. A bad subject line is much cheaper
 than silently overwriting a peer's work.
+
+---
+
+## 10. A responsive sweep measures REACHABILITY, never whether the thing WORKS
+
+Found by the towers/rps/keno/bingo lane; verified here against skai-gaming
+`04cd2a2` ("fix(bingo): stop charging players for rounds the UI called a
+failure") and `bingoRailEnvelope.test.ts:10-25`.
+
+The `@2026-08-25/games-375-routing` sweep recorded Bingo as `mobile=partial` on a
+tap-target measurement. Its bar, quoted from `SCHEMA.md:348`, is *"bet amount,
+currency toggle, primary action and result all reachable, no horizontal page
+scroll, primary CTA ≥ 44px."* Every one of those held.
+
+**Bingo could not complete a single round.** `BingoGame` read
+`result.drawnNumbers`; the POINTS rail returns the same data as `drawnBalls`, so
+the UI showed "Failed to play" on a round that had **already settled with the
+stake debited**. The lane measured 13 of 13 ledger rounds failing, 3,208 points
+staked against 11 returned.
+
+Two things to take from it:
+
+- **`renders` / `reachable` / `partial` on a viewport row is not evidence the
+  game is playable.** A responsive verdict and a functional verdict are different
+  measurements, and `status.*.tsv` column 2 does not distinguish them. Reading one
+  as the other is how a game stayed listed as merely `partial` while it was
+  taking money for rounds it then called a failure.
+- **The field-name contract differs BY RAIL.** The KEEPER rail emits
+  `drawnNumbers` (it renames `round.drawnBalls`); the POINTS adapter emits
+  `drawnBalls`. So the component worked on one rail and failed on the other —
+  a defect invisible to any check that exercises a single rail.
+
+★ Anything phrased as a money path deserves a played round, not a screenshot.
