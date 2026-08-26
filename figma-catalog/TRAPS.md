@@ -188,21 +188,44 @@ My independent run against Figma `9178-8240/8241/8242`:
 
 Three caveats, all load-bearing:
 
-1. **It is a HULL, not a bbox.** The control hull *contains* the true outline. It
-   is near-exact for glyphs because their control points hug the curve; on art
-   with wide-swinging beziers it will read larger than Figma. The method is
-   "compare hulls, expect near-agreement **on type**", not "this is the bbox".
+1. **It is a HULL, not a bbox — and the gap is AXIS-SPECIFIC.** The control hull
+   *contains* the true outline. Near-exact on glyphs, because their control points
+   hug the curve; larger on art with wide-swinging beziers.
+
+   This file has a real witness, not a hypothetical one. `Path 266` (the ribbon
+   backing shape) measured against Figma `9178-8212`:
+
+   | | hull (from SVG) | Figma | delta |
+   |---|---|---|---|
+   | width | 492.23996 | 492.23962 | **+0.00034** |
+   | height | 76.43568 | 76.31606 | **+0.11962** |
+
+   Width is exact to three ten-thousandths; height bulges by 0.12. **A bezier that
+   swings vertically need not swing sideways**, so a lane that checks only width
+   concludes the method is exact and is then surprised by height. Assert the two
+   things separately: *containment* (`hull >= figma`, true on both axes here) and
+   *near-agreement* (`hull - figma < 0.5`). Compare hulls expecting near-agreement
+   **on type**; never call it a bbox.
 2. **Establish a common origin first.** Raw `y` disagreed by **201.6178** on all
    three labels here — because Figma's `x`/`y` are parent-relative and the SVG has
    its own space. The tell that this is an origin shift and not movement is that
    the offset is **constant**: spread across the three was 0.0001. A *varying*
    offset is real drift. Compare the spread, not the offset.
-3. **Do not hand-roll the number tokenizer.** `felt-ribbon.svg` contains
-   `3.88007e-05`. The common shortcut `-?[\d.]+` splits that into `3.88007` and
-   `-05` — two tokens where there was one, which knocks every later coordinate in
-   that path out of pairing. Verified: the shipped regex
-   `-?\d*\.?\d+(?:[eE][-+]?\d+)?` handles it; the naive one does not. One `e` in
-   50KB of path data is enough to corrupt a whole path silently.
+3. **Do not hand-roll the number tokenizer — and know how it fails.**
+   `felt-ribbon.svg` contains `3.88007e-05`, in `Path 266`. The common shortcut
+   `-?[\d.]+` splits it into `3.88007` and `-05` — two tokens where there was one,
+   knocking every later coordinate in that path out of pairing. The shipped regex
+   `-?\d*\.?\d+(?:[eE][-+]?\d+)?` handles it; the naive one does not. Both
+   verified on the real fragment.
+
+   ★ **In JS the symptom is silent.** The de-paired stream feeds a command letter
+   into a coordinate slot, and `Number("C")` is **`NaN`**, not an exception — the
+   NaN propagates through `Math.min`/`Math.max` and you get a NaN box. Measured:
+   the naive parser returns `{x: NaN, y: NaN, w: NaN, h: NaN}` and **throws
+   nothing**. (In Python `float('C')` raises, so a prototype there crashes and
+   tells you immediately. Do not port a Python parser's confidence to JS.) Assert
+   the outputs are finite; a `NaN` box otherwise reads as a failed comparison
+   rather than a broken parser. One `e` in 50KB is enough.
 
 ## 4. "13 of 26 shipped casino games have no Figma screen" is WRONG
 
