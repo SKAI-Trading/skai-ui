@@ -152,6 +152,8 @@ export const SECTION_FILE_ALIASES = Object.freeze(
     ["wave2.games-pagesections", null],
     ["wave3.frame-defects", null],
     ["wave3.v1-supersession", null],
+    // One row per FRAME across all 21 game pages — genuinely spans 21 sections.
+    ["wave3.verify-games", null],
     // Covers TWO sections. The derivation rules would resolve it to `predict`
     // and silently misfile every play row — worse than leaving it out, because a
     // wrong section reads as a real verdict. Its rows are prefixed `predict:` /
@@ -181,6 +183,19 @@ export function resolveSection(stem, realSections) {
   for (const base of [...tries]) {
     const m = /^(.*)-(?:[a-z]|\d|[a-z]{1,12})$/.exec(base);
     if (m) tries.push(m[1]);
+  }
+  /*
+    ⚠️ And the one-character variant that made FOUR wave-3 deliverables inert:
+    the sections are `home-2` / `trade-2` / `wallet-2`, hyphen before the digit,
+    while the lane names I mandated were `verify-home2` / `verify-trade2` /
+    `verify-wallet2`. Same class as the two failures above, third occurrence —
+    which is the argument for a rule here rather than naming discipline in a
+    brief. A lane cannot get the filename wrong in a way that silently discards
+    its work if the resolver normalises the shape.
+  */
+  for (const base of [...tries]) {
+    const m = /^(.*[a-z])(\d+)$/.exec(base);
+    if (m) tries.push(`${m[1]}-${m[2]}`);
   }
   for (const t of tries) if (t && has(t)) return t;
   return null;
