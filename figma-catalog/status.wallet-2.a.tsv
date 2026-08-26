@@ -1,0 +1,91 @@
+Directory	scaffolding	-	-	Canvas index card, not a screen. One of 3 "Directory" legends (6340x352) laid across the page's three columns.
+Directory	scaffolding	-	-	Canvas index card, not a screen. Column 2 of 3.
+Directory	scaffolding	-	-	Canvas index card, not a screen. Column 3 of 3.
+Breakpoint	scaffolding	-	-	Breakpoint ruler (1450x164), not a screen. Nine of these label the 1440/768/375 columns.
+Breakpoint	scaffolding	-	-	Breakpoint ruler, not a screen.
+Breakpoint	scaffolding	-	-	Breakpoint ruler, not a screen.
+Breakpoint	scaffolding	-	-	Breakpoint ruler, not a screen.
+Breakpoint	scaffolding	-	-	Breakpoint ruler, not a screen.
+Breakpoint	scaffolding	-	-	Breakpoint ruler, not a screen.
+Breakpoint	scaffolding	-	-	Breakpoint ruler, not a screen.
+Breakpoint	scaffolding	-	-	Breakpoint ruler, not a screen.
+Breakpoint	scaffolding	-	-	Breakpoint ruler, not a screen.
+Skai > Wallet > continue on web > home 1VH (1440 x 900px)	done	modules/skai-wallet/src/pages/wallet/WalletHomeRoute.tsx	/	VERIFIED against screenshot. Streak banner, Net worth card (share/edit/wallet picker, eye toggle, Buy/Swap/Send/Receive), Quick actions (Edit + Collapse, Request HOT tag), Crypto/NFTs/Activity tabs + All networks filter. All present and wired.
+Quick actions - expanded - select favourite items	done	modules/skai-wallet/src/components/wallet/dashboard/QuickActionsBar.tsx	/	Favourites editor (680x326). QuickActionsBar has an `editing` state; its header comment cites both the "Edit" and "Collapse >" frames.
+Quick actions - expanded - select favourite items	done	modules/skai-wallet/src/components/wallet/dashboard/QuickActionsBar.tsx	/	Same editor at the 580px column width. Same component, responsive.
+Skai > Wallet > continue on web > home 1VH (1440 x 900px)	done	modules/skai-wallet/src/pages/wallet/WalletHomeRoute.tsx	/	Second of three 1440x900 frames sharing the identical title. Identified by artwork, not title.
+Skai > Wallet > continue on web > home 1VH (1440 x 900px)	done	modules/skai-wallet/src/pages/wallet/WalletHomeRoute.tsx	/	Third of three 1440x900 frames sharing the identical title.
+Skai > Wallet > continue on web > home > account 1VH (1440 x 900px)	done	modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx	/account	Full-page Account view. Display-only by design: identity edits route to skai.trade over SSO rather than writing a local profile.
+Skai > Wallet > continue on web > home > account > logout 1VH (1440 x 900px)	done	modules/skai-wallet/src/shell/LogoutConfirmModal.tsx	/account	Logout confirmation.
+Skai > Wallet > continue on web > home > account > edit 1VH (1440 x 900px)	done	modules/skai-wallet/src/pages/wallet/WalletAccountRoute.tsx	/account	Edit drawer (`editing` state at :71/:143). Links out to SSO deliberately.
+Skai > Wallet > continue on web > home > notifications 1VH (1440 x 900px)	done	modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx	/	Notifications sidecar.
+Skai > Wallet > continue on web > home > notifications - settings 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/NotificationSettings.tsx	/	Notification settings.
+Skai > Wallet > continue on web > home > notifications - sample notification 1VH (1440 x 900px)	done	modules/skai-wallet/src/shell/panels/NotificationsPanel.tsx	/	Sample-notification detail. Frame is 1036 tall, not 900 - grown past the viewport, so this is a full-scroll cut.
+Skai > Wallet > continue on web > home > streaks 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/StreakTracker.tsx	/	Streaks panel; useStreak() feeds both this and the dashboard banner.
+Streak card - Coral ALT	done	modules/skai-wallet/src/components/wallet/dashboard/StreakBanner.tsx	/	Coral streak-card variant (680x254).
+Skai > Wallet > continue on web > home >  buy 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/OnRampModal.tsx	/	DELIBERATE DIVERGENCE, do not "fix". Frame shows Coinbase Pay + MoonPay + Transak; we ship MoonPay only (product call 2026-07-16). Documented at OnRampModal.tsx:12-30 - Coinbase shipped a non-UUID appId and Transak had no apiKey (403), so both rows were links to someone else's error page (bug bfccb0b7). Row styling still follows the frame.
+Skai > Wallet > continue on web > home >  swap 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/SwapModal.tsx	/	Swap sheet (2588 lines).
+Skai > Wallet > continue on web > home > chart 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/PortfolioChart.tsx	/	Portfolio chart modal. Synthetic sine series was removed; no fabricated history.
+Skai > Wallet > continue on web > home > bridge 1VH (1440 x 900px)	blocked-on-backend	modules/skai-wallet/src/components/BridgeModal.tsx	/	UI complete; deposits disabled by construction. config/bridge.ts:54 sets BRIDGE_VAULT_ADDRESS to null for BOTH source chains (1, 8453) with an explicit "do NOT put a placeholder here" note. BridgeModal renders a named unavailable panel rather than a dead CTA.
+Bridge screen - error	done	modules/skai-wallet/src/components/BridgeModal.tsx	/	Bridge error card (580x634).
+Skai > Wallet > continue on web > home > bridge > Start bridge 1VH (1440 x 900px)	blocked-on-backend	modules/skai-wallet/src/components/wallet/bridge/BridgeReview.tsx	/	Start-bridge review. Same vault gate as above.
+Skai > Wallet > continue on web > home > bridge > Start bridge > Post wallet interaction 1VH (1440 x 900px)	blocked-on-backend	modules/skai-wallet/src/components/wallet/bridge/BridgeProcessing.tsx	/	Post wallet interaction. Same vault gate.
+Bridge screen - error	done	modules/skai-wallet/src/components/BridgeModal.tsx	/	Bridge error card, 680x720 variant.
+Skai > Wallet > continue on web > home > bridge 1VH (1440 x 900px)	blocked-on-backend	modules/skai-wallet/src/components/BridgeModal.tsx	/	Fourth bridge cut at 1440. Same vault gate.
+Skai > Wallet > continue on web > home > bridge > bridge settings 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/wallet/bridge/BridgeSettings.tsx	/	Bridge settings; independent of the vault gate.
+Skai > Wallet > continue on web > home > insights 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/PortfolioInsights.tsx	/	Insights modal; has a dedicated figmaParity test alongside it.
+Skai > Wallet > continue on web > home > share 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/ShareCard.tsx	/	Share card (1646 lines) with referral-link, xShare and qrExportFallback tests.
+Skai > Wallet > continue on web > home > share - 3rd combination 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/ShareCard.tsx	/	Share, 3rd combination.
+Skai > Wallet > continue on web > home > share - Expand 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/ShareCard.tsx	/	Share, expanded.
+Normal	done	modules/skai-wallet/src/components/ShareCard.tsx	/	Share-card skin "Normal" (506x506).
+Night	done	modules/skai-wallet/src/components/ShareCard.tsx	/	Share-card skin "Night".
+Light	done	modules/skai-wallet/src/components/ShareCard.tsx	/	Share-card skin "Light".
+Gradient	done	modules/skai-wallet/src/components/ShareCard.tsx	/	Share-card skin "Gradient".
+Skai > Wallet > continue on web > home > share - 2nd combination 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/ShareCard.tsx	/	Share, 2nd combination.
+Skai > Wallet > continue on web > home > spending 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/SpendingChart.tsx	/	Spending modal.
+Skai > Wallet > continue on web > home > Approvals 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/TokenApprovals.tsx	/	VERIFIED against screenshot. Right-hand sidecar: "Token approvals", per-dApp rows with Disconnect, and a Disconnect all CTA pinned to the foot.
+Skai > Wallet > continue on web > home > request with QR - step 1 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/RequestPayment.tsx	/	Request with QR, step 1.
+Skai > Wallet > continue on web > home > batch - step 1 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/BatchSendModal.tsx	/	VERIFIED against screenshot and node paint. Stepper geometry FIXED this pass (see notes on step 2).
+input/primary-inputs	scaffolding	-	-	A detached `input/primary-inputs` component INSTANCE parked on the canvas (648x86), not a screen.
+Skai > Wallet > continue on web > home > batch - step 2 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/BatchSendModal.tsx	/	FIXED this pass: BatchStepper drew the done box with `bg-transparent` (frames say #122524) and hung its connector off an `items-center` wrapper with mt-[9px], which centres the rule against the whole 38px column and drops it below the boxes. Now items-start + mt-2 = y8, level with the 9px box centre. Measured on 13008:36677/36789/37287.
+Accounts to send - error	done	modules/skai-wallet/src/components/BatchSendModal.tsx	/	"Accounts to send" error card (680x666).
+Skai > Wallet > continue on web > home > batch - step 2b 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/BatchSendModal.tsx	/	Batch step 2b.
+Skai > Wallet > continue on web > home > batch - step 2b > input amount 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/BatchSendModal.tsx	/	Batch step 2b, amount entry.
+Skai > Wallet > continue on web > home > batch - step 3 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/BatchSendModal.tsx	/	Batch step 3 (review). Already refuses to print $0.00/$NaN for an unpriced token - routes to USD_UNAVAILABLE.
+Skai > Wallet > continue on web > home > request from user - step 1 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/RequestPayment.tsx	/	Request from user, step 1.
+Skai > Wallet > continue on web > home > request with QR - step 2 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/RequestPayment.tsx	/	Request with QR, step 2. Two-step tracker is CORRECT: the third "Review" column exists in the frame but is hidden in every request/receive cut.
+Skai > Wallet > continue on web > home > request from user - step 2 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/RequestPayment.tsx	/	Request from user, step 2.
+Token allocation - single select	done	modules/skai-wallet/src/components/wallet/insights/TokenAllocation.tsx	/	Token allocation, single select.
+Token allocation - empty	done	modules/skai-wallet/src/components/wallet/insights/TokenAllocation.tsx	/	Token allocation, empty state.
+Simple Chart line - target	done	modules/skai-wallet/src/components/PortfolioChart.tsx	/	Chart-line study frame (680x300) backing the chart surfaces.
+Simple Chart line with x and y	done	modules/skai-wallet/src/components/PortfolioChart.tsx	/	Chart-line study with x and y axes.
+Skai > Wallet > continue on web > home >  send - step 1 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/SendModal.tsx	/	VERIFIED against screenshot. Send step 1: search, chain filter pills, token rows with fiat + native, Continue. Figma's "Recepient" typo correctly NOT copied.
+Skai > Wallet > continue on web > home > receive - step 1 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/ReceiveModal.tsx	/	Receive step 1. Stepper FIXED this pass - see step 2.
+Skai > Wallet > continue on web > home > receive - set amount 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/wallet/receive/ReceiveAmount.tsx	/	Receive, set amount.
+Skai > Wallet > continue on web > home > receive - step 2 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/ReceiveModal.tsx	/	FIXED this pass: StepDots collapsed done+current into one "checked" state, so the cyan border sat on the step you are ON instead of the one behind you, the current tick was cyan not white, and the connector was pinned grey forever. Measured off node paint on 13008:38053/38248: done = cyan border + cyan tick, current = grey border + WHITE tick, connector cyan while i<current.
+Skai > Wallet > continue on web > home > receive - set amount - step 2 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/wallet/receive/ReceiveAmount.tsx	/	Receive, set amount, step 2.
+Skai > Wallet > continue on web > home >  send - step 2 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/SendModal.tsx	/	FIXED this pass, MONEY: the fiat line under the amount field ran `safeAmountUsd(amount, priceUsd ?? 0)`, which flattens unknown to 0, so an unpriced token rendered a confident "$0.00". SKAI is exactly that token (blockchain.ts:690 sets priceUnavailable because no live market exists), so every SKAI send said the amount was worth nothing. Now routes to USD_UNAVAILABLE ("--"). Stepper three-state also fixed. Regression tests: SendModal.unpricedAmount, stepperThreeState.
+Skai > Wallet > continue on web > home >  send - step 2 > Address lookup 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/RecipientSearch.tsx	/	Address lookup. Four dedicated tests (dropdown, figmaChrome, identity, staleFollow).
+dropdown - start scroll	done	modules/skai-wallet/src/components/RecipientSearch.tsx	/	Dropdown mid-scroll state (647x504).
+Skai > Wallet > continue on web > home >  send - step 3 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/wallet/send/SendReview.tsx	/	VERIFIED against screenshot and node paint. Review send: From/To, Network, Network fee with speed chip, Cancel/Confirm. Stepper fixed.
+Skai > Wallet > continue on web > home >  send - processing 1VH (1440 x 900px)	done	modules/skai-wallet/src/components/TransactionProcessing.tsx	/	VERIFIED against screenshot. Faithful implementation incl. the "o _ o" 128px progress ring, the two glow ellipses as CSS gradients, and the disabled-until-hash Transaction details CTA.
+Details - Populated	done	modules/skai-wallet/src/components/wallet/send/SendDetails.tsx	/	"Details - Populated" card (680x566).
+Quick actions - Truncated	done	modules/skai-wallet/src/components/wallet/dashboard/QuickActionsBar.tsx	/	Quick actions, truncated/collapsed (680x146).
+Rectangle 155	scaffolding	-	-	Bare 720x720 RECTANGLE at the page origin - column art, not a screen.
+Rectangle 156	scaffolding	-	-	Bare 720x720 RECTANGLE - column art, not a screen.
+Rectangle 157	scaffolding	-	-	Bare 720x720 RECTANGLE - column art, not a screen.
+Notes	scaffolding	-	-	FigJam-style WIDGET sticky ("Notes"), not a screen.
+Notes	scaffolding	-	-	WIDGET sticky, not a screen.
+Notes	scaffolding	-	-	WIDGET sticky, not a screen.
+Rectangle 159	scaffolding	-	-	Bare 151x720 RECTANGLE - column art, not a screen.
+Rectangle 160	scaffolding	-	-	Bare 151x720 RECTANGLE - column art, not a screen.
+Rectangle 161	scaffolding	-	-	Bare 151x720 RECTANGLE - column art, not a screen.
+Notes	scaffolding	-	-	WIDGET sticky, not a screen.
+Skai > Wallet > continue on web > home 1VH (768 x 1024px)	done	modules/skai-wallet/src/pages/wallet/WalletHomeRoute.tsx	/	Home at 768. Title and node geometry AGREE here (768x1024 measured) - unlike rows 121-129, which are titled 768 and measure 375.
+Skai > Wallet > continue on web > home > buy 1VH (768 x 1024px)	done	modules/skai-wallet/src/components/OnRampModal.tsx	/	Buy at 768. Same deliberate one-provider divergence as the 1440 cut.
+Skai > Wallet > continue on web > home > swap 1VH (768 x 1024px)	done	modules/skai-wallet/src/components/SwapModal.tsx	/	Swap at 768.
+Skai > Wallet > continue on web > home > send - step 1 1VH (768 x 1024px)	done	modules/skai-wallet/src/components/SendModal.tsx	/	Send step 1 at 768.
+Skai > Wallet > continue on web > home > send - step 2 1VH (768 x 1024px)	done	modules/skai-wallet/src/components/SendModal.tsx	/	Send step 2 at 768. Carries both fixes (unpriced fiat line, stepper three-state).
+Details - Populated	done	modules/skai-wallet/src/components/wallet/send/SendDetails.tsx	/	"Details - Populated" at the 580px column.
+Skai > Wallet > continue on web > home > send - step 2 > Address lookup 1VH (768 x 1024px)	done	modules/skai-wallet/src/components/RecipientSearch.tsx	/	Address lookup at 768.
+Skai > Wallet > continue on web > home > send - step 3 1VH (768 x 1024px)	done	modules/skai-wallet/src/components/wallet/send/SendReview.tsx	/	Send step 3 at 768. Last row of the wallet2-a slice; rows 92-182 belong to wallet2-b.
