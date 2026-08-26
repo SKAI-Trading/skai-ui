@@ -186,10 +186,45 @@ and only an id diff settles them.
 
 ## Status semantics
 
-- `done` — frame implemented in code AND render-verified (Playwright/screenshot) against Figma
-- `partial` — some structure built, gaps remain (note them)
+**Revised 2026-08-26 (Casey's ruling).** Three statuses were added and `done` was
+tightened. Until this date `done` had drifted in practice to mean "nobody spotted
+a difference", which is how two `done` rows (coinflip, scratchers) came to be
+taken against node sets that had since grown — the verdict was true when written
+and nothing made it false when the frames changed.
+
+- `done` — **MEASURED PARITY.** Geometry, type ramp and colour tokens were read
+  off node data and compared against the rendered DOM at that frame's width. The
+  row records the node id and the numbers. Not "looks right", not "implemented":
+  a frame is `done` only when someone measured it and wrote down what they
+  measured.
+- `partial` — implemented, measured work remaining (name it in the reason)
 - `not-started` — no implementing code
-- `unknown` — not yet mapped (default until the code-mapping pass runs)
+- `blocked-on-backend` — built or buildable, but **no source exists**. The row
+  must name the exact missing relation or endpoint, because "buy an API key",
+  "apply a migration", "backfill an index" and "this venue has no such concept"
+  are different asks aimed at different people. 103 rows already use this.
+- `frame-defect` — **the FRAME is wrong and the code is right.** Matching it
+  would ship a bug. Deliberately distinct from `done` so the redraw stays
+  visible to design, and distinct from `partial` so engineering is not blamed
+  for a drawing error. Live examples: a paytable printing 60x/22x where the rail
+  pays 50x/25x; a ladder labelling total-return as "Profit" (133% RTP if built);
+  a legend advertising 500x against an 8x rail; GCB/GambleAware marks that are
+  absent by design; fabricated winners sharing one bet amount.
+- `furniture` — not spec at all: Directory banners, Breakpoint rulers, loose
+  rectangles, FigJam stickies, one node its own author labelled "Unrecommended
+  edit". Recorded so nobody re-discovers them, and **excluded from the parity
+  denominator** — measured at 14–25% of nodes per page, so counting it makes a
+  completion percentage permanently wrong.
+- `unknown` — nobody has looked (default until the mapping pass runs)
+
+⚠️ **An unrecognised status is now a LOUD ERROR, not a silent skip.** Until
+2026-08-26 `apply-status.mjs` did `if (!VALID.has(row.status)) continue;`, which
+discarded **140 of 1,931 rows (7%)** without a word — including every one of the
+103 `blocked-on-backend` verdicts, the most carefully reasoned rows in the
+catalog. The section then read as though nobody had audited it, which is exactly
+the failure this file's own header describes for section discovery and refuses
+for the breakpoint cell. Legacy spellings (`scaffolding`, `art-asset`,
+`real-component`, `real-screen`) are mapped, not dropped.
 
 Node-id citation in code (`citedByFiles`) is a *hint*, not proof of `done` — a frame
 can be implemented without its node-id in a comment, and a cited node may be

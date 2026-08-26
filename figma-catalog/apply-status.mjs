@@ -47,7 +47,58 @@ const SECTIONS = fs
   .filter(Boolean)
   .map((m) => m[1])
   .sort();
-const VALID = new Set(["done", "partial", "not-started", "unknown"]);
+// ⚠️ THIS SET HAD THE EXACT BUG THE COMMENT ABOVE DESCRIBES, one line later.
+//
+// It was ["done","partial","not-started","unknown"], and the loop below did
+// `if (!VALID.has(row.status)) continue;` — a SILENT skip. Measured 2026-08-26:
+// 140 of 1,931 rows (7%) were being dropped on the floor, including ALL 103
+// `blocked-on-backend` verdicts — which are the most carefully reasoned rows in
+// the catalog, each naming the exact missing relation behind a surface.
+//
+// The lanes wrote a verdict, the tool discarded it, and the section then read as
+// though nobody had looked. Same failure this file's own header calls out, and
+// the same one the bp-cell comment below refuses to allow for column 6: "a
+// malformed cell is refused, never downgraded to `unknown` — silently reading a
+// typo as 'nobody checked' would erase the one person who did." Column 6 got
+// that discipline; column 2 did not.
+//
+// Statuses, and what each one MEANS (Casey's ruling 2026-08-26):
+//   done               measured parity — geometry, type and colour checked off
+//                      node data against the rendered DOM at the frame's width.
+//                      NOT "nobody spotted a difference": that weaker reading is
+//                      how two `done` rows went stale against node sets that had
+//                      since grown.
+//   partial            implemented, measured work remaining
+//   not-started        no implementing code
+//   blocked-on-backend built or buildable, but no source exists; the row names
+//                      the exact missing relation or endpoint
+//   frame-defect       THE FRAME IS WRONG and the code is right. Matching it
+//                      would ship the bug — e.g. a paytable printing 60x where
+//                      the rail pays 50x. Design owns the redraw; engineering
+//                      is finished. Distinct from `done` so it stays visible.
+//   furniture          not spec at all: Directory banners, Breakpoint rulers,
+//                      loose rectangles, FigJam stickies. Recorded so nobody
+//                      re-discovers them, EXCLUDED from the parity denominator.
+//   unknown            nobody has looked
+const VALID = new Set([
+  "done",
+  "partial",
+  "not-started",
+  "blocked-on-backend",
+  "frame-defect",
+  "furniture",
+  "unknown",
+]);
+
+// Legacy spellings seen in the wild, mapped rather than dropped. `scaffolding`
+// was coined by the governance lane and reused by wallet2-a for exactly what
+// `furniture` now means.
+const STATUS_ALIASES = new Map([
+  ["scaffolding", "furniture"],
+  ["art-asset", "furniture"],
+  ["real-component", "partial"],
+  ["real-screen", "partial"],
+]);
 
 // family key -> {status, primaryFile, route, reason, bp}
 const statusByFam = {};
@@ -65,9 +116,24 @@ for (const sec of SECTIONS) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     if (!line.trim()) continue;
+    // `#` comment lines are a real convention in these files (several carry long
+    // explanatory headers). They were previously absorbed by the silent status
+    // skip; now that an unrecognised status is a loud error, they have to be
+    // excluded explicitly or every header line reports as a typo.
+    if (line.trimStart().startsWith("#")) continue;
     const row = splitStatusLine(line);
-    if (!VALID.has(row.status)) continue;
     const where = `status.${sec}.tsv:${i + 1} [${row.family}]`;
+    // Map a known legacy spelling, then REFUSE anything still unrecognised —
+    // loudly, into the same error channel the bp cell uses. A silent `continue`
+    // here is what discarded 140 rows; an unknown status is now a typo someone
+    // has to fix, not a verdict that quietly evaporates.
+    if (STATUS_ALIASES.has(row.status)) row.status = STATUS_ALIASES.get(row.status);
+    if (!VALID.has(row.status)) {
+      bpErrors.push(
+        `${where}: unrecognised status "${row.status}" — must be one of ${[...VALID].join(", ")}`,
+      );
+      continue;
+    }
     // A seventh field can only be a stray tab inside the reason prose — column 5
     // no longer absorbs the tail, so it would otherwise be misparsed as a bp cell.
     if (row.extra.length)
