@@ -26,11 +26,24 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { BP_KEYS, BP_VERDICTS, BP_WIDTHS, deriveDesign, parseBpCell, splitStatusLine } from "./bp.mjs";
+import {
+  BP_KEYS,
+  BP_VERDICTS,
+  BP_WIDTHS,
+  deriveDesign,
+  isSkippableStatusLine,
+  normaliseStatus,
+  parseBpCell,
+  resolveSection,
+  splitStatusLine,
+} from "./bp.mjs";
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const args = new Set(process.argv.slice(2));
-const VALID_STATUS = new Set(["done", "partial", "not-started", "unknown"]);
+// The status vocabulary now lives in bp.mjs. It was duplicated here, and the
+// copy silently discarded 154 of 2,140 rows (7.2%) — including all 103
+// `blocked-on-backend` verdicts — so this report's denominator was wrong and no
+// verdict on those rows could ever surface. See bp.mjs STATUS_VALID.
 
 const reg = JSON.parse(fs.readFileSync(path.join(DIR, "registry.json"), "utf8"));
 const design = deriveDesign(reg.frames);
@@ -47,7 +60,13 @@ const files = fs
   .readdirSync(DIR)
   .map((f) => /^status\.(.+)\.tsv$/.exec(f))
   .filter(Boolean)
-  .map((m) => ({ file: m[0], section: m[1] }))
+  // The section is RESOLVED from the stem, not taken as the stem. Parallel-lane
+  // files are named `status.wave2.<lane>.tsv` so ten agents cannot clobber one
+  // file, and `wave2.social-a` is not a section — taking the stem literally is
+  // what put 1,696 rows in "dead sections" here and 1,458 in apply-status.
+  // A file that resolves to null is cross-cutting by declaration; it keeps its
+  // stem so the report still lists it rather than dropping it silently.
+  .map((m) => ({ file: m[0], section: resolveSection(m[1], liveSections) ?? m[1], stem: m[1] }))
   .sort((a, b) => a.section.localeCompare(b.section));
 
 const errors = [];
@@ -57,10 +76,18 @@ for (const { file, section } of files) {
   const lines = fs.readFileSync(path.join(DIR, file), "utf8").split("\n");
   const seen = new Map();
   for (let i = 0; i < lines.length; i++) {
-    if (!lines[i].trim()) continue;
+    // Comments and blanks are skipped EXPLICITLY. They used to be skipped as a
+    // side effect of the status whitelist, which is what made the silent
+    // `continue` look deliberate while it also swallowed 7% of real verdicts.
+    if (isSkippableStatusLine(lines[i])) continue;
     const r = splitStatusLine(lines[i]);
-    if (!VALID_STATUS.has(r.status)) continue; // comments and headers
     const where = `${file}:${i + 1} [${r.family}]`;
+    const canonical = normaliseStatus(r.status);
+    if (canonical === null) {
+      errors.push(`${where}: unrecognised status "${r.status}" — see bp.mjs STATUS_VALID`);
+      continue;
+    }
+    r.status = canonical;
     if (r.extra.length)
       errors.push(`${where}: ${6 + r.extra.length} tab-separated fields; a reason must not contain a TAB`);
     const bp = parseBpCell(r.bpCell);

@@ -20,7 +20,19 @@
     "",
     "★ 2026-07-29 RE-HARVEST. The design moved substantially overnight - see",
     "`figmaChangeLog` at the bottom. Web App went 11 -> 13 pages, Games 13 -> 18, and",
-    "THREE pages were promoted to ready-for-dev (Predict, Chicken, Hi-Lo)."
+    "THREE pages were promoted to ready-for-dev (Predict, Chicken, Hi-Lo).",
+    "",
+    "⚠️ 2026-08-26: THE `liveChildren` NUMBERS BELOW ARE STALE AND MUST NOT BE USED FOR",
+    "COVERAGE. Re-measured live that day against `figma.root.children` + `loadAsync` per",
+    "page, THIRTEEN are wrong, in both directions: Home 2 129 -> 168, Governance 260 -> 331,",
+    "Home 1 227 -> 254, Coinflip 37 -> 45, Cover Images 24 -> 42, Safari Slots 24 -> 33,",
+    "Hi-Lo 20 -> 16, Baccarat 19 -> 21, Roulette 19 -> 21, Scratchers 20 -> 21, Slide 17 ->",
+    "18, Plinko 22 -> 21, Wallet 1 179 -> 178. A page count is a measurement with a date on",
+    "it, and this file's date is 2026-08-18.",
+    "",
+    "`live/_pages.json` supersedes this for counts; it records the exact harvest script and",
+    "is the loud guard `coverage.mjs` refuses to run without. This file remains the source",
+    "of page NAMES, readiness and section mapping, which is what `build-registry.mjs` reads."
   ],
   "harvested": "2026-08-18",
   "method": "use_figma read-only: figma.root.children for the page list, then setCurrentPageAsync per page for children.length",
@@ -662,7 +674,13 @@
       "Governance (121 rows) HELD by Casey: its page is 🚧 wip, not ✅ ready.",
       "ROLLUPS RECONCILED: 12 of 21 game rollups corrected against status.game-rollups.verified.tsv. Ten understated reality (limbo read not-started for a game with gaming_limbo_enabled=TRUE in prod; towers claimed no mobile frame exists and can \"never reach done\" when a 375x1605 mobile page frame exists, filed under the title \"Blackjack\"). Two overstated: coinflip and skratch were done against node sets that have since grown. status.price-grid.tsv did not exist at all and was created.",
       "DECISION 2026-08-26 - the retired Swap/Limit/Bridge page is NOT rebuilt. 37 Trade 2 frames specify it, and Casey ruled the v2 pages are the current DESIGN - but that ruling settles which FILE governs, not whether to resurrect a feature deleted on purpose. TradeUnified.tsx (2,911 lines) was retired 2026-08-12; /swap now redirects to a wallet deep link and the live surface is modules/skai-wallet SwapModal.tsx. Rebuilding it to satisfy a frame is the mirror image of deleting working behaviour to satisfy one. Those rows are a product decision, not backlog - do not re-open them as a parity gap. Limit-order swap (9 frames) does not exist anywhere in the tree and is a NEW FEATURE, not a gap.",
-      "DECISION 2026-08-26 - the asset upload cap STAYS at 8MB. The create-token picker promised 15MB/30MB against a rail that 400s above 8MB, and the lie is fixed (the picker now reads the rail's constant). Raising the actual limit is an edge-function change affecting all four asset categories plus a malware-scan budget question - not something a frame's copy should drive."
+      "DECISION 2026-08-26 - the asset upload cap STAYS at 8MB. The create-token picker promised 15MB/30MB against a rail that 400s above 8MB, and the lie is fixed (the picker now reads the rail's constant). Raising the actual limit is an edge-function change affecting all four asset categories plus a malware-scan budget question - not something a frame's copy should drive.",
+      "CORRECTION, same day, and it inverts an earlier entry above: V1 IS NOT SUPERSEDED. The tombstone pages in Skai-Web-App carry node ids 2003:674 / 2998:19593 / 3:3 - the SAME ids as Home 1 / Wallet 1 / Trade 1 in Skai-Web-App-2. Their text reads \"moved to Skai Web App 2\", which names the FILE. Home 1 IS the moved page. Home 2 / Wallet 2 / Trade 2 are page-continuation indices INSIDE that file, created because one page was split across two canvases for width - not replacements.",
+      "Evidence, measured: the Directory banners PARTITION the product rather than duplicate it (Home 1 = Home / with deposit / moat / Portfolio; Home 2 = Whales / Pro / Advanced Tools; Trade 1 = Spot / Perps / Trade Utilities; Trade 2 = Trench / Launch / Swap). And Home 1 holds the NEWEST content in the file: max node id prefix 13502 against Home 2 max 13459, with a Directory dated 25 Aug 2026. A superseded page does not receive newer frames than the page said to replace it.",
+      "Scale of the real supersession: 4 surfaces / 19 frames of 852 children (2.2%), not 826 frames. TRADE 2 CONTAINS NO SPOT, NO PERPS AND NO DASHBOARD - treating Trade 1 as superseded would have retired the core trading surfaces. 191 surfaces / 490 frames on the v1 pages have NO v2 counterpart and remain parity targets.",
+      "GAP FOUND while establishing this: the \"Home - with deposit\" cluster (8 surfaces, Directory dated 25 Aug 2026, ids 13484-13502) has ZERO rows in any status file - the string appears nowhere in the catalog. All 8 are 1440-only; no 768 or 375 tier exists.",
+      "Also corrected: the existing status files were never v1-only. status.home.tsv is 37 Home-1 + 14 Home-2 rows; status.wallet.tsv is 33 + 21; status.trade.tsv is 30 Trade-1 + 48 Trade-2. The denominator error ran in both directions.",
+      "CAUTION for whoever reads the entries above this one: the phrase \"v2 supersedes v1\" appears in several 2026-08-26 commit messages and in LANE_BRIEF_V2_2026-08-26.md. It came from the coordinator misreading the tombstones, and the ruling that followed was made on that false premise. The v2 pages genuinely had ZERO parity assessment and needed the wave - that part stands. What does NOT stand is any conclusion that v1 frames stopped being parity targets."
     ]
   },
   "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.",

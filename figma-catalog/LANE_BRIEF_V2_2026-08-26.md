@@ -12,10 +12,33 @@ title harvests exist for the first two; **the trade-2 harvest is misfiled** (89
 rows of `3928-*` ids for a page whose 407 children are all `13006:*`) — ignore
 it and harvest live.
 
-**Casey ruled 2026-08-26: these v2 pages are the CURRENT design.** File 1 carries
-tombstones reading "Home (moved to Skai Web App 2)". So parity against Home 1 /
-Wallet 1 / Trade 1 is parity against a superseded spec. That is why this wave
-exists.
+⚠️ **CORRECTED 2026-08-26, later the same day. The paragraph that stood here was
+WRONG and it is the reason to read this note before trusting anything below.**
+
+It read: *"Casey ruled these v2 pages are the CURRENT design. File 1 carries
+tombstones reading 'Home (moved to Skai Web App 2)'. So parity against Home 1 /
+Wallet 1 / Trade 1 is parity against a superseded spec."*
+
+**V1 is not superseded.** The tombstones carry node ids `2003:674` /
+`2998:19593` / `3:3` — **the same ids as Home 1 / Wallet 1 / Trade 1**. "Moved to
+Skai Web App 2" names the **file**. Home 1 *is* the moved page. `Home 2` /
+`Wallet 2` / `Trade 2` are page-continuation indices inside that file, created
+because one page outgrew a canvas — not replacements.
+
+Measured proof: the Directory banners **partition** the product rather than
+duplicate it (Home 1 = Home / with deposit / moat / Portfolio; Home 2 = Whales /
+Pro / Advanced Tools; Trade 1 = Spot / Perps; Trade 2 = Trench / Launch / Swap).
+And **Home 1 holds the newest content in the file** — max node id prefix 13502
+against Home 2's 13459, with a Directory dated 25 Aug 2026. A superseded page
+does not receive newer frames than the page said to replace it.
+
+Real supersession is **4 surfaces / 19 frames of 852 children (2.2%)**.
+**Trade 2 contains no Spot, no Perps and no Dashboard** — acting on the old
+paragraph would have retired the core trading surfaces.
+
+What still stands: the v2 pages genuinely had **zero** parity assessment, which
+is why the wave was worth running. What does not stand is any conclusion that a
+v1 frame stopped being a parity target.
 
 Two more rulings from the same conversation:
 

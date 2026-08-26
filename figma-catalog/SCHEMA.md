@@ -483,7 +483,43 @@ node modules/skai-ui/figma-catalog/apply-status.mjs     # fold status.<section>.
 node modules/skai-ui/figma-catalog/apply-verify.mjs     # fold vverify.<section>.tsv → visual verdicts  ← MUST FOLLOW apply-status
 node modules/skai-ui/figma-catalog/catalog-view.mjs > modules/skai-ui/figma-catalog/figma-frame-catalog.md
 node modules/skai-ui/figma-catalog/bp-report.mjs        # breakpoint coverage; EXITS 1 on a malformed column 6
+node modules/skai-ui/figma-catalog/coverage.mjs         # where we are: live frames vs catalog rows → COVERAGE.md
 ```
+
+## coverage.mjs — the progress tracker (added 2026-08-26)
+
+`node figma-catalog/coverage.mjs` writes **[COVERAGE.md](COVERAGE.md)** and
+`coverage.json`: per Figma page, how many top-level nodes are live, how many are
+furniture, how many genuine frames a catalog row covers, the status breakdown,
+and **both drift directions**. It takes no hand-maintained input.
+
+It exists because coverage was being read off row counts, and **row counts are
+wrong in both directions at once** — one rollup row covers 30 frames (`status.dice.tsv`
+is a single row naming 19 live ids), while 14–25% of the nodes on a page are
+furniture that can never be built. The denominator is therefore LIVE GENUINE
+FRAMES, and rows are matched onto them **by node id, never by title**.
+
+Four things it refuses structurally:
+
+- **A short harvest.** `live/_pages.json` records the authoritative live child
+  count per page; the script exits 1 if any `live/*.tsv` does not have exactly
+  that many rows. A lost chunk shrinks the denominator and *raises* the
+  percentage — it fails in the flattering direction, which is the direction
+  nobody reviews.
+- **A title match.** Slide's desktop assembly is titled "Towers". Every match is
+  by node id, scraped from anywhere in the row.
+- **One drift direction.** Live-only and catalog-only are both always printed.
+  Equal totals hide an equal-sized swap.
+- **A guessed node id.** `points-game/index.ts:5542-5545` yields the token
+  `5542-5545`, which is shaped exactly like a node id. Candidates are accepted
+  only if the catalog already knows them or Figma confirms them
+  (`live/_resolved.json`); everything else is counted and sampled, not silently
+  dropped.
+
+⚠ **`pages.json.liveChildren` is stale and must not be used for coverage.**
+Measured 2026-08-26: Home 2 recorded 129 against a live 168, Governance 260
+against 331, Home 1 227 against 254, Coinflip 37 against 45 — 13 pages wrong.
+`live/_pages.json` supersedes it and records the harvest script that made it.
 
 `bp-report.mjs` writes nothing, so its position is free — but run it after any
 edit to `status.<section>.tsv`, because it is the only thing that validates

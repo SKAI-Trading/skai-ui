@@ -24,8 +24,13 @@ import {
   BP_KEYS,
   bpUnknown,
   deriveDesign,
+  isSkippableStatusLine,
+  normaliseStatus,
   parseBpCell,
+  resolveSection,
+  SECTION_FILE_ALIASES,
   splitStatusLine,
+  STATUS_VALID,
   worstVerdict,
 } from "./bp.mjs";
 
@@ -41,12 +46,29 @@ const reg = JSON.parse(fs.readFileSync(regPath, "utf8"));
 // no warning, the section just stayed `unknown`, which reads as "nobody audited
 // it" when in fact someone had. Deriving the list means a new section's verdicts
 // are picked up with no code edit and no second place to keep in sync.
+// Each entry is {stem, section}: the FILE it came from, and the REAL registry
+// section its rows apply to.
+//
+// ⚠️ The section used to be the stem itself. That is correct for
+// `status.social.tsv` and wrong for every parallel-lane file: lanes were told to
+// write `status.wave2.<lane>.tsv` so ten concurrent agents could not clobber one
+// file, and `wave2.social-a` is not a section — so **1,458 of 2,140 rows applied
+// to zero frames**. `resolveSection` maps them; a file it cannot resolve is
+// REPORTED, never silently skipped.
+const REAL_SECTIONS = new Set(Object.values(reg.frames).map((f) => f.section));
+const unresolvedFiles = [];
 const SECTIONS = fs
   .readdirSync(DIR)
   .map((f) => /^status\.(.+)\.tsv$/.exec(f))
   .filter(Boolean)
-  .map((m) => m[1])
-  .sort();
+  .map((m) => {
+    const stem = m[1];
+    const section = resolveSection(stem, REAL_SECTIONS);
+    if (section === null && !SECTION_FILE_ALIASES.has(stem)) unresolvedFiles.push(stem);
+    return { stem, section };
+  })
+  .filter((s) => s.section !== null)
+  .sort((a, b) => a.stem.localeCompare(b.stem));
 // ⚠️ THIS SET HAD THE EXACT BUG THE COMMENT ABOVE DESCRIBES, one line later.
 //
 // It was ["done","partial","not-started","unknown"], and the loop below did
@@ -80,28 +102,16 @@ const SECTIONS = fs
 //                      loose rectangles, FigJam stickies. Recorded so nobody
 //                      re-discovers them, EXCLUDED from the parity denominator.
 //   unknown            nobody has looked
-const VALID = new Set([
-  "done",
-  "partial",
-  "not-started",
-  "blocked-on-backend",
-  "frame-defect",
-  "furniture",
-  "unknown",
-]);
-
-// Legacy spellings seen in the wild, mapped rather than dropped. `scaffolding`
-// was coined by the governance lane and reused by wallet2-a for exactly what
-// `furniture` now means.
-const STATUS_ALIASES = new Map([
-  ["scaffolding", "furniture"],
-  ["art-asset", "furniture"],
-  ["real-component", "partial"],
-  ["real-screen", "partial"],
-]);
+// The set and its legacy aliases live in bp.mjs (STATUS_VALID / normaliseStatus).
+// They were briefly duplicated here, which is precisely the shape that caused
+// this bug: two copies of the vocabulary, one of them silently discarding 7% of
+// every lane's rows. One definition, imported by both readers.
 
 // family key -> {status, primaryFile, route, reason, bp}
 const statusByFam = {};
+// Node-id-keyed verdicts, from rows whose column 1 reads `<title> [node-id]`.
+// See the comment at the assignment site for why both keyings must coexist.
+const statusById = {};
 let loaded = 0;
 // Column 6 is parsed STRICTLY and every complaint is collected, because the
 // failure mode this whole dimension exists to prevent is a width verdict that
@@ -109,8 +119,8 @@ let loaded = 0;
 // `unknown` — silently reading a typo as "nobody checked" would erase the one
 // person who did.
 const bpErrors = [];
-for (const sec of SECTIONS) {
-  const p = path.join(DIR, `status.${sec}.tsv`);
+for (const { stem, section: sec } of SECTIONS) {
+  const p = path.join(DIR, `status.${stem}.tsv`);
   if (!fs.existsSync(p)) continue;
   const lines = fs.readFileSync(p, "utf8").split("\n");
   for (let i = 0; i < lines.length; i++) {
@@ -122,25 +132,26 @@ for (const sec of SECTIONS) {
     // excluded explicitly or every header line reports as a typo.
     if (line.trimStart().startsWith("#")) continue;
     const row = splitStatusLine(line);
-    const where = `status.${sec}.tsv:${i + 1} [${row.family}]`;
+    const where = `status.${stem}.tsv:${i + 1} [${row.family}]`;
     // Map a known legacy spelling, then REFUSE anything still unrecognised —
     // loudly, into the same error channel the bp cell uses. A silent `continue`
     // here is what discarded 140 rows; an unknown status is now a typo someone
     // has to fix, not a verdict that quietly evaporates.
-    if (STATUS_ALIASES.has(row.status)) row.status = STATUS_ALIASES.get(row.status);
-    if (!VALID.has(row.status)) {
+    const canonical = normaliseStatus(row.status);
+    if (canonical === null) {
       bpErrors.push(
-        `${where}: unrecognised status "${row.status}" — must be one of ${[...VALID].join(", ")}`,
+        `${where}: unrecognised status "${row.status}" — must be one of ${[...STATUS_VALID].join(", ")}`,
       );
       continue;
     }
+    row.status = canonical;
     // A seventh field can only be a stray tab inside the reason prose — column 5
     // no longer absorbs the tail, so it would otherwise be misparsed as a bp cell.
     if (row.extra.length)
       bpErrors.push(`${where}: ${5 + 1 + row.extra.length} tab-separated fields; a reason must not contain a TAB`);
     const bp = parseBpCell(row.bpCell);
     for (const e of bp.errors) bpErrors.push(`${where}: ${e}`);
-    statusByFam[`${sec}/${row.family}`] = {
+    const verdict = {
       status: row.status,
       primaryFile: row.primaryFile,
       route: row.route,
@@ -150,6 +161,29 @@ for (const sec of SECTIONS) {
       bpSource: bp.source,
       bpPresent: bp.present,
     };
+
+    /*
+      ── Column 1 carries a NODE ID on parallel-lane files ──────────────────
+      Legacy rows key by family name ("welcome"). Every lane file from the
+      2026-08 waves keys by `<title> [node-id]` — "Directory [4914-113563]" —
+      because 14 titles repeat verbatim on a single page and a family key could
+      not tell them apart.
+
+      Matching on family alone meant those rows hit nothing: the section fix
+      that made them loadable was necessary and NOT sufficient, and
+      `frames updated` stayed at 1377 while 1,458 rows were "loaded".
+
+      An id match is also strictly better than a family match — `registry.frames`
+      is keyed by node id, so it addresses ONE frame instead of every frame
+      sharing a screen name.
+    */
+    const idMatch = /\[(\d{3,7}[-:]\d{1,7})\]/.exec(row.family);
+    if (idMatch) {
+      const nodeId = idMatch[1].replace(":", "-");
+      statusById[nodeId] = verdict;
+    } else {
+      statusByFam[`${sec}/${row.family}`] = verdict;
+    }
     loaded++;
   }
 }
@@ -168,11 +202,19 @@ if (bpErrors.length) {
 const designByFam = deriveDesign(reg.frames);
 
 let applied = 0;
+let appliedById = 0;
 const famCounts = {};
-for (const f of Object.values(reg.frames)) {
+for (const [regKey, f] of Object.entries(reg.frames)) {
   if (f.kind !== "screen") continue;
   const key = `${f.section}/${f.family}`;
-  const s = statusByFam[key];
+  // An id-keyed row wins over a family-keyed one: it names THIS frame, where a
+  // family row names every frame sharing the screen name. `registry.frames` is
+  // keyed by bare node id for the primary file and `<fileKey>:<node>` for
+  // secondary files, so try the bare node too.
+  const bareNode = f.node ?? (regKey.includes(":") ? regKey.slice(regKey.indexOf(":") + 1) : regKey);
+  const byId = statusById[String(bareNode).replace(":", "-")];
+  const s = byId ?? statusByFam[key];
+  if (byId) appliedById++;
   // ★ Every screen frame gets a bpStatus, including frames whose family has no
   // status row. The default is "unknown", written EXPLICITLY rather than left
   // absent, so a consumer that reads the field cannot mistake "no opinion" for
@@ -220,7 +262,30 @@ for (const f of Object.values(reg.frames)) {
 }
 const famStatus = {};
 for (const st of Object.values(famCounts)) famStatus[st] = (famStatus[st] || 0) + 1;
-console.log(`status lines loaded: ${loaded}; frames updated: ${applied}`);
+console.log(
+  `status lines loaded: ${loaded}; frames updated: ${applied} (${appliedById} matched by node id, ${applied - appliedById} by family)`,
+);
+// Rows that named a node id no frame carries. Loud, because this is the shape
+// that let 1,458 rows read as recorded while applying to nothing.
+const unmatchedIds = Object.keys(statusById).filter(
+  (id) => !Object.values(reg.frames).some((f) => String(f.node ?? "").replace(":", "-") === id),
+);
+if (unmatchedIds.length) {
+  console.log(
+    `\n⚠️  ${unmatchedIds.length} id-keyed row(s) name a node no registry frame carries (stale id, nested child, or a frame the harvest never saw).`,
+  );
+}
+// A status file whose section cannot be resolved applies to ZERO frames. That
+// used to happen silently for 1,458 rows. Say so, every run.
+if (unresolvedFiles.length) {
+  console.log(
+    `\n⚠️  ${unresolvedFiles.length} status file(s) resolve to NO registry section, so their rows apply to zero frames:`,
+  );
+  for (const f of unresolvedFiles) console.log(`      status.${f}.tsv`);
+  console.log(
+    `    Fix the filename, or declare it cross-cutting in SECTION_FILE_ALIASES (bp.mjs).`,
+  );
+}
 console.log("families by status:", JSON.stringify(famStatus));
 
 // Breakpoint coverage, printed on every run so the gap cannot go back to being

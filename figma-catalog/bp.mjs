@@ -44,6 +44,148 @@
 
 /** The three breakpoints, in CSS pixels. Derived from 3,917 catalogued frame
  *  titles: 712 frames at 1440, 504 at 768, 578 at 375. */
+/**
+ * The row-status vocabulary, defined ONCE here because it was defined twice and
+ * the two copies drifted with a 7% data loss behind each of them.
+ *
+ * On 2026-08-26 `apply-status.mjs` was found doing
+ * `if (!VALID.has(row.status)) continue;` — a silent skip that discarded 140 of
+ * 1,931 rows, including every `blocked-on-backend` verdict. It was fixed there.
+ * The identical whitelist and the identical silent `continue` were then found in
+ * `bp-report.mjs`, dropping 154 of 2,140 rows (7.2%) the same way, so its
+ * coverage denominator was wrong and no verdict on those rows could ever appear.
+ *
+ * ★ Fixing one file was not fixing the class. A single exported set is what
+ * stops a third copy appearing — see SCHEMA.md "Status semantics" for what each
+ * value MEANS, and note `done` was tightened to measured parity on the same day.
+ */
+export const STATUS_VALID = Object.freeze(
+  new Set([
+    "done",
+    "partial",
+    "not-started",
+    "blocked-on-backend",
+    "frame-defect",
+    "furniture",
+    "unknown",
+  ]),
+);
+
+/** Legacy spellings seen in the wild. Mapped, never dropped. */
+export const STATUS_ALIASES = Object.freeze(
+  new Map([
+    ["scaffolding", "furniture"],
+    ["art-asset", "furniture"],
+    ["real-component", "partial"],
+    ["real-screen", "partial"],
+  ]),
+);
+
+/**
+ * True for a line that is a `#` comment or blank — the two things a status
+ * reader must skip on purpose.
+ *
+ * ⚠️ Both broken readers used the status whitelist to skip comment lines as a
+ * side effect (`bp-report.mjs` even said so: `// comments and headers`). That is
+ * why the silent `continue` looked deliberate and survived review: it WAS doing
+ * a real job, just also swallowing every unrecognised verdict alongside it.
+ * Skip comments explicitly, then judge the status on its own.
+ */
+export function isSkippableStatusLine(line) {
+  const t = (line ?? "").trim();
+  return t === "" || t.startsWith("#");
+}
+
+/** Canonical status for a row, or `null` if it is not a recognised verdict. */
+export function normaliseStatus(status) {
+  const s = (status ?? "").trim();
+  if (STATUS_ALIASES.has(s)) return STATUS_ALIASES.get(s);
+  return STATUS_VALID.has(s) ? s : null;
+}
+
+/**
+ * Resolve a `status.<stem>.tsv` filename stem to a REAL registry section.
+ *
+ * ⚠️ WHY THIS EXISTS. `apply-status.mjs` derives the section from the FILENAME.
+ * Parallel lanes were told to write `status.wave2.<lane>.tsv` so ten concurrent
+ * agents could not clobber one shared file — which was right for collisions and
+ * wrong for this: `wave2.social-a` is not a section, so **1,458 of 2,140 rows
+ * applied to zero frames**. `status.home-2.tsv` was the only wave deliverable
+ * whose name happened to resolve.
+ *
+ * The same trap had already been documented one file over: status.governance-
+ * account.tsv and status.governance-vaults.tsv carry a header saying their 121
+ * rows resolve to sections that do not exist. It was recorded and then walked
+ * into again, because the fix was a note rather than code.
+ *
+ * Rules, applied in order until a real section matches:
+ *   1. the stem itself                       `social` → social
+ *   2. drop a leading `waveN.`               `wave2.social-a` → `social-a`
+ *   3. drop a leading verb                   `verify-social` → `social`
+ *   4. drop trailing `.segment`s             `trade-2.trench` → `trade-2`
+ *   5. drop a trailing `-<short suffix>`     `social-a` → `social`
+ *
+ * Returns `null` when nothing matches — a genuinely cross-cutting file such as
+ * `wave3.frame-defects`. Callers must REPORT those, never silently drop them.
+ */
+/**
+ * Lane files whose name genuinely does not encode their section, so no rule can
+ * derive it. Same idea as `SECTION_ALIAS` in `audit-figma-txt.mjs`.
+ *
+ * Everything under `wave2.trench-*` / `launch-components` / `creator-rewards-*`
+ * assessed frames on the **Trade 2** Figma page; `home2-intel-hub` assessed the
+ * Home 2 page. `null` marks a file that is legitimately cross-cutting — it spans
+ * many sections and must NOT be forced into one.
+ */
+export const SECTION_FILE_ALIASES = Object.freeze(
+  new Map([
+    ["wave2.trench-pnl", "trade-2"],
+    ["wave2.trench-order-types", "trade-2"],
+    ["wave2.trench-mobile-positions", "trade-2"],
+    ["wave2.trench-execution-rail", "trade-2"],
+    ["wave2.launch-components", "trade-2"],
+    ["wave2.creator-rewards-charts", "trade-2"],
+    ["wave2.home2-intel-hub", "home-2"],
+    // Cross-cutting by design: one row per GAME, or one row per defective frame
+    // across every page. Forcing a section would file them under the wrong one.
+    ["game-rollups.verified", null],
+    ["wave2.games-pagesections", null],
+    ["wave3.frame-defects", null],
+    ["wave3.v1-supersession", null],
+    // Covers TWO sections. The derivation rules would resolve it to `predict`
+    // and silently misfile every play row — worse than leaving it out, because a
+    // wrong section reads as a real verdict. Its rows are prefixed `predict:` /
+    // `play:` in the reason column; SPLIT IT into status.predict.tsv and
+    // status.play.tsv rather than teaching the resolver to guess.
+    ["wave2.predict-play", null],
+  ]),
+);
+
+export function resolveSection(stem, realSections) {
+  if (SECTION_FILE_ALIASES.has(stem)) return SECTION_FILE_ALIASES.get(stem);
+  const has = (s) => (realSections instanceof Set ? realSections.has(s) : realSections.includes(s));
+  const tries = [];
+  let s = stem;
+  tries.push(s);
+  s = s.replace(/^wave\d+\./, "");
+  tries.push(s);
+  s = s.replace(/^(verify|audit|check|re)-/, "");
+  tries.push(s);
+  // Drop trailing dot-segments, longest prefix first: `a.b.c` → `a.b` → `a`.
+  let dotted = s;
+  while (dotted.includes(".")) {
+    dotted = dotted.slice(0, dotted.lastIndexOf("."));
+    tries.push(dotted);
+  }
+  // Then a trailing lane suffix on the surviving stem: `social-a` → `social`.
+  for (const base of [...tries]) {
+    const m = /^(.*)-(?:[a-z]|\d|[a-z]{1,12})$/.exec(base);
+    if (m) tries.push(m[1]);
+  }
+  for (const t of tries) if (t && has(t)) return t;
+  return null;
+}
+
 export const BP_WIDTHS = Object.freeze({ desktop: 1440, tablet: 768, mobile: 375 });
 
 /** Ordered so reports read widest→narrowest, matching how the designs are drawn. */
