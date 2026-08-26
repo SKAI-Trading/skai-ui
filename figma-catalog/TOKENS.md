@@ -8,6 +8,19 @@ name is what carries over when someone copies a spec off a frame; the value is w
 does not. Every radius defect found in the 2026-08-11 sweep had the correct pixel value
 written in a comment directly above a class one step too large.
 
+> ### ⚠️ If a brief told you "our scale is `sm 4 / md 8 / lg 12 / xl 16 / 2xl 24`" — it is wrong
+>
+> Verified again 2026-08-26. That is the raw `skaiBorderRadius` **declaration**
+> (`design-tokens.ts:1282-1290`), which the preset then **overrides for `sm`, `md` and
+> `lg`** at `tailwind-preset.ts:392-397`. What the app paints is
+> **`sm 8 / md 10 / lg 12 / xl 16 / 2xl 24`**.
+>
+> `sm` and `md` are the two that differ, and both differ in the dangerous direction: a
+> lane told "`sm` = 4px" reads Figma's 4px, ships `rounded-sm`, and paints **8px**;
+> reading Figma's 8px it ships `rounded-md` and paints **10px**. Neither throws and both
+> look intentional. The delta table below is the correct one — and prefer a pixel literal
+> (`rounded-[8px]`) over any class name.
+
 ## Figma's scale — measured, not assumed
 
 Method: `findAll` over eight screens in `mhF3BkzlTaGiLzJ7kvpmVc`

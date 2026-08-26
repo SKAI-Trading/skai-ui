@@ -480,3 +480,167 @@ refNode	linkFileKey	resolvedFileKey	status	section	type	name	depth	page	owningSc
 8911-161038	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	dropdown-3					1
 8909-139269	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	predict	FRAME	Overlay	0	✅ Predict	8909-139269	Sponsor market rewards - step 1 (disclosure) 1440x900	1
 8909-141201	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	predict	FRAME	Overlay	0	✅ Predict	8909-141201	Sponsor market rewards - step 2 (deposit) 1440x900	1
+# 2026-08-26 REFRESH - layer D re-run against the CURRENT open backlog.
+#   Source: bug_reports status in (new,needs_info,triaged,in_progress,backlog) with a figma_link,
+#   plus free-text figma.com URLs. 279 reports -> 256 distinct (fileKey,node) pairs.
+#   Of those 256: 10 were already registry frames, 65 already bugref-aliases rows, 39 already
+#   indexed here, and the remaining 142 were unaccounted for. All 142 are appended below.
+#   ALL 142 RESOLVED - zero `gone`. The gap was staleness, not deletion: this index was last
+#   built 2026-08-13 and the backlog has turned over since.
+#
+# CAUTION for whoever re-runs this: 34 of the owning screens named below have NO registry.json
+#   row. My first reading of that was WRONG and is recorded here so nobody repeats it: I called it
+#   a layer-B coverage gap. It is not. 33 of the 34 are already present in predict/play/social
+#   .nodes.txt - the SOURCE lists are complete. Only the DERIVED registry.json is behind, because
+#   it was generated 2026-08-20 while the node lists have grown since (pages.json was re-harvested
+#   2026-08-26). The fix is `node build-registry.mjs`, not adding ids.
+#   ONE id is genuinely absent from any source list: 10130-14013 on the Games Towers page.
+#   ! The general lesson: registry.json is a DERIVED artifact. Diffing against it and concluding
+#   "the catalog is missing X" measures the rebuild date, not coverage. Check <section>.nodes.txt
+#   before calling anything a gap.
+#
+# ! Frame TITLES in the Games file routinely name a DIFFERENT game than the page that owns them
+#   (owningScreenTitle "...Blackjack..." on page "Limbo", "...Scratchers..." on page "Roulette").
+#   The PAGE column is the reliable one. See TRAPS.md.
+10227-200411	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	social	FRAME	dropdown-members	0	✅ Social	10227-200411	dropdown-members	1
+10232-201330	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	Right menu	1	✅ Social	10232-200912	Skai > Social > Groups - search > Discover > View group > Adjust settings (1440 x 900px)	1
+3456-3144	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	3456-3142	Skai > Predict > sports > Futures (1440 x 900px)	1
+3558-39826	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Prediction markets	2	✅ Predict	3554-10890	Skai > Predict > Dashboard 1VH (1440 x 900px)	1
+3562-40406	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Prediction markets	2	✅ Predict	3562-40397	Skai > Predict > Dashboard (1440 x 900px)	1
+3620-47891	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Prediction markets	2	✅ Predict	3620-47881	Skai > Predict > Dashboard > Elections (1440 x 900px)	1
+3624-51457	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Prediction markets	2	✅ Predict	3624-51447	Skai > Predict > Dashboard > Economy (1440 x 900px)	1
+3631-56793	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	predict	FRAME	Calendar - multiple dates	0	✅ Predict	3631-56793	Calendar - multiple dates	1
+3639-56861	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Prediction markets	2	✅ Predict	3631-56374	Skai > Predict > Dashboard > Sports (1440 x 900px)	1
+3640-58289	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	3640-58287	Skai > Predict > Dashboard > Oscars (1440 x 900px)	1
+4599-53226	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Main container	1	✅ Play	4599-53456	Bets - Recent	1
+4601-61647	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 606	6	✅ Play	4595-49807	Skai > Play 1VH (1440 x 900px)	1
+4623-65354	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	play	FRAME	sidebar - open - sportsbook | scroll	0	✅ Play	4623-65354	sidebar - open - sportsbook | scroll	1
+4623-65431	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Top main	1	✅ Play	4623-65430	sidebar - open casino	1
+4676-39208	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 650	2	✅ Play	4623-65430	sidebar - open casino	1
+4711-28758	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	sidebar	1	✅ Play	4711-28434	Skai > Play > Casino (1440 x 900px)	1
+4714-31724	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	main	1	✅ Play	4714-31722	Skai > Play > Casino > New games (1440 x 900px)	1
+4714-32446	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	row	5	✅ Play	4711-28434	Skai > Play > Casino (1440 x 900px)	1
+4714-32559	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Main container	4	✅ Play	4711-28434	Skai > Play > Casino (1440 x 900px)	1
+4714-32636	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Main container	4	✅ Play	4711-28434	Skai > Play > Casino (1440 x 900px)	1
+4714-32974	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 419	8	✅ Play	4711-28434	Skai > Play > Casino (1440 x 900px)	1
+4758-62173	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Main container	1	✅ Play	4758-62172	Bets - My bets	1
+4792-31204	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	main	1	✅ Play	4792-31202	Skai > Play > Casino > Live RTP - return to player (1440 x 900px)	1
+4799-61761	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	INSTANCE	CTA/button	5	✅ Play	4799-60925	Skai > Play > Sportsbook 1VH (1440 x 900px)	1
+5194-270744	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5194-270743	Skai > Social > Groups - search 1VH (1440 x 900px)	1
+5198-47083	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5198-47082	Skai > Social > Groups - search - empty 1VH (1440 x 900px)	1
+5198-47892	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5198-47891	Skai > Social > Groups - search > Discover 1VH (1440 x 900px)	1
+5198-50315	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5198-50314	Skai > Social > Groups - search > Created 1VH (1440 x 900px)	1
+5198-51022	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	social	FRAME	Skai > Social > Groups - search > Discover > Join gated group 1VH (1440 x 900px)	0	✅ Social	5198-51022	Skai > Social > Groups - search > Discover > Join gated group 1VH (1440 x 900px)	1
+5198-63238	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	Right menu	1	✅ Social	5198-62746	Skai > Social > Groups - search - empty > Create group 1VH (1440 x 900px)	1
+5202-63934	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5202-63932	Skai > Social > Groups - search > Discover > View group (1440 x 900px)	1
+5203-64552	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5203-64550	Skai > Social > Groups - search > Discover > View group (1440 x 900px)	1
+5204-65394	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5204-65392	Skai > Social > Groups - search > Discover > View group (1440 x 900px)	1
+5221-22665	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	dropdown	1	✅ Social	4998-155882	Skai > Social > Live 1VH (1440 x 900px)	1
+8583-127991	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Frame 402	2	✅ Predict	8583-127820	Skai > Predict 1VH (1440 x 900px)	1
+8610-164236	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Prediction markets	2	✅ Predict	8610-163972	Skai > Predict (1440 x 900px)	1
+8987-141552	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Scroll bar 3	1	✅ Play	4595-49807	Skai > Play 1VH (1440 x 900px)	1
+9099-131647	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	play	FRAME	dropdown-main	0	✅ Play	9099-131647	dropdown-main	1
+9099-146677	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 415	5	✅ Play	9099-146637	Skai > Play (1440 x 900px)	1
+9099-146686	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	card	4	✅ Play	9099-146637	Skai > Play (1440 x 900px)	1
+9099-146736	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	row	5	✅ Play	9099-146637	Skai > Play (1440 x 900px)	1
+9099-146844	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	row	5	✅ Play	9099-146637	Skai > Play (1440 x 900px)	1
+9099-147023	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Main container	4	✅ Play	9099-146637	Skai > Play (1440 x 900px)	1
+9099-147116	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	table	5	✅ Play	9099-146637	Skai > Play (1440 x 900px)	1
+9099-147317	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	main	6	✅ Play	9099-146637	Skai > Play (1440 x 900px)	1
+9112-13225	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 632	3	✅ Play	4711-28434	Skai > Play > Casino (1440 x 900px)	1
+9146-94962	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 220	4	✅ Play	9146-94935	sidebar - open - sportsbook | scroll	1
+10030-39088	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	price-grid	FRAME	main	1	✅ Price Grid - Skai originals	10030-39086	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+10030-39274	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	price-grid	FRAME	Cards ALT - Chicken	8	✅ Price Grid - Skai originals	10030-39086	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+10120-11828	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	towers	FRAME	Frame 1000004103	7	✅ Towers - Skai originals	9079-2001	Skai > Play > Casino > Towers (1440 x 900px)	1
+10130-14013	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	screen	towers	FRAME	Frame 1000004105	0	✅ Towers - Skai originals	10130-14013	Frame 1000004105	1
+9003-117919	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	blackjack	FRAME	Frame 644	7	✅ Blackjack - Skai originals	9003-117337	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+9003-130615	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	FRAME	main	1	✅ Coinflip - Skai originals	9003-130613	Skai > Play > Casino > Coinflip (1440 x 900px)	1
+9003-130806	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	FRAME	Frame 1000003757	8	✅ Coinflip - Skai originals	9003-130613	Skai > Play > Casino > Coinflip (1440 x 900px)	1
+9003-130820	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	FRAME	Frame 675	7	✅ Coinflip - Skai originals	9003-130613	Skai > Play > Casino > Coinflip (1440 x 900px)	1
+9003-130833	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	FRAME	table	8	✅ Coinflip - Skai originals	9003-130613	Skai > Play > Casino > Coinflip (1440 x 900px)	1
+9003-131212	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	FRAME	sidebar	1	✅ Coinflip - Skai originals	9003-130613	Skai > Play > Casino > Coinflip (1440 x 900px)	1
+9003-143076	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	skratch	FRAME	Frame 1000003757	8	✅ Scratchers - Skai originals	9003-142707	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9003-143366	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	skratch	FRAME	main	6	✅ Scratchers - Skai originals	9003-142707	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9003-94231	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 661	7	✅ Crash - Skai originals	9003-94116	Skai > Play > Casino > Crash (1440 x 900px)	1
+9003-94826	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 675	7	✅ Crash - Skai originals	9003-94116	Skai > Play > Casino > Crash (1440 x 900px)	1
+9003-94839	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	table	8	✅ Crash - Skai originals	9003-94116	Skai > Play > Casino > Crash (1440 x 900px)	1
+9003-95218	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	sidebar	1	✅ Crash - Skai originals	9003-94116	Skai > Play > Casino > Crash (1440 x 900px)	1
+9061-10557	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	hilo	FRAME	Frame 658	5	✅ Hi-Lo - Skai originals	9061-10499	Skai > Play > Casino > Hi-Lo Start (1440 x 900px)	1
+9061-10749	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	hilo	FRAME	Frame 1000003757	8	✅ Hi-Lo - Skai originals	9061-10499	Skai > Play > Casino > Hi-Lo Start (1440 x 900px)	1
+9061-10763	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	hilo	FRAME	Frame 675	7	✅ Hi-Lo - Skai originals	9061-10499	Skai > Play > Casino > Hi-Lo Start (1440 x 900px)	1
+9079-2003	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	towers	FRAME	main	1	✅ Towers - Skai originals	9079-2001	Skai > Play > Casino > Towers (1440 x 900px)	1
+9079-2121	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	towers	FRAME	Desktop Full Game	6	✅ Towers - Skai originals	9079-2001	Skai > Play > Casino > Towers (1440 x 900px)	1
+9142-16871	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 662	1	✅ Crash - Skai originals	9142-16809	Auto	1
+9142-19102	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 1000004088	1	✅ Crash - Skai originals	9142-16809	Auto	1
+9142-19103	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 661	2	✅ Crash - Skai originals	9142-16809	Auto	1
+9142-19118	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 662	2	✅ Crash - Skai originals	9142-16809	Auto	1
+9142-19302	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 662	1	✅ Crash - Skai originals	9142-19197	Auto Advanced	1
+9142-19349	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 1000004093	1	✅ Crash - Skai originals	9142-19197	Auto Advanced	1
+9142-19365	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 1000004094	1	✅ Crash - Skai originals	9142-19197	Auto Advanced	1
+9142-20031	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 1000004080	7	✅ Crash - Skai originals	9003-94116	Skai > Play > Casino > Crash (1440 x 900px)	1
+9178-8934	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 1000003839	7	✅ Crash - Skai originals	9003-94116	Skai > Play > Casino > Crash (1440 x 900px)	1
+9178-8970	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 1000003839	1	✅ Crash - Skai originals	9137-13564	Extended LB	1
+9178-9006	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 1000003839	1	✅ Crash - Skai originals	9142-16809	Auto	1
+9178-9042	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	crash	FRAME	Frame 1000003839	1	✅ Crash - Skai originals	9142-19197	Auto Advanced	1
+9204-17140	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	FRAME	Frame 1000004094	1	✅ Coinflip - Skai originals	9204-16958	Target Tab Auto	1
+9204-17154	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	FRAME	Frame 1000004095	1	✅ Coinflip - Skai originals	9204-16958	Target Tab Auto	1
+9363-1967	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	chicken	FRAME	Frame 629	3	✅ Chicken - Skai originals	9363-1963	Skai > Play > Casino > Hi-Lo Start (1440 x 900px)	1
+9363-2022	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	chicken	FRAME	Frame 1000004045	6	✅ Chicken - Skai originals	9363-1963	Skai > Play > Casino > Hi-Lo Start (1440 x 900px)	1
+9363-2202	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	chicken	FRAME	section	5	✅ Chicken - Skai originals	9363-1963	Skai > Play > Casino > Hi-Lo Start (1440 x 900px)	1
+9392-2826	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	darts	FRAME	Frame 1000003757	8	✅ Darts - Skai originals	9392-1798	Skai > Play > Casino > Hi-Lo Start (1440 x 900px)	1
+9433-12189	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	keno	FRAME	main	1	✅ Keno - Skai originals	9433-12187	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9442-16826	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	darts	FRAME	Frame 1000004105	7	✅ Darts - Skai originals	9392-1798	Skai > Play > Casino > Hi-Lo Start (1440 x 900px)	1
+9691-11231	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	bingo	FRAME	main	1	✅ Bingo - Skai originals	9691-11229	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9691-11283	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	bingo	FRAME	Frame 658	5	✅ Bingo - Skai originals	9691-11229	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9733-5378	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	fortune-wheel	FRAME	Frame 1000004187	7	✅ Fortune Wheel - Skai originals	9691-12630	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9733-6227	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	fortune-wheel	FRAME	Frame 1000004019	7	✅ Fortune Wheel - Skai originals	9691-12630	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9733-6243	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	fortune-wheel	FRAME	Frame 464	8	✅ Fortune Wheel - Skai originals	9691-12630	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9733-6254	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	fortune-wheel	FRAME	Frame 1000004096	15	✅ Fortune Wheel - Skai originals	9691-12630	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9733-6266	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	fortune-wheel	FRAME	Frame 275	8	✅ Fortune Wheel - Skai originals	9691-12630	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9733-7556	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	fortune-wheel	GROUP	Group 322	7	✅ Fortune Wheel - Skai originals	9691-12630	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9736-11636	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	fortune-wheel	FRAME	Frame 1000004103	7	✅ Fortune Wheel - Skai originals	9691-12630	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9738-13103	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	video-poker	FRAME	main	1	✅ Video Poker - Skai originals	9738-13101	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9758-6653	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	video-poker	FRAME	Starting	6	✅ Video Poker - Skai originals	9738-13101	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9758-6712	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	video-poker	FRAME	Frame 1000004211	7	✅ Video Poker - Skai originals	9738-13101	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9799-15070	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 520	2	✅ Roulette - Skai originals	9799-15067	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9799-15071	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 629	3	✅ Roulette - Skai originals	9799-15067	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9799-15072	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 450	4	✅ Roulette - Skai originals	9799-15067	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9799-15326	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 656	7	✅ Roulette - Skai originals	9799-15067	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9903-2271	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 1000004019	7	✅ Roulette - Skai originals	9799-15067	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9903-2398	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	INSTANCE	CTA/button	7	✅ Roulette - Skai originals	9799-15067	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9903-2995	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 1000004096	9	✅ Roulette - Skai originals	9903-2891	Frame 270	1
+9907-1598	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	rock-paper-scissors	FRAME	Frame 520	2	✅ Rock Paper Scissors - Skai originals	9907-1595	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+9907-1650	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	rock-paper-scissors	FRAME	Frame 445	6	✅ Rock Paper Scissors - Skai originals	9907-1595	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+9937-18892	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	rock-paper-scissors	FRAME	Desktop	6	✅ Rock Paper Scissors - Skai originals	9907-1595	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+9948-22957	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 1000004221	1	✅ Roulette - Skai originals	9948-22956	Starting	1
+9948-24695	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	limbo	FRAME	card	12	✅ Limbo - Skai originals	9948-24618	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+9948-24715	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	limbo	FRAME	Frame 275	10	✅ Limbo - Skai originals	9948-24618	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+9948-24749	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	limbo	FRAME	Frame 464	9	✅ Limbo - Skai originals	9948-24618	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+9948-24907	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	limbo	FRAME	section	5	✅ Limbo - Skai originals	9948-24618	Skai > Play > Casino > Blackjack (1440 x 900px)	1
+13006-210653	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Frame 502	4	✅ Trade 2	13006-210576	Skai > Trench > Trade 1VH (1440 x 900px)	1
+13006-212080	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Frame 1158	6	✅ Trade 2	13006-210576	Skai > Trench > Trade 1VH (1440 x 900px)	1
+13006-212306	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Frame 1134	6	✅ Trade 2	13006-210576	Skai > Trench > Trade 1VH (1440 x 900px)	1
+13008-110776	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home-2	FRAME	Frame 429	4	✅ Home 2	13008-110742	Skai > Home > Whales - no data 1VH (1440 x 900px)	1
+13008-110893	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home-2	FRAME	Frame 320	3	✅ Home 2	13008-110870	Skai > Home > Whales 1VH (1440 x 900px)	1
+13008-27703	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Main container	1	✅ Wallet 2	13008-27689	Skai > Wallet > continue on web > home > account 1VH (1440 x 900px)	1
+13008-28163	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 337	1	✅ Wallet 2	13008-27989	Skai > Wallet > continue on web > home > notifications 1VH (1440 x 900px)	1
+13008-28390	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 337	1	✅ Wallet 2	13008-28216	Skai > Wallet > continue on web > home > notifications - settings 1VH (1440 x 900px)	1
+13008-29240	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Main container	1	✅ Wallet 2	13008-29226	Skai > Wallet > continue on web > home > bridge > Start bridge 1VH (1440 x 900px)	1
+13008-29463	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	modal	2	✅ Wallet 2	13008-29347	Skai > Wallet > continue on web > home > bridge > Start bridge > Post wallet interaction 1VH (1440 x 900px)	1
+13008-36691	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Main container	1	✅ Wallet 2	13008-36677	Skai > Wallet > continue on web > home > batch - step 1 1VH (1440 x 900px)	1
+13008-37238	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	modal	2	✅ Wallet 2	13008-37111	Skai > Wallet > continue on web > home > batch - step 2b > input amount 1VH (1440 x 900px)	1
+13008-37444	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Main container	1	✅ Wallet 2	13008-37430	Skai > Wallet > continue on web > home > request from user - step 1 1VH (1440 x 900px)	1
+2733-18701	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	main	1	✅ Home 1	2733-18700	Skai > Home > conversation 2 extended 1VH (1440 x 900px)	1
+2733-19240	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	Follow ups	3	✅ Home 1	2733-18700	Skai > Home > conversation 2 extended 1VH (1440 x 900px)	1
+4191-122525	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	Frame 444	2	✅ Trade 1	4191-121191	Skai > Trade > Perpetual futures > Order history (1440 x 900px)	1
+4201-130024	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	section	3	✅ Trade 1	4201-128723	Skai > Trade > Perpetual futures > Funding history (1440 x 900px)	1
+4201-130583	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	Frame 446	2	✅ Trade 1	4191-123643	Skai > Trade > Perpetual futures > Trade history (1440 x 900px)	1
+4437-112705	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	section	2	✅ Trade 1	4437-112650	Skai > Dashboard - positive 1VH (1440 x 900px)	1
+4437-112715	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	Frame 620	4	✅ Trade 1	4437-112650	Skai > Dashboard - positive 1VH (1440 x 900px)	1
+5810-111091	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	Frame 221	2	✅ Home 1	5810-111037	sidebar - open home | scroll	1
+5810-111234	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	Top main	1	✅ Home 1	5810-111233	sidebar - open - intelligent support	1
+5812-111832	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	sidebar - open - agentic support	1	✅ Home 1	2713-4884	Skai > Home - sidebar 1VH (1440 x 900px)	1
+7491-149452	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet	INSTANCE	logos/skai-short	4	✅ Wallet 1	7491-148345	Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (1440 x 900px)	1
+7491-149454	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet	INSTANCE	icons/action	4	✅ Wallet 1	7491-148345	Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (1440 x 900px)	1
+7752-224517	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	sidebar	1	✅ Trade 1	4451-126554	Skai > Dashboard > Whale activity 1VH (1440 x 900px)	1
+7890-132958	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	TradingView	3	✅ Trade 1	4020-47586	Skai > Trade > Perpetual futures > Orders (1440 x 900px)	1

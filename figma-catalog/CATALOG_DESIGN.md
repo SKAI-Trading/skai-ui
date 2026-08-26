@@ -198,23 +198,45 @@ Next, in value order:
 6. Titles for the 623 still-untitled frames, and `status.*.tsv` for the 15 sections
    that have none (1,200 frames inventoried but never assessed).
 
-## 13 of 26 shipped casino games have no Figma screen (2026-08-11)
+## ~~13 of 26 shipped casino games have no Figma screen~~ — RETRACTED 2026-08-26
 
-The render switch is `modules/skai-gaming/src/pages/play/Play.tsx:1402-1457`. Cross
-referencing every game it can mount against all 3,206 **titled** frames in the three
-files:
+⚠️ **This claim was WRONG and is retracted. Do not act on it.** It is kept, struck
+through, because it circulated widely and lanes were told to treat those games as
+undesigned. Full re-measurement in **`TRAPS.md` §3–§4**.
 
-**Designed (12)** — hilo, mines, plinko, chicken, crash, blackjack, coinflip, dice,
-towers, darts, keno, scratchers.
+**Why it was wrong:** the method below says it cross-referenced against all 3,206
+**titled** frames — i.e. it matched on frame *title*. Titles in the Games file
+systematically name a different game than the page that owns them (Roulette's main
+frame is titled `… > Scratchers`, Limbo's and Baccarat's are titled `… > Blackjack`,
+Slide's is titled `… > Towers`). So a title grep for those games returned nothing and
+that was read as "no design exists". This document already warned about the trap two
+paragraphs below — and its own headline measurement walked straight into it.
 
-**Shipped with NO game screen (13)** — baccarat, poker, video-poker, rps, slots
-(Vegas), fortune-wheel-pro, roulette-pro, gem-slots, bingo, safari-slots,
-cosmic-slots, mega-slots, price-grid.
+Re-measured against the live file by **page name + the H1 TEXT node inside the frame**
+(an oracle independent of the title): of the 13 named below, **seven have a real,
+content-complete design** — video-poker, rps, fortune-wheel, roulette, bingo,
+price-grid, baccarat. Only **cosmic-slots** and **vegas fortune** are genuinely
+undesigned (pasted reference screenshots, zero frames). **safari-slots** has a full
+design at all three breakpoints. The real undesigned surface is **SKAI Cross**, a
+shipping game whose Figma page was renamed to Price Grid and its contents replaced.
 
-The only Figma mentions of those thirteen anywhere in the corpus are Play-browser
-**tile artwork** — `Cards - Fortune Wheel`, `Cards Large - Fortune Wheel On:hover`,
-`Cards - Cosmic Slots`. Thumbnails, not screens. This is the largest undesigned
-surface in the product.
+The stale text follows, for provenance only:
+
+> The render switch is `modules/skai-gaming/src/pages/play/Play.tsx:1402-1457`. Cross
+> referencing every game it can mount against all 3,206 **titled** frames in the three
+> files:
+>
+> **Designed (12)** — hilo, mines, plinko, chicken, crash, blackjack, coinflip, dice,
+> towers, darts, keno, scratchers.
+>
+> **Shipped with NO game screen (13)** — baccarat, poker, video-poker, rps, slots
+> (Vegas), fortune-wheel-pro, roulette-pro, gem-slots, bingo, safari-slots,
+> cosmic-slots, mega-slots, price-grid.
+>
+> The only Figma mentions of those thirteen anywhere in the corpus are Play-browser
+> **tile artwork** — `Cards - Fortune Wheel`, `Cards Large - Fortune Wheel On:hover`,
+> `Cards - Cosmic Slots`. Thumbnails, not screens. This is the largest undesigned
+> surface in the product.
 
 Do not be reassured by the catalog sections named after four of them. `bingo`,
 `fortune-wheel`, `video-poker` and `rock-paper-scissors` contain ONLY duplicated

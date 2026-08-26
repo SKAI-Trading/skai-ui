@@ -92,22 +92,48 @@ with `get_metadata` on the same id — an independent code path — before recor
 
 ## The Games file
 
+⚠️ **The list that used to sit here was measured 2026-08-13 and is now wrong in five
+ways.** Re-listed live 2026-08-26 via `figma.root.children` — **30 pages, not 22**:
+
 ```
-2001:2        Thumbnail          3422:20110    📍 Games master sheet
-9220:26175    🌎 Cover Images    2003:674      ✅ Dice
-9003:72411    ✅ Plinko          9003:85754    ✅ Crash
-9003:102080   ✅ Mines           9003:112414   ✅ Blackjack
-9003:122027   ✅ Coinflip        9003:133221   ✅ Scratchers
-9061:15464    ✅ Chicken         9058:1819     ✅ Hi-Lo
-9390:18294    ✅ Darts           9390:18295    ✅ Keno
-9390:18297    ✅ Fortune Wheel   9737:13087    ✅ Video Poker
-9390:18296    ✅ Bingo           9737:13085    🚧 Roulette
-9390:18298    🚧 Rock Paper Scissors            9061:15449   🚧 Towers
-9737:13088    🚧 Baccarat        9660:2        🚧 SKAI Cross
+2001:2        Thumbnail                    3422:20110    📍 Games master sheet
+9220:26175    🌎 Cover Images               2003:674      ✅ Dice
+9003:72411    ✅ Plinko                     9003:85754    ✅ Crash
+9003:102080   ✅ Mines                      9003:112414   ✅ Blackjack
+9003:122027   ✅ Coinflip                   9003:133221   ✅ Scratchers
+9061:15464    ✅ Chicken                    9058:1819     ✅ Hi-Lo
+9390:18294    ✅ Darts                      9390:18295    ✅ Keno
+9390:18297    ✅ Fortune Wheel              9737:13087    ✅ Video Poker
+9390:18296    ✅ Bingo                      9737:13085    ✅ Roulette
+9390:18298    ✅ Rock Paper Scissors        9061:15449    ✅ Towers
+9737:13088    ✅ Baccarat                   9929:16390    ✅ Limbo
+9929:16391    ✅ Slide                      9660:2        ✅ Price Grid
+10120:10113   Towars Draft (Disregard)     10265:3       ----------
+10265:2       🚧 Safari Slots               10266:5       🚧 Cosmic Slots
+10266:6       🚧 Vegas fortune              10266:7       🚧 Gem Slots
 ```
 
-All 22 are accounted for in `pages.json`; Roulette and Baccarat are recorded in
-`outOfScope` as empty pages rather than as coverage gaps.
+Every page name now carries a **` - Skai originals`** suffix (omitted above for width) —
+so an exact-match on the old bare names finds nothing.
+
+What changed, and why each one matters:
+
+1. **`9660:2` is no longer SKAI Cross — it is `✅ Price Grid`.** The page was renamed and
+   its contents replaced wholesale. SKAI Cross is a **shipping** game that now has no
+   Figma page at all. `pages.json.unmappedSections.skai-cross` records this in full.
+2. **Roulette, Baccarat, Rock Paper Scissors and Towers are all `✅` now**, not `🚧`.
+3. **Roulette and Baccarat are NOT empty pages.** The old note below claimed they were
+   recorded in `outOfScope` as empty. Both carry complete designs — Baccarat has 1440
+   **and** 375 cuts plus a `Tie Pays 8 to 1` paytable. Anything relying on "those two are
+   empty" is acting on a 13-day-old reading.
+4. **Four new pages** — Limbo, Slide, and the four slots pages (Safari / Cosmic / Vegas
+   fortune / Gem). Their true state differs sharply per page: see `TRAPS.md` §4.
+5. `10120:10113 Towars Draft (Disregard)` is a 51-node draft the author has explicitly
+   told you to ignore — note the typo, an exact-name match on "Towers" misses it.
+
+★ **Do not read a game's name off a frame title on any of these pages.** The
+duplicated-scaffolding artefact noted below is not two frames — it is systematic across
+twelve games. `TRAPS.md` §3 has the full title-vs-truth table.
 
 Note `9163:4859` on the **Mines** page is titled `Skai > Play > Casino > Dice
 (1440 x 900px)`, and `9003:117620` on the **Blackjack** page is `Cards ALT - Chicken`.

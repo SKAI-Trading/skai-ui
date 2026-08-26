@@ -475,9 +475,9 @@
       "pageId": "10265:2",
       "pageName": "WIP Safari Slots - Skai originals",
       "readiness": "wip",
-      "liveChildren": 10,
+      "liveChildren": 24,
       "sections": [],
-      "note": "MOSTLY REFERENCE, NOT DESIGN. 3 of 10 children are pasted screenshots named 'Screen Shot 2026-08-25 at ...'. Exactly ONE real frame exists: 'Skai > Play > Casino > Safari slots (768 x 1024px)'. Plus Directory and 3 Breakpoint banners."
+      "note": "SUPERSEDED 2026-08-26 (catalog lane, live re-measure). The previous note read 'MOSTLY REFERENCE, NOT DESIGN ... exactly ONE real frame' off a 07:51 harvest; the designer added frames later the same day. Now 24 children with a REAL DESIGN AT ALL THREE BREAKPOINTS: 10272-4179 (1440x3467), 10272-3834 (768x1627), 10272-4933 (375x1605), plus four load screens (10285-15783/15821/16303/16306) and 12 pasted reference screenshots. H1 text inside the frames reads 'Safari slots', so this is genuine Safari Slots design, not a copy. Treat as buildable. Still needs a nodes.txt/titles.tsv section. ! A 'wip'/'REFERENCE ONLY' verdict on a slots page has a shelf life of hours right now - re-measure before relying on it."
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -502,9 +502,9 @@
       "pageId": "10266:7",
       "pageName": "WIP Gem Slots - Skai originals",
       "readiness": "wip",
-      "liveChildren": 4,
+      "liveChildren": 11,
       "sections": [],
-      "note": "REFERENCE ONLY. All 4 children are pasted screenshots dated 2026-08-25. No design frame yet."
+      "note": "SUPERSEDED 2026-08-26 (catalog lane, live re-measure). Now 11 children: 4 pasted screenshots plus a Directory, 3 Breakpoint banners and 3 frames (10285-14037 768x1627, 10285-14278 1440x3467, 10285-14928 375x1605). ! Those frames are NOT Gem Slots yet - their Directory reads 'Skai Originals > Safari Slots' and the H1 TEXT inside each one reads 'Safari slots', and their ids sit in Safari's 10285-* range. This is an unmodified duplicate of the Safari Slots page, not a re-skin. Unlike the Games-file title trap (TRAPS.md #3) the TEXT agrees with the title here, which is exactly what marks it a copy rather than a mislabel. Do NOT build Gem Slots from these frames."
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
