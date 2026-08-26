@@ -381,3 +381,35 @@ anything gate the round on a field name?"* — not *"do the field names match?"*
 The second question returns noise; the first returns money bugs. And the gate is
 only severe because it sits **after** the debit: it cannot refuse the bet, it can
 only hide a round that already completed.
+
+---
+
+## 11. `Math.round` in a measurement script manufactured a difference that reached code
+
+Small, but it propagated into a committed source comment, which is why it is here.
+
+My first sweep of the Towers panel frames reported heights with `Math.round`.
+That printed the mobile Advanced-ON panel as **777** and the desktop one as
+**777.33**, and the towers lane — reasonably — carried that asymmetry into a
+frame-reference table in `TowerBetPanel` (skai-gaming `5efbba8`).
+
+Re-measured at two decimal places, **both are 777.33**. There is no
+desktop/mobile difference. The rounding invented one.
+
+The real shape is a clean 2x2, and it is worth having because it settles a report:
+
+| | Advanced OFF | Advanced ON |
+|---|---|---|
+| desktop 356w | `10130-13720` 621h, 19 text nodes | `10130-14013` 777.33h, 35 |
+| mobile 347w | `10130-14946` 621h, 19 text nodes | `10130-14802` 777.33h, 35 |
+
+Delta is **156.33px** and +16 text nodes in both rows, identically — exactly the
+On Win / On Loss / Stop on Win / Stop on Loss block. **"Advanced" appears as a
+label in all four frames**, and the designer drew both states at both widths. A
+button does not get a second frame showing the panel grown by its own disclosure,
+so this is a disclosure toggle. That closes report `176075a8` from the frames
+rather than by inference.
+
+★ Two things worth taking: report geometry at the precision you measured it, not
+a prettier one — a rounded number is a claim. And when a lane builds on your
+measurement, the inference is yours to check too, not just the number.
