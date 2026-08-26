@@ -458,12 +458,25 @@ for it rather than guessing.)
 
 ### Why it happened — and why the dimension check is the only reliable tell
 
-This was not carelessness. **The panel and the row have the SAME Figma name.**
-`10130-14013` (panel, 356x777.33) and `10250-15195` (row, 324x42) are *both*
-called `Frame 1000004105`. Selecting or citing by name cannot separate them.
+This was not carelessness. **Three different nodes share the name
+`Frame 1000004105`**, and they are not a parent and its own child:
 
-That is the same collision as §1's `Frame 270` / §3's game titles: a name is not
-an identifier here. The discriminator that works is geometry —
+| Node | Size | What it is |
+|---|---|---|
+| `10130-14013` | 356 x 777.33 | the desktop AUTO **panel** |
+| `10250-15195` | 324 x 42 | the Manual\|Auto **row** inside `10130-14013` |
+| `10250-15211` | 324 x 42 | the Manual\|Auto **row** inside `10130-13720` |
+
+The name spans **two different parent panels at two different depths** — and the
+other parent, `10130-13720`, is called `Frame 270`, a different name entirely. So
+this is worse than a local ambiguity: eyeballing one frame's subtree would not
+reveal it, and neither would scoping a search to the frame you think you are in.
+A name here does not merely fail to identify a node; it points at a node in a
+*different* frame at a *different* depth.
+
+(Same family as §3's lying titles — a name is not an identifier in this library.
+The registry's own key-format split in §1 is the machine-readable version of the
+same problem.) The discriminator that works is geometry —
 
 ★ **Check that the cited id's dimensions match the dimensions your argument is
 about.** `356x621` was never going to be the same component as a `324x42` track.
@@ -483,3 +496,10 @@ Worth stating because it kept resolving different questions:
 
 Rules 1 and 2 look contradictory and are not; the contract differs per artifact.
 Getting 1 right does not give you 3.
+
+★ **And satisfying 1 and 2 is what lets 3 through.** The towers lane named the
+mechanism precisely: the two had been collapsed into a single instinct about
+being careful with child ids — so having exercised that instinct twice, the third
+case *felt* already handled. Felt-diligence is the failure mode. It is why the
+third rule needs a mechanical check (the dimension test above) rather than more
+care: care was already being applied, to the wrong two questions.
