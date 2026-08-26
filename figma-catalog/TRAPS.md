@@ -178,13 +178,20 @@ against Figma's vector bbox. Reusable ~35-line `hull()` in
 `modules/skai-gaming/src/components/play/games/cards/blackjack/blackjackRibbonLabelParity.test.ts`
 (mutation-checked: a +3px shift of the Perfect Pairs outline fails it).
 
-My independent run against Figma `9178-8240/8241/8242`:
+My independent run against Figma `9178-8240/8241/8242`. **Deltas are
+`figma − hull`** — state your direction whenever you publish these, because the
+cards lane's records subtract the other way and an unlabelled table there against
+an unlabelled table here reads as two implementations disagreeing when they do
+not:
 
 | | dx | dw | dh |
 |---|---|---|---|
 | `Path 293` "Blackjack pays 3 to 2" | -0.0003 | -0.0001 | 0.0000 |
 | `Path 294` "Perfect Pairs" | 0.0000 | -0.0001 | 0.0000 |
 | `Path 295` "21+3" | +0.0003 | 0.0000 | 0.0000 |
+
+Their figures are `+0.0004 / 0.0000 / -0.0002` — same measurements, opposite sign
+convention, differing in the fourth decimal by rounding. All six are under 0.001.
 
 Three caveats, all load-bearing:
 
