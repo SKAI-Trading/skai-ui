@@ -503,3 +503,13 @@ being careful with child ids — so having exercised that instinct twice, the th
 case *felt* already handled. Felt-diligence is the failure mode. It is why the
 third rule needs a mechanical check (the dimension test above) rather than more
 care: care was already being applied, to the wrong two questions.
+
+**Demonstrated, not just asserted.** The first draft of this very section cited
+§1 as the source of the `Frame 270` collision. §1 is the registry key-format
+split — related, but not that example. So the author was writing the document
+*about* misattributed references, with full attention on that exact class, and
+still misattributed a reference. That is the argument for the mechanical check in
+its strongest form: attention was not the missing ingredient, and adding more of
+it would not have helped. Only a check that does not depend on the checker's
+state catches this — which is what the dimension test is, and what "read it
+carefully" is not.
