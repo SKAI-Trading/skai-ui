@@ -2792,9 +2792,9 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "wallet/log in or sign up (email + Continue + Google/Apple). Rendered by Thirdweb ConnectEmbed; social logos and the disabled Continue tint are not theme-reachable — see report 1aaf397f": {
+    "wallet/log in or sign up (email + Continue + Google/Apple). Rendered by our own @skai/ui EmailAuthModal; thirdweb supplies the auth ACTION only, so the logos and the Continue tint ARE ours to change — see report 1aaf397f": {
       "section": "wallet",
-      "family": "log in or sign up (email + Continue + Google/Apple). Rendered by Thirdweb ConnectEmbed; social logos and the disabled Continue tint are not theme-reachable — see report 1aaf397f",
+      "family": "log in or sign up (email + Continue + Google/Apple). Rendered by our own @skai/ui EmailAuthModal; thirdweb supplies the auth ACTION only, so the logos and the Continue tint ARE ours to change — see report 1aaf397f",
       "frameCount": 1,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:3023-15273"

@@ -317,7 +317,7 @@ Frames that exist in Figma but are not in the catalog:
 | continue on web > home > right-sidecar > Add wallet | 1 | desktop | - | done | [7479-137328](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7479-137328&m=dev) |
 | continue on web > home > right-sidecar > Add wallet > Import existing | 1 | desktop | - | done | [7482-141833](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7482-141833&m=dev) |
 | continue on web > home > right-sidecar > Add wallet > Create new | 1 | desktop | - | done | [7479-137772](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7479-137772&m=dev) |
-| log in or sign up (email + Continue + Google/Apple). Rendered by Thirdweb ConnectEmbed; social logos and the disabled Continue tint are not theme-reachable — see report 1aaf397f | 1 | - | - | unknown | [3023-15273](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3023-15273&m=dev) |
+| log in or sign up (email + Continue + Google/Apple). Rendered by our own @skai/ui EmailAuthModal; thirdweb supplies the auth ACTION only, so the logos and the Continue tint ARE ours to change — see report 1aaf397f | 1 | - | - | unknown | [3023-15273](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3023-15273&m=dev) |
 
 ## Onboarding
 
