@@ -28,10 +28,26 @@ Frame 1000004037   (16, 12)    1286 x 30       content box
   Frame 1000004038 (1184, 3)    102 x 24       "Provably fair" (72 x 18) + 24px glyph
 ```
 
-★ **This is ONE component instanced on every game page.** Dice's copy is
-`9061:16826` and its child geometry is identical to the pixel. So the sub-bar
-SVG assets already committed under `assets/games/dice/` are the same glyphs, not
-a borrowed look-alike — Limbo, Mines and Plinko already import them from there.
+★ **This is ONE component instanced on every game page**, and at matching depth
+the instances are identical to the pixel. So the sub-bar SVG assets already
+committed under `assets/games/dice/` are the same glyphs, not a borrowed
+look-alike — Limbo, Mines and Plinko already import them from there.
+
+⚠️ **CORRECTED 2026-08-26 — this table first paired Dice `9061:16826` against
+Roulette `9799:15326` and called them identical. Those are two different
+LEVELS.** 16826 is the 1318 x 54 wrapper; 15326 is the 163.333 x 30 cluster.
+`TRAPS.md` §12 is exactly this (a container id standing in for a child), and the
+**dimension check is what catches it** — a 1318 x 54 frame was never going to be
+the same object as a 163.33 x 30 cluster. Verified level by level:
+
+| level | size | dice | roulette |
+|---|---|---|---|
+| wrapper | 1318 x 54 | `9061:16826` | `9799:15324` |
+| content box | 1286 x 30 | `9061:16827` | `9799:15325` |
+| cluster | 163.333 x 30 | `9061:16828` | `9799:15326` |
+
+Cite the cluster as **`9061:16828`**, not 16826. The conclusion was right; the
+citation was not.
 
 The Roulette **title row** (`9799:15071 → 15072 → 15073`) holds exactly three
 nodes: a 24px chevron, a 32x32 art square, the word "Roulette". No control
@@ -77,8 +93,16 @@ They disagree **only** on the angle — exactly what a rotating part predicts.
 Ring geometry, for anyone re-deriving it: `9925:16308` runs pockets
 0.52 .. 0.87 of the FULL wheel radius with a `#123230` rim outside;
 `9948:22957` omits the rim, so its pockets run 0.609 .. 1.0 of its own group.
-Rescale one by 0.87 and they are the same wheel. The shipped SVG's 62/100 is
-right.
+
+⚠️ **The "rescale by 0.87 and they are the same wheel" line that stood here was
+an ASSERTED RELATIONSHIP between two measured numbers, and it was stated more
+exactly than it is true.** 0.52 / 0.87 = **0.598**, against a measured
+**0.609** — they agree to about 1% of the radius (~2.5px on the 223px render),
+which is inside what a radial colour scan across an anti-aliased edge can
+resolve, but it is NOT an identity. Read it as "consistent with the same wheel",
+not "the same wheel". The conclusion it supports — that the shipped SVG's
+62/100 inner-to-outer ratio is right — survives either reading, since 0.62 sits
+between the two.
 
 ---
 
