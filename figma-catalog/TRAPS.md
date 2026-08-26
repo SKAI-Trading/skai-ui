@@ -431,3 +431,55 @@ Provenance is worth keeping too, and was: `10130-13720` measured by the catalog
 lane; `10130-14013`, `10130-14946`, `10130-14802` by the towers lane. Recorded as
 a split rather than blurred into "measured" — which is what let the disagreement
 be traced to one instrument instead of argued about.
+
+---
+
+## 12. A citation that names a CONTAINER where the argument needs a CHILD
+
+Third sighting of one root cause, so it generalises. Raised by the towers lane;
+verified and extended here.
+
+Four reports argued that Towers / RPS / Roulette / Fortune Wheel draw their
+Manual|Auto row from one reused component, "dimensionally identical", citing
+`9903:2271` / `9733:6227` / `9907:1653` / **`10130:13720`**.
+
+The premise is right. The Towers citation is not: `10130:13720` is the whole
+**356x621 bet panel**. The row is a child. All four rows measured:
+
+| | Advanced OFF | Advanced ON |
+|---|---|---|
+| desktop 356w | `10250-15211` | `10250-15195` |
+| mobile 347w | `10130-15021` | `10130-14931` |
+
+Every one is **324x42** with two `card` children at **158x34**, x=4 and x=162 —
+so the "dimensionally identical" claim now holds on measurement, not assertion.
+(`10250-15211` was the one nobody had; the towers lane correctly claimed no id
+for it rather than guessing.)
+
+### Why it happened — and why the dimension check is the only reliable tell
+
+This was not carelessness. **The panel and the row have the SAME Figma name.**
+`10130-14013` (panel, 356x777.33) and `10250-15195` (row, 324x42) are *both*
+called `Frame 1000004105`. Selecting or citing by name cannot separate them.
+
+That is the same collision as §1's `Frame 270` / §3's game titles: a name is not
+an identifier here. The discriminator that works is geometry —
+
+★ **Check that the cited id's dimensions match the dimensions your argument is
+about.** `356x621` was never going to be the same component as a `324x42` track.
+A container id in a child's place reads as precise, survives review, and is
+wrong; the size mismatch is mechanical and catches it in one call.
+
+### The same distinction, three different jobs
+
+Worth stating because it kept resolving different questions:
+
+1. **A nodes list may not contain a child id** — its contract is top-level
+   children of a page (§8, and `10130-13760`/`13771` were excluded on it).
+2. **Code MAY cite a child id** — `TowerBetPanel` legitimately cites
+   `10130-13760` for the balance row it actually draws. Different contract.
+3. **A cross-file argument must cite at the level it argues about** — this
+   section.
+
+Rules 1 and 2 look contradictory and are not; the contract differs per artifact.
+Getting 1 right does not give you 3.
