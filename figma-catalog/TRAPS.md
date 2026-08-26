@@ -413,3 +413,21 @@ rather than by inference.
 ★ Two things worth taking: report geometry at the precision you measured it, not
 a prettier one — a rounded number is a claim. And when a lane builds on your
 measurement, the inference is yours to check too, not just the number.
+
+**The reader-side half, which is the one that would actually have caught it.**
+The rounding created the bad number; publishing it did not have to follow. The
+table went out with **777 next to 777.33 in adjacent rows** — two values that the
+surrounding argument said were the same control at two widths, differing by a
+third of a pixel. That shape is the tell. A third of a pixel is not a design
+decision; it is a unit artifact, a rounding artifact, or a transcription error,
+and none of those are things to publish.
+
+So: when two numbers your own model says should be identical differ by a
+sub-pixel amount, re-measure before writing it down. Treat the near-miss as
+evidence about your instrument, not about the design. (Ground truth here was
+`height="777.3333129882812"` on both.)
+
+Provenance is worth keeping too, and was: `10130-13720` measured by the catalog
+lane; `10130-14013`, `10130-14946`, `10130-14802` by the towers lane. Recorded as
+a split rather than blurred into "measured" — which is what let the disagreement
+be traced to one instrument instead of argued about.
