@@ -201,6 +201,103 @@ export function resolveSection(stem, realSections) {
   return null;
 }
 
+/**
+ * Parse a status row's column 1 into something the registry can be addressed by.
+ *
+ * ⚠️ THIS EXISTS BECAUSE `resolveSection` IS NOT ENOUGH, and the gap silently
+ * ate three wave-4 lanes (2026-08-26). `resolveSection` answers "which section
+ * is this FILE about?", which presumes every status file is about exactly one.
+ * Some legitimately are not: `status.wave4.row-conflicts.tsv` reconciles rows
+ * across Social, Sportsbook and Play by construction, and
+ * `status.wave4.games-uncovered.tsv` covers eleven game sections. Those files
+ * resolve to NO section, so they were dropped whole — 287 rows of measured work
+ * applied to zero frames, which is the third occurrence of exactly the failure
+ * `resolveSection`'s own comment block was written to end.
+ *
+ * The fix is a RULE, not a list of blessed filenames: **a file needs no section
+ * if every one of its rows says which frame it means.** Three key forms do:
+ *
+ *   A  `Some Screen [10335-235331]`   title + bracketed node id (the 2026-08 waves)
+ *   B  `9178:14731`                   a bare node id, nothing else
+ *   C  `play/blackjack-detail`        an explicit `<section>/<family>` pair
+ *
+ * A row that is none of these — a bare family name — is only addressable via
+ * the file's section, so in a section-less file it is REFUSED and reported.
+ * It is never downgraded to a guess: picking a section for it would attach a
+ * measured verdict to frames nobody looked at, which is worse than dropping it
+ * and strictly harder to notice afterwards.
+ *
+ * Forms A and B return `{kind:"id"}` and are section-INDEPENDENT: `registry
+ * .frames` is keyed by node id, so the id alone addresses exactly one frame no
+ * matter which file carried it. That is also why an id match is strictly better
+ * than a family match even in a single-section file — a family key hits every
+ * frame sharing a screen name.
+ *
+ * @param {string} rawKey       column 1, verbatim
+ * @param {string|null} sectionHint  the file's resolved section, or null
+ * @param {Set<string>|string[]} realSections  sections present in registry.json
+ * @returns {{kind:"id",nodeId:string}|{kind:"fam",section:string,family:string}|null}
+ */
+export function parseRowKey(rawKey, sectionHint, realSections) {
+  const key = (rawKey ?? "").trim();
+  if (!key) return null;
+  const has = (s) => (realSections instanceof Set ? realSections.has(s) : realSections.includes(s));
+
+  // Form A — a bracketed node id anywhere in the key.
+  const bracketed = /\[(\d{1,9}[-:]\d{1,9})\]/.exec(key);
+  if (bracketed) return { kind: "id", nodeId: bracketed[1].replace(":", "-") };
+
+  // Form B — the key IS a node id. Anchored, so a family that merely contains
+  // digits (`wave-2`, `top-10`) cannot be mistaken for one.
+  const bare = /^(\d{1,9})[-:](\d{1,9})$/.exec(key);
+  if (bare) return { kind: "id", nodeId: `${bare[1]}-${bare[2]}` };
+
+  // Form C — `<section>/<family>`, split at the FIRST slash so a family may
+  // itself contain one. Only accepted when the prefix is a section that really
+  // exists; otherwise fall through rather than invent one.
+  const slash = key.indexOf("/");
+  if (slash > 0) {
+    const maybeSection = key.slice(0, slash);
+    const family = key.slice(slash + 1);
+    if (family && has(maybeSection)) return { kind: "fam", section: maybeSection, family };
+  }
+
+  // Otherwise it is a bare family, addressable only through the file's section.
+  if (sectionHint) return { kind: "fam", section: sectionHint, family: key };
+
+  /*
+    Form D — a SECTION ROLLUP: `Casino > Fortune Wheel`, one row standing for a
+    whole game rather than for any one frame. 104 of these exist across five
+    files and they are the only rows left that no other form addresses.
+
+    ★ A rollup is recorded, NEVER applied to frame statuses. `Casino > Blackjack
+    = done` would otherwise stamp `done` on every Blackjack frame, and Casey's
+    2026-08-26 ruling defines `done` as measured parity at a specific width. That
+    is the precise inflation the Home 2 re-verify had just finished undoing — it
+    demoted 88 rows to `unknown` because they were never measured. Letting a
+    rollup re-inflate them through a different door would be the same error with
+    a new mechanism.
+
+    So this returns its own `kind`, and the caller files it in `registry.rollups`
+    where it is queryable and clearly not a per-frame verdict.
+  */
+  const tail = key.includes(">") ? key.slice(key.lastIndexOf(">") + 1) : key;
+  const slug = tail.trim().toLowerCase().replace(/\s+/g, "-");
+  // `Hi-Lo` slugs to `hi-lo` while the section is `hilo`, so try the de-hyphenated
+  // form too rather than special-casing one game.
+  for (const cand of [slug, slug.replace(/-/g, ""), ROLLUP_SECTION_ALIASES.get(slug)]) {
+    if (cand && has(cand)) return { kind: "section", section: cand };
+  }
+  return null;
+}
+
+/**
+ * Figma page names that do not slugify to their registry section. Only for the
+ * cases where no rule can bridge the gap — `Scratchers` vs `skratch` is a
+ * spelling difference, not a shape one, so a resolver rule would have to guess.
+ */
+export const ROLLUP_SECTION_ALIASES = Object.freeze(new Map([["scratchers", "skratch"]]));
+
 export const BP_WIDTHS = Object.freeze({ desktop: 1440, tablet: 768, mobile: 375 });
 
 /** Ordered so reports read widest→narrowest, matching how the designs are drawn. */

@@ -34,6 +34,7 @@ import {
   isSkippableStatusLine,
   normaliseStatus,
   parseBpCell,
+  parseRowKey,
   resolveSection,
   splitStatusLine,
 } from "./bp.mjs";
@@ -55,6 +56,24 @@ const design = deriveDesign(reg.frames);
 // because the live section is `governance`. They are the merged file's two
 // halves, kept for provenance. Summing the three files triple-counts.
 const liveSections = new Set(Object.values(reg.frames).map((f) => f.section));
+
+// node id → the section that frame really belongs to. An id-keyed row carries no
+// section of its own, and a cross-cutting file has none to lend it, so without
+// this index 972 id-keyed rows were filed under a pseudo-section named after
+// their filename (`wave3.verify-games`, `wave4.row-conflicts`, …). The registry
+// already knows the answer for every frame it holds.
+const sectionByNode = new Map();
+// And node id → `section/family`, because `design` (deriveDesign) is keyed that
+// way. An id-keyed row has to borrow its frame's family to ask the design axis
+// how many frames exist at each width; without this the design column reads
+// 0/0/0 for every section whose rows key by id.
+const designKeyByNode = new Map();
+for (const f of Object.values(reg.frames)) {
+  const id = String(f.node ?? "").replace(":", "-");
+  if (!id) continue;
+  sectionByNode.set(id, f.section);
+  designKeyByNode.set(id, `${f.section}/${f.family}`);
+}
 
 const files = fs
   .readdirSync(DIR)
@@ -92,10 +111,36 @@ for (const { file, section } of files) {
       errors.push(`${where}: ${6 + r.extra.length} tab-separated fields; a reason must not contain a TAB`);
     const bp = parseBpCell(r.bpCell);
     for (const e of bp.errors) errors.push(`${where}: ${e}`);
-    const key = `${section}/${r.family}`;
+    /*
+      Resolve the row the SAME way apply-status does, rather than assuming the
+      file's section. `parseRowKey` handles a bracketed id, a bare id and an
+      explicit `<section>/<family>` pair, so the 1,026 rows this report used to
+      file under invented sections named after their filename — `wave3.verify-
+      games` and friends — now land in the real section they measured.
+
+      Sharing the parser is the point. Every previous version of this bug was one
+      file being fixed while its sibling kept a private copy of the rule, and
+      this file has already been the sibling twice.
+    */
+    const addr = parseRowKey(r.family, section, liveSections);
+    const rowSection =
+      addr === null
+        ? section
+        : addr.kind === "id"
+          ? (sectionByNode.get(addr.nodeId) ?? section)
+          : addr.section;
+    // Two keys, deliberately. `key` identifies the ROW for duplicate detection —
+    // an id row must stay distinct from its siblings in the same family, or every
+    // per-frame row in a family reads as a duplicate of the first. `designKey`
+    // asks the design axis about the family, which is the unit design counts use.
+    const key = addr && addr.kind === "id" ? `#${addr.nodeId}` : `${rowSection}/${r.family}`;
+    const designKey =
+      addr && addr.kind === "id" ? (designKeyByNode.get(addr.nodeId) ?? key) : key;
     if (seen.has(key)) dupes.push(`${where}: duplicate family key, also at ${file}:${seen.get(key)} — apply-status keeps the LAST one`);
     seen.set(key, i + 1);
-    rows.push({ file, section, key, line: i + 1, ...r, bp: bp.verdicts, at: bp.at, source: bp.source });
+    // `section: rowSection`, NOT the file's section — that is the whole point of
+    // resolving the key above. `fileSection` is kept alongside it for provenance.
+    rows.push({ file, fileSection: section, section: rowSection, key, designKey, line: i + 1, ...r, bp: bp.verdicts, at: bp.at, source: bp.source });
   }
 }
 
@@ -107,7 +152,7 @@ if (errors.length) {
 
 const applied = rows.filter((r) => liveSections.has(r.section));
 const orphanSections = [...new Set(rows.filter((r) => !liveSections.has(r.section)).map((r) => r.section))];
-const orphanRows = applied.filter((r) => !design[r.key]);
+const orphanRows = applied.filter((r) => !design[r.designKey]);
 
 // ── summary ────────────────────────────────────────────────────────────────
 console.log(`Breakpoints: ${BP_KEYS.map((k) => `${k} ${BP_WIDTHS[k]}px`).join(" · ")}`);
@@ -123,12 +168,22 @@ console.log(hdr);
 console.log("-".repeat(hdr.length));
 
 const totals = { rows: 0, byWidth: Object.fromEntries(BP_KEYS.map((k) => [k, {}])) };
-for (const { section } of files) {
+// Iterate SECTIONS, not files. Iterating files printed one line per file and
+// labelled each with its resolved section, so `governance` — which has three
+// files (governance, governance-account, governance-vaults) all resolving to the
+// one live section — printed three identical 228-row lines. Read down the column
+// that is 684 rows of governance work where there are 228. The file list is
+// provenance; the section is the unit the report is about.
+for (const section of [...new Set(rows.map((r) => r.section))].sort()) {
   const secRows = rows.filter((r) => r.section === section);
   if (!secRows.length) continue;
   const d = { desktop: 0, tablet: 0, mobile: 0 };
-  for (const r of secRows) {
-    const g = design[r.key];
+  // ONCE PER FAMILY, not once per row. `design` counts the frames in a family,
+  // so summing it per row multiplies it by however many rows that family has —
+  // and now that id-keyed rows resolve into their real sections, a family can
+  // carry dozens. It read as blackjack having 138 desktop frames where it has 6.
+  for (const dk of new Set(secRows.map((r) => r.designKey))) {
+    const g = design[dk];
     if (!g) continue;
     for (const k of BP_KEYS) d[k] += g[k];
   }

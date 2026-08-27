@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T01:04:06.354Z",
+  "generated": "2026-08-27T02:29:31.930Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
@@ -7,30 +7,30 @@
     "furniture": 418,
     "genuine": 1910,
     "matched": 1598,
-    "done": 268,
-    "partial": 867,
-    "notStarted": 109,
-    "blocked": 125,
-    "frameDefect": 38,
-    "catalogFurniture": 55,
-    "unknown": 136,
+    "done": 227,
+    "partial": 834,
+    "notStarted": 103,
+    "blocked": 134,
+    "frameDefect": 37,
+    "catalogFurniture": 56,
+    "unknown": 207,
     "liveOnly": 312,
     "rollupOnly": 2,
     "defaultNamed": 116,
     "ambiguous": 0,
-    "conflicts": 385
+    "conflicts": 44
   },
   "doneRows": {
-    "total": 1333,
+    "total": 1378,
     "withBreakpointProvenance": 78,
-    "namingANodeId": 1112,
+    "namingANodeId": 1157,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 4426,
+    "total": 5030,
     "namingNoNodeId": 315,
     "namingNoLiveNodeId": 333,
-    "unrecognisedTokens": 2029
+    "unrecognisedTokens": 2438
   },
   "statusFiles": [
     {
@@ -316,10 +316,22 @@
       "ids": 27
     },
     {
+      "file": "status.wave2.play.tsv",
+      "rows": 27,
+      "withLiveId": 18,
+      "ids": 26
+    },
+    {
       "file": "status.wave2.predict-play.tsv",
-      "rows": 60,
-      "withLiveId": 34,
-      "ids": 56
+      "rows": 0,
+      "withLiveId": 0,
+      "ids": 0
+    },
+    {
+      "file": "status.wave2.predict.tsv",
+      "rows": 33,
+      "withLiveId": 16,
+      "ids": 30
     },
     {
       "file": "status.wave2.social-a.tsv",
@@ -424,6 +436,24 @@
       "ids": 87
     },
     {
+      "file": "status.wave4.home-2-reverify.tsv",
+      "rows": 168,
+      "withLiveId": 168,
+      "ids": 168
+    },
+    {
+      "file": "status.wave4.play-mobile.tsv",
+      "rows": 117,
+      "withLiveId": 117,
+      "ids": 117
+    },
+    {
+      "file": "status.wave4.predict-mobile.tsv",
+      "rows": 108,
+      "withLiveId": 108,
+      "ids": 108
+    },
+    {
       "file": "status.wave4.row-conflicts.tsv",
       "rows": 193,
       "withLiveId": 193,
@@ -434,6 +464,24 @@
       "rows": 104,
       "withLiveId": 104,
       "ids": 110
+    },
+    {
+      "file": "status.wave4.social-b.tsv",
+      "rows": 109,
+      "withLiveId": 109,
+      "ids": 109
+    },
+    {
+      "file": "status.wave4.trade-2-partial.tsv",
+      "rows": 33,
+      "withLiveId": 33,
+      "ids": 33
+    },
+    {
+      "file": "status.wave4.wallet-2-partial.tsv",
+      "rows": 69,
+      "withLiveId": 69,
+      "ids": 73
     }
   ],
   "pages": [
@@ -2700,8 +2748,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 158,
-        "done": 11,
+        "partial": 162,
+        "done": 7,
         "blocked-on-backend": 56,
         "unknown": 21,
         "frame-defect": 8
@@ -2727,13 +2775,13 @@
       "rollupOnly": 0,
       "defaultNamed": 6,
       "ambiguous": 0,
-      "conflicts": 1,
+      "conflicts": 0,
       "byStatus": {
-        "done": 40,
+        "done": 34,
         "furniture": 3,
-        "partial": 133,
-        "blocked-on-backend": 19,
-        "not-started": 73,
+        "partial": 137,
+        "blocked-on-backend": 22,
+        "not-started": 72,
         "frame-defect": 1
       },
       "liveOnly": []
@@ -2757,13 +2805,14 @@
       "rollupOnly": 2,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 114,
+      "conflicts": 34,
       "byStatus": {
-        "partial": 239,
-        "blocked-on-backend": 14,
+        "partial": 225,
+        "blocked-on-backend": 23,
         "not-started": 7,
         "frame-defect": 6,
-        "done": 4
+        "done": 8,
+        "furniture": 1
       },
       "liveOnly": [
         {
@@ -5431,7 +5480,7 @@
       "rollupOnly": 0,
       "defaultNamed": 1,
       "ambiguous": 0,
-      "conflicts": 2,
+      "conflicts": 0,
       "byStatus": {
         "done": 52,
         "partial": 3,
@@ -6522,11 +6571,12 @@
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 102,
+      "conflicts": 2,
       "byStatus": {
-        "partial": 35,
-        "done": 88,
-        "not-started": 10,
+        "partial": 59,
+        "done": 3,
+        "unknown": 64,
+        "not-started": 7,
         "blocked-on-backend": 5
       },
       "liveOnly": []
@@ -7408,8 +7458,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "done": 89,
-        "partial": 69,
+        "done": 111,
+        "partial": 47,
         "frame-defect": 1
       },
       "liveOnly": []
@@ -7435,10 +7485,10 @@
       "rollupOnly": 0,
       "defaultNamed": 43,
       "ambiguous": 3,
-      "conflicts": 4,
+      "conflicts": 0,
       "byStatus": {
-        "done": 46,
-        "partial": 37
+        "done": 50,
+        "partial": 33
       },
       "liveOnly": [
         {
@@ -9449,13 +9499,12 @@
       "rollupOnly": 0,
       "defaultNamed": 18,
       "ambiguous": 0,
-      "conflicts": 55,
+      "conflicts": 8,
       "byStatus": {
-        "partial": 125,
-        "frame-defect": 1,
-        "done": 32,
+        "done": 57,
+        "partial": 102,
         "furniture": 18,
-        "blocked-on-backend": 15,
+        "blocked-on-backend": 14,
         "not-started": 4
       },
       "liveOnly": [
@@ -11162,10 +11211,9 @@
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 7,
+      "conflicts": 0,
       "byStatus": {
-        "partial": 3,
-        "done": 4,
+        "done": 7,
         "unknown": 6
       },
       "liveOnly": []
@@ -11237,7 +11285,7 @@
       "rollupOnly": 0,
       "defaultNamed": 6,
       "ambiguous": 0,
-      "conflicts": 23,
+      "conflicts": 0,
       "byStatus": {
         "partial": 26,
         "furniture": 7,
@@ -11262,7 +11310,7 @@
       "rollupOnly": 0,
       "defaultNamed": 3,
       "ambiguous": 0,
-      "conflicts": 1,
+      "conflicts": 0,
       "byStatus": {
         "unknown": 8,
         "partial": 4,
@@ -11315,7 +11363,7 @@
       "rollupOnly": 0,
       "defaultNamed": 1,
       "ambiguous": 0,
-      "conflicts": 5,
+      "conflicts": 0,
       "byStatus": {
         "partial": 7
       },
@@ -11339,7 +11387,7 @@
       "rollupOnly": 0,
       "defaultNamed": 9,
       "ambiguous": 0,
-      "conflicts": 5,
+      "conflicts": 0,
       "byStatus": {
         "partial": 7,
         "unknown": 7,
@@ -11366,7 +11414,7 @@
       "rollupOnly": 0,
       "defaultNamed": 7,
       "ambiguous": 0,
-      "conflicts": 14,
+      "conflicts": 0,
       "byStatus": {
         "partial": 11,
         "not-started": 5,
@@ -11416,7 +11464,7 @@
       "rollupOnly": 0,
       "defaultNamed": 2,
       "ambiguous": 0,
-      "conflicts": 1,
+      "conflicts": 0,
       "byStatus": {
         "partial": 3,
         "frame-defect": 6,
@@ -11441,7 +11489,7 @@
       "rollupOnly": 0,
       "defaultNamed": 3,
       "ambiguous": 0,
-      "conflicts": 10,
+      "conflicts": 0,
       "byStatus": {
         "partial": 5,
         "frame-defect": 6,
@@ -11468,10 +11516,10 @@
       "rollupOnly": 0,
       "defaultNamed": 7,
       "ambiguous": 0,
-      "conflicts": 12,
+      "conflicts": 0,
       "byStatus": {
-        "not-started": 6,
-        "partial": 4,
+        "partial": 6,
+        "not-started": 4,
         "furniture": 3
       },
       "liveOnly": []
@@ -11494,7 +11542,7 @@
       "rollupOnly": 0,
       "defaultNamed": 4,
       "ambiguous": 0,
-      "conflicts": 11,
+      "conflicts": 0,
       "byStatus": {
         "partial": 3,
         "frame-defect": 8,
@@ -11521,9 +11569,10 @@
       "rollupOnly": 0,
       "defaultNamed": 4,
       "ambiguous": 0,
-      "conflicts": 7,
+      "conflicts": 0,
       "byStatus": {
-        "partial": 9
+        "partial": 2,
+        "unknown": 7
       },
       "liveOnly": []
     },
@@ -11545,7 +11594,7 @@
       "rollupOnly": 0,
       "defaultNamed": 5,
       "ambiguous": 0,
-      "conflicts": 14,
+      "conflicts": 0,
       "byStatus": {
         "partial": 2,
         "blocked-on-backend": 14,
@@ -11595,10 +11644,9 @@
       "rollupOnly": 0,
       "defaultNamed": 3,
       "ambiguous": 0,
-      "conflicts": 3,
+      "conflicts": 0,
       "byStatus": {
-        "partial": 1,
-        "blocked-on-backend": 2,
+        "partial": 3,
         "furniture": 3,
         "unknown": 2
       },
@@ -11966,33 +12014,6 @@
   ],
   "conflicts": [
     {
-      "id": "4913-97944",
-      "page": "✅ Play",
-      "name": "Skai > Play > Sports",
-      "statuses": [
-        "blocked-on-backend",
-        "not-started"
-      ],
-      "rows": [
-        "status.wave3.verify-play.tsv:145",
-        "status.wave4.row-conflicts.tsv:2"
-      ]
-    },
-    {
-      "id": "10302-184748",
-      "page": "✅ Social",
-      "name": "dropdown-time",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:17",
-        "status.wave3.verify-social.tsv:26",
-        "status.wave4.social-a.tsv:67"
-      ]
-    },
-    {
       "id": "5100-183573",
       "page": "✅ Social",
       "name": "Skai > Social 1VH (1",
@@ -12001,10 +12022,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:196",
         "status.wave4.row-conflicts.tsv:4",
         "status.wave4.social-a.tsv:13"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10232-201644",
@@ -12015,10 +12036,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:22",
         "status.wave4.row-conflicts.tsv:5",
         "status.wave4.social-a.tsv:64"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10335-235331",
@@ -12029,10 +12050,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:31",
         "status.wave4.row-conflicts.tsv:6",
         "status.wave4.social-a.tsv:72"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10335-236189",
@@ -12043,10 +12064,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:32",
         "status.wave4.row-conflicts.tsv:7",
         "status.wave4.social-a.tsv:73"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10328-215524",
@@ -12057,10 +12078,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:29",
         "status.wave4.row-conflicts.tsv:8",
         "status.wave4.social-a.tsv:70"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10335-233638",
@@ -12071,51 +12092,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:30",
         "status.wave4.row-conflicts.tsv:9",
         "status.wave4.social-a.tsv:71"
-      ]
-    },
-    {
-      "id": "11442-169953",
-      "page": "✅ Social",
-      "name": "modal",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:18",
-        "status.wave3.verify-social.tsv:86"
-      ]
-    },
-    {
-      "id": "10327-199048",
-      "page": "✅ Social",
-      "name": "Caption - upload - A",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:23",
-        "status.wave3.verify-social.tsv:28",
-        "status.wave4.social-a.tsv:69"
-      ]
-    },
-    {
-      "id": "10324-198967",
-      "page": "✅ Social",
-      "name": "Caption - empty",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:24",
-        "status.wave3.verify-social.tsv:27",
-        "status.wave4.social-a.tsv:68"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "5101-186045",
@@ -12126,10 +12106,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:197",
         "status.wave4.row-conflicts.tsv:12",
         "status.wave4.social-a.tsv:14"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "5194-271601",
@@ -12140,10 +12120,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:214",
         "status.wave4.row-conflicts.tsv:13",
         "status.wave4.social-a.tsv:24"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "4948-143477",
@@ -12154,10 +12134,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:183",
         "status.wave4.row-conflicts.tsv:14",
         "status.wave4.social-a.tsv:2"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "4954-147061",
@@ -12168,10 +12148,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:184",
         "status.wave4.row-conflicts.tsv:15",
         "status.wave4.social-a.tsv:3"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "5111-190017",
@@ -12182,10 +12162,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:198",
         "status.wave4.row-conflicts.tsv:17",
         "status.wave4.social-a.tsv:15"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "4998-155882",
@@ -12196,145 +12176,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:188",
         "status.wave4.row-conflicts.tsv:18",
         "status.wave4.social-a.tsv:6"
-      ]
-    },
-    {
-      "id": "10213-136686",
-      "page": "✅ Social",
-      "name": "dropdown - tridots",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:28",
-        "status.wave3.verify-social.tsv:11",
-        "status.wave4.social-a.tsv:54"
-      ]
-    },
-    {
-      "id": "11530-303299",
-      "page": "✅ Social",
-      "name": "dropdown - tridots",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:29",
-        "status.wave3.verify-social.tsv:173"
-      ]
-    },
-    {
-      "id": "11530-303318",
-      "page": "✅ Social",
-      "name": "dropdown - tridots",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:30",
-        "status.wave3.verify-social.tsv:174"
-      ]
-    },
-    {
-      "id": "10215-137653",
-      "page": "✅ Social",
-      "name": "dropdown - tridots -",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:31",
-        "status.wave3.verify-social.tsv:14",
-        "status.wave4.social-a.tsv:56"
-      ]
-    },
-    {
-      "id": "11530-303337",
-      "page": "✅ Social",
-      "name": "dropdown - tridots -",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:32",
-        "status.wave3.verify-social.tsv:175"
-      ]
-    },
-    {
-      "id": "11530-303366",
-      "page": "✅ Social",
-      "name": "dropdown - tridots -",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:33",
-        "status.wave3.verify-social.tsv:176"
-      ]
-    },
-    {
-      "id": "10216-182394",
-      "page": "✅ Social",
-      "name": "dropdown - right cli",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:34",
-        "status.wave3.verify-social.tsv:16",
-        "status.wave4.social-a.tsv:58"
-      ]
-    },
-    {
-      "id": "11380-24252",
-      "page": "✅ Social",
-      "name": "dropdown - right cli",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:35",
-        "status.wave3.verify-social.tsv:46",
-        "status.wave4.social-a.tsv:84"
-      ]
-    },
-    {
-      "id": "11387-73530",
-      "page": "✅ Social",
-      "name": "dropdown - right cli",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:36",
-        "status.wave3.verify-social.tsv:56",
-        "status.wave4.social-a.tsv:94"
-      ]
-    },
-    {
-      "id": "5164-266951",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "frame-defect"
-      ],
-      "rows": [
-        "status.wave3.verify-social.tsv:207",
-        "status.wave4.row-conflicts.tsv:20"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "5171-270124",
@@ -12345,23 +12190,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:210",
         "status.wave4.row-conflicts.tsv:21",
         "status.wave4.social-a.tsv:22"
-      ]
-    },
-    {
-      "id": "5443-82417",
-      "page": "✅ Social",
-      "name": "card",
-      "statuses": [
-        "done",
-        "furniture"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:38",
-        "status.wave3.verify-social.tsv:226"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "4943-129014",
@@ -12372,10 +12204,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:182",
         "status.wave4.row-conflicts.tsv:23",
         "status.wave4.social-a.tsv:1"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "5000-158255",
@@ -12386,10 +12218,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:190",
         "status.wave4.row-conflicts.tsv:30",
         "status.wave4.social-a.tsv:7"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10094-247131",
@@ -12400,10 +12232,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:5",
         "status.wave4.row-conflicts.tsv:31",
         "status.wave4.social-a.tsv:47"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10094-250637",
@@ -12414,10 +12246,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:6",
         "status.wave4.row-conflicts.tsv:32",
         "status.wave4.social-a.tsv:48"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10102-259223",
@@ -12428,24 +12260,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:8",
         "status.wave4.row-conflicts.tsv:34",
         "status.wave4.social-a.tsv:50"
-      ]
-    },
-    {
-      "id": "10102-261907",
-      "page": "✅ Social",
-      "name": "Stream states - stre",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:45",
-        "status.wave3.verify-social.tsv:9",
-        "status.wave4.social-a.tsv:51"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "10094-256369",
@@ -12456,10 +12274,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:7",
         "status.wave4.row-conflicts.tsv:37",
         "status.wave4.social-a.tsv:49"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10025-225705",
@@ -12470,10 +12288,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:2",
         "status.wave4.row-conflicts.tsv:38",
         "status.wave4.social-a.tsv:44"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10025-228194",
@@ -12484,10 +12302,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:3",
         "status.wave4.row-conflicts.tsv:39",
         "status.wave4.social-a.tsv:45"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10091-230847",
@@ -12498,52 +12316,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:4",
         "status.wave4.row-conflicts.tsv:40",
         "status.wave4.social-a.tsv:46"
-      ]
-    },
-    {
-      "id": "5025-182851",
-      "page": "✅ Social",
-      "name": "Multi-panel - live c",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:47",
-        "status.wave3.verify-social.tsv:194",
-        "status.wave4.social-a.tsv:11"
-      ]
-    },
-    {
-      "id": "5026-183371",
-      "page": "✅ Social",
-      "name": "Multi-panel - live c",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:48",
-        "status.wave3.verify-social.tsv:195",
-        "status.wave4.social-a.tsv:12"
-      ]
-    },
-    {
-      "id": "5010-179221",
-      "page": "✅ Social",
-      "name": "Stream panel - follo",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:50",
-        "status.wave3.verify-social.tsv:193",
-        "status.wave4.social-a.tsv:10"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "5000-163464",
@@ -12554,24 +12330,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:192",
         "status.wave4.row-conflicts.tsv:42",
         "status.wave4.social-a.tsv:9"
-      ]
-    },
-    {
-      "id": "5000-162336",
-      "page": "✅ Social",
-      "name": "Multi-panel - live c",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:51",
-        "status.wave3.verify-social.tsv:191",
-        "status.wave4.social-a.tsv:8"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "5194-270743",
@@ -12582,24 +12344,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:213",
         "status.wave4.row-conflicts.tsv:43",
         "status.wave4.social-a.tsv:23"
-      ]
-    },
-    {
-      "id": "5198-47891",
-      "page": "✅ Social",
-      "name": "Skai > Social > Grou",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave3.verify-social.tsv:216",
-        "status.wave4.row-conflicts.tsv:45",
-        "status.wave4.social-a.tsv:25"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "5198-50314",
@@ -12610,10 +12358,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:217",
         "status.wave4.row-conflicts.tsv:46",
         "status.wave4.social-a.tsv:26"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "5198-62746",
@@ -12624,38 +12372,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:218",
         "status.wave4.row-conflicts.tsv:48",
         "status.wave4.social-a.tsv:27"
-      ]
-    },
-    {
-      "id": "5198-63614",
-      "page": "✅ Social",
-      "name": "Right menu",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:57",
-        "status.wave3.verify-social.tsv:219",
-        "status.wave4.social-a.tsv:28"
-      ]
-    },
-    {
-      "id": "5198-63742",
-      "page": "✅ Social",
-      "name": "Right menu - token g",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:58",
-        "status.wave3.verify-social.tsv:220",
-        "status.wave4.social-a.tsv:29"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "5202-63932",
@@ -12666,10 +12386,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:221",
         "status.wave4.row-conflicts.tsv:49",
         "status.wave4.social-a.tsv:30"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "5203-64550",
@@ -12680,38 +12400,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:222",
         "status.wave4.row-conflicts.tsv:50",
         "status.wave4.social-a.tsv:31"
-      ]
-    },
-    {
-      "id": "5206-31322",
-      "page": "✅ Social",
-      "name": "Members - block/remo",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:59",
-        "status.wave3.verify-social.tsv:224",
-        "status.wave4.social-a.tsv:33"
-      ]
-    },
-    {
-      "id": "10227-200546",
-      "page": "✅ Social",
-      "name": "Members - with reque",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:60",
-        "status.wave3.verify-social.tsv:20",
-        "status.wave4.social-a.tsv:62"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "5204-65392",
@@ -12722,10 +12414,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:223",
         "status.wave4.row-conflicts.tsv:51",
         "status.wave4.social-a.tsv:32"
-      ]
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "10232-200912",
@@ -12736,304 +12428,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:21",
         "status.wave4.row-conflicts.tsv:52",
         "status.wave4.social-a.tsv:63"
-      ]
-    },
-    {
-      "id": "5207-42693",
-      "page": "✅ Social",
-      "name": "sidebar - open disco",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:61",
-        "status.wave3.verify-social.tsv:225",
-        "status.wave4.social-a.tsv:34"
-      ]
-    },
-    {
-      "id": "9626-39285",
-      "page": "✅ Social",
-      "name": "dropdown-creators",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:62",
-        "status.wave3.verify-social.tsv:228",
-        "status.wave4.social-a.tsv:35"
-      ]
-    },
-    {
-      "id": "11530-303043",
-      "page": "✅ Social",
-      "name": "dropdown-creators",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:63",
-        "status.wave3.verify-social.tsv:161"
-      ]
-    },
-    {
-      "id": "11530-303066",
-      "page": "✅ Social",
-      "name": "dropdown-creators",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:64",
-        "status.wave3.verify-social.tsv:162"
-      ]
-    },
-    {
-      "id": "10256-135335",
-      "page": "✅ Social",
-      "name": "dropdown-post select",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:65",
-        "status.wave3.verify-social.tsv:23",
-        "status.wave4.social-a.tsv:65"
-      ]
-    },
-    {
-      "id": "11530-302842",
-      "page": "✅ Social",
-      "name": "dropdown-post select",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:66",
-        "status.wave3.verify-social.tsv:153"
-      ]
-    },
-    {
-      "id": "11530-302866",
-      "page": "✅ Social",
-      "name": "dropdown-post select",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:67",
-        "status.wave3.verify-social.tsv:154"
-      ]
-    },
-    {
-      "id": "9626-208767",
-      "page": "✅ Social",
-      "name": "dropdown-posts",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:68",
-        "status.wave3.verify-social.tsv:227",
-        "status.wave4.social-a.tsv:36"
-      ]
-    },
-    {
-      "id": "11530-303089",
-      "page": "✅ Social",
-      "name": "dropdown-posts",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:69",
-        "status.wave3.verify-social.tsv:163"
-      ]
-    },
-    {
-      "id": "11530-303116",
-      "page": "✅ Social",
-      "name": "dropdown-posts",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:70",
-        "status.wave3.verify-social.tsv:164"
-      ]
-    },
-    {
-      "id": "9636-208873",
-      "page": "✅ Social",
-      "name": "dropdown-tokens",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:71",
-        "status.wave3.verify-social.tsv:229",
-        "status.wave4.social-a.tsv:37"
-      ]
-    },
-    {
-      "id": "11530-303143",
-      "page": "✅ Social",
-      "name": "dropdown-tokens",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:72",
-        "status.wave3.verify-social.tsv:165"
-      ]
-    },
-    {
-      "id": "11530-303164",
-      "page": "✅ Social",
-      "name": "dropdown-tokens",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:73",
-        "status.wave3.verify-social.tsv:166"
-      ]
-    },
-    {
-      "id": "9640-213620",
-      "page": "✅ Social",
-      "name": "dropdown-balances",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:74",
-        "status.wave3.verify-social.tsv:230",
-        "status.wave4.social-a.tsv:38"
-      ]
-    },
-    {
-      "id": "11530-303185",
-      "page": "✅ Social",
-      "name": "dropdown-balances",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:75",
-        "status.wave3.verify-social.tsv:167"
-      ]
-    },
-    {
-      "id": "11530-303236",
-      "page": "✅ Social",
-      "name": "dropdown-balances",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:76",
-        "status.wave3.verify-social.tsv:169"
-      ]
-    },
-    {
-      "id": "9640-214077",
-      "page": "✅ Social",
-      "name": "dropdown-tokens",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:77",
-        "status.wave3.verify-social.tsv:231",
-        "status.wave4.social-a.tsv:39"
-      ]
-    },
-    {
-      "id": "11530-303208",
-      "page": "✅ Social",
-      "name": "dropdown-tokens",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:78",
-        "status.wave3.verify-social.tsv:168"
-      ]
-    },
-    {
-      "id": "11530-303259",
-      "page": "✅ Social",
-      "name": "dropdown-tokens",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:79",
-        "status.wave3.verify-social.tsv:170"
-      ]
-    },
-    {
-      "id": "9646-214871",
-      "page": "✅ Social",
-      "name": "dropdown-followers/f",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:80",
-        "status.wave3.verify-social.tsv:233",
-        "status.wave4.social-a.tsv:41"
-      ]
-    },
-    {
-      "id": "11530-303287",
-      "page": "✅ Social",
-      "name": "dropdown-followers/f",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:81",
-        "status.wave3.verify-social.tsv:171"
-      ]
-    },
-    {
-      "id": "11530-303293",
-      "page": "✅ Social",
-      "name": "dropdown-followers/f",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:82",
-        "status.wave3.verify-social.tsv:172"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "9657-215247",
@@ -13044,394 +12442,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:234",
         "status.wave4.row-conflicts.tsv:53",
         "status.wave4.social-a.tsv:42"
-      ]
-    },
-    {
-      "id": "10025-225649",
-      "page": "✅ Social",
-      "name": "dropdown-creators",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:83",
-        "status.wave3.verify-social.tsv:1",
-        "status.wave4.social-a.tsv:43"
-      ]
-    },
-    {
-      "id": "11529-293029",
-      "page": "✅ Social",
-      "name": "dropdown-creators",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:84",
-        "status.wave3.verify-social.tsv:142"
-      ]
-    },
-    {
-      "id": "11529-293244",
-      "page": "✅ Social",
-      "name": "dropdown-creators",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:85",
-        "status.wave3.verify-social.tsv:145"
-      ]
-    },
-    {
-      "id": "10108-262300",
-      "page": "✅ Social",
-      "name": "sidebar - open live",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:86",
-        "status.wave3.verify-social.tsv:10",
-        "status.wave4.social-a.tsv:52"
-      ]
-    },
-    {
-      "id": "10213-16819",
-      "page": "✅ Social",
-      "name": "sidebar - open live",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:87",
-        "status.wave3.verify-social.tsv:12",
-        "status.wave4.social-a.tsv:53"
-      ]
-    },
-    {
-      "id": "10219-182490",
-      "page": "✅ Social",
-      "name": "dropdown - tridots -",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:88",
-        "status.wave3.verify-social.tsv:17",
-        "status.wave4.social-a.tsv:59"
-      ]
-    },
-    {
-      "id": "11398-85209",
-      "page": "✅ Social",
-      "name": "dropdown - tridots -",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:89",
-        "status.wave3.verify-social.tsv:66",
-        "status.wave4.social-a.tsv:101"
-      ]
-    },
-    {
-      "id": "10221-182894",
-      "page": "✅ Social",
-      "name": "dropdown-group filte",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:90",
-        "status.wave3.verify-social.tsv:18",
-        "status.wave4.social-a.tsv:60"
-      ]
-    },
-    {
-      "id": "11398-85199",
-      "page": "✅ Social",
-      "name": "dropdown-group filte",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:91",
-        "status.wave3.verify-social.tsv:65",
-        "status.wave4.social-a.tsv:100"
-      ]
-    },
-    {
-      "id": "10227-200411",
-      "page": "✅ Social",
-      "name": "dropdown-members",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:92",
-        "status.wave3.verify-social.tsv:19",
-        "status.wave4.social-a.tsv:61"
-      ]
-    },
-    {
-      "id": "11398-85189",
-      "page": "✅ Social",
-      "name": "dropdown-members",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:93",
-        "status.wave3.verify-social.tsv:64",
-        "status.wave4.social-a.tsv:99"
-      ]
-    },
-    {
-      "id": "10302-184717",
-      "page": "✅ Social",
-      "name": "dropdown-main",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:95",
-        "status.wave3.verify-social.tsv:25",
-        "status.wave4.social-a.tsv:66"
-      ]
-    },
-    {
-      "id": "11530-302910",
-      "page": "✅ Social",
-      "name": "dropdown-time",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:96",
-        "status.wave3.verify-social.tsv:155"
-      ]
-    },
-    {
-      "id": "11530-302923",
-      "page": "✅ Social",
-      "name": "dropdown-time",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:97",
-        "status.wave3.verify-social.tsv:156"
-      ]
-    },
-    {
-      "id": "11530-302936",
-      "page": "✅ Social",
-      "name": "dropdown-main",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:98",
-        "status.wave3.verify-social.tsv:157"
-      ]
-    },
-    {
-      "id": "11530-302943",
-      "page": "✅ Social",
-      "name": "dropdown-main",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:99",
-        "status.wave3.verify-social.tsv:158"
-      ]
-    },
-    {
-      "id": "11341-85236",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "frame-defect",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:100",
-        "status.wave3.verify-social.tsv:236",
-        "status.wave4.row-conflicts.tsv:54"
-      ]
-    },
-    {
-      "id": "11341-88388",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:101",
-        "status.wave3.verify-social.tsv:37",
-        "status.wave4.social-a.tsv:75"
-      ]
-    },
-    {
-      "id": "11367-22805",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:102",
-        "status.wave3.verify-social.tsv:40",
-        "status.wave4.social-a.tsv:78"
-      ]
-    },
-    {
-      "id": "11380-23801",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:103",
-        "status.wave3.verify-social.tsv:45",
-        "status.wave4.social-a.tsv:83"
-      ]
-    },
-    {
-      "id": "11365-21892",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:105",
-        "status.wave3.verify-social.tsv:38",
-        "status.wave4.social-a.tsv:76"
-      ]
-    },
-    {
-      "id": "11373-23253",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:106",
-        "status.wave3.verify-social.tsv:44",
-        "status.wave4.social-a.tsv:82"
-      ]
-    },
-    {
-      "id": "11365-22320",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:107",
-        "status.wave3.verify-social.tsv:39",
-        "status.wave4.social-a.tsv:77"
-      ]
-    },
-    {
-      "id": "11368-23343",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:108",
-        "status.wave3.verify-social.tsv:41",
-        "status.wave4.social-a.tsv:79"
-      ]
-    },
-    {
-      "id": "11530-303652",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:109",
-        "status.wave3.verify-social.tsv:177"
-      ]
-    },
-    {
-      "id": "11387-74801",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "frame-defect",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:112",
-        "status.wave3.verify-social.tsv:237"
-      ]
-    },
-    {
-      "id": "11373-22600",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:114",
-        "status.wave3.verify-social.tsv:43",
-        "status.wave4.social-a.tsv:81"
-      ]
-    },
-    {
-      "id": "11369-24298",
-      "page": "✅ Social",
-      "name": "Skai > Social > Mess",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:115",
-        "status.wave3.verify-social.tsv:42",
-        "status.wave4.social-a.tsv:80"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "11341-88224",
@@ -13442,51 +12456,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave2.social-a.tsv:118",
-        "status.wave3.verify-social.tsv:36",
         "status.wave4.row-conflicts.tsv:55",
         "status.wave4.social-a.tsv:74"
-      ]
-    },
-    {
-      "id": "11526-290354",
-      "page": "✅ Social",
-      "name": "Skai > Social > Grou",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.wave2.social-a.tsv:120",
-        "status.wave3.verify-social.tsv:136"
-      ]
-    },
-    {
-      "id": "11526-290070",
-      "page": "✅ Social",
-      "name": "Skai > Social > Grou",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave2.social-a.tsv:123",
-        "status.wave3.verify-social.tsv:135"
-      ]
-    },
-    {
-      "id": "11396-76652",
-      "page": "✅ Social",
-      "name": "Skai > Social > Grou",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-social.tsv:59",
-        "status.wave4.row-conflicts.tsv:56",
-        "status.wave4.social-a.tsv:97"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "11526-288877",
@@ -13497,37 +12470,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:133",
-        "status.wave4.row-conflicts.tsv:57"
-      ]
-    },
-    {
-      "id": "11398-86869",
-      "page": "✅ Social",
-      "name": "Skai > Social > Grou",
-      "statuses": [
-        "done",
-        "partial"
+        "status.wave4.row-conflicts.tsv:57",
+        "status.wave4.social-b.tsv:63"
       ],
-      "rows": [
-        "status.wave3.verify-social.tsv:69",
-        "status.wave4.row-conflicts.tsv:58",
-        "status.wave4.social-a.tsv:103"
-      ]
-    },
-    {
-      "id": "11398-85878",
-      "page": "✅ Social",
-      "name": "Skai > Social > Grou",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-social.tsv:67",
-        "status.wave4.row-conflicts.tsv:60",
-        "status.wave4.social-a.tsv:102"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "11530-304239",
@@ -13538,508 +12484,24 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-social.tsv:179",
-        "status.wave4.row-conflicts.tsv:61"
-      ]
-    },
-    {
-      "id": "2752-5814",
-      "page": "✅ Home 1",
-      "name": "Skai > Home > Portfo",
-      "statuses": [
-        "done",
-        "partial"
+        "status.wave4.row-conflicts.tsv:61",
+        "status.wave4.social-b.tsv:109"
       ],
-      "rows": [
-        "status.wave3.v1-supersession.tsv:22",
-        "status.wave4.row-conflicts.tsv:73"
-      ]
-    },
-    {
-      "id": "2753-8176",
-      "page": "✅ Home 1",
-      "name": "Skai > Home > Portfo",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.v1-supersession.tsv:23",
-        "status.wave4.row-conflicts.tsv:74"
-      ]
-    },
-    {
-      "id": "13008-110742",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:37",
-        "status.wave3.verify-home2.tsv:37"
-      ]
-    },
-    {
-      "id": "13008-110870",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:38",
-        "status.wave3.verify-home2.tsv:38"
-      ]
-    },
-    {
-      "id": "13008-111263",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:39",
-        "status.wave3.verify-home2.tsv:39"
-      ]
-    },
-    {
-      "id": "13008-111656",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:40",
-        "status.wave3.verify-home2.tsv:40"
-      ]
-    },
-    {
-      "id": "13008-112079",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:41",
-        "status.wave3.verify-home2.tsv:41"
-      ]
-    },
-    {
-      "id": "13008-112491",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro 1VH (1440",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:76",
-        "status.wave3.verify-home2.tsv:76"
-      ]
-    },
-    {
-      "id": "13008-113481",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:81",
-        "status.wave3.verify-home2.tsv:81"
-      ]
-    },
-    {
-      "id": "13008-113591",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:82",
-        "status.wave3.verify-home2.tsv:82"
-      ]
-    },
-    {
-      "id": "13008-113728",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:83",
-        "status.wave3.verify-home2.tsv:83"
-      ]
-    },
-    {
-      "id": "13008-113803",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:84",
-        "status.wave3.verify-home2.tsv:84"
-      ]
-    },
-    {
-      "id": "13008-113950",
-      "page": "✅ Home 2",
-      "name": "Awaiting",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:85",
-        "status.wave3.verify-home2.tsv:85"
-      ]
-    },
-    {
-      "id": "13008-113961",
-      "page": "✅ Home 2",
-      "name": "Confirmed",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:86",
-        "status.wave3.verify-home2.tsv:86"
-      ]
-    },
-    {
-      "id": "13008-113980",
-      "page": "✅ Home 2",
-      "name": "Token selected",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:87",
-        "status.wave3.verify-home2.tsv:87"
-      ]
-    },
-    {
-      "id": "13008-114000",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:88",
-        "status.wave3.verify-home2.tsv:88"
-      ]
-    },
-    {
-      "id": "13008-114351",
-      "page": "✅ Home 2",
-      "name": "dropdown-3",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:47",
-        "status.wave3.verify-home2.tsv:47"
-      ]
-    },
-    {
-      "id": "13008-114364",
-      "page": "✅ Home 2",
-      "name": "dropdown-3",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:48",
-        "status.wave3.verify-home2.tsv:48"
-      ]
-    },
-    {
-      "id": "13008-114375",
-      "page": "✅ Home 2",
-      "name": "Technicals - Sell",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:49",
-        "status.wave3.verify-home2.tsv:49"
-      ]
-    },
-    {
-      "id": "13008-114424",
-      "page": "✅ Home 2",
-      "name": "Technicals - Buy",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:50",
-        "status.wave3.verify-home2.tsv:50"
-      ]
-    },
-    {
-      "id": "13008-114473",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:110",
-        "status.wave3.verify-home2.tsv:110"
-      ]
-    },
-    {
-      "id": "13008-114604",
-      "page": "✅ Home 2",
-      "name": "sidebar - open",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:31",
-        "status.wave3.verify-home2.tsv:31"
-      ]
-    },
-    {
-      "id": "13008-114693",
-      "page": "✅ Home 2",
-      "name": "sidebar - open - age",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:32",
-        "status.wave3.verify-home2.tsv:32"
-      ]
-    },
-    {
-      "id": "13445-183914",
-      "page": "✅ Home 2",
-      "name": "sidebar - open - age",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:34",
-        "status.wave3.verify-home2.tsv:34"
-      ]
-    },
-    {
-      "id": "13008-114782",
-      "page": "✅ Home 2",
-      "name": "sidebar - open - age",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:33",
-        "status.wave3.verify-home2.tsv:33"
-      ]
-    },
-    {
-      "id": "13008-114889",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:109",
-        "status.wave3.verify-home2.tsv:109"
-      ]
-    },
-    {
-      "id": "13008-115013",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:107",
-        "status.wave3.verify-home2.tsv:107"
-      ]
-    },
-    {
-      "id": "13008-115137",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:42",
-        "status.wave3.verify-home2.tsv:42"
-      ]
-    },
-    {
-      "id": "13008-115463",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:43",
-        "status.wave3.verify-home2.tsv:43"
-      ]
-    },
-    {
-      "id": "13008-115820",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:44",
-        "status.wave3.verify-home2.tsv:44"
-      ]
-    },
-    {
-      "id": "13008-116049",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:45",
-        "status.wave3.verify-home2.tsv:45"
-      ]
-    },
-    {
-      "id": "13008-116519",
-      "page": "✅ Home 2",
-      "name": "X accounts - My list",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:51",
-        "status.wave3.verify-home2.tsv:51"
-      ]
-    },
-    {
-      "id": "13008-116574",
-      "page": "✅ Home 2",
-      "name": "X accounts - My list",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:52",
-        "status.wave3.verify-home2.tsv:52"
-      ]
-    },
-    {
-      "id": "13008-116645",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:46",
-        "status.wave3.verify-home2.tsv:46"
-      ]
-    },
-    {
-      "id": "13008-116983",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:108",
-        "status.wave3.verify-home2.tsv:108"
-      ]
-    },
-    {
-      "id": "13008-117799",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:119",
-        "status.wave3.verify-home2.tsv:119"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "13449-191068",
       "page": "✅ Home 2",
       "name": "Skai > Home > Intell",
       "statuses": [
-        "not-started",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:138",
-        "status.wave2.home2-intel-hub.tsv:1",
-        "status.wave3.verify-home2.tsv:138",
-        "status.wave4.row-conflicts.tsv:75"
-      ]
-    },
-    {
-      "id": "13459-198529",
-      "page": "✅ Home 2",
-      "name": "Normal",
-      "statuses": [
         "done",
-        "not-started",
         "partial"
       ],
       "rows": [
-        "status.home-2.tsv:140",
-        "status.wave2.home2-intel-hub.tsv:3",
-        "status.wave3.verify-home2.tsv:140",
-        "status.wave4.row-conflicts.tsv:76"
-      ]
+        "status.wave4.home-2-reverify.tsv:138",
+        "status.wave4.row-conflicts.tsv:75"
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "13458-193331",
@@ -14047,1110 +12509,13 @@
       "name": "Skai > Home > Intell",
       "statuses": [
         "frame-defect",
-        "not-started",
         "partial"
       ],
       "rows": [
-        "status.home-2.tsv:139",
-        "status.wave2.home2-intel-hub.tsv:2",
-        "status.wave3.verify-home2.tsv:139",
+        "status.wave4.home-2-reverify.tsv:139",
         "status.wave4.row-conflicts.tsv:77"
-      ]
-    },
-    {
-      "id": "13391-167925",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Intell",
-      "statuses": [
-        "done",
-        "partial"
       ],
-      "rows": [
-        "status.home-2.tsv:143",
-        "status.wave3.verify-home2.tsv:143"
-      ]
-    },
-    {
-      "id": "13391-169179",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Intell",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:144",
-        "status.wave3.verify-home2.tsv:144"
-      ]
-    },
-    {
-      "id": "13008-117924",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:121",
-        "status.wave3.verify-home2.tsv:121"
-      ]
-    },
-    {
-      "id": "13008-118096",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:122",
-        "status.wave3.verify-home2.tsv:122"
-      ]
-    },
-    {
-      "id": "13008-118266",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:123",
-        "status.wave3.verify-home2.tsv:123"
-      ]
-    },
-    {
-      "id": "13008-118458",
-      "page": "✅ Home 2",
-      "name": "Code - colour",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:124",
-        "status.wave3.verify-home2.tsv:124"
-      ]
-    },
-    {
-      "id": "13008-118480",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:120",
-        "status.wave3.verify-home2.tsv:120"
-      ]
-    },
-    {
-      "id": "13008-118798",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:125",
-        "status.wave3.verify-home2.tsv:125"
-      ]
-    },
-    {
-      "id": "13008-119988",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:57",
-        "status.wave3.verify-home2.tsv:57"
-      ]
-    },
-    {
-      "id": "13008-120075",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro (768 x 10",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:93",
-        "status.wave3.verify-home2.tsv:93"
-      ]
-    },
-    {
-      "id": "13008-120275",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:58",
-        "status.wave3.verify-home2.tsv:58"
-      ]
-    },
-    {
-      "id": "13008-120579",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:59",
-        "status.wave3.verify-home2.tsv:59"
-      ]
-    },
-    {
-      "id": "13008-120883",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:60",
-        "status.wave3.verify-home2.tsv:60"
-      ]
-    },
-    {
-      "id": "13008-121237",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:61",
-        "status.wave3.verify-home2.tsv:61"
-      ]
-    },
-    {
-      "id": "13008-121515",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:62",
-        "status.wave3.verify-home2.tsv:62"
-      ]
-    },
-    {
-      "id": "13008-121696",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:63",
-        "status.wave3.verify-home2.tsv:63"
-      ]
-    },
-    {
-      "id": "13008-121906",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:64",
-        "status.wave3.verify-home2.tsv:64"
-      ]
-    },
-    {
-      "id": "13008-122334",
-      "page": "✅ Home 2",
-      "name": "X accounts - My list",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:53",
-        "status.wave3.verify-home2.tsv:53"
-      ]
-    },
-    {
-      "id": "13008-122389",
-      "page": "✅ Home 2",
-      "name": "X accounts - My list",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:54",
-        "status.wave3.verify-home2.tsv:54"
-      ]
-    },
-    {
-      "id": "13008-122460",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:65",
-        "status.wave3.verify-home2.tsv:65"
-      ]
-    },
-    {
-      "id": "13008-122582",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.home-2.tsv:66",
-        "status.wave3.verify-home2.tsv:66"
-      ]
-    },
-    {
-      "id": "13008-122676",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:67",
-        "status.wave3.verify-home2.tsv:67"
-      ]
-    },
-    {
-      "id": "13008-122979",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:68",
-        "status.wave3.verify-home2.tsv:68"
-      ]
-    },
-    {
-      "id": "13008-123282",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:69",
-        "status.wave3.verify-home2.tsv:69"
-      ]
-    },
-    {
-      "id": "13008-123374",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:70",
-        "status.wave3.verify-home2.tsv:70"
-      ]
-    },
-    {
-      "id": "13008-123503",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:71",
-        "status.wave3.verify-home2.tsv:71"
-      ]
-    },
-    {
-      "id": "13008-123597",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro (375 x 81",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:94",
-        "status.wave3.verify-home2.tsv:94"
-      ]
-    },
-    {
-      "id": "13008-123798",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:72",
-        "status.wave3.verify-home2.tsv:72"
-      ]
-    },
-    {
-      "id": "13008-124086",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:73",
-        "status.wave3.verify-home2.tsv:73"
-      ]
-    },
-    {
-      "id": "13008-124524",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:74",
-        "status.wave3.verify-home2.tsv:74"
-      ]
-    },
-    {
-      "id": "13008-124726",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Whales",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:75",
-        "status.wave3.verify-home2.tsv:75"
-      ]
-    },
-    {
-      "id": "13008-124957",
-      "page": "✅ Home 2",
-      "name": "X accounts - My list",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:55",
-        "status.wave3.verify-home2.tsv:55"
-      ]
-    },
-    {
-      "id": "13008-125017",
-      "page": "✅ Home 2",
-      "name": "X accounts - My list",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:56",
-        "status.wave3.verify-home2.tsv:56"
-      ]
-    },
-    {
-      "id": "13008-125093",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:111",
-        "status.wave3.verify-home2.tsv:111"
-      ]
-    },
-    {
-      "id": "13008-125156",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:112",
-        "status.wave3.verify-home2.tsv:112"
-      ]
-    },
-    {
-      "id": "13008-125298",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:113",
-        "status.wave3.verify-home2.tsv:113"
-      ]
-    },
-    {
-      "id": "13008-125362",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:114",
-        "status.wave3.verify-home2.tsv:114"
-      ]
-    },
-    {
-      "id": "13008-125494",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:115",
-        "status.wave3.verify-home2.tsv:115"
-      ]
-    },
-    {
-      "id": "13008-125552",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:116",
-        "status.wave3.verify-home2.tsv:116"
-      ]
-    },
-    {
-      "id": "13008-125612",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:117",
-        "status.wave3.verify-home2.tsv:117"
-      ]
-    },
-    {
-      "id": "13008-125682",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Add > ",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:118",
-        "status.wave3.verify-home2.tsv:118"
-      ]
-    },
-    {
-      "id": "13008-125755",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:95",
-        "status.wave3.verify-home2.tsv:95"
-      ]
-    },
-    {
-      "id": "13008-125890",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:96",
-        "status.wave3.verify-home2.tsv:96"
-      ]
-    },
-    {
-      "id": "13008-126050",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:97",
-        "status.wave3.verify-home2.tsv:97"
-      ]
-    },
-    {
-      "id": "13008-126152",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:98",
-        "status.wave3.verify-home2.tsv:98"
-      ]
-    },
-    {
-      "id": "13008-126328",
-      "page": "✅ Home 2",
-      "name": "Awaiting - tablet",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:99",
-        "status.wave3.verify-home2.tsv:99"
-      ]
-    },
-    {
-      "id": "13008-126339",
-      "page": "✅ Home 2",
-      "name": "Confirmed - tablet",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:100",
-        "status.wave3.verify-home2.tsv:100"
-      ]
-    },
-    {
-      "id": "13008-126358",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:101",
-        "status.wave3.verify-home2.tsv:101"
-      ]
-    },
-    {
-      "id": "13008-126494",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:102",
-        "status.wave3.verify-home2.tsv:102"
-      ]
-    },
-    {
-      "id": "13008-126656",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:103",
-        "status.wave3.verify-home2.tsv:103"
-      ]
-    },
-    {
-      "id": "13008-126758",
-      "page": "✅ Home 2",
-      "name": "Skai > Pro > checkou",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:104",
-        "status.wave3.verify-home2.tsv:104"
-      ]
-    },
-    {
-      "id": "13008-126934",
-      "page": "✅ Home 2",
-      "name": "Awaiting - mobile",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:105",
-        "status.wave3.verify-home2.tsv:105"
-      ]
-    },
-    {
-      "id": "13008-126945",
-      "page": "✅ Home 2",
-      "name": "Confirmed - mobile",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:106",
-        "status.wave3.verify-home2.tsv:106"
-      ]
-    },
-    {
-      "id": "13008-126988",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:126",
-        "status.wave3.verify-home2.tsv:126"
-      ]
-    },
-    {
-      "id": "13008-127063",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:127",
-        "status.wave3.verify-home2.tsv:127"
-      ]
-    },
-    {
-      "id": "13008-128068",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:128",
-        "status.wave3.verify-home2.tsv:128"
-      ]
-    },
-    {
-      "id": "13008-128187",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:129",
-        "status.wave3.verify-home2.tsv:129"
-      ]
-    },
-    {
-      "id": "13008-128328",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:130",
-        "status.wave3.verify-home2.tsv:130"
-      ]
-    },
-    {
-      "id": "13008-128548",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:131",
-        "status.wave3.verify-home2.tsv:131"
-      ]
-    },
-    {
-      "id": "13008-128626",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:132",
-        "status.wave3.verify-home2.tsv:132"
-      ]
-    },
-    {
-      "id": "13008-129631",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:133",
-        "status.wave3.verify-home2.tsv:133"
-      ]
-    },
-    {
-      "id": "13008-129753",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:134",
-        "status.wave3.verify-home2.tsv:134"
-      ]
-    },
-    {
-      "id": "13008-129897",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:135",
-        "status.wave3.verify-home2.tsv:135"
-      ]
-    },
-    {
-      "id": "13008-130123",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:136",
-        "status.wave3.verify-home2.tsv:136"
-      ]
-    },
-    {
-      "id": "13008-130217",
-      "page": "✅ Home 2",
-      "name": "Skai > Home > Agenti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.home-2.tsv:137",
-        "status.wave3.verify-home2.tsv:137"
-      ]
-    },
-    {
-      "id": "3886-15237",
-      "page": "✅ Trade 1",
-      "name": "Skai > Trade > Spot ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.v1-supersession.tsv:113",
-        "status.wave4.row-conflicts.tsv:80"
-      ]
-    },
-    {
-      "id": "3903-21478",
-      "page": "✅ Trade 1",
-      "name": "Skai > Trade > Perpe",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.v1-supersession.tsv:118",
-        "status.wave4.row-conflicts.tsv:81"
-      ]
-    },
-    {
-      "id": "9934-141532",
-      "page": "✅ Trade 1",
-      "name": "Skai > Trade > Perpe",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.v1-supersession.tsv:168",
-        "status.wave4.row-conflicts.tsv:82"
-      ]
-    },
-    {
-      "id": "9934-144131",
-      "page": "✅ Trade 1",
-      "name": "Skai > Trade > Perpe",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.v1-supersession.tsv:169",
-        "status.wave4.row-conflicts.tsv:83"
-      ]
-    },
-    {
-      "id": "13006-134301",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trench 1VH (1",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:60",
-        "status.wave4.row-conflicts.tsv:84"
-      ]
-    },
-    {
-      "id": "13006-135613",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trench - actu",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:61",
-        "status.wave4.row-conflicts.tsv:85"
-      ]
-    },
-    {
-      "id": "13006-144635",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trade - dropd",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:1",
-        "status.wave3.verify-trade2.tsv:84"
-      ]
-    },
-    {
-      "id": "13006-146233",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch 1VH (1",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:3",
-        "status.wave3.verify-trade2.tsv:86"
-      ]
-    },
-    {
-      "id": "13006-147486",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:33",
-        "status.wave3.verify-trade2.tsv:109"
-      ]
-    },
-    {
-      "id": "13006-147876",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:40",
-        "status.wave3.verify-trade2.tsv:116"
-      ]
-    },
-    {
-      "id": "13006-148299",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "frame-defect"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:34",
-        "status.wave3.verify-trade2.tsv:110",
-        "status.wave4.row-conflicts.tsv:86"
-      ]
-    },
-    {
-      "id": "13006-148857",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Live",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:15",
-        "status.wave3.verify-trade2.tsv:95"
-      ]
-    },
-    {
-      "id": "13006-149613",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Live",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:16",
-        "status.wave3.verify-trade2.tsv:96",
-        "status.wave4.row-conflicts.tsv:87"
-      ]
-    },
-    {
-      "id": "13006-150346",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch (1440 ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:4",
-        "status.wave3.verify-trade2.tsv:87",
-        "status.wave4.row-conflicts.tsv:90"
-      ]
-    },
-    {
-      "id": "13006-151520",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch (1440 ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:5",
-        "status.wave3.verify-trade2.tsv:88"
-      ]
-    },
-    {
-      "id": "13006-152694",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch (1440 ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:6",
-        "status.wave3.verify-trade2.tsv:89"
-      ]
-    },
-    {
-      "id": "13006-155671",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trench > Disp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:62",
-        "status.wave4.row-conflicts.tsv:93"
-      ]
-    },
-    {
-      "id": "13006-159412",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trench > Disp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:63",
-        "status.wave4.row-conflicts.tsv:94"
-      ]
-    },
-    {
-      "id": "13006-176980",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trench > Filt",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:66",
-        "status.wave4.row-conflicts.tsv:95"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "13006-179860",
@@ -15161,9 +12526,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-trade2.tsv:67",
-        "status.wave4.row-conflicts.tsv:96"
-      ]
+        "status.wave4.row-conflicts.tsv:96",
+        "status.wave4.trade-2-partial.tsv:19"
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "13006-180340",
@@ -15174,101 +12540,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-trade2.tsv:68",
-        "status.wave4.row-conflicts.tsv:97"
-      ]
-    },
-    {
-      "id": "13006-230793",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trench > Trad",
-      "statuses": [
-        "done",
-        "partial"
+        "status.wave4.row-conflicts.tsv:97",
+        "status.wave4.trade-2-partial.tsv:20"
       ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:81",
-        "status.wave4.row-conflicts.tsv:103"
-      ]
-    },
-    {
-      "id": "13006-241485",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:21",
-        "status.wave3.verify-trade2.tsv:97"
-      ]
-    },
-    {
-      "id": "13006-243693",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > new ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:24",
-        "status.wave3.verify-trade2.tsv:100"
-      ]
-    },
-    {
-      "id": "13006-245903",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:27",
-        "status.wave3.verify-trade2.tsv:103"
-      ]
-    },
-    {
-      "id": "13006-246173",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:30",
-        "status.wave3.verify-trade2.tsv:106"
-      ]
-    },
-    {
-      "id": "13006-250464",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trade - dropd",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:2",
-        "status.wave3.verify-trade2.tsv:85"
-      ]
-    },
-    {
-      "id": "13006-252779",
-      "page": "✅ Trade 2",
-      "name": "PnL Tracker",
-      "statuses": [
-        "blocked-on-backend",
-        "done"
-      ],
-      "rows": [
-        "status.wave2.trench-pnl.tsv:1",
-        "status.wave2.trench-pnl.tsv:6",
-        "status.wave4.row-conflicts.tsv:108"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "13006-260059",
@@ -15279,9 +12554,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-trade2.tsv:1",
-        "status.wave4.row-conflicts.tsv:113"
-      ]
+        "status.wave4.row-conflicts.tsv:113",
+        "status.wave4.trade-2-partial.tsv:33"
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "13006-269297",
@@ -15292,9 +12568,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-trade2.tsv:8",
-        "status.wave4.row-conflicts.tsv:115"
-      ]
+        "status.wave4.row-conflicts.tsv:115",
+        "status.wave4.trade-2-partial.tsv:17"
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "13006-270061",
@@ -15305,287 +12582,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-trade2.tsv:9",
-        "status.wave4.row-conflicts.tsv:116"
-      ]
-    },
-    {
-      "id": "13006-270826",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trade > Trenc",
-      "statuses": [
-        "done",
-        "partial"
+        "status.wave4.row-conflicts.tsv:116",
+        "status.wave4.trade-2-partial.tsv:18"
       ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:10",
-        "status.wave4.row-conflicts.tsv:117"
-      ]
-    },
-    {
-      "id": "13006-278955",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch (768 x",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:8",
-        "status.wave3.verify-trade2.tsv:91",
-        "status.wave4.row-conflicts.tsv:126"
-      ]
-    },
-    {
-      "id": "13006-279872",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch (768 x",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:7",
-        "status.wave3.verify-trade2.tsv:90"
-      ]
-    },
-    {
-      "id": "13006-280789",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch (375 x",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:9",
-        "status.wave3.verify-trade2.tsv:92"
-      ]
-    },
-    {
-      "id": "13006-281378",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch (375 x",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:10",
-        "status.wave3.verify-trade2.tsv:93"
-      ]
-    },
-    {
-      "id": "13006-282582",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch (375 x",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:11",
-        "status.wave3.verify-trade2.tsv:94",
-        "status.wave4.row-conflicts.tsv:128"
-      ]
-    },
-    {
-      "id": "13006-284221",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:32",
-        "status.wave3.verify-trade2.tsv:108"
-      ]
-    },
-    {
-      "id": "13006-284353",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:37",
-        "status.wave3.verify-trade2.tsv:113"
-      ]
-    },
-    {
-      "id": "13006-284612",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:44",
-        "status.wave3.verify-trade2.tsv:120"
-      ]
-    },
-    {
-      "id": "13006-284880",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:42",
-        "status.wave3.verify-trade2.tsv:118"
-      ]
-    },
-    {
-      "id": "13006-285189",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:38",
-        "status.wave3.verify-trade2.tsv:114",
-        "status.wave4.row-conflicts.tsv:132"
-      ]
-    },
-    {
-      "id": "13006-285448",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:39",
-        "status.wave3.verify-trade2.tsv:115",
-        "status.wave4.row-conflicts.tsv:133"
-      ]
-    },
-    {
-      "id": "13006-285797",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:29",
-        "status.wave3.verify-trade2.tsv:105"
-      ]
-    },
-    {
-      "id": "13006-285929",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:28",
-        "status.wave3.verify-trade2.tsv:104"
-      ]
-    },
-    {
-      "id": "13006-286114",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:31",
-        "status.wave3.verify-trade2.tsv:107"
-      ]
-    },
-    {
-      "id": "13006-286299",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:35",
-        "status.wave3.verify-trade2.tsv:111"
-      ]
-    },
-    {
-      "id": "13006-286595",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:41",
-        "status.wave3.verify-trade2.tsv:117"
-      ]
-    },
-    {
-      "id": "13006-286941",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:43",
-        "status.wave3.verify-trade2.tsv:119"
-      ]
-    },
-    {
-      "id": "13006-287246",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:36",
-        "status.wave3.verify-trade2.tsv:112",
-        "status.wave4.row-conflicts.tsv:134"
-      ]
-    },
-    {
-      "id": "13006-299940",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trade > Trenc",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:21",
-        "status.wave4.row-conflicts.tsv:138"
-      ]
-    },
-    {
-      "id": "13006-301601",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trade > Trenc",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-trade2.tsv:22",
-        "status.wave4.row-conflicts.tsv:139"
-      ]
+      "kind": "same-generation"
     },
     {
       "id": "13006-319525",
@@ -15596,9 +12596,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-trade2.tsv:35",
-        "status.wave4.row-conflicts.tsv:143"
-      ]
+        "status.wave4.row-conflicts.tsv:143",
+        "status.wave4.trade-2-partial.tsv:23"
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "13006-319762",
@@ -15609,9 +12610,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-trade2.tsv:36",
-        "status.wave4.row-conflicts.tsv:144"
-      ]
+        "status.wave4.row-conflicts.tsv:144",
+        "status.wave4.trade-2-partial.tsv:24"
+      ],
+      "kind": "same-generation"
     },
     {
       "id": "13006-320262",
@@ -15622,1532 +12624,10 @@
         "partial"
       ],
       "rows": [
-        "status.wave3.verify-trade2.tsv:37",
-        "status.wave4.row-conflicts.tsv:145"
-      ]
-    },
-    {
-      "id": "13006-350388",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
+        "status.wave4.row-conflicts.tsv:145",
+        "status.wave4.trade-2-partial.tsv:25"
       ],
-      "rows": [
-        "status.trade-2.launch.tsv:23",
-        "status.wave3.verify-trade2.tsv:99"
-      ]
-    },
-    {
-      "id": "13006-351379",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > new ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:26",
-        "status.wave3.verify-trade2.tsv:102"
-      ]
-    },
-    {
-      "id": "13006-353851",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:22",
-        "status.wave3.verify-trade2.tsv:98"
-      ]
-    },
-    {
-      "id": "13006-355256",
-      "page": "✅ Trade 2",
-      "name": "Skai > Launch > new ",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.trade-2.launch.tsv:25",
-        "status.wave3.verify-trade2.tsv:101"
-      ]
-    },
-    {
-      "id": "9003-117337",
-      "page": "✅ Blackjack - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:63",
-        "status.wave4.row-conflicts.tsv:160"
-      ]
-    },
-    {
-      "id": "9003-118852",
-      "page": "✅ Blackjack - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:64",
-        "status.wave4.row-conflicts.tsv:161"
-      ]
-    },
-    {
-      "id": "9003-119356",
-      "page": "✅ Blackjack - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:65",
-        "status.wave4.row-conflicts.tsv:162"
-      ]
-    },
-    {
-      "id": "9003-119858",
-      "page": "✅ Blackjack - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:66",
-        "status.wave4.row-conflicts.tsv:163"
-      ]
-    },
-    {
-      "id": "9178-4037",
-      "page": "✅ Blackjack - Skai originals",
-      "name": "Mid Game button acti",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:67",
-        "status.wave4.row-conflicts.tsv:164"
-      ]
-    },
-    {
-      "id": "9178-8446",
-      "page": "✅ Blackjack - Skai originals",
-      "name": "Side Bet Tab",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:68",
-        "status.wave4.row-conflicts.tsv:165"
-      ]
-    },
-    {
-      "id": "9178-10465",
-      "page": "✅ Blackjack - Skai originals",
-      "name": "Side Bet Mobile",
-      "statuses": [
-        "done",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:74",
-        "status.wave4.row-conflicts.tsv:166"
-      ]
-    },
-    {
-      "id": "9178-14731",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:126",
-        "status.wave4.games-uncovered.tsv:1"
-      ]
-    },
-    {
-      "id": "9178-14783",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Continuous Tab",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:127",
-        "status.wave4.games-uncovered.tsv:12"
-      ]
-    },
-    {
-      "id": "9190-14926",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Desktop Continuous",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:128",
-        "status.wave4.games-uncovered.tsv:4"
-      ]
-    },
-    {
-      "id": "9190-14969",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Target Tab",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:129",
-        "status.wave4.games-uncovered.tsv:13"
-      ]
-    },
-    {
-      "id": "9190-16383",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Target Tab Auto",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:130",
-        "status.wave4.games-uncovered.tsv:14"
-      ]
-    },
-    {
-      "id": "9190-15379",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Desktop Target",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:133",
-        "status.wave4.games-uncovered.tsv:5"
-      ]
-    },
-    {
-      "id": "9190-16004",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Desktop Post Bet Tar",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:134",
-        "status.wave4.games-uncovered.tsv:6"
-      ]
-    },
-    {
-      "id": "9204-16958",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Target Tab Auto",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:135",
-        "status.wave4.games-uncovered.tsv:15"
-      ]
-    },
-    {
-      "id": "9204-17182",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Auto Classic Tab",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:136",
-        "status.wave4.games-uncovered.tsv:16"
-      ]
-    },
-    {
-      "id": "9204-17308",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Desktop Auto Classic",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:137",
-        "status.wave4.games-uncovered.tsv:7"
-      ]
-    },
-    {
-      "id": "9204-17690",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Desktop Auto Classic",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:138",
-        "status.wave4.games-uncovered.tsv:8"
-      ]
-    },
-    {
-      "id": "9204-17982",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Continuous Tab",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:139",
-        "status.wave4.games-uncovered.tsv:17"
-      ]
-    },
-    {
-      "id": "9204-18090",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Target Tab",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:140",
-        "status.wave4.games-uncovered.tsv:18"
-      ]
-    },
-    {
-      "id": "9204-18220",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Target Tab Auto",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:141",
-        "status.wave4.games-uncovered.tsv:19"
-      ]
-    },
-    {
-      "id": "9204-18489",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Target Tab Auto Adva",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:142",
-        "status.wave4.games-uncovered.tsv:20"
-      ]
-    },
-    {
-      "id": "9206-19430",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Auto Classic Tab",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:143",
-        "status.wave4.games-uncovered.tsv:21"
-      ]
-    },
-    {
-      "id": "9206-19612",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Auto Advanced Classi",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:144",
-        "status.wave4.games-uncovered.tsv:22"
-      ]
-    },
-    {
-      "id": "9206-19903",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Mobile",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:145",
-        "status.wave4.games-uncovered.tsv:10"
-      ]
-    },
-    {
-      "id": "9207-20110",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Mobile",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:146",
-        "status.wave4.games-uncovered.tsv:11"
-      ]
-    },
-    {
-      "id": "9208-20333",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Mobile",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:147",
-        "status.wave4.games-uncovered.tsv:9"
-      ]
-    },
-    {
-      "id": "10215-5078",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:159",
-        "status.wave4.games-uncovered.tsv:2"
-      ]
-    },
-    {
-      "id": "10215-6194",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:160",
-        "status.wave4.games-uncovered.tsv:3"
-      ]
-    },
-    {
-      "id": "10221-6245",
-      "page": "✅ Coinflip - Skai originals",
-      "name": "Frame 1000004020",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:161",
-        "status.wave4.games-uncovered.tsv:23"
-      ]
-    },
-    {
-      "id": "9220-26119",
-      "page": "✅ Scratchers - Skai originals",
-      "name": "modal",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:179",
-        "status.wave4.row-conflicts.tsv:169"
-      ]
-    },
-    {
-      "id": "9061-9472",
-      "page": "✅ Hi-Lo - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "frame-defect",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:220",
-        "status.wave4.row-conflicts.tsv:171"
-      ]
-    },
-    {
-      "id": "9058-4372",
-      "page": "✅ Hi-Lo - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "frame-defect",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:221",
-        "status.wave4.row-conflicts.tsv:172"
-      ]
-    },
-    {
-      "id": "9332-27320",
-      "page": "✅ Hi-Lo - Skai originals",
-      "name": "Mobile",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:225",
-        "status.wave4.row-conflicts.tsv:173"
-      ]
-    },
-    {
-      "id": "10248-9763",
-      "page": "✅ Hi-Lo - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:228",
-        "status.wave4.row-conflicts.tsv:175"
-      ]
-    },
-    {
-      "id": "10249-9938",
-      "page": "✅ Hi-Lo - Skai originals",
-      "name": "Frame 1000004045",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:229",
-        "status.wave4.row-conflicts.tsv:176"
-      ]
-    },
-    {
-      "id": "9411-7955",
-      "page": "✅ Darts - Skai originals",
-      "name": "Medium Desktop Full ",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:238",
-        "status.wave4.row-conflicts.tsv:178"
-      ]
-    },
-    {
-      "id": "9411-7977",
-      "page": "✅ Darts - Skai originals",
-      "name": "Hard Desktop Full Ga",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:239",
-        "status.wave4.row-conflicts.tsv:179"
-      ]
-    },
-    {
-      "id": "9433-16420",
-      "page": "✅ Darts - Skai originals",
-      "name": "Easy Desktop - In Pl",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:248",
-        "status.wave4.row-conflicts.tsv:180"
-      ]
-    },
-    {
-      "id": "9455-19001",
-      "page": "✅ Darts - Skai originals",
-      "name": "Mobile Medium",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:253",
-        "status.wave4.row-conflicts.tsv:181"
-      ]
-    },
-    {
-      "id": "9467-19582",
-      "page": "✅ Darts - Skai originals",
-      "name": "Mobile Hard",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:254",
-        "status.wave4.row-conflicts.tsv:182"
-      ]
-    },
-    {
-      "id": "9433-14989",
-      "page": "✅ Keno - Skai originals",
-      "name": "Frame 1000003780",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:267",
-        "status.wave4.games-uncovered.tsv:36"
-      ]
-    },
-    {
-      "id": "9433-15057",
-      "page": "✅ Keno - Skai originals",
-      "name": "Frame 1000003781",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:268",
-        "status.wave4.games-uncovered.tsv:37"
-      ]
-    },
-    {
-      "id": "9481-20645",
-      "page": "✅ Keno - Skai originals",
-      "name": "Desktop Selection",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:269",
-        "status.wave4.games-uncovered.tsv:25"
-      ]
-    },
-    {
-      "id": "9481-20950",
-      "page": "✅ Keno - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:270",
-        "status.wave4.games-uncovered.tsv:24"
-      ]
-    },
-    {
-      "id": "9481-21797",
-      "page": "✅ Keno - Skai originals",
-      "name": "Desktop win",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:271",
-        "status.wave4.games-uncovered.tsv:26"
-      ]
-    },
-    {
-      "id": "9680-3956",
-      "page": "✅ Keno - Skai originals",
-      "name": "Frame 1000004044",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:276",
-        "status.wave4.games-uncovered.tsv:32"
-      ]
-    },
-    {
-      "id": "9680-5126",
-      "page": "✅ Keno - Skai originals",
-      "name": "Frame 1000004107",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:277",
-        "status.wave4.games-uncovered.tsv:33"
-      ]
-    },
-    {
-      "id": "9680-5236",
-      "page": "✅ Keno - Skai originals",
-      "name": "Frame 1000004108",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:278",
-        "status.wave4.games-uncovered.tsv:34"
-      ]
-    },
-    {
-      "id": "9680-6277",
-      "page": "✅ Keno - Skai originals",
-      "name": "Auto Advanced Displa",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:279",
-        "status.wave4.games-uncovered.tsv:35"
-      ]
-    },
-    {
-      "id": "9683-8908",
-      "page": "✅ Keno - Skai originals",
-      "name": "Desktop loss",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:280",
-        "status.wave4.games-uncovered.tsv:27"
-      ]
-    },
-    {
-      "id": "9690-9544",
-      "page": "✅ Keno - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:284",
-        "status.wave4.games-uncovered.tsv:28"
-      ]
-    },
-    {
-      "id": "9690-9912",
-      "page": "✅ Keno - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:285",
-        "status.wave4.games-uncovered.tsv:29"
-      ]
-    },
-    {
-      "id": "9690-10413",
-      "page": "✅ Keno - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:286",
-        "status.wave4.games-uncovered.tsv:30"
-      ]
-    },
-    {
-      "id": "9690-10777",
-      "page": "✅ Keno - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:287",
-        "status.wave4.games-uncovered.tsv:31"
-      ]
-    },
-    {
-      "id": "9760-9610",
-      "page": "✅ Video Poker - Skai originals",
-      "name": "Frame 1000004211",
-      "statuses": [
-        "frame-defect",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:322",
-        "status.wave4.row-conflicts.tsv:185"
-      ]
-    },
-    {
-      "id": "9807-5523",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Starting ALT",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:332",
-        "status.wave4.games-uncovered.tsv:58"
-      ]
-    },
-    {
-      "id": "9776-11368",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:334",
-        "status.wave4.games-uncovered.tsv:52"
-      ]
-    },
-    {
-      "id": "9776-11569",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:335",
-        "status.wave4.games-uncovered.tsv:54"
-      ]
-    },
-    {
-      "id": "9776-11790",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:336",
-        "status.wave4.games-uncovered.tsv:53"
-      ]
-    },
-    {
-      "id": "9794-12191",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:337",
-        "status.wave4.games-uncovered.tsv:55"
-      ]
-    },
-    {
-      "id": "9794-12346",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:338",
-        "status.wave4.games-uncovered.tsv:56"
-      ]
-    },
-    {
-      "id": "9798-12672",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:339",
-        "status.wave4.games-uncovered.tsv:57"
-      ]
-    },
-    {
-      "id": "9798-13370",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Frame 1000004107",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:340",
-        "status.wave4.games-uncovered.tsv:59"
-      ]
-    },
-    {
-      "id": "9798-13459",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Frame 1000004106",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:341",
-        "status.wave4.games-uncovered.tsv:60"
-      ]
-    },
-    {
-      "id": "9798-13760",
-      "page": "✅ Bingo - Skai originals",
-      "name": "Frame 1000004218",
-      "statuses": [
-        "furniture",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:342",
-        "status.wave4.games-uncovered.tsv:61"
-      ]
-    },
-    {
-      "id": "9799-16713",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "not-started",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:347",
-        "status.wave4.row-conflicts.tsv:186"
-      ]
-    },
-    {
-      "id": "9799-18183",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "not-started",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:348",
-        "status.wave4.row-conflicts.tsv:187"
-      ]
-    },
-    {
-      "id": "9799-19202",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:349",
-        "status.wave4.games-uncovered.tsv:63"
-      ]
-    },
-    {
-      "id": "9815-19487",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:353",
-        "status.wave4.games-uncovered.tsv:62"
-      ]
-    },
-    {
-      "id": "9820-20610",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:354",
-        "status.wave4.games-uncovered.tsv:64"
-      ]
-    },
-    {
-      "id": "10250-14407",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:355",
-        "status.wave4.games-uncovered.tsv:65",
-        "status.wave4.row-conflicts.tsv:188"
-      ]
-    },
-    {
-      "id": "9825-21494",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Frame 270",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:356",
-        "status.wave4.games-uncovered.tsv:67"
-      ]
-    },
-    {
-      "id": "9825-21726",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Frame 1000004100",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:357",
-        "status.wave4.games-uncovered.tsv:66"
-      ]
-    },
-    {
-      "id": "9825-21961",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Frame 1000003780",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:358",
-        "status.wave4.games-uncovered.tsv:68"
-      ]
-    },
-    {
-      "id": "9873-2611",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Frame 1000004103",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:359",
-        "status.wave4.games-uncovered.tsv:69"
-      ]
-    },
-    {
-      "id": "9903-2037",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Frame 1000004250",
-      "statuses": [
-        "furniture",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:361",
-        "status.wave4.games-uncovered.tsv:70"
-      ]
-    },
-    {
-      "id": "9903-2040",
-      "page": "✅ Baccarat - Skai originals",
-      "name": "Frame 1000004251",
-      "statuses": [
-        "furniture",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:362",
-        "status.wave4.games-uncovered.tsv:71"
-      ]
-    },
-    {
-      "id": "9799-16557",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:370",
-        "status.wave4.games-uncovered.tsv:74"
-      ]
-    },
-    {
-      "id": "9900-949",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Group 329 1",
-      "statuses": [
-        "furniture",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:373",
-        "status.wave4.games-uncovered.tsv:84"
-      ]
-    },
-    {
-      "id": "9903-1150",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Frame 1000004246",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:374",
-        "status.wave4.games-uncovered.tsv:81"
-      ]
-    },
-    {
-      "id": "9903-2404",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:375",
-        "status.wave4.games-uncovered.tsv:76"
-      ]
-    },
-    {
-      "id": "9903-2608",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:376",
-        "status.wave4.games-uncovered.tsv:77"
-      ]
-    },
-    {
-      "id": "9903-3303",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:377",
-        "status.wave4.games-uncovered.tsv:78"
-      ]
-    },
-    {
-      "id": "9903-2891",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Frame 270",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:378",
-        "status.wave4.games-uncovered.tsv:83"
-      ]
-    },
-    {
-      "id": "9903-3025",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Frame 1000004247",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:379",
-        "status.wave4.games-uncovered.tsv:82"
-      ]
-    },
-    {
-      "id": "9903-4652",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Mobile",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:380",
-        "status.wave4.games-uncovered.tsv:79"
-      ]
-    },
-    {
-      "id": "9948-22956",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Starting",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:382",
-        "status.wave4.games-uncovered.tsv:75"
-      ]
-    },
-    {
-      "id": "10250-14562",
-      "page": "✅ Roulette - Skai originals",
-      "name": "Mobile",
-      "statuses": [
-        "frame-defect",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:384",
-        "status.wave4.games-uncovered.tsv:80"
-      ]
-    },
-    {
-      "id": "10004-29637",
-      "page": "✅ Limbo - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.limbo.tsv:17",
-        "status.wave3.verify-games.tsv:391"
-      ]
-    },
-    {
-      "id": "10004-29705",
-      "page": "✅ Limbo - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.limbo.tsv:18",
-        "status.wave3.verify-games.tsv:392"
-      ]
-    },
-    {
-      "id": "10004-29756",
-      "page": "✅ Limbo - Skai originals",
-      "name": "Frame 270",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.limbo.tsv:19",
-        "status.wave3.verify-games.tsv:393"
-      ]
-    },
-    {
-      "id": "10004-29965",
-      "page": "✅ Limbo - Skai originals",
-      "name": "Frame 1000004293",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.limbo.tsv:20",
-        "status.wave3.verify-games.tsv:394"
-      ]
-    },
-    {
-      "id": "10021-30111",
-      "page": "✅ Limbo - Skai originals",
-      "name": "Mobile",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.limbo.tsv:21",
-        "status.wave3.verify-games.tsv:395"
-      ]
-    },
-    {
-      "id": "10021-30457",
-      "page": "✅ Limbo - Skai originals",
-      "name": "Frame 1000004295",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.limbo.tsv:22",
-        "status.wave3.verify-games.tsv:396"
-      ]
-    },
-    {
-      "id": "10021-30525",
-      "page": "✅ Limbo - Skai originals",
-      "name": "Frame 1000004296",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.limbo.tsv:23",
-        "status.wave3.verify-games.tsv:397"
-      ]
-    },
-    {
-      "id": "9907-10355",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:405",
-        "status.wave4.games-uncovered.tsv:38"
-      ]
-    },
-    {
-      "id": "9929-16698",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:406",
-        "status.wave4.games-uncovered.tsv:39"
-      ]
-    },
-    {
-      "id": "9929-16830",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:407",
-        "status.wave4.games-uncovered.tsv:40"
-      ]
-    },
-    {
-      "id": "9935-17641",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:408",
-        "status.wave4.games-uncovered.tsv:41"
-      ]
-    },
-    {
-      "id": "9935-17766",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:409",
-        "status.wave4.games-uncovered.tsv:42"
-      ]
-    },
-    {
-      "id": "9935-17987",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:410",
-        "status.wave4.games-uncovered.tsv:43"
-      ]
-    },
-    {
-      "id": "9935-18096",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:411",
-        "status.wave4.games-uncovered.tsv:44"
-      ]
-    },
-    {
-      "id": "9937-18748",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:412",
-        "status.wave4.games-uncovered.tsv:45"
-      ]
-    },
-    {
-      "id": "9937-19990",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Frame 1000004104",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:414",
-        "status.wave4.games-uncovered.tsv:48"
-      ]
-    },
-    {
-      "id": "9937-21778",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop Target",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:415",
-        "status.wave4.games-uncovered.tsv:46"
-      ]
-    },
-    {
-      "id": "9937-22037",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Desktop Target",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:416",
-        "status.wave4.games-uncovered.tsv:47"
-      ]
-    },
-    {
-      "id": "9941-22458",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Frame 1000004283",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:419",
-        "status.wave4.games-uncovered.tsv:49"
-      ]
-    },
-    {
-      "id": "9948-24339",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Frame 1000004291",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:421",
-        "status.wave4.games-uncovered.tsv:50"
-      ]
-    },
-    {
-      "id": "9948-24437",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "name": "Frame 1000004292",
-      "statuses": [
-        "blocked-on-backend",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:422",
-        "status.wave4.games-uncovered.tsv:51"
-      ]
-    },
-    {
-      "id": "10030-30838",
-      "page": "✅ Price Grid - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "frame-defect",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.frame-defects.tsv:8",
-        "status.wave3.verify-games.tsv:445",
-        "status.wave4.row-conflicts.tsv:191"
-      ]
-    },
-    {
-      "id": "9907-8770",
-      "page": "✅ Price Grid - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "blocked-on-backend",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:446",
-        "status.wave4.row-conflicts.tsv:192"
-      ]
-    },
-    {
-      "id": "10030-39086",
-      "page": "✅ Price Grid - Skai originals",
-      "name": "Skai > Play > Casino",
-      "statuses": [
-        "blocked-on-backend",
-        "partial"
-      ],
-      "rows": [
-        "status.wave3.verify-games.tsv:458",
-        "status.wave4.row-conflicts.tsv:193"
-      ]
+      "kind": "same-generation"
     }
   ]
 }

@@ -27,6 +27,7 @@ import {
   isSkippableStatusLine,
   normaliseStatus,
   parseBpCell,
+  parseRowKey,
   resolveSection,
   SECTION_FILE_ALIASES,
   splitStatusLine,
@@ -56,7 +57,10 @@ const reg = JSON.parse(fs.readFileSync(regPath, "utf8"));
 // to zero frames**. `resolveSection` maps them; a file it cannot resolve is
 // REPORTED, never silently skipped.
 const REAL_SECTIONS = new Set(Object.values(reg.frames).map((f) => f.section));
-const unresolvedFiles = [];
+/** Rows that name neither a node id nor a resolvable section — reported, never guessed. */
+const unaddressable = [];
+/** Section-level rollup rows, kept for their reasoning and deliberately NOT applied to frames. */
+const rollupBySection = {};
 const SECTIONS = fs
   .readdirSync(DIR)
   .map((f) => /^status\.(.+)\.tsv$/.exec(f))
@@ -64,10 +68,30 @@ const SECTIONS = fs
   .map((m) => {
     const stem = m[1];
     const section = resolveSection(stem, REAL_SECTIONS);
-    if (section === null && !SECTION_FILE_ALIASES.has(stem)) unresolvedFiles.push(stem);
     return { stem, section };
   })
-  .filter((s) => s.section !== null)
+  /*
+    ⚠️ THERE USED TO BE A `.filter((s) => s.section !== null)` HERE, AND IT WAS
+    THE SAME BUG A FOURTH TIME — the worst-behaved instance of it, because the
+    alias map made it SILENT.
+
+    A file resolving to no section was dropped whole. Files listed in
+    SECTION_FILE_ALIASES with a `null` value were dropped too, and because
+    `SECTION_FILE_ALIASES.has(stem)` was true they were also excluded from the
+    warning below. So declaring a file "cross-cutting by design" — the documented
+    thing to do — was what guaranteed nobody would ever be told its rows applied
+    to nothing.
+
+    Measured 2026-08-26, before this change: 988 addressable rows were being
+    discarded, among them ALL 500 rows of `status.wave3.verify-games.tsv` and all
+    195 of `status.wave3.v1-supersession.tsv`. Both key by bare node id, so every
+    one of them could have been applied without knowing the file's section at all.
+
+    ★ The section is a FALLBACK for addressing a row, not a precondition for
+    reading the file. Sections are kept even when null; `parseRowKey` decides per
+    row whether it can be addressed, and a row that genuinely cannot be is
+    reported by file and line rather than dropped with its 3,943 neighbours.
+  */
   .sort((a, b) => a.stem.localeCompare(b.stem));
 // ⚠️ THIS SET HAD THE EXACT BUG THE COMMENT ABOVE DESCRIBES, one line later.
 //
@@ -176,14 +200,31 @@ for (const { stem, section: sec } of SECTIONS) {
       An id match is also strictly better than a family match — `registry.frames`
       is keyed by node id, so it addresses ONE frame instead of every frame
       sharing a screen name.
+
+      ⚠️ AND THE BRACKET FORM IS NOT THE ONLY SELF-ADDRESSING ONE. This regex
+      required brackets, so `status.wave3.verify-games.tsv` (500 rows keyed by a
+      BARE `9178:14731`) and `status.wave4.games-radius.tsv` (10 rows keyed
+      `play/blackjack-detail`) fell through to the family branch and were filed
+      under a section they did not belong to — or, for a section-less file,
+      dropped outright. `parseRowKey` in bp.mjs handles all three forms and is
+      shared with bp-report.mjs so a fifth copy cannot drift.
     */
-    const idMatch = /\[(\d{3,7}[-:]\d{1,7})\]/.exec(row.family);
-    if (idMatch) {
-      const nodeId = idMatch[1].replace(":", "-");
-      statusById[nodeId] = verdict;
-    } else {
-      statusByFam[`${sec}/${row.family}`] = verdict;
+    const addr = parseRowKey(row.family, sec, REAL_SECTIONS);
+    if (addr === null) {
+      // Only reachable for a BARE family name in a file with no resolvable
+      // section — the one shape that genuinely cannot be addressed. Reported
+      // with file and line, never guessed at: attaching a measured verdict to
+      // frames nobody looked at is worse than dropping it, and much harder to
+      // notice later.
+      unaddressable.push(where);
+      continue;
     }
+    if (addr.kind === "id") statusById[addr.nodeId] = verdict;
+    // A section rollup is KEPT but not applied — see the Form D note in bp.mjs.
+    // It lands in registry.rollups so the reasoning survives, without any frame
+    // inheriting a verdict nobody measured at that frame's width.
+    else if (addr.kind === "section") rollupBySection[addr.section] = { ...verdict, from: where };
+    else statusByFam[`${addr.section}/${addr.family}`] = verdict;
     loaded++;
   }
 }
@@ -250,6 +291,12 @@ for (const [key, s] of Object.entries(statusByFam)) {
   };
 }
 
+// Section rollups: one row standing for a whole game/section. Stored under their
+// own key so no consumer can mistake them for per-frame parity — the `status`
+// here is an assessment of the SECTION, and the frames inside it keep whatever
+// they were individually measured at (usually `unknown`).
+reg.rollups = rollupBySection;
+
 reg.generated = new Date().toISOString();
 fs.writeFileSync(regPath, JSON.stringify(reg, null, 2));
 
@@ -275,16 +322,22 @@ if (unmatchedIds.length) {
     `\n⚠️  ${unmatchedIds.length} id-keyed row(s) name a node no registry frame carries (stale id, nested child, or a frame the harvest never saw).`,
   );
 }
-// A status file whose section cannot be resolved applies to ZERO frames. That
-// used to happen silently for 1,458 rows. Say so, every run.
-if (unresolvedFiles.length) {
+// A row that names neither a node id nor a resolvable section applies to ZERO
+// frames. This warning is now per ROW rather than per FILE: a section-less file
+// is fine as long as its rows address themselves, and 988 rows that did were
+// being thrown away with the ~100 that did not. Reported every run, with the
+// line number, because "cross-cutting by design" used to suppress the message
+// entirely and that is how the largest loss went unnoticed for three waves.
+if (unaddressable.length) {
   console.log(
-    `\n⚠️  ${unresolvedFiles.length} status file(s) resolve to NO registry section, so their rows apply to zero frames:`,
+    `\n⚠️  ${unaddressable.length} row(s) name neither a node id nor a resolvable section, so they apply to zero frames:`,
   );
-  for (const f of unresolvedFiles) console.log(`      status.${f}.tsv`);
+  for (const w of unaddressable.slice(0, 25)) console.log(`      ${w}`);
+  if (unaddressable.length > 25) console.log(`      … and ${unaddressable.length - 25} more`);
   console.log(
-    `    Fix the filename, or declare it cross-cutting in SECTION_FILE_ALIASES (bp.mjs).`,
+    `    Fix by keying the row to its node id ("Title [1234-5678]" or a bare "1234:5678"),`,
   );
+  console.log(`    or to an explicit "<section>/<family>" pair, or by splitting the file per section.`);
 }
 console.log("families by status:", JSON.stringify(famStatus));
 

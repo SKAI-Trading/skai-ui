@@ -17,13 +17,13 @@ Live half harvested 2026-08-26 (use_figma read-only; figma.root.children for the
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 268 | 14.0% |
-| `partial` | 867 | 45.4% |
-| `not-started` | 109 | 5.7% |
-| `blocked-on-backend` | 125 | 6.5% |
-| `frame-defect` | 38 | 2.0% |
-| `furniture` (catalog says furniture, this script says genuine) | 55 | 2.9% |
-| `unknown` | 136 | 7.1% |
+| `done` | 227 | 11.9% |
+| `partial` | 834 | 43.7% |
+| `not-started` | 103 | 5.4% |
+| `blocked-on-backend` | 134 | 7.0% |
+| `frame-defect` | 37 | 1.9% |
+| `furniture` (catalog says furniture, this script says genuine) | 56 | 2.9% |
+| `unknown` | 207 | 10.8% |
 
 ### Why 418 nodes were excluded — the whole rule, so it can be argued with
 
@@ -41,9 +41,9 @@ That is 18.0% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**268 of 1910 in-scope genuine frames (14.0%) are covered by a row marked `done`.**
+**227 of 1910 in-scope genuine frames (11.9%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 14.0% measured parity.
+Read the caveat section before quoting that. It is not 11.9% measured parity.
 
 ## Out of the roll-up
 
@@ -51,7 +51,7 @@ Read the caveat section before quoting that. It is not 14.0% measured parity.
 |---|---:|---:|---:|---:|---:|---:|---:|
 | held (Governance — Casey) | 1 | 331 | 57 | 274 | 36 | 0 | 238 |
 | standing exclusion (Onboarding) | 1 | 151 | 24 | 127 | 0 | 0 | 127 |
-| v1, superseded by v2 | 3 | 852 | 103 | 749 | 194 | 146 | 555 |
+| v1, superseded by v2 | 3 | 852 | 103 | 749 | 194 | 150 | 555 |
 | tombstone (body moved) | 3 | 187 | 70 | 117 | 3 | 1 | 114 |
 | meta | 7 | 94 | 3 | 91 | 0 | 0 | 91 |
 | wip / no section | 7 | 1262 | 1238 | 24 | 0 | 0 | 24 |
@@ -62,12 +62,12 @@ Read the caveat section before quoting that. It is not 14.0% measured parity.
 
 | Page | Scope | Live | furn | gen | row | `done` | `part` | `n/s` | `blk` | only | cov |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ✅ Social | in-scope | 442 | 40 | 402 | 270 | 4 | 239 | 7 | 14 | 132 | 67.2% |
-| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 195 | 32 | 125 | 4 | 15 | 180 | 52.0% |
-| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 40 | 133 | 73 | 19 | 0 | 100.0% |
-| ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 11 | 158 | 0 | 56 | 0 | 100.0% |
-| ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 89 | 69 | 0 | 0 | 0 | 100.0% |
-| ✅ Home 2 | in-scope | 168 | 30 | 138 | 138 | 88 | 35 | 10 | 5 | 0 | 100.0% |
+| ✅ Social | in-scope | 442 | 40 | 402 | 270 | 8 | 225 | 7 | 23 | 132 | 67.2% |
+| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 195 | 57 | 102 | 4 | 14 | 180 | 52.0% |
+| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 34 | 137 | 72 | 22 | 0 | 100.0% |
+| ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 7 | 162 | 0 | 56 | 0 | 100.0% |
+| ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 111 | 47 | 0 | 0 | 0 | 100.0% |
+| ✅ Home 2 | in-scope | 168 | 30 | 138 | 138 | 3 | 59 | 7 | 5 | 0 | 100.0% |
 | ✅ Coinflip - Skai originals | in-scope | 45 | 11 | 34 | 34 | 0 | 26 | 1 | 0 | 0 | 100.0% |
 | ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 0 | 3 | 1 | 0 | 0 | 100.0% |
 | ✅ Darts - Skai originals | in-scope | 31 | 13 | 18 | 18 | 0 | 7 | 0 | 0 | 0 | 100.0% |
@@ -78,21 +78,21 @@ Read the caveat section before quoting that. It is not 14.0% measured parity.
 | ✅ Towers - Skai originals | in-scope | 30 | 14 | 16 | 16 | 0 | 2 | 0 | 0 | 0 | 100.0% |
 | ✅ Scratchers - Skai originals | in-scope | 21 | 7 | 14 | 14 | 0 | 4 | 1 | 0 | 0 | 100.0% |
 | ✅ Roulette - Skai originals | in-scope | 21 | 7 | 14 | 14 | 0 | 3 | 1 | 0 | 0 | 100.0% |
-| ✅ Blackjack - Skai originals | in-scope | 20 | 7 | 13 | 13 | 4 | 3 | 0 | 0 | 0 | 100.0% |
+| ✅ Blackjack - Skai originals | in-scope | 20 | 7 | 13 | 13 | 7 | 0 | 0 | 0 | 0 | 100.0% |
 | ✅ Crash - Skai originals | in-scope | 20 | 7 | 13 | 13 | 0 | 4 | 0 | 0 | 0 | 100.0% |
-| ✅ Baccarat - Skai originals | in-scope | 21 | 8 | 13 | 13 | 0 | 4 | 6 | 0 | 0 | 100.0% |
+| ✅ Baccarat - Skai originals | in-scope | 21 | 8 | 13 | 13 | 0 | 6 | 4 | 0 | 0 | 100.0% |
 | ✅ Slide - Skai originals | in-scope | 18 | 5 | 13 | 13 | 0 | 2 | 0 | 0 | 0 | 100.0% |
 | ✅ Mines - Skai originals | in-scope | 19 | 7 | 12 | 12 | 0 | 4 | 0 | 0 | 0 | 100.0% |
 | ✅ Bingo - Skai originals | in-scope | 16 | 4 | 12 | 12 | 0 | 5 | 0 | 0 | 0 | 100.0% |
 | ✅ Plinko - Skai originals | in-scope | 21 | 11 | 10 | 10 | 0 | 4 | 0 | 0 | 0 | 100.0% |
 | ✅ Video Poker - Skai originals | in-scope | 14 | 4 | 10 | 10 | 0 | 3 | 0 | 0 | 0 | 100.0% |
-| ✅ Limbo - Skai originals | in-scope | 14 | 5 | 9 | 9 | 0 | 9 | 0 | 0 | 0 | 100.0% |
-| ✅ Price Grid - Skai originals | in-scope | 20 | 12 | 8 | 8 | 0 | 1 | 0 | 2 | 0 | 100.0% |
+| ✅ Limbo - Skai originals | in-scope | 14 | 5 | 9 | 9 | 0 | 2 | 0 | 0 | 0 | 100.0% |
+| ✅ Price Grid - Skai originals | in-scope | 20 | 12 | 8 | 8 | 0 | 3 | 0 | 0 | 0 | 100.0% |
 | ✅ Hi-Lo - Skai originals | in-scope | 16 | 9 | 7 | 7 | 0 | 7 | 0 | 0 | 0 | 100.0% |
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 0 | 0 | 0 | 0 | 0 | 100.0% |
 | 🚧 Governance and Utilities | held | 331 | 57 | 274 | 36 | 0 | 18 | 8 | 8 | 238 | 13.1% |
 | ✅ Onboarding and Authentication | excluded | 151 | 24 | 127 | 0 | 0 | 0 | 0 | 0 | 127 | 0.0% |
-| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 83 | 46 | 37 | 0 | 0 | 284 | 22.6% |
+| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 83 | 50 | 33 | 0 | 0 | 284 | 22.6% |
 | ✅ Home 1 | v1-superseded | 254 | 39 | 215 | 63 | 52 | 3 | 0 | 0 | 152 | 29.3% |
 | ✅ Wallet 1 | v1-superseded | 178 | 11 | 167 | 48 | 48 | 0 | 0 | 0 | 119 | 28.7% |
 | ✝️ Trade (moved to Skai Web App 2) | tombstone | 154 | 37 | 117 | 3 | 1 | 2 | 0 | 0 | 114 | 2.6% |
@@ -1693,33 +1693,12 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift D — one frame, two lanes, two different verdicts
 
-**385 of the 1598 in-scope matched frames (24.1%) are named by two or more rows that DISAGREE on status** — 391 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
+**44 of the 1598 in-scope matched frames (2.8%) are named by two or more rows that DISAGREE on status** — 44 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
 
 | the disagreement | frames |
 |---|---:|
-| `done + partial` | 183 |
-| `done + unknown` | 92 |
-| `partial + unknown` | 54 |
-| `frame-defect + unknown` | 14 |
-| `blocked-on-backend + unknown` | 14 |
-| `not-started + unknown` | 12 |
-| `frame-defect + partial` | 6 |
-| `furniture + unknown` | 4 |
-| `not-started + partial` | 3 |
-| `done + frame-defect` | 2 |
-| `blocked-on-backend + partial` | 2 |
-| `blocked-on-backend + not-started` | 1 |
-| `done + furniture` | 1 |
-| `done + not-started + partial` | 1 |
-| `frame-defect + not-started + partial` | 1 |
-| `blocked-on-backend + done` | 1 |
-
-The 2 sharpest — one row says `done`, another says the surface does not exist or has no data source:
-
-```
-13459-198529	done+not-started+partial	status.home-2.tsv:140 status.wave2.home2-intel-hub.tsv:3 status.wave3.verify-home2.tsv:140 status.wave4.row-conflicts.tsv:76
-13006-252779	blocked-on-backend+done	status.wave2.trench-pnl.tsv:1 status.wave2.trench-pnl.tsv:6 status.wave4.row-conflicts.tsv:108
-```
+| `done + partial` | 43 |
+| `frame-defect + partial` | 1 |
 
 ## Drift C — rows that cannot be matched to any live frame
 
@@ -1740,7 +1719,8 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.home.tsv` | 51 | 8 | 8 |
 | `status.play.tsv` | 27 | 6 | 6 |
 | `status.trade.tsv` | 93 | 25 | 57 |
-| `status.wave2.predict-play.tsv` | 60 | 34 | 56 |
+| `status.wave2.predict.tsv` | 33 | 16 | 30 |
+| `status.wave2.play.tsv` | 27 | 18 | 26 |
 | `status.wave2.trench-pnl.tsv` | 6 | 4 | 3 |
 | `status.wave2.trench-order-types.tsv` | 8 | 6 | 6 |
 | `status.predict.tsv` | 33 | 25 | 67 |
@@ -1749,17 +1729,17 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 ## What this number does NOT mean
 
-**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **1333 rows currently carry `done`**, and only **78** of them (5.9%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1255 assert completion with nothing behind them that a later auditor can re-check.
+**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **1378 rows currently carry `done`**, and only **78** of them (5.7%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1300 assert completion with nothing behind them that a later auditor can re-check.
 
 **2. `done` is silent about width.** Column 2 carries no viewport and must never be read as a desktop verdict. The width answers live in column 6 and start at `unknown`.
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 315 of 4426 status rows (7.1%) name no node id at all, and 333 (7.5%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 315 of 5030 status rows (6.3%) name no node id at all, and 333 (6.6%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 2029 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 2438 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
 **7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1598 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to Skai Web App 2) 3/3, ✅ Trade 1 3/83 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 

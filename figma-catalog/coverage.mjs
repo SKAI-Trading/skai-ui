@@ -392,7 +392,43 @@ for (const p of pages) {
     matched++;
     if (ambiguousIds.has(n.id)) ambiguous++;
     if (rows.every((r) => r.ids.size >= 8)) rollupOnly++;
-    const worst = rows.slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
+    /*
+      ★ THE HEADLINE NUMBER IS TALLIED FROM THE NEWEST GENERATION, NOT FROM ALL
+      ROWS — and getting that wrong is how the ledger reported a re-verify that
+      had already happened as though it never had.
+
+      Two rules answer "what is this frame's status?", and until 2026-08-26 they
+      disagreed silently. `byStatus` used worst-of across EVERY row, while the
+      supersession block below correctly resolves a later wave over an earlier
+      one. Worst-of ranks `unknown` LAST on purpose (see sev(): it is not a
+      completeness judgement), so a wave-4 lane demoting a frame to `unknown`
+      because nobody had actually measured it LOST to the wave-0 row still
+      calling it `done`.
+
+      Measured on frame 13008-114693: `status.home-2.tsv` says done,
+      `status.wave3.verify-home2.tsv` says unknown, `status.wave4.home-2-reverify
+      .tsv` says unknown — and the ledger counted it done. Across Home 2 that is
+      65 `done` reported where the re-verify had left 3. The re-verify's entire
+      job was to stop unmeasured frames reading as measured, and the tally undid
+      it.
+
+      Same shape as the RTP band that could not see a catch-0 payout: a
+      resolution rule that ranks the honest verdict last cannot report it, no
+      matter how many lanes write it down.
+
+      So: newest generation first, THEN worst-of within that generation. The
+      second half still matters — two lanes of the same wave disagreeing should
+      resolve conservatively rather than flatter — and `unknown` staying last
+      within a generation is right, because a lane that measured beats a lane
+      that did not look.
+    */
+    const genOf = (file) => {
+      const m = /^status\.wave(\d+)\./.exec(file);
+      return m ? Number(m[1]) : 0;
+    };
+    const newestGen = Math.max(...rows.map((r) => genOf(r.file)));
+    const current = rows.filter((r) => genOf(r.file) === newestGen);
+    const worst = current.slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
     byStatus[worst] = (byStatus[worst] || 0) + 1;
     // Two rows, two lanes, one frame, two different verdicts. The worst-of above
     // resolves it conservatively so the number cannot flatter — but a resolution
