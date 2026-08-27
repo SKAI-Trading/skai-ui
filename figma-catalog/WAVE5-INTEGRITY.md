@@ -67,6 +67,49 @@ node figma-catalog/bp-report.mjs         # dead sections, design vs code axes
 that reports "nothing wrong", make it tell you how much it looked at.** Every
 number above carries its denominator for exactly that reason.
 
+## Parser audit — done 2026-08-27, while the wave was in flight
+
+`parseRowKey` was probed adversarially with 22 keys. It is correct on all four
+intended forms. Two latent weaknesses were found; **neither is currently biting,
+and both are recorded rather than fixed because nineteen lanes may invoke these
+tools at any moment and editing `bp.mjs` under them is the larger risk.**
+
+### 1. A family name shaped like a node id is read as one — LATENT, not live
+
+`parseRowKey("2026-08", "social", …)` returns `id 2026-08`, not
+`fam social/2026-08`. Same for `"1-1"`, `"50-50"`. A row keyed with a
+date-shaped or short numeric family name silently becomes an id-keyed row
+pointing at a node that does not exist, and then applies to nothing.
+
+**Tightening by length is NOT available**: `3-2` and `3-3` are real page ids in
+this very file, so short ids are legitimate and a minimum-length rule would break
+real rows.
+
+Measured whether it is live: of **1,547** bare-id-shaped column-1 values across
+every status file, **40** name a node the registry does not carry, and **0 of
+those 40 have the misparse signature** (both components short). So the defect is
+real in the parser and absent from the data.
+
+★ The right fix is not in the parser, it is in the REPORT. `apply-status.mjs`
+says *"83 id-keyed row(s) name a node no registry frame carries"* as a bare
+COUNT. A count cannot be acted on, and it is exactly what would hide this
+misparse if a lane ever wrote such a key. **Make that warning name the rows by
+file and line**, the way the unaddressable-row warning already does. Then a
+misparsed key shows up as something to fix rather than as a number that drifts
+upward.
+
+### 2. A bare family equal to a section name becomes a section rollup
+
+`parseRowKey("legal", null, …)` returns a SECTION rollup for `legal`. Strictly
+this should be unaddressable — it is a bare family with no section hint.
+
+**Blast radius is small and contained by an existing decision**: section rollups
+are recorded in `registry.rollups` and deliberately never applied to frame
+statuses, so nothing inherits a verdict from this. The only cost is that a row
+which ought to be REPORTED as unaddressable is quietly filed instead. Worth
+tightening (require the `>` separator for the rollup form), not worth an
+in-flight edit.
+
 ## Results
 
 _(filled in after the wave)_
