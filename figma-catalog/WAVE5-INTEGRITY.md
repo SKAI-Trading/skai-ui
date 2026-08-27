@@ -174,6 +174,58 @@ example indexed as a verdict. The strict rule cut Trade 2 from 178 to 71.
 - "Trade 2 has no Spot frames" is slightly wrong — two `Spot > Sidebar` frames
   exist (768 and 375). The claim holds for Spot *board* frames and for Perps.
 
-## Results
+## Results — 2026-08-27, wave closed
 
-_(filled in after the wave)_
+9 of 20 lanes delivered before the wave was wrapped; 12 were stopped in flight.
+506 rows written across 9 TSVs.
+
+| Measure | Baseline | After | Δ |
+|---|---:|---:|---:|
+| Status rows loaded | 5,015 | 5,521 | **+506** |
+| Frames updated | 1,622 | 1,630 | +8 |
+| — matched by node id | 1,034 | 1,137 | **+103** |
+| Unaddressable rows | 15 | 15 | **0** |
+| Genuine frames with a row | 1,598 (83.7%) | **1,910 (100.0%)** | +312 |
+| Live-only drift | 312 | **0** | **−312** |
+| In-scope `done` | 227 (11.9%) | 230 (12.0%) | +3 |
+
+### Against the four criteria set before launch
+
+1. ✅ **`matched by node id` rose with the rows written** (+103). No lane's work
+   applied to nothing — the failure that had happened four times did not happen a
+   fifth.
+2. ✅ **Unaddressable rows stayed at 15.** Every wave-5 row keyed by node id, as
+   the brief required. Zero regression in keying hygiene.
+3. ✅ **`done` did not simply rise** — +3 only, and that is the honest number
+   (see below). Lanes demoted as well as promoted: Predict Futures found all 16
+   of its `done` rows were citation-only, re-earned 4 and demoted 12.
+4. ✅ **Live-only drift fell to ZERO.** Every genuine frame in scope now has a
+   row. This is the wave's largest single result.
+
+### ★ Why `done` moved only +3, and why that is the correct outcome
+
+**The rig could not support the bar.** `done` requires measurement against a
+rendered DOM, and the fleet could not render anything:
+
+- `optimizeDeps.force: true` makes concurrent dev servers destroy each other's
+  shared bundle. **All 25 servers probed DEAD.**
+- The chrome-devtools MCP is a **single shared browser profile** — a second lane
+  is refused outright.
+
+So lanes correctly produced frame-side measurements and refused to call them
+`done`. Three separate lanes said so explicitly and filed zero `done` rows rather
+than promote a citation. **That is the discipline working**: a wave that reported
++80 `done` under these conditions would have been lying.
+
+The refusal machinery also worked: `apply-status.mjs` REFUSED to write
+`registry.json` over 6 malformed breakpoint cells (a lane wrote `blocked`, which
+is a valid row status but not a valid bp verdict) rather than silently
+downgrading them. Corrected to `not-started` and re-applied.
+
+### Known-good failure carried forward
+
+`src/components/social/feed/postImageUpload.test.ts` fails — **pre-existing, not
+wave-5**. Commit `4ec3ddcc7` refactored `get-asset-upload-url` from a single
+`ALLOWED_CONTENT_TYPES` to per-category `CATEGORY_CONTENT_TYPES` and left this
+mirror test grepping the old name. The test exists to catch client/edge allowlist
+drift and currently cannot, so that drift is unverified. 660 tests, 659 pass.

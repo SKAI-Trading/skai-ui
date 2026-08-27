@@ -11,19 +11,19 @@ Live half harvested 2026-08-26 (use_figma read-only; figma.root.children for the
 | Live top-level nodes | 2328 |
 | — furniture (excluded from the denominator) | 418 (18.0%) |
 | **Genuine frames — the denominator** | **1910** |
-| Genuine frames with a catalog row (matched by node id) | 1598 (83.7%) |
+| Genuine frames with a catalog row (matched by node id) | 1910 (100.0%) |
 | — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 2 (0.1% of matched) |
-| Genuine frames with NO row — live-only drift | 312 (16.3%) |
+| Genuine frames with NO row — live-only drift | 0 (0.0%) |
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 227 | 11.9% |
-| `partial` | 834 | 43.7% |
-| `not-started` | 103 | 5.4% |
-| `blocked-on-backend` | 134 | 7.0% |
-| `frame-defect` | 37 | 1.9% |
+| `done` | 230 | 12.0% |
+| `partial` | 872 | 45.7% |
+| `not-started` | 238 | 12.5% |
+| `blocked-on-backend` | 114 | 6.0% |
+| `frame-defect` | 46 | 2.4% |
 | `furniture` (catalog says furniture, this script says genuine) | 56 | 2.9% |
-| `unknown` | 207 | 10.8% |
+| `unknown` | 354 | 18.5% |
 
 ### Why 418 nodes were excluded — the whole rule, so it can be argued with
 
@@ -41,9 +41,9 @@ That is 18.0% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**227 of 1910 in-scope genuine frames (11.9%) are covered by a row marked `done`.**
+**230 of 1910 in-scope genuine frames (12.0%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 11.9% measured parity.
+Read the caveat section before quoting that. It is not 12.0% measured parity.
 
 ## Out of the roll-up
 
@@ -51,7 +51,7 @@ Read the caveat section before quoting that. It is not 11.9% measured parity.
 |---|---:|---:|---:|---:|---:|---:|---:|
 | held (Governance — Casey) | 1 | 331 | 57 | 274 | 36 | 0 | 238 |
 | standing exclusion (Onboarding) | 1 | 151 | 24 | 127 | 0 | 0 | 127 |
-| v1, superseded by v2 | 3 | 852 | 103 | 749 | 194 | 150 | 555 |
+| v1, superseded by v2 | 3 | 852 | 103 | 749 | 200 | 145 | 549 |
 | tombstone (body moved) | 3 | 187 | 70 | 117 | 3 | 1 | 114 |
 | meta | 7 | 94 | 3 | 91 | 0 | 0 | 91 |
 | wip / no section | 7 | 1262 | 1238 | 24 | 0 | 0 | 24 |
@@ -62,12 +62,12 @@ Read the caveat section before quoting that. It is not 11.9% measured parity.
 
 | Page | Scope | Live | furn | gen | row | `done` | `part` | `n/s` | `blk` | only | cov |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ✅ Social | in-scope | 442 | 40 | 402 | 270 | 8 | 225 | 7 | 23 | 132 | 67.2% |
-| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 195 | 57 | 102 | 4 | 14 | 180 | 52.0% |
+| ✅ Social | in-scope | 442 | 40 | 402 | 402 | 8 | 225 | 61 | 52 | 0 | 100.0% |
+| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 375 | 56 | 105 | 42 | 14 | 0 | 100.0% |
 | ✅ Play | in-scope | 345 | 76 | 269 | 269 | 34 | 137 | 72 | 22 | 0 | 100.0% |
-| ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 7 | 162 | 0 | 56 | 0 | 100.0% |
+| ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 11 | 151 | 39 | 7 | 0 | 100.0% |
 | ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 111 | 47 | 0 | 0 | 0 | 100.0% |
-| ✅ Home 2 | in-scope | 168 | 30 | 138 | 138 | 3 | 59 | 7 | 5 | 0 | 100.0% |
+| ✅ Home 2 | in-scope | 168 | 30 | 138 | 138 | 3 | 105 | 11 | 5 | 0 | 100.0% |
 | ✅ Coinflip - Skai originals | in-scope | 45 | 11 | 34 | 34 | 0 | 26 | 1 | 0 | 0 | 100.0% |
 | ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 0 | 3 | 1 | 0 | 0 | 100.0% |
 | ✅ Darts - Skai originals | in-scope | 31 | 13 | 18 | 18 | 0 | 7 | 0 | 0 | 0 | 100.0% |
@@ -92,7 +92,7 @@ Read the caveat section before quoting that. It is not 11.9% measured parity.
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 0 | 0 | 0 | 0 | 0 | 100.0% |
 | 🚧 Governance and Utilities | held | 331 | 57 | 274 | 36 | 0 | 18 | 8 | 8 | 238 | 13.1% |
 | ✅ Onboarding and Authentication | excluded | 151 | 24 | 127 | 0 | 0 | 0 | 0 | 0 | 127 | 0.0% |
-| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 83 | 50 | 33 | 0 | 0 | 284 | 22.6% |
+| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 89 | 45 | 38 | 0 | 2 | 278 | 24.3% |
 | ✅ Home 1 | v1-superseded | 254 | 39 | 215 | 63 | 52 | 3 | 0 | 0 | 152 | 29.3% |
 | ✅ Wallet 1 | v1-superseded | 178 | 11 | 167 | 48 | 48 | 0 | 0 | 0 | 119 | 28.7% |
 | ✝️ Trade (moved to Skai Web App 2) | tombstone | 154 | 37 | 117 | 3 | 1 | 2 | 0 | 0 | 114 | 2.6% |
@@ -117,7 +117,7 @@ Read the caveat section before quoting that. It is not 11.9% measured parity.
 
 Ranked by count. These are the unassessed frames.
 
-### ✅ Trade 1 — 284 live-only of 367 genuine  _(v1-superseded)_
+### ✅ Trade 1 — 278 live-only of 367 genuine  _(v1-superseded)_
 
 ```
 7710-91527	1440x900	Skai > Trade > Spot 
@@ -167,12 +167,8 @@ Ranked by count. These are the unassessed frames.
 9801-121092	375x812	Skai > Trade > Perpe
 9777-106388	375x812	Skai > Trade > Spot 
 9777-109337	375x812	Skai > Trade > Spot 
-9780-112196	375x812	Skai > Trade > Spot 
-9780-113550	375x812	Skai > Trade > Spot 
 9777-107807	375x440	Dropdown - Indicator
 9772-78152	375x812	Skai > Trade > Spot 
-9774-82207	375x812	Skai > Trade > Spot 
-9774-83802	375x812	Skai > Trade > Spot 
 9774-91524	375x578	Trade panel - Limit
 9775-93472	375x626	Trade panel - Pro - 
 9774-91774	375x578	Trade panel - Pro - 
@@ -208,7 +204,6 @@ Ranked by count. These are the unassessed frames.
 8558-134024	1440x900	Skai > Trade > Spot 
 3962-34721	796x680	Select pair - USDC
 3962-34884	796x680	Select pair - Favori
-3962-8653	313x818	Trade panel - Limit
 7712-38425	277x672	Order book
 8566-141675	768x1230	Skai > Trade > Spot 
 3927-56677	764x672	Chart sample 2 - SOL
@@ -232,7 +227,6 @@ Ranked by count. These are the unassessed frames.
 9106-79209	359x796	Right menu - leverag
 7890-98315	313x672	Trade panel - Isolat
 7712-32496	313x672	Trade panel - Buy
-3899-7131	313x672	Trade panel - Sell
 3900-7416	313x672	Trade panel - Sell w
 7712-33476	313x672	🚨 Trade panel - Sel
 3886-15109	850x58	Expanded - Perp
@@ -649,191 +643,6 @@ Ranked by count. These are the unassessed frames.
 11768-350087	768x1024	Skai > Social > Live
 ```
 
-### ✅ Trade 2 — 180 live-only of 375 genuine  _(in-scope)_
-
-```
-13006-138367	1440x900	Skai > Trench - actu
-13006-141502	1440x900	Skai > Trench - actu
-13006-148687	680x1151	Token image - with i
-13006-158618	359x968	Right menu - layout 
-13006-158772	359x884	Right menu - layout
-13006-158914	359x884	Right menu - metrics
-13006-159069	359x884	Right menu - row
-13006-159189	359x1270	Right menu - extras
-13006-162230	1440x900	Skai > Trench > Hotk
-13006-165152	1440x900	Skai > Trench > Snip
-13006-168043	1440x900	Skai > Trench > Disc
-13006-175023	1440x900	Skai > Trench > Disc
-13006-176080	1440x900	Skai > Trench > Disc
-13006-181094	442x884	Right menu - General
-13006-181191	442x884	Right menu - Toasts 
-13006-181307	442x884	Right menu - Toasts 
-13006-181430	442x884	Right menu - Toasts 
-13006-181546	442x884	Right menu - Toasts 
-13006-181656	359x796	Right menu - General
-13006-181753	359x796	Right menu - Toasts 
-13006-181869	359x796	Right menu - Toasts 
-13006-181991	359x796	Right menu - Toasts 
-13006-182106	359x796	Right menu - Toasts 
-13006-184365	448x674	X accounts - My list
-13006-184420	448x674	X accounts - My list
-13006-185060	442x1463	Right menu - Audit
-13006-185140	442x884	Right menu - Protoco
-13006-185256	442x1154	Right menu - Metrics
-13006-185323	442x1463	Right menu - Audit
-13006-185403	442x1008	Right menu - Protoco
-13006-185519	442x1154	Right menu - Metrics
-13006-185586	359x1359	Right menu - Audit
-13006-185666	359x796	Right menu - Protoco
-13006-185781	359x1068	Right menu - Metrics
-13006-191571	442x998	Right menu - hotkeys
-13006-191680	359x918	Right menu - hotkeys
-13006-191789	1440x900	Skai > Trench > Blac
-13006-194655	442x953	Right menu - Layout
-13006-194784	442x1068	Right menu - Layout 
-13006-194925	442x997	Right menu - Metrics
-13006-195080	442x884	Right menu - Row
-13006-195199	442x1369	Right menu - Row
-13006-198241	419x94	Pulse card - Intel
-13006-198364	419x118	Pulse card - Intel A
-13006-198500	419x118	Pulse card - Intel -
-13006-198638	419x118	Pulse card - Intel -
-13006-198778	419x118	Pulse card - Intel -
-13006-207555	564x510	One click trade sett
-13006-207638	1440x900	Skai > Trench - hove
-13006-221940	1440x1530	Skai > Trench > Trad
-13006-224897	1440x1319	Skai > Trench > Trad
-13006-227835	1440x1530	Skai > Trench > Trad
-13006-233331	298x474	Percentage bigger
-13006-239242	1440x1530	Skai > Trench > Trad
-13006-246442	313x954	Multi-panel - data
-13006-246726	313x336	Multi-panel - data
-13006-246910	313x486	Multi-panel - trade
-13006-247053	313x1740	Multi-panel - combin
-13006-247878	88x44	Unpaid dex
-13006-247883	1440x900	Skai > Trade > Swap 
-13006-248078	1440x900	Skai > Trade > Swap 
-13006-248443	506x592	Swap - limit - close
-13006-248523	1440x900	Skai > Trade > Bridg
-13006-248696	1440x900	Skai > Trade > Bridg
-13006-248871	506x714	Bridge screen - erro
-13006-248937	1440x900	Skai > Trade > Bridg
-13006-249115	1440x900	Skai > Trade > Bridg
-13006-249356	1440x900	Skai > Trade > Bridg
-13006-249562	1440x900	Skai > Trade > Margi
-13006-249767	1440x900	Skai > Trade > Margi
-13006-250040	1440x900	Skai > Trade > Swap 
-13006-250217	1440x900	Skai > Trade > Swap 
-13006-250448	263x251	Colour picker - on:c
-13006-250456	263x251	Colour picker - on:c
-13006-252081	240x243	Colour picker - on:c
-13006-252089	240x243	Colour picker - on:c
-13006-252220	248x844	sidebar - open - tre
-13006-252301	400x470	Market lighthouse
-13006-252468	400x470	Market lighthouse > 
-13006-252664	391x94	Boost status ALT
-13006-252687	391x94	Boost status
-13006-252710	391x94	Boost status 50%
-13006-252735	391x254	Boost status - more 
-13006-253171	432x332	Instant trade
-13006-253326	842x332	Instant trade
-13006-253670	375x812	Skai > Trade > Swap 
-13006-253745	375x812	Skai > Trade > Swap 
-13006-253855	375x812	Skai > Trade > Swap 
-13006-253946	346x514	Swap - limit - close
-13006-254042	375x812	Skai > Trade > Swap 
-13006-254245	375x812	Skai > Trade > Margi
-13006-254357	375x812	Skai > Trade > Bridg
-13006-254475	375x812	Skai > Trade > Bridg
-13006-254593	375x812	Skai > Trade > Bridg
-13006-254715	375x812	Skai > Trade > Bridg
-13006-254837	375x812	Skai > Trade > Bridg
-13006-254987	346x552	Bridge screen - erro
-13006-255089	375x812	Skai > Trade > Margi
-13006-255269	375x812	Skai > Trade > Swap 
-13006-255386	768x1024	Skai > Trade > Spot 
-13006-256623	768x1024	Skai > Trade > Swap 
-13006-256743	768x1024	Skai > Trade > Swap 
-13006-257029	768x1024	Skai > Trade > Margi
-13006-257186	768x1024	Skai > Trade > Bridg
-13006-257333	768x1024	Skai > Trade > Bridg
-13006-257484	768x1024	Skai > Trade > Bridg
-13006-257631	768x1024	Skai > Trade > Bridg
-13006-257782	768x1024	Skai > Trade > Bridg
-13006-257961	580x630	Bridge screen - erro
-13006-258057	768x1024	Skai > Trade > Margi
-13006-258282	768x1024	Skai > Trade > Swap 
-13006-258402	768x1024	Skai > Trade > Swap 
-13006-258522	580x504	Swap - limit - close
-13006-258611	435x674	Frame 1375
-13006-258972	435x572	Frame 1280
-13006-259277	320x126	Pulse card - Intel -
-13006-259417	682x118	Pulse card - Intel -
-13006-259555	346x808	Frame 445
-13006-261490	768x1024	Skai > Trade > Trenc
-13006-271134	768x1024	Skai > Trade > Trenc
-13006-271971	768x1024	Skai > Trade > Trenc
-13006-285694	346x833	Token image - with i
-13006-285749	346x786	Token image - with i
-13006-287542	580x900	Token image - with i
-13006-287597	375x812	Skai > Trade > Trenc
-13006-290135	375x812	Skai > Trade > Trenc
-13006-294295	375x812	Skai > Trade > Spot 
-13006-296673	375x812	Skai > Trade > Trenc
-13006-297805	375x812	Skai > Trade > Trenc
-13006-302072	375x812	Skai > Trade > Trenc
-13006-303655	354x438	One click trade sett
-13006-306051	375x812	Skai >  Trade > Tren
-13006-307267	375x812	Skai > > Trade > Tre
-13006-308399	375x812	Skai > > Trade > Tre
-13006-316862	375x812	Skai > Trade > Trenc
-13006-317563	375x812	Skai > Trade > Trenc
-13006-318264	375x812	Skai > Trade > Trenc
-13006-318775	375x812	Skai > Trade > Trenc
-13006-319056	375x812	Skai > Trade > Trenc
-13006-320736	375x812	Skai > Trench > Trac
-13006-322486	442x1008	Right menu - General
-13006-322583	442x1008	Right menu - Toasts 
-13006-322697	442x1008	Right menu - Toasts 
-13006-322818	442x1008	Right menu - Toasts 
-13006-322932	442x1008	Right menu - Toasts 
-13006-323041	442x1008	Right menu - Layout
-13006-323170	442x1008	Right menu - Layout
-13006-323311	442x1008	Right menu - Metrics
-13006-323466	442x1008	Right menu - Row
-13006-323585	442x1278	Right menu - Row
-13006-323808	448x448	One click trade sett
-13006-323891	243x243	Colour picker - on:c
-13006-323899	243x243	Colour picker - on:c
-13006-326818	768x1024	Skai >  Trade > Tren
-13006-328333	768x1024	Skai > > Trade > Tre
-13006-329764	768x1024	Skai > > Trade > Tre
-13006-340306	768x1024	Skai > Trade > Trenc
-13006-341272	768x1024	Skai > Trade > Trenc
-13006-342238	768x1024	Skai > Trade > Trenc
-13006-342940	768x1024	Skai > Trade > Trenc
-13006-343527	768x1024	Skai > Trade > Trenc
-13006-345358	768x1024	Skai > Trench > Trac
-13006-347281	682x118	Pulse card - Intel -
-13006-347417	682x118	Pulse card - Intel -
-13006-347620	400x454	Market lighthouse
-13006-347742	400x454	Market lighthouse > 
-13006-347983	391x90	Boost status ALT
-13006-348006	391x90	Boost status
-13006-348029	391x90	Boost status 50%
-13006-348054	391x242	Boost status - more 
-13006-348493	354x444	Market lighthouse
-13006-348660	354x444	Market lighthouse > 
-13006-348856	354x86	Boost status ALT
-13006-348879	354x86	Boost status
-13006-348902	354x88	Boost status 50%
-13006-348927	354x224	Boost status - more 
-13006-349299	375x812	Skai > Trade > Nav b
-13006-352370	768x1024	Skai > Trade > Nav b
-13006-356662	349x126	Pulse card - Intel -
-13006-356801	349x126	Pulse card - Intel -
-```
-
 ### ✅ Home 1 — 152 live-only of 215 genuine  _(v1-superseded)_
 
 ```
@@ -989,143 +798,6 @@ Ranked by count. These are the unassessed frames.
 13490-169649	512x512	CAD 1
 13490-169687	512x512	AUD 1
 13490-169652	512x512	BRL 1
-```
-
-### ✅ Social — 132 live-only of 402 genuine  _(in-scope)_
-
-```
-5110-187509	1440x900	Skai > Social > Disc
-10324-107023	1440x900	Skai > Social > crea
-10328-199155	1440x900	Skai > Social > crea
-10256-150766	1440x900	Skai > Social > shar
-9640-213001	1440x900	Skai > Social > Samp
-4966-147666	1440x1539	Skai > Social > Samp
-4979-154471	1440x1539	Skai > Social > Samp
-5111-189292	1440x1737	Skai > Social > Disc
-5111-190761	1440x1737	Skai > Social > Disc
-5111-192551	1440x1737	Skai > Social > Disc
-5164-266351	1440x900	Skai > Social > Mess
-5161-209418	1440x900	Skai > Social > Mess
-5162-265168	1440x900	Skai > Social > Mess
-4998-157146	1440x900	Skai > Social > Live
-4948-141994	1440x900	Skai > Launch > crea
-4948-142325	1440x2465	Skai > Launch > crea
-5015-179843	1440x900	Skai > Social > Live
-5198-51022	1440x900	Skai > Social > Grou
-9657-216084	1440x900	Skai > Social - with
-11400-91695	768x1083	Skai > Social > Grou
-11398-83498	375x1442	Skai > Social > Grou
-11398-84195	375x1052	Skai > Social > Grou
-11398-81312	359x880	Right menu
-11398-81450	359x1320	Right menu
-11398-87282	768x1024	Skai > Social > Grou
-11387-72046	768x1024	Skai > Social > Mess
-11387-72346	768x1024	Skai > Social > Mess
-11387-70777	768x1024	Skai > Social > Mess
-11387-71039	768x1024	Skai > Social > Mess
-11387-71301	768x1024	Skai > Social > Mess
-11341-86906	296x812	sidebar - open casin
-11341-87042	318x1024	sidebar - open casin
-11530-301774	296x812	sidebar - open casin
-11530-301872	318x1024	sidebar - open casin
-11398-88650	442x1460	Right menu - token g
-11477-254411	768x1024	Skai > Social > Live
-11477-257758	768x1190	Skai > Social > Live
-11477-255979	768x1024	Skai > Social > Live
-11477-249372	768x1024	Skai > Social > Live
-11442-160938	768x1024	Skai > Social > Live
-11438-159797	375x812	Skai > Social > Live
-11481-284085	375x812	Skai > Social > Live
-11481-280102	375x939	Skai > Social > Live
-11481-282550	375x1008	Skai > Social > Live
-11481-275802	375x812	Skai > Social > Live
-11407-148276	250x130	dropdown-story tile
-11407-148320	250x130	dropdown-story view
-11530-302963	220x124	dropdown-story tile
-11530-302976	220x124	dropdown-story view
-11530-303003	200x124	dropdown-story tile
-11530-303016	220x124	dropdown-story view
-11442-163219	375x3385	Skai > Social - sing
-11529-291953	375x3439	Skai > Social - show
-11461-195806	375x812	Skai > Social > Disc
-11461-197022	375x1309	Skai > Social > Disc
-11461-197684	375x1103	Skai > Social > Disc
-11461-199116	375x1120	Skai > Social > Disc
-11461-199709	375x1325	Skai > Social > Disc
-11474-204840	375x1275	Skai > Social > Samp
-11474-206222	375x812	Skai > Social > Samp
-11474-207758	375x812	Skai > Social > Samp
-11474-205859	375x1275	Skai > Social > Samp
-11474-212827	375x1262	Skai > Social > Samp
-11474-215215	375x1354	Skai > Social > Samp
-11474-222012	375x1365	Skai > Social > Samp
-11474-224415	343x392	Posts - hover
-11474-213159	375x812	Skai > Social > Samp
-11524-286515	375x812	Skai > Social > Samp
-11474-206406	375x812	Skai > Social > Samp
-11474-222766	375x812	Skai > Social > My p
-11474-223997	375x812	Skai > Social > My p
-11442-174134	375x812	Skai > Social > crea
-11442-175333	375x812	Skai > Social > crea
-11442-176880	375x812	Skai > Social > shar
-11442-177647	375x812	Skai > Social > crea
-11527-291862	354x792	Create post - two im
-11442-179814	375x812	Skai > Social > view
-11442-179297	375x812	Skai > Social > view
-11461-191228	375x812	Skai > Social > view
-11442-174603	375x812	Skai > Social > crea
-11527-291792	354x792	Caption - empty
-11461-187585	768x1178	Skai > Social > Disc
-11461-188711	768x1395	Skai > Social > Disc
-11461-189346	768x1191	Skai > Social > Disc
-11459-185505	768x1424	Skai > Social > Disc
-11461-189925	768x1024	Skai > Social > Disc
-11442-165902	768x1024	Skai > Social > crea
-11442-167339	768x1024	Skai > Social > crea
-11442-170034	768x1024	Skai > Social > crea
-11442-171969	768x1024	Skai > Social > view
-11442-172515	768x1024	Skai > Social > view
-11442-173004	768x1024	Skai > Social > view
-11442-167934	768x1024	Skai > Social > shar
-11442-166576	768x1024	Skai > Social > crea
-11442-167200	448x637	Caption - empty
-11442-167104	448x424	Caption - upload - A
-11442-175111	354x792	Caption - upload - A
-11461-191825	375x812	Skai > Launch > crea
-11461-192084	375x812	Skai > Launch > crea
-11461-192352	375x2300	Skai > Launch > crea
-11461-192611	375x2300	Skai > Launch > crea
-11461-192857	346x833	Token image - with i
-11461-192912	346x786	Token image - with i
-11461-192960	768x1024	Skai > Launch > crea
-11461-193256	768x1024	Skai > Launch > crea
-11461-193561	768x2110	Skai > Launch > crea
-11461-193857	580x900	Token image - with i
-11474-201388	768x1430	Skai > Social > Samp
-11474-204230	708x556	Comments - dropdown
-11474-211130	768x1249	Skai > Social > Samp
-11474-214001	768x1343	Skai > Social > Samp
-11474-221594	768x1595	Skai > Social > Samp
-11474-224337	708x644	Posts - hover
-11474-202449	768x1430	Skai > Social > Samp
-11474-213441	768x1024	Skai > Social > Samp
-11520-286072	768x1024	Skai > Social > Samp
-11474-202779	768x1024	Skai > Social > Samp
-11474-207421	768x1024	Skai > Social > Samp
-11474-204464	708x684	SRP - bottom - Holde
-11474-204570	708x620	SRP - bottom - Activ
-11474-202951	768x1024	Skai > Social > Samp
-11474-204687	708x334	SRP - bottom - Detai
-11474-222950	768x1024	Skai > Social > My p
-11474-223492	768x1024	Skai > Social > My p
-11474-207013	343x676	SRP - bottom - Holde
-11474-207119	343x596	SRP - bottom - Activ
-11474-207236	343x314	SRP - bottom - Detai
-11474-208090	343x512	Comments - dropdown
-11474-225924	375x812	Skai > Social - with
-11474-225435	768x1024	Skai > Social - with
-11530-302327	296x812	sidebar - open casin
-11530-302439	318x1024	sidebar - open casin
 ```
 
 ### ✅ Onboarding and Authentication — 127 live-only of 127 genuine  _(excluded)_
@@ -1693,12 +1365,14 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift D — one frame, two lanes, two different verdicts
 
-**44 of the 1598 in-scope matched frames (2.8%) are named by two or more rows that DISAGREE on status** — 44 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
+**58 of the 1910 in-scope matched frames (3.0%) are named by two or more rows that DISAGREE on status** — 58 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
 
 | the disagreement | frames |
 |---|---:|
-| `done + partial` | 43 |
+| `done + partial` | 42 |
+| `partial + unknown` | 14 |
 | `frame-defect + partial` | 1 |
+| `frame-defect + unknown` | 1 |
 
 ## Drift C — rows that cannot be matched to any live frame
 
@@ -1719,29 +1393,31 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.home.tsv` | 51 | 8 | 8 |
 | `status.play.tsv` | 27 | 6 | 6 |
 | `status.trade.tsv` | 93 | 25 | 57 |
+| `status.wave5.discover-createtoken.tsv` | 3 | 1 | 1 |
 | `status.wave2.predict.tsv` | 33 | 16 | 30 |
 | `status.wave2.play.tsv` | 27 | 18 | 26 |
 | `status.wave2.trench-pnl.tsv` | 6 | 4 | 3 |
 | `status.wave2.trench-order-types.tsv` | 8 | 6 | 6 |
-| `status.predict.tsv` | 33 | 25 | 67 |
 | `status.onboarding.tsv` | 21 | 17 | 34 |
+| `status.predict.tsv` | 33 | 27 | 69 |
+| `status.wave5.trench.tsv` | 13 | 12 | 10 |
 | `status.game-rollups.verified.tsv` | 21 | 20 | 80 |
 
 ## What this number does NOT mean
 
-**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **1378 rows currently carry `done`**, and only **78** of them (5.7%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1300 assert completion with nothing behind them that a later auditor can re-check.
+**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **1380 rows currently carry `done`**, and only **82** of them (5.9%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1298 assert completion with nothing behind them that a later auditor can re-check.
 
 **2. `done` is silent about width.** Column 2 carries no viewport and must never be read as a desktop verdict. The width answers live in column 6 and start at `unknown`.
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 315 of 5030 status rows (6.3%) name no node id at all, and 333 (6.6%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 316 of 5536 status rows (5.7%) name no node id at all, and 334 (6.0%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 2438 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 2992 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
-**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1598 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to Skai Web App 2) 3/3, ✅ Trade 1 3/83 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
+**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1910 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to Skai Web App 2) 3/3, ✅ Trade 1 3/89 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
 **8. 116 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
 
