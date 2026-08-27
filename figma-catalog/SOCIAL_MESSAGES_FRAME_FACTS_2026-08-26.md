@@ -77,6 +77,42 @@ The designer could not find it; that is a discovery failure, not a spec.
 Implementing that report alone still deletes the Tasks bar. The two must be read
 together.
 
+#### RESOLVED 2026-08-27 — Casey ruled KEEP **and** RESTYLE
+
+Not one or the other. `Messages.tsx` was restyled to `5198-9151` and every live
+behaviour was preserved, `TodoPanel` included; the Tasks bar was repainted into
+the frame's language (Green Coal 200 band, hairline rule, the frame's unread
+chip, Sky Blue accent) so the piece the frame omits does not sit in the new pane
+looking like a leftover. `messagesRestyle.figma.test.tsx` carries the ruling as
+a test — deleting the mount fails `todo panel survives the restyle`.
+
+Three measurement corrections came out of that pass, and each of them had read
+as true:
+
+- **`5152-205006` is the 330x166 middle CONTAINER, not the features row.** A
+  code comment in `Messages.tsx` named it "the `features` row". Rendering the
+  node settles it in one call.
+- **The pill is in BOTH empty frames.** `5152-203838` was marked `done` partly
+  on "including the end-to-end-encrypted pill" — and no pill existed in the
+  code, only a bare icon and label. The row was true about the WORDS being on
+  screen and silent about the box. Proven at equal depth by rendering the
+  213x40 `5198-9790` in isolation and pixel-comparing it against the top 40
+  rows of the `5152-205006` render: 2,872 vs 2,876 px of `#013042`.
+- **`sky-blue` is no longer green.** Several catalog notes still say the
+  `sky-blue` token resolves `#2DEDAD` and that `#56C7F3` must therefore be a
+  hex literal. `design-tokens.ts:70` has held `skyBlue: "#56C7F3"` since
+  2026-08-12, with an explicit DO-NOT-REVERT at `:53-63`; probed at the preset
+  level before use. The class that actually paints alien green is
+  `text-skai-green`. Corrected in place on `status.social.tsv` row 49.
+
+And one node-name trap, the same shape as the "…- tilt" one: `11387-72346` and
+`11373-23529` carry the **identical title** to the 768 and 375 twins of this
+frame and are a populated conversation, not this state. All four were rendered
+before anything was read off any of them. The real twins are `11387-74491`
+(768) and `11387-74801` (375); the 768 one was pixel-scanned rather than
+assumed, and its centre block is 194 wide — the **same** step as 375, so the
+type ramp moves at `lg` and nowhere else.
+
 ### `5168-269859` — Adjust chat settings, omits six persisted controls
 
 The whole 442x884 `Right menu` frame contains a title, one radio group
