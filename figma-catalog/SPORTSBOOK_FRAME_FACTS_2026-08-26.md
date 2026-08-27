@@ -270,3 +270,76 @@ Already fixed before this pass by `src/pages/sports/lib/feedNotice.ts`
 large share of the "sections are missing / completely different" reports in this
 backlog are screenshots of that contradiction over an empty page, not of a
 layout defect.
+
+---
+
+## 10. The place-bet gate read an UNREADABLE balance as a sufficient one
+
+Not a frame fact. Recorded here because it was found while mounting the frames
+in section 4, it sits on the money path, and the next person in these files
+should know both halves — the half that is fixed and the half that is not.
+
+### Fixed — `BetSlipPanel.tsx`, commit `1ec0122ae`
+
+The gate was `availableBalance < totalWager`. `useSportsBalance` supplies that
+as a bare `number` computed `Math.max(0, balance - pendingAmount)`, with **no
+case for "we could not read it"**. When the expression is `NaN`:
+
+```
+NaN < 20   →   false        // "the balance is sufficient"
+```
+
+so a balance nobody had read passed the check. The same `insufficientBalance`
+flag also guards the button's `onClick`, so the disable and the last-chance
+check failed open **together** — there was no second line of defence.
+
+This is the `null < total` hazard from CLAUDE.md wearing a different hat: an
+unknown silently coerced into a pass. It is also not hypothetical — two wager
+helpers in the *same file* already wrote
+`Number.isFinite(availableBalance) ? availableBalance : 0`. The money gate was
+the one place that did not.
+
+The unknown is now its own state, so it blocks **and names itself**
+("Balance Unavailable") rather than failing silently, and the two display sites
+stop rendering the string `"NaN"`: the header chip shows the unknown glyph `—`
+(deliberately not `$0.00`, and a different glyph from the loading `…`), and the
+warning says the read failed instead of "you have $NaN". A readable `0` is
+untouched — zero is a known balance and still compares normally.
+
+Cover: `BetSlipPanel.balanceGate.test.tsx`. The funded case is an independent
+oracle, so the suite cannot pass by disabling the button unconditionally;
+verified by mutation (removing the guard fails 2 of 5).
+
+⚠ Instrument trap hit while writing that test: the panel renders six
+quick-wager chips labelled `"Quick wager $5"` … `"Use maximum wager"`, so
+finding the Place button by `aria-label` containing `"wager $"` returns an
+always-enabled chip. That selector reported `disabled === false` for cases the
+panel was blocking correctly — a broken instrument reading as broken code.
+Match on `"potential payout"`, which is unique to the real button.
+
+### NOT fixed — `useSportsBalance.ts`, and why it was left alone
+
+Two things in the hook are worth a report of their own. Both are **out of the
+sports lane's file scope** (`src/hooks/sports/**` is shared by
+`HeaderStatusBar`, `OrderEntryPanel` and `BookieDashboard`), so they were not
+edited here.
+
+1. **`chainAvailable` is a module-level mutable global.** `_lastReadSucceeded`
+   (`:87`) is written inside `fetchChainBalance` and read at render (`:287`).
+   Every `useSportsBalance()` consumer shares the one variable, so it reflects
+   whichever fetch resolved last **across all of them** — one component's
+   successful read can report the chain as available to a component whose own
+   read just failed. A liveness signal that fails toward reassurance.
+
+2. **A failed read returns `0n`, so an unknown balance renders as a confident
+   `$0.00`.** `fetchChainBalance` catches network errors and returns zero
+   (`:129-131`). For the bet gate this happens to fail *closed*
+   (`0 < wager` → insufficient), but every *display* of that figure states a
+   balance we do not have. That is the "omitted ≠ zero" rule inverted, and the
+   fix is the `number | Offline` shape from `src/hooks/wallet/tokenPrice.ts`,
+   applied at the hook rather than patched at each of the four call sites.
+
+Note the NaN in the fixed half is currently **latent, not reachable**:
+`pendingAmount` only moves via `addPending`, which has no production caller, and
+`rawToNumber(bigint)` cannot produce `NaN`. It was fixed anyway because the type
+permits it, four consumers read it, and the failure mode is silent.
