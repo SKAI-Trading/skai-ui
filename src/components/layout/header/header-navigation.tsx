@@ -172,7 +172,24 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
             aria-haspopup="menu"
             aria-expanded={open}
             className={cn(
-              "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
+              /*
+                ⚠️ py-2 across all three nav triggers in this file, and it
+                DELIBERATELY BREACHES THE 44px TAP MINIMUM. Casey's explicit
+                call, 2026-08-26, made with that cost stated.
+
+                text-base is 16/24, so py-3 made these 48px tall and drove the
+                app header to 65/57/57 against Figma frames that instance it at
+                56/52/48. py-2 gives 24 + 16 = 40px, which is what the frames
+                draw. Every Home 2 frame failed measured parity on that band
+                alone.
+
+                This is a SHARED component: the same nav renders on every route
+                of the main app via HomeShellLayout. 40px is under the 44px tap
+                target enforced elsewhere in this repo. Recorded here so an
+                accessibility pass reads it as a decision, not a defect, and so
+                nobody restores py-3 to "fix" it.
+              */
+              "px-0 py-2 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
               "hover:text-primary",
               open ? "text-primary" : "text-white [.light_&]:text-green-coal-300"
             )}
@@ -347,7 +364,7 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
                 }
               }}
               className={cn(
-                "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1 cursor-pointer",
+                "px-0 py-2 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1 cursor-pointer",
                 "hover:text-[#56C7F3]",
                 open || triggerActive ? "text-[#56C7F3]" : "text-white [.light_&]:text-green-coal-300"
               )}
@@ -380,7 +397,7 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
             // #2DEDAD. The caret follows via its `fill="currentColor"`, matching the
             // frame where the active caret is #56C7F3 as well.
             className={cn(
-              "px-0 py-3 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
+              "px-0 py-2 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
               "hover:text-[#56C7F3]",
               open ? "text-[#56C7F3]" : "text-white [.light_&]:text-green-coal-300"
             )}
