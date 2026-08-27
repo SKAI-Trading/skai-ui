@@ -818,3 +818,80 @@ the sub-bar glyphs from `assets/games/dice/` — same glyphs, correctly shared.
 **1318 x 54 wrapper**; the 163.333 x 30 cluster is `9061-16828` inside it. Exactly
 §12's container-for-child pattern, and the dimension check is what surfaced it —
 `1318 x 54` was never going to be the same object as a `163.33 x 30` cluster.
+
+---
+
+## 15. A harvest counts TOP-LEVEL nodes, so "drift ZERO" says nothing about the cards INSIDE a page
+
+Found 2026-08-26 from bug report `0c7e5de8` ("Price Grid card has no background
+image"). This one had a passing test defending it, which is what makes it worth
+a section.
+
+`playGameArt.ts` in skai-gaming carried a note — marked **"re-verified"
+twice** — asserting *"price-grid has NO cover anywhere in Figma"*, on the
+evidence that its page's hero card, `10030:31138`, is a **Baccarat** card
+copy-pasted under a "Blackjack" heading. That is all true, and the warning is
+worth keeping: the raster inside `10030:31138` is byte-for-byte the file the
+repo ships as `figma/baccarat.webp`, so lifting it would put baccarat art on a
+price game.
+
+**It is a fact about one node, and it was written down as a fact about the
+page.** The real cover is **`10030:39274`**, on that same page: 195 x 277,
+title-free fill, declared gradient stop `#118461`, "Price Grid" + "Skai
+Originals" as separate text layers. It is now wired.
+
+### Why the catalog could not have contradicted it
+
+`status.price-grid.tsv` ends with **"FIGMA DRIFT: ZERO both directions (20 live
+on 9660:2, 20 harvested)"**. Both numbers are correct and the conclusion does
+not follow:
+
+```
+$ wc -l < price-grid.nodes.txt
+20
+$ grep -c 39274 price-grid.nodes.txt price-grid.titles.tsv
+0
+```
+
+The 20 harvested nodes are the page's **top-level children** — a Directory,
+three Breakpoints, two 1440 page frames, a 375 frame, eight `Ellipse …` and two
+`Group …`. `10030:39274` is nested inside the page frame `10030:39086`, so it
+was never a candidate for the count on either side. **A drift number compares
+the harvest to the live top level; it is silent about every card, panel and
+control below it, which is where essentially all the buildable frames are.**
+
+★ **"Drift ZERO" means the harvest is current, NOT that the section is
+enumerated.** Do not cite a drift count to support a claim that something does
+not exist.
+
+### The two discriminators that did work
+
+Both are already rules in this file, applied one level deeper:
+
+1. **Geometry, per §12.** Cover cards in this library are `195x277` (Desktop) or
+   `76x108` (Mobile). A frame at exactly `195x277` on a game's own page is a
+   cover card whatever it is called. Dimensions are structural; nobody hand-edits
+   them.
+2. **The render, never the layer name, per §3.** `10030:39274` is named
+   **"Cards ALT - Chicken"** — the fifth known instance of that same copy-paste
+   name landing on a card that is not chicken (playGameArt.ts's own header lists
+   Hi-Lo, Chicken, Darts, Fortune Wheel, and Limbo's is the same). Both 1440 page
+   frames on this page are *also* mis-titled **"Blackjack"** (see
+   `price-grid.titles.tsv`), which is what put the earlier reader on the baccarat
+   hero in the first place.
+
+### The part that generalises past Figma
+
+The wrong conclusion was **re-verified twice in prose and then pinned in a
+passing assertion** — `NO_COVER = ["price-grid", "poker"]` in
+`playGameArtCovers.test.ts`. After that, every reader met a confident negative
+with a green test behind it.
+
+★ **A false negative with a test guarding it is indistinguishable from a settled
+fact**, and unlike a wrong positive nothing ever fails to expose it. An absence
+is a search result and it inherits the shape of the search that produced it;
+re-running the same search is not verification, widening it is. If you must
+encode an absence, **encode what you SEARCHED, not what you concluded** — the
+surviving entry is now justified as "poker has no PAGE", which anyone can
+falsify from `pages.json` in one command, rather than "no cover exists", which
+needs a reader to enumerate every node on a page to disprove.
