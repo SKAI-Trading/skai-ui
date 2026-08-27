@@ -1,0 +1,2539 @@
+{
+  "resolvedAt": "2026-08-26",
+  "method": "figma.getNodeByIdAsync per candidate, per file, after loadAsync on every page; top-level ancestor found by walking parents to the PAGE",
+  "candidatesChecked": 398,
+  "filesChecked": [
+    "3sSzw1KewMtUbeLAv7uW0r",
+    "mhF3BkzlTaGiLzJ7kvpmVc",
+    "M6r9FEn042UWTQD1zvy6GM"
+  ],
+  "foundCount": 280,
+  "notFoundCount": 118,
+  "foundPerFile": {
+    "3sSzw1KewMtUbeLAv7uW0r": 46,
+    "mhF3BkzlTaGiLzJ7kvpmVc": 34,
+    "M6r9FEn042UWTQD1zvy6GM": 200
+  },
+  "found": {
+    "11267-123776": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 7,
+      "topLevelId": "5523-103993",
+      "pageId": "5210-118077",
+      "pageName": "🚧 Governance and Utilit"
+    },
+    "2422-4021": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 183",
+      "depth": 2,
+      "topLevelId": "2422-2943",
+      "pageId": "3-2",
+      "pageName": "✅ Onboarding and Authent"
+    },
+    "2422-4022": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Days to launch",
+      "depth": 3,
+      "topLevelId": "2422-2943",
+      "pageId": "3-2",
+      "pageName": "✅ Onboarding and Authent"
+    },
+    "2422-4077": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Total rewards",
+      "depth": 3,
+      "topLevelId": "2422-2943",
+      "pageId": "3-2",
+      "pageName": "✅ Onboarding and Authent"
+    },
+    "2481-14734": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "tool-tip",
+      "depth": 1,
+      "topLevelId": "2481-11481",
+      "pageId": "3-2",
+      "pageName": "✅ Onboarding and Authent"
+    },
+    "4714-31733": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 630",
+      "depth": 3,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-50012": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 631",
+      "depth": 3,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-50404": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Main container",
+      "depth": 4,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-32327": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 631",
+      "depth": 3,
+      "topLevelId": "4711-28434",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-32563": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Popular games",
+      "depth": 7,
+      "topLevelId": "4711-28434",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-32564": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "icons/action",
+      "depth": 7,
+      "topLevelId": "4711-28434",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "9112-12989": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "icons/action",
+      "depth": 7,
+      "topLevelId": "4711-28434",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-33258": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "icons/action",
+      "depth": 7,
+      "topLevelId": "4711-28434",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "10012-192546": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "10012-134986",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "8610-164927": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Home",
+      "depth": 4,
+      "topLevelId": "8610-163972",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict"
+    },
+    "3288-23425": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 402",
+      "depth": 2,
+      "topLevelId": "3288-23300",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict"
+    },
+    "3562-40405": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 3,
+      "topLevelId": "3562-40397",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict"
+    },
+    "8583-132899": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "icons/action",
+      "depth": 7,
+      "topLevelId": "3269-17599",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict"
+    },
+    "5198-47869": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 301",
+      "depth": 7,
+      "topLevelId": "5198-47082",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "5198-47880": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 297",
+      "depth": 9,
+      "topLevelId": "5198-47082",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "4714-49436": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 655",
+      "depth": 4,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-50621": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 644",
+      "depth": 7,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "10183-271827": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "10183-270971",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "5194-271101": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 619",
+      "depth": 4,
+      "topLevelId": "5194-270743",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11341-88360": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "middle",
+      "depth": 2,
+      "topLevelId": "11341-85236",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11381-26254": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "end-to-end encrypted",
+      "depth": 4,
+      "topLevelId": "11341-86042",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11529-292026": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Show more",
+      "depth": 6,
+      "topLevelId": "11529-291953",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11442-179186": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Overlay",
+      "depth": 1,
+      "topLevelId": "11442-179297",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "4459-128102": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "PAGE",
+      "name": "✅ Play",
+      "depth": 0,
+      "topLevelId": "4459-128102",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-50623": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "GCB",
+      "depth": 9,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-50630": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Gaming Control Board",
+      "depth": 9,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-50632": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Gamble Aware 1",
+      "depth": 9,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4714-50648": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Gamble Aware",
+      "depth": 9,
+      "topLevelId": "4714-31722",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play"
+    },
+    "4914-113562": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "PAGE",
+      "name": "✅ Social",
+      "depth": 0,
+      "topLevelId": "4914-113562",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "5198-9944": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Stream not found or has ",
+      "depth": 10,
+      "topLevelId": "5194-270743",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "10219-182587": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Stream not found or has ",
+      "depth": 5,
+      "topLevelId": "10219-182536",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11396-76743": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Stream not found or has ",
+      "depth": 10,
+      "topLevelId": "11396-76652",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11398-86960": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Stream not found or has ",
+      "depth": 10,
+      "topLevelId": "11398-86869",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11398-87735": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Stream not found or has ",
+      "depth": 10,
+      "topLevelId": "11398-87644",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11398-85969": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Stream not found or has ",
+      "depth": 10,
+      "topLevelId": "11398-85878",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11530-304330": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Stream not found or has ",
+      "depth": 10,
+      "topLevelId": "11530-304239",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "11526-288969": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Stream not found or has ",
+      "depth": 10,
+      "topLevelId": "11526-288877",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "10136-266607": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Gifted +200 SKAI",
+      "depth": 11,
+      "topLevelId": "10136-262502",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "10136-266659": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Gifted +5 SOL",
+      "depth": 11,
+      "topLevelId": "10136-262502",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "10155-268409": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Gifted +200 SKAI",
+      "depth": 11,
+      "topLevelId": "10155-268046",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "10155-268416": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "TEXT",
+      "name": "Gifted +5 SOL",
+      "depth": 11,
+      "topLevelId": "10155-268046",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social"
+    },
+    "13391-167379": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 3,
+      "topLevelId": "13388-149975",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2"
+    },
+    "13391-167424": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1000003781",
+      "depth": 3,
+      "topLevelId": "13388-149975",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2"
+    },
+    "13391-168676": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 3,
+      "topLevelId": "13391-167925",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2"
+    },
+    "13391-168720": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 2,
+      "topLevelId": "13391-167925",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2"
+    },
+    "2713-5015": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "2713-5014",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1"
+    },
+    "4459-127390": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "labels/tag",
+      "depth": 8,
+      "topLevelId": "4451-126554",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1"
+    },
+    "4451-126563": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 3,
+      "topLevelId": "4451-126554",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1"
+    },
+    "9934-142675": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1328",
+      "depth": 6,
+      "topLevelId": "9934-141532",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1"
+    },
+    "9934-142690": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1325",
+      "depth": 6,
+      "topLevelId": "9934-141532",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1"
+    },
+    "13008-42644": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1110",
+      "depth": 4,
+      "topLevelId": "13008-42620",
+      "pageId": "13008-26951",
+      "pageName": "✅ Wallet 2"
+    },
+    "7717-14311": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "7717-13587",
+      "pageId": "2998-19593",
+      "pageName": "✅ Wallet 1"
+    },
+    "13458-191869": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 7,
+      "topLevelId": "13449-191068",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2"
+    },
+    "13389-161510": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "internal",
+      "depth": 3,
+      "topLevelId": "13389-161486",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2"
+    },
+    "13389-161531": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "internal",
+      "depth": 2,
+      "topLevelId": "13389-161486",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2"
+    },
+    "13389-161727": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "internal",
+      "depth": 3,
+      "topLevelId": "13389-161703",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2"
+    },
+    "5810-111257": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "internal",
+      "depth": 3,
+      "topLevelId": "5810-111233",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1"
+    },
+    "13006-150342": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "chart",
+      "depth": 2,
+      "topLevelId": "13006-150329",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-299188": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1381",
+      "depth": 5,
+      "topLevelId": "13006-299059",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-303522": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1381",
+      "depth": 5,
+      "topLevelId": "13006-303393",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-268810": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1381",
+      "depth": 4,
+      "topLevelId": "13006-268680",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-221113": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 267",
+      "depth": 4,
+      "topLevelId": "13006-219610",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-221117": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 283",
+      "depth": 8,
+      "topLevelId": "13006-219610",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-221226": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 470",
+      "depth": 8,
+      "topLevelId": "13006-219610",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-293275": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Limit",
+      "depth": 1,
+      "topLevelId": "13006-293274",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-293332": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "TEXT",
+      "name": "-100%",
+      "depth": 9,
+      "topLevelId": "13006-293274",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-272490": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "13006-272489",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-273877": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "13006-273876",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-212107": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "nav",
+      "depth": 9,
+      "topLevelId": "13006-210576",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-212111": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 12,
+      "topLevelId": "13006-210576",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-212106": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 355",
+      "depth": 8,
+      "topLevelId": "13006-210576",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-214319": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 12,
+      "topLevelId": "13006-212781",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-216679": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 12,
+      "topLevelId": "13006-214989",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-212113": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 11,
+      "topLevelId": "13006-210576",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "13006-134300": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "PAGE",
+      "name": "✅ Trade 2",
+      "depth": 0,
+      "topLevelId": "13006-134300",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2"
+    },
+    "9003-118857": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Desktop",
+      "depth": 4,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-118856": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 271",
+      "depth": 3,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119199": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "input/toggle",
+      "depth": 5,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119080": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Cards ALT - Chicken",
+      "depth": 9,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-118981": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "CTA/button",
+      "depth": 9,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-118992": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "CTA/button",
+      "depth": 9,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-118999": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "CTA/button",
+      "depth": 9,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119008": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "CTA/button",
+      "depth": 9,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9178-8212": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "GROUP",
+      "name": "ribbon 1 (1)",
+      "depth": 2,
+      "topLevelId": "9178-8146",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9178-8323": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "GROUP",
+      "name": "ribbon 1 (1)",
+      "depth": 8,
+      "topLevelId": "9003-117337",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9363-1973": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Chicken",
+      "depth": 6,
+      "topLevelId": "9363-1963",
+      "pageId": "9061-15464",
+      "pageName": "✅ Chicken - Skai origina"
+    },
+    "9432-4046": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "1.15x",
+      "depth": 11,
+      "topLevelId": "9363-1963",
+      "pageId": "9061-15464",
+      "pageName": "✅ Chicken - Skai origina"
+    },
+    "9428-8606": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000003902",
+      "depth": 6,
+      "topLevelId": "9428-8535",
+      "pageId": "9061-15464",
+      "pageName": "✅ Chicken - Skai origina"
+    },
+    "9428-9160": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "GROUP",
+      "name": "Group 288",
+      "depth": 7,
+      "topLevelId": "9428-8535",
+      "pageId": "9061-15464",
+      "pageName": "✅ Chicken - Skai origina"
+    },
+    "9364-2113": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004093",
+      "depth": 1,
+      "topLevelId": "9363-4571",
+      "pageId": "9061-15464",
+      "pageName": "✅ Chicken - Skai origina"
+    },
+    "9364-2114": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Advanced",
+      "depth": 2,
+      "topLevelId": "9363-4571",
+      "pageId": "9061-15464",
+      "pageName": "✅ Chicken - Skai origina"
+    },
+    "9364-2115": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "input/toggle",
+      "depth": 2,
+      "topLevelId": "9363-4571",
+      "pageId": "9061-15464",
+      "pageName": "✅ Chicken - Skai origina"
+    },
+    "9156-1290": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004023",
+      "depth": 1,
+      "topLevelId": "9156-1198",
+      "pageId": "9003-85754",
+      "pageName": "✅ Crash - Skai originals"
+    },
+    "9442-16834": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004121",
+      "depth": 7,
+      "topLevelId": "9392-1798",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9442-16848": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004123",
+      "depth": 8,
+      "topLevelId": "9392-1798",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9392-2837": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "A dartboard, a ring of m",
+      "depth": 10,
+      "topLevelId": "9392-1798",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9392-1808": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Darts",
+      "depth": 6,
+      "topLevelId": "9392-1798",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9088-1539": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Mobile",
+      "depth": 4,
+      "topLevelId": "9003-44542",
+      "pageId": "2003-674",
+      "pageName": "✅ Dice - Skai originals"
+    },
+    "9003-44639": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 270",
+      "depth": 4,
+      "topLevelId": "9003-44542",
+      "pageId": "2003-674",
+      "pageName": "✅ Dice - Skai originals"
+    },
+    "9737-13088": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Baccarat - Skai origin",
+      "depth": 0,
+      "topLevelId": "9737-13088",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "9390-18296": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Bingo - Skai originals",
+      "depth": 0,
+      "topLevelId": "9390-18296",
+      "pageId": "9390-18296",
+      "pageName": "✅ Bingo - Skai originals"
+    },
+    "9003-112414": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Blackjack - Skai origi",
+      "depth": 0,
+      "topLevelId": "9003-112414",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9061-15464": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Chicken - Skai origina",
+      "depth": 0,
+      "topLevelId": "9061-15464",
+      "pageId": "9061-15464",
+      "pageName": "✅ Chicken - Skai origina"
+    },
+    "9003-122027": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Coinflip - Skai origin",
+      "depth": 0,
+      "topLevelId": "9003-122027",
+      "pageId": "9003-122027",
+      "pageName": "✅ Coinflip - Skai origin"
+    },
+    "9003-85754": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Crash - Skai originals",
+      "depth": 0,
+      "topLevelId": "9003-85754",
+      "pageId": "9003-85754",
+      "pageName": "✅ Crash - Skai originals"
+    },
+    "9390-18294": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Darts - Skai originals",
+      "depth": 0,
+      "topLevelId": "9390-18294",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9390-18297": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Fortune Wheel - Skai o",
+      "depth": 0,
+      "topLevelId": "9390-18297",
+      "pageId": "9390-18297",
+      "pageName": "✅ Fortune Wheel - Skai o"
+    },
+    "9058-1819": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Hi-Lo - Skai originals",
+      "depth": 0,
+      "topLevelId": "9058-1819",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9390-18295": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Keno - Skai originals",
+      "depth": 0,
+      "topLevelId": "9390-18295",
+      "pageId": "9390-18295",
+      "pageName": "✅ Keno - Skai originals"
+    },
+    "9929-16390": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Limbo - Skai originals",
+      "depth": 0,
+      "topLevelId": "9929-16390",
+      "pageId": "9929-16390",
+      "pageName": "✅ Limbo - Skai originals"
+    },
+    "9003-102080": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Mines - Skai originals",
+      "depth": 0,
+      "topLevelId": "9003-102080",
+      "pageId": "9003-102080",
+      "pageName": "✅ Mines - Skai originals"
+    },
+    "9003-72411": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Plinko - Skai original",
+      "depth": 0,
+      "topLevelId": "9003-72411",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9069-6513": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004083",
+      "depth": 2,
+      "topLevelId": "9069-5304",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9095-5889": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004083",
+      "depth": 2,
+      "topLevelId": "9095-5369",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9095-5332": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004083",
+      "depth": 2,
+      "topLevelId": "9095-4812",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9390-18298": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Rock Paper Scissors - ",
+      "depth": 0,
+      "topLevelId": "9390-18298",
+      "pageId": "9390-18298",
+      "pageName": "✅ Rock Paper Scissors -"
+    },
+    "9737-13085": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Roulette - Skai origin",
+      "depth": 0,
+      "topLevelId": "9737-13085",
+      "pageId": "9737-13085",
+      "pageName": "✅ Roulette - Skai origin"
+    },
+    "9003-133221": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Scratchers - Skai orig",
+      "depth": 0,
+      "topLevelId": "9003-133221",
+      "pageId": "9003-133221",
+      "pageName": "✅ Scratchers - Skai orig"
+    },
+    "9929-16391": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Slide - Skai originals",
+      "depth": 0,
+      "topLevelId": "9929-16391",
+      "pageId": "9929-16391",
+      "pageName": "✅ Slide - Skai originals"
+    },
+    "9061-15449": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Towers - Skai original",
+      "depth": 0,
+      "topLevelId": "9061-15449",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10120-10113": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "Towars Draft (Disregard)",
+      "depth": 0,
+      "topLevelId": "10120-10113",
+      "pageId": "10120-10113",
+      "pageName": "Towars Draft (Disregard)"
+    },
+    "9758-6724": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 12,
+      "topLevelId": "9738-13101",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9758-6729": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 12,
+      "topLevelId": "9738-13101",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-9622": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 5,
+      "topLevelId": "9760-9610",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-9627": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 5,
+      "topLevelId": "9760-9610",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9737-13087": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "PAGE",
+      "name": "✅ Video Poker - Skai ori",
+      "depth": 0,
+      "topLevelId": "9737-13087",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9061-10760": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Guess whether the next c",
+      "depth": 10,
+      "topLevelId": "9061-10499",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-9650": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "10",
+      "depth": 10,
+      "topLevelId": "9061-9472",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9948-24624": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 345",
+      "depth": 5,
+      "topLevelId": "9948-24618",
+      "pageId": "9929-16390",
+      "pageName": "✅ Limbo - Skai originals"
+    },
+    "9948-24621": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 520",
+      "depth": 2,
+      "topLevelId": "9948-24618",
+      "pageId": "9929-16390",
+      "pageName": "✅ Limbo - Skai originals"
+    },
+    "9948-24627": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "RECTANGLE",
+      "name": "Rectangle 34624566",
+      "depth": 6,
+      "topLevelId": "9948-24618",
+      "pageId": "9929-16390",
+      "pageName": "✅ Limbo - Skai originals"
+    },
+    "9799-16717": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 629",
+      "depth": 3,
+      "topLevelId": "9799-16713",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "9104-6251": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 1,
+      "topLevelId": "9104-6170",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9069-5872": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "GROUP",
+      "name": "Group 243",
+      "depth": 4,
+      "topLevelId": "9069-5304",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9095-5373": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "GROUP",
+      "name": "Group 243",
+      "depth": 4,
+      "topLevelId": "9095-5369",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9137-12151": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000003780",
+      "depth": 4,
+      "topLevelId": "9137-11578",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9137-12152": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 5,
+      "topLevelId": "9137-11578",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9178-9330": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004087",
+      "depth": 5,
+      "topLevelId": "9137-11578",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9137-12184": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000003835",
+      "depth": 5,
+      "topLevelId": "9137-11578",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9137-12200": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004086",
+      "depth": 5,
+      "topLevelId": "9137-11578",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9137-12209": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004020",
+      "depth": 5,
+      "topLevelId": "9137-11578",
+      "pageId": "9003-72411",
+      "pageName": "✅ Plinko - Skai original"
+    },
+    "9799-15324": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004041",
+      "depth": 5,
+      "topLevelId": "9799-15067",
+      "pageId": "9737-13085",
+      "pageName": "✅ Roulette - Skai origin"
+    },
+    "9212-21235": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004025",
+      "depth": 1,
+      "topLevelId": "9212-20910",
+      "pageId": "9003-133221",
+      "pageName": "✅ Scratchers - Skai orig"
+    },
+    "9212-25292": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004025",
+      "depth": 1,
+      "topLevelId": "9212-24967",
+      "pageId": "9003-133221",
+      "pageName": "✅ Scratchers - Skai orig"
+    },
+    "9433-12193": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 345",
+      "depth": 5,
+      "topLevelId": "9433-12187",
+      "pageId": "9390-18295",
+      "pageName": "✅ Keno - Skai originals"
+    },
+    "9799-16719": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 345",
+      "depth": 5,
+      "topLevelId": "9799-16713",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "10130-13760": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 275",
+      "depth": 2,
+      "topLevelId": "10130-13720",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-13771": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004102",
+      "depth": 1,
+      "topLevelId": "10130-13720",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-15019": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Advanced",
+      "depth": 2,
+      "topLevelId": "10130-14946",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-15020": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "input/toggle",
+      "depth": 2,
+      "topLevelId": "10130-14946",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-14102": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004018",
+      "depth": 1,
+      "topLevelId": "10130-14013",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-14103": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Advanced",
+      "depth": 2,
+      "topLevelId": "10130-14013",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-14104": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "input/toggle",
+      "depth": 2,
+      "topLevelId": "10130-14013",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-14418": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Blackjack",
+      "depth": 13,
+      "topLevelId": "10130-14171",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-14394": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "New to crypto casinos? T",
+      "depth": 10,
+      "topLevelId": "10130-14171",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "9758-6713": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004210",
+      "depth": 8,
+      "topLevelId": "9738-13101",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9738-13155": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 658",
+      "depth": 5,
+      "topLevelId": "9738-13101",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9691-11948": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 345",
+      "depth": 4,
+      "topLevelId": "9691-11942",
+      "pageId": "9390-18296",
+      "pageName": "✅ Bingo - Skai originals"
+    },
+    "9691-13536": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Fourtune Wheel",
+      "depth": 13,
+      "topLevelId": "9691-13343",
+      "pageId": "9390-18297",
+      "pageName": "✅ Fortune Wheel - Skai o"
+    },
+    "9433-12197": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Keno",
+      "depth": 6,
+      "topLevelId": "9433-12187",
+      "pageId": "9390-18295",
+      "pageName": "✅ Keno - Skai originals"
+    },
+    "9433-14572": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Keno",
+      "depth": 5,
+      "topLevelId": "9433-14563",
+      "pageId": "9390-18295",
+      "pageName": "✅ Keno - Skai originals"
+    },
+    "9433-12566": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "A grid of numbers and a ",
+      "depth": 10,
+      "topLevelId": "9433-12187",
+      "pageId": "9390-18295",
+      "pageName": "✅ Keno - Skai originals"
+    },
+    "9433-14893": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "A grid of numbers and a ",
+      "depth": 11,
+      "topLevelId": "9433-14563",
+      "pageId": "9390-18295",
+      "pageName": "✅ Keno - Skai originals"
+    },
+    "9907-1599": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 629",
+      "depth": 3,
+      "topLevelId": "9907-1595",
+      "pageId": "9390-18298",
+      "pageName": "✅ Rock Paper Scissors -"
+    },
+    "9907-1908": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "labels/tag",
+      "depth": 12,
+      "topLevelId": "9907-1595",
+      "pageId": "9390-18298",
+      "pageName": "✅ Rock Paper Scissors -"
+    },
+    "9907-2641": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "labels/tag",
+      "depth": 12,
+      "topLevelId": "9907-2356",
+      "pageId": "9390-18298",
+      "pageName": "✅ Rock Paper Scissors -"
+    },
+    "9937-19139": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Potential Profit: (1.98x",
+      "depth": 10,
+      "topLevelId": "9907-1595",
+      "pageId": "9390-18298",
+      "pageName": "✅ Rock Paper Scissors -"
+    },
+    "10130-14180": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Towers",
+      "depth": 5,
+      "topLevelId": "10130-14171",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-14385": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Towers",
+      "depth": 13,
+      "topLevelId": "10130-14171",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "10130-14392": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Climb the tower one row ",
+      "depth": 11,
+      "topLevelId": "10130-14171",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "9079-2016": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Practice mode off",
+      "depth": 6,
+      "topLevelId": "9079-2001",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "9079-2118": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "1376.97 SKAI",
+      "depth": 14,
+      "topLevelId": "9079-2001",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "9079-2269": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "New to crypto casinos? T",
+      "depth": 9,
+      "topLevelId": "9079-2001",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai original"
+    },
+    "9738-13107": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 345",
+      "depth": 5,
+      "topLevelId": "9738-13101",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10116": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 10,
+      "topLevelId": "9738-13811",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10121": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 10,
+      "topLevelId": "9738-13811",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9758-6719": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "800x",
+      "depth": 12,
+      "topLevelId": "9738-13101",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10111": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "800x",
+      "depth": 10,
+      "topLevelId": "9738-13811",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9799-17016": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Baccarat",
+      "depth": 13,
+      "topLevelId": "9799-16713",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "9799-18434": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Baccarat",
+      "depth": 13,
+      "topLevelId": "9799-18183",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "9799-17019": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "INSTANCE",
+      "name": "labels/tag",
+      "depth": 12,
+      "topLevelId": "9799-16713",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "9873-4055": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Baccarat",
+      "depth": 10,
+      "topLevelId": "9799-16713",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "9799-18429": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "BACCARAT",
+      "depth": 12,
+      "topLevelId": "9799-18183",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "9799-17021": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Pick your sides and let ",
+      "depth": 10,
+      "topLevelId": "9799-16713",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "9799-18441": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Pick your sides and let ",
+      "depth": 11,
+      "topLevelId": "9799-18183",
+      "pageId": "9737-13088",
+      "pageName": "✅ Baccarat - Skai origin"
+    },
+    "10030-31148": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Blackjack",
+      "depth": 13,
+      "topLevelId": "10030-30838",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-31153": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Pick your sides and let ",
+      "depth": 10,
+      "topLevelId": "10030-30838",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-31141": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Baccarat",
+      "depth": 10,
+      "topLevelId": "10030-30838",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-39284": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Price Grid",
+      "depth": 13,
+      "topLevelId": "10030-39086",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-39289": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Pick your tiles and call",
+      "depth": 10,
+      "topLevelId": "10030-39086",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "9907-9052": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Price Grid",
+      "depth": 13,
+      "topLevelId": "9907-8770",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "9907-9047": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "BACCARAT",
+      "depth": 12,
+      "topLevelId": "9907-8770",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "9755-6506": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 6,
+      "topLevelId": "9738-14502",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-9836": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 6,
+      "topLevelId": "9760-9691",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-9979": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 6,
+      "topLevelId": "9760-9933",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10336": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 6,
+      "topLevelId": "9760-10290",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10511": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 6,
+      "topLevelId": "9760-10454",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10643": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "60x",
+      "depth": 6,
+      "topLevelId": "9760-10586",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9755-6513": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 6,
+      "topLevelId": "9738-14502",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-9841": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 6,
+      "topLevelId": "9760-9691",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-9984": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 6,
+      "topLevelId": "9760-9933",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10341": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 6,
+      "topLevelId": "9760-10290",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10516": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 6,
+      "topLevelId": "9760-10454",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9760-10648": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "22x",
+      "depth": 6,
+      "topLevelId": "9760-10586",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9061-9598": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Higher: (3.22x)",
+      "depth": 9,
+      "topLevelId": "9061-9472",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-9608": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Lower: (1.29x)",
+      "depth": 9,
+      "topLevelId": "9061-9472",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-9583": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Potential Profit: (2.86x",
+      "depth": 9,
+      "topLevelId": "9061-9472",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9332-26528": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Higher: (1.17x)",
+      "depth": 10,
+      "topLevelId": "9061-10499",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9332-26538": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Lower: (4.29x)",
+      "depth": 10,
+      "topLevelId": "9061-10499",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-10610": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Potential Profit: (2.86x",
+      "depth": 9,
+      "topLevelId": "9061-10499",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "10248-9766": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Higher: (3.22x)",
+      "depth": 3,
+      "topLevelId": "10248-9763",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "10248-9776": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Lower: (1.29x)",
+      "depth": 3,
+      "topLevelId": "10248-9763",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "10249-9990": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Potential Profit: (2.86x",
+      "depth": 3,
+      "topLevelId": "10249-9938",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-15288": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Higher: (1.17x)",
+      "depth": 7,
+      "topLevelId": "9058-4372",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-15298": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Lower: (4.29x)",
+      "depth": 7,
+      "topLevelId": "9058-4372",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9332-27591": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Higher: (1.17x)",
+      "depth": 4,
+      "topLevelId": "9332-27320",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9332-27601": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Lower: (4.29x)",
+      "depth": 4,
+      "topLevelId": "9332-27320",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9351-5273": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Higher: (1.17x)",
+      "depth": 8,
+      "topLevelId": "9351-4708",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9351-5283": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Profit Lower: (4.29x)",
+      "depth": 8,
+      "topLevelId": "9351-4708",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9332-28050": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Lower or Same",
+      "depth": 5,
+      "topLevelId": "9332-27320",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9332-28051": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "53.58%",
+      "depth": 5,
+      "topLevelId": "9332-27320",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9332-28042": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Lower or Same",
+      "depth": 5,
+      "topLevelId": "9332-27320",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9332-28043": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "53.58%",
+      "depth": 5,
+      "topLevelId": "9332-27320",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9351-5348": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Lower or Same",
+      "depth": 9,
+      "topLevelId": "9351-4708",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9351-5349": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "53.58%",
+      "depth": 9,
+      "topLevelId": "9351-4708",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9351-5355": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Lower or Same",
+      "depth": 9,
+      "topLevelId": "9351-4708",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9351-5356": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "53.58%",
+      "depth": 9,
+      "topLevelId": "9351-4708",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "10249-9980": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Higher or Same",
+      "depth": 4,
+      "topLevelId": "10249-9938",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "10249-9985": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Lower or Same",
+      "depth": 4,
+      "topLevelId": "10249-9938",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-15418": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Higher or Same",
+      "depth": 10,
+      "topLevelId": "9058-4372",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-15420": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "30.77%",
+      "depth": 10,
+      "topLevelId": "9058-4372",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-15423": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Lower or Same",
+      "depth": 10,
+      "topLevelId": "9058-4372",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-15425": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "76.92%",
+      "depth": 10,
+      "topLevelId": "9058-4372",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9061-15412": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Lower Or Same",
+      "depth": 10,
+      "topLevelId": "9058-4372",
+      "pageId": "9058-1819",
+      "pageName": "✅ Hi-Lo - Skai originals"
+    },
+    "9411-7944": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 3,
+      "topLevelId": "9411-7933",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9411-7966": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.2x",
+      "depth": 3,
+      "topLevelId": "9411-7955",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9467-19561": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.2x",
+      "depth": 3,
+      "topLevelId": "9455-19001",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9411-7988": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.1x",
+      "depth": 3,
+      "topLevelId": "9411-7977",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9467-19640": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.1x",
+      "depth": 3,
+      "topLevelId": "9467-19582",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9442-16850": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 10,
+      "topLevelId": "9392-1798",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9442-16744": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 4,
+      "topLevelId": "9411-7933",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9442-16759": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 4,
+      "topLevelId": "9411-7955",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9442-16774": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 4,
+      "topLevelId": "9411-7977",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9455-19079": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 8,
+      "topLevelId": "9442-17258",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9467-19607": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 4,
+      "topLevelId": "9467-19582",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9455-18172": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 3,
+      "topLevelId": "9455-18169",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9442-16690": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.5x",
+      "depth": 4,
+      "topLevelId": "9433-16420",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "9003-117673": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "$8,481.10",
+      "depth": 11,
+      "topLevelId": "9003-117337",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119128": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "$8,481.10",
+      "depth": 13,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119630": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "$8,481.10",
+      "depth": 13,
+      "topLevelId": "9003-119356",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-120142": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "$8,481.10",
+      "depth": 13,
+      "topLevelId": "9003-119858",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-117447": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "100.11 SKAI",
+      "depth": 13,
+      "topLevelId": "9003-117337",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-117446": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "balance",
+      "depth": 12,
+      "topLevelId": "9003-117337",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119043": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "100.11 SKAI",
+      "depth": 11,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119545": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "100.11 SKAI",
+      "depth": 9,
+      "topLevelId": "9003-119356",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9178-9832": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "100.11 SKAI",
+      "depth": 9,
+      "topLevelId": "9003-119858",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9178-4077": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "100.11 SKAI",
+      "depth": 5,
+      "topLevelId": "9178-4037",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9178-8490": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "100.11 SKAI",
+      "depth": 5,
+      "topLevelId": "9178-8446",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9178-10534": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "100.11 SKAI",
+      "depth": 5,
+      "topLevelId": "9178-10465",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119030": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.01 SKAI",
+      "depth": 16,
+      "topLevelId": "9003-118852",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9003-119532": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "0.01 SKAI",
+      "depth": 14,
+      "topLevelId": "9003-119356",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "10030-30848": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Price Grid",
+      "depth": 6,
+      "topLevelId": "10030-30838",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-39096": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Price Grid",
+      "depth": 6,
+      "topLevelId": "10030-39086",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-39277": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Price Grid",
+      "depth": 10,
+      "topLevelId": "10030-39086",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-31155": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "New to crypto casinos? T",
+      "depth": 9,
+      "topLevelId": "10030-30838",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-39291": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "New to crypto casinos? T",
+      "depth": 9,
+      "topLevelId": "10030-39086",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "9907-9061": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "New to crypto casinos? T",
+      "depth": 10,
+      "topLevelId": "9907-8770",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-31184": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Blackjack",
+      "depth": 11,
+      "topLevelId": "10030-30838",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-39320": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Blackjack",
+      "depth": 11,
+      "topLevelId": "10030-39086",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "9907-9085": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "TEXT",
+      "name": "Blackjack",
+      "depth": 13,
+      "topLevelId": "9907-8770",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "9738-13650": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "GCB",
+      "depth": 9,
+      "topLevelId": "9738-13101",
+      "pageId": "9737-13087",
+      "pageName": "✅ Video Poker - Skai ori"
+    },
+    "9003-117921": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "GCB",
+      "depth": 9,
+      "topLevelId": "9003-117337",
+      "pageId": "9003-112414",
+      "pageName": "✅ Blackjack - Skai origi"
+    },
+    "9392-3123": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "GCB",
+      "depth": 9,
+      "topLevelId": "9392-1798",
+      "pageId": "9390-18294",
+      "pageName": "✅ Darts - Skai originals"
+    },
+    "10030-31438": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "GCB",
+      "depth": 9,
+      "topLevelId": "10030-30838",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    },
+    "10030-39574": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "GCB",
+      "depth": 9,
+      "topLevelId": "10030-39086",
+      "pageId": "9660-2",
+      "pageName": "✅ Price Grid - Skai orig"
+    }
+  }
+}
