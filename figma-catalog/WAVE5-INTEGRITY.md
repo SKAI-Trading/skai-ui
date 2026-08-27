@@ -110,6 +110,70 @@ which ought to be REPORTED as unaddressable is quietly filed instead. Worth
 tightening (require the `>` separator for the rollup form), not worth an
 in-flight edit.
 
+## ★★★ THE FIFTH MEASUREMENT ARTIFACT — `liveOnly` is a KEYING metric, not a coverage metric
+
+Found 2026-08-27 by `social-drift` and `trade2-drift` independently, then
+verified here. **It corrects a number already published to `V1_TODO.md`.**
+
+`coverage.mjs` computes `liveOnly` as "live genuine frames that no status row
+names **by node id in column 1**". That has been read, reported and scheduled as
+*"frames the catalog has never assessed"*. It is not the same thing. A row that
+assessed a frame but keyed it by TITLE, with the node id in the reason column,
+counts as `liveOnly` — the verdict exists and is invisible to the metric.
+
+Verified against every non-wave-5 status file, using the STRICT rule (id in
+column 1, or id opening the reason) rather than a substring search:
+
+| Page | `liveOnly` | carries a real verdict | prose mention only | no mention at all |
+|---|---:|---:|---:|---:|
+| Social | 132 | **132** (52 partial · 53 not-started · 27 blocked) | 0 | **0** |
+| Trade 2 | 180 | **71** (59 partial · 10 not-started · 2 blocked) | 103 | **6** |
+
+**Social is a pure keying artifact — all 132 already assessed, nothing unbuilt.**
+Trade 2 is genuinely mixed: 71 recoverable, 103 uncertain, 6 truly absent.
+
+★ **Note the two lanes disagreed with each other and both overstated.**
+`trade2-drift` reported "only 2 of 180 ids are cited in code … the gap is mostly
+a keying problem", which is true of 71, not 178. Accepting either lane's summary
+without re-deriving it would have replaced one wrong number with another.
+
+★ **And I walked into the trap the first lane had just warned me about.** My
+initial probe substring-matched whole lines and returned a tidy 132 / 178 —
+`social-drift` had reported in the same breath that a naive substring match gave
+**41 false positives on a single id**, because `status.wave4.row-conflicts.tsv`
+quotes an id inside a paragraph *explaining the id convention*. A documentation
+example indexed as a verdict. The strict rule cut Trade 2 from 178 to 71.
+**Being told about a trap in the same message is not protection from it.**
+
+### Consequences
+
+1. **`V1_TODO.md` says "the remaining 180 are live-only drift — the actual open
+   work on that page". That is wrong** and must be corrected to 6 absent + 103
+   to re-test + 71 already assessed. Do not schedule 312 frames of work.
+2. `coverage.mjs` should report `liveOnly` split three ways, not as one number.
+   The honest name for the current metric is `unkeyed`, not `liveOnly`.
+3. The recovery is a **re-keying pass**, not a build wave — move the node id into
+   column 1 on rows that already carry it in prose. Cheap, and it converts ~203
+   invisible verdicts into visible ones.
+
+## Other corrections from landed lanes
+
+- ⚠️ **The brief's "+160w / +109h screenshot bleed" constant is FALSE** and has
+  been corrected in `WAVE5-BRIEF.md` §2. Measured: a 1440x900 frame bled zero, a
+  400x470 frame bled +160/+160. It tracks overlapping canvas neighbours
+  (`contentsOnly: false`), so it is worst on small frames — the class most
+  components are. Any lane that subtracted a fixed number has corrupted small
+  measurements; check for it when validating rows.
+- ⚠️ **The `live/*.tsv` harvest truncates every name at exactly 20 characters.**
+  A lane classifying off that file alone is guessing at identity. Full names must
+  come from Figma directly or from the `*.titles.tsv` files.
+- ⚠️ **My brief contradicted itself**: §9 forbids editing `coverage.json` while
+  the drift lanes were told to run `coverage.mjs`, which rewrites it. Both drift
+  lanes noticed and correctly READ the existing file instead of regenerating it
+  under 19 concurrent lanes. Fixed below.
+- "Trade 2 has no Spot frames" is slightly wrong — two `Spot > Sidebar` frames
+  exist (768 and 375). The claim holds for Spot *board* frames and for Perps.
+
 ## Results
 
 _(filled in after the wave)_

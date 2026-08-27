@@ -56,7 +56,15 @@ Status vocabulary (exact strings): `done` · `partial` · `not-started` ·
   - Measured case: pill fill `#FFBD16 @ 0.34` really paints `#574007` (render
     right); pill text `#FFBD16` opaque was transcribed from a render as
     `#EAAD15` (render wrong). Check `opacity` on the node AND every ancestor.
-- **Screenshot render bleed is exactly +160w / +109h.** Subtract it.
+- ⚠️ **CORRECTED 2026-08-27 — screenshot render bleed is NOT a constant.** This
+  brief originally said "exactly +160w / +109h. Subtract it." **That is false and
+  subtracting it will corrupt your measurements.** Measured on the Trade 2 page:
+  a 1440x900 frame returned 1440x900 — **zero bleed** — while a 400x470 frame
+  returned 560x630, i.e. **+160w / +160h**. The bleed tracks OVERLAPPING CANVAS
+  NEIGHBOURS, because the tool defaults to `contentsOnly: false`. It is largest
+  on small frames, which is exactly the class most components are.
+  ★ **Never subtract a fixed number.** Read the frame's real `width`/`height`
+  from node data and treat the screenshot as a picture, not a ruler.
 - A high node id does NOT mean a new design — diff fills + text + image lists.
 
 ## 3. Radius — the single most repeated mistake
@@ -174,6 +182,26 @@ frame 12" is.
 
 Do NOT edit `registry.json`, `COVERAGE.md`, `coverage.json`, or any other lane's
 TSV. The orchestrator runs `apply-status.mjs` and `coverage.mjs` afterwards.
+
+⚠️ **CORRECTED 2026-08-27 — this rule contradicted the drift-lane instructions,
+which told those lanes to RUN `coverage.mjs`. Running it REWRITES
+`coverage.json`.** Both drift lanes spotted the conflict and did the right thing:
+they READ the existing `coverage.json` rather than regenerating it under twenty
+concurrent lanes. **That is the rule. Read it, never regenerate it** — the file
+already carries a complete `liveOnly` per page, and a regeneration mid-wave races
+every other lane's writes.
+
+⚠️ **And know what `liveOnly` actually measures.** It is "no row names this frame
+**by node id in column 1**" — a KEYING metric, not a coverage one. Verified
+2026-08-27: all 132 Social `liveOnly` frames already carry a real verdict keyed
+by title. Do NOT read `liveOnly` as "never assessed".
+
+★ **When you test whether an id is already covered, the id must be in column 1 or
+OPENING the reason.** A plain substring search over the line is wrong: one
+boilerplate paragraph in `status.wave4.row-conflicts.tsv` quotes an id while
+*explaining the id convention*, and a naive match indexed that documentation
+example as 41 verdicts. The strict rule cut one page's apparent coverage from 178
+to 71.
 
 ## 10. Code changes
 
