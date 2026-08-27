@@ -343,3 +343,351 @@ Note the NaN in the fixed half is currently **latent, not reachable**:
 `pendingAmount` only moves via `addPending`, which has no production caller, and
 `rawToNumber(bigint)` cannot produce `NaN`. It was fixed anyway because the type
 permits it, four consumers read it, and the failure mode is silent.
+
+---
+
+## 11. Game view + bet-notification re-harvest — three CORRECTIONS to section 6
+
+Full re-read of all 12 nodes, 2026-08-26. **Every node id resolved; nothing was
+substituted.** Section 6 above is right about the grouping and wrong about three
+facts. All three matter before anyone scopes this.
+
+> ⚠ `get_metadata` with no nodeId returned **one** page (`2001:2 "Thumbnail"`)
+> for this file — the known under-report. All 12 nodes resolved when queried
+> directly. Do not treat that listing as the page inventory.
+
+### CORRECTION 1 — Tilt and Events are NOT "unknown". They were captured.
+
+Section 6 says *"Tilt, Events — not captured; no report links a frame showing
+them open, so their content is unknown, not empty. Search before asserting."*
+The search has now been run, and it says otherwise:
+
+- **`9227:73669` renders TILT open.**
+- **`9227:73828` renders EVENTS open.** Its frame NAME says
+  `"Game view - not started 3 - tilt"`, and `73669` carries the **identical name
+  string**. The name lies about the subject; trust the render.
+- **`9227:74080` renders OUTCOME open.**
+
+So all four tabs are specified. The child frame names (`Frame 357/358/360/362`)
+also do **not** encode selection — their order shuffles while the highlight moves
+independently, which is what made this look uncaptured.
+
+### CORRECTION 2 — the panel is a 432px RAIL, not a screen, and there is no mobile artboard
+
+The eight standalone frames are **432 wide because that is a column inside the
+1440 desktop page**, not because they are a breakpoint. Proven, not inferred: in
+the host page `9215:15732` (1440 → `main` 1382 → content 1318) the same widget
+sits at **x=886, 432 wide** — and 886 + 432 = 1318 exactly.
+
+**There is no 768 and no 375 artboard for any of this.** If a mobile sportsbook
+is wanted, it is not in Figma and has to be designed.
+
+The eight are a 3x3 canvas matrix (one cell empty) at x 20368 / 20915 / 21462:
+
+| | col 1 | col 2 | col 3 |
+|---|---|---|---|
+| y 15366 (h 493.81) | `9227:73669` Tilt | `9227:73828` Events | `9227:74080` Outcome |
+| y 15965 (h 517.81) | `9227:73346` Yellow card | `9227:73494` Red card | `9227:73572` Goal |
+| y 16588 (h 493.81) | `9215:17213` Pre-match A | `9227:16083` Pre-match B | — |
+
+**Net distinct designs behind the eight reports: 5**, not 8 —
+(1) panel shell + tab strip, (2) pre-match header + Gameplay card in two density
+variants, (3) in-play header + toast in three accent variants, (4) three tab
+bodies sharing one shell, (5) the 1440 page around it.
+
+### Shell spec (pixel literals — do NOT map these onto our Tailwind scale)
+
+- Root 432 wide. Header `Frame 299` 432x50: bg `#122524`, border-bottom 1px
+  `#123F3C`, **radius top 16px / bottom 0**, padding-x 16px. Label "Game view"
+  Manrope Regular 14/18, -0.56px, `#FFFFFF`. Pin button 24x24, radius 8px.
+- Body 432x377.812 (pre-match) / 432x401.812 (in play): bg `#122524`, padding
+  16px, gap 48px, **`overflow: clip`**, shadow `0px 10px 80px rgba(0,0,0,0.25)`.
+- Tab strip `Frame 300` 432x66: bg `#122524`, border-top 1px `#123F3C`, padding
+  16px, **radius bottom 24px**. Four cells **98.5x34**, gap 2px; first cell
+  radius-left 8px, last radius-right 8px, middle two square. Labels
+  **Gameplay . Tilt . Events . Outcome**, Mulish Regular 14/18, -0.56px.
+  **Unselected** bg `#123F3C` text `#FFFFFF`; **selected** bg `#56C7F3` text
+  `#001615`.
+- The in-play header adds a clock and period columns `1 2 R`, and lives in the
+  **same node** as the pre-match header (`Frame 1000003789`), just toggled on.
+  Score reads `AVL 0 - 0 CHE`; the `-` and the `2` render at **64% opacity**.
+- Event toast `Frame 1000003793` **202x80**: bg `#001615`, radius 8px,
+  **border-left 2px + border-right 2px in the accent only** (top and bottom
+  borderless). Yellow card `#FFFF16` (chip 26x36 r4) . Red card `#FF574A`
+  (chip 26x36 r4) . Goal `#17F9B4` (ball 34x34).
+- Pitch turf `#13602c` plus a texture at **28% opacity,
+  `mix-blend-mode: soft-light`**, with 1.232px white markings. **Absent on the
+  Tilt / Events / Outcome frames** — there `Pitch` is an empty 377x239.013
+  layout box, by design, not a missing layer.
+
+### CORRECTION 3 — the "bet notification card states" are not statuses
+
+`9185:15873` and `9185:15853` are **not** won / lost / pending. There is no
+status and there are no status colours. They are the **two content states of one
+427x224 slot** that sits under the match header on the soccer page — verified by
+rendering the host page, which shows two of them side by side. (870-16)/2 = 427;
+the standalone 428.667 is a canvas artifact, so build to 427.
+
+- **`9185:15873` = ODDS / 1X2 state.** Two team rows (flag 32x32, name Mulish
+  14/18, price Mulish **22/26** -0.88px), then three buttons ~126.889x50 radius
+  12px on `rgba(0,22,21,0.8)` + blur 10px, coloured **`AVL` `#56C7F3` / `DRAW`
+  `#95A09F` / `CHE` `#FF574A`** — that is home / draw / away, *not* a result
+  state. Footer: `Today, 20:30` + an `EPL` pill (border 1px `#95A09F`, radius
+  9999px) + a heart icon.
+- **`9185:15853` = EXPERT TIPS state.** Same shell; adds a decorative
+  **`Ellipse 13` 561x561 at (96,86)** bleeding out of the clip — that glow is the
+  strongest tell between the two states. Title "Expert tips" Manrope Regular
+  16/22 in **`#FFFF16`**; body Mulish 14/18 white at **64% opacity**; one
+  selection row 396.667x42.
+- **Shared shell, build once:** 427x224, bg `#122524`, **radius 24px**, padding
+  16px, backdrop-blur **2.729px**, shadow `0px 1px 4px rgba(0,0,0,0.75)`,
+  `overflow: clip`.
+
+`4911:89112` (report 712ca85a) is **a different thing again** — a **588x74
+toast**, bg **`#052d2d`** (the only use of that hex anywhere in this harvest),
+border 1px `#123F3C`, radius 12px, backdrop-blur 20px, icon tile 42x42 on
+`#56C7F3` radius 8px. Copy: "System bet" / "Your system bet worth [coin]
+`204.17 $` has been placed successfully!". Filing it with the two cards is a
+mis-grouping.
+
+### `9215:15732` (report f7567044) is the HOST PAGE, not a section
+
+Name `"Skai > Play > Sportsbook > Soccer > AVL CHE > Player props (1440 x 900px)"`,
+actual **1440x4058**. It is the only frame in this set carrying full global
+chrome (Header-desktop 1440x56, the 58px sidebar, the news ticker, and a footer
+reading `Home . Help . Terms . Privacy . Anti-money laundering policy . Gaming
+license . Responsible gaming policy`). It contains the match header card
+(870x156, radius 24px), the two 427x224 cards, the market tab strip
+(`Main 18 . Bet builder 4 . Halves 2 . Stats 4 . Player props 8 <-active`),
+eight odds-market cards, and the game-view rail at x886.
+
+★ **HIDDEN IS NOT REMOVED, and there is a lot of it here.** Every panel hides a
+400x64 `CTA/button`; every pre-match header hides the in-play clock row; **every
+collapsed market card hides a full 838x34 three-way odds row** (`Aston Villa
+(AVL) 1.77 / Draw 1.77 / Chelsea (CHE) 1.77`) plus a `74%` label and wallet
+icons — that is the market's EXPANDED state, not dead layers; every card header
+hides a `Total: $89.01` volume readout; and the page hides `Frame 269` (a 680x244
+bet-slip / stake panel) **four times**, plus `Bottom nav` once. None of that is a
+cut instruction.
+
+`9227:74080` additionally **clips its own content**: `Frame 1000003807` is 204
+tall from y97.2 inside a 239.013 `Pitch` that has `overflow: clip`, so the third
+result row is cut mid-block. Build it as a **scroll**, not as a two-row list.
+
+### Defects in the DESIGN — settle these before building to them
+
+1. `9227:74080` Outcome row 3 reads **`AVL ... AVL`**; one side should be `ARG`.
+2. `9215:15732` live rail: **`Today, 21;44`** — a semicolon where a colon belongs.
+3. `9215:16010` lists **`Noni Madueke` twice** in the player-goals market.
+4. `4911:89112` declares a **391px text row inside a 276px parent**.
+5. `9227:73828` is **named** "tilt" but renders **Events** (see Correction 1).
+6. Every event-toast subtitle carries a **trailing double space**.
+
+### Still parked
+
+None of this changes the vendor block. Every tab body is live match data, and
+`GameDetail` needs an event to mount, so the route cannot currently be opened at
+all. This section exists so that when the odds key returns the build is already
+specified and nobody re-derives the grouping — it is not a signal to start.
+
+---
+
+## 12. Page-layout harvest — `4799-60925`, `4913-97944`, `9170-114084`, `4911-92925`, `9170-113296`
+
+Re-read 2026-08-26. **All five node ids resolved; nothing was substituted.** These
+are the frames behind the "rebuild the whole page" reports. Unlike section 11's
+set, most of this is **buildable chrome** with no odds dependency — which is why
+these reports sit in the BUILD NOW half of the split.
+
+| Node | Actual layer name | Measured size | Breakpoint |
+|---|---|---|---|
+| `4799-60925` | `Skai > Play > Sportsbook 1VH (1440 x 900px)` | 1440 x **900** | 1440 |
+| `4913-97944` | `... > Side panel - Lawn tennis (1440 x 900px)` | 1440 x **2773** | 1440 |
+| `9170-114084` | `... > Soccer > AVL CHE (1440 x 900px)` | 1440 x **3707** | 1440 |
+| `4911-92925` | `... > Starting soon (1440 x 900px)` | 1440 x **4390** | 1440 |
+| `9170-113296` | `card with tool tip` | 428.67 x 404 | component |
+
+★ **Every page frame is NAMED "(1440 x 900px)" and only one of them is 900 tall.**
+Trust the measured height, never the name. **All five are 1440 only — there is no
+768 and no 375 sportsbook frame**, so those breakpoints are UNHARVESTED, not
+"not needed".
+
+> Instrument notes, both worth reusing: `get_metadata` with no nodeId again
+> reported this file as having ONE page ("2001:2 Thumbnail") — wrong, all five
+> nodes resolved directly. And `get_screenshot` returned a **1x1 PNG** for five
+> transparent container nodes; those were specified from metadata +
+> `get_design_context` instead. **A 1x1 render is a renderer failure, not an
+> empty section.**
+
+### ⚠ `4799-60925` CROPS ITS OWN BODY — it is a hero comp, not the whole page
+
+The frame is 900 tall but its `main` is **5491** tall; rendering it clips at
+~844px. The name says "1VH" — one viewport height. Sections below y≈900 (Popular
+events, Basketball, Popular games, Bets/Top 10, About/FAQ) are all present in the
+node tree and specified below, but INVISIBLE in the render.
+
+**Do not read this frame as evidence the page ends after Trending events.** That
+is the same class of mistake as reading a cropped single-screen frame as a
+delete instruction.
+
+### Page geometry (1440)
+
+`Header-desktop` 1440x56 at y0 · `sidebar` 58x844 at (0,56) · `main` (58,56)
+1382 wide · content column **1318** at main-relative (32,24), i.e. a **32px
+gutter each side** · bottom news ticker 1382x22 · collapsed **Bet slip** bar
+300x50 at (1108,828).
+
+Absolute Y of each section: 80 title · 148 hero · 424 filter row · 490 Trending
+events · 806 Sports · 994 Popular events · 1448 Basketball (12 events) · 3502
+Popular games · 3901 Bets/Top 10 · 4439 divider · 4479 About + FAQ · 5433 logo ·
+5497 footer nav.
+
+### Title, hero, filter row (pixel literals — do NOT map to our Tailwind scale)
+
+- **Title** `Sports book` (two words, lowercase b) — Manrope **Light 300, 32px /
+  36px, -1.28px**, `#FFFFFF`. Leading icon slot and trailing search slot are both
+  `hidden` in this frame.
+- **Hero** 1318x244, two equal 659 halves, **gap 0**, shadow
+  `0 4px 12px rgba(0,0,0,0.24)`.
+  - Left half: radius **24px on the LEFT corners only**, a single raster image
+    fill, `backdrop-filter: blur(2.729px)`.
+    ★ **The Arsenal crest, "VS", the Man City crest and both team names are
+    BAKED INTO THAT PNG** — the node has zero children. The hero cannot be
+    data-driven from this frame; it needs either real crest assets plus markup,
+    or the exported image used as-is.
+  - Right half: **flat `#052F3F`** (radius 24px on the RIGHT corners only),
+    padding 32px h / 16px v, gap 16px.
+    **There is NO GRADIENT anywhere in this banner** — if a brief expects one,
+    the Figma does not have it.
+    - Headline `Top matches, top sports!` — Manrope **Light 300, 42px / 48px,
+      -1.68px**, white, width 475.
+    - Subcopy `Bet now on the most coveted matches across Soccer, basketball,
+      Hockey, Wrestling, and so on.` — Manrope Regular 18px / 24px, -0.72px,
+      white at **64% opacity**, wraps to 2 lines.
+    - CTA **153x50**, fill **`#FFFFFF`**, radius **12px**, padding 40px h / 16px
+      v. Label `Bet now` Manrope Regular 14/18, -0.56px, **`#001615`**, plus a
+      16x16 forward icon.
+- **Filter row** 1318x34, space-between. ⚠ **NOT a row of uniform pills — only
+  the ACTIVE item is a chip.** Left group 489x28, gap 24px:
+  `Featured` (active: fill `#123F3C`, radius **4px**, padding 8/2, label white,
+  no icon) · `My bets` · `Starting soon` · `LIVE` (pill: **1px border
+  `#FF7E50`, no fill**, radius 9999px, 10x10 dot + `LIVE` in Mulish 11/14,
+  -0.44px, white) · `All sports`. Inactive items are plain 24px icon + 4px gap +
+  label in `#95A09F`, no fill and no border.
+  **Active-state rule**, confirmed by diffing against `4911:92987` where
+  "Starting soon" is active: the active item gains fill `#123F3C` + radius 4px +
+  padding 8/2, its label flips `#95A09F` -> `#FFFFFF`, and when it has an icon
+  the icon moves INSIDE the chip. Height stays 28px.
+  Search field 200x34 at x1118: fill `#001615`, 1px `#123F3C`, radius **8px**,
+  padding left 16 / right 24 / vertical 8, placeholder `Search events` in
+  `#95A09F` at **74% opacity**.
+
+### Section-header pattern (shared by every section)
+
+1318x36, space-between. Left: title **Manrope Regular 24px / 28px, -0.96px,
+white** + 8px gap + a **16x16 chevron**. Right: two carousel buttons **36x36** at
+x1236, gap 10px, padding 10px, icon 16x16, **1px border `#123F3C`, radius 9999px,
+NO FILL** (transparent — sampled interior is the page background). A `View all`
+text node exists in that slot but is `hidden` in every section.
+
+Deviations: **Basketball** adds a 24x24 sport icon and a `12 events` count tag.
+**Bets** is 38 tall and replaces the arrows with a segmented control 390x38 —
+three buttons 124.67x30, `Top bets` / `Recent` / `My bets`, active solid
+**`#56C7F3`**, inactive `#122524`.
+
+### THE EVENT CARD (Trending events) — full anatomy
+
+Row 1318x224, four cards **428.667 wide, gap 16px** at x 0 / 444.667 / 889.333 /
+**1334** — the fourth deliberately overflows the 1318 column, which is what makes
+it a carousel.
+
+| | Default | Selected |
+|---|---|---|
+| Fill | `#122524` | **`#052D2D`** |
+| Border | none | **2px `#56C7F3`** |
+| Radius | **24px** | 24px |
+| Padding | **16px** | 16px |
+| Shadow | `0 1px 4px rgba(0,0,0,0.75)` | same |
+| Backdrop | `blur(2.729px)` | same |
+| Extra | — | decorative swoosh at left **-298px**, top 103.5px, 980.9x178.9, clipped |
+
+**There is NO hover state in any of these frames** — only default and selected.
+
+- **Team row** 396.67x76, column gap **12px**; each row 32 tall, gap 8px: crest
+  **32x32 ellipse** + name (Mulish 14/18, -0.56px, two-tone in ONE string: club
+  `#FFFFFF`, parenthesised code `#95A09F`) + odds right-aligned (**Mulish 22/26,
+  -0.88px, `#FFFFFF`**). ★ **The odds number is white in EVERY state — there is
+  no colour coding on the number itself.**
+- **3-way buttons** 396.67x**50**, gap 8px, three at **126.889x50**: fill
+  **`rgba(0,22,21,0.8)`** + `backdrop-filter: blur(10px)`, **radius 12px**, no
+  border, padding 24px h / 14px v. Label Manrope Regular 16/22, -0.64px.
+  ★ **The LABEL COLOUR encodes the outcome and the fill never changes:**
+  home/left **`#56C7F3`**, `DRAW` **`#95A09F`**, away/right **`#FF574A`**.
+- **Footer** 396.67x18, space-between: kickoff `Today, 20:30` (Mulish 14/18,
+  `#95A09F`) — then gap 12px — league chip (**1px `#95A09F`, no fill**, radius
+  9999px, padding 8/2, Mulish 11/14, -0.44px, `#95A09F`; `UCL` / `EPL`), a 16x16
+  share icon, and a 16x16 heart.
+
+### The long-format event row (used by the detail and Starting-soon pages)
+
+870x200, fill `#122524`, radius **24px**, padding 16px, gap 16px, backdrop blur
+2.729px, **no border and no shadow**. Odds buttons: fill `rgba(0,22,21,0.8)` +
+blur 10px, **radius 8px**, padding left 12 / right 8 / vertical 8, label two-tone
+Mulish 12/16 (-0.48px) with the selection code coloured and the `(price)` white,
+plus a right-aligned provider chip (`Bovada`, `LowVig.ag`) on `#122524`, radius
+9999px.
+`4911-92925` carries **three market columns** (`Spread` / `Total` / `ML`) where
+`4913-97944` carries one (`Winner`); its top-left is a match clock
+(`17' 2nd half`, white) rather than a chip, and it adds share + heart icons.
+
+### `9170-113296` is a PARLAY CARD, and section 5 above is confirmed
+
+Independently re-measured: it is a bare **428.67x404** component named
+`card with tool tip`, parked on the canvas with **no page chrome at all**, and it
+is the same component as the Popular-events parlay card at 428.67x362 plus a
+42px footer row. Its anatomy — a `CONSERVATIVE` strategy chip
+(`rgba(23,249,180,0.24)` on `#17F9B4`, radius 9999px), `2 Legs`, per-leg rows,
+`Win probability` with three overlapping 16px avatars, `Combined odds`,
+`$10 payout` in `#17F9B4`, and an `Add to bet slip` CTA — is what
+`src/pages/sports/components/PopularParlays.tsx` already implements.
+**Section 5's reading of report `9c6b8f80` stands: the linked node is a card, not
+a page, and that card is built.**
+
+### ★ VARIANT AND PLACEHOLDER TRAPS — do not implement these literally
+
+1. **The footer link count differs by frame.** `4799-60925` has a **4-link**
+   footer (`Home . Help . Terms . Privacy`); its taller siblings have the
+   **7-link** version adding `Anti-money laundering policy`, `Gaming license`,
+   `Responsible gaming policy`. The 4-link version is the SHORT VARIANT — the
+   three missing legal links are **not deleted**. (Compare the standing
+   fail-closed rule on licence marks: absent by design is not absent by
+   accident.)
+2. **The hidden third parlay leg** (`Sporting Lisbon vs Sporting Lagos`) sits at
+   **`opacity: 0`** inside the Popular-events card. That is a variant state, not
+   an instruction to cap parlays at two legs.
+3. **Duplicate placeholder content**: the Sports row ends `Tennis`, `Tennis`; the
+   Starting-soon sport row ends `FIFA`, `FIFA`. Neither is a spec for two
+   identical categories.
+4. **The sidebar is 58x844 on EVERY frame, including the 4390px-tall one.** It
+   does not stretch to full page height — it is a fixed/sticky viewport-height
+   element, not a sidebar that stops partway down.
+5. **Two components look like one.** The main page's Sports tiles are **250x96**
+   with a **64x64** icon square at radius 8px; Starting-soon's sport selector is
+   **250x64** with a **32x32** icon square at radius **4px**. Same visual family,
+   different components — do not reuse one for the other.
+6. `9170-113296` has no chrome at all. **Its isolation does not imply removing
+   surrounding UI.**
+
+### Design defects to settle before building
+
+- `Today, 21;44` — semicolon for a colon, in both the parlay card footer and the
+  match-detail live-score strip.
+- The duplicated `Tennis` / `FIFA` / `Noni Madueke` entries noted above.
+
+### What is buildable here without the odds feed
+
+The title, hero, filter row, section-header pattern, carousel arrows, sport
+tiles, Popular games row, About/FAQ, and the footer are all chrome with no odds
+dependency. The event cards, market accordions, live-score strip and Bets/Top 10
+table are odds- and bet-fed and must render honest offline states, never
+fabricated prices.
