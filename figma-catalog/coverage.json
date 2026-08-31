@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T11:41:50.004Z",
+  "generated": "2026-08-31T17:45:38.343Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
@@ -7,18 +7,18 @@
     "furniture": 418,
     "genuine": 1910,
     "matched": 1910,
-    "done": 230,
-    "partial": 872,
-    "notStarted": 238,
-    "blocked": 114,
-    "frameDefect": 46,
+    "done": 228,
+    "partial": 883,
+    "notStarted": 202,
+    "blocked": 122,
+    "frameDefect": 49,
     "catalogFurniture": 56,
-    "unknown": 354,
+    "unknown": 370,
     "liveOnly": 0,
     "rollupOnly": 2,
     "defaultNamed": 116,
     "ambiguous": 0,
-    "conflicts": 58
+    "conflicts": 56
   },
   "doneRows": {
     "total": 1380,
@@ -27,10 +27,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 5536,
+    "total": 5594,
     "namingNoNodeId": 316,
     "namingNoLiveNodeId": 334,
-    "unrecognisedTokens": 2992
+    "unrecognisedTokens": 3170
   },
   "statusFiles": [
     {
@@ -536,6 +536,60 @@
       "rows": 13,
       "withLiveId": 12,
       "ids": 10
+    },
+    {
+      "file": "status.wave6.play-bookie.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 5
+    },
+    {
+      "file": "status.wave6.predict-alt-a.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 8
+    },
+    {
+      "file": "status.wave6.predict-alt-b.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 9
+    },
+    {
+      "file": "status.wave6.predict-alt-c.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 22
+    },
+    {
+      "file": "status.wave6.predict-alt-d2.tsv",
+      "rows": 11,
+      "withLiveId": 11,
+      "ids": 35
+    },
+    {
+      "file": "status.wave6.social-discover.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 12
+    },
+    {
+      "file": "status.wave6.social-messages.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 7
+    },
+    {
+      "file": "status.wave6.trade2-a.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 9
+    },
+    {
+      "file": "status.wave6.trade2-b.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 6
     }
   ],
   "pages": [
@@ -2802,12 +2856,12 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 151,
+        "partial": 165,
         "done": 11,
-        "unknown": 31,
+        "unknown": 44,
         "blocked-on-backend": 7,
         "frame-defect": 15,
-        "not-started": 39
+        "not-started": 12
       },
       "liveOnly": []
     },
@@ -2864,9 +2918,9 @@
       "byStatus": {
         "unknown": 49,
         "partial": 225,
-        "not-started": 61,
-        "blocked-on-backend": 52,
-        "frame-defect": 6,
+        "not-started": 52,
+        "blocked-on-backend": 58,
+        "frame-defect": 9,
         "done": 8,
         "furniture": 1
       },
@@ -8591,14 +8645,14 @@
       "rollupOnly": 0,
       "defaultNamed": 18,
       "ambiguous": 0,
-      "conflicts": 10,
+      "conflicts": 8,
       "byStatus": {
-        "done": 56,
-        "partial": 105,
-        "unknown": 139,
+        "done": 54,
+        "partial": 102,
+        "unknown": 142,
         "furniture": 18,
+        "blocked-on-backend": 16,
         "not-started": 42,
-        "blocked-on-backend": 14,
         "frame-defect": 1
       },
       "liveOnly": []
@@ -10543,34 +10597,6 @@
       "rows": [
         "status.wave5.trade2-drift.tsv:2",
         "status.wave5.trench.tsv:5"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "13006-179860",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trench > Trac",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:96",
-        "status.wave4.trade-2-partial.tsv:19"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "13006-180340",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trench > Trac",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:97",
-        "status.wave4.trade-2-partial.tsv:20"
       ],
       "kind": "same-generation"
     },
