@@ -305,28 +305,40 @@ if (SELF_TEST) {
       "COLUMN HEADER written without a leading",
     ],
     /*
-      The SILENT DROP. `13008-27159` is a real registry frame with
-      kind `non-screen`, and it is the node w7b-wallet2 used as proof: a wave-4
-      row gave it a `done` with full measurements and `registry.json` still reads
-      `status: "unknown", notes: ""`. The verdict was loaded and then discarded.
+      ★ THE POSITIVE HALF OF THE KIND CHECK — it MUST fire on the branch kept.
 
-      This fixture is the reason the check cannot rot silently — if someone
-      "cleans up" the kind guard in apply-status.mjs, or reclassifies this node
-      to `screen`, the fixture stops firing and says so.
+      `w7b-games-unknown` pointed out that the regression control below (an
+      id-keyed row on a non-screen frame must be SILENT) passes both when the
+      guard is correctly gone AND when no rule is evaluated at all — because the
+      id-path check was deleted outright. A control that cannot tell "the rule is
+      right" from "there is no rule" is the vacuous-green shape relocated.
+
+      So the suite needs one case that MUST fire on the branch that survives.
+      `hilo/Casino > Scratchers` is one of only two real named families in the
+      registry holding no `screen` frame (both are `component`), so a
+      family-keyed row on it lands on nothing — which is what apply-status.mjs's
+      surviving `f.kind === "screen" ? statusByFam[key] : undefined` means.
+
+      If someone deletes the family branch, this goes MISSED. One case that must
+      fire, one that must not.
     */
     [
-      "the silent drop: a row addressed to a NON-SCREEN registry frame",
-      `Wallet component [13008-27159]${T}partial${T}-${T}-${T}width 375`,
-      "SILENTLY DROPPED",
+      "family-keyed row on a family with NO screen frame",
+      `Casino > Scratchers${T}partial${T}-${T}-${T}width 375`,
+      "no screen frame",
+      // A family key only resolves when the FILE's stem names a section, so this
+      // one fixture runs under a hilo-shaped name. Under the default
+      // `__fixture` stem the same key parses as a SECTION ROLLUP instead.
+      "status.wave7.hilo.tsv",
     ],
   ];
   let caught = 0;
-  for (const [label, row, must] of FIXTURES) {
+  for (const [label, row, must, asFile] of FIXTURES) {
     errors.length = 0;
     unapplied.length = 0;
     droppedByKind.length = 0;
     seenIds.clear();
-    checkLines("status.wave7.__fixture.tsv", [row]);
+    checkLines(asFile ?? "status.wave7.__fixture.tsv", [row]);
     const report = [
       ...errors,
       ...unapplied,
@@ -335,7 +347,7 @@ if (SELF_TEST) {
       // or the fixture below is vacuous — it would report MISSED whether the
       // check worked or not.
       ...droppedByKind.map(
-        (d) => `${d.where}: SILENTLY DROPPED — registry frame kind "${d.frameKind}" is not "screen"`,
+        (d) => `${d.where}: family ${d.nodeId} has no screen frame (kinds: ${d.frameKind}) — a family row lands on nothing`,
       ),
     ].join("\n");
     const ok = report.includes(must);
@@ -355,6 +367,36 @@ if (SELF_TEST) {
   );
   const controlClean = !errors.length && !unapplied.length;
   console.log(`  ${controlClean ? "CLEAN  " : "FALSE+ "} control: a well-formed row produces no complaint`);
+
+  /*
+    ★ REGRESSION CONTROL — an ID-keyed row on a NON-SCREEN frame must be SILENT.
+
+    `13008-27159` is kind `non-screen`. It is the node `w7b-wallet2` used to prove
+    the silent drop: a wave-4 row gave it a `done` with full measurements and the
+    registry still read `status: "unknown", notes: ""`.
+
+    ⚠️ THIS USED TO BE A "CAUGHT" FIXTURE ASSERTING THE DROP HAPPENS. The
+    orchestrator then fixed `apply-status.mjs` (`f81cee7`) so id-keyed rows apply
+    whatever the kind — and the fixture went on passing, because it was asserting
+    the presence of a defect that no longer existed. A self-test can ENSHRINE A
+    STALE BELIEF just as easily as it can catch a regression, and a green suite
+    is not evidence the suite is asking the right question.
+
+    So it is inverted: this row must now produce NO complaint. If the kind guard
+    is ever reintroduced on the id path, this control goes FALSE+ and says so.
+  */
+  errors.length = 0;
+  unapplied.length = 0;
+  droppedByKind.length = 0;
+  seenIds.clear();
+  checkLines(
+    "status.wave7.__fixture.tsv",
+    [`Wallet component [13008-27159]${T}partial${T}-${T}-${T}width 375 = frame 375`],
+  );
+  const idKindClean = !errors.length && !unapplied.length && !droppedByKind.length;
+  console.log(
+    `  ${idKindClean ? "CLEAN  " : "FALSE+ "} control: an ID-keyed row on a NON-SCREEN frame applies (guard removed in f81cee7)`,
+  );
   if (!controlClean) console.log(`      got: ${[...errors, ...unapplied].join("\n")}`);
   const pass = caught === FIXTURES.length && controlClean;
   console.log(`\nself-test: ${caught}/${FIXTURES.length} known-bad rows caught, control ${controlClean ? "clean" : "FAILED"}.`);
@@ -396,21 +438,13 @@ console.log(`  column-2 histogram: ${Object.entries(histogram).map(([k, v]) => `
 if (droppedByKind.length) {
   const byFile = {};
   for (const d of droppedByKind) (byFile[d.file] ??= []).push(d);
-  const pct = ((droppedByKind.length / Math.max(idRows, 1)) * 100).toFixed(1);
+  const pct = ((droppedByKind.length / Math.max(famRows, 1)) * 100).toFixed(1);
   console.log(
-    `\n🚨 ${droppedByKind.length} of ${idRows} id-keyed row(s) (${pct}%) will be SILENTLY DROPPED by apply-status.mjs.`,
+    `\n⚠️  ${droppedByKind.length} of ${famRows} FAMILY-keyed row(s) (${pct}%) name a family with NO screen frame.`,
   );
-  console.log(`   Cause: apply-status.mjs:272 \`if (f.kind !== "screen") continue;\` — the only loop that`);
-  console.log(`   writes f.status. These rows parse, address a real frame, and are then never applied.`);
-  console.log(`   NOT a lane error and NOT fixable by editing a TSV. One line, in the orchestrator's file.`);
-  console.log(`   coverage.mjs is UNAFFECTED (it reads status.*.tsv directly), so the wave PERCENTAGE is sound.`);
-  // Two things a fixer needs, both learned the hard way during this wave.
-  console.log(`   NOTE 1: the kinds are NOT all "non-screen" — see the per-lane breakdown. Whitelisting`);
-  console.log(`           only "non-screen" still loses every "untitled" row.`);
-  console.log(`   NOTE 2: the same guard also gates the f.bpStatus default written just above it. Dropping`);
-  console.log(`           it wholesale starts writing bpStatus onto frames with no device — the existing`);
-  console.log(`           BP_KEYS.includes(f.device) ternary already resolves those to "unknown", so it is`);
-  console.log(`           harmless. Do not revert the fix on seeing bpStatus appear on component frames.`);
+  console.log(`   apply-status.mjs applies a family row only where \`f.kind === "screen"\`, so these land`);
+  console.log(`   on nothing. Re-key them by node id — an id-keyed row applies whatever the frame's kind.`);
+  console.log(`   (ID-keyed rows are NOT affected: that guard was removed in f81cee7.)`);
   for (const [f, list] of Object.entries(byFile).sort((a, b) => b[1].length - a[1].length)) {
     const kinds = {};
     for (const d of list) kinds[d.frameKind] = (kinds[d.frameKind] || 0) + 1;

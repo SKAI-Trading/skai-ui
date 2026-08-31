@@ -820,18 +820,79 @@ independent defects, all in downstream consumers of the measurement, none in the
 measurement.** Anyone reading this file for a headline should take that as the
 finding.
 
-### ⚠️ My own validator was blind to this, and structurally so
+### The fix, and why the obvious version of it was wrong
 
-`validate-wave7.mjs` checked `addr.kind` — the **row's address FORM** (id /
-section / family) — and never looked at the **frame's `kind` field**. Two
-unrelated things sharing a word. So a green run was **not** evidence a lane's
-rows would land, which is precisely what the script exists to certify.
+Shipped by the coordinator as **`f81cee7`**. Not the one-liner I offered — the
+distinction the guard was reaching for is real and was kept:
 
-Fixed: it now prints a 🚨 banner with per-lane counts broken down by kind, above
-the lane-fixable problems. **It deliberately does not exit non-zero** — no lane
-can fix this by editing a TSV, and an exit 1 would block every lane from a green
-run over a defect none of them caused. The exit code stays driven by what a lane
-can act on.
+- a **family-keyed** row addresses `section/family`, i.e. every frame sharing a
+  screen name. Letting that stamp non-screen children would smear one verdict
+  across a screen's parts. **Still `kind === "screen"` only.**
+- an **id-keyed** row names ONE frame deliberately. **Now applies whatever the
+  kind.**
+
+**Measured after: frames updated 1,632 → 2,968; matched by node id 1,139 →
+2,475. 1,336 previously-discarded verdicts now land.**
+
+★ **The per-kind breakdown changed the fix.** The coordinator would have
+whitelisted `non-screen`; the breakdown showed 669 `untitled` frames hitting the
+same guard, so a whitelist would have looked like a fix and silently kept losing
+251 Trade 2 rows. **The right shape was to remove the kind test from the id path
+entirely, not to enumerate kinds.**
+
+> ★★★ **A BINARY PREDICATE CANNOT REPORT A CATEGORY IT HAS NO BUCKET FOR.** This
+> happened **twice in one day**. `w7b-wallet2`'s counting script wrote
+> `if (f.kind === 'screen') … else …`, so every non-screen kind collapsed into one
+> bucket and the `untitled` population was invisible in its own report. Anyone
+> reading that table would have built the whitelist. **When a report says "X vs
+> not-X", ask what `not-X` is hiding.**
+
+### ⚠️⚠️ AND THEN MY OWN VALIDATOR WAS WRONG — WORSE THAN THE BUG IT FOUND
+
+`validate-wave7.mjs` was first blind to this, structurally: it checked
+`addr.kind` — the **row's address FORM** (id / section / family) — and never the
+**frame's `kind` field**. Two unrelated things sharing a word.
+
+I fixed that by hard-coding the guard's predicate **and its line number**. When
+the coordinator removed the guard, my script went on asserting it existed and
+cited `apply-status.mjs:272` — a line that by then held the comment recording the
+removal. For a window it printed **"🚨 218 of 218 (100.0%) will be SILENTLY
+DROPPED"** at lanes whose work was landing fine.
+
+`w7b-games-unknown` caught it by reading `apply-status.mjs` instead of believing
+the validator.
+
+> ★★★ **That is precisely the sin this script's own header warns about.** The
+> header says a validator keeping its own copy of a rule "is worse than no
+> validator", citing `bp-report.mjs`'s private `STATUS_VALID` copy that discarded
+> 154 rows. I then kept a private copy of a guard's *existence*. **Being told
+> about a trap in your own header is not protection from it** — the third time
+> this file has had to record that about its own author.
+
+It fails toward **alarm** rather than reassurance, which is the safer direction.
+It was still wrong, and lanes were acting on it.
+
+**Corrected:** the id-path check is deleted outright. The only surviving check is
+the one real case — a family-keyed row whose family holds no screen frame. Live
+output flags zero, because all 948 wave-7 rows are id-keyed.
+
+### ★★★ THE SHARPEST LESSON OF THE WAVE: A SELF-TEST CAN ENSHRINE A STALE BELIEF
+
+The banner was the visible error. The **fixture was the dangerous one.**
+
+My self-test had a fixture labelled *"CAUGHT the silent drop"*, asserting that an
+id-keyed row on a non-screen frame **is** dropped. After `f81cee7` it **kept
+passing** — because it was asserting the presence of a defect that no longer
+existed, and a 10/10 green read as confirmation the belief was current.
+
+> **A self-test proves the checker still does what it was built to do. It cannot
+> tell you the thing it was built to detect has been fixed.** A green suite is
+> not evidence the suite is asking the right question.
+
+Fixed by **inverting it into a regression control**: an id-keyed row on a
+non-screen frame must now produce **no complaint**, so if the guard is ever
+reintroduced the suite reports `FALSE+`. Retiring the banner alone would have
+left the fixture lying.
 
 ### ★ A mutation that WIDENS a predicate does not test it
 
