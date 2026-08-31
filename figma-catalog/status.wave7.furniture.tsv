@@ -1,0 +1,142 @@
+# lane w7b-furniture — adjudicating the 60 frames where catalog says `furniture`
+# and coverage.mjs's own classifier says GENUINE. NO CODE CHANGES; this file only.
+# columns: key<TAB>status<TAB>primaryFile<TAB>route<TAB>reason[<TAB>bp cell]
+# col2: unknown|done|partial|not-started|blocked-on-backend|frame-defect|furniture
+# col6: unknown|done|partial|not-started|missing|renders|broken|n-a
+# RULE (SCHEMA.md): furniture = canvas chrome, not a screen. Directory/Breakpoint/
+#   Scroll bar/Notes/Screenshot, loose RECTANGLE/TEXT/ELLIPSE/VECTOR, a library
+#   component instance dropped on canvas, visible===false.
+# RULED: default-named `Frame N`/`Group N` is GENUINE unless the geometry says
+#   otherwise. Size is evidence; the name is not. Board widths are 1440/768/375.
+# key	status	primaryFile	route	reason	bp
+# 10030-33518 (Group 316, 1410x900 Price Grid board): this lane also overturned wave3's `furniture` on it,
+# on the same node data (130 rounded-rects 100x100 on a 100px pitch + 10x10 dot lattice). Row DROPPED on
+# purpose — status.wave7.games-unknown.tsv:89 carries the same conclusion PLUS a measurement against
+# PG_GRID {cell:100, rule:2, dot:10} in priceGridTheme.ts and files it `done`. Two wave-7 rows on one id
+# would be a same-generation conflict resolved by FILENAME ORDER, not by evidence, so the better-evidenced
+# row is left to stand alone. Sibling 10030-34600 below is uncontested and stays here.
+Group 317 [10030-34600]	unknown	-	-	OVERTURNS wave3 `furniture`. CATALOG WRONG, SCRIPT RIGHT. Node data: FRAME 1410x900 at x=-2782 y=-250, same 100x100 cell grid and 10x10 dot markers as 10030-33518, but 21 cells are replaced by `Frame 1000004252..4278` each holding a TEXT node `6.33x` 40x20 at x=54 y=74 inside its 100x100 cell. A multiplier value, a cell size, a pitch and a label offset are all measurable off it, so it is a spec for the Price Grid board REVEALED state. Text nodes are the discriminator wave3 never looked for
+# --- CONFIRMED FURNITURE: the per-game COVER POSTER. Exactly one 1080-wide (or larger) raster-backed frame per game page, at social/export aspect ratios that are not board widths (1440/768/375). The family, not the individual node, is the evidence.
+Frame 1000004087 [9137-12640]	furniture	-	-	CONFIRMS wave3. Plinko cover poster: FRAME 1080x1350 (4:5) at x=-4240 y=1543, 2 children (1 RECTANGLE + 1 GROUP) and a single TEXT reading `1000x`. 1080 is not a board width and 4:5 is a social-export ratio; one such node exists per game page	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Image for Cover [9163-8804]	furniture	-	-	CONFIRMS wave3, and decisive on its own name. Mines cover: FRAME 1080x1350 at x=-1266 y=1175, 4 children, ZERO text nodes. The author named it `Image for Cover`	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004107 [9209-20539]	furniture	-	-	CONFIRMS wave3. Coinflip cover poster: FRAME 1080x1350 at x=-4024 y=3436, 6 children (2 RECTANGLE, 3 VECTOR, 1 GROUP), ZERO text. Pure artwork at the same 4:5 as the other covers	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004102 [9220-26113]	furniture	-	-	CONFIRMS wave3. Scratchers key art: FRAME 2748x4096 at x=7734 y=-2319 with 2 children, one carrying an IMAGE fill, and one TEXT reading `MATCH 3 TO WIN!`. 2748x4096 is a print/export raster, an order of magnitude off any board width	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004126 [9467-19674]	furniture	-	-	CONFIRMS wave3. Darts cover poster: FRAME 1080x1611 at x=-1195 y=0, 11 children of which 4 carry IMAGE fills, ZERO text nodes. Raster art, no measurable UI	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004188 [9687-9363]	furniture	-	-	CONFIRMS wave3. Keno cover poster: FRAME 1080x1872 at x=-5861 y=2657, 10 children, 4 TEXT nodes that are ball numerals (`2` `1` `9` `10`) not labels. Decorative numerals inside a 1080-wide poster, not a paytable	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004189 [9733-7539]	furniture	-	-	CONFIRMS wave3. Fortune Wheel cover poster: FRAME 1080x1804 at x=-5120 y=176, only 2 RECTANGLE children, one with an IMAGE fill, ZERO text	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004212 [9760-9378]	furniture	-	-	CONFIRMS wave3. Video Poker cover poster: FRAME 1080x1500 at x=-5774 y=3472, 7 children, 5 TEXT nodes that are card ranks (`A` `K` `Q` `J` `10`) i.e. a royal flush drawn as art. No control, no label, no board width	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004120 [9873-4009]	furniture	-	-	CONFIRMS wave3. Baccarat cover poster: FRAME 1080x1729 at x=-528 y=-1353, 10 children with an IMAGE fill, 7 TEXT (`Q` `9` `100` `100` `A` `Player` `Banker`) drawn as a staged hand. Richer than its siblings but the same 1080-wide export ratio and the same one-per-page position	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004289 [9941-22637]	furniture	-	-	CONFIRMS wave3. Rock Paper Scissors cover poster: FRAME 1080x1800 (3:5) at x=-373 y=-937, 4 RECTANGLE children carrying 3 IMAGE fills, ZERO text	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004128 [10117-44566]	furniture	-	-	CONFIRMS wave3. Slide cover poster: FRAME 1080x1800 at x=-1244 y=-973, 4 children (VECTOR/RECTANGLE/ELLIPSE) with 1 IMAGE fill, ZERO text	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+# 10120-8782 (Frame 1000004285, Price Grid 1080x1800 cover): row DROPPED to avoid a duplicate id —
+# status.wave7.games-unknown.tsv:97 files it `furniture` independently and flags the SAME doubt. This lane
+# reached furniture on its own evidence: 29 TEXT nodes carrying real multipliers (`3.96x` `6.33x` `10.50x`
+# `21.10x`) and a price `300.50303` make it read as spec, but 1080x1800 is the same 3:5 export ratio as the
+# other 14 per-page covers and it is Price Grid's single one — the cover renders the board because that is
+# what sells the game. The measurable Price Grid spec is 10030-34600 at 1410x900, ruled GENUINE above.
+Frame 1000004293 [10130-15152]	furniture	-	-	CONFIRMS wave3. Towers cover poster: FRAME 1080x1800 at x=-582 y=360, 4 children carrying 2 IMAGE fills, ZERO text	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+# --- CONFIRMED FURNITURE: loose ART GROUPS. Discriminator is ZERO TEXT plus a children list that is only
+# --- ELLIPSE/VECTOR/RECTANGLE. Nothing on them can be measured against an implementation.
+Group 292 [9190-15209]	furniture	-	-	CONFIRMS wave3. Coinflip: GROUP 15x15 at x=-2659 y=3463, 2 children (1 ELLIPSE + 1 RECTANGLE), ZERO text. A 15px sprite fragment	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Group 291 [9190-15212]	furniture	-	-	CONFIRMS wave3. Coinflip: GROUP 15x15 at x=-2616 y=3463, 2 children (1 ELLIPSE + 1 VECTOR), ZERO text. Sibling of 9190-15209	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Tails [9208-20412]	furniture	-	-	CONFIRMS wave3. Coinflip coin face: GROUP 299x299 at x=-2780 y=3538, 5 children (4 ELLIPSE + 1 RECTANGLE), ZERO text. A square art group with a real name is still art — it is not a COMPONENT, carries no label and no board width	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Heads [9208-20462]	furniture	-	-	CONFIRMS wave3. Coinflip coin face: GROUP 299x299 at x=-2780 y=3932, 5 children (4 ELLIPSE + 1 VECTOR), ZERO text. Sibling of 9208-20412	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Group 299 [9210-20604]	furniture	-	-	CONFIRMS wave3. Coinflip coin EDGE used mid-flip: GROUP 299x15 at x=-2780 y=4271, 2 children, ZERO text. 299 wide by 15 tall is the coin seen edge-on, not a surface	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Group 300 [9210-20605]	furniture	-	-	CONFIRMS wave3. Coinflip coin edge: GROUP 299x15 at x=-2780 y=3877, 2 children, ZERO text. Sibling of 9210-20604	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Group 315 [9380-7158]	furniture	-	-	CONFIRMS wave3. Chicken: GROUP 322x200 at x=-1402 y=1724 with 113 children, ALL of type GROUP, and ZERO text across the whole subtree. A 113-part vector illustration	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Group 1 [9433-10218]	furniture	-	-	CONFIRMS wave3. Darts: GROUP 142x142 at x=-2455 y=2242, 4 children (2 VECTOR + 2 ELLIPSE), ZERO text	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Group 5 [9475-19850]	furniture	-	-	CONFIRMS wave3. Darts: GROUP 216x299 at x=-2719 y=2252, 2 children (1 VECTOR + 1 RECTANGLE carrying an IMAGE fill), ZERO text	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+# Fortune Wheel's four 480x480 wheel-artwork groups (9730-3790, 9733-3847, 9733-3904, 9733-3961) all read
+# GROUP 480x480, 3 children (2 ELLIPSE + 1 GROUP), ZERO text — furniture on this lane's evidence too.
+# Rows DROPPED: status.wave7.games-unknown.tsv:98-101 already files all four `furniture`, independently.
+Group 329 1 [9900-949]	furniture	-	-	CONFIRMS wave4. Roulette wheel CONSTRUCTION art: FRAME 354x354 at x=-518 y=0, 113 children of which 112 are VECTOR, and ZERO text. Note the contrast that decides it — its 353x353 neighbour 9899-8425 holds 37 TEXT pocket numbers and this one holds none, so this is the wheel drawn and that one is the wheel specified	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+# --- CONFIRMED FURNITURE: single-control FRAGMENTS lifted off a board. Too small to be any surface.
+Frame 1000004218 [9798-13760]	furniture	-	-	CONFIRMS wave4. Bingo tray pip: FRAME 28x28 at x=-3687 y=1994, 1 child, 1 TEXT reading `3`. One cell of a tray that is already catalogued as a screen	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004250 [9903-2037]	furniture	-	-	CONFIRMS wave4. Baccarat: FRAME 37x18 at x=6803 y=282, 2 children — one INSTANCE and one TEXT reading `Undo`. A label plus a library instance parked on the canvas, which is furniture twice over	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 1000004251 [9903-2040]	furniture	-	-	CONFIRMS wave4. Baccarat: FRAME 35x18 at x=7651 y=282, 1 INSTANCE + 1 TEXT reading `Clear`. Sibling of 9903-2037	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+# --- OVERTURNED: wave3's boilerplate `Not spec: page furniture / loose art raster` was applied to ~30
+# --- Skai-originals nodes at once. TEXT CONTENT is what separates a spec from art, and it never looked.
+Group 306 [9679-1296]	unknown	-	-	OVERTURNS wave3 `furniture`. CATALOG WRONG, SCRIPT RIGHT. Keno PAYOUT LADDER: GROUP 888x102 at x=-2963 y=1183, 2 FRAME children and 14 TEXT nodes that pair a multiplier with a hit count — `0.00x`/`0`, `0.00x`/`1`, `0.00x`/`2`, `1.60x`/`3`. A paytable is game-critical numeric spec and is exactly the artefact a `frame-defect` audit has to read; excluding it from the denominator hides the check. Not measured against the rail here — left `unknown` for a lane that can compare 888x102 against the Keno payout row
+Group 329 [9899-8425]	unknown	-	-	OVERTURNS wave3 `furniture`. CATALOG WRONG, SCRIPT RIGHT. Roulette WHEEL POCKET ORDER: GROUP 353x353 at x=-871 y=1, 40 children (38 ELLIPSE + 1 GROUP + 1 FRAME) and 37 TEXT nodes — 37 is the European single-zero pocket count, and the sampled sequence `0, 26, 3, 35, 12, 28, 7, 29` is the real European wheel order. That is data a build must match, not decoration. Its unnumbered twin 9900-949 stays furniture. Left `unknown`: the full 37-value order was not read out and compared to the rail
+# ===========================================================================================
+# TRADE 2 — the largest single error in the 60, and it is a CATEGORY error, not a close call.
+# status.wave3.verify-trade2.tsv:163-177 filed 15 nodes `furniture` with the reason "a full-width RE-CROP
+# of a table already catalogued as a screen row … Duplicate of screen content, not separate work".
+# ★ That is a DEDUPLICATION argument wearing a furniture verdict. `furniture` means canvas chrome / not
+# spec; it does not mean "spec we think is redundant". Node data shows all 15 are populated data tables
+# with column headers and sample rows (29 to 193 TEXT nodes each), i.e. the densest spec on the page.
+# ★ And the widths refute the reason's own words: wave3 labelled them "mobile 375 crop" / "tablet 768
+# crop", but the measured widths are 1061, 1053, 801, 777, 562, 538, 489 and 432 — not one is 375 or 768.
+# The breakpoint labels were inferred, never measured. Excluding these deletes the responsive table spec
+# from the very denominator the breakpoint dimension exists to track.
+# All 15 left `unknown`: ruled in scope here, not measured against the DOM.
+# ===========================================================================================
+Frame 1358 [13006-169068]	unknown	-	-	OVERTURNS wave3 `furniture`. CATALOG WRONG, SCRIPT RIGHT. FRAME 1061x664 at x=19675 y=38265, 2 FRAME children, 160 TEXT nodes. Column headers read `Pairs / Market cap / Liquidity / Volume / Transactions / Token info / Action` over sample rows (`Goy`, `nunu`, `35m`). A populated Discover table, not chrome. 1061 is not the 375 wave3 called it
+Frame 1360 [13006-169857]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 1061x664 at x=19675 y=37065, 1 FRAME child `Frame 445`, 160 TEXT nodes, same seven-column Discover header set. Measured width 1061, not the claimed 375
+Frame 1367 [13006-170646]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 1053x666 at x=16621 y=37431, 1 FRAME child, 160 TEXT nodes, same Discover header set. Measured width 1053, not the claimed 768
+Frame 1371 [13006-171435]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 1053x666 at x=16621 y=38265, 1 FRAME child, 160 TEXT nodes, same Discover header set. Measured width 1053, not the claimed 768
+Frame 1368 [13006-172224]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 1053x666 at x=16621 y=39465, 1 FRAME child, 118 TEXT nodes, same Discover header set. Measured width 1053, not the claimed 768
+Frame 1359 [13006-172747]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 1061x664 at x=19675 y=39465, 2 FRAME children, 118 TEXT nodes, same Discover header set. Measured width 1061, not the claimed 375
+Frame 1361 [13006-183297]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 538x620 at x=20198 y=46673, 2 FRAME children, 112 TEXT nodes. Headers `Name / Token / Amount / Mkt. Cap.` over live-trade rows (`@CryptosTraderX`, `Kyuin`, `$6.02K`). A populated Trackers table
+Frame 1373 [13006-233145]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 432x226 at x=20304 y=19929, 29 TEXT nodes. Headers `Token / Migrated / Mkt. Cap. / 1H volume / Bal.` over a row (`Kyuin`, `2m ago`, `$2.37K`). The narrow variant of the Dev-tokens table, and 432 is not 375
+Frame 1363 [13006-233224]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 801x228 at x=16881 y=19929, 49 TEXT nodes. The WIDE Dev-tokens variant: `Token / Migrated / Dex / Mkt. Cap. / ATH / Liquidity / 1H volume / Fees / Bal.` — four more columns than its 432px sibling, so the pair is a responsive column-drop spec, which is the opposite of redundant
+Hover and clicks [13006-247576]	unknown	-	-	OVERTURNS wave3 `furniture`. wave3 called it "an annotation overlay marking hover/click targets - a spec diagram, not a build". Node data: FRAME 313x1164 at x=13224 y=4065, 2 FRAME children, 81 TEXT nodes carrying real values (`5m` `-67.56%`, `1h` `-67.56%`, `6h` `-67.56%`, `24h` `+10.22%`, `37.21`). It is the trade rail itself with its interaction states documented — a state spec is a build target, and 313x1164 is a full sidebar rail, not an overlay
+Frame 1374 [13006-299604]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 562x418 at x=20174 y=14861, 61 TEXT nodes. Headers `S/N / Wallet / uPnL / Remaining / Held` over rows (`0xAd4...323`, `-$2.45`, `$16.21`). The narrow Holders table
+Frame 1364 [13006-300408]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 1047x450 at x=16635 y=14861, 193 TEXT nodes. The WIDE Holders variant: `S/N / Wallet / SOLbalance (last active) / Bought (avg. buy) / Sold (avg. sell) / uPnL / Remaining / Funding / Held` — nine columns against the 562px variant's five
+Frame 1366 [13006-301004]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 1047x450 at x=16635 y=18310, 193 TEXT nodes, same nine-column Top-holders header set as 13006-300408
+Frame 1372 [13006-302319]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 562x418 at x=20174 y=18310, 61 TEXT nodes. Headers `S/N / Wallet / uPnL / Funding / Held` — note `Funding` where 13006-299604 has `Remaining`, so the two narrow variants are not even the same table
+Frame 270 [13006-322042]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 777x204 at x=19959 y=45473, 2 FRAME children, 28 TEXT nodes. Headers `Date / Name / Balance / Last active / Delete all` over wallet rows (`Whale`, `0x4q5...3d6`, `$23.17`). A populated Wallet-manager table with a destructive action in its header
+Frame 429 [13006-322144]	unknown	-	-	OVERTURNS wave3 `furniture`. FRAME 489x470 at x=20247 y=47873, 36 TEXT nodes. Headers `KOL details / Actions` over named rows (`Vitalik Buterin`, `Anthony Di Iorio`, `Charles Hoskinson`, `Nick Szabo`) each with an address. A populated KOLs table
+# 13006-198774 and 13006-294291 (`icons/action`, FRAME 38x12 and 16x16): rows DROPPED, already filed
+# `furniture` by status.wave7.trade2-unknown.tsv:52-53. This lane agrees and adds the general rule they
+# are instances of — see the classifier bug note at the foot of this file: `icons/action` is a LIBRARY
+# COMPONENT PATH, and SCHEMA.md names "a library component instance dropped on the canvas (CTA/button,
+# logos/others)" as furniture. 16x16 with one BOOLEAN_OPERATION child named `icon` is an icon, not a screen.
+# --- SKAI-WEB-APP: Play page. All three carry real content; all three are furniture for a reason that is
+# --- about the AUTHOR'S OWN LABEL or the node's SIZE, never about the content being empty.
+Play Carousel - not to be used immediately [11151-81849]	furniture	-	-	CONFIRMS wave3, on the author's own label and nothing else. FRAME 1318x244 at x=-905 y=2881 with 2 `card` children, 13 INSTANCEs and 14 TEXT — real, finished work (`Countdown to next draw`, `Day/Hour/Min/Sec` with `0/20/42/6`, `Join the $1K daily Skai lottery`, `Provably fair`). ★ The full name is only visible in node data; live/*.tsv truncates it to `Play Carousel - not `. SCHEMA.md's precedent is a node its author labelled "Unrecommended edit", and this is the same genre of instruction. ★ FLIP THIS THE DAY THE NAME CHANGES — the content is buildable and only the suffix keeps it out of the denominator	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+Frame 691 [11100-63268]	furniture	-	-	CONFIRMS wave3. FRAME 532x28 at x=13895 y=4553 with 5 FRAME children holding 9 INSTANCEs and ZERO text. A 28px-tall strip of library instances parked loose on the canvas — a toolbar row lifted out of a screen. No height that could be a surface, nothing to measure but the instances' own components	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-furniture
+# 9112-13214 (`cards - roultette OLD`, FRAME 317x409 at x=5279 y=6754, 1 INSTANCE + 1 FRAME, TEXT
+# `roulette` / `Skai Originals`): this lane first wrote `furniture` on the author's OLD suffix. Row
+# WITHDRAWN in favour of status.wave7.play.tsv:76, which files `frame-defect` and argues it better — it
+# matches the live featured tile 4645:70357 box for box, so it is a superseded CUT of a real card rather
+# than not-spec, and building it would re-introduce a shape the file already replaced. That verdict also
+# KEEPS the frame in the parity denominator where `furniture` would have removed it, i.e. it is the less
+# flattering of the two readings, which is the tie-break this lane is required to take.
+# ★ Worth recording for the schema: neither of us had a word for "superseded". Both verdicts are
+# approximations of a status the vocabulary does not carry.
+# --- SKAI-WEB-APP: Social page.
+card [5443-82417]	unknown	-	-	OVERTURNS wave3 `furniture`. CATALOG WRONG, SCRIPT RIGHT. wave3's stated grounds were "796x224 FRAME with ZERO text nodes - a Directory banner / Breakpoint ruler / empty scaffolding frame / parked component INSTANCE". Node data refutes every branch of that disjunction: it is not named Directory or Breakpoint, it is not empty (2 children, `Ellipse 13` and a frame named `chart`), and it is not an INSTANCE — type is FRAME and the subtree contains ZERO instances. ★ Zero text is the whole of the evidence, and a chart card legitimately has none. A 796x224 card wrapping a chart is design content
+# ===========================================================================================
+# ALREADY ADJUDICATED THIS WAVE — counted in this lane's 60, no row written to avoid a duplicate id.
+# status.wave7.verify-orphans.tsv:26-29 files all four `furniture` off node data, and this lane concurs:
+#   10358-10260  Blackjack Desktop   195x277,   ZERO children, x=-2846  (no board width, empty, off-canvas)
+#   10404-2119   Blackjack Desktop   1390x1968, ZERO children, x=-7388  (empty, off-canvas)
+#   10404-2125   Frame 1000004104    1080x1800, card artwork,  x=-5698  (3:5 poster, same family as the 15 covers above)
+#   10428-2140   Frame 1000004220    1080x1800, card artwork,  x=-5705  (3:5 poster)
+# ===========================================================================================
+# COVERAGE.MJS CLASSIFIER — the precise gap, reported not patched (this lane may not edit that file).
+# classify() at coverage.mjs:212-216 is name-regex + type + visibility only. Of the 39 nodes this lane
+# CONFIRMS as furniture, not one is reachable by that rule, and they fall into four repairable classes:
+#  1. ART-ONLY SUBTREE (27 nodes). A FRAME or GROUP whose whole subtree is RECTANGLE/VECTOR/ELLIPSE/GROUP
+#     with ZERO TEXT and, usually, an IMAGE fill. Covers the 15 per-game cover posters and the 12 loose art
+#     groups. Suggested signal: genuine requires >0 TEXT descendants OR >0 INSTANCE descendants. Cheap, and
+#     it is the discriminator this lane used on all 60. NOTE it would misfile 9900-949 correctly but would
+#     ALSO have to spare 10120-8782 (29 TEXT, still a cover) — so it is a strong prior, not a closed rule.
+#  2. LIBRARY COMPONENT PATH IN THE NAME (2 nodes: 13006-198774, 13006-294291, both `icons/action`).
+#     ★ THE ACTUAL BUG. SCHEMA.md already names `CTA/button` and `logos/others` as furniture, and
+#     classify() only catches them via `!SPEC_TYPES.has(n.type)` — i.e. only while they are still INSTANCEs.
+#     DETACH one and its type becomes FRAME, which is in SPEC_TYPES, so it silently re-enters the
+#     denominator. A name rule such as /^(icons|CTA|logos|labels|buttons|badges)\//i closes it and matches
+#     the vocabulary SCHEMA.md already uses.
+#  3. AUTHOR DEPRECATION LABEL (2 nodes: 11151-81849 `... not to be used immediately`, 9112-13214
+#     `cards - roultette OLD`). FURNITURE_NAME has /^Unrecommended/i but anchored at the START, so a
+#     suffix is unreachable. A /\b(OLD|DEPRECATED|not to be used|do not use)\b/i test would catch both.
+#     ⚠ These must stay a REPORTED list, never a silent exclusion — a deprecation is reversible.
+#  4. SIZE FLOOR (5 nodes: 9798-13760 28x28, 9903-2037 37x18, 9903-2040 35x18, plus the two icons above).
+#     Nothing under ~64px in either axis is a surface at any breakpoint. Deliberately NOT proposed as an
+#     automatic rule — a small COMPONENT is genuine design work — but it is what settled these five.
+# ★ None of this is a defect in the classifier's DOCUMENTED intent. coverage.mjs:180-187 states plainly
+#   that the name list is "deliberately only the KNOWN canvas-chrome vocabulary" and that guessing intent
+#   would "quietly shrink the denominator and raise the percentage". Class 2 is the one true bug; classes
+#   1, 3 and 4 are the disclosed cost of that conservatism, and this lane is the hand pass it assumes.
