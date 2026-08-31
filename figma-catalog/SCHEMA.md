@@ -567,3 +567,47 @@ which throws `ENOENT C:\dev\stdout` on Windows — see `recurring-issues.md §27
 - `families.json.proposedStatus` (likely-done/partial/not-started) is only a
   citation-count PRIOR for triage — never authoritative.
 
+
+## Two data sources that will mislead you (added 2026-08-27)
+
+### `live/*.tsv` TRUNCATES the name column at 20 characters
+
+The harvested node inventory is authoritative for **id, type, width, height and
+visibility only**. Its `name` is capped at 20 chars.
+
+`Skai > Play > Casino` is exactly 20 — so on the Play page and every game page,
+**every screen frame collapses to one identical title.** Blackjack, Bingo,
+Scratchers and Keno are indistinguishable in the cache.
+
+Two things this has already caused:
+
+- The `✅ Bingo` page holds a frame titled `Skai > Play > Casino > Scratchers
+  (1440 x 900px)` and another titled `… > Blackjack (375 x 812px)`. Invisible in
+  the cache; obvious in node data.
+- A cached-vs-live drift run reported **1,631 RETITLED**, which is almost
+  entirely this cap — a truncated title never equals its full counterpart.
+
+★ **Never identify a frame from `live/*.tsv`'s name.** Read node data. And if a
+whole page's frames appear to share one title, suspect the cap before suspecting
+the designer.
+
+Pages refreshed with full titles on 2026-08-27: `9003-112414` (blackjack),
+`9390-18296` (bingo). **The other ~48 page files are still truncated.**
+
+### `registry.status` is only as fresh as `code-node-citations.json`
+
+`build-registry.mjs` derives `implFiles` — and therefore `not-started` — from
+that index. It had **no regenerator** until 2026-08-27 and had gone five weeks
+stale, so every surface built after 2026-07-21 read as unbuilt. A work list
+selected on `status === "not-started"` sent lanes to rebuild **29 of 123 frames
+that already existed**.
+
+★ **Run `node figma-catalog/scan-citations.mjs` before sizing any wave off
+`registry.status`**, then `build-registry.mjs` → `apply-status.mjs` →
+`coverage.mjs`. Check the index's own `generated` field when in doubt.
+
+The scan indexes a node id only when the catalog already carries that frame, so
+it can confirm coverage but never invent it; id-shaped tokens with no frame
+behind them are reported, not indexed. Dates are excluded explicitly — `\d+-\d+`
+also matches `2026-08-27`, and a false citation is worse than a missing one
+because it takes work off the schedule rather than adding it.
