@@ -15,7 +15,13 @@
  * An absent column 6 means `unknown` at all three widths and NEVER inherits
  * column 2 — see the header comment in bp.mjs for why that matters.
  *
- * Usage: node figma-catalog/apply-status.mjs
+ * Usage: node figma-catalog/apply-status.mjs [--dry-run]
+ *
+ * `--dry-run` computes and PRINTS every number this script reports but does not
+ * write registry.json. It exists because the integrity lane has to read the
+ * counters while twenty build lanes are mid-flight, and a registry rewrite under
+ * them races every reader. Measuring must never be the thing that breaks the
+ * wave. Same code path, same numbers — only the final write is skipped.
  */
 import fs from "fs";
 import path from "path";
@@ -36,6 +42,7 @@ import {
 } from "./bp.mjs";
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
+const DRY_RUN = process.argv.includes("--dry-run");
 const regPath = path.join(DIR, "registry.json");
 const reg = JSON.parse(fs.readFileSync(regPath, "utf8"));
 // DISCOVER the sections from the status files actually on disk, rather than a
@@ -136,6 +143,8 @@ const statusByFam = {};
 // Node-id-keyed verdicts, from rows whose column 1 reads `<title> [node-id]`.
 // See the comment at the assignment site for why both keyings must coexist.
 const statusById = {};
+/** Two rows keyed to the SAME node id — the later silently replaces the earlier. */
+const idCollisions = [];
 let loaded = 0;
 // Column 6 is parsed STRICTLY and every complaint is collected, because the
 // failure mode this whole dimension exists to prevent is a width verdict that
@@ -184,6 +193,11 @@ for (const { stem, section: sec } of SECTIONS) {
       bpAt: bp.at,
       bpSource: bp.source,
       bpPresent: bp.present,
+      // Provenance, so a row that applies to NOTHING can be named by file and
+      // line rather than counted. WAVE5-INTEGRITY.md asked for exactly this:
+      // "a count cannot be acted on", and a bare rising number is what would
+      // hide a misparsed key (`2026-08` read as a node id) indefinitely.
+      where,
     };
 
     /*
@@ -219,7 +233,17 @@ for (const { stem, section: sec } of SECTIONS) {
       unaddressable.push(where);
       continue;
     }
-    if (addr.kind === "id") statusById[addr.nodeId] = verdict;
+    if (addr.kind === "id") {
+      // LAST WRITER WINS, and until now it won silently. Files are processed in
+      // stem order, so a later lane's row for the same node id overwrites an
+      // earlier lane's — across waves that is intended (wave 7 supersedes wave
+      // 5), but between two lanes of the SAME wave it means one lane's measured
+      // verdict is discarded with no trace. Record the collision so it can be
+      // adjudicated instead of silently resolved by filename.
+      const prev = statusById[addr.nodeId];
+      if (prev) idCollisions.push({ nodeId: addr.nodeId, kept: where, dropped: prev.where, keptStatus: row.status, droppedStatus: prev.status });
+      statusById[addr.nodeId] = verdict;
+    }
     // A section rollup is KEPT but not applied — see the Form D note in bp.mjs.
     // It lands in registry.rollups so the reasoning survives, without any frame
     // inheriting a verdict nobody measured at that frame's width.
@@ -298,7 +322,8 @@ for (const [key, s] of Object.entries(statusByFam)) {
 reg.rollups = rollupBySection;
 
 reg.generated = new Date().toISOString();
-fs.writeFileSync(regPath, JSON.stringify(reg, null, 2));
+if (DRY_RUN) console.log("--dry-run: registry.json NOT written; every count below is otherwise identical.");
+else fs.writeFileSync(regPath, JSON.stringify(reg, null, 2));
 
 // summary
 const bySecStatus = {};
@@ -320,6 +345,42 @@ const unmatchedIds = Object.keys(statusById).filter(
 if (unmatchedIds.length) {
   console.log(
     `\n⚠️  ${unmatchedIds.length} id-keyed row(s) name a node no registry frame carries (stale id, nested child, or a frame the harvest never saw).`,
+  );
+  // ★ Named by file and line, not counted. A bare number here drifts upward and
+  // nobody can act on it — and it is the one place a misparsed key would hide:
+  // `parseRowKey("2026-08", …)` returns an ID, so a date-shaped family name
+  // becomes an id-keyed row pointing at nothing. Grouped by file so a whole
+  // lane's work applying to zero frames is visible as a block rather than as a
+  // handful of lines lost among older debris.
+  const byFile = {};
+  for (const id of unmatchedIds) {
+    const w = statusById[id].where || "(unknown origin)";
+    const file = w.split(":")[0];
+    (byFile[file] = byFile[file] || []).push(`${w} -> node ${id} (${statusById[id].status})`);
+  }
+  for (const [file, rows] of Object.entries(byFile).sort((a, b) => b[1].length - a[1].length)) {
+    console.log(`      ${file}: ${rows.length} row(s) apply to zero frames`);
+    for (const r of rows.slice(0, 8)) console.log(`        ${r}`);
+    if (rows.length > 8) console.log(`        … and ${rows.length - 8} more`);
+  }
+}
+if (idCollisions.length) {
+  // Split, because the raw count is not actionable. Most collisions are a later
+  // wave deliberately superseding an earlier verdict with the SAME status, or
+  // the two halves of a file kept for provenance (status.governance.tsv and
+  // status.governance-vaults.tsv). Those are noise. A collision where the two
+  // rows DISAGREE is the one that matters: two lanes measured the same frame and
+  // reached different conclusions, and filename order — not evidence — decided
+  // which one the registry records.
+  const disagree = idCollisions.filter((c) => c.keptStatus !== c.droppedStatus);
+  console.log(
+    `\n⚠️  ${idCollisions.length} node id(s) claimed by more than one row (later file silently replaces earlier); ${disagree.length} of those DISAGREE on status:`,
+  );
+  for (const c of disagree.slice(0, 30))
+    console.log(`      ${c.nodeId}: kept ${c.keptStatus} from ${c.kept}; DROPPED ${c.droppedStatus} from ${c.dropped}`);
+  if (disagree.length > 30) console.log(`      … and ${disagree.length - 30} more disagreements`);
+  console.log(
+    `    The other ${idCollisions.length - disagree.length} agree on status and are harmless supersessions.`,
   );
 }
 // A row that names neither a node id nor a resolvable section applies to ZERO

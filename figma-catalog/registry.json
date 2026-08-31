@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T18:23:10.544Z",
+  "generated": "2026-08-31T22:08:52.030Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -49,8 +49,8 @@
   },
   "pagesHarvested": "2026-08-18",
   "stats": {
-    "total": 3772,
-    "titled": 3103,
+    "total": 3776,
+    "titled": 3107,
     "cited": 1139,
     "bySection": {
       "home": {
@@ -117,10 +117,10 @@
         "cited": 7
       },
       "blackjack": {
-        "frames": 20,
-        "titled": 20,
-        "screens": 15,
-        "nonScreen": 5,
+        "frames": 23,
+        "titled": 23,
+        "screens": 17,
+        "nonScreen": 6,
         "cited": 14
       },
       "coinflip": {
@@ -271,10 +271,10 @@
         "cited": 4
       },
       "bingo": {
-        "frames": 17,
-        "titled": 17,
+        "frames": 18,
+        "titled": 18,
         "screens": 9,
-        "nonScreen": 8,
+        "nonScreen": 9,
         "cited": 11
       },
       "rock-paper-scissors": {
@@ -329,8 +329,8 @@
     },
     "keyCollisions": {
       "total": 745,
-      "idsListed": 4517,
-      "rowsKept": 3772,
+      "idsListed": 4521,
+      "rowsKept": 3776,
       "reconciles": true,
       "bySectionPair": {
         "home -> pwa": 5,
@@ -342,7 +342,7 @@
     },
     "citationRefusals": [],
     "byReadiness": {
-      "ready": 3420,
+      "ready": 3424,
       "meta": 70,
       "wip": 267,
       "unknown": 15
@@ -503,10 +503,10 @@
       {
         "page": "✅ Blackjack - Skai originals",
         "readiness": "ready",
-        "rows": 20,
+        "rows": 23,
         "gone": 0,
         "live": 20,
-        "delta": 0
+        "delta": -3
       },
       {
         "page": "✅ Coinflip - Skai originals",
@@ -607,10 +607,10 @@
       {
         "page": "✅ Bingo - Skai originals",
         "readiness": "ready",
-        "rows": 16,
+        "rows": 17,
         "gone": 1,
         "live": 16,
-        "delta": 0
+        "delta": -1
       },
       {
         "page": "✅ Rock Paper Scissors - Skai originals",
@@ -709,7 +709,7 @@
       "mobile": "renders",
       "worst": "renders",
       "design": {
-        "desktop": 6,
+        "desktop": 8,
         "tablet": 2,
         "mobile": 3,
         "unplaced": 4
@@ -66429,6 +66429,75 @@
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
+    "M6r9FEn042UWTQD1zvy6GM:10358-10260": {
+      "section": "blackjack",
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "fileName": "Skai-Games",
+      "node": "10358-10260",
+      "title": "Blackjack Desktop",
+      "page": "✅ Blackjack - Skai originals",
+      "readiness": "ready",
+      "screen": "Casino > Blackjack - Blackjack Desktop",
+      "variant": "Blackjack Desktop",
+      "viewport": null,
+      "device": "desktop",
+      "vh": null,
+      "kind": "screen",
+      "family": "Casino > Blackjack",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "furniture",
+      "route": null,
+      "notes": "195x277 frame at x=-2846 y=4865, ZERO children in node data — an empty off-canvas frame, not a screen; 195 is no board width (1440/768/375)",
+      "verifiedAt": null,
+      "bpStatus": "n-a"
+    },
+    "M6r9FEn042UWTQD1zvy6GM:10404-2119": {
+      "section": "blackjack",
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "fileName": "Skai-Games",
+      "node": "10404-2119",
+      "title": "Blackjack Desktop",
+      "page": "✅ Blackjack - Skai originals",
+      "readiness": "ready",
+      "screen": "Casino > Blackjack - Blackjack Desktop",
+      "variant": "Blackjack Desktop",
+      "viewport": null,
+      "device": "desktop",
+      "vh": null,
+      "kind": "screen",
+      "family": "Casino > Blackjack",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "furniture",
+      "route": null,
+      "notes": "1390.04x1968.37 frame at x=-7388 y=3045, ZERO children in node data — empty and off-canvas; 1390 is not the 1440 desktop board and the frame has no content to be a spec for",
+      "verifiedAt": null,
+      "bpStatus": "n-a"
+    },
+    "M6r9FEn042UWTQD1zvy6GM:10404-2125": {
+      "section": "blackjack",
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "fileName": "Skai-Games",
+      "node": "10404-2125",
+      "title": "Frame 1000004104",
+      "page": "✅ Blackjack - Skai originals",
+      "readiness": "ready",
+      "screen": "Frame 1000004104",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "non-screen",
+      "family": null,
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
     "M6r9FEn042UWTQD1zvy6GM:9003-122028": {
       "section": "coinflip",
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -76830,7 +76899,7 @@
       ],
       "status": "partial",
       "route": "/social",
-      "notes": "NOT MEASURED. Mounted and reachable in code, but no geometry / type ramp / colour was read off this node and compared against the shipped classes. Note that /trading-groups, /streaming, /:username and /messages all render a wallet-connect arm on the dev server (measured 2026-08-26), so the practical evidence standard in this section is node-data vs the component's class literals — which is what the four `done` rows in this file used — not a browser measurement. PRIOR: MEASURED 2026-08-26 at 1440 on the live dev DOM, and the prior `done` FAILS on the header. Heading \"Discover\" node 10235:203179 is Manrope **Light 32/36 #ffffff**; the DOM renders **Cormorant Garamond 500, 30/36, #e0e0e0** — wrong family, wrong weight, wrong size, wrong colour. CTA \"Create new\" I10235:203182 sits in a 125x36 pill filled **#56c7f3**; the DOM renders 125x36 (geometry MATCHES) filled **#2CEDAC**. The colour miss is the documented `sky-blue`-token-is-green gotcha (token value swapped to Alien Green, name kept), i.e. app-wide and already ruled on — ESCALATED, not fixed here. The serif heading is likewise a global brand choice, not a Social defect.",
+      "notes": "NOT MEASURED. Mounted and reachable in code, but no geometry / type ramp / colour was read off this node and compared against the shipped classes. Note that /trading-groups, /streaming, /:username and /messages all render a wallet-connect arm on the dev server (measured 2026-08-26), so the practical evidence standard in this section is node-data vs the component's class literals — which is what the four `done` rows in this file used — not a browser measurement. PRIOR: MEASURED 2026-08-26 at 1440 on the live dev DOM, and the prior `done` FAILS on the header. Heading \"Discover\" node 10235:203179 is Manrope **Light 32/36 #ffffff**; the DOM renders **Cormorant Garamond 500, 30/36, #e0e0e0** — wrong family, wrong weight, wrong size, wrong colour. CTA \"Create new\" I10235:203182 sits in a 125x36 pill filled **#56c7f3**; the DOM renders 125x36 (geometry MATCHES) filled **#2CEDAC**. ★ DIAGNOSIS CORRECTED 2026-08-31 - the MEASUREMENT above stands, the CAUSE named here was wrong. The old note blamed \"the documented `sky-blue`-token-is-green gotcha (token value swapped to Alien Green, name kept), i.e. app-wide and already ruled on - ESCALATED, not fixed here\". There is no such gotcha. design-tokens.ts:70 holds skyBlue: \"#56C7F3\" with a DO-NOT-REVERT at :53-63, and the preset maps \"sky-blue\" -> accentColors.skyBlue at :244, so `sky-blue` resolves #56C7F3 - exactly the frame's fill. A green render therefore CANNOT come from `sky-blue`; the pill is painted by a separate green class (alien-green :49 / skai-green :248, both #2DEDAD). WHICH class paints it is UNMEASURED: grepping src/components/social/feed/DiscoverFeed.tsx and src/pages/social/SocialFeed.tsx for skai-green/alien-green/sky-blue returns ZERO hits, so the fill is inherited from a shared component and was not traced this pass. Do NOT read this as ruled-on or app-wide - that framing is what took the row off the schedule, and it rested on a token value flipped on 2026-08-12. Re-open as an in-scope colour defect with an unidentified source. The serif heading is likewise a global brand choice, not a Social defect.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -79899,7 +79968,7 @@
       ],
       "status": "done",
       "route": "/trading-groups",
-      "notes": "MEASURED 2026-08-26 at 1440 against node `5198:47891`, FAILED on thirteen element-level counts (headline size + leading + weight, subhead, search-field radius, search placeholder, tab-pill leading, and the Created / group-name / member-sub-line / Token-req / type-pill / description cells), then FIXED this lane; re-measured and every number below now agrees. PAGE CHROME (TradingGroups.tsx) — headline `5198:47906` 32/36 Manrope **Light** vs shipped `text-2xl/8 font-semibold` (24/32, w600): WRONG size, leading AND weight. Subhead `5198:47907` 16/22 vs shipped `text-sm/5` (14/20). Search `field` `I5198:47945;976:357` 1144x50 r**16** pad 14/20 vs shipped `rounded-[12px]`; its placeholder `I5198:47945;976:359` 16/22 vs the control's inherited 14/20. Tab pill `I5198:49942;801:986` 14/**18** vs shipped `text-sm/5` (14/20). Tab row `Frame 299` `5198:49935` 1144x56 inset 16 -> `px-4` (already right at this width). Filter chip `5198:49946` 140x34 r8 pad 8/16/8/16 -> `h-[34px] w-[140px] rounded-[8px]` (already right at this width). TABLE (GroupsSearchTable.tsx) — column headers `5198:49957` 12/16 Manrope Regular -> `text-xs/4 font-normal` (already right, the one thing that was). Every BODY cell shipped `text-sm/5` (14/20), a leading no frame draws: Created `5198:50042` 12/16 and **white**, shipped muted; group name `5198:50047` 14/18 Manrope **Regular**, shipped `text-sm/5 font-medium`; member sub-line `5198:50051` 11/14 and **accent** `#56c7f3`, shipped `text-xs/4 text-muted-foreground`; Token req `5198:50269` 14/18 white; type pill `I5198:50059;786:171` 11/14, shipped `text-xs/4`; description `5198:50060` 12/16 **white** where only the ABSENT case is grey (`5198:50112` \"Hidden.\" is `#95a09f`). Fixed by a `ROW_TYPE_RAMP` keyed off the same `GroupsLayout` as the existing height and empty ramp, plus explicit-px breakpoints on the page chrome; oracle test transcribes the Figma numbers rather than importing the constant (`GroupsSearchTable.responsive.test.tsx`, 24 tests). Mutation-checked: reverting `list.name` to `text-sm/5` turns it red with `expected 'truncate font-normal text-foreground text-sm/5' to contain 'text-[12px] leading-4'`. DELIBERATELY NOT BUILT, both already documented in-file and unchanged: the stacked member avatars + \"+12\" in the Members column (no avatar payload on `list_trading_groups`), and the \"60,000 left\" sub-line under Token req (`5198:50306`, required-minus-held, a constant 0 on the only feed that carries rules). TWO app-wide token differences are NOT re-litigated here: our accent resolves `#2DEDAD` against the frame's `#56c7f3` (the ruled sky-blue-reads-green gotcha), and `--muted-foreground` resolves `hsl(225 20% 75%)` (about `#b3b9c9`) against the frame's `#95a09f` — a theme-token question, not a component defect.",
+      "notes": "MEASURED 2026-08-26 at 1440 against node `5198:47891`, FAILED on thirteen element-level counts (headline size + leading + weight, subhead, search-field radius, search placeholder, tab-pill leading, and the Created / group-name / member-sub-line / Token-req / type-pill / description cells), then FIXED this lane; re-measured and every number below now agrees. PAGE CHROME (TradingGroups.tsx) — headline `5198:47906` 32/36 Manrope **Light** vs shipped `text-2xl/8 font-semibold` (24/32, w600): WRONG size, leading AND weight. Subhead `5198:47907` 16/22 vs shipped `text-sm/5` (14/20). Search `field` `I5198:47945;976:357` 1144x50 r**16** pad 14/20 vs shipped `rounded-[12px]`; its placeholder `I5198:47945;976:359` 16/22 vs the control's inherited 14/20. Tab pill `I5198:49942;801:986` 14/**18** vs shipped `text-sm/5` (14/20). Tab row `Frame 299` `5198:49935` 1144x56 inset 16 -> `px-4` (already right at this width). Filter chip `5198:49946` 140x34 r8 pad 8/16/8/16 -> `h-[34px] w-[140px] rounded-[8px]` (already right at this width). TABLE (GroupsSearchTable.tsx) — column headers `5198:49957` 12/16 Manrope Regular -> `text-xs/4 font-normal` (already right, the one thing that was). Every BODY cell shipped `text-sm/5` (14/20), a leading no frame draws: Created `5198:50042` 12/16 and **white**, shipped muted; group name `5198:50047` 14/18 Manrope **Regular**, shipped `text-sm/5 font-medium`; member sub-line `5198:50051` 11/14 and **accent** `#56c7f3`, shipped `text-xs/4 text-muted-foreground`; Token req `5198:50269` 14/18 white; type pill `I5198:50059;786:171` 11/14, shipped `text-xs/4`; description `5198:50060` 12/16 **white** where only the ABSENT case is grey (`5198:50112` \"Hidden.\" is `#95a09f`). Fixed by a `ROW_TYPE_RAMP` keyed off the same `GroupsLayout` as the existing height and empty ramp, plus explicit-px breakpoints on the page chrome; oracle test transcribes the Figma numbers rather than importing the constant (`GroupsSearchTable.responsive.test.tsx`, 24 tests). Mutation-checked: reverting `list.name` to `text-sm/5` turns it red with `expected 'truncate font-normal text-foreground text-sm/5' to contain 'text-[12px] leading-4'`. DELIBERATELY NOT BUILT, both already documented in-file and unchanged: the stacked member avatars + \"+12\" in the Members column (no avatar payload on `list_trading_groups`), and the \"60,000 left\" sub-line under Token req (`5198:50306`, required-minus-held, a constant 0 on the only feed that carries rules). TWO app-wide token differences are NOT re-litigated here: our accent resolves `#2DEDAD` against the frame's `#56c7f3` (★ CORRECTED 2026-08-31: NOT \"the ruled sky-blue-reads-green gotcha\" - design-tokens.ts:70 holds skyBlue: \"#56C7F3\" with a DO-NOT-REVERT at :53-63, and the preset maps \"sky-blue\" -> accentColors.skyBlue at :244, so `sky-blue` resolves #56C7F3, i.e. sky-blue IS the frame's blue. The #2DEDAD we ship is alien-green/skai-green, a DIFFERENT class; which of them paints this accent is UNMEASURED, so this is an OPEN colour defect rather than a ruled exemption), and `--muted-foreground` resolves `hsl(225 20% 75%)` (about `#b3b9c9`) against the frame's `#95a09f` — a theme-token question, not a component defect.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -84980,7 +85049,7 @@
       ],
       "status": "blocked-on-backend",
       "route": "/social",
-      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC, which is the known sky-blue-token-resolves-green problem, not a choice made here. ★ CARRIED FORWARD from wave 3 so it is not lost with the reclassification - a real DOM measurement at 375: heading node 11442:164775 \"Discover\" is Manrope Light 20/24 in the frame and Cormorant Garamond 500 24/32 in the DOM (a step LARGER where the frame steps down); CTA I11442:164778 is 125x32 #56C7F3 in the frame and 125x44 #2CEDAC in the DOM. No horizontal overflow (scrollWidth 369 vs clientWidth 375). I re-measured the 768 twin and the same two causes hold there (Cormorant 500 30/36, CTA 125x44 #2CEDAC).",
+      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC. ★ DIAGNOSIS CORRECTED 2026-08-31 - the DOM measurement stands, the cause does not. This was attributed to \"the known sky-blue-token-resolves-green problem, not a choice made here\", and there is no such problem: design-tokens.ts:70 holds skyBlue: \"#56C7F3\" with a DO-NOT-REVERT at :53-63, and the preset maps \"sky-blue\" -> accentColors.skyBlue at :244, so `sky-blue` resolves #56C7F3, i.e. the frame's own blue, so `sky-blue` cannot be the source of a green CTA. The #2CEDAC must come from a separate green class (alien-green :49 / skai-green :248, both #2DEDAD); WHICH one is UNMEASURED and was not traced this pass. Treat as an open, in-scope colour defect, not a known-and-excused one. ★ CARRIED FORWARD from wave 3 so it is not lost with the reclassification - a real DOM measurement at 375: heading node 11442:164775 \"Discover\" is Manrope Light 20/24 in the frame and Cormorant Garamond 500 24/32 in the DOM (a step LARGER where the frame steps down); CTA I11442:164778 is 125x32 #56C7F3 in the frame and 125x44 #2CEDAC in the DOM. No horizontal overflow (scrollWidth 369 vs clientWidth 375). I re-measured the 768 twin and the same two causes hold there (Cormorant 500 30/36, CTA 125x44 #2CEDAC).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -86130,7 +86199,7 @@
       ],
       "status": "blocked-on-backend",
       "route": "/social",
-      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC, which is the known sky-blue-token-resolves-green problem, not a choice made here.",
+      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC. ★ DIAGNOSIS CORRECTED 2026-08-31 - the DOM measurement stands, the cause does not. This was attributed to \"the known sky-blue-token-resolves-green problem, not a choice made here\", and there is no such problem: design-tokens.ts:70 holds skyBlue: \"#56C7F3\" with a DO-NOT-REVERT at :53-63, and the preset maps \"sky-blue\" -> accentColors.skyBlue at :244, so `sky-blue` resolves #56C7F3, i.e. the frame's own blue, so `sky-blue` cannot be the source of a green CTA. The #2CEDAC must come from a separate green class (alien-green :49 / skai-green :248, both #2DEDAD); WHICH one is UNMEASURED and was not traced this pass. Treat as an open, in-scope colour defect, not a known-and-excused one.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -86160,7 +86229,7 @@
       ],
       "status": "blocked-on-backend",
       "route": "/social",
-      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC, which is the known sky-blue-token-resolves-green problem, not a choice made here. ★ CARRIED FORWARD from wave 3: DOM measured at 768 - heading Cormorant Garamond 500 30/36, CTA 125x44 #2CEDAC, no overflow (scrollWidth 762 vs clientWidth 768). I re-confirmed all three 2026-08-26.",
+      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC. ★ DIAGNOSIS CORRECTED 2026-08-31 - the DOM measurement stands, the cause does not. This was attributed to \"the known sky-blue-token-resolves-green problem, not a choice made here\", and there is no such problem: design-tokens.ts:70 holds skyBlue: \"#56C7F3\" with a DO-NOT-REVERT at :53-63, and the preset maps \"sky-blue\" -> accentColors.skyBlue at :244, so `sky-blue` resolves #56C7F3, i.e. the frame's own blue, so `sky-blue` cannot be the source of a green CTA. The #2CEDAC must come from a separate green class (alien-green :49 / skai-green :248, both #2DEDAD); WHICH one is UNMEASURED and was not traced this pass. Treat as an open, in-scope colour defect, not a known-and-excused one. ★ CARRIED FORWARD from wave 3: DOM measured at 768 - heading Cormorant Garamond 500 30/36, CTA 125x44 #2CEDAC, no overflow (scrollWidth 762 vs clientWidth 768). I re-confirmed all three 2026-08-26.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -87806,7 +87875,7 @@
       ],
       "status": "blocked-on-backend",
       "route": "/social",
-      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC, which is the known sky-blue-token-resolves-green problem, not a choice made here.",
+      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC. ★ DIAGNOSIS CORRECTED 2026-08-31 - the DOM measurement stands, the cause does not. This was attributed to \"the known sky-blue-token-resolves-green problem, not a choice made here\", and there is no such problem: design-tokens.ts:70 holds skyBlue: \"#56C7F3\" with a DO-NOT-REVERT at :53-63, and the preset maps \"sky-blue\" -> accentColors.skyBlue at :244, so `sky-blue` resolves #56C7F3, i.e. the frame's own blue, so `sky-blue` cannot be the source of a green CTA. The #2CEDAC must come from a separate green class (alien-green :49 / skai-green :248, both #2DEDAD); WHICH one is UNMEASURED and was not traced this pass. Treat as an open, in-scope colour defect, not a known-and-excused one.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -87833,7 +87902,7 @@
       ],
       "status": "blocked-on-backend",
       "route": "/social",
-      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC, which is the known sky-blue-token-resolves-green problem, not a choice made here.",
+      "notes": "MISSING RELATION, named: there is no post entity in the database. Enumerated `information_schema.tables` for public on 2026-08-26 - nothing matching post/comment/story exists (the only comment-shaped table is `bug_comments`, which belongs to the bug tracker). /social renders and its chrome is measurable - H1 \"Discover\" Cormorant Garamond 500 30/36 at 768, the Create-new CTA 125x44 #2CEDAC - but the body is \"Nothing posted yet / Be the first - posts you create show up here.\", so a populated feed (11442-163273 is 768x4387, 11474-227157 is 768x3615) has no source. ★ The CTA fill is a second, separate finding: the frame draws #56C7F3 and the DOM paints #2CEDAC. ★ DIAGNOSIS CORRECTED 2026-08-31 - the DOM measurement stands, the cause does not. This was attributed to \"the known sky-blue-token-resolves-green problem, not a choice made here\", and there is no such problem: design-tokens.ts:70 holds skyBlue: \"#56C7F3\" with a DO-NOT-REVERT at :53-63, and the preset maps \"sky-blue\" -> accentColors.skyBlue at :244, so `sky-blue` resolves #56C7F3, i.e. the frame's own blue, so `sky-blue` cannot be the source of a green CTA. The #2CEDAC must come from a separate green class (alien-green :49 / skai-green :248, both #2DEDAD); WHICH one is UNMEASURED and was not traced this pass. Treat as an open, in-scope colour defect, not a known-and-excused one.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -101083,6 +101152,29 @@
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
+    "M6r9FEn042UWTQD1zvy6GM:10428-2140": {
+      "section": "bingo",
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "fileName": "Skai-Games",
+      "node": "10428-2140",
+      "title": "Frame 1000004220",
+      "page": "✅ Bingo - Skai originals",
+      "readiness": "ready",
+      "screen": "Frame 1000004220",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "non-screen",
+      "family": null,
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
     "M6r9FEn042UWTQD1zvy6GM:9907-1583": {
       "section": "rock-paper-scissors",
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -104181,6 +104273,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.wave2.games-pagesections.tsv:7 [Casino > Baccarat]",
       "from": "status.wave2.games-pagesections.tsv:7 [Casino > Baccarat]"
     },
     "bingo": {
@@ -104196,6 +104289,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.wave2.games-pagesections.tsv:1 [Casino > Bingo]",
       "from": "status.wave2.games-pagesections.tsv:1 [Casino > Bingo]"
     },
     "blackjack": {
@@ -104211,6 +104305,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:3 [Casino > Blackjack]",
       "from": "status.game-rollups.verified.tsv:3 [Casino > Blackjack]"
     },
     "chicken": {
@@ -104226,6 +104321,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:4 [Casino > Chicken]",
       "from": "status.game-rollups.verified.tsv:4 [Casino > Chicken]"
     },
     "coinflip": {
@@ -104241,6 +104337,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:5 [Casino > Coinflip]",
       "from": "status.game-rollups.verified.tsv:5 [Casino > Coinflip]"
     },
     "crash": {
@@ -104256,6 +104353,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:6 [Casino > Crash]",
       "from": "status.game-rollups.verified.tsv:6 [Casino > Crash]"
     },
     "darts": {
@@ -104271,6 +104369,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:7 [Casino > Darts]",
       "from": "status.game-rollups.verified.tsv:7 [Casino > Darts]"
     },
     "dice": {
@@ -104286,6 +104385,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:8 [Casino > Dice]",
       "from": "status.game-rollups.verified.tsv:8 [Casino > Dice]"
     },
     "fortune-wheel": {
@@ -104301,6 +104401,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.wave2.games-pagesections.tsv:2 [Casino > Fortune Wheel]",
       "from": "status.wave2.games-pagesections.tsv:2 [Casino > Fortune Wheel]"
     },
     "hilo": {
@@ -104316,6 +104417,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:10 [Casino > Hi-Lo]",
       "from": "status.game-rollups.verified.tsv:10 [Casino > Hi-Lo]"
     },
     "keno": {
@@ -104331,6 +104433,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.wave2.games-pagesections.tsv:3 [Casino > Keno]",
       "from": "status.wave2.games-pagesections.tsv:3 [Casino > Keno]"
     },
     "limbo": {
@@ -104346,6 +104449,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:12 [Casino > Limbo]",
       "from": "status.game-rollups.verified.tsv:12 [Casino > Limbo]"
     },
     "mines": {
@@ -104361,6 +104465,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:13 [Casino > Mines]",
       "from": "status.game-rollups.verified.tsv:13 [Casino > Mines]"
     },
     "plinko": {
@@ -104376,6 +104481,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:14 [Casino > Plinko]",
       "from": "status.game-rollups.verified.tsv:14 [Casino > Plinko]"
     },
     "price-grid": {
@@ -104391,6 +104497,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.wave2.games-pagesections.tsv:8 [Casino > Price Grid]",
       "from": "status.wave2.games-pagesections.tsv:8 [Casino > Price Grid]"
     },
     "rock-paper-scissors": {
@@ -104406,6 +104513,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.wave2.games-pagesections.tsv:4 [Casino > Rock Paper Scissors]",
       "from": "status.wave2.games-pagesections.tsv:4 [Casino > Rock Paper Scissors]"
     },
     "roulette": {
@@ -104421,6 +104529,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:17 [Casino > Roulette]",
       "from": "status.game-rollups.verified.tsv:17 [Casino > Roulette]"
     },
     "skratch": {
@@ -104436,6 +104545,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:18 [Casino > Scratchers]",
       "from": "status.game-rollups.verified.tsv:18 [Casino > Scratchers]"
     },
     "slide": {
@@ -104451,6 +104561,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.game-rollups.verified.tsv:19 [Casino > Slide]",
       "from": "status.game-rollups.verified.tsv:19 [Casino > Slide]"
     },
     "towers": {
@@ -104466,6 +104577,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.wave2.games-pagesections.tsv:5 [Casino > Towers]",
       "from": "status.wave2.games-pagesections.tsv:5 [Casino > Towers]"
     },
     "video-poker": {
@@ -104481,6 +104593,7 @@
       "bpAt": null,
       "bpSource": null,
       "bpPresent": false,
+      "where": "status.wave2.games-pagesections.tsv:6 [Casino > Video Poker]",
       "from": "status.wave2.games-pagesections.tsv:6 [Casino > Video Poker]"
     }
   }

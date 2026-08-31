@@ -154,9 +154,21 @@ point developers at the right component.
 ### Why layer E matters more than its bug count suggests
 
 This repo has documented token traps that produce exactly the "colour does not match"
-report: `sky-blue` resolves to **#2DEDAD (green)** after the 2026-06-12 green-theme
-directive, and `alien-green` (#2DEDAD) vs `alien-green-bright` (#17F9B4) are routinely
-confused — a wave agent once "fixed" a colour *away* from Figma on a reporter's say-so.
+report. ★ CORRECTED 2026-08-31: this paragraph used to say `sky-blue` resolves to
+**#2DEDAD (green)** after the 2026-06-12 green-theme directive. That has been FALSE
+since 2026-08-12. MEASURED at source: `modules/skai-ui/src/lib/design-tokens.ts:70`
+holds `skyBlue: "#56C7F3"`, the preset maps `"sky-blue": accentColors.skyBlue` at
+`:244`, and `:53-63` carries an explicit DO-NOT-REVERT recording the flip off alien
+green — it names the exact hazard, that while `skyBlue === alienGreen` an accent
+control was pixel-identical to a buy/long control. So `sky-blue` is BLUE and matches
+Figma's Primary/Sky Blue 300 exactly. Anything that must be green uses the separate
+`alien-green` (`:49`, #2DEDAD) or `skai-green` (`:248`, semanticColors.green[300],
+also #2DEDAD) — those two are the real confusion pair, along with
+`alien-green-bright` (#17F9B4). A wave agent once "fixed" a colour *away* from Figma
+on a reporter's say-so. Leaving the old sentence in place was worse than a stale fact:
+downstream rows cited it BY NAME as a ruled, app-wide gotcha and used it to defer real
+defects (see the corrections on status.wave3.verify-social.tsv:196,
+status.wave4.social-a.tsv:13/25 and status.wave4.social-b.tsv:10/11/12/38/39).
 A token table with the Figma variable on one side and the Tailwind/`@skai/ui` token on
 the other, plus a validator, closes that loop. Source of truth is
 `get_variable_defs` on the node, never a reporter's adjective and never a token name

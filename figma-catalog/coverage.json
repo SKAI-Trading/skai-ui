@@ -1,22 +1,22 @@
 {
-  "generated": "2026-08-31T17:57:43.691Z",
+  "generated": "2026-08-31T22:09:06.858Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
-    "live": 2328,
+    "live": 2332,
     "furniture": 418,
-    "genuine": 1910,
-    "matched": 1910,
+    "genuine": 1914,
+    "matched": 1914,
     "done": 228,
     "partial": 883,
-    "notStarted": 202,
-    "blocked": 122,
-    "frameDefect": 49,
-    "catalogFurniture": 56,
+    "notStarted": 196,
+    "blocked": 126,
+    "frameDefect": 51,
+    "catalogFurniture": 60,
     "unknown": 370,
     "liveOnly": 0,
     "rollupOnly": 2,
-    "defaultNamed": 116,
+    "defaultNamed": 118,
     "ambiguous": 0,
     "conflicts": 56
   },
@@ -27,10 +27,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 5594,
+    "total": 5598,
     "namingNoNodeId": 316,
     "namingNoLiveNodeId": 334,
-    "unrecognisedTokens": 3170
+    "unrecognisedTokens": 3224
   },
   "statusFiles": [
     {
@@ -571,7 +571,7 @@
       "file": "status.wave6.social-discover.tsv",
       "rows": 9,
       "withLiveId": 9,
-      "ids": 12
+      "ids": 9
     },
     {
       "file": "status.wave6.social-messages.tsv",
@@ -590,6 +590,12 @@
       "rows": 6,
       "withLiveId": 6,
       "ids": 6
+    },
+    {
+      "file": "status.wave7.verify-orphans.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 4
     }
   ],
   "pages": [
@@ -2918,9 +2924,9 @@
       "byStatus": {
         "unknown": 49,
         "partial": 225,
-        "not-started": 52,
-        "blocked-on-backend": 58,
-        "frame-defect": 9,
+        "not-started": 46,
+        "blocked-on-backend": 62,
+        "frame-defect": 11,
         "done": 8,
         "furniture": 1
       },
@@ -9085,23 +9091,24 @@
       "pageId": "9003:112414",
       "pageName": "✅ Blackjack - Skai originals",
       "readiness": "ready",
-      "n": 20,
+      "n": 23,
       "scope": "in-scope",
-      "live": 20,
+      "live": 23,
       "furniture": 7,
       "furnitureWhy": {
         "canvas-chrome": 6,
         "loose-rectangle": 1
       },
-      "genuine": 13,
-      "matched": 13,
+      "genuine": 16,
+      "matched": 16,
       "rollupOnly": 0,
-      "defaultNamed": 0,
+      "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
         "done": 7,
-        "unknown": 6
+        "unknown": 6,
+        "furniture": 3
       },
       "liveOnly": []
     },
@@ -9364,23 +9371,23 @@
       "pageId": "9390:18296",
       "pageName": "✅ Bingo - Skai originals",
       "readiness": "ready",
-      "n": 16,
+      "n": 17,
       "scope": "in-scope",
-      "live": 16,
+      "live": 17,
       "furniture": 4,
       "furnitureWhy": {
         "canvas-chrome": 4
       },
-      "genuine": 12,
-      "matched": 12,
+      "genuine": 13,
+      "matched": 13,
       "rollupOnly": 0,
-      "defaultNamed": 3,
+      "defaultNamed": 4,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
         "partial": 5,
         "frame-defect": 6,
-        "furniture": 1
+        "furniture": 2
       },
       "liveOnly": []
     },

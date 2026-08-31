@@ -37,8 +37,14 @@ per-surface drift and fix them at the source.
 **3. A token/glyph answer exists** — colour and icon questions must be resolved
 against `get_variable_defs` and `icons.tsv`, never against a reporter's adjective.
 This repo has already shipped a colour change AWAY from Figma because an agent
-trusted the word "darker". `sky-blue` renders **green** (#2DEDAD); `alien-green`
-(#2DEDAD) and `alien-green-bright` (#17F9B4) are routinely swapped.
+trusted the word "darker". ★ CORRECTED 2026-08-31: this line used to read "`sky-blue`
+renders **green** (#2DEDAD)". FALSE since 2026-08-12 — `design-tokens.ts:70` holds
+`skyBlue: "#56C7F3"` (preset mapping at `:244`) with an explicit DO-NOT-REVERT at
+`:53-63`, so `sky-blue` is BLUE and equals Figma's Primary/Sky Blue 300. The genuinely
+swapped pair is `alien-green` (`:49`, #2DEDAD) / `skai-green` (`:248`, also #2DEDAD)
+versus `alien-green-bright` (#17F9B4). Read the token out of `design-tokens.ts`, never
+off this or any other prose line — that is the same rule this section states, and this
+line was itself the counter-example for nineteen days.
 
 ## Sequencing 30 agents: conflict domains
 

@@ -1,0 +1,29 @@
+# status.wave7.verify-orphans.tsv — written by the w7-verify (integrity) lane.
+#
+# ⚠️ DISCLOSURE. The integrity lane is normally forbidden from writing status
+# rows, precisely so it never grades its own production. These four are a
+# deliberate, coordinator-requested exception, and they are safe to make because
+# they CANNOT move the wave percentage in either direction:
+#   - a column-2 `furniture` row stays inside `genuine` (coverage.mjs's own
+#     type/name furniture rule is what shrinks the denominator, not this status),
+#     so the denominator stays 1914;
+#   - `done` and `partial` are untouched, so built-at-all and measured-parity are
+#     bit-for-bit unchanged.
+# The only number that moves is live-only drift, 4 -> 0.
+#
+# PROVENANCE. These are the 4 top-level nodes that commit 9cd5648 recovered when
+# it re-harvested the blackjack and bingo pages for full titles. The ORIGINAL
+# wave-4 harvest was short by exactly these 4, which had been inflating those two
+# pages' completion percentage since 87a9889. No build lane's work list contains
+# them and no status row named them, so without this file they stay invisible to
+# every future wave — the gap wave 5 spent itself closing.
+#
+# MEASURED 2026-08-31 from live Figma node data (get_metadata on the page node,
+# read at depth 1), not from the cached harvest and not from a screenshot.
+# Every one is off-canvas at large negative x, parked to the left of the board
+# layout, and none is a board width (1440 / 768 / 375).
+#
+Blackjack Desktop [10358-10260]	furniture	-	-	195x277 frame at x=-2846 y=4865, ZERO children in node data — an empty off-canvas frame, not a screen; 195 is no board width (1440/768/375)	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-verify
+Blackjack Desktop [10404-2119]	furniture	-	-	1390.04x1968.37 frame at x=-7388 y=3045, ZERO children in node data — empty and off-canvas; 1390 is not the 1440 desktop board and the frame has no content to be a spec for	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-verify
+Frame 1000004104 [10404-2125]	furniture	-	-	1080x1800 (3:5 poster aspect, no board width) at x=-5698 y=3069; 3 children are card artwork — full-bleed Rectangle 34624567 1080x1800, a spade vector 152.74x175.51 and an "A" text 268.21x253.84. Default-named export art, not an app surface	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-verify
+Frame 1000004220 [10428-2140]	furniture	-	-	1080x1800 at x=-5705 y=4198, same poster aspect as 10404-2125; 3 children are a full-bleed Rectangle 34624760 1080x1800, Ellipse 33 778x107 and a rounded rect literally named "efwefec 1" 985x1483 — scratch artwork, not a spec	desktop=n-a tablet=n-a mobile=n-a @2026-08-31/w7-verify
