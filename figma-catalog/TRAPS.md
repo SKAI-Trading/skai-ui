@@ -895,3 +895,115 @@ encode an absence, **encode what you SEARCHED, not what you concluded** — the
 surviving entry is now justified as "poker has no PAGE", which anyone can
 falsify from `pages.json` in one command, rather than "no cover exists", which
 needs a reader to enumerate every node on a page to disprove.
+
+## 16. Half the catalog's `src/App.tsx:<line>` citations no longer point at what they name
+
+Measured 2026-08-31 against main `ea9ae07` (`src/App.tsx`, 2207 lines). The
+catalog carries **372** `App.tsx:<line>` citations. **301** of them sit within
+300 characters of a route path that `App.tsx` really registers, so they are
+machine-checkable. **158 of those 301 — 52% — are stale**: no
+`path="<the route named beside the citation>"` exists within ±45 lines of the
+line cited.
+
+They are not random. The offsets cluster, because `App.tsx` grew and everything
+below an insertion moved by the same amount:
+
+| real − cited | citations |
+|---|---|
+| +238 | 36 |
+| +886 | 15 |
+| +800 | 15 |
+| +878 | 13 |
+| +855 | 13 |
+| +113 | 13 |
+| +99  | 12 |
+
+Three hand-checked, and every one lands somewhere unrelated rather than merely
+nearby: `/earn` cited `:1119` (really `:1218`; `:1119` is a comment about
+`PlayNewsTicker` pulling `useRecentBets`), `/learn` cited `:1098` (really
+`:1197`; `:1098` is `{/* Floating deposit panel overlay */}`), `/account` cited
+`:1593` (really `:1831`; `:1593` is a bare `element={` inside the **Slide**
+route). A reader who opens the cited line gets a confident-looking fragment of
+somebody else's route and no signal that they are in the wrong place.
+
+Concentration, live tree: `status.wave7.trade2.tsv` 74, `status.governance.tsv`
+22, `status.governance-account.tsv` 16, `status.wave5.social-drift.tsv` 9,
+`status.governance-vaults.tsv` 6, `status.social.tsv` 6,
+`status.wave3.verify-play.tsv` 6, then a long tail.
+
+★ **The fix is not to renumber 158 rows.** They would be stale again by the next
+commit that adds a route — that is what produced all seven offset clusters. Cite
+the **anchor**: `` `path="/play/slide"` `` (or the `routeName=`), and give the
+line only as a dated convenience — `src/App.tsx:1591-1601, path="/play/slide" at
+:1592, measured 2026-08-31 @ ea9ae07`. A grep for the anchor survives every
+insertion; a line number survives none of them. `status.slide.tsv:1` was
+converted to that form as the worked example, and its one remaining `:1509` was
+**date-stamped rather than rewritten**, because that clause is a statement about
+how the file stood on 2026-08-20 and was true when it was made.
+
+★★ **Two instrument traps met while measuring this, both of which produced a
+reassuring answer first.**
+
+1. The first version of the checker extracted the route only from a literal
+   `path="/x"` in the surrounding text. It reported **0 mismatches out of 372**
+   — and it reported the same 0 when run against the pre-fix copy that was
+   *known* to contain three stale `App.tsx:1509` citations. Only **3** of 372
+   citations had ever entered its predicate. A zero from a predicate that fires
+   3 times is not a zero. Always run the checker over a known-bad tree first and
+   confirm it goes red.
+2. The stale-count is **158 before and 158 after** the `status.slide.tsv` fix,
+   which looks like the fix did nothing. It is not the same 158: the checker
+   cannot distinguish a live citation from one deliberately marked historical,
+   so repairing the route-column citation and date-stamping the archival one is
+   a net −1/+1. A count that does not move is not evidence a change had no
+   effect; check WHICH rows are in the set.
+
+Re-run (read-only, ~1s): enumerate `path="…"` in `src/App.tsx` into
+path → line-numbers, then for every `App.tsx:(\d+)` in `*.tsv` / `*.md` take
+path-shaped tokens within ±300 chars that the route table knows, and flag the
+citation when no such path sits within ±45 lines. Exclude tokens preceded by
+`"` or a word character or you will re-match the `path="…"` you are testing.
+
+## 17. Appending to a note field in a CRLF status TSV silently plants a bare CR
+
+Hit and repaired while doing §16's work, on 2026-08-31. The status TSVs are not
+uniform: `status.trade.tsv` and `status.predict.tsv` are **CRLF**, while
+`status.wave2.social-a.tsv`, `status.wave3.verify-social.tsv`,
+`status.wave4.social-a.tsv` and `status.slide.tsv` are **LF**. Split a CRLF line
+on `\n` and the trailing `\r` stays glued to the LAST field. Append to that field
+— `parts[4] = parts[4] + note` — and you get `…text\r NEW NOTE`, a **bare CR in
+the middle of a row**.
+
+Nothing complains. The file still has the right number of `\n`, the right number
+of tabs per row, and reads correctly in an editor. But Python's text-mode
+iteration, `str.splitlines()`, and several shell tools treat a bare `\r` as a
+line break, so **the same file reports two different line numbers for the same
+row** depending on which reader you used. That is how a scan reported a dead impl
+pointer on `status.predict.tsv:12` when the pointer was on split-row 11 and
+row 12 was an untouched, unrelated row — a two-row shift, caused by exactly two
+injected CRs, in exactly the two rows that had been appended to.
+
+The tell, and it is cheap: `CR count == CRLF count` for a clean CRLF file.
+
+```
+CR=33  CRLF=31   -> 2 bare CRs, and the file now has two line-numbering schemes
+CR=93  CRLF=93   -> clean
+```
+
+`status.trade.tsv` escaped the same edit untouched because its rows carry a
+**sixth** breakpoint column, so field 5 was not last and the `\r` stayed put.
+Field count is not a constant across this catalog — do not assume the note is
+the final field.
+
+Rules when editing a row in place:
+
+1. `rstrip('\r')` the line (or the last field) BEFORE splitting, and re-attach
+   the terminator after joining. Read and write with `newline=''` so the file's
+   own convention survives.
+2. Verify afterwards, not by eye: bare-CR count, line count, and the
+   per-row tab-count profile must all be unchanged against a pre-edit copy.
+   All three passed here only after the repair; the tab profile alone passed
+   even while the file was corrupt.
+3. Quote a `status.predict.tsv` row number only alongside the reader that
+   produced it. Any bare CR anywhere above the row makes a naked line number
+   ambiguous.
