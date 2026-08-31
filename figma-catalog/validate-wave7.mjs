@@ -66,45 +66,58 @@ const KNOWN_NODES = new Set(
 );
 
 /*
-  ★★★ NODE ID -> registry frame `kind`. THE SILENT DROP.
+  ★★★ THE SILENT DROP — FOUND, FIXED, AND THEN THIS CHECK WAS ITSELF WRONG.
 
-  Found by `w7b-wallet2` during wave 7 and verified here independently.
-  `apply-status.mjs:272` opens the ONLY loop that writes `f.status` with
+  HISTORY, because both halves are load-bearing.
 
-      for (const [regKey, f] of Object.entries(reg.frames)) {
-        if (f.kind !== "screen") continue;
+  `w7b-wallet2` found that `apply-status.mjs` opened its only status-writing loop
+  with `if (f.kind !== "screen") continue;`, so a row addressed to a non-screen
+  frame parsed, validated as addressable, counted toward "status lines loaded",
+  and was then silently discarded. Measured: 646 of 826 wave-7 id-keyed rows
+  (78.2%), and 2,578 of 4,912 catalog-wide (52.5%). Three lanes would have landed
+  zero. It is the origin of the registry's large `non-screen` + `unknown`
+  population.
 
-  So a row addressed to a frame whose kind is anything but `screen` is parsed,
-  counted in "status lines loaded", reported by THIS SCRIPT as addressable — and
-  then never applied. The verdict evaporates between "loaded" and "written".
+  ⚠️ THE ORCHESTRATOR THEN FIXED IT, AND THIS SCRIPT DID NOT NOTICE. For a short
+  window it printed "🚨 218 of 218 (100.0%) will be SILENTLY DROPPED", citing a
+  line number that by then held the comment recording the guard's REMOVAL.
+  `w7b-games-unknown` caught it by reading `apply-status.mjs` instead of
+  believing the validator.
 
-  ⚠️ THIS SCRIPT WAS BLIND TO IT, and that blindness is the point. It checked
-  `addr.kind` — the ROW's address FORM (id / section / family) — and never looked
-  at the FRAME's `kind` field. Two different things sharing a word, so a green
-  run here was NOT evidence a lane's rows would land. Measured at the time of the
-  fix: 583 of 759 wave-7 id-keyed rows (76.8%) target non-screen frames, and
-  three lanes would have landed ZERO rows.
+  ★★★ THAT IS EXACTLY THE SIN THIS FILE'S OWN HEADER WARNS ABOUT — a validator
+  keeping a SECOND COPY of a rule instead of importing it. `bp-report.mjs` did it
+  with `STATUS_VALID` and discarded 154 rows; this script did it with a guard's
+  existence and told 19 lanes their finished work was being thrown away. A stale
+  copy fails toward alarm here rather than reassurance, which is the safer
+  direction, but it is the same defect.
 
-  Registry-wide only 1,687 of 3,776 frames (44.7%) carry kind `screen`; 1,411 are
-  `non-screen` and 669 `untitled`. None of those can ever receive a status.
+  THE RULE AS IT ACTUALLY STANDS (apply-status.mjs, the `byFam` line):
+      const byFam = f.kind === "screen" ? statusByFam[key] : undefined;
+    - an ID-keyed row names ONE frame deliberately and now applies WHATEVER the
+      kind. No check here; there is nothing left to warn about.
+    - a FAMILY-keyed row names `section/family` — every frame sharing a screen
+      name — and is still screen-restricted, so it must not smear a verdict
+      across a screen's sub-frames.
 
-  ★ It is NOT exit-worthy, deliberately. No lane can fix it by editing its TSV —
-  the fix is one line in apply-status.mjs, which belongs to the orchestrator. An
-  exit 1 here would block every lane from a green run over a defect none of them
-  caused. So it prints as a loud banner ABOVE the lane-fixable problems, and the
-  exit code stays driven by what a lane can actually act on.
+  So the only thing left to detect is a FAMILY row whose family contains no
+  screen frame at all. That is what `FAMILY_KINDS` below is for.
 
-  ★ And coverage.mjs is UNAFFECTED — it reads status.*.tsv directly (:308) and
-  touches registry.json only to collect node ids (:229-230). It has no `kind`
-  filter at all. The wave PERCENTAGE is sound; `registry.json` is the damaged
+  ★ It is NOT exit-worthy, deliberately: no lane can fix it by editing a TSV, and
+  an exit 1 would block every lane over something they did not cause.
+
+  ★ And coverage.mjs was UNAFFECTED throughout — it reads status.*.tsv directly
+  (:308) and touches registry.json only to collect node ids (:229-230), with no
+  `kind` filter anywhere. The wave PERCENTAGE never passed through the damaged
   artifact.
 */
-const NODE_KIND = new Map();
-for (const [regKey, f] of Object.entries(reg.frames)) {
-  const bare = String(f.node ?? (regKey.includes(":") ? regKey.slice(regKey.indexOf(":") + 1) : regKey));
-  NODE_KIND.set(bare.replace(":", "-"), f.kind);
+/** `section/family` -> the set of frame kinds in that family. */
+const FAMILY_KINDS = new Map();
+for (const f of Object.values(reg.frames)) {
+  const k = `${f.section}/${f.family}`;
+  if (!FAMILY_KINDS.has(k)) FAMILY_KINDS.set(k, new Set());
+  FAMILY_KINDS.get(k).add(f.kind);
 }
-/** Rows that will be silently dropped by the `kind !== "screen"` guard. */
+/** Rows that will land on nothing because their FAMILY has no screen frame. */
 const droppedByKind = [];
 
 const SELF_TEST = process.argv.includes("--self-test");
@@ -201,12 +214,8 @@ function checkLines(file, lines) {
       idRows++;
       if (!KNOWN_NODES.has(addr.nodeId))
         unapplied.push(`${where}: node ${addr.nodeId} is in NO registry frame — this row applies to ZERO frames`);
-      // The silent drop — see the NODE_KIND comment at the top of this file.
-      // `addr.kind` above is the ROW's address form; `frameKind` here is the
-      // registry FRAME's kind, and only `screen` is ever written to.
-      const frameKind = NODE_KIND.get(addr.nodeId);
-      if (frameKind !== undefined && frameKind !== "screen")
-        droppedByKind.push({ where, nodeId: addr.nodeId, frameKind, file });
+      // ✅ NO KIND CHECK HERE ANY MORE — see the NODE_KIND note at the top.
+      // apply-status.mjs now applies an ID-keyed row whatever the frame's kind.
       const prev = seenIds.get(addr.nodeId);
       if (prev)
         unapplied.push(
@@ -219,6 +228,20 @@ function checkLines(file, lines) {
       );
     } else {
       famRows++;
+      // The screen-only restriction survives HERE and only here. A family row
+      // names `section/family`, i.e. every frame sharing a screen name, so
+      // apply-status.mjs still refuses to smear it across non-screen children:
+      //   const byFam = f.kind === "screen" ? statusByFam[key] : undefined;
+      // If NO frame in the family is a screen, the row lands on nothing.
+      const famKey = `${addr.section}/${addr.family}`;
+      const kinds = FAMILY_KINDS.get(famKey);
+      if (kinds && !kinds.has("screen"))
+        droppedByKind.push({
+          where,
+          nodeId: famKey,
+          frameKind: [...kinds].join("+"),
+          file,
+        });
     }
 
     // ── a `done` with no numbers is not a `done` ────────────────────────────
@@ -381,6 +404,13 @@ if (droppedByKind.length) {
   console.log(`   writes f.status. These rows parse, address a real frame, and are then never applied.`);
   console.log(`   NOT a lane error and NOT fixable by editing a TSV. One line, in the orchestrator's file.`);
   console.log(`   coverage.mjs is UNAFFECTED (it reads status.*.tsv directly), so the wave PERCENTAGE is sound.`);
+  // Two things a fixer needs, both learned the hard way during this wave.
+  console.log(`   NOTE 1: the kinds are NOT all "non-screen" — see the per-lane breakdown. Whitelisting`);
+  console.log(`           only "non-screen" still loses every "untitled" row.`);
+  console.log(`   NOTE 2: the same guard also gates the f.bpStatus default written just above it. Dropping`);
+  console.log(`           it wholesale starts writing bpStatus onto frames with no device — the existing`);
+  console.log(`           BP_KEYS.includes(f.device) ternary already resolves those to "unknown", so it is`);
+  console.log(`           harmless. Do not revert the fix on seeing bpStatus appear on component frames.`);
   for (const [f, list] of Object.entries(byFile).sort((a, b) => b[1].length - a[1].length)) {
     const kinds = {};
     for (const d of list) kinds[d.frameKind] = (kinds[d.frameKind] || 0) + 1;

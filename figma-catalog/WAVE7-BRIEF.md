@@ -106,3 +106,38 @@ files created/changed  : list
 
 The histogram is what the wave percentage is computed from, so give it exactly,
 with its denominator. A report without a denominator cannot be counted.
+
+---
+
+## 7. ★ WRITE YOUR TSV INCREMENTALLY. DO NOT SAVE IT FOR THE END.
+
+**Wave 7's first attempt lost 19 lanes' work to a session rate limit.** Every
+build lane was mid-exploration when the limit hit; not one had written its status
+file yet, so twenty lanes produced exactly ONE TSV between them. The work was
+done and then thrown away by an event none of them controlled.
+
+**So: create your `status.wave7.<lane>.tsv` with a header as your FIRST action,
+and append to it after every two or three frames.** Never hold results in your
+head or in a scratch file until the end. A partial TSV with six honest rows is
+worth infinitely more than a perfect one that never gets written — and it is
+also resumable, because the next lane can see exactly where you stopped.
+
+The same applies to any source edit: make it, verify it, move on. Do not batch
+ten file changes behind one long investigation.
+
+## 8. Be economical — the limit is shared
+
+Twenty concurrent lanes exhausted a session limit in about an hour. You are
+sharing a budget with every other lane in this wave.
+
+- Read what you need, not the whole tree. `grep` before `Read`.
+- Do not re-derive facts the briefs already give you — they are there precisely
+  so you do not spend tokens rediscovering them.
+- Do not re-verify a prior wave's finding unless you have reason to doubt it;
+  cite it and move on.
+- If a frame is going to take twenty tool calls to resolve, write it `unknown`
+  with the reason and spend those calls on three frames that will resolve.
+
+**Depth on a few frames beats breadth across many.** Ten frames measured with
+numbers in the reason column moves the wave percentage honestly; sixty rows of
+citation moves nothing and gets demoted next wave.
