@@ -329,6 +329,12 @@ if (SELF_TEST) {
       // A family key only resolves when the FILE's stem names a section, so this
       // one fixture runs under a hilo-shaped name. Under the default
       // `__fixture` stem the same key parses as a SECTION ROLLUP instead.
+      //
+      // ⚠️ THIS NAME IS PASSED AS A STRING AND NEVER WRITTEN TO DISK. It has to
+      // be said explicitly, because `status.wave7.hilo.tsv` looks exactly like a
+      // real lane file and matches the same `readdirSync` glob apply-status.mjs
+      // uses — the header's `__selftest` example signalled "not real" in its
+      // name, and this one does not. Verified absent from the catalog directory.
       "status.wave7.hilo.tsv",
     ],
   ];

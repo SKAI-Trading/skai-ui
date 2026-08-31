@@ -8,6 +8,36 @@ Every statement below was read out of `get_screenshot` / the catalog's own
 attached screenshots, or out of a live `eth_call` against
 `https://rpc.skai.trade` — not out of a title, a note, or the code.
 
+## Provenance — this doc is PUSHED, and which copy you get depends on the pointer
+
+Recorded 2026-08-31 because the Figma MCP is down and, while it is, this file is
+the only route to the `/sports` spec. Nineteen `bug_reports` rows point readers
+here by path (`resolution_notes ilike '%SPORTSBOOK_FRAME_FACTS%'`, measured against
+prod PostgREST), several of them phrased "the **local** frame facts at …", which is
+easy to read as "only in someone's working tree". It is not. MEASURED with git,
+not assumed:
+
+- `git cat-file -e origin/main:figma-catalog/SPORTSBOOK_FRAME_FACTS_2026-08-26.md`
+  → **rc 0**. The file is on `skai-ui` `origin/main`.
+- Last commit to touch it there: **`ede0729`** — "docs(figma-catalog): re-harvest
+  the sportsbook frames, and correct section 6".
+- `git diff --stat origin/main -- <this file>` → **empty**. The working-tree copy
+  you are reading is byte-identical to the pushed one.
+- Main repo `origin/main` (`ea9ae07`) pins `modules/skai-ui` at **`db88827`**, and
+  `git merge-base --is-ancestor ede0729 db88827` → **rc 0**. So a fresh clone of
+  the main repo at its pushed pointer gets the corrected section 6.
+
+★ **One trap, and it is the reason this block exists.** The pair sometimes quoted
+for "the frame-facts spec is pushed" — `skai-ui 3d5193a` / main `1cc85c695` — is a
+DIFFERENT and OLDER copy. `3d5193a` is the *messages* frame-facts commit; it does
+carry this file (`git cat-file -e 3d5193a:<path>` rc 0), but its blob is
+`91030fd…` against `77891b5…` on `origin/main`, and
+`git merge-base --is-ancestor ede0729 3d5193a` → **rc 1**. Checking out that
+pointer gets you the PRE-correction section 6. "The doc is on origin/main" and
+"the doc at the SHA I quoted is current" are two different claims; only the first
+survived measurement. DEPTH: git object graph only — no statement below was
+re-verified against Figma this pass.
+
 **Both display names are one file.** Reports from 2026-08-06 link
 "Skai-Web-App"; those from 2026-08-21/22 link "Skai-Web-App-1". Both carry
 fileKey `3sSzw1KewMtUbeLAv7uW0r`. There is no second file and no 404 in this

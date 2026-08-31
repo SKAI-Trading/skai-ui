@@ -131,7 +131,31 @@ the browser paints 8px.
   9999px is a real Figma value with 67 placements in the sample.
 - The values above are the **product** files. The Games file was not sampled; treat game
   screens as unmeasured rather than assuming they share the ramp.
-- Colour tokens are still layer-E-unstarted. The known trap is unchanged: `sky-blue`
-  resolves to `#2DEDAD` (green) after the 2026-06-12 green-theme directive, and
-  `alien-green` `#2DEDAD` vs `alien-green-bright` `#17F9B4` are routinely confused.
-  Source of truth is `get_variable_defs` on the node, never a reporter's adjective.
+- Colour tokens are still layer-E-unstarted, in the sense that no Figma variable
+  collection has been harvested for colour. ★ **CORRECTED 2026-08-31: the trap this
+  bullet used to name is not a trap, it is a nineteen-day-old falsehood.** The old
+  text read "`sky-blue` resolves to `#2DEDAD` (green) after the 2026-06-12
+  green-theme directive". MEASURED at source, not inferred:
+  `modules/skai-ui/src/lib/design-tokens.ts:70` holds `skyBlue: "#56C7F3"`; the
+  preset maps `"sky-blue": accentColors.skyBlue` at `:244`; and `:51-69` carries an
+  explicit **DO NOT "fix" this back to #2DEDAD**, recording that the 2026-08-12
+  Casey ruling "Match figma always" SUPERSEDED the 2026-06-12 green-theme
+  directive, and naming the hazard it removed — while `skyBlue === alienGreen` an
+  accent control was pixel-identical to a buy/long control on trading surfaces. So
+  `sky-blue` is BLUE and equals Figma's Primary/Sky Blue 300.
+  **DEPTH: source-file read of `design-tokens.ts` only** (declaration, preset
+  mapping, CSS-var emission at `:993`). Nothing was read off a rendered DOM or a
+  Figma variable def this pass, so this settles what the TOKEN resolves to and
+  says nothing about what any given screen actually paints.
+- The genuinely confusable set, all three measured in the same read: `alien-green`
+  (`design-tokens.ts:49`, `#2DEDAD`), `skai-green` (`:248` → `semanticColors.green[300]`,
+  `:79`, also `#2DEDAD`) and `alien-green-bright` (`:50`, `#17F9B4`). Green comes from
+  those classes, never from `sky-blue`. A green render therefore CANNOT be blamed on
+  the `sky-blue` token — if you see one, the painting class is unidentified and the
+  row is an open colour defect, not a ruled app-wide exemption.
+  Source of truth is `get_variable_defs` on the node and `design-tokens.ts` in code,
+  never a reporter's adjective and never a prose line in this file — this bullet was
+  itself the counter-example, and downstream rows cited it BY NAME to defer real
+  defects (corrections already landed on `status.wave3.verify-social.tsv:196`,
+  `status.wave4.social-a.tsv:13/25`, `status.wave4.social-b.tsv:10/11/12/38/39`,
+  `status.wave5.discover-createtoken.tsv:2`, `status.social.tsv:49`).

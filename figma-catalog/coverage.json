@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T22:33:46.246Z",
+  "generated": "2026-08-31T22:45:05.481Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
@@ -8,10 +8,10 @@
     "genuine": 1914,
     "matched": 1914,
     "done": 233,
-    "partial": 1210,
-    "notStarted": 172,
+    "partial": 1221,
+    "notStarted": 164,
     "blocked": 114,
-    "frameDefect": 52,
+    "frameDefect": 49,
     "catalogFurniture": 42,
     "unknown": 91,
     "liveOnly": 0,
@@ -21,16 +21,16 @@
     "conflicts": 67
   },
   "doneRows": {
-    "total": 1441,
-    "withBreakpointProvenance": 109,
-    "namingANodeId": 1222,
+    "total": 1442,
+    "withBreakpointProvenance": 110,
+    "namingANodeId": 1223,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 6537,
+    "total": 6574,
     "namingNoNodeId": 317,
     "namingNoLiveNodeId": 335,
-    "unrecognisedTokens": 4323
+    "unrecognisedTokens": 4342
   },
   "statusFiles": [
     {
@@ -611,15 +611,15 @@
     },
     {
       "file": "status.wave7.play.tsv",
-      "rows": 106,
-      "withLiveId": 106,
-      "ids": 106
+      "rows": 134,
+      "withLiveId": 134,
+      "ids": 140
     },
     {
       "file": "status.wave7.predict.tsv",
-      "rows": 51,
-      "withLiveId": 51,
-      "ids": 51
+      "rows": 60,
+      "withLiveId": 60,
+      "ids": 60
     },
     {
       "file": "status.wave7.social.tsv",
@@ -2916,11 +2916,11 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 173,
-        "done": 18,
-        "unknown": 27,
+        "partial": 181,
+        "done": 19,
+        "unknown": 23,
         "blocked-on-backend": 7,
-        "frame-defect": 17,
+        "frame-defect": 12,
         "not-started": 12
       },
       "liveOnly": []
@@ -2946,13 +2946,13 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "done": 37,
+        "done": 36,
         "furniture": 2,
-        "partial": 141,
+        "partial": 144,
         "blocked-on-backend": 24,
-        "not-started": 62,
-        "frame-defect": 1,
-        "unknown": 2
+        "not-started": 54,
+        "frame-defect": 3,
+        "unknown": 6
       },
       "liveOnly": []
     },

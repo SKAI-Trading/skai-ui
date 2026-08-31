@@ -952,3 +952,294 @@ Two rows were verified end-to-end against the implementation:
 Both cite line numbers that resolve. That is the wave-5 bar met properly, and it
 is a marked change from wave 5, where the Predict lane found **all 16** of its
 `done` rows were citation-only.
+
+---
+
+## 16. THE CLOSING NUMBERS
+
+From `coverage.mjs --histogram` — the tool that reads `status.*.tsv` directly and
+is unaffected by §10 and §14.
+
+⚠️ **As of 980 rows across 10 lane files.** Lanes were still appending while this
+was written, so re-run `coverage.mjs --histogram` before quoting to Casey. The
+figures moved by 1–4 frames across the last three readings; **the shape of the
+result — floor ~76%, band ~5pp, `done` up only a handful — is stable and is what
+matters.** Every number below carries its denominator.
+
+### The headline
+
+> ### At measured parity — `done` / genuine
+> ## 233 / 1,914 = **12.17%**
+>
+> ### Built at all — (`done` + `partial`) / genuine
+> ## 1,454 / 1,914 = **75.97%** floor
+>
+> ### The band
+> ## **75.97% – 80.72%**
+
+### Delta against the wave-7 baseline
+
+| Measure | Baseline | Close | Δ |
+|---|---:|---:|---:|
+| genuine (denominator) | 1,914 | 1,914 | 0 |
+| `done` | 228 | **233** | **+5** |
+| `partial` | 883 | **1,221** | **+338** |
+| `not-started` | 196 | 164 | −32 |
+| `blocked-on-backend` | 126 | 114 | −12 |
+| `frame-defect` | 51 | 49 | −2 |
+| `catalogFurniture` | 60 | 42 | −18 |
+| **`unknown`** | **370** | **91** | **−279 (−75%)** |
+| live-only drift | 0 | **0** | 0 |
+| **built-at-all floor** | 58.05% | **75.97%** | **+17.92pp** |
+| ceiling | 77.38% | 80.72% | +3.34pp |
+| **BAND WIDTH** | **19.33pp** | **4.75pp** | **−14.58pp** |
+
+★ **The band collapsing from 19.33pp to 4.75pp is the wave's real result**, not
+the floor moving. `unknown` fell by 279 frames — 75% of everything nobody had
+looked at. WAVE7-BRIEF §5 said every `unknown` converted makes the number more
+honest whichever way it goes; 279 of them went.
+
+### ★★★ `done` ROSE ONLY +5, AND THAT IS THE HONEST NUMBER
+
+The wave wrote **980 rows** and moved measured parity by **five frames**. That is
+not underperformance — it is the bar being held:
+
+| | |
+|---|---:|
+| wave-7 rows overriding a prior verdict on the same node | 53 |
+| — `done` → something else (**DEMOTIONS**) | **25** |
+| — something else → `done` (promotions) | 28 |
+
+**Trade 2's `done` FELL from 54 to 35.** Twenty-five previously-`done` frames
+were re-read and found to be `partial` — most of them from
+`status.wave3.verify-play.tsv` and `status.wave4.row-conflicts.tsv`.
+
+> ★ **A wave whose `done` only ever increases is a wave that is re-verifying
+> nothing.** Wave 5 made this point after the Predict lane demoted 12 of its 16
+> `done` rows. Wave 7 demoted 25 while promoting 28, and the near-cancellation is
+> what a genuine re-verification looks like. **Do not report +5 as a
+> disappointment.**
+
+And Trade 2's floor moved **41.6% → 86.7%** in the same pass, with `unknown`
+142 → 20. Its `done` fell and its honesty rose. Those are the same event.
+
+### Per-surface at close
+
+`built%` = (done+partial)/genuine, the floor. `band` = ceiling − floor; **0.0
+means the surface has no unknowns left and its number is settled.**
+
+| Page | gen | done | partial | not-st | blocked | f-def | furn | unknown | built% | ceil% | band |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| Social | 402 | 8 | 257 | 46 | 62 | 12 | 0 | 17 | 65.9 | 70.1 | 4.2 |
+| Trade 2 | 375 | 35 | 290 | 26 | 2 | 0 | 2 | 20 | 86.7 | 92.0 | 5.3 |
+| Play | 269 | 36 | 144 | 54 | 24 | 3 | 2 | 6 | 66.9 | 69.1 | 2.2 |
+| Predict | 254 | 19 | 181 | 12 | 7 | 12 | 0 | 23 | 78.7 | 87.8 | 9.1 |
+| Wallet 2 | 159 | 113 | 44 | 0 | 0 | 1 | 1 | 0 | **98.7** | 98.7 | 0.0 |
+| Home 2 | 138 | 8 | 98 | 13 | 5 | 1 | 0 | 13 | 76.8 | 86.2 | 9.4 |
+| Coinflip | 34 | 0 | 26 | 1 | 0 | 0 | 7 | 0 | 76.5 | 76.5 | 0.0 |
+| Dice | 23 | 0 | 22 | 1 | 0 | 0 | 0 | 0 | 95.7 | 95.7 | 0.0 |
+| Darts | 18 | 0 | 14 | 0 | 0 | 0 | 4 | 0 | 77.8 | 77.8 | 0.0 |
+| Keno | 18 | 0 | 11 | 5 | 0 | 0 | 1 | 1 | 61.1 | 66.7 | 5.6 |
+| Chicken | 17 | 0 | 15 | 0 | 0 | 0 | 2 | 0 | 88.2 | 88.2 | 0.0 |
+| Rock Paper Scissors | 17 | 0 | 2 | 0 | 14 | 0 | 1 | 0 | 11.8 | 11.8 | 0.0 |
+| Blackjack | 16 | 7 | 6 | 0 | 0 | 0 | 3 | 0 | 81.3 | 81.3 | 0.0 |
+| Fortune Wheel | 16 | 0 | 11 | 0 | 0 | 0 | 5 | 0 | 68.8 | 68.8 | 0.0 |
+| Towers | 16 | 0 | 6 | 0 | 0 | 0 | 2 | 8 | 37.5 | 87.5 | **50.0** |
+| Scratchers | 14 | 0 | 11 | 1 | 0 | 0 | 1 | 1 | 78.6 | 85.7 | 7.1 |
+| Roulette | 14 | 0 | 3 | 1 | 0 | 8 | 1 | 1 | 21.4 | 28.6 | 7.1 |
+| Crash | 13 | 0 | 13 | 0 | 0 | 0 | 0 | 0 | 100.0 | 100.0 | 0.0 |
+| Bingo | 13 | 0 | 5 | 0 | 0 | 6 | 2 | 0 | 38.5 | 38.5 | 0.0 |
+| Baccarat | 13 | 0 | 6 | 4 | 0 | 0 | 3 | 0 | 46.2 | 46.2 | 0.0 |
+| Slide | 13 | 0 | 11 | 0 | 0 | 0 | 1 | 1 | 84.6 | 92.3 | 7.7 |
+| Mines | 12 | 0 | 11 | 0 | 0 | 0 | 1 | 0 | 91.7 | 91.7 | 0.0 |
+| Plinko | 10 | 0 | 9 | 0 | 0 | 0 | 1 | 0 | 90.0 | 90.0 | 0.0 |
+| Video Poker | 10 | 0 | 3 | 0 | 0 | 6 | 1 | 0 | 30.0 | 30.0 | 0.0 |
+| Limbo | 9 | 0 | 9 | 0 | 0 | 0 | 0 | 0 | 100.0 | 100.0 | 0.0 |
+| Price Grid | 8 | 1 | 6 | 0 | 0 | 0 | 1 | 0 | 87.5 | 87.5 | 0.0 |
+| Hi-Lo | 7 | 0 | 7 | 0 | 0 | 0 | 0 | 0 | 100.0 | 100.0 | 0.0 |
+| Privacy and Terms | 6 | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 100.0 | 100.0 | 0.0 |
+| **TOTAL** | **1,914** | **233** | **1,221** | 164 | 114 | 49 | 42 | **91** | **75.97** | **80.72** | **4.75** |
+
+Reading notes — a per-surface table invites the wrong conclusion:
+
+- **18 of 28 surfaces now have a band of 0.0**, up from 9 at baseline. Their
+  numbers are settled: no unknowns left, nothing hiding.
+- **`done` is still concentrated in Wallet 2 (113).** That is 49% of all measured
+  parity in the catalog on 8% of the frames. **Nineteen of 28 pages still have
+  zero `done`** — barely changed from twenty at baseline. Measured parity remains
+  the scarce thing.
+- **Towers is now the least trustworthy number on the page** — 37.5% floor,
+  87.5% ceiling, a 50pp band on 16 frames. It replaced Trade 2 in that role. Note
+  9 of its frames are also among §10's 52 missing from `registry.json`.
+- **Rock Paper Scissors (11.8%), Roulette (21.4%) and Video Poker (30.0%) have
+  settled bands and low numbers.** Those are real, and they are honest. Roulette
+  and Video Poker are mostly `frame-defect` — design owes a redraw, not
+  engineering a build.
+- **`blocked-on-backend` fell 126 → 114** and Trade 2's went 16 → 2. Worth
+  checking against `blocked-on-backend-is-mostly-wrong`, which found 49 of 56
+  Predict rows had wrongly taken work off the schedule.
+
+### What the post-wave checks required, and what happened
+
+| WAVE7-INTEGRITY §7 said | Result |
+|---|---|
+| 1. matched-by-node-id must rise in step with id-keyed rows | ✅ **1,139 → 2,475**, frames updated 1,632 → 2,968 — but only after §14's guard was removed. Before that, 646 of 826 rows were landing nowhere. |
+| 2. unaddressable rows stay at 15 | ✅ **980 of 980 wave-7 rows keyed by node id, 0 by family.** Perfect keying hygiene. |
+| 3. `done` must not simply rise | ✅ **+5 net, from 28 promotions against 25 demotions.** Trade 2 fell 54 → 35. |
+| 4. `unknown` must FALL | ✅ **370 → 91, −75%.** The band narrowed 19.33pp → 4.75pp. |
+| 5. live-only drift stays 0 | ✅ **0.** |
+| 6. registry rebuild moves unmatched ids 92 → 88 | ❌ **WITHDRAWN** — the premise was wrong (§10). The drift is 52 frames, not 4. Measured at close: **89**, i.e. baseline +1. |
+
+Final `apply-status.mjs --dry-run` at close, **exit 0 — no refusal**:
+
+```
+status lines loaded: 6,559
+frames updated:      2,968   (2,475 matched by node id, 493 by family)
+unaddressable rows:  0
+id-keyed rows naming a node no registry frame carries: 89
+```
+
+★ **`matched by node id` 1,139 → 2,475.** Most of that is §14's 1,336 recovered
+verdicts, not wave-7 rows — the wave's largest single effect on `registry.json`
+was **un-losing work earlier waves had already done.**
+
+★ **Unmatched ids came in at 89, not the 88 + N I predicted.** My revised check
+over-estimated: I expected every wave-7 row written against one of §10's 52
+missing frames to add to this count, and only one did. The reason is that lanes
+concentrated on frames the registry already carried. **The revised check was
+directionally right and quantitatively loose — recorded as such rather than
+claimed as a hit.**
+
+★ One lane — `w7b-games-unknown` — **proved its own rows landed** rather than
+inferring it from the total: it re-read `registry.json` after the apply and
+diffed all 218 of its rows against the frames' current status. 218 landed as
+written, 0 still unknown, 0 differing. **That is the right standard.** A rising
+aggregate implies nothing about any particular lane — a count can rise while one
+lane's rows miss entirely, which is the failure that has now happened five times.
+
+---
+
+## 17. CARRIED FORWARD — open items this wave found and did not close
+
+### 17.1 ★ The Bingo cross-page contamination is an OPEN PATTERN, not history
+
+The lane briefs cite the `✅ Bingo` page holding frames really titled
+`Scratchers` and `Blackjack` as a closed historical example. **It is happening on
+a second page.** Found by `w7b-games-unknown`, verified here against
+`registry.json`:
+
+| node | family | title | status |
+|---|---|---|---|
+| `9058-5154` | `Casino > Scratchers` | **`Skai > Play > Casino > Scratchers (768 x 1024px)`** | partial |
+| `9058-2367` | `Casino > Scratchers` | `Card out` — a Scratchers state name | partial |
+| `9058-1833` | `Casino > Scratchers` | `Desktop` | partial |
+| `9058-7261` | `Casino > Scratchers` | `Frame 1000004025` | partial |
+| `9058-6701` | `Casino > Game detail strip` | `Layout` | partial |
+
+All five sit in section `hilo`, which draws from exactly one page — so this is
+not a mixed-section artefact. **A 768x1024 Scratchers screen is parked on the
+Hi-Lo page.**
+
+★ **The defect is LOCATIONAL, not coverage.** All five are already `partial` with
+citations, so nothing is silently unbuilt. The harm is that **anyone auditing
+Scratchers by page will never see `9058-5154`**, because it is not on the
+Scratchers page. No wave-7 lane file mentions any of the five.
+
+⚠️ Titles read from the registry's stored full-title harvest, not re-read off
+Figma node data — strong but second-hand, and flagged as such by the lane that
+found it.
+
+### 17.2 Frame titles: the height mismatch is a CONVENTION, not a defect
+
+`w7b-games-unknown` joined every `*.titles.tsv` against every `live/*.tsv`:
+
+| | frames | share |
+|---|---:|---:|
+| titles carrying a `(W x H px)` | 1,675 | — |
+| match on **both** axes | 1,190 | 71.0% |
+| match on WIDTH, taller than stated | **456** | **27.2%** |
+| **WIDTH mismatch — the real defects** | **29** | **1.7%** |
+
+The 456 are scroll pages whose title states the **viewport**. That is the file's
+convention.
+
+★ **Consequence: the wave-6 Bookie rows that called a height-only mismatch a
+"FRAME-TITLE DIMENSION DEFECT" are overstating**, and `frame-defect` rows resting
+on that reasoning should be re-read.
+
+And of the 29 real ones, **14 are a single designer habit** — the Wallet
+"continue on web" family titled `(768 x 1024px)` while actually 375x812. **One
+finding, not fourteen.**
+
+### 17.3 Smaller items, each with an owner elsewhere
+
+- **37 Trade 2 rows carry a DEAD `primaryFile`.** `src/pages/trade/TradeUnified.tsx`
+  and `src/components/trade/BridgeTabPanel.tsx` were deleted 2026-08-12 under
+  report `73a49d9a`. `w7b-trade2` retargeted Bridge and Margin; **Swap has no
+  successor** — `/swap` now redirects into the wallet.
+- **A frame disagreement the shared chrome cannot satisfy.** At 768 the Filters
+  right-menu (`13006:338795`) draws radius 12; the Instant-trade right-menu
+  (`13006:263046`) draws radius 16 at the same 442 width. `RIGHT_MENU_SHEET_CLASS`
+  ships `md:rounded-xl` = 16, so **one of the two is always wrong** and one class
+  serves seven panels. Casey's call, not a lane's.
+- **`WAVE5-BRIEF §3` is wrong that "there is no class for 4px".** Read out of
+  config by `w7b-home2`: `borderRadius` sits under `extend` and `skaiBorderRadius`
+  has no `DEFAULT` key, so bare `rounded` keeps Tailwind's 0.25rem = **exactly
+  4px**, and `rounded-3xl` falls through to 1.5rem = 24. Effective scale:
+  **sm 8 / md 10 / lg 12 / xl 16 / 2xl 24 / 3xl 24 / bare 4.** Both spellings are
+  used CORRECTLY in `home-redesign` today, so **a lane "fixing" a bare `rounded`
+  to `rounded-sm` would move 4px to 8px AGAINST the frame.**
+- **4 `catalogFurniture` frames unadjudicated**: `13008-55685`, `9380-7138`,
+  `9391-19746`, `9433-10192`.
+- **9 cross-lane duplicate id claims** between `furniture`, `games-unknown` and
+  `verify-orphans`. **All 9 agree on status**, so nothing was lost — but the
+  winner is decided by file stem order, not evidence.
+
+### 17.4 ⚠️ A reported blocker that was not there
+
+`w7b-social` reported `status.wave7.trade2-unknown.tsv:129-149` as
+column-shifted with frame names in column 2, and called it the atomic refusal.
+**It was a false positive.** The coordinator read the rows — column 1 holds
+`Frame 1359 [13006-172747]`, column 2 holds `partial` — then swept **every**
+column-2 value in all 10 wave-7 files against `STATUS_VALID`: **zero invalid.**
+The reporter most likely read column 1's frame-name prefix as a shifted column 2.
+
+★ Recorded because **the proposed remedy was to edit another lane's file.** In a
+twenty-lane wave, a false blocker report is not free: acting on it would have
+corrupted correct rows. The coordinator verified before acting, which is the only
+reason it cost nothing.
+
+---
+
+## 18. ★ THE METHOD NOTES WORTH KEEPING
+
+Six of these came from this wave's own mistakes rather than from its successes.
+
+1. **A checker must reproduce a KNOWN answer before it is trusted with an unknown
+   one.** My furniture rule was 402 frames wrong (21% of the denominator) on one
+   operator — `visible !== "0"` vs `vis !== "1"`. Caught only because I checked it
+   against `coverage.mjs`'s published totals first.
+2. **A mutation that WIDENS a predicate does not test it.** The fixture passes for
+   the wrong reason. Only a mutation that *suppresses* the behaviour is a test.
+3. **A self-test can ENSHRINE A STALE BELIEF.** A fixture asserting a defect
+   exists keeps passing after the defect is fixed, and the green reads as
+   confirmation. Pair every "must fire" case with a "must not fire" one.
+4. **A control that cannot distinguish "the rule is right" from "there is no
+   rule" is a vacuous green relocated.** `w7b-games-unknown` caught this in my
+   regression control; the fix was to add a positive fixture on the branch kept.
+5. **A binary predicate cannot report a category it has no bucket for.** Twice in
+   one day: `if (kind === 'screen') … else …` hid 669 `untitled` frames, and the
+   fix built off that table would have lost 251 rows.
+6. **Re-read the source when a claim about it is load-bearing** — in a
+   twenty-lane wave, *the file you read is not necessarily the file that runs*.
+   `w7b-games-unknown` read `apply-status.mjs` twice minutes apart and got two
+   different files; the guard was removed between the reads. (Stated in that
+   lane's words: it declined credit for catching a stale validator by reasoning,
+   because what actually happened was a file changing underneath it.)
+7. **Verify an edit LANDED before believing either colour.** A scripted patch to
+   my self-test harness silently failed to apply and produced a false RED on a
+   check that was working. `grep -F` on the patched string, every time —
+   not only before believing a green.
+8. **After finding a drift, measure its SIZE before fixing any of it.** The loud
+   failure is not the boundary of the damage: `_pages.json` → `registry.json` →
+   `.nodes.txt`, three fixes at the instance, and the real number was 52.
