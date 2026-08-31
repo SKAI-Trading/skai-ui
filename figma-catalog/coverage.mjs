@@ -68,7 +68,14 @@ import { fileURLToPath } from "url";
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const LIVE = path.join(DIR, "live");
-const CHECK_ONLY = process.argv.includes("--check");
+// `--histogram` prints the full in-scope rollup and the per-page table as JSON
+// on stdout and writes NOTHING. WAVE5-BRIEF §9 forbids regenerating
+// coverage.json mid-wave — it races twenty concurrent lanes — while the
+// integrity lane still has to read the histogram to compute the wave
+// percentage. Both drift lanes hit this contradiction in wave 5 and worked
+// around it by reading the stale file. This flag removes the need to choose.
+const HISTOGRAM = process.argv.includes("--histogram");
+const CHECK_ONLY = process.argv.includes("--check") || HISTOGRAM;
 
 const fail = (msg) => {
   console.error(`coverage.mjs REFUSING TO REPORT — ${msg}`);
@@ -87,6 +94,8 @@ const manifest = JSON.parse(fs.readFileSync(path.join(LIVE, "_pages.json"), "utf
 
 const pages = [];
 const problems = [];
+/** Pages whose harvest is LONGER than the manifest — reported, never silent. */
+const staleManifest = [];
 for (const p of manifest.pages) {
   const file = path.join(LIVE, `${p.fileKey}__${p.pageId.replace(":", "-")}.tsv`);
   if (!fs.existsSync(file)) {
@@ -106,16 +115,51 @@ for (const p of manifest.pages) {
       return { id: normId(id), name: name ?? "", type: type ?? "", w: +w || 0, h: +h || 0, visible: visible !== "0" };
     });
   // ★ THE LOUD GUARD. See header note 3.
-  if (nodes.length !== p.n)
+  //
+  // ⚠️ SPLIT BY DIRECTION 2026-08-31. It used to refuse on ANY inequality, and
+  // that bricked the whole report for every page and every lane the moment a
+  // page was legitimately RE-HARVESTED. That is not hypothetical: commit
+  // `9cd5648` re-harvested the blackjack and bingo pages for full titles and
+  // picked up 4 top-level nodes the original wave-4 harvest had MISSED (3 on
+  // blackjack, 1 on bingo) without updating `_pages.json`. From then until this
+  // change `coverage.mjs` exited 1 on every invocation — nobody could compute a
+  // wave percentage at all.
+  //
+  // The two directions are not symmetric, and note 3 says exactly why:
+  //   harvest < manifest   the harvest is SHORT. It shrinks the denominator and
+  //                        RAISES the percentage. Flattering, unreviewed — stays
+  //                        a hard refusal.
+  //   harvest > manifest   the manifest is STALE behind a re-harvest. Using the
+  //                        harvest ENLARGES the denominator and LOWERS the
+  //                        percentage. It cannot flatter, so it is reported
+  //                        loudly and the run proceeds on the harvest.
+  //
+  // Verified against live Figma before this was relaxed, by ID SET and not by
+  // count (WAVE5-BRIEF §2): the blackjack page really has 23 direct children and
+  // bingo really has 17, matching the harvest exactly with zero ids on either
+  // side. The manifest's 20/16 are the stale numbers.
+  //
+  // This is a report, not a fix. `live/_pages.json` still has to be reconciled;
+  // `staleManifest` is surfaced in the output so it cannot be forgotten.
+  if (nodes.length < p.n)
     problems.push(
       `${p.pageName} (${p.pageId}): harvest has ${nodes.length} rows, manifest measured ${p.n} live children` +
         ` — a short harvest inflates the completion percentage, so this is refused, not warned about`,
+    );
+  else if (nodes.length > p.n)
+    staleManifest.push(
+      `${p.pageName} (${p.pageId}): harvest has ${nodes.length} rows, manifest records ${p.n}` +
+        ` — manifest is stale behind a re-harvest; proceeding on the LARGER harvest (lowers the percentage, cannot flatter). Reconcile live/_pages.json to n=${nodes.length}.`,
     );
   const bad = nodes.filter((n) => !/^\d+-\d+$/.test(n.id));
   if (bad.length) problems.push(`${p.pageName}: ${bad.length} row(s) whose first field is not a node id, e.g. "${bad[0].id}"`);
   pages.push({ ...p, nodes });
 }
 if (problems.length) fail(`${problems.length} input problem(s):\n  ` + problems.join("\n  "));
+if (staleManifest.length) {
+  console.error(`coverage.mjs — ${staleManifest.length} page(s) with a STALE MANIFEST (reported, run continues):`);
+  for (const s of staleManifest) console.error(`  ${s}`);
+}
 
 // ---------------------------------------------------------------------------
 // 2. FURNITURE RULE — derived from live node data, never hand-maintained.
@@ -796,14 +840,39 @@ const json = {
   conflicts: conflictList,
 };
 
-if (CHECK_ONLY) {
+if (HISTOGRAM) {
+  console.log(
+    JSON.stringify(
+      {
+        rollup,
+        staleManifest,
+        doneRows: json.doneRows,
+        rows: json.rows,
+        pages: report
+          .filter((r) => r.scope === "in-scope")
+          .map((r) => ({
+            page: r.pageName,
+            genuine: r.genuine,
+            furniture: r.furniture,
+            matched: r.matched,
+            liveOnly: r.liveOnly.length,
+            byStatus: r.byStatus,
+          })),
+      },
+      null,
+      2,
+    ),
+  );
+} else if (CHECK_ONLY) {
   console.log(`inputs OK — ${pages.length} pages, ${sum(report, "live")} live nodes, ${totalRows} status rows`);
 } else {
   fs.writeFileSync(path.join(DIR, "COVERAGE.md"), out + "\n");
   fs.writeFileSync(path.join(DIR, "coverage.json"), JSON.stringify(json, null, 2));
 }
 
-console.log(
+// In histogram mode stdout is a JSON document and nothing else may land on it —
+// a trailing human summary made the output unparseable.
+(HISTOGRAM ? console.error : console.log)(
   `in-scope: ${rollup.genuine} genuine frames of ${rollup.live} live (${rollup.furniture} furniture); ` +
     `${rollup.matched} have a row (${pct(rollup.matched, rollup.genuine)}%); ` +
     `${rollup.done} done (${pct(rollup.done, rollup.genuine)}%); ` +
