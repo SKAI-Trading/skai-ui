@@ -270,7 +270,37 @@ let applied = 0;
 let appliedById = 0;
 const famCounts = {};
 for (const [regKey, f] of Object.entries(reg.frames)) {
-  if (f.kind !== "screen") continue;
+  /*
+    ⚠️ THIS LOOP USED TO OPEN `if (f.kind !== "screen") continue;` AND THAT ONE
+    LINE IS THE MECHANISM BEHIND EVERY "MY ROWS APPLIED TO NOTHING" INCIDENT.
+
+    A row keyed to a non-screen frame parsed fine, validated as addressable,
+    counted toward "status lines loaded", and was then **silently dropped** —
+    the loop never visited its frame. Nothing reported it, because from the
+    row's side everything had gone right.
+
+    Measured across the whole catalog on 2026-08-31: **2,578 of 4,912 id-keyed
+    rows (52.5%) name a non-screen frame.** Over half of every id-keyed verdict
+    ever written was being discarded. Within wave 7 alone it was 613 of 793
+    (77.3%), and three lanes would have landed exactly zero.
+
+    It is also the origin of the registry's large `non-screen` + `unknown`
+    population: `status.wave4.wallet-2-partial.tsv` filed `13008-27159` as `done`
+    with full measurements, and the registry still reads `status: "unknown",
+    notes: ""`. Every wave-4 verdict on a COMPONENT frame was lost this way while
+    its screen-frame siblings applied — which is exactly the pattern that makes
+    it invisible: the lane sees some of its work land.
+
+    ★ THE DISTINCTION THE GUARD WAS REACHING FOR, kept below rather than removed:
+      - a FAMILY-keyed row addresses `section/family`, which names every frame
+        sharing a screen name. Letting that stamp non-screen children would
+        smear one verdict across a screen's sub-frames. So family rows are still
+        restricted to `kind === "screen"`.
+      - an ID-keyed row names ONE frame, deliberately, by node id. If someone
+        keyed a verdict to a component frame they MEANT that component. There is
+        no ambiguity to protect against, and dropping it destroys the most
+        precise rows in the catalog.
+  */
   const key = `${f.section}/${f.family}`;
   // An id-keyed row wins over a family-keyed one: it names THIS frame, where a
   // family row names every frame sharing the screen name. `registry.frames` is
@@ -278,7 +308,11 @@ for (const [regKey, f] of Object.entries(reg.frames)) {
   // secondary files, so try the bare node too.
   const bareNode = f.node ?? (regKey.includes(":") ? regKey.slice(regKey.indexOf(":") + 1) : regKey);
   const byId = statusById[String(bareNode).replace(":", "-")];
-  const s = byId ?? statusByFam[key];
+  // The screen-only restriction now lives HERE, on the family branch alone —
+  // see the note at the top of this loop. An id row names one frame on purpose;
+  // a family row names a whole screen name and must not smear across its parts.
+  const byFam = f.kind === "screen" ? statusByFam[key] : undefined;
+  const s = byId ?? byFam;
   if (byId) appliedById++;
   // ★ Every screen frame gets a bpStatus, including frames whose family has no
   // status row. The default is "unknown", written EXPLICITLY rather than left

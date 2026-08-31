@@ -79,9 +79,31 @@ Status vocabulary (exact strings): `done` · `partial` · `not-started` ·
 | `rounded-xl` | 12 | **16** |
 | `rounded-2xl` | 16 | **24** |
 
-So Figma's `rounded-xl` (12px) is our `rounded-lg`. **There is no class for 4px.**
+So Figma's `rounded-xl` (12px) is our `rounded-lg`.
 `design-tokens.ts` says `sm: 4` and is NOT the shipped value — the Tailwind
 preset overrides it from `--radius`.
+
+⚠️ **CORRECTED 2026-08-31 — this section used to say "There is no class for 4px."
+THAT WAS FALSE, and acting on it moves pixels the WRONG WAY.** There is one:
+the **bare `rounded`**. `tailwind-preset.ts:392-397` spreads `skaiBorderRadius`
+and then overrides only `lg`/`md`/`sm`; `skaiBorderRadius` has **no `DEFAULT`
+key and no `3xl` key**, and the whole block sits under `extend`. So both fall
+through to Tailwind's stock values. The real shipped scale is:
+
+| class | ships | why |
+|---|---|---|
+| `rounded` (bare) | **4px** | falls through — no DEFAULT in the token set |
+| `rounded-sm` | 8px | `calc(var(--radius) - 4px)` |
+| `rounded-md` | 10px | `calc(var(--radius) - 2px)` |
+| `rounded-lg` | 12px | `var(--radius)` |
+| `rounded-xl` | 16px | from `skaiBorderRadius` |
+| `rounded-2xl` | 24px | from `skaiBorderRadius` |
+| `rounded-3xl` | **24px** | falls through — no `3xl` in the token set |
+
+★ **So a lane "fixing" a bare `rounded` to `rounded-sm` moves 4px to 8px AGAINST
+the frame.** Both spellings are already used CORRECTLY in `home-redesign`. This
+error shipped in three consecutive briefs; if you were told to replace a bare
+`rounded`, you were told wrong. `rounded-[4px]` is still fine and still clearer.
 
 ★ **Write PIXEL LITERALS: `rounded-[8px]`.** Never carry the token NAME over from
 the frame. Every instance of this found on 2026-08-11 had the correct pixel value

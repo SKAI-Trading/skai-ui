@@ -65,6 +65,48 @@ const KNOWN_NODES = new Set(
   Object.values(reg.frames).map((f) => String(f.node ?? "").replace(":", "-")),
 );
 
+/*
+  ★★★ NODE ID -> registry frame `kind`. THE SILENT DROP.
+
+  Found by `w7b-wallet2` during wave 7 and verified here independently.
+  `apply-status.mjs:272` opens the ONLY loop that writes `f.status` with
+
+      for (const [regKey, f] of Object.entries(reg.frames)) {
+        if (f.kind !== "screen") continue;
+
+  So a row addressed to a frame whose kind is anything but `screen` is parsed,
+  counted in "status lines loaded", reported by THIS SCRIPT as addressable — and
+  then never applied. The verdict evaporates between "loaded" and "written".
+
+  ⚠️ THIS SCRIPT WAS BLIND TO IT, and that blindness is the point. It checked
+  `addr.kind` — the ROW's address FORM (id / section / family) — and never looked
+  at the FRAME's `kind` field. Two different things sharing a word, so a green
+  run here was NOT evidence a lane's rows would land. Measured at the time of the
+  fix: 583 of 759 wave-7 id-keyed rows (76.8%) target non-screen frames, and
+  three lanes would have landed ZERO rows.
+
+  Registry-wide only 1,687 of 3,776 frames (44.7%) carry kind `screen`; 1,411 are
+  `non-screen` and 669 `untitled`. None of those can ever receive a status.
+
+  ★ It is NOT exit-worthy, deliberately. No lane can fix it by editing its TSV —
+  the fix is one line in apply-status.mjs, which belongs to the orchestrator. An
+  exit 1 here would block every lane from a green run over a defect none of them
+  caused. So it prints as a loud banner ABOVE the lane-fixable problems, and the
+  exit code stays driven by what a lane can actually act on.
+
+  ★ And coverage.mjs is UNAFFECTED — it reads status.*.tsv directly (:308) and
+  touches registry.json only to collect node ids (:229-230). It has no `kind`
+  filter at all. The wave PERCENTAGE is sound; `registry.json` is the damaged
+  artifact.
+*/
+const NODE_KIND = new Map();
+for (const [regKey, f] of Object.entries(reg.frames)) {
+  const bare = String(f.node ?? (regKey.includes(":") ? regKey.slice(regKey.indexOf(":") + 1) : regKey));
+  NODE_KIND.set(bare.replace(":", "-"), f.kind);
+}
+/** Rows that will be silently dropped by the `kind !== "screen"` guard. */
+const droppedByKind = [];
+
 const SELF_TEST = process.argv.includes("--self-test");
 // The filter is the first NON-FLAG argument. Reading argv[2] blindly made
 // `--all` be treated as a filename substring, which matched nothing and printed
@@ -96,11 +138,29 @@ function checkLines(file, lines) {
     // ── column 2 ────────────────────────────────────────────────────────────
     const canonical = normaliseStatus(row.status);
     if (canonical === null) {
+      /*
+        ★ THE UNPREFIXED COLUMN HEADER — wave 7's actual killer, found live.
+
+        FIVE separate lanes independently opened their file with the bare
+        header `key<TAB>status<TAB>primaryFile<TAB>route<TAB>reason<TAB>bp`.
+        `apply-status.mjs` skips ONLY lines beginning with `#`, so it parsed
+        each one as a data row, read the literal word `status` in column 2, and
+        refused to write registry.json — atomically, for all 19 lanes.
+
+        Five lanes making the same mistake is not five mistakes, it is a
+        discoverability defect: the `#` convention lives in a comment inside
+        other people's files. The generic "not a row status" message above is
+        true and useless here — it does not tell the lane the one-character
+        fix. So this shape gets named, with its remedy.
+      */
+      const isHeader = row.family?.trim() === "key" && row.status?.trim() === "status";
       errors.push(
         `${where}: column 2 "${row.status}" is not a row status. Valid: ${[...STATUS_VALID].join(" | ")}` +
-          (Object.hasOwn(BP_VERDICTS, row.status)
-            ? `  ← that IS a valid column-6 breakpoint verdict; it is in the wrong column.`
-            : ""),
+          (isHeader
+            ? `  ← this is the COLUMN HEADER written without a leading "#". apply-status.mjs skips only lines starting with "#", so it parses this as a data row and REFUSES TO WRITE registry.json for EVERY lane. Fix: prefix the line with "# ".`
+            : Object.hasOwn(BP_VERDICTS, row.status)
+              ? `  ← that IS a valid column-6 breakpoint verdict; it is in the wrong column.`
+              : ""),
       );
       continue;
     }
@@ -141,6 +201,12 @@ function checkLines(file, lines) {
       idRows++;
       if (!KNOWN_NODES.has(addr.nodeId))
         unapplied.push(`${where}: node ${addr.nodeId} is in NO registry frame — this row applies to ZERO frames`);
+      // The silent drop — see the NODE_KIND comment at the top of this file.
+      // `addr.kind` above is the ROW's address form; `frameKind` here is the
+      // registry FRAME's kind, and only `screen` is ever written to.
+      const frameKind = NODE_KIND.get(addr.nodeId);
+      if (frameKind !== undefined && frameKind !== "screen")
+        droppedByKind.push({ where, nodeId: addr.nodeId, frameKind, file });
       const prev = seenIds.get(addr.nodeId);
       if (prev)
         unapplied.push(
@@ -209,14 +275,46 @@ if (SELF_TEST) {
       `Some Screen [9003-117337]${T}partial${T}-${T}-${T}header 56${T}card 24${T}extra`,
       "must not contain a TAB",
     ],
+    // wave-7's real killer, caught live in five lanes' files on the day.
+    [
+      "wave-7 killer: the column header written without a leading `#`",
+      `key${T}status${T}primaryFile${T}route${T}reason${T}bp`,
+      "COLUMN HEADER written without a leading",
+    ],
+    /*
+      The SILENT DROP. `13008-27159` is a real registry frame with
+      kind `non-screen`, and it is the node w7b-wallet2 used as proof: a wave-4
+      row gave it a `done` with full measurements and `registry.json` still reads
+      `status: "unknown", notes: ""`. The verdict was loaded and then discarded.
+
+      This fixture is the reason the check cannot rot silently — if someone
+      "cleans up" the kind guard in apply-status.mjs, or reclassifies this node
+      to `screen`, the fixture stops firing and says so.
+    */
+    [
+      "the silent drop: a row addressed to a NON-SCREEN registry frame",
+      `Wallet component [13008-27159]${T}partial${T}-${T}-${T}width 375`,
+      "SILENTLY DROPPED",
+    ],
   ];
   let caught = 0;
   for (const [label, row, must] of FIXTURES) {
     errors.length = 0;
     unapplied.length = 0;
+    droppedByKind.length = 0;
     seenIds.clear();
     checkLines("status.wave7.__fixture.tsv", [row]);
-    const report = [...errors, ...unapplied].join("\n");
+    const report = [
+      ...errors,
+      ...unapplied,
+      // The silent drop is reported through its own banner, not through
+      // `errors`/`unapplied`, so the self-test has to reach into it explicitly
+      // or the fixture below is vacuous — it would report MISSED whether the
+      // check worked or not.
+      ...droppedByKind.map(
+        (d) => `${d.where}: SILENTLY DROPPED — registry frame kind "${d.frameKind}" is not "screen"`,
+      ),
+    ].join("\n");
     const ok = report.includes(must);
     if (ok) caught++;
     console.log(`  ${ok ? "CAUGHT " : "MISSED "} ${label}`);
@@ -226,6 +324,7 @@ if (SELF_TEST) {
   // suite could pass by flagging everything.
   errors.length = 0;
   unapplied.length = 0;
+  droppedByKind.length = 0;
   seenIds.clear();
   checkLines(
     "status.wave7.__fixture.tsv",
@@ -267,6 +366,30 @@ for (const file of files) checkLines(file, fs.readFileSync(path.join(DIR, file),
 console.log(`validate-wave7: ${files.length} file(s), ${rows} row(s) read.`);
 console.log(`  addressable: ${idRows} by node id, ${famRows} by family; ${bpCells} row(s) carry a column-6 cell.`);
 console.log(`  column-2 histogram: ${Object.entries(histogram).map(([k, v]) => `${k} ${v}`).join(" · ") || "(none)"}`);
+
+// ── THE SILENT DROP — printed FIRST, and above the lane-fixable problems ──────
+// A green run below this banner is not evidence a lane's rows will land in
+// registry.json. See the NODE_KIND comment at the top of this file.
+if (droppedByKind.length) {
+  const byFile = {};
+  for (const d of droppedByKind) (byFile[d.file] ??= []).push(d);
+  const pct = ((droppedByKind.length / Math.max(idRows, 1)) * 100).toFixed(1);
+  console.log(
+    `\n🚨 ${droppedByKind.length} of ${idRows} id-keyed row(s) (${pct}%) will be SILENTLY DROPPED by apply-status.mjs.`,
+  );
+  console.log(`   Cause: apply-status.mjs:272 \`if (f.kind !== "screen") continue;\` — the only loop that`);
+  console.log(`   writes f.status. These rows parse, address a real frame, and are then never applied.`);
+  console.log(`   NOT a lane error and NOT fixable by editing a TSV. One line, in the orchestrator's file.`);
+  console.log(`   coverage.mjs is UNAFFECTED (it reads status.*.tsv directly), so the wave PERCENTAGE is sound.`);
+  for (const [f, list] of Object.entries(byFile).sort((a, b) => b[1].length - a[1].length)) {
+    const kinds = {};
+    for (const d of list) kinds[d.frameKind] = (kinds[d.frameKind] || 0) + 1;
+    const zero = list.length === (byFile[f]?.length ?? 0) ? "" : "";
+    console.log(
+      `      ${f.padEnd(36)} ${String(list.length).padStart(3)} dropped  (${Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(", ")})${zero}`,
+    );
+  }
+}
 
 if (unapplied.length) {
   console.log(`\n⚠️  ${unapplied.length} row(s) would apply to ZERO frames:`);
