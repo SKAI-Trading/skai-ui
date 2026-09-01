@@ -17,26 +17,45 @@ prod PostgREST), several of them phrased "the **local** frame facts at …", whi
 easy to read as "only in someone's working tree". It is not. MEASURED with git,
 not assumed:
 
-- `git cat-file -e origin/main:figma-catalog/SPORTSBOOK_FRAME_FACTS_2026-08-26.md`
-  → **rc 0**. The file is on `skai-ui` `origin/main`.
-- Last commit to touch it there: **`ede0729`** — "docs(figma-catalog): re-harvest
-  the sportsbook frames, and correct section 6".
-- `git diff --stat origin/main -- <this file>` → **empty**. The working-tree copy
-  you are reading is byte-identical to the pushed one.
-- Main repo `origin/main` (`ea9ae07`) pins `modules/skai-ui` at **`db88827`**, and
-  `git merge-base --is-ancestor ede0729 db88827` → **rc 0**. So a fresh clone of
-  the main repo at its pushed pointer gets the corrected section 6.
+**The durable claim, which does not go stale:**
+`git cat-file -e origin/main:figma-catalog/SPORTSBOOK_FRAME_FACTS_2026-08-26.md`
+→ **rc 0**. The file is on `skai-ui` `origin/main`, and `git diff --quiet
+origin/main -- <this file>` → **rc 0**, so the working-tree copy you are reading
+is byte-identical to the pushed one. Re-run both before quoting this block; they
+are two commands and they answer the only question that matters.
+
+⚠️ **Everything below is a SNAPSHOT, and it has already rotted once.** The
+commit and blob ids in the original version of this block (`ede0729` as
+last-touching, `77891b5` as the `origin/main` blob, main `ea9ae07` pinning
+`db88827`) were all correct when written on 2026-08-31 and were all FALSE
+twenty-four hours later, because the catalog is committed to many times a night.
+Do not read a SHA here as current. **Re-measured 2026-09-01:**
+
+| fact | value | how to re-measure |
+|---|---|---|
+| `skai-ui` `origin/main` tip | `c783089` | `git rev-parse --short origin/main` |
+| last commit touching this file | `44e9200` | `git log -1 --format=%h origin/main -- <this file>` |
+| its blob on `origin/main` | `ddd3cd5` | `git rev-parse origin/main:<this file>` |
+| main repo `origin/main` | `1149be5eb`, pinning `skai-ui` `c7830899` | `git ls-tree origin/main modules/skai-ui` |
+| `ede0729` (the section-6 correction) reachable from the pushed pointer | **rc 0** | `git merge-base --is-ancestor ede0729 origin/main` |
+
+So a fresh clone of the main repo at its pushed pointer still gets the corrected
+section 6 — that conclusion survived re-measurement even though every id backing
+it changed.
 
 ★ **One trap, and it is the reason this block exists.** The pair sometimes quoted
 for "the frame-facts spec is pushed" — `skai-ui 3d5193a` / main `1cc85c695` — is a
 DIFFERENT and OLDER copy. `3d5193a` is the *messages* frame-facts commit; it does
-carry this file (`git cat-file -e 3d5193a:<path>` rc 0), but its blob is
-`91030fd…` against `77891b5…` on `origin/main`, and
-`git merge-base --is-ancestor ede0729 3d5193a` → **rc 1**. Checking out that
-pointer gets you the PRE-correction section 6. "The doc is on origin/main" and
-"the doc at the SHA I quoted is current" are two different claims; only the first
-survived measurement. DEPTH: git object graph only — no statement below was
-re-verified against Figma this pass.
+carry this file (`git cat-file -e 3d5193a:<path>` rc 0) and it IS on `origin/main`
+(`git branch -r --contains 3d5193a` lists it), but its blob is `91030fd` against
+`ddd3cd5` on the tip, and `git merge-base --is-ancestor ede0729 3d5193a` → **rc 1**.
+Checking out that pointer gets you the PRE-correction section 6. Three claims get
+conflated here and only the first two are true: "the doc is on origin/main", "the
+commit I quoted is on origin/main", and "the doc AT the SHA I quoted is current".
+`git branch -r --contains <sha>` answers the second and is routinely mistaken for
+the third — it says the COMMIT is reachable, never that the FILE in it is the
+newest version. DEPTH: git object graph only — no statement below this block was
+re-verified against Figma this pass, and the Figma MCP is still down.
 
 **Both display names are one file.** Reports from 2026-08-06 link
 "Skai-Web-App"; those from 2026-08-21/22 link "Skai-Web-App-1". Both carry
