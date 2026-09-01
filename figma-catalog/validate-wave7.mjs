@@ -33,9 +33,14 @@
  *   node figma-catalog/validate-wave7.mjs              # all status.wave7.*.tsv
  *   node figma-catalog/validate-wave7.mjs <glob-stem>  # e.g. wave7.trench
  *   node figma-catalog/validate-wave7.mjs --self-test  # prove it is not vacuous
+ *   node figma-catalog/validate-wave7.mjs --verbose    # list every registry-gap row
  *
  * Exit 0 = every row would apply. Exit 1 = at least one row would be refused or
- * would apply to nothing. Writes nothing, ever.
+ * would apply to nothing THAT THE LANE CAN FIX. Writes nothing, ever.
+ *
+ * ⚠️ A row whose node id names a real Figma node the registry cannot address is
+ * reported loudly and does NOT exit 1 — the lane cannot fix it and the only edit
+ * available to them is a deletion of correct work. See the registryGap note.
  *
  * ★ `--self-test` feeds it the exact rows that broke waves 5 and 6 and asserts
  * each one is caught. Run it before believing a green: a checker that reports
@@ -56,6 +61,10 @@ import {
   STATUS_VALID,
   BP_VERDICTS,
 } from "./bp.mjs";
+// ★ IMPORTED, NOT COPIED — same rule as the bp.mjs import above. `loadLiveNodes`
+// carries coverage.mjs's furniture/scope classification, and a second copy of it
+// here is how the 402-frame error in WAVE7-INTEGRITY §10 happened.
+import { loadLiveNodes } from "./registry-drift.mjs";
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const reg = JSON.parse(fs.readFileSync(path.join(DIR, "registry.json"), "utf8"));
@@ -120,7 +129,97 @@ for (const f of Object.values(reg.frames)) {
 /** Rows that will land on nothing because their FAMILY has no screen frame. */
 const droppedByKind = [];
 
+/*
+  ★★★ "IN NO REGISTRY FRAME" IS TWO DIFFERENT FAILURES AND THEY HAVE OPPOSITE
+  FIXES. THIS SPLIT IS WAVE9-INTEGRITY §10, APPLIED.
+
+  Until now every unresolved node id got one message — "node X is in NO registry
+  frame — this row applies to ZERO frames" — and exit 1. Measured across all 134
+  status files on 2026-09-01, that single message covered 220 rows on 98 distinct
+  ids, and they split like this:
+
+      not in the live harvest either        20 rows /  19 ids
+      live, in-scope, GENUINE              148 rows /  52 ids   <- the registry gap
+      live, in-scope, furniture             44 rows /  19 ids
+      live, but on an out-of-scope page      8 rows /   8 ids
+
+  Only the first group is a lane's mistake. The other 200 rows name nodes that
+  exist in Figma; the registry simply cannot address them (WAVE9-INTEGRITY §3
+  Direction A — 52 frames, unchanged across three waves). Telling a lane its work
+  "applies to ZERO frames" and failing the gate over it INVITES THE LANE TO
+  DELETE OR RE-KEY CORRECT WORK, which is exactly how a measured frame leaves the
+  catalog. There is no key that would work.
+
+  And the verdicts are not lost meanwhile: `coverage.mjs` reads status.*.tsv
+  directly, so all 148 of those rows are already counted in the published
+  percentage. What is missing is only their presence in `registry.json`.
+
+  This file already contains the precedent, in its own words, for the
+  family-with-no-screen case:
+
+      "It is NOT exit-worthy, deliberately: no lane can fix it by editing a TSV,
+       and an exit 1 would block every lane over something they did not cause."
+
+  Same reasoning, now applied. Exit 1 survives for the only case a lane can fix.
+*/
+/** Rows whose node id names a real Figma node the registry cannot address. */
+const registryGap = [];
+
+let LIVE_NODES = null;
+let LIVE_LOAD_ERROR = null;
+/**
+ * The live harvest, loaded once and only when an unresolved id turns up.
+ *
+ * ⚠️ If `live/` is unreadable this returns an EMPTY map, which would classify
+ * every unresolved id as "not live" and hand back the old exit-1 behaviour for
+ * all of them. That is the safe direction, but it must be VISIBLE — a fallback
+ * that silently restores the thing you just fixed is the failure this catalog
+ * keeps producing. `LIVE_LOAD_ERROR` is printed in the report when it is set.
+ */
+function liveNodes() {
+  if (LIVE_NODES) return LIVE_NODES;
+  try {
+    LIVE_NODES = loadLiveNodes(DIR);
+  } catch (e) {
+    LIVE_LOAD_ERROR = e.message;
+    LIVE_NODES = new Map();
+  }
+  return LIVE_NODES;
+}
+
+/**
+ * Why one unresolved node id is unresolved. Returns the bucket plus the sentence
+ * the lane should act on.
+ */
+function classifyUnresolved(nodeId) {
+  const n = liveNodes().get(nodeId);
+  if (!n)
+    return {
+      bucket: "not-live",
+      exitWorthy: true,
+      note: "and no live page carries it either — the id itself is wrong. Re-key it or drop the row.",
+    };
+  if (n.scope !== "in-scope")
+    return {
+      bucket: "out-of-scope",
+      exitWorthy: false,
+      note: `but it is live on "${n.page}" (${n.scope}). coverage.mjs counts no frame on that page, so the row is counted nowhere — and no key would change that. DO NOT re-key or delete this row.`,
+    };
+  if (n.furniture !== null)
+    return {
+      bucket: "furniture",
+      exitWorthy: false,
+      note: `but it is live on "${n.page}" and classified furniture (${n.furniture}), so it sits outside the parity denominator by design. DO NOT re-key or delete this row.`,
+    };
+  return {
+    bucket: "registry-gap",
+    exitWorthy: false,
+    note: `but it IS live, in scope and genuine on "${n.page}" — this is the registry gap (WAVE9-INTEGRITY §3 Direction A), not your row. coverage.mjs already counts your verdict. DO NOT re-key or delete this row.`,
+  };
+}
+
 const SELF_TEST = process.argv.includes("--self-test");
+const VERBOSE = process.argv.includes("--verbose");
 // The filter is the first NON-FLAG argument. Reading argv[2] blindly made
 // `--all` be treated as a filename substring, which matched nothing and printed
 // a confident "nothing was checked" — a flag silently becoming a filter is
@@ -212,8 +311,12 @@ function checkLines(file, lines) {
     }
     if (addr.kind === "id") {
       idRows++;
-      if (!KNOWN_NODES.has(addr.nodeId))
-        unapplied.push(`${where}: node ${addr.nodeId} is in NO registry frame — this row applies to ZERO frames`);
+      if (!KNOWN_NODES.has(addr.nodeId)) {
+        const v = classifyUnresolved(addr.nodeId);
+        const msg = `${where}: node ${addr.nodeId} is in NO registry frame — ${v.note}`;
+        if (v.exitWorthy) unapplied.push(msg);
+        else registryGap.push({ where, nodeId: addr.nodeId, bucket: v.bucket, msg, file });
+      }
       // ✅ NO KIND CHECK HERE ANY MORE — see the NODE_KIND note at the top.
       // apply-status.mjs now applies an ID-keyed row whatever the frame's kind.
       const prev = seenIds.get(addr.nodeId);
@@ -284,9 +387,11 @@ if (SELF_TEST) {
       "NO DIGITS",
     ],
     [
-      "id-keyed row naming a node no frame carries",
+      "id-keyed row naming a node NEITHER the registry NOR Figma carries",
       `Ghost [9999-99999]${T}partial${T}-${T}-${T}width 375`,
-      "applies to ZERO frames",
+      "the id itself is wrong",
+      null,
+      true, // exit-worthy: this is the one case a lane can fix by editing the TSV
     ],
     [
       "bare family name with no resolvable section",
@@ -338,16 +443,69 @@ if (SELF_TEST) {
       "status.wave7.hilo.tsv",
     ],
   ];
+
+  /*
+    ★★★ THE THREE NON-EXIT BRANCHES, DRIVEN BY IDS PICKED FROM TODAY'S DATA.
+
+    The split above is worthless if nothing exercises the branch that does NOT
+    exit. But hardcoding an id here would rot the first time the registry is
+    re-harvested — and it would rot toward MISSED on a fixture whose label still
+    claims to test the branch, which is WAVE9-INTEGRITY §7's vacuous green with a
+    different mask. So each id is looked up in the live harvest at run time:
+    the first node that is live, in the right bucket, and absent from
+    `KNOWN_NODES`.
+
+    If a bucket is EMPTY the fixture cannot run. That is good news (the drift is
+    fixed) and it must not read as a pass, so it prints SKIPPED and is removed
+    from the denominator, which is printed. A fixture that silently disappears
+    from a suite is how a suite shrinks to nothing while staying green.
+  */
+  const pickLive = (want) => {
+    for (const n of liveNodes().values()) {
+      if (KNOWN_NODES.has(n.id)) continue;
+      if (want === "registry-gap" && n.scope === "in-scope" && n.furniture === null) return n;
+      if (want === "furniture" && n.scope === "in-scope" && n.furniture !== null) return n;
+      if (want === "out-of-scope" && n.scope !== "in-scope") return n;
+    }
+    return null;
+  };
+  for (const [bucket, must] of [
+    ["registry-gap", "this is the registry gap"],
+    ["furniture", "classified furniture"],
+    ["out-of-scope", "coverage.mjs counts no frame on that page"],
+  ]) {
+    const n = pickLive(bucket);
+    if (!n) {
+      FIXTURES.push([`live-but-unregistered (${bucket}) — NO SUCH NODE ON DISK`, null, null, null, null, true]);
+      continue;
+    }
+    FIXTURES.push([
+      `live-but-unregistered (${bucket}): ${n.id} on "${n.page}" — reported, NOT exit-worthy`,
+      `Real frame [${n.id}]${T}partial${T}-${T}-${T}width 375`,
+      must,
+      null,
+      false, // ← the whole point: this must NOT fail the gate
+    ]);
+  }
+
   let caught = 0;
-  for (const [label, row, must, asFile] of FIXTURES) {
+  let skipped = 0;
+  for (const [label, row, must, asFile, wantExit, skip] of FIXTURES) {
+    if (skip) {
+      skipped++;
+      console.log(`  SKIPPED ${label} — the bucket is empty today, so this branch went UNTESTED.`);
+      continue;
+    }
     errors.length = 0;
     unapplied.length = 0;
     droppedByKind.length = 0;
+    registryGap.length = 0;
     seenIds.clear();
     checkLines(asFile ?? "status.wave7.__fixture.tsv", [row]);
     const report = [
       ...errors,
       ...unapplied,
+      ...registryGap.map((g) => g.msg),
       // The silent drop is reported through its own banner, not through
       // `errors`/`unapplied`, so the self-test has to reach into it explicitly
       // or the fixture below is vacuous — it would report MISSED whether the
@@ -356,22 +514,33 @@ if (SELF_TEST) {
         (d) => `${d.where}: family ${d.nodeId} has no screen frame (kinds: ${d.frameKind}) — a family row lands on nothing`,
       ),
     ].join("\n");
-    const ok = report.includes(must);
+    // ⚠️ A SUBSTRING MATCH ALONE CANNOT TELL THE TWO BRANCHES APART — every
+    // message lands in the same joined report whichever accumulator holds it.
+    // The exit-worthiness IS the behaviour under test, so it is asserted
+    // separately. Without this, moving a message between accumulators would go
+    // undetected and the split would be decorative.
+    const sawMust = report.includes(must);
+    const exits = errors.length > 0 || unapplied.length > 0;
+    const exitOk = wantExit === undefined || wantExit === null || exits === wantExit;
+    const ok = sawMust && exitOk;
     if (ok) caught++;
     console.log(`  ${ok ? "CAUGHT " : "MISSED "} ${label}`);
-    if (!ok) console.log(`      wanted a report containing "${must}", got: ${report || "(nothing)"}`);
+    if (!sawMust) console.log(`      wanted a report containing "${must}", got: ${report || "(nothing)"}`);
+    else if (!exitOk)
+      console.log(`      message correct, but exit-worthiness is ${exits} and must be ${wantExit}`);
   }
   // And a control: a well-formed row must produce NO complaint. Without this the
   // suite could pass by flagging everything.
   errors.length = 0;
   unapplied.length = 0;
   droppedByKind.length = 0;
+  registryGap.length = 0;
   seenIds.clear();
   checkLines(
     "status.wave7.__fixture.tsv",
     [`Skai > Play > Casino > Blackjack (1440 x 900px) [9003-117337]${T}done${T}a.tsx${T}/play${T}header 56 = frame 56; radius 12 = frame 12${T}desktop=renders @2026-08-31/w7-verify`],
   );
-  const controlClean = !errors.length && !unapplied.length;
+  const controlClean = !errors.length && !unapplied.length && !registryGap.length;
   console.log(`  ${controlClean ? "CLEAN  " : "FALSE+ "} control: a well-formed row produces no complaint`);
 
   /*
@@ -394,18 +563,25 @@ if (SELF_TEST) {
   errors.length = 0;
   unapplied.length = 0;
   droppedByKind.length = 0;
+  registryGap.length = 0;
   seenIds.clear();
   checkLines(
     "status.wave7.__fixture.tsv",
     [`Wallet component [13008-27159]${T}partial${T}-${T}-${T}width 375 = frame 375`],
   );
-  const idKindClean = !errors.length && !unapplied.length && !droppedByKind.length;
+  const idKindClean =
+    !errors.length && !unapplied.length && !droppedByKind.length && !registryGap.length;
   console.log(
     `  ${idKindClean ? "CLEAN  " : "FALSE+ "} control: an ID-keyed row on a NON-SCREEN frame applies (guard removed in f81cee7)`,
   );
-  if (!controlClean) console.log(`      got: ${[...errors, ...unapplied].join("\n")}`);
-  const pass = caught === FIXTURES.length && controlClean;
-  console.log(`\nself-test: ${caught}/${FIXTURES.length} known-bad rows caught, control ${controlClean ? "clean" : "FAILED"}.`);
+  if (!controlClean) console.log(`      got: ${[...errors, ...unapplied, ...registryGap.map((g) => g.msg)].join("\n")}`);
+  const ran = FIXTURES.length - skipped;
+  const pass = caught === ran && controlClean && idKindClean && skipped === 0;
+  console.log(
+    `\nself-test: ${caught}/${ran} known-bad rows caught` +
+      (skipped ? `, ${skipped} SKIPPED (branch untested — see above)` : "") +
+      `, control ${controlClean ? "clean" : "FAILED"}, id-kind control ${idKindClean ? "clean" : "FAILED"}.`,
+  );
   process.exit(pass ? 0 : 1);
 }
 
@@ -492,6 +668,33 @@ if (droppedByKind.length) {
   }
 }
 
+// ── THE REGISTRY GAP — loud, itemised, and DELIBERATELY NOT EXIT-WORTHY ───────
+// See the classifyUnresolved note above. These rows name nodes that are real in
+// Figma; `registry.json` cannot address them and no edit to a TSV changes that.
+// coverage.mjs counts them already.
+if (registryGap.length) {
+  const byBucket = {};
+  for (const g of registryGap) (byBucket[g.bucket] ??= []).push(g);
+  const ids = new Set(registryGap.map((g) => g.nodeId));
+  console.log(
+    `\n⚠️  ${registryGap.length} row(s) on ${ids.size} node(s) name a REAL Figma node that registry.json cannot address.`,
+  );
+  console.log(`   ⛔ DO NOT re-key and DO NOT delete these rows. There is no key that would work,`);
+  console.log(`      and coverage.mjs reads status.*.tsv directly, so these verdicts are already counted.`);
+  console.log(`      This is the registry drift of WAVE9-INTEGRITY §3, not anything a lane did.`);
+  for (const [b, list] of Object.entries(byBucket).sort((a, b2) => b2[1].length - a[1].length)) {
+    const bIds = new Set(list.map((g) => g.nodeId));
+    console.log(`      ${b.padEnd(14)} ${String(list.length).padStart(4)} row(s) on ${bIds.size} node(s)`);
+  }
+  if (VERBOSE) for (const g of registryGap) console.log(`        ${g.msg}`);
+  else console.log(`      (--verbose lists every row)`);
+}
+if (LIVE_LOAD_ERROR) {
+  console.log(`\n⚠️  the live harvest could not be read (${LIVE_LOAD_ERROR}).`);
+  console.log(`   Every unresolved node id was therefore treated as NOT LIVE and counts below.`);
+  console.log(`   Some of those rows are probably correct work — do not act on them until live/ reads.`);
+}
+
 if (unapplied.length) {
   console.log(`\n⚠️  ${unapplied.length} row(s) would apply to ZERO frames:`);
   for (const u of unapplied) console.log(`      ${u}`);
@@ -504,7 +707,10 @@ if (errors.length) {
   console.log(`    Column 2 statuses: ${[...STATUS_VALID].join(" | ")}`);
 }
 if (!errors.length && !unapplied.length)
-  console.log(`\n✅ all ${rows} row(s) across ${files.length} file(s) parse and address a real frame.`);
+  console.log(
+    `\n✅ all ${rows} row(s) across ${files.length} file(s) parse and address a real frame` +
+      (registryGap.length ? ` (${registryGap.length} of them via the registry gap above, which is not a lane defect).` : "."),
+  );
 
 // ★ A row that applies to ZERO frames exits NON-ZERO, the same as a parse error.
 // It does not block registry.json the way a malformed cell does, so the
@@ -512,4 +718,12 @@ if (!errors.length && !unapplied.length)
 // to nothing" is the failure that has already happened FIVE times in this
 // catalog, and every one of those times it was reported and then read past. A
 // warning that exits 0 is a warning nobody acts on.
+//
+// ★★★ `registryGap` IS THE ONE EXCEPTION, AND IT IS NOT A SOFTENING OF THAT RULE.
+// The rule above is about work that lands on nothing and CAN be rescued by
+// editing the row. A registry-gap row cannot: the node is real, coverage.mjs
+// already counts the verdict, and the only edit available to the lane is a
+// deletion that would destroy correct work. Exiting 1 there does not make anyone
+// act, it makes them delete. Measured 2026-09-01: 200 of the 220 rows this gate
+// used to fail on were in that state.
 process.exit(errors.length || unapplied.length ? 1 : 0);
