@@ -12,18 +12,18 @@ Live half harvested 2026-08-26 (use_figma read-only; figma.root.children for the
 | — furniture (excluded from the denominator) | 418 (17.9%) |
 | **Genuine frames — the denominator** | **1914** |
 | Genuine frames with a catalog row (matched by node id) | 1914 (100.0%) |
-| — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 2 (0.1% of matched) |
+| — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 0 (0.0% of matched) |
 | Genuine frames with NO row — live-only drift | 0 (0.0%) |
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 274 | 14.3% |
-| `partial` | 1165 | 60.9% |
-| `not-started` | 173 | 9.0% |
-| `blocked-on-backend` | 118 | 6.2% |
-| `frame-defect` | 62 | 3.2% |
+| `done` | 341 | 17.8% |
+| `partial` | 1082 | 56.5% |
+| `not-started` | 228 | 11.9% |
+| `blocked-on-backend` | 73 | 3.8% |
+| `frame-defect` | 100 | 5.2% |
 | `furniture` (catalog says furniture, this script says genuine) | 42 | 2.2% |
-| `unknown` | 80 | 4.2% |
+| `unknown` | 48 | 2.5% |
 
 ### Why 418 nodes were excluded — the whole rule, so it can be argued with
 
@@ -41,18 +41,18 @@ That is 17.9% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**274 of 1914 in-scope genuine frames (14.3%) are covered by a row marked `done`.**
+**341 of 1914 in-scope genuine frames (17.8%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 14.3% measured parity.
+Read the caveat section before quoting that. It is not 17.8% measured parity.
 
 ## Out of the roll-up
 
 | Bucket | Pages | Live | Furniture | Genuine | Matched | `done` | Live-only |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| held (Governance — Casey) | 1 | 331 | 57 | 274 | 36 | 0 | 238 |
+| held (Governance — Casey) | 1 | 331 | 57 | 274 | 37 | 0 | 237 |
 | standing exclusion (Onboarding) | 1 | 151 | 24 | 127 | 0 | 0 | 127 |
-| v1, superseded by v2 | 3 | 852 | 103 | 749 | 203 | 144 | 546 |
-| tombstone (body moved) | 3 | 187 | 70 | 117 | 3 | 1 | 114 |
+| v1, superseded by v2 | 3 | 852 | 103 | 749 | 263 | 130 | 486 |
+| tombstone (body moved) | 3 | 187 | 70 | 117 | 24 | 1 | 93 |
 | meta | 7 | 94 | 3 | 91 | 0 | 0 | 91 |
 | wip / no section | 7 | 1262 | 1238 | 24 | 0 | 0 | 24 |
 
@@ -62,40 +62,40 @@ Read the caveat section before quoting that. It is not 14.3% measured parity.
 
 | Page | Scope | Live | furn | gen | row | `done` | `part` | `n/s` | `blk` | only | cov |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ✅ Social | in-scope | 442 | 40 | 402 | 402 | 20 | 241 | 51 | 61 | 0 | 100.0% |
-| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 375 | 37 | 279 | 39 | 2 | 0 | 100.0% |
-| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 35 | 141 | 55 | 24 | 0 | 100.0% |
-| ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 25 | 169 | 8 | 13 | 0 | 100.0% |
-| ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 113 | 44 | 0 | 0 | 0 | 100.0% |
-| ✅ Home 2 | in-scope | 168 | 30 | 138 | 138 | 11 | 100 | 13 | 5 | 0 | 100.0% |
+| ✅ Social | in-scope | 442 | 40 | 402 | 402 | 48 | 227 | 75 | 30 | 0 | 100.0% |
+| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 375 | 35 | 245 | 77 | 2 | 0 | 100.0% |
+| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 37 | 159 | 52 | 0 | 0 | 100.0% |
+| ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 25 | 161 | 8 | 23 | 0 | 100.0% |
+| ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 124 | 30 | 0 | 0 | 0 | 100.0% |
+| ✅ Home 2 | in-scope | 168 | 30 | 138 | 138 | 19 | 96 | 9 | 5 | 0 | 100.0% |
 | ✅ Coinflip - Skai originals | in-scope | 45 | 11 | 34 | 34 | 4 | 22 | 1 | 0 | 0 | 100.0% |
-| ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 0 | 22 | 1 | 0 | 0 | 100.0% |
+| ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 3 | 19 | 1 | 0 | 0 | 100.0% |
 | ✅ Darts - Skai originals | in-scope | 31 | 13 | 18 | 18 | 1 | 13 | 0 | 0 | 0 | 100.0% |
 | ✅ Keno - Skai originals | in-scope | 27 | 9 | 18 | 18 | 1 | 12 | 0 | 0 | 0 | 100.0% |
-| ✅ Chicken - Skai originals | in-scope | 31 | 14 | 17 | 17 | 0 | 15 | 0 | 0 | 0 | 100.0% |
+| ✅ Chicken - Skai originals | in-scope | 31 | 14 | 17 | 17 | 0 | 16 | 0 | 0 | 0 | 100.0% |
 | ✅ Rock Paper Scissors - Skai originals | in-scope | 24 | 7 | 17 | 17 | 0 | 2 | 0 | 13 | 0 | 100.0% |
-| ✅ Blackjack - Skai originals | in-scope | 23 | 7 | 16 | 16 | 7 | 6 | 0 | 0 | 0 | 100.0% |
-| ✅ Fortune Wheel - Skai originals | in-scope | 25 | 9 | 16 | 16 | 0 | 11 | 0 | 0 | 0 | 100.0% |
-| ✅ Towers - Skai originals | in-scope | 30 | 14 | 16 | 16 | 0 | 6 | 0 | 0 | 0 | 100.0% |
-| ✅ Scratchers - Skai originals | in-scope | 21 | 7 | 14 | 14 | 3 | 10 | 0 | 0 | 0 | 100.0% |
-| ✅ Roulette - Skai originals | in-scope | 21 | 7 | 14 | 14 | 0 | 3 | 1 | 0 | 0 | 100.0% |
-| ✅ Crash - Skai originals | in-scope | 20 | 7 | 13 | 13 | 0 | 13 | 0 | 0 | 0 | 100.0% |
+| ✅ Blackjack - Skai originals | in-scope | 23 | 7 | 16 | 16 | 9 | 4 | 0 | 0 | 0 | 100.0% |
+| ✅ Fortune Wheel - Skai originals | in-scope | 25 | 9 | 16 | 16 | 0 | 9 | 0 | 0 | 0 | 100.0% |
+| ✅ Towers - Skai originals | in-scope | 30 | 14 | 16 | 16 | 0 | 7 | 0 | 0 | 0 | 100.0% |
+| ✅ Scratchers - Skai originals | in-scope | 21 | 7 | 14 | 14 | 3 | 9 | 0 | 0 | 0 | 100.0% |
+| ✅ Roulette - Skai originals | in-scope | 21 | 7 | 14 | 14 | 1 | 3 | 1 | 0 | 0 | 100.0% |
+| ✅ Crash - Skai originals | in-scope | 20 | 7 | 13 | 13 | 6 | 7 | 0 | 0 | 0 | 100.0% |
 | ✅ Bingo - Skai originals | in-scope | 17 | 4 | 13 | 13 | 2 | 3 | 0 | 0 | 0 | 100.0% |
-| ✅ Baccarat - Skai originals | in-scope | 21 | 8 | 13 | 13 | 2 | 4 | 4 | 0 | 0 | 100.0% |
+| ✅ Baccarat - Skai originals | in-scope | 21 | 8 | 13 | 13 | 4 | 2 | 4 | 0 | 0 | 100.0% |
 | ✅ Slide - Skai originals | in-scope | 18 | 5 | 13 | 13 | 2 | 9 | 0 | 0 | 0 | 100.0% |
 | ✅ Mines - Skai originals | in-scope | 19 | 7 | 12 | 12 | 3 | 8 | 0 | 0 | 0 | 100.0% |
-| ✅ Plinko - Skai originals | in-scope | 21 | 11 | 10 | 10 | 0 | 9 | 0 | 0 | 0 | 100.0% |
+| ✅ Plinko - Skai originals | in-scope | 21 | 11 | 10 | 10 | 3 | 6 | 0 | 0 | 0 | 100.0% |
 | ✅ Video Poker - Skai originals | in-scope | 14 | 4 | 10 | 10 | 0 | 2 | 0 | 0 | 0 | 100.0% |
-| ✅ Limbo - Skai originals | in-scope | 14 | 5 | 9 | 9 | 0 | 9 | 0 | 0 | 0 | 100.0% |
+| ✅ Limbo - Skai originals | in-scope | 14 | 5 | 9 | 9 | 3 | 6 | 0 | 0 | 0 | 100.0% |
 | ✅ Price Grid - Skai originals | in-scope | 20 | 12 | 8 | 8 | 2 | 5 | 0 | 0 | 0 | 100.0% |
-| ✅ Hi-Lo - Skai originals | in-scope | 16 | 9 | 7 | 7 | 0 | 7 | 0 | 0 | 0 | 100.0% |
+| ✅ Hi-Lo - Skai originals | in-scope | 16 | 9 | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 100.0% |
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 6 | 0 | 0 | 0 | 0 | 100.0% |
-| 🚧 Governance and Utilities | held | 331 | 57 | 274 | 36 | 0 | 18 | 8 | 8 | 238 | 13.1% |
+| 🚧 Governance and Utilities | held | 331 | 57 | 274 | 37 | 0 | 18 | 9 | 8 | 237 | 13.5% |
 | ✅ Onboarding and Authentication | excluded | 151 | 24 | 127 | 0 | 0 | 0 | 0 | 0 | 127 | 0.0% |
-| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 92 | 44 | 44 | 0 | 2 | 275 | 25.1% |
+| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 152 | 30 | 119 | 0 | 2 | 215 | 41.4% |
 | ✅ Home 1 | v1-superseded | 254 | 39 | 215 | 63 | 52 | 3 | 0 | 0 | 152 | 29.3% |
 | ✅ Wallet 1 | v1-superseded | 178 | 11 | 167 | 48 | 48 | 0 | 0 | 0 | 119 | 28.7% |
-| ✝️ Trade (moved to Skai Web App 2) | tombstone | 154 | 37 | 117 | 3 | 1 | 2 | 0 | 0 | 114 | 2.6% |
+| ✝️ Trade (moved to Skai Web App 2) | tombstone | 154 | 37 | 117 | 24 | 1 | 23 | 0 | 0 | 93 | 20.5% |
 | ✝️ Home (moved to Skai Web App 2) | tombstone | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | ✝️ Wallet (moved to Skai Web App 2) | tombstone | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | Towars Draft (Disregard) | wip | 51 | 42 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0.0% |
@@ -117,291 +117,10 @@ Read the caveat section before quoting that. It is not 14.3% measured parity.
 
 Ranked by count. These are the unassessed frames.
 
-### ✅ Trade 1 — 275 live-only of 367 genuine  _(v1-superseded)_
-
-```
-7710-91527	1440x900	Skai > Trade > Spot 
-8558-139280	768x1024	Skai > Trade > Spot 
-8650-44853	768x1024	Skai > Trade > Spot 
-8822-65362	768x1024	Skai > Trade > Spot 
-8833-71578	768x1024	Skai > Trade > Spot 
-8941-77699	768x1024	Skai > Trade > Spot 
-8994-76486	730x618	Frame 455
-8994-76863	730x646	Frame 457
-8994-78276	730x646	Frame 1225
-8994-78552	730x700	Frame 1227
-8994-78720	730x808	Frame 1228
-8994-78891	730x844	Frame 1229
-8994-78407	730x646	Frame 1226
-8837-63445	768x1210	Skai > Trade > Spot 
-8846-63794	768x1230	Skai > Trade > Spot 
-8859-66157	768x1180	Skai > Trade > Spot 
-8833-68646	768x1024	Skai > Trade > Spot 
-8828-62762	768x1250	Skai > Trade > Spot 
-8931-64499	768x1810	Skai > Trade > Spot 
-8684-163505	768x1024	Skai > Trade > Spot 
-8687-101463	768x1024	Skai > Trade > Spot 
-8684-167264	768x1140	Skai > Trade > Spot 
-8666-108146	768x1024	Skai > Trade > Spot 
-8570-143200	768x1024	Skai > Trade > Spot 
-8626-61565	768x1024	Skai > Trade > Spot 
-8684-164665	768x1024	Skai > Trade > Spot 
-8626-85537	375x1030	Skai > Trade > Spot 
-8833-72738	375x812	Skai > Trade > Spot 
-9058-225792	375x722	Trade panel - Pro - 
-9058-225926	375x760	Trade panel - Pro - 
-9058-223749	375x554	Trade panel - buy
-9058-223872	375x554	Trade panel - sell
-9058-223998	375x554	Trade panel - sell -
-8994-77368	375x554	Frame 1219
-8828-62440	375x812	Skai > Trade > Spot 
-9490-145643	375x1276	Skai > Trade > Spot 
-9490-147063	375x1276	Skai > Trade > Spot 
-9490-148310	375x1105	Skai > Trade > Spot 
-9490-149563	375x1108	Skai > Trade > Spot 
-9500-151115	375x1107	Skai > Trade > Spot 
-9770-133659	375x812	Skai > Trade > Spot 
-9801-112095	375x812	Skai > Trade > Perpe
-9803-128424	375x812	Skai > Trade > Perpe
-9803-125791	375x1153	Skai > Trade > Perpe
-9801-121092	375x812	Skai > Trade > Perpe
-9777-106388	375x812	Skai > Trade > Spot 
-9777-109337	375x812	Skai > Trade > Spot 
-9777-107807	375x440	Dropdown - Indicator
-9772-78152	375x812	Skai > Trade > Spot 
-9774-91524	375x578	Trade panel - Limit
-9775-93472	375x626	Trade panel - Pro - 
-9774-91774	375x578	Trade panel - Pro - 
-9772-76942	375x664	Frame 1341
-9500-163410	375x812	Skai > Trade > Spot 
-9500-164534	375x812	Skai > Trade > Spot 
-9500-165924	375x812	Skai > Trade > Spot 
-9500-167048	375x812	Skai > Trade > Spot 
-9490-146969	375x126	Frame 6
-8941-78943	375x812	Skai > Trade > Spot 
-8941-82029	375x578	Frame 446
-8941-80624	375x578	Frame 450
-8941-81175	375x626	Frame 452
-8941-81422	375x722	Frame 453
-8941-81626	375x760	Frame 454
-8941-80882	375x578	Frame 451
-9058-225586	375x578	Trade panel - Limit 
-8846-64165	375x1290	Skai > Trade > Spot 
-8650-94501	375x1030	Skai > Trade > Spot 
-8936-38729	375x1270	Skai > Trade > Spot 
-8684-166194	375x1030	Skai > Trade > Spot 
-8833-69806	375x812	Skai > Trade > Spot 
-8828-63922	375x1270	Skai > Trade > Spot 
-8650-94724	375x812	Skai > Trade > Spot 
-8931-65660	375x1870	Skai > Trade > Spot 
-8626-131650	375x812	Skai > Trade > Spot 
-8650-94950	375x812	Skai > Trade > Spot 
-8684-166395	375x812	Skai > Trade > Spot 
-8687-102751	375x812	Skai > Trade > Spot 
-8626-130555	375x812	Skai > Trade > Spot 
-8684-166596	375x812	Skai > Trade > Spot 
-8570-143201	942x1005	main
-8558-134024	1440x900	Skai > Trade > Spot 
-3962-34721	796x680	Select pair - USDC
-3962-34884	796x680	Select pair - Favori
-8566-141675	768x1230	Skai > Trade > Spot 
-3927-56677	764x672	Chart sample 2 - SOL
-3972-28764	1440x900	Skai > Trade > Spot 
-7746-211720	764x544	Chart - Line
-7746-212008	764x544	Chart - Area
-7746-212704	764x544	Chart - Area
-3972-25561	375x450	Dropdown - Indicator
-3931-86279	764x124	AI alert types
-3931-91943	764x58	On:Hover
-9104-77744	756x58	Expanded
-3979-40767	564x490	modal - confirm orde
-3928-85741	442x884	Right menu - leverag
-3931-85816	442x884	Right menu - leverag
-9106-77596	442x1008	Right menu - leverag
-9106-77632	442x1008	Right menu - leverag
-9106-77690	442x1008	Right menu - leverag
-7890-98663	442x884	Right menu - leverag
-9106-79115	359x796	Right menu - leverag
-9106-79151	359x796	Right menu - leverag
-9106-79209	359x796	Right menu - leverag
-7890-98315	313x672	Trade panel - Isolat
-7712-32496	313x672	Trade panel - Buy
-3900-7416	313x672	Trade panel - Sell w
-7712-33476	313x672	🚨 Trade panel - Sel
-3886-15109	850x58	Expanded - Perp
-9050-212389	300x450	Dropdown - Indicator
-3903-22970	1440x1501	Skai > Trade > Perpe
-9002-162005	708x52	On:Hover
-3903-24462	1440x1384	Skai > Trade > Perpe
-9152-82793	1250x234	section
-4297-47855	506x506	PnL post - up with p
-4297-48539	506x506	PnL post - down with
-9153-85201	448x448	PnL post - up with p
-9156-138870	354x354	PnL post - up with p
-9153-85888	448x448	PnL post - down with
-9156-139557	354x354	PnL post - down with
-4144-63925	1259x1009	Advanced functions (
-7890-121544	1366x258	Positions - TP/SL
-7890-122280	1366x312	Positions - Pages fo
-7890-130783	564x654	Update position moda
-7890-130857	564x712	Update position moda
-3903-25954	313x672	Trade panel - Long
-3903-26048	313x672	Trade panel - Short
-3903-26142	313x672	Trade panel - Short 
-3925-44912	850x58	Expanded
-7679-71122	764x58	AI card - shouty
-7679-71196	199x524	dropdown-time
-7746-180909	248x844	sidebar - open - spo
-7890-128681	200x84	dropdown-3
-7890-139989	137x160	dropdown - filter
-9152-89094	120x152	dropdown - filter
-9156-133437	100x144	dropdown - filter
-8666-109490	375x812	Skai > Trade > Spot 
-8684-162077	375x812	Skai > Trade > Spot 
-8684-162456	375x812	Skai > Trade > Spot 
-8687-99711	1440x900	Skai > Trade > Spot 
-8687-103072	375x812	Skai > Trade > Spot 
-8700-103509	768x1024	Skai > Trade > Spot 
-8994-76734	375x578	Frame 456
-8994-77492	375x578	Frame 1220
-8994-77623	375x578	Frame 1221
-8994-77761	375x626	Frame 1222
-8994-77870	375x722	Frame 1223
-8994-78004	375x760	Frame 1224
-9002-157018	768x1024	Skai > Trade > Spot 
-9154-119891	375x812	Skai > Trade > Perpe
-9154-121608	375x812	Skai > Trade > Perpe
-9153-118323	375x688	Trade panel - Long
-9153-86643	375x812	Skai > Trade > Perpe
-9137-86763	768x1024	Skai > Trade > Perpe
-9137-88222	768x1024	Skai > Trade > Perpe
-9148-79309	768x1024	Skai > Trade > Perpe
-9148-80746	768x1024	Skai > Trade > Perpe
-9154-123038	354x378	modal - confirm orde
-9148-82614	768x1534	Skai > Trade > Perpe
-9152-84122	768x1288	Skai > Trade > Perpe
-9152-86271	768x1440	Skai > Trade > Perpe
-9152-92016	1010x450	section
-9152-89103	768x1292	Skai > Trade > Perpe
-9152-91623	950x390	section
-9150-79379	1250x288	section
-9152-85551	1000x210	section
-9150-79555	1250x234	section
-9152-87497	1350x234	section
-9152-90527	768x1300	Skai > Trade > Perpe
-9152-81364	768x1401	Skai > Trade > Perpe
-9148-82240	448x394	modal - confirm orde
-9069-263248	375x812	Skai > Dashboard - p
-9081-266034	375x812	Skai > Dashboard > R
-9081-267604	375x812	Skai > Dashboard > N
-9081-267988	375x812	Skai > Dashboard > W
-9069-259546	768x1024	Skai > Trade > Spot 
-9069-261150	768x1024	Skai > Dashboard - p
-9081-265572	768x1024	Skai > Dashboard > R
-9081-267317	910x146	Frame 1264
-9081-266293	768x1024	Skai > Dashboard > N
-9081-266657	768x1024	Skai > Dashboard > W
-9081-268243	490x167	Frame 1267
-9050-209536	768x1024	Skai > Trade > Spot 
-9050-212503	768x1024	Skai > Trade > Spot 
-9106-77805	730x752	Frame 1271
-9105-77267	730x752	Trade panel - Long
-9105-77093	730x752	Trade panel - Short
-9105-77432	730x752	Trade panel - Short 
-9045-170329	730x610	Trade panel - buy
-9045-170453	730x610	Trade panel - sell
-9045-170740	730x610	Trade panel - sell w
-9045-174613	730x692	Frame 1233
-9045-174230	730x800	Frame 1234
-9045-174360	730x836	Frame 1235
-9050-210827	708x710	Frame 1238
-9002-161526	180x492	dropdown-time
-9061-258382	375x492	dropdown-time
-9002-162080	708x112	AI alert types
-9045-170994	730x638	Trade panel - Limit
-9059-238612	534x386	Frame 1248
-9059-238601	534x18	Frame 1249
-9050-206715	768x1024	Skai > Trade > Spot 
-9048-192225	680x586	Select pair - USDC
-9048-192507	680x586	Select pair - Favori
-9050-210996	708x584	Frame 1239
-9050-211728	708x584	Frame 1240
-9050-211896	708x584	Frame 1241
-9050-211139	8x29	Tool
-9061-240412	375x812	Skai > Trade > Spot 
-9061-240109	354x556	Selected pair - USDC
-9061-240254	354x556	Selected pair - Favo
-9777-109249	375x528	dropdown-3
-9081-265513	966x148	Frame 627
-9081-273284	296x812	sidebar - open
-9081-273208	318x1024	sidebar - open
-9114-78042	375x688	Frame 1279
-9114-77711	375x688	Trade panel - Short
-9114-77881	375x688	Trade panel - Short 
-9152-79912	768x1024	Skai > Trade > Perpe
-9152-81212	448x570	Update position moda
-9152-81278	448x626	Update position moda
-9154-124727	354x560	Update position moda
-9154-124786	354x620	Update position moda
-9153-80772	768x1024	Skai > Trade > Perpe
-9154-119745	558x556	modal
-9154-128095	375x812	Skai > Trade > Perpe
-9156-140326	375x812	Skai > Trade > Perpe
-9156-141722	375x960	Skai > Trade > Perpe
-9403-133956	375x812	Skai > Trench - actu
-9403-140971	375x812	Skai > Trench - actu
-9419-149915	375x812	Skai > Trench - actu
-9419-151234	375x812	Skai > Trench - actu
-9403-142103	375x812	Skai > Trench - actu
-9264-89796	375x812	Skai > Trade > Perpe
-9403-139616	375x812	Skai > Trade > Perpe
-9403-143235	375x812	Skai > Trade > Perpe
-9403-146317	375x812	Skai > Trade > Perpe
-9477-67940	375x812	Skai > Trade > Perpe
-9477-72630	375x812	Skai > Trade > Perpe
-9550-128469	375x812	Skai > Trade > Perpe
-9477-71040	375x812	Skai > Trade > Perpe
-9414-148035	375x812	Skai > Trade > Perpe
-9477-69530	375x812	Skai > Trade > Perpe
-9422-152634	375x812	Skai > Trade > Perpe
-9403-144446	375x812	Skai > Trade > Perpe
-9432-157179	375x812	Skai > Trade > Perpe
-9432-159649	346x580	Frame 1302
-9432-158544	346x580	Frame 1301
-9264-91009	375x812	Skai > Trade > Perpe
-9380-78308	375x812	Skai > Trade > Perpe
-9380-79739	375x812	Skai > Trade > Perpe
-9379-131684	375x812	Skai > Trade > Perpe
-9373-129956	375x812	Skai > Trade > Perpe
-9264-93524	346x154	Expanded
-9553-131170	375x812	Skai > Trade > Spot 
-9553-133106	375x812	Skai > Trade > Spot 
-9553-132254	375x257	Frame 444
-9553-132827	375x270	Instant trade
-9774-89965	375x246	date range
-9776-96834	375x1107	Skai > Trade > Spot 
-9803-129761	375x1107	Skai > Trade > Spot 
-9803-131052	375x1107	Skai > Trade > Spot 
-9777-102315	375x1230	Skai > Trade > Spot 
-9776-98249	375x196	AI alert types
-9776-98250	375x94	On:Hover
-9776-97982	382x36	Frame 1355
-9777-104193	375x812	Skai > Trade > Spot 
-9777-105690	375x416	Chart - Line
-9777-105846	375x416	Chart - Area
-9777-105532	375x416	Chart - Area
-9780-143009	375x812	Skai > Trade > Spot 
-9804-143394	375x1313	Skai > Trade > Perpe
-10706-128843	745x226	Frame 267
-10706-128950	1047x450	Frame 1356
-10706-129546	1047x450	Frame 1357
-```
-
-### 🚧 Governance and Utilities — 238 live-only of 274 genuine  _(held)_
+### 🚧 Governance and Utilities — 237 live-only of 274 genuine  _(held)_
 
 ```
 5370-61920	1440x900	Skai > Governance 1V
-5393-86875	1440x900	Skai > Learn > Cours
 5480-32393	1440x900	Skai > Airdrop 1VH (
 5539-93683	1440x900	Skai > Explorer 1VH 
 11345-144081	1440x900	Skai > Explorer - cu
@@ -638,6 +357,226 @@ Ranked by count. These are the unassessed frames.
 11793-351692	768x1294	Skai > Social > Live
 11793-352217	768x1710	Skai > Social > Live
 11768-350087	768x1024	Skai > Social > Live
+```
+
+### ✅ Trade 1 — 215 live-only of 367 genuine  _(v1-superseded)_
+
+```
+7710-91527	1440x900	Skai > Trade > Spot 
+8558-139280	768x1024	Skai > Trade > Spot 
+8650-44853	768x1024	Skai > Trade > Spot 
+8822-65362	768x1024	Skai > Trade > Spot 
+8833-71578	768x1024	Skai > Trade > Spot 
+8941-77699	768x1024	Skai > Trade > Spot 
+8994-76486	730x618	Frame 455
+8994-76863	730x646	Frame 457
+8994-78276	730x646	Frame 1225
+8994-78552	730x700	Frame 1227
+8994-78720	730x808	Frame 1228
+8994-78891	730x844	Frame 1229
+8994-78407	730x646	Frame 1226
+8837-63445	768x1210	Skai > Trade > Spot 
+8846-63794	768x1230	Skai > Trade > Spot 
+8859-66157	768x1180	Skai > Trade > Spot 
+8833-68646	768x1024	Skai > Trade > Spot 
+8828-62762	768x1250	Skai > Trade > Spot 
+8931-64499	768x1810	Skai > Trade > Spot 
+8684-163505	768x1024	Skai > Trade > Spot 
+8687-101463	768x1024	Skai > Trade > Spot 
+8684-167264	768x1140	Skai > Trade > Spot 
+8570-143200	768x1024	Skai > Trade > Spot 
+8626-61565	768x1024	Skai > Trade > Spot 
+8684-164665	768x1024	Skai > Trade > Spot 
+8626-85537	375x1030	Skai > Trade > Spot 
+8833-72738	375x812	Skai > Trade > Spot 
+9058-225792	375x722	Trade panel - Pro - 
+9058-225926	375x760	Trade panel - Pro - 
+9058-223749	375x554	Trade panel - buy
+9058-223872	375x554	Trade panel - sell
+9058-223998	375x554	Trade panel - sell -
+8994-77368	375x554	Frame 1219
+8828-62440	375x812	Skai > Trade > Spot 
+9490-145643	375x1276	Skai > Trade > Spot 
+9490-147063	375x1276	Skai > Trade > Spot 
+9490-148310	375x1105	Skai > Trade > Spot 
+9490-149563	375x1108	Skai > Trade > Spot 
+9500-151115	375x1107	Skai > Trade > Spot 
+9770-133659	375x812	Skai > Trade > Spot 
+9777-106388	375x812	Skai > Trade > Spot 
+9777-109337	375x812	Skai > Trade > Spot 
+9777-107807	375x440	Dropdown - Indicator
+9772-78152	375x812	Skai > Trade > Spot 
+9774-91524	375x578	Trade panel - Limit
+9775-93472	375x626	Trade panel - Pro - 
+9774-91774	375x578	Trade panel - Pro - 
+9772-76942	375x664	Frame 1341
+9500-163410	375x812	Skai > Trade > Spot 
+9500-164534	375x812	Skai > Trade > Spot 
+9500-165924	375x812	Skai > Trade > Spot 
+9500-167048	375x812	Skai > Trade > Spot 
+9490-146969	375x126	Frame 6
+8941-78943	375x812	Skai > Trade > Spot 
+8941-82029	375x578	Frame 446
+8941-80624	375x578	Frame 450
+8941-81175	375x626	Frame 452
+8941-81422	375x722	Frame 453
+8941-81626	375x760	Frame 454
+8941-80882	375x578	Frame 451
+9058-225586	375x578	Trade panel - Limit 
+8846-64165	375x1290	Skai > Trade > Spot 
+8650-94501	375x1030	Skai > Trade > Spot 
+8936-38729	375x1270	Skai > Trade > Spot 
+8684-166194	375x1030	Skai > Trade > Spot 
+8833-69806	375x812	Skai > Trade > Spot 
+8828-63922	375x1270	Skai > Trade > Spot 
+8650-94724	375x812	Skai > Trade > Spot 
+8931-65660	375x1870	Skai > Trade > Spot 
+8626-131650	375x812	Skai > Trade > Spot 
+8650-94950	375x812	Skai > Trade > Spot 
+8684-166395	375x812	Skai > Trade > Spot 
+8687-102751	375x812	Skai > Trade > Spot 
+8626-130555	375x812	Skai > Trade > Spot 
+8684-166596	375x812	Skai > Trade > Spot 
+8570-143201	942x1005	main
+8558-134024	1440x900	Skai > Trade > Spot 
+3962-34721	796x680	Select pair - USDC
+3962-34884	796x680	Select pair - Favori
+8566-141675	768x1230	Skai > Trade > Spot 
+3927-56677	764x672	Chart sample 2 - SOL
+3972-28764	1440x900	Skai > Trade > Spot 
+7746-211720	764x544	Chart - Line
+7746-212008	764x544	Chart - Area
+7746-212704	764x544	Chart - Area
+3972-25561	375x450	Dropdown - Indicator
+3931-86279	764x124	AI alert types
+3931-91943	764x58	On:Hover
+3979-40767	564x490	modal - confirm orde
+7890-98315	313x672	Trade panel - Isolat
+7712-33476	313x672	🚨 Trade panel - Sel
+9050-212389	300x450	Dropdown - Indicator
+9002-162005	708x52	On:Hover
+9152-82793	1250x234	section
+4297-47855	506x506	PnL post - up with p
+4297-48539	506x506	PnL post - down with
+9153-85201	448x448	PnL post - up with p
+9156-138870	354x354	PnL post - up with p
+9153-85888	448x448	PnL post - down with
+9156-139557	354x354	PnL post - down with
+4144-63925	1259x1009	Advanced functions (
+7890-121544	1366x258	Positions - TP/SL
+7890-122280	1366x312	Positions - Pages fo
+7890-130783	564x654	Update position moda
+7890-130857	564x712	Update position moda
+3903-25954	313x672	Trade panel - Long
+3903-26048	313x672	Trade panel - Short
+3903-26142	313x672	Trade panel - Short 
+7679-71122	764x58	AI card - shouty
+7679-71196	199x524	dropdown-time
+7746-180909	248x844	sidebar - open - spo
+7890-128681	200x84	dropdown-3
+7890-139989	137x160	dropdown - filter
+9152-89094	120x152	dropdown - filter
+9156-133437	100x144	dropdown - filter
+8684-162077	375x812	Skai > Trade > Spot 
+8684-162456	375x812	Skai > Trade > Spot 
+8687-99711	1440x900	Skai > Trade > Spot 
+8687-103072	375x812	Skai > Trade > Spot 
+8700-103509	768x1024	Skai > Trade > Spot 
+8994-76734	375x578	Frame 456
+8994-77492	375x578	Frame 1220
+8994-77623	375x578	Frame 1221
+8994-77761	375x626	Frame 1222
+8994-77870	375x722	Frame 1223
+8994-78004	375x760	Frame 1224
+9002-157018	768x1024	Skai > Trade > Spot 
+9153-118323	375x688	Trade panel - Long
+9154-123038	354x378	modal - confirm orde
+9152-92016	1010x450	section
+9152-91623	950x390	section
+9150-79379	1250x288	section
+9152-85551	1000x210	section
+9150-79555	1250x234	section
+9152-87497	1350x234	section
+9148-82240	448x394	modal - confirm orde
+9069-263248	375x812	Skai > Dashboard - p
+9081-266034	375x812	Skai > Dashboard > R
+9081-267604	375x812	Skai > Dashboard > N
+9081-267988	375x812	Skai > Dashboard > W
+9069-259546	768x1024	Skai > Trade > Spot 
+9069-261150	768x1024	Skai > Dashboard - p
+9081-265572	768x1024	Skai > Dashboard > R
+9081-267317	910x146	Frame 1264
+9081-266293	768x1024	Skai > Dashboard > N
+9081-266657	768x1024	Skai > Dashboard > W
+9081-268243	490x167	Frame 1267
+9050-209536	768x1024	Skai > Trade > Spot 
+9050-212503	768x1024	Skai > Trade > Spot 
+9106-77805	730x752	Frame 1271
+9105-77267	730x752	Trade panel - Long
+9105-77093	730x752	Trade panel - Short
+9105-77432	730x752	Trade panel - Short 
+9045-170329	730x610	Trade panel - buy
+9045-170453	730x610	Trade panel - sell
+9045-170740	730x610	Trade panel - sell w
+9045-174613	730x692	Frame 1233
+9045-174230	730x800	Frame 1234
+9045-174360	730x836	Frame 1235
+9050-210827	708x710	Frame 1238
+9002-161526	180x492	dropdown-time
+9061-258382	375x492	dropdown-time
+9002-162080	708x112	AI alert types
+9045-170994	730x638	Trade panel - Limit
+9059-238612	534x386	Frame 1248
+9059-238601	534x18	Frame 1249
+9050-206715	768x1024	Skai > Trade > Spot 
+9048-192225	680x586	Select pair - USDC
+9048-192507	680x586	Select pair - Favori
+9050-210996	708x584	Frame 1239
+9050-211728	708x584	Frame 1240
+9050-211896	708x584	Frame 1241
+9050-211139	8x29	Tool
+9061-240412	375x812	Skai > Trade > Spot 
+9061-240109	354x556	Selected pair - USDC
+9061-240254	354x556	Selected pair - Favo
+9777-109249	375x528	dropdown-3
+9081-265513	966x148	Frame 627
+9081-273284	296x812	sidebar - open
+9081-273208	318x1024	sidebar - open
+9114-78042	375x688	Frame 1279
+9114-77711	375x688	Trade panel - Short
+9114-77881	375x688	Trade panel - Short 
+9152-81212	448x570	Update position moda
+9152-81278	448x626	Update position moda
+9154-124727	354x560	Update position moda
+9154-124786	354x620	Update position moda
+9154-119745	558x556	modal
+9403-133956	375x812	Skai > Trench - actu
+9403-140971	375x812	Skai > Trench - actu
+9419-149915	375x812	Skai > Trench - actu
+9419-151234	375x812	Skai > Trench - actu
+9403-142103	375x812	Skai > Trench - actu
+9432-159649	346x580	Frame 1302
+9432-158544	346x580	Frame 1301
+9553-131170	375x812	Skai > Trade > Spot 
+9553-133106	375x812	Skai > Trade > Spot 
+9553-132254	375x257	Frame 444
+9553-132827	375x270	Instant trade
+9774-89965	375x246	date range
+9776-96834	375x1107	Skai > Trade > Spot 
+9803-129761	375x1107	Skai > Trade > Spot 
+9803-131052	375x1107	Skai > Trade > Spot 
+9777-102315	375x1230	Skai > Trade > Spot 
+9776-98249	375x196	AI alert types
+9776-98250	375x94	On:Hover
+9776-97982	382x36	Frame 1355
+9777-104193	375x812	Skai > Trade > Spot 
+9777-105690	375x416	Chart - Line
+9777-105846	375x416	Chart - Area
+9777-105532	375x416	Chart - Area
+9780-143009	375x812	Skai > Trade > Spot 
+10706-128843	745x226	Frame 267
+10706-128950	1047x450	Frame 1356
+10706-129546	1047x450	Frame 1357
 ```
 
 ### ✅ Home 1 — 152 live-only of 215 genuine  _(v1-superseded)_
@@ -1053,7 +992,7 @@ Ranked by count. These are the unassessed frames.
 8540-29853	375x1460	Skai > Wallet > cont
 ```
 
-### ✝️ Trade (moved to Skai Web App 2) — 114 live-only of 117 genuine  _(tombstone)_
+### ✝️ Trade (moved to Skai Web App 2) — 93 live-only of 117 genuine  _(tombstone)_
 
 ```
 8558-139280	768x1024	Skai > Trade > Spot 
@@ -1077,7 +1016,6 @@ Ranked by count. These are the unassessed frames.
 8684-163505	768x1024	Skai > Trade > Spot 
 8687-101463	768x1024	Skai > Trade > Spot 
 8684-167264	768x1140	Skai > Trade > Spot 
-8666-108146	768x1024	Skai > Trade > Spot 
 8570-143200	768x1024	Skai > Trade > Spot 
 8626-61565	768x1024	Skai > Trade > Spot 
 8684-164665	768x1024	Skai > Trade > Spot 
@@ -1119,7 +1057,6 @@ Ranked by count. These are the unassessed frames.
 8570-143201	942x1005	main
 8566-141675	768x1230	Skai > Trade > Spot 
 9152-82793	1250x234	section
-8666-109490	375x812	Skai > Trade > Spot 
 8684-162077	375x812	Skai > Trade > Spot 
 8684-162456	375x812	Skai > Trade > Spot 
 8687-99711	1440x900	Skai > Trade > Spot 
@@ -1142,27 +1079,8 @@ Ranked by count. These are the unassessed frames.
 9419-149915	375x812	Skai > Trench - actu
 9419-151234	375x812	Skai > Trench - actu
 9403-142103	375x812	Skai > Trench - actu
-9264-89796	375x812	Skai > Trade > Perpe
-9403-139616	375x812	Skai > Trade > Perpe
-9403-143235	375x812	Skai > Trade > Perpe
-9403-146317	375x812	Skai > Trade > Perpe
-9477-67940	375x812	Skai > Trade > Perpe
-9477-72630	375x812	Skai > Trade > Perpe
-9550-128469	375x812	Skai > Trade > Perpe
-9477-71040	375x812	Skai > Trade > Perpe
-9414-148035	375x812	Skai > Trade > Perpe
-9477-69530	375x812	Skai > Trade > Perpe
-9422-152634	375x812	Skai > Trade > Perpe
-9403-144446	375x812	Skai > Trade > Perpe
-9432-157179	375x812	Skai > Trade > Perpe
 9432-159649	346x580	Frame 1302
 9432-158544	346x580	Frame 1301
-9264-91009	375x812	Skai > Trade > Perpe
-9380-78308	375x812	Skai > Trade > Perpe
-9380-79739	375x812	Skai > Trade > Perpe
-9379-131684	375x812	Skai > Trade > Perpe
-9373-129956	375x812	Skai > Trade > Perpe
-9264-93524	346x154	Expanded
 9553-131170	375x812	Skai > Trade > Spot 
 9553-133106	375x812	Skai > Trade > Spot 
 9553-132254	375x257	Frame 444
@@ -1357,8 +1275,8 @@ Ranked by count. These are the unassessed frames.
 
 
 ```
-13006-210578	partial	status.wave8.trench-trade.tsv:16
-13006-212012	partial	status.wave8.trench-trade.tsv:17
+13006-210578	partial	status.wave8.trench-trade.tsv:17
+13006-212012	partial	status.wave8.trench-trade.tsv:18
 13006-252257	done	status.wave2.trench-pnl.tsv:4
 9100-5928	frame-defect	status.wave8.games-a.tsv:3
 9175-9500	frame-defect	status.wave8.games-a.tsv:4
@@ -1366,12 +1284,12 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift D — one frame, two lanes, two different verdicts
 
-**58 of the 1914 in-scope matched frames (3.0%) are named by two or more rows that DISAGREE on status** — 58 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
+**39 of the 1914 in-scope matched frames (2.0%) are named by two or more rows that DISAGREE on status** — 39 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
 
 | the disagreement | frames |
 |---|---:|
-| `done + partial` | 29 |
-| `partial + unknown` | 25 |
+| `done + partial` | 24 |
+| `partial + unknown` | 11 |
 | `not-started + unknown` | 2 |
 | `frame-defect + partial` | 1 |
 | `frame-defect + unknown` | 1 |
@@ -1382,6 +1300,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 | status file | rows | rows naming a live node id | distinct live ids named |
 |---|---:|---:|---:|
+| `status.figma-unblock.launch.tsv` | 7 | 0 ← none | 0 |
 | `status.wave2.trench-execution-rail.tsv` | 7 | 0 ← none | 0 |
 | `status.pwa.tsv` | 2 | 0 ← none | 0 |
 | `status.baccarat.tsv` | 1 | 0 ← none | 0 |
@@ -1394,6 +1313,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.wallet.tsv` | 56 | 2 | 5 |
 | `status.home.tsv` | 51 | 8 | 8 |
 | `status.play.tsv` | 29 | 6 | 6 |
+| `status.figma-unblock.predict.tsv` | 8 | 2 | 2 |
 | `status.trade.tsv` | 93 | 25 | 57 |
 | `status.wave5.discover-createtoken.tsv` | 3 | 1 | 1 |
 | `status.wave2.predict.tsv` | 33 | 16 | 30 |
@@ -1413,19 +1333,19 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 ## What this number does NOT mean
 
-**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **1505 rows currently carry `done`**, and only **165** of them (11.0%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1340 assert completion with nothing behind them that a later auditor can re-check.
+**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **1665 rows currently carry `done`**, and only **320** of them (19.2%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1345 assert completion with nothing behind them that a later auditor can re-check.
 
 **2. `done` is silent about width.** Column 2 carries no viewport and must never be read as a desktop verdict. The width answers live in column 6 and start at `unknown`.
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 328 of 6961 status rows (4.7%) name no node id at all, and 350 (5.0%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 339 of 8253 status rows (4.1%) name no node id at all, and 363 (4.4%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 5200 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 9101 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
-**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1914 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to Skai Web App 2) 3/3, ✅ Trade 1 3/92 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
+**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1914 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to Skai Web App 2) 24/24, ✅ Trade 1 24/152 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
 **8. 118 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
 

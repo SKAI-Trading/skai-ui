@@ -609,7 +609,25 @@ fields, so it was never stray tabs.
 and both files are legacy. `validate-wave7.mjs --all` surfaces it in seconds, and
 a wave close should include one full-scope run.
 
-**Both files were cleared during the wave** and the writer now exits 0.
+**Both files were cleared during the wave** (`131ab4f`, 09:14) and the writer now
+exits 0.
+
+> ### ⛔ TWO RULES, TWO COLUMNS — AND CONFUSING THEM FAILS IN THE DANGEROUS DIRECTION
+>
+> Those same two files were **also** in the "applies to ZERO frames" set, because
+> column 1 holds bare family names. That is Form D addressing, and WAVE10-BRIEF
+> §3 is right that it must be left alone. **It is not what blocked the writer.**
+>
+> | column | symptom | fatal? | what to do |
+> |---|---|---|---|
+> | **1** — bare family name | *"applies to ZERO frames"* | no — reported, writer proceeds | ⛔ **do not re-key, do not delete** |
+> | **6** — prose where `<width>=<verdict>` belongs | `REFUSING TO WRITE registry.json` | **YES — whole wave** | clear column 6 |
+>
+> A reader who has been told "that class is Form D, don't touch it" and then meets
+> `token "MEASURED" is not <width>=<verdict>` will leave a fatal, one-edit blocker
+> in place — the exact inverse of the harm §3 exists to prevent. Both rules are
+> correct; they govern different columns. Two lanes reached this distinction
+> independently and it is the most reusable thing to come out of the incident.
 
 ### ✅ The apply was then run, and the sort fix measured rather than predicted
 
