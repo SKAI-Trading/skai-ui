@@ -14,6 +14,12 @@ nobody sized.
 Lanes were still writing. Everything below is "as measured at close of this
 lane's work", not a frozen wave total.
 
+> **Re-read after `7a0a3c8` (games-zero-a landed Chicken rows while this file was
+> being written): parity unchanged at 340/1,914 = 17.76%; built-at-all moved one
+> frame to 1,423/1,914 = 74.35%; the nine zero-parity pages are unchanged at 2 of
+> 9 moved.** Chicken's eight new rows produced no `done`. Every headline below
+> survives the re-read, which is the reason to do it rather than assume.
+
 ---
 
 ## 1. ★★★ THE GATE HAS BEEN ANNOUNCING A WAVE-WIDE WRITE BLOCKER THAT DOES NOT EXIST
