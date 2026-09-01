@@ -1,0 +1,5 @@
+# key	status	primaryFile	route	reason	bp
+# lane w10-play-hub - page 4459:128102 (Skai > Play) in file 3sSzw1KewMtUbeLAv7uW0r
+# owns pages/play/{Play,PlayLive,PlayTable,PlayGameDetailSections,GameDetailPage,faqIndicator}.tsx + components/play/ui/**
+# col2: unknown|done|partial|not-started|blocked-on-backend|frame-defect|furniture
+# col6: unknown|done|partial|not-started|missing|renders|broken|n-a
