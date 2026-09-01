@@ -138,10 +138,22 @@ const droppedByKind = [];
   status files on 2026-09-01, that single message covered 220 rows on 98 distinct
   ids, and they split like this:
 
-      not in the live harvest either        20 rows /  19 ids
+      not a TOP-LEVEL child of any page     20 rows /  19 ids
       live, in-scope, GENUINE              148 rows /  52 ids   <- the registry gap
       live, in-scope, furniture             44 rows /  19 ids
       live, but on an out-of-scope page      8 rows /   8 ids
+
+  ⚠️ AND THE FIRST GROUP IS ITSELF TWO THINGS. `live/*.tsv` lists only depth-1
+  children of a page, so a node that is real but INTERIOR — nested inside a frame
+  that IS harvested — is indistinguishable here from an id that names nothing.
+  `4725:55130` was resolved live during wave 10 (`getNodeByIdAsync`) and is a
+  descendant of `4725:55110` three levels down: real, and permanently
+  unaddressable, because no harvest of top-level children can ever reach it.
+  Re-harvesting does not fix an interior node; folding the measurement into the
+  ancestor frame's row does. The message says so, because the two fixes differ
+  and the old one named only the wrong half.
+
+  There is no containment data on disk to separate them — see `ancestorHint`.
 
   Only the first group is a lane's mistake. The other 200 rows name nodes that
   exist in Figma; the registry simply cannot address them (WAVE9-INTEGRITY §3
@@ -187,6 +199,42 @@ function liveNodes() {
   return LIVE_NODES;
 }
 
+/*
+  A candidate-ancestor hint for an interior node, and it is DELIBERATELY SILENT
+  most of the time.
+
+  There is no containment data anywhere on disk: `live/*.tsv` is a flat depth-1
+  list and registry frames carry no parent field, so "interior" cannot be proved
+  locally at all. The only local signal is that a Figma node id's major part is
+  the session that created it, which a parent usually shares with its children —
+  and equally with their siblings and cousins.
+
+  Measured over the 19 unresolved ids on 2026-09-01, that signal is excellent on
+  the games and Social pages (1, 3, 4 candidates) and worthless on Trade 2, where
+  EIGHT ids each match 375 live frames. A hint that names 375 frames is not a
+  hint. So it fires only at 5 or fewer, and it says "candidate", never "ancestor".
+*/
+const HINT_MAX = 5;
+let SAME_MAJOR = null;
+function ancestorHint(nodeId) {
+  if (!SAME_MAJOR) {
+    SAME_MAJOR = new Map();
+    for (const n of liveNodes().values()) {
+      if (n.scope !== "in-scope" || n.furniture !== null) continue;
+      const maj = n.id.split("-")[0];
+      if (!SAME_MAJOR.has(maj)) SAME_MAJOR.set(maj, []);
+      SAME_MAJOR.get(maj).push(n);
+    }
+  }
+  const cands = SAME_MAJOR.get(nodeId.split("-")[0]) ?? [];
+  if (!cands.length || cands.length > HINT_MAX) return "";
+  return (
+    `  [candidate ancestors, same id major, unproven: ` +
+    cands.map((c) => `${c.id} "${c.name}"`).join(" | ") +
+    `]`
+  );
+}
+
 /**
  * Why one unresolved node id is unresolved. Returns the bucket plus the sentence
  * the lane should act on.
@@ -195,9 +243,16 @@ function classifyUnresolved(nodeId) {
   const n = liveNodes().get(nodeId);
   if (!n)
     return {
-      bucket: "not-live",
+      bucket: "not-top-level",
       exitWorthy: true,
-      note: "and no live page carries it either — the id itself is wrong. Re-key it or drop the row.",
+      note:
+        "and no page's TOP-LEVEL harvest carries it either. That is TWO different things with different fixes: " +
+        "(a) the id is wrong — re-key it or drop the row; or " +
+        "(b) the node is INTERIOR, a descendant of a frame that IS harvested. `live/*.tsv` lists only depth-1 " +
+        "children, so an interior node can NEVER be addressable however fresh the harvest is — a re-harvest will " +
+        "not fix it. If it is interior, FOLD the measurement into the ANCESTOR frame's row and keep every number; " +
+        "the catalog's unit is the frame. Do not discard the verdict." +
+        ancestorHint(nodeId),
     };
   if (n.scope !== "in-scope")
     return {
@@ -387,11 +442,11 @@ if (SELF_TEST) {
       "NO DIGITS",
     ],
     [
-      "id-keyed row naming a node NEITHER the registry NOR Figma carries",
+      "id-keyed row naming a node no page's TOP-LEVEL harvest carries",
       `Ghost [9999-99999]${T}partial${T}-${T}-${T}width 375`,
-      "the id itself is wrong",
+      "no page's TOP-LEVEL harvest carries it",
       null,
-      true, // exit-worthy: this is the one case a lane can fix by editing the TSV
+      true, // exit-worthy: wrong id or interior node — either way the lane acts
     ],
     [
       "bare family name with no resolvable section",
