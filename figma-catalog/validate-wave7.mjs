@@ -281,13 +281,74 @@ const VERBOSE = process.argv.includes("--verbose");
 // exactly how a sweep ends up with a denominator of zero.
 const filter = SELF_TEST ? null : process.argv.slice(2).find((a) => !a.startsWith("--")) || null;
 
+/** The wave a status FILENAME belongs to; 0 for the un-numbered legacy files. */
+// A function declaration, and hoisted deliberately: `checkLines` needs it, and
+// the self-test calls `checkLines` long before the file-listing code below.
+function waveOf(f) {
+  return Number(/^status\.wave(\d+)\./.exec(f)?.[1] ?? 0);
+}
+
 let rows = 0;
 let idRows = 0;
 let famRows = 0;
 let bpCells = 0;
 const errors = [];
 const unapplied = [];
+/*
+  ★★★ QUALITY WARNINGS — SEPARATED FROM `errors` ON 2026-09-01, BECAUSE THE GATE
+  WAS PREDICTING A REFUSAL THE WRITER DOES NOT PERFORM, IN THE WRITER'S VOICE.
+
+  `errors` prints under the banner "N row(s) would make apply-status.mjs REFUSE
+  TO WRITE registry.json — for EVERY lane". That sentence is a claim about
+  another program, so it is only allowed to carry rows that program actually
+  refuses. Read out of `apply-status.mjs` rather than inferred from here, its
+  refusal is `bpErrors.length` and `bpErrors` is appended in exactly three
+  places:
+
+    1. `normaliseStatus(row.status) === null`  — column 2 is not a row status
+    2. `row.extra.length`                      — a TAB inside the reason prose
+    3. `parseBpCell(row.bpCell).errors`        — column-6 grammar
+
+  There is no fourth. The "a `done` with no digits" rule below is this file's
+  own bar and exists nowhere in the writer. Measured 2026-09-01 across all 171
+  status files: of the 142 rows under that banner, **142 were the no-digit rule
+  and 0 were anything the writer rejects** — `apply-status.mjs --dry-run` exits
+  0 over the same tree and the real run writes registry.json.
+
+  Two lanes reported the red `--all` as blocking the wave, and the integrity
+  lane acted on it. A gate that cries wolf teaches the reflex of ignoring it,
+  which is how the genuine refusal at `131ab4f` sat unnoticed for over a wave.
+
+  ⚠️ AND THE RULE IS A FLOOR, NOT A BAR — it is blind to the worse case. A
+  reason may be dense with digits that are not measurements: wave 11 found 7 of
+  Blackjack's 13 `done` rows standing on a scope argument that quoted node ids,
+  and the page fell 81.2% -> 56.3% when they were re-measured. `\d` cannot tell
+  a measurement from a citation. Do not read a clean quality section as "the
+  `done` rows are measured".
+*/
+const quality = [];
+/** Cross-wave id collisions — the writer's intended supersession, counted only. */
+const supersessions = [];
 const seenIds = new Map();
+
+/**
+ * Clear every accumulator between self-test fixtures.
+ *
+ * ★ ONE PLACE, not three. The self-test cleared its accumulators inline at three
+ * sites, so adding a fourth accumulator meant remembering three edits — and a
+ * fixture that runs with a stale accumulator reports a message the row before it
+ * produced. That is the same "second copy of a rule" shape this file's header
+ * warns about, at self-test scale.
+ */
+function resetAccumulators() {
+  errors.length = 0;
+  unapplied.length = 0;
+  quality.length = 0;
+  supersessions.length = 0;
+  droppedByKind.length = 0;
+  registryGap.length = 0;
+  seenIds.clear();
+}
 const histogram = {};
 
 /** Check one file's worth of lines. Pure: appends to the shared accumulators. */
@@ -374,12 +435,35 @@ function checkLines(file, lines) {
       }
       // ✅ NO KIND CHECK HERE ANY MORE — see the NODE_KIND note at the top.
       // apply-status.mjs now applies an ID-keyed row whatever the frame's kind.
+      /*
+        ★★★ A COLLISION ACROSS WAVES IS THE SUPERSESSION THE WRITER INTENDS.
+
+        `apply-status.mjs` resolves duplicate ids last-writer-wins over a list
+        sorted by parsed generation, and its own comment at that branch calls the
+        cross-wave case correct: "across waves that is intended (wave 7
+        supersedes wave 5)". The case it calls a defect is two lanes of the SAME
+        wave, where filename order rather than evidence decides.
+
+        This message did not make that distinction, and under `--all` the
+        difference is the whole report. Measured 2026-09-01 over 171 files:
+        3,989 collisions, of which **3,949 are cross-generation** — every one of
+        them the writer doing what it is documented to do — and 40 are
+        same-generation (32 of those the `status.governance*.tsv` provenance
+        halves the writer's comment also names as harmless).
+
+        So the old behaviour itemised 3,989 lines and exited 1, which buried the
+        40 that mean something under 99% noise and put 4,000 lines above the one
+        banner a reader was looking for. Cross-wave collisions are now counted,
+        listed under `--verbose`, and not exit-worthy. Same-wave collisions keep
+        the exit, because a lane can act on those and wave 10 found four.
+      */
       const prev = seenIds.get(addr.nodeId);
-      if (prev)
-        unapplied.push(
-          `${where}: node ${addr.nodeId} already claimed by ${prev} — later file silently replaces the earlier verdict`,
-        );
-      else seenIds.set(addr.nodeId, where);
+      if (prev) {
+        const sameWave = waveOf(prev.file) === waveOf(file);
+        const msg = `${where}: node ${addr.nodeId} already claimed by ${prev.where} — later file silently replaces the earlier verdict`;
+        if (sameWave) unapplied.push(`${msg} (SAME wave — filename order, not evidence, is deciding this)`);
+        else supersessions.push(msg);
+      } else seenIds.set(addr.nodeId, { where, file });
     } else if (addr.kind === "section") {
       unapplied.push(
         `${where}: column 1 "${row.family}" parsed as a SECTION ROLLUP — rollups are recorded but deliberately never applied to any frame`,
@@ -403,10 +487,16 @@ function checkLines(file, lines) {
     }
 
     // ── a `done` with no numbers is not a `done` ────────────────────────────
+    // A QUALITY warning, not a write blocker. See the `quality` declaration for
+    // the writer's real refusal condition and for what this rule cannot see.
     if (canonical === "done" && !/\d/.test(row.reason || ""))
-      errors.push(
-        `${where}: status "done" but the reason column carries NO DIGITS — measured parity requires the measured numbers in the row`,
-      );
+      quality.push({
+        where,
+        file,
+        msg:
+          `${where}: this \`done\` carries no measured numbers; it is counted in parity and should be ` +
+          `re-measured or demoted. apply-status.mjs writes registry.json regardless — this is the bar, not the writer.`,
+      });
   }
 }
 
@@ -436,10 +526,66 @@ if (SELF_TEST) {
       `Some Screen [9003-117337]${T}renders${T}-${T}-${T}header 56`,
       "wrong column",
     ],
+    /*
+      ★★★ THE PIN FOR THE 2026-09-01 FALSE WAVE-WIDE BLOCKER.
+
+      This fixture used to assert "NO DIGITS" and nothing else, so it passed
+      while the message sat in `errors` and printed under a banner claiming
+      apply-status.mjs would refuse to write registry.json for every lane. The
+      writer has no such rule: measured that day, 142 of the 142 rows under that
+      banner were this one, and `apply-status.mjs --dry-run` exited 0 over the
+      same tree.
+
+      `wantChannel: "quality"` is the assertion that matters — moving the push
+      back into `errors` fails this case, where a substring match would not.
+    */
     [
-      "a `done` with no numbers in its reason",
+      "a `done` with no numbers is a QUALITY warning, NOT a writer refusal",
       `Some Screen [9003-117337]${T}done${T}-${T}-${T}matches the frame`,
-      "NO DIGITS",
+      "carries no measured numbers",
+      null,
+      false, // ← must NOT fail the gate: the writer accepts this row
+      false,
+      "quality",
+    ],
+    /*
+      ★ AND THE OTHER HALF: the three rules the writer really does refuse over
+      must stay in `errors`. Without these, a fix could empty `errors` entirely
+      and the suite would still pass on the fixture above — the split would be
+      decorative in the opposite direction.
+    */
+    [
+      "an unrecognised column-2 status IS a writer refusal (bpErrors: normaliseStatus)",
+      `Some Screen [9003-117337]${T}not-measured${T}-${T}-${T}header 56 = frame 56`,
+      "is not a row status",
+      null,
+      true,
+      false,
+      "errors",
+    ],
+    [
+      "cross-wave id collision is the writer's INTENDED supersession, not a defect",
+      [
+        [`status.wave9.a.tsv`, `Some Screen [9003-117337]${T}partial${T}-${T}-${T}width 375 = frame 375`],
+        [`status.wave11.b.tsv`, `Some Screen [9003-117337]${T}done${T}-${T}-${T}width 375 = frame 375`],
+      ],
+      "already claimed by",
+      null,
+      false, // ← apply-status.mjs sorts by generation and means to do this
+      false,
+      "supersessions",
+    ],
+    [
+      "SAME-wave id collision is a real cross-lane collision and keeps the exit",
+      [
+        [`status.wave11.a.tsv`, `Some Screen [9003-117337]${T}partial${T}-${T}-${T}width 375 = frame 375`],
+        [`status.wave11.b.tsv`, `Some Screen [9003-117337]${T}done${T}-${T}-${T}width 375 = frame 375`],
+      ],
+      "SAME wave",
+      null,
+      true,
+      false,
+      "unapplied",
     ],
     [
       "id-keyed row naming a node no page's TOP-LEVEL harvest carries",
@@ -545,21 +691,22 @@ if (SELF_TEST) {
 
   let caught = 0;
   let skipped = 0;
-  for (const [label, row, must, asFile, wantExit, skip] of FIXTURES) {
+  for (const [label, row, must, asFile, wantExit, skip, wantChannel] of FIXTURES) {
     if (skip) {
       skipped++;
       console.log(`  SKIPPED ${label} — the bucket is empty today, so this branch went UNTESTED.`);
       continue;
     }
-    errors.length = 0;
-    unapplied.length = 0;
-    droppedByKind.length = 0;
-    registryGap.length = 0;
-    seenIds.clear();
-    checkLines(asFile ?? "status.wave7.__fixture.tsv", [row]);
+    resetAccumulators();
+    // A fixture is normally one row in one file. A collision fixture needs TWO
+    // rows in two files, so `row` may also be a list of [file, line] pairs.
+    for (const [f, l] of Array.isArray(row) ? row : [[asFile ?? "status.wave7.__fixture.tsv", row]])
+      checkLines(f, [l]);
     const report = [
       ...errors,
       ...unapplied,
+      ...quality.map((q) => q.msg),
+      ...supersessions,
       ...registryGap.map((g) => g.msg),
       // The silent drop is reported through its own banner, not through
       // `errors`/`unapplied`, so the self-test has to reach into it explicitly
@@ -577,25 +724,46 @@ if (SELF_TEST) {
     const sawMust = report.includes(must);
     const exits = errors.length > 0 || unapplied.length > 0;
     const exitOk = wantExit === undefined || wantExit === null || exits === wantExit;
-    const ok = sawMust && exitOk;
+    /*
+      ★★★ WHICH ACCUMULATOR HOLDS THE MESSAGE IS ITSELF THE BEHAVIOUR.
+
+      `errors` is printed under "N row(s) would make apply-status.mjs REFUSE TO
+      WRITE registry.json — for EVERY lane". That is a claim about a DIFFERENT
+      PROGRAM, and on 2026-09-01 it was false for every row it named: 142 of 142
+      were the no-digit `done` rule, which `apply-status.mjs` does not implement.
+
+      Exit-worthiness alone cannot pin the fix. A future edit could make the
+      no-digit rule non-exit-worthy while leaving it in `errors`, and the banner
+      would go on telling every lane the wave is blocked. So the channel is
+      asserted by name.
+    */
+    const channels = { errors, unapplied, quality, supersessions, registryGap, droppedByKind };
+    const channelOk =
+      !wantChannel ||
+      (channels[wantChannel].length > 0 &&
+        Object.entries(channels).every(([n, c]) => n === wantChannel || c.length === 0));
+    const ok = sawMust && exitOk && channelOk;
     if (ok) caught++;
     console.log(`  ${ok ? "CAUGHT " : "MISSED "} ${label}`);
     if (!sawMust) console.log(`      wanted a report containing "${must}", got: ${report || "(nothing)"}`);
     else if (!exitOk)
       console.log(`      message correct, but exit-worthiness is ${exits} and must be ${wantExit}`);
+    else if (!channelOk)
+      console.log(
+        `      message correct, but it landed in [${Object.entries(channels)
+          .filter(([, c]) => c.length)
+          .map(([n]) => n)
+          .join(", ") || "nothing"}] and must land ONLY in "${wantChannel}"`,
+      );
   }
   // And a control: a well-formed row must produce NO complaint. Without this the
   // suite could pass by flagging everything.
-  errors.length = 0;
-  unapplied.length = 0;
-  droppedByKind.length = 0;
-  registryGap.length = 0;
-  seenIds.clear();
+  resetAccumulators();
   checkLines(
     "status.wave7.__fixture.tsv",
     [`Skai > Play > Casino > Blackjack (1440 x 900px) [9003-117337]${T}done${T}a.tsx${T}/play${T}header 56 = frame 56; radius 12 = frame 12${T}desktop=renders @2026-08-31/w7-verify`],
   );
-  const controlClean = !errors.length && !unapplied.length && !registryGap.length;
+  const controlClean = !errors.length && !unapplied.length && !registryGap.length && !quality.length;
   console.log(`  ${controlClean ? "CLEAN  " : "FALSE+ "} control: a well-formed row produces no complaint`);
 
   /*
@@ -615,17 +783,13 @@ if (SELF_TEST) {
     So it is inverted: this row must now produce NO complaint. If the kind guard
     is ever reintroduced on the id path, this control goes FALSE+ and says so.
   */
-  errors.length = 0;
-  unapplied.length = 0;
-  droppedByKind.length = 0;
-  registryGap.length = 0;
-  seenIds.clear();
+  resetAccumulators();
   checkLines(
     "status.wave7.__fixture.tsv",
     [`Wallet component [13008-27159]${T}partial${T}-${T}-${T}width 375 = frame 375`],
   );
   const idKindClean =
-    !errors.length && !unapplied.length && !droppedByKind.length && !registryGap.length;
+    !errors.length && !unapplied.length && !droppedByKind.length && !registryGap.length && !quality.length;
   console.log(
     `  ${idKindClean ? "CLEAN  " : "FALSE+ "} control: an ID-keyed row on a NON-SCREEN frame applies (guard removed in f81cee7)`,
   );
@@ -665,8 +829,7 @@ const ALL = process.argv.includes("--all");
   because the atomic column-6 refusal does not care which file the bad cell is
   in and older lanes wrote into un-numbered files.
 */
-/** The wave a status FILENAME belongs to; 0 for the un-numbered legacy files. */
-const waveOf = (f) => Number(/^status\.wave(\d+)\./.exec(f)?.[1] ?? 0);
+// `waveOf` is declared above `checkLines`, which needs it — see the note there.
 
 const waveFlagIdx = process.argv.indexOf("--wave");
 const waveArg = waveFlagIdx !== -1 ? process.argv[waveFlagIdx + 1] : null;
@@ -768,10 +931,41 @@ if (LIVE_LOAD_ERROR) {
   console.log(`   Some of those rows are probably correct work — do not act on them until live/ reads.`);
 }
 
+// ── CROSS-WAVE SUPERSESSION — counted, never itemised unless asked ────────────
+// The writer means to do this. See the note at the collision branch.
+if (supersessions.length) {
+  console.log(
+    `\nℹ️  ${supersessions.length} node id(s) are claimed in more than one WAVE — the newer wave supersedes the older,`,
+  );
+  console.log(`   which is what apply-status.mjs sorts by generation to do. Not a defect, not exit-worthy.`);
+  if (VERBOSE) for (const s of supersessions) console.log(`      ${s}`);
+  else console.log(`      (--verbose lists every one)`);
+}
+
 if (unapplied.length) {
   console.log(`\n⚠️  ${unapplied.length} row(s) would apply to ZERO frames:`);
   for (const u of unapplied) console.log(`      ${u}`);
 }
+
+// ── QUALITY — THE BAR, AND EXPLICITLY NOT THE WRITER ──────────────────────────
+if (quality.length) {
+  const byFile = {};
+  for (const q of quality) (byFile[q.file] ??= []).push(q);
+  const thisWave = quality.filter((q) => waveOf(q.file) === Number(WAVE));
+  console.log(`\n⚠️  ${quality.length} \`done\` row(s) carry NO measured numbers in the reason column.`);
+  console.log(`   Each is counted in the parity percentage and should be re-measured or demoted.`);
+  console.log(`   ✅ apply-status.mjs writes registry.json regardless — its refusal is column-2 status,`);
+  console.log(`      column-6 grammar and stray tabs, and none of these trips any of them.`);
+  console.log(`   ⚠️ This rule is a FLOOR. It cannot see a reason full of digits that are not`);
+  console.log(`      measurements — wave 11 found 7 Blackjack \`done\` rows standing on a scope`);
+  console.log(`      argument that quoted node ids, and the page fell 81.2% -> 56.3% once measured.`);
+  for (const [f, list] of Object.entries(byFile).sort((a, b) => b[1].length - a[1].length))
+    console.log(`      ${f.padEnd(36)} ${String(list.length).padStart(4)} row(s)`);
+  if (thisWave.length)
+    console.log(`   ★ ${thisWave.length} of them are in wave-${WAVE} files — new debt, written this wave.`);
+  if (VERBOSE) for (const q of quality) console.log(`        ${q.msg}`);
+}
+
 if (errors.length) {
   console.log(`\n❌ ${errors.length} row(s) would make apply-status.mjs REFUSE TO WRITE registry.json — for EVERY lane:`);
   for (const e of errors) console.log(`      ${e}`);
@@ -779,9 +973,11 @@ if (errors.length) {
   console.log(`    Column 6 verdicts: ${Object.keys(BP_VERDICTS).join(" | ")}`);
   console.log(`    Column 2 statuses: ${[...STATUS_VALID].join(" | ")}`);
 }
+if (!errors.length)
+  console.log(`\n✅ nothing here would stop apply-status.mjs writing registry.json.`);
 if (!errors.length && !unapplied.length)
   console.log(
-    `\n✅ all ${rows} row(s) across ${files.length} file(s) parse and address a real frame` +
+    `✅ all ${rows} row(s) across ${files.length} file(s) parse and address a real frame` +
       (registryGap.length ? ` (${registryGap.length} of them via the registry gap above, which is not a lane defect).` : "."),
   );
 
