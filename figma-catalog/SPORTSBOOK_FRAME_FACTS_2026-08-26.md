@@ -428,8 +428,48 @@ The eight standalone frames are **432 wide because that is a column inside the
 the host page `9215:15732` (1440 → `main` 1382 → content 1318) the same widget
 sits at **x=886, 432 wide** — and 886 + 432 = 1318 exactly.
 
-**There is no 768 and no 375 artboard for any of this.** If a mobile sportsbook
-is wanted, it is not in Figma and has to be designed.
+> ⛔ **THAT SENTENCE IS FALSE, and it cost three waves. Corrected 2026-09-01.**
+>
+> ~~**There is no 768 and no 375 artboard for any of this.** If a mobile
+> sportsbook is wanted, it is not in Figma and has to be designed.~~
+>
+> **Sixteen more Game view artboards exist on this same page**, and all sixteen
+> resolve by id:
+>
+> | width | frames |
+> |---|---|
+> | **708** | `11116:85400` `11116:85474` `11116:85548` in play · `11116:85638` `11116:85719` pre-match · `11116:85818` Tilt · `11116:85890` Events · `11116:86035` Outcome |
+> | **343** | `11148:201689` `11150:39358` `11150:39212` `11150:39427` `11150:39285` in play · `11137:186039` `11150:40456` `11150:40603` pre-match / Tilt |
+>
+> 708 = 768 − 2×30 and 343 = 375 − 2×16 — the tablet and mobile content
+> columns. Measured shells, all three cuts:
+>
+> | band | 343 | 708 | 432 |
+> |---|---|---|---|
+> | header | 50 | 50 | 50 |
+> | body pre-match | 302.799 | 377.799 | 377.812 |
+> | body in play | 302.799 | 399.799 | 401.812 |
+> | strip | 54 | 64 | 66 |
+> | gutter | 12 | 16 | 16 |
+> | column gap | 8 | 24 | 24 |
+> | header radius | top 12 | top 12 | top 16 |
+> | strip radius | bottom 12 | bottom 12 | bottom 24 |
+> | tab cell | 78.25 × 30 | 167.5 × 32 | 98.5 × 34 |
+> | tab label | Mulish 12/14 | Mulish 14/16 | Mulish 14/18 |
+>
+> ★ At 343 the rail is the **same height in both clocks** — the body is fixed
+> and the info row grows into it. A height derived from the desktop cut is 22px
+> out. The pitch wrapper is 401 at **both** 432 and 708 and only fills at 343.
+> The mobile set has **no Events and no Outcome** artboard.
+>
+> ★ **The lesson.** This did not say "not found" — it said the artboards *do not
+> exist*, and 16 frames sat at `not-started` on that sentence while
+> `GameViewRail.tsx` copied it into its own docblock. **A stale absence claim
+> costs exactly what a stale violation claim costs.** Two further claims in this
+> section were wrong the same way: the body's `clipsContent` is TRUE on all 24
+> frames (it is what crops the wrapper's 0.5px overhang, not what permits it),
+> and `Pitch` is not "an empty layout box by design" on the non-Gameplay tabs —
+> it holds a head-to-head list and only the WRAPPER FILL changes.
 
 The eight are a 3x3 canvas matrix (one cell empty) at x 20368 / 20915 / 21462:
 
