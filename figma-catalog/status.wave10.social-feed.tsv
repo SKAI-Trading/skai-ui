@@ -1,60 +1,58 @@
 # key	status	primaryFile	route	reason	bp
-# REGISTRY RECOVERY NOTE - READ BEFORE TRUSTING registry.json FOR THIS FILE.
-# Every row below is CORRECT ON DISK and WRONG IN registry.json. The fix is to
-# re-run the writer once apply-status.mjs is corrected. Nothing here needs
-# re-measuring.
+# REGISTRY NOTE - RESOLVED 2026-09-01. DO NOT ACT ON THIS AS AN OPEN DEFECT.
+# An earlier version of this note said these rows were wrong in registry.json
+# and told a reader to re-run the writer to recover them. That was true when
+# written and is FALSE NOW: apply-status.mjs has been fixed. There is nothing to
+# recover and nothing here to re-measure. Kept as a record because the severity
+# measurement is worth having, not because anything is outstanding.
 #
-# MECHANISM. apply-status.mjs:102 sorts lane files by stem.localeCompare and
-# :245 is last-wins. That compare is lexicographic, not numeric, so
-# "status.wave10.x".localeCompare("status.wave9.x") is -1 and the real sorted
-# order is wave10, wave2, wave3 ... wave9. Wave 10 does not merely sort behind
-# wave 9; it sorts behind EVERY numbered wave including wave 2, so every wave-10
-# row loses to whatever older row shares its node. The comment at :238 says the
-# cross-wave overwrite is intended, and it was straightforwardly true until a
-# wave number reached two digits - which is this wave.
+# THE DEFECT, AND IT IS CLOSED. apply-status.mjs sorted lane files by
+# stem.localeCompare and resolved last-wins. That compare is lexicographic, not
+# numeric, so "status.wave10.x".localeCompare("status.wave9.x") is -1 and the
+# sorted order ran wave10, wave2, wave3 ... wave9. Wave 10 did not merely sort
+# behind wave 9, it sorted behind EVERY numbered wave including wave 2, so every
+# wave-10 row lost to whatever older row shared its node. That is why it
+# survived eight waves: the ordering was correct until a wave number reached two
+# digits.
 #
-# THIS FILE. 31 of 31 rows are overwritten; 24 land on a different status. All
-# three promotions to done are reverted, two of them to a status WORSE than the
-# partial they were promoted from:
-#   9657-215247   done -> wave4.social-a  partial
-#   11474-224727  done -> wave4.social-b  blocked-on-backend
-#   11474-224476  done -> wave4.social-b  blocked-on-backend
-# The other 21 are the same shape. The 18 feed-menu frames revert from
-# not-started to partial, which is the damaging direction: partial asserts the
-# menus are built, and the finding this wave is that buildPostsMenu and its four
-# siblings are called by nothing outside their own barrel.
+# THE FIX, verified in source here and not taken on report: genOf() at :55, a
+# self-test at :85-95 that checks the comparator and carries a control against
+# calling everything ordered, and the sort at :192 now reads
+# genOf(a.stem) - genOf(b.stem) || a.stem.localeCompare(b.stem). Last-wins is
+# still at :335, which is correct once the order is right.
 #
-# SCOPE. Only apply-status.mjs is affected, so only registry.json is wrong.
-# coverage.mjs resolves by parsed generation (genOf at :480, newest-first at
-# :484-485) and validate-wave7.mjs parses the number at :674, so the published
-# parity percentage and the gate are both sound. bp.mjs, bp-report.mjs,
-# hotspots.mjs, verify-catalog-counts.mjs and wave6-verify.mjs do no
-# wave-ordered resolution; build-registry.mjs overwrites by section, not wave,
-# and announces it through stats.keyCollisions.
+# THIS FILE, measured under both comparators after the fix landed:
+#   OLD comparator  31 of 31 rows overwritten, 24 differing
+#   NEW comparator   0 of 31
+# Under the old one all three promotions to done reverted, two of them to a
+# status WORSE than the partial they came from - 11474-224727 and 11474-224476
+# both landed on wave4's blocked-on-backend - and the 18 feed-menu frames
+# reverted not-started to partial, which asserts the menus are built when the
+# finding is that buildPostsMenu and its four siblings are called by nothing
+# outside their own barrel. None of that happens now.
 #
-# SIZE. Measured two ways across the committed status files: 458 wave-10 nodes
-# overwritten by an older wave with 184 differing (my regex over column 1), and
-# 471 / 189 (w10-social-blocked, using bp.mjs parseRowKey). Two extraction
-# methods ~3% apart; treat the figure as approximate and the effect as solid.
-# The overwrite rate tracks how much prior coverage a lane's frames already
-# carried, so a re-audit lane takes 100% by construction - which is why both
-# this file and w10-social-blocked's are at 31/31 and 69/69. The bug does its
-# maximum damage to exactly the work meant to correct stale verdicts.
+# THE DURABLE LESSON, which outlives the bug. The overwrite rate tracked how
+# much prior coverage a lane's frames already carried, so a re-audit lane took
+# 100% by construction - this file 31 of 31, w10-social-blocked's 69 of 69. The
+# damage fell hardest on exactly the work meant to correct stale verdicts, and
+# its symptom was the catalog quietly reasserting the answer a re-audit had just
+# disproved. Worth remembering the next time a resolver is written.
 #
-# NOT FIXED IN-WAVE deliberately: apply-status.mjs is the writer 19 lanes
-# resolve against, and WAVE9-INTEGRITY section 10 settled that editing a shared
-# instrument mid-run is the wrong order of operations. One loose end for the
-# same pass: validate-wave7.mjs:686 uses a plain .sort() for the list it
-# iterates, so its "later file silently replaces the earlier verdict" message
-# inherits the same ordering and would name the wrong survivor across waves. It
-# is accurate within a wave, which is why it read correctly for the four
-# same-wave collisions this lane settled.
+# AND THE LESSON THIS NOTE IS ITSELF AN EXAMPLE OF. Both this note and
+# w10-social-blocked's went stale within the hour of being written, describing a
+# repaired defect as live and instructing a reader to re-run a writer for
+# nothing. CLAUDE.md's rule about a stale "known violation, not yet fixed" line
+# reading as standing permission applies to recovery notes too, and "a brief's
+# CODE facts rot within the wave" applies to a lane's own output, not just to
+# briefs it reads. A note that names a defect must be re-verified before it is
+# trusted, including by the lane that wrote it.
 #
-# A latent trap for anyone adding a note like this one: keep every # at column
-# 0. apply-status.mjs:256 and validate-wave7.mjs:300 skip a comment with
-# line.trimStart().startsWith("#"), but coverage.mjs:247 and :281 test
-# l.startsWith("#") with no trimStart, so an INDENTED comment line is skipped by
-# two readers and parsed as a data row by the third. No file currently has one.
+# STILL LIVE, and unrelated to the above: keep every # in a status TSV at column
+# 0. apply-status.mjs:256, validate-wave7.mjs:300 and coverage.mjs:322 skip a
+# comment with line.trimStart().startsWith("#"), but coverage.mjs:247 and :281
+# test l.startsWith("#") with no trimStart, so an INDENTED comment line is
+# skipped by three read sites and parsed as a DATA ROW by two. No file currently
+# has one. This trap outlived the bug that prompted the note.
 Skai > Social - dropdown 1VH (1440 x 900px) [10232-201644]	partial	src/components/social/feed/PostCard.tsx	/social	RE-MEASURED off node data 2026-09-01, first hand, not carried. POST COLUMN 10232:201647 = 506 wide VERTICAL gap16. Header Frame 758 506x40 SPACE_BETWEEN, avatar 40, name x=48. Author Manrope Bold 16/22 ls-4pct #FFFFFF = text-sm/[16px] md:text-sm/[18px] xl:text-base/[22px] font-bold. Follow Manrope 14/18 #56C7F3 = text-sky-blue (NOT text-primary #2DEDAD). Timestamp Mulish 14/18 #FFFFFF at opacity 0.64 = font-mulish text-white/[0.64] (NOT text-muted-foreground #B3B9CC). Media Frame 269 506x506 radius 24 = rounded-[16px] xl:rounded-[24px]. Footer Frame 762 gap12. Bonding Frame 506 458x10 gap1, fill rect 65x10 #17F9B4 radius 4/0/0/4, track rect 392x10 #122524 radius 0/4/4/0 = bg-alien-green-bright over bg-[#122524] both rounded-[4px]. Action row Frame 760 506x30 = h-[28px] md:h-[30px]. Buy CTA 56x30 radius 8 pad 6/16 fill #17F9B4, label Manrope 14/18 #001615. Cashtag Manrope Bold 14/18 #FFFFFF, caption Manrope 14/18 #FFFFFF, previews Frame 355 gap12 inner gap2 Manrope 12/16. CREATE-NEW trigger 10235:202363 CTA/button 125x36 radius 8 pad 6/16 gap8 fill #56C7F3; panel 10235:202377 dropdown-3 125x122 radius 12 pad8 gap8 fill #122524 on a #123F3C 1px stroke. SEPARATOR 10232:201698 VECTOR 506 wide stroke #123F3C 1px inside Main container 10232:201646 VERTICAL gap32 - card ends y788, rule y820, next card y852, so exactly 32 clear either side = divide-border with py-8 first:pt-0. PARTIAL not done: everything above is measured and matches, but this frame is a whole 1440x900 screen and its sidebar, header band and right rail are SocialSidebar/SocialChrome/SocialRightMenu, outside this lane's files and not measured this wave.	desktop=partial @2026-09-01
 Skai > Social - dropdown 1VH (768 x 1024px) [11442-165355]	partial	src/components/social/feed/PostCard.tsx	/social	RE-MEASURED off node data 2026-09-01. POST COLUMN 11442:165404 = 506x786 VERTICAL gap16, identical structure to 1440, only the ramp moves. Author 11442:165408 Manrope Bold 14/18 #FFFFFF. Follow 11442:165410 Manrope 12/16 #56C7F3. Timestamp 11442:165411 Mulish 14/16 #FFFFFF at 0.64. Media 11442:165413 Frame 269 506x506 radius 16 - note 16 here and 24 at 1440, which is why the class is rounded-[16px] xl:rounded-[24px] and not one value. Footer Frame 762 gap12. Action row Frame 760 506x30. Buy 11442:165431 56x30 radius 8 pad 6/16 fill #17F9B4. Caption 11442:165435 Manrope 12/16 #FFFFFF. Previews Frame 355 gap12 inner gap2. CREATE-NEW trigger 11442:165365 125x36 radius 8 pad 6/16 gap8 fill #56C7F3 - same 36 as 1440, so md:h-9 covers both. Separator 11442:165455 VECTOR 506 stroke #123F3C 1px. PARTIAL for the same scope reason as the 1440 twin: page chrome is another lane's files.	tablet=partial @2026-09-01
 Skai > Social - dropdown 1VH (375 x 812px) [11442-173646]	partial	src/components/social/feed/PostCard.tsx	/social	RE-MEASURED off node data 2026-09-01. POST COLUMN 11442:173680 = 343 wide (full bleed inside the 16px page gutter, not 506) VERTICAL gap16. Author 11442:173684 Manrope Bold 14/16. Follow 11442:173686 Manrope 12/14 #56C7F3. Timestamp 11442:173687 Mulish 12/14 #FFFFFF at 0.64. Media 11442:173689 343x343 radius 16. Footer Frame 762 gap12. Action row 11442:173700 343x28 - 28 here against 30 at 768/1440, which is the h-[28px] md:h-[30px] step. Buy 11442:173707 56x28 radius 8 pad 6/16 fill #17F9B4. Caption 11442:173711 Manrope 12/14 #FFFFFF. Previews 11442:173712 Frame 355 gap12 inner gap2. CREATE-NEW trigger 11442:173656 125x32 radius 8 pad 6/16 gap8 fill #56C7F3 - 32 at 375 against 36 above, and index.css:747-753 forces 44 below 768, so the control carries no-min-size or both drawn heights are lost. Separator 11442:173731 VECTOR 343 stroke #123F3C 1px. PARTIAL for the same scope reason as the other two widths.	mobile=partial @2026-09-01
