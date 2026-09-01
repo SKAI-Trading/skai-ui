@@ -98,3 +98,73 @@ Skai PDF Invoice - 612 x 792px [13008-119800]	blocked-on-backend	src/components/
 Skai PDF Receipt - 612 x 792px [13008-119845]	blocked-on-backend	src/components/home-redesign/upgrade/WelcomeSuccessModal.tsx	/upgrade/checkout	STATUS CONFIRMED, same corrected ordering as 13008-119800: the renderer is a front-end dependency, the missing receipt number is the backend half, and no relation in the prod OpenAPI carries one.
 Skai PDF Receipt - darkmode - 612 x 792px [13008-119888]	blocked-on-backend	src/components/home-redesign/upgrade/WelcomeSuccessModal.tsx	/upgrade/checkout	STATUS CONFIRMED, darkmode variant of 13008-119845, same evidence.
 Skai PDF Invoice - darkmode - 612 x 792px [13008-119931]	blocked-on-backend	src/components/home-redesign/upgrade/WelcomeSuccessModal.tsx	/upgrade/checkout	STATUS CONFIRMED, darkmode variant of 13008-119800, same evidence.
+# SOCIAL, THE REMAINING 24 - WHY THIS FILE CARRIES ONLY ONE OF THEM.
+# Wave 10 took Social from 61 blocked to 24 and re-probed ALL 24 of the
+# survivors on 2026-09-01 against the live object, not the ledger. Rewriting
+# them here would be actively harmful: apply-status resolves newest generation
+# first, so a wave-11 row REPLACES the wave-10 reason on the same node, and a
+# thinner "confirmed again" would delete the measurement that earned the
+# verdict. The 24 were re-read and the enabler and layer tests re-applied to
+# each; the only one where this lane adds a measurement is below. The other 23
+# are deliberately left to status.wave10.social-blocked.tsv.
+#
+# ★ THE ONE THING WORTH RECORDING ACROSS THE OTHER 23: their blockers split
+# three ways and only one of the three is a Postgres relation. Stories (3 rows)
+# are absent on all three legs - no table, no chain event, no indexer route.
+# Favourites (3 rows) are the only genuine missing-relation cluster. Everything
+# else - the feed, the creator Posts tabs, the Posts-hover masonry - is
+# downstream of the same bricked predeploy set, so a redeploy moves 15 rows at
+# once and a schema design moves 3. That ratio is the scheduling fact, and it is
+# not visible from any single row.
+Social 1VH (375) [11442-164766]	blocked-on-backend	src/pages/social/SocialFeed.tsx	/social	STATUS CONFIRMED AT NODE DEPTH, AND THE CONFIRMATION MATTERS BECAUSE THE ROW'S OWN DOM MEASUREMENTS COULD BE READ THE OTHER WAY. Wave 10 recorded real rendered-DOM numbers against this family - heading Cormorant Garamond 500 30/36, CTA 125x44 #2CEDAC against the frame's 125x32 #56C7F3 - and a row that carries measurements of a live page invites the reading that the screen renders and is therefore partial, which is exactly the correction this lane made on the composer 10335-234351. Read the frame 2026-09-01 to settle it: 11442:164766 is 375x812 with Frame 1000003867 running 343x3273 inside it, and the body is a POPULATED FEED, not an empty state. Five post cards - Frame 763 / 764 / 765 / 766 / 767 - each with a 40x40 images/circle avatar and handle row (Tia Johanson 4h ago, @riverivey 11h ago, @TheCryptoDog 16h ago, Leo Sterling 2d ago), a Frame 269 media block at 343x343 or 343x458, a reaction row with "6 comments" and "1 comment" counters, ticker chips BONK / $HARDCORE / PEPTO, threaded Chat replies from @CryptosTraderX and @AltcoinBuzzTalk, a "+$115.83 / $130.00" progress row and a "Held by Zack Trench and 20 others" attribution. Only the top 140px is chrome - the Discover title 11442:164775 210x24, its 125x32 CTA 11442:164778, and a four-avatar creator rail Frame 1250 at 343x84. So roughly 96% of the frame's height is post content that cannot exist while every read of SKAISocialFeed reverts, and the measurable 4% is the part wave 10 already measured. WAVE 10 EVIDENCE CARRIED FORWARD UNCHANGED, because this row supersedes theirs: the four social predeploys 0x5B41...0090-0093 all hold the identical 55-byte stub and revert "stack underflow (5 <=> 6)" on ANY calldata, their four ERC-1967 implementation targets 0x...1090-1093 hold the same stub, the indexer route GET /api/v1/social/feed is live and answers 200 with total 0, and skai_sendSocialTx - the only write path - answers -32601 on the live RPC and has zero hits in modules/skai-chain. Three independent breaks; a redeploy fixes one.
+# ═══ THE 142 LEGACY no-digit `done` ROWS, COUNTED PER FILE AND PER EFFECT ═══
+# WAVE11-BRIEF section 2 calls these "the biggest single target" and says they
+# are counted in the 16.41% today. Measured 2026-09-01 with
+# `validate-wave7.mjs --all` for the population and a supersession pass over all
+# 151 status files for the effect. AT MOST 99 OF THE 142 CAN STILL BE DECIDING
+# ANYTHING, and only 9 of the node-keyed ones are.
+#
+# Per file, as --all reports them:
+#   status.home-2.tsv            36
+#   status.wallet.tsv            27
+#   status.home.tsv              24
+#   status.wallet-2.a.tsv        21
+#   status.trade-2.launch.tsv    16
+#   status.wave3.verify-play.tsv  6
+#   status.predict.tsv            4
+#   status.play.tsv               4
+#   status.trade.tsv              3
+#   status.pwa.tsv                1
+#
+# ★ THE SPLIT THE COUNT HIDES, and it changes what the owning lanes should do:
+#   52 rows are NODE-KEYED (column 1 ends in [id]) - of those, 43 are ALREADY
+#      SUPERSEDED by a later wave's row on the same node (home-2 36, trade-2 7),
+#      so demoting them changes no verdict and moves the number not at all.
+#      apply-status resolves newest generation first, so those 43 are inert.
+#   90 rows are FAMILY-KEYED (no [id] in column 1) - wallet 27, wallet-2.a 21,
+#      home 24, wave3.verify-play 6, predict 4, play 4, trade 3, pwa 1. Whether
+#      they still decide depends on the family resolver, which this lane did not
+#      model, so nothing is claimed about them beyond where they live.
+#    9 rows are node-keyed AND still decide. ALL NINE ARE status.trade-2.launch
+#      .tsv, section trade-2, and their reasons are one-line descriptions with
+#      no measurement in them at all - two read in full "Mobile." and "Tablet cut
+#      of the positive branch.":
+#        13006-146233  Launch 1VH (1440)
+#        13006-246173  Launch > Sample token > Dashboard - positive 1VH (1440)
+#        13006-286114  ... positive 1VH (768)
+#        13006-284221  ... positive 1VH (375)
+#        13006-285797  ... negative 1VH (375)
+#        13006-286595  Launch > create token > buy test 1VH (768)
+#        13006-284880  ... buy test 1VH (375)
+#        13006-286941  Launch > create token > preview 1VH (768)
+#        13006-284612  ... preview 1VH (375)
+#      These nine inflate Trade 2's done count by nine and are the only part of
+#      the 142 a lane can act on today with a guaranteed effect on the number.
+#      They belong to whoever owns Trade 2 / Launch; this lane does not own that
+#      file and has not touched it.
+#
+# ★ THE DURABLE POINT: a defect count is not a defect impact. "142 rows inflate
+# the percentage" and "142 rows exist" are different claims, and the gap between
+# them here is 43 rows that were already corrected by a later wave and are being
+# re-counted because the instrument reads every file rather than the resolved
+# view. Ask what a row DECIDES before scheduling work against its existence.
