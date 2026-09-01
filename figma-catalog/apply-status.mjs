@@ -43,6 +43,58 @@ import {
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const DRY_RUN = process.argv.includes("--dry-run");
+
+/**
+ * The wave a status stem belongs to; 0 for the un-numbered legacy files, which
+ * are the oldest. Deliberately the same rule `coverage.mjs` uses, so the writer
+ * and the tally agree about which row supersedes which.
+ *
+ * A function declaration, not a `const` arrow: the self-test below runs before
+ * the module body and would hit the temporal dead zone otherwise.
+ */
+function genOf(stem) {
+  return Number(/^wave(\d+)\./.exec(stem)?.[1] ?? 0);
+}
+
+/*
+  ── `--self-test`: pin the SUPERSESSION ORDER ──────────────────────────────────
+
+  This runs before anything is read, so it can never touch registry.json.
+
+  ★ IT ASSERTS THE ORDER WE WANT, NOT THE ORDER WE FOUND. The wave-10 inversion
+  survived because nothing anywhere stated "a later wave sorts last"; the only
+  record of the intent was a prose comment at the last-wins branch, and prose
+  does not fail. A test written by observing the old behaviour would have pinned
+  the defect and made it permanent.
+
+  Wave 100 vs 99 is included deliberately. The bug is a boundary, and fixing the
+  boundary you were bitten by while leaving the next one is how a class comes
+  back — WAVE9-INTEGRITY §4's "a clean-looking cutoff can be half a mechanism".
+*/
+if (process.argv.includes("--self-test")) {
+  const cases = [
+    ["wave 10 sorts AFTER wave 9 (the 2026-09-01 inversion)", "wave9.x", "wave10.x"],
+    ["wave 10 sorts AFTER wave 2", "wave2.x", "wave10.x"],
+    ["wave 100 sorts AFTER wave 99 (the next boundary)", "wave99.x", "wave100.x"],
+    ["wave 9 still sorts after wave 8", "wave8.x", "wave9.x"],
+    ["a legacy un-numbered file sorts BEFORE any wave", "wallet-2.b", "wave2.x"],
+    ["two files of one wave stay in stem order", "wave10.a", "wave10.b"],
+  ];
+  let ok = 0;
+  for (const [label, earlier, later] of cases) {
+    const cmp = genOf(earlier) - genOf(later) || earlier.localeCompare(later);
+    const pass = cmp < 0;
+    if (pass) ok++;
+    console.log(`  ${pass ? "PASS" : "FAIL"}  ${label}`);
+    if (!pass) console.log(`      expected "${earlier}" to sort before "${later}", got cmp ${cmp}`);
+  }
+  // A control: the comparator must not call everything ordered.
+  const control = (genOf("wave10.x") - genOf("wave9.x") || "wave10.x".localeCompare("wave9.x")) > 0;
+  console.log(`  ${control ? "PASS" : "FAIL"}  control: the reverse pair compares the other way`);
+  console.log(`\nself-test: ${ok}/${cases.length} ordering cases, control ${control ? "ok" : "FAILED"}.`);
+  process.exit(ok === cases.length && control ? 0 : 1);
+}
+
 const regPath = path.join(DIR, "registry.json");
 const reg = JSON.parse(fs.readFileSync(regPath, "utf8"));
 // DISCOVER the sections from the status files actually on disk, rather than a
@@ -99,7 +151,45 @@ const SECTIONS = fs
     row whether it can be addressed, and a row that genuinely cannot be is
     reported by file and line rather than dropped with its 3,943 neighbours.
   */
-  .sort((a, b) => a.stem.localeCompare(b.stem));
+  /*
+    ★★★ SORTED BY WAVE NUMBER, NOT BY STRING — AND THE DIFFERENCE ARRIVED ALL AT
+    ONCE AT WAVE 10.
+
+    This was `a.stem.localeCompare(b.stem)`, and the last-writer-wins rule below
+    (`:245`) depends on it for the supersession its own comment promises:
+    "across waves that is intended (wave 7 supersedes wave 5)". That promise held
+    for eight waves and then inverted, because `localeCompare` is lexicographic:
+
+        "status.wave10.x".localeCompare("status.wave9.x")  ===  -1
+
+    So the real order was 10, 2, 3, 4, 5, 6, 7, 8, 9. Waves 2-9 stayed correct
+    relative to each other — which is exactly why nothing caught it earlier — and
+    wave 10 alone sorted FIRST, meaning under last-wins EVERY earlier wave
+    overwrote it.
+
+    Measured 2026-09-01 across 151 status files, with bp.mjs's own `parseRowKey`:
+    520 nodes carried a wave-10 id-keyed row, **471 took their registry verdict
+    from an older wave**, and **189 of those differed in status**. The direction
+    is the damaging one — wave-10 promotions to `done` reverted to the `partial`
+    they were promoted from, and unblockings reverted to `blocked-on-backend`.
+
+    ★ And the damage concentrates on exactly the work that is meant to correct
+    stale verdicts: a re-audit lane touches frames that already carry rows, so
+    one such lane had 69 of 69 rows overwritten. A lane measuring fresh frames
+    lost almost nothing. The bug's visible symptom is the catalog reverting to
+    the answer a re-audit had just disproved.
+
+    `coverage.mjs` was never affected — it parses the wave number with its own
+    `genOf()` and resolves newest-generation-then-worst-of, so the published
+    percentage never passed through this. Third wave running that the damaged
+    artifact is `registry.json` and the number is not.
+
+    Non-wave files are generation 0 and keep their existing position: every
+    legacy stem already sorted before `wave*` (the last is `wallet-2.b`, and
+    "wall" < "wave"), so this changes the order of nothing except wave 10 and
+    whatever two-digit waves follow it.
+  */
+  .sort((a, b) => genOf(a.stem) - genOf(b.stem) || a.stem.localeCompare(b.stem));
 // ⚠️ THIS SET HAD THE EXACT BUG THE COMMENT ABOVE DESCRIBES, one line later.
 //
 // It was ["done","partial","not-started","unknown"], and the loop below did

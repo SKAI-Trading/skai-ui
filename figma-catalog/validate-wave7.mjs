@@ -665,6 +665,9 @@ const ALL = process.argv.includes("--all");
   because the atomic column-6 refusal does not care which file the bad cell is
   in and older lanes wrote into un-numbered files.
 */
+/** The wave a status FILENAME belongs to; 0 for the un-numbered legacy files. */
+const waveOf = (f) => Number(/^status\.wave(\d+)\./.exec(f)?.[1] ?? 0);
+
 const waveFlagIdx = process.argv.indexOf("--wave");
 const waveArg = waveFlagIdx !== -1 ? process.argv[waveFlagIdx + 1] : null;
 const wavesOnDisk = [
@@ -683,7 +686,22 @@ const files = fs
   .readdirSync(DIR)
   .filter((f) => (ALL ? /^status\..+\.tsv$/.test(f) : waveRe.test(f)))
   .filter((f) => !filter || f.includes(filter))
-  .sort();
+  /*
+    ⚠️ ORDERED BY WAVE NUMBER, because the collision message below names a
+    SURVIVOR and a plain `.sort()` names the wrong one across waves.
+
+    "node X already claimed by Y — later file silently replaces the earlier
+    verdict" is only true if this list is in the same order the writer uses.
+    `apply-status.mjs` sorts by stem, and a bare lexicographic sort puts
+    `wave10` ahead of `wave2` — so under `--all` this message would report the
+    wave-10 row as the one being discarded when it is in fact the newest.
+
+    `apply-status.mjs` was corrected on 2026-09-01 to sort by parsed generation;
+    this mirrors it so the two agree. Within a single wave — the default run —
+    the old ordering was already accurate, which is why the four cross-lane
+    collisions it reported this wave named their survivors correctly.
+  */
+  .sort((a, b) => waveOf(a) - waveOf(b) || a.localeCompare(b));
 
 if (!files.length) {
   // ★ A validator that looked at nothing must NEVER read as a pass. Seven
