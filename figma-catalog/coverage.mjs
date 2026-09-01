@@ -75,7 +75,16 @@ const LIVE = path.join(DIR, "live");
 // percentage. Both drift lanes hit this contradiction in wave 5 and worked
 // around it by reading the stale file. This flag removes the need to choose.
 const HISTOGRAM = process.argv.includes("--histogram");
-const CHECK_ONLY = process.argv.includes("--check") || HISTOGRAM;
+/*
+  `--frames` — one TSV row per matched genuine frame: id, page, scope, resolved
+  status. Read-only, like `--histogram`: it is in CHECK_ONLY below so it never
+  writes COVERAGE.md or coverage.json.
+
+  It exists so promotions and demotions can be reported SEPARATELY without any
+  tool recomputing this file's resolution rule. See the note at the push site.
+*/
+const FRAMES = process.argv.includes("--frames");
+const CHECK_ONLY = process.argv.includes("--check") || HISTOGRAM || FRAMES;
 
 const fail = (msg) => {
   console.error(`coverage.mjs REFUSING TO REPORT — ${msg}`);
@@ -402,6 +411,8 @@ const conflictList = [];
 // system working. Tracked separately so the health signal does not worsen as
 // the catalog gets more honest.
 const supersededList = [];
+/** `--frames`: one row per matched genuine frame, carrying its resolved verdict. */
+const frameStatuses = [];
 for (const p of pages) {
   const furniture = [];
   const genuine = [];
@@ -474,6 +485,23 @@ for (const p of pages) {
     const current = rows.filter((r) => genOf(r.file) === newestGen);
     const worst = current.slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
     byStatus[worst] = (byStatus[worst] || 0) + 1;
+    /*
+      ★ THE SAME `worst` THE PERCENTAGE IS TALLIED FROM, RECORDED PER FRAME.
+
+      A wave's rollup delta is a NET: "+24 done" is consistent with 24 promotions
+      and no re-verification, and equally with 40 promotions and 16 demotions.
+      WAVE8-BRIEF §3 asks for the two separately because a wave whose `done` only
+      increases is a wave re-verifying nothing — and a net cannot answer it.
+
+      Nothing else in this file consumed a per-frame verdict, so the only way to
+      split them was to recompute the resolution somewhere else. That is the
+      second-copy-of-a-rule defect this catalog keeps paying for: `bp-report.mjs`
+      kept its own STATUS_VALID and discarded 154 rows, and the newest-generation
+      rule right above this line is subtle enough that a copy would drift within
+      a wave. So the value is captured HERE, off the same variable, and emitted
+      only under `--frames`. It changes no existing output and no computation.
+    */
+    frameStatuses.push({ id: n.id, page: p.pageName, scope: p.scope, status: worst });
     // Two rows, two lanes, one frame, two different verdicts. The worst-of above
     // resolves it conservatively so the number cannot flatter — but a resolution
     // is not an agreement, and a `done`/`not-started` pair on one frame means one
@@ -840,7 +868,11 @@ const json = {
   conflicts: conflictList,
 };
 
-if (HISTOGRAM) {
+if (FRAMES) {
+  // stdout is a TSV and nothing else, for the same reason --histogram's stdout
+  // is JSON and nothing else: the summary line below goes to stderr.
+  for (const f of frameStatuses) console.log(`${f.id}\t${f.page}\t${f.scope}\t${f.status}`);
+} else if (HISTOGRAM) {
   console.log(
     JSON.stringify(
       {
