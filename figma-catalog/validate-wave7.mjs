@@ -417,9 +417,40 @@ if (SELF_TEST) {
 // zero — the exact vacuous-green shape this catalog keeps producing. The atomic
 // column-6 refusal does not care which file the bad cell is in.
 const ALL = process.argv.includes("--all");
+/*
+  ⚠️ THE WAVE NUMBER USED TO BE HARDCODED HERE, and that made this validator
+  useless the day wave 8 started: pointed at `wave8` it reported
+  "NO status.wave7.*.tsv files found" and refused. The refusal was correct — it
+  said "This is NOT a pass. Denominator = 0" rather than reporting green over
+  nothing — but the tool still could not check the wave that was running.
+
+  ★ Same class as the guard this script once kept a private copy of: a checker
+  that hardcodes a fact about the thing it checks goes stale the moment that
+  fact moves, and it is confident either way. So the wave is now DERIVED from
+  the newest `status.wave<N>.*.tsv` on disk, and printed, so a reader can see
+  which population was actually checked instead of assuming.
+
+  `--wave <N>` pins it explicitly; `--all` still sweeps every status file,
+  because the atomic column-6 refusal does not care which file the bad cell is
+  in and older lanes wrote into un-numbered files.
+*/
+const waveFlagIdx = process.argv.indexOf("--wave");
+const waveArg = waveFlagIdx !== -1 ? process.argv[waveFlagIdx + 1] : null;
+const wavesOnDisk = [
+  ...new Set(
+    fs
+      .readdirSync(DIR)
+      .map((f) => /^status\.wave(\d+)\./.exec(f)?.[1])
+      .filter(Boolean)
+      .map(Number),
+  ),
+].sort((a, b) => a - b);
+const WAVE = waveArg ?? (wavesOnDisk.length ? String(wavesOnDisk[wavesOnDisk.length - 1]) : "7");
+const waveRe = new RegExp(`^status\\.wave${WAVE}\\..+\\.tsv$`);
+if (!ALL) console.log(`(checking wave ${WAVE}; waves on disk: ${wavesOnDisk.join(", ") || "none"})`);
 const files = fs
   .readdirSync(DIR)
-  .filter((f) => (ALL ? /^status\..+\.tsv$/.test(f) : /^status\.wave7\..+\.tsv$/.test(f)))
+  .filter((f) => (ALL ? /^status\..+\.tsv$/.test(f) : waveRe.test(f)))
   .filter((f) => !filter || f.includes(filter))
   .sort();
 

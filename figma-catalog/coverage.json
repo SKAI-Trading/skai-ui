@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T22:45:05.481Z",
+  "generated": "2026-09-01T09:46:38.411Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
@@ -7,30 +7,30 @@
     "furniture": 418,
     "genuine": 1914,
     "matched": 1914,
-    "done": 233,
-    "partial": 1221,
-    "notStarted": 164,
-    "blocked": 114,
-    "frameDefect": 49,
+    "done": 274,
+    "partial": 1165,
+    "notStarted": 173,
+    "blocked": 118,
+    "frameDefect": 62,
     "catalogFurniture": 42,
-    "unknown": 91,
+    "unknown": 80,
     "liveOnly": 0,
     "rollupOnly": 2,
     "defaultNamed": 118,
     "ambiguous": 0,
-    "conflicts": 67
+    "conflicts": 58
   },
   "doneRows": {
-    "total": 1442,
-    "withBreakpointProvenance": 110,
-    "namingANodeId": 1223,
+    "total": 1505,
+    "withBreakpointProvenance": 165,
+    "namingANodeId": 1283,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 6574,
-    "namingNoNodeId": 317,
-    "namingNoLiveNodeId": 335,
-    "unrecognisedTokens": 4342
+    "total": 6961,
+    "namingNoNodeId": 328,
+    "namingNoLiveNodeId": 350,
+    "unrecognisedTokens": 5200
   },
   "statusFiles": [
     {
@@ -161,7 +161,7 @@
     },
     {
       "file": "status.play.tsv",
-      "rows": 27,
+      "rows": 29,
       "withLiveId": 6,
       "ids": 6
     },
@@ -650,6 +650,126 @@
       "rows": 81,
       "withLiveId": 81,
       "ids": 82
+    },
+    {
+      "file": "status.wave8.games-a.tsv",
+      "rows": 28,
+      "withLiveId": 28,
+      "ids": 27
+    },
+    {
+      "file": "status.wave8.games-b.tsv",
+      "rows": 69,
+      "withLiveId": 68,
+      "ids": 55
+    },
+    {
+      "file": "status.wave8.games-c.tsv",
+      "rows": 15,
+      "withLiveId": 10,
+      "ids": 26
+    },
+    {
+      "file": "status.wave8.games-cards.tsv",
+      "rows": 16,
+      "withLiveId": 16,
+      "ids": 16
+    },
+    {
+      "file": "status.wave8.games-crash.tsv",
+      "rows": 20,
+      "withLiveId": 20,
+      "ids": 20
+    },
+    {
+      "file": "status.wave8.home2.tsv",
+      "rows": 8,
+      "withLiveId": 8,
+      "ids": 9
+    },
+    {
+      "file": "status.wave8.play-hub.tsv",
+      "rows": 14,
+      "withLiveId": 14,
+      "ids": 14
+    },
+    {
+      "file": "status.wave8.play-shells.tsv",
+      "rows": 15,
+      "withLiveId": 14,
+      "ids": 16
+    },
+    {
+      "file": "status.wave8.predict-dash.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 14
+    },
+    {
+      "file": "status.wave8.predict-detail.tsv",
+      "rows": 31,
+      "withLiveId": 31,
+      "ids": 31
+    },
+    {
+      "file": "status.wave8.predict-sports.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 4
+    },
+    {
+      "file": "status.wave8.social-discover.tsv",
+      "rows": 27,
+      "withLiveId": 27,
+      "ids": 27
+    },
+    {
+      "file": "status.wave8.social-feed.tsv",
+      "rows": 13,
+      "withLiveId": 13,
+      "ids": 13
+    },
+    {
+      "file": "status.wave8.social-live.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave8.social-profile.tsv",
+      "rows": 31,
+      "withLiveId": 30,
+      "ids": 30
+    },
+    {
+      "file": "status.wave8.trade2-order.tsv",
+      "rows": 11,
+      "withLiveId": 11,
+      "ids": 11
+    },
+    {
+      "file": "status.wave8.trade2-perp.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
+      "file": "status.wave8.trench-discover.tsv",
+      "rows": 18,
+      "withLiveId": 18,
+      "ids": 25
+    },
+    {
+      "file": "status.wave8.trench-trade.tsv",
+      "rows": 41,
+      "withLiveId": 36,
+      "ids": 36
+    },
+    {
+      "file": "status.wave8.wallet2.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 9
     }
   ],
   "pages": [
@@ -2916,12 +3036,12 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 181,
-        "done": 19,
+        "partial": 169,
+        "done": 25,
         "unknown": 23,
-        "blocked-on-backend": 7,
-        "frame-defect": 12,
-        "not-started": 12
+        "blocked-on-backend": 13,
+        "frame-defect": 16,
+        "not-started": 8
       },
       "liveOnly": []
     },
@@ -2946,12 +3066,12 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "done": 36,
+        "done": 35,
         "furniture": 2,
-        "partial": 144,
+        "partial": 141,
         "blocked-on-backend": 24,
-        "not-started": 54,
-        "frame-defect": 3,
+        "not-started": 55,
+        "frame-defect": 6,
         "unknown": 6
       },
       "liveOnly": []
@@ -2975,14 +3095,14 @@
       "rollupOnly": 2,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 34,
+      "conflicts": 27,
       "byStatus": {
-        "partial": 257,
-        "not-started": 46,
-        "blocked-on-backend": 62,
+        "partial": 241,
+        "not-started": 51,
+        "done": 20,
+        "blocked-on-backend": 61,
         "unknown": 17,
-        "frame-defect": 12,
-        "done": 8
+        "frame-defect": 12
       },
       "liveOnly": []
     },
@@ -5818,9 +5938,9 @@
       "ambiguous": 0,
       "conflicts": 14,
       "byStatus": {
-        "partial": 98,
-        "done": 8,
-        "unknown": 13,
+        "partial": 100,
+        "done": 11,
+        "unknown": 8,
         "not-started": 13,
         "blocked-on-backend": 5,
         "frame-defect": 1
@@ -6728,16 +6848,16 @@
         "hidden": 2
       },
       "genuine": 367,
-      "matched": 89,
+      "matched": 92,
       "rollupOnly": 0,
       "defaultNamed": 43,
       "ambiguous": 3,
       "conflicts": 0,
       "byStatus": {
-        "partial": 38,
-        "done": 45,
-        "unknown": 4,
-        "blocked-on-backend": 2
+        "partial": 44,
+        "done": 44,
+        "blocked-on-backend": 2,
+        "unknown": 2
       },
       "liveOnly": [
         {
@@ -7329,13 +7449,6 @@
           "h": 680
         },
         {
-          "id": "7712-38425",
-          "name": "Order book",
-          "type": "FRAME",
-          "w": 277,
-          "h": 672
-        },
-        {
           "id": "8566-141675",
           "name": "Skai > Trade > Spot ",
           "type": "FRAME",
@@ -7805,13 +7918,6 @@
           "h": 812
         },
         {
-          "id": "9153-116609",
-          "name": "Skai > Trade > Perpe",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
           "id": "9153-118323",
           "name": "Trade panel - Long",
           "type": "FRAME",
@@ -7827,13 +7933,6 @@
         },
         {
           "id": "9137-86763",
-          "name": "Skai > Trade > Perpe",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1024
-        },
-        {
-          "id": "9135-85233",
           "name": "Skai > Trade > Perpe",
           "type": "FRAME",
           "w": 768,
@@ -8706,12 +8805,12 @@
       "rollupOnly": 0,
       "defaultNamed": 18,
       "ambiguous": 0,
-      "conflicts": 18,
+      "conflicts": 17,
       "byStatus": {
-        "partial": 290,
-        "done": 35,
-        "unknown": 20,
-        "not-started": 26,
+        "partial": 279,
+        "done": 37,
+        "unknown": 16,
+        "not-started": 39,
         "blocked-on-backend": 2,
         "furniture": 2
       },
@@ -9206,7 +9305,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 11,
+        "partial": 8,
+        "done": 3,
         "furniture": 1
       },
       "liveOnly": []
@@ -9231,7 +9331,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 26,
+        "partial": 22,
+        "done": 4,
         "furniture": 7,
         "not-started": 1
       },
@@ -9256,10 +9357,9 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 11,
-        "furniture": 1,
-        "not-started": 1,
-        "unknown": 1
+        "done": 3,
+        "partial": 10,
+        "furniture": 1
       },
       "liveOnly": []
     },
@@ -9332,7 +9432,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 14,
+        "partial": 13,
+        "done": 1,
         "furniture": 4
       },
       "liveOnly": []
@@ -9357,10 +9458,10 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 11,
-        "not-started": 5,
-        "unknown": 1,
-        "furniture": 1
+        "partial": 12,
+        "done": 1,
+        "furniture": 1,
+        "frame-defect": 4
       },
       "liveOnly": []
     },
@@ -9407,8 +9508,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 3,
-        "frame-defect": 6,
+        "partial": 2,
+        "frame-defect": 7,
         "furniture": 1
       },
       "liveOnly": []
@@ -9432,9 +9533,10 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 5,
+        "partial": 3,
         "frame-defect": 6,
-        "furniture": 2
+        "furniture": 2,
+        "done": 2
       },
       "liveOnly": []
     },
@@ -9459,7 +9561,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 6,
+        "partial": 4,
+        "done": 2,
         "not-started": 4,
         "furniture": 3
       },
@@ -9538,7 +9641,8 @@
       "conflicts": 0,
       "byStatus": {
         "partial": 2,
-        "blocked-on-backend": 14,
+        "blocked-on-backend": 13,
+        "frame-defect": 1,
         "furniture": 1
       },
       "liveOnly": []
@@ -9562,7 +9666,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 11,
+        "partial": 9,
+        "done": 2,
         "unknown": 1,
         "furniture": 1
       },
@@ -9585,10 +9690,10 @@
       "rollupOnly": 0,
       "defaultNamed": 3,
       "ambiguous": 0,
-      "conflicts": 1,
+      "conflicts": 0,
       "byStatus": {
-        "partial": 6,
-        "done": 1,
+        "partial": 5,
+        "done": 2,
         "furniture": 1
       },
       "liveOnly": []
@@ -9893,6 +9998,33 @@
   ],
   "catalogOnly": [
     {
+      "id": "13006-210578",
+      "cls": "gone",
+      "resolved": null,
+      "rows": [
+        "status.wave8.trench-trade.tsv:16"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-212012",
+      "cls": "gone",
+      "resolved": null,
+      "rows": [
+        "status.wave8.trench-trade.tsv:17"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-212076",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.trench-trade.tsv:15"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "13006-212107",
       "cls": "nested",
       "resolved": {
@@ -9951,6 +10083,150 @@
         "status.wave3.verify-play.tsv:346"
       ],
       "status": "frame-defect"
+    },
+    {
+      "id": "9100-5928",
+      "cls": "gone",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-a.tsv:3"
+      ],
+      "status": "frame-defect"
+    },
+    {
+      "id": "9175-9500",
+      "cls": "gone",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-a.tsv:4"
+      ],
+      "status": "frame-defect"
+    },
+    {
+      "id": "9433-15177",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:46"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9481-20647",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:47"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9481-20834",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:48"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9481-20845",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:49"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9481-21772",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:50"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9481-21774",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:51"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9481-21777",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:52"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9481-21778",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:53"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9481-21885",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:54"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9494-2150",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:55"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9494-4466",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:56"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9494-4467",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:57"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9494-7002",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-b.tsv:58"
+      ],
+      "status": "furniture"
+    },
+    {
+      "id": "9733-5378",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave8.games-c.tsv:5"
+      ],
+      "status": "done"
     }
   ],
   "conflicts": [
@@ -9983,62 +10259,6 @@
       "kind": "same-generation"
     },
     {
-      "id": "10335-235331",
-      "page": "✅ Social",
-      "name": "Skai > Social > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:6",
-        "status.wave4.social-a.tsv:72"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "10335-236189",
-      "page": "✅ Social",
-      "name": "Skai > Social > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:7",
-        "status.wave4.social-a.tsv:73"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "10328-215524",
-      "page": "✅ Social",
-      "name": "Skai > Social > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:8",
-        "status.wave4.social-a.tsv:70"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "10335-233638",
-      "page": "✅ Social",
-      "name": "Skai > Social > crea",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:9",
-        "status.wave4.social-a.tsv:71"
-      ],
-      "kind": "same-generation"
-    },
-    {
       "id": "5101-186045",
       "page": "✅ Social",
       "name": "Skai > Social (1440 ",
@@ -10063,48 +10283,6 @@
       "rows": [
         "status.wave4.row-conflicts.tsv:13",
         "status.wave4.social-a.tsv:24"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "4948-143477",
-      "page": "✅ Social",
-      "name": "Skai > Social > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:14",
-        "status.wave4.social-a.tsv:2"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "4954-147061",
-      "page": "✅ Social",
-      "name": "Skai > Social > Samp",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:15",
-        "status.wave4.social-a.tsv:3"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "5111-190017",
-      "page": "✅ Social",
-      "name": "Skai > Social > Disc",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:17",
-        "status.wave4.social-a.tsv:15"
       ],
       "kind": "same-generation"
     },
@@ -10837,20 +11015,6 @@
       "kind": "same-generation"
     },
     {
-      "id": "13006-320262",
-      "page": "✅ Trade 2",
-      "name": "Skai > Trade > Trenc",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:145",
-        "status.wave4.trade-2-partial.tsv:25"
-      ],
-      "kind": "same-generation"
-    },
-    {
       "id": "13006-322042",
       "page": "✅ Trade 2",
       "name": "Frame 270",
@@ -10875,20 +11039,6 @@
       "rows": [
         "status.wave7.furniture.tsv:89",
         "status.wave7.trade2-unknown.tsv:142"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "10030-34600",
-      "page": "✅ Price Grid - Skai originals",
-      "name": "Group 317",
-      "statuses": [
-        "partial",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave7.furniture.tsv:18",
-        "status.wave7.games-unknown.tsv:206"
       ],
       "kind": "same-generation"
     }
