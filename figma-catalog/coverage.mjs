@@ -94,6 +94,52 @@ const fail = (msg) => {
 /** Node ids are written with ':' by the Figma API and '-' by every catalog file. */
 const normId = (s) => String(s).trim().replace(":", "-");
 
+/*
+  ONE definition of "this line is a comment", used by every read site in this
+  file.
+
+  It was three sites and two answers. The status-row reader tolerated leading
+  whitespace (`line.trimStart().startsWith("#")`), matching `apply-status.mjs`
+  and `validate-wave7.mjs`; the two auxiliary readers — for `*.titles.tsv`,
+  `bug-node-index.tsv` and `bugref-aliases.tsv` — tested `startsWith("#")` at
+  column 0 only. So an indented `#` was a comment to three readers and a data
+  row to two.
+
+  ⚠️ SAY WHAT THIS IS AND IS NOT. Measured 2026-09-01: **zero** indented `#`
+  lines exist across 171 status files, 39 `*.titles.tsv` and the two index
+  files, and both strict sites feed their value through a `^\d+-\d+$` test that
+  no line beginning with `#` can pass. So this divergence has never produced a
+  wrong number and is not a defect being fixed — it is a latent one being
+  removed. A future auxiliary reader without that second gate is what it costs.
+*/
+const isCommentLine = (l) => l.trimStart().startsWith("#");
+
+/*
+  `--self-test` runs before any file is read, so it can never touch the tree.
+  It pins the comment rule, which is the kind of one-character predicate that
+  drifts silently: nothing downstream fails loudly when two readers disagree
+  about a line, they just disagree.
+*/
+if (process.argv.includes("--self-test")) {
+  const cases = [
+    ["a bare `#` at column 0 is a comment", "# key\tstatus", true],
+    ["an INDENTED `#` is a comment too", "   # key\tstatus", true],
+    ["a TAB-indented `#` is a comment too", "\t# key\tstatus", true],
+    ["a data row is not a comment", "Some Screen [9003-117337]\tdone", false],
+    ["a row whose reason mentions `#` is not a comment", "X [1-2]\tdone\t-\t-\tcolour #17F9B4", false],
+    ["an empty line is not a comment", "", false],
+  ];
+  let ok = 0;
+  for (const [label, line, want] of cases) {
+    const got = isCommentLine(line);
+    if (got === want) ok++;
+    console.log(`  ${got === want ? "PASS" : "FAIL"}  ${label}`);
+    if (got !== want) console.log(`      isCommentLine(${JSON.stringify(line)}) === ${got}, wanted ${want}`);
+  }
+  console.log(`\nself-test: ${ok}/${cases.length} comment-recognition cases.`);
+  process.exit(ok === cases.length ? 0 : 1);
+}
+
 // ---------------------------------------------------------------------------
 // 1. LIVE HALF
 // ---------------------------------------------------------------------------
@@ -244,7 +290,7 @@ for (const f of fs.readdirSync(DIR)) {
     for (const l of fs.readFileSync(full, "utf8").split(/\r?\n/)) addIfId(l);
   } else if (/\.titles\.tsv$/.test(f) || f === "bug-node-index.tsv" || f === "bugref-aliases.tsv") {
     for (const l of fs.readFileSync(full, "utf8").split(/\r?\n/)) {
-      if (l.startsWith("#")) continue;
+      if (isCommentLine(l)) continue;
       addIfId(l.split("\t")[0]);
     }
   }
@@ -278,7 +324,7 @@ for (const f of ["bugref-aliases.tsv", "bug-node-index.tsv"]) {
   const full = path.join(DIR, f);
   if (!fs.existsSync(full)) continue;
   for (const l of fs.readFileSync(full, "utf8").split(/\r?\n/)) {
-    if (l.startsWith("#") || !l.trim()) continue;
+    if (isCommentLine(l) || !l.trim()) continue;
     const v = normId(l.split("\t")[0]);
     if (/^\d+-\d+$/.test(v)) deepLinked.add(v);
   }
@@ -319,7 +365,7 @@ for (const f of fs.readdirSync(DIR).filter((x) => /^status\..+\.tsv$/.test(x)).s
   rowsByFile[f] = 0;
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    if (!line.trim() || line.trimStart().startsWith("#")) continue;
+    if (!line.trim() || isCommentLine(line)) continue;
     const cols = line.split("\t");
     let status = (cols[1] || "").trim();
     if (STATUS_ALIASES.has(status)) status = STATUS_ALIASES.get(status);
