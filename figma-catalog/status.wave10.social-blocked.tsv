@@ -1,4 +1,29 @@
 # key	status	primaryFile	route	reason	bp
+# ⛔ REGISTRY RECOVERY NOTE — READ BEFORE TRUSTING registry.json FOR THIS FILE.
+# These rows are CORRECT ON DISK and WRONG IN registry.json, and the fix is to
+# re-run the writer, not to re-measure anything here.
+# apply-status.mjs:102 sorts files by localeCompare on the stem and :245 is
+# last-writer-wins. Sorting the real stems gives status.social -> status.wave10
+# -> status.wave2 -> ... -> status.wave9, so wave 10 loses to EVERY numbered
+# wave, wave 2 included. Waves 2-9 order correctly against each other, which is
+# why the comment at :238 held for eight waves and why this arrives all at once.
+# Measured 2026-09-01 with bp.mjs parseRowKey: 520 wave-10 id rows, 471
+# overwritten, 189 with a different status. For THIS file it is 69 of 69
+# overwritten, 33 with a different status, and all 33 are the same shape -
+# an unblocking reverted to blocked-on-backend by the wave-2 or wave-5 row it
+# was correcting (11474-204464: not-started here, blocked-on-backend in the
+# registry from status.wave5.social-drift.tsv).
+# ★ The rate tracks PRIOR COVERAGE, so a re-audit lane takes ~100% by
+# construction: every frame it touches already carried a row. The defect does
+# most damage to the work meant to correct stale verdicts.
+# coverage.mjs is unaffected (genOf parses the number), so the parity
+# percentage is right and only registry.json is damaged. Not fixed here:
+# apply-status.mjs is the shared writer 19 lanes resolve against, and
+# WAVE9-INTEGRITY §10 rules that editing a shared instrument mid-wave is the
+# wrong order of operations. Found by w10-social-feed; replicated here with a
+# different key parser. Also open: validate-wave7.mjs:686 uses a plain .sort(),
+# so its collision message inherits the same order and names the wrong survivor
+# across waves - a reporting artifact, but it is the message lanes act on.
 Social 1VH (375) [11442-164766]	blocked-on-backend	src/pages/social/SocialFeed.tsx	/social	STATUS CONFIRMED, REASON REPLACED. The standing reason on this frame and ~34 siblings is "there is no post entity in the database". That is true of Postgres and FALSE of the system, so it has been pointing every reader at a schema design that is not the work. Measured 2026-09-01 against the live chain and the live indexer. THE POST ENTITY EXISTS AND IS ROUTED: SKAISocialFeed.sol:243 declares createPost(bytes32 contentHash, uint256 parentId) with struct Post at :93 and event PostCreated at :161; indexer/ingester/ingester.go:4633 builds sktypes.SocialPost and :4642 calls PutSocialPost; indexer/store/store.go:3069 persists it under prefixSocialPost; indexer/api/rest/server.go:781 routes GET /api/v1/social/feed, and https://indexer.skai.trade/api/v1/social/feed?limit=5 answers HTTP 200 {"success":true,"data":[],"pagination":{"total":0}}. THE ACTUAL BLOCKER IS A BRICKED PREDEPLOY SET: eth_getCode on 0x5B41...0090 / 0091 / 0092 / 0093 returns the SAME 55-byte word on all four, 0x7f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc545f365f5f855af43d5f5f3e6029573d5ff35b3d5ffd, and every eth_call reverts with "execution reverted: stack underflow (5 <=> 6)". The disassembly explains it exactly: PUSH32 slot, SLOAD, PUSH0, CALLDATASIZE, PUSH0, PUSH0, DUP6 - DUP6 needs six stack items and finds five, so the stub reverts on ANY calldata and the implementation it points at is irrelevant. The ERC-1967 slot 0x360894...382bbc reads 0x...1090 / 1091 / 1092 / 1093 respectively, and each of those four addresses ALSO holds the identical 55-byte stub. Controls on the same RPC in the same minute: sUSD 0x5B41...0002 holds 6207 bytes and decimals() answers 0x06; eth_blockNumber 0x6f3b0d. So the RPC is healthy and only the social set is dead. THE ITEM IS A REDEPLOY, NOT A SCHEMA DESIGN - and it is necessary but NOT sufficient: contentHash is a bytes32 IPFS CID with no uploader anywhere in src (src/components/social/post/storyMedia.ts:19-20 records the same absence), so a post body still has nowhere to live.
 Social (768) [11442-163273]	blocked-on-backend	src/pages/social/SocialFeed.tsx	/social	Same cause and same correction as 11442-164766: the blocker is the 55-byte social predeploy set (eth_call reverts "stack underflow (5 <=> 6)" on all four of 0x5B41...0090-0093 and on all four implementation targets 0x...1090-1093), not a missing Postgres relation. The indexer route is live and answers 200/total 0. The two DOM findings carried on this row are unaffected and still stand: heading Cormorant Garamond 500 30/36, CTA 125x44 #2CEDAC against the frame's 125x32 #56C7F3.
 Social 1VH (768) [11442-164397]	blocked-on-backend	src/pages/social/SocialFeed.tsx	/social	Same cause and same correction as 11442-164766. The 768 1VH crop of the feed; nothing on this frame changes the verdict, only the reason. Prior DOM measurement retained: Cormorant Garamond 500 30/36 heading, CTA 125x44 #2CEDAC, no horizontal overflow (scrollWidth 762 vs clientWidth 768).
