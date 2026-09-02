@@ -1,8 +1,10 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { renderHook, act, waitFor } from "@testing-library/react";
+import { renderHook, act, render, waitFor } from "@testing-library/react";
+import * as React from "react";
 import {
   useIntersectionObserver,
   useScrollProgress,
+  type UseIntersectionObserverOptions,
 } from "../hooks/use-intersection-observer";
 
 // Mock IntersectionObserver
@@ -60,6 +62,45 @@ class MockIntersectionObserver {
   }
 }
 
+/**
+ * Mount the hook on a real element.
+ *
+ * The hook only constructs an IntersectionObserver once `ref.current` holds a
+ * node, and React is what puts it there. Assigning to `ref.current` by hand
+ * after `renderHook` misses that: the effect has already run and seen null, so
+ * no observer exists and every option the caller passed goes unexercised.
+ * Rendering an element with the ref attached is what makes the observer real.
+ */
+function renderProbe(options: UseIntersectionObserverOptions = {}) {
+  const seen: {
+    isIntersecting: boolean;
+    entry: IntersectionObserverEntry | null;
+    element: HTMLElement | null;
+  } = { isIntersecting: false, entry: null, element: null };
+
+  const Probe: React.FC<{ opts: UseIntersectionObserverOptions }> = ({
+    opts,
+  }) => {
+    const { ref, isIntersecting, entry } = useIntersectionObserver(opts);
+    seen.isIntersecting = isIntersecting;
+    seen.entry = entry;
+    seen.element = ref.current;
+    return React.createElement("div", {
+      ref: ref as React.Ref<HTMLDivElement>,
+      "data-testid": "probe",
+    });
+  };
+
+  const utils = render(React.createElement(Probe, { opts: options }));
+  return { ...utils, seen };
+}
+
+/** The single observer the probe created, failing loudly if there isn't one. */
+function soleObserver(): MockIntersectionObserver {
+  expect(MockIntersectionObserver.instances).toHaveLength(1);
+  return MockIntersectionObserver.instances[0];
+}
+
 describe("useIntersectionObserver", () => {
   const originalIntersectionObserver = window.IntersectionObserver;
 
@@ -89,29 +130,31 @@ describe("useIntersectionObserver", () => {
   });
 
   it("should update isIntersecting when element enters viewport", async () => {
-    const { result } = renderHook(() => useIntersectionObserver());
+    const { seen } = renderProbe();
+    const observer = soleObserver();
 
-    // Simulate attaching ref to an element
-    const element = document.createElement("div");
-    Object.defineProperty(result.current.ref, "current", {
-      value: element,
-      writable: true,
+    expect(seen.isIntersecting).toBe(false);
+
+    act(() => {
+      observer.trigger(true);
     });
+    await waitFor(() => expect(seen.isIntersecting).toBe(true));
+    expect(seen.entry?.isIntersecting).toBe(true);
 
-    // Re-render to trigger effect
-    renderHook(() => useIntersectionObserver());
-
-    // After element is attached and observer is created
-    await waitFor(() => {
-      if (MockIntersectionObserver.instances.length > 0) {
-        const observer = MockIntersectionObserver.instances[0];
-        observer.observe(element);
-
-        act(() => {
-          observer.trigger(true);
-        });
-      }
+    act(() => {
+      observer.trigger(false);
     });
+    await waitFor(() => expect(seen.isIntersecting).toBe(false));
+  });
+
+  it("observes the element the ref was attached to", () => {
+    const { getByTestId } = renderProbe();
+    expect(soleObserver().elements.has(getByTestId("probe"))).toBe(true);
+  });
+
+  it("creates no observer while disabled", () => {
+    renderProbe({ enabled: false });
+    expect(MockIntersectionObserver.instances).toHaveLength(0);
   });
 
   it("should handle disabled state", () => {
@@ -123,91 +166,26 @@ describe("useIntersectionObserver", () => {
   });
 
   it("should accept custom threshold", () => {
-    const { result, rerender } = renderHook(
-      ({ threshold }) => useIntersectionObserver({ threshold }),
-      { initialProps: { threshold: 0.5 } },
-    );
+    const { seen } = renderProbe({ threshold: 0.5 });
 
-    // Create and attach element to ref using act for proper React state updates
-    const element = document.createElement("div");
-    act(() => {
-      Object.defineProperty(result.current.ref, "current", {
-        value: element,
-        writable: true,
-        configurable: true,
-      });
-    });
-
-    // Force re-render to trigger effect with element now attached
-    rerender({ threshold: 0.5 });
-
-    // Find any observer created with threshold 0.5 (may have been created in prior renders)
-    const observer = MockIntersectionObserver.instances.find(
-      (o) => o.options.threshold === 0.5,
-    );
-
-    // If no observer with threshold 0.5, verify at least one new observer was created
-    // and that hook accepts the threshold prop without error
-    if (observer) {
-      expect(observer.options.threshold).toBe(0.5);
-    } else {
-      // Verify hook works with custom threshold (no errors thrown)
-      expect(result.current.ref).toBeDefined();
-      expect(result.current.isIntersecting).toBe(false);
-    }
+    // The observer is looked up positionally, not by the value under test —
+    // finding it by `threshold === 0.5` and then asserting that same equality
+    // is a tautology, and it is satisfied by there being no observer at all.
+    expect(soleObserver().options.threshold).toBe(0.5);
+    expect(seen.isIntersecting).toBe(false);
   });
 
   it("should accept array of thresholds", () => {
     const thresholds = [0, 0.25, 0.5, 0.75, 1];
-    const element = document.createElement("div");
-    const { result } = renderHook(() =>
-      useIntersectionObserver({ threshold: thresholds }),
-    );
+    renderProbe({ threshold: thresholds });
 
-    // Attach element to ref
-    Object.defineProperty(result.current.ref, "current", {
-      value: element,
-      writable: true,
-    });
-
-    // Force re-render to trigger effect
-    renderHook(() => useIntersectionObserver({ threshold: thresholds }));
-
-    // Verify thresholds are accepted (observer may or may not be created depending on element attachment)
-    expect(result.current.ref).toBeDefined();
-    const observer = MockIntersectionObserver.instances.find(
-      (o) =>
-        Array.isArray(o.options.threshold) && o.options.threshold.length === 5,
-    );
-    if (observer) {
-      expect(observer.options.threshold).toEqual(thresholds);
-    }
+    expect(soleObserver().options.threshold).toEqual(thresholds);
   });
 
   it("should accept custom rootMargin", () => {
-    const marginValue = "10px 20px";
-    const element = document.createElement("div");
-    const { result } = renderHook(() =>
-      useIntersectionObserver({ rootMargin: marginValue }),
-    );
+    renderProbe({ rootMargin: "10px 20px" });
 
-    // Attach element to ref
-    Object.defineProperty(result.current.ref, "current", {
-      value: element,
-      writable: true,
-    });
-
-    // Force re-render to trigger effect
-    renderHook(() => useIntersectionObserver({ rootMargin: marginValue }));
-
-    // Verify rootMargin is accepted
-    expect(result.current.ref).toBeDefined();
-    const observer = MockIntersectionObserver.instances.find(
-      (o) => o.options.rootMargin === marginValue,
-    );
-    if (observer) {
-      expect(observer.options.rootMargin).toBe(marginValue);
-    }
+    expect(soleObserver().options.rootMargin).toBe("10px 20px");
   });
 
   it("should handle triggerOnce option", async () => {
@@ -269,28 +247,30 @@ describe("useIntersectionObserver", () => {
 
   it("should use provided root element", () => {
     const rootElement = document.createElement("div");
-    const element = document.createElement("div");
-    const { result } = renderHook(() =>
-      useIntersectionObserver({ root: rootElement }),
-    );
+    renderProbe({ root: rootElement });
 
-    // Attach element to ref
-    Object.defineProperty(result.current.ref, "current", {
-      value: element,
-      writable: true,
+    expect(soleObserver().options.root).toBe(rootElement);
+  });
+
+  it("disconnects the observer on unmount", () => {
+    const { unmount, getByTestId } = renderProbe();
+    const observer = soleObserver();
+    const element = getByTestId("probe");
+
+    expect(observer.elements.has(element)).toBe(true);
+    unmount();
+    expect(observer.elements.size).toBe(0);
+  });
+
+  it("stops observing after the first intersection when triggerOnce is set", async () => {
+    const { seen } = renderProbe({ triggerOnce: true });
+    const observer = soleObserver();
+
+    act(() => {
+      observer.trigger(true);
     });
-
-    // Force re-render to trigger effect
-    renderHook(() => useIntersectionObserver({ root: rootElement }));
-
-    // Verify root is accepted
-    expect(result.current.ref).toBeDefined();
-    const observer = MockIntersectionObserver.instances.find(
-      (o) => o.options.root === rootElement,
-    );
-    if (observer) {
-      expect(observer.options.root).toBe(rootElement);
-    }
+    await waitFor(() => expect(seen.isIntersecting).toBe(true));
+    expect(observer.elements.size).toBe(0);
   });
 });
 
