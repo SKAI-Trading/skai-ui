@@ -64,7 +64,15 @@ const DialogContent = React.forwardRef<
       className={cn(
         // Closed-state exit animations dropped so Radix unmounts on close
         // synchronously and releases the body pointer-events lock (bug c4c83e9a).
-        "fixed left-[50%] top-[50%] z-50 grid w-[calc(100%-2rem)] max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-4 sm:p-6 shadow-lg max-h-[calc(100dvh-2rem)] overflow-y-auto data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] motion-reduce:animate-none rounded-lg sm:rounded-lg",
+        //
+        // Every utility here appears at exactly one breakpoint. Restating one at
+        // `sm:` looks like a no-op and is not: tailwind-merge scopes conflicts by
+        // variant, so a caller's unprefixed `rounded-[16px]` cancels the base
+        // `rounded-lg` while an `sm:rounded-lg` beside it survives the merge and
+        // wins by cascade from 640px up. A duplicate makes the property
+        // uncancellable from outside. `sm:p-6` is a genuine step off `p-4`, not a
+        // restatement, and stays. Enforced by dialog-variant-duplication.test.tsx.
+        "fixed left-[50%] top-[50%] z-50 grid w-[calc(100%-2rem)] max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-4 sm:p-6 shadow-lg max-h-[calc(100dvh-2rem)] overflow-y-auto data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] motion-reduce:animate-none rounded-lg",
         className,
       )}
       {...props}
