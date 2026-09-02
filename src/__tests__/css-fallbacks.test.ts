@@ -118,8 +118,10 @@ describe("CSS Fallbacks", () => {
       expect(css).toContain(":root {");
       expect(css).toContain("--primary:");
       expect(css).toContain("--background:");
-      expect(css).toContain(".bg-primary");
-      expect(css).toContain(".text-primary");
+      // Selectors are matched with the opening brace attached, so a rule for a
+      // longer name — `.bg-primary-strong` — cannot stand in for this one.
+      expect(css).toContain(".bg-primary {");
+      expect(css).toContain(".text-primary {");
     });
 
     it("should include custom fallbacks", () => {

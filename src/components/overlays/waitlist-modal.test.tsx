@@ -108,7 +108,12 @@ describe("WaitlistModal — authenticating spinner colour (report 2e84facb)", ()
   it("paints the authenticating spinner Sky Blue 300, not the retired green", () => {
     const { container } = render(<WaitlistModal {...loadingProps} />);
 
-    const cls = spinner(container).getAttribute("class") ?? "";
+    // Members of the class list, not substrings of it: a substring read counts
+    // `hover:text-[#56C7F3]` as the blue being present, and that spinner is
+    // uncoloured for the whole of the spin.
+    const cls = (spinner(container).getAttribute("class") ?? "")
+      .split(/\s+/)
+      .filter(Boolean);
     expect(cls, "spinner is not on the brand blue").toContain(SKY_BLUE_300);
     expect(cls, "spinner regressed to the retired alien green").not.toContain(
       RETIRED_ALIEN_GREEN,
