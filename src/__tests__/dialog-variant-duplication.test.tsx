@@ -25,19 +25,40 @@
  * prefixes stripped, so a future `md:rounded-lg` cannot slip past a ban aimed at
  * `sm:`.
  */
+import type { ReactElement } from "react";
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import resolveConfig from "tailwindcss/resolveConfig";
 
 import {
   Dialog,
   DialogContent,
+  DialogFooter,
+  DialogHeader,
   DialogTitle,
 } from "../components/overlays/dialog";
 import {
   AlertDialog,
+  AlertDialogCancel,
   AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
   AlertDialogTitle,
 } from "../components/feedback/alert-dialog";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "../components/overlays/sheet";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from "../components/layout/drawer";
 
 /** Tailwind's min-width breakpoint variants. */
 const RESPONSIVE_VARIANTS = new Set(["sm", "md", "lg", "xl", "2xl"]);
@@ -265,13 +286,307 @@ describe("the padding ramp is a real step and is unchanged", () => {
     // Not a lock in the radius sense — `sm:p-6` differs from `p-4`, so it is a
     // deliberate responsive step, and removing it would repad every dialog in
     // the app. It does mean an unprefixed `p-3` only holds below 640; a caller
-    // wanting 12px throughout must write `sm:p-3` as well. Whether this ramp
-    // should hinge on `md:` (768, a breakpoint the frames are actually read at)
-    // instead of `sm:` (640) is a product decision, not a lane's: 200 of 244
-    // call sites pass no padding at all and would all shift.
+    // wanting 12px throughout must write `sm:p-3` as well. The measurement that
+    // keeps this ramp on `sm:` rather than moving it is recorded with the rest
+    // of the hinge decisions below.
     const classes = tokensOf(renderDialog("p-3"));
     expect(classes).toContain("p-3");
     expect(classes).not.toContain("p-4");
     expect(classes).toContain("sm:p-6");
   });
 });
+
+/**
+ * ─── WHERE EACH RULE HINGES ────────────────────────────────────────────────
+ *
+ * The boards are drawn at 375, 768 and 1440. Tailwind's `sm:` is 640, which is
+ * not one of them, so a two-value rule hung off `sm:` applies its upper value
+ * across a 128px band no board describes. Where a rule's two values come off
+ * the phone board and the tablet board, the phone value is in force to 767 and
+ * the rule belongs on `md:`.
+ *
+ * That reasoning decides the side-panel cap and nothing else in these four
+ * files. The rest keep `sm:`, and the measurement for each is recorded on its
+ * own test rather than in a list that can drift away from the code.
+ *
+ * THE CAP. `sheetVariants` and `drawerContentVariants` cap `side="left"` and
+ * `side="right"` at `max-w-sm`, 384px, against a panel that is otherwise
+ * `w-3/4`. The measured panels ramp 359 -> 442 between the 375 and 768 boards
+ * and hold 442 to 1440 (Trench right-menus 13006:310854 / 13006:332803; the
+ * chat-settings panel reads the same pair), so 442 is a tablet-up number and
+ * the cap starts where the tablet board does. On `sm:` it also made a wider
+ * viewport draw a NARROWER panel — `w-3/4` reaches 479 at 639 and the cap cut
+ * it to 384 at 640 — which is the shape of the "panel is cut off / too narrow"
+ * complaints these panels collected.
+ *
+ * READING THE HINGE, NOT THE STRING. `effectiveAt` merges through the same `cn`
+ * production uses and then resolves per width, so these assertions measure what
+ * the browser paints rather than what the source says. A class-list assertion
+ * is green on both sides of a breakpoint; a width ladder is not.
+ */
+
+const TW = resolveConfig({ content: [] });
+
+/** Tailwind's min-width scale, read rather than restated. */
+const BREAKPOINT_PX: Record<string, number> = {
+  "": 0,
+  ...Object.fromEntries(
+    Object.entries(TW.theme?.screens as Record<string, string>).map(
+      ([name, value]) => [`${name}:`, parseFloat(value)],
+    ),
+  ),
+};
+
+/**
+ * The utility that actually paints `prop` at `width`, after the merge.
+ *
+ * Tailwind emits the unprefixed block first and each `@media` block after it,
+ * so among the utilities whose breakpoint has been reached the winner is the
+ * one at the largest breakpoint. `null` means the property is unset there.
+ */
+function effectiveAt(
+  classes: string[],
+  prop: RegExp,
+  width: number,
+): string | null {
+  let best: string | null = null;
+  let bestBp = -1;
+  for (const token of classes) {
+    const { variants, utility } = splitVariants(token);
+    if (variants.length > 1) continue;
+    const prefix = variants.length === 1 ? `${variants[0]}:` : "";
+    const bp = BREAKPOINT_PX[prefix];
+    if (bp === undefined || bp > width) continue;
+    if (!prop.test(utility)) continue;
+    if (bp >= bestBp) {
+      bestBp = bp;
+      best = utility;
+    }
+  }
+  return best;
+}
+
+const MAX_WIDTH = /^max-w-/;
+
+/** The ladder straddles both candidate hinges, so either one moving shows up. */
+const LADDER = [375, 639, 640, 641, 767, 768, 769, 1440];
+
+function renderSheet(side: "left" | "right", className?: string): Element {
+  render(
+    <Sheet defaultOpen>
+      <SheetContent side={side} className={className}>
+        <SheetTitle>t</SheetTitle>
+      </SheetContent>
+    </Sheet>,
+  );
+  return screen.getByRole("dialog");
+}
+
+function renderDrawer(side: "left" | "right", className?: string): Element {
+  render(
+    <Drawer defaultOpen>
+      <DrawerContent side={side} className={className}>
+        <DrawerTitle>t</DrawerTitle>
+      </DrawerContent>
+    </Drawer>,
+  );
+  return screen.getByRole("dialog");
+}
+
+describe("the ladder these assertions are read against", () => {
+  it("is Tailwind's own scale, so a moved breakpoint fails here first", () => {
+    // If someone re-scales the project's breakpoints, every width below means
+    // something different. This is the instrument check for that.
+    expect(BREAKPOINT_PX["sm:"]).toBe(640);
+    expect(BREAKPOINT_PX["md:"]).toBe(768);
+    expect(BREAKPOINT_PX["lg:"]).toBe(1024);
+  });
+
+  it("resolves max-w-sm to the 384 the frames are compared against", () => {
+    const scale = TW.theme?.maxWidth as Record<string, string>;
+    expect(parseFloat(scale.sm) * 16).toBe(384);
+  });
+});
+
+describe("the side-panel cap starts at the tablet board", () => {
+  const sides = ["left", "right"] as const;
+
+  it.each(sides)("SheetContent side=%s states the cap once, at md:", (side) => {
+    const capped = tokensOf(renderSheet(side)).filter(
+      (c) => baseUtility(c) === "max-w-sm",
+    );
+    // Exhaustive rather than a ban: this fails on `sm:max-w-sm`, on a bare
+    // `max-w-sm`, and on any pair of the two.
+    expect(capped).toEqual(["md:max-w-sm"]);
+  });
+
+  it.each(sides)("DrawerContent side=%s states the cap once, at md:", (side) => {
+    const capped = tokensOf(renderDrawer(side)).filter(
+      (c) => baseUtility(c) === "max-w-sm",
+    );
+    expect(capped).toEqual(["md:max-w-sm"]);
+  });
+
+  it.each(sides)(
+    "leaves side=%s uncapped through the whole 640-767 band",
+    (side) => {
+      const classes = tokensOf(renderSheet(side));
+      const applied = LADDER.map((w) => [w, effectiveAt(classes, MAX_WIDTH, w)]);
+      // The decisive rows are 641 and 767: on `sm:` they read "max-w-sm", and
+      // the panel there is narrower than it was one pixel below 640.
+      expect(applied).toEqual([
+        [375, null],
+        [639, null],
+        [640, null],
+        [641, null],
+        [767, null],
+        [768, "max-w-sm"],
+        [769, "max-w-sm"],
+        [1440, "max-w-sm"],
+      ]);
+    },
+  );
+
+  it("holds the drawer to the same ladder as its twin", () => {
+    // The two variants are the same rule written twice; a drift between them
+    // only surfaces when someone finally mounts the drawer.
+    const sheet = tokensOf(renderSheet("right"));
+    const drawer = tokensOf(renderDrawer("right"));
+    for (const w of LADDER) {
+      expect(effectiveAt(drawer, MAX_WIDTH, w), `at ${w}px`).toBe(
+        effectiveAt(sheet, MAX_WIDTH, w),
+      );
+    }
+  });
+});
+
+describe("what a caller has to write to beat the cap", () => {
+  it("an md: cap of its own displaces the primitive's entirely", () => {
+    const classes = tokensOf(renderSheet("right", "md:max-w-[442px]"));
+    expect(classes.filter((c) => baseUtility(c) === "max-w-sm")).toEqual([]);
+    expect(effectiveAt(classes, MAX_WIDTH, 768)).toBe("max-w-[442px]");
+    expect(effectiveAt(classes, MAX_WIDTH, 1440)).toBe("max-w-[442px]");
+  });
+
+  it("an unprefixed cap of its own is still outranked from 768 up", () => {
+    // tailwind-merge scopes conflicts per variant chain, so a bare `max-w-*`
+    // and the primitive's `md:` one are separate groups and both survive. This
+    // is the whole reason the cap has to be answered at its own breakpoint.
+    const classes = tokensOf(renderSheet("right", "max-w-none"));
+    expect(effectiveAt(classes, MAX_WIDTH, 767)).toBe("max-w-none");
+    expect(effectiveAt(classes, MAX_WIDTH, 768)).toBe("max-w-sm");
+  });
+
+  it("an sm: cap covers the 640 band and nothing above it", () => {
+    // The shape every caller that predates this hinge is in: `sm:max-w-[442px]`
+    // wins to 767 and the primitive takes the panel back to 384 at 768. Those
+    // call sites need the same value spelled `md:`, not deleted.
+    const classes = tokensOf(renderSheet("right", "sm:max-w-[442px]"));
+    expect(effectiveAt(classes, MAX_WIDTH, 641)).toBe("max-w-[442px]");
+    expect(effectiveAt(classes, MAX_WIDTH, 767)).toBe("max-w-[442px]");
+    expect(effectiveAt(classes, MAX_WIDTH, 768)).toBe("max-w-sm");
+  });
+});
+
+/**
+ * The four rules that keep hinging at 640, each with the reading that keeps it
+ * there. All four are stock shadcn ramps rather than anything a board asks for,
+ * and for each of them 768 is a WORSE hinge than 640, not a better one: moving
+ * a rule right extends the value the boards contradict across another 128px.
+ *
+ * Retiring a ramp outright is a different change from re-hinging one, with a
+ * blast radius (217 header call sites, 151 footer, 251 content) that puts it
+ * outside a lane. These tests pin the current hinge so that decision stays a
+ * decision instead of arriving as drift.
+ */
+describe("the rules that stay on the 640 hinge", () => {
+  it("DialogContent's padding step, because the boards step at 1024", () => {
+    // The two dialog insets that were measured hold the phone value through the
+    // tablet board and step on the desktop one: the perp confirm modal is 12 at
+    // 768 (9148:80644) and 24 at 1440 (3976:40708); the market search modal is
+    // 24/12 at both 375 (9061:240254) and 768 (9148:79119), 24/16 at 1440
+    // (3962:34367). Neither steps at 768, so `md:` is not where they step, and
+    // twenty call sites carry an `sm:p-*` cancel that only reaches this rule
+    // while it is on `sm:`.
+    const classes = tokensOf(renderDialog());
+    expect(effectiveAt(classes, /^p-/, 639)).toBe("p-4");
+    expect(effectiveAt(classes, /^p-/, 641)).toBe("p-6");
+  });
+
+  const headers: Array<[string, () => Element]> = [
+    ["DialogHeader", () => renderPart(<DialogHeader>h</DialogHeader>)],
+    ["SheetHeader", () => renderPart(<SheetHeader>h</SheetHeader>)],
+    ["AlertDialogHeader", () => renderPart(<AlertDialogHeader>h</AlertDialogHeader>)],
+    ["DrawerHeader", () => renderPart(<DrawerHeader>h</DrawerHeader>)],
+  ];
+
+  it.each(headers)(
+    "%s's alignment, because the boards are left-aligned on the phone too",
+    (_name, mount) => {
+      // The 375 board draws its dialog headers left (9061:240254's controls row
+      // starts at x=8), and every caller in the app that states an alignment
+      // states ONE for all widths — eight left, six centre, none ramping. So the
+      // centre half is what the boards contradict, and hinging it at 768 would
+      // draw it over another 128px.
+      const classes = tokensOf(mount());
+      expect(effectiveAt(classes, /^text-(left|center|right)$/, 639)).toBe(
+        "text-center",
+      );
+      expect(effectiveAt(classes, /^text-(left|center|right)$/, 641)).toBe(
+        "text-left",
+      );
+    },
+  );
+
+  const footers: Array<[string, () => Element]> = [
+    ["DialogFooter", () => renderPart(<DialogFooter>f</DialogFooter>)],
+    ["SheetFooter", () => renderPart(<SheetFooter>f</SheetFooter>)],
+    ["AlertDialogFooter", () => renderPart(<AlertDialogFooter>f</AlertDialogFooter>)],
+    ["DrawerFooter", () => renderPart(<DrawerFooter>f</DrawerFooter>)],
+  ];
+
+  it.each(footers)(
+    "%s's direction, because the boards draw the button row at 375 as well",
+    (_name, mount) => {
+      // The right-menu footer is a two-up row with an 8px gap on all three
+      // boards — 13006:181751/:181752 at 375, :322581/:322582 at 768,
+      // :181189/:181190 at 1440 — and the 768 confirm modal draws a single
+      // full-width CTA (9148:80677). No board stacks a footer, so the reversed
+      // column is already the value to question, and moving the hinge would
+      // stack another 128px of widths.
+      const classes = tokensOf(mount());
+      expect(effectiveAt(classes, /^flex-(row|col)(-reverse)?$/, 639)).toBe(
+        "flex-col-reverse",
+      );
+      expect(effectiveAt(classes, /^flex-(row|col)(-reverse)?$/, 641)).toBe(
+        "flex-row",
+      );
+      expect(effectiveAt(classes, /^space-x-/, 641)).toBe("space-x-2");
+    },
+  );
+
+  it("AlertDialogCancel's margin, because it is the footer's rule wearing a margin", () => {
+    // The 8px only exists to separate the buttons while the footer is a column,
+    // so it has to clear exactly where the footer becomes a row. Hinged at 768
+    // it would push Cancel 8px below Action across 640-767, where the footer is
+    // already a row. Its sm: value is 0 rather than a second step, so nothing in
+    // the app cancels it: 24 call sites, three pass a className, none touch mt-.
+    render(
+      <AlertDialog open>
+        <AlertDialogContent>
+          <AlertDialogTitle>t</AlertDialogTitle>
+          <AlertDialogCancel>c</AlertDialogCancel>
+        </AlertDialogContent>
+      </AlertDialog>,
+    );
+    const classes = tokensOf(screen.getByText("c"));
+    expect(effectiveAt(classes, /^mt-/, 639)).toBe("mt-2");
+    expect(effectiveAt(classes, /^mt-/, 641)).toBe("mt-0");
+  });
+});
+
+/** Mounts a bare header/footer part and hands back its element. */
+function renderPart(node: ReactElement): Element {
+  const { container } = render(node);
+  return container.firstElementChild as Element;
+}
