@@ -143,15 +143,36 @@ frame. Casey's call: reproduce the frame (30) or keep the parlay maths (45).
 
 ---
 
-## 4. `4896-83198` "Bet slip – system – elongated" is the only slip frame NOT built
+## 4. `4896-83198` "Bet slip – system – elongated" — BUILT 2026-09-01
 
-The `system` tab exists in `BetSlipTab` and is rendered **disabled**, with a
-title attribute saying so. `estimatedPayout` treats `system` as `combined`.
+~~The only slip frame NOT built.~~ Superseded. The tab is live, with its own
+combination arithmetic in `src/pages/sports/components/betslip/systemBet.ts`.
 
-Deliberately left disabled. A system bet is a combinatorial wager (all 2-folds
-of N, etc.), so shipping the tab without its combination arithmetic would show
-wrong payouts — the failure mode section 3 is trying to avoid. It needs a
-specified combination set before it is worth building.
+**The frame is a system of SIZE 1, and that is decidable from its own numbers.**
+Three legs at 1.12 / 2.46 / 1.15, unit stake 10, "3 bets", "Total odds 4.73",
+"Estimated payout 47.30 USDC". C(3,1) = 3 ✓, 1.12 + 2.46 + 1.15 = 4.73 ✓,
+10 × 4.73 = 47.30 ✓. Three independent figures land exactly. The parlay reading
+appears nowhere: 1.12 × 2.46 × 1.15 × 10 = 31.68.
+
+Confirmed independently off report `9fc05acf`'s attachment — the My-bets page
+draws the same three legs, the same 4.73 and the same 47.30 on a card headed
+"3 bets … 3 legs".
+
+★ **`Total bet 10 USDC` is the one figure NOT reproduced.** Three bets at a 10
+unit stake put **30** at risk; the 10 on that row is a verbatim copy of the
+unit-stake input two rows above it. The My-bets card carries no total-bet row at
+all, which is consistent. Same family as the section-3 ambiguity below, resolved
+the same way: reproduce what closes, refuse what contradicts a money figure.
+
+**Placement is narrower than pricing.** Size 1 = N singles (what the slip
+already places). Size N = a parlay, which the **Combined tab** places correctly,
+taking the stake once for the ticket rather than once per leg. Sizes between
+need C(N,K) parlays signed one at a time and are priced, shown, and **refused by
+name**.
+
+⚠️ **A defect that was hiding behind the disabled tab:** `modeForTab` mapped
+`system` → `parlay`. The moment the tab opened, a three-leg system quoted at
+47.30 would have reached the relay as ONE ticket at the summed stake.
 
 ---
 
@@ -181,6 +202,22 @@ built section during the feed outage, not a missing section.
 Report `34bf6404` reads "Live RTP section is missing from the left panel under
 Sports book". The node is the icon alone. The row it belongs to was **retired
 by a later ruling** — see section 7.
+
+---
+
+## 5b. ⚠️ THE ODDS FEED IS LIVE — every "revoked key" line in this file is FALSE
+
+Re-probed 2026-09-01: HTTP 200 on every mapped sport — NFL 272 fixtures, MMA 63,
+NBA 41, tennis 41, NHL 32, soccer 20, MLB 15, `last_update` minutes old. The
+recorded "ODDS_API_KEY revoked / 401 UPSTREAM_UNAUTHORIZED" was an **exhausted
+monthly quota** read as a dead credential, and it held ~29 reports off the
+schedule for about four months. **Do not build an offline state for a source
+that works.** Where a frame's content genuinely has no source — in-play match
+state, league tables, points-per-game — say *that*, not "the odds feed is down".
+
+★ Also: `odds-proxy` converts an upstream 404 into `200` + `[]`, so an empty
+board can be a real error wearing a valid answer. Only the `X-Resolved-404`
+header discriminates.
 
 ---
 
@@ -540,6 +577,14 @@ border 1px `#123F3C`, radius 12px, backdrop-blur 20px, icon tile 42x42 on
 mis-grouping.
 
 ### `9215:15732` (report f7567044) is the HOST PAGE, not a section
+
+**Mount status, 2026-09-01:** `GameViewRail` (the 432 rail) mounts at
+`GameDetail.tsx`, and `MatchSummaryBlock` — the 156 header card over the two
+427×224 cards — mounts above the market tab strip (commit `2715e11cb`). Both
+are guarded by source-level assertions in
+`src/pages/sports/__tests__/gameDetailMatchColumn.test.tsx`, because every
+render test in the `matchview` folder passed for weeks while **nothing imported
+the component**.
 
 Name `"Skai > Play > Sportsbook > Soccer > AVL CHE > Player props (1440 x 900px)"`,
 actual **1440x4058**. It is the only frame in this set carrying full global
