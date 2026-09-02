@@ -1,0 +1,55 @@
+# key	status	primaryFile	route	reason	bp
+# Lane wallet. Owns src/components/wallet/** and src/pages/wallet/**.
+# src/pages/wallet/ does not exist. src/components/wallet/ holds 19 files, 7,027 lines, and NOT ONE
+# of them is named by any row in any status.*.tsv in this catalog. Every wallet row in the catalog
+# points at modules/skai-wallet/src/components/wallet/**, which is the standalone wallet submodule and
+# a different tree. So: 0 frames in slice, 0 frames measured, 0 promotions. No frame status changed.
+# Swept against LAW 2 instead, per the brief. What the sweep found, and it was not clean:
+#
+# TWO WIDTH INVERSIONS, BOTH FIXED. MultiChainWalletModal.tsx and ThirdwebConnectButton.tsx each
+# passed `sm:max-w-md` to DialogContent. The primitive states `w-[calc(100%-2rem)] max-w-lg`, both
+# bare, and tailwind-merge resolves a conflict only inside the variant chain it is written in, so the
+# caller's cap never displaced the 512 - it shadowed it from 640 up and left it standing below.
+# Measured through the primitive's own merge across 375/639/640/641/767/768/769/1440: the cap read
+# 512, 512, 448, 448, 448, 448, 448, 448. The dialogs drew 64px WIDER at 639 than at 641, and wider
+# there than at any desktop width. Visible band is 481-639, where the fluid width stops binding and
+# the box grows to 512 against the 448 it draws above the hinge. Below 481 the fluid width binds
+# first, so a phone was never affected: 343 at 375 either way. Both caps now stated bare, so 448
+# holds at all eight rungs.
+#
+# THE REST OF THE OVERLAY SURFACE IS CLEAN, MEASURED NOT ASSUMED. Seven overlay contents in the
+# folder. Four state no className and inherit a flat 512 at every rung (AddressBook DialogContent and
+# AlertDialogContent, both MultiChainWalletCard dialogs). WalletModal states `sm:max-w-lg` against the
+# primitive's bare `max-w-lg`: 512 at every rung, a same-value restatement, zero px delta, left alone.
+# No caller in the folder passes an unprefixed p-* that the primitive's `p-4 sm:p-6` would half-cancel,
+# and the only footer stating spacing is the create-wallet one, which already answers `sm:space-x-2`
+# in its own chain and has an oracle.
+#
+# NON-OVERLAY BREAKPOINT CLASSES, ALL MONOTONIC. NetworkMismatchBanner stacks then goes to a row at
+# 640 with no cap either side. WalletMobilePopup ramps 359 to 376 and flips its anchor in the same
+# chain at the same breakpoint, with a JS matchMedia that reads the same 640. Neither narrows as the
+# viewport widens. Both hinge at 640 rather than 768, so the 640-767 band draws a value no board
+# specifies - but there is no board for either component, so moving the hinge would be a guess, not
+# a measurement. Recorded, not changed.
+#
+# A THIRD OF THE PARTITION IS UNREACHABLE, so its breakpoint classes are not shipped defects and are
+# not counted above. WalletDashboard.tsx (1,523 lines), WalletOnboarding.tsx (478), WalletSwitcher.tsx
+# (253) and WalletConnector.tsx (88) - 2,342 lines - have zero importers. Every surviving mention of
+# WalletDashboard in src/ is a COMMENT; WalletMobilePopup replaced it. WalletSwitcher is named only by
+# two tests that read its source as text. WalletConnector and WalletOnboarding are named by nothing at
+# all. WalletDashboard carries `sm:w-[380px]` and `h-11 sm:h-9`, and WalletSwitcher a `hidden sm:inline`
+# label swap; none of the three renders. Files kept, per the standing no-removal rule.
+#
+# ORACLES ADDED, both keyed to resolved values rather than class strings, because a class-list
+# assertion is green on both sides of a breakpoint. dialogWidthHinge.test.tsx reads the two caller
+# strings from source, merges them through the real primitive, and walks the eight-rung ladder; its
+# control runs the same ladder over the string both files shipped and reports the 512/448 step. Proved
+# red by an extending mutation to `md:max-w-md`, which a ban aimed at `sm:` would have missed.
+# overlayCapMonotonic.test.tsx is the folder-wide guard: it scans every non-test file for overlay
+# contents, names the seven it must find so an empty scan cannot read green, refuses rather than skips
+# a className it cannot parse, and requires every ladder to be non-decreasing. Proved red by adding
+# `sm:max-w-sm` to the AddressBook dialog - a site it reaches by scanning, not by name - where it
+# reported `639px=512 -> 640px=384`.
+#
+# Tests: 179 passed across 14 files (all of src/components/wallet/, tests/components/wallet/,
+# tests/unit/components/wallet/, tests/unit/components/WalletConnectModal.test.tsx), vitest 4.1.9.
