@@ -33,6 +33,11 @@ import {
   DialogContent,
   DialogTitle,
 } from "../components/overlays/dialog";
+import {
+  AlertDialog,
+  AlertDialogContent,
+  AlertDialogTitle,
+} from "../components/feedback/alert-dialog";
 
 /** Tailwind's min-width breakpoint variants. */
 const RESPONSIVE_VARIANTS = new Set(["sm", "md", "lg", "xl", "2xl"]);
@@ -172,6 +177,49 @@ describe("DialogContent does not lock its own utilities", () => {
     const classes = tokensOf(renderDialog());
     expect(classes.filter((c) => c === "rounded-lg")).toHaveLength(1);
     expect(classes).not.toContain("sm:rounded-lg");
+  });
+});
+
+/**
+ * AlertDialogContent shipped the same shape one step further along: its radius
+ * existed ONLY as `sm:rounded-lg`, with no bare class beside it. Two consequences,
+ * and the first is the one a user sees.
+ *
+ *   1. Below 640 the element had no radius at all, so all 26 call sites drew
+ *      square corners on every phone.
+ *   2. A caller's own unprefixed radius could not evict an `sm:` class, so the
+ *      12px won above 640 regardless of what the caller asked for.
+ *
+ * The radius is now bare, which fixes both at once and changes nothing about the
+ * width where it already rendered.
+ */
+function renderAlert(callerClass?: string): Element {
+  render(
+    <AlertDialog open>
+      <AlertDialogContent className={callerClass}>
+        <AlertDialogTitle>t</AlertDialogTitle>
+      </AlertDialogContent>
+    </AlertDialog>,
+  );
+  return screen.getByText("t").closest("[role=alertdialog]") as Element;
+}
+
+describe("AlertDialogContent states its radius at every width", () => {
+  it("carries no utility written both bare and behind a breakpoint", () => {
+    expect(findVariantDuplicates(tokensOf(renderAlert()))).toEqual([]);
+  });
+
+  it("draws a radius on a phone, not only from sm: up", () => {
+    const classes = tokensOf(renderAlert());
+    expect(classes).toContain("rounded-lg");
+    // The bug: stated only behind sm:, every width below 640 fell back to 0.
+    expect(classes).not.toContain("sm:rounded-lg");
+  });
+
+  it("lets a caller's unprefixed radius displace it entirely", () => {
+    const classes = tokensOf(renderAlert("rounded-[16px]"));
+    expect(classes).toContain("rounded-[16px]");
+    expect(classes.map(baseUtility).filter((u) => u === "rounded-lg")).toEqual([]);
   });
 });
 
