@@ -29,3 +29,43 @@ Skai > Play > Casino (768 x 1024px) [11066-23332]	partial	modules/skai-gaming/sr
 Skai > Play > Casino (375 x 812px) [11100-62081]	partial	modules/skai-gaming/src/pages/play/Play.tsx	/play/casino	THE NARROW END OF THE SAME FOUR RAMPS, and the tier that proves the 640 steps were interpolations. Featured grid 11109:81809 is a 342 row of two 167x216 cards at x = 0, 175, so two-up is the base and nothing between it and the tablet three-up is drawn. The featured header carries NO pill group at all at this width - 11109:81807 is a single 75x24 control - and the Top-bets header likewise (11100:64340, 113x24), so neither track has a value below md and both are left fluid under their existing caps. Casino nav 11100:62147 is 343x76 on TWO lines: chip group 11100:62152 is 532x28 at y=0, overflowing the 343 nav, then search 11100:62167 is 343x32 at y=44, full width. NOT CLOSED: the gap between those two lines measures 16 against a shipped gap-3 (12), and the frame draws a 76x28 plate at x=342 with a 16x16 caret at x=326 inside the chip group - an overflow affordance the code does not draw. Table header labels here are 14 tall (11100:64344) against 16 at 768, so that ramp is real and its 640 hinge is a defect, not a redundancy.	mobile=partial
 Skai > Play 1VH (375 x 812px) [11211-82876]	partial	modules/skai-gaming/src/components/play/ui/PlayHero.tsx	/play	HERO AND JOINED BAR MEASURED, ONE HINGE CLOSED, TWO VALUES LEFT OPEN. The hero 11211:82879 is 343x300 stacked as two 343x150 cards - art 11211:82881 at y=0, copy 11211:82882 at y=150 - so the image half has exactly one fixed height below the row breakpoint. The code shipped two (160 unprefixed, 200 at sm), and the 200 could only ever apply across 640-767 because md:h-auto reclaims the height at 768; collapsed to the single unprefixed value. NOT CLOSED, recorded rather than quietly fixed: the card measures 150 and the code ships 160, and the frame puts the art ABOVE the copy where the DOM puts it below. The joined filter bar 11211:82932 is 343x44 with a 115x44 CTA and a 228x44 field, which is the same 115 the 768 cut draws (10912:148725) - that pair is why the 158 CTA belongs on lg, and another lane landed that change while this one was measuring.	mobile=partial
 Skai > Play (1440 x 900px) [9099-146637]	partial	modules/skai-gaming/src/components/play/ui/PlaySegmentedTabs.tsx	/play	DESKTOP TIER UNCHANGED BY DESIGN, AND RE-MEASURED TO PROVE IT. Frame 186 at 9099:147029 is 448x38 with four 107x30 segments at x = 4, 115, 226, 337; the label box is 22 tall, which closes the height as 4+4+22+4+4 = 38. Every value this lane moved was already correct at this width - the point of the change is that they now START here instead of at 640. The track arithmetic holds at both cuts (4px track padding a side, three 4px gaps) against 380/90 at 768 and 448/107 here, so the two widths are independently measured rather than one being a rounding of the other. Row stays partial because the segment PADDING is still inferred: Figma's own button component carries 24px padding AND a fixed 107px width with a 60px placeholder label, which cannot both be true of a real Originals instance, so the shipped 16 is an arithmetic fit rather than a read value.	desktop=partial
+# ── HANDOVER: the 53 sm: uses in the ten *PageSections.tsx files ───────────
+# Audited and measured by this lane, NOT edited — a third session had
+# uncommitted hunks in all ten all session, and `git add <file>` would have
+# staged their in-flight work into my commit. Numbers are here so whoever takes
+# them does not re-derive, and because two of the three are already measured.
+#
+# 1. "text-[10px] leading-3 ... sm:text-xs sm:leading-4"  (20 uses)
+#    375  11100:64344 — column labels are 14 TALL (Game 31x14, Rank 26x14,
+#         User 25x14, Payout 36x14)
+#    768  11066:23007 — the same labels are 16 TALL
+#    A REAL step hinged early. The sm: rung's 12/16 already matches 768; it just
+#    starts 128px too soon, so this is md:. The base 10/12 against a 14 line box
+#    is a separate 2px value delta and moving the rung does not close it.
+#
+# 2. "... p-1 sm:w-[390px]"  (hand-rolled bets tab track, 10 uses)
+#    375  no track at all — 11100:64340 is a single 113x24 control
+#    768  11066:23000 — 346x34, three 110x26 segments at x = 4, 118, 232
+#    1440 390
+#    -> md:w-[346px] lg:w-[390px], which is what PlayBetsTable.tsx:617 already
+#    ships for the same group.
+#
+# 3. "mt-10 sm:mt-[126px]"  (Mines, Plinko, Scratchers)
+#    126 is measured ONLY at 1440, and no game frame draws a footer at 375 at
+#    all (9003:119858 closes at Bottom-navigation-mobile), so there is no tablet
+#    value and the 1440 one belongs on lg:. CrashPageSections.tsx:1293 ships the
+#    same gap UNPREFIXED at every width, so the four siblings already disagree
+#    and whoever takes these files is picking a value, not restoring one.
+#
+#    ★ DO NOT "CORRECT" 126 TO 210. playPageTemplate.ts records the desktop
+#    frame as NESTED boxes, so a naive read of its own listing gives 2156 + 742
+#    = 2898 and a 210 gap. Frame 641's y is PARENT-RELATIVE; logos/skai-short's
+#    is not. Reconciled into main's space:
+#        Frame 520 in main        y =   24
+#        Frame 631 in Frame 520   y =   60
+#        Frame 641 in Frame 631   y = 2156   h = 742
+#        About block ends   24 + 60 + 2156 + 742 = 2982
+#        logos/skai-short   y = 3108   (already in main's space)
+#        gap                3108 - 2982 = 126
+#    Confirmed independently by lane play-shells, and it agrees with numbers
+#    recorded off four different game frames months apart.
