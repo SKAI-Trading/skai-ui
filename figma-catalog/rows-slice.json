@@ -1,0 +1,1313 @@
+{
+ "13006-144635": {
+  "file": "status.trade-2.launch.tsv",
+  "cols": [
+   "Skai > Trade - dropdown 1VH (1440 x 900px) [13006:144635]",
+   "done",
+   "src/components/home-redesign/HomeTopBar.tsx",
+   "(global chrome)",
+   "Sidebar/topbar Trade disclosure. All 5 frame rows built verbatim with the frame copy and real routes: Perps /trade/perps, Spot /spot, Swaps walletSwapPath(), Trench /trench, Launch /launchpad (HomeTopBar.tsx:179-186). Icons come from the @skai/ui trade-* family, guarded by HomeTopBar.tradeIcons.test.tsx."
+  ]
+ },
+ "13006-250464": {
+  "file": "status.trade-2.launch.tsv",
+  "cols": [
+   "Skai > Trade - dropdown 1VH (1440 x 900px) [13006:250464]",
+   "done",
+   "src/components/home-redesign/HomeTopBar.tsx",
+   "(global chrome)",
+   "Byte-identical duplicate of 13006:144635 (same 300x344 dropdown at x=103,y=48, same 5 rows, same copy) sitting at a different canvas x. Catalog dedupe candidate, not a second state."
+  ]
+ },
+ "13006-146233": {
+  "file": "status.trade-2.launch.tsv",
+  "cols": [
+   "Skai > Launch 1VH (1440 x 900px) [13006:146233]",
+   "done",
+   "src/pages/Launchpad.tsx",
+   "/launchpad",
+   "Above-the-fold cut of the Launch home. Header + chain filter + Home/LIVE/Trench nav + Create token CTA, Trending carousel, Markets grid. Rows are real (useTrenchDiscovery -> DexScreener/pump.fun); the LIVE/Agents/Last trade tabs render explicitly unavailable rather than wired to a substitute ranking."
+  ]
+ },
+ "13006-151520": {
+  "file": "status.trade-2.launch.tsv",
+  "cols": [
+   "Skai > Launch (1440 x 900px, 2226 tall) [13006:151520]",
+   "done",
+   "src/pages/Launchpad.tsx",
+   "/launchpad",
+   "Exact duplicate of 13006:150346 - same 296 text nodes, same children, same geometry, stacked at the identical x/y. Catalog dedupe candidate."
+  ]
+ },
+ "13006-152694": {
+  "file": "status.trade-2.launch.tsv",
+  "cols": [
+   "Skai > Launch (1440 x 900px, 2226 tall) [13006:152694]",
+   "done",
+   "src/pages/Launchpad.tsx",
+   "/launchpad",
+   "Third stack at the same x/y but NOT a duplicate: 308 texts, and the bottom strip is the Trench scroller (1382x22) instead of the ticker. The app mounts the Trench scroller, i.e. this variant."
+  ]
+ },
+ "13006-154151": {
+  "file": "status.wave4.row-conflicts.tsv",
+  "cols": [
+   "Skai > Launch > Display settings (1440 x 900px) [13006-154151]",
+   "partial",
+   "src/pages/Launchpad.tsx",
+   "/launchpad",
+   "[ROUTE-COL] [scope:in-scope] [was: not-started vs partial] ATTRIBUTION ARTIFACT, not a lane disagreement. WRONG ROWS: status.trade-2.components.tsv:4, status.wave2.launch-components.tsv:8 - these put the PARENT SCREEN id in the ROUTE column (col 4 of the tsv), so the ledger reads them as verdicts on this frame. Measured: status.trade-2.components.tsv writes a node id into route on 151 of 189 rows, creator-rewards-charts 12/12, launch-components 11/14 - 174 rows total. Their real subject is the bracketed id in col 1 or col 5. Verdict taken from the row that actually keys this frame. ALSO: WRONG ROW: status.trade-2.launch.tsv:13 (subject 13006-283168), status.trade-2.launch.tsv:14 (subject 13006-281970) - the row's own SUBJECT is a different node, and it names this frame only as the container of, contrast to, or precedent for that subject. Subject read by the catalog's two stated conventions: an id in the family column, else an id opening the reason ('node 9640-213001 - ...'). A containment reference indexed as a verdict."
+  ]
+ },
+ "13006-148857": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Launch > Live 1VH [13006-148857]",
+   "partial",
+   "src/components/trade/LaunchLiveBoard.tsx",
+   "/trade/live",
+   "Measured 2026-08-31 off 13006:134300. Frame 1440x900: main 1382x828 @(58,56); content Frame 521 @(32,44) 1318 wide (1382-2*32) VERTICAL gap 32; a hero deck of overlapping cards Frame 353/351 300x169 and Frame 352/347 400x225, each padding 8 radius 16; a Main container 738x402 @(290,68); below it a second Main container 1318x1108 @(32,546) gap 32 whose Frame 269 is 680x244 padding 16 itemSpacing 32 radius 24 fill #122524; section subtitle 16px #95A09F. Code LaunchLiveBoard.tsx ships cards at w-[146px] md:w-[240px] with rounded-lg (12 on our scale) against the frames 300/400 at radius 16 - three measured misses on the hero deck alone. Board is built and routed, so partial.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-149613": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Launch > Live [13006-149613]",
+   "partial",
+   "src/components/trade/LaunchLiveBoard.tsx",
+   "/trade/live",
+   "Measured 2026-08-31. The SCROLLED/full-height twin of 13006-148857: 1440x2051, main 1382x1973, same Frame 522 hero deck @(32,24) 1318x470 gap 32 with the same 300x169 / 400x225 radius-16 padding-8 cards, same Main container 1318x1108 @(32,526) gap 32 and Frame 269 680x244 pad 16 gap 32 r24 #122524. Adds a page footer (Frame 417 1260x18 @(32,1923)) and a decorative Ellipse 24 1799x1799 op 0.19 fill #17f9b4 at (-179,1876). Same card-size and radius misses as 13006-148857.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-241485": {
+  "file": "status.wave8.trench-trade.tsv",
+  "cols": [
+   "Skai > Launch > Sample token 1VH (1440 x 900px) [13006-241485]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeTerminal.tsx",
+   "/crypto/:symbol",
+   "NOT a mis-attribution - this Launch board REUSES the Trench terminal composition and is a THIRD frame agreeing on its numbers: main 1382 at x=58 y=56; Frame 443 x=8 w=1047 gap 6 (h=672 here against 608 on 13006-210576); Order book x=778 w=277 h=672; Frame 444 x=8 y=704 w=1047 h=277 gap 16; Multi-panel - combined x=1061 w=313 gap 6; Trench scroller 1382x20 fill #001615. So outer pad 8, gap 6 and rail 313 are corroborated by 13006-210576, 13006-212076 and this frame. Content axes not measured.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-243693": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Launch > new token 1VH [13006-243693]",
+   "partial",
+   "src/pages/trade/TokenTradeDetail.tsx",
+   "/crypto/:symbol",
+   "Measured 2026-08-31 off 13006:134300. Frame 1440x900 with main 1382x1429. Column geometry is the Trench terminals: Frame 443 x=8 w=1047 gap 6, Multi-panel - combined x=1061 w=313 gap 6, Order book 277x672 @x=778 (an OVERLAY on the chart column, not a third track), Frame 444 1047x277 @(8,704) gap 16. Chart column stack: Frame 6 header 1047x58 padding 16/16/16/11 radius 16 fill #122524; Frame 1214 1047x58; TradingView 1047x544 padding 12 gap 8 radius 16 fill #122524. Same three-separated-cards vs one-bordered-surface divergence recorded for 13006-210576. Per-node comparison against TokenTradeDetail not completed.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-245903": {
+  "file": "status.wave11.home2-intel.tsv",
+  "cols": [
+   "Skai > Launch > Sample token > Dashboard - negative 1VH (1440 x 900px) [13006-245903]",
+   "partial",
+   "src/components/home-redesign/insightx/InsightXScreen.tsx",
+   "/?tab=insightx",
+   "DEMOTED from a `done` whose reason was a feature list - AI Analysis, Token pair, Skai sentiment, Verdict, Similar name tokens, Bubble map, Reports/News/Whale - with no measurement in it. A second row on the same node already read partial and said in as many words Code-side NOT compared, so the two disagreed and the citation was the one being counted. Same money-path re-verification as the positive cut 13006-246173 applies here and is not restated. The negative cut is the one that matters for the verdict path specifically: it is the state deriveVerdict reaches through `sentiment <= 0.4 || change <= -10`, both of which are asserted, and the branch that used to fabricate a flat day could only ever move a card the OTHER way. Geometry and type on this frame remain unmeasured against the DOM.",
+   "desktop=partial tablet=n-a mobile=n-a @2026-09-01"
+  ]
+ },
+ "13006-246173": {
+  "file": "status.wave11.home2-intel.tsv",
+  "cols": [
+   "Skai > Launch > Sample token > Dashboard - positive 1VH (1440 x 900px) [13006-246173]",
+   "partial",
+   "src/components/home-redesign/insightx/InsightXScreen.tsx",
+   "/?tab=insightx",
+   "MONEY-PATH RE-VERIFICATION, not a geometry pass - this row records what the writer sweep found and fixed on the InsightX dashboard, and deliberately does not promote off geometry nobody re-measured this wave. VERIFIED STILL IN THE TREE: the wave-9 deriveVerdict fix at InsightXScreen.tsx:393-402 is intact - `change` is `number | null` with no third case, and the `change >= 0` branch that could only push a card toward Great buy is unreachable from an unread 24h move. Its four oracles (an empty priceChange map, a read positive change, low sentiment with no change, a read deep drop) all pass. So does the upstream half: tokenDiscoveryService.pairToToken:334-339 leaves priceChange.h24 undefined rather than coercing it. FIXED THIS WAVE, a fourth member of the same family one panel over: the bubble-map transaction split read `token.txns?.h24?.buys ?? 0` and `?.sells ?? 0` INDEPENDENTLY, so a half-populated h24 window made the surviving leg the whole story - a response carrying 412 buys and no sell count rendered Tx: 412 over a bar drawn 100 percent green, which is a stronger claim about the token than any other number on this screen. Both legs must now be finite or the row is omitted, with three oracles pinning it (buys only, sells only, window absent) and a mutation back to the independent form turning two of them red. Also verified honest and left alone: fmtUsd / fmtQty / ago on the whale table, getPriceHistory's 2-point floor, and getTokenSentiment's `?? null`.",
+   "desktop=partial tablet=n-a mobile=n-a @2026-09-01"
+  ]
+ },
+ "13006-147486": {
+  "file": "status.trade-2.launch.tsv",
+  "cols": [
+   "Skai > Launch > create token 1VH (1440 x 900px) [13006:147486]",
+   "done",
+   "src/pages/LaunchpadCreate.tsx",
+   "/launchpad/create",
+   "Token details + Social links + Advanced options + Token image/banner + info callout + Create token CTA, all against the frame. FIXED THIS LANE: the media size ceiling now matches the upload rail (see 13006:148299). Advanced options ship visible-and-disabled with a stated reason because the deployed curve takes no mayhem/cashback parameter and SKAI Chain is the only launchpad."
+  ]
+ },
+ "13006-147876": {
+  "file": "status.trade-2.launch.tsv",
+  "cols": [
+   "Skai > Launch > create token > buy test 1VH (1440 x 900px) [13006:147876]",
+   "done",
+   "src/pages/LaunchpadCreate.tsx",
+   "/launchpad/create",
+   "Creator test-buy modal over the form: amount + 0/25/50/75/100% + Create token only / Buy [TICKER] and Create token. Deliberate deviation, pre-existing: on SKAI Chain buy needs a curveId that does not exist until Step 2, so the amount is CHOSEN here and EXECUTED immediately after createCurve. This frame also carries a Tokenized agent advanced row the other create-token frames omit - a contradiction between frames, not built."
+  ]
+ },
+ "13006-150345": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Live preview card - normal [13006-150345]",
+   "partial",
+   "src/components/trade/LaunchLiveBoard.tsx",
+   "/trade/live",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). THIS FRAME: 622x350, cornerRadius 24, padding 16, itemSpacing 16, stroke #123f3c width 1, ZERO visible texts. CITED IN CODE at LaunchLiveBoard.tsx:438. LIVE PREVIEW CARD for the launch livestream board. Frame fill is an IMAGE (the stream thumbnail), and the hover states carry 5 texts - a LIVE badge, a RIGGED / \"Rigged games\" title pair, \"1,011 viewers\" and a caption line. * MEASURED FINDING WORTH ACTING ON: every \"- normal\" frame (13006-150345, 13006-277275, 13006-278954) has ZERO visible text nodes. The card is pure artwork at rest and the entire label set appears only on hover, so an implementation that paints the title or the viewer count at rest does not match the frame. BUILT AND ROUTED: src/components/trade/LaunchLiveBoard.tsx, mounted at App.tsx:1211 on /trade/live."
+  ]
+ },
+ "13006-150329": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Live preview card - on:hover [13006-150329]",
+   "partial",
+   "src/components/trade/LaunchLiveBoard.tsx",
+   "/trade/live",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). THIS FRAME: 622x350, cornerRadius 24, padding 16, itemSpacing 16, stroke #123f3c width 1 - the ONLY member of the family with a border. CITED IN CODE at LaunchLiveBoard.tsx:420 and :439. LIVE PREVIEW CARD for the launch livestream board. Frame fill is an IMAGE (the stream thumbnail), and the hover states carry 5 texts - a LIVE badge, a RIGGED / \"Rigged games\" title pair, \"1,011 viewers\" and a caption line. * MEASURED FINDING WORTH ACTING ON: every \"- normal\" frame (13006-150345, 13006-277275, 13006-278954) has ZERO visible text nodes. The card is pure artwork at rest and the entire label set appears only on hover, so an implementation that paints the title or the viewer count at rest does not match the frame. BUILT AND ROUTED: src/components/trade/LaunchLiveBoard.tsx, mounted at App.tsx:1211 on /trade/live."
+  ]
+ },
+ "13006-155570": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - Afjust filters 1440 [13006-155570]",
+   "partial",
+   "src/components/trench-redesign/discover/FiltersPanel.tsx",
+   "/trench",
+   "FOOTER MEASURED AND FIXED 2026-09-01, closing the thread wave 10 was cut mid-sentence on. That lane had spotted that this panel does not use the shared footer and rolls its own with SkaiButton skaiSize=large, and had not yet read what the variant draws. It draws h-16 -- button.tsx:141-142 is h-16 px-10 py-5 text-base leading-[22px] rounded-[16px], a FIXED 64px at every width. The panel comment above the row claimed 50px CTAs; 50 is the 768 value and skaiSize=medium, so the comment was wrong about the variant AND about the tier. This frames own CTA node 13006:155622 is 394x62, cornerRadius 16, padding 20/40/20/40, fill #56C7F3, label Save settings Manrope Regular 16/22 letterSpacing -4% in #001615 -- so 64 was 2px proud here and 14 and 20 proud at 768 and 375. Now renders RightMenuFooter, whose ladder is py-3.5 md:py-4 lg:py-5, leading-4 md:leading-[18px] lg:leading-[22px], px-4 md:px-6 lg:px-10, rounded-[12px] lg:rounded-[16px]. COMPOSITION, read off the frame and not assumed: this panel has exactly TWO top-level children, body Frame 345 13006:155571 394x444 VERTICAL gap 24 and the single full-width CTA -- there is NO reset control at any of the three widths. The reset is KEPT and restyled per the standing ruling: it is the only way to clear a filter draft and a frames omission is not a delete order. Panel chrome re-verified unchanged: 442x884 r24 pad24 fill #122524@0.8 stroke #123F3C, matching lg:rounded-2xl lg:p-6 and sm:max-w-[442px]. REMAINING and why this is not done: the panel BODY row type ramp is still unmeasured, and the radius/padding outlier question on the 768 and 375 twins is Caseys, not mine.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-268680": {
+  "file": "status.wave4.row-conflicts.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Tables - Positions 1VH (768x1024px) [13006-268680]",
+   "partial",
+   "src/components/trench-redesign/trade/PositionsPanel.tsx",
+   "/crypto/:symbol (Tables > Positions)",
+   "[KEYED-BEATS-MENTION] [scope:in-scope] [was: done vs partial] WRONG ROW: status.trade-2.trade-a.tsv:45 - names this id only in its reason prose (col 5), while status.wave2.trench-mobile-positions.tsv:3 keys it in the family column (col 1). Measured across all 193 conflicts: 98 have NO row that keys the frame at all, and 33 more pair one keyed row against prose mentions. The ledger indexes a row to every id anywhere on its line, so a citation reads exactly like a claim."
+  ]
+ },
+ "13006-219610": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > Positions 1VH (1440 x 900px) [13006-219610]",
+   "partial",
+   "src/components/trench-redesign/trade/PositionsPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED. Frame 286 13006:221116 1015x206 gap 8; header 13006:221117 1015x16 pad 0/12 SPACE_BETWEEN with eight cells - Token x=12 w158, Bought x=186.29 w100, Sold x=302.57 w115, Remaining x=433.86 w100, PnL x=550.14 w70, PnL% x=636.43 w70, Amount x=722.71 w100, Actions x=839 w164 - all Manrope Regular 12/16 ls -4%. Seven are #95A09F and ACTIONS IS #FFFFFF, the only white cell in any Trench header on this board; the code painted the whole row ash. Rule y=24 so the band is 24, matching the shipped h-6; row content 13006:221127 1015x36 pad 2/12 r 12 #122524, pitch 52, matching h-[52px]. ROW BODY MEASURED TOO, cell by cell off 13006:221127 - Token Frame 22 158x24 is a 24x24 r 4 image with a 10x10 r 9999 #001615 chain badge at x=18 y=19 over an 8x8 mark, gap 8, then the name Manrope Regular 14/18 #FFFFFF (13006:221134); Bought Frame 1201 100x32 VERTICAL CENTER is $0 Mulish Regular 14/18 #17F9B4 over a 62x14 sub-line 18.21M / MM in Mulish Regular 11/14 #95A09F; Sold Frame 1202 115x32 is the same shape at #FF574A; Remaining Frame 639 100x18 gap 4 is a 16px circle plus $16.21 Mulish 14/18 #FFFFFF; PnL Frame 1200 70x18 gap 4 MAX is a 16px circle plus +$2.89 Mulish 14/18 #17F9B4; PnL% and Amount are Mulish 14/18 at #17F9B4 and #FFFFFF; Actions Frame 482 164x24 MAX gap 8 is a 64x24 r 8 #001615 CTA plus a 16px glyph. FIXED this wave: the Actions header colour, the 16-to-12 inset, the header leading ramp, and the row type - every value cell here is MULISH 14/18 where the row shipped skai-para-2, i.e. Manrope 14/20, with the market name split out onto its own Manrope constant. STILL PARTIAL: the two-line Bought and Sold cells stay one honest marker because there is no lifetime-fill source, the token image and chain badge are unbuilt, the Actions cell is a SkaiButton rather than the frame's 64x24 CTA plus glyph, and the positive PnL is #2DEDAD against the frame's #17F9B4 - a palette-wide call already escalated and not this panel's to make.",
+   "desktop=partial"
+  ]
+ },
+ "13006-134301": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trench 1VH [13006-134301]",
+   "partial",
+   "src/pages/trade/TrenchRedesign.tsx",
+   "/trench",
+   "Trade 2 page 13006:134300 node data: shell is Header-desktop 1440x56 @(0,0) + sidebar 58x844 @(0,56) + content 1382x844 @(58,56) + Trench scroller 1382x22 @(58,878). Code TrenchShell.tsx wraps content in mx-auto max-w-[1440px] py-3 -> adds 12px top AND bottom padding the frame does NOT have (frame content y starts at exactly 56 = header height, 56+844=900 exact). max-w 1440 also exceeds the frames 1382 content width; it only renders 1382 because the 58px rail already consumed the rest, so the cap is inert rather than correct.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-135613": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trench - actual 1VH [13006-135613]",
+   "partial",
+   "src/pages/trade/TrenchRedesign.tsx",
+   "/trench",
+   "Measured 2026-08-31 off 13006:134300. 1440x900: Header-desktop 1440x56 @(0,0) padding 8/19/8/19 fill #001615; sidebar 58x844 @(0,56) padding 12/11/12/11; Frame 1122 1382x844 @(58,56) VERTICAL gap 0 padding 0. FRAME DIFFERENCE from the sibling 13006-134301: this frame has NO Trench scroller child at all, where 134301 draws one 1382x22 at y=878. Same TrenchShell py-3 divergence as 13006-134301 (12px top and bottom the frame does not have; content starts at exactly y=56 and 56+844=900).",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-155671": {
+  "file": "status.wave6.trade2-a.tsv",
+  "cols": [
+   "Skai > Trench > Display settings 1VH (1440 x 900px) [13006-155671]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "[RE-MEASURE 2026-08-27: the Figma MCP came online mid-wave; this row's blocker was TRANSIENT, not standing. The frame is measurable now.] Frame 1440x900 visible=1 (live harvest 2026-08-26, page 13006:134300). BUILT AND MOUNTED, verified 2026-08-31: AdjustTrenchSettings imported at DiscoverScreen.tsx:15 and rendered at :431; trenchDisplayPrefs is consumed by DiscoverScreen, TokenTable, TokenCard, TokenRow and MarketPulseBoard, so the controls are not dead. Registry said not-started off a stale trade-section family row; that is wrong. CITED not re-measured (wave 3): 375 stop 359w r12 p12 and 768 stop 442w r16 p20 both match; the 1440 right-menu chrome 442w r24 pad24 was never independently measured. Stays partial for that one width. No oracle test - Figma MCP unauthenticated this session."
+  ]
+ },
+ "13006-159412": {
+  "file": "status.wave6.trade2-a.tsv",
+  "cols": [
+   "Skai > Trench > Display settings - colour row 1VH (1440 x 900px) [13006-159412]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx + discover/switchTheme.ts",
+   "/trench",
+   "[RE-MEASURE 2026-08-27: the Figma MCP came online mid-wave; this row's blocker was TRANSIENT, not standing. The frame is measurable now.] Frame 1440x900 visible=1 (live harvest 2026-08-26, page 13006:134300). BUILT AND MOUNTED, verified 2026-08-31: same mount as 13006-155671; colorRow / metricBandTints / protocolTints reach MarketPulseBoard via DiscoverScreen.tsx:272-274. KNOWN PARITY GAP, cited from the components pass: the frame's swatch trigger opens an on:click colour POPOVER (13006:250448 and 13006:250456, both 263x251, 5 children); AdjustTrenchSettings.tsx:158-160,238 instead CYCLES to the next palette entry with no picker surface. Same trigger, missing surface. Also cited from wave 3: 13006:195423 has a byte-identical fingerprint to this node (2980 nodes / 545 texts / same ramp, radii, fills, padding, gap) yet is catalogued as a one-click-trade modal, so that row's title does not describe its artwork. No oracle test - Figma MCP unauthenticated this session."
+  ]
+ },
+ "13006-179860": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trackers > Wallet manager 1VH (1440 x 900px) [13006-179860]",
+   "partial",
+   "src/components/home-redesign/whales/ActivityView.tsx",
+   "/trench/trackers",
+   "RE-MEASURED three axes on the header band, which is what this row can claim. Date / Name x=114 w286, Balance x=453 w100, Last active x=607 w100, all Manrope Regular 12/16 ls -4% #95A09F, plus Delete all x=883 w47 Manrope Regular 12/16 #FF574A. HEADER_CELL ships font-manrope text-xs leading-[14px] md:leading-4 tracking-[-0.04em] text-ash - 12/16 at this width, family, tracking and fill all exact - and the Delete-all control ships text-xs leading-4 text-skai-red, also exact. The three columns' x positions come from a grid the code sizes as md:grid-cols-[88px_minmax(0,1.6fr)_1fr_1fr_112px], which is not the frame's 114/453/607 track, and the rows below the header are unmeasured; both keep it partial.",
+   "desktop=partial"
+  ]
+ },
+ "13006-204666": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Trench > One-click trade settings - modal sell 1VH [13006-204666]",
+   "partial",
+   "src/components/trench-redesign/trade/OneClickTradeModal.tsx",
+   "/trench",
+   "DEMOTED from done. Shares the 564/24/40/32/#122524 card and the corrected title, segment, pill and CTA ramps with 13006-198981. NOT measured here and therefore not claimable: the sell state adds input/primary-inputs 516x236 (13006-207496) - the per-phase amount rows and their One-click sell cards - which no wave has read node-by-node. Card, shadow and shine status identical to the off frame.",
+   "desktop=partial"
+  ]
+ },
+ "13006-210576": {
+  "file": "status.wave8.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade 1VH (1440 x 900px) [13006-210576]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeTerminal.tsx",
+   "/crypto/:symbol",
+   "SHELL GEOMETRY RE-MEASURED AND CONFIRMED: frame 1440x900 fill #001615; sidebar 58; header 56; main 1382 wide at x=58 y=56; Frame 443 x=8 w=1047 gap 6; Multi-panel - combined x=1061 w=313 gap 6; right edge 1374 leaves 8. Code lg:grid-cols-[1fr_313px] lg:gap-1.5 (6) lg:p-2 (8) and rail lg:gap-1.5 (6) reproduce all four numbers exactly. NOT done: type and colour are spread over TradeHeader/TradeChart/PanelTabs/OrderPanel and were not measured screen-wide, and the rail COMPOSITION diverges - see 13006-212076.",
+   "desktop=renders @2026-08-31"
+  ]
+ },
+ "13006-212781": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trench > Trade - layout 2 1VH [13006-212781]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeTerminal.tsx",
+   "/crypto/:symbol",
+   "Same main 1382x1429 @(58,56) and same 1047/313/gap-6/pad-8 column geometry as 13006-210576, measured 2026-08-31; grid matches code exactly. Layout-2 difference (order-book placement) not separately measured - in 13006-210576 the Order book node is 277x672 at x=778, i.e. an OVERLAY on the chart column, not a third grid track. Same three-cards-vs-one-surface miss as 13006-210576.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-214989": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trench > Trade - layout 2 with instant trade 1VH [13006-214989]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeTerminal.tsx",
+   "/crypto/:symbol",
+   "Same shell and same 1047/313/6/8 column geometry as 13006-210576 (measured 2026-08-31), plus the instant-trade ticket state. Ticket internals not measured. Same chart-column card miss.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-230793": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > Dev tokens 1VH (1440 x 900px) [13006-230793]",
+   "partial",
+   "src/components/trench-redesign/trade/DevTokensPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED. Frame 286 13006:232300 713x442 SPACE_BETWEEN over Frame 1173 13006:232301 713x192 gap 8; header 13006:232302 713x16 pad 0/12 with nine cells; rule y=24 so the band is 24; row content 13006:232313 713x28 pad 2/12 r 12 #122524 with rules at y=68 / 112 / 156 / 200, a flat 44 pitch. FIXED this wave: the header band shipped h-[22px] md:h-9, and md:h-9 is 36 against the frame's 24 at BOTH widths the md step covers - a 12px overshoot the base value had already got right. Inset 16 to 12 and the header leading ramp shipped too. Partial: the nine columns' own tracks and the row bodies are unmeasured.",
+   "desktop=partial"
+  ]
+ },
+ "13006-260059": {
+  "file": "status.wave8.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench - actual 1VH (768x1024px) [13006-260059]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeTerminal.tsx",
+   "/crypto/:symbol",
+   "MEASURED: 768x1024 fill #001615; Header-tablet 768x52 pad 6/19; Bottom-navigation-tablet 768x52 fill #001615@0.60 at y=972, five 146x36 items pad 6/20/6/16 gap 6; content Frame 445 x=30 y=96 w=708 gap 24, so the 768 inset is 30 EACH SIDE (768-30-30=708). The TradeTerminal comment's claim of a 30px inset is CONFIRMED, but the code ships p-4 (16) at this width - a 14px shortfall per side. Not changed here: p-4 also sets vertical padding and only the horizontal inset was measured.",
+   "tablet=partial @2026-08-31"
+  ]
+ },
+ "13006-269297": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Tables - Holders 1VH (768x1024px) [13006-269297]",
+   "partial",
+   "src/components/trench-redesign/trade/HoldersPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED via the detail cut 13006:300408 that sits immediately left of this screen (Frame 1364, 1047x450, pad 12/12/24/12, r 0/0/12/12, fill #122524, stroke #123F3C) - the 768 tier reads 12 for pad and 12 for radius where the 1440 tier reads 16 and 16, which is what identifies it. Table 13006:301007 Frame 286 1015x416 gap 8. Header 13006:301008 1015x16 pad 0/12 with the same nine cells at 12/16 #95A09F; rule at y=24 so the band is 24. Row content 13006:301019 1015x34 pad 2/12 r 12 #122524, next rule y=74, pitch 50 - matching the shipped md:h-[50px]. Inset corrected 16 to 12 this wave. Column set unbuildable, see 13006-221940.",
+   "tablet=partial"
+  ]
+ },
+ "13006-270061": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Tables - Top holders 1VH (768x1024px) [13006-270061]",
+   "partial",
+   "src/components/trench-redesign/trade/TopHoldersPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED via the detail cut 13006:301004 (Frame 1366, 1047x450, pad 12/12/24/12, r 0/0/12/12). Table 13006:301007 is byte-identical to the Holders 768 table at depth 3 - nine cells at 12/16, band 24, content 34, pitch 50, inset 12 - so Holders and Top holders are ONE table drawn twice and the two files' deliberately byte-identical row and header classes are correct. Inset and header-leading fixed this wave; the column set is the same unbuildable nine.",
+   "tablet=partial"
+  ]
+ },
+ "13006-270826": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Tables - Dev tokens - full (768x1024px) [13006-270826]",
+   "partial",
+   "src/components/trench-redesign/trade/DevTokensPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED. Frame 286 13006:270960 777x192; header 13006:270962 777x16 pad 0/12 nine cells 12/16; rule y=24 (band 24); row content 13006:270973 777x28 pad 2/12 r 12 #122524, pitch 44. The md:h-9 overshoot applied here as well and is fixed. Note the track is 777, not the 830 the floors in columns.ts add up to - recorded, not changed, because the floors are minima and a wide cell must still be able to grow the track.",
+   "tablet=partial"
+  ]
+ },
+ "13006-138367": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trench - actual + With left float scrollable 1VH [13006-138367]",
+   "partial",
+   "src/pages/trade/TrenchRedesign.tsx",
+   "/trench",
+   "Measured 2026-08-31: identical shell to 13006-135613 (header 1440x56 p8/19, sidebar 58x844 p12/11, Frame 1122 1382x844 @(58,56) gap 0, no scroller child). The left-float scrollable treatment is inside Frame 1122 and was not read. Same TrenchShell py-3 divergence.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-141502": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trench - actual + With left float ALT 1VH [13006-141502]",
+   "partial",
+   "src/pages/trade/TrenchRedesign.tsx",
+   "/trench",
+   "Measured 2026-08-31: identical shell to 13006-135613 and 13006-138367 at the top level (1382x844 @(58,56), no scroller child). An ALT of the left-float treatment; the differing interior was not read. Same TrenchShell py-3 divergence.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-148687": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Token image - with input [13006-148687]",
+   "partial",
+   "src/components/launchpad/create/TokenBannerUploader.tsx",
+   "/launch",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). THIS FRAME: 680x1151, cornerRadius 0, NO fill, zero padding, itemSpacing 8. At 680x1151 with no fill this is the whole FORM COLUMN, not the field card - the odd one out of the four. TOKEN IMAGE upload field with its populated (\"with input\") state: 16-20 visible texts - \"Token image\", a filename (TimelessNGINX222...), a size (223.23 kB), a \"Replace image\" action, and the constraint copy \"File size and type / Image - max 15mb / Resolution and aspect / Image - min. 100...\", followed by \"Token banner (optional)\". * THIS IS A LAUNCHPAD FRAME, NOT A TRENCH ONE. The implementation is src/components/launchpad/create/TokenBannerUploader.tsx, whose docblock at :2 quotes the exact string \"Token banner (optional)\" this frame draws and which renders it at :60. partial: the uploader exists with matching copy, but this lane did not measure the frame against it, and the Trench catalog section is not its owner - a launchpad lane should finish it."
+  ]
+ },
+ "13006-158618": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - layout with text size ALT [13006-158618]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x968, cornerRadius 12, padding 12 on all four sides, footer child Frame 1178 335x44. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-158772": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - layout [13006-158772]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x884, cornerRadius 12, padding 12 on all four sides, footer child Frame 1178 335x44. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-158914": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - metrics [13006-158914]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x884, cornerRadius 12, padding 12 on all four sides, footer child Frame 1178 335x44. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-159069": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - row [13006-159069]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x884, cornerRadius 12, padding 12 on all four sides, footer child Frame 1178 335x44. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-159189": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - extras [13006-159189]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x1270, cornerRadius 12, padding 12 on all four sides, footer child Frame 1178 335x44. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-165152": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Snipe settings 1VH 1440 [13006-165152]",
+   "partial",
+   "src/components/trench-redesign/discover/snipePrefs.ts",
+   "/trench",
+   "RE-VERIFIED 2026-09-01. Still a DEAD CONTROL, unchanged: snipePrefs.ts has exactly one importer, SnipeSettingsMenu.tsx -- the panel that WRITES it -- and nothing reads it, while trade/instantTradePrefs.ts has eight importers and is the store the execution path reads. That is why this row stays partial, and it is a Casey call rather than a parity gap. The PANEL is now measured on all three axes and fixed. Its Right menu node 13006:167970 is 442x884 r24 pad24 fill #122524@0.8 stroke #123F3C, two children: body Frame 344 13006:167971 394x742 VERTICAL gap 24, and CTA/button 13006:168042 394x62 r16 pad 20/40/20/40 fill #56C7F3 label Manrope Regular 16/22 at -4% in #001615. The footer shipped a lone SkaiButton skaiSize=large, a fixed h-16 = 64px, so it stood 2px proud here and 14 and 20 proud at the two smaller tiers; now RightMenuFooter with no reset, matching the single-CTA composition all three Snipe frames draw. Body type ramp measured on all three tiers off Frame 344 -- 13006:167971 (1440), :338723 (768), :315578 (375) -- and it shipped ONE cut, the 768 column, so the 1440 body ran a step small everywhere: group and field labels Manrope 12/14 then 12/16 then 14/18 in #95A09F, field values Mulish Regular 12/16 then 14/16 then 16/16 in #FFFFFF, section heading Manrope 14/18 then 14/18 then 18/24 in #FFFFFF, segmented labels Mulish 12/14 then 14/16 then 14/18, input text Manrope 14/16 then 14/18 then 16/22 with the #95A09F placeholder. Two FAMILIES were wrong at every width as well: Mev mode carried skai-label-1, which typography.css declares as Mulish, against a Manrope node, and the numeric fields carried skai-number-4, which is Mulish at weight 700, against Mulish Regular. All fixed.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-168043": {
+  "file": "status.wave8.trench-discover.tsv",
+  "cols": [
+   "Discover 1VH 1440 [13006-168043]",
+   "partial",
+   "src/components/trench-redesign/discover/DiscoverScreen.tsx",
+   "/trench",
+   "MEASURED 2026-08-31. FIXED THIS WAVE: the content inset. Frame main is 1382 wide (1440 - 58 sidebar) and its content \"Frame 521\" is 1318 @x=32, so 1382-1318 = 64 = 32+32. DiscoverScreen.tsx shipped a flat px-4 (16) -- exactly half -- and now ships px-4 md:px-[30px] lg:px-8, giving 32 at this width. CORRECTION to the wave-7 row on this frame: it said \"Code ships one TrenchScroller\". It ships TWO -- DiscoverScreen.tsx:149 above the content and :409 below it -- so the top/bottom scroller PAIR is built. What is still wrong is that the two strips are not identical in the frame and are identical in the code: top 1382x20 fill #001615, bottom 1382x22 fill #122524. TrenchScroller.tsx sits in trench-redesign/, outside this lane, so that split is reported not changed. Vertical gap 24 between content children vs the root gap-2 (8) also not closed -- the root flex wraps the scrollers as well as the content, so it is not a 1:1 substitution.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-181094": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - General 1440 [13006-181094]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "CORRECTION 2026-09-01, and it is a correction to my OWN lanes wave-10 row. That row recorded this frame against rightMenuChrome.tsx and reported the footer ladder FIXED. The ladder was fixed -- in RightMenuFooter -- and this frame is not drawn by that function. Identified from node data rather than from the file name: the panels first text is Adjust tracker settings, so Right menu - General is TrackerSettingsMenu.tsx, which hand-rolled its own footer row from SkaiButton skaiSize=large and never imported RightMenuFooter. A shared fix reaches only the callers that share it. Measured here: panel 442x884 r24 pad24 fill #122524@0.8, two children -- body Frame 344 13006:181095 394x520 VERTICAL gap 24, and footer Frame 1178 13006:181188 394x62 HORIZONTAL itemSpacing 8 holding reset :181189 pad 20/0/20/0 r16 Manrope 16/22 #FFFFFF and save :181190 pad 20/40/20/40 r16 fill #56C7F3 Manrope 16/22 #001615. The shipped row drew 64 at every width against 62/50/44 and put a #56C7F3 outline round the reset via skaiType=secondary, where :181189 has no fill and no stroke. NOW FIXED: TrackerSettingsMenu renders RightMenuFooter. Partial: body row type ramp unmeasured.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-181191": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - Toasts - display 1440 [13006-181191]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "MEASURED 2026-09-01, and it carries the SAME correction as 13006:181094. This frames first text is Adjust tracker settings, so the family is TrackerSettingsMenu.tsx -- which hand-rolled its footer from SkaiButton skaiSize=large and never imported the shared RightMenuFooter, so the wave-10 ladder fix did not reach it. Panel 442x884 r24 pad24, on tier (15 of 15 desktop panels read r24 pad24) against lg:rounded-2xl 24 and lg:p-6 24, VERTICAL SPACE_BETWEEN with exactly two children: body Frame 344 13006:181192 394x492 gap 24, and footer Frame 1178 13006:181304 394x62 gap 8 with 193x62 halves, reset :181305 pad 20/0/20/0 and save :181306 pad 20/40/20/40 r16 fill #56C7F3. The frame CTA height is 62, so the shipped 64 stood 2px proud -- button.tsx:141-142 fixes skaiSize=large at h-16 = 64px with px-10 and rounded-[16px] at every width. NOW FIXED by adopting RightMenuFooter, whose ladder is py-3.5 md:py-4 lg:py-5, leading-4 md:leading-[18px] lg:leading-[22px], px-4 md:px-6 lg:px-10, rounded-[12px] lg:rounded-[16px], plus the 12/10/10 label-to-glyph gap on the reset. skaiType=secondary also stopped putting a #56C7F3 outline round a reset the frame draws with no fill and no stroke. Partial: this panel body row type ramp is still unmeasured.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-181307": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - Toasts - display 1440 [13006-181307]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "MEASURED 2026-09-01, and it carries the SAME correction as 13006:181094. This frames first text is Adjust tracker settings, so the family is TrackerSettingsMenu.tsx -- which hand-rolled its footer from SkaiButton skaiSize=large and never imported the shared RightMenuFooter, so the wave-10 ladder fix did not reach it. Panel 442x884 r24 pad24, on tier (15 of 15 desktop panels read r24 pad24) against lg:rounded-2xl 24 and lg:p-6 24, VERTICAL SPACE_BETWEEN with exactly two children: body Frame 344 13006:181308 394x532 gap 24, and footer Frame 1178 13006:181427 394x62 gap 8, reset :181428 pad 20/0/20/0 and save :181429 pad 20/40/20/40 r16. The frame CTA height is 62, so the shipped 64 stood 2px proud -- button.tsx:141-142 fixes skaiSize=large at h-16 = 64px with px-10 and rounded-[16px] at every width. NOW FIXED by adopting RightMenuFooter, whose ladder is py-3.5 md:py-4 lg:py-5, leading-4 md:leading-[18px] lg:leading-[22px], px-4 md:px-6 lg:px-10, rounded-[12px] lg:rounded-[16px], plus the 12/10/10 label-to-glyph gap on the reset. skaiType=secondary also stopped putting a #56C7F3 outline round a reset the frame draws with no fill and no stroke. Partial: this panel body row type ramp is still unmeasured.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-181430": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - Toasts - misc 1440 [13006-181430]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "MEASURED 2026-09-01, and it carries the SAME correction as 13006:181094. This frames first text is Adjust tracker settings, so the family is TrackerSettingsMenu.tsx -- which hand-rolled its footer from SkaiButton skaiSize=large and never imported the shared RightMenuFooter, so the wave-10 ladder fix did not reach it. Panel 442x884 r24 pad24, on tier (15 of 15 desktop panels read r24 pad24) against lg:rounded-2xl 24 and lg:p-6 24, VERTICAL SPACE_BETWEEN with exactly two children: body Frame 344 13006:181431 394x492 gap 24, and footer Frame 1178 13006:181543 394x62 gap 8, reset :181544 and save :181545 r16 pad 20/40/20/40. The frame CTA height is 62, so the shipped 64 stood 2px proud -- button.tsx:141-142 fixes skaiSize=large at h-16 = 64px with px-10 and rounded-[16px] at every width. NOW FIXED by adopting RightMenuFooter, whose ladder is py-3.5 md:py-4 lg:py-5, leading-4 md:leading-[18px] lg:leading-[22px], px-4 md:px-6 lg:px-10, rounded-[12px] lg:rounded-[16px], plus the 12/10/10 label-to-glyph gap on the reset. skaiType=secondary also stopped putting a #56C7F3 outline round a reset the frame draws with no fill and no stroke. Partial: this panel body row type ramp is still unmeasured.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-181546": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - Toasts - one click 1440 [13006-181546]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "MEASURED 2026-09-01, and it carries the SAME correction as 13006:181094. This frames first text is Adjust tracker settings, so the family is TrackerSettingsMenu.tsx -- which hand-rolled its footer from SkaiButton skaiSize=large and never imported the shared RightMenuFooter, so the wave-10 ladder fix did not reach it. Panel 442x884 r24 pad24, on tier (15 of 15 desktop panels read r24 pad24) against lg:rounded-2xl 24 and lg:p-6 24, VERTICAL SPACE_BETWEEN with exactly two children: body Frame 344 13006:181547 394x456 gap 24, and footer Frame 1178 13006:181653 394x62 gap 8, reset :181654 and save :181655 r16 pad 20/40/20/40. The frame CTA height is 62, so the shipped 64 stood 2px proud -- button.tsx:141-142 fixes skaiSize=large at h-16 = 64px with px-10 and rounded-[16px] at every width. NOW FIXED by adopting RightMenuFooter, whose ladder is py-3.5 md:py-4 lg:py-5, leading-4 md:leading-[18px] lg:leading-[22px], px-4 md:px-6 lg:px-10, rounded-[12px] lg:rounded-[16px], plus the 12/10/10 label-to-glyph gap on the reset. skaiType=secondary also stopped putting a #56C7F3 outline round a reset the frame draws with no fill and no stroke. Partial: this panel body row type ramp is still unmeasured.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-181656": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - General 375 [13006-181656]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "MEASURED 2026-09-01, same correction as 13006:181094. Panel 359x796 r12 pad12, on tier (14 of 15 in the 359 band read r12 pad12). Body Frame 344 13006:181657 335x488 gap 24; footer Frame 1178 13006:181750 335x44 HORIZONTAL gap 8 with two 163.5x44 CTAs, reset :181751 pad 14/0/14/0 r12 itemSpacing 12 Manrope 14/16 #FFFFFF and save :181752 pad 14/16/14/16 r12 fill #56C7F3 Manrope 14/16 #001615. 14+16+14 = 44, exactly the global tap floor, against the 64 the panel drew -- 20px proud. Note the label-to-glyph gap is 12 here and 10 at the two larger tiers, a third value on the ladder rather than a constant, while the outer rows 8 holds everywhere. Fixed by adopting RightMenuFooter. Partial: body ramp unmeasured.",
+   "mobile=partial @2026-09-01"
+  ]
+ },
+ "13006-181753": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - Toasts - display 375 [13006-181753]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "MEASURED 2026-09-01, and it carries the SAME correction as 13006:181094. This frames first text is Adjust tracker settings, so the family is TrackerSettingsMenu.tsx -- which hand-rolled its footer from SkaiButton skaiSize=large and never imported the shared RightMenuFooter, so the wave-10 ladder fix did not reach it. Panel 359x796 r12 pad12, on tier (14 of 15 in the 359 band) against rounded-lg 12 and p-3 12, VERTICAL SPACE_BETWEEN with exactly two children: body Frame 344 13006:181754 335x468 gap 24, and footer Frame 1178 13006:181866 335x44 gap 8 with 163.5x44 halves, reset :181867 pad 14/0/14/0 itemSpacing 12 and save :181868 pad 14/16/14/16 r12. The frame CTA height is 44, so the shipped 64 stood 20px proud with the radius 4 over and the inset 24 over -- button.tsx:141-142 fixes skaiSize=large at h-16 = 64px with px-10 and rounded-[16px] at every width. NOW FIXED by adopting RightMenuFooter, whose ladder is py-3.5 md:py-4 lg:py-5, leading-4 md:leading-[18px] lg:leading-[22px], px-4 md:px-6 lg:px-10, rounded-[12px] lg:rounded-[16px], plus the 12/10/10 label-to-glyph gap on the reset. skaiType=secondary also stopped putting a #56C7F3 outline round a reset the frame draws with no fill and no stroke. Partial: this panel body row type ramp is still unmeasured.",
+   "mobile=partial @2026-09-01"
+  ]
+ },
+ "13006-181991": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - Toasts - misc 375 [13006-181991]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "MEASURED 2026-09-01, and it carries the SAME correction as 13006:181094. This frames first text is Adjust tracker settings, so the family is TrackerSettingsMenu.tsx -- which hand-rolled its footer from SkaiButton skaiSize=large and never imported the shared RightMenuFooter, so the wave-10 ladder fix did not reach it. Panel 359x796 r12 pad12, on tier (14 of 15 in the 359 band) against rounded-lg 12 and p-3 12, VERTICAL SPACE_BETWEEN with exactly two children: body Frame 344 13006:181992 335x468 gap 24, and footer Frame 1178 13006:182103 335x44 gap 8, reset :182104 itemSpacing 12 and save :182105 r12 pad 14/16/14/16. The frame CTA height is 44, so the shipped 64 stood 20px proud with the radius 4 over and the inset 24 over -- button.tsx:141-142 fixes skaiSize=large at h-16 = 64px with px-10 and rounded-[16px] at every width. NOW FIXED by adopting RightMenuFooter, whose ladder is py-3.5 md:py-4 lg:py-5, leading-4 md:leading-[18px] lg:leading-[22px], px-4 md:px-6 lg:px-10, rounded-[12px] lg:rounded-[16px], plus the 12/10/10 label-to-glyph gap on the reset. skaiType=secondary also stopped putting a #56C7F3 outline round a reset the frame draws with no fill and no stroke. Partial: this panel body row type ramp is still unmeasured.",
+   "mobile=partial @2026-09-01"
+  ]
+ },
+ "13006-182106": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Right menu - Toasts - one click 375 [13006-182106]",
+   "partial",
+   "src/components/trench-redesign/discover/TrackerSettingsMenu.tsx",
+   "/trench",
+   "MEASURED 2026-09-01, and it carries the SAME correction as 13006:181094. This frames first text is Adjust tracker settings, so the family is TrackerSettingsMenu.tsx -- which hand-rolled its footer from SkaiButton skaiSize=large and never imported the shared RightMenuFooter, so the wave-10 ladder fix did not reach it. Panel 359x796 r12 pad12, on tier (14 of 15 in the 359 band) against rounded-lg 12 and p-3 12, VERTICAL SPACE_BETWEEN with exactly two children: body Frame 344 13006:182107 335x432 gap 24, and footer Frame 1178 13006:182212 335x44 gap 8, reset :182213 itemSpacing 12 and save :182214 r12 pad 14/16/14/16. The frame CTA height is 44, so the shipped 64 stood 20px proud with the radius 4 over and the inset 24 over -- button.tsx:141-142 fixes skaiSize=large at h-16 = 64px with px-10 and rounded-[16px] at every width. NOW FIXED by adopting RightMenuFooter, whose ladder is py-3.5 md:py-4 lg:py-5, leading-4 md:leading-[18px] lg:leading-[22px], px-4 md:px-6 lg:px-10, rounded-[12px] lg:rounded-[16px], plus the 12/10/10 label-to-glyph gap on the reset. skaiType=secondary also stopped putting a #56C7F3 outline round a reset the frame draws with no fill and no stroke. Partial: this panel body row type ramp is still unmeasured.",
+   "mobile=partial @2026-09-01"
+  ]
+ },
+ "13006-184365": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "X accounts - My list [13006-184365]",
+   "partial",
+   "src/components/home-redesign/whales/XAccountsPanel.tsx",
+   "/trench",
+   "MEASURED/IDENTIFIED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). THIS FRAME: 448x674, radius 0, one child Frame 429 448x674, 9 visible texts: X accounts / Search address or name / Add handle / Popular / My list / 1 / @CryptosTraderX / 2 / @DeFiNewsAlerts - so a two-tab panel (Popular | My list) with a search field, an Add handle action and a numbered handle list. BUILT AND MOUNTED: XAccountsPanel.tsx is imported at ActivityView.tsx:63 and rendered at :1434, described there (:20) as \"a side rail at desktop, the second half of a ... at narrow\". It also already carries an oracle test, XAccountsPanel.figma.test.tsx. partial: mounted and tested, but that test pins its own node, not this frame, and this lane did not measure 448x674 against the rendered rail."
+  ]
+ },
+ "13006-184420": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "X accounts - My list > Add handle [13006-184420]",
+   "partial",
+   "src/components/home-redesign/whales/XAccountsPanel.tsx",
+   "/trench",
+   "MEASURED/IDENTIFIED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). THIS FRAME: 448x674, one child Frame 429 448x674, 12 visible texts - the same panel as 13006-184365 plus three more (#, @enter username, Add), i.e. the Add-handle INPUT ROW expanded inline above the list rather than in a separate modal. Same owner and mount (XAccountsPanel.tsx, ActivityView.tsx:63/:1434). partial: the panel is built; whether the add affordance opens inline as this frame draws it was not verified by this lane, and that is the one thing distinguishing this frame from its sibling."
+  ]
+ },
+ "13006-185060": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Audit [13006-185060]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x1463, cornerRadius 24, padding 24 on all four sides, footer child Frame 573 394x112. Width/padding cross-check: footer width 394 = frame width minus 2x24. Code ships lg:rounded-2xl (24) and lg:p-6 (24) at this tier - BOTH EXACT. Width: sm:max-w-[442px] gives 442 EXACT. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-185140": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Protocols [13006-185140]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x884. PARTIAL MEASUREMENT, stated as such: I read this frame's footer child (Frame 573 394x112) but not its own cornerRadius, so the padding here is DERIVED from the footer inset - footer width 394 against frame width 442 gives padding 24, which is the 1440 tier and matches the code lg:rounded-2xl (24) and lg:p-6 (24) on padding. RADIUS NOT READ for this node - do not cite this row for a radius. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431."
+  ]
+ },
+ "13006-185256": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Metrics [13006-185256]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x1154, cornerRadius 24, padding 24 on all four sides, footer child Frame 574 394x112. Width/padding cross-check: footer width 394 = frame width minus 2x24. Code ships lg:rounded-2xl (24) and lg:p-6 (24) at this tier - BOTH EXACT. Width: sm:max-w-[442px] gives 442 EXACT. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-185323": {
+  "file": "status.wave10.trench-discover.tsv",
+  "cols": [
+   "Right menu - Audit 768 [13006-185323]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "MEASURED 2026-09-01. 442x1463, radius 12, padding 20, itemSpacing 32 -- third member of the r12 pad20 cluster with 13006:185403 and :185519. Same reading: pad 20 matches md:p-5, radius 12 is 4 short of the tablet majority 16 that md:rounded-xl ships, and its 1440 twin 13006:185060 is 442x1463 r24 pad24 exactly on tier. The three drifted panels are adjacent on canvas and identical in the two values they get wrong, which is the signature of one stale copy rather than three decisions. No change. Body not measured.",
+   "tablet=partial @2026-09-01"
+  ]
+ },
+ "13006-185403": {
+  "file": "status.wave10.trench-discover.tsv",
+  "cols": [
+   "Right menu - Protocols 768 [13006-185403]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RE-MEASURED 2026-09-01, and the full census reframes wave 8's reading. 442x1008, radius 12, padding 20, itemSpacing 32. Wave 8 called this \"radius 12 where its five 442x1008 siblings read 16\"; the census makes it a THREE-panel cluster, not a lone outlier -- :185403 Protocols, :185519 Metrics 442x1154 and :185323 Audit 442x1463 all read r12 pad20, and all three sit together on canvas at x 16156 to 17240, immediately beside the r16 pad20 cluster at x 15614 to 20818. A contiguous canvas group sharing one wrong value is a stale copy, not three independent decisions. Padding 20 agrees with md:p-5 and with 13 of the 14 tablet panels; only the radius differs, and md:rounded-xl 16 follows the 10-panel majority. No change. Body not measured.",
+   "tablet=partial @2026-09-01"
+  ]
+ },
+ "13006-185519": {
+  "file": "status.wave10.trench-discover.tsv",
+  "cols": [
+   "Right menu - Metrics 768 [13006-185519]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "MEASURED 2026-09-01. 442x1154, radius 12, padding 20, itemSpacing 32 -- second member of the r12 pad20 canvas cluster with 13006:185403 and :185323. Padding 20 = md:p-5 exact; itemSpacing 32 INERT under SPACE_BETWEEN and correctly unshipped (see 13006:155570); radius 12 against the tablet majority of 16 (10 of 14), which md:rounded-xl follows. Its 1440 twin 13006:185256 is 442x1154 r24 pad24, i.e. exactly on the desktop tier, so the drift is confined to the tablet copy. No change. Body not measured.",
+   "tablet=partial @2026-09-01"
+  ]
+ },
+ "13006-185586": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Audit [13006-185586]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x1359, cornerRadius 12, padding 12 on all four sides, footer child Frame 573 335x92. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-185666": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Protocols [13006-185666]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x796, cornerRadius 12, padding 12 on all four sides, footer child Frame 573 335x92. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-185781": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Metrics [13006-185781]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x1068, cornerRadius 12, padding 12 on all four sides, footer child Frame 574 335x92. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-191571": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - hotkeys expanded [13006-191571]",
+   "partial",
+   "src/components/trench-redesign/discover/HotkeysMenu.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x998, cornerRadius 24, padding 24 on all four sides, footer child Frame 1178 394x62. Width/padding cross-check: footer width 394 = frame width minus 2x24. Code ships lg:rounded-2xl (24) and lg:p-6 (24) at this tier - BOTH EXACT. Width: sm:max-w-[442px] gives 442 EXACT. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: HotkeysMenu, imported DiscoverScreen.tsx:18 and rendered at :429. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-191680": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - hotkeys expanded [13006-191680]",
+   "partial",
+   "src/components/trench-redesign/discover/HotkeysMenu.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x918, cornerRadius 12, padding 12 on all four sides, footer child Frame 1178 335x44. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: HotkeysMenu, imported DiscoverScreen.tsx:18 and rendered at :429. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-191789": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Trench > Blacklist 1VH [13006-191789]",
+   "partial",
+   "src/components/trench-redesign/discover/BlacklistModal.tsx",
+   "/trench",
+   "SCRIM CORRECTED 2026-09-01, and it was wrong on every centred modal on this surface. The Overlay node is a 1440x900 FRAME with fill SOLID #001615 at 44% and BACKGROUND_BLUR radius 5, and TRENCH_MODAL_OVERLAY_CLASS copied that 5 straight into backdrop-blur-[5px] -- double what the frame draws, because Figma reports blur radius at twice the CSS value. Settled by MEASUREMENT and not by the rule, at three radii through Figma dev-mode output, since one ratio at one radius cannot separate a constant factor from a coincidence: 13006:188667 radius 5 emits backdrop-blur-[2.5px], 13006:187652 radius 20 emits backdrop-blur-[10px], 13006:284164 radius 40 emits backdrop-blur-[20px]. Factor 2 at all three, so not a floor, not a rounding and not scale-dependent. The same emit gives bg-[rgba(0,22,21,0.44)], which confirms the fill rather than transcribing it. Now backdrop-blur-[2.5px], shared by Alerts, Blacklist and One-click trade settings, with the oracle pinning 2.5 and separately refusing 5. Its Overlay is 13006:194607, the same 1440x900 frame at #001615 44% with BACKGROUND_BLUR radius 5, which is what makes this a shared constant rather than a per-modal value. Partial: the modal body is not measured on this pass; only the scrim is, and only at 1440.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-194655": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Layout [13006-194655]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x953, cornerRadius 24, padding 24 on all four sides, footer child Frame 1178 394x62. Width/padding cross-check: footer width 394 = frame width minus 2x24. Code ships lg:rounded-2xl (24) and lg:p-6 (24) at this tier - BOTH EXACT. Width: sm:max-w-[442px] gives 442 EXACT. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-194784": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Layout with text size ALT [13006-194784]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x1068, cornerRadius 24, padding 24 on all four sides, footer child Frame 1178 394x62. Width/padding cross-check: footer width 394 = frame width minus 2x24. Code ships lg:rounded-2xl (24) and lg:p-6 (24) at this tier - BOTH EXACT. Width: sm:max-w-[442px] gives 442 EXACT. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-194925": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Metrics [13006-194925]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x997, cornerRadius 24, padding 24 on all four sides, footer child Frame 1178 394x62. Width/padding cross-check: footer width 394 = frame width minus 2x24. Code ships lg:rounded-2xl (24) and lg:p-6 (24) at this tier - BOTH EXACT. Width: sm:max-w-[442px] gives 442 EXACT. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-195080": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Row [13006-195080]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x884, cornerRadius 24, padding 24 on all four sides, footer child Frame 1178 394x62. Width/padding cross-check: footer width 394 = frame width minus 2x24. Code ships lg:rounded-2xl (24) and lg:p-6 (24) at this tier - BOTH EXACT. Width: sm:max-w-[442px] gives 442 EXACT. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-195199": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Right menu - Row [13006-195199]",
+   "partial",
+   "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x1369, cornerRadius 24, padding 24 on all four sides, footer child Frame 1178 394x62. Width/padding cross-check: footer width 394 = frame width minus 2x24. Code ships lg:rounded-2xl (24) and lg:p-6 (24) at this tier - BOTH EXACT. Width: sm:max-w-[442px] gives 442 EXACT. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap."
+  ]
+ },
+ "13006-198241": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Pulse card - Intel [13006-198241]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenCard.tsx + discover/IntelPanel.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). Family chrome, unanimous across all eleven Pulse card - Intel frames: fill #122524 opaque, stroke #123f3c width 1, padding 8 on all four sides, no shadow. * THE HEIGHT MATHS CONFIRMS TokenCard.tsx's OWN DOCBLOCK: the 419x94 base card is 8 + a 78-tall body (child \"Frame 3\" 403x78) + 8, and TokenCard.tsx:9-12 records exactly that (\"94px tall ... 78px logo + 8px card padding + 8px gap\") as the fix for report 3e6d8edf. The taller variants add a SECOND child, \"Frame 553\", 18 tall, on a 6px itemSpacing: 8+78+6+18+8 = 118. At the two narrow tiers the body grows to 86 and the card to 126 (8+86+6+18+8). Body width is always frame width minus 16. * MOUNT FINDING, and it is a real gap: the only Intel surface in src/ is IntelPanel.tsx, and DiscoverScreen.tsx:393-395 renders it inside `hidden xl:block` as a 280px-wide VERTICAL SIDE RAIL (IntelPanel.tsx:36 - w-[280px] flex-col gap-2 p-4 bg-[#021615] rounded-xl). That is a different composition AND a different colour from these frames (#021615 vs #122524, no border, radius xl not 16/12), and being xl-only it does not render at all at the 349 and 320 widths these frames specify. So the Intel content exists but the pulse-CARD Intel variants do not. THIS FRAME: 419x94, cornerRadius 16, padding 8, HORIZONTAL, itemSpacing 16, one child Frame 3 403x78. This is the BASE intel card and the only one of the eleven with no 18px strip. Measured type ramp (visible only): the \"Intel\" / \"INTEL\" labels are 12px (#ffffff and #95a09f), every metric label and value 11px, MC/V stat values 12px, the 1d age chip 8px; accent colours #17f9b4 (positive), #ff574a (negative), #56c7f3 (links/handles), #95a09f (labels), and one #001615 chip reading \"0 SOL\". Its 94px height and 8px padding match TokenCard.tsx value for value. partial because the card SHELL is built and correct while the Intel content on it is not - see the mount finding above."
+  ]
+ },
+ "13006-198364": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Pulse card - Intel ALT [13006-198364]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenCard.tsx + discover/IntelPanel.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). Family chrome, unanimous across all eleven Pulse card - Intel frames: fill #122524 opaque, stroke #123f3c width 1, padding 8 on all four sides, no shadow. * THE HEIGHT MATHS CONFIRMS TokenCard.tsx's OWN DOCBLOCK: the 419x94 base card is 8 + a 78-tall body (child \"Frame 3\" 403x78) + 8, and TokenCard.tsx:9-12 records exactly that (\"94px tall ... 78px logo + 8px card padding + 8px gap\") as the fix for report 3e6d8edf. The taller variants add a SECOND child, \"Frame 553\", 18 tall, on a 6px itemSpacing: 8+78+6+18+8 = 118. At the two narrow tiers the body grows to 86 and the card to 126 (8+86+6+18+8). Body width is always frame width minus 16. * MOUNT FINDING, and it is a real gap: the only Intel surface in src/ is IntelPanel.tsx, and DiscoverScreen.tsx:393-395 renders it inside `hidden xl:block` as a 280px-wide VERTICAL SIDE RAIL (IntelPanel.tsx:36 - w-[280px] flex-col gap-2 p-4 bg-[#021615] rounded-xl). That is a different composition AND a different colour from these frames (#021615 vs #122524, no border, radius xl not 16/12), and being xl-only it does not render at all at the 349 and 320 widths these frames specify. So the Intel content exists but the pulse-CARD Intel variants do not. THIS FRAME: 419x118, cornerRadius 16, padding 8, VERTICAL, itemSpacing 6, children Frame 3 403x78 + Frame 553 403x18. The ALT state adds the 18px strip and a truncated contract address 0x4q5...3d6 at 11px #95a09f. Same 11px/12px ramp as the base card. partial: shell built, strip not."
+  ]
+ },
+ "13006-198638": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Pulse card - Intel - Boost status expanded [13006-198638]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenCard.tsx + discover/IntelPanel.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). Family chrome, unanimous across all eleven Pulse card - Intel frames: fill #122524 opaque, stroke #123f3c width 1, padding 8 on all four sides, no shadow. * THE HEIGHT MATHS CONFIRMS TokenCard.tsx's OWN DOCBLOCK: the 419x94 base card is 8 + a 78-tall body (child \"Frame 3\" 403x78) + 8, and TokenCard.tsx:9-12 records exactly that (\"94px tall ... 78px logo + 8px card padding + 8px gap\") as the fix for report 3e6d8edf. The taller variants add a SECOND child, \"Frame 553\", 18 tall, on a 6px itemSpacing: 8+78+6+18+8 = 118. At the two narrow tiers the body grows to 86 and the card to 126 (8+86+6+18+8). Body width is always frame width minus 16. * MOUNT FINDING, and it is a real gap: the only Intel surface in src/ is IntelPanel.tsx, and DiscoverScreen.tsx:393-395 renders it inside `hidden xl:block` as a 280px-wide VERTICAL SIDE RAIL (IntelPanel.tsx:36 - w-[280px] flex-col gap-2 p-4 bg-[#021615] rounded-xl). That is a different composition AND a different colour from these frames (#021615 vs #122524, no border, radius xl not 16/12), and being xl-only it does not render at all at the 349 and 320 widths these frames specify. So the Intel content exists but the pulse-CARD Intel variants do not. THIS FRAME: 419x118, cornerRadius 16, padding 8, VERTICAL, itemSpacing 6, children Frame 3 403x78 + Frame 553 403x18. The expanded boost state adds a countdown, measured at 02:27 rendered 8px #17f9b4, on top of the 18px strip. * THE DATA AND THE COMPONENT BOTH EXIST: BoostStatus.tsx (src/components/trench-redesign/trade/BoostStatus.tsx) rides DexScreener's unauthenticated orders/v1 endpoint via src/services/market/dexScreenerOrders.ts and renders a dashed Unavailable chip on failure rather than faking \"no paid listing\". But its ONLY consumer is IntelPanel.tsx:74 (import at :25) - grep over src/ finds no other. So boost status is built for the 280px xl-only side rail and NOT for this card. partial: real component, wrong surface."
+  ]
+ },
+ "13006-198778": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "Pulse card - Intel - Boost status [13006-198778]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenCard.tsx + discover/IntelPanel.tsx",
+   "/trench",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). Family chrome, unanimous across all eleven Pulse card - Intel frames: fill #122524 opaque, stroke #123f3c width 1, padding 8 on all four sides, no shadow. * THE HEIGHT MATHS CONFIRMS TokenCard.tsx's OWN DOCBLOCK: the 419x94 base card is 8 + a 78-tall body (child \"Frame 3\" 403x78) + 8, and TokenCard.tsx:9-12 records exactly that (\"94px tall ... 78px logo + 8px card padding + 8px gap\") as the fix for report 3e6d8edf. The taller variants add a SECOND child, \"Frame 553\", 18 tall, on a 6px itemSpacing: 8+78+6+18+8 = 118. At the two narrow tiers the body grows to 86 and the card to 126 (8+86+6+18+8). Body width is always frame width minus 16. * MOUNT FINDING, and it is a real gap: the only Intel surface in src/ is IntelPanel.tsx, and DiscoverScreen.tsx:393-395 renders it inside `hidden xl:block` as a 280px-wide VERTICAL SIDE RAIL (IntelPanel.tsx:36 - w-[280px] flex-col gap-2 p-4 bg-[#021615] rounded-xl). That is a different composition AND a different colour from these frames (#021615 vs #122524, no border, radius xl not 16/12), and being xl-only it does not render at all at the 349 and 320 widths these frames specify. So the Intel content exists but the pulse-CARD Intel variants do not. THIS FRAME: 419x118, cornerRadius 16, padding 8, VERTICAL, itemSpacing 6, children Frame 3 403x78 + Frame 553 403x18. The collapsed boost state - same geometry as 13006-198638 without the 02:27 countdown. Same verdict and same reason: BoostStatusLine exists and is honest about failure, but its only mount is IntelPanel.tsx:74, not the pulse card."
+  ]
+ },
+ "13006-207555": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "One click trade settings - Init selected [13006-207555]",
+   "partial",
+   "src/components/trench-redesign/trade/OneClickTradeModal.tsx",
+   "/trade",
+   "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). THIS FRAME: 564x510, cornerRadius 32, padding 24, itemSpacing 40. * RADIUS 32 IS OFF OUR SCALE ENTIRELY. We ship sm 8 / md 10 / lg 12 / xl 16 / 2xl 24 (modules/skai-ui/src/lib/design-tokens.ts) - there is no 32 token, so this corner cannot be expressed by any class name in the design system and must be written as a pixel literal if it is to be matched. Flagging rather than resolving: it may equally be a frame error, since its two siblings are both 16. ONE-CLICK TRADE SETTINGS modal, Init-selected state: fill #122524, stroke #123f3c width 1, 19 visible texts - Off / Buy / Sell mode toggles over per-feed amount fields for New pairs / Final stretch / Migrated. BUILT AND MOUNTED: src/components/trench-redesign/trade/OneClickTradeModal.tsx, rendered at OrderPanel.tsx:348. It is also the third member of the right-menu chrome family - rightMenuChrome.tsx names it as the panel that ALREADY passes overlayClassName and so already has the scrim fix the two Discover menus were missing. partial: mounted, internals not measured here."
+  ]
+ },
+ "13006-207638": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trench - hover 1VH [13006-207638]",
+   "partial",
+   "src/pages/trade/TrenchRedesign.tsx",
+   "/trench",
+   "Same shell geometry as 13006-134301 (header 56, rail 58, content 1382x844 @58,56, scroller 1382x22 @58,878) plus a hover state. Shell padding divergence identical (TrenchShell py-3 = 12px absent from frame). Hover treatment not measured.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-221940": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > Holders 1VH (1440 x 900px) [13006-221940]",
+   "partial",
+   "src/components/trench-redesign/trade/HoldersPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED three axes on the table itself (Frame 286 13006:223446, 1015x570, VERTICAL gap 8). Header Frame 283 13006:223447 1015x16 SPACE_BETWEEN pad 0/12/0/12 with NINE cells - S/N x=12 w20, Wallet x=52.13 w200, SOLbalance (last active) x=272.25, Bought (avg. buy) x=392.38, Sold (avg. sell) x=512.5, uPnL x=632.63 w60, Remaining x=712.75, Funding x=832.88 w120, Held x=973 w30 - every one Manrope Regular 12/16 ls -4% #95A09F. Rule 13006:223457 1px #123F3C at y=24, so the band composes 16+8 = 24. Row content 13006:223458 1015x36 pad 2/12/2/12 r 12 fill #122524 with the next rule at y=76, so the pitch is 52. FIXED this wave: the row and header inset was px-4 (16) against the frame's 12 on both sides, on EIGHT independent frames across five tables, and the header type was skai-para-3 flat 12/16 where 375 draws 12/14 - the band height h-[22px] md:h-6 was already right, so the fixed box was HIDING a 2px-tall text at the phone width (assert the sum, not the parts). STILL PARTIAL and structurally so: the code's HEADERS are # / Wallet / Balance / % Supply and the frame's nine are wallet-level TRADER columns (uPnL, Bought, Sold, Funding, SOL balance, Held). useTokenHolders returns address, balance and percentage only, so seven of the nine have no source and inventing them is the no-mock rule.",
+   "desktop=partial"
+  ]
+ },
+ "13006-224897": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > Holders - full screen 1VH (1440 x 900px) [13006-224897]",
+   "partial",
+   "src/components/trench-redesign/trade/HoldersPanel.tsx",
+   "/crypto/:symbol",
+   "Shares the table of 13006-221940 and carries the same verdict for the same reason - header band 16+8 = 24, row pitch 52 off a 36px content box, inset 12. Both inset and header-leading defects fixed this wave; the nine-column trader table has no data source for seven of its columns.",
+   "desktop=partial"
+  ]
+ },
+ "13006-227835": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > KOLs 1VH (1440 x 900px) [13006-227835]",
+   "partial",
+   "src/components/trench-redesign/trade/KOLsPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED, and the finding is that the frame named KOLs draws a WALLET-LEVEL TRADER TABLE, not the KOL feed KOLsPanel.tsx builds. Frame 286 13006:229341 1015x570; header 13006:229342 1015x16 pad 0/12 with nine cells - S/N, Wallet, SOLbalance (last active), Bought (avg. buy), Sold (avg. sell), R. PnL, Remaining, Funding, Held - all Manrope Regular 12/16 ls -4% #95A09F at x=12 / 52.13 / 272.25 / 392.38 / 512.5 / 632.63 / 712.75 / 832.88 / 973. It is the Holders nine with uPnL swapped for R. PnL. Rule y=24 (band 24), row content 13006:229353 1015x36 pad 2/12 r 12 #122524, pitch 52. KOLsPanel ships KOL / Type / Amount / Value / Impact off useTokenKols - five columns, none of them on this frame. FIXED this wave: the header band was a flat h-9 = 36, twelve over; the inset was 16 against 12; the header carried no leading ramp; the row body was skai-para-2 (14/20) flat where the measured Trench body ramp is 12/12/14. Columns still divergent, so partial.",
+   "desktop=partial"
+  ]
+ },
+ "13006-239242": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > Bubblemaps 1VH (1440 x 900px) [13006-239242]",
+   "partial",
+   "src/components/trench-redesign/trade/BubblemapsPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED. The tab body is Frame 301 13006:240725, 1047x673, pad 16, gap 32 SPACE_BETWEEN, r 0/0/16/16, stroke #123F3C, and its two children are a token-identity header Frame 620 13006:240726 1015x78 SPACE_BETWEEN - a 78x78 r 8 image with a 16x16 r 9999 chain badge, a 170x78 name block at gap 2, and two 120x34 r 8 CTAs at pad 8/16 on #001615 over #123F3C - plus an InsightX wordmark 129.75x24 pinned bottom-right at (901.25, 633). BubblemapsPanel.tsx renders only a p-4 wrapper around the shared BubbleMap at height 420: no header, no CTAs, no wordmark, and the map component itself is src/components/markets/BubbleMap.tsx, outside this lane. Partial rather than promoted, and not not-started, because the map IS the tab's subject and it renders with the real holder source. * WORTH RECORDING: this body's fill is #021615, a colour wave 10 corrected AWAY from on AlphaTrackerModal. Both are right - #021615 is a real board value on this tab body and simply was not the tracker's. Do not read that fix as a global ban on the hex.",
+   "desktop=partial"
+  ]
+ },
+ "13006-246442": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Multi-panel - data (order ticket rail card) [13006-246442]",
+   "partial",
+   "src/components/trench-redesign/trade/OrderPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED the card, was unread. 313x954 with NO padding and NO fill of its own; its single child Frame 429 313x954 wraps Frame 300 313x954 pad 16/16/16/16 gap 12 fill #122524 with a mixed radius. So the rail's top card is a 16px-inset #122524 card with a 12px stack gap - the same card language as the tables and the chart. OrderPanel ships an overflow-hidden rounded-2xl (24) wrapper and no #122524 fill at that level. Interior not measured; the ticket's own numbers are on the wave-8 row for 13006-246910.",
+   "desktop=partial"
+  ]
+ },
+ "13006-246726": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Multi-panel - data (Similar tokens, rail) [13006-246726]",
+   "partial",
+   "src/components/trench-redesign/trade/SimilarTokensPanel.tsx",
+   "/crypto/:symbol",
+   "RE-MEASURED and the last recorded-not-applied item is now APPLIED. Card 313x336, pad 16, gap 12, fill #122524, NO stroke, radius 8/8/24/24 (TL/TR/BR/BL) - three children: Frame 511 281x16 (heading), a 281x0 rule, Frame 510 281x264 (the list). Wave 9 measured the asymmetric radius and held it back on the grounds that a one-sided corner would read as a mistake on the full-width tab body below lg. That premise is refuted by 13006:272268, which IS that tab body at 708x328 and draws 0/0/12/12 with a #123F3C hairline. So the radius now ramps rounded-t-none rounded-b-[12px] to lg:rounded-t-[8px] lg:rounded-b-[24px], and the hairline is present below lg and dropped at lg where the rail card has none. STILL PARTIAL, and for one reason only: Frame 510 carries a SECOND section, \"Reused image tokens (4)\", which no code path builds because no image-similarity index exists (documented in the file header). Everything else - fill, pad, gap, radius, hairline, heading ramp Manrope Regular 12/16 with a Mulish Regular 12/16 #95A09F count 4px apart, and the 281x52 rows - is measured and matching.",
+   "desktop=partial"
+  ]
+ },
+ "13006-246910": {
+  "file": "status.wave8.trench-trade.tsv",
+  "cols": [
+   "Multi-panel - trade (order ticket) [13006-246910]",
+   "partial",
+   "src/components/trench-redesign/trade/OrderPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED 313x486 outer Frame 300 fill #122524 pad 16/16/16/16; stats Frame 328 281x56 r=8 fill #001615 pad 8/10/8/10; Market direction toggle 237x38 r=12 fill #17F9B4 pad 4; Frame 404 53x20 r=4 fill #123F3C pad 2/8/2/8; preset chips 55x22 fill #001615 pad 2/8/2/8. Type: labels Mulish Regular 12/16 #95A09F, figures Mulish Regular 11/14 (#17F9B4 buys, #FF574A sells), tabs Manrope Regular 12/16 #FFFFFF, Buy Mulish Regular 14/18 #001615 on green, Sell 14/18 #FFFFFF. Code container class not yet compared - partial.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-247053": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Multi-panel - combined (rail stack) [13006-247053]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeTerminal.tsx",
+   "/crypto/:symbol",
+   "MEASURED, was unread, and it is a THIRD independent confirmation of the rail numbers. 313x1740 VERTICAL gap 6, children 313x954 at y=0 (Frame 445, the ticket), 313x438 at y=960 (Multi-panel - data, r=8, pad 16, gap 36, #122524) and 313x336 at y=1404 (Multi-panel - data, pad 16, gap 12, #122524, stroke #123F3C). 954+6=960 and 960+438+6=1404 - the 6px gap checks twice. Code lg:grid-cols-[1fr_313px] and the rail's lg:gap-1.5 reproduce 313 and 6 exactly. The COMPOSITION divergence recorded on 13006-212076 stands: by content the second and third children are Community and Similar tokens, which the code puts in PanelTabs.",
+   "desktop=partial"
+  ]
+ },
+ "13006-252220": {
+  "file": "status.wave7.trade2-unknown.tsv",
+  "cols": [
+   "sidebar - open - trench [13006-252220]",
+   "partial",
+   "src/components/home-redesign/HomeSidebarExpanded.tsx",
+   "/trench",
+   "MEASURED/IDENTIFIED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc). THIS FRAME: 248x844, radius 0, fill #001615, children `Top main` (232x486) and `main bottom` (232x192); 248-232 = 16 so padding 8. 15 visible texts giving the full item order: New chat / Perps / Spot / Swaps / Trench / Alpha / PnL / Market Pulse / Launch / Dashboard / Layout settings / Messages / Games / Wallet. This is the EXPANDED app sidebar in its Trench state, not a Trench-local component. BUILT: HomeSidebarExpanded.tsx, and its surfaces test already asserts this exact ordering and the /trench landing (HomeSidebarExpanded.surfaces.test.tsx:570-572 pins PnL y=44 / Market Pulse y=88, and :626-638 asserts Market Pulse IS the landing surface with aria-current=page). partial: item set and order are corroborated by a live oracle test, but the 248x844 / 232-wide / 8px-padding geometry was not measured against the render by this lane."
+  ]
+ },
+ "13006-253171": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Instant trade [13006-253171]",
+   "partial",
+   "src/components/trench-redesign/trade/OrderPanel.tsx",
+   "/crypto/:symbol",
+   "★ PRIMARYFILE CORRECTED - the registry files this under InstantTradeSettingsModal.tsx, which contains neither 13006-253171 nor 13006:253171. The frame is the stacked instant-trade TICKET: its texts are P1/P2/P3, Buy, SOL/USDC/SKAI, the 1/2/3/5 green quick amounts, 20%/Off/0.0213/0.0281/Adv and the 10%/25%/50%/100% red sell row - OrderPanel.tsx's contract exactly. MEASURED: 432x332 as three stacked cards - Frame 299 432x54 pad 4/16/0/16 r 16/16/0/0 fill #122524 stroke #123F3C, Frame 270 432x244 pad 16 holding a signals column at gap 24, and Frame 300 432x34 pad 4/16/4/16 r 0/0/16/16. Code: h-[54px] px-4 pt-1 border-b border-green-coal-100 bg-green-coal-200 for the header (54, 4, 16, #123F3C, #122524 - all exact) and gap-6 p-4 for the body (24 and 16 - exact). FIXED this wave: the wrapper shipped rounded-2xl, which is 24 on this codebase's scale, against the frame's 16 on both the top and bottom cards. Still partial: the bottom menu card is not built as its own 34-tall r 0/0/16/16 card, and the preset/quick-amount rows are unmeasured cell by cell.",
+   "desktop=partial"
+  ]
+ },
+ "13006-253326": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Instant trade - wide [13006-253326]",
+   "partial",
+   "src/components/trench-redesign/trade/OrderPanel.tsx",
+   "/crypto/:symbol",
+   "★ PRIMARYFILE CORRECTED on the same name match as 13006-253171. MEASURED and byte-identical to that frame at depth 4 apart from width: 842x332, Frame 299 842x54 pad 4/16/0/16 r 16/16/0/0, Frame 270 842x244 pad 16, Frame 300 842x34 pad 4/16/4/16 r 0/0/16/16, all #122524 with #123F3C strokes, signals column gap 24. So the ticket's vertical rhythm is width-invariant across 432 and 842 and only the track widens - which is what a fluid column should do and what the code already does. Same radius correction applies; same two remaining gaps.",
+   "desktop=partial"
+  ]
+ },
+ "13006-255386": {
+  "file": "status.wave11.trade2-perp.tsv",
+  "cols": [
+   "Skai > Trade > Spot > Sidebar 1VH (768 x 1024px) [13006-255386]",
+   "partial",
+   "src/components/social/LeftSidebar.tsx",
+   "/trade/spot",
+   "PAGE: Trade 2 (mhF3BkzlTaGiLzJ7kvpmVc 13006:134300). PARTITION AUDIT, and the headline result is a NEGATIVE. I enumerated all 407 live top-level frames on Trade 2 and tested every one for a perp or mobile-trade subject three independent ways: by frame NAME against perp/leverage/funding/liquidation/isolated/cross/open-interest/futures; by TEXT content against the same set plus leverage multipliers; and by the presence of Frame 1217, the mobile buy/sell bar. NAME: four hits, all four Trench token tables (13006:219610, :268680, :299059, :303393 - Skai > Trench > Trade > Positions and Tables - Positions), zero perps. TEXT: seven hits and every one is a NAV LABEL, not a screen - Perps plus the blurb Perpetual futures contracts on-c... in the two Trade dropdowns 13006:144635 and :250464, and the bare word Perps in sidebar - open - trench 13006:252220, the two Trade > Nav bar frames 13006:349299 and :352370, and this frame and its 375 twin. FRAME 1217: exactly two hits, this frame and 13006:294295, and in both the frame SUBJECT is the sidebar overlay (sidebar - open 318x1024 at 0,0 here) which is why wave 10 re-attributed them to LeftSidebar.tsx - the bar is body furniture behind the overlay. Measured here: Frame 1217 730x66 at (19,874) over main 708x987 at (30,76), Header-tablet 768x52, Bottom-navigation-tablet 768x52 at y=972. CONCLUSION: Trade 2 contains ZERO frames whose subject is perpetual futures, the perp market header, the perp positions panel, the leverage or margin-mode drawers, the mobile buy/sell bar or the native chart. This lane cannot move the published parity number in either direction, and status kept at the owning lane's partial - reported, not changed.",
+   "tablet=partial"
+  ]
+ },
+ "13006-258611": {
+  "file": "status.wave10.trench-discover.tsv",
+  "cols": [
+   "Frame 1375 [13006-258611]",
+   "partial",
+   "src/components/trench-redesign/discover/TrenchColumn.tsx",
+   "/trench",
+   "RE-RECORD of a wave-9 verdict whose TSV was lost, RE-MEASURED 2026-09-01 off node data (use_figma, page 13006:134300) because the brief's code facts rot within a wave. 435.33x674 VERTICAL, two children: header Frame 299 13006:258612 435.33x54 and body Frame 270 13006:258632 435.33x620. FIXED AND VERIFIED THIS WAVE. (1) RADIUS is three tiers, not one: header radii 16/16/0/0 and body 0/0/24/24 here, 12/12 + 12/12 at 768 (13006:260215/:260242), 0 flat at 375 (13006:295544/:295575). Shipped a flat rounded-[16px]; now rounded-none md:rounded-[12px] lg:rounded-t-[16px] lg:rounded-b-[24px] on the overflow-hidden shell. (2) CARD GAP 8, not 6: body Frame 270 is HORIZONTAL and its itemSpacing 6 is the gap to the 8px scrollbar Frame 1100 at x=431.33; the card list Frame 357 13006:258633 is VERTICAL itemSpacing 8 and its six cards sit at y 0 102 204 306 408 510, i.e. 94+8. space-y-1.5 restored to space-y-2. (3) HEADER VERTICAL INSET nests 4/16/0/16 > 4/0/6/0 > 4/0/4/0 = 12 above and 10 below; py-3 drew 12 both. (4) SEARCH 13006:258617 is 154x32 radius 8 pad 8/16/8/8 itemSpacing 10 fill #001615 stroke #123F3C, so the caret starts at 8+16+10 = 34 and the trailing inset is 16; pl-8 pr-3 became pl-[34px] pr-4. NEW THIS WAVE: the bottom inset is NOT flat -- 768 nests 4/16/0/16 > 8/0/6/0 > 0 = 12 above and 6 below (13006:260215/:260216/:260217), and header heights close on it exactly (4+4+40+6=54 here, 4+8+32+6=50 at 768, 4+6+18+8=36 at 375); pb-[10px] is now pb-[10px] md:pb-[6px] lg:pb-[10px]. Body pad 8/4/8/8 = py-2 pl-2 pr-1. Colours #122524 shell, #123F3C rules, #001615 search well. REMAINING and why this is not done: the frame draws NO outer stroke -- Frame 299 carries one edge (bottom here, TOP at 375) and Frame 270 one top edge, and every ancestor up to the 1440 screen (13006:134401 :134400 :134399 :134365 :134364 :134303 :134301) has strokes empty -- while the code ships border on all four sides of the shell. Escalated, not changed. Card and chip type ramps also not measured here.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-258972": {
+  "file": "status.wave10.trench-discover.tsv",
+  "cols": [
+   "Frame 1280 [13006-258972]",
+   "partial",
+   "src/components/trench-redesign/discover/TrenchColumn.tsx",
+   "/trench",
+   "MEASURED 2026-09-01 off node data. Second 1440 column spec, 435.33x572 VERTICAL, same two-part shell as 13006:258611: header Frame 299 13006:258973 435.33x54 radii 16/16/0/0 pad 4/16/0/16 fill #122524 stroke #123F3C on the BOTTOM edge only, nested bottom-menu 13006:258974 pad 4/0/6/0; body Frame 270 13006:258993 435.33x518 radii 0/0/24/24 HORIZONTAL itemSpacing 6 pad 8/4/8/8 fill #122524 stroke on the TOP edge only, holding the card list Frame 357 13006:258994 VERTICAL itemSpacing 8 with five cards plus the 8px scrollbar Frame 1100 13006:259275. Every value the three-tier radius fix, the 8px card gap and the 34/16 search insets were derived from is reproduced here independently. Remaining, same as 13006:258611: the code puts a #123F3C border on all four sides of the shell and this frame puts none -- Frame 1280 itself has strokes empty and only the header bottom and body top carry a rule. Card and header type ramps not measured on this frame.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-259555": {
+  "file": "status.wave10.trench-discover.tsv",
+  "cols": [
+   "Frame 445 [13006-259555]",
+   "partial",
+   "src/components/trench-redesign/discover/TrenchColumn.tsx",
+   "/trench",
+   "MEASURED 2026-09-01 off node data, and it is a NARROW-COLUMN VARIANT, not a breakpoint. 346x808 at canvas x=7794, which is inside the 1440 band -- the 346 width is the column, not the viewport, and reading it as a 375 frame would produce a false mobile radius. Header Frame 299 13006:259557 346x54 radii 12/12/0/0 pad 4/12/0/12 fill #122524 stroke bottom; body Frame 270 13006:259577 346x754 radii 0/0/24/24 HORIZONTAL itemSpacing 6 pad 8/4/8/8 stroke top. So this column pairs a 12 TOP radius with a 24 BOTTOM one and a 12 horizontal inset, matching neither the wide 1440 column (16 top / 24 bottom, inset 16 -- 13006:258612/:258632) nor the 768 tier (12/12, inset 16 -- 13006:260215/:260242) nor the 375 tier (0 flat, inset 16 -- 13006:295544/:295575). The bottom 24 is what identifies it as desktop; the top 12 and the 12 inset track the narrower column. The shipped three-tier radius is keyed to viewport width and therefore draws 16/24 here; closing that would need a container query, not another breakpoint. Also carries a 432x14 footer Frame 400 13006:260057 with \"By trading you accept our terms of service.\" in #95A09F, which the column component does not render. Same outer-stroke divergence as its siblings.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-261490": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trade > Trench - hover 1VH [13006-261490]",
+   "partial",
+   "src/pages/trade/TrenchRedesign.tsx",
+   "/trench",
+   "Measured 2026-08-31. 768x1024, geometry identical to 13006-260059 (toolbar 708x82 @(30,96), content 708x724 @(30,202), both gap 24; scrollers 768x22 @950 and 1382x20 @52). Hover state not measured. Same 30-vs-16 inset miss.",
+   "tablet=partial @2026-08-31"
+  ]
+ },
+ "13006-271134": {
+  "file": "status.wave5.trade2-drift.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Tables - Bubble maps 1VH [13006-271134]",
+   "unknown",
+   "src/components/trench-redesign/trade/BubblemapsPanel.tsx",
+   "/trench",
+   "frame 768x1024; Bubble maps under the Tables tab at 768x1024. PanelTabs :5-11 documents the Chart/Tables/Community/Similar-tokens taxonomy. NOT measured."
+  ]
+ },
+ "13006-271971": {
+  "file": "status.wave5.trade2-drift.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Community 1VH [13006-271971]",
+   "unknown",
+   "src/components/trench-redesign/trade/PanelTabs.tsx",
+   "/trench",
+   "frame 768x1024; Community tab at 768x1024 (PanelTabs :10 maps Community to KOLs plus Bubblemaps). NOT measured."
+  ]
+ },
+ "13006-183651": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trackers > KOLs 1VH (1440 x 900px) [13006-183651]",
+   "partial",
+   "src/components/home-redesign/whales/ActivityView.tsx",
+   "/trench/trackers",
+   "RE-MEASURED: KOL details x=98 w325 and Actions x=846 w100, both Manrope Regular 12/16 ls -4% #95A09F. HEADER_CELL matches on all four properties at this width, confirming the wave-9 reading a second time. The KOLs grid ships md:grid-cols-[minmax(0,1fr)_112px] against the frame's 325 + 100 at x=98/846, and the row bodies are unread, so partial.",
+   "desktop=partial"
+  ]
+ },
+ "13006-184491": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trackers - empty 1VH (1440 x 900px) [13006-184491]",
+   "partial",
+   "src/components/home-redesign/whales/ActivityView.tsx",
+   "/trench/trackers",
+   "MEASURED, was unknown. Empty state, so no table header to read - consistent with 13006-319384 / 13006-321483, which wave 8 probed for eleven header strings and found none. Shell is the standard Trench trackers shell and is measured here: 1440x900 fill #001615; Header-desktop 1440x56 pad 8/19 gap 260; sidebar 58x844 at y=56 pad 12/11; main 1382 at x=58 y=56; Frame 520 1318x734 at x=32 y=44 gap 24 with Frame 337 1318x36 over Frame 445 1318x674 gap 6; top Trench scroller 1382x20 #001615 and bottom 1382x22 #122524 at y=878. Body of the empty state not measured.",
+   "desktop=partial"
+  ]
+ },
+ "13006-169068": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Frame 1358 [13006-169068]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenTable.tsx",
+   "/trench",
+   "RE-MEASURED 2026-09-01. 1061x664 with the 594x8 scroll sliver, the primary spec of the family and the one whose values are shipped. CENSUS 2026-09-01, not a sample: every 1029x78 card in all six desktop table frames was read -- 42 cards, 870 text nodes. AVATAR 42 of 42 is Rectangle 34624566 52x52 cornerRadius 8 with an IMAGE fill, against a shipped size-[32px] rounded-full: 20px small and the wrong shape. BUY CTA 42 of 42 is 72 wide, cornerRadius 8, padding 12/24/12/24, fill #17F9B4, label Manrope Regular 14/16 at -4% in #001615, against SkaiButton primary, which paints #56C7F3 at rounded-xl (16 on our scale) with an 18px leading and a 32px inset -- four properties, now overridden. METRICS 168 nodes read Mulish REGULAR 12/14 in #FFFFFF, while skai-number-2 is Mulish at weight 700 with a 20px leading, so the size override alone left them bold and too tall; font-normal leading-[14px] added. IDENTITY 21 nodes Manrope Regular 12/14 #FFFFFF plus 21 at #95A09F, against skai-label-1 and skai-label-2, which typography.css declares as MULISH 14/20 and 12/16 -- wrong family, size and leading; the pair now rides skai-para-3 with the frame leading, and the two lines take Frame 500 13006:169088 itemSpacing 4. GREEN #17F9B4 appears 220 times and #2DEDAD appears ZERO times, so the change percentage and the buys half of the txns split moved off the primary accent onto the bright trading green ChainChartCard already ships. RULES: Frame 300 13006:169071 reports strokeTopWeight 1 with the other three edges 0, and body Frame 270 13006:169082 the same, so the hairline lands at the table top edge AND under the header; border-b drew only the second and border-y now draws both. That is the gap wave 10 left open on all six of these rows. ★ THE TRAP THIS ROW PAID FOR: a SIX-card read of these same frames says the row card fill is #001615, and shipping it would have painted every row as the highlighted one. Across all 42, only six carry a fill and they are the FIRST card of each table -- a lead-item highlight, the same shape as the Pulse-card finding already escalated. The resting card is unfilled, the code was already right, and the oracle now holds that shut with the count in it. REMAINING, hence partial and not done: (1) the row CTA is 40 tall in all 42 instances while ONE_CLICK_TO_BUTTON maps its default normal to medium = 50 and its smallest step small to 46, and @skai/ui has no variant under 40, so the three-step pref cannot take the measured height without adding a size -- escalated, not guessed. (2) The frame draws a second identity line of stat chips, Mulish Regular 10/14 in #17F9B4, #56C7F3 and #FF574A plus a Mulish SemiBold 8/12 badge, and the code renders no such row. (3) The six frames split 21/21 on two values -- CTA height 40 against 42, identity and label leading 14/16 against 16/18 -- so the desktop band is internally inconsistent and the shipped set is the one 13006:169068 draws.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-169857": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Frame 1360 [13006-169857]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenTable.tsx",
+   "/trench",
+   "RE-MEASURED 2026-09-01. 1061x664, the scrollbar-hidden twin of 13006:169068 -- same box, same 163 texts, minus the sliver. CENSUS 2026-09-01, not a sample: every 1029x78 card in all six desktop table frames was read -- 42 cards, 870 text nodes. AVATAR 42 of 42 is Rectangle 34624566 52x52 cornerRadius 8 with an IMAGE fill, against a shipped size-[32px] rounded-full: 20px small and the wrong shape. BUY CTA 42 of 42 is 72 wide, cornerRadius 8, padding 12/24/12/24, fill #17F9B4, label Manrope Regular 14/16 at -4% in #001615, against SkaiButton primary, which paints #56C7F3 at rounded-xl (16 on our scale) with an 18px leading and a 32px inset -- four properties, now overridden. METRICS 168 nodes read Mulish REGULAR 12/14 in #FFFFFF, while skai-number-2 is Mulish at weight 700 with a 20px leading, so the size override alone left them bold and too tall; font-normal leading-[14px] added. IDENTITY 21 nodes Manrope Regular 12/14 #FFFFFF plus 21 at #95A09F, against skai-label-1 and skai-label-2, which typography.css declares as MULISH 14/20 and 12/16 -- wrong family, size and leading; the pair now rides skai-para-3 with the frame leading, and the two lines take Frame 500 13006:169088 itemSpacing 4. GREEN #17F9B4 appears 220 times and #2DEDAD appears ZERO times, so the change percentage and the buys half of the txns split moved off the primary accent onto the bright trading green ChainChartCard already ships. RULES: Frame 300 13006:169071 reports strokeTopWeight 1 with the other three edges 0, and body Frame 270 13006:169082 the same, so the hairline lands at the table top edge AND under the header; border-b drew only the second and border-y now draws both. That is the gap wave 10 left open on all six of these rows. ★ THE TRAP THIS ROW PAID FOR: a SIX-card read of these same frames says the row card fill is #001615, and shipping it would have painted every row as the highlighted one. Across all 42, only six carry a fill and they are the FIRST card of each table -- a lead-item highlight, the same shape as the Pulse-card finding already escalated. The resting card is unfilled, the code was already right, and the oracle now holds that shut with the count in it. REMAINING, hence partial and not done: (1) the row CTA is 40 tall in all 42 instances while ONE_CLICK_TO_BUTTON maps its default normal to medium = 50 and its smallest step small to 46, and @skai/ui has no variant under 40, so the three-step pref cannot take the measured height without adding a size -- escalated, not guessed. (2) The frame draws a second identity line of stat chips, Mulish Regular 10/14 in #17F9B4, #56C7F3 and #FF574A plus a Mulish SemiBold 8/12 badge, and the code renders no such row. (3) The six frames split 21/21 on two values -- CTA height 40 against 42, identity and label leading 14/16 against 16/18 -- so the desktop band is internally inconsistent and the shipped set is the one 13006:169068 draws.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-170646": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Frame 1367 [13006-170646]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenTable.tsx",
+   "/trench",
+   "RE-MEASURED 2026-09-01. 1053x666, second width stop; the row CONTENT is 1029 here too, so the 8px difference is the spec frame outer inset and not a design step. CENSUS 2026-09-01, not a sample: every 1029x78 card in all six desktop table frames was read -- 42 cards, 870 text nodes. AVATAR 42 of 42 is Rectangle 34624566 52x52 cornerRadius 8 with an IMAGE fill, against a shipped size-[32px] rounded-full: 20px small and the wrong shape. BUY CTA 42 of 42 is 72 wide, cornerRadius 8, padding 12/24/12/24, fill #17F9B4, label Manrope Regular 14/16 at -4% in #001615, against SkaiButton primary, which paints #56C7F3 at rounded-xl (16 on our scale) with an 18px leading and a 32px inset -- four properties, now overridden. METRICS 168 nodes read Mulish REGULAR 12/14 in #FFFFFF, while skai-number-2 is Mulish at weight 700 with a 20px leading, so the size override alone left them bold and too tall; font-normal leading-[14px] added. IDENTITY 21 nodes Manrope Regular 12/14 #FFFFFF plus 21 at #95A09F, against skai-label-1 and skai-label-2, which typography.css declares as MULISH 14/20 and 12/16 -- wrong family, size and leading; the pair now rides skai-para-3 with the frame leading, and the two lines take Frame 500 13006:169088 itemSpacing 4. GREEN #17F9B4 appears 220 times and #2DEDAD appears ZERO times, so the change percentage and the buys half of the txns split moved off the primary accent onto the bright trading green ChainChartCard already ships. RULES: Frame 300 13006:169071 reports strokeTopWeight 1 with the other three edges 0, and body Frame 270 13006:169082 the same, so the hairline lands at the table top edge AND under the header; border-b drew only the second and border-y now draws both. That is the gap wave 10 left open on all six of these rows. ★ THE TRAP THIS ROW PAID FOR: a SIX-card read of these same frames says the row card fill is #001615, and shipping it would have painted every row as the highlighted one. Across all 42, only six carry a fill and they are the FIRST card of each table -- a lead-item highlight, the same shape as the Pulse-card finding already escalated. The resting card is unfilled, the code was already right, and the oracle now holds that shut with the count in it. REMAINING, hence partial and not done: (1) the row CTA is 40 tall in all 42 instances while ONE_CLICK_TO_BUTTON maps its default normal to medium = 50 and its smallest step small to 46, and @skai/ui has no variant under 40, so the three-step pref cannot take the measured height without adding a size -- escalated, not guessed. (2) The frame draws a second identity line of stat chips, Mulish Regular 10/14 in #17F9B4, #56C7F3 and #FF574A plus a Mulish SemiBold 8/12 badge, and the code renders no such row. (3) The six frames split 21/21 on two values -- CTA height 40 against 42, identity and label leading 14/16 against 16/18 -- so the desktop band is internally inconsistent and the shipped set is the one 13006:169068 draws.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-171435": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Frame 1371 [13006-171435]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenTable.tsx",
+   "/trench",
+   "RE-MEASURED 2026-09-01. 1053x666, identical text count and row geometry to 13006:170646. CENSUS 2026-09-01, not a sample: every 1029x78 card in all six desktop table frames was read -- 42 cards, 870 text nodes. AVATAR 42 of 42 is Rectangle 34624566 52x52 cornerRadius 8 with an IMAGE fill, against a shipped size-[32px] rounded-full: 20px small and the wrong shape. BUY CTA 42 of 42 is 72 wide, cornerRadius 8, padding 12/24/12/24, fill #17F9B4, label Manrope Regular 14/16 at -4% in #001615, against SkaiButton primary, which paints #56C7F3 at rounded-xl (16 on our scale) with an 18px leading and a 32px inset -- four properties, now overridden. METRICS 168 nodes read Mulish REGULAR 12/14 in #FFFFFF, while skai-number-2 is Mulish at weight 700 with a 20px leading, so the size override alone left them bold and too tall; font-normal leading-[14px] added. IDENTITY 21 nodes Manrope Regular 12/14 #FFFFFF plus 21 at #95A09F, against skai-label-1 and skai-label-2, which typography.css declares as MULISH 14/20 and 12/16 -- wrong family, size and leading; the pair now rides skai-para-3 with the frame leading, and the two lines take Frame 500 13006:169088 itemSpacing 4. GREEN #17F9B4 appears 220 times and #2DEDAD appears ZERO times, so the change percentage and the buys half of the txns split moved off the primary accent onto the bright trading green ChainChartCard already ships. RULES: Frame 300 13006:169071 reports strokeTopWeight 1 with the other three edges 0, and body Frame 270 13006:169082 the same, so the hairline lands at the table top edge AND under the header; border-b drew only the second and border-y now draws both. That is the gap wave 10 left open on all six of these rows. ★ THE TRAP THIS ROW PAID FOR: a SIX-card read of these same frames says the row card fill is #001615, and shipping it would have painted every row as the highlighted one. Across all 42, only six carry a fill and they are the FIRST card of each table -- a lead-item highlight, the same shape as the Pulse-card finding already escalated. The resting card is unfilled, the code was already right, and the oracle now holds that shut with the count in it. REMAINING, hence partial and not done: (1) the row CTA is 40 tall in all 42 instances while ONE_CLICK_TO_BUTTON maps its default normal to medium = 50 and its smallest step small to 46, and @skai/ui has no variant under 40, so the three-step pref cannot take the measured height without adding a size -- escalated, not guessed. (2) The frame draws a second identity line of stat chips, Mulish Regular 10/14 in #17F9B4, #56C7F3 and #FF574A plus a Mulish SemiBold 8/12 badge, and the code renders no such row. (3) The six frames split 21/21 on two values -- CTA height 40 against 42, identity and label leading 14/16 against 16/18 -- so the desktop band is internally inconsistent and the shipped set is the one 13006:169068 draws.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-172224": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Frame 1368 [13006-172224]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenTable.tsx",
+   "/trench",
+   "RE-MEASURED 2026-09-01. 1053x666 with 121 visible texts against 163 at the same size, so a reduced-row state rather than a resize. CENSUS 2026-09-01, not a sample: every 1029x78 card in all six desktop table frames was read -- 42 cards, 870 text nodes. AVATAR 42 of 42 is Rectangle 34624566 52x52 cornerRadius 8 with an IMAGE fill, against a shipped size-[32px] rounded-full: 20px small and the wrong shape. BUY CTA 42 of 42 is 72 wide, cornerRadius 8, padding 12/24/12/24, fill #17F9B4, label Manrope Regular 14/16 at -4% in #001615, against SkaiButton primary, which paints #56C7F3 at rounded-xl (16 on our scale) with an 18px leading and a 32px inset -- four properties, now overridden. METRICS 168 nodes read Mulish REGULAR 12/14 in #FFFFFF, while skai-number-2 is Mulish at weight 700 with a 20px leading, so the size override alone left them bold and too tall; font-normal leading-[14px] added. IDENTITY 21 nodes Manrope Regular 12/14 #FFFFFF plus 21 at #95A09F, against skai-label-1 and skai-label-2, which typography.css declares as MULISH 14/20 and 12/16 -- wrong family, size and leading; the pair now rides skai-para-3 with the frame leading, and the two lines take Frame 500 13006:169088 itemSpacing 4. GREEN #17F9B4 appears 220 times and #2DEDAD appears ZERO times, so the change percentage and the buys half of the txns split moved off the primary accent onto the bright trading green ChainChartCard already ships. RULES: Frame 300 13006:169071 reports strokeTopWeight 1 with the other three edges 0, and body Frame 270 13006:169082 the same, so the hairline lands at the table top edge AND under the header; border-b drew only the second and border-y now draws both. That is the gap wave 10 left open on all six of these rows. ★ THE TRAP THIS ROW PAID FOR: a SIX-card read of these same frames says the row card fill is #001615, and shipping it would have painted every row as the highlighted one. Across all 42, only six carry a fill and they are the FIRST card of each table -- a lead-item highlight, the same shape as the Pulse-card finding already escalated. The resting card is unfilled, the code was already right, and the oracle now holds that shut with the count in it. REMAINING, hence partial and not done: (1) the row CTA is 40 tall in all 42 instances while ONE_CLICK_TO_BUTTON maps its default normal to medium = 50 and its smallest step small to 46, and @skai/ui has no variant under 40, so the three-step pref cannot take the measured height without adding a size -- escalated, not guessed. (2) The frame draws a second identity line of stat chips, Mulish Regular 10/14 in #17F9B4, #56C7F3 and #FF574A plus a Mulish SemiBold 8/12 badge, and the code renders no such row. (3) The six frames split 21/21 on two values -- CTA height 40 against 42, identity and label leading 14/16 against 16/18 -- so the desktop band is internally inconsistent and the shipped set is the one 13006:169068 draws.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-172747": {
+  "file": "status.wave11.trench-discover.tsv",
+  "cols": [
+   "Frame 1359 [13006-172747]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenTable.tsx",
+   "/trench",
+   "RE-MEASURED 2026-09-01. 1061x664 with the sliver and 121 texts, the reduced-row twin of 13006:169068. CENSUS 2026-09-01, not a sample: every 1029x78 card in all six desktop table frames was read -- 42 cards, 870 text nodes. AVATAR 42 of 42 is Rectangle 34624566 52x52 cornerRadius 8 with an IMAGE fill, against a shipped size-[32px] rounded-full: 20px small and the wrong shape. BUY CTA 42 of 42 is 72 wide, cornerRadius 8, padding 12/24/12/24, fill #17F9B4, label Manrope Regular 14/16 at -4% in #001615, against SkaiButton primary, which paints #56C7F3 at rounded-xl (16 on our scale) with an 18px leading and a 32px inset -- four properties, now overridden. METRICS 168 nodes read Mulish REGULAR 12/14 in #FFFFFF, while skai-number-2 is Mulish at weight 700 with a 20px leading, so the size override alone left them bold and too tall; font-normal leading-[14px] added. IDENTITY 21 nodes Manrope Regular 12/14 #FFFFFF plus 21 at #95A09F, against skai-label-1 and skai-label-2, which typography.css declares as MULISH 14/20 and 12/16 -- wrong family, size and leading; the pair now rides skai-para-3 with the frame leading, and the two lines take Frame 500 13006:169088 itemSpacing 4. GREEN #17F9B4 appears 220 times and #2DEDAD appears ZERO times, so the change percentage and the buys half of the txns split moved off the primary accent onto the bright trading green ChainChartCard already ships. RULES: Frame 300 13006:169071 reports strokeTopWeight 1 with the other three edges 0, and body Frame 270 13006:169082 the same, so the hairline lands at the table top edge AND under the header; border-b drew only the second and border-y now draws both. That is the gap wave 10 left open on all six of these rows. ★ THE TRAP THIS ROW PAID FOR: a SIX-card read of these same frames says the row card fill is #001615, and shipping it would have painted every row as the highlighted one. Across all 42, only six carry a fill and they are the FIRST card of each table -- a lead-item highlight, the same shape as the Pulse-card finding already escalated. The resting card is unfilled, the code was already right, and the oracle now holds that shut with the count in it. REMAINING, hence partial and not done: (1) the row CTA is 40 tall in all 42 instances while ONE_CLICK_TO_BUTTON maps its default normal to medium = 50 and its smallest step small to 46, and @skai/ui has no variant under 40, so the three-step pref cannot take the measured height without adding a size -- escalated, not guessed. (2) The frame draws a second identity line of stat chips, Mulish Regular 10/14 in #17F9B4, #56C7F3 and #FF574A plus a Mulish SemiBold 8/12 badge, and the code renders no such row. (3) The six frames split 21/21 on two values -- CTA height 40 against 42, identity and label leading 14/16 against 16/18 -- so the desktop band is internally inconsistent and the shipped set is the one 13006:169068 draws.",
+   "desktop=partial @2026-09-01"
+  ]
+ },
+ "13006-183297": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Frame 1361 - Live trades table body (Trade 2 board) [13006-183297]",
+   "partial",
+   "src/components/home-redesign/whales/ActivityView.tsx",
+   "/trench/trackers",
+   "RE-MEASURED, and the wave-9 escalation is now RESOLVED AS A GENUINE TWO-BOARD CONFLICT rather than a per-table one. Trade 2 draws this header WHITE: Name x=56 w87 and Token x=211 w120 and Mkt. Cap. x=464 w50 all Manrope Regular 12/14 #FFFFFF, with Amount x=363 w70 at 12/16 - the one internally inconsistent cell. Wave 9 read the same four and inferred that ActivityView could satisfy both boards by giving the Live-trades table its own colour. IT CANNOT: Home 2's Live-trades header (13008-115820) is #95A09F, and so are its 768 and 375 cuts (13008-121515 / 13008-124524). The two boards ALSO disagree on the labels - Trade 2 says \"Name\" and \"Mkt. Cap.\", Home 2 says \"Date / Name\" and \"Market cap\" - and ActivityView renders the Home 2 pair. So the code currently follows Home 2 for label and colour and Trade 2 for size, and there is no third option that satisfies both. NOT CHANGED - see the escalation. The honest \"--\" in the Mkt. Cap. cell (report f4556954) stands and must never become 0.",
+   "desktop=partial"
+  ]
+ },
+ "13006-252907": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Alpha Tracker [13006-252907]",
+   "partial",
+   "src/components/trench-redesign/trade/AlphaTrackerModal.tsx",
+   "/crypto/:symbol",
+   "MEASURED three axes, two defects FIXED. Composition is TWO STACKED CARDS, not one dialog box: Frame 299 432x54 pad 4/16/0/16 r 16/16/0/0 fill #122524 stroke #123F3C over Frame 270 432x650 pad 8/4/8/8 gap 6 r 0/0/24/24 same fill and stroke, with a Frame 1100 604x8 r 9999 #001615 scroll rail inside. TYPE measured: title \"Alpha tracker\" Manrope Regular 18/24 #FFFFFF; search placeholder Manrope Regular 12/16 #95A09F; row name Manrope Regular 12/16 #FFFFFF with the symbol at 12/16 #95A09F; age Mulish Regular 11/14 #17F9B4; address Mulish Regular 11/14 #95A09F; \"MC:\" Mulish Regular 11/14 #95A09F with the value at Mulish Regular 12/16 #FFFFFF. FIXED: the dialog fill was #021615, a near-black on no node of this tracker, against the frames' #122524 (six nodes agree); and the title was skai-label-1, i.e. Mulish 14/20, against Manrope 18/24. STILL PARTIAL: the two-card stack with its 54px tab card and 0/0/24/24 body is not built, the row type is Mulish where the frame is Manrope for name and symbol, and the MC value ships skai-number-2 (Mulish 700 16/20) against Mulish Regular 12/16.",
+   "desktop=partial"
+  ]
+ },
+ "13006-253481": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Instant trade - stacked [13006-253481]",
+   "partial",
+   "src/components/trench-redesign/trade/OrderPanel.tsx",
+   "/crypto/:symbol",
+   "★ PRIMARYFILE CORRECTED. This is the frame OrderPanel.tsx's own header cites as 8489-28020 \"Instant trade - stacked\", re-drawn on the Trade 2 board: 432x416, 84px taller than 13006-253171 because the buy block carries a SECOND quick-amount row - 1/2/3/5 then 0.1/0.2/0.5/1, all Manrope Regular 14/18 #17F9B4 - where the 332 cut carries one. Card chrome identical to its two siblings (r 16 top and bottom, pad 4/16/0/16 and 16 and 4/16/4/16, #122524 on #123F3C). The pay-currency row reads SOL / USDC / SKAI in Manrope Regular 12/16 #FFFFFF, matching OrderPanel's font-manrope text-xs leading-4 tracking-[-0.48px] text-white exactly. Radius corrected this wave; the second preset row and the bottom menu card remain unbuilt as drawn.",
+   "desktop=partial"
+  ]
+ },
+ "13006-173270": {
+  "file": "status.wave7.trade2.tsv",
+  "cols": [
+   "Trench > Discover > Trending 1VH [13006-173270]",
+   "partial",
+   "src/components/trench-redesign/discover/TokenTable.tsx",
+   "/trench",
+   "Measured 13006:134300 node data. Same shell as 13006-168043. Bottom Trench scroller 1382x22 @(58,878) fill #122524, HORIZONTAL gap 24; its Frame 1 is padding 0/16/0/16 gap 28; the inner scroller frame is 1350x22 padding 2/0/2/0 gap 16. Code TrenchScroller.tsx:78 is flex w-full items-center gap-4 (16, frame says 24 at the root and 28 one level in) with the ticker at h-[20px] py-[2px] (20, frame says 22) and NO bg-[#122524] and NO px-4. Four measured misses on the scroller alone.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-217349": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > Instant trade settings 1VH (1440 x 900px) [13006-217349]",
+   "partial",
+   "src/components/trench-redesign/trade/InstantTradeSettingsModal.tsx",
+   "/crypto/:symbol",
+   "MEASURED THREE AXES - wave 9 demoted this because the sheet CONTENTS (13006-219554) had never been read. They are read now, node by node, and five defects are FIXED this wave. Shell re-confirmed: Right menu 442x884 at x=990 y=8, VERTICAL gap 32 SPACE_BETWEEN, pad 24, r 24, fill #122524@0.80, stroke #123F3C 1px - RIGHT_MENU_SHEET_CLASS reproduces every one. CONTENTS: controls row 394x28 with the title Manrope Regular 24/28 ls -4% #FFFFFF and a 16x16 close at x=378; body Frame 344 gap 16 over Frame 342 gap 32; group 1 gap 24 = intro Manrope Regular 14/18 #E0E0E0 over a list 394x168 gap 12 of four rows, label column Frame 401 337 wide, gap 16, toggle 41x24 pill on #001615; group 2 gap 24 = the Wallet-group-grid-view row with Frame 359 171x26 gap 2 and the Hotkeys row; CTA/button 394x62 pad 20/40 r 16 #56C7F3, label Manrope Regular 16/22 #001615. FIXED: title was SheetTitle's text-lg font-semibold (18/28 at 600) against 24/28 Regular; intro was skai-para-3 12/16 #95A09F against 14/18 #E0E0E0; row labels were skai-label-2, i.e. MULISH 12/16, against Manrope 14/18 #FFFFFF; the No/Yes control was a rounded-full group on a #02201E track against two 85x26 halves at pad 4/8 with 8px outer corners only, off #001615/#FFFFFF and on #56C7F3/#001615 in Mulish 14/18; the CTA was skaiSize large, h-16 = 64 against 62. ★ TWO MORE DEFECTS FOUND BY ASSERTING THE HEIGHT AS A COMPOSITION rather than as its parts, after w10-trench-discover's report: (a) the CTA radius ramps 12/12/16 and the first fix named rounded-xl, which is 16 on this scale and so was right only at 1440 - now pixel literals; (b) the No/Yes halves were still 40 tall, because toggleVariants' default size is h-10 and removing the old h-7 merely uncovered it. Nine class-by-class assertions passed on that 40px control. h-auto makes the 4/8 padding load-bearing, and the halves now compute 22/24/26 against the frames' 24/24/26 (13006:289580 / :264475 / :219599). ★ THE SHEET'S OWN gap 32 IS INERT AND MUST NOT BE SHIPPED. Censused every Right menu* frame on this page: 21 of 21 are VERTICAL, primaryAxisAlignItems SPACE_BETWEEN, primaryAxisSizingMode FIXED, itemSpacing 32 and EXACTLY TWO children, so the 32 is a value the layout ignores. This frame proves it arithmetically - Frame 344 sits at y=24 with height 734, ending at 758, and the CTA starts at y=798, a 40px gap, not 32; the CTA's own 798+62 = 860 = 884-24 is the floor it is pinned to. A gap-8 added to RIGHT_MENU_SHEET_CLASS would draw a gap no frame draws, and on any panel with more than two top-level children it would insert 32 between every pair. STILL PARTIAL: the 16x16 close control is Radix's 16px X at right-4 top-4 not the frame's x=378 in the controls row, and the Execution-limits block has no counterpart in the frame at any width (kept and restyled per the 2026-08-26 ruling).",
+   "desktop=partial"
+  ]
+ },
+ "13006-198981": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Trench > One-click trade settings - modal off 1VH [13006-198981]",
+   "partial",
+   "src/components/trench-redesign/trade/OneClickTradeModal.tsx",
+   "/trench",
+   "DEMOTED from done, then largely repaired. The wave-7 promotion measured the CARD only (564 / gap 40 / pad 24 / r 32 / #122524 / overlay #001615@0.44) and all six of those still hold. The TYPE axis was never read and it did not hold: title Manrope Regular 24/28 ls -4% matches at THIS width but was pinned at 24/28 for 375/768 too (see 13006-303738); phase pills are Mulish Regular 14/18 in the frame against the page-default Manrope in code; Apply CTA is 516x62 pad 20/40 r=16 with a Manrope Regular 16/22 -4% #001615 label against rounded-2xl (24 on our scale). All three FIXED. Still not done: the modal node carries DROP_SHADOW y=10 radius 80 #000000@0.25 (now built as 0_10px_40px_rgba(0,0,0,0.25) - Figma radius is 2x CSS) AND a clipped shine ELLIPSE 484x484 #17F9B4 at node opacity 0.19 with a 272 LAYER_BLUR, which is not built.",
+   "desktop=partial"
+  ]
+ },
+ "13006-233358": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > Transactions 1VH (1440 x 900px) [13006-233358]",
+   "partial",
+   "src/components/trench-redesign/trade/TransactionsPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED. Frame 286 13006:234844 1015x710 gap 8; header 13006:234845 1015x16 pad 0/12 SPACE_BETWEEN, six children - Time x=12 w50 (12/16 #95A09F), a 90x16 CTA/button at x=115.2 with r 16, Mkt. Cap. x=258.4 w140, Amount x=451.6 w115, a Frame 1203 at x=619.8 w100 gap 4 and a Frame 1167 at x=773 w230 pad 0/24 - so two of the six header slots are CONTROLS, not text. Rule y=24 (band 24), row content 13006:234863 1015x28 pad 2/12 r 12 #122524 with the next rule at y=68, so the Transactions pitch is 44 against Holders 52 - the two tables genuinely differ and the 44 the code ships is right. ROW BODY MEASURED off 13006:234863 - 1m, $2.15K, 29.47M and $456.78 are Mulish Regular 14/18 (13006:234866 / :234869 / :234870 / :234873), the trader 0xAd4...323 is Mulish 12/16 #56C7F3 (:234887) and the Buy chip is Mulish 11/14 #17F9B4. FIXED: inset 16 to 12, the header leading ramp, and the row type from skai-para-2 (Manrope 14/20) to the measured Mulish ramp; the band was a flat h-6, correct at 768 and 1440 and 2px over at 375. Partial: the two header CONTROL slots and the per-column tracks are unbuilt.",
+   "desktop=partial"
+  ]
+ },
+ "13006-212076": {
+  "file": "status.wave8.trench-trade.tsv",
+  "cols": [
+   "Token detail > Multi-panel - combined - right rail [13006-212076]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeTerminal.tsx",
+   "/crypto/:symbol",
+   "MEASURED 313x1740 VERTICAL gap 6, children 313x954 at y=0, 313x438 at y=960, 313x336 at y=1404 - arithmetic confirms gap 6. Code rail width 313 and lg:gap-1.5 match. COMPOSITION DOES NOT: by text content the three children are OrderPanel (5m vol/Buys/Sells/Net vol., Market-Limit-Pro, Buy/Sell, Amount, presets), COMMUNITY (Twitter/Discord/Website + posts + See all posts) and SIMILAR TOKENS (Similar tokens (16) + Reused image tokens (4)). Code renders OrderPanel, TokenInfoPanel, PositionReadout, RiskPanel and puts Community/Similar tokens in PanelTabs instead. Escalation, not a unilateral edit.",
+   "desktop=partial @2026-08-31"
+  ]
+ },
+ "13006-210578": {
+  "file": "status.wave8.trench-trade.tsv",
+  "cols": [
+   "Token detail > Frame 443 - header row + chart [13006-210578]",
+   "partial",
+   "src/components/trench-redesign/trade/PanelTabs.tsx",
+   "/crypto/:symbol",
+   "MEASURED x=8 y=26 w=1047 h=608 VERTICAL pad 0 gap 6. Code column is the grid 1fr track at lg with p-2/gap-1.5, so x and width follow from the shell numbers. Height is content-driven and the inner stack gap was not measured per child - left partial rather than done.",
+   "desktop=renders @2026-08-31"
+  ]
+ },
+ "13006-212012": {
+  "file": "status.wave8.trench-trade.tsv",
+  "cols": [
+   "Token detail > Frame 444 - trading-details section [13006-212012]",
+   "partial",
+   "src/components/trench-redesign/trade/PanelTabs.tsx",
+   "/crypto/:symbol",
+   "MEASURED x=8 y=640 w=1047 h=277 VERTICAL pad 0 gap 16. Sits 6px under Frame 443 (26+608=634, +6=640) confirming the 6px column gap a second time. Content axes not measured.",
+   "desktop=renders @2026-08-31"
+  ]
+ },
+ "13006-201820": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Trench > One-click trade settings - modal buy 1VH [13006-201820]",
+   "partial",
+   "src/components/trench-redesign/trade/OneClickTradeModal.tsx",
+   "/trench",
+   "DEMOTED from done. Card measured via its own modal node 13006-204639: 564x350 gap 40 pad 24 r 32 fill #122524 stroke #123F3C 1px. Phase row Frame 360 516x30 gap 2 with Frame 357 pad 6/8/6/8 r 8/0/0/8 fill #56C7F3@0.14 stroke #56C7F3 and Frame 360 r 0/8/8/0 - code px-2 py-1.5 + PHASE_RADIUS + bg-sky-blue/[0.14] match all of it. The LABELS are Mulish Regular 14/18 ls -4% and shipped as Manrope; FIXED with font-mulish plus the 12/14 (375) and 14/16 (768) steps. Not done for the same shine/shadow reason as 13006-198981. The frame's two OFF pill labels disagree with each other - Final stretch #95A09F, Migrated #FFFFFF in one frame - so the off colour is left at white/64 rather than picking one.",
+   "desktop=partial"
+  ]
+ },
+ "13006-272165": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Similar tokens 1VH (768x1024px) [13006-272165]",
+   "partial",
+   "src/components/trench-redesign/trade/SimilarTokensPanel.tsx",
+   "/crypto/:symbol",
+   "RE-MEASURED at the card node rather than the screen: 13006:272268 \"Multi-panel - data\" 708x328, pad 12, gap 12, r 0/0/12/12, fill #122524, stroke #123F3C 1px. Code is p-3 with rounded-t-none rounded-b-[12px] and a border-[#123F3C] below lg - all five now exact. The heading is Manrope Regular 12/16 #FFFFFF at this width (13006:272272), matching the same ramp as 1440. The frame also draws a \"Similar tokens\" primary TAB at 13006:272263 in the same 12/16, which is the tab chrome and belongs to PanelTabs. Partial for the same single reason as 13006-246726: the Reused-image-tokens section is unbuilt.",
+   "tablet=partial"
+  ]
+ },
+ "13006-268978": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Tables - Transactions 1VH (768x1024px) [13006-268978]",
+   "partial",
+   "src/components/trench-redesign/trade/TransactionsPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED on the tab chrome, which is what this frame settles. Primary row Frame 336 345x16 gap 24 with five 16-tall CTA/button instances - Chart / Tables / Token info / Community / Similar tokens - Manrope Regular 12/16 ls -4%, active #FFFFFF, inactive #95A09F, and NO underline and NO pill on the primary row. Code draws an after: underline under the active primary tab at every width; the frame has none below lg. A 24x24 r=8 #123F3C \"more\" control closes the row. Tables sub-row active pill Frame 404 r=4 #123F3C confirmed. The 12/16 tab type matches after this wave's md: step. The record CARD list is unmeasured here - TransactionsPanel's own comment sources it from 13006:269108/269107.",
+   "tablet=partial"
+  ]
+ },
+ "13006-267296": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Chart - Instant - buy 1VH (768x1024px) [13006-267296]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeChart.tsx",
+   "/crypto/:symbol",
+   "MEASURED. Card 708x490 at y=40, pad 12, gap 8, r 0/0/12/12, fill #122524, stroke #123F3C - the tallest of the three 768 variants (Instant 490 / Market 466 / Limit 412). Chrome unbuilt; the shipped md:h-[466px] is 24px short here and applied to the wrong box.",
+   "tablet=partial"
+  ]
+ },
+ "13006-265891": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Chart - Instant > AI Bullish 1VH (768x1024px) [13006-265891]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeChart.tsx",
+   "/crypto/:symbol",
+   "MEASURED. Card 708x490 at y=40, pad 12, gap 8, r 0/0/12/12, #122524, stroke #123F3C - the Instant geometry unchanged, so the AI sentiment state does not resize the chart card. Card chrome unbuilt in TradeChart; the sentiment strip itself lives in ChartSentimentBar and is not measured here.",
+   "tablet=partial"
+  ]
+ },
+ "13006-264486": {
+  "file": "status.wave9.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Chart - Instant > AI Bearish 1VH (768x1024px) [13006-264486]",
+   "partial",
+   "src/components/trench-redesign/trade/TradeChart.tsx",
+   "/crypto/:symbol",
+   "MEASURED, identical to the Bullish cut: 708x490 at y=40, pad 12, gap 8, r 0/0/12/12, #122524, stroke #123F3C. Two frames confirming the AI state is a content change inside a fixed card.",
+   "tablet=partial"
+  ]
+ },
+ "13006-263046": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Chart - Instant trade settings 1VH (768x1024px) [13006-263046]",
+   "partial",
+   "src/components/trench-redesign/trade/InstantTradeSettingsModal.tsx",
+   "/crypto/:symbol",
+   "★ PRIMARYFILE CORRECTED - the registry files this under TradeChart.tsx on the word \"Chart\"; the frame's own name is \"Chart - Instant trade settings\" and its subject is the right menu. TradeChart.tsx contains neither 13006-263046 nor 13006:263046. MEASURED: panel 13006:264430 442x1008 at x=318 y=8, VERTICAL gap 32 SPACE_BETWEEN, pad 20, r 16, fill #122524@0.80, stroke #123F3C, BACKGROUND_BLUR 40 (= backdrop-blur-20) plus DROP_SHADOW r80 - RIGHT_MENU_SHEET_CLASS's md tier is 442 / 16 / 20 and matches all three. Body Frame 344 402 wide gap 16 over Frame 342 gap 24; title Manrope Regular 18/22; intro and every row label and hint Manrope Regular 12/16 (#E0E0E0 for intro and hints, #FFFFFF for labels); No/Yes labels Mulish Regular 14/16; CTA 402x50 pad 16/24 r 12 label Manrope Regular 14/18. All five type/colour defects listed on 13006-217349 were shipped at this width too and are fixed with md: steps. Two further ones, found by composing the height instead of asserting its parts: the CTA radius is 12 here and was shipped as 16, and the No/Yes half is 85x24 (pad 4/8 + a 14/16 label) where the control was rendering at the toggle primitive's default h-10 = 40. Both fixed. Remaining: Frame 342's gap is 24 here against 32 at the other two widths, which the single flow does not express, plus the close control and the extra Execution-limits block.",
+   "tablet=partial"
+  ]
+ },
+ "13006-271691": {
+  "file": "status.wave10.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Token info 1VH (768x1024px) [13006-271691]",
+   "partial",
+   "src/components/trench-redesign/trade/TokenInfoPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED on the tile grid, which is what the panel is built from, and the tile is now EXACT at this width. Five tiles read independently - 13006:271842 Dex boost, :271863 LP. burned, :271869 DEX paid, :271874 Mint auth., :271877 Freeze auth. - and all five are 165x44, r 8, fill #001615, pad 6/8/6/8, gap 4, CENTER/CENTER with a Mulish Regular 10/14 #95A09F caption. 165 is the 4-column track: the 768 panel is 684 wide inside p-4, and (684-32-3x8)/4 = 157, so the code's md:grid-cols-4 gap-2 gives 157 against 165 - the one tile value still off, and it is a container width, not a tile property. FIXED this wave: the fill was #052d2d, the radius rounded-lg = 12, the side padding 4 and the caption leading 12. What keeps the frame partial is everything outside the grid - the heading, the CA/DA address rows and the audit block are unmeasured here.",
+   "tablet=partial"
+  ]
+ },
+ "13006-271355": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trade > Trench > Tables - Transactions 1VH (768x1024px) [13006-271355]",
+   "partial",
+   "src/components/trench-redesign/trade/TransactionsPanel.tsx",
+   "/crypto/:symbol",
+   "MEASURED, and this width does NOT draw the desktop table: there is no Frame 286 anywhere in the screen. The transactions read as stacked cards under Frame 1219 / Frame 1395, whose labels Time 13006:271488, Type :271491, Mkt. Cap. :271494 and Amount :271497 are Manrope 12/16 in 34 and 38px slots on a 40px column gap. The header type ramp therefore reads 12/16 here, which the fix ships as md:leading-4. Partial: the card composition below lg is a different layout from the grid the code renders and is unmeasured cell by cell.",
+   "tablet=partial"
+  ]
+ },
+ "13006-236560": {
+  "file": "status.wave11.trench-trade.tsv",
+  "cols": [
+   "Skai > Trench > Trade > Transactions > Adjust maker filter 1VH (1440 x 900px) [13006-236560]",
+   "partial",
+   "src/components/trench-redesign/trade/AdjustMakerFilterModal.tsx",
+   "/crypto/:symbol",
+   "MEASURED THREE AXES, and the finding is that this is the FOURTH right-menu panel and the only one that had never adopted the shared shell. Panel Frame 338 13006:239225 442x884 at x=990 y=8, VERTICAL SPACE_BETWEEN, pad 24, r 24, fill #122524@0.80, stroke #123F3C 1, DROP_SHADOW radius 80 offset 0,10 - identical to Adjust hotkeys, Adjust trench settings and Instant trade settings, which RIGHT_MENU_SHEET_CLASS already reproduces with its 359/12/12, 442/16/20 and 442/24/24 ramp. Body Frame 344 13006:239226 394x148 VERTICAL gap 32 over: controls 13006:239227 394x28 HORIZONTAL gap 10 with a 24px pencil (inner glyph 19.5, #FFFFFF), the title 13006:239229 Manrope Regular 24/28 ls -4% #FFFFFF at x=34 w334, and a 16x16 close at x=378 y=6 (#878787); then input/primary-inputs 13006:239238 394x88 gap 8 = a label Manrope Regular 14/18 #FFFFFF over a field 394x62 pad 20 r 16 fill #001615 stroke #123F3C 1 whose placeholder is Manrope Regular 16/22 #95A09F. Footer Frame 1205 13006:239239 394x62 at y=798 (798+62 = 860 = 884-24), HORIZONTAL gap 8, two 193x62 halves pad 20/40 r 16 with Manrope Regular 16/22 labels - reset 13006:239240 fill #001615 inside a 1.5px #56C7F3 ring, apply 13006:239241 solid #56C7F3 on #001615. FIXED this wave: the shell was a square-cornered 420-wide slab welded to the right edge, filled an opaque #0B1E1D that appears on NO node of this frame, bordered only on the left, with no blur, no shadow and two section rules the frame does not draw; the title was 20/24; the label was skai-para-3, i.e. 12/16 ash, against 14/18 white; the field was the primitive's 40px box; the footer was gap 12 with SkaiButton defaults. Both 62s are COMPOSITIONS of 20+22+20 and neither box carries a height on the board, so the oracle asserts padY*2 + leading with a no-pinned-height guard - mutation-checked, and dropping h-auto leaves every padding and leading class green on a 40px field. STILL PARTIAL for one reason: the frame puts its close 24 from the right and 30 from the top of the panel, and SheetContent hard-codes right-4 top-4 with no passthrough (modules/skai-ui sheet.tsx), which is not this lane's file. Note also this panel reports BACKGROUND_BLUR radius 5 where its 43 siblings report 40; the shared class ships the siblings' 20px CSS value.",
+   "desktop=partial"
+  ]
+ }
+}

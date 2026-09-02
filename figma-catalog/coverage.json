@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T21:08:19.878Z",
+  "generated": "2026-09-02T08:42:55.975Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
@@ -7,30 +7,30 @@
     "furniture": 418,
     "genuine": 1914,
     "matched": 1914,
-    "done": 341,
-    "partial": 1082,
-    "notStarted": 228,
-    "blocked": 73,
-    "frameDefect": 100,
-    "catalogFurniture": 42,
-    "unknown": 48,
+    "done": 371,
+    "partial": 1076,
+    "notStarted": 199,
+    "blocked": 71,
+    "frameDefect": 99,
+    "catalogFurniture": 44,
+    "unknown": 54,
     "liveOnly": 0,
     "rollupOnly": 0,
     "defaultNamed": 118,
     "ambiguous": 0,
-    "conflicts": 39
+    "conflicts": 38
   },
   "doneRows": {
-    "total": 1665,
-    "withBreakpointProvenance": 320,
-    "namingANodeId": 1440,
+    "total": 1726,
+    "withBreakpointProvenance": 381,
+    "namingANodeId": 1491,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 8253,
-    "namingNoNodeId": 339,
-    "namingNoLiveNodeId": 363,
-    "unrecognisedTokens": 9101
+    "total": 8513,
+    "namingNoNodeId": 365,
+    "namingNoLiveNodeId": 392,
+    "unrecognisedTokens": 9340
   },
   "statusFiles": [
     {
@@ -542,6 +542,150 @@
       "rows": 10,
       "withLiveId": 10,
       "ids": 11
+    },
+    {
+      "file": "status.wave12.predict-a.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 10
+    },
+    {
+      "file": "status.wave12.predict-b.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 10
+    },
+    {
+      "file": "status.wave12.social-a.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 4
+    },
+    {
+      "file": "status.wave12.trade2-a.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 9
+    },
+    {
+      "file": "status.wave15.social.tsv",
+      "rows": 8,
+      "withLiveId": 8,
+      "ids": 8
+    },
+    {
+      "file": "status.wave15.trench.tsv",
+      "rows": 13,
+      "withLiveId": 13,
+      "ids": 13
+    },
+    {
+      "file": "status.wave15b.games-a.tsv",
+      "rows": 8,
+      "withLiveId": 1,
+      "ids": 2
+    },
+    {
+      "file": "status.wave15b.games-b.tsv",
+      "rows": 14,
+      "withLiveId": 8,
+      "ids": 8
+    },
+    {
+      "file": "status.wave15b.home-a.tsv",
+      "rows": 7,
+      "withLiveId": 5,
+      "ids": 5
+    },
+    {
+      "file": "status.wave15b.home-b.tsv",
+      "rows": 12,
+      "withLiveId": 12,
+      "ids": 12
+    },
+    {
+      "file": "status.wave15b.social.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave17.predict-cards.tsv",
+      "rows": 9,
+      "withLiveId": 8,
+      "ids": 8
+    },
+    {
+      "file": "status.wave17.social-feed.tsv",
+      "rows": 22,
+      "withLiveId": 22,
+      "ids": 22
+    },
+    {
+      "file": "status.wave17.social-messages.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 6
+    },
+    {
+      "file": "status.wave17.social-pages.tsv",
+      "rows": 12,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave17.social-rest.tsv",
+      "rows": 17,
+      "withLiveId": 17,
+      "ids": 17
+    },
+    {
+      "file": "status.wave17.trade1-modals.tsv",
+      "rows": 7,
+      "withLiveId": 7,
+      "ids": 7
+    },
+    {
+      "file": "status.wave17.trade1-pages.tsv",
+      "rows": 30,
+      "withLiveId": 30,
+      "ids": 30
+    },
+    {
+      "file": "status.wave17.trade1-panels.tsv",
+      "rows": 15,
+      "withLiveId": 15,
+      "ids": 15
+    },
+    {
+      "file": "status.wave17.trade2-perp.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave17.trade2-spot.tsv",
+      "rows": 4,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave17.trade2-trench-a.tsv",
+      "rows": 15,
+      "withLiveId": 15,
+      "ids": 15
+    },
+    {
+      "file": "status.wave17.trade2-trench-b.tsv",
+      "rows": 5,
+      "withLiveId": 4,
+      "ids": 4
+    },
+    {
+      "file": "status.wave17.trade2-trench-c.tsv",
+      "rows": 17,
+      "withLiveId": 15,
+      "ids": 15
     },
     {
       "file": "status.wave2.creator-rewards-charts.tsv",
@@ -3183,11 +3327,11 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 161,
+        "partial": 160,
         "blocked-on-backend": 23,
         "unknown": 21,
         "frame-defect": 16,
-        "done": 25,
+        "done": 26,
         "not-started": 8
       },
       "liveOnly": []
@@ -3241,13 +3385,13 @@
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 23,
+      "conflicts": 22,
       "byStatus": {
         "partial": 227,
-        "not-started": 75,
-        "done": 48,
-        "blocked-on-backend": 30,
-        "unknown": 8,
+        "not-started": 74,
+        "done": 54,
+        "blocked-on-backend": 28,
+        "unknown": 5,
         "frame-defect": 14
       },
       "liveOnly": []
@@ -4980,14 +5124,14 @@
         "loose-instance": 2
       },
       "genuine": 215,
-      "matched": 63,
+      "matched": 75,
       "rollupOnly": 0,
       "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
         "done": 52,
-        "partial": 3,
+        "partial": 15,
         "unknown": 8
       },
       "liveOnly": [
@@ -5209,28 +5353,7 @@
           "h": 1024
         },
         {
-          "id": "6381-20578",
-          "name": "Skai > Home - welcom",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1024
-        },
-        {
-          "id": "6383-20999",
-          "name": "Skai > Home - welcom",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1024
-        },
-        {
           "id": "6388-21725",
-          "name": "Skai > Home - welcom",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1024
-        },
-        {
-          "id": "6385-21358",
           "name": "Skai > Home - welcom",
           "type": "FRAME",
           "w": 768,
@@ -5258,13 +5381,6 @@
           "h": 1024
         },
         {
-          "id": "6379-18340",
-          "name": "Skai > Home - welcom",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1024
-        },
-        {
           "id": "6330-55267",
           "name": "Skai > Home - welcom",
           "type": "FRAME",
@@ -5279,28 +5395,7 @@
           "h": 812
         },
         {
-          "id": "6381-20617",
-          "name": "Skai > Home - welcom",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "6383-21006",
-          "name": "Skai > Home - welcom",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
           "id": "6388-21892",
-          "name": "Skai > Home - welcom",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "6385-21390",
           "name": "Skai > Home - welcom",
           "type": "FRAME",
           "w": 375,
@@ -5322,13 +5417,6 @@
         },
         {
           "id": "6413-21006",
-          "name": "Skai > Home - welcom",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "6379-18450",
           "name": "Skai > Home - welcom",
           "type": "FRAME",
           "w": 375,
@@ -5377,13 +5465,6 @@
           "h": 1024
         },
         {
-          "id": "6711-27811",
-          "name": "Skai > Home > AI Fee",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1412
-        },
-        {
           "id": "6706-22658",
           "name": "Skai > Home > AI Fee",
           "type": "FRAME",
@@ -5403,13 +5484,6 @@
           "type": "FRAME",
           "w": 768,
           "h": 1024
-        },
-        {
-          "id": "6782-26825",
-          "name": "Skai > Home > Portfo",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1325
         },
         {
           "id": "6828-38811",
@@ -5552,13 +5626,6 @@
           "h": 632
         },
         {
-          "id": "6795-30496",
-          "name": "Skai > Home > Portfo",
-          "type": "FRAME",
-          "w": 375,
-          "h": 1334
-        },
-        {
           "id": "6910-59407",
           "name": "Skai > Home > Portfo",
           "type": "FRAME",
@@ -5690,13 +5757,6 @@
           "type": "FRAME",
           "w": 375,
           "h": 1330
-        },
-        {
-          "id": "6711-32989",
-          "name": "Skai > Home > AI Fee",
-          "type": "FRAME",
-          "w": 375,
-          "h": 1698
         },
         {
           "id": "6707-23360",
@@ -6987,15 +7047,16 @@
         "hidden": 2
       },
       "genuine": 367,
-      "matched": 152,
+      "matched": 154,
       "rollupOnly": 0,
       "defaultNamed": 43,
       "ambiguous": 24,
       "conflicts": 0,
       "byStatus": {
-        "partial": 119,
-        "done": 30,
+        "partial": 123,
+        "done": 27,
         "blocked-on-backend": 2,
+        "frame-defect": 1,
         "unknown": 1
       },
       "liveOnly": [
@@ -8162,13 +8223,6 @@
           "h": 18
         },
         {
-          "id": "9050-206715",
-          "name": "Skai > Trade > Spot ",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1024
-        },
-        {
           "id": "9048-192225",
           "name": "Select pair - USDC",
           "type": "FRAME",
@@ -8216,13 +8270,6 @@
           "type": "FRAME",
           "w": 375,
           "h": 812
-        },
-        {
-          "id": "9061-240109",
-          "name": "Selected pair - USDC",
-          "type": "FRAME",
-          "w": 354,
-          "h": 556
         },
         {
           "id": "9061-240254",
@@ -8526,13 +8573,13 @@
       "ambiguous": 0,
       "conflicts": 2,
       "byStatus": {
-        "partial": 245,
-        "done": 35,
-        "unknown": 8,
-        "not-started": 77,
+        "partial": 240,
+        "done": 58,
+        "unknown": 17,
+        "not-started": 49,
         "blocked-on-backend": 2,
-        "furniture": 3,
-        "frame-defect": 5
+        "furniture": 5,
+        "frame-defect": 4
       },
       "liveOnly": []
     },
@@ -9802,6 +9849,15 @@
       "status": "done"
     },
     {
+      "id": "4144-63929",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave17.trade2-spot.tsv:6"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "9099-147317",
       "cls": "bug-link",
       "resolved": null,
@@ -9827,6 +9883,20 @@
         "status.wave8.games-a.tsv:4"
       ],
       "status": "frame-defect"
+    },
+    {
+      "id": "9212-25292",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000004025",
+        "depth": 1,
+        "pageName": "✅ Scratchers - Skai orig"
+      },
+      "rows": [
+        "status.wave15b.games-a.tsv:13"
+      ],
+      "status": "partial"
     },
     {
       "id": "9433-15177",
@@ -10191,20 +10261,6 @@
       "rows": [
         "status.wave4.row-conflicts.tsv:49",
         "status.wave4.social-a.tsv:30"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "5203-64550",
-      "page": "✅ Social",
-      "name": "Skai > Social > Grou",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:50",
-        "status.wave4.social-a.tsv:31"
       ],
       "kind": "same-generation"
     },
