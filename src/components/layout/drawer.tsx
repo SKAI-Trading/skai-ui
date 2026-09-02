@@ -28,6 +28,16 @@ const DrawerOverlay = React.forwardRef<
 ));
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
+/**
+ * Same geometry as `sheetVariants`, and the cap hinges at the same place: `md:`
+ * (768) is a width the boards are drawn at, `sm:` (640) is not. Hung off `sm:`
+ * the 384px cap made a wider viewport draw a narrower panel — `w-3/4` reaches
+ * 479 at 639 and the cap dropped it to 384 at 640.
+ *
+ * Kept in step with `overlays/sheet.tsx` deliberately: the two variants are
+ * character-for-character the same rule, and a drift between them is the kind
+ * that only shows up once someone finally mounts this one.
+ */
 const drawerContentVariants = cva(
   "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
   {
@@ -36,9 +46,9 @@ const drawerContentVariants = cva(
         top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
         bottom:
           "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left md:max-w-sm",
         right:
-          "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+          "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right md:max-w-sm",
       },
     },
     defaultVariants: {
