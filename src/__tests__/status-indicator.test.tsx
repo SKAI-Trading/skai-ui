@@ -5,6 +5,13 @@ import {
   statusIndicatorVariants,
 } from "../components/trading/status-indicator";
 
+/**
+ * Exact members of a class list. A substring match over the joined string is
+ * satisfied by any longer utility sharing the prefix, so `toContain("h-3")`
+ * passes on `h-3.5` and `toContain("bg-green-500")` on `bg-green-500/90`.
+ */
+const tok = (cls: string) => cls.split(/\s+/).filter(Boolean);
+
 describe("StatusIndicator", () => {
   describe("Status Variants", () => {
     it("renders online status with green color", () => {
@@ -98,13 +105,25 @@ describe("StatusIndicator", () => {
     it("applies glow effect for online status", () => {
       const { container } = render(<StatusIndicator status="online" glow />);
       const indicator = container.querySelector('[role="status"]');
-      expect(indicator?.className).toContain("shadow-");
+      expect(tok(indicator!.className)).toContain(
+        "shadow-[0_0_8px_rgba(34,197,94,0.6)]",
+      );
     });
 
     it("applies glow effect for busy status", () => {
       const { container } = render(<StatusIndicator status="busy" glow />);
       const indicator = container.querySelector('[role="status"]');
-      expect(indicator?.className).toContain("shadow-");
+      expect(tok(indicator!.className)).toContain(
+        "shadow-[0_0_8px_rgba(239,68,68,0.6)]",
+      );
+    });
+
+    it("applies glow effect for away status", () => {
+      const { container } = render(<StatusIndicator status="away" glow />);
+      const indicator = container.querySelector('[role="status"]');
+      expect(tok(indicator!.className)).toContain(
+        "shadow-[0_0_8px_rgba(234,179,8,0.6)]",
+      );
     });
 
     it("applies glow effect for connecting status", () => {
@@ -112,7 +131,17 @@ describe("StatusIndicator", () => {
         <StatusIndicator status="connecting" glow />,
       );
       const indicator = container.querySelector('[role="status"]');
-      expect(indicator?.className).toContain("shadow-");
+      expect(tok(indicator!.className)).toContain(
+        "shadow-[0_0_8px_rgba(59,130,246,0.6)]",
+      );
+    });
+
+    it("adds no glow shadow when glow is off", () => {
+      const { container } = render(<StatusIndicator status="online" />);
+      const indicator = container.querySelector('[role="status"]');
+      expect(
+        tok(indicator!.className).filter((c) => c.startsWith("shadow-")),
+      ).toEqual([]);
     });
   });
 
@@ -210,31 +239,34 @@ describe("StatusIndicator", () => {
 
   describe("statusIndicatorVariants", () => {
     it("generates correct classes for status", () => {
-      const classes = statusIndicatorVariants({ status: "online" });
+      const classes = tok(statusIndicatorVariants({ status: "online" }));
       expect(classes).toContain("bg-green-500");
     });
 
     it("generates correct classes for size", () => {
-      const classes = statusIndicatorVariants({ size: "lg" });
+      const classes = tok(statusIndicatorVariants({ size: "lg" }));
       expect(classes).toContain("h-3");
       expect(classes).toContain("w-3");
     });
 
     it("generates correct classes for pulse", () => {
-      const classes = statusIndicatorVariants({ pulse: true });
+      const classes = tok(statusIndicatorVariants({ pulse: true }));
       expect(classes).toContain("animate-pulse");
     });
 
     it("combines multiple variants", () => {
-      const classes = statusIndicatorVariants({
-        status: "online",
-        size: "lg",
-        pulse: true,
-        glow: true,
-      });
+      const classes = tok(
+        statusIndicatorVariants({
+          status: "online",
+          size: "lg",
+          pulse: true,
+          glow: true,
+        }),
+      );
       expect(classes).toContain("bg-green-500");
       expect(classes).toContain("h-3");
       expect(classes).toContain("animate-pulse");
+      expect(classes).toContain("shadow-[0_0_8px_rgba(34,197,94,0.6)]");
     });
   });
 });

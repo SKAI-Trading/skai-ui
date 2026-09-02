@@ -61,6 +61,15 @@ const FIGMA_ALIEN_GREEN = "#2DEDAD";
  *  the knob is #FFFFFF in both. */
 const FIGMA_TOGGLE_THUMB = "#FFFFFF";
 
+/**
+ * Exact members of the class list. A substring read of `className` is satisfied
+ * by any longer utility that merely contains the asserted one — `bg-white` by
+ * `bg-white/40`, `z-[60]` by `lg:z-[60]` — so class facts are compared as
+ * tokens here, never as text.
+ */
+const tok = (el: Element) =>
+  (el.getAttribute("class") || "").split(/\s+/).filter(Boolean);
+
 describe("FigmaSidebarAIBoltIcon — colour", () => {
   it("defaults to the frame's sky blue, not alien green", () => {
     const { container } = render(<FigmaSidebarAIBoltIcon data-testid="bolt" />);
@@ -118,14 +127,14 @@ describe("Switch — thumb", () => {
     const thumb = root.querySelector("span");
 
     expect(thumb).not.toBeNull();
-    expect(thumb!.className).toContain("bg-white");
+    expect(tok(thumb!)).toContain("bg-white");
     // `bg-background` resolves to --background, which the dark theme sets to
     // 173 100% 4% — a near-black knob. That is the defect; it must be gone.
-    expect(thumb!.className).not.toContain("bg-background");
+    expect(tok(thumb!)).not.toContain("bg-background");
 
     fireEvent.click(root);
     expect(root).toHaveAttribute("data-state", "checked");
-    expect(root.querySelector("span")!.className).toContain("bg-white");
+    expect(tok(root.querySelector("span")!)).toContain("bg-white");
   });
 
   it("resolves bg-white to the hex the frame draws", () => {
@@ -251,10 +260,10 @@ describe("scrim pass-through", () => {
   // Radix mounts overlay and content as siblings in a portal. The overlay is
   // the one carrying `fixed inset-0`, so find it by that rather than by order.
   const findOverlay = () =>
-    Array.from(document.querySelectorAll<HTMLElement>("body *")).find(
-      (el) =>
-        el.className.includes?.("fixed") && el.className.includes?.("inset-0"),
-    );
+    Array.from(document.querySelectorAll<HTMLElement>("body *")).find((el) => {
+      const classes = tok(el);
+      return classes.includes("fixed") && classes.includes("inset-0");
+    });
 
   it("DialogContent forwards overlayClassName to its scrim", () => {
     render(
@@ -270,8 +279,8 @@ describe("scrim pass-through", () => {
     expect(overlay).toBeDefined();
     // tailwind-merge must resolve the conflict in the caller's favour, not
     // simply concatenate — a surviving bg-black/80 would still paint.
-    expect(overlay!.className).toContain("bg-transparent");
-    expect(overlay!.className).not.toContain("bg-black/80");
+    expect(tok(overlay!)).toContain("bg-transparent");
+    expect(tok(overlay!)).not.toContain("bg-black/80");
   });
 
   it("DialogContent keeps the default scrim when nothing is passed", () => {
@@ -283,7 +292,7 @@ describe("scrim pass-through", () => {
         </DialogContent>
       </Dialog>,
     );
-    expect(findOverlay()!.className).toContain("bg-black/80");
+    expect(tok(findOverlay()!)).toContain("bg-black/80");
   });
 
   it("SheetContent forwards overlayClassName to its scrim", () => {
@@ -298,8 +307,8 @@ describe("scrim pass-through", () => {
 
     const overlay = findOverlay();
     expect(overlay).toBeDefined();
-    expect(overlay!.className).toContain("bg-transparent");
-    expect(overlay!.className).not.toContain("bg-black/80");
+    expect(tok(overlay!)).toContain("bg-transparent");
+    expect(tok(overlay!)).not.toContain("bg-black/80");
   });
 
   it("SheetContent keeps the default scrim when nothing is passed", () => {
@@ -311,7 +320,7 @@ describe("scrim pass-through", () => {
         </SheetContent>
       </Sheet>,
     );
-    expect(findOverlay()!.className).toContain("bg-black/80");
+    expect(tok(findOverlay()!)).toContain("bg-black/80");
   });
 
   it("AlertDialogContent forwards overlayClassName to its scrim", () => {
@@ -328,8 +337,8 @@ describe("scrim pass-through", () => {
     expect(overlay).toBeDefined();
     // The z-index the two gaming dialogs re-composed the primitive by hand to
     // get. tailwind-merge drops the default z-50 in favour of it.
-    expect(overlay!.className).toContain("z-[60]");
-    expect(overlay!.className).not.toMatch(/(^|\s)z-50(\s|$)/);
+    expect(tok(overlay!)).toContain("z-[60]");
+    expect(tok(overlay!)).not.toContain("z-50");
   });
 });
 

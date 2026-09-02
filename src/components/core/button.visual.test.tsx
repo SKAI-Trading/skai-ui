@@ -9,6 +9,15 @@ import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import { Button, SkaiButton } from './button';
 
+/**
+ * Exact members of the class list. A `className` substring match is satisfied by
+ * any breakpoint- or state-prefixed variant of the same utility, so
+ * `toContain('h-16')` would pass on `md:h-16` and `toContain('text-white')` on
+ * `hover:text-white` — neither of which is the class the frame asks for.
+ */
+const tok = (el: Element) =>
+  (el.getAttribute('class') || '').split(/\s+/).filter(Boolean);
+
 describe('Button Visual Regression', () => {
   describe('Standard Button variants', () => {
     it('renders default variant correctly', () => {
@@ -68,29 +77,29 @@ describe('Button Visual Regression', () => {
     it('renders primary type with correct Sky Blue (#56C7F3)', () => {
       const { container } = render(<SkaiButton skaiType="primary">Primary</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('bg-[#56C7F3]');
-      expect(button.className).toContain('text-[#001615]');
+      expect(tok(button)).toContain('bg-[#56C7F3]');
+      expect(tok(button)).toContain('text-[#001615]');
       expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders secondary type with correct border', () => {
       const { container } = render(<SkaiButton skaiType="secondary">Secondary</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('border-[#56C7F3]');
+      expect(tok(button)).toContain('border-[#56C7F3]');
       expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders tertiary type with white text', () => {
       const { container } = render(<SkaiButton skaiType="tertiary">Tertiary</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('text-white');
+      expect(tok(button)).toContain('text-white');
       expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders link type with Alien Green (#2DEDAD)', () => {
       const { container } = render(<SkaiButton skaiType="link">Link</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('text-[#2DEDAD]');
+      expect(tok(button)).toContain('text-[#2DEDAD]');
       expect(container.firstChild).toMatchSnapshot();
     });
   });
@@ -99,29 +108,29 @@ describe('Button Visual Regression', () => {
     it('renders massive size with 72px height', () => {
       const { container } = render(<SkaiButton skaiSize="massive">Massive</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('h-[72px]');
-      expect(button.className).toContain('rounded-[16px]');
+      expect(tok(button)).toContain('h-[72px]');
+      expect(tok(button)).toContain('rounded-[16px]');
       expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders large size with 64px height', () => {
       const { container } = render(<SkaiButton skaiSize="large">Large</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('h-16');
+      expect(tok(button)).toContain('h-16');
       expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders medium size with 50px height', () => {
       const { container } = render(<SkaiButton skaiSize="medium">Medium</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('h-[50px]');
+      expect(tok(button)).toContain('h-[50px]');
       expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders small size with 46px height', () => {
       const { container } = render(<SkaiButton skaiSize="small">Small</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('h-[46px]');
+      expect(tok(button)).toContain('h-[46px]');
       expect(container.firstChild).toMatchSnapshot();
     });
   });
@@ -130,13 +139,13 @@ describe('Button Visual Regression', () => {
     it('uses Manrope font family', () => {
       const { container } = render(<SkaiButton>Font Test</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain("font-['Manrope']");
+      expect(tok(button)).toContain("font-['Manrope']");
     });
 
     it('uses -4% letter spacing', () => {
       const { container } = render(<SkaiButton>Tracking Test</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('tracking-[-0.04em]');
+      expect(tok(button)).toContain('tracking-[-0.04em]');
     });
   });
 
@@ -144,7 +153,7 @@ describe('Button Visual Regression', () => {
     it('renders disabled state correctly', () => {
       const { container } = render(<SkaiButton disabled>Disabled</SkaiButton>);
       const button = container.firstChild as HTMLElement;
-      expect(button.className).toContain('disabled:opacity-50');
+      expect(tok(button)).toContain('disabled:opacity-50');
       expect(container.firstChild).toMatchSnapshot();
     });
   });
