@@ -134,3 +134,42 @@ Mulish 11/14 white at `opacity 44`. Below on gap 10: the percent in **Mulish
 `rgba(23,249,180,0.24)`, `px 14 / py 4`, radius 6, Mulish 11/14 `#17F9B4`. The
 `LIVE` tag is an outlined pill: 1px `#FF7E50`, radius full, `px 8 / py 2`, 10px
 icon, Mulish 11/14 white. The shipped component is already built to these nodes.
+
+## A class in this package only reaches the app because the app globs `src/`
+
+`modules/skai-ui` ships as a prebuilt bundle, so it is easy to assume Tailwind
+classes written here are baked into `dist/` and always survive. They are not —
+`dist/` carries the class NAMES, and the consuming app generates the CSS.
+
+The main app's `tailwind.config.ts:50-58` globs
+`./modules/skai-ui/src/**/*.{ts,tsx}` — the **source** tree. That single line is
+why every utility in a component here renders at all. Remove it and the
+components keep mounting, keep their class names, and lose all their styling.
+
+Verified for the `/spot` ladder by compiling the repo's own config with content
+scoped to `order-book.tsx` alone (tailwindcss 3.4.19): `font-mulish`,
+`text-ash` → `#95A09F`, `text-skai-red-300` → `#FF574A`,
+`text-alien-green-bright` → `#17F9B4`, `tracking-[-0.48px]`, `w-[89px]`,
+`w-[70px]`, `w-[55px]`, `px-4`, `py-1`, `py-px` and `hover:bg-skai-red-300/10`
+all emit. The same run emits nothing for `text-solana-purple` or `w-[999px]`, so
+it was genuinely scoped and genuinely purging.
+
+★ **A jsdom test cannot see this.** It asserts the class name on the element,
+which is true whether or not the class exists in any stylesheet — so a purged
+utility is a silent, total loss of a visual fix that every suite still passes.
+When a fix here is expressed as classes, that is only half the check; the other
+half is whether the consumer's Tailwind can reach the file. Values that must
+survive **any** consumer — one that globs only its own `src/` — belong in an
+inline style instead, which is why the depth ramp is a `background-image`.
+
+## The frame's depth-bar widths are decoration, not a spec
+
+Read off `7710:92603` the ask bars run 228, 191, 160, 116, 111, 110, 104, 94,
+86, 75, 68, 64, 56, 52, 31 px. They do not follow the frame's own numbers: row
+`7710:92641` shows size 23 with a 191px bar, while `7710:92648` shows size
+56,789 with a 160px bar, and the sizes are placeholder text — "56,789" fourteen
+times, and every Total but three is "655,000".
+
+So the frame settles the bar's **colour, left anchor, 16px height and 18px
+slot**, and settles nothing about how depth maps to width. Do not derive a
+normalisation from these widths.
