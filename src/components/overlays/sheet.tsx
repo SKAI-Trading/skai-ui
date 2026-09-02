@@ -30,6 +30,22 @@ const SheetOverlay = React.forwardRef<
 ));
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
+/**
+ * The 384px cap on the side panels hinges at `md:` (768), the width the frames
+ * are drawn at. `sm:` is 640 and no board sits there, so a cap hung off it took
+ * effect 128px early — and because the panel is `w-3/4`, a growing viewport drew
+ * a NARROWER panel: 479 at 639, 384 at 640.
+ *
+ * The panels that were measured ramp 359 -> 442 across that boundary and hold
+ * the 442 to 1440 (Trench right-menus 13006:310854 at 375 / 13006:332803 at 768;
+ * the chat-settings panel reads 359 and 442 on the same pair of boards), so the
+ * mobile width is in force to 767 and the cap belongs above it.
+ *
+ * A cap stated behind a breakpoint can only be answered from that same
+ * breakpoint — tailwind-merge scopes conflicts per variant chain — so a caller
+ * whose panel is wider than 384 must spell its own cap `md:`. An `sm:` one no
+ * longer reaches this rule.
+ */
 const sheetVariants = cva(
   "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=open]:duration-500",
   {
@@ -38,9 +54,9 @@ const sheetVariants = cva(
         top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
         bottom:
           "inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom",
-        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm",
+        left: "inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left md:max-w-sm",
         right:
-          "inset-y-0 right-0 h-full w-3/4  border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
+          "inset-y-0 right-0 h-full w-3/4  border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right md:max-w-sm",
       },
     },
     defaultVariants: {
