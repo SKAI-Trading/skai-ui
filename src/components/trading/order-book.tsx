@@ -237,6 +237,11 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       );
     }
 
+    // `total` is cumulative, so the deepest level of a side is its last one and
+    // that level is the bar's denominator. Note the denominator is drawn from
+    // everything the caller supplied, while only `levels` rows are rendered: a
+    // caller that hands over more depth than it asks to show shortens every
+    // visible bar by the ratio between the two.
     const maxBidTotal = data.bids[data.bids.length - 1]?.total || 1;
     const maxAskTotal = data.asks[data.asks.length - 1]?.total || 1;
 

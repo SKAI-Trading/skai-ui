@@ -33,6 +33,31 @@ const book: OrderBookData = {
   lastUpdate: 0,
 };
 
+/**
+ * Four levels a side, cumulative totals doubling, so the ramp has a RANGE.
+ * A one-level book puts every bar at 100% and cannot tell a depth-scaled bar
+ * from a hardcoded one — the range is the whole point of this fixture.
+ * Both sides stay inside the default `levels` of 12, so the deepest level here
+ * is also the deepest one rendered.
+ */
+const deepBook: OrderBookData = {
+  bids: [
+    { id: "b0", price: 121723, size: 1, total: 1 },
+    { id: "b1", price: 121722, size: 1, total: 2 },
+    { id: "b2", price: 121721, size: 2, total: 4 },
+    { id: "b3", price: 121720, size: 4, total: 8 },
+  ],
+  asks: [
+    { id: "a0", price: 121788, size: 1, total: 1 },
+    { id: "a1", price: 121789, size: 1, total: 2 },
+    { id: "a2", price: 121790, size: 2, total: 4 },
+    { id: "a3", price: 121791, size: 4, total: 8 },
+  ],
+  spread: 65,
+  spreadPercent: 0.0534,
+  lastUpdate: 0,
+};
+
 const tokens = (el: Element | null | undefined) =>
   new Set((el?.className ?? "").toString().split(/\s+/).filter(Boolean));
 
@@ -103,6 +128,26 @@ describe("OrderBook depth bar — report ee0af2a5", () => {
   it("still sizes the bar by cumulative depth", () => {
     const l = ladder();
     expect(l.bar(l.ask).style.width).toBe("100%");
+  });
+
+  it("spreads the ramp across the ladder instead of filling every row", () => {
+    const view = render(<OrderBook data={deepBook} />);
+    const widths = (label: string) =>
+      Array.from(
+        view.container
+          .querySelector(`[aria-label="${label}"]`)!
+          .querySelectorAll<HTMLElement>('[aria-hidden="true"]'),
+      ).map((bar) => bar.style.width);
+
+    // DOM order is array order on both sides; the ask side is only reversed
+    // visually, by flex-col-reverse, so index 0 stays the level at the spread.
+    for (const label of ["Ask orders", "Bid orders"]) {
+      const w = widths(label);
+      expect(w).toEqual(["12.5%", "25%", "50%", "100%"]);
+      // Distinctness is the assertion a flat or saturated ladder fails: every
+      // bar at 100% is exactly what a book with one dominant level renders.
+      expect(new Set(w).size).toBe(4);
+    }
   });
 
   it("draws no bar at all when depth bars are off", () => {
