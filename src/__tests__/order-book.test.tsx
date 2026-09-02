@@ -78,7 +78,10 @@ describe("OrderBook", () => {
 
     it("should render with custom quote currency", () => {
       render(<OrderBook data={createMockOrderBook()} quoteCurrency="BTC" />);
-      expect(screen.getByText("Price (BTC)")).toBeInTheDocument();
+      // The quote names what Size and Total are counted in; the price column is
+      // already the price of one unit, so it takes no suffix (frame 7710:92629).
+      expect(screen.getByText("Size (BTC)")).toBeInTheDocument();
+      expect(screen.getByText("Total (BTC)")).toBeInTheDocument();
     });
   });
 

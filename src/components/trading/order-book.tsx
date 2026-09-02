@@ -3,6 +3,27 @@ import { cn } from "../../lib/utils";
 import { Activity } from "lucide-react";
 
 /**
+ * Depth fills, from the `/spot` order-book frame (`7710:92603`, rows
+ * `7710:92635` / `7710:92748`). Each is a left-anchored horizontal ramp — the
+ * bar starts almost transparent at the price and deepens as it runs out under
+ * the size and total, so depth reads as distance travelled rather than as a
+ * block of colour.
+ *
+ * `#FB3324` is `App/Red-O` and is deliberately NOT the ask price's `App/Red 300`
+ * `#FF574A`: the bar sits behind the text and needs a redder, denser base to
+ * stay legible under it. Reading either colour off the other inverts the design.
+ *
+ * These are inline styles rather than `bg-gradient-to-r from-… to-…` because the
+ * package ships as a prebuilt bundle: consuming apps compile their own Tailwind,
+ * and an arbitrary-value gradient class only survives if their content globs
+ * happen to reach this file. A background-image on the element always survives.
+ */
+const ASK_DEPTH_FILL =
+  "linear-gradient(to right, rgba(251, 51, 36, 0.04), rgba(251, 51, 36, 0.24))";
+const BID_DEPTH_FILL =
+  "linear-gradient(to right, rgba(23, 249, 180, 0.04), rgba(23, 249, 180, 0.14))";
+
+/**
  * A single price level in the order book
  * @example
  * ```tsx
@@ -87,6 +108,16 @@ export interface OrderBookProps {
 /**
  * OrderBook component displays bid/ask levels with depth visualization.
  * Commonly used in trading interfaces to show market depth.
+ *
+ * Drawn to the `/spot` order-book frame `7710:92603`. The ladder's geometry —
+ * 18px slots, a 70/55/70 cell split, 12/16 Mulish at -0.48px and the
+ * left-anchored depth ramp — is measured, so treat those literals as design
+ * values rather than as taste.
+ *
+ * The root's direct children are addressable from outside: consumers suppress
+ * the title bar and the "Last:" footer with `[&>div:first-child]:hidden` /
+ * `[&>div:last-child]:hidden` through `className`, because neither has a prop.
+ * Reordering or wrapping the root's children silently un-hides them.
  *
  * @example
  * ```tsx
@@ -249,34 +280,44 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
               : undefined
           }
           className={cn(
-            "relative grid grid-cols-3 gap-2 px-3 py-1 text-xs transition-all duration-200 cursor-pointer select-none font-mono",
-            isAsk ? "hover:bg-destructive/10" : "hover:bg-primary/10",
-            change === "up" && "bg-primary/20",
-            change === "down" && "bg-destructive/20",
+            // 12/16 Mulish at -0.48px in an 18px slot: 16px of type with a 1px
+            // rule of air either side (`7710:92634`). `tabular-nums` is the
+            // design system's pairing for Mulish on numeric data, and it is what
+            // stops the digits shifting sideways as the ladder reprices.
+            "relative flex items-center justify-between px-4 py-px",
+            "font-mulish text-xs leading-4 tracking-[-0.48px] tabular-nums",
+            "transition-all duration-200 cursor-pointer select-none",
+            isAsk
+              ? "hover:bg-skai-red-300/10"
+              : "hover:bg-alien-green-bright/10",
+            change === "up" && "bg-alien-green-bright/20",
+            change === "down" && "bg-skai-red-300/20",
           )}
         >
           {showDepthBars && (
             <div
-              className={cn(
-                "absolute inset-y-0 right-0 transition-all duration-300",
-                isAsk ? "bg-destructive/10" : "bg-primary/10",
-              )}
-              style={{ width: `${depthPercent}%` }}
+              className="absolute left-0 top-1/2 h-4 -translate-y-1/2 transition-all duration-300"
+              style={{
+                width: `${depthPercent}%`,
+                backgroundImage: isAsk ? ASK_DEPTH_FILL : BID_DEPTH_FILL,
+              }}
               aria-hidden="true"
             />
           )}
+          {/* 70 / 55 / 70 with the slack between them, so the price hangs off
+              the left edge and size and total hang off the right one. */}
           <span
             className={cn(
-              "relative z-10 text-left font-semibold",
-              isAsk ? "text-destructive" : "text-primary",
+              "relative z-10 w-[70px] shrink-0 text-left",
+              isAsk ? "text-skai-red-300" : "text-alien-green-bright",
             )}
           >
             {level.price.toFixed(pricePrecision)}
           </span>
-          <span className="relative z-10 text-center text-foreground/90">
+          <span className="relative z-10 w-[55px] shrink-0 text-right text-white">
             {level.size.toFixed(sizePrecision)}
           </span>
-          <span className="relative z-10 text-right text-muted-foreground">
+          <span className="relative z-10 w-[70px] shrink-0 text-right text-white">
             {(level.size * level.price).toFixed(pricePrecision)}
           </span>
         </div>
@@ -317,14 +358,24 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
           </div>
         </div>
 
-        {/* Column Headers */}
+        {/* Column headers (`7710:92629`). The header runs its own cell model —
+            a fixed 89px Price, a shrink-to-fit Size and a Total that takes the
+            remainder — so the labels are NOT column-aligned with the ladder
+            beneath them. That is the frame: a label like "Size (USD)" is wider
+            than the 55px column it names, and forcing it into that column would
+            clip it. Price carries no suffix; the quote sits on the two columns
+            that are denominated in it. */}
         <div
           role="row"
-          className="grid grid-cols-3 gap-2 px-3 py-2 text-xs text-muted-foreground border-b border-border font-medium shrink-0"
+          className="flex items-center justify-between px-4 py-1 font-sans text-xs font-normal leading-4 tracking-[-0.48px] text-ash border-b border-border shrink-0"
         >
-          <span className="text-left">Price ({quoteCurrency})</span>
-          <span className="text-center">Size</span>
-          <span className="text-right">Total</span>
+          <span className="w-[89px] shrink-0 truncate text-left">Price</span>
+          <span className="shrink-0 truncate text-right">
+            Size ({quoteCurrency})
+          </span>
+          <span className="min-w-px flex-1 truncate text-right">
+            Total ({quoteCurrency})
+          </span>
         </div>
 
         {/* Order Levels */}
