@@ -85,7 +85,12 @@ describe("PasswordInput", () => {
       render(<PasswordInput error="Error message" errorId="custom-error" />);
       const input = document.querySelector("input");
       expect(input).toHaveAttribute("aria-describedby");
-      expect(input?.getAttribute("aria-describedby")).toContain("custom-error");
+      // aria-describedby is a space-separated ID list, so the id has to be one
+      // of its entries — a substring read also accepts "custom-error-hint",
+      // which points at a different element.
+      expect(
+        (input?.getAttribute("aria-describedby") ?? "").split(/\s+/),
+      ).toContain("custom-error");
     });
 
     it("applies error styling to input", () => {

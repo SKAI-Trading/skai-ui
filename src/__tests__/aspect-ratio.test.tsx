@@ -66,7 +66,7 @@ describe("AspectRatio", () => {
       />,
     );
     const el = screen.getByTestId("ar");
-    expect(el.style.background).toContain("red");
+    expect(el.style.background).toBe("red");
     expect(ratioOf(el)).toBeCloseTo(4 / 3, 12);
   });
 

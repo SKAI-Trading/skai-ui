@@ -94,32 +94,26 @@ describe("DatePicker", () => {
   });
 
   describe("Clear Button", () => {
+    // The control is identified by its accessible name. Reaching for the first
+    // button[type=button] returns the trigger, which is present whether or not
+    // a clear control was ever rendered.
     it("should show clear button when date is selected and clearable", () => {
       const date = new Date(2026, 0, 15);
       render(<DatePicker value={date} clearable={true} />);
-      // The X button should be present
-      const clearButton = document.querySelector('button[type="button"]');
-      expect(clearButton).toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: "Clear date" }),
+      ).toBeInTheDocument();
     });
 
     it("should call onChange with undefined when cleared", () => {
       const onChange = vi.fn();
       const date = new Date(2026, 0, 15);
-      const { container } = render(
-        <DatePicker value={date} onChange={onChange} clearable={true} />,
-      );
+      render(<DatePicker value={date} onChange={onChange} clearable={true} />);
 
-      // Find the clear button (the one with X icon)
-      const buttons = container.querySelectorAll('button[type="button"]');
-      const clearButton = Array.from(buttons).find(
-        (btn) =>
-          btn.querySelector("svg.lucide-x") || btn.innerHTML.includes("X"),
-      );
-
-      if (clearButton) {
-        fireEvent.click(clearButton);
-        expect(onChange).toHaveBeenCalledWith(undefined);
-      }
+      // getByRole throws when the control is missing, so a clear button that
+      // stopped rendering fails here instead of skipping the assertion.
+      fireEvent.click(screen.getByRole("button", { name: "Clear date" }));
+      expect(onChange).toHaveBeenCalledWith(undefined);
     });
 
     it("should not show clear button when not clearable", () => {
@@ -127,9 +121,18 @@ describe("DatePicker", () => {
       const { container } = render(
         <DatePicker value={date} clearable={false} />,
       );
-      // Should only have the main button
-      const buttons = container.querySelectorAll("button");
-      expect(buttons).toHaveLength(1);
+      expect(
+        screen.queryByRole("button", { name: "Clear date" }),
+      ).not.toBeInTheDocument();
+      // Only the trigger remains.
+      expect(container.querySelectorAll("button")).toHaveLength(1);
+    });
+
+    it("should not show clear button while no date is selected", () => {
+      render(<DatePicker clearable={true} />);
+      expect(
+        screen.queryByRole("button", { name: "Clear date" }),
+      ).not.toBeInTheDocument();
     });
   });
 
