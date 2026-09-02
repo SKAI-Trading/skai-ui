@@ -3,6 +3,11 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Card, CardTitle, SkaiCard, SkaiCardTitle } from "../components/core/card";
 
+/** Exact members of the class list — `rounded-lg` must not be satisfied by
+ *  `rounded-lg-x` or `md:rounded-lg`. */
+const tok = (el: Element) =>
+  (el.getAttribute("class") || "").split(/\s+/).filter(Boolean);
+
 describe("Card polymorphism", () => {
   it("renders a div by default", () => {
     render(<Card data-testid="c">hi</Card>);
@@ -27,7 +32,10 @@ describe("Card polymorphism", () => {
     const a = screen.getByTestId("c") as HTMLAnchorElement;
     expect(a.tagName).toBe("A");
     expect(a.getAttribute("href")).toBe("/x");
-    expect(a.className).toContain("rounded-lg"); // base card class
+    // The full base card surface has to land on the child, not just its radius.
+    expect(tok(a)).toContain("rounded-lg");
+    expect(tok(a)).toContain("border");
+    expect(tok(a)).toContain("bg-card");
   });
 
   it("CardTitle defaults to h3 and accepts h1-h6", () => {

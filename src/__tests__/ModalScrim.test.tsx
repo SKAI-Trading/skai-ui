@@ -14,6 +14,10 @@ import { ModalScrim } from "../components/overlays/ModalScrim";
  */
 afterEach(cleanup);
 
+/** Exact members of the class list. */
+const tok = (el: Element) =>
+  (el.getAttribute("class") || "").split(/\s+/).filter(Boolean);
+
 function Fixture({ onClose, dismissible }: { onClose: () => void; dismissible?: boolean }) {
   return (
     <ModalScrim onClose={onClose} label="Test dialog" testId="scrim" dismissible={dismissible}>
@@ -78,7 +82,11 @@ describe("ModalScrim", () => {
         <div>x</div>
       </ModalScrim>,
     );
-    const cls = screen.getByTestId("scrim").className;
+    // Compared as class-list members. A substring read of className says
+    // "items-center" is still present when the merged result holds only
+    // `md:items-center` — a class that does not apply at the base breakpoint
+    // and so does not contradict the caller's `items-end` at all.
+    const cls = tok(screen.getByTestId("scrim"));
     expect(cls).toContain("items-end");
     expect(cls).not.toContain("items-center");
     expect(cls).toContain("bg-black/90");
