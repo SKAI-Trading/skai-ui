@@ -811,3 +811,36 @@ M6r9FEn042UWTQD1zvy6GM:9669-2966	-	gone	0	0	-
 11398-85223	-	gone	0	0	-
 11435-158497	-	gone	0	0	-
 11442-173579	-	gone	0	0	-
+# read back node-by-node against every page of M6r9FEn042UWTQD1zvy6GM on
+# 2026-09-04: none of the ids below resolves anywhere in the file, and no live
+# node carries the row's title, so there is nothing for a retarget to land on.
+9494-4192	-	gone	0	0	-
+9079-3120	-	gone	0	0	-
+9079-3121	-	gone	0	0	-
+9079-3122	-	gone	0	0	-
+9079-3124	-	gone	0	0	-
+9079-3125	-	gone	0	0	-
+9079-3126	-	gone	0	0	-
+9079-3128	-	gone	0	0	-
+9079-3129	-	gone	0	0	-
+9079-3130	-	gone	0	0	-
+9079-3132	-	gone	0	0	-
+9079-3133	-	gone	0	0	-
+9079-3134	-	gone	0	0	-
+9079-3136	-	gone	0	0	-
+9079-3137	-	gone	0	0	-
+9079-3138	-	gone	0	0	-
+9079-3140	-	gone	0	0	-
+9079-3141	-	gone	0	0	-
+9079-3142	-	gone	0	0	-
+9079-3144	-	gone	0	0	-
+9079-3145	-	gone	0	0	-
+9079-3146	-	gone	0	0	-
+9079-3148	-	gone	0	0	-
+9079-3149	-	gone	0	0	-
+9079-3150	-	gone	0	0	-
+9079-3152	-	gone	0	0	-
+9079-3153	-	gone	0	0	-
+9079-3154	-	gone	0	0	-
+9079-3251	-	gone	0	0	-
+9903-1128	-	gone	0	0	-
