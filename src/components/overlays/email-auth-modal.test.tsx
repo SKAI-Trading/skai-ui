@@ -108,6 +108,37 @@ describe("in-flight and empty states", () => {
     expect(props.onEmailSubmit).not.toHaveBeenCalled();
   });
 
+  it("leaves Continue pressable with an empty field, and says what is missing", () => {
+    const props = setup({ consentAccepted: true });
+    const submit = screen.getByRole("button", { name: /continue/i });
+    expect(submit).not.toBeDisabled();
+
+    fireEvent.click(submit);
+    expect(props.onEmailSubmit).not.toHaveBeenCalled();
+    expect(screen.getByRole("alert")).toHaveTextContent(
+      "Enter your email address to continue.",
+    );
+  });
+
+  it("names a malformed address rather than swallowing the press", () => {
+    const props = setup({ consentAccepted: true });
+    typeEmail("someone@");
+    fireEvent.click(screen.getByRole("button", { name: /continue/i }));
+    expect(props.onEmailSubmit).not.toHaveBeenCalled();
+    expect(screen.getByRole("alert")).toHaveTextContent(
+      "That does not look like an email address.",
+    );
+  });
+
+  it("clears the message as soon as the user types again", () => {
+    setup({ consentAccepted: true });
+    fireEvent.click(screen.getByRole("button", { name: /continue/i }));
+    expect(screen.getByRole("alert")).toBeInTheDocument();
+
+    typeEmail("someone@example.com");
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+  });
+
   it("renders an error when one is supplied", () => {
     setup({ error: "That code isn't right." });
     expect(screen.getByRole("alert")).toHaveTextContent("That code isn't right.");

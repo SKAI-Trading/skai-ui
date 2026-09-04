@@ -119,11 +119,13 @@ export function EmailAuthModal({
   className,
 }: EmailAuthModalProps) {
   const [email, setEmail] = React.useState(initialEmail);
+  const [emailError, setEmailError] = React.useState<string | null>(null);
   const inputRef = React.useRef<HTMLInputElement | null>(null);
 
   React.useEffect(() => {
     if (isOpen) {
       setEmail(initialEmail);
+      setEmailError(null);
       inputRef.current?.focus();
     }
     // `initialEmail` is intentionally not a dependency: re-seeding the field
@@ -137,10 +139,31 @@ export function EmailAuthModal({
   // double-click can't start two handshakes.
   const blocked = loading || !consentAccepted;
 
+  // Continue carries its full Sky Blue whether or not an address has been typed
+  // — 3023:12591 draws it that way over an empty field, and a control that looks
+  // spent before anyone has done anything wrong reads as broken. An empty or
+  // malformed address is answered here, next to the field, rather than by a
+  // button that cannot be pressed.
+  //
+  // `blocked` still dims it, and that dimming is not the same thing: consent is
+  // an attestation the user has to make, so until they make it there is nothing
+  // to submit and the button says so.
   const submitEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    if (blocked || !email.trim()) return;
-    onEmailSubmit(email.trim());
+    if (blocked) return;
+    const address = email.trim();
+    if (!address) {
+      setEmailError("Enter your email address to continue.");
+      inputRef.current?.focus();
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
+      setEmailError("That does not look like an email address.");
+      inputRef.current?.focus();
+      return;
+    }
+    setEmailError(null);
+    onEmailSubmit(address);
   };
 
   return (
@@ -197,7 +220,10 @@ export function EmailAuthModal({
 
         {/* Email field — label 20px in from the modal edge per the frame's
             `label` row, field is Green Coal 300 on a Green Coal 100 hairline. */}
-        <form onSubmit={submitEmail} className="flex flex-col gap-2">
+        {/* `noValidate`: the browser's own bubble for a malformed address is
+            unstyled, positioned by the UA and worded by the locale, none of
+            which this modal controls. The message below the field is ours. */}
+        <form onSubmit={submitEmail} noValidate className="flex flex-col gap-2">
           <label
             htmlFor="skai-auth-email"
             className="font-manrope px-4 text-[12px] font-normal leading-[16px] tracking-[-0.48px] text-white md:px-5 md:text-[13px] lg:px-5 lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]"
@@ -211,16 +237,31 @@ export function EmailAuthModal({
             inputMode="email"
             autoComplete="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setEmailError(null);
+            }}
             disabled={loading}
+            aria-invalid={emailError ? true : undefined}
+            aria-describedby={emailError ? "skai-auth-email-error" : undefined}
             placeholder="example@provider.com"
             className="font-manrope w-full rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-white transition-colors placeholder:text-[#95a09f] focus:border-[#56C7F3] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:p-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
           />
 
+          {emailError && (
+            <p
+              id="skai-auth-email-error"
+              role="alert"
+              className="font-manrope px-4 text-[12px] font-normal leading-[16px] tracking-[-0.48px] text-[#FF4444] md:px-5 lg:text-[13px] lg:leading-[18px]"
+            >
+              {emailError}
+            </p>
+          )}
+
           {/* Continue — Primary/Sky Blue 300 on Green Coal 300 text. */}
           <button
             type="submit"
-            disabled={blocked || !email.trim()}
+            disabled={blocked}
             className="font-manrope mt-2 w-full rounded-[12px] bg-[#56C7F3] px-6 py-[14px] text-center text-[14px] font-normal leading-[16px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:mt-3 md:rounded-[14px] md:px-10 md:py-4 md:text-[16px] md:leading-[22px] md:tracking-[-0.64px] lg:mt-4 lg:rounded-[16px] lg:px-10 lg:py-5"
           >
             {loading ? "Sending code…" : "Continue"}
