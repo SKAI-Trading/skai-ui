@@ -1,0 +1,218 @@
+{
+  "generated": "2026-09-04",
+  "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "pageId": "13006:134300",
+  "section": "trade-2",
+  "why": "Trade 2 is the one section whose registry rows sit below the page's own children, so a harvest of page children alone reports them removed. This file records where each one actually lives. It is NOT a snapshot and must not be passed to figma-drift.mjs.",
+  "method": "Registry ids absent from the page-children harvest were mapped to the page child with the nearest lower id in the same session, and each of those 17 children was read from Figma. Every child returned exactly the count the mapping predicted. The remaining 5 were addressed directly and Figma returned each one, so they are alive rather than deleted.",
+  "counts": {
+    "registryIds": 495,
+    "seenAsPageChildren": 407,
+    "recoveredFromChildSubtrees": 83,
+    "aliveButNotYetLocated": 5,
+    "provedDeleted": 0
+  },
+  "parents": {
+    "13006-134301": {
+      "name": "Skai > Trench 1VH (1440 x 900px)",
+      "subtreeNodes": 1283,
+      "deepestRegistryId": 14,
+      "registryIdsNested": [
+        "13006-134366",
+        "13006-134370",
+        "13006-134371",
+        "13006-134372",
+        "13006-134373",
+        "13006-134374",
+        "13006-134382",
+        "13006-134384",
+        "13006-134387",
+        "13006-134400",
+        "13006-134402",
+        "13006-134411",
+        "13006-134417",
+        "13006-134424",
+        "13006-134427",
+        "13006-134428",
+        "13006-134436",
+        "13006-134451",
+        "13006-134456",
+        "13006-134459",
+        "13006-134461"
+      ]
+    },
+    "13006-191789": {
+      "name": "Skai > Trench > Blacklist 1VH (1440 x 900px)",
+      "subtreeNodes": 2124,
+      "deepestRegistryId": 6,
+      "registryIdsNested": [
+        "13006-194608",
+        "13006-194611",
+        "13006-194615",
+        "13006-194616",
+        "13006-194629",
+        "13006-194631",
+        "13006-194635",
+        "13006-194650"
+      ]
+    },
+    "13006-162230": {
+      "name": "Skai > Trench > Hotkeys 1VH (1440 x 900px)",
+      "subtreeNodes": 2180,
+      "deepestRegistryId": 7,
+      "registryIdsNested": [
+        "13006-165048",
+        "13006-165084",
+        "13006-165129",
+        "13006-165136",
+        "13006-165139",
+        "13006-165149",
+        "13006-165150"
+      ]
+    },
+    "13006-188690": {
+      "name": "Skai > Trench > Alerts - toggle on 1VH (1440 x 900px)",
+      "subtreeNodes": 2137,
+      "deepestRegistryId": 7,
+      "registryIdsNested": [
+        "13006-191509",
+        "13006-191527",
+        "13006-191528",
+        "13006-191552",
+        "13006-191558",
+        "13006-191568",
+        "13006-191570"
+      ]
+    },
+    "13006-185849": {
+      "name": "Skai > Trench > Alerts - toggle off 1VH (1440 x 900px)",
+      "subtreeNodes": 2097,
+      "deepestRegistryId": 5,
+      "registryIdsNested": [
+        "13006-188668",
+        "13006-188669",
+        "13006-188671",
+        "13006-188676",
+        "13006-188681"
+      ]
+    },
+    "13006-155671": {
+      "name": "Skai > Trench > Display settings 1VH (1440 x 900px)",
+      "subtreeNodes": 2197,
+      "deepestRegistryId": 8,
+      "registryIdsNested": [
+        "13006-158489",
+        "13006-158510",
+        "13006-158556",
+        "13006-158563",
+        "13006-158615"
+      ]
+    },
+    "13006-198981": {
+      "name": "Skai > Trench > One-click trade settings - modal off 1VH (1440 x 900px)",
+      "subtreeNodes": 2095,
+      "deepestRegistryId": 5,
+      "registryIdsNested": [
+        "13006-201800",
+        "13006-201813",
+        "13006-201814",
+        "13006-201815",
+        "13006-201816"
+      ]
+    },
+    "13006-252220": {
+      "name": "sidebar - open - trench",
+      "registryIdsNested": [
+        "13006-252239",
+        "13006-252244",
+        "13006-252249",
+        "13006-252257",
+        "13006-252263"
+      ]
+    },
+    "13006-194925": {
+      "name": "Right menu - Metrics",
+      "registryIdsNested": [
+        "13006-194971",
+        "13006-194996",
+        "13006-194999",
+        "13006-195005",
+        "13006-195011"
+      ]
+    },
+    "13006-210576": {
+      "name": "Skai > Trench > Trade 1VH (1440 x 900px)",
+      "subtreeNodes": 1136,
+      "deepestRegistryId": 3,
+      "registryIdsNested": [
+        "13006-210578",
+        "13006-210579",
+        "13006-212012",
+        "13006-212076"
+      ]
+    },
+    "13006-195199": {
+      "name": "Right menu - Row",
+      "registryIdsNested": [
+        "13006-195245",
+        "13006-195269",
+        "13006-195278"
+      ]
+    },
+    "13006-146233": {
+      "name": "Skai > Launch 1VH (1440 x 900px)",
+      "subtreeNodes": 1145,
+      "deepestRegistryId": 5,
+      "registryIdsNested": [
+        "13006-147429",
+        "13006-147438"
+      ]
+    },
+    "13006-201820": {
+      "name": "Skai > Trench > One-click trade settings - modal buy 1VH (1440 x 900px)",
+      "subtreeNodes": 2102,
+      "deepestRegistryId": 4,
+      "registryIdsNested": [
+        "13006-204639",
+        "13006-204656"
+      ]
+    },
+    "13006-144635": {
+      "name": "Skai > Trade - dropdown 1VH (1440 x 900px)",
+      "subtreeNodes": 641,
+      "deepestRegistryId": 1,
+      "registryIdsNested": [
+        "13006-146207"
+      ]
+    },
+    "13006-217349": {
+      "name": "Skai > Trench > Trade > Instant trade settings 1VH (1440 x 900px)",
+      "subtreeNodes": 1192,
+      "deepestRegistryId": 1,
+      "registryIdsNested": [
+        "13006-219554"
+      ]
+    },
+    "13006-204666": {
+      "name": "Skai > Trench > One-click trade settings - modal sell 1VH (1440 x 900px)",
+      "subtreeNodes": 2148,
+      "deepestRegistryId": 4,
+      "registryIdsNested": [
+        "13006-207496"
+      ]
+    },
+    "13006-195080": {
+      "name": "Right menu - Row",
+      "registryIdsNested": [
+        "13006-195126"
+      ]
+    }
+  },
+  "aliveButNotYetLocated": [
+    "3928-84939",
+    "4018-42130",
+    "7890-134142",
+    "7909-43414",
+    "9081-273544"
+  ]
+}
