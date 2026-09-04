@@ -1,0 +1,2909 @@
+{
+ "governance": {
+  "pageId": "5210:118077",
+  "pageName": "✅ Governance and Utilities",
+  "liveChildCount": 725,
+  "nodes": [
+   [
+    "5220-10989",
+    "Directory"
+   ],
+   [
+    "5243-74950",
+    "Directory"
+   ],
+   [
+    "5315-100458",
+    "Directory"
+   ],
+   [
+    "5315-100462",
+    "Directory"
+   ],
+   [
+    "5480-32379",
+    "Directory"
+   ],
+   [
+    "5481-53867",
+    "Directory"
+   ],
+   [
+    "5515-95451",
+    "Directory"
+   ],
+   [
+    "5220-10992",
+    "Breakpoint"
+   ],
+   [
+    "11972-148909",
+    "Breakpoint"
+   ],
+   [
+    "11972-148911",
+    "Breakpoint"
+   ],
+   [
+    "5370-62681",
+    "Breakpoint"
+   ],
+   [
+    "11900-108638",
+    "Breakpoint"
+   ],
+   [
+    "11900-110635",
+    "Breakpoint"
+   ],
+   [
+    "5393-86873",
+    "Breakpoint"
+   ],
+   [
+    "11713-325487",
+    "Breakpoint"
+   ],
+   [
+    "11713-325489",
+    "Breakpoint"
+   ],
+   [
+    "5539-101487",
+    "Breakpoint"
+   ],
+   [
+    "11983-182765",
+    "Breakpoint"
+   ],
+   [
+    "11998-269109",
+    "Breakpoint"
+   ],
+   [
+    "5480-33407",
+    "Breakpoint"
+   ],
+   [
+    "11664-305415",
+    "Breakpoint"
+   ],
+   [
+    "11664-305417",
+    "Breakpoint"
+   ],
+   [
+    "5481-53870",
+    "Breakpoint"
+   ],
+   [
+    "11667-312280",
+    "Breakpoint"
+   ],
+   [
+    "11667-312282",
+    "Breakpoint"
+   ],
+   [
+    "5518-99458",
+    "Breakpoint"
+   ],
+   [
+    "11768-348943",
+    "Breakpoint"
+   ],
+   [
+    "11875-44346",
+    "Breakpoint"
+   ],
+   [
+    "5220-10994",
+    "Rectangle 155"
+   ],
+   [
+    "5243-74953",
+    "Rectangle 156"
+   ],
+   [
+    "5480-23182",
+    "Rectangle 159"
+   ],
+   [
+    "5315-100465",
+    "Rectangle 158"
+   ],
+   [
+    "5481-53872",
+    "Rectangle 161"
+   ],
+   [
+    "5515-95454",
+    "Rectangle 162"
+   ],
+   [
+    "5480-32382",
+    "Rectangle 160"
+   ],
+   [
+    "5220-10996",
+    "Skai > Earn 1VH (1440 x 900px)"
+   ],
+   [
+    "5370-61920",
+    "Skai > Governance 1VH (1440 x 900px)"
+   ],
+   [
+    "5393-86875",
+    "Skai > Learn > Courses 1VH (1440 x 900px)"
+   ],
+   [
+    "5480-32393",
+    "Skai > Airdrop 1VH (1440 x 900px)"
+   ],
+   [
+    "5539-93683",
+    "Skai > Explorer 1VH (1440 x 900px)"
+   ],
+   [
+    "11345-144081",
+    "Skai > Explorer - customise 1VH (1440 x 900px)"
+   ],
+   [
+    "5586-110620",
+    "Skai > Explorer > Address 1VH (1440 x 900px)"
+   ],
+   [
+    "5638-112382",
+    "Skai > Explorer > Address 1VH (1440 x 900px)"
+   ],
+   [
+    "11989-231980",
+    "Frame 270"
+   ],
+   [
+    "11998-339138",
+    "Frame 1000003943"
+   ],
+   [
+    "11349-147772",
+    "Transactions - with arrow"
+   ],
+   [
+    "5660-114498",
+    "Skai > Explorer > Address > Holdings 1VH (1440 x 900px)"
+   ],
+   [
+    "11991-233583",
+    "Frame 1000003927"
+   ],
+   [
+    "11998-340705",
+    "Frame 1000003944"
+   ],
+   [
+    "11998-342147",
+    "Frame 1000003947"
+   ],
+   [
+    "11991-234531",
+    "Frame 1000003928"
+   ],
+   [
+    "5662-124997",
+    "Skai > Explorer > Address > Staking 1VH (1440 x 900px)"
+   ],
+   [
+    "11992-238265",
+    "Frame 1000003932"
+   ],
+   [
+    "11998-346606",
+    "Frame 1000003952"
+   ],
+   [
+    "5664-127101",
+    "Skai > Explorer > Address > Lending 1VH (1440 x 900px)"
+   ],
+   [
+    "5661-118252",
+    "Skai > Explorer > Address > Perps 1VH (1440 x 900px)"
+   ],
+   [
+    "11991-235444",
+    "Frame 298"
+   ],
+   [
+    "11998-343301",
+    "Frame 1000003948"
+   ],
+   [
+    "5662-120139",
+    "Skai > Explorer > Address > Orders 1VH (1440 x 900px)"
+   ],
+   [
+    "11991-236624",
+    "Frame 1000003929"
+   ],
+   [
+    "11998-344467",
+    "Frame 1000003949"
+   ],
+   [
+    "5662-124365",
+    "Vault - with data"
+   ],
+   [
+    "11992-238112",
+    "Frame 1000003931"
+   ],
+   [
+    "11998-346069",
+    "Frame 1000003951"
+   ],
+   [
+    "12136-438810",
+    "Frame 1000003976"
+   ],
+   [
+    "5662-122540",
+    "Skai > Explorer > Address > Orders 1VH (1440 x 900px)"
+   ],
+   [
+    "5664-127738",
+    "Skai > Explorer > Address > Others 1VH (1440 x 900px)"
+   ],
+   [
+    "5669-128901",
+    "Skai > Explorer > Analytics 1VH (1440 x 900px)"
+   ],
+   [
+    "5675-131659",
+    "Skai > Explorer > Tokens 1VH (1440 x 900px)"
+   ],
+   [
+    "11998-243350",
+    "Frame 1000003933"
+   ],
+   [
+    "11998-350033",
+    "Frame 1000003956"
+   ],
+   [
+    "5694-140556",
+    "Skai > Explorer > Tokens 1VH (1440 x 900px)"
+   ],
+   [
+    "11998-251804",
+    "Frame 1000003935"
+   ],
+   [
+    "12000-358605",
+    "Frame 1000003960"
+   ],
+   [
+    "5695-142802",
+    "Skai > Explorer > AI 1VH (1440 x 900px)"
+   ],
+   [
+    "5702-143785",
+    "Skai > Explorer > Launchpad 1VH (1440 x 900px)"
+   ],
+   [
+    "11349-148815",
+    "Active Projects - with data"
+   ],
+   [
+    "11998-254229",
+    "Frame 270"
+   ],
+   [
+    "12001-364733",
+    "Frame 1000003962"
+   ],
+   [
+    "5702-144185",
+    "Skai > Explorer > Gaming 1VH (1440 x 900px)"
+   ],
+   [
+    "5707-145880",
+    "Skai > Explorer > Governance 1VH (1440 x 900px)"
+   ],
+   [
+    "11998-258706",
+    "Frame 1000003936"
+   ],
+   [
+    "12001-367469",
+    "Frame 1000003964"
+   ],
+   [
+    "5711-148542",
+    "Skai > Explorer > Points 1VH (1440 x 900px)"
+   ],
+   [
+    "11998-262492",
+    "Frame 1000003937"
+   ],
+   [
+    "12001-371853",
+    "Frame 1000003965"
+   ],
+   [
+    "5720-152742",
+    "Skai > Explorer > Addresses 1VH (1440 x 900px)"
+   ],
+   [
+    "11998-264962",
+    "Frame 1000003938"
+   ],
+   [
+    "12001-375115",
+    "Frame 1000003966"
+   ],
+   [
+    "5711-150322",
+    "Skai > Explorer > DeFi 1VH (1440 x 900px)"
+   ],
+   [
+    "11998-267880",
+    "Frame 1000003939"
+   ],
+   [
+    "12001-377814",
+    "Frame 1000003968"
+   ],
+   [
+    "5711-147902",
+    "Skai > Explorer > Lending 1VH (1440 x 900px)"
+   ],
+   [
+    "5707-146891",
+    "Skai > Explorer > Social 1VH (1440 x 900px)"
+   ],
+   [
+    "5702-143761",
+    "Notes"
+   ],
+   [
+    "5689-136816",
+    "Skai > Explorer > Blocks 1VH (1440 x 900px)"
+   ],
+   [
+    "11998-245136",
+    "Frame 1000003934"
+   ],
+   [
+    "11998-352184",
+    "Frame 1000003957"
+   ],
+   [
+    "12000-357680",
+    "Frame 1000003959"
+   ],
+   [
+    "11998-246935",
+    "Frame 272"
+   ],
+   [
+    "5689-136235",
+    "Skai > Explorer > Transactions 1VH (1440 x 900px)"
+   ],
+   [
+    "11998-352404",
+    "Frame 1000003958"
+   ],
+   [
+    "5691-138387",
+    "Skai > Explorer > Gas tracker 1VH (1440 x 900px)"
+   ],
+   [
+    "5698-143443",
+    "Simple Chart line - no data"
+   ],
+   [
+    "5660-116662",
+    "Holdings - NFTs"
+   ],
+   [
+    "11983-221622",
+    "Skai > Explorer (1440 x 900px)"
+   ],
+   [
+    "11345-145018",
+    "With success/failure"
+   ],
+   [
+    "5570-102478",
+    "Skai > Explorer > Dashboard - transactions (1440 x 900px)"
+   ],
+   [
+    "11987-228392",
+    "Frame 1000003925"
+   ],
+   [
+    "11987-228045",
+    "Frame 1000003924"
+   ],
+   [
+    "11987-227622",
+    "Frame 267"
+   ],
+   [
+    "11998-332332",
+    "Frame 1000003940"
+   ],
+   [
+    "11998-332560",
+    "Frame 1000003941"
+   ],
+   [
+    "11998-332847",
+    "Frame 1000003942"
+   ],
+   [
+    "11345-146431",
+    "Truncated ALT - NOT recommended"
+   ],
+   [
+    "5492-53877",
+    "Skai > Yield vaults 1VH (1440 x 900px)"
+   ],
+   [
+    "11364-149679",
+    "Skai > Yield vaults 1VH (1440 x 900px)"
+   ],
+   [
+    "11259-40720",
+    "Skai YV - deposited"
+   ],
+   [
+    "11670-313345",
+    "Skai YV - deposited"
+   ],
+   [
+    "11706-321832",
+    "Skai YV - deposited"
+   ],
+   [
+    "5515-92313",
+    "Skai > Yield vaults > Sample vault item 1VH (1440 x 900px)"
+   ],
+   [
+    "5515-95455",
+    "Skai > Gauge voting - empty 1VH (1440 x 900px)"
+   ],
+   [
+    "5515-96095",
+    "Skai > Gauge voting 1VH (1440 x 900px)"
+   ],
+   [
+    "5515-98548",
+    "Notes"
+   ],
+   [
+    "5515-93883",
+    "Skai > Yield vaults > Sample vault item (1440 x 900px)"
+   ],
+   [
+    "11259-44415",
+    "Withdraw from vault"
+   ],
+   [
+    "5481-50934",
+    "Skai > Airdrop - not eligible 1VH (1440 x 900px)"
+   ],
+   [
+    "11206-98479",
+    "Skai > Airdrop - not eligible > wallets 1VH (1440 x 900px)"
+   ],
+   [
+    "5481-49179",
+    "Skai > Airdrop (1440 x 900px)"
+   ],
+   [
+    "5531-76408",
+    "Skai > Leaderboard (1440 x 900px)"
+   ],
+   [
+    "5531-77640",
+    "Skai > Rewards (1440 x 900px)"
+   ],
+   [
+    "5534-92868",
+    "Skai > Rewards > My referrals (1440 x 900px)"
+   ],
+   [
+    "11303-133324",
+    "Skai > Rewards > My referrals - empty (1440 x 900px)"
+   ],
+   [
+    "5411-117451",
+    "Skai > Learn > Skai university 1VH (1440 x 900px)"
+   ],
+   [
+    "5443-69711",
+    "Skai > Learn > Skai university > Purchase modal 1VH (1440 x 900px)"
+   ],
+   [
+    "5442-40192",
+    "Courses - buy"
+   ],
+   [
+    "5442-39147",
+    "Skai > Learn > Skai university - about (1440 x 900px)"
+   ],
+   [
+    "5443-69253",
+    "Skai > Learn > Skai university > Sample course > Purchased (1440 x 900px)"
+   ],
+   [
+    "5446-86451",
+    "Skai > Learn > Skai university > Sample course > Purchased (1440 x 900px)"
+   ],
+   [
+    "5467-91593",
+    "Skai > Learn > Getting started with crypto (1440 x 900px)"
+   ],
+   [
+    "5460-87941",
+    "Skai > Learn > Skai university > Create course (1440 x 900px)"
+   ],
+   [
+    "11343-142862",
+    "Skai > Learn > Skai university > Create course - Step 2 (1440 x 900px)"
+   ],
+   [
+    "11343-142585",
+    "Corser details - with video"
+   ],
+   [
+    "5480-20528",
+    "Skai > Learn > Articles > Create article - empty (1440 x 900px)"
+   ],
+   [
+    "5480-21556",
+    "Skai > Learn > Articles > Create article (1440 x 900px)"
+   ],
+   [
+    "5480-21885",
+    "Skai > Learn > Articles > Create article (1440 x 900px)"
+   ],
+   [
+    "5446-83004",
+    "Skai > Learn > Skai university > Sample course > Purchased > Sample video (1440 x 900px)"
+   ],
+   [
+    "5446-85963",
+    "Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (1440 x 900px)"
+   ],
+   [
+    "5460-87886",
+    "Videoframe - playing"
+   ],
+   [
+    "11342-142483",
+    "Videoframe - before playing"
+   ],
+   [
+    "5446-82429",
+    "Course progress - completed"
+   ],
+   [
+    "5442-42904",
+    "Skai > Learn > Skai university > Sample course (1440 x 900px)"
+   ],
+   [
+    "5468-92781",
+    "Skai > Learn > Articles (1440 x 900px)"
+   ],
+   [
+    "5442-48059",
+    "Course details - on:hover"
+   ],
+   [
+    "5410-112561",
+    "Skai > Learn (1440 x 900px)"
+   ],
+   [
+    "5371-63275",
+    "Skai > Governance > Proposals 1VH (1440 x 900px)"
+   ],
+   [
+    "11307-134317",
+    "Skai > Governance > Proposals ALT 1VH (1440 x 900px)"
+   ],
+   [
+    "5373-68430",
+    "Skai > Governance > Proposals > New proposal ALT 1VH (1440 x 900px)"
+   ],
+   [
+    "11309-136820",
+    "Right menu"
+   ],
+   [
+    "12141-451869",
+    "Right menu"
+   ],
+   [
+    "12141-452042",
+    "Right menu"
+   ],
+   [
+    "11309-136155",
+    "Governance settings"
+   ],
+   [
+    "12097-429027",
+    "Governance settings"
+   ],
+   [
+    "12097-429129",
+    "Governance settings"
+   ],
+   [
+    "5383-73349",
+    "Skai > Governance > Proposals > Delegation 1VH (1440 x 900px)"
+   ],
+   [
+    "5387-76925",
+    "Skai > Governance > Proposals > Financials 1VH (1440 x 900px)"
+   ],
+   [
+    "5387-77602",
+    "Skai > Governance > Proposals > Financials 1VH (1440 x 900px)"
+   ],
+   [
+    "5389-78508",
+    "Skai > Governance > Proposals > About 1VH (1440 x 900px)"
+   ],
+   [
+    "5390-80080",
+    "Skai > Governance > Proposals > Sample proposal - view 1VH (1440 x 900px)"
+   ],
+   [
+    "11307-135124",
+    "Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (1440 x 900px)"
+   ],
+   [
+    "5392-82380",
+    "Notes"
+   ],
+   [
+    "5392-82015",
+    "Skai > Governance > Proposals > Sample proposal - view (1440 x 900px)"
+   ],
+   [
+    "5477-97603",
+    "Skai > Learn > Articles > Sample article (1440 x 900px)"
+   ],
+   [
+    "5385-74400",
+    "Skai > Governance > Proposals > Delegation 1VH (1440 x 900px)"
+   ],
+   [
+    "5385-75416",
+    "Skai > Governance > Proposals > Delegation > Delegate modal 1VH (1440 x 900px)"
+   ],
+   [
+    "5376-71276",
+    "Skai > Governance > Proposals > Staking 1VH (1440 x 900px)"
+   ],
+   [
+    "5383-72757",
+    "Skai > Governance > Proposals > Staking 1VH (1440 x 900px)"
+   ],
+   [
+    "11314-138830",
+    "Vault actions - deposit and unclaimed"
+   ],
+   [
+    "5376-70869",
+    "Right menu - open"
+   ],
+   [
+    "5376-71252",
+    "DAO boost - met"
+   ],
+   [
+    "5371-64317",
+    "Skai > Governance > Proposals (1440 x 900px)"
+   ],
+   [
+    "5243-69438",
+    "Skai > Earn (1440 x 900px)"
+   ],
+   [
+    "10517-38187",
+    "Skai > Earn - with pagination (1440 x 900px)"
+   ],
+   [
+    "5243-73398",
+    "Skai > Earn - Liquidity only (1440 x 900px)"
+   ],
+   [
+    "10838-362076",
+    "Skai > Earn - Liquidity only - liquidity added (1440 x 900px)"
+   ],
+   [
+    "11405-100106",
+    "Skai > Earn > Sample opportunity - save (1440 x 900px)"
+   ],
+   [
+    "11405-103640",
+    "Skai > Earn > Sample opportunity - save > Save (1440 x 900px)"
+   ],
+   [
+    "11405-105088",
+    "Skai > Earn > Sample opportunity - save > Save > Confirm save (1440 x 900px)"
+   ],
+   [
+    "11405-100880",
+    "Skai > Earn > Sample opportunity - Lend (1440 x 900px)"
+   ],
+   [
+    "11405-101828",
+    "Skai > Earn > Sample opportunity - Lend > Lend (1440 x 900px)"
+   ],
+   [
+    "11405-102823",
+    "Skai > Earn > Sample opportunity - Lend > Lend > Confirm lend (1440 x 900px)"
+   ],
+   [
+    "5259-80297",
+    "Skai > Earn > Vaults (1440 x 900px)"
+   ],
+   [
+    "11151-80952",
+    "House vault - if low"
+   ],
+   [
+    "5248-76804",
+    "Skai > Earn > My positions (1440 x 900px)"
+   ],
+   [
+    "10841-138986",
+    "Skai > Earn > Sample opportunity - liquidity (1440 x 900px)"
+   ],
+   [
+    "11135-77182",
+    "Skai > Earn > My positions > Update position (1440 x 900px)"
+   ],
+   [
+    "10852-361479",
+    "Skai > Earn > Sample opportunity - liquidity > Add liquidity (1440 x 900px)"
+   ],
+   [
+    "11022-18418",
+    "Add liquidity - no value"
+   ],
+   [
+    "5280-87638",
+    "Skai > Earn > Faucet (1440 x 900px)"
+   ],
+   [
+    "11193-90739",
+    "Skai > Earn > Faucet (1440 x 900px)"
+   ],
+   [
+    "11161-82180",
+    "With winners"
+   ],
+   [
+    "11156-82051",
+    "Lottery - rolls finished"
+   ],
+   [
+    "5315-92101",
+    "Skai > Earn > Faucet > Tickets (1440 x 900px)"
+   ],
+   [
+    "5370-46761",
+    "Skai > Earn > Faucet > Winners (1440 x 900px)"
+   ],
+   [
+    "11198-97038",
+    "Winners - with date position shifted"
+   ],
+   [
+    "5370-47867",
+    "Skai > Earn > Faucet > Earn more (1440 x 900px)"
+   ],
+   [
+    "5370-59619",
+    "Skai > Earn > Referral (1440 x 900px)"
+   ],
+   [
+    "5370-46501",
+    "Tickets - empty"
+   ],
+   [
+    "5313-92097",
+    "Blackjack cards"
+   ],
+   [
+    "5291-89531",
+    "Lottery other values"
+   ],
+   [
+    "12225-458073",
+    "Lottery other values"
+   ],
+   [
+    "12225-458091",
+    "Lottery other values"
+   ],
+   [
+    "5280-82910",
+    "Skai > Earn > Vault > Trading vault (1440 x 900px)"
+   ],
+   [
+    "11151-79923",
+    "Lock - with percentage"
+   ],
+   [
+    "11151-18953",
+    "Skai > Earn > Vault > Trading vault ALT (1440 x 900px)"
+   ],
+   [
+    "5280-86949",
+    "Skai > Earn > Vault > House vault (1440 x 900px)"
+   ],
+   [
+    "11151-80178",
+    "Skai > Earn > Vault > House vault ALT (1440 x 900px)"
+   ],
+   [
+    "5280-87614",
+    "Notes"
+   ],
+   [
+    "5278-80860",
+    "Skai > Earn > My positions - empty (1440 x 900px)"
+   ],
+   [
+    "5243-74665",
+    "Skai > Earn > Stake (1440 x 900px)"
+   ],
+   [
+    "5243-76144",
+    "Skai > Earn > Stake > confirm stake (1440 x 900px)"
+   ],
+   [
+    "11128-107161",
+    "Skai > Earn > Sample opportunity - liquidity > Add liquidity > Confirm liquidity add (1440 x 900px)"
+   ],
+   [
+    "10517-39043",
+    "Stake summary with fees"
+   ],
+   [
+    "5258-78625",
+    "Skai > Earn > My positions > View details (1440 x 900px)"
+   ],
+   [
+    "11134-109360",
+    "Skai > Earn > My positions - on:hover (1440 x 900px)"
+   ],
+   [
+    "5243-75704",
+    "Swap - no value"
+   ],
+   [
+    "5243-76681",
+    "Notes"
+   ],
+   [
+    "5248-76723",
+    "Notes"
+   ],
+   [
+    "5248-76747",
+    "dropdown-1"
+   ],
+   [
+    "5248-76770",
+    "dropdown-2"
+   ],
+   [
+    "12215-457080",
+    "dropdown-1"
+   ],
+   [
+    "12215-457116",
+    "dropdown-1"
+   ],
+   [
+    "12215-457089",
+    "dropdown-2"
+   ],
+   [
+    "12215-457125",
+    "dropdown-2"
+   ],
+   [
+    "10841-118147",
+    "dropdown-activity"
+   ],
+   [
+    "12215-457134",
+    "dropdown-activity"
+   ],
+   [
+    "12215-457147",
+    "dropdown-activity"
+   ],
+   [
+    "11304-134283",
+    "dropdown-proposals"
+   ],
+   [
+    "12097-428912",
+    "dropdown-proposals"
+   ],
+   [
+    "12097-428919",
+    "dropdown-proposals"
+   ],
+   [
+    "11306-134305",
+    "dropdown-proposals"
+   ],
+   [
+    "12097-428926",
+    "dropdown-proposals"
+   ],
+   [
+    "12097-428981",
+    "dropdown-proposals"
+   ],
+   [
+    "12097-428952",
+    "dropdown-proposals"
+   ],
+   [
+    "12097-429007",
+    "dropdown-proposals"
+   ],
+   [
+    "11307-135045",
+    "dropdown-proposals"
+   ],
+   [
+    "11193-91907",
+    "dropdown-pool and treasury"
+   ],
+   [
+    "12225-458356",
+    "dropdown-pool and treasury"
+   ],
+   [
+    "12225-458371",
+    "dropdown-pool and treasury"
+   ],
+   [
+    "11198-97230",
+    "dropdown-winners"
+   ],
+   [
+    "12225-458386",
+    "dropdown-winners"
+   ],
+   [
+    "12225-458395",
+    "dropdown-winners"
+   ],
+   [
+    "11198-97007",
+    "dropdown-tickets"
+   ],
+   [
+    "5370-46716",
+    "Notes"
+   ],
+   [
+    "5376-71202",
+    "Notes"
+   ],
+   [
+    "11364-165058",
+    "sidebar - open earn"
+   ],
+   [
+    "11364-165916",
+    "sidebar - open governance"
+   ],
+   [
+    "11370-169091",
+    "sidebar - open learn"
+   ],
+   [
+    "11370-182316",
+    "sidebar - open explorer"
+   ],
+   [
+    "5376-71154",
+    "Notes"
+   ],
+   [
+    "5443-67708",
+    "Notes"
+   ],
+   [
+    "5446-86403",
+    "Notes"
+   ],
+   [
+    "5446-86427",
+    "Notes"
+   ],
+   [
+    "5480-20504",
+    "Notes"
+   ],
+   [
+    "5443-69665",
+    "Notes"
+   ],
+   [
+    "5480-21838",
+    "Notes"
+   ],
+   [
+    "5480-22549",
+    "Skai > Learn > Skai university > Articles 1VH (1440 x 900px)"
+   ],
+   [
+    "5518-101256",
+    "Skai > Account 1VH (1440 x 900px)"
+   ],
+   [
+    "5518-103036",
+    "Created tokens"
+   ],
+   [
+    "5518-102983",
+    "Overview - play"
+   ],
+   [
+    "5525-11686",
+    "Overview - play -hidden"
+   ],
+   [
+    "5518-100072",
+    "Skai > Account (1440 x 900px)"
+   ],
+   [
+    "5523-103993",
+    "Skai > Account > Performance overview (1440 x 900px)"
+   ],
+   [
+    "5526-47972",
+    "Skai > Account > Account settings (1440 x 900px)"
+   ],
+   [
+    "11267-125024",
+    "input/primary-inputs - with warning"
+   ],
+   [
+    "5529-72564",
+    "Skai > Account > Account settings (1440 x 900px)"
+   ],
+   [
+    "5529-73867",
+    "Skai > Account > Account settings > Private key (1440 x 900px)"
+   ],
+   [
+    "5529-76029",
+    "Skai > Account > Account settings > Private key - step 2 (1440 x 900px)"
+   ],
+   [
+    "5529-49244",
+    "Skai > Account > Account settings > Security (1440 x 900px)"
+   ],
+   [
+    "11267-125066",
+    "input/primary-inputs - on:hover"
+   ],
+   [
+    "5529-73119",
+    "Skai > Account > Account settings > Preferences (1440 x 900px)"
+   ],
+   [
+    "5529-76362",
+    "Notes"
+   ],
+   [
+    "5662-123391",
+    "Notes"
+   ],
+   [
+    "5711-148470",
+    "Notes"
+   ],
+   [
+    "10335-237326",
+    "Rectangle 163"
+   ],
+   [
+    "11198-97290",
+    "Rectangle 164"
+   ],
+   [
+    "11303-134282",
+    "Rectangle 167"
+   ],
+   [
+    "11314-139175",
+    "Rectangle 168"
+   ],
+   [
+    "11344-144022",
+    "Rectangle 169"
+   ],
+   [
+    "11212-20127",
+    "Rectangle 165"
+   ],
+   [
+    "11260-123576",
+    "Rectangle 166"
+   ],
+   [
+    "10517-38160",
+    "dropdown-multiselect"
+   ],
+   [
+    "11128-109012",
+    "Notes"
+   ],
+   [
+    "11405-103319",
+    "Notes"
+   ],
+   [
+    "11193-91860",
+    "Notes"
+   ],
+   [
+    "11198-91923",
+    "Skai > Earn > Faucet > Winners > Share outcome (1440 x 900px)"
+   ],
+   [
+    "11212-20103",
+    "dropdown-multiselect"
+   ],
+   [
+    "11212-20117",
+    "dropdown-Snapshot list"
+   ],
+   [
+    "11259-40697",
+    "dropdown-yield vaults"
+   ],
+   [
+    "11706-321906",
+    "dropdown-yield vaults"
+   ],
+   [
+    "11260-123586",
+    "dropdown-account"
+   ],
+   [
+    "12082-426960",
+    "dropdown-account"
+   ],
+   [
+    "12082-426968",
+    "dropdown-account"
+   ],
+   [
+    "11266-123769",
+    "dropdown-account overview 2"
+   ],
+   [
+    "12097-427035",
+    "dropdown-account overview 3"
+   ],
+   [
+    "11260-123547",
+    "dropdown-yield vaults"
+   ],
+   [
+    "11266-123753",
+    "dropdown-account overview 1"
+   ],
+   [
+    "12097-427042",
+    "dropdown-account overview 4"
+   ],
+   [
+    "11260-123562",
+    "dropdown-multiselect"
+   ],
+   [
+    "11302-129670",
+    "dropdown-tiers"
+   ],
+   [
+    "12097-427103",
+    "dropdown-tiers"
+   ],
+   [
+    "12097-427168",
+    "dropdown-tiers"
+   ],
+   [
+    "12097-427118",
+    "dropdown-tiers"
+   ],
+   [
+    "12097-427198",
+    "dropdown-tiers"
+   ],
+   [
+    "11303-133248",
+    "dropdown-tiers"
+   ],
+   [
+    "11303-134267",
+    "dropdown-period"
+   ],
+   [
+    "12097-427183",
+    "dropdown-period"
+   ],
+   [
+    "12097-427159",
+    "dropdown-period"
+   ],
+   [
+    "11267-123785",
+    "Skai > Account > Performance overview > Share networth (1440 x 900px)"
+   ],
+   [
+    "11271-125083",
+    "Skai > Account > Account settings > Security > 2FA > Auth app (1440 x 900px)"
+   ],
+   [
+    "11301-127843",
+    "Skai > Account > Account settings > Security > 2FA > SMS (1440 x 900px)"
+   ],
+   [
+    "11302-128586",
+    "Skai > Account > Account settings > Security > Delete account (1440 x 900px)"
+   ],
+   [
+    "12097-427133",
+    "dropdown-multiselect"
+   ],
+   [
+    "11302-129536",
+    "Notes"
+   ],
+   [
+    "11302-129701",
+    "dropdown-multiselect"
+   ],
+   [
+    "12097-427139",
+    "dropdown-multiselect"
+   ],
+   [
+    "12097-427192",
+    "dropdown-multiselect"
+   ],
+   [
+    "12097-427213",
+    "dropdown-multiselect"
+   ],
+   [
+    "11303-133263",
+    "dropdown-multiselect"
+   ],
+   [
+    "11307-135079",
+    "dropdown-multiselect"
+   ],
+   [
+    "12097-428935",
+    "dropdown-multiselect"
+   ],
+   [
+    "11302-129708",
+    "Skai > Leaderboard > Share portfolio 1VH (1440 x 900px)"
+   ],
+   [
+    "12097-428961",
+    "dropdown-multiselect"
+   ],
+   [
+    "12097-428990",
+    "dropdown-multiselect"
+   ],
+   [
+    "12097-429016",
+    "dropdown-multiselect"
+   ],
+   [
+    "11307-135103",
+    "dropdown-multiselect"
+   ],
+   [
+    "11314-138124",
+    "dropdown-multiselect"
+   ],
+   [
+    "12097-429231",
+    "dropdown-multiselect"
+   ],
+   [
+    "12097-429243",
+    "dropdown-multiselect"
+   ],
+   [
+    "11309-136994",
+    "Skai > Governance > Proposals > New proposal 1VH (1440 x 900px)"
+   ],
+   [
+    "11314-138082",
+    "DAO boost - met"
+   ],
+   [
+    "11314-138141",
+    "dropdown-staking"
+   ],
+   [
+    "11314-139095",
+    "dropdown-delegates"
+   ],
+   [
+    "11314-139110",
+    "dropdown-delegate type"
+   ],
+   [
+    "12136-432067",
+    "dropdown-delegates"
+   ],
+   [
+    "12136-432080",
+    "dropdown-delegate type"
+   ],
+   [
+    "12136-432102",
+    "dropdown-delegates"
+   ],
+   [
+    "12136-432115",
+    "dropdown-delegate type"
+   ],
+   [
+    "11314-139153",
+    "dropdown-delegate type"
+   ],
+   [
+    "12136-432150",
+    "dropdown-delegate type"
+   ],
+   [
+    "12136-432155",
+    "dropdown-delegate type"
+   ],
+   [
+    "11314-138452",
+    "Claimed - not 100% represented"
+   ],
+   [
+    "11314-139131",
+    "dropdown-multiselect"
+   ],
+   [
+    "12136-432085",
+    "dropdown-multiselect"
+   ],
+   [
+    "11314-138456",
+    "Claimed - not 100% represented - claimed"
+   ],
+   [
+    "12097-431830",
+    "Claimed - not 100% represented"
+   ],
+   [
+    "12136-432120",
+    "dropdown-multiselect"
+   ],
+   [
+    "11322-142230",
+    "dropdown-courses"
+   ],
+   [
+    "11344-143602",
+    "dropdown-multiselect"
+   ],
+   [
+    "12166-455569",
+    "dropdown-multiselect"
+   ],
+   [
+    "12166-455585",
+    "dropdown-multiselect"
+   ],
+   [
+    "11345-144023",
+    "dropdown-main"
+   ],
+   [
+    "12166-456452",
+    "dropdown-main"
+   ],
+   [
+    "12166-456481",
+    "dropdown-main"
+   ],
+   [
+    "11345-146380",
+    "dropdown-Active TWAPs"
+   ],
+   [
+    "12166-456510",
+    "dropdown-Active TWAPs"
+   ],
+   [
+    "12166-456521",
+    "dropdown-Active TWAPs"
+   ],
+   [
+    "11345-146410",
+    "dropdown-multiselect"
+   ],
+   [
+    "11349-148487",
+    "Additional information"
+   ],
+   [
+    "12166-456349",
+    "Additional information"
+   ],
+   [
+    "12166-456409",
+    "Additional information"
+   ],
+   [
+    "11349-148646",
+    "dropdown-multiselect"
+   ],
+   [
+    "12166-456389",
+    "dropdown-multiselect"
+   ],
+   [
+    "12166-456532",
+    "dropdown-multiselect"
+   ],
+   [
+    "12166-456402",
+    "dropdown-multiselect"
+   ],
+   [
+    "11349-148686",
+    "dropdown-addresses"
+   ],
+   [
+    "12166-456544",
+    "dropdown-addresses"
+   ],
+   [
+    "12166-456568",
+    "dropdown-addresses"
+   ],
+   [
+    "12166-456559",
+    "dropdown-Chart"
+   ],
+   [
+    "11349-148702",
+    "dropdown-Chart"
+   ],
+   [
+    "12166-456583",
+    "dropdown-Chart"
+   ],
+   [
+    "11370-187312",
+    "sidebar - open airdrop"
+   ],
+   [
+    "11370-188203",
+    "sidebar"
+   ],
+   [
+    "11664-305419",
+    "sidebar - open casino"
+   ],
+   [
+    "11705-320498",
+    "sidebar"
+   ],
+   [
+    "12166-456592",
+    "sidebar"
+   ],
+   [
+    "11713-326573",
+    "sidebar"
+   ],
+   [
+    "11664-305531",
+    "sidebar"
+   ],
+   [
+    "12166-456702",
+    "sidebar"
+   ],
+   [
+    "11664-305643",
+    "Skai > Airdrop 1VH (768 x 1024px)"
+   ],
+   [
+    "11983-182767",
+    "Skai > Explorer (768 x 1024px)"
+   ],
+   [
+    "11986-226555",
+    "Skai > Explorer > Dashboard - transactions (768 x 1024px)"
+   ],
+   [
+    "11986-223183",
+    "Skai > Explorer 1VH (768 x 1024px)"
+   ],
+   [
+    "11989-231104",
+    "Skai > Explorer > Address (768 x 1024px)"
+   ],
+   [
+    "11989-232490",
+    "Skai > Explorer > Address > Holdings (768 x 1024px)"
+   ],
+   [
+    "11991-234861",
+    "Skai > Explorer > Address > Perps (768 x 1024px)"
+   ],
+   [
+    "11991-236086",
+    "Skai > Explorer > Address > Orders (768 x 1024px)"
+   ],
+   [
+    "11991-237411",
+    "Skai > Explorer > Address > Orders (768 x 1024px)"
+   ],
+   [
+    "11992-238368",
+    "Skai > Explorer > Address > Staking (768 x 1024px)"
+   ],
+   [
+    "11992-238830",
+    "Skai > Explorer > Address > Lending (768 x 1024px)"
+   ],
+   [
+    "11998-347370",
+    "Frame 1000003953"
+   ],
+   [
+    "11992-239733",
+    "Skai > Explorer > Address > Others (768 x 1024px)"
+   ],
+   [
+    "11998-244576",
+    "Skai > Explorer > Blocks (768 x 1024px)"
+   ],
+   [
+    "11998-246468",
+    "Skai > Explorer > Transactions 1VH (768 x 1024px)"
+   ],
+   [
+    "11997-242875",
+    "Skai > Explorer > Tokens (768 x 1024px)"
+   ],
+   [
+    "11993-241225",
+    "Skai > Explorer > Analytics 1VH (768 x 1024px)"
+   ],
+   [
+    "11998-251087",
+    "Skai > Explorer > Tokens (768 x 1024px)"
+   ],
+   [
+    "11998-256391",
+    "Skai > Explorer > Gaming (768 x 1024px)"
+   ],
+   [
+    "11998-262008",
+    "Skai > Explorer > Addresses (768 x 1024px)"
+   ],
+   [
+    "12001-366177",
+    "Frame 1000003963"
+   ],
+   [
+    "11998-266062",
+    "Skai > Explorer > DeFi (768 x 1024px)"
+   ],
+   [
+    "12001-376676",
+    "Frame 1000003967"
+   ],
+   [
+    "11998-264346",
+    "Skai > Explorer > Points (768 x 1024px)"
+   ],
+   [
+    "11998-257569",
+    "Skai > Explorer > Governance (768 x 1024px)"
+   ],
+   [
+    "11998-259528",
+    "Skai > Explorer > Social (768 x 1024px)"
+   ],
+   [
+    "11998-260352",
+    "Skai > Explorer > Lending 1VH (768 x 1024px)"
+   ],
+   [
+    "11998-254527",
+    "section"
+   ],
+   [
+    "11998-252837",
+    "Skai > Explorer > AI 1VH (768 x 1024px)"
+   ],
+   [
+    "11998-253933",
+    "Skai > Explorer > Launchpad 1VH (768 x 1024px)"
+   ],
+   [
+    "11998-248840",
+    "Skai > Explorer > Gas tracker (768 x 1024px)"
+   ],
+   [
+    "11986-224020",
+    "Skai > Explorer 1VH (768 x 1024px)"
+   ],
+   [
+    "11667-312902",
+    "Skai > Yield vaults 1VH (768 x 1024px)"
+   ],
+   [
+    "11704-318672",
+    "Skai > Yield vaults (768 x 1024px)"
+   ],
+   [
+    "11672-313668",
+    "Skai > Yield vaults > Sample vault item (768 x 1024px)"
+   ],
+   [
+    "11705-319211",
+    "Skai > Gauge voting - empty 1VH (768 x 1024px)"
+   ],
+   [
+    "11705-320003",
+    "Skai > Gauge voting (768 x 1024px)"
+   ],
+   [
+    "11705-321084",
+    "Skai > Gauge voting 1VH (768 x 1024px)"
+   ],
+   [
+    "11704-318227",
+    "Skai > Yield vaults > Sample vault item 1VH (768 x 1024px)"
+   ],
+   [
+    "12049-413478",
+    "Withdraw from vault"
+   ],
+   [
+    "11664-306263",
+    "Skai > Yield vaults 1VH (375 x 812px)"
+   ],
+   [
+    "11706-321921",
+    "Skai > Yield vaults (375 x 812px)"
+   ],
+   [
+    "11707-322803",
+    "Skai > Yield vaults > Sample vault item 1VH (375 x 812px)"
+   ],
+   [
+    "12049-413393",
+    "Withdraw from vault"
+   ],
+   [
+    "11707-323740",
+    "Skai > Gauge voting - empty 1VH (375 x 812px)"
+   ],
+   [
+    "11707-324180",
+    "Skai > Gauge voting - empty (375 x 812px)"
+   ],
+   [
+    "11708-324886",
+    "Skai > Gauge voting (375 x 812px)"
+   ],
+   [
+    "11708-325099",
+    "Skai > Gauge voting 1VH (375 x 812px)"
+   ],
+   [
+    "11707-323144",
+    "Skai > Yield vaults > Sample vault item (375 x 812px)"
+   ],
+   [
+    "11705-320608",
+    "Skai > Airdrop 1VH (375 x 812px)"
+   ],
+   [
+    "11998-326822",
+    "Skai > Explorer (375 x 812px)"
+   ],
+   [
+    "12136-435253",
+    "Skai > Explorer (375 x 812px)"
+   ],
+   [
+    "11998-329996",
+    "Skai > Explorer > Dashboard - transactions (375 x 812px)"
+   ],
+   [
+    "11998-337508",
+    "Skai > Explorer > Address (375 x 812px)"
+   ],
+   [
+    "11998-341045",
+    "Skai > Explorer > Address > Holdings (375 x 812px)"
+   ],
+   [
+    "11998-342710",
+    "Skai > Explorer > Address > Perps (375 x 812px)"
+   ],
+   [
+    "11998-343923",
+    "Skai > Explorer > Address > Orders (375 x 812px)"
+   ],
+   [
+    "11998-345258",
+    "Skai > Explorer > Address > Orders (375 x 812px)"
+   ],
+   [
+    "11998-346238",
+    "Skai > Explorer > Address > Staking (375 x 812px))"
+   ],
+   [
+    "11998-346919",
+    "Skai > Explorer > Address > Lending (375 x 812px)"
+   ],
+   [
+    "11998-347934",
+    "Skai > Explorer > Address > Others (375 x 812px)"
+   ],
+   [
+    "11998-348921",
+    "Skai > Explorer > Analytics (375 x 812px)"
+   ],
+   [
+    "11998-350745",
+    "Skai > Explorer > Tokens (375 x 812px)"
+   ],
+   [
+    "11998-351710",
+    "Skai > Explorer > Blocks (375 x 812px)"
+   ],
+   [
+    "12000-357207",
+    "Skai > Explorer > Gas tracker (375 x 812px)"
+   ],
+   [
+    "12000-359408",
+    "Skai > Explorer > Tokens (375 x 812px)"
+   ],
+   [
+    "12001-362424",
+    "Skai > Explorer > AI (375 x 812px)"
+   ],
+   [
+    "12001-363043",
+    "Skai > Explorer > Launchpad (375 x 812px)"
+   ],
+   [
+    "12001-365886",
+    "Skai > Explorer > Gaming (375 x 812px)"
+   ],
+   [
+    "12001-368183",
+    "Skai > Explorer > Governance (375 x 812px)"
+   ],
+   [
+    "12001-370309",
+    "Skai > Explorer > Social (375 x 812px)"
+   ],
+   [
+    "12001-371015",
+    "Skai > Explorer > Lending (375 x 812px)"
+   ],
+   [
+    "12001-371549",
+    "Skai > Explorer > Points (375 x 812px)"
+   ],
+   [
+    "12001-379226",
+    "Skai > Explorer > DeFi (375 x 812px)"
+   ],
+   [
+    "12001-376043",
+    "Skai > Explorer > Addresses (375 x 812px)"
+   ],
+   [
+    "12001-374466",
+    "Skai > Explorer > Points (375 x 812px)"
+   ],
+   [
+    "12001-364997",
+    "section"
+   ],
+   [
+    "11998-354592",
+    "Skai > Explorer > Transactions (375 x 812px)"
+   ],
+   [
+    "11998-348680",
+    "Frame 1000003955"
+   ],
+   [
+    "11998-328323",
+    "Skai > Explorer 1VH (375 x 812px)"
+   ],
+   [
+    "11998-329118",
+    "Skai > Explorer 1VH (375 x 812px)"
+   ],
+   [
+    "11667-310237",
+    "Skai > Airdrop - not eligible > wallets 1VH (768 x 1024px)"
+   ],
+   [
+    "11667-310501",
+    "Skai > Airdrop - not eligible > wallets 1VH (375 x 812px)"
+   ],
+   [
+    "11667-311059",
+    "Skai > Airdrop - not eligible (768 x 1024px)"
+   ],
+   [
+    "11667-311323",
+    "Skai > Airdrop - not eligible (375 x 812px)"
+   ],
+   [
+    "11667-309312",
+    "Skai > Airdrop (768 x 1024px)"
+   ],
+   [
+    "11667-309576",
+    "Skai > Airdrop (375 x 812px)"
+   ],
+   [
+    "11705-320482",
+    "dropdown-yield vaults"
+   ],
+   [
+    "11713-326780",
+    "sidebar"
+   ],
+   [
+    "11713-326890",
+    "sidebar"
+   ],
+   [
+    "12097-427937",
+    "sidebar"
+   ],
+   [
+    "12166-455749",
+    "sidebar"
+   ],
+   [
+    "11720-328046",
+    "Skai > Learn (768 x 1024px)"
+   ],
+   [
+    "11759-342393",
+    "Skai > Learn > Getting started with crypto (768 x 1024px)"
+   ],
+   [
+    "11761-344888",
+    "Skai > Learn > Articles (768 x 1024px)"
+   ],
+   [
+    "11764-345696",
+    "Skai > Learn > Articles > Sample article (768 x 1024px)"
+   ],
+   [
+    "11764-347374",
+    "Skai > Learn > Articles > Create article - empty 1VH (768 x 1024px)"
+   ],
+   [
+    "11764-347974",
+    "Skai > Learn > Articles > Create article 1VH (768 x 1024px)"
+   ],
+   [
+    "11764-348102",
+    "Skai > Learn > Articles > Create article (768 x 1024px)"
+   ],
+   [
+    "11720-328489",
+    "Skai > Learn > Courses 1VH (768 x 1024px)"
+   ],
+   [
+    "11900-108870",
+    "Skai > Governance 1VH (768 x 1024px)"
+   ],
+   [
+    "11900-111292",
+    "Skai > Governance > Proposals 1VH (768 x 1024px)"
+   ],
+   [
+    "11972-149758",
+    "Skai > Earn 1VH (768 x 1024px)"
+   ],
+   [
+    "11980-177310",
+    "Skai > Earn > Referral (768 x 1024px)"
+   ],
+   [
+    "11973-153636",
+    "Skai > Earn - Liquidity only 1VH (768 x 1024px)"
+   ],
+   [
+    "11978-168335",
+    "Skai > Earn > My positions (768 x 1024px)"
+   ],
+   [
+    "11978-169460",
+    "Skai > Earn > My positions > View details 1VH (768 x 1024px)"
+   ],
+   [
+    "11978-170038",
+    "Skai > Earn > My positions - on:hover 1VH (768 x 1024px)"
+   ],
+   [
+    "11978-168824",
+    "Skai > Earn > My positions - empty (768 x 1024px)"
+   ],
+   [
+    "11978-171157",
+    "Skai > Earn > Vault > Trading vault (768 x 1024px)"
+   ],
+   [
+    "12215-457394",
+    "Lock - with percentage"
+   ],
+   [
+    "11980-173965",
+    "Skai > Earn > Vault > House vault (768 x 1024px)"
+   ],
+   [
+    "11980-175816",
+    "Skai > Earn > Vault > House vault ALT (768 x 1024px)"
+   ],
+   [
+    "11983-179665",
+    "Skai > Earn > Faucet (768 x 1024px)"
+   ],
+   [
+    "12261-474854",
+    "Skai > Earn > Faucet 1VH (768 x 1024px)"
+   ],
+   [
+    "12225-458404",
+    "With winners"
+   ],
+   [
+    "12225-458170",
+    "Frame 1000003977"
+   ],
+   [
+    "11983-180657",
+    "Skai > Earn > Faucet > Tickets (768 x 1024px)"
+   ],
+   [
+    "12215-457534",
+    "Tickets - empty"
+   ],
+   [
+    "11983-181349",
+    "Skai > Earn > Faucet > Winners (768 x 1024px)"
+   ],
+   [
+    "11983-182085",
+    "Skai > Earn > Faucet > Earn more (768 x 1024px)"
+   ],
+   [
+    "12136-433829",
+    "Skai > Earn > Faucet > Earn more (768 x 1024px)"
+   ],
+   [
+    "11980-173398",
+    "Skai > Earn > Vault > Trading vault ALT (768 x 1024px)"
+   ],
+   [
+    "11980-172605",
+    "Skai > Earn > Vaults (768 x 1024px)"
+   ],
+   [
+    "12215-457238",
+    "House vault - if low"
+   ],
+   [
+    "11973-154184",
+    "Skai > Earn - Liquidity only - liquidity added 1VH (768 x 1024px)"
+   ],
+   [
+    "11973-155655",
+    "Skai > Earn > Sample opportunity - liquidity (768 x 1024px)"
+   ],
+   [
+    "11973-160234",
+    "Skai > Earn > Sample opportunity - liquidity > Add liquidity (768 x 1024px)"
+   ],
+   [
+    "11974-166788",
+    "Swap - no value"
+   ],
+   [
+    "11974-165410",
+    "Skai > Earn > Sample opportunity - liquidity > Add liquidity > Confirm liquidity add 1VH (768 x 1024px)"
+   ],
+   [
+    "11973-158164",
+    "Skai > Earn > Sample opportunity - Lend (768 x 1024px)"
+   ],
+   [
+    "11973-158665",
+    "Skai > Earn > Sample opportunity - save (768 x 1024px)"
+   ],
+   [
+    "11973-159235",
+    "Skai > Earn > Sample opportunity - Lend > Lend 1VH (768 x 1024px)"
+   ],
+   [
+    "11973-159567",
+    "Skai > Earn > Sample opportunity - save > Save 1VH (768 x 1024px)"
+   ],
+   [
+    "11973-161769",
+    "Skai > Earn > Sample opportunity - Lend > Lend > Confirm lend 1VH (768 x 1024px)"
+   ],
+   [
+    "11973-161912",
+    "Skai > Earn > Sample opportunity - save > Save > Confirm save 1VH (768 x 1024px)"
+   ],
+   [
+    "11972-152545",
+    "Skai > Earn > Stake 1VH (768 x 1024px)"
+   ],
+   [
+    "11973-153432",
+    "Swap - no value"
+   ],
+   [
+    "11972-153216",
+    "Skai > Earn > Stake > confirm stake 1VH (768 x 1024px)"
+   ],
+   [
+    "11973-153573",
+    "modal"
+   ],
+   [
+    "11972-150945",
+    "Skai > Earn (768 x 1024px)"
+   ],
+   [
+    "11972-151493",
+    "Skai > Earn - with pagination (768 x 1024px)"
+   ],
+   [
+    "11902-119713",
+    "Skai > Governance > Proposals > Staking 1VH (768 x 1024px)"
+   ],
+   [
+    "11902-120450",
+    "Skai > Governance > Proposals > Staking (768 x 1024px)"
+   ],
+   [
+    "12097-431847",
+    "Claimed - not 100% represented - claimed"
+   ],
+   [
+    "12097-431652",
+    "Vault actions - deposit and unclaimed"
+   ],
+   [
+    "11902-121921",
+    "Skai > Governance > Proposals > Delegation (768 x 1024px)"
+   ],
+   [
+    "11902-122611",
+    "Skai > Governance > Proposals > Delegation 1VH (768 x 1024px)"
+   ],
+   [
+    "11902-123338",
+    "Skai > Governance > Proposals > Delegation > Delegate modal 1VH (768 x 1024px)"
+   ],
+   [
+    "11902-123792",
+    "Skai > Governance > Proposals > Financials 1VH (768 x 1024px)"
+   ],
+   [
+    "11902-124420",
+    "Skai > Governance > Proposals > Financials (768 x 1024px)"
+   ],
+   [
+    "11902-124936",
+    "Skai > Governance > Proposals > About 1VH (768 x 1024px)"
+   ],
+   [
+    "12097-429324",
+    "Skai > Governance > Proposals > New proposal (768 x 1024px)"
+   ],
+   [
+    "12097-431591",
+    "DAO boost - met"
+   ],
+   [
+    "11900-112324",
+    "Skai > Governance > Proposals (768 x 1024px)"
+   ],
+   [
+    "11900-115023",
+    "Skai > Governance > Proposals > Sample proposal - view - details caollapsed 1VH (768 x 1024px)"
+   ],
+   [
+    "11900-116992",
+    "Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (768 x 1024px)"
+   ],
+   [
+    "11900-116258",
+    "Skai > Governance > Proposals > Sample proposal - view (768 x 1024px)"
+   ],
+   [
+    "11900-115524",
+    "Skai > Governance > Proposals > Sample proposal - view - details expanded 1VH (768 x 1024px)"
+   ],
+   [
+    "11720-329924",
+    "Skai > Learn > Skai university - about (768 x 1024px)"
+   ],
+   [
+    "11731-334110",
+    "Skai > Learn > Skai university > Sample course 1VH (768 x 1024px)"
+   ],
+   [
+    "11731-334936",
+    "Skai > Learn > Skai university > Purchase modal 1VH (768 x 1024px)"
+   ],
+   [
+    "11743-337927",
+    "Skai > Learn > Skai university > Sample course > Purchased > Sample video 1VH (768 x 1024px)"
+   ],
+   [
+    "12139-450594",
+    "Videoframe - playing"
+   ],
+   [
+    "12139-450651",
+    "Videoframe - before playing"
+   ],
+   [
+    "11743-338537",
+    "Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (768 x 1024px)"
+   ],
+   [
+    "11736-336798",
+    "Skai > Learn > Skai university > Sample course > Purchased (768 x 1024px)"
+   ],
+   [
+    "12166-455681",
+    "Course progress - completed"
+   ],
+   [
+    "11747-338776",
+    "Skai > Learn > Skai university > Sample course > Purchased (768 x 1024px)"
+   ],
+   [
+    "11752-340049",
+    "Skai > Learn > Skai university > Create course (768 x 1024px)"
+   ],
+   [
+    "11759-341556",
+    "Skai > Learn > Skai university > Create course - Step 2 1VH (768 x 1024px)"
+   ],
+   [
+    "11752-340430",
+    "Skai > Learn > Skai university > Create course - preview 1VH (768 x 1024px)"
+   ],
+   [
+    "11752-340994",
+    "Skai > Learn > Skai university > Create course - preview 1VH (768 x 1024px)"
+   ],
+   [
+    "11731-334391",
+    "Skai > Learn > Skai university > Sample course (768 x 1024px)"
+   ],
+   [
+    "11720-330741",
+    "Skai > Learn > Skai university - about 1VH (768 x 1024px)"
+   ],
+   [
+    "11730-332652",
+    "Skai > Learn > Skai university - courses (768 x 1024px)"
+   ],
+   [
+    "11730-332229",
+    "Skai > Learn > Skai university - courses 1VH (768 x 1024px)"
+   ],
+   [
+    "11764-348558",
+    "Skai > Learn > Skai university > Articles (768 x 1024px)"
+   ],
+   [
+    "11730-332977",
+    "Courses - buy"
+   ],
+   [
+    "11945-93362",
+    "Skai > Learn (375 x 812px)"
+   ],
+   [
+    "12141-451132",
+    "Skai > Learn > Getting started with crypto (375 x 812px)"
+   ],
+   [
+    "12141-453076",
+    "Skai > Learn > Articles > Sample article (375 x 812px)"
+   ],
+   [
+    "12141-453691",
+    "Skai > Learn > Articles > Create article - empty 1VH (375 x 812px)"
+   ],
+   [
+    "12141-454982",
+    "Skai > Learn > Articles > Create article (375 x 812px)"
+   ],
+   [
+    "12141-454200",
+    "Skai > Learn > Articles > Create article 1VH (375 x 812px)"
+   ],
+   [
+    "11894-102948",
+    "Skai > Learn > Skai university - about (375 x 812px)"
+   ],
+   [
+    "11894-105984",
+    "Skai > Learn > Skai university > Sample course (375 x 812px)"
+   ],
+   [
+    "11897-108098",
+    "Skai > Learn > Skai university > Sample course > Purchased (375 x 812px)"
+   ],
+   [
+    "12166-455730",
+    "Course progress - completed"
+   ],
+   [
+    "11939-142514",
+    "Skai > Learn > Skai university > Sample course > Purchased (375 x 812px)"
+   ],
+   [
+    "11942-143538",
+    "Skai > Learn > Skai university > Create course  (375 x 812px)"
+   ],
+   [
+    "11943-145177",
+    "Skai > Learn > Skai university > Create course - Step 2 (375 x 812px)"
+   ],
+   [
+    "12141-450956",
+    "Skai > Learn > Articles (375 x 812px)"
+   ],
+   [
+    "11943-143981",
+    "Skai > Learn > Skai university > Create course - preview 1VH (375 x 812px)"
+   ],
+   [
+    "11943-144590",
+    "Skai > Learn > Skai university > Create course - preview 1VH (375 x 812px)"
+   ],
+   [
+    "11939-141290",
+    "Skai > Learn > Skai university > Sample course > Purchased > Sample video 1VH (375 x 812px)"
+   ],
+   [
+    "12139-450707",
+    "Videoframe - playing"
+   ],
+   [
+    "12139-450745",
+    "Videoframe - before playing"
+   ],
+   [
+    "11945-94473",
+    "Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (375 x 812px)"
+   ],
+   [
+    "11894-106261",
+    "Skai > Learn > Skai university > Sample course 1VH (375 x 812px)"
+   ],
+   [
+    "11896-106898",
+    "Skai > Learn > Skai university > Purchase modal 1VH (375 x 812px)"
+   ],
+   [
+    "11894-103839",
+    "Skai > Learn > Skai university - courses (375 x 812px)"
+   ],
+   [
+    "12166-455601",
+    "Courses - buy"
+   ],
+   [
+    "12141-455088",
+    "Skai > Learn > Skai university > Articles  (375 x 812px)"
+   ],
+   [
+    "11894-104173",
+    "Skai > Learn > Skai university 1VH (375 x 812px)"
+   ],
+   [
+    "11893-101461",
+    "Skai > Learn > Courses 1VH (375 x 812px)"
+   ],
+   [
+    "11894-104346",
+    "Skai > Learn > Skai university 1VH (375 x 812px)"
+   ],
+   [
+    "11900-109506",
+    "Skai > Governance 1VH (375 x 812px)"
+   ],
+   [
+    "12003-382685",
+    "Skai > Earn (375 x 812px)"
+   ],
+   [
+    "12136-432663",
+    "Skai > Earn 1VH (375 x 812px)"
+   ],
+   [
+    "12003-384627",
+    "Skai > Earn - Liquidity only 1VH (375 x 812px)"
+   ],
+   [
+    "12003-386268",
+    "Skai > Earn > My positions(375 x 812px)"
+   ],
+   [
+    "12003-386958",
+    "Skai > Earn > My positions - empty (375 x 812px)"
+   ],
+   [
+    "12003-387432",
+    "Skai > Earn > My positions > View details 1VH (375 x 812px)"
+   ],
+   [
+    "12004-388816",
+    "Skai > Earn > Vaults - House (375 x 812px)"
+   ],
+   [
+    "12215-457316",
+    "House vault - if low"
+   ],
+   [
+    "12016-75585",
+    "Skai > Earn > Vaults - ALT (375 x 812px)"
+   ],
+   [
+    "12004-390587",
+    "Skai > Earn > Vault > Trading vault (375 x 812px)"
+   ],
+   [
+    "12215-457464",
+    "Lock - with percentage"
+   ],
+   [
+    "12004-392671",
+    "Skai > Earn > Vault > Trading vault ALT (375 x 812px)"
+   ],
+   [
+    "12004-393178",
+    "Skai > Earn > Vault > House vault (375 x 812px)"
+   ],
+   [
+    "12004-394869",
+    "Skai > Earn > Referral (375 x 812px)"
+   ],
+   [
+    "12004-393542",
+    "Skai > Earn > Vault > House vault ALT (375 x 812px)"
+   ],
+   [
+    "12004-408480",
+    "Skai > Earn > Faucet (375 x 812px)"
+   ],
+   [
+    "12261-475335",
+    "Skai > Earn > Faucet 1VH (375 x 812px)"
+   ],
+   [
+    "12225-458552",
+    "With winners"
+   ],
+   [
+    "12225-458263",
+    "Frame 1000003978"
+   ],
+   [
+    "12004-409355",
+    "Skai > Earn > Faucet > Tickets (375 x 812px)"
+   ],
+   [
+    "12215-457820",
+    "Tickets - empty"
+   ],
+   [
+    "12004-410871",
+    "Skai > Earn > Faucet > Winners (375 x 812px)"
+   ],
+   [
+    "12004-410317",
+    "Skai > Earn > Faucet > Earn more (375 x 812px)"
+   ],
+   [
+    "12009-412243",
+    "Skai > Earn > Faucet > Earn more (375 x 812px)"
+   ],
+   [
+    "12004-389667",
+    "Skai > Earn > Vaults - Trading (375 x 812px)"
+   ],
+   [
+    "12003-387906",
+    "Skai > Earn > My positions - on:hover 1VH (375 x 812px)"
+   ],
+   [
+    "12003-385486",
+    "Skai > Earn - Liquidity only - liquidity added 1VH (375 x 812px)"
+   ],
+   [
+    "12004-397714",
+    "Skai > Earn > Sample opportunity - liquidity (375 x 812px)"
+   ],
+   [
+    "12004-402326",
+    "Skai > Earn > Sample opportunity - liquidity > Add liquidity (375 x 812px)"
+   ],
+   [
+    "12004-406527",
+    "Skai > Earn > Sample opportunity - liquidity > Add liquidity (375 x 812px)"
+   ],
+   [
+    "12004-405136",
+    "Skai > Earn > Sample opportunity - liquidity > Add liquidity > Confirm liquidity add 1VH (375 x 812px)"
+   ],
+   [
+    "12004-398296",
+    "Skai > Earn > Sample opportunity - save (375 x 812px)"
+   ],
+   [
+    "12004-399859",
+    "Skai > Earn > Sample opportunity - Lend (375 x 812px)"
+   ],
+   [
+    "12004-396180",
+    "Skai > Earn > Sample opportunity - Lend > Lend 1VH (375 x 812px)"
+   ],
+   [
+    "12004-396474",
+    "Skai > Earn > Sample opportunity - save > Save 1VH (375 x 812px)"
+   ],
+   [
+    "12004-396713",
+    "Skai > Earn > Sample opportunity - Lend > Lend > Confirm lend 1VH (375 x 812px)"
+   ],
+   [
+    "12004-396856",
+    "Skai > Earn > Sample opportunity - save > Save > Confirm save 1VH (375 x 812px)"
+   ],
+   [
+    "12003-383790",
+    "Skai > Earn > Stake 1VH (375 x 812px)"
+   ],
+   [
+    "12003-384268",
+    "Skai > Earn > Stake > confirm stake 1VH (375 x 812px)"
+   ],
+   [
+    "12003-384544",
+    "modal"
+   ],
+   [
+    "12003-384165",
+    "Swap - no value"
+   ],
+   [
+    "12003-383100",
+    "Skai > Earn - with pagination (375 x 812px)"
+   ],
+   [
+    "11902-127189",
+    "Skai > Governance > Proposals 1VH (375 x 812px)"
+   ],
+   [
+    "11906-133540",
+    "Skai > Governance > Proposals > Staking (375 x 812px)"
+   ],
+   [
+    "12136-431944",
+    "Claimed - not 100% represented"
+   ],
+   [
+    "12136-431948",
+    "Claimed - not 100% represented - claimed"
+   ],
+   [
+    "12136-431955",
+    "Vault actions - deposit and unclaimed"
+   ],
+   [
+    "11907-137387",
+    "Skai > Governance > Proposals > Delegation - on chain 1VH (375 x 812px)"
+   ],
+   [
+    "11915-139136",
+    "Skai > Governance > Proposals > Financials 1VH (375 x 812px)"
+   ],
+   [
+    "11917-139866",
+    "Skai > Governance > Proposals > Financials (375 x 812px)"
+   ],
+   [
+    "11917-140159",
+    "Skai > Governance > Proposals > About (375 x 812px)"
+   ],
+   [
+    "11907-138358",
+    "Skai > Governance > Proposals > Delegation > Delegate modal 1VH (375 x 812px))"
+   ],
+   [
+    "11907-137821",
+    "Skai > Governance > Proposals > Delegation - off chain 1VH (375 x 812px)"
+   ],
+   [
+    "11907-136716",
+    "Skai > Governance > Proposals > Delegation (375 x 812px)"
+   ],
+   [
+    "11907-134647",
+    "Skai > Governance > Proposals > Staking 1VH (375 x 812px)"
+   ],
+   [
+    "12097-431217",
+    "Skai > Governance > Proposals > New proposal (375 x 812px)"
+   ],
+   [
+    "12097-431615",
+    "DAO boost - met"
+   ],
+   [
+    "11902-127752",
+    "Skai > Governance > Proposals (375 x 812px)"
+   ],
+   [
+    "11904-130419",
+    "Skai > Governance > Proposals > Sample proposal - view 1VH - details expanded - details expanded (375 x 812px)"
+   ],
+   [
+    "11904-130968",
+    "Skai > Governance > Proposals > Sample proposal - view 1VH - intro expanded 1VH (375 x 812px)"
+   ],
+   [
+    "11904-131516",
+    "Skai > Governance > Proposals > Sample proposal - view 1VH - details collapsed - intro collapsed 1VH (375 x 812px)"
+   ],
+   [
+    "11904-132064",
+    "Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (375 x 812px)"
+   ],
+   [
+    "11875-44348",
+    "Skai > Account (375 x 812px)"
+   ],
+   [
+    "12097-427323",
+    "Created tokens"
+   ],
+   [
+    "11875-87593",
+    "Skai > Account > Performance overview (375 x 812px)"
+   ],
+   [
+    "11881-88335",
+    "Skai > Account > Performance overview (375 x 812px)"
+   ],
+   [
+    "12082-420596",
+    "Skai > Account > Performance overview > Share networth 1VH (375 x 812px)"
+   ],
+   [
+    "12082-421041",
+    "Skai > Account > Performance overview > Share networth 1VH (375 x 812px)"
+   ],
+   [
+    "11881-88859",
+    "Skai > Account > Account settings 1VH (375 x 812px)"
+   ],
+   [
+    "11881-89414",
+    "Skai > Account > Account settings > Profile (375 x 812px)"
+   ],
+   [
+    "12082-427015",
+    "input/primary-inputs"
+   ],
+   [
+    "11881-89626",
+    "Skai > Account > Account settings > Security (375 x 812px)"
+   ],
+   [
+    "12080-415107",
+    "Skai > Account > Account settings > Security > 2FA > Auth app 1VH (375 x 812px)"
+   ],
+   [
+    "12080-415727",
+    "Skai > Account > Account settings > Security > Delete account 1VH (375 x 812px)"
+   ],
+   [
+    "12080-415417",
+    "Skai > Account > Account settings > Security > 2FA > Auth app 1VH (375 x 812px)"
+   ],
+   [
+    "11881-93654",
+    "Skai > Account > Account settings > Token (375 x 812px)"
+   ],
+   [
+    "11881-94366",
+    "Skai > Account > Account settings > Preferences (375 x 812px)"
+   ],
+   [
+    "11884-94667",
+    "Skai > Account > Account settings > Private key 1VH (375 x 812px)"
+   ],
+   [
+    "11875-86552",
+    "Skai > Account 1VH (375 x 812px)"
+   ],
+   [
+    "11768-349002",
+    "Skai > Account (768 x 1024px)"
+   ],
+   [
+    "12097-427224",
+    "Created tokens"
+   ],
+   [
+    "11793-351692",
+    "Skai > Account > Performance overview (768 x 1024px)"
+   ],
+   [
+    "12080-420150",
+    "Skai > Account > Performance overview > Share networth 1VH (768 x 1024px)"
+   ],
+   [
+    "11843-353118",
+    "Skai > Account > Account settings 1VH (768 x 1024px)"
+   ],
+   [
+    "11843-353663",
+    "Skai > Account > Account settings > Profile (768 x 1024px)"
+   ],
+   [
+    "12082-426982",
+    "input/primary-inputs"
+   ],
+   [
+    "11843-354091",
+    "Skai > Account > Account settings > Security (768 x 1024px)"
+   ],
+   [
+    "12082-426929",
+    "input/primary-inputs - on:hover"
+   ],
+   [
+    "12080-414162",
+    "Skai > Account > Account settings > Security > 2FA > Auth app 1VH (768 x 1024px)"
+   ],
+   [
+    "12080-414792",
+    "Skai > Account > Account settings > Security > Delete account 1VH (768 x 1024px)"
+   ],
+   [
+    "12080-414477",
+    "Skai > Account > Account settings > Security > 2FA > Auth app 1VH (768 x 1024px)"
+   ],
+   [
+    "11846-354965",
+    "Skai > Account > Account settings > Token 1VH (768 x 1024px)"
+   ],
+   [
+    "11846-355280",
+    "Skai > Account > Account settings > Preferences (768 x 1024px)"
+   ],
+   [
+    "11846-355837",
+    "Skai > Account > Account settings > Private key 1VH (768 x 1024px)"
+   ],
+   [
+    "11846-356139",
+    "Skai > Account > Account settings > Private key - step 2 1VH (768 x 1024px)"
+   ],
+   [
+    "11847-357151",
+    "Skai > Leaderboard (768 x 1024px)"
+   ],
+   [
+    "12082-425650",
+    "Skai > Leaderboard > Share portfolio 1VH (768 x 1024px)"
+   ],
+   [
+    "11872-41908",
+    "Skai > Rewards (768 x 1024px)"
+   ],
+   [
+    "11872-42520",
+    "Skai > Rewards > My referrals (768 x 1024px)"
+   ],
+   [
+    "11872-43820",
+    "Skai > Rewards > My referrals - empty (768 x 1024px)"
+   ],
+   [
+    "11793-352217",
+    "Skai > Account > Performance overview (768 x 1024px)"
+   ],
+   [
+    "11768-350087",
+    "Skai > Account 1VH (768 x 1024px)"
+   ],
+   [
+    "11884-95322",
+    "Skai > Account > Account settings > Private key - step 2 1VH (375 x 812px)"
+   ],
+   [
+    "11884-96408",
+    "Skai > Leaderboard (375 x 812px)"
+   ],
+   [
+    "11946-148523",
+    "Skai > Leaderboard (375 x 812px)"
+   ],
+   [
+    "12082-426150",
+    "Skai > Leaderboard > Share portfolio 1VH (375 x 812px)"
+   ],
+   [
+    "12082-426533",
+    "Skai > Leaderboard > Share portfolio 1VH (375 x 812px)"
+   ],
+   [
+    "12225-461211",
+    "Skai > Earn > Faucet > Winners > Share outcome 1VH (768 x 1024px)"
+   ],
+   [
+    "12225-462288",
+    "Skai > Earn > Faucet > Winners > Share outcome 1VH (375 x 812px)"
+   ],
+   [
+    "12225-462758",
+    "Skai > Earn > Faucet > Winners > Share outcome (375 x 812px)"
+   ],
+   [
+    "11885-98503",
+    "Skai > Rewards (375 x 812px)"
+   ],
+   [
+    "11885-99426",
+    "Skai > Rewards > My referrals (375 x 812px)"
+   ],
+   [
+    "11885-100111",
+    "Skai > Rewards > My referrals - empty (375 x 812px)"
+   ],
+   [
+    "11885-98886",
+    "Skai > Rewards (375 x 812px)"
+   ],
+   [
+    "12082-426944",
+    "input/primary-inputs - on:hover"
+   ],
+   [
+    "12097-427080",
+    "dropdown-account overview 5"
+   ],
+   [
+    "12097-427087",
+    "dropdown-account overview 6"
+   ],
+   [
+    "12097-427475",
+    "Overview - play"
+   ],
+   [
+    "12097-427652",
+    "Overview - play -hidden"
+   ],
+   [
+    "12097-427765",
+    "Overview - play"
+   ],
+   [
+    "12097-428192",
+    "sidebar"
+   ],
+   [
+    "12097-427882",
+    "Overview - play -hidden"
+   ],
+   [
+    "12166-455891",
+    "sidebar"
+   ],
+   [
+    "12166-455671",
+    "dropdown-courses"
+   ],
+   [
+    "12166-455702",
+    "dropdown-courses"
+   ],
+   [
+    "12166-456540",
+    "dropdown-multiselect"
+   ],
+   [
+    "12261-469767",
+    "Skai > Earn > My positions > Update position (768 x 1024px)"
+   ],
+   [
+    "12261-470424",
+    "Skai > Earn > My positions > Update position (375 x 812px)"
+   ]
+  ]
+ }
+}
