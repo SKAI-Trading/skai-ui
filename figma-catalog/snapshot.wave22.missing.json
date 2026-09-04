@@ -1,0 +1,198 @@
+{
+  "legal": {
+    "pageId": "2311:5967",
+    "pageName": "✅ Privacy and Terms",
+    "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+    "liveChildCount": 10,
+    "nodes": [
+      [
+        "2311-5968",
+        "Privacy (1440 x 900px)"
+      ],
+      [
+        "2311-6560",
+        "Terms (1440 x 900px)"
+      ],
+      [
+        "2311-7079",
+        "Directory"
+      ],
+      [
+        "2311-7082",
+        "Breakpoint"
+      ],
+      [
+        "2311-7084",
+        "Breakpoint"
+      ],
+      [
+        "2311-7086",
+        "Breakpoint"
+      ],
+      [
+        "2311-7088",
+        "Privacy (768 x 1024px)"
+      ],
+      [
+        "2311-7680",
+        "Terms (768 x 1024px)"
+      ],
+      [
+        "2311-8199",
+        "Privacy (375 x 812px)"
+      ],
+      [
+        "2311-8793",
+        "Terms (375 x 812px)"
+      ]
+    ]
+  },
+  "user-flow": {
+    "pageId": "10438:15679",
+    "pageName": "🚧 User Flow",
+    "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+    "liveChildCount": 3,
+    "nodes": [
+      [
+        "10439-43649",
+        "Skai > Home 1VH (1440 x 900px)"
+      ],
+      [
+        "10440-1985",
+        "Skai > Trade > Perpetual futures - user not signed 1VH (1440 x 900px)"
+      ],
+      [
+        "10442-7290",
+        "Skai > Play 1VH (1440 x 900px)"
+      ]
+    ]
+  },
+  "limbo": {
+    "pageId": "9929:16390",
+    "pageName": "✅ Limbo - Skai originals",
+    "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+    "liveChildCount": 14,
+    "nodes": [
+      [
+        "9948-24606",
+        "Directory"
+      ],
+      [
+        "9948-24612",
+        "Breakpoint"
+      ],
+      [
+        "9948-24614",
+        "Breakpoint"
+      ],
+      [
+        "9948-24616",
+        "Breakpoint"
+      ],
+      [
+        "9948-24618",
+        "Skai > Play > Casino > Blackjack (1440 x 900px)"
+      ],
+      [
+        "9948-25380",
+        "Skai > Play > Casino > Blackjack (375 x 812px)"
+      ],
+      [
+        "10004-29637",
+        "Desktop"
+      ],
+      [
+        "10004-29705",
+        "Desktop"
+      ],
+      [
+        "10004-29756",
+        "Frame 270"
+      ],
+      [
+        "10004-29965",
+        "Frame 1000004293"
+      ],
+      [
+        "10021-30111",
+        "Mobile"
+      ],
+      [
+        "10021-30457",
+        "Frame 1000004295"
+      ],
+      [
+        "10021-30525",
+        "Frame 1000004296"
+      ],
+      [
+        "10030-30753",
+        "hf_20260818_010614_6f34f54e-9805-49bd-8316-f8ad10f2188c 1"
+      ]
+    ]
+  },
+  "video-poker": {
+    "pageId": "9737:13087",
+    "pageName": "✅ Video Poker - Skai originals",
+    "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+    "liveChildCount": 14,
+    "nodes": [
+      [
+        "9738-13089",
+        "Directory"
+      ],
+      [
+        "9738-13095",
+        "Breakpoint"
+      ],
+      [
+        "9738-13097",
+        "Breakpoint"
+      ],
+      [
+        "9738-13099",
+        "Breakpoint"
+      ],
+      [
+        "9738-13101",
+        "Skai > Play > Casino > Scratchers (1440 x 900px)"
+      ],
+      [
+        "9738-13811",
+        "Skai > Play > Casino > Blackjack (375 x 812px)"
+      ],
+      [
+        "9738-14502",
+        "Selection"
+      ],
+      [
+        "9760-9378",
+        "Frame 1000004212"
+      ],
+      [
+        "9760-9691",
+        "Mobile"
+      ],
+      [
+        "9760-9610",
+        "Frame 1000004211"
+      ],
+      [
+        "9760-9933",
+        "Mobile"
+      ],
+      [
+        "9760-10290",
+        "Selection"
+      ],
+      [
+        "9760-10454",
+        "Selection"
+      ],
+      [
+        "9760-10586",
+        "Selection"
+      ]
+    ]
+  }
+}
