@@ -42843,6 +42843,32 @@
     "13006-219554",
     "Right menu"
    ]
-  ]
+  ],
+  "cataloguedElsewhere": {
+   "why": "catalogued under trade-2 but living on page 3:3 (Trade 1) of the same file, read back one id at a time. They are mis-sectioned, not deleted, so a removal reported against them would be wrong.",
+   "page": "3:3",
+   "nodes": [
+    [
+     "3928-84939",
+     "Right menu"
+    ],
+    [
+     "4018-42130",
+     "Frame 444"
+    ],
+    [
+     "7890-134142",
+     "Frame 446"
+    ],
+    [
+     "7909-43414",
+     "sidebar"
+    ],
+    [
+     "9081-273544",
+     "sidebar - open"
+    ]
+   ]
+  }
  }
 }
