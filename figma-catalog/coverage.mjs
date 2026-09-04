@@ -523,9 +523,23 @@ for (const p of pages) {
       within a generation is right, because a lane that measured beats a lane
       that did not look.
     */
+    /*
+      A wave that resumes a killed run carries a letter — wave15b continues
+      wave15 — and it is NEWER than the run it continues. Ranking multiplies the
+      number so the letter can never outrank it: wave15 is 1500, wave15b 1502,
+      wave18b 1802. A file with no wave in its name stays 0, which is correct —
+      the pre-wave surface files are the oldest generation there is.
+
+      The letter is not optional to parse. Requiring a dot straight after the
+      digits sent every suffixed file to generation 0, where it lost to every
+      other wave's row for the same frame; 87 measured rows across two waves were
+      counted and then discarded on that character.
+    */
     const genOf = (file) => {
-      const m = /^status\.wave(\d+)\./.exec(file);
-      return m ? Number(m[1]) : 0;
+      const m = /^status\.wave(\d+)([a-z]*)\./.exec(file);
+      if (!m) return 0;
+      const suffix = m[2] ? m[2].charCodeAt(0) - 96 : 0;
+      return Number(m[1]) * 100 + suffix;
     };
     const newestGen = Math.max(...rows.map((r) => genOf(r.file)));
     const current = rows.filter((r) => genOf(r.file) === newestGen);
