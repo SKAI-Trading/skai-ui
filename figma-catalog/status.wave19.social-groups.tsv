@@ -1,0 +1,44 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-groups, wave 19. Partition as briefed: src/components/social/groups/**
+# and src/pages/social/**. The first of those does not exist in this tree; the
+# groups implementation lives under src/pages/social/groups/, with
+# TradingGroups.tsx as the page that mounts it. The second is broader than this
+# lane's surface — 60 open frames carry an implFile under src/pages/social/**,
+# and the feed, discover, messages and live files among them belong to sibling
+# lanes. This lane worked the Groups surface only: 12 open frames whose implFile
+# is TradingGroups.tsx, groups/GroupsSearchTable.tsx or groups/groupsView.ts.
+#
+# Every # in this file is at column 0. coverage.mjs tests startsWith("#") with no
+# trimStart, so an indented comment is not a comment to every reader.
+#
+# WHAT WAS MEASURED, AND WHAT WAS NOT. Six component nodes, each opened at its
+# own board and read on geometry, colour and type: the three tabs and the panel
+# row that holds them, at 375, 768 and 1440, plus the panel column at 1440 and
+# both of the sections whose corners it clips, at all three boards. Nothing here
+# is inferred from a sibling frame.
+#
+# The eleven other open frames in the slice were NOT measured. Their own tab-row
+# nodes were not opened, so although they draw the same control, saying so would
+# be reading one frame off another. They are: the All-groups and Created frames
+# at 375 and 768, the two Discover frames at 375, the Created and Join-gated-group
+# frames at 1440, and Table ALT. Their rows are untouched and stand as they were.
+#
+# WHY COMPONENT DEPTH. The measurement is complete at that depth and cannot be at
+# screen depth: every screen in this family still draws a five-avatar Members
+# cluster whose shape is decided by row-level policy on the membership table, so
+# no screen row can go to done on the strength of its chrome. Promoting the
+# chrome separately is what stops a control that IS at parity from being hidden
+# behind a table that is not.
+#
+# COLOUR. Every value below was read by name off the node, fills and node opacity
+# separately. The idle tabs are the case that matters: the fill is #FFFFFF at
+# full strength and the NODE carries 0.64, which is a different thing from a grey
+# label and reads differently against every other white in the row.
+Groups tab bar (375) [11396-76711]	done	src/pages/social/groups/groupsView.ts	/trading-groups	PROMOTED - measured on all three axes at this board and rebuilt against the numbers. GEOMETRY three tabs 24 apart; the current one boxed 8 across and 2 down on a 4px radius, which sums to 75x20 against a 16px line box; the other two with no box and no padding at all. COLOUR the current tab fills #123F3C and labels #FFFFFF; the other two label #FFFFFF at a node opacity of 0.64 and fill nothing. TYPE Manrope Regular 14/16 at -4 pct. FIXED: the shared tab primitive painted the current tab a 20 pct tint of the app's green with a green label, a 1px green ring and a shadow, at 12 across and 6 down on an 8px radius in medium weight with no tracking, and the three tabs touched because the list set no gap. Four of those are written behind the active-state variant, where an unprefixed value joins them instead of displacing them, so each had to be answered behind the same variant.	mobile=done
+Groups tab bar (768) [11398-85937]	done	src/pages/social/groups/groupsView.ts	/trading-groups	PROMOTED - measured on all three axes at this board. GEOMETRY 24 between the tabs; the current one boxed 8 across and 2 down at r4, summing to 75x22 against an 18px line box; the other two unboxed. COLOUR #123F3C fill under a #FFFFFF label on the current tab, #FFFFFF at 0.64 node opacity on the other two. TYPE Manrope Regular 14/18 at -4 pct - one step of leading up from the phone board and the only value that moves between the two. FIXED as at the phone board; the leading step was already right and everything around it was not.	tablet=done
+Groups tab bar (1440) [5194-270848]	done	src/pages/social/groups/groupsView.ts	/trading-groups	PROMOTED - measured on all three axes at this board. GEOMETRY 24 between the tabs, the current one 75x22 from an 8 and 2 inset on a 4px radius, the other two unboxed. COLOUR #123F3C under white, and white at 0.64 node opacity on the two idle labels. TYPE Manrope Regular 14/18 at -4 pct. FIXED as above. Note the radius: matching r4 by NAME would have shipped 8, because this app overrides the small radius steps from a single custom property and its sm rung resolves 8 rather than the 4 the frame draws - the literal is deliberate.	desktop=done
+Groups panel tab row (375) [11396-76708]	done	src/pages/social/groups/groupsView.ts	/trading-groups	PROMOTED - measured on all three axes and rebuilt. GEOMETRY 54 tall on a 343 panel, inset 12 across, clearing 12 above its content and 10 below - the row sets no height, it is the 32-tall filter control plus that 22, and the asymmetry is the sum of three nested insets the frame draws separately as 4 at the top, 4 and 6, and 4 and 4. Top corners 12. COLOUR fill #122524 under a single 1px #123F3C rule along the bottom edge. TYPE no text of its own; the two things it holds are read at their own depth. FIXED: a flat 12 inset across at every width, a symmetric 12 down that ran the row 2px tall here, a rule in the app's semantic border token, and no fill of its own at all.	mobile=done
+Groups panel tab row (768) [11398-85934]	done	src/pages/social/groups/groupsView.ts	/trading-groups	PROMOTED - measured on all three axes. GEOMETRY 56 tall on a 708 panel, inset 16 across, 12 above and 10 below a 34-tall filter control. Top corners 12, the same as the phone board. COLOUR #122524 over a 1px #123F3C rule. TYPE none of its own. FIXED: the 12px inset was the phone's number carried across, and the 12 below ran the row 58 against 56.	tablet=done
+Groups panel tab row (1440) [5194-270845]	done	src/pages/social/groups/groupsView.ts	/trading-groups	PROMOTED - measured on all three axes. GEOMETRY 56 tall on a 1144 panel, inset 16 across, 12 above and 10 below the same 34-tall control. Top corners 16, a step up from the 12 both narrow boards draw; hung at 1024 because that is where this surface already steps between its tablet and desktop values, and 640 would land it 128px early in a band no board describes. COLOUR #122524 over a 1px #123F3C rule. TYPE none of its own. FIXED as at the tablet board, plus the corner step, which did not exist.	desktop=done
+Groups panel corners [5198-47138]	done	src/pages/social/groups/groupsView.ts	/trading-groups	PROMOTED - measured on all three axes. GEOMETRY the panel column carries NO fill, NO stroke and NO radius of its own; it stacks two sections and the corners belong to them. Read at all three boards: the tab row closes the top on 12, 12 and 16, and the body closes the bottom on 12, 12 and 24. Asked for by name and absent: any stroke on the column. COLOUR both sections fill #122524, so the fill sits on the clipping wrapper. TYPE none. FIXED: the panel wore a full four-sided border in a semantic token the frame binds nowhere, over a 40 pct card fill, on one 12px radius at every corner and every width - so the desktop board lost both steps, and the bottom pair is not the same number as the top pair. Matching either by NAME would have shipped 24 on both, because the stock scale separates them as two rungs and the scale this app emits collapses them to one. NOT SHIPPED, and belonging to the body rather than to this column: its 0/10/80 shadow at 25 pct black, its 12 / 16-across-12-down / 8 inset, and the 44 pct #001615 surface on 12px corners inside that inset.	desktop=done
+Social > Groups - search 1VH (1440) [5194-270743]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	RE-MEASURED at 1440 for the tab row and the tab bar, which are this frame's own nodes and not a sibling's - see the component rows for every number. Both are rebuilt. STAYS partial for the Members column, which draws five 32px avatars overlapped 26 with a "+12" tag: the read behind it returns rows only for a public group or a group the viewer belongs to, so the column can be drawn for some groups and must stay a count for the rest, and that is a shape decision rather than a layout one. Also unshipped and named on the panel row: the body's inset, its shadow and the tinted surface inside it.	desktop=partial
