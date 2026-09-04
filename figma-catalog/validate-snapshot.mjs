@@ -12,11 +12,13 @@
  * A lane that captures 30 of 50 children reports 20 deletions that never
  * happened, each one an invitation to delete working code.
  *
- * It has happened. On 2026-09-04 a harvest of `towers` returned 30 nodes for a
- * canvas holding 50, against 72 rows in the registry. Reported naively that is
- * "-42 GONE"; the truth was about -22, and the rest was the harvest missing
- * nodes. Nothing in the snapshot itself distinguished the two — a count cannot
- * certify itself, because the count is the thing in doubt.
+ * It has happened. The Figma metadata tree, which is the cheap way to harvest a
+ * page, does not descend into every frame: it returned 1,914 nodes for a towers
+ * page holding 2,011, 2,245 for a rock-paper-scissors page holding 2,757, and
+ * 46 for a cover-images page holding 214. A lane that counts what came back has
+ * counted the instrument, not the page. Nothing in the snapshot distinguishes
+ * the two — a count cannot certify itself, because the count is the thing in
+ * doubt.
  *
  * ── What a snapshot must now carry ───────────────────────────────────────────
  *   { "<section>": {
@@ -67,11 +69,38 @@ function registryCounts() {
   return out;
 }
 
-/** Registry node ids per section, for the depth check below. */
+/**
+ * Node-ids the catalog already records as deleted upstream.
+ *
+ * `bugref-aliases.tsv` is where a deletion is written down once somebody has
+ * read the id back against Figma and found nothing; `build-registry.mjs` reads
+ * the same rows to set `gone` on a registry row, and `figma-drift.mjs` drops
+ * those rows before it diffs. The depth check below has to drop them too, or it
+ * measures a harvest against ids the pipeline it guards has already retired —
+ * and a section retires enough of them to fail on arithmetic alone.
+ */
+function retiredIds() {
+  const out = new Set();
+  const p = path.join(DIR, "bugref-aliases.tsv");
+  if (!fs.existsSync(p)) return out;
+  for (const line of fs.readFileSync(p, "utf8").split("\n")) {
+    if (!line || line.startsWith("#")) continue;
+    const [ref, , reason] = line.split("\t");
+    if (reason === "gone") out.add(ref.includes(":") ? ref.split(":").pop().trim() : ref.trim());
+  }
+  return out;
+}
+
+/**
+ * Registry node ids per section, for the depth check below, minus the ones
+ * recorded as deleted upstream. `excluded` carries the count so the report can
+ * say how much of a section was set aside rather than dropping it silently.
+ */
 function registryIds() {
   const p = path.join(DIR, "registry.json");
   if (!fs.existsSync(p)) return null;
   const frames = JSON.parse(fs.readFileSync(p, "utf8")).frames || {};
+  const retired = retiredIds();
   const out = {};
   for (const [key, f] of Object.entries(frames)) {
     const s = f.section || "(none)";
@@ -79,13 +108,16 @@ function registryIds() {
     // another; the node field is authoritative. Normalise to hyphen form,
     // which is what a snapshot's node list uses.
     const id = String(f.node || key).split(":").slice(-2).join("-").replace(":", "-");
-    (out[s] ||= new Set()).add(id);
+    const bucket = (out[s] ||= { ids: new Set(), excluded: 0 });
+    if (f.gone || retired.has(id)) bucket.excluded++;
+    else bucket.ids.add(id);
   }
   return out;
 }
 
 const prior = registryCounts();
 const priorIds = registryIds();
+const overlaps = [];
 const problems = [];
 const ok = [];
 let sections = 0;
@@ -163,18 +195,25 @@ for (const file of args) {
 
     // ── Depth check ──────────────────────────────────────────────────────────
     // A harvest can be internally consistent and still enumerate the wrong
-    // THING. Wave 21 captured 30 page children for towers and proved it: 30
-    // captured, 30 live children, validator green. The registry holds the full
-    // SUBTREE — 72 rows, of which only 18 were page children — so 54 registry
-    // ids had no counterpart and figma-drift.mjs reported them deleted, 97 of
-    // them carrying implFiles. Every one was still alive in Figma.
+    // THING. A page's children and its full subtree are both complete lists,
+    // and nothing inside a snapshot says which one was taken; where a page
+    // nests, the shallower list leaves catalogued ids unmentioned and drift
+    // reads every one as a deletion. Trade 2 is the live example — 407 of its
+    // 495 catalogued ids are page children and 83 sit as deep as level 15, so
+    // a children-only harvest of it claims 83 deletions that did not happen.
     //
     // Overlap is what separates the two cases. Genuine drift over weeks retires
     // some ids and adds others, but it does not fail to mention three quarters
     // of what the registry already holds. That is a depth mismatch, and it is
     // not a judgement call — it is arithmetic, so it fails rather than warns.
+    //
+    // The ids measured are the ones drift will actually diff, so anything the
+    // catalog records as deleted upstream is out of the denominator. A deletion
+    // nobody has written down yet still counts against the harvest, which is
+    // what keeps this check from being answered by an assertion.
     const was = prior?.[section];
-    const known = priorIds?.[section];
+    const known = priorIds?.[section]?.ids;
+    const retired = priorIds?.[section]?.excluded || 0;
     if (known && known.size) {
       const seen = nodes.filter((n) => known.has(String(n[0]).replace(":", "-"))).length;
       const overlap = seen / known.size;
@@ -190,6 +229,7 @@ for (const file of args) {
         });
         continue;
       }
+      overlaps.push({ section, seen, of: known.size, retired });
     }
 
     // Plausibility against the registry COUNT. Not a failure — the whole point
@@ -213,6 +253,16 @@ if (ok.length) {
   console.log("  verified complete:");
   for (const o of ok.sort((a, b) => b.n - a.n)) {
     console.log(`    ${pad(o.section, 24)} ${String(o.n).padStart(4)} nodes   ${o.note}`);
+  }
+  console.log();
+}
+
+if (overlaps.length) {
+  console.log("  registry ids found in each capture:");
+  for (const o of overlaps.sort((a, b) => b.of - a.of)) {
+    const pct = ((o.seen / o.of) * 100).toFixed(0);
+    const retired = o.retired ? `   (${o.retired} more recorded deleted upstream)` : "";
+    console.log(`    ${pad(o.section, 24)} ${String(o.seen).padStart(4)} of ${String(o.of).padEnd(4)} ${pct.padStart(3)}%${retired}`);
   }
   console.log();
 }
