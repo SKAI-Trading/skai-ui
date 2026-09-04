@@ -2,6 +2,12 @@
   "towers": {
     "pageId": "9061:15449",
     "pageName": "✅ Towers - Skai originals",
+    "harvestDepth": "subtree",
+    "registryOverlap": {
+      "registryIds": 72,
+      "seen": 19,
+      "pct": 26
+    },
     "liveChildCount": 1914,
     "nodes": [
       [
@@ -7665,6 +7671,12 @@
   "hilo": {
     "pageId": "9058:1819",
     "pageName": "✅ Hi-Lo - Skai originals",
+    "harvestDepth": "subtree",
+    "registryOverlap": {
+      "registryIds": 20,
+      "seen": 14,
+      "pct": 70
+    },
     "liveChildCount": 2175,
     "nodes": [
       [
@@ -16372,6 +16384,12 @@
   "keno": {
     "pageId": "9390:18295",
     "pageName": "✅ Keno - Skai originals",
+    "harvestDepth": "subtree",
+    "registryOverlap": {
+      "registryIds": 40,
+      "seen": 27,
+      "pct": 68
+    },
     "liveChildCount": 2637,
     "nodes": [
       [
@@ -26927,6 +26945,12 @@
   "rock-paper-scissors": {
     "pageId": "9390:18298",
     "pageName": "✅ Rock Paper Scissors - Skai originals",
+    "harvestDepth": "subtree",
+    "registryOverlap": {
+      "registryIds": 30,
+      "seen": 24,
+      "pct": 80
+    },
     "liveChildCount": 2245,
     "nodes": [
       [
@@ -35914,6 +35938,12 @@
   "cover-images": {
     "pageId": "9220:26175",
     "pageName": "🌎 Cover Images - Skai Originals",
+    "harvestDepth": "subtree",
+    "registryOverlap": {
+      "registryIds": 24,
+      "seen": 18,
+      "pct": 75
+    },
     "liveChildCount": 46,
     "nodes": [
       [
