@@ -67,7 +67,25 @@ function registryCounts() {
   return out;
 }
 
+/** Registry node ids per section, for the depth check below. */
+function registryIds() {
+  const p = path.join(DIR, "registry.json");
+  if (!fs.existsSync(p)) return null;
+  const frames = JSON.parse(fs.readFileSync(p, "utf8")).frames || {};
+  const out = {};
+  for (const [key, f] of Object.entries(frames)) {
+    const s = f.section || "(none)";
+    // Registry keys are hyphen-form for one file and fileKey-prefixed for
+    // another; the node field is authoritative. Normalise to hyphen form,
+    // which is what a snapshot's node list uses.
+    const id = String(f.node || key).split(":").slice(-2).join("-").replace(":", "-");
+    (out[s] ||= new Set()).add(id);
+  }
+  return out;
+}
+
 const prior = registryCounts();
+const priorIds = registryIds();
 const problems = [];
 const ok = [];
 let sections = 0;
@@ -143,10 +161,40 @@ for (const file of args) {
       continue;
     }
 
-    // Plausibility against the registry. Not a failure — the whole point of a
-    // harvest is that reality may have moved — but a swing this large is worth
-    // a human reading it before drift acts on it.
+    // ── Depth check ──────────────────────────────────────────────────────────
+    // A harvest can be internally consistent and still enumerate the wrong
+    // THING. Wave 21 captured 30 page children for towers and proved it: 30
+    // captured, 30 live children, validator green. The registry holds the full
+    // SUBTREE — 72 rows, of which only 18 were page children — so 54 registry
+    // ids had no counterpart and figma-drift.mjs reported them deleted, 97 of
+    // them carrying implFiles. Every one was still alive in Figma.
+    //
+    // Overlap is what separates the two cases. Genuine drift over weeks retires
+    // some ids and adds others, but it does not fail to mention three quarters
+    // of what the registry already holds. That is a depth mismatch, and it is
+    // not a judgement call — it is arithmetic, so it fails rather than warns.
     const was = prior?.[section];
+    const known = priorIds?.[section];
+    if (known && known.size) {
+      const seen = nodes.filter((n) => known.has(String(n[0]).replace(":", "-"))).length;
+      const overlap = seen / known.size;
+      if (overlap < 0.5) {
+        problems.push({
+          file,
+          section,
+          why:
+            `DEPTH MISMATCH: only ${seen} of ${known.size} registry ids (${(overlap * 100).toFixed(0)}%) ` +
+            `appear in this capture. Drift retires ids; it does not omit most of them. ` +
+            `This reads as page-children captured against a full-subtree registry — ` +
+            `reporting it would claim ${known.size - seen} false deletions.`,
+        });
+        continue;
+      }
+    }
+
+    // Plausibility against the registry COUNT. Not a failure — the whole point
+    // of a harvest is that reality may have moved — but a swing this large is
+    // worth a human reading before drift acts on it.
     const note =
       was == null
         ? "no registry prior"
