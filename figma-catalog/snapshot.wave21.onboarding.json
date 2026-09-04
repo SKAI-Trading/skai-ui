@@ -1,0 +1,804 @@
+{
+  "onboarding": {
+    "pageId": "3:2",
+    "pageName": "✅ Onboarding and Authentication",
+    "liveChildCount": 151,
+    "nodes": [
+      [
+        "2005-4492",
+        "Skai > Onboarding 1VH (1440 x 900px)"
+      ],
+      [
+        "2662-2597",
+        "Skai > Onboarding i2 1VH (1440 x 900px)"
+      ],
+      [
+        "2665-8843",
+        "Skai > Onboarding i5 1VH (1440 x 900px)"
+      ],
+      [
+        "2664-6764",
+        "Skai > Onboarding i4 1VH (1440 x 900px)"
+      ],
+      [
+        "2667-11004",
+        "Skai > Onboarding i6 1VH (1440 x 900px)"
+      ],
+      [
+        "2664-4685",
+        "Skai > Onboarding i3 1VH (1440 x 900px)"
+      ],
+      [
+        "2065-110",
+        "Skai > Temporary landing 1VH (1440 x 900px)"
+      ],
+      [
+        "2005-5185",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet 1VH (1440 x 900px)"
+      ],
+      [
+        "2086-39242",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet (1440 x 900px)"
+      ],
+      [
+        "2005-5908",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name 1VH (1440 x 900px)"
+      ],
+      [
+        "2517-22923",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-78750",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (1440 x 900px)"
+      ],
+      [
+        "2422-2075",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 1VH (1440 x 900px)"
+      ],
+      [
+        "2065-2229",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-79425",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (1440 x 900px)"
+      ],
+      [
+        "2005-7482",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard 1VH (1440 x 900px)"
+      ],
+      [
+        "2422-2943",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live 1VH (1440 x 900px)"
+      ],
+      [
+        "2481-11481",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard - Tooltip 1VH (1440 x 900px)"
+      ],
+      [
+        "2537-23630",
+        "tool-tip"
+      ],
+      [
+        "2459-9389",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live - video 1VH (1440 x 900px)"
+      ],
+      [
+        "2452-9383",
+        "Original video"
+      ],
+      [
+        "2459-9386",
+        "Gritzy video"
+      ],
+      [
+        "2005-8588",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 1 1VH (1440 x 900px)"
+      ],
+      [
+        "2065-4181",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-80273",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (1440 x 900px)"
+      ],
+      [
+        "2005-9301",
+        "Skai > Onboarding > Get early access 1VH (1440 x 900px)"
+      ],
+      [
+        "2086-28860",
+        "Skai > Temporary landing > Login 1VH (1440 x 900px)"
+      ],
+      [
+        "10730-80518",
+        "Skai > Temporary landing > Login 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-74595",
+        "Login ALT"
+      ],
+      [
+        "10734-73582",
+        "Skai > Temporary landing > Sign up 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-75560",
+        "Skai > Temporary landing > Sign up - referral open 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-76366",
+        "Skai > Temporary landing > Sign up - referral open > with external wallet - Phantom 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-74426",
+        "Signup ALT"
+      ],
+      [
+        "2005-10032",
+        "Skai > Onboarding > Get early access - with input 1VH (1440 x 900px)"
+      ],
+      [
+        "2086-30488",
+        "Skai > Temporary landing > Login - with input 1VH (1440 x 900px)"
+      ],
+      [
+        "2005-10763",
+        "Skai > Onboarding > Get early access > Verification 1VH (1440 x 900px)"
+      ],
+      [
+        "2086-32903",
+        "Skai > Temporary landing > Login > Verification 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-77246",
+        "Skai > Temporary landing > Login > Verification 1VH (1440 x 900px)"
+      ],
+      [
+        "2005-11493",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet 1VH (1440 x 900px)"
+      ],
+      [
+        "2086-37672",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH (1440 x 900px)"
+      ],
+      [
+        "2005-12217",
+        "Skai > Onboarding > Get early access > Verification - with input 1VH (1440 x 900px)"
+      ],
+      [
+        "2086-36048",
+        "Skai > Temporary landing > Login > Verification - with input 1VH (1440 x 900px)"
+      ],
+      [
+        "10734-77935",
+        "Skai > Temporary landing > Login > Verification - with input 1VH (1440 x 900px)"
+      ],
+      [
+        "2005-12947",
+        "Directory"
+      ],
+      [
+        "2662-3290",
+        "Directory"
+      ],
+      [
+        "2667-10927",
+        "i2"
+      ],
+      [
+        "2667-10928",
+        "i3"
+      ],
+      [
+        "2667-10929",
+        "i4"
+      ],
+      [
+        "2667-10930",
+        "i5"
+      ],
+      [
+        "2667-13083",
+        "i6"
+      ],
+      [
+        "2065-8540",
+        "Directory"
+      ],
+      [
+        "10725-79143",
+        "Directory"
+      ],
+      [
+        "2005-12950",
+        "Breakpoint"
+      ],
+      [
+        "2662-3293",
+        "Breakpoint"
+      ],
+      [
+        "2065-8543",
+        "Breakpoint"
+      ],
+      [
+        "2005-12952",
+        "Breakpoint"
+      ],
+      [
+        "2662-3295",
+        "Breakpoint"
+      ],
+      [
+        "2065-8545",
+        "Breakpoint"
+      ],
+      [
+        "2005-12954",
+        "Breakpoint"
+      ],
+      [
+        "2662-3297",
+        "Breakpoint"
+      ],
+      [
+        "2065-8547",
+        "Breakpoint"
+      ],
+      [
+        "2005-12956",
+        "Skai > Onboarding 1VH (768 x 1024px)"
+      ],
+      [
+        "2662-3299",
+        "Skai > Onboarding i2 1VH (768 x 1024px)"
+      ],
+      [
+        "2665-9536",
+        "Skai > Onboarding i5 1VH (768 x 1024px)"
+      ],
+      [
+        "2664-7457",
+        "Skai > Onboarding i4 1VH (768 x 1024px)"
+      ],
+      [
+        "2667-11697",
+        "Skai > Onboarding i6 1VH (768 x 1024px)"
+      ],
+      [
+        "2664-5378",
+        "Skai > Onboarding i3 1VH (768 x 1024px)"
+      ],
+      [
+        "2065-8549",
+        "Skai > Temporary landing 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-13649",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet 1VH (768 x 1024px)"
+      ],
+      [
+        "2065-9242",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-14372",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name 1VH (768 x 1024px)"
+      ],
+      [
+        "2065-9965",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (768 x 1024px)"
+      ],
+      [
+        "11220-173094",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (768x1024px)"
+      ],
+      [
+        "2065-10668",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-15075",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 1 1VH (768 x 1024px)"
+      ],
+      [
+        "2065-11383",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (768 x 1024px)"
+      ],
+      [
+        "11220-173769",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (768x1024px)"
+      ],
+      [
+        "2005-15790",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 1VH (768 x 1024px)"
+      ],
+      [
+        "11220-174461",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (768x1024px)"
+      ],
+      [
+        "2005-16658",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard 1VH (768 x 1024px)"
+      ],
+      [
+        "2424-4081",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live 1VH (768 x 1024px)"
+      ],
+      [
+        "2481-14785",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live - Tooltip 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-17764",
+        "Skai > Onboarding > Get early access 1VH (768 x 1024px)"
+      ],
+      [
+        "2088-1668",
+        "Skai > Temporary landing > Login 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-18495",
+        "Skai > Onboarding > Get early access - with input 1VH (768 x 1024px)"
+      ],
+      [
+        "2088-3176",
+        "Skai > Temporary landing > Login - with input 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-19226",
+        "Skai > Onboarding > Get early access > Verification 1VH (768 x 1024px)"
+      ],
+      [
+        "2598-2383",
+        "Skai > Temporary landing > Login > Verification 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-19956",
+        "Skai > Onboarding > Get early access > Verification - with input 1VH 1VH (768 x 1024px)"
+      ],
+      [
+        "2598-3863",
+        "Skai > Temporary landing > Login > Verification - with input 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-20686",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet 1VH 1VH (768 x 1024px)"
+      ],
+      [
+        "2065-16254",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH (768 x 1024px)"
+      ],
+      [
+        "2005-21410",
+        "Skai > Onboarding 1VH (375 x 812px)"
+      ],
+      [
+        "2662-3992",
+        "Skai > Onboarding i2 1VH (375 x 812px)"
+      ],
+      [
+        "2665-10229",
+        "Skai > Onboarding i5 1VH (375 x 812px)"
+      ],
+      [
+        "2664-8150",
+        "Skai > Onboarding i4 1VH (375 x 812px)"
+      ],
+      [
+        "2667-12390",
+        "Skai > Onboarding i6 1VH (375 x 812px)"
+      ],
+      [
+        "2664-6071",
+        "Skai > Onboarding i3 1VH (375 x 812px)"
+      ],
+      [
+        "2065-16978",
+        "Skai > Temporary landing 1VH (375 x 812px)"
+      ],
+      [
+        "2005-22103",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet 1VH (375 x 812px)"
+      ],
+      [
+        "2065-17671",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet 1VH (375 x 812px)"
+      ],
+      [
+        "2005-22826",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name 1VH (375 x 812px)"
+      ],
+      [
+        "2065-18394",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (375 x 812px)"
+      ],
+      [
+        "2005-23529",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 1 1VH (375 x 812px)"
+      ],
+      [
+        "2065-19097",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (375 x 812px)"
+      ],
+      [
+        "2005-24244",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 1VH (375 x 812px)"
+      ],
+      [
+        "2065-19812",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 2 1VH (375 x 812px)"
+      ],
+      [
+        "2005-25112",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard 1VH (375 x 812px)"
+      ],
+      [
+        "2424-7715",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard - Live 1VH (375 x 812px)"
+      ],
+      [
+        "2481-15918",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live - Tooltip 1VH (375 x 812px)"
+      ],
+      [
+        "2005-26526",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard (375 x 812px)"
+      ],
+      [
+        "2005-27956",
+        "Skai > Onboarding > Get early access 1VH (375 x 812px)"
+      ],
+      [
+        "2065-23474",
+        "Skai > Temporary landing > Login 1VH (375 x 812px)"
+      ],
+      [
+        "2005-28687",
+        "Skai > Onboarding > Get early access - with input 1VH (375 x 812px)"
+      ],
+      [
+        "2065-24205",
+        "Skai > Temporary landing > Login - with input 1VH (375 x 812px)"
+      ],
+      [
+        "2005-29418",
+        "Skai > Onboarding > Get early access > Verification 1VH (375 x 812px)"
+      ],
+      [
+        "2065-24936",
+        "Skai > Temporary landing > Login > Verification 1VH (375 x 812px)"
+      ],
+      [
+        "2005-30148",
+        "Skai > Onboarding > Get early access > Verification 1VH (375 x 812px)"
+      ],
+      [
+        "2065-25666",
+        "Skai > Temporary landing > Login > Verification - with input 1VH (375 x 812px)"
+      ],
+      [
+        "2005-30878",
+        "Skai > Onboarding > Get early access > Verification > Choose wallet 1VH (375 x 812px)"
+      ],
+      [
+        "2065-26396",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH (375 x 812px)"
+      ],
+      [
+        "2113-4659",
+        "Directory"
+      ],
+      [
+        "2113-4662",
+        "Website link image 1200 x 627px"
+      ],
+      [
+        "3879-43977",
+        "Website link image 1200 x 627px"
+      ],
+      [
+        "2113-5498",
+        "Website link image 1200 x 627px ALT"
+      ],
+      [
+        "3879-44798",
+        "Website link image 1200 x 627px ALT"
+      ],
+      [
+        "2113-6165",
+        "Website link image 1200 x 627px ALT"
+      ],
+      [
+        "3879-45450",
+        "Website link image 1200 x 627px ALT"
+      ],
+      [
+        "10767-307473",
+        "Skai > Temporary landing 1VH (1440 x 900px)"
+      ],
+      [
+        "10767-308179",
+        "Multiples"
+      ],
+      [
+        "10463-197841",
+        "Breakpoint"
+      ],
+      [
+        "11189-2627",
+        "Breakpoint"
+      ],
+      [
+        "11225-181648",
+        "Breakpoint"
+      ],
+      [
+        "10767-308180",
+        "Notes"
+      ],
+      [
+        "11189-2629",
+        "Skai > Temporary landing 1VH (768x1024px)"
+      ],
+      [
+        "11220-175352",
+        "Skai > Temporary landing > Sign up 1VH (768x1024px)"
+      ],
+      [
+        "11225-178320",
+        "Skai > Temporary landing > Login 1VH (768x1024px)"
+      ],
+      [
+        "11225-180028",
+        "Skai > Temporary landing > Login > Verification - with input 1VH (768x1024px)"
+      ],
+      [
+        "11225-180817",
+        "Skai > Temporary landing > Login > Verification 1VH (768x1024px)"
+      ],
+      [
+        "11220-176042",
+        "Skai > Temporary landing > Sign up - referral open 1VH (768x1024px)"
+      ],
+      [
+        "11229-189692",
+        "Skai > Temporary landing > Sign up - referral open > with external wallet - Phantom 1VH (768x1024px)"
+      ],
+      [
+        "11225-181650",
+        "Skai > Temporary landing 1VH (375 x 812px)"
+      ],
+      [
+        "11225-182385",
+        "Skai > Temporary landing > Sign up 1VH (375 x 812px)"
+      ],
+      [
+        "11225-186385",
+        "Skai > Temporary landing > Login 1VH (375 x 812px)"
+      ],
+      [
+        "11229-188122",
+        "Skai > Temporary landing > Login > Verification 1VH (375 x 812px)"
+      ],
+      [
+        "11229-188907",
+        "Skai > Temporary landing > Login > Verification - with input 1VH (375 x 812px)"
+      ],
+      [
+        "11225-183314",
+        "Skai > Temporary landing > Sign up - referral open 1VH (375 x 812px)"
+      ],
+      [
+        "11229-190494",
+        "Skai > Temporary landing > Sign up - referral open > with external wallet - Phantom 1VH (375 x 812px)"
+      ],
+      [
+        "11225-184126",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (375 x 812px)"
+      ],
+      [
+        "11225-184801",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (375 x 812px)"
+      ],
+      [
+        "11225-185493",
+        "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (375 x 812px)"
+      ]
+    ]
+  },
+  "master-sheet": {
+    "pageId": "3422:20110",
+    "pageName": "📍 Master sheet",
+    "liveChildCount": 46,
+    "nodes": [
+      [
+        "3423-22712",
+        "Directory"
+      ],
+      [
+        "3423-22719",
+        "Onboarding"
+      ],
+      [
+        "3423-24816",
+        "Authentication"
+      ],
+      [
+        "3423-28983",
+        "Privacy"
+      ],
+      [
+        "3423-42332",
+        "A/B Waitlist"
+      ],
+      [
+        "3436-49028",
+        "Home"
+      ],
+      [
+        "3436-57360",
+        "Wallet"
+      ],
+      [
+        "3436-59020",
+        "Predict"
+      ],
+      [
+        "3436-61545",
+        "Trade"
+      ],
+      [
+        "3436-64278",
+        "Play"
+      ],
+      [
+        "3436-64311",
+        "Social"
+      ],
+      [
+        "3439-64344",
+        "Learn"
+      ],
+      [
+        "3931-91888",
+        "Utils"
+      ],
+      [
+        "3931-91899",
+        "Utils > Explorer"
+      ],
+      [
+        "3931-91910",
+        "Utils > Leaderboard"
+      ],
+      [
+        "3931-91921",
+        "Utils > Referrals"
+      ],
+      [
+        "3436-64333",
+        "Social > Live"
+      ],
+      [
+        "3931-91877",
+        "Social > Encrypted messenger"
+      ],
+      [
+        "5208-116843",
+        "Social > Groups"
+      ],
+      [
+        "3436-64322",
+        "Social > Chat > Conversation/Contacts"
+      ],
+      [
+        "5393-95947",
+        "More > Earn"
+      ],
+      [
+        "5393-98525",
+        "More > Governance"
+      ],
+      [
+        "3436-64289",
+        "Play > Casino"
+      ],
+      [
+        "3436-64300",
+        "Play > Sports book"
+      ],
+      [
+        "4825-69868",
+        "Play > Bet"
+      ],
+      [
+        "3439-64355",
+        "Play > In game designs with Casey"
+      ],
+      [
+        "3436-64234",
+        "Trade > perpetual futures"
+      ],
+      [
+        "3436-64245",
+        "Trade > Spot trading"
+      ],
+      [
+        "3436-64256",
+        "Trade > Trench"
+      ],
+      [
+        "3436-64267",
+        "Trade > Launch"
+      ],
+      [
+        "3436-62783",
+        "Trade > Swap - same as wallet swap"
+      ],
+      [
+        "3436-60310",
+        "Predict > Utilities"
+      ],
+      [
+        "3436-57533",
+        "Wallet > Actions"
+      ],
+      [
+        "3436-57903",
+        "Wallet > Quick Actions"
+      ],
+      [
+        "3436-58450",
+        "Wallet > Utilities"
+      ],
+      [
+        "3436-53422",
+        "Home > Moat"
+      ],
+      [
+        "3436-53761",
+        "Home (moat) > Portfolio"
+      ],
+      [
+        "3436-54524",
+        "Home (moat) > Whales"
+      ],
+      [
+        "3436-55561",
+        "Home (moat) > Pro"
+      ],
+      [
+        "3436-56942",
+        "Home (moat) > Advanced Tools"
+      ],
+      [
+        "3423-33157",
+        "Terms"
+      ],
+      [
+        "3436-51160",
+        "Group 2"
+      ],
+      [
+        "3439-64366",
+        "Timeline"
+      ],
+      [
+        "3440-64369",
+        "Timeline"
+      ],
+      [
+        "3440-64373",
+        "Timeline"
+      ],
+      [
+        "3440-64371",
+        "Timeline"
+      ]
+    ]
+  }
+}
