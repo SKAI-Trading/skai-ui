@@ -80,7 +80,7 @@
 8225-105405	partial	-	InstantTradeSettingsModal ships the real sniper config plus localStorage display prefs. Deliberate documented divergence: Figma depicts display-only toggles with no persistence, so real functionality was kept rather than discarded.
 4317-36063	deferred	-	One-click trade settings modal buy not built; grep for one.?click in trench-redesign returns 2 incidental hits and no modal.
 4317-37993	deferred	-	One-click trade settings modal sell not built.
-8324-76830	deferred	-	One-click trade settings init-selected state not built.
+8324-76830	deferred	-	One-click trade settings init-selected state not built. RETARGETED to 13006-207555 (figma-todo.webapp.tsv:223). The board collapses a row switched to Init to its label and toggle, dropping the One-click sell input beneath it; OneClickTradeModal.tsx renders that input for every phase and treats Init as a unit on a persistent field. NEEDS A RULING BEFORE IT IS BUILT, not just building: the collapse removes the only place a per-phase Init size can be entered, and DEFAULT_ONE_CLICK_CONFIG puts newPairs + finalStretch on Init, so out of the box two of the three rows would lose their input and instantTradePrefs.sellAmounts would go unreachable for both. Either Init means "sell the initial buy" and needs no figure (collapse is right, and the stored sizes for Init phases are dead), or Init is a unit beside % (the build is right and the node is wrong).
 4317-39625	deferred	-	One-click buy updated new-pairs CTA not built.
 4317-12483	deferred	-	One-click settings modal off state not built.
 8110-172873	deferred	-	Trade dropdown add not built; no dropdown affordance on the terminal header or bottom menu.
