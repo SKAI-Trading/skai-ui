@@ -24,15 +24,26 @@
  *   { "<section>": {
  *       "pageId":         "9061:15449",
  *       "pageName":       "Towers - Skai originals",
- *       "liveChildCount": 50,          // read from Figma SEPARATELY from `nodes`
+ *       "liveChildCount": 50,             // from the Plugin API
+ *       "countSource":    "use_figma",    // which tool produced the count
+ *       "nodesSource":    "get_metadata", // which tool produced the list
  *       "nodes":          [ ["9061-15450","Directory"], ... ]   // 50 of them
  *   } }
  *
- * `liveChildCount` must come from a DIFFERENT read than the one that built
- * `nodes` — the page's own child count, not `nodes.length` copied across. The
- * whole point is that two independent reads have to agree. A harvester that
- * derives one from the other satisfies the letter of this check and none of its
- * purpose, so the two are also required to be plausible against the registry.
+ * `liveChildCount` must come from a different INSTRUMENT than the one that built
+ * `nodes`, not merely a different call — hence the two `*Source` fields, which
+ * are checked against each other and refused when equal.
+ *
+ * A different call is not enough, and the weaker version of this rule was
+ * defeated in practice: `get_metadata` does not descend into every frame and
+ * says nothing about having stopped, so a harvest that took both its list and
+ * its count from it got two numbers that matched to the node on all five pages
+ * tried, and certified nothing. Two reads of one instrument agree perfectly.
+ * Only two instruments can disagree, and disagreement is the whole signal.
+ *
+ * `get_metadata` is still the right tool for BULK — it spills a large result to
+ * disk at no context cost, where the Plugin API truncates at 20KB. It is the
+ * COUNTING role that is restricted, not the tool.
  *
  * ── Usage ────────────────────────────────────────────────────────────────────
  *   node figma-catalog/validate-snapshot.mjs <snapshot.json> [more.json ...]
@@ -158,6 +169,61 @@ for (const file of args) {
           "no `liveChildCount` — the harvester did not record an independent " +
           "read of the page's child count, so a short capture is indistinguishable " +
           "from a deletion",
+      });
+      continue;
+    }
+
+    // Which INSTRUMENT produced each number, not merely which call.
+    //
+    // Requiring a second read is not enough, and this check exists because the
+    // weaker version was defeated in practice. `get_metadata` does not descend
+    // into every frame and says nothing about having stopped: it returns 1,914
+    // of a towers page's 2,011 descendants, and 46 of a cover-images page's 214.
+    // A harvest that took both its node list AND its count from that one tool
+    // gets two numbers that agree exactly and certify nothing — the counts
+    // matched to the node on all five pages it was tried on, and the snapshot
+    // passed. Two reads of one instrument agree perfectly; only two instruments
+    // can disagree, and disagreement is the entire signal being bought here.
+    //
+    // Only the Plugin API (`use_figma`) enumerates a page completely, so it is
+    // the sole instrument allowed to certify a count. `get_metadata` remains
+    // fine for BULK — it spills a large result to disk at no context cost, where
+    // the Plugin API truncates at 20KB — which is why the counting role, not the
+    // tool, is what is restricted.
+    const LOSSY_FOR_COUNTING = new Set(["get_metadata", "metadata"]);
+    const countSource = String(v.countSource || "").trim();
+    const nodesSource = String(v.nodesSource || "").trim();
+
+    if (!countSource || !nodesSource) {
+      problems.push({
+        file,
+        section,
+        why:
+          "no `countSource` / `nodesSource` — the snapshot does not say which " +
+          "tool produced each number, so it cannot show they came from two " +
+          "instruments rather than one tool called twice",
+      });
+      continue;
+    }
+    if (countSource === nodesSource) {
+      problems.push({
+        file,
+        section,
+        why:
+          `SAME INSTRUMENT TWICE: nodes and liveChildCount both came from ` +
+          `\`${countSource}\`. The two numbers cannot disagree, so their ` +
+          `agreement is not evidence of anything.`,
+      });
+      continue;
+    }
+    if (LOSSY_FOR_COUNTING.has(countSource)) {
+      problems.push({
+        file,
+        section,
+        why:
+          `\`${countSource}\` cannot certify a count — it silently omits frames ` +
+          `it did not descend into. Use it for the node list if you like, but ` +
+          `take liveChildCount from the Plugin API.`,
       });
       continue;
     }
