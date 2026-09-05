@@ -1,0 +1,73 @@
+# key	status	primaryFile	route	reason	bp
+# Lane play-casino. Partition: modules/skai-gaming/** game shells reachable from /play/casino.
+# Every # in this file is at column 0.
+#
+# WHAT THIS PASS RE-MEASURED, AND THE ONE THING THE WAVE'S PREMISE GOT WRONG HERE.
+# The brief expects rows measured against replaced app bundles, stale in the
+# helpful direction. That describes FOUR of the nine rows below - the wave-3 page
+# rows, which were read off a rendered 1440 DOM on 2026-08-26 - and their named
+# defects have indeed gone. It does NOT describe the game-widget rows from waves
+# 8-11: those were measured off Figma NODE DATA, which does not go stale when a
+# bundle ships, and two of the three I re-opened still carried their defect. So
+# the cheap-close yield in this partition is confined to the DOM-measured rows.
+#
+# Every Figma number below was read this pass through the plugin API by property
+# name - width, height, x, y, cornerRadius, padding*, itemSpacing, fills,
+# strokes, strokeWeight, strokeAlign, fontName, fontSize, lineHeight,
+# letterSpacing - on the node id in the key. Nothing here is carried from the
+# row it replaces except where the line says so in as many words.
+#
+# ★ NO ROW CARRIES A COLUMN 6, AND THAT IS DELIBERATE, NOT AN OMISSION. A bp
+# verdict of `done` means render-verified against the frame at that width, and
+# this lane rendered nothing: browser tooling is a single-instance global that
+# would have taken the lock off every other lane, so the whole pass is source
+# against node data. An absent column 6 reads as `unknown` at all three widths
+# and never inherits column 2, which is exactly the claim being made - the
+# geometry is measured, the render is not.
+Coinflip Classic board desktop [9178-14731]	partial	modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBoard.tsx	/play/coinflip	RE-MEASURED, AND BOTH NAMED DIVERGENCES ARE NOW FIXED. GEOMETRY: board 954x621 radius 16. The history strip 9178:14740 is 854x35 at (50,556) and its slot row 9178:14741 is 838x15 at (8,10) holding twenty 15px slots 43.31579 apart. Three numbers follow from that and none of them was what the widget drew: the strip is inset 50 per side against the card's own 16, so 954-32-68 = 854 where `w-full` gave 922; the vertical padding is 10 and not the horizontal 8, so the frame is 35 tall where `p-2` composed 31; and the bottom edge lands on 591 in a 621 board, 14 clear of that padding. Fixed as `lg:w-[calc(100%-68px)]`, `h-[31px] lg:h-[35px]` and `lg:mb-[14px]`, pinned by coinflipHistoryStrip.test.ts, which solves the slot count out of the row width and pitch rather than copying it. COLOUR: SOLID #001615 under a white stroke at opacity 0.10, weight 1, aligned INSIDE - the code draws that border unconditionally and is right to. STILL OPEN, and it is why this is not done: THE BOARD CARRIES A SECOND IMAGE FILL AT OPACITY 0.30 over the solid, which the widget does not paint - the same desktop-only backdrop the Limbo lane found on its own boards - and the 253 coin is centred on the BOARD at y=310.5 = 621/2 where the flex column leaves it near 278. Type not re-read on this frame.
+Coinflip Classic board Continuous desktop [9190-14926]	partial	modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBoard.tsx	/play/coinflip	RE-MEASURED, AND IT CORRECTS THE ROW IT REPLACES ON A COLOUR FACT. That row read this frame as carrying NO hairline stroke where its sibling 9178:14731 does, and concluded the two Classic boards disagree about their border. They do not: this frame's strokes today are SOLID #FFFFFF at opacity 0.10, weight 1, INSIDE - identical to 9178:14731 - so the widget's unconditional border matches both boards and that finding is closed. Everything else is the sibling's to the digit: 954x621 radius 16, SOLID #001615 plus the same IMAGE fill at opacity 0.30, strip 9190:14934 854x35 radius 5 fill #122524 with a 838x15 row of twenty 15px slots at the same 43.31579 pitch. The 253x253 Heads coin reads #56C7F3 / gradient / #32606A / #56C7F3 / white on rings of 253, 189.75, 177.1, 126.5, 75.9. Held partial for the unpainted image fill and the coin's board-centring, both named on 9178:14731.
+Coinflip Classic board mobile [9208-20333]	partial	modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBoard.tsx	/play/coinflip	RE-MEASURED ON TWO AXES AND TWO DEFECTS FIXED. GEOMETRY: board 347x347 radius 12, fill SOLID #001615 alone - no image fill at this width, which is what makes the desktop backdrop a per-width treatment and not an omission. Strip 9208:20341 is 323x31 at (12,304) - every inset here IS the card's 12, so `w-full` is exact and no bottom margin belongs. Its row 9208:20342 is 307x15 at (8,8) and holds SIXTEEN dots of 9.136807 at a 19.857546 pitch. TWO THINGS WERE WRONG. The count: HISTORY_SLOTS_MOBILE shipped 17, and 17 dots in a 307 row would sit 18.616 apart, not 19.8575 - the count is solved from the row rather than tallied, so the oracle fails arithmetic if it drifts again. The height: the dot is 9.1368 but the ROW it sits in is 15 at both widths, so composing 8 + 9.14 + 8 gave a 25.14 strip against the frame's 31; the height is now drawn. COLOUR IS THE OPEN AXIS AND IT NEEDS A RULING - see the blocked note below.
+Darts throw column [9455-18169]	done	modules/skai-gaming/src/components/play/games/instant/DartsGame.tsx	/play/darts	PROMOTED. MEASURED ON ALL THREE AXES THIS PASS AND THE LAST DELTA CLOSED. GEOMETRY: 66x356, cornerRadius 8, padding 8 on all four sides, holding one child 9455:18170 at 50x340 - and 340+8+8 = 356, 50+8+8 = 66, both exact. Six 50x50 chips down the 340 leave five 8s, which is the gap the widget ships. COLOUR: the column is SOLID #122524 under a #FFFFFF stroke at opacity 0.10, weight 1. THE ONE THING THAT WAS WRONG: the widget filled it `bg-[#001615]/80`, a darker translucent surface. The frame fills the column and its six chips with the SAME #122524 and separates them on the chip's 3px coloured stroke (0.5x #FFFFFF@0.10, 0.8x #123F3C, 1.2x #FFBA00, 1.5x #FF7716, 2.7x #FF574A, 8.5x #17F9B4); the widget separates them on a coloured drop shadow, so the darker column was a second separator the design does not draw. Now `DARTS.panel`, pinned by dartsThrowColumn.test.ts. TYPE: chip label Manrope Bold 14 on AUTO leading (rendered 19) at 0% tracking, white - `text-sm font-bold text-white` is 14/20, so the leading is +1 against an AUTO the class system cannot spell. Recorded, not chased.
+Darts board Easy in-play desktop [9433-16420]	partial	modules/skai-gaming/src/components/play/games/instant/DartsGame.tsx	/play/darts	RE-MEASURED AT FRAME LEVEL. 954x621 cornerRadius 16, fill SOLID #001615, stroke #FFFFFF at opacity 0.10 weight 1, twelve children. The two the widget draws are confirmed by position: the 453x453 ring stack 9433:16421 at (250.5,50) - centred, since (954-453)/2 = 250.5 - and the 340x50 legend row 9433:16429 at (307,553). The throw column here is 9442:16687, 66x356 at (853,99), the same box as 9455:18169, which is why one implementation serves both frames. NOT READ THIS PASS: the interiors of the nine remaining children, which are the loose 50x50 dart groups scattered across the board. That is an absence of measurement, not a measurement of absence.
+Coinflip page desktop [9003-130613]	partial	modules/skai-gaming/src/pages/play/CoinflipPageSections.tsx	/play/coinflip	THE ROW'S TWO NAMED DEFECTS ARE GONE FROM THE TREE; ITS UNREAD AXES ARE WHY IT IS NOT DONE. Both were measured off a rendered 1440 DOM on 2026-08-26 and both were code-side, so this is the stale-in-the-helpful-direction case the wave was built for. (1) `WIDGET BOARD 1440: DOM 914 vs Figma 954, the route panel adds 16px inner padding` - CoinFlipGame.tsx:1428 now ships `p-2 lg:flex-row lg:px-0`, so the desktop row spends nothing horizontally and the two columns pack 356 + 8 + 954 = 1318 against Frame 520; its own header records the seam and coinflipPanelSeam.test.ts holds it. (2) `every named-class radius lands ONE STEP LARGE` - CoinflipPageSections.tsx now carries fifteen pixel literals and exactly one named class, `cardRadiusClass="rounded-lg"`, which is the 12 the row says 9003:131102 draws. So the class-scale mechanism the row blamed is gone from this file. NOT READ THIS PASS: whether each surviving literal equals its own node. The row named five sites without node ids, and `rounded-[12px]` on the Community-wins band is the same 12 the old `rounded-lg` resolved to - converting a spelling does not move a value, and that one is worth a node id before anyone calls it matched.
+Plinko page desktop [9003-79079]	partial	modules/skai-gaming/src/pages/play/PlinkoPageSections.tsx	/play/plinko	SAME TWO DOM-ERA DEFECTS, BOTH GONE, MEASURED IN CODE THIS PASS. (1) The widget seam: PlinkoGame.tsx:2531 carries no padding at all and adds `gap-2` on the route, which is the 8 the row's own arithmetic wants (9003:79146 puts Frame 270 at x=0 and the board at x=364). (2) PlinkoPageSections.tsx carries fifteen pixel-literal radii and ZERO named classes, so the one-step-large scale cannot reach it. Not promoted: the row's remaining claims - region gaps 40/40/81 against 40/40/80 and the type ramp at 1440 - were not re-read, and no node was opened for this page this pass.
+Fortune Wheel page desktop [9691-12630]	partial	modules/skai-gaming/src/pages/play/FortuneWheelPageSections.tsx	/play/fortune-wheel	THE RADIUS DEFECT CANNOT REACH THIS PAGE ANY MORE, BECAUSE THE PAGE IS NO LONGER A TRANSCRIPTION. FortuneWheelPageSections.tsx is 36 lines and draws no radius at all: the ten regions come from PlayGameDetailSections, which carries twelve pixel literals (nine 12px, three 16px) and one `rounded-md`, and that one is a 3x24 bar where any radius above 1.5 reads as a pill. So the named-class scale the row blames is absent from every file this page renders. NOT READ THIS PASS: the widget seam and the region gaps, and no node was opened. This row is a measurement of the code, not of parity.
+Towers page desktop [9079-2001]	partial	modules/skai-gaming/src/pages/play/TowersPageSections.tsx	/play/towers	SAME SHAPE AS FORTUNE WHEEL AND THE SAME EVIDENCE. TowersPageSections.tsx is 44 lines, carries no radius, and delegates the ten regions to PlayGameDetailSections, whose radii are pixel literals. The row's `every named-class radius lands ONE STEP LARGE` therefore has no site left on this page. NOT READ THIS PASS: everything else the row measured off the 1440 DOM, and no node was opened.
+#
+# ── TWO RULINGS OWED, BOTH MEASURED, NEITHER GUESSED ─────────────────────────
+#
+# 1. THE COINFLIP COIN IS TWO DIFFERENT BLUES AND ONLY ONE OF THEM IS A TOKEN.
+#    Measured this pass on both frames. Desktop 9190:14927 draws Ellipse 61 and
+#    Ellipse 64 in #56C7F3, which is the design system's Sky Blue 300
+#    (design-tokens.ts:70, carrying its own DO-NOT-REVERT). Mobile 9208:20334
+#    draws the same two ellipses in #4CCEE9, which is in no token file. Every
+#    other number agrees: the ring fractions are 1 / 0.75 / 0.7 / 0.5 / 0.3 at
+#    both widths and Ellipse 63 is #32606A in both, so this is two colours on
+#    one geometry, not a second treatment.
+#      Option A - keep ONE coin at #56C7F3 and read #4CCEE9 as drift on a
+#        duplicated mobile frame. Nothing to build: the widget already scales a
+#        single implementation, so this is the shipped behaviour and the row
+#        closes on colour.
+#      Option B - ship #4CCEE9 below lg. That is a second palette on a hard
+#        blue with no token behind it, and it splits one coin into two.
+#    Not decided here. The widget ships A today and nothing is broken either way.
+#
+# 2. THE DARTS MOBILE CHIP CANNOT BE BOTH THE FRAME'S SIZE AND A TAP TARGET.
+#    Carried forward from the wave-8 rows 9455-19001 / 9467-19582 and NOT
+#    re-measured this pass, so it is quoted as theirs: the 347x347 mobile boards
+#    draw a 258.4x38 legend of six 38x38 chips at gap 6.08, every value the
+#    desktop 50/8 times 0.76. The widget ships size-[50px] at every width.
+#      Option A - build the frame's 38px chip below lg. It is under the 44px
+#        touch floor the app holds every button to, on a control a player taps
+#        to read a payout.
+#      Option B - hold 50px and treat 38 as a scale artefact of a duplicated
+#        board, which is what the widget does now. The row then closes on the
+#        floor rather than on the frame, the same call the Slide panel made for
+#        its 34-tall tab halves.
+#
+# ── ONE INSTRUMENT HAZARD FOR THE NEXT LANE ──────────────────────────────────
+# dartsPageLayout.test.tsx:456 slices 1200 characters forward from
+# `aria-label="Recent throws"` and asserts size-[50px] inside that window. Two
+# lines of comment added after the label pushed the marker to offset 1221 and
+# the test went red on prose. It fails loudly, so it is not dangerous - but it
+# fails for a reason that has nothing to do with the value it guards.
