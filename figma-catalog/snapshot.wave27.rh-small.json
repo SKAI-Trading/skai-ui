@@ -1,0 +1,192 @@
+{
+  "keno": {
+    "pageId": "9390:18295",
+    "pageName": "✅ Keno - Skai originals",
+    "liveChildCount": 27,
+    "countSource": "use_figma",
+    "nodesSource": "get_metadata",
+    "nodes": [
+      [
+        "9433-12175",
+        "Directory"
+      ],
+      [
+        "9433-12181",
+        "Breakpoint"
+      ],
+      [
+        "9433-12183",
+        "Breakpoint"
+      ],
+      [
+        "9433-12185",
+        "Breakpoint"
+      ],
+      [
+        "9433-12187",
+        "Skai > Play > Casino > Scratchers (1440 x 900px)"
+      ],
+      [
+        "9433-14563",
+        "Skai > Play > Casino > Blackjack (375 x 812px)"
+      ],
+      [
+        "9433-14989",
+        "Frame 1000003780"
+      ],
+      [
+        "9433-15057",
+        "Frame 1000003781"
+      ],
+      [
+        "9481-20645",
+        "Desktop Selection"
+      ],
+      [
+        "9481-20950",
+        "Starting"
+      ],
+      [
+        "9481-21797",
+        "Desktop win"
+      ],
+      [
+        "9494-6995",
+        "Vector 359"
+      ],
+      [
+        "9494-6994",
+        "Vector 358"
+      ],
+      [
+        "9494-6999",
+        "Vector 360"
+      ],
+      [
+        "9679-1296",
+        "Group 306"
+      ],
+      [
+        "9680-3956",
+        "Frame 1000004044"
+      ],
+      [
+        "9680-5126",
+        "Frame 1000004107"
+      ],
+      [
+        "9680-5236",
+        "Frame 1000004108"
+      ],
+      [
+        "9680-6277",
+        "Auto Advanced Displayed"
+      ],
+      [
+        "9683-8908",
+        "Desktop loss"
+      ],
+      [
+        "9687-9363",
+        "Frame 1000004188"
+      ],
+      [
+        "9687-9370",
+        "image 6"
+      ],
+      [
+        "9690-9391",
+        "Frame 1000004188 (3) 1"
+      ],
+      [
+        "9690-9544",
+        "Starting"
+      ],
+      [
+        "9690-9912",
+        "Starting"
+      ],
+      [
+        "9690-10413",
+        "Starting"
+      ],
+      [
+        "9690-10777",
+        "Starting"
+      ]
+    ]
+  },
+  "hilo": {
+    "pageId": "9058:1819",
+    "pageName": "✅ Hi-Lo - Skai originals",
+    "liveChildCount": 16,
+    "countSource": "use_figma",
+    "nodesSource": "get_metadata",
+    "nodes": [
+      [
+        "9058-2404",
+        "Directory"
+      ],
+      [
+        "9058-2410",
+        "Breakpoint"
+      ],
+      [
+        "9058-2412",
+        "Rectangle 147"
+      ],
+      [
+        "9058-2413",
+        "Breakpoint"
+      ],
+      [
+        "9058-2415",
+        "Breakpoint"
+      ],
+      [
+        "9061-10499",
+        "Skai > Play > Casino > Hi-Lo Start (1440 x 900px)"
+      ],
+      [
+        "9061-9472",
+        "Skai > Play > Casino > Hi-Lo Loss (1440 x 900px)"
+      ],
+      [
+        "9058-4372",
+        "Skai > Play > Casino > Scratchers (768 x 1024px)"
+      ],
+      [
+        "9079-3253",
+        "Screenshot 2026-07-23 at 9.53.47 PM 1"
+      ],
+      [
+        "9332-27318",
+        "IMG_4939 2 1"
+      ],
+      [
+        "9332-27319",
+        "IMG_4940 2 1"
+      ],
+      [
+        "9332-27320",
+        "Mobile"
+      ],
+      [
+        "9351-3397",
+        "Frame 1000004097 1"
+      ],
+      [
+        "9351-4708",
+        "Skai > Play > Casino > Blackjack (375 x 812px)"
+      ],
+      [
+        "10248-9763",
+        "Desktop"
+      ],
+      [
+        "10249-9938",
+        "Frame 1000004045"
+      ]
+    ]
+  }
+}
