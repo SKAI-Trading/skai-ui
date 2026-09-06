@@ -1,0 +1,95 @@
+# Lane social-profile, wave 28. Partition src/pages/social/** except groups/**
+# and src/components/social/** except feed/**.
+#
+# ONE FAMILY, MEASURED ON ALL SIX FRAMES. The "Sample Conversation" family is
+# eight catalogued rows. Six of them are the open thread and are drawn by
+# src/pages/social/messages/MessageThread.tsx and
+# src/pages/social/messages/ConversationHeader.tsx; every node below was opened
+# first hand through the Plugin API on 2026-09-06 and no number is carried from
+# an earlier row. The other two are NOT thread frames at all - see the
+# correction at the bottom of this block.
+#
+# WHY THIS FAMILY. Waves 2, 3 and 4 all touched these rows and none measured
+# them: wave 2 marked three `done` on "nobody spotted a difference", wave 3
+# demoted them to `partial` with "NOT MEASURED", and wave 4 recorded the reason
+# nobody could - /messages never paints in dev, because Messages.tsx gates on a
+# wallet connect the dev mock cannot complete. That blocks a BROWSER
+# measurement. It does not block reading the frame and resolving the class
+# strings, which is what this pass did.
+#
+# TWO FIXES LANDED, each with its oracle in the same commit and every value
+# proved red by an extending mutation, then restored from a file copy:
+#   e12338d71  the peer card and the day heading, MessageThread.tsx
+#   b9527999d  the header identity, ConversationHeader.tsx
+# 175 checks pass across src/pages/social/messages/__tests__ (18 files).
+#
+# THE MEASUREMENT BOTH FIXES CAME OUT OF. Nothing in this thread is board
+# independent, and the shipped code had one ramp - the 1440 one - for all three:
+#
+#                     375        768        1440      Figma nodes (375/768/1440)
+#   card name      12/14      12/16      14/18     11368:23364 · 11387:29063 · 5154:206657
+#   card meta      12/14      12/14      12/16     11368:23365 · 11387:29064 · 5154:206660
+#   card button    14/16      14/18      14/18     11373:22611 · 11387:29068 · 5153:205089
+#   card height      184        188        194     11368:23360 · 11387:29059 · 5153:205080
+#   day heading    12/14      12/14      12/16     11368:23371 · 11387:29070 · 5157:207691
+#   heading gap       32         40         32     thread itemSpacing, either side
+#   header name    12/14      12/16      14/18     11368:23488 · 11387:29056 · 5154:206636
+#
+# The card ramps are checked against each other: Frame 793 is 14+4+14+4+14 = 50
+# at 375, 16+4+14+4+14 = 52 at 768, 18+4+16+4+16 = 58 at 1440; Frame 792 adds a
+# 64 avatar on a 14 gap; `middle` adds the 34/34/32 button row on a 24 gap. That
+# reproduces 184 / 188 / 194 exactly, and the oracle rebuilds the same sum from
+# the classes the component ships rather than asserting the three sizes
+# separately - a ramp that reads plausibly per line but composes wrong fails.
+#
+# TWO TRAPS THIS PASS WALKED INTO AND OUT OF.
+#  · THE HEADING HAD NO FAMILY CLASS. Manrope is this app's `sans`, so a text
+#    node with no family draws in it; the frame says Mulish Regular at all three
+#    widths. Nothing about the size or colour says so, and the four existing
+#    assertions on that element all passed.
+#  · `text-[12px]` IS A PREFIX OF `text-[12px]/[14px]`. Both suites asserted the
+#    old flat values with `.toContain`, which cannot tell the flat rule from the
+#    paired one. They now split className and compare whole tokens.
+#
+# THE 44px FLOOR CAUGHT TWO CONTROLS. src/index.css:749 floors every button at
+# 44px min-height under `max-width: 768px`, which takes in 768 itself. The
+# card's "View profile" is 32 tall at 375 and 34 at 768; the header name is a
+# button in a 40-tall row at both. Both now carry the sanctioned `no-min-size`.
+# The header's other arms are spans, which is why only a DIRECT conversation
+# ever showed the taller row.
+#
+# STILL OPEN ON EVERY THREAD ROW, MEASURED BUT NOT FIXED.
+#  · THE COLUMN GUTTER. `thread` is inset 16 at 375 (343 of 375), 30 at 768 (708
+#    of 768) and 100 at 1440 (728 inside a 928 pane). The file ships a flat
+#    `p-4`. It is not fixed here because the 1440 pane is composed by
+#    Messages.tsx and ConversationList's own `w-full lg:w-80 xl:w-96` - 384 at
+#    1440 against the frame's 454 - so the code's pane is not the frame's pane
+#    and a 100px gutter cannot be resolved against it from source alone.
+#  · THE GAP UNDER THE PEER CARD. Frame 1000003845 puts `thread` 24 below
+#    `middle` at 375 and 768 and 46 at 1440, and `thread`'s first child is the
+#    date heading with 0 padding above it. In code the card's `pb-8`, the list's
+#    `space-y-1` and the heading's own `pt-7` compose to 64. Matching it needs
+#    the heading's top padding suppressed when it is the first thing under the
+#    card, which is a structural change, not a value.
+#  · THE MESSAGE GROUPS. `thread` spaces its children on the same itemSpacing as
+#    the headings (32/40/32) and the list carries `space-y-1`. The bubbles are
+#    src/components/messages/MessageBubble.tsx, outside this partition.
+#
+# ★ CORRECTION - TWO ROWS NAME THE WRONG FILE. 11365:21892 and 11385:27845 are
+# titled "Sample Conversation" and the registry points both at MessageThread.tsx.
+# Neither draws a thread. Both are the CONVERSATION LIST: their `Frame 285` is a
+# run of `content` rows on a 64 (375) / 72 (768) pitch with a zero-height rule
+# between each, and neither frame contains a `middle`, a `thread` or an `Input`.
+# The two frames that ARE the 375 and 768 threads are 11368:23343 and
+# 11387:29051. Left as `partial` with the file corrected in the row rather than
+# silently rewritten, because the registry is not this lane's to edit.
+#
+# key	status	primaryFile	route	reason
+Skai > Social > Messages > Sample Conversation 1VH (1440 x 900px) [5153-205032]	partial	src/pages/social/messages/MessageThread.tsx	/messages/:conversationId	FIXED THIS WAVE, both commits touch this frame. (1) PEER CARD RAMP. Figma `middle` 5153:205080 is 330x194: name 5154:206657 Manrope Bold 14/18, handle 5154:206660 and joined 5154:206663 Mulish Regular 12/16, button label I5153:205089;780:133 Manrope Regular 14/18 in a 34-tall button, all at letterSpacing -4%. Code before shipped exactly these values - and shipped them at 375 and 768 too, where the frames draw 12/14 and 12/16. Code after ramps: CARD_NAME `text-[12px]/[14px] md:text-[12px]/[16px] lg:text-[14px]/[18px]`, CARD_META `text-[12px]/[14px] lg:text-[12px]/[16px]`, button `text-[14px]/[16px] md:text-[14px]/[18px]`. AT 1440 THE DELTA WAS AND IS 0 - the oracle rebuilds 64 + 14 + (18+4+16+4+16) + 24 + (18+8+8) = 194 against the frame's 194. (2) DAY HEADING. 5157:207691 is Mulish Regular 12/16 at -4% in #95A09F, and `thread` 5157:207690 carries itemSpacing 32 either side of it. Code before had no font class, so it drew in Manrope - `sans` in modules/skai-ui/src/lib/design-tokens.ts:352 - at 12/16 with `pt-7 pb-7` (28 + the list's `space-y-1` 4 = 32). Code after names `font-mulish` and ramps `lg:text-[12px]/[16px]`; the 32 was already right here and is now stated per board. Family delta 1440: WAS Manrope, IS Mulish. (3) HEADER NAME. Frame 239 5154:206630 is a 40-tall SPACE_BETWEEN row; its `Frame 792` 5154:206643 puts a 40px avatar 14 from 5154:206636, Manrope Bold 14/18 at -4%. Code before was `font-semibold` alone, so it inherited the body's 16px at weight 600. Code after pins HEADER_NAME. ALSO RE-MEASURED AT DELTA 0, both sides resolved: avatar 64 against `h-16 w-16`; `middle` VERTICAL gap 24 against `gap-6`; `Frame 792` gap 14 against `gap-[14px]`; `Frame 793` gap 4 against `gap-1`; button radius 8 / fill #56C7F3 / label #001615 / padding 8-24 against `rounded-[8px] bg-[#56C7F3] text-[#001615] py-2 px-6`; heading fill #95A09F and centring against `text-[#95A09F]` on a `justify-center` row; header avatar 40 against `w-10 h-10`. Frame 242's second CTA/button 5153:205088 is `visible: false` and is correctly not drawn. STILL OPEN: the column gutter (100 each side inside the 928 pane), the 46 between `middle` and `thread`, and the message groups - all three explained in the header block.
+Skai > Social > Messages > Sample Conversation - scroll effect 1VH (1440 x 900px) [10215-137087]	partial	src/pages/social/messages/MessageThread.tsx	/messages/:conversationId	FIXED THIS WAVE, same three values, measured independently on this frame rather than assumed from its twin: `middle` 10215:137260 is 330x194 with `Frame 793` 10215:137263 at 58 - name 10215:137264 Manrope Bold 14/18, meta 10215:137265 / 137266 Mulish Regular 12/16, button label I10215:137269;780:133 Manrope Regular 14/18 - and `thread` 10215:137275 carries itemSpacing 32 with its headings 10215:137276 / 137351 in Mulish Regular 12/16, all at -4%. Identical to 5153-205032 to the pixel, which is what makes one component the right answer for both. Code before / after and the delta-0 list are as recorded on 5153-205032. This frame is the thread mid-scroll: `thread` sits at y=-70 and `middle` at y=-310, both above `main`, under the 88-tall BACKGROUND_BLUR band Frame 1243 - the top fade THREAD_TOP_FADE already draws off this node, and it is unchanged. STILL OPEN: the column gutter, the 46 between `middle` and `thread`, and the message groups.
+Skai > Social > Messages > Sample Conversation 1VH (768 x 1024px) [11387-29051]	partial	src/pages/social/messages/MessageThread.tsx	/messages/:conversationId	FIXED THIS WAVE, and 768 is where the file was furthest out. Figma `middle` 11387:29059 is 330x188: name 11387:29063 Manrope Bold 12/16, handle 11387:29064 and joined 11387:29065 Mulish Regular 12/14, button 11387:29068 34 tall with its label at Manrope Regular 14/18. Code before resolved to 14/18 + 12/16 + 34, composing a 194-tall card - 6px over the frame. Code after resolves to 12/16 + 12/14 + 34 and composes 64 + 14 + (16+4+14+4+14) + 24 + 34 = 188, delta 0. DAY HEADING: 11387:29070 is Mulish Regular 12/14 and `thread` 11387:29069 carries itemSpacing 40 - the WIDEST gap of the three boards, at the MIDDLE width, so a ramp written base to md would have left 1440 on the tablet's 40 and nothing would have noticed. Code before was Manrope 12/16 on a flat 32; code after is `font-mulish text-[12px]/[14px]` on `md:pt-9 md:pb-9`, giving 36 + 4 = 40. HEADER NAME: Frame 239 11387:29053 is 40 tall, `Frame 792` 11387:29054 is 109 wide on gap 12, name 11387:29056 Manrope Bold 12/16 - against an inherited 16px at 600 before. THE 44px FLOOR BITES AT THIS EXACT WIDTH: src/index.css:749 is `max-width: 768px`, so both the 34-tall card button and the 40-tall header row were being floored to 44; both now carry `no-min-size`. ALSO RE-MEASURED AT DELTA 0: avatar 64, `middle` gap 24, `Frame 792` gap 14, `Frame 793` gap 4, button radius 8 / #56C7F3 / #001615 / pad 8-24, heading fill #95A09F, header avatar 40. STILL OPEN: `thread` is 708 inside 768 - a 30 gutter against the file's flat `p-4`; the 24 between `middle` and `thread` against a composed 64; the message groups.
+Skai > Social > Messages > Sample Conversation - scroll effect 1VH (768 x 1024px) [11387-28789]	partial	src/pages/social/messages/MessageThread.tsx	/messages/:conversationId	FIXED THIS WAVE, measured on this frame's own nodes: `middle` 11387:28797 330x188, `Frame 793` 11387:28800 at 52, name 11387:28801 Manrope Bold 12/16, meta 11387:28802 / 28803 Mulish Regular 12/14, button 11387:28806 34 tall; `thread` 11387:28807 itemSpacing 40 with headings 11387:28808 / 28888 in Mulish Regular 12/14, all at -4%. Identical to 11387-29051. Code before / after and the delta-0 list are as recorded there. STILL OPEN: the 30 gutter, the 24 under the card, the message groups.
+Skai > Social > Messages > Sample Conversation 1VH (375 x 812px) [11368-23343]	partial	src/pages/social/messages/MessageThread.tsx,src/pages/social/messages/ConversationHeader.tsx	/messages/:conversationId	FIXED THIS WAVE, and 375 is where the card was 10px too tall. Figma `middle` 11368:23360 is 330x184: name 11368:23364 Manrope Bold 12/14, handle 11368:23365 and joined 11368:23366 Mulish Regular 12/14, and `Frame 242` 11368:23367 is 32 - not 34 - because its button 11368:23369 sets its label at Manrope Regular 14/16. Code before resolved to 14/18 + 12/16 + a 34-tall button and composed 194 against the frame's 184. Code after composes 64 + 14 + (14+4+14+4+14) + 24 + (16+8+8) = 184, delta 0. DAY HEADING: 11368:23371 Mulish Regular 12/14, `thread` 11368:23370 itemSpacing 32; code before drew Manrope 12/16. HEADER NAME: Frame 1243 11368:23484 is a 374x72 gradient band with a BACKGROUND_BLUR, Frame 239 11368:23485 inside it is 342x40, and the name 11368:23488 is Manrope Bold 12/14 - the file inherited 16px at 600 and, being a button under a `max-width: 768px` 44px floor, could not have sat in a 40-tall row at all. Both controls now carry `no-min-size`. ALSO RE-MEASURED AT DELTA 0: avatar 64, `middle` gap 24, `Frame 792` gap 14, `Frame 793` gap 4, button radius 8 / #56C7F3 / #001615 / pad 8-24, heading #95A09F centred, header avatar 40 on a 12 gap against `gap-3`, header kebab 36x36 radius-full 1px #123F3C. STILL OPEN: `thread` is 343 inside 375 - a 16 gutter, which the flat `p-4` already draws, so this is the one board where the gutter is right; the 24 between `middle` and `thread` against a composed 64; the message groups.
+Skai > Social > Messages > Sample Conversation - scroll effect 1VH (375 x 812px) [11373-22600]	partial	src/pages/social/messages/MessageThread.tsx	/messages/:conversationId	FIXED THIS WAVE, measured on this frame's own nodes: `middle` 11373:22602 330x184, `Frame 793` 11373:22605 at 50, name 11373:22606 Manrope Bold 12/14, meta 11373:22607 / 22608 Mulish Regular 12/14, `Frame 242` 11373:22609 32 tall with its button 11373:22611 labelled Manrope Regular 14/16; `thread` 11373:22612 itemSpacing 32 with headings 11373:22613 / 22693 in Mulish Regular 12/14, all at -4%. Identical to 11368-23343. Code before / after and the delta-0 list are as recorded there. STILL OPEN: the 24 under the card against a composed 64, and the message groups.
+Skai > Social > Messages > Sample Conversation 1VH (375 x 812px) [11365-21892]	partial	src/pages/social/messages/ConversationList.tsx	/messages	NOT A THREAD FRAME - the registry names src/pages/social/messages/MessageThread.tsx and that is wrong. Opened through the Plugin API 2026-09-06: 11365:21892 holds Frame 788 (375x712) whose `Frame 285` 11365:21934 is eight `content` rows 343x56 at y=0/64/128/192/256/320/384/448/512 with a zero-height `line` vector between each - the conversation LIST on a 64 pitch. There is no `middle`, no `thread` and no `Input` anywhere in the subtree, and the 375 frame that IS the thread is 11368:23343. Nothing was changed for this row: the two fixes this wave are in MessageThread.tsx and ConversationHeader.tsx, neither of which draws this frame. NOT MEASURED against ConversationList.tsx - the file pointer here is a correction, not a parity claim.
+Skai > Social > Messages > Sample Conversation 1VH (768 x 1024px) [11385-27845]	partial	src/pages/social/messages/ConversationList.tsx	/messages	NOT A THREAD FRAME - same correction as 11365-21892, and the same evidence. 11385:27845 holds Frame 788 (768x920) whose `Frame 285` 11385:27887 is eleven `content` rows 708x64 at y=0/72/144/... on a 72 pitch with a zero-height rule between each; no `middle`, no `thread`, no `Input`. The 768 frame that IS the thread is 11387:29051. Wave 2 marked this row `done` as "one of the three frames Rule 1 cites for the single-pane 768 layout", which is a claim about the LAYOUT and was read forward as a claim about MessageThread. Nothing was changed for this row. NOT MEASURED against ConversationList.tsx.
