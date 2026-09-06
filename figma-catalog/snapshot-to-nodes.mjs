@@ -64,6 +64,7 @@ function currentIds(section) {
 
 const rows = [];
 const refused = [];
+const warnings = [];
 
 for (const file of files) {
   const doc = JSON.parse(fs.readFileSync(file, "utf8"));
@@ -108,19 +109,42 @@ for (const file of files) {
     // retitled. A mass deletion is the signature of a SHORT CAPTURE, and folding
     // one in destroys the hand-set implFiles/status/notes keyed to every id it
     // drops.
+    // WHICH INSTRUMENT CERTIFIED THE COUNT decides what a large removal means.
+    // Only the Plugin API (`use_figma`) enumerates a page completely; a count
+    // from `get_metadata` can be short without saying so.
+    const PLUGIN_API = new Set(["use_figma", "plugin", "plugin-api", "PageNode.loadAsync"]);
+    const certified = PLUGIN_API.has(String(v.countSource || "").trim());
+
     if (before && before.length >= 20) {
       const lost = removed / before.length;
-      if (lost > 0.25) {
+      if (lost > 0.25 && !certified) {
         refused.push({
           section,
           why:
-            `MASS DELETION: ${removed} of ${before.length} catalogued ids ` +
-            `(${(lost * 100).toFixed(0)}%) are absent from this capture. Design ` +
-            `files do not shed a quarter of a section; a short harvest looks ` +
-            `exactly like this and passes the count check, because both numbers ` +
-            `came from the same lossy read. Re-harvest with the Plugin API.`,
+            `MASS DELETION on an UNCERTIFIED count: ${removed} of ${before.length} ` +
+            `catalogued ids (${(lost * 100).toFixed(0)}%) are absent, and ` +
+            `countSource is ${JSON.stringify(v.countSource)}. A design file does ` +
+            `not shed a quarter of a section in weeks — but a short harvest looks ` +
+            `exactly like one and passes every count check, because both numbers ` +
+            `came from the same lossy read. Re-harvest the COUNT with the Plugin API.`,
         });
         continue;
+      }
+      if (lost > 0.25 && certified) {
+        // The Plugin API says the page really is this size, so the removals are
+        // news rather than truncation. Still not silent: dropping a catalogued id
+        // drops the implFiles/status/notes keyed to it, and a `use_figma` label
+        // is a CLAIM about method — this prints the ids so the claim can be
+        // spot-checked against the file rather than taken on trust.
+        warnings.push({
+          section,
+          why:
+            `${removed} of ${before.length} catalogued ids (${(lost * 100).toFixed(0)}%) ` +
+            `are absent, and the count is Plugin-API certified — so these read as ` +
+            `REAL deletions, not truncation. Their implFiles/status/notes go with ` +
+            `them. Spot-check a few against the file before writing:\n` +
+            `      ${(before || []).filter((i) => !now.has(i)).slice(0, 6).join(", ")}`,
+        });
       }
     }
 
@@ -152,6 +176,12 @@ if (rows.length) {
   const net = rows.reduce((a, r) => a + r.after - r.before, 0);
   console.log(`\n  net change to the registry's id count: ${net > 0 ? "+" : ""}${net}`);
   console.log("  ⚠ this moves the denominator every parity figure is quoted against.");
+}
+
+if (warnings.length) {
+  console.log(`
+  ${warnings.length} section(s) with LARGE REMOVALS on a certified count:`);
+  for (const w of warnings) console.log(`    ${pad(w.section, 22)} ${w.why}`);
 }
 
 if (refused.length) {
