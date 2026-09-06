@@ -1,0 +1,106 @@
+file	line	row	before	after
+status.wave17.play-pages.tsv	15	Skai > Play > Casino > Sample game bets 	mobile=frame-defect	mobile=broken
+status.wave17.play-shared.tsv	8	Blackjack mainframe ALT - unsorted [4755	1440=frame-defect	1440=broken
+status.wave17.predict-pages.tsv	8	Skai > Predict > sample market - all exp	tablet=blocked-on-backend	tablet=unknown
+status.wave17.social-messages.tsv	11	Skai > Social > Messages > Sample Conver	desktop=measured	desktop=partial
+status.wave17.social-messages.tsv	12	Skai > Social > Messages > Sample Conver	tablet=measured	tablet=partial
+status.wave17.social-messages.tsv	13	Skai > Social > Messages > Sample Conver	mobile=measured	mobile=partial
+status.wave17.social-messages.tsv	14	Skai > Social > Messages > Sample Conver	desktop=measured	desktop=partial
+status.wave17.social-messages.tsv	15	Skai > Social > Messages > Sample Conver	tablet=measured	tablet=partial
+status.wave17.social-messages.tsv	16	Skai > Social > Messages > Sample Conver	mobile=measured	mobile=partial
+status.wave27.predict-dash.tsv	9	Skai > Predict > Dashboard > Economy (14	desktop=blocked-on-backend	desktop=unknown
+status.wave27.predict-futures.tsv	2	sports > Futures [3456-3142]	desktop=fixed-cta-glyph	desktop=renders
+status.wave27.predict-futures.tsv	3	Sports futures [10597-66077]	mobile=fixed-cta-glyph	mobile=renders
+status.wave27.predict-futures.tsv	4	Sports futures [10654-208482]	tablet=fixed-cta-glyph	tablet=renders
+status.wave27.predict-futures.tsv	5	Sports futures 1VH [10710-131349]	mobile=fixed-cta-glyph	mobile=renders
+status.wave27.predict-futures.tsv	6	Sports futures 1VH [10710-132635]	tablet=fixed-cta-glyph	tablet=renders
+status.wave27.predict-futures.tsv	7	sports > Futures > Sample futures [3471-	desktop=fixed-legend-marker	desktop=renders
+status.wave27.predict-futures.tsv	8	sports > Futures > Sample futures - full	mobile=fixed-legend-marker	mobile=renders
+status.wave27.predict-futures.tsv	9	sports > Futures > Sample futures - full	tablet=fixed-legend-marker	tablet=renders
+status.wave27.trade2-trench-b.tsv	7	Hover and clicks [13006-247576]	desktop=furniture	desktop=n-a
+status.wave27.trade2-trench-b.tsv	8	Boost status ALT [13006-252664]	desktop=blocked-on-backend	desktop=unknown
+status.wave27.trade2-trench-b.tsv	9	Boost status [13006-252687]	desktop=blocked-on-backend	desktop=unknown
+status.wave27.trade2-trench-b.tsv	10	Boost status 50% [13006-252710]	desktop=blocked-on-backend	desktop=unknown
+status.wave27.trade2-trench-b.tsv	11	Boost status - more info. [13006-252735]	desktop=blocked-on-backend	desktop=unknown
+status.wave27.trade2-trench-b.tsv	12	Boost status ALT [13006-347983]	tablet=blocked-on-backend	tablet=unknown
+status.wave27.trade2-trench-b.tsv	13	Boost status [13006-348006]	tablet=blocked-on-backend	tablet=unknown
+status.wave27.trade2-trench-b.tsv	14	Boost status 50% [13006-348029]	tablet=blocked-on-backend	tablet=unknown
+status.wave27.trade2-trench-b.tsv	15	Boost status - more info. [13006-348054]	tablet=blocked-on-backend	tablet=unknown
+status.wave27.trade2-trench-b.tsv	16	Boost status ALT [13006-348856]	mobile=blocked-on-backend	mobile=unknown
+status.wave27.trade2-trench-b.tsv	17	Boost status [13006-348879]	mobile=blocked-on-backend	mobile=unknown
+status.wave27.trade2-trench-b.tsv	18	Boost status 50% [13006-348902]	mobile=blocked-on-backend	mobile=unknown
+status.wave27.trade2-trench-b.tsv	19	Boost status - more info. [13006-348927]	mobile=blocked-on-backend	mobile=unknown
+status.wave28.play-hub.tsv	60	Skai > Play > unsupported region ALT 1VH	desktop=n-a tablet=blocked mobile=n-a @2026-09-06	desktop=n-a tablet=unknown mobile=n-a @2026-09-06
+status.wave28.play-hub.tsv	61	Skai > Play > unsupported region ALT 1VH	desktop=n-a tablet=n-a mobile=blocked @2026-09-06	desktop=n-a tablet=n-a mobile=unknown @2026-09-06
+status.wave28.play-hub.tsv	62	Skai > Play > unsupported region ALT 1VH	desktop=blocked tablet=n-a mobile=n-a @2026-09-06	desktop=unknown tablet=n-a mobile=n-a @2026-09-06
+status.wave28.play-hub.tsv	65	Skai > Play > Sidebar 1VH (1440 / 768 / 	desktop=blocked tablet=blocked mobile=blocked @2026-09-06	desktop=unknown tablet=unknown mobile=unknown @2026-09-06
+status.wave28.predict-dash.tsv	9	Skai > Predict > Dashboard > Economy (14	desktop=blocked-on-backend	desktop=unknown
+status.wave28.predict-dash.tsv	15	Skai > Predict > Dashboard > Oscars (768	desktop=frame-defect	desktop=broken
+status.wave28.predict-futures.tsv	2	Skai > Predict > sports > Futures > Samp	desktop=fixed-range-strip+resolved-toggle	desktop=renders
+status.wave28.predict-futures.tsv	3	Skai > Predict > sports > Futures > Samp	desktop=fixed-range-strip+resolved-toggle	desktop=renders
+status.wave28.predict-futures.tsv	4	Skai > Predict > sports > Futures > Samp	desktop=fixed-range-strip+resolved-toggle	desktop=renders
+status.wave28.predict-futures.tsv	5	Skai > Predict > sports > Futures > Samp	desktop=fixed-range-strip+resolved-toggle	desktop=renders
+status.wave28.predict-futures.tsv	6	Skai > Predict > sports > Futures > Samp	desktop=fixed-range-strip+resolved-toggle	desktop=renders
+status.wave28.predict-futures.tsv	7	Skai > Predict > sports > Futures > Samp	mobile=fixed-range-strip+resolved-toggle	mobile=renders
+status.wave28.predict-futures.tsv	8	Skai > Predict > sports > Futures > Samp	mobile=fixed-range-strip+resolved-toggle	mobile=renders
+status.wave28.predict-futures.tsv	9	Skai > Predict > sports > Futures > Samp	mobile=fixed-range-strip+resolved-toggle	mobile=renders
+status.wave28.predict-futures.tsv	10	Skai > Predict > sports > Futures > Samp	mobile=fixed-range-strip+resolved-toggle	mobile=renders
+status.wave28.predict-futures.tsv	11	Skai > Predict > sports > Futures > Samp	mobile=fixed-range-strip+resolved-toggle	mobile=renders
+status.wave28.predict-futures.tsv	12	Skai > Predict > sports > Futures > Samp	tablet=fixed-range-strip+resolved-toggle	tablet=renders
+status.wave28.predict-futures.tsv	13	Skai > Predict > sports > Futures > Samp	tablet=fixed-range-strip+resolved-toggle	tablet=renders
+status.wave28.predict-futures.tsv	14	Skai > Predict > sports > Futures > Samp	tablet=fixed-range-strip+resolved-toggle	tablet=renders
+status.wave28.predict-futures.tsv	15	Skai > Predict > sports > Futures > Samp	tablet=fixed-range-strip+resolved-toggle	tablet=renders
+status.wave28.predict-futures.tsv	16	Skai > Predict > sports > Futures > Samp	tablet=fixed-range-strip+resolved-toggle	tablet=renders
+status.wave28.social-feed.tsv	37	Create post - two images [10335-236021]	desktop=blocked tablet=n-a mobile=blocked	desktop=unknown tablet=n-a mobile=unknown
+status.wave28.social-feed.tsv	38	Create post - two images [11527-291862]	mobile=blocked	mobile=unknown
+status.wave28.social-feed.tsv	42	Cashtag ramp at 375 [11474-228114]	mobile=blocked	mobile=unknown
+status.wave28.trade2-trench-a.tsv	8	Skai > Trench > Discover > Trending 1VH 	desktop=blocked mobile=n-a tablet=n-a @2026-09-06	desktop=unknown mobile=n-a tablet=n-a @2026-09-06
+status.wave29.g-mines.tsv	3	9163-7972	desktop=fixed @2026-09-06/wave29-g-mines	desktop=renders @2026-09-06/wave29-g-mines
+status.wave29.g-mines.tsv	4	9163-8481	mobile=fixed @2026-09-06/wave29-g-mines	mobile=renders @2026-09-06/wave29-g-mines
+status.wave29.g-mines.tsv	5	9163-8621	mobile=fixed @2026-09-06/wave29-g-mines	mobile=renders @2026-09-06/wave29-g-mines
+status.wave29.g-mines.tsv	6	9163-7155	desktop=fixed @2026-09-06/wave29-g-mines	desktop=renders @2026-09-06/wave29-g-mines
+status.wave29.g-mines.tsv	7	9163-4529	desktop=match @2026-09-06/wave29-g-mines	desktop=renders @2026-09-06/wave29-g-mines
+status.wave29.g-mines.tsv	8	9163-6955	mobile=match @2026-09-06/wave29-g-mines	mobile=renders @2026-09-06/wave29-g-mines
+status.wave29.g-roulette.tsv	43	Skai > Play > Casino > Scratchers (1440 	desktop=fixed @2026-09-06/wave29-g-roulette	desktop=renders @2026-09-06/wave29-g-roulette
+status.wave29.g-roulette.tsv	44	Skai > Play > Casino > Blackjack (375 x 	mobile=fixed @2026-09-06/wave29-g-roulette	mobile=renders @2026-09-06/wave29-g-roulette
+status.wave29.g-roulette.tsv	45	Starting [9948-22956]	desktop=fixed @2026-09-06/wave29-g-roulette	desktop=renders @2026-09-06/wave29-g-roulette
+status.wave29.g-roulette.tsv	46	Frame 1000004250 [9903-1602 via 9903-203	desktop=fixed @2026-09-06/wave29-g-roulette	desktop=renders @2026-09-06/wave29-g-roulette
+status.wave29.g-roulette.tsv	48	Desktop [9815-19487]	desktop=fixed @2026-09-06/wave29-g-roulette	desktop=renders @2026-09-06/wave29-g-roulette
+status.wave29.g-roulette.tsv	49	Desktop [9799-19202]	desktop=fixed @2026-09-06/wave29-g-roulette	desktop=renders @2026-09-06/wave29-g-roulette
+status.wave29.g-roulette.tsv	50	Desktop [9820-20610]	desktop=fixed @2026-09-06/wave29-g-roulette	desktop=renders @2026-09-06/wave29-g-roulette
+status.wave30.social-post.tsv	56	Skai > Social > Sample post / token (375	desktop=unmounted tablet=unmounted mobile=unmounted	desktop=missing tablet=missing mobile=missing
+status.wave30.social-post.tsv	57	Skai > Social > Sample post / token (768	desktop=unmounted tablet=unmounted mobile=unmounted	desktop=missing tablet=missing mobile=missing
+status.wave30.social-post.tsv	58	Skai > Social > Sample post / token 1VH 	desktop=unmounted tablet=unmounted mobile=unmounted	desktop=missing tablet=missing mobile=missing
+status.wave30.social-post.tsv	59	SRP - bottom - Comments - holder [9636-2	desktop=unmounted tablet=unmounted mobile=unmounted	desktop=missing tablet=missing mobile=missing
+status.wave30.social-post.tsv	60	SRP - bottom - Holders / Activity / Deta	desktop=unmounted tablet=unmounted mobile=unmounted	desktop=missing tablet=missing mobile=missing
+status.wave30.social-post.tsv	61	Skai > Social > Sample post / token - ma	desktop=n/a tablet=unmounted mobile=unmounted	desktop=n-a tablet=missing mobile=missing
+status.wave30.social-post.tsv	62	Skai > Social > Sample post / token - ma	desktop=n/a tablet=unmounted mobile=unmounted	desktop=n-a tablet=missing mobile=missing
+status.wave30.social-post.tsv	63	Skai > Social > Sample creator profile >	desktop=blocked tablet=blocked mobile=blocked	desktop=unknown tablet=unknown mobile=unknown
+status.wave30.social-post.tsv	64	Skai > Social > Sample creator profile >	desktop=blocked tablet=blocked mobile=blocked	desktop=unknown tablet=unknown mobile=unknown
+status.wave30.social-post.tsv	65	Skai > Social > Sample creator profile >	desktop=blocked tablet=blocked mobile=blocked	desktop=unknown tablet=unknown mobile=unknown
+status.wave25.play-casino-a.tsv	85	Skai > Play > Casino > Crash (1440 x 9	desktop done|tablet done|mobile partial	desktop=done tablet=done mobile=partial
+status.wave25.play-casino-a.tsv	86	Skai > Play > Casino > Crash (768 x 10	tablet done	tablet=done
+status.wave25.play-casino-a.tsv	87	Desktop [9142-18315]	unknown	
+status.wave25.play-casino-a.tsv	88	Skai > Play > Casino > Blackjack (1440	desktop done|tablet done|mobile done	desktop=done tablet=done mobile=done
+status.wave25.play-casino-a.tsv	89	Skai > Play > Casino > Blackjack (375 	mobile partial	mobile=partial
+status.wave25.play-casino-a.tsv	90	Skai > Play > Casino > Scratchers (144	desktop done|tablet done|mobile done	desktop=done tablet=done mobile=done
+status.wave25.play-casino-a.tsv	91	Skai > Play > Casino > Blackjack (375 	mobile partial	mobile=partial
+status.wave28.trade2-trench-b.tsv	15	Boost status [13006-252687]	blocked	
+status.wave29.g-dice.tsv	24	Desktop Full Game Multiplier [9069-237	desktop 1440	desktop=done
+status.wave29.g-dice.tsv	25	Desktop Full Game Roll Over [9069-1458	desktop 1440	desktop=done
+status.wave29.g-dice.tsv	26	Desktop Full Game Win Chance [9069-225	desktop 1440	desktop=done
+status.wave29.g-dice.tsv	27	Desktop Pre Game [9069-959]	desktop 1440	desktop=partial
+status.wave29.g-dice.tsv	28	Desktop Full Game [9069-859]	desktop 1440	desktop=partial
+status.wave29.g-dice.tsv	29	Desktop Full Game Adjusted Slider [906	desktop 1440	desktop=partial
+status.wave29.g-dice.tsv	30	Desktop First Roll [9069-1141]	desktop 1440	desktop=partial
+status.wave29.g-towers.tsv	2	Selection mid game - hover [10120-1174	1440 measured	desktop=done
+status.wave29.g-towers.tsv	3	Easy Loss reveal [10120-13280]	1440 measured	desktop=done
+status.wave29.g-towers.tsv	4	skull 1 [10120-13343]	1440 measured	desktop=done
+status.wave29.g-towers.tsv	5	Frame 1000004082 [10120-8434]	1440 measured	desktop=done
+status.wave29.g-towers.tsv	6	Frame 270 [10130-13720]	1440 measured	desktop=partial
+status.wave29.g-towers.tsv	7	Frame 1000004105 [10130-14013]	1440 measured	desktop=partial
+status.wave29.g-towers.tsv	8	Frame 1000004292 [10130-14946]	375 measured	mobile=partial
+status.wave29.g-towers.tsv	9	Frame 1000004291 [10130-14802]	375 measured	mobile=partial
+status.wave29.g-towers.tsv	10	Cashout button [10893-5451]	1440 measured	desktop=partial
+status.wave29.g-towers.tsv	11	Easy cashout [10130-13627]	1440 measured	desktop=partial
+status.wave29.g-towers.tsv	12	Frame 1000004293 [10130-15152]	-	desktop=n-a tablet=n-a mobile=n-a

@@ -1,0 +1,91 @@
+# key	status	primaryFile	route	reason	bp
+# Lane wave25 play-casino-a. Files: modules/skai-gaming/** - the crash, limbo and
+# roulette shells.
+# Every # in this file is at column 0.
+#
+# ── THE SUBSET, AND WHY IT IS THIS ONE ──────────────────────────────────────────────
+# ONE component, measured completely on three axes across the three routes this lane
+# owns, rather than three page frames skimmed. Figma calls it "Frame 1000004041" - the
+# fairness / action sub-bar that sits directly under the game block at y=629. It is
+# INSTANCED, not copied: 9142:15644 on Crash, 9948:24884 on Limbo, 9799:15324 on
+# Roulette, and get_metadata returns byte-identical geometry at all four depths, so one
+# measurement settles all three and any disagreement between the three CODE copies is a
+# code delta by construction. Skai-Games file M6r9FEn042UWTQD1zvy6GM.
+#
+# THE FRAME, at 1440 (all three instances agree to the pixel):
+#   Frame 1000004041   (0, 629)     1318 x 54     fill #122524, radius 12
+#     Frame 1000004037 (16, 12)     1286 x 30     padding 16 / 12
+#       Frame 656      (0, 0)       163.333 x 30  the cluster, gap 10
+#         icons/action    (0, 8.333)     13.333   BARE glyph, no border
+#         CTA/button      (23.333, 0)    30 x 30  circle, border #123F3C 0.833, p 8.333
+#         CTA/button      (63.333, 0)    30 x 30
+#         CTA/button      (103.333, 0)   30 x 30
+#         icons/graphical (143.333, 5)   20       BARE glyph, no border
+#       skai-short     (637.68, 0)   71.98 x 30   node opacity 0.3 over fill white
+#       Frame 1000004038 (1184, 3)   102 x 24
+#         text "Provably fair" (0, 3)  72 x 18    Manrope 400, 14 / 18, -0.56px, underline
+#         icons/graphical      (78, 0) 24 x 24    solid #FF7E50, own extents 14.0918 x 17.0615
+# AT 768 the same component is 708 x 52 (dice 9069:3949), every child scaled by 52/54:
+#   cluster 151.006 x 28, glyphs 12.327 / 27.736 / 18.491. Measured, not assumed - it is
+#   the step the shared PLAY_SUBBAR_CLASS already carries and it had been cited by node
+#   id rather than by number in three places.
+#
+# ── WHAT I DID NOT MEASURE, SAID PLAINLY ────────────────────────────────────────────
+# The 46px step at 375. It is the third rung of the shared surface constant and both
+# Limbo and Roulette already ship it, but I did not open a 375 instance of Frame
+# 1000004041 myself, so I adopt it from the shared constant rather than claim it. The
+# one 375 board I did open - 11100:69785, "Sample game", in the Skai-Web-App file -
+# draws a DIFFERENT row there (a practice-mode toggle, three 36px circles and a 24px
+# glyph, no wordmark and no "Provably fair" label), which is why I am not treating it
+# as this component's phone cut.
+#
+# ── COLOUR: FILL AND NODE OPACITY ARE DIFFERENT NUMBERS ─────────────────────────────
+# The wordmark export is `<g id="skai-short" opacity="0.3">` wrapping paths at
+# `fill="white"` - node opacity 0.3, fill opacity 1. Read either alone and you get the
+# wrong answer. Composited over the opaque #122524 bar the two shipped spellings are
+# equivalent (Crash puts the 0.3 on the node; Limbo and Roulette bake it into the fill
+# as #FFFFFF4D), so that is not a delta and is not listed as one.
+# green-coal-200 resolves to #122524 and green-coal-100 to #123F3C, so the bar fill and
+# the circle hairline match the frame's own style list on every copy.
+#
+# ── THE GLYPHS ARE THE FRAME'S, AND THAT IS CHECKED, NOT ASSERTED ───────────────────
+# The committed assets under src/assets/games/dice/ were diffed against the exports the
+# Figma asset endpoint returns for 9142:15644: same path COUNT per glyph (1,1,1,1,7,1),
+# same fill, and the coordinate streams differ by a constant translation - the repo copy
+# is trimmed to the glyph's bounding box where the endpoint hands back the padded slot.
+# The heart is the cleanest case: every coordinate differs by exactly 2.0. Token counts
+# discriminate the mapping (refresh 130, heart 201, sound 370/371, info 249/251), so
+# there is no chance the five are paired to the wrong slots.
+#
+# ── ORACLES ─────────────────────────────────────────────────────────────────────────
+# New: modules/skai-gaming/src/pages/play/crashFairnessSubBar.test.tsx (13 tests).
+# Extended: fairnessSubBar375.test.ts (crash added to GUARDED, 9 -> 10) and
+# crashFigmaParity.test.tsx (the shield test rewritten - see the note under Crash).
+# Every one was PROVED RED by an extending mutation and restored:
+#   drop size-[13.333px] from Crash slot 1              -> 1 red
+#   text-[14px] leading-[18px] -> text-sm on Crash      -> 1 red
+#   Crash wide strip h-[52px] -> h-[54px]               -> 2 red (mine + the 375 suite)
+#   drop overflow-x-auto from the Crash 375 row         -> 2 red
+#   Crash shield back to lucide <Shield>                -> 2 red (mine + crashFigmaParity)
+#   delete the favourite slot                           -> 6 red
+#   remove onClick from the sound slot                  -> 1 red
+#   remove onClick from the favourite slot              -> 1 red
+#   toggleFavorite("crash") -> ("crash-pro")            -> 1 red
+#   drop size-[13.333px] from LIMBO slot 1              -> 1 red
+#   Roulette label back to text-sm                      -> 1 red
+# ⚠ THE FIRST ATTEMPT AT THE INERT-CONTROL MUTATION READ GREEN AND THAT WAS THE
+# INSTRUMENT, NOT THE TEST. These files are CRLF; a perl one-liner matching \n across a
+# line boundary silently changed nothing, so "13 passed" meant the mutation never
+# applied. A mutation that does not apply is indistinguishable from a test that cannot
+# fail. Re-run CRLF-aware, it goes red - and so do the two variants below it.
+#
+# col2: unknown|done|partial|not-started|frame-defect|furniture
+# col6: widths NAMED desktop|tablet|mobile
+#
+Skai > Play > Casino > Crash (1440 x 900px) [9003-94116]	partial	modules/skai-gaming/src/pages/play/CrashPageSections.tsx	/play/crash	FRAME 1000004041 (9142:15644) MEASURED AND FIXED; the rest of this 1440 page frame is untouched by this pass and the row stays partial. THE DELTA, in numbers: the frame's Frame 656 is 163.333 wide and holds FIVE slots - a bare 13.333 icons/action, three 30x30 CTA/button circles at x=23.333/63.333/103.333, and a bare 20px icons/graphical at x=143.333, on a 10px pitch. The code drew THREE 30px circles: 30+10+30+10+30 = 110px against 163.333, with the first and last slots wrongly given a border and a rounded-full where the frame draws bare glyphs, and with no favourite and no expand control on the page at all. ★ AND ALL THREE WERE INERT: the local `circleBtn(child, label)` helper took a glyph and an aria-label and NO handler, so on a route where the widget header's own cluster is not rendered, the page's only access to sound, rules and favourites did nothing when clicked. That is why this is not a deletion: the five slots are now built and each is wired (rules dialog, reload, favourites store, mute, browser fullscreen), taking the strip from 0 working controls to 5. The one node not carried forward is a rocket-glyph button labelled "Crash" that had no handler and named no action - the same treatment the Roulette bar's inert theatre-mode control already got, and the standing precedent that a WORKING control may only be removed by Casey is untouched, because this one did nothing. SECOND DELTA, colour and glyph: the shield was lucide's `Shield` at size-6 - a STROKED outline on a 0 0 24 24 box tinted #FF7E50 - where 9142:15666 is a solid-filled vector of its own, extents 14.0918 x 17.0615 inside a 24px box. The existing test read `getComputedStyle(svg).color` and so passed for both; it is rewritten onto the vector. THIRD DELTA, type: the label shipped `text-sm`, and the SKAI preset declares no `sm` step, so it inherited Tailwind's 14/20 against the frame's 14/18 - size and line-height read as a pair, which is the only way that 2px shows up. FOURTH DELTA, the ramp: the surface was a flat `h-[54px]` at every width, so it was 2px over at 768 (9069:3949 is 52) and 8 over at 375; it now carries the shared 46/52/54 and the frame's own 12px literal radius. ★ FIFTH, and this one is a consequence of the fix rather than a pre-existing delta: `fairnessSubBar375.test.ts` records crash at a 341px right edge in a 375 viewport, i.e. FITTING - but only because the row was two controls short. Under the host app's `min-width: 44px` floor below 768 (src/index.css), restoring the frame's five slots adds 2x44 + 2x10 = 108px and carries it to ~449, past the viewport, exactly as the nine guarded pages. So crash joins GUARDED and gets the accepted two-row shape rather than growing a row that clips its own fairness proof.	desktop=done tablet=done mobile=partial
+Skai > Play > Casino > Crash (768 x 1024px) [9003-96041]	partial	modules/skai-gaming/src/pages/play/CrashPageSections.tsx	/play/crash	SUB-BAR ONLY. The 768 cut of Frame 1000004041 is 708 x 52 with the cluster at 151.006 x 28 - every child scaled 52/54 (13.333 -> 12.327, 30 -> 27.736, 20 -> 18.491), read off dice 9069:3949 rather than taken from the three places that cited that node id without a number. Crash shipped a flat `h-[54px]`, so this board was 2px tall; it now carries `h-[52px] ... lg:h-[54px]` and the sm: hinge (640, which matches no board) stays closed. Nothing else on this 768 page frame was measured this pass.	tablet=done
+Desktop [9142-18315]	partial	modules/skai-gaming/src/components/play/games/crash/AviatorGamePro.tsx	/play/crash	NOT RE-MEASURED. Listed so the sub-bar rows above are not read as covering the widget: 9142:18315 is the graph panel inside the game block, a different component in a different file, and this lane's pass stopped at the page column below it.	
+Skai > Play > Casino > Blackjack (1440 x 900px) [9948-24618]	partial	modules/skai-gaming/src/pages/play/LimboPageSections.tsx	/play/limbo	SUB-BAR RE-MEASURED, ONE DELTA FOUND AND FIXED. ⚠ The title is a Blackjack duplicate that was never re-skinned - this is the Limbo page; identify a frame by its artwork, never its title. Limbo's copy of Frame 1000004041 (9948:24884) is the closest of the three to the frame and its cluster was still 2.2px short: the rules trigger sized only the GLYPH (`size-[11.111px]`) and gave the slot no box, so slot 1 measured 11.111 where icons/action is 13.333 and the cluster came out 161.111 against Frame 656's 163.333. Roulette's copy already carried the box, which is what made the disagreement visible - three instances of one component are three readings of the same number. Fixed with the frame's `size-[13.333px]` on the button, glyph unchanged. The label's 14/18 pair, the 0.833px hairline, the 8.333px circle padding and the 46/52/54 ramp were all re-checked here and were already right. The rest of the page frame was not re-measured.	desktop=done tablet=done mobile=done
+Skai > Play > Casino > Blackjack (375 x 812px) [9948-25380]	partial	modules/skai-gaming/src/pages/play/LimboPageSections.tsx	/play/limbo	SUB-BAR ONLY, AND THE 46 IS ADOPTED NOT MEASURED. Limbo's 375 strip already carries the accepted scroller shape and `fairnessSubBar375.test.ts` guards it; the slot-1 box fix above lands on this cut too because both strips render one `StatsIconCluster`. I did not open a 375 instance of Frame 1000004041, so the 46px height here rests on the shared constant and on the two pages already shipping it, not on a measurement of mine. Said rather than implied.	mobile=partial
+Skai > Play > Casino > Scratchers (1440 x 900px) [9799-15067]	partial	modules/skai-gaming/src/pages/play/RoulettePageSections.tsx	/play/roulette	SUB-BAR RE-MEASURED, TWO DELTAS. ⚠ Title is a Scratchers duplicate - this is Roulette. First: the label shipped `font-manrope text-sm`, which is 14px on Tailwind's default 20px leading because the SKAI preset extends fontSize without an `sm` step; 9799:15345 is 14 on 18 with -0.56px tracking. Now `text-[14px] leading-[18px]`, and the file's TRACK note says why the -0.04em and the -0.56px are the same number at this size. Second: the circle hairline was `border` (1px) where the frame's CTA/button carries border-width/w-100 = 0.833px - the same 0.833 Limbo already ships. POSITIVE CONTROL FOR THE WHOLE LANE: this file's header states 1318 x 54 / 1286 x 30 / 163.333 x 30 and get_metadata on 9799:15324 returned exactly those, which is what makes the zeros elsewhere in this pass mean something. Its seven-control cluster (the frame's five plus session-stats and the shortcut sheet, both with real behaviour and no slot) is deliberate and is left alone.	desktop=done tablet=done mobile=done
+Skai > Play > Casino > Blackjack (375 x 812px) [9799-15822]	partial	modules/skai-gaming/src/pages/play/RoulettePageSections.tsx	/play/roulette	SUB-BAR ONLY. ⚠ Title is a Blackjack duplicate - this is Roulette's 375 cut. The two fixes above are on shared constants (TRACK's trigger class and CIRCLE_BTN) so they land here unchanged, and the row already draws the scroller `fairnessSubBar375.test.ts` guards. As with Limbo's 375 row, the 46px height is adopted from the shared surface constant rather than measured by me.	mobile=partial

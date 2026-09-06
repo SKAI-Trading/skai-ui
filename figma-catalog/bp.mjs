@@ -78,6 +78,16 @@ export const STATUS_ALIASES = Object.freeze(
     ["art-asset", "furniture"],
     ["real-component", "partial"],
     ["real-screen", "partial"],
+    // A refuter's word for a row it re-measured and would not promote. The
+    // notes on these carry the delta that kept them open, so the row is
+    // measured but unfinished, which is what `partial` means.
+    ["open", "partial"],
+    ["blocked", "blocked-on-backend"],
+    // Held for a product ruling rather than for a source. There is no status
+    // for "waiting on a decision", and inventing one would have to be threaded
+    // through coverage.mjs's severity order to mean anything; the reason stays
+    // legible in the notes column.
+    ["blocked-on-casey", "partial"],
   ]),
 );
 
@@ -303,6 +313,11 @@ export const BP_WIDTHS = Object.freeze({ desktop: 1440, tablet: 768, mobile: 375
 /** Ordered so reports read widest→narrowest, matching how the designs are drawn. */
 export const BP_KEYS = Object.freeze(["desktop", "tablet", "mobile"]);
 
+/** The same three boards keyed by the pixel width a row is likely to name. */
+export const BP_PX_TO_KEY = Object.freeze(
+  new Map(Object.entries(BP_WIDTHS).map(([key, px]) => [String(px), key])),
+);
+
 /**
  * Hand-authorable CODE-axis verdicts.
  *
@@ -392,7 +407,10 @@ export function parseBpCell(cell) {
       errors.push(`token "${tok}" is not <width>=<verdict>`);
       continue;
     }
-    const w = tok.slice(0, eq);
+    // A board is as often named by its pixel width as by its key, and BP_WIDTHS
+    // already fixes which is which. Reading `1440=done` as `desktop=done` costs
+    // nothing and keeps a whole class of row out of the refusal path.
+    const w = BP_PX_TO_KEY.get(tok.slice(0, eq)) ?? tok.slice(0, eq);
     const v = tok.slice(eq + 1);
     if (!BP_KEYS.includes(w)) {
       errors.push(`unknown width "${w}" (want ${BP_KEYS.join(" | ")})`);
