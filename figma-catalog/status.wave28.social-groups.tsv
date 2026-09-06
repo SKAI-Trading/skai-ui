@@ -1,0 +1,100 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-groups, wave 28. Partition as briefed: src/pages/social/groups/**.
+#
+# Every # in this file is at column 0. coverage.mjs tests startsWith("#") with no
+# trimStart, so an indented comment is not a comment to every reader.
+#
+# WHAT WAS MEASURED, AND WHY THIS SUBSET. The row's FACE — which typeface a value
+# is set in, its weight, its tracking, and the greys and greens beneath it.
+# Waves 17, 19, 23, 25 and 27 measured this surface's SIZES and its BOX and got
+# both right; not one of them read a style's family, its weight, its letter
+# spacing or its bound fill. Those four are invisible to a size check and they
+# were wrong on nine elements at all three boards at once, which is why one pass
+# over one component settles ten rows.
+#
+# HOW THE CODE SIDE WAS RESOLVED. Three of the four axes are written by an
+# @skai/ui primitive, not by the call site: buttonVariants opens with
+# `text-sm font-medium` and badgeVariants with `text-xs font-semibold` under a
+# variant's own `bg-`/`text-`. A call site's string cannot see any of it, and
+# what ships is whatever tailwind-merge leaves standing. So every claim below
+# was read off the class list the rendered DOM actually holds, and every
+# displacement is asserted from BOTH sides — the value that should be there and
+# the primitive's value that must have left.
+#
+# THE FIGMA SIDE, READ BY NAME. get_variable_defs on the same node names at all
+# three boards, never one board's screen against another's nested panel:
+#
+#   element         | 1440          | 768           | 375
+#   ----------------|---------------|---------------|---------------
+#   group name      | Manrope 14/18 | Manrope 12/16 | Manrope 12/14
+#                   | 5198:50047    | 11530:304317  | 11526:288955
+#   member sub-line | Mulish  11/14 | Mulish  10/14 | Mulish  10/14
+#                   | 5198:50051    | 11530:304323  | 11526:288961
+#   Type pill       | Mulish  11/14 | Mulish  12/14 | Mulish  10/14
+#                   | 5198:50059    | 11530:304319  | 11526:288957
+#   field caption   | Manrope 12/16 | Manrope 12/16 | Manrope 12/14
+#                   |               | 11530:304329  | 11526:290445
+#   field value     | Mulish  12/16 | Mulish  12/14 | Mulish  12/14
+#                   | 5198:50060    | 11530:304330  | 11526:290446
+#   action label    | Manrope 14/18 | Manrope 14/18 | Manrope 14/16
+#                   | 5198:9947     | 11530:304326  | 11526:288964
+#   empty headline  | Manrope 18/24 | Manrope 14/18 | Manrope 14/18
+#                   | 5198:47875    | 11398:86617   | 11398:77381
+#   empty sentence  | Manrope 12/16 | Manrope 12/16 | Manrope 12/14
+#                   | 5198:47876    | 11398:86618   | 11398:77382
+#   empty CTA       | Manrope 14/18 | Manrope 14/18 | Manrope 14/18
+#                   | 5198:47879    | 11398:86621   | 11398:77385
+#
+# Every style in that table is weight 400 at letterSpacing -4. The split is by
+# what a value IS, not by where it sits: Manrope carries prose, Mulish carries
+# everything counted or coded. The sizes were already right at every cell; the
+# face was Manrope throughout because that is the app's body font, and nothing
+# carried tracking.
+#
+# COLOUR, likewise by name. Public pill `App/Green 300` #17F9B4 under a
+# `Primary/Green Coal 300` #001615 label; Private/Token `App/Ash 300` #95A09F
+# under the same #001615; field captions, the absent-description em dash
+# (11526:290516 "Hidden.") and the empty sentence all #95A09F. The two shipped
+# tokens were near misses rather than obvious ones: bg-secondary resolves
+# #2DEDAD — the trading buy/long green, not this one — under #001412, and
+# --muted-foreground resolves #B3B9CC, a blue-grey held over from the pre-green
+# palette that no frame in this family binds.
+#
+# THE ONE NODE THAT DISAGREES, and it is a single instance override rather than
+# a rule: 11526:290441, the Join control on the first Discover 375 row, binds
+# `Primary/Alien Green 300` #17F9B4 where 11526:288964, 11526:290476,
+# 11530:304326, 5198:9947, 11396:76739 and 5198:47099 all bind
+# `Primary/Sky Blue 300` #56C7F3. Six against one, so the shipped sky blue
+# stands and nothing was changed for it.
+#
+# THE ORACLE. src/pages/social/groups/__tests__/groupsRowFace.figma.test.tsx,
+# 22 cases. It mounts the real GroupsSearchTable — jsdom ships no matchMedia,
+# so a stub keyed on a viewport width picks the presentation — and reads the
+# class list on the pill, the name, the member line, both halves of a field, the
+# action control, the empty headline, its sentence, the Create group control and
+# the table's Token req. cell. Tokens are compared as EXACT MEMBERS of a split
+# list. Proved red seven times by mutations that LENGTHEN a token rather than
+# change its value: tracking-[-0.04em] -> md:… (15 failed), font-mulish (9), the
+# three colour classes together (7), font-normal (6), items-center (2), the two
+# leadings (4); and once by DROPPING the font-size override so the primitive's
+# text-sm survives the merge (3 failed), which is what makes the not-contains
+# assertions live rather than decorative. The source was restored from a copy
+# after each and the whole directory re-run green: 242 of 242, 13 files.
+#
+# WHY EVERY ROW BELOW STAYS partial. Each of these frames still draws at least
+# one element with no server source — the stacked member-avatar cluster
+# (Frame 235 / Frame 1000003849), the 24px token mark and the "60,000 left"
+# sub-line under Token req., and on Created the whole Token req. column. Those
+# are unchanged this pass and are scoped by row-level policy on
+# trading_group_members and by getMyTradingGroups carrying no access_rules. A
+# row is not done because the type finally matches.
+Skai > Social > Groups - search 1VH (375 x 812px) [11526-288877]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	FIXED the row's face at this board and re-measured both sides. TYPE the name is Manrope Regular 12/14 at -4% (11526:288955) and the member sub-line Mulish Regular 10/14 at -4% (11526:288961); code before, both inherited Manrope with no tracking, so the count was in the prose face; after, font-mulish + tracking-[-0.04em] through ROW_TYPE_RAMP, delta 0 on family, weight and tracking. COLOUR the Public tag is #17F9B4 under #001615 (11526:288957, 11526:288994) and the Private tag #95A09F under the same (11526:289031); code before drew Public as bg-secondary #2DEDAD under #001412; after bg-alien-green-bright + text-green-coal, delta 0. GEOMETRY the head centres its action block — y=3 of a 28 in a 34-tall head (11526:288999) — and the code top-aligned it; after items-center. STAYS partial for Frame 235, the five 32px circles at a 26px pitch behind a "+12" chip, scoped by row-level policy on trading_group_members.	mobile=partial
+Skai > Social > Groups - search 1VH (768 x 1024px) [11530-304239]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	FIXED the row's face at this board and re-measured both sides. TYPE name Manrope Regular 12/16 at -4% (11530:304317), member line Mulish Regular 10/14 (11530:304323), Type pill Mulish Regular 12/14 (11530:304319), field caption Manrope Regular 12/16 (11530:304329) and field value Mulish Regular 12/14 (11530:304330); code before was Manrope with no tracking on all five; after, delta 0 on family, weight and tracking. COLOUR the caption is App/Ash 300 #95A09F and shipped --muted-foreground #B3B9CC; after text-ash, delta 0. The action label is Manrope Regular 14/18 at -4% (11530:304326) against the primitive's text-sm font-medium, i.e. 14/20 in Medium; after text-[14px] leading-[18px] font-normal tracking-[-0.04em], which displaces text-sm outright so the 20 leaves with it. GEOMETRY the action block sits at y=2 of a 30 in a 34-tall head (11530:304324) and the code top-aligned it; after items-center. STAYS partial for Frame 1000003849, the Members avatar stack at x=536, same policy scope.	tablet=partial
+Skai > Social > Groups - search > Discover 1VH (375 x 812px) [11526-290354]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	FIXED with 11526-288877 — one component, one ramp, and this frame was read at equal depth to confirm it: Frame 1000003854 at x=12 y=12 in a 343 panel with a 34-tall head, the tag at x=93 after an 89 name (gap 4), the caption at y=0 h=14 over a value at y=22 (gap 8). TYPE and COLOUR as the All-groups row, plus the Token req. caption and value, which take the same fieldLabel/fieldValue pair: caption Manrope 12/14 #95A09F, value Mulish 12/14 #FFFFFF; before, Manrope untracked under #B3B9CC. STAYS partial for two things this frame draws that have no source: Frame 583 puts a 24x24 token mark at x=0 with the amount at x=32 (11526:290455), and Frame 817 stacks "60,000 left" under it (11526:290457/290458) — required-minus-held, which discoverEligibleGroups can only ever answer 0 for because it returns groups the viewer is ALREADY eligible for.	mobile=partial
+Skai > Social > Groups - search > Discover (375 x 812px) [11398-77450]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	FIXED with 11526-290354, which is the same screen at the same board and states the same row; the face, the weight, the tracking and the two greys are one component's and move together. Same two blockers: the 24px token mark and the "60,000 left" sub-line under Token req.	mobile=partial
+Skai > Social > Groups - search > Created 1VH (375 x 812px) [11526-290070]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	FIXED with 11526-288877 — the Created rows are the same GroupListRow and take the same face, weight, tracking and greys. STAYS partial on the Token req. column, and on a caption that cannot be shipped as the frame writes it: the 1440 Created header (5198:50996 onward) reads S/N | Date created | Group | Token req. | Type / Criteria | Description | Action and its Frame 814 draws TWO labels/tag (5198:50970 at x=20.5 and 5198:50971 at x=74.5). The second pill is the criteria half, and getMyTradingGroups reads trading_groups rows that carry no access_rules, so it cannot be drawn. Captioning the column "Type / Criteria" while only one pill renders names a thing the cell does not contain — see blockedOnCasey.	mobile=partial
+Skai > Social > Groups - search > Created 1VH (375 x 812px) [11398-79037]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	FIXED with 11526-290070, the same screen at the same board. Same face and colour work, same two open items: the Token req. column has no rules-carrying read, and the "Type / Criteria" caption is a ruling rather than a fix.	mobile=partial
+Skai > Social > Groups - search > Created 1VH (768 x 1024px) [11398-87282]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	FIXED with 11530-304239 — the Created list row is the same component at the same board and takes the 768 ramp: name Manrope 12/16, member line Mulish 10/14, caption Manrope 12/16 in #95A09F, value Mulish 12/14, action label Manrope 14/18, all at -4% and all Regular. Its action control was measured on this board's sibling at equal depth (11398:87369, 30 tall) and agrees with 11530:304326. STAYS partial on the same Token req. column and the same caption ruling.	tablet=partial
+Skai > Social > Groups - search > Created 1VH (1440 x 900px) [5198-50314]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	RE-MEASURED end to end this pass off 5198-50315, the main child the bug report links, and FIXED three cells. The Token req. value is Lg/Numbers 4 300 — Mulish Regular 14/18 at -4% (5198:50269, and 5198:50414 is 18 tall on this frame) — and shipped the group name's ramp, which is the right size in the wrong face; it is now written out rather than borrowing an entry. The Description column's absent case is #95A09F (5198:50112) and shipped #B3B9CC. The Type pill and the row's other values take the table ramp's new face and tracking. GEOMETRY confirmed and unchanged: header captions 1128x16 at y=0 with the rule at y=24, rows 60 tall at 0 and 76, action 30 tall at y=15 so centred, S/N value 24x16 at x=0 inside a `left` block at x=16. STAYS partial on the Token req. column and the second labels/tag, which need a rules-carrying read of a group the viewer already owns.	desktop=partial
+Skai > Social > Groups - search 1VH (1440 x 900px) [5194-270743]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	FIXED the table's cell face and its two greys, which are this file's half of the frame. TYPE name Manrope Regular 14/18 at -4% (5198:50047), member sub-line Mulish Regular 11/14 (5198:50051), Type pill Mulish Regular 11/14 (5198:50059), Created and Description values Mulish Regular 12/16 (5198:50042, 5198:50060), action label Manrope Regular 14/18 (5198:9947, label 25x18 at x=16 y=6 in a 57x30 box). Code before: every one of them Manrope, untracked, and the action control in the primitive's text-sm font-medium. After: font-mulish on the three counted values, tracking-[-0.04em] on all six, font-normal and an explicit 14/18 on the control. COLOUR the absent description goes text-ash #95A09F against the shipped #B3B9CC. STAYS partial on the Members column, which draws Frame 235 rather than a count, and on the page chrome outside this partition.	desktop=partial
+Table ALT [10219-182536]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	UNCHANGED GEOMETRICALLY — the body inset, header band and row box were built in wave 27 and re-read green by their oracle this pass. What moved is the face inside the cells, which this node shares with 5194-270743: the captions were already App/Ash 300 at 12/16 with -4% (10219:182556), and the values below them now carry the same tracking and the Mulish face the frames bind. STAYS partial on the Members column, and its column ORDER is still not a defect to fix: Group | Members | Created | Type | Description | Action here against the shipped frame's Created | Group | Members | …, so it is an ALTernative arrangement and the order stays the shipped frame's.	desktop=partial
