@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T19:02:54.046Z",
+  "generated": "2026-09-06T19:52:44.379Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -49,16 +49,16 @@
   },
   "pagesHarvested": "2026-08-18",
   "stats": {
-    "total": 4280,
-    "titled": 4280,
-    "cited": 1038,
+    "total": 4285,
+    "titled": 4285,
+    "cited": 1042,
     "bySection": {
       "home": {
-        "frames": 272,
-        "titled": 272,
-        "screens": 180,
+        "frames": 274,
+        "titled": 274,
+        "screens": 182,
         "nonScreen": 92,
-        "cited": 100
+        "cited": 102
       },
       "wallet": {
         "frames": 178,
@@ -215,11 +215,11 @@
         "cited": 0
       },
       "towers": {
-        "frames": 30,
-        "titled": 30,
+        "frames": 31,
+        "titled": 31,
         "screens": 15,
-        "nonScreen": 15,
-        "cited": 6
+        "nonScreen": 16,
+        "cited": 7
       },
       "keno": {
         "frames": 27,
@@ -229,11 +229,11 @@
         "cited": 8
       },
       "home-2": {
-        "frames": 240,
-        "titled": 240,
-        "screens": 145,
+        "frames": 242,
+        "titled": 242,
+        "screens": 147,
         "nonScreen": 95,
-        "cited": 13
+        "cited": 14
       },
       "wallet-2": {
         "frames": 182,
@@ -329,8 +329,8 @@
     },
     "keyCollisions": {
       "total": 23,
-      "idsListed": 4303,
-      "rowsKept": 4280,
+      "idsListed": 4308,
+      "rowsKept": 4285,
       "reconciles": true,
       "bySectionPair": {
         "home -> pwa": 5,
@@ -339,7 +339,7 @@
     },
     "citationRefusals": [],
     "byReadiness": {
-      "ready": 3441,
+      "ready": 3446,
       "meta": 96,
       "wip": 728,
       "unknown": 15
@@ -412,10 +412,10 @@
       {
         "page": "✅ Home 1",
         "readiness": "ready",
-        "rows": 277,
+        "rows": 279,
         "gone": 0,
         "live": 227,
-        "delta": -50
+        "delta": -52
       },
       {
         "page": "✅ Wallet 1",
@@ -436,10 +436,10 @@
       {
         "page": "✅ Home 2",
         "readiness": "ready",
-        "rows": 240,
+        "rows": 242,
         "gone": 0,
         "live": 129,
-        "delta": -111
+        "delta": -113
       },
       {
         "page": "✅ Wallet 2",
@@ -556,10 +556,10 @@
       {
         "page": "✅ Towers - Skai originals",
         "readiness": "ready",
-        "rows": 30,
+        "rows": 31,
         "gone": 0,
         "live": 30,
-        "delta": 0
+        "delta": -1
       },
       {
         "page": "✅ Fortune Wheel - Skai originals",
@@ -20065,6 +20065,58 @@
       "kind": "non-screen",
       "family": null,
       "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:2713-4556": {
+      "section": "home",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "2713-4556",
+      "title": "Skai > Home > welcome pop-up > CLAIM NOW row (flame glyph + label; settles report 5536caee)",
+      "page": "✅ Home 1",
+      "readiness": "ready",
+      "screen": "welcome pop-up > CLAIM NOW row",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "welcome pop-up > CLAIM NOW row",
+      "citedByFiles": [
+        "src/components/home-redesign/HomeOnboarding.tsx",
+        "src/components/notifications/WelcomeModal.tsx"
+      ],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:2713-4557": {
+      "section": "home",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "2713-4557",
+      "title": "Skai > Home > welcome pop-up > claim-now icon — FILLED FLAME in Sky Blue 16px (icons/action, Hot variant). NOT a droplet: apex left of centre, re-entrant notch upper-right",
+      "page": "✅ Home 1",
+      "readiness": "ready",
+      "screen": "welcome pop-up > claim-now icon — FILLED FLAME in Sky Blue 16px (icons/action, Hot variant). NOT a droplet: apex left of centre, re-entrant notch upper-right",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "welcome pop-up > claim-now icon — FILLED FLAME in Sky Blue 16px (icons/action, Hot variant). NOT a droplet: apex left of centre, re-entrant notch upper-right",
+      "citedByFiles": [
+        "src/components/home-redesign/HomeOnboarding.tsx",
+        "src/components/notifications/WelcomeModal.tsx"
+      ],
       "implFiles": [],
       "status": "unknown",
       "route": null,
@@ -93950,6 +94002,33 @@
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
+    "M6r9FEn042UWTQD1zvy6GM:10120-8434": {
+      "section": "towers",
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "fileName": "Skai-Games",
+      "node": "10120-8434",
+      "title": "Frame 1000004082",
+      "page": "✅ Towers - Skai originals",
+      "readiness": "ready",
+      "screen": "Frame 1000004082",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "non-screen",
+      "family": null,
+      "citedByFiles": [
+        "modules/skai-gaming/src/components/play/games/crash/tower/TowerBoard.tsx",
+        "modules/skai-gaming/src/components/play/games/crash/tower/towerFigmaParity.test.tsx",
+        "modules/skai-gaming/src/components/play/games/crash/tower/towerTheme.ts"
+      ],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
     "M6r9FEn042UWTQD1zvy6GM:9433-12175": {
       "section": "keno",
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -100489,6 +100568,55 @@
       "vh": null,
       "kind": "non-screen",
       "family": null,
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13008-113503": {
+      "section": "home-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13008-113503",
+      "title": "Skai > Home > upgrade checkout > payment-method row (3 children in one justify-between: icon+symbol, source-chain tag, 120px balance column)",
+      "page": "✅ Home 2",
+      "readiness": "ready",
+      "screen": "upgrade checkout > payment-method row",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "upgrade checkout > payment-method row",
+      "citedByFiles": [
+        "src/components/home-redesign/upgrade/PaymentMethodScreen.tsx",
+        "src/components/upgrade/checkout/PaymentMethodPicker.tsx"
+      ],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13008-115807": {
+      "section": "home-2",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "fileName": "Skai-Web-App-2",
+      "node": "13008-115807",
+      "title": "Skai > Home > whales > import wallets > Base badge — ⚠️ BROKEN EXPORT: #0052FF disc with a straight rectangular slot, not the Base brandmark. Do NOT copy; app ships the official mark deliberately",
+      "page": "✅ Home 2",
+      "readiness": "ready",
+      "screen": "whales > import wallets > Base badge — ⚠️ BROKEN EXPORT: #0052FF disc with a straight rectangular slot, not the Base brandmark. Do NOT copy; app ships the official mark deliberately",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "whales > import wallets > Base badge — ⚠️ BROKEN EXPORT: #0052FF disc with a straight rectangular slot, not the Base brandmark. Do NOT copy; app ships the official mark deliberately",
       "citedByFiles": [],
       "implFiles": [],
       "status": "unknown",
