@@ -17,10 +17,21 @@ import { cn } from "../../lib/utils";
  * the modal. On send / swap / backup screens that is fund-loss-adjacent, not a
  * nuisance.
  *
- * The guard is `e.target === e.currentTarget`: close only when the click landed
- * on the backdrop ITSELF, never on anything inside it. That is one line, needs
- * no wrapper element, and cannot be half-applied — which is exactly why it is in
- * here and not in a comment telling 32 authors to remember `stopPropagation`.
+ * The guard has TWO halves, and the first one alone is not enough.
+ *
+ * `e.target === e.currentTarget` closes only when the click landed on the
+ * backdrop ITSELF, never on anything inside it. That handles a click that
+ * starts and ends in the panel. It does NOT handle a DRAG: a click fires on the
+ * nearest common ancestor of press and release, so pressing inside the panel
+ * and releasing over the backdrop produces a click whose target is the
+ * backdrop, and the target test waves it through. Selecting text in a field and
+ * overshooting the edge is enough to trigger it, which on SendModal or
+ * WalletBackup discards a pasted address or a backup confirmation.
+ *
+ * So a pointerdown latch records where the press began and suppresses the
+ * click if it began inside. Both halves are needed; neither is redundant.
+ * Both live here rather than in a comment telling 32 authors to remember
+ * `stopPropagation`.
  *
  * Deliberately NOT Radix: these overlays render arbitrary existing markup and a
  * Radix migration would rewrite 32 components. This is the smallest change that
@@ -77,11 +88,41 @@ export function ModalScrim({
     return () => document.removeEventListener("keydown", onKey);
   }, [dismissible, onClose]);
 
+  /**
+   * Whether the press that is about to become a click began inside the panel.
+   *
+   * A `click` fires on the nearest common ancestor of where the press started
+   * and where it ended, so releasing over the backdrop after pressing INSIDE
+   * the panel delivers a click whose target IS the backdrop — indistinguishable
+   * from a deliberate outside click by target alone. That is what happens when
+   * someone sweeps a selection out of a text field and overshoots, and the
+   * modal closes, taking a half-typed bug report or a pasted address with it.
+   *
+   * The check below is deliberately one-sided: it only ever SUPPRESSES a
+   * dismissal that the target test already allowed. A click arriving with no
+   * preceding pointerdown — a synthetic one, or `fireEvent.click` in a test —
+   * leaves this false and still dismisses, so no existing caller loses a path
+   * it had. Radix expresses the same rule as `pointerDownOutside`.
+   */
+  const pressStartedInside = React.useRef(false);
+
+  const onBackdropPointerDown = React.useCallback(
+    (e: React.PointerEvent<HTMLDivElement>) => {
+      pressStartedInside.current = e.target !== e.currentTarget;
+    },
+    [],
+  );
+
   const onBackdropClick = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      // Only a click on the backdrop itself dismisses. A click that STARTED
-      // inside the panel and bubbled up has e.target === that inner node, so it
-      // is ignored — no stopPropagation needed anywhere in the children.
+      // Consume the latch whatever the outcome, so one drag-off cannot suppress
+      // the NEXT click too.
+      const startedInside = pressStartedInside.current;
+      pressStartedInside.current = false;
+      if (startedInside) return;
+      // Only a click on the backdrop itself dismisses. A click that started and
+      // ended inside the panel has e.target === that inner node, so it is
+      // ignored — no stopPropagation needed anywhere in the children.
       if (e.target === e.currentTarget) onClose();
     },
     [onClose],
@@ -97,6 +138,7 @@ export function ModalScrim({
         "fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4",
         className,
       )}
+      onPointerDown={dismissible ? onBackdropPointerDown : undefined}
       onClick={dismissible ? onBackdropClick : undefined}
     >
       {children}
