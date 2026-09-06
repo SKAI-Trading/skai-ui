@@ -1,0 +1,59 @@
+# key	status	primaryFile	route	reason	bp
+# Lane play-casino-b, wave 28. Partition: modules/skai-gaming/src/components/play/games/**.
+# Every # in this file is at column 0.
+#
+# WHAT THIS PASS DID, AND WHAT IT REFUSED TO CLAIM
+# ------------------------------------------------
+# Three fixes, each proved by an oracle that was run RED under a mutation
+# before it was run green:
+#
+#   1. Keno's bet rail moved off a cyan palette that appears in no frame and
+#      onto the panel spec 9680:3956 / 9433:14989 draw.
+#   2. Keno's rail gained the frame's own #122524 panel at both boards.
+#   3. Fortune Wheel's action slot became ONE CTA in all three phases, off
+#      9733:5473 / 9736:11355, where two of the three painted a gradient.
+#
+# NOT ONE ROW IS PROMOTED TO done. Every panel below still differs from its
+# frame in composition, not just in paint, and the difference is a MODE the
+# game does not have rather than a number anyone can nudge - see the Keno and
+# Baccarat blocks. A row that recites the numbers it now matches while the
+# control set beside them is absent is the failure mode this wave exists to
+# stop.
+#
+# ★ THE REGISTRY'S OWN NOTES FOR THIS AREA ARE FIVE DAYS STALE, and reading
+# them as open work wastes a lane. Four separate items named as diverging on
+# 2026-09-01 were already fixed when opened this pass, verified against the
+# code rather than against the note:
+#
+#   keno 9481:20645   the board tile's radius / border / label. KENO_TILE ships
+#                     clamp(4px, 0.435014cqw, 4.150034px) / 0.290009cqw /
+#                     2.110884cqw, which at the 954 board resolve to 4.150033,
+#                     2.766686 and 20.137830 against the node's 4.150034,
+#                     2.766689 and 20.137831. Delta 0 on all three.
+#   plinko 9069:5304  the "pyramid is one peg narrow" and "buckets sit under the
+#                     pegs" divergences. plinkoPegsInRow is row + 3 (3..18) and
+#                     plinkoSlotGeometry centres bucket i in the mouth between
+#                     bottom pegs i and i+1.
+#   coinflip 9178:14731  the history strip's 854x35. CoinflipBoard ships
+#                     lg:w-[calc(100%-68px)] inside the board's p-4 (954-32-68 =
+#                     854) at lg:h-[35px].
+#   limbo 10021:30111  the three mobile-only scale items. The chip ships
+#                     rounded-[6.646px] border-[0.831px] text-[9.6px] and the
+#                     hero text-[75px] below sm.
+#
+# Verify the CODE before taking a note as work. Say which tree you read.
+#
+# Figma reads are Plugin API node data on M6r9FEn042UWTQD1zvy6GM, this session.
+# No browser was opened: the fleet shares one and a read-only call takes the
+# lock for the whole machine.
+#
+9680-3956	partial	modules/skai-gaming/src/components/play/games/instant/KenoGame.tsx	/play/keno	FIXED THIS PASS, three axes, against this node's own children. Difficulty caption 9680:4008 Manrope Regular 12 / lh 16 / ls -4% / #FFFFFF at node opacity 0.64 -- code was text-xs text-cyan-400/70 font-medium, now font-manrope text-[12px]/[16px] font-normal tracking-[-0.48px] text-white/64. Pill housing 9680:4009 324x42 r12 #001615 pad 6 gap 6 -- code had NO housing at all, a bare grid-cols-4 gap-1 (4px against 6); now a 42px flex row at rounded-[12px] p-[6px] gap-[6px] on KENO.board, and (324 - 12 - 18)/4 = 73.5 is the frame's pill width, so the pills are flex-1. Pills 9680:4010-4017 73.5x30 r8, active #56C7F3 with #001615 text and idle #123F3C with #FFFFFF, label Mulish Regular 14/18 at -4% -- code was bg-cyan-500/text-white and bg-game-card/text-cyan-300/60 at text-xs on rounded (4px). Quick actions 9680:4018 / 9680:4021 324x42 r12 filled #001615 with a Mulish Regular 14/18 label at white 50% -- code shipped border-primary/30 text-cyan-300 OUTLINES, and border-primary does not even render blue because the gaming DARK_THEME_VARS remap --primary to green. CTA 9680:4024 324x52 r16 flat #56C7F3, label Manrope Medium 16/22 at -4% in #001615 -- code was h-12 rounded-lg with a from-cyan-500 to-blue-600 gradient and white text. Rail surface: 356 wide, r16, #122524, 16px padding, 16px between children, and 356 + 8 + the board's 954 = the 1318 page column; code was w-64 with no surface and a 16px seam. Oracle keno/kenoRailFigmaTheme.test.tsx, 8 cases, run red first by prefixing the CTA radius and the panel padding and by swapping the housing fill. NOT done: 9680:3957, the 324x42 Manual / Auto tab strip this panel opens with, has no counterpart -- Keno ships no auto mode, so the row above the caption is absent, and that is a feature rather than a parity number. Escalated, not guessed.	desktop=partial mobile=partial @2026-09-06/wave28-play-casino-b
+9680-5126	partial	modules/skai-gaming/src/components/play/games/instant/KenoGame.tsx	/play/keno	The Auto sibling of 9680:3956 on the same 356x621 r16 #122524 spec. Its shared controls inherit this pass's palette and type fix; the frame's Auto mode itself is unbuilt, and Keno has no Manual / Auto switch to hang it from. Blocked on a product call, not on a measurement.	desktop=missing @2026-09-06/wave28-play-casino-b
+9680-5236	partial	modules/skai-gaming/src/components/play/games/instant/KenoGame.tsx	/play/keno	356x893 Auto + Advanced expansion (+272 over 9680:5126 for On Win / On Loss). Same call as 9680:5126 -- the shared controls are fixed, the mode is unbuilt.	desktop=missing @2026-09-06/wave28-play-casino-b
+9433-14989	partial	modules/skai-gaming/src/components/play/games/instant/KenoGame.tsx	/play/keno	FIXED THIS PASS. The 375 panel measures 347x557.333 at r12, fill #122524, VERTICAL, 12px padding, 16px between children, leaving a 323 content box; the rail carried no surface at all below lg and is now rounded-[12px] bg-[#122524] p-3 on the route, stepping to the desktop 16/16 at lg. That 323 box is what lets the difficulty pills hold the frame's Mulish 14/18 at this width too -- (323 - 12 - 18)/4 = 73.25 against the desktop 73.5 -- so the size is gated on the route rather than on a breakpoint, and only the modal's 256px rail, which no frame describes, steps down to 12. NOT done: this frame opens with the CTA at y=12 and closes with the Manual / Auto strip at y=503; the shipped rail keeps one order at every width and has no auto mode to switch.	mobile=partial @2026-09-06/wave28-play-casino-b
+9433-15057	partial	modules/skai-gaming/src/components/play/games/instant/KenoGame.tsx	/play/keno	347x885.333 mobile Auto + Advanced twin of 9433:14989 on the same r12 / #122524 / pad 12 / gap 16 spec, which the rail now draws. The mode above it is unbuilt -- same call as 9680:5126.	mobile=missing @2026-09-06/wave28-play-casino-b
+9481-20645	partial	modules/skai-gaming/src/components/play/games/instant/KenoGame.tsx	/play/keno	RE-MEASURED, NOT CHANGED, and the standing note is stale. Idle tile 9481:20955 is 83.290154 x 83.000740, cornerRadius 4.150034, stroke #FFFFFF at 0.30 weight 2.766689 INSIDE, label Manrope Bold 20.137831 in a 28 box. KENO_TILE resolves against the 954 board container to 0.435014cqw = 4.150033, 0.290009cqw = 2.766686 and 2.110884cqw = 20.137830, with leading 1.390418 x 20.137831 = 27.99997. Delta 0 to five decimals on all four. The hover face 9481:20947 is 90.870110 square at r4.304374, stroke 2.869583, label 27.587191; the code composes hover:scale-[1.0910] with a 0.950678 chrome residue and a 1.255654 label residue, which reproduce 4.304372, 2.869579 and 27.587186. Stays partial for the board's other regions, which this pass did not open.	desktop=partial @2026-09-06/wave28-play-casino-b
+9733-5405	partial	modules/skai-gaming/src/components/play/games/instant/FortuneWheelPro.tsx	/play/fortune-wheel	FIXED THIS PASS, on the one control of this panel the game builds. CTA instance 9733:5473 is 324x52 at r16 in flat #56C7F3, label Manrope Medium 16 on a 22px line at -4% in #001615. The betting phase already drew it; the other two phases of the same slot did not -- spinning shipped h-14 text-lg font-bold bg-gradient-to-r from-primary to-cyan-400, four pixels over the frame's height and, because DARK_THEME_VARS remap --primary to green, painting green to cyan rather than SKAI blue; the replay shipped from-yellow-500 to-orange-500 at the same 56. All three now share FW_CTA. Oracle fortuneWheelCtaParity.test.tsx, 5 cases, run red first by prefixing the radius, moving the line-height ahead of the size, and putting one phase back on its gradient. NOT done: the rest of this panel is the Difficulty and Segments matrix recorded in FIGMA_UNBUILT -- a Stake-style risk x segment-count table the settlement rail does not implement -- and the CTA sits under the wheel rather than at the foot of a panel that has none of the rows above it.	desktop=partial @2026-09-06/wave28-play-casino-b
+9736-11354	partial	modules/skai-gaming/src/components/play/games/instant/FortuneWheelPro.tsx	/play/fortune-wheel	The 375 twin, 347x523.333 r12 #122524 pad 12 gap 16, whose CTA 9736:11355 is 323x52 at r16 in #56C7F3 with the identical Manrope Medium 16/22 label -- the same box the desktop draws, so the one FW_CTA string serves both. Same remaining gap as 9733:5405.	mobile=partial @2026-09-06/wave28-play-casino-b
+9825-21726	not-started	modules/skai-gaming/src/components/play/games/cards/BaccaratGame.tsx	/play/baccarat	ESCALATED, NOT BUILT, because matching it would delete the only way to place a bet. Read child by child this pass: 356x621 r16 #122524 pad 16 gap 16, holding a 324x42 r12 #001615 strip of two 158x34 cards at pad 4 (that is the Manual / Auto pair every panel in this file opens with, not a bet-type control), a Chip Value row with a 16px chip disc over a 324x42 #001615 chip rail of thirteen 31.03x32 chips, Bet amount, Number of Bets, an Advanced toggle and the 324x52 r16 #56C7F3 CTA at y=381.333. THERE IS NO PLAYER / TIE / BANKER CONTROL ANYWHERE IN THE PANEL -- the design is a chip-on-felt table where the side is chosen on the board. The shipped rail draws that choice as three rounded-lg border-2 buttons in blue / green / red, which is the only control that sets `selectedBet`, and the CTA is disabled until it is set. Two options for Casey, both real: (a) build the chip rail and move side selection onto the felt, which is the frame and is a new interaction; (b) keep the three buttons and restyle them onto the frame's housing spec (324x42 r12 #001615, pad 6, gap 6, pills at r8 with #56C7F3 / #123F3C), which keeps the control and drops the per-side colour that currently tells a player which way the bet leans. The CTA itself already matches 9825:21922.	desktop=partial @2026-09-06/wave28-play-casino-b
+9825-21961	not-started	modules/skai-gaming/src/components/play/games/cards/BaccaratGame.tsx	/play/baccarat	347x441.333 r12 #122524 pad 12 gap 16, the mobile cut of 9825:21726 with the order inverted -- CTA first at y=12, Manual / Auto strip last at y=387.333. Same escalation, same two options; the reorder is a second question on top of the missing side-selection control.	mobile=partial @2026-09-06/wave28-play-casino-b
