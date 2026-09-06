@@ -197,13 +197,39 @@ Next, in value order:
 3. **Layer E** — radius is done (`TOKENS.md`, measured off 473 bound variables).
    Colour remains: `get_variable_defs` per surface, mapped to repo tokens, with a
    validator in the pipeline.
-4. **Ingest the snapshot harvest.** `build-registry.mjs:417-418` builds frames only from
-   `<section>.nodes.txt`, so anything harvested but never pasted into a node list is
-   invisible to `registry.json`. As of 2026-08-13 `snapshot.webapp.json` +
-   `snapshot.games.json` hold **3,173** live top-level nodes and **1,216 of them have no
-   registry entry**. The catalog therefore *understates* its own coverage — the data is
-   on disk, the assembler just does not read it. Either feed the snapshots into
-   `build-registry.mjs` or regenerate the `.nodes.txt` files from them; do not hand-add.
+4. ~~**Ingest the snapshot harvest.**~~ ✅ **CLOSED 2026-09-06 — `snapshot-to-nodes.mjs`.**
+   This sat open for 24 days and cost more than it looked like it would.
+   `build-registry.mjs:417-418` builds frames only from `<section>.nodes.txt`, so a
+   harvest that never reached a node list was invisible to `registry.json` — and
+   because `figma-drift.mjs` reads the *snapshot* while `build-registry.mjs` reads
+   *nodes.txt*, **nothing bridged the two**. A wave could harvest 33 sections, produce a
+   correct 870-row drift report, and leave the registry untouched. It did: on 2026-09-06
+   the snapshots were 30 hours old and `registry.json` — the file `coverage.mjs` and
+   every measuring lane actually reads — still declared `pagesHarvested: 2026-08-18`.
+
+   `snapshot-to-nodes.mjs` is that bridge. **It dry-runs by default**, because folding a
+   harvest in moves the denominator every parity figure is quoted against, so it should
+   be a decision taken after reading the numbers rather than a side effect.
+
+   ⛔ **AND IT REFUSES A SECTION THAT LOOKS LIKE A MASS DELETION** — more than 25% of its
+   catalogued ids absent from the capture. That guard is the reason to run it at all: on
+   the first dry run it refused six sections whose fold-in would have deleted **407
+   `trade` ids, 183 `wallet`, 136 `home`, 88 `trade-2` and 54 `towers`**, taking the
+   hand-set `implFiles`/`status`/`notes` keyed to each one with them.
+
+   Those six were **short harvests, not deletions**. `get_metadata` does not descend into
+   every frame and is silent about stopping, so a capture taking both its node list AND
+   its count from it yields two numbers that agree exactly and certify nothing — the
+   completeness check in `validate-snapshot.mjs` passed on all 33 sections while wave 21
+   was returning 1,914 of a towers page's 2,011 descendants. **A count-based check cannot
+   catch this; the removal count can**, because a design file does not shed a quarter of
+   a section in nineteen days. Only the Plugin API (`use_figma`) enumerates a page
+   completely; the six still need that re-harvest.
+
+   Result of the first run: 27 sections folded, **3,776 → 4,295 frames**, catalog-only
+   drift 10 → 1, in-scope unchanged at 1,914 (the new ids are furniture and superseded),
+   so parity held at 404. Partial folds are recorded in `pages.json._reharvested`; the
+   top-level `harvested` field stays at the last FULL sweep by the convention noted there.
 5. **Join bug counts onto rows** so every screen and component shows its open-mismatch
    count, and the catalog can be read as a worklist. `bug-node-index.tsv` now carries the
    `owningScreenNode` + `openRefs` columns this needs, so it is a join, not a harvest.
