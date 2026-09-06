@@ -207,6 +207,16 @@ Next, in value order:
    the snapshots were 30 hours old and `registry.json` — the file `coverage.mjs` and
    every measuring lane actually reads — still declared `pagesHarvested: 2026-08-18`.
 
+   ⚠️ **That stamp turned out to be a separate fault, and a smaller one.** Enumerating
+   `figma.root.children` across all three files on 2026-09-06 returned 50 pages, every
+   one matching `pages.json` by id — 0 new, 0 absent. **The page list had been current
+   the whole time; only its date was stale.** The two faults look identical from the
+   registry and are not: an unbridged harvest means the FRAMES are behind, a lagging
+   `harvested` field means only the LABEL is. Read the stamp as a claim about when
+   someone last looked, never about whether the data is current — diff the page ids,
+   which is cheap. A stamp reading nineteen days old costs a re-harvest wave that
+   finds nothing.
+
    `snapshot-to-nodes.mjs` is that bridge. **It dry-runs by default**, because folding a
    harvest in moves the denominator every parity figure is quoted against, so it should
    be a decision taken after reading the numbers rather than a side effect.
