@@ -1,0 +1,55 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-groups, wave 27. Partition as briefed: src/pages/social/groups/**.
+#
+# Every # in this file is at column 0. coverage.mjs tests startsWith("#") with no
+# trimStart, so an indented comment is not a comment to every reader.
+#
+# WHAT WAS MEASURED, AND WHY THIS SUBSET. The 1440 table's own BOX - the body
+# inset, the header band, the row height and the rule between rows. Everything
+# INSIDE a cell on that table was measured by waves 17 and 23 and is at parity;
+# the box those cells sit in had never been opened, and it shipped as @skai/ui's
+# Table defaults at every value. One component, one file, three rows, all three
+# axes, and a fix behind each.
+#
+# THE TWO NODES, AND WHY BOTH. `10219-182536` (Table ALT) draws the whole
+# 1144-wide panel and is the only node that states the body inset, the header
+# band and the rule pitch together. `5198-9919` is the row on the shipped
+# All-groups frame `5194-270743`, fetched on its own. The two agree value for
+# value on the row - 1128 wide, 60 tall, a 52px `left` block at y=4 - so the box
+# was not read off one node and assumed of the other. The FOURTH side of the
+# body inset is stated by neither: both clip their row list, so the bottom is
+# taken from the empty frame's `Frame 280` (5198:47870), 1128x604 at 8,8 inside
+# a 1144x620 body, which is 8 on all four.
+#
+# WHAT TABLE ALT IS NOT. Its column order is Group | Members | Created | Type |
+# Description | Action, and the shipped frame's is Created | Group | Members |
+# ... - it is an ALTernative arrangement of the same table. The box was read off
+# it; the column order was not, and stays the shipped frame's.
+#
+# THE MERGE HAZARD IN THIS SLICE, and it is not the usual one. tailwind-merge
+# does NOT drop the primitive's `p-4` when a one-axis `px-4 py-3` follows it - it
+# treats a one-axis utility as a partial override and keeps all three, leaving
+# the winner to the emitted stylesheet. Measured in this repo's own built CSS
+# (dist/assets/index-DPs88f-i.css): `.p-4` at byte 300210, `.px-4` at 301666,
+# `.py-3` at 303958, so the axis classes are emitted later and win. `h-12` and
+# `text-muted-foreground` ARE displaced, because those are whole-group
+# collisions. A call site's own string can see none of this, which is why the
+# oracle mounts.
+#
+# THE ORACLE. src/pages/social/groups/__tests__/groupsTableBox.figma.test.tsx,
+# 7 cases. It mounts the real GroupsSearchTable - jsdom ships no matchMedia and
+# `useGroupsLayout` names that case as "assume the table", so the absence is the
+# fixture and no stub is installed - and reads the class list the DOM actually
+# holds on every `th`, every `td`, every `tr` and the wrapper. Tokens are
+# compared as exact members of a split list. Proved red five times by mutations
+# that LENGTHEN a token rather than change it: h-8 -> md:h-8 (2 failed), py-3 ->
+# md:py-3 (2 failed), and p-2 -> md:p-2 with text-ash -> md:text-ash and
+# border-green-coal-100 -> md:border-green-coal-100 together (3 failed). The
+# file was restored from a copy after each and re-run green (7/7), and the whole
+# groups directory with it (220/220, 12 files).
+Groups table body inset (1440) [10219-182551]	done	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	PROMOTED - measured on all three axes at this board and rebuilt against the numbers. GEOMETRY `Frame 300` is 1144 wide and both its children open at x=8, y=8 - `Frame 591` (the captions) and `Frame 357` (the rows), each 1128 wide - and 8 + 1128 + 8 = 1144, so the inset is 8 across and 8 above. The fourth side is stated rather than inferred: the empty frame's `Frame 280` (5198:47870) is 1128x604 at 8,8 inside a 1144x620 body, so 8 on all four. COLOUR the body carries no fill of its own and was asked; the panel behind it is #122524 and untouched. TYPE no string on a layout frame, asked for and absent. FIXED: the table hung straight off the panel edge, so every column began 8 short of where the frame puts it and the first and last rules ran to the panel's own corners. FIGMA 8. CODE BEFORE `overflow-x-auto` alone = 0. AFTER `overflow-x-auto p-2` = 8. DELTA now 0.	desktop=done
+Groups table header band (1440) [10219-182552]	done	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	PROMOTED - measured on all three axes at this board. GEOMETRY the block sits at y=8 in the body and is 24 tall: a 1128x16 caption row at y=0 with the rule at y=24, so 8 over the caption line and 8 under it, 32 from the body's top edge to the rule. COLOUR the rule is Primary/Green Coal 100 #123F3C (10219:182563, read by name) and the captions App/Ash 300 #95A09F - read twice, on 10219:182556 here and on 5198:49957 on the shipped frame, which agree. TYPE Lg/Paragraph 3 300 = Manrope Regular 12/16 at -4 pct. FIXED three of the four: the shared TableHead writes h-12, so the band drew 48 against 32; the captions took --muted-foreground, which resolves #B3B9CC, a blue-grey from the pre-green palette that no frame in this family binds; and the -4 pct tracking was absent entirely. FIGMA 32 tall, #95A09F, -4 pct. CODE BEFORE h-12 = 48, text-muted-foreground = #B3B9CC, no tracking. AFTER h-8 = 32, text-ash = #95A09F, tracking-[-0.04em]. DELTA now 0 on all three. The size and weight already matched and are unchanged: text-xs/4 is 12/16 and font-normal displaces the primitive's font-medium.	desktop=done
+Groups table row box (1440) [10219-182564]	done	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	PROMOTED - measured on all three axes at this board and cross-read against 5198:9919 on the shipped frame, which reports the same 1128x60 row with the same 52-tall `left` block at y=4. GEOMETRY rows open at 0, 76, 152, 228, 304, 380, 456 and 532 with the rule at 68, 144, 220 and so on - 60 of content, 8, the rule, 8 - and four of that 60 sits above the 52px avatar and four below, so a cell carries 4 + 8 = 12 top and bottom and the drawn gap from avatar to rule is 12 either side. COLOUR the rule is #123F3C (10219:182592, read by name). TYPE the box has no string of its own; the cell ramps belong to ROW_TYPE_RAMP and were measured in an earlier pass. FIXED: the shared TableCell writes p-4, so a row drew 84 against the frame's 76 and put the rule 16 under the avatar rather than 12. FIGMA 60 of content between two 8s = 76, rule #123F3C. CODE BEFORE p-4 = 52 + 32 = 84, rule --border = #12403D. AFTER px-4 py-3 = 52 + 24 = 76, rule border-green-coal-100 = #123F3C. DELTA now 0 on the box; the colour move is 1 unit on G and on B, which is what the semantic token's HSL rounding cost.	desktop=done
+Groups table row (1440) [5198-9919]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	RE-MEASURED at 1440 and the row's BOX rebuilt this pass - the numbers and the oracle are on `Groups table row box (1440)`. The row's CONTENTS were rebuilt by wave 17 and were re-read against this node at equal depth this pass; all seven agree, both sides measured: avatar 52x52 against h-[52px] w-[52px], delta 0; `Frame 500` at x=64 after a 52 avatar = 12 against gap-3, delta 0; `Frame 499` 18 tall = 14/18 against text-[14px] leading-[18px], delta 0; `Frame 547` at y=20 under an 18 line = 2 against gap-0.5, delta 0; its count at x=14 after a 12px icon = 2 against gap-0.5, delta 0; `CTA/button` 30 tall against h-[30px], delta 0; the description 150x48 at a 16px leading = three lines against max-w-[150px] line-clamp-3 text-[12px] leading-4, delta 0. Rendered at 1128x60 the avatar reads as a circle, so rounded-full is right and not a squared corner. STAYS partial for `Frame 235`, the 140x32 Members cluster at x=476: five 32px circles at a 26px pitch behind a #123F3C overflow chip, blocked on the same row-level policy on trading_group_members that holds the two narrow boards - see the module header.	desktop=partial
+Table ALT [10219-182536]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	RE-MEASURED at 1440. This is the node the table's box was read off, and its three parts are now built - see the body-inset, header-band and row-box rows above for the numbers, the before/after and the oracle. GEOMETRY as a whole: a 1144-wide panel stacking a 56-tall tab row on a 620 body, the body inset 8 on all four sides, a 32 header band over a #123F3C rule, and 60-tall rows each ruled 8 below and 8 above the next. STAYS partial on two counts. The Members column is the blocked one - five 32px circles at a 26px pitch with a "+12" chip, scoped by row-level policy. The other is not a defect and must not be built: this node's column order is Group | Members | Created | Type | Description | Action, where the shipped frame 5194-270743 draws Created | Group | Members | ..., so it is an ALTernative arrangement. The box was taken from here; the order stays the shipped frame's.	desktop=partial
+dropdown-group filter [11398-85199]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	MEASURED ON ALL THREE AXES, NOT SHIPPED, AND OUTSIDE THIS LANE'S FILES. GEOMETRY 200x152 on an 8px padding: four 184x26 rows at an 8px gap, with a 184-wide rule after the FIRST row only, and 8 + 26 + 8 + 0 + 8 + 3x26 + 2x8 + 8 = 152 exactly, so the height is the sum and not a stated number. Its labels sit at x=8, y=6 in a 14-tall line box. The 1440 node 10221-182894 states 250x168 with 234x30 rows and an 18-tall line box on the same 8px padding and 8px gap, so BOTH the box and the type step between the boards. CODE the three constants are flat - w-[250px], px-2 py-1.5 and text-[14px]/[18px] with no variant on any of them - so the 1440 panel paints every width: 50 too wide, 4 too tall a row, and a line box 4 too deep on this board. NOT FIXED for two reasons, and the second matters more: the constants live in src/pages/social/TradingGroups.tsx, outside the partition this wave briefed (src/pages/social/groups/**); and no 375 node for this menu exists in the file, so a ramp needs a decision about whether the 768 reading carries down to the phone or stops at 768. Hanging it one breakpoint out would draw a panel no board describes.	tablet=partial
