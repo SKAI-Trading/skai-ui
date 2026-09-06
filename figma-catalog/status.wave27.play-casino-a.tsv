@@ -8,7 +8,7 @@
 # ONE piece of chrome, measured on every frame that draws it, rather than nine frames
 # skimmed. Limbo, Mines and Roulette each REDRAW the same bet panel in their own file,
 # so a number that is right in one of them says nothing about the other two - and that
-# is exactly what was found. Three axes, all three sides stated:
+# is exactly what was found. Four axes, both sides stated on each:
 #
 #   A. STAKE STEPS. Figma `Frame 359` is 156 wide and holds 48 / 45 / 55 with a 4px
 #      gutter, in 10004:29756, 10021:30457, 9163:8481, 9163:8621, 9163:7972, 9163:4859
@@ -27,9 +27,9 @@
 #
 #   B. THE MANUAL|AUTO TRACK. The two cells carry DIFFERENT corners: the dark cell 10,
 #      the Sky Blue one 12. Checked on all eight panel frames (10004:29756, 10004:29965,
-#      10021:30457, 10021:30525, 9903:2891, 9903:3025, 9163:8481, 9163:8621) plus the
-#      track inside 9163:8621 - the pair is 10/12 every time. It reads like a Figma slip
-#      until you count the frames; eight copies in three games is the design.
+#      10021:30457, 10021:30525, 9903:2891, 9903:3025, 9163:8481, 9163:8621) - the pair
+#      is 10/12 every time. It reads like a Figma slip until you count the frames; eight
+#      copies in three games is the design.
 #      CODE BEFORE - one radius for both cells in all three files (Limbo
 #      `rounded-[10px]`, Mines `rounded-[10px]`, Roulette `radius.pill` = 10).
 #      CODE AFTER - 10 at rest, 12 on the selected cell, in all three.
@@ -39,22 +39,36 @@
 #      is what shows at the ends. Code drew the strip at 12 and the wells at 12.
 #      CODE AFTER - strip 8, wells 8.
 #
+#   D. THE CHIP LEGEND. Every legend in the section is Mulish Regular 8.672248 on a
+#      13.008372 line at -4% inside a 31.03 disc - the thirteen carousel chips of
+#      9903:2286 and the copies on 9903:2404, one spec at one diameter. 13.008372 /
+#      8.672248 is exactly 1.5, so the size and its leading are one number, not two.
+#      CODE BEFORE - font-SEMIBOLD at round(size * 0.32) = 10px on the panel's 31 disc,
+#      on `leading-none` (10) and with no tracking. Four of the five type properties off,
+#      and the size and leading not kept as the pair the frame states them as.
+#      CODE AFTER - Mulish `font-normal` at size * (8.672248 / 31.03), leading 1.5,
+#      `tracking-[-0.04em]`. At the frame's own 31.03 that resolves to 8.672248 on
+#      13.008372, delta 0; the ratio keeps the board chip in step at its own diameter.
+#
 # ── THE ORACLE ─────────────────────────────────────────────────────────────────────
-# modules/skai-gaming/src/components/play/games/instant/betPanelChrome.test.tsx - 14
+# modules/skai-gaming/src/components/play/games/instant/betPanelChrome.test.tsx - 18
 # tests, the frame numbers transcribed as literals, each file read on its own (Mines and
 # Roulette rendered, Limbo's classes read out of its source because mounting it drags
 # auth, toasts, settlement, an AudioContext and a presence subscription in with it).
-# TEN MUTATIONS RUN, ALL TEN RED - each one reverts a single measured value to what
+# FIFTEEN MUTATIONS RUN, ALL FIFTEEN RED - each reverts one measured value to what
 # shipped before: mines 1/2 48->52; mines Max loses its width; mines one-radius track;
 # mines Grid Size wrongly PINNED (the negative control - that row must stay flex-1);
 # limbo 1/2 loses its width; limbo Max loses shrink-0; limbo tab loses the active
-# corner; roulette one-radius track; roulette strip 8->12; roulette wells 8->12.
-# Every mutation was applied to a copy and restored from that copy, and the harness
-# refuses to run unless the anchor matches EXACTLY ONCE, so a token that also appears
-# in the comment explaining it cannot be hit silently.
-# Suites re-run green after the fix: betPanelChrome (14), minesPanelColumn,
-# minesChromeParity, RouletteBetPanel, rouletteBoardParity, rouletteTheme (123 total),
-# limboGameParity + limboAdminConfig (58). No new type errors.
+# corner; roulette one-radius track; roulette strip 8->12; roulette wells 8->12; legend
+# semibold; legend loses its tracking; legend ratio back to 0.32; legend leading back to
+# 1; legend size rounded to a whole pixel.
+# Every mutation was applied to a copy and restored from that copy, the restores were
+# checked byte-clean, and the harness refuses to run unless the anchor matches EXACTLY
+# ONCE - so a token that also appears in the comment explaining it cannot be hit
+# silently.
+# Suites re-run green after the fixes: betPanelChrome (18), minesPanelColumn,
+# minesChromeParity, RouletteBetPanel, rouletteBoardParity, rouletteTheme, and
+# limboGameParity + limboAdminConfig (58). No new type errors on any run.
 #
 # ── MEASURED, NOT FIXED (so the rows below are not read as clean) ───────────────────
 # - Roulette's `Chip Value:` label row is `Frame 1000004116`, gap 3, and the code ships
@@ -73,6 +87,10 @@
 #   10004:29637's 16) and the section draws NO 768 limbo frame, so there is nothing to
 #   measure the 640-767 band against. Not moved to `md:` on a guess; the panel beside it
 #   hinges at `lg:`, so the two halves disagree between 640 and 1023.
+# - The roulette BOARD chip is drawn at `size={30}` while the carousel is at 31. Both
+#   discs measure 31.03 in the carousel; the board chip's own disc was NOT measured (the
+#   nodes found on 9903:2404 under `Group 302` are that screen's carousel, not its felt),
+#   so the 1.03 is not claimed either way.
 #
 # col2: unknown|done|partial|not-started|frame-defect|furniture
 # col6: widths NAMED desktop|tablet|mobile
@@ -83,5 +101,5 @@ Frame 1000004296 [10021-30525]	partial	modules/skai-gaming/src/components/play/g
 Frame 1000003780 [9163-8481]	partial	modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx	/play/mines	MEASURED FULL-DEPTH THIS PASS (347 x 523.333, pad 12, gap 16, radius 12, #122524, clipped) AND TWO DELTAS FIXED. STAKE STEPS: the frame's Frame 359 is 48/45/55 gap 4 = 156, and the amount card beside it is 159 on this 323 column (323 - 8 - 156 = 159). Code before: `Segment` carried `flex-1`, so all three cells came out one width - the row cannot be both equal and 48/45/55, so this was a delta whatever the font metrics are, and it squeezed the card by ~20px. Code after: `Segment` takes an optional `width`; 48 / 45 / 55 passed in, `shrink-0`, group 156, delta 0. TRACK (Frame 1000004021, 323x42 pad 4 radius 12): cells 157.5x34 at 10 idle / 12 selected; code shipped `rounded-[10px]` for both and now steps with the mode. NEGATIVE CONTROL kept in the oracle: Grid Size is FOUR cells of 78 filling the same 324 row, so it must stay `flex-1` - a mutation pinning it goes red. VERIFIED MATCHING here, both sides: Grid Size four cells (Figma 78 each, gap 4, 78*4+4*3 = 324; code four `flex-1` in a gap-1 row = 78 each, delta 0); panel pad (Figma 12; code `p-3` = 12, delta 0); panel radius (Figma 12; code `rounded-[12px]`, delta 0); panel gap (Figma itemSpacing 16; code `gap-4` = 16, delta 0); CTA (Figma 323x52 radius 16 #56C7F3, `Bet` Manrope Medium 16/22 at -4% on #001615; code `h-[52px] rounded-[16px]` + `font-manrope text-[16px] font-medium leading-[22px] tracking-[-0.04em]`, delta 0); inset cards (Figma 42 tall, radius 12, pad 12 on #001615; code CARD = `h-[42px] rounded-[12px]` + `px-3`, delta 0); labels (Figma Manrope Regular 12/16 at -4% white 0.64; code LABEL, delta 0). STILL OPEN: the balance mark (see the header note) and the `signals` placeholder frames.	mobile=partial @2026-09-06/source
 Frame 1000003781 [9163-8621]	partial	modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx	/play/mines	THE ADVANCED TWIN, 347 x 851.333, same pad 12 / gap 16 / radius 12. Its track was read directly: 323x42 radius 12, cells 157.5x34 at 10 idle and 12 selected - the second of the eight frames that settle the 10/12 pair. Frame 359 is 48/45/55 gap 4 here as well, so both fixes land. NOT MEASURED: the four advanced rows this variant adds (Frame 1000004018 / 4097 / 4098 / 4094 / 4095).	mobile=partial @2026-09-06/source
 Advanced Auto [9163-7972]	partial	modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx	/play/mines	THE DESKTOP ADVANCED PANEL. Read this pass only for its stake-step group, which is 48/45/55 gap 4 = 156 - the same numbers as the two 347 frames, which is what says the widths do NOT step at the breakpoint even though the panel's pad and radius do (12/12 mobile, 16/16 desktop). The assembled 1440 page 9163:4859 carries the same 156 group, checked. Nothing else on this frame was measured.	desktop=partial @2026-09-06/source
-Frame 1000004247 [9903-3025]	partial	modules/skai-gaming/src/components/play/games/instant/roulette/RouletteBetPanel.tsx	/play/roulette	MEASURED FULL-DEPTH (356 x 621, pad 16, gap 16, radius 16, #122524) AND TWO DELTAS FIXED. TRACK: cells 158x34 at 10 idle / 12 selected; code applied `radius.pill` = 10 to both, so the selected pill was 2px under. Code after: `radius.pillSelected` = 12 when active. CHIP STRIP: 9903:3045 is 324x42 at radius 8 with clipsContent on, and its two 42x42 arrow wells are square, so 8 is the corner that shows; code drew the strip `rounded-[12px]` and the wells `rounded-l-[12px]`/`rounded-r-[12px]`. Code after: 8 on all three. VERIFIED MATCHING, both sides: stake steps (Figma 48/45/55 gap 4 group 156; code `G.segments` = {half 48, double 45, max 55, gap 4} applied as inline widths, delta 0 - Roulette was the one file that already shipped them, which is how the Limbo and Mines deltas were found); amount card (Figma 160x42 radius 12 #001615 on the 324 row; code `flex-1` beside a 156 shrink-0 group in a gap-2 row = 160, `rounded-[12px]`, height G.rowHeight 42, delta 0); CTA (Figma 324x52 radius 16, `Bet` Manrope Medium 16/22 at -4% on #001615 over #56C7F3; code matches each, delta 0); balance row (Figma label gap 8, value-to-mark gap 6, fiat right; code `gap-2` = 8 and `gap-[6px]` = 6, delta 0); chip pitch (Figma discs 31.03 on a 39.03 pitch = 8px gutter; code G.chip 31 + G.chipGap 8, delta 0.03 on the disc); arrow wells (Figma 42x42 on #123F3C; code G.arrow 42 x G.rowHeight 42, delta 0). STILL OPEN: the `Chip Value:` label row's gap 3 (see the header note - not fixed on purpose) and the frame's Number of Bets + Advanced blocks, which this game has no auto rail to drive.	desktop=partial @2026-09-06/source
-Frame 270 [9903-2891]	partial	modules/skai-gaming/src/components/play/games/instant/roulette/RouletteBetPanel.tsx	/play/roulette	THE AUTO VARIANT, 356 x 777.333, and the two fixes above land on it because one component draws both: its track is the same 324x42 with 158x34 cells at 10 idle / 12 selected, and its chip strip 9903:2911 is the same 324x42 at radius 8 with square wells. ★ BLOCKED, NOT MISSED: the reason this frame cannot go past partial is that it draws a full auto-play block - Number of Bets (Frame 1000004104), the Advanced toggle (1000004093) and four progression rows (1000004018 / 4091 / 4092 / 4094 / 4095) - for a game that has no auto settlement on any rail. `settleRoulette` has no auto path in the chain, `points-game` play_roulette settles one spin, and the panel currently renders the Auto pill visibly disabled carrying its reason. Building the block would mean inventing an auto-better here. See blockedOnCasey.	desktop=partial @2026-09-06/source
+Frame 1000004247 [9903-3025]	partial	modules/skai-gaming/src/components/play/games/instant/roulette/RouletteBetPanel.tsx	/play/roulette	MEASURED FULL-DEPTH (356 x 621, pad 16, gap 16, radius 16, #122524) AND THREE DELTAS FIXED. TRACK: cells 158x34 at 10 idle / 12 selected; code applied `radius.pill` = 10 to both, so the selected pill was 2px under. Code after: `radius.pillSelected` = 12 when active. CHIP STRIP: 9903:3045 is 324x42 at radius 8 with clipsContent on, and its two 42x42 arrow wells are square, so 8 is the corner that shows; code drew the strip `rounded-[12px]` and the wells `rounded-l-[12px]`/`rounded-r-[12px]`. Code after: 8 on all three. CHIP LEGEND: Mulish Regular 8.672248 / 13.008372 at -4% on a 31.03 disc; code drew semibold round(size*0.32) = 10 on leading-none with no tracking. Code after: `font-normal`, `tracking-[-0.04em]`, size * (8.672248/31.03) with leading 1.5, which at 31.03 is 8.672248 / 13.008372, delta 0. VERIFIED MATCHING, both sides: stake steps (Figma 48/45/55 gap 4 group 156; code `G.segments` = {half 48, double 45, max 55, gap 4} applied as inline widths, delta 0 - Roulette was the one file that already shipped them, which is how the Limbo and Mines deltas were found); amount card (Figma 160x42 radius 12 #001615 on the 324 row; code `flex-1` beside a 156 shrink-0 group in a gap-2 row = 160, `rounded-[12px]`, height G.rowHeight 42, delta 0); CTA (Figma 324x52 radius 16, `Bet` Manrope Medium 16/22 at -4% on #001615 over #56C7F3; code matches each, delta 0); balance row (Figma label gap 8, value-to-mark gap 6, fiat right; code `gap-2` = 8 and `gap-[6px]` = 6, delta 0); chip gutter (Figma discs 31.03 on a 39.03 pitch = 8; code G.chipGap 8, delta 0); arrow wells (Figma 42x42 on #123F3C; code G.arrow 42 x G.rowHeight 42, delta 0). NOT ZERO, STATED: the chip disc is G.chip 31 against the frame's 31.03, delta 0.03. STILL OPEN: the `Chip Value:` label row's gap 3 (see the header note - not fixed on purpose) and the frame's Number of Bets + Advanced blocks, which this game has no auto rail to drive.	desktop=partial @2026-09-06/source
+Frame 270 [9903-2891]	partial	modules/skai-gaming/src/components/play/games/instant/roulette/RouletteBetPanel.tsx	/play/roulette	THE AUTO VARIANT, 356 x 777.333, and the three fixes above land on it because one component draws both: its track is the same 324x42 with 158x34 cells at 10 idle / 12 selected, its chip strip 9903:2911 is the same 324x42 at radius 8 with square wells, and its legends are the same Mulish Regular 8.672248 / 13.008372. ★ BLOCKED, NOT MISSED: the reason this frame cannot go past partial is that it draws a full auto-play block - Number of Bets (Frame 1000004104), the Advanced toggle (1000004093) and four progression rows (1000004018 / 4091 / 4092 / 4094 / 4095) - for a game that has no auto settlement on any rail. `settleRoulette` has no auto path in the chain, `points-game` play_roulette settles one spin, and the panel currently renders the Auto pill visibly disabled carrying its reason. Building the block would mean inventing an auto-better here. See blockedOnCasey.	desktop=partial @2026-09-06/source
