@@ -1,0 +1,131 @@
+{
+ "towers": {
+  "pageId": "9061:15449",
+  "pageName": "\u2705 Towers - Skai originals",
+  "liveChildCount": 30,
+  "countSource": "use_figma",
+  "nodesSource": "get_metadata",
+  "nodes": [
+   [
+    "9061-15450",
+    "Directory"
+   ],
+   [
+    "9061-15456",
+    "Breakpoint"
+   ],
+   [
+    "9061-15458",
+    "Rectangle 147"
+   ],
+   [
+    "9061-15459",
+    "Breakpoint"
+   ],
+   [
+    "9061-15461",
+    "Breakpoint"
+   ],
+   [
+    "9079-2001",
+    "Skai > Play > Casino > Towers (1440 x 900px)"
+   ],
+   [
+    "9391-19737",
+    "Rectangle 34624753"
+   ],
+   [
+    "9391-19738",
+    "Rectangle 34624754"
+   ],
+   [
+    "9391-19740",
+    "Rectangle 34624755"
+   ],
+   [
+    "9391-19742",
+    "Rectangle 34624756"
+   ],
+   [
+    "9391-19744",
+    "Rectangle 34624757"
+   ],
+   [
+    "9391-19746",
+    "hf_20260802_175310_1d541834-3870-4f8d-a2d4-58053874368e 1"
+   ],
+   [
+    "9391-19912",
+    "Screenshot 2026-08-02 at 1.45.27\u202fPM 1"
+   ],
+   [
+    "10120-10815",
+    "Medium"
+   ],
+   [
+    "10120-13193",
+    "Expert"
+   ],
+   [
+    "10120-10859",
+    "Hard"
+   ],
+   [
+    "10120-11748",
+    "Selection mid game - hover"
+   ],
+   [
+    "10120-13227",
+    "Master"
+   ],
+   [
+    "10120-13280",
+    "Easy Loss reveal"
+   ],
+   [
+    "10120-13343",
+    "skull 1"
+   ],
+   [
+    "10130-13627",
+    "Easy cashout"
+   ],
+   [
+    "10130-13720",
+    "Frame 270"
+   ],
+   [
+    "10130-13859",
+    "Easy auto Selection - hover"
+   ],
+   [
+    "10130-14013",
+    "Frame 1000004105"
+   ],
+   [
+    "10130-14171",
+    "Skai > Play > Casino > Blackjack (375 x 812px)"
+   ],
+   [
+    "10130-15152",
+    "Frame 1000004293"
+   ],
+   [
+    "10130-14802",
+    "Frame 1000004291"
+   ],
+   [
+    "10130-14946",
+    "Frame 1000004292"
+   ],
+   [
+    "10893-5451",
+    "Cashout button"
+   ],
+   [
+    "10250-15233",
+    "Screenshot 2026-08-25 at 1.08.53\u202fAM 1"
+   ]
+  ]
+ }
+}
