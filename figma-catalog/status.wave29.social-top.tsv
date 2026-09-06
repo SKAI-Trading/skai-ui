@@ -1,0 +1,106 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-top, wave 29. Partition: src/components/social/*.tsx (top-level
+# files only) and src/components/social/menus/**. Every # in this file is at
+# column 0 - coverage.mjs tests startsWith("#") with no trimStart, so an
+# indented comment is not a comment to every reader.
+#
+# ONE DEFECT, FOUND BY MEASURING THE SAME THING TWENTY-ONE TIMES.
+# SocialMenu is the single panel behind every dropdown-* frame on this page. Its
+# SIZE map carried two type scales for three boards, so at 375 every row in
+# every one of those menus shipped a 16px line box against a drawn 14. Fixed in
+# 15e247adc by adding the third step; pinned by 51ae6e481.
+#
+# THE MEASUREMENT. Twenty-one frames opened first hand through the Plugin API on
+# 2026-09-06 - the panel, its rows, its line vectors, its glyph slots and every
+# text node's family, style, size, line-height, letter-spacing and fill. No
+# number below is carried from an earlier row.
+#
+#   family                     1440            768             375
+#   -------------------------- --------------- --------------- ---------------
+#   dropdown-tokens PIT        9636:208873     11530:303143    11530:303164
+#   dropdown-tokens ANAL       9640:214077     11530:303208    11530:303259
+#   dropdown-balances          9640:213620     11530:303185    11530:303236
+#   dropdown-followers/follow  9646:214871     11530:303287    11530:303293
+#   dropdown - right click     10216:182394    11387:73530     11380:24252
+#   dropdown - tridots - reply 10219:182490    -               11398:85209
+#   dropdown-group filter      -               -               11398:85199
+#   dropdown-members           -               -               11398:85189
+#   dropdown-story tile/view   11407:148276 / 11407:148320     -
+#
+#   type       Manrope 14/18   Manrope 12/16   Manrope 12/14   all at -4%
+#   panel      250 / 218       220 / 200       200 / 218
+#   row        30              28              28 glyph, 26 none
+#
+# TWELVE FRAMES, THREE MENUS, NO EXCEPTION. Every Desktop copy is 14/18, every
+# Tablet copy 12/16, every Mobile copy 12/14. The shipped sm was exact at 768
+# and 2px wrong at 375 on all of them at once.
+#
+# ★ WHICH BOARD A PANEL BELONGS TO IS THE X BAND, NOT THE WIDTH. This is what
+# three earlier passes got wrong, and it is why two of these rows were filed
+# frame-defect. dropdown - right click is 200 wide at 768 AND at 375;
+# dropdown - tridots - reply is 218 at 1440 AND at 375. The page carries twelve
+# Breakpoint banners at y=2337 - Desktop x=0/17482/32788/44126, Tablet
+# x=5951/24543/37698/47926, Mobile x=11277/27885/40487/51001 - and a dropdown is
+# parked 282-300px to the LEFT of the screen it annotates. So 11387:73530 at
+# x=37398 is the Tablet drawing and 11380:24252 at x=40187 is the Mobile one,
+# and their 16-against-14 is the ramp rather than one board drawn twice.
+#
+# ★ THE ROW BOX IS NOT THE LEADING, WHICH IS WHY THE EXISTING CHECK STAYED
+# GREEN THROUGH THE WHOLE DEFECT. Every row measures
+# 6 + max(16 when the row carries a glyph, leading) + 6. Tokens, balances and
+# the right-click menu all carry a 16x16 icons/* slot, so their mobile rows are
+# 28 under either a 14 or a 16 leading and cannot tell the two apart. The
+# glyphless frames can: 11530:303293, 11398:85199 and 11398:85189 draw 26px
+# rows, and 26 is only reachable from a 14. Those three are the oracle the fix
+# is proved on.
+#
+# ★ A SECOND FRAME CLAIM DISPROVED, NOT SHIPPED. SocialMenu's tone docblock
+# named Block user in 9626:39285, 11407:148276 and 11407:148320 as the rows the
+# frames paint red because they carry icons/warnings. All three draw that row
+# #FFFFFF on the glyph AND the label. The red rows are the DELETE rows -
+# 10216:182394's Delete conversation is #FF574A on both. No caller passes danger
+# for a block row, so nothing shipped wrong; the comment would have sent the
+# next lane to paint three white rows red. Corrected in 51ae6e481.
+#
+# THE ORACLES, and every value in them proved red by a mutation applied ALONE
+# from a pristine copy and restored by copying that copy back:
+#   src/components/social/menus/SocialRowMenus.figma.test.tsx   41 checks
+#   src/components/social/SocialMenu.figma.test.tsx             26 checks, new
+#   src/components/social/SocialMenu.select.figma.test.tsx       8 checks
+#   mobile: "sm"          reddens 3 of the row-menu checks
+#   xs at leading-4       reddens 2 of them and 6 of the SocialMenu checks
+#
+# WHAT IS DELIBERATELY NOT PROMOTED. Only the dropdown-tokens family is
+# promoted, because it is the only one of the nine with a production mount:
+# CreatorTokensTab.tsx:458 renders SocialMenu with buildTokenRowMenu, and
+# UserProfile is routed at /:username (src/App.tsx:1923). buildBalanceRowMenu
+# and buildFollowListSortMenu have no caller outside their own module, its
+# barrel and this test; SocialMenu has no mount on /messages or /social/groups
+# at all. A panel that matches its frame and that nothing opens is not done, and
+# those rows say so rather than reading as covered.
+dropdown-tokens [11530-303164]	done	src/components/social/menus/socialRowMenus.tsx	/:username	FRAME-DEFECT DISPROVED AND THE ROW IS NOW EXACT. The defect was filed on the reading that the file draws this menu at 200 wide with both leadings on two different boards. It does not: 11530:303143 is 220 wide at x=6819 in the Tablet band and 11530:303164 is 200 wide at x=11725 in the Mobile band, and 12/16 against 12/14 is the ramp. NODE DATA BOTH SIDES 2026-09-06, all five children enumerated. PANEL 200x160 cornerRadius 12 VERTICAL gap 8 pad 8/8/8/8 fill #122524 stroke #123F3C w1 INSIDE DROP_SHADOW r12 offset 0,4 #000000@0.24 = width 200 rounded-[12px] gap-2 p-2 bg-green-coal-200 border-green-coal-100 shadow-[0px_4px_12px_0px_rgba(0,0,0,0.24)], and green-coal-200/100 resolve to #122524/#123F3C in design-tokens.ts. ROWS four items 184x28 radius 4 HORIZONTAL gap 8 pad 6/8/6/8 = rounded-[4px] gap-2 px-2 py-1.5, each with a 16x16 icons/action at x=8 and its label at x=32 = px-2 + size-4 + gap-2. LINE after row ONE only, 184 wide 1px = ruleBetween's single separator. TYPE Manrope Regular 12/14 ls -4pct #FFFFFF = the new xs scale; row 0 washed #123F3C = the roving cursor's bg-green-coal-100. LABELS Add to favorites / Trade token PIT / Report token PIT / View on Skaiscan = buildTokenRowMenu verbatim. MOUNTED: CreatorTokensTab.tsx:458 under /:username.	mobile=done @2026-09-06
+dropdown-tokens [11530-303259]	done	src/components/social/menus/socialRowMenus.tsx	/:username	FRAME-DEFECT DISPROVED. Same 200x160 Mobile-band panel as 11530-303164 at x=11752, same five children, same fills, stroke, shadow, radii and pads, sample token ANAL instead of PIT - and the symbol is DATA, so one builder covers both. TYPE Manrope Regular 12/14, which the xs scale now ships. The Tablet twin 11530:303208 at x=6819 is 220 wide at 12/16; both are correct and neither is a defect.	mobile=done @2026-09-06
+dropdown-tokens [9636-208873]	done	src/components/social/menus/socialRowMenus.tsx	/:username	RE-MEASURED 2026-09-06 rather than inherited. 250x168 at x=1496 in the Desktop band, four items 234x30 radius 4 pad 6/8/6/8 gap 8, glyph 16 at x=8, label at x=32, line after row one, Manrope Regular 14/18 ls -4pct #FFFFFF = the md scale, row 0 washed #123F3C. Panel #122524 / #123F3C w1 INSIDE / DROP_SHADOW r12 0,4 @0.24 / r12 / gap 8 / pad 8.	desktop=done @2026-09-06
+dropdown-tokens [11530-303143]	done	src/components/social/menus/socialRowMenus.tsx	/:username	RE-MEASURED 2026-09-06. 220x160 at x=6819 in the Tablet band, four items 204x28, Manrope Regular 12/16 = the sm scale, which was already exact here. Same chrome as its Desktop and Mobile twins.	tablet=done @2026-09-06
+dropdown-tokens [9640-214077]	done	src/components/social/menus/socialRowMenus.tsx	/:username	RE-MEASURED 2026-09-06. 250x168 at x=1506, the ANAL sample of 9636-208873 with an identical item list and identical chrome. Manrope Regular 14/18.	desktop=done @2026-09-06
+dropdown-tokens [11530-303208]	done	src/components/social/menus/socialRowMenus.tsx	/:username	RE-MEASURED 2026-09-06. 220x160 at x=6819, the ANAL Tablet copy. Manrope Regular 12/16, four items 204x28, same chrome.	tablet=done @2026-09-06
+dropdown-balances [9640-213620]	partial	src/components/social/menus/socialRowMenus.tsx	-	MEASURED AND FRAME-EXACT, NEVER MOUNTED. 250x206 at x=1506 Desktop band; five items 234x30 radius 4 pad 6/8/6/8 gap 8, glyph 16 at x=8, label x=32, line after row ONE, Manrope Regular 14/18 ls -4pct #FFFFFF, panel r12 gap 8 pad 8 #122524 / #123F3C w1 INSIDE / DROP_SHADOW r12 0,4 @0.24. Labels View on Skai wallet / Trade SOL/USDT / Swap / Deposit / Withdraw = buildBalanceRowMenu's order. STAYS partial ON THE MOUNT, not the pixels: buildBalanceRowMenu's only importers are socialRowMenus.tsx, menus/index.ts and SocialRowMenus.figma.test.tsx, so no user can reach this menu.	desktop=partial @2026-09-06
+dropdown-balances [11530-303185]	partial	src/components/social/menus/socialRowMenus.tsx	-	MEASURED. 220x196 at x=6819 Tablet band, five items 204x28, Manrope Regular 12/16 = sm, chrome identical to 9640-213620. Same never-mounted finding.	tablet=partial @2026-09-06
+dropdown-balances [11530-303236]	partial	src/components/social/menus/socialRowMenus.tsx	-	MEASURED, AND THE LEADING IS NOW RIGHT. 200x196 at x=11752 Mobile band, five items 184x28, Manrope Regular 12/14 - the step the panel used to ship as 12/16. The box is 28 either way because every row here carries a 16px glyph, which is exactly why this frame could not detect its own defect and 11530:303293 could. Same never-mounted finding.	mobile=partial @2026-09-06
+dropdown-followers/following [9646-214871]	partial	src/components/social/menus/socialRowMenus.tsx	-	MEASURED AND FRAME-EXACT, NEVER MOUNTED. 250x92 at x=1506 Desktop; item 234x30 at y=8, line at y=46, item 234x30 at y=54, so 8+30+8+8+30+8 lands 92. NO GLYPH on either row - both text nodes sit at x=8, not the x=32 every iconed row in this family uses, which the builder already encodes. Recent / Oldest, Manrope Regular 14/18 ls -4pct #FFFFFF. buildFollowListSortMenu has no caller; only its option list is consumed.	desktop=partial @2026-09-06
+dropdown-followers/following [11530-303287]	partial	src/components/social/menus/socialRowMenus.tsx	-	MEASURED. 220x88 at x=6819 Tablet, items 204x28 at y=8 and y=52 with the line at y=44, Manrope Regular 12/16, no glyphs. Same never-mounted finding.	tablet=partial @2026-09-06
+dropdown-followers/following [11530-303293]	partial	src/components/social/menus/socialRowMenus.tsx	-	THE FRAME THAT PROVED THE DEFECT. 200x84 at x=11752 Mobile; items 184x26 at y=8 and y=50 with the line at y=42, so 8+26+8+8+26+8 = 84. TWENTY-SIX, and it is the only frame in this lane that measures it: no glyph means nothing floors the box at 16, so the row IS 6 + leading + 6 and a 14 leading is the only way to reach 26. The panel used to resolve 28 here. Manrope Regular 12/14 ls -4pct #FFFFFF, no glyph, label at x=8. Now asserted in SocialRowMenus.figma.test.tsx as a resolved height, not a class. STAYS partial on the mount: buildFollowListSortMenu still has no production caller.	mobile=partial @2026-09-06
+dropdown - right click [10216-182394]	partial	src/components/social/SocialMenu.tsx	/messages	MEASURED ALL AXES 2026-09-06 AND THE PANEL IS AT PARITY. 218x206 at x=32506, which is 282 left of the Desktop band opening at 32788. Five items 202x30 radius 4 HORIZONTAL gap 8 pad 6/8/6/8, glyph 16 at x=8, label at x=32, line 202 wide at y=160 fencing the destructive tail. TYPE Manrope Regular 14/18 ls -4pct #FFFFFF except Delete conversation, #FF574A on the icon AND the text = tone danger, and skai-red DEFAULT is red 300 #FF574A. Row 0 washed #123F3C. Panel r12 gap 8 pad 8 #122524 / #123F3C w1 INSIDE / DROP_SHADOW r12 0,4 @0.24. STAYS partial ON THE TRIGGER: SocialMenu has no mount site on /messages, so nothing opens this panel at any width. Now pinned by SocialMenu.figma.test.tsx.	desktop=partial @2026-09-06
+dropdown - right click [11387-73530]	partial	src/components/social/SocialMenu.tsx	/messages	MEASURED, AND ITS BOARD IS 768 - x=37398 is 300 left of the Tablet band opening at 37698. 200x196, five items 184x28, glyph at x=8, label at x=32, line 184 wide at y=152, Manrope Regular 12/16 with Delete conversation at #FF574A. Same chrome as 10216-182394. Same never-mounted finding.	tablet=partial @2026-09-06
+dropdown - right click [11380-24252]	partial	src/components/social/SocialMenu.tsx	/messages	MEASURED, AND THIS IS THE FRAME THAT SETTLES THE RAMP. x=40187 is 300 left of the Mobile band opening at 40487, so it is the 375 drawing and its 768 twin is 11387-73530 - not two copies of one board. Same 200x196 box, same five 184x28 rows, same line at y=152, same fills; the labels are Manrope Regular 12/14 here against 12/16 there. Wave 17 read the same two frames and called the 2px board drift; the x bands say it is a breakpoint. The panel now ships 12/14 at this board. STAYS partial on the trigger, and at 375 a right-click has no touch equivalent, so the drawn panel has no way to open at all.	mobile=partial @2026-09-06
+dropdown - tridots - reply [10219-182490]	partial	src/components/social/SocialMenu.tsx	/social/groups	MEASURED, AND THE TITLE IS THE FILE'S, NOT THE MENU'S. 218x84 at x=45630 in the Desktop band, holding exactly TWO rows 202x30 reading View creator and Show member list - no reply, forward, copy or delete anywhere in it. Glyph 16 at x=8, label at x=32, Manrope Regular 14/18 ls -4pct #FFFFFF, no rule, row 0 washed. Panel r12 gap 8 pad 8 with the family's fill, stroke and shadow. STAYS partial on the trigger: nothing mounts SocialMenu on the groups surface.	desktop=partial @2026-09-06
+dropdown - tridots - reply [11398-85209]	partial	src/components/social/SocialMenu.tsx	/social/groups	MEASURED. x=51951 is inside the Mobile band opening at 51001, so this is the 375 drawing. 218x80, two rows 202x28, glyph at x=8, label at x=32, Manrope Regular 12/14. ★ THE WIDTH DOES NOT COMPACT WITH THE TYPE - 218 at both boards, where the tokens family narrows 250 to 220 to 200 and the right-click one narrows 218 to 200. Width is per-menu and the type is per-board; the panel treats them as two independent props for exactly this reason. Same never-mounted finding.	mobile=partial @2026-09-06
+dropdown-group filter [11398-85199]	partial	src/components/social/SocialMenu.tsx	/social/groups	MEASURED, AND ONE OF THE TWO FRAMES THE FIX IS PROVED ON. 200x152 at x=50701, 300 left of the Mobile band. Four items 184x26 - TWENTY-SIX - with NO glyph, so the label sits at x=8 and the box is 6 + 14 + 6 with nothing to floor it. All / Eligible / Ascending / Descending, Manrope Regular 12/14 ls -4pct #FFFFFF, line 184 wide at y=42 after row one, row 0 washed #123F3C. Panel r12 gap 8 pad 8 #122524 / #123F3C w1 INSIDE / DROP_SHADOW r12 0,4 @0.24. The panel resolved 28 here before 15e247adc and resolves 26 now. STAYS partial on the trigger.	mobile=partial @2026-09-06
+dropdown-members [11398-85189]	partial	src/components/social/SocialMenu.tsx	/social/groups	MEASURED, and structurally identical to the group-filter panel: 200x152 at x=51934 inside the Mobile band, four items 184x26 with no glyph, labels at x=8 in Manrope Regular 12/14 #FFFFFF, line 184 wide at y=42 after row one, row 0 washed. Rows read Recent / Member requests / Followers / Following. Second independent proof of the 26px box. STAYS partial on the trigger.	mobile=partial @2026-09-06
+dropdown-story tile [11407-148276]	not-started	src/components/social/SocialMenu.tsx	-	MEASURED FOR THE FIRST TIME 2026-09-06, so the next lane has an oracle rather than an inventory line. 250x130 at x=-1795, in the off-canvas column left of the Desktop band that holds the 1440 story screens - the frame titled Skai > Social > view story 1VH (1440 x 900px) sits at x=-3280 in the same column, and its id is deliberately not written here because a status row's prose is scanned for node ids and this row must not speak for a frame it did not measure. So this is the Desktop drawing and the file gives it no compact redraw. Three items 234x30 radius 4 pad 6/8/6/8 gap 8, glyph 16 at x=8, label at x=32, line 234 wide at y=84 before the third row, Manrope Regular 14/18 ls -4pct, row 0 washed #123F3C. Panel r12 gap 8 pad 8 #122524 / #123F3C w1 INSIDE / DROP_SHADOW r12 0,4 @0.24. Rows Download story / Report story / Block user @arlobanks. ★ ALL THREE ROWS ARE #FFFFFF - the icons/warnings glyph on Block user is white, not red; see the tone note in the block above. not-started, not partial: there is no builder for this list and StoryViewer.tsx draws no menu, so nothing of it is built. It still needs a download path, a report sink and a block writer.	desktop=not-started @2026-09-06
+dropdown-story view [11407-148320]	not-started	src/components/social/SocialMenu.tsx	-	MEASURED 2026-09-06. 250x130 at x=-1795, same Desktop off-canvas column, same chrome and same three-row shape as 11407-148276: items 234x30, glyph at x=8, label at x=32, line at y=84 before the third row, Manrope Regular 14/18, row 0 washed. Rows Follow user @CryptosTraderX / Report user @CryptosTraderX / Block user @CryptosTraderX, and all three are #FFFFFF including the icons/warnings row. Same three missing sinks.	desktop=not-started @2026-09-06
+Right menu [5198-63614]	partial	src/components/social/SocialRightMenu.tsx	/social/groups	SHELL RE-MEASURED 2026-09-06 AND EVERY SHELL VALUE MATCHES. 442x1003 at x=45666 Desktop band: cornerRadius 24, VERTICAL, padding 24 on all four sides, fill #122524 at 0.8, stroke #123F3C w1 INSIDE, BACKGROUND_BLUR r40 and DROP_SHADOW r80 = rounded-[12px] lg:rounded-[24px], p-3 md:p-5 lg:p-6, bg-green-coal-200/80, border-green-coal-100, backdrop-blur-[20px] (Figma's blur radius is twice the CSS value), shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)]. Frame 344 itemSpacing 16 = the header-to-body gap. CTA 394x62 radius 16 pad 20/40 gap 10 fill #56C7F3 = GroupFormSheet's lg:h-[62px] lg:rounded-[16px] lg:px-10 on bg-[#56c7f3]. STAYS partial BECAUSE THE FRAME IS WIDER THAN THE SHELL: it also draws the whole create-group form - avatar picker, name and description fields, the Access type radio group and the Visible statistics list - and none of that interior was measured this pass. The shell is not the frame.	desktop=partial @2026-09-06
+Right menu - token gated + rules [5198-63742]	partial	src/components/social/SocialRightMenu.tsx	/social/groups	SHELL RE-MEASURED 2026-09-06. 442x1565 at x=46208 Desktop band, and it is 5198-63614 with the Token-gated radio SELECTED: identical radius 24, padding 24, fill #122524@0.8, stroke #123F3C w1, blur 40, shadow r80, Frame 344 gap 16 and CTA 394x62 r16 pad 20/40 - only the body's height differs, because the disclosed branch adds an entry-token field, an entry amount card and a Rules textarea. Same partial and the same reason: the disclosed interior is unmeasured.	desktop=partial @2026-09-06
+Right menu [11398-81312]	partial	src/components/social/GroupFormSheet.tsx	/social/groups	SHELL RE-MEASURED 2026-09-06. 359x880 at x=51491 Mobile band: radius 12, padding 12, section gap 32 at the panel (inert - SPACE_BETWEEN with two children), Frame 344 gap 16, fill #122524@0.8, stroke #123F3C w1 INSIDE, blur 40, shadow r80, CTA 335x44 radius 12 pad 14/16 gap 12 on #56C7F3 = w-[359px] p-3 rounded-[12px] and h-11 rounded-[12px] px-4. The 44 is also the global touch floor at this width (index.css:748-754), so the two agree rather than fight. STAYS partial: the create-group interior was not measured this pass.	mobile=partial @2026-09-06
+Right menu [11398-81450]	partial	src/components/social/GroupFormSheet.tsx	/social/groups	SHELL RE-MEASURED 2026-09-06. 359x1320 at x=51950 Mobile band, the token-gated state of 11398-81312: same radius 12, padding 12, Frame 344 gap 16, fill, stroke, blur and shadow, same CTA 335x44 r12 pad 14/16. Only the body height differs. Same partial and the same reason.	mobile=partial @2026-09-06
+Right menu - token gated + rules [11398-88650]	partial	src/components/social/GroupFormSheet.tsx	/social/groups	SHELL RE-MEASURED 2026-09-06, AND IT IS THE TABLET DRAWING - x=48794 sits in the Tablet band opening at 47926, which is what makes the shell's middle step measurable at all. 442x1460: radius 12 (not the Desktop 24), padding 20, Frame 344 gap 16, fill #122524@0.8, stroke #123F3C w1 INSIDE, blur 40, shadow r80, CTA 402x50 radius 12 pad 16/24 gap 10 on #56C7F3 = md:w-[442px] md:p-5 and md:h-[50px] md:px-6, with rounded-[12px] held from the base. Width 442 and radius 12 crossing at this board is the whole reason the shell needs three steps and not two. STAYS partial: interior unmeasured.	tablet=partial @2026-09-06
