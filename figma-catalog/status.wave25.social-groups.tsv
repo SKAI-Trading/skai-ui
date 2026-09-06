@@ -1,0 +1,65 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-groups, wave 25. Partition as briefed: src/pages/social/groups/** and
+# src/components/social/**.
+#
+# Every # in this file is at column 0. coverage.mjs tests startsWith("#") with no
+# trimStart, so an indented comment is not a comment to every reader.
+#
+# WHAT WAS MEASURED, AND WHY THIS SUBSET. One component at all three boards, on
+# all three axes: the join-group confirmation sheet, drawn by 11398:79660 (375),
+# 11398:87597 (768) and 5198:62701 (1440). Nine component rows, three per board,
+# splitting the sheet into shell, group card and footer. Nothing here is inferred
+# from a sibling board and nothing is transcribed from a note - every value was
+# asked of the node through get_metadata and get_design_context.
+#
+# THE POSITIVE CONTROL ON THE DESKTOP READ. 5198:62713 was fetched on its own
+# after the fact: it returns x=24 (the sheet's stated inset), width 516 (564 minus
+# two insets, so the sheet IS 564) and two 254x62 buttons 8 apart. That agrees
+# value for value with the 564x364 recorded against this node before this pass, so
+# the instrument was reading the frame rather than handing back a default.
+#
+# WHY COMPONENT DEPTH AND NOT SCREEN DEPTH. All three frames draw the whole
+# Discover list behind the overlay - three group blocks, their Token req. column
+# and the tab bar - and none of that was measured this pass. The screen rows stay
+# partial and say what was left. Promoting the sheet separately is what stops a
+# control that IS at parity from being held behind a list that was not read.
+#
+# THE COPY IS NOT AT PARITY AND MUST NOT BE. All three frames read "Join Diamond
+# Hands Club with 88 SKAI?" over "Deposit a one time fee of 88 SKAI" with a "Yes,
+# continue to pay" button. No debit exists anywhere on the join path.
+# JoinGroupConfirmDialog.test.tsx holds that as four negative assertions. These
+# rows are geometry, colour and type only.
+#
+# THE TWO MERGE HAZARDS IN THIS SLICE. DialogContent ships p-4 sm:p-6, and
+# tailwind-merge resolves per variant chain, so an unprefixed p-3 joins sm:p-6
+# rather than displacing it and the primitive's 24 wins across 640-767 - a band no
+# board describes, sitting between the phone's 12 and the tablet's 12. The call
+# site answers with sm:p-3 for that reason and no other; it is the only sm: rule in
+# the file and the oracle pins the list to exactly that one. And a bare flex-1 on a
+# control inside a column takes a flex-basis of 0 from a content-sized container,
+# which collapses both buttons to nothing below 768, so the split is md:flex-1.
+#
+# THE ORACLE. src/components/social/__tests__/joinGroupConfirmSheet.figma.test.tsx,
+# 30 cases. It mounts the real @skai/ui primitives and resolves the class list the
+# DOM actually holds - a call site's string alone cannot see p-4 sm:p-6 from
+# DialogContent, h-10 px-4 rounded-md text-sm gap-2 from Button, text-lg
+# font-semibold leading-none from DialogTitle or text-sm text-muted-foreground from
+# DialogDescription. Each value is asked at 639/641, 767/769 and 1023/1025 as well
+# as at the boards, so a rung hung one breakpoint out draws a value no board
+# describes and fails. Proved red three times by mutations that LENGTHEN a token
+# rather than change it: sm:p-3 -> md:sm:p-3 reddened the sheet-inset case,
+# lg:leading-[22px] -> xl:lg:leading-[22px] on the sentence reddened the sentence
+# ramp, and h-11 -> md:h-11 reddened the control height. Each was restored and the
+# file re-run green (30/30), and the surrounding tree with it (548/548).
+Join sheet shell (375) [11398-79660]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board and rebuilt against the numbers. GEOMETRY the sheet is 354 wide at r16 on a flat 12px inset, which is 375 less 21 of gutter; the 16x16 close glyph sits on that same 12 against the top and the right; the controls row it occupies is 16 tall, the group card clears it by 24, the headline block clears the card by 24 and the footer clears the headline block by 24. COLOUR fill Green Coal 200 #122524 under a 1px Green Coal 100 #123F3C hairline, shadow 0 10px 80px rgba(0,0,0,0.25). --background is Green Coal 300, one step down from the fill, so the fill is written as hex. TYPE the shell carries no string of its own.	mobile=done
+Join sheet shell (768) [11398-87597]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board. GEOMETRY 448 wide at r16 on a flat 12px inset, identical to the phone board on both, with the same 16x16 close glyph on the same 12 and the same three 24px gaps down the column. The 448 is stated, not derived: 768 less 160 either side. COLOUR identical to the phone board value for value - #122524, 1px #123F3C, the same shadow. TYPE no string of its own. What steps between these two boards is nothing, which is why 640-767 has to draw the phone box and why sm:p-3 exists.	tablet=done
+Join sheet shell (1440) [5198-62701]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board and cross-checked by an independent fetch of 5198:62713 (x=24, width 516). GEOMETRY 564 wide at r32 on a flat 24px inset - the radius doubles and the inset doubles, both only here - with the 16x16 close glyph on that 24 and the footer 36 under the headline block where both narrow boards state 24. The three gaps inside the upper block stay 24. COLOUR unchanged from the narrow boards: #122524 under 1px #123F3C, same shadow. TYPE no string of its own.	desktop=done
+Join sheet group card (375) [11398-79667]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board. GEOMETRY 257x86 at r16, inset 32 across over 16 down, holding a 54px circle 8 from its text column, whose three lines are 4 apart. 32 + 54 + 8 + 131 + 32 = 257 exactly, so the card is a HUG and its width is the padding plus the type rather than a number of its own; it is built w-fit for that reason and the oracle bans a stated width on it. COLOUR Green Coal 300 at 44%, rgba(0,22,21,0.44) - not --muted at 30%, which is a blue-grey at the wrong alpha. Caption App/Ash 300 #95A09F, count Sky Blue (rendered through --primary), name Core/White (--foreground is 0 0% 100%, so that one is a token). TYPE Manrope Bold 14/18 on the name, Mulish Regular 12/14 on the caption and on the count, all at -4 pct.	mobile=done
+Join sheet group card (768) [11398-87604]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board. GEOMETRY 273x86 at r24 - the radius steps here, the phone's is 16 - inset 40 across over the same 16 down, the same 54px circle, the same 8px gap and the same 4px line spacing. 40 + 54 + 8 + 131 + 40 = 273, the same hug arithmetic as the phone board over a wider inset. COLOUR identical to the phone board on all four values. TYPE identical to the phone board: Manrope Bold 14/18, Mulish Regular 12/14, -4 pct. This card differs from the phone's in exactly two numbers.	tablet=done
+Join sheet group card (1440) [5198-62745]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board. GEOMETRY 308x96 at r24, inset 40 across over 16 down, holding a 64px circle 14 from its text column - the circle and the gap both step only here - with the same 4px line spacing. Read off the node rather than derived: Frame 792 is 228 wide at x=40 inside a 308 card, the name measures 150 at x=78, and 40 + 64 + 14 + 150 + 40 = 308 - the same hug arithmetic as both narrow boards over a larger avatar and a larger name. The card sits at x=104 in the 516 column, so 104 either side, centred. COLOUR identical to both narrow boards. TYPE Manrope Bold 16/22 on the name and Mulish Regular 12/16 on the caption and the count, both at -4 pct: the size steps on the name and the leading steps on the caption, and neither of them steps at 768.	desktop=done
+Join sheet footer (375) [11398-79683]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board and rebuilt against the numbers. GEOMETRY 24 under the block above; the two controls are STACKED full width, 330 wide by 44 tall at r12, 8 apart, over 16 of horizontal padding, and the confirm is the one on TOP. 14 + 16 + 14 = 44 is that height stated as padding. The 16px forward arrow sits 12 from its label. Built flex-col-reverse over a Cancel-then-confirm DOM order, so the visual order is the frame's and the tab order does not invert at 768. COLOUR confirm filled with the accent, cancel Green Coal 300 under a 1px accent rule. TYPE Manrope Regular 14/16 at -4 pct on both labels.	mobile=done
+Join sheet footer (768) [11398-87620]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board. GEOMETRY 24 under the block above; the two controls are SIDE BY SIDE, an even split of the 424 column at 208 each, 8 apart, 50 tall at r12 over 24 of horizontal padding, cancel first. 16 + 18 + 16 = 50. The arrow sits 10 from its label, not the phone's 12. Split with md:flex-1 rather than a stated 208, because 208 + 8 + 208 = 424 is the whole column, so the frame's own numbers ARE an even split. COLOUR as at the phone board, and the cancel's rule is still 1px. TYPE Manrope Regular 14/18 at -4 pct - the size holds from the phone board and the leading steps.	tablet=done
+Join sheet footer (1440) [5198-62713]	done	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	PROMOTED - measured on all three axes at this board, and this node is the pass's positive control: fetched on its own it reports x=24, width 516 and two 254x62 instances 8 apart. GEOMETRY 36 under the block above where both narrow boards state 24; controls side by side at 254 each, 62 tall at r16 over 40 of horizontal padding, cancel first, arrow 10 from its label. 20 + 22 + 20 = 62. COLOUR as at both narrow boards except the cancel's rule, which is 1.5px here and 1px below 1024. TYPE Manrope Regular 16/22 at -4 pct.	desktop=done
+Social > Groups - search > Discover > Join gated group 1VH (375) [11398-79350]	partial	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	MEASURED THIS PASS: the overlay only. 11398:79660 and its three blocks are at parity on geometry, colour and type - the numbers are in the three component rows for this board. NOT MEASURED: everything behind the overlay, which is most of this frame - the 343x44 search field, a 54px tab row inset 12/4, and three 319-wide group blocks each carrying a 34px avatar, a Type tag inline on the name line, a Description pair and a Token req. block with a 24px token mark. The frame's copy is deliberately not shipped; see the file header and JoinGroupConfirmDialog.test.tsx.	mobile=partial
+Social > Groups - search > Discover > Join gated group 1VH (768) [11398-87644]	partial	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	MEASURED THIS PASS: the overlay only. 11398:87597 and its three blocks are at parity on geometry, colour and type - the numbers are in the three component rows for this board. NOT MEASURED: the 708x46 search field, the 56px tab row and the three 676-wide group blocks behind it, whose Description and Created labels run 16 where the phone board runs 14. The frame's copy is deliberately not shipped.	tablet=partial
+Social > Groups - search > Discover > Join gated group 1VH (1440) [5198-51022]	partial	src/components/social/JoinGroupConfirmDialog.tsx	/trading-groups	MEASURED THIS PASS: the overlay only. 5198:62701 and its three blocks are at parity on geometry, colour and type - the numbers are in the three component rows for this board. NOT MEASURED: the 1144-wide table behind it. The frame's copy is deliberately not shipped: it reads "Join Diamond Hands Club with 88 SKAI?" over a deposit sentence and a "Yes, continue to pay" button, and no debit exists on the join path - add_trading_group_member inserts a membership row and a conversation participant and contains no transfer.	desktop=partial
