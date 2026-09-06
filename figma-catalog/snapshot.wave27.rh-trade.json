@@ -1,0 +1,2414 @@
+{
+ "trade": {
+  "pageId": "3:3",
+  "pageName": "✅ Trade 1",
+  "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "liveChildCount": 420,
+  "countSource": "use_figma",
+  "nodesSource": "get_metadata",
+  "nodes": [
+   [
+    "7710-91527",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "8558-139280",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "8650-44853",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8822-65362",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8833-71578",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8941-77699",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8994-76486",
+    "Frame 455"
+   ],
+   [
+    "8994-76863",
+    "Frame 457"
+   ],
+   [
+    "8994-78276",
+    "Frame 1225"
+   ],
+   [
+    "8994-78552",
+    "Frame 1227"
+   ],
+   [
+    "8994-78720",
+    "Frame 1228"
+   ],
+   [
+    "8994-78891",
+    "Frame 1229"
+   ],
+   [
+    "8994-78407",
+    "Frame 1226"
+   ],
+   [
+    "8837-63445",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "9002-163670",
+    "Skai > Trade > Spot - order book 1VH (768 x 1024px)"
+   ],
+   [
+    "8846-63794",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "9042-164168",
+    "Skai > Trade > Spot - trades 1VH (768 x 1024px)"
+   ],
+   [
+    "8859-66157",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8833-68646",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8828-62762",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8931-64499",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8684-163505",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8687-101463",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8684-167264",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8666-108146",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "8570-143200",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "8650-46141",
+    "Skai > Trade > Spot - modal 1VH (768 x 1024px)"
+   ],
+   [
+    "8626-61565",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "8684-164665",
+    "Skai > Trade > Spot - modal 1VH (768 x 1024px)"
+   ],
+   [
+    "8626-85537",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "8833-72738",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9058-225792",
+    "Trade panel - Pro - Tp/sl"
+   ],
+   [
+    "9058-225926",
+    "Trade panel - Pro - Scaled order"
+   ],
+   [
+    "9058-223749",
+    "Trade panel - buy"
+   ],
+   [
+    "9058-223872",
+    "Trade panel - sell"
+   ],
+   [
+    "9058-223998",
+    "Trade panel - sell - with value"
+   ],
+   [
+    "8994-77368",
+    "Frame 1219"
+   ],
+   [
+    "8828-62440",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9490-145643",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9490-147063",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9490-148310",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9490-149563",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9500-151115",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9770-133659",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9772-80915",
+    "Skai > Trade > Spot - chart tools collapsed 1VH (375 x 812px)"
+   ],
+   [
+    "9801-112095",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9803-128424",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9803-125791",
+    "Skai > Trade > Perpetual Futures - full (375 x 812px)"
+   ],
+   [
+    "9801-123930",
+    "Skai > Trade > Perpetual Futures - Price Collapsed 1VH (375 x 812px)"
+   ],
+   [
+    "9801-121092",
+    "Skai > Trade > Perpetual Futures - user not signed in 1VH (375 x 812px)"
+   ],
+   [
+    "9780-110815",
+    "Skai > Trade > Spot - time dropdown 1VH (375 x 812px)"
+   ],
+   [
+    "9777-106388",
+    "Skai > Trade > Spot -  indicator dropdown 1VH (375 x 812px)"
+   ],
+   [
+    "9777-107863",
+    "Skai > Trade > Spot - candle dropdown 1VH (375 x 812px)"
+   ],
+   [
+    "9777-109337",
+    "Skai > Trade > Spot - timeframe dropdown 1VH (375 x 812px)"
+   ],
+   [
+    "9780-112196",
+    "Skai > Trade > Spot > Layout settings 1VH (375 x 812px)"
+   ],
+   [
+    "9780-113550",
+    "Skai > Trade > Spot - new layout 1VH (375 x 812px)"
+   ],
+   [
+    "9777-107807",
+    "Dropdown - Indicator (favorite)"
+   ],
+   [
+    "9772-78152",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9774-82207",
+    "Skai > Trade > Spot - Market 1VH (375 x 812px)"
+   ],
+   [
+    "9774-83802",
+    "Skai > Trade > Spot - Limit 1VH (375 x 812px)"
+   ],
+   [
+    "9774-91524",
+    "Trade panel - Limit"
+   ],
+   [
+    "9774-89981",
+    "Skai > Trade > Spot - Pro 1VH (375 x 812px)"
+   ],
+   [
+    "9775-91911",
+    "Skai > Trade > Spot - Pro > Trigger 1VH (375 x 812px)"
+   ],
+   [
+    "9775-93615",
+    "Skai > Trade > Spot - Pro > TP/SL 1VH (375 x 812px)"
+   ],
+   [
+    "9775-95209",
+    "Skai > Trade > Spot - Pro > Scaled order 1VH (375 x 812px)"
+   ],
+   [
+    "9775-93472",
+    "Trade panel - Pro - Trigger"
+   ],
+   [
+    "9774-91774",
+    "Trade panel - Pro - selection"
+   ],
+   [
+    "9772-76942",
+    "Frame 1341"
+   ],
+   [
+    "9772-75651",
+    "Skai > Trade > Spot - pair price details collapsed 1VH (375 x 812px)"
+   ],
+   [
+    "9500-163410",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9500-164534",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9500-165924",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9500-167048",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9490-146969",
+    "Frame 6"
+   ],
+   [
+    "8941-78943",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8941-82029",
+    "Frame 446"
+   ],
+   [
+    "8941-80624",
+    "Frame 450"
+   ],
+   [
+    "8941-81175",
+    "Frame 452"
+   ],
+   [
+    "8941-81422",
+    "Frame 453"
+   ],
+   [
+    "8941-81626",
+    "Frame 454"
+   ],
+   [
+    "8941-80882",
+    "Frame 451"
+   ],
+   [
+    "9058-225586",
+    "Trade panel - Limit - with value"
+   ],
+   [
+    "8845-36223",
+    "Skai > Trade > Spot 1VH ALT (375 x 812px)"
+   ],
+   [
+    "8846-64165",
+    "Skai > Trade > Spot 1VH ALT (375 x 812px)"
+   ],
+   [
+    "8650-94501",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8936-38729",
+    "Skai > Trade > Spot 1VH ALT (375 x 812px)"
+   ],
+   [
+    "8684-166194",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8833-69806",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8828-63922",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8650-94724",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8931-65660",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8626-131650",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "8650-94950",
+    "Skai > Trade > Spot - modal 1VH (375 x 812px)"
+   ],
+   [
+    "8684-166395",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8687-102751",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8626-130555",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "8684-166596",
+    "Skai > Trade > Spot - modal 1VH (375 x 812px)"
+   ],
+   [
+    "8570-143201",
+    "main"
+   ],
+   [
+    "8573-152756",
+    "Screenshot 2026-07-06 at 8.23.59 PM 1"
+   ],
+   [
+    "8558-134024",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "4144-65909",
+    "Skai > Trade > Spot > Layout adjustment 1VH (1440 x 900px)"
+   ],
+   [
+    "4144-67562",
+    "Skai > Trade > Spot > Layout adjustment - sidecar 1VH (1440 x 900px)"
+   ],
+   [
+    "4144-64244",
+    "Skai > Trade > Spot - dropdown 1VH (1440 x 900px)"
+   ],
+   [
+    "3931-93237",
+    "Skai > Trade > Spot > Limit 1VH (1440 x 900px)"
+   ],
+   [
+    "3962-8774",
+    "Skai > Trade > Spot > Limit > Search pairs 1VH (1440 x 900px)"
+   ],
+   [
+    "4144-61610",
+    "Skai > Trade > Spot > Limit > Search pairs ALT 1VH (1440 x 900px)"
+   ],
+   [
+    "3962-35261",
+    "Skai > Trade > Spot > Limit > Search pairs > Trench - search 1VH (1440 x 900px)"
+   ],
+   [
+    "3962-34721",
+    "Select pair - USDC"
+   ],
+   [
+    "3962-34884",
+    "Select pair - Favorites"
+   ],
+   [
+    "3962-8653",
+    "Trade panel - Limit"
+   ],
+   [
+    "3931-90224",
+    "Skai > Trade > Spot - Order book - Trades 1VH (1440 x 900px)"
+   ],
+   [
+    "3962-35200",
+    "Notes"
+   ],
+   [
+    "7712-38425",
+    "Order book"
+   ],
+   [
+    "8566-141675",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "3931-88039",
+    "Skai > Trade > Spot > Chart settings 1VH (1440 x 900px)"
+   ],
+   [
+    "3928-78877",
+    "Skai > Trade > Spot - chart expanded 1VH (1440 x 900px)"
+   ],
+   [
+    "3927-56677",
+    "Chart sample 2 - SOL"
+   ],
+   [
+    "3886-15237",
+    "Skai > Trade > Spot (1440 x 900px)"
+   ],
+   [
+    "4020-42901",
+    "Skai > Trade > Spot - hidden order book 1VH (1440 x 900px)"
+   ],
+   [
+    "3963-39739",
+    "Skai > Trade > Spot - trade dropdown 1VH (1440 x 900px)"
+   ],
+   [
+    "3969-43609",
+    "Skai > Trade > Spot - indicator dropdown 1VH (1440 x 900px)"
+   ],
+   [
+    "3972-28764",
+    "Skai > Trade > Spot - indicator dropdown 1VH (1440 x 900px)"
+   ],
+   [
+    "3972-32663",
+    "Skai > Trade > Spot - timeframe dropdown 1VH (1440 x 900px)"
+   ],
+   [
+    "7746-211720",
+    "Chart - Line"
+   ],
+   [
+    "7746-212008",
+    "Chart - Area"
+   ],
+   [
+    "7746-212704",
+    "Chart - Area"
+   ],
+   [
+    "3972-25561",
+    "Dropdown - Indicator (favorite)"
+   ],
+   [
+    "3896-31118",
+    "Skai > Trade > Spot > Info (1440 x 900px)"
+   ],
+   [
+    "3931-86279",
+    "AI alert types"
+   ],
+   [
+    "3931-91943",
+    "On:Hover"
+   ],
+   [
+    "3903-21478",
+    "Skai > Trade > Perpetual futures 1VH (1440 x 900px)"
+   ],
+   [
+    "9104-77744",
+    "Expanded"
+   ],
+   [
+    "3976-39045",
+    "Skai > Trade > Perpetual futures > Order confirmation 1VH (1440 x 900px)"
+   ],
+   [
+    "3979-40767",
+    "modal - confirm order SHORT"
+   ],
+   [
+    "3962-32706",
+    "Skai > Trade > Perpetual futures > Market > Search pairs 1VH (1440 x 900px)"
+   ],
+   [
+    "3908-39491",
+    "Skai > Trade > Perpetual futures - user not signed 1VH (1440 x 900px)"
+   ],
+   [
+    "3928-83147",
+    "Skai > Trade > Perpetual futures > cross/isolated 1VH (1440 x 900px)"
+   ],
+   [
+    "3928-85741",
+    "Right menu - leverage"
+   ],
+   [
+    "3931-85816",
+    "Right menu - leverage ALT"
+   ],
+   [
+    "9106-77596",
+    "Right menu - leverage"
+   ],
+   [
+    "9106-77632",
+    "Right menu - leverage ALT"
+   ],
+   [
+    "9106-77690",
+    "Right menu - leverage ALT 2"
+   ],
+   [
+    "7890-98663",
+    "Right menu - leverage ALT 2"
+   ],
+   [
+    "9106-79115",
+    "Right menu - leverage"
+   ],
+   [
+    "9106-79151",
+    "Right menu - leverage ALT"
+   ],
+   [
+    "9106-79209",
+    "Right menu - leverage ALT 4"
+   ],
+   [
+    "7890-98315",
+    "Trade panel - Isolated"
+   ],
+   [
+    "7712-32496",
+    "Trade panel - Buy"
+   ],
+   [
+    "3899-7131",
+    "Trade panel - Sell"
+   ],
+   [
+    "3900-7416",
+    "Trade panel - Sell with value"
+   ],
+   [
+    "7712-33476",
+    "🚨 Trade panel - Sell with value"
+   ],
+   [
+    "3886-15109",
+    "Expanded - Perp"
+   ],
+   [
+    "2005-35369",
+    "Directory"
+   ],
+   [
+    "3931-88032",
+    "Breakpoint"
+   ],
+   [
+    "9050-212389",
+    "Dropdown - Indicator (favorite)"
+   ],
+   [
+    "3903-22970",
+    "Skai > Trade > Perpetual futures (1440 x 900px)"
+   ],
+   [
+    "3899-7250",
+    "Notes"
+   ],
+   [
+    "9002-162005",
+    "On:Hover"
+   ],
+   [
+    "3903-21476",
+    "Rectangle 155"
+   ],
+   [
+    "3903-24462",
+    "Skai > Trade > Perpetual futures (1440 x 900px)"
+   ],
+   [
+    "4018-40830",
+    "Skai > Trade > Perpetual futures > Positions (1440 x 900px)"
+   ],
+   [
+    "9433-91121",
+    "icons/action"
+   ],
+   [
+    "9433-91123",
+    "icons/action"
+   ],
+   [
+    "4020-47586",
+    "Skai > Trade > Perpetual futures > Orders (1440 x 900px)"
+   ],
+   [
+    "9152-82793",
+    "section"
+   ],
+   [
+    "4191-121191",
+    "Skai > Trade > Perpetual futures > Order history (1440 x 900px)"
+   ],
+   [
+    "4191-123643",
+    "Skai > Trade > Perpetual futures > Trade history (1440 x 900px)"
+   ],
+   [
+    "4207-133479",
+    "Skai > Trade > Perpetual futures > Trade history > share PnL (1440 x 900px)"
+   ],
+   [
+    "3931-86058",
+    "Notes"
+   ],
+   [
+    "3931-92020",
+    "Notes"
+   ],
+   [
+    "3972-25537",
+    "Notes"
+   ],
+   [
+    "4020-49442",
+    "Notes"
+   ],
+   [
+    "4297-47855",
+    "PnL post - up with profit ALT"
+   ],
+   [
+    "4297-48539",
+    "PnL post - down with profit ALT"
+   ],
+   [
+    "9153-85201",
+    "PnL post - up with profit ALT"
+   ],
+   [
+    "9156-138870",
+    "PnL post - up with profit ALT"
+   ],
+   [
+    "9153-85888",
+    "PnL post - down with profit ALT"
+   ],
+   [
+    "9156-139557",
+    "PnL post - down with profit ALT"
+   ],
+   [
+    "4201-128723",
+    "Skai > Trade > Perpetual futures > Funding history (1440 x 900px)"
+   ],
+   [
+    "4144-63925",
+    "Advanced functions (approved)"
+   ],
+   [
+    "4144-64090",
+    "Notes"
+   ],
+   [
+    "4191-121142",
+    "Notes"
+   ],
+   [
+    "4020-49491",
+    "Skai > Trade > Perpetual futures > Assets (1440 x 900px)"
+   ],
+   [
+    "7890-121544",
+    "Positions - TP/SL"
+   ],
+   [
+    "7890-122280",
+    "Positions - Pages form"
+   ],
+   [
+    "4020-44966",
+    "Skai > Trade > Perpetual futures > Positions > Edit running SL/TP (1440 x 900px)"
+   ],
+   [
+    "7890-130783",
+    "Update position modal - on:hover"
+   ],
+   [
+    "7890-130857",
+    "Update position modal - on:hover - additional position"
+   ],
+   [
+    "3903-25954",
+    "Trade panel - Long"
+   ],
+   [
+    "3903-26048",
+    "Trade panel - Short"
+   ],
+   [
+    "3903-26142",
+    "Trade panel - Short with value"
+   ],
+   [
+    "3925-44912",
+    "Expanded"
+   ],
+   [
+    "7645-110947",
+    "Rectangle 161"
+   ],
+   [
+    "9002-157016",
+    "Breakpoint"
+   ],
+   [
+    "9056-216827",
+    "Breakpoint"
+   ],
+   [
+    "3931-88035",
+    "Breakpoint"
+   ],
+   [
+    "9102-299597",
+    "Breakpoint"
+   ],
+   [
+    "9102-299599",
+    "Breakpoint"
+   ],
+   [
+    "7679-71122",
+    "AI card - shouty"
+   ],
+   [
+    "7679-71196",
+    "dropdown-time"
+   ],
+   [
+    "7746-180909",
+    "sidebar - open - spot"
+   ],
+   [
+    "3931-88037",
+    "Breakpoint"
+   ],
+   [
+    "9069-258419",
+    "Breakpoint"
+   ],
+   [
+    "9069-258421",
+    "Breakpoint"
+   ],
+   [
+    "7888-96627",
+    "Notes"
+   ],
+   [
+    "3903-26337",
+    "Directory"
+   ],
+   [
+    "3931-88028",
+    "Directory"
+   ],
+   [
+    "3903-26850",
+    "Notes"
+   ],
+   [
+    "3903-26874",
+    "Rectangle 156"
+   ],
+   [
+    "3931-88031",
+    "Rectangle 157"
+   ],
+   [
+    "3908-41145",
+    "tool-tip"
+   ],
+   [
+    "4142-61420",
+    "Notes"
+   ],
+   [
+    "4341-23072",
+    "Vector"
+   ],
+   [
+    "9000-122588",
+    "Notes"
+   ],
+   [
+    "4437-112650",
+    "Skai > Dashboard - positive 1VH (1440 x 900px)"
+   ],
+   [
+    "4451-126554",
+    "Skai > Dashboard > Whale activity 1VH (1440 x 900px)"
+   ],
+   [
+    "4451-126989",
+    "Skai > Dashboard > Reports 1VH (1440 x 900px)"
+   ],
+   [
+    "4459-127765",
+    "Skai > Dashboard > News 1VH (1440 x 900px)"
+   ],
+   [
+    "7890-141568",
+    "Rectangle 164"
+   ],
+   [
+    "7761-226532",
+    "Rectangle 162"
+   ],
+   [
+    "7886-84306",
+    "tool-tip"
+   ],
+   [
+    "9135-86713",
+    "tool-tip"
+   ],
+   [
+    "7890-128681",
+    "dropdown-3"
+   ],
+   [
+    "7890-139989",
+    "dropdown - filter"
+   ],
+   [
+    "9152-89094",
+    "dropdown - filter"
+   ],
+   [
+    "9156-133437",
+    "dropdown - filter"
+   ],
+   [
+    "8572-81614",
+    "telegram-cloud-photo-size-4-5935980438046313910-y 1"
+   ],
+   [
+    "8572-81617",
+    "telegram-cloud-photo-size-4-5935980438046313909-y 1"
+   ],
+   [
+    "8573-152757",
+    "Screenshot 2026-07-06 at 8.24.17 PM 1"
+   ],
+   [
+    "8650-98182",
+    "Rectangle 34624579"
+   ],
+   [
+    "8650-98183",
+    "Rectangle 34624580"
+   ],
+   [
+    "8666-109490",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8684-162077",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8684-162456",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "8687-99711",
+    "Skai > Trade > Spot 1VH (1440 x 900px)"
+   ],
+   [
+    "8687-103072",
+    "Skai > Trade > Spot - modal 1VH (375 x 812px)"
+   ],
+   [
+    "8700-103509",
+    "Skai > Trade > Spot - modal 1VH (768 x 1024px)"
+   ],
+   [
+    "8705-169313",
+    "telegram-cloud-photo-size-1-5075675192754900172-y 1"
+   ],
+   [
+    "8994-76734",
+    "Frame 456"
+   ],
+   [
+    "8994-77492",
+    "Frame 1220"
+   ],
+   [
+    "8994-77623",
+    "Frame 1221"
+   ],
+   [
+    "8994-77761",
+    "Frame 1222"
+   ],
+   [
+    "8994-77870",
+    "Frame 1223"
+   ],
+   [
+    "8994-78004",
+    "Frame 1224"
+   ],
+   [
+    "9002-157018",
+    "Skai > Trade > Spot 1VH (768 x 1024px)"
+   ],
+   [
+    "9780-145861",
+    "Skai > Trade > Spot chart tools collapsed 1VH (768 x 1024px)"
+   ],
+   [
+    "9154-119891",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9154-121608",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9153-116609",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9153-118323",
+    "Trade panel - Long"
+   ],
+   [
+    "9153-86643",
+    "Skai > Trade > Perpetual Futures - Market long 1VH (375 x 812px)"
+   ],
+   [
+    "9801-122252",
+    "Skai > Trade > Perpetual Futures - Market long - user not signed in 1VH (375 x 812px)"
+   ],
+   [
+    "9102-300724",
+    "Skai > Trade > Perpetual Futures - Market long 1VH (768 x 1024px)"
+   ],
+   [
+    "9137-86763",
+    "Skai > Trade > Perpetual Futures - Market long 1VH (768 x 1024px)"
+   ],
+   [
+    "9135-85233",
+    "Skai > Trade > Perpetual Futures 1VH (768 x 1024px)"
+   ],
+   [
+    "9137-88222",
+    "Skai > Trade > Perpetual Futures > cross/isolated 1VH (768 x 1024px)"
+   ],
+   [
+    "9148-79309",
+    "Skai > Trade > Perpetual futures > Market > Search pairs 1VH (768 x 1024px)"
+   ],
+   [
+    "9148-80746",
+    "Skai > Trade > Perpetual Futures > Order confirmation 1VH (768 x 1024px)"
+   ],
+   [
+    "9154-123038",
+    "modal - confirm order SHORT"
+   ],
+   [
+    "9148-82614",
+    "Skai > Trade > Perpetual Futures > Positions (768 x 1024px)"
+   ],
+   [
+    "9934-141532",
+    "Skai > Trade > Perpetual Futures > Positions - collapsed (768 x 1024px)"
+   ],
+   [
+    "9152-84122",
+    "Skai > Trade > Perpetual Futures > Assets (768 x 1024px)"
+   ],
+   [
+    "9152-86271",
+    "Skai > Trade > Perpetual Futures > Order history (768 x 1024px)"
+   ],
+   [
+    "9934-144131",
+    "Skai > Trade > Perpetual Futures > Order history - collapsed (768 x 1024px)"
+   ],
+   [
+    "9152-92016",
+    "section"
+   ],
+   [
+    "9152-89103",
+    "Skai > Trade > Perpetual Futures > Trade history (768 x 1024px)"
+   ],
+   [
+    "9152-91623",
+    "section"
+   ],
+   [
+    "9150-79379",
+    "section"
+   ],
+   [
+    "9152-85551",
+    "section"
+   ],
+   [
+    "9150-79555",
+    "section"
+   ],
+   [
+    "9152-87497",
+    "section"
+   ],
+   [
+    "9152-90527",
+    "Skai > Trade > Perpetual Futures > Funding history (768 x 1024px)"
+   ],
+   [
+    "9152-81364",
+    "Skai > Trade > Perpetual Futures > Orders (768 x 1024px)"
+   ],
+   [
+    "9509-171503",
+    "icons/action"
+   ],
+   [
+    "9148-82240",
+    "modal - confirm order SHORT"
+   ],
+   [
+    "9135-80712",
+    "Skai > Trade > Perpetual Futures - user not signed in 1VH (768 x 1024px)"
+   ],
+   [
+    "9135-79087",
+    "Skai > Trade > Perpetual Futures - full 1VH (768 x 1024px)"
+   ],
+   [
+    "9135-77637",
+    "Skai > Trade > Perpetual Futures - Market long ALT 1VH (768 x 1024px)"
+   ],
+   [
+    "9069-263248",
+    "Skai > Dashboard - positive 1VH (375 x 812px)"
+   ],
+   [
+    "9081-266034",
+    "Skai > Dashboard > Reports 1VH (375 x 812px)"
+   ],
+   [
+    "9081-267604",
+    "Skai > Dashboard > News 1VH (375 x 812px)"
+   ],
+   [
+    "9081-267988",
+    "Skai > Dashboard > Whale activity 1VH (375 x 812px)"
+   ],
+   [
+    "9069-259546",
+    "Skai > Trade > Spot > Chart settings 1VH (768 x 1024px)"
+   ],
+   [
+    "9069-261150",
+    "Skai > Dashboard - positive 1VH (768 x 1024px)"
+   ],
+   [
+    "9081-265572",
+    "Skai > Dashboard > Reports 1VH (768 x 1024px)"
+   ],
+   [
+    "9081-267317",
+    "Frame 1264"
+   ],
+   [
+    "9081-266293",
+    "Skai > Dashboard > News 1VH (768 x 1024px)"
+   ],
+   [
+    "9081-266657",
+    "Skai > Dashboard > Whale activity 1VH (768 x 1024px)"
+   ],
+   [
+    "9081-268243",
+    "Frame 1267"
+   ],
+   [
+    "9050-209536",
+    "Skai > Trade > Spot - indicator dropdown 1VH (768 x 1024px)"
+   ],
+   [
+    "9050-212503",
+    "Skai > Trade > Spot - timeframe dropdown 1VH (768 x 1024px)"
+   ],
+   [
+    "9061-243175",
+    "Skai > Trade > Spot - candles dropdown 1VH (768 x 1024px)"
+   ],
+   [
+    "9050-214062",
+    "Skai > Trade > Spot > layout settings 1VH (768 x 1024px)"
+   ],
+   [
+    "9050-215425",
+    "Skai > Trade > Spot - new layout 1VH (768 x 1024px)"
+   ],
+   [
+    "9045-167521",
+    "Skai > Trade > Spot - market 1VH (768 x 1024px)"
+   ],
+   [
+    "9106-77805",
+    "Frame 1271"
+   ],
+   [
+    "9105-77267",
+    "Trade panel - Long"
+   ],
+   [
+    "9105-77093",
+    "Trade panel - Short"
+   ],
+   [
+    "9105-77432",
+    "Trade panel - Short with value"
+   ],
+   [
+    "9045-170329",
+    "Trade panel - buy"
+   ],
+   [
+    "9045-170453",
+    "Trade panel - sell"
+   ],
+   [
+    "9045-170740",
+    "Trade panel - sell with value"
+   ],
+   [
+    "9045-168925",
+    "Skai > Trade > Spot - limit 1VH (768 x 1024px)"
+   ],
+   [
+    "9045-171162",
+    "Skai > Trade > Spot - pro - dropdown 1VH (768 x 1024px)"
+   ],
+   [
+    "9045-174613",
+    "Frame 1233"
+   ],
+   [
+    "9045-174230",
+    "Frame 1234"
+   ],
+   [
+    "9045-174360",
+    "Frame 1235"
+   ],
+   [
+    "9045-186284",
+    "Skai > Trade > Spot - pro - trigger - ALT 1VH (768 x 1024px)"
+   ],
+   [
+    "9045-187547",
+    "Skai > Trade > Spot - pro - TP/SL - ALT 1VH (768 x 1024px)"
+   ],
+   [
+    "9045-188835",
+    "Skai > Trade > Spot - pro - scaled order - ALT 1VH (768 x 1024px)"
+   ],
+   [
+    "9042-164814",
+    "Skai > Trade > Spot - full 1VH (768 x 1024px)"
+   ],
+   [
+    "9050-210827",
+    "Frame 1238"
+   ],
+   [
+    "9002-158964",
+    "Skai > Trade > Spot > Sidebar 1VH (768 x 1024px)"
+   ],
+   [
+    "9002-161526",
+    "dropdown-time"
+   ],
+   [
+    "9061-258382",
+    "dropdown-time"
+   ],
+   [
+    "9002-162080",
+    "AI alert types"
+   ],
+   [
+    "9002-161563",
+    "Skai > Trade > Spot - info 1VH (768 x 1024px)"
+   ],
+   [
+    "9045-170994",
+    "Trade panel - Limit"
+   ],
+   [
+    "9048-190933",
+    "Skai > Trade > Spot > Search pairs 1VH (768 x 1024px)"
+   ],
+   [
+    "9059-238612",
+    "Frame 1248"
+   ],
+   [
+    "9059-238601",
+    "Frame 1249"
+   ],
+   [
+    "9050-206715",
+    "Skai > Trade > Spot > Limit > Search pairs > Trench - search 1VH (768 x 1024px)"
+   ],
+   [
+    "9048-192225",
+    "Select pair - USDC"
+   ],
+   [
+    "9048-192507",
+    "Select pair - Favorites"
+   ],
+   [
+    "9050-208186",
+    "Skai > Trade > Spot - simlified chart 1VH (768 x 1024px)"
+   ],
+   [
+    "9050-210996",
+    "Frame 1239"
+   ],
+   [
+    "9050-211728",
+    "Frame 1240"
+   ],
+   [
+    "9050-211896",
+    "Frame 1241"
+   ],
+   [
+    "9050-211139",
+    "Tool"
+   ],
+   [
+    "9059-238855",
+    "Skai > Trade > Spot > Selected pairs 1VH (375 x 812px)"
+   ],
+   [
+    "9061-240412",
+    "Skai > Trade > Spot > Selected pairs 1VH (375 x 812px)"
+   ],
+   [
+    "9061-240109",
+    "Selected pair - USDC"
+   ],
+   [
+    "9061-240254",
+    "Selected pair - Favorites"
+   ],
+   [
+    "9777-109249",
+    "dropdown-3"
+   ],
+   [
+    "9081-265513",
+    "Frame 627"
+   ],
+   [
+    "9081-273284",
+    "sidebar - open"
+   ],
+   [
+    "9081-273208",
+    "sidebar - open"
+   ],
+   [
+    "9114-78042",
+    "Frame 1279"
+   ],
+   [
+    "9114-77711",
+    "Trade panel - Short"
+   ],
+   [
+    "9114-77881",
+    "Trade panel - Short with value"
+   ],
+   [
+    "9152-79912",
+    "Skai > Trade > Perpetual Futures > Positions > Edit running SL/TP 1VH (768 x 1024px)"
+   ],
+   [
+    "9152-81212",
+    "Update position modal - on:hover"
+   ],
+   [
+    "9152-81278",
+    "Update position modal - on:hover - additional position"
+   ],
+   [
+    "9154-124727",
+    "Update position modal - on:hover"
+   ],
+   [
+    "9154-124786",
+    "Update position modal - on:hover - additional position"
+   ],
+   [
+    "9153-80772",
+    "Skai > Trade > Perpetual Futures 1VH (768 x 1024px)"
+   ],
+   [
+    "9154-119745",
+    "modal"
+   ],
+   [
+    "9154-128095",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9156-140326",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9156-141722",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9264-85987",
+    "Skai > Trench - actual 1VH (768 x 1024px)"
+   ],
+   [
+    "9403-133956",
+    "Skai > Trench - actual 1VH (768 x 1024px)"
+   ],
+   [
+    "9403-140971",
+    "Skai > Trench - actual 1VH (375 x 812px)"
+   ],
+   [
+    "9419-149915",
+    "Skai > Trench - actual 1VH (375 x 812px)"
+   ],
+   [
+    "9419-151234",
+    "Skai > Trench - actual 1VH (375 x 812px)"
+   ],
+   [
+    "9403-142103",
+    "Skai > Trench - actual 1VH (375 x 812px)"
+   ],
+   [
+    "9264-89796",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9403-139616",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9403-143235",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9403-146317",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9477-67940",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9477-72630",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9550-128469",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9477-71040",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9414-148035",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9477-69530",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9422-152634",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9403-144446",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9432-157179",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9432-159649",
+    "Frame 1302"
+   ],
+   [
+    "9432-158544",
+    "Frame 1301"
+   ],
+   [
+    "9264-91009",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9380-78308",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9380-79739",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9379-131684",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9373-129956",
+    "Skai > Trade > Perpetual Futures 1VH (375 x 812px)"
+   ],
+   [
+    "9264-93524",
+    "Expanded"
+   ],
+   [
+    "9359-164137",
+    "Screen Shot 2026-07-16 at 11.30.13 1"
+   ],
+   [
+    "9359-164138",
+    "Screen Shot 2026-07-16 at 11.30.09 1"
+   ],
+   [
+    "9380-81125",
+    "Screen Shot 2026-07-16 at 21.47.15 1"
+   ],
+   [
+    "9380-81126",
+    "Screen Shot 2026-07-16 at 21.51.32 1"
+   ],
+   [
+    "9432-160801",
+    "Rectangle 34624583"
+   ],
+   [
+    "9433-134503",
+    "Screen Shot 2026-07-17 at 15.29.29 1"
+   ],
+   [
+    "9433-134504",
+    "Screen Shot 2026-07-17 at 15.29.23 1"
+   ],
+   [
+    "9433-134505",
+    "Screen Shot 2026-07-17 at 15.29.18 1"
+   ],
+   [
+    "9553-131170",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9553-133106",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9553-132254",
+    "Frame 444"
+   ],
+   [
+    "9553-132827",
+    "Instant trade"
+   ],
+   [
+    "9774-89965",
+    "date range"
+   ],
+   [
+    "9776-96834",
+    "Skai > Trade > Spot (375 x 812px)"
+   ],
+   [
+    "9803-129761",
+    "Skai > Trade > Spot (375 x 812px)"
+   ],
+   [
+    "9803-131052",
+    "Skai > Trade > Spot (375 x 812px)"
+   ],
+   [
+    "9777-99794",
+    "Skai > Trade > Spot > Order book 1VH (375 x 812px)"
+   ],
+   [
+    "9777-101670",
+    "Skai > Trade > Spot > Trades 1VH (375 x 812px)"
+   ],
+   [
+    "9777-102315",
+    "Skai > Trade > Spot > Trades (375 x 812px)"
+   ],
+   [
+    "9776-98249",
+    "AI alert types"
+   ],
+   [
+    "9776-98250",
+    "On:Hover"
+   ],
+   [
+    "9776-97982",
+    "Frame 1355"
+   ],
+   [
+    "9777-104193",
+    "Skai > Trade > Spot 1VH (375 x 812px)"
+   ],
+   [
+    "9777-105690",
+    "Chart - Line"
+   ],
+   [
+    "9777-105846",
+    "Chart - Area"
+   ],
+   [
+    "9777-105532",
+    "Chart - Area"
+   ],
+   [
+    "9780-143009",
+    "Skai > Trade > Spot > Chart settings 1VH (375 x 812px)"
+   ],
+   [
+    "9803-133258",
+    "Skai > Trade > Perpetual Futures - Positions (375 x 812px)"
+   ],
+   [
+    "9804-135230",
+    "Skai > Trade > Perpetual Futures - Positions - collapsed (375 x 812px)"
+   ],
+   [
+    "9804-136992",
+    "Skai > Trade > Perpetual Futures - Positions - dropdown (375 x 812px)"
+   ],
+   [
+    "9804-139692",
+    "Skai > Trade > Perpetual Futures - Orders (375 x 812px)"
+   ],
+   [
+    "9804-145379",
+    "Skai > Trade > Perpetual Futures - Assets (375 x 812px)"
+   ],
+   [
+    "9804-147360",
+    "Skai > Trade > Perpetual Futures - Assets - collapsed (375 x 812px)"
+   ],
+   [
+    "9804-149370",
+    "Skai > Trade > Perpetual Futures - Order history (375 x 812px)"
+   ],
+   [
+    "9804-152885",
+    "Skai > Trade > Perpetual Futures - Trade history (375 x 812px)"
+   ],
+   [
+    "9804-154738",
+    "Skai > Trade > Perpetual Futures - Funding history (375 x 812px)"
+   ],
+   [
+    "9804-150628",
+    "Skai > Trade > Perpetual Futures - Order history - collapsed (375 x 812px)"
+   ],
+   [
+    "9804-141566",
+    "Skai > Trade > Perpetual Futures - Orders - collapsed (375 x 812px)"
+   ],
+   [
+    "9804-143394",
+    "Skai > Trade > Perpetual Futures - Orders - collapsed (375 x 812px)"
+   ],
+   [
+    "9864-172179",
+    "Frame 400"
+   ],
+   [
+    "10706-128843",
+    "Frame 267"
+   ],
+   [
+    "10706-128950",
+    "Frame 1356"
+   ],
+   [
+    "10706-129546",
+    "Frame 1357"
+   ]
+  ]
+ },
+ "wallet": {
+  "pageId": "2998:19593",
+  "pageName": "✅ Wallet 1",
+  "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "liveChildCount": 178,
+  "countSource": "use_figma",
+  "nodesSource": "get_metadata",
+  "nodes": [
+   [
+    "2998-19594",
+    "Directory"
+   ],
+   [
+    "2998-19597",
+    "Breakpoint"
+   ],
+   [
+    "2998-19599",
+    "Skai > Wallet 1VH (1440 x 900px)"
+   ],
+   [
+    "2999-19674",
+    "Skai > Wallet > continue on web > unlock 1VH (1440 x 900px)"
+   ],
+   [
+    "7473-130910",
+    "Skai > Wallet > continue on web > unlock > Forgot password 1VH (1440 x 900px)"
+   ],
+   [
+    "7683-7930",
+    "Skai > Wallet > continue on web > unlock > Forgot password 1VH (768 x 1024px)"
+   ],
+   [
+    "7473-133033",
+    "Skai > Wallet > continue on web > unlock > Forgot password > OTP > Set new password 1VH (1440 x 900px)"
+   ],
+   [
+    "7683-34510",
+    "Skai > Wallet > continue on web > unlock > Forgot password > OTP > Set new password 1VH (768 x 1024px)"
+   ],
+   [
+    "7473-131013",
+    "Skai > Wallet > continue on web > unlock > Forgot password > OTP 1VH (1440 x 900px)"
+   ],
+   [
+    "7683-33892",
+    "Skai > Wallet > continue on web > unlock > Forgot password > OTP 1VH (768 x 1024px)"
+   ],
+   [
+    "3026-16469",
+    "Notes"
+   ],
+   [
+    "3023-11938",
+    "Skai > Wallet > get the app > new user > create new wallet 1VH (1440 x 900px)"
+   ],
+   [
+    "7676-51711",
+    "Skai > Wallet > get the app > new user > create new wallet 1VH (768 x 1024px)"
+   ],
+   [
+    "3026-16563",
+    "Skai > Wallet > get the app > new user > create new wallet > Google auth 1VH (1440 x 900px)"
+   ],
+   [
+    "3012-15897",
+    "Skai > Wallet > get the app > new user 1VH (1440 x 900px)"
+   ],
+   [
+    "7676-51506",
+    "Skai > Wallet > get the app > new user 1VH (768 x 1024px)"
+   ],
+   [
+    "3012-15180",
+    "Skai > Wallet > continue on web > unlock - password 1VH (1440 x 900px)"
+   ],
+   [
+    "3026-16493",
+    "Skai > Wallet > continue on web > home 1VH (1440 x 900px)"
+   ],
+   [
+    "3118-21935",
+    "Skai > Wallet > continue on web > home > Activity 1VH (1440 x 900px)"
+   ],
+   [
+    "7528-153941",
+    "section - lopsided"
+   ],
+   [
+    "3118-25371",
+    "Skai > Wallet > continue on web > home > Activity - show details 1VH (1440 x 900px)"
+   ],
+   [
+    "3118-25004",
+    "Skai > Wallet > continue on web > home > Activity - empty 1VH (1440 x 900px)"
+   ],
+   [
+    "7528-153701",
+    "Skai > Wallet > continue on web > home > Activity - empty ALT 1VH (1440 x 900px)"
+   ],
+   [
+    "3082-13515",
+    "Skai > Wallet > continue on web > home > NFTs - empty 1VH (1440 x 900px)"
+   ],
+   [
+    "7806-82974",
+    "Skai > Wallet > continue on web > home > NFTs - empty 1VH (768 x 1024px)"
+   ],
+   [
+    "7807-86912",
+    "Skai > Wallet > continue on web > home > NFTs - empty 1VH (768 x 1024px)"
+   ],
+   [
+    "7807-87137",
+    "Skai > Wallet > continue on web > home > NFTs - empty ALT 1VH (768 x 1024px)"
+   ],
+   [
+    "7807-87715",
+    "Skai > Wallet > continue on web > home > Activity 1VH (768 x 1024px)"
+   ],
+   [
+    "7807-88748",
+    "Skai > Wallet > continue on web > home > Activity 1VH (768 x 1024px)"
+   ],
+   [
+    "7806-83761",
+    "Skai > Wallet > continue on web > home > NFTs - empty > Import NFT 1VH (768 x 1024px)"
+   ],
+   [
+    "7523-152924",
+    "Skai > Wallet > continue on web > home > NFTs - empty > Import NFT 1VH (1440 x 900px)"
+   ],
+   [
+    "3123-3590",
+    "Open"
+   ],
+   [
+    "3083-905",
+    "Skai > Wallet > continue on web > home > NFTs (1440 x 900px)"
+   ],
+   [
+    "3070-517",
+    "Skai > Wallet > continue on web > home - skin 2 1VH (1440 x 900px)"
+   ],
+   [
+    "7704-47027",
+    "Skai > Wallet > continue on web > home - skin 2 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-16630",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-16984",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key - reveal 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-17399",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove wallet 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-17805",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Add walletl 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-18212",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Add wallet 1VH (768 x 1024px)"
+   ],
+   [
+    "7717-10153",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Import existing 1VH (768 x 1024px)"
+   ],
+   [
+    "7717-10565",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase 1VH (768 x 1024px)"
+   ],
+   [
+    "7717-11907",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase > Wallet name 1VH (768 x 1024px)"
+   ],
+   [
+    "7717-12740",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Private key 1VH (768 x 1024px)"
+   ],
+   [
+    "7717-13147",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Keystone 1VH (768 x 1024px)"
+   ],
+   [
+    "7717-13587",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Connect hardware wallet 1VH (768 x 1024px)"
+   ],
+   [
+    "7717-14343",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Connect hardware wallet 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-14212",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet accounts 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-15272",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-15682",
+    "Skai > Wallet > continue on web > home > right-sidecar > rename wallet 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-13398",
+    "Skai > Wallet > continue on web > home - skin 3 1VH (768 x 1024px)"
+   ],
+   [
+    "7494-150680",
+    "Sample"
+   ],
+   [
+    "7491-148345",
+    "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (1440 x 900px)"
+   ],
+   [
+    "7709-10525",
+    "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (768 x 1024px)"
+   ],
+   [
+    "7713-13706",
+    "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (768 x 1024px)"
+   ],
+   [
+    "7630-110860",
+    "Cards - with skins"
+   ],
+   [
+    "3080-12633",
+    "Backround 1"
+   ],
+   [
+    "3080-12769",
+    "Backround 2"
+   ],
+   [
+    "3080-811",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet accounts 1VH (1440 x 900px)"
+   ],
+   [
+    "7477-133171",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu 1VH (1440 x 900px)"
+   ],
+   [
+    "3082-13100",
+    "Skai > Wallet > continue on web > home > right-sidecar > portfolio preview 1VH (1440 x 900px)"
+   ],
+   [
+    "3083-1328",
+    "Skai > Wallet > continue on web > home > crypto > sample token (1440 x 900px)"
+   ],
+   [
+    "7804-74178",
+    "Skai > Wallet > continue on web > home > crypto > sample token (768 x 1024px)"
+   ],
+   [
+    "8554-84146",
+    "Frame 285"
+   ],
+   [
+    "7808-89289",
+    "Skai > Wallet > continue on web > home > crypto > sample token (375 x 812px)"
+   ],
+   [
+    "8554-115129",
+    "Skai > Wallet > continue on web > home > crypto > sample token (375 x 812px)"
+   ],
+   [
+    "7916-115982",
+    "Swap - no value"
+   ],
+   [
+    "7911-115798",
+    "Swap - active"
+   ],
+   [
+    "7916-116166",
+    "Swap - active"
+   ],
+   [
+    "7871-18184",
+    "Skai > Wallet > continue on web > home > crypto > sample token (375 x 812px)"
+   ],
+   [
+    "8540-30318",
+    "Manual slippage"
+   ],
+   [
+    "8540-30352",
+    "Manual slippage"
+   ],
+   [
+    "7805-80831",
+    "Skai > Wallet > continue on web > home > crypto > sample token > sidecar - swap settings 1VH (768 x 1024px)"
+   ],
+   [
+    "7806-82583",
+    "Manual slippage"
+   ],
+   [
+    "7806-82649",
+    "Manual slippage"
+   ],
+   [
+    "7804-77471",
+    "Swap - no value"
+   ],
+   [
+    "7804-77085",
+    "Swap - active"
+   ],
+   [
+    "7804-77701",
+    "Swap - error "
+   ],
+   [
+    "3120-27415",
+    "Simple Chart line"
+   ],
+   [
+    "3089-19811",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT (1440 x 900px)"
+   ],
+   [
+    "7806-84981",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT (768 x 1024px)"
+   ],
+   [
+    "7882-17627",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT (375 x 812px)"
+   ],
+   [
+    "7882-19257",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT (375 x 812px)"
+   ],
+   [
+    "7882-18863",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT (375 x 812px)"
+   ],
+   [
+    "7807-86527",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT > Send (768 x 1024px)"
+   ],
+   [
+    "7807-86028",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT > expand (768 x 1024px)"
+   ],
+   [
+    "7882-19183",
+    "Overlay"
+   ],
+   [
+    "7528-153278",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT > expand 1VH (1440 x 900px)"
+   ],
+   [
+    "3116-21416",
+    "Skai > Wallet > continue on web > home > NFTs > sample NFT > Send 1VH (1440 x 900px)"
+   ],
+   [
+    "3089-18289",
+    "Skai > Wallet > continue on web > home > crypto > sample token > sidecar - swap settings 1VH (1440 x 900px)"
+   ],
+   [
+    "3149-3108",
+    "Manual slippage"
+   ],
+   [
+    "3149-3184",
+    "Manual slippage"
+   ],
+   [
+    "3089-18101",
+    "Swap - active"
+   ],
+   [
+    "7494-151284",
+    "Swap - error"
+   ],
+   [
+    "3089-18177",
+    "Swap - no value"
+   ],
+   [
+    "3070-775",
+    "Skai > Wallet > continue on web > home - skin 3 1VH (1440 x 900px)"
+   ],
+   [
+    "3123-3046",
+    "Skai > Wallet > continue on web > home - skin 3 (1440 x 900px)"
+   ],
+   [
+    "2998-19602",
+    "Rectangle 154"
+   ],
+   [
+    "3082-13491",
+    "Notes"
+   ],
+   [
+    "3089-21251",
+    "Token dropdown"
+   ],
+   [
+    "7804-77407",
+    "Token dropdown"
+   ],
+   [
+    "7916-116270",
+    "Token dropdown"
+   ],
+   [
+    "3118-22162",
+    "Notes"
+   ],
+   [
+    "3118-23642",
+    "Notes"
+   ],
+   [
+    "7333-76246",
+    "Rectangle 158"
+   ],
+   [
+    "7333-76248",
+    "Breakpoint"
+   ],
+   [
+    "7333-76250",
+    "Breakpoint"
+   ],
+   [
+    "7479-135318",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > rename wallet 1VH (1440 x 900px)"
+   ],
+   [
+    "7479-137328",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet 1VH (1440 x 900px)"
+   ],
+   [
+    "7482-141833",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing 1VH (1440 x 900px)"
+   ],
+   [
+    "7479-137772",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Create new 1VH (1440 x 900px)"
+   ],
+   [
+    "7482-144255",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Private key 1VH (1440 x 900px)"
+   ],
+   [
+    "7482-145038",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Connect hardware wallet 1VH (1440 x 900px)"
+   ],
+   [
+    "7482-144645",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Keystone 1VH (1440 x 900px)"
+   ],
+   [
+    "7482-142212",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase 1VH (1440 x 900px)"
+   ],
+   [
+    "7482-143789",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase > Wallet name 1VH (1440 x 900px)"
+   ],
+   [
+    "7479-135805",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key 1VH (1440 x 900px)"
+   ],
+   [
+    "7479-136955",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove wallet 1VH (1440 x 900px)"
+   ],
+   [
+    "7479-136195",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key - reveal 1VH (1440 x 900px)"
+   ],
+   [
+    "7528-153254",
+    "Notes"
+   ],
+   [
+    "7675-51300",
+    "Skai > Wallet 1VH (768 x 1024px)"
+   ],
+   [
+    "7675-51350",
+    "Skai > Wallet > continue on web > unlock 1VH (768 x 1024px)"
+   ],
+   [
+    "7675-51418",
+    "Skai > Wallet > continue on web > unlock - password 1VH (768 x 1024px)"
+   ],
+   [
+    "7704-46353",
+    "Skai > Wallet > continue on web > home 1VH (768 x 1024px)"
+   ],
+   [
+    "8320-71829",
+    "Skai > Wallet > continue on web > home 1VH (768 x 1024px)"
+   ],
+   [
+    "7728-60058",
+    "Skai > Wallet > continue on web > home 1VH (768 x 1024px)"
+   ],
+   [
+    "8370-73407",
+    "Skai > Wallet > continue on web > home - skin2 1VH (375 x 812px)"
+   ],
+   [
+    "8370-72613",
+    "Skai > Wallet > continue on web > home 1VH (768 x 1024px)"
+   ],
+   [
+    "7871-19838",
+    "Skai > Wallet > continue on web > home > NFTs - empty 1VH (768 x 1024px)"
+   ],
+   [
+    "7882-19831",
+    "Skai > Wallet > continue on web > home > NFTs - empty  1VH (768 x 1024px)"
+   ],
+   [
+    "7882-21085",
+    "Skai > Wallet > continue on web > home > NFTs - empty ALT 1VH (768 x 1024px)"
+   ],
+   [
+    "7882-20079",
+    "Skai > Wallet > continue on web > home > Activity 1VH (375 x 812px)"
+   ],
+   [
+    "8554-81060",
+    "Frame 1128"
+   ],
+   [
+    "7882-21333",
+    "Skai > Wallet > continue on web > home > Activity 1VH (375 x 812px)"
+   ],
+   [
+    "7871-20688",
+    "Skai > Wallet > continue on web > home > NFTs - empty > Import NFT 1VH (375 x 812px)"
+   ],
+   [
+    "7774-68124",
+    "Skai > Wallet > continue on web > home - skin2 1VH (375 x 812px)"
+   ],
+   [
+    "7774-68711",
+    "Skai > Wallet > continue on web > home - skin2 1VH (375 x 812px)"
+   ],
+   [
+    "7774-70768",
+    "Skai > Wallet > continue on web > home - skin2 1VH (375 x 812px)"
+   ],
+   [
+    "7774-65029",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet accounts 1VH (375 x 812px)"
+   ],
+   [
+    "7774-65519",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu 1VH (375 x 812px)"
+   ],
+   [
+    "7774-65942",
+    "Skai > Wallet > continue on web > home > right-sidecar > rename wallet 1VH (375 x 812px)"
+   ],
+   [
+    "7774-64736",
+    "Skai > Wallet > continue on web > home - skin3 1VH (768 x 1024px)"
+   ],
+   [
+    "7774-62886",
+    "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (375 x 812px)"
+   ],
+   [
+    "7774-63646",
+    "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (375 x 812px)"
+   ],
+   [
+    "7774-66509",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key 1VH (375 x 812px)"
+   ],
+   [
+    "7774-67001",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key - reveal 1VH (375 x 812px)"
+   ],
+   [
+    "7774-67295",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove wallet 1VH (375 x 812px)"
+   ],
+   [
+    "7774-68417",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove walletl 1VH (375 x 812px)"
+   ],
+   [
+    "7774-69004",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove walletl 1VH (375 x 812px)"
+   ],
+   [
+    "9940-233940",
+    "modal"
+   ],
+   [
+    "9940-234006",
+    "modal"
+   ],
+   [
+    "9940-233959",
+    "modal"
+   ],
+   [
+    "9940-234067",
+    "modal"
+   ],
+   [
+    "9940-234128",
+    "modal"
+   ],
+   [
+    "9940-234315",
+    "modal"
+   ],
+   [
+    "9940-234772",
+    "modal"
+   ],
+   [
+    "9941-235776",
+    "modal"
+   ],
+   [
+    "9941-235994",
+    "modal"
+   ],
+   [
+    "9940-234852",
+    "modal"
+   ],
+   [
+    "9941-236456",
+    "modal"
+   ],
+   [
+    "9941-236536",
+    "modal"
+   ],
+   [
+    "9941-237786",
+    "modal"
+   ],
+   [
+    "9941-237075",
+    "modal"
+   ],
+   [
+    "7774-69592",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove walletl 1VH (375 x 812px)"
+   ],
+   [
+    "7774-69886",
+    "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove walletl 1VH (375 x 812px)"
+   ],
+   [
+    "7774-70180",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Keystone 1VH (375 x 812px)"
+   ],
+   [
+    "7774-70474",
+    "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Connect hardware wallet 1VH (375 x 812px)"
+   ],
+   [
+    "7774-12119",
+    "Skai > Wallet > continue on web > home 1VH (768 x 1024px)"
+   ],
+   [
+    "7727-14906",
+    "Skai > Wallet 1VH (375 x 812px)"
+   ],
+   [
+    "7727-14937",
+    "Skai > Wallet > continue on web > unlock 1VH (375 x 812px)"
+   ],
+   [
+    "7727-14974",
+    "Skai > Wallet > continue on web > unlock - password 1VH (375 x 812)"
+   ],
+   [
+    "7727-15382",
+    "Skai > Wallet > get the app > new user 1VH (375 x 812px)"
+   ],
+   [
+    "7727-15482",
+    "Skai > Wallet > get the app > new user > create new wallet 1VH (375 x 812px)"
+   ],
+   [
+    "7727-15699",
+    "Skai > Wallet > continue on web > unlock > Forgot password 1VH (375 x 812px)"
+   ],
+   [
+    "7728-59382",
+    "Skai > Wallet > continue on web > unlock > Forgot password > OTP 1VH (375 x 812px)"
+   ],
+   [
+    "7728-59766",
+    "Skai > Wallet > continue on web > unlock > Forgot password > OTP > Set new password 1VH (375 x 812px)"
+   ],
+   [
+    "8540-29692",
+    "Skai > Wallet > continue on web > home > NFTs (768 x 1024px)"
+   ],
+   [
+    "8540-29853",
+    "Skai > Wallet > continue on web > home > NFTs 1VH (768 x 1024px)"
+   ]
+  ]
+ }
+}
