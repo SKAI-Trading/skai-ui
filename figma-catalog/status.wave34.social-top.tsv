@@ -1,0 +1,41 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-top, wave 34. Partition: src/components/social/*.tsx at the top
+# level plus src/components/social/menus/**. Every # here is at column 0 -
+# coverage.mjs tests startsWith("#") with no trimStart, so an indented comment
+# is not a comment to every reader.
+#
+# ⚠ NO FRAME WAS MEASURED IN FIGMA THIS SESSION, FOR THE SECOND WAVE RUNNING.
+# whoami, get_metadata, get_design_context and get_screenshot each returned
+# "MCP server claude.ai Figma is not connected"; 127.0.0.1:3845, where the
+# desktop plugin bridge listens, refused the connection; and no Figma REST
+# token exists in any .env in this tree. So NO ROW HERE CAN REACH `done`, and
+# every number in column 5 is carried verbatim from the first-hand Plugin-API
+# read recorded in status.wave29.social-top.tsv on 2026-09-06.
+#
+# THE ONE INDEPENDENT CHECK AVAILABLE OFFLINE. The harvested top-level frame
+# list live/3sSzw1KewMtUbeLAv7uW0r__4914-113562.tsv carries the real width and
+# height of every frame on the page, and it gives BOTH story dropdowns as
+# 250x130 - which is the carried box, arrived at from a different artefact.
+# That corroborates the box and nothing else: it has no rows, no type, no
+# fills and no line vector, so it cannot stand in for a measurement and this
+# lane does not treat it as one.
+#
+# WHAT THE LANE DID WITH THE HALF THAT NEEDS NO FIGMA. Both rows below were
+# `not-started` on the same two-part finding: no builder for either item list,
+# and StoryViewer.tsx drew no menu at all. Both halves are inside this
+# partition, so both were built - dc1de9730.
+#
+# ★ THE RULE IS BEFORE THE LAST ROW, WHICH IS THE ONE THING 130 CANNOT PROVE.
+# Every other dropdown-* menu on this page fences its FIRST row. These two
+# fence their LAST. Because the line vector is zero-height in the auto-layout,
+# both shapes give three rows and the same 130-tall panel, so a total-height
+# check is green either way. The oracle asserts the separator's INDEX in the
+# DOM instead, and a rule-after-first mutation reddens three of its cases.
+#
+# ★ ALL SIX ROWS ARE WHITE. The icons/warnings glyph on Block user does not
+# make the row red - the rows this family paints #FF574A are the DELETE rows
+# (10216:182394 Delete conversation, both Delete rows in 10215:137653). So no
+# row takes the `danger` tone, and the glyph is XCircle, which is what
+# feed/feedMenus.ts already draws for the same row on dropdown-creators.
+dropdown-story tile [11407-148276]	partial	src/components/social/menus/socialRowMenus.tsx	-	BUILT AND ORACLED, NOT MOUNTED, AND NOT RE-READ IN FIGMA TODAY - see the file header for the outage, which is why this is `partial` and not `done`. CARRIED GEOMETRY, 11407:148276: 250x130 at x=-1795, in the off-canvas column left of the Desktop band that holds the 1440 story screens, and the file draws NO 768 or 375 redraw of it - three items 234x30 radius 4 pad 6/8/6/8 gap 8, glyph 16 at x=8 with the label at x=32, line 234 wide at y=84 BEFORE THE THIRD ROW, Manrope Regular 14/18 ls -4pct #FFFFFF on all three rows, row 0 washed #123F3C, panel r12 gap 8 pad 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW r12 offset 0,4 @0.24. 130 is the panel's own arithmetic - 8+30+8+30+8+0+8+30+8 - the line vector being zero-height in the auto-layout. The harvest gives the same 250x130 from a different artefact. WHAT CHANGED: buildStoryTileMenu ships Download story / Report story / rule / Block user @handle in dc1de9730. The handle is the frame's sample identity, so it is interpolated and its absence leaves the label unsuffixed rather than dropping the row; a row with no handler is dropped, and a row the PLATFORM cannot serve for anyone is kept, disabled and given a reason - the same split capabilityRow already draws for the token and balance menus, which is what turns "needs a download path, a report sink and a block writer" into three honest rows instead of three missing ones. THE ORACLE, menus/StoryMenus.figma.test.tsx, renders it through SocialMenu and asserts RESOLVED values: the panel width off the element's own inline style, the row box as 6 + max(16 glyph, leading) + 6, the label offset as px + 16 + gap, and the separator's INDEX in the DOM. Four mutations applied ALONE from a pristine copy and restored by copying it back redden it - rule-after-first 3 cases, 200px panel 4, danger tone on the block row 3, glyphs removed 3. STAYS partial ON THE HOST: a story TILE is drawn by feed/StoryRail.tsx, outside this lane's partition, so the builder still has no caller and no user can open this panel.	desktop=partial tablet=n-a mobile=n-a @2026-09-07
+dropdown-story view [11407-148320]	partial	src/components/social/StoryViewer.tsx	-	BUILT, MOUNTED AND ORACLED - AND STILL NOT RE-READ IN FIGMA TODAY, which is the only reason it is not `done`; see the file header. CARRIED GEOMETRY, 11407:148320: the same 250x130 box, the same chrome and the same three-row shape as 11407:148276 - items 234x30, glyph at x=8, label at x=32, the line at y=84 fencing the LAST row, Manrope Regular 14/18 ls -4pct, row 0 washed, and every row #FFFFFF including Block user. Rows Follow user @CryptosTraderX / Report user @CryptosTraderX / Block user @CryptosTraderX. Same off-canvas Desktop column, same absence of a compact redraw, so the width and the type scale are single values and a ramp here would be invented. WHAT CHANGED, AND IT IS BOTH HALVES THIS ROW WAS PARKED ON: buildStoryViewMenu carries the item list, and StoryViewer.tsx now OPENS it - the tridots toggles the panel at STORY_MENU_WIDTH_PX behind aria-haspopup="menu", holds the open state itself because a dropdown's anchor is what opens and dismisses it, closes on Escape, on a press outside the anchor and on a picked row, and leaves a disabled row alone so a stated reason is not dismissed as though it had acted. onOpenSettings is untouched and still opens the own-story Story settings sheet, which is a different surface (11442:179814 / 11442:173004) and a sheet rather than a dropdown. NO SECOND FOLLOW LABEL: the file draws one state for this row, so a host that already follows passes no handler and the row is dropped rather than relabelled to a state no drawing contains. THE ORACLE, StoryViewer.storyMenu.figma.test.tsx, drives the real trigger and measures the panel that appears - resolved width off the inline style, row box 30 as 6 + max(16, 18) + 6, label at 32, one separator immediately before row three, every row text-white and no text-skai-red - plus the dismissal paths and the onOpenSettings fallback. Mutations applied ALONE from a pristine copy: no mount reddens 5 cases, sm type scale 1, 200px panel 4, danger tone 3. STAYS partial ON THE SURFACE, not on the panel: StoryViewer.tsx itself has no JSX site outside src/components/social/index.ts, so the viewer that now carries this menu is not yet reachable from a route.	desktop=partial tablet=n-a mobile=n-a @2026-09-07
