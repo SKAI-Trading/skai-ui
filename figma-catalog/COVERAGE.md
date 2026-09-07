@@ -18,9 +18,9 @@ Live half harvested 2026-08-26 (use_figma read-only; figma.root.children for the
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
 | `done` | 436 | 22.8% |
-| `partial` | 1043 | 54.5% |
-| `not-started` | 157 | 8.2% |
-| `blocked-on-backend` | 89 | 4.6% |
+| `partial` | 1060 | 55.4% |
+| `not-started` | 152 | 7.9% |
+| `blocked-on-backend` | 77 | 4.0% |
 | `frame-defect` | 96 | 5.0% |
 | `furniture` (catalog says furniture, this script says genuine) | 42 | 2.2% |
 | `unknown` | 40 | 2.1% |
@@ -49,9 +49,9 @@ Read the caveat section before quoting that. It is not 22.8% measured parity.
 
 | Bucket | Pages | Live | Furniture | Genuine | Matched | `done` | Live-only |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| held (Governance — Casey) | 1 | 331 | 57 | 274 | 70 | 0 | 204 |
+| held (Governance — Casey) | 1 | 331 | 57 | 274 | 74 | 0 | 200 |
 | standing exclusion (Onboarding) | 1 | 151 | 24 | 127 | 0 | 0 | 127 |
-| v1, superseded by v2 | 3 | 852 | 103 | 749 | 305 | 146 | 444 |
+| v1, superseded by v2 | 3 | 852 | 103 | 749 | 305 | 145 | 444 |
 | tombstone (body moved) | 3 | 187 | 70 | 117 | 24 | 1 | 93 |
 | meta | 7 | 94 | 3 | 91 | 0 | 0 | 91 |
 | wip / no section | 7 | 1262 | 1238 | 24 | 0 | 0 | 24 |
@@ -62,8 +62,8 @@ Read the caveat section before quoting that. It is not 22.8% measured parity.
 
 | Page | Scope | Live | furn | gen | row | `done` | `part` | `n/s` | `blk` | only | cov |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ✅ Social | in-scope | 442 | 40 | 402 | 402 | 57 | 240 | 55 | 32 | 0 | 100.0% |
-| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 375 | 84 | 215 | 34 | 14 | 0 | 100.0% |
+| ✅ Social | in-scope | 442 | 40 | 402 | 402 | 57 | 245 | 50 | 32 | 0 | 100.0% |
+| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 375 | 84 | 227 | 34 | 2 | 0 | 100.0% |
 | ✅ Play | in-scope | 345 | 76 | 269 | 269 | 46 | 145 | 51 | 1 | 0 | 100.0% |
 | ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 30 | 159 | 5 | 24 | 0 | 100.0% |
 | ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 126 | 29 | 0 | 0 | 0 | 100.0% |
@@ -90,9 +90,9 @@ Read the caveat section before quoting that. It is not 22.8% measured parity.
 | ✅ Price Grid - Skai originals | in-scope | 20 | 12 | 8 | 8 | 2 | 5 | 0 | 0 | 0 | 100.0% |
 | ✅ Hi-Lo - Skai originals | in-scope | 16 | 9 | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 100.0% |
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 6 | 0 | 0 | 0 | 0 | 100.0% |
-| 🚧 Governance and Utilities | held | 331 | 57 | 274 | 70 | 0 | 44 | 16 | 8 | 204 | 25.5% |
+| 🚧 Governance and Utilities | held | 331 | 57 | 274 | 74 | 0 | 46 | 18 | 8 | 200 | 27.0% |
 | ✅ Onboarding and Authentication | excluded | 151 | 24 | 127 | 0 | 0 | 0 | 0 | 0 | 127 | 0.0% |
-| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 172 | 40 | 127 | 0 | 3 | 195 | 46.9% |
+| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 172 | 39 | 128 | 0 | 3 | 195 | 46.9% |
 | ✅ Home 1 | v1-superseded | 254 | 39 | 215 | 85 | 58 | 19 | 0 | 0 | 130 | 39.5% |
 | ✅ Wallet 1 | v1-superseded | 178 | 11 | 167 | 48 | 48 | 0 | 0 | 0 | 119 | 28.7% |
 | ✝️ Trade (moved to Skai Web App 2) | tombstone | 154 | 37 | 117 | 24 | 1 | 23 | 0 | 0 | 93 | 20.5% |
@@ -117,7 +117,7 @@ Read the caveat section before quoting that. It is not 22.8% measured parity.
 
 Ranked by count. These are the unassessed frames.
 
-### 🚧 Governance and Utilities — 204 live-only of 274 genuine  _(held)_
+### 🚧 Governance and Utilities — 200 live-only of 274 genuine  _(held)_
 
 ```
 5370-61920	1440x900	Skai > Governance 1V
@@ -160,8 +160,6 @@ Ranked by count. These are the unassessed frames.
 11670-313345	350x248	Skai YV - deposited
 11706-321832	343x240	Skai YV - deposited
 11259-44415	737x620	Withdraw from vault
-5481-50934	1440x900	Skai > Airdrop - not
-11206-98479	1440x900	Skai > Airdrop - not
 5481-49179	1440x1968	Skai > Airdrop (1440
 5411-117451	1440x900	Skai > Learn > Skai 
 5443-69711	1440x900	Skai > Learn > Skai 
@@ -285,8 +283,6 @@ Ranked by count. These are the unassessed frames.
 11664-305643	768x1024	Skai > Social > Live
 11768-350612	375x812	Skai > Social > Live
 11705-320608	375x812	Skai > Social > Live
-11667-310237	768x1024	Skai > Social > Live
-11667-310501	375x812	Skai > Social > Live
 11667-311059	768x1120	Skai > Social > Live
 11667-311323	375x1200	Skai > Social > Live
 11667-309312	768x1716	Skai > Social > Live
@@ -1187,14 +1183,14 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift B — catalog-only (a row pointing at a node that is not a live top-level child)
 
-130 node ids are named by a row but are not a live top-level child of any page. They are not all drift:
+133 node ids are named by a row but are not a live top-level child of any page. They are not all drift:
 
 | outcome | count | is it drift? |
 |---|---:|---|
 | `nested` — a node inside a frame that IS live | 4 | no, a deep link |
 | `bug-link` — listed in the bug node indexes | 23 | no, a deep link |
 | `page-ref` — the row cites a Figma PAGE id, not a frame | 0 | no |
-| **`gone`** — not live, not nested under anything live, not a known link | **103** | **yes** |
+| **`gone`** — not live, not nested under anything live, not a known link | **106** | **yes** |
 
 ★ Report both directions. Equal counts hide an equal-sized swap: Dice measured 36 live and 36 catalog with a 2-for-2 swap inside it.
 
@@ -1202,102 +1198,105 @@ Ranked by count. These are the unassessed frames.
 ```
 10120-8434	done	status.wave29.g-towers.tsv:5
 10893-5451	partial	status.wave29.g-towers.tsv:10
-11843-353663	partial	status.governance.tsv:163
-11846-354965	partial	status.governance.tsv:164
-11872-41908	partial	status.governance.tsv:165
-11872-42520	partial	status.governance.tsv:166
-11872-43820	partial	status.governance.tsv:167
-11881-89414	partial	status.governance.tsv:168
-11881-93654	partial	status.governance.tsv:169
-11885-100111	partial	status.governance.tsv:170
-11885-98503	partial	status.governance.tsv:171
-11885-98886	partial	status.governance.tsv:172
-11885-99426	partial	status.governance.tsv:173
-11907-138358	not-started	status.governance.tsv:174
-11972-149758	partial	status.governance.tsv:175
-11972-150945	partial	status.governance.tsv:176
-11972-151493	not-started	status.governance.tsv:177
-11972-152545	not-started	status.governance.tsv:178
-11972-153216	not-started	status.governance.tsv:179
-11973-153636	partial	status.governance.tsv:180
-11973-154184	partial	status.governance.tsv:181
-11973-155655	not-started	status.governance.tsv:182
-11973-158164	not-started	status.governance.tsv:183
-11973-158665	not-started	status.governance.tsv:184
-11973-159235	not-started	status.governance.tsv:185
-11973-159567	not-started	status.governance.tsv:186
-11973-160234	not-started	status.governance.tsv:187
-11973-161769	not-started	status.governance.tsv:188
-11973-161912	not-started	status.governance.tsv:189
-11974-165410	not-started	status.governance.tsv:190
-11978-168335	partial	status.governance.tsv:191
-11978-168824	partial	status.governance.tsv:192
-11978-169460	not-started	status.governance.tsv:193
-11978-170038	partial	status.governance.tsv:194
-11978-171157	partial	status.governance.tsv:195
-11980-172605	partial	status.governance.tsv:196
-11980-173398	blocked-on-backend	status.governance.tsv:197
-11980-173965	partial	status.governance.tsv:198
-11980-175816	blocked-on-backend	status.governance.tsv:199
-11980-177310	partial	status.governance.tsv:200
-11983-179665	partial	status.governance.tsv:201
-11983-180657	partial	status.governance.tsv:202
-11983-181349	partial	status.governance.tsv:203
-11983-182085	partial	status.governance.tsv:204
-11986-226555	partial	status.governance.tsv:205
-11998-329996	partial	status.governance.tsv:206
-11998-346238	not-started	status.governance.tsv:207
-12003-382685	partial	status.governance.tsv:208
-12003-383100	not-started	status.governance.tsv:209
-12003-383790	not-started	status.governance.tsv:210
-12003-384268	not-started	status.governance.tsv:211
-12003-384627	partial	status.governance.tsv:212
-12003-385486	partial	status.governance.tsv:213
-12003-386268	partial	status.governance.tsv:214
-12003-386958	partial	status.governance.tsv:215
-12003-387432	not-started	status.governance.tsv:216
-12003-387906	partial	status.governance.tsv:217
-12004-388816	partial	status.governance.tsv:218
-12004-389667	partial	status.governance.tsv:219
-12004-390587	partial	status.governance.tsv:220
-12004-392671	blocked-on-backend	status.governance.tsv:221
-12004-393178	partial	status.governance.tsv:222
-12004-393542	blocked-on-backend	status.governance.tsv:223
-12004-394869	partial	status.governance.tsv:224
-12004-396180	not-started	status.governance.tsv:225
-12004-396474	not-started	status.governance.tsv:226
-12004-396713	not-started	status.governance.tsv:227
-12004-396856	not-started	status.governance.tsv:228
-12004-397714	not-started	status.governance.tsv:229
-12004-398296	not-started	status.governance.tsv:230
-12004-399859	not-started	status.governance.tsv:231
-12004-402326	not-started	status.governance.tsv:232
-12004-405136	not-started	status.governance.tsv:233
-12004-406527	not-started	status.governance.tsv:234
-12004-408480	partial	status.governance.tsv:235
-12004-409355	partial	status.governance.tsv:236
-12004-410317	partial	status.governance.tsv:237
-12004-410871	partial	status.governance.tsv:238
-12009-412243	partial	status.governance.tsv:239
-12016-75585	partial	status.governance.tsv:240
-12080-414162	partial	status.governance.tsv:241
-12080-414477	partial	status.governance.tsv:242
-12080-414792	partial	status.governance.tsv:243
-12080-415107	partial	status.governance.tsv:244
-12080-415417	partial	status.governance.tsv:245
-12080-415727	partial	status.governance.tsv:246
-12082-425650	partial	status.governance.tsv:247
-12082-426150	partial	status.governance.tsv:248
-12082-426533	partial	status.governance.tsv:249
-12136-432663	partial	status.governance.tsv:250
-12136-433829	partial	status.governance.tsv:251
-12225-461211	not-started	status.governance.tsv:252
-12225-462288	not-started	status.governance.tsv:253
-12225-462758	not-started	status.governance.tsv:254
-12261-469767	not-started	status.governance.tsv:255
-12261-470424	not-started	status.governance.tsv:256
-12261-474854	partial	status.governance.tsv:257
-12261-475335	partial	status.governance.tsv:258
+11843-353663	partial	status.governance.tsv:165
+11846-354965	partial	status.governance.tsv:166
+11847-357151	partial	status.wave33.social-pages.tsv:31 status.wave34.social-pages.tsv:26
+11872-41908	partial	status.governance.tsv:167
+11872-42520	partial	status.governance.tsv:168
+11872-43820	partial	status.governance.tsv:169
+11881-89414	partial	status.governance.tsv:170
+11881-93654	partial	status.governance.tsv:171
+11884-96408	partial	status.wave33.social-pages.tsv:32 status.wave34.social-pages.tsv:27
+11885-100111	partial	status.governance.tsv:172
+11885-98503	partial	status.governance.tsv:173
+11885-98886	partial	status.governance.tsv:174
+11885-99426	partial	status.governance.tsv:175
+11907-138358	not-started	status.governance.tsv:176
+11946-148523	partial	status.wave33.social-pages.tsv:33 status.wave34.social-pages.tsv:28
+11972-149758	partial	status.governance.tsv:177
+11972-150945	partial	status.governance.tsv:178
+11972-151493	not-started	status.governance.tsv:179
+11972-152545	not-started	status.governance.tsv:180
+11972-153216	not-started	status.governance.tsv:181
+11973-153636	partial	status.governance.tsv:182
+11973-154184	partial	status.governance.tsv:183
+11973-155655	not-started	status.governance.tsv:184
+11973-158164	not-started	status.governance.tsv:185
+11973-158665	not-started	status.governance.tsv:186
+11973-159235	not-started	status.governance.tsv:187
+11973-159567	not-started	status.governance.tsv:188
+11973-160234	not-started	status.governance.tsv:189
+11973-161769	not-started	status.governance.tsv:190
+11973-161912	not-started	status.governance.tsv:191
+11974-165410	not-started	status.governance.tsv:192
+11978-168335	partial	status.governance.tsv:193
+11978-168824	partial	status.governance.tsv:194
+11978-169460	not-started	status.governance.tsv:195
+11978-170038	partial	status.governance.tsv:196
+11978-171157	partial	status.governance.tsv:197
+11980-172605	partial	status.governance.tsv:198
+11980-173398	blocked-on-backend	status.governance.tsv:199
+11980-173965	partial	status.governance.tsv:200
+11980-175816	blocked-on-backend	status.governance.tsv:201
+11980-177310	partial	status.governance.tsv:202
+11983-179665	partial	status.governance.tsv:203
+11983-180657	partial	status.governance.tsv:204
+11983-181349	partial	status.governance.tsv:205
+11983-182085	partial	status.governance.tsv:206
+11986-226555	partial	status.governance.tsv:207
+11998-329996	partial	status.governance.tsv:208
+11998-346238	not-started	status.governance.tsv:209
+12003-382685	partial	status.governance.tsv:210
+12003-383100	not-started	status.governance.tsv:211
+12003-383790	not-started	status.governance.tsv:212
+12003-384268	not-started	status.governance.tsv:213
+12003-384627	partial	status.governance.tsv:214
+12003-385486	partial	status.governance.tsv:215
+12003-386268	partial	status.governance.tsv:216
+12003-386958	partial	status.governance.tsv:217
+12003-387432	not-started	status.governance.tsv:218
+12003-387906	partial	status.governance.tsv:219
+12004-388816	partial	status.governance.tsv:220
+12004-389667	partial	status.governance.tsv:221
+12004-390587	partial	status.governance.tsv:222
+12004-392671	blocked-on-backend	status.governance.tsv:223
+12004-393178	partial	status.governance.tsv:224
+12004-393542	blocked-on-backend	status.governance.tsv:225
+12004-394869	partial	status.governance.tsv:226
+12004-396180	not-started	status.governance.tsv:227
+12004-396474	not-started	status.governance.tsv:228
+12004-396713	not-started	status.governance.tsv:229
+12004-396856	not-started	status.governance.tsv:230
+12004-397714	not-started	status.governance.tsv:231
+12004-398296	not-started	status.governance.tsv:232
+12004-399859	not-started	status.governance.tsv:233
+12004-402326	not-started	status.governance.tsv:234
+12004-405136	not-started	status.governance.tsv:235
+12004-406527	not-started	status.governance.tsv:236
+12004-408480	partial	status.governance.tsv:237
+12004-409355	partial	status.governance.tsv:238
+12004-410317	partial	status.governance.tsv:239
+12004-410871	partial	status.governance.tsv:240
+12009-412243	partial	status.governance.tsv:241
+12016-75585	partial	status.governance.tsv:242
+12080-414162	partial	status.governance.tsv:243
+12080-414477	partial	status.governance.tsv:244
+12080-414792	partial	status.governance.tsv:245
+12080-415107	partial	status.governance.tsv:246
+12080-415417	partial	status.governance.tsv:247
+12080-415727	partial	status.governance.tsv:248
+12082-425650	partial	status.governance.tsv:249
+12082-426150	partial	status.governance.tsv:250
+12082-426533	partial	status.governance.tsv:251
+12136-432663	partial	status.governance.tsv:252
+12136-433829	partial	status.governance.tsv:253
+12225-461211	not-started	status.governance.tsv:254
+12225-462288	not-started	status.governance.tsv:255
+12225-462758	not-started	status.governance.tsv:256
+12261-469767	not-started	status.governance.tsv:257
+12261-470424	not-started	status.governance.tsv:258
+12261-474854	partial	status.governance.tsv:259
+12261-475335	partial	status.governance.tsv:260
 13669-141257	not-started	status.wave7.home2.tsv:45
 14094-54390	partial	status.wave28.home2-feed.tsv:44
 14094-67930	partial	status.wave28.home2-feed.tsv:41
@@ -1307,13 +1306,12 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift D — one frame, two lanes, two different verdicts
 
-**20 of the 1914 in-scope matched frames (1.0%) are named by two or more rows that DISAGREE on status** — 21 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
+**15 of the 1914 in-scope matched frames (0.8%) are named by two or more rows that DISAGREE on status** — 15 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
 
 | the disagreement | frames |
 |---|---:|
-| `done + partial` | 17 |
+| `done + partial` | 12 |
 | `not-started + unknown` | 2 |
-| `not-started + partial` | 1 |
 | `frame-defect + partial` | 1 |
 
 ## Drift C — rows that cannot be matched to any live frame
@@ -1358,7 +1356,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.wave15b.games-b.tsv` | 14 | 8 | 8 |
 | `status.wave23.play-hub.tsv` | 7 | 4 | 4 |
 | `status.wave28.home2-feed.tsv` | 10 | 6 | 6 |
-| `status.wave2.play.tsv` | 27 | 18 | 26 |
+| `status.wave2.play.tsv` | 27 | 17 | 24 |
 | `status.wave8.games-c.tsv` | 15 | 10 | 26 |
 | `status.wave2.trench-pnl.tsv` | 6 | 4 | 3 |
 | `status.wave25.home-shell.tsv` | 3 | 2 | 2 |
@@ -1369,6 +1367,8 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.wave17.trade2-spot.tsv` | 4 | 3 | 3 |
 | `status.wave28.play-hub.tsv` | 9 | 7 | 9 |
 | `status.wave30.trade-pages.tsv` | 9 | 7 | 8 |
+| `status.wave33.social-pages.tsv` | 9 | 7 | 7 |
+| `status.wave34.social-pages.tsv` | 9 | 7 | 9 |
 | `status.wave17.trade1-chart.tsv` | 14 | 11 | 11 |
 | `status.wave23.predict-detail.tsv` | 14 | 11 | 11 |
 | `status.wave17.play-pages.tsv` | 15 | 12 | 12 |
@@ -1399,17 +1399,17 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 ## What this number does NOT mean
 
-**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **2051 rows currently carry `done`**, and only **682** of them (33.3%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1369 assert completion with nothing behind them that a later auditor can re-check.
+**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **2054 rows currently carry `done`**, and only **685** of them (33.3%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1369 assert completion with nothing behind them that a later auditor can re-check.
 
 **2. `done` is silent about width.** Column 2 carries no viewport and must never be read as a desktop verdict. The width answers live in column 6 and start at `unknown`.
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 497 of 9816 status rows (5.1%) name no node id at all, and 541 (5.5%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 498 of 9966 status rows (5.0%) name no node id at all, and 546 (5.5%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 14085 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 14787 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
 **7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1914 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to Skai Web App 2) 24/24, ✅ Trade 1 24/172 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
