@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T16:59:12.738Z",
+  "generated": "2026-09-07T23:37:00.533Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -80348,9 +80348,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px). Same component.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -80373,9 +80373,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px). Same component.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89306,9 +89306,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px). Same component.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89331,9 +89331,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px). Same component.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91943,9 +91943,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px). Same component.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91968,9 +91968,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px). Same component.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
