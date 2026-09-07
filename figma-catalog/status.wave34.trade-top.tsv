@@ -1,0 +1,72 @@
+# key	status	primaryFile	route	reason	bp
+# Lane wave34 trade-top. Partition: src/components/trade/*.tsx, TOP LEVEL ONLY.
+# Not in this partition and untouched: perp-v2/ order/ mobile/ spot/ parts/.
+# Every # in this file is at column 0.
+#
+# NO FRAME WAS MEASURED THIS PASS. The Figma MCP server answered "MCP server
+# \"claude.ai Figma\" is not connected" to all seven probes, spread across the
+# session and four tools (whoami x3, get_metadata x2, get_screenshot x2) and the
+# trade/trade-2 file key mhF3BkzlTaGiLzJ7kvpmVc. That is the second consecutive
+# trade-top pass to lose the connector - the same finding heads
+# status.wave30.trade-top.tsv. No local substitute exists: live/*.tsv carries
+# id/name/type/w/h at depth 1 only, seven files for this key and none covering
+# the open nodes; the wave20/21 snapshots hold id+name pairs; and there is no
+# Figma REST token in the environment, in any .env, or under .claude/. So
+# NOTHING here is flipped to done and nothing was upgraded on inspection. The
+# two rows below carry their prior measurement forward verbatim and add only
+# what this pass could establish without the file.
+#
+# WHAT THIS PASS DID INSTEAD - ROUTING ROT, FIXED FOR 18 FRAMES. registry.json
+# routes a lane by implFiles[0], so a stale lead entry does not read as a defect;
+# it reads as a queued partial that no lane can reach. Fifteen trade-2 Bridge
+# frames (13006-248523/248696/248937/249115/249356 at 1440, -254357/254475/
+# 254593/254715/254837 at 375, -257186/257333/257484/257631/257782 at 768) led
+# with src/components/trade/BridgeTabPanel.tsx, deleted 2026-08-12 as a
+# zero-importer duplicate and recorded as deleted at
+# src/services/trading/bridgeService.ts:521 and in the src/App.tsx:331-336
+# docblock. They now lead with src/pages/trade/Bridge.tsx, which App.tsx imports
+# at :413 and routes at :1198, and the dead path is gone from the file. Three
+# Spot > Chart settings frames (3931-88039, 9069-259546, 9780-143009) carried
+# the two-file prose string "src/components/trade/ChartSettingsPanel.tsx +
+# TradingChart.tsx" in the same slot; both files exist and it is now two
+# entries. Their notes and statuses were NOT rewritten - the measurements
+# already on those rows are better than anything this pass could produce, and
+# apply-status.mjs overwrites notes rather than appending to them.
+#
+# THE CLASS IS WIDER AND THE REST IS NOT THIS LANE TO FIX. Resolving every
+# implFiles entry in registry.json against the filesystem finds 56 frame-
+# citations of 7 deleted files: src/pages/trade/TradeUnified.tsx leads 22,
+# BridgeTabPanel.tsx the 15 above, modules/skai-gaming/src/pages/play/
+# SportsbookPage.tsx 8, src/pages/predict/PredictRewards.tsx 6,
+# src/components/trench/DiscoverTabs.tsx 2,
+# src/components/launchpad/create/TokenProfileRow.tsx 2 and
+# src/components/messages/MessageDialogs.tsx 1. Each of the remaining 41 needs
+# the lane that owns the replacement to say what the replacement is, so they
+# are named here rather than guessed at.
+# The oracle is src/components/trade/bridgeFrameRouting.figma.test.ts: it
+# resolves the fifteen Bridge boards by node id and, durably, the lead entry of
+# every frame routed at a top-level src/components/trade/*.tsx. Proved red on
+# all four cases against the pre-fix registry - the leads, 15 unresolved
+# citations, 15 frames still naming the deleted panel, and 18 unresolved leads
+# across the partition. Commits c791a43 (skai-ui) and 48cb35725 (main).
+#
+# HEAD IS CLEAN in this partition: tradeNav.figma.test.tsx (8),
+# layoutSettingsDrawer.figma.test.tsx (7), figmaGeometry.test.tsx (20),
+# launchLiveBoard.figma.test.ts (154), dialogVariantLock.figma.test.tsx (27)
+# and AIConfidenceStrip.hoverReach.test.tsx (8) all pass - 224 tests, no
+# regression behind the wave19/wave27/wave30 claims. That is a verification,
+# not a measurement, and it is why none of those rows is rewritten here.
+#
+# CONTENTION at 10:20. MarketSearchModal.tsx, MarketHeader.tsx and
+# OrderBookGroupingSelector.tsx were dirty in the shared tree, mid-write by
+# another lane, so their 12 not-done rows were left alone for the second pass
+# running.
+#
+# STALE CROSS-REFERENCE, for whoever owns the home lane:
+# src/components/home-redesign/HomeSidebarExpanded.tsx:291-293 says a comment
+# in src/components/trade/TradeNav.tsx:110 asserts FigmaGridIcon matches
+# 1559:1565. TradeNav dropped FigmaGridIcon in wave30 and line 110 is now the
+# close of FigmaTradeLayoutSettingsIcon, so the citation points at nothing. The
+# glyph claim it makes is still correct; only the pointer is dead.
+On:Hover [3931-91943]	partial	src/components/trade/AIConfidenceStrip.tsx	/spot	CARRIED, NOT RE-MEASURED - Figma was unreachable all pass, see the header. The 2026-09-01 reading stands and the code still matches it: scrim 3931-92011 is Green Coal 300 #001615 at node fill opacity 0.44 against bg-green-coal-300/[0.44]; CTA 3931-92012 is 160x34, r8, pad 8/24, gap 8, fill Sky Blue 300 #56C7F3, label Manrope 14/18 at -4pc on #001615, glyph 16, against rounded-[8px] px-6 py-2 gap-2 text-sm leading-[18px], which sums 8+18+8 = 34. The radius is a pixel literal because this config emits rounded-sm at 8 and rounded-lg at 12, so no name carries the frame number. figmaGeometry.test.tsx and AIConfidenceStrip.hoverReach.test.tsx are both green at HEAD this pass, so the fix has not drifted. THE STANDING BLOCKER IS OVERSTATED, which matters because it reads as unfixable and has parked this row twice. The residue is the card 1px stroke, a dash pattern [4,2] at 0.24, recorded as inexpressible because border-style dashed has no dash-length control. True of a CSS border, not of the property: an inline svg sibling on inset-0 holding one rect at stroke-dasharray 4 2, stroke-width 1, rx 16 and the same 0.24 states the frame pattern exactly - the same primitive Figma draws it with, not a raster or a background-image stand-in - with the existing 1px border left in place transparent so the 58 box height the desktop frame measures is untouched. NOT SHIPPED FROM HERE, deliberately: it changes what a live /spot surface paints and neither instrument that would catch a mistake was reachable, Figma to re-read the pattern and a browser to see the result, the render lock being a single global across a twenty-lane tree. One file, one pass, for whoever has both.	desktop=partial @2026-09-07/trade-top
+AI alert types [3931-86279]	partial	src/components/trade/AIConfidenceStrip.tsx	/spot	CARRIED, NOT RE-MEASURED - Figma was unreachable all pass, see the header. The 2026-09-01 reading of the two 764x58 cards stands: card box r16 fill #001615 pad 8/16 with a 732x40 content frame at y9 on a 32 gap, against rounded-xl (16 in this preset) and lg:px-4 lg:py-2; bullish stroke and pill both App/Green 300 at 0.24 against /[0.24]; bearish App/Red-O at 0.34 against bg-skai-red/[0.34]; pill box r6 pad 4/14 against rounded-[6px] px-3.5 md:py-1; Skai sentiment and BTC/USDT Manrope 12/16 ash #95A09F; Bullish and LIVE Mulish 11/14 with the LIVE tag r-full pad 2/8 over a #FF7E50 rule. figmaGeometry.test.tsx is green at HEAD, so none of that has drifted. TWO DELTAS REMAIN and they are different kinds. The dash pattern [4,2] is the one described on 3931-91943 and it is expressible after all - see that row for the svg rect that states it - so it is work, not a wall. The other is a real ruling: the bearish stroke is #FB3324 where the skai-red token this repo carries is #FF574A, a different red, and forking the palette for one pill is a decision rather than a literal. Neither was taken from here without the file to re-read.	desktop=partial @2026-09-07/trade-top
