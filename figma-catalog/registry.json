@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T23:40:06.697Z",
+  "generated": "2026-09-07T23:44:23.931Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -27391,7 +27391,7 @@
       ],
       "status": "partial",
       "route": "/spot",
-      "notes": "ROW RETARGETED, not measured to done: the registry names src/components/trade/OrderBook.tsx as this frame's implementation and that file HAS NO IMPORTER anywhere in src/ - it is a dead duplicate. What actually renders the Order book on /spot and /trade is @skai/ui's OrderBook, wrapped by src/components/common/ConnectedOrderBook.tsx (Spot.tsx:348 and :629, Trade.tsx:40), which already carries its own oracle ConnectedOrderBook.figmaChrome.test.tsx. Both of those live outside this lane's partition, so the geometry below is recorded for whoever owns them rather than acted on. Measured on the node: the component is 277x672, a 52-tall header (7712:38426, pad 4/16/0/16, corner 16/16/0/0, wash #122524) over the book proper (7712:38436, wash #052D2D); the column-title row 7712:38439 is 24 tall, pad 4/16, SPACE_BETWEEN at gap 16, ruled underneath; the two ladders 7712:38445 and 7712:38599 are 288 each with the 18-tall spread band 7712:38590 between them; the header's own CTA/button 7712:38434 is a 24 box, pad 4, corner 8, wash #001615. src/components/trade/OrderBook.tsx is LEFT IN PLACE - an unmounted file is not a parity defect to delete - and this lane changed nothing in it.",
+      "notes": "ROW RETARGETED, not measured to done: the registry names src/components/trade/OrderBook.tsx as this frame's implementation and that file HAS NO IMPORTER anywhere in src/ - it is a dead duplicate. What actually renders the Order book on /spot and /trade is @skai/ui's OrderBook, wrapped by src/components/common/ConnectedOrderBook.tsx (Spot.tsx:348 and :629, Trade.tsx:40), which already carries its own oracle ConnectedOrderBook.figmaChrome.test.tsx. Both of those live outside this lane's partition, so the geometry below is recorded for whoever owns them rather than acted on. Measured on the node: the component is 277x672, a 52-tall header (7712:38426, pad 4/16/0/16, corner 16/16/0/0, wash #122524) over the book proper (7712:38436, wash #052D2D); the column-title row 7712:38439 is 24 tall, pad 4/16, SPACE_BETWEEN at gap 16, ruled underneath; the two ladders 7712:38445 and 7712:38599 are 288 each with the 18-tall spread band 7712:38590 between them; the header's own CTA/button 7712:38434 is a 24 box, pad 4, corner 8, wash #001615. src/components/trade/OrderBook.tsx is LEFT IN PLACE - an unmounted file is not a parity defect to delete - and this lane changed nothing in it. ROUTING CLOSED 2026-09-07, which is what wave27 asked for when it wrote \"Needs the implFile settled before a fix\". The pointer was BOTH halves wrong at once: implFiles[0] was the unmounted src/components/trade/OrderBook.tsx (still no importer in src/ - the only two hits for that path are OrderBookGroupingSelector, a different file), and the retarget above went in as ONE prose cell, \"src/components/common/ConnectedOrderBook.tsx + @skai/ui OrderBook\", which resolves to no path at all - the same two-file-string shape wave34 split for the three Chart settings frames, hiding here in slot 1 where a lead-only check does not look. The frame now names the two files that render it, src/components/common/ConnectedOrderBook.tsx leading and modules/skai-ui/src/components/trading/order-book.tsx after it, and this row and its wave27 and wave8 twins all carry the leading path so the outcome does not depend on which file wins the id-keyed race. The two Chart settings frames 9069-259546 and 9780-143009 kept the prose as a THIRD entry after wave34 fixed their leads; that is gone too. The geometry above is unchanged and still unbuilt - the row leaves this partition with it, which is the point.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -27892,7 +27892,7 @@
       ],
       "status": "partial",
       "route": "/trade/perps",
-      "notes": "THE DESKTOP TREE NOW STATES ONLY RUNGS IT RESOLVES, which is the defect class this page has already paid for once. Three were live. The terminal box carried h-[calc(100dvh-120px)] md:h-[calc(100vh-104px)] and resolved to the second alone at every width it renders at; it is one height now. The chart column carried min-h-[300px] md:min-h-[min(544px,62vh)] beneath lg:min-h-0, so report 535eea9b's tablet floor never reached 768 - the same shape that put report 43d6d6bf's tablet height on an element that board cannot see - and the 544 is stated on the shell's chart slot, which is what 768 actually draws. The order-ticket column carried a sub-lg collapse: a Long/Short bar behind lg:hidden over a ticket whose `hidden` lost to the lg:block beside it, plus the ticketOpen state that only fed it. Frames 9042-164815 and 9002-157019 draw no inline ticket at either tablet board and MobileTradeShell's bottom bar is the affordance report aa51a8be asked for, so the collapse was unreachable code rather than a scoped-down feature. DELTA ZERO re-derived on the row this frame settles: gutter 2.5+1+2.5 = 6, page inset 8, book 277, ticket 313, chart 1382-16-12-277-313 = 764. NOT MEASURED LIVE. STILL OPEN AND STILL A RULING, and now with the shortfall counted rather than described. The box is h-[calc(100vh-104px)] overflow-hidden, so at 1440x900 it is 796; the band takes 190 + 6 + 8 = 204, the trading area 592, the row 584 after pt-2, and the chart column resolves 584 - 58 - 6 - 58 - 6 = 456 against the frame's 544. Eighty-eight pixels, on both the plot and the column - 3928-65733 is 764x672 and the code draws 584. Flooring the chart at 544 inside a lg:overflow-hidden box only moves the loss: the column would demand 672 of a 592 area and the frame's own plot would be the part clipped. The band is short for the same reason - lg:h-[170px] xl:h-[190px] against 3928-67010's 1366x273 - and 8 + 672 + 6 + 273 = 959 will not fit the 844 a 1440x900 board leaves under the header. The frame's main is 1429 tall, i.e. it SCROLLS, which is how /spot draws the identical skeleton at 544 and 273 with no conflict at all. So this is one decision, not three: whether the perps terminal gives up its viewport fit. It is a product call, not a measurement, and it is the only thing standing between this row and the frame. ORACLE perpTerminalChrome.figma.test.ts, four new assertions reading the desktop return alone, all four proved red against the shipped file. Commit c0fe6f2a6.",
+      "notes": "THE HEIGHT CONFLICT THIS ROW LEFT OPEN IS CLOSED, AND THE FRAME DECIDED IT RATHER THAN A PRODUCT CALL. The row's own reading settles it: main on 3903-21478 is 1382x1429 at (58,56) while a 1440x900 board leaves 844 under the header, so the frame's body SCROLLS and the 1VH cuts crop it - and /spot draws the identical skeleton with no cap at all. The terminal therefore gives up its viewport fit: h-[calc(100vh-104px)] overflow-hidden is gone, the trading row floors at the chart column 3928-65733's own 672 (58 market header + 6 + 58 AI band + 6 + the 544 plot 7886-84370), the plot floors at 544, and the positions band takes 3928-67010's 1366x273. Three shortfalls went with it, all counted on this row already: the chart column resolved 456 against 672, the plot the same 88px, and the band 190 against 273. The 273 is stated on the SECTION, not on the wrapper that also spends the 8px pb - carried there it drew a 182px panel, which is the correction /spot's 7710-92860 already took (b6243f37c). The columns beside it now take the row's height by stretching to it: h-full was a percentage against a row whose height is a min-h and resolves to auto, so the book 7886-85434 and the ticket 3928-67389 shells are flex children the way /spot's are. The board closes as 8 + 672 + 6 + 273 + 8 = 967 over the 844 it is given, which is the scroll the frame draws. NOT MEASURED LIVE: the Figma MCP answered not-connected on every call this session, so every number above is this record's own reading applied to code, not a re-read. STILL PARTIAL, scope unchanged: PerpMarketHeader, AIConfidenceStrip, PerpChart, PerpOrderBook, PerpOrderEntry and PerpPositionsPanel are src/components/trade/**, which this lane neither owns nor measured. ORACLE perpTerminalChrome.figma.test.ts, five new assertions, each proved red by a mutation restoring the shipped value (row floor 560, band 190, plot 456, the viewport cap back on the box, the 273 back on the wrapper). Commit d5b15af45.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -68046,7 +68046,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "NO CODE CHANGE AT THIS BOARD AND THE ROW IS UNMOVED - recorded because its own note was the thing that was wrong. It read \"STAYS partial on the Members column, which draws Frame 235 rather than a count\", and the table has drawn the stack since the wave that shipped MemberFacesStack and wired memberFacesByGroup through TradingGroups.tsx; the column is the one part of this frame that is built. The module header still described the cluster under \"COLUMNS DELIBERATELY NOT DRAWN\" and now states the current rule instead, which is what let the two narrow presentations sit a block short without anyone reading it as a gap. NOT RE-MEASURED (Figma MCP down all session), so partial stands on the page chrome outside this partition and on the absence of any read this pass. Commit 134796e08.",
+      "notes": "THE PANEL THIS FRAME DRAWS NOW CARRIES ITS BODY'S SHADOW AND ITS SURFACE - see 5198-47138, which is where both were measured and where they are described. Nothing on this node was read this pass: the Figma MCP was unreachable for the whole session, so this row records a change that reaches this screen and makes no claim about it. STAYS partial, and the reason wave 33 left on it still stands unchanged - the chrome outside this partition was not measured, and the Members column's five-avatar cluster stays a mixed presentation because trading_group_members is scoped by row-level policy and a denial arrives as an empty result with a null error.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -80135,7 +80135,7 @@
       ],
       "status": "partial",
       "route": "/governance?tab=proposals",
-      "notes": "[11307-134317 1440 1VH crop] Measured 11307-134317: the Proposals tab - tab strip Proposals / Staking / Delegation / Financials / About, a \"Skai DAO collective; made for our delegates\" hero, an All proposals table with a Relevant sort and a Create proposal button, and a Proposal history table below. Its only delta against 5371-63275 is column order: ALT prints Short code before Status where the other frame prints Status first. Governance.tsx renders four tabs (proposals / staking / delegation / treasury, :539-554) and no About, which is the gap already recorded on 5389-78508.",
+      "notes": "[11307-134317 1440 1VH crop] Measured 11307-134317: the Proposals tab - tab strip Proposals / Staking / Delegation / Financials / About, a \"Skai DAO collective; made for our delegates\" hero, an All proposals table with a Relevant sort and a Create proposal button, and a Proposal history table below. Its only delta against 5371-63275 is column order: ALT prints Short code before Status where the other frame prints Status first. Governance.tsx renders four tabs (proposals / staking / delegation / treasury, :539-554) and no About, which is the gap already recorded on 5389-78508. 2026-09-07 (gov-core): the four-tab claim in this row is STALE - src/pages/defi/governanceTabs.ts now carries all five entries in frame order (Proposals | Staking | Delegation | Financials | About), with the treasury panel keeping the id treasury because an id is a URL and a state key, so the About gap this row pointed at is closed. The column-order delta stands and is deliberately NOT actionable from here: ProposalsTable.tsx ships Status | Short code | Proposal name | Category | Creation date | Action, which is 5371-63275's order, and the two frames disagree with each other - nothing in the catalog says which is canonical, so no code was changed for it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -80425,7 +80425,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -80450,7 +80450,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -80498,7 +80498,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89454,7 +89454,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89479,7 +89479,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89504,7 +89504,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89529,7 +89529,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -92191,7 +92191,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -92216,7 +92216,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -92241,7 +92241,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -92266,7 +92266,7 @@
       ],
       "status": "partial",
       "route": "/governance (modal)",
-      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta. 2026-09-07 (gov-core): the Voters tile no longer prints GovernanceProposal.unique_voters, which chainProposalToUI sets to a literal 0 for every proposal — it counts distinct wallets over the full votes list the dialog already reads, and draws an em dash when that list is empty under a non-zero tally. ProposalDetail.voters.test.tsx. Still partial and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
+      "notes": "5392-82015 is 5390-80080 at full scroll (2354px). Same component, same modal-vs-page delta, and the same two closures made 2026-09-07 (gov-core): the Voters tile counts distinct wallets instead of the always-zero unique_voters field, and the 'Votes cast' table with its Download CSV now exists, carrying the record's four columns in frame order from the 768 board up. Oracles: ProposalDetail.voters.test.tsx, ProposalDetail.votesCast.test.tsx. STILL PARTIAL and NOT measured against the frame: no board was read this session, the Figma MCP was unreachable for the whole of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -116474,7 +116474,7 @@
       ],
       "status": "partial",
       "route": "/crypto/:symbol",
-      "notes": "Measured 2026-08-31. 768x1024, geometry identical to 13006-353851: main 708x873 @(30,76) gap 8, header 768x52, bottom nav 768x52 @972, plus the off-board scrolling-bar designer note. Codes 16px inset against the frames 30.",
+      "notes": "Measured 2026-08-31. 768x1024, geometry identical to 13006-353851: main 708x873 @(30,76) gap 8, header 768x52, bottom nav 768x52 @972, plus the off-board scrolling-bar designer note. FIXED: the 16px inset this row names is 30 at the tablet board now. TokenTradeDetail.tsx shipped px-4 at every width under lg, so 768 drew main 736 against the frame's 708, and 708 = 768 - 2x30 solves the inset from the width rather than off one edge. Only 768-to-1023 moves: the bare rung stays the 375 case, where 13006-351379 draws the content full bleed, and lg:px-6 keeps the desktop one this row records as not compared per node. NOT MEASURED LIVE: the Figma plugin API was unreachable for the whole session, so this is the record's own number applied to code. STILL PARTIAL - main's itemSpacing 8 and the 24px drop under the 52px header are unclosed, and the panels inside are another lane's files. ORACLE tokenTradeDetailChrome.figma.test.ts, proved red against the shipped px-4. Commit a5935f8b2.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "partial"
     },
