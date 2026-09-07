@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T23:45:38.218Z",
+  "generated": "2026-09-07T00:54:58.371Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
@@ -7,11 +7,11 @@
     "furniture": 418,
     "genuine": 1914,
     "matched": 1914,
-    "done": 434,
-    "partial": 1049,
+    "done": 436,
+    "partial": 1043,
     "notStarted": 157,
-    "blocked": 88,
-    "frameDefect": 93,
+    "blocked": 89,
+    "frameDefect": 96,
     "catalogFurniture": 42,
     "unknown": 40,
     "liveOnly": 0,
@@ -21,16 +21,16 @@
     "conflicts": 20
   },
   "doneRows": {
-    "total": 2014,
-    "withBreakpointProvenance": 656,
-    "namingANodeId": 1698,
+    "total": 2051,
+    "withBreakpointProvenance": 682,
+    "namingANodeId": 1735,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 9798,
+    "total": 9816,
     "namingNoNodeId": 497,
-    "namingNoLiveNodeId": 544,
-    "unrecognisedTokens": 12847
+    "namingNoLiveNodeId": 541,
+    "unrecognisedTokens": 14085
   },
   "statusFiles": [
     {
@@ -73,7 +73,7 @@
       "file": "status.darts.tsv",
       "rows": 1,
       "withLiveId": 1,
-      "ids": 7
+      "ids": 9
     },
     {
       "file": "status.dice.tsv",
@@ -120,7 +120,7 @@
     {
       "file": "status.governance.tsv",
       "rows": 242,
-      "withLiveId": 238,
+      "withLiveId": 242,
       "ids": 148
     },
     {
@@ -259,7 +259,7 @@
       "file": "status.trade-2.trade-a.tsv",
       "rows": 64,
       "withLiveId": 64,
-      "ids": 64
+      "ids": 66
     },
     {
       "file": "status.trade-2.trade-b.tsv",
@@ -294,8 +294,8 @@
     {
       "file": "status.wallet-2.b.tsv",
       "rows": 91,
-      "withLiveId": 91,
-      "ids": 91
+      "withLiveId": 90,
+      "ids": 89
     },
     {
       "file": "status.wallet.tsv",
@@ -307,7 +307,7 @@
       "file": "status.wave10.games-cards.tsv",
       "rows": 37,
       "withLiveId": 37,
-      "ids": 37
+      "ids": 40
     },
     {
       "file": "status.wave10.games-chicken.tsv",
@@ -361,7 +361,7 @@
       "file": "status.wave10.predict-sports.tsv",
       "rows": 18,
       "withLiveId": 18,
-      "ids": 21
+      "ids": 19
     },
     {
       "file": "status.wave10.social-blocked.tsv",
@@ -1480,6 +1480,12 @@
       "ids": 12
     },
     {
+      "file": "status.wave32.predict-dash.tsv",
+      "rows": 18,
+      "withLiveId": 18,
+      "ids": 19
+    },
+    {
       "file": "status.wave4.games-radius.tsv",
       "rows": 10,
       "withLiveId": 10,
@@ -1759,7 +1765,7 @@
       "file": "status.wave8.predict-dash.tsv",
       "rows": 10,
       "withLiveId": 10,
-      "ids": 14
+      "ids": 15
     },
     {
       "file": "status.wave8.predict-detail.tsv",
@@ -4017,12 +4023,13 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 147,
+        "partial": 145,
         "furniture": 2,
-        "done": 45,
+        "done": 46,
         "not-started": 51,
         "blocked": 6,
         "frame-defect": 17,
+        "blocked-on-backend": 1,
         "open": 1
       },
       "liveOnly": []
@@ -4072,7 +4079,7 @@
       },
       "genuine": 274,
       "matched": 70,
-      "rollupOnly": 0,
+      "rollupOnly": 3,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 1,
@@ -8807,9 +8814,9 @@
       "ambiguous": 0,
       "conflicts": 2,
       "byStatus": {
-        "partial": 218,
+        "partial": 215,
         "done": 84,
-        "frame-defect": 4,
+        "frame-defect": 7,
         "blocked-on-casey": 1,
         "not-started": 34,
         "blocked-on-backend": 14,
@@ -9672,8 +9679,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 9,
-        "done": 2,
+        "partial": 8,
+        "done": 3,
         "frame-defect": 1,
         "furniture": 1
       },

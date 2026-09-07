@@ -313,6 +313,36 @@ export const BP_WIDTHS = Object.freeze({ desktop: 1440, tablet: 768, mobile: 375
 /** Ordered so reports read widest→narrowest, matching how the designs are drawn. */
 export const BP_KEYS = Object.freeze(["desktop", "tablet", "mobile"]);
 
+/**
+ * Words rows keep reaching for that are not verdicts, mapped to the verdict
+ * they mean. The column-2 status vocabulary is the usual source: a row that is
+ * `blocked-on-backend` overall gets `blocked` written into a breakpoint cell,
+ * where it says nothing about whether that board renders.
+ *
+ * This exists because the whole run is all-or-nothing: `apply-status.mjs`
+ * refuses to write anything when any row anywhere is malformed, so one cell of
+ * one wave's file freezes every other wave's rows with it. Repairing the data
+ * each time only lasts until the next wave writes the same word again.
+ *
+ * Mapped, never dropped — and deliberately conservative. Nothing here promotes
+ * a cell toward `done`; the two "we could not judge" words land on `unknown`,
+ * which is what an unjudged board is.
+ */
+export const BP_VERDICT_ALIASES = Object.freeze(
+  new Map([
+    ["blocked", "unknown"],
+    ["blocked-on-backend", "unknown"],
+    ["unmounted", "missing"],
+    ["frame-defect", "broken"],
+    ["furniture", "n-a"],
+    ["n/a", "n-a"],
+    ["open", "partial"],
+    ["measured", "partial"],
+    ["fixed", "renders"],
+    ["match", "renders"],
+  ]),
+);
+
 /** The same three boards keyed by the pixel width a row is likely to name. */
 export const BP_PX_TO_KEY = Object.freeze(
   new Map(Object.entries(BP_WIDTHS).map(([key, px]) => [String(px), key])),
@@ -411,7 +441,8 @@ export function parseBpCell(cell) {
     // already fixes which is which. Reading `1440=done` as `desktop=done` costs
     // nothing and keeps a whole class of row out of the refusal path.
     const w = BP_PX_TO_KEY.get(tok.slice(0, eq)) ?? tok.slice(0, eq);
-    const v = tok.slice(eq + 1);
+    const raw_v = tok.slice(eq + 1);
+    const v = BP_VERDICT_ALIASES.get(raw_v) ?? raw_v;
     if (!BP_KEYS.includes(w)) {
       errors.push(`unknown width "${w}" (want ${BP_KEYS.join(" | ")})`);
       continue;
