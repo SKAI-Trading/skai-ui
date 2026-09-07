@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T23:37:00.533Z",
+  "generated": "2026-09-07T23:38:55.406Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -80348,9 +80348,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container closed 2026-09-07 (gov-core), and the same single open question - the 'How delegation works' explainer the earlier pass recorded on this frame and which grep finds nowhere in src. Held identical to status.governance-account.tsv:20, which apply-status resolves last and which is therefore the copy the registry reads; until 2026-09-07 that stem still carried the older half-assessment, so the measured verdict was being shadowed the way status.governance-vaults.tsv:12 records for the Earn rows.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -80373,9 +80373,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container closed 2026-09-07 (gov-core), and the same single open question - the 'How delegation works' explainer the earlier pass recorded on this frame and which grep finds nowhere in src. Held identical to status.governance-account.tsv:20, which apply-status resolves last and which is therefore the copy the registry reads; until 2026-09-07 that stem still carried the older half-assessment, so the measured verdict was being shadowed the way status.governance-vaults.tsv:12 records for the Earn rows.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89110,9 +89110,9 @@
       "implFiles": [
         "src/pages/defi/Earn.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": "/earn (App.tsx:1209)",
-      "notes": "[11972-151493 768 full scroll] The 768 twin of 10517-38187: Earn with a pager reading \"1 - 10 of 12\" under the opportunities list. Earn.tsx has no pagination of any kind and renders the list whole, so the pager is unbuilt while the rest of the frame is 11972-150945. 2026-09-07: the Earn tab strip is fixed at this board. Every trigger stood 4px proud of the strip that holds it - the list is h-12 on the p-1 TabsList carries, so a trigger has a 40px slot, and src/index.css floors every button to 44x44 under max-width:768 in two blocks (:749-754 and :1027-1034), a query that includes 768 exactly; both exempt no-min-size, which now sits on every trigger. At 375 the five whitespace-nowrap triggers also painted over each other: container px-4 leaves 343px, five equal tracks are 68.6px, and after the primitive's px-3, a 16px glyph and its 6px gap a label had 22.6px where the shortest of the five needs upwards of 50. Below 768 the strip now sizes each entry to its own content and scrolls on its own axis; from 768 up it keeps the five equal full-width tracks, so the 1440 board does not move. The label variants also hinged on sm:, which is 640 and matches no board, and hinge on md: now. Classes in src/pages/defi/earnTabStrip.ts, oracle src/pages/defi/__tests__/earnTabStrip.figma.test.ts, 16 assertions, 7 of them red against the shipped class lists carried in as negative controls; commits d5d35b6a6 and 7d76d2911. NOT RE-MEASURED THIS RUN: the Figma MCP server was unreachable for the whole session - every whoami / get_metadata / get_screenshot call returned \"MCP server not connected\" - so no frame was read off the file and this row is not flipped.",
+      "notes": "[11972-151493 768 full scroll] The 768 twin of 10517-38187: Earn with a pager reading \"1 - 10 of 12\" under the opportunities list. Earn.tsx has no pagination of any kind and renders the list whole, so the pager is unbuilt while the rest of the frame is 11972-150945. 2026-09-07: the Earn tab strip is fixed at this board. Every trigger stood 4px proud of the strip that holds it - the list is h-12 on the p-1 TabsList carries, so a trigger has a 40px slot, and src/index.css floors every button to 44x44 under max-width:768 in two blocks (:749-754 and :1027-1034), a query that includes 768 exactly; both exempt no-min-size, which now sits on every trigger. At 375 the five whitespace-nowrap triggers also painted over each other: container px-4 leaves 343px, five equal tracks are 68.6px, and after the primitive's px-3, a 16px glyph and its 6px gap a label had 22.6px where the shortest of the five needs upwards of 50. Below 768 the strip now sizes each entry to its own content and scrolls on its own axis; from 768 up it keeps the five equal full-width tracks, so the 1440 board does not move. The label variants also hinged on sm:, which is 640 and matches no board, and hinge on md: now. Classes in src/pages/defi/earnTabStrip.ts, oracle src/pages/defi/__tests__/earnTabStrip.figma.test.ts, 16 assertions, 7 of them red against the shipped class lists carried in as negative controls; commits d5d35b6a6 and 7d76d2911. NOT RE-MEASURED THIS RUN: the Figma MCP server was unreachable for the whole session - every whoami / get_metadata / get_screenshot call returned \"MCP server not connected\" - so no frame was read off the file and this row is not flipped. CORRECTION 2026-09-07 (gov-defi): this row's own reason - \"Earn.tsx has no pagination of any kind - no page state, no slice, no pager control\" - is false, and has been since commit 527310e8d. The 10517-38187 row of this same file (status.governance.tsv:8) records the pager as MEASURED 2026-09-06 at all three boards and names THIS node id as one of them: src/pages/defi/EarnPager.tsx + src/pages/defi/earnPagination.ts, mounted under the opportunities list in Earn.tsx, oracle src/pages/defi/__tests__/EarnPager.figma.test.tsx. So the one thing this frame uniquely asks for is built, and the row moves not-started -> partial, inheriting the verdict its own sibling frame already carries: the opportunities TABLE's Fee and Volume (1W) columns have no backing field on EarnOpportunity (src/hooks/defi/useEarnData.ts:140-175). Not carried past partial and not re-measured - Figma was unreachable for this whole session, so this rests on the recorded measurement at status.governance.tsv:8 and not on a frame read.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89306,9 +89306,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container closed 2026-09-07 (gov-core), and the same single open question - the 'How delegation works' explainer the earlier pass recorded on this frame and which grep finds nowhere in src. Held identical to status.governance-account.tsv:20, which apply-status resolves last and which is therefore the copy the registry reads; until 2026-09-07 that stem still carried the older half-assessment, so the measured verdict was being shadowed the way status.governance-vaults.tsv:12 records for the Earn rows.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -89331,9 +89331,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container closed 2026-09-07 (gov-core), and the same single open question - the 'How delegation works' explainer the earlier pass recorded on this frame and which grep finds nowhere in src. Held identical to status.governance-account.tsv:20, which apply-status resolves last and which is therefore the copy the registry reads; until 2026-09-07 that stem still carried the older half-assessment, so the measured verdict was being shadowed the way status.governance-vaults.tsv:12 records for the Earn rows.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91774,9 +91774,9 @@
       "implFiles": [
         "src/pages/defi/Earn.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": "/earn (App.tsx:1209)",
-      "notes": "[12003-383100 375 full scroll] The 375 twin of 10517-38187: Earn with a pager reading \"1 - 10 of 12\" under the opportunities list. Earn.tsx has no pagination of any kind - no page state, no slice, no pager control - and renders the list whole, so the one thing this frame uniquely asks for is unbuilt while the rest of it is 12003-382685. 2026-09-07: the Earn tab strip is fixed at this board. Every trigger stood 4px proud of the strip that holds it - the list is h-12 on the p-1 TabsList carries, so a trigger has a 40px slot, and src/index.css floors every button to 44x44 under max-width:768 in two blocks (:749-754 and :1027-1034), a query that includes 768 exactly; both exempt no-min-size, which now sits on every trigger. At 375 the five whitespace-nowrap triggers also painted over each other: container px-4 leaves 343px, five equal tracks are 68.6px, and after the primitive's px-3, a 16px glyph and its 6px gap a label had 22.6px where the shortest of the five needs upwards of 50. Below 768 the strip now sizes each entry to its own content and scrolls on its own axis; from 768 up it keeps the five equal full-width tracks, so the 1440 board does not move. The label variants also hinged on sm:, which is 640 and matches no board, and hinge on md: now. Classes in src/pages/defi/earnTabStrip.ts, oracle src/pages/defi/__tests__/earnTabStrip.figma.test.ts, 16 assertions, 7 of them red against the shipped class lists carried in as negative controls; commits d5d35b6a6 and 7d76d2911. NOT RE-MEASURED THIS RUN: the Figma MCP server was unreachable for the whole session - every whoami / get_metadata / get_screenshot call returned \"MCP server not connected\" - so no frame was read off the file and this row is not flipped.",
+      "notes": "[12003-383100 375 full scroll] The 375 twin of 10517-38187: Earn with a pager reading \"1 - 10 of 12\" under the opportunities list. Earn.tsx has no pagination of any kind - no page state, no slice, no pager control - and renders the list whole, so the one thing this frame uniquely asks for is unbuilt while the rest of it is 12003-382685. 2026-09-07: the Earn tab strip is fixed at this board. Every trigger stood 4px proud of the strip that holds it - the list is h-12 on the p-1 TabsList carries, so a trigger has a 40px slot, and src/index.css floors every button to 44x44 under max-width:768 in two blocks (:749-754 and :1027-1034), a query that includes 768 exactly; both exempt no-min-size, which now sits on every trigger. At 375 the five whitespace-nowrap triggers also painted over each other: container px-4 leaves 343px, five equal tracks are 68.6px, and after the primitive's px-3, a 16px glyph and its 6px gap a label had 22.6px where the shortest of the five needs upwards of 50. Below 768 the strip now sizes each entry to its own content and scrolls on its own axis; from 768 up it keeps the five equal full-width tracks, so the 1440 board does not move. The label variants also hinged on sm:, which is 640 and matches no board, and hinge on md: now. Classes in src/pages/defi/earnTabStrip.ts, oracle src/pages/defi/__tests__/earnTabStrip.figma.test.ts, 16 assertions, 7 of them red against the shipped class lists carried in as negative controls; commits d5d35b6a6 and 7d76d2911. NOT RE-MEASURED THIS RUN: the Figma MCP server was unreachable for the whole session - every whoami / get_metadata / get_screenshot call returned \"MCP server not connected\" - so no frame was read off the file and this row is not flipped. CORRECTION 2026-09-07 (gov-defi): this row's own reason - \"Earn.tsx has no pagination of any kind - no page state, no slice, no pager control\" - is false, and has been since commit 527310e8d. The 10517-38187 row of this same file (status.governance.tsv:8) records the pager as MEASURED 2026-09-06 at all three boards and names THIS node id as one of them: src/pages/defi/EarnPager.tsx + src/pages/defi/earnPagination.ts, mounted under the opportunities list in Earn.tsx, oracle src/pages/defi/__tests__/EarnPager.figma.test.tsx. So the one thing this frame uniquely asks for is built, and the row moves not-started -> partial, inheriting the verdict its own sibling frame already carries: the opportunities TABLE's Fee and Volume (1W) columns have no backing field on EarnOpportunity (src/hooks/defi/useEarnData.ts:140-175). Not carried past partial and not re-measured - Figma was unreachable for this whole session, so this rests on the recorded measurement at status.governance.tsv:8 and not on a frame read.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91943,9 +91943,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container closed 2026-09-07 (gov-core), and the same single open question - the 'How delegation works' explainer the earlier pass recorded on this frame and which grep finds nowhere in src. Held identical to status.governance-account.tsv:20, which apply-status resolves last and which is therefore the copy the registry reads; until 2026-09-07 that stem still carried the older half-assessment, so the measured verdict was being shadowed the way status.governance-vaults.tsv:12 records for the Earn rows.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91968,9 +91968,9 @@
       "implFiles": [
         "src/components/governance/TreasuryDashboard.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/governance?tab=treasury",
-      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container. PROMOTED to done 2026-09-07 by lane gov-core on the RECORDED measurement written at status.governance.tsv:56, not on a live read - the Figma MCP was unreachable for the whole session. Held identical to status.governance-account.tsv:20 so whichever copy resolves last gives the same answer. Column 6 is deliberately absent: nothing was render-verified at any width.",
+      "notes": "5387-77602 is 5387-76925 at full scroll (1556px) and is the node the 2026-09-06 desktop measurement was taken from. Same component, same tile geometry, same Overview container closed 2026-09-07 (gov-core), and the same single open question - the 'How delegation works' explainer the earlier pass recorded on this frame and which grep finds nowhere in src. Held identical to status.governance-account.tsv:20, which apply-status resolves last and which is therefore the copy the registry reads; until 2026-09-07 that stem still carried the older half-assessment, so the measured verdict was being shadowed the way status.governance-vaults.tsv:12 records for the Earn rows.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
