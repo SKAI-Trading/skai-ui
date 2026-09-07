@@ -1,0 +1,47 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-post, wave 33. Partition src/components/social/post/** and
+# src/components/social/profile/**. Every # is at column 0 - coverage.mjs
+# tests startsWith("#") with no trimStart.
+#
+# NO FIGMA READ WAS POSSIBLE THIS PASS, SO NOTHING IS FLIPPED TO done AND NO
+# NUMBER BELOW IS CLAIMED AS A FRESH MEASUREMENT. use_figma and get_screenshot
+# both answered "MCP server claude.ai Figma is not connected" on file
+# 3sSzw1KewMtUbeLAv7uW0r across ten attempts spread over the run; claude mcp
+# list shows plugin:figma:figma connected but that server registers no tools in
+# this session, and there is no FIGMA_TOKEN here, so the REST route was not a
+# fallback either. figma-catalog/live/ holds per-page inventories (id, name,
+# type, w, h) with no geometry, type or colour, so it is not a substitute. The
+# social-pages lane hit the same outage in the same window and recorded it the
+# same way.
+#
+# ONLY TWO ROWS ARE WRITTEN, and only because the change below moves a clause
+# each of them already carried. A superseding row that merely restated a note
+# would cost the next reader the measurements the earlier waves recorded, since
+# apply-status replaces col5 wholesale and a higher wave number always wins.
+# The rest of the partition is left to the rows that measured it.
+#
+# WHAT CHANGED, AND AGAINST WHAT. 6a5d4da13 - formatUsdCompact lowercased only
+# K, so the Market cap and Volume cells printed .5M, .3B and .2T with a
+# capital the surface draws nowhere else. Both columns are stored numerics on
+# social_tokens with no ceiling, so each magnitude is a value the column holds.
+# The four figures the artwork itself draws - $75.1K, $14.2k, $7.6k, $2.4k -
+# are all under a million, which is exactly why a one-suffix rule read as
+# correct. The oracle asserts on the rendered cell rather than on the formatter
+# and carries a negative check that no cell text ends in K, M, B or T; it was
+# proved red by restoring the single-suffix regex alone from a pristine copy of
+# CreatorFigure.tsx and copying that copy back, never by a reverse replace.
+# 202 checks pass across src/components/social/profile, tsc clean.
+#
+# ONE NEW FINDING LEFT OPEN, because settling it needs a frame this pass could
+# not open. Under a thousand the same formatter prints $0.0 and $850.0 - Intl
+# compact inherits USD minimumFractionDigits 2 and clamps it to the max of 1,
+# so a whole number keeps a trailing .0. It is live: one of the four
+# social_tokens rows stands at market_cap 0, so the 768 and 1440 Tokens tables
+# render $0.0 today. Its sibling formatUsd drops the fraction entirely at the
+# same magnitude. Every figure the artwork draws is over a thousand and carries
+# a real tenth, so the frames do not say whether 2000 should read $2k or
+# $2.0k, and guessing that is what a measurement is for.
+#
+# col6 restates the bpStatus each row already held. It is not a new verdict.
+Sample creator profile > Tokens (1440 x 900px) [4966-147666]	partial	src/components/social/profile/CreatorTokensTab.tsx	/:username	ONE CLAUSE CLOSED ON A RECORDED MEASUREMENT, NOT A LIVE ONE - say so before reading the rest. This row read "the artwork capitalises the market cap compact suffix and not the volume, which one formatter cannot say two ways"; the surface had already picked lowercase for both cells and pinned it, and the formatter applied that choice to K alone, so any token over a million printed a capital in a cell whose neighbour could not. Fixed in 6a5d4da13 with a rendered-cell oracle. NOT RE-MEASURED THIS PASS: the Figma MCP was down all session (see the file header), so the 1440 numbers below are carried verbatim from the node read that recorded them and are not re-claimed. Header 729x16: Pairs at x=0, then a 248-wide pair holding Market cap at 416 and Volume at 570, then Action at 664. Row 729x68 and the box is FLAT across all three boards - fill #001615, 1px #123F3C, radius 16, pl 8 / pr 20 / py 8, art 52x52 radius 8, a 12 gap to the text, chain 16x16 at left 42 top -6, kebab 16x16 with its right edge 20 clear at y=42. Only the type and the columns move: line 1 Manrope Regular 14/18 and line 2 Mulish Regular 11/14 held 2 apart, and the figure block grows to 252x36 = a 112-wide market-cap cell, a 40 gap, then a 100-wide volume cell, both Mulish Regular 14/18 #FFFFFF. STAYS PARTIAL ON FOUR THINGS, three of them unchanged: the 144x50 sparkline at x=246 has no series behind it; the change line under the market cap, Mulish Regular 12/16 #17F9B4, has no earlier point; and the header Volume cell starts at 570 while the row starts at 568 because one column decomposition serves both, so 112+40+100 and 115+39+94 cannot both be honoured. The fourth is NEW and is the sub-thousand case in the file header - this table renders $0.0 for the one live token whose market cap is genuinely 0. Harvested 1440x1539 against a title claiming 900.	desktop=partial tablet=n-a mobile=n-a
+Sample creator profile > Tokens (768 x 1024px) [11474-214001]	partial	src/components/social/profile/CreatorTokensTab.tsx	/:username	SAME CHANGE AS 4966-147666, which is this table at the tablet board, and the same caveat: NOT RE-MEASURED - the Figma MCP was down all session (see the file header), so every number here is carried from the node read that recorded it. The figure block is where the change lands: 182 wide at x=412, a 112 market-cap cell then a 70 volume cell with no gap, both Mulish Regular 14/16 ls -4pct #FFFFFF, and both now lowercase their compact suffix at every magnitude rather than at K alone. Body Frame 286 676x328 at 16/16: header 676x16 at y=0 - Pairs x=0 w416, Market cap x=413 w58, Volume x=524 w39, Action x=611 w65, all 12/16 - rule at y=24, list at y=32, so header-to-rule 8 and rule-to-list 8, the two gaps all three boards give and the reason the class is one unprefixed mt-2. Row 676x68 on a 76 pitch: art 52x52 at 8/8, 12 to the text, chain badge 16x16 at left 42 top -6, line 1 12/16, line 2 age 10/14, kebab 16x16 at x=640 y=42. STILL OPEN, unchanged: the 100x50 sparkline at x=267 and the +22.12pct under the market cap are not drawn, social_tokens storing one current value with no history table behind it. NEW AND OPEN: the sub-thousand $0.0 in the file header reaches this board too, the block being md:flex and md being 768 exactly.	desktop=n-a tablet=partial mobile=n-a
