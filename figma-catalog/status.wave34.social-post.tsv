@@ -1,0 +1,55 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-post, wave 34. Partition src/components/social/post/** and
+# src/components/social/profile/**. Every # is at column 0 - coverage.mjs
+# tests startsWith("#") with no trimStart.
+#
+# NO LIVE FIGMA READ WAS POSSIBLE, SO NOTHING IS PROMOTED AND NO NUMBER BELOW IS
+# CLAIMED AS A FRESH MEASUREMENT. use_figma, get_metadata, get_screenshot and
+# get_design_context all answered "MCP server claude.ai Figma is not connected"
+# on file 3sSzw1KewMtUbeLAv7uW0r, on eight attempts spread across the run.
+# `claude mcp list` shows plugin:figma:figma connected, but the tools this
+# session holds are the claude.ai Figma connector's and that server is not in
+# the list at all - so the healthy route registers no tools and the route with
+# tools is down. There is no FIGMA_TOKEN here either, so REST was not a
+# fallback. figma-catalog/live/ and the snapshot.*.json files carry (id, name)
+# pairs and nothing else - snapshot.wave21.social.json is 442 two-element
+# arrays - so neither substitutes for a node read. Wave 33 hit the same outage
+# in this same partition.
+#
+# ONLY TWO ROWS ARE WRITTEN. apply-status replaces col5 wholesale and a higher
+# wave always wins, so a row that merely restated an earlier note would cost the
+# next reader the measurements that note carries. These two are written because
+# each carries a change to what the surface draws; the rest of the partition is
+# left to the rows that measured it.
+#
+# THREE FIXES LANDED, each with its oracle in the same commit and each value
+# proved red against the SHIPPED code before the change, then re-proved by a
+# mutation applied ALONE from a pristine copy and restored by copying that copy
+# back - never by a reverse string replace:
+#   53b10861c  the chart read's two abort reasons, and an already-dead signal
+#   a0832809b  a holder credited with zero tokens the column never gave
+#   e2e5b071c  the comment row's heart and kebab, drawn in the wrong order
+# 128 checks pass across src/components/social/post and 203 across
+# src/components/social/profile at the time of writing. A green is a moment.
+#
+# THE MIDDLE FIX HAS NO ROW, DELIBERATELY. resolveTopHolders built every holder
+# as `amount: Number.isFinite(amount) ? amount : 0`, and `amount` is a numeric
+# that reaches us as a string: a NULL coerces through Number(null) to 0, which
+# IS finite and so never meets the guard, while a non-numeric string coerces to
+# NaN and the fallback supplies the same zero by the other route. The file
+# already had the rule as a function - numericOrOffline, which rejects null and
+# the empty string BEFORE the coercion for exactly this reason - and every other
+# figure it produces went through it. Nothing renders TopHolder.amount today, so
+# no frame's verdict moves and the creator-overview rows keep the wave-30 notes
+# that measured them. It is recorded here because CreatorHoldersModal draws
+# amount and share of supply, and that is the day the zero becomes visible.
+#
+# WHAT THIS WAVE DID NOT REACH, so the next one starts from the truth rather
+# than an implied 100%: 71 of the 76 registry frames whose implFiles point into
+# this partition are still not done, and not one of them was measured this run.
+# The chart-card family (11474-205859, 11474-206406, 11474-222766, 11474-202449,
+# 11474-202951, 5116-199727, 9640-211967) is the cheapest next target - one
+# component, seven frames - and it has an open arithmetic question waiting on a
+# node read, stated on the 11474-205859 row below.
+SRP - bottom - Comments - holder [9636-211487]	not-started	src/components/social/post/PostCommentList.tsx	-	THE ONE FRAME THAT IS ONLY THIS CARD, AND ONE CLAUSE OF THE EARLIER ROW WAS WRONG. CARRIED FORWARD, unchanged and not re-claimed: `9636:211488` agrees with `5115:197932` node for node - strip 52 on a 16 inset, panel padding 16 gap 36, composer row 42, list gap 16, three 56-tall rows - which is two independent reads of one set of numbers. Also carried: the row's face is 12 and not 11, its leading 14 at 375 and 16 from 768, the author Manrope BOLD and not semibold, the stamp and `Reply` #FFFFFF at node opacity 0.64 and not #B3B9CC, both glyphs #95A09F. CORRECTED HERE. The wave-30 row closed with "at 375/768 the cluster sets the heart at x=0 with the kebab down and to its right, which the shipped column MIRRORS". It did not mirror it, it inverted it. `11474:205672` (375) and `11474:202329` (768) draw a 40-wide cluster holding the 16px heart at x=0 and the 16px kebab at x=24. The shipped column aligned BOTH glyphs to the end and then pulled the kebab back with `mr-4`, which resolves to a heart at x=24 and a kebab at x=8 - the pair in the wrong order, with the reaction control furthest from the text it belongs to. Fixed in e2e5b071c by stating alignment per child, because the column has no single answer: one glyph starts and the other ends. THE ORACLE resolves both left offsets from the merged class attribute of a real render, since jsdom computes no layout - column `w-10` is 40, glyph `w-4` is 16, an end-aligned left edge is 40 minus 16 minus its own right margin, and an unmodelled margin throws rather than reading 0. It was RED against the shipped class list with no mutation needed (the heart resolved 24 against a drawn 0), and removing `self-end` from the kebab alone reddens the other half (0 against 24). NOT RE-MEASURED LIVE - see the file header - so x=0 and x=24 are the 2026-09-06 node reads carried forward, not fresh ones, and nothing here is promoted on them. STILL not-started for the reason that has not moved: nothing mounts this partition. Re-grepped over `src/` on 2026-09-07 - the only importers of PostCommentList, TokenPostDetail, PostDetailTabs, PostCommentComposer, PostTokenChartCard, TokenStatStrip and TradePanelSheet are the partition's own barrel `post/index.ts` and its own tests, and App.tsx declares no `/post/...` path. What is left is a route and a container, not a build, and a parity suite cannot see that because it renders the component itself. UNCHANGED AND STILL NOT OURS: this frame also carries `dropdown-market` `9640:211924`, the open comment menu, which belongs to src/components/social/menus/socialRowMenus.tsx. The 1440 row `5115:197992` draws the heart alone with no kebab; the menu is NOT deleted to match, because a frame's silence is not a spec to remove a control.	desktop=missing tablet=missing mobile=missing
+Skai > Social > Sample post / token - chart (375 x 812px) [11474-205859]	partial	src/components/social/post/PostTokenChartCard.tsx	-	THE CARD'S ONLY VISIBLE CONTENT TODAY IS ITS UNAVAILABLE PANEL, AND THAT TEXT WAS WRONG FOR TWO OF ITS CAUSES. CARRIED FORWARD from the 2026-09-01 node read and not re-claimed: `Simple Chart line` `11474:205891` 343x343, radius 12, padding 12, gap 16, fill #001615 on a #122524 1px stroke - the only card in this directory whose edge is the panel colour rather than #123F3C. Plot `Frame 383` `11474:205913` 319x227 holding a GRADIENT_LINEAR area vector and a #17F9B4 2px line. Segmented `Frame 347` `11474:206191` 343x40 radius 9999 on #000000 with the CHART half selected - 165x32, radius 8/24/24/8, #56C7F3 under a #001615 Manrope 14/16 label - the same control as the Post frames with the selection swapped. Header, stat strip and tab card are `11474-204840` node for node. WHAT CHANGED, 53b10861c. There is no readable market-cap series for a social token - tokenChartSeries.ts audits four dead sources and forbids the fifth, which is world-readable - so the unavailable panel is not a rare branch on this card, it is what every viewer sees, and it prints source and reason verbatim inside the plot box. That makes the reason RENDERED TEXT. Both cancellations reached it as the same DOMException and drew "AbortError: This operation was aborted", which names neither the indexer that stopped answering after 8 seconds nor the caller that walked away, and which is identical for the two - so the card could not tell a hung indexer from a tab the user left. It now draws "no response within 8000 ms" or "the caller cancelled the request". Separately, a signal already aborted on entry never dispatches `abort` again, so the listener never ran and the request went out on a live controller for a caller that had already given up; that is refused before the fetch. Three cases, three mutations, each applied alone from a pristine copy and each reddening exactly one. STAYS partial ON WHAT DID NOT CHANGE, and one of those is now an arithmetic question rather than a shrug. The plot still has no series behind it. And the card's own recorded ramp does not close: 375 `11474:205891` 343x343 pad 12 gap 16, 768 `11474:202476` 708x448 pad 16 gap 24, 1440 `5118:200168` 588x412 pad 16 gap 24 - while the shipped classes resolve to 16 + 38 + 24 + 304 + 24 + 18 + 16 = 440 at BOTH 768 and 1440. So `md:min-h-[448px]` supplies the missing 8 at 768 as dead space along the bottom edge, and then FLOORS the 1440 card 36px above the 412 this file records. The 8 splits between the header block and the range row, and no recorded read carries either of those at 768 or at 1440, so the 1440 plot height is not derivable from what is written down and is NOT guessed here. That is the one node read this row needs. NOT RE-MEASURED LIVE: the Figma MCP was unreachable for the whole run - see the file header.	desktop=n-a tablet=n-a mobile=partial
