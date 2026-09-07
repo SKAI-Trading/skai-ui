@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T00:54:54.680Z",
+  "generated": "2026-09-07T05:56:54.359Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -68058,7 +68058,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "FIXED the table's cell face and its two greys, which are this file's half of the frame. TYPE name Manrope Regular 14/18 at -4% (5198:50047), member sub-line Mulish Regular 11/14 (5198:50051), Type pill Mulish Regular 11/14 (5198:50059), Created and Description values Mulish Regular 12/16 (5198:50042, 5198:50060), action label Manrope Regular 14/18 (5198:9947, label 25x18 at x=16 y=6 in a 57x30 box). Code before: every one of them Manrope, untracked, and the action control in the primitive's text-sm font-medium. After: font-mulish on the three counted values, tracking-[-0.04em] on all six, font-normal and an explicit 14/18 on the control. COLOUR the absent description goes text-ash #95A09F against the shipped #B3B9CC. STAYS partial on the Members column, which draws Frame 235 rather than a count, and on the page chrome outside this partition.",
+      "notes": "NO CODE CHANGE AT THIS BOARD AND THE ROW IS UNMOVED - recorded because its own note was the thing that was wrong. It read \"STAYS partial on the Members column, which draws Frame 235 rather than a count\", and the table has drawn the stack since the wave that shipped MemberFacesStack and wired memberFacesByGroup through TradingGroups.tsx; the column is the one part of this frame that is built. The module header still described the cluster under \"COLUMNS DELIBERATELY NOT DRAWN\" and now states the current rule instead, which is what let the two narrow presentations sit a block short without anyone reading it as a gap. NOT RE-MEASURED (Figma MCP down all session), so partial stands on the page chrome outside this partition and on the absence of any read this pass. Commit 134796e08.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -68083,7 +68083,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "UNCHANGED GEOMETRICALLY — the body inset, header band and row box were built in wave 27 and re-read green by their oracle this pass. What moved is the face inside the cells, which this node shares with 5194-270743: the captions were already App/Ash 300 at 12/16 with -4% (10219:182556), and the values below them now carry the same tracking and the Mulish face the frames bind. STAYS partial on the Members column, and its column ORDER is still not a defect to fix: Group | Members | Created | Type | Description | Action here against the shipped frame's Created | Group | Members | …, so it is an ALTernative arrangement and the order stays the shipped frame's.",
+      "notes": "UNCHANGED, and its \"STAYS partial on the Members column\" clause is stale in the same way 5194-270743's was: the column draws the stack, with the count as the floor whenever RLS returned no faces. Nothing geometric moved and nothing was measured this pass (Figma MCP down all session; see the file header). The column ORDER here is still an ALTernative arrangement and not a defect to fix.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -70892,7 +70892,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "DEMOTED FROM done. RE-MEASURED at 375 as the full-scroll cut, where the rows are drawn EXPANDED - the description and the created blocks carry no hidden flag on this frame, unlike the viewport crop of the same tab, so the two are different states of one row and not a contradiction. Chrome and row rebuilt; see the component rows. Stays partial for the member-avatar cluster in the expanded block.",
+      "notes": "SAME CHANGE AS 11526-288877 - this is the full-scroll cut of the same tab, where the rows are drawn expanded, so the block lands on the state this frame actually shows. 11396:76744 puts Created at y=0 and the Members block at y=52 in one column, which is the arrangement now built. NOT RE-MEASURED this pass (Figma MCP down; see the file header) - built to the recorded numbers. STAYS partial. Commit 134796e08.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -70922,7 +70922,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "FIXED the row's face at this board and re-measured both sides. TYPE the name is Manrope Regular 12/14 at -4% (11526:288955) and the member sub-line Mulish Regular 10/14 at -4% (11526:288961); code before, both inherited Manrope with no tracking, so the count was in the prose face; after, font-mulish + tracking-[-0.04em] through ROW_TYPE_RAMP, delta 0 on family, weight and tracking. COLOUR the Public tag is #17F9B4 under #001615 (11526:288957, 11526:288994) and the Private tag #95A09F under the same (11526:289031); code before drew Public as bg-secondary #2DEDAD under #001412; after bg-alien-green-bright + text-green-coal, delta 0. GEOMETRY the head centres its action block — y=3 of a 28 in a 34-tall head (11526:288999) — and the code top-aligned it; after items-center. STAYS partial for Frame 235, the five 32px circles at a 26px pitch behind a \"+12\" chip, scoped by row-level policy on trading_group_members.",
+      "notes": "FIXED the same absence at this board: the expanded detail now draws Members as the second block of the single column, left-aligned like every block at 375, holding the same 140x32 stack the module header records at 11396:76750. The count under the group name was the stated reason for withholding it and it does not hold - the frames draw the name sub-line AND the block, so the row was a block short of every board that states one. NOT RE-MEASURED (Figma MCP down all session; see the file header). STAYS partial, and specifically still open on Frame 235 having no read of its own here and on everything outside the row. Commit 134796e08.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -71085,7 +71085,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "DEMOTED FROM done. RE-MEASURED at 768; chrome and row rebuilt, including the 30px gutter and the 46px search field this width states and the pair axis in the detail. Stays partial for the member-avatar cluster.",
+      "notes": "SAME CHANGE AS 11530-304239, which is this screen at this board - the Members block is now drawn as the right half of the detail pair on the All-groups tab. This row previously read \"Stays partial for the member-avatar cluster\"; that clause is what closed. NOT RE-MEASURED: the Figma MCP was down for this whole session (see the file header), so the block was built to the numbers a previous pass recorded off the plugin API and left in the component, not to a read taken here. STAYS partial for everything else on the board and because no board was measured this pass. Commit 134796e08.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -71115,7 +71115,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "FIXED the row's face at this board and re-measured both sides. TYPE name Manrope Regular 12/16 at -4% (11530:304317), member line Mulish Regular 10/14 (11530:304323), Type pill Mulish Regular 12/14 (11530:304319), field caption Manrope Regular 12/16 (11530:304329) and field value Mulish Regular 12/14 (11530:304330); code before was Manrope with no tracking on all five; after, delta 0 on family, weight and tracking. COLOUR the caption is App/Ash 300 #95A09F and shipped --muted-foreground #B3B9CC; after text-ash, delta 0. The action label is Manrope Regular 14/18 at -4% (11530:304326) against the primitive's text-sm font-medium, i.e. 14/20 in Medium; after text-[14px] leading-[18px] font-normal tracking-[-0.04em], which displaces text-sm outright so the 20 leaves with it. GEOMETRY the action block sits at y=2 of a 30 in a 34-tall head (11530:304324) and the code top-aligned it; after items-center. STAYS partial for Frame 1000003849, the Members avatar stack at x=536, same policy scope.",
+      "notes": "FIXED, ON A RECORDED MEASUREMENT RATHER THAN A LIVE ONE - say so before reading the rest. The Members block this row and its three narrow siblings state was absent from both list presentations: MemberFacesStack and the batched getGroupMemberFaces read both exist and the 1440 table draws them, but GroupList was never handed the faces, so the pair 11530:304331 rendered its left half alone. Now drawn, on the All-groups tab only - caption 11530:304336 right-aligned over the 140x32 stack 11530:304337 at x=536 in the 676 row, which is the geometry MemberFacesStack already carried and the align=\"right\" RowField already had a doc for. Discover keeps Token req. in that slot and Created draws neither, read the same way the table reads it so one tab cannot get two answers. THE NUMBERS ARE WAVE-27/28 PLUGIN-API READS quoted out of the module header and the component docblocks, NOT a read taken this pass, and nothing here was re-measured against the live file. A group whose faces did not come back keeps the count under its name - trading_group_members is RLS-scoped and a denial arrives as an empty result with a null error. New oracle groupsMembersBlock.figma.test.tsx, whose three positive cases fail against the old value (verified by reverting the one binding and re-running: 3 failed, 4 passed). STAYS partial: unmeasured this pass, and the row was never held open by the Members block alone. Commit 134796e08.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -93092,8 +93092,8 @@
         "src/pages/social/Leaderboard.tsx"
       ],
       "status": "partial",
-      "route": "/leaderboard (App.tsx:1588)",
-      "notes": "5531-76408. Real and reachable: Leaderboard.tsx (118 lines) mounts LeaderboardTable.tsx (1363 lines) with points/pnl/volume/winRate/trades sorting, tier colours and rank icons, plus PointsBreakdown, TierProgressCard and RaceBanner. Missing: the top-3 PODIUM hero (First/Second/Third place cards) - zero hits for podium/First place/topThree in either file - and the per-row Follow button.",
+      "route": "/leaderboard",
+      "notes": "THE REASON ON THIS ROW IS FALSE AND WAS CHECKABLE WITHOUT FIGMA. It reads \"Missing: the top-3 PODIUM hero (First/Second/Third place cards) - zero hits for podium/First place/topThree in either file\". The podium ships: src/components/leaderboard/LeaderboardPodium.tsx is imported at Leaderboard.tsx:27 and mounted at :79 inside a \"Top Three\" SectionErrorBoundary, between the header and the global table, which is the frame order the 1440 row already recorded. The 1440 row 5531-76408 was corrected when that landed and these three narrow rows were not, so the same absence reads as open at two widths and closed at one. STATUS UNCHANGED at partial - the second half of the row still stands (the per-row Follow button lives in src/components/dashboard/LeaderboardTable.tsx, outside this partition) and NO geometry, type ramp or colour was read off this node: the Figma MCP was down for this entire session, so this is a presence correction and must not be read as parity.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93292,8 +93292,8 @@
         "src/pages/social/Leaderboard.tsx"
       ],
       "status": "partial",
-      "route": "/leaderboard (App.tsx:1588)",
-      "notes": "5531-76408. Real and reachable: Leaderboard.tsx (118 lines) mounts LeaderboardTable.tsx (1363 lines) with points/pnl/volume/winRate/trades sorting, tier colours and rank icons, plus PointsBreakdown, TierProgressCard and RaceBanner. Missing: the top-3 PODIUM hero (First/Second/Third place cards) - zero hits for podium/First place/topThree in either file - and the per-row Follow button.",
+      "route": "/leaderboard",
+      "notes": "SAME FALSE REASON AS 11847-357151, same correction: the top-3 podium is mounted at Leaderboard.tsx:79 and the \"zero hits for podium/First place/topThree\" grep no longer holds. STATUS UNCHANGED at partial for the Follow button, which is in src/components/dashboard/LeaderboardTable.tsx and outside this partition, and because nothing on this board was measured - the Figma MCP was unreachable all session (see the file header). Presence, not parity.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93317,8 +93317,8 @@
         "src/pages/social/Leaderboard.tsx"
       ],
       "status": "partial",
-      "route": "/leaderboard (App.tsx:1588)",
-      "notes": "5531-76408. Real and reachable: Leaderboard.tsx (118 lines) mounts LeaderboardTable.tsx (1363 lines) with points/pnl/volume/winRate/trades sorting, tier colours and rank icons, plus PointsBreakdown, TierProgressCard and RaceBanner. Missing: the top-3 PODIUM hero (First/Second/Third place cards) - zero hits for podium/First place/topThree in either file - and the per-row Follow button.",
+      "route": "/leaderboard",
+      "notes": "SAME FALSE REASON AS 11847-357151 and the same correction - the podium is mounted at Leaderboard.tsx:79. This node is the second 375 drawing of the screen and carried the identical copied reason, which is how one stale sentence came to stand on three rows. STATUS UNCHANGED at partial: the Follow button is outside this partition and no board was measured this pass (Figma MCP down all session). Presence, not parity.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
