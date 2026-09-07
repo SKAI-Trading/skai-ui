@@ -1,0 +1,90 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-pages, wave 35 - src/pages/social/*.tsx (top level) and
+# src/pages/social/groups/**.
+# Every # in this file is at column 0.
+#
+# THE FIGMA MCP SERVER WAS DOWN FOR THIS ENTIRE PASS. use_figma, get_metadata,
+# get_screenshot and the parameterless whoami all answered "MCP server
+# 'claude.ai Figma' is not connected". So NOTHING below was read off the file
+# this session, and every number in every reason is quoted from an earlier
+# wave's recorded measurement with the file:line it came from.
+#
+# WHAT THIS PASS DID
+# ------------------
+# Read the recorded measurements for this partition, found the three that name
+# a node AND a value AND are contradicted by the code, and closed them.
+#
+# 1. THE PANEL BODY'S DROP SHADOW AND ITS SURFACE. status.wave19.social-groups
+#    .tsv:43 measured node 5198-47138 on all three axes and closed by naming
+#    three properties the body states and the code did not ship - "its 0/10/80
+#    shadow at 25 pct black, its 12 / 16-across-12-down / 8 inset, and the 44
+#    pct #001615 surface on 12px corners inside that inset". The inset was in
+#    fact already drawn (TABLE_BODY's p-2 at 1440, each row's own padding on the
+#    two narrow presentations). The other two were not, and that same sentence
+#    had been copied forward into groupsView.ts's own docblock, where it read as
+#    a standing note rather than as work.
+#
+#    The shadow now rides on GROUPS_PANEL rather than on the body, and that is
+#    the only element that can render it: a shadow falls OUTSIDE its own box and
+#    the wrapper is what clips (it has to - the corners belong to the two
+#    sections it stacks), so written on the body it would draw nothing at all.
+#    The surface is Frame 280 (5198:47870), 1128x604 at 8,8 inside the 1144x620
+#    body, and it goes on the table the 1440 presentation draws. The two narrow
+#    bodies (11398:86314, 11398:77083) were recorded for their heights and their
+#    insets and no equivalent surface node was taken off either, so the list
+#    arms were left alone rather than handed a fill measured on another board.
+#
+# 2. THE MEMBERS CLUSTER ENDED 6PX PAST ITS OWN RIGHT EDGE. Every circle carries
+#    a -6px right margin so the 32px bubbles land on the frame's 26px pitch, and
+#    the last one has to give that margin back or justify-end pushes its border
+#    box past the container's right content edge - 114..146 in a 140 box against
+#    the 108..140 the node states. The rule that gave it back was written
+#    `last:mr-0`, and the container's real :last-child is the sr-only count that
+#    keeps the number reachable once the stack replaces it, so it matched
+#    nothing. Now `[&:nth-last-child(2)]:mr-0`.
+#
+#    ★ THE CLASS LIST LOOKED RIGHT. A variant that matches no element and a
+#    variant that matches the right one are the same string to a reader and to
+#    every class-list assertion in the tree. The new oracle resolves the variant
+#    against the DOM it actually meets, which is the only reading that
+#    discriminates.
+#
+# ORACLES. src/pages/social/groups/__tests__/groupsPanelSurface.figma.test.tsx
+# (4 cases, new) decodes each arbitrary value the way Tailwind emits it rather
+# than matching its spelling, and throws when the utility is absent so a missing
+# shadow fails loudly instead of resolving against an empty list. Three cases
+# added to memberFacesStack.test.tsx resolve the margin variant against the
+# rendered DOM. 6 of the 7 fail against what shipped, verified by reverting all
+# three changes and re-running; the seventh is the companion assertion that the
+# circles BEFORE the last still overlap, and it is green either way by design.
+#
+# WHAT WAS READ AND LEFT ALONE, because the record could not carry it:
+#  - Discover's four stat tiles. status.wave24.social.tsv:30 (11461-195149) and
+#    :31 (5110-187519) both measured them and both close by ESCALATING to Casey:
+#    which four tiles, and whether the header Create-token CTA replaces the
+#    dismissible card or joins it. Two of the four shipped tiles can never carry
+#    a number, which is the no-mock-data rule working. A product decision, not a
+#    measurement, and not taken here.
+#  - status.wave34.social-pages.tsv:26, the 768 Leaderboard gutter. It names the
+#    number (30, for a 708 column) and says in the same breath that the number
+#    is a PRIOR taken from three siblings and not a read of node 11847-357151.
+#    Left exactly as that row left it.
+#  - The 375 Discover nav row. status.wave29.social-pages.tsv:46 measured it and
+#    stopped: closing it means removing a 44px touch target from four small text
+#    controls, which index.css:748-754 puts there deliberately.
+#  - Every "NOT MEASURED / no geometry, type ramp or colour was read off this
+#    node" row in status.wave3.verify-social.tsv. That is 27 rows in this
+#    partition, and by construction none of them carries a value to fix against.
+#    They are what a live Figma session should take first.
+#
+# ALREADY CLOSED ELSEWHERE, recorded so the next pass does not re-open it:
+# status.wave3.verify-social.tsv:196 measured the /social header CTA at
+# I10235:203182 filled #2CEDAC against the frame's #56C7F3 and asked for the
+# source to be traced. It is CreateNewMenu.tsx:104-112, and it already ships
+# "bg-sky-blue text-[#001615]" with the frame's two hexes in a comment beside
+# it. The colour half of that row is closed; the serif heading half is the
+# global brand face and was ruled out of scope on the row itself.
+Groups member cluster (375) [11396-76750]	done	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	PROMOTED FROM blocked-on-backend, AND THE PROMOTION RESTS ON A RECORDED MEASUREMENT, NOT A LIVE ONE - said first so the rest is read in that light. The measurement is status.wave23.social-groups.tsv:43 on node 11396-76750, which read the cluster on all three axes and closed NOT SHIPPED: 140x32 flush right, five 32px circles at a 26px pitch under a 2px ring so they overlap 6, the LEADING bubble the overflow chip filled #123F3C under a #123F3C ring, the four faces after it ringed #122524, and the +12 in Mulish Regular 11/14 at -4 pct in #56C7F3. Every one of those is now in the code and was checked property by property this pass: w-[140px] justify-end, size-8, -mr-1.5 (32-6=26), ring-2, the chip's bg-[#123F3C] ring-[#123F3C] against the faces' ring-[#122524], and font-mulish text-[11px] leading-[14px] tracking-[-0.04em] text-[#56C7F3]. The last of them was FIXED here: the trailing overlap was cancelled with `last:mr-0` and the container's real :last-child is the sr-only count, so the rule reached nothing and the final circle sat 114..146 in a 140 box. THE BLOCKER THAT HELD THIS ROW IS SPENT, and it was never the feed: the row says so itself - “BLOCKED, and on the SHAPE rather than the feed”. The shape it asked for is what shipped. A group whose faces the membership read cannot return keeps the printed count instead of five generic silhouettes, which is an ADDED state the frame does not draw rather than a property of it left undrawn. ORACLE src/pages/social/groups/__tests__/memberFacesStack.test.tsx, whose three new cases resolve the margin variant against the rendered DOM; two of the three fail against what shipped.	mobile=done
+Groups member cluster (768) [11530-304337]	done	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	PROMOTED WITH 11396-76750 AND ON THE SAME RECORDED MEASUREMENT - status.wave23.social-groups.tsv:44, which read this node at equal depth against the phone board and found it identical on every value: 140x32, five 32px circles at a 26px pitch under a 2px ring, the leading bubble #123F3C on a #123F3C ring, the four faces ringed #122524, the +12 in Mulish Regular 11/14 at -4 pct in #56C7F3. One component draws both boards, so the property-by-property check on the phone row is this row's too and is not restated. What this node adds is PLACEMENT - the block sits 536 into a 676 row, flush right, with its caption right-aligned 24 clear of the circles - and that half was shipped by the pass status.wave33.social-pages.tsv:25 records, which wired the batched face read through to the list presentations. NOT MEASURED THIS PASS: the Figma MCP was unreachable for the whole session, so nothing here is a read of the file.	tablet=done
+Groups panel corners [5198-47138]	done	src/pages/social/groups/groupsView.ts	/trading-groups	STAYS done AND ITS STANDING “NOT SHIPPED” CLAUSE IS SPENT - re-recorded for that reason alone, because a fixed item left listed reads as permission to leave it. status.wave19.social-groups.tsv:43 closed by naming three properties of the body this column stacks: a 0/10/80 drop shadow at 25 pct black, insets 12 at 375 / 16-across-12-down at 768 / 8 at 1440, and a #001615 surface at 44 pct on 12px corners inside that inset. The INSET was already drawn - TABLE_BODY's p-2 at 1440 and each row's own padding on the two narrow presentations, which is the same 12 and 16 status.wave17.social-groups.tsv:47 and :48 measured on the row. The other two now ship. The SHADOW is on GROUPS_PANEL and not on the body, and that is not a relocation of convenience: a shadow falls outside its own box, this wrapper has overflow-hidden because the corners belong to the two sections it stacks, and a shadow written on the body would be clipped to nothing. The SURFACE is Frame 280 (5198:47870), 1128x604 at 8,8 inside the 1144x620 body 5198:47869, and it is a TINT - 44 pct of #001615 over the panel's own #122524 - so it separates the table from the tab row where an opaque fill would read as a hole. Only the 1440 presentation takes it: 11398:86314 and 11398:77083 were recorded for their heights and insets and no surface node was taken off either, so the list arms keep what they had. NOT MEASURED THIS PASS - the Figma MCP was unreachable all session, so the frame side is wave 19's read and not this lane's. ORACLE src/pages/social/groups/__tests__/groupsPanelSurface.figma.test.tsx, which decodes each arbitrary value the way Tailwind emits it rather than matching its spelling; all four cases fail against what shipped.	desktop=done
+Social > Groups - search 1VH (1440) [5194-270743]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	THE PANEL THIS FRAME DRAWS NOW CARRIES ITS BODY'S SHADOW AND ITS SURFACE - see 5198-47138, which is where both were measured and where they are described. Nothing on this node was read this pass: the Figma MCP was unreachable for the whole session, so this row records a change that reaches this screen and makes no claim about it. STAYS partial, and the reason wave 33 left on it still stands unchanged - the chrome outside this partition was not measured, and the Members column's five-avatar cluster stays a mixed presentation because trading_group_members is scoped by row-level policy and a denial arrives as an empty result with a null error.	desktop=partial
