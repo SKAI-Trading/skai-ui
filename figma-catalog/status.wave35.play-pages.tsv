@@ -1,0 +1,90 @@
+# key	status	primaryFile	route	reason	bp
+# Lane play-pages, wave 35 - modules/skai-gaming/src/pages/play/**.
+# Every # in this file is at column 0.
+#
+# THE FIGMA MCP SERVER WAS DOWN FOR THIS ENTIRE PASS. use_figma,
+# get_metadata, get_screenshot and whoami all returned "MCP server
+# 'claude.ai Figma' is not connected", retried five times across the run.
+# So NOT ONE ROW IS PROMOTED TO done, and no row below claims a value this
+# lane read off the file. What this pass could still do without the plugin
+# API is find code that contradicts a measurement ALREADY recorded with node
+# ids by an earlier wave, and close it. That is what it did.
+#
+# WHAT WAS FIXED
+# --------------
+# The Community-wins column header is seven cells in TWO groups that do not
+# share a ramp - the right-aligned money columns sit at 12/16 on every board,
+# and only the left-aligned four climb: 10/12 at 375, 10/14 at 768, 12/16 at
+# 1440. Manrope Regular at -4% in #95A09F, node opacity 1. Seven boards
+# across two Figma documents agree column for column: Games 9163:5797-5803
+# (375), 9003:110353-110359 and 9003:111414-111420 (two 768 boards),
+# 9163:5144-5150 (1440); Play 11100:70071-70077 (375), 11087:67116-67122
+# (768), 9132:76710-76716 and 8524:80821-80827 (two 1440 witnesses). Two of
+# those seven are Dice's OWN boards.
+#
+# Twelve pages in this lane draw that header. Ten route it through
+# winHeadClass. Dice and Crash shipped ONE flat class for all seven cells,
+# "flex-1 font-manrope text-xs leading-4 text-ash", at both of their two call
+# sites each - four call sites, and the only four in the whole submodule.
+#
+# THE FLAT CLASS IS 12/16, WHICH IS WHY THIS SURVIVED. At 1440 it painted
+# both groups correctly by accident. The defect is entirely below 1024: at
+# 768 the left four drew 12/16 where every board says 10/14, and at 375 they
+# drew 12/16 where every board says 10/12. A desktop-only check reads clean.
+# The rows below are scoped to exactly that - tablet and mobile, never
+# desktop, because desktop was not wrong and this lane will not restate a
+# verdict it did not take. The Crash 1440 row 9003-94116 is deliberately
+# left untouched for the same reason.
+#
+# AND WHY THE TWO STRAGGLERS WERE INVISIBLE. betsRungs.test.tsx pins this
+# ramp across a CLONES list of ten and opens with a guard that each file
+# "draws the bets tabs". Dice and Crash carry no bets segmented control - they
+# draw an underline tab strip instead - so they could never join that list,
+# and being outside the guard is how they kept the pre-ramp value after the
+# other ten moved. The new oracle discovers its population from WIN_COLUMNS,
+# a marker the ramp does not touch, so a page that LOSES the fix stays in the
+# population and fails rather than dropping out of it and going green.
+#
+# Commit: skai-gaming c235281.
+# Oracle: modules/skai-gaming/src/pages/play/winsHeaderRamp.test.tsx, 51
+# assertions. Resolved values at 375/639/641/767/769/1023/1025/1440, not class
+# lists. Proved red by restoring the flat call sites in both files: 22 of the
+# 51 fail, and they fail because breakpointLadder's TYPE matcher only matches
+# text-[...] - the pre-fix text-xs leading-4 resolves to null at every rung.
+#
+# TWO FINDINGS LEFT OPEN, BOTH NEEDING THE PLUGIN API TO SETTLE
+# -------------------------------------------------------------
+# 1. THE 126px FOOTER SEAM IS NOT THE SAME NUMBER ON EVERY BOARD, and four
+#    pages ship it as if it were. footerSeamRung.test.ts pins mt-10
+#    lg:mt-[126px] on Crash, Mines, Plinko and Scratchers off Crash 9003:94118
+#    (2982 -> 3108) and Dice 9163:4859 (3038 -> 3164). But two more boards
+#    disagree on the SAME pair of nodes: Play 4723:52636 reads 148 (3016 ->
+#    3164) and HiLo 9061:10499 reads 209.57 (Frame 641 bottom 2898.43 ->
+#    wordmark 3108), that last one recorded in HiLoPageSections.tsx:1560-1568
+#    for a different report. The wordmark sits at y 3108 on three of the four,
+#    which reads like a footer pinned to a fixed y with the gap being whatever
+#    the About block leaves - i.e. 126 may be an artefact of one page's FAQ
+#    length rather than a spacing value. Seven pages (Blackjack, Chicken,
+#    Coinflip, Darts, Dice, HiLo, Limbo) ship a flat mt-10 here. NOT CHANGED:
+#    propagating 126 to Dice on Dice's own board would also be propagating it
+#    past HiLo's, and only a live read of Frame 641 and logos/skai-short on
+#    each of the twelve boards can say which.
+# 2. THE DICE FAIRNESS SUB-BAR IS A FLAT h-[54px] AT EVERY WIDTH.
+#    fairnessSubBar375.test.ts records Frame 1000004041 as a three-step ramp -
+#    46 at 375, 52 at 768 (four witnesses, one of them dice 9069:3949) and 54
+#    at 1440 - and pins h-[52px] lg:h-[54px] on ten pages. Dice draws ONE row
+#    that scrolls (Casey's ruling) rather than the siblings' two, and that row
+#    is h-[54px] with no step, so it is 8px over the frame at 375 and 2px over
+#    at 768. NOT CHANGED: the siblings' 46px row also drops py-3 for px-3, so
+#    the height and the inner padding are coupled, and transposing their
+#    mobile chrome onto Dice's one-row structure without reading 9003:44847's
+#    own children is how a control gets clipped. The scroller is Casey-ruled
+#    and must survive whatever the height becomes.
+#
+# WHAT THIS LANE DID NOT REACH: every other region of these four screens, and
+# the whole of GameDetailPage / PlayGameDetailSections beyond the two regions
+# wave 17 measured.
+Skai > Play > Casino > Dice Tablet (768 x 1024px) [9003-44223]	partial	modules/skai-gaming/src/pages/play/DicePageSections.tsx	/play/dice	THE TABLET CUT OF THE COMMUNITY-WINS HEADER, FIXED, AND THE ROW STAYS PARTIAL BECAUSE THE FIGMA MCP WAS DOWN FOR THIS PASS - nothing below was read off the file today. The value acted on is an earlier wave's plugin-API reading, recorded with node ids and reproduced in code: at 768 the left four columns (Rank, Game, Time, User) are Manrope Regular 10/14 at -4% in #95A09F at node opacity 1, and the money three (Bet Amount, Multiplier, Payout) are 12/16. Three independent 768 boards carry that split - Games 9003:110353-110359 and 9003:111414-111420, Play 11087:67116-67122. This page shipped ONE class for all seven, "flex-1 font-manrope text-xs leading-4 text-ash", i.e. 12/16 flat, so the left four drew two sizes too large across the whole tablet band, at both of its call sites. Now routed through the same winHeadClass the other ten pages use, with the size step at lg because 768 draws the small size. THE REST OF THIS BOARD WAS NOT MEASURED BY THIS LANE, and this frame's own 768 header cells were never read directly - the ramp is inherited from three sibling 768 boards, which is exactly why this is not done.	tablet=partial
+Skai > Play > Casino > Dice Mobile (375 x 812px) [9003-44847]	partial	modules/skai-gaming/src/pages/play/DicePageSections.tsx	/play/dice	THE MOBILE CUT, AND IT IS WHERE THE ERROR WAS LARGEST. Dice's own 375 board 9163:5797-5803 is one of the two witnesses that establish the phone values: Rank/Game/Time/User at Manrope Regular 10/12, Bet Amount/Multiplier/Payout at 12/16, both at -4% in #95A09F at node opacity 1, with Play 11100:70071-70077 agreeing column for column. This page drew all seven at 12/16, so on a phone the left four were 10/12 in the design and 12/16 in the app. Fixed at both call sites. THE MONEY COLUMNS BEING RIGHT IS THE TRAP: a probe that read only Payout, or only the desktop board, returns a clean pass at all three widths - the flat class IS the correct desktop value and IS the correct money value everywhere. The oracle now asserts that the two groups resolve DIFFERENTLY at 375, which is the one assertion the pre-fix markup cannot satisfy. Partial, not done: the Figma MCP was down for this pass, the frame was not re-walked, and no other region of this board was read.	mobile=partial
+Skai > Play > Casino > Crash (768 x 1024px) [9003-96041]	partial	modules/skai-gaming/src/pages/play/CrashPageSections.tsx	/play/crash	DOWNGRADED FROM tablet=done, WITH THE REASON. Wave 25 wrote tablet=done on this board from the play-casino-a lane, whose partition was the crash game WIDGET under components/play/games/**. The page column BELOW the widget - CrashPageSections.tsx, this lane's file - was drawing the Community-wins header as one flat 12/16 class for all seven columns, where three 768 boards (Games 9003:110353-110359 and 9003:111414-111420, Play 11087:67116-67122) put the left four at 10/14. A done on a whole-screen frame is a claim about the screen, and that claim was false at this width while the header shipped the desktop size. Fixed at both call sites in this file; the row is partial rather than done because the Figma MCP was down for this pass and this lane read nothing off the file itself. Crash's own header cells are 9003:94842-94848, cited in crashPageContent.ts for the column ORDER - their TYPE was not read, there or here.	tablet=partial
+Skai > Play > Casino > Dice Mobile (375 x 812px) [9142-15687]	partial	modules/skai-gaming/src/pages/play/CrashPageSections.tsx	/play/crash	THE CRASH PAGE'S 375 BOARD - the frame is named "Dice Mobile" and sits on the Crash page 9003:85754, a mislabel wave 8 confirmed off live node data rather than corrected. Same defect as the Dice mobile cut and the same fix: the seven-column Community-wins header drew 12/16 for all of them, where the two 375 witnesses (Games 9163:5797-5803, Play 11100:70071-70077) put Rank/Game/Time/User at 10/12 and only the money three at 12/16. Both call sites in CrashPageSections.tsx now route through winHeadClass. Held at partial - the Figma MCP was down for this pass, this board was not walked, and the mobile verdict this row already carried was taken on the widget, not on the page column.	mobile=partial
