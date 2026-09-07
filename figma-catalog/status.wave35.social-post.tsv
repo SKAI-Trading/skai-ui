@@ -1,0 +1,54 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-post, wave 35. Partition src/components/social/post/** and
+# src/components/social/profile/**. Every # is at column 0 - coverage.mjs
+# tests startsWith("#") with no trimStart.
+#
+# NO FIGMA READ WAS POSSIBLE THIS PASS. The one registered server answers
+# "MCP server claude.ai Figma is not connected" on every endpoint including the
+# parameterless whoami, so use_figma, get_metadata and get_screenshot are all
+# dead transport rather than a file or permission problem. NOTHING BELOW IS A
+# FRESH MEASUREMENT and nothing is promoted to done on one. Every number is
+# named with the row or the docblock line that recorded it.
+#
+# ONLY TWO ROWS ARE WRITTEN, and each because the change below moves a clause
+# that row already carried. apply-status replaces col5 wholesale and a higher
+# wave always wins, so a row that merely restated a note would cost the next
+# reader the measurements the earlier waves took. The rest of the partition is
+# left to the rows that measured it - in particular the Groups family, whose
+# 768 board closed at wave 19 and whose 375 and 1440 rows carry their own
+# remainders unchanged by anything here.
+#
+# WHAT CHANGED, AND AGAINST WHAT. One defect, three sites, and it is the class
+# status.wave23.social-profile.tsv:6 recorded and fixed on the Tokens tab -
+# "the loading skeleton was a flat 68 tall against a real row of 52 ... so the
+# list stepped 8px as four reads landed". A placeholder shorter than the row it
+# stands in for makes the list grow the moment the read lands, and no frame
+# draws a placeholder, so nothing in the catalog catches it: the ROW's recorded
+# height is the oracle.
+#
+#  1. PostCommentList's placeholder resolved to 36 at every width - two bars on
+#     an 8px gap - against a row recorded at 50 and 56. Now three bars on the
+#     row's own 4px column gap and its own leading ramp.
+#  2. CreatorGroupsTab's placeholder was three bare 48s on a space-y-2, pitch
+#     56, against a row that occupies 48 of content, 8, its rule and 8 - 27px
+#     over three rows. It now carries the row's own box. NO ROW IS WRITTEN for
+#     it: the frames record the rows, not the placeholder, and the Groups
+#     verdicts do not move.
+#  3. PostTokenChartCard floored the desktop board at the tablet's 448 because
+#     the md rung was left unscoped. See the 11474-205859 row.
+#
+# ALSO CORRECTED, no row: TokenStatStrip.tsx's transcription carried a 4px cell
+# gap that the same block's own widths contradict - 3x103.67 + 2g = 327,
+# 3x220 + 2g = 676 and 3x153 + 2g = 474 all give 8, which is what the code
+# already drew. A docblock is an oracle other lanes read, so a stale figure in
+# one is a trap rather than a note.
+#
+# LEFT ALONE, RECORDED. formatUsdCompact prints $0.0 for the one live
+# social_tokens row whose market_cap is 0 (status.wave33.social-post.tsv header).
+# Every figure the artwork draws is over a thousand and carries a real tenth, so
+# no frame says whether 2000 reads $2k or $2.0k. Guessing that is what a
+# measurement is for and it is not taken here.
+#
+# col6 restates the bpStatus each row already held. It is not a new verdict.
+Skai > Social > Sample post / token - chart (375 x 812px) [11474-205859]	partial	src/components/social/post/PostTokenChartCard.tsx	-	HALF OF THE OPEN RAMP CLAUSE IS CLOSED, AND THE HALF THAT IS NOT IS THE SAME MISSING NODE READ. CARRIED FORWARD from status.wave34.social-post.tsv:55 and NOT re-claimed: the card is 343x343 pad 12 gap 16 at 375 (`11474:205891`), 708x448 pad 16 gap 24 at 768 (`11474:202476`) and 588x412 pad 16 gap 24 at 1440 (`5118:200168`), fill #001615 on a #122524 1px stroke at all three - the one card in this directory whose edge is the panel colour and not #123F3C. Plot `Frame 383` `11474:205913` 319x227 holding a GRADIENT_LINEAR area vector under a #17F9B4 2px line. Segmented `Frame 347` `11474:206191` 343x40 radius 9999 on #000000 with the CHART half selected, 165x32 radius 8/24/24/8, #56C7F3 under a #001615 Manrope 14/16 label. Header, stat strip and tab card are `11474-204840` node for node. WHAT MOVED. That row read: md:min-h-[448px] supplies the missing 8 at 768 as dead space along the bottom edge, and then FLOORS the 1440 card 36px above the 412 this file records. The second clause is fixed - the desktop rung is now the recorded 412, so no board is floored above its own card - and the oracle resolves the merged class attribute per viewport at 375/767/769/1023/1025/1279/1281/1440 rather than matching a class string, because md:min-h-[448px] is present whatever the desktop rung says. Proved red by deleting the desktop rung alone from a pristine copy. WHAT DID NOT MOVE, and it is the one node read this row still needs. The shipped interior resolves to 16 + 38 + 24 + 304 + 24 + 18 + 16 = 440 at BOTH larger boards, so a 412 floor never binds and the card hugs 440 - 28 above the 1440 card. No recorded read carries the header block or the range row at 768 or at 1440, so the 1440 plot height is not derivable from what is written down and is NOT guessed here; the fix is scoped to the claim the numbers do support. STAYS partial ON WHAT WAS ALREADY OPEN: the plot has no series behind it - tokenChartSeries.ts audits four dead sources and forbids the fifth, which is world-readable - so the unavailable panel is what every viewer sees, and the post host that would mount this card still does not exist. NOT RE-MEASURED LIVE: see the file header.	desktop=n-a tablet=n-a mobile=partial
+SRP - bottom - Comments - holder [9636-211487]	not-started	src/components/social/post/PostCommentList.tsx	-	THE FRAME'S ROW HEIGHT NOW GOVERNS THE PLACEHOLDER TOO, WHICH IS THE ONE THING IT DID NOT. CARRIED FORWARD from status.wave34.social-post.tsv:54 and status.wave30.social-post.tsv:59, not re-claimed: `9636:211488` agrees with `5115:197932` node for node - strip 52 on a 16 inset, panel padding 16 gap 36, composer row 42, list gap 16, three 56-tall rows - which is two independent reads of one set of numbers. Also carried: the row's face is 12 and not 11, its leading 14 at 375 and 16 from 768, the author Manrope BOLD, the stamp and Reply #FFFFFF at node opacity 0.64, both glyphs #95A09F, and the 40-wide cluster that puts the 16px heart at x=0 and the 16px kebab at x=24 (`11474:205672` at 375, `11474:202329` at 768). WHAT MOVED. The row height those reads give is 50 at 375 and 56 from 768 (`11474:205668`, `11474:202325`, `5115:197992`), and it is the SUM of three line boxes on two 4px gaps - 14+4+14+4+14 and 16+4+16+4+16, the table at PostCommentList.tsx:21-35. The LOADING state ignored that: two bars on an 8px gap, 36 tall at every width, so the list grew 14px per row on a phone and 20 on a tablet the moment a read landed. It now draws three bars on the row's own 4px gap with the row's own leading ramp, and keeps the row's 32px avatar and its 8px gap so the two share a left edge. This is the class status.wave23.social-profile.tsv:6 recorded on the Tokens tab; no frame draws a placeholder, so the ROW's recorded height is the only oracle for one. The check counts the bars, resolves each one's leading and the column gap per viewport and adds them, rather than asserting a class - two bars sum to 36 whatever they are named. Proved red by restoring the two-bar block alone from a pristine copy. STILL not-started for the reason that has not moved: nothing mounts this partition - re-grepped over src/ 2026-09-07, the only importers of PostCommentList, TokenPostDetail, PostDetailTabs, PostCommentComposer, PostTokenChartCard, TokenStatStrip and TradePanelSheet are the partition's own barrel and its own tests, and App.tsx declares no /post/... path. UNCHANGED AND STILL NOT OURS: dropdown-market `9640:211924` belongs to src/components/social/menus/socialRowMenus.tsx, and the 1440 row `5115:197992` draws the heart alone with no kebab - the menu is NOT deleted to match, because a frame's silence is not a spec to remove a control. NOT RE-MEASURED LIVE: see the file header.	desktop=missing tablet=missing mobile=missing
