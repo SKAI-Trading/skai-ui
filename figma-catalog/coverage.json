@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T04:10:03.588Z",
+  "generated": "2026-09-08T09:03:00.603Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 29,
@@ -7,30 +7,30 @@
     "furniture": 434,
     "genuine": 2022,
     "matched": 1919,
-    "done": 431,
-    "partial": 1069,
-    "notStarted": 153,
+    "done": 455,
+    "partial": 1084,
+    "notStarted": 129,
     "blocked": 77,
-    "frameDefect": 96,
+    "frameDefect": 97,
     "catalogFurniture": 42,
-    "unknown": 40,
+    "unknown": 24,
     "liveOnly": 103,
     "rollupOnly": 0,
     "defaultNamed": 120,
     "ambiguous": 0,
-    "conflicts": 15
+    "conflicts": 14
   },
   "doneRows": {
-    "total": 2067,
-    "withBreakpointProvenance": 697,
-    "namingANodeId": 1746,
+    "total": 2112,
+    "withBreakpointProvenance": 735,
+    "namingANodeId": 1791,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 10044,
+    "total": 10383,
     "namingNoNodeId": 504,
     "namingNoLiveNodeId": 544,
-    "unrecognisedTokens": 15133
+    "unrecognisedTokens": 17454
   },
   "statusFiles": [
     {
@@ -1688,6 +1688,180 @@
       "rows": 4,
       "withLiveId": 4,
       "ids": 5
+    },
+    {
+      "file": "status.wave36.home2-conv.tsv",
+      "rows": 8,
+      "withLiveId": 8,
+      "ids": 9
+    },
+    {
+      "file": "status.wave36.predict-alt.tsv",
+      "rows": 13,
+      "withLiveId": 13,
+      "ids": 13
+    },
+    {
+      "file": "status.wave36.predict-dash.tsv",
+      "rows": 20,
+      "withLiveId": 20,
+      "ids": 20
+    },
+    {
+      "file": "status.wave36.predict-detail.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 10
+    },
+    {
+      "file": "status.wave36.predict-fut.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 6
+    },
+    {
+      "file": "status.wave36.predict-root.tsv",
+      "rows": 17,
+      "withLiveId": 17,
+      "ids": 17
+    },
+    {
+      "file": "status.wave36.social-feed.tsv",
+      "rows": 19,
+      "withLiveId": 19,
+      "ids": 21
+    },
+    {
+      "file": "status.wave36.social-msg.tsv",
+      "rows": 16,
+      "withLiveId": 16,
+      "ids": 16
+    },
+    {
+      "file": "status.wave36.social-pages.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 9
+    },
+    {
+      "file": "status.wave36.social-post.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 10
+    },
+    {
+      "file": "status.wave36.social-profile.tsv",
+      "rows": 8,
+      "withLiveId": 8,
+      "ids": 8
+    },
+    {
+      "file": "status.wave36.social-strm.tsv",
+      "rows": 15,
+      "withLiveId": 15,
+      "ids": 15
+    },
+    {
+      "file": "status.wave36.social-top.tsv",
+      "rows": 19,
+      "withLiveId": 19,
+      "ids": 19
+    },
+    {
+      "file": "status.wave36.trade-order.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
+      "file": "status.wave36.trade-pages.tsv",
+      "rows": 21,
+      "withLiveId": 21,
+      "ids": 21
+    },
+    {
+      "file": "status.wave36.trade2-launch.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 9
+    },
+    {
+      "file": "status.wave36.trench-disc.tsv",
+      "rows": 17,
+      "withLiveId": 17,
+      "ids": 17
+    },
+    {
+      "file": "status.wave36.trench-trade.tsv",
+      "rows": 15,
+      "withLiveId": 15,
+      "ids": 15
+    },
+    {
+      "file": "status.wave37.home2-rest.tsv",
+      "rows": 14,
+      "withLiveId": 14,
+      "ids": 15
+    },
+    {
+      "file": "status.wave37.home2-whale.tsv",
+      "rows": 11,
+      "withLiveId": 11,
+      "ids": 17
+    },
+    {
+      "file": "status.wave37.play-arcade.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 10
+    },
+    {
+      "file": "status.wave37.play-cards.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 10
+    },
+    {
+      "file": "status.wave37.play-hub.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 4
+    },
+    {
+      "file": "status.wave37.play-instant.tsv",
+      "rows": 28,
+      "withLiveId": 28,
+      "ids": 28
+    },
+    {
+      "file": "status.wave37.play-shared.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 12
+    },
+    {
+      "file": "status.wave37.wallet2-chart.tsv",
+      "rows": 1,
+      "withLiveId": 1,
+      "ids": 5
+    },
+    {
+      "file": "status.wave37.wallet2-streaks.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave37.wallet2-swap.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 9
+    },
+    {
+      "file": "status.wave38.home2-feed.tsv",
+      "rows": 12,
+      "withLiveId": 12,
+      "ids": 12
     },
     {
       "file": "status.wave4.games-radius.tsv",
@@ -4197,12 +4371,11 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 159,
+        "partial": 176,
         "blocked-on-backend": 24,
-        "unknown": 20,
+        "unknown": 8,
         "done": 30,
-        "frame-defect": 16,
-        "not-started": 5
+        "frame-defect": 16
       },
       "liveOnly": []
     },
@@ -4227,10 +4400,10 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 145,
+        "partial": 146,
         "furniture": 2,
-        "done": 46,
-        "not-started": 51,
+        "done": 47,
+        "not-started": 49,
         "blocked": 6,
         "frame-defect": 17,
         "blocked-on-backend": 1,
@@ -4257,11 +4430,11 @@
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 10,
+      "conflicts": 9,
       "byStatus": {
-        "partial": 245,
-        "not-started": 50,
-        "done": 57,
+        "partial": 252,
+        "not-started": 40,
+        "done": 60,
         "blocked-on-casey": 2,
         "blocked-on-backend": 32,
         "unknown": 5,
@@ -8834,8 +9007,8 @@
       "ambiguous": 0,
       "conflicts": 2,
       "byStatus": {
-        "partial": 91,
-        "done": 36,
+        "partial": 79,
+        "done": 48,
         "not-started": 10,
         "blocked-on-backend": 5,
         "frame-defect": 1
@@ -10148,8 +10321,8 @@
       "conflicts": 0,
       "byStatus": {
         "done": 126,
-        "partial": 29,
-        "frame-defect": 3,
+        "partial": 28,
+        "frame-defect": 4,
         "furniture": 1
       },
       "liveOnly": []
@@ -11572,13 +11745,13 @@
       "ambiguous": 0,
       "conflicts": 2,
       "byStatus": {
-        "partial": 232,
-        "done": 79,
+        "partial": 233,
+        "done": 88,
         "frame-defect": 7,
         "blocked-on-casey": 1,
-        "not-started": 34,
+        "not-started": 28,
         "blocked-on-backend": 2,
-        "unknown": 15,
+        "unknown": 11,
         "furniture": 4,
         "open": 1
       },
@@ -11992,8 +12165,7 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 16,
-        "not-started": 1,
+        "partial": 17,
         "done": 6
       },
       "liveOnly": []
@@ -12119,8 +12291,8 @@
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 22,
-        "done": 5,
+        "partial": 23,
+        "done": 4,
         "furniture": 7
       },
       "liveOnly": []
@@ -13091,20 +13263,6 @@
     }
   ],
   "conflicts": [
-    {
-      "id": "4943-129014",
-      "page": "✅ Social",
-      "name": "Skai > Social > Live",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave4.row-conflicts.tsv:23",
-        "status.wave4.social-a.tsv:1"
-      ],
-      "kind": "same-generation"
-    },
     {
       "id": "5000-158255",
       "page": "✅ Social",
