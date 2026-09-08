@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:54:20.672Z",
+  "generated": "2026-09-08T08:54:42.537Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -105473,11 +105473,11 @@
       "implFiles": [
         "modules/skai-wallet/src/components/PortfolioChart.tsx"
       ],
-      "status": "partial",
+      "status": "frame-defect",
       "route": "/ -> openModal(portfolio)",
-      "notes": "HELD, BUT THE HOLD IS NOW AN OUTVOTE AND NOT A CONVENTION CALL, AND IT NEEDS A RULING RATHER THAN ANOTHER MEASUREMENT. Re-read on this board's own node: 13008:50516 is 328 wide at x=24 on a 375 frame, so the gutters are 24 and 23. Two same-width boards on this page were read the same way this pass and both draw 346 at x=15 on a 15/14 gutter - 13008:44082 on the notifications board and 13008:50632 on the insights board, which is the chart sheet's immediate neighbour in the same feature-sheet family. The page builds its column as full width less 15 either side, which renders 345, so against those two it is the documented -1 and against this one it is 17 proud. The insights sheet already carries that -1 in a done row. TWO OPTIONS, both of them reversals somewhere: record 13008-50515 as frame-defect on the gutter alone, on the strength of two same-width siblings and the shared column string, and promote the mobile axis; or narrow the chart sheet to 328 at 24 and accept that one feature sheet on this surface is inset differently from the rest. Everything else on this board stays as wave 18b left it, measured and matched.",
+      "notes": "SETTLED AS A FRAME DEFECT, ON A 6-TO-1 READ OF TWO INDEPENDENT VALUES, WHICH IS ONE VALUE MORE THAN THE OPEN QUESTION HAD. The standing row asked for a ruling on this board's gutter alone and cited two same-width siblings. Re-measured live this pass, every 375 board on this page puts its Main container at x15 y64 on a 346 column: 13008:44082 notifications, 13008:43469 streaks, 13008:41207 swap, 13008:40895 home, 13008:51353 share and 13008:53760 bridge. 13008:50516 alone sits at x24 y72 on a 328 column. So it deviates TWICE - a 24/23 gutter where six boards use 15/14, and a 24 top clearance where the same six use 16 under the identical 48 mobile header. Two out-of-family values on one board is a board carried over from elsewhere, not a deliberate inset, and it is the same shape of defect this page already carries at 13008:50000 (one 4px padding step, three frames outvoting it) and 13008:55195 (four values from other breakpoints), both recorded frame-defect on smaller majorities than this. NOTHING IS LOST BY THE VERDICT: the chart sheet's own content was measured against this board by wave 18b and matched, and PortfolioChart.tsx is unchanged by this row - its 375 column is the six-board 346 that SHELL_CONTAINER draws as full width less 15 a side, the documented -1. The family keeps its desktop and tablet verdicts from 13008:28886 and 13008:44719; it has no valid 375 board, which is a different thing from an unmeasured one.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "partial"
+      "bpStatus": "n-a"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13008-50631": {
       "section": "wallet-2",
