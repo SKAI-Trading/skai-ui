@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:07:15.462Z",
+  "generated": "2026-09-08T08:08:51.382Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -35079,9 +35079,9 @@
       ],
       "status": "partial",
       "route": "/predict/market/:marketType/:marketId",
-      "notes": "[Skai > Predict > sample market 2 - market 1VH (375x812px)] 375x812 mobile. Venue-generic market detail. Routed and rendering, reflows to one column. NOT composed or diffed at this width this wave. The frame centres on an 11-row asks/bids book with Last and Spread which cannot render - both HIP-4 venues are CPMM, so OrderBookPanel ships an honest no-order-book notice plus the pool reserves. Related events are filled with Solana 5min, Dogecoin 30min and Tron 15min, a market type no venue implements.",
+      "notes": "Mobile menu-open state: the same column at y=82 with `Frame 391` above it, plus a full-frame 375x812 `Overlay`. The overlay is PredictOrderTypeMenu, not this file. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. Same page shell as the sample market family and it agrees: 1440 `main` x=58 y=92 w=1382 with `Main container` 738 at x=90, `Frame 402` 432 at x=860 (738 + 32 + 432 = 1202) and the lower `Main container` at a declared itemSpacing 48; 768 `Frame 1196` x=30 y=110 w=708 and 375 x=16 w=343, both VERTICAL itemSpacing 24 over the six blocks Main container -> Order book - Predict -> Frame 430 -> section -> FAQ -> Frame 1191/1189. Related events is third at both narrow cuts and is now rendered there (commit de85231). HELD AT PARTIAL: the six block interiors are src/components/predict/**, and the `Up - long` ticket sheet the narrow cuts pin over the bottom nav is a ticket build that is still absent.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "3173-26019": {
       "section": "predict",
@@ -35292,7 +35292,7 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "The 1VH twin of 8610-163972 and the node predictRootGeometry.ts:190 is transcribed from. Re-read independently: main 8583:127821 x=58 y=92 w=1382, Main container 738x485 at (90,32), Frame 402 432x490 at (860,32), Frame 403 1202x74 at (90,570) VERTICAL gap 24, markets 1202x1184 at (90,676) VERTICAL gap 16. Content column 1202 at x=90, hero split 738/432 at a 32 gutter, top inset 32 - the three numbers the code carries. Held at partial on the same card archetypes as its twin. Note for anyone re-opening the Dashboard column question: this frame and the New/Politics category frames draw 1202 where the Dashboard family draws 1144, and Climate 3553-5220 draws both inside one frame (body 1144, footer 1202), so 1202 is the value with the most independent support. TOPIC-CHIP ROW MEASURED AT ALL THREE BOARDS 2026-09-06. `nav` sets its chips in Manrope Regular at -4%: 12/14 at 375 (10509:18321, 10509:18905), 12/16 at 768 (10642:185403, 10642:186096), 14/18 at 1440 (8583:128113). The row shipped the 1440 pair flat. The LIVE tag is three size variants of `labels/tag` and its widths agree with them \u0014 10/14 at 48 wide (I10509:18327;786:162), 12/14 at 54 (I10642:185409;786:178), 11/14 at 52 (I8583:128119;786:171) \u0014 so the 768 label really is the largest of the three; its dot gap is 2 at 375 and 4 above, and the coral border, 9999 radius and 8/2 padding hold at all three. Every control was additionally floored to 44x44 by src/index.css:748-754 at and below 768, which puts a box back around the bare-text chips report e50e6d24 is about. Fixed 8b82adb, 8 cases in src/pages/predict/__tests__/curatedChipRowFigmaParity.test.tsx, 6 red against the old file. STILL partial: only the chip row and the reveal were re-read here. \"SHOW MORE MARKETS\" MEASURED AT ALL THREE BOARDS 2026-09-06, seven frames unanimous inside each cut: Mulish Regular on a constant 16px leading at -4%, 64% node opacity over an opaque paint, centred and full width, with the SIZE and the gap above it stepping \u0014 12 and 16 at 375 (10509:18823, 10597:73420), 14 and 16 at 768 (10642:185688, 10657:214414), 16 and 32 at 1440 (8610:164924, 3276:21835, 3538:24805, 3350:33861, 3358:35125). The gap is the parent frame's own itemSpacing, not a coordinate subtraction. Both pages shipped the 1440 pair flat. Fixed 7bb60c0, 8 cases in src/pages/predict/__tests__/predictShowMoreRamp.figmaParity.test.ts, 4 red against the old files. NAV-TO-GRID JOIN BUILT 2026-09-07 against the 32 this row records. PredictPage now draws `Prediction markets` as its own box (data-testid predict-markets-block) at gap-6 xl:gap-8, holding `Frame 403` - the heading row, the search field and the chip row, still on their own flat 24 - over the grid. The page column carried one flat gap-6, so the join under the chip row was 24 at every board. The FAQ 128 is unchanged: its 24 is still the column gap to this box. 9 cases in src/pages/predict/__tests__/predictMarketsBlockGap.figmaParity.test.tsx. STILL partial on the card archetypes this row already holds for.",
+      "notes": "The decisive 1440 cut for the hero join: hero 738x485 at y=32 bottom 517, rail `Frame 402` 432x490 bottom 522, `Frame 403` 1202x74 at y=570 - 48 clear of the rail - and the `markets` grid 1202 at y=676 on its own itemSpacing 16. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -35346,9 +35346,9 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "[Skai > Predict - on:click 1VH (1440 x 900px)] 1440x900 desktop. on:click state of the consolidated grid. Category tabs move aria-pressed on click and the sort tabs render from the live board. The frame's ACTIVE sort state cannot be reached locally: Trending/Breaking/New all derive unavailable from an empty board (outcome_trades = 0 rows, total_volume 0 on all 8 markets).",
+      "notes": "Corroborates 8583:127820 exactly: hero bottom 517, rail `Frame 644` 490 bottom 522, `Frame 643` 1202x1348 at y=570. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "8579-82267": {
       "section": "predict",
@@ -36710,9 +36710,9 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "[Skai > Predict - layout 2 ALT (1440 x 900px)] 1440x2842 desktop. Alternative 1440 layout of the consolidated grid (2842 tall - a full-scroll cut, not a viewport). Card 361x224 r24 gap24 pad16 measured here, consistent with the rest of the 1440 set.",
+      "notes": "The ALT layout, and it is a REAL divergence rather than a duplicate: `Frame 418` runs 1184 tall and `Prediction markets` is 738 wide beside it, not the 1202 the non-ALT cuts draw. Same hero and same 48 join. The narrow grid is RECORDED, NOT BUILT - the page draws the 1202 board the four other 1440 cuts draw. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "10097-220101": {
       "section": "predict",
@@ -36735,9 +36735,9 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "[Skai > Predict - layout 2 ALT (1440 x 900px)] 1440x2842 desktop. Alternative 1440 layout of the consolidated grid (2842 tall - a full-scroll cut, not a viewport). Card 361x224 r24 gap24 pad16 measured here, consistent with the rest of the 1440 set.",
+      "notes": "The same geometry as 3269:17599 to the pixel - hero 738x485 at y=32, rail 432x1184, `Prediction markets` 738x1338 at y=565. Same recorded-not-built note. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "10097-221576": {
       "section": "predict",
@@ -36791,7 +36791,7 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "MEASURED 2026-09-01. This is the frame that SETTLES the Predict content column: main 8610:163974 is x=58 y=92 w=1382 and holds Main container 738 at (90,32), Frame 418 432 at (860,32) - so a 738/432 two-column hero at a 32px gutter - then Prediction markets 1202x1338 at (90,565) VERTICAL gap 32 and the footer Frame 417 1202x18 at (90,2686). The code ships max-w-[1202px] and a grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,738fr)_minmax(0,432fr)], i.e. 1202 / 738 / 432 / 32, all four exact. TOP INSET: Main container opens at y=32 inside a main that starts under a 92-tall header, so 32 is right here and xl:py-8 is correct - the DASHBOARD screen's 24 is a different number on a different screen, which is why only that one moved this wave. HELD AT PARTIAL on card ARCHETYPES, unchanged from wave 3 and re-confirmed against the seven category frames: the frame's grid draws four card shapes and UnifiedMarketCard draws one, so the two-team three-odds sports card (564x142 r24 pad 16 gap 16 on 3445-64375) and the numeric-band card have no component. Also recorded: main is layoutMode NONE at this cut, so the 48px that falls between Main container (ends y=517) and Prediction markets (y=565) is a free placement, not a declared gap - and its 1VH twin 8583-127820 places the same two blocks 53 apart. Two frames, two numbers, so the code's gap-6 is not contradicted by either. TOPIC-CHIP ROW MEASURED AT ALL THREE BOARDS 2026-09-06. `nav` sets its chips in Manrope Regular at -4%: 12/14 at 375 (10509:18321, 10509:18905), 12/16 at 768 (10642:185403, 10642:186096), 14/18 at 1440 (8583:128113). The row shipped the 1440 pair flat. The LIVE tag is three size variants of `labels/tag` and its widths agree with them \u0014 10/14 at 48 wide (I10509:18327;786:162), 12/14 at 54 (I10642:185409;786:178), 11/14 at 52 (I8583:128119;786:171) \u0014 so the 768 label really is the largest of the three; its dot gap is 2 at 375 and 4 above, and the coral border, 9999 radius and 8/2 padding hold at all three. Every control was additionally floored to 44x44 by src/index.css:748-754 at and below 768, which puts a box back around the bare-text chips report e50e6d24 is about. Fixed 8b82adb, 8 cases in src/pages/predict/__tests__/curatedChipRowFigmaParity.test.tsx, 6 red against the old file. STILL partial: only the chip row and the reveal were re-read here. \"SHOW MORE MARKETS\" MEASURED AT ALL THREE BOARDS 2026-09-06, seven frames unanimous inside each cut: Mulish Regular on a constant 16px leading at -4%, 64% node opacity over an opaque paint, centred and full width, with the SIZE and the gap above it stepping \u0014 12 and 16 at 375 (10509:18823, 10597:73420), 14 and 16 at 768 (10642:185688, 10657:214414), 16 and 32 at 1440 (8610:164924, 3276:21835, 3538:24805, 3350:33861, 3358:35125). The gap is the parent frame's own itemSpacing, not a coordinate subtraction. Both pages shipped the 1440 pair flat. Fixed 7bb60c0, 8 cases in src/pages/predict/__tests__/predictShowMoreRamp.figmaParity.test.ts, 4 red against the old files. NAV-TO-GRID JOIN BUILT 2026-09-07 against the 32 this row records. PredictPage now draws `Prediction markets` as its own box (data-testid predict-markets-block) at gap-6 xl:gap-8, holding `Frame 403` - the heading row, the search field and the chip row, still on their own flat 24 - over the grid. The page column carried one flat gap-6, so the join under the chip row was 24 at every board. The FAQ 128 is unchanged: its 24 is still the column gap to this box. 9 cases in src/pages/predict/__tests__/predictMarketsBlockGap.figmaParity.test.tsx. STILL partial on the card archetypes this row already holds for.",
+      "notes": "The tall 1440 cut. Hero 738x485 at y=32, rail `Frame 418` 432x490, `Prediction markets` 1202x1338 at y=565, footer `Frame 417` 1202x18 at y=2686, and the FAQ opening 128 under the grid. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -37339,9 +37339,9 @@
       ],
       "status": "partial",
       "route": "/predict/market/:marketType/:marketId",
-      "notes": "[Skai > Predict > breaking > sample market 2 (1440 x 900px)] 1440x2477 desktop. Breaking-news market detail, 1440. DEMOTED from `done`: the verdict predates the 2026-08-26 measured-parity bar and records no numbers, so it cannot be re-checked. It was NOT contradicted - I found no evidence against it - but nothing in the row states a geometry, a type ramp or a colour, which is what `done` now requires.",
+      "notes": "Desktop cut of market 2. `main` holds Main container 738x400 at y=32, `Frame 402` 432x768 at x=860 itemSpacing 24, the lower Main container 738x1370 at y=480 itemSpacing 48, and `Frame 417` 1202x18 - the same 738 / 32 / 432 split the sample market frames draw. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. Same page shell as the sample market family and it agrees: 1440 `main` x=58 y=92 w=1382 with `Main container` 738 at x=90, `Frame 402` 432 at x=860 (738 + 32 + 432 = 1202) and the lower `Main container` at a declared itemSpacing 48; 768 `Frame 1196` x=30 y=110 w=708 and 375 x=16 w=343, both VERTICAL itemSpacing 24 over the six blocks Main container -> Order book - Predict -> Frame 430 -> section -> FAQ -> Frame 1191/1189. Related events is third at both narrow cuts and is now rendered there (commit de85231). HELD AT PARTIAL: the six block interiors are src/components/predict/**, and the `Up - long` ticket sheet the narrow cuts pin over the bottom nav is a ticket build that is still absent.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "3471-7251": {
       "section": "predict",
@@ -38419,7 +38419,7 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "MEASURED 2026-09-01, and it carries a 2px note worth recording. Frame 1190 at (16,100) - not (16,98) - under an 82-tall Header-mobile, so the top inset on THIS cut is 18 where the code draws 16 (py-4) and where the Dashboard 375 frames draw 16 exactly. Both root 375 frames agree on 100 and all four dashboard 375 frames agree on 98, so it is a family difference rather than a slip in one node; 2px on a page gutter is below the threshold this lane would move a shared container for, and it is recorded rather than chased. Everything else measures: 343 wide, VERTICAL gap 24 over Main container 343x406 (gap 12), Frame 1189 343x1492 (gap 24) at y=430 and Frame 1190 343x296 (gap 10) at y=1946; card 343x190 r12 pad 12 gap 12. Held at partial on card archetypes.",
+      "notes": "Mobile. Column `Frame 1190` 10202:109050 x=16 y=100 w=343 at itemSpacing 24 over Main container 406 / Frame 1189 1492 / Frame 1190 296. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -38444,7 +38444,7 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "The second 375 root cut and it measures identically to 10100-103339 node for node on the chrome: Frame 1190 at (16,100), 343 wide, VERTICAL gap 24, Main container 343x406 (gap 12) then Frame 1189 343x1492 (gap 24) at y=430 then Frame 1190 343x338 (gap 10) at y=1946; card 343x190 r12 pad 12 gap 12. The two differ only in the tail block's height (296 against 338), i.e. how much of the last section the crop shows. Same 18-versus-16 top-inset note and the same card-archetype hold.",
+      "notes": "The same three-block mobile column at itemSpacing 24, Main container 406 at y=0 and Frame 1189 at y=430. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -39646,7 +39646,7 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "MEASURED 2026-09-01. Frame 1190 10509:18309 at (16,98) under an 82-tall Header-mobile, 343 wide, VERTICAL gap 24 over Frame 1189 343x1294 (gap 24) and Frame 1191 343x296 (gap 10) at y=1318. Gutters 16 / 16 and a 24 column gap, which px-4 py-4 and gap-6 draw exactly. Card 343x190 r12 pad 12 at an 8px stack gap, unchanged from the wave-3 census. Held at partial on card archetypes and the unmeasured hero block. TOPIC-CHIP ROW MEASURED AT ALL THREE BOARDS 2026-09-06. `nav` sets its chips in Manrope Regular at -4%: 12/14 at 375 (10509:18321, 10509:18905), 12/16 at 768 (10642:185403, 10642:186096), 14/18 at 1440 (8583:128113). The row shipped the 1440 pair flat. The LIVE tag is three size variants of `labels/tag` and its widths agree with them \u0014 10/14 at 48 wide (I10509:18327;786:162), 12/14 at 54 (I10642:185409;786:178), 11/14 at 52 (I8583:128119;786:171) \u0014 so the 768 label really is the largest of the three; its dot gap is 2 at 375 and 4 above, and the coral border, 9999 radius and 8/2 padding hold at all three. Every control was additionally floored to 44x44 by src/index.css:748-754 at and below 768, which puts a box back around the bare-text chips report e50e6d24 is about. Fixed 8b82adb, 8 cases in src/pages/predict/__tests__/curatedChipRowFigmaParity.test.tsx, 6 red against the old file. STILL partial: only the chip row and the reveal were re-read here. \"SHOW MORE MARKETS\" MEASURED AT ALL THREE BOARDS 2026-09-06, seven frames unanimous inside each cut: Mulish Regular on a constant 16px leading at -4%, 64% node opacity over an opaque paint, centred and full width, with the SIZE and the gap above it stepping \u0014 12 and 16 at 375 (10509:18823, 10597:73420), 14 and 16 at 768 (10642:185688, 10657:214414), 16 and 32 at 1440 (8610:164924, 3276:21835, 3538:24805, 3350:33861, 3358:35125). The gap is the parent frame's own itemSpacing, not a coordinate subtraction. Both pages shipped the 1440 pair flat. Fixed 7bb60c0, 8 cases in src/pages/predict/__tests__/predictShowMoreRamp.figmaParity.test.ts, 4 red against the old files. `Frame 405` TAP FLOOR FIXED 2026-09-07. The heading cluster icons were floored to 44x44 by src/index.css:748-754 at and below 768, so the phone row could not close: 10509:18315 is 343x36 and 279 (the standing field 10509:18316) + 16 + 16 + 16 + 16 = 343 exactly, which needs a 16px glyph. The overflow came out of the flex-1 heading. Each icon now carries the sanctioned no-min-size with an out-of-flow 16 + 2x14 = 44 `before` box. 4 cases in src/pages/predict/__tests__/predictNavTapFloor.test.tsx.",
+      "notes": "Tall mobile cut, column x=16 y=98 w=343 at itemSpacing 24 over Frame 1189 1294 and Frame 1191 296. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -39905,7 +39905,7 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "The above-the-fold crop of 10509-18308: 375x812 against 1784, the same Frame 1190 343x1656 at (16,98), VERTICAL gap 24, over Frame 1189 343x1294 (gap 24) and Frame 1190 343x338 (gap 10). Same numbers, same open items. TOPIC-CHIP ROW MEASURED AT ALL THREE BOARDS 2026-09-06. `nav` sets its chips in Manrope Regular at -4%: 12/14 at 375 (10509:18321, 10509:18905), 12/16 at 768 (10642:185403, 10642:186096), 14/18 at 1440 (8583:128113). The row shipped the 1440 pair flat. The LIVE tag is three size variants of `labels/tag` and its widths agree with them \u0014 10/14 at 48 wide (I10509:18327;786:162), 12/14 at 54 (I10642:185409;786:178), 11/14 at 52 (I8583:128119;786:171) \u0014 so the 768 label really is the largest of the three; its dot gap is 2 at 375 and 4 above, and the coral border, 9999 radius and 8/2 padding hold at all three. Every control was additionally floored to 44x44 by src/index.css:748-754 at and below 768, which puts a box back around the bare-text chips report e50e6d24 is about. Fixed 8b82adb, 8 cases in src/pages/predict/__tests__/curatedChipRowFigmaParity.test.tsx, 6 red against the old file. STILL partial: only the chip row and the reveal were re-read here. \"SHOW MORE MARKETS\" MEASURED AT ALL THREE BOARDS 2026-09-06, seven frames unanimous inside each cut: Mulish Regular on a constant 16px leading at -4%, 64% node opacity over an opaque paint, centred and full width, with the SIZE and the gap above it stepping \u0014 12 and 16 at 375 (10509:18823, 10597:73420), 14 and 16 at 768 (10642:185688, 10657:214414), 16 and 32 at 1440 (8610:164924, 3276:21835, 3538:24805, 3350:33861, 3358:35125). The gap is the parent frame's own itemSpacing, not a coordinate subtraction. Both pages shipped the 1440 pair flat. Fixed 7bb60c0, 8 cases in src/pages/predict/__tests__/predictShowMoreRamp.figmaParity.test.ts, 4 red against the old files.",
+      "notes": "The 375 cut that opens at y=98 rather than the y=100 its two siblings draw - two blocks, Frame 1189 1294 and Frame 1190 338, itemSpacing 24. The 16 top inset the page draws sits with 10509:18308 and against 10100:103339 / 10202:110892, and is left unchanged: a 2px split across four cuts of one board is not a fix. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -39935,7 +39935,7 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "MEASURED 2026-09-01. Frame 1190 10642:185391 at (30,110) under an 86-tall Header-tablet, 708 wide, VERTICAL gap 24 over Frame 1191 708x1298 (gap 24) and Frame 1190 708x316 (gap 10) at y=1322. Page gutters 30 / 24 and a 24 column gap are what the screen ships (md:px-[30px] md:py-6, gap-6), all three exact at this width. Card census confirmed unchanged from wave 3: 350x190 r12 pad 12 stacked at an 8px parent gap. Held at partial on card archetypes and on the hero Main container block, which is not measured at this width by any wave. TOPIC-CHIP ROW MEASURED AT ALL THREE BOARDS 2026-09-06. `nav` sets its chips in Manrope Regular at -4%: 12/14 at 375 (10509:18321, 10509:18905), 12/16 at 768 (10642:185403, 10642:186096), 14/18 at 1440 (8583:128113). The row shipped the 1440 pair flat. The LIVE tag is three size variants of `labels/tag` and its widths agree with them \u0014 10/14 at 48 wide (I10509:18327;786:162), 12/14 at 54 (I10642:185409;786:178), 11/14 at 52 (I8583:128119;786:171) \u0014 so the 768 label really is the largest of the three; its dot gap is 2 at 375 and 4 above, and the coral border, 9999 radius and 8/2 padding hold at all three. Every control was additionally floored to 44x44 by src/index.css:748-754 at and below 768, which puts a box back around the bare-text chips report e50e6d24 is about. Fixed 8b82adb, 8 cases in src/pages/predict/__tests__/curatedChipRowFigmaParity.test.tsx, 6 red against the old file. STILL partial: only the chip row and the reveal were re-read here. \"SHOW MORE MARKETS\" MEASURED AT ALL THREE BOARDS 2026-09-06, seven frames unanimous inside each cut: Mulish Regular on a constant 16px leading at -4%, 64% node opacity over an opaque paint, centred and full width, with the SIZE and the gap above it stepping \u0014 12 and 16 at 375 (10509:18823, 10597:73420), 14 and 16 at 768 (10642:185688, 10657:214414), 16 and 32 at 1440 (8610:164924, 3276:21835, 3538:24805, 3350:33861, 3358:35125). The gap is the parent frame's own itemSpacing, not a coordinate subtraction. Both pages shipped the 1440 pair flat. Fixed 7bb60c0, 8 cases in src/pages/predict/__tests__/predictShowMoreRamp.figmaParity.test.ts, 4 red against the old files. `Frame 405` TAP FLOOR FIXED 2026-09-07. The heading cluster icons were floored to 44x44 by src/index.css:748-754 at and below 768, so the phone row could not close: 10509:18315 is 343x36 and 279 (the standing field 10509:18316) + 16 + 16 + 16 + 16 = 343 exactly, which needs a 16px glyph. The overflow came out of the flex-1 heading. Each icon now carries the sanctioned no-min-size with an out-of-flow 16 + 2x14 = 44 `before` box. 4 cases in src/pages/predict/__tests__/predictNavTapFloor.test.tsx.",
+      "notes": "The tall tablet cut, same column at itemSpacing 24 over `Frame 1191` 1298 and `Frame 1190` 316. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -39966,7 +39966,7 @@
       ],
       "status": "partial",
       "route": "/predict/all",
-      "notes": "The above-the-fold crop of 10642-185390, verified as a crop: 768x1024 against 1824, the same Frame 1190 708x1638 at (30,110) with the identical VERTICAL gap 24 over Frame 1191 708x1298 (gap 24) and Frame 1190 708x316 (gap 10). Same three gutter numbers - 30 / 24 / 24 - and the same open items. TOPIC-CHIP ROW MEASURED AT ALL THREE BOARDS 2026-09-06. `nav` sets its chips in Manrope Regular at -4%: 12/14 at 375 (10509:18321, 10509:18905), 12/16 at 768 (10642:185403, 10642:186096), 14/18 at 1440 (8583:128113). The row shipped the 1440 pair flat. The LIVE tag is three size variants of `labels/tag` and its widths agree with them \u0014 10/14 at 48 wide (I10509:18327;786:162), 12/14 at 54 (I10642:185409;786:178), 11/14 at 52 (I8583:128119;786:171) \u0014 so the 768 label really is the largest of the three; its dot gap is 2 at 375 and 4 above, and the coral border, 9999 radius and 8/2 padding hold at all three. Every control was additionally floored to 44x44 by src/index.css:748-754 at and below 768, which puts a box back around the bare-text chips report e50e6d24 is about. Fixed 8b82adb, 8 cases in src/pages/predict/__tests__/curatedChipRowFigmaParity.test.tsx, 6 red against the old file. STILL partial: only the chip row and the reveal were re-read here. \"SHOW MORE MARKETS\" MEASURED AT ALL THREE BOARDS 2026-09-06, seven frames unanimous inside each cut: Mulish Regular on a constant 16px leading at -4%, 64% node opacity over an opaque paint, centred and full width, with the SIZE and the gap above it stepping \u0014 12 and 16 at 375 (10509:18823, 10597:73420), 14 and 16 at 768 (10642:185688, 10657:214414), 16 and 32 at 1440 (8610:164924, 3276:21835, 3538:24805, 3350:33861, 3358:35125). The gap is the parent frame's own itemSpacing, not a coordinate subtraction. Both pages shipped the 1440 pair flat. Fixed 7bb60c0, 8 cases in src/pages/predict/__tests__/predictShowMoreRamp.figmaParity.test.ts, 4 red against the old files.",
+      "notes": "Tablet. `Frame 1190` x=30 y=110 w=708 at itemSpacing 24 over two blocks, 1298 and 316. No hero pair is drawn at this width, which is why the 48 is `xl:` only. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. The 1440 board runs `main` x=58 y=92 w=1382 with the content column at x=90 w=1202, the hero pair 738 at x=90 and 432 at x=860 for a 32 gutter, and the footer `Frame 417` x=90 w=1202 stating the same 1202 outright; 768 puts `Frame 1190` at x=30 y=110 w=708 under an 86-tall Header-tablet and 375 at x=16 w=343 under an 82-tall Header-mobile, VERTICAL itemSpacing 24 on both. ONE DELTA FOUND AND FIXED at 1440 (commit 21586ea): the join under the hero pair is 48, not the page column 24 - 8583:127820 opens `Frame 403` at y=570 and 8583:131053 its grid at 570, both 48 clear of the 490-tall rail, while 8610:163972, 3269:17599 and 10097:220101 open at 565, 48 clear of the 485-tall hero. Five 1440 cuts, no 24 in that join. Carried as `xl:mb-6` on the hero box so the column keeps the 24 the FAQ 128 is derived from; predictMarketsBlockGap.figmaParity.test.tsx asserts both halves. HELD AT PARTIAL: the hero card, the insights rail, `Frame 403` and the card grid are src/components/predict/**, which this file only positions.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -42011,9 +42011,9 @@
       ],
       "status": "partial",
       "route": "/predict/market/:marketType/:marketId",
-      "notes": "[Skai > Predict > sample market 2 - full (375x812px)] 375x812 mobile. Venue-generic market detail. Routed and rendering, reflows to one column. NOT composed or diffed at this width this wave. The frame centres on an 11-row asks/bids book with Last and Spread which cannot render - both HIP-4 venues are CPMM, so OrderBookPanel ships an honest no-order-book notice plus the pool reserves. Related events are filled with Solana 5min, Dogecoin 30min and Tron 15min, a market type no venue implements.",
+      "notes": "The tall mobile cut, and the control that settles the strip: NO `Frame 391`, column back at y=98, itemSpacing 24 over 568 / 42 / 244 / 570 / 190 / 296. Strip present in the scrolled 1VH cuts and absent here is what binds it to scroll rather than to the board. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. Same page shell as the sample market family and it agrees: 1440 `main` x=58 y=92 w=1382 with `Main container` 738 at x=90, `Frame 402` 432 at x=860 (738 + 32 + 432 = 1202) and the lower `Main container` at a declared itemSpacing 48; 768 `Frame 1196` x=30 y=110 w=708 and 375 x=16 w=343, both VERTICAL itemSpacing 24 over the six blocks Main container -> Order book - Predict -> Frame 430 -> section -> FAQ -> Frame 1191/1189. Related events is third at both narrow cuts and is now rendered there (commit de85231). HELD AT PARTIAL: the six block interiors are src/components/predict/**, and the `Up - long` ticket sheet the narrow cuts pin over the bottom nav is a ticket build that is still absent.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "10654-198325": {
       "section": "predict",
@@ -42146,9 +42146,9 @@
       ],
       "status": "partial",
       "route": "/predict/market/:marketType/:marketId",
-      "notes": "[Skai > Predict > sample market 2 1VH (768 x 1024px)] 768x1024 tablet. Venue-generic market detail. Routed and rendering, reflows to one column. NOT composed or diffed at this width this wave. The frame centres on an 11-row asks/bids book with Last and Spread which cannot render - both HIP-4 venues are CPMM, so OrderBookPanel ships an honest no-order-book notice plus the pool reserves. Related events are filled with Solana 5min, Dogecoin 30min and Tron 15min, a market type no venue implements.",
+      "notes": "`Frame 1196` x=30 y=110 w=708 itemSpacing 24 over 554 / 43 / 244 / 608 / 162 / 316 - order book collapsed at 43, `Frame 430` third, same sequence as the sample market cuts. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. Same page shell as the sample market family and it agrees: 1440 `main` x=58 y=92 w=1382 with `Main container` 738 at x=90, `Frame 402` 432 at x=860 (738 + 32 + 432 = 1202) and the lower `Main container` at a declared itemSpacing 48; 768 `Frame 1196` x=30 y=110 w=708 and 375 x=16 w=343, both VERTICAL itemSpacing 24 over the six blocks Main container -> Order book - Predict -> Frame 430 -> section -> FAQ -> Frame 1191/1189. Related events is third at both narrow cuts and is now rendered there (commit de85231). HELD AT PARTIAL: the six block interiors are src/components/predict/**, and the `Up - long` ticket sheet the narrow cuts pin over the bottom nav is a ticket build that is still absent.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "10654-200390": {
       "section": "predict",
@@ -42173,9 +42173,9 @@
       ],
       "status": "partial",
       "route": "/predict/market/:marketType/:marketId",
-      "notes": "[Skai > Predict > sample market 2 - market 1VH (1440 x 900px)] 768x1024 desktop. Family \"sample market 2\". CATALOG CORRECTION: 10654-200390 is TITLED \"(1440 x 900px)\" and the registry therefore records device=desktop, but the frame is 768x1024 - it is a TABLET cut. Identify by geometry, not by the viewport in the title.",
+      "notes": "THE FRAME TITLE IS WRONG ABOUT ITS BOARD and this row inherited it: the node measures 768x1024 and carries a Header-tablet and a Bottom-navigation-tablet, not 1440x900. Measured as the tablet cut it actually is - `Frame 1196` x=30 y=110 w=708 itemSpacing 24 over the same six blocks as 10654:199581, plus a full-frame 768x1024 `Overlay` for the order-type menu. No desktop verdict is claimed off this node. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. Same page shell as the sample market family and it agrees: 1440 `main` x=58 y=92 w=1382 with `Main container` 738 at x=90, `Frame 402` 432 at x=860 (738 + 32 + 432 = 1202) and the lower `Main container` at a declared itemSpacing 48; 768 `Frame 1196` x=30 y=110 w=708 and 375 x=16 w=343, both VERTICAL itemSpacing 24 over the six blocks Main container -> Order book - Predict -> Frame 430 -> section -> FAQ -> Frame 1191/1189. Related events is third at both narrow cuts and is now rendered there (commit de85231). HELD AT PARTIAL: the six block interiors are src/components/predict/**, and the `Up - long` ticket sheet the narrow cuts pin over the bottom nav is a ticket build that is still absent.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "n-a"
     },
     "10594-60147": {
       "section": "predict",
@@ -42200,9 +42200,9 @@
       ],
       "status": "partial",
       "route": "/predict/market/:marketType/:marketId",
-      "notes": "[Skai > Predict > sample market 2 1VH (375x812px)] 375x812 mobile. Venue-generic market detail. Routed and rendering, reflows to one column. NOT composed or diffed at this width this wave. The frame centres on an 11-row asks/bids book with Last and Spread which cannot render - both HIP-4 venues are CPMM, so OrderBookPanel ships an honest no-order-book notice plus the pool reserves. Related events are filled with Solana 5min, Dogecoin 30min and Tron 15min, a market type no venue implements.",
+      "notes": "Mobile 1VH, and it draws a PINNED STRIP: `Frame 391` 375x68 at y=82, fill #001615, a 1px #123F3C rule on the bottom side alone, pad 12/16 - the same shell as `Frame 423` on the sample market scroll cut, one row taller because its content block is 44 rather than 40. The column sits at y=82 and runs under it. That shell is now built (commit b93654b, MarketScrollBar.tsx); the interior here is a 215-wide identity column plus a 72x16 stat cluster rather than the countdown pair, and is not yet built. LANE predict-pg, wave 36. MEASURED LIVE via the plugin API on this node. Same page shell as the sample market family and it agrees: 1440 `main` x=58 y=92 w=1382 with `Main container` 738 at x=90, `Frame 402` 432 at x=860 (738 + 32 + 432 = 1202) and the lower `Main container` at a declared itemSpacing 48; 768 `Frame 1196` x=30 y=110 w=708 and 375 x=16 w=343, both VERTICAL itemSpacing 24 over the six blocks Main container -> Order book - Predict -> Frame 430 -> section -> FAQ -> Frame 1191/1189. Related events is third at both narrow cuts and is now rendered there (commit de85231). HELD AT PARTIAL: the six block interiors are src/components/predict/**, and the `Up - long` ticket sheet the narrow cuts pin over the bottom nav is a ticket build that is still absent.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "10594-57610": {
       "section": "predict",
@@ -65578,9 +65578,9 @@
       ],
       "status": "partial",
       "route": "/:username",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session. The sheet numbers are carried from status.wave27.social-profile.tsv:60, and 9640:214568 is the record for the column: the `controls` row is the sheet first block and spans it, measuring 764. WHAT CHANGED: the sheet drew its 1px #123F3C edge as a CSS `border`, which under border-box is additive to the padding, so the column resolved 762 - two short - and every child that splits it inherited the error. Figma states the stroke INSIDE, which costs the column nothing, so the edge is now `outline outline-1 outline-offset-[-1px]`: same pixel, same radius, no layout, and the primitive own shadow untouched. ORACLE ProfileSheets.column.figma.test.tsx resolves outer minus twice the padding minus twice the border from the declared class list at 375, 768 and 1440 for both sheets; restoring the border reddens all eight cases. STAYS partial on what wave 27 already named and this lane did not touch: the nav draws a third tab, Suggested, that no proc and no loader can answer, and the two shipped tab labels carry a count the frame does not draw.",
+      "notes": "MEASURED FIRST-HAND. Sheet 9640:214566 796x460 r32 pad 24/16 gap 16 AUTO, #122524 under a 1px INSIDE #123F3C; controls 9640:214568 764x22, placeholder Manrope Regular 16/22 at 74pct node opacity; Frame 466 9640:214573 764x50 with a 34-tall nav; Frame 404 9640:214578 63x22 r4 pad 2/8 holding ONE tab, Holders, Manrope Regular 14/18; rows 9640:214584 764x38 pad 4/16. WHAT CHANGED: the nav row ended after the chip, so CTA/button 9640:214581 - 140x34 FIXED, radius 8 on #001615, pad 8/16, label Recent Manrope Regular 14/18, 16x16 caret 16 off the right edge - had no element at all. It is built, and the order its label states is the order the list is in: social_token_holdings returns amount beside first_bought_at and created_at and the sheet reads one token's holders unpaginated, so a client sort is exact rather than the reverse of a page. No dropdown-holders exists in the file, so the open panel borrows dropdown-followers/following's 250x30 box. ORACLE HoldersModal.sort.figma.test.tsx resolves the trigger box per board from the declared class list; pinning 140 to 120 reddens the 1440 case and the whole file reddens against the pre-change component. STAYS partial ON THE ROW'S TRAILING CONTROL: 9640:214590 is a 70x30 r8 #56C7F3 Follow pill and the row ships a share-of-supply badge in that slot instead. Closing it needs a currentUserId on the mount in src/pages/account/UserProfile.tsx, which this partition does not own.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "5120-201706": {
       "section": "social",
@@ -66147,7 +66147,7 @@
       ],
       "status": "partial",
       "route": "/messages",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session; the geometry is carried verbatim from status.wave10.social-profile.tsv:16, which read it first-hand. CARRIED GEOMETRY, 10213:136686: 163 wide, rows 147x30, Manrope Regular 14/18 ls -4pct #FFFFFF, panel r12 gap 8 pad 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW r12 0,4 @0.24, first row washed #123F3C. WHAT CHANGED: The anchor pinned the COMPACT width and the `sm` scale at every viewport, so the desktop panel drew the phone box. It now resolves both against the board in force - ACCOUNT 163/160/160 and MESSAGE 218/200/200 at md/sm/xs - and SocialTridotsMenu.ramp.figma.test.tsx asserts the panel resolved inline width and the row resolved leading at 1440, 768 and 375. Mutation-proved: pinned back to 200 and `sm`, five of the six board cases redden, and the one that stays green is the 768 MESSAGE frame, which is the single board the old constant happened to fit. STAYS partial ON THE MOUNT, not the pixels: buildAccountTridotsItems, buildMessageTridotsItems and SocialTridotsMenu still have no caller in src/ outside the barrel and their own specs.",
+      "notes": "RE-READ FIRST-HAND and it matches the value wave 35 carried, so this row is no longer second-hand: 163x130, three rows 147x30 r4 pad 6/8, Manrope Regular 14/18 at -4pct #FFFFFF, panel r12 pad 8 gap 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW radius 12 offset 0,4 at 0.24; first row washed #123F3C; labels Create a group, Go live, a line, Open my profile. Its board is Desktop - x=32561 is 227 left of the Desktop band opening at 32788, which is where every panel in this family is parked relative to the screen it annotates. Nothing in the geometry moved. STAYS partial ON THE MOUNT, not the pixels: buildAccountTridotsItems, buildMessageTridotsItems and SocialTridotsMenu still have no caller in src/ outside the barrel and their own specs, and the mount sites are account and messages surfaces this partition does not own.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -66175,7 +66175,7 @@
       ],
       "status": "partial",
       "route": "/messages",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session; the geometry is carried verbatim from status.wave10.social-profile.tsv:17, which read it first-hand. CARRIED GEOMETRY, 11530:303299: 160 wide, rows 144x28, Manrope Regular 12/16 ls -4pct #FFFFFF, panel r12 gap 8 pad 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW r12 0,4 @0.24, first row washed #123F3C. WHAT CHANGED: The anchor pinned the COMPACT width and the `sm` scale at every viewport, so the desktop panel drew the phone box. It now resolves both against the board in force - ACCOUNT 163/160/160 and MESSAGE 218/200/200 at md/sm/xs - and SocialTridotsMenu.ramp.figma.test.tsx asserts the panel resolved inline width and the row resolved leading at 1440, 768 and 375. Mutation-proved: pinned back to 200 and `sm`, five of the six board cases redden, and the one that stays green is the 768 MESSAGE frame, which is the single board the old constant happened to fit. STAYS partial ON THE MOUNT, not the pixels: buildAccountTridotsItems, buildMessageTridotsItems and SocialTridotsMenu still have no caller in src/ outside the barrel and their own specs.",
+      "notes": "RE-READ FIRST-HAND, matching the carried value exactly: 160x124, rows 144x28 r4 pad 6/8, Manrope Regular 12/16 at -4pct #FFFFFF, panel r12 pad 8 gap 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW radius 12 offset 0,4 at 0.24, first row washed #123F3C. Its board is Tablet - x=37438 is 260 left of the Tablet band opening at 37698. The width and the leading both step against the 163/14-18 Desktop copy, which is why the panel resolves both against the board in force rather than pinning one. STAYS partial on the mount, as above.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -66203,7 +66203,7 @@
       ],
       "status": "partial",
       "route": "/messages",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session; the geometry is carried verbatim from status.wave10.social-profile.tsv:18, which read it first-hand. CARRIED GEOMETRY, 11530:303318: 160 wide, rows 144x28, Manrope Regular 12/14 ls -4pct #FFFFFF, panel r12 gap 8 pad 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW r12 0,4 @0.24, first row washed #123F3C. WHAT CHANGED: The anchor pinned the COMPACT width and the `sm` scale at every viewport, so the desktop panel drew the phone box. It now resolves both against the board in force - ACCOUNT 163/160/160 and MESSAGE 218/200/200 at md/sm/xs - and SocialTridotsMenu.ramp.figma.test.tsx asserts the panel resolved inline width and the row resolved leading at 1440, 768 and 375. Mutation-proved: pinned back to 200 and `sm`, five of the six board cases redden, and the one that stays green is the 768 MESSAGE frame, which is the single board the old constant happened to fit. STAYS partial ON THE MOUNT, not the pixels: buildAccountTridotsItems, buildMessageTridotsItems and SocialTridotsMenu still have no caller in src/ outside the barrel and their own specs.",
+      "notes": "RE-READ FIRST-HAND, matching the carried value exactly: 160x124, rows 144x28 r4 pad 6/8, Manrope Regular 12/14 at -4pct #FFFFFF, same panel chrome and the same washed first row. Its board is Mobile - x=40227 is 260 left of the Mobile band opening at 40487. 12/14 against the Tablet copy's 12/16 at the same 160 width is the leading step alone, and it is a ramp rather than drift because it moves on all three menus in this family at once. STAYS partial on the mount, as above.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -66231,7 +66231,7 @@
       ],
       "status": "partial",
       "route": "/messages/:conversationId",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session; the geometry is carried verbatim from status.wave10.social-profile.tsv:19, which read it first-hand. CARRIED GEOMETRY, 10215:137653: 218 wide, rows 202x30, Manrope Regular 14/18 ls -4pct #FFFFFF, panel r12 gap 8 pad 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW r12 0,4 @0.24, first row washed #123F3C. WHAT CHANGED: The anchor pinned the COMPACT width and the `sm` scale at every viewport, so the desktop panel drew the phone box. It now resolves both against the board in force - ACCOUNT 163/160/160 and MESSAGE 218/200/200 at md/sm/xs - and SocialTridotsMenu.ramp.figma.test.tsx asserts the panel resolved inline width and the row resolved leading at 1440, 768 and 375. Mutation-proved: pinned back to 200 and `sm`, five of the six board cases redden, and the one that stays green is the 768 MESSAGE frame, which is the single board the old constant happened to fit. STAYS partial ON THE MOUNT, not the pixels: buildAccountTridotsItems, buildMessageTridotsItems and SocialTridotsMenu still have no caller in src/ outside the barrel and their own specs.",
+      "notes": "RE-READ FIRST-HAND: 218x206, five rows 202x30 r4 pad 6/8, Manrope Regular 14/18 at -4pct, panel r12 pad 8 gap 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW radius 12 offset 0,4 at 0.24; Reply washed #123F3C, then Forward and Copy text message, a line, then Delete for me and Delete for everyone. WHAT THE RE-READ FOUND: BOTH delete rows are filled #FB3324 at 0.14 under their #FF574A labels, and the shipped row carried the label colour and no ground at all. That fill is not the roving cursor - two delete rows are washed at once here, and 10216:182394 washes its first row #123F3C and its last row red simultaneously - so the green cursor wash and its hover are now kept off a danger row as well. ORACLE SocialMenu.figma.test.tsx walks all nine catalogued frames and asserts the ground on the red rows and its absence on the rest; dropping the fill reddens it. STAYS partial on the mount, as above.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -66259,7 +66259,7 @@
       ],
       "status": "partial",
       "route": "/messages/:conversationId",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session; the geometry is carried verbatim from status.wave10.social-profile.tsv:20, which read it first-hand. CARRIED GEOMETRY, 11530:303337: 200 wide, rows 184x28, Manrope Regular 12/14 ls -4pct #FFFFFF, panel r12 gap 8 pad 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW r12 0,4 @0.24, first row washed #123F3C. WHAT CHANGED: The anchor pinned the COMPACT width and the `sm` scale at every viewport, so the desktop panel drew the phone box. It now resolves both against the board in force - ACCOUNT 163/160/160 and MESSAGE 218/200/200 at md/sm/xs - and SocialTridotsMenu.ramp.figma.test.tsx asserts the panel resolved inline width and the row resolved leading at 1440, 768 and 375. Mutation-proved: pinned back to 200 and `sm`, five of the six board cases redden, and the one that stays green is the 768 MESSAGE frame, which is the single board the old constant happened to fit. STAYS partial ON THE MOUNT, not the pixels: buildAccountTridotsItems, buildMessageTridotsItems and SocialTridotsMenu still have no caller in src/ outside the barrel and their own specs.",
+      "notes": "RE-READ FIRST-HAND: 200x196, five rows 184x28 r4 pad 6/8, Manrope Regular 12/14 at -4pct, same chrome, and both Delete rows again #FF574A on #FB3324 at 0.14. Its board is Mobile - x=40187 is 300 left of the Mobile band opening at 40487, which is what separates it from the 12/16 Tablet copy at the identical 200x196 box. Ground shipped and pinned as above. STAYS partial on the mount, as above.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -66287,7 +66287,7 @@
       ],
       "status": "partial",
       "route": "/messages/:conversationId",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session; the geometry is carried verbatim from status.wave10.social-profile.tsv:21, which read it first-hand. CARRIED GEOMETRY, 11530:303366: 200 wide, rows 184x28, Manrope Regular 12/16 ls -4pct #FFFFFF, panel r12 gap 8 pad 8 #122524 under a 1px INSIDE #123F3C with DROP_SHADOW r12 0,4 @0.24, first row washed #123F3C. WHAT CHANGED: The anchor pinned the COMPACT width and the `sm` scale at every viewport, so the desktop panel drew the phone box. It now resolves both against the board in force - ACCOUNT 163/160/160 and MESSAGE 218/200/200 at md/sm/xs - and SocialTridotsMenu.ramp.figma.test.tsx asserts the panel resolved inline width and the row resolved leading at 1440, 768 and 375. Mutation-proved: pinned back to 200 and `sm`, five of the six board cases redden, and the one that stays green is the 768 MESSAGE frame, which is the single board the old constant happened to fit. STAYS partial ON THE MOUNT, not the pixels: buildAccountTridotsItems, buildMessageTridotsItems and SocialTridotsMenu still have no caller in src/ outside the barrel and their own specs.",
+      "notes": "RE-READ FIRST-HAND: 200x196, five rows 184x28 r4 pad 6/8, Manrope Regular 12/16 at -4pct, same panel chrome, same washed first row, and the SAME #FB3324-at-0.14 ground on both Delete rows - so the red ground is not a Desktop-only flourish, it is on the frame at every board. Its board is Tablet - x=37398 is 300 left of the Tablet band opening at 37698. The ground is now shipped and pinned by SocialMenu.figma.test.tsx. STAYS partial on the mount, as above.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -66315,7 +66315,7 @@
       ],
       "status": "partial",
       "route": "/messages",
-      "notes": "MEASURED ALL AXES 2026-09-06 AND THE PANEL IS AT PARITY. 218x206 at x=32506, which is 282 left of the Desktop band opening at 32788. Five items 202x30 radius 4 HORIZONTAL gap 8 pad 6/8/6/8, glyph 16 at x=8, label at x=32, line 202 wide at y=160 fencing the destructive tail. TYPE Manrope Regular 14/18 ls -4pct #FFFFFF except Delete conversation, #FF574A on the icon AND the text = tone danger, and skai-red DEFAULT is red 300 #FF574A. Row 0 washed #123F3C. Panel r12 gap 8 pad 8 #122524 / #123F3C w1 INSIDE / DROP_SHADOW r12 0,4 @0.24. STAYS partial ON THE TRIGGER: SocialMenu has no mount site on /messages, so nothing opens this panel at any width. Now pinned by SocialMenu.figma.test.tsx.",
+      "notes": "RE-READ FIRST-HAND: 218x206, five rows 202x30 r4 pad 6/8, Manrope Regular 14/18, panel pad 8 gap 8, line at row four; Open in a new tab washed #123F3C, then Mark as unread, Mute conversation, Pin conversatiuon (the file's own typo, not a label), a line, then Delete conversation. WHAT CHANGED: Delete conversation is filled #FB3324 at 0.14 under its #FF574A label and shipped with no ground. THIS IS THE FRAME THAT PROVES THE FILL IS NOT THE CURSOR - its FIRST row is washed #123F3C and its LAST row washed red in the same drawing, and a roving cursor can only be in one place. The green wash and its hover are now kept off a danger row, because green over the red ground composites to a colour no frame contains. ORACLE SocialMenu.figma.test.tsx, across all nine frames. STAYS partial on the trigger, which wave 33 already named: nothing in src/ right-clicks a conversation row to open this panel.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -66343,7 +66343,7 @@
       ],
       "status": "partial",
       "route": "/messages",
-      "notes": "MEASURED, AND THIS IS THE FRAME THAT SETTLES THE RAMP. x=40187 is 300 left of the Mobile band opening at 40487, so it is the 375 drawing and its 768 twin is 11387-73530 - not two copies of one board. Same 200x196 box, same five 184x28 rows, same line at y=152, same fills; the labels are Manrope Regular 12/14 here against 12/16 there. Wave 17 read the same two frames and called the 2px board drift; the x bands say it is a breakpoint. The panel now ships 12/14 at this board. STAYS partial on the trigger, and at 375 a right-click has no touch equivalent, so the drawn panel has no way to open at all.",
+      "notes": "RE-READ FIRST-HAND: 200x196, five rows 184x28, Manrope Regular 12/14 against the Tablet copy's 12/16 at the identical box, and Delete conversation again #FF574A on #FB3324 at 0.14. Its board is Mobile - x=40187 is 300 left of the Mobile band opening at 40487. Ground shipped and pinned as above. STAYS partial on the trigger, and doubly so here: at 375 a right-click has no touch equivalent, so the drawn panel has no way to open at this board at all.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -66371,7 +66371,7 @@
       ],
       "status": "partial",
       "route": "/messages",
-      "notes": "MEASURED, AND ITS BOARD IS 768 - x=37398 is 300 left of the Tablet band opening at 37698. 200x196, five items 184x28, glyph at x=8, label at x=32, line 184 wide at y=152, Manrope Regular 12/16 with Delete conversation at #FF574A. Same chrome as 10216-182394. Same never-mounted finding.",
+      "notes": "RE-READ FIRST-HAND: 200x196, five rows 184x28, Manrope Regular 12/16, same five labels in the same order, same line position, and Delete conversation again #FF574A on a #FB3324-at-0.14 ground. Its board is Tablet - x=37398 is 300 left of the Tablet band opening at 37698. The ground is now shipped and pinned by SocialMenu.figma.test.tsx. STAYS partial on the trigger, as above.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -68263,7 +68263,7 @@
       ],
       "status": "partial",
       "route": "/social/groups",
-      "notes": "SHELL RE-MEASURED 2026-09-06 AND EVERY SHELL VALUE MATCHES. 442x1003 at x=45666 Desktop band: cornerRadius 24, VERTICAL, padding 24 on all four sides, fill #122524 at 0.8, stroke #123F3C w1 INSIDE, BACKGROUND_BLUR r40 and DROP_SHADOW r80 = rounded-[12px] lg:rounded-[24px], p-3 md:p-5 lg:p-6, bg-green-coal-200/80, border-green-coal-100, backdrop-blur-[20px] (Figma's blur radius is twice the CSS value), shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)]. Frame 344 itemSpacing 16 = the header-to-body gap. CTA 394x62 radius 16 pad 20/40 gap 10 fill #56C7F3 = GroupFormSheet's lg:h-[62px] lg:rounded-[16px] lg:px-10 on bg-[#56c7f3]. STAYS partial BECAUSE THE FRAME IS WIDER THAN THE SHELL: it also draws the whole create-group form - avatar picker, name and description fields, the Access type radio group and the Visible statistics list - and none of that interior was measured this pass. The shell is not the frame.",
+      "notes": "MEASURED FIRST-HAND. 442x1003 r24 pad 24 gap 32 SPACE_BETWEEN, fill #122524 at 0.8, stroke #123F3C 1px at position INSIDE, BACKGROUND_BLUR 40 (= 20 in CSS) and DROP_SHADOW radius 80 offset 0,10 #000000 at 0.25. Its one child column Frame 344 5198:63615 measures 394 - the panel less 24 either side and nothing more - and CTA/button 5198:63719 is 394x62 r16 pad 20/40 with a Manrope Regular 16/22 label. WHAT CHANGED: the shell drew that INSIDE stroke as a CSS border, which under border-box is additive to the padding, so the column resolved 392 and the w-full CTA inside it inherited the two pixels. The edge is now outline outline-1 outline-offset-[-1px]: same pixel, same radius, no layout, and the radius-80 shadow untouched. ORACLE SocialRightMenu.column.figma.test.tsx resolves outer minus twice the padding minus twice the border from the declared class list at 375, 768 and 1440; restoring the border reddens four of its five cases. STAYS partial on copy the server cannot keep, which wave-era notes already recorded and this lane did not touch: the Invite-only lede's second clause (there is no join-request model) and the Token-gated lede's deposit clause (no fee column, no treasury, no payment call).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -68291,7 +68291,7 @@
       ],
       "status": "partial",
       "route": "/social/groups",
-      "notes": "SHELL RE-MEASURED 2026-09-06. 442x1565 at x=46208 Desktop band, and it is 5198-63614 with the Token-gated radio SELECTED: identical radius 24, padding 24, fill #122524@0.8, stroke #123F3C w1, blur 40, shadow r80, Frame 344 gap 16 and CTA 394x62 r16 pad 20/40 - only the body's height differs, because the disclosed branch adds an entry-token field, an entry amount card and a Rules textarea. Same partial and the same reason: the disclosed interior is unmeasured.",
+      "notes": "MEASURED FIRST-HAND at 442x1565 - the same panel as 5198:63614 with the Token-gated radio selected, which discloses the entry-token field, the entry-amount card and the Rules textarea; the chrome above and below is identical, which is why one shell serves both. Same correction as its sibling: the #123F3C edge is an INSIDE stroke and was shipped as a CSS border, costing the 394 column two pixels and the CTA with it. ORACLE SocialRightMenu.column.figma.test.tsx. STAYS partial on the Token-gated lede, whose second clause promises joining by depositing SKAI - there is no fee column, no treasury table and no payment call, and check_token_gated_access enforces the social-token-holding half only.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -70843,7 +70843,7 @@
       ],
       "status": "partial",
       "route": "/social/groups",
-      "notes": "SHELL RE-MEASURED 2026-09-06. 359x880 at x=51491 Mobile band: radius 12, padding 12, section gap 32 at the panel (inert - SPACE_BETWEEN with two children), Frame 344 gap 16, fill #122524@0.8, stroke #123F3C w1 INSIDE, blur 40, shadow r80, CTA 335x44 radius 12 pad 14/16 gap 12 on #56C7F3 = w-[359px] p-3 rounded-[12px] and h-11 rounded-[12px] px-4. The 44 is also the global touch floor at this width (index.css:748-754), so the two agree rather than fight. STAYS partial: the create-group interior was not measured this pass.",
+      "notes": "MEASURED FIRST-HAND. 359x880 r12 pad 12 gap 32, fill #122524 at 0.8 under a 1px INSIDE #123F3C, BACKGROUND_BLUR 40, DROP_SHADOW radius 80 offset 0,10 at 0.25; column Frame 344 11398:81313 is 335 and CTA/button 11398:81426 is 335x44 r12 pad 14/16 gap 12 with a Manrope Regular 14/16 label. THE BOARD IS 375: x=51491 is past the Mobile band opening at 51001. WHAT CHANGED: the shell's CSS border resolved this column 333 and the CTA with it, against a frame that states 359 - 12 - 12 = 335 exactly; the edge is now an outline at a -1px offset. ORACLE SocialRightMenu.column.figma.test.tsx reddens on four of five cases if the border comes back. STAYS partial on the Invite-only lede's request-to-join clause, which no table and no member status can serve.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -70871,7 +70871,7 @@
       ],
       "status": "partial",
       "route": "/social/groups",
-      "notes": "SHELL RE-MEASURED 2026-09-06. 359x1320 at x=51950 Mobile band, the token-gated state of 11398-81312: same radius 12, padding 12, Frame 344 gap 16, fill, stroke, blur and shadow, same CTA 335x44 r12 pad 14/16. Only the body height differs. Same partial and the same reason.",
+      "notes": "MEASURED FIRST-HAND at 359x1320, x=51950 - the same 375 panel as 11398:81312 with a taller body, not a second design. Same box, same INSIDE stroke, same 335 column, same 335x44 CTA. The height difference is content: the frames simply grow when a branch opens (1003 to 1565 at 1440), which on a real viewport has to become a scroll region under a pinned CTA, and that is what the shell builds. Same border-to-outline correction and the same oracle. STAYS partial on the same lede clause as its twin.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -71795,7 +71795,7 @@
       ],
       "status": "partial",
       "route": "/social/groups",
-      "notes": "SHELL RE-MEASURED 2026-09-06, AND IT IS THE TABLET DRAWING - x=48794 sits in the Tablet band opening at 47926, which is what makes the shell's middle step measurable at all. 442x1460: radius 12 (not the Desktop 24), padding 20, Frame 344 gap 16, fill #122524@0.8, stroke #123F3C w1 INSIDE, blur 40, shadow r80, CTA 402x50 radius 12 pad 16/24 gap 10 on #56C7F3 = md:w-[442px] md:p-5 and md:h-[50px] md:px-6, with rounded-[12px] held from the base. Width 442 and radius 12 crossing at this board is the whole reason the shell needs three steps and not two. STAYS partial: interior unmeasured.",
+      "notes": "MEASURED FIRST-HAND. 442x1460 r12 pad 20 gap 32, same fill, same INSIDE #123F3C stroke, same blur and shadow as the 1440 pair; column Frame 344 11398:88651 is 402 and CTA/button 11398:88819 is 402x50 r12 pad 16/24, label Manrope Regular 14/18. THE BOARD IS 768: x=48794 sits between the Tablet band opening at 47926 and the Mobile band at 51001. Note the panel is 442 at BOTH 768 and 1440 and only the padding and radius step, so md:w-[442px] is right and the ramp is in p-3/md:p-5/lg:p-6 and rounded-[12px]/lg:rounded-[24px]. WHAT CHANGED: the border-to-outline correction on the shell, which is what makes this column 402 rather than 400 and the CTA 402 rather than 400. ORACLE SocialRightMenu.column.figma.test.tsx plus the shell assertions in GroupFormSheet.figma.test.tsx. STAYS partial on the Token-gated deposit clause.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -74002,9 +74002,9 @@
       ],
       "status": "partial",
       "route": "/:username",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session. The sheet numbers are carried from status.wave27.social-profile.tsv:60, and 11474:219898 is the record for the column: the `controls` row is the sheet first block and spans it, measuring 330. WHAT CHANGED: the sheet drew its 1px #123F3C edge as a CSS `border`, which under border-box is additive to the padding, so the column resolved 328 - two short - and every child that splits it inherited the error. Figma states the stroke INSIDE, which costs the column nothing, so the edge is now `outline outline-1 outline-offset-[-1px]`: same pixel, same radius, no layout, and the primitive own shadow untouched. ORACLE ProfileSheets.column.figma.test.tsx resolves outer minus twice the padding minus twice the border from the declared class list at 375, 768 and 1440 for both sheets; restoring the border reddens all eight cases. STAYS partial on what wave 27 already named and this lane did not touch: the nav draws a third tab, Suggested, that no proc and no loader can answer, and the two shipped tab labels carry a count the frame does not draw.",
+      "notes": "MEASURED FIRST-HAND. Sheet 11474:219896 354x442 r16 pad 24/12 gap 16 AUTO; controls 11474:219898 330x18; Frame 466 11474:219903 330x48 with a 32-tall nav - the one board where the nav row is not 34; Frame 404 11474:219907 63x20 r4 pad 2/8, label Holders Manrope Regular 14/16; rows 11474:219912 330x36 pad 4/8, Follow pill 70x28. WHAT CHANGED: CTA/button 11474:219909 - 104x32, radius 8 on #001615, pad 8/16, gap 12, label Recent Manrope Regular 14/16 plus a 16x16 icons/action - was not built. ORACLE HoldersModal.sort.figma.test.tsx pins 104x32 and the 14/16 ramp here against 100x34 and 14/18 from 768. STAYS partial on the same trailing control.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "11474-218943": {
       "section": "social",
@@ -75820,9 +75820,9 @@
       ],
       "status": "partial",
       "route": "/:username",
-      "notes": "CARRIED, NOT RE-READ - the Figma MCP was down all session. The sheet numbers are carried from status.wave27.social-profile.tsv:60, and 11474:217870 is the record for the column: the `controls` row is the sheet first block and spans it, measuring 424. WHAT CHANGED: the sheet drew its 1px #123F3C edge as a CSS `border`, which under border-box is additive to the padding, so the column resolved 422 - two short - and every child that splits it inherited the error. Figma states the stroke INSIDE, which costs the column nothing, so the edge is now `outline outline-1 outline-offset-[-1px]`: same pixel, same radius, no layout, and the primitive own shadow untouched. ORACLE ProfileSheets.column.figma.test.tsx resolves outer minus twice the padding minus twice the border from the declared class list at 375, 768 and 1440 for both sheets; restoring the border reddens all eight cases. STAYS partial on what wave 27 already named and this lane did not touch: the nav draws a third tab, Suggested, that no proc and no loader can answer, and the two shipped tab labels carry a count the frame does not draw.",
+      "notes": "MEASURED FIRST-HAND. Sheet 11474:217868 448x456 r16 pad 24/12 gap 16 AUTO; controls 11474:217870 424x18, placeholder Manrope Regular 14/18; Frame 466 11474:217875 424x50, nav 34 tall; Frame 404 11474:217879 63x22 r4 pad 2/8, label Holders 14/18; rows 11474:217884 424x38 pad 4/8, Follow pill 70x30. WHAT CHANGED: CTA/button 11474:217881 - 100x34, radius 8 on #001615, pad 8/16, label Recent Manrope Regular 14/18 - was not built. 100 is the frame's own arithmetic here (16 pad + 44 label + 8 gap + 16 glyph + 16 pad) against a FIXED 140 at 1440 and 104 at 375, so the widths do not run with the board and one pinned number cannot serve them. The trigger now resolves all three, and the right padding is 32 because the caret is out of flow. ORACLE HoldersModal.sort.figma.test.tsx; pinning 100 to 104 reddens this board's case. STAYS partial on the same trailing control as its 1440 twin.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "11474-216811": {
       "section": "social",
@@ -106333,11 +106333,11 @@
         "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/launchpad",
-      "notes": "Launch 1440, above the fold. Launch page type ramp MEASURED at all three widths: h1 32 / h2 24 / market-cap 22 / ticker 14 / meta 11 / body 14 at 1440; h2 18 / MC 16 / ticker 12 / meta 10 / body 12 at 768; h2 18 / MC 14 / ticker 12 / meta 10 / body 12 at 375. Trending-card pitch 331 / 276 / 208. Code-side per-element type was NOT compared, so this is frame numbers on record, not parity.",
+      "notes": "MEASURED LIVE on this node, nine properties, and the code-side comparison row 86 of status.wave3.verify-trade2.tsv said had never been done is now done. Header row Frame 337 13006:146236 is HORIZONTAL gap 8; title cluster Frame 345 13006:146238 gap 16 holding the h1 13006:146240 at 32/36 Manrope Light -4% and Frame 373 13006:146241 at gap 8 over 32px circles (pitch 40); CTA 13006:146258 158x36 radius 8 with the label 14/18. Trending row Frame 456 13006:146274 gap 8 over the card 13006:146276 at 323.5x300, radius 24, pad 16, inner gap 16, image box 156. Markets Frame 604 13006:146464 gap 32 vertical over Row 13006:146465 gap 16 with 3 cards of 428.7, each card 13006:146466 an image 124 square at radius 8 plus a text column 16 away. All nine resolve at this board in src/pages/Launchpad.tsx.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-147486": {
       "section": "trade-2",
@@ -106569,9 +106569,9 @@
       ],
       "status": "done",
       "route": "/launchpad",
-      "notes": "[ROUTE-COL] [scope:in-scope] [was: done vs not-started vs partial] ATTRIBUTION ARTIFACT, not a lane disagreement. WRONG ROWS: status.trade-2.components.tsv:4, status.wave2.launch-components.tsv:8 - these put the PARENT SCREEN id in the ROUTE column (col 4 of the tsv), so the ledger reads them as verdicts on this frame. Measured: status.trade-2.components.tsv writes a node id into route on 151 of 189 rows, creator-rewards-charts 12/12, launch-components 11/14 - 174 rows total. Their real subject is the bracketed id in col 1 or col 5. Verdict taken from the row that actually keys this frame. ALSO: WRONG ROW: status.trade-2.launch.tsv:5 (subject 13006-151520) - the row's own SUBJECT is a different node, and it names this frame only as the container of, contrast to, or precedent for that subject. Subject read by the catalog's two stated conventions: an id in the family column, else an id opening the reason ('node 9640-213001 - ...'). A containment reference indexed as a verdict.",
+      "notes": "MEASURED LIVE: the same nine values as 13006:146233 read off this full-scroll cut - h1 32/36, CTA 13006:150372 158x36 r8, trending row 13006:150388 gap 8 over a 323.5 card, markets rows 124 tall on a 156 pitch. The board is one screen at two crops and the numbers confirm it rather than assume it.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-151520": {
       "section": "trade-2",
@@ -106593,11 +106593,11 @@
         "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/launchpad",
-      "notes": "Launch 1440 full scroll, third node. CONFIRMED byte-identical to 13006:150346 by fingerprint - same 1304 nodes, 285 texts, and identical type ramp, radius, fill, padding and gap histograms. Dedupe candidate confirmed by measurement.",
+      "notes": "MEASURED LIVE on its own node this wave rather than carried on the byte-identical fingerprint wave3 row 88 recorded: h1 32/36, title gap 16, chain gap 8 over 32px circles, CTA 13006:151546 158x36 r8, trending row gap 8 over card 13006:151564 at 323.5x300 r24 pad 16, markets Frame 603 13006:151746 gap 32 with 3 columns 16 apart. Every value equals 13006:150346, so the dedupe candidacy now rests on a measurement of both.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-152694": {
       "section": "trade-2",
@@ -106619,11 +106619,11 @@
         "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/launchpad",
-      "notes": "Launch 1440 full scroll, fourth node. MEASURED 1552 nodes / 298 texts against 150346's 1304/285 - NOT a duplicate; the extra mass is the Trench scroller (the #ffbd16 / 9999-radius chip cluster) replacing the market ticker. This is the variant the app mounts.",
+      "notes": "MEASURED LIVE. NOT a duplicate - wave3 row 89 is right that the bottom strip is the Trench scroller rather than the ticker - but every measured value matches the other 1440 cuts: h1 32/36, title gap 16, chain gap 8, CTA 13006:152720 158x36 r8, trending row gap 8 over card 13006:152738 323.5x300 r24 pad 16 gap 16, markets 13006:152926 gap 32 with 3 columns. The variant differs in what it mounts at the foot, not in the page geometry, and the app mounts this one.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-154151": {
       "section": "trade-2",
@@ -112488,9 +112488,9 @@
       ],
       "status": "done",
       "route": "/launchpad",
-      "notes": "[ROUTE-COL] [scope:in-scope] [was: done vs not-started vs partial] ATTRIBUTION ARTIFACT, not a lane disagreement. WRONG ROWS: status.trade-2.components.tsv:130, status.wave2.launch-components.tsv:9 - these put the PARENT SCREEN id in the ROUTE column (col 4 of the tsv), so the ledger reads them as verdicts on this frame. Measured: status.trade-2.components.tsv writes a node id into route on 151 of 189 rows, creator-rewards-charts 12/12, launch-components 11/14 - 174 rows total. Their real subject is the bracketed id in col 1 or col 5. Verdict taken from the row that actually keys this frame.",
+      "notes": "MEASURED LIVE: the full-scroll tablet cut carries the same numbers as 13006:279872 - CTA 13006:278979 140x36 r8, markets stack 13006:279185 gap 16 with rows 708x124 on a 140 pitch, two 346 cards per row. One component, confirmed by reading both crops rather than by assuming.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-279872": {
       "section": "trade-2",
@@ -112512,11 +112512,11 @@
         "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/launchpad",
-      "notes": "Launch 768 above the fold. MEASURED 970 nodes / 191 texts, ramp 12x115 10x47 14x19 16x5. Launch page type ramp MEASURED at all three widths: h1 32 / h2 24 / market-cap 22 / ticker 14 / meta 11 / body 14 at 1440; h2 18 / MC 16 / ticker 12 / meta 10 / body 12 at 768; h2 18 / MC 14 / ticker 12 / meta 10 / body 12 at 375. Trending-card pitch 331 / 276 / 208. Code-side per-element type was NOT compared, so this is frame numbers on record, not parity.",
+      "notes": "MEASURED LIVE, and this is the board that was wrong. Nine properties hung off md:, which fires AT 768, so the tablet drew the 1440 page. Read here: title cluster Frame 345 13006:279876 gap 8 not 16; h1 13006:279878 24/28 not 32/36; Frame 373 13006:279879 gap 4 over 32px circles (pitch 36) not gap 8; CTA 13006:279896 140x36 not 158; trending row 13006:279913 gap 16 over card 13006:279914 260x280 radius 12 pad 12 - NOT the 268 that 276-8 produces, because this row declares its own 16; markets Frame 1307 13006:279185 gap 16 not 32 over 2 columns of 346 16 apart, each card 13006:279188 an image 124 plus a text column 8 away not 16. Fixed in Launchpad.tsx and LaunchMarketCard.tsx; src/pages/launchpadTypeRamp.figma.test.ts resolves each value AT this board and 17 of its assertions fail against the pre-fix page across three negative-control runs.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-280789": {
       "section": "trade-2",
@@ -112538,11 +112538,11 @@
         "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/launchpad",
-      "notes": "Launch 375 above the fold. MEASURED 637 nodes / 126 texts, ramp 12x86 10x28 14x8. Launch page type ramp MEASURED at all three widths: h1 32 / h2 24 / market-cap 22 / ticker 14 / meta 11 / body 14 at 1440; h2 18 / MC 16 / ticker 12 / meta 10 / body 12 at 768; h2 18 / MC 14 / ticker 12 / meta 10 / body 12 at 375. Trending-card pitch 331 / 276 / 208. Code-side per-element type was NOT compared, so this is frame numbers on record, not parity.",
+      "notes": "MEASURED LIVE. Frame 337 13006:280791 turns VERTICAL at gap 16 - the nav is the second row, and only here - over Frame 345 13006:280793, which keeps the CTA on the title row at x=231. Title cluster Frame 1308 13006:280795 gap 8, h1 13006:280796 20/24, Frame 373 13006:280797 gap 4 over 24px circles (pitch 28), CTA 130x32 r8. Trending row 13006:280830 gap 8 over card 13006:280832 200x250 r12 pad 8 gap 8, image 128. The 32px CTA is what the frame draws; index.css lifts it to the 44px touch floor below 768 and that floor is left alone.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-281378": {
       "section": "trade-2",
@@ -112564,11 +112564,11 @@
         "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/launchpad",
-      "notes": "Launch 375, second node. MEASURED 643 nodes / 126 texts and 4 top-level children against 13006:280789's 637 / 126 / 7 - the delta is exactly the three scroll-affordance rectangles, confirming the prior lane's read.",
+      "notes": "MEASURED LIVE on its own node, not inherited from 13006:280789: h1 20/24, title gap 8, chain gap 4 over 24px circles, CTA 13006:281393 130x32 r8, trending row gap 8 over card 13006:281421 200x250 r12 pad 8, markets 13006:281620 gap 16 with the card's image and text 8 apart. Every value equals 13006:280789, which is the dedupe claim wave3 row 93 made on a node count, made here on the geometry.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-281970": {
       "section": "trade-2",
@@ -112618,9 +112618,9 @@
       ],
       "status": "done",
       "route": "/launchpad",
-      "notes": "[ROUTE-COL] [scope:in-scope] [was: done vs not-started vs partial] ATTRIBUTION ARTIFACT, not a lane disagreement. WRONG ROWS: status.trade-2.components.tsv:131, status.wave2.launch-components.tsv:10 - these put the PARENT SCREEN id in the ROUTE column (col 4 of the tsv), so the ledger reads them as verdicts on this frame. Measured: status.trade-2.components.tsv writes a node id into route on 151 of 189 rows, creator-rewards-charts 12/12, launch-components 11/14 - 174 rows total. Their real subject is the bracketed id in col 1 or col 5. Verdict taken from the row that actually keys this frame.",
+      "notes": "MEASURED LIVE: mobile full scroll. CTA 13006:282597 130x32 r8, h1 20/24, trending cards 200x250 on a 208 pitch, markets Frame 1307 13006:282818 gap 16 with one 346 card per row, card 13006:282819 an image 124 square at r8 plus a text column 8 away. The 124+8+214=346 arithmetic closes here and at 768, against 124+16+288.7=428.7 at 1440, which is what settles the market card gap as a step rather than a constant.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-283168": {
       "section": "trade-2",
