@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:38:47.419Z",
+  "generated": "2026-09-08T08:44:59.324Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -94147,13 +94147,14 @@
       ],
       "implFiles": [
         "modules/skai-gaming/src/components/play/games/crash/TowerStackerPro.tsx (+ crash/tower/); page shell modules/skai-gaming/src/pages/play/TowersPage.tsx (72 lines, RoutedGamePage wrapper); rail points-game tower_start/tower_pick/tower_climb/tower_cashout",
-        "modules/skai-gaming/src/pages/play/TowersPageSections.tsx"
+        "modules/skai-gaming/src/pages/play/TowersPageSections.tsx",
+        "modules/skai-gaming/src/components/play/games/crash/TowerStackerPro.tsx"
       ],
       "status": "partial",
       "route": "/play/towers",
-      "notes": "SAME SHAPE AS FORTUNE WHEEL AND THE SAME EVIDENCE. TowersPageSections.tsx is 44 lines, carries no radius, and delegates the ten regions to PlayGameDetailSections, whose radii are pixel literals. The row's `every named-class radius lands ONE STEP LARGE` therefore has no site left on this page. NOT READ THIS PASS: everything else the row measured off the 1440 DOM, and no node was opened.",
+      "notes": "ONE REGION OF THIS COLUMN MEASURED AND CLOSED, NAMED SO THE REST IS NOT READ AS COVERED. The bet panel 9079:2060 was walked node by node on the Plugin API 2026-09-08 - 356x621 at pad 16 / gap 16 / radius 16, six blocks at y 16 / 74 / 180 / 262 / 330 / 388, every inset card 42 (10120:11832, 10120:11864, 10120:11744, 9079:2111), CTA 9079:2107 324x52 at radius 16, values Mulish Regular 14 on an 18 line, labels Manrope Regular 12 on a 16 line - and the shipped panel matches all of it, now that the 356 numbers are addressed as one cut rather than as the panel only opinion. NOT READ THIS PASS: the board panel 9079:2121, the page column below the game block, and everything the previous note left open. skai-gaming 64b46292",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "M6r9FEn042UWTQD1zvy6GM:9391-19737": {
       "section": "towers",
@@ -94559,7 +94560,7 @@
       ],
       "status": "partial",
       "route": "/play/towers",
-      "notes": "TWO OF ITS ROWS FIXED, TWO DELIBERATELY UNBUILT. Fixed: the Manual|Auto track 10250:15211 returns `bg-[#001615] flex gap-[4px] items-center p-[4px] rounded-[12px]` with cards 156x34 at x=4 and x=164; the code carried p-1 and NO gap, so two flex-1 chips split the whole 316 and rendered 158 wide and flush - now gap-1, which makes 4+156+4+156+4 close on the 324 column. Also fixed: the selected card is `rounded-[var(--rounded-xl,12px)]` and the other `rounded-[10px]`; both shipped at 10. Confirmed on all four rows that draw this control - 10250:15211, 10250:15195, 10130:15021, 10130:14931 - which agree on 156x34 at x=4/x=164. The header comment claiming 158x34 at x=4/x=162 was reading the COMPONENT back, not Figma, and is corrected. NOT built: this frame is the AUTO panel, so its Number of Bets row 10130:13993 and its Advanced disclosure 10130:14006 have no runner behind them (an autobet Towers round needs a tile-selection rule and a bank-at floor and neither the frames nor either settlement contract states one). skai-gaming 1ed7d1b",
+      "notes": "RE-MEASURED LIVE 2026-09-08 and unchanged: 356x621, pad 16, gap 16, r16, children at y 16 (tabs 10250:15211 324x42), 74 (amount 10130:13736 90, field row 10130:13739 42), 180 (Difficulty 10130:13771 66, card 42), 262 (Number of Bets 10130:13993 66, card 42), 344 (Advanced 10130:14006 24), 384 (CTA 10130:13784 52). THIS IS THE AUTO PANEL, NOT THE MANUAL ONE. The desktop MANUAL panel is 9079:2060, measured this wave for the first time as a whole: same 356x621 / 16 / 16 / 16, tabs 9079:2061 at 16, amount 10120:11828 at 74, Difficulty 10120:11734 at 180, CTA 9079:2107 at 262, Random Pick 10120:11744 at 330, Potential Profit 9079:2108 at 388, every card 42 and every value Mulish 14/18. That is the cut the panel now draws at and above 1024 and inside the dialog, and only there - below the hinge on the route it draws 10130:14273 347 cut instead. STILL PARTIAL for this frame own Number of Bets and Advanced rows, which are the ungated AUTO form. skai-gaming 64b46292",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -94638,13 +94639,14 @@
       ],
       "implFiles": [
         "modules/skai-gaming/src/components/play/games/crash/TowerStackerPro.tsx (+ crash/tower/); page shell modules/skai-gaming/src/pages/play/TowersPage.tsx (72 lines, RoutedGamePage wrapper); rail points-game tower_start/tower_pick/tower_climb/tower_cashout",
-        "modules/skai-gaming/src/pages/play/TowersPageSections.tsx"
+        "modules/skai-gaming/src/pages/play/TowersPageSections.tsx",
+        "modules/skai-gaming/src/components/play/games/crash/TowerStackerPro.tsx"
       ],
       "status": "partial",
       "route": "/play/towers",
-      "notes": "MEASURED 375 2026-08-26: column 333 vs Figma bento 347 (-14); no horizontal overflow; page title 24/300/lh24 vs Figma 20 Light/lh24; details heading 24/400/lh28 vs Figma 18 Regular/lh22 -- the mobile type ramp is not implemented, the desktop sizes are reused.",
+      "notes": "THE 375 BET PANEL IS MEASURED AND BUILT; THE 375 BOARD CARD IS MEASURED AND NOT. Walked live 2026-09-08: main 10130:14174 375x1604, bento 10130:14182 347 wide, Frame 271 10130:14183 holding the board wrapper 10130:14758 (347x410, r12) at y=0 and the bet panel 10130:14273 (347x456) at y=418. PANEL, CLOSED: pad 12 on a 12 corner, gap 16, content 323, order CTA 10130:14274 / Random Pick 10130:15075 / amount 10130:14275 / Difficulty 10130:15061 / Potential Profit 10130:15079 / Manual|Auto 10130:14333, bet field row 10130:14278 40, Difficulty card 10130:15063 38, Random Pick and Potential Profit cards 42, CTA corner 12, values Mulish 12/14 except the Potential Profit amount, which stays 14/18 because 10130:15083 measures 18 where 10130:15064 measures 14. The ladder closes on the frame own 456. All of it now ships below the 1024 hinge - see 10130-14946 for the oracle and the mutation proof. BOARD, MEASURED AND UNFIXED, stated rather than guessed: the card inside 10130:14758 is 10130:14759 at 307x349.212, pad 10.233, radius 5.117, stroke 1.352, gap 10.233, which is the 1440 card 10120:8434 (454x516.425, pad 15.133, radius 7.567, stroke 2, gap 15.133) at a UNIFORM 0.67621 - all five ratios agree to five decimals, and both cards hold nine rows. TowerBoard.tsx draws the 1440 card fixed pixels at every width with only max-w-full clamping it, so at 375 the tiles go wide and squat instead of scaling. Not fixed here because scale-to-fit does NOT reproduce the frame number - 10130:14758 leaves a 20px gutter each side, so the frame 0.676 is 307/454 and a fit against the app own container is not, and a mechanism whose parity claim cannot be pinned is worse than a recorded measurement. NOT READ THIS PASS: the 333-vs-347 column and the mobile type ramp this row already carried, both of which live in pages/play, outside this lane files. skai-gaming 64b46292",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "M6r9FEn042UWTQD1zvy6GM:10130-15152": {
       "section": "towers",
@@ -94694,7 +94696,7 @@
       ],
       "status": "partial",
       "route": "/play/towers",
-      "notes": "The Advanced-ON mobile twin of 10130-14946; same 347/315/16 shell and the same three-axis mobile band, and its Manual|Auto row 10130:14931 measures 324x42 with cards 156x34 at x=4/x=164, which is the fourth of the four rows the seam fix was read off. Unbuilt for the same two reasons: the auto form has no runner, and the mobile type/height band has no container-relative signal to switch on",
+      "notes": "The Advanced-ON twin of 10130-14946 and it takes the same fix: the 347 cut - CTA first, tabs last, pad 12 on a 12 corner, bet field 40, Difficulty select 38, CTA corner 12, value type Mulish 12/14 - now ships wherever the route column is below 1024, resolved once in useTowerPanelDevice rather than by a viewport prefix that would also fire inside the fixed-size dialog. Its own Manual|Auto row 10130:14931 is 324x42 inside a 347 frame, the same overrun that decides the pad against the assembled 10130:14273. STILL PARTIAL, and for a reason no measurement can close: this frame is the Advanced-ON AUTO form (On Win / On Loss / Stop on Win / Stop on Loss) and an automatic Towers round has no specified tile-selection rule or bank-at floor, so the fields are deliberately not drawn rather than wired to nothing. NOT RE-OPENED THIS WAVE - the band was read off its closed twin 10130:14946 and the assembled 10130:14273, both of which were. skai-gaming 64b46292",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -94723,7 +94725,7 @@
       ],
       "status": "partial",
       "route": "/play/towers",
-      "notes": "MOBILE BAND MEASURED, NOT IMPLEMENTED - reported rather than guessed. 347 wide, pad 16, content 315, block gap 16 throughout. Against desktop 10130:13720 it differs on three axes: value type is Sm/Numbers 4 300 Mulish 12/14 tracking -0.48px (desktop is Lg/Numbers 4 300 Mulish 14/18 tracking -0.56px, which is what TOWER_VALUE ships at every width); the bet-amount card is 40 tall and the Difficulty and Number-of-Bets cards 38, against 42 for all three on desktop; and the CTA is FIRST (y=16) with Manual|Auto LAST (y=385.33), inverting the desktop order. Its Manual|Auto row 10130:15021 is nonetheless still 324 wide inside a 347 frame, i.e. left unresized by the designer. Not implemented because the panel has no container-relative signal to switch on: a `lg:` viewport prefix would also fire inside the modal path, where DialogContent is a fixed 1024x880 box carrying transform:scale and the panel is 356 CSS px wide on a phone. Needs a prop from TowerStackerPro (which knows isRoute), which is a bigger change than this lane could finish and prove",
+      "notes": "THE MOBILE BAND THIS ROW REPORTED AS MEASURED-NOT-IMPLEMENTED IS NOW BUILT, and the pad it recorded is CORRECTED. Re-read live 2026-09-08 on the Plugin API: 10130:14946 is 347x621, pad 16, gap 16, r16, with CTA 10130:14947 FIRST at y=16, amount 10130:14951 88 tall (field row 40), Difficulty 10130:15094 62 (card 10130:15096 38), Number of Bets 10130:15122 (card 38), Advanced 10130:15018 24, and the Manual|Auto row 10130:15021 LAST at y=388 - and that row is 324 wide inside a 347 frame, so 16+324+16 = 356 OVERRUNS the frame around it. The assembled 375 panel 10130:14273 is 347x456 at pad 12 on a 12 corner with a 323 tab row, 12+323+12 = 347 closes, and its whole ladder closes on 456 to the pixel (12+52+16+42+16+88+16+62+16+66+16+42+12). So the 347 cut ships pad 12 / radius 12 and this artboard reads as a 356 design cropped to 347 without reflowing. The two frames AGREE on everything else and all of it now ships: value type Mulish 12/14 (10130:15102 against desktop 10120:11870 at 14/18), bet field 40, Difficulty select 38, CTA corner 12, and the CTA-first / tabs-last inversion. The cut is resolved once in useTowerPanelDevice from the layout prop plus a 1024 hinge; the dialog stays pinned to the 356 cut because DialogContent is a fixed 1024x880 box holding the panel at 356 on a phone. ORACLE towerPanelDeviceBand.test.tsx, 23 cases at 375/768/1023/1024/1440 on both containers, asserted against literals transcribed from the node reads rather than against towerTheme - the first draft asserted the constants and PASSED with pad reverted to 16. Proved red three ways: device pinned to desktop 12 red, TOWER_PANEL_NARROW pad reverted to 16 5 red including the ladder reading 464 against 456, mobile order reverted to the desktop one 4 red. STILL PARTIAL: Number of Bets and the Advanced disclosure are the AUTO form, which has no runner - a Towers autobet needs a tile-selection rule and a bank-at floor and neither the frames nor either settlement contract states one. skai-gaming 64b46292",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
