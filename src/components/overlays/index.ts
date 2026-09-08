@@ -17,8 +17,6 @@ export * from "./spectator-overlay";
 export * from "./waitlist-modal";
 export * from "./wallet-choice-modal";
 export * from "./email-verification-modal";
-// App sign-in (Figma 2086:29529) — the step BEFORE email-verification-modal.
-export * from "./email-auth-modal";
 export * from "./auth-provider-icons";
 // Sign-in provider marks and the wallet row (Login ALT 10734:74595 / Sign up ALT 10734:74426).
 export * from "./auth-wallet-icons";
