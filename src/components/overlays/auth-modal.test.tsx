@@ -132,6 +132,19 @@ describe("dismissal", () => {
   });
 
   /**
+   * A Google popup the user closes without answering never rejects, so the
+   * parent holds `loading` until its own timeout. The X has to stay live
+   * through that, the way Escape always has.
+   */
+  it("closes from the X while a handshake is in flight", () => {
+    const props = setup({ loading: true });
+    const close = screen.getByRole("button", { name: "Close" });
+    expect(close).not.toBeDisabled();
+    fireEvent.click(close);
+    expect(props.onClose).toHaveBeenCalledTimes(1);
+  });
+
+  /**
    * The drag-release regression (bug 232862b0): a click's target is the
    * nearest common ancestor of press and release, so pressing inside the
    * email field and releasing over the backdrop delivers a click whose

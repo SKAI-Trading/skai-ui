@@ -218,11 +218,14 @@ export function AuthModal({
           >
             {isSignup ? "Sign up" : "Login"}
           </h2>
+          {/* Never gated on `loading`: a social popup the user closed without
+              answering leaves the handshake pending for up to the parent's
+              safety timeout, and a locked X strands them there. Escape has
+              always worked during that window; this is the same door. */}
           <button
             type="button"
             onClick={onClose}
-            disabled={loading}
-            className="absolute right-0 top-1/2 flex h-4 w-4 -translate-y-1/2 items-center justify-center text-white transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-50"
+            className="absolute right-0 top-1/2 flex h-4 w-4 -translate-y-1/2 items-center justify-center text-white transition-opacity hover:opacity-70"
             aria-label="Close"
           >
             <CloseIcon className="h-4 w-4" />

@@ -1,17 +1,17 @@
 /**
  * Shared social-auth provider glyphs.
  *
- * Extracted from `waitlist-modal.tsx` so the sign-in modal (`email-auth-modal`)
- * and the waitlist modal draw the SAME Google and Apple marks. They were
- * previously defined privately inside the waitlist modal; a second private copy
- * in the sign-in modal is exactly how two buttons that are meant to be identical
- * drift apart.
+ * `AppleIcon` is what `auth-modal.tsx` draws. `GoogleIcon` is the monochrome
+ * mark from the older Sky Blue outlined buttons: the sign-in modal that used
+ * it is gone and `waitlist-modal.tsx`, its last caller, is itself no longer
+ * mounted by any app, so inside this repo it survives only through the
+ * Storybook preview. It is exported for that and for any consumer outside this
+ * repo; `auth-modal.tsx` uses `GoogleBrandIcon` below instead.
  *
- * Both marks are monochrome and take their colour from the caller (Google's
- * paths are pinned to Sky Blue because the Figma sign-in frame 2086:29544
- * composites the full-colour mark down to a single #56C7F3 via mix-blend; Apple
- * uses `currentColor`). Do NOT restore Google's brand colours here without
- * checking the frame — the buttons in both modals are outlined Sky Blue.
+ * `GoogleIcon`'s paths are pinned to Sky Blue because the Figma sign-in frame
+ * 2086:29544 composites the full-colour mark down to a single #56C7F3 via
+ * mix-blend; Apple takes `currentColor`. Do NOT restore Google's brand colours
+ * on `GoogleIcon` — the button behind it is outlined Sky Blue.
  */
 
 import * as React from "react";
