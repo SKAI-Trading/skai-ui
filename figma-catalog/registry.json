@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:47:13.235Z",
+  "generated": "2026-09-08T08:49:58.712Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -102073,7 +102073,7 @@
       ],
       "status": "partial",
       "route": "/",
-      "notes": "CASEY DECISION, DO NOT IMPLEMENT. 1440x900 board, Main container 28467 680x1124 at x380 - taller than the 900 board, so the streaks screen scrolls. Banner internals measured: copy block 28469 640x50 at 24,16 gap8, heading 28470 Manrope 202x24; stats block 28472 640x148 at 24,90 gap16; tile row 28473 640x64 gap10; a 40x40 r9999 pill 28476 filled #ff7e50@0.24; \"2-day streak\" 28482 88x16. The 24px inset and the 640 content width put this card at 688 outer, i.e. the 680 column plus its own 4px bleed - worth checking before anyone implements. Held for the same open question as 13008-28652: the app renders the day-1 state only and paints it #001615, and which of the two skins is correct is not a lane call.",
+      "notes": "MEASURED AT ALL THREE WIDTHS AND THE PHONE RESTRUCTURE IS NOW BUILT. The badge row was the last open geometry on this family and it was a SHAPE, not a number: 13008:43470 breaks the row that 13008:42644 and 13008:28490 keep whole. At 375 the medallion is 48 (13008:43492) carrying only the title beside it on a 12 gutter across a 262 row (13008:43522); 13008:43527 puts the bar and footer back out to the full 322 content width 16 below, 8 apart rather than the column's 10; 13008:43536 gives the rewards CTA a row of its own, left-aligned, 16 below that. Above 375 it is a 64 medallion on a 10 gutter with title, bar and footer stacked 10 apart in one column and the CTA pinned right on the footer line. The row shipped the wide shape flat, so the phone drew a 64 medallion and a 262 bar. It is a two-column grid now, medallion in column 1 spanning both rows from 768 up, and streakBadgeRowRamp pins 48/64/64, gutter 12/10/10, rows 16/10/10 and bar-to-footer 8/10/10 plus the placement, proved red on a flat 64 and again on a block left in column 2. The 20days chip stays unbuilt: 13008:43524 is opacity 0, as on the other two boards. CARD SHELL RE-READ AND UNCHANGED - it takes the HOME boards, which are the ones with a route: 13008:40896 p12 r12, 13008:39378 p12/12/12/20 r12, 13008:27000 p16/16/16/24 r24, and the shipped card matches all three; the root gap 16 is Frame 405's, the gap between the stat row and the badge row, not the streaks card's 24 which separates a headline stack this card does not draw. HELD PARTIAL on the same three rulings and no change to any of them: the card fill, the row-1 shape (headline over a two-up stat row here against one 201 box beside the headline), and the second stat tile three reports asked to remove. There is still no streaks route. At this width the card is 680x254 r24 p16/16/16/24 V g24, copy block 50 at gap 8 over Frame 405 (V g16: stat row 640x64, badge row 13008:28490 640x68 H g10).",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "partial"
     },
@@ -102152,10 +102152,10 @@
         "modules/skai-wallet/src/components/SwapModal.tsx"
       ],
       "status": "done",
-      "route": "/ -> openModal('swap')",
-      "notes": "MEASURED @1440: column 680 vs frame 680; sheet title 32/Light/36 = frame. Venue is the CLOB, not an AMM.",
+      "route": "/",
+      "notes": "RE-MEASURED WHOLE THIS PASS AND IT HOLDS - a done row that someone actually opened. Main container 680 at x381 y104 on a 16 gap under the 56 header, which is FEATURE_SHEET_PT 48 plus SHELL_HEADER_PX 56. Frame 345: back control 24, 10 to the title group, title Manrope Light 32/36, gear 28, title group padded 16 right. Frame 346 680x564 r24 p16 gap 48 over a 648 content column; Frame 355 gap 24; sell and buy cards 648x132 r16 p16 4 apart with the 40 flip disc on the seam; inside each, Frame 277 gap 16 puts the label row over an amount-plus-balance group at gap 8, and the Balance pair sits at gap 8 with the label Manrope 14/18 and the figure Mulish 14/18 at 64 percent; CTA 648x64 r16. Every value is what SwapModal.tsx draws. swapSheetContainerRamp is new this pass and pins the container half of it; swapCardTypeRamp already held the runs.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13008-28886": {
       "section": "wallet-2",
@@ -103673,10 +103673,10 @@
         "modules/skai-wallet/src/components/SwapModal.tsx"
       ],
       "status": "done",
-      "route": "/ -> openModal('swap')",
-      "notes": "MEASURED @768: column 580 vs frame 580; sheet title 24/Light/28 = frame. Venue is the CLOB, not an AMM.",
+      "route": "/",
+      "notes": "RE-MEASURED WHOLE THIS PASS AND IT HOLDS - a done row that someone actually opened. Main container 580 at x94 y76 on a 16 gap under the 52 header, which is FEATURE_SHEET_PT 24 plus SHELL_HEADER_PX 52. Frame 345: back control 24, 10 to the title group, title Manrope Light 24/28, gear 28, title group padded 16 right. Frame 346 580x468 r12 p12 gap 20 over a 556 content column; Frame 355 gap 16; sell and buy cards 556x122 r12 p12 4 apart with the 40 flip disc on the seam; inside each, Frame 277 gap 16 puts the label row over an amount-plus-balance group at gap 8, and the Balance pair sits at gap 8 with the label Manrope 12/16 and the figure Mulish 14/16 at 64 percent; CTA 556x50 r12. Every value is what SwapModal.tsx draws. swapSheetContainerRamp is new this pass and pins the container half of it; swapCardTypeRamp already held the runs.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13008-39705": {
       "section": "wallet-2",
@@ -104083,9 +104083,9 @@
       ],
       "status": "done",
       "route": "/ -> openModal('swap')",
-      "notes": "MEASURED @375: column 345 vs frame 346 (px-[15px] gutter, -1); sheet title 20/Light/24 = frame. Venue is the CLOB, not an AMM.",
+      "notes": "RE-MEASURED WHOLE THIS PASS AND IT HOLDS - a done row that someone actually opened. Main container 346 at x15 y64 on a 16 gap under the 48 header, which is FEATURE_SHEET_PT 16 plus SHELL_HEADER_PX 48. Frame 345: back control 24, 10 to the title group, title Manrope Light 20/24, gear 28, title group padded 16 right. Frame 346 346x448 r12 p12 gap 20 over a 322 content column; Frame 355 gap 16; sell and buy cards 322x120 r12 p12 4 apart with the 40 flip disc on the seam; inside each, Frame 277 gap 16 puts the label row over an amount-plus-balance group at gap 8, and the Balance pair sits at gap 4 with the label Manrope 12/14 and the figure Mulish 12/14 at 64 percent; CTA 322x44 r12. Every value is what SwapModal.tsx draws. swapSheetContainerRamp is new this pass and pins the container half of it; swapCardTypeRamp already held the runs.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13008-41316": {
       "section": "wallet-2",
@@ -104412,7 +104412,7 @@
       ],
       "status": "partial",
       "route": "/",
-      "notes": "CASEY DECISION, DO NOT IMPLEMENT. 768x1024, Main container 42621 580x930 at x101 - note x101, where every other 768 board on this page uses x94 (13008:49186, 45557, 43021, 48896, 50000 all measured at 94). A 7px difference on one board. Banner: copy 42623 556x43 at 12,12 gap8, heading 42624 Manrope 157x19; stats 42626 556x144 at 12,71 gap16; tile row 42627 556x64 gap10; 40x40 r9999 #ff7e50@0.24 at 42630; \"2-day streak\" 42636 77x16. Inset drops from 24 to 12 between 1440 and 768. Same hold.",
+      "notes": "MEASURED AT ALL THREE WIDTHS AND THE PHONE RESTRUCTURE IS NOW BUILT. The badge row was the last open geometry on this family and it was a SHAPE, not a number: 13008:43470 breaks the row that 13008:42644 and 13008:28490 keep whole. At 375 the medallion is 48 (13008:43492) carrying only the title beside it on a 12 gutter across a 262 row (13008:43522); 13008:43527 puts the bar and footer back out to the full 322 content width 16 below, 8 apart rather than the column's 10; 13008:43536 gives the rewards CTA a row of its own, left-aligned, 16 below that. Above 375 it is a 64 medallion on a 10 gutter with title, bar and footer stacked 10 apart in one column and the CTA pinned right on the footer line. The row shipped the wide shape flat, so the phone drew a 64 medallion and a 262 bar. It is a two-column grid now, medallion in column 1 spanning both rows from 768 up, and streakBadgeRowRamp pins 48/64/64, gutter 12/10/10, rows 16/10/10 and bar-to-footer 8/10/10 plus the placement, proved red on a flat 64 and again on a block left in column 2. The 20days chip stays unbuilt: 13008:43524 is opacity 0, as on the other two boards. CARD SHELL RE-READ AND UNCHANGED - it takes the HOME boards, which are the ones with a route: 13008:40896 p12 r12, 13008:39378 p12/12/12/20 r12, 13008:27000 p16/16/16/24 r24, and the shipped card matches all three; the root gap 16 is Frame 405's, the gap between the stat row and the badge row, not the streaks card's 24 which separates a headline stack this card does not draw. HELD PARTIAL on the same three rulings and no change to any of them: the card fill, the row-1 shape (headline over a two-up stat row here against one 201 box beside the headline), and the second stat tile three reports asked to remove. There is still no streaks route. At this width the card is 580x227 r12 p12 V g16, copy block 43 at gap 8 over Frame 405 (V g16: stat row 556x64, badge row 13008:42644 556x64 - medallion 64, 10 gutter, 482 content column at gap 10, CTA 125 wide pinned right on the footer line).",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "partial"
     },
@@ -104594,7 +104594,7 @@
       ],
       "status": "partial",
       "route": "/",
-      "notes": "TITLE LIES ABOUT THE BREAKPOINT: says 768x1024, the node is 375x812 with Main container 43469 346x968 at x15 and a 375x48 mobile header. That is the FIFTH title lie found on this page this wave (with 13008:54216, 44305, 44081 and wave 8s 55521), so on Wallet 2 a bracketed size in a title is not evidence - read node width. Banner: copy 43471 322x40 at 12,24 gap8; tile row 43474 322x64 at 12,80 gap10; 40x40 r9999 #ff7e50@0.24 at 43477; \"2-day streak\" 43483 66x16; \"Longest streak\" 43490 63x12. Same Casey hold as its two siblings.",
+      "notes": "THE TITLE STILL LIES ABOUT THE BREAKPOINT - re-confirmed live, the node is 375x812 with a 48 mobile header over a 346 column, so the bp cell here is the corrected one. MEASURED AT ALL THREE WIDTHS AND THE PHONE RESTRUCTURE IS NOW BUILT. The badge row was the last open geometry on this family and it was a SHAPE, not a number: 13008:43470 breaks the row that 13008:42644 and 13008:28490 keep whole. At 375 the medallion is 48 (13008:43492) carrying only the title beside it on a 12 gutter across a 262 row (13008:43522); 13008:43527 puts the bar and footer back out to the full 322 content width 16 below, 8 apart rather than the column's 10; 13008:43536 gives the rewards CTA a row of its own, left-aligned, 16 below that. Above 375 it is a 64 medallion on a 10 gutter with title, bar and footer stacked 10 apart in one column and the CTA pinned right on the footer line. The row shipped the wide shape flat, so the phone drew a 64 medallion and a 262 bar. It is a two-column grid now, medallion in column 1 spanning both rows from 768 up, and streakBadgeRowRamp pins 48/64/64, gutter 12/10/10, rows 16/10/10 and bar-to-footer 8/10/10 plus the placement, proved red on a flat 64 and again on a block left in column 2. The 20days chip stays unbuilt: 13008:43524 is opacity 0, as on the other two boards. CARD SHELL RE-READ AND UNCHANGED - it takes the HOME boards, which are the ones with a route: 13008:40896 p12 r12, 13008:39378 p12/12/12/20 r12, 13008:27000 p16/16/16/24 r24, and the shipped card matches all three; the root gap 16 is Frame 405's, the gap between the stat row and the badge row, not the streaks card's 24 which separates a headline stack this card does not draw. HELD PARTIAL on the same three rulings and no change to any of them: the card fill, the row-1 shape (headline over a two-up stat row here against one 201 box beside the headline), and the second stat tile three reports asked to remove. There is still no streaks route. At this width the card is 346x312 r12 p24/12/24/12 V g16 and its five children are the copy block 40, the two-up stat row 322x64, the medallion-plus-title group 48, the bar-plus-footer block 32 and the CTA row 16.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "unknown"
     },
@@ -109332,11 +109332,11 @@
         "src/pages/trade/TradeUnified.tsx",
         "modules/skai-wallet/src/components/SwapModal.tsx"
       ],
-      "status": "not-started",
-      "route": "/portfolio?wallet=swap",
-      "notes": "Trade 2 page 13006:134300, 1440x900. MEASURED off node data: column Frame 642 506x458 at (409,32) gap 16; tab strip Frame 335 474x30 SPACE_BETWEEN (itemSpacing 16 INERT), left group 206x30 gap 8, settings glyph 24x24 at x=450; body \"Swap - no value\" 506x412 r24 fill #122524 pad 16 gap 48; inner Frame 355 474x268 gap 24; CTA 474x64 r16 fill #001615 pad 20/40 gap 10. Sum 16+268+48+64+16=412 exact. THE BRIEF SAYS \"Swap has no successor\" - THAT IS WRONG for the Swap tab. The frame's own strings \"Swap summary\", \"Best price\", \"Min. recieved\" and \"Fees\" are carried today by modules/skai-wallet/src/components/SwapModal.tsx:2596/2603/2608 (the code spells \"received\"; the FRAME has the typo). What is gone is the PAGE: TradeUnified.tsx deleted 2026-08-12, /swap redirects to the wallet deep-link (App.tsx:1196, src/lib/navigation/walletSwap.ts). So the successor exists but is a MODAL inside the wallet popup with no page chrome, no left rail and no Swap/Limit/Bridge strip (SwapModal.tsx:55 says the embedded variant \"drops the fixed takeover + page header/mode-tabs\"). Recorded not-started rather than partial because nothing renders THIS frame - a page-shell screen - at any route. skai-wallet is another lane's tree; pointer corrected, no edit made.",
+      "status": "partial",
+      "route": "/swap -> wallet swap modal",
+      "notes": "MEASURED NODE BY NODE ON THE PLUGIN API THIS PASS, AND THE CARD IS BUILT - the row was not-started, which read as nothing shipped. Swap card ramp, read off this board and its two siblings and corroborated against the wallet swap boards 13008:41206 / 39596 / 28765: outer card p12/12/16 opening 20/20/48 to the CTA, content column 16/16/24, sell and buy legs r12/12/16 on p12/12/16 with 4 between them, the 40 flip disc r9999 p8 centred on that seam, CTA 322x44 / 556x50 / 648x64 at r12/12/16, Balance pair 4/8/8 with the label Manrope 12/14, 12/16, 14/18 and the figure Mulish 12/14, 14/16, 14/18 at 64 percent. SwapModal.tsx draws every one of those and swapSheetContainerRamp (new this pass, proved red four ways) pins the container half; swapCardTypeRamp already held the runs. ONE FAMILY SPLIT, recorded not averaged: this ticket draws the outer card r24 at ALL THREE widths where the wallet boards draw 12/12/24, and the wallet board is the host - App.tsx:1190 routes /swap to SwapDeepLinkRedirect and the card only renders inside the wallet sheet - so the code follows the wallet and a later flat 24 would be a reversal. HELD PARTIAL, PRODUCT NOT PIXELS: what is unbuilt on this frame is the page it draws - the Swap|Limit|Bridge ticket header (Frame 335, a 190/190/206 tab group beside a 24 gear) and the routed page around it. TradeUnified.tsx was deleted 2026-08-12 and /swap forwards to the wallet modal, so building the chrome means restoring a retired route. Card 506x412 here, on a 474 content column - the retired page drew a narrower ticket than the wallet sheet 680.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "not-started"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-248078": {
       "section": "trade-2",
@@ -109358,11 +109358,11 @@
         "src/pages/trade/TradeUnified.tsx",
         "modules/skai-wallet/src/components/SwapModal.tsx"
       ],
-      "status": "not-started",
-      "route": "/portfolio?wallet=swap",
-      "notes": "Trade 2 page 13006:134300, 1440x900. Same shell as 13006-247883 with the Swap summary block filled (Best price 1 SOL ~86.88 USDC, Min. recieved 0.33 USDC, Fees 0.00). 60 TEXT nodes. Same successor and same reason for not-started: the wallet modal carries the rows, nothing carries the page.",
+      "status": "partial",
+      "route": "/swap -> wallet swap modal",
+      "notes": "MEASURED NODE BY NODE ON THE PLUGIN API THIS PASS, AND THE CARD IS BUILT - the row was not-started, which read as nothing shipped. Swap card ramp, read off this board and its two siblings and corroborated against the wallet swap boards 13008:41206 / 39596 / 28765: outer card p12/12/16 opening 20/20/48 to the CTA, content column 16/16/24, sell and buy legs r12/12/16 on p12/12/16 with 4 between them, the 40 flip disc r9999 p8 centred on that seam, CTA 322x44 / 556x50 / 648x64 at r12/12/16, Balance pair 4/8/8 with the label Manrope 12/14, 12/16, 14/18 and the figure Mulish 12/14, 14/16, 14/18 at 64 percent. SwapModal.tsx draws every one of those and swapSheetContainerRamp (new this pass, proved red four ways) pins the container half; swapCardTypeRamp already held the runs. ONE FAMILY SPLIT, recorded not averaged: this ticket draws the outer card r24 at ALL THREE widths where the wallet boards draw 12/12/24, and the wallet board is the host - App.tsx:1190 routes /swap to SwapDeepLinkRedirect and the card only renders inside the wallet sheet - so the code follows the wallet and a later flat 24 would be a reversal. HELD PARTIAL, PRODUCT NOT PIXELS: what is unbuilt on this frame is the page it draws - the Swap|Limit|Bridge ticket header (Frame 335, a 190/190/206 tab group beside a 24 gear) and the routed page around it. TradeUnified.tsx was deleted 2026-08-12 and /swap forwards to the wallet modal, so building the chrome means restoring a retired route. SUMMARY BLOCK MEASURED HERE, which the base board hides: divider row H g19 with the label Manrope 12/14, 12/16, 14/18 between two hairlines, rows V g8 with a hairline between each, label Manrope 12/14, 12/16, 14/18 and figure Mulish 12/14, 14/16, 14/18 - the figure reaches 14 at 768, a step before its label. The component ships exactly that.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "not-started"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-248255": {
       "section": "trade-2",
@@ -110804,11 +110804,11 @@
         "src/pages/trade/TradeUnified.tsx",
         "modules/skai-wallet/src/components/SwapModal.tsx"
       ],
-      "status": "not-started",
-      "route": "/portfolio?wallet=swap",
-      "notes": "Trade 2 page 13006:134300, 375x812. Column Frame 642 346x368 at (15,64) gap 16; tab strip 322x24 at x=12 SPACE_BETWEEN; body Frame 346 346x328 r24 fill #122524 pad 12 gap 20. Note the mobile body pads 12 and gaps 20 where desktop pads 16 and gaps 48. Not built as a page.",
+      "status": "partial",
+      "route": "/swap -> wallet swap modal",
+      "notes": "MEASURED NODE BY NODE ON THE PLUGIN API THIS PASS, AND THE CARD IS BUILT - the row was not-started, which read as nothing shipped. Swap card ramp, read off this board and its two siblings and corroborated against the wallet swap boards 13008:41206 / 39596 / 28765: outer card p12/12/16 opening 20/20/48 to the CTA, content column 16/16/24, sell and buy legs r12/12/16 on p12/12/16 with 4 between them, the 40 flip disc r9999 p8 centred on that seam, CTA 322x44 / 556x50 / 648x64 at r12/12/16, Balance pair 4/8/8 with the label Manrope 12/14, 12/16, 14/18 and the figure Mulish 12/14, 14/16, 14/18 at 64 percent. SwapModal.tsx draws every one of those and swapSheetContainerRamp (new this pass, proved red four ways) pins the container half; swapCardTypeRamp already held the runs. ONE FAMILY SPLIT, recorded not averaged: this ticket draws the outer card r24 at ALL THREE widths where the wallet boards draw 12/12/24, and the wallet board is the host - App.tsx:1190 routes /swap to SwapDeepLinkRedirect and the card only renders inside the wallet sheet - so the code follows the wallet and a later flat 24 would be a reversal. HELD PARTIAL, PRODUCT NOT PIXELS: what is unbuilt on this frame is the page it draws - the Swap|Limit|Bridge ticket header (Frame 335, a 190/190/206 tab group beside a 24 gear) and the routed page around it. TradeUnified.tsx was deleted 2026-08-12 and /swap forwards to the wallet modal, so building the chrome means restoring a retired route. Card 346x328 at x15 on a 322 content column, which is the wallet board 346 exactly.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "not-started"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-253745": {
       "section": "trade-2",
@@ -110856,11 +110856,11 @@
         "src/pages/trade/TradeUnified.tsx",
         "modules/skai-wallet/src/components/SwapModal.tsx"
       ],
-      "status": "not-started",
-      "route": "/portfolio?wallet=swap",
-      "notes": "Trade 2 page 13006:134300, 375x812. Column 346x488 at (15,64); body 346x448 r24 pad 12 gap 20. Not built as a page.",
+      "status": "partial",
+      "route": "/swap -> wallet swap modal",
+      "notes": "MEASURED NODE BY NODE ON THE PLUGIN API THIS PASS, AND THE CARD IS BUILT - the row was not-started, which read as nothing shipped. Swap card ramp, read off this board and its two siblings and corroborated against the wallet swap boards 13008:41206 / 39596 / 28765: outer card p12/12/16 opening 20/20/48 to the CTA, content column 16/16/24, sell and buy legs r12/12/16 on p12/12/16 with 4 between them, the 40 flip disc r9999 p8 centred on that seam, CTA 322x44 / 556x50 / 648x64 at r12/12/16, Balance pair 4/8/8 with the label Manrope 12/14, 12/16, 14/18 and the figure Mulish 12/14, 14/16, 14/18 at 64 percent. SwapModal.tsx draws every one of those and swapSheetContainerRamp (new this pass, proved red four ways) pins the container half; swapCardTypeRamp already held the runs. ONE FAMILY SPLIT, recorded not averaged: this ticket draws the outer card r24 at ALL THREE widths where the wallet boards draw 12/12/24, and the wallet board is the host - App.tsx:1190 routes /swap to SwapDeepLinkRedirect and the card only renders inside the wallet sheet - so the code follows the wallet and a later flat 24 would be a reversal. HELD PARTIAL, PRODUCT NOT PIXELS: what is unbuilt on this frame is the page it draws - the Swap|Limit|Bridge ticket header (Frame 335, a 190/190/206 tab group beside a 24 gear) and the routed page around it. TradeUnified.tsx was deleted 2026-08-12 and /swap forwards to the wallet modal, so building the chrome means restoring a retired route. SUMMARY BLOCK MEASURED HERE, which the base board hides: divider row H g19 with the label Manrope 12/14, 12/16, 14/18 between two hairlines, rows V g8 with a hairline between each, label Manrope 12/14, 12/16, 14/18 and figure Mulish 12/14, 14/16, 14/18 - the figure reaches 14 at 768, a step before its label. The component ships exactly that.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "not-started"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-253946": {
       "section": "trade-2",
@@ -111504,11 +111504,11 @@
         "src/pages/trade/TradeUnified.tsx",
         "modules/skai-wallet/src/components/SwapModal.tsx"
       ],
-      "status": "not-started",
-      "route": "/portfolio?wallet=swap",
-      "notes": "Trade 2 page 13006:134300, 768x1024. Column 580x380 at (94,76); tab strip 556x24; body 580x340 r24 fill #122524 pad 12 gap 20. Not built as a page.",
+      "status": "partial",
+      "route": "/swap -> wallet swap modal",
+      "notes": "MEASURED NODE BY NODE ON THE PLUGIN API THIS PASS, AND THE CARD IS BUILT - the row was not-started, which read as nothing shipped. Swap card ramp, read off this board and its two siblings and corroborated against the wallet swap boards 13008:41206 / 39596 / 28765: outer card p12/12/16 opening 20/20/48 to the CTA, content column 16/16/24, sell and buy legs r12/12/16 on p12/12/16 with 4 between them, the 40 flip disc r9999 p8 centred on that seam, CTA 322x44 / 556x50 / 648x64 at r12/12/16, Balance pair 4/8/8 with the label Manrope 12/14, 12/16, 14/18 and the figure Mulish 12/14, 14/16, 14/18 at 64 percent. SwapModal.tsx draws every one of those and swapSheetContainerRamp (new this pass, proved red four ways) pins the container half; swapCardTypeRamp already held the runs. ONE FAMILY SPLIT, recorded not averaged: this ticket draws the outer card r24 at ALL THREE widths where the wallet boards draw 12/12/24, and the wallet board is the host - App.tsx:1190 routes /swap to SwapDeepLinkRedirect and the card only renders inside the wallet sheet - so the code follows the wallet and a later flat 24 would be a reversal. HELD PARTIAL, PRODUCT NOT PIXELS: what is unbuilt on this frame is the page it draws - the Swap|Limit|Bridge ticket header (Frame 335, a 190/190/206 tab group beside a 24 gear) and the routed page around it. TradeUnified.tsx was deleted 2026-08-12 and /swap forwards to the wallet modal, so building the chrome means restoring a retired route. Card 580x340 on a 556 content column, which is the wallet board 580 exactly.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "not-started"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-258402": {
       "section": "trade-2",
@@ -111530,11 +111530,11 @@
         "src/pages/trade/TradeUnified.tsx",
         "modules/skai-wallet/src/components/SwapModal.tsx"
       ],
-      "status": "not-started",
-      "route": "/portfolio?wallet=swap",
-      "notes": "Trade 2 page 13006:134300, 768x1024. Column 580x522 at (94,76); tab strip 556x26; body 580x480 r24 fill #122524 pad 12 gap 20. Not built as a page.",
+      "status": "partial",
+      "route": "/swap -> wallet swap modal",
+      "notes": "MEASURED NODE BY NODE ON THE PLUGIN API THIS PASS, AND THE CARD IS BUILT - the row was not-started, which read as nothing shipped. Swap card ramp, read off this board and its two siblings and corroborated against the wallet swap boards 13008:41206 / 39596 / 28765: outer card p12/12/16 opening 20/20/48 to the CTA, content column 16/16/24, sell and buy legs r12/12/16 on p12/12/16 with 4 between them, the 40 flip disc r9999 p8 centred on that seam, CTA 322x44 / 556x50 / 648x64 at r12/12/16, Balance pair 4/8/8 with the label Manrope 12/14, 12/16, 14/18 and the figure Mulish 12/14, 14/16, 14/18 at 64 percent. SwapModal.tsx draws every one of those and swapSheetContainerRamp (new this pass, proved red four ways) pins the container half; swapCardTypeRamp already held the runs. ONE FAMILY SPLIT, recorded not averaged: this ticket draws the outer card r24 at ALL THREE widths where the wallet boards draw 12/12/24, and the wallet board is the host - App.tsx:1190 routes /swap to SwapDeepLinkRedirect and the card only renders inside the wallet sheet - so the code follows the wallet and a later flat 24 would be a reversal. HELD PARTIAL, PRODUCT NOT PIXELS: what is unbuilt on this frame is the page it draws - the Swap|Limit|Bridge ticket header (Frame 335, a 190/190/206 tab group beside a 24 gear) and the routed page around it. TradeUnified.tsx was deleted 2026-08-12 and /swap forwards to the wallet modal, so building the chrome means restoring a retired route. SUMMARY BLOCK MEASURED HERE, which the base board hides: divider row H g19 with the label Manrope 12/14, 12/16, 14/18 between two hairlines, rows V g8 with a hairline between each, label Manrope 12/14, 12/16, 14/18 and figure Mulish 12/14, 14/16, 14/18 - the figure reaches 14 at 768, a step before its label. The component ships exactly that.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
-      "bpStatus": "not-started"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-258522": {
       "section": "trade-2",
