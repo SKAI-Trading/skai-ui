@@ -461,6 +461,16 @@
       "readiness": "wip",
       "n": 11,
       "scope": "wip"
+    },
+    {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "pageId": "11095:2603",
+      "pageName": "🚧 Wild card - Skai originals",
+      "readiness": "wip",
+      "n": 0,
+      "scope": "wip",
+      "harvestedAt": "2026-09-08",
+      "note": "Created and still empty: 0 top-level children, agreed by page.loadAsync() AND setCurrentPageAsync. An unloaded page also reports 0, which is why both were read. Recorded rather than omitted, because a page absent from this list and a page with nothing on it read identically to every consumer."
     }
   ]
 }

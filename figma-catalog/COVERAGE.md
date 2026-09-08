@@ -54,7 +54,7 @@ Read the caveat section before quoting that. It is not 21.7% measured parity.
 | v1, superseded by v2 | 3 | 875 | 105 | 770 | 305 | 146 | 465 |
 | tombstone (body moved) | 3 | 187 | 70 | 117 | 24 | 1 | 93 |
 | meta | 7 | 94 | 3 | 91 | 0 | 0 | 91 |
-| wip / no section | 7 | 1262 | 1238 | 24 | 0 | 0 | 24 |
+| wip / no section | 8 | 1262 | 1238 | 24 | 0 | 0 | 24 |
 
 ## Per page
 
@@ -105,6 +105,7 @@ Read the caveat section before quoting that. It is not 21.7% measured parity.
 | 🚧 Titles + Emblems | wip | 1157 | 1156 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0.0% |
 | 🚧 Cosmic Slots - Skai originals | wip | 6 | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | 🚧 Vegas fortune - Skai originals | wip | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
+| 🚧 Wild card - Skai originals | wip | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | 📍 Master sheet | meta | 46 | 1 | 45 | 0 | 0 | 0 | 0 | 0 | 45 | 0.0% |
 | 🌎 Cover Images - Skai Originals | meta | 42 | 2 | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 0.0% |
 | 📍 Games master sheet | meta | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0.0% |
