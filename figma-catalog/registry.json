@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:00:04.969Z",
+  "generated": "2026-09-08T08:03:33.270Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -68048,7 +68048,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "THE PANEL THIS FRAME DRAWS NOW CARRIES ITS BODY'S SHADOW AND ITS SURFACE - see 5198-47138, which is where both were measured and where they are described. Nothing on this node was read this pass: the Figma MCP was unreachable for the whole session, so this row records a change that reaches this screen and makes no claim about it. STAYS partial, and the reason wave 33 left on it still stands unchanged - the chrome outside this partition was not measured, and the Members column's five-avatar cluster stays a mixed presentation because trading_group_members is scoped by row-level policy and a denial arrives as an empty result with a null error.",
+      "notes": "READ THIS PASS FOR ITS COLUMN HEADER ONLY, and the row says so rather than implying a whole-frame check. Frame 585 at 5198-9905 captions Created | Group | Members | Type | Description | Action, and TWO of those six are not left: Members is RIGHT inside a 144-wide Frame 768 and Type is CENTER in a 140-wide text node. Both shipped left and both are fixed; the Members body cell takes text-right with them, which is where the flush-right member block already sat. This frame draws the same Frame 629 the eight rows above state, so the gap / FILL / tracking fix reaches it too. Oracle: groupsTableColumns.figma.test.tsx (8 cases, 6 proved red) plus the three added to groupsPageChrome.figma.test.ts. STAYS partial - the streams rail below the table is unbuilt here as well.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -68104,7 +68104,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "DEMOTED FROM done for the same reason as the All-groups frame. RE-MEASURED at 1440; the chrome and the table row are rebuilt. The Discover header runs created, group, token requirement, type, description, action, and the requirement cell draws a 24px token mark with the amount over a \"60,000 left\" sub-line. The sub-line is required-minus-held, and the only feed that carries access rules already filters to groups the viewer is eligible for, so it would be a constant zero presented as a shortfall.",
+      "notes": "MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. Header row 5198-47901 states the same 1144 = 978 + 8 + 158 as the Created frame. SEPARATELY THIS PASS, the 1440 column header 5198-49950 was read cell by cell: Token req. is RIGHT in a 144-wide Frame 768 and Type is CENTER in a bare 140-wide text node, and the body agrees - the Token req. cell's inner description frame is primaryAxisAlignItems MAX (5198-50052) and the Type cell's Frame 814 is CENTER (5198-50058). Both shipped left; both are fixed, with groupsTableColumns.figma.test.tsx as the oracle. STAYS partial: the line + Frame 619 streams rail (5198-48191, 5198-48192) is drawn here too and is not built.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -68168,7 +68168,7 @@
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "RE-MEASURED end to end this pass off 5198-50315, the main child the bug report links, and FIXED three cells. The Token req. value is Lg/Numbers 4 300 — Mulish Regular 14/18 at -4% (5198:50269, and 5198:50414 is 18 tall on this frame) — and shipped the group name's ramp, which is the right size in the wrong face; it is now written out rather than borrowing an entry. The Description column's absent case is #95A09F (5198:50112) and shipped #B3B9CC. The Type pill and the row's other values take the table ramp's new face and tracking. GEOMETRY confirmed and unchanged: header captions 1128x16 at y=0 with the rule at y=24, rows 60 tall at 0 and 76, action 30 tall at y=15 so centred, S/N value 24x16 at x=0 inside a `left` block at x=16. STAYS partial on the Token req. column and the second labels/tag, which need a rules-carrying read of a group the viewer already owns.",
+      "notes": "MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. THIS BOARD'S OWN NUMBERS: header row 5198-50324 is 1144 = 978 + 8 + 158, title 32/36 Manrope Light -4%, subhead 16/22 -4%, CTA 158x36 r8 #56C7F3 with a 14/18 #001615 label. The 1440 column header 5198-50386 was read cell by cell as well and its three non-left columns are now aligned - see the Type / Members / Token req. work on the sibling rows. STAYS partial: this frame also draws a line and a Frame 619 under the table (5198-50499, 5198-50500) - a 'Highest market cap streams' rail of six 240x183 cards - which is not built and was not attempted here.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -70359,11 +70359,12 @@
       "citedByFiles": [],
       "implFiles": [
         "src/components/social/TradingGroupProfile.tsx",
-        "src/pages/social/groups/GroupsSearchTable.tsx"
+        "src/pages/social/groups/GroupsSearchTable.tsx",
+        "src/pages/social/TradingGroups.tsx"
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "FIXED with 11526-290354, which is the same screen at the same board and states the same row; the face, the weight, the tracking and the two greys are one component's and move together. Same two blockers: the 24px token mark and the \"60,000 left\" sub-line under Token req.",
+      "notes": "MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. Header row 11398-77459: 343 = 299 + 8 + 36, title 20/24, subhead 14/16, CTA 36x36 icon-only. ALSO MEASURED HERE, because the list's type tag needed it: the tag is the second item on the name line Frame 1000003847, which is SPACE_BETWEEN at 375 (11398-79113) and MIN at 768 (11398-87358) - never CENTER. That is why the table's new centring is written on the table arm alone and the list wrapper stays flush. STAYS partial.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -70389,11 +70390,12 @@
       ],
       "implFiles": [
         "src/components/social/TradingGroupProfile.tsx",
-        "src/pages/social/groups/GroupsSearchTable.tsx"
+        "src/pages/social/groups/GroupsSearchTable.tsx",
+        "src/pages/social/TradingGroups.tsx"
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "FIXED with 11526-288877 — one component, one ramp, and this frame was read at equal depth to confirm it: Frame 1000003854 at x=12 y=12 in a 343 panel with a 34-tall head, the tag at x=93 after an 89 name (gap 4), the caption at y=0 h=14 over a value at y=22 (gap 8). TYPE and COLOUR as the All-groups row, plus the Token req. caption and value, which take the same fieldLabel/fieldValue pair: caption Manrope 12/14 #95A09F, value Mulish 12/14 #FFFFFF; before, Manrope untracked under #B3B9CC. STAYS partial for two things this frame draws that have no source: Frame 583 puts a 24x24 token mark at x=0 with the amount at x=32 (11526:290455), and Frame 817 stacks \"60,000 left\" under it (11526:290457/290458) — required-minus-held, which discoverEligibleGroups can only ever answer 0 for because it returns groups the viewer is ALREADY eligible for.",
+      "notes": "SECOND 375 CUT OF THE DISCOVER TAB, measured separately: header row 11526-290363 reads 343 = 299 + 8 + 36 with the same gap 8, the same FILL block, the same 20/24 title and 14/16 subhead at -4%, and the same 36x36 icon-only CTA. Same three fixes, same oracle. STAYS partial.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -70441,11 +70443,12 @@
       "citedByFiles": [],
       "implFiles": [
         "src/components/social/TradingGroupProfile.tsx",
-        "src/pages/social/groups/GroupsSearchTable.tsx"
+        "src/pages/social/groups/GroupsSearchTable.tsx",
+        "src/pages/social/TradingGroups.tsx"
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "FIXED with 11526-290070, the same screen at the same board. Same face and colour work, same two open items: the Token req. column has no rules-carrying read, and the \"Type / Criteria\" caption is a ruling rather than a fix.",
+      "notes": "MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. THIS BOARD'S OWN NUMBERS: header row 11398-79046 is 343 = 299 + 8 + 36, title 20/24, subhead 14/16, and the CTA is the 36x36 icon-only square - its only child is icons/action, no label node at all. STAYS partial: nothing below the header was re-measured at this board.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -70471,11 +70474,12 @@
       ],
       "implFiles": [
         "src/components/social/TradingGroupProfile.tsx",
-        "src/pages/social/groups/GroupsSearchTable.tsx"
+        "src/pages/social/groups/GroupsSearchTable.tsx",
+        "src/pages/social/TradingGroups.tsx"
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "FIXED with 11526-288877 — the Created rows are the same GroupListRow and take the same face, weight, tracking and greys. STAYS partial on the Token req. column, and on a caption that cannot be shipped as the frame writes it: the 1440 Created header (5198:50996 onward) reads S/N | Date created | Group | Token req. | Type / Criteria | Description | Action and its Frame 814 draws TWO labels/tag (5198:50970 at x=20.5 and 5198:50971 at x=74.5). The second pill is the criteria half, and getMyTradingGroups reads trading_groups rows that carry no access_rules, so it cannot be drawn. Captioning the column \"Type / Criteria\" while only one pill renders names a thing the cell does not contain — see blockedOnCasey.",
+      "notes": "SECOND 375 CUT OF THE SAME SCREEN AND IT AGREES WITH 11398-79037 PROPERTY FOR PROPERTY - measured separately rather than assumed. Header row 11526-290079: 343 = 299 + 8 + 36, gap 8, block FILL, title 20/24, subhead 14/16 at -4%, CTA 36x36 icon-only. Same three fixes, same oracle. STAYS partial for the same reason as its peer.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -70945,11 +70949,12 @@
       ],
       "implFiles": [
         "src/components/social/TradingGroupProfile.tsx",
-        "src/pages/social/groups/GroupsSearchTable.tsx"
+        "src/pages/social/groups/GroupsSearchTable.tsx",
+        "src/pages/social/TradingGroups.tsx"
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "DEMOTED FROM done. RE-MEASURED at 768; chrome and row rebuilt, and the token requirement now sits beside the created block and flush right rather than stacked under it. Stays partial for the \"60,000 left\" sub-line under the requirement.",
+      "notes": "MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. Header row 11398-86878: 708 = 560 + 8 + 140, title 24/28, subhead 14/18. The column work above is 1440-only - this board draws a list, not a table - so nothing from it lands here. STAYS partial: nothing below the header was re-measured at this board.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -70997,11 +71002,12 @@
       "citedByFiles": [],
       "implFiles": [
         "src/components/social/TradingGroupProfile.tsx",
-        "src/pages/social/groups/GroupsSearchTable.tsx"
+        "src/pages/social/groups/GroupsSearchTable.tsx",
+        "src/pages/social/TradingGroups.tsx"
       ],
       "status": "partial",
       "route": "/trading-groups",
-      "notes": "FIXED with 11530-304239 — the Created list row is the same component at the same board and takes the 768 ramp: name Manrope 12/16, member line Mulish 10/14, caption Manrope 12/16 in #95A09F, value Mulish 12/14, action label Manrope 14/18, all at -4% and all Regular. Its action control was measured on this board's sibling at equal depth (11398:87369, 30 tall) and agrees with 11530:304326. STAYS partial on the same Token req. column and the same caption ruling.",
+      "notes": "MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. THIS BOARD'S OWN NUMBERS: header row 11398-87291 is 708 = 560 + 8 + 140, title 24/28, subhead 14/18, CTA 140x32 with the label still shown. STAYS partial: nothing below the header was re-measured at this board this pass.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -106659,7 +106665,7 @@
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "TAB RAILS RELEASED FROM THE TAP FLOOR 2026-09-07, commit 488d24d59, and this one needs no frame - the Figma MCP was unreachable all session and none of it was measured today, so the row stays partial. The oracle is the shipping tree: @skai/ui `TabsList` declares its own box at h-10 = 40 (modules/skai-ui/src/components/navigation/tabs.tsx) and `TabsTrigger` composes about 32 off py-1.5 and a 14/20 label, while src/index.css floors every button at 44x44 up to and including 768px unless it carries no-min-size and Radix renders a trigger as a button. So on both narrow boards every trigger stood 4px TALLER THAN THE RAIL AROUND IT - a control overflowing its own container, on the package's own numbers. This panel draws two of those rails: the Adjust / Customize pair and the Audit / Metrics / Protocols / Socials group row, six triggers in all counting the Discover strip, so the marker is one shared constant (tabTheme.ts) and the oracle asserts it there as well as on both rendered rails - a fix taken at one rail would have left the other floored with its own cases still green. CARRIED FORWARD from status.wave34.trench-disc.tsv so this rewrite loses neither: the 18px Audit checkbox is held at 18 by no-min-size on the shared FIGMA_CHECKBOX_CLASS (commit 7d5d8b772), and the 768 radius dissent on this panel - 12 where its tier and md:rounded-xl both say 16 - remains a Casey call and is untouched. Also unchanged and still open: the panel BODY row type ramp is unmeasured, and status.wave28.trade2-trench-a.tsv leaves the tab rail `Frame 561` read for structure only, a HORIZONTAL label row on itemSpacing 16 over a full-width hairline 6 below it, never compared to the @skai/ui Tabs this panel renders. Oracle trenchTapFloor.figma.test.tsx, 3 new cases including a bare @skai/ui render as the negative control - it carries no marker, so it is what the marked triggers would be, and it is what proves the 44 really does exceed the 40. Proved red by emptying the shared constant, which reddened both rails and the constant case and left the library control green.",
+      "notes": "MEASURED LIVE at 1440. The title is Manrope Regular at -4% in #FFFFFF at full opacity, and it was rendering with no className at all, i.e. the library's text-lg font-semibold, 18px on a 28px leading at weight 600, flat on every board. It now takes RIGHT_MENU_TITLE_TYPE. Panel 442x884 padding 24 radius 24; controls row 28 tall on a 10px gap, title 24/28. Two things stay open and are NOT claimed here: the frame titles this panel Adjust filters and draws no tab rail under it, where the shipped panel makes that string its first TAB and titles itself Filters, so taking the frame's title verbatim would print it twice and the copy is untouched; and the body groups beyond the title were not re-read on this node.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107294,11 +107300,11 @@
       "implFiles": [
         "src/components/trench-redesign/discover/TrenchTrackers.tsx"
       ],
-      "status": "unknown",
+      "status": "partial",
       "route": "/trench",
-      "notes": "[RE-MEASURE 2026-08-27: the Figma MCP came online mid-wave; this row's blocker was TRANSIENT, not standing. The frame is measurable now.] TITLE RECOVERED (worklist said UNTITLED; registry.json title is null). Real frame: FRAME 1440x900, live/mhF3BkzlTaGiLzJ7kvpmVc__13006-134300.tsv:44 -- a DESKTOP frame, so this lane's mobile ownership does not reach it. NOT not-started: TrenchTrackers.tsx:2 cites \"Figma 8360-127832\", which figma-todo.webapp.tsv:172 records as this node's pre-retarget id, and it is mounted at DiscoverScreen.tsx:402 on /trench with REDESIGN_TRENCH defaulting true (features.ts:74). The registry's not-started derives from code-node-citations.json, generated 2026-07-21, seven days BEFORE TrenchTrackers.tsx was written (mtime 2026-07-28) -- a stale-index artifact, not a missing build. NOT MEASURED by this lane: the figma MCP is unauthenticated in a non-interactive session and WAVE6 s1 forbids a browser, so no new pixel read was possible and no oracle test could be grounded. Prior verdicts stand unchanged (status.wave4.trade-2-partial.tsv:20 partial: header closed at 12, row pitch frame 40 vs rendered 45 at 768 and 49 at lg).",
+      "notes": "MEASURED LIVE at 1440, so this row is no longer unknown. Right menu 442x884 at x=990 y=8, padding 24, radius 24; body Frame 344 394x520 g24 over a 394x62 footer. The tracker menu's title ladder and body rhythm were fixed off this frame's own panel together with the other fourteen. NOT done, and the remainder is not this lane's to finish: the screen BODY is ActivityView in src/components/home-redesign/whales, which TrenchTrackers only composes, so the wallet, live-trades and KOL tables belong to that lane.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-181094": {
       "section": "trade-2",
@@ -107596,11 +107602,11 @@
       "implFiles": [
         "src/components/trench-redesign/discover/TrenchTrackers.tsx"
       ],
-      "status": "unknown",
+      "status": "partial",
       "route": "/trench",
-      "notes": "[RE-MEASURE 2026-08-27: the Figma MCP came online mid-wave; this row's blocker was TRANSIENT, not standing. The frame is measurable now.] TITLE RECOVERED (worklist UNTITLED; figma-todo.webapp.tsv:184, retarget 4405-73126 -> 13006-182640). Real frame: FRAME 1440x900, live TSV line 56. Shares its title with 13006-180340 but is NOT the same board: status.wave3.verify-trade2.tsv:70 measured 731 nodes / 178 texts here against 846 / 206 there, so status.trade-2.trench.tsv:19's \"duplicate, no separate build\" understates it. Same mount as 13006-180340 (TrenchTrackers.tsx:2 -> DiscoverScreen.tsx:402, /trench). NOT MEASURED by this lane: figma MCP unauthenticated, browser forbidden by WAVE6 s1.",
+      "notes": "MEASURED LIVE at 1440, so this row is no longer unknown. This is the twin that draws NO right menu: main 1382x828 over Frame 520 1318x734 on itemSpacing 24, with the 20 and 22 scroller bands top and bottom and the 58px sidebar. The tracker menu's title ladder and body rhythm were fixed off this frame's own panel together with the other fourteen. NOT done, and the remainder is not this lane's to finish: the screen BODY is ActivityView in src/components/home-redesign/whales, which TrenchTrackers only composes, so the wallet, live-trades and KOL tables belong to that lane.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-183297": {
       "section": "trade-2",
@@ -107774,7 +107780,7 @@
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "CHECKBOX BOX RESTORED 2026-09-07, commit 7d5d8b772. Checkbox renders a button, so the 44px floor in src/index.css took the 18px square this row draws (13006:185095 and 13006:185098, whose row 13006:185093 binds rounded-md = 6) up to 44 on both narrow boards, two and a half times the side, beside a 14px label. no-min-size now sits on the shared FIGMA_CHECKBOX_CLASS so the Audit rows and the Customize-table column list inherit it together; trenchTapFloor asserts the constant as well as a rendered instance, because a one-call-site fix would otherwise read as green. Red before at 44 against 18. NOT ADVANCED PAST partial: Figma MCP unreachable all session, so the 18 is the value the repo already recorded rather than one measured today.",
+      "notes": "MEASURED LIVE at 1440. Chrome and the title ladder were read on this node and the title fixed: this panel drew SheetTitle's stock text-lg font-semibold and now takes the family's 18/22 . 18/22 . 24/28 through RIGHT_MENU_TITLE_TYPE. Panel 442x1463 padding 24 radius 24; title 13006-185073 Manrope Regular 24/28. Held at partial because only the Protocols tab was drilled to its keyword pair and footer at every board; the Audit and Metrics bodies are read at the group level only.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107795,11 +107801,12 @@
       "family": null,
       "citedByFiles": [],
       "implFiles": [
-        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/FiltersPanel.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/trench",
-      "notes": "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 442x884. PARTIAL MEASUREMENT, stated as such: I read this frame's footer child (Frame 573 394x112) but not its own cornerRadius, so the padding here is DERIVED from the footer inset - footer width 394 against frame width 442 gives padding 24, which is the 1440 tier and matches the code lg:rounded-2xl (24) and lg:p-6 (24) on padding. RADIUS NOT READ for this node - do not cite this row for a radius. FOOTER MATCHES: the frame footer row is 62 tall and RightMenuFooter (rightMenuChrome.tsx) ships py-5 (20) + text-[16px]/leading-[22px] = 20+22+20 = 62 EXACT, and gap-2 = the frame gap 8 EXACT. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431.",
+      "notes": "MEASURED LIVE at 1440 and promoted on a full read, not on the title alone. Panel 442x884, padding 24, radius 24, itemSpacing 32 over Frame 344 g24. Title Adjust filters 13006-185153 is Manrope Regular 24/28 at -4% in #FFFFFF inside a 28-tall controls row on a 10px gap; it had been drawing the library's text-lg font-semibold and now takes RIGHT_MENU_TITLE_TYPE. Body Frame 342 g32 over Frame 559 g24. Keyword pair Frame 572 is two 193-wide halves on an 8px gap, each an 18-tall label over a 50-tall field padded 16 at radius 12, which FILTER_FIELD_CLASS and PANEL_LABEL_CLASS already draw. Inner Frame 342 g16, Frame 561 g6 over its hairline, Frame 562 g24 to a content column on 16. Footer Frame 573 g16 is 112 tall and closes as 34 + 16 + 62, the RightMenuFooter ladder exactly.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107820,11 +107827,12 @@
       "family": null,
       "citedByFiles": [],
       "implFiles": [
-        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/FiltersPanel.tsx"
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "RE-MEASURED 2026-09-05 and the verdict is unchanged: this is the radius disagreement, and it is a Casey call rather than a fix. rightMenuChrome.RIGHT_MENU_SHEET_CLASS ships rounded-lg / md:rounded-xl / lg:rounded-2xl = 12 / 16 / 24 BY PIXEL, which follows the tablet majority. Four 768 frames dissent at 12 - 13006:185403 Protocols, :185519 Metrics, :185323 Audit and :338795 Filters - and the first three sit together on canvas, which reads as one authoring pass rather than a spec. Everything else on these frames matches: 442 wide, padding 20, fill #122524 at 0.8, a 1px #123F3C, the drop shadow and the footer ladder, all held by rightMenuWidth.figma.test.ts and rightMenuChrome.test.tsx. NOT closed, because closing it either way is a design decision this lane cannot take. OPTION A: keep 16 at 768 and record the four frames as authoring drift, which costs nothing and leaves four frames permanently off-spec. OPTION B: give this panel family its own 12 at 768, which means the right-menu radius stops being one shared value and every future panel has to be told which cluster it belongs to.",
+      "notes": "MEASURED LIVE at 1440. Chrome and the title ladder were read on this node and the title fixed: this panel drew SheetTitle's stock text-lg font-semibold and now takes the family's 18/22 . 18/22 . 24/28 through RIGHT_MENU_TITLE_TYPE. Panel 442x1154 padding 24 radius 24; title 13006-185269 Manrope Regular 24/28. Body drilled two levels: Frame 342 g32, Frame 559 g24, Frame 572 metric row 76 tall, inner Frame 342 g16, and every one of those is flat across the three boards. Held at partial because only the Protocols tab was drilled to its keyword pair and footer at every board; the Audit and Metrics bodies are read at the group level only.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107850,7 +107858,7 @@
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "CHECKBOX BOX RESTORED 2026-09-07, commit 7d5d8b772. Checkbox renders a button, so the 44px floor in src/index.css took the 18px square this row draws (13006:185095 and 13006:185098, whose row 13006:185093 binds rounded-md = 6) up to 44 on both narrow boards, two and a half times the side, beside a 14px label. no-min-size now sits on the shared FIGMA_CHECKBOX_CLASS so the Audit rows and the Customize-table column list inherit it together; trenchTapFloor asserts the constant as well as a rendered instance, because a one-call-site fix would otherwise read as green. Red before at 44 against 18. NOT ADVANCED PAST partial: Figma MCP unreachable all session, so the 18 is the value the repo already recorded rather than one measured today.",
+      "notes": "MEASURED LIVE at 768. Chrome and the title ladder were read on this node and the title fixed: this panel drew SheetTitle's stock text-lg font-semibold and now takes the family's 18/22 . 18/22 . 24/28 through RIGHT_MENU_TITLE_TYPE. Panel 442x1463 padding 20 radius 12 against the shell's 16, see the note on 13006-185403; title 13006-185336 Manrope Regular 14 on an AUTO 18.05 leading. Held at partial because only the Protocols tab was drilled to its keyword pair and footer at every board; the Audit and Metrics bodies are read at the group level only.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107871,11 +107879,12 @@
       "family": null,
       "citedByFiles": [],
       "implFiles": [
-        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/FiltersPanel.tsx"
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "RE-MEASURED 2026-09-05 and the verdict is unchanged: this is the radius disagreement, and it is a Casey call rather than a fix. rightMenuChrome.RIGHT_MENU_SHEET_CLASS ships rounded-lg / md:rounded-xl / lg:rounded-2xl = 12 / 16 / 24 BY PIXEL, which follows the tablet majority. Four 768 frames dissent at 12 - 13006:185403 Protocols, :185519 Metrics, :185323 Audit and :338795 Filters - and the first three sit together on canvas, which reads as one authoring pass rather than a spec. Everything else on these frames matches: 442 wide, padding 20, fill #122524 at 0.8, a 1px #123F3C, the drop shadow and the footer ladder, all held by rightMenuWidth.figma.test.ts and rightMenuChrome.test.tsx. NOT closed, because closing it either way is a design decision this lane cannot take. OPTION A: keep 16 at 768 and record the four frames as authoring drift, which costs nothing and leaves four frames permanently off-spec. OPTION B: give this panel family its own 12 at 768, which means the right-menu radius stops being one shared value and every future panel has to be told which cluster it belongs to.",
+      "notes": "MEASURED LIVE at 768. Everything matches the shipped classes EXCEPT the panel radius, so this row is held at partial rather than promoted with its two twins. Panel 442x1008 padding 20 radius 12, where the shared shell draws 16 at md; that 16 is the family majority at 15 of 19 tablet panels and only the four Adjust-filters tabs report 12, so the constant was left alone and the 4px is named rather than guessed away. Title 13006-185416 is Manrope Regular 14 on an AUTO 18.05 leading in a 19-tall controls row, which the 18/22 stop now draws. Frame 342 g32, Frame 559 g24, keyword pair two 197 halves on 8 with a 16-tall label over a 50-tall field at radius 12, inner Frame 342 g16, Frame 561 g6, Frame 562 g24 to a 16 column, footer Frame 573 100 = 34 + 16 + 50.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107896,11 +107905,12 @@
       "family": null,
       "citedByFiles": [],
       "implFiles": [
-        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/FiltersPanel.tsx"
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "RE-MEASURED 2026-09-05 and the verdict is unchanged: this is the radius disagreement, and it is a Casey call rather than a fix. rightMenuChrome.RIGHT_MENU_SHEET_CLASS ships rounded-lg / md:rounded-xl / lg:rounded-2xl = 12 / 16 / 24 BY PIXEL, which follows the tablet majority. Four 768 frames dissent at 12 - 13006:185403 Protocols, :185519 Metrics, :185323 Audit and :338795 Filters - and the first three sit together on canvas, which reads as one authoring pass rather than a spec. Everything else on these frames matches: 442 wide, padding 20, fill #122524 at 0.8, a 1px #123F3C, the drop shadow and the footer ladder, all held by rightMenuWidth.figma.test.ts and rightMenuChrome.test.tsx. NOT closed, because closing it either way is a design decision this lane cannot take. OPTION A: keep 16 at 768 and record the four frames as authoring drift, which costs nothing and leaves four frames permanently off-spec. OPTION B: give this panel family its own 12 at 768, which means the right-menu radius stops being one shared value and every future panel has to be told which cluster it belongs to.",
+      "notes": "MEASURED LIVE at 768. Chrome and the title ladder were read on this node and the title fixed: this panel drew SheetTitle's stock text-lg font-semibold and now takes the family's 18/22 . 18/22 . 24/28 through RIGHT_MENU_TITLE_TYPE. Panel 442x1154 padding 20 radius 12 against the shell's 16, see the note on 13006-185403; title 13006-185532 14/18.05. Body Frame 342 g32, Frame 559 g24, Frame 572 74 tall, inner Frame 342 g16. Held at partial because only the Protocols tab was drilled to its keyword pair and footer at every board; the Audit and Metrics bodies are read at the group level only.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107926,7 +107936,7 @@
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "CHECKBOX BOX RESTORED 2026-09-07, commit 7d5d8b772. Checkbox renders a button, so the 44px floor in src/index.css took the 18px square this row draws (13006:185095 and 13006:185098, whose row 13006:185093 binds rounded-md = 6) up to 44 on both narrow boards, two and a half times the side, beside a 14px label. no-min-size now sits on the shared FIGMA_CHECKBOX_CLASS so the Audit rows and the Customize-table column list inherit it together; trenchTapFloor asserts the constant as well as a rendered instance, because a one-call-site fix would otherwise read as green. Red before at 44 against 18. NOT ADVANCED PAST partial: Figma MCP unreachable all session, so the 18 is the value the repo already recorded rather than one measured today.",
+      "notes": "MEASURED LIVE at 375. Chrome and the title ladder were read on this node and the title fixed: this panel drew SheetTitle's stock text-lg font-semibold and now takes the family's 18/22 . 18/22 . 24/28 through RIGHT_MENU_TITLE_TYPE. Panel 359x1359 padding 12 radius 12; title 13006-185599 Manrope Regular 18/22. Held at partial because only the Protocols tab was drilled to its keyword pair and footer at every board; the Audit and Metrics bodies are read at the group level only.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107947,11 +107957,12 @@
       "family": null,
       "citedByFiles": [],
       "implFiles": [
-        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/FiltersPanel.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/trench",
-      "notes": "RESOLVED FROM unknown. MEASURED 2026-08-31 off Figma node data (use_figma, page 13006:134300, fileKey mhF3BkzlTaGiLzJ7kvpmVc) against the shared shell RIGHT_MENU_SHEET_CLASS in src/components/trench-redesign/discover/rightMenuChrome.tsx. * STRUCTURAL FINDING: these frames are NOT boards containing a floating panel - the FRAME ITSELF IS the panel, so its own width/height/radius/padding ARE the panel geometry. Frame height decodes the tier: 884=900-2x8, 1008=1024-2x8, 796=812-2x8, i.e. the panel inset 8px on every edge, which is exactly the code inset-y-2 right-2. Unanimous across all 40 frames I read: fill #122524@0.80 = bg-[rgba(18,37,36,0.8)] EXACT; stroke #123f3c width 1 = border border-[#123F3C] EXACT; DROP_SHADOW radius 80 #000000@0.25 offset 0,10 = shadow-[0_10px_80px_0_rgba(0,0,0,0.25)] EXACT; itemSpacing 32. BACKGROUND_BLUR radius 40 against the code backdrop-blur-[20px] - RECORDED, NOT CLAIMED AS A DEFECT: Figma background-blur radius and the CSS backdrop-filter blur length are different units (Figma is conventionally about 2x the CSS px), so 40 -> 20px is very likely the correct conversion. Anyone closing this must convert deliberately rather than copy either number. THIS FRAME: 359x796, cornerRadius 12, padding 12 on all four sides, footer child Frame 573 335x92. Width/padding cross-check: footer width 335 = frame width minus 2x12. Code ships rounded-lg (12) and p-3 (12) at this tier - BOTH EXACT. Width: w-[calc(100%-1rem)] gives 375-16 = 359 EXACT. FOOTER GAP, MEASURED: the frame footer row is 44 tall against the code 62 (py-5 20 + leading-22 + py-5 20, no responsive variant), so it renders 18px TOO TALL here - the largest instance of this gap. Frame gap 8 = gap-2 matches. CONTENT owner: AdjustTrenchSettings, imported DiscoverScreen.tsx:15 and rendered at :431. partial and not done: the shell geometry, fill, border, shadow and footer are measured value-for-value, but this lane did NOT measure the panel's internal control rows, and at 768/375 the footer height is a real open gap.",
+      "notes": "MEASURED LIVE at 375, the same read as its 1440 twin. Panel 359x796, padding 12, radius 12. Title 13006-185679 Manrope Regular 18/22 in a 22-tall controls row, now shipped instead of the library default. Frame 342 g32 over Frame 559 g24. Keyword pair two 163.5 halves on 8, a 14-tall label over a 48-tall field padded 16 at radius 12, which is the h-[48px] the field class already spells. Inner Frame 342 g16, Frame 561 g6, Frame 562 g24 to a 16 column. Footer Frame 573 is 92 = 32 + 16 + 44, and 44 is exactly the src/index.css tap floor, so the CTA needs no opt-out.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -107972,11 +107983,12 @@
       "family": null,
       "citedByFiles": [],
       "implFiles": [
-        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+        "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+        "src/components/trench-redesign/discover/FiltersPanel.tsx"
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "RE-MEASURED 2026-09-05 and the verdict is unchanged: this is the radius disagreement, and it is a Casey call rather than a fix. rightMenuChrome.RIGHT_MENU_SHEET_CLASS ships rounded-lg / md:rounded-xl / lg:rounded-2xl = 12 / 16 / 24 BY PIXEL, which follows the tablet majority. Four 768 frames dissent at 12 - 13006:185403 Protocols, :185519 Metrics, :185323 Audit and :338795 Filters - and the first three sit together on canvas, which reads as one authoring pass rather than a spec. Everything else on these frames matches: 442 wide, padding 20, fill #122524 at 0.8, a 1px #123F3C, the drop shadow and the footer ladder, all held by rightMenuWidth.figma.test.ts and rightMenuChrome.test.tsx. NOT closed, because closing it either way is a design decision this lane cannot take. OPTION A: keep 16 at 768 and record the four frames as authoring drift, which costs nothing and leaves four frames permanently off-spec. OPTION B: give this panel family its own 12 at 768, which means the right-menu radius stops being one shared value and every future panel has to be told which cluster it belongs to.",
+      "notes": "MEASURED LIVE at 375. Chrome and the title ladder were read on this node and the title fixed: this panel drew SheetTitle's stock text-lg font-semibold and now takes the family's 18/22 . 18/22 . 24/28 through RIGHT_MENU_TITLE_TYPE. Panel 359x1068 padding 12 radius 12; title 13006-185795 18/22. Body Frame 342 g32, Frame 559 g24, Frame 573 70 tall, inner Frame 342 g16. Held at partial because only the Protocols tab was drilled to its keyword pair and footer at every board; the Audit and Metrics bodies are read at the group level only.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -108232,7 +108244,7 @@
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "MEASURED 2026-09-06 through the Plugin API at all three boards. CARRYING FORWARD wave 25's catalog correction, which is the first thing to know: this frame is TITLED `Right menu - Row` in Figma but draws the EXTRAS body, and a title-keyed lookup lands on the wrong tab here. SHOW/HIDE COLUMNS rail (13006:159259 / :323655 / :195269): three segments on a 2 gap, 26 / 28 / 30 tall, pad 6/8/6/8 on the first and 6/4/6/4 on the rest, radius 8 on the outer corners only, 1px stroke drawn INSIDE - so the frame's 6 is a 1px CSS border plus 5 of padding, which is what the code's border + py-[5px] closes. The captions are Mulish REGULAR at -4%, 12/14 . 14/16 . 14/18. ONE CLICK TRADE BEHAVIOUR cards (:159276 / :323672 / :195286): 54 / 54 / 56 tall on pad 8/14 radius 12 with a 16px glyph over a label on an 8 gap, the label Mulish Regular at -4% 12/14 . 12/14 . 12/16. FIXED THIS PASS: both of those labels shipped the `skai-number-4` / `skai-number-5` ramps, which are weight 700 and state no letter-spacing (typography.css:315, :324), so they drew bold and untracked while their sizes were already right - which is exactly why a size-only reading passed them. A refuter reading this frame at 1440 on 2026-09-06 caught the caption and named both deltas; re-measuring found it was the whole family rather than one caption, and the colour row's band label (:158989 / :323386 / :195000) is the same. Corrected in ee374b027, tracking in em rather than px because these runs step 12 to 14. ALSO FIXED: the feed segment is a real button at 26 / 28 / 30 against the 44px floor src/index.css puts on every button up to 768, so it now carries `no-min-size` (1263b1fc0); the behaviour cards deliberately do not, because 54 clears the floor on its own. NOT read this pass and the reason this is not a whole-frame claim: the portfolio-balance block below the two groups. Oracle AdjustTrenchSettings.figma.test.tsx, 39 cases, the fixes proved red by dropping the run from all three call sites, by writing the tracking as -0.56px, and by stripping every marker.",
+      "notes": "MEASURED LIVE at 1440, chrome only. Panel 442x1369 padding 24 radius 24 itemSpacing 32; body Frame 344 g24 whose children are the controls row on a 10px gap, Frame 341 g24 and Frame 342 g16, which makes it the only panel in this family with THREE body children rather than two. Title Adjust trench settings 24/28, which AdjustTrenchSettings already ships. Body groups not read.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -112649,7 +112661,7 @@
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "TAB RAILS RELEASED FROM THE TAP FLOOR 2026-09-07, commit 488d24d59, and this one needs no frame - the Figma MCP was unreachable all session and none of it was measured today, so the row stays partial. The oracle is the shipping tree: @skai/ui `TabsList` declares its own box at h-10 = 40 (modules/skai-ui/src/components/navigation/tabs.tsx) and `TabsTrigger` composes about 32 off py-1.5 and a 14/20 label, while src/index.css floors every button at 44x44 up to and including 768px unless it carries no-min-size and Radix renders a trigger as a button. So on both narrow boards every trigger stood 4px TALLER THAN THE RAIL AROUND IT - a control overflowing its own container, on the package's own numbers. This panel draws two of those rails: the Adjust / Customize pair and the Audit / Metrics / Protocols / Socials group row, six triggers in all counting the Discover strip, so the marker is one shared constant (tabTheme.ts) and the oracle asserts it there as well as on both rendered rails - a fix taken at one rail would have left the other floored with its own cases still green. CARRIED FORWARD from status.wave34.trench-disc.tsv so this rewrite loses neither: the 18px Audit checkbox is held at 18 by no-min-size on the shared FIGMA_CHECKBOX_CLASS (commit 7d5d8b772), and the 768 radius dissent on this panel - 12 where its tier and md:rounded-xl both say 16 - remains a Casey call and is untouched. Also unchanged and still open: the panel BODY row type ramp is unmeasured, and status.wave28.trade2-trench-a.tsv leaves the tab rail `Frame 561` read for structure only, a HORIZONTAL label row on itemSpacing 16 over a full-width hairline 6 below it, never compared to the @skai/ui Tabs this panel renders. Oracle trenchTapFloor.figma.test.tsx, 3 new cases including a bare @skai/ui render as the negative control - it carries no marker, so it is what the marked triggers would be, and it is what proves the 44 really does exceed the 40. Proved red by emptying the shared constant, which reddened both rails and the constant case and left the library control green.",
+      "notes": "MEASURED LIVE at 768. The title is Manrope Regular at -4% in #FFFFFF at full opacity, and it was rendering with no className at all, i.e. the library's text-lg font-semibold, 18px on a 28px leading at weight 600, flat on every board. It now takes RIGHT_MENU_TITLE_TYPE. Panel 442 wide on padding 12 at radius 16, the one tablet Adjust-filters frame that does NOT report the 20/12 the other four do, which is part of why the shell's md radius was left at 16; controls row 22 tall, title 18/22. Two things stay open and are NOT claimed here: the frame titles this panel Adjust filters and draws no tab rail under it, where the shipped panel makes that string its first TAB and titles itself Filters, so taking the frame's title verbatim would print it twice and the copy is untouched; and the body groups beyond the title were not re-read on this node.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -112676,7 +112688,7 @@
       ],
       "status": "partial",
       "route": "/trench",
-      "notes": "TAB RAILS RELEASED FROM THE TAP FLOOR 2026-09-07, commit 488d24d59, and this one needs no frame - the Figma MCP was unreachable all session and none of it was measured today, so the row stays partial. The oracle is the shipping tree: @skai/ui `TabsList` declares its own box at h-10 = 40 (modules/skai-ui/src/components/navigation/tabs.tsx) and `TabsTrigger` composes about 32 off py-1.5 and a 14/20 label, while src/index.css floors every button at 44x44 up to and including 768px unless it carries no-min-size and Radix renders a trigger as a button. So on both narrow boards every trigger stood 4px TALLER THAN THE RAIL AROUND IT - a control overflowing its own container, on the package's own numbers. This panel draws two of those rails: the Adjust / Customize pair and the Audit / Metrics / Protocols / Socials group row, six triggers in all counting the Discover strip, so the marker is one shared constant (tabTheme.ts) and the oracle asserts it there as well as on both rendered rails - a fix taken at one rail would have left the other floored with its own cases still green. CARRIED FORWARD from status.wave34.trench-disc.tsv so this rewrite loses neither: the 18px Audit checkbox is held at 18 by no-min-size on the shared FIGMA_CHECKBOX_CLASS (commit 7d5d8b772), and the 768 radius dissent on this panel - 12 where its tier and md:rounded-xl both say 16 - remains a Casey call and is untouched. Also unchanged and still open: the panel BODY row type ramp is unmeasured, and status.wave28.trade2-trench-a.tsv leaves the tab rail `Frame 561` read for structure only, a HORIZONTAL label row on itemSpacing 16 over a full-width hairline 6 below it, never compared to the @skai/ui Tabs this panel renders. Oracle trenchTapFloor.figma.test.tsx, 3 new cases including a bare @skai/ui render as the negative control - it carries no marker, so it is what the marked triggers would be, and it is what proves the 44 really does exceed the 40. Proved red by emptying the shared constant, which reddened both rails and the constant case and left the library control green.",
+      "notes": "MEASURED LIVE at 375. The title is Manrope Regular at -4% in #FFFFFF at full opacity, and it was rendering with no className at all, i.e. the library's text-lg font-semibold, 18px on a 28px leading at weight 600, flat on every board. It now takes RIGHT_MENU_TITLE_TYPE. Panel 359 wide on padding 12 at radius 16 where its 375 siblings report 12; controls row 22 tall, title 18/22. Two things stay open and are NOT claimed here: the frame titles this panel Adjust filters and draws no tab rail under it, where the shipped panel makes that string its first TAB and titles itself Filters, so taking the frame's title verbatim would print it twice and the copy is untouched; and the body groups beyond the title were not re-read on this node.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -114420,11 +114432,11 @@
       "implFiles": [
         "src/components/trench-redesign/discover/TrenchTrackers.tsx"
       ],
-      "status": "unknown",
+      "status": "partial",
       "route": "/trench",
-      "notes": "PANEL CHROME ONLY, and the screen stays unknown. Right menu - General is 359 wide at x=8, 796 tall, inner body inset 12 on both axes, which matches the shared chrome's mobile float and 12px pad. The table, rows and header are still unmeasured. Also unmeasured and left alone: the gear trigger above the table hides its label below 640. Both boards draw the panel OPEN, so neither shows a trigger, and there is no frame that says whether the label is present at either width.",
+      "notes": "MEASURED LIVE at 375, so this row is no longer unknown. Right menu - General 359x796 at x=8 y=8, padding 12, radius 12; body Frame 344 335x488 g24 over a 335x44 footer. Its title 13006-321213 is 18/22. The tracker menu's title ladder and body rhythm were fixed off this frame's own panel together with the other fourteen. NOT done, and the remainder is not this lane's to finish: the screen BODY is ActivityView in src/components/home-redesign/whales, which TrenchTrackers only composes, so the wallet, live-trades and KOL tables belong to that lane.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-321307": {
       "section": "trade-2",
@@ -115461,11 +115473,11 @@
       "implFiles": [
         "src/components/trench-redesign/discover/TrenchTrackers.tsx"
       ],
-      "status": "unknown",
+      "status": "partial",
       "route": "/trench",
-      "notes": "PANEL CHROME ONLY, and the screen stays unknown. Right menu - General is 442 wide at x=318, 1008 tall, inner body inset 20 on both axes - a third independent confirmation of 442 wide and 20 pad at the tablet width. Table geometry unmeasured.",
+      "notes": "MEASURED LIVE at 768, so this row is no longer unknown. Right menu - General 442x1008 at x=318 y=8, padding 20, radius 16; body Frame 344 402x488 g24 over a 402x50 footer. Its title 13006-345897 is 14/18, the tablet dip. The tracker menu's title ladder and body rhythm were fixed off this frame's own panel together with the other fourteen. NOT done, and the remainder is not this lane's to finish: the screen BODY is ActivityView in src/components/home-redesign/whales, which TrenchTrackers only composes, so the wallet, live-trades and KOL tables belong to that lane.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:13006-345991": {
       "section": "trade-2",
