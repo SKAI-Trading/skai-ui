@@ -22,6 +22,8 @@ export * from "./email-auth-modal";
 export * from "./auth-provider-icons";
 // Sign-in provider marks and the wallet row (Login ALT 10734:74595 / Sign up ALT 10734:74426).
 export * from "./auth-wallet-icons";
+// Login / Sign up with the wallet row (Login ALT 10734:74595, Signup ALT 10734:74426).
+export * from "./auth-modal";
 export * from "./instagram-share-modal";
 export * from "./x-share-modal";
 
