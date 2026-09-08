@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:54:42.537Z",
+  "generated": "2026-09-08T08:55:42.892Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -51625,9 +51625,9 @@
       ],
       "status": "partial",
       "route": "/play/dice",
-      "notes": "Wave-8 measurement carried forward and PARTLY CLOSED 2026-09-01. Its widget-board finding is confirmed at source: 9003:43583 Frame 658 is 1318x621 HORIZONTAL itemSpacing 8 padding 0, with 9003:43584 Frame 270 at 356x621 r16 #122524 strokes [] at x=0 and 9069:2796 Desktop Full Game at 954x621 r16 #001615 stroke #FFFFFF@0.10 at x=364. The gap is now the frame's 8 rather than 16, and the board radius is 16 rather than 24, which moves the DOM board from 914 to 922. Still partial: 954 needs the remaining 32px of route padding removed and that lives in GameShell.tsx:55, outside this lane; and the page-level radius finding stands unchanged - every named-class radius on this page lands one step large (info card 24 vs 12, more-games strip 16 vs 12, FAQ 24 vs 16, bets rows 12 vs 8) while every pixel literal in the same files matches EXACTLY.",
+      "notes": "THE MANUAL | AUTO SEAM WAS MISSING AND IS NOW FIXED; THE REST OF THE PANEL WAS NOT RE-READ ON THIS FRAME. The track's `itemSpacing` is 4 on every node that draws it - 9003:43630 324x42 at 1440, 9003:44381 444x42 and 9003:44686 398x42 at 768, 9003:45005 323x42 at 375, 9065:1405 324x42 on the Auto Advanced artboard - and the seam is what puts the two 34h r10 cards on the nose at four different track widths: (324-8-4)/2 = 156, (444-8-4)/2 = 216, (398-8-4)/2 = 193, (323-8-4)/2 = 155.5. DiceGame.tsx shipped `grid grid-cols-2` on a `p-1` track with no gap, which halves the padded box and draws 158 / 218 / 195 / 157.5 - two pixels per card at every width with nothing else moving, which is how it survived five earlier passes that each got the track's own 42 / r12 / p-1 right. Pinned by dicePanelParity.test.ts and proved red. ★ DICE DOES NOT TAKE THE 375 TYPE STEP, and this was checked rather than assumed: all three boards draw Manrope Regular 12/16 labels and Mulish Regular 14/18 values (panels 9003:43584, 9003:44333, 9003:44957), so the ramp coinflip, mines and plinko carry is not a lane-wide rule and dice is right to hold one scale. The panel card DOES step - r16 pad16 at 1440, r12 pad12 at 768 and 375 - which DiceGame.tsx:1428 already ships.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9003-44223": {
       "section": "dice",
@@ -51654,9 +51654,9 @@
       ],
       "status": "partial",
       "route": "/play/dice",
-      "notes": "THE TABLET CUT OF THE COMMUNITY-WINS HEADER, FIXED, AND THE ROW STAYS PARTIAL BECAUSE THE FIGMA MCP WAS DOWN FOR THIS PASS - nothing below was read off the file today. The value acted on is an earlier wave's plugin-API reading, recorded with node ids and reproduced in code: at 768 the left four columns (Rank, Game, Time, User) are Manrope Regular 10/14 at -4% in #95A09F at node opacity 1, and the money three (Bet Amount, Multiplier, Payout) are 12/16. Three independent 768 boards carry that split - Games 9003:110353-110359 and 9003:111414-111420, Play 11087:67116-67122. This page shipped ONE class for all seven, \"flex-1 font-manrope text-xs leading-4 text-ash\", i.e. 12/16 flat, so the left four drew two sizes too large across the whole tablet band, at both of its call sites. Now routed through the same winHeadClass the other ten pages use, with the size step at lg because 768 draws the small size. THE REST OF THIS BOARD WAS NOT MEASURED BY THIS LANE, and this frame's own 768 header cells were never read directly - the ramp is inherited from three sibling 768 boards, which is exactly why this is not done.",
+      "notes": "THE MANUAL | AUTO SEAM WAS MISSING AND IS NOW FIXED; THE REST OF THE PANEL WAS NOT RE-READ ON THIS FRAME. The track's `itemSpacing` is 4 on every node that draws it - 9003:43630 324x42 at 1440, 9003:44381 444x42 and 9003:44686 398x42 at 768, 9003:45005 323x42 at 375, 9065:1405 324x42 on the Auto Advanced artboard - and the seam is what puts the two 34h r10 cards on the nose at four different track widths: (324-8-4)/2 = 156, (444-8-4)/2 = 216, (398-8-4)/2 = 193, (323-8-4)/2 = 155.5. DiceGame.tsx shipped `grid grid-cols-2` on a `p-1` track with no gap, which halves the padded box and draws 158 / 218 / 195 / 157.5 - two pixels per card at every width with nothing else moving, which is how it survived five earlier passes that each got the track's own 42 / r12 / p-1 right. Pinned by dicePanelParity.test.ts and proved red. ★ DICE DOES NOT TAKE THE 375 TYPE STEP, and this was checked rather than assumed: all three boards draw Manrope Regular 12/16 labels and Mulish Regular 14/18 values (panels 9003:43584, 9003:44333, 9003:44957), so the ramp coinflip, mines and plinko carry is not a lane-wide rule and dice is right to hold one scale. The panel card DOES step - r16 pad16 at 1440, r12 pad12 at 768 and 375 - which DiceGame.tsx:1428 already ships.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9003-44542": {
       "section": "dice",
@@ -51681,9 +51681,9 @@
         "modules/skai-gaming/src/components/play/games/instant/DiceGame.tsx",
         "modules/skai-gaming/src/pages/play/DicePageSections.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": "/play/dice",
-      "notes": "DECLINED, do not build -- carried forward from status.dice.tsv, not re-litigated here. Rival of 9003:44223 at the identical 768 breakpoint, route and state; its children are the MOBILE composition re-parented into the tablet shell (9088:1539 is literally named 'Mobile', 422x422). Building it would replace the verified full-width tablet board with a padded mobile one.",
+      "notes": "FIRST MEASUREMENT OF THIS FRAME - it was `not-started` and it is a second 768 cut, not a missing screen. 768x1607, and its bet panel draws the Manual | Auto track at 9003:44686 398x42 r12 pad4 gap4 with two 193x34 r10 cards, active #56C7F3 and idle #001615, `Manual` in Mulish Regular 14/18. That is the same control as the chosen 768 frame at a narrower column - 398 against 444 - so the two 768 cuts differ in COLUMN WIDTH and in nothing this lane measured. The 4px seam this wave added to DiceGame.tsx is what makes 193 come out; without it the card is 195. NOT READ: the rest of this frame node by node, so it stays partial rather than being promoted off one control.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -51709,9 +51709,9 @@
       ],
       "status": "partial",
       "route": "/play/dice",
-      "notes": "THE MOBILE CUT, AND IT IS WHERE THE ERROR WAS LARGEST. Dice's own 375 board 9163:5797-5803 is one of the two witnesses that establish the phone values: Rank/Game/Time/User at Manrope Regular 10/12, Bet Amount/Multiplier/Payout at 12/16, both at -4% in #95A09F at node opacity 1, with Play 11100:70071-70077 agreeing column for column. This page drew all seven at 12/16, so on a phone the left four were 10/12 in the design and 12/16 in the app. Fixed at both call sites. THE MONEY COLUMNS BEING RIGHT IS THE TRAP: a probe that read only Payout, or only the desktop board, returns a clean pass at all three widths - the flat class IS the correct desktop value and IS the correct money value everywhere. The oracle now asserts that the two groups resolve DIFFERENTLY at 375, which is the one assertion the pre-fix markup cannot satisfy. Partial, not done: the Figma MCP was down for this pass, the frame was not re-walked, and no other region of this board was read.",
+      "notes": "THE MANUAL | AUTO SEAM WAS MISSING AND IS NOW FIXED; THE REST OF THE PANEL WAS NOT RE-READ ON THIS FRAME. The track's `itemSpacing` is 4 on every node that draws it - 9003:43630 324x42 at 1440, 9003:44381 444x42 and 9003:44686 398x42 at 768, 9003:45005 323x42 at 375, 9065:1405 324x42 on the Auto Advanced artboard - and the seam is what puts the two 34h r10 cards on the nose at four different track widths: (324-8-4)/2 = 156, (444-8-4)/2 = 216, (398-8-4)/2 = 193, (323-8-4)/2 = 155.5. DiceGame.tsx shipped `grid grid-cols-2` on a `p-1` track with no gap, which halves the padded box and draws 158 / 218 / 195 / 157.5 - two pixels per card at every width with nothing else moving, which is how it survived five earlier passes that each got the track's own 42 / r12 / p-1 right. Pinned by dicePanelParity.test.ts and proved red. ★ DICE DOES NOT TAKE THE 375 TYPE STEP, and this was checked rather than assumed: all three boards draw Manrope Regular 12/16 labels and Mulish Regular 14/18 values (panels 9003:43584, 9003:44333, 9003:44957), so the ramp coinflip, mines and plinko carry is not a lane-wide rule and dice is right to hold one scale. The panel card DOES step - r16 pad16 at 1440, r12 pad12 at 768 and 375 - which DiceGame.tsx:1428 already ships.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9062-16874": {
       "section": "dice",
@@ -53089,13 +53089,14 @@
       "citedByFiles": [],
       "implFiles": [
         "modules/skai-gaming/src/components/play/games/instant/MinesGame.tsx",
-        "modules/skai-gaming/src/pages/play/MinesPageSections.tsx"
+        "modules/skai-gaming/src/pages/play/MinesPageSections.tsx",
+        "modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx"
       ],
       "status": "partial",
       "route": "/play/mines",
-      "notes": "TABLET WITNESS FOR THE COLUMN-HEADER SPLIT, IN THE GAMES FILE. Columns 9003:110353-110359: Rank/Game/Time/User Manrope Regular 10/14, Bet Amount/Multiplier/Payout 12/16, all -4% in #95A09F at node opacity 1 - the same split and the same values as the Play file's 768 cut. This board carries no bets segmented control (a walk for the three tab labels returns nothing) and it stops at 1627 tall, above the page footer, so neither the control nor the footer seam has a tablet witness here. Rest of the screen not measured by this lane.",
+      "notes": "THIS FRAME IS WHY THE TYPE STEPS AT `md:` AND THE CARD AT `lg:`. Panel 9003:110220 is 468x534 r12 pad12 gap24 - MOBILE insets - while its type is the full DESKTOP set: Manrope Regular 12/16 labels, Mulish Regular 12/16 balance pair, Mulish Regular 14/18 values. The sibling 768 cut 9003:111281 (422x534 r12 pad12 gap24) agrees on every one. So the tablet board takes the 12s on the card and the 16s and 18s on the type, and a single breakpoint cannot express both. ALSO MEASURED AND DELIBERATELY NOT BUILT: this frame's Manual | Auto track 9003:110222 has itemSpacing 0 where 1440 (9163:8387) and 375 (9163:6438) both draw 4, and its idle card is 42 tall against their 34. Two boards against one, an explicit `gap-0` already in MinesBetPanel.tsx from an earlier pass, and no way to express 4 / 0 / 4 in one class - so it is recorded with node ids rather than guessed at.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9003-111181": {
       "section": "mines",
@@ -53181,13 +53182,14 @@
       ],
       "implFiles": [
         "modules/skai-gaming/src/components/play/games/instant/MinesGame.tsx",
-        "modules/skai-gaming/src/pages/play/MinesPageSections.tsx"
+        "modules/skai-gaming/src/pages/play/MinesPageSections.tsx",
+        "modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx"
       ],
       "status": "partial",
       "route": "/play/mines",
-      "notes": "THE GAMES-FILE 1440 WITNESS FOR BOTH REGIONS THIS LANE MEASURED, AND IT AGREES WITH THE PLAY FILE ON ALL THREE AXES. Partial rather than done because two regions and a seam are not a screen - the rest of this board was not read. Header columns 9163:5144-5150 all Manrope Regular 12/16 at -4% in #95A09F at node opacity 1. Bets control Frame 186 9163:5337: 390x38, radius full, padding 4, itemSpacing 4, buttons 124.67x30 at padding 4/24 with radii 24/4/4/24, 4/4/4/4 and 4/24/24/4, labels Manrope Regular 16/22 at -4%, track #001615 under a 1px #122524 hairline at strokeAlign INSIDE, inactive #122524 with #FFFFFF, active #56C7F3 with #001615. Byte for byte the Play file's component. Footer seam: Frame 641 bottom 3038, logos/skai-short at 3164, so 126 - the second independent witness for that gap. The cross-file agreement is the load-bearing part: the two documents hold separate copies of this region, and a measurement taken in one is not a measurement of the other until the boundary is probed.",
+      "notes": "THE 375 TYPE RAMP WAS FOUND FROM THIS FRAME'S DISAGREEMENT WITH ITS MOBILE TWIN, AND IS NOW FIXED. Panel 9163:8386 is 356x621 r16 pad16 gap16 and draws the desktop type throughout - Manrope Regular 12/16 for `Bet amount:`, `Balance:`, `Mines:`, `Grid Size:`, `Potential Profit` and its fiat; Mulish Regular 12/16 for `100.11 SKAI` and `$21.00`; Mulish Regular 14/18 for `Manual`, `Auto`, `100`, `1/2`, `2X`, `Max` and the grid figures `3 / 25 / 36 / 49`; Manrope Medium 16/22 for the CTA. The 375 board draws every one of those a step smaller, and MinesBetPanel.tsx shipped these desktop figures at every width. Also measured here: the Manual | Auto track 9163:8387 is 324x42 r12 pad4 gap4 with cards 156x34 at r10 LEFT and r12 RIGHT, the same positional radius coinflip draws. NOT READ: this frame's rows node by node.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9163-5572": {
       "section": "mines",
@@ -53207,13 +53209,14 @@
       "citedByFiles": [],
       "implFiles": [
         "modules/skai-gaming/src/components/play/games/instant/MinesGame.tsx",
-        "modules/skai-gaming/src/pages/play/MinesPageSections.tsx"
+        "modules/skai-gaming/src/pages/play/MinesPageSections.tsx",
+        "modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx"
       ],
       "status": "partial",
       "route": "/play/mines",
-      "notes": "MOBILE WITNESS, AND IT CARRIES THE OPACITY TRAP. Columns 9163:5797-5803: Rank/Game/Time/User Manrope Regular 10/12, Bet Amount/Multiplier/Payout 12/16, -4%, #95A09F at node opacity 1. Two further Multiplier labels on the same board (9163:5879, 9163:5919) are 12/16 CENTRE-aligned #FFFFFF at node OPACITY 0.64 - the paint reads full white and only the node carries the fade, so a probe that reads fills and stops would record them as identical to the header cells. They are a different element and were kept out of the header measurement on that basis. 1605 tall, above the footer. Rest of the screen not measured by this lane.",
+      "notes": "THE MOBILE TYPE RAMP IS MEASURED AND FIXED. Panel 9163:6364 is 347x472 r12 pad12 gap16 and every role steps: Manrope Regular 12/14 labels, Mulish Regular 12/14 for the balance pair, and the values fall a whole step from 14/18 to 12/14 - `Manual` (9163:6439's own text), `100`, `1/2`, `2X`, `Max` and the grid figures. The CTA stays Manrope Medium 16/22. Fixed with `md:` because BOTH 768 frames draw the desktop figures inside mobile insets - see the row for 9003-110110. ★ `Mines:` is the one label this frame left at 12/16 while its five siblings stepped; coinflip's 375 frame leaves `Game Mode:` behind the same way and plinko's leaves `Risk`. Track 9163:6438 323x42 r12 pad4 gap4, cards 155.5x34 r10 / r12. NOT READ: the rows node by node.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9163-6955": {
       "section": "mines",
@@ -61765,7 +61768,7 @@
       ],
       "status": "partial",
       "route": "/play/plinko",
-      "notes": "SAME TWO DOM-ERA DEFECTS, BOTH GONE, MEASURED IN CODE THIS PASS. (1) The widget seam: PlinkoGame.tsx:2531 carries no padding at all and adds `gap-2` on the route, which is the 8 the row's own arithmetic wants (9003:79146 puts Frame 270 at x=0 and the board at x=364). (2) PlinkoPageSections.tsx carries fifteen pixel-literal radii and ZERO named classes, so the one-step-large scale cannot reach it. Not promoted: the row's remaining claims - region gaps 40/40/81 against 40/40/80 and the type ramp at 1440 - were not re-read, and no node was opened for this page this pass.",
+      "notes": "MEASURED AND NOT BUILT - THE PLINKO PANEL TAKES THE SAME 375 TYPE STEP AS COINFLIP AND MINES, AND IT IS STILL OPEN. Panel 9003:79147 is 356x621 r16 pad16 gap16 with the desktop set: Manrope Regular 12/16 for `Bet amount:`, `Balance:`, `Risk`, `Rows`; Mulish Regular 12/16 for `100.11 SKAI` and `$21.00`; Mulish Regular 14/18 for `Manual`, `Auto`, `100`, `1/2`, `2X`, `Max`, `Easy`, `Medium`, `Hard` and `16`. The 375 panel 9137:12151 (347x396 r12 pad12 gap16) draws Manrope Regular 12/14 labels and Mulish Regular 12/14 for EVERY value - there is no visible Mulish Regular 14/18 left in it at all - with `Risk` the single label left behind at 12/16. WHY NOT BUILT THIS WAVE: PlinkoGame.tsx carries fourteen inline copies of these two type strings rather than the shared LABEL / VALUE / SUBVALUE constants coinflip and mines use, and several sit outside the bet panel (the earliest is line 492). Introducing the constants and moving fourteen sites is a change that needs its own pass and its own site-by-site mapping; doing it half-measured is how a value that should not have moved gets moved.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -61793,7 +61796,7 @@
       ],
       "status": "partial",
       "route": "/play/plinko",
-      "notes": "MEASURED 768 2026-08-26: column 718 @x22 vs Figma bento 708 @x30 (+10w/-8x); gaps 40/40/81; page title stays 32/300/lh36 where the Figma tablet frame draws 24 Light/lh28 and its details heading 18 Regular/lh22 -- the type ramp does not step down at this width.",
+      "notes": "MEASURED. Panel 9003:83417 is 468x410 r12 pad12 gap16 - mobile insets, desktop type - and its sibling cut 9003:84365 is 422x412 with the same. Both agree with the 1440 board on Manrope Regular 12/16 labels, Mulish Regular 12/16 balance pair and Mulish Regular 14/18 values, which is the same md: / lg: split coinflip and mines carry. ★ THE TWO 768 FRAMES ALSO CARRY A MICRO-SCALE NOTHING ELSE DRAWS: `Risk:` and `Rows:` at Manrope Regular 10/14 and `Low` / `Medium` / `High` at Mulish Regular 11/14. Ten and eleven appear nowhere else in this panel at any width, so it is recorded rather than built - a two-node scale on one board is not a ramp.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -61846,7 +61849,7 @@
       ],
       "status": "partial",
       "route": "/play/plinko",
-      "notes": "MEASURED 375 2026-08-26: column 333 vs Figma bento 347 (-14); no horizontal overflow; page title 24/300/lh24 vs Figma 20 Light/lh24; details heading 24/400/lh28 vs Figma 18 Regular/lh22 -- the mobile type ramp is not implemented, the desktop sizes are reused.",
+      "notes": "MEASURED AND NOT BUILT. Panel 9137:12151 is 347x396 r12 pad12 gap16 and every visible Mulish Regular string in it is 12/14 - `100`, `1/2`, `2X`, `Max`, `100.11 SKAI`, `$21.00`, `Low`, `Medium`, `High`, `16` - against 14/18 and 12/16 on the 1440 and 768 boards, with the labels `Bet amount:`, `Balance:` and `Rows` at Manrope Regular 12/14 and `Risk` the one left at 12/16. That is the identical ramp coinflip and mines were fixed for this wave. The panel CARD already steps correctly - PlinkoGame.tsx:2581 ships `rounded-[12px] p-3 lg:rounded-[16px] lg:p-4` and the boards agree. See the 1440 row for why the type half was left: fourteen inline copies of the type strings, some outside the panel.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -94942,9 +94945,9 @@
       ],
       "status": "partial",
       "route": "/play/keno",
-      "notes": "TITLE READ FROM NODE DATA 2026-09-01. This page-shell frame is titled \"Skai > Play > Casino > Scratchers (1440 x 900px)\" while sitting on the Keno page and drawing Keno content; measured size 1440x3294, so the '(1440 x 900px)' in the title is the DEVICE class, not the frame. The game name is the part that is wrong. Six of the seven pages this lane owns carry at least one mis-titled shell and the string 'Skai > Play > Casino > Blackjack (375 x 812px)' appears on FIVE different pages - Scratchers, Keno, Bingo, Baccarat and Slide. Blackjack's own four shells are the only correctly titled set. Status carried at partial: the title is a naming defect, not a measurement of the build.",
+      "notes": "CHECKED FOR THE 375 TYPE RAMP AND KENO DOES NOT HAVE ONE - a negative result worth recording, because three of the five games in this lane do. Rail 9433:12242 is 356x621 r16 pad16 gap16 with Manrope Regular 12/16 labels (`Bet amount:`, `Balance:`, `Difficulty`), Mulish Regular 12/16 for `100.11 SKAI` / `$21.00` and Mulish Regular 14/18 values (`Manual`, `Auto`, `100`, `1/2`, `2X`, `Max`, `Classic`, `Low`, `Medium`, `High`), and the 375 rail 9433:14797 (347x438 r12 pad12 gap16) draws every one of those AT THE SAME SIZE. So KenoGame.tsx is right to hold one type scale, and the card step it already ships at KenoGame.tsx:1044 is the only thing that moves. NOT READ: the rail's rows node by node, and no 768 frame was measured.",
       "verifiedAt": null,
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9433-14563": {
       "section": "keno",
@@ -94975,9 +94978,9 @@
       ],
       "status": "partial",
       "route": "/play/keno",
-      "notes": "TITLE READ FROM NODE DATA 2026-09-01. This page-shell frame is titled \"Skai > Play > Casino > Blackjack (375 x 812px)\" while sitting on the Keno page and drawing Keno content; measured size 375x1605, so the '(375 x 812px)' in the title is the DEVICE class, not the frame. The game name is the part that is wrong. Six of the seven pages this lane owns carry at least one mis-titled shell and the string 'Skai > Play > Casino > Blackjack (375 x 812px)' appears on FIVE different pages - Scratchers, Keno, Bingo, Baccarat and Slide. Blackjack's own four shells are the only correctly titled set. Status carried at partial: the title is a naming defect, not a measurement of the build.",
+      "notes": "CHECKED AND NO RAMP - see the 1440 row. Rail 9433:14797 347x438 r12 pad12 gap16 draws Manrope Regular 12/16 labels and Mulish Regular 14/18 values, the DESKTOP figures, unlike coinflip, mines and plinko at this width. It does draw two strings the 1440 rail does not - `Random Selection` and `Clear Table`, both Mulish Regular 14/18 - which is a content difference, not a type one. NOT READ: the rail's rows node by node.",
       "verifiedAt": null,
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9433-14989": {
       "section": "keno",
@@ -120088,9 +120091,9 @@
       ],
       "status": "partial",
       "route": "/play/limbo",
-      "notes": "1440x900 Limbo page, MEASURED NOT FIXED - nothing in this frame moved this pass. Both sides, on the properties named. Game block 9948:24672 is 1318 x 621 with the 356 panel at x=0 and the 954 board at x=364, an 8 seam; the code's board row is gap-2, delta 0. Panel 9948:24675: tabs y=16 (42), bet amount y=74 (90), CTA y=180 (52), potential profit y=248 (66) on a 16 pad and a 16 gap; the code ships p-4 gap-4 with the same four blocks in the same order, delta 0. Board field bar 9990:29548 is 884 x 90 at x=35 of the 954 board with a 12 pad, a 10 gap and two 425 x 66 cards; the code ships sm:px-[34px] against a 1px board stroke (34 + 1 = 35), sm:p-[12px], sm:gap-[10px] and two flex-1 cards resolving to (884 - 24 - 10) / 2 = 425 - delta 0 on inset, pad, gap and card width. NOT measured here: the page's lower half, colour and type on any node, and the 1.98x label, which is a frame contradiction already ruled on in the file's own header.",
+      "notes": "THE TAB TRACK WAS CHECKED AGAINST THE SEAM DEFECT FOUND IN DICE AND COINFLIP, AND LIMBO IS ALREADY CORRECT - which is the reason to record it. 9948:24676 is 324x42 r12 pad4 with itemSpacing ZERO and cards 158x34 at r10 / r12, and 158 is exactly (324-8)/2, the padded box halved. The 375 track 10021:30727 is 315x42 pad4 gap0 with 153.5x34 cards, again (315-8)/2. LimboGame.tsx:1742 ships `grid h-[42px] w-full grid-cols-2 rounded-[12px] p-1` with no gap, which draws precisely that. Adding the 4px seam here would have BROKEN it. `Manual` is Mulish Regular 14/18 at both widths, so limbo takes no 375 type step either. NOT READ: the rest of the panel.",
       "verifiedAt": null,
-      "bpStatus": "partial"
+      "bpStatus": "unknown"
     },
     "M6r9FEn042UWTQD1zvy6GM:9948-25380": {
       "section": "limbo",
