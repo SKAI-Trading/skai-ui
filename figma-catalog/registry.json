@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:44:59.324Z",
+  "generated": "2026-09-08T08:47:13.235Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -54266,11 +54266,12 @@
       ],
       "implFiles": [
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx",
-        "modules/skai-gaming/src/pages/play/CoinflipPageSections.tsx"
+        "modules/skai-gaming/src/pages/play/CoinflipPageSections.tsx",
+        "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
       "status": "partial",
       "route": "/play/coinflip",
-      "notes": "THE ROW'S TWO NAMED DEFECTS ARE GONE FROM THE TREE; ITS UNREAD AXES ARE WHY IT IS NOT DONE. Both were measured off a rendered 1440 DOM on 2026-08-26 and both were code-side, so this is the stale-in-the-helpful-direction case the wave was built for. (1) `WIDGET BOARD 1440: DOM 914 vs Figma 954, the route panel adds 16px inner padding` - CoinFlipGame.tsx:1428 now ships `p-2 lg:flex-row lg:px-0`, so the desktop row spends nothing horizontally and the two columns pack 356 + 8 + 954 = 1318 against Frame 520; its own header records the seam and coinflipPanelSeam.test.ts holds it. (2) `every named-class radius lands ONE STEP LARGE` - CoinflipPageSections.tsx now carries fifteen pixel literals and exactly one named class, `cardRadiusClass=\"rounded-lg\"`, which is the 12 the row says 9003:131102 draws. So the class-scale mechanism the row blamed is gone from this file. NOT READ THIS PASS: whether each surviving literal equals its own node. The row named five sites without node ids, and `rounded-[12px]` on the Community-wins band is the same 12 the old `rounded-lg` resolved to - converting a spelling does not move a value, and that one is worth a node id before anyone calls it matched.",
+      "notes": "THE BET PANEL ON THIS BOARD IS NOW MEASURED END TO END; THE REST OF THE PAGE IS NOT THIS LANE'S FILE. Panel 9003:130681 is 356x621 r16 pad16 gap16 column 324 inside Frame 658 1318x621, panel LEFT of the 954 board at x364 - all matched. Its type is the desktop set (Manrope Regular 12/16, Mulish Regular 12/16 and 14/18, Mulish Medium 14/18, Manrope Medium 16/22), which is what fixes `md:` rather than `lg:` as the type ramp's breakpoint: this board and the 768 one draw the same figures. Manual|Auto 9003:130682 324x42 r12 pad4 gap4 with 156x34 pills at r10/r12, and Game Mode 10221:6347 323x42 r12 pad4 gap4 with 155.5x34 r10 pills at #56C7F3 / #123F3C - both were wrong in the component and both are fixed. STILL OUT OF THIS LANE: everything the page draws outside the panel lives in modules/skai-gaming/src/pages/play/CoinflipPageSections.tsx, including the page title and the details heading this row's earlier note flagged.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54348,11 +54349,12 @@
       ],
       "implFiles": [
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx",
-        "modules/skai-gaming/src/pages/play/CoinflipPageSections.tsx"
+        "modules/skai-gaming/src/pages/play/CoinflipPageSections.tsx",
+        "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
       "status": "partial",
       "route": "/play/coinflip",
-      "notes": "MEASURED 768 2026-08-26: column 718 @x22 vs Figma bento 708 @x30 (+10w/-8x); gaps 40/40/81; page title stays 32/300/lh36 where the Figma tablet frame draws 24 Light/lh28 and its details heading 18 Regular/lh22 -- the type ramp does not step down at this width.",
+      "notes": "THE TABLET BOARD IS THE ONE THAT SETTLES TWO BREAKPOINTS, AND IT SPLITS THEM. Panel 9003:132458 is 422x399.33 r12 pad12 gap24 column 398, stacked BELOW the 422 coin board inside Frame 271 - so its INSETS are the mobile ones. Its TYPE is the desktop set: `Bet amount:` 9003:132486, `Balance:` 9003:132506 and `Game Mode:` 9003:132520 are all Manrope Regular 12/16, and the values are Mulish Regular 14/18. That is why the two axes now turn over at different widths in the component - the type steps at `md:` (375 only) and the card steps at `lg:` (768 takes the 12s). No standalone panel frame exists at 422, so this board is the only evidence at this width and nobody had read it. TWO NODES HERE DISSENT FROM THEIR OWN SIBLINGS AND WERE NOT BUILT: the panel gap is 24 where 1440 and 375 are both 16, and Game Mode 9003:132521 is a different cut (gap 0, pad 0/8, 191x42 pills at r12) against ten nodes that draw a 4px seam and r10. NOT READ: the rest of the page, which is CoinflipPageSections.tsx.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54381,11 +54383,12 @@
       ],
       "implFiles": [
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx",
-        "modules/skai-gaming/src/pages/play/CoinflipPageSections.tsx"
+        "modules/skai-gaming/src/pages/play/CoinflipPageSections.tsx",
+        "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
       "status": "partial",
       "route": "/play/coinflip",
-      "notes": "MEASURED 375 2026-08-26: column 333 vs Figma bento 347 (-14); no horizontal overflow; page title 24/300/lh24 vs Figma 20 Light/lh24; details heading 24/400/lh28 vs Figma 18 Regular/lh22 -- the mobile type ramp is not implemented, the desktop sizes are reused.",
+      "notes": "THE MOBILE BOARD DISAGREES WITH THE SIX STANDALONE 347 FRAMES ON THE PANEL'S INSETS, AND THE BOARD WON. Panel 9178:14631 is 347x354 r12 pad12 gap16 column 323, stacked under the 347 coin board 9178:14615 which is itself r12 - so no board draws the r16 panel the component was shipping below `lg`. Dice's boards draw the identical step (9003:43584 r16 pad16 at 1440 against 9003:44333 and 9003:44957 at r12 pad12), and DiceGame.tsx:1428, KenoGame.tsx:1044 and PlinkoGame.tsx:2581 already ship it, so coinflip was the lane's only panel holding r16 at every width. The eleven standalone frames say r16/pad16 and the 347 six are a duplicate-and-narrow of the 356 five; the tell is 9206:19430 keeping `Game Mode:` at 12/16 while its ten siblings stepped to 12/14. TYPE here is the full mobile ramp - Manrope Regular 12/14 labels (9178:14659, 9178:14679, 10221:6384), Mulish Regular 12/14 for `100`, `1/2`, `2X`, `Max`, `Classic`, `Target`, `Manual`, `Auto`, `100.11 SKAI` and `$21.00`, with the four Mulish 14/18 `0.01 SKAI` nodes all `visible: false`. Manual|Auto 9178:14711 323x42 r12 pad4 gap4 (155.5x34 pills) and Game Mode 10221:6385 identical - both fixed. NOT READ: the rest of the page, which is CoinflipPageSections.tsx.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54447,9 +54450,9 @@
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx (+ instant/coinflip/CoinflipBoard.tsx, CoinflipBetPanel.tsx)",
         "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/play/coinflip",
-      "notes": "MEASURED all 3 axes off node data 2026-08-31. GEOM: 356x621 r16 pad16 gap16 = lg:rounded-[16px] lg:p-4 lg:gap-4, column 324; tab strip 324x42 r12 pad4 gap0 with cards 158x34 r10 = rounded-[12px] p-1 + rounded-[10px]; bet card 160x42 r12 = CARD; Heads/Tails pair Frame 1000004016 324x52 gap8 with cards 158x52 r12 pad12 = gap-2 + h-[52px] rounded-[12px] px-3; Continuous toggle row Frame 1000004021 324x21.3 = SWITCH_CLS 21.33/38; CTA 324x52 r16 pad20/40. TYPE: `Balance:` Manrope Regular 12/16 ls-4% vs `$21.00` Mulish Regular 12/16 ls-4% - the code carries exactly that split as LABEL (font-manrope) and SUBVALUE (font-mulish), both 12/16 tracking-[-0.04em] white/64; CTA `Cashout` Manrope Medium 16/22 ls-4%. COLOUR: choice cards #56C7F3 / #FFBA00 = COINFLIP.blue / COINFLIP.gold; CTA INVERTS here - Figma fill #001615 with #123F3C text, code ctaIsStop ? {backgroundColor: COINFLIP.inset, color: COINFLIP.segment} : {blue, blueText}, i.e. the inversion is implemented, not assumed. Panel #122524, inset #001615.",
+      "notes": "SHELL, TYPE AND BOTH SEGMENTED TRACKS MEASURED THIS RUN; THE INTERIOR ROWS ARE STILL UNREAD, WHICH IS WHY THIS IS NOT DONE. Live 356x621 r16 pad16 gap16 column 324, unchanged from the recorded harvest. TYPE reads the desktop figures throughout - Manrope Regular 12/16 labels, Mulish Regular 12/16 subvalues, Mulish Regular 14/18 values, Mulish Medium 14/18 side cards, Manrope Medium 16/22 CTA - so this frame does not take the 375 step and the component is right not to apply one at this width. The Manual|Auto track and the Game Mode track were both read on this frame and both carry the wave's fixes (4px seam, r10/r12 by position, r10 pills on a #001615 track with a #123F3C idle fill). NOT READ: this frame's own bet-amount, Coins, Bet On, Minumum, Stop on Win / Stop on Loss and Number of Bets rows node by node - they were read on 9204:17182 only, and a shell plus a type census is not three axes on THIS frame.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54511,9 +54514,9 @@
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx (+ instant/coinflip/CoinflipBoard.tsx, CoinflipBetPanel.tsx)",
         "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/play/coinflip",
-      "notes": "MEASURED all 3 axes off node data 2026-08-31. GEOM: 356x621, column 324; Game Mode strip Frame 1000004019 324x42 r12 pad4 gap3 with cards 156.5x34 r10 = rounded-[12px] p-1 gap-[3px] + rounded-[10px]; Coins row card 229.6x42 r12 pad4/4/4/12 = CARD h-[42px] rounded-[12px]; stepper Frame 359 86.4x42 gap4, halves Frame 357/360 41.2x42 r12/0/0/12 and r0/12/12/0 pad8/14 = h-[42px] px-[14px] py-2 rounded-l-[12px]/rounded-r-[12px]; Bet On block Frame 1000004042 119x66 = w-[119px]; Minumum block 197x66; CTA 324x52 r16 pad20/40 = h-[52px] rounded-[16px]. TYPE: labels Manrope Regular 12/16 ls-4%, CTA `Bet` Manrope Medium 16/22 ls-4% = the same two constants. COLOUR: active Game Mode card #56C7F3, inactive #123F3C, stepper halves #123F3C, inset #001615, panel #122524, CTA fill #56C7F3 on #001615 text - all four resolve to COINFLIP.blue/segment/inset/panel/blueText. Label fills #ffffff @0.64 node opacity, ancestors all opacity 1.",
+      "notes": "SHELL, TYPE AND BOTH SEGMENTED TRACKS MEASURED THIS RUN; THE INTERIOR ROWS ARE STILL UNREAD, WHICH IS WHY THIS IS NOT DONE. Live 356x621 r16 pad16 gap16 column 324, unchanged from the recorded harvest. TYPE reads the desktop figures throughout - Manrope Regular 12/16 labels, Mulish Regular 12/16 subvalues, Mulish Regular 14/18 values, Mulish Medium 14/18 side cards, Manrope Medium 16/22 CTA - so this frame does not take the 375 step and the component is right not to apply one at this width. The Manual|Auto track and the Game Mode track were both read on this frame and both carry the wave's fixes (4px seam, r10/r12 by position, r10 pills on a #001615 track with a #123F3C idle fill). NOT READ: this frame's own bet-amount, Coins, Bet On, Minumum, Stop on Win / Stop on Loss and Number of Bets rows node by node - they were read on 9204:17182 only, and a shell plus a type census is not three axes on THIS frame.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54545,7 +54548,7 @@
       ],
       "status": "partial",
       "route": "/play/coinflip",
-      "notes": "Shell MEASURED 2026-08-31: 356x621 r16 pad16 gap16 column 324, matching the component after this wave's fix. Its interior rows are the Target set from 9190:14969 plus the Number of Bets card from 9204:16958, both of which I read node-by-node, but I did NOT open THIS frame's own children, so it does not meet the bar. `partial`, not `done` - the shell alone is not three axes.",
+      "notes": "SHELL, TYPE AND BOTH SEGMENTED TRACKS MEASURED THIS RUN; THE INTERIOR ROWS ARE STILL UNREAD, WHICH IS WHY THIS IS NOT DONE. Live 356x621 r16 pad16 gap16 column 324, unchanged from the recorded harvest. TYPE reads the desktop figures throughout - Manrope Regular 12/16 labels, Mulish Regular 12/16 subvalues, Mulish Regular 14/18 values, Mulish Medium 14/18 side cards, Manrope Medium 16/22 CTA - so this frame does not take the 375 step and the component is right not to apply one at this width. The Manual|Auto track and the Game Mode track were both read on this frame and both carry the wave's fixes (4px seam, r10/r12 by position, r10 pills on a #001615 track with a #123F3C idle fill). NOT READ: this frame's own bet-amount, Coins, Bet On, Minumum, Stop on Win / Stop on Loss and Number of Bets rows node by node - they were read on 9204:17182 only, and a shell plus a type census is not three axes on THIS frame.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54681,9 +54684,9 @@
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx (+ instant/coinflip/CoinflipBoard.tsx, CoinflipBetPanel.tsx)",
         "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/play/coinflip",
-      "notes": "MEASURED all 3 axes off node data 2026-08-31. GEOM: frame 356x941 = panel content column 324 (356-2*16) vs code lg:p-4/lg:gap-4/lg:rounded-[16px]; tab strip 324x42 r12 pad4 = h-[42px] rounded-[12px] p-1, tabs 158x34 r10 = rounded-[10px]; section gap 16 = lg:gap-4, intra-section gap 8 = gap-2; inset card 324x42 r12 = CARD h-[42px] rounded-[12px]; Advanced toggle row 324x21.3 toggle 37.9x21.3 knob 17.3 = SWITCH_CLS h-[21.33px] w-[38px] knob 17.33px travel 16.67px; progression track Frame 1000004084 212x42 r12 pad4 gap3 = rounded-[12px] p-1 gap-[3px], chips Frame 1000004086 82x34 r8 + Frame 1000004087 119x34 r8 = w-[82px] + rounded-[8px] (FIXED this wave, was rounded-lg=12), numeric card Frame 1000004089 97x42 r12 = w-[97px], row gap 15 = gap-[15px]; CTA 324x52 r16 pad20/40 = h-[52px] rounded-[16px]. TYPE: labels Manrope Regular 12/lh16/ls-4% = LABEL text-[12px] leading-[16px] tracking-[-0.04em]; values Mulish Regular 14/lh18/ls-4% = VALUE; CTA Manrope Medium 16/lh22/ls-4% = text-[16px] font-medium leading-[22px] tracking-[-0.04em]. COLOUR: panel #122524 = COINFLIP.panel; inset #001615 = COINFLIP.inset; active tab #56C7F3 = COINFLIP.blue; segment #123F3C = COINFLIP.segment; CTA text #001615 = COINFLIP.blueText; every label fill #ffffff at node opacity 0.64 (no ancestor opacity on the chain, checked) = text-white/64.",
+      "notes": "SHELL, TYPE AND BOTH SEGMENTED TRACKS MEASURED THIS RUN; THE INTERIOR ROWS ARE STILL UNREAD, WHICH IS WHY THIS IS NOT DONE. Live 356x941.33 r16 pad16 gap16 column 324, unchanged from the recorded harvest. TYPE reads the desktop figures throughout - Manrope Regular 12/16 labels, Mulish Regular 12/16 subvalues, Mulish Regular 14/18 values, Mulish Medium 14/18 side cards, Manrope Medium 16/22 CTA - so this frame does not take the 375 step and the component is right not to apply one at this width. The Manual|Auto track and the Game Mode track were both read on this frame and both carry the wave's fixes (4px seam, r10/r12 by position, r10 pills on a #001615 track with a #123F3C idle fill). NOT READ: this frame's own bet-amount, Coins, Bet On, Minumum, Stop on Win / Stop on Loss and Number of Bets rows node by node - they were read on 9204:17182 only, and a shell plus a type census is not three axes on THIS frame.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54713,9 +54716,9 @@
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx (+ instant/coinflip/CoinflipBoard.tsx, CoinflipBetPanel.tsx)",
         "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/play/coinflip",
-      "notes": "Shell MEASURED 2026-08-31: 356x621 r16 pad16 gap16 column 324. Interior not read on this frame. Same reasoning as 9190:16383.",
+      "notes": "READ NODE BY NODE TO DEPTH 3 AND EVERY MEASURED DELTA IS NOW FIXED. Shell 356x621 r16 pad16 gap16 column 324, fill #122524 - matched. TYPE: Manrope Regular 12/16 labels, Mulish Regular 14/18 values, Mulish Regular 12/16 subvalues, Manrope Medium 16/22 CTA `Bet`; the desktop figures, which is what the component already shipped. GEOMETRY, three fixes: (1) the Manual|Auto track 9204:17183 is 324x42 r12 pad4 with a 4px SEAM and its two pills are 156x34 - the panel had no gap, so its pills came out 158; (2) those pills are r10 LEFT and r12 RIGHT, positional not stateful (9204:17184 r10 #001615 beside 9204:17191 r12 #56C7F3), and both shipped r10; (3) `Game Mode` 10221:6594 is the same construction - a 323x42 r12 pad4 gap4 #001615 track holding two 155.5x34 r10 pills - where the panel shipped two free r12 buttons at gap 8 on no track, with the inactive one filled #001615 instead of #123F3C. MATCHED WITHOUT CHANGE: bet-amount block 9204:17198 324x90 = label 16 + 8 + field row 42 + 8 + balance row 16; field card 9212:21552 160x42 r12 pad12; chips 9204:17211 156x42 gap4 with 9204:17212 r12/0/0/12 and 9204:17216 r0/12/12/0 at pad 8/14; balance row 9204:17218 justify-between with label to value 8 and value to glyph 6; Number of Bets card 9204:17497 324x42 r12 pad12; CTA instance 9204:17489 324x52 r16 #56C7F3. Pinned by CoinflipBetPanel.test.tsx (`Manual | Auto track`, `Game Mode`, `panel shell`, `type ramp`), each proved red by reverting the value.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54805,9 +54808,9 @@
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx (+ instant/coinflip/CoinflipBoard.tsx, CoinflipBetPanel.tsx)",
         "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/play/coinflip",
-      "notes": "MEASURED all 3 axes off node data 2026-08-31. GEOM: 347x517.3 r16 pad16 gap16, column 315 = 347-2*16 - the component now ships rounded-[16px] p-4 gap-4 at EVERY width (FIXED this wave; it was rounded-[12px] p-3 below lg, which would have made the column 323). Choice pair Frame 1000004016 315x52 gap8 with cards 153.5x52 r12 = gap-2 + h-[52px] rounded-[12px]; CTA 315x52 r16; toggle row 315x21.3; tab strip 315x42 r12 pad4 with cards 153.5x34 r10. ORDER: Figma stacks choice pair y16 - CTA y84 - bet amount y152 - toggle y340 - Manual|Auto tab strip LAST at y459.3; code puts actionOrder='order-first lg:order-none' on the CTA and the side cards and 'order-last lg:order-first' on the tab strip, so the mobile order is the frame's. TYPE: labels Manrope Regular 12/16 ls-4%, CTA Manrope Medium 16/22 ls-4%. COLOUR: cards #56C7F3 / #FFBA00; CTA fill #001615 with #123F3C text (the Cashout inversion) = COINFLIP.inset / COINFLIP.segment.",
+      "notes": "THE 375 TYPE RAMP IS MEASURED AND FIXED HERE; THE INTERIOR ROWS ARE STILL UNREAD. Live 347x510 (recorded 517.3) r16 pad16 gap16 column 315. TYPE: every Manrope Regular 12 label and every Mulish Regular 12 subvalue is lh 14, and every Mulish Regular value is 12/14 where the 356 twin draws 14/18; the side cards stay Mulish Medium 14/18 and the CTA Manrope Medium 16/22, both unchanged at every width. The component shipped the desktop figures at every width and now steps at `md:`. THE 14/18 NODES IN THIS FRAME ARE NOT COUNTER-EVIDENCE: all of them read `0.01 SKAI` and all are `visible: false`, template leftovers that sit on the 356 frames and the 375 board too. Both segmented tracks read and fixed (4px seam, r10 left / r12 right on Manual|Auto, r10 pills on a #001615 Game Mode track with a #123F3C idle fill). NOT READ: this frame's own field rows node by node.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54838,7 +54841,7 @@
       ],
       "status": "partial",
       "route": "/play/coinflip",
-      "notes": "Shell MEASURED 2026-08-31: 347x494 r16 pad16 gap16 column 315. One of the six mobile frames that disproved the \"pad 12 at mobile\" claim this file had carried. Interior not read.",
+      "notes": "THE 375 TYPE RAMP IS MEASURED AND FIXED HERE; THE INTERIOR ROWS ARE STILL UNREAD. Live 347x484 (recorded 494) r16 pad16 gap16 column 315. TYPE: every Manrope Regular 12 label and every Mulish Regular 12 subvalue is lh 14, and every Mulish Regular value is 12/14 where the 356 twin draws 14/18; the side cards stay Mulish Medium 14/18 and the CTA Manrope Medium 16/22, both unchanged at every width. The component shipped the desktop figures at every width and now steps at `md:`. THE 14/18 NODES IN THIS FRAME ARE NOT COUNTER-EVIDENCE: all of them read `0.01 SKAI` and all are `visible: false`, template leftovers that sit on the 356 frames and the 375 board too. Both segmented tracks read and fixed (4px seam, r10 left / r12 right on Manual|Auto, r10 pills on a #001615 Game Mode track with a #123F3C idle fill). NOT READ: this frame's own field rows node by node.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54869,7 +54872,7 @@
       ],
       "status": "partial",
       "route": "/play/coinflip",
-      "notes": "Shell MEASURED 2026-08-31: 347x621 r16 pad16 gap16 column 315. Interior not read.",
+      "notes": "THE 375 TYPE RAMP IS MEASURED AND FIXED HERE; THE INTERIOR ROWS ARE STILL UNREAD. Live 347x621 (recorded 621, unchanged) r16 pad16 gap16 column 315. TYPE: every Manrope Regular 12 label and every Mulish Regular 12 subvalue is lh 14, and every Mulish Regular value is 12/14 where the 356 twin draws 14/18; the side cards stay Mulish Medium 14/18 and the CTA Manrope Medium 16/22, both unchanged at every width. The component shipped the desktop figures at every width and now steps at `md:`. THE 14/18 NODES IN THIS FRAME ARE NOT COUNTER-EVIDENCE: all of them read `0.01 SKAI` and all are `visible: false`, template leftovers that sit on the 356 frames and the 375 board too. Both segmented tracks read and fixed (4px seam, r10 left / r12 right on Manual|Auto, r10 pills on a #001615 Game Mode track with a #123F3C idle fill). NOT READ: this frame's own field rows node by node.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54900,7 +54903,7 @@
       ],
       "status": "partial",
       "route": "/play/coinflip",
-      "notes": "Shell MEASURED 2026-08-31: 347x941.3 r16 pad16 gap16 column 315 - the tallest mobile panel, and the same 941.3 height as the desktop 9204:16958, which is what shows the panel does not restyle between widths, only reflow. Interior not read.",
+      "notes": "THE 375 TYPE RAMP IS MEASURED AND FIXED HERE; THE INTERIOR ROWS ARE STILL UNREAD. Live 347x926 (recorded 941.3) r16 pad16 gap16 column 315. TYPE: every Manrope Regular 12 label and every Mulish Regular 12 subvalue is lh 14, and every Mulish Regular value is 12/14 where the 356 twin draws 14/18; the side cards stay Mulish Medium 14/18 and the CTA Manrope Medium 16/22, both unchanged at every width. The component shipped the desktop figures at every width and now steps at `md:`. THE 14/18 NODES IN THIS FRAME ARE NOT COUNTER-EVIDENCE: all of them read `0.01 SKAI` and all are `visible: false`, template leftovers that sit on the 356 frames and the 375 board too. Both segmented tracks read and fixed (4px seam, r10 left / r12 right on Manual|Auto, r10 pills on a #001615 Game Mode track with a #123F3C idle fill). NOT READ: this frame's own field rows node by node.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54930,9 +54933,9 @@
         "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx (+ instant/coinflip/CoinflipBoard.tsx, CoinflipBetPanel.tsx)",
         "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/play/coinflip",
-      "notes": "Shell MEASURED 2026-08-31: 347x531.3 r16 pad16 gap16 column 315. Interior not read.",
+      "notes": "THE 347 TWIN OF 9204-17182, READ TO DEPTH 3, AND THE WIDTH IS THE WHOLE STORY. Live 347x526, not the 531.3 this catalog recorded. Shell r16 pad16 gap16 column 315 on the frame itself; the panel as COMPOSED at 375 is r12 pad12 column 323 and the code follows the board - see the row for 9178-14134. TYPE, and this frame is where the mobile ramp is unmistakable: EVERY 12px string is lh 14 here against lh 16 on 9204:17182 - `Bet amount:` 9206:19448, `Coins:` 9206:19496, `Number of Bets:` 9206:19515, `Advanced` 9206:19535, `Balance:` 9206:19468, `100.11 SKAI` 9206:19470, `$21.00` 9206:19476 - and every Mulish value falls a whole step to 12/14. The component shipped the desktop figures at every width; fixed with `md:`. ONE OUTLIER INSIDE THIS FRAME, recorded not built: `Game Mode:` 10221:6403 is still 12/16 while its ten siblings stepped, which is the signature of a duplicate-and-narrow whose overrides landed unevenly - the 375 BOARD draws it 12/14 (10221:6384) and the board wins. GEOMETRY: track 9206:19431 315x42 r12 pad4 gap4 with 151.5x34 pills at r10/r12, and Game Mode 10221:6404 315x42 r12 pad4 gap4 with 151.5x34 pills - both fixed. Row order differs from desktop and the component already had it: CTA first (9206:19527 at y16), tabs last (y468). Same tests, same red proof.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -54963,7 +54966,7 @@
       ],
       "status": "partial",
       "route": "/play/coinflip",
-      "notes": "Shell MEASURED 2026-08-31: 347x859.3 r16 pad16 gap16 column 315. Interior not read.",
+      "notes": "THE 375 TYPE RAMP IS MEASURED AND FIXED HERE; THE INTERIOR ROWS ARE STILL UNREAD. Live 347x844 (recorded 859.3) r16 pad16 gap16 column 315. TYPE: every Manrope Regular 12 label and every Mulish Regular 12 subvalue is lh 14, and every Mulish Regular value is 12/14 where the 356 twin draws 14/18; the side cards stay Mulish Medium 14/18 and the CTA Manrope Medium 16/22, both unchanged at every width. The component shipped the desktop figures at every width and now steps at `md:`. THE 14/18 NODES IN THIS FRAME ARE NOT COUNTER-EVIDENCE: all of them read `0.01 SKAI` and all are `visible: false`, template leftovers that sit on the 356 frames and the 375 board too. Both segmented tracks read and fixed (4px seam, r10 left / r12 right on Manual|Auto, r10 pills on a #001615 Game Mode track with a #123F3C idle fill). NOT READ: this frame's own field rows node by node.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -55396,11 +55399,12 @@
       "family": null,
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx (+ instant/coinflip/CoinflipBoard.tsx, CoinflipBetPanel.tsx)"
+        "modules/skai-gaming/src/components/play/games/instant/CoinFlipGame.tsx (+ instant/coinflip/CoinflipBoard.tsx, CoinflipBetPanel.tsx)",
+        "modules/skai-gaming/src/components/play/games/instant/coinflip/CoinflipBetPanel.tsx"
       ],
-      "status": "partial",
+      "status": "done",
       "route": "/play/coinflip",
-      "notes": "`Game Mode:` segmented-control fragment, 324x66 (Frame 464 > `Game Mode:` TEXT 66x16 + Frame 1000004019 323x42) - the MOBILE-width cut of the control whose desktop node is 9190:15019. IMPLEMENTED: CoinflipBetPanel.tsx:895-928 renders the label and a Classic|Target radio group with aria-checked. The lane brief listed this node as real design nobody had assessed; it was built on 2026-08-26 (CoinFlipGame.tsx mtime 14:48) before this lane reached it.",
+      "notes": "THE FRAGMENT IS THE CONTROL THIS WAVE REBUILT, AND IT MATCHES NOW. 324x66 V gap16 > Frame 464 324x66 V gap8 = `Game Mode:` 10221:6247 Manrope Regular 12/16 (66x16) over the track 10221:6264 323x42 r12 H gap4 pad4 fill #001615, holding 10221:6265 155.5x34 r10 #56C7F3 and 10221:6279 155.5x34 r10 #123F3C. Every one of those is now what the component renders: track background, 4px pad, 4px seam, r10 pills, and the INACTIVE pill filled #123F3C rather than the track's own #001615 - which is the fix that stops the idle half reading as a hole in the row. Note this fragment is a hybrid and it is worth knowing before quoting it: the label carries the DESKTOP 12/16 while the track is 323 wide, which is the 375 board's width. Nine sibling nodes draw the same track and agree on all of it.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
