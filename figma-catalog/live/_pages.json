@@ -27,7 +27,21 @@
     "",
     "`scope` drives the roll-up. Casey's rulings: Governance is HELD (do not build),",
     "Onboarding is a standing exclusion, and the v2 pages SUPERSEDE Home 1 / Wallet 1 /",
-    "Trade 1, so v1 frames are not parity targets."
+    "Trade 1, so v1 frames are not parity targets.",
+    "",
+    "★ THIS FILE IS NO LONGER ONE DATE. Pages are re-harvested individually and each",
+    "carries its own `harvestedAt`; the top-level `harvestedAt` is the ORIGINAL sweep and",
+    "governs only the rows that have no per-page override. Read the per-page field before",
+    "quoting an age.",
+    "",
+    "★ THE 2026-08-26 SWEEP TRUNCATED `name` AT 20 CHARACTERS. Measured on 2026-09-07:",
+    "48 of 49 node lists cap every name at 20 chars (1,157 of them on Titles + Emblems",
+    "alone); only the blackjack and bingo pages, re-harvested later under commit 9cd5648",
+    "'for full titles', carry whole names. Nothing coverage.mjs does joins on the name —",
+    "`classify()` only regex-tests it for canvas chrome, and every furniture pattern is",
+    "shorter than the cap — so the truncation costs no accuracy there. It DOES make the",
+    "column useless for reading a frame back, which is why re-harvests write the full name.",
+    "Do not treat a longer name in a re-harvested page as drift against a shorter one here."
   ],
   "harvestedAt": "2026-08-26",
   "method": "use_figma read-only; figma.root.children for the page list, then page.loadAsync() per page for children",
@@ -140,9 +154,9 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "pageName": "🚧 Governance and Utilities",
-      "readiness": "wip",
-      "n": 331,
+      "pageName": "✅ Governance and Utilities",
+      "readiness": "ready",
+      "n": 725,
       "scope": "held"
     },
     {
@@ -158,7 +172,8 @@
       "pageId": "2003:674",
       "pageName": "✅ Home 1",
       "readiness": "ready",
-      "n": 254,
+      "n": 277,
+      "harvestedAt": "2026-09-07",
       "scope": "v1-superseded"
     },
     {
@@ -166,7 +181,8 @@
       "pageId": "13008:110718",
       "pageName": "✅ Home 2",
       "readiness": "ready",
-      "n": 168,
+      "n": 240,
+      "harvestedAt": "2026-09-07",
       "scope": "in-scope"
     },
     {
@@ -198,7 +214,8 @@
       "pageId": "13006:134300",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
-      "n": 407,
+      "n": 417,
+      "harvestedAt": "2026-09-07",
       "scope": "in-scope"
     },
     {
