@@ -123,3 +123,32 @@ describe("modes", () => {
     expect(container).toBeEmptyDOMElement();
   });
 });
+
+describe("dismissal", () => {
+  it("closes on Escape", () => {
+    const props = setup();
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(props.onClose).toHaveBeenCalledTimes(1);
+  });
+
+  /**
+   * The drag-release regression (bug 232862b0): a click's target is the
+   * nearest common ancestor of press and release, so pressing inside the
+   * email field and releasing over the backdrop delivers a click whose
+   * target IS the backdrop. Only ModalScrim's pointerdown latch tells that
+   * apart from a deliberate outside click.
+   */
+  it("does not close when the press started inside the email field, but still closes on a plain backdrop click", () => {
+    const props = setup();
+    const backdrop = screen.getByTestId("auth-modal-backdrop");
+    const field = screen.getByLabelText(/email address/i);
+
+    fireEvent.pointerDown(field);
+    fireEvent.click(backdrop);
+    expect(props.onClose).not.toHaveBeenCalled();
+
+    fireEvent.pointerDown(backdrop);
+    fireEvent.click(backdrop);
+    expect(props.onClose).toHaveBeenCalledTimes(1);
+  });
+});

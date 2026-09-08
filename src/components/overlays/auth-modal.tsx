@@ -28,6 +28,7 @@ import {
   AUTH_WALLET_LABELS,
   type AuthWalletId,
 } from "./auth-wallet-icons";
+import { ModalScrim } from "./ModalScrim";
 
 export type AuthModalMode = "login" | "signup";
 
@@ -191,19 +192,23 @@ export function AuthModal({
   );
 
   return (
-    <div
-      className={cn("fixed inset-0 z-[10000] flex items-center justify-center p-2 sm:p-6", className)}
-      style={{ background: "rgba(0, 22, 21, 0.44)", backdropFilter: "blur(12px)" }}
-      onClick={onClose}
+    /* ModalScrim owns Escape-to-close and the drag-release guard (bug 232862b0):
+       a click landing on the backdrop only dismisses when the PRESS also began
+       there, so sweeping a selection out of the email field and letting go past
+       the edge cannot discard a half-typed address. A hand-rolled
+       `onClick={onClose}` + child `stopPropagation()` looked equivalent but
+       isn't — a click's target is the nearest common ancestor of press and
+       release, so that pair still closed on a drag-off. */
+    <ModalScrim
+      onClose={onClose}
+      label={isSignup ? "Sign up" : "Login"}
+      testId="auth-modal-backdrop"
+      className={cn("z-[10000] bg-[rgba(0,22,21,0.44)] p-2 backdrop-blur-[12px] sm:p-6", className)}
     >
       <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="skai-auth-title"
         /* 448 wide at lg, radius 32, Green Coal 200 on a Green Coal 100 hairline,
            24 top / 40 bottom. 358 wide and radius 20 at 375. */
         className="relative flex w-full max-w-[358px] flex-col gap-4 rounded-[20px] border border-[#123f3c] bg-[#122524] px-4 pb-6 pt-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-5 md:rounded-[28px] md:px-5 md:pb-8 md:pt-5 lg:max-w-[448px] lg:gap-6 lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
-        onClick={(e) => e.stopPropagation()}
       >
         {/* Title row: centred Super-headline 4 300 with the close glyph at the right. */}
         <div className="relative flex items-center justify-center">
@@ -377,7 +382,7 @@ export function AuthModal({
           </p>
         )}
       </div>
-    </div>
+    </ModalScrim>
   );
 }
 
