@@ -1,0 +1,37 @@
+# key	status	primaryFile	route	reason	bp
+# Lane launchpad, 2026-09-08. Owns src/pages/Launchpad.tsx, src/pages/LaunchpadCreate.tsx
+# and src/pages/account/**. Only the Launch LANDING frames are here.
+#
+# THE PLUGIN API WAS LIVE. Every number in these rows was read off its own node
+# with use_figma - 9 frames, all three boards, about 60 nodes. Nothing is carried
+# from a recorded row except the type ramp, which is cited where it is used.
+#
+# WHAT THESE ROWS CLOSE. status.wave3.verify-trade2.tsv rows 86-94 put every one
+# of these frames at partial with the same sentence: code-side per-element type
+# was NOT compared, so this is frame numbers on record, not parity. That
+# comparison is what this lane did.
+#
+# ONE CORRECTION WORTH CARRYING. The 768 trending card was derived as pitch - 8,
+# taking the 8px row gap off the 1440 row 13006:146274 and carrying it sideways.
+# The recorded 276 pitch is right and the split is not: the tablet row
+# 13006:279913 declares gap 16 over a 260 card. A number can be right about the
+# total and wrong about which element owns it.
+#
+# NOT REACHED, and not implied by any row above: the create-token frames
+# (13006:147486 / :148299 / :286299 / :287246 / :284353 / :285189 / :285448) and
+# the buy-test trio (:147876 / :286595 / :284880). Their panel geometry WAS read
+# this wave and the three cards agree with the shipped lg: ladder - Frame 270 is
+# r12 pad 12/12/24/12 at 375 and 768 against r24 pad 16/16/40/16 at 1440, which
+# LaunchpadCreate.tsx:1506 already draws - but the form is one card in code where
+# the frames stack three (Frame 270 / 267 / 346 inside Frame 350 at gap 8), and
+# that structural question was not settled, so those rows stay where earlier
+# waves put them.
+Skai > Launch 1VH (1440 x 900px) [13006:146233]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE on this node, nine properties, and the code-side comparison row 86 of status.wave3.verify-trade2.tsv said had never been done is now done. Header row Frame 337 13006:146236 is HORIZONTAL gap 8; title cluster Frame 345 13006:146238 gap 16 holding the h1 13006:146240 at 32/36 Manrope Light -4% and Frame 373 13006:146241 at gap 8 over 32px circles (pitch 40); CTA 13006:146258 158x36 radius 8 with the label 14/18. Trending row Frame 456 13006:146274 gap 8 over the card 13006:146276 at 323.5x300, radius 24, pad 16, inner gap 16, image box 156. Markets Frame 604 13006:146464 gap 32 vertical over Row 13006:146465 gap 16 with 3 cards of 428.7, each card 13006:146466 an image 124 square at radius 8 plus a text column 16 away. All nine resolve at this board in src/pages/Launchpad.tsx.	desktop=done tablet=done mobile=done @2026-09-08
+Skai > Launch (1440 x 900px, 2226 tall) [13006:150346]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE: the same nine values as 13006:146233 read off this full-scroll cut - h1 32/36, CTA 13006:150372 158x36 r8, trending row 13006:150388 gap 8 over a 323.5 card, markets rows 124 tall on a 156 pitch. The board is one screen at two crops and the numbers confirm it rather than assume it.	desktop=done tablet=done mobile=done @2026-09-08
+Skai > Launch (1440 x 900px, 2226 tall) [13006:151520]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE on its own node this wave rather than carried on the byte-identical fingerprint wave3 row 88 recorded: h1 32/36, title gap 16, chain gap 8 over 32px circles, CTA 13006:151546 158x36 r8, trending row gap 8 over card 13006:151564 at 323.5x300 r24 pad 16, markets Frame 603 13006:151746 gap 32 with 3 columns 16 apart. Every value equals 13006:150346, so the dedupe candidacy now rests on a measurement of both.	desktop=done tablet=done mobile=done @2026-09-08
+Skai > Launch (1440 x 900px, 2226 tall) [13006:152694]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE. NOT a duplicate - wave3 row 89 is right that the bottom strip is the Trench scroller rather than the ticker - but every measured value matches the other 1440 cuts: h1 32/36, title gap 16, chain gap 8, CTA 13006:152720 158x36 r8, trending row gap 8 over card 13006:152738 323.5x300 r24 pad 16 gap 16, markets 13006:152926 gap 32 with 3 columns. The variant differs in what it mounts at the foot, not in the page geometry, and the app mounts this one.	desktop=done tablet=done mobile=done @2026-09-08
+Skai > Launch (768 x 1024px) [13006:279872]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE, and this is the board that was wrong. Nine properties hung off md:, which fires AT 768, so the tablet drew the 1440 page. Read here: title cluster Frame 345 13006:279876 gap 8 not 16; h1 13006:279878 24/28 not 32/36; Frame 373 13006:279879 gap 4 over 32px circles (pitch 36) not gap 8; CTA 13006:279896 140x36 not 158; trending row 13006:279913 gap 16 over card 13006:279914 260x280 radius 12 pad 12 - NOT the 268 that 276-8 produces, because this row declares its own 16; markets Frame 1307 13006:279185 gap 16 not 32 over 2 columns of 346 16 apart, each card 13006:279188 an image 124 plus a text column 8 away not 16. Fixed in Launchpad.tsx and LaunchMarketCard.tsx; src/pages/launchpadTypeRamp.figma.test.ts resolves each value AT this board and 17 of its assertions fail against the pre-fix page across three negative-control runs.	desktop=done tablet=done mobile=done @2026-09-08
+Skai > Launch (768 x 1024px, 1700 tall) [13006:278955]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE: the full-scroll tablet cut carries the same numbers as 13006:279872 - CTA 13006:278979 140x36 r8, markets stack 13006:279185 gap 16 with rows 708x124 on a 140 pitch, two 346 cards per row. One component, confirmed by reading both crops rather than by assuming.	desktop=done tablet=done mobile=done @2026-09-08
+Skai > Launch (375 x 812px) [13006:280789]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE. Frame 337 13006:280791 turns VERTICAL at gap 16 - the nav is the second row, and only here - over Frame 345 13006:280793, which keeps the CTA on the title row at x=231. Title cluster Frame 1308 13006:280795 gap 8, h1 13006:280796 20/24, Frame 373 13006:280797 gap 4 over 24px circles (pitch 28), CTA 130x32 r8. Trending row 13006:280830 gap 8 over card 13006:280832 200x250 r12 pad 8 gap 8, image 128. The 32px CTA is what the frame draws; index.css lifts it to the 44px touch floor below 768 and that floor is left alone.	desktop=done tablet=done mobile=done @2026-09-08
+Skai > Launch (375 x 812px) [13006:281378]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE on its own node, not inherited from 13006:280789: h1 20/24, title gap 8, chain gap 4 over 24px circles, CTA 13006:281393 130x32 r8, trending row gap 8 over card 13006:281421 200x250 r12 pad 8, markets 13006:281620 gap 16 with the card's image and text 8 apart. Every value equals 13006:280789, which is the dedupe claim wave3 row 93 made on a node count, made here on the geometry.	desktop=done tablet=done mobile=done @2026-09-08
+Skai > Launch (375 x 812px, 1700 tall) [13006:282582]	done	src/pages/Launchpad.tsx	/launchpad	MEASURED LIVE: mobile full scroll. CTA 13006:282597 130x32 r8, h1 20/24, trending cards 200x250 on a 208 pitch, markets Frame 1307 13006:282818 gap 16 with one 346 card per row, card 13006:282819 an image 124 square at r8 plus a text column 8 away. The 124+8+214=346 arithmetic closes here and at 768, against 124+16+288.7=428.7 at 1440, which is what settles the market card gap as a step rather than a constant.	desktop=done tablet=done mobile=done @2026-09-08
