@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T17:06:49.042Z",
+  "generated": "2026-09-08T02:01:26.574Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
@@ -7,8 +7,8 @@
     "furniture": 418,
     "genuine": 1914,
     "matched": 1914,
-    "done": 436,
-    "partial": 1060,
+    "done": 431,
+    "partial": 1065,
     "notStarted": 152,
     "blocked": 77,
     "frameDefect": 96,
@@ -21,16 +21,16 @@
     "conflicts": 15
   },
   "doneRows": {
-    "total": 2054,
-    "withBreakpointProvenance": 685,
-    "namingANodeId": 1738,
+    "total": 2067,
+    "withBreakpointProvenance": 697,
+    "namingANodeId": 1748,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 9966,
-    "namingNoNodeId": 498,
-    "namingNoLiveNodeId": 546,
-    "unrecognisedTokens": 14787
+    "total": 10044,
+    "namingNoNodeId": 502,
+    "namingNoLiveNodeId": 551,
+    "unrecognisedTokens": 15131
   },
   "statusFiles": [
     {
@@ -655,7 +655,7 @@
       "file": "status.wave17.predict-cards.tsv",
       "rows": 9,
       "withLiveId": 8,
-      "ids": 8
+      "ids": 10
     },
     {
       "file": "status.wave17.predict-detail.tsv",
@@ -1477,7 +1477,7 @@
       "file": "status.wave30.trade-top.tsv",
       "rows": 4,
       "withLiveId": 4,
-      "ids": 6
+      "ids": 8
     },
     {
       "file": "status.wave31.home2-whale.tsv",
@@ -1612,6 +1612,12 @@
       "ids": 3
     },
     {
+      "file": "status.wave35.perps.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
       "file": "status.wave35.play-pages.tsv",
       "rows": 4,
       "withLiveId": 4,
@@ -1622,6 +1628,60 @@
       "rows": 3,
       "withLiveId": 3,
       "ids": 3
+    },
+    {
+      "file": "status.wave35.social-feed.tsv",
+      "rows": 3,
+      "withLiveId": 2,
+      "ids": 5
+    },
+    {
+      "file": "status.wave35.social-msg.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 10
+    },
+    {
+      "file": "status.wave35.social-pages.tsv",
+      "rows": 4,
+      "withLiveId": 1,
+      "ids": 1
+    },
+    {
+      "file": "status.wave35.social-post.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 4
+    },
+    {
+      "file": "status.wave35.social-strm.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 6
+    },
+    {
+      "file": "status.wave35.social-top.tsv",
+      "rows": 16,
+      "withLiveId": 15,
+      "ids": 15
+    },
+    {
+      "file": "status.wave35.trade-order.tsv",
+      "rows": 7,
+      "withLiveId": 7,
+      "ids": 8
+    },
+    {
+      "file": "status.wave35.trench-disc.tsv",
+      "rows": 21,
+      "withLiveId": 21,
+      "ids": 21
+    },
+    {
+      "file": "status.wave35.trench-trade.tsv",
+      "rows": 7,
+      "withLiveId": 7,
+      "ids": 7
     },
     {
       "file": "status.wave35.wallet2.tsv",
@@ -7536,8 +7596,8 @@
       "ambiguous": 24,
       "conflicts": 0,
       "byStatus": {
-        "partial": 128,
-        "done": 39,
+        "partial": 127,
+        "done": 40,
         "blocked-on-backend": 3,
         "frame-defect": 1,
         "unknown": 1
@@ -8930,8 +8990,8 @@
       "ambiguous": 0,
       "conflicts": 2,
       "byStatus": {
-        "partial": 227,
-        "done": 84,
+        "partial": 232,
+        "done": 79,
         "frame-defect": 7,
         "blocked-on-casey": 1,
         "not-started": 34,
@@ -10308,7 +10368,7 @@
       "rows": [
         "status.governance.tsv:179"
       ],
-      "status": "not-started"
+      "status": "partial"
     },
     {
       "id": "11972-152545",
@@ -10596,7 +10656,7 @@
       "rows": [
         "status.governance.tsv:211"
       ],
-      "status": "not-started"
+      "status": "partial"
     },
     {
       "id": "12003-383790",
