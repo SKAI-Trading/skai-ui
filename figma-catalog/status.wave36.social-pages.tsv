@@ -1,0 +1,64 @@
+# key	status	primaryFile	route	reason	bp
+# Lane social-pages, wave 36. Partition as briefed: src/pages/social/*.tsx
+# (top-level only) and src/pages/social/groups/**. src/pages/social/messages/**
+# belongs to social-msg and was not opened. Every # here is at column 0 -
+# coverage.mjs tests startsWith("#") with no trimStart, so an indented comment
+# is not a comment to every reader.
+#
+# FIGMA WAS UP THIS PASS AND EVERY NUMBER BELOW WAS READ OFF IT. Waves 33, 34
+# and 35 all recorded the MCP server down and quoted earlier measurements; this
+# one did not have to. Reads went through the PLUGIN server against file
+# 3sSzw1KewMtUbeLAv7uW0r, walking each frame's own subtree - never get_metadata,
+# which is lossy below depth 1.
+#
+# NINE FRAMES MEASURED. The eight Created / Discover cuts listed below plus the
+# All-groups 1440 frame, whose column header shares the fix. The header row was
+# read on all eight independently rather than on one and copied: the two second
+# 375 cuts (11526-290079, 11526-290363) agree with their peers property for
+# property, and that agreement is a measurement here, not an assumption.
+#
+# WHAT MOVED
+# ----------
+# 1. Frame 629 gaps 8 and its title block FILLS. Every one of the eight rows is
+#    the sum with that gap in it - 1144 = 978 + 8 + 158, 708 = 560 + 8 + 140,
+#    343 = 299 + 8 + 36 - and Frame 450 is layoutGrow 1 / FILL beside a
+#    layoutGrow 0 / FIXED button. The page shipped gap-4 and a hugging block, so
+#    the sentence under the title had less width than any board gives it.
+#
+# 2. The subhead tracks -4%. 5198:50330, 11398:87297 and 11398:79052 each carry
+#    letterSpacing {PERCENT, -4}; the headline above it already tracked and the
+#    sentence did not.
+#
+# 3. Three of the 1440 table's columns are not left-aligned, and the body agrees
+#    with the caption in each case: Members RIGHT, Token req. RIGHT (its inner
+#    description frame is primaryAxisAlignItems MAX), Type CENTER (its Frame 814
+#    is CENTER with one pill on Discover and two on Created). All three shipped
+#    left. The Created tab also captions that column `Type / Criteria`
+#    (5198:50392) where the other two say `Type`.
+#
+# THE PILLS NEEDED A FLEX RULE, NOT A TEXT ONE. text-center on the cell moves
+# nothing, because the pills are a flex row; the class that moves them is
+# justify-center on their own wrapper. The new oracle reads the RENDERED element
+# for exactly that reason - a source scan is green on either spelling.
+#
+# WHAT IS NOT CLAIMED. No row is promoted to done. Every 1440 frame in this
+# family draws a line and a Frame 619 under the table - a "Highest market cap
+# streams" rail of six 240x183 cards (5198:50500 on Created, 5198:48192 on
+# Discover) - which is not built, was not attempted, and is absent from the 768
+# and 375 frames entirely. Below the header the narrow boards were not
+# re-measured this pass either. col6 restates each row's existing bpStatus; it
+# is not a new per-breakpoint verdict.
+#
+# The Token req. column on the Created tab stays UNBUILT even though 5198:50390
+# captions it, and that is deliberate and unchanged: the Created feed carries no
+# access_rules, so every cell would be an em dash. GroupsSearchTable's module
+# header states the reasoning and this pass did not disturb it.
+Skai > Social > Groups - search > Created 1VH (1440 x 900px) [5198-50314]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. THIS BOARD'S OWN NUMBERS: header row 5198-50324 is 1144 = 978 + 8 + 158, title 32/36 Manrope Light -4%, subhead 16/22 -4%, CTA 158x36 r8 #56C7F3 with a 14/18 #001615 label. The 1440 column header 5198-50386 was read cell by cell as well and its three non-left columns are now aligned - see the Type / Members / Token req. work on the sibling rows. STAYS partial: this frame also draws a line and a Frame 619 under the table (5198-50499, 5198-50500) - a 'Highest market cap streams' rail of six 240x183 cards - which is not built and was not attempted here.	desktop=partial tablet=partial mobile=partial
+Skai > Social > Groups - search > Created 1VH (768 x 1024px) [11398-87282]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. THIS BOARD'S OWN NUMBERS: header row 11398-87291 is 708 = 560 + 8 + 140, title 24/28, subhead 14/18, CTA 140x32 with the label still shown. STAYS partial: nothing below the header was re-measured at this board this pass.	desktop=partial tablet=partial mobile=partial
+Skai > Social > Groups - search > Created 1VH (375 x 812px) [11398-79037]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. THIS BOARD'S OWN NUMBERS: header row 11398-79046 is 343 = 299 + 8 + 36, title 20/24, subhead 14/16, and the CTA is the 36x36 icon-only square - its only child is icons/action, no label node at all. STAYS partial: nothing below the header was re-measured at this board.	desktop=partial tablet=partial mobile=partial
+Skai > Social > Groups - search > Created 1VH (375 x 812px) [11526-290070]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	SECOND 375 CUT OF THE SAME SCREEN AND IT AGREES WITH 11398-79037 PROPERTY FOR PROPERTY - measured separately rather than assumed. Header row 11526-290079: 343 = 299 + 8 + 36, gap 8, block FILL, title 20/24, subhead 14/16 at -4%, CTA 36x36 icon-only. Same three fixes, same oracle. STAYS partial for the same reason as its peer.	desktop=partial tablet=partial mobile=partial
+Skai > Social > Groups - search > Discover 1VH (1440 x 900px) [5198-47891]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. Header row 5198-47901 states the same 1144 = 978 + 8 + 158 as the Created frame. SEPARATELY THIS PASS, the 1440 column header 5198-49950 was read cell by cell: Token req. is RIGHT in a 144-wide Frame 768 and Type is CENTER in a bare 140-wide text node, and the body agrees - the Token req. cell's inner description frame is primaryAxisAlignItems MAX (5198-50052) and the Type cell's Frame 814 is CENTER (5198-50058). Both shipped left; both are fixed, with groupsTableColumns.figma.test.tsx as the oracle. STAYS partial: the line + Frame 619 streams rail (5198-48191, 5198-48192) is drawn here too and is not built.	desktop=partial tablet=partial mobile=partial
+Skai > Social > Groups - search > Discover 1VH (768 x 1024px) [11398-86869]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. Header row 11398-86878: 708 = 560 + 8 + 140, title 24/28, subhead 14/18. The column work above is 1440-only - this board draws a list, not a table - so nothing from it lands here. STAYS partial: nothing below the header was re-measured at this board.	desktop=partial tablet=partial mobile=partial
+Skai > Social > Groups - search > Discover (375 x 812px) [11398-77450]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	MEASURED LIVE this pass on the Plugin API, and this row states only what was read. Frame 629 gaps 8, Frame 450 is layoutGrow 1 / FILL beside a layoutGrow 0 / FIXED CTA/button, and the subhead carries letterSpacing {PERCENT, -4}. The page shipped gap-4, a hugging block and no tracking on the sentence, so all three were wrong at every board and are fixed. Oracle: groupsPageChrome.figma.test.ts, three cases added, all three proved red against the shipped values. Header row 11398-77459: 343 = 299 + 8 + 36, title 20/24, subhead 14/16, CTA 36x36 icon-only. ALSO MEASURED HERE, because the list's type tag needed it: the tag is the second item on the name line Frame 1000003847, which is SPACE_BETWEEN at 375 (11398-79113) and MIN at 768 (11398-87358) - never CENTER. That is why the table's new centring is written on the table arm alone and the list wrapper stays flush. STAYS partial.	desktop=partial tablet=partial mobile=partial
+Skai > Social > Groups - search > Discover 1VH (375 x 812px) [11526-290354]	partial	src/pages/social/TradingGroups.tsx	/trading-groups	SECOND 375 CUT OF THE DISCOVER TAB, measured separately: header row 11526-290363 reads 343 = 299 + 8 + 36 with the same gap 8, the same FILL block, the same 20/24 title and 14/16 subhead at -4%, and the same 36x36 icon-only CTA. Same three fixes, same oracle. STAYS partial.	desktop=partial tablet=partial mobile=partial
+Social > Groups - search 1VH (1440) [5194-270743]	partial	src/pages/social/groups/GroupsSearchTable.tsx	/trading-groups	READ THIS PASS FOR ITS COLUMN HEADER ONLY, and the row says so rather than implying a whole-frame check. Frame 585 at 5198-9905 captions Created | Group | Members | Type | Description | Action, and TWO of those six are not left: Members is RIGHT inside a 144-wide Frame 768 and Type is CENTER in a 140-wide text node. Both shipped left and both are fixed; the Members body cell takes text-right with them, which is where the flush-right member block already sat. This frame draws the same Frame 629 the eight rows above state, so the gap / FILL / tracking fix reaches it too. Oracle: groupsTableColumns.figma.test.tsx (8 cases, 6 proved red) plus the three added to groupsPageChrome.figma.test.ts. STAYS partial - the streams rail below the table is unbuilt here as well.	desktop=partial tablet=partial mobile=partial
