@@ -77,6 +77,25 @@
 #    partition, and by construction none of them carries a value to fix against.
 #    They are what a live Figma session should take first.
 #
+# FOUND BY A DATA CONTRACT, NOT BY A FRAME, and it has no row because it has no
+# node. src/pages/social/CopyTrading.tsx carries ZERO catalog rows, which is why
+# nothing in this system was ever going to look at it. Its copy-confirmation
+# dialog - the step a user reads immediately before committing funds to copy a
+# trader - drew (trader.stats?.winRate ?? 0).toFixed(1) and
+# trader.stats?.followers ?? 0. Trader has NO stats member
+# (copyTradeService.ts:105-148 carries winRate and followerCount flat) and
+# LeaderboardTable.tsx:593 hands the dialog entry.trader, an ordinary Trader. So
+# it reported a 0.0 pct win rate and 0 followers for EVERY trader who has ever
+# been shown.
+#
+# ★ THE COMPILER HAD ALREADY SAID SO AND THE SENTENCE WAS SPENT. The page takes
+# Trader from @/components/trade/perp/copy, a barrel that re-exports the name
+# from TraderProfileCard - a module that only imports it. That is TS2614 and it
+# sits in scripts/typecheck/baseline.json:779, so the binding is silently typed
+# any, and every member access on it type-checks, including the one that can never
+# resolve. A baselined error one file away is what bought the silence. Fixed at
+# 395a09c5c with an oracle whose 8 of 9 cases fail against the old expression.
+#
 # ALREADY CLOSED ELSEWHERE, recorded so the next pass does not re-open it:
 # status.wave3.verify-social.tsv:196 measured the /social header CTA at
 # I10235:203182 filled #2CEDAC against the frame's #56C7F3 and asked for the
