@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:34:41.937Z",
+  "generated": "2026-09-08T08:36:10.510Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -46992,7 +46992,7 @@
       ],
       "status": "partial",
       "route": "/play/game/:gameId",
-      "notes": "TWO REGIONS MEASURED ON ALL THREE AXES AND FIXED, THE REST OF THE SCREEN NOT. Community wins header row Frame 1 9132:76709, 1222x16 at itemSpacing 35, seven columns at x 138/312/485/659/833/1006/1180, all Manrope Regular 12/16 at -4% in #95A09F at node opacity 1 - so on THIS board the two column groups agree, which is exactly why the 768 and 375 cuts had to be read before the ramp could be written. Bets segmented control 4758:60810 as a component: 390x38, radius full, padding 4, itemSpacing 4, buttons 124.67x30 at padding 4/24, Manrope Regular 16/22 at -4%, #001615 track under a 1px #122524 hairline, active #56C7F3 on #001615. FOOTER SEAM: the About/FAQ/Licences block Frame 641 ends at y 3016 and logos/skai-short sits at y 3164, so this board reads 148 for a gap that Crash 9003:94118 (2982 to 3108) and Dice 9163:4859 (3038 to 3164) both read as 126. Two of three agree and 126 is what ships, so 126 stands and the 22px disagreement between two 1440 boards of the same screen is recorded rather than acted on.",
+      "notes": "THE FIRST 1440 WITNESS, AND WHAT THE 768 AND 375 CUTS ARE MEASURED AGAINST. Read off node data 2026-09-08. Outer stack Frame 631 4723:52693 VERTICAL gap 40 inside Frame 520, 1318 wide at x=32 of a 1382 main - lg:px-8 is 32, delta zero. More-games Main container 4758:61623 gap 16 over row 4758:61634 gap 16 holding seven 195x307 tiles, each a 195x277 r16 art box on a 12 column gap under a Mulish Regular 14/18 live-count row. Bets Main container 4758:59049 gap 32 over Frame 279 4758:59281, 1318x197 r12 pad [24,16,24,16] gap 16, middle 4758:59284 gap 24, description 4758:59285 gap 4, title 4758:59286 18/24, body 4758:59287 12/16, CTA 4758:59290 161x34 r8 pad [8,40,8,40] fill #56C7F3. About Frame 641 4723:53021 HORIZONTAL gap 64, content 4723:53022 gap 40, items 4723:53028 gap 8 with three 627x80 r12 cards at pad 16 whose inner column 4723:53031 is gap 8 and whose body 4723:53033 is Manrope Regular 14/18 at node opacity 0.64; About paragraph 4723:53027 14/18. THE CODE HELD EVERY ONE OF THOSE AT 1440 AND THEN REPEATED THEM AT 768 AND 375, so this board's only own defects were the CTA radius (12 against r8, agreed by 8524:81027) and the assurance inner column (4 against 8). Both fixed. STILL PARTIAL: the widget mainframe 4755:57565, the community-wins section 9132:76663, the info card and the chrome were not read.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "partial"
     },
@@ -48825,7 +48825,7 @@
       ],
       "status": "partial",
       "route": "/play/game/:gameId",
-      "notes": "THE SECOND 1440 WITNESS, AND IT AGREES TO THE PIXEL ON WHAT WAS READ. Community wins header row Frame 1 8524:80820, 1222x16 at itemSpacing 35, columns 8524:80821-80827 at x 138/312/485/659/833/1006/1180 - identical offsets to 9132:76709 - all Manrope Regular 12/16 at -4% in #95A09F at node opacity 1. Its only difference from its twin is the y of the row (1210 against 1250), which is content above it rather than this component. Two witnesses matter here because a single desktop board would have made the money columns look like a ramp that flattens at the top rather than a group that never ramps at all. Rest of the screen not measured by this lane.",
+      "notes": "THE SECOND 1440 WITNESS, AND IT AGREES ON EVERY NUMBER THIS PASS TOOK. Main container 8524:80899 gap 16 over row 8524:80910 gap 16 with 195x307 tiles on a 12 column gap, art 8524:80912 195x277 r16, live-count 8524:80919 Mulish Regular 14/18. Main container 8524:81007 gap 32 over Frame 279 8524:81019 1318x197 pad [24,16,24,16] gap 16, middle 8524:81022 gap 24, description 8524:81023 gap 4 at 18/24 then 12/16, CTA 8524:81027 161x34 r8 pad [8,40,8,40]. About Frame 641 8524:81058 HORIZONTAL gap 64, content 8524:81059 gap 40, items 8524:81065 gap 8 with three 627x80 r12 cards at pad 16. Two desktop witnesses matter here for the reason wave 35 gave about the community-wins header: one board alone would have made a flat ramp look like a value rather than the top rung of one. Same open regions as 4723:52636.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -49355,7 +49355,7 @@
       ],
       "status": "partial",
       "route": "/play/game/:gameId",
-      "notes": "THE TABLET CUT IS WHAT SEPARATES THE TWO COLUMN GROUPS. Header columns 11087:67116-67122: Rank/Game/Time/User are Manrope Regular 10/14 and Bet Amount/Multiplier/Payout are 12/16, all at -4% in #95A09F at node opacity 1, at x 78/128/327/525/723/922/1120. The left four are the same SIZE as the 375 cut with a different line box, and two sizes below the 1440 cut - a shape no two-board reading can produce. Bets control Frame 628 11088:68136 is 346x34 at radius full, padding 4, itemSpacing 4, buttons 110x26 at padding 4/24 with radii 24/4/4/24, 4/4/4/4 and 4/24/24/4, labels Manrope Regular 14/18 at -4%, track #001615 under a 1px #122524 hairline, active #56C7F3 on #001615 - one rung below the 1440 component on both the box and the type. AND THIS BOARD DRAWS NO PAGE FOOTER: walked to its last node, it ends with the FAQ accordion and a Bottom-navigation-tablet bar at y 3308 - no wordmark, no nav columns, no social row - which is what moved the 126px footer gap off a 640 hinge and onto lg. Rest of the screen not measured by this lane.",
+      "notes": "THE ONLY FULL-LENGTH 768 BOARD, AND IT SETTLES EIGHT OF THE SIXTEEN VALUES ON ITS OWN. Outer stack Frame 1000003847 11088:68493 VERTICAL gap 32 in a 708 column at x=30 - md:px-[30px], delta zero. More-games Main container 11088:68017 gap 8 over row 11088:68028 gap 8 with 160x253 tiles: art 160x227 r12 on an 8 column gap, live-count 11088:68037 Mulish Regular 14/16. Bets Main container 11088:68128 gap 16 over Frame 279 11088:68320, 708x161 r12 pad [32,16,32,16] - 32 top and bottom, which neither other board draws - middle 11088:68323 gap 24, description 11088:68324 gap 4 at 14/18 then 12/16, CTA 11088:68329 140x34 r8. About Frame 642 11088:68351 VERTICAL gap 32, content 11088:68352 gap 16, items 11088:68358 gap 8 with three 708x66 r12 cards at pad 12 rather than 16, inner column 11088:68361 gap 8, body 11088:68363 Manrope Regular 12/16 at opacity 0.64; About paragraph 11088:68357 12/16. ALL FIXED in skai-gaming 12cac7a and cbc6874. THIS BOARD DRAWS NO PAGE FOOTER - walked to its last node it ends with the FAQ accordion and a Bottom-navigation-tablet bar at y 3308 - and the footer was NOT removed. Not measured: the bento 11087:66853, the widget and the chrome.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -51095,7 +51095,7 @@
       ],
       "status": "partial",
       "route": "/play/game/:gameId",
-      "notes": "THE MOBILE CUT, AND IT CONTRADICTS THE CODE IN TWO PLACES. Header columns 11100:70071-70077: Rank/Game/Time/User Manrope Regular 10/12, Bet Amount/Multiplier/Payout 12/16, all -4% in #95A09F at node opacity 1, at x 30/60/162/264/446/628/810 - so the money columns are 12/16 on a phone, where the code drew them 10/12. The bets tabs are not a segmented control here at all: 11100:71689 is a 347x24 row at gap 16 holding a 24 glyph, a 139x22 pair of My bets (Manrope 18/22) and All time (Mulish 14/16 #95A09F) with a 16 chevron, and one 109x24 radius-8 button at padding 4/16 under a 1px #123F3C stroke with a Manrope 14/16 label. This board also ends with the FAQ accordion and a Bottom-navigation-mobile bar at y 3282 and draws NO page footer. Rest of the screen not measured by this lane.",
+      "notes": "THE ONLY FULL-LENGTH 375 BOARD, AND THE ONE THAT MAKES EVERY RAMP THREE-RUNG. Outer stack Frame 1000003853 11100:70523 VERTICAL gap 24 in a 348 column at x=14. More-games Main container 11100:70286 gap 8 over row 11100:70297 gap 8 with 130x206 tiles: art 130x184 r12 on an 8 column gap, live-count 11100:70306 Mulish Regular 12/14, unanimous across all seven tiles. Bets Main container 11100:71688 gap 8 over Frame 279 11100:71698, 347x140 r12 pad [24,16,24,16] gap 16, middle 11100:71699 gap 24, description 11100:71700 gap 4 with title 11100:71701 at 14/18 and body 11100:71702 at 12/14, CTA 11100:71705 120x32 r8 pad [8,40,8,40]. About Frame 642 11100:70395 VERTICAL gap 24, content 11100:70396 gap 16, items 11100:70402 gap 8 with cards 11100:70403 / 70408 / 70413 at pad 16 HUGGING 72 / 86 / 86, so the shipped min-h-[80px] overran the first by 8; inner column 11100:70405 gap 8, body 11100:70407 Manrope Regular 12/14; About paragraph 11100:70401 12/14. ALL FIXED. NO PAGE FOOTER here either - it ends with the FAQ accordion and a Bottom-navigation-mobile bar at y 3282 - and the footer stays. The CTA's declared 32 is not what a phone renders: index.css:748 floors it to 44, which is stated in the component and left for a product call. Not measured: Frame 1000003850 11100:70283, the widget and the chrome.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -96780,8 +96780,8 @@
         "src/components/home-redesign/whales/AddWalletSheet.tsx"
       ],
       "status": "done",
-      "route": "/?tab=whale (Add wallet)",
-      "notes": "MEASURED 1440 with the sheet open. EXACT vs the frame's \"Frame 337\": 442x884 @x990,y8, radius 24, fill opacity 0.8 - width, height, BOTH coordinates, radius and opacity all to the pixel. Fill #122625 vs #122524 is the 1/255 --card HSL rounding (see the note carried on the screen rows). HEADER BAND CLOSED at 1440: DOM 57 border-box = 56 content + 1px border-bottom vs frame 56 carrying a 1px CENTER-aligned stroke, i.e. content-height PARITY. Casey 2026-08-26 py-3->py-2 landed: nav triggers measure 40 (24 lh + 8+8 pad), header content 40 + 8/8 = 56. The +9 every wave3 row carried is gone.",
+      "route": "/?tab=whale (addOpen)",
+      "notes": "RE-MEASURED 2026-09-08 at full node depth to anchor the top of the sidecar ladder, and every desktop number is unchanged - this row is confirmation, not a new verdict. Frame 337 13008:116900 is 442x884 at (990,8), so the right gutter is 1440-990-442 = 8 and the top inset 8, which fixed inset-y-2 right-2 w-[442px] gives; radius 24 (rounded-2xl in this app, whose scale is lg 12 / xl 16 / 2xl 24); pad 24 and gap 32. Frame 345 13008:116901 is 394x420 on a 32px gap, controls 394x28, section title Manrope 18/24, Background 13008:116906 gap 24, Frame 590 gap 24, three input/primary-inputs 394x88 = an 18px label, an 8px gap and a 62px field on a 16 radius and a 20 inset. CTA 13008:116934 394x62 r16 pad 20/40 with a 16/22 Regular label. The lg: half of every class this lane touched is exactly these numbers, which is why nothing moved at 1440. The page BEHIND the sidecar is carried by 13008-110742 and stays partial for the header-band escalation. Oracle: addWalletSheetRamp.figma.test.tsx, 5 cases, all five red against the pre-lane values.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "unknown"
     },
@@ -98292,9 +98292,9 @@
         "src/components/home-redesign/whales/WhalesScreen.tsx",
         "src/components/home-redesign/whales/AddWalletSheet.tsx"
       ],
-      "status": "partial",
-      "route": "/?tab=whale",
-      "notes": "source-literal, NOT DOM. Frame draws a right-edge sidecar, NOT a centred modal: Frame 337 442x1008 at x=318 y=8, so the right gutter is 768-318-442 = 8 and the top inset is 8. Code :216 fixed inset-y-2 right-2 w-[442px] rounded-2xl gives width 442, right 8, top 8 - three exact matches. Unverified: sheet height 1008 exceeds the 1024 frame minus insets and is content-driven; the 402x343 inner block and the 402x50 CTA were not measured.",
+      "status": "done",
+      "route": "/?tab=whale (addOpen)",
+      "notes": "MEASURED 2026-09-08 at full node depth, replacing a source-literal row, and FIXED. The row's three unverified items are now read: Frame 337 13008:122547 is 442x1008 at (318,8) - right gutter 768-318-442 = 8, top inset 8 - on RADIUS 12, pad 20, gap 32; Frame 344 13008:122548 is 402x343 on a 28px gap (402 = 442 - 20 - 20, which is what confirms the pad); CTA 13008:122581 is 402x50 r12 pad 16/24 with a 14/18 label. Also read: controls 402x24, section title Manrope 14/18, Background 13008:122553 gap 20, Frame 590 gap 16, fields 402x50 r12 pad 16 under 16px labels. FIXED: the shell radius, which shipped a flat rounded-2xl = 24 and is 12 here; and the section inset, which now steps 16/20/24 rather than standing the tablet's 20 in for the phone as well. RECORDED, NOT CHANGED: this board draws the field and CTA radius at 12 where the older 9917 family draws 16 - two live families disagreeing, and the 16 is what report a1319f1c settled, so only the heights moved. The page behind the sidecar is carried by 13008-119988 and stays partial.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "unknown"
     },
@@ -98419,9 +98419,9 @@
         "src/components/home-redesign/whales/WhalesScreen.tsx",
         "src/components/home-redesign/whales/AddWalletSheet.tsx"
       ],
-      "status": "partial",
-      "route": "/?tab=whale",
-      "notes": "source-literal, NOT DOM. Frame sidecar 359x796 at x=8 y=8, i.e. 375-16 wide with 8px insets. Code :216 max-w-[calc(100vw-16px)] resolves to 359 at 375, and inset-y-2 / right-2 give the 8px insets - exact on all three. Unverified: the 327x328 inner block and the 327x44 CTA. Note the frame's mobile CTA is 44 tall, which is exactly the index.css tap floor, so it needs no no-min-size opt-out.",
+      "status": "done",
+      "route": "/?tab=whale (addOpen)",
+      "notes": "MEASURED 2026-09-08 at full node depth, replacing a source-literal row, and FIXED. ★ THE COMMENT THIS LANE CORRECTED SAID NO 375 ADD-WALLET FRAME EXISTS, and the whole sheet was built on the tablet values because of it. 13008:123468 is one: a `sidecar` 359x796 at (8,8) - 375 less an 8px gutter each side - on RADIUS 16, pad 16, gap 32. Every rung under it is a step below the tablet's: Frame 344 13008:123469 327x328 on a 20px gap (327 = 359 - 16 - 16); controls 327x24; section title Manrope 14/18; Background gap 24; Frame 590 gap 16; fields 327x48 r12 pad 16 under 14px labels; CTA 13008:123502 327x44 r12 pad 14/16 on a 14/16 label. FIXED: shell radius 16, section inset 16, header gap 20, field height 48 and CTA height 44 with its label ramp - the bare class is now the phone and md: carries the tablet. The 44px CTA sits exactly on index.css's touch floor, so it needs no no-min-size. RECORDED, NOT CHANGED: the 12px field and CTA radius, for the reason on the 768 row. The page behind is carried by 13008-122582 / 13008-123503 / 13008-123798 and stays partial.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "unknown"
     },

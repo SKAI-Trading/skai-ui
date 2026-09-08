@@ -1,0 +1,56 @@
+# key	status	primaryFile	route	reason	bp
+# lane wave37 play-hub - files modules/skai-gaming/src/pages/**.
+#
+# SLICE, and why this one. The Sample-game template is the only play-section
+#   screen this lane owns that is DRAWN FULL LENGTH at all three boards, and the
+#   regions below 1024 had never been read. Nine other boards carry the same
+#   title - 8524-125386, 11086-65313, 11092-71996, 8524-125621, 11100-67616,
+#   11100-69287, 8526-131011, 8526-132331, 11100-67984, 11100-68399 - and every
+#   one is an 812- to 1627-tall CROP that stops above the shelves, so none of
+#   them can settle any of this. The four that can are the rows below.
+#
+# THE FIND, and it is the shape wave 35 found on the community-wins header:
+#   sixteen values on this template were the 1440 rung held FLAT all the way
+#   down. Every one was right at 1440 and wrong at 768 and 375, so a desktop-only
+#   reading passes the lot. Two of the sixteen are NON-MONOTONIC - the assurance
+#   card pads 16 / 12 / 16 and the bets panel pads 24 / 32 / 24 - and no
+#   two-board reading produces either. One value, the play-now CTA radius, is
+#   wrong at EVERY board: three witnesses draw r8 and the code drew 12.
+#
+# NOT A DELETION. The 768 and 375 boards draw no page footer and the code does;
+#   the footer was left alone. A frame stopping short is not a spec to remove a
+#   region, and both narrow boards end at a Bottom-navigation bar that the app
+#   chrome supplies elsewhere.
+#
+# THE DECLARED HEIGHT IS NOT THE RENDERED ONE BELOW 769. The play-now CTA is
+#   120x32 at 375 and 140x34 at 768; src/index.css:748 floors every button to
+#   44x44 under 768px, so 44 is what both boards actually get. Opting a primary
+#   CTA out of a touch floor is an accessibility call, not a parity one, and it
+#   is recorded here and in the component rather than taken.
+#
+# THIS COMPONENT IS SHARED BY TEN GAME PAGES, so the fixes reach every
+#   <Game>PageSections that mounts it. The 1440 rungs are unchanged and were
+#   re-read on Dice 9003:43516 in M6r9FEn042UWTQD1zvy6GM, which agrees value for
+#   value (Main container 9003:43873 gap 16, 9003:43981 gap 32, Frame 641
+#   9003:44032 gap 64, items 9003:44039 three 627x80 r12 cards at pad 16, tile
+#   195x307 on a 12 gap over a 195x277 r16 art box). The Dice and Mines 768/375
+#   boards are 1605-1627 tall crops and settle nothing below 1024, so NO
+#   game-page row is flipped on this pass.
+#
+# ORACLE gameDetailBoardRamps.test.tsx (new, 17 cases), every assertion on WHOLE
+#   class tokens via classTokens.tok so lg:gap-4 cannot satisfy a check for
+#   gap-4. Proved red twice: restoring the eleven shelf/About values reddens 11
+#   of 12 and leaves the control green - the assurance TITLE, which all three
+#   boards draw flat at 14/18 - and restoring the six bets-panel values reddens
+#   exactly the 5 panel cases and none of the twelve. skai-gaming 12cac7a and
+#   cbc6874. typecheck:gate exit 0 at 2596 known baseline errors.
+#
+# NOT MEASURED on any of these four boards, and the reason all four stay partial:
+#   the game widget mainframe, the stats/fairness strip, the game-info card, the
+#   community-wins table and the page chrome. This lane read the more-games
+#   shelf, the bets shelf and its empty panel, and the About / assurances / FAQ
+#   block, and nothing else.
+4723-52636	partial	modules/skai-gaming/src/pages/play/PlayGameDetailSections.tsx	/play/game/:gameId	THE FIRST 1440 WITNESS, AND WHAT THE 768 AND 375 CUTS ARE MEASURED AGAINST. Read off node data 2026-09-08. Outer stack Frame 631 4723:52693 VERTICAL gap 40 inside Frame 520, 1318 wide at x=32 of a 1382 main - lg:px-8 is 32, delta zero. More-games Main container 4758:61623 gap 16 over row 4758:61634 gap 16 holding seven 195x307 tiles, each a 195x277 r16 art box on a 12 column gap under a Mulish Regular 14/18 live-count row. Bets Main container 4758:59049 gap 32 over Frame 279 4758:59281, 1318x197 r12 pad [24,16,24,16] gap 16, middle 4758:59284 gap 24, description 4758:59285 gap 4, title 4758:59286 18/24, body 4758:59287 12/16, CTA 4758:59290 161x34 r8 pad [8,40,8,40] fill #56C7F3. About Frame 641 4723:53021 HORIZONTAL gap 64, content 4723:53022 gap 40, items 4723:53028 gap 8 with three 627x80 r12 cards at pad 16 whose inner column 4723:53031 is gap 8 and whose body 4723:53033 is Manrope Regular 14/18 at node opacity 0.64; About paragraph 4723:53027 14/18. THE CODE HELD EVERY ONE OF THOSE AT 1440 AND THEN REPEATED THEM AT 768 AND 375, so this board's only own defects were the CTA radius (12 against r8, agreed by 8524:81027) and the assurance inner column (4 against 8). Both fixed. STILL PARTIAL: the widget mainframe 4755:57565, the community-wins section 9132:76663, the info card and the chrome were not read.	desktop=partial tablet=unknown mobile=unknown
+8524-80494	partial	modules/skai-gaming/src/pages/play/PlayGameDetailSections.tsx	/play/game/:gameId	THE SECOND 1440 WITNESS, AND IT AGREES ON EVERY NUMBER THIS PASS TOOK. Main container 8524:80899 gap 16 over row 8524:80910 gap 16 with 195x307 tiles on a 12 column gap, art 8524:80912 195x277 r16, live-count 8524:80919 Mulish Regular 14/18. Main container 8524:81007 gap 32 over Frame 279 8524:81019 1318x197 pad [24,16,24,16] gap 16, middle 8524:81022 gap 24, description 8524:81023 gap 4 at 18/24 then 12/16, CTA 8524:81027 161x34 r8 pad [8,40,8,40]. About Frame 641 8524:81058 HORIZONTAL gap 64, content 8524:81059 gap 40, items 8524:81065 gap 8 with three 627x80 r12 cards at pad 16. Two desktop witnesses matter here for the reason wave 35 gave about the community-wins header: one board alone would have made a flat ramp look like a value rather than the top rung of one. Same open regions as 4723:52636.	desktop=partial tablet=unknown mobile=unknown
+11087-66851	partial	modules/skai-gaming/src/pages/play/PlayGameDetailSections.tsx	/play/game/:gameId	THE ONLY FULL-LENGTH 768 BOARD, AND IT SETTLES EIGHT OF THE SIXTEEN VALUES ON ITS OWN. Outer stack Frame 1000003847 11088:68493 VERTICAL gap 32 in a 708 column at x=30 - md:px-[30px], delta zero. More-games Main container 11088:68017 gap 8 over row 11088:68028 gap 8 with 160x253 tiles: art 160x227 r12 on an 8 column gap, live-count 11088:68037 Mulish Regular 14/16. Bets Main container 11088:68128 gap 16 over Frame 279 11088:68320, 708x161 r12 pad [32,16,32,16] - 32 top and bottom, which neither other board draws - middle 11088:68323 gap 24, description 11088:68324 gap 4 at 14/18 then 12/16, CTA 11088:68329 140x34 r8. About Frame 642 11088:68351 VERTICAL gap 32, content 11088:68352 gap 16, items 11088:68358 gap 8 with three 708x66 r12 cards at pad 12 rather than 16, inner column 11088:68361 gap 8, body 11088:68363 Manrope Regular 12/16 at opacity 0.64; About paragraph 11088:68357 12/16. ALL FIXED in skai-gaming 12cac7a and cbc6874. THIS BOARD DRAWS NO PAGE FOOTER - walked to its last node it ends with the FAQ accordion and a Bottom-navigation-tablet bar at y 3308 - and the footer was NOT removed. Not measured: the bento 11087:66853, the widget and the chrome.	tablet=partial desktop=unknown mobile=unknown
+11100-69785	partial	modules/skai-gaming/src/pages/play/PlayGameDetailSections.tsx	/play/game/:gameId	THE ONLY FULL-LENGTH 375 BOARD, AND THE ONE THAT MAKES EVERY RAMP THREE-RUNG. Outer stack Frame 1000003853 11100:70523 VERTICAL gap 24 in a 348 column at x=14. More-games Main container 11100:70286 gap 8 over row 11100:70297 gap 8 with 130x206 tiles: art 130x184 r12 on an 8 column gap, live-count 11100:70306 Mulish Regular 12/14, unanimous across all seven tiles. Bets Main container 11100:71688 gap 8 over Frame 279 11100:71698, 347x140 r12 pad [24,16,24,16] gap 16, middle 11100:71699 gap 24, description 11100:71700 gap 4 with title 11100:71701 at 14/18 and body 11100:71702 at 12/14, CTA 11100:71705 120x32 r8 pad [8,40,8,40]. About Frame 642 11100:70395 VERTICAL gap 24, content 11100:70396 gap 16, items 11100:70402 gap 8 with cards 11100:70403 / 70408 / 70413 at pad 16 HUGGING 72 / 86 / 86, so the shipped min-h-[80px] overran the first by 8; inner column 11100:70405 gap 8, body 11100:70407 Manrope Regular 12/14; About paragraph 11100:70401 12/14. ALL FIXED. NO PAGE FOOTER here either - it ends with the FAQ accordion and a Bottom-navigation-mobile bar at y 3282 - and the footer stays. The CTA's declared 32 is not what a phone renders: index.css:748 floors it to 44, which is stated in the component and left for a product call. Not measured: Frame 1000003850 11100:70283, the widget and the chrome.	mobile=partial desktop=unknown tablet=unknown
