@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:55:42.892Z",
+  "generated": "2026-09-08T09:01:02.550Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -61768,7 +61768,7 @@
       ],
       "status": "partial",
       "route": "/play/plinko",
-      "notes": "MEASURED AND NOT BUILT - THE PLINKO PANEL TAKES THE SAME 375 TYPE STEP AS COINFLIP AND MINES, AND IT IS STILL OPEN. Panel 9003:79147 is 356x621 r16 pad16 gap16 with the desktop set: Manrope Regular 12/16 for `Bet amount:`, `Balance:`, `Risk`, `Rows`; Mulish Regular 12/16 for `100.11 SKAI` and `$21.00`; Mulish Regular 14/18 for `Manual`, `Auto`, `100`, `1/2`, `2X`, `Max`, `Easy`, `Medium`, `Hard` and `16`. The 375 panel 9137:12151 (347x396 r12 pad12 gap16) draws Manrope Regular 12/14 labels and Mulish Regular 12/14 for EVERY value - there is no visible Mulish Regular 14/18 left in it at all - with `Risk` the single label left behind at 12/16. WHY NOT BUILT THIS WAVE: PlinkoGame.tsx carries fourteen inline copies of these two type strings rather than the shared LABEL / VALUE / SUBVALUE constants coinflip and mines use, and several sit outside the bet panel (the earliest is line 492). Introducing the constants and moving fourteen sites is a change that needs its own pass and its own site-by-site mapping; doing it half-measured is how a value that should not have moved gets moved.",
+      "notes": "THE 375 TYPE RAMP IS MEASURED AND NOW BUILT. Panel 9003:79147 is 356x621 r16 pad16 gap16 with the desktop set - Manrope Regular 12/16 for `Bet amount:`, `Balance:`, `Risk`, `Rows`; Mulish Regular 12/16 for `100.11 SKAI` and `$21.00`; Mulish Regular 14/18 for `Manual`, `Auto`, `100`, `1/2`, `2X`, `Max`, `Easy`, `Medium`, `Hard` and `16`; Manrope Medium 16/22 for the CTA. The 375 panel 9137:12151 draws every one of those a step smaller and PlinkoGame.tsx shipped the desktop figures at every width. The fix also gave this file the three shared scales it never had: fourteen inline copies of two type strings became PANEL_LABEL / PANEL_VALUE / PANEL_SUBVALUE beside PLINKO_RADIUS, five labels + two balance values + seven values, each replaced in place. Pinned by plinkoCardChrome.test.tsx and proved red. NOT READ: this frame's rows node by node, so it stays partial.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -61796,7 +61796,7 @@
       ],
       "status": "partial",
       "route": "/play/plinko",
-      "notes": "MEASURED. Panel 9003:83417 is 468x410 r12 pad12 gap16 - mobile insets, desktop type - and its sibling cut 9003:84365 is 422x412 with the same. Both agree with the 1440 board on Manrope Regular 12/16 labels, Mulish Regular 12/16 balance pair and Mulish Regular 14/18 values, which is the same md: / lg: split coinflip and mines carry. ★ THE TWO 768 FRAMES ALSO CARRY A MICRO-SCALE NOTHING ELSE DRAWS: `Risk:` and `Rows:` at Manrope Regular 10/14 and `Low` / `Medium` / `High` at Mulish Regular 11/14. Ten and eleven appear nowhere else in this panel at any width, so it is recorded rather than built - a two-node scale on one board is not a ramp.",
+      "notes": "MEASURED, AND IT IS WHY THE TYPE STEPS AT `md:` WHILE THE CARD STEPS AT `lg:`. Panel 9003:83417 is 468x410 r12 pad12 gap16 - MOBILE insets - and its sibling cut 9003:84365 is 422x412 with the same. Both draw the DESKTOP type: Manrope Regular 12/16 labels, Mulish Regular 12/16 balance pair, Mulish Regular 14/18 values. So one prefix cannot carry both axes, and plinkoCardChrome.test.tsx now asserts the card's `lg:` alongside the type's `md:` so a later pass cannot harmonise them. ★ RECORDED AND NOT BUILT: these two frames also carry a micro-scale nothing else draws - `Risk:` and `Rows:` at Manrope Regular 10/14, and `Low` / `Medium` / `High` at Mulish Regular 11/14. Ten and eleven appear at no other width in this panel, so a two-node scale on one board was left alone.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
@@ -61849,7 +61849,7 @@
       ],
       "status": "partial",
       "route": "/play/plinko",
-      "notes": "MEASURED AND NOT BUILT. Panel 9137:12151 is 347x396 r12 pad12 gap16 and every visible Mulish Regular string in it is 12/14 - `100`, `1/2`, `2X`, `Max`, `100.11 SKAI`, `$21.00`, `Low`, `Medium`, `High`, `16` - against 14/18 and 12/16 on the 1440 and 768 boards, with the labels `Bet amount:`, `Balance:` and `Rows` at Manrope Regular 12/14 and `Risk` the one left at 12/16. That is the identical ramp coinflip and mines were fixed for this wave. The panel CARD already steps correctly - PlinkoGame.tsx:2581 ships `rounded-[12px] p-3 lg:rounded-[16px] lg:p-4` and the boards agree. See the 1440 row for why the type half was left: fourteen inline copies of the type strings, some outside the panel.",
+      "notes": "THE MOBILE TYPE RAMP IS MEASURED AND FIXED. Panel 9137:12151 is 347x396 r12 pad12 gap16 and there is no visible Mulish Regular 14/18 left in it at all - `100`, `1/2`, `2X`, `Max`, `Low`, `Medium`, `High`, `16` and the balance pair `100.11 SKAI` / `$21.00` are every one of them 12/14, and the labels `Bet amount:`, `Balance:` and `Rows` are Manrope Regular 12/14. The CTA holds Manrope Medium 16/22, which the test asserts as the negative half. ★ `Risk` is the one label this frame left at 12/16 while its siblings stepped; mines leaves `Mines:` behind the same way and coinflip leaves `Game Mode:`, so this follows the three that stepped. The panel CARD already stepped correctly before this wave (PlinkoGame.tsx:2581). NOT READ: the rows node by node.",
       "verifiedAt": "2026-08-20T14:36:20.147Z",
       "bpStatus": "unknown"
     },
