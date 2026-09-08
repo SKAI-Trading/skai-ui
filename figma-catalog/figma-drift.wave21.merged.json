@@ -1,0 +1,1836 @@
+{
+  "generated": "2026-09-04T18:57:17.253Z",
+  "sections": {
+    "home": {
+      "status": "drift",
+      "catalogued": 226,
+      "live": 272,
+      "added": 50,
+      "removed": 4,
+      "retitled": 0,
+      "removedRows": [
+        {
+          "id": "2713-4556",
+          "title": "Skai > Home > welcome pop-up > CLAIM NOW row (flame glyph + label; settles report 5536caee)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "2713-4557",
+          "title": "Skai > Home > welcome pop-up > claim-now icon — FILLED FLAME in Sky Blue 16px (icons/action, Hot variant). NOT a droplet: apex left of centre, re-entrant notch upper-right",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "13008-113503",
+          "title": "Skai > Home > upgrade checkout > payment-method row (3 children in one justify-between: icon+symbol, source-chain tag, 120px balance column)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "13008-115807",
+          "title": "Skai > Home > whales > import wallets > Base badge — ⚠️ BROKEN EXPORT: #0052FF disc with a straight rectangular slot, not the Base brandmark. Do NOT copy; app ships the official mark deliberately",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "pwa": {
+      "status": "clean",
+      "catalogued": 5,
+      "live": 5,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "home-2": {
+      "status": "drift",
+      "catalogued": 129,
+      "live": 240,
+      "added": 112,
+      "removed": 1,
+      "retitled": 0,
+      "removedRows": [
+        {
+          "id": "13008-130964",
+          "title": "Skai > Home 1VH (1440 x 900px)",
+          "implFiles": [
+            "src/components/home-redesign/HomeShellLayout.tsx"
+          ],
+          "status": "done",
+          "notes": "Shell (HomeTopBar+sidebar+ticker) mounted at AppRoutes framing every route; AiHome/AskComposer at /",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "wallet": {
+      "status": "drift",
+      "catalogued": 179,
+      "live": 178,
+      "added": 0,
+      "removed": 1,
+      "retitled": 1,
+      "removedRows": [
+        {
+          "id": "3023-15273",
+          "title": "Skai > Wallet > log in or sign up (email + Continue + Google/Apple). Rendered by our own @skai/ui EmailAuthModal; thirdweb supplies the auth ACTION only, so the logos and the Continue tint ARE ours to change — see report 1aaf397f",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "wallet-2": {
+      "status": "clean",
+      "catalogued": 182,
+      "live": 182,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "trade": {
+      "status": "drift",
+      "catalogued": 420,
+      "live": 420,
+      "added": 0,
+      "removed": 0,
+      "retitled": 2,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "trade-2": {
+      "status": "drift",
+      "catalogued": 495,
+      "live": 417,
+      "added": 10,
+      "removed": 88,
+      "retitled": 0,
+      "removedRows": [
+        {
+          "id": "7909-43414",
+          "title": "Skai > Trade > Perpetual futures > side bar collapsed rail (8 icons, Perps active)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9081-273544",
+          "title": "Skai > Trade > side bar - open - spot (8 rows: New chat / Perps / Spot / Swaps / Trench / Launch / Dashboard / Layout settings)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-252239",
+          "title": "Skai > Trade > side bar > Trench disclosure header (OPEN state, green glyph on #052d2d)",
+          "implFiles": [
+            "src/components/home-redesign/HomeSidebarExpanded.tsx",
+            "src/components/home-redesign/sidebarSurfaces.ts"
+          ],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "4018-42130",
+          "title": "Skai > Trade > Perpetual futures > positions panel, filled (no trailing refresh control)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "7890-134142",
+          "title": "Skai > Trade > Perpetual futures > order ticket checkbox block (Take profit/Stop loss, Hidden Order, Reduce Only)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "3928-84939",
+          "title": "Skai > Trade > Perpetual futures > Adjust trade settings > Margin Mode (Cross / Isolated)",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134366",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/DiscoverScreen.tsx",
+            "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134370",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134371",
+          "title": "Trench title row — three chain badges (Solana / Base / BNB), 32x32 on an 8px gap",
+          "implFiles": [
+            "src/components/trench-redesign/discover/networkIcons.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134372",
+          "title": "Chain badge — Solana (32px): black disc, #17F9B4 ring, gradient tri-bars",
+          "implFiles": [
+            "modules/skai-ui/src/figma-icons.tsx",
+            "src/components/trench-redesign/discover/networkIcons.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134373",
+          "title": "Chain badge — Base (32px): ⚠ BROKEN EXPORT, a flat #0052FF disc with a rectangular alpha slot, not the Base brandmark",
+          "implFiles": [
+            "modules/skai-ui/src/figma-icons.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed. ⚠ DELIBERATELY NOT MATCHED (reports 24eb10ba / 4c512f03). Re-verified 2026-08-13 by rendering the node at 32px: the export is a flat #0052FF disc with a horizontal transparent slot knocked through its left half — not the Base brandmark. modules/skai-ui/src/figma-icons.tsx FigmaBaseChainIcon draws the real mark and is correct. FIX THE FIGMA ASSET, not the code.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134374",
+          "title": "Chain badge — BNB (32px): #3A3A3A disc + the modern BNB-Chain isometric cube in #F1B90A",
+          "implFiles": [
+            "modules/skai-ui/src/figma-icons.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134382",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134384",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134387",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134400",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/MarketPulseBoard.tsx",
+            "src/components/trench-redesign/discover/TrenchColumn.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134402",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TrenchColumn.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134411",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TrenchColumn.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134417",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TrenchColumn.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134424",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TokenCard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134427",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TokenCard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134428",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TokenCard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134436",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TokenCard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134451",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TokenCard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134456",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TokenCard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134459",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TokenCard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-134461",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/TokenCard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-146207",
+          "title": "Skai > Trade > top-bar dropdown (5 rows: Perps / Spot / Swaps / Trench / Launch; each glyph a 24px icons/graphical ring)",
+          "implFiles": [
+            "src/components/home-redesign/HomeTopBar.tsx",
+            "modules/skai-ui/src/components/branding/skai-icon.tsx",
+            "modules/skai-ui/src/components/layout/header/header-navigation.tsx"
+          ],
+          "status": "match",
+          "notes": "Report 3cb4cd3b. Measured 2026-08-13: geometry already matched (300x344 panel, 16/32 padding, 24px gap, 24px icon + 8px gap, 22px title over 16px desc). The delta was the ICON FAMILY: every row is a 24px `icons/graphical` instance holding a 21x21 ring at (1.5,1.5), while the rows passed the bare glyphs candlesticks/crosshair/swap/measure/fast. Fixed by adding the five exported vectors to @skai/ui as SkaiIcon `trade-perps|spot|swaps|trench|launch` and repointing the rows. Icon nodes: 13006:146209/146214/146219/146224/146229. The 16px `icons/action` cut of the same family is 9081:273544 (sidebar trade column, src/components/home-redesign/tradeNavIcons.tsx).",
+          "verifiedAt": "2026-08-13"
+        },
+        {
+          "id": "13006-147438",
+          "title": null,
+          "implFiles": [
+            "src/components/home-redesign/HomeSidebarRail.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-158489",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+            "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-158510",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-158556",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-158563",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-158615",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+            "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-165048",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-165084",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-165129",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-165136",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/hotkeyPrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-165139",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/HotkeysMenu.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-165149",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/HotkeysMenu.tsx",
+            "src/components/trench-redesign/discover/rightMenuChrome.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-188668",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx",
+            "src/components/trench-redesign/discover/DiscoverScreen.tsx",
+            "src/components/trench-redesign/discover/TrenchColumn.tsx",
+            "src/components/trench-redesign/discover/pulsePrefs.ts",
+            "src/components/trench-redesign/discover/switchTheme.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-188669",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-188671",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-188676",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-188681",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-191509",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx",
+            "src/components/trench-redesign/discover/TrenchColumn.tsx",
+            "src/components/trench-redesign/discover/pulsePrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-191527",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/switchTheme.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-191528",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-191552",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-191558",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx",
+            "src/components/trench-redesign/discover/TrenchColumn.tsx",
+            "src/components/trench-redesign/discover/pulsePrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-191570",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AlertsModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194608",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/BlacklistModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194611",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/BlacklistModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194615",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/BlacklistModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194616",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/BlacklistModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194629",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/BlacklistModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194631",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/BlacklistModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194635",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/BlacklistModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194650",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/BlacklistModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194971",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+            "src/components/trench-redesign/discover/TokenCard.tsx",
+            "src/components/trench-redesign/discover/metricBands.ts",
+            "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194996",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-194999",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-195005",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-195011",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-195126",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+            "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-195245",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+            "src/components/trench-redesign/discover/trenchDisplayPrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-195269",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+            "src/components/trench-redesign/discover/MarketPulseBoard.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-195278",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/discover/AdjustTrenchSettings.tsx",
+            "src/components/trench-redesign/discover/DiscoverScreen.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-201800",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-201813",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-201814",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-201815",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-201816",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-204639",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-204656",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/OneClickTradeModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-207496",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/OneClickTradeModal.tsx",
+            "src/components/trench-redesign/trade/instantTradePrefs.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-210578",
+          "title": "Token detail > Frame 443 — header row + chart (x=8 y=26 w=1047 h=608)",
+          "implFiles": [
+            "src/components/trench-redesign/trade/PanelTabs.tsx"
+          ],
+          "status": "partial",
+          "notes": "MEASURED x=8 y=26 w=1047 h=608 VERTICAL pad 0 gap 6. Code column is the grid 1fr track at lg with p-2/gap-1.5, so x and width follow from the shell numbers. Height is content-driven and the inner stack gap was not measured per child - left partial rather than done.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-210579",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/TradeHeader.tsx",
+            "src/components/trench-redesign/trade/TradeTerminal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-212012",
+          "title": "Token detail > Frame 444 — trading-details section (x=8 y=640 w=1047 h=277), stacked UNDER Frame 443",
+          "implFiles": [
+            "src/components/trench-redesign/trade/PanelTabs.tsx"
+          ],
+          "status": "partial",
+          "notes": "MEASURED x=8 y=640 w=1047 h=277 VERTICAL pad 0 gap 16. Sits 6px under Frame 443 (26+608=634, +6=640) confirming the 6px column gap a second time. Content axes not measured.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-212076",
+          "title": "Token detail > Multi-panel - combined — right rail (x=1061 y=26 w=313 h=1740)",
+          "implFiles": [
+            "src/components/trench-redesign/trade/PanelTabs.tsx",
+            "src/components/trench-redesign/trade/TradeTerminal.tsx"
+          ],
+          "status": "partial",
+          "notes": "MEASURED 313x1740 VERTICAL gap 6, children 313x954 at y=0, 313x438 at y=960, 313x336 at y=1404 - arithmetic confirms gap 6. Code rail width 313 and lg:gap-1.5 match. COMPOSITION DOES NOT: by text content the three children are OrderPanel (5m vol/Buys/Sells/Net vol., Market-Limit-Pro, Buy/Sell, Amount, presets), COMMUNITY (Twitter/Discord/Website + posts + See all posts) and SIMILAR TOKENS (Similar tokens (16) + Reused image tokens (4)). Code renders OrderPanel, TokenInfoPanel, PositionReadout, RiskPanel and puts Community/Similar tokens in PanelTabs instead. Escalation, not a unilateral edit.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-219554",
+          "title": null,
+          "implFiles": [
+            "src/components/trench-redesign/trade/InstantTradeSettingsModal.tsx"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-252244",
+          "title": "Skai > Trade > side bar > Trench disclosure children (\"internal\"): Alpha / PnL / Market Pulse",
+          "implFiles": [
+            "src/components/home-redesign/HomeSidebarExpanded.tsx",
+            "src/components/home-redesign/sidebarSurfaces.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed. Report 7f6e79bc. The frame draws THREE children — Alpha (13006:252249), PnL (13006:252257) and Market Pulse (13006:252263). TRENCH_ROWS ships Alpha and Market Pulse only; PnL is withheld because it has no token-less destination — PositionsPanel filters on the token symbol and a sidebar row cannot supply one.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-252249",
+          "title": null,
+          "implFiles": [
+            "src/components/home-redesign/sidebarSurfaces.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-252257",
+          "title": null,
+          "implFiles": [
+            "src/components/home-redesign/sidebarSurfaces.ts",
+            "src/components/home-redesign/sidebarSurfaces.ts (TRENCH_ROWS) + HomeSidebarExpanded.tsx"
+          ],
+          "status": "done",
+          "notes": "The row itself, inside \"internal\" 13006:252244 -> Frame 220. Three 42px rows on a 44px pitch: Alpha y=0, PnL y=44, Market Pulse y=88 (42*3 + 2*2 + 4 = 134). RESTORED THIS LANE - it was deliberately omitted with a docblock saying no P&L source existed. Every row's Tag is hidden=\"true\", so no count ships (matches the two existing rows). Icon slot is reserved and drawn empty, same as its siblings.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-252263",
+          "title": null,
+          "implFiles": [
+            "src/components/home-redesign/sidebarSurfaces.ts"
+          ],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-147429",
+          "title": null,
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-165150",
+          "title": null,
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        },
+        {
+          "id": "13006-191568",
+          "title": null,
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "[wave-4 2026-08-13] Row present because the code cites this node. citedByFiles/implFiles are derived by grepping the tree for the node id, not transcribed.",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "predict": {
+      "status": "drift",
+      "catalogued": 284,
+      "live": 284,
+      "added": 0,
+      "removed": 0,
+      "retitled": 5,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "play": {
+      "status": "clean",
+      "catalogued": 345,
+      "live": 345,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "dice": {
+      "status": "drift",
+      "catalogued": 36,
+      "live": 36,
+      "added": 2,
+      "removed": 2,
+      "retitled": 2,
+      "removedRows": [
+        {
+          "id": "9100-5928",
+          "title": "card",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/DiceGame.tsx"
+          ],
+          "status": "frame-defect",
+          "notes": "DEMOTION from done. getNodeByIdAsync('9100:5928') returns NULL on file M6r9FEn042UWTQD1zvy6GM 2026-08-31 - the node no longer exists. It is also absent from page 2003:674 top-level children (36 live ids vs the 36 in registry.json: -9100:5928 -9175:9500 +10192:2949 +10215:1015). A 2-for-2 swap, so the pages.json n=36 count guard PASSES while the id set changed. Row cannot be re-measured; its `done` was the Dice page's only parity claim.",
+          "verifiedAt": "2026-08-20T14:36:20.147Z"
+        },
+        {
+          "id": "9175-9500",
+          "title": "card",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/DiceGame.tsx"
+          ],
+          "status": "frame-defect",
+          "notes": "DEMOTION from done. Same probe: getNodeByIdAsync returns NULL 2026-08-31. Sibling 9175:9528 (card 160x42) DOES still resolve and is parented straight to page 2003:674, so the probe is not vacuous - two of the three `card` frames were deleted, one survives.",
+          "verifiedAt": "2026-08-20T14:36:20.147Z"
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "crash": {
+      "status": "drift",
+      "catalogued": 20,
+      "live": 20,
+      "added": 0,
+      "removed": 0,
+      "retitled": 2,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "mines": {
+      "status": "drift",
+      "catalogued": 19,
+      "live": 19,
+      "added": 0,
+      "removed": 0,
+      "retitled": 2,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "blackjack": {
+      "status": "drift",
+      "catalogued": 23,
+      "live": 23,
+      "added": 0,
+      "removed": 0,
+      "retitled": 1,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "coinflip": {
+      "status": "drift",
+      "catalogued": 37,
+      "live": 46,
+      "added": 9,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "skratch": {
+      "status": "drift",
+      "catalogued": 20,
+      "live": 21,
+      "added": 1,
+      "removed": 0,
+      "retitled": 2,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "cover-images": {
+      "status": "drift",
+      "catalogued": 24,
+      "live": 44,
+      "added": 26,
+      "removed": 6,
+      "retitled": 0,
+      "removedRows": [
+        {
+          "id": "9222-26208",
+          "title": "Crash Mobile",
+          "implFiles": [
+            "modules/skai-gaming/src/assets/games/figma/"
+          ],
+          "status": "partial",
+          "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent [vverify: deferred | Play-tile ARTWORK: Crash mobile card art 76x108. Leaf frame, no children.]",
+          "verifiedAt": "2026-08-12T01:37:49.548Z"
+        },
+        {
+          "id": "9222-26323",
+          "title": "Blackjack Desktop",
+          "implFiles": [
+            "modules/skai-gaming/src/assets/games/figma/"
+          ],
+          "status": "partial",
+          "notes": "Designer gap-list of per-game cover art, Desktop + Mobile per game. All seven are exported and in the repo: plinko, crash, dice, scratchers, blackjack, coin-flip, mines .webp under skai-gaming assets/games/figma (19 files incl. hilo, towers, chicken). One responsive asset serves both the Desktop and Mobile frames - DiceGame.tsx:80 notes it is \"the same exported asset the casino grid tile uses\". NOTE the art lives in the skai-gaming SUBMODULE, not public/assets/games in the main repo; git ls-files on the main repo misses it and makes dice look absent [vverify: deferred | Play-tile ARTWORK: Blackjack desktop card art 195x277. Leaf frame, no children. Note the game pages' info cards were shipped pointing at the real Blackjack art because Figma's own frames embed a stale Cards-ALT-Chicken thumbnail.]",
+          "verifiedAt": "2026-08-12T01:37:49.548Z"
+        },
+        {
+          "id": "9393-514",
+          "title": "Cards ALT - Chicken",
+          "implFiles": [
+            "modules/skai-gaming/src/assets/games/figma/"
+          ],
+          "status": "done",
+          "notes": "ACTUAL GAME: CHICKEN (desktop cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9393-519",
+          "title": "Cards ALT - Chicken",
+          "implFiles": [
+            "modules/skai-gaming/src/assets/games/figma/"
+          ],
+          "status": "done",
+          "notes": "ACTUAL GAME: CHICKEN (mobile cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9479-19858",
+          "title": "Cards ALT - Chicken",
+          "implFiles": [
+            "modules/skai-gaming/src/assets/games/figma/"
+          ],
+          "status": "done",
+          "notes": "ACTUAL GAME: DARTS (desktop cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9479-19863",
+          "title": "Cards ALT - Chicken",
+          "implFiles": [
+            "modules/skai-gaming/src/assets/games/figma/"
+          ],
+          "status": "done",
+          "notes": "ACTUAL GAME: DARTS (mobile cover). | FRAME NAME IS WRONG IN FIGMA: four desktop covers and their four mobile pairs are all named \"Cards ALT - Chicken\" from a copy-paste. Only ONE of them is Chicken. The artwork is unambiguous - each card prints its own game name - so the game above was READ OFF THE RENDER (2026-08-19), not inferred from the name. The title field deliberately still mirrors Figma: figma-drift.mjs matches by exact title, so renaming it here would make every drift run report a phantom REMOVED node plus an unmatched new one.",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 4,
+      "retargets": [
+        {
+          "oldId": "9393-514",
+          "newId": "10347-2413",
+          "title": "Cards ALT - Chicken"
+        },
+        {
+          "oldId": "9393-519",
+          "newId": "10428-2601",
+          "title": "Cards ALT - Chicken"
+        },
+        {
+          "oldId": "9479-19858",
+          "newId": "10428-2607",
+          "title": "Cards ALT - Chicken"
+        },
+        {
+          "oldId": "9479-19863",
+          "newId": "10358-8842",
+          "title": "Cards ALT - Chicken"
+        }
+      ]
+    },
+    "onboarding": {
+      "status": "clean",
+      "catalogued": 151,
+      "live": 151,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "legal": {
+      "status": "not-harvested",
+      "catalogued": 10
+    },
+    "master-sheet": {
+      "status": "clean",
+      "catalogued": 46,
+      "live": 46,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "plinko": {
+      "status": "drift",
+      "catalogued": 22,
+      "live": 21,
+      "added": 0,
+      "removed": 1,
+      "retitled": 3,
+      "removedRows": [
+        {
+          "id": "9175-9939",
+          "title": "signals",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/PlinkoGame.tsx"
+          ],
+          "status": "partial",
+          "notes": "★ 2026-08-05: the four board/panel defects recorded on 2026-08-05 are FIXED IN SOURCE against the frames; still `partial` because nothing was render-measured and the tablet/mobile tier is unbuilt. WHAT WAS FIXED. (1) PER-DIFFICULTY PALETTE. PlinkoGame.tsx now carries three ramps in PLINKO_BUCKET_RAMPS, each sampled bucket-by-bucket off its own frame: Easy (low) #90E3E7 #7DD4E7 #69C6E6 #57B8E6 #46ACE6 #349EE6 #2391E6 #1184E6 #0078E6 from 9069:6513; Medium #A1E03C #8ED639 #7ACD37 #67C334 #55BB31 #44B12F #34A72C #34A72C #1A9627 from 9095:5889; Hard (high) #E590F2 #DB85EE #D17CEB #C771E7 #BE68E3 #B45EE0 #AA55DC #A04CD9 #9744D5 from 9095:5332. Previously ONE ramp - the Easy one - was hardcoded and painted on all three, so Medium and Hard rendered the wrong colourway outright. (2) THE RAMP IS MIRRORED. Each array runs EDGE->CENTRE and getMultiplierSlotColor indexes it by distance from the centre bucket, so the row is symmetric exactly as all three frames draw it. The old getMultiplierSlotColors mapped t = index/(total-1) monotonically and colour-inverted the right half of every board; the comment asserting the frame was \"NOT a symmetric center-out ramp\" was itself the bug and is replaced - those nine stops were precisely the nine distinct colours of the mirrored HALF row. Resampling still works for the 8- and 12-row boards. Bucket chrome now matches too: flat fill instead of a vertical gradient, radius/border/foot held as the frame's ratios (4.565, 1.712 and 13.55 over 31.952 of slot height), inset bottom foot at rgba(0,0,0,0.2), the white 15% top highlight dropped (the frame has none), and text pinned to Green Coal 300 #001615 on every bucket rather than luminance-picked. (3) THREE BALL VARIANTS BUILT. 9137-10213/10215/10217 are flat 10px discs - confirmed from the exported SVGs, `<circle r=\"5\">` with a single fill - at #56C7F3 Easy, #3BFF00 Medium, #DC4CE9 Hard. drawGame drew one r=7 orange-red radial gradient with a 14px glow and a white specular for all three; it now draws a flat r=5 disc keyed off riskLevel. Ball hues are NOT the bucket hues (the balls are more saturated), so they live in their own PLINKO_BALL_COLOR map. (4) AUTO PANEL. Label is the frame's \"Number of Bets:\", the field accepts 0, an infinity affordance sits at its trailing edge where the frame's 16x7 glyph is, and 0 now genuinely means unlimited - burstDrop runs to POSITIVE_INFINITY, placing one REAL playPlinko settlement per ball until stopped. The 25-ball cap is now understood as a RENDER budget: long and unlimited runs WAIT for headroom per tick instead of being trimmed, so the \"Burst Trimmed\" toast is gone. CTA relabelled \"Bet\" per 9104:6251. (5) PEGS, found while verifying the above and fixed with it. The peg SVGs export byte-identical from the Easy and Medium frames (9069:5872 vs 9095:5373), so pegs are NOT per-difficulty - the board's risk colour is carried entirely by the buckets and the ball. The frame draws a FLAT WHITE circle, r=3.42339 on a 34.234 column pitch, i.e. exactly 0.1 of the pitch. The code painted #EAF7FE (near-white with a blue tint) at a hardcoded r=3; it now paints #ffffff and derives the radius as pegSpacingX * 0.1 so the ratio holds at 8, 12 and 16 rows rather than being right at one row count. The sky-blue glow is KEPT: the frame's peg group contains a second ellipse (\"Ellipse 38\") that exports EMPTY, which is how a blur/glow effect layer comes back, so the frame does have a glow layer whose parameters could not be read - the existing rgba(86,199,243,0.30) stands in for it and is the one peg property still unverified. Board-shaping controls (currency, difficulty, rows, arrow shortcuts) now gate on `boardLocked` = activeBallCount > 0 OR an Auto run still queueing, because an unlimited run outlives any one screenful of balls and the board could otherwise be empty mid-run. ★ DELIBERATE DEVIATIONS, each a judgement call not an oversight: the CTA reads \"Stop\" while an Auto run is queueing (the frame draws no stop state; an unlimited autobet cannot ship without one); Auto defaults to 1 bet rather than the frame's drawn 0, because that 0 is a placeholder of the same class as the frame's \"100\" bet amount and \"100.11 SKAI\" balance - the code has always defaulted the bet to 0.10, not 100 - and defaulting a real-money autobet to unlimited is not a default anyone chose; and the POINTS/SKAI/sUSD row is kept though the frame draws a single SKAI field, since the panel is the only place to pick the settlement rail. ★ FRAMES DECLINED, NOT BUILT. 9104-6283 \"Plinko Old\" is the superseded rainbow board that the three Mode frames replace. 9003-83784 is a mis-assembled tablet whose details card reads \"Crash  Skai Originals\" over BLACKJACK art with Crash body copy and Blackjack community-wins rows; its sibling 9003-82836 covers the same 768 viewport and is the tablet of record. 9175-9939 \"signals\" is a loose 135x18 design-system fragment (the \"100\" + coin row already implemented inside the bet-amount field), not a screen. 9137-12640 is 1080x1350 - a social-asset aspect, not a viewport - and is purple-gradient/orange-ball promo art in another product's visual language entirely, not SKAI's green-coal/sky-blue; it is borrowed reference art. 9137-10219 is a rival auto panel using \"Risk: Low/Medium/High\", the retired vocabulary that the three Mode frames (named Easy/Medium/Hard) and the canonical panel 9104-6170 (labelled \"Difficulty\") both supersede; the same retired segment appears on 9003-82836, 9003-83784 and 9137-11578 and is deliberately not reproduced anywhere. The five furniture frames 9003-72412 Directory, 9003-72420 Rectangle 147 and 9003-72418/72421/72423 Breakpoint are canvas scaffolding. ★ MIS-TITLED, KEPT: 9137-11578 is catalogued \"Skai > Play > Casino > Dice Mobile (375 x 812px)\" but is neither Dice nor 812 tall - it is a genuine Plinko mobile page at 375x1605 with correct Plinko copy. Fix the title upstream. ★ WHAT KEEPS THIS OFF `done`. No render/DOM measurement was taken this pass, so every verdict in vverify.plinko.tsv is source-verified only. The tablet and mobile tier draws the CTA ABOVE the fields with the board above the panel - the same inversion Mines ships at mobile, and a real device-tier difference - while the route still renders one left-panel layout at every width. Both tablet frames carry leftover Crash/Blackjack details-card copy, so the page furniture below the game cannot be built from them as drawn. ★ WHAT WAS ALREADY RIGHT AND IS UNTOUCHED: the detail page IS built and routed (/play/plinko -> PlinkoPage + PlinkoPageSections, same widget as the modal at variant=fullscreen), and the bucket VALUES match the frames element-for-element (Easy 16-row = 16x 9x 2x 1.4x 1.4x 1.2x 1.1x 1x 0.5x mirrored; Medium = 110x 41x 10x 5x 3x 1.5x 1x 0.5x 0.3x mirrored; Hard = 1K 130x 26x 9x 4x 2x 0.2x x5 mirrored), RE-VERIFIED THIS PASS by parsing both files: PlinkoGame.tsx and PlinkoTypes.ts:47 agree on all 9 risk/row tables with zero mismatches, and every row is symmetric about its centre - which independently corroborates that a MIRRORED colour ramp is the right model for the board. The other three copies (points-game:195, game-settlement:2488, and the Go chain plinkoBPS in gaming_settle_models.go:612) are carried over from the earlier audit and were NOT re-parsed this pass. Bucket selection is server-authoritative on both live rails; the client Math.random path is cosmetic and discarded before payout. Casino settles on POINTS, so an empty on-chain bet table is correct here, not a defect. ★ CAVEAT 1 (unchanged, still open): a SIXTH copy in gridGamesService.ts:753 has low/12 wrong in 11 of 13 buckets (31.2% edge vs the canonical 1.02%) and mints serverSeed in the browser - it is dead, and must never be wired up. ★ CAVEAT 2 (unchanged, still open): PlinkoGame.test.ts declares CLIENT_MULTIPLIERS and SERVER_MULTIPLIERS as two hardcoded literals INSIDE the test and compares them to each other, importing neither real source - exactly how the gridGames divergence survived. No _shared/plinko.ts exists, unlike every other game. ★ ACCESSIBILITY, shipped as-drawn and flagged for a designer decision: all 51 buckets across the three frames print #001615, including the deep centre stops, so the luminance-based white-text switch was removed. #001615 on Hard's #9744D5 measures about 2.8:1, under WCAG AA for 11px bold. ★ 2026-08-05 THE THREE PER-DIFFICULTY RAMPS ARE VERIFIED RENDERING, by sampling the live canvas rather than by reading source. /play/plinko loaded at 1440 (600x500 canvas, 1:1 backing store), and the bucket row was pixel-sampled at nine x positions across y = 0.92h after clicking each difficulty. Easy: #7dd4e7 #57b8e6 ... #0078e6 (centre) ... #57b8e6 #7dd4e7. Medium: #8ed639 #67c334 ... #1a9627 ... #67c334 #8ed639. Hard: #db85ee #c771e7 ... #9744d5 ... #c771e7 #db85ee. Every sampled stop is a literal member of that difficulty's PLINKO_BUCKET_RAMPS array, the three sets are disjoint, and each row is symmetric about the centre bucket (position 0 == 8, 1 == 7, 3 == 5) - which confirms BOTH fixes at once: the ramps are genuinely per-difficulty (Medium and Hard no longer paint the Easy colourway) and they are mirrored edge-to-centre rather than running monotonically and colour-inverting the right half. Difficulty switching repaints immediately. Stays partial: the tablet/mobile tier is still unbuilt and the peg/ball geometry has not been render-measured. ★★★ 2026-08-05: THREE REAL DEFECTS FOUND AND FIXED, and the board colourways closed against pixels rather than source. STILL PARTIAL, but only because of the three ball frames, which cannot be exercised on a 0-POINTS box. ★ DEFECT 1 - PLINKO WAS UNPLAYABLE ON A PHONE, and nobody had recorded it. PlinkoGame's widget body was `flex flex-row` at EVERY width while the bet panel is `shrink-0` at up to 356px, so at 375 the game area was left ~19px and, after its own px-4, the canvas MEASURED 0px WIDE - a player on a phone saw no board at all. This is the identical bug DiceGame had already fixed and Plinko never got. Now `flex flex-col lg:flex-row` with the board `order-1 lg:order-2` above the panel `order-2 lg:order-1`, the 356px cap and the divider border made lg-only, and the route's 720px height cap made lg-only so the stacked layout is not clipped by `overflow-hidden`. ★ DEFECT 2 - THE CANVAS NEVER RE-MEASURED. `setCanvasRef` is a ref callback: it fired once at mount and pinned the canvas to whatever the slot measured then, so the board was frozen for the life of the component and a rotate or a window drag never moved it. Worse, it overwrites `node.width`, which IS the element's intrinsic size, so a canvas that had once shrunk could only ever shrink further, never grow back. Fixed by measuring the SLOT's CONTENT BOX, fitting the largest 600x500-aspect box that fits, capping at the design size, and re-running it from a ResizeObserver gated on NO balls in flight (ball paths are generated in canvas coordinates at drop time, so resizing mid-flight would move a live bet's ball off its own path). ★ DEFECT 3 - the first fix measured `clientWidth`, which INCLUDES the slot's px-4; fitting against it over-measured by 32px, flex-shrink then clawed back only the width, and the board rendered at a 1.09 aspect instead of its 1.2. The padding is now subtracted explicitly and the canvas carries `shrink-0`. VERIFIED by a live round trip 1440 -> 375 -> 768 -> 1440: 600x500 -> 305x254 -> 379x316 -> 600x500, every one at the 1.2 design aspect, 0px overflow and exactly one CTA throughout. ★ THE MOBILE/TABLET CTA INVERSION IS BUILT, read off the frame rather than assumed: the mobile panel 9137:12151 orders its children CTA (9137:12152, y=12) -> bet amount + balance (9178:9330, y=80) -> risk (9137:12184, y=186) -> rows (9137:12200, y=266) -> Manual|Auto (9137:12209, y=348), with the board above it. Reproduced and measured at 375 (CTA 597, Bet amount 725, Balance 839, Difficulty 885, Rows 969, Manual|Auto 1029) and at 768, while desktop keeps its verified Manual|Auto-first / CTA-last order. ★ ALL THREE PER-DIFFICULTY BUCKET RAMPS ARE NOW RENDER-VERIFIED by reading the canvas back with getImageData - Easy, Medium and Hard each recover all nine stops in EDGE->CENTRE order, mirrored across 17 buckets, and Figma's #90CBE7 edge slip appears nowhere. That also retires the original defect on this family (the code used to paint Easy's cyan ramp on all three difficulties). Auto panel 9104-6170 verified by driving the real tab. REMAINING: 9137-10213 / 10215 / 10217, the three ball discs - a ball only exists while a drop is in flight and this box has a 0-POINTS balance, so the painted disc has never been seen. A funded rail closes them; nothing in the layout does. 9003-83784 and 9104-6283 stay deferred (mis-assembled rival, superseded 'Plinko Old').",
+          "verifiedAt": "2026-08-20T14:36:20.147Z"
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "darts": {
+      "status": "clean",
+      "catalogued": 31,
+      "live": 31,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "chicken": {
+      "status": "drift",
+      "catalogued": 31,
+      "live": 31,
+      "added": 0,
+      "removed": 0,
+      "retitled": 1,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "hilo": {
+      "status": "drift",
+      "catalogued": 20,
+      "live": 16,
+      "added": 2,
+      "removed": 6,
+      "retitled": 1,
+      "removedRows": [
+        {
+          "id": "9058-1833",
+          "title": "Desktop",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/cards/HiLoGame.tsx",
+            "modules/skai-gaming/src/pages/play/HiLoPage.tsx"
+          ],
+          "status": "partial",
+          "notes": "ROUTE + DETAIL PAGE NOW BUILT (2026-08-05). /play/hilo exists in src/App.tsx and mounts HiLoGame with variant=\"fullscreen\" inside GameShell - the SAME widget the casino grid opens, so the page cannot settle a card differently from the modal - with HiLoPageSections rendering the whole 1440x3294 column beneath it: stats/fairness strip, tabs row, game-info card, Community wins, More-games carousel, Bets panel, About + assurances + Licences + FAQ, footer. Copy in hiloPageContent.ts, cited node by node. The 768 (9058-4372) and 375 (9351-4708) tiers are served by the same page's breakpoints, the sibling /play/* pattern, not by second implementations. hilo added to ROUTED_GAME_PATHS in Play.tsx, PlayOriginals.tsx and GameDetailPage.tsx. HiLoGame gained variant + onSeedChange and its three Dialog wrappers (main, disabled-notice, faucet) became GameShell - shell only, zero lines of card or settlement logic touched. The strip's verifier is fed from roundProof (the four fields the SETTLEMENT response returns together), never the legacy secure-session store, whose hash/clientSeed/bet-COUNT belong to no real round and would report a false 'server seed hash does not match' on an honest round. * CATALOG RE-CUT, EVERY FRAME RENDERED AND READ. This section is mis-filed in BOTH directions and the previous verdict had two of them backwards. NOT HI-LO (Scratchers filed under Hi-Lo): 9058-1833 \"Desktop\" is a 3x3 match-3 symbol grid under a \"Match 3 to Win!\" header with a six-symbol 1.98x paytable; 9058-7261 is that same paytable row; 9058-2367 \"Card out\" is a generic Manual/Auto bet panel with no higher/lower control at all; 9058-5154 (768x1607) is genuinely Scratchers AND correctly titled - match-3 board, Manual/Auto, Bet/Target. NOT SKAI AT ALL, must never be built: 9332-27318 and 9332-27319 are phone photos of stake.us (Stake wordmark, Login/Register, \"Stake Originals\", \"stake.us - Private\" in the browser bar) - a COMPETITOR's Hi-Lo. Their paytable (Same 7.69% / Lower 92.31%, Net Gain 12.87x / 1.07x) is Stake's and was copied nowhere. HI-LO BUT MIS-TITLED - correcting the earlier verdict: 9058-4372 (768x1627) is titled \"Skai > Play > Casino > Scratchers\" in its layer name AND in its own rendered breadcrumb, but it is the HI-LO TABLET page (3-of-hearts card, King/Ace ghost cards, Profit Higher (1.17x) / Profit Lower (4.29x), drawn-cards strip, Bet panel); and 9351-4708 is titled \"Blackjack (375 x 812px)\" but is the Hi-Lo 375 page at 375x1605. CORRECTLY FILED HI-LO: 9061-10499 (desktop start), 9061-9472 (desktop loss), 9332-27320 (mobile board), 9351-3397 (hero illustration) and 9079-3253 (an image node named \"Screenshot 2026-07-23...\" whose content is a SKAI Hi-Lo board - same King/Ace ghosts, same Profit Higher/Lower fields - so a reference capture, not a competitor photo). NEITHER: 9058-6701 \"Layout\" is the SHARED stats/fairness strip every game detail page draws. Real Hi-Lo surface = 7 frames (2 desktop, 1 tablet, 2 mobile, 1 hero, 1 capture), not 12. * FRAME NUMBER BUGS, REPORTED NOT BUILT: for identical stated odds (Higher-or-Same 30.77%, Lower-or-Same 76.92%) the Start frame prints Higher 1.17x / Lower 4.29x while the Loss frame prints 3.22x / 1.29x. Only Loss is arithmetically consistent (0.99/0.3077 = 3.22); Start is INVERTED and would be house-negative if built as drawn. The tablet frame 9058-4372 repeats Start's inverted pair, and the mobile board 9332-27320 is worse again - ONE probability (53.58%) against BOTH arrows while still showing 1.17x / 4.29x. None of those numbers were copied: the page renders no odds or profit figures, and the widget computes its own from the live config. * FRAME NUMBERS NOT REPRODUCED (no-mock rule): the Community-wins sample rows (@CryptoQueen88, $8,481.10, 2.67x, every row labelled \"Blackjack\"), the \"N playing\" counts and \"Total: $89.01\" - the desktop frame's Community-wins figure, which no rail produces. The page renders the live useRecentBets / liveGamingService feeds and the design's honest empty states instead, and ships the 375 frame's \"All time\" range pill where desktop draws the fabricated total. Also dropped: \"Try Crash in Fun Mode\" (wrong game AND a mode no Skai title has) and the two Figma authoring defects (\"verified using verified\", \"exlusive\"). * STILL OPEN, unchanged by this pass and owned by whoever holds the widget internals: HiLoGame implements none of the frame's Skip Card control, the King/Ace ghost cards flanking the live card, the split Profit(High)/Profit(Low) fields or the drawn-cards strip, and it adds a 7777 JACKPOT toggle (JACKPOT_NUMBER) that appears in no frame. * ECONOMICS unchanged and consistent: admin key hilo_house_edge is a FRACTION (default 0.01), the client reads it as one, and the live POINTS rail points-game:5313 is also 99/wc - they AGREE at 1%, no player-visible discrepancy. The dormant money rail game-settlement:3957 uses 95/wc, so enabling REAL_MONEY_PLAY_ENABLED would cut Hi-Lo payouts 4.21%. Hi-Lo running 1% while Dice/Mines/Chicken/Crash run higher is a product decision, not a bug. Page verified by typecheck + build; frames not yet visually diffed. ★★★ 2026-08-05 - THE DESIGN DRAWS A CARD GAME; THE RAIL DEALS A DICE ROLL. THE PAGE COPY NOW FOLLOWS THE RAIL. Route loaded and rendered at /play/hilo: page mounts, no mount errors, widget reaches the settlement rail (BET HI -> \"Sign in and connect a wallet\", i.e. blocked only by the local dev session having no wallet). What that render exposed is bigger than a frame gap: the WIDGET IS NOT A CARD GAME. HiLoGame.tsx - the one and only Hi-Lo component, the same one the casino grid opens - is a SINGLE 0-9999 ROLL with a win-chance slider: drag Win Chance (10-94.5%), which sets a threshold; HI wins above it, LO below; multiplier = (100/wc)*(1-0.01), quoted before the bet; ONE roll settles it. No deck, no streak, no rung ladder, no cash-out. The rail agrees on both paths - points-game play_hilo (index.ts:5459-5493) rolls `roll % 10000` against a side-specific threshold, game-settlement playHiLo (:3941) does the same. Neither draws a card. The previously-shipped game-info blurb was Figma 9061:10760 verbatim - \"guess whether the next CARD lands higher or lower\", \"ride the STREAK\", \"each correct call STACKS your multiplier\", \"CASH OUT on a hot run\" - four clauses naming four mechanics the game does not have. That is a game-info card promising a player rules the game will not honour, so it was rewritten from the rail; the frame's wording is quoted IN FULL in the JSDoc on `description` so the designer can reconcile the two deliberately. Same fix on three more strings that named a deck the game has no concept of: HILO_SUBBAR.refresh \"Start a fresh card\" -> \"Start a fresh round\" (the button calls onReset, which clears the roll history), seedPending \"Play a card to reveal...\" -> \"Place a bet to reveal...\", and the funds FAQ \"the card that came out can be re-derived\" -> \"the roll that came out\". The earlier STILL-OPEN list above reads as though the widget were an INCOMPLETE card game missing a Skip Card control, King/Ace ghost cards and a drawn-cards strip; it is not incomplete, it is a DIFFERENT GAME, and whether Hi-Lo should become the card game the frames draw is a product call plus a rail change, not something this page settles by what it prints in the meantime. NOT silently reconciled the other way: the rail was not touched. ECONOMICS RE-VERIFIED this pass and the claim above holds - client HiLoGame.tsx:410 `HILO_RAIL_EDGE = 0.01` and points-game:5474 `multiplier = 99/wc` agree exactly at 1%, and the live panel quotes 1.98x at a 50% win chance = 99/50. Confirmed correct, not assumed. ★★★ 2026-08-05 ROUTE RE-VERIFIED IN A BROWSER AND TWO REAL DEFECTS FOUND AND FIXED - the earlier 'route loaded, nothing needed fixing' verdict was measured at desktop only. (1) THE BOARD RENDERED TWICE BELOW 1024px. HiLoGame's centre column carried `col-span-6 flex flex-col` and nothing else. `col-span-*` is a GRID property and the parent is `flex flex-col lg:grid`, so below lg the class was inert and the DESKTOP column painted anyway - on top of the `lg:hidden` mobile block above it, which already draws its own roll display and its own BET LO / BET HI pair. Measured on the live route at 390px: FOUR bet buttons (two full pairs at y=347 and y=1256) and TWO 'Roll Result' panels. A phone player saw the board twice with two live pairs of bet CTAs. Fixed to `hidden col-span-6 lg:flex flex-col` and re-measured: at 390px exactly one visible pair (y=347, w=137) with the desktop column collapsed to 0x0, and at 1440px the mobile block collapses to 0x0 while the desktop pair renders unchanged at x=427/755 w=316. Pure presentation - the same widget the casino grid opens, so the modal is fixed too. (2) THE '7777 JACKPOT / 777x' TOGGLE ADVERTISED A PRIZE NO RAIL PAYS, AND IT IS NOW NOT RENDERED. It was wrong against BOTH rails at once. POINTS, the rail the casino settles on: points-game's play_hilo (index.ts:5459-5493) has no jackpot code at all - it returns result/payout/multiplier and never jackpotWon - and playPointsHiLo (src/services/gaming/pointsGameService.ts:385-412) does not even forward jackpotEnabled, so the badge offered 777x at probability ZERO while charging a 0.1% fee that only ever moved the client-side balance check. SKAI/sUSD, dormant: game-settlement's playHiLo DOES implement the 7777 side bet - at HILO_JACKPOT_PRIZE_MULTIPLIER = 9.5 (index.ts:3939), whose own comment records that 777 was removed as 'a free +7.77% RTP exploit pushing hilo >100%'. So the badge quoted 81.8x more than the only rail that implements the feature would pay. NOT reconciled the cheap way: neither rail was touched (restoring 777 IS the documented exploit) and the client constant was not raised to meet it. No hilo frame draws a jackpot control at all, so the toggle was a client-side invention and the honest render is no control - the toggle, the 'J' hotkey, its shortcut-sheet row and the JACKPOT_NUMBER / JACKPOT_PRIZE_MULTIPLIER constants are gone (removing two baseline typecheck errors with them); jackpotEnabled stays pinned false so jackpotFee is 0 and the settlement call is byte-identical to a plain bet. Confirmed absent from the rendered page. (3) A `false &&` DEBUG HACK disabling the no-balance faucet notice was found uncommitted in HiLoGame.tsx (14h stale) and reverted; the notice now renders correctly for a zero-balance session, which is what a deploy-from-working-tree would otherwise have shipped broken. [vverify: deferred | NOT HI-LO - RE-FILED TO Casino > Scratchers. 708x461: a 3x3 match-3 symbol grid (money bag, star, slot machine, gem, clover, trophy) under a \"Match 3 to Win!\" header with a six-symbol paytable, every symbol at 1.98x. Rendered and read, not inferred from the title. Deferred here because its parity belongs to the Scratchers surface (status.skratch.tsv is `done`), not to the Hi-Lo worklist; it was being counted as an unbuilt Hi-Lo screen.]",
+          "verifiedAt": "2026-08-20T14:36:20.147Z"
+        },
+        {
+          "id": "9058-2367",
+          "title": "Card out",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/cards/HiLoGame.tsx",
+            "modules/skai-gaming/src/pages/play/HiLoPage.tsx"
+          ],
+          "status": "partial",
+          "notes": "ROUTE + DETAIL PAGE NOW BUILT (2026-08-05). /play/hilo exists in src/App.tsx and mounts HiLoGame with variant=\"fullscreen\" inside GameShell - the SAME widget the casino grid opens, so the page cannot settle a card differently from the modal - with HiLoPageSections rendering the whole 1440x3294 column beneath it: stats/fairness strip, tabs row, game-info card, Community wins, More-games carousel, Bets panel, About + assurances + Licences + FAQ, footer. Copy in hiloPageContent.ts, cited node by node. The 768 (9058-4372) and 375 (9351-4708) tiers are served by the same page's breakpoints, the sibling /play/* pattern, not by second implementations. hilo added to ROUTED_GAME_PATHS in Play.tsx, PlayOriginals.tsx and GameDetailPage.tsx. HiLoGame gained variant + onSeedChange and its three Dialog wrappers (main, disabled-notice, faucet) became GameShell - shell only, zero lines of card or settlement logic touched. The strip's verifier is fed from roundProof (the four fields the SETTLEMENT response returns together), never the legacy secure-session store, whose hash/clientSeed/bet-COUNT belong to no real round and would report a false 'server seed hash does not match' on an honest round. * CATALOG RE-CUT, EVERY FRAME RENDERED AND READ. This section is mis-filed in BOTH directions and the previous verdict had two of them backwards. NOT HI-LO (Scratchers filed under Hi-Lo): 9058-1833 \"Desktop\" is a 3x3 match-3 symbol grid under a \"Match 3 to Win!\" header with a six-symbol 1.98x paytable; 9058-7261 is that same paytable row; 9058-2367 \"Card out\" is a generic Manual/Auto bet panel with no higher/lower control at all; 9058-5154 (768x1607) is genuinely Scratchers AND correctly titled - match-3 board, Manual/Auto, Bet/Target. NOT SKAI AT ALL, must never be built: 9332-27318 and 9332-27319 are phone photos of stake.us (Stake wordmark, Login/Register, \"Stake Originals\", \"stake.us - Private\" in the browser bar) - a COMPETITOR's Hi-Lo. Their paytable (Same 7.69% / Lower 92.31%, Net Gain 12.87x / 1.07x) is Stake's and was copied nowhere. HI-LO BUT MIS-TITLED - correcting the earlier verdict: 9058-4372 (768x1627) is titled \"Skai > Play > Casino > Scratchers\" in its layer name AND in its own rendered breadcrumb, but it is the HI-LO TABLET page (3-of-hearts card, King/Ace ghost cards, Profit Higher (1.17x) / Profit Lower (4.29x), drawn-cards strip, Bet panel); and 9351-4708 is titled \"Blackjack (375 x 812px)\" but is the Hi-Lo 375 page at 375x1605. CORRECTLY FILED HI-LO: 9061-10499 (desktop start), 9061-9472 (desktop loss), 9332-27320 (mobile board), 9351-3397 (hero illustration) and 9079-3253 (an image node named \"Screenshot 2026-07-23...\" whose content is a SKAI Hi-Lo board - same King/Ace ghosts, same Profit Higher/Lower fields - so a reference capture, not a competitor photo). NEITHER: 9058-6701 \"Layout\" is the SHARED stats/fairness strip every game detail page draws. Real Hi-Lo surface = 7 frames (2 desktop, 1 tablet, 2 mobile, 1 hero, 1 capture), not 12. * FRAME NUMBER BUGS, REPORTED NOT BUILT: for identical stated odds (Higher-or-Same 30.77%, Lower-or-Same 76.92%) the Start frame prints Higher 1.17x / Lower 4.29x while the Loss frame prints 3.22x / 1.29x. Only Loss is arithmetically consistent (0.99/0.3077 = 3.22); Start is INVERTED and would be house-negative if built as drawn. The tablet frame 9058-4372 repeats Start's inverted pair, and the mobile board 9332-27320 is worse again - ONE probability (53.58%) against BOTH arrows while still showing 1.17x / 4.29x. None of those numbers were copied: the page renders no odds or profit figures, and the widget computes its own from the live config. * FRAME NUMBERS NOT REPRODUCED (no-mock rule): the Community-wins sample rows (@CryptoQueen88, $8,481.10, 2.67x, every row labelled \"Blackjack\"), the \"N playing\" counts and \"Total: $89.01\" - the desktop frame's Community-wins figure, which no rail produces. The page renders the live useRecentBets / liveGamingService feeds and the design's honest empty states instead, and ships the 375 frame's \"All time\" range pill where desktop draws the fabricated total. Also dropped: \"Try Crash in Fun Mode\" (wrong game AND a mode no Skai title has) and the two Figma authoring defects (\"verified using verified\", \"exlusive\"). * STILL OPEN, unchanged by this pass and owned by whoever holds the widget internals: HiLoGame implements none of the frame's Skip Card control, the King/Ace ghost cards flanking the live card, the split Profit(High)/Profit(Low) fields or the drawn-cards strip, and it adds a 7777 JACKPOT toggle (JACKPOT_NUMBER) that appears in no frame. * ECONOMICS unchanged and consistent: admin key hilo_house_edge is a FRACTION (default 0.01), the client reads it as one, and the live POINTS rail points-game:5313 is also 99/wc - they AGREE at 1%, no player-visible discrepancy. The dormant money rail game-settlement:3957 uses 95/wc, so enabling REAL_MONEY_PLAY_ENABLED would cut Hi-Lo payouts 4.21%. Hi-Lo running 1% while Dice/Mines/Chicken/Crash run higher is a product decision, not a bug. Page verified by typecheck + build; frames not yet visually diffed. ★★★ 2026-08-05 - THE DESIGN DRAWS A CARD GAME; THE RAIL DEALS A DICE ROLL. THE PAGE COPY NOW FOLLOWS THE RAIL. Route loaded and rendered at /play/hilo: page mounts, no mount errors, widget reaches the settlement rail (BET HI -> \"Sign in and connect a wallet\", i.e. blocked only by the local dev session having no wallet). What that render exposed is bigger than a frame gap: the WIDGET IS NOT A CARD GAME. HiLoGame.tsx - the one and only Hi-Lo component, the same one the casino grid opens - is a SINGLE 0-9999 ROLL with a win-chance slider: drag Win Chance (10-94.5%), which sets a threshold; HI wins above it, LO below; multiplier = (100/wc)*(1-0.01), quoted before the bet; ONE roll settles it. No deck, no streak, no rung ladder, no cash-out. The rail agrees on both paths - points-game play_hilo (index.ts:5459-5493) rolls `roll % 10000` against a side-specific threshold, game-settlement playHiLo (:3941) does the same. Neither draws a card. The previously-shipped game-info blurb was Figma 9061:10760 verbatim - \"guess whether the next CARD lands higher or lower\", \"ride the STREAK\", \"each correct call STACKS your multiplier\", \"CASH OUT on a hot run\" - four clauses naming four mechanics the game does not have. That is a game-info card promising a player rules the game will not honour, so it was rewritten from the rail; the frame's wording is quoted IN FULL in the JSDoc on `description` so the designer can reconcile the two deliberately. Same fix on three more strings that named a deck the game has no concept of: HILO_SUBBAR.refresh \"Start a fresh card\" -> \"Start a fresh round\" (the button calls onReset, which clears the roll history), seedPending \"Play a card to reveal...\" -> \"Place a bet to reveal...\", and the funds FAQ \"the card that came out can be re-derived\" -> \"the roll that came out\". The earlier STILL-OPEN list above reads as though the widget were an INCOMPLETE card game missing a Skip Card control, King/Ace ghost cards and a drawn-cards strip; it is not incomplete, it is a DIFFERENT GAME, and whether Hi-Lo should become the card game the frames draw is a product call plus a rail change, not something this page settles by what it prints in the meantime. NOT silently reconciled the other way: the rail was not touched. ECONOMICS RE-VERIFIED this pass and the claim above holds - client HiLoGame.tsx:410 `HILO_RAIL_EDGE = 0.01` and points-game:5474 `multiplier = 99/wc` agree exactly at 1%, and the live panel quotes 1.98x at a 50% win chance = 99/50. Confirmed correct, not assumed. ★★★ 2026-08-05 ROUTE RE-VERIFIED IN A BROWSER AND TWO REAL DEFECTS FOUND AND FIXED - the earlier 'route loaded, nothing needed fixing' verdict was measured at desktop only. (1) THE BOARD RENDERED TWICE BELOW 1024px. HiLoGame's centre column carried `col-span-6 flex flex-col` and nothing else. `col-span-*` is a GRID property and the parent is `flex flex-col lg:grid`, so below lg the class was inert and the DESKTOP column painted anyway - on top of the `lg:hidden` mobile block above it, which already draws its own roll display and its own BET LO / BET HI pair. Measured on the live route at 390px: FOUR bet buttons (two full pairs at y=347 and y=1256) and TWO 'Roll Result' panels. A phone player saw the board twice with two live pairs of bet CTAs. Fixed to `hidden col-span-6 lg:flex flex-col` and re-measured: at 390px exactly one visible pair (y=347, w=137) with the desktop column collapsed to 0x0, and at 1440px the mobile block collapses to 0x0 while the desktop pair renders unchanged at x=427/755 w=316. Pure presentation - the same widget the casino grid opens, so the modal is fixed too. (2) THE '7777 JACKPOT / 777x' TOGGLE ADVERTISED A PRIZE NO RAIL PAYS, AND IT IS NOW NOT RENDERED. It was wrong against BOTH rails at once. POINTS, the rail the casino settles on: points-game's play_hilo (index.ts:5459-5493) has no jackpot code at all - it returns result/payout/multiplier and never jackpotWon - and playPointsHiLo (src/services/gaming/pointsGameService.ts:385-412) does not even forward jackpotEnabled, so the badge offered 777x at probability ZERO while charging a 0.1% fee that only ever moved the client-side balance check. SKAI/sUSD, dormant: game-settlement's playHiLo DOES implement the 7777 side bet - at HILO_JACKPOT_PRIZE_MULTIPLIER = 9.5 (index.ts:3939), whose own comment records that 777 was removed as 'a free +7.77% RTP exploit pushing hilo >100%'. So the badge quoted 81.8x more than the only rail that implements the feature would pay. NOT reconciled the cheap way: neither rail was touched (restoring 777 IS the documented exploit) and the client constant was not raised to meet it. No hilo frame draws a jackpot control at all, so the toggle was a client-side invention and the honest render is no control - the toggle, the 'J' hotkey, its shortcut-sheet row and the JACKPOT_NUMBER / JACKPOT_PRIZE_MULTIPLIER constants are gone (removing two baseline typecheck errors with them); jackpotEnabled stays pinned false so jackpotFee is 0 and the settlement call is byte-identical to a plain bet. Confirmed absent from the rendered page. (3) A `false &&` DEBUG HACK disabling the no-balance faucet notice was found uncommitted in HiLoGame.tsx (14h stale) and reverted; the notice now renders correctly for a zero-balance session, which is what a deploy-from-working-tree would otherwise have shipped broken. [vverify: deferred | NOT HI-LO - RE-FILED TO Casino > Scratchers. 516x781, named \"Card out\" but it draws no card: a bare Manual/Auto bet panel - Bet amount 0.01 SKAI, 1/2 | 2X | Max, Balance 100.11 SKAI, $21.00, a full-width Bet CTA - with NO higher/lower control, no odds rows, no profit fields. It cannot be a Hi-Lo state; it is the shared instant-game panel the Scratchers frames use.]",
+          "verifiedAt": "2026-08-20T14:36:20.147Z"
+        },
+        {
+          "id": "9058-5154",
+          "title": "Skai > Play > Casino > Scratchers (768 x 1024px)",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/cards/HiLoGame.tsx",
+            "modules/skai-gaming/src/pages/play/HiLoPage.tsx"
+          ],
+          "status": "partial",
+          "notes": "ROUTE + DETAIL PAGE NOW BUILT (2026-08-05). /play/hilo exists in src/App.tsx and mounts HiLoGame with variant=\"fullscreen\" inside GameShell - the SAME widget the casino grid opens, so the page cannot settle a card differently from the modal - with HiLoPageSections rendering the whole 1440x3294 column beneath it: stats/fairness strip, tabs row, game-info card, Community wins, More-games carousel, Bets panel, About + assurances + Licences + FAQ, footer. Copy in hiloPageContent.ts, cited node by node. The 768 (9058-4372) and 375 (9351-4708) tiers are served by the same page's breakpoints, the sibling /play/* pattern, not by second implementations. hilo added to ROUTED_GAME_PATHS in Play.tsx, PlayOriginals.tsx and GameDetailPage.tsx. HiLoGame gained variant + onSeedChange and its three Dialog wrappers (main, disabled-notice, faucet) became GameShell - shell only, zero lines of card or settlement logic touched. The strip's verifier is fed from roundProof (the four fields the SETTLEMENT response returns together), never the legacy secure-session store, whose hash/clientSeed/bet-COUNT belong to no real round and would report a false 'server seed hash does not match' on an honest round. * CATALOG RE-CUT, EVERY FRAME RENDERED AND READ. This section is mis-filed in BOTH directions and the previous verdict had two of them backwards. NOT HI-LO (Scratchers filed under Hi-Lo): 9058-1833 \"Desktop\" is a 3x3 match-3 symbol grid under a \"Match 3 to Win!\" header with a six-symbol 1.98x paytable; 9058-7261 is that same paytable row; 9058-2367 \"Card out\" is a generic Manual/Auto bet panel with no higher/lower control at all; 9058-5154 (768x1607) is genuinely Scratchers AND correctly titled - match-3 board, Manual/Auto, Bet/Target. NOT SKAI AT ALL, must never be built: 9332-27318 and 9332-27319 are phone photos of stake.us (Stake wordmark, Login/Register, \"Stake Originals\", \"stake.us - Private\" in the browser bar) - a COMPETITOR's Hi-Lo. Their paytable (Same 7.69% / Lower 92.31%, Net Gain 12.87x / 1.07x) is Stake's and was copied nowhere. HI-LO BUT MIS-TITLED - correcting the earlier verdict: 9058-4372 (768x1627) is titled \"Skai > Play > Casino > Scratchers\" in its layer name AND in its own rendered breadcrumb, but it is the HI-LO TABLET page (3-of-hearts card, King/Ace ghost cards, Profit Higher (1.17x) / Profit Lower (4.29x), drawn-cards strip, Bet panel); and 9351-4708 is titled \"Blackjack (375 x 812px)\" but is the Hi-Lo 375 page at 375x1605. CORRECTLY FILED HI-LO: 9061-10499 (desktop start), 9061-9472 (desktop loss), 9332-27320 (mobile board), 9351-3397 (hero illustration) and 9079-3253 (an image node named \"Screenshot 2026-07-23...\" whose content is a SKAI Hi-Lo board - same King/Ace ghosts, same Profit Higher/Lower fields - so a reference capture, not a competitor photo). NEITHER: 9058-6701 \"Layout\" is the SHARED stats/fairness strip every game detail page draws. Real Hi-Lo surface = 7 frames (2 desktop, 1 tablet, 2 mobile, 1 hero, 1 capture), not 12. * FRAME NUMBER BUGS, REPORTED NOT BUILT: for identical stated odds (Higher-or-Same 30.77%, Lower-or-Same 76.92%) the Start frame prints Higher 1.17x / Lower 4.29x while the Loss frame prints 3.22x / 1.29x. Only Loss is arithmetically consistent (0.99/0.3077 = 3.22); Start is INVERTED and would be house-negative if built as drawn. The tablet frame 9058-4372 repeats Start's inverted pair, and the mobile board 9332-27320 is worse again - ONE probability (53.58%) against BOTH arrows while still showing 1.17x / 4.29x. None of those numbers were copied: the page renders no odds or profit figures, and the widget computes its own from the live config. * FRAME NUMBERS NOT REPRODUCED (no-mock rule): the Community-wins sample rows (@CryptoQueen88, $8,481.10, 2.67x, every row labelled \"Blackjack\"), the \"N playing\" counts and \"Total: $89.01\" - the desktop frame's Community-wins figure, which no rail produces. The page renders the live useRecentBets / liveGamingService feeds and the design's honest empty states instead, and ships the 375 frame's \"All time\" range pill where desktop draws the fabricated total. Also dropped: \"Try Crash in Fun Mode\" (wrong game AND a mode no Skai title has) and the two Figma authoring defects (\"verified using verified\", \"exlusive\"). * STILL OPEN, unchanged by this pass and owned by whoever holds the widget internals: HiLoGame implements none of the frame's Skip Card control, the King/Ace ghost cards flanking the live card, the split Profit(High)/Profit(Low) fields or the drawn-cards strip, and it adds a 7777 JACKPOT toggle (JACKPOT_NUMBER) that appears in no frame. * ECONOMICS unchanged and consistent: admin key hilo_house_edge is a FRACTION (default 0.01), the client reads it as one, and the live POINTS rail points-game:5313 is also 99/wc - they AGREE at 1%, no player-visible discrepancy. The dormant money rail game-settlement:3957 uses 95/wc, so enabling REAL_MONEY_PLAY_ENABLED would cut Hi-Lo payouts 4.21%. Hi-Lo running 1% while Dice/Mines/Chicken/Crash run higher is a product decision, not a bug. Page verified by typecheck + build; frames not yet visually diffed. ★★★ 2026-08-05 - THE DESIGN DRAWS A CARD GAME; THE RAIL DEALS A DICE ROLL. THE PAGE COPY NOW FOLLOWS THE RAIL. Route loaded and rendered at /play/hilo: page mounts, no mount errors, widget reaches the settlement rail (BET HI -> \"Sign in and connect a wallet\", i.e. blocked only by the local dev session having no wallet). What that render exposed is bigger than a frame gap: the WIDGET IS NOT A CARD GAME. HiLoGame.tsx - the one and only Hi-Lo component, the same one the casino grid opens - is a SINGLE 0-9999 ROLL with a win-chance slider: drag Win Chance (10-94.5%), which sets a threshold; HI wins above it, LO below; multiplier = (100/wc)*(1-0.01), quoted before the bet; ONE roll settles it. No deck, no streak, no rung ladder, no cash-out. The rail agrees on both paths - points-game play_hilo (index.ts:5459-5493) rolls `roll % 10000` against a side-specific threshold, game-settlement playHiLo (:3941) does the same. Neither draws a card. The previously-shipped game-info blurb was Figma 9061:10760 verbatim - \"guess whether the next CARD lands higher or lower\", \"ride the STREAK\", \"each correct call STACKS your multiplier\", \"CASH OUT on a hot run\" - four clauses naming four mechanics the game does not have. That is a game-info card promising a player rules the game will not honour, so it was rewritten from the rail; the frame's wording is quoted IN FULL in the JSDoc on `description` so the designer can reconcile the two deliberately. Same fix on three more strings that named a deck the game has no concept of: HILO_SUBBAR.refresh \"Start a fresh card\" -> \"Start a fresh round\" (the button calls onReset, which clears the roll history), seedPending \"Play a card to reveal...\" -> \"Place a bet to reveal...\", and the funds FAQ \"the card that came out can be re-derived\" -> \"the roll that came out\". The earlier STILL-OPEN list above reads as though the widget were an INCOMPLETE card game missing a Skip Card control, King/Ace ghost cards and a drawn-cards strip; it is not incomplete, it is a DIFFERENT GAME, and whether Hi-Lo should become the card game the frames draw is a product call plus a rail change, not something this page settles by what it prints in the meantime. NOT silently reconciled the other way: the rail was not touched. ECONOMICS RE-VERIFIED this pass and the claim above holds - client HiLoGame.tsx:410 `HILO_RAIL_EDGE = 0.01` and points-game:5474 `multiplier = 99/wc` agree exactly at 1%, and the live panel quotes 1.98x at a 50% win chance = 99/50. Confirmed correct, not assumed. ★★★ 2026-08-05 ROUTE RE-VERIFIED IN A BROWSER AND TWO REAL DEFECTS FOUND AND FIXED - the earlier 'route loaded, nothing needed fixing' verdict was measured at desktop only. (1) THE BOARD RENDERED TWICE BELOW 1024px. HiLoGame's centre column carried `col-span-6 flex flex-col` and nothing else. `col-span-*` is a GRID property and the parent is `flex flex-col lg:grid`, so below lg the class was inert and the DESKTOP column painted anyway - on top of the `lg:hidden` mobile block above it, which already draws its own roll display and its own BET LO / BET HI pair. Measured on the live route at 390px: FOUR bet buttons (two full pairs at y=347 and y=1256) and TWO 'Roll Result' panels. A phone player saw the board twice with two live pairs of bet CTAs. Fixed to `hidden col-span-6 lg:flex flex-col` and re-measured: at 390px exactly one visible pair (y=347, w=137) with the desktop column collapsed to 0x0, and at 1440px the mobile block collapses to 0x0 while the desktop pair renders unchanged at x=427/755 w=316. Pure presentation - the same widget the casino grid opens, so the modal is fixed too. (2) THE '7777 JACKPOT / 777x' TOGGLE ADVERTISED A PRIZE NO RAIL PAYS, AND IT IS NOW NOT RENDERED. It was wrong against BOTH rails at once. POINTS, the rail the casino settles on: points-game's play_hilo (index.ts:5459-5493) has no jackpot code at all - it returns result/payout/multiplier and never jackpotWon - and playPointsHiLo (src/services/gaming/pointsGameService.ts:385-412) does not even forward jackpotEnabled, so the badge offered 777x at probability ZERO while charging a 0.1% fee that only ever moved the client-side balance check. SKAI/sUSD, dormant: game-settlement's playHiLo DOES implement the 7777 side bet - at HILO_JACKPOT_PRIZE_MULTIPLIER = 9.5 (index.ts:3939), whose own comment records that 777 was removed as 'a free +7.77% RTP exploit pushing hilo >100%'. So the badge quoted 81.8x more than the only rail that implements the feature would pay. NOT reconciled the cheap way: neither rail was touched (restoring 777 IS the documented exploit) and the client constant was not raised to meet it. No hilo frame draws a jackpot control at all, so the toggle was a client-side invention and the honest render is no control - the toggle, the 'J' hotkey, its shortcut-sheet row and the JACKPOT_NUMBER / JACKPOT_PRIZE_MULTIPLIER constants are gone (removing two baseline typecheck errors with them); jackpotEnabled stays pinned false so jackpotFee is 0 and the settlement call is byte-identical to a plain bet. Confirmed absent from the rendered page. (3) A `false &&` DEBUG HACK disabling the no-balance faucet notice was found uncommitted in HiLoGame.tsx (14h stale) and reverted; the notice now renders correctly for a zero-balance session, which is what a deploy-from-working-tree would otherwise have shipped broken. [vverify: deferred | NOT HI-LO, and the one frame on this page whose title was already right: 768x1607 \"Skai > Play > Casino > Scratchers\" drawing Scratchers - match-3 board, Manual/Auto, Bet/Target. Re-filed to Casino > Scratchers.]",
+          "verifiedAt": "2026-08-20T14:36:20.147Z"
+        },
+        {
+          "id": "9058-6701",
+          "title": "Layout",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/cards/HiLoGame.tsx",
+            "modules/skai-gaming/src/pages/play/HiLoPage.tsx"
+          ],
+          "status": "partial",
+          "notes": "ROUTE + DETAIL PAGE NOW BUILT (2026-08-05). /play/hilo exists in src/App.tsx and mounts HiLoGame with variant=\"fullscreen\" inside GameShell - the SAME widget the casino grid opens, so the page cannot settle a card differently from the modal - with HiLoPageSections rendering the whole 1440x3294 column beneath it: stats/fairness strip, tabs row, game-info card, Community wins, More-games carousel, Bets panel, About + assurances + Licences + FAQ, footer. Copy in hiloPageContent.ts, cited node by node. The 768 (9058-4372) and 375 (9351-4708) tiers are served by the same page's breakpoints, the sibling /play/* pattern, not by second implementations. hilo added to ROUTED_GAME_PATHS in Play.tsx, PlayOriginals.tsx and GameDetailPage.tsx. HiLoGame gained variant + onSeedChange and its three Dialog wrappers (main, disabled-notice, faucet) became GameShell - shell only, zero lines of card or settlement logic touched. The strip's verifier is fed from roundProof (the four fields the SETTLEMENT response returns together), never the legacy secure-session store, whose hash/clientSeed/bet-COUNT belong to no real round and would report a false 'server seed hash does not match' on an honest round. * CATALOG RE-CUT, EVERY FRAME RENDERED AND READ. This section is mis-filed in BOTH directions and the previous verdict had two of them backwards. NOT HI-LO (Scratchers filed under Hi-Lo): 9058-1833 \"Desktop\" is a 3x3 match-3 symbol grid under a \"Match 3 to Win!\" header with a six-symbol 1.98x paytable; 9058-7261 is that same paytable row; 9058-2367 \"Card out\" is a generic Manual/Auto bet panel with no higher/lower control at all; 9058-5154 (768x1607) is genuinely Scratchers AND correctly titled - match-3 board, Manual/Auto, Bet/Target. NOT SKAI AT ALL, must never be built: 9332-27318 and 9332-27319 are phone photos of stake.us (Stake wordmark, Login/Register, \"Stake Originals\", \"stake.us - Private\" in the browser bar) - a COMPETITOR's Hi-Lo. Their paytable (Same 7.69% / Lower 92.31%, Net Gain 12.87x / 1.07x) is Stake's and was copied nowhere. HI-LO BUT MIS-TITLED - correcting the earlier verdict: 9058-4372 (768x1627) is titled \"Skai > Play > Casino > Scratchers\" in its layer name AND in its own rendered breadcrumb, but it is the HI-LO TABLET page (3-of-hearts card, King/Ace ghost cards, Profit Higher (1.17x) / Profit Lower (4.29x), drawn-cards strip, Bet panel); and 9351-4708 is titled \"Blackjack (375 x 812px)\" but is the Hi-Lo 375 page at 375x1605. CORRECTLY FILED HI-LO: 9061-10499 (desktop start), 9061-9472 (desktop loss), 9332-27320 (mobile board), 9351-3397 (hero illustration) and 9079-3253 (an image node named \"Screenshot 2026-07-23...\" whose content is a SKAI Hi-Lo board - same King/Ace ghosts, same Profit Higher/Lower fields - so a reference capture, not a competitor photo). NEITHER: 9058-6701 \"Layout\" is the SHARED stats/fairness strip every game detail page draws. Real Hi-Lo surface = 7 frames (2 desktop, 1 tablet, 2 mobile, 1 hero, 1 capture), not 12. * FRAME NUMBER BUGS, REPORTED NOT BUILT: for identical stated odds (Higher-or-Same 30.77%, Lower-or-Same 76.92%) the Start frame prints Higher 1.17x / Lower 4.29x while the Loss frame prints 3.22x / 1.29x. Only Loss is arithmetically consistent (0.99/0.3077 = 3.22); Start is INVERTED and would be house-negative if built as drawn. The tablet frame 9058-4372 repeats Start's inverted pair, and the mobile board 9332-27320 is worse again - ONE probability (53.58%) against BOTH arrows while still showing 1.17x / 4.29x. None of those numbers were copied: the page renders no odds or profit figures, and the widget computes its own from the live config. * FRAME NUMBERS NOT REPRODUCED (no-mock rule): the Community-wins sample rows (@CryptoQueen88, $8,481.10, 2.67x, every row labelled \"Blackjack\"), the \"N playing\" counts and \"Total: $89.01\" - the desktop frame's Community-wins figure, which no rail produces. The page renders the live useRecentBets / liveGamingService feeds and the design's honest empty states instead, and ships the 375 frame's \"All time\" range pill where desktop draws the fabricated total. Also dropped: \"Try Crash in Fun Mode\" (wrong game AND a mode no Skai title has) and the two Figma authoring defects (\"verified using verified\", \"exlusive\"). * STILL OPEN, unchanged by this pass and owned by whoever holds the widget internals: HiLoGame implements none of the frame's Skip Card control, the King/Ace ghost cards flanking the live card, the split Profit(High)/Profit(Low) fields or the drawn-cards strip, and it adds a 7777 JACKPOT toggle (JACKPOT_NUMBER) that appears in no frame. * ECONOMICS unchanged and consistent: admin key hilo_house_edge is a FRACTION (default 0.01), the client reads it as one, and the live POINTS rail points-game:5313 is also 99/wc - they AGREE at 1%, no player-visible discrepancy. The dormant money rail game-settlement:3957 uses 95/wc, so enabling REAL_MONEY_PLAY_ENABLED would cut Hi-Lo payouts 4.21%. Hi-Lo running 1% while Dice/Mines/Chicken/Crash run higher is a product decision, not a bug. Page verified by typecheck + build; frames not yet visually diffed. ★★★ 2026-08-05 - THE DESIGN DRAWS A CARD GAME; THE RAIL DEALS A DICE ROLL. THE PAGE COPY NOW FOLLOWS THE RAIL. Route loaded and rendered at /play/hilo: page mounts, no mount errors, widget reaches the settlement rail (BET HI -> \"Sign in and connect a wallet\", i.e. blocked only by the local dev session having no wallet). What that render exposed is bigger than a frame gap: the WIDGET IS NOT A CARD GAME. HiLoGame.tsx - the one and only Hi-Lo component, the same one the casino grid opens - is a SINGLE 0-9999 ROLL with a win-chance slider: drag Win Chance (10-94.5%), which sets a threshold; HI wins above it, LO below; multiplier = (100/wc)*(1-0.01), quoted before the bet; ONE roll settles it. No deck, no streak, no rung ladder, no cash-out. The rail agrees on both paths - points-game play_hilo (index.ts:5459-5493) rolls `roll % 10000` against a side-specific threshold, game-settlement playHiLo (:3941) does the same. Neither draws a card. The previously-shipped game-info blurb was Figma 9061:10760 verbatim - \"guess whether the next CARD lands higher or lower\", \"ride the STREAK\", \"each correct call STACKS your multiplier\", \"CASH OUT on a hot run\" - four clauses naming four mechanics the game does not have. That is a game-info card promising a player rules the game will not honour, so it was rewritten from the rail; the frame's wording is quoted IN FULL in the JSDoc on `description` so the designer can reconcile the two deliberately. Same fix on three more strings that named a deck the game has no concept of: HILO_SUBBAR.refresh \"Start a fresh card\" -> \"Start a fresh round\" (the button calls onReset, which clears the roll history), seedPending \"Play a card to reveal...\" -> \"Place a bet to reveal...\", and the funds FAQ \"the card that came out can be re-derived\" -> \"the roll that came out\". The earlier STILL-OPEN list above reads as though the widget were an INCOMPLETE card game missing a Skip Card control, King/Ace ghost cards and a drawn-cards strip; it is not incomplete, it is a DIFFERENT GAME, and whether Hi-Lo should become the card game the frames draw is a product call plus a rail change, not something this page settles by what it prints in the meantime. NOT silently reconciled the other way: the rail was not touched. ECONOMICS RE-VERIFIED this pass and the claim above holds - client HiLoGame.tsx:410 `HILO_RAIL_EDGE = 0.01` and points-game:5474 `multiplier = 99/wc` agree exactly at 1%, and the live panel quotes 1.98x at a 50% win chance = 99/50. Confirmed correct, not assumed. ★★★ 2026-08-05 ROUTE RE-VERIFIED IN A BROWSER AND TWO REAL DEFECTS FOUND AND FIXED - the earlier 'route loaded, nothing needed fixing' verdict was measured at desktop only. (1) THE BOARD RENDERED TWICE BELOW 1024px. HiLoGame's centre column carried `col-span-6 flex flex-col` and nothing else. `col-span-*` is a GRID property and the parent is `flex flex-col lg:grid`, so below lg the class was inert and the DESKTOP column painted anyway - on top of the `lg:hidden` mobile block above it, which already draws its own roll display and its own BET LO / BET HI pair. Measured on the live route at 390px: FOUR bet buttons (two full pairs at y=347 and y=1256) and TWO 'Roll Result' panels. A phone player saw the board twice with two live pairs of bet CTAs. Fixed to `hidden col-span-6 lg:flex flex-col` and re-measured: at 390px exactly one visible pair (y=347, w=137) with the desktop column collapsed to 0x0, and at 1440px the mobile block collapses to 0x0 while the desktop pair renders unchanged at x=427/755 w=316. Pure presentation - the same widget the casino grid opens, so the modal is fixed too. (2) THE '7777 JACKPOT / 777x' TOGGLE ADVERTISED A PRIZE NO RAIL PAYS, AND IT IS NOW NOT RENDERED. It was wrong against BOTH rails at once. POINTS, the rail the casino settles on: points-game's play_hilo (index.ts:5459-5493) has no jackpot code at all - it returns result/payout/multiplier and never jackpotWon - and playPointsHiLo (src/services/gaming/pointsGameService.ts:385-412) does not even forward jackpotEnabled, so the badge offered 777x at probability ZERO while charging a 0.1% fee that only ever moved the client-side balance check. SKAI/sUSD, dormant: game-settlement's playHiLo DOES implement the 7777 side bet - at HILO_JACKPOT_PRIZE_MULTIPLIER = 9.5 (index.ts:3939), whose own comment records that 777 was removed as 'a free +7.77% RTP exploit pushing hilo >100%'. So the badge quoted 81.8x more than the only rail that implements the feature would pay. NOT reconciled the cheap way: neither rail was touched (restoring 777 IS the documented exploit) and the client constant was not raised to meet it. No hilo frame draws a jackpot control at all, so the toggle was a client-side invention and the honest render is no control - the toggle, the 'J' hotkey, its shortcut-sheet row and the JACKPOT_NUMBER / JACKPOT_PRIZE_MULTIPLIER constants are gone (removing two baseline typecheck errors with them); jackpotEnabled stays pinned false so jackpotFee is 0 and the settlement call is byte-identical to a plain bet. Confirmed absent from the rendered page. (3) A `false &&` DEBUG HACK disabling the no-balance faucet notice was found uncommitted in HiLoGame.tsx (14h stale) and reverted; the notice now renders correctly for a zero-balance session, which is what a deploy-from-working-tree would otherwise have shipped broken. [vverify: match | SHARED STATS/FAIRNESS SUB-BAR 698x54 - CLOSED. This is not a Hi-Lo screen at all but the strip every casino detail page draws, and it is the one frame on this page whose parity does not depend on the blocked card-vs-roll decision. Verified rendering in a real browser on the game routes swept this pass (blackjack, chicken, darts, mines, plinko, crash, dice all show 'Provably fair' in the live DOM). Its verifier is fed from the widget's own roundProof - the four fields the settlement response returns together - never the legacy secure-session store whose hash/clientSeed/bet-count belong to no real round. The ONE element it draws that is deliberately absent is the Practice-mode toggle, which is the standing app-wide product rule and not a gap on this frame; recording that as `partial` implied outstanding work where there is none.]",
+          "verifiedAt": "2026-08-20T14:36:20.147Z"
+        },
+        {
+          "id": "9058-7261",
+          "title": "Frame 1000004025",
+          "implFiles": [],
+          "status": "partial",
+          "notes": "[vverify: deferred | NOT HI-LO - RE-FILED TO Casino > Scratchers. The paytable row of 9058-1833: six symbol chips at 1.98x with the star chip selected. Same re-filing as its parent.]",
+          "verifiedAt": "2026-08-20T14:36:20.147Z"
+        },
+        {
+          "id": "9494-4192",
+          "title": "Rectangle 34624620",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 1,
+      "retargets": [
+        {
+          "oldId": "9058-1833",
+          "newId": "10248-9763",
+          "title": "Desktop"
+        }
+      ]
+    },
+    "social": {
+      "status": "drift",
+      "catalogued": 442,
+      "live": 442,
+      "added": 0,
+      "removed": 0,
+      "retitled": 1,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "governance": {
+      "status": "drift",
+      "catalogued": 260,
+      "live": 725,
+      "added": 466,
+      "removed": 1,
+      "retitled": 2,
+      "removedRows": [
+        {
+          "id": "5539-100875",
+          "title": "Skai > Explorer (1440 x 900px)",
+          "implFiles": [
+            "src/pages/explorer/ExplorerDashboard.tsx"
+          ],
+          "status": "done",
+          "notes": "5539-100875 is the same dashboard at full scroll (2291px), sections at ExplorerDashboard.tsx:902-926. Not a second page.",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 1,
+      "retargets": [
+        {
+          "oldId": "5539-100875",
+          "newId": "11983-221622",
+          "title": "Skai > Explorer (1440 x 900px)"
+        }
+      ]
+    },
+    "user-flow": {
+      "status": "not-harvested",
+      "catalogued": 3
+    },
+    "towers": {
+      "status": "drift",
+      "catalogued": 53,
+      "live": 30,
+      "added": 12,
+      "removed": 35,
+      "retitled": 1,
+      "removedRows": [
+        {
+          "id": "9391-18698",
+          "title": "hf_20260802_165842_f42a9cf4-60cf-420b-8bce-8e64f2274a83 1",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/crash/TowerStackerPro.tsx (+ crash/tower/); page shell modules/skai-gaming/src/pages/play/TowersPage.tsx (72 lines, RoutedGamePage wrapper); rail points-game tower_start/tower_pick/tower_climb/tower_cashout"
+          ],
+          "status": "partial",
+          "notes": "Routed 2026-08-25 at /play/towers; was a 1024x880 dialog at scale 0.348 (Bet 112.7x18.1, board tiles 46.9x16.4). Measured at 375: scale 1, Bet 275x52, currency 91.4x44, all controls reachable. CATALOG GAP, partly closed: the ENTIRE 10130-* cluster was missing from every nodes.txt in this catalog, not just one id - while 10120-* was present. Added the two I verified live via get_metadata: 10130-14013 (356x777.33, 'Frame 1000004105' - the bet panel in AUTO mode with Advanced EXPANDED: Manual|Auto, Bet amount, Balance, Difficulty, 'Number of Bets:', an 'Advanced' label + input/toggle, On Win / On Loss (Reset | Increase By), Stop on Win / Stop on Loss, CTA) and 10130-14171 (375x1605, the mobile page). RESOLVED 2026-08-26: all five were measured live by the catalog lane (skai-ui 2099577) and none is missing. THREE ARE TOP-LEVEL and are now catalogued: 10130-13720 'Frame 270' 356x621 (desktop bet panel), 10130-14802 'Frame 1000004291' 347x777 and 10130-14946 'Frame 1000004292' 347x621 (mobile bet panels); all three classify kind=non-screen, correctly - they are panel fragments, not 'Skai >' screens. TWO ARE CHILDREN of 10130-13720 and are deliberately NOT in nodes.txt, whose contract is top-level children of a page: 10130-13760 'Frame 275' 324x16 (the Balance row, depth 2) and 10130-13771 'Frame 1000004102' 324x66 (Difficulty, depth 1). Code may cite a child id - TowerBetPanel cites 13760 for the balance row it draws - but a nodes list may not. ★ THE FOUR PANEL FRAMES ARE TWO STATES x TWO BREAKPOINTS, which is the fact that settles report 176075a8: desktop 13720 (621h, Advanced off) / 14013 (777.33h, on), mobile 14946 (621h, off) / 14802 (777.33h, on). CORRECTION: an earlier revision of this row wrote the mobile ON height as 777; that was a rounded reading and the rounding INVENTED a desktop/mobile difference that does not exist - re-measured, 10130:14802 is height=777.3333129882812. Report geometry at the precision you measured it; a rounded number is a claim. So the FRAME delta is exactly 156.33px on both rows. ⚠️ BUT 156.33 IS NOT THE SIZE OF THE DISCLOSED BLOCK, and an earlier revision of this row claimed it was - a tidy equation nobody checked. Measured from the children: collapsed 13720 content ends 433.33 in a 621 frame (187.67 trailing slack); expanded 14013 content ends 761.33 in a 777.33 frame (16 slack). The disclosed block is 328px - the CTA moves y=381.33 -> 709.33, i.e. 4 rows x 66 + 4 gaps x 16 - and the frame grows only 156.33 because 187.67 - 16 = 171.67 = 328 - 156.33. Mobile pair identical. Two numbers, two things. ★ THE CONCLUSION IS UNAFFECTED: it rests on the four Stop-on CONTAINER FRAMES being present in the expanded pair and absent from the collapsed pair - an absence of FRAMES, not of TEXT, which matters because outlined copy turns <text> into <path> and would make a text-node oracle report a present row as missing. ★ THE DECISIVE DETAIL is not that a button lacks a second frame, it is that the 'Advanced' LABEL IS PRESENT IN THE COLLAPSED FRAMES: mobile 14946 carries the label (10130:15019) and an input/toggle (10130:15020) while carrying NONE of the rows it reveals. A label plus a switch, with its rows absent, is a disclosure control - not a missing button. Heights/labels for 14013, 14946 and 14802 verified independently by this lane; 13720 by the catalog lane. ★ 10130-14013 CONFIRMS report 176075a8's triage against the live frame rather than by inference: the 'Advanced' the reporter read as a missing button is a LABEL + TOGGLE ROW (10130:14102 -> text 10130:14103 plus input/toggle 10130:14104) INSIDE the auto panel, not an action button on the manual panel. ★ 10130-14171 also confirms two things asserted elsewhere: its Community-wins rows ALL read 'Blackjack' (10130:14418/14432/14446/14460/14474) with named players and dollar payouts, so transcribing that section would ship fabricated wins; and it carries 'Try Blackjack in Fun Mode' (10130:14394), which Casey's no-practice-mode rule forbids. Its board is 4 columns x 9 rows - the same 9x4 report 07036f65 describes, which is a DIFFICULTY setting, not a design (the app renders 10x3 at Medium). Bet panel balance row now draws the frame's circled-plus (10130:13760) instead of a refresh glyph, inert like Crash/Dice/Roulette/Fortune Wheel - skai-gaming 04cd2a2, NOT YET DEPLOYED (report 793560fd claim 2). CORRECTION to the line that follows: a 375x1605 mobile frame DID land (10130:14171, plus bet panels 10130:14946 and 10130:14802), titled 'Blackjack' like its siblings - identify by page name and H1, never by frame title. NOTE: Towers has no mobile Figma frame - routing fixes the scale defect at every width, but what the mobile page should LOOK like is still design-blocked, so this row can never reach `done` on the current design set. ⚠️ CORRECTED 2026-08-26 (was `unknown`): re-verified live against the Figma page, the route table and prod site_config. See status.game-rollups.verified.tsv for the evidence.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-2977",
+          "title": "Desktop Full Game",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/crash/TowerStackerPro.tsx (+ crash/tower/); page shell modules/skai-gaming/src/pages/play/TowersPage.tsx (72 lines, RoutedGamePage wrapper); rail points-game tower_start/tower_pick/tower_climb/tower_cashout"
+          ],
+          "status": "partial",
+          "notes": "Routed 2026-08-25 at /play/towers; was a 1024x880 dialog at scale 0.348 (Bet 112.7x18.1, board tiles 46.9x16.4). Measured at 375: scale 1, Bet 275x52, currency 91.4x44, all controls reachable. CATALOG GAP, partly closed: the ENTIRE 10130-* cluster was missing from every nodes.txt in this catalog, not just one id - while 10120-* was present. Added the two I verified live via get_metadata: 10130-14013 (356x777.33, 'Frame 1000004105' - the bet panel in AUTO mode with Advanced EXPANDED: Manual|Auto, Bet amount, Balance, Difficulty, 'Number of Bets:', an 'Advanced' label + input/toggle, On Win / On Loss (Reset | Increase By), Stop on Win / Stop on Loss, CTA) and 10130-14171 (375x1605, the mobile page). RESOLVED 2026-08-26: all five were measured live by the catalog lane (skai-ui 2099577) and none is missing. THREE ARE TOP-LEVEL and are now catalogued: 10130-13720 'Frame 270' 356x621 (desktop bet panel), 10130-14802 'Frame 1000004291' 347x777 and 10130-14946 'Frame 1000004292' 347x621 (mobile bet panels); all three classify kind=non-screen, correctly - they are panel fragments, not 'Skai >' screens. TWO ARE CHILDREN of 10130-13720 and are deliberately NOT in nodes.txt, whose contract is top-level children of a page: 10130-13760 'Frame 275' 324x16 (the Balance row, depth 2) and 10130-13771 'Frame 1000004102' 324x66 (Difficulty, depth 1). Code may cite a child id - TowerBetPanel cites 13760 for the balance row it draws - but a nodes list may not. ★ THE FOUR PANEL FRAMES ARE TWO STATES x TWO BREAKPOINTS, which is the fact that settles report 176075a8: desktop 13720 (621h, Advanced off) / 14013 (777.33h, on), mobile 14946 (621h, off) / 14802 (777.33h, on). CORRECTION: an earlier revision of this row wrote the mobile ON height as 777; that was a rounded reading and the rounding INVENTED a desktop/mobile difference that does not exist - re-measured, 10130:14802 is height=777.3333129882812. Report geometry at the precision you measured it; a rounded number is a claim. So the FRAME delta is exactly 156.33px on both rows. ⚠️ BUT 156.33 IS NOT THE SIZE OF THE DISCLOSED BLOCK, and an earlier revision of this row claimed it was - a tidy equation nobody checked. Measured from the children: collapsed 13720 content ends 433.33 in a 621 frame (187.67 trailing slack); expanded 14013 content ends 761.33 in a 777.33 frame (16 slack). The disclosed block is 328px - the CTA moves y=381.33 -> 709.33, i.e. 4 rows x 66 + 4 gaps x 16 - and the frame grows only 156.33 because 187.67 - 16 = 171.67 = 328 - 156.33. Mobile pair identical. Two numbers, two things. ★ THE CONCLUSION IS UNAFFECTED: it rests on the four Stop-on CONTAINER FRAMES being present in the expanded pair and absent from the collapsed pair - an absence of FRAMES, not of TEXT, which matters because outlined copy turns <text> into <path> and would make a text-node oracle report a present row as missing. ★ THE DECISIVE DETAIL is not that a button lacks a second frame, it is that the 'Advanced' LABEL IS PRESENT IN THE COLLAPSED FRAMES: mobile 14946 carries the label (10130:15019) and an input/toggle (10130:15020) while carrying NONE of the rows it reveals. A label plus a switch, with its rows absent, is a disclosure control - not a missing button. Heights/labels for 14013, 14946 and 14802 verified independently by this lane; 13720 by the catalog lane. ★ 10130-14013 CONFIRMS report 176075a8's triage against the live frame rather than by inference: the 'Advanced' the reporter read as a missing button is a LABEL + TOGGLE ROW (10130:14102 -> text 10130:14103 plus input/toggle 10130:14104) INSIDE the auto panel, not an action button on the manual panel. ★ 10130-14171 also confirms two things asserted elsewhere: its Community-wins rows ALL read 'Blackjack' (10130:14418/14432/14446/14460/14474) with named players and dollar payouts, so transcribing that section would ship fabricated wins; and it carries 'Try Blackjack in Fun Mode' (10130:14394), which Casey's no-practice-mode rule forbids. Its board is 4 columns x 9 rows - the same 9x4 report 07036f65 describes, which is a DIFFICULTY setting, not a design (the app renders 10x3 at Medium). Bet panel balance row now draws the frame's circled-plus (10130:13760) instead of a refresh glyph, inert like Crash/Dice/Roulette/Fortune Wheel - skai-gaming 04cd2a2, NOT YET DEPLOYED (report 793560fd claim 2). CORRECTION to the line that follows: a 375x1605 mobile frame DID land (10130:14171, plus bet panels 10130:14946 and 10130:14802), titled 'Blackjack' like its siblings - identify by page name and H1, never by frame title. NOTE: Towers has no mobile Figma frame - routing fixes the scale defect at every width, but what the mobile page should LOOK like is still design-blocked, so this row can never reach `done` on the current design set. ⚠️ CORRECTED 2026-08-26 (was `unknown`): re-verified live against the Figma page, the route table and prod site_config. See status.game-rollups.verified.tsv for the evidence.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3251",
+          "title": "Frame 1000004081",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3120",
+          "title": "Rectangle 34624620",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3121",
+          "title": "Rectangle 34624621",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3122",
+          "title": "Rectangle 34624622",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3124",
+          "title": "Rectangle 34624624",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3125",
+          "title": "Rectangle 34624625",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3126",
+          "title": "Rectangle 34624626",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3128",
+          "title": "Rectangle 34624628",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3129",
+          "title": "Rectangle 34624629",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3130",
+          "title": "Rectangle 34624630",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3132",
+          "title": "Rectangle 34624632",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3133",
+          "title": "Rectangle 34624633",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3134",
+          "title": "Rectangle 34624634",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3136",
+          "title": "Rectangle 34624636",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3137",
+          "title": "Rectangle 34624637",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3138",
+          "title": "Rectangle 34624638",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3140",
+          "title": "Rectangle 34624640",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3141",
+          "title": "Rectangle 34624641",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3142",
+          "title": "Rectangle 34624642",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3144",
+          "title": "Rectangle 34624644",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3145",
+          "title": "Rectangle 34624645",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3146",
+          "title": "Rectangle 34624646",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3148",
+          "title": "Rectangle 34624648",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3149",
+          "title": "Rectangle 34624649",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3150",
+          "title": "Rectangle 34624650",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3152",
+          "title": "Rectangle 34624652",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3153",
+          "title": "Rectangle 34624653",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9079-3154",
+          "title": "Rectangle 34624654",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9391-19091",
+          "title": "Desktop Full Game",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/crash/TowerStackerPro.tsx (+ crash/tower/); page shell modules/skai-gaming/src/pages/play/TowersPage.tsx (72 lines, RoutedGamePage wrapper); rail points-game tower_start/tower_pick/tower_climb/tower_cashout"
+          ],
+          "status": "partial",
+          "notes": "Routed 2026-08-25 at /play/towers; was a 1024x880 dialog at scale 0.348 (Bet 112.7x18.1, board tiles 46.9x16.4). Measured at 375: scale 1, Bet 275x52, currency 91.4x44, all controls reachable. CATALOG GAP, partly closed: the ENTIRE 10130-* cluster was missing from every nodes.txt in this catalog, not just one id - while 10120-* was present. Added the two I verified live via get_metadata: 10130-14013 (356x777.33, 'Frame 1000004105' - the bet panel in AUTO mode with Advanced EXPANDED: Manual|Auto, Bet amount, Balance, Difficulty, 'Number of Bets:', an 'Advanced' label + input/toggle, On Win / On Loss (Reset | Increase By), Stop on Win / Stop on Loss, CTA) and 10130-14171 (375x1605, the mobile page). RESOLVED 2026-08-26: all five were measured live by the catalog lane (skai-ui 2099577) and none is missing. THREE ARE TOP-LEVEL and are now catalogued: 10130-13720 'Frame 270' 356x621 (desktop bet panel), 10130-14802 'Frame 1000004291' 347x777 and 10130-14946 'Frame 1000004292' 347x621 (mobile bet panels); all three classify kind=non-screen, correctly - they are panel fragments, not 'Skai >' screens. TWO ARE CHILDREN of 10130-13720 and are deliberately NOT in nodes.txt, whose contract is top-level children of a page: 10130-13760 'Frame 275' 324x16 (the Balance row, depth 2) and 10130-13771 'Frame 1000004102' 324x66 (Difficulty, depth 1). Code may cite a child id - TowerBetPanel cites 13760 for the balance row it draws - but a nodes list may not. ★ THE FOUR PANEL FRAMES ARE TWO STATES x TWO BREAKPOINTS, which is the fact that settles report 176075a8: desktop 13720 (621h, Advanced off) / 14013 (777.33h, on), mobile 14946 (621h, off) / 14802 (777.33h, on). CORRECTION: an earlier revision of this row wrote the mobile ON height as 777; that was a rounded reading and the rounding INVENTED a desktop/mobile difference that does not exist - re-measured, 10130:14802 is height=777.3333129882812. Report geometry at the precision you measured it; a rounded number is a claim. So the FRAME delta is exactly 156.33px on both rows. ⚠️ BUT 156.33 IS NOT THE SIZE OF THE DISCLOSED BLOCK, and an earlier revision of this row claimed it was - a tidy equation nobody checked. Measured from the children: collapsed 13720 content ends 433.33 in a 621 frame (187.67 trailing slack); expanded 14013 content ends 761.33 in a 777.33 frame (16 slack). The disclosed block is 328px - the CTA moves y=381.33 -> 709.33, i.e. 4 rows x 66 + 4 gaps x 16 - and the frame grows only 156.33 because 187.67 - 16 = 171.67 = 328 - 156.33. Mobile pair identical. Two numbers, two things. ★ THE CONCLUSION IS UNAFFECTED: it rests on the four Stop-on CONTAINER FRAMES being present in the expanded pair and absent from the collapsed pair - an absence of FRAMES, not of TEXT, which matters because outlined copy turns <text> into <path> and would make a text-node oracle report a present row as missing. ★ THE DECISIVE DETAIL is not that a button lacks a second frame, it is that the 'Advanced' LABEL IS PRESENT IN THE COLLAPSED FRAMES: mobile 14946 carries the label (10130:15019) and an input/toggle (10130:15020) while carrying NONE of the rows it reveals. A label plus a switch, with its rows absent, is a disclosure control - not a missing button. Heights/labels for 14013, 14946 and 14802 verified independently by this lane; 13720 by the catalog lane. ★ 10130-14013 CONFIRMS report 176075a8's triage against the live frame rather than by inference: the 'Advanced' the reporter read as a missing button is a LABEL + TOGGLE ROW (10130:14102 -> text 10130:14103 plus input/toggle 10130:14104) INSIDE the auto panel, not an action button on the manual panel. ★ 10130-14171 also confirms two things asserted elsewhere: its Community-wins rows ALL read 'Blackjack' (10130:14418/14432/14446/14460/14474) with named players and dollar payouts, so transcribing that section would ship fabricated wins; and it carries 'Try Blackjack in Fun Mode' (10130:14394), which Casey's no-practice-mode rule forbids. Its board is 4 columns x 9 rows - the same 9x4 report 07036f65 describes, which is a DIFFICULTY setting, not a design (the app renders 10x3 at Medium). Bet panel balance row now draws the frame's circled-plus (10130:13760) instead of a refresh glyph, inert like Crash/Dice/Roulette/Fortune Wheel - skai-gaming 04cd2a2, NOT YET DEPLOYED (report 793560fd claim 2). CORRECTION to the line that follows: a 375x1605 mobile frame DID land (10130:14171, plus bet panels 10130:14946 and 10130:14802), titled 'Blackjack' like its siblings - identify by page name and H1, never by frame title. NOTE: Towers has no mobile Figma frame - routing fixes the scale defect at every width, but what the mobile page should LOOK like is still design-blocked, so this row can never reach `done` on the current design set. ⚠️ CORRECTED 2026-08-26 (was `unknown`): re-verified live against the Figma page, the route table and prod site_config. See status.game-rollups.verified.tsv for the evidence.",
+          "verifiedAt": null
+        },
+        {
+          "id": "10120-9846",
+          "title": "Frame 1000004088",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "9903-1128",
+          "title": "Frame 1000004083",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "10120-8434",
+          "title": "Frame 1000004082",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "10120-9847",
+          "title": "Screenshot 2026-08-18 at 11.57.32 PM 1",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/crash/TowerStackerPro.tsx (+ crash/tower/); page shell modules/skai-gaming/src/pages/play/TowersPage.tsx (72 lines, RoutedGamePage wrapper); rail points-game tower_start/tower_pick/tower_climb/tower_cashout"
+          ],
+          "status": "partial",
+          "notes": "Routed 2026-08-25 at /play/towers; was a 1024x880 dialog at scale 0.348 (Bet 112.7x18.1, board tiles 46.9x16.4). Measured at 375: scale 1, Bet 275x52, currency 91.4x44, all controls reachable. CATALOG GAP, partly closed: the ENTIRE 10130-* cluster was missing from every nodes.txt in this catalog, not just one id - while 10120-* was present. Added the two I verified live via get_metadata: 10130-14013 (356x777.33, 'Frame 1000004105' - the bet panel in AUTO mode with Advanced EXPANDED: Manual|Auto, Bet amount, Balance, Difficulty, 'Number of Bets:', an 'Advanced' label + input/toggle, On Win / On Loss (Reset | Increase By), Stop on Win / Stop on Loss, CTA) and 10130-14171 (375x1605, the mobile page). RESOLVED 2026-08-26: all five were measured live by the catalog lane (skai-ui 2099577) and none is missing. THREE ARE TOP-LEVEL and are now catalogued: 10130-13720 'Frame 270' 356x621 (desktop bet panel), 10130-14802 'Frame 1000004291' 347x777 and 10130-14946 'Frame 1000004292' 347x621 (mobile bet panels); all three classify kind=non-screen, correctly - they are panel fragments, not 'Skai >' screens. TWO ARE CHILDREN of 10130-13720 and are deliberately NOT in nodes.txt, whose contract is top-level children of a page: 10130-13760 'Frame 275' 324x16 (the Balance row, depth 2) and 10130-13771 'Frame 1000004102' 324x66 (Difficulty, depth 1). Code may cite a child id - TowerBetPanel cites 13760 for the balance row it draws - but a nodes list may not. ★ THE FOUR PANEL FRAMES ARE TWO STATES x TWO BREAKPOINTS, which is the fact that settles report 176075a8: desktop 13720 (621h, Advanced off) / 14013 (777.33h, on), mobile 14946 (621h, off) / 14802 (777.33h, on). CORRECTION: an earlier revision of this row wrote the mobile ON height as 777; that was a rounded reading and the rounding INVENTED a desktop/mobile difference that does not exist - re-measured, 10130:14802 is height=777.3333129882812. Report geometry at the precision you measured it; a rounded number is a claim. So the FRAME delta is exactly 156.33px on both rows. ⚠️ BUT 156.33 IS NOT THE SIZE OF THE DISCLOSED BLOCK, and an earlier revision of this row claimed it was - a tidy equation nobody checked. Measured from the children: collapsed 13720 content ends 433.33 in a 621 frame (187.67 trailing slack); expanded 14013 content ends 761.33 in a 777.33 frame (16 slack). The disclosed block is 328px - the CTA moves y=381.33 -> 709.33, i.e. 4 rows x 66 + 4 gaps x 16 - and the frame grows only 156.33 because 187.67 - 16 = 171.67 = 328 - 156.33. Mobile pair identical. Two numbers, two things. ★ THE CONCLUSION IS UNAFFECTED: it rests on the four Stop-on CONTAINER FRAMES being present in the expanded pair and absent from the collapsed pair - an absence of FRAMES, not of TEXT, which matters because outlined copy turns <text> into <path> and would make a text-node oracle report a present row as missing. ★ THE DECISIVE DETAIL is not that a button lacks a second frame, it is that the 'Advanced' LABEL IS PRESENT IN THE COLLAPSED FRAMES: mobile 14946 carries the label (10130:15019) and an input/toggle (10130:15020) while carrying NONE of the rows it reveals. A label plus a switch, with its rows absent, is a disclosure control - not a missing button. Heights/labels for 14013, 14946 and 14802 verified independently by this lane; 13720 by the catalog lane. ★ 10130-14013 CONFIRMS report 176075a8's triage against the live frame rather than by inference: the 'Advanced' the reporter read as a missing button is a LABEL + TOGGLE ROW (10130:14102 -> text 10130:14103 plus input/toggle 10130:14104) INSIDE the auto panel, not an action button on the manual panel. ★ 10130-14171 also confirms two things asserted elsewhere: its Community-wins rows ALL read 'Blackjack' (10130:14418/14432/14446/14460/14474) with named players and dollar payouts, so transcribing that section would ship fabricated wins; and it carries 'Try Blackjack in Fun Mode' (10130:14394), which Casey's no-practice-mode rule forbids. Its board is 4 columns x 9 rows - the same 9x4 report 07036f65 describes, which is a DIFFICULTY setting, not a design (the app renders 10x3 at Medium). Bet panel balance row now draws the frame's circled-plus (10130:13760) instead of a refresh glyph, inert like Crash/Dice/Roulette/Fortune Wheel - skai-gaming 04cd2a2, NOT YET DEPLOYED (report 793560fd claim 2). CORRECTION to the line that follows: a 375x1605 mobile frame DID land (10130:14171, plus bet panels 10130:14946 and 10130:14802), titled 'Blackjack' like its siblings - identify by page name and H1, never by frame title. NOTE: Towers has no mobile Figma frame - routing fixes the scale defect at every width, but what the mobile page should LOOK like is still design-blocked, so this row can never reach `done` on the current design set. ⚠️ CORRECTED 2026-08-26 (was `unknown`): re-verified live against the Figma page, the route table and prod site_config. See status.game-rollups.verified.tsv for the evidence.",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "keno": {
+      "status": "clean",
+      "catalogued": 27,
+      "live": 27,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "fortune-wheel": {
+      "status": "drift",
+      "catalogued": 25,
+      "live": 25,
+      "added": 0,
+      "removed": 0,
+      "retitled": 5,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "video-poker": {
+      "status": "not-harvested",
+      "catalogued": 14
+    },
+    "bingo": {
+      "status": "clean",
+      "catalogued": 17,
+      "live": 17,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "rock-paper-scissors": {
+      "status": "clean",
+      "catalogued": 24,
+      "live": 24,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "limbo": {
+      "status": "not-harvested",
+      "catalogued": 14
+    },
+    "slide": {
+      "status": "drift",
+      "catalogued": 17,
+      "live": 18,
+      "added": 2,
+      "removed": 1,
+      "retitled": 0,
+      "removedRows": [
+        {
+          "id": "10030-42676",
+          "title": "LB With Header",
+          "implFiles": [
+            "NONE - there is no Slide anywhere in the codebase, at any layer",
+            "modules/skai-gaming/src/components/play/games/slide/SlideGame.tsx (+ SlideReel.tsx, SlideBetPanel.tsx, slideContract.ts, slideReelGeometry.ts, slidePanelLayout.ts; rail at supabase/functions/_shared/slide.ts)"
+          ],
+          "status": "partial",
+          "notes": "ASSESSMENT LANE. NOT-STARTED HERE MEANS NO FRAME IS MATCHED BY ANYTHING A USER CAN REACH, NOT THAT NO WORK EXISTS - read this first, the row moves fast. As of 2026-08-20 Slide is AUTHORISED and largely BUILT: rail math at supabase/functions/_shared/slide.ts (+slide.test.ts), the widget set at .../games/slide/ (SlideGame, SlideReel, SlideBetPanel, slideContract, slideReelGeometry, slidePanelLayout, each with tests), a FEATURED_GAMES tile at Play.tsx:605, art at playGameArt.ts:490 and a ROUTED_GAME_PATHS entry at Play.tsx:1133. The POINTS rail is wired too - points-game/index.ts carries a `play_slide` action (:5214), validates the target through `isValidSlideTarget` from _shared/slide.ts, and tracks `slideLandedBps` and `slideDisplayBps` as SEPARATE values (:5446-5447), which is the display-vs-ledger separation this row argues for, done right. ★ A `/play/slide` ROUTE GAP WAS OPEN FOR PART OF 2026-08-20 AND IS NOW CLOSED - recorded because two lanes reported it and the record should not read as though it were never real. For a window, ROUTED_GAME_PATHS pointed at `/play/slide` while src/App.tsx had no matching Route, so the tile navigated to a path nothing matched and died silently through the `/play/*` catch-all. THE ROUTE NOW EXISTS AND IS FULLY WIRED: src/App.tsx:1591-1601, `<Route path=\"/play/slide\">` (the `path=` literal is at :1592) -> `GeoRestrictedRoute feature=\"play\" featureTitle=\"Slide\"` -> `RouteScope routeName=\"Play Slide\"` -> `SlidePage`, matching every sibling game route. ⚠️ DO NOT \"CORRECT\" ANY COMMENT TO SAY THE ROUTE IS PENDING - it is not, and asserting the gap after it closed is the same class of error as asserting the wiring before it existed, just pointed the other way. ★★★ AND \"WIRED\" IS NOT THE SAME CLAIM AS \"RENDERS\" - THE ROUTE WAS REGISTERED AND THE PAGE STILL THREW INTO THE TOP-LEVEL ERROR BOUNDARY AT EVERY BREAKPOINT (1440, 768, 375), printing \"Something went wrong\" where the game should be, until it was fixed 2026-08-20. Every clause above stayed true the whole time: the Route existed at src/App.tsx:1509 AS THE FILE STOOD ON 2026-08-20 (★ CORRECTED 2026-08-31: :1509 no longer points at Slide - re-measured against main HEAD ea9ae07, `grep -n '/play/slide' src/App.tsx` returns exactly two hits, :1575 inside the explanatory comment and :1592 the `path=` literal, while :1509 is now the closing `</GeoRestrictedRoute>` of the MINES route. The route itself is unchanged and still wired; only the line moved. This is why the two present-tense citations in this row were repointed to :1591-1601 and this historical one was date-stamped instead of rewritten - the 2026-08-20 statement was true when it was made), it matched, it mounted SlidePage, and SlidePage mounted SlideGame with variant=\"fullscreen\" (SlidePage.tsx:60). Then the render threw 'DialogTitle must be used within Dialog'. GameShell returns a PLAIN CONTAINER for variant=\"fullscreen\" (GameShell.tsx:47) - deliberately, so a route does not inherit an overlay, a focus trap and Escape-to-close - and that container publishes no Radix Dialog context; SlideGame rendered a VisuallyHidden DialogTitle UNCONDITIONALLY, and Radix's DialogTitle THROWS on a missing context rather than degrading. FIXED by guarding it with variant === \"modal\", the spelling nine of the eleven games that render a title inside GameShell already use (HiLo, Chicken, Coinflip, Darts, Dice, Limbo, Mines, Plinko, Scratchers); AviatorGamePro writes the same condition as !isRouteFullscreen (:2990). The title is NOT deleted - Radix requires a Dialog.Title inside every Dialog.Content, so the modal variant still renders it. Pinned by slideFullscreenDialogTitle.test.tsx, which mounts the REAL component both ways and separately asserts that the shell's fullscreen branch really has no Dialog context, so the suite cannot go green either by deleting the title or by silently giving fullscreen a Dialog. ★ THE LESSON, AND IT APPLIES TO EVERY OTHER ROW IN THIS CATALOG: a Route entry, a tile, a ROUTED_GAME_PATHS line and a settlement type are REGISTRATION evidence and say NOTHING about whether the page renders. This row's own \"FULLY WIRED\" was literally accurate and simultaneously described a total outage. Mount the page before writing \"wired\". WHAT REMAINS TRUE, AND IS DELIBERATE: Slide is DOUBLE-GATED OFF and both gates are default-closed, re-verified against prod after the route landed - `DEFAULT_CONFIG.slide_enabled` is FALSE (uniquely among the games, Play.tsx:195-207) and no `gaming_slide_enabled` row exists in `site_config`; the `SLIDE_ENABLED` feature flag has NO `feature_flags` row either, so per the standing rule it is frozen at the bundle default; and the seed migration `20260820170000_slide_registration_rows.sql` is WRITTEN BUT NOT APPLIED. Play.tsx:195-207 calls this \"the review state this game should ship in\", so the tile is hidden from non-admins BY DESIGN. ★★★ THE SEQUENCING CONSTRAINT THAT CAME OUT OF THE GAP IS NOW SATISFIED AND IS WORTH KEEPING AS A RULE: the route had to exist BEFORE that migration is applied or either gate is flipped, because opening the gate first would have shipped a dead click to every player at once - grid, both rails, Popular/Arcade shelves, search and \"play random game\" simultaneously - and it fails SILENTLY, which is precisely why the flip itself would not have surfaced it. The same ordering applies to any future game: route first, gate second. Do not read `not-started` as \"nobody has begun\". ★ THE ORIGINAL SWEEP BELOW WAS TRUE WHEN TAKEN AND AGED OUT WITHIN HOURS - it is kept because the METHOD is the reusable part, and because it dates precisely what was checked. THE \"NOTHING EXISTS\" CLAIM WAS VERIFIED AS OF THE SWEEP, not assumed, and here is exactly what was checked so the next reader knows its scope: (a) case-insensitive grep for `slide` across `src/`, `modules/skai-gaming/src/` and `supabase/` returns 454+148+5 hits and EVERY SINGLE ONE is a false positive - they are `slider` (the Dice and Hi-Lo win-chance sliders: game-settlement/index.ts:1271 \"Stake-style slider\", points-game/index.ts:5379-5381, gameCanonParams.ts:83, gameSettlementService.ts:1996, pointsGameAdapter.ts:464-466, migration 20260430100500:37) or motion/CSS prose (\"the composer slides down\", \"slide-in from the right\", `animate-slide`, `motionPresets.ts:53`). There is not one occurrence of `slide` as a game identifier. (b) No `/play/slide` route - App.tsx registers 12 game routes (:1333-1501) and Slide is not among them. (c) Not in the Play.tsx tile catalog - 24 game tiles at :222-521, no slide. (d) No settlement type: gameSettlementService.ts's game-type map has a `limbo: 'limbo'` entry (:494) but no slide; gameCanonParams.ts's unsupported list (:170-171) names blackjack/crash/tower/chicken/rps/skaicross/poker/limbo/price_grid and not slide. (e) No normalization entry - gameTypeNormalization.ts has no slide branch. (f) LIVE DB CHECKED, not just the repo: `site_config` has zero rows whose key or value matches slide; `feature_flags` has zero rows matching slide/carousel; the daily-loss-cap seed (migration 20260430100500:35-52) enumerates 18 game types and slide is absent; and `game_history`/`game_settlements`/`pool_participants` contain only blackjack, crash_live, hilo, plinko, sports_bet, vegasslots. ★ SO THE STATEMENT IS THE STRONG ONE: not \"I could not find it\" but \"it is not there\" - the registries that a game MUST appear in were each enumerated and each came back complete-without-slide. Slide is strictly emptier than Limbo, which at least owns a settlement-type string. ||| FRAME INVENTORY - 13 REAL / 4 SCAFFOLDING, and Slide is the RICHEST of the four new pages: it has ZERO raw `Screenshot 2026-*` leaves and ZERO childless rounded-rectangle placeholders, unlike Crash whose own page carries two raw screenshots (10120-3087/3088). SCAFFOLDING (4, all page furniture, none is a spec): 10030-41366 \"Directory\" 6340x352 is the page index strip; 10030-41372 / 10030-41374 / 10030-41376 \"Breakpoint\" 1450x164 are the three breakpoint marker banners. REAL (13): 10030-41378 desktop page 1440x3294 - the assembled full-page screen, standard Play chrome (Header-desktop instance, 58px collapsed sidebar, 1382 main column, footer price ticker); 10030-42256 \"Desktop Full Game\" 954x621 - THE GAME BOARD, the single most important frame on the page; 10030-42281 \"Extended LB\" 356x628 - bet panel + expanded live-bets list; 10030-42410 \"Auto\" 356x802 - bet panel, Auto tab; 10030-42517 \"Auto Advanced\" 356x835 - Auto tab with the On Win/On Loss/Stop On block expanded; 10030-42676 \"LB With Header\" 372x166 - the live-bets card header + rows; 10117-44566 1080x1800 - KEY ART, not a screen: a single image layer literally named \"Slideee 1\" plus the centre needle and its ball, i.e. the game tile/cover asset (this is where the game's name is spelled out in the layer tree). ★ 10117-44566 IS THE COVER, AND 10030-41378 IS NOT - the desktop page merely CONTAINS a hero card. playGameArt.ts carried that exact mis-citation and it was corrected 2026-08-20 (see the visible correction at playGameArt.ts:619-621); this row has always cited 44566 and should stay that way. ⚠️ DO NOT PROPOSE `artPosition` FOR SLIDE - it was considered and correctly REFUSED, and the refusal is easy to re-propose because the surface reasoning points the wrong way. 44566's 1080x1800 = 0.600 aspect matches the RPS cover exactly, which invites copying RPS's \"50% 23%\". But `artPosition` is not solved from an ASPECT, it is solved from a frame's DECLARED OVERFLOW - playGameArtGamePages.test.ts re-derives it at run time from the hero card's own `img` line (RPS: `h-[117.33%] top-[-4.92%]`), i.e. from a raster the frame CROPS. Slide's committed asset is the FULL export of 44566: h = 100%, top = 0, nothing cropped, so there is no band to anchor to and nothing to solve. The suite already carries this case - video-poker has `artPosition: null` and the test branches on it to assert `frameImg.h` is within 1e-3 of 1 (:212-217), with the note that a stray value \"would crop a picture the frame does not crop\". Deriving one off the RENDERED export instead would be SAMPLING, which playGameArt.ts explicitly rejects for having produced #074DC8 where the design declared #044BC7 (:398, :478). Matching aspect is a coincidence of SHAPE, not of SITUATION; 10117-44577 705x621 - a pre-assembly WORKING SKETCH of the reel, six lanes carrying 10.22x/5.01x/6.33x/1.22x/2.00x/102.23x, the same six that appear in the finished board; 10117-44627 mobile page 375x1605 - the assembled mobile full-page screen; 10117-45018 \"Mobile\" 347x410 - the mobile game board; 10117-46093 \"Mobile Extended LB\" 347x538; 10117-46223 \"Mobile Auto\" 347x499; 10117-46330 \"Mobile Auto Advanced\" 347x827. The two default-named `Frame 1000004128/9` nodes are the ONLY ones that look like scaffolding by name and are NOT - one is the cover art and one is the reel sketch, both real design content, both correctly typed `non-screen` in the registry. ||| ★★★ WHAT THE GAME IS - THE FRAMES ANSWER THIS THEMSELVES, IN WRITING. Both assembled pages carry the game's own description as body copy (10030-41378 and 10117-44627, the \"Slide / Skai Originals\" block): \"Pick your target and watch the multipliers roll. The carousel slides through multipliers and stops on one, and if it lands at or above the number you called, you get paid. One round, one landing, and everyone's watching the same slide.\" That is not inference from pixels, it is the designer stating the mechanic. The board render (10030-42256) confirms every clause: a horizontal reel of multiplier cards, each card 110x230 on a 118px pitch, inside a 1413.7px-wide strip positioned at x=-271 within a 954px clipping frame - i.e. an OVERFLOW-HIDDEN reel wider than its viewport, which is what makes it slide; a FIXED WHITE VERTICAL NEEDLE with a ball terminal anchored at the horizontal centre, which the reel travels beneath; the card currently under the needle (6.33x) rendered LARGER than its neighbours (115.7x242 vs 110x230), lifted into a cyan-bordered filled state with a downward chevron notch - the landing card; cards fading out toward both edges via an edge mask; a colour-TIERED cap bar on each card and a matching colour scale in the history strip above (100.92x green, 99.99x and 10.00x amber, 9.99x and 5.00x cyan, 4.99x and 2.00x white, 1.99x neutral), so multiplier magnitude drives colour; and a bottom status bar reading \"Participants: 120\" behind a live green dot on the left, \"Next round in: 4.2s\" on the right, over a full-width teal countdown progress bar. SO: SLIDE IS LIMBO'S MATH ON CRASH'S SHARED-ROUND RAILS, PRESENTED AS A CSGO-CASE-OPENING / HORIZONTAL-SPINNER REEL. The player pre-commits a target multiplier before the round; one shared roll resolves for everybody at once; win iff landed >= target; payout at the target, not at the landed value (that is the standard Limbo construction and is the only one consistent with \"if it lands AT OR ABOVE the number you called\"). NEAREST SIBLING TO FORK: crash/ - and the vocabulary match is not a coincidence, Slide's frame set (Extended LB, Auto, Auto Advanced, LB With Header, Mobile, Mobile Extended LB, Mobile Auto, Mobile Auto Advanced) is a one-for-one reproduction of Crash's page (9137-13564, 9142-16809, 9142-19197, 9142-19454, 9156-1198, 9156-1371, 9156-1558). WHAT DIFFERS FROM CRASH: Crash's multiplier RISES CONTINUOUSLY and the player's decision is WHEN TO CASH OUT mid-round; Slide has no during-round decision at all - the target is locked before the reel moves and there is exactly one landing. That removes the cash-out button, the live rising-multiplier animation, the per-player cashout ledger and the abandoned-round sweep, and replaces them with a single deterministic landing value per round. WHAT DIFFERS FROM instant/: the instant/ games (Dice, Plinko, RPS) are single-player and resolve per-request; Slide has \"Participants: 128\" and \"Next round in: 4.2s\", so it needs a shared round lifecycle that instant/ has no machinery for. ||| ★★★ THE APPARENT MECHANIC CONTRADICTION - RAISED, RULED ON, AND RESOLVED 2026-08-19. RECORDED IN FULL BECAUSE THE RESOLUTION IS THE USEFUL PART. The two ASSEMBLED pages (10030-41378, 10117-44627) label the field \"Target Multiplier:\" 2.00; ALL SIX standalone panel variants label the SAME field \"Auto Cashout:\" 2.00 (10030-42281, 10030-42410, 10030-42517, 10117-46093, 10117-46223, 10117-46330). This lane flagged it as a blocking product decision on the grounds that a cash-out-during-round game and a pre-committed-target game have different risk profiles and different settlement shapes. CASEY RULED: Auto Cashout, i.e. the six panels. ★ AND THE TWO LABELS COLLAPSE RATHER THAN CONFLICT - this lane's \"different games\" framing was WRONG and is corrected here so nobody re-opens it. Crash's \"auto cashout\" is NOT a live mid-round action; it is a value the player PRE-SETS and the system exits at automatically when the curve reaches it. So Crash-with-auto-cashout is: win iff crashPoint >= T, pay at T. Limbo is: win iff roll-derived R >= T, pay at T. Those are the same rule. The only thing that distinguishes Crash from Limbo is the OPTION to exit manually mid-round, and a single-landing reel has no continuously-rising value to exit at - the landing is fixed the moment the round is seeded. So the manual branch does not exist in Slide, the two labels denote the same game here, and THE REEL PREMISE SURVIVES INTACT. The panels remain un-relabelled Crash forks, exactly as this lane guessed; the point is that Crash's own label already means \"pre-set value\", so copying it did not smuggle in a different game. Payout is at the TARGET, not at the landed value, under both readings. ||| ★★★ ODDS AND MULTIPLIERS IN THESE FRAMES ARE DESIGN CONTENT AND ARE NOT A SOURCE OF TRUTH FOR MONEY. Recorded here so nobody mistakes them for a paytable: the reel cards read 1.22x, 1.22x, 1.22x, 1.22x, 10.22x, 5.01x, 6.33x, 1.22x, 2.00x, 102.23x, 1.22x, 1.22x; the history strip reads 1.99x, 1.99x, 1.99x, 1.99x, 100.92x, 99.99x, 10.00x, 9.99x, 5.00x, 4.99x, 2.00x, 1.99x; the panels show \"Potential Profit: (4.20x)\" alongside a target of 2.00 (internally inconsistent - 4.20x does not follow from 2.00), a balance of \"100.11 SKAI / $21.00\" on some panels and \"100.11 USDC / $1.00\" on the desktop page, and 20 identical live-bet rows of \"2.340195\". The history values are pseudo-pairs (100.92/99.99, 10.00/9.99, 5.00/4.99, 2.00/1.99) - a designer filling a row with plausible-looking numbers, not a sampled distribution - and seven of twelve reel cards being exactly 1.22x is not a Limbo distribution either. ★ THIS IS THE KENO LESSON: Keno's frames were found printing payouts matching no row of the real server table. A frame is a picture of a number, never the number. ALSO ABSENT AND THEREFORE UNSPECIFIED: there is NO house-edge figure and NO RTP anywhere on the page (searched every layer name on the canvas - zero hits for \"edge\" and \"rtp\"), where Crash's page states \"House Edge 5%\" explicitly. There is a \"Provably fair\" chip and the line \"Every game result can be verified using verified\" (sic, truncated copy) but NO seed/nonce/verify UI is drawn, so the commit-reveal surface is undesigned. ★★★ RESOLVED 2026-08-19, AND THE NUMBERS NOW COME FROM COMMITTED CODE RATHER THAN FROM A FRAME. Casey ruled per-game STANDARD casino rates (superseding an earlier same-day \"align everything to 5%\"), and since Slide is Limbo's math the rail is 1%: supabase/functions/_shared/limbo.ts:52 `LIMBO_EDGE_MUL_BPS = 9900`, verified present in this tree, not asserted. THE TARGET BOUNDS ARE THEREFORE DERIVED, NOT INVENTED - limbo.ts:45-46 `LIMBO_MIN_TARGET_BPS = 10100` and `LIMBO_MAX_TARGET_BPS = 10000000`, i.e. 1.01x to 1000x. THIS SUPERSEDES THIS LANE'S EARLIER ADVICE TO REFUSE ANY FLOOR: refusing to invent one was right, but the floor is not a design question at all - it is 1.01x and it already exists. ⚠️ limbo.ts:36-43 warns that FOUR places must agree on these bounds (limbo.ts, gaming_params.go limboMin/MaxTargetBPS, the keeper registry's limbo MinParam/MaxParam, and betParams.ts) because \"if one is looser, a bet accepted there is refused elsewhere - the player is charged for a wager that cannot settle\". SLIDE WOULD BE A FIFTH CONSUMER and must not widen them. Also note limbo.ts:16-23: RTP = edgeMul/10000 at EVERY target, so picking 1.01x or 1000x changes variance and nothing else - \"a change that makes RTP depend on the target has broken limbo rather than tuned it\". A reel is a presentation of that same math and must preserve the invariant. ★★★ ONE REAL ENGINEERING GAP FALLS OUT OF THE RULING AND IS THE MOST IMPORTANT LINE IN THIS ROW: `settleLimbo` (limbo.ts:88-100) RETURNS NO LANDED MULTIPLIER. It returns `{ won, multiplier, payout }` where `multiplier` IS THE TARGET (targetBps/10000), not the landing - Limbo never needs a landed value because it only compares a uniform roll against a threshold. But SLIDE'S ENTIRE VISUAL PREMISE REQUIRES A LANDED VALUE: the reel must stop on a specific card showing a specific number. So Slide is NOT a drop-in reuse of settleLimbo; the landed multiplier must be ADDED, and derived from the SAME `limboRollFromHmac` roll that decides `won` - landedBps = floor(LIMBO_EDGE_MUL_BPS * LIMBO_SCALE / roll), guarding roll = 0 (p = 1e-8). ★ A FIELD NAMED `multiplier` THAT HOLDS THE TARGET IS EXACTLY HOW A UI ENDS UP RENDERING THE WRONG NUMBER ON THE REEL, and if the landing is instead synthesised client-side it will not be the roll that settled the bet - the display/ledger divergence this row warns about, with a concrete mechanism. Range note: minimum possible landing is 0.99x (roll at max), correctly BELOW the 1.01x minimum target since losing landings must exist; the display must reach 1000x. ⚠️ DO NOT INHERIT CRASH'S DISPLAY CAP: crashLiveRoundService.ts:29 pins the displayed multiplier at MAX_MULTIPLIER = 100 while its rail settles uncapped, and Slide's own frames draw a 102.23x card. At 1% edge P(landing >= 100x) = 0.99/100, about 1 round in 101 - not an edge case, roughly 1% of rounds would display a number lower than the one that settled, on day one, if the reel forks Crash's service. ★ COPY THE CROSS-RAIL TEST TOO: limboOdds.test.ts:112-127 reads _shared/limbo.ts's SOURCE and asserts the client constant matches it, failing with \"The rail settles at edgeMul X but this panel quotes Y\". That is an independent oracle rather than a re-derivation, and it is the cheapest defence against the panel and the rail drifting apart. ||| ⚠ TWO FRAMES ARE DUPLICATED PAGE TEMPLATES NAMED FOR THE WRONG GAME - both are REAL screens with genuine Slide content, and the misleading NAME must not be allowed to corrupt the mechanics read. 10030-41378 is named \"Skai > Play > Casino > Towers (1440 x 900px)\" and 10117-44627 is named \"Skai > Play > Casino > Blackjack (375 x 812px)\"; both were duplicated from those games' pages and never renamed. Their CONTENT is unambiguously Slide - both contain the \"Slide / Skai Originals\" heading, the carousel description copy, \"Target Multiplier:\", \"Participants: 128\" and \"Next round in: 4.2s\". Slide is neither a Towers variant nor a Blackjack variant. ★★★ AND THE MISNAMING IS THE SMALLER HALF OF THE PROBLEM - per the g-shell lane, which measured towers/keno/baccarat/limbo desktop plus baccarat/keno mobile and found they agree to the pixel, 10030-41378 IS ONE OF ELEVEN COPIES OF A SINGLE PAGE TEMPLATE AND IT IS THE ONE DEFECTIVE COPY: every other frame orders the title row BACK -> ART -> TITLE (keno 9433-12193, baccarat 9799-16719, limbo 9948-24624, and both mobile frames), and ONLY this Towers-named frame reverses it. DiceGame and MinesGame already copied that outlier into shipped code. So anyone who builds Slide by tracing its own desktop frame will faithfully reproduce a known-bad title row. BUILD THE TITLE ROW FROM THE SHELL COMPONENT, NOT FROM 10030-41378. The same duplication left un-reskinned placeholder content further down BOTH pages: the Community-wins leaderboard lists five Blackjack rows, and the cross-sell line reads \"Try Dice in Fun Mode\" on desktop and \"Try Blackjack in Fun Mode\" on mobile. Those are template debris, not Slide requirements. ||| BUILD ESTIMATE AND THE SHAPE OF THE WORK. Forking Crash is the right move for the PANEL, the WRONG move for the engine, and - as of the g-shell lane - the wrong move for the PAGE CHROME too. The Crash surface is ~7,950 lines across five files (AviatorGamePro.tsx 5,167, crashLiveRoundService.ts 919, crashMultiplayerService.ts 490, CrashPageSections.tsx 1,111, crashPageContent.ts 262). ★ DO NOT COPY CrashPageSections FOR THE PAGE SCAFFOLD. The title row, fairness sub-bar, section rhythm, page column cap and footer are SHELL, shared by all eleven game pages, and they now exist as components: PlayGamePageShell, PlayGameTitleRow, PlayGameSection, PlayGameSectionDivider, PlayGameSubBarSurface, PlayGamePageFooter from @gaming/components/play/shared, with the measurements and frame ids documented in shared/playPageTemplate.ts. Building the chrome by hand reproduces a fix eleven times and re-imports this frame's reversed title row; it also walks into the two traps that have already caught shipped pages - the fairness sub-bar is 12px = `rounded-lg` (`rounded-xl` is 16px in this app, and nine of ten shipped page files got it wrong), and the title art square is `rounded-[6px]` NOT `rounded-md` (10px here). Reusable near-verbatim FROM CRASH: the entire bet panel including Manual/Auto tabs, 1/2 - 2X - Max chips, the Auto block and the On Win / On Loss / Increase By / Stop on Win / Stop on Loss ladder (Slide's 10030-42517 and 10117-46330 draw these identically to Crash's), the live-bets card, the history strip, and the shared-round lifecycle scaffolding in crashLiveRoundService (countdown, participants count, round open/close). Genuinely NEW and not forkable: the reel component itself - a clipped overflow strip, a deterministic easing curve that must land the correct card exactly under a fixed centre needle, the enlarge/highlight transition on the landing card, the edge fade mask, and the multiplier-to-colour tier scale; plus the server-side round engine (a per-round landing multiplier drawn from a declared distribution, provably-fair commit-reveal, and settlement). ROUGH SIZE: front end ~1.2-2k lines (the chrome is now shell components rather than a fork, the panel is a fork, and the reel is the only real front-end work), server ~400-700 lines, plus the registration tax every game pays - App.tsx route, Play.tsx tile, gameTypeNormalization entry, gameSettlementService type, a `site_config` max-bet row (see the 9-games-frozen-at-defaults finding), a daily-loss-cap row, and a feature flag. ★ THE ANIMATION IS A CORRECTNESS SURFACE, NOT A POLISH SURFACE: the reel must be driven BY the settled result, never the result read off where the animation stopped, or the display and the ledger will disagree exactly the way Crash's 100x display cap already does. ||| QUESTIONS THIS LANE RAISED - FOUR NOW ANSWERED, TWO STILL OPEN. ANSWERED 2026-08-19: (1) Target Multiplier or Auto Cashout - RULED Auto Cashout, and the labels collapse to the same rule anyway; the target is locked before the round and there is no mid-slide exit. (2) Landing distribution and house edge - Limbo's math at a 1% edge, anchored to _shared/limbo.ts:52, with targets bounded 1.01x..1000x by limbo.ts:45-46. (3) Are the reel cards a FIXED finite set or a continuous draw rendered as cards? - CONTINUOUS. Limbo's roll is a uniform integer over LIMBO_SCALE = 1e8 (limbo.ts:61-66), so the landing is drawn from a continuum and the twelve cards are a RENDERING of it, not a wheel the game is built from. This also disposes of the max-win-exposure worry in the old (6): exposure is bounded by LIMBO_MAX_TARGET_BPS = 1000x, because the payout is at the TARGET and the target is what is capped - the landed value can print higher without costing more. STILL OPEN AND WORTH CASEY'S TIME: (A) Shared round or per-player? \"Participants: 128\" and \"everyone's watching the same slide\" say shared, and that is materially more infrastructure than Limbo needs - limbo.ts is single-player and carries NO round identity, so the shared-round lifecycle (roundId, participant count, countdown, one landing broadcast to all) is the genuinely new server work and has no existing implementation to fork except Crash's. (B) Which currency rails at launch - the panels disagree between SKAI and USDC, and per the standing gates the sUSD relays and real-money play are separate decisions. NEITHER OF THESE BLOCKS THE REEL OR THE PANEL, so build can proceed ahead of them; (A) blocks the server round engine specifically. ⚠️ CORRECTED 2026-08-26 (was `not-started`): re-verified live against the Figma page, the route table and prod site_config. See status.game-rollups.verified.tsv for the evidence.",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 1,
+      "retargets": [
+        {
+          "oldId": "10030-42676",
+          "newId": "10250-15144",
+          "title": "LB With Header"
+        }
+      ]
+    },
+    "baccarat": {
+      "status": "drift",
+      "catalogued": 19,
+      "live": 21,
+      "added": 2,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "roulette": {
+      "status": "drift",
+      "catalogued": 19,
+      "live": 21,
+      "added": 2,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "price-grid": {
+      "status": "clean",
+      "catalogued": 20,
+      "live": 20,
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    }
+  }
+}
