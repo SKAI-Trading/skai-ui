@@ -7,29 +7,29 @@ Live half harvested 2026-08-26 (use_figma read-only; figma.root.children for the
 
 | | |
 |---|---:|
-| In-scope pages | 28 |
-| Live top-level nodes | 2414 |
-| — furniture (excluded from the denominator) | 432 (17.9%) |
-| **Genuine frames — the denominator** | **1982** |
-| Genuine frames with a catalog row (matched by node id) | 1919 (96.8%) |
+| In-scope pages | 29 |
+| Live top-level nodes | 2456 |
+| — furniture (excluded from the denominator) | 434 (17.7%) |
+| **Genuine frames — the denominator** | **2022** |
+| Genuine frames with a catalog row (matched by node id) | 1919 (94.9%) |
 | — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 0 (0.0% of matched) |
-| Genuine frames with NO row — live-only drift | 63 (3.2%) |
+| Genuine frames with NO row — live-only drift | 103 (5.1%) |
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 431 | 21.7% |
-| `partial` | 1069 | 53.9% |
-| `not-started` | 153 | 7.7% |
-| `blocked-on-backend` | 77 | 3.9% |
-| `frame-defect` | 96 | 4.8% |
+| `done` | 431 | 21.3% |
+| `partial` | 1069 | 52.9% |
+| `not-started` | 153 | 7.6% |
+| `blocked-on-backend` | 77 | 3.8% |
+| `frame-defect` | 96 | 4.7% |
 | `furniture` (catalog says furniture, this script says genuine) | 42 | 2.1% |
 | `unknown` | 40 | 2.0% |
 
-### Why 432 nodes were excluded — the whole rule, so it can be argued with
+### Why 434 nodes were excluded — the whole rule, so it can be argued with
 
 | reason | nodes |
 |---|---:|
-| named canvas chrome — `Directory`, `Breakpoint`, `Scroll bar`, `Notes`, `Screenshot …` | 376 |
+| named canvas chrome — `Directory`, `Breakpoint`, `Scroll bar`, `Notes`, `Screenshot …` | 378 |
 | a loose RECTANGLE — pasted screenshots and colour swatches | 22 |
 | a library component instance dropped on the canvas (`CTA/button`, `logos/others`) | 12 |
 | a loose TEXT annotation at page level | 10 |
@@ -37,13 +37,13 @@ Live half harvested 2026-08-26 (use_figma read-only; figma.root.children for the
 | a loose ELLIPSE | 3 |
 | a loose VECTOR | 2 |
 
-That is 17.9% of in-scope live nodes, inside the 14–25% band SCHEMA.md predicted. Nothing is excluded on a guess about intent: default-named `Frame N` / `Group N` nodes count as GENUINE (see caveat 8), because `Group 316` on Price Grid is 1410x900.
+That is 17.7% of in-scope live nodes, inside the 14–25% band SCHEMA.md predicted. Nothing is excluded on a guess about intent: default-named `Frame N` / `Group N` nodes count as GENUINE (see caveat 8), because `Group 316` on Price Grid is 1410x900.
 
 ### The headline number
 
-**431 of 1982 in-scope genuine frames (21.7%) are covered by a row marked `done`.**
+**431 of 2022 in-scope genuine frames (21.3%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 21.7% measured parity.
+Read the caveat section before quoting that. It is not 21.3% measured parity.
 
 ## Out of the roll-up
 
@@ -53,7 +53,7 @@ Read the caveat section before quoting that. It is not 21.7% measured parity.
 | standing exclusion (Onboarding) | 1 | 151 | 24 | 127 | 0 | 0 | 127 |
 | v1, superseded by v2 | 3 | 875 | 105 | 770 | 305 | 146 | 465 |
 | tombstone (body moved) | 3 | 187 | 70 | 117 | 24 | 1 | 93 |
-| meta | 7 | 94 | 3 | 91 | 0 | 0 | 91 |
+| meta | 6 | 52 | 1 | 51 | 0 | 0 | 51 |
 | wip / no section | 8 | 1262 | 1238 | 24 | 0 | 0 | 24 |
 
 ## Per page
@@ -68,6 +68,7 @@ Read the caveat section before quoting that. It is not 21.7% measured parity.
 | ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 30 | 159 | 5 | 24 | 0 | 100.0% |
 | ✅ Home 2 | in-scope | 240 | 36 | 204 | 143 | 36 | 91 | 10 | 5 | 61 | 70.1% |
 | ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 126 | 29 | 0 | 0 | 0 | 100.0% |
+| 🌎 Cover Images - Skai Originals | in-scope | 42 | 2 | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 0.0% |
 | ✅ Coinflip - Skai originals | in-scope | 45 | 11 | 34 | 34 | 5 | 22 | 0 | 0 | 0 | 100.0% |
 | ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 6 | 16 | 1 | 0 | 0 | 100.0% |
 | ✅ Darts - Skai originals | in-scope | 31 | 13 | 18 | 18 | 1 | 13 | 0 | 0 | 0 | 100.0% |
@@ -107,7 +108,6 @@ Read the caveat section before quoting that. It is not 21.7% measured parity.
 | 🚧 Vegas fortune - Skai originals | wip | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | 🚧 Wild card - Skai originals | wip | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | 📍 Master sheet | meta | 46 | 1 | 45 | 0 | 0 | 0 | 0 | 0 | 45 | 0.0% |
-| 🌎 Cover Images - Skai Originals | meta | 42 | 2 | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 0.0% |
 | 📍 Games master sheet | meta | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0.0% |
 | Thumbnail | meta | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0.0% |
 | Thumbnail | meta | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0.0% |
@@ -1435,7 +1435,7 @@ Ranked by count. These are the unassessed frames.
 3440-64371	3035x469	Timeline
 ```
 
-### 🌎 Cover Images - Skai Originals — 40 live-only of 40 genuine  _(meta)_
+### 🌎 Cover Images - Skai Originals — 40 live-only of 40 genuine  _(in-scope)_
 
 ```
 9220-26176	195x277	Dice Desktop

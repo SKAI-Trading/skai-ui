@@ -51,7 +51,7 @@
     "excluded": "standing exclusion — reported, excluded from the roll-up",
     "v1-superseded": "superseded by a v2 page; frames are not parity targets",
     "tombstone": "page body moved to another file; the frames left behind are not targets",
-    "meta": "thumbnail / master sheet / cover art — never a build target",
+    "meta": "thumbnail / master sheet — never a build target. ⛔ This line used to end \"/ cover art\" and that clause was DELETED by Casey's 2026-09-08 ruling, which moved 🌎 Cover Images - Skai Originals (M6r9FEn042UWTQD1zvy6GM 9220:26175) to in-scope. The ruling is about COVER ART, not about meta as a category - thumbnails and master sheets stay here.",
     "wip": "no catalog section and not ready-for-dev; reported, excluded from the roll-up"
   },
   "pages": [
@@ -244,7 +244,9 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 42,
-      "scope": "meta"
+      "scope": "in-scope",
+      "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
+      "scopeNote": "n=42 is the 2026-08-26 snapshot and is STALE: get_metadata on this page returned 44 live children on 2026-09-08. The sibling .tsv has the matching 42 rows, so coverage.mjs stays consistent and silent rather than tripping its loud guard, and n is left alone rather than half-reconciled - raising n without re-harvesting the .tsv makes 42 < 44 and coverage.mjs REFUSES to run at all. Known missing from both: 10404:3412 Blackjack Desktop, 10428:2145 Bingo Desktop, 10428:2601 Chicken Desktop, 10404:7943 + 10404:7948 Keno. Still listed and deleted from Figma: 9222:26323. Re-harvest with the METHOD in this file's _comment, not from get_metadata."
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
