@@ -8,28 +8,28 @@ Live half harvested 2026-08-26 (use_figma read-only; figma.root.children for the
 | | |
 |---|---:|
 | In-scope pages | 28 |
-| Live top-level nodes | 2332 |
-| — furniture (excluded from the denominator) | 418 (17.9%) |
-| **Genuine frames — the denominator** | **1914** |
-| Genuine frames with a catalog row (matched by node id) | 1914 (100.0%) |
+| Live top-level nodes | 2414 |
+| — furniture (excluded from the denominator) | 432 (17.9%) |
+| **Genuine frames — the denominator** | **1982** |
+| Genuine frames with a catalog row (matched by node id) | 1919 (96.8%) |
 | — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 0 (0.0% of matched) |
-| Genuine frames with NO row — live-only drift | 0 (0.0%) |
+| Genuine frames with NO row — live-only drift | 63 (3.2%) |
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 431 | 22.5% |
-| `partial` | 1065 | 55.6% |
-| `not-started` | 152 | 7.9% |
-| `blocked-on-backend` | 77 | 4.0% |
-| `frame-defect` | 96 | 5.0% |
-| `furniture` (catalog says furniture, this script says genuine) | 42 | 2.2% |
-| `unknown` | 40 | 2.1% |
+| `done` | 431 | 21.7% |
+| `partial` | 1069 | 53.9% |
+| `not-started` | 153 | 7.7% |
+| `blocked-on-backend` | 77 | 3.9% |
+| `frame-defect` | 96 | 4.8% |
+| `furniture` (catalog says furniture, this script says genuine) | 42 | 2.1% |
+| `unknown` | 40 | 2.0% |
 
-### Why 418 nodes were excluded — the whole rule, so it can be argued with
+### Why 432 nodes were excluded — the whole rule, so it can be argued with
 
 | reason | nodes |
 |---|---:|
-| named canvas chrome — `Directory`, `Breakpoint`, `Scroll bar`, `Notes`, `Screenshot …` | 362 |
+| named canvas chrome — `Directory`, `Breakpoint`, `Scroll bar`, `Notes`, `Screenshot …` | 376 |
 | a loose RECTANGLE — pasted screenshots and colour swatches | 22 |
 | a library component instance dropped on the canvas (`CTA/button`, `logos/others`) | 12 |
 | a loose TEXT annotation at page level | 10 |
@@ -41,17 +41,17 @@ That is 17.9% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**431 of 1914 in-scope genuine frames (22.5%) are covered by a row marked `done`.**
+**431 of 1982 in-scope genuine frames (21.7%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 22.5% measured parity.
+Read the caveat section before quoting that. It is not 21.7% measured parity.
 
 ## Out of the roll-up
 
 | Bucket | Pages | Live | Furniture | Genuine | Matched | `done` | Live-only |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| held (Governance — Casey) | 1 | 331 | 57 | 274 | 74 | 0 | 200 |
+| held (Governance — Casey) | 1 | 725 | 66 | 659 | 173 | 0 | 486 |
 | standing exclusion (Onboarding) | 1 | 151 | 24 | 127 | 0 | 0 | 127 |
-| v1, superseded by v2 | 3 | 852 | 103 | 749 | 305 | 146 | 444 |
+| v1, superseded by v2 | 3 | 875 | 105 | 770 | 305 | 146 | 465 |
 | tombstone (body moved) | 3 | 187 | 70 | 117 | 24 | 1 | 93 |
 | meta | 7 | 94 | 3 | 91 | 0 | 0 | 91 |
 | wip / no section | 7 | 1262 | 1238 | 24 | 0 | 0 | 24 |
@@ -63,11 +63,11 @@ Read the caveat section before quoting that. It is not 22.5% measured parity.
 | Page | Scope | Live | furn | gen | row | `done` | `part` | `n/s` | `blk` | only | cov |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | ✅ Social | in-scope | 442 | 40 | 402 | 402 | 57 | 245 | 50 | 32 | 0 | 100.0% |
-| ✅ Trade 2 | in-scope | 407 | 32 | 375 | 375 | 79 | 232 | 34 | 2 | 0 | 100.0% |
+| ✅ Trade 2 | in-scope | 417 | 40 | 377 | 375 | 79 | 232 | 34 | 2 | 2 | 99.5% |
 | ✅ Play | in-scope | 345 | 76 | 269 | 269 | 46 | 145 | 51 | 1 | 0 | 100.0% |
 | ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 30 | 159 | 5 | 24 | 0 | 100.0% |
+| ✅ Home 2 | in-scope | 240 | 36 | 204 | 143 | 36 | 91 | 10 | 5 | 61 | 70.1% |
 | ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 126 | 29 | 0 | 0 | 0 | 100.0% |
-| ✅ Home 2 | in-scope | 168 | 30 | 138 | 138 | 36 | 87 | 9 | 5 | 0 | 100.0% |
 | ✅ Coinflip - Skai originals | in-scope | 45 | 11 | 34 | 34 | 5 | 22 | 0 | 0 | 0 | 100.0% |
 | ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 6 | 16 | 1 | 0 | 0 | 100.0% |
 | ✅ Darts - Skai originals | in-scope | 31 | 13 | 18 | 18 | 1 | 13 | 0 | 0 | 0 | 100.0% |
@@ -90,10 +90,10 @@ Read the caveat section before quoting that. It is not 22.5% measured parity.
 | ✅ Price Grid - Skai originals | in-scope | 20 | 12 | 8 | 8 | 2 | 5 | 0 | 0 | 0 | 100.0% |
 | ✅ Hi-Lo - Skai originals | in-scope | 16 | 9 | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 100.0% |
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 6 | 0 | 0 | 0 | 0 | 100.0% |
-| 🚧 Governance and Utilities | held | 331 | 57 | 274 | 74 | 0 | 46 | 18 | 8 | 200 | 27.0% |
+| ✅ Governance and Utilities | held | 725 | 66 | 659 | 173 | 0 | 109 | 50 | 12 | 486 | 26.3% |
 | ✅ Onboarding and Authentication | excluded | 151 | 24 | 127 | 0 | 0 | 0 | 0 | 0 | 127 | 0.0% |
 | ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 172 | 40 | 127 | 0 | 3 | 195 | 46.9% |
-| ✅ Home 1 | v1-superseded | 254 | 39 | 215 | 85 | 58 | 19 | 0 | 0 | 130 | 39.5% |
+| ✅ Home 1 | v1-superseded | 277 | 41 | 236 | 85 | 58 | 19 | 0 | 0 | 151 | 36.0% |
 | ✅ Wallet 1 | v1-superseded | 178 | 11 | 167 | 48 | 48 | 0 | 0 | 0 | 119 | 28.7% |
 | ✝️ Trade (moved to Skai Web App 2) | tombstone | 154 | 37 | 117 | 24 | 1 | 23 | 0 | 0 | 93 | 20.5% |
 | ✝️ Home (moved to Skai Web App 2) | tombstone | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
@@ -117,209 +117,495 @@ Read the caveat section before quoting that. It is not 22.5% measured parity.
 
 Ranked by count. These are the unassessed frames.
 
-### 🚧 Governance and Utilities — 200 live-only of 274 genuine  _(held)_
+### ✅ Governance and Utilities — 486 live-only of 659 genuine  _(held)_
 
 ```
-5370-61920	1440x900	Skai > Governance 1V
-5480-32393	1440x900	Skai > Airdrop 1VH (
-5539-93683	1440x900	Skai > Explorer 1VH 
-11345-144081	1440x900	Skai > Explorer - cu
-5586-110620	1440x900	🚧 Skai > Explorer >
-5638-112382	1440x1611	Skai > Explorer > Ad
-11349-147772	1318x758	Transactions - with 
-5660-114498	1440x1555	Skai > Explorer > Ad
-5662-124997	1440x1236	Skai > Explorer > Ad
-5664-127101	1440x1236	Skai > Explorer > Ad
-5661-118252	1440x1330	Skai > Explorer > Ad
-5662-120139	1440x1330	Skai > Explorer > Ad
+5370-61920	1440x900	Skai > Governance 1VH (1440 x 900px)
+5480-32393	1440x900	Skai > Airdrop 1VH (1440 x 900px)
+5539-93683	1440x900	Skai > Explorer 1VH (1440 x 900px)
+11345-144081	1440x900	Skai > Explorer - customise 1VH (1440 x 900px)
+5586-110620	1440x900	Skai > Explorer > Address 1VH (1440 x 900px)
+5638-112382	1440x1611	Skai > Explorer > Address 1VH (1440 x 900px)
+11989-231980	1094x660	Frame 270
+11998-339138	1054x658	Frame 1000003943
+11349-147772	1318x758	Transactions - with arrow
+5660-114498	1440x1555	Skai > Explorer > Address > Holdings 1VH (1440 x 900px)
+11991-233583	854x582	Frame 1000003927
+11998-340705	814x658	Frame 1000003944
+11998-342147	343x1026	Frame 1000003947
+11991-234531	708x568	Frame 1000003928
+5662-124997	1440x1236	Skai > Explorer > Address > Staking 1VH (1440 x 900px)
+11992-238265	854x278	Frame 1000003932
+11998-346606	814x362	Frame 1000003952
+5664-127101	1440x1236	Skai > Explorer > Address > Lending 1VH (1440 x 900px)
+5661-118252	1440x1330	Skai > Explorer > Address > Perps 1VH (1440 x 900px)
+11991-235444	936x388	Frame 298
+11998-343301	904x388	Frame 1000003948
+5662-120139	1440x1330	Skai > Explorer > Address > Orders 1VH (1440 x 900px)
+11991-236624	874x456	Frame 1000003929
+11998-344467	834x454	Frame 1000003949
 5662-124365	1318x458	Vault - with data
-5662-122540	1440x1330	Skai > Explorer > Ad
-5664-127738	1440x1757	Skai > Explorer > Ad
-5669-128901	1440x2027	Skai > Explorer > An
-5675-131659	1440x1399	Skai > Explorer > To
-5694-140556	1440x1399	Skai > Explorer > To
-5695-142802	1440x1399	Skai > Explorer > AI
-5702-143785	1440x1399	Skai > Explorer > La
-11349-148815	1318x650	Active Projects - wi
-5702-144185	1440x1245	Skai > Explorer > Ga
-5707-145880	1440x1245	Skai > Explorer > Go
-5711-148542	1440x1510	Skai > Explorer > Po
-5720-152742	1440x1510	Skai > Explorer > Ad
-5711-150322	1440x1801	Skai > Explorer > De
-5711-147902	1440x900	Skai > Explorer > Le
-5707-146891	1440x1692	Skai > Explorer > So
-5689-136816	1440x1301	Skai > Explorer > Bl
-5689-136235	1440x1301	Skai > Explorer > Tr
-5691-138387	1440x1903	Skai > Explorer > Ga
-5698-143443	1318x417	Simple Chart line - 
+11992-238112	914x350	Frame 1000003931
+11998-346069	874x348	Frame 1000003951
+12136-438810	343x356	Frame 1000003976
+5662-122540	1440x1330	Skai > Explorer > Address > Orders 1VH (1440 x 900px)
+5664-127738	1440x1757	Skai > Explorer > Address > Others 1VH (1440 x 900px)
+5669-128901	1440x2027	Skai > Explorer > Analytics 1VH (1440 x 900px)
+5675-131659	1440x1399	Skai > Explorer > Tokens 1VH (1440 x 900px)
+11998-243350	924x536	Frame 1000003933
+11998-350033	884x534	Frame 1000003956
+5694-140556	1440x1399	Skai > Explorer > Tokens 1VH (1440 x 900px)
+11998-251804	914x536	Frame 1000003935
+12000-358605	906x534	Frame 1000003960
+5695-142802	1440x1399	Skai > Explorer > AI 1VH (1440 x 900px)
+5702-143785	1440x1399	Skai > Explorer > Launchpad 1VH (1440 x 900px)
+11349-148815	1318x650	Active Projects - with data
+11998-254229	1004x536	Frame 270
+12001-364733	964x534	Frame 1000003962
+5702-144185	1440x1245	Skai > Explorer > Gaming 1VH (1440 x 900px)
+5707-145880	1440x1245	Skai > Explorer > Governance 1VH (1440 x 900px)
+11998-258706	1034x444	Frame 1000003936
+12001-367469	1026x444	Frame 1000003964
+5711-148542	1440x1510	Skai > Explorer > Points 1VH (1440 x 900px)
+11998-262492	794x532	Frame 1000003937
+12001-371853	754x532	Frame 1000003965
+5720-152742	1440x1510	Skai > Explorer > Addresses 1VH (1440 x 900px)
+11998-264962	908x432	Frame 1000003938
+12001-375115	900x432	Frame 1000003966
+5711-150322	1440x1801	Skai > Explorer > DeFi 1VH (1440 x 900px)
+11998-267880	1094x636	Frame 1000003939
+12001-377814	1054x634	Frame 1000003968
+5711-147902	1440x900	Skai > Explorer > Lending 1VH (1440 x 900px)
+5707-146891	1440x1692	Skai > Explorer > Social 1VH (1440 x 900px)
+5689-136816	1440x1301	Skai > Explorer > Blocks 1VH (1440 x 900px)
+11998-245136	744x640	Frame 1000003934
+11998-352184	704x638	Frame 1000003957
+12000-357680	654x638	Frame 1000003959
+11998-246935	924x636	Frame 272
+5689-136235	1440x1301	Skai > Explorer > Transactions 1VH (1440 x 900px)
+11998-352404	884x634	Frame 1000003958
+5691-138387	1440x1903	Skai > Explorer > Gas tracker 1VH (1440 x 900px)
+5698-143443	1318x417	Simple Chart line - no data
 5660-116662	1318x698	Holdings - NFTs
-5539-100875	1440x2291	Skai > Explorer (144
+11983-221622	1440x2291	Skai > Explorer (1440 x 900px)
 11345-145018	651x516	With success/failure
-11345-146431	935x760	Truncated ALT - NOT 
+11987-228392	914x962	Frame 1000003925
+11987-228045	804x660	Frame 1000003924
+11987-227622	784x660	Frame 267
+11998-332332	874x784	Frame 1000003940
+11998-332560	764x666	Frame 1000003941
+11998-332847	744x668	Frame 1000003942
+11345-146431	935x760	Truncated ALT - NOT recommended
 11259-40720	395x266	Skai YV - deposited
 11670-313345	350x248	Skai YV - deposited
 11706-321832	343x240	Skai YV - deposited
 11259-44415	737x620	Withdraw from vault
-5481-49179	1440x1968	Skai > Airdrop (1440
-5411-117451	1440x900	Skai > Learn > Skai 
-5443-69711	1440x900	Skai > Learn > Skai 
+5481-49179	1440x1968	Skai > Airdrop (1440 x 900px)
+5411-117451	1440x900	Skai > Learn > Skai university 1VH (1440 x 900px)
+5443-69711	1440x900	Skai > Learn > Skai university > Purchase modal 1VH (1440 x 900px)
 5442-40192	761x583	Courses - buy
-5442-39147	1440x1455	Skai > Learn > Skai 
-5443-69253	1440x1960	Skai > Learn > Skai 
-5446-86451	1440x1661	Skai > Learn > Skai 
-5467-91593	1440x2655	Skai > Learn > Getti
-5460-87941	1440x2873	Skai > Learn > Skai 
-11343-142862	1440x1040	Skai > Learn > Skai 
-11343-142585	680x1895	Corser details - wit
-5480-20528	1440x900	Skai > Learn > Artic
-5480-21556	1440x900	Skai > Learn > Artic
-5480-21885	1440x1692	Skai > Learn > Artic
-5446-83004	1440x1410	Skai > Learn > Skai 
-5446-85963	1440x1779	Skai > Learn > Skai 
+5442-39147	1440x1455	Skai > Learn > Skai university - about (1440 x 900px)
+5443-69253	1440x1960	Skai > Learn > Skai university > Sample course > Purchased (1440 x 900px)
+5446-86451	1440x1661	Skai > Learn > Skai university > Sample course > Purchased (1440 x 900px)
+5467-91593	1440x2655	Skai > Learn > Getting started with crypto (1440 x 900px)
+5460-87941	1440x2873	Skai > Learn > Skai university > Create course (1440 x 900px)
+11343-142862	1440x1040	Skai > Learn > Skai university > Create course - Step 2 (1440 x 900px)
+11343-142585	680x1895	Corser details - with video
+5480-20528	1440x900	Skai > Learn > Articles > Create article - empty (1440 x 900px)
+5480-21556	1440x900	Skai > Learn > Articles > Create article (1440 x 900px)
+5480-21885	1440x1692	Skai > Learn > Articles > Create article (1440 x 900px)
+5446-83004	1440x1410	Skai > Learn > Skai university > Sample course > Purchased > Sample video (1440 x 900px)
+5446-85963	1440x1779	Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (1440 x 900px)
 5460-87886	1047x991	Videoframe - playing
-11342-142483	1047x991	Videoframe - before 
-5446-82429	1318x132	Course progress - co
-5442-42904	1440x2446	Skai > Learn > Skai 
-5468-92781	1440x2446	Skai > Learn > Artic
-5442-48059	367x234	Course details - on:
-5410-112561	1440x3205	Skai > Learn (1440 x
-5371-63275	1440x900	Skai > Governance > 
+11342-142483	1047x991	Videoframe - before playing
+5446-82429	1318x132	Course progress - completed
+5442-42904	1440x2446	Skai > Learn > Skai university > Sample course (1440 x 900px)
+5468-92781	1440x2446	Skai > Learn > Articles (1440 x 900px)
+5442-48059	367x234	Course details - on:hover
+5410-112561	1440x3205	Skai > Learn (1440 x 900px)
+5371-63275	1440x900	Skai > Governance > Proposals 1VH (1440 x 900px)
 11309-136820	442x884	Right menu
+12141-451869	442x1008	Right menu
+12141-452042	359x812	Right menu
 11309-136155	442x884	Governance settings
-5383-73349	1440x900	Skai > Governance > 
-5387-76925	1440x900	Skai > Governance > 
-5387-77602	1440x1556	Skai > Governance > 
-5389-78508	1440x900	Skai > Governance > 
-5390-80080	1440x900	Skai > Governance > 
-11307-135124	1440x900	Skai > Governance > 
-5392-82015	1440x2354	Skai > Governance > 
-5477-97603	1440x2888	Skai > Learn > Artic
-5385-74400	1440x1845	Skai > Governance > 
-5385-75416	1440x900	Skai > Governance > 
-5376-71276	1440x900	Skai > Governance > 
-5383-72757	1440x1649	Skai > Governance > 
-11314-138830	1318x582	Vault actions - depo
+12097-429027	442x1008	Governance settings
+12097-429129	354x796	Governance settings
+5383-73349	1440x900	Skai > Governance > Proposals > Delegation 1VH (1440 x 900px)
+5387-76925	1440x900	Skai > Governance > Proposals > Financials 1VH (1440 x 900px)
+5387-77602	1440x1556	Skai > Governance > Proposals > Financials 1VH (1440 x 900px)
+5389-78508	1440x900	Skai > Governance > Proposals > About 1VH (1440 x 900px)
+5390-80080	1440x900	Skai > Governance > Proposals > Sample proposal - view 1VH (1440 x 900px)
+11307-135124	1440x900	Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (1440 x 900px)
+5392-82015	1440x2354	Skai > Governance > Proposals > Sample proposal - view (1440 x 900px)
+5477-97603	1440x2888	Skai > Learn > Articles > Sample article (1440 x 900px)
+5385-74400	1440x1845	Skai > Governance > Proposals > Delegation 1VH (1440 x 900px)
+5385-75416	1440x900	Skai > Governance > Proposals > Delegation > Delegate modal 1VH (1440 x 900px)
+5376-71276	1440x900	Skai > Governance > Proposals > Staking 1VH (1440 x 900px)
+5383-72757	1440x1649	Skai > Governance > Proposals > Staking 1VH (1440 x 900px)
+11314-138830	1318x582	Vault actions - deposit and unclaimed
 5376-70869	442x1643	Right menu - open
 5376-71252	394x110	DAO boost - met
-5371-64317	1440x1540	Skai > Governance > 
+5371-64317	1440x1540	Skai > Governance > Proposals (1440 x 900px)
 11151-80952	419x550	House vault - if low
-11022-18418	432x674	Add liquidity - no v
+11022-18418	432x674	Add liquidity - no value
 11161-82180	1318x1007	With winners
-11156-82051	316x327	Lottery - rolls fini
-11198-97038	1318x544	Winners - with date 
+11156-82051	316x327	Lottery - rolls finished
+11198-97038	1318x544	Winners - with date position shifted
 5370-46501	1318x544	Tickets - empty
 5313-92097	56x95	Blackjack cards
 5291-89531	954x327	Lottery other values
-11151-79923	461x498	Lock - with percenta
-10517-39043	564x618	Stake summary with f
+12225-458073	420x327	Lottery other values
+12225-458091	319x246	Lottery other values
+11151-79923	461x498	Lock - with percentage
+10517-39043	564x618	Stake summary with fees
 5243-75704	506x556	Swap - no value
 5248-76747	163x160	dropdown-1
 5248-76770	163x160	dropdown-2
+12215-457080	150x152	dropdown-1
+12215-457116	150x144	dropdown-1
+12215-457089	150x152	dropdown-2
+12215-457125	150x144	dropdown-2
 10841-118147	163x236	dropdown-activity
+12215-457134	163x224	dropdown-activity
+12215-457147	150x212	dropdown-activity
 11304-134283	163x122	dropdown-proposals
+12097-428912	150x116	dropdown-proposals
+12097-428919	120x110	dropdown-proposals
 11306-134305	163x160	dropdown-proposals
+12097-428926	150x152	dropdown-proposals
+12097-428981	150x116	dropdown-proposals
+12097-428952	130x144	dropdown-proposals
+12097-429007	130x110	dropdown-proposals
 11307-135045	163x122	dropdown-proposals
-11193-91907	163x274	dropdown-pool and tr
+11193-91907	163x274	dropdown-pool and treasury
+12225-458356	150x260	dropdown-pool and treasury
+12225-458371	120x246	dropdown-pool and treasury
 11198-97230	163x160	dropdown-winners
+12225-458386	150x152	dropdown-winners
+12225-458395	120x144	dropdown-winners
 11198-97007	250x130	dropdown-tickets
 11364-165058	248x844	sidebar - open earn
-11364-165916	248x900	sidebar - open gover
+11364-165916	248x900	sidebar - open governance
 11370-169091	248x844	sidebar - open learn
-11370-182316	248x844	sidebar - open explo
-5480-22549	1440x900	Skai > Learn > Skai 
-5518-101256	1440x900	Skai > Account 1VH (
+11370-182316	248x844	sidebar - open explorer
+5480-22549	1440x900	Skai > Learn > Skai university > Articles 1VH (1440 x 900px)
+5518-101256	1440x900	Skai > Account 1VH (1440 x 900px)
 5518-103036	367x296	Created tokens
 5518-102983	680x248	Overview - play
-5525-11686	680x248	Overview - play -hid
-5518-100072	1440x1542	Skai > Account (1440
-5526-47972	1440x1810	Skai > Account > Acc
-11267-125024	259x88	input/primary-inputs
-5529-72564	1440x1178	Skai > Account > Acc
-5529-73867	1440x978	Skai > Account > Acc
-5529-76029	1440x978	Skai > Account > Acc
-11267-125066	795x76	input/primary-inputs
-5529-73119	1440x1810	Skai > Account > Acc
+5525-11686	680x248	Overview - play -hidden
+5518-100072	1440x1542	Skai > Account (1440 x 900px)
+5526-47972	1440x1810	Skai > Account > Account settings (1440 x 900px)
+11267-125024	259x88	input/primary-inputs - with warning
+5529-72564	1440x1178	Skai > Account > Account settings (1440 x 900px)
+5529-73867	1440x978	Skai > Account > Account settings > Private key (1440 x 900px)
+5529-76029	1440x978	Skai > Account > Account settings > Private key - step 2 (1440 x 900px)
+11267-125066	795x76	input/primary-inputs - on:hover
+5529-73119	1440x1810	Skai > Account > Account settings > Preferences (1440 x 900px)
 10517-38160	250x92	dropdown-multiselect
 11212-20103	250x46	dropdown-multiselect
-11212-20117	163x122	dropdown-Snapshot li
-11706-321906	140x246	dropdown-yield vault
+11212-20117	163x122	dropdown-Snapshot list
+11706-321906	140x246	dropdown-yield vaults
 11260-123586	163x122	dropdown-account
-11266-123769	163x122	dropdown-account ove
+12082-426960	150x116	dropdown-account
+12082-426968	120x110	dropdown-account
+11266-123769	163x122	dropdown-account overview 2
+12097-427035	150x116	dropdown-account overview 3
+11266-123753	163x274	dropdown-account overview 1
+12097-427042	150x260	dropdown-account overview 4
 11260-123562	250x46	dropdown-multiselect
-11266-123753	163x274	dropdown-account ove
 11302-129670	163x274	dropdown-tiers
+12097-427103	150x260	dropdown-tiers
+12097-427168	150x260	dropdown-tiers
+12097-427118	120x246	dropdown-tiers
+12097-427198	120x246	dropdown-tiers
 11303-133248	163x274	dropdown-tiers
 11303-134267	163x160	dropdown-period
-11267-123785	1440x900	Skai > Account > Per
+12097-427183	150x152	dropdown-period
+12097-427159	120x144	dropdown-period
+11267-123785	1440x900	Skai > Account > Performance overview > Share networth (1440 x 900px)
+12097-427133	200x44	dropdown-multiselect
 11302-129701	250x46	dropdown-multiselect
+12097-427139	160x76	dropdown-multiselect
+12097-427192	200x44	dropdown-multiselect
+12097-427213	160x76	dropdown-multiselect
 11303-133263	250x46	dropdown-multiselect
 11307-135079	250x130	dropdown-multiselect
+12097-428935	200x124	dropdown-multiselect
+12097-428961	180x160	dropdown-multiselect
+12097-428990	200x124	dropdown-multiselect
+12097-429016	180x160	dropdown-multiselect
 11307-135103	250x130	dropdown-multiselect
 11314-138124	250x92	dropdown-multiselect
-11309-136994	1440x2286	Skai > Governance > 
+12097-429231	200x88	dropdown-multiselect
+12097-429243	180x84	dropdown-multiselect
+11309-136994	1440x2286	Skai > Governance > Proposals > New proposal 1VH (1440 x 900px)
 11314-138082	394x110	DAO boost - met
 11314-138141	163x274	dropdown-staking
 11314-139095	212x236	dropdown-delegates
-11314-139110	212x84	dropdown-delegate ty
-11314-139153	212x84	dropdown-delegate ty
-11314-138452	548x227	Claimed - not 100% r
-11314-138456	548x227	Claimed - not 100% r
+11314-139110	212x84	dropdown-delegate type
+12136-432067	200x224	dropdown-delegates
+12136-432080	200x80	dropdown-delegate type
+12136-432102	180x212	dropdown-delegates
+12136-432115	180x76	dropdown-delegate type
+11314-139153	212x84	dropdown-delegate type
+12136-432150	150x80	dropdown-delegate type
+12136-432155	120x76	dropdown-delegate type
+11314-138452	548x227	Claimed - not 100% represented
 11314-139131	250x130	dropdown-multiselect
+12136-432085	220x124	dropdown-multiselect
+11314-138456	548x227	Claimed - not 100% represented - claimed
+12097-431830	676x194	Claimed - not 100% represented
+12136-432120	200x118	dropdown-multiselect
 11322-142230	163x160	dropdown-courses
 11344-143602	250x130	dropdown-multiselect
+12166-455569	200x124	dropdown-multiselect
+12166-455585	180x118	dropdown-multiselect
 11345-144023	200x198	dropdown-main
-11345-146380	163x198	dropdown-Active TWAP
+12166-456452	180x188	dropdown-main
+12166-456481	150x178	dropdown-main
+11345-146380	163x198	dropdown-Active TWAPs
+12166-456510	150x188	dropdown-Active TWAPs
+12166-456521	120x178	dropdown-Active TWAPs
 11345-146410	250x46	dropdown-multiselect
-11349-148487	284x250	Additional informati
+11349-148487	284x250	Additional information
+12166-456349	250x250	Additional information
+12166-456409	220x248	Additional information
 11349-148646	250x46	dropdown-multiselect
+12166-456389	200x44	dropdown-multiselect
+12166-456532	200x44	dropdown-multiselect
+12166-456402	200x42	dropdown-multiselect
 11349-148686	163x274	dropdown-addresses
+12166-456544	150x274	dropdown-addresses
+12166-456568	120x246	dropdown-addresses
+12166-456559	150x152	dropdown-Chart
 11349-148702	163x160	dropdown-Chart
-11370-187312	248x844	sidebar - open airdr
-11370-188203	248x844	sidebar - open yield
-11664-305419	296x812	sidebar - open casin
-11705-320498	296x812	sidebar - open casin
-11664-305531	318x1024	sidebar - open casin
-11713-326573	318x1024	sidebar - open casin
-11664-305643	768x1024	Skai > Social > Live
-11768-350612	375x812	Skai > Social > Live
-11705-320608	375x812	Skai > Social > Live
-11667-311059	768x1120	Skai > Social > Live
-11667-311323	375x1200	Skai > Social > Live
-11667-309312	768x1716	Skai > Social > Live
-11667-309576	375x1754	Skai > Social > Live
-11705-320482	178x274	dropdown-yield vault
-11713-326780	296x812	sidebar - open casin
-11713-326890	318x1024	sidebar - open casin
-11720-328046	768x2635	Skai > Social > Live
-11759-342393	768x2028	Skai > Social > Live
-11761-344888	768x2331	Skai > Social > Live
-11764-345696	768x2331	Skai > Social > Live
-11764-347374	768x1024	Skai > Social > Live
-11764-347974	768x1024	Skai > Social > Live
-11764-348102	768x1409	Skai > Social > Live
-11720-328489	768x1024	Skai > Social > Live
-11720-329924	768x1510	Skai > Social > Live
-11731-334110	768x1024	Skai > Social > Live
-11731-334936	768x1024	Skai > Social > Live
-11743-337927	768x1024	Skai > Social > Live
-11743-338537	768x1247	Skai > Social > Live
-11736-336798	768x1856	Skai > Social > Live
-11747-338776	768x1247	Skai > Social > Live
-11752-340049	768x2503	Skai > Social > Live
-11759-341556	768x1024	Skai > Social > Live
-11752-340430	768x1024	Skai > Social > Live
-11752-340994	768x1024	Skai > Social > Live
-11731-334391	768x2524	Skai > Social > Live
-11720-330741	768x1024	Skai > Social > Live
-11730-332229	768x1024	Skai > Social > Live
-11730-332652	768x1127	Skai > Social > Live
-11764-348558	768x1127	Skai > Social > Live
-11730-332977	708x370	section
-11713-327264	375x812	Skai > Social > Live
-11768-349002	768x1797	Skai > Social > Live
-11793-351692	768x1294	Skai > Social > Live
-11793-352217	768x1710	Skai > Social > Live
-11768-350087	768x1024	Skai > Social > Live
+12166-456583	120x144	dropdown-Chart
+11370-187312	248x844	sidebar - open airdrop
+11370-188203	248x844	sidebar
+11664-305419	296x812	sidebar - open casino
+11705-320498	296x812	sidebar
+12166-456592	296x916	sidebar
+11713-326573	318x1024	sidebar
+11664-305531	318x1024	sidebar
+12166-456702	318x1024	sidebar
+11664-305643	768x1024	Skai > Airdrop 1VH (768 x 1024px)
+11983-182767	768x2680	Skai > Explorer (768 x 1024px)
+11986-223183	768x1024	Skai > Explorer 1VH (768 x 1024px)
+11989-231104	768x1762	Skai > Explorer > Address (768 x 1024px)
+11989-232490	768x1684	Skai > Explorer > Address > Holdings (768 x 1024px)
+11991-234861	768x1490	Skai > Explorer > Address > Perps (768 x 1024px)
+11991-236086	768x1558	Skai > Explorer > Address > Orders (768 x 1024px)
+11991-237411	768x1343	Skai > Explorer > Address > Orders (768 x 1024px)
+11992-238368	768x1380	Skai > Explorer > Address > Staking (768 x 1024px)
+11992-238830	768x1432	Skai > Explorer > Address > Lending (768 x 1024px)
+11998-347370	700x316	Frame 1000003953
+11992-239733	768x1925	Skai > Explorer > Address > Others (768 x 1024px)
+11998-244576	768x1046	Skai > Explorer > Blocks (768 x 1024px)
+11998-246468	768x1024	Skai > Explorer > Transactions 1VH (768 x 1024px)
+11997-242875	768x1087	Skai > Explorer > Tokens (768 x 1024px)
+11993-241225	768x2036	Skai > Explorer > Analytics 1VH (768 x 1024px)
+11998-251087	768x1308	Skai > Explorer > Tokens (768 x 1024px)
+11998-256391	768x1164	Skai > Explorer > Gaming (768 x 1024px)
+11998-262008	768x1104	Skai > Explorer > Addresses (768 x 1024px)
+12001-366177	700x490	Frame 1000003963
+11998-266062	768x1570	Skai > Explorer > DeFi (768 x 1024px)
+12001-376676	664x50	Frame 1000003967
+11998-264346	768x1431	Skai > Explorer > Points (768 x 1024px)
+11998-257569	768x1164	Skai > Explorer > Governance (768 x 1024px)
+11998-259528	768x1358	Skai > Explorer > Social (768 x 1024px)
+11998-260352	768x1024	Skai > Explorer > Lending 1VH (768 x 1024px)
+11998-254527	708x648	section
+11998-252837	768x1024	Skai > Explorer > AI 1VH (768 x 1024px)
+11998-253933	768x1024	Skai > Explorer > Launchpad 1VH (768 x 1024px)
+11998-248840	768x1745	Skai > Explorer > Gas tracker (768 x 1024px)
+11986-224020	768x1024	Skai > Explorer 1VH (768 x 1024px)
+12049-413478	708x582	Withdraw from vault
+12049-413393	343x538	Withdraw from vault
+11705-320608	375x812	Skai > Airdrop 1VH (375 x 812px)
+11998-326822	375x3016	Skai > Explorer (375 x 812px)
+12136-435253	375x3724	Skai > Explorer (375 x 812px)
+11998-337508	375x1772	Skai > Explorer > Address (375 x 812px)
+11998-341045	375x1780	Skai > Explorer > Address > Holdings (375 x 812px)
+11998-342710	375x1502	Skai > Explorer > Address > Perps (375 x 812px)
+11998-343923	375x1568	Skai > Explorer > Address > Orders (375 x 812px)
+11998-345258	375x1342	Skai > Explorer > Address > Orders (375 x 812px)
+11998-346919	375x1430	Skai > Explorer > Address > Lending (375 x 812px)
+11998-347934	375x2136	Skai > Explorer > Address > Others (375 x 812px)
+11998-348921	375x1714	Skai > Explorer > Analytics (375 x 812px)
+11998-350745	375x1204	Skai > Explorer > Tokens (375 x 812px)
+11998-351710	375x1004	Skai > Explorer > Blocks (375 x 812px)
+12000-357207	375x1470	Skai > Explorer > Gas tracker (375 x 812px)
+12000-359408	375x1154	Skai > Explorer > Tokens (375 x 812px)
+12001-362424	375x862	Skai > Explorer > AI (375 x 812px)
+12001-363043	375x848	Skai > Explorer > Launchpad (375 x 812px)
+12001-365886	375x1112	Skai > Explorer > Gaming (375 x 812px)
+12001-368183	375x1064	Skai > Explorer > Governance (375 x 812px)
+12001-370309	375x1396	Skai > Explorer > Social (375 x 812px)
+12001-371015	375x960	Skai > Explorer > Lending (375 x 812px)
+12001-371549	375x1358	Skai > Explorer > Points (375 x 812px)
+12001-379226	375x1604	Skai > Explorer > DeFi (375 x 812px)
+12001-376043	375x1114	Skai > Explorer > Addresses (375 x 812px)
+12001-374466	375x1428	Skai > Explorer > Points (375 x 812px)
+12001-364997	343x634	section
+11998-354592	375x978	Skai > Explorer > Transactions (375 x 812px)
+11998-348680	343x1022	Frame 1000003955
+11998-328323	375x812	Skai > Explorer 1VH (375 x 812px)
+11998-329118	375x812	Skai > Explorer 1VH (375 x 812px)
+11667-311059	768x1120	Skai > Airdrop - not eligible (768 x 1024px)
+11667-311323	375x1110	Skai > Airdrop - not eligible (375 x 812px)
+11667-309312	768x1716	Skai > Airdrop (768 x 1024px)
+11667-309576	375x1700	Skai > Airdrop (375 x 812px)
+11705-320482	178x274	dropdown-yield vaults
+11713-326780	296x943	sidebar
+11713-326890	318x1024	sidebar
+12097-427937	318x1024	sidebar
+12166-455749	318x1024	sidebar
+11720-328046	768x2635	Skai > Learn (768 x 1024px)
+11759-342393	768x2028	Skai > Learn > Getting started with crypto (768 x 1024px)
+11761-344888	768x2331	Skai > Learn > Articles (768 x 1024px)
+11764-345696	768x2331	Skai > Learn > Articles > Sample article (768 x 1024px)
+11764-347374	768x1024	Skai > Learn > Articles > Create article - empty 1VH (768 x 1024px)
+11764-347974	768x1024	Skai > Learn > Articles > Create article 1VH (768 x 1024px)
+11764-348102	768x1409	Skai > Learn > Articles > Create article (768 x 1024px)
+11720-328489	768x1024	Skai > Learn > Courses 1VH (768 x 1024px)
+11900-108870	768x1024	Skai > Governance 1VH (768 x 1024px)
+11900-111292	768x1024	Skai > Governance > Proposals 1VH (768 x 1024px)
+12215-457394	676x446	Lock - with percentage
+12225-458404	708x852	With winners
+12225-458170	240x327	Frame 1000003977
+12215-457534	708x445	Tickets - empty
+12215-457238	350x500	House vault - if low
+11974-166788	708x556	Swap - no value
+11973-153432	580x500	Swap - no value
+11973-153573	448x516	modal
+11902-119713	768x1024	Skai > Governance > Proposals > Staking 1VH (768 x 1024px)
+11902-120450	768x1417	Skai > Governance > Proposals > Staking (768 x 1024px)
+12097-431847	676x194	Claimed - not 100% represented - claimed
+12097-431652	708x913	Vault actions - deposit and unclaimed
+11902-121921	768x1375	Skai > Governance > Proposals > Delegation (768 x 1024px)
+11902-122611	768x1024	Skai > Governance > Proposals > Delegation 1VH (768 x 1024px)
+11902-123338	768x1024	Skai > Governance > Proposals > Delegation > Delegate modal 1VH (768 x 1024px)
+11902-123792	768x1024	Skai > Governance > Proposals > Financials 1VH (768 x 1024px)
+11902-124420	768x1059	Skai > Governance > Proposals > Financials (768 x 1024px)
+11902-124936	768x1024	Skai > Governance > Proposals > About 1VH (768 x 1024px)
+12097-429324	768x1668	Skai > Governance > Proposals > New proposal (768 x 1024px)
+12097-431591	708x102	DAO boost - met
+11900-112324	768x1053	Skai > Governance > Proposals (768 x 1024px)
+11900-115023	768x1024	Skai > Governance > Proposals > Sample proposal - view - details caollapsed 1VH (768 x 1024px)
+11900-116992	768x1024	Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (768 x 1024px)
+11900-116258	768x2412	Skai > Governance > Proposals > Sample proposal - view (768 x 1024px)
+11900-115524	768x1024	Skai > Governance > Proposals > Sample proposal - view - details expanded 1VH (768 x 1024px)
+11720-329924	768x1510	Skai > Learn > Skai university - about (768 x 1024px)
+11731-334110	768x1024	Skai > Learn > Skai university > Sample course 1VH (768 x 1024px)
+11731-334936	768x1024	Skai > Learn > Skai university > Purchase modal 1VH (768 x 1024px)
+11743-337927	768x1024	Skai > Learn > Skai university > Sample course > Purchased > Sample video 1VH (768 x 1024px)
+12139-450594	708x702	Videoframe - playing
+12139-450651	708x702	Videoframe - before playing
+11743-338537	768x1247	Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (768 x 1024px)
+11736-336798	768x1856	Skai > Learn > Skai university > Sample course > Purchased (768 x 1024px)
+12166-455681	708x110	Course progress - completed
+11747-338776	768x1247	Skai > Learn > Skai university > Sample course > Purchased (768 x 1024px)
+11752-340049	768x2583	Skai > Learn > Skai university > Create course (768 x 1024px)
+11759-341556	768x1024	Skai > Learn > Skai university > Create course - Step 2 1VH (768 x 1024px)
+11752-340430	768x1024	Skai > Learn > Skai university > Create course - preview 1VH (768 x 1024px)
+11752-340994	768x1024	Skai > Learn > Skai university > Create course - preview 1VH (768 x 1024px)
+11731-334391	768x2524	Skai > Learn > Skai university > Sample course (768 x 1024px)
+11720-330741	768x1024	Skai > Learn > Skai university - about 1VH (768 x 1024px)
+11730-332652	768x1127	Skai > Learn > Skai university - courses (768 x 1024px)
+11730-332229	768x1024	Skai > Learn > Skai university - courses 1VH (768 x 1024px)
+11764-348558	768x1127	Skai > Learn > Skai university > Articles (768 x 1024px)
+11730-332977	708x370	Courses - buy
+11945-93362	375x3122	Skai > Learn (375 x 812px)
+12141-451132	375x1774	Skai > Learn > Getting started with crypto (375 x 812px)
+12141-453076	375x2916	Skai > Learn > Articles > Sample article (375 x 812px)
+12141-453691	375x812	Skai > Learn > Articles > Create article - empty 1VH (375 x 812px)
+12141-454982	375x1350	Skai > Learn > Articles > Create article (375 x 812px)
+12141-454200	375x812	Skai > Learn > Articles > Create article 1VH (375 x 812px)
+11894-102948	375x1376	Skai > Learn > Skai university - about (375 x 812px)
+11894-105984	375x2350	Skai > Learn > Skai university > Sample course (375 x 812px)
+11897-108098	375x2280	Skai > Learn > Skai university > Sample course > Purchased (375 x 812px)
+12166-455730	343x108	Course progress - completed
+11939-142514	375x1282	Skai > Learn > Skai university > Sample course > Purchased (375 x 812px)
+11942-143538	375x2733	Skai > Learn > Skai university > Create course  (375 x 812px)
+11943-145177	375x832	Skai > Learn > Skai university > Create course - Step 2 (375 x 812px)
+12141-450956	375x3596	Skai > Learn > Articles (375 x 812px)
+11943-143981	375x812	Skai > Learn > Skai university > Create course - preview 1VH (375 x 812px)
+11943-144590	375x812	Skai > Learn > Skai university > Create course - preview 1VH (375 x 812px)
+11939-141290	375x812	Skai > Learn > Skai university > Sample course > Purchased > Sample video 1VH (375 x 812px)
+12139-450707	343x531	Videoframe - playing
+12139-450745	343x531	Videoframe - before playing
+11945-94473	375x1137	Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (375 x 812px)
+11894-106261	375x812	Skai > Learn > Skai university > Sample course 1VH (375 x 812px)
+11896-106898	375x812	Skai > Learn > Skai university > Purchase modal 1VH (375 x 812px)
+11894-103839	375x1773	Skai > Learn > Skai university - courses (375 x 812px)
+12166-455601	343x858	Courses - buy
+12141-455088	375x1824	Skai > Learn > Skai university > Articles  (375 x 812px)
+11894-104173	375x812	Skai > Learn > Skai university 1VH (375 x 812px)
+11893-101461	375x812	Skai > Learn > Courses 1VH (375 x 812px)
+11894-104346	375x812	Skai > Learn > Skai university 1VH (375 x 812px)
+11900-109506	375x812	Skai > Governance 1VH (375 x 812px)
+12215-457316	343x450	House vault - if low
+12215-457464	319x422	Lock - with percentage
+12225-458552	343x1047	With winners
+12225-458263	319x218	Frame 1000003978
+12215-457820	343x855	Tickets - empty
+12003-384544	354x508	modal
+12003-384165	343x470	Swap - no value
+11902-127189	375x812	Skai > Governance > Proposals 1VH (375 x 812px)
+11906-133540	375x1460	Skai > Governance > Proposals > Staking (375 x 812px)
+12136-431944	319x186	Claimed - not 100% represented
+12136-431948	319x186	Claimed - not 100% represented - claimed
+12136-431955	343x562	Vault actions - deposit and unclaimed
+11907-137387	375x812	Skai > Governance > Proposals > Delegation - on chain 1VH (375 x 812px)
+11915-139136	375x812	Skai > Governance > Proposals > Financials 1VH (375 x 812px)
+11917-139866	375x1108	Skai > Governance > Proposals > Financials (375 x 812px)
+11917-140159	375x1024	Skai > Governance > Proposals > About (375 x 812px)
+11907-137821	375x812	Skai > Governance > Proposals > Delegation - off chain 1VH (375 x 812px)
+11907-136716	375x1389	Skai > Governance > Proposals > Delegation (375 x 812px)
+11907-134647	375x812	Skai > Governance > Proposals > Staking 1VH (375 x 812px)
+12097-431217	375x1614	Skai > Governance > Proposals > New proposal (375 x 812px)
+12097-431615	343x96	DAO boost - met
+11902-127752	375x1061	Skai > Governance > Proposals (375 x 812px)
+11904-130419	375x2188	Skai > Governance > Proposals > Sample proposal - view 1VH - details expanded - details expanded (375 x 812px)
+11904-130968	375x812	Skai > Governance > Proposals > Sample proposal - view 1VH - intro expanded 1VH (375 x 812px)
+11904-131516	375x812	Skai > Governance > Proposals > Sample proposal - view 1VH - details collapsed - intro collapsed 1VH (375 x 812px)
+11904-132064	375x812	Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (375 x 812px)
+11875-44348	375x1762	Skai > Account (375 x 812px)
+12097-427323	343x274	Created tokens
+11875-87593	375x1606	Skai > Account > Performance overview (375 x 812px)
+11881-88335	375x1206	Skai > Account > Performance overview (375 x 812px)
+12082-420596	375x812	Skai > Account > Performance overview > Share networth 1VH (375 x 812px)
+12082-421041	375x960	Skai > Account > Performance overview > Share networth 1VH (375 x 812px)
+11881-88859	375x812	Skai > Account > Account settings 1VH (375 x 812px)
+11881-89626	375x1418	Skai > Account > Account settings > Security (375 x 812px)
+11881-94366	375x1235	Skai > Account > Account settings > Preferences (375 x 812px)
+11884-94667	375x812	Skai > Account > Account settings > Private key 1VH (375 x 812px)
+11875-86552	375x812	Skai > Account 1VH (375 x 812px)
+11768-349002	768x1797	Skai > Account (768 x 1024px)
+12097-427224	708x283	Created tokens
+11793-351692	768x1294	Skai > Account > Performance overview (768 x 1024px)
+12080-420150	768x1024	Skai > Account > Performance overview > Share networth 1VH (768 x 1024px)
+11843-353118	768x1024	Skai > Account > Account settings 1VH (768 x 1024px)
+11843-354091	768x1490	Skai > Account > Account settings > Security (768 x 1024px)
+12082-426929	708x64	input/primary-inputs - on:hover
+11846-355280	768x1404	Skai > Account > Account settings > Preferences (768 x 1024px)
+11846-355837	768x1024	Skai > Account > Account settings > Private key 1VH (768 x 1024px)
+11846-356139	768x1024	Skai > Account > Account settings > Private key - step 2 1VH (768 x 1024px)
+11793-352217	768x1710	Skai > Account > Performance overview (768 x 1024px)
+11768-350087	768x1024	Skai > Account 1VH (768 x 1024px)
+11884-95322	375x812	Skai > Account > Account settings > Private key - step 2 1VH (375 x 812px)
+12082-426944	343x60	input/primary-inputs - on:hover
+12097-427080	120x110	dropdown-account overview 5
+12097-427087	120x246	dropdown-account overview 6
+12097-427475	708x232	Overview - play
+12097-427652	708x232	Overview - play -hidden
+12097-427765	343x294	Overview - play
+12097-428192	296x988	sidebar
+12097-427882	343x294	Overview - play -hidden
+12166-455891	296x988	sidebar
+12166-455671	150x152	dropdown-courses
+12166-455702	120x144	dropdown-courses
+12166-456540	200x42	dropdown-multiselect
 ```
 
 ### ✅ Trade 1 — 195 live-only of 367 genuine  _(v1-superseded)_
@@ -522,7 +808,7 @@ Ranked by count. These are the unassessed frames.
 10706-129546	1047x450	Frame 1357
 ```
 
-### ✅ Home 1 — 130 live-only of 215 genuine  _(v1-superseded)_
+### ✅ Home 1 — 151 live-only of 236 genuine  _(v1-superseded)_
 
 ```
 5778-45523	126x109	profile image
@@ -530,131 +816,152 @@ Ranked by count. These are the unassessed frames.
 5778-45531	126x109	profile image
 5778-45537	126x109	profile image
 5780-45546	126x109	profile image
-2713-4240	1440x1129	Skai > Home - welcom
+2713-4240	1440x1129	Skai > Home - welcome (1440 x 900px)
 5786-48044	516x96	Second card
 2745-3552	680x126	Input w/o voice
 5902-145290	1144x566	Social - empty
-5902-147818	1112x180	Tier hover - Gold lo
+5902-147818	1112x180	Tier hover - Gold locked
 2987-16294	564x724	Modal - select chain
-2760-12240	1440x1477	Skai > Home > Portfo
-2773-7535	1440x1121	Skai > Home > Portfo
+2760-12240	1440x1477	Skai > Home > Portfolio (1440 x 900px)
+2773-7535	1440x1121	Skai > Home > Portfolio > Tiers (1440 x 900px)
 2773-10240	1144x513	Trade - empty
-5902-144187	1144x1028	Interest payment his
+5902-144187	1144x1028	Interest payment history - table version
 2768-14508	1144x404	Withdraw module
-2769-14589	1144x440	Withdraw module - un
+2769-14589	1144x440	Withdraw module - unavailable
 2736-26094	250x92	dropdown-3
-6250-93706	248x844	sidebar - open - gro
-6250-94544	248x844	sidebar - open - gro
-6250-92865	248x844	sidebar - open - gro
-5810-111037	248x967	sidebar - open home 
-5812-117161	248x124	sidebar - open home 
-5810-111638	248x844	sidebar - open - age
-5810-111233	248x844	sidebar - open - int
+6250-93706	248x844	sidebar - open - group chats - grouped
+6250-94544	248x844	sidebar - open - group chats - grouped
+6250-92865	248x844	sidebar - open - group chats
+5810-111037	248x967	sidebar - open home | scroll
+5812-117161	248x124	sidebar - open home | pinned
+5810-111638	248x844	sidebar - open - agentic support
+5810-111233	248x844	sidebar - open - intelligent support
 5863-89110	248x844	sidebar - open
 6314-18472	461x74	Frame 275
-6330-54599	768x1024	Skai > Home - welcom
-6379-18604	768x1024	Skai > Home - welcom
-6388-21725	768x1024	Skai > Home - welcom
-6393-53747	768x1024	Skai > Home - welcom
-6405-20293	768x1024	Skai > Home - welcom
-6405-20667	768x1024	Skai > Home - welcom
-6330-55267	375x812	Skai > Home - welcom
-6379-18643	375x812	Skai > Home - welcom
-6388-21892	375x812	Skai > Home - welcom
-6394-54418	375x812	Skai > Home - welcom
-6405-20479	375x812	Skai > Home - welcom
-6413-21006	375x812	Skai > Home - welcom
-6415-45107	768x1024	Skai > Home 1VH (768
-6702-25577	768x1024	Skai > Home - sideba
-6419-45976	768x1024	Skai > Home 1VH - qu
-6419-46299	768x1024	Skai > Home 1VH - qu
-6704-26096	768x1024	Skai > Home > AI Fee
-6710-25832	768x1024	Skai > Home > AI Fee
-6706-22658	768x1024	Skai > Home > AI Fee
-6706-24261	768x1275	Skai > Home > AI Fee
-6782-24811	768x1024	Skai > Home > Portfo
-6828-38811	768x1024	Skai > Home > Portfo
-6918-62834	768x1024	Skai > Home > Portfo
-6918-64949	768x1024	Skai > Home > Portfo
-6925-68955	768x1347	Skai > Home > Portfo
-6937-71607	768x1024	Skai > Home > Portfo
-6942-74270	768x1245	Skai > Home > Portfo
-6962-75733	768x2161	Skai > Home > Portfo
-6965-82190	768x1024	Skai > Home > Portfo
-6942-75317	708x708	Trade - empty - tabl
-6899-54796	768x2156	Skai > Home > Portfo
-6910-59017	708x518	Withdraw module - un
+6330-54599	768x1024	Skai > Home - welcome 1VH (768 x 1024px)
+6379-18604	768x1024	Skai > Home - welcome - scroll 1VH (768 x 1024px)
+6388-21725	768x1024	Skai > Home - welcome > onboarding Qs - with default PFP 1 1VH (768 x 1024px)
+6393-53747	768x1024	Skai > Home - welcome > onboarding Qs - load effect 1VH (768 x 1024px)
+6405-20293	768x1024	Skai > Home - welcome > onboarding Qs - load effect > Badge reward 1VH (768 x 1024px)
+6405-20667	768x1024	Skai > Home - welcome > onboarding Qs - load effect > Quests 1VH (768 x 1024px)
+6330-55267	375x812	Skai > Home - welcome 1VH (375 x 812px)
+6379-18643	375x812	Skai > Home - welcome - scroll 1VH (375 x 812px)
+6388-21892	375x812	Skai > Home - welcome > onboarding Qs - with default PFP 1 1VH (375 x 812px)
+6394-54418	375x812	Skai > Home - welcome > onboarding Qs - load effect 1VH (375 x 812px)
+6405-20479	375x812	Skai > Home - welcome > onboarding Qs - load effect 1VH (375 x 812px)
+6413-21006	375x812	Skai > Home - welcome > onboarding Qs - load effect > Quests 1VH (375 x 812px)
+6415-45107	768x1024	Skai > Home 1VH (768 x 1024px)
+14129-82852	768x1024	Skai > Home - with deposit 1VH (768 x 1024px)
+14136-89564	768x1024	Skai > Home - with deposit > quick balance ALT 1VH (768 x 1024px)
+14129-84348	768x1024	Skai > Home - with deposit > deposit modal 1VH (768 x 1024px)
+14136-85609	768x1024	Skai > Home - with deposit > deposit modal > Buy with Fiat 1VH (768 x 1024px)
+14136-86305	768x1024	Skai > Home - with deposit > deposit modal > Buy with Fiat > select currency 1VH (768 x 1024px)
+14136-87297	768x1024	Skai > Home - with deposit > deposit modal > Buy with Fiat > pay with 1VH (768 x 1024px)
+14136-88147	768x1024	Skai > Home - with deposit > deposit modal > Send crypto 1VH (768 x 1024px)
+14355-262060	448x704	modal
+14136-88988	768x1024	Skai > Home - with deposit > deposit modal > Send crypto > Deposit received 1VH (768 x 1024px)
+6702-25577	768x1024	Skai > Home - sidebar normal > Group chats > Folder name 1VH (768 x 1024px)
+6419-45976	768x1024	Skai > Home 1VH - query - focus 1VH (768 x 1024px)
+6419-46299	768x1024	Skai > Home 1VH - query 1VH (768 x 1024px)
+6704-26096	768x1024	Skai > Home > AI Feed - empty 1VH (768 x 1024px)
+6710-25832	768x1024	Skai > Home > AI Feed - actionable 1VH (768 x 1024px)
+6706-22658	768x1024	Skai > Home > AI Feed > Market intel > Manage intel 1VH (768 x 1024px)
+6706-24261	768x1275	Skai > Home > AI Feed > Market intel (768 x 1024px)
+6782-24811	768x1024	Skai > Home > Portfolio 1VH (768 x 1024px)
+6828-38811	768x1024	Skai > Home > Portfolio > Vault 1VH (768 x 1024px)
+6918-62834	768x1024	Skai > Home > Portfolio > Defi 1VH (768 x 1024px)
+6918-64949	768x1024	Skai > Home > Portfolio > Social 1VH (768 x 1024px)
+6925-68955	768x1347	Skai > Home > Portfolio > Social - with vesting (768 x 1024px)
+6937-71607	768x1024	Skai > Home > Portfolio > Tiers 1VH (768 x 1024px)
+6942-74270	768x1245	Skai > Home > Portfolio > Tiers (768 x 1024px)
+6962-75733	768x2161	Skai > Home > Portfolio > Badges (768 x 1024px)
+6965-82190	768x1024	Skai > Home > Portfolio > Badges > Badge preview (768 x 1024px)
+6942-75317	708x708	Trade - empty - tablet
+6899-54796	768x2156	Skai > Home > Portfolio > Vault (768 x 1024px)
+6910-59017	708x518	Withdraw module - unavailable
 6910-59056	708x426	Withdraw module
-6907-56580	1128x711	Section with horiz. 
-6910-58299	1128x1031	Interest payment his
-6795-31004	768x1024	Skai > Home > Portfo
-6811-32792	768x1024	Skai > Home > Portfo
-6811-34522	768x1024	Skai > Home > Portfo
-6811-35764	768x1024	Skai > Home > Portfo
-6828-36970	768x1024	Skai > Home > Portfo
-6811-34114	468x632	Modal - select chain
-6910-59407	375x2316	Skai > Home > Portfo
-6918-63866	375x812	Skai > Home > Portfo
-6925-67023	375x1125	Skai > Home > Portfo
-6934-70311	375x1728	Skai > Home > Portfo
-6942-72954	375x812	Skai > Home > Portfo
-6942-74751	375x1259	Skai > Home > Portfo
-6962-80042	375x2449	Skai > Home > Portfo
-6965-86368	375x812	Skai > Home > Portfo
-6942-75545	347x801	Trade - empty - mobi
-6925-67953	375x812	Skai > Home > Portfo
-6918-64538	375x896	Skai > Home > Portfo
+6907-56580	1128x711	Section with horiz. scroll - tablet
+6910-58299	1128x1031	Interest payment history - table version - tablet
+6795-31004	768x1024	Skai > Home > Portfolio - invisible 1VH (768 x 1024px)
+6811-32792	768x1024	Skai > Home > Portfolio > Add wallet 1VH (768 x 1024px)
+6811-34522	768x1024	Skai > Home > Portfolio > Add wallet > Name wallet 1VH (768 x 1024px)
+6811-35764	768x1024	Skai > Home > Portfolio > Export private key 1VH (768 x 1024px)
+6828-36970	768x1024	Skai > Home > Portfolio > Export private key > private key displayed 1VH (768 x 1024px)
+6811-34114	468x632	Modal - select chain - Tablet
+6910-59407	375x2316	Skai > Home > Portfolio > Vault (375 x 812px)
+6918-63866	375x812	Skai > Home > Portfolio > Vault 1VH (375 x 812px)
+6925-67023	375x1125	Skai > Home > Portfolio > Social (375 x 812px)
+6934-70311	375x1728	Skai > Home > Portfolio > Social - with vesting (375 x 812px)
+6942-72954	375x812	Skai > Home > Portfolio > Tiers (375 x 812px)
+6942-74751	375x1259	Skai > Home > Portfolio > Tiers (375 x 812px)
+6962-80042	375x2449	Skai > Home > Portfolio > Badges (375 x 812px)
+6965-86368	375x812	Skai > Home > Portfolio > Badges > Badge preview (375 x 812px)
+6942-75545	347x801	Trade - empty - mobile
+6925-67953	375x812	Skai > Home > Portfolio > Social 1VH (375 x 812px)
+6918-64538	375x896	Skai > Home > Portfolio > Vault (375 x 812px)
 6918-62064	347x440	Withdraw module
-6918-62267	347x536	Withdraw module - un
-6910-61118	1120x777	Section with horiz. 
-6918-61404	1120x1127	Section with horiz. 
-6419-47130	768x1024	Skai > Home - sideba
-6702-24782	768x1024	Skai > Home - sideba
-6415-45113	375x812	Skai > Home 1VH (375
-6704-27342	375x1330	Skai > Home > AI Fee
-6707-23360	375x1298	Skai > Home > AI Fee
-6710-24624	375x812	Skai > Home > AI Fee
-6710-24970	375x812	Skai > Home > AI Fee
-6704-29359	375x812	Skai > Home > AI Fee
-6702-25618	375x812	Skai > Home - sideba
-6419-47275	375x812	Skai > Home - sideba
-6702-25218	375x812	Skai > Home - sideba
-6419-45553	375x812	Skai > Home 1VH ALT 
-6736-37714	768x1024	Skai > Home > conver
-6715-34899	768x1984	Skai > Home > conver
-6736-37955	375x812	Skai > Home > conver
-6715-35126	375x1782	Skai > Home > conver
-6736-38442	768x1024	Skai > Home - ads > 
-6750-43337	768x1024	Skai > Home > Voice 
-6736-39216	768x1024	Skai > Home > Add > 
-6736-38635	375x812	Skai > Home - ads > 
-6736-39279	375x812	Skai > Home > Add > 
-6736-41729	768x1024	Skai > Home > Voice 
-6750-42546	375x812	Skai > Home > Voice 
-6750-43675	375x812	Skai > Home > Voice 
-6782-25160	375x812	Skai > Home > Portfo
-6811-32268	375x812	Skai > Home > Portfo
-6811-33593	375x812	Skai > Home > Portfo
-6811-35119	375x812	Skai > Home > Portfo
-6811-36029	375x812	Skai > Home > Portfo
-6828-37572	375x812	Skai > Home > Portfo
-6811-34411	354x590	Modal - select chain
-9746-172340	768x1024	Skai > Home > Instal
-9746-173030	375x812	Skai > Home > Instal
-9747-175217	375x812	Skai > Home > Instal
-13502-171413	564x778	modal
+6918-62267	347x536	Withdraw module - unavailable
+6910-61118	1120x777	Section with horiz. scroll - mobile
+6918-61404	1120x1127	Section with horiz. scroll - mobile
+6419-47130	768x1024	Skai > Home - sidebar 1VH (768 x 1024px)
+6702-24782	768x1024	Skai > Home - sidebar normal 1VH (768 x 1024px)
+6415-45113	375x812	Skai > Home 1VH (375 x 812px)
+14129-84086	375x812	Skai > Home - with deposit 1VH (375 x 812px)
+14129-84499	375x812	Skai > Home - with deposit > deposit modal 1VH (375 x 812px)
+14136-89715	375x812	Skai > Home > Sidebar 1VH (375 x 812px)
+14317-260169	375x812	Skai > Home - with deposit > quick balance - wallet mini ALT 1VH (375 x 812px)
+14317-260499	375x812	Skai > Home - with deposit > quick balance - my wallets ALT 1VH (375 x 812px)
+14317-261272	313x421	dropdown-my wallets
+14136-85815	375x812	Skai > Home - with deposit > deposit modal > Buy with Fiat 1VH (375 x 812px)
+14136-86579	375x812	Skai > Home - with deposit > deposit modal > Buy with Fiat > select currency 1VH (375 x 812px)
+14136-87585	375x812	Skai > Home - with deposit > deposit modal > Buy with Fiat > pay with 1VH (375 x 812px)
+14136-88454	375x812	Skai > Home - with deposit > deposit modal > Send crypto 1VH (375 x 812px)
+14355-262291	354x702	modal
+14136-89280	375x812	Skai > Home - with deposit > deposit modal > Send crypto > Deposit received 1VH (375 x 812px)
+6704-27342	375x1330	Skai > Home > AI Feed - empty 1VH (375 x 812px)
+6707-23360	375x1298	Skai > Home > AI Feed > Market intel (375 x 812px)
+6710-24624	375x812	Skai > Home > AI Feed > Market intel 1VH (375 x 812px)
+6710-24970	375x812	Skai > Home > AI Feed > Market intel > Manage intel 1VH (375 x 812px)
+6704-29359	375x812	Skai > Home > AI Feed - empty (375 x 812px)
+6702-25618	375x812	Skai > Home - sidebar normal > Group chats > Folder name 1VH (375 x 812px)
+6419-47275	375x812	Skai > Home - sidebar 1VH (375 x 812px)
+6702-25218	375x812	Skai > Home - sidebar normal 1VH (375 x 812px)
+6419-45553	375x812	Skai > Home 1VH ALT (375 x 812px)
+6736-37714	768x1024	Skai > Home > conversation 3 > edit chat 1VH (768 x 1024px)
+6715-34899	768x1984	Skai > Home > conversation extended 1VH (768 x 1024px)
+6736-37955	375x812	Skai > Home > conversation 3 > edit chat 1VH (375 x 812px)
+6715-35126	375x1782	Skai > Home > conversation extended 1VH (375 x 812px)
+6736-38442	768x1024	Skai > Home - ads > Add 1VH (768 x 1024px)
+6750-43337	768x1024	Skai > Home > Voice prompt > chat history 1VH (768 x 1024px)
+6736-39216	768x1024	Skai > Home > Add > upload image 1VH (768 x 1024px)
+6736-38635	375x812	Skai > Home - ads > Add 1VH (375 x 812px)
+6736-39279	375x812	Skai > Home > Add > upload image 1VH (375 x 812px)
+6736-41729	768x1024	Skai > Home > Voice prompt 1VH (768 x 1024px)
+6750-42546	375x812	Skai > Home > Voice prompt 1VH (375 x 812px)
+6750-43675	375x812	Skai > Home > Voice prompt > chat history 1VH (375 x 812px)
+6782-25160	375x812	Skai > Home > Portfolio 1VH (375 x 812px)
+6811-32268	375x812	Skai > Home > Portfolio - invisible 1VH (375 x 812px)
+6811-33593	375x812	Skai > Home > Portfolio > Add wallet 1VH (375 x 812px)
+6811-35119	375x812	Skai > Home > Portfolio > Add wallet > Name wallet 1VH (375 x 812px)
+6811-36029	375x812	Skai > Home > Portfolio > Export private key 1VH (375 x 812px)
+6828-37572	375x812	Skai > Home > Portfolio > Export private key > private key displayed 1VH (375 x 812px)
+6811-34411	354x590	Modal - select chain - Mobile
+9746-172340	768x1024	Skai > Home > Install to homescreen 1VH (768 x 1024px)
+9746-173030	375x812	Skai > Home > Install to homescreen 1VH (375 x 812px)
+9747-175217	375x812	Skai > Home > Install to homescreen ALT 1VH (375 x 812px)
+14321-261423	564x778	modal
+14108-103468	1440x900	Skai > Home - with deposit ALT 1VH (1440 x 900px)
 13502-171904	290x354	Wallet MINI
+14136-89913	290x352	Wallet MINI
 13495-171067	200x274	dropdown-token
 13495-171110	200x160	dropdown-networks
+14136-88793	180x260	dropdown-token
+14136-88815	180x152	dropdown-networks
+14136-88891	160x260	dropdown-token
+14136-88913	160x152	dropdown-networks
 13502-171979	313x432	dropdown-my wallets
-13490-169635	512x512	USD 1
-13490-169621	24x24	EUR 1
-13490-169631	512x512	DKK 1
-13490-169640	512x512	CZK 1
-13490-169644	512x512	COP 1
-13490-169649	512x512	CAD 1
-13490-169687	512x512	AUD 1
-13490-169652	512x512	BRL 1
+14129-83324	296x812	sidebar
+14129-83460	318x1024	sidebar
 ```
 
 ### ✅ Onboarding and Authentication — 127 live-only of 127 genuine  _(excluded)_
@@ -1011,6 +1318,72 @@ Ranked by count. These are the unassessed frames.
 10706-129546	1047x450	Frame 1357
 ```
 
+### ✅ Home 2 — 61 live-only of 204 genuine  _(in-scope)_
+
+```
+14062-50444	768x1024	Skai > Home > Intelligent support - Market intel 1VH (768 x 1024px)
+14094-56626	768x1074	Skai > Home > Intelligent support (768 x 1024px)
+14094-69692	350x219	Frame 893
+14094-63614	768x1074	Skai > Home > Intelligent support ALT (768 x 1024px)
+14106-70649	768x2402	Skai > Home > Intelligent support - News (768 x 1024px)
+14113-73205	768x1024	Skai > Home > Intelligent support - Sentiment 1VH (768 x 1024px)
+14113-74721	768x1024	Skai > Home > Intelligent support - Sentiment > Trending topics - modal 1VH (768 x 1024px)
+14113-76027	768x1284	Skai > Home > Intelligent support - Analysis (768 x 1024px)
+14113-76606	768x1024	Skai > Home > Intelligent support - Analysis > display settings 1VH (768 x 1024px)
+14123-77342	768x1024	Skai > Home > Agentic support - AI master 1VH (768 x 1024px)
+14123-77740	768x1024	Skai > Home > Agentic support - AI master > Create AI agent 1VH (768 x 1024px)
+14179-163502	768x1024	Skai > Home > Agentic support - AI master > Create AI agent - step 1 no data 1VH (768 x 1024px)
+14123-78540	768x1070	Skai > Home > Agentic support - AI master > Create AI agent - step 2 - choose personality (768 x 1024px)
+14123-80001	768x2548	Skai > Home > Agentic support - AI master > Create AI agent - step 2 - choose personality 2 (768 x 1024px)
+14123-81330	768x1295	Skai > Home > Agentic support - AI master > Create AI agent - step 3 - configure (768 x 1024px)
+14315-247761	768x1024	Skai > Home > Agentic support - AI master > Create AI agent - step 3 - configure > Confirm 1VH (768 x 1024px)
+14113-74132	768x2086	Skai > Home > Intelligent support - Sentiment (768 x 1024px)
+14106-71752	768x1024	Skai > Home > Intelligent support - News 1VH (768 x 1024px)
+14077-52941	768x1024	Skai > Home > Intelligent support - Market intel > Manage intel - all selected 1VH (768 x 1024px)
+14268-166261	768x1024	Skai > Home > Intelligent support - Market intel > Manage intel - few selected 1VH (768 x 1024px)
+14315-246829	768x1763	Skai > Home > Intelligent support - Market intel (768 x 1024px)
+14160-131728	375x812	Skai > Home > Intelligent support - Market intel 1VH (375 x 812px)
+14178-151580	375x812	Skai > Home > Intelligent support 1VH (375 x 812px)
+14316-248325	375x1425	Skai > Home > Intelligent support ALT 2 1VH (375 x 812px)
+14178-152219	375x812	Skai > Home > Intelligent support ALT 1VH (375 x 812px)
+14178-155931	168x142	Frame 894
+14160-134708	375x812	Skai > Home > Intelligent support - Market intel > Manage intel - few selected 1VH (375 x 812px)
+14160-135347	375x812	Skai > Home > Intelligent support - Market intel > Manage intel - all selected 1VH (375 x 812px)
+14160-139741	375x812	Skai > Home > Intelligent support - News 1VH (375 x 812px)
+14178-141206	375x2859	Skai > Home > Intelligent support - News (375 x 812px)
+14178-142300	375x1816	Skai > Home > Intelligent support - Sentiment (375 x 812px)
+14178-142962	375x812	Skai > Home > Intelligent support - Sentiment 1VH (375 x 812px)
+14178-143359	375x812	Skai > Home > Agentic support - Backtesting > conversation 6 1VH (375 x 812px)
+14178-157280	375x1201	Skai > Home > Intelligent support - Sentiment > Trending topics - modal (375 x 812px)
+14179-157892	375x812	Skai > Home > Intelligent support - Analysis > display settings 1VH (375 x 812px)
+14179-158300	375x812	Skai > Home > Agentic support - AI master 1VH (375 x 812px)
+14179-158963	375x812	Skai > Home > Agentic support - AI master > Create AI agent 1VH (375 x 812px)
+14179-163655	375x812	Skai > Home > Agentic support - AI master > Create AI agent - step 1 no data 1VH (1440 x 900px)
+14179-159153	375x946	Skai > Home > Agentic support - AI master > Create AI agent - step 2 - choose personality 1VH (375 x 812px)
+14179-159712	375x2488	Skai > Home > Agentic support - AI master > Create AI agent - step 2 - choose personality 2 (375 x 812px)
+14179-161276	375x1228	Skai > Home > Agentic support - AI master > Create AI agent - step 3 - configure (375 x 812px)
+14179-162716	375x812	Skai > Home > Agentic support - AI master > Create AI agent - step 3 - configure > Confirm 1VH (375 x 812px)
+14160-131918	375x1795	Skai > Home > Intelligent support - Market intel (375 x 812px)
+14094-70490	200x296	dropdown-filter
+14160-137581	180x280	dropdown-filter
+14106-72540	200x44	button-share link
+14178-156951	180x42	button-share link
+14191-164737	220x224	dropdown-venue
+14191-164772	200x212	dropdown-venue
+14191-164703	220x116	dropdown-response style
+14191-164720	200x110	dropdown-response style
+14191-164713	220x80	dropdown-templates
+14191-164730	200x76	dropdown-templates
+14191-164756	180x188	dropdown-time horizon
+14191-164791	150x178	dropdown-time horizon
+14160-133074	296x960	sidebar
+14191-164317	296x960	sidebar
+14160-133304	296x960	sidebar
+14094-55845	318x1024	sidebar
+14179-163988	318x1024	sidebar
+14094-56305	318x1024	sidebar
+```
+
 ### 📍 Master sheet — 45 live-only of 45 genuine  _(meta)_
 
 ```
@@ -1157,6 +1530,13 @@ Ranked by count. These are the unassessed frames.
 10285-14928	375x1605	Skai > Play > Casino
 ```
 
+### ✅ Trade 2 — 2 live-only of 377 genuine  _(in-scope)_
+
+```
+14180-115254	1382x22	Trench scroller - undocked
+13935-69044	1440x900	Skai > Trench 1VH (1440 x 900px)
+```
+
 ### Thumbnail — 1 live-only of 1 genuine  _(meta)_
 
 ```
@@ -1183,14 +1563,14 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift B — catalog-only (a row pointing at a node that is not a live top-level child)
 
-133 node ids are named by a row but are not a live top-level child of any page. They are not all drift:
+29 node ids are named by a row but are not a live top-level child of any page. They are not all drift:
 
 | outcome | count | is it drift? |
 |---|---:|---|
 | `nested` — a node inside a frame that IS live | 4 | no, a deep link |
 | `bug-link` — listed in the bug node indexes | 23 | no, a deep link |
 | `page-ref` — the row cites a Figma PAGE id, not a frame | 0 | no |
-| **`gone`** — not live, not nested under anything live, not a known link | **106** | **yes** |
+| **`gone`** — not live, not nested under anything live, not a known link | **2** | **yes** |
 
 ★ Report both directions. Equal counts hide an equal-sized swap: Dice measured 36 live and 36 catalog with a 2-for-2 swap inside it.
 
@@ -1198,115 +1578,11 @@ Ranked by count. These are the unassessed frames.
 ```
 10120-8434	done	status.wave29.g-towers.tsv:5
 10893-5451	partial	status.wave29.g-towers.tsv:10
-11843-353663	partial	status.governance.tsv:165
-11846-354965	partial	status.governance.tsv:166
-11847-357151	partial	status.wave33.social-pages.tsv:31 status.wave34.social-pages.tsv:26
-11872-41908	partial	status.governance.tsv:167
-11872-42520	partial	status.governance.tsv:168
-11872-43820	partial	status.governance.tsv:169
-11881-89414	partial	status.governance.tsv:170
-11881-93654	partial	status.governance.tsv:171
-11884-96408	partial	status.wave33.social-pages.tsv:32 status.wave34.social-pages.tsv:27
-11885-100111	partial	status.governance.tsv:172
-11885-98503	partial	status.governance.tsv:173
-11885-98886	partial	status.governance.tsv:174
-11885-99426	partial	status.governance.tsv:175
-11907-138358	not-started	status.governance.tsv:176
-11946-148523	partial	status.wave33.social-pages.tsv:33 status.wave34.social-pages.tsv:28
-11972-149758	partial	status.governance.tsv:177
-11972-150945	partial	status.governance.tsv:178
-11972-151493	partial	status.governance.tsv:179
-11972-152545	not-started	status.governance.tsv:180
-11972-153216	not-started	status.governance.tsv:181
-11973-153636	partial	status.governance.tsv:182
-11973-154184	partial	status.governance.tsv:183
-11973-155655	not-started	status.governance.tsv:184
-11973-158164	not-started	status.governance.tsv:185
-11973-158665	not-started	status.governance.tsv:186
-11973-159235	not-started	status.governance.tsv:187
-11973-159567	not-started	status.governance.tsv:188
-11973-160234	not-started	status.governance.tsv:189
-11973-161769	not-started	status.governance.tsv:190
-11973-161912	not-started	status.governance.tsv:191
-11974-165410	not-started	status.governance.tsv:192
-11978-168335	partial	status.governance.tsv:193
-11978-168824	partial	status.governance.tsv:194
-11978-169460	not-started	status.governance.tsv:195
-11978-170038	partial	status.governance.tsv:196
-11978-171157	partial	status.governance.tsv:197
-11980-172605	partial	status.governance.tsv:198
-11980-173398	blocked-on-backend	status.governance.tsv:199
-11980-173965	partial	status.governance.tsv:200
-11980-175816	blocked-on-backend	status.governance.tsv:201
-11980-177310	partial	status.governance.tsv:202
-11983-179665	partial	status.governance.tsv:203
-11983-180657	partial	status.governance.tsv:204
-11983-181349	partial	status.governance.tsv:205
-11983-182085	partial	status.governance.tsv:206
-11986-226555	partial	status.governance.tsv:207
-11998-329996	partial	status.governance.tsv:208
-11998-346238	not-started	status.governance.tsv:209
-12003-382685	partial	status.governance.tsv:210
-12003-383100	partial	status.governance.tsv:211
-12003-383790	not-started	status.governance.tsv:212
-12003-384268	not-started	status.governance.tsv:213
-12003-384627	partial	status.governance.tsv:214
-12003-385486	partial	status.governance.tsv:215
-12003-386268	partial	status.governance.tsv:216
-12003-386958	partial	status.governance.tsv:217
-12003-387432	not-started	status.governance.tsv:218
-12003-387906	partial	status.governance.tsv:219
-12004-388816	partial	status.governance.tsv:220
-12004-389667	partial	status.governance.tsv:221
-12004-390587	partial	status.governance.tsv:222
-12004-392671	blocked-on-backend	status.governance.tsv:223
-12004-393178	partial	status.governance.tsv:224
-12004-393542	blocked-on-backend	status.governance.tsv:225
-12004-394869	partial	status.governance.tsv:226
-12004-396180	not-started	status.governance.tsv:227
-12004-396474	not-started	status.governance.tsv:228
-12004-396713	not-started	status.governance.tsv:229
-12004-396856	not-started	status.governance.tsv:230
-12004-397714	not-started	status.governance.tsv:231
-12004-398296	not-started	status.governance.tsv:232
-12004-399859	not-started	status.governance.tsv:233
-12004-402326	not-started	status.governance.tsv:234
-12004-405136	not-started	status.governance.tsv:235
-12004-406527	not-started	status.governance.tsv:236
-12004-408480	partial	status.governance.tsv:237
-12004-409355	partial	status.governance.tsv:238
-12004-410317	partial	status.governance.tsv:239
-12004-410871	partial	status.governance.tsv:240
-12009-412243	partial	status.governance.tsv:241
-12016-75585	partial	status.governance.tsv:242
-12080-414162	partial	status.governance.tsv:243
-12080-414477	partial	status.governance.tsv:244
-12080-414792	partial	status.governance.tsv:245
-12080-415107	partial	status.governance.tsv:246
-12080-415417	partial	status.governance.tsv:247
-12080-415727	partial	status.governance.tsv:248
-12082-425650	partial	status.governance.tsv:249
-12082-426150	partial	status.governance.tsv:250
-12082-426533	partial	status.governance.tsv:251
-12136-432663	partial	status.governance.tsv:252
-12136-433829	partial	status.governance.tsv:253
-12225-461211	not-started	status.governance.tsv:254
-12225-462288	not-started	status.governance.tsv:255
-12225-462758	not-started	status.governance.tsv:256
-12261-469767	not-started	status.governance.tsv:257
-12261-470424	not-started	status.governance.tsv:258
-12261-474854	partial	status.governance.tsv:259
-12261-475335	partial	status.governance.tsv:260
-13669-141257	not-started	status.wave7.home2.tsv:45
-14094-54390	partial	status.wave28.home2-feed.tsv:44
-14094-67930	partial	status.wave28.home2-feed.tsv:41
-14160-136184	partial	status.wave28.home2-feed.tsv:45
-14160-137998	partial	status.wave28.home2-feed.tsv:42
 ```
 
 ## Drift D — one frame, two lanes, two different verdicts
 
-**15 of the 1914 in-scope matched frames (0.8%) are named by two or more rows that DISAGREE on status** — 15 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
+**15 of the 1919 in-scope matched frames (0.8%) are named by two or more rows that DISAGREE on status** — 15 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
 
 | the disagreement | frames |
 |---|---:|
@@ -1356,7 +1632,6 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.wave2.predict.tsv` | 33 | 16 | 30 |
 | `status.wave15b.games-b.tsv` | 14 | 8 | 8 |
 | `status.wave23.play-hub.tsv` | 7 | 4 | 4 |
-| `status.wave28.home2-feed.tsv` | 10 | 6 | 6 |
 | `status.wave2.play.tsv` | 27 | 17 | 24 |
 | `status.wave8.games-c.tsv` | 15 | 10 | 26 |
 | `status.wave2.trench-pnl.tsv` | 6 | 4 | 3 |
@@ -1369,8 +1644,6 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.wave17.trade2-spot.tsv` | 4 | 3 | 3 |
 | `status.wave28.play-hub.tsv` | 9 | 7 | 9 |
 | `status.wave30.trade-pages.tsv` | 9 | 7 | 8 |
-| `status.wave33.social-pages.tsv` | 9 | 7 | 7 |
-| `status.wave34.social-pages.tsv` | 9 | 7 | 9 |
 | `status.wave17.trade1-chart.tsv` | 14 | 11 | 11 |
 | `status.wave23.predict-detail.tsv` | 14 | 11 | 11 |
 | `status.wave17.play-pages.tsv` | 15 | 12 | 12 |
@@ -1396,9 +1669,10 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.wave24.trench-a.tsv` | 54 | 52 | 43 |
 | `status.wave8.social-profile.tsv` | 31 | 30 | 30 |
 | `status.social.tsv` | 82 | 80 | 96 |
-| `status.wave7.home2.tsv` | 55 | 54 | 54 |
 | `status.wave8.games-b.tsv` | 69 | 68 | 55 |
+| `status.governance-account.tsv` | 84 | 83 | 96 |
 | `status.wallet-2.b.tsv` | 91 | 90 | 89 |
+| `status.governance.tsv` | 244 | 243 | 261 |
 
 ## What this number does NOT mean
 
@@ -1408,15 +1682,15 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 502 of 10044 status rows (5.0%) name no node id at all, and 551 (5.5%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 504 of 10044 status rows (5.0%) name no node id at all, and 544 (5.4%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 15131 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 15133 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 280 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
-**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1914 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to Skai Web App 2) 24/24, ✅ Trade 1 24/172 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
+**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1919 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to Skai Web App 2) 24/24, ✅ Trade 1 24/172 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
-**8. 118 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
+**8. 120 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
 
 **9. The live half is a snapshot.** `pages.json.liveChildren` was stale on 13 pages when this ran — Home 2 recorded 129 against a measured 168, Governance 260 against 331, Home 1 227 against 254. Re-harvest before quoting these numbers in a new week.
 

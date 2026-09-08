@@ -1,36 +1,36 @@
 {
-  "generated": "2026-09-08T02:01:26.574Z",
+  "generated": "2026-09-08T02:34:41.630Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 28,
-    "live": 2332,
-    "furniture": 418,
-    "genuine": 1914,
-    "matched": 1914,
+    "live": 2414,
+    "furniture": 432,
+    "genuine": 1982,
+    "matched": 1919,
     "done": 431,
-    "partial": 1065,
-    "notStarted": 152,
+    "partial": 1069,
+    "notStarted": 153,
     "blocked": 77,
     "frameDefect": 96,
     "catalogFurniture": 42,
     "unknown": 40,
-    "liveOnly": 0,
+    "liveOnly": 63,
     "rollupOnly": 0,
-    "defaultNamed": 118,
+    "defaultNamed": 120,
     "ambiguous": 0,
     "conflicts": 15
   },
   "doneRows": {
     "total": 2067,
     "withBreakpointProvenance": 697,
-    "namingANodeId": 1748,
+    "namingANodeId": 1746,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 10044,
-    "namingNoNodeId": 502,
-    "namingNoLiveNodeId": 551,
-    "unrecognisedTokens": 15131
+    "namingNoNodeId": 504,
+    "namingNoLiveNodeId": 544,
+    "unrecognisedTokens": 15133
   },
   "statusFiles": [
     {
@@ -108,20 +108,20 @@
     {
       "file": "status.governance-account.tsv",
       "rows": 84,
-      "withLiveId": 84,
-      "ids": 89
+      "withLiveId": 83,
+      "ids": 96
     },
     {
       "file": "status.governance-vaults.tsv",
       "rows": 32,
       "withLiveId": 32,
-      "ids": 35
+      "ids": 49
     },
     {
       "file": "status.governance.tsv",
       "rows": 244,
-      "withLiveId": 244,
-      "ids": 150
+      "withLiveId": 243,
+      "ids": 261
     },
     {
       "file": "status.hilo.tsv",
@@ -133,7 +133,7 @@
       "file": "status.home-2.tsv",
       "rows": 168,
       "withLiveId": 168,
-      "ids": 168
+      "ids": 178
     },
     {
       "file": "status.home.tsv",
@@ -1242,8 +1242,8 @@
     {
       "file": "status.wave28.home2-feed.tsv",
       "rows": 10,
-      "withLiveId": 6,
-      "ids": 6
+      "withLiveId": 10,
+      "ids": 10
     },
     {
       "file": "status.wave28.play-casino-a.tsv",
@@ -1506,8 +1506,8 @@
     {
       "file": "status.wave33.social-pages.tsv",
       "rows": 9,
-      "withLiveId": 7,
-      "ids": 7
+      "withLiveId": 9,
+      "ids": 10
     },
     {
       "file": "status.wave33.social-post.tsv",
@@ -1560,8 +1560,8 @@
     {
       "file": "status.wave34.social-pages.tsv",
       "rows": 9,
-      "withLiveId": 7,
-      "ids": 9
+      "withLiveId": 9,
+      "ids": 12
     },
     {
       "file": "status.wave34.social-post.tsv",
@@ -1872,8 +1872,8 @@
     {
       "file": "status.wave7.home2.tsv",
       "rows": 55,
-      "withLiveId": 54,
-      "ids": 54
+      "withLiveId": 55,
+      "ids": 55
     },
     {
       "file": "status.wave7.play.tsv",
@@ -4272,111 +4272,197 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "pageName": "🚧 Governance and Utilities",
-      "readiness": "wip",
-      "n": 331,
+      "harvestedAt": "2026-09-08",
+      "pageName": "✅ Governance and Utilities",
+      "readiness": "ready",
+      "n": 725,
       "scope": "held",
-      "live": 331,
-      "furniture": 57,
+      "live": 725,
+      "furniture": 66,
       "furnitureWhy": {
-        "canvas-chrome": 57
+        "canvas-chrome": 64,
+        "loose-instance": 2
       },
-      "genuine": 274,
-      "matched": 74,
-      "rollupOnly": 2,
-      "defaultNamed": 0,
+      "genuine": 659,
+      "matched": 173,
+      "rollupOnly": 9,
+      "defaultNamed": 46,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 46,
-        "not-started": 18,
-        "blocked-on-backend": 8,
+        "partial": 109,
+        "not-started": 50,
+        "blocked-on-backend": 12,
         "unknown": 2
       },
       "liveOnly": [
         {
           "id": "5370-61920",
-          "name": "Skai > Governance 1V",
+          "name": "Skai > Governance 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5480-32393",
-          "name": "Skai > Airdrop 1VH (",
+          "name": "Skai > Airdrop 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5539-93683",
-          "name": "Skai > Explorer 1VH ",
+          "name": "Skai > Explorer 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "11345-144081",
-          "name": "Skai > Explorer - cu",
+          "name": "Skai > Explorer - customise 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5586-110620",
-          "name": "🚧 Skai > Explorer >",
+          "name": "Skai > Explorer > Address 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5638-112382",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Address 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1611
         },
         {
+          "id": "11989-231980",
+          "name": "Frame 270",
+          "type": "FRAME",
+          "w": 1094,
+          "h": 660
+        },
+        {
+          "id": "11998-339138",
+          "name": "Frame 1000003943",
+          "type": "FRAME",
+          "w": 1054,
+          "h": 658
+        },
+        {
           "id": "11349-147772",
-          "name": "Transactions - with ",
+          "name": "Transactions - with arrow",
           "type": "FRAME",
           "w": 1318,
           "h": 758
         },
         {
           "id": "5660-114498",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Address > Holdings 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1555
         },
         {
+          "id": "11991-233583",
+          "name": "Frame 1000003927",
+          "type": "FRAME",
+          "w": 854,
+          "h": 582
+        },
+        {
+          "id": "11998-340705",
+          "name": "Frame 1000003944",
+          "type": "FRAME",
+          "w": 814,
+          "h": 658
+        },
+        {
+          "id": "11998-342147",
+          "name": "Frame 1000003947",
+          "type": "FRAME",
+          "w": 343,
+          "h": 1026
+        },
+        {
+          "id": "11991-234531",
+          "name": "Frame 1000003928",
+          "type": "FRAME",
+          "w": 708,
+          "h": 568
+        },
+        {
           "id": "5662-124997",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Address > Staking 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1236
         },
         {
+          "id": "11992-238265",
+          "name": "Frame 1000003932",
+          "type": "FRAME",
+          "w": 854,
+          "h": 278
+        },
+        {
+          "id": "11998-346606",
+          "name": "Frame 1000003952",
+          "type": "FRAME",
+          "w": 814,
+          "h": 362
+        },
+        {
           "id": "5664-127101",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Address > Lending 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1236
         },
         {
           "id": "5661-118252",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Address > Perps 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1330
         },
         {
+          "id": "11991-235444",
+          "name": "Frame 298",
+          "type": "FRAME",
+          "w": 936,
+          "h": 388
+        },
+        {
+          "id": "11998-343301",
+          "name": "Frame 1000003948",
+          "type": "FRAME",
+          "w": 904,
+          "h": 388
+        },
+        {
           "id": "5662-120139",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Address > Orders 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1330
+        },
+        {
+          "id": "11991-236624",
+          "name": "Frame 1000003929",
+          "type": "FRAME",
+          "w": 874,
+          "h": 456
+        },
+        {
+          "id": "11998-344467",
+          "name": "Frame 1000003949",
+          "type": "FRAME",
+          "w": 834,
+          "h": 454
         },
         {
           "id": "5662-124365",
@@ -4386,134 +4472,288 @@
           "h": 458
         },
         {
+          "id": "11992-238112",
+          "name": "Frame 1000003931",
+          "type": "FRAME",
+          "w": 914,
+          "h": 350
+        },
+        {
+          "id": "11998-346069",
+          "name": "Frame 1000003951",
+          "type": "FRAME",
+          "w": 874,
+          "h": 348
+        },
+        {
+          "id": "12136-438810",
+          "name": "Frame 1000003976",
+          "type": "FRAME",
+          "w": 343,
+          "h": 356
+        },
+        {
           "id": "5662-122540",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Address > Orders 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1330
         },
         {
           "id": "5664-127738",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Address > Others 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1757
         },
         {
           "id": "5669-128901",
-          "name": "Skai > Explorer > An",
+          "name": "Skai > Explorer > Analytics 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2027
         },
         {
           "id": "5675-131659",
-          "name": "Skai > Explorer > To",
+          "name": "Skai > Explorer > Tokens 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1399
+        },
+        {
+          "id": "11998-243350",
+          "name": "Frame 1000003933",
+          "type": "FRAME",
+          "w": 924,
+          "h": 536
+        },
+        {
+          "id": "11998-350033",
+          "name": "Frame 1000003956",
+          "type": "FRAME",
+          "w": 884,
+          "h": 534
         },
         {
           "id": "5694-140556",
-          "name": "Skai > Explorer > To",
+          "name": "Skai > Explorer > Tokens 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1399
         },
         {
+          "id": "11998-251804",
+          "name": "Frame 1000003935",
+          "type": "FRAME",
+          "w": 914,
+          "h": 536
+        },
+        {
+          "id": "12000-358605",
+          "name": "Frame 1000003960",
+          "type": "FRAME",
+          "w": 906,
+          "h": 534
+        },
+        {
           "id": "5695-142802",
-          "name": "Skai > Explorer > AI",
+          "name": "Skai > Explorer > AI 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1399
         },
         {
           "id": "5702-143785",
-          "name": "Skai > Explorer > La",
+          "name": "Skai > Explorer > Launchpad 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1399
         },
         {
           "id": "11349-148815",
-          "name": "Active Projects - wi",
+          "name": "Active Projects - with data",
           "type": "FRAME",
           "w": 1318,
           "h": 650
         },
         {
+          "id": "11998-254229",
+          "name": "Frame 270",
+          "type": "FRAME",
+          "w": 1004,
+          "h": 536
+        },
+        {
+          "id": "12001-364733",
+          "name": "Frame 1000003962",
+          "type": "FRAME",
+          "w": 964,
+          "h": 534
+        },
+        {
           "id": "5702-144185",
-          "name": "Skai > Explorer > Ga",
+          "name": "Skai > Explorer > Gaming 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1245
         },
         {
           "id": "5707-145880",
-          "name": "Skai > Explorer > Go",
+          "name": "Skai > Explorer > Governance 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1245
         },
         {
+          "id": "11998-258706",
+          "name": "Frame 1000003936",
+          "type": "FRAME",
+          "w": 1034,
+          "h": 444
+        },
+        {
+          "id": "12001-367469",
+          "name": "Frame 1000003964",
+          "type": "FRAME",
+          "w": 1026,
+          "h": 444
+        },
+        {
           "id": "5711-148542",
-          "name": "Skai > Explorer > Po",
+          "name": "Skai > Explorer > Points 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1510
+        },
+        {
+          "id": "11998-262492",
+          "name": "Frame 1000003937",
+          "type": "FRAME",
+          "w": 794,
+          "h": 532
+        },
+        {
+          "id": "12001-371853",
+          "name": "Frame 1000003965",
+          "type": "FRAME",
+          "w": 754,
+          "h": 532
         },
         {
           "id": "5720-152742",
-          "name": "Skai > Explorer > Ad",
+          "name": "Skai > Explorer > Addresses 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1510
         },
         {
+          "id": "11998-264962",
+          "name": "Frame 1000003938",
+          "type": "FRAME",
+          "w": 908,
+          "h": 432
+        },
+        {
+          "id": "12001-375115",
+          "name": "Frame 1000003966",
+          "type": "FRAME",
+          "w": 900,
+          "h": 432
+        },
+        {
           "id": "5711-150322",
-          "name": "Skai > Explorer > De",
+          "name": "Skai > Explorer > DeFi 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1801
         },
         {
+          "id": "11998-267880",
+          "name": "Frame 1000003939",
+          "type": "FRAME",
+          "w": 1094,
+          "h": 636
+        },
+        {
+          "id": "12001-377814",
+          "name": "Frame 1000003968",
+          "type": "FRAME",
+          "w": 1054,
+          "h": 634
+        },
+        {
           "id": "5711-147902",
-          "name": "Skai > Explorer > Le",
+          "name": "Skai > Explorer > Lending 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5707-146891",
-          "name": "Skai > Explorer > So",
+          "name": "Skai > Explorer > Social 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1692
         },
         {
           "id": "5689-136816",
-          "name": "Skai > Explorer > Bl",
+          "name": "Skai > Explorer > Blocks 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1301
+        },
+        {
+          "id": "11998-245136",
+          "name": "Frame 1000003934",
+          "type": "FRAME",
+          "w": 744,
+          "h": 640
+        },
+        {
+          "id": "11998-352184",
+          "name": "Frame 1000003957",
+          "type": "FRAME",
+          "w": 704,
+          "h": 638
+        },
+        {
+          "id": "12000-357680",
+          "name": "Frame 1000003959",
+          "type": "FRAME",
+          "w": 654,
+          "h": 638
+        },
+        {
+          "id": "11998-246935",
+          "name": "Frame 272",
+          "type": "FRAME",
+          "w": 924,
+          "h": 636
         },
         {
           "id": "5689-136235",
-          "name": "Skai > Explorer > Tr",
+          "name": "Skai > Explorer > Transactions 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1301
         },
         {
+          "id": "11998-352404",
+          "name": "Frame 1000003958",
+          "type": "FRAME",
+          "w": 884,
+          "h": 634
+        },
+        {
           "id": "5691-138387",
-          "name": "Skai > Explorer > Ga",
+          "name": "Skai > Explorer > Gas tracker 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1903
         },
         {
           "id": "5698-143443",
-          "name": "Simple Chart line - ",
+          "name": "Simple Chart line - no data",
           "type": "FRAME",
           "w": 1318,
           "h": 417
@@ -4526,8 +4766,8 @@
           "h": 698
         },
         {
-          "id": "5539-100875",
-          "name": "Skai > Explorer (144",
+          "id": "11983-221622",
+          "name": "Skai > Explorer (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2291
@@ -4540,8 +4780,50 @@
           "h": 516
         },
         {
+          "id": "11987-228392",
+          "name": "Frame 1000003925",
+          "type": "FRAME",
+          "w": 914,
+          "h": 962
+        },
+        {
+          "id": "11987-228045",
+          "name": "Frame 1000003924",
+          "type": "FRAME",
+          "w": 804,
+          "h": 660
+        },
+        {
+          "id": "11987-227622",
+          "name": "Frame 267",
+          "type": "FRAME",
+          "w": 784,
+          "h": 660
+        },
+        {
+          "id": "11998-332332",
+          "name": "Frame 1000003940",
+          "type": "FRAME",
+          "w": 874,
+          "h": 784
+        },
+        {
+          "id": "11998-332560",
+          "name": "Frame 1000003941",
+          "type": "FRAME",
+          "w": 764,
+          "h": 666
+        },
+        {
+          "id": "11998-332847",
+          "name": "Frame 1000003942",
+          "type": "FRAME",
+          "w": 744,
+          "h": 668
+        },
+        {
           "id": "11345-146431",
-          "name": "Truncated ALT - NOT ",
+          "name": "Truncated ALT - NOT recommended",
           "type": "FRAME",
           "w": 935,
           "h": 760
@@ -4576,21 +4858,21 @@
         },
         {
           "id": "5481-49179",
-          "name": "Skai > Airdrop (1440",
+          "name": "Skai > Airdrop (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1968
         },
         {
           "id": "5411-117451",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5443-69711",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Purchase modal 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
@@ -4604,84 +4886,84 @@
         },
         {
           "id": "5442-39147",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university - about (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1455
         },
         {
           "id": "5443-69253",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1960
         },
         {
           "id": "5446-86451",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1661
         },
         {
           "id": "5467-91593",
-          "name": "Skai > Learn > Getti",
+          "name": "Skai > Learn > Getting started with crypto (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2655
         },
         {
           "id": "5460-87941",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Create course (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2873
         },
         {
           "id": "11343-142862",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Create course - Step 2 (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1040
         },
         {
           "id": "11343-142585",
-          "name": "Corser details - wit",
+          "name": "Corser details - with video",
           "type": "FRAME",
           "w": 680,
           "h": 1895
         },
         {
           "id": "5480-20528",
-          "name": "Skai > Learn > Artic",
+          "name": "Skai > Learn > Articles > Create article - empty (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5480-21556",
-          "name": "Skai > Learn > Artic",
+          "name": "Skai > Learn > Articles > Create article (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5480-21885",
-          "name": "Skai > Learn > Artic",
+          "name": "Skai > Learn > Articles > Create article (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1692
         },
         {
           "id": "5446-83004",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased > Sample video (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1410
         },
         {
           "id": "5446-85963",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1779
@@ -4695,49 +4977,49 @@
         },
         {
           "id": "11342-142483",
-          "name": "Videoframe - before ",
+          "name": "Videoframe - before playing",
           "type": "FRAME",
           "w": 1047,
           "h": 991
         },
         {
           "id": "5446-82429",
-          "name": "Course progress - co",
+          "name": "Course progress - completed",
           "type": "FRAME",
           "w": 1318,
           "h": 132
         },
         {
           "id": "5442-42904",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Sample course (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2446
         },
         {
           "id": "5468-92781",
-          "name": "Skai > Learn > Artic",
+          "name": "Skai > Learn > Articles (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2446
         },
         {
           "id": "5442-48059",
-          "name": "Course details - on:",
+          "name": "Course details - on:hover",
           "type": "FRAME",
           "w": 367,
           "h": 234
         },
         {
           "id": "5410-112561",
-          "name": "Skai > Learn (1440 x",
+          "name": "Skai > Learn (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 3205
         },
         {
           "id": "5371-63275",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
@@ -4750,6 +5032,20 @@
           "h": 884
         },
         {
+          "id": "12141-451869",
+          "name": "Right menu",
+          "type": "FRAME",
+          "w": 442,
+          "h": 1008
+        },
+        {
+          "id": "12141-452042",
+          "name": "Right menu",
+          "type": "FRAME",
+          "w": 359,
+          "h": 812
+        },
+        {
           "id": "11309-136155",
           "name": "Governance settings",
           "type": "FRAME",
@@ -4757,92 +5053,106 @@
           "h": 884
         },
         {
+          "id": "12097-429027",
+          "name": "Governance settings",
+          "type": "FRAME",
+          "w": 442,
+          "h": 1008
+        },
+        {
+          "id": "12097-429129",
+          "name": "Governance settings",
+          "type": "FRAME",
+          "w": 354,
+          "h": 796
+        },
+        {
           "id": "5383-73349",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Delegation 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5387-76925",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Financials 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5387-77602",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Financials 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1556
         },
         {
           "id": "5389-78508",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > About 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5390-80080",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Sample proposal - view 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "11307-135124",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5392-82015",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Sample proposal - view (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2354
         },
         {
           "id": "5477-97603",
-          "name": "Skai > Learn > Artic",
+          "name": "Skai > Learn > Articles > Sample article (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2888
         },
         {
           "id": "5385-74400",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Delegation 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1845
         },
         {
           "id": "5385-75416",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Delegation > Delegate modal 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5376-71276",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Staking 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5383-72757",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > Staking 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1649
         },
         {
           "id": "11314-138830",
-          "name": "Vault actions - depo",
+          "name": "Vault actions - deposit and unclaimed",
           "type": "FRAME",
           "w": 1318,
           "h": 582
@@ -4863,7 +5173,7 @@
         },
         {
           "id": "5371-64317",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1540
@@ -4877,7 +5187,7 @@
         },
         {
           "id": "11022-18418",
-          "name": "Add liquidity - no v",
+          "name": "Add liquidity - no value",
           "type": "FRAME",
           "w": 432,
           "h": 674
@@ -4891,14 +5201,14 @@
         },
         {
           "id": "11156-82051",
-          "name": "Lottery - rolls fini",
+          "name": "Lottery - rolls finished",
           "type": "FRAME",
           "w": 316,
           "h": 327
         },
         {
           "id": "11198-97038",
-          "name": "Winners - with date ",
+          "name": "Winners - with date position shifted",
           "type": "FRAME",
           "w": 1318,
           "h": 544
@@ -4925,15 +5235,29 @@
           "h": 327
         },
         {
+          "id": "12225-458073",
+          "name": "Lottery other values",
+          "type": "FRAME",
+          "w": 420,
+          "h": 327
+        },
+        {
+          "id": "12225-458091",
+          "name": "Lottery other values",
+          "type": "FRAME",
+          "w": 319,
+          "h": 246
+        },
+        {
           "id": "11151-79923",
-          "name": "Lock - with percenta",
+          "name": "Lock - with percentage",
           "type": "FRAME",
           "w": 461,
           "h": 498
         },
         {
           "id": "10517-39043",
-          "name": "Stake summary with f",
+          "name": "Stake summary with fees",
           "type": "FRAME",
           "w": 564,
           "h": 618
@@ -4960,11 +5284,53 @@
           "h": 160
         },
         {
+          "id": "12215-457080",
+          "name": "dropdown-1",
+          "type": "FRAME",
+          "w": 150,
+          "h": 152
+        },
+        {
+          "id": "12215-457116",
+          "name": "dropdown-1",
+          "type": "FRAME",
+          "w": 150,
+          "h": 144
+        },
+        {
+          "id": "12215-457089",
+          "name": "dropdown-2",
+          "type": "FRAME",
+          "w": 150,
+          "h": 152
+        },
+        {
+          "id": "12215-457125",
+          "name": "dropdown-2",
+          "type": "FRAME",
+          "w": 150,
+          "h": 144
+        },
+        {
           "id": "10841-118147",
           "name": "dropdown-activity",
           "type": "FRAME",
           "w": 163,
           "h": 236
+        },
+        {
+          "id": "12215-457134",
+          "name": "dropdown-activity",
+          "type": "FRAME",
+          "w": 163,
+          "h": 224
+        },
+        {
+          "id": "12215-457147",
+          "name": "dropdown-activity",
+          "type": "FRAME",
+          "w": 150,
+          "h": 212
         },
         {
           "id": "11304-134283",
@@ -4974,11 +5340,53 @@
           "h": 122
         },
         {
+          "id": "12097-428912",
+          "name": "dropdown-proposals",
+          "type": "FRAME",
+          "w": 150,
+          "h": 116
+        },
+        {
+          "id": "12097-428919",
+          "name": "dropdown-proposals",
+          "type": "FRAME",
+          "w": 120,
+          "h": 110
+        },
+        {
           "id": "11306-134305",
           "name": "dropdown-proposals",
           "type": "FRAME",
           "w": 163,
           "h": 160
+        },
+        {
+          "id": "12097-428926",
+          "name": "dropdown-proposals",
+          "type": "FRAME",
+          "w": 150,
+          "h": 152
+        },
+        {
+          "id": "12097-428981",
+          "name": "dropdown-proposals",
+          "type": "FRAME",
+          "w": 150,
+          "h": 116
+        },
+        {
+          "id": "12097-428952",
+          "name": "dropdown-proposals",
+          "type": "FRAME",
+          "w": 130,
+          "h": 144
+        },
+        {
+          "id": "12097-429007",
+          "name": "dropdown-proposals",
+          "type": "FRAME",
+          "w": 130,
+          "h": 110
         },
         {
           "id": "11307-135045",
@@ -4989,10 +5397,24 @@
         },
         {
           "id": "11193-91907",
-          "name": "dropdown-pool and tr",
+          "name": "dropdown-pool and treasury",
           "type": "FRAME",
           "w": 163,
           "h": 274
+        },
+        {
+          "id": "12225-458356",
+          "name": "dropdown-pool and treasury",
+          "type": "FRAME",
+          "w": 150,
+          "h": 260
+        },
+        {
+          "id": "12225-458371",
+          "name": "dropdown-pool and treasury",
+          "type": "FRAME",
+          "w": 120,
+          "h": 246
         },
         {
           "id": "11198-97230",
@@ -5000,6 +5422,20 @@
           "type": "FRAME",
           "w": 163,
           "h": 160
+        },
+        {
+          "id": "12225-458386",
+          "name": "dropdown-winners",
+          "type": "FRAME",
+          "w": 150,
+          "h": 152
+        },
+        {
+          "id": "12225-458395",
+          "name": "dropdown-winners",
+          "type": "FRAME",
+          "w": 120,
+          "h": 144
         },
         {
           "id": "11198-97007",
@@ -5017,7 +5453,7 @@
         },
         {
           "id": "11364-165916",
-          "name": "sidebar - open gover",
+          "name": "sidebar - open governance",
           "type": "FRAME",
           "w": 248,
           "h": 900
@@ -5031,21 +5467,21 @@
         },
         {
           "id": "11370-182316",
-          "name": "sidebar - open explo",
+          "name": "sidebar - open explorer",
           "type": "FRAME",
           "w": 248,
           "h": 844
         },
         {
           "id": "5480-22549",
-          "name": "Skai > Learn > Skai ",
+          "name": "Skai > Learn > Skai university > Articles 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "5518-101256",
-          "name": "Skai > Account 1VH (",
+          "name": "Skai > Account 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
@@ -5066,63 +5502,63 @@
         },
         {
           "id": "5525-11686",
-          "name": "Overview - play -hid",
+          "name": "Overview - play -hidden",
           "type": "FRAME",
           "w": 680,
           "h": 248
         },
         {
           "id": "5518-100072",
-          "name": "Skai > Account (1440",
+          "name": "Skai > Account (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1542
         },
         {
           "id": "5526-47972",
-          "name": "Skai > Account > Acc",
+          "name": "Skai > Account > Account settings (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1810
         },
         {
           "id": "11267-125024",
-          "name": "input/primary-inputs",
+          "name": "input/primary-inputs - with warning",
           "type": "FRAME",
           "w": 259,
           "h": 88
         },
         {
           "id": "5529-72564",
-          "name": "Skai > Account > Acc",
+          "name": "Skai > Account > Account settings (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1178
         },
         {
           "id": "5529-73867",
-          "name": "Skai > Account > Acc",
+          "name": "Skai > Account > Account settings > Private key (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 978
         },
         {
           "id": "5529-76029",
-          "name": "Skai > Account > Acc",
+          "name": "Skai > Account > Account settings > Private key - step 2 (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 978
         },
         {
           "id": "11267-125066",
-          "name": "input/primary-inputs",
+          "name": "input/primary-inputs - on:hover",
           "type": "FRAME",
           "w": 795,
           "h": 76
         },
         {
           "id": "5529-73119",
-          "name": "Skai > Account > Acc",
+          "name": "Skai > Account > Account settings > Preferences (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1810
@@ -5143,14 +5579,14 @@
         },
         {
           "id": "11212-20117",
-          "name": "dropdown-Snapshot li",
+          "name": "dropdown-Snapshot list",
           "type": "FRAME",
           "w": 163,
           "h": 122
         },
         {
           "id": "11706-321906",
-          "name": "dropdown-yield vault",
+          "name": "dropdown-yield vaults",
           "type": "FRAME",
           "w": 140,
           "h": 246
@@ -5163,11 +5599,46 @@
           "h": 122
         },
         {
+          "id": "12082-426960",
+          "name": "dropdown-account",
+          "type": "FRAME",
+          "w": 150,
+          "h": 116
+        },
+        {
+          "id": "12082-426968",
+          "name": "dropdown-account",
+          "type": "FRAME",
+          "w": 120,
+          "h": 110
+        },
+        {
           "id": "11266-123769",
-          "name": "dropdown-account ove",
+          "name": "dropdown-account overview 2",
           "type": "FRAME",
           "w": 163,
           "h": 122
+        },
+        {
+          "id": "12097-427035",
+          "name": "dropdown-account overview 3",
+          "type": "FRAME",
+          "w": 150,
+          "h": 116
+        },
+        {
+          "id": "11266-123753",
+          "name": "dropdown-account overview 1",
+          "type": "FRAME",
+          "w": 163,
+          "h": 274
+        },
+        {
+          "id": "12097-427042",
+          "name": "dropdown-account overview 4",
+          "type": "FRAME",
+          "w": 150,
+          "h": 260
         },
         {
           "id": "11260-123562",
@@ -5177,18 +5648,39 @@
           "h": 46
         },
         {
-          "id": "11266-123753",
-          "name": "dropdown-account ove",
-          "type": "FRAME",
-          "w": 163,
-          "h": 274
-        },
-        {
           "id": "11302-129670",
           "name": "dropdown-tiers",
           "type": "FRAME",
           "w": 163,
           "h": 274
+        },
+        {
+          "id": "12097-427103",
+          "name": "dropdown-tiers",
+          "type": "FRAME",
+          "w": 150,
+          "h": 260
+        },
+        {
+          "id": "12097-427168",
+          "name": "dropdown-tiers",
+          "type": "FRAME",
+          "w": 150,
+          "h": 260
+        },
+        {
+          "id": "12097-427118",
+          "name": "dropdown-tiers",
+          "type": "FRAME",
+          "w": 120,
+          "h": 246
+        },
+        {
+          "id": "12097-427198",
+          "name": "dropdown-tiers",
+          "type": "FRAME",
+          "w": 120,
+          "h": 246
         },
         {
           "id": "11303-133248",
@@ -5205,11 +5697,32 @@
           "h": 160
         },
         {
+          "id": "12097-427183",
+          "name": "dropdown-period",
+          "type": "FRAME",
+          "w": 150,
+          "h": 152
+        },
+        {
+          "id": "12097-427159",
+          "name": "dropdown-period",
+          "type": "FRAME",
+          "w": 120,
+          "h": 144
+        },
+        {
           "id": "11267-123785",
-          "name": "Skai > Account > Per",
+          "name": "Skai > Account > Performance overview > Share networth (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
+        },
+        {
+          "id": "12097-427133",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 44
         },
         {
           "id": "11302-129701",
@@ -5217,6 +5730,27 @@
           "type": "FRAME",
           "w": 250,
           "h": 46
+        },
+        {
+          "id": "12097-427139",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 160,
+          "h": 76
+        },
+        {
+          "id": "12097-427192",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 44
+        },
+        {
+          "id": "12097-427213",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 160,
+          "h": 76
         },
         {
           "id": "11303-133263",
@@ -5233,6 +5767,34 @@
           "h": 130
         },
         {
+          "id": "12097-428935",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 124
+        },
+        {
+          "id": "12097-428961",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 180,
+          "h": 160
+        },
+        {
+          "id": "12097-428990",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 124
+        },
+        {
+          "id": "12097-429016",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 180,
+          "h": 160
+        },
+        {
           "id": "11307-135103",
           "name": "dropdown-multiselect",
           "type": "FRAME",
@@ -5247,8 +5809,22 @@
           "h": 92
         },
         {
+          "id": "12097-429231",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 88
+        },
+        {
+          "id": "12097-429243",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 180,
+          "h": 84
+        },
+        {
           "id": "11309-136994",
-          "name": "Skai > Governance > ",
+          "name": "Skai > Governance > Proposals > New proposal 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 2286
@@ -5276,28 +5852,63 @@
         },
         {
           "id": "11314-139110",
-          "name": "dropdown-delegate ty",
+          "name": "dropdown-delegate type",
           "type": "FRAME",
           "w": 212,
           "h": 84
+        },
+        {
+          "id": "12136-432067",
+          "name": "dropdown-delegates",
+          "type": "FRAME",
+          "w": 200,
+          "h": 224
+        },
+        {
+          "id": "12136-432080",
+          "name": "dropdown-delegate type",
+          "type": "FRAME",
+          "w": 200,
+          "h": 80
+        },
+        {
+          "id": "12136-432102",
+          "name": "dropdown-delegates",
+          "type": "FRAME",
+          "w": 180,
+          "h": 212
+        },
+        {
+          "id": "12136-432115",
+          "name": "dropdown-delegate type",
+          "type": "FRAME",
+          "w": 180,
+          "h": 76
         },
         {
           "id": "11314-139153",
-          "name": "dropdown-delegate ty",
+          "name": "dropdown-delegate type",
           "type": "FRAME",
           "w": 212,
           "h": 84
         },
         {
-          "id": "11314-138452",
-          "name": "Claimed - not 100% r",
+          "id": "12136-432150",
+          "name": "dropdown-delegate type",
           "type": "FRAME",
-          "w": 548,
-          "h": 227
+          "w": 150,
+          "h": 80
         },
         {
-          "id": "11314-138456",
-          "name": "Claimed - not 100% r",
+          "id": "12136-432155",
+          "name": "dropdown-delegate type",
+          "type": "FRAME",
+          "w": 120,
+          "h": 76
+        },
+        {
+          "id": "11314-138452",
+          "name": "Claimed - not 100% represented",
           "type": "FRAME",
           "w": 548,
           "h": 227
@@ -5308,6 +5919,34 @@
           "type": "FRAME",
           "w": 250,
           "h": 130
+        },
+        {
+          "id": "12136-432085",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 220,
+          "h": 124
+        },
+        {
+          "id": "11314-138456",
+          "name": "Claimed - not 100% represented - claimed",
+          "type": "FRAME",
+          "w": 548,
+          "h": 227
+        },
+        {
+          "id": "12097-431830",
+          "name": "Claimed - not 100% represented",
+          "type": "FRAME",
+          "w": 676,
+          "h": 194
+        },
+        {
+          "id": "12136-432120",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 118
         },
         {
           "id": "11322-142230",
@@ -5324,6 +5963,20 @@
           "h": 130
         },
         {
+          "id": "12166-455569",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 124
+        },
+        {
+          "id": "12166-455585",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 180,
+          "h": 118
+        },
+        {
           "id": "11345-144023",
           "name": "dropdown-main",
           "type": "FRAME",
@@ -5331,11 +5984,39 @@
           "h": 198
         },
         {
+          "id": "12166-456452",
+          "name": "dropdown-main",
+          "type": "FRAME",
+          "w": 180,
+          "h": 188
+        },
+        {
+          "id": "12166-456481",
+          "name": "dropdown-main",
+          "type": "FRAME",
+          "w": 150,
+          "h": 178
+        },
+        {
           "id": "11345-146380",
-          "name": "dropdown-Active TWAP",
+          "name": "dropdown-Active TWAPs",
           "type": "FRAME",
           "w": 163,
           "h": 198
+        },
+        {
+          "id": "12166-456510",
+          "name": "dropdown-Active TWAPs",
+          "type": "FRAME",
+          "w": 150,
+          "h": 188
+        },
+        {
+          "id": "12166-456521",
+          "name": "dropdown-Active TWAPs",
+          "type": "FRAME",
+          "w": 120,
+          "h": 178
         },
         {
           "id": "11345-146410",
@@ -5346,10 +6027,24 @@
         },
         {
           "id": "11349-148487",
-          "name": "Additional informati",
+          "name": "Additional information",
           "type": "FRAME",
           "w": 284,
           "h": 250
+        },
+        {
+          "id": "12166-456349",
+          "name": "Additional information",
+          "type": "FRAME",
+          "w": 250,
+          "h": 250
+        },
+        {
+          "id": "12166-456409",
+          "name": "Additional information",
+          "type": "FRAME",
+          "w": 220,
+          "h": 248
         },
         {
           "id": "11349-148646",
@@ -5359,11 +6054,53 @@
           "h": 46
         },
         {
+          "id": "12166-456389",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 44
+        },
+        {
+          "id": "12166-456532",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 44
+        },
+        {
+          "id": "12166-456402",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 42
+        },
+        {
           "id": "11349-148686",
           "name": "dropdown-addresses",
           "type": "FRAME",
           "w": 163,
           "h": 274
+        },
+        {
+          "id": "12166-456544",
+          "name": "dropdown-addresses",
+          "type": "FRAME",
+          "w": 150,
+          "h": 274
+        },
+        {
+          "id": "12166-456568",
+          "name": "dropdown-addresses",
+          "type": "FRAME",
+          "w": 120,
+          "h": 246
+        },
+        {
+          "id": "12166-456559",
+          "name": "dropdown-Chart",
+          "type": "FRAME",
+          "w": 150,
+          "h": 152
         },
         {
           "id": "11349-148702",
@@ -5373,326 +6110,1593 @@
           "h": 160
         },
         {
+          "id": "12166-456583",
+          "name": "dropdown-Chart",
+          "type": "FRAME",
+          "w": 120,
+          "h": 144
+        },
+        {
           "id": "11370-187312",
-          "name": "sidebar - open airdr",
+          "name": "sidebar - open airdrop",
           "type": "FRAME",
           "w": 248,
           "h": 844
         },
         {
           "id": "11370-188203",
-          "name": "sidebar - open yield",
+          "name": "sidebar",
           "type": "FRAME",
           "w": 248,
           "h": 844
         },
         {
           "id": "11664-305419",
-          "name": "sidebar - open casin",
+          "name": "sidebar - open casino",
           "type": "FRAME",
           "w": 296,
           "h": 812
         },
         {
           "id": "11705-320498",
-          "name": "sidebar - open casin",
+          "name": "sidebar",
           "type": "FRAME",
           "w": 296,
           "h": 812
         },
         {
-          "id": "11664-305531",
-          "name": "sidebar - open casin",
+          "id": "12166-456592",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 296,
+          "h": 916
+        },
+        {
+          "id": "11713-326573",
+          "name": "sidebar",
           "type": "FRAME",
           "w": 318,
           "h": 1024
         },
         {
-          "id": "11713-326573",
-          "name": "sidebar - open casin",
+          "id": "11664-305531",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 318,
+          "h": 1024
+        },
+        {
+          "id": "12166-456702",
+          "name": "sidebar",
           "type": "FRAME",
           "w": 318,
           "h": 1024
         },
         {
           "id": "11664-305643",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Airdrop 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
-          "id": "11768-350612",
-          "name": "Skai > Social > Live",
+          "id": "11983-182767",
+          "name": "Skai > Explorer (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 2680
+        },
+        {
+          "id": "11986-223183",
+          "name": "Skai > Explorer 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11989-231104",
+          "name": "Skai > Explorer > Address (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1762
+        },
+        {
+          "id": "11989-232490",
+          "name": "Skai > Explorer > Address > Holdings (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1684
+        },
+        {
+          "id": "11991-234861",
+          "name": "Skai > Explorer > Address > Perps (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1490
+        },
+        {
+          "id": "11991-236086",
+          "name": "Skai > Explorer > Address > Orders (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1558
+        },
+        {
+          "id": "11991-237411",
+          "name": "Skai > Explorer > Address > Orders (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1343
+        },
+        {
+          "id": "11992-238368",
+          "name": "Skai > Explorer > Address > Staking (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1380
+        },
+        {
+          "id": "11992-238830",
+          "name": "Skai > Explorer > Address > Lending (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1432
+        },
+        {
+          "id": "11998-347370",
+          "name": "Frame 1000003953",
+          "type": "FRAME",
+          "w": 700,
+          "h": 316
+        },
+        {
+          "id": "11992-239733",
+          "name": "Skai > Explorer > Address > Others (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1925
+        },
+        {
+          "id": "11998-244576",
+          "name": "Skai > Explorer > Blocks (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1046
+        },
+        {
+          "id": "11998-246468",
+          "name": "Skai > Explorer > Transactions 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11997-242875",
+          "name": "Skai > Explorer > Tokens (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1087
+        },
+        {
+          "id": "11993-241225",
+          "name": "Skai > Explorer > Analytics 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 2036
+        },
+        {
+          "id": "11998-251087",
+          "name": "Skai > Explorer > Tokens (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1308
+        },
+        {
+          "id": "11998-256391",
+          "name": "Skai > Explorer > Gaming (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1164
+        },
+        {
+          "id": "11998-262008",
+          "name": "Skai > Explorer > Addresses (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1104
+        },
+        {
+          "id": "12001-366177",
+          "name": "Frame 1000003963",
+          "type": "FRAME",
+          "w": 700,
+          "h": 490
+        },
+        {
+          "id": "11998-266062",
+          "name": "Skai > Explorer > DeFi (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1570
+        },
+        {
+          "id": "12001-376676",
+          "name": "Frame 1000003967",
+          "type": "FRAME",
+          "w": 664,
+          "h": 50
+        },
+        {
+          "id": "11998-264346",
+          "name": "Skai > Explorer > Points (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1431
+        },
+        {
+          "id": "11998-257569",
+          "name": "Skai > Explorer > Governance (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1164
+        },
+        {
+          "id": "11998-259528",
+          "name": "Skai > Explorer > Social (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1358
+        },
+        {
+          "id": "11998-260352",
+          "name": "Skai > Explorer > Lending 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11998-254527",
+          "name": "section",
+          "type": "FRAME",
+          "w": 708,
+          "h": 648
+        },
+        {
+          "id": "11998-252837",
+          "name": "Skai > Explorer > AI 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11998-253933",
+          "name": "Skai > Explorer > Launchpad 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11998-248840",
+          "name": "Skai > Explorer > Gas tracker (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1745
+        },
+        {
+          "id": "11986-224020",
+          "name": "Skai > Explorer 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "12049-413478",
+          "name": "Withdraw from vault",
+          "type": "FRAME",
+          "w": 708,
+          "h": 582
+        },
+        {
+          "id": "12049-413393",
+          "name": "Withdraw from vault",
+          "type": "FRAME",
+          "w": 343,
+          "h": 538
+        },
+        {
+          "id": "11705-320608",
+          "name": "Skai > Airdrop 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
-          "id": "11705-320608",
-          "name": "Skai > Social > Live",
+          "id": "11998-326822",
+          "name": "Skai > Explorer (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 3016
+        },
+        {
+          "id": "12136-435253",
+          "name": "Skai > Explorer (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 3724
+        },
+        {
+          "id": "11998-337508",
+          "name": "Skai > Explorer > Address (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1772
+        },
+        {
+          "id": "11998-341045",
+          "name": "Skai > Explorer > Address > Holdings (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1780
+        },
+        {
+          "id": "11998-342710",
+          "name": "Skai > Explorer > Address > Perps (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1502
+        },
+        {
+          "id": "11998-343923",
+          "name": "Skai > Explorer > Address > Orders (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1568
+        },
+        {
+          "id": "11998-345258",
+          "name": "Skai > Explorer > Address > Orders (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1342
+        },
+        {
+          "id": "11998-346919",
+          "name": "Skai > Explorer > Address > Lending (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1430
+        },
+        {
+          "id": "11998-347934",
+          "name": "Skai > Explorer > Address > Others (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2136
+        },
+        {
+          "id": "11998-348921",
+          "name": "Skai > Explorer > Analytics (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1714
+        },
+        {
+          "id": "11998-350745",
+          "name": "Skai > Explorer > Tokens (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1204
+        },
+        {
+          "id": "11998-351710",
+          "name": "Skai > Explorer > Blocks (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1004
+        },
+        {
+          "id": "12000-357207",
+          "name": "Skai > Explorer > Gas tracker (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1470
+        },
+        {
+          "id": "12000-359408",
+          "name": "Skai > Explorer > Tokens (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1154
+        },
+        {
+          "id": "12001-362424",
+          "name": "Skai > Explorer > AI (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 862
+        },
+        {
+          "id": "12001-363043",
+          "name": "Skai > Explorer > Launchpad (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 848
+        },
+        {
+          "id": "12001-365886",
+          "name": "Skai > Explorer > Gaming (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1112
+        },
+        {
+          "id": "12001-368183",
+          "name": "Skai > Explorer > Governance (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1064
+        },
+        {
+          "id": "12001-370309",
+          "name": "Skai > Explorer > Social (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1396
+        },
+        {
+          "id": "12001-371015",
+          "name": "Skai > Explorer > Lending (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 960
+        },
+        {
+          "id": "12001-371549",
+          "name": "Skai > Explorer > Points (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1358
+        },
+        {
+          "id": "12001-379226",
+          "name": "Skai > Explorer > DeFi (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1604
+        },
+        {
+          "id": "12001-376043",
+          "name": "Skai > Explorer > Addresses (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1114
+        },
+        {
+          "id": "12001-374466",
+          "name": "Skai > Explorer > Points (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1428
+        },
+        {
+          "id": "12001-364997",
+          "name": "section",
+          "type": "FRAME",
+          "w": 343,
+          "h": 634
+        },
+        {
+          "id": "11998-354592",
+          "name": "Skai > Explorer > Transactions (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 978
+        },
+        {
+          "id": "11998-348680",
+          "name": "Frame 1000003955",
+          "type": "FRAME",
+          "w": 343,
+          "h": 1022
+        },
+        {
+          "id": "11998-328323",
+          "name": "Skai > Explorer 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11998-329118",
+          "name": "Skai > Explorer 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11667-311059",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Airdrop - not eligible (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1120
         },
         {
           "id": "11667-311323",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Airdrop - not eligible (375 x 812px)",
           "type": "FRAME",
           "w": 375,
-          "h": 1200
+          "h": 1110
         },
         {
           "id": "11667-309312",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Airdrop (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1716
         },
         {
           "id": "11667-309576",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Airdrop (375 x 812px)",
           "type": "FRAME",
           "w": 375,
-          "h": 1754
+          "h": 1700
         },
         {
           "id": "11705-320482",
-          "name": "dropdown-yield vault",
+          "name": "dropdown-yield vaults",
           "type": "FRAME",
           "w": 178,
           "h": 274
         },
         {
           "id": "11713-326780",
-          "name": "sidebar - open casin",
+          "name": "sidebar",
           "type": "FRAME",
           "w": 296,
-          "h": 812
+          "h": 943
         },
         {
           "id": "11713-326890",
-          "name": "sidebar - open casin",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 318,
+          "h": 1024
+        },
+        {
+          "id": "12097-427937",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 318,
+          "h": 1024
+        },
+        {
+          "id": "12166-455749",
+          "name": "sidebar",
           "type": "FRAME",
           "w": 318,
           "h": 1024
         },
         {
           "id": "11720-328046",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 2635
         },
         {
           "id": "11759-342393",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Getting started with crypto (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 2028
         },
         {
           "id": "11761-344888",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Articles (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 2331
         },
         {
           "id": "11764-345696",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Articles > Sample article (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 2331
         },
         {
           "id": "11764-347374",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Articles > Create article - empty 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11764-347974",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Articles > Create article 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11764-348102",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Articles > Create article (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1409
         },
         {
           "id": "11720-328489",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Courses 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11900-108870",
+          "name": "Skai > Governance 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11900-111292",
+          "name": "Skai > Governance > Proposals 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "12215-457394",
+          "name": "Lock - with percentage",
+          "type": "FRAME",
+          "w": 676,
+          "h": 446
+        },
+        {
+          "id": "12225-458404",
+          "name": "With winners",
+          "type": "FRAME",
+          "w": 708,
+          "h": 852
+        },
+        {
+          "id": "12225-458170",
+          "name": "Frame 1000003977",
+          "type": "FRAME",
+          "w": 240,
+          "h": 327
+        },
+        {
+          "id": "12215-457534",
+          "name": "Tickets - empty",
+          "type": "FRAME",
+          "w": 708,
+          "h": 445
+        },
+        {
+          "id": "12215-457238",
+          "name": "House vault - if low",
+          "type": "FRAME",
+          "w": 350,
+          "h": 500
+        },
+        {
+          "id": "11974-166788",
+          "name": "Swap - no value",
+          "type": "FRAME",
+          "w": 708,
+          "h": 556
+        },
+        {
+          "id": "11973-153432",
+          "name": "Swap - no value",
+          "type": "FRAME",
+          "w": 580,
+          "h": 500
+        },
+        {
+          "id": "11973-153573",
+          "name": "modal",
+          "type": "FRAME",
+          "w": 448,
+          "h": 516
+        },
+        {
+          "id": "11902-119713",
+          "name": "Skai > Governance > Proposals > Staking 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11902-120450",
+          "name": "Skai > Governance > Proposals > Staking (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1417
+        },
+        {
+          "id": "12097-431847",
+          "name": "Claimed - not 100% represented - claimed",
+          "type": "FRAME",
+          "w": 676,
+          "h": 194
+        },
+        {
+          "id": "12097-431652",
+          "name": "Vault actions - deposit and unclaimed",
+          "type": "FRAME",
+          "w": 708,
+          "h": 913
+        },
+        {
+          "id": "11902-121921",
+          "name": "Skai > Governance > Proposals > Delegation (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1375
+        },
+        {
+          "id": "11902-122611",
+          "name": "Skai > Governance > Proposals > Delegation 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11902-123338",
+          "name": "Skai > Governance > Proposals > Delegation > Delegate modal 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11902-123792",
+          "name": "Skai > Governance > Proposals > Financials 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11902-124420",
+          "name": "Skai > Governance > Proposals > Financials (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1059
+        },
+        {
+          "id": "11902-124936",
+          "name": "Skai > Governance > Proposals > About 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "12097-429324",
+          "name": "Skai > Governance > Proposals > New proposal (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1668
+        },
+        {
+          "id": "12097-431591",
+          "name": "DAO boost - met",
+          "type": "FRAME",
+          "w": 708,
+          "h": 102
+        },
+        {
+          "id": "11900-112324",
+          "name": "Skai > Governance > Proposals (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1053
+        },
+        {
+          "id": "11900-115023",
+          "name": "Skai > Governance > Proposals > Sample proposal - view - details caollapsed 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11900-116992",
+          "name": "Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11900-116258",
+          "name": "Skai > Governance > Proposals > Sample proposal - view (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 2412
+        },
+        {
+          "id": "11900-115524",
+          "name": "Skai > Governance > Proposals > Sample proposal - view - details expanded 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11720-329924",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university - about (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1510
         },
         {
           "id": "11731-334110",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Sample course 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11731-334936",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Purchase modal 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11743-337927",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased > Sample video 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
+          "id": "12139-450594",
+          "name": "Videoframe - playing",
+          "type": "FRAME",
+          "w": 708,
+          "h": 702
+        },
+        {
+          "id": "12139-450651",
+          "name": "Videoframe - before playing",
+          "type": "FRAME",
+          "w": 708,
+          "h": 702
+        },
+        {
           "id": "11743-338537",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1247
         },
         {
           "id": "11736-336798",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1856
         },
         {
+          "id": "12166-455681",
+          "name": "Course progress - completed",
+          "type": "FRAME",
+          "w": 708,
+          "h": 110
+        },
+        {
           "id": "11747-338776",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1247
         },
         {
           "id": "11752-340049",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Create course (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
-          "h": 2503
+          "h": 2583
         },
         {
           "id": "11759-341556",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Create course - Step 2 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11752-340430",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Create course - preview 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11752-340994",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Create course - preview 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11731-334391",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Sample course (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 2524
         },
         {
           "id": "11720-330741",
-          "name": "Skai > Social > Live",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1024
-        },
-        {
-          "id": "11730-332229",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university - about 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11730-332652",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university - courses (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1127
         },
         {
+          "id": "11730-332229",
+          "name": "Skai > Learn > Skai university - courses 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
           "id": "11764-348558",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Learn > Skai university > Articles (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1127
         },
         {
           "id": "11730-332977",
-          "name": "section",
+          "name": "Courses - buy",
           "type": "FRAME",
           "w": 708,
           "h": 370
         },
         {
-          "id": "11713-327264",
-          "name": "Skai > Social > Live",
+          "id": "11945-93362",
+          "name": "Skai > Learn (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 3122
+        },
+        {
+          "id": "12141-451132",
+          "name": "Skai > Learn > Getting started with crypto (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1774
+        },
+        {
+          "id": "12141-453076",
+          "name": "Skai > Learn > Articles > Sample article (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2916
+        },
+        {
+          "id": "12141-453691",
+          "name": "Skai > Learn > Articles > Create article - empty 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "12141-454982",
+          "name": "Skai > Learn > Articles > Create article (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1350
+        },
+        {
+          "id": "12141-454200",
+          "name": "Skai > Learn > Articles > Create article 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11894-102948",
+          "name": "Skai > Learn > Skai university - about (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1376
+        },
+        {
+          "id": "11894-105984",
+          "name": "Skai > Learn > Skai university > Sample course (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2350
+        },
+        {
+          "id": "11897-108098",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2280
+        },
+        {
+          "id": "12166-455730",
+          "name": "Course progress - completed",
+          "type": "FRAME",
+          "w": 343,
+          "h": 108
+        },
+        {
+          "id": "11939-142514",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1282
+        },
+        {
+          "id": "11942-143538",
+          "name": "Skai > Learn > Skai university > Create course  (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2733
+        },
+        {
+          "id": "11943-145177",
+          "name": "Skai > Learn > Skai university > Create course - Step 2 (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 832
+        },
+        {
+          "id": "12141-450956",
+          "name": "Skai > Learn > Articles (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 3596
+        },
+        {
+          "id": "11943-143981",
+          "name": "Skai > Learn > Skai university > Create course - preview 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11943-144590",
+          "name": "Skai > Learn > Skai university > Create course - preview 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11939-141290",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased > Sample video 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "12139-450707",
+          "name": "Videoframe - playing",
+          "type": "FRAME",
+          "w": 343,
+          "h": 531
+        },
+        {
+          "id": "12139-450745",
+          "name": "Videoframe - before playing",
+          "type": "FRAME",
+          "w": 343,
+          "h": 531
+        },
+        {
+          "id": "11945-94473",
+          "name": "Skai > Learn > Skai university > Sample course > Purchased > Sample video - show transcript (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1137
+        },
+        {
+          "id": "11894-106261",
+          "name": "Skai > Learn > Skai university > Sample course 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11896-106898",
+          "name": "Skai > Learn > Skai university > Purchase modal 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11894-103839",
+          "name": "Skai > Learn > Skai university - courses (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1773
+        },
+        {
+          "id": "12166-455601",
+          "name": "Courses - buy",
+          "type": "FRAME",
+          "w": 343,
+          "h": 858
+        },
+        {
+          "id": "12141-455088",
+          "name": "Skai > Learn > Skai university > Articles  (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1824
+        },
+        {
+          "id": "11894-104173",
+          "name": "Skai > Learn > Skai university 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11893-101461",
+          "name": "Skai > Learn > Courses 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11894-104346",
+          "name": "Skai > Learn > Skai university 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11900-109506",
+          "name": "Skai > Governance 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "12215-457316",
+          "name": "House vault - if low",
+          "type": "FRAME",
+          "w": 343,
+          "h": 450
+        },
+        {
+          "id": "12215-457464",
+          "name": "Lock - with percentage",
+          "type": "FRAME",
+          "w": 319,
+          "h": 422
+        },
+        {
+          "id": "12225-458552",
+          "name": "With winners",
+          "type": "FRAME",
+          "w": 343,
+          "h": 1047
+        },
+        {
+          "id": "12225-458263",
+          "name": "Frame 1000003978",
+          "type": "FRAME",
+          "w": 319,
+          "h": 218
+        },
+        {
+          "id": "12215-457820",
+          "name": "Tickets - empty",
+          "type": "FRAME",
+          "w": 343,
+          "h": 855
+        },
+        {
+          "id": "12003-384544",
+          "name": "modal",
+          "type": "FRAME",
+          "w": 354,
+          "h": 508
+        },
+        {
+          "id": "12003-384165",
+          "name": "Swap - no value",
+          "type": "FRAME",
+          "w": 343,
+          "h": 470
+        },
+        {
+          "id": "11902-127189",
+          "name": "Skai > Governance > Proposals 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11906-133540",
+          "name": "Skai > Governance > Proposals > Staking (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1460
+        },
+        {
+          "id": "12136-431944",
+          "name": "Claimed - not 100% represented",
+          "type": "FRAME",
+          "w": 319,
+          "h": 186
+        },
+        {
+          "id": "12136-431948",
+          "name": "Claimed - not 100% represented - claimed",
+          "type": "FRAME",
+          "w": 319,
+          "h": 186
+        },
+        {
+          "id": "12136-431955",
+          "name": "Vault actions - deposit and unclaimed",
+          "type": "FRAME",
+          "w": 343,
+          "h": 562
+        },
+        {
+          "id": "11907-137387",
+          "name": "Skai > Governance > Proposals > Delegation - on chain 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11915-139136",
+          "name": "Skai > Governance > Proposals > Financials 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11917-139866",
+          "name": "Skai > Governance > Proposals > Financials (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1108
+        },
+        {
+          "id": "11917-140159",
+          "name": "Skai > Governance > Proposals > About (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1024
+        },
+        {
+          "id": "11907-137821",
+          "name": "Skai > Governance > Proposals > Delegation - off chain 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11907-136716",
+          "name": "Skai > Governance > Proposals > Delegation (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1389
+        },
+        {
+          "id": "11907-134647",
+          "name": "Skai > Governance > Proposals > Staking 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "12097-431217",
+          "name": "Skai > Governance > Proposals > New proposal (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1614
+        },
+        {
+          "id": "12097-431615",
+          "name": "DAO boost - met",
+          "type": "FRAME",
+          "w": 343,
+          "h": 96
+        },
+        {
+          "id": "11902-127752",
+          "name": "Skai > Governance > Proposals (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1061
+        },
+        {
+          "id": "11904-130419",
+          "name": "Skai > Governance > Proposals > Sample proposal - view 1VH - details expanded - details expanded (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2188
+        },
+        {
+          "id": "11904-130968",
+          "name": "Skai > Governance > Proposals > Sample proposal - view 1VH - intro expanded 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11904-131516",
+          "name": "Skai > Governance > Proposals > Sample proposal - view 1VH - details collapsed - intro collapsed 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11904-132064",
+          "name": "Skai > Governance > Proposals > Sample proposal - view - not created by 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11875-44348",
+          "name": "Skai > Account (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1762
+        },
+        {
+          "id": "12097-427323",
+          "name": "Created tokens",
+          "type": "FRAME",
+          "w": 343,
+          "h": 274
+        },
+        {
+          "id": "11875-87593",
+          "name": "Skai > Account > Performance overview (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1606
+        },
+        {
+          "id": "11881-88335",
+          "name": "Skai > Account > Performance overview (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1206
+        },
+        {
+          "id": "12082-420596",
+          "name": "Skai > Account > Performance overview > Share networth 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "12082-421041",
+          "name": "Skai > Account > Performance overview > Share networth 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 960
+        },
+        {
+          "id": "11881-88859",
+          "name": "Skai > Account > Account settings 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11881-89626",
+          "name": "Skai > Account > Account settings > Security (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1418
+        },
+        {
+          "id": "11881-94366",
+          "name": "Skai > Account > Account settings > Preferences (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1235
+        },
+        {
+          "id": "11884-94667",
+          "name": "Skai > Account > Account settings > Private key 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "11875-86552",
+          "name": "Skai > Account 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11768-349002",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Account (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1797
         },
         {
+          "id": "12097-427224",
+          "name": "Created tokens",
+          "type": "FRAME",
+          "w": 708,
+          "h": 283
+        },
+        {
           "id": "11793-351692",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Account > Performance overview (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1294
         },
         {
+          "id": "12080-420150",
+          "name": "Skai > Account > Performance overview > Share networth 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11843-353118",
+          "name": "Skai > Account > Account settings 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11843-354091",
+          "name": "Skai > Account > Account settings > Security (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1490
+        },
+        {
+          "id": "12082-426929",
+          "name": "input/primary-inputs - on:hover",
+          "type": "FRAME",
+          "w": 708,
+          "h": 64
+        },
+        {
+          "id": "11846-355280",
+          "name": "Skai > Account > Account settings > Preferences (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1404
+        },
+        {
+          "id": "11846-355837",
+          "name": "Skai > Account > Account settings > Private key 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "11846-356139",
+          "name": "Skai > Account > Account settings > Private key - step 2 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
           "id": "11793-352217",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Account > Performance overview (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1710
         },
         {
           "id": "11768-350087",
-          "name": "Skai > Social > Live",
+          "name": "Skai > Account 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
+        },
+        {
+          "id": "11884-95322",
+          "name": "Skai > Account > Account settings > Private key - step 2 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "12082-426944",
+          "name": "input/primary-inputs - on:hover",
+          "type": "FRAME",
+          "w": 343,
+          "h": 60
+        },
+        {
+          "id": "12097-427080",
+          "name": "dropdown-account overview 5",
+          "type": "FRAME",
+          "w": 120,
+          "h": 110
+        },
+        {
+          "id": "12097-427087",
+          "name": "dropdown-account overview 6",
+          "type": "FRAME",
+          "w": 120,
+          "h": 246
+        },
+        {
+          "id": "12097-427475",
+          "name": "Overview - play",
+          "type": "FRAME",
+          "w": 708,
+          "h": 232
+        },
+        {
+          "id": "12097-427652",
+          "name": "Overview - play -hidden",
+          "type": "FRAME",
+          "w": 708,
+          "h": 232
+        },
+        {
+          "id": "12097-427765",
+          "name": "Overview - play",
+          "type": "FRAME",
+          "w": 343,
+          "h": 294
+        },
+        {
+          "id": "12097-428192",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 296,
+          "h": 988
+        },
+        {
+          "id": "12097-427882",
+          "name": "Overview - play -hidden",
+          "type": "FRAME",
+          "w": 343,
+          "h": 294
+        },
+        {
+          "id": "12166-455891",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 296,
+          "h": 988
+        },
+        {
+          "id": "12166-455671",
+          "name": "dropdown-courses",
+          "type": "FRAME",
+          "w": 150,
+          "h": 152
+        },
+        {
+          "id": "12166-455702",
+          "name": "dropdown-courses",
+          "type": "FRAME",
+          "w": 120,
+          "h": 144
+        },
+        {
+          "id": "12166-456540",
+          "name": "dropdown-multiselect",
+          "type": "FRAME",
+          "w": 200,
+          "h": 42
         }
       ]
     },
@@ -5726,18 +7730,19 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
+      "harvestedAt": "2026-09-07",
       "pageName": "✅ Home 1",
       "readiness": "ready",
-      "n": 254,
+      "n": 277,
       "scope": "v1-superseded",
-      "live": 254,
-      "furniture": 39,
+      "live": 277,
+      "furniture": 41,
       "furnitureWhy": {
-        "canvas-chrome": 36,
+        "canvas-chrome": 38,
         "hidden": 1,
         "loose-instance": 2
       },
-      "genuine": 215,
+      "genuine": 236,
       "matched": 85,
       "rollupOnly": 0,
       "defaultNamed": 1,
@@ -5786,7 +7791,7 @@
         },
         {
           "id": "2713-4240",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1129
@@ -5814,7 +7819,7 @@
         },
         {
           "id": "5902-147818",
-          "name": "Tier hover - Gold lo",
+          "name": "Tier hover - Gold locked",
           "type": "FRAME",
           "w": 1112,
           "h": 180
@@ -5828,14 +7833,14 @@
         },
         {
           "id": "2760-12240",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1477
         },
         {
           "id": "2773-7535",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Tiers (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1121
@@ -5849,7 +7854,7 @@
         },
         {
           "id": "5902-144187",
-          "name": "Interest payment his",
+          "name": "Interest payment history - table version",
           "type": "FRAME",
           "w": 1144,
           "h": 1028
@@ -5863,7 +7868,7 @@
         },
         {
           "id": "2769-14589",
-          "name": "Withdraw module - un",
+          "name": "Withdraw module - unavailable",
           "type": "FRAME",
           "w": 1144,
           "h": 440
@@ -5877,49 +7882,49 @@
         },
         {
           "id": "6250-93706",
-          "name": "sidebar - open - gro",
+          "name": "sidebar - open - group chats - grouped",
           "type": "FRAME",
           "w": 248,
           "h": 844
         },
         {
           "id": "6250-94544",
-          "name": "sidebar - open - gro",
+          "name": "sidebar - open - group chats - grouped",
           "type": "FRAME",
           "w": 248,
           "h": 844
         },
         {
           "id": "6250-92865",
-          "name": "sidebar - open - gro",
+          "name": "sidebar - open - group chats",
           "type": "FRAME",
           "w": 248,
           "h": 844
         },
         {
           "id": "5810-111037",
-          "name": "sidebar - open home ",
+          "name": "sidebar - open home | scroll",
           "type": "FRAME",
           "w": 248,
           "h": 967
         },
         {
           "id": "5812-117161",
-          "name": "sidebar - open home ",
+          "name": "sidebar - open home | pinned",
           "type": "FRAME",
           "w": 248,
           "h": 124
         },
         {
           "id": "5810-111638",
-          "name": "sidebar - open - age",
+          "name": "sidebar - open - agentic support",
           "type": "FRAME",
           "w": 248,
           "h": 844
         },
         {
           "id": "5810-111233",
-          "name": "sidebar - open - int",
+          "name": "sidebar - open - intelligent support",
           "type": "FRAME",
           "w": 248,
           "h": 844
@@ -5940,224 +7945,287 @@
         },
         {
           "id": "6330-54599",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6379-18604",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome - scroll 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6388-21725",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome > onboarding Qs - with default PFP 1 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6393-53747",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome > onboarding Qs - load effect 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6405-20293",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome > onboarding Qs - load effect > Badge reward 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6405-20667",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome > onboarding Qs - load effect > Quests 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6330-55267",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6379-18643",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome - scroll 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6388-21892",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome > onboarding Qs - with default PFP 1 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6394-54418",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome > onboarding Qs - load effect 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6405-20479",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome > onboarding Qs - load effect 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6413-21006",
-          "name": "Skai > Home - welcom",
+          "name": "Skai > Home - welcome > onboarding Qs - load effect > Quests 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6415-45107",
-          "name": "Skai > Home 1VH (768",
+          "name": "Skai > Home 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14129-82852",
+          "name": "Skai > Home - with deposit 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14136-89564",
+          "name": "Skai > Home - with deposit > quick balance ALT 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14129-84348",
+          "name": "Skai > Home - with deposit > deposit modal 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14136-85609",
+          "name": "Skai > Home - with deposit > deposit modal > Buy with Fiat 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14136-86305",
+          "name": "Skai > Home - with deposit > deposit modal > Buy with Fiat > select currency 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14136-87297",
+          "name": "Skai > Home - with deposit > deposit modal > Buy with Fiat > pay with 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14136-88147",
+          "name": "Skai > Home - with deposit > deposit modal > Send crypto 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14355-262060",
+          "name": "modal",
+          "type": "FRAME",
+          "w": 448,
+          "h": 704
+        },
+        {
+          "id": "14136-88988",
+          "name": "Skai > Home - with deposit > deposit modal > Send crypto > Deposit received 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6702-25577",
-          "name": "Skai > Home - sideba",
+          "name": "Skai > Home - sidebar normal > Group chats > Folder name 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6419-45976",
-          "name": "Skai > Home 1VH - qu",
+          "name": "Skai > Home 1VH - query - focus 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6419-46299",
-          "name": "Skai > Home 1VH - qu",
+          "name": "Skai > Home 1VH - query 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6704-26096",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed - empty 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6710-25832",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed - actionable 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6706-22658",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed > Market intel > Manage intel 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6706-24261",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed > Market intel (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1275
         },
         {
           "id": "6782-24811",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6828-38811",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Vault 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6918-62834",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Defi 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6918-64949",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Social 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6925-68955",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Social - with vesting (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1347
         },
         {
           "id": "6937-71607",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Tiers 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6942-74270",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Tiers (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1245
         },
         {
           "id": "6962-75733",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Badges (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 2161
         },
         {
           "id": "6965-82190",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Badges > Badge preview (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6942-75317",
-          "name": "Trade - empty - tabl",
+          "name": "Trade - empty - tablet",
           "type": "FRAME",
           "w": 708,
           "h": 708
         },
         {
           "id": "6899-54796",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Vault (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 2156
         },
         {
           "id": "6910-59017",
-          "name": "Withdraw module - un",
+          "name": "Withdraw module - unavailable",
           "type": "FRAME",
           "w": 708,
           "h": 518
@@ -6171,133 +8239,133 @@
         },
         {
           "id": "6907-56580",
-          "name": "Section with horiz. ",
+          "name": "Section with horiz. scroll - tablet",
           "type": "FRAME",
           "w": 1128,
           "h": 711
         },
         {
           "id": "6910-58299",
-          "name": "Interest payment his",
+          "name": "Interest payment history - table version - tablet",
           "type": "FRAME",
           "w": 1128,
           "h": 1031
         },
         {
           "id": "6795-31004",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio - invisible 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6811-32792",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Add wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6811-34522",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Add wallet > Name wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6811-35764",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Export private key 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6828-36970",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Export private key > private key displayed 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6811-34114",
-          "name": "Modal - select chain",
+          "name": "Modal - select chain - Tablet",
           "type": "FRAME",
           "w": 468,
           "h": 632
         },
         {
           "id": "6910-59407",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Vault (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 2316
         },
         {
           "id": "6918-63866",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Vault 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6925-67023",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Social (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1125
         },
         {
           "id": "6934-70311",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Social - with vesting (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1728
         },
         {
           "id": "6942-72954",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Tiers (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6942-74751",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Tiers (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1259
         },
         {
           "id": "6962-80042",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Badges (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 2449
         },
         {
           "id": "6965-86368",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Badges > Badge preview (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6942-75545",
-          "name": "Trade - empty - mobi",
+          "name": "Trade - empty - mobile",
           "type": "FRAME",
           "w": 347,
           "h": 801
         },
         {
           "id": "6925-67953",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Social 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6918-64538",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Vault (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 896
@@ -6311,269 +8379,360 @@
         },
         {
           "id": "6918-62267",
-          "name": "Withdraw module - un",
+          "name": "Withdraw module - unavailable",
           "type": "FRAME",
           "w": 347,
           "h": 536
         },
         {
           "id": "6910-61118",
-          "name": "Section with horiz. ",
+          "name": "Section with horiz. scroll - mobile",
           "type": "FRAME",
           "w": 1120,
           "h": 777
         },
         {
           "id": "6918-61404",
-          "name": "Section with horiz. ",
+          "name": "Section with horiz. scroll - mobile",
           "type": "FRAME",
           "w": 1120,
           "h": 1127
         },
         {
           "id": "6419-47130",
-          "name": "Skai > Home - sideba",
+          "name": "Skai > Home - sidebar 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6702-24782",
-          "name": "Skai > Home - sideba",
+          "name": "Skai > Home - sidebar normal 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6415-45113",
-          "name": "Skai > Home 1VH (375",
+          "name": "Skai > Home 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14129-84086",
+          "name": "Skai > Home - with deposit 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14129-84499",
+          "name": "Skai > Home - with deposit > deposit modal 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14136-89715",
+          "name": "Skai > Home > Sidebar 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14317-260169",
+          "name": "Skai > Home - with deposit > quick balance - wallet mini ALT 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14317-260499",
+          "name": "Skai > Home - with deposit > quick balance - my wallets ALT 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14317-261272",
+          "name": "dropdown-my wallets",
+          "type": "FRAME",
+          "w": 313,
+          "h": 421
+        },
+        {
+          "id": "14136-85815",
+          "name": "Skai > Home - with deposit > deposit modal > Buy with Fiat 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14136-86579",
+          "name": "Skai > Home - with deposit > deposit modal > Buy with Fiat > select currency 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14136-87585",
+          "name": "Skai > Home - with deposit > deposit modal > Buy with Fiat > pay with 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14136-88454",
+          "name": "Skai > Home - with deposit > deposit modal > Send crypto 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14355-262291",
+          "name": "modal",
+          "type": "FRAME",
+          "w": 354,
+          "h": 702
+        },
+        {
+          "id": "14136-89280",
+          "name": "Skai > Home - with deposit > deposit modal > Send crypto > Deposit received 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6704-27342",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed - empty 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1330
         },
         {
           "id": "6707-23360",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed > Market intel (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1298
         },
         {
           "id": "6710-24624",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed > Market intel 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6710-24970",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed > Market intel > Manage intel 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6704-29359",
-          "name": "Skai > Home > AI Fee",
+          "name": "Skai > Home > AI Feed - empty (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6702-25618",
-          "name": "Skai > Home - sideba",
+          "name": "Skai > Home - sidebar normal > Group chats > Folder name 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6419-47275",
-          "name": "Skai > Home - sideba",
+          "name": "Skai > Home - sidebar 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6702-25218",
-          "name": "Skai > Home - sideba",
+          "name": "Skai > Home - sidebar normal 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6419-45553",
-          "name": "Skai > Home 1VH ALT ",
+          "name": "Skai > Home 1VH ALT (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6736-37714",
-          "name": "Skai > Home > conver",
+          "name": "Skai > Home > conversation 3 > edit chat 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6715-34899",
-          "name": "Skai > Home > conver",
+          "name": "Skai > Home > conversation extended 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1984
         },
         {
           "id": "6736-37955",
-          "name": "Skai > Home > conver",
+          "name": "Skai > Home > conversation 3 > edit chat 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6715-35126",
-          "name": "Skai > Home > conver",
+          "name": "Skai > Home > conversation extended 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1782
         },
         {
           "id": "6736-38442",
-          "name": "Skai > Home - ads > ",
+          "name": "Skai > Home - ads > Add 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6750-43337",
-          "name": "Skai > Home > Voice ",
+          "name": "Skai > Home > Voice prompt > chat history 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6736-39216",
-          "name": "Skai > Home > Add > ",
+          "name": "Skai > Home > Add > upload image 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6736-38635",
-          "name": "Skai > Home - ads > ",
+          "name": "Skai > Home - ads > Add 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6736-39279",
-          "name": "Skai > Home > Add > ",
+          "name": "Skai > Home > Add > upload image 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6736-41729",
-          "name": "Skai > Home > Voice ",
+          "name": "Skai > Home > Voice prompt 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "6750-42546",
-          "name": "Skai > Home > Voice ",
+          "name": "Skai > Home > Voice prompt 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6750-43675",
-          "name": "Skai > Home > Voice ",
+          "name": "Skai > Home > Voice prompt > chat history 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6782-25160",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6811-32268",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio - invisible 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6811-33593",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Add wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6811-35119",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Add wallet > Name wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6811-36029",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Export private key 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6828-37572",
-          "name": "Skai > Home > Portfo",
+          "name": "Skai > Home > Portfolio > Export private key > private key displayed 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "6811-34411",
-          "name": "Modal - select chain",
+          "name": "Modal - select chain - Mobile",
           "type": "FRAME",
           "w": 354,
           "h": 590
         },
         {
           "id": "9746-172340",
-          "name": "Skai > Home > Instal",
+          "name": "Skai > Home > Install to homescreen 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "9746-173030",
-          "name": "Skai > Home > Instal",
+          "name": "Skai > Home > Install to homescreen 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9747-175217",
-          "name": "Skai > Home > Instal",
+          "name": "Skai > Home > Install to homescreen ALT 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
-          "id": "13502-171413",
+          "id": "14321-261423",
           "name": "modal",
           "type": "FRAME",
           "w": 564,
           "h": 778
+        },
+        {
+          "id": "14108-103468",
+          "name": "Skai > Home - with deposit ALT 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
         },
         {
           "id": "13502-171904",
@@ -6581,6 +8740,13 @@
           "type": "FRAME",
           "w": 290,
           "h": 354
+        },
+        {
+          "id": "14136-89913",
+          "name": "Wallet MINI",
+          "type": "FRAME",
+          "w": 290,
+          "h": 352
         },
         {
           "id": "13495-171067",
@@ -6597,6 +8763,34 @@
           "h": 160
         },
         {
+          "id": "14136-88793",
+          "name": "dropdown-token",
+          "type": "FRAME",
+          "w": 180,
+          "h": 260
+        },
+        {
+          "id": "14136-88815",
+          "name": "dropdown-networks",
+          "type": "FRAME",
+          "w": 180,
+          "h": 152
+        },
+        {
+          "id": "14136-88891",
+          "name": "dropdown-token",
+          "type": "FRAME",
+          "w": 160,
+          "h": 260
+        },
+        {
+          "id": "14136-88913",
+          "name": "dropdown-networks",
+          "type": "FRAME",
+          "w": 160,
+          "h": 152
+        },
+        {
           "id": "13502-171979",
           "name": "dropdown-my wallets",
           "type": "FRAME",
@@ -6604,90 +8798,477 @@
           "h": 432
         },
         {
-          "id": "13490-169635",
-          "name": "USD 1",
+          "id": "14129-83324",
+          "name": "sidebar",
           "type": "FRAME",
-          "w": 512,
-          "h": 512
+          "w": 296,
+          "h": 812
         },
         {
-          "id": "13490-169621",
-          "name": "EUR 1",
+          "id": "14129-83460",
+          "name": "sidebar",
           "type": "FRAME",
-          "w": 24,
-          "h": 24
-        },
-        {
-          "id": "13490-169631",
-          "name": "DKK 1",
-          "type": "FRAME",
-          "w": 512,
-          "h": 512
-        },
-        {
-          "id": "13490-169640",
-          "name": "CZK 1",
-          "type": "FRAME",
-          "w": 512,
-          "h": 512
-        },
-        {
-          "id": "13490-169644",
-          "name": "COP 1",
-          "type": "FRAME",
-          "w": 512,
-          "h": 512
-        },
-        {
-          "id": "13490-169649",
-          "name": "CAD 1",
-          "type": "FRAME",
-          "w": 512,
-          "h": 512
-        },
-        {
-          "id": "13490-169687",
-          "name": "AUD 1",
-          "type": "FRAME",
-          "w": 512,
-          "h": 512
-        },
-        {
-          "id": "13490-169652",
-          "name": "BRL 1",
-          "type": "FRAME",
-          "w": 512,
-          "h": 512
+          "w": 318,
+          "h": 1024
         }
       ]
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
+      "harvestedAt": "2026-09-07",
       "pageName": "✅ Home 2",
       "readiness": "ready",
-      "n": 168,
+      "n": 240,
       "scope": "in-scope",
-      "live": 168,
-      "furniture": 30,
+      "live": 240,
+      "furniture": 36,
       "furnitureWhy": {
-        "canvas-chrome": 27,
+        "canvas-chrome": 33,
         "hidden": 3
       },
-      "genuine": 138,
-      "matched": 138,
+      "genuine": 204,
+      "matched": 143,
       "rollupOnly": 0,
-      "defaultNamed": 0,
+      "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 2,
       "byStatus": {
-        "partial": 87,
+        "partial": 91,
         "done": 36,
-        "not-started": 9,
+        "not-started": 10,
         "blocked-on-backend": 5,
         "frame-defect": 1
       },
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "14062-50444",
+          "name": "Skai > Home > Intelligent support - Market intel 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14094-56626",
+          "name": "Skai > Home > Intelligent support (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1074
+        },
+        {
+          "id": "14094-69692",
+          "name": "Frame 893",
+          "type": "FRAME",
+          "w": 350,
+          "h": 219
+        },
+        {
+          "id": "14094-63614",
+          "name": "Skai > Home > Intelligent support ALT (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1074
+        },
+        {
+          "id": "14106-70649",
+          "name": "Skai > Home > Intelligent support - News (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 2402
+        },
+        {
+          "id": "14113-73205",
+          "name": "Skai > Home > Intelligent support - Sentiment 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14113-74721",
+          "name": "Skai > Home > Intelligent support - Sentiment > Trending topics - modal 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14113-76027",
+          "name": "Skai > Home > Intelligent support - Analysis (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1284
+        },
+        {
+          "id": "14113-76606",
+          "name": "Skai > Home > Intelligent support - Analysis > display settings 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14123-77342",
+          "name": "Skai > Home > Agentic support - AI master 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14123-77740",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14179-163502",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 1 no data 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14123-78540",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 2 - choose personality (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1070
+        },
+        {
+          "id": "14123-80001",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 2 - choose personality 2 (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 2548
+        },
+        {
+          "id": "14123-81330",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 3 - configure (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1295
+        },
+        {
+          "id": "14315-247761",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 3 - configure > Confirm 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14113-74132",
+          "name": "Skai > Home > Intelligent support - Sentiment (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 2086
+        },
+        {
+          "id": "14106-71752",
+          "name": "Skai > Home > Intelligent support - News 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14077-52941",
+          "name": "Skai > Home > Intelligent support - Market intel > Manage intel - all selected 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14268-166261",
+          "name": "Skai > Home > Intelligent support - Market intel > Manage intel - few selected 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14315-246829",
+          "name": "Skai > Home > Intelligent support - Market intel (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1763
+        },
+        {
+          "id": "14160-131728",
+          "name": "Skai > Home > Intelligent support - Market intel 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14178-151580",
+          "name": "Skai > Home > Intelligent support 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14316-248325",
+          "name": "Skai > Home > Intelligent support ALT 2 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1425
+        },
+        {
+          "id": "14178-152219",
+          "name": "Skai > Home > Intelligent support ALT 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14178-155931",
+          "name": "Frame 894",
+          "type": "FRAME",
+          "w": 168,
+          "h": 142
+        },
+        {
+          "id": "14160-134708",
+          "name": "Skai > Home > Intelligent support - Market intel > Manage intel - few selected 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14160-135347",
+          "name": "Skai > Home > Intelligent support - Market intel > Manage intel - all selected 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14160-139741",
+          "name": "Skai > Home > Intelligent support - News 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14178-141206",
+          "name": "Skai > Home > Intelligent support - News (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2859
+        },
+        {
+          "id": "14178-142300",
+          "name": "Skai > Home > Intelligent support - Sentiment (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1816
+        },
+        {
+          "id": "14178-142962",
+          "name": "Skai > Home > Intelligent support - Sentiment 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14178-143359",
+          "name": "Skai > Home > Agentic support - Backtesting > conversation 6 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14178-157280",
+          "name": "Skai > Home > Intelligent support - Sentiment > Trending topics - modal (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1201
+        },
+        {
+          "id": "14179-157892",
+          "name": "Skai > Home > Intelligent support - Analysis > display settings 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14179-158300",
+          "name": "Skai > Home > Agentic support - AI master 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14179-158963",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14179-163655",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 1 no data 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14179-159153",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 2 - choose personality 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 946
+        },
+        {
+          "id": "14179-159712",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 2 - choose personality 2 (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2488
+        },
+        {
+          "id": "14179-161276",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 3 - configure (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1228
+        },
+        {
+          "id": "14179-162716",
+          "name": "Skai > Home > Agentic support - AI master > Create AI agent - step 3 - configure > Confirm 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14160-131918",
+          "name": "Skai > Home > Intelligent support - Market intel (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1795
+        },
+        {
+          "id": "14094-70490",
+          "name": "dropdown-filter",
+          "type": "FRAME",
+          "w": 200,
+          "h": 296
+        },
+        {
+          "id": "14160-137581",
+          "name": "dropdown-filter",
+          "type": "FRAME",
+          "w": 180,
+          "h": 280
+        },
+        {
+          "id": "14106-72540",
+          "name": "button-share link",
+          "type": "FRAME",
+          "w": 200,
+          "h": 44
+        },
+        {
+          "id": "14178-156951",
+          "name": "button-share link",
+          "type": "FRAME",
+          "w": 180,
+          "h": 42
+        },
+        {
+          "id": "14191-164737",
+          "name": "dropdown-venue",
+          "type": "FRAME",
+          "w": 220,
+          "h": 224
+        },
+        {
+          "id": "14191-164772",
+          "name": "dropdown-venue",
+          "type": "FRAME",
+          "w": 200,
+          "h": 212
+        },
+        {
+          "id": "14191-164703",
+          "name": "dropdown-response style",
+          "type": "FRAME",
+          "w": 220,
+          "h": 116
+        },
+        {
+          "id": "14191-164720",
+          "name": "dropdown-response style",
+          "type": "FRAME",
+          "w": 200,
+          "h": 110
+        },
+        {
+          "id": "14191-164713",
+          "name": "dropdown-templates",
+          "type": "FRAME",
+          "w": 220,
+          "h": 80
+        },
+        {
+          "id": "14191-164730",
+          "name": "dropdown-templates",
+          "type": "FRAME",
+          "w": 200,
+          "h": 76
+        },
+        {
+          "id": "14191-164756",
+          "name": "dropdown-time horizon",
+          "type": "FRAME",
+          "w": 180,
+          "h": 188
+        },
+        {
+          "id": "14191-164791",
+          "name": "dropdown-time horizon",
+          "type": "FRAME",
+          "w": 150,
+          "h": 178
+        },
+        {
+          "id": "14160-133074",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 296,
+          "h": 960
+        },
+        {
+          "id": "14191-164317",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 296,
+          "h": 960
+        },
+        {
+          "id": "14160-133304",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 296,
+          "h": 960
+        },
+        {
+          "id": "14094-55845",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 318,
+          "h": 1024
+        },
+        {
+          "id": "14179-163988",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 318,
+          "h": 1024
+        },
+        {
+          "id": "14094-56305",
+          "name": "sidebar",
+          "type": "FRAME",
+          "w": 318,
+          "h": 1024
+        }
+      ]
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -8973,17 +11554,18 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
+      "harvestedAt": "2026-09-07",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
-      "n": 407,
+      "n": 417,
       "scope": "in-scope",
-      "live": 407,
-      "furniture": 32,
+      "live": 417,
+      "furniture": 40,
       "furnitureWhy": {
-        "canvas-chrome": 31,
+        "canvas-chrome": 39,
         "loose-instance": 1
       },
-      "genuine": 375,
+      "genuine": 377,
       "matched": 375,
       "rollupOnly": 0,
       "defaultNamed": 18,
@@ -9000,7 +11582,22 @@
         "furniture": 4,
         "open": 1
       },
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "14180-115254",
+          "name": "Trench scroller - undocked",
+          "type": "FRAME",
+          "w": 1382,
+          "h": 22
+        },
+        {
+          "id": "13935-69044",
+          "name": "Skai > Trench 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        }
+      ]
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -10206,900 +12803,6 @@
       "status": "partial"
     },
     {
-      "id": "11843-353663",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:165"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11846-354965",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:166"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11847-357151",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave33.social-pages.tsv:31",
-        "status.wave34.social-pages.tsv:26"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11872-41908",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:167"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11872-42520",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:168"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11872-43820",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:169"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11881-89414",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:170"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11881-93654",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:171"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11884-96408",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave33.social-pages.tsv:32",
-        "status.wave34.social-pages.tsv:27"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11885-100111",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:172"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11885-98503",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:173"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11885-98886",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:174"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11885-99426",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:175"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11907-138358",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:176"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11946-148523",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave33.social-pages.tsv:33",
-        "status.wave34.social-pages.tsv:28"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11972-149758",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:177"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11972-150945",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:178"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11972-151493",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:179"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11972-152545",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:180"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11972-153216",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:181"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11973-153636",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:182"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11973-154184",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:183"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11973-155655",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:184"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11973-158164",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:185"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11973-158665",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:186"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11973-159235",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:187"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11973-159567",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:188"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11973-160234",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:189"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11973-161769",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:190"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11973-161912",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:191"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11974-165410",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:192"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11978-168335",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:193"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11978-168824",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:194"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11978-169460",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:195"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "11978-170038",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:196"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11978-171157",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:197"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11980-172605",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:198"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11980-173398",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:199"
-      ],
-      "status": "blocked-on-backend"
-    },
-    {
-      "id": "11980-173965",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:200"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11980-175816",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:201"
-      ],
-      "status": "blocked-on-backend"
-    },
-    {
-      "id": "11980-177310",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:202"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11983-179665",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:203"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11983-180657",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:204"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11983-181349",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:205"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11983-182085",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:206"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11986-226555",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:207"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11998-329996",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:208"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "11998-346238",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:209"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12003-382685",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:210"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12003-383100",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:211"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12003-383790",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:212"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12003-384268",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:213"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12003-384627",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:214"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12003-385486",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:215"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12003-386268",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:216"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12003-386958",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:217"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12003-387432",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:218"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12003-387906",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:219"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-388816",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:220"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-389667",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:221"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-390587",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:222"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-392671",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:223"
-      ],
-      "status": "blocked-on-backend"
-    },
-    {
-      "id": "12004-393178",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:224"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-393542",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:225"
-      ],
-      "status": "blocked-on-backend"
-    },
-    {
-      "id": "12004-394869",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:226"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-396180",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:227"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-396474",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:228"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-396713",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:229"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-396856",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:230"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-397714",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:231"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-398296",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:232"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-399859",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:233"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-402326",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:234"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-405136",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:235"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-406527",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:236"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12004-408480",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:237"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-409355",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:238"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-410317",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:239"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12004-410871",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:240"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12009-412243",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:241"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12016-75585",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:242"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12080-414162",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:243"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12080-414477",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:244"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12080-414792",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:245"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12080-415107",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:246"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12080-415417",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:247"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12080-415727",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:248"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12082-425650",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:249"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12082-426150",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:250"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12082-426533",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:251"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12136-432663",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:252"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12136-433829",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:253"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12225-461211",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:254"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12225-462288",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:255"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12225-462758",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:256"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12261-469767",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:257"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12261-470424",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:258"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "12261-474854",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:259"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "12261-475335",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.governance.tsv:260"
-      ],
-      "status": "partial"
-    },
-    {
       "id": "13006-201814",
       "cls": "bug-link",
       "resolved": null,
@@ -11167,51 +12870,6 @@
         "status.wave2.trench-order-types.tsv:7"
       ],
       "status": "blocked-on-backend"
-    },
-    {
-      "id": "13669-141257",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave7.home2.tsv:45"
-      ],
-      "status": "not-started"
-    },
-    {
-      "id": "14094-54390",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave28.home2-feed.tsv:44"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "14094-67930",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave28.home2-feed.tsv:41"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "14160-136184",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave28.home2-feed.tsv:45"
-      ],
-      "status": "partial"
-    },
-    {
-      "id": "14160-137998",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave28.home2-feed.tsv:42"
-      ],
-      "status": "partial"
     },
     {
       "id": "4144-63929",
@@ -11553,7 +13211,7 @@
     {
       "id": "13449-191068",
       "page": "✅ Home 2",
-      "name": "Skai > Home > Intell",
+      "name": "Skai > Home > Intelligent support 1VH (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -11567,7 +13225,7 @@
     {
       "id": "13458-193331",
       "page": "✅ Home 2",
-      "name": "Skai > Home > Intell",
+      "name": "Skai > Home > Intelligent support ALT 1VH (1440 x 900px)",
       "statuses": [
         "frame-defect",
         "partial"
