@@ -10,6 +10,15 @@ unreachable for this entire session"*. The MCP was up on 2026-09-08 and these
 are the measurements those lanes could not take. Nothing here was built; this is
 the input to whoever does build it.
 
+⛔ **Two sections carry a same-day correction and it is worth reading before the
+rest.** This file first claimed `13008:41886` and `13008:55085` were cited
+nowhere in the tree. Both claims were false. The grep behind them covered three
+files picked from the report titles — `SendModal.tsx`, `SwapModal.tsx`,
+`BatchSendModal.tsx` — instead of `src`. `41886` was already implemented in
+`RecipientSearch.tsx`, and `55085` was fixed in `8ad32f1` while this was being
+written. Only `13008:42193` really is uncited. The measurements were right; the
+claim about the tree was not, and it failed in the direction that invents work.
+
 ---
 
 ## ⛔ The correction that matters most: five reports say "Swap" and mean "Send"
@@ -23,7 +32,7 @@ for five of the six. The report **titles** say Swap. The **frames** do not.
 | `3ced98a0` | Swap step 1 | `13008:41207` | "Swap crypto" | SwapModal.tsx ✅ |
 | `19a8bc08` | Send step 1 | `13008:41317` | "Send crypto", Token step | SendModal.tsx ✅ |
 | `451e65db` | Swap step 2 details | `13008:41511` | **"Send crypto"**, Details step | **SendModal.tsx** |
-| `699a804d` | Swap step 2 username scroll | `13008:41886` | recipient `@username` dropdown | **SendModal.tsx** |
+| `699a804d` | Swap step 2 username scroll | `13008:41886` | recipient `@username` dropdown | **RecipientSearch.tsx** (mounted by SendModal) |
 | `29dc1921` | Swap review & send step 3 | `13008:42014` | **"Review send"** | **SendModal.tsx** |
 | `c36ef164` | Swap processing pop-up | `13008:42193` | **"Send is in progress…"** | **SendModal.tsx** |
 
@@ -117,7 +126,36 @@ different surface, so it does **not** automatically govern the wallet — but a
 "Slow" tag is exactly what it removed, and building one here without asking is
 how a ruling gets quietly reversed on a neighbouring screen.
 
-## `13008:41886` — the recipient dropdown (`699a804d`) · NOT CITED ANYWHERE IN THE TREE
+## `13008:41886` — the recipient dropdown (`699a804d`) · ALREADY BUILT
+
+⛔ **CORRECTION, same day.** This section first said "NOT CITED ANYWHERE IN THE
+TREE". That was false, and it was false because the grep behind it covered only
+`SendModal.tsx`, `SwapModal.tsx` and `BatchSendModal.tsx` — three files chosen
+from the report titles — rather than `src`. A repo-wide grep finds it at
+`src/components/RecipientSearch.tsx:518`, carrying this exact frame and its two
+siblings:
+
+```
+1440  13008:38846  647x504  r16  pad 8  port 488  rows 40, 16 inset
+ 768  13008:40776  548x504  r16  pad 8  port 488  rows 40, 12 inset
+ 375  13008:41886  322x452  r12  pad 8  port 436  rows 40, 12 inset
+```
+
+and implementing them — `max-h-[436px] md:max-h-[488px]`,
+`rounded-[12px] md:rounded-[16px]`, `py-2 pl-2`, and `pr-6`/`pr-2` switched on
+whether the rail is drawn (24 = 16 gutter + the 8 the rail occupies). Landed in
+`5b7caac` and `0ecdab8`. The owning component is **`RecipientSearch.tsx`**,
+which `SendModal.tsx` mounts — so even the corrected routing above lands one
+file short.
+
+★ The lesson, which is the durable part: **a "cited nowhere" claim is only as
+good as the grep that produced it.** Three files picked from a report title is
+not a search of the tree, and the negative it returns reads exactly like the
+positive would have. Grep `src`, and keep a control in the same run — the
+control here (`13008:54426` → 2 hits, `13008:41340` → 2 hits) fired correctly
+while the real query was being asked of the wrong scope.
+
+The measurement itself stands, and is what the code implements:
 
 Top-level frame on the page, `dropdown - start scroll`, **322x452**.
 
@@ -170,10 +208,13 @@ CTA      322x44 at y=374
 
 ## Batch send — `BatchSendModal.tsx`
 
-## `13008:54424` — batch send, token step (`17fc008b`)
+## `13008:54424` — batch send, token step (`17fc008b`) · BUILT IN `8ad32f1`
 
-`Frame 347` 346x366 at y=50. Only `13008:54426` (the search input) is cited in
-the tree.
+`Frame 347` 346x366 at y=50. At the time of measurement only `13008:54426` (the
+search input) was cited; `8ad32f1` then gave the row its phone rung — a 32px
+icon block round a 24px mark with the chain badge at x=16 at 375, against a 40px
+block with the badge at x=26 from 768 up, which had shipped at the desktop
+numbers with no breakpoint at all.
 
 ```
 search   input/primary-inputs 322x48
@@ -189,7 +230,24 @@ against Send's 44 on a 52, subtitle 16 against 14, inner inset y=7 against y=6.
 The two look identical and are drawn three different numbers apart. Copying one
 into the other is the failure this note exists to prevent.
 
-## `13008:55085` — batch send, review (`4ce4899c`) · NOT CITED ANYWHERE IN THE TREE
+## `13008:55085` — batch send, review (`4ce4899c`) · BUILT WHILE THIS WAS WRITTEN
+
+⛔ **CORRECTION, same day, same cause as the `41886` one above:** this first read
+"NOT CITED ANYWHERE IN THE TREE" off a three-file grep. `skai-wallet 8ad32f1`
+(2026-09-08 22:42) fixes both batch rows and adds
+`src/__tests__/components/BatchSendModal.figmaParity.test.tsx`, which names
+`17fc008b` (`13008:54424 / 49276 / 36677`) and `4ce4899c`
+(`13008:55085 / 49869 / 37287`) and resolves both to Wallet 2 in-scope.
+
+Its central finding matches the measurement below independently: **Frame 382
+changes AXIS.** At 375 (`13008:55166`) the review actions are a vertical 10px
+stack with Confirm on top; at 768 and 1440 they are a horizontal pair with
+Cancel on the left. One flex row cannot express that, which is why it survived a
+pass that had already ramped this sheet's search field, primary CTA and details
+step. Shipped as `flex-col-reverse md:flex-row`, which draws the phone order
+without moving Cancel behind Confirm in the DOM.
+
+The measurement stands and is what the fix implements:
 
 `Frame 346` 346x638 at y=50 — by far the tallest board in this set.
 
