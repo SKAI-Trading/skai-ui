@@ -701,7 +701,9 @@ for (const pg of PAGES.pages || []) {
       outOfScope.push({ page: pg.pageName, live: pg.liveChildren, reason });
       continue;
     }
-    if (pg.readiness !== "meta") uncovered.push({ page: pg.pageName, live: pg.liveChildren });
+    // A tombstone (✝️) is a page whose body moved to another file; it is
+    // expected to have no section, the same as a meta page.
+    if (pg.readiness !== "meta" && pg.readiness !== "tombstone") uncovered.push({ page: pg.pageName, live: pg.liveChildren });
     continue;
   }
   pageReport.push({
@@ -736,7 +738,7 @@ const DRIFT_MIN_ABS = 10; // ignore small gaps — furniture accounts for those
 const DRIFT_MIN_PCT = 0.25; // ...unless a quarter of the page is uncatalogued
 const drift = [];
 for (const pg of PAGES.pages || []) {
-  if (!pg.sections.length || pg.liveChildren == null || pg.readiness === "meta") continue;
+  if (!pg.sections.length || pg.liveChildren == null || pg.readiness === "meta" || pg.readiness === "tombstone") continue;
   const rows = rowsByPage[`${pg.fileKey}|${pg.pageName}`] || 0;
   const unexplained = pg.liveChildren - rows - (pg.expectedDelta || 0);
   if (unexplained >= DRIFT_MIN_ABS && unexplained >= pg.liveChildren * DRIFT_MIN_PCT) {

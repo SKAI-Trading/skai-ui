@@ -8,8 +8,11 @@ this page, so on the page flag alone all twelve read as "not a parity target".
 This file records why that reading is not safe to act on, and what the one
 question for Casey actually is.
 
-Companion to `status.scope-adjudication-2026-09-08.tsv`, which lists the twelve
-rows alongside the 43 in-scope rows from the same sweep.
+Companion to `scope-adjudication-2026-09-08.tsv`, which lists the twelve
+rows alongside the 43 in-scope rows from the same sweep. (Renamed 2026-09-09
+from `status.scope-adjudication-…`: the `status.` prefix made apply-status.mjs,
+bp-report.mjs and coverage.mjs read a bug-report adjudication table as a frame
+status table, which failed bp-report and miscounted 33 rows as catalog rows.)
 
 ## What was measured, and how
 

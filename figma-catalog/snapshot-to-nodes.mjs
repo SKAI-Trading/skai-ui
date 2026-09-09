@@ -88,8 +88,14 @@ for (const file of files) {
     }
 
     const before = currentIds(section);
-    const ids = nodes.map((n) => String(n[0]));
-    const titles = nodes.map((n) => `${n[0]}\t${n[1] ?? ""}`);
+    // `nested` (harvest.mjs to-snapshot): catalogued ids probed alive below
+    // depth 1. Folded in AFTER the top-level list so the section keeps them —
+    // a UNION with what Figma still holds, not a replace by what it lists at
+    // the top. Dropping them here is what deletes the hand-set fields keyed
+    // to a nested frame.
+    const nested = Array.isArray(v.nested) ? v.nested : [];
+    const ids = [...nodes, ...nested].map((n) => String(n[0]));
+    const titles = [...nodes, ...nested].map((n) => `${n[0]}\t${n[1] ?? ""}`);
 
     const prior = new Set(before || []);
     const now = new Set(ids);

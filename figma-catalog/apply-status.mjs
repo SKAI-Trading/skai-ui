@@ -415,7 +415,14 @@ for (const [regKey, f] of Object.entries(reg.frames)) {
   if (!s) continue;
   f.status = s.status;
   if (s.route && s.route !== "-") f.route = s.route;
-  if (s.reason) f.notes = s.reason;
+  if (s.reason) {
+    // Keep the trailing `[vverify: …]` marker apply-verify.mjs folded in on the
+    // previous run. Dropping it here made the marker look new on every run, so
+    // apply-verify re-stamped verifiedAt on 873 frames whose verdict had not
+    // moved (2026-09-09). apply-verify strips and re-adds it idempotently.
+    const kept = /\s*\[vverify:[\s\S]*$/.exec(f.notes || "");
+    f.notes = kept ? `${s.reason} ${kept[0].trim()}` : s.reason;
+  }
   if (s.primaryFile && s.primaryFile !== "-" && !f.implFiles.includes(s.primaryFile))
     f.implFiles.push(s.primaryFile);
   applied++;

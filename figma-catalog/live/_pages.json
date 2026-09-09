@@ -115,8 +115,8 @@
     "It is a SNAPSHOT of 2026-09-08 and goes stale as reports are filed and closed. Re-derive",
     "it rather than trusting it if the date matters."
   ],
-  "harvestedAt": "2026-08-26",
-  "method": "use_figma read-only; figma.root.children for the page list, then page.loadAsync() per page for children",
+  "harvestedAt": "2026-09-09",
+  "method": "harvest.mjs: one use_figma call per chunk (see `node harvest.mjs plan`); PageNode.loadAsync per page, top-level children only, full names; every chunk carries the page's own children.length and ingest refuses a page whose chunks do not reconcile to it",
   "fileAliases": {
     "_why": "Report `figma_link`s do not all carry a tracked fileKey. An untracked key resolves to no page and so to no scope, and an unscoped citation is worse than a retired one: nobody can tell whether to build it. Record the mapping here rather than letting each lane rediscover it.",
     "_wrongFileKeyOnReports": {
@@ -126,7 +126,17 @@
         "a078ae7a-ea3b-4486-88d2-81126ea01389": "link says 3sSzw|2998:19599; node is on mhF3 ✅ Wallet 1, top-level frame 'Skai > Wallet 1VH (1440 x 900px)'",
         "4162572b-93c4-4c37-a9d6-77cdeeb8c96e": "link says 3sSzw|7761:224662; node is on mhF3 ✅ Trade 1, top-level frame 'Trade panel - Limit', the node itself is 'dropdown-3'"
       },
-      "absentFromBothFiles": ["fc3d9309-1dff-4a40-a28b-f9931f70009f", "7b1c3a86-2b2b-41e6-811e-b358ac2a68c0", "5cd99ea6-f3f2-422a-9061-b70e18147750", "44bf7033-366b-428e-b6fd-d93f93759494", "071241ed-9aff-494f-8f19-59e439c9ecc5", "41c8b16d-c946-48a7-a989-022ee4d1144a", "adb0c5ba-9ebb-4c26-b064-79894cfa197b", "a2617905-78ab-420c-ade5-e28cdfafa2bf", "583c032f-fa22-40e7-91e8-aacebc29edbd"],
+      "absentFromBothFiles": [
+        "fc3d9309-1dff-4a40-a28b-f9931f70009f",
+        "7b1c3a86-2b2b-41e6-811e-b358ac2a68c0",
+        "5cd99ea6-f3f2-422a-9061-b70e18147750",
+        "44bf7033-366b-428e-b6fd-d93f93759494",
+        "071241ed-9aff-494f-8f19-59e439c9ecc5",
+        "41c8b16d-c946-48a7-a989-022ee4d1144a",
+        "adb0c5ba-9ebb-4c26-b064-79894cfa197b",
+        "a2617905-78ab-420c-ade5-e28cdfafa2bf",
+        "583c032f-fa22-40e7-91e8-aacebc29edbd"
+      ],
       "checkedAt": "2026-09-08 via getNodeByIdAsync against mhF3BkzlTaGiLzJ7kvpmVc after loadAsync on every page. A missing spec citation is not evidence the app bug is unreal - none of these were closed."
     },
     "qCg6vd2Kd4KCgZgYzVsFWD": {
@@ -161,7 +171,8 @@
       "readiness": "meta",
       "n": 1,
       "openReports": 0,
-      "scope": "meta"
+      "scope": "meta",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -170,7 +181,8 @@
       "readiness": "meta",
       "n": 46,
       "openReports": 0,
-      "scope": "meta"
+      "scope": "meta",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -179,7 +191,8 @@
       "readiness": "wip",
       "n": 1157,
       "openReports": 0,
-      "scope": "wip"
+      "scope": "wip",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -188,7 +201,8 @@
       "readiness": "wip",
       "n": 3,
       "openReports": 0,
-      "scope": "wip"
+      "scope": "wip",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -197,7 +211,8 @@
       "readiness": "ready",
       "n": 151,
       "openReports": 5,
-      "scope": "excluded"
+      "scope": "excluded",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -206,34 +221,38 @@
       "readiness": "ready",
       "n": 10,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "2003:674",
-      "pageName": "✝️ Home (moved to Skai Web App 2)",
+      "pageName": "✝️ Home (moved to \"Skai Web App 2\")",
       "readiness": "tombstone",
       "n": 20,
       "openReports": 0,
-      "scope": "tombstone"
+      "scope": "tombstone",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "2998:19593",
-      "pageName": "✝️ Wallet (moved to Skai Web App 2)",
+      "pageName": "✝️ Wallet (moved to \"Skai Web App 2\")",
       "readiness": "tombstone",
       "n": 13,
       "openReports": 0,
-      "scope": "tombstone"
+      "scope": "tombstone",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "3:3",
-      "pageName": "✝️ Trade (moved to Skai Web App 2)",
+      "pageName": "✝️ Trade (moved to \"Skai Web App 2\")",
       "readiness": "tombstone",
       "n": 154,
       "openReports": 0,
-      "scope": "tombstone"
+      "scope": "tombstone",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -242,7 +261,8 @@
       "readiness": "ready",
       "n": 284,
       "openReports": 64,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -251,7 +271,8 @@
       "readiness": "ready",
       "n": 345,
       "openReports": 38,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -260,12 +281,13 @@
       "readiness": "ready",
       "n": 442,
       "openReports": 16,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "harvestedAt": "2026-09-07",
+      "harvestedAt": "2026-09-09",
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
@@ -279,12 +301,13 @@
       "readiness": "meta",
       "n": 1,
       "openReports": 0,
-      "scope": "meta"
+      "scope": "meta",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 277,
@@ -295,7 +318,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 240,
@@ -310,7 +333,8 @@
       "readiness": "ready",
       "n": 178,
       "openReports": 42,
-      "scope": "v1-superseded"
+      "scope": "v1-superseded",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -319,7 +343,8 @@
       "readiness": "ready",
       "n": 182,
       "openReports": 25,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -328,12 +353,13 @@
       "readiness": "ready",
       "n": 420,
       "openReports": 64,
-      "scope": "v1-superseded"
+      "scope": "v1-superseded",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 417,
@@ -348,7 +374,8 @@
       "readiness": "meta",
       "n": 1,
       "openReports": 0,
-      "scope": "meta"
+      "scope": "meta",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -357,7 +384,8 @@
       "readiness": "meta",
       "n": 3,
       "openReports": 0,
-      "scope": "meta"
+      "scope": "meta",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -365,7 +393,7 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 44,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
@@ -378,7 +406,8 @@
       "readiness": "ready",
       "n": 36,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -387,7 +416,8 @@
       "readiness": "ready",
       "n": 21,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -396,7 +426,8 @@
       "readiness": "ready",
       "n": 23,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -405,7 +436,8 @@
       "readiness": "ready",
       "n": 20,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -413,7 +445,7 @@
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
       "n": 21,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "openReports": 0,
       "scope": "in-scope"
     },
@@ -423,7 +455,7 @@
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
       "n": 46,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "openReports": 3,
       "scope": "in-scope"
     },
@@ -434,7 +466,8 @@
       "readiness": "ready",
       "n": 21,
       "openReports": 1,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -443,7 +476,8 @@
       "readiness": "ready",
       "n": 31,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -452,7 +486,8 @@
       "readiness": "ready",
       "n": 16,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -461,7 +496,8 @@
       "readiness": "ready",
       "n": 31,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -470,7 +506,8 @@
       "readiness": "ready",
       "n": 27,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -479,7 +516,8 @@
       "readiness": "ready",
       "n": 25,
       "openReports": 2,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -488,7 +526,8 @@
       "readiness": "ready",
       "n": 14,
       "openReports": 2,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -497,7 +536,8 @@
       "readiness": "ready",
       "n": 17,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -506,7 +546,8 @@
       "readiness": "ready",
       "n": 21,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -515,7 +556,8 @@
       "readiness": "ready",
       "n": 21,
       "openReports": 1,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -524,7 +566,8 @@
       "readiness": "ready",
       "n": 14,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -533,7 +576,8 @@
       "readiness": "ready",
       "n": 24,
       "openReports": 1,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -542,7 +586,8 @@
       "readiness": "ready",
       "n": 18,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -551,7 +596,8 @@
       "readiness": "ready",
       "n": 20,
       "openReports": 2,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -560,7 +606,8 @@
       "readiness": "ready",
       "n": 30,
       "openReports": 0,
-      "scope": "in-scope"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -569,7 +616,8 @@
       "readiness": "unknown",
       "n": 51,
       "openReports": 0,
-      "scope": "wip"
+      "scope": "wip",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -578,7 +626,8 @@
       "readiness": "meta",
       "n": 0,
       "openReports": 0,
-      "scope": "meta"
+      "scope": "meta",
+      "harvestedAt": "2026-09-09"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -586,7 +635,7 @@
       "pageName": "🚧 Safari Slots - Skai originals",
       "readiness": "wip",
       "n": 61,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "openReports": 0,
       "scope": "wip"
     },
@@ -596,7 +645,7 @@
       "pageName": "🚧 Cosmic Slots - Skai originals",
       "readiness": "wip",
       "n": 50,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "openReports": 0,
       "scope": "wip"
     },
@@ -606,7 +655,7 @@
       "pageName": "🚧 Vegas fortune - Skai originals",
       "readiness": "wip",
       "n": 85,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "openReports": 1,
       "scope": "wip"
     },
@@ -616,7 +665,7 @@
       "pageName": "🚧 Gem Slots - Skai originals",
       "readiness": "wip",
       "n": 36,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "openReports": 0,
       "scope": "wip"
     },
@@ -628,7 +677,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "note": "No longer empty. Recorded as 0 top-level children earlier on 2026-09-08 (agreed by page.loadAsync() AND setCurrentPageAsync, both read because an unloaded page also reports a plausible 0); re-read later the same day it holds one child, 11148:2223 'Group 3' (3182x7925), and a .tsv now exists. Keep the row either way: a page absent from this list and a page with nothing on it read identically to every consumer."
     }
   ]

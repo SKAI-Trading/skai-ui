@@ -1,7 +1,7 @@
 10385:7	image 2	RECTANGLE	192	39	1
-10385:9	FNG (♥♥♥♥♥♥♥ New Guy	TEXT	294	30	1
+10385:9	FNG (♥♥♥♥♥♥♥ New Guy) Default title (level 1) 	TEXT	294	30	1
 10385:11	image 3	RECTANGLE	192	39	1
-10385:13	S.S.D.D (Same ♥♥♥♥ D	TEXT	390	30	1
+10385:13	S.S.D.D (Same ♥♥♥♥ Different Day) Reach Rank "Private I (level 2) 	TEXT	390	30	1
 10385:15	image 4	RECTANGLE	192	39	1
 10385:18	image 5	RECTANGLE	192	39	1
 10385:21	image 6	RECTANGLE	192	39	1
@@ -92,100 +92,100 @@
 10385:276	image 91	RECTANGLE	188	40	1
 10385:279	image 92	RECTANGLE	188	40	1
 10385:282	image 93	RECTANGLE	188	40	1
-10385:284	Challenge: "Hi Def"(	TEXT	453	45	1
-10385:285	Reach Rank "Sergeant	TEXT	188	30	1
-10385:286	Reach Rank "Sergeant	TEXT	230	30	1
-10385:287	Reach Rank "Captain"	TEXT	177	30	1
-10385:288	Reach Rank "Colonel"	TEXT	176	30	1
-10385:289	Reach Rank "Major Ge	TEXT	222	30	1
-10385:290	Reach Rank "Commande	TEXT	202	30	1
-10385:291	(P) Reach Prestige 1	TEXT	169	30	1
-10385:292	Most assists in a ga	TEXT	176	30	1
-10385:293	Challenge: "Team Pla	TEXT	405	30	1
-10385:294	Challenge: "Sidekick	TEXT	454	30	1
-10385:295	Challenge: "Free-for	TEXT	542	30	1
-10385:296	Challenge: "Sleight 	TEXT	486	30	1
-10385:297	Challenge: "Steady A	TEXT	434	30	1
-10385:298	Challenge: "Flyswatt	TEXT	380	30	1
-10385:299	Challenge: "Hardline	TEXT	475	30	1
-10385:300	Challenge: "Exposed:	TEXT	257	30	1
-10385:301	Challenge: "NBK"(lvl	TEXT	296	30	1
-10385:302	Challenge: "Ghillie 	TEXT	449	30	1
-10385:303	Challenge: "Ninja Pr	TEXT	399	30	1
-10385:304	Challenge: "Airstrik	TEXT	383	30	1
-10385:305	Challenge: "Hardline	TEXT	497	30	1
-10385:306	Challenge: "Carpet B	TEXT	654	30	1
-10385:307	Challenge: "Prone Sh	TEXT	392	30	1
-10385:308	Challenge: "Steady A	TEXT	475	30	1
-10385:309	Challenge: "Rival"(4	TEXT	395	30	1
-10385:310	Challenge: "Ghillie 	TEXT	440	30	1
-10385:311	Challenge: "Cold-Blo	TEXT	563	30	1
-10385:312	(P) Prestige 4 times	TEXT	215	30	1
-10385:313	Challenge: "Search a	TEXT	477	30	1
-10385:314	Challenge: "Sabotage	TEXT	366	30	1
-10385:315	(P) Challenge: "Stun	TEXT	457	30	1
-10385:316	Challenge: "Backdraf	TEXT	342	30	1
-10385:317	Challenge: "Think Fa	TEXT	617	30	1
-10385:318	Challenge: "Return t	TEXT	480	30	1
-10385:319	Challenge: "Crouch S	TEXT	414	30	1
-10385:320	Challenge: "Defuser:	TEXT	269	30	1
-10385:321	Challenge: "The Deni	TEXT	559	30	1
-10385:322	Challenge: "Fast Swa	TEXT	590	30	1
-10385:323	Challenge: "Counter-	TEXT	374	30	1
-10385:324	Challenge: "Hijacker	TEXT	438	30	1
-10385:325	Challenge: "Absentee	TEXT	474	30	1
-10385:326	Challenge: "Blindfir	TEXT	473	30	1
-10385:327	Challenge: "MG Maste	TEXT	392	30	1
-10385:328	Challenge "Sentry Ve	TEXT	330	45	1
-10385:329	(P) Challenge: "Look	TEXT	412	30	1
+10385:284	Challenge: "Hi Def"(lvl37) - Get a Game Winning Killcam with a Chopper Gunner. 	TEXT	453	45	1
+10385:285	Reach Rank "Sergeant" (level 20) 	TEXT	188	30	1
+10385:286	Reach Rank "Sergeant Major II"(level 30) 	TEXT	230	30	1
+10385:287	Reach Rank "Captain"(level 40) 	TEXT	177	30	1
+10385:288	Reach Rank "Colonel"(level 50) 	TEXT	176	30	1
+10385:289	Reach Rank "Major General II"(level 60) 	TEXT	222	30	1
+10385:290	Reach Rank "Commander"(level 70) 	TEXT	202	30	1
+10385:291	(P) Reach Prestige 1, Level 69 	TEXT	169	30	1
+10385:292	Most assists in a game (level 1) 	TEXT	176	30	1
+10385:293	Challenge: "Team Player: I"- Win 5 Team Deathmatch Matches.(level 11) 	TEXT	405	30	1
+10385:294	Challenge: "Sidekick"-3 kills in one life with your secondary weapon.(level 1,5,11) 	TEXT	454	30	1
+10385:295	Challenge: "Free-for-all Victor: I" - Place first, second or third in 3 Free-for-all matches.(level 11) 	TEXT	542	30	1
+10385:296	Challenge: "Sleight of Hand Pro: V"- Get 300 Kills while using Sleight of Hand.(level 5) 	TEXT	486	30	1
+10385:297	Challenge: "Steady Aim Pro: I" - Get 10 hipfire kills using Steady Aim.(level 5) 	TEXT	434	30	1
+10385:298	Challenge: "Flyswatter" - Shoot down an enemy helicopter.(level 6) 	TEXT	380	30	1
+10385:299	Challenge: "Hardline Pro VI" - 250 killstreaks (2 or more kills) with Hardline.(level 19) 	TEXT	475	30	1
+10385:300	Challenge: "Exposed: I"(lvl21) - Call in 5 UAVs 	TEXT	257	30	1
+10385:301	Challenge: "NBK"(lvl31) - Get 3 longshots in one life. 	TEXT	296	30	1
+10385:302	Challenge: "Ghillie in the Mist: II"(lvl6) - Get 100 one-shot kills with sniper rifles. 	TEXT	449	30	1
+10385:303	Challenge: "Ninja Pro: VI"(lvl29) - Get 250 close range kills using Ninja. 	TEXT	399	30	1
+10385:304	Challenge: "Airstrike Veteran: I"(lvl16) - Call in 5 Precision Airstrikes. 	TEXT	383	30	1
+10385:305	Challenge: "Hardline Pro: I"(lvl9) - Get 3 killstreaks while using Hardline. (2 kills in a row) 	TEXT	497	30	1
+10385:306	Challenge: "Carpet Bomb "(lvl61) - Kill 5 Enemies with bombs from Harrier and / or Precision Airstrikes in one round. 	TEXT	654	30	1
+10385:307	Challenge: "Prone Shot: II"(lvl6) - Kill 15 enemies while you are prone. 	TEXT	392	30	1
+10385:308	Challenge: "Steady Aim Pro: V"(lvl5) - Get 200 Hip-Fire Kills while using Steady Aim. 	TEXT	475	30	1
+10385:309	Challenge: "Rival"(41) - Kill the same enemy 5 times in a single match. 	TEXT	395	30	1
+10385:310	Challenge: "Ghillie in the Mist: I"(lvl6) - Get 50 one-shot kills with sniper rifles. 	TEXT	440	30	1
+10385:311	Challenge: "Cold-Blooded Pro: V"(lvl25) - Destroy 100 Killstreak Rewards while using Cold Blooded. 	TEXT	563	30	1
+10385:312	(P) Prestige 4 times and reach level 2. 	TEXT	215	30	1
+10385:313	Challenge: "Search and Destroy Victor: I"(lvl10) - Win 5 Search and Destroy Matches 	TEXT	477	30	1
+10385:314	Challenge: "Sabotage Victor: I"(lvl10) - Win 5 Sabotage matches. 	TEXT	366	30	1
+10385:315	(P) Challenge: "Stun Veteran: I"(lvl5) - Kill 20 enemies stunned by stun grenades. 	TEXT	457	30	1
+10385:316	Challenge: "Backdraft: I"(lvl6) - Destroy 2 enemy equipment. 	TEXT	342	30	1
+10385:317	Challenge: "Think Fast Stun"(lvl43) - Finish an enemy off by hitting them with a stun grenade. (Direct impact) 	TEXT	617	30	1
+10385:318	Challenge: "Return to Sender"(lvl43) - Kill an enemy by shooting their own explosive. 	TEXT	480	30	1
+10385:319	Challenge: "Crouch Shot: I"(lvl6) - Kill 5 enemies while you are crouching. 	TEXT	414	30	1
+10385:320	Challenge: "Defuser: I"(lvl11) - Defuse 2 bombs. 	TEXT	269	30	1
+10385:321	Challenge: "The Denier"(lvl61) - Kill an enemy just before they earn a 10 or higher killstreak reward. 	TEXT	559	30	1
+10385:322	Challenge: "Fast Swap"(lvl53) - Hurt an enemy with a primary weapon, then finish them off with a pistol. 	TEXT	590	30	1
+10385:323	Challenge: "Counter-C4: II"(lvl53) - Kill 10 enemies by shooting c4 	TEXT	374	30	1
+10385:324	Challenge: "Hijacker: III"(lvl5)-Steal 50 enemy crates. Must be care packages. 	TEXT	438	30	1
+10385:325	Challenge: "Absentee Killer"(lvl35) - Get a Game Winning Killcam with a Sentry Gun. 	TEXT	474	30	1
+10385:326	Challenge: "Blindfire"(lvl43) - Kill an enemy while you are still dazed by a flashbang. 	TEXT	473	30	1
+10385:327	Challenge: "MG Master"(lvl64) - Get a 5 kill streak on a mounted gun. 	TEXT	392	30	1
+10385:328	Challenge "Sentry Veteran: I"(lvl16) - Call in 5 Sentry Guns 	TEXT	330	45	1
+10385:329	(P) Challenge: "Look! No Hands!: I" (lvl5) - Get 50 kills with a Sentry Gun. 	TEXT	412	30	1
 10385:330	Page 2	TEXT	40	15	1
-10385:331	(P) Challenge: "Look	TEXT	412	30	1
-10385:332	Challenge: "Air to G	TEXT	353	30	1
-10385:333	Challenge: "Attack H	TEXT	434	30	1
-10385:334	Challenge: "End Game	TEXT	278	30	1
+10385:331	(P) Challenge: "Look! No Hands!: I" (lvl5) - Get 50 kills with a Sentry Gun. 	TEXT	412	30	1
+10385:332	Challenge: "Air to Ground: I"(lvl16) - Call in 5 Predator Missiles. 	TEXT	353	30	1
+10385:333	Challenge: "Attack Helicopter Veteran: I" (lvl16) - Call in 5 Attack Helicopters. 	TEXT	434	30	1
+10385:334	Challenge: "End Game: I" (lvl21) - Call in 2 Nukes. 	TEXT	278	30	1
 10385:335	Page 3	TEXT	40	15	1
-10385:337	Challenge: "Bomb Dow	TEXT	497	30	1
-10385:338	Challenge: "Bomb Def	TEXT	483	30	1
-10385:339	Challenge: "Ultimate	TEXT	481	30	1
-10385:340	(P) Reach level 25 f	TEXT	181	30	1
-10385:341	Challenge: "Dictator	TEXT	532	30	1
-10385:342	Challenge: "Enemy of	TEXT	579	30	1
-10385:343	Challenge: "Airstrik	TEXT	512	30	1
-10385:344	Challenge: "Red Carp	TEXT	585	30	1
-10385:345	Challenge: "SitRep P	TEXT	485	30	1
-10385:346	Challenge: "Search A	TEXT	492	30	1
-10385:347	Challenge: "Saboteur	TEXT	264	30	1
-10385:348	Challenge: "Multi-C4	TEXT	481	30	1
-10385:349	Challenge: "Ninja Pr	TEXT	376	30	1
-10385:350	Challenge: "Cold Blo	TEXT	533	30	1
-10385:351	(P) Challenge: "Stea	TEXT	447	30	1
+10385:337	Challenge: "Bomb Down" (lvl11) - Kill a bomb carrier in Sabotage or Search and Destroy. 	TEXT	497	30	1
+10385:338	Challenge: "Bomb Defender: I" (lvl11) - Kill 3 enemies while they are defusing a bomb. 	TEXT	483	30	1
+10385:339	Challenge: "Ultimate Sacrifice" (lvl61) - Use a Tactical Nuke while your team is losing. 	TEXT	481	30	1
+10385:340	(P) Reach level 25 first prestige. 	TEXT	181	30	1
+10385:341	Challenge: "Dictator" (lvl26) - Fire an entire LMG magazine into your enemies without missing. 	TEXT	532	30	1
+10385:342	Challenge: "Enemy of the State" (lvl57) - Kill 3 enemies while you are the only surviving member (S&D) 	TEXT	579	30	1
+10385:343	Challenge: "Airstrike Inbound: II" (lvl21) - Call in 100 Precision, Stealth, or Harrier Airstrikes. 	TEXT	512	30	1
+10385:344	Challenge: "Red Carpet"(lvl64) - Kill 6 Enemies in one round using the Stealth Bomber killstreak reward. 	TEXT	585	30	1
+10385:345	Challenge: "SitRep Pro: VI"(lvl37) - Destroy 750 enemy devices while using SitRep Pro 	TEXT	485	30	1
+10385:346	Challenge: "Search And Destroy Victor: II"(lvl10) - Win 15 Search And Destroy matches. 	TEXT	492	30	1
+10385:347	Challenge: "Saboteur: I"(lvl11) - Plant 2 bombs. 	TEXT	264	30	1
+10385:348	Challenge: "Multi-C4: I"(lvl31) - Kill 2 or more enemies with a single C4 pack, 5 times. 	TEXT	481	30	1
+10385:349	Challenge: "Ninja Pro: I"(lvl29) - Get 5 close range kills using Ninja. 	TEXT	376	30	1
+10385:350	Challenge: "Cold Blooded Pro: I"(lvl25) - Destroy 3 killsteak rewards while using Cold Blooded. 	TEXT	533	30	1
+10385:351	(P) Challenge: "Stealth: I"(lvl5) - Kill 10 enemies while using a silenced weapon. 	TEXT	447	30	1
 10385:353	image 94	RECTANGLE	188	40	1
-10385:355	Challenge: "C4 Shot:	TEXT	322	30	1
-10385:356	Challenge: "C4 Shot:	TEXT	331	30	1
-10385:357	Challenge: "Counter-	TEXT	370	30	1
-10385:358	Challenge: "Vertical	TEXT	350	30	1
-10385:359	Challenge: "True Lia	TEXT	414	30	1
-10385:360	Challenge: "Afterbur	TEXT	434	30	1
-10385:361	Challenge: "AC130 Ve	TEXT	317	30	1
-10385:362	Challenge: "AC130 Ve	TEXT	309	30	1
-10385:363	Challenge: "Death Fr	TEXT	475	30	1
-10385:364	Challenge: "Lightwei	TEXT	422	30	1
-10385:365	Challenge: "Invincib	TEXT	709	30	1
-10385:366	(P) Challenge: "Spec	TEXT	339	30	1
-10385:367	Challenge: "Airstrik	TEXT	496	30	1
-10385:368	Challenge: "Airstrik	TEXT	393	30	1
-10385:369	(P) Challenge: "Carp	TEXT	455	30	1
-10385:370	Challenge: "Airborne	TEXT	427	30	1
-10385:371	Challenge: "Wargasm"	TEXT	488	30	1
-10385:372	Challenge: "Unbreaka	TEXT	440	30	1
-10385:376	Challenge: "Prone Sh	TEXT	380	30	1
-10385:377	Challenge: "The Aven	TEXT	369	30	1
-10385:378	Challenge: "Sponge: 	TEXT	412	30	1
-10385:379	Challenge: "One Man 	TEXT	423	30	1
-10385:380	Challenge: "Counter-	TEXT	516	30	1
-10385:381	Challenge: "Robin Ho	TEXT	428	30	1
-10385:382	Challenge: "Bomb Pre	TEXT	496	30	1
-10385:383	Challenge: "Hi Def"(	TEXT	453	45	1
+10385:355	Challenge: "C4 Shot: I"(lvl5) - Kill 5 enemies by using C4. 	TEXT	322	30	1
+10385:356	Challenge: "C4 Shot: II"(lvl5) - Kill 15 enemies by using C4. 	TEXT	331	30	1
+10385:357	Challenge: "Counter-C4: I"(lvl53) - Kill 3 enemies by shooting C4. 	TEXT	370	30	1
+10385:358	Challenge: "Vertical Takeoff: I"(lvl16) - Call in 5 Harrier strikes. 	TEXT	350	30	1
+10385:359	Challenge: "True Liar"(lvl35) - Get a Game Winning Killcam with a Harrier. 	TEXT	414	30	1
+10385:360	Challenge: "Afterburner"(lvl64) - Call in an airstrike 2 times in a single match. 	TEXT	434	30	1
+10385:361	Challenge: "AC130 Veteran: II"(lvl21) - Call in 10 AC130s. 	TEXT	317	30	1
+10385:362	Challenge: "AC130 Veteran: I"(lvl21) - Call in 3 AC130s. 	TEXT	309	30	1
+10385:363	Challenge: "Death From Above"(lvl37) - Get a Game Winning Killcam with an AC130. 	TEXT	475	30	1
+10385:364	Challenge: "Lightweight: V"(lvl5) - Sprint 100 miles using Lightweight Perk. 	TEXT	422	30	1
+10385:365	Challenge: "Invincible"(lvl53) - Fully recover from enemy damage 5 times without dying. You must hear a heartbeat each time 	TEXT	709	30	1
+10385:366	(P) Challenge: "Spectre: I"(lvl5) - Get 50 kills with an AC130. 	TEXT	339	30	1
+10385:367	Challenge: "Airstrike Inbound: I"(lvl21) - Call in 50 Precision, Stealth, or Harrier Airstrikes 	TEXT	496	30	1
+10385:368	Challenge: "Airstrike Veteran: II"(lvl16) - Call in 25 Precision Airstrikes. 	TEXT	393	30	1
+10385:369	(P) Challenge: "Carpet Bomber I"(lvl5) - Kill 50 enemies with Precision Airstrikes. 	TEXT	455	30	1
+10385:370	Challenge: "Airborne"(lvl31) - Get a 2 kill streak with bullets while in mid-air. 	TEXT	427	30	1
+10385:371	Challenge: "Wargasm"(lvl61) - Get all 3 of your killstreak rewards in under 20 seconds. 	TEXT	488	30	1
+10385:372	Challenge: "Unbreakable: I"(lvl5) - Deflect 10 explosions with your Riot Shield. 	TEXT	440	30	1
+10385:376	Challenge: "Prone Shot I"(lvl6) - Kill 5 enemies while you are prone. 	TEXT	380	30	1
+10385:377	Challenge: "The Avenger"(lvl1) - Avenge the death of a teammate 	TEXT	369	30	1
+10385:378	Challenge: "Sponge: I"(lvl5) - Absorb 1000 damage with your Riot Shield. 	TEXT	412	30	1
+10385:379	Challenge: "One Man Army Pro: I"(lvl45) - Get 15 kills using One Man Army. 	TEXT	423	30	1
+10385:380	Challenge: "Counter-MVP"(lvl43) - Kill the #1 player on the enemy team 10 times in a single 	TEXT	516	30	1
+10385:381	Challenge: "Robin Hood: I"(lvl47) - Get Payback 5 times while in Last Stand. 	TEXT	428	30	1
+10385:382	Challenge: "Bomb Prevention: I"(lvl11) - Kill 3 enemies while they are planting the bomb. 	TEXT	496	30	1
+10385:383	Challenge: "Hi Def"(lvl37) - Get a Game Winning Killcam with a Chopper Gunner. 	TEXT	453	45	1
 10385:388	image 95	RECTANGLE	188	40	1
 10385:391	image 96	RECTANGLE	188	40	1
 10385:394	image 97	RECTANGLE	188	40	1
@@ -395,7 +395,7 @@
 10392:1004	image 297	RECTANGLE	188	40	1
 10392:1006	Page 8	TEXT	40	15	1
 10392:1128	Page 9	TEXT	40	15	1
-10392:1190	Weapon Specific Titl	TEXT	130	15	1
+10392:1190	Weapon Specific Titles	TEXT	130	15	1
 10392:1009	image 298	RECTANGLE	192	38	1
 10392:1012	image 299	RECTANGLE	192	38	1
 10392:1015	image 300	RECTANGLE	192	38	1
@@ -455,7 +455,7 @@
 10392:1182	image 354	RECTANGLE	240	48	1
 10392:1185	image 355	RECTANGLE	240	48	1
 10392:1188	image 356	RECTANGLE	240	48	1
-10392:1192	Prestige Challenge T	TEXT	142	15	1
+10392:1192	Prestige Challenge Titles	TEXT	142	15	1
 10392:1195	image 357	RECTANGLE	188	40	1
 10392:1198	image 358	RECTANGLE	188	40	1
 10392:1201	image 359	RECTANGLE	188	40	1
@@ -484,188 +484,188 @@
 10392:1270	image 382	RECTANGLE	188	40	1
 10392:1273	image 383	RECTANGLE	188	40	1
 10392:1276	image 384	RECTANGLE	188	40	1
-10395:2	Challenge: "SitRep P	TEXT	483	15	1
-10395:3	Challenge: "Interfer	TEXT	331	15	1
-10395:4	Challenge: "Techno K	TEXT	484	15	1
-10395:5	Challenge: "Chopper 	TEXT	423	26	1
-10395:6	Challenge: "Chopper 	TEXT	431	15	1
-10395:7	(P) Challenge: "Cobr	TEXT	528	15	1
-10395:8	Challenge: "Air Mail	TEXT	304	15	1
-10395:9	Challenge: "Helicopt	TEXT	405	15	1
-10395:10	(P) Challenge: "Chop	TEXT	462	15	1
-10395:11	Challenge: "21 Ton G	TEXT	322	15	1
-10395:12	Challenge: "Transfor	TEXT	448	15	1
-10395:13	(P) Challenge: "Chop	TEXT	462	15	1
-10395:14	Challenge: "Multi-RP	TEXT	496	15	1
-10395:15	Challenge: "Multi-RP	TEXT	507	15	1
-10395:16	Challenge: "Danger C	TEXT	550	15	1
-10395:17	Challenge: "Collater	TEXT	525	15	1
-10395:18	Challenge: "Stopping	TEXT	441	15	1
-10395:19	Challenge: "Stopping	TEXT	450	15	1
-10395:20	Challenge: "Hardcore	TEXT	497	15	1
-10395:21	Challenge: "Scavenge	TEXT	462	15	1
-10395:22	Challenge: "Bullet P	TEXT	426	15	1
-10395:23	Challenge: "Interfer	TEXT	339	15	1
-10395:24	Challenge: "Blackout	TEXT	265	15	1
-10395:25	Challenge: "Scramble	TEXT	492	15	1
-10395:26	Challenge: "Multi-Fr	TEXT	516	15	1
-10395:27	Challenge: "OG"(lvl3	TEXT	448	15	1
-10395:28	Challenge: "Finishin	TEXT	651	15	1
-10395:29	Challenge: "LMG Expe	TEXT	561	15	1
-10395:30	Challenge: "Color of	TEXT	432	15	1
-10395:31	Challenge: "Master C	TEXT	421	15	1
-10395:32	Challenge: "Sabotage	TEXT	377	15	1
-10395:33	Challenge: "Radar In	TEXT	410	15	1
-10395:34	Challenge: "Survival	TEXT	356	15	1
-10395:36	Challenge :"Click Cl	TEXT	543	15	1
-10395:37	Challenge: "Slow But	TEXT	492	15	1
-10392:1279	Challenge: "Clay Mor	TEXT	501	30	1
-10395:38	Challenge:-"Last Sta	TEXT	456	15	1
-10395:39	Challenge: "SMG Expe	TEXT	552	15	1
-10395:40	Challenge: "Assault 	TEXT	550	15	1
-10395:41	Challenge: "Air Supe	TEXT	457	15	1
-10392:1280	Challenge: "The Lone	TEXT	545	30	1
-10395:42	Challenge: "Bling Pr	TEXT	467	15	1
-10392:1281	Challenge: "Lightwei	TEXT	408	30	1
-10395:43	Challenge: "Scavenge	TEXT	445	15	1
-10392:1282	Challenge: "Carnie: 	TEXT	377	30	1
-10395:44	Challenge: "Stopping	TEXT	443	15	1
-10395:45	Challenge: "It's Per	TEXT	514	15	1
-10392:1283	Challenge: "Backstab	TEXT	426	30	1
-10395:46	(P) Challenge: "Cobr	TEXT	440	15	1
-10395:47	(P) Challenge: "You'	TEXT	356	15	1
-10392:1284	(P) Challenge: "Knif	TEXT	388	30	1
-10392:1285	Challenge: "Flawless	TEXT	430	30	1
-10392:1286	Challenge: "Commando	TEXT	569	30	1
-10392:1287	Challenge: "Commando	TEXT	439	30	1
-10395:48	Challenge:"Hijacker 	TEXT	291	15	1
-10392:1288	Challenge: "Team Pla	TEXT	402	30	1
-10395:49	Challenge: "Solid St	TEXT	446	15	1
-10392:1289	Challenge: "Last Man	TEXT	492	30	1
-10395:50	Challenge: "Marathon	TEXT	376	15	1
-10392:1290	Challenge: "Crab Mea	TEXT	438	30	1
-10395:51	Challenge: "Mach 5"(	TEXT	509	15	1
-10392:1291	Challenge: "X-Ray Vi	TEXT	518	30	1
-10395:52	Challenge: "Sleight 	TEXT	423	15	1
-10392:1292	Challenge: "X-Ray Vi	TEXT	521	30	1
-10395:53	Challenge: "Lightwei	TEXT	397	15	1
-10395:54	Challenge: "Vandalis	TEXT	250	15	1
-10392:1293	Challenge: "SitRep: 	TEXT	427	30	1
-10395:55	Challenge: "Helicopt	TEXT	399	15	1
-10392:1294	Challenge: "Airdrop 	TEXT	643	30	1
-10392:1295	Challenge: "Time is 	TEXT	407	30	1
-10392:1296	Challenge: "I'm Rich	TEXT	339	30	1
-10392:1297	Challenge: "Multi-Fr	TEXT	513	30	1
-10392:1298	Challenge: "Steady A	TEXT	472	30	1
-10392:1299	Challenge: "21 Ton G	TEXT	313	30	1
-10392:1300	Challenge: "Plastere	TEXT	398	30	1
-10395:56	Challenge: "Marathon	TEXT	324	15	1
-10395:57	Challenge: "Hardcore	TEXT	452	15	1
-10392:1301	Challenge: "Stick ma	TEXT	495	30	1
-10395:58	Challenge: "Dronekil	TEXT	457	15	1
-10395:59	Challenge: "Tango Do	TEXT	481	15	1
-10392:1302	Challenge: "Slasher"	TEXT	384	30	1
-10395:60	Challenge: "Crouch S	TEXT	394	15	1
-10392:1303	Challenge: "Air to G	TEXT	364	30	1
-10395:61	Challenge: "Radar In	TEXT	367	15	1
-10395:62	Challenge: "One Man 	TEXT	414	15	1
-10395:63	Challenge: "Unbeliev	TEXT	442	15	1
-10392:1304	Challenge: "Ghillie 	TEXT	453	30	1
-10392:1305	Challenge: "Scavenge	TEXT	465	30	1
-10392:1306	Challenge: "Star Pla	TEXT	412	30	1
-10395:64	(P) Challenge: "Knif	TEXT	388	15	1
-10392:1307	Challenge: "Grim Rea	TEXT	443	30	1
-10395:65	Challenge: "Omnicide	TEXT	413	15	1
-10395:66	Challenge: "Back-Sma	TEXT	455	15	1
-10392:1308	(P) Challenge: "Joll	TEXT	400	30	1
-10395:67	Challenge: "SMG Expe	TEXT	509	15	1
-10392:1309	Challenge: "Sentry V	TEXT	347	30	1
+10395:2	Challenge: "SitRep Pro: V"(lvl37) - Destroy 300 enemy devices while using SitRep Pro	TEXT	483	15	1
+10395:3	Challenge: "Interference: I"(lvl16) - Call in 5 Counter-UAVs.	TEXT	331	15	1
+10395:4	Challenge: "Techno Killer"(lvl35) - Get a Game Winning Killcam with a Stealth Bomber	TEXT	484	15	1
+10395:5	Challenge: "Chopper Gunner Veteran: I"(lvl21) - Call in 3 Chopper Gunners. 	TEXT	423	26	1
+10395:6	Challenge: "Chopper Gunner Veteran: II"(lvl21) - Call in 10 Chopper Gunners.	TEXT	431	15	1
+10395:7	(P) Challenge: "Cobra Commander"(lvl5) - 50 kills with Chopper Gunners. Prestige Challenge.	TEXT	528	15	1
+10395:8	Challenge: "Air Mail: I"(lvl16) - Call in 5 Care Packages	TEXT	304	15	1
+10395:9	Challenge: "Helicopter Inbound: II"(lvl21) - Call in 100 armed helicopters	TEXT	405	15	1
+10395:10	(P) Challenge: "Chopper Veteran: I"(lvl5) - Kill 50 enemies by calling in helicopters	TEXT	462	15	1
+10395:11	Challenge: "21 Ton Giant: II"(lvl16) - Call in 10 Pave Lows.	TEXT	322	15	1
+10395:12	Challenge: "Transformer"(lvl35) - Get a Game Winning Killcam with a Pave Low.	TEXT	448	15	1
+10395:13	(P) Challenge: "Chopper Veteran: I"(lvl5) - Kill 50 enemies by calling in helicopters	TEXT	462	15	1
+10395:14	Challenge: "Multi-RPG: I"(lvl65) - Kill 2 or more enemies with a single RPG shot, 5 times.	TEXT	496	15	1
+10395:15	Challenge: "Multi-RPG: II"(lvl65) - Kill 2 or more enemies with a single RPG shot, 25 times.	TEXT	507	15	1
+10395:16	Challenge: "Danger Close Pro: V" (lvl33) - Get 250 kills with explosives while using Danger Close.	TEXT	550	15	1
+10395:17	Challenge: "Collateral Damage"(lvl31) - Kill 2 or more enemies with a single sniper rifle bullet.	TEXT	525	15	1
+10395:18	Challenge: "Stopping Power Pro: V"(lvl5) - Get 500 kills using Stopping Power.	TEXT	441	15	1
+10395:19	Challenge: "Stopping Power Pro: VI"(lvl5) - Get 1000 kills using Stopping Power.	TEXT	450	15	1
+10395:20	Challenge: "Hardcore Team Player: II"(lvl10) - Win 5 Hardcore Team Deathmatch games.	TEXT	497	15	1
+10395:21	Challenge: "Scavenger Pro: V"(lvl13) - Resupply 250 times while using Scavenger.	TEXT	462	15	1
+10395:22	Challenge: "Bullet Proof: I"(lvl5) - Deflect 1000 bullets with your Riot Shield.	TEXT	426	15	1
+10395:23	Challenge: "Interference: II"(lvl16) - Call in 25 Counter-UAVs	TEXT	339	15	1
+10395:24	Challenge: "Blackout: II"(lvl21) - Call in 5 EMPs.	TEXT	265	15	1
+10395:25	Challenge: "Scrambler Pro: VI"(lvl17) - Get 250 Close Range Kills while using Scrambler	TEXT	492	15	1
+10395:26	Challenge: "Multi-Frag: I"(lvl31) - Kill 2 or more enemies with a single frag grenade, 5 times.	TEXT	516	15	1
+10395:27	Challenge: "OG"(lvl35) - Get a Game Winning Killcam with an Attack Helicopter.	TEXT	448	15	1
+10395:28	Challenge: "Finishing Touch"(lvl35) - Get a Game Winning Killcam with a Precision Airstrike or a Harrier Bombstrike.	TEXT	651	15	1
+10395:29	Challenge: "LMG Expert: II"(lvl26) - Kill 25 enemies with headshots while using a light machine gun.	TEXT	561	15	1
+10395:30	Challenge: "Color of Money: I"(lvl47) - Get payback with a headshot 5 times.	TEXT	432	15	1
+10395:31	Challenge: "Master Chef: II"(lvl53) - Kill 10 enemies with cooked grenades.	TEXT	421	15	1
+10395:32	Challenge: "Sabotage Victor: II"(lvl10) - Win 20 Sabotage matches.	TEXT	377	15	1
+10395:33	Challenge: "Radar Inbound: II"(lvl21) - Call in 100 UAVs or Counter-UAVs.	TEXT	410	15	1
+10395:34	Challenge: "Survivalist"(lvl53) - Live for 5 consecutive minutes.	TEXT	356	15	1
+10395:36	Challenge :"Click Click Boom"(lvl43) - Kill an enemy with C4 while you are in Last or Final Stand.	TEXT	543	15	1
+10395:37	Challenge: "Slow But Sure"(lvl41) - Kill 1 enemy while being stunned by a stun grenade.	TEXT	492	15	1
+10392:1279	Challenge: "Clay More: II"(lvl31) - Kill 2 or more enemies with a single claymore 25 times. 	TEXT	501	30	1
+10395:38	Challenge:-"Last Stand Pro I"(lvl41)-Get 2 kills while in Last Stand or Final Stand.	TEXT	456	15	1
+10395:39	Challenge: "SMG Expert II"(lvl26) - Kill 25 enemies with headshots while using a submachine gun.	TEXT	552	15	1
+10395:40	Challenge: "Assault Expert: II"(lvl26) - Kill 15 enemies with head shots while using an Assault Rifle	TEXT	550	15	1
+10395:41	Challenge: "Air Superiority"(lvl64) - Call in 2 Attack Helicopters in a single match.	TEXT	457	15	1
+10392:1280	Challenge: "The Loner"(lvl5) - Get a 10 killstreak without having any killstreak rewards equipped. 	TEXT	545	30	1
+10395:42	Challenge: "Bling Pro: VI"(lvl21) - Get 900 kills using a weapon with 2 attachments.	TEXT	467	15	1
+10392:1281	Challenge: "Lightweight Pro: VI"(lvl5) - Run 250 miles using Lightweight. 	TEXT	408	30	1
+10395:43	Challenge: "Scavenger Pro: I"(lvl13) - Resupply 10 times while using Scavenger	TEXT	445	15	1
+10392:1282	Challenge: "Carnie: II"(lvl6) - Kill 15 enemies with a Throwing Knife. 	TEXT	377	30	1
+10395:44	Challenge: "Stopping Power: I"(lvl5) - Get 30 Kills while Using Stopping Power.	TEXT	443	15	1
+10395:45	Challenge: "It's Personal!"(lvl5) - Hurt an enemy then finish them off with a Throwing Knife.	TEXT	514	15	1
+10392:1283	Challenge: "Backstabber"(lvl5) - Stab an enemy in the back with your knife. 	TEXT	426	30	1
+10395:46	(P) Challenge: "Cobra Commander: I"(lvl5) - Get 50 kills as a Chopper Gunner.	TEXT	440	15	1
+10395:47	(P) Challenge: "You're Fired: I"(lvl5) - Get 50 kills with a Harrier.	TEXT	356	15	1
+10392:1284	(P) Challenge: "Knife Veteran: I"(lvl5) - Kill 5 enemies with your knife. 	TEXT	388	30	1
+10392:1285	Challenge: "Flawless"(lvl31) - Play an entire full-length match without dying. 	TEXT	430	30	1
+10392:1286	Challenge: "Commando Pro: VI"(lvl5) - Get 100 Kills with Knife or Riot Shield while Using Commando. 	TEXT	569	30	1
+10392:1287	Challenge: "Commando Pro: I"(lvl5) - Get 2 Knife Kills while using Commando. 	TEXT	439	30	1
+10395:48	Challenge:"Hijacker I"(lvl5) - Steal 10 enemy crates.	TEXT	291	15	1
+10392:1288	Challenge: "Team Player: II"(lvl10) - Win 15 Team Deathmatch matches. 	TEXT	402	30	1
+10395:49	Challenge: "Solid Steel: I"(lvl5) - Survive 10 explosions while using Blast Shield.	TEXT	446	15	1
+10392:1289	Challenge: "Last Man Standing"(lvl11) - Be the last man standing in Search and Destroy 	TEXT	492	30	1
+10395:50	Challenge: "Marathon Pro: VI"(lvl5) - Run 104 miles with Marathon.	TEXT	376	15	1
+10392:1290	Challenge: "Crab Meat"(lvl61) - Kill 10 enemies with a single killstreak reward. 	TEXT	438	30	1
+10395:51	Challenge: "Mach 5"(lvl26) - Shoot an entire SMG magazine without missing a single shot.	TEXT	509	15	1
+10392:1291	Challenge: "X-Ray Vision: I"(lvl5) - Kill 2 enemies through a surface using bullet penetration. 	TEXT	518	30	1
+10395:52	Challenge: "Sleight of Hand Pro: I"(lvl5) - Get 15 kills using Sleight of Hand.	TEXT	423	15	1
+10392:1292	Challenge: "X-Ray Vision: II"(lvl5) - Kill 5 enemies through a surface using bullet penetration. 	TEXT	521	30	1
+10395:53	Challenge: "Lightweight Pro: I"(lvl5) - Sprint 2 miles using Lightweight.	TEXT	397	15	1
+10395:54	Challenge: "Vandalism"(lvl5) - Destroy a car.	TEXT	250	15	1
+10392:1293	Challenge: "SitRep: I"(lvl37) - Destroy 15 enemy devices while using SitRep. 	TEXT	427	30	1
+10395:55	Challenge: "Helicopter Inbound: I"(lvl21) - Call in 50 armed helicopters.	TEXT	399	15	1
+10392:1294	Challenge: "Airdrop Inbound I"(lvl21) - Call in a total of 50 Care Packages, Sentry Airdrops or Emergency Airdrops. 	TEXT	643	30	1
+10392:1295	Challenge: "Time is Money: I"(lvl47) - Get payback 5 times with Semtex. 	TEXT	407	30	1
+10392:1296	Challenge: "I'm Rich I"(lvl47) - Get Payback 5 times with C4. 	TEXT	339	30	1
+10392:1297	Challenge: "Multi-Frag: II"(lvl31) - Kill min. 2 Enemies with a Single Frag Grenade, 25 Times 	TEXT	513	30	1
+10392:1298	Challenge: "Steady Aim Pro: VI"(lvl5) - Get 500 hip-fire kills while using Steady Aim. 	TEXT	472	30	1
+10392:1299	Challenge: "21 Ton Giant: I"(lvl10) - Call in 3 Pave Lows. 	TEXT	313	30	1
+10392:1300	Challenge: "Plastered: I"(lvl5) - Stick 5 players with a Semtex grenade. 	TEXT	398	30	1
+10395:56	Challenge: "Marathon Pro: I" - Run 1 mile using Marathon.	TEXT	324	15	1
+10395:57	Challenge: "Hardcore Team Player: I" - Win 1 Hardcore Team Deathmatch game.	TEXT	452	15	1
+10392:1301	Challenge: "Stick man"(lvl37) - Stick a Semtex to the enemy in a Game Winning Killcam. 	TEXT	495	30	1
+10395:58	Challenge: "Dronekiller" - Get a Predator Missile kill in the Game Winning Killcam.	TEXT	457	15	1
+10395:59	Challenge: "Tango Down" - Kill every member of the enemy team. 4 enemy minimum.	TEXT	481	15	1
+10392:1302	Challenge: "Slasher"(lvl64) - Get a 3 melee kill streak without dying. 	TEXT	384	30	1
+10395:60	Challenge: "Crouch Shot: II" - Kill 15 enemies while you are crouching.	TEXT	394	15	1
+10392:1303	Challenge: "Air to Ground: II"(lvl16) - Call in 25 Predator Missiles. 	TEXT	364	30	1
+10395:61	Challenge: "Radar Inbound: I" - Call in 50 UAVs or Counter-UAVs.	TEXT	367	15	1
+10395:62	Challenge: "One Man Army: VI" - Get 750 kills while using One Man Army.	TEXT	414	15	1
+10395:63	Challenge: "Unbelievable" - Get a Throwing Knife kill in Game Winning Killcam.	TEXT	442	15	1
+10392:1304	Challenge: "Ghillie in the Mist: III"(lvl5) - Get 200 one-shot kills with sniper rifles. 	TEXT	453	30	1
+10392:1305	Challenge: "Scavenger Pro: VI"(lvl13) - Resupply 500 times while using Scavenger. 	TEXT	465	30	1
+10392:1306	Challenge: "Star Player"(lvl53) - Play an entire match with a 5:1 K/D ratio. 	TEXT	412	30	1
+10395:64	(P) Challenge: "Knife Veteran: I"(lvl5) - Kill 5 enemies with your knife.	TEXT	388	15	1
+10392:1307	Challenge: "Grim Reaper"(lvl64) - Kill 5 enemies with a single Predator Missile. 	TEXT	443	30	1
+10395:65	Challenge: "Omnicide" - Kill entire team (more than 4) within 10 seconds.	TEXT	413	15	1
+10395:66	Challenge: "Back-Smasher" - Crush an enemy from behind with your Riot Shield.	TEXT	455	15	1
+10392:1308	(P) Challenge: "Jolly Green Giant: I"(lvl5) - Get 50 kills with a Pave Low. 	TEXT	400	30	1
+10395:67	Challenge: "SMG Expert: I" - Kill 5 enemies with headshots while using a submachine gun.	TEXT	509	15	1
+10392:1309	Challenge: "Sentry Veteran: II"(lvl16) - Call in 25 Sentry Guns. 	TEXT	347	30	1
 10395:69	image 385	RECTANGLE	188	40	1
-10395:71	Challenge: "Fearless	TEXT	396	15	1
-10395:72	Challenge: "MVP Team	TEXT	545	15	1
-10392:1310	Challenge: "Extreme 	TEXT	625	30	1
-10395:73	Challenge: "All Pro"	TEXT	286	15	1
-10395:74	Challenge: "Marathon	TEXT	345	15	1
-10392:1311	Challenge: "Danger C	TEXT	517	30	1
-10395:75	Challenge: "Bling Pr	TEXT	418	15	1
-10392:1312	Challenge: "Money Sh	TEXT	437	30	1
-10395:76	Challenge "Airdrop I	TEXT	681	15	1
-10392:1313	Challenge: "Overdraf	TEXT	397	30	1
-10395:78	(P) Prestige 7 times	TEXT	214	15	1
-10395:79	Challenge: "Dominos"	TEXT	460	15	1
-10395:80	Challenge: "6fears7"	TEXT	504	15	1
-10392:1314	Challenge "Counter-C	TEXT	458	30	1
-10395:81	Challenge: "Droppin'	TEXT	531	15	1
-10392:1315	Challenge: "Cold-Blo	TEXT	548	30	1
-10392:1316	Challenge: "Ninja Pr	TEXT	427	30	1
-10392:1317	Challenge: "Bang for	TEXT	474	30	1
-10392:1318	Challenge: "Special 	TEXT	396	30	1
-10392:1319	(P) Challenge: "Head	TEXT	435	30	1
-10392:1320	Challenge: "The Bigg	TEXT	592	30	1
-10395:82	Challenge: "MVP Team	TEXT	519	15	1
-10392:1321	Challenge: "The Hard	TEXT	594	30	1
-10395:83	Challenge: "Free-for	TEXT	495	15	1
-10392:1322	Challenge: "Clay Mor	TEXT	477	30	1
-10395:84	(P) Challenge: "Pred	TEXT	391	15	1
-10395:85	Challenge: "Base Jum	TEXT	329	15	1
-10392:1323	Challenge: "Hardline	TEXT	425	30	1
-10395:86	(P) Prestige once an	TEXT	205	15	1
-10395:87	Challenge: "Stealth 	TEXT	386	15	1
-10392:1324	Challenge: "Last Sta	TEXT	414	30	1
-10395:88	Challenge: "Martyrdo	TEXT	467	15	1
-10392:1325	Challenge: "Last Sta	TEXT	371	30	1
-10395:89	Challenge: "Assault 	TEXT	441	15	1
-10392:1326	(P) Prestige 6 times	TEXT	215	45	1
-10395:90	Challenge: "Owned" -	TEXT	436	15	1
-10395:91	Challenge: "Hot Pota	TEXT	396	15	1
-10395:92	Challenge: "Smasher"	TEXT	431	15	1
-10395:93	Challenge: "Cruelty"	TEXT	551	15	1
-10395:94	Challenge: "Solid St	TEXT	422	15	1
-10392:1327	Challenge: "Think Fa	TEXT	546	30	1
-10395:95	Challenge: "The Surg	TEXT	561	15	1
-10395:96	Challenge: "The Surv	TEXT	409	15	1
-10392:1328	Challenge: "Sleight 	TEXT	411	30	1
-10395:97	Challenge: "Carnie I	TEXT	330	15	1
-10392:1329	(P) Prestige 5 times	TEXT	215	30	1
-10395:98	Challenge: "Jack-in-	TEXT	544	15	1
-10392:1330	Challenge: "Point Gu	TEXT	248	30	1
-10395:99	Challenge: "One Man 	TEXT	397	15	1
-10392:1331	(P) Reach level 45 1	TEXT	176	30	1
-10392:1332	Challenge: "Shield V	TEXT	419	30	1
-10395:100	Challenge: "Bling Pr	TEXT	430	15	1
-10392:1333	Challenge:"Totally N	TEXT	532	30	1
-10395:101	Challenge: "Counter-	TEXT	417	15	1
-10395:102	(P) Challenge: "The 	TEXT	402	15	1
-10392:1334	Challenge: "Darkbrin	TEXT	321	30	1
-10395:103	Challenge: "Vertical	TEXT	328	15	1
-10392:1335	Challenge: "Special 	TEXT	353	30	1
-10395:104	Challenge: "Multi-C4	TEXT	439	15	1
-10392:1336	Challenge: "Plastere	TEXT	324	30	1
-10395:105	Challenge: "ATM" - G	TEXT	317	15	1
-10395:106	Challenge: "Commando	TEXT	394	15	1
-10392:1337	Challenge: "Perfecti	TEXT	529	30	1
-10395:107	Challenge: "Think Fa	TEXT	549	15	1
-10395:108	Challenge: "Danger C	TEXT	496	15	1
-10392:1338	(P) Prestige once an	TEXT	208	30	1
-10395:109	Challenge: "Attack H	TEXT	407	15	1
-10395:110	Challenge: "Hard Lan	TEXT	335	15	1
-10392:1339	Challenge: "Exposed:	TEXT	237	30	1
-10395:111	(Extra Crispy) (P) C	TEXT	483	15	1
-10392:1340	Challenge: "Blackout	TEXT	228	30	1
-10395:112	Challenge: "Jack-in-	TEXT	551	16	1
-10392:1341	(P) Challenge: "Flas	TEXT	460	30	1
-10392:1342	Challenge: "Did You 	TEXT	534	30	1
-10392:1343	Challenge: "Backdraf	TEXT	317	30	1
-10395:113	Challenge: "Master C	TEXT	373	15	1
-10392:1344	Challenge: "Kleptoma	TEXT	342	30	1
-10395:114	Challenge "Break for	TEXT	362	15	1
-10392:1345	Challenge: "Air Mail	TEXT	281	30	1
-10395:115	(P) Prestige once an	TEXT	208	15	1
-10395:116	Challenge: "Ouch" - 	TEXT	613	15	1
-10392:1346	Challenge: "Misery L	TEXT	597	30	1
-10395:117	Challenge "End Game:	TEXT	241	15	1
-10392:1347	Challenge: "Scramble	TEXT	456	30	1
-10392:1348	Challenge: "Grenade 	TEXT	336	30	1
+10395:71	Challenge: "Fearless" - Kill 10 enemies in a single match without dying	TEXT	396	15	1
+10395:72	Challenge: "MVP Team Hardcore" - Win a Hardcore Team Deathmatch match with the top score.	TEXT	545	15	1
+10392:1310	Challenge: "Extreme Cruelty"(lvl43) - Kill every member of the enemy team without dying (at least 4 enemies). 	TEXT	625	30	1
+10395:73	Challenge: "All Pro" - Get 2 headshots with 1 bullet	TEXT	286	15	1
+10395:74	Challenge: "Marathon Pro: V" - Run 52 miles using Marathon.	TEXT	345	15	1
+10392:1311	Challenge: "Danger Close: VI"(lvl33) - Kill 500 enemies with explosives using Danger Close. 	TEXT	517	30	1
+10395:75	Challenge: "Bling Pro: I" - Get 25 Kills using a weapon with 2 attachments.	TEXT	418	15	1
+10392:1312	Challenge: "Money Shot!"(lvl47) - Get a payback in the game winning killcam. 	TEXT	437	30	1
+10395:76	Challenge "Airdrop Inbound: II" - Call in 100 total airdrop crates using Care Package, Sentry Gun and Emergency Airdrop.	TEXT	681	15	1
+10392:1313	Challenge: "Overdraft"(lvl47) - Get a Payback that sticks to the victim. 	TEXT	397	30	1
+10395:78	(P) Prestige 7 times and reach level 2.	TEXT	214	15	1
+10395:79	Challenge: "Dominos" - Kill an enemy by setting off a chain reaction of explosives	TEXT	460	15	1
+10395:80	Challenge: "6fears7" - Have killstreak rewards requiring 7, 8, and 9 kills and earn them all.	TEXT	504	15	1
+10392:1314	Challenge "Counter-Claymore: II"(lvl53) - Kill 10 Enemies by Shooting a Claymore 	TEXT	458	30	1
+10395:81	Challenge: "Droppin' Crates" - Get a Game Winning Killcam by dropping a crate on the enemy.	TEXT	531	15	1
+10392:1315	Challenge: "Cold-Blooded: VI"(lvl25) - Destroy 250 enemy killstreak rewards using Cold Blooded. 	TEXT	548	30	1
+10392:1316	Challenge: "Ninja Pro: V"(lvl29) - Get 125 close range kills while using Ninja. 	TEXT	427	30	1
+10392:1317	Challenge: "Bang for your Buck: I"(lvl47) - Get Payback 5 times with Frag Grenades. 	TEXT	474	30	1
+10392:1318	Challenge: "Special Delivery: II"(lvl16) - Call in 10 Emergency Airdrops. 	TEXT	396	30	1
+10392:1319	(P) Challenge: "Heads Up!"(lvl5) - Kill an enemy by dropping a crate on them. 	TEXT	435	30	1
+10392:1320	Challenge: "The Bigger They Are"(lvl61) - Kill the number one player on the enemy team 3 times in a row. 	TEXT	592	30	1
+10395:82	Challenge: "MVP Team Deathmatch" - Play Team Deathmatch and get the top score overall.	TEXT	519	15	1
+10392:1321	Challenge: "The Harder They Fall"(lvl61) - Kill the number one player on the enemy team 5 times in a row. 	TEXT	594	30	1
+10395:83	Challenge: "Free-for-all Victor: II" - Place first, second or third in 5 Free-for-all matches.	TEXT	495	15	1
+10392:1322	Challenge: "Clay More: I"(lvl31) - Kill min. 2 Enemies with a Single Claymore, 5 Times 	TEXT	477	30	1
+10395:84	(P) Challenge: "Predator: I"(lvl5) - Get 50 kills with a Predator Missile.	TEXT	391	15	1
+10395:85	Challenge: "Base Jump" - Fall 15 feet or more and survive.	TEXT	329	15	1
+10392:1323	Challenge: "Hardline Pro: V"(lvl9) - Get 100 Killstreaks while using Hardline. 	TEXT	425	30	1
+10395:86	(P) Prestige once and reach level 55	TEXT	205	15	1
+10395:87	Challenge: "Stealth Bomber Veteran: II" - Call in 10 Stealth Bombers.	TEXT	386	15	1
+10392:1324	Challenge: "Last Stand Pro: V"(lvl41) - Kill 50 Enemies while in Last Stand 	TEXT	414	30	1
+10395:88	Challenge: "Martyrdoh!" - Kill someone cooking off a grenade before they throw it.	TEXT	467	15	1
+10392:1325	Challenge: "Last Stand Pro: VI"(lvl41) - Get 100 kills in Last Stand. 	TEXT	371	30	1
+10395:89	Challenge: "Assault Expert: II" - Get 25 headshots while using an Assault Rifle.	TEXT	441	15	1
+10392:1326	(P) Prestige 6 times and reach level 2. 	TEXT	215	45	1
+10395:90	Challenge: "Owned" - Get Game Winning Killcam with a Riot Shield melee kill.	TEXT	436	15	1
+10395:91	Challenge: "Hot Potato: I" - Kill 5 enemies with thrown back grenades.	TEXT	396	15	1
+10395:92	Challenge: "Smasher" - Get a 3 kill streak with the Riot Shield without dying.	TEXT	431	15	1
+10395:93	Challenge: "Cruelty" - Kill an enemy, pick up his weapon, then kill him again with his own weapon.	TEXT	551	15	1
+10395:94	Challenge: "Solid Steel: II" - Survive 25 explosions while using Blast Shield.	TEXT	422	15	1
+10392:1327	Challenge: "Think Fast Flash" - Finish an enemy by hitting them with a flashbang (Direct impact). 	TEXT	546	30	1
+10395:95	Challenge: "The Surgical" - Fire an entire Assault Rifle magazine into your enemies without missing.	TEXT	561	15	1
+10395:96	Challenge: "The Survivor" - Get a knife kill when all your ammo is empty.	TEXT	409	15	1
+10392:1328	Challenge: "Sleight of Hand Pro: VI" - Get 750 kills using Sleight of Hand. 	TEXT	411	30	1
+10395:97	Challenge: "Carnie I" - Kill 5 players with a Throwing Knife.	TEXT	330	15	1
+10392:1329	(P) Prestige 5 times and reach level 2. 	TEXT	215	30	1
+10395:98	Challenge: "Jack-in-the-Box: II" - Kill an enemy within 5 seconds of tactically inserting, 25 times.	TEXT	544	15	1
+10392:1330	Challenge: "Point Guard: II" - Get 15 assists. 	TEXT	248	30	1
+10395:99	Challenge: "One Man Army Pro: V" - Get 300 Kills with One Man Army.	TEXT	397	15	1
+10392:1331	(P) Reach level 45 1st Prestige. 	TEXT	176	30	1
+10392:1332	Challenge: "Shield Veteran: I"- Kill 2 enemies with the shield melee attack. 	TEXT	419	30	1
+10395:100	Challenge: "Bling Pro: V" - Get 450 kills using a weapon with 2 attachments.	TEXT	430	15	1
+10392:1333	Challenge:"Totally Numb"-Survive an explosion that would normally kill you by using Painkiller. 	TEXT	532	30	1
+10395:101	Challenge: "Counter-Claymore: I" - Kill 3 Enemies by Shooting a Claymore	TEXT	417	15	1
+10395:102	(P) Challenge: "The Spirit: I"(lvl5) - Get 50 kills with the Stealth Bomber	TEXT	402	15	1
+10392:1334	Challenge: "Darkbringer" - Prevent 25 tactical insertions. 	TEXT	321	30	1
+10395:103	Challenge: "Vertical Takeoff: II" - Call in 25 Harrier Strikes.	TEXT	328	15	1
+10392:1335	Challenge: "Special Delivery: I" - Call in 3 Emergency Airdrops. 	TEXT	353	30	1
+10395:104	Challenge: "Multi-C4: II" - Kill min. 2 Enemies with a Single C4 Pack, 25 Times	TEXT	439	15	1
+10392:1336	Challenge: "Plastered: II" - Stick 15 enemies with Semtex. 	TEXT	324	30	1
+10395:105	Challenge: "ATM" - Get a payback with a throwing knife.	TEXT	317	15	1
+10395:106	Challenge: "Commando Pro: V" - Get 50 melee kills using Commando.	TEXT	394	15	1
+10392:1337	Challenge: "Perfectionist" - Fire an entire Sniper magazine into your enemies without missing. 	TEXT	529	30	1
+10395:107	Challenge: "Think Fast" - Finish an enemy off by hitting them with a frag grenade. (Direct impact)	TEXT	549	15	1
+10395:108	Challenge: "Danger Close Pro: I" - Get 10 kills with explosives while using Danger Close.	TEXT	496	15	1
+10392:1338	(P) Prestige once and reach level 35. 	TEXT	208	30	1
+10395:109	Challenge: "Attack Helicopter Veteran: II" - Call in 25 Attack Helicopters.	TEXT	407	15	1
+10395:110	Challenge: "Hard Landing" - Kill an enemy that is in mid-air.	TEXT	335	15	1
+10392:1339	Challenge: "Exposed: II" - Call in 25 UAVs. 	TEXT	237	30	1
+10395:111	(Extra Crispy) (P) Challenge: "The Spirit: I"(lvl5) - Get 50 kills with the Stealth Bomber	TEXT	483	15	1
+10392:1340	Challenge: "Blackout: I" - Call in 2 EMPs. 	TEXT	228	30	1
+10395:112	Challenge: "Jack-in-the-Box: I" - Kill an enemy within 5 seconds of tactically inserting, 10 times. 	TEXT	551	16	1
+10392:1341	(P) Challenge: "Flashbang Veteran I"(lvl5) - Kill 20 enemies dazed by a flashbang. 	TEXT	460	30	1
+10392:1342	Challenge: "Did You See That?" - Kill someone with a Throwing Knife while flashed or stunned. 	TEXT	534	30	1
+10392:1343	Challenge: "Backdraft: II" - Destroy 5 enemy equipment. 	TEXT	317	30	1
+10395:113	Challenge: "Master Chef I" - Kill 5 enemies with cooked grenades.	TEXT	373	15	1
+10392:1344	Challenge: "Kleptomaniac" - Steal an enemy's care package. 	TEXT	342	30	1
+10395:114	Challenge "Break for the Bank" - Get a payback with a claymore	TEXT	362	15	1
+10392:1345	Challenge: "Air Mail: II" - Call in 25 Care Packages 	TEXT	281	30	1
+10395:115	(P) Prestige once and reach level 65.	TEXT	208	15	1
+10395:116	Challenge: "Ouch" - Kill an enemy with a rifle-mounted grenade launcher without detonation. (Direct impact)	TEXT	613	15	1
+10392:1346	Challenge: "Misery Loves Company" - Kill yourself and 1 enemy by cooking a grenade without throwing it. 	TEXT	597	30	1
+10395:117	Challenge "End Game: II" - Call in 5 Nukes.	TEXT	241	15	1
+10392:1347	Challenge: "Scrambler Pro: V" - Get 125 Close Range Kills while using Scrambler. 	TEXT	456	30	1
+10392:1348	Challenge: "Grenade Kill: I" - Kill 10 enemies with grenades. 	TEXT	336	30	1
 10395:118	Achieve rank 7.	TEXT	86	15	1
 10395:119	Achieve rank 7.	TEXT	86	15	1
 10395:120	Achieve rank 7.	TEXT	86	15	1
@@ -705,82 +705,82 @@
 10395:161	Achieve rank 7.	TEXT	86	15	1
 10395:154	Achieve rank 7.	TEXT	86	15	1
 10395:135	Achieve rank 7.	TEXT	86	15	1
-10392:1349	Challenge: "Claymore	TEXT	349	22	1
-10392:1350	Challenge: "Grenade 	TEXT	344	30	1
-10392:1351	Challenge: "Radiatio	TEXT	872	30	1
-10392:1352	Challenge: "Living D	TEXT	430	30	1
-10392:1353	Challenge: "Last Res	TEXT	538	30	1
-10392:1354	Challenge: "Both Bar	TEXT	543	30	1
-10392:1355	(P) Challenge: "Last	TEXT	431	30	1
-10395:163	(P) Challenge: "Pred	TEXT	391	15	1
+10392:1349	Challenge: "Claymore Shot: I" - Kill 5 enemies with claymores. 	TEXT	349	22	1
+10392:1350	Challenge: "Grenade Kill: II" - Get 25 kills with frag grenades. 	TEXT	344	30	1
+10392:1351	Challenge: "Radiation Sickness" - Get nuked by the enemy. You must be alive at the time the nuke goes off; if you are respawning you will not get the title. 	TEXT	872	30	1
+10392:1352	Challenge: "Living Dead"-Survive in Final Stand long enough to get back up. 	TEXT	430	30	1
+10392:1353	Challenge: "Last Resort" - Get a game winning Killcam while in either Last Stand or Final Stand. 	TEXT	538	30	1
+10392:1354	Challenge: "Both Barrels" - Kill an enemy with the ranger by firing both barrels at the same time. 	TEXT	543	30	1
+10392:1355	(P) Challenge: "Last Stand Veteran: I"(lvl5) - Kill 5 enemies using Last Stand. 	TEXT	431	30	1
+10395:163	(P) Challenge: "Predator: I"(lvl5) - Get 50 kills with a Predator Missile.	TEXT	391	15	1
 10395:164	Achieve rank 9.	TEXT	87	15	1
-10392:1356	Challenge: "Infected	TEXT	353	30	1
-10395:165	(P) Challenge: "Flas	TEXT	460	15	1
-10392:1357	Challenge: "The Reso	TEXT	420	30	1
-10395:166	(P) Challenge: "Carp	TEXT	455	15	1
-10392:1358	Challenge: "Sunblock	TEXT	370	30	1
-10395:167	(P) Challenge: "Spec	TEXT	339	15	1
-10392:1359	(P) Challenge: "Stea	TEXT	447	30	1
-10395:168	(P) Challenge: "You'	TEXT	356	15	1
-10395:169	(P) Challenge: "Joll	TEXT	400	15	1
-10392:1360	Challenge: "Martyr" 	TEXT	374	30	1
-10395:170	(P) Challenge: "Last	TEXT	431	15	1
-10395:171	(P) Challenge: "Stun	TEXT	457	15	1
-10395:172	(P) Prestige 1 time 	TEXT	207	15	1
-10392:1361	Challenge: "Group Hu	TEXT	522	30	1
-10395:173	(P) Prestige 2 times	TEXT	215	15	1
-10395:174	(P) Prestige 3 times	TEXT	215	15	1
-10395:175	(P) Prestige 8 times	TEXT	215	15	1
-10392:1362	Challenge: "How the?	TEXT	708	15	1
-10395:176	(P) Prestige 9 times	TEXT	215	15	1
-10395:177	(P) Prestige 10 time	TEXT	221	15	1
-10392:1363	Challenge: "Identity	TEXT	415	30	1
-10395:178	Assault Sharpshooter	TEXT	693	15	1
-10395:179	Unlock all Weapon At	TEXT	188	15	1
-10395:180	500 Kills Prestige V	TEXT	165	16	1
-10392:1364	Challenge: "Scramble	TEXT	395	30	1
-10392:1365	Challenge: "The Brin	TEXT	506	30	1
-10392:1366	Challenge: "Tactical	TEXT	463	30	1
-10395:181	Assault Marksman tit	TEXT	915	15	1
-10392:1367	Challenge: "Claymore	TEXT	302	30	1
-10395:182	250 Headshots Presti	TEXT	194	16	1
-10392:1368	Challenge: "Car Bomb	TEXT	342	30	1
-10395:183	Assault Expert Title	TEXT	991	15	1
-10392:1369	Challenge: "Goodbye"	TEXT	331	30	1
-10395:184	2500 Kills Silver Pr	TEXT	269	13	1
-10392:1370	Challenge: "LMG Expe	TEXT	515	30	1
-10392:1371	STD (Sexually Transm	TEXT	711	45	1
-10395:185	Assault Veteran titl	TEXT	900	15	1
-10395:186	1000 Headshots Gold 	TEXT	288	15	1
-10392:1372	Finish Flashbang Vet	TEXT	395	45	1
-10395:187	Assault Master title	TEXT	763	15	1
-10392:1373	Finish Flashbang Vet	TEXT	381	30	1
-10395:188	Finish Spectre II (2	TEXT	152	15	1
-10395:189	Finish Spectre IV (1	TEXT	162	15	1
-10395:190	Finish Chopper Veter	TEXT	204	15	1
-10392:1374	Finish Stun Veteran 	TEXT	415	30	1
-10395:191	Finish Chopper Veter	TEXT	215	15	1
-10395:192	Finish Cobra Command	TEXT	215	15	1
-10392:1375	Finish Stun Veteran 	TEXT	400	30	1
-10395:193	Finish Cobra Command	TEXT	228	17	1
-10392:1376	Finish Last Stand Ve	TEXT	333	30	1
-10395:194	Finish You're Fired 	TEXT	174	15	1
-10395:195	Finish You're Fired 	TEXT	185	15	1
-10392:1377	Finish Last Stand ve	TEXT	319	30	1
-10392:1378	Finish Stealth Veter	TEXT	396	30	1
-10392:1379	Finish Silent Vetera	TEXT	372	30	1
-10395:196	Finish Jolly Green G	TEXT	205	15	1
-10392:1380	Finish Blade Veteran	TEXT	246	30	1
-10395:197	Finish Jolly Green G	TEXT	216	15	1
-10392:1381	Finish Blade Veteran	TEXT	234	30	1
-10395:198	Finish Carpet Bomber	TEXT	195	17	1
-10392:1382	Finish The Spirit IV	TEXT	173	30	1
-10395:199	Finish Carpet Bomber	TEXT	205	15	1
-10392:1383	Finish The Spirit II	TEXT	162	30	1
-10395:200	Finish Predator II (	TEXT	156	15	1
-10395:201	Finish Predator IV (	TEXT	167	15	1
-10392:1384	Finish Look! No Hand	TEXT	212	30	1
-10392:1385	Finish Look! No Hand	TEXT	201	30	1
+10392:1356	Challenge: "Infected" - Get knifed by an enemy using this title. 	TEXT	353	30	1
+10395:165	(P) Challenge: "Flashbang Veteran I"(lvl5) - Kill 20 enemies dazed by a flashbang.	TEXT	460	15	1
+10392:1357	Challenge: "The Resourceful" - Kill an enemy by sticking semtex to an ally. 	TEXT	420	30	1
+10395:166	(P) Challenge: "Carpet Bomber I"(lvl5) - Kill 50 enemies with Precision Airstrikes.	TEXT	455	15	1
+10392:1358	Challenge: "Sunblock" - Call in 3 Counter-UAVs in a single match. 	TEXT	370	30	1
+10395:167	(P) Challenge: "Spectre: I"(lvl5) - Get 50 kills with an AC130.	TEXT	339	15	1
+10392:1359	(P) Challenge: "Stealth: I"(lvl5) - Kill 10 enemies while using a silenced weapon. 	TEXT	447	30	1
+10395:168	(P) Challenge: "You're Fired: I"(lvl5) - Get 50 kills with a Harrier.	TEXT	356	15	1
+10395:169	(P) Challenge: "Jolly Green Giant: I"(lvl5) - Get 50 kills with a Pave Low.	TEXT	400	15	1
+10392:1360	Challenge: "Martyr" - Kill an enemy with your Martyrdom grenade. 	TEXT	374	30	1
+10395:170	(P) Challenge: "Last Stand Veteran: I"(lvl5) - Kill 5 enemies using Last Stand.	TEXT	431	15	1
+10395:171	(P) Challenge: "Stun Veteran: I"(lvl5) - Kill 20 enemies stunned by stun grenades.	TEXT	457	15	1
+10395:172	(P) Prestige 1 time and reach level 2.	TEXT	207	15	1
+10392:1361	Challenge: "Group Hug" - Kill multiple enemies with a Semtex Grenade stuck to one of them. 	TEXT	522	30	1
+10395:173	(P) Prestige 2 times and reach level 2.	TEXT	215	15	1
+10395:174	(P) Prestige 3 times and reach level 2.	TEXT	215	15	1
+10395:175	(P) Prestige 8 times and reach level 2.	TEXT	215	15	1
+10392:1362	Challenge: "How the?" - Kill an enemy by using bullet penetration to blow up an explosive through a wall. FMJ is not Required	TEXT	708	15	1
+10395:176	(P) Prestige 9 times and reach level 2.	TEXT	215	15	1
+10395:177	(P) Prestige 10 times and reach level 2.	TEXT	221	15	1
+10392:1363	Challenge: "Identity Thief" - Get a payback with the killer's copycat class. 	TEXT	415	30	1
+10395:178	Assault Sharpshooter title MW2 All Primary Weapons - Assault Rifles, Submachine Guns, Sniper Rifles, Light Machine Guns	TEXT	693	15	1
+10395:179	Unlock all Weapon Attachments	TEXT	188	15	1
+10395:180	500 Kills Prestige Veteran I	TEXT	165	16	1
+10392:1364	Challenge: "Scrambler Pro I" - Get 5 close range kills using Scrambler. 	TEXT	395	30	1
+10392:1365	Challenge: "The Brink" - Get a 3 or more kill streak while near death (screen flashing red). 	TEXT	506	30	1
+10392:1366	Challenge: "Tactical Deletion" - Kill 25 players that spawn using Tactical Insertion. 	TEXT	463	30	1
+10395:181	Assault Marksman title MW2 All Weapons - Assault Rifles, Submachine Guns, Sniper Rifles, Light Machine Guns, Machine Pistols, Handguns, Shotguns, Launchers	TEXT	915	15	1
+10392:1367	Challenge: "Claymore Shot: II" - Get 15 Claymore Kills 	TEXT	302	30	1
+10395:182	250 Headshots Prestige Master I	TEXT	194	16	1
+10392:1368	Challenge: "Car Bomb: I" - Kill 5 enemies by destroying cars. 	TEXT	342	30	1
+10395:183	Assault Expert Title MW2 All Weapons - Assault Rifles, Submachine Guns, Sniper Rifles, Light Machine Guns, Machine Pistols, Handguns, Shotguns, Launchers (except Stinger)	TEXT	991	15	1
+10392:1369	Challenge: "Goodbye" - Fall 30 feet or more to your death. 	TEXT	331	30	1
+10395:184	2500 Kills Silver Prestige Prestige Veteran III	TEXT	269	13	1
+10392:1370	Challenge: "LMG Expert: I" - Kill 5 enemies with headshots while using a light machine gun. 	TEXT	515	30	1
+10392:1371	STD (Sexually Transmitted Disease, Stabbed To Death) Stab a player using this title, or be stabbed by a player using this title. 	TEXT	711	45	1
+10395:185	Assault Veteran title MW2 All Weapons - Assault Rifles, Submachine Guns, Sniper Rifles, Light Machine Guns, Machine Pistols, Handguns, Shotguns, Launchers	TEXT	900	15	1
+10395:186	1000 Headshots Gold Prestige Prestige Master III	TEXT	288	15	1
+10392:1372	Finish Flashbang Veteran IV - Kill 300 enemies dazed by a Flashbang. 	TEXT	395	45	1
+10395:187	Assault Master title MW2 All Weapons - Assault Rifles, Submachine Guns, Sniper Rifles, Light Machine Guns, Machine Pistols, Handgun	TEXT	763	15	1
+10392:1373	Finish Flashbang Veteran II - Kill 75 enemies dazed by a Flashbang. 	TEXT	381	30	1
+10395:188	Finish Spectre II (250 Kills)	TEXT	152	15	1
+10395:189	Finish Spectre IV (1000 Kills)	TEXT	162	15	1
+10395:190	Finish Chopper Veteran II (250 Kills)	TEXT	204	15	1
+10392:1374	Finish Stun Veteran IV - Kill 300 enemies still stunned by a Stun Grenade. 	TEXT	415	30	1
+10395:191	Finish Chopper Veteran IV (1000 Kills)	TEXT	215	15	1
+10395:192	Finish Cobra Commander II (250 Kills)	TEXT	215	15	1
+10392:1375	Finish Stun Veteran II - Kill 75 enemies still stunned by a Stun grenade. 	TEXT	400	30	1
+10395:193	Finish Cobra Commander IV (1000 Kills) 	TEXT	228	17	1
+10392:1376	Finish Last Stand Veteran IV - 100 Kills while in Last Stand. 	TEXT	333	30	1
+10395:194	Finish You're Fired II (250 Kills)	TEXT	174	15	1
+10395:195	Finish You're Fired IV (1000 Kills)	TEXT	185	15	1
+10392:1377	Finish Last Stand veteran II - 15 Kills while in Last Stand. 	TEXT	319	30	1
+10392:1378	Finish Stealth Veteran IV - Kill 1000 enemies with a silencer equipped. 	TEXT	396	30	1
+10392:1379	Finish Silent Veteran III - Kill 50 enemies with a silencer equipped. 	TEXT	372	30	1
+10395:196	Finish Jolly Green Giant II (250 Kills)	TEXT	205	15	1
+10392:1380	Finish Blade Veteran IV - Stab 250 Enemies 	TEXT	246	30	1
+10395:197	Finish Jolly Green Giant IV (1000 Kills)	TEXT	216	15	1
+10392:1381	Finish Blade Veteran II - Stab 50 Enemies 	TEXT	234	30	1
+10395:198	Finish Carpet Bomber II (250 Kills) 	TEXT	195	17	1
+10392:1382	Finish The Spirit IV (1000 Kills) 	TEXT	173	30	1
+10395:199	Finish Carpet Bomber IV (1000 Kills)	TEXT	205	15	1
+10392:1383	Finish The Spirit II (250 Kills) 	TEXT	162	30	1
+10395:200	Finish Predator II (250 Kills)	TEXT	156	15	1
+10395:201	Finish Predator IV (1000 Kills)	TEXT	167	15	1
+10392:1384	Finish Look! No Hands! IV (1000 Kills) 	TEXT	212	30	1
+10392:1385	Finish Look! No Hands! II (250 Kills) 	TEXT	201	30	1
 10400:4	Frame 1	FRAME	67	24442	1
 10392:2599	image 610	RECTANGLE	46	52	1
 10392:2600	image 611	RECTANGLE	67	53	1
@@ -851,199 +851,199 @@
 10401:2795	Reach Level 15	TEXT	85	15	1
 10400:6	Reach level 34	TEXT	84	15	1
 10400:8	Reach level 54	TEXT	83	15	1
-10400:10	Complete the "Fly Sw	TEXT	216	15	1
-10400:14	Shoot down an enemy 	TEXT	189	15	1
-10400:16	Complete the "Stickm	TEXT	204	15	1
-10400:18	Stick a Semtex Grena	TEXT	367	15	1
-10401:2796	Complete the "Base J	TEXT	214	30	1
-10401:2797	Complete the "Both B	TEXT	389	30	1
+10400:10	Complete the "Fly Swatter" challenge.	TEXT	216	15	1
+10400:14	Shoot down an enemy helicopter.	TEXT	189	15	1
+10400:16	Complete the "Stickman" challenge.	TEXT	204	15	1
+10400:18	Stick a Semtex Grenade to the enemy in a game winning Killcam.	TEXT	367	15	1
+10401:2796	Complete the "Base Jump" challenge. Fall 15 feet or more and survive.	TEXT	214	30	1
+10401:2797	Complete the "Both Barrels" challenge. Kill an enemy with the Ranger by firing both barrels at the same time	TEXT	389	30	1
 10401:2798	Reach level 2	TEXT	76	15	1
 10401:2799	Reach level 19	TEXT	81	15	1
 10401:2800	Reach level 37	TEXT	83	15	1
 10401:2801	Reach level 58	TEXT	83	15	1
-10401:2802	Complete the "Techno	TEXT	275	30	1
-10401:2803	Complete the "Vandal	TEXT	209	30	1
-10401:2804	Complete the "Sponge	TEXT	247	30	1
-10401:2805	Complete the "Mach 5	TEXT	301	30	1
+10401:2802	Complete the "Techno Killer" challenge. Get a game winning kill with the Stealth Bomber.	TEXT	275	30	1
+10401:2803	Complete the "Vandalism" challenge. Destroy a car.	TEXT	209	30	1
+10401:2804	Complete the "Sponge: III" challenge. Absorb 50,000 damage with the Riot Shield	TEXT	247	30	1
+10401:2805	Complete the "Mach 5" challenge. Fire an entire SMG Mag into enemies without missing	TEXT	301	30	1
 10401:2806	Reach level 4	TEXT	76	114	1
 10401:2807	Reach level 22	TEXT	83	114	1
 10401:2808	Reach level 40	TEXT	84	114	1
 10401:2809	Reach level 62	TEXT	83	114	1
-10401:2810	Complete the "True L	TEXT	418	114	1
-10401:2812	Complete the "Hard L	TEXT	404	114	1
-10401:2813	Complete the"Point G	TEXT	319	114	1
-10401:2814	Complete the "Dictat	TEXT	503	114	1
+10401:2810	Complete the "True Liar" challenge. Get a game winning kill with a Harrier.	TEXT	418	114	1
+10401:2812	Complete the "Hard Landing" challenge. Kill an enemy that is in mid-air.	TEXT	404	114	1
+10401:2813	Complete the"Point Guard: III" challenge. Get 30 assists.	TEXT	319	114	1
+10401:2814	Complete the "Dictator" challenge. Fire an entire LMG Mag into enemies without missing.	TEXT	503	114	1
 10401:2815	Reach level 7	TEXT	75	114	1
 10401:2816	Reach level 25	TEXT	83	114	1
 10401:2817	Reach level 43	TEXT	84	114	1
 10401:2818	Reach level 66	TEXT	83	114	1
-10401:2819	Complete the "Finish	TEXT	544	121	1
-10401:2820	Complete the "Unbrea	TEXT	456	114	1
-10401:2821	Complete the "X-Ray 	TEXT	567	114	1
-10401:2822	Complete the "Crouch	TEXT	469	114	1
+10401:2819	Complete the "Finishing Touch" challenge. Get a game winning killcam with a Precision Airstrike.	TEXT	544	121	1
+10401:2820	Complete the "Unbreakable: III" challenge. Deflect 100 Explosions w/ Riot Shield.	TEXT	456	114	1
+10401:2821	Complete the "X-Ray Vision: III" challenge. Kill 15 enemies through a surface using bullet penetration	TEXT	567	114	1
+10401:2822	Complete the "Crouch Shot: III" challenge. Kill 30 enemies while you are crouching.	TEXT	469	114	1
 10401:2823	Reach level 10	TEXT	81	114	1
 10401:2824	Reach level 28	TEXT	83	114	1
 10401:2825	Reach level 46	TEXT	83	114	1
 10401:2826	Reach level 70	TEXT	82	114	1
-10401:2827	Complete the "Transf	TEXT	443	114	1
-10401:2828	Complete the "Afterb	TEXT	467	114	1
-10401:2829	Complete the "The Su	TEXT	569	114	1
-10401:2830	Complete the "Prone 	TEXT	438	114	1
+10401:2827	Complete the "Transformer" challenge. Get a game winning kill with a Pavelow	TEXT	443	114	1
+10401:2828	Complete the "Afterburner" challenge. Call in an airstrike 2 times in a single match.	TEXT	467	114	1
+10401:2829	Complete the "The Surgical" challenge. Fire an entire Assault Rifle Mag into enemies without missing	TEXT	569	114	1
+10401:2830	Complete the "Prone Shot: III" challenge. Kill 30 enemies while you are prone.	TEXT	438	114	1
 10401:2831	Reach level 13	TEXT	82	114	1
 10401:2832	Reach level 31	TEXT	82	114	1
 10401:2833	Reach level 50	TEXT	83	114	1
-10401:2834	Complete the "Group 	TEXT	591	114	1
-10401:2835	Complete the "Invinc	TEXT	614	114	1
-10401:2836	Complete the "Death 	TEXT	496	114	1
-10401:2837	Complete the "Fast S	TEXT	616	114	1
-10401:2838	Complete the "Did yo	TEXT	598	114	1
-10401:2839	Complete the "Money 	TEXT	467	114	1
-10401:2840	Complete the "It's P	TEXT	535	114	1
-10401:2841	Complete "Solid Stee	TEXT	479	114	1
-10401:2842	Complete "OG" challe	TEXT	448	114	1
-10401:2843	Complete the "Bomb P	TEXT	535	114	1
-10401:2844	Complete the "Flawle	TEXT	338	114	1
-10401:2845	Complete the "Back S	TEXT	516	114	1
-10401:2846	Complete the "Shield	TEXT	506	114	1
-10401:2847	Complete the "Hi Def	TEXT	484	114	1
-10401:2848	Complete "Hot Potato	TEXT	439	114	1
-10401:2849	Complete the "C4 Sho	TEXT	331	114	1
-10401:2850	Complete the "The Av	TEXT	448	114	1
-10401:2851	Complete the "Defuse	TEXT	308	114	1
-10401:2853	Complete the "Bomb D	TEXT	329	114	1
-10401:2854	Complete the "Good B	TEXT	400	114	1
-10401:2855	Complete the "All Pr	TEXT	358	114	1
-10401:2856	Complete the "Perfec	TEXT	537	114	1
-10401:2857	Complete the "Sideki	TEXT	489	114	1
-10401:2858	Complete the "Claymo	TEXT	437	114	1
-10401:2859	Complete the "Renais	TEXT	561	114	1
-10401:2860	Complete the "Bomb D	TEXT	435	114	1
-10401:2861	Complete the "MVP Te	TEXT	538	114	1
-10401:2862	Complete the "Return	TEXT	512	114	1
-10401:2863	Complete the "Car Bo	TEXT	422	114	1
-10401:2864	Complete the "Backdr	TEXT	394	114	1
-10401:2865	Complete the "Grenad	TEXT	416	114	1
-10401:2866	Complete the "Carnie	TEXT	397	114	1
-10401:2867	Complete "MVP Team D	TEXT	566	114	1
-10401:2868	Complete the "Sabote	TEXT	307	114	1
-10401:2869	Complete the "Assaul	TEXT	517	114	1
-10401:2870	Complete the "Smashe	TEXT	422	114	1
-10401:2871	Complete the "Ouch" 	TEXT	600	114	1
-10401:2872	Complete the "Drone 	TEXT	513	114	1
-10401:2873	Complete the "Plaste	TEXT	448	114	1
-10401:2874	Complete the "Darkbr	TEXT	431	114	1
-10401:2875	Complete "Ghillie in	TEXT	472	114	1
-10401:2876	Complete the "Last M	TEXT	444	114	1
-10401:2877	Complete the "SMG Ex	TEXT	378	114	1
-10401:2878	Complete the "Owned"	TEXT	455	114	1
-10400:26	Unlocked at Rank 41,	TEXT	418	30	1
-10401:2879	Complete the "Stun V	TEXT	506	114	1
-10400:28	Complete backstabber	TEXT	418	30	1
-10400:30	Complete "Time is Mo	TEXT	418	30	1
-10401:2880	Complete the "Absent	TEXT	504	114	1
-10401:2881	Complete the "Jack i	TEXT	611	114	1
-10400:32	Complete the "Flash 	TEXT	418	30	1
-10401:2882	Complete NBK challen	TEXT	331	114	1
-10401:2883	Complete "Tactical D	TEXT	510	114	1
-10400:34	Complete "Last Stand	TEXT	418	30	1
-10401:2884	Complete the "Slow b	TEXT	535	114	1
-10401:2885	Complete the "LMG Ex	TEXT	374	114	1
-10401:2886	Complete the "Unbeli	TEXT	485	114	1
-10401:2887	Complete the "Streak	TEXT	306	114	1
-10400:38	Complete the "Airbor	TEXT	418	30	1
-10400:40	Complete the "Sabota	TEXT	418	30	1
-10400:42	Complete the "Air Su	TEXT	418	30	1
-10401:2888	Complete the "Counte	TEXT	272	30	1
-10401:2889	Steal 200 enemy care	TEXT	299	30	1
-10401:2890	Complete the "Multi-	TEXT	336	30	1
-10401:2891	Complete "The Resour	TEXT	222	30	1
-10401:2892	Once painkiller is a	TEXT	483	15	1
-10401:2893	Complete the "Carpet	TEXT	252	30	1
-10401:2894	Complete "Spectre IV	TEXT	168	30	1
-10401:2895	Reach 5th prestige l	TEXT	148	15	1
-10401:2896	Complete the "Carpet	TEXT	226	30	1
-10401:2897	Complete "Airstrike 	TEXT	284	30	1
-10401:2898	Complete "Multi-RPG:	TEXT	324	30	1
-10401:2899	Complete the "MG Mas	TEXT	252	30	1
-10401:2900	Get a kill with Mart	TEXT	146	15	1
-10401:2901	Complete "You're Fir	TEXT	159	30	1
-10401:2902	(Unobtainable throug	TEXT	232	15	1
-10401:2903	Reach 6th prestige l	TEXT	148	15	1
-10401:2904	Challenge: "Ultimate	TEXT	218	30	1
-10401:2905	Complete the "Domino	TEXT	329	30	1
-10400:46	Complete Tango Down 	TEXT	418	30	1
-10401:2906	Complete "Multi-C4: 	TEXT	310	30	1
-10400:48	Complete "Color of M	TEXT	418	30	1
-10401:2907	Awarded alongside Su	TEXT	234	30	1
-10401:2908	Get back on your fee	TEXT	354	15	1
-10400:50	Awarded with "Star P	TEXT	418	30	1
-10400:52	Complete the "Enemy 	TEXT	418	30	1
-10401:2909	Complete "Chopper Ve	TEXT	279	30	1
-10400:54	Complete the "Sunblo	TEXT	418	30	1
-10401:2910	Reach 1st prestige l	TEXT	145	15	1
-10401:2911	Reach 7th prestige l	TEXT	147	15	1
-10400:56	Complete the "Omnici	TEXT	418	30	1
-10401:2912	Complete the "Bullet	TEXT	233	30	1
-10401:2913	Complete the "Stealt	TEXT	278	30	1
-10401:2914	Complete "Think Fast	TEXT	319	30	1
-10401:2915	Complete "Cruelty" C	TEXT	422	30	1
-10401:2916	Challenge: "Head's U	TEXT	290	30	1
-10401:2917	Complete "Jolly Gree	TEXT	181	30	1
-10401:2918	Reach 2nd prestige l	TEXT	150	15	1
-10400:58	Complete the "Omnici	TEXT	418	30	1
-10401:2919	Reach 8th prestige l	TEXT	148	15	1
-10400:60	Complete "Robin Hood	TEXT	418	30	1
-10401:2920	Complete the "No Sec	TEXT	214	30	1
-10400:62	Complete "Wargasm" C	TEXT	418	30	1
-10401:2921	Complete "Think Fast	TEXT	317	30	1
-10401:2922	Complete "Master Che	TEXT	219	30	1
-10401:2923	Awarded alongside "H	TEXT	482	30	1
-10401:2924	Complete the "Look! 	TEXT	256	30	1
-10401:2925	Complete the "Spirit	TEXT	208	30	1
-10401:2926	Reach 3rd prestige l	TEXT	148	15	1
-10401:2927	Reach 9th prestige l	TEXT	148	15	1
-10401:2928	Reach 10th prestige 	TEXT	153	15	1
-10401:2929	Reach 4th prestige l	TEXT	148	15	1
-10401:2930	Complete the "Cobra 	TEXT	270	30	1
-10401:2931	Complete the "Predat	TEXT	215	30	1
-10401:2932	Use Copycat to copy 	TEXT	454	15	1
-10401:2933	Complete "Think Fast	TEXT	300	30	1
-10401:2934	Complete the "Clay M	TEXT	316	30	1
-10401:2935	Red Carpet challenge	TEXT	209	30	1
+10401:2834	Complete the "Group Hug" challenge. Kill multiple enemies with a Semtex Grenade stuck to one of them.	TEXT	591	114	1
+10401:2835	Complete the "Invincible" challenge. Get 5 health regenerations from enemy damage in a row, without dying.	TEXT	614	114	1
+10401:2836	Complete the "Death from Above" challenge. Get the Game winning kill with an AC-130.	TEXT	496	114	1
+10401:2837	Complete the "Fast Swap" challenge. Hurt an enemy with primary weapon, Then finish them off with a pistol.	TEXT	616	114	1
+10401:2838	Complete the "Did you see that?" challenge. Kill someone with a Throwing Knife while flashed or stunned.	TEXT	598	114	1
+10401:2839	Complete the "Money Shot!" challenge. Get a payback in the game winning killcam	TEXT	467	114	1
+10401:2840	Complete the "It's Personal!" challenge. Hurt an enemy then finish them with a Throwing Knife.	TEXT	535	114	1
+10401:2841	Complete "Solid Steel: III" challenge. 50 explosions survived while using Blast Shield.	TEXT	479	114	1
+10401:2842	Complete "OG" challenge. Get the Game Winning Kill with an Attack Helicopter.	TEXT	448	114	1
+10401:2843	Complete the "Bomb Prevention II" challenge. Kill 10 enemies while they are planting the bomb	TEXT	535	114	1
+10401:2844	Complete the "Flawless Challenge". Survive an entire game.	TEXT	338	114	1
+10401:2845	Complete the "Back Smasher" challenge. Crush an enemy from behind with the Riot Shield.	TEXT	516	114	1
+10401:2846	Complete the "Shield Veteran: III" challenge. Kill 15 Enemies with the Shield Melee Attack.	TEXT	506	114	1
+10401:2847	Complete the "Hi Def" challenge. Get a game winning Killcam with a Chopper Gunner.	TEXT	484	114	1
+10401:2848	Complete "Hot Potato II" challenge. Kill 10 enemies w/ thrown back grenades.	TEXT	439	114	1
+10401:2849	Complete the "C4 Shot: III" challenge. Get 30 kills with C4.	TEXT	331	114	1
+10401:2850	Complete the "The Avenger" challenge. Avenge 3 teammates in a single match.	TEXT	448	114	1
+10401:2851	Complete the "Defuser II" challenge Defuse 10 bombs.	TEXT	308	114	1
+10401:2853	Complete the "Bomb Down" challenge. Kill a bomb carrier.	TEXT	329	114	1
+10401:2854	Complete the "Good Bye" challenge. Fall 30 feet or more to your death	TEXT	400	114	1
+10401:2855	Complete the "All Pro" challenge. Get 2 headshots with 1 bullet.	TEXT	358	114	1
+10401:2856	Complete the "Perfectionist" challenge Fire an entire Sniper Mag into enemies without missing.	TEXT	537	114	1
+10401:2857	Complete the "Sidekick" challenge. Three kills with your secondary weapon in one life.	TEXT	489	114	1
+10401:2858	Complete the "Claymore Shot: III" Challenge. Kill 30 enemies with Claymores.	TEXT	437	114	1
+10401:2859	Complete the "Renaissance Man" challenge. Kill 3 enemies with 3 different weapons in a single life.	TEXT	561	114	1
+10401:2860	Complete the "Bomb Defender II" challenge. Kill 10 enemies defusing bombs.	TEXT	435	114	1
+10401:2861	Complete the "MVP Team Hardcore" challenge. Win a Team Hardcore match with the top score	TEXT	538	114	1
+10401:2862	Complete the "Return to Sender" challenge. Kill an enemy by shooting their own explosive.	TEXT	512	114	1
+10401:2863	Complete the "Car Bomb II" challenge. Kill ten enemies by destroying cars.	TEXT	422	114	1
+10401:2864	Complete the "Backdraft: III" challenge. Destroy 15 enemy equipment.	TEXT	394	114	1
+10401:2865	Complete the "Grenade Kill: III" challenge. Get 50 kills with frag grenades.	TEXT	416	114	1
+10401:2866	Complete the "Carnie III" challenge. Get 30 kills with a Throwing Knife.	TEXT	397	114	1
+10401:2867	Complete "MVP Team Deathmatch" challenge. Play Team Deathmatch and get the top score overall.	TEXT	566	114	1
+10401:2868	Complete the "Saboteur II" challenge. Plant 10 bombs.	TEXT	307	114	1
+10401:2869	Complete the "Assault Expert: III" challenge. Get 50 head shots while using an Assault Rifle.	TEXT	517	114	1
+10401:2870	Complete the "Smasher" challenge. Get a 3 Kill Streak with the Riot Shield.	TEXT	422	114	1
+10401:2871	Complete the "Ouch" challenge. Kill an enemy with a grenade launcher without detonation. (direct impact)	TEXT	600	114	1
+10401:2872	Complete the "Drone Killer" challenge. Get a game winning Killcam with a Predator Missile.	TEXT	513	114	1
+10401:2873	Complete the "Plastered: III" challenge. Stick 30 enemy with a semtex grenade.	TEXT	448	114	1
+10401:2874	Complete the "Darkbringer" challenge. Prevent 25 enemy tactical insertions.	TEXT	431	114	1
+10401:2875	Complete "Ghillie in the Mist: III" challenge. Get 200 one-shot kills with sniper rifles.	TEXT	472	114	1
+10401:2876	Complete the "Last Man Standing" challenge. Be the last man standing in S&D.	TEXT	444	114	1
+10401:2877	Complete the "SMG Expert: III" challenge. 50 headshots with SMG.	TEXT	378	114	1
+10401:2878	Complete the "Owned" challenge. Get a game winning killcam with a Riot Shield.	TEXT	455	114	1
+10400:26	Unlocked at Rank 41, after completing "Rival" challenge. Kill the same enemy 5 times in a single match.	TEXT	418	30	1
+10401:2879	Complete the "Stun Veteran IV" challenge. Kill 300 enemies still dazed by a stun grenade.	TEXT	506	114	1
+10400:28	Complete backstabber challenge. Stab an Enemy in the back.	TEXT	418	30	1
+10400:30	Complete "Time is Money II" challenge. Get 25 payback kills with Semtex.	TEXT	418	30	1
+10401:2880	Complete the "Absentee Killer" challenge. Get a game winning Killcam with a Sentry Gun.	TEXT	504	114	1
+10401:2881	Complete the "Jack in the Box: III" challenge. Kill an enemy within 5 seconds of tactically inserting, 50 times.	TEXT	611	114	1
+10400:32	Complete the "Flash Veteran IV" Challenge. Kill 300 enemies dazed by a flashbang.	TEXT	418	30	1
+10401:2882	Complete NBK challenge. Get 3 LongShot Kills in One Life.	TEXT	331	114	1
+10401:2883	Complete "Tactical Deletion" challenge. Kill 25 players that spawn using Tactical Insertion.	TEXT	510	114	1
+10400:34	Complete "Last Stand Veteran IV" challenge. Kill 100 enemies while using the Last Stand perk.	TEXT	418	30	1
+10401:2884	Complete the "Slow but Sure" challenge. Kill an enemy while being stunned by a stun grenade.	TEXT	535	114	1
+10401:2885	Complete the "LMG Expert: III"challenge. 50 Headshots with LMG.	TEXT	374	114	1
+10401:2886	Complete the "Unbelievable" challenge. Get a game winning kill with a Throwing Knife	TEXT	485	114	1
+10401:2887	Complete the "Streaker" challenge. Get a 10 killstreak.	TEXT	306	114	1
+10400:38	Complete the "Airborne" challenge. Get a 2 kill streak with bullets while in midair.	TEXT	418	30	1
+10400:40	Complete the "Sabotage Victor: III" challenge. Win 50 sabotage matches.	TEXT	418	30	1
+10400:42	Complete the "Air Superiority" challenge. Call in a helicopter 2 times in a single match.	TEXT	418	30	1
+10401:2888	Complete the "Counter-Claymore: III" challenge. Kill 20 enemies by shooting a claymore.	TEXT	272	30	1
+10401:2889	Steal 200 enemy care packages. (Sentry Guns and EA crates only count if they're red)	TEXT	299	30	1
+10401:2890	Complete the "Multi-Frag: III" challenge. Kill 2 or more enemies with a single frag grenade, 50 times.	TEXT	336	30	1
+10401:2891	Complete "The Resourceful" challenge. Awarded with "Friends with Benefits".	TEXT	222	30	1
+10401:2892	Once painkiller is active, survive enough to kill you normally as you kill another player.	TEXT	483	15	1
+10401:2893	Complete the "Carpet Bomber IV" challenge. Get 1000 kills with a Precision Airstrike.	TEXT	252	30	1
+10401:2894	Complete "Spectre IV". Get 1000 kills with an AC-130	TEXT	168	30	1
+10401:2895	Reach 5th prestige level 2	TEXT	148	15	1
+10401:2896	Complete the "Carpet Bomb" challenge. Kill 5 enemies with a single airstrike.	TEXT	226	30	1
+10401:2897	Complete "Airstrike Inbound: III" Challenge. Call in 1000 Precision, Stealth or Harrier airstrikes.	TEXT	284	30	1
+10401:2898	Complete "Multi-RPG: III Challenge". Kill 2 or more enemies with a single AT4 or RPG, 50 times	TEXT	324	30	1
+10401:2899	Complete the "MG Master" challenge. Get 5 killstreak using mounted machine gun.	TEXT	252	30	1
+10401:2900	Get a kill with Martyrdom.	TEXT	146	15	1
+10401:2901	Complete "You're Fired IV". Get 1000 kills with a Harrier.	TEXT	159	30	1
+10401:2902	(Unobtainable through legitimate means)	TEXT	232	15	1
+10401:2903	Reach 6th prestige level 2	TEXT	148	15	1
+10401:2904	Challenge: "Ultimate Sacrifice". Call in a nuke while your team is losing	TEXT	218	30	1
+10401:2905	Complete the "Dominos" challenge. Kill an enemy by setting off a chain reaction of explosives.	TEXT	329	30	1
+10400:46	Complete Tango Down challenge. Kill every member of the enemy team (4 enemy minimum).	TEXT	418	30	1
+10401:2906	Complete "Multi-C4: III" challenge. Kill 2 or more enemies with a single C4 pack, 50 times.	TEXT	310	30	1
+10400:48	Complete "Color of Money II" challenge. Get payback 25 times with a Headshot.	TEXT	418	30	1
+10401:2907	Awarded alongside Survivalist Challenge. Survive 5 consecutive minutes.	TEXT	234	30	1
+10401:2908	Get back on your feet whilst in final stand or kills in final stand.	TEXT	354	15	1
+10400:50	Awarded with "Star Player" challenge. Have a KDR of 5:1 or more.	TEXT	418	30	1
+10400:52	Complete the "Enemy of the State" challenge. Kill 3 enemies while you are the only surviving member of your team.	TEXT	418	30	1
+10401:2909	Complete "Chopper Veteran IV" Kill 1000 enemies by calling in armed helicopters.	TEXT	279	30	1
+10400:54	Complete the "Sunblock" challenge. Call in 3 Counter-UAVs in a single match.	TEXT	418	30	1
+10401:2910	Reach 1st prestige level 2	TEXT	145	15	1
+10401:2911	Reach 7th prestige level 2	TEXT	147	15	1
+10400:56	Complete the "Omnicide" challenge. Kill the entire enemy team within 10 seconds.	TEXT	418	30	1
+10401:2912	Complete the "Bullet Proof: III" challenge. Deflect 50000 Bullets w/ Riot Shield	TEXT	233	30	1
+10401:2913	Complete the "Stealth IV" challenge. Kill 1000 enemies while using a silenced weapon.	TEXT	278	30	1
+10401:2914	Complete "Think Fast Stun" challenge. Finish an enemy off by hitting them with a stun grenade.	TEXT	319	30	1
+10401:2915	Complete "Cruelty" Challenge. Kill an enemy, Pick up his weapon, then kill him again with his own weapon	TEXT	422	30	1
+10401:2916	Challenge: "Head's Up". Kill an enemy by dropping a care package on them.	TEXT	290	30	1
+10401:2917	Complete "Jolly Green Giant IV". Get 1000 kills with a Pave Low.	TEXT	181	30	1
+10401:2918	Reach 2nd prestige level 2	TEXT	150	15	1
+10400:58	Complete the "Omnicide" challenge. Kill the entire enemy team within 10 seconds.	TEXT	418	30	1
+10401:2919	Reach 8th prestige level 2	TEXT	148	15	1
+10400:60	Complete "Robin Hood II" Challenge. Get payback 25 times while in Last Stand.	TEXT	418	30	1
+10401:2920	Complete the "No Secrets" challenge. Call in 3 UAVs in a single match.	TEXT	214	30	1
+10400:62	Complete "Wargasm" Challenge. Get all 3 of your killstreak rewards within 20 seconds.	TEXT	418	30	1
+10401:2921	Complete "Think Fast" challenge. Finish an enemy off by hitting them with a frag grenade.	TEXT	317	30	1
+10401:2922	Complete "Master Chef: III" challenge. Kill 20 enemies with cooked grenades.	TEXT	219	30	1
+10401:2923	Awarded alongside "How The?" title. Kill an enemy by using bullet penetration to shoot an explosive device through a wall.	TEXT	482	30	1
+10401:2924	Complete the "Look! No Hands IV" challenge. Get 1000 kills with a Sentry Gun.	TEXT	256	30	1
+10401:2925	Complete the "Spirit IV" Get 1000 kills with a Stealth Bomber.	TEXT	208	30	1
+10401:2926	Reach 3rd prestige level 2	TEXT	148	15	1
+10401:2927	Reach 9th prestige level 2	TEXT	148	15	1
+10401:2928	Reach 10th prestige level 2	TEXT	153	15	1
+10401:2929	Reach 4th prestige level 2	TEXT	148	15	1
+10401:2930	Complete the "Cobra Commander IV" challenge Get 1000 kills as a Chopper Gunner.	TEXT	270	30	1
+10401:2931	Complete the "Predator IV" challenge. Get 1000 kills with a Predator Missile.	TEXT	215	30	1
+10401:2932	Use Copycat to copy a class and kill the same enemy you copied the class from.	TEXT	454	15	1
+10401:2933	Complete "Think Fast Flash" challenge. Finish an enemy off by hitting them with a flashbang.	TEXT	300	30	1
+10401:2934	Complete the "Clay More: III" challeng. Kill 2 or more enemies with a single Claymore, 50 times.	TEXT	316	30	1
+10401:2935	Red Carpet challenge. Kill 6 enemies with a stealth bomber.	TEXT	209	30	1
 10401:2936	Launch 25 AC-130's	TEXT	115	15	1
-10401:2937	Call in 50 Airstrike	TEXT	109	15	1
-10401:2938	Complete "Chopper Gu	TEXT	346	15	1
-10401:2939	Complete "Danger Clo	TEXT	279	30	1
-10401:2940	Complete "One Man Ar	TEXT	254	30	1
-10401:2941	Complete "Ninja Pro:	TEXT	209	30	1
-10401:2942	Complete M4A1 Vetera	TEXT	147	30	1
-10401:2943	Complete Vector Vete	TEXT	153	15	1
+10401:2937	Call in 50 Airstrikes	TEXT	109	15	1
+10401:2938	Complete "Chopper Gunner: III" - Call in 25 Chopper Gunners	TEXT	346	15	1
+10401:2939	Complete "Danger Close Pro: VI" challenge. Get 500 kills with explosives using Danger Close.	TEXT	279	30	1
+10401:2940	Complete "One Man Army Pro: VI" challenge. 750 Kills using One Man Army.	TEXT	254	30	1
+10401:2941	Complete "Ninja Pro: VI" challenge. Get 250 close range kills using Ninja.	TEXT	209	30	1
+10401:2942	Complete M4A1 Veteran II 250 Headshots	TEXT	147	30	1
+10401:2943	Complete Vector Veteran II	TEXT	153	15	1
 10401:2944	Call in 50 UAVs	TEXT	86	15	1
 10401:2945	Call in 50 Harriers	TEXT	102	15	1
 10401:2946	Call in 10 EMPs	TEXT	86	15	1
-10401:2947	Complete "Bling Pro:	TEXT	256	30	1
-10401:2948	Complete "Commando P	TEXT	235	30	1
-10401:2949	Complete AK-47 Veter	TEXT	150	30	1
-10401:2950	Complete SCAR-H Vete	TEXT	162	30	1
-10401:2951	Complete UMP45 Veter	TEXT	158	15	1
+10401:2947	Complete "Bling Pro: VI" challenge. 900 kills using a weapon with 2 attachments.	TEXT	256	30	1
+10401:2948	Complete "Commando Pro: VI" challenge. Get 100 melee kills using Commando.	TEXT	235	30	1
+10401:2949	Complete AK-47 Veteran II 250 Headshots	TEXT	150	30	1
+10401:2950	Complete SCAR-H Veteran II 250 Headshots	TEXT	162	30	1
+10401:2951	Complete UMP45 Veteran II	TEXT	158	15	1
 10401:2952	Call in 50 Airdrops	TEXT	104	15	1
-10401:2953	Call in 50 Attack He	TEXT	161	15	1
-10401:2959	'Complete "End Game:	TEXT	297	15	1
-10401:2960	Complete "Stopping P	TEXT	260	30	1
-10401:2961	Complete "Steady Aim	TEXT	235	30	1
-10401:2962	Complete ACR Veteran	TEXT	140	30	1
-10401:2963	Complete FAL Veteran	TEXT	137	30	1
-10401:2964	Complete P90 Veteran	TEXT	138	15	1
-10401:2965	Call in 50 Counter-U	TEXT	137	15	1
-10401:2966	Call in 25 Emergency	TEXT	171	15	1
-10401:2967	Complete "Marathon P	TEXT	221	30	1
-10401:2968	"Complete "Lightweig	TEXT	245	30	1
-10401:2969	Complete "Scrambler:	TEXT	238	30	1
-10401:2970	Complete M16A4 Veter	TEXT	155	30	1
-10401:2971	Complete FAMAS Veter	TEXT	156	30	1
-10401:2972	Complete AUG-HBAR Ve	TEXT	180	15	1
+10401:2953	Call in 50 Attack Helicopters	TEXT	161	15	1
+10401:2959	'Complete "End Game: III" - 'Call in 10 Tactical Nukes	TEXT	297	15	1
+10401:2960	Complete "Stopping Power Pro: VI" challenge. 1000 Kills using Stopping Power.	TEXT	260	30	1
+10401:2961	Complete "Steady Aim Pro: VI" challenge. Get 500 hip-fire kills using Steady Aim.	TEXT	235	30	1
+10401:2962	Complete ACR Veteran II 250 Headshots	TEXT	140	30	1
+10401:2963	Complete FAL Veteran II 250 Headshots	TEXT	137	30	1
+10401:2964	Complete P90 Veteran II	TEXT	138	15	1
+10401:2965	Call in 50 Counter-UAVs	TEXT	137	15	1
+10401:2966	Call in 25 Emergency Airdrops	TEXT	171	15	1
+10401:2967	Complete "Marathon Pro: VI" challenge Run 104 miles using Marathon.	TEXT	221	30	1
+10401:2968	"Complete "Lightweight Pro: VI" challenge." Sprint 250 miles using Lightweight.	TEXT	245	30	1
+10401:2969	Complete "Scrambler: VI" challenge. Get 250 close range kills using Scrambler.	TEXT	238	30	1
+10401:2970	Complete M16A4 Veteran II 250 Headshots	TEXT	155	30	1
+10401:2971	Complete FAMAS Veteran II 250 Headshots	TEXT	156	30	1
+10401:2972	Complete AUG-HBAR Veteran II	TEXT	180	15	1
 10401:2974	image 675	RECTANGLE	48	48	1
-10401:2976	Complete "Sentry Gun	TEXT	284	15	1
+10401:2976	Complete "Sentry Gun: III" - call in 50 Sentry Guns	TEXT	284	15	1
 10401:2978	image 676	RECTANGLE	44	52	1
 10401:2981	image 677	RECTANGLE	64	64	1
 10401:2984	image 678	RECTANGLE	64	64	1
@@ -1051,107 +1051,107 @@
 10401:2990	image 680	RECTANGLE	64	64	1
 10401:2993	image 681	RECTANGLE	64	64	1
 10401:2996	image 682	RECTANGLE	64	64	1
-10401:2998	Complete "Pave Low: 	TEXT	264	15	1
-10401:2999	Complete "Sleight of	TEXT	257	30	1
-10401:3000	Complete "Hardline P	TEXT	236	30	1
-10401:3001	Complete "SitRep Pro	TEXT	281	30	1
-10401:3002	Complete TAR-21 Vete	TEXT	156	30	1
-10401:3003	Complete MP5K Vetera	TEXT	149	30	1
-10401:3004	Complete M240 Vetera	TEXT	149	15	1
-10401:3005	Call in 50 Predator 	TEXT	154	15	1
-10401:3006	Call in 25 Stealth B	TEXT	150	15	1
-10401:3007	Complete "Scavenger 	TEXT	232	30	1
-10401:3008	Complete "Cold-Blood	TEXT	292	30	1
-10401:3009	Complete "Last Stand	TEXT	233	30	1
-10401:3010	Complete F2000 Veter	TEXT	153	30	1
-10401:3011	Complete Mini-Uzi Ve	TEXT	163	30	1
-10401:3012	Complete L86 LSW Vet	TEXT	167	15	1
-10401:3013	Complete RPD Veteran	TEXT	140	30	1
-10401:3014	Complete G18 Veteran	TEXT	138	30	1
-10401:3015	Complete Desert Eagl	TEXT	188	30	1
-10401:3016	Complete Model 1887 	TEXT	181	30	1
-10401:3017	Complete FN2000 Mast	TEXT	157	30	1
-10401:3018	Complete Mini-Uzi Ma	TEXT	158	30	1
-10401:3019	Complete L86 LSW Mas	TEXT	162	30	1
-10401:3020	Complete WA2000 Mast	TEXT	160	30	1
-10401:3021	Complete MG4 Veteran	TEXT	143	30	1
-10401:3022	Complete Raffica Vet	TEXT	155	30	1
-10401:3023	Complete .44 Magnum 	TEXT	187	30	1
-10401:3024	Complete Ranger Vete	TEXT	156	30	1
-10401:3025	Complete M4A1 Carbin	TEXT	190	30	1
-10401:3026	Complete Vector Mast	TEXT	148	30	1
-10401:3027	Complete RPD Master 	TEXT	135	30	1
-10401:3028	Complete G18 Master 	TEXT	133	30	1
-10401:3029	Complete Interventio	TEXT	184	30	1
-10401:3030	Complete TMP Veteran	TEXT	142	30	1
-10401:3031	Complete M1014 Veter	TEXT	153	30	1
-10401:3032	Complete AK-47 Maste	TEXT	146	30	1
-10401:3033	Complete SCAR-H Mast	TEXT	158	30	1
-10401:3034	Complete UMP .45 Mas	TEXT	160	30	1
-10401:3035	Complete MG4 Master 	TEXT	138	30	1
-10401:3036	Complete TMP Master 	TEXT	137	30	1
-10401:3037	Complete Barrett .50	TEXT	192	30	1
-10401:3038	Complete PP2000 Vete	TEXT	161	30	1
-10401:3039	Complete Striker Vet	TEXT	153	30	1
-10401:3040	Complete ACR Master 	TEXT	135	30	1
-10401:3041	Complete FAL Master 	TEXT	132	30	1
-10401:3042	Complete P90 Master 	TEXT	134	30	1
-10401:3043	Complete Interventio	TEXT	179	30	1
-10401:3044	Complete M93 Raffica	TEXT	180	30	1
-10401:3045	Complete M21 EBR Vet	TEXT	165	30	1
-10401:3046	Complete M9 Veteran 	TEXT	134	30	1
-10401:3047	Complete AA-12 Veter	TEXT	150	30	1
-10401:3048	Complete M16A4 Maste	TEXT	151	30	1
-10401:3049	Complete FAMAS Maste	TEXT	152	30	1
-10401:3050	Complete AUG-HBAR Ma	TEXT	175	30	1
-10401:3051	Complete Barrett .50	TEXT	188	30	1
-10401:3052	Complete PP2000 Mast	TEXT	156	30	1
-10401:3053	Complete WA 2000 Vet	TEXT	168	30	1
-10401:3054	Complete USP .45 Vet	TEXT	162	30	1
-10401:3055	Complete SPAS-12 Vet	TEXT	164	30	1
-10401:3056	Complete TAR-21 Mast	TEXT	152	30	1
-10401:3057	Complete MP5K Master	TEXT	145	30	1
-10401:3058	Complete M240 Master	TEXT	144	30	1
-10401:3059	Complete M21 EBR Mas	TEXT	161	30	1
-10401:3060	Complete M1014 Maste	TEXT	148	45	1
-10401:3061	Complete Striker Mas	TEXT	148	30	1
-10401:3062	Complete USP .45 Mas	TEXT	157	30	1
-10401:3063	Complete AA-12 Maste	TEXT	146	30	1
-10401:3064	Complete Desert Eagl	TEXT	184	30	1
-10401:3065	Complete SPAS-12 Mas	TEXT	160	30	1
-10401:3066	Complete .44 Magnum 	TEXT	182	30	1
-10401:3067	Complete Model 1887 	TEXT	177	30	1
-10401:3068	Complete Ranger Mast	TEXT	151	30	1
-10401:3069	Complete M9 Master I	TEXT	129	30	1
-10401:3070	Awarded with "Blindf	TEXT	305	30	1
-10401:3071	Complete the "I'm Ri	TEXT	207	30	1
-10401:3072	Complete the The Big	TEXT	265	30	1
-10401:3073	Complete the "Slashe	TEXT	194	30	1
-10401:3074	Complete "The Surviv	TEXT	251	30	1
-10401:3075	Awarded for winning 	TEXT	340	15	1
-10401:3076	Complete "Radar Inbo	TEXT	228	30	1
-10401:3077	Complete the "Counte	TEXT	235	30	1
-10401:3078	Complete "Misery Lov	TEXT	380	30	1
-10401:3079	Complete the "Crab M	TEXT	216	30	1
-10401:3080	Awarded with ATM cha	TEXT	207	30	1
-10401:3081	Awarded with The Gri	TEXT	293	30	1
-10401:3082	Complete "The Edge" 	TEXT	194	30	1
-10401:3083	Complete "Last Resor	TEXT	360	30	1
-10401:3084	Complete "Extreme Cr	TEXT	412	30	1
-10401:3085	Awarded alongside Kn	TEXT	203	30	1
-10401:3086	Complete the "Droppi	TEXT	363	30	1
-10401:3087	Complete the "Airdro	TEXT	395	30	1
-10401:3088	"The Brink" challeng	TEXT	247	30	1
-10401:3089	Call in 1000 armed H	TEXT	174	15	1
-10401:3090	Complete The Denier 	TEXT	334	30	1
-10401:3091	Complete "Team Playe	TEXT	202	30	1
-10401:3092	Awarded alongside "D	TEXT	242	30	1
-10401:3093	10 killstreak with n	TEXT	232	15	1
-10401:3094	Complete "Search and	TEXT	235	30	1
-10401:3095	Complete the "Bang f	TEXT	270	30	1
-10401:3096	Rewarded alongside "	TEXT	327	30	1
-10401:3097	Complete the "...The	TEXT	280	30	1
-10401:3098	Get a "Payback" by s	TEXT	292	15	1
-10401:3099	Complete the "Collat	TEXT	302	30	1
-10401:3100	Complete the "Counte	TEXT	359	30	1
+10401:2998	Complete "Pave Low: III" - Call in 25 Pave lows	TEXT	264	15	1
+10401:2999	Complete "Sleight of Hand Pro: VI" challenge. Get 750 kills using Sleight of Hand.	TEXT	257	30	1
+10401:3000	Complete "Hardline Pro: VI" challenge. Get 250 killstreak rewards using Hardline.	TEXT	236	30	1
+10401:3001	Complete "SitRep Pro: VI" challenge. Destroy 750 Enemy Devices or Tactical Insertions	TEXT	281	30	1
+10401:3002	Complete TAR-21 Veteran II 250 Headshots	TEXT	156	30	1
+10401:3003	Complete MP5K Veteran II 250 Headshots	TEXT	149	30	1
+10401:3004	Complete M240 Veteran II	TEXT	149	15	1
+10401:3005	Call in 50 Predator Missiles	TEXT	154	15	1
+10401:3006	Call in 25 Stealth Bombers	TEXT	150	15	1
+10401:3007	Complete "Scavenger Pro: VI" Challenge. Resupply 500 times using Scavenger.	TEXT	232	30	1
+10401:3008	Complete "Cold-Blooded Pro: VI" Challenge. Destroy 250 killstreak rewards using Cold-Blooded.	TEXT	292	30	1
+10401:3009	Complete "Last Stand Pro: VI" Challenge. Get 100 kills while in Last Stand.	TEXT	233	30	1
+10401:3010	Complete F2000 Veteran II 250 Headshots	TEXT	153	30	1
+10401:3011	Complete Mini-Uzi Veteran II 250 Headshots	TEXT	163	30	1
+10401:3012	Complete L86 LSW Veteran II	TEXT	167	15	1
+10401:3013	Complete RPD Veteran II 250 Headshots	TEXT	140	30	1
+10401:3014	Complete G18 Veteran II 250 Headshots	TEXT	138	30	1
+10401:3015	Complete Desert Eagle Veteran II 250 Headshots	TEXT	188	30	1
+10401:3016	Complete Model 1887 Veteran II 250 Headshots	TEXT	181	30	1
+10401:3017	Complete FN2000 Master II 500 Headshots	TEXT	157	30	1
+10401:3018	Complete Mini-Uzi Master II 500 Headshots	TEXT	158	30	1
+10401:3019	Complete L86 LSW Master II 500 Headshots	TEXT	162	30	1
+10401:3020	Complete WA2000 Master II 500 Headshots	TEXT	160	30	1
+10401:3021	Complete MG4 Veteran II 250 Headshots	TEXT	143	30	1
+10401:3022	Complete Raffica Veteran II 250 Headshots	TEXT	155	30	1
+10401:3023	Complete .44 Magnum Veteran II 250 Headshots	TEXT	187	30	1
+10401:3024	Complete Ranger Veteran II 250 Headshots	TEXT	156	30	1
+10401:3025	Complete M4A1 Carbine Master II 500 Headshots	TEXT	190	30	1
+10401:3026	Complete Vector Master II 500 Headshots	TEXT	148	30	1
+10401:3027	Complete RPD Master II 500 Headshots	TEXT	135	30	1
+10401:3028	Complete G18 Master II 500 Headshots	TEXT	133	30	1
+10401:3029	Complete Intervention Veteran II 250 Headshots	TEXT	184	30	1
+10401:3030	Complete TMP Veteran II 250 Headshots	TEXT	142	30	1
+10401:3031	Complete M1014 Veteran II 250 Headshots	TEXT	153	30	1
+10401:3032	Complete AK-47 Master II 500 Headshots	TEXT	146	30	1
+10401:3033	Complete SCAR-H Master II 500 Headshots	TEXT	158	30	1
+10401:3034	Complete UMP .45 Master II 500 Headshots	TEXT	160	30	1
+10401:3035	Complete MG4 Master II 500 Headshots	TEXT	138	30	1
+10401:3036	Complete TMP Master II 500 Headshots	TEXT	137	30	1
+10401:3037	Complete Barrett .50cal Veteran II 250 Headshots	TEXT	192	30	1
+10401:3038	Complete PP2000 Veteran II 250 Headshots	TEXT	161	30	1
+10401:3039	Complete Striker Veteran II 250 Headshots	TEXT	153	30	1
+10401:3040	Complete ACR Master II 500 Headshots	TEXT	135	30	1
+10401:3041	Complete FAL Master II 500 Headshots	TEXT	132	30	1
+10401:3042	Complete P90 Master II 500 Headshots	TEXT	134	30	1
+10401:3043	Complete Intervention Master II 500 Headshots	TEXT	179	30	1
+10401:3044	Complete M93 Raffica Master II 500 Headshots	TEXT	180	30	1
+10401:3045	Complete M21 EBR Veteran II 250 Headshots	TEXT	165	30	1
+10401:3046	Complete M9 Veteran II 250 Headshots	TEXT	134	30	1
+10401:3047	Complete AA-12 Veteran II 250 Headshots	TEXT	150	30	1
+10401:3048	Complete M16A4 Master II 500 Headshots	TEXT	151	30	1
+10401:3049	Complete FAMAS Master II 500 Headshots	TEXT	152	30	1
+10401:3050	Complete AUG-HBAR Master II 500 Headshots	TEXT	175	30	1
+10401:3051	Complete Barrett .50cal Master II 500 Headshots	TEXT	188	30	1
+10401:3052	Complete PP2000 Master II 500 Headshots	TEXT	156	30	1
+10401:3053	Complete WA 2000 Veteran II 250 Headshots	TEXT	168	30	1
+10401:3054	Complete USP .45 Veteran II 250 Headshots	TEXT	162	30	1
+10401:3055	Complete SPAS-12 Veteran II 250 Headshots	TEXT	164	30	1
+10401:3056	Complete TAR-21 Master II 500 Headshots	TEXT	152	30	1
+10401:3057	Complete MP5K Master II 500 Headshots	TEXT	145	30	1
+10401:3058	Complete M240 Master II 500 Headshots	TEXT	144	30	1
+10401:3059	Complete M21 EBR Master II 500 Headshots	TEXT	161	30	1
+10401:3060	Complete M1014 Master II 500 Headshots	TEXT	148	45	1
+10401:3061	Complete Striker Master II 500 Headshots	TEXT	148	30	1
+10401:3062	Complete USP .45 Master II 500 Headshots	TEXT	157	30	1
+10401:3063	Complete AA-12 Master II 500 Headshots	TEXT	146	30	1
+10401:3064	Complete Desert Eagle Master II 500 Headshots	TEXT	184	30	1
+10401:3065	Complete SPAS-12 Master II 500 Headshots	TEXT	160	30	1
+10401:3066	Complete .44 Magnum Master II 500 Headshots	TEXT	182	30	1
+10401:3067	Complete Model 1887 Master II 500 Headshots	TEXT	177	30	1
+10401:3068	Complete Ranger Master II 500 Headshots	TEXT	151	30	1
+10401:3069	Complete M9 Master II 500 Headshots	TEXT	129	30	1
+10401:3070	Awarded with "Blindfire" Challenge. Kill an enemy while you are still dazed by a flashbang.	TEXT	305	30	1
+10401:3071	Complete the "I'm Rich II" Challenge. Get 25 Paybacks with C4.	TEXT	207	30	1
+10401:3072	Complete the The Bigger they are... Challenge. Kill the Top Player 3 times in a row.	TEXT	265	30	1
+10401:3073	Complete the "Slasher" challenge. Get3 killstreak with knife.	TEXT	194	30	1
+10401:3074	Complete "The Survivor" challenge. Get a knife kill when all your ammo is empty.	TEXT	251	30	1
+10401:3075	Awarded for winning 15 Hardcore Team Deathmatch games.	TEXT	340	15	1
+10401:3076	Complete "Radar Inbound: III" challenge. Call in 1000 UAVs/Counter-UAVs.	TEXT	228	30	1
+10401:3077	Complete the "Counter-C4: III" challenge. Kill 20 enemies by shooting C4.	TEXT	235	30	1
+10401:3078	Complete "Misery Loves Company" challenge. Kill yourself and 1 enemy by cooking a grenade without throwing it.	TEXT	380	30	1
+10401:3079	Complete the "Crab Meat" challenge. Kill 10 enemies with a single killstreak.	TEXT	216	30	1
+10401:3080	Awarded with ATM challenge. Get a payback with a throwing knife.	TEXT	207	30	1
+10401:3081	Awarded with The Grim Reaper. Kill 5 enemies in one match using Predator Missiles.	TEXT	293	30	1
+10401:3082	Complete "The Edge" Challenge. Get 20 Game/Round Winning Kills.	TEXT	194	30	1
+10401:3083	Complete "Last Resort" Challenge. Get a game winning killcam with a Last Stand or Final Stand kill.	TEXT	360	30	1
+10401:3084	Complete "Extreme Cruelty" Challenge. Kill every member of the enemy team without dying (4 enemy minimum).	TEXT	412	30	1
+10401:3085	Awarded alongside Knife Veteran IV Get 250 kills with your knife.	TEXT	203	30	1
+10401:3086	Complete the "Droppin' Crates" Challenge. Get a game winning killcam with dropping a crate on the enemy.	TEXT	363	30	1
+10401:3087	Complete the "Airdrop Inbound: III" challenge. Call in 1000 total of Care Packages/Sentry Guns/Emergency Airdrops.	TEXT	395	30	1
+10401:3088	"The Brink" challenge. Get a 3 or more kill streak while near death.	TEXT	247	30	1
+10401:3089	Call in 1000 armed Helicopters	TEXT	174	15	1
+10401:3090	Complete The Denier challenge. Kill an enemy just before they earn a 10 or higher killstreak.	TEXT	334	30	1
+10401:3091	Complete "Team Player: III". Win 30 Team Deathmatch matches.	TEXT	202	30	1
+10401:3092	Awarded alongside "Dishes are Done" title. Get a payback with a claymore.	TEXT	242	30	1
+10401:3093	10 killstreak with no killstreaks equipped.	TEXT	232	15	1
+10401:3094	Complete "Search and Destroy Victor: III". Earn 30 S&D Wins.	TEXT	235	30	1
+10401:3095	Complete the "Bang for Your Buck II" challenge. Get 25 paybacks using a frag grenade.	TEXT	270	30	1
+10401:3096	Rewarded alongside "Click Click Boom" challenge. Kill an enemy with C4 while you are in Last or Final Stand.	TEXT	327	30	1
+10401:3097	Complete the "...The Harder They Fall" Challenge. Kill the top player 5 times in a row.	TEXT	280	30	1
+10401:3098	Get a "Payback" by sticking a Semtex on an enemy.	TEXT	292	15	1
+10401:3099	Complete the "Collateral Damage" challenge. Kill 2 or more enemies with a single sniper rifle bullet.	TEXT	302	30	1
+10401:3100	Complete the "Counter-MVP" challenge. Kill the #1 player on the enemy team 10 times in a single match.	TEXT	359	30	1
 10401:3101	Page 1	TEXT	38	15	1

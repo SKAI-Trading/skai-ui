@@ -1,0 +1,4 @@
+# Rebuilt from live/ by `node pipeline.mjs drift` (harvest.mjs to-snapshot).
+# The drift it produces, figma-todo.live.tsv / figma-drift.live.json, IS tracked:
+# it is the record of what changed in Figma since the last fold-in.
+snapshot.live.json

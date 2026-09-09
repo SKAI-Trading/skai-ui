@@ -91,8 +91,13 @@ const VERIFIABLE_KINDS = new Set(["screen", "component"]);
 for (const f of Object.values(reg.frames)) {
   if (!VERIFIABLE_KINDS.has(f.kind)) continue;
   const rec = byKey[`${f.section}/${f.node}`];
-  if (!rec) continue;
-  f.verifiedAt = now;
+  if (!rec) {
+    // A marker with no vverify row behind it is a leftover from a row that was
+    // removed; the verdict it states no longer has evidence.
+    if (MARKER.test(f.notes || "")) f.notes = f.notes.replace(MARKER, "").trim();
+    continue;
+  }
+  const had = { notes: f.notes, status: f.status };
   // Fold verdict + shot (+ optional note) into notes behind an idempotent marker.
   // `-` is the "no shot" placeholder (mirrors apply-status.mjs route handling).
   // Strip `]` from free-text fields so the marker stays a single bracket token
@@ -108,6 +113,13 @@ for (const f of Object.values(reg.frames)) {
   // non-match (partial/deferred) only downgrades an over-optimistic `done`.
   if (rec.verdict === "not-wired") f.status = "not-started";
   else if (rec.verdict !== "match" && f.status === "done") f.status = "partial";
+  // verifiedAt is the date the verdict LANDED, not the date this script last
+  // ran. Re-stamping every frame on every run rewrote 875 dates on 2026-09-09
+  // with nothing verified, which hides the frames whose verdict really moved
+  // and stops the pipeline from ever producing a clean second run. The marker
+  // is the whole verdict, so it alone decides; `status` is compared against
+  // what apply-status just wrote and would re-stamp every downgraded frame.
+  if (!f.verifiedAt || f.notes !== had.notes) f.verifiedAt = now;
   applied++;
 }
 

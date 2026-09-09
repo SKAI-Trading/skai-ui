@@ -135,18 +135,19 @@ The catalog is five layers. Only the first two existed before today.
 
 | Layer | Question it answers | State |
 |---|---|---|
-| **A. Pages** | What surfaces exist, and are they ready for dev? | `pages.json` — complete, 42 pages across 3 files |
-| **B. Screens** | What screens exist on each page, and are they built? | `<section>.nodes.txt` / `.titles.tsv` / `status.*.tsv` — 3,829 frames, 100% inventoried |
-| **C. Components** | What is the design system, and where is each piece used? | `components.tsv` — **new**, 25 components, all `impl` UNMAPPED |
+| **A. Pages** | What surfaces exist, and are they ready for dev? | `pages.json` — complete, 51 pages across 3 files (re-harvested in full 2026-09-09 via `harvest.mjs`; see README.md) |
+| **B. Screens** | What screens exist on each page, and are they built? | `<section>.nodes.txt` / `.titles.tsv` / `status.*.tsv` — 4,281 registry frames as of 2026-09-09, 100% inventoried |
+| **C. Components** | What is the design system, and where is each piece used? | `components.tsv` — 75 rows, `impl` filled on every one (0 UNMAPPED, measured 2026-09-09) |
 | **D. Nodes** | What is node X, and which screen owns it? | **DONE for the open backlog (2026-08-13)** — `bug-node-index.tsv`, 430/430 accounted for |
 | **E. Tokens** | What is the real hex/radius/spacing, and what does code call it? | **radius DONE (2026-08-13)** — `TOKENS.md`; colour still open |
 
 ### Why layer C is the highest-value one to finish
 
-`components.tsv` currently has every `impl` as `UNMAPPED` — we know the 25 Figma
-components and their usage counts, but not which `@skai/ui` component owns each one.
-Filling that column turns every component-level bug into a single-file fix, and makes
-parity mechanically checkable: one component, one code owner, one set of tokens.
+★ CORRECTED 2026-09-09: this section used to say `components.tsv` has every `impl` as
+`UNMAPPED`. Measured against the file, all 75 rows carry an `impl` and none reads
+`UNMAPPED`, so the mapping described below is DONE. The reasoning is kept because it
+is why the column matters: with it, every component-level bug is a single-file fix,
+and parity is mechanically checkable — one component, one code owner, one set of tokens.
 
 That mapping is also the prerequisite for Code Connect, which would let Figma itself
 point developers at the right component.
@@ -188,7 +189,7 @@ Done today:
 
 Next, in value order:
 
-1. **Fill `components.tsv` impl column** (25 rows). Highest leverage in the repo.
+1. ~~Fill `components.tsv` impl column~~ — **DONE** (75 rows, 0 UNMAPPED, measured 2026-09-09).
 2. ~~Finish layer D~~ — **DONE 2026-08-13**, see `bug-node-index.tsv` and the CLOSED
    block above. The "try Skai-Web-App first, then Skai-Web-App-2" advice that used to
    sit here was **wrong** and is superseded by `FILE_ROUTING.md`: which file to query is

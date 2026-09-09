@@ -1,5 +1,5 @@
 {
-  "resolvedAt": "2026-08-26",
+  "resolvedAt": "2026-09-09",
   "method": "figma.getNodeByIdAsync per candidate, per file, after loadAsync on every page; top-level ancestor found by walking parents to the PAGE",
   "candidatesChecked": 398,
   "filesChecked": [
@@ -7,8 +7,8 @@
     "mhF3BkzlTaGiLzJ7kvpmVc",
     "M6r9FEn042UWTQD1zvy6GM"
   ],
-  "foundCount": 280,
-  "notFoundCount": 118,
+  "foundCount": 285,
+  "notFoundCount": 6,
   "foundPerFile": {
     "3sSzw1KewMtUbeLAv7uW0r": 46,
     "mhF3BkzlTaGiLzJ7kvpmVc": 34,
@@ -2534,6 +2534,96 @@
       "topLevelId": "10030-39086",
       "pageId": "9660-2",
       "pageName": "✅ Price Grid - Skai orig"
+    },
+    "2713-4556": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 166",
+      "depth": 6,
+      "topLevelId": "2713-4425",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-09"
+    },
+    "2713-4557": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "icons/action",
+      "depth": 7,
+      "topLevelId": "2713-4425",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-09"
+    },
+    "13008-113503": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 228",
+      "depth": 8,
+      "topLevelId": "13008-113481",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2",
+      "probedAt": "2026-09-09"
+    },
+    "13008-115807": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "ELLIPSE",
+      "name": "circle",
+      "depth": 6,
+      "topLevelId": "13008-115463",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2",
+      "probedAt": "2026-09-09"
+    },
+    "10120-8434": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Frame 1000004082",
+      "depth": 7,
+      "topLevelId": "9079-2001",
+      "pageId": "9061-15449",
+      "pageName": "✅ Towers - Skai originals",
+      "probedAt": "2026-09-09"
     }
-  }
+  },
+  "notFound": {
+    "9222-26208": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-09"
+    },
+    "9222-26323": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-09"
+    },
+    "9393-514": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-09"
+    },
+    "9393-519": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-09"
+    },
+    "9479-19858": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-09"
+    },
+    "9479-19863": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-09"
+    }
+  },
+  "probes": [
+    {
+      "at": "2026-09-09",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "checked": 4,
+      "found": 4
+    },
+    {
+      "at": "2026-09-09",
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "checked": 7,
+      "found": 1
+    }
+  ]
 }

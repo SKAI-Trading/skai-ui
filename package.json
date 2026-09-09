@@ -57,7 +57,11 @@
     "prepublishOnly": "npm run build:quiet",
     "tokens:sync": "node scripts/sync-figma-tokens.js --from-figma",
     "tokens:generate": "node scripts/sync-figma-tokens.js --generate",
-    "tokens:validate": "node scripts/sync-figma-tokens.js --validate"
+    "tokens:validate": "node scripts/sync-figma-tokens.js --validate",
+    "catalog": "node figma-catalog/pipeline.mjs",
+    "catalog:check": "node figma-catalog/pipeline.mjs --check",
+    "catalog:drift": "node figma-catalog/pipeline.mjs drift",
+    "catalog:harvest": "node figma-catalog/harvest.mjs"
   },
   "peerDependencies": {
     "react": "^18.0.0",

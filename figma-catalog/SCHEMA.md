@@ -473,18 +473,36 @@ code-node-citations.json into registry.json. Idempotent; preserves any hand-set
 
 ## Full pipeline (regenerate everything)
 
-Paths below are from the **Skai-Trading** working copy. From inside the skai-ui repo, drop
-the `modules/skai-ui/` prefix.
+Since 2026-09-09 the order is enforced by `pipeline.mjs`, which is what the skai-ui
+npm scripts call. From inside `modules/skai-ui`:
 
 ```sh
-node modules/skai-ui/figma-catalog/build-registry.mjs   # frames + titles + citations → registry.json
-node modules/skai-ui/figma-catalog/families.mjs         # roll frames → families.json (+ proposedStatus prior)
-node modules/skai-ui/figma-catalog/apply-status.mjs     # fold status.<section>.tsv → per-frame status/route/notes
-node modules/skai-ui/figma-catalog/apply-verify.mjs     # fold vverify.<section>.tsv → visual verdicts  ← MUST FOLLOW apply-status
-node modules/skai-ui/figma-catalog/catalog-view.mjs > modules/skai-ui/figma-catalog/figma-frame-catalog.md
-node modules/skai-ui/figma-catalog/bp-report.mjs        # breakpoint coverage; EXITS 1 on a malformed column 6
-node modules/skai-ui/figma-catalog/coverage.mjs         # where we are: live frames vs catalog rows → COVERAGE.md
+npm run catalog          # node figma-catalog/pipeline.mjs         — regenerate every derived file
+npm run catalog:check    # node figma-catalog/pipeline.mjs --check — same, exit 1 if any derived file was stale
+npm run catalog:drift    # node figma-catalog/pipeline.mjs drift   — live/ → snapshot → validate → figma-drift
+npm run catalog:harvest  # node figma-catalog/harvest.mjs          — the Figma harvest loop (README.md)
 ```
+
+`pipeline.mjs` runs, in this order and stopping at the first non-zero exit:
+
+```sh
+coverage.mjs --check      # refuses a short harvest BEFORE anything is rebuilt
+build-registry.mjs        # frames + titles + citations → registry.json (carries hand-set fields forward)
+families.mjs              # roll frames → families.json (+ proposedStatus prior)
+apply-status.mjs          # fold status.<section>.tsv → per-frame status/route/notes
+apply-verify.mjs          # fold vverify.<section>.tsv → visual verdicts  ← MUST FOLLOW apply-status
+catalog-view.mjs figma-frame-catalog.md   # the path is an ARGUMENT; `> file` writes nothing on Windows
+bp-report.mjs             # breakpoint coverage; EXITS 1 on a malformed column 6
+coverage.mjs              # where we are: live frames vs catalog rows → COVERAGE.md
+```
+
+Afterwards it compares every frame's hand-set fields against the registry it started
+from and exits 2 if a surviving frame lost `implFiles` or `verifiedAt`. The order
+matters: the committed registry on 2026-09-08 carried 163 frames as `done` whose own
+vverify rows said `partial`, because apply-status had been the last step run.
+
+The scripts can still be run one at a time from inside the repo (drop the
+`modules/skai-ui/` prefix when doing so from Skai-Trading), but only in this order.
 
 ## coverage.mjs — the progress tracker (added 2026-08-26)
 

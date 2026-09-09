@@ -467,4 +467,4 @@ MIT License - See [LICENSE](./LICENSE) for details.
 ## 🔗 Related
 
 - [SKAI Trading App](https://github.com/SKAI-Trading/skai-trading)
-- [Figma Design System](link-to-figma) _(coming soon)_
+- [Figma frame catalog](./figma-catalog/README.md) — every screen in the three SKAI Figma files, its build status, and the loop that keeps it in step with Figma (`npm run catalog`, `catalog:check`, `catalog:drift`, `catalog:harvest`)

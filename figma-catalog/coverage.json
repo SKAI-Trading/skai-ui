@@ -1,14 +1,14 @@
 {
-  "generated": "2026-09-09T04:19:21.213Z",
-  "harvestedAt": "2026-08-26",
+  "generated": "2026-09-09T10:39:47.255Z",
+  "harvestedAt": "2026-09-09",
   "rollup": {
     "pages": 29,
     "live": 2461,
-    "furniture": 434,
-    "genuine": 2027,
-    "matched": 1919,
+    "furniture": 433,
+    "genuine": 2028,
+    "matched": 1920,
     "done": 455,
-    "partial": 1084,
+    "partial": 1085,
     "notStarted": 129,
     "blocked": 77,
     "frameDefect": 97,
@@ -27,10 +27,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 10438,
-    "namingNoNodeId": 512,
-    "namingNoLiveNodeId": 566,
-    "unrecognisedTokens": 17490
+    "total": 10383,
+    "namingNoNodeId": 505,
+    "namingNoLiveNodeId": 545,
+    "unrecognisedTokens": 17456
   },
   "statusFiles": [
     {
@@ -212,12 +212,6 @@
       "rows": 1,
       "withLiveId": 1,
       "ids": 1
-    },
-    {
-      "file": "status.scope-adjudication-2026-09-08.tsv",
-      "rows": 55,
-      "withLiveId": 33,
-      "ids": 33
     },
     {
       "file": "status.skratch.tsv",
@@ -1422,8 +1416,8 @@
     {
       "file": "status.wave3.verify-games.tsv",
       "rows": 500,
-      "withLiveId": 500,
-      "ids": 500
+      "withLiveId": 499,
+      "ids": 499
     },
     {
       "file": "status.wave3.verify-home2.tsv",
@@ -2267,7 +2261,9 @@
       "pageName": "Thumbnail",
       "readiness": "meta",
       "n": 1,
+      "openReports": 0,
       "scope": "meta",
+      "harvestedAt": "2026-09-09",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -2294,7 +2290,9 @@
       "pageName": "📍 Master sheet",
       "readiness": "meta",
       "n": 46,
+      "openReports": 0,
       "scope": "meta",
+      "harvestedAt": "2026-09-09",
       "live": 46,
       "furniture": 1,
       "furnitureWhy": {
@@ -2422,7 +2420,7 @@
         },
         {
           "id": "3931-91877",
-          "name": "Social > Encrypted m",
+          "name": "Social > Encrypted messenger",
           "type": "SECTION",
           "w": 3035,
           "h": 3805
@@ -2436,7 +2434,7 @@
         },
         {
           "id": "3436-64322",
-          "name": "Social > Chat > Conv",
+          "name": "Social > Chat > Conversation/Contacts",
           "type": "SECTION",
           "w": 3035,
           "h": 3805
@@ -2478,14 +2476,14 @@
         },
         {
           "id": "3439-64355",
-          "name": "Play > In game desig",
+          "name": "Play > In game designs with Casey",
           "type": "SECTION",
           "w": 3035,
           "h": 8210
         },
         {
           "id": "3436-64234",
-          "name": "Trade > perpetual fu",
+          "name": "Trade > perpetual futures",
           "type": "SECTION",
           "w": 3035,
           "h": 3805
@@ -2513,7 +2511,7 @@
         },
         {
           "id": "3436-62783",
-          "name": "Trade > Swap - same ",
+          "name": "Trade > Swap - same as wallet swap",
           "type": "SECTION",
           "w": 3035,
           "h": 3805
@@ -2534,7 +2532,7 @@
         },
         {
           "id": "3436-57903",
-          "name": "Wallet > Quick Actio",
+          "name": "Wallet > Quick Actions",
           "type": "SECTION",
           "w": 3035,
           "h": 3805
@@ -2555,7 +2553,7 @@
         },
         {
           "id": "3436-53761",
-          "name": "Home (moat) > Portfo",
+          "name": "Home (moat) > Portfolio",
           "type": "SECTION",
           "w": 3035,
           "h": 3805
@@ -2576,7 +2574,7 @@
         },
         {
           "id": "3436-56942",
-          "name": "Home (moat) > Advanc",
+          "name": "Home (moat) > Advanced Tools",
           "type": "SECTION",
           "w": 3035,
           "h": 3805
@@ -2631,7 +2629,9 @@
       "pageName": "🚧 Titles + Emblems",
       "readiness": "wip",
       "n": 1157,
+      "openReports": 0,
       "scope": "wip",
+      "harvestedAt": "2026-09-09",
       "live": 1157,
       "furniture": 1156,
       "furnitureWhy": {
@@ -2661,7 +2661,9 @@
       "pageName": "🚧 User Flow",
       "readiness": "wip",
       "n": 3,
+      "openReports": 0,
       "scope": "wip",
+      "harvestedAt": "2026-09-09",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -2675,21 +2677,21 @@
       "liveOnly": [
         {
           "id": "10439-43649",
-          "name": "Skai > Home 1VH (144",
+          "name": "Skai > Home 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10440-1985",
-          "name": "Skai > Trade > Perpe",
+          "name": "Skai > Trade > Perpetual futures - user not signed 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10442-7290",
-          "name": "Skai > Play 1VH (144",
+          "name": "Skai > Play 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
@@ -2702,7 +2704,9 @@
       "pageName": "✅ Onboarding and Authentication",
       "readiness": "ready",
       "n": 151,
+      "openReports": 5,
       "scope": "excluded",
+      "harvestedAt": "2026-09-09",
       "live": 151,
       "furniture": 24,
       "furnitureWhy": {
@@ -2720,133 +2724,133 @@
       "liveOnly": [
         {
           "id": "2005-4492",
-          "name": "Skai > Onboarding 1V",
+          "name": "Skai > Onboarding 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2662-2597",
-          "name": "Skai > Onboarding i2",
+          "name": "Skai > Onboarding i2 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2665-8843",
-          "name": "Skai > Onboarding i5",
+          "name": "Skai > Onboarding i5 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2664-6764",
-          "name": "Skai > Onboarding i4",
+          "name": "Skai > Onboarding i4 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2667-11004",
-          "name": "Skai > Onboarding i6",
+          "name": "Skai > Onboarding i6 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2664-4685",
-          "name": "Skai > Onboarding i3",
+          "name": "Skai > Onboarding i3 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2065-110",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2005-5185",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2086-39242",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2005-5908",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2517-22923",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10734-78750",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2422-2075",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2065-2229",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10734-79425",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2005-7482",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2422-2943",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2481-11481",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard - Tooltip 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2459-9389",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live - video 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
@@ -2867,42 +2871,42 @@
         },
         {
           "id": "2005-8588",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 1 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2065-4181",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10734-80273",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2005-9301",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2086-28860",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10730-80518",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
@@ -2916,21 +2920,21 @@
         },
         {
           "id": "10734-73582",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10734-75560",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up - referral open 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10734-76366",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up - referral open > with external wallet - Phantom 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
@@ -2944,539 +2948,539 @@
         },
         {
           "id": "2005-10032",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access - with input 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2086-30488",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login - with input 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2005-10763",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2086-32903",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10734-77246",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2005-11493",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2086-37672",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2005-12217",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification - with input 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2086-36048",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification - with input 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "10734-77935",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification - with input 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "2005-12956",
-          "name": "Skai > Onboarding 1V",
+          "name": "Skai > Onboarding 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2662-3299",
-          "name": "Skai > Onboarding i2",
+          "name": "Skai > Onboarding i2 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2665-9536",
-          "name": "Skai > Onboarding i5",
+          "name": "Skai > Onboarding i5 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2664-7457",
-          "name": "Skai > Onboarding i4",
+          "name": "Skai > Onboarding i4 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2667-11697",
-          "name": "Skai > Onboarding i6",
+          "name": "Skai > Onboarding i6 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2664-5378",
-          "name": "Skai > Onboarding i3",
+          "name": "Skai > Onboarding i3 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2065-8549",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-13649",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2065-9242",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-14372",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2065-9965",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11220-173094",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2065-10668",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-15075",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 1 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2065-11383",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11220-173769",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-15790",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11220-174461",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-16658",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2424-4081",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2481-14785",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live - Tooltip 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-17764",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2088-1668",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-18495",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access - with input 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2088-3176",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login - with input 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-19226",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2598-2383",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-19956",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification - with input 1VH 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2598-3863",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification - with input 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-20686",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet 1VH 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2065-16254",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "2005-21410",
-          "name": "Skai > Onboarding 1V",
+          "name": "Skai > Onboarding 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2662-3992",
-          "name": "Skai > Onboarding i2",
+          "name": "Skai > Onboarding i2 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2665-10229",
-          "name": "Skai > Onboarding i5",
+          "name": "Skai > Onboarding i5 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2664-8150",
-          "name": "Skai > Onboarding i4",
+          "name": "Skai > Onboarding i4 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2667-12390",
-          "name": "Skai > Onboarding i6",
+          "name": "Skai > Onboarding i6 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2664-6071",
-          "name": "Skai > Onboarding i3",
+          "name": "Skai > Onboarding i3 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-16978",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-22103",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-17671",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-22826",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-18394",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-23529",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 1 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-19097",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-24244",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-19812",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 2 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-25112",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2424-7715",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard - Live 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2481-15918",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard Live - Tooltip 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-26526",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations - Slide 2 > Pre-launch dashboard (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1006
         },
         {
           "id": "2005-27956",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-23474",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-28687",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access - with input 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-24205",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login - with input 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-29418",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-24936",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-30148",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-25666",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification - with input 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2005-30878",
-          "name": "Skai > Onboarding > ",
+          "name": "Skai > Onboarding > Get early access > Verification > Choose wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2065-26396",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "2113-4662",
-          "name": "Website link image 1",
+          "name": "Website link image 1200 x 627px",
           "type": "FRAME",
           "w": 1198,
           "h": 627
         },
         {
           "id": "3879-43977",
-          "name": "Website link image 1",
+          "name": "Website link image 1200 x 627px",
           "type": "FRAME",
           "w": 1198,
           "h": 627
         },
         {
           "id": "2113-5498",
-          "name": "Website link image 1",
+          "name": "Website link image 1200 x 627px ALT",
           "type": "FRAME",
           "w": 1198,
           "h": 627
         },
         {
           "id": "3879-44798",
-          "name": "Website link image 1",
+          "name": "Website link image 1200 x 627px ALT",
           "type": "FRAME",
           "w": 1198,
           "h": 627
         },
         {
           "id": "2113-6165",
-          "name": "Website link image 1",
+          "name": "Website link image 1200 x 627px ALT",
           "type": "FRAME",
           "w": 1198,
           "h": 627
         },
         {
           "id": "3879-45450",
-          "name": "Website link image 1",
+          "name": "Website link image 1200 x 627px ALT",
           "type": "FRAME",
           "w": 1198,
           "h": 627
         },
         {
           "id": "10767-307473",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
@@ -3490,119 +3494,119 @@
         },
         {
           "id": "11189-2629",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11220-175352",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11225-178320",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11225-180028",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification - with input 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11225-180817",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11220-176042",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up - referral open 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11229-189692",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up - referral open > with external wallet - Phantom 1VH (768x1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "11225-181650",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11225-182385",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11225-186385",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11229-188122",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11229-188907",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification - with input 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11225-183314",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up - referral open 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11229-190494",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Sign up - referral open > with external wallet - Phantom 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11225-184126",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name - closed off 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11225-184801",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - Slide 1 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "11225-185493",
-          "name": "Skai > Temporary lan",
+          "name": "Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -3615,7 +3619,9 @@
       "pageName": "✅ Privacy and Terms",
       "readiness": "ready",
       "n": 10,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 10,
       "furniture": 4,
       "furnitureWhy": {
@@ -3635,10 +3641,12 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "2003:674",
-      "pageName": "✝️ Home (moved to Skai Web App 2)",
+      "pageName": "✝️ Home (moved to \"Skai Web App 2\")",
       "readiness": "tombstone",
       "n": 20,
+      "openReports": 0,
       "scope": "tombstone",
+      "harvestedAt": "2026-09-09",
       "live": 20,
       "furniture": 20,
       "furnitureWhy": {
@@ -3658,10 +3666,12 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "2998:19593",
-      "pageName": "✝️ Wallet (moved to Skai Web App 2)",
+      "pageName": "✝️ Wallet (moved to \"Skai Web App 2\")",
       "readiness": "tombstone",
       "n": 13,
+      "openReports": 0,
       "scope": "tombstone",
+      "harvestedAt": "2026-09-09",
       "live": 13,
       "furniture": 13,
       "furnitureWhy": {
@@ -3680,10 +3690,12 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "3:3",
-      "pageName": "✝️ Trade (moved to Skai Web App 2)",
+      "pageName": "✝️ Trade (moved to \"Skai Web App 2\")",
       "readiness": "tombstone",
       "n": 154,
+      "openReports": 0,
       "scope": "tombstone",
+      "harvestedAt": "2026-09-09",
       "live": 154,
       "furniture": 37,
       "furnitureWhy": {
@@ -3706,35 +3718,35 @@
       "liveOnly": [
         {
           "id": "8558-139280",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8650-44853",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8822-65362",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8833-71578",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8941-77699",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -3790,98 +3802,98 @@
         },
         {
           "id": "8837-63445",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1210
         },
         {
           "id": "8846-63794",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1230
         },
         {
           "id": "8859-66157",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1180
         },
         {
           "id": "8833-68646",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8828-62762",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1250
         },
         {
           "id": "8931-64499",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1810
         },
         {
           "id": "8684-163505",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8687-101463",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8684-167264",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1140
         },
         {
           "id": "8570-143200",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8626-61565",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8684-164665",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8626-85537",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 375,
           "h": 1030
         },
         {
           "id": "8833-72738",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -3895,70 +3907,70 @@
         },
         {
           "id": "8828-62440",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9490-145643",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1276
         },
         {
           "id": "9490-147063",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1276
         },
         {
           "id": "9490-148310",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1105
         },
         {
           "id": "9490-149563",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1108
         },
         {
           "id": "9500-151115",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1107
         },
         {
           "id": "9500-163410",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9500-164534",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9500-165924",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9500-167048",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -3972,7 +3984,7 @@
         },
         {
           "id": "8941-78943",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -4021,98 +4033,98 @@
         },
         {
           "id": "8846-64165",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH ALT (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1290
         },
         {
           "id": "8650-94501",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1030
         },
         {
           "id": "8936-38729",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH ALT (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1270
         },
         {
           "id": "8684-166194",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1030
         },
         {
           "id": "8833-69806",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8828-63922",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1270
         },
         {
           "id": "8650-94724",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8931-65660",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1870
         },
         {
           "id": "8626-131650",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8650-94950",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8684-166395",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8687-102751",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8626-130555",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8684-166596",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -4126,7 +4138,7 @@
         },
         {
           "id": "8566-141675",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 768,
           "h": 1230
@@ -4140,35 +4152,35 @@
         },
         {
           "id": "8684-162077",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8684-162456",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8687-99711",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "8687-103072",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8700-103509",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -4259,35 +4271,35 @@
         },
         {
           "id": "9403-133956",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9403-140971",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9419-149915",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9419-151234",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9403-142103",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -4308,14 +4320,14 @@
         },
         {
           "id": "9553-131170",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9553-133106",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -4363,7 +4375,9 @@
       "pageName": "✅ Predict",
       "readiness": "ready",
       "n": 284,
+      "openReports": 64,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 284,
       "furniture": 30,
       "furnitureWhy": {
@@ -4391,7 +4405,9 @@
       "pageName": "✅ Play",
       "readiness": "ready",
       "n": 345,
+      "openReports": 38,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 345,
       "furniture": 76,
       "furnitureWhy": {
@@ -4423,7 +4439,9 @@
       "pageName": "✅ Social",
       "readiness": "ready",
       "n": 442,
+      "openReports": 16,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 442,
       "furniture": 40,
       "furnitureWhy": {
@@ -4451,10 +4469,11 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "harvestedAt": "2026-09-07",
+      "harvestedAt": "2026-09-09",
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
+      "openReports": 8,
       "scope": "held",
       "live": 725,
       "furniture": 66,
@@ -7885,7 +7904,9 @@
       "pageName": "Thumbnail",
       "readiness": "meta",
       "n": 1,
+      "openReports": 0,
       "scope": "meta",
+      "harvestedAt": "2026-09-09",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -7909,11 +7930,12 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 277,
       "nVerifiedAt": "2026-09-08",
+      "openReports": 87,
       "scope": "v1-superseded",
       "live": 277,
       "furniture": 41,
@@ -8996,11 +9018,12 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 240,
       "nVerifiedAt": "2026-09-08",
+      "openReports": 36,
       "scope": "in-scope",
       "live": 240,
       "furniture": 36,
@@ -9457,7 +9480,9 @@
       "pageName": "✅ Wallet 1",
       "readiness": "ready",
       "n": 178,
+      "openReports": 42,
       "scope": "v1-superseded",
+      "harvestedAt": "2026-09-09",
       "live": 178,
       "furniture": 11,
       "furnitureWhy": {
@@ -9475,35 +9500,35 @@
       "liveOnly": [
         {
           "id": "7683-7930",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock > Forgot password 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7683-34510",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock > Forgot password > OTP > Set new password 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7683-33892",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock > Forgot password > OTP 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7676-51711",
-          "name": "Skai > Wallet > get ",
+          "name": "Skai > Wallet > get the app > new user > create new wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7676-51506",
-          "name": "Skai > Wallet > get ",
+          "name": "Skai > Wallet > get the app > new user 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -9517,35 +9542,35 @@
         },
         {
           "id": "7806-82974",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs - empty 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7807-86912",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs - empty 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7807-87715",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > Activity 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7807-88748",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > Activity 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7806-83761",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs - empty > Import NFT 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -9559,91 +9584,91 @@
         },
         {
           "id": "7704-47027",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin 2 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7713-16630",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7713-16984",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key - reveal 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7713-17399",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7717-10565",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7717-11907",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Recovery phrase > Wallet name 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7717-12740",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Private key 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7717-13147",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Keystone 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7717-13587",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Connect hardware wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7717-14343",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Connect hardware wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7713-14212",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet accounts 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7713-15272",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7713-13398",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin 3 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -9657,14 +9682,14 @@
         },
         {
           "id": "7709-10525",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7713-13706",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1140
@@ -9692,7 +9717,7 @@
         },
         {
           "id": "7804-74178",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > crypto > sample token (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 2600
@@ -9706,14 +9731,14 @@
         },
         {
           "id": "7808-89289",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > crypto > sample token (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1750
         },
         {
           "id": "8554-115129",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > crypto > sample token (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 2190
@@ -9741,7 +9766,7 @@
         },
         {
           "id": "7871-18184",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > crypto > sample token (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -9762,7 +9787,7 @@
         },
         {
           "id": "7805-80831",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > crypto > sample token > sidecar - swap settings 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -9811,42 +9836,42 @@
         },
         {
           "id": "7806-84981",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs > sample NFT (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1620
         },
         {
           "id": "7882-17627",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs > sample NFT (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1320
         },
         {
           "id": "7882-19257",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs > sample NFT (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1480
         },
         {
           "id": "7882-18863",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs > sample NFT (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7807-86527",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs > sample NFT > Send (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1620
         },
         {
           "id": "7807-86028",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs > sample NFT > expand (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -9895,7 +9920,7 @@
         },
         {
           "id": "3123-3046",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin 3 (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 1100
@@ -9923,84 +9948,84 @@
         },
         {
           "id": "7675-51300",
-          "name": "Skai > Wallet 1VH (7",
+          "name": "Skai > Wallet 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7675-51350",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7675-51418",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock - password 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7704-46353",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8320-71829",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "7728-60058",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8370-73407",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin2 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8370-72613",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7871-19838",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs - empty 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 850
         },
         {
           "id": "7882-19831",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs - empty  1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 1000
         },
         {
           "id": "7882-21085",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs - empty ALT 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 1000
         },
         {
           "id": "7882-20079",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > Activity 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 900
@@ -10014,91 +10039,91 @@
         },
         {
           "id": "7882-21333",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > Activity 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7871-20688",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs - empty > Import NFT 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-68711",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin2 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-70768",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin2 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-65029",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet accounts 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-65519",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-65942",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > rename wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-62886",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-63646",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 960
         },
         {
           "id": "7774-66509",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-67001",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Export private key - reveal 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-67295",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-69004",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove walletl 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -10203,105 +10228,105 @@
         },
         {
           "id": "7774-69592",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove walletl 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-69886",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > wallet multi menu > Remove walletl 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-70180",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Import existing > Keystone 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-70474",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > right-sidecar > Add wallet > Connect hardware wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7774-12119",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 840
         },
         {
           "id": "7727-14906",
-          "name": "Skai > Wallet 1VH (3",
+          "name": "Skai > Wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7727-14937",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7727-14974",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock - password 1VH (375 x 812)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7727-15382",
-          "name": "Skai > Wallet > get ",
+          "name": "Skai > Wallet > get the app > new user 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7727-15482",
-          "name": "Skai > Wallet > get ",
+          "name": "Skai > Wallet > get the app > new user > create new wallet 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7727-15699",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock > Forgot password 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7728-59382",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock > Forgot password > OTP 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "7728-59766",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > unlock > Forgot password > OTP > Set new password 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8540-29692",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1060
         },
         {
           "id": "8540-29853",
-          "name": "Skai > Wallet > cont",
+          "name": "Skai > Wallet > continue on web > home > NFTs 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 1460
@@ -10314,7 +10339,9 @@
       "pageName": "✅ Wallet 2",
       "readiness": "ready",
       "n": 182,
+      "openReports": 25,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 182,
       "furniture": 23,
       "furnitureWhy": {
@@ -10341,7 +10368,9 @@
       "pageName": "✅ Trade 1",
       "readiness": "ready",
       "n": 420,
+      "openReports": 64,
       "scope": "v1-superseded",
+      "harvestedAt": "2026-09-09",
       "live": 420,
       "furniture": 53,
       "furnitureWhy": {
@@ -10367,35 +10396,35 @@
       "liveOnly": [
         {
           "id": "8558-139280",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8650-44853",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8822-65362",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8833-71578",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8941-77699",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -10451,112 +10480,112 @@
         },
         {
           "id": "8837-63445",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1210
         },
         {
           "id": "8846-63794",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1230
         },
         {
           "id": "8859-66157",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1180
         },
         {
           "id": "8833-68646",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8828-62762",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1250
         },
         {
           "id": "8931-64499",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1810
         },
         {
           "id": "8684-163505",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8687-101463",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8684-167264",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1140
         },
         {
           "id": "8570-143200",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8626-61565",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8684-164665",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "8626-85537",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 375,
           "h": 1030
         },
         {
           "id": "8833-72738",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9058-225792",
-          "name": "Trade panel - Pro - ",
+          "name": "Trade panel - Pro - Tp/sl",
           "type": "FRAME",
           "w": 375,
           "h": 722
         },
         {
           "id": "9058-225926",
-          "name": "Trade panel - Pro - ",
+          "name": "Trade panel - Pro - Scaled order",
           "type": "FRAME",
           "w": 375,
           "h": 760
@@ -10577,7 +10606,7 @@
         },
         {
           "id": "9058-223998",
-          "name": "Trade panel - sell -",
+          "name": "Trade panel - sell - with value",
           "type": "FRAME",
           "w": 375,
           "h": 554
@@ -10591,63 +10620,63 @@
         },
         {
           "id": "8828-62440",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9490-145643",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1276
         },
         {
           "id": "9490-147063",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1276
         },
         {
           "id": "9490-148310",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1105
         },
         {
           "id": "9490-149563",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1108
         },
         {
           "id": "9500-151115",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1107
         },
         {
           "id": "9777-106388",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot -  indicator dropdown 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9777-109337",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - timeframe dropdown 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9772-78152",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -10661,7 +10690,7 @@
         },
         {
           "id": "9775-93472",
-          "name": "Trade panel - Pro - ",
+          "name": "Trade panel - Pro - Trigger",
           "type": "FRAME",
           "w": 375,
           "h": 626
@@ -10675,28 +10704,28 @@
         },
         {
           "id": "9500-163410",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9500-164534",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9500-165924",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9500-167048",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -10710,7 +10739,7 @@
         },
         {
           "id": "8941-78943",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -10759,105 +10788,105 @@
         },
         {
           "id": "9058-225586",
-          "name": "Trade panel - Limit ",
+          "name": "Trade panel - Limit - with value",
           "type": "FRAME",
           "w": 375,
           "h": 578
         },
         {
           "id": "8846-64165",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH ALT (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1290
         },
         {
           "id": "8650-94501",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1030
         },
         {
           "id": "8936-38729",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH ALT (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1270
         },
         {
           "id": "8684-166194",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1030
         },
         {
           "id": "8833-69806",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8828-63922",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1270
         },
         {
           "id": "8650-94724",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8931-65660",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1870
         },
         {
           "id": "8626-131650",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8650-94950",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8684-166395",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8687-102751",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8626-130555",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8684-166596",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -10871,42 +10900,42 @@
         },
         {
           "id": "8558-134024",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "8566-141675",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 768,
           "h": 1230
         },
         {
           "id": "3972-28764",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - indicator dropdown 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "3979-40767",
-          "name": "modal - confirm orde",
+          "name": "modal - confirm order SHORT",
           "type": "FRAME",
           "w": 564,
           "h": 490
         },
         {
           "id": "7890-98315",
-          "name": "Trade panel - Isolat",
+          "name": "Trade panel - Isolated",
           "type": "FRAME",
           "w": 313,
           "h": 672
         },
         {
           "id": "7712-33476",
-          "name": "🚨 Trade panel - Sel",
+          "name": "🚨 Trade panel - Sell with value",
           "type": "FRAME",
           "w": 313,
           "h": 672
@@ -10927,49 +10956,49 @@
         },
         {
           "id": "4297-47855",
-          "name": "PnL post - up with p",
+          "name": "PnL post - up with profit ALT",
           "type": "FRAME",
           "w": 506,
           "h": 506
         },
         {
           "id": "4297-48539",
-          "name": "PnL post - down with",
+          "name": "PnL post - down with profit ALT",
           "type": "FRAME",
           "w": 506,
           "h": 506
         },
         {
           "id": "9153-85201",
-          "name": "PnL post - up with p",
+          "name": "PnL post - up with profit ALT",
           "type": "FRAME",
           "w": 448,
           "h": 448
         },
         {
           "id": "9156-138870",
-          "name": "PnL post - up with p",
+          "name": "PnL post - up with profit ALT",
           "type": "FRAME",
           "w": 354,
           "h": 354
         },
         {
           "id": "9153-85888",
-          "name": "PnL post - down with",
+          "name": "PnL post - down with profit ALT",
           "type": "FRAME",
           "w": 448,
           "h": 448
         },
         {
           "id": "9156-139557",
-          "name": "PnL post - down with",
+          "name": "PnL post - down with profit ALT",
           "type": "FRAME",
           "w": 354,
           "h": 354
         },
         {
           "id": "4144-63925",
-          "name": "Advanced functions (",
+          "name": "Advanced functions (approved)",
           "type": "SECTION",
           "w": 1259,
           "h": 1009
@@ -10983,21 +11012,21 @@
         },
         {
           "id": "7890-122280",
-          "name": "Positions - Pages fo",
+          "name": "Positions - Pages form",
           "type": "FRAME",
           "w": 1366,
           "h": 312
         },
         {
           "id": "7890-130783",
-          "name": "Update position moda",
+          "name": "Update position modal - on:hover",
           "type": "FRAME",
           "w": 564,
           "h": 654
         },
         {
           "id": "7890-130857",
-          "name": "Update position moda",
+          "name": "Update position modal - on:hover - additional position",
           "type": "FRAME",
           "w": 564,
           "h": 712
@@ -11018,7 +11047,7 @@
         },
         {
           "id": "3903-26142",
-          "name": "Trade panel - Short ",
+          "name": "Trade panel - Short with value",
           "type": "FRAME",
           "w": 313,
           "h": 672
@@ -11032,7 +11061,7 @@
         },
         {
           "id": "7746-180909",
-          "name": "sidebar - open - spo",
+          "name": "sidebar - open - spot",
           "type": "FRAME",
           "w": 248,
           "h": 844
@@ -11067,35 +11096,35 @@
         },
         {
           "id": "8684-162077",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8684-162456",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8687-99711",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 900
         },
         {
           "id": "8687-103072",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "8700-103509",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - modal 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -11151,7 +11180,7 @@
         },
         {
           "id": "9154-123038",
-          "name": "modal - confirm orde",
+          "name": "modal - confirm order SHORT",
           "type": "FRAME",
           "w": 354,
           "h": 378
@@ -11200,56 +11229,56 @@
         },
         {
           "id": "9148-82240",
-          "name": "modal - confirm orde",
+          "name": "modal - confirm order SHORT",
           "type": "FRAME",
           "w": 448,
           "h": 394
         },
         {
           "id": "9069-263248",
-          "name": "Skai > Dashboard - p",
+          "name": "Skai > Dashboard - positive 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9081-266034",
-          "name": "Skai > Dashboard > R",
+          "name": "Skai > Dashboard > Reports 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9081-267604",
-          "name": "Skai > Dashboard > N",
+          "name": "Skai > Dashboard > News 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9081-267988",
-          "name": "Skai > Dashboard > W",
+          "name": "Skai > Dashboard > Whale activity 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9069-259546",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot > Chart settings 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "9069-261150",
-          "name": "Skai > Dashboard - p",
+          "name": "Skai > Dashboard - positive 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "9081-265572",
-          "name": "Skai > Dashboard > R",
+          "name": "Skai > Dashboard > Reports 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -11263,14 +11292,14 @@
         },
         {
           "id": "9081-266293",
-          "name": "Skai > Dashboard > N",
+          "name": "Skai > Dashboard > News 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "9081-266657",
-          "name": "Skai > Dashboard > W",
+          "name": "Skai > Dashboard > Whale activity 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -11284,14 +11313,14 @@
         },
         {
           "id": "9050-209536",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - indicator dropdown 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
         },
         {
           "id": "9050-212503",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot - timeframe dropdown 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1024
@@ -11319,7 +11348,7 @@
         },
         {
           "id": "9105-77432",
-          "name": "Trade panel - Short ",
+          "name": "Trade panel - Short with value",
           "type": "FRAME",
           "w": 730,
           "h": 752
@@ -11340,7 +11369,7 @@
         },
         {
           "id": "9045-170740",
-          "name": "Trade panel - sell w",
+          "name": "Trade panel - sell with value",
           "type": "FRAME",
           "w": 730,
           "h": 610
@@ -11424,7 +11453,7 @@
         },
         {
           "id": "9048-192507",
-          "name": "Select pair - Favori",
+          "name": "Select pair - Favorites",
           "type": "FRAME",
           "w": 680,
           "h": 586
@@ -11459,7 +11488,7 @@
         },
         {
           "id": "9061-240412",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot > Selected pairs 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -11501,35 +11530,35 @@
         },
         {
           "id": "9114-77881",
-          "name": "Trade panel - Short ",
+          "name": "Trade panel - Short with value",
           "type": "FRAME",
           "w": 375,
           "h": 688
         },
         {
           "id": "9152-81212",
-          "name": "Update position moda",
+          "name": "Update position modal - on:hover",
           "type": "FRAME",
           "w": 448,
           "h": 570
         },
         {
           "id": "9152-81278",
-          "name": "Update position moda",
+          "name": "Update position modal - on:hover - additional position",
           "type": "FRAME",
           "w": 448,
           "h": 626
         },
         {
           "id": "9154-124727",
-          "name": "Update position moda",
+          "name": "Update position modal - on:hover",
           "type": "FRAME",
           "w": 354,
           "h": 560
         },
         {
           "id": "9154-124786",
-          "name": "Update position moda",
+          "name": "Update position modal - on:hover - additional position",
           "type": "FRAME",
           "w": 354,
           "h": 620
@@ -11543,35 +11572,35 @@
         },
         {
           "id": "9403-133956",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (768 x 1024px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9403-140971",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9419-149915",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9419-151234",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9403-142103",
-          "name": "Skai > Trench - actu",
+          "name": "Skai > Trench - actual 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -11592,14 +11621,14 @@
         },
         {
           "id": "9553-131170",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
         },
         {
           "id": "9553-133106",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -11627,28 +11656,28 @@
         },
         {
           "id": "9776-96834",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1107
         },
         {
           "id": "9803-129761",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1107
         },
         {
           "id": "9803-131052",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1107
         },
         {
           "id": "9777-102315",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot > Trades (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1230
@@ -11676,7 +11705,7 @@
         },
         {
           "id": "9777-104193",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -11704,7 +11733,7 @@
         },
         {
           "id": "9780-143009",
-          "name": "Skai > Trade > Spot ",
+          "name": "Skai > Trade > Spot > Chart settings 1VH (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 812
@@ -11735,11 +11764,12 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 417,
       "nVerifiedAt": "2026-09-08",
+      "openReports": 138,
       "scope": "in-scope",
       "live": 417,
       "furniture": 40,
@@ -11787,7 +11817,9 @@
       "pageName": "Thumbnail",
       "readiness": "meta",
       "n": 1,
+      "openReports": 0,
       "scope": "meta",
+      "harvestedAt": "2026-09-09",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -11814,7 +11846,9 @@
       "pageName": "📍 Games master sheet",
       "readiness": "meta",
       "n": 3,
+      "openReports": 0,
       "scope": "meta",
+      "harvestedAt": "2026-09-09",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -11828,7 +11862,7 @@
       "liveOnly": [
         {
           "id": "3439-64355",
-          "name": "Play > In game desig",
+          "name": "Play > In game designs with Casey",
           "type": "SECTION",
           "w": 3035,
           "h": 8210
@@ -11855,7 +11889,8 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 44,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
+      "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
       "scopeNote": "RESOLVED 2026-09-08 by re-harvest. n was 42 from the 2026-08-26 snapshot while the live page held 44; the .tsv carried the matching 42 rows, so coverage.mjs stayed consistent and SILENT - the loud guard compares the harvest to the manifest, and both were stale together. The page and its .tsv were re-read with the METHOD in this file's _comment (not get_metadata) and both now say 44. The five frames the old note listed as missing from both are present: 10404:3412 Blackjack Desktop, 10428:2145 Bingo Desktop, 10428:2601 Chicken Desktop, 10404:7943 + 10404:7948 Keno. 9222:26323, listed but deleted from Figma, is absent from the live read and so is gone from the .tsv.",
@@ -12174,7 +12209,9 @@
       "pageName": "✅ Dice - Skai originals",
       "readiness": "ready",
       "n": 36,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 36,
       "furniture": 13,
       "furnitureWhy": {
@@ -12200,7 +12237,9 @@
       "pageName": "✅ Plinko - Skai originals",
       "readiness": "ready",
       "n": 21,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 21,
       "furniture": 11,
       "furnitureWhy": {
@@ -12226,7 +12265,9 @@
       "pageName": "✅ Blackjack - Skai originals",
       "readiness": "ready",
       "n": 23,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 23,
       "furniture": 7,
       "furnitureWhy": {
@@ -12252,7 +12293,9 @@
       "pageName": "✅ Crash - Skai originals",
       "readiness": "ready",
       "n": 20,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 20,
       "furniture": 7,
       "furnitureWhy": {
@@ -12276,7 +12319,8 @@
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
       "n": 21,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
+      "openReports": 0,
       "scope": "in-scope",
       "live": 21,
       "furniture": 7,
@@ -12317,7 +12361,8 @@
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
       "n": 46,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
+      "openReports": 3,
       "scope": "in-scope",
       "live": 46,
       "furniture": 11,
@@ -12352,7 +12397,9 @@
       "pageName": "✅ Scratchers - Skai originals",
       "readiness": "ready",
       "n": 21,
+      "openReports": 1,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 21,
       "furniture": 7,
       "furnitureWhy": {
@@ -12378,7 +12425,9 @@
       "pageName": "✅ Chicken - Skai originals",
       "readiness": "ready",
       "n": 31,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 31,
       "furniture": 14,
       "furnitureWhy": {
@@ -12403,7 +12452,9 @@
       "pageName": "✅ Hi-Lo - Skai originals",
       "readiness": "ready",
       "n": 16,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 16,
       "furniture": 9,
       "furnitureWhy": {
@@ -12427,7 +12478,9 @@
       "pageName": "✅ Darts - Skai originals",
       "readiness": "ready",
       "n": 31,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 31,
       "furniture": 13,
       "furnitureWhy": {
@@ -12453,7 +12506,9 @@
       "pageName": "✅ Keno - Skai originals",
       "readiness": "ready",
       "n": 27,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 27,
       "furniture": 9,
       "furnitureWhy": {
@@ -12480,7 +12535,9 @@
       "pageName": "✅ Fortune Wheel - Skai originals",
       "readiness": "ready",
       "n": 25,
+      "openReports": 2,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 25,
       "furniture": 9,
       "furnitureWhy": {
@@ -12505,7 +12562,9 @@
       "pageName": "✅ Video Poker - Skai originals",
       "readiness": "ready",
       "n": 14,
+      "openReports": 2,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 14,
       "furniture": 4,
       "furnitureWhy": {
@@ -12530,7 +12589,9 @@
       "pageName": "✅ Bingo - Skai originals",
       "readiness": "ready",
       "n": 17,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 17,
       "furniture": 4,
       "furnitureWhy": {
@@ -12556,7 +12617,9 @@
       "pageName": "✅ Baccarat - Skai originals",
       "readiness": "ready",
       "n": 21,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 21,
       "furniture": 8,
       "furnitureWhy": {
@@ -12584,7 +12647,9 @@
       "pageName": "✅ Roulette - Skai originals",
       "readiness": "ready",
       "n": 21,
+      "openReports": 1,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 21,
       "furniture": 7,
       "furnitureWhy": {
@@ -12611,7 +12676,9 @@
       "pageName": "✅ Limbo - Skai originals",
       "readiness": "ready",
       "n": 14,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 14,
       "furniture": 5,
       "furnitureWhy": {
@@ -12635,7 +12702,9 @@
       "pageName": "✅ Rock Paper Scissors - Skai originals",
       "readiness": "ready",
       "n": 24,
+      "openReports": 1,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 24,
       "furniture": 7,
       "furnitureWhy": {
@@ -12662,7 +12731,9 @@
       "pageName": "✅ Slide - Skai originals",
       "readiness": "ready",
       "n": 18,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 18,
       "furniture": 5,
       "furnitureWhy": {
@@ -12688,7 +12759,9 @@
       "pageName": "✅ Price Grid - Skai originals",
       "readiness": "ready",
       "n": 20,
+      "openReports": 2,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 20,
       "furniture": 12,
       "furnitureWhy": {
@@ -12713,22 +12786,23 @@
       "pageName": "✅ Towers - Skai originals",
       "readiness": "ready",
       "n": 30,
+      "openReports": 0,
       "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
       "live": 30,
-      "furniture": 14,
+      "furniture": 13,
       "furnitureWhy": {
         "canvas-chrome": 12,
-        "loose-rectangle": 1,
-        "loose-instance": 1
+        "loose-rectangle": 1
       },
-      "genuine": 16,
-      "matched": 16,
+      "genuine": 17,
+      "matched": 17,
       "rollupOnly": 0,
       "defaultNamed": 5,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
-        "partial": 7,
+        "partial": 8,
         "furniture": 2,
         "frame-defect": 5,
         "done": 2
@@ -12741,7 +12815,9 @@
       "pageName": "Towars Draft (Disregard)",
       "readiness": "unknown",
       "n": 51,
+      "openReports": 0,
       "scope": "wip",
+      "harvestedAt": "2026-09-09",
       "live": 51,
       "furniture": 42,
       "furnitureWhy": {
@@ -12758,7 +12834,7 @@
       "liveOnly": [
         {
           "id": "10120-10114",
-          "name": "hf_20260802_165842_f",
+          "name": "hf_20260802_165842_f42a9cf4-60cf-420b-8bce-8e64f2274a83 1",
           "type": "FRAME",
           "w": 2304,
           "h": 1856
@@ -12827,7 +12903,9 @@
       "pageName": "----------",
       "readiness": "meta",
       "n": 0,
+      "openReports": 0,
       "scope": "meta",
+      "harvestedAt": "2026-09-09",
       "live": 0,
       "furniture": 0,
       "furnitureWhy": {},
@@ -12846,7 +12924,8 @@
       "pageName": "🚧 Safari Slots - Skai originals",
       "readiness": "wip",
       "n": 61,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
+      "openReports": 0,
       "scope": "wip",
       "live": 61,
       "furniture": 25,
@@ -13122,7 +13201,8 @@
       "pageName": "🚧 Cosmic Slots - Skai originals",
       "readiness": "wip",
       "n": 50,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
+      "openReports": 0,
       "scope": "wip",
       "live": 50,
       "furniture": 17,
@@ -13377,7 +13457,8 @@
       "pageName": "🚧 Vegas fortune - Skai originals",
       "readiness": "wip",
       "n": 85,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
+      "openReports": 1,
       "scope": "wip",
       "live": 85,
       "furniture": 46,
@@ -13674,7 +13755,8 @@
       "pageName": "🚧 Gem Slots - Skai originals",
       "readiness": "wip",
       "n": 36,
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
+      "openReports": 0,
       "scope": "wip",
       "live": 36,
       "furniture": 22,
@@ -13796,8 +13878,9 @@
       "pageName": "🚧 Wild card - Skai originals",
       "readiness": "wip",
       "n": 1,
+      "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-09-08",
+      "harvestedAt": "2026-09-09",
       "note": "No longer empty. Recorded as 0 top-level children earlier on 2026-09-08 (agreed by page.loadAsync() AND setCurrentPageAsync, both read because an unloaded page also reports a plausible 0); re-read later the same day it holds one child, 11148:2223 'Group 3' (3182x7925), and a .tsv now exists. Keep the row either way: a page absent from this list and a page with nothing on it read identically to every consumer.",
       "live": 1,
       "furniture": 0,
@@ -13823,21 +13906,17 @@
   "catalogOnly": [
     {
       "id": "10120-8434",
-      "cls": "gone",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000004082",
+        "depth": 7,
+        "pageName": "✅ Towers - Skai originals"
+      },
       "rows": [
         "status.wave29.g-towers.tsv:5"
       ],
       "status": "done"
-    },
-    {
-      "id": "10893-5451",
-      "cls": "gone",
-      "resolved": null,
-      "rows": [
-        "status.wave29.g-towers.tsv:10"
-      ],
-      "status": "partial"
     },
     {
       "id": "13006-201814",
@@ -14108,7 +14187,7 @@
     {
       "id": "5000-158255",
       "page": "✅ Social",
-      "name": "Skai > Social > Live",
+      "name": "Skai > Social > Live > Stream type modal > Sample stream 1VH (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -14122,7 +14201,7 @@
     {
       "id": "10094-247131",
       "page": "✅ Social",
-      "name": "Skai > Social > Live",
+      "name": "Skai > Social > Live > Go live 1VH (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -14136,7 +14215,7 @@
     {
       "id": "10094-250637",
       "page": "✅ Social",
-      "name": "Skai > Social > Live",
+      "name": "Skai > Social > Live > Go live > setup stream 1VH (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -14150,7 +14229,7 @@
     {
       "id": "10102-259223",
       "page": "✅ Social",
-      "name": "Skai > Social > Live",
+      "name": "Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream 1VH (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -14164,7 +14243,7 @@
     {
       "id": "10094-256369",
       "page": "✅ Social",
-      "name": "Skai > Social > Live",
+      "name": "Skai > Social > Live > Go live > setup stream > OBS 1VH (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -14178,7 +14257,7 @@
     {
       "id": "10091-230847",
       "page": "✅ Social",
-      "name": "Skai > Social > Live",
+      "name": "Skai > Social > Live > Stream type modal > Sample stream > Pop out chat 1VH (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -14192,7 +14271,7 @@
     {
       "id": "5000-163464",
       "page": "✅ Social",
-      "name": "Skai > Social > Live",
+      "name": "Skai > Social > Live > Stream type modal > Sample stream (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -14206,7 +14285,7 @@
     {
       "id": "5198-62746",
       "page": "✅ Social",
-      "name": "Skai > Social > Grou",
+      "name": "Skai > Social > Groups - search - empty > Create group 1VH (1440 x 900px)",
       "statuses": [
         "done",
         "partial"
@@ -14220,7 +14299,7 @@
     {
       "id": "11398-85199",
       "page": "✅ Social",
-      "name": "dropdown-group filte",
+      "name": "dropdown-group filter",
       "statuses": [
         "done",
         "partial"
@@ -14290,7 +14369,7 @@
     {
       "id": "9799-16713",
       "page": "✅ Baccarat - Skai originals",
-      "name": "Skai > Play > Casino",
+      "name": "Skai > Play > Casino > Blackjack (1440 x 900px)",
       "statuses": [
         "done",
         "partial"

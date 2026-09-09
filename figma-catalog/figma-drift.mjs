@@ -148,21 +148,38 @@ for (const [section, ids] of bySection) {
   }
 
   const liveIds = new Map((live.nodes || []).map(([id, title]) => [id, title]));
+  /*
+    `nested` — catalogued ids that are NOT top-level children but that a probe
+    (harvest.mjs probe-ingest) found alive under a live top-level frame. They
+    are present, so they are neither ADDED nor REMOVED. A snapshot without the
+    field behaves exactly as before. This is the seam that produced wave 21's
+    97 false REMOVED-WITH-WORK rows: a page-children capture, a registry that
+    reaches below depth 1, and nothing in between to say "still there, deeper".
+  */
+  const nestedIds = new Map((live.nested || []).map(([id, title]) => [id, title]));
+  const present = (id) => liveIds.has(id) || nestedIds.has(id);
 
   const added = [...liveIds.keys()].filter((id) => !ids.has(id));
-  const removed = [...ids].filter((id) => !liveIds.has(id));
+  const removed = [...ids].filter((id) => !present(id));
+  // Compare titles with whitespace folded. macOS screenshot names carry a
+  // narrow no-break space (U+202F) before AM/PM and one harvest route keeps it
+  // while another writes a plain space; 38 of 80 RETITLED rows on 2026-09-09
+  // were that single character. A retitle is a change in words, not in the
+  // width of a space.
+  const fold = (s) => String(s).replace(/\s+/g, " ").trim();
   const retitled = [];
   for (const id of ids) {
     if (!liveIds.has(id)) continue;
     const was = byId.get(id)?.title;
     const now = liveIds.get(id);
-    if (was && now && was !== now) retitled.push({ id, was, now });
+    if (was && now && fold(was) !== fold(now)) retitled.push({ id, was, now });
   }
 
   drift.sections[section] = {
     status: added.length || removed.length || retitled.length ? "drift" : "clean",
     catalogued: ids.size,
     live: liveIds.size,
+    nestedAlive: nestedIds.size,
     added: added.length,
     removed: removed.length,
     retitled: retitled.length,
@@ -255,6 +272,14 @@ for (const [section, ids] of bySection) {
 for (const section of Object.keys(snapshot)) {
   if (bySection.has(section)) continue;
   const n = (snapshot[section].nodes || []).length;
+  // A section with no registry rows AND no live nodes is one whose every frame
+  // was deleted and folded out (missing-play-images, 2026-09-09) — emptied,
+  // not new. Reporting it as NEW-SECTION would ask for a section that has
+  // nothing to hold.
+  if (!n) {
+    drift.sections[section] = { status: "emptied", live: 0 };
+    continue;
+  }
   drift.sections[section] = { status: "new-section", live: n };
   todo.push([
     section, "-", "NEW-SECTION", "-",
@@ -311,7 +336,7 @@ const withWork = counts["REMOVED-WITH-WORK"] || 0;
 if (withWork) {
   console.log(
     `\n  ${withWork} deleted frame(s) had implementing code recorded. ` +
-      `Their implFiles are preserved in figma-drift.json -- read it before ` +
+      `Their implFiles are preserved in ${driftOut} -- read it before ` +
       `deleting anything.`,
   );
 }

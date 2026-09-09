@@ -791,6 +791,9 @@ for (const [scope, label] of [
   ["tombstone", "tombstone (body moved)"],
   ["meta", "meta"],
   ["wip", "wip / no section"],
+  // A page harvest.mjs added that nobody has ruled on yet. Reported here so it
+  // cannot hide; never counted, so it cannot move the headline.
+  ["unscoped", "unscoped — NEW page awaiting a scope ruling"],
 ]) {
   const b = bucket(scope);
   if (!b.length) continue;
@@ -806,7 +809,7 @@ P(`\`furn\` = furniture. \`gen\` = genuine frames (the denominator). \`row\` = g
 P();
 P(`| Page | Scope | Live | furn | gen | row | ${"`done`"} | ${"`part`"} | ${"`n/s`"} | ${"`blk`"} | only | cov |`);
 P(`|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|`);
-const order = { "in-scope": 0, held: 1, excluded: 2, "v1-superseded": 3, tombstone: 4, wip: 5, meta: 6 };
+const order = { "in-scope": 0, unscoped: 1, held: 2, excluded: 3, "v1-superseded": 4, tombstone: 5, wip: 6, meta: 7 };
 for (const r of report.slice().sort((a, b) => (order[a.scope] - order[b.scope]) || b.genuine - a.genuine)) {
   P(
     `| ${r.pageName} | ${r.scope} | ${r.live} | ${r.furniture} | ${r.genuine} | ${r.matched} | ` +

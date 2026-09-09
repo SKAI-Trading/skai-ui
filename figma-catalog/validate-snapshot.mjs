@@ -128,6 +128,13 @@ function registryIds() {
 
 const prior = registryCounts();
 const priorIds = registryIds();
+// Ids a Plugin-API probe certified deleted (harvest.mjs probe-ingest).
+const certifiedGone = (() => {
+  const p = path.join(DIR, "live", "_resolved.json");
+  if (!fs.existsSync(p)) return new Set();
+  const r = JSON.parse(fs.readFileSync(p, "utf8"));
+  return new Set(Object.keys(r.notFound || {}).map((id) => id.replace(":", "-")));
+})();
 const overlaps = [];
 const problems = [];
 const ok = [];
@@ -191,6 +198,13 @@ for (const file of args) {
     // the Plugin API truncates at 20KB — which is why the counting role, not the
     // tool, is what is restricted.
     const LOSSY_FOR_COUNTING = new Set(["get_metadata", "metadata"]);
+    // The Plugin API is the one instrument that enumerates a page completely,
+    // so two reads of it are allowed to agree: they agree because the page has
+    // that many children, not because a lossy tool stopped in the same place
+    // twice. Its residual failure is the 20KB cut on a `use_figma` result, and
+    // that is caught by `nodes.length !== liveChildCount` below — a cut payload
+    // is short, never silently complete. harvest.mjs produces this shape.
+    const PLUGIN_API = new Set(["use_figma", "plugin", "plugin-api", "PageNode.loadAsync"]);
     const countSource = String(v.countSource || "").trim();
     const nodesSource = String(v.nodesSource || "").trim();
 
@@ -205,7 +219,7 @@ for (const file of args) {
       });
       continue;
     }
-    if (countSource === nodesSource) {
+    if (countSource === nodesSource && !PLUGIN_API.has(countSource)) {
       problems.push({
         file,
         section,
@@ -281,21 +295,40 @@ for (const file of args) {
     const known = priorIds?.[section]?.ids;
     const retired = priorIds?.[section]?.excluded || 0;
     if (known && known.size) {
-      const seen = nodes.filter((n) => known.has(String(n[0]).replace(":", "-"))).length;
-      const overlap = seen / known.size;
+      // `nested` — catalogued ids probed alive UNDER a live top-level frame
+      // (harvest.mjs to-snapshot). They are present in Figma, so they count
+      // toward the overlap; without them a page whose registry rows reach
+      // below depth 1 fails this check on arithmetic alone.
+      const nested = Array.isArray(v.nested) ? v.nested : [];
+      const present = new Set([...nodes, ...nested].map((n) => String(n[0]).replace(":", "-")));
+      // An id that getNodeByIdAsync could not find after every page of its
+      // file was loaded (harvest.mjs probe-ingest, live/_resolved.json
+      // `notFound`) is a certified deletion, not a short capture. It leaves
+      // the denominator: a section whose six catalogued frames were all
+      // deleted reads 0% here and would otherwise be refused for being right.
+      const measurable = [...known].filter((id) => !certifiedGone.has(id));
+      const gone = known.size - measurable.length;
+      if (!measurable.length) {
+        overlaps.push({ section, seen: 0, of: known.size, retired, gone });
+        ok.push({ section, n: nodes.length, note: `all ${known.size} registry ids probed GONE — every removal is certified` });
+        continue;
+      }
+      const seen = measurable.filter((id) => present.has(id)).length;
+      const overlap = seen / measurable.length;
       if (overlap < 0.5) {
         problems.push({
           file,
           section,
           why:
-            `DEPTH MISMATCH: only ${seen} of ${known.size} registry ids (${(overlap * 100).toFixed(0)}%) ` +
-            `appear in this capture. Drift retires ids; it does not omit most of them. ` +
+            `DEPTH MISMATCH: only ${seen} of ${measurable.length} registry ids (${(overlap * 100).toFixed(0)}%) ` +
+            `appear in this capture${gone ? ` (${gone} more are certified gone and not counted)` : ""}. ` +
+            `Drift retires ids; it does not omit most of them. ` +
             `This reads as page-children captured against a full-subtree registry — ` +
-            `reporting it would claim ${known.size - seen} false deletions.`,
+            `reporting it would claim ${measurable.length - seen} false deletions.`,
         });
         continue;
       }
-      overlaps.push({ section, seen, of: known.size, retired });
+      overlaps.push({ section, seen, of: measurable.length, retired, gone });
     }
 
     // Plausibility against the registry COUNT. Not a failure — the whole point

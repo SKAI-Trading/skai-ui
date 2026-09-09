@@ -849,3 +849,12 @@ M6r9FEn042UWTQD1zvy6GM:9669-2966	-	gone	0	0	-
 9079-2977		gone	towers: absent from the page's children AND from its 2,011-node subtree on 2026-09-06; the other 48 of this set were already recorded
 9391-18698		gone	towers: absent from the page's children AND from its 2,011-node subtree on 2026-09-06; the other 48 of this set were already recorded
 9391-19091		gone	towers: absent from the page's children AND from its 2,011-node subtree on 2026-09-06; the other 48 of this set were already recorded
+# 2026-09-09: the 6 remaining missing-play-images frames no longer resolve. Every page of Skai-Games was loaded
+# and getNodeByIdAsync returned null for each (harvest.mjs probe-ingest, live/_resolved.json notFound). Recorded
+# gone so figma-drift.mjs stops listing them and the status rows keep their history.
+9222-26208	-	gone	0	0	-
+9222-26323	-	gone	0	0	-
+9393-514	-	gone	0	0	-
+9393-519	-	gone	0	0	-
+9479-19858	-	gone	0	0	-
+9479-19863	-	gone	0	0	-
