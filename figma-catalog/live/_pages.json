@@ -211,8 +211,9 @@
       "readiness": "ready",
       "n": 151,
       "openReports": 5,
-      "scope": "excluded",
-      "harvestedAt": "2026-09-09"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
+      "note": "In scope from 2026-09-09 (Casey, wave 39 go: the standing exclusion is lifted so Onboarding and Authentication counts and gets built)."
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -292,7 +293,8 @@
       "readiness": "ready",
       "n": 725,
       "openReports": 8,
-      "scope": "held"
+      "scope": "in-scope",
+      "note": "In scope from 2026-09-09 (Casey, wave 39 go: the Figma design is the system; the held ruling is lifted so Governance and Utilities counts and gets built)."
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",

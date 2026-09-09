@@ -1,12 +1,12 @@
 {
-  "generated": "2026-09-09T12:28:22.507Z",
+  "generated": "2026-09-09T20:40:39.904Z",
   "harvestedAt": "2026-09-09",
   "rollup": {
-    "pages": 32,
-    "live": 3336,
-    "furniture": 538,
-    "genuine": 2798,
-    "matched": 2225,
+    "pages": 34,
+    "live": 4212,
+    "furniture": 628,
+    "genuine": 3584,
+    "matched": 2398,
     "done": 560,
     "verified": 151,
     "visuallyDowngraded": 98,
@@ -14,15 +14,15 @@
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 1221,
-    "notStarted": 190,
-    "blocked": 74,
+    "partial": 1330,
+    "notStarted": 240,
+    "blocked": 86,
     "frameDefect": 94,
     "catalogFurniture": 42,
-    "unknown": 33,
-    "liveOnly": 573,
-    "rollupOnly": 0,
-    "defaultNamed": 167,
+    "unknown": 35,
+    "liveOnly": 1186,
+    "rollupOnly": 9,
+    "defaultNamed": 213,
     "ambiguous": 24,
     "conflicts": 14
   },
@@ -2719,8 +2719,9 @@
       "readiness": "ready",
       "n": 151,
       "openReports": 5,
-      "scope": "excluded",
+      "scope": "in-scope",
       "harvestedAt": "2026-09-09",
+      "note": "In scope from 2026-09-09 (Casey, wave 39 go: the standing exclusion is lifted so Onboarding and Authentication counts and gets built).",
       "live": 151,
       "furniture": 24,
       "furnitureWhy": {
@@ -4506,7 +4507,8 @@
       "readiness": "ready",
       "n": 725,
       "openReports": 8,
-      "scope": "held",
+      "scope": "in-scope",
+      "note": "In scope from 2026-09-09 (Casey, wave 39 go: the Figma design is the system; the held ruling is lifted so Governance and Utilities counts and gets built).",
       "live": 725,
       "furniture": 66,
       "furnitureWhy": {
@@ -22141,7 +22143,7 @@
     {
       "id": "5220-10996",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22149,7 +22151,7 @@
     {
       "id": "5393-86875",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22157,7 +22159,7 @@
     {
       "id": "5570-102478",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22165,7 +22167,7 @@
     {
       "id": "5492-53877",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22173,7 +22175,7 @@
     {
       "id": "11364-149679",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22181,7 +22183,7 @@
     {
       "id": "5515-92313",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22189,7 +22191,7 @@
     {
       "id": "5515-95455",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22197,7 +22199,7 @@
     {
       "id": "5515-96095",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22205,7 +22207,7 @@
     {
       "id": "5515-93883",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22213,7 +22215,7 @@
     {
       "id": "5481-50934",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22221,7 +22223,7 @@
     {
       "id": "11206-98479",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22229,7 +22231,7 @@
     {
       "id": "5531-76408",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22237,7 +22239,7 @@
     {
       "id": "5531-77640",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22245,7 +22247,7 @@
     {
       "id": "5534-92868",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22253,7 +22255,7 @@
     {
       "id": "11303-133324",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22261,7 +22263,7 @@
     {
       "id": "11307-134317",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22269,7 +22271,7 @@
     {
       "id": "5373-68430",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22277,7 +22279,7 @@
     {
       "id": "5243-69438",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22285,7 +22287,7 @@
     {
       "id": "10517-38187",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22293,7 +22295,7 @@
     {
       "id": "5243-73398",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22301,7 +22303,7 @@
     {
       "id": "10838-362076",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22309,7 +22311,7 @@
     {
       "id": "11405-100106",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22317,7 +22319,7 @@
     {
       "id": "11405-103640",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22325,7 +22327,7 @@
     {
       "id": "11405-105088",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22333,7 +22335,7 @@
     {
       "id": "11405-100880",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22341,7 +22343,7 @@
     {
       "id": "11405-101828",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22349,7 +22351,7 @@
     {
       "id": "11405-102823",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22357,7 +22359,7 @@
     {
       "id": "5259-80297",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22365,7 +22367,7 @@
     {
       "id": "5248-76804",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22373,7 +22375,7 @@
     {
       "id": "10841-138986",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22381,7 +22383,7 @@
     {
       "id": "11135-77182",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22389,7 +22391,7 @@
     {
       "id": "10852-361479",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22397,7 +22399,7 @@
     {
       "id": "5280-87638",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22405,7 +22407,7 @@
     {
       "id": "11193-90739",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22413,7 +22415,7 @@
     {
       "id": "5315-92101",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22421,7 +22423,7 @@
     {
       "id": "5370-46761",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22429,7 +22431,7 @@
     {
       "id": "5370-47867",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22437,7 +22439,7 @@
     {
       "id": "5370-59619",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22445,7 +22447,7 @@
     {
       "id": "5280-82910",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22453,7 +22455,7 @@
     {
       "id": "11151-18953",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22461,7 +22463,7 @@
     {
       "id": "5280-86949",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22469,7 +22471,7 @@
     {
       "id": "11151-80178",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22477,7 +22479,7 @@
     {
       "id": "5278-80860",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22485,7 +22487,7 @@
     {
       "id": "5243-74665",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22493,7 +22495,7 @@
     {
       "id": "5243-76144",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22501,7 +22503,7 @@
     {
       "id": "11128-107161",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22509,7 +22511,7 @@
     {
       "id": "5258-78625",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22517,7 +22519,7 @@
     {
       "id": "11134-109360",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22525,7 +22527,7 @@
     {
       "id": "5523-103993",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22533,7 +22535,7 @@
     {
       "id": "5529-49244",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22541,7 +22543,7 @@
     {
       "id": "11198-91923",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22549,7 +22551,7 @@
     {
       "id": "11259-40697",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "unknown",
       "claimed": "unknown",
       "verdict": null
@@ -22557,7 +22559,7 @@
     {
       "id": "11260-123547",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "unknown",
       "claimed": "unknown",
       "verdict": null
@@ -22565,7 +22567,7 @@
     {
       "id": "11271-125083",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22573,7 +22575,7 @@
     {
       "id": "11301-127843",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22581,7 +22583,7 @@
     {
       "id": "11302-128586",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22589,7 +22591,7 @@
     {
       "id": "11302-129708",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22597,7 +22599,7 @@
     {
       "id": "11986-226555",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22605,7 +22607,7 @@
     {
       "id": "11667-312902",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22613,7 +22615,7 @@
     {
       "id": "11704-318672",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22621,7 +22623,7 @@
     {
       "id": "11672-313668",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22629,7 +22631,7 @@
     {
       "id": "11705-319211",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22637,7 +22639,7 @@
     {
       "id": "11705-320003",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22645,7 +22647,7 @@
     {
       "id": "11705-321084",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22653,7 +22655,7 @@
     {
       "id": "11704-318227",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22661,7 +22663,7 @@
     {
       "id": "11664-306263",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22669,7 +22671,7 @@
     {
       "id": "11706-321921",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22677,7 +22679,7 @@
     {
       "id": "11707-322803",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22685,7 +22687,7 @@
     {
       "id": "11707-323740",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22693,7 +22695,7 @@
     {
       "id": "11707-324180",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22701,7 +22703,7 @@
     {
       "id": "11708-324886",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22709,7 +22711,7 @@
     {
       "id": "11708-325099",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22717,7 +22719,7 @@
     {
       "id": "11707-323144",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22725,7 +22727,7 @@
     {
       "id": "11998-329996",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22733,7 +22735,7 @@
     {
       "id": "11998-346238",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22741,7 +22743,7 @@
     {
       "id": "11667-310237",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22749,7 +22751,7 @@
     {
       "id": "11667-310501",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22757,7 +22759,7 @@
     {
       "id": "11972-149758",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22765,7 +22767,7 @@
     {
       "id": "11980-177310",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22773,7 +22775,7 @@
     {
       "id": "11973-153636",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22781,7 +22783,7 @@
     {
       "id": "11978-168335",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22789,7 +22791,7 @@
     {
       "id": "11978-169460",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22797,7 +22799,7 @@
     {
       "id": "11978-170038",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22805,7 +22807,7 @@
     {
       "id": "11978-168824",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22813,7 +22815,7 @@
     {
       "id": "11978-171157",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22821,7 +22823,7 @@
     {
       "id": "11980-173965",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22829,7 +22831,7 @@
     {
       "id": "11980-175816",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22837,7 +22839,7 @@
     {
       "id": "11983-179665",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22845,7 +22847,7 @@
     {
       "id": "12261-474854",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22853,7 +22855,7 @@
     {
       "id": "11983-180657",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22861,7 +22863,7 @@
     {
       "id": "11983-181349",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22869,7 +22871,7 @@
     {
       "id": "11983-182085",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22877,7 +22879,7 @@
     {
       "id": "12136-433829",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22885,7 +22887,7 @@
     {
       "id": "11980-173398",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -22893,7 +22895,7 @@
     {
       "id": "11980-172605",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22901,7 +22903,7 @@
     {
       "id": "11973-154184",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -22909,7 +22911,7 @@
     {
       "id": "11973-155655",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22917,7 +22919,7 @@
     {
       "id": "11973-160234",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22925,7 +22927,7 @@
     {
       "id": "11974-165410",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22933,7 +22935,7 @@
     {
       "id": "11973-158164",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22941,7 +22943,7 @@
     {
       "id": "11973-158665",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22949,7 +22951,7 @@
     {
       "id": "11973-159235",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22957,7 +22959,7 @@
     {
       "id": "11973-159567",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22965,7 +22967,7 @@
     {
       "id": "11973-161769",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22973,7 +22975,7 @@
     {
       "id": "11973-161912",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22981,7 +22983,7 @@
     {
       "id": "11972-152545",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22989,7 +22991,7 @@
     {
       "id": "11972-153216",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -22997,7 +22999,7 @@
     {
       "id": "11972-150945",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23005,7 +23007,7 @@
     {
       "id": "11972-151493",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23013,7 +23015,7 @@
     {
       "id": "12003-382685",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23021,7 +23023,7 @@
     {
       "id": "12136-432663",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23029,7 +23031,7 @@
     {
       "id": "12003-384627",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23037,7 +23039,7 @@
     {
       "id": "12003-386268",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23045,7 +23047,7 @@
     {
       "id": "12003-386958",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23053,7 +23055,7 @@
     {
       "id": "12003-387432",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23061,7 +23063,7 @@
     {
       "id": "12004-388816",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23069,7 +23071,7 @@
     {
       "id": "12016-75585",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23077,7 +23079,7 @@
     {
       "id": "12004-390587",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23085,7 +23087,7 @@
     {
       "id": "12004-392671",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -23093,7 +23095,7 @@
     {
       "id": "12004-393178",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23101,7 +23103,7 @@
     {
       "id": "12004-394869",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23109,7 +23111,7 @@
     {
       "id": "12004-393542",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
@@ -23117,7 +23119,7 @@
     {
       "id": "12004-408480",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23125,7 +23127,7 @@
     {
       "id": "12261-475335",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23133,7 +23135,7 @@
     {
       "id": "12004-409355",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23141,7 +23143,7 @@
     {
       "id": "12004-410871",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23149,7 +23151,7 @@
     {
       "id": "12004-410317",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23157,7 +23159,7 @@
     {
       "id": "12009-412243",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23165,7 +23167,7 @@
     {
       "id": "12004-389667",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23173,7 +23175,7 @@
     {
       "id": "12003-387906",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23181,7 +23183,7 @@
     {
       "id": "12003-385486",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23189,7 +23191,7 @@
     {
       "id": "12004-397714",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23197,7 +23199,7 @@
     {
       "id": "12004-402326",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23205,7 +23207,7 @@
     {
       "id": "12004-406527",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23213,7 +23215,7 @@
     {
       "id": "12004-405136",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23221,7 +23223,7 @@
     {
       "id": "12004-398296",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23229,7 +23231,7 @@
     {
       "id": "12004-399859",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23237,7 +23239,7 @@
     {
       "id": "12004-396180",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23245,7 +23247,7 @@
     {
       "id": "12004-396474",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23253,7 +23255,7 @@
     {
       "id": "12004-396713",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23261,7 +23263,7 @@
     {
       "id": "12004-396856",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23269,7 +23271,7 @@
     {
       "id": "12003-383790",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23277,7 +23279,7 @@
     {
       "id": "12003-384268",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23285,7 +23287,7 @@
     {
       "id": "12003-383100",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23293,7 +23295,7 @@
     {
       "id": "11907-138358",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23301,7 +23303,7 @@
     {
       "id": "11881-89414",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23309,7 +23311,7 @@
     {
       "id": "12080-415107",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23317,7 +23319,7 @@
     {
       "id": "12080-415727",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23325,7 +23327,7 @@
     {
       "id": "12080-415417",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23333,7 +23335,7 @@
     {
       "id": "11881-93654",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23341,7 +23343,7 @@
     {
       "id": "11843-353663",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23349,7 +23351,7 @@
     {
       "id": "12080-414162",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23357,7 +23359,7 @@
     {
       "id": "12080-414792",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23365,7 +23367,7 @@
     {
       "id": "12080-414477",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23373,7 +23375,7 @@
     {
       "id": "11846-354965",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23381,7 +23383,7 @@
     {
       "id": "11847-357151",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23389,7 +23391,7 @@
     {
       "id": "12082-425650",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23397,7 +23399,7 @@
     {
       "id": "11872-41908",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23405,7 +23407,7 @@
     {
       "id": "11872-42520",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23413,7 +23415,7 @@
     {
       "id": "11872-43820",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23421,7 +23423,7 @@
     {
       "id": "11884-96408",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23429,7 +23431,7 @@
     {
       "id": "11946-148523",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23437,7 +23439,7 @@
     {
       "id": "12082-426150",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23445,7 +23447,7 @@
     {
       "id": "12082-426533",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23453,7 +23455,7 @@
     {
       "id": "12225-461211",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23461,7 +23463,7 @@
     {
       "id": "12225-462288",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23469,7 +23471,7 @@
     {
       "id": "12225-462758",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23477,7 +23479,7 @@
     {
       "id": "11885-98503",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23485,7 +23487,7 @@
     {
       "id": "11885-99426",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23493,7 +23495,7 @@
     {
       "id": "11885-100111",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23501,7 +23503,7 @@
     {
       "id": "11885-98886",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
@@ -23509,7 +23511,7 @@
     {
       "id": "12261-469767",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
@@ -23517,7 +23519,7 @@
     {
       "id": "12261-470424",
       "page": "✅ Governance and Utilities",
-      "scope": "held",
+      "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
       "verdict": null
