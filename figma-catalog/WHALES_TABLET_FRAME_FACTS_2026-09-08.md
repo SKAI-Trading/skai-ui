@@ -11,15 +11,28 @@ or the desktop board.
 tier against **`9917:115712` / `9917:115714` / `9917:115723`** and
 **`9934:147643` / `:147649`**.
 
-**None of those node ids exist in `mhF3BkzlTaGiLzJ7kvpmVc`.** `get_metadata` on
-`9917:115723` returns *"The provided node ID was not found in the file"* — they
-are on the superseded board, in another file. The Home 2 page draws a different
-tablet entirely, and reports 5e35db62 / e9ddc081 / d9b65dd8 (2026-09-09) are all
-the same finding: the app was built to the older cut.
+**None of those node ids exist in ANY tracked file.** `get_metadata` returns
+*"The provided node ID was not found in the file"* for `9917:115714`,
+`9917:115723` and `9934:147643` against `mhF3BkzlTaGiLzJ7kvpmVc`,
+`3sSzw1KewMtUbeLAv7uW0r` **and** `M6r9FEn042UWTQD1zvy6GM`. The sibling-file check
+is not optional — `_pages.SCOPE-WARNING.md` records that ids were copied
+`3sSzw`→`mhF3`, so a node missing from the file a comment names is often alive in
+the other one, and calling it deleted on one lookup is a known wrong answer. Here
+it survives all three. The Home 2 page draws a different tablet entirely, and
+reports 5e35db62 / e9ddc081 / d9b65dd8 (2026-09-09) are the same finding: the app
+was built to a cut nobody can now produce.
 
 ★ **A node id in a code comment is not proof the node is on the page you are
 building to.** Resolve it before you trust it: a missing id fails loudly, but a
 *wrong-file* id that happens to resolve fails silently.
+
+⚠️ **This file makes NO claim about `v1-superseded` meaning "retired".** It cites
+Home 2 only because Home 2 is where the whales tablet frames are — Home 1 has
+none. Commit `d76adff` retracted the "v1-superseded is not a parity target"
+reading, and independently re-measured here: Home 1 (`2003:674`) and Home 2
+(`13008:110718`) share **zero** top-level ids, and Home 2 holds **zero** frames
+matching `deposit|quick balance|wallet mini|buy with fiat|send crypto` against
+Home 1's 29. The two pages are different frame sets, not two versions of one.
 
 ## The bento stacks. There is no "Wallets | X accounts" tab pair at 768.
 
