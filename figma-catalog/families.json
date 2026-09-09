@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T10:39:43.458Z",
+  "generated": "2026-09-09T11:59:34.389Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -12705,6 +12705,179 @@
         "modules/skai-gaming/src/pages"
       ],
       "proposedStatus": "likely-done"
+    },
+    "safari-slots/Casino > Safari slots": {
+      "section": "safari-slots",
+      "family": "Casino > Safari slots",
+      "frameCount": 5,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10272-3834",
+        "M6r9FEn042UWTQD1zvy6GM:10272-4179",
+        "M6r9FEn042UWTQD1zvy6GM:10359-10003",
+        "M6r9FEn042UWTQD1zvy6GM:10272-4933",
+        "M6r9FEn042UWTQD1zvy6GM:10354-4269"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "screen type 2"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "safari-slots/Casino > Vegas fortune > Load screen": {
+      "section": "safari-slots",
+      "family": "Casino > Vegas fortune > Load screen",
+      "frameCount": 1,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10359-11133"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "screen type 2"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "safari-slots/Casino > Safari slots 2": {
+      "section": "safari-slots",
+      "family": "Casino > Safari slots 2",
+      "frameCount": 1,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10359-8316"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "cosmic-slots/Casino > Cosmic slots": {
+      "section": "cosmic-slots",
+      "family": "Casino > Cosmic slots",
+      "frameCount": 4,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10359-13264",
+        "M6r9FEn042UWTQD1zvy6GM:10359-13505",
+        "M6r9FEn042UWTQD1zvy6GM:10359-14155",
+        "M6r9FEn042UWTQD1zvy6GM:10406-11916"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "cosmic-slots/Casino > Cosmic slots 2": {
+      "section": "cosmic-slots",
+      "family": "Casino > Cosmic slots 2",
+      "frameCount": 1,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10406-12386"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "vegas-fortune/Casino > Vegas fortune": {
+      "section": "vegas-fortune",
+      "family": "Casino > Vegas fortune",
+      "frameCount": 5,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10412-15861",
+        "M6r9FEn042UWTQD1zvy6GM:10412-16102",
+        "M6r9FEn042UWTQD1zvy6GM:10412-16752",
+        "M6r9FEn042UWTQD1zvy6GM:10688-7471",
+        "M6r9FEn042UWTQD1zvy6GM:10738-15210"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [
+        "screen type 2"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "vegas-fortune/Casino > Vegas fortune > Load screen": {
+      "section": "vegas-fortune",
+      "family": "Casino > Vegas fortune > Load screen",
+      "frameCount": 1,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10688-8328"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "screen type 2"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "vegas-fortune/Casino > Vegas fortune 2": {
+      "section": "vegas-fortune",
+      "family": "Casino > Vegas fortune 2",
+      "frameCount": 1,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10738-15461"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "gem-slots/Casino > Gem slots": {
+      "section": "gem-slots",
+      "family": "Casino > Gem slots",
+      "frameCount": 3,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10285-14037",
+        "M6r9FEn042UWTQD1zvy6GM:10285-14278",
+        "M6r9FEn042UWTQD1zvy6GM:10285-14928"
+      ],
+      "devices": [
+        "tablet",
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     }
   }
 }

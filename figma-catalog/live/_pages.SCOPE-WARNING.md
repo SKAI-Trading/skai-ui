@@ -89,12 +89,27 @@ file, and a memory note was written telling still more lanes to close on it.
 
 ---
 
+## ✅ LANDED 2026-09-09 — the label is corrected in the artefact
+
+`2003:674`, `2998:19593` and `3:3` under `mhF3BkzlTaGiLzJ7kvpmVc` now read
+`scope: "in-scope"` in `_pages.json`, each carrying the ruling in its `note`.
+Casey's direction on 2026-09-09: *the Figma design is exactly how we want to
+have our system*, with a handful of explicit rulings on top (MoonPay-only
+on-ramp, Governance `held`, Onboarding `excluded`). The 33 reports closed on
+the old label were reopened on 2026-09-08. `v1-superseded` remains in the
+vocabulary of `coverage.mjs` and `emit-parity-json.mjs` so an old feed still
+parses, but no page carries it.
+
+The correction changes the denominator: those three pages add their genuine
+frames to the in-scope roll-up, so the headline parity figure DROPS. That is
+the honest direction.
+
 ## Still owed
 
-- Casey to rule on the correct `scope` for `2003:674`, `2998:19593` and `3:3`
-  under fileKey `mhF3BkzlTaGiLzJ7kvpmVc`.
-- Re-open every bug report closed citing *v1-superseded*, *retired spec* or
-  *no v2 replacement*.
+- ~~Casey to rule on the correct `scope` for `2003:674`, `2998:19593` and `3:3`
+  under fileKey `mhF3BkzlTaGiLzJ7kvpmVc`.~~ **Done 2026-09-09, above.**
+- ~~Re-open every bug report closed citing *v1-superseded*, *retired spec* or
+  *no v2 replacement*.~~ **Done 2026-09-08 — 33 reopened.**
 - ~~A 4th file, `qCg6vd2Kd4KCgZgYzVsFWD` ("Skai-Web-App-2-QA-Sheet") … rows
   citing it are unresolvable by every instrument available.~~ **RESOLVED
   2026-09-08 — the rows are resolvable and all six are in-scope.** The access

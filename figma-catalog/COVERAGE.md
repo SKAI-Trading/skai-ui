@@ -7,54 +7,53 @@ Live half harvested 2026-09-09 (harvest.mjs: one use_figma call per chunk (see `
 
 | | |
 |---|---:|
-| In-scope pages | 29 |
-| Live top-level nodes | 2461 |
-| — furniture (excluded from the denominator) | 433 (17.6%) |
-| **Genuine frames — the denominator** | **2028** |
-| Genuine frames with a catalog row (matched by node id) | 1920 (94.7%) |
+| In-scope pages | 32 |
+| Live top-level nodes | 3336 |
+| — furniture (excluded from the denominator) | 538 (16.1%) |
+| **Genuine frames — the denominator** | **2798** |
+| Genuine frames with a catalog row (matched by node id) | 2225 (79.5%) |
 | — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 0 (0.0% of matched) |
-| Genuine frames with NO row — live-only drift | 108 (5.3%) |
+| Genuine frames with NO row — live-only drift | 573 (20.5%) |
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 455 | 22.4% |
-| `partial` | 1085 | 53.5% |
-| `not-started` | 129 | 6.4% |
-| `blocked-on-backend` | 77 | 3.8% |
-| `frame-defect` | 97 | 4.8% |
-| `furniture` (catalog says furniture, this script says genuine) | 42 | 2.1% |
-| `unknown` | 24 | 1.2% |
+| `done` | 601 | 21.5% |
+| `partial` | 1231 | 44.0% |
+| `not-started` | 129 | 4.6% |
+| `blocked-on-backend` | 80 | 2.9% |
+| `frame-defect` | 98 | 3.5% |
+| `furniture` (catalog says furniture, this script says genuine) | 42 | 1.5% |
+| `unknown` | 33 | 1.2% |
 
-### Why 433 nodes were excluded — the whole rule, so it can be argued with
+### Why 538 nodes were excluded — the whole rule, so it can be argued with
 
 | reason | nodes |
 |---|---:|
-| named canvas chrome — `Directory`, `Breakpoint`, `Scroll bar`, `Notes`, `Screenshot …` | 378 |
-| a loose RECTANGLE — pasted screenshots and colour swatches | 22 |
-| a library component instance dropped on the canvas (`CTA/button`, `logos/others`) | 11 |
+| named canvas chrome — `Directory`, `Breakpoint`, `Scroll bar`, `Notes`, `Screenshot …` | 469 |
+| a loose RECTANGLE — pasted screenshots and colour swatches | 25 |
+| a library component instance dropped on the canvas (`CTA/button`, `logos/others`) | 18 |
+| `visible === false` — hidden nodes are not spec | 10 |
 | a loose TEXT annotation at page level | 10 |
-| `visible === false` — hidden nodes are not spec | 7 |
+| a loose VECTOR | 3 |
 | a loose ELLIPSE | 3 |
-| a loose VECTOR | 2 |
 
-That is 17.6% of in-scope live nodes, inside the 14–25% band SCHEMA.md predicted. Nothing is excluded on a guess about intent: default-named `Frame N` / `Group N` nodes count as GENUINE (see caveat 8), because `Group 316` on Price Grid is 1410x900.
+That is 16.1% of in-scope live nodes, inside the 14–25% band SCHEMA.md predicted. Nothing is excluded on a guess about intent: default-named `Frame N` / `Group N` nodes count as GENUINE (see caveat 8), because `Group 316` on Price Grid is 1410x900.
 
 ### The headline number
 
-**455 of 2028 in-scope genuine frames (22.4%) are covered by a row marked `done`.**
+**601 of 2798 in-scope genuine frames (21.5%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 22.4% measured parity.
+Read the caveat section before quoting that. It is not 21.5% measured parity.
 
 ## Out of the roll-up
 
 | Bucket | Pages | Live | Furniture | Genuine | Matched | `done` | Live-only |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | held (Governance — Casey) | 1 | 725 | 66 | 659 | 173 | 0 | 486 |
-| standing exclusion (Onboarding) | 1 | 151 | 24 | 127 | 0 | 0 | 127 |
-| v1, superseded by v2 | 3 | 875 | 105 | 770 | 305 | 146 | 465 |
+| standing exclusion (Onboarding) | 2 | 202 | 66 | 136 | 0 | 0 | 136 |
 | tombstone (body moved) | 3 | 187 | 70 | 117 | 24 | 1 | 93 |
 | meta | 6 | 52 | 1 | 51 | 0 | 0 | 51 |
-| wip / no section | 8 | 1444 | 1308 | 136 | 0 | 0 | 136 |
+| wip / no section | 7 | 1393 | 1266 | 127 | 0 | 0 | 127 |
 
 ## Per page
 
@@ -64,9 +63,12 @@ Read the caveat section before quoting that. It is not 22.4% measured parity.
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | ✅ Social | in-scope | 442 | 40 | 402 | 402 | 60 | 252 | 40 | 32 | 0 | 100.0% |
 | ✅ Trade 2 | in-scope | 417 | 40 | 377 | 375 | 88 | 233 | 28 | 2 | 2 | 99.5% |
+| ✅ Trade 1 | in-scope | 420 | 53 | 367 | 172 | 40 | 127 | 0 | 3 | 195 | 46.9% |
 | ✅ Play | in-scope | 345 | 76 | 269 | 269 | 47 | 146 | 49 | 1 | 0 | 100.0% |
 | ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 30 | 176 | 0 | 24 | 0 | 100.0% |
+| ✅ Home 1 | in-scope | 277 | 41 | 236 | 85 | 58 | 19 | 0 | 0 | 151 | 36.0% |
 | ✅ Home 2 | in-scope | 240 | 36 | 204 | 143 | 48 | 79 | 10 | 5 | 61 | 70.1% |
+| ✅ Wallet 1 | in-scope | 178 | 11 | 167 | 48 | 48 | 0 | 0 | 0 | 119 | 28.7% |
 | ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 126 | 28 | 0 | 0 | 0 | 100.0% |
 | 🌎 Cover Images - Skai Originals | in-scope | 44 | 2 | 42 | 0 | 0 | 0 | 0 | 0 | 42 | 0.0% |
 | ✅ Coinflip - Skai originals | in-scope | 46 | 11 | 35 | 34 | 4 | 23 | 0 | 0 | 1 | 97.1% |
@@ -93,9 +95,7 @@ Read the caveat section before quoting that. It is not 22.4% measured parity.
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 6 | 0 | 0 | 0 | 0 | 100.0% |
 | ✅ Governance and Utilities | held | 725 | 66 | 659 | 173 | 0 | 109 | 50 | 12 | 486 | 26.3% |
 | ✅ Onboarding and Authentication | excluded | 151 | 24 | 127 | 0 | 0 | 0 | 0 | 0 | 127 | 0.0% |
-| ✅ Trade 1 | v1-superseded | 420 | 53 | 367 | 172 | 40 | 127 | 0 | 3 | 195 | 46.9% |
-| ✅ Home 1 | v1-superseded | 277 | 41 | 236 | 85 | 58 | 19 | 0 | 0 | 151 | 36.0% |
-| ✅ Wallet 1 | v1-superseded | 178 | 11 | 167 | 48 | 48 | 0 | 0 | 0 | 119 | 28.7% |
+| Towars Draft (Disregard) | excluded | 51 | 42 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0.0% |
 | ✝️ Trade (moved to "Skai Web App 2") | tombstone | 154 | 37 | 117 | 24 | 1 | 23 | 0 | 0 | 93 | 20.5% |
 | ✝️ Home (moved to "Skai Web App 2") | tombstone | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | ✝️ Wallet (moved to "Skai Web App 2") | tombstone | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
@@ -103,7 +103,6 @@ Read the caveat section before quoting that. It is not 22.4% measured parity.
 | 🚧 Safari Slots - Skai originals | wip | 61 | 25 | 36 | 0 | 0 | 0 | 0 | 0 | 36 | 0.0% |
 | 🚧 Cosmic Slots - Skai originals | wip | 50 | 17 | 33 | 0 | 0 | 0 | 0 | 0 | 33 | 0.0% |
 | 🚧 Gem Slots - Skai originals | wip | 36 | 22 | 14 | 0 | 0 | 0 | 0 | 0 | 14 | 0.0% |
-| Towars Draft (Disregard) | wip | 51 | 42 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0.0% |
 | 🚧 User Flow | wip | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0.0% |
 | 🚧 Titles + Emblems | wip | 1157 | 1156 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0.0% |
 | 🚧 Wild card - Skai originals | wip | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0.0% |
@@ -609,7 +608,7 @@ Ranked by count. These are the unassessed frames.
 12166-456540	200x42	dropdown-multiselect
 ```
 
-### ✅ Trade 1 — 195 live-only of 367 genuine  _(v1-superseded)_
+### ✅ Trade 1 — 195 live-only of 367 genuine  _(in-scope)_
 
 ```
 8558-139280	768x1024	Skai > Trade > Spot 1VH (1440 x 900px)
@@ -809,7 +808,7 @@ Ranked by count. These are the unassessed frames.
 10706-129546	1047x450	Frame 1357
 ```
 
-### ✅ Home 1 — 151 live-only of 236 genuine  _(v1-superseded)_
+### ✅ Home 1 — 151 live-only of 236 genuine  _(in-scope)_
 
 ```
 5778-45523	126x109	profile image
@@ -1097,7 +1096,7 @@ Ranked by count. These are the unassessed frames.
 11225-185493	375x812	Skai > Temporary landing > Login > Verification > Choose wallet 1VH > Link wallet > Reserve name > Congratulations - slide 2 1VH (375 x 812px)
 ```
 
-### ✅ Wallet 1 — 119 live-only of 167 genuine  _(v1-superseded)_
+### ✅ Wallet 1 — 119 live-only of 167 genuine  _(in-scope)_
 
 ```
 7683-7930	768x1024	Skai > Wallet > continue on web > unlock > Forgot password 1VH (768 x 1024px)
@@ -1624,7 +1623,7 @@ Ranked by count. These are the unassessed frames.
 11142-2604	1318x621	Load screen > features > home - desktop
 ```
 
-### Towars Draft (Disregard) — 9 live-only of 9 genuine  _(wip)_
+### Towars Draft (Disregard) — 9 live-only of 9 genuine  _(excluded)_
 
 ```
 10120-10114	2304x1856	hf_20260802_165842_f42a9cf4-60cf-420b-8bce-8e64f2274a83 1
@@ -1720,7 +1719,7 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift D — one frame, two lanes, two different verdicts
 
-**14 of the 1920 in-scope matched frames (0.7%) are named by two or more rows that DISAGREE on status** — 14 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
+**14 of the 2225 in-scope matched frames (0.6%) are named by two or more rows that DISAGREE on status** — 14 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
 
 | the disagreement | frames |
 |---|---:|
@@ -1827,9 +1826,9 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 **6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 17456 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 285 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
-**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **0 of the 1920 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 24/24, ✅ Trade 1 24/172 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
+**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **24 of the 2225 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 24/24, ✅ Trade 1 24/172 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
-**8. 121 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
+**8. 167 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
 
 **9. The live half is a snapshot.** `pages.json.liveChildren` was stale on 13 pages when this ran — Home 2 recorded 129 against a measured 168, Governance 260 against 331, Home 1 227 against 254. Re-harvest before quoting these numbers in a new week.
 

@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-09T10:39:46.247Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-09T11:59:36.804Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -45,11 +45,15 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | pwa | ✅ | 5 | 5 | 0 | 2 | 5 | 0 | 0 | 0 | 5 |
 | price-grid | ✅ | 20 | 5 | 15 | 1 | 0 | 5 | 0 | 0 | 5 |
 | legal | ✅ | 10 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 6 |
+| safari-slots | 🚧 | 61 | 7 | 54 | 3 | 0 | 0 | 0 | 7 | 0 |
+| vegas-fortune | 🚧 | 85 | 7 | 78 | 3 | 0 | 0 | 0 | 7 | 0 |
+| cosmic-slots | 🚧 | 50 | 5 | 45 | 2 | 0 | 0 | 0 | 5 | 0 |
 | user-flow | 🚧 | 3 | 3 | 0 | 2 | 0 | 0 | 0 | 3 | 0 |
+| gem-slots | 🚧 | 36 | 3 | 33 | 1 | 0 | 0 | 0 | 3 | 0 |
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4281** | **2196** | | | **570** | **1251** | **268** | **107** | **1038** |
+| **all** | | **4513** | **2218** | | | **570** | **1251** | **268** | **129** | **1038** |
 
 ### Drift against live Figma
 
@@ -60,19 +64,6 @@ Frames that exist in Figma but are not in the catalog:
 | ✅ Home 1 | 279 | 277 | -2 |
 | ✅ Home 2 | 242 | 240 | -2 |
 | ✅ Towers - Skai originals | 31 | 30 | -1 |
-
-### Pages with no section
-
-Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
-
-| Page | Top-level nodes |
-|------|----------------:|
-| Towars Draft (Disregard) | 51 |
-| 🚧 Safari Slots - Skai originals | 61 |
-| 🚧 Cosmic Slots - Skai originals | 50 |
-| 🚧 Vegas fortune - Skai originals | 85 |
-| 🚧 Gem Slots - Skai originals | 36 |
-| 🚧 Wild card - Skai originals | 1 |
 
 
 ## Governance
@@ -718,12 +709,41 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 _No titled screens yet._
 
 
+## Safari-slots
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| Casino > Safari slots | 5 | tablet, desktop, mobile | screen type 2 | unknown | [10272-3834](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10272-3834&m=dev) |
+| Casino > Vegas fortune > Load screen | 1 | desktop | screen type 2 | unknown | [10359-11133](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-11133&m=dev) |
+| Casino > Safari slots 2 | 1 | mobile | - | unknown | [10359-8316](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-8316&m=dev) |
+
+## Vegas-fortune
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| Casino > Vegas fortune | 5 | tablet, desktop, mobile | screen type 2 | unknown | [10412-15861](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10412-15861&m=dev) |
+| Casino > Vegas fortune > Load screen | 1 | desktop | screen type 2 | unknown | [10688-8328](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10688-8328&m=dev) |
+| Casino > Vegas fortune 2 | 1 | mobile | - | unknown | [10738-15461](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10738-15461&m=dev) |
+
+## Cosmic-slots
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| Casino > Cosmic slots | 4 | tablet, desktop, mobile | - | unknown | [10359-13264](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-13264&m=dev) |
+| Casino > Cosmic slots 2 | 1 | mobile | - | unknown | [10406-12386](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10406-12386&m=dev) |
+
 ## User-flow
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | (section root) | 2 | desktop | - | unknown | [10439-43649](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10439-43649&m=dev) |
 | Perpetual futures | 1 | desktop | user not signed | unknown | [10440-1985](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10440-1985&m=dev) |
+
+## Gem-slots
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| Casino > Gem slots | 3 | tablet, desktop, mobile | - | unknown | [10285-14037](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10285-14037&m=dev) |
 
 ## Missing-play-images
 

@@ -105,6 +105,15 @@ const SECTION_FILE = {
   // measurement — which is exactly how 38 real frames stay invisible forever.
   // Both are now catalogued sections; see SECTION_FILE above.
   "cover-images": "M6r9FEn042UWTQD1zvy6GM",
+  // 2026-09-09: the four 🚧 slots pages, uncovered since they appeared on
+  // 08-18 and warned about on every build since. Under construction, so their
+  // page scope in live/_pages.json stays `wip` and coverage reports them
+  // without counting them; catalogued so the frames are addressable the day
+  // the page turns ✅. Scaffolded with `harvest.mjs section`.
+  "safari-slots": "M6r9FEn042UWTQD1zvy6GM",
+  "cosmic-slots": "M6r9FEn042UWTQD1zvy6GM",
+  "vegas-fortune": "M6r9FEn042UWTQD1zvy6GM",
+  "gem-slots": "M6r9FEn042UWTQD1zvy6GM",
   // Moved to Skai-Web-App-2 on 2026-08-11 (ids preserved — see FILE_KEYS).
   home: "mhF3BkzlTaGiLzJ7kvpmVc",
   wallet: "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -192,6 +201,8 @@ const SECTIONS = [
   // contents of page 9660:2, which `skai-cross` used to hold. See SECTION_FILE
   // for why that is a new section rather than a rename of the old one.
   "limbo", "slide", "baccarat", "roulette", "price-grid",
+  // 2026-09-09: the four 🚧 slots pages. See SECTION_FILE.
+  "safari-slots", "cosmic-slots", "vegas-fortune", "gem-slots",
 ];
 
 // The list above is an ORDERING hint, not the source of truth.
@@ -286,6 +297,9 @@ const GAME_BY_SECTION = {
   // frames under "Casino > Dice".
   limbo: "Limbo", slide: "Slide", baccarat: "Baccarat", roulette: "Roulette",
   "price-grid": "Price Grid",
+  // 2026-09-09: the slots pages, each its own game.
+  "safari-slots": "Safari Slots", "cosmic-slots": "Cosmic Slots",
+  "vegas-fortune": "Vegas Fortune", "gem-slots": "Gem Slots",
 };
 
 const readLines = (p) =>

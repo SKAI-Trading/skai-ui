@@ -38,7 +38,13 @@
  *   node harvest.mjs to-snapshot [--out snapshot.live.json]
  *   node harvest.mjs probe-script --file <fileKey>
  *   node harvest.mjs probe-ingest <probe.json> [...] [--write]
+ *   node harvest.mjs section --file <fileKey> --page <pageId> --name <slug>
  *   node harvest.mjs --self-test
+ *
+ * `section` scaffolds a NEW section for a harvested page that has none:
+ * <slug>.nodes.txt, <slug>.titles.tsv and the page's `sections` entry in
+ * pages.json. build-registry.mjs still needs its SECTION_FILE / SECTIONS /
+ * game-name literals edited by hand; it reports a missing one on the next run.
  *
  * Every subcommand that writes is a dry run without `--write`.
  *
@@ -593,6 +599,46 @@ function cmdToSnapshot(args) {
   console.log("  Next: node validate-snapshot.mjs snapshot.live.json && node figma-drift.mjs snapshot.live.json");
 }
 
+// ── section ──────────────────────────────────────────────────────────────────
+/**
+ * Scaffold a NEW section from a harvested page: every top-level node, in page
+ * order, into <name>.nodes.txt and <name>.titles.tsv, and the page's `sections`
+ * entry in pages.json. Furniture (Directory, Breakpoint, loose rectangles) is
+ * included on purpose — coverage.mjs classifies it, and a nodes list that
+ * pre-filtered it would hide the count that classification is checked against.
+ *
+ * build-registry.mjs still needs its three literals edited by hand (SECTION_FILE,
+ * the SECTIONS array, and the game-name map for a Games page); it says so on the
+ * next run if one is missing.
+ */
+function cmdSection(args) {
+  const fileKey = arg(args, "--file");
+  const pageArg = arg(args, "--page");
+  const name = arg(args, "--name");
+  if (!fileKey || !pageArg || !name) die("usage: section --file <fileKey> --page <pageId> --name <slug>");
+  if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name)) die(`section name must be a lowercase slug, got ${JSON.stringify(name)}`);
+  const manifest = readJson(path.join(LIVE, "_pages.json"));
+  const page = manifest.pages.find((p) => p.fileKey === fileKey && p.pageId === colon(pageArg));
+  if (!page) die(`no harvested page ${fileKey} ${pageArg} in live/_pages.json — harvest it first`);
+  const rows = readLines(tsvPath(fileKey, page.pageId)).map(parseLiveRow);
+  if (!rows.length) die(`${page.pageName} holds no top-level nodes — nothing to catalogue; record it in pages.json outOfScope instead`);
+  const nodesPath = path.join(DIR, `${name}.nodes.txt`);
+  const titlesPath = path.join(DIR, `${name}.titles.tsv`);
+  if (fs.existsSync(nodesPath) || fs.existsSync(titlesPath)) die(`${name} already has a nodes/titles file — this scaffolds NEW sections; use to-snapshot + snapshot-to-nodes.mjs to update one`);
+  const pagesPath = path.join(DIR, "pages.json");
+  const pagesJson = readJson(pagesPath);
+  const pj = pagesJson.pages.find((p) => p.fileKey === fileKey && p.pageId === page.pageId);
+  if (!pj) die(`${page.pageName} is in live/_pages.json but not pages.json — run ingest --write first`);
+  fs.writeFileSync(nodesPath, rows.map((r) => hyphen(r.id)).join("\n") + "\n");
+  fs.writeFileSync(titlesPath, rows.map((r) => `${hyphen(r.id)}\t${r.name}`).join("\n") + "\n");
+  pj.sections = Array.isArray(pj.sections) ? pj.sections : [];
+  if (!pj.sections.includes(name)) pj.sections.push(name);
+  writeJson(pagesPath, pagesJson);
+  const frames = rows.filter((r) => r.type === "FRAME").length;
+  console.log(`section ${name}: ${rows.length} top-level nodes (${frames} FRAME) from "${page.pageName}" -> ${name}.nodes.txt, ${name}.titles.tsv; pages.json sections now ${JSON.stringify(pj.sections)}`);
+  console.log(`  next: add "${name}": "${fileKey}" to SECTION_FILE in build-registry.mjs, append "${name}" to its SECTIONS array (and to the game-name map for a Games page), then node pipeline.mjs`);
+}
+
 // ── probe ────────────────────────────────────────────────────────────────────
 /** Catalogued ids on one file that are not live top-level children — the ones only Figma can classify. */
 function probeCandidates(fileKey) {
@@ -784,5 +830,6 @@ if (IS_MAIN) {
   else if (cmd === "to-snapshot") cmdToSnapshot(rest);
   else if (cmd === "probe-script") cmdProbeScript(rest);
   else if (cmd === "probe-ingest") cmdProbeIngest(rest);
+  else if (cmd === "section") cmdSection(rest);
   else die(`unknown subcommand ${cmd}; run with --help`);
 }

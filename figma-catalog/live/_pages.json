@@ -313,7 +313,8 @@
       "n": 277,
       "nVerifiedAt": "2026-09-08",
       "openReports": 87,
-      "scope": "v1-superseded"
+      "scope": "in-scope",
+      "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -333,8 +334,9 @@
       "readiness": "ready",
       "n": 178,
       "openReports": 42,
-      "scope": "v1-superseded",
-      "harvestedAt": "2026-09-09"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
+      "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -353,8 +355,9 @@
       "readiness": "ready",
       "n": 420,
       "openReports": 64,
-      "scope": "v1-superseded",
-      "harvestedAt": "2026-09-09"
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-09",
+      "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -616,8 +619,9 @@
       "readiness": "unknown",
       "n": 51,
       "openReports": 0,
-      "scope": "wip",
-      "harvestedAt": "2026-09-09"
+      "scope": "excluded",
+      "harvestedAt": "2026-09-09",
+      "note": "Excluded 2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready page (9061:15449); 9 FRAME nodes with generic names and 42 loose nodes. Re-scope only if the page is renamed."
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
