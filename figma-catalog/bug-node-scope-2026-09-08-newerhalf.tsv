@@ -15,9 +15,27 @@
 # Page keys are (fileKey,pageId) pairs on purpose: page id 2003:674 names three different
 # pages in three files, with three different scopes.
 #
-# ownerW/ownerH are MEASURED, not parsed from the frame name. Four Wallet 2 frames are named
-# "(768 x 1024px)" and measure 375 x 812 - see the mislabelled-breakpoint note in the notes
-# column. Confirmed twice each: getNodeByIdAsync width, and get_metadata on the frame.
+# MISLABELLED BREAKPOINT FRAMES ON WALLET 2 (page 13008:26951, file mhF3BkzlTaGiLzJ7kvpmVc).
+# Of the 182 top-level frames on that page, 131 carry a (WxH px) suffix in their name. EIGHT of
+# those 131 name a width they do not have: the name says 768 x 1024, the frame measures 375 x 812,
+# and each one contains a 375-wide Header-mobile instance. They are MOBILE boards wearing a tablet
+# label. Measured twice - getNodeByIdAsync width, and get_metadata on 13008:43688.
+#
+#   13008:43468  home > streaks
+#   13008:43688  home > notifications                     <- cited by d1869acf
+#   13008:43905  home > notifications - settings          <- cited by 89d09c38
+#   13008:44081  home > notifications - sample notification <- cited by c200e6c8
+#   13008:44120  home > account
+#   13008:44200  home > account > edit                    <- cited by 98a6855f
+#   13008:44305  home > account > logout
+#   13008:55521  home
+#
+# Four are cited by rows in this file; the other four are not, and will mislead the next reader
+# just as readily. Take the breakpoint from the measured width, never from the frame name.
+#
+# ownerW/ownerH are MEASURED, not parsed from the frame name - see the mislabelled-breakpoint
+# block above for why that distinction is load-bearing. The notes column flags the four rows
+# here whose owning frame carries a name that lies about its width.
 #
 bugId	createdAt	status	surface	linkFileKey	node	nodeName	ownerScreenId	ownerScreenName	ownerW	ownerH	pageId	pageName	scope	notes
 d9b65dd8-7000-47e3-b4f3-c83135a1d6b1	2026-09-09T03:29:36	new	https://app.skai.trade/?tab=whale	mhF3BkzlTaGiLzJ7kvpmVc	13008:119991	bento	13008:119988	Skai > Home > Whales - no data 1VH (768 x 1024px)	768	1024	13008:110718	✅ Home 2	in-scope	
