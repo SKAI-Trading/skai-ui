@@ -159,3 +159,47 @@ the browser paints 8px.
   defects (corrections already landed on `status.wave3.verify-social.tsv:196`,
   `status.wave4.social-a.tsv:13/25`, `status.wave4.social-b.tsv:10/11/12/38/39`,
   `status.wave5.discover-createtoken.tsv:2`, `status.social.tsv:49`).
+
+## Colour — first measured entries (2026-09-08)
+
+The Guardrails bullet above says colour is "layer-E-unstarted, in the sense that no
+Figma variable collection has been harvested". **Sharpening that: there is nothing
+to harvest.** `search_design_system` on `mhF3BkzlTaGiLzJ7kvpmVc` returns
+`{"variables": []}` for `secondary color`, for `Alien Green` and for `green`, while
+the control query `border-radius rounded-lg` returns all eleven radius variables from
+the `Primatives` collection. The instrument works, so the empty colour result is a
+real absence. Colour in these files is **raw fills**. Do not wait for a colour
+variable collection to appear — render the node and sample the pixels.
+
+Sampled per pixel off `get_screenshot` output, not read off a layer name:
+
+| Node | Page (scope) | Element | Measured |
+|---|---|---|---|
+| `7710:92909` | `3:3` Trade 1 (**v1-superseded**) | slider **empty track** | `#092A28` = `hsl(176 65% 10%)` |
+| `7710:92909` | same | slider thumb | `#17F9B4` (`alien-green-bright`, `design-tokens.ts:50`) |
+| `7710:92909` | same | slider tick marks | `#4E6563` |
+| `13006:158489` | `13006:134300` Trade 2 (**in-scope**) | primary CTA "Save settings" | `#56C7F3` = `hsl(197 87% 65%)` — **Sky Blue, not green** |
+| `13006:158489` | same | `+ 1 SOL` pill, active chips | `#17F9B4` |
+| `13006:158489` | same | active tab chip ("Layout") | `#123F3C` (Green Coal 100) |
+
+The slider track is not an arbitrary value: `#123F3C` at **alpha 0.50** over
+`#001615` composites to exactly `(9, 42, 40)` = `#092A28`. So the low-emphasis rail
+in this system is Green Coal 100 — solid for a chip, at 50% for a slider track.
+
+⚠ A remedy circulated as "track → `bg-muted`"
+(`self-improvement-operational-slips.md` §754c) is on the **wrong hue**: `--muted` is
+`225 30% 15%` = `#1B2132`, navy — the same pre-green-theme leftover that
+`src/index.css:527-529` already records as wrong for `--border`. Prefer green-coal.
+
+⚠ **`--primary` and `--secondary` are the same colour in the shipped dark theme** —
+`src/index.css:493` and `:497` are both `160 84% 55%`, confirmed in the deployed
+`assets/index-CwKYZlHa.css`. A frame fact that distinguishes a "secondary" surface
+from a "primary" one therefore **cannot be verified against the app by colour alone**;
+the app paints both the same, so a parity check on such a pair passes vacuously.
+Evidence, blast radius and a recommended diff are in the 2026-09-08 triage note
+`PALETTE_SECONDARY.md`. The call is Casey's and `src/index.css` was deliberately not
+changed.
+
+**DEPTH: rendered-pixel sampling of two nodes, plus a source read of `src/index.css`
+and one fetch of the deployed stylesheet.** It settles those two frames and the token
+values. It says nothing about what any other screen paints.
