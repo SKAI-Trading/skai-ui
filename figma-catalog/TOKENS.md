@@ -175,7 +175,7 @@ Sampled per pixel off `get_screenshot` output, not read off a layer name:
 
 | Node | Page (scope) | Element | Measured |
 |---|---|---|---|
-| `7710:92909` | `3:3` Trade 1 (**v1-superseded**) | slider **empty track** | `#092A28` = `hsl(176 65% 10%)` |
+| `7710:92909` | `3:3` Trade 1 (see note) | slider **empty track** | `#092A28` = `hsl(176 65% 10%)` |
 | `7710:92909` | same | slider thumb | `#17F9B4` (`alien-green-bright`, `design-tokens.ts:50`) |
 | `7710:92909` | same | slider tick marks | `#4E6563` |
 | `13006:158489` | `13006:134300` Trade 2 (**in-scope**) | primary CTA "Save settings" | `#56C7F3` = `hsl(197 87% 65%)` — **Sky Blue, not green** |
@@ -185,6 +185,17 @@ Sampled per pixel off `get_screenshot` output, not read off a layer name:
 The slider track is not an arbitrary value: `#123F3C` at **alpha 0.50** over
 `#001615` composites to exactly `(9, 42, 40)` = `#092A28`. So the low-emphasis rail
 in this system is Green Coal 100 — solid for a chip, at 50% for a slider track.
+
+★ **Note on `7710:92909`'s page, because the obvious reading is the wrong one.**
+`3:3` "Trade 1" carries `scope: v1-superseded`, and `_pages.json`'s `scopeLegend`
+still glosses that as "frames are not parity targets". **`d76adff` retracted exactly
+that sentence** — `v1-superseded` marks a file duplication, not a retirement, and its
+re-measured counts are Spot: Trade 1 **124** frames vs Trade 2 **2**. `7710:92909` is
+the Spot size-card slider, so Trade 1 holds the only Spot slider spec that exists and
+this row is authoritative, not indicative. ⚠ The retraction landed in the
+`openReports` note and `_pages.SCOPE-WARNING.md` but **not** in `scopeLegend`, so the
+legend still contradicts its own file. Read the legend alone and you will wrongly
+discard this measurement.
 
 ⚠ A remedy circulated as "track → `bg-muted`"
 (`self-improvement-operational-slips.md` §754c) is on the **wrong hue**: `--muted` is
