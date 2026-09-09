@@ -17,11 +17,11 @@ Live half harvested 2026-09-09 (harvest.mjs: one use_figma call per chunk (see `
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 601 | 21.5% |
-| `partial` | 1231 | 44.0% |
-| `not-started` | 129 | 4.6% |
-| `blocked-on-backend` | 80 | 2.9% |
-| `frame-defect` | 98 | 3.5% |
+| `done` | 560 | 20.0% |
+| `partial` | 1221 | 43.6% |
+| `not-started` | 190 | 6.8% |
+| `blocked-on-backend` | 74 | 2.6% |
+| `frame-defect` | 94 | 3.4% |
 | `furniture` (catalog says furniture, this script says genuine) | 42 | 1.5% |
 | `unknown` | 33 | 1.2% |
 
@@ -41,9 +41,11 @@ That is 16.1% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**601 of 2798 in-scope genuine frames (21.5%) are covered by a row marked `done`.**
+**560 of 2798 in-scope genuine frames (20.0%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 21.5% measured parity.
+Read the caveat section before quoting that. It is not 20.0% measured parity.
+
+**151 of those 560 (5.4% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 409 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 98 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` map to no page in pages.json and are not applied.
 
 ## Out of the roll-up
 
@@ -63,13 +65,13 @@ Read the caveat section before quoting that. It is not 21.5% measured parity.
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | ✅ Social | in-scope | 442 | 40 | 402 | 402 | 60 | 252 | 40 | 32 | 0 | 100.0% |
 | ✅ Trade 2 | in-scope | 417 | 40 | 377 | 375 | 88 | 233 | 28 | 2 | 2 | 99.5% |
-| ✅ Trade 1 | in-scope | 420 | 53 | 367 | 172 | 40 | 127 | 0 | 3 | 195 | 46.9% |
-| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 47 | 146 | 49 | 1 | 0 | 100.0% |
-| ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 30 | 176 | 0 | 24 | 0 | 100.0% |
-| ✅ Home 1 | in-scope | 277 | 41 | 236 | 85 | 58 | 19 | 0 | 0 | 151 | 36.0% |
+| ✅ Trade 1 | in-scope | 420 | 53 | 367 | 172 | 18 | 145 | 4 | 3 | 195 | 46.9% |
+| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 47 | 139 | 56 | 1 | 0 | 100.0% |
+| ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 26 | 140 | 50 | 18 | 0 | 100.0% |
+| ✅ Home 1 | in-scope | 277 | 41 | 236 | 85 | 53 | 24 | 0 | 0 | 151 | 36.0% |
 | ✅ Home 2 | in-scope | 240 | 36 | 204 | 143 | 48 | 79 | 10 | 5 | 61 | 70.1% |
-| ✅ Wallet 1 | in-scope | 178 | 11 | 167 | 48 | 48 | 0 | 0 | 0 | 119 | 28.7% |
-| ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 126 | 28 | 0 | 0 | 0 | 100.0% |
+| ✅ Wallet 1 | in-scope | 178 | 11 | 167 | 48 | 44 | 4 | 0 | 0 | 119 | 28.7% |
+| ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 125 | 29 | 0 | 0 | 0 | 100.0% |
 | 🌎 Cover Images - Skai Originals | in-scope | 44 | 2 | 42 | 0 | 0 | 0 | 0 | 0 | 42 | 0.0% |
 | ✅ Coinflip - Skai originals | in-scope | 46 | 11 | 35 | 34 | 4 | 23 | 0 | 0 | 1 | 97.1% |
 | ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 6 | 17 | 0 | 0 | 0 | 100.0% |
@@ -83,7 +85,7 @@ Read the caveat section before quoting that. It is not 21.5% measured parity.
 | ✅ Mines - Skai originals | in-scope | 21 | 7 | 14 | 12 | 6 | 5 | 0 | 0 | 2 | 85.7% |
 | ✅ Scratchers - Skai originals | in-scope | 21 | 7 | 14 | 14 | 3 | 9 | 0 | 0 | 0 | 100.0% |
 | ✅ Roulette - Skai originals | in-scope | 21 | 7 | 14 | 14 | 0 | 5 | 1 | 0 | 0 | 100.0% |
-| ✅ Crash - Skai originals | in-scope | 20 | 7 | 13 | 13 | 6 | 7 | 0 | 0 | 0 | 100.0% |
+| ✅ Crash - Skai originals | in-scope | 20 | 7 | 13 | 13 | 3 | 10 | 0 | 0 | 0 | 100.0% |
 | ✅ Bingo - Skai originals | in-scope | 17 | 4 | 13 | 13 | 1 | 4 | 0 | 0 | 0 | 100.0% |
 | ✅ Baccarat - Skai originals | in-scope | 21 | 8 | 13 | 13 | 3 | 7 | 1 | 0 | 0 | 100.0% |
 | ✅ Slide - Skai originals | in-scope | 18 | 5 | 13 | 13 | 3 | 8 | 0 | 0 | 0 | 100.0% |
@@ -92,7 +94,7 @@ Read the caveat section before quoting that. It is not 21.5% measured parity.
 | ✅ Limbo - Skai originals | in-scope | 14 | 5 | 9 | 9 | 0 | 9 | 0 | 0 | 0 | 100.0% |
 | ✅ Price Grid - Skai originals | in-scope | 20 | 12 | 8 | 8 | 2 | 5 | 0 | 0 | 0 | 100.0% |
 | ✅ Hi-Lo - Skai originals | in-scope | 16 | 9 | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 100.0% |
-| ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 6 | 0 | 0 | 0 | 0 | 100.0% |
+| ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 4 | 2 | 0 | 0 | 0 | 100.0% |
 | ✅ Governance and Utilities | held | 725 | 66 | 659 | 173 | 0 | 109 | 50 | 12 | 486 | 26.3% |
 | ✅ Onboarding and Authentication | excluded | 151 | 24 | 127 | 0 | 0 | 0 | 0 | 0 | 127 | 0.0% |
 | Towars Draft (Disregard) | excluded | 51 | 42 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0.0% |

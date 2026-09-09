@@ -451,6 +451,45 @@ for (const p of pages)
   }
 const ambiguousIds = new Set([...filesPerId].filter(([, s]) => s.size > 1).map(([id]) => id));
 
+// ---------------------------------------------------------------------------
+// 4b. VISUAL VERDICTS — vverify.<section>.tsv, the only evidence in this
+// catalog that a frame was LOOKED AT against Figma. apply-verify.mjs folds them
+// into registry.json (match keeps the status; partial/deferred downgrade an
+// over-optimistic done; not-wired forces not-started), but this script tallies
+// from status.*.tsv directly, so until 2026-09-09 the published percentage
+// ignored them: 28 of the 601 counted-done frames carried a visual verdict that
+// said otherwise, and 427 carried none. The same rule is applied here, per
+// frame, so the registry and the published number cannot disagree on a frame,
+// and `verified` counts the done frames a verdict of match actually stands
+// behind. Keyed by (fileKey, node) through pages.json's section -> page map; a
+// vverify file whose section maps to no page (trade-bugrefs, trench) is
+// reported and skipped rather than guessed at.
+// ---------------------------------------------------------------------------
+const VVERIFY_VALID = new Set(["match", "partial", "deferred", "not-wired"]);
+const visual = new Map();
+const visualUnmapped = [];
+{
+  const pagesJson = JSON.parse(fs.readFileSync(path.join(DIR, "pages.json"), "utf8"));
+  const sectionFile = new Map();
+  for (const pg of pagesJson.pages || []) for (const s of pg.sections || []) sectionFile.set(s, pg.fileKey);
+  for (const f of fs.readdirSync(DIR)) {
+    const m = /^vverify\.(.+)\.tsv$/.exec(f);
+    if (!m) continue;
+    const fk = sectionFile.get(m[1]);
+    if (!fk) {
+      visualUnmapped.push(f);
+      continue;
+    }
+    for (const line of fs.readFileSync(path.join(DIR, f), "utf8").split(/\r?\n/)) {
+      if (!line.trim() || isCommentLine(line)) continue;
+      const [node, verdict] = line.split("\t");
+      const v = (verdict || "").trim();
+      if (!VVERIFY_VALID.has(v)) continue;
+      visual.set(`${fk}|${normId(node)}`, v);
+    }
+  }
+}
+
 const report = [];
 const conflictList = [];
 // Frames where a later wave re-verified an earlier row. Not a conflict - the
@@ -483,6 +522,10 @@ for (const p of pages) {
   let ambiguous = 0;
   let conflicts = 0;
   let superseded = 0;
+  // Done frames a visual verdict of `match` stands behind, and frames whose
+  // claimed status a visual verdict pulled down. Both per page, both rolled up.
+  let verified = 0;
+  let visuallyDowngraded = 0;
   for (const n of genuine) {
     if (/^(Frame|Group) \d+$/i.test(n.name)) defaultNamed++;
     const rows = rowIndex.get(n.id);
@@ -543,7 +586,16 @@ for (const p of pages) {
     };
     const newestGen = Math.max(...rows.map((r) => genOf(r.file)));
     const current = rows.filter((r) => genOf(r.file) === newestGen);
-    const worst = current.slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
+    const claimed = current.slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
+    // The visual verdict, where one exists, is applied exactly as
+    // apply-verify.mjs applies it to the registry (see 4b above). A status row
+    // is a claim; a verdict is somebody having looked.
+    const verdict = visual.get(`${p.fileKey}|${n.id}`) || null;
+    let worst = claimed;
+    if (verdict === "not-wired") worst = "not-started";
+    else if (verdict && verdict !== "match" && claimed === "done") worst = "partial";
+    if (worst !== claimed) visuallyDowngraded++;
+    if (worst === "done" && verdict === "match") verified++;
     byStatus[worst] = (byStatus[worst] || 0) + 1;
     /*
       ★ THE SAME `worst` THE PERCENTAGE IS TALLIED FROM, RECORDED PER FRAME.
@@ -561,7 +613,7 @@ for (const p of pages) {
       a wave. So the value is captured HERE, off the same variable, and emitted
       only under `--frames`. It changes no existing output and no computation.
     */
-    frameStatuses.push({ id: n.id, page: p.pageName, scope: p.scope, status: worst });
+    frameStatuses.push({ id: n.id, page: p.pageName, scope: p.scope, status: worst, claimed, verdict });
     // Two rows, two lanes, one frame, two different verdicts. The worst-of above
     // resolves it conservatively so the number cannot flatter — but a resolution
     // is not an agreement, and a `done`/`not-started` pair on one frame means one
@@ -623,6 +675,8 @@ for (const p of pages) {
     defaultNamed,
     ambiguous,
     conflicts,
+    verified,
+    visuallyDowngraded,
     byStatus,
     liveOnly: liveOnly.map((n) => ({ id: n.id, name: n.name, type: n.type, w: n.w, h: n.h })),
   });
@@ -671,6 +725,9 @@ const rollup = {
   genuine: sum(inScope, "genuine"),
   matched: sum(inScope, "matched"),
   done: statusSum(inScope, "done"),
+  verified: sum(inScope, "verified"),
+  visuallyDowngraded: sum(inScope, "visuallyDowngraded"),
+  visualUnmapped,
   partial: statusSum(inScope, "partial"),
   notStarted: statusSum(inScope, "not-started"),
   blocked: statusSum(inScope, "blocked-on-backend"),
@@ -778,6 +835,8 @@ P();
 P(`**${rollup.done} of ${rollup.genuine} in-scope genuine frames (${pct(rollup.done, rollup.genuine)}%) are covered by a row marked \`done\`.**`);
 P();
 P(`Read the caveat section before quoting that. It is not ${pct(rollup.done, rollup.genuine)}% measured parity.`);
+P();
+P(`**${rollup.verified} of those ${rollup.done} (${pct(rollup.verified, rollup.genuine)}% of scope) carry a visual verdict of \`match\` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other ${rollup.done - rollup.verified} are \`done\` by a status row alone, which is a claim about code mapping, not a measurement. ${rollup.visuallyDowngraded} frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls \`done\` to \`partial\`; not-wired forces \`not-started\`). Until 2026-09-09 this tally ignored the verdicts entirely${rollup.visualUnmapped.length ? `; ${rollup.visualUnmapped.map((f) => "`" + f + "`").join(", ")} map to no page in pages.json and are not applied` : ""}.`);
 P();
 
 P(`## Out of the roll-up`);
@@ -929,6 +988,10 @@ const json = {
   pages: report,
   catalogOnly,
   conflicts: conflictList,
+  // The same per-frame `worst` the percentage is tallied from, so an audit can
+  // join each counted verdict to its evidence (registry verifiedAt / vverify
+  // marker) instead of re-deriving the resolution and hoping it matches.
+  frameStatuses,
 };
 
 if (FRAMES) {
@@ -970,6 +1033,7 @@ if (FRAMES) {
 (HISTOGRAM ? console.error : console.log)(
   `in-scope: ${rollup.genuine} genuine frames of ${rollup.live} live (${rollup.furniture} furniture); ` +
     `${rollup.matched} have a row (${pct(rollup.matched, rollup.genuine)}%); ` +
-    `${rollup.done} done (${pct(rollup.done, rollup.genuine)}%); ` +
+    `${rollup.done} done (${pct(rollup.done, rollup.genuine)}%), ${rollup.verified} of them visually verified (${pct(rollup.verified, rollup.genuine)}%), ` +
+    `${rollup.visuallyDowngraded} claimed statuses pulled down by a visual verdict; ` +
     `drift: ${rollup.liveOnly} live-only, ${co.length} catalog-only`,
 );

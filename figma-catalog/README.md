@@ -50,6 +50,13 @@ apply-status run after it would put the `done` back.
 Run `catalog:check` before committing anything under `figma-catalog/`. It is the
 step that catches a TSV edited without its derived files.
 
+The headline in `COVERAGE.md` has two parts. **Done** is what the status rows
+claim. **Verified** is the done frames a `vverify.<section>.tsv` verdict of
+`match` stands behind; coverage applies those verdicts per frame, so a row
+claiming `done` over a verdict of `partial` counts as partial. Both ship to the
+status page. `AUDIT-2026-09-09.md` records how each half was checked against
+Figma and what the `match` verdicts do and do not prove.
+
 ## Keeping it in step with Figma
 
 Figma is read through the MCP Plugin API (`use_figma`), which is the only instrument
