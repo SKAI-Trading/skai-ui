@@ -1,1 +1,85 @@
-10269:17	Screen Shot 2026-08-	RECTANGLE	1440	900	1
+10412:15849	Directory	FRAME	6340	352	1
+10412:15855	Breakpoint	FRAME	1450	164	1
+10412:15857	Breakpoint	FRAME	1450	164	1
+10412:15859	Breakpoint	FRAME	1450	164	1
+10412:15861	Skai > Play > Casino > Vegas fortune (768 x 1024px)	FRAME	768	1627	1
+10412:16102	Skai > Play > Casino > Vegas fortune (1440 x 900px)	FRAME	1440	3467	1
+10448:4297	Load screen - desktop	FRAME	1318	621	1
+10452:4331	Load screen ALT - desktop	FRAME	1318	621	1
+10412:16752	Skai > Play > Casino > Vegas fortune (375 x 812px)	FRAME	375	1375	1
+10412:17082	Rectangle 155	RECTANGLE	720	720	1
+10412:17083	Rectangle 163	RECTANGLE	151	720	1
+10452:4915	Load screen > features - desktop	FRAME	1318	621	1
+10458:5156	Load screen > features > home - desktop	FRAME	1318	621	1
+10655:5847	Load screen > features > home > combo > combo end frame > menu - desktop	FRAME	1318	621	1
+10478:5265	Load screen > features > home - desktop	FRAME	1318	621	1
+10655:5591	Load screen > features > home > combo - desktop	FRAME	1318	621	1
+10654:5348	Safari A 1	RECTANGLE	57	60	1
+10654:5416	Safari A 10	RECTANGLE	57	60	1
+10654:5425	Safari A 19	RECTANGLE	57	60	1
+10655:5444	Safari A 30	RECTANGLE	57	60	1
+10654:5408	Safari A 2	RECTANGLE	57	60	1
+10654:5417	Safari A 11	RECTANGLE	57	60	1
+10654:5426	Safari A 20	RECTANGLE	57	60	1
+10655:5445	Safari A 31	RECTANGLE	57	60	1
+10654:5409	Safari A 3	RECTANGLE	57	60	1
+10654:5418	Safari A 12	RECTANGLE	57	60	1
+10654:5427	Safari A 21	RECTANGLE	57	60	1
+10655:5446	Safari A 32	RECTANGLE	57	60	1
+10654:5410	Safari A 4	RECTANGLE	57	60	1
+10654:5419	Safari A 13	RECTANGLE	57	60	1
+10654:5428	Safari A 22	RECTANGLE	57	60	1
+10655:5447	Safari A 33	RECTANGLE	57	60	1
+10654:5411	Safari A 5	RECTANGLE	57	60	1
+10654:5436	Safari A 28	RECTANGLE	57	60	1
+10654:5437	Safari A 29	RECTANGLE	57	60	1
+10654:5420	Safari A 14	RECTANGLE	57	60	1
+10654:5429	Safari A 23	RECTANGLE	57	60	1
+10655:5448	Safari A 34	RECTANGLE	57	60	1
+10654:5421	Safari A 15	RECTANGLE	57	60	1
+10654:5430	Safari A 24	RECTANGLE	57	60	1
+10655:5449	Safari A 35	RECTANGLE	57	60	1
+10655:5450	Safari A 36	RECTANGLE	57	60	1
+10655:5451	Safari A 37	RECTANGLE	57	60	1
+10655:5452	Safari A 38	RECTANGLE	57	60	1
+10654:5422	Safari A 16	RECTANGLE	57	60	1
+10654:5431	Safari A 25	RECTANGLE	57	60	1
+10654:5423	Safari A 17	RECTANGLE	57	60	1
+10654:5432	Safari A 26	RECTANGLE	57	60	1
+10654:5424	Safari A 18	RECTANGLE	57	60	1
+10654:5433	Safari A 27	RECTANGLE	57	60	1
+10688:7138	Vegas fortune - Card visual	FRAME	195	276	1
+10688:7176	Vegas fortune - Card visual	FRAME	400	566	1
+10688:7225	Vegas fortune - Card visual	FRAME	400	566	1
+10688:7210	Vegas fortune - Desktop	FRAME	195	277	1
+10688:7214	Vegas fortune - Tablet	FRAME	120	170	1
+10688:7219	Vegas fortune - Mobile	FRAME	76	108	1
+10688:7196	Mines Desktop	FRAME	195	277	1
+10688:7153	Vegas fortune - Desktop ALT	FRAME	195	277	1
+10688:7157	Vegas fortune - Tablet ALT	FRAME	120	170	1
+10688:7162	Vegas fortune - Mobile ALT	FRAME	76	108	1
+10688:7167	Rectangle 34624566	RECTANGLE	32	32	1
+10688:7224	Rectangle 34624567	RECTANGLE	32	32	1
+10688:7471	Skai > Play > Casino > Vegas fortune - screen type 2 (1440 x 900px)	FRAME	1440	3467	1
+10688:8328	Skai > Play > Casino > Vegas fortune > Load screen - screen type 2 1VH (1440 x 900px)	FRAME	1440	900	1
+10698:10605	Notes	WIDGET	342	217	1
+10698:10651	Notes	WIDGET	342	217	1
+10698:10702	Notes	WIDGET	342	218	1
+10698:10699	Vector 366	VECTOR	60	447	1
+10698:11157	Load screen - tablet	FRAME	708	720	1
+10737:13868	Load screen > features > home - tablet	FRAME	708	720	1
+10737:14223	Load screen > features > home ALT 2 - tablet	FRAME	708	720	1
+10737:14138	Load screen > features > home ALT - tablet	FRAME	708	720	1
+10738:14799	Load screen > features > home > combo > menu - tablet	FRAME	708	720	1
+10738:14514	Load screen > features > home > combo - tablet	FRAME	708	720	1
+10737:13562	Load screen > features - tablet	FRAME	708	720	1
+10736:12848	Load screen ALT - tablet	FRAME	708	720	1
+10738:15210	Skai > Play > Casino > Vegas fortune 1VH (375 x 812px)	FRAME	375	812	1
+10738:15461	Skai > Play > Casino > Vegas fortune 2 1VH (375 x 812px)	FRAME	375	812	1
+10738:15628	Load screen - mobile	FRAME	347	500	1
+10741:16616	Load screen > features - mobile	FRAME	347	500	1
+10743:16972	Load screen > features > home - mobile	FRAME	347	500	1
+10744:17293	Load screen > features > home > combo - mobile	FRAME	347	500	1
+10745:17641	Load screen > features > home > menu - docked - mobile	FRAME	347	500	1
+10745:17872	Load screen > features > home > menu - mobile	FRAME	347	500	1
+10741:16488	Load screen ALT - mobile	FRAME	347	500	1

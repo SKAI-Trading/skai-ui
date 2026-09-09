@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-08T09:03:00.603Z",
+  "generated": "2026-09-09T04:19:21.213Z",
   "harvestedAt": "2026-08-26",
   "rollup": {
     "pages": 29,
-    "live": 2456,
+    "live": 2461,
     "furniture": 434,
-    "genuine": 2022,
+    "genuine": 2027,
     "matched": 1919,
     "done": 455,
     "partial": 1084,
@@ -14,9 +14,9 @@
     "frameDefect": 97,
     "catalogFurniture": 42,
     "unknown": 24,
-    "liveOnly": 103,
+    "liveOnly": 108,
     "rollupOnly": 0,
-    "defaultNamed": 120,
+    "defaultNamed": 121,
     "ambiguous": 0,
     "conflicts": 14
   },
@@ -27,10 +27,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 10383,
-    "namingNoNodeId": 504,
-    "namingNoLiveNodeId": 544,
-    "unrecognisedTokens": 17454
+    "total": 10438,
+    "namingNoNodeId": 512,
+    "namingNoLiveNodeId": 566,
+    "unrecognisedTokens": 17490
   },
   "statusFiles": [
     {
@@ -212,6 +212,12 @@
       "rows": 1,
       "withLiveId": 1,
       "ids": 1
+    },
+    {
+      "file": "status.scope-adjudication-2026-09-08.tsv",
+      "rows": 55,
+      "withLiveId": 33,
+      "ids": 33
     },
     {
       "file": "status.skratch.tsv",
@@ -421,7 +427,7 @@
       "file": "status.wave11.games-cards.tsv",
       "rows": 28,
       "withLiveId": 28,
-      "ids": 35
+      "ids": 34
     },
     {
       "file": "status.wave11.games-zero-a.tsv",
@@ -7903,10 +7909,11 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-09-07",
+      "harvestedAt": "2026-09-08",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 277,
+      "nVerifiedAt": "2026-09-08",
       "scope": "v1-superseded",
       "live": 277,
       "furniture": 41,
@@ -8989,10 +8996,11 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-09-07",
+      "harvestedAt": "2026-09-08",
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 240,
+      "nVerifiedAt": "2026-09-08",
       "scope": "in-scope",
       "live": 240,
       "furniture": 36,
@@ -11727,10 +11735,11 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-09-07",
+      "harvestedAt": "2026-09-08",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 417,
+      "nVerifiedAt": "2026-09-08",
       "scope": "in-scope",
       "live": 417,
       "furniture": 40,
@@ -11845,16 +11854,17 @@
       "pageId": "9220:26175",
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
-      "n": 42,
+      "n": 44,
+      "harvestedAt": "2026-09-08",
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
-      "scopeNote": "n=42 is the 2026-08-26 snapshot and is STALE: get_metadata on this page returned 44 live children on 2026-09-08. The sibling .tsv has the matching 42 rows, so coverage.mjs stays consistent and silent rather than tripping its loud guard, and n is left alone rather than half-reconciled - raising n without re-harvesting the .tsv makes 42 < 44 and coverage.mjs REFUSES to run at all. Known missing from both: 10404:3412 Blackjack Desktop, 10428:2145 Bingo Desktop, 10428:2601 Chicken Desktop, 10404:7943 + 10404:7948 Keno. Still listed and deleted from Figma: 9222:26323. Re-harvest with the METHOD in this file's _comment, not from get_metadata.",
-      "live": 42,
+      "scopeNote": "RESOLVED 2026-09-08 by re-harvest. n was 42 from the 2026-08-26 snapshot while the live page held 44; the .tsv carried the matching 42 rows, so coverage.mjs stayed consistent and SILENT - the loud guard compares the harvest to the manifest, and both were stale together. The page and its .tsv were re-read with the METHOD in this file's _comment (not get_metadata) and both now say 44. The five frames the old note listed as missing from both are present: 10404:3412 Blackjack Desktop, 10428:2145 Bingo Desktop, 10428:2601 Chicken Desktop, 10404:7943 + 10404:7948 Keno. 9222:26323, listed but deleted from Figma, is absent from the live read and so is gone from the .tsv.",
+      "live": 44,
       "furniture": 2,
       "furnitureWhy": {
         "canvas-chrome": 2
       },
-      "genuine": 40,
+      "genuine": 42,
       "matched": 0,
       "rollupOnly": 0,
       "defaultNamed": 0,
@@ -11864,283 +11874,297 @@
       "liveOnly": [
         {
           "id": "9220-26176",
-          "name": "Dice Desktop",
+          "name": "Dice - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "9220-26181",
-          "name": "Dice Mobile",
+          "name": "Dice - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "9222-26192",
-          "name": "Plinko Desktop",
+          "name": "Plinko - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "9222-26197",
-          "name": "Plinko Mobile",
+          "name": "Plinko - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "9222-26203",
-          "name": "Crash Desktop",
+          "name": "Crash - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
-          "id": "9222-26208",
-          "name": "Crash Mobile",
+          "id": "10347-2413",
+          "name": "Crash - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "9222-26214",
-          "name": "Mines Desktop",
+          "name": "Mines - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "9222-26312",
-          "name": "Mines Mobile",
+          "name": "Mines - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
-          "id": "9222-26323",
-          "name": "Blackjack Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
           "id": "9222-26328",
-          "name": "Blackjack Mobile",
+          "name": "Blackjack - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "9222-26334",
-          "name": "Coinflip Desktop",
+          "name": "Coinflip - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "9222-26339",
-          "name": "Coinflip Mobile",
+          "name": "Coinflip - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "9222-26345",
-          "name": "Scratchers Desktop",
+          "name": "Scratchers - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "9222-26350",
-          "name": "Scratchers Mobile",
+          "name": "Scratchers - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "9351-3407",
-          "name": "Cards ALT - Chicken",
+          "name": "Hi Lo - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "9351-3413",
-          "name": "Cards ALT - Chicken",
+          "name": "Hi Lo  - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
-          "id": "9393-514",
-          "name": "Cards ALT - Chicken",
+          "id": "10428-2601",
+          "name": "Chicken - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
-          "id": "9393-519",
-          "name": "Cards ALT - Chicken",
+          "id": "10428-2607",
+          "name": "Chicken - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
-          "id": "9479-19858",
-          "name": "Cards ALT - Chicken",
+          "id": "10358-8842",
+          "name": "Darts - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
-          "id": "9479-19863",
-          "name": "Cards ALT - Chicken",
+          "id": "10358-8848",
+          "name": "Darts - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "9737-11662",
-          "name": "Cards ALT - Chicken",
+          "name": "Fortune Wheel - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "9737-11667",
-          "name": "Cards ALT - Chicken",
+          "name": "Fortune Wheel - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
-        },
-        {
-          "id": "10296-2891",
-          "name": "Cards ALT - Chicken",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
         },
         {
           "id": "10296-2896",
-          "name": "Cards ALT - Chicken",
+          "name": "Video Poker - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
-          "id": "10296-3316",
-          "name": "Cards ALT - Chicken",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10296-3321",
-          "name": "Cards ALT - Chicken",
+          "id": "10428-2156",
+          "name": "Bingo - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "10296-3772",
-          "name": "Cards ALT - Chicken",
+          "name": "Baccarat - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "10296-3777",
-          "name": "Cards ALT - Chicken",
+          "name": "Baccarat - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "10296-3783",
-          "name": "Cards ALT - Chicken",
+          "name": "Roulette - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10296-2891",
+          "name": "Video Poker - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "10296-3788",
-          "name": "Cards ALT - Chicken",
+          "name": "Roulette - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "10296-4240",
-          "name": "Cards ALT - Chicken",
+          "name": "Limbo - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "10296-4245",
-          "name": "Cards ALT - Chicken",
+          "name": "Limbo - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "10296-4684",
-          "name": "Cards ALT - Chicken",
+          "name": "Rock Paper Scissors - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "10296-4689",
-          "name": "Cards ALT - Chicken",
+          "name": "Rock Paper Scissors - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "10296-5152",
-          "name": "Cards ALT - Chicken",
+          "name": "Slide - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "10296-5157",
-          "name": "Cards ALT - Chicken",
+          "name": "Slide - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "10296-5782",
-          "name": "Cards ALT - Chicken",
+          "name": "Price Grid - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
         },
         {
           "id": "10296-5787",
-          "name": "Cards ALT - Chicken",
+          "name": "Price Grid - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "10296-6229",
-          "name": "Cards ALT - Chicken",
+          "name": "Towers - Desktop 1440px",
           "type": "FRAME",
           "w": 195,
           "h": 277
         },
         {
           "id": "10296-6234",
-          "name": "Cards ALT - Chicken",
+          "name": "Towers - Mobile 375px",
           "type": "FRAME",
           "w": 76,
           "h": 108
+        },
+        {
+          "id": "10404-3412",
+          "name": "Blackjack - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10404-7943",
+          "name": "Keno - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10404-7948",
+          "name": "Keno - Mobile 375px",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        },
+        {
+          "id": "10428-2145",
+          "name": "Bingo - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
         }
       ]
     },
@@ -12251,14 +12275,15 @@
       "pageId": "9003:102080",
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
-      "n": 19,
+      "n": 21,
+      "harvestedAt": "2026-09-08",
       "scope": "in-scope",
-      "live": 19,
+      "live": 21,
       "furniture": 7,
       "furnitureWhy": {
         "canvas-chrome": 7
       },
-      "genuine": 12,
+      "genuine": 14,
       "matched": 12,
       "rollupOnly": 0,
       "defaultNamed": 2,
@@ -12269,25 +12294,41 @@
         "done": 6,
         "furniture": 1
       },
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "11083-16055",
+          "name": "Skai > Play > Casino > Dice Mobile (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1235
+        },
+        {
+          "id": "11081-11526",
+          "name": "Skai > Play > Casino > Dice Mobile (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1235
+        }
+      ]
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "9003:122027",
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
-      "n": 45,
+      "n": 46,
+      "harvestedAt": "2026-09-08",
       "scope": "in-scope",
-      "live": 45,
+      "live": 46,
       "furniture": 11,
       "furnitureWhy": {
         "canvas-chrome": 10,
         "loose-vector": 1
       },
-      "genuine": 34,
+      "genuine": 35,
       "matched": 34,
       "rollupOnly": 0,
-      "defaultNamed": 6,
+      "defaultNamed": 7,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {
@@ -12295,7 +12336,15 @@
         "done": 4,
         "furniture": 7
       },
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "10258-4592",
+          "name": "Frame 1000004022",
+          "type": "FRAME",
+          "w": 324,
+          "h": 52
+        }
+      ]
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -12796,16 +12845,16 @@
       "pageId": "10265:2",
       "pageName": "🚧 Safari Slots - Skai originals",
       "readiness": "wip",
-      "n": 33,
+      "n": 61,
+      "harvestedAt": "2026-09-08",
       "scope": "wip",
-      "live": 33,
+      "live": 61,
       "furniture": 25,
       "furnitureWhy": {
-        "canvas-chrome": 17,
-        "loose-text": 1,
-        "loose-rectangle": 7
+        "canvas-chrome": 10,
+        "loose-rectangle": 15
       },
-      "genuine": 8,
+      "genuine": 36,
       "matched": 0,
       "rollupOnly": 0,
       "defaultNamed": 0,
@@ -12815,59 +12864,255 @@
       "liveOnly": [
         {
           "id": "10272-3834",
-          "name": "Skai > Play > Casino",
+          "name": "Skai > Play > Casino > Safari slots (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1627
         },
         {
+          "id": "10354-877",
+          "name": "Load screen - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10354-3115",
+          "name": "Load screen > features > home - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10354-3935",
+          "name": "Load screen > features > home > menu - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10354-2840",
+          "name": "Load screen > features > home > all key items - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10354-1754",
+          "name": "Load screen > features - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10354-1555",
+          "name": "Load screen ALT - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
           "id": "10272-4179",
-          "name": "Skai > Play > Casino",
+          "name": "Skai > Play > Casino > Safari slots (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 3467
         },
         {
+          "id": "10359-10003",
+          "name": "Skai > Play > Casino > Safari slots - screen type 2 (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "10359-11133",
+          "name": "Skai > Play > Casino > Vegas fortune > Load screen - screen type 2 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
           "id": "10285-15783",
-          "name": "Load screen - deskto",
+          "name": "Load screen - desktop",
           "type": "FRAME",
           "w": 1318,
           "h": 621
         },
         {
           "id": "10295-732",
-          "name": "Load screen - deskto",
+          "name": "Load screen - desktop - normal size with sidebar - (w 954px)",
           "type": "FRAME",
           "w": 954,
           "h": 621
         },
         {
           "id": "10285-15821",
-          "name": "Load screen ALT - de",
+          "name": "Load screen ALT - desktop",
           "type": "FRAME",
           "w": 1318,
           "h": 621
         },
         {
           "id": "10285-16306",
-          "name": "Load screen > featur",
+          "name": "Load screen > features - desktop",
           "type": "FRAME",
           "w": 1318,
           "h": 621
         },
         {
           "id": "10320-2623",
-          "name": "Load screen > featur",
+          "name": "Load screen > features > home - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10353-1058",
+          "name": "Load screen > features > home > menu - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10329-11088",
+          "name": "Load screen > features > home - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10341-11586",
+          "name": "Load screen > features > home > combo - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10353-829",
+          "name": "Load screen > features > home > combo > combo end frame - desktop",
           "type": "FRAME",
           "w": 1318,
           "h": 621
         },
         {
           "id": "10272-4933",
-          "name": "Skai > Play > Casino",
+          "name": "Skai > Play > Casino > Safari slots (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1605
+        },
+        {
+          "id": "10354-4819",
+          "name": "Load screen - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10354-5242",
+          "name": "Load screen - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10354-6256",
+          "name": "Load screen - refresh screen - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10354-5365",
+          "name": "Load screen > features > home - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10354-6074",
+          "name": "Load screen > features > home > all key items - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10354-7028",
+          "name": "Load screen > features > home > menu - docked - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10354-7459",
+          "name": "Load screen > features > home > menu - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10354-5137",
+          "name": "Load screen ALT - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10354-4269",
+          "name": "Skai > Play > Casino > Safari slots 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "10359-8316",
+          "name": "Skai > Play > Casino > Safari slots 2 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "10359-9369",
+          "name": "Safari slots - Card visual",
+          "type": "FRAME",
+          "w": 195,
+          "h": 276
+        },
+        {
+          "id": "10359-9167",
+          "name": "Safari slots - Card visual",
+          "type": "FRAME",
+          "w": 400,
+          "h": 566
+        },
+        {
+          "id": "10359-9488",
+          "name": "Mines Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10359-9493",
+          "name": "Safari slots - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10359-9530",
+          "name": "Safari slots - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "10359-9535",
+          "name": "Safari slots - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
         }
       ]
     },
@@ -12876,56 +13121,568 @@
       "pageId": "10266:5",
       "pageName": "🚧 Cosmic Slots - Skai originals",
       "readiness": "wip",
-      "n": 6,
+      "n": 50,
+      "harvestedAt": "2026-09-08",
       "scope": "wip",
-      "live": 6,
-      "furniture": 6,
+      "live": 50,
+      "furniture": 17,
       "furnitureWhy": {
-        "canvas-chrome": 6
+        "canvas-chrome": 7,
+        "loose-rectangle": 10
       },
-      "genuine": 0,
+      "genuine": 33,
       "matched": 0,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {},
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "10359-13264",
+          "name": "Skai > Play > Casino > Cosmic slots (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1627
+        },
+        {
+          "id": "10359-13505",
+          "name": "Skai > Play > Casino > Cosmic slots (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "10387-4125",
+          "name": "Load screen - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10385-3166",
+          "name": "Load screen > Start game - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10387-4470",
+          "name": "Load screen > home - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10400-5393",
+          "name": "Load screen > home >combo > combo end frame - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10400-5509",
+          "name": "Load screen > home >combo > combo end frame > menu - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10395-4756",
+          "name": "Load screen > home - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10400-4973",
+          "name": "Load screen > home > combo - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10385-2858",
+          "name": "Load screen ALT - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10359-14155",
+          "name": "Skai > Play > Casino > Cosmic slots (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1605
+        },
+        {
+          "id": "10406-11916",
+          "name": "Skai > Play > Casino > Cosmic slots 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "10406-12386",
+          "name": "Skai > Play > Casino > Cosmic slots 2 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "10401-6164",
+          "name": "Cosmic slots - Card visual",
+          "type": "FRAME",
+          "w": 195,
+          "h": 276
+        },
+        {
+          "id": "10403-6394",
+          "name": "Cosmic slots - Card visual",
+          "type": "FRAME",
+          "w": 400,
+          "h": 566
+        },
+        {
+          "id": "10401-6360",
+          "name": "Mines Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10401-6365",
+          "name": "Cosmic slots - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10401-6369",
+          "name": "Cosmic slots - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "10401-6374",
+          "name": "Cosmic slots - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        },
+        {
+          "id": "10403-6465",
+          "name": "Load screen - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10403-6662",
+          "name": "Load screen > home - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10406-11233",
+          "name": "Load screen > home > menu - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10406-10540",
+          "name": "Load screen > home > combo - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10405-9861",
+          "name": "Load screen ALT - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10405-9965",
+          "name": "Load screen > Start game - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10407-12856",
+          "name": "Load screen - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10407-14020",
+          "name": "Load screen ALT - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10407-13075",
+          "name": "Load screen - refresh screen - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10407-13179",
+          "name": "Load screen > home - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10409-14696",
+          "name": "Load screen > home > all key items - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10412-15598",
+          "name": "Load screen > home > menu - docked - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10412-15700",
+          "name": "Load screen > home > menu - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10407-14031",
+          "name": "Load screen > Start game - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        }
+      ]
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10266:6",
       "pageName": "🚧 Vegas fortune - Skai originals",
       "readiness": "wip",
-      "n": 1,
+      "n": 85,
+      "harvestedAt": "2026-09-08",
       "scope": "wip",
-      "live": 1,
-      "furniture": 1,
+      "live": 85,
+      "furniture": 46,
       "furnitureWhy": {
-        "canvas-chrome": 1
+        "canvas-chrome": 12,
+        "loose-rectangle": 34
       },
-      "genuine": 0,
+      "genuine": 39,
       "matched": 0,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {},
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "10412-15861",
+          "name": "Skai > Play > Casino > Vegas fortune (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1627
+        },
+        {
+          "id": "10412-16102",
+          "name": "Skai > Play > Casino > Vegas fortune (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "10448-4297",
+          "name": "Load screen - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10452-4331",
+          "name": "Load screen ALT - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10412-16752",
+          "name": "Skai > Play > Casino > Vegas fortune (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 1375
+        },
+        {
+          "id": "10452-4915",
+          "name": "Load screen > features - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10458-5156",
+          "name": "Load screen > features > home - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10655-5847",
+          "name": "Load screen > features > home > combo > combo end frame > menu - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10478-5265",
+          "name": "Load screen > features > home - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10655-5591",
+          "name": "Load screen > features > home > combo - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10688-7138",
+          "name": "Vegas fortune - Card visual",
+          "type": "FRAME",
+          "w": 195,
+          "h": 276
+        },
+        {
+          "id": "10688-7176",
+          "name": "Vegas fortune - Card visual",
+          "type": "FRAME",
+          "w": 400,
+          "h": 566
+        },
+        {
+          "id": "10688-7225",
+          "name": "Vegas fortune - Card visual",
+          "type": "FRAME",
+          "w": 400,
+          "h": 566
+        },
+        {
+          "id": "10688-7210",
+          "name": "Vegas fortune - Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10688-7214",
+          "name": "Vegas fortune - Tablet",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "10688-7219",
+          "name": "Vegas fortune - Mobile",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        },
+        {
+          "id": "10688-7196",
+          "name": "Mines Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10688-7153",
+          "name": "Vegas fortune - Desktop ALT",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10688-7157",
+          "name": "Vegas fortune - Tablet ALT",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "10688-7162",
+          "name": "Vegas fortune - Mobile ALT",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        },
+        {
+          "id": "10688-7471",
+          "name": "Skai > Play > Casino > Vegas fortune - screen type 2 (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 3467
+        },
+        {
+          "id": "10688-8328",
+          "name": "Skai > Play > Casino > Vegas fortune > Load screen - screen type 2 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "10698-11157",
+          "name": "Load screen - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10737-13868",
+          "name": "Load screen > features > home - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10737-14223",
+          "name": "Load screen > features > home ALT 2 - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10737-14138",
+          "name": "Load screen > features > home ALT - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10738-14799",
+          "name": "Load screen > features > home > combo > menu - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10738-14514",
+          "name": "Load screen > features > home > combo - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10737-13562",
+          "name": "Load screen > features - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10736-12848",
+          "name": "Load screen ALT - tablet",
+          "type": "FRAME",
+          "w": 708,
+          "h": 720
+        },
+        {
+          "id": "10738-15210",
+          "name": "Skai > Play > Casino > Vegas fortune 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "10738-15461",
+          "name": "Skai > Play > Casino > Vegas fortune 2 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "10738-15628",
+          "name": "Load screen - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10741-16616",
+          "name": "Load screen > features - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10743-16972",
+          "name": "Load screen > features > home - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10744-17293",
+          "name": "Load screen > features > home > combo - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10745-17641",
+          "name": "Load screen > features > home > menu - docked - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10745-17872",
+          "name": "Load screen > features > home > menu - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        },
+        {
+          "id": "10741-16488",
+          "name": "Load screen ALT - mobile",
+          "type": "FRAME",
+          "w": 347,
+          "h": 500
+        }
+      ]
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10266:7",
       "pageName": "🚧 Gem Slots - Skai originals",
       "readiness": "wip",
-      "n": 11,
+      "n": 36,
+      "harvestedAt": "2026-09-08",
       "scope": "wip",
-      "live": 11,
-      "furniture": 8,
+      "live": 36,
+      "furniture": 22,
       "furnitureWhy": {
-        "canvas-chrome": 8
+        "canvas-chrome": 9,
+        "loose-rectangle": 13
       },
-      "genuine": 3,
+      "genuine": 14,
       "matched": 0,
       "rollupOnly": 0,
       "defaultNamed": 0,
@@ -12935,24 +13692,101 @@
       "liveOnly": [
         {
           "id": "10285-14037",
-          "name": "Skai > Play > Casino",
+          "name": "Skai > Play > Casino > Gem slots (768 x 1024px)",
           "type": "FRAME",
           "w": 768,
           "h": 1627
         },
         {
           "id": "10285-14278",
-          "name": "Skai > Play > Casino",
+          "name": "Skai > Play > Casino > Gem slots (1440 x 900px)",
           "type": "FRAME",
           "w": 1440,
           "h": 3467
         },
         {
           "id": "10285-14928",
-          "name": "Skai > Play > Casino",
+          "name": "Skai > Play > Casino > Gem slots (375 x 812px)",
           "type": "FRAME",
           "w": 375,
           "h": 1605
+        },
+        {
+          "id": "10747-20240",
+          "name": "Load screen - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10753-20676",
+          "name": "Load screen ALT - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10758-20929",
+          "name": "Load screen ALT > selector - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "11148-2096",
+          "name": "Load screen ALT > selector - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "11146-1937",
+          "name": "Load screen ALT > selector - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10782-24103",
+          "name": "Load screen ALT > selector > home - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
+        },
+        {
+          "id": "10758-20769",
+          "name": "Mines Desktop",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10758-20774",
+          "name": "Gem slots - Desktop ALT",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "10758-20778",
+          "name": "Gem slots - Tablet ALT",
+          "type": "FRAME",
+          "w": 120,
+          "h": 170
+        },
+        {
+          "id": "10758-20783",
+          "name": "Gem slots - Mobile ALT",
+          "type": "FRAME",
+          "w": 76,
+          "h": 108
+        },
+        {
+          "id": "11142-2604",
+          "name": "Load screen > features > home - desktop",
+          "type": "FRAME",
+          "w": 1318,
+          "h": 621
         }
       ]
     },
@@ -12961,21 +13795,29 @@
       "pageId": "11095:2603",
       "pageName": "🚧 Wild card - Skai originals",
       "readiness": "wip",
-      "n": 0,
+      "n": 1,
       "scope": "wip",
       "harvestedAt": "2026-09-08",
-      "note": "Created and still empty: 0 top-level children, agreed by page.loadAsync() AND setCurrentPageAsync. An unloaded page also reports 0, which is why both were read. Recorded rather than omitted, because a page absent from this list and a page with nothing on it read identically to every consumer.",
-      "live": 0,
+      "note": "No longer empty. Recorded as 0 top-level children earlier on 2026-09-08 (agreed by page.loadAsync() AND setCurrentPageAsync, both read because an unloaded page also reports a plausible 0); re-read later the same day it holds one child, 11148:2223 'Group 3' (3182x7925), and a .tsv now exists. Keep the row either way: a page absent from this list and a page with nothing on it read identically to every consumer.",
+      "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
-      "genuine": 0,
+      "genuine": 1,
       "matched": 0,
       "rollupOnly": 0,
-      "defaultNamed": 0,
+      "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
       "byStatus": {},
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "11148-2223",
+          "name": "Group 3",
+          "type": "GROUP",
+          "w": 3182,
+          "h": 7925
+        }
+      ]
     }
   ],
   "catalogOnly": [

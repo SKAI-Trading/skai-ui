@@ -41,10 +41,73 @@
     "`classify()` only regex-tests it for canvas chrome, and every furniture pattern is",
     "shorter than the cap — so the truncation costs no accuracy there. It DOES make the",
     "column useless for reading a frame back, which is why re-harvests write the full name.",
-    "Do not treat a longer name in a re-harvested page as drift against a shorter one here."
+    "Do not treat a longer name in a re-harvested page as drift against a shorter one here.",
+    "",
+    "★ 2026-09-08 FULL RE-COUNT. Every page of all three tracked files was re-read with the",
+    "METHOD below and its live children.length compared to `n`. All 13 pages of",
+    "3sSzw1KewMtUbeLAv7uW0r and all 7 of mhF3BkzlTaGiLzJ7kvpmVc matched exactly — including",
+    "Governance at 725, which is the number the 09-07 re-harvest pinned. EIGHT pages of",
+    "M6r9FEn042UWTQD1zvy6GM did not: Mines 19->21, Coinflip 45->46, Cover Images 42->44,",
+    "Safari Slots 33->61, Cosmic Slots 6->50, Vegas fortune 1->85, Gem Slots 11->36, Wild",
+    "card 0->1. All eight .tsv node lists were re-harvested in the same pass and `n` moved",
+    "with them, so harvest and manifest still agree.",
+    "",
+    "⛔ THE LOUD GUARD CANNOT SEE THIS FAILURE, and that is worth stating plainly, because",
+    "the guard is easy to mistake for cover it does not give. coverage.mjs compares the .tsv",
+    "row count to `n` — two numbers produced by the SAME harvest. When a page grows in Figma",
+    "afterwards, both stay stale together, they agree, and the run is silent while the",
+    "denominator is short and the published percentage is high. The guard catches a TRUNCATED",
+    "harvest (tsv < n, tool-output loss); it cannot catch a SUPERSEDED one. Only re-reading",
+    "Figma catches that, which is why this row exists. Nothing had re-read Skai-Games since",
+    "2026-08-26 — thirteen days.",
+    "",
+    "Non-cosmetic bug fixed in the same pass: Home 1, Home 2 and Trade 2 each carried the key",
+    "`harvestedAt` TWICE in one object — '2026-09-08' before `pageName` and '2026-09-07' after",
+    "`n`, the first added by commit 76af075 on top of one already there. JSON.parse keeps the",
+    "LAST, so all three silently read as the OLDER date and the file under-reported its own",
+    "freshness on exactly the pages most recently re-harvested. The duplicate is gone; those",
+    "three now carry `nVerifiedAt` instead, which says what actually happened to them today —",
+    "their child count was re-counted and confirmed, their .tsv was not re-harvested. Do not",
+    "read `nVerifiedAt` as a harvest date.",
+    "",
+    "★ `openReports` (added 2026-09-08) is the number of ACTIONABLE bug reports whose own",
+    "`figma_link` resolves to this page — every node-id taken from the report's link, then",
+    "walked to its PAGE with getNodeByIdAsync, never guessed from a title. 548 of the 599",
+    "actionable reports carry a link; 536 resolved, 12 name a node Figma no longer has, 0 could",
+    "not be placed. Every page any report cites is in this list and carries a scope, so there",
+    "is no unscoped citation left — the one gap was a whole FILE, not a page, and it is in",
+    "`fileAliases` above.",
+    "",
+    "⛔ IT IS NOT A SCOPE INPUT, and the ordering of the two is the whole point: `scope` is",
+    "Casey's ruling and report count is pressure against it. Read together they say where the",
+    "two disagree — 193 of the 536 (36%) cite a v1-superseded page (Home 1 87, Trade 1 64,",
+    "Wallet 1 42), which by scope is not a parity target at all, plus 8 on held Governance, 5",
+    "on excluded Onboarding and 1 on wip Vegas fortune. That is 207 reports, 38% of the",
+    "linked backlog, filed against frames nobody is meant to build toward. Surfacing it is the",
+    "point; deciding it is not — do not move a scope off this number.",
+    "",
+    "It is a SNAPSHOT of 2026-09-08 and goes stale as reports are filed and closed. Re-derive",
+    "it rather than trusting it if the date matters."
   ],
   "harvestedAt": "2026-08-26",
   "method": "use_figma read-only; figma.root.children for the page list, then page.loadAsync() per page for children",
+  "fileAliases": {
+    "_why": "Report `figma_link`s do not all carry a tracked fileKey. An untracked key resolves to no page and so to no scope, and an unscoped citation is worse than a retired one: nobody can tell whether to build it. Record the mapping here rather than letting each lane rediscover it.",
+    "qCg6vd2Kd4KCgZgYzVsFWD": {
+      "fileName": "Skai-Web-App-2-QA-Sheet",
+      "aliasOf": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "sharedIdSpace": true,
+      "note": "A QA copy of Skai-Web-App-2 that SHARES ITS NODE IDS. Six bug reports cite it (all `Tablet View (768px) > Pro > ...`), and this account cannot open it — use_figma and get_metadata both return 'you don't have edit access'. Resolve its node-ids against mhF3BkzlTaGiLzJ7kvpmVc instead. Verified 2026-09-08 on all six cited ids: every one exists in mhF3, every one sits on ✅ Home 2 (13008:110718, in-scope), and every one is a `Skai > Pro ...` 768px frame matching its report title — e.g. 13008:126152 is 'Skai > Pro > checkout > welcome to gold 1VH (768 x 1024px)' against the report 'Tablet View (768px) > Pro > Checkout > Welcome to Plan'. Not scoped separately and NOT a page of its own; it adds no frames to any denominator.",
+      "citedBy": [
+        "19844966-abf7-4f62-a1e5-d4aede705ef5",
+        "3e6207a7-941e-463a-9927-2e398df0a009",
+        "964803fa-7f30-44bd-9d7c-ac3c8c2cab20",
+        "5b55c089-3704-4de0-9cd6-776402f7d596",
+        "bfd3eb29-5ad6-429c-a21e-2107c1265496",
+        "6159c035-fd25-4589-b508-bbdf026ef449"
+      ]
+    }
+  },
   "scopeLegend": {
     "in-scope": "counted in the headline roll-up",
     "held": "Casey held it — reported, excluded from the roll-up",
@@ -61,6 +124,7 @@
       "pageName": "Thumbnail",
       "readiness": "meta",
       "n": 1,
+      "openReports": 0,
       "scope": "meta"
     },
     {
@@ -69,6 +133,7 @@
       "pageName": "📍 Master sheet",
       "readiness": "meta",
       "n": 46,
+      "openReports": 0,
       "scope": "meta"
     },
     {
@@ -77,6 +142,7 @@
       "pageName": "🚧 Titles + Emblems",
       "readiness": "wip",
       "n": 1157,
+      "openReports": 0,
       "scope": "wip"
     },
     {
@@ -85,6 +151,7 @@
       "pageName": "🚧 User Flow",
       "readiness": "wip",
       "n": 3,
+      "openReports": 0,
       "scope": "wip"
     },
     {
@@ -93,6 +160,7 @@
       "pageName": "✅ Onboarding and Authentication",
       "readiness": "ready",
       "n": 151,
+      "openReports": 5,
       "scope": "excluded"
     },
     {
@@ -101,6 +169,7 @@
       "pageName": "✅ Privacy and Terms",
       "readiness": "ready",
       "n": 10,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -109,6 +178,7 @@
       "pageName": "✝️ Home (moved to Skai Web App 2)",
       "readiness": "tombstone",
       "n": 20,
+      "openReports": 0,
       "scope": "tombstone"
     },
     {
@@ -117,6 +187,7 @@
       "pageName": "✝️ Wallet (moved to Skai Web App 2)",
       "readiness": "tombstone",
       "n": 13,
+      "openReports": 0,
       "scope": "tombstone"
     },
     {
@@ -125,6 +196,7 @@
       "pageName": "✝️ Trade (moved to Skai Web App 2)",
       "readiness": "tombstone",
       "n": 154,
+      "openReports": 0,
       "scope": "tombstone"
     },
     {
@@ -133,6 +205,7 @@
       "pageName": "✅ Predict",
       "readiness": "ready",
       "n": 284,
+      "openReports": 64,
       "scope": "in-scope"
     },
     {
@@ -141,6 +214,7 @@
       "pageName": "✅ Play",
       "readiness": "ready",
       "n": 345,
+      "openReports": 38,
       "scope": "in-scope"
     },
     {
@@ -149,6 +223,7 @@
       "pageName": "✅ Social",
       "readiness": "ready",
       "n": 442,
+      "openReports": 16,
       "scope": "in-scope"
     },
     {
@@ -158,6 +233,7 @@
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
+      "openReports": 8,
       "scope": "held"
     },
     {
@@ -166,6 +242,7 @@
       "pageName": "Thumbnail",
       "readiness": "meta",
       "n": 1,
+      "openReports": 0,
       "scope": "meta"
     },
     {
@@ -175,7 +252,8 @@
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 277,
-      "harvestedAt": "2026-09-07",
+      "nVerifiedAt": "2026-09-08",
+      "openReports": 87,
       "scope": "v1-superseded"
     },
     {
@@ -185,7 +263,8 @@
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 240,
-      "harvestedAt": "2026-09-07",
+      "nVerifiedAt": "2026-09-08",
+      "openReports": 36,
       "scope": "in-scope"
     },
     {
@@ -194,6 +273,7 @@
       "pageName": "✅ Wallet 1",
       "readiness": "ready",
       "n": 178,
+      "openReports": 42,
       "scope": "v1-superseded"
     },
     {
@@ -202,6 +282,7 @@
       "pageName": "✅ Wallet 2",
       "readiness": "ready",
       "n": 182,
+      "openReports": 25,
       "scope": "in-scope"
     },
     {
@@ -210,6 +291,7 @@
       "pageName": "✅ Trade 1",
       "readiness": "ready",
       "n": 420,
+      "openReports": 64,
       "scope": "v1-superseded"
     },
     {
@@ -219,7 +301,8 @@
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 417,
-      "harvestedAt": "2026-09-07",
+      "nVerifiedAt": "2026-09-08",
+      "openReports": 138,
       "scope": "in-scope"
     },
     {
@@ -228,6 +311,7 @@
       "pageName": "Thumbnail",
       "readiness": "meta",
       "n": 1,
+      "openReports": 0,
       "scope": "meta"
     },
     {
@@ -236,6 +320,7 @@
       "pageName": "📍 Games master sheet",
       "readiness": "meta",
       "n": 3,
+      "openReports": 0,
       "scope": "meta"
     },
     {
@@ -243,10 +328,12 @@
       "pageId": "9220:26175",
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
-      "n": 42,
+      "n": 44,
+      "harvestedAt": "2026-09-08",
+      "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
-      "scopeNote": "n=42 is the 2026-08-26 snapshot and is STALE: get_metadata on this page returned 44 live children on 2026-09-08. The sibling .tsv has the matching 42 rows, so coverage.mjs stays consistent and silent rather than tripping its loud guard, and n is left alone rather than half-reconciled - raising n without re-harvesting the .tsv makes 42 < 44 and coverage.mjs REFUSES to run at all. Known missing from both: 10404:3412 Blackjack Desktop, 10428:2145 Bingo Desktop, 10428:2601 Chicken Desktop, 10404:7943 + 10404:7948 Keno. Still listed and deleted from Figma: 9222:26323. Re-harvest with the METHOD in this file's _comment, not from get_metadata."
+      "scopeNote": "RESOLVED 2026-09-08 by re-harvest. n was 42 from the 2026-08-26 snapshot while the live page held 44; the .tsv carried the matching 42 rows, so coverage.mjs stayed consistent and SILENT - the loud guard compares the harvest to the manifest, and both were stale together. The page and its .tsv were re-read with the METHOD in this file's _comment (not get_metadata) and both now say 44. The five frames the old note listed as missing from both are present: 10404:3412 Blackjack Desktop, 10428:2145 Bingo Desktop, 10428:2601 Chicken Desktop, 10404:7943 + 10404:7948 Keno. 9222:26323, listed but deleted from Figma, is absent from the live read and so is gone from the .tsv."
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -254,6 +341,7 @@
       "pageName": "✅ Dice - Skai originals",
       "readiness": "ready",
       "n": 36,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -262,6 +350,7 @@
       "pageName": "✅ Plinko - Skai originals",
       "readiness": "ready",
       "n": 21,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -270,6 +359,7 @@
       "pageName": "✅ Blackjack - Skai originals",
       "readiness": "ready",
       "n": 23,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -278,6 +368,7 @@
       "pageName": "✅ Crash - Skai originals",
       "readiness": "ready",
       "n": 20,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -285,7 +376,9 @@
       "pageId": "9003:102080",
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
-      "n": 19,
+      "n": 21,
+      "harvestedAt": "2026-09-08",
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -293,7 +386,9 @@
       "pageId": "9003:122027",
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
-      "n": 45,
+      "n": 46,
+      "harvestedAt": "2026-09-08",
+      "openReports": 3,
       "scope": "in-scope"
     },
     {
@@ -302,6 +397,7 @@
       "pageName": "✅ Scratchers - Skai originals",
       "readiness": "ready",
       "n": 21,
+      "openReports": 1,
       "scope": "in-scope"
     },
     {
@@ -310,6 +406,7 @@
       "pageName": "✅ Chicken - Skai originals",
       "readiness": "ready",
       "n": 31,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -318,6 +415,7 @@
       "pageName": "✅ Hi-Lo - Skai originals",
       "readiness": "ready",
       "n": 16,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -326,6 +424,7 @@
       "pageName": "✅ Darts - Skai originals",
       "readiness": "ready",
       "n": 31,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -334,6 +433,7 @@
       "pageName": "✅ Keno - Skai originals",
       "readiness": "ready",
       "n": 27,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -342,6 +442,7 @@
       "pageName": "✅ Fortune Wheel - Skai originals",
       "readiness": "ready",
       "n": 25,
+      "openReports": 2,
       "scope": "in-scope"
     },
     {
@@ -350,6 +451,7 @@
       "pageName": "✅ Video Poker - Skai originals",
       "readiness": "ready",
       "n": 14,
+      "openReports": 2,
       "scope": "in-scope"
     },
     {
@@ -358,6 +460,7 @@
       "pageName": "✅ Bingo - Skai originals",
       "readiness": "ready",
       "n": 17,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -366,6 +469,7 @@
       "pageName": "✅ Baccarat - Skai originals",
       "readiness": "ready",
       "n": 21,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -374,6 +478,7 @@
       "pageName": "✅ Roulette - Skai originals",
       "readiness": "ready",
       "n": 21,
+      "openReports": 1,
       "scope": "in-scope"
     },
     {
@@ -382,6 +487,7 @@
       "pageName": "✅ Limbo - Skai originals",
       "readiness": "ready",
       "n": 14,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -390,6 +496,7 @@
       "pageName": "✅ Rock Paper Scissors - Skai originals",
       "readiness": "ready",
       "n": 24,
+      "openReports": 1,
       "scope": "in-scope"
     },
     {
@@ -398,6 +505,7 @@
       "pageName": "✅ Slide - Skai originals",
       "readiness": "ready",
       "n": 18,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -406,6 +514,7 @@
       "pageName": "✅ Price Grid - Skai originals",
       "readiness": "ready",
       "n": 20,
+      "openReports": 2,
       "scope": "in-scope"
     },
     {
@@ -414,6 +523,7 @@
       "pageName": "✅ Towers - Skai originals",
       "readiness": "ready",
       "n": 30,
+      "openReports": 0,
       "scope": "in-scope"
     },
     {
@@ -422,6 +532,7 @@
       "pageName": "Towars Draft (Disregard)",
       "readiness": "unknown",
       "n": 51,
+      "openReports": 0,
       "scope": "wip"
     },
     {
@@ -430,6 +541,7 @@
       "pageName": "----------",
       "readiness": "meta",
       "n": 0,
+      "openReports": 0,
       "scope": "meta"
     },
     {
@@ -437,7 +549,9 @@
       "pageId": "10265:2",
       "pageName": "🚧 Safari Slots - Skai originals",
       "readiness": "wip",
-      "n": 33,
+      "n": 61,
+      "harvestedAt": "2026-09-08",
+      "openReports": 0,
       "scope": "wip"
     },
     {
@@ -445,7 +559,9 @@
       "pageId": "10266:5",
       "pageName": "🚧 Cosmic Slots - Skai originals",
       "readiness": "wip",
-      "n": 6,
+      "n": 50,
+      "harvestedAt": "2026-09-08",
+      "openReports": 0,
       "scope": "wip"
     },
     {
@@ -453,7 +569,9 @@
       "pageId": "10266:6",
       "pageName": "🚧 Vegas fortune - Skai originals",
       "readiness": "wip",
-      "n": 1,
+      "n": 85,
+      "harvestedAt": "2026-09-08",
+      "openReports": 1,
       "scope": "wip"
     },
     {
@@ -461,7 +579,9 @@
       "pageId": "10266:7",
       "pageName": "🚧 Gem Slots - Skai originals",
       "readiness": "wip",
-      "n": 11,
+      "n": 36,
+      "harvestedAt": "2026-09-08",
+      "openReports": 0,
       "scope": "wip"
     },
     {
@@ -469,10 +589,11 @@
       "pageId": "11095:2603",
       "pageName": "🚧 Wild card - Skai originals",
       "readiness": "wip",
-      "n": 0,
+      "n": 1,
+      "openReports": 0,
       "scope": "wip",
       "harvestedAt": "2026-09-08",
-      "note": "Created and still empty: 0 top-level children, agreed by page.loadAsync() AND setCurrentPageAsync. An unloaded page also reports 0, which is why both were read. Recorded rather than omitted, because a page absent from this list and a page with nothing on it read identically to every consumer."
+      "note": "No longer empty. Recorded as 0 top-level children earlier on 2026-09-08 (agreed by page.loadAsync() AND setCurrentPageAsync, both read because an unloaded page also reports a plausible 0); re-read later the same day it holds one child, 11148:2223 'Group 3' (3182x7925), and a .tsv now exists. Keep the row either way: a page absent from this list and a page with nothing on it read identically to every consumer."
     }
   ]
 }
