@@ -270,6 +270,15 @@ const NON_SKAI_SECTIONS = new Set([
   // duplicated and never renamed. Parsing them with the Skai grammar would both
   // demote every real frame to non-screen AND file them under the wrong game.
   "darts", "chicken", "hilo",
+  // 2026-09-10: the four slots pages, scaffolded 2026-09-09 while still
+  // wip/uncounted and never added here. Same shape as every entry above —
+  // their frames use plain design-state names ("Load screen - desktop",
+  // "Safari A 1") rather than "Skai > ..." titles. Left out, the Skai grammar
+  // demoted every one of them to non-screen, which is why Cosmic Slots needed
+  // 45 component-aliases.tsv rows just to become visible to apply-verify.mjs
+  // (whose verdicts were loading, counting, and being silently discarded).
+  // GAME_BY_SECTION already carried a name for each; it was dead code until now.
+  "safari-slots", "cosmic-slots", "vegas-fortune", "gem-slots",
 ]);
 // For a Skai-Games (non-Skai-convention) section, the product/game family name.
 // A section's frames fold into one canonical "Casino > <game>" family.

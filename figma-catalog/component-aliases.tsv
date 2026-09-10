@@ -53,60 +53,43 @@
 9058-6701	hilo	component	Casino > Game detail strip	-	NEITHER GAME. The shared stats/fairness sub-bar every game detail page draws: help, Practice mode off, refresh, favourite, sound, fullscreen, Skai mark, Provably fair. 698x54.
 9351-3397	hilo	component	Casino > Hi-Lo	-	Hi-Lo COVER ART, 1080x1350: 6-of-hearts over 10-of-spades with the HIGHER/LOWER arrow pair. This is the tile the casino grid and the game-info card draw (shipped as modules/skai-gaming/src/assets/games/figma/hilo.webp, mapped in playGameArt.ts). A real SKAI asset, not a screen.
 #
-# ── 2026-09-10: Cosmic Slots (wave 40) — the game/in-game frames are plain
-# design-state names ("Load screen - desktop", "Safari A 1", "Cosmic slots
-# spaceship 1"), not "Skai > ..." titles, and the section was never added to
-# NON_SKAI_SECTIONS in build-registry.mjs (the four 🚧 slots sections were
-# scaffolded on 2026-09-09 while still wip/uncounted, before anyone needed a
-# working status/vverify application for them). Left unaliased, all 45 of these
-# land kind:non-screen — invisible to families.mjs, catalog-view.mjs, and
-# (critically) to apply-verify.mjs, whose VERIFIABLE_KINDS is screen/component
-# only, so every vverify.cosmic-slots.tsv row for these ids would load, count,
-# and then be silently discarded, exactly the class of bug this file exists to
-# close. The five page frames DO start with "Skai > Play > Casino > Cosmic
-# slots ..." and already parse kind:screen correctly; they are not listed here.
-10387-4125	cosmic-slots	component	Cosmic Slots	desktop	Load screen - desktop (BootScene)
-10385-3166	cosmic-slots	component	Cosmic Slots	desktop	Load screen > Start game - desktop (IntroScene); the shipped flow substitutes ladder-tier intro cards, not this frame's Start button
-10387-4470	cosmic-slots	component	Cosmic Slots	desktop	Load screen > home - desktop (ReelsScene); untitled duplicate of 10395-4756, never independently read
-10400-5393	cosmic-slots	component	Cosmic Slots	desktop	Load screen > home > combo > combo end - desktop (ReelsScene); win end-state, never exercised live (no funded rail)
-10400-5509	cosmic-slots	component	Cosmic Slots	desktop	Load screen > home > combo > combo end > menu - desktop (MenuScene); menu never opened live
-10395-4756	cosmic-slots	component	Cosmic Slots	desktop	Load screen > home - desktop (ReelsScene); CANONICAL Home-desktop frame
-10400-4973	cosmic-slots	component	Cosmic Slots	desktop	Load screen > home > combo - desktop (ReelsScene); win-combo state, never exercised live
-10385-2858	cosmic-slots	component	Cosmic Slots	desktop	Load screen ALT - desktop (BootScene); never read
-10403-6465	cosmic-slots	component	Cosmic Slots	tablet	Load screen - tablet (BootScene); never read
-10403-6662	cosmic-slots	component	Cosmic Slots	tablet	Load screen > home - tablet (ReelsScene); CANONICAL Home-tablet frame
-10406-11233	cosmic-slots	component	Cosmic Slots	tablet	Load screen > home > menu - tablet (MenuScene); drawer never opened live
-10406-10540	cosmic-slots	component	Cosmic Slots	tablet	Load screen > home > combo - tablet (ReelsScene); never read
-10405-9861	cosmic-slots	component	Cosmic Slots	tablet	Load screen ALT - tablet (BootScene); never read
-10405-9965	cosmic-slots	component	Cosmic Slots	tablet	Load screen > Start game - tablet (IntroScene); never read
-10407-12856	cosmic-slots	component	Cosmic Slots	mobile	Load screen - mobile (BootScene)
-10407-14020	cosmic-slots	component	Cosmic Slots	mobile	Load screen ALT - mobile (BootScene); never read
-10407-13075	cosmic-slots	component	Cosmic Slots	mobile	Load screen - refresh screen - mobile (BootScene); never read
-10407-13179	cosmic-slots	component	Cosmic Slots	mobile	Load screen > home - mobile (ReelsScene); CANONICAL portrait Home frame
-10409-14696	cosmic-slots	component	Cosmic Slots	mobile	Load screen > home > all key items - mobile (ReelsScene); portrait cross-check frame
-10412-15598	cosmic-slots	component	Cosmic Slots	mobile	Load screen > home > menu - docked - mobile (MenuScene); menu CLOSED state
-10412-15700	cosmic-slots	component	Cosmic Slots	mobile	Load screen > home > menu - mobile (MenuScene); menu OPEN state, never opened live
-10407-14031	cosmic-slots	component	Cosmic Slots	mobile	Load screen > Start game - mobile (IntroScene); never read
-10397-4965	cosmic-slots	component	Cosmic Slots	-	Safari A 1 reel sprite, shipped as red_gem
-10397-4966	cosmic-slots	component	Cosmic Slots	-	Safari A 2 reel sprite, shipped as blue_gem
-10397-4967	cosmic-slots	component	Cosmic Slots	-	Safari A 3 reel sprite, not required for the 12-key symbol set, not shipped
-10397-4968	cosmic-slots	component	Cosmic Slots	-	Safari A 4 reel sprite, shipped as green_gem
-10397-4969	cosmic-slots	component	Cosmic Slots	-	Safari A 5 reel sprite, shipped as yellow_gem
-10397-4970	cosmic-slots	component	Cosmic Slots	-	Safari A 6 reel sprite, shipped as alien
-10397-4971	cosmic-slots	component	Cosmic Slots	-	Safari A 7 reel sprite, shipped as purple_gem
-10400-4972	cosmic-slots	component	Cosmic Slots	-	Safari A 8 reel sprite, not required for the 12-key symbol set, not shipped
-10395-4860	cosmic-slots	component	Cosmic Slots	-	Cosmic slots spaceship 1, shipped as spaceship.webp (skin.ts rig "prop")
-10395-4859	cosmic-slots	component	Cosmic Slots	-	Cosmic slots Astro boy 1, shipped as astro-full.webp (skin.ts rig "torso")
-10401-6164	cosmic-slots	component	Cosmic Slots	-	Card visual; committed card-visual.webp is MINES ART (wrong bytes) - the page draws FIGMA_GAME_ART["cosmic-slots"] (10401-6365) instead, not this file
-10403-6394	cosmic-slots	component	Cosmic Slots	-	Card visual (duplicate title of 10401-6164); never read, no code reference
-10401-6365	cosmic-slots	component	Cosmic Slots	desktop	Cosmic slots - Desktop; the CORRECT hub-tile/card art, sourced as a rawImage pull, shipped as cosmic-slots-alt.webp via FIGMA_GAME_ART
-10401-6369	cosmic-slots	component	Cosmic Slots	tablet	Cosmic slots - Tablet; never read, no code reference found
-10401-6374	cosmic-slots	component	Cosmic Slots	mobile	Cosmic slots - Mobile; never read, no code reference found
-10359-13252	cosmic-slots	scaffold	-	-	Directory breadcrumb frame
-10359-13258	cosmic-slots	scaffold	-	-	Breakpoint marker frame
-10359-13260	cosmic-slots	scaffold	-	-	Breakpoint marker frame
-10359-13262	cosmic-slots	scaffold	-	-	Breakpoint marker frame
-10359-14485	cosmic-slots	scaffold	-	-	Loose canvas rectangle
-10359-14486	cosmic-slots	scaffold	-	-	Loose canvas rectangle
-10401-6379	cosmic-slots	scaffold	-	-	Loose canvas rectangle parked in the card-asset cluster
+# ── 2026-09-10: Cosmic Slots (wave 40 fix round 1) ──────────────────────────
+# The 45 rows this section used to carry here were a workaround: cosmic-slots
+# (and its three sibling slot sections) were never added to NON_SKAI_SECTIONS
+# in build-registry.mjs, so the grammar demoted every plain design-state title
+# ("Load screen - desktop", "Safari A 1") to kind:non-screen and every
+# vverify.cosmic-slots.tsv verdict for them loaded, counted, and was silently
+# discarded by apply-verify.mjs. Now that the section is in NON_SKAI_SECTIONS,
+# the grammar parses those same titles correctly on its own — 29 rows (the 22
+# "Load screen ..." states plus the Directory/Breakpoint/Rectangle scaffolding
+# that already matches the generic-scaffold pattern every other non-Skai
+# section relies on) are gone from here because they are redundant, not
+# because they stopped mattering.
+#
+# What is left is what the grammar still cannot tell from a real screen:
+# `Mines Desktop` (10401-6360) is Mines game art stray on this page's canvas —
+# titled like a legitimate desktop state, it would otherwise be counted as one
+# of Cosmic Slots' own screens. The rest are art assets whose titles read as
+# plain nouns, not design states — the eight reel sprites, the spaceship and
+# astronaut rig pieces, and the two card-art pairs (one pair sharing an
+# identical duplicate title, the other distinguishing the wrong-bytes art from
+# the art the page actually draws) — each carries a distinction in its note
+# that a bare "screen" classification would flatten. Every surviving row's
+# family is now "Casino > Cosmic Slots", matching the convention build-registry
+# derives for the section's own five page frames.
+10397-4965	cosmic-slots	component	Casino > Cosmic Slots	-	Safari A 1 reel sprite, shipped as red_gem
+10397-4966	cosmic-slots	component	Casino > Cosmic Slots	-	Safari A 2 reel sprite, shipped as blue_gem
+10397-4967	cosmic-slots	component	Casino > Cosmic Slots	-	Safari A 3 reel sprite, not required for the 12-key symbol set, not shipped
+10397-4968	cosmic-slots	component	Casino > Cosmic Slots	-	Safari A 4 reel sprite, shipped as green_gem
+10397-4969	cosmic-slots	component	Casino > Cosmic Slots	-	Safari A 5 reel sprite, shipped as yellow_gem
+10397-4970	cosmic-slots	component	Casino > Cosmic Slots	-	Safari A 6 reel sprite, shipped as alien
+10397-4971	cosmic-slots	component	Casino > Cosmic Slots	-	Safari A 7 reel sprite, shipped as purple_gem
+10400-4972	cosmic-slots	component	Casino > Cosmic Slots	-	Safari A 8 reel sprite, not required for the 12-key symbol set, not shipped
+10395-4860	cosmic-slots	component	Casino > Cosmic Slots	-	Cosmic slots spaceship 1, shipped as spaceship.webp (skin.ts rig "prop")
+10395-4859	cosmic-slots	component	Casino > Cosmic Slots	-	Cosmic slots Astro boy 1, shipped as astro-full.webp (skin.ts rig "torso")
+10401-6164	cosmic-slots	component	Casino > Cosmic Slots	-	Card visual; committed card-visual.webp is MINES ART (wrong bytes) - the page draws FIGMA_GAME_ART["cosmic-slots"] (10401-6365) instead, not this file
+10403-6394	cosmic-slots	component	Casino > Cosmic Slots	-	Card visual (duplicate title of 10401-6164); never read, no code reference
+10401-6365	cosmic-slots	component	Casino > Cosmic Slots	desktop	Cosmic slots - Desktop; the CORRECT hub-tile/card art, sourced as a rawImage pull, shipped as cosmic-slots-alt.webp via FIGMA_GAME_ART
+10401-6369	cosmic-slots	component	Casino > Cosmic Slots	tablet	Cosmic slots - Tablet; never read, no code reference found
+10401-6374	cosmic-slots	component	Casino > Cosmic Slots	mobile	Cosmic slots - Mobile; never read, no code reference found
 10401-6360	cosmic-slots	scaffold	-	-	Mines Desktop, a stray sibling: Mines game art parked on the Cosmic Slots page canvas, not part of this game
