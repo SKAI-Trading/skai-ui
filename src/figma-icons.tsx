@@ -31,22 +31,39 @@ type IconProps = React.SVGProps<SVGSVGElement>;
  *  `url(...)` reference it also IGNORES the caller's text color — HomeTopBar's
  *  StatPill already asks for `text-[#56C7F3]` and could never win — so the
  *  correction has to live here on the stop itself. */
-export const FigmaPointsIcon: React.FC<IconProps> = (props) => (
+/* ⛔ The gradient id MUST be per-instance. Report 5526ea62: the points glyph
+ * vanished in the mobile menu drawer on an iPhone while the two pills beside it
+ * drew fine. Those two are immune by construction — FigmaVaultIcon fills with
+ * `currentColor` and FigmaSusdIcon with a flat token — and this one is the only
+ * StatPill glyph painted through a referenced paint server.
+ *
+ * HomeTopBar renders it from two call sites at once on "/": the desktop row at
+ * :1079, inside a `hidden … lg:flex` wrapper, and the drawer row. `hidden` is
+ * `display:none`, so with a hardcoded id BOTH copies emit
+ * `id="figma-points-gradient"`, every `url(#…)` resolves to the FIRST one in
+ * document order, and that one lives inside the hidden subtree — where WebKit
+ * does not realise the paint server. The fill resolves to nothing and the icon
+ * disappears. Same shape on the other two paint servers in this file, fixed
+ * with them. */
+export const FigmaPointsIcon: React.FC<IconProps> = (props) => {
+  const gradientId = `figma-points-gradient-${React.useId()}`;
+  return (
   <svg viewBox="0 0 14 14" fill="none" aria-hidden="true" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M7 0C10.866 0 14 3.13401 14 7C14 10.866 10.866 14 7 14C3.13401 14 0 10.866 0 7C0 3.13401 3.13401 0 7 0ZM7.91016 5.93262C7.84287 5.93279 7.77733 5.95998 7.72949 6.00781L6.88379 6.85352C6.81752 6.91985 6.86394 7.03391 6.95801 7.03418H7.92773C8.10103 7.03442 8.19537 7.23683 8.08398 7.37012L4.61328 11.5088C4.55554 11.5773 4.60388 11.6822 4.69336 11.6826H6.38477C6.61563 11.6825 6.83716 11.5902 7 11.4268L10.9004 7.50293C11.0335 7.36843 11.0332 7.15142 10.8994 7.01758L10.0352 6.15332C9.89407 6.01225 9.70394 5.93272 9.50488 5.93262H7.91016ZM7.61523 2.82812C7.38427 2.82817 7.1629 2.92052 7 3.08398L3.09961 7.00781C2.96651 7.1423 2.9668 7.35932 3.10059 7.49316L3.96387 8.35742C4.10504 8.49855 4.29692 8.57715 4.49609 8.57715H6.08887C6.15623 8.57715 6.22157 8.5507 6.26953 8.50293L7.11719 7.65625C7.18343 7.58984 7.13621 7.47563 7.04199 7.47559H6.07324C5.89979 7.47559 5.80469 7.27302 5.91602 7.13965L9.38672 3.00293C9.44463 2.93444 9.39612 2.82856 9.30664 2.82812H7.61523Z"
-      fill="url(#figma-points-gradient)"
+      fill={`url(#${gradientId})`}
     />
     <defs>
-      <linearGradient id="figma-points-gradient" x1="0.59646" y1="-1.49083" x2="17.7701" y2="4.20608" gradientUnits="userSpaceOnUse">
+      <linearGradient id={gradientId} x1="0.59646" y1="-1.49083" x2="17.7701" y2="4.20608" gradientUnits="userSpaceOnUse">
         <stop stopColor="#56C7F3" />
         <stop offset="1" stopColor="#17F9B4" />
       </linearGradient>
     </defs>
   </svg>
-);
+  );
+};
 
 /** SKAI vault icon — inherits `currentColor` so callers set the color (e.g. the
  *  top-bar StatPill/Portfolio StatCard tint it #56C7F3; legacy pills use
@@ -403,10 +420,18 @@ export const FigmaCrystalBallIcon: React.FC<IconProps> = (props) => (
  * namespaced so it cannot collide with another inlined Figma export on the same
  * page.
  */
-export const FigmaSocialBubbleIcon: React.FC<IconProps> = (props) => (
+export const FigmaSocialBubbleIcon: React.FC<IconProps> = (props) => {
+  // Per-instance id — see the note on FigmaPointsIcon. A mask is a referenced
+  // paint server like a gradient: duplicate ids collapse onto the first in
+  // document order, and a copy inside a `display:none` subtree takes the
+  // reference with it. This glyph renders in both the sidebar and the mobile
+  // drawer, which is the same two-mounts-one-hidden shape that broke the
+  // points icon.
+  const maskId = `skai-social-bubble-outline-${React.useId()}`;
+  return (
   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
     <mask
-      id="skai-social-bubble-outline"
+      id={maskId}
       maskUnits="userSpaceOnUse"
       x="1.76904"
       y="2"
@@ -420,10 +445,11 @@ export const FigmaSocialBubbleIcon: React.FC<IconProps> = (props) => (
     <path
       d="M19.0679 5.16309L19.775 4.45599L19.775 4.45598L19.0679 5.16309ZM21.231 10.3848L22.231 10.3848V10.3848H21.231ZM19.0679 15.6064L19.775 16.3136L19.775 16.3136L19.0679 15.6064ZM13.8462 17.7695V16.7695H12.8462V17.7695H13.8462ZM13.8462 21.75L13.4748 22.6785L14.8462 23.227V21.75H13.8462ZM2.76904 10.3848H1.76904V10.3848L2.76904 10.3848ZM4.93213 5.16309L4.22502 4.45598L4.22501 4.456L4.93213 5.16309ZM10.1538 3V2H10.1538L10.1538 3ZM7.50049 9L7.50081 8H7.50049V9ZM7.50049 12V13H7.50081L7.50049 12ZM12.0005 9L12.0008 8H12.0005V9ZM12.0005 12V13H12.0008L12.0005 12ZM16.5005 9L16.5008 8H16.5005V9ZM16.5005 12V13H16.5008L16.5005 12ZM13.8462 3V4C15.5394 4 17.1634 4.6728 18.3608 5.87019L19.0679 5.16309L19.775 4.45598C18.2026 2.88361 16.07 2 13.8462 2V3ZM19.0679 5.16309L18.3608 5.87018C19.5581 7.06758 20.231 8.69157 20.231 10.3848H21.231H22.231C22.231 8.16098 21.3473 6.02834 19.775 4.45599L19.0679 5.16309ZM21.231 10.3848L20.231 10.3847C20.2309 12.078 19.5581 13.702 18.3608 14.8993L19.0679 15.6064L19.775 16.3136C21.3473 14.7412 22.2309 12.6085 22.231 10.3848L21.231 10.3848ZM19.0679 15.6064L18.3608 14.8993C17.1634 16.0967 15.5394 16.7695 13.8462 16.7695V17.7695V18.7695C16.07 18.7695 18.2026 17.8859 19.775 16.3136L19.0679 15.6064ZM13.8462 17.7695H12.8462V21.75H13.8462H14.8462V17.7695H13.8462ZM13.8462 21.75L14.2176 20.8215C11.9484 19.9138 9.29519 18.6204 7.22396 16.8626C5.1585 15.1097 3.76909 12.9841 3.76904 10.3847L2.76904 10.3848L1.76904 10.3848C1.7691 13.7854 3.6106 16.4192 5.92985 18.3875C8.24332 20.3508 11.1287 21.74 13.4748 22.6785L13.8462 21.75ZM2.76904 10.3848H3.76904C3.76904 8.6916 4.44191 7.06758 5.63925 5.87018L4.93213 5.16309L4.22501 4.456C2.65274 6.02834 1.76904 8.161 1.76904 10.3848H2.76904ZM4.93213 5.16309L5.63924 5.87019C6.8366 4.67283 8.4606 4.00002 10.1538 4L10.1538 3L10.1538 2C7.93004 2.00003 5.79738 2.88362 4.22502 4.45598L4.93213 5.16309ZM10.1538 3V4H13.8462V3V2H10.1538V3ZM7.50049 9V8C6.11978 8 5.00049 9.11929 5.00049 10.5H6.00049H7.00049C7.00049 10.2239 7.22435 10 7.50049 10V9ZM6.00049 10.5H5.00049C5.00049 11.8807 6.11978 13 7.50049 13V12V11C7.22435 11 7.00049 10.7761 7.00049 10.5H6.00049ZM7.50049 12L7.50081 13C8.88073 12.9996 10.0005 11.8809 10.0005 10.5H9.00049H8.00049C8.00049 10.7757 7.77665 10.9999 7.50017 11L7.50049 12ZM9.00049 10.5H10.0005C10.0005 9.11913 8.88073 8.00044 7.50081 8L7.50049 9L7.50017 10C7.77665 10.0001 8.00049 10.2243 8.00049 10.5H9.00049ZM12.0005 9V8C10.6198 8 9.50049 9.11929 9.50049 10.5H10.5005H11.5005C11.5005 10.2239 11.7243 10 12.0005 10V9ZM10.5005 10.5H9.50049C9.50049 11.8807 10.6198 13 12.0005 13V12V11C11.7243 11 11.5005 10.7761 11.5005 10.5H10.5005ZM12.0005 12L12.0008 13C13.3807 12.9996 14.5005 11.8809 14.5005 10.5H13.5005H12.5005C12.5005 10.7757 12.2767 10.9999 12.0002 11L12.0005 12ZM13.5005 10.5H14.5005C14.5005 9.11913 13.3807 8.00044 12.0008 8L12.0005 9L12.0002 10C12.2767 10.0001 12.5005 10.2243 12.5005 10.5H13.5005ZM16.5005 9V8C15.1198 8 14.0005 9.11929 14.0005 10.5H15.0005H16.0005C16.0005 10.2239 16.2243 10 16.5005 10V9ZM15.0005 10.5H14.0005C14.0005 11.8807 15.1198 13 16.5005 13V12V11C16.2243 11 16.0005 10.7761 16.0005 10.5H15.0005ZM16.5005 12L16.5008 13C17.8807 12.9996 19.0005 11.8809 19.0005 10.5H18.0005H17.0005C17.0005 10.7757 16.7767 10.9999 16.5002 11L16.5005 12ZM18.0005 10.5H19.0005C19.0005 9.11913 17.8807 8.00044 16.5008 8L16.5005 9L16.5002 10C16.7767 10.0001 17.0005 10.2243 17.0005 10.5H18.0005Z"
       fill="currentColor"
-      mask="url(#skai-social-bubble-outline)"
+      mask={`url(#${maskId})`}
     />
   </svg>
-);
+  );
+};
 
 /** Sidebar panel-toggle (collapse/pin). Figma 5863:89117. 15×11 (ash). */
 export const FigmaPanelToggleIcon: React.FC<IconProps> = (props) => (
@@ -1374,10 +1400,16 @@ export const FigmaQuestionCircleIcon: React.FC<IconProps> = (props) => (
  * outer edge exactly on the box — so this badge still measures 16 units across
  * like its BNB and Base siblings instead of rendering ~6% small beside them.
  */
-export const FigmaSolanaIcon: React.FC<IconProps> = (props) => (
+export const FigmaSolanaIcon: React.FC<IconProps> = (props) => {
+  // Per-instance id — see the note on FigmaPointsIcon. Two Solana badges on one
+  // screen (a chain filter row and a token list, say) would otherwise share
+  // `skaiSolBars`, and if either sits in a `display:none` subtree the survivors
+  // paint from a gradient WebKit never realised.
+  const gradientId = `skaiSolBars-${React.useId()}`;
+  return (
   <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
     <defs>
-      <linearGradient id="skaiSolBars" x1="11.5" y1="4.5" x2="4.5" y2="11.5" gradientUnits="userSpaceOnUse">
+      <linearGradient id={gradientId} x1="11.5" y1="4.5" x2="4.5" y2="11.5" gradientUnits="userSpaceOnUse">
         <stop stopColor="#0DC395" />
         <stop offset="1" stopColor="#8952F3" />
       </linearGradient>
@@ -1386,10 +1418,11 @@ export const FigmaSolanaIcon: React.FC<IconProps> = (props) => (
     <circle cx="8" cy="8" r="7.5" stroke="#17F9B4" strokeWidth="1" />
     <path
       d="M4.8 10.2C4.86 10.13 4.94 10.1 5.02 10.1L12.58 10.1C12.72 10.1 12.79 10.28 12.69 10.39L11.2 12.07C11.14 12.14 11.06 12.18 10.98 12.18L3.42 12.18C3.28 12.18 3.21 11.99 3.31 11.88L4.8 10.2ZM4.8 3.93C4.86 3.86 4.94 3.83 5.02 3.83L12.58 3.83C12.72 3.83 12.79 4.01 12.69 4.12L11.2 5.8C11.14 5.87 11.06 5.9 10.98 5.9L3.42 5.9C3.28 5.9 3.21 5.72 3.31 5.61L4.8 3.93ZM11.2 7.04C11.14 6.98 11.06 6.94 10.98 6.94L3.42 6.94C3.28 6.94 3.21 7.13 3.31 7.24L4.8 8.92C4.86 8.98 4.94 9.02 5.02 9.02L12.58 9.02C12.72 9.02 12.79 8.83 12.69 8.72L11.2 7.04Z"
-      fill="url(#skaiSolBars)"
+      fill={`url(#${gradientId})`}
     />
   </svg>
-);
+  );
+};
 
 /**
  * Base chain badge — Trench title row (Figma 13006:134373) and Import-wallets
