@@ -23,7 +23,15 @@ const Slider = React.forwardRef<
       )}
       {...props}
     >
-      <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary">
+      {/* The track is `bg-muted`, not shadcn's stock `bg-secondary`: the dark
+          theme sets --secondary and --primary to the same triple, so a
+          secondary track was drawn in the fill colour end to end and every
+          slider read as maxed out wherever the thumb sat. --secondary cannot
+          move — it also paints the Badge and Button secondary variants — so
+          the track takes an inert token instead. Call sites that have a
+          measured track colour keep overriding this; an arbitrary variant
+          outranks the base class. */}
+      <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-muted">
         <SliderPrimitive.Range className="absolute h-full bg-primary" />
       </SliderPrimitive.Track>
       {Array.from({ length: thumbCount }, (_, i) => (
