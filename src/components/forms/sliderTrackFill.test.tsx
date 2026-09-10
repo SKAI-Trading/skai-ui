@@ -18,6 +18,13 @@
  * defect arrived.
  */
 
+/// <reference types="node" />
+// The package tsconfig names no `types`, so nothing was pulling @types/node in
+// even though five test files here already read files or touch `global`. A
+// triple-slash reference is program-wide, not file-local, so this one line also
+// clears those: `tsc --noEmit` over the package goes from 36 errors to 3. If
+// this file ever moves, put the reference somewhere else before deleting it.
+
 import { render } from "@testing-library/react";
 import { describe, it, expect, beforeAll } from "vitest";
 import fs from "fs";
@@ -28,7 +35,7 @@ import { Slider } from "./slider";
 beforeAll(() => {
   // Radix Slider reaches for ResizeObserver through @radix-ui/react-use-size;
   // jsdom has none. Same shim as slider-thumbs.test.tsx.
-  (global as unknown as { ResizeObserver: unknown }).ResizeObserver =
+  (globalThis as unknown as { ResizeObserver: unknown }).ResizeObserver =
     class ResizeObserver {
       observe() {}
       unobserve() {}
