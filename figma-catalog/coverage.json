@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T22:51:09.756Z",
+  "generated": "2026-09-10T23:11:13.300Z",
   "harvestedAt": "2026-09-09",
   "rollup": {
     "pages": 35,
@@ -7,14 +7,14 @@
     "furniture": 645,
     "genuine": 3617,
     "matched": 3614,
-    "done": 596,
-    "verified": 165,
+    "done": 597,
+    "verified": 166,
     "visuallyDowngraded": 92,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 2057,
+    "partial": 2056,
     "notStarted": 399,
     "blocked": 106,
     "frameDefect": 100,
@@ -27,16 +27,16 @@
     "conflicts": 11
   },
   "doneRows": {
-    "total": 2167,
-    "withBreakpointProvenance": 758,
-    "namingANodeId": 1846,
+    "total": 2168,
+    "withBreakpointProvenance": 759,
+    "namingANodeId": 1847,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 12124,
     "namingNoNodeId": 505,
     "namingNoLiveNodeId": 545,
-    "unrecognisedTokens": 18648
+    "unrecognisedTokens": 18658
   },
   "statusFiles": [
     {
@@ -4486,11 +4486,11 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 5,
+      "verified": 6,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 5,
-        "partial": 27,
+        "done": 6,
+        "partial": 26,
         "furniture": 1
       },
       "liveOnly": []
@@ -35034,9 +35034,9 @@
       "id": "10395-4756",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10400-4973",
