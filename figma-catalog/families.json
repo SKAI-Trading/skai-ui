@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T21:20:39.487Z",
+  "generated": "2026-09-10T22:51:03.004Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -12777,6 +12777,60 @@
       "devices": [
         "tablet",
         "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "cosmic-slots/Cosmic Slots": {
+      "section": "cosmic-slots",
+      "family": "Cosmic Slots",
+      "frameCount": 37,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10387-4125",
+        "M6r9FEn042UWTQD1zvy6GM:10385-3166",
+        "M6r9FEn042UWTQD1zvy6GM:10387-4470",
+        "M6r9FEn042UWTQD1zvy6GM:10400-5393",
+        "M6r9FEn042UWTQD1zvy6GM:10400-5509",
+        "M6r9FEn042UWTQD1zvy6GM:10395-4756",
+        "M6r9FEn042UWTQD1zvy6GM:10400-4973",
+        "M6r9FEn042UWTQD1zvy6GM:10400-4972",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4971",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4970",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4969",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4968",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4967",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4966",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4965",
+        "M6r9FEn042UWTQD1zvy6GM:10395-4860",
+        "M6r9FEn042UWTQD1zvy6GM:10395-4859",
+        "M6r9FEn042UWTQD1zvy6GM:10385-2858",
+        "M6r9FEn042UWTQD1zvy6GM:10401-6164",
+        "M6r9FEn042UWTQD1zvy6GM:10403-6394",
+        "M6r9FEn042UWTQD1zvy6GM:10401-6365",
+        "M6r9FEn042UWTQD1zvy6GM:10401-6369",
+        "M6r9FEn042UWTQD1zvy6GM:10401-6374",
+        "M6r9FEn042UWTQD1zvy6GM:10403-6465",
+        "M6r9FEn042UWTQD1zvy6GM:10403-6662",
+        "M6r9FEn042UWTQD1zvy6GM:10406-11233",
+        "M6r9FEn042UWTQD1zvy6GM:10406-10540",
+        "M6r9FEn042UWTQD1zvy6GM:10405-9861",
+        "M6r9FEn042UWTQD1zvy6GM:10405-9965",
+        "M6r9FEn042UWTQD1zvy6GM:10407-12856",
+        "M6r9FEn042UWTQD1zvy6GM:10407-14020",
+        "M6r9FEn042UWTQD1zvy6GM:10407-13075",
+        "M6r9FEn042UWTQD1zvy6GM:10407-13179",
+        "M6r9FEn042UWTQD1zvy6GM:10409-14696",
+        "M6r9FEn042UWTQD1zvy6GM:10412-15598",
+        "M6r9FEn042UWTQD1zvy6GM:10412-15700",
+        "M6r9FEn042UWTQD1zvy6GM:10407-14031"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
         "mobile"
       ],
       "variants": [],

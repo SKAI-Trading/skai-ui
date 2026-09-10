@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-09T21:20:43.520Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-10T22:51:08.416Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -45,15 +45,15 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | pwa | ✅ | 5 | 5 | 0 | 2 | 2 | 0 | 0 | 3 | 5 |
 | price-grid | ✅ | 20 | 5 | 15 | 1 | 0 | 5 | 0 | 0 | 5 |
 | legal | ✅ | 10 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 6 |
+| cosmic-slots | 🚧 | 50 | 50 | 0 | 2 | 3 | 2 | 0 | 0 | 0 |
 | safari-slots | 🚧 | 61 | 7 | 54 | 3 | 0 | 0 | 0 | 7 | 0 |
 | vegas-fortune | 🚧 | 85 | 7 | 78 | 3 | 0 | 0 | 0 | 7 | 0 |
-| cosmic-slots | 🚧 | 50 | 5 | 45 | 2 | 0 | 0 | 0 | 5 | 0 |
 | user-flow | 🚧 | 3 | 3 | 0 | 2 | 0 | 0 | 0 | 3 | 0 |
 | gem-slots | 🚧 | 36 | 3 | 33 | 1 | 0 | 0 | 0 | 3 | 0 |
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4513** | **2206** | | | **381** | **1464** | **304** | **57** | **1038** |
+| **all** | | **4513** | **2206** | | | **384** | **1466** | **304** | **52** | **1038** |
 
 ### Drift against live Figma
 
@@ -709,6 +709,13 @@ Frames that exist in Figma but are not in the catalog:
 _No titled screens yet._
 
 
+## Cosmic-slots
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| Casino > Cosmic slots | 4 | tablet, desktop, mobile | - | done/partial | [10359-13264](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-13264&m=dev) |
+| Casino > Cosmic slots 2 | 1 | mobile | - | partial | [10406-12386](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10406-12386&m=dev) |
+
 ## Safari-slots
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
@@ -724,13 +731,6 @@ _No titled screens yet._
 | Casino > Vegas fortune | 5 | tablet, desktop, mobile | screen type 2 | unknown | [10412-15861](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10412-15861&m=dev) |
 | Casino > Vegas fortune > Load screen | 1 | desktop | screen type 2 | unknown | [10688-8328](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10688-8328&m=dev) |
 | Casino > Vegas fortune 2 | 1 | mobile | - | unknown | [10738-15461](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10738-15461&m=dev) |
-
-## Cosmic-slots
-
-| Family | Frames | Devices | Variants | Impl / status | Example |
-|--------|-------:|---------|----------|---------------|---------|
-| Casino > Cosmic slots | 4 | tablet, desktop, mobile | - | unknown | [10359-13264](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-13264&m=dev) |
-| Casino > Cosmic slots 2 | 1 | mobile | - | unknown | [10406-12386](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10406-12386&m=dev) |
 
 ## User-flow
 

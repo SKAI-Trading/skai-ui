@@ -1,24 +1,24 @@
 {
-  "generated": "2026-09-09T21:20:44.527Z",
+  "generated": "2026-09-10T22:51:09.756Z",
   "harvestedAt": "2026-09-09",
   "rollup": {
-    "pages": 34,
-    "live": 4212,
-    "furniture": 628,
-    "genuine": 3584,
-    "matched": 3581,
-    "done": 591,
-    "verified": 160,
+    "pages": 35,
+    "live": 4262,
+    "furniture": 645,
+    "genuine": 3617,
+    "matched": 3614,
+    "done": 596,
+    "verified": 165,
     "visuallyDowngraded": 92,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 2030,
+    "partial": 2057,
     "notStarted": 399,
     "blocked": 106,
     "frameDefect": 100,
-    "catalogFurniture": 113,
+    "catalogFurniture": 114,
     "unknown": 232,
     "liveOnly": 3,
     "rollupOnly": 1,
@@ -27,16 +27,16 @@
     "conflicts": 11
   },
   "doneRows": {
-    "total": 2154,
-    "withBreakpointProvenance": 745,
-    "namingANodeId": 1833,
+    "total": 2167,
+    "withBreakpointProvenance": 758,
+    "namingANodeId": 1846,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 12074,
+    "total": 12124,
     "namingNoNodeId": 505,
     "namingNoLiveNodeId": 545,
-    "unrecognisedTokens": 18597
+    "unrecognisedTokens": 18648
   },
   "statusFiles": [
     {
@@ -2006,6 +2006,12 @@
       "rows": 69,
       "withLiveId": 69,
       "ids": 73
+    },
+    {
+      "file": "status.wave40.slots-cosmic.tsv",
+      "rows": 50,
+      "withLiveId": 50,
+      "ids": 50
     },
     {
       "file": "status.wave5.discover-createtoken.tsv",
@@ -4466,7 +4472,8 @@
       "n": 50,
       "harvestedAt": "2026-09-09",
       "openReports": 0,
-      "scope": "wip",
+      "scope": "in-scope",
+      "note": "Ruled in-scope 2026-09-10: Cosmic is the base game of the slot program (Casey 2026-09-09); built on the slot engine, plan 2.",
       "live": 50,
       "furniture": 17,
       "furnitureWhy": {
@@ -4474,247 +4481,19 @@
         "loose-rectangle": 10
       },
       "genuine": 33,
-      "matched": 0,
+      "matched": 33,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 0,
+      "verified": 5,
       "visuallyDowngraded": 0,
-      "byStatus": {},
-      "liveOnly": [
-        {
-          "id": "10359-13264",
-          "name": "Skai > Play > Casino > Cosmic slots (768 x 1024px)",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1627
-        },
-        {
-          "id": "10359-13505",
-          "name": "Skai > Play > Casino > Cosmic slots (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "10387-4125",
-          "name": "Load screen - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10385-3166",
-          "name": "Load screen > Start game - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10387-4470",
-          "name": "Load screen > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10400-5393",
-          "name": "Load screen > home >combo > combo end frame - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10400-5509",
-          "name": "Load screen > home >combo > combo end frame > menu - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10395-4756",
-          "name": "Load screen > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10400-4973",
-          "name": "Load screen > home > combo - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10385-2858",
-          "name": "Load screen ALT - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10359-14155",
-          "name": "Skai > Play > Casino > Cosmic slots (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 1605
-        },
-        {
-          "id": "10406-11916",
-          "name": "Skai > Play > Casino > Cosmic slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "10406-12386",
-          "name": "Skai > Play > Casino > Cosmic slots 2 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "10401-6164",
-          "name": "Cosmic slots - Card visual",
-          "type": "FRAME",
-          "w": 195,
-          "h": 276
-        },
-        {
-          "id": "10403-6394",
-          "name": "Cosmic slots - Card visual",
-          "type": "FRAME",
-          "w": 400,
-          "h": 566
-        },
-        {
-          "id": "10401-6360",
-          "name": "Mines Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10401-6365",
-          "name": "Cosmic slots - Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10401-6369",
-          "name": "Cosmic slots - Tablet",
-          "type": "FRAME",
-          "w": 120,
-          "h": 170
-        },
-        {
-          "id": "10401-6374",
-          "name": "Cosmic slots - Mobile",
-          "type": "FRAME",
-          "w": 76,
-          "h": 108
-        },
-        {
-          "id": "10403-6465",
-          "name": "Load screen - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10403-6662",
-          "name": "Load screen > home - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10406-11233",
-          "name": "Load screen > home > menu - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10406-10540",
-          "name": "Load screen > home > combo - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10405-9861",
-          "name": "Load screen ALT - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10405-9965",
-          "name": "Load screen > Start game - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10407-12856",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10407-14020",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10407-13075",
-          "name": "Load screen - refresh screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10407-13179",
-          "name": "Load screen > home - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10409-14696",
-          "name": "Load screen > home > all key items - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10412-15598",
-          "name": "Load screen > home > menu - docked - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10412-15700",
-          "name": "Load screen > home > menu - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10407-14031",
-          "name": "Load screen > Start game - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        }
-      ]
+      "byStatus": {
+        "done": 5,
+        "partial": 27,
+        "furniture": 1
+      },
+      "liveOnly": []
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -35194,6 +34973,270 @@
       "status": "partial",
       "claimed": "partial",
       "verdict": null
+    },
+    {
+      "id": "10359-13264",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10359-13505",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10387-4125",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10385-3166",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10387-4470",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10400-5393",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10400-5509",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10395-4756",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10400-4973",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10385-2858",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10359-14155",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10406-11916",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10406-12386",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10401-6164",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10403-6394",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10401-6360",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": "deferred"
+    },
+    {
+      "id": "10401-6365",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10401-6369",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10401-6374",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10403-6465",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10403-6662",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10406-11233",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10406-10540",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10405-9861",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10405-9965",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10407-12856",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10407-14020",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10407-13075",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10407-13179",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10409-14696",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10412-15598",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10412-15700",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10407-14031",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     }
   ]
 }
