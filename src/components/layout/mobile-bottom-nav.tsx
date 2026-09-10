@@ -9,11 +9,14 @@
  *   - below md: "Bottom-navigation-mobile" (6419:46381, 375x54) — icon ABOVE label
  *   - md..lg:   "Bottom-navigation-tablet" (6704:26136 / 6415:44306, 768x53) —
  *               icon BESIDE label
- * Common to both: a 52px bar, translucent green-coal fill with a 10px blur and a
- * 1px green-coal-100 top border, holding equal-width tabs with a 16px icon and a
- * 14px Mulish label. This was built from the tablet frame alone and shipped the
- * horizontal tabs to phones (report efbaaa08). The consuming app hides the bar
- * entirely at lg+, where the left rail takes over.
+ * Common to both: a translucent green-coal fill behind a 1px green-coal-100 top
+ * border, holding equal-width tabs with a 16px icon and a Mulish label. The
+ * bar, its padding, its blur radius and its label size all differ between the
+ * two frames, so each is written as a phone value with an `md:` override —
+ * see the class list below. This was built from the tablet frame alone and
+ * shipped both its horizontal tabs (report efbaaa08) and its chrome to phones.
+ * The consuming app hides the bar entirely at lg+, where the left rail takes
+ * over.
  */
 
 import * as React from "react";
@@ -91,17 +94,22 @@ export function MobileBottomNav({
     <nav
       aria-label={ariaLabel}
       className={cn(
-        // Figma 6704:26136: translucent green-coal-300 @ 60% + 10px backdrop
-        // blur, 1px green-coal-100 top border. 52px tall, equal tabs.
+        // Both frames fill green-coal-300 at 60% behind a 1px green-coal-100
+        // rule, and then diverge — so every phone value carries an `md:`
+        // counterpart rather than one set of numbers serving both boards.
+        //   phone  10640:30604  375x54, padding 4 all round, blur 20
+        //   tablet 6704:26136   768x53, padding 19/8,        blur 10
+        // The phone bar was drawing the tablet's padding and half its blur,
+        // which is what reads as a different background over a busy page.
         "md:hidden fixed bottom-0 left-0 right-0 z-50",
-        "flex h-[52px] items-center justify-between gap-1 px-[19px] py-2",
-        "border-t border-[#123f3c] bg-[rgba(0,22,21,0.6)] backdrop-blur-[10px]",
+        "flex items-center gap-0 p-1 md:gap-1 md:px-[19px] md:py-2",
+        // Height and bottom padding come from classes, not an inline style, so
+        // the tablet step is reachable; both clear the home indicator.
+        "h-[calc(54px+env(safe-area-inset-bottom,0px))] pb-[calc(4px+env(safe-area-inset-bottom,0px))]",
+        "md:h-[calc(52px+env(safe-area-inset-bottom,0px))] md:pb-[calc(8px+env(safe-area-inset-bottom,0px))]",
+        "border-t border-[#123f3c] bg-[rgba(0,22,21,0.6)] backdrop-blur-[20px] md:backdrop-blur-[10px]",
         className,
       )}
-      style={{
-        paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 8px)",
-        height: "calc(52px + env(safe-area-inset-bottom, 0px))",
-      }}
     >
       {items.map((item) => {
         const active = isActive(currentPath, item.href);
@@ -116,9 +124,9 @@ export function MobileBottomNav({
           className: cn(
             // Figma "list": flex-1, centred. Icon stacks ABOVE the label on
             // phones (Bottom-navigation-mobile) and sits BESIDE it from md up
-            // (Bottom-navigation-tablet). Fits the 52px bar either way: py-2
-            // leaves a 36px box, and icon(16) + gap-0.5(2) + label leading-4(16)
-            // = 34px stacked.
+            // (Bottom-navigation-tablet). The phone cell is 46 tall and the
+            // stack is icon(16) + gap-0.5(2) + label leading-4(16) = 34, which
+            // centres at the frame's y=6 / y=24.
             "flex flex-1 min-w-0 flex-col items-center justify-center gap-0.5 h-full rounded-lg md:flex-row md:gap-1.5",
             "transition-colors duration-200 motion-reduce:transition-none active:scale-95",
             active ? "text-primary" : "text-white/90 hover:text-white",
@@ -144,9 +152,12 @@ export function MobileBottomNav({
                   </span>
                 )}
               </div>
-              {/* Mulish 14px, -4% tracking — Figma "Md/Label 1 300". Slightly
-                  smaller on the narrowest phones so 5 tabs never overflow. */}
-              <span className="truncate font-medium leading-4 tracking-[-0.04em] text-[13px] sm:text-[14px]">
+              {/* -4% tracking throughout, but the size steps at the board:
+                  "Sm/Label 1 300" Mulish 12/16 on the phone frame,
+                  "Md/Label 1 300" Mulish 14/16 on the tablet one. The step is
+                  md (768) because that is where the second frame starts — sm
+                  (640) sits between boards and matches neither. */}
+              <span className="truncate font-medium leading-4 tracking-[-0.04em] text-[12px] md:text-[14px]">
                 {item.label}
               </span>
             </>
