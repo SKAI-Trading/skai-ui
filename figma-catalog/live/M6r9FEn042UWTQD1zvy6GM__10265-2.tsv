@@ -1,7 +1,8 @@
-10272:3822	Directory	FRAME	6340	352	1
+10272:3822	Directory	FRAME	8706	352	1
 10272:3828	Breakpoint	FRAME	1450	164	1
 10272:3830	Breakpoint	FRAME	1450	164	1
 10272:3832	Breakpoint	FRAME	1450	164	1
+11930:43441	Breakpoint	FRAME	1450	164	1
 10272:3834	Skai > Play > Casino > Safari slots (768 x 1024px)	FRAME	768	1627	1
 10354:877	Load screen - tablet	FRAME	708	720	1
 10354:3115	Load screen > features > home - tablet	FRAME	708	720	1
@@ -32,13 +33,21 @@
 10341:11516	Safari A 8	RECTANGLE	57	60	1
 10272:4933	Skai > Play > Casino > Safari slots (375 x 812px)	FRAME	375	1605	1
 10354:4819	Load screen - mobile	FRAME	347	500	1
+11930:46622	Load screen - mobile	FRAME	375	500	1
 10354:5242	Load screen - mobile	FRAME	347	500	1
+11930:46727	Load screen - mobile	FRAME	375	500	1
 10354:6256	Load screen - refresh screen - mobile	FRAME	347	500	1
+11930:46841	Load screen - refresh screen - mobile	FRAME	375	500	1
 10354:5365	Load screen > features > home - mobile	FRAME	347	500	1
+11930:46945	Load screen > features > home - mobile	FRAME	375	500	1
 10354:6074	Load screen > features > home > all key items - mobile	FRAME	347	500	1
+11930:47126	Load screen > features > home > all key items - mobile	FRAME	375	500	1
 10354:7028	Load screen > features > home > menu - docked - mobile	FRAME	347	500	1
+11930:47313	Load screen > features > home > menu - docked - mobile	FRAME	375	500	1
 10354:7459	Load screen > features > home > menu - mobile	FRAME	347	500	1
+11930:47489	Load screen > features > home > menu - mobile	FRAME	375	500	1
 10354:5137	Load screen ALT - mobile	FRAME	347	500	1
+11930:47699	Load screen ALT - mobile	FRAME	375	500	1
 10354:4269	Skai > Play > Casino > Safari slots 1VH (375 x 812px)	FRAME	375	812	1
 10359:8316	Skai > Play > Casino > Safari slots 2 1VH (375 x 812px)	FRAME	375	812	1
 10329:11023	Safari manager body 1	RECTANGLE	268	337	1
@@ -50,7 +59,6 @@
 10329:11029	Notes	WIDGET	342	465	1
 10359:9369	Safari slots - Card visual	FRAME	195	276	1
 10359:9167	Safari slots - Card visual	FRAME	400	566	1
-10359:9469	image 1	RECTANGLE	1200	1700	1
 10359:9488	Mines Desktop	FRAME	195	277	1
 10359:9493	Safari slots - Desktop	FRAME	195	277	1
 10359:9530	Safari slots - Tablet	FRAME	120	170	1
@@ -59,3 +67,6 @@
 10359:11109	Notes	WIDGET	342	426	1
 10359:12722	Rectangle 155	RECTANGLE	720	720	1
 10359:12723	Rectangle 163	RECTANGLE	151	720	1
+11930:45998	Skai > Play > Casino > Safari slots (375 x 812px)	FRAME	375	3065	1
+11930:47944	Skai > Play > Casino > Safari slots 1VH (375 x 812px)	FRAME	375	812	1
+11930:48655	Skai > Play > Casino > Safari slots 2 1VH (375 x 812px)	FRAME	375	812	1

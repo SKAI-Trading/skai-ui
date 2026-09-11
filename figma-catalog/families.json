@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T23:24:34.908Z",
+  "generated": "2026-09-11T01:18:01.968Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -5085,13 +5085,13 @@
     "dice/Casino > Dice": {
       "section": "dice",
       "family": "Casino > Dice",
-      "frameCount": 24,
+      "frameCount": 26,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:2736-25840",
         "M6r9FEn042UWTQD1zvy6GM:9003-43516",
         "M6r9FEn042UWTQD1zvy6GM:9003-44223",
         "M6r9FEn042UWTQD1zvy6GM:9003-44542",
-        "M6r9FEn042UWTQD1zvy6GM:9003-44847",
+        "M6r9FEn042UWTQD1zvy6GM:11571-2186",
         "M6r9FEn042UWTQD1zvy6GM:9062-16886",
         "M6r9FEn042UWTQD1zvy6GM:9062-17693",
         "M6r9FEn042UWTQD1zvy6GM:9069-1068",
@@ -5104,6 +5104,8 @@
         "M6r9FEn042UWTQD1zvy6GM:9069-2378",
         "M6r9FEn042UWTQD1zvy6GM:9069-1141",
         "M6r9FEn042UWTQD1zvy6GM:9069-959",
+        "M6r9FEn042UWTQD1zvy6GM:11711-5905",
+        "M6r9FEn042UWTQD1zvy6GM:11711-5985",
         "M6r9FEn042UWTQD1zvy6GM:9088-4654",
         "M6r9FEn042UWTQD1zvy6GM:9088-4795",
         "M6r9FEn042UWTQD1zvy6GM:9088-4801",
@@ -5121,7 +5123,6 @@
         "Skai > Home > Add > upload image > conversation 4 1VH",
         "Tablet",
         "Tablet Alt",
-        "Mobile",
         "Auto Advanced Extended",
         "Auto",
         "Auto No Infinity",
@@ -5134,6 +5135,7 @@
         "Desktop Full Game Multiplier",
         "Desktop First Roll",
         "Desktop Pre Game",
+        "Auto - Advanced",
         "CTA/button",
         "card",
         "Screenshot 2026-08-18 at 11.10.54 PM 1",
@@ -5240,7 +5242,6 @@
         "Extended LB",
         "Auto",
         "Auto Advanced",
-        "Skai > Play > Casino > Dice Mobile",
         "Desktop",
         "LB With Header",
         "Mobile Extended LB",
@@ -5273,16 +5274,14 @@
     "mines/Casino > Mines": {
       "section": "mines",
       "family": "Casino > Mines",
-      "frameCount": 14,
+      "frameCount": 12,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9003-110110",
         "M6r9FEn042UWTQD1zvy6GM:9003-111181",
         "M6r9FEn042UWTQD1zvy6GM:9163-4529",
         "M6r9FEn042UWTQD1zvy6GM:9163-4859",
-        "M6r9FEn042UWTQD1zvy6GM:9163-5572",
-        "M6r9FEn042UWTQD1zvy6GM:11083-16055",
         "M6r9FEn042UWTQD1zvy6GM:11081-11526",
-        "M6r9FEn042UWTQD1zvy6GM:9163-6955",
+        "M6r9FEn042UWTQD1zvy6GM:11740-11821",
         "M6r9FEn042UWTQD1zvy6GM:9163-7155",
         "M6r9FEn042UWTQD1zvy6GM:9163-7972",
         "M6r9FEn042UWTQD1zvy6GM:9163-8804",
@@ -5297,8 +5296,6 @@
       ],
       "variants": [
         "Mines all features",
-        "Skai > Play > Casino > Dice",
-        "Skai > Play > Casino > Dice Mobile",
         "Mobile",
         "Advanced",
         "Advanced Auto",
@@ -5434,7 +5431,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Blackjack",
         "Desktop",
         "Continuous Tab",
         "Desktop Continuous",
@@ -5477,7 +5473,7 @@
     "skratch/Casino > Scratchers": {
       "section": "skratch",
       "family": "Casino > Scratchers",
-      "frameCount": 13,
+      "frameCount": 15,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9003-139146",
         "M6r9FEn042UWTQD1zvy6GM:9003-142707",
@@ -5486,7 +5482,9 @@
         "M6r9FEn042UWTQD1zvy6GM:9212-20910",
         "M6r9FEn042UWTQD1zvy6GM:9212-22275",
         "M6r9FEn042UWTQD1zvy6GM:9212-23847",
-        "M6r9FEn042UWTQD1zvy6GM:9212-24967",
+        "M6r9FEn042UWTQD1zvy6GM:11746-16472",
+        "M6r9FEn042UWTQD1zvy6GM:9212-24729",
+        "M6r9FEn042UWTQD1zvy6GM:9212-24822",
         "M6r9FEn042UWTQD1zvy6GM:9621-1282",
         "M6r9FEn042UWTQD1zvy6GM:9220-26119",
         "M6r9FEn042UWTQD1zvy6GM:9220-26173",
@@ -5501,8 +5499,9 @@
       "variants": [
         "Card out",
         "Desktop",
-        "Skai > Play > Casino > Blackjack",
         "Mobile",
+        "Auto",
+        "Auto - Advanced",
         "Mobile ALT",
         "modal",
         "Screenshot 2026-07-27 at 8.19.39 PM 1",
@@ -6019,7 +6018,7 @@
     "plinko/Casino > Plinko": {
       "section": "plinko",
       "family": "Casino > Plinko",
-      "frameCount": 14,
+      "frameCount": 15,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9003-79079",
         "M6r9FEn042UWTQD1zvy6GM:9003-82836",
@@ -6032,6 +6031,7 @@
         "M6r9FEn042UWTQD1zvy6GM:9104-6170",
         "M6r9FEn042UWTQD1zvy6GM:9137-10215",
         "M6r9FEn042UWTQD1zvy6GM:9137-10217",
+        "M6r9FEn042UWTQD1zvy6GM:9137-10219",
         "M6r9FEn042UWTQD1zvy6GM:10120-1679",
         "M6r9FEn042UWTQD1zvy6GM:10120-1680",
         "M6r9FEn042UWTQD1zvy6GM:10120-1681"
@@ -6042,7 +6042,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Dice Mobile",
         "Plinko Easy Mode",
         "Plinko Ball Easy",
         "Plinko Hard Mode",
@@ -6050,6 +6049,7 @@
         "Plinko Panel Auto",
         "Plinko Ball Medium",
         "Plinko Ball Hard",
+        "Auto",
         "Screenshot 2026-08-18 at 11.12.43 PM 1",
         "Screenshot 2026-08-18 at 11.13.20 PM 1",
         "Screenshot 2026-08-18 at 11.13.42 PM 1"
@@ -6075,7 +6075,7 @@
     "darts/Casino > Darts": {
       "section": "darts",
       "family": "Casino > Darts",
-      "frameCount": 8,
+      "frameCount": 10,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9392-1798",
         "M6r9FEn042UWTQD1zvy6GM:9411-7933",
@@ -6084,30 +6084,33 @@
         "M6r9FEn042UWTQD1zvy6GM:9433-16420",
         "M6r9FEn042UWTQD1zvy6GM:9442-17258",
         "M6r9FEn042UWTQD1zvy6GM:9455-19001",
-        "M6r9FEn042UWTQD1zvy6GM:9467-19582"
+        "M6r9FEn042UWTQD1zvy6GM:9467-19582",
+        "M6r9FEn042UWTQD1zvy6GM:9455-19108",
+        "M6r9FEn042UWTQD1zvy6GM:9455-19263"
       ],
       "devices": [
         "desktop",
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Hi-Lo Start",
         "Easy Desktop Full Game",
         "Medium Desktop Full Game",
         "Hard Desktop Full Game",
         "Easy Desktop - In Play",
-        "Skai > Play > Casino > Blackjack",
         "Mobile Medium",
-        "Mobile Hard"
+        "Mobile Hard",
+        "Auto",
+        "Auto - Advanced"
       ],
-      "citedFileCount": 6,
+      "citedFileCount": 7,
       "citedFiles": [
         "modules/skai-gaming/src/components/play/games/instant/DartsGame.tsx",
         "modules/skai-gaming/src/pages/play/DartsPage.tsx",
         "modules/skai-gaming/src/pages/play/DartsPageSections.tsx",
         "modules/skai-gaming/src/pages/play/dartsPageContent.ts",
         "modules/skai-gaming/src/pages/play/dartsPageLayout.test.tsx",
-        "modules/skai-gaming/src/pages/play/routedGamePaths.ts"
+        "modules/skai-gaming/src/pages/play/routedGamePaths.ts",
+        "modules/skai-gaming/src/components/play/games/instant/dartsAutoBet.ts"
       ],
       "dirs": [
         "modules/skai-gaming/src/components",
@@ -6147,8 +6150,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Hi-Lo Start",
-        "Skai > Play > Casino > Blackjack",
         "Mobile ALT",
         "taxi car 1",
         "sports car 1",
@@ -6190,12 +6191,11 @@
     "hilo/Casino > Hi-Lo": {
       "section": "hilo",
       "family": "Casino > Hi-Lo",
-      "frameCount": 7,
+      "frameCount": 6,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9061-10499",
         "M6r9FEn042UWTQD1zvy6GM:9061-9472",
         "M6r9FEn042UWTQD1zvy6GM:9058-4372",
-        "M6r9FEn042UWTQD1zvy6GM:9332-27320",
         "M6r9FEn042UWTQD1zvy6GM:9351-3397",
         "M6r9FEn042UWTQD1zvy6GM:9351-4708",
         "M6r9FEn042UWTQD1zvy6GM:10248-9763"
@@ -6206,11 +6206,7 @@
         "mobile"
       ],
       "variants": [
-        "Start",
         "Loss",
-        "Skai > Play > Casino > Scratchers",
-        "Mobile",
-        "Skai > Play > Casino > Blackjack",
         "Desktop"
       ],
       "citedFileCount": 10,
@@ -9757,7 +9753,7 @@
     "towers/Casino > Towers": {
       "section": "towers",
       "family": "Casino > Towers",
-      "frameCount": 15,
+      "frameCount": 17,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9079-2001",
         "M6r9FEn042UWTQD1zvy6GM:9391-19746",
@@ -9772,6 +9768,8 @@
         "M6r9FEn042UWTQD1zvy6GM:10130-13627",
         "M6r9FEn042UWTQD1zvy6GM:10130-13859",
         "M6r9FEn042UWTQD1zvy6GM:10130-14171",
+        "M6r9FEn042UWTQD1zvy6GM:10130-14802",
+        "M6r9FEn042UWTQD1zvy6GM:10130-14946",
         "M6r9FEn042UWTQD1zvy6GM:10893-5451",
         "M6r9FEn042UWTQD1zvy6GM:10250-15233"
       ],
@@ -9791,11 +9789,12 @@
         "skull 1",
         "Easy cashout",
         "Easy auto Selection - hover",
-        "Skai > Play > Casino > Blackjack",
+        "Auto - Advanced",
+        "Auto",
         "Cashout button",
         "Screenshot 2026-08-25 at 1.08.53 AM 1"
       ],
-      "citedFileCount": 7,
+      "citedFileCount": 8,
       "citedFiles": [
         "modules/skai-gaming/src/components/play/games/crash/tower/towerTheme.ts",
         "modules/skai-gaming/src/components/play/shared/PlayGamePageShell.test.tsx",
@@ -9803,7 +9802,8 @@
         "modules/skai-gaming/src/pages/play/TowersPage.tsx",
         "modules/skai-gaming/src/pages/play/TowersPageSections.tsx",
         "modules/skai-gaming/src/pages/play/playGameDetailContent.ts",
-        "modules/skai-gaming/src/pages/play/towersPageContent.ts"
+        "modules/skai-gaming/src/pages/play/towersPageContent.ts",
+        "modules/skai-gaming/src/components/play/games/crash/tower/TowerBetPanel.tsx"
       ],
       "dirs": [
         "modules/skai-gaming/src/components",
@@ -9834,8 +9834,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Scratchers",
-        "Skai > Play > Casino > Blackjack",
         "Desktop Selection",
         "Starting",
         "Desktop win",
@@ -12287,8 +12285,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Scratchers",
-        "Skai > Play > Casino > Blackjack",
         "Starting",
         "Screenshot 2026-08-10 at 11.44.07 AM 1",
         "Screenshot 2026-08-10 at 11.44.19 AM 1",
@@ -12378,8 +12374,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Scratchers",
-        "Skai > Play > Casino > Blackjack",
         "Selection",
         "Mobile"
       ],
@@ -12418,9 +12412,7 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Scratchers",
         "Starting ALT",
-        "Skai > Play > Casino > Blackjack",
         "Starting"
       ],
       "citedFileCount": 9,
@@ -12467,7 +12459,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Blackjack",
         "Desktop",
         "Rock icon 1",
         "Desktop Target",
@@ -12492,13 +12483,15 @@
     "limbo/Casino > Limbo": {
       "section": "limbo",
       "family": "Casino > Limbo",
-      "frameCount": 6,
+      "frameCount": 8,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9948-24618",
         "M6r9FEn042UWTQD1zvy6GM:9948-25380",
+        "M6r9FEn042UWTQD1zvy6GM:11841-13130",
         "M6r9FEn042UWTQD1zvy6GM:10004-29637",
         "M6r9FEn042UWTQD1zvy6GM:10004-29705",
-        "M6r9FEn042UWTQD1zvy6GM:10021-30111",
+        "M6r9FEn042UWTQD1zvy6GM:10021-30457",
+        "M6r9FEn042UWTQD1zvy6GM:10021-30525",
         "M6r9FEn042UWTQD1zvy6GM:10030-30753"
       ],
       "devices": [
@@ -12506,9 +12499,10 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Blackjack",
-        "Desktop",
         "Mobile",
+        "Desktop",
+        "Auto",
+        "Auto - Advanced",
         "hf_20260818_010614_6f34f54e-9805-49bd-8316-f8ad10f2188c 1"
       ],
       "citedFileCount": 14,
@@ -12544,29 +12538,27 @@
         "M6r9FEn042UWTQD1zvy6GM:10030-42281",
         "M6r9FEn042UWTQD1zvy6GM:10030-42410",
         "M6r9FEn042UWTQD1zvy6GM:10030-42517",
-        "M6r9FEn042UWTQD1zvy6GM:10250-15144",
         "M6r9FEn042UWTQD1zvy6GM:10117-44627",
         "M6r9FEn042UWTQD1zvy6GM:10117-45018",
         "M6r9FEn042UWTQD1zvy6GM:10117-46093",
         "M6r9FEn042UWTQD1zvy6GM:10117-46223",
-        "M6r9FEn042UWTQD1zvy6GM:10117-46330"
+        "M6r9FEn042UWTQD1zvy6GM:10117-46330",
+        "M6r9FEn042UWTQD1zvy6GM:11841-10805"
       ],
       "devices": [
         "desktop",
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Towers",
         "Desktop Full Game",
         "Extended LB",
         "Auto",
         "Auto Advanced",
-        "LB With Header",
-        "Skai > Play > Casino > Blackjack",
         "Mobile",
         "Mobile Extended LB",
         "Mobile Auto",
-        "Mobile Auto Advanced"
+        "Mobile Auto Advanced",
+        "LB With Header"
       ],
       "citedFileCount": 13,
       "citedFiles": [
@@ -12608,7 +12600,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Blackjack",
         "Desktop",
         "Screenshot 2026-08-25 at 12.15.02 AM 1"
       ],
@@ -12649,8 +12640,6 @@
         "mobile"
       ],
       "variants": [
-        "Skai > Play > Casino > Scratchers",
-        "Skai > Play > Casino > Blackjack",
         "Starting",
         "Mobile",
         "Roulette thingy 1",
@@ -12709,7 +12698,7 @@
     "safari-slots/Casino > Safari Slots": {
       "section": "safari-slots",
       "family": "Casino > Safari Slots",
-      "frameCount": 52,
+      "frameCount": 62,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:10272-3834",
         "M6r9FEn042UWTQD1zvy6GM:10354-877",
@@ -12741,13 +12730,21 @@
         "M6r9FEn042UWTQD1zvy6GM:10341-11516",
         "M6r9FEn042UWTQD1zvy6GM:10272-4933",
         "M6r9FEn042UWTQD1zvy6GM:10354-4819",
+        "M6r9FEn042UWTQD1zvy6GM:11930-46622",
         "M6r9FEn042UWTQD1zvy6GM:10354-5242",
+        "M6r9FEn042UWTQD1zvy6GM:11930-46727",
         "M6r9FEn042UWTQD1zvy6GM:10354-6256",
+        "M6r9FEn042UWTQD1zvy6GM:11930-46841",
         "M6r9FEn042UWTQD1zvy6GM:10354-5365",
+        "M6r9FEn042UWTQD1zvy6GM:11930-46945",
         "M6r9FEn042UWTQD1zvy6GM:10354-6074",
+        "M6r9FEn042UWTQD1zvy6GM:11930-47126",
         "M6r9FEn042UWTQD1zvy6GM:10354-7028",
+        "M6r9FEn042UWTQD1zvy6GM:11930-47313",
         "M6r9FEn042UWTQD1zvy6GM:10354-7459",
+        "M6r9FEn042UWTQD1zvy6GM:11930-47489",
         "M6r9FEn042UWTQD1zvy6GM:10354-5137",
+        "M6r9FEn042UWTQD1zvy6GM:11930-47699",
         "M6r9FEn042UWTQD1zvy6GM:10354-4269",
         "M6r9FEn042UWTQD1zvy6GM:10359-8316",
         "M6r9FEn042UWTQD1zvy6GM:10329-11023",
@@ -12758,11 +12755,13 @@
         "M6r9FEn042UWTQD1zvy6GM:10329-11028",
         "M6r9FEn042UWTQD1zvy6GM:10359-9369",
         "M6r9FEn042UWTQD1zvy6GM:10359-9167",
-        "M6r9FEn042UWTQD1zvy6GM:10359-9469",
         "M6r9FEn042UWTQD1zvy6GM:10359-9488",
         "M6r9FEn042UWTQD1zvy6GM:10359-9493",
         "M6r9FEn042UWTQD1zvy6GM:10359-9530",
-        "M6r9FEn042UWTQD1zvy6GM:10359-9535"
+        "M6r9FEn042UWTQD1zvy6GM:10359-9535",
+        "M6r9FEn042UWTQD1zvy6GM:11930-45998",
+        "M6r9FEn042UWTQD1zvy6GM:11930-47944",
+        "M6r9FEn042UWTQD1zvy6GM:11930-48655"
       ],
       "devices": [
         "tablet",
@@ -12811,7 +12810,6 @@
         "Safari manager head 2",
         "Safari manager head 3",
         "Safari slots - Card visual",
-        "image 1",
         "Mines Desktop",
         "Safari slots - Desktop",
         "Safari slots - Tablet",
@@ -12825,7 +12823,7 @@
     "cosmic-slots/Casino > Cosmic Slots": {
       "section": "cosmic-slots",
       "family": "Casino > Cosmic Slots",
-      "frameCount": 42,
+      "frameCount": 53,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:10359-13264",
         "M6r9FEn042UWTQD1zvy6GM:10359-13505",
@@ -12847,9 +12845,9 @@
         "M6r9FEn042UWTQD1zvy6GM:10395-4860",
         "M6r9FEn042UWTQD1zvy6GM:10395-4859",
         "M6r9FEn042UWTQD1zvy6GM:10385-2858",
-        "M6r9FEn042UWTQD1zvy6GM:10359-14155",
-        "M6r9FEn042UWTQD1zvy6GM:10406-11916",
-        "M6r9FEn042UWTQD1zvy6GM:10406-12386",
+        "M6r9FEn042UWTQD1zvy6GM:11930-39529",
+        "M6r9FEn042UWTQD1zvy6GM:11930-39780",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40031",
         "M6r9FEn042UWTQD1zvy6GM:10401-6164",
         "M6r9FEn042UWTQD1zvy6GM:10403-6394",
         "M6r9FEn042UWTQD1zvy6GM:10401-6365",
@@ -12858,9 +12856,6 @@
         "M6r9FEn042UWTQD1zvy6GM:10403-6465",
         "M6r9FEn042UWTQD1zvy6GM:10403-6662",
         "M6r9FEn042UWTQD1zvy6GM:10406-11233",
-        "M6r9FEn042UWTQD1zvy6GM:10406-10540",
-        "M6r9FEn042UWTQD1zvy6GM:10405-9861",
-        "M6r9FEn042UWTQD1zvy6GM:10405-9965",
         "M6r9FEn042UWTQD1zvy6GM:10407-12856",
         "M6r9FEn042UWTQD1zvy6GM:10407-14020",
         "M6r9FEn042UWTQD1zvy6GM:10407-13075",
@@ -12868,7 +12863,21 @@
         "M6r9FEn042UWTQD1zvy6GM:10409-14696",
         "M6r9FEn042UWTQD1zvy6GM:10412-15598",
         "M6r9FEn042UWTQD1zvy6GM:10412-15700",
-        "M6r9FEn042UWTQD1zvy6GM:10407-14031"
+        "M6r9FEn042UWTQD1zvy6GM:10407-14031",
+        "M6r9FEn042UWTQD1zvy6GM:10406-10540",
+        "M6r9FEn042UWTQD1zvy6GM:10405-9861",
+        "M6r9FEn042UWTQD1zvy6GM:10405-9965",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40198",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40210",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40220",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40231",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40320",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40415",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40499",
+        "M6r9FEn042UWTQD1zvy6GM:11930-40617",
+        "M6r9FEn042UWTQD1zvy6GM:11930-41016",
+        "M6r9FEn042UWTQD1zvy6GM:11930-42183",
+        "M6r9FEn042UWTQD1zvy6GM:11930-42806"
       ],
       "devices": [
         "tablet",
@@ -12902,9 +12911,6 @@
         "Load screen - tablet",
         "Load screen > home - tablet",
         "Load screen > home > menu - tablet",
-        "Load screen > home > combo - tablet",
-        "Load screen ALT - tablet",
-        "Load screen > Start game - tablet",
         "Load screen - mobile",
         "Load screen ALT - mobile",
         "Load screen - refresh screen - mobile",
@@ -12912,7 +12918,10 @@
         "Load screen > home > all key items - mobile",
         "Load screen > home > menu - docked - mobile",
         "Load screen > home > menu - mobile",
-        "Load screen > Start game - mobile"
+        "Load screen > Start game - mobile",
+        "Load screen > home > combo - tablet",
+        "Load screen ALT - tablet",
+        "Load screen > Start game - tablet"
       ],
       "citedFileCount": 0,
       "citedFiles": [],
@@ -12922,7 +12931,7 @@
     "vegas-fortune/Casino > Vegas Fortune": {
       "section": "vegas-fortune",
       "family": "Casino > Vegas Fortune",
-      "frameCount": 73,
+      "frameCount": 83,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:10412-15861",
         "M6r9FEn042UWTQD1zvy6GM:10412-16102",
@@ -12996,7 +13005,17 @@
         "M6r9FEn042UWTQD1zvy6GM:10744-17293",
         "M6r9FEn042UWTQD1zvy6GM:10745-17641",
         "M6r9FEn042UWTQD1zvy6GM:10745-17872",
-        "M6r9FEn042UWTQD1zvy6GM:10741-16488"
+        "M6r9FEn042UWTQD1zvy6GM:10741-16488",
+        "M6r9FEn042UWTQD1zvy6GM:11930-34757",
+        "M6r9FEn042UWTQD1zvy6GM:11930-34769",
+        "M6r9FEn042UWTQD1zvy6GM:11930-34792",
+        "M6r9FEn042UWTQD1zvy6GM:11930-34878",
+        "M6r9FEn042UWTQD1zvy6GM:11930-34974",
+        "M6r9FEn042UWTQD1zvy6GM:11930-35064",
+        "M6r9FEn042UWTQD1zvy6GM:11930-35188",
+        "M6r9FEn042UWTQD1zvy6GM:11930-35200",
+        "M6r9FEn042UWTQD1zvy6GM:11930-35959",
+        "M6r9FEn042UWTQD1zvy6GM:11930-36583"
       ],
       "devices": [
         "tablet",
@@ -13080,7 +13099,7 @@
     "gem-slots/Casino > Gem Slots": {
       "section": "gem-slots",
       "family": "Casino > Gem Slots",
-      "frameCount": 29,
+      "frameCount": 59,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:10285-14037",
         "M6r9FEn042UWTQD1zvy6GM:10285-14278",
@@ -13091,11 +13110,13 @@
         "M6r9FEn042UWTQD1zvy6GM:11148-2096",
         "M6r9FEn042UWTQD1zvy6GM:11146-1937",
         "M6r9FEn042UWTQD1zvy6GM:10782-24103",
+        "M6r9FEn042UWTQD1zvy6GM:11206-2787",
+        "M6r9FEn042UWTQD1zvy6GM:11215-2930",
+        "M6r9FEn042UWTQD1zvy6GM:11198-2649",
         "M6r9FEn042UWTQD1zvy6GM:10758-20769",
         "M6r9FEn042UWTQD1zvy6GM:10758-20774",
         "M6r9FEn042UWTQD1zvy6GM:10758-20778",
         "M6r9FEn042UWTQD1zvy6GM:10758-20783",
-        "M6r9FEn042UWTQD1zvy6GM:11142-2604",
         "M6r9FEn042UWTQD1zvy6GM:11146-1930",
         "M6r9FEn042UWTQD1zvy6GM:11146-1931",
         "M6r9FEn042UWTQD1zvy6GM:11146-1932",
@@ -13109,8 +13130,36 @@
         "M6r9FEn042UWTQD1zvy6GM:11146-1999",
         "M6r9FEn042UWTQD1zvy6GM:11146-1935",
         "M6r9FEn042UWTQD1zvy6GM:11146-1996",
-        "M6r9FEn042UWTQD1zvy6GM:11148-2220",
-        "M6r9FEn042UWTQD1zvy6GM:11148-2221"
+        "M6r9FEn042UWTQD1zvy6GM:11219-3122",
+        "M6r9FEn042UWTQD1zvy6GM:11219-3786",
+        "M6r9FEn042UWTQD1zvy6GM:11244-7038",
+        "M6r9FEn042UWTQD1zvy6GM:11258-7465",
+        "M6r9FEn042UWTQD1zvy6GM:11275-8533",
+        "M6r9FEn042UWTQD1zvy6GM:11277-9060",
+        "M6r9FEn042UWTQD1zvy6GM:11264-7884",
+        "M6r9FEn042UWTQD1zvy6GM:11234-6787",
+        "M6r9FEn042UWTQD1zvy6GM:11234-6902",
+        "M6r9FEn042UWTQD1zvy6GM:11279-11092",
+        "M6r9FEn042UWTQD1zvy6GM:11279-11470",
+        "M6r9FEn042UWTQD1zvy6GM:11282-12216",
+        "M6r9FEn042UWTQD1zvy6GM:11278-10019",
+        "M6r9FEn042UWTQD1zvy6GM:11287-12668",
+        "M6r9FEn042UWTQD1zvy6GM:11288-12765",
+        "M6r9FEn042UWTQD1zvy6GM:11299-14020",
+        "M6r9FEn042UWTQD1zvy6GM:11298-13311",
+        "M6r9FEn042UWTQD1zvy6GM:11881-14886",
+        "M6r9FEn042UWTQD1zvy6GM:11278-10438",
+        "M6r9FEn042UWTQD1zvy6GM:11930-28659",
+        "M6r9FEn042UWTQD1zvy6GM:11930-28667",
+        "M6r9FEn042UWTQD1zvy6GM:11930-28763",
+        "M6r9FEn042UWTQD1zvy6GM:11930-28859",
+        "M6r9FEn042UWTQD1zvy6GM:11930-28980",
+        "M6r9FEn042UWTQD1zvy6GM:11930-29101",
+        "M6r9FEn042UWTQD1zvy6GM:11930-29256",
+        "M6r9FEn042UWTQD1zvy6GM:11930-29411",
+        "M6r9FEn042UWTQD1zvy6GM:11930-28028",
+        "M6r9FEn042UWTQD1zvy6GM:11930-30639",
+        "M6r9FEn042UWTQD1zvy6GM:11930-31288"
       ],
       "devices": [
         "tablet",
@@ -13121,12 +13170,15 @@
         "Load screen - desktop",
         "Load screen ALT - desktop",
         "Load screen ALT > selector - desktop",
+        "Load screen ALT > selector - green hue ALT - desktop",
         "Load screen ALT > selector > home - desktop",
+        "Load screen ALT > selector > home > combo - desktop",
+        "Load screen ALT > selector > home > combo > menu - desktop",
+        "Load screen ALT > selector > home - with blur ALT - desktop",
         "Mines Desktop",
         "Gem slots - Desktop ALT",
         "Gem slots - Tablet ALT",
         "Gem slots - Mobile ALT",
-        "Load screen > features > home - desktop",
         "Safari A 30",
         "Safari A 31",
         "Safari A 32",
@@ -13140,8 +13192,160 @@
         "Safari A 42",
         "Safari A 35",
         "Safari A 39",
-        "Screen Shot 2026-08-26 at 13.29.17 1",
-        "Screen Shot 2026-08-26 at 13.29.06 1"
+        "screen type 2",
+        "screen type 2 1VH",
+        "Load screen - tablet",
+        "Load screen ALT > selector - tablet",
+        "Load screen ALT > selector > home > combo - with blur - tablet",
+        "Load screen ALT > selector > home > combo > menu - tablet",
+        "Load screen ALT > selector > home > combo - tablet",
+        "Load screen ALT - tablet",
+        "1VH",
+        "2 1VH",
+        "Load screen - mobile",
+        "Load screen ALT > selector - mobile",
+        "Load screen ALT > selector > home > combo - mobile",
+        "Load screen ALT > selector > home > combo - with blur - mobile",
+        "Load screen ALT > selector > home > combo > menu - mobile",
+        "Load screen ALT - mobile"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "fisherman-slots/Casino > Fisherman Slots": {
+      "section": "fisherman-slots",
+      "family": "Casino > Fisherman Slots",
+      "frameCount": 69,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:11306-15099",
+        "M6r9FEn042UWTQD1zvy6GM:11381-18137",
+        "M6r9FEn042UWTQD1zvy6GM:11416-19412",
+        "M6r9FEn042UWTQD1zvy6GM:11416-19537",
+        "M6r9FEn042UWTQD1zvy6GM:11521-20155",
+        "M6r9FEn042UWTQD1zvy6GM:11598-21432",
+        "M6r9FEn042UWTQD1zvy6GM:11527-20243",
+        "M6r9FEn042UWTQD1zvy6GM:11559-20359",
+        "M6r9FEn042UWTQD1zvy6GM:11589-20449",
+        "M6r9FEn042UWTQD1zvy6GM:11559-20360",
+        "M6r9FEn042UWTQD1zvy6GM:11589-20450",
+        "M6r9FEn042UWTQD1zvy6GM:11559-20361",
+        "M6r9FEn042UWTQD1zvy6GM:11589-20451",
+        "M6r9FEn042UWTQD1zvy6GM:11559-20362",
+        "M6r9FEn042UWTQD1zvy6GM:11589-20452",
+        "M6r9FEn042UWTQD1zvy6GM:11559-20363",
+        "M6r9FEn042UWTQD1zvy6GM:11589-20453",
+        "M6r9FEn042UWTQD1zvy6GM:11559-20364",
+        "M6r9FEn042UWTQD1zvy6GM:11589-20454",
+        "M6r9FEn042UWTQD1zvy6GM:11589-20455",
+        "M6r9FEn042UWTQD1zvy6GM:11591-20456",
+        "M6r9FEn042UWTQD1zvy6GM:11591-20457",
+        "M6r9FEn042UWTQD1zvy6GM:11591-20458",
+        "M6r9FEn042UWTQD1zvy6GM:11592-20699",
+        "M6r9FEn042UWTQD1zvy6GM:11596-21055",
+        "M6r9FEn042UWTQD1zvy6GM:11544-20337",
+        "M6r9FEn042UWTQD1zvy6GM:11546-20357",
+        "M6r9FEn042UWTQD1zvy6GM:11544-20338",
+        "M6r9FEn042UWTQD1zvy6GM:11544-20340",
+        "M6r9FEn042UWTQD1zvy6GM:11546-20358",
+        "M6r9FEn042UWTQD1zvy6GM:11544-20341",
+        "M6r9FEn042UWTQD1zvy6GM:11602-21673",
+        "M6r9FEn042UWTQD1zvy6GM:11602-21869",
+        "M6r9FEn042UWTQD1zvy6GM:11602-21874",
+        "M6r9FEn042UWTQD1zvy6GM:11602-21878",
+        "M6r9FEn042UWTQD1zvy6GM:11602-21883",
+        "M6r9FEn042UWTQD1zvy6GM:11606-21938",
+        "M6r9FEn042UWTQD1zvy6GM:11606-22795",
+        "M6r9FEn042UWTQD1zvy6GM:11637-25043",
+        "M6r9FEn042UWTQD1zvy6GM:11640-27341",
+        "M6r9FEn042UWTQD1zvy6GM:11637-25690",
+        "M6r9FEn042UWTQD1zvy6GM:11654-29146",
+        "M6r9FEn042UWTQD1zvy6GM:11650-28479",
+        "M6r9FEn042UWTQD1zvy6GM:11641-27685",
+        "M6r9FEn042UWTQD1zvy6GM:11640-27236",
+        "M6r9FEn042UWTQD1zvy6GM:11661-29629",
+        "M6r9FEn042UWTQD1zvy6GM:11668-32530",
+        "M6r9FEn042UWTQD1zvy6GM:11678-32864",
+        "M6r9FEn042UWTQD1zvy6GM:11680-33011",
+        "M6r9FEn042UWTQD1zvy6GM:11661-30294",
+        "M6r9FEn042UWTQD1zvy6GM:11696-34540",
+        "M6r9FEn042UWTQD1zvy6GM:11697-34737",
+        "M6r9FEn042UWTQD1zvy6GM:11700-34994",
+        "M6r9FEn042UWTQD1zvy6GM:11896-15052",
+        "M6r9FEn042UWTQD1zvy6GM:11668-32543",
+        "M6r9FEn042UWTQD1zvy6GM:11930-23931",
+        "M6r9FEn042UWTQD1zvy6GM:11930-23943",
+        "M6r9FEn042UWTQD1zvy6GM:11930-23974",
+        "M6r9FEn042UWTQD1zvy6GM:11930-23988",
+        "M6r9FEn042UWTQD1zvy6GM:11930-24078",
+        "M6r9FEn042UWTQD1zvy6GM:11930-24180",
+        "M6r9FEn042UWTQD1zvy6GM:11930-24265",
+        "M6r9FEn042UWTQD1zvy6GM:11930-24384",
+        "M6r9FEn042UWTQD1zvy6GM:11930-24503",
+        "M6r9FEn042UWTQD1zvy6GM:11661-31059",
+        "M6r9FEn042UWTQD1zvy6GM:11680-33511",
+        "M6r9FEn042UWTQD1zvy6GM:11930-24933",
+        "M6r9FEn042UWTQD1zvy6GM:11930-25935",
+        "M6r9FEn042UWTQD1zvy6GM:11930-26565"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Load screen - desktop",
+        "Load screen ALT - desktop",
+        "Load screen > features - desktop",
+        "Load screen > features > home - desktop",
+        "Load screen > features > home > menu - desktop",
+        "Safari A 1",
+        "Safari A 7",
+        "Safari A 2",
+        "Safari A 8",
+        "Safari A 3",
+        "Safari A 9",
+        "Safari A 4",
+        "Safari A 10",
+        "Safari A 5",
+        "Safari A 11",
+        "Safari A 6",
+        "Safari A 12",
+        "Safari A 13",
+        "Safari A 14",
+        "Safari A 15",
+        "Safari A 16",
+        "Load screen > features > home > combo - desktop",
+        "Load screen > features > home > combo > combo end frame - desktop",
+        "body 2",
+        "body 4",
+        "body 3",
+        "head 2",
+        "head 4",
+        "head 3",
+        "Fisherman slots - Card visual",
+        "Mines Desktop",
+        "Fisherman slots - Desktop",
+        "Fisherman slots - Tablet",
+        "Fisherman slots - Mobile",
+        "screen type 2",
+        "Load screen - screen type 2 1VH",
+        "Load screen - tablet",
+        "Load screen > features > home - tablet",
+        "Load screen > features > home > menu - tablet",
+        "Load screen > features > home > all key items - tablet",
+        "Load screen > features - tablet",
+        "Load screen ALT - tablet",
+        "Load screen - mobile",
+        "Load screen > features - mobile",
+        "Load screen - refresh screen - mobile",
+        "Load screen > features > home - mobile",
+        "Load screen > features > home > all key items - mobile",
+        "Load screen > features > home > menu - docked - mobile",
+        "Load screen > features > home > menu - mobile",
+        "Load screen ALT - mobile",
+        "1VH"
       ],
       "citedFileCount": 0,
       "citedFiles": [],

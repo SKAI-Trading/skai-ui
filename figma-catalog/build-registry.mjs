@@ -114,6 +114,8 @@ const SECTION_FILE = {
   "cosmic-slots": "M6r9FEn042UWTQD1zvy6GM",
   "vegas-fortune": "M6r9FEn042UWTQD1zvy6GM",
   "gem-slots": "M6r9FEn042UWTQD1zvy6GM",
+  // 2026-09-11: the Wild card page came back as Fisherman Slots with 78 frames.
+  "fisherman-slots": "M6r9FEn042UWTQD1zvy6GM",
   // Moved to Skai-Web-App-2 on 2026-08-11 (ids preserved — see FILE_KEYS).
   home: "mhF3BkzlTaGiLzJ7kvpmVc",
   wallet: "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -202,7 +204,7 @@ const SECTIONS = [
   // for why that is a new section rather than a rename of the old one.
   "limbo", "slide", "baccarat", "roulette", "price-grid",
   // 2026-09-09: the four 🚧 slots pages. See SECTION_FILE.
-  "safari-slots", "cosmic-slots", "vegas-fortune", "gem-slots",
+  "safari-slots", "cosmic-slots", "vegas-fortune", "gem-slots", "fisherman-slots",
 ];
 
 // The list above is an ORDERING hint, not the source of truth.
@@ -278,7 +280,7 @@ const NON_SKAI_SECTIONS = new Set([
   // 45 component-aliases.tsv rows just to become visible to apply-verify.mjs
   // (whose verdicts were loading, counting, and being silently discarded).
   // GAME_BY_SECTION already carried a name for each; it was dead code until now.
-  "safari-slots", "cosmic-slots", "vegas-fortune", "gem-slots",
+  "safari-slots", "cosmic-slots", "vegas-fortune", "gem-slots", "fisherman-slots",
 ]);
 // For a Skai-Games (non-Skai-convention) section, the product/game family name.
 // A section's frames fold into one canonical "Casino > <game>" family.
@@ -309,6 +311,7 @@ const GAME_BY_SECTION = {
   // 2026-09-09: the slots pages, each its own game.
   "safari-slots": "Safari Slots", "cosmic-slots": "Cosmic Slots",
   "vegas-fortune": "Vegas Fortune", "gem-slots": "Gem Slots",
+  "fisherman-slots": "Fisherman Slots",
 };
 
 const readLines = (p) =>

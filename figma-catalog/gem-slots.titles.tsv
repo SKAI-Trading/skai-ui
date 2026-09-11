@@ -2,6 +2,7 @@
 10285-14031	Breakpoint
 10285-14033	Breakpoint
 10285-14035	Breakpoint
+11930-27218	Breakpoint
 10285-14037	Skai > Play > Casino > Gem slots (768 x 1024px)
 10285-14278	Skai > Play > Casino > Gem slots (1440 x 900px)
 10285-14928	Skai > Play > Casino > Gem slots (375 x 812px)
@@ -10,15 +11,17 @@
 10747-20240	Load screen - desktop
 10753-20676	Load screen ALT - desktop
 10758-20929	Load screen ALT > selector - desktop
-11148-2096	Load screen ALT > selector - desktop
+11148-2096	Load screen ALT > selector - green hue ALT - desktop
 11146-1937	Load screen ALT > selector - desktop
 10782-24103	Load screen ALT > selector > home - desktop
+11206-2787	Load screen ALT > selector > home > combo - desktop
+11215-2930	Load screen ALT > selector > home > combo > menu - desktop
+11198-2649	Load screen ALT > selector > home - with blur ALT - desktop
 10758-20769	Mines Desktop
 10758-20774	Gem slots - Desktop ALT
 10758-20778	Gem slots - Tablet ALT
 10758-20783	Gem slots - Mobile ALT
 10758-20788	Rectangle 34624566
-11142-2604	Load screen > features > home - desktop
 11146-1930	Safari A 30
 11146-1931	Safari A 31
 11146-1932	Safari A 32
@@ -32,5 +35,34 @@
 11146-1999	Safari A 42
 11146-1935	Safari A 35
 11146-1996	Safari A 39
-11148-2220	Screen Shot 2026-08-26 at 13.29.17 1
-11148-2221	Screen Shot 2026-08-26 at 13.29.06 1
+11219-3122	Skai > Play > Casino > Gem slots - screen type 2 (1440 x 900px)
+11219-3786	Skai > Play > Casino > Gem slots - screen type 2 1VH (1440 x 900px)
+11244-7038	Load screen - tablet
+11258-7465	Load screen ALT > selector - tablet
+11275-8533	Load screen ALT > selector > home > combo - with blur - tablet
+11277-9060	Load screen ALT > selector > home > combo > menu - tablet
+11264-7884	Load screen ALT > selector > home > combo - tablet
+11234-6787	Load screen ALT > selector - tablet
+11234-6902	Load screen ALT - tablet
+11260-7733	Notes
+11279-11092	Skai > Play > Casino > Gem slots 1VH (375 x 812px)
+11279-11470	Skai > Play > Casino > Gem slots 2 1VH (375 x 812px)
+11282-12216	Load screen - mobile
+11278-10019	Load screen ALT > selector - mobile
+11287-12668	Load screen ALT > selector - mobile
+11288-12765	Load screen ALT > selector > home > combo - mobile
+11299-14020	Load screen ALT > selector > home > combo - with blur - mobile
+11298-13311	Load screen ALT > selector > home > combo > menu - mobile
+11881-14886	Load screen ALT > selector > home > combo > menu - mobile
+11278-10438	Load screen ALT - mobile
+11930-28659	Load screen - mobile
+11930-28667	Load screen ALT > selector - mobile
+11930-28763	Load screen ALT > selector - mobile
+11930-28859	Load screen ALT > selector > home > combo - mobile
+11930-28980	Load screen ALT > selector > home > combo - with blur - mobile
+11930-29101	Load screen ALT > selector > home > combo > menu - mobile
+11930-29256	Load screen ALT > selector > home > combo > menu - mobile
+11930-29411	Load screen ALT - mobile
+11930-28028	Skai > Play > Casino > Gem slots (375 x 812px)
+11930-30639	Skai > Play > Casino > Gem slots 1VH (375 x 812px)
+11930-31288	Skai > Play > Casino > Gem slots 2 1VH (375 x 812px)

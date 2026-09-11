@@ -1,1 +1,78 @@
-11148:2223	Group 3	GROUP	3182	7925	1
+11306:15087	Directory	FRAME	8706	352	1
+11306:15093	Breakpoint	FRAME	1450	164	1
+11306:15095	Breakpoint	FRAME	1450	164	1
+11306:15097	Breakpoint	FRAME	1450	164	1
+11930:24546	Breakpoint	FRAME	1450	164	1
+11306:15099	Skai > Play > Casino > Fisherman slots (1440 x 900px)	FRAME	1440	3467	1
+11306:15791	Rectangle 155	RECTANGLE	720	720	1
+11306:15792	Rectangle 163	RECTANGLE	151	720	1
+11381:18137	Load screen - desktop	FRAME	1318	621	1
+11416:19412	Load screen ALT - desktop	FRAME	1318	621	1
+11416:19537	Load screen > features - desktop	FRAME	1318	621	1
+11521:20155	Load screen > features > home - desktop	FRAME	1318	621	1
+11598:21432	Load screen > features > home > menu - desktop	FRAME	1318	621	1
+11527:20243	Load screen > features > home - desktop	FRAME	1318	621	1
+11559:20359	Safari A 1	RECTANGLE	57	60	1
+11589:20449	Safari A 7	RECTANGLE	57	60	1
+11559:20360	Safari A 2	RECTANGLE	57	60	1
+11589:20450	Safari A 8	RECTANGLE	57	60	1
+11559:20361	Safari A 3	RECTANGLE	57	60	1
+11589:20451	Safari A 9	RECTANGLE	57	60	1
+11559:20362	Safari A 4	RECTANGLE	57	60	1
+11589:20452	Safari A 10	RECTANGLE	57	60	1
+11559:20363	Safari A 5	RECTANGLE	57	60	1
+11589:20453	Safari A 11	RECTANGLE	57	60	1
+11559:20364	Safari A 6	RECTANGLE	57	60	1
+11589:20454	Safari A 12	RECTANGLE	57	60	1
+11589:20455	Safari A 13	RECTANGLE	57	60	1
+11591:20456	Safari A 14	RECTANGLE	57	60	1
+11591:20457	Safari A 15	RECTANGLE	57	60	1
+11591:20458	Safari A 16	RECTANGLE	57	60	1
+11592:20699	Load screen > features > home > combo - desktop	FRAME	1318	621	1
+11596:21055	Load screen > features > home > combo > combo end frame - desktop	FRAME	1318	621	1
+11544:20337	body 2	RECTANGLE	317	453	1
+11546:20357	body 4	RECTANGLE	317	453	1
+11544:20338	body 3	RECTANGLE	317	453	1
+11544:20340	head 2	RECTANGLE	137	130	1
+11546:20358	head 4	RECTANGLE	137	130	1
+11544:20341	head 3	RECTANGLE	137	130	1
+11598:21181	Notes	WIDGET	0	0	1
+11602:21673	Fisherman slots - Card visual	FRAME	195	276	1
+11602:21869	Mines Desktop	FRAME	195	277	1
+11602:21874	Fisherman slots - Desktop	FRAME	195	277	1
+11602:21878	Fisherman slots - Tablet	FRAME	120	170	1
+11602:21883	Fisherman slots - Mobile	FRAME	76	108	1
+11602:21888	Rectangle 34624566	RECTANGLE	32	32	1
+11606:21938	Skai > Play > Casino > Fisherman slots - screen type 2 (1440 x 900px)	FRAME	1440	3467	1
+11606:22795	Skai > Play > Casino > Fisherman slots > Load screen - screen type 2 1VH (1440 x 900px)	FRAME	1440	900	1
+11637:25043	Skai > Play > Casino > Fisherman slots (768 x 1024px)	FRAME	768	1627	1
+11640:27341	Load screen - tablet	FRAME	708	720	1
+11637:25690	Load screen > features > home - tablet	FRAME	708	720	1
+11654:29146	Load screen > features > home > menu - tablet	FRAME	708	720	1
+11650:28479	Load screen > features > home > all key items - tablet	FRAME	708	720	1
+11641:27685	Load screen > features - tablet	FRAME	708	720	1
+11640:27236	Load screen ALT - tablet	FRAME	708	720	1
+11661:29629	Skai > Play > Casino > Fisherman slots (375 x 812px)	FRAME	375	1605	1
+11668:32530	Load screen - mobile	FRAME	347	500	1
+11678:32864	Load screen > features - mobile	FRAME	347	500	1
+11680:33011	Load screen - refresh screen - mobile	FRAME	347	500	1
+11661:30294	Load screen > features > home - mobile	FRAME	347	500	1
+11696:34540	Load screen > features > home > all key items - mobile	FRAME	347	500	1
+11697:34737	Load screen > features > home > menu - docked - mobile	FRAME	347	500	1
+11700:34994	Load screen > features > home > menu - mobile	FRAME	347	500	1
+11896:15052	Load screen > features > home > menu - mobile	FRAME	347	500	1
+11668:32543	Load screen ALT - mobile	FRAME	347	500	1
+11930:23931	Load screen - mobile	FRAME	375	500	1
+11930:23943	Load screen > features - mobile	FRAME	375	500	1
+11930:23974	Load screen - refresh screen - mobile	FRAME	375	500	1
+11930:23988	Load screen > features > home - mobile	FRAME	375	500	1
+11930:24078	Load screen > features > home > all key items - mobile	FRAME	375	500	1
+11930:24180	Load screen > features > home > menu - docked - mobile	FRAME	375	500	1
+11930:24265	Load screen > features > home > menu - mobile	FRAME	375	500	1
+11930:24384	Load screen > features > home > menu - mobile	FRAME	375	500	1
+11930:24503	Load screen ALT - mobile	FRAME	375	500	1
+11661:31059	Skai > Play > Casino > Fisherman slots 1VH (375 x 812px)	FRAME	375	812	1
+11680:33511	Skai > Play > Casino > Fisherman slots 1VH (375 x 812px)	FRAME	375	812	1
+11930:24933	Skai > Play > Casino > Fisherman slots (375 x 812px)	FRAME	375	3049	1
+11930:25935	Skai > Play > Casino > Fisherman slots 1VH (375 x 812px)	FRAME	375	812	1
+11930:26565	Skai > Play > Casino > Fisherman slots 1VH (375 x 812px)	FRAME	375	812	1

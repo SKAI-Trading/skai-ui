@@ -113,9 +113,10 @@
     "Deciding the labels is still Casey's call and nothing here changes one.",
     "",
     "It is a SNAPSHOT of 2026-09-08 and goes stale as reports are filed and closed. Re-derive",
-    "it rather than trusting it if the date matters."
+    "it rather than trusting it if the date matters.",
+    "2026-09-11: Skai-Web-App and Skai-Web-App-2 were verified UNCHANGED page by page (FNV-1a hash over every top-level row in the harvest format, 20 of 20 pages equal to live/) and stamped harvested without re-ingesting; Skai-Games was re-ingested in full (31 pages)."
   ],
-  "harvestedAt": "2026-09-09",
+  "harvestedAt": "2026-09-11",
   "method": "harvest.mjs: one use_figma call per chunk (see `node harvest.mjs plan`); PageNode.loadAsync per page, top-level children only, full names; every chunk carries the page's own children.length and ingest refuses a page whose chunks do not reconcile to it",
   "fileAliases": {
     "_why": "Report `figma_link`s do not all carry a tracked fileKey. An untracked key resolves to no page and so to no scope, and an unscoped citation is worse than a retired one: nobody can tell whether to build it. Record the mapping here rather than letting each lane rediscover it.",
@@ -172,7 +173,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -182,7 +183,7 @@
       "n": 46,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -192,7 +193,7 @@
       "n": 1157,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -202,7 +203,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -212,7 +213,7 @@
       "n": 151,
       "openReports": 5,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "note": "In scope from 2026-09-09 (Casey, wave 39 go: the standing exclusion is lifted so Onboarding and Authentication counts and gets built)."
     },
     {
@@ -223,7 +224,7 @@
       "n": 10,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -233,7 +234,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -243,7 +244,7 @@
       "n": 13,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -253,7 +254,7 @@
       "n": 154,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -263,7 +264,7 @@
       "n": 284,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -273,7 +274,7 @@
       "n": 345,
       "openReports": 38,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -283,12 +284,12 @@
       "n": 442,
       "openReports": 16,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
@@ -304,12 +305,12 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 277,
@@ -321,7 +322,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 240,
@@ -337,7 +338,7 @@
       "n": 178,
       "openReports": 42,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
@@ -348,7 +349,7 @@
       "n": 182,
       "openReports": 25,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -358,13 +359,13 @@
       "n": 420,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 417,
@@ -380,7 +381,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -390,7 +391,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -398,7 +399,7 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 44,
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
@@ -412,7 +413,7 @@
       "n": 36,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -422,7 +423,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -432,7 +433,7 @@
       "n": 23,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -442,15 +443,15 @@
       "n": 20,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "9003:102080",
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
-      "n": 21,
-      "harvestedAt": "2026-09-09",
+      "n": 19,
+      "harvestedAt": "2026-09-11",
       "openReports": 0,
       "scope": "in-scope"
     },
@@ -460,7 +461,7 @@
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
       "n": 46,
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "openReports": 3,
       "scope": "in-scope"
     },
@@ -472,7 +473,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -482,17 +483,17 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "9058:1819",
       "pageName": "✅ Hi-Lo - Skai originals",
       "readiness": "ready",
-      "n": 16,
+      "n": 15,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -502,7 +503,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -512,7 +513,7 @@
       "n": 27,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -522,7 +523,7 @@
       "n": 25,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -532,7 +533,7 @@
       "n": 14,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -542,7 +543,7 @@
       "n": 17,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -552,7 +553,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -562,7 +563,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -572,7 +573,7 @@
       "n": 14,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -582,7 +583,7 @@
       "n": 24,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -592,7 +593,7 @@
       "n": 18,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -602,7 +603,7 @@
       "n": 20,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -612,7 +613,7 @@
       "n": 30,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -622,7 +623,7 @@
       "n": 51,
       "openReports": 0,
       "scope": "excluded",
-      "harvestedAt": "2026-09-09",
+      "harvestedAt": "2026-09-11",
       "note": "Excluded 2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready page (9061:15449); 9 FRAME nodes with generic names and 42 loose nodes. Re-scope only if the page is renamed."
     },
     {
@@ -633,25 +634,26 @@
       "n": 0,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-09"
+      "harvestedAt": "2026-09-11"
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10265:2",
       "pageName": "🚧 Safari Slots - Skai originals",
       "readiness": "wip",
-      "n": 61,
-      "harvestedAt": "2026-09-09",
+      "n": 72,
+      "harvestedAt": "2026-09-11",
       "openReports": 0,
-      "scope": "wip"
+      "scope": "in-scope",
+      "note": "Ruled in-scope 2026-09-10: Casey listed Safari slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling."
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10266:5",
       "pageName": "🚧 Cosmic Slots - Skai originals",
       "readiness": "wip",
-      "n": 50,
-      "harvestedAt": "2026-09-09",
+      "n": 62,
+      "harvestedAt": "2026-09-11",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Cosmic is the base game of the slot program (Casey 2026-09-09); built on the slot engine, plan 2."
@@ -661,31 +663,33 @@
       "pageId": "10266:6",
       "pageName": "🚧 Vegas fortune - Skai originals",
       "readiness": "wip",
-      "n": 85,
-      "harvestedAt": "2026-09-09",
+      "n": 96,
+      "harvestedAt": "2026-09-11",
       "openReports": 1,
-      "scope": "wip"
+      "scope": "in-scope",
+      "note": "Ruled in-scope 2026-09-10: Casey listed Vegas fortune slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling."
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10266:7",
       "pageName": "🚧 Gem Slots - Skai originals",
       "readiness": "wip",
-      "n": 36,
-      "harvestedAt": "2026-09-09",
+      "n": 68,
+      "harvestedAt": "2026-09-11",
       "openReports": 0,
-      "scope": "wip"
+      "scope": "in-scope",
+      "note": "Ruled in-scope 2026-09-10: Casey listed Gem slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling."
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "11095:2603",
-      "pageName": "🚧 Wild card - Skai originals",
+      "pageName": "🚧 Fisherman Slots - Skai originals",
       "readiness": "wip",
-      "n": 1,
+      "n": 78,
       "openReports": 0,
-      "scope": "wip",
-      "harvestedAt": "2026-09-09",
-      "note": "No longer empty. Recorded as 0 top-level children earlier on 2026-09-08 (agreed by page.loadAsync() AND setCurrentPageAsync, both read because an unloaded page also reports a plausible 0); re-read later the same day it holds one child, 11148:2223 'Group 3' (3182x7925), and a .tsv now exists. Keep the row either way: a page absent from this list and a page with nothing on it read identically to every consumer."
+      "scope": "in-scope",
+      "harvestedAt": "2026-09-11",
+      "note": "Ruled in-scope 2026-09-10: Casey listed Fisherman slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling. This page was \"Wild card - Skai originals\" until 2026-09-10; Casey's \"Wild Card Slots\" and \"Fishing Slots\" name the same page."
     }
   ]
 }

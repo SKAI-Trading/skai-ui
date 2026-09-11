@@ -297,7 +297,7 @@
    "pageId": "9003:102080",
    "pageName": "✅ Mines - Skai originals",
    "readiness": "ready",
-   "liveChildren": 21,
+   "liveChildren": 19,
    "sections": [
     "mines"
    ]
@@ -347,7 +347,7 @@
    "pageId": "9058:1819",
    "pageName": "✅ Hi-Lo - Skai originals",
    "readiness": "ready",
-   "liveChildren": 16,
+   "liveChildren": 15,
    "sections": [
     "hilo"
    ]
@@ -488,7 +488,7 @@
    "pageId": "10265:2",
    "pageName": "🚧 Safari Slots - Skai originals",
    "readiness": "wip",
-   "liveChildren": 61,
+   "liveChildren": 72,
    "sections": [
     "safari-slots"
    ],
@@ -499,7 +499,7 @@
    "pageId": "10266:5",
    "pageName": "🚧 Cosmic Slots - Skai originals",
    "readiness": "wip",
-   "liveChildren": 50,
+   "liveChildren": 62,
    "sections": [
     "cosmic-slots"
    ],
@@ -510,7 +510,7 @@
    "pageId": "10266:6",
    "pageName": "🚧 Vegas fortune - Skai originals",
    "readiness": "wip",
-   "liveChildren": 85,
+   "liveChildren": 96,
    "sections": [
     "vegas-fortune"
    ],
@@ -521,7 +521,7 @@
    "pageId": "10266:7",
    "pageName": "🚧 Gem Slots - Skai originals",
    "readiness": "wip",
-   "liveChildren": 36,
+   "liveChildren": 68,
    "sections": [
     "gem-slots"
    ],
@@ -539,10 +539,12 @@
   {
    "fileKey": "M6r9FEn042UWTQD1zvy6GM",
    "pageId": "11095:2603",
-   "pageName": "🚧 Wild card - Skai originals",
+   "pageName": "🚧 Fisherman Slots - Skai originals",
    "readiness": "wip",
-   "liveChildren": 1,
-   "sections": []
+   "liveChildren": 78,
+   "sections": [
+    "fisherman-slots"
+   ]
   }
  ],
  "figmaChangeLog": {
@@ -705,13 +707,30 @@
    "3sSzw1KewMtUbeLAv7uW0r 2998:19593: page renamed \"✝️ Wallet (moved to Skai Web App 2)\" -> \"✝️ Wallet (moved to \"Skai Web App 2\")\"",
    "3sSzw1KewMtUbeLAv7uW0r 3:3: page renamed \"✝️ Trade (moved to Skai Web App 2)\" -> \"✝️ Trade (moved to \"Skai Web App 2\")\"",
    "M6r9FEn042UWTQD1zvy6GM 9061:15449 ✅ Towers - Skai originals: 30 -> 30 top-level children (+1 / -1)"
+  ],
+  "2026-09-11": [
+   "harvest.mjs ingest:",
+   "M6r9FEn042UWTQD1zvy6GM 10265:2 🚧 Safari Slots - Skai originals: 61 -> 72 top-level children (+12 / -1)",
+   "M6r9FEn042UWTQD1zvy6GM 10266:5 🚧 Cosmic Slots - Skai originals: 50 -> 62 top-level children (+15 / -3)",
+   "M6r9FEn042UWTQD1zvy6GM 10266:6 🚧 Vegas fortune - Skai originals: 85 -> 96 top-level children (+11 / -0)",
+   "M6r9FEn042UWTQD1zvy6GM 10266:7 🚧 Gem Slots - Skai originals: 36 -> 68 top-level children (+35 / -3)",
+   "M6r9FEn042UWTQD1zvy6GM 11095:2603: page renamed \"🚧 Wild card - Skai originals\" -> \"🚧 Fisherman Slots - Skai originals\"",
+   "M6r9FEn042UWTQD1zvy6GM 11095:2603 🚧 Fisherman Slots - Skai originals: 1 -> 78 top-level children (+78 / -1)",
+   "M6r9FEn042UWTQD1zvy6GM 2003:674 ✅ Dice - Skai originals: 36 -> 36 top-level children (+3 / -3)",
+   "M6r9FEn042UWTQD1zvy6GM 9003:102080 ✅ Mines - Skai originals: 21 -> 19 top-level children (+3 / -5)",
+   "M6r9FEn042UWTQD1zvy6GM 9003:133221 ✅ Scratchers - Skai originals: 21 -> 21 top-level children (+1 / -1)",
+   "M6r9FEn042UWTQD1zvy6GM 9058:1819 ✅ Hi-Lo - Skai originals: 16 -> 15 top-level children (+0 / -1)",
+   "M6r9FEn042UWTQD1zvy6GM 9929:16390 ✅ Limbo - Skai originals: 14 -> 14 top-level children (+1 / -1)",
+   "M6r9FEn042UWTQD1zvy6GM 9929:16391 ✅ Slide - Skai originals: 18 -> 18 top-level children (+1 / -1)",
+   "verify: Skai-Web-App (13 pages) and Skai-Web-App-2 (7 pages) hashed page by page against live/ (FNV-1a over every top-level row in the harvest format) and found equal; stamped harvested without re-ingesting.",
+   "scope: Safari Slots, Vegas fortune, Gem Slots and Fisherman Slots ruled in-scope (Casey listed them as missing from the status board; Cosmic was ruled in-scope on 2026-09-10 by the wave-40 session). Fisherman Slots is the page formerly named Wild card.",
+   "retarget: 14 rows moved onto rebuilt frames (7 same-title from drift, 7 role-matched 347-to-375 mobile frames); the 10 whose geometry changed were pulled from done to partial and their verdicts marked for re-measurement."
   ]
  },
  "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.\n\n2026-09-06 - PARTIAL fold-in of the wave-21 harvest: 27 of 33 sections, +519 registry frames (3776 -> 4295). The top-level `harvested` field deliberately STAYS at 2026-08-18 per the convention above - this was not a full sweep.\n\nSIX SECTIONS WERE REFUSED and still carry their 2026-08-18 ids: towers (75% of catalogued ids absent from the capture), wallet 51%, trade 49%, home 38%, keno 33%, hilo 30%. Those are SHORT HARVESTS, not deletions. `get_metadata` does not descend into every frame and says nothing about having stopped, so wave 21's `liveChildCount` was a second read of the SAME lossy instrument and agreed with its node list exactly - the completeness check passed while being entirely defeated. Wave 23 measured the gap directly: 1,914 of a towers page's 2,011 real descendants.\n\nFolding those six in would have DELETED 407 trade ids, 183 wallet, 136 home, 88 trade-2 and 54 towers, taking the hand-set implFiles/status/notes keyed to each one with them. snapshot-to-nodes.mjs now refuses any section whose capture is missing more than 25% of its catalogued ids, because a design file does not shed a quarter of a section in nineteen days - a short capture looks exactly like that and passes every count-based check.\n\nTo close the six: re-harvest via the Plugin API (use_figma), which is the only instrument that enumerates a page completely.\n\n2026-09-06 - page-list verification across all three files via figma.root.children, diffed against this file by pageId. All 50 pages match: 0 new, 0 absent. The list was already current; the 08-18 stamp was a stale LABEL on live data, and a stamp that reads nineteen days old is itself a defect because it invites a re-harvest nobody needs. WATCH OUT: children.length reads 0 for any page the session has not loaded, so a page-list pass cannot also collect live counts - Play returned 0 here and 345 when loaded. This pass certifies the page SET only.",
  "outOfScope": {
   "🚧 Titles + Emblems": "Not SKAI screens. A 1,157-node REFERENCE board for a future titles/emblems system: badge tiles at 188x40 / 67x64, node names 'image 2'..'image N', and descriptions copied verbatim from Call of Duty achievements (\"Complete the 'Collateral Damage' challenge. Kill 2 or more enemies with a single sniper rifle bullet\"). Zero frames match a screen convention. This is the same 'examples of what the reporter likes' material Casey flagged 2026-08-05 — inspiration, not a spec. Re-scope only if SKAI authors its own emblem screens.",
-  "Towars Draft (Disregard)": "2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready Towers page (9061:15449): 9 FRAME nodes with generic names (Desktop Full Game, Frame 10000040xx) and 42 loose nodes. Scope `excluded` in live/_pages.json. Re-scope only if the page is renamed.",
-  "🚧 Wild card - Skai originals": "2026-09-09: holds a single non-FRAME node (it was empty on 09-08), so there is nothing to catalogue yet. Scope stays `wip`. Remove this entry and add a section the first harvest that finds frames on it."
+  "Towars Draft (Disregard)": "2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready Towers page (9061:15449): 9 FRAME nodes with generic names (Desktop Full Game, Frame 10000040xx) and 42 loose nodes. Scope `excluded` in live/_pages.json. Re-scope only if the page is renamed."
  },
  "unmappedSections": {
   "skai-cross": "TOMBSTONE. Figma page 9660:2 was renamed '🚧 SKAI Cross' -> '✅ Price Grid' on 2026-08-18 and its contents replaced wholesale: all 15 catalogued ids are gone and the 20 now on the page share no title with any of them. Those 20 are Price Grid designs and are catalogued under the separate `price-grid` section, because SKAI Cross and Price Grid are two SEPARATE LIVE GAMES (Play.tsx mounts SkaiCrossGame at :1610 and PriceGridGame at :1625, each with its own id, art, accent and feature flag). The 15 rows are KEPT — recorded `gone` in bugref-aliases.tsv — so nothing is deleted. ★ The consequence worth acting on: SKAI Cross is a SHIPPING game that now has NO Figma page at all."

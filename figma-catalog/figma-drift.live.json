@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T10:38:01.674Z",
+  "generated": "2026-09-11T01:10:39.661Z",
   "sections": {
     "home": {
       "status": "clean",
@@ -62,14 +62,48 @@
       "retargets": []
     },
     "dice": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 36,
       "live": 36,
       "nestedAlive": 0,
-      "added": 0,
-      "removed": 0,
+      "added": 3,
+      "removed": 3,
       "retitled": 0,
-      "removedRows": [],
+      "removedRows": [
+        {
+          "id": "9003-44847",
+          "title": "Skai > Play > Casino > Dice Mobile (375 x 812px)",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/DiceGame.tsx",
+            "modules/skai-gaming/src/pages/play/DicePageSections.tsx"
+          ],
+          "status": "partial",
+          "notes": "THE 375 BOARD IS A DIFFERENT SCALE AND WAS SHIPPING AT DESKTOP SCALE; NOW BUILT. 9088:1263 `Mobile` is a 347x347 square, r12, 1px white/10, and every part is drawn smaller than 9069:2796: pills 9088:1332 at y=14 inset 11-12, eight 35x18 r4.94 pills with a 0.618 stroke and Manrope SemiBold 10 on gap 8 (LEFT-aligned, not justify-between); scale row 9088:1323 Manrope Bold 10 -0.4, 8 tall at y=127, centres 23..321.5; ticks 9088:1307 five 8.63x4.31 at px8.15, 5 below the scale; housing 9088:1313 #1A2D2C r4 p6 over well 9088:1314 #001615 r4.79 p6 over a 4px track with a 12x18 r1.92 grip (0.96px bars 7.67/8.63 tall, gap 1.53); gem 9088:1330 25.25x30.39 with an 8px ExtraBold face, its bottom 3 above the track; field bar 9088:1264 323x56 #1A2D2C r6 p6 gap6 with three 99.67x44 fields = Mulish Regular 10/14 white@0.64 label + 2 + a 28-tall r8 #001615 card with a 0.61 white/20 stroke, p7.3, and a Mulish Regular 12/14 value. The board holds 347 tall with the pills at the top, the field bar at the bottom and the slider centred between - justify-between over a square. DiceGame.tsx drew the 954 board's tokens at 347 with an 8px inset. Built as `max-md:` overrides on every one of those sites (column inset px-3 and py-3, r12 below lg, min-h 347, pills 35x18 r5 text-10, scale text-10 in an 8 row on px-3, ticks 9x4 at mt-5, housing r4 p6, well r5 p6 py13, track 4, grip r2 with 1px bars, gem 25x30 text-8 at bottom-7, bar r6 p6 gap6, fields gap-2 with Mulish 10/14 labels and 28-tall r8 px7 Mulish 12/14 inputs). WHY `max-md:` AND NOT A MOBILE-FIRST BASE: dicePanelParity, diceFieldCardParity, diceFieldBarRow and diceTouchFloor pin the desktop tokens by bare membership and by substring, and the one artboard that departs from them is this one; the override form keeps every pinned token literal. Two test files changed for it - the `Multiplier:` marker, and the label-family rule now reads bare tokens so the phone's `max-md:font-mulish` (9088:1266 is `Sm/Label 2 300`, Mulish) is not read as a desktop family. 124 dice tests pass. NOT BUILT: the pill row keeps justify-between and twelve pills (the frame shows eight, left-aligned on gap 8; twelve 35s overflow 323 and the oldest clip left). FRAME FURNITURE ON THIS PAGE: 9003:45143 and 9003:45183 are two 390-wide `Frame 1000003864` field bars (Multiplier 1.98 / Roll Over 50 / Win Chance 50.00) sitting at y=684 and y=1529 INSIDE the 347 column and overrunning it by 43 - designer leftovers, not a second field bar; nothing was built from them. Inputs are not on the 44px floor (`src/index.css:749` floors button/a/[role=button] only), so the 28 renders 28. NOT RENDERED. [vverify: match | Mobile 375 verified to the agreed scope. Zero horizontal overflow (no sideways scroll) and all 7 sections present - fairness sub-bar, community wins, more games, bets, about, licences, FAQ. Game area is full width (289px) after the stacking fix, up from the 16px crush the flex-row-at-every-width bug caused.]",
+          "verifiedAt": "2026-09-09T10:32:57.384Z"
+        },
+        {
+          "id": "9088-1354",
+          "title": "Frame 1000003779",
+          "implFiles": [
+            "—",
+            "modules/skai-gaming/src/components/play/games/instant/DiceGame.tsx"
+          ],
+          "status": "partial",
+          "notes": "MEASURED all three axes 2026-09-01 and now CITED, which the wave-8 note said it was not. Node data 347x359.3333435058594 cornerRadius 12 fill #122524 VERTICAL padding 12 itemSpacing 16 column 323, children CTA 323x52 r16 FIRST, then 323x90 bet block, 323x66, card 323x42 r12, 323x21.33 - the same below-lg inversion Crash uses. The 375 page frame agrees: 9003:44957 is 347x322 r12 #122524 padding 12 gap 16, inside a bento at 347 wide, gap 8. TYPE: 18 TEXT nodes give Mulish Regular 14/18/-4% x10, Manrope Regular 12/16/-4% x5, Mulish Regular 12/16/-4% x2, Manrope Medium 16/22/-4% x1 - now all correct in code. NOT done for ONE reason and it is not a type or colour one: the panel ships w-full inside a row whose padding chain is ambiguous, so its RENDERED width at 375 cannot be stated. DiceGame.tsx contributes p-4 and GameShell.tsx:55 contributes p-3 sm:p-4, and only one of the two lands (wave 8 measured 1318-32 at desktop, not 1318-64). GameShell.tsx is outside this lane, so the width is reported rather than guessed at.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9088-1630",
+          "title": "Frame 1000004021",
+          "implFiles": [
+            "—",
+            "modules/skai-gaming/src/components/play/games/instant/DiceGame.tsx"
+          ],
+          "status": "partial",
+          "notes": "MEASURED all three axes 2026-09-01. Node data 347x687.3333129882812 cornerRadius 12 fill #122524 VERTICAL padding 12 itemSpacing 16, nine children with the CTA first and the tab bar last. TYPE: 33 TEXT nodes give Mulish Regular 14/18/-4% x20, Manrope Regular 12/16/-4% x9, Mulish Regular 12/16/-4% x3, Manrope Medium 16/22/-4% x1. Radius, padding, gap, the 42px rows and both faces are now correct in DiceGame.tsx. Held at partial by the same single unknown as 9088-1354: the rendered 347 cannot be asserted while the shell padding chain is split between this file and GameShell.tsx.",
+          "verifiedAt": null
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },
@@ -86,28 +120,92 @@
       "retargets": []
     },
     "crash": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 20,
       "live": 20,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 1,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "mines": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 21,
-      "live": 21,
+      "live": 19,
       "nestedAlive": 0,
-      "added": 0,
-      "removed": 0,
-      "retitled": 0,
-      "removedRows": [],
-      "retargeted": 0,
-      "retargets": []
+      "added": 3,
+      "removed": 5,
+      "retitled": 2,
+      "removedRows": [
+        {
+          "id": "9163-5572",
+          "title": "Skai > Play > Casino > Dice Mobile (375 x 812px)",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/MinesGame.tsx",
+            "modules/skai-gaming/src/pages/play/MinesPageSections.tsx",
+            "modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx",
+            "modules/skai-gaming/src/components/play/games/instant/mines/MinesBoard.tsx"
+          ],
+          "status": "partial",
+          "notes": "BOARD READ WITH STYLES AND IT MATCHES STRUCTURALLY; NOTHING CHANGED. 9163:7051 `Mobile` 347x347 r12 1px white/10; grid 9163:7053 317 wide at inset 14-15 (design context says 14, node data 15), five columns on a 6.216 gutter, 58.43x58.22 tiles = #001615 r2.911 with a 1.941 white/30 stroke, a 0/2.588/0 white/10 drop shadow and a 28.06x31.05 gem at p14.88/13.59. MinesBoard.tsx: `px-[15px] py-[15px]` card, `grid aspect-square w-full` = 317, gutter and tile chrome from BOARD_RATIO in cqw - the ratios were not re-derived against these figures this run. TWO THINGS ON THE PAGE, RECORDED NOT BUILT: (1) the mobile panel's tab track 9163:6438 draws `Manual` 155.5x34 at y=4 and `Auto` 155.5x42 at y=0 - the 42-tall idle card wave37 saw on the 768 cut is on this 375 cut too, so it is two boards against the 1440 one now; (2) 9163:5877 and 9163:5917 are two 390-wide DICE field bars (Multiplier 1.98 / Roll Over 50 / Win Chance 50.00) at y=698 and y=1685 inside the 347 column, overrunning it by 43 - the same leftovers the Dice 375 page carries at 9003:45143 / 9003:45183, and not part of Mines. NOT RENDERED. [vverify: match | MOBILE 375 PAGE - CLOSED 2026-08-05. Already measured numerically (board above panel y=168, CTA y=495 above Manual/Auto y=985, tile 53.453 / gap 5.938 holding the desktop ratio, no horizontal overflow); this pass confirms the page renders clean in a real browser with no error boundary. This frame remains the SOURCE OF TRUTH for the Mines copy - it is the one that carries the real Mines blurb where both tablet frames still carry Crash marketing text - and that copy is what ships. Its remaining divergences are frame defects and standing rules, not build gaps: the frame's own info-block title reads 'Dice' with Dice card art (designer leftovers, not reproduced), the clipped Dice trio below the frame bottom is not Mines UI, the practice pill is omitted per the standing rule, and its 16x16 toolbar icon is EMPTY in Figma with no exported asset so no glyph was invented.]",
+          "verifiedAt": "2026-09-09T10:32:57.384Z"
+        },
+        {
+          "id": "11083-16055",
+          "title": "Skai > Play > Casino > Dice Mobile (375 x 812px)",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/MinesGame.tsx"
+          ],
+          "status": "done",
+          "notes": "BEST-VERIFIED SECTION IN THE CASINO: 6 of 9 frames verified `match` against measured DOM, not by eye - board 9163-4529 (tile 103.047 vs Figma 103.0408, gap 11.437 vs 11.449, radius 5.152 and border 3.4347 exact, ring colours #FF574A bomb / #17F9B4 gem on a constant #001615 tile, the frame's 150%/135.48% BOMB_CROP rather than a plain cover, committed gem.png/bomb.png and one extracted tile-bolt.svg), mobile board 9163-6955 holding the identical 0.1111 gap/tile ratio, bet panel Advanced-off 9163-7155 (every label verbatim, Mines: is the frame's combobox and the DOM reports no input[type=range], CTA 324x52 #56C7F3 radius 16), Advanced-Auto 9163-7972 (all six advanced labels), and both mobile panel states 9163-8481 / 9163-8621 including the frame's CTA-above-toggle inversion. The 4 page frames stay `partial` for reasons already on record: 9003-110110 tablet A is the REJECTED rival of B (A's 708-wide letterbox board with Manual/Auto above the CTA contradicts both B and mobile, so only B's shape was built) and 9163-5572's own info-block title and card art read 'Dice' - designer leftovers deliberately not reproduced, along with its clipped Dice trio below the frame bottom. ★ 2026-08-05 - BOTH previously-recorded wrong controls are now CLEARED, and the Potential Profit number was wrong TWICE for two different reasons. (1a) EDGE, fixed earlier (2cc8e0e): MinesGame.tsx floored at *98 (2%) against the rail's MINES_EDGE_BPS=9500 (_shared/mines.ts:126), quoting 1.46x where 1.4188x settles. (1b) ROUNDING, fixed now: the corrected client still floored to TWO DECIMALS (`Math.floor(mult * 95) / 100`) while the rail floors to ONE BPS (_shared/mines.ts:279-281, exact BigInt `Number(num / den)`), so 3 mines / 3 reveals printed 1.41x against a settled 1.4188x - low, never high, so no player was shortchanged, but still a number the rail contradicts. MinesGame.tsx:144-148 and MinefieldPro.tsx:120-121 now both delegate to a new pure module minesOdds.ts, a port of the rail's BigInt ladder rather than a second derivation of it, and minesOdds.test.ts pins it to bps values LIFTED FROM PRODUCTION points_game_rounds rows (10795 at 3 mines/1 reveal, 12337 at 3/2, 14188 at 3/3, 19166 at 3/5, 11875 at 5/1, 15000 at 5/2, 980448 at 6/12 where a 1000-point stake paid 98044) plus a source-text guard on MINES_EDGE_BPS / MINES_TILES in the edge function - an oracle the client cannot satisfy by agreeing with itself. The same pass floored the PAYOUT surfaces the integer POINTS rail floors: potentialProfit and the `Cash Out N` CTA both route through minesPayout(), because fmtAmount rounds POINTS half-up and a raw 10.795 printed 'Cash Out 11' against a settlement of 10. (2) GRID SIZE is honest rather than wired, and that is deliberate: the rail genuinely cannot take it. _shared/mines.ts hardcodes MINES_TILES=25 into the Pascal table, the Fisher-Yates board, the tile-range validation and the ladder; points-game mines_start (index.ts:3840-3860) accepts betAmount/mineCount/clientSeed and NO gridSize; pointsGameService.startPointsMines has no such parameter and gameSettlementService.ts:1624-1631 drops the field. minesTheme.LIVE_RAIL_GRID_SIZES=[25] now gates the control - all four design segments still render, 36/49/Custom are DISABLED with the reason on the control, and the pre-bet quote can no longer price a 64-tile ladder the server settles as 25. Widening it is an engine change plus an edge-function deploy, not a UI change; widen LIVE_RAIL_GRID_SIZES the day the engine takes a board size. ★ 2026-08-05 - THE GRID GATE IS NOW VERIFIED IN A BROWSER, AND THE SECOND SELECTOR IS CLOSED TOO. /play/mines loaded and the four segments read from the live DOM: 25 enabled, 36 and 49 disabled carrying the title \"36-tile boards are not supported by the settlement engine yet\", Custom disabled with \"No custom board sizes are available\". So the honest-control claim above is confirmed by measurement, not by reading the source. ★ CORRECTION to the line this replaces: MinefieldPro.tsx was described as \"no longer mounted anywhere\", and its own file header said the same. That is not accurate - Play.tsx:1291 still renders `case \"mines\": return <MinefieldPro isOpen onClose={...} />` in the dialog switch. The branch is not REACHED by a tile click, because ROUTED_GAME_PATHS maps mines to /play/mines first, but it is live code in the tree, not deleted code. More to the point, the file still shipped the ungated selector: GRID_SIZES = [25,36,49,64] with every segment clickable and gridSize forwarded to startMinesGame, i.e. exactly the divergence LIVE_RAIL_GRID_SIZES was created to close, sitting one route-map entry away from being reachable again. MinefieldPro.tsx now imports LIVE_RAIL_GRID_SIZES and applies the same gate and the same per-control reason string as MinesBetPanel, and its header comment now states the real reachability instead of claiming the file is dead. A stale \"this is unmounted\" note is how a resurrected divergence gets missed. ★ STILL OPEN, not a frame gap: the ADMIN key mines_house_edge (default 0.03) is read by NOTHING on the live rail, so the gaming-config panel is decorative for this game. ★ 2026-08-05 GRID-SIZE GATE VERIFIED IN A BROWSER, not just in source. /play/mines rendered at 1440 and the Grid Size row reports, from the live DOM: 25 enabled; 36 disabled with title '36-tile boards are not supported by the settlement engine yet'; 49 disabled with the matching message; and Custom disabled with 'No custom board sizes are available'. So the control now tells the truth instead of silently no-opping, and the 64-tile path that used to quote a 64-tile ladder against a 25-tile settlement is unreachable from either the segments or Custom. The legacy MinefieldPro dialog (still a live branch in Play.tsx's switch, though the tile routes) was brought to the same gate this pass so a remount cannot resurrect the divergence. ★★★ 2026-08-05 CLOSED. All four remaining partial frames resolve, so the family flips partial -> done. 9163-4859 (desktop page), 9163-5572 (mobile page) and 9003-111181 (tablet B, the shape actually implemented) were each held partial ONLY for standing product rules and deliberate one-implementation choices - the no-mock-data exclusion of Figma's sample rows, the app-wide no-practice-mode rule, the frames' own Dice-art and Dice-title leftovers, two Figma copy defects shipped corrected, and a responsive tablet board rather than a second pixel set. None is outstanding work. 9003-110110 (tablet A) is RE-FILED from partial to deferred: it is a rejected rival that contradicts both tablet B and the mobile frame, so building it would mean un-building B - the same treatment this catalog already gives 9003-118852, 9003-83784, 9003-98680 and 9003-132031. Re-verified in a real browser on /play/mines at 1440: 0 of 10 bet-panel labels missing, 0 of 7 page regions missing, 0 forbidden strings, 0px horizontal overflow, no error boundary. ★ THE PANEL PRINTS THE RAIL AND THE ARITHMETIC CLOSES: Potential Profit renders 1.0795x at the default 3 mines / 25 tiles, and 0.95 x 25/22 = 1.07954..., i.e. the correct first-pick odds at exactly the 5% house edge - the same 95% RTP dice and darts run - computed from live state rather than printed from the frame.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9163-6955",
+          "title": "Mobile",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/MinesGame.tsx",
+            "modules/skai-gaming/src/pages/play/MinesPageSections.tsx",
+            "modules/skai-gaming/src/components/play/games/instant/mines/MinesBoard.tsx"
+          ],
+          "status": "done",
+          "notes": "347x347 mobile board. MEASURED MATCHING, both sides, delta none. Figma: card 347 with a 317 grid inset 15 all round; five 58.2245 tiles across 317 leave 25.8776 of gutter over four gaps = 6.4694, so gap/tile = 0.111111 - the SAME quotient as the 954 board's 11.449/103.0408. Code: one responsive board at px-[15px] py-[15px] below md on the same cqw ratios, so the mobile grid resolves gap 6.4694 on a 58.2245 tile. The hover state is measurable too: 9163:6957 is 61.4592 against a 58.2245 tile = 1.055556, which is TILE_HOVER_SCALE exactly. Nothing changed this pass. [vverify: match | Mobile board verified as the same design at ratio: measured tile 53.453 with gap 5.938 at WIDTH=375, i.e. gap/tile 0.1111 identical to desktop's 11.437/103.047. Same five tile states, same committed art, same BOMB_CROP. Driven by the shared MinesBoard, so it cannot drift from the desktop board.]",
+          "verifiedAt": "2026-09-09T10:32:57.384Z"
+        },
+        {
+          "id": "9163-8481",
+          "title": "Frame 1000003780",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/MinesGame.tsx",
+            "modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx"
+          ],
+          "status": "done",
+          "notes": "347x523.33 mobile, CTA at TOP: CTA y=12 (52), bet group y=80 (90), Mines y=186 (66), Grid Size y=268 (66), Number of Bets y=350 (66), Advanced y=432 (21.33), Manual|Auto LAST at y=469.33 (42). Pad 12, content 323, seams all 16. The frame's inversion was already built with flex order on the two movable children. FIXED THIS PASS, the same five items as 9163:7972: the bet field and the balance line are now one gap-8 group (Frame 1000004094 is 90 tall with Frame 275 at y=74; was 16, delta 8); the balance amount rides 6 from its refresh glyph rather than 8 (delta 2); the Manual|Auto pair takes the frame's positional 10/12, and 9163:8592 here is the INACTIVE Manual at radius 10, which is half of what proves the rule is not state-driven (delta 2); the inset cards put their token disc 4 from the amount (delta 4); and both dropdowns close on the 8x4 filled mark. MEASURED MATCHING, both sides, delta none: pad 12 (p-3 below lg), radius 12, seam 16 (gap-4), track 323x42 pad 4, Grid Size four 78 cells at gutter 4, stake steps 48/45/55 leaving the field 159 on the 323 column, CTA 323x52.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9163-8621",
+          "title": "Frame 1000003781",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/MinesGame.tsx",
+            "modules/skai-gaming/src/components/play/games/instant/mines/MinesBetPanel.tsx"
+          ],
+          "status": "done",
+          "notes": "347x851.33 mobile Advanced-ON, the taller twin of 9163:8481: CTA y=12, bet group y=80 (90), Mines y=186, Grid Size y=268, Number of Bets y=350, Advanced y=432, On Win y=469.33, On Loss y=551.33, Stop on Win y=633.33, Stop on Loss y=715.33 (66 each), Manual|Auto last at y=797.33. Pad 12, seams all 16. Its On Win track is 211 + 15 + 97 with the inner pair 82 + 3 + 118 - the 323 column's version of the desktop 212/324 - and the code's flex-1 lands on it from the same literals. FIXED THIS PASS by the same five panel fixes as 9163:7972 and 9163:8481. Its Stop on Win / Stop on Loss cards are 9163:8757 / 8758 and 9163:8771 / 8772, each a 16px disc ending at x=16 with the amount at x=20, so the glyph gap is the 4 this pass shipped (was 8, delta 4). MEASURED MATCHING, both sides, delta none: pad 12, radius 12, seam 16, four Grid Size cells 78 at gutter 4, Advanced toggle 37.93x21.33.",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 1,
+      "retargets": [
+        {
+          "oldId": "9163-6955",
+          "newId": "11740-11821",
+          "title": "Mobile"
+        }
+      ]
     },
     "blackjack": {
       "status": "clean",
@@ -122,28 +220,47 @@
       "retargets": []
     },
     "coinflip": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 46,
       "live": 46,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 1,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "skratch": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 21,
       "live": 21,
       "nestedAlive": 0,
-      "added": 0,
-      "removed": 0,
-      "retitled": 0,
-      "removedRows": [],
-      "retargeted": 0,
-      "retargets": []
+      "added": 1,
+      "removed": 1,
+      "retitled": 3,
+      "removedRows": [
+        {
+          "id": "9212-24967",
+          "title": "Mobile",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/ScratchCardPro.tsx",
+            "modules/skai-gaming/src/pages/play/ScratchersPageSections.tsx",
+            "modules/skai-gaming/src/components/play/games/instant/scratchers/ScratchBoard.tsx"
+          ],
+          "status": "partial",
+          "notes": "NOT RE-READ; wave 10's whole read stands (347x410 r12, card 296x296 r7.672 stroke 1.918 pad 19.179 gap 6.393 = the 476 desktop card at 0.62185 on all five; paytable strip 323x52 r5.762 = the desktop strip at 0.5762, whose 6.914 label is a rescale artefact the code rightly does not ship). ScratchBoard.tsx is not in this lane's file list. [vverify: match | Mobile board verified as the same design at ratio, driven by the shared ScratchBoard so it cannot drift from desktop: at WIDTH=375 frame 301 / cell 80.828 / gap 9.752 gives gap/cell 0.12065 against desktop's 0.12064 and Figma's 0.12064; pad/frame, radius/frame, ring/frame and cellRadius/cell are identical to desktop to 5dp. Same 9 committed symbol assets, same #2CC6FF match-3 highlight at indexes 1/3/5. The paytable strip wraps 6 chips to 3x2 below sm so six 42h chips are not squeezed onto one 347px row — re-verified live at WIDTH=375 (grid-template-columns resolves to 3 tracks, 9 scratch canvases). Carries the same corrected chip order as 9212-20910 (trophy - money - slot - star - clover - gem) because both read the one SCRATCH_SYMBOLS list.]",
+          "verifiedAt": "2026-09-09T10:32:57.384Z"
+        }
+      ],
+      "retargeted": 1,
+      "retargets": [
+        {
+          "oldId": "9212-24967",
+          "newId": "11746-16472",
+          "title": "Mobile"
+        }
+      ]
     },
     "onboarding": {
       "status": "clean",
@@ -182,50 +299,63 @@
       "retargets": []
     },
     "plinko": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 21,
       "live": 21,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 2,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "darts": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 31,
       "live": 31,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 4,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "chicken": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 31,
       "live": 31,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 2,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "hilo": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 16,
-      "live": 16,
+      "live": 15,
       "nestedAlive": 0,
       "added": 0,
-      "removed": 0,
-      "retitled": 0,
-      "removedRows": [],
+      "removed": 1,
+      "retitled": 3,
+      "removedRows": [
+        {
+          "id": "9332-27320",
+          "title": "Mobile",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/cards/HiLoGame.tsx",
+            "modules/skai-gaming/src/pages/play/HiLoPage.tsx",
+            "modules/skai-gaming/src/pages/play/HiLoPageSections.tsx"
+          ],
+          "status": "frame-defect",
+          "notes": "FILES: modules/skai-gaming/src/pages/play/HiLoPageSections.tsx and hiloPageContent.ts; widget modules/skai-gaming/src/components/play/games/cards/HiLoGame.tsx; rail supabase/functions/points-game/index.ts play_hilo. RE-KEYED BY NODE ID 2026-09-01. These 7 frames sat `partial` for months as a KEYING ARTIFACT: wave 3 measured the defect in full but keyed it `Casino > Hi-Lo (streak ladder Profit labels)`, a bare family name that addresses no frame, so the implementation row's `partial` was the only verdict that ever landed. The defect is re-verified against source, not re-cited. 347x410. WORST OF THE SEVEN, and it carries a THIRD percentage set: both call buttons read `Lower or Same 53.58%` (9332:28050/28051 and 9332:28042/28043, all visible, ordered by absolute y so they are genuinely the two buttons of one panel) and the word Higher appears nowhere on the frame, while the ladder still prints 1.17x / 4.29x at 9332:27591 / 9332:27601. 53.58% is derivable from no rank of a 13-card deck and matches neither 30.77% nor 76.92%. play_hilo rejects any choice that is not `hi` or `lo` with a 400 (index.ts:5139), so a panel offering only Lower cannot express half the game. CASEY RULING CARRIED: Hi-Lo stays the DICE ROLL. Both rails settle a single 0-9999 roll against a win-chance threshold (points-game :5452-5484; game-settlement playHiLo), so the drawn deck, streak ladder, Skip Card and per-card rungs are a different game, not an unbuilt feature. Card frames parked. [vverify: partial | MOBILE BOARD 347x410, the board-only component of the 375 page. ★ THE WORST OF THE FRAME NUMBER DEFECTS and reported rather than built: it prints ONE probability, 53.58%, against BOTH arrows at once - the mint up-chevron and the red down-chevron each read \"53.58% Lower or Same\" - while still carrying the 1.17x / 4.29x profit pair, which belongs to an 84.62/23.08 split. Two opposite outcomes cannot share a probability, and 53.58% is not a k/13 value at all. None of it is reproduced: the page renders no odds or profit figures and the widget computes its own from live config.]",
+          "verifiedAt": "2026-09-09T10:32:57.384Z"
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },
@@ -266,25 +396,25 @@
       "retargets": []
     },
     "towers": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 31,
       "live": 30,
       "nestedAlive": 1,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 3,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "keno": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 27,
       "live": 27,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 2,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
@@ -326,49 +456,49 @@
       "retargets": []
     },
     "fortune-wheel": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 25,
       "live": 25,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 2,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "video-poker": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 14,
       "live": 14,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 2,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "bingo": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 17,
       "live": 17,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 2,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "rock-paper-scissors": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 24,
       "live": 24,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 2,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
@@ -386,62 +516,227 @@
       "retargets": []
     },
     "limbo": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 14,
       "live": 14,
       "nestedAlive": 0,
-      "added": 0,
-      "removed": 0,
-      "retitled": 0,
-      "removedRows": [],
-      "retargeted": 0,
-      "retargets": []
+      "added": 1,
+      "removed": 1,
+      "retitled": 4,
+      "removedRows": [
+        {
+          "id": "10021-30111",
+          "title": "Mobile",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/instant/LimboGame.tsx (+ limboOdds.ts, limboGameParity.test.tsx, limboRtpInvariant.test.ts, limboAdminConfig.test.tsx); page modules/skai-gaming/src/pages/play/LimboPage.tsx + LimboPageSections.tsx + limboPageContent.ts; rail supabase/functions/_shared/limbo.ts + points-game play_limbo; chain settleLimbo in modules/skai-chain",
+            "modules/skai-gaming/src/pages/play/LimboPageSections.tsx",
+            "modules/skai-gaming/src/components/play/games/instant/LimboGame.tsx"
+          ],
+          "status": "partial",
+          "notes": "MEASURED, NOT CHANGED, AND ONE DECISION IS RAISED. 347x347: chip rail 10021:30333 347x24 at y=12 holding 48.8x24 chips with 13-tall labels; hero 10021:30246 193x102 at y=123; footer 10021:30286 323x52 at y=280 p6, two 152.45x40.5 fields whose label is 10 tall (`Multiplier` 29 wide), card 25.63 tall at p7.31 with an 11-tall value. Every footer figure is the 884 footer times 0.6096 (16 -> 9.75, 42 -> 25.6, 12 -> 7.31) - a scaled instance, not a phone design - and LimboGame.tsx:2225-2232 reproduces it LITERALLY: `text-[7.315px]/[9.753px]` labels and 25.6-tall cards on every phone. 7.3px type is below any legible floor. The two sibling boards that DO carry a native phone footer disagree with it: Dice 9088:1264 and Coinflip 9206:19911 both draw Mulish 10/14 labels over 28-30-tall r8 cards with 12/14 values on a p6 bar. Whether Limbo adopts those or keeps the scaled copy is a design call and is in the report; the earlier row's `mobile=done` stands as a statement that the code matches the frame, which it does. NOT RENDERED.",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 1,
+      "retargets": [
+        {
+          "oldId": "10021-30111",
+          "newId": "11841-13130",
+          "title": "Mobile"
+        }
+      ]
     },
     "slide": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 18,
       "live": 18,
       "nestedAlive": 0,
-      "added": 0,
-      "removed": 0,
-      "retitled": 0,
-      "removedRows": [],
-      "retargeted": 0,
-      "retargets": []
+      "added": 1,
+      "removed": 1,
+      "retitled": 2,
+      "removedRows": [
+        {
+          "id": "10250-15144",
+          "title": "LB With Header",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/games/slide/SlideGame.tsx"
+          ],
+          "status": "frame-defect",
+          "notes": "MEASURED 2026-09-01 and the frame contradicts itself. 10250:15144 is 324x166, layoutMode VERTICAL, itemSpacing 0, padding 0, and holds ONE child - 10250:15145, 324x186, positioned at y = -20. Inside that child the 324x36 header 10250:15186 sits at y=0 and the 324x150 body 10250:15146 at y=36, so the content is 36+150 = 186 tall and self-consistent. A VERTICAL auto-layout at gap 0 with no padding holding one 186-tall child must report 186 and place it at y=0; this one reports 166 at y=-20, i.e. it crops the top 20 of its own header. Was the single unknown on this page. Also one of the 52 live-but-unregistered frames (WAVE9-INTEGRITY section 4, Slide 10250-15144) - do not re-key or delete.",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 1,
+      "retargets": [
+        {
+          "oldId": "10250-15144",
+          "newId": "11841-10805",
+          "title": "LB With Header"
+        }
+      ]
     },
     "baccarat": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 21,
       "live": 21,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 0,
+      "retitled": 2,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "roulette": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 21,
       "live": 21,
       "nestedAlive": 0,
       "added": 0,
+      "removed": 0,
+      "retitled": 2,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "price-grid": {
+      "status": "drift",
+      "catalogued": 20,
+      "live": 20,
+      "nestedAlive": 0,
+      "added": 0,
+      "removed": 0,
+      "retitled": 2,
+      "removedRows": [],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "safari-slots": {
+      "status": "drift",
+      "catalogued": 61,
+      "live": 72,
+      "nestedAlive": 0,
+      "added": 12,
+      "removed": 1,
+      "retitled": 0,
+      "removedRows": [
+        {
+          "id": "10359-9469",
+          "title": "image 1",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
+      "retargeted": 0,
+      "retargets": []
+    },
+    "cosmic-slots": {
+      "status": "drift",
+      "catalogued": 50,
+      "live": 62,
+      "nestedAlive": 0,
+      "added": 15,
+      "removed": 3,
+      "retitled": 0,
+      "removedRows": [
+        {
+          "id": "10359-14155",
+          "title": "Skai > Play > Casino > Cosmic slots (375 x 812px)",
+          "implFiles": [
+            "modules/skai-gaming/src/pages/play/CosmicSlotsPage.tsx"
+          ],
+          "status": "partial",
+          "notes": "Mobile 375 page cut. Task 8's 375 narrative covers the GAME CANVAS only (\"Portrait stage - the 347x500 composition: stacked intro cards, then the 6x5 grid with the portrait control layout\") and does not separately describe the page sections below the game at this width. Presumed present (same component as 1440/768) but not confirmed in the report; not-read is the honest state for the section list at this specific width. [vverify: partial | scratchpad/cosmic-375.png | Mobile 375 page cut. The screenshot shows only the game canvas (grid, bar, \"Back / COSMIC SLOTS\" breadcrumb) and the bottom app nav - it does not scroll to the sections below the game, so the hero/strip/tabs/info/wins/carousel/bets/about/FAQ/licences/footer list is unconfirmed at this specific width. Not a citation of code existing: the frame genuinely was not scrolled past in either Task 8's pass or this review.]",
+          "verifiedAt": "2026-09-10T22:46:31.638Z"
+        },
+        {
+          "id": "10406-11916",
+          "title": "Skai > Play > Casino > Cosmic slots 1VH (375 x 812px)",
+          "implFiles": [
+            "modules/skai-gaming/src/pages/play/CosmicSlotsPageSections.tsx"
+          ],
+          "status": "done",
+          "notes": "Mobile marketing-page frame, READ FULLY (full code + screenshot, Task 4) - not a device-state screen but the page chrome (header, breadcrumb, game description, Community wins leaderboard, bottom nav) wrapping the game canvas. Its own node data confirms the embedded canvas is 347px wide inside the 375-wide viewport (~14px side gutters); Task 8's 375 browser pass independently measured \"the 347x500 composition\" - an exact width match between the Figma read and the live render. The quoted game-description copy (4,000x cap, 92.11% RTP per Figma vs certified 92.10%) matches what Task 8's 1440 pass names under \"What to expect\". [vverify: match | scratchpad/cosmic-375.png | Mobile marketing-page frame (1VH), READ FULLY in Task 4. Its own node data gives the embedded game canvas as 347px wide inside the 375-wide viewport; this task's own review of cosmic-375.png shows the game canvas occupying the width the frame's own gutters predict, and the description copy quoted from this node in FRAME_FACTS.md is the SAME text independently confirmed verbatim on the 768 page cut (10359-13264) - two independent readings agreeing on one string.]",
+          "verifiedAt": "2026-09-10T22:46:31.638Z"
+        },
+        {
+          "id": "10406-12386",
+          "title": "Skai > Play > Casino > Cosmic slots 2 1VH (375 x 812px)",
+          "implFiles": [
+            "modules/skai-gaming/src/pages/play/CosmicSlotsPageSections.tsx"
+          ],
+          "status": "partial",
+          "notes": "NOT READ in Task 3/4 (never attempted this pass; not a seat refusal - simply not selected in either burst's 8-frame read list). Presumed a scroll-position or state duplicate of 10406-11916 (same \"1VH\" naming), unconfirmed independently. The live 375 route measured in Task 8 stands as evidence for the shared page, not for this specific node's own content. [vverify: partial | NOT READ in Task 3/4 (never attempted, not a seat refusal). No node data and no screenshot exists for this specific id; presumed a duplicate/adjacent state of 10406-11916 but unconfirmed.]",
+          "verifiedAt": "2026-09-10T22:46:31.638Z"
+        }
+      ],
+      "retargeted": 3,
+      "retargets": [
+        {
+          "oldId": "10359-14155",
+          "newId": "11930-39529",
+          "title": "Skai > Play > Casino > Cosmic slots (375 x 812px)"
+        },
+        {
+          "oldId": "10406-11916",
+          "newId": "11930-39780",
+          "title": "Skai > Play > Casino > Cosmic slots 1VH (375 x 812px)"
+        },
+        {
+          "oldId": "10406-12386",
+          "newId": "11930-40031",
+          "title": "Skai > Play > Casino > Cosmic slots 2 1VH (375 x 812px)"
+        }
+      ]
+    },
+    "vegas-fortune": {
+      "status": "drift",
+      "catalogued": 85,
+      "live": 96,
+      "nestedAlive": 0,
+      "added": 11,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
-    "price-grid": {
-      "status": "clean",
-      "catalogued": 20,
-      "live": 20,
+    "gem-slots": {
+      "status": "drift",
+      "catalogued": 36,
+      "live": 68,
       "nestedAlive": 0,
-      "added": 0,
-      "removed": 0,
-      "retitled": 0,
-      "removedRows": [],
+      "added": 35,
+      "removed": 3,
+      "retitled": 1,
+      "removedRows": [
+        {
+          "id": "11142-2604",
+          "title": "Load screen > features > home - desktop",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11148-2220",
+          "title": "Screen Shot 2026-08-26 at 13.29.17 1",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        },
+        {
+          "id": "11148-2221",
+          "title": "Screen Shot 2026-08-26 at 13.29.06 1",
+          "implFiles": [],
+          "status": "unknown",
+          "notes": "",
+          "verifiedAt": null
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },

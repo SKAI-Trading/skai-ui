@@ -2,6 +2,7 @@
 10272-3828	Breakpoint
 10272-3830	Breakpoint
 10272-3832	Breakpoint
+11930-43441	Breakpoint
 10272-3834	Skai > Play > Casino > Safari slots (768 x 1024px)
 10354-877	Load screen - tablet
 10354-3115	Load screen > features > home - tablet
@@ -32,13 +33,21 @@
 10341-11516	Safari A 8
 10272-4933	Skai > Play > Casino > Safari slots (375 x 812px)
 10354-4819	Load screen - mobile
+11930-46622	Load screen - mobile
 10354-5242	Load screen - mobile
+11930-46727	Load screen - mobile
 10354-6256	Load screen - refresh screen - mobile
+11930-46841	Load screen - refresh screen - mobile
 10354-5365	Load screen > features > home - mobile
+11930-46945	Load screen > features > home - mobile
 10354-6074	Load screen > features > home > all key items - mobile
+11930-47126	Load screen > features > home > all key items - mobile
 10354-7028	Load screen > features > home > menu - docked - mobile
+11930-47313	Load screen > features > home > menu - docked - mobile
 10354-7459	Load screen > features > home > menu - mobile
+11930-47489	Load screen > features > home > menu - mobile
 10354-5137	Load screen ALT - mobile
+11930-47699	Load screen ALT - mobile
 10354-4269	Skai > Play > Casino > Safari slots 1VH (375 x 812px)
 10359-8316	Skai > Play > Casino > Safari slots 2 1VH (375 x 812px)
 10329-11023	Safari manager body 1
@@ -50,7 +59,6 @@
 10329-11029	Notes
 10359-9369	Safari slots - Card visual
 10359-9167	Safari slots - Card visual
-10359-9469	image 1
 10359-9488	Mines Desktop
 10359-9493	Safari slots - Desktop
 10359-9530	Safari slots - Tablet
@@ -59,3 +67,6 @@
 10359-11109	Notes
 10359-12722	Rectangle 155
 10359-12723	Rectangle 163
+11930-45998	Skai > Play > Casino > Safari slots (375 x 812px)
+11930-47944	Skai > Play > Casino > Safari slots 1VH (375 x 812px)
+11930-48655	Skai > Play > Casino > Safari slots 2 1VH (375 x 812px)

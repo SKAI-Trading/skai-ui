@@ -2,6 +2,7 @@
 10359:13258	Breakpoint	FRAME	1450	164	1
 10359:13260	Breakpoint	FRAME	1450	164	1
 10359:13262	Breakpoint	FRAME	1450	164	1
+11930:39527	Breakpoint	FRAME	1450	164	1
 10359:13264	Skai > Play > Casino > Cosmic slots (768 x 1024px)	FRAME	768	1627	1
 10359:13505	Skai > Play > Casino > Cosmic slots (1440 x 900px)	FRAME	1440	3467	1
 10387:4125	Load screen - desktop	FRAME	1318	621	1
@@ -22,9 +23,9 @@
 10395:4860	Cosmic slots spaceship 1	RECTANGLE	222	458	1
 10395:4859	Cosmic slots Astro boy 1	RECTANGLE	207	248	1
 10385:2858	Load screen ALT - desktop	FRAME	1318	621	1
-10359:14155	Skai > Play > Casino > Cosmic slots (375 x 812px)	FRAME	375	1605	1
-10406:11916	Skai > Play > Casino > Cosmic slots 1VH (375 x 812px)	FRAME	375	812	1
-10406:12386	Skai > Play > Casino > Cosmic slots 2 1VH (375 x 812px)	FRAME	375	812	1
+11930:39529	Skai > Play > Casino > Cosmic slots (375 x 812px)	FRAME	375	1605	1
+11930:39780	Skai > Play > Casino > Cosmic slots 1VH (375 x 812px)	FRAME	375	812	1
+11930:40031	Skai > Play > Casino > Cosmic slots 2 1VH (375 x 812px)	FRAME	375	812	1
 10359:14485	Rectangle 155	RECTANGLE	720	720	1
 10359:14486	Rectangle 163	RECTANGLE	151	720	1
 10401:6164	Cosmic slots - Card visual	FRAME	195	276	1
@@ -37,14 +38,25 @@
 10403:6465	Load screen - tablet	FRAME	708	720	1
 10403:6662	Load screen > home - tablet	FRAME	708	720	1
 10406:11233	Load screen > home > menu - tablet	FRAME	708	720	1
+10407:12856	Load screen - mobile	FRAME	375	500	1
+10407:14020	Load screen ALT - mobile	FRAME	375	500	1
+10407:13075	Load screen - refresh screen - mobile	FRAME	375	500	1
+10407:13179	Load screen > home - mobile	FRAME	375	500	1
+10409:14696	Load screen > home > all key items - mobile	FRAME	375	500	1
+10412:15598	Load screen > home > menu - docked - mobile	FRAME	375	500	1
+10412:15700	Load screen > home > menu - mobile	FRAME	375	500	1
+10407:14031	Load screen > Start game - mobile	FRAME	375	500	1
 10406:10540	Load screen > home > combo - tablet	FRAME	708	720	1
 10405:9861	Load screen ALT - tablet	FRAME	708	720	1
 10405:9965	Load screen > Start game - tablet	FRAME	708	720	1
-10407:12856	Load screen - mobile	FRAME	347	500	1
-10407:14020	Load screen ALT - mobile	FRAME	347	500	1
-10407:13075	Load screen - refresh screen - mobile	FRAME	347	500	1
-10407:13179	Load screen > home - mobile	FRAME	347	500	1
-10409:14696	Load screen > home > all key items - mobile	FRAME	347	500	1
-10412:15598	Load screen > home > menu - docked - mobile	FRAME	347	500	1
-10412:15700	Load screen > home > menu - mobile	FRAME	347	500	1
-10407:14031	Load screen > Start game - mobile	FRAME	347	500	1
+11930:40198	Load screen - mobile	FRAME	347	500	1
+11930:40210	Load screen ALT - mobile	FRAME	347	500	1
+11930:40220	Load screen - refresh screen - mobile	FRAME	347	500	1
+11930:40231	Load screen > home - mobile	FRAME	347	500	1
+11930:40320	Load screen > home > all key items - mobile	FRAME	347	500	1
+11930:40415	Load screen > home > menu - docked - mobile	FRAME	347	500	1
+11930:40499	Load screen > home > menu - mobile	FRAME	347	500	1
+11930:40617	Load screen > Start game - mobile	FRAME	347	500	1
+11930:41016	Skai > Play > Casino > Cosmic slots (375 x 812px)	FRAME	375	3135	1
+11930:42183	Skai > Play > Casino > Cosmic slots 1VH (375 x 812px)	FRAME	375	812	1
+11930:42806	Skai > Play > Casino > Cosmic slots 2 1VH (375 x 812px)	FRAME	375	812	1

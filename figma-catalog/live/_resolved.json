@@ -1,5 +1,5 @@
 {
-  "resolvedAt": "2026-09-09",
+  "resolvedAt": "2026-09-11",
   "method": "figma.getNodeByIdAsync per candidate, per file, after loadAsync on every page; top-level ancestor found by walking parents to the PAGE",
   "candidatesChecked": 398,
   "filesChecked": [
@@ -8,7 +8,7 @@
     "M6r9FEn042UWTQD1zvy6GM"
   ],
   "foundCount": 285,
-  "notFoundCount": 6,
+  "notFoundCount": 25,
   "foundPerFile": {
     "3sSzw1KewMtUbeLAv7uW0r": 46,
     "mhF3BkzlTaGiLzJ7kvpmVc": 34,
@@ -2583,7 +2583,7 @@
       "topLevelId": "9079-2001",
       "pageId": "9061-15449",
       "pageName": "✅ Towers - Skai originals",
-      "probedAt": "2026-09-09"
+      "probedAt": "2026-09-11"
     }
   },
   "notFound": {
@@ -2610,6 +2610,82 @@
     "9479-19863": {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "probedAt": "2026-09-09"
+    },
+    "9003-44847": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "9088-1354": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "9088-1630": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "9163-5572": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "11083-16055": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "9163-6955": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "9163-8481": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "9163-8621": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "9212-24967": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "9332-27320": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "10021-30111": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "10250-15144": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "10359-9469": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "10359-14155": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "10406-11916": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "10406-12386": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "11142-2604": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "11148-2220": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
+    },
+    "11148-2221": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "probedAt": "2026-09-11"
     }
   },
   "probes": [
@@ -2623,6 +2699,12 @@
       "at": "2026-09-09",
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "checked": 7,
+      "found": 1
+    },
+    {
+      "at": "2026-09-11",
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "checked": 20,
       "found": 1
     }
   ]
