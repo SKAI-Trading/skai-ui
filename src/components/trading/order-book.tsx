@@ -95,8 +95,14 @@ export interface OrderBookProps {
   pricePrecision?: number;
   /** Size precision (decimal places) */
   sizePrecision?: number;
-  /** Quote currency symbol */
+  /** Quote currency symbol — denominates Price and Total */
   quoteCurrency?: string;
+  /**
+   * Base currency symbol — denominates Size, which is a quantity of the asset
+   * and not a cash amount. Defaults to `quoteCurrency` so callers written
+   * before the split keep their old labels.
+   */
+  baseCurrency?: string;
   /** Show cumulative depth bars */
   showDepthBars?: boolean;
   /** Custom className */
@@ -136,6 +142,7 @@ export interface OrderBookProps {
  *   pricePrecision={2}
  *   sizePrecision={4}
  *   quoteCurrency="USDT"
+ *   baseCurrency="BTC"
  *   showDepthBars={true}
  *   onRowDoubleClick={(price, size, side) => {
  *     openTradeModal(price, size, side);
@@ -156,6 +163,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       pricePrecision = 2,
       sizePrecision = 4,
       quoteCurrency = "USDT",
+      baseCurrency = quoteCurrency,
       showDepthBars = true,
       className,
       highlightChanges = true,
@@ -267,7 +275,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             isInteractive
               ? `${side === "ask" ? "Ask" : "Bid"} ${level.price.toFixed(
                   pricePrecision,
-                )}, size ${level.size.toFixed(sizePrecision)}`
+                )}, size ${level.size.toFixed(sizePrecision)} ${baseCurrency}`
               : undefined
           }
           onClick={() => onPriceClick?.(level.price)}
@@ -368,15 +376,19 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             remainder — so the labels are NOT column-aligned with the ladder
             beneath them. That is the frame: a label like "Size (USD)" is wider
             than the 55px column it names, and forcing it into that column would
-            clip it. Price carries no suffix; the quote sits on the two columns
-            that are denominated in it. */}
+            clip it. Price carries no suffix. Size and Total take DIFFERENT
+            suffixes because they hold different units — Size is `level.size`,
+            a quantity of the base asset, while Total is `size * price`, a cash
+            amount in the quote. Labelling both with the quote read "Size (USD)
+            0.262338" against a price of 78,222.50, which is 0.262338 BTC
+            announced as twenty-six cents. */}
         <div
           role="row"
           className="flex items-center justify-between px-4 py-1 font-sans text-xs font-normal leading-4 tracking-[-0.48px] text-ash border-b border-border shrink-0"
         >
           <span className="w-[89px] shrink-0 truncate text-left">Price</span>
           <span className="shrink-0 truncate text-right">
-            Size ({quoteCurrency})
+            Size ({baseCurrency})
           </span>
           <span className="min-w-px flex-1 truncate text-right">
             Total ({quoteCurrency})

@@ -78,10 +78,41 @@ describe("OrderBook", () => {
 
     it("should render with custom quote currency", () => {
       render(<OrderBook data={createMockOrderBook()} quoteCurrency="BTC" />);
-      // The quote names what Size and Total are counted in; the price column is
-      // already the price of one unit, so it takes no suffix (frame 7710:92629).
+      // A caller that names only the quote gets it on both columns, as before
+      // the base/quote split. The price column is already the price of one
+      // unit, so it takes no suffix (frame 7710:92629).
       expect(screen.getByText("Size (BTC)")).toBeInTheDocument();
       expect(screen.getByText("Total (BTC)")).toBeInTheDocument();
+    });
+
+    it("labels Size in the base currency, not the quote", () => {
+      render(
+        <OrderBook
+          data={createMockOrderBook()}
+          baseCurrency="BTC"
+          quoteCurrency="USD"
+        />,
+      );
+      // Size renders `level.size` — a quantity of the asset — while Total
+      // renders `size * price`, a cash amount. Naming both after the quote is
+      // how "Size (USD) 0.262338" came to describe 0.262338 BTC.
+      expect(screen.getByText("Size (BTC)")).toBeInTheDocument();
+      expect(screen.getByText("Total (USD)")).toBeInTheDocument();
+      expect(screen.queryByText("Size (USD)")).not.toBeInTheDocument();
+    });
+
+    it("names the base currency in a row's accessible label", () => {
+      render(
+        <OrderBook
+          data={createMockOrderBook()}
+          baseCurrency="BTC"
+          quoteCurrency="USD"
+          onPriceClick={() => {}}
+        />,
+      );
+      expect(
+        screen.getByLabelText("Bid 50000.00, size 1.5000 BTC"),
+      ).toBeInTheDocument();
     });
   });
 
