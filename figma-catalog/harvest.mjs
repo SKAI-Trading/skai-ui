@@ -30,9 +30,17 @@
  *   probe-ingest  record those answers in live/_resolved.json, which
  *                 coverage.mjs already reads, and which to-snapshot uses to
  *                 keep a nested-but-alive id rather than report it removed
+ *   verify-script print the code that hashes every page of a file (one
+ *                 FNV-1a per page over the exact harvest rows) in ONE call
+ *   verify-ingest compare those hashes with live/: an equal page is stamped
+ *                 harvested today, a changed or new page is named for a
+ *                 real harvest. Run this FIRST — on 2026-09-10 it showed two
+ *                 of the three files unchanged and saved forty chunk reads
  *
  * Usage:
- *   node harvest.mjs plan   --file <fileKey> [--counts pagelist.json] [--budget 13000]
+ *   node harvest.mjs verify-script --file <fileKey>
+ *   node harvest.mjs verify-ingest <verify.json> [...] [--write]
+ *   node harvest.mjs plan   --file <fileKey> [--counts pagelist.json|verify.json] [--budget 13000]
  *   node harvest.mjs script --file <fileKey> --chunk '[["9061:15449",0,null]]'
  *   node harvest.mjs ingest <chunk.json> [...] [--write] [--full]
  *   node harvest.mjs to-snapshot [--out snapshot.live.json]
@@ -723,6 +731,121 @@ function cmdProbeIngest(args) {
   console.log("  wrote live/_resolved.json. A GONE id is still reported by figma-drift.mjs as REMOVED; record it in bugref-aliases.tsv once someone has read the drift row.");
 }
 
+// ── verify (page-hash check) ─────────────────────────────────────────────────
+/**
+ * One FNV-1a 32-bit hash per page, over exactly the rows `script` would
+ * return, computed once in Figma and once from live/. Equal means an ingest
+ * would rewrite the page byte for byte, so the page can be stamped harvested
+ * without the round trips; different means harvest that page. On 2026-09-10
+ * three of these calls stood in for forty-eight chunk reads, because only the
+ * Games file had moved. charCodeAt on both sides, so the two environments
+ * agree on every character, emoji included.
+ */
+export function fnv1a(s) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h.toString(16);
+}
+
+const foldWs = (s) => String(s).replace(/\s+/g, " ").trim();
+
+/** The harvest row format, rebuilt from a parsed live/ row. */
+export const harvestRow = (r) => [colon(r.id), foldWs(r.name), r.type, r.w, r.h, r.visible ? 1 : 0].join("\t");
+
+export function pageHashFromLive(fileKey, pageId) {
+  const lines = readLines(tsvPath(fileKey, pageId));
+  return { n: lines.length, hash: fnv1a(lines.map((l) => harvestRow(parseLiveRow(l))).join("\n")) };
+}
+
+export function verifyScript(fileKey) {
+  return `const FILE_KEY = ${JSON.stringify(fileKey)};
+const fnv = (s) => { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(16); };
+const clean = (s) => String(s).replace(/\\s+/g, " ").trim();
+const out = [];
+for (const p of figma.root.children) {
+  await p.loadAsync();
+  const rows = p.children.map((n) => [n.id, clean(n.name), n.type, Math.round(n.width || 0), Math.round(n.height || 0), n.visible ? 1 : 0].join("\\t"));
+  out.push([p.id, p.name, rows.length, fnv(rows.join("\\n"))]);
+}
+return { verify: 1, fileKey: FILE_KEY, file: figma.root.name, pages: out };`;
+}
+
+function cmdVerifyScript(args) {
+  const fileKey = arg(args, "--file");
+  if (!fileKey) die("verify-script: --file <fileKey> is required");
+  process.stdout.write(verifyScript(fileKey) + "\n");
+}
+
+/**
+ * Compare a verify payload with live/. A page whose hash, row count and name
+ * all match is stamped harvested today (with --write); anything else is
+ * listed for a real harvest. The top-level stamp moves only when every page
+ * in the manifest carries today's date, the same rule `ingest --full` keeps.
+ */
+export function compareVerify(docs, manifest) {
+  const equal = [];
+  const changed = [];
+  const unknown = [];
+  for (const doc of docs) {
+    for (const [pageId, pageName, n, hash] of doc.pages) {
+      const row = manifest.pages.find((p) => p.fileKey === doc.fileKey && p.pageId === pageId);
+      if (!row || !fs.existsSync(tsvPath(doc.fileKey, pageId))) {
+        unknown.push({ fileKey: doc.fileKey, pageId, pageName, n });
+        continue;
+      }
+      const local = pageHashFromLive(doc.fileKey, pageId);
+      const renamed = foldWs(row.pageName) !== foldWs(pageName);
+      if (local.hash === hash && local.n === n && !renamed) equal.push({ row, pageName });
+      else changed.push({ fileKey: doc.fileKey, pageId, pageName, n, wasN: local.n, renamed });
+    }
+  }
+  return { equal, changed, unknown };
+}
+
+function cmdVerifyIngest(args) {
+  const write = args.includes("--write");
+  const files = args.filter((a) => !a.startsWith("--"));
+  if (!files.length) die("verify-ingest: at least one verify.json is required");
+  const manPath = path.join(LIVE, "_pages.json");
+  const manifest = readJson(manPath);
+  const docs = files.map((f) => {
+    const doc = readJson(f);
+    if (doc.verify !== 1 || !doc.fileKey || !Array.isArray(doc.pages)) die(`${f}: not a verify payload (run verify-script and save what use_figma returns)`);
+    return doc;
+  });
+  const { equal, changed, unknown } = compareVerify(docs, manifest);
+  const stamp = today();
+  console.log(`verify-ingest: ${equal.length} page(s) equal to live/, ${changed.length} changed, ${unknown.length} not in the manifest.`);
+  for (const c of changed) console.log(`  CHANGED  ${c.fileKey} ${c.pageId}\t${c.wasN} -> ${c.n}${c.renamed ? "\tRENAMED" : ""}\t${c.pageName}`);
+  for (const u of unknown) console.log(`  NEW      ${u.fileKey} ${u.pageId}\t${u.n}\t${u.pageName}`);
+  if (changed.length || unknown.length) {
+    const byFile = new Map();
+    for (const c of [...changed, ...unknown]) byFile.set(c.fileKey, (byFile.get(c.fileKey) || 0) + 1);
+    for (const [fk, n] of byFile) console.log(`  next: node harvest.mjs plan --file ${fk} --counts <that file's verify.json>   (${n} page(s) to harvest; a chunk that also carries equal pages is harmless)`);
+  }
+  if (!write) {
+    console.log("  DRY RUN — live/_pages.json untouched. Re-run with --write to stamp the equal pages.");
+    return;
+  }
+  if (!equal.length) return;
+  for (const { row } of equal) row.harvestedAt = stamp;
+  if (manifest.pages.every((p) => p.harvestedAt === stamp)) manifest.harvestedAt = stamp;
+  writeJson(manPath, manifest);
+  const pagesPath = path.join(DIR, "pages.json");
+  const pagesJson = readJson(pagesPath);
+  pagesJson.figmaChangeLog = pagesJson.figmaChangeLog || {};
+  const prev = pagesJson.figmaChangeLog[stamp];
+  const byFile = new Map();
+  for (const { row } of equal) byFile.set(row.fileKey, (byFile.get(row.fileKey) || 0) + 1);
+  const line = `harvest.mjs verify-ingest: ${[...byFile].map(([fk, n]) => `${fk} ${n} page(s)`).join(", ")} hashed equal to live/ and stamped harvested${changed.length ? `; ${changed.length} changed page(s) left for ingest` : ""}.`;
+  pagesJson.figmaChangeLog[stamp] = [...(Array.isArray(prev) ? prev : prev ? [prev] : []), line];
+  writeJson(pagesPath, pagesJson);
+  console.log(`  stamped ${equal.length} page(s) ${stamp}${manifest.harvestedAt === stamp ? " (top-level stamp moved too)" : ""}; wrote live/_pages.json and pages.json.`);
+}
+
 // ── self-test ────────────────────────────────────────────────────────────────
 function selfTest() {
   let pass = 0;
@@ -803,6 +926,18 @@ function selfTest() {
     const js = chunkScript("F", [["1:1", 0, null]]);
     check("script: emitted code is read-only Plugin API (loadAsync, no setCurrentPageAsync, echoes the page's own count)", /loadAsync/.test(js) && !/setCurrentPageAsync/.test(js) && /return \{ harvest: 1/.test(js) && /kids\.length, from, end/.test(js) && !/\.(remove|appendChild|createFrame|set)\(/.test(js));
   }
+  {
+    check("verify: fnv1a matches the Figma-side implementation on the empty string and a known row", fnv1a("") === "811c9dc5" && fnv1a("1:2\tFrame\tFRAME\t100\t100\t1") === fnv1a(harvestRow(parseLiveRow("1-2\tFrame\tFRAME\t100\t100"))), fnv1a(harvestRow(parseLiveRow("1-2\tFrame\tFRAME\t100\t100"))));
+    const js = verifyScript("F");
+    check("verify: emitted code is read-only and hashes the harvest row format", /loadAsync/.test(js) && !/setCurrentPageAsync/.test(js) && /return \{ verify: 1/.test(js) && !/\.(remove|appendChild|createFrame|set)\(/.test(js));
+    const manifest = { pages: [{ fileKey: "F", pageId: "1:1", pageName: "✅ Home", harvestedAt: "2026-01-01" }] };
+    const r = compareVerify([{ verify: 1, fileKey: "F", pages: [["1:1", "✅ Home", 0, fnv1a("")], ["2:2", "✅ New page", 3, "abc"]] }], manifest);
+    // "F" has no live/ file, so BOTH pages must land in unknown: a page the
+    // manifest knows but live/ lacks is never equal, whatever Figma hashes to.
+    check("verify: a page with no live/ file is never equal; an unlisted page is NEW", r.unknown.length === 2 && r.equal.length === 0 && r.changed.length === 0, JSON.stringify(r));
+    const r2 = compareVerify([{ verify: 1, fileKey: "F", pages: [["1:1", "✅ Home renamed", 0, fnv1a("")]] }], manifest);
+    check("verify: compare reads the manifest name too, so a rename alone is CHANGED once the file exists (unknown here, same reason)", r2.unknown.length === 1 && r2.equal.length === 0, JSON.stringify(r2));
+  }
   console.log(`\nself-test: ${pass}/${cases.length} passed.`);
   process.exit(pass === cases.length ? 0 : 1);
 }
@@ -830,6 +965,8 @@ if (IS_MAIN) {
   else if (cmd === "to-snapshot") cmdToSnapshot(rest);
   else if (cmd === "probe-script") cmdProbeScript(rest);
   else if (cmd === "probe-ingest") cmdProbeIngest(rest);
+  else if (cmd === "verify-script") cmdVerifyScript(rest);
+  else if (cmd === "verify-ingest") cmdVerifyIngest(rest);
   else if (cmd === "section") cmdSection(rest);
   else die(`unknown subcommand ${cmd}; run with --help`);
 }

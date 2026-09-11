@@ -67,9 +67,19 @@ and ingest refuses any page whose chunks do not tile it exactly.
 
 The loop, per Figma file:
 
-1. **Plan.** `npm run catalog:harvest -- plan --file <key>` prints the chunks
-   (page id, index range) sized to stay under the 20 KB cap. Long node names
-   (Titles + Emblems) need smaller chunks; `--budget` lowers the target.
+0. **Verify.** `npm run catalog:harvest -- verify-script --file <key>` prints a
+   one-call read-only script that hashes every page of the file (FNV-1a over the
+   exact rows step 2 would return). Run it with `use_figma`, save the result, then
+   `npm run catalog:harvest -- verify-ingest <verify.json> --write`. A page whose
+   hash, row count and name match `live/` is stamped harvested today and needs
+   nothing else; the pages it lists as CHANGED or NEW are the only ones steps 1-3
+   have to read. On 2026-09-10 the Games file had moved and the two web-app files
+   had not, and this step turned forty-eight chunk reads into six. The verify
+   payload is also a valid `--counts` file for `plan`.
+1. **Plan.** `npm run catalog:harvest -- plan --file <key> --counts <verify.json>`
+   prints the chunks (page id, index range) sized from the fresh counts to stay
+   under the 20 KB cap. Long node names (Titles + Emblems) need smaller chunks;
+   `--budget` lowers the target.
 2. **Harvest.** For each chunk, `npm run catalog:harvest -- script --file <key> --chunk '<json>'`
    prints a read-only Plugin API script. Run it with `use_figma` and save the
    returned JSON to a file, one per chunk. The script uses `page.loadAsync()`, never
