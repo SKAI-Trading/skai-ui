@@ -1277,7 +1277,31 @@ export const skaiShadows = {
 } as const;
 
 /**
- * Border radius presets from Figma
+ * Border radius scale.
+ *
+ * ⚠️ THREE OF THESE KEYS NEVER REACH A CLASS, AND THIS IS NOT FIGMA'S SCALE.
+ * Both halves of that used to be wrong here — the block was labelled "presets
+ * from Figma", and lanes read `sm: "4px"` as what `rounded-sm` paints. It is
+ * neither, so a spec measured at 4px shipped as `rounded-sm` and painted 8px.
+ * Nothing throws and the result looks intentional; see figma-catalog/TOKENS.md,
+ * which is the authority and records this as the cause of every radius defect
+ * in the 2026-08-11 sweep.
+ *
+ * What is actually true, in three separate scales:
+ *
+ *   this constant   none 0 · sm  4 · md  8 · lg 12 · xl 16 · 2xl 24 · full 9999
+ *   what we PAINT           sm  8 · md 10 · lg 12 · xl 16 · 2xl 24
+ *   Figma's tokens          sm  2 · md  6 · lg  8 · xl 12 · 2xl 16
+ *
+ * `tailwind-preset.ts` spreads this object and then overrides `sm`, `md` and
+ * `lg` off `--radius` (0.75rem = 12px), so those three are SHADOWED: the value
+ * below is not what the class emits. `xl`, `2xl`, `none` and `full` pass
+ * through untouched. Figma is on stock Tailwind v3, which is a third ramp
+ * again — so converting a frame's radius by NAME is wrong in both directions.
+ *
+ * ★ Write radii as pixel literals (`rounded-[8px]`). Measure the frame, write
+ * the number. The only reason to read this table is to understand code
+ * somebody else wrote. `radiusScaleIsShadowed.test.ts` pins the arithmetic.
  */
 export const skaiBorderRadius = {
   none: "0px",
