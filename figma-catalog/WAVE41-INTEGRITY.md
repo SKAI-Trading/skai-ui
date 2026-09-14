@@ -341,10 +341,100 @@ is a peer's edit caught mid-flight, not a games commit. No error in `modules/ska
 on either pass. Read off the gate's own verdict line both times; no
 `typecheck:gate:update` was run.
 
-## 8. What is next
+## 8. Web-app batch 1 and the player-mark follow-up (2026-09-14, 15:15 to 16:05 Denver)
 
-The player-mark follow-up over the 21 sections files, then the nine web-app lanes (home,
-trade, trade-2, predict, social, governance-account, governance-explorer, onboarding,
-play-hub), fenced by file list against wave 23's remaining lanes (18 files moved to
-report-only) and run five and four at a time. The web-app Figma files did not change on
-2026-09-10, so those lanes work their open frames rather than re-measuring everything.
+Five web-app lanes (home, trade, trade-2, predict, social) plus one follow-up lane
+carrying Casey's no-photo ruling into the game pages, fenced by file list against wave
+23's running batches (18 files moved to report-only; the fence held, and the one
+collision was in the shared git index, section 8 note below). The web-app Figma files did
+not change on 2026-09-10, so these lanes worked their open frames rather than
+re-measuring everything; a frame the seat budget did not allow a re-read says
+`NOT RE-READ` and keeps its prior verdict. All five died once on the session limit at
+15:40 and were resumed by id.
+
+| measure | before (games close) | after | delta |
+|---|---:|---:|---:|
+| `done` | 587 (15.4%) | 590 (15.5%) | +3 |
+| `done` and visually verified | 164 (4.3%) | 167 (4.4%) | +3 |
+| claimed statuses pulled down by a visual verdict | 89 | 38 | -51 |
+| web-app rows carrying today's stamp | 0 | 1,024 | +1,024 |
+
+The pull-down count halving is the batch's main effect on the catalog: 51 rows whose
+status and visual verdict disagreed were re-measured and now say the same thing.
+
+| lane | rows | done | partial | blocked-on-backend | not-started | frame-defect | furniture |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| home | 253 | 0 | 218 | 3 | 26 | 3 | 3 |
+| trade | 204 | 0 | 196 | 3 | 4 | 1 | 0 |
+| trade-2 | 188 | 1 | 164 | 2 | 6 | 6 | 0 |
+| predict | 144 | 2 | 88 | 7 | 46 | 1 | 0 |
+| social | 235 | 0 | 167 | 33 | 24 | 11 | 0 |
+| **total** | **1,024** | **3** | **833** | **48** | **106** | **22** | **3** |
+
+### Commits (superproject unless marked; all lane commits pathspec-only from here on)
+
+- **home** — `fba761d5e` Sentiment "View all topics" overlay; `f555bb25e` security fix,
+  the post link goes through `safeExternalUrl` at the sink and a rejected URL renders as
+  text (two background review findings closed); `966b57576` intelligent-support column
+  inset per board with a stacked phone label pane.
+- **trade** — `ba7e53802` records the two-frame dashboard CTA conflict and the hidden
+  chart-settings layer so neither reopens; ten stale gaps re-measured and closed in rows.
+- **trade-2** — `80c34daf0` Similar tokens phone card full-bleed with 12 rows;
+  `9494649fd` Token info square below md; `c87e9ddca` KOL name ramp gated on board.
+- **predict** — `f15531930` rewards heading steps 20/24, 24/28, 32/36 per board; filter
+  fields take their tracking and 74% placeholder.
+- **social** — `05bc6c014` /messages empty pane drawn per state; `c1af17b79` conversation
+  search field per board (this commit also carried a peer's staged deletion of the
+  retired RiskPanel files; HEAD is consistent and it stands).
+- **player-mark** (`modules/skai-gaming`) — `8d7c8d31`, `0542aee3`: every PlayerAvatar on
+  blackjack, coinflip, crash, dice, hi-lo, cosmic and vegas fortune passes
+  `fallback="mark"` keyed on the wallet, 12 call sites.
+
+### Findings that travel
+
+- **117 of home's 253 frame ids are cited nowhere in `src/`** (scan of every `.ts/.tsx`);
+  each row says which. That set is the next home pass's open-first list.
+- **Stale gaps read as work nobody needs to do.** Trade re-measured ten carried gaps that
+  waves 23 through 40 had already closed; "Show Skai insights" was `hidden` in the frame
+  itself and three rows had carried it as a missing toggle.
+- **17 game pages draw no avatar at all** in their Community wins User cell (bare handle),
+  a separate gap from the initials one the ruling closed.
+- **Shared git index.** A lane's `git add` then bare `git commit` sweeps whatever a peer
+  has staged. The lane rules now say `git commit --only -- <files>` without staging.
+
+### Decisions only Casey can make (web app)
+
+1. Home 1 with-deposit is being built by wave 23's lane; 26 frames of home's assignment
+   are built neither way until it lands. Which 375 board governs the intel hub (base
+   14178-151580 vs ALT 14316-248325).
+2. Trade: the dashboard CTA word ("AI Analysis" vs "Advanced AI", identical boxes on two
+   1440 boards); the News tab's source (a literal build draws the Reports feed twice);
+   the 768 pair-search width (680 drawn vs 736 shipped); the layout grip's x.
+3. Trade-2: Bridge is a four-step wizard against the frame's one ticket tab; "Swap is a
+   wallet only feature"; Trending's CTA Size=Large would make the size preference
+   non-monotonic.
+4. Predict: what window "All time" scopes with no rewards accrual; whether
+   `SKAIConditionalTokens.merge` is live (Frame 655's two pills wait on that, not on a
+   missing source).
+5. Social: `/:username` mounting CreatorProfileShell drops five tabs on phone and tablet
+   and 1440 is a different composition; comment-thread ALT as rail or dialog.
+
+### Hand-offs
+
+- `src/App.tsx` needs `/post/:postId` (13 built-but-unrouted social frames);
+  `StreamingTermsGate.tsx` an `lg` rung; `StreamPanelSwitcher` and `DonationPanel` a
+  Gift-streamer rail panel with a tier-goal source.
+- `PredictPage.tsx` (30 frames) and `PredictCategoryPage.tsx` (16) are wave 23's; the
+  Breaking column steps 24 where the page ships 16.
+- `OrderEntryPanel.tsx:861` strip 34 against Frame 299's 36; `CandleChart` square top
+  corners and the #123F3C hairline below lg; `skai-logo.tsx` has no 36px short preset.
+- Red at HEAD, not ours: `predictDashboardFooterGutter.test.ts` (2) after a peer's shell
+  split; `winsHeaderRamp.test.tsx` (expects 13 header pages, finds 17) after batch b's
+  four slot pages, which is the slots follow-up in batch 2.
+
+## 9. What is next
+
+Batch 2: governance-account, governance-explorer, onboarding, play-hub (with
+`PlayGameDetailSections.tsx` withheld), the GameShell gutter lane over
+`components/play/shared` and the 19 page-section margins, and the slots follow-up for
+the wins-header test and the two sections missing their split ramp.
