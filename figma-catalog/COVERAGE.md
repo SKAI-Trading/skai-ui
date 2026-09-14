@@ -18,9 +18,9 @@ Live half harvested 2026-09-11 (harvest.mjs: one use_figma call per chunk (see `
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
 | `done` | 590 | 15.5% |
-| `partial` | 2171 | 56.9% |
-| `not-started` | 404 | 10.6% |
-| `blocked-on-backend` | 164 | 4.3% |
+| `partial` | 2181 | 57.2% |
+| `not-started` | 388 | 10.2% |
+| `blocked-on-backend` | 176 | 4.6% |
 | `frame-defect` | 116 | 3.0% |
 | `furniture` (catalog says furniture, this script says genuine) | 131 | 3.4% |
 | `unknown` | 228 | 6.0% |
@@ -45,7 +45,7 @@ That is 16.8% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 Read the caveat section before quoting that. It is not 15.5% measured parity.
 
-**167 of those 590 (4.4% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 423 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 38 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` map to no page in pages.json and are not applied.
+**167 of those 590 (4.4% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 423 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 32 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` map to no page in pages.json and are not applied.
 
 ## Out of the roll-up
 
@@ -62,11 +62,11 @@ Read the caveat section before quoting that. It is not 15.5% measured parity.
 
 | Page | Scope | Live | furn | gen | row | `done` | `part` | `n/s` | `blk` | only | cov |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ✅ Governance and Utilities | in-scope | 725 | 66 | 659 | 659 | 0 | 245 | 143 | 13 | 0 | 100.0% |
+| ✅ Governance and Utilities | in-scope | 725 | 66 | 659 | 659 | 0 | 250 | 129 | 22 | 0 | 100.0% |
 | ✅ Social | in-scope | 442 | 40 | 402 | 402 | 63 | 246 | 42 | 37 | 0 | 100.0% |
 | ✅ Trade 2 | in-scope | 417 | 40 | 377 | 377 | 89 | 238 | 28 | 2 | 0 | 100.0% |
 | ✅ Trade 1 | in-scope | 420 | 53 | 367 | 367 | 20 | 319 | 9 | 14 | 0 | 100.0% |
-| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 49 | 137 | 56 | 1 | 0 | 100.0% |
+| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 49 | 142 | 54 | 4 | 0 | 100.0% |
 | ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 28 | 140 | 48 | 18 | 0 | 100.0% |
 | ✅ Home 1 | in-scope | 277 | 41 | 236 | 236 | 53 | 137 | 39 | 0 | 0 | 100.0% |
 | ✅ Home 2 | in-scope | 240 | 36 | 204 | 204 | 48 | 125 | 20 | 8 | 0 | 100.0% |
@@ -366,11 +366,11 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 505 of 13810 status rows (3.7%) name no node id at all, and 594 (4.3%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 505 of 14440 status rows (3.5%) name no node id at all, and 594 (4.1%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 22216 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 285 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 23761 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 285 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
 **7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **117 of the 3813 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 117/117, ✅ Trade 1 117/367 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 

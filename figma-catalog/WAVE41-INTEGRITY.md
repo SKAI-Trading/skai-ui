@@ -432,9 +432,168 @@ status and visual verdict disagreed were re-measured and now say the same thing.
   split; `winsHeaderRamp.test.tsx` (expects 13 header pages, finds 17) after batch b's
   four slot pages, which is the slots follow-up in batch 2.
 
-## 9. What is next
+## 9. Web-app batch 2 and the gaming shared pass (2026-09-14, 16:05 to 16:57 Denver)
 
-Batch 2: governance-account, governance-explorer, onboarding, play-hub (with
-`PlayGameDetailSections.tsx` withheld), the GameShell gutter lane over
-`components/play/shared` and the 19 page-section margins, and the slots follow-up for
-the wins-header test and the two sections missing their split ramp.
+Five lanes: governance-account, governance-explorer, onboarding, play-hub (with
+`PlayGameDetailSections.tsx` withheld) and a gaming-shared lane over
+`components/play/shared` and the page-section margins the games batch had handed off,
+which also carried the slots follow-up for the wins-header test. Wave 23's 13-file hold
+was lifted before launch, so no web-app file was fenced this batch. No lane died on the
+session limit.
+
+| measure | before (batch 1 close) | after | delta |
+|---|---:|---:|---:|
+| `done` | 590 (15.5%) | 590 (15.5%) | 0 |
+| `done` and visually verified | 167 (4.4%) | 167 (4.4%) | 0 |
+| claimed statuses pulled down by a visual verdict | 38 | 32 | -6 |
+| rows carrying today's stamp | 1,252 | 1,882 | +630 |
+
+The `done` figure did not move and that is the honest reading: no lane ran a browser, and
+no frame was measured as matching the source at every width it draws. What moved is
+underneath: 630 more rows now say in numbers what the frame draws and what the source
+ships, 25 whole-frame matches went into the vverify files (they lift the verified figure
+only once their rows reach `done`), and six more disagreeing verdicts were reconciled.
+
+| lane | rows | done | partial | blocked-on-backend | not-started | frame-defect | furniture |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| onboarding | 116 | 0 | 98 | 3 | 12 | 3 | 0 |
+| play-hub | 113 | 0 | 77 | 3 | 33 | 0 | 0 |
+| governance-explorer | 84 | 0 | 74 | 9 | 1 | 0 | 0 |
+| governance-account | 317 | 0 | 176 | 13 | 128 | 0 | 0 |
+| **total** | **630** | **0** | **425** | **28** | **174** | **3** | **0** |
+
+The gaming-shared lane wrote no status file; its work lands in the game rows already
+stamped by the games batch. Governance-account opened ten boards live (all at 1440) and
+edited eight of those surfaces; 73 further rows are siblings of a re-read board and 234
+carried their prior verdict with `NOT RE-READ`.
+
+### Commits (all by pathspec; superproject unless marked)
+
+- **onboarding** (`modules/skai-landing`) — `7125ef3` dashboard bento inset, card gaps
+  and header mark set to the pre-launch dashboard frames.
+- **play-hub** (`modules/skai-gaming`) — `772a66d6` the Close game dialog takes its three
+  cuts (354/448/564 wide, 12/12/24 pad, 16/16/32 corner, 24 gap, actions stacked at 375,
+  Sky Blue 300 on the primary) and the game-info drawer's corner, padding and 0.8 ground
+  step with the board; `5e6f2d5c` the phone Live RTP strip gets its 54-tall control band
+  with a full-width hairline and My stats drops a `sm:` rung no board draws;
+  `9634042d` the game-detail bar rebuilt off two live header reads (bare 18 back glyph,
+  32px r6 cover thumb, Manrope Light 20/24 to 24/28 title, three ringed 36 circles, the
+  practice chip that was not being drawn).
+- **governance-explorer** — `1bb0faeb8` `/explorer/address/:address` rebuilt to its
+  board (address line, the Overview / User info + Token holdings / Positions card row,
+  the board's eight tabs at 375/768/1440; the five tabs the board does not name moved
+  under its own More); `01793429b` `d631d8975` `c12b89f0b` `824486ea9` every vertical
+  page's title and strap set to Manrope Light 32/36 over a 16/22 ash strap with the
+  board's names (Chain Analytics to Analytics, Top Accounts to Addresses, ERC-20 Token
+  Tracker to Token tracker, AI to Artificial intelligence (AI), Gaming to Gaming
+  activity, Launchpad to Launchpad data, Lending Markets to Lending data, Governance to
+  Governance activity); `ba1b40633` the measured Customize drawer recorded where the
+  dashboard's stale "not read yet" note was.
+- **gaming-shared** (`modules/skai-gaming`) — `87807937` the game shell's phone gutter
+  dropped so every board runs full bleed at 375, with the 24 page-section files' margins;
+  `8e79db78` gem slots and vegas fortune get the community-wins header phone rung the
+  other pages draw, and `winsHeaderRamp` now expects 17 header pages.
+- **governance-account** — `257e4273c` the create-proposal CTA seated on the All
+  proposals header and the history table stepped per board; `5ffe195b0` the Financials
+  tab built to its frame, and 38 red governance tests restored (the `Sheet`,
+  `useGovernanceRail` and `useDelegatedAway` mocks had been stale since 2026-09-07);
+  `86534a546` delegation overview and form worded as the frame; `3b53f52ef` the About
+  copy broken where the frame breaks it and the vault balance marked approximate;
+  `d96b99c69` the gauge row split into the frame's Pair and Contract columns;
+  `e0c0c3227` yield-vault title weights; `33ba6bc7f` airdrop wording and wallet row. No
+  skai-wallet commit: `ShareCard.tsx`'s frames were not reached. 219 tests green across
+  every file the lane touched.
+
+### Findings that travel
+
+- **Two play-hub rows named the wrong file.** 4765-64029 and 4768-66183 are
+  `HeaderNavRichDropdown`, not `PlayDropdown`; it matches on every axis but one.
+- **Three onboarding boards carry a borrowed screenshot.** The "Sign up referral open
+  with Phantom" pane at every width is an Axiom screenshot (axiom.trade, Axiom's legal
+  links), not Skai UI; `frame-defect`, not a gap in `auth-modal.tsx`.
+- **The i5 onboarding screens have no source.** Just-joined pills and a signups-today
+  counter need a recent-signup feed; anon reaches only `get_waitlist_count()`, a bare
+  total. Three rows `blocked-on-backend`.
+- **Explorer frame defects noted inside rows.** Social's "Launch social" card carries
+  vault copy; Transactions' strap node is hidden and holds the blocks copy; the DeFi,
+  Lending and Points search fields all say "Search votes".
+- **The Airdrop board draws a SKAI price.** 5481-53339 shows $0.05542; SKAI is
+  unlaunched and no market exists, so that tile can only ever render the unavailable
+  glyph. Recorded in the row so nobody copies the number out.
+- **38 governance tests were red for a week for a stale mock, not a defect.** The
+  `Sheet`, `useGovernanceRail` and `useDelegatedAway` mocks had not followed a 09-07
+  change; `5ffe195b0` restores them.
+- **`PerformanceOverview.tsx` has zero importers** (287 lines); which page should mount
+  it is a decision, below.
+
+### Decisions only Casey can make (batch 2)
+
+1. Play-hub: the unsupported-region ALT modal differs from the shipped one by two strings
+   naming a second domain (skai.jp); neither side built. The 375 detail CTA declares 32
+   against the global 44px touch floor.
+2. Explorer: the gas unit `rei` (every board says it; the word is nowhere in the repo,
+   the chain or the docs, and a rename reaches `format.ts`, the wallet and the chain).
+   The Points board's `0.5 SKAI/pt` airdrop conversion rate is not in code. The Gas
+   board's four speed tiers would be invented; rail beats frame, not built.
+3. Governance-account: which page mounts `PerformanceOverview.tsx`; whether `/:username`
+   or `/account` owns the "My account" frames; Skai University (44 frames) and the
+   per-opportunity Earn detail routes (25) are whole features, not parity gaps, and need
+   a build-or-defer call.
+
+### Hand-offs
+
+- `modules/skai-ui/src/components/overlays/header-navigation.tsx:440` `rounded-xl` (16)
+  where the board draws 12; `PlayAboutFaq.tsx` for the 375 New-games lower half (measured
+  in the row); `PlayGameDetailSections.tsx` for everything below the game-detail bar.
+- `ExplorerLayout.tsx:149` caps every board at `max-w-7xl` (1280) where the frames draw
+  1318; the same 1318 question the hub ruling settled at 1318 in `8a1454b9`.
+- 17 pre-existing red tests under `modules/skai-gaming/src/pages/play` (gaming-shared
+  lane's count at HEAD; none introduced this batch).
+- Governance-account, all cited in rows and none the lane's: the Delegates table and the
+  off-chain delegation card (no registry); Earn's 8-column table (Fee and Volume 1W have
+  no source); the Airdrop snapshot leaderboard; `GovernancePageHead.tsx`,
+  `GovernanceSubnav.tsx`, `VaultCard.tsx`, `InsuranceFundHealth.tsx`,
+  `VotingPowerDisplay.tsx`, `BribeRewardsCard.tsx`, `ExportKeyModal.tsx`,
+  `ProfileSetupForm.tsx`. `ReferralsSection.tsx` was rebuilt by a peer the day before
+  (`2ad06805f`, `08284bab3`, `ccfb76b4e`); its 10 rows carried. `BookieDashboard.tsx`
+  stays with wave 23.
+
+### Verification at close
+
+- App build: exit 0 at 16:51 into a scratchpad output directory (3,016 asset files),
+  tree as of the four finished lanes plus governance-account mid-edit.
+- Gate (`typecheck:gate`, 16:58 to 17:05): red on 7 new errors, none in a file any wave
+  41 lane touched. Two are uncommitted peer edits (`PortfolioScreen.tsx`,
+  `sports/Sports.tsx`), four ride peer commits `9e88e445d` (17:00, trench launchpads)
+  and `0ab32d3a6` (17:05, ai-home attachments), and the two in `Launchpad.tsx` follow
+  the trench lane's `TrenchTab` change. The gate was green at batch 1's close (46 below
+  baseline) and every wave 41 commit is older than these; wave 23's coordinator owns the
+  clearance, as with `e58f2aded` earlier today.
+- Fold (`pipeline.mjs`): exit 0; 3,813 of 3,814 in-scope frames have a row; hand-set
+  fields changed on 630 rows (notes), 464 bp verdicts, 90 verifiedAt; derived files
+  regenerated.
+- Parity feed: `figma-parity.json` re-emitted (590 / 167 / 15.5%, measured 23:03Z),
+  skai-landing `623cbf1`, deployed with the onboarding lane's dashboard change.
+
+## 10. What is next
+
+Wave 41 has now re-measured every section it set out to: the five slot pages and Wallet
+(batch b), the 21 game pages (games batch), home, trade, trade-2, predict and social
+(batch 1), and onboarding, the play hub, the explorer and the governance and account
+pages (batch 2). 1,882 rows carry today's stamp. The next wave's open-first lists are in
+the rows themselves:
+
+- **Casey's decisions** in sections 4, 7, 8 and 9 gate the biggest single moves: the
+  game names, the 1318 body width now settled on the hub and open on the explorer, the
+  `rei` gas unit, the unsupported-region ALT, the page that mounts
+  `PerformanceOverview.tsx`, and the three whole features drawn but not built (Skai
+  University, the Earn detail routes, the launch-time home with-deposit state).
+- **Hand-offs** in sections 5, 8 and 9 are the file-scoped gaps a lane can take with no
+  ruling: `/post/:postId`, the header dropdown radius, `PlayGameDetailSections.tsx`, the
+  explorer's `max-w-7xl`, the strip and corner numbers on the trade surfaces, and the
+  governance components cited by name.
+- **A browser pass** is the only thing that moves `done`: 25 whole-frame matches sit in
+  the vverify files and 425 batch-2 rows say `partial` with the gap in numbers. A lane
+  with `get_screenshot` and a DOM measurement at 1440/768/375 closes them.
+- **Red at HEAD, not ours:** 17 tests under `modules/skai-gaming/src/pages/play` and
+  `predictDashboardFooterGutter.test.ts` (2), all pre-existing.
