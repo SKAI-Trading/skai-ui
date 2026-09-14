@@ -52,3 +52,15 @@
 11930-39529	partial	scratchpad/cosmic-375.png	Carried from 10359-14155 on 2026-09-10 (same-size rebuild). Mobile 375 page cut. The screenshot shows only the game canvas (grid, bar, "Back / COSMIC SLOTS" breadcrumb) and the bottom app nav - it does not scroll to the sections below the game, so the hero/strip/tabs/info/wins/carousel/bets/about/FAQ/licences/footer list is unconfirmed at this specific width. Not a citation of code existing: the frame genuinely was not scrolled past in either Task 8's pass or this review.
 11930-39780	match	scratchpad/cosmic-375.png	Carried from 10406-11916 on 2026-09-10 (same-size rebuild). Mobile marketing-page frame (1VH), READ FULLY in Task 4. Its own node data gives the embedded game canvas as 347px wide inside the 375-wide viewport; this task's own review of cosmic-375.png shows the game canvas occupying the width the frame's own gutters predict, and the description copy quoted from this node in FRAME_FACTS.md is the SAME text independently confirmed verbatim on the 768 page cut (10359-13264) - two independent readings agreeing on one string.
 11930-40031	partial	-	Carried from 10406-12386 on 2026-09-10 (same-size rebuild). NOT READ in Task 3/4 (never attempted, not a seat refusal). No node data and no screenshot exists for this specific id; presumed a duplicate/adjacent state of 10406-11916 but unconfirmed.
+10401-6164	match	-	Starbound - Card visual: the astronaut over the galaxy at 195x276; the same picture as 10401-6365's 800x1133 fill, byte-for-byte the shipped cosmic-slots-alt.webp the card draws. The Mines-art card-visual.webp is deleted. Wave 41, no browser.
+10403-6394	match	-	Starbound - Card visual at 400x566, the same picture; served by the shipped fill. Wave 41.
+10395-4859	match	-	Astro boy: node export 1037x1240 = shipped astro-full.webp 1037x1240. Wave 41.
+10395-4860	match	-	Spaceship: node export 1036x2136 = shipped spaceship.webp 1036x2136. Wave 41.
+10397-4965	match	-	Safari A 1: 396x398 PNG byte-identical to red_gem.png (131,338 B). Wave 41.
+10397-4966	match	-	Safari A 2: 401x400 PNG byte-identical to yellow_gem.png (133,166 B); the node is the yellow gem, not the blue one wave 40 named. Wave 41.
+10397-4967	match	-	Safari A 3: 387x400 PNG byte-identical to blue_gem.png (130,516 B); the node is the blue gem, not the coin wave 40 named. Wave 41.
+10397-4968	match	-	Safari A 4: 418x419 PNG byte-identical to green_gem.png (182,418 B). Wave 41.
+10397-4969	match	-	Safari A 5: 368x327 PNG byte-identical to star_coin.png (114,890 B), wired as `star` untinted this pass. Wave 41.
+10397-4970	match	-	Safari A 6: 449x455 export = purple_gem.webp 449x455; the node is the purple gem, not the alien wave 40 named. Wave 41.
+10397-4971	match	-	Safari A 7: 416x496 export = purple_shield.webp 416x496, wired as `cosmic` untinted this pass. Wave 41.
+10400-4972	match	-	Safari A 8: 554x468 export = alien.webp 554x468; the node is the alien, shipped since wave 40 under A6's name. Wave 41.

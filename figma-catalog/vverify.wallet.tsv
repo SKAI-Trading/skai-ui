@@ -280,3 +280,15 @@
 3012-15897	deferred	-	desktop get the app new user: SKAIAuth continuedOnWeb login step, behind the same signed-out gate
 7676-51506	deferred	-	tablet get the app new user: same continuedOnWeb login step, unreachable under the bypass
 7727-15382	deferred	-	mobile get the app new user: same continuedOnWeb login step, unreachable under the bypass
+7683-34510	match	-	Reset password tablet (wave 41, source-resolved 09-13): 418 column centred, 116x48 lockup with 48 under it, 24/28 headline over a 14/18 line 8 apart, two 74 blocks (12/16 label, 50 field) 20 apart, Medium CTA 50 r12 14/18, I remember my password 14/18 20 below; not rendered
+7675-51418	match	-	Unlock password filled tablet (wave 41): 48 under the lockup (three 768 boards to one), 74 block with the 1.5 alien-green stroke and 0/4/12 shadow on a stated 50 field, CTA 418x50 r12 14/18, forgot 12/16; not rendered
+7676-51506	match	-	Welcome tablet (wave 41): block centred (lockup 404..452, CTAs at 500), 48 under the lockup, two Medium CTAs 50 r12 14/18 20 apart, secondary 1px sky blue; not rendered
+7727-15382	match	-	Welcome mobile (wave 41): block centred (lockup 316..352, CTAs at 388), 36 under the lockup, two Small CTAs 44 r12 14/16 20 apart; not rendered
+3012-15897	match	-	Welcome desktop (wave 41, re-read): 154x64 lockup at 260, 516 column at 372, two Large CTAs 70 r16 16/22 24 apart, secondary 1.5 sky blue; not rendered
+2998-19599	match	-	Landing desktop (wave 41, re-read): 64 under the lockup and 36 under the 522x306 illustration (were 43/43), 42/48 headline, Mulish 22/26 sub 16 below, 331 column with a 70 r16 CTA and Continue on web 14/18 16 under; block centred (96 vs the board's 88 anchor); not rendered
+7871-20688	match	-	Import NFT mobile (wave 41, metadata re-read): 354x564 p12, title 18/22 over two 14/16 lines, 330x88 notice, three 70 blocks on a stated 48 field, two 161x44 CTAs, Overlay veil at 44% (362b171); not rendered
+7806-83761	match	-	Import NFT tablet (wave 41, metadata re-read): 448x559 p12, 22 title over an 18 line, 424x79 notice, three 74 blocks on a stated 50 field, two 208x50 CTAs; not rendered
+7806-82974	match	-	NFTs empty tablet (wave 41, metadata): Auto-detect 556x62 with 14/18 + 12/16 on a 16 inset, panel 556x127 20 below on a 12 inset with 14/18 + two 12/14 lines and a 161x32 CTA 20 below; tab body only; colour not re-read; not rendered
+7807-86912	match	-	NFTs empty tablet, second board (wave 41, metadata): node for node the same tree as 7806-82974; not rendered
+7871-19838	match	-	NFTs empty phone (wave 41, metadata; the node is 375x850 whatever the title says): Auto-detect 322x74 on a 14 inset with 14/18 + two 12/14 lines, panel 322x122 20 below with 14/18 + two 10/12 lines on a 9 inset and a 161x32 CTA; not rendered
+7882-19831	match	-	NFTs empty phone, second board (wave 41, metadata; node is 375x1000): same tree as 7871-19838; not rendered

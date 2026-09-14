@@ -1,0 +1,7 @@
+# node	verdict	evidence	what was measured
+# Lane slots-gem, wave 41, 2026-09-14. NO MATCH ROWS YET, ON PURPOSE. Every frame in this section is either
+# the game canvas - which cannot mount while gem_slots has no certified config, vectors or SLOT_GAMES entry,
+# so nothing renders to measure - or the page cut, whose stage is a pending still and whose "What to expect"
+# figures have no source. A page that prints the honest note where the frame prints 10,000x is not a match,
+# and the card on the info card sits at bottom 16 against the frame's 18. Verdicts and measurements are in
+# status.wave41.slots-gem.tsv; this file gains rows the day a frame measures whole.

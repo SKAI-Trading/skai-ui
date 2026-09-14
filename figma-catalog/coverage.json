@@ -1,42 +1,42 @@
 {
-  "generated": "2026-09-11T01:18:06.921Z",
+  "generated": "2026-09-14T19:13:39.878Z",
   "harvestedAt": "2026-09-11",
   "rollup": {
     "pages": 39,
     "live": 4585,
     "furniture": 771,
     "genuine": 3814,
-    "matched": 3613,
-    "done": 594,
-    "verified": 163,
+    "matched": 3813,
+    "done": 605,
+    "verified": 174,
     "visuallyDowngraded": 92,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 2060,
-    "notStarted": 399,
-    "blocked": 106,
-    "frameDefect": 98,
-    "catalogFurniture": 114,
+    "partial": 2153,
+    "notStarted": 402,
+    "blocked": 161,
+    "frameDefect": 122,
+    "catalogFurniture": 128,
     "unknown": 232,
-    "liveOnly": 201,
-    "rollupOnly": 9,
+    "liveOnly": 1,
+    "rollupOnly": 8,
     "defaultNamed": 202,
     "ambiguous": 117,
     "conflicts": 11
   },
   "doneRows": {
-    "total": 2169,
-    "withBreakpointProvenance": 759,
-    "namingANodeId": 1848,
+    "total": 2199,
+    "withBreakpointProvenance": 789,
+    "namingANodeId": 1878,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 12137,
+    "total": 12558,
     "namingNoNodeId": 505,
     "namingNoLiveNodeId": 590,
-    "unrecognisedTokens": 18777
+    "unrecognisedTokens": 19457
   },
   "statusFiles": [
     {
@@ -2020,6 +2020,42 @@
       "ids": 47
     },
     {
+      "file": "status.wave41.slots-cosmic.tsv",
+      "rows": 53,
+      "withLiveId": 53,
+      "ids": 53
+    },
+    {
+      "file": "status.wave41.slots-fisherman.tsv",
+      "rows": 69,
+      "withLiveId": 69,
+      "ids": 69
+    },
+    {
+      "file": "status.wave41.slots-gem.tsv",
+      "rows": 59,
+      "withLiveId": 59,
+      "ids": 60
+    },
+    {
+      "file": "status.wave41.slots-safari.tsv",
+      "rows": 62,
+      "withLiveId": 62,
+      "ids": 62
+    },
+    {
+      "file": "status.wave41.slots-vegas.tsv",
+      "rows": 83,
+      "withLiveId": 83,
+      "ids": 83
+    },
+    {
+      "file": "status.wave41.wallet.tsv",
+      "rows": 95,
+      "withLiveId": 95,
+      "ids": 100
+    },
+    {
       "file": "status.wave5.discover-createtoken.tsv",
       "rows": 3,
       "withLiveId": 1,
@@ -3206,15 +3242,15 @@
       },
       "genuine": 167,
       "matched": 167,
-      "rollupOnly": 1,
+      "rollupOnly": 0,
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 53,
+      "verified": 65,
       "visuallyDowngraded": 2,
       "byStatus": {
-        "partial": 108,
-        "done": 53,
+        "done": 65,
+        "partial": 96,
         "furniture": 6
       },
       "liveOnly": []
@@ -3244,7 +3280,8 @@
       "visuallyDowngraded": 1,
       "byStatus": {
         "done": 125,
-        "partial": 29,
+        "partial": 22,
+        "blocked-on-backend": 7,
         "frame-defect": 4,
         "furniture": 1
       },
@@ -4192,345 +4229,19 @@
         "loose-rectangle": 15
       },
       "genuine": 47,
-      "matched": 0,
+      "matched": 47,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
       "verified": 0,
       "visuallyDowngraded": 0,
-      "byStatus": {},
-      "liveOnly": [
-        {
-          "id": "10272-3834",
-          "name": "Skai > Play > Casino > Safari slots (768 x 1024px)",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1627
-        },
-        {
-          "id": "10354-877",
-          "name": "Load screen - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10354-3115",
-          "name": "Load screen > features > home - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10354-3935",
-          "name": "Load screen > features > home > menu - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10354-2840",
-          "name": "Load screen > features > home > all key items - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10354-1754",
-          "name": "Load screen > features - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10354-1555",
-          "name": "Load screen ALT - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10272-4179",
-          "name": "Skai > Play > Casino > Safari slots (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "10359-10003",
-          "name": "Skai > Play > Casino > Safari slots - screen type 2 (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "10359-11133",
-          "name": "Skai > Play > Casino > Vegas fortune > Load screen - screen type 2 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "10285-15783",
-          "name": "Load screen - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10295-732",
-          "name": "Load screen - desktop - normal size with sidebar - (w 954px)",
-          "type": "FRAME",
-          "w": 954,
-          "h": 621
-        },
-        {
-          "id": "10285-15821",
-          "name": "Load screen ALT - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10285-16306",
-          "name": "Load screen > features - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10320-2623",
-          "name": "Load screen > features > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10353-1058",
-          "name": "Load screen > features > home > menu - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10329-11088",
-          "name": "Load screen > features > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10341-11586",
-          "name": "Load screen > features > home > combo - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10353-829",
-          "name": "Load screen > features > home > combo > combo end frame - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10272-4933",
-          "name": "Skai > Play > Casino > Safari slots (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 1605
-        },
-        {
-          "id": "10354-4819",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-46622",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "10354-5242",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-46727",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "10354-6256",
-          "name": "Load screen - refresh screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-46841",
-          "name": "Load screen - refresh screen - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "10354-5365",
-          "name": "Load screen > features > home - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-46945",
-          "name": "Load screen > features > home - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "10354-6074",
-          "name": "Load screen > features > home > all key items - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-47126",
-          "name": "Load screen > features > home > all key items - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "10354-7028",
-          "name": "Load screen > features > home > menu - docked - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-47313",
-          "name": "Load screen > features > home > menu - docked - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "10354-7459",
-          "name": "Load screen > features > home > menu - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-47489",
-          "name": "Load screen > features > home > menu - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "10354-5137",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-47699",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "10354-4269",
-          "name": "Skai > Play > Casino > Safari slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "10359-8316",
-          "name": "Skai > Play > Casino > Safari slots 2 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "10359-9369",
-          "name": "Safari slots - Card visual",
-          "type": "FRAME",
-          "w": 195,
-          "h": 276
-        },
-        {
-          "id": "10359-9167",
-          "name": "Safari slots - Card visual",
-          "type": "FRAME",
-          "w": 400,
-          "h": 566
-        },
-        {
-          "id": "10359-9488",
-          "name": "Mines Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10359-9493",
-          "name": "Safari slots - Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10359-9530",
-          "name": "Safari slots - Tablet",
-          "type": "FRAME",
-          "w": 120,
-          "h": 170
-        },
-        {
-          "id": "10359-9535",
-          "name": "Safari slots - Mobile",
-          "type": "FRAME",
-          "w": 76,
-          "h": 108
-        },
-        {
-          "id": "11930-45998",
-          "name": "Skai > Play > Casino > Safari slots (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 3065
-        },
-        {
-          "id": "11930-47944",
-          "name": "Skai > Play > Casino > Safari slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11930-48655",
-          "name": "Skai > Play > Casino > Safari slots 2 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        }
-      ]
+      "byStatus": {
+        "partial": 30,
+        "frame-defect": 11,
+        "furniture": 6
+      },
+      "liveOnly": []
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -4549,97 +4260,20 @@
         "loose-rectangle": 10
       },
       "genuine": 44,
-      "matched": 33,
+      "matched": 44,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 6,
+      "verified": 2,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 6,
-        "partial": 26,
-        "furniture": 1
+        "partial": 39,
+        "done": 2,
+        "furniture": 1,
+        "not-started": 2
       },
-      "liveOnly": [
-        {
-          "id": "11930-40198",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-40210",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-40220",
-          "name": "Load screen - refresh screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-40231",
-          "name": "Load screen > home - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-40320",
-          "name": "Load screen > home > all key items - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-40415",
-          "name": "Load screen > home > menu - docked - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-40499",
-          "name": "Load screen > home > menu - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-40617",
-          "name": "Load screen > Start game - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-41016",
-          "name": "Skai > Play > Casino > Cosmic slots (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 3135
-        },
-        {
-          "id": "11930-42183",
-          "name": "Skai > Play > Casino > Cosmic slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11930-42806",
-          "name": "Skai > Play > Casino > Cosmic slots 2 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        }
-      ]
+      "liveOnly": []
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -4658,359 +4292,22 @@
         "loose-rectangle": 34
       },
       "genuine": 49,
-      "matched": 0,
+      "matched": 49,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 0,
+      "verified": 3,
       "visuallyDowngraded": 0,
-      "byStatus": {},
-      "liveOnly": [
-        {
-          "id": "10412-15861",
-          "name": "Skai > Play > Casino > Vegas fortune (768 x 1024px)",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1627
-        },
-        {
-          "id": "10412-16102",
-          "name": "Skai > Play > Casino > Vegas fortune (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "10448-4297",
-          "name": "Load screen - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10452-4331",
-          "name": "Load screen ALT - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10412-16752",
-          "name": "Skai > Play > Casino > Vegas fortune (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 1375
-        },
-        {
-          "id": "10452-4915",
-          "name": "Load screen > features - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10458-5156",
-          "name": "Load screen > features > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10655-5847",
-          "name": "Load screen > features > home > combo > combo end frame > menu - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10478-5265",
-          "name": "Load screen > features > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10655-5591",
-          "name": "Load screen > features > home > combo - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10688-7138",
-          "name": "Vegas fortune - Card visual",
-          "type": "FRAME",
-          "w": 195,
-          "h": 276
-        },
-        {
-          "id": "10688-7176",
-          "name": "Vegas fortune - Card visual",
-          "type": "FRAME",
-          "w": 400,
-          "h": 566
-        },
-        {
-          "id": "10688-7225",
-          "name": "Vegas fortune - Card visual",
-          "type": "FRAME",
-          "w": 400,
-          "h": 566
-        },
-        {
-          "id": "10688-7210",
-          "name": "Vegas fortune - Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10688-7214",
-          "name": "Vegas fortune - Tablet",
-          "type": "FRAME",
-          "w": 120,
-          "h": 170
-        },
-        {
-          "id": "10688-7219",
-          "name": "Vegas fortune - Mobile",
-          "type": "FRAME",
-          "w": 76,
-          "h": 108
-        },
-        {
-          "id": "10688-7196",
-          "name": "Mines Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10688-7153",
-          "name": "Vegas fortune - Desktop ALT",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10688-7157",
-          "name": "Vegas fortune - Tablet ALT",
-          "type": "FRAME",
-          "w": 120,
-          "h": 170
-        },
-        {
-          "id": "10688-7162",
-          "name": "Vegas fortune - Mobile ALT",
-          "type": "FRAME",
-          "w": 76,
-          "h": 108
-        },
-        {
-          "id": "10688-7471",
-          "name": "Skai > Play > Casino > Vegas fortune - screen type 2 (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "10688-8328",
-          "name": "Skai > Play > Casino > Vegas fortune > Load screen - screen type 2 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "10698-11157",
-          "name": "Load screen - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10737-13868",
-          "name": "Load screen > features > home - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10737-14223",
-          "name": "Load screen > features > home ALT 2 - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10737-14138",
-          "name": "Load screen > features > home ALT - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10738-14799",
-          "name": "Load screen > features > home > combo > menu - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10738-14514",
-          "name": "Load screen > features > home > combo - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10737-13562",
-          "name": "Load screen > features - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10736-12848",
-          "name": "Load screen ALT - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "10738-15210",
-          "name": "Skai > Play > Casino > Vegas fortune 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "10738-15461",
-          "name": "Skai > Play > Casino > Vegas fortune 2 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "10738-15628",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10741-16616",
-          "name": "Load screen > features - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10743-16972",
-          "name": "Load screen > features > home - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10744-17293",
-          "name": "Load screen > features > home > combo - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10745-17641",
-          "name": "Load screen > features > home > menu - docked - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10745-17872",
-          "name": "Load screen > features > home > menu - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "10741-16488",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-34757",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-34769",
-          "name": "Load screen > features - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-34792",
-          "name": "Load screen > features > home - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-34878",
-          "name": "Load screen > features > home > combo - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-34974",
-          "name": "Load screen > features > home > menu - docked - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-35064",
-          "name": "Load screen > features > home > menu - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-35188",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-35200",
-          "name": "Skai > Play > Casino > Vegas fortune (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 3079
-        },
-        {
-          "id": "11930-35959",
-          "name": "Skai > Play > Casino > Vegas fortune 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11930-36583",
-          "name": "Skai > Play > Casino > Vegas fortune 2 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        }
-      ]
+      "byStatus": {
+        "partial": 13,
+        "frame-defect": 12,
+        "blocked-on-backend": 16,
+        "furniture": 4,
+        "done": 3,
+        "not-started": 1
+      },
+      "liveOnly": []
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -5029,338 +4326,19 @@
         "loose-rectangle": 13
       },
       "genuine": 46,
-      "matched": 0,
+      "matched": 46,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
       "verified": 0,
       "visuallyDowngraded": 0,
-      "byStatus": {},
-      "liveOnly": [
-        {
-          "id": "10285-14037",
-          "name": "Skai > Play > Casino > Gem slots (768 x 1024px)",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1627
-        },
-        {
-          "id": "10285-14278",
-          "name": "Skai > Play > Casino > Gem slots (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "10285-14928",
-          "name": "Skai > Play > Casino > Gem slots (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 1375
-        },
-        {
-          "id": "10747-20240",
-          "name": "Load screen - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10753-20676",
-          "name": "Load screen ALT - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10758-20929",
-          "name": "Load screen ALT > selector - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11148-2096",
-          "name": "Load screen ALT > selector - green hue ALT - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11146-1937",
-          "name": "Load screen ALT > selector - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10782-24103",
-          "name": "Load screen ALT > selector > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11206-2787",
-          "name": "Load screen ALT > selector > home > combo - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11215-2930",
-          "name": "Load screen ALT > selector > home > combo > menu - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11198-2649",
-          "name": "Load screen ALT > selector > home - with blur ALT - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "10758-20769",
-          "name": "Mines Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10758-20774",
-          "name": "Gem slots - Desktop ALT",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "10758-20778",
-          "name": "Gem slots - Tablet ALT",
-          "type": "FRAME",
-          "w": 120,
-          "h": 170
-        },
-        {
-          "id": "10758-20783",
-          "name": "Gem slots - Mobile ALT",
-          "type": "FRAME",
-          "w": 76,
-          "h": 108
-        },
-        {
-          "id": "11219-3122",
-          "name": "Skai > Play > Casino > Gem slots - screen type 2 (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "11219-3786",
-          "name": "Skai > Play > Casino > Gem slots - screen type 2 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "11244-7038",
-          "name": "Load screen - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11258-7465",
-          "name": "Load screen ALT > selector - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11275-8533",
-          "name": "Load screen ALT > selector > home > combo - with blur - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11277-9060",
-          "name": "Load screen ALT > selector > home > combo > menu - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11264-7884",
-          "name": "Load screen ALT > selector > home > combo - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11234-6787",
-          "name": "Load screen ALT > selector - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11234-6902",
-          "name": "Load screen ALT - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11279-11092",
-          "name": "Skai > Play > Casino > Gem slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11279-11470",
-          "name": "Skai > Play > Casino > Gem slots 2 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11282-12216",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11278-10019",
-          "name": "Load screen ALT > selector - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11287-12668",
-          "name": "Load screen ALT > selector - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11288-12765",
-          "name": "Load screen ALT > selector > home > combo - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11299-14020",
-          "name": "Load screen ALT > selector > home > combo - with blur - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11298-13311",
-          "name": "Load screen ALT > selector > home > combo > menu - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11881-14886",
-          "name": "Load screen ALT > selector > home > combo > menu - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11278-10438",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-28659",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-28667",
-          "name": "Load screen ALT > selector - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-28763",
-          "name": "Load screen ALT > selector - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-28859",
-          "name": "Load screen ALT > selector > home > combo - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-28980",
-          "name": "Load screen ALT > selector > home > combo - with blur - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-29101",
-          "name": "Load screen ALT > selector > home > combo > menu - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-29256",
-          "name": "Load screen ALT > selector > home > combo > menu - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-29411",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-28028",
-          "name": "Skai > Play > Casino > Gem slots (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 3023
-        },
-        {
-          "id": "11930-30639",
-          "name": "Skai > Play > Casino > Gem slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11930-31288",
-          "name": "Skai > Play > Casino > Gem slots 2 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        }
-      ]
+      "byStatus": {
+        "partial": 17,
+        "blocked-on-backend": 27,
+        "furniture": 2
+      },
+      "liveOnly": []
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -5379,345 +4357,20 @@
         "loose-rectangle": 22
       },
       "genuine": 47,
-      "matched": 0,
+      "matched": 47,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
       "verified": 0,
       "visuallyDowngraded": 0,
-      "byStatus": {},
-      "liveOnly": [
-        {
-          "id": "11306-15099",
-          "name": "Skai > Play > Casino > Fisherman slots (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "11381-18137",
-          "name": "Load screen - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11416-19412",
-          "name": "Load screen ALT - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11416-19537",
-          "name": "Load screen > features - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11521-20155",
-          "name": "Load screen > features > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11598-21432",
-          "name": "Load screen > features > home > menu - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11527-20243",
-          "name": "Load screen > features > home - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11592-20699",
-          "name": "Load screen > features > home > combo - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11596-21055",
-          "name": "Load screen > features > home > combo > combo end frame - desktop",
-          "type": "FRAME",
-          "w": 1318,
-          "h": 621
-        },
-        {
-          "id": "11602-21673",
-          "name": "Fisherman slots - Card visual",
-          "type": "FRAME",
-          "w": 195,
-          "h": 276
-        },
-        {
-          "id": "11602-21869",
-          "name": "Mines Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "11602-21874",
-          "name": "Fisherman slots - Desktop",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "11602-21878",
-          "name": "Fisherman slots - Tablet",
-          "type": "FRAME",
-          "w": 120,
-          "h": 170
-        },
-        {
-          "id": "11602-21883",
-          "name": "Fisherman slots - Mobile",
-          "type": "FRAME",
-          "w": 76,
-          "h": 108
-        },
-        {
-          "id": "11606-21938",
-          "name": "Skai > Play > Casino > Fisherman slots - screen type 2 (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 3467
-        },
-        {
-          "id": "11606-22795",
-          "name": "Skai > Play > Casino > Fisherman slots > Load screen - screen type 2 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "11637-25043",
-          "name": "Skai > Play > Casino > Fisherman slots (768 x 1024px)",
-          "type": "FRAME",
-          "w": 768,
-          "h": 1627
-        },
-        {
-          "id": "11640-27341",
-          "name": "Load screen - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11637-25690",
-          "name": "Load screen > features > home - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11654-29146",
-          "name": "Load screen > features > home > menu - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11650-28479",
-          "name": "Load screen > features > home > all key items - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11641-27685",
-          "name": "Load screen > features - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11640-27236",
-          "name": "Load screen ALT - tablet",
-          "type": "FRAME",
-          "w": 708,
-          "h": 720
-        },
-        {
-          "id": "11661-29629",
-          "name": "Skai > Play > Casino > Fisherman slots (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 1605
-        },
-        {
-          "id": "11668-32530",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11678-32864",
-          "name": "Load screen > features - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11680-33011",
-          "name": "Load screen - refresh screen - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11661-30294",
-          "name": "Load screen > features > home - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11696-34540",
-          "name": "Load screen > features > home > all key items - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11697-34737",
-          "name": "Load screen > features > home > menu - docked - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11700-34994",
-          "name": "Load screen > features > home > menu - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11896-15052",
-          "name": "Load screen > features > home > menu - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11668-32543",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 347,
-          "h": 500
-        },
-        {
-          "id": "11930-23931",
-          "name": "Load screen - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-23943",
-          "name": "Load screen > features - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-23974",
-          "name": "Load screen - refresh screen - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-23988",
-          "name": "Load screen > features > home - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-24078",
-          "name": "Load screen > features > home > all key items - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-24180",
-          "name": "Load screen > features > home > menu - docked - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-24265",
-          "name": "Load screen > features > home > menu - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-24384",
-          "name": "Load screen > features > home > menu - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11930-24503",
-          "name": "Load screen ALT - mobile",
-          "type": "FRAME",
-          "w": 375,
-          "h": 500
-        },
-        {
-          "id": "11661-31059",
-          "name": "Skai > Play > Casino > Fisherman slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11680-33511",
-          "name": "Skai > Play > Casino > Fisherman slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11930-24933",
-          "name": "Skai > Play > Casino > Fisherman slots (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 3049
-        },
-        {
-          "id": "11930-25935",
-          "name": "Skai > Play > Casino > Fisherman slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "11930-26565",
-          "name": "Skai > Play > Casino > Fisherman slots 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        }
-      ]
+      "byStatus": {
+        "partial": 39,
+        "blocked-on-backend": 5,
+        "furniture": 2,
+        "frame-defect": 1
+      },
+      "liveOnly": []
     }
   ],
   "catalogOnly": [
@@ -24518,9 +23171,9 @@
       "id": "2998-19599",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "2999-19674",
@@ -24558,8 +23211,8 @@
       "id": "7683-34510",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -24606,17 +23259,17 @@
       "id": "3012-15897",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "7676-51506",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "3012-15180",
@@ -24686,16 +23339,16 @@
       "id": "7806-82974",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
       "id": "7807-86912",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -24726,8 +23379,8 @@
       "id": "7806-83761",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -25406,8 +24059,8 @@
       "id": "7675-51418",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -25454,16 +24107,16 @@
       "id": "7871-19838",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
       "id": "7882-19831",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -25502,8 +24155,8 @@
       "id": "7871-20688",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -25798,9 +24451,9 @@
       "id": "7727-15382",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "7727-15482",
@@ -25982,8 +24635,8 @@
       "id": "13008-29014",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
@@ -25998,16 +24651,16 @@
       "id": "13008-29226",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
       "id": "13008-29347",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
@@ -26806,16 +25459,16 @@
       "id": "13008-48792",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
       "id": "13008-48896",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
@@ -26990,8 +25643,8 @@
       "id": "13008-53758",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
@@ -27006,8 +25659,8 @@
       "id": "13008-53976",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
@@ -35899,19 +34552,395 @@
       "verdict": null
     },
     {
+      "id": "10272-3834",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10354-877",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-3115",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-3935",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-2840",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-1754",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-1555",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10272-4179",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10359-10003",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10359-11133",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10285-15783",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10295-732",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10285-15821",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10285-16306",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10320-2623",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10353-1058",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10329-11088",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10341-11586",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10353-829",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10272-4933",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10354-4819",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-46622",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-5242",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-46727",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-6256",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-46841",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-5365",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-46945",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "10354-6074",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-47126",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-7028",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-47313",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-7459",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-47489",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-5137",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-47699",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10354-4269",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10359-8316",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10359-9369",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10359-9167",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10359-9488",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10359-9493",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10359-9530",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10359-9535",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "11930-45998",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "11930-47944",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-48655",
+      "page": "🚧 Safari Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
       "id": "10359-13264",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
       "id": "10359-13505",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
@@ -35958,8 +34987,8 @@
       "id": "10395-4756",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
@@ -35990,8 +35019,8 @@
       "id": "11930-39780",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
@@ -36006,17 +35035,17 @@
       "id": "10401-6164",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10403-6394",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10401-6360",
@@ -36030,8 +35059,8 @@
       "id": "10401-6365",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
@@ -36094,16 +35123,16 @@
       "id": "10407-13075",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "not-started",
+      "claimed": "not-started",
       "verdict": "partial"
     },
     {
       "id": "10407-13179",
       "page": "🚧 Cosmic Slots - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
@@ -36161,6 +35190,1230 @@
       "status": "partial",
       "claimed": "partial",
       "verdict": "partial"
+    },
+    {
+      "id": "11930-40198",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-40210",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-40220",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "not-started",
+      "claimed": "not-started",
+      "verdict": null
+    },
+    {
+      "id": "11930-40231",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-40320",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-40415",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-40499",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-40617",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-41016",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-42183",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-42806",
+      "page": "🚧 Cosmic Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10412-15861",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10412-16102",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10448-4297",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10452-4331",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10412-16752",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10452-4915",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10458-5156",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10655-5847",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10478-5265",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10655-5591",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10688-7138",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10688-7176",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10688-7225",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10688-7210",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10688-7214",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10688-7219",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10688-7196",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10688-7153",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "not-started",
+      "claimed": "not-started",
+      "verdict": null
+    },
+    {
+      "id": "10688-7157",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10688-7162",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10688-7471",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10688-8328",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10698-11157",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10737-13868",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10737-14223",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10737-14138",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10738-14799",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10738-14514",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10737-13562",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10736-12848",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10738-15210",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10738-15461",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10738-15628",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10741-16616",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10743-16972",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10744-17293",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10745-17641",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10745-17872",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "10741-16488",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11930-34757",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-34769",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-34792",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-34878",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-34974",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-35064",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-35188",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-35200",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-35959",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-36583",
+      "page": "🚧 Vegas fortune - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10285-14037",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10285-14278",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10285-14928",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10747-20240",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10753-20676",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10758-20929",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11148-2096",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11146-1937",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10782-24103",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11206-2787",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11215-2930",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11198-2649",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "10758-20769",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "10758-20774",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10758-20778",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "10758-20783",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11219-3122",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11219-3786",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11244-7038",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11258-7465",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11275-8533",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11277-9060",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11264-7884",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11234-6787",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11234-6902",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11279-11092",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11279-11470",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11282-12216",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11278-10019",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11287-12668",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11288-12765",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11299-14020",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11298-13311",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11881-14886",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11278-10438",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-28659",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-28667",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-28763",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-28859",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-28980",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-29101",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-29256",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "11930-29411",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-28028",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-30639",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-31288",
+      "page": "🚧 Gem Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11306-15099",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11381-18137",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11416-19412",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11416-19537",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11521-20155",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11598-21432",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11527-20243",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11592-20699",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11596-21055",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11602-21673",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "11602-21869",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "furniture",
+      "claimed": "furniture",
+      "verdict": null
+    },
+    {
+      "id": "11602-21874",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "match"
+    },
+    {
+      "id": "11602-21878",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11602-21883",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11606-21938",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11606-22795",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11637-25043",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11640-27341",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11637-25690",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11654-29146",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11650-28479",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11641-27685",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11640-27236",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11661-29629",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11668-32530",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11678-32864",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11680-33011",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11661-30294",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11696-34540",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11697-34737",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11700-34994",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11896-15052",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "11668-32543",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-23931",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-23943",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-23974",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-23988",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-24078",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
+      "verdict": null
+    },
+    {
+      "id": "11930-24180",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-24265",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-24384",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-24503",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11661-31059",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11680-33511",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-24933",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-25935",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "11930-26565",
+      "page": "🚧 Fisherman Slots - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
     }
   ]
 }

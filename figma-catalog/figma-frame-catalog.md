@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-11T01:18:06.067Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-14T19:13:38.526Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -17,9 +17,9 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | home | ✅ | 274 | 182 | 92 | 50 | 51 | 102 | 26 | 2 | 102 |
 | home-2 | ✅ | 242 | 147 | 95 | 19 | 28 | 113 | 3 | 2 | 14 |
 | predict | ✅ | 284 | 144 | 140 | 33 | 0 | 86 | 50 | 0 | 134 |
-| wallet-2 | ✅ | 182 | 131 | 51 | 22 | 108 | 18 | 0 | 0 | 49 |
+| wallet-2 | ✅ | 182 | 131 | 51 | 22 | 108 | 12 | 0 | 0 | 49 |
 | play | ✅ | 345 | 128 | 217 | 33 | 15 | 74 | 36 | 0 | 66 |
-| wallet | ✅ | 178 | 125 | 53 | 35 | 53 | 72 | 0 | 0 | 59 |
+| wallet | ✅ | 178 | 125 | 53 | 35 | 65 | 60 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 0 | 98 | 12 | 0 | 1 |
 | coinflip | ✅ | 46 | 33 | 13 | 1 | 3 | 23 | 0 | 0 | 27 |
 | dice | ✅ | 36 | 26 | 10 | 1 | 6 | 13 | 0 | 0 | 8 |
@@ -29,11 +29,11 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | crash | ✅ | 20 | 15 | 5 | 1 | 3 | 10 | 0 | 0 | 12 |
 | skratch | ✅ | 21 | 15 | 6 | 1 | 3 | 9 | 0 | 0 | 11 |
 | plinko | ✅ | 21 | 15 | 6 | 1 | 3 | 6 | 0 | 0 | 8 |
-| vegas-fortune | 🚧 | 96 | 83 | 13 | 1 | 0 | 0 | 0 | 83 | 0 |
-| fisherman-slots | 🚧 | 78 | 69 | 9 | 1 | 0 | 0 | 0 | 69 | 0 |
-| safari-slots | 🚧 | 72 | 62 | 10 | 1 | 0 | 0 | 0 | 62 | 0 |
-| gem-slots | 🚧 | 68 | 59 | 9 | 1 | 0 | 0 | 0 | 59 | 0 |
-| cosmic-slots | 🚧 | 62 | 54 | 8 | 1 | 5 | 22 | 0 | 11 | 0 |
+| vegas-fortune | 🚧 | 96 | 83 | 13 | 1 | 3 | 13 | 1 | 0 | 0 |
+| fisherman-slots | 🚧 | 78 | 69 | 9 | 1 | 1 | 53 | 0 | 0 | 0 |
+| safari-slots | 🚧 | 72 | 62 | 10 | 1 | 0 | 30 | 0 | 0 | 0 |
+| gem-slots | 🚧 | 68 | 59 | 9 | 1 | 0 | 30 | 0 | 0 | 0 |
+| cosmic-slots | 🚧 | 62 | 54 | 8 | 1 | 0 | 36 | 2 | 0 | 0 |
 | skai-cross |  | 15 | 15 | 0 | 1 | 0 | 0 | 0 | 15 | 0 |
 | rock-paper-scissors | ✅ | 24 | 15 | 9 | 1 | 0 | 2 | 0 | 0 | 7 |
 | mines | ✅ | 19 | 12 | 7 | 1 | 3 | 6 | 0 | 0 | 4 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4654** | **2505** | | | **383** | **1499** | **304** | **319** | **1032** |
+| **all** | | **4654** | **2357** | | | **394** | **1621** | **307** | **35** | **1032** |
 
 ### Drift against live Figma
 
@@ -446,7 +446,7 @@ Frames that exist in Figma but are not in the catalog:
 | continue on web > home > share | 11 | desktop, tablet, mobile | 3rd combination; Expand; 2nd combination | done/partial | [13008-30018](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-30018&m=dev) |
 | continue on web > home | 9 | desktop, tablet, mobile | - | done | [13008-26985](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-26985&m=dev) |
 | continue on web > home > notifications | 9 | desktop, tablet | settings; sample notification | done/partial | [13008-27989](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27989&m=dev) |
-| continue on web > home > bridge | 7 | desktop, tablet, mobile | - | partial/done | [13008-29014](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29014&m=dev) |
+| continue on web > home > bridge | 7 | desktop, tablet, mobile | - | blocked-on-backend/done | [13008-29014](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29014&m=dev) |
 | continue on web > home > request with QR | 6 | desktop, tablet, mobile | step 1; step 2 | done | [13008-36562](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36562&m=dev) |
 | continue on web > home > request from user | 6 | desktop, tablet, mobile | step 1; step 2 | done | [13008-37430](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-37430&m=dev) |
 | continue on web > home > account | 3 | desktop, tablet | - | done | [13008-27689](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27689&m=dev) |
@@ -456,8 +456,8 @@ Frames that exist in Figma but are not in the catalog:
 | continue on web > home > buy | 3 | desktop, tablet, mobile | - | done | [13008-28694](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28694&m=dev) |
 | continue on web > home > swap | 3 | desktop, tablet, mobile | - | done | [13008-28765](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28765&m=dev) |
 | continue on web > home > chart | 3 | desktop, tablet, mobile | - | done/frame-defect | [13008-28886](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28886&m=dev) |
-| continue on web > home > bridge > Start bridge | 3 | desktop, tablet, mobile | - | partial/frame-defect | [13008-29226](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29226&m=dev) |
-| continue on web > home > bridge > Start bridge > Post wallet interaction | 3 | desktop, tablet, mobile | - | partial/frame-defect | [13008-29347](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29347&m=dev) |
+| continue on web > home > bridge > Start bridge | 3 | desktop, tablet, mobile | - | blocked-on-backend | [13008-29226](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29226&m=dev) |
+| continue on web > home > bridge > Start bridge > Post wallet interaction | 3 | desktop, tablet, mobile | - | blocked-on-backend/frame-defect | [13008-29347](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29347&m=dev) |
 | continue on web > home > bridge > bridge settings | 3 | desktop, tablet, mobile | - | done/frame-defect | [13008-29693](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29693&m=dev) |
 | continue on web > home > insights | 3 | desktop, tablet, mobile | - | done | [13008-29837](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29837&m=dev) |
 | continue on web > home > spending | 3 | desktop, tablet, mobile | - | done | [13008-36166](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36166&m=dev) |
@@ -514,12 +514,12 @@ Frames that exist in Figma but are not in the catalog:
 | continue on web > home > NFTs > sample NFT | 5 | desktop, tablet, mobile | - | done/partial | [3089-19811](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3089-19811&m=dev) |
 | continue on web > home > right-sidecar > Add wallet > Connect hardware wallet | 4 | tablet, desktop, mobile | - | partial | [7717-13587](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13587&m=dev) |
 | continue on web > home > right-sidecar > wallet multi menu > Remove walletl | 4 | mobile | - | done/partial | [7774-68417](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7774-68417&m=dev) |
-| (section root) | 3 | desktop, tablet, mobile | - | partial | [2998-19599](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2998-19599&m=dev) |
+| (section root) | 3 | desktop, tablet, mobile | - | done/partial | [2998-19599](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2998-19599&m=dev) |
 | continue on web > unlock > Forgot password | 3 | desktop, tablet, mobile | - | done/partial | [7473-130910](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7473-130910&m=dev) |
 | continue on web > unlock > Forgot password > OTP > Set new password | 3 | desktop, tablet, mobile | - | done/partial | [7473-133033](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7473-133033&m=dev) |
 | continue on web > unlock > Forgot password > OTP | 3 | desktop, tablet, mobile | - | done/partial | [7473-131013](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7473-131013&m=dev) |
 | get the app > new user > create new wallet | 3 | desktop, tablet, mobile | - | done/partial | [3023-11938](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3023-11938&m=dev) |
-| get the app > new user | 3 | desktop, tablet, mobile | - | partial | [3012-15897](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3012-15897&m=dev) |
+| get the app > new user | 3 | desktop, tablet, mobile | - | done | [3012-15897](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3012-15897&m=dev) |
 | continue on web > home > right-sidecar > wallet multi menu > Remove wallet | 3 | tablet, desktop, mobile | - | partial/done | [7713-17399](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-17399&m=dev) |
 | continue on web > home > right-sidecar > Add wallet > Import existing > Keystone | 3 | tablet, desktop, mobile | - | partial/done | [7717-13147](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13147&m=dev) |
 | continue on web > home > right-sidecar > wallet accounts | 3 | tablet, desktop, mobile | - | done | [7713-14212](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-14212&m=dev) |
@@ -618,31 +618,31 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Vegas Fortune | 83 | tablet, desktop, mobile | Load screen - desktop; Load screen ALT - desktop; Load screen > features - desktop; Load screen > features > home - desktop; Load screen > features > home > combo > combo end frame > menu - desktop; Load screen > features > home > combo - desktop … | unknown | [10412-15861](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10412-15861&m=dev) |
+| Casino > Vegas Fortune | 83 | tablet, desktop, mobile | Load screen - desktop; Load screen ALT - desktop; Load screen > features - desktop; Load screen > features > home - desktop; Load screen > features > home > combo > combo end frame > menu - desktop; Load screen > features > home > combo - desktop … | partial/frame-defect/blocked-on-backend/furniture/done/not-started | [10412-15861](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10412-15861&m=dev) |
 
 ## Fisherman-slots
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Fisherman Slots | 69 | desktop, tablet, mobile | Load screen - desktop; Load screen ALT - desktop; Load screen > features - desktop; Load screen > features > home - desktop; Load screen > features > home > menu - desktop; Safari A 1 … | unknown | [11306-15099](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=11306-15099&m=dev) |
+| Casino > Fisherman Slots | 69 | desktop, tablet, mobile | Load screen - desktop; Load screen ALT - desktop; Load screen > features - desktop; Load screen > features > home - desktop; Load screen > features > home > menu - desktop; Safari A 1 … | partial/done/furniture/blocked-on-backend/frame-defect | [11306-15099](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=11306-15099&m=dev) |
 
 ## Safari-slots
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Safari Slots | 62 | tablet, desktop, mobile | Load screen - tablet; Load screen > features > home - tablet; Load screen > features > home > menu - tablet; Load screen > features > home > all key items - tablet; Load screen > features - tablet; Load screen ALT - tablet … | unknown | [10272-3834](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10272-3834&m=dev) |
+| Casino > Safari Slots | 62 | tablet, desktop, mobile | Load screen - tablet; Load screen > features > home - tablet; Load screen > features > home > menu - tablet; Load screen > features > home > all key items - tablet; Load screen > features - tablet; Load screen ALT - tablet … | partial/furniture/frame-defect | [10272-3834](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10272-3834&m=dev) |
 
 ## Gem-slots
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Gem Slots | 59 | tablet, desktop, mobile | Load screen - desktop; Load screen ALT - desktop; Load screen ALT > selector - desktop; Load screen ALT > selector - green hue ALT - desktop; Load screen ALT > selector > home - desktop; Load screen ALT > selector > home > combo - desktop … | unknown | [10285-14037](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10285-14037&m=dev) |
+| Casino > Gem Slots | 59 | tablet, desktop, mobile | Load screen - desktop; Load screen ALT - desktop; Load screen ALT > selector - desktop; Load screen ALT > selector - green hue ALT - desktop; Load screen ALT > selector > home - desktop; Load screen ALT > selector > home > combo - desktop … | partial/blocked-on-backend/furniture | [10285-14037](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10285-14037&m=dev) |
 
 ## Cosmic-slots
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Cosmic Slots | 38 | tablet, desktop, mobile | Load screen - desktop; Load screen > Start game - desktop; Load screen > home - desktop; Load screen > home >combo > combo end frame - desktop; Load screen > home >combo > combo end frame > menu - desktop; Load screen > home > combo - desktop … | done/partial | [10359-13264](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-13264&m=dev) |
+| Casino > Cosmic Slots | 38 | tablet, desktop, mobile | Load screen - desktop; Load screen > Start game - desktop; Load screen > home - desktop; Load screen > home >combo > combo end frame - desktop; Load screen > home >combo > combo end frame > menu - desktop; Load screen > home > combo - desktop … | partial/not-started | [10359-13264](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10359-13264&m=dev) |
 
 ## Skai-cross
 
