@@ -101,8 +101,11 @@ export function MobileBottomNav({
         //   tablet 6704:26136   768x53, padding 19/8,        blur 10
         // The phone bar was drawing the tablet's padding and half its blur,
         // which is what reads as a different background over a busy page.
+        // Both lay their five cells edge to edge: the tablet instance on the
+        // Predict board (10657:218076) puts 146-wide cells at x = 19, 165,
+        // 311, 457 and 603, a step equal to the width, so there is no gap.
         "md:hidden fixed bottom-0 left-0 right-0 z-50",
-        "flex items-center gap-0 p-1 md:gap-1 md:px-[19px] md:py-2",
+        "flex items-center gap-0 p-1 md:px-[19px] md:py-2",
         // Height and bottom padding come from classes, not an inline style, so
         // the tablet step is reachable; both clear the home indicator.
         "h-[calc(54px+env(safe-area-inset-bottom,0px))] pb-[calc(4px+env(safe-area-inset-bottom,0px))]",

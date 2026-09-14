@@ -80,10 +80,11 @@ describe("MobileBottomNav — 10640:30604 phone geometry", () => {
     expect(nav.style.paddingBottom).toBe("");
   });
 
-  it("lays the five cells edge to edge with no gap on phones", () => {
+  it("lays the five cells edge to edge with no gap on phones and tablets", () => {
     const nav = renderBar();
     expect(nav.className).toContain("gap-0");
-    expect(nav.className).toContain("md:gap-1");
+    // 10657:218076: 146-wide tablet cells stepping by 146 (report 62cf7d83).
+    expect(nav.className).not.toContain("md:gap-");
     // justify-between spreads leftover space; the frame has none to spread,
     // and it fights flex-1 if the cells ever stop filling the row.
     expect(nav.className).not.toContain("justify-between");
