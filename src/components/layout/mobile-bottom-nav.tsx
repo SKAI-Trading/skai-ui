@@ -156,8 +156,9 @@ export function MobileBottomNav({
                   "Sm/Label 1 300" Mulish 12/16 on the phone frame,
                   "Md/Label 1 300" Mulish 14/16 on the tablet one. The step is
                   md (768) because that is where the second frame starts — sm
-                  (640) sits between boards and matches neither. */}
-              <span className="truncate font-medium leading-4 tracking-[-0.04em] text-[12px] md:text-[14px]">
+                  (640) sits between boards and matches neither. Both styles
+                  are Mulish Regular, so the weight is 400 at every width. */}
+              <span className="truncate font-normal leading-4 tracking-[-0.04em] text-[12px] md:text-[14px]">
                 {item.label}
               </span>
             </>

@@ -98,6 +98,14 @@ describe("MobileBottomNav — 10640:30604 phone geometry", () => {
     expect(label.className).not.toContain("sm:text-");
   });
 
+  it("sets the labels in Regular, as both label styles specify", () => {
+    renderBar();
+    const label = screen.getByText("Predict");
+    // "Sm/Label 1 300" and "Md/Label 1 300" are Mulish Regular (report 52d5cfd7).
+    expect(label.className).toContain("font-normal");
+    expect(label.className).not.toContain("font-medium");
+  });
+
   it("keeps the fill, rule and 16px icon box the frame specifies", () => {
     const nav = renderBar();
     expect(nav.className).toContain("bg-[rgba(0,22,21,0.6)]");
