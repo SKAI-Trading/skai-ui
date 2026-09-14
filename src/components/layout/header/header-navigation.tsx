@@ -433,11 +433,13 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
         align="start"
         sideOffset={2}
         // overflow-visible overrides the base overflow-hidden: with the enter
-        // animation's transform, overflow-hidden + rounded-xl made Chrome paint
-        // square top corners until a repaint (a hover) rounded them (bug
+        // animation's transform, overflow-hidden + a rounded panel made Chrome
+        // paint square top corners until a repaint (a hover) rounded them (bug
         // 7cbf1d5f). The rich-dropdown rows have transparent backgrounds, so
-        // nothing needs the overflow clip — rounded-xl still rounds the panel.
-        className="w-[300px] overflow-visible bg-[#122524] border-[#123f3c] rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
+        // nothing needs the overflow clip — the radius still rounds the panel.
+        // rounded-lg is 12px here (--radius), which is what the header frames
+        // draw for this panel; rounded-xl was 16.
+        className="w-[300px] overflow-visible bg-[#122524] border-[#123f3c] rounded-lg shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onCloseAutoFocus={(e) => e.preventDefault()}
