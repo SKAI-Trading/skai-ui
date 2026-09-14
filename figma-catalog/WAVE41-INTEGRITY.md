@@ -225,7 +225,7 @@ two peer gate errors above cleared before the closing gate run.
 [typecheck:gate] ✓ no new type errors. 2552 known baseline error(s); 46 fewer than baseline — run typecheck:gate:update to ratchet down.
 ```
 
-Read off the gate's own verdict line at 14:40 with every lane commit, the route
+Read off the gate's own verdict line at 13:24 Denver with every lane commit, the route
 registration and the Hooked narrowing fix in the tree. No `typecheck:gate:update` was run.
 
 ## 7. What is next
