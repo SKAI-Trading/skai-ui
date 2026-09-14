@@ -54,7 +54,15 @@ export const WalletConnectWalletIcon: React.FC<IconProps> = ({ className }) => (
   />
 );
 
-/** Figma `logos/others` Phantom: a 20px square clipped to a circle inside the 24px box. */
+/**
+ * Figma `logos/others` Phantom: a 20px square clipped to a circle inside the 24px box.
+ *
+ * The clip and the translate live on separate groups on purpose. A clip path
+ * is evaluated in the coordinate space of the element it is applied to, so a
+ * `clipPath` on the same `<g>` as `translate(2 2)` would shift the circle to
+ * (14,14) against a square that still spans 2..22: the disc lost its right and
+ * bottom edges and the ghost sat top-left (report 956fb9ad).
+ */
 export const PhantomWalletIcon: React.FC<IconProps> = ({ className }) => {
   const clipId = React.useId();
   return (
@@ -62,14 +70,16 @@ export const PhantomWalletIcon: React.FC<IconProps> = ({ className }) => {
       <clipPath id={clipId}>
         <circle cx="12" cy="12" r="10" />
       </clipPath>
-      <g clipPath={`url(#${clipId})`} transform="translate(2 2)">
-        <path d="M20 0H0V20H20V0Z" fill="#9886E5" />
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M8.89922 12.3361C8.22296 13.3723 7.08976 14.6837 5.58188 14.6837C4.86905 14.6837 4.18365 14.3903 4.18365 13.1156C4.18365 9.86927 8.61592 4.84391 12.7283 4.84391C15.0679 4.84391 16 6.46706 16 8.31031C16 10.6763 14.4647 13.3815 12.9385 13.3815C12.4542 13.3815 12.2166 13.1156 12.2166 12.6937C12.2166 12.5837 12.2349 12.4645 12.2714 12.3361C11.7505 13.2256 10.7452 14.051 9.80396 14.051C9.11855 14.051 8.77128 13.62 8.77128 13.0147C8.77128 12.7946 8.81698 12.5654 8.89922 12.3361ZM14.4557 8.24632C14.4557 8.78343 14.1389 9.05199 13.7844 9.05199C13.4245 9.05199 13.113 8.78343 13.113 8.24632C13.113 7.70922 13.4245 7.44067 13.7844 7.44067C14.1389 7.44067 14.4557 7.70922 14.4557 8.24632ZM12.4417 8.24632C12.4417 8.78343 12.1248 9.05199 11.7703 9.05199C11.4104 9.05199 11.0989 8.78343 11.0989 8.24632C11.0989 7.70922 11.4104 7.44067 11.7703 7.44067C12.1248 7.44067 12.4417 7.70922 12.4417 8.24632Z"
-          fill="#FFFDF8"
-        />
+      <g clipPath={`url(#${clipId})`}>
+        <g transform="translate(2 2)">
+          <path d="M20 0H0V20H20V0Z" fill="#9886E5" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M8.89922 12.3361C8.22296 13.3723 7.08976 14.6837 5.58188 14.6837C4.86905 14.6837 4.18365 14.3903 4.18365 13.1156C4.18365 9.86927 8.61592 4.84391 12.7283 4.84391C15.0679 4.84391 16 6.46706 16 8.31031C16 10.6763 14.4647 13.3815 12.9385 13.3815C12.4542 13.3815 12.2166 13.1156 12.2166 12.6937C12.2166 12.5837 12.2349 12.4645 12.2714 12.3361C11.7505 13.2256 10.7452 14.051 9.80396 14.051C9.11855 14.051 8.77128 13.62 8.77128 13.0147C8.77128 12.7946 8.81698 12.5654 8.89922 12.3361ZM14.4557 8.24632C14.4557 8.78343 14.1389 9.05199 13.7844 9.05199C13.4245 9.05199 13.113 8.78343 13.113 8.24632C13.113 7.70922 13.4245 7.44067 13.7844 7.44067C14.1389 7.44067 14.4557 7.70922 14.4557 8.24632ZM12.4417 8.24632C12.4417 8.78343 12.1248 9.05199 11.7703 9.05199C11.4104 9.05199 11.0989 8.78343 11.0989 8.24632C11.0989 7.70922 11.4104 7.44067 11.7703 7.44067C12.1248 7.44067 12.4417 7.70922 12.4417 8.24632Z"
+            fill="#FFFDF8"
+          />
+        </g>
       </g>
     </svg>
   );
