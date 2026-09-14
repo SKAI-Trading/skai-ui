@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-14T19:13:38.526Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-14T21:03:18.824Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -21,14 +21,14 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | play | ✅ | 345 | 128 | 217 | 33 | 15 | 74 | 36 | 0 | 66 |
 | wallet | ✅ | 178 | 125 | 53 | 35 | 65 | 60 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 0 | 98 | 12 | 0 | 1 |
-| coinflip | ✅ | 46 | 33 | 13 | 1 | 3 | 23 | 0 | 0 | 27 |
-| dice | ✅ | 36 | 26 | 10 | 1 | 6 | 13 | 0 | 0 | 8 |
-| chicken | ✅ | 31 | 21 | 10 | 1 | 0 | 11 | 0 | 0 | 15 |
-| blackjack | ✅ | 23 | 17 | 6 | 1 | 9 | 4 | 0 | 0 | 14 |
-| towers | ✅ | 31 | 17 | 14 | 1 | 3 | 6 | 0 | 0 | 7 |
-| crash | ✅ | 20 | 15 | 5 | 1 | 3 | 10 | 0 | 0 | 12 |
+| coinflip | ✅ | 46 | 33 | 13 | 1 | 0 | 26 | 0 | 0 | 27 |
+| dice | ✅ | 36 | 26 | 10 | 1 | 0 | 18 | 0 | 0 | 8 |
+| chicken | ✅ | 31 | 21 | 10 | 1 | 0 | 10 | 0 | 0 | 15 |
+| blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 3 | 0 | 0 | 14 |
+| towers | ✅ | 31 | 17 | 14 | 1 | 4 | 5 | 0 | 0 | 7 |
+| crash | ✅ | 20 | 15 | 5 | 1 | 0 | 13 | 0 | 0 | 12 |
 | skratch | ✅ | 21 | 15 | 6 | 1 | 3 | 9 | 0 | 0 | 11 |
-| plinko | ✅ | 21 | 15 | 6 | 1 | 3 | 6 | 0 | 0 | 8 |
+| plinko | ✅ | 21 | 15 | 6 | 1 | 0 | 8 | 0 | 0 | 8 |
 | vegas-fortune | 🚧 | 96 | 83 | 13 | 1 | 3 | 13 | 1 | 0 | 0 |
 | fisherman-slots | 🚧 | 78 | 69 | 9 | 1 | 1 | 53 | 0 | 0 | 0 |
 | safari-slots | 🚧 | 72 | 62 | 10 | 1 | 0 | 30 | 0 | 0 | 0 |
@@ -36,13 +36,13 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | cosmic-slots | 🚧 | 62 | 54 | 8 | 1 | 0 | 36 | 2 | 0 | 0 |
 | skai-cross |  | 15 | 15 | 0 | 1 | 0 | 0 | 0 | 15 | 0 |
 | rock-paper-scissors | ✅ | 24 | 15 | 9 | 1 | 0 | 2 | 0 | 0 | 7 |
-| mines | ✅ | 19 | 12 | 7 | 1 | 3 | 6 | 0 | 0 | 4 |
-| keno | ✅ | 27 | 12 | 15 | 1 | 0 | 7 | 0 | 0 | 8 |
+| mines | ✅ | 19 | 12 | 7 | 1 | 0 | 8 | 0 | 0 | 4 |
+| keno | ✅ | 27 | 12 | 15 | 1 | 0 | 10 | 0 | 0 | 8 |
 | fortune-wheel | ✅ | 25 | 11 | 14 | 1 | 0 | 4 | 0 | 0 | 15 |
-| slide | ✅ | 18 | 11 | 7 | 1 | 2 | 9 | 0 | 0 | 11 |
+| slide | ✅ | 18 | 11 | 7 | 1 | 0 | 10 | 0 | 0 | 11 |
 | roulette | ✅ | 21 | 11 | 10 | 1 | 0 | 2 | 0 | 0 | 10 |
 | darts | ✅ | 31 | 10 | 21 | 1 | 0 | 10 | 0 | 0 | 13 |
-| hilo | ✅ | 15 | 9 | 6 | 1 | 0 | 0 | 0 | 0 | 8 |
+| hilo | ✅ | 15 | 9 | 6 | 1 | 0 | 5 | 0 | 0 | 8 |
 | bingo | ✅ | 17 | 9 | 8 | 1 | 0 | 3 | 0 | 0 | 11 |
 | video-poker | ✅ | 14 | 8 | 6 | 1 | 0 | 2 | 0 | 0 | 4 |
 | limbo | ✅ | 14 | 8 | 6 | 1 | 0 | 7 | 0 | 0 | 8 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4654** | **2357** | | | **394** | **1621** | **307** | **35** | **1032** |
+| **all** | | **4654** | **2360** | | | **376** | **1642** | **307** | **35** | **1032** |
 
 ### Drift against live Figma
 
@@ -570,13 +570,13 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Coinflip | 33 | desktop, tablet, mobile | Desktop; Continuous Tab; Desktop Continuous; Target Tab; Target Tab Auto; Desktop Target … | partial/done/furniture | [9003-130613](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-130613&m=dev) |
+| Casino > Coinflip | 33 | desktop, tablet, mobile | Desktop; Continuous Tab; Desktop Continuous; Target Tab; Target Tab Auto; Desktop Target … | partial/furniture | [9003-130613](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-130613&m=dev) |
 
 ## Dice
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Dice | 26 | desktop, tablet, mobile | Skai > Home > Add > upload image > conversation 4 1VH; Tablet; Tablet Alt; Auto Advanced Extended; Auto; Auto No Infinity … | frame-defect/partial/done/furniture | [2736-25840](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=2736-25840&m=dev) |
+| Casino > Dice | 26 | desktop, tablet, mobile | Skai > Home > Add > upload image > conversation 4 1VH; Tablet; Tablet Alt; Auto Advanced Extended; Auto; Auto No Infinity … | frame-defect/partial/furniture | [2736-25840](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=2736-25840&m=dev) |
 
 ## Chicken
 
@@ -600,7 +600,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Crash | 15 | desktop, tablet, mobile | Alt; Extended LB; Auto; Auto Advanced; Desktop; LB With Header … | partial/done/furniture | [9003-94116](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-94116&m=dev) |
+| Casino > Crash | 15 | desktop, tablet, mobile | Alt; Extended LB; Auto; Auto Advanced; Desktop; LB With Header … | partial/furniture | [9003-94116](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-94116&m=dev) |
 
 ## Skratch
 
@@ -612,7 +612,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Plinko | 15 | desktop, tablet, mobile | Plinko Easy Mode; Plinko Ball Easy; Plinko Hard Mode; Plinko Medium Mode; Plinko Panel Auto; Plinko Ball Medium … | partial/done/furniture | [9003-79079](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-79079&m=dev) |
+| Casino > Plinko | 15 | desktop, tablet, mobile | Plinko Easy Mode; Plinko Ball Easy; Plinko Hard Mode; Plinko Medium Mode; Plinko Panel Auto; Plinko Ball Medium … | partial/furniture/frame-defect | [9003-79079](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-79079&m=dev) |
 
 ## Vegas-fortune
 
@@ -660,13 +660,13 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Mines | 12 | tablet, desktop, mobile | Mines all features; Mobile; Advanced; Advanced Auto; Image for Cover; Screenshot 2026-08-18 at 11.19.46 PM 1 … | partial/done/furniture | [9003-110110](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-110110&m=dev) |
+| Casino > Mines | 12 | tablet, desktop, mobile | Mines all features; Mobile; Advanced; Advanced Auto; Image for Cover; Screenshot 2026-08-18 at 11.19.46 PM 1 … | partial/furniture/frame-defect | [9003-110110](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-110110&m=dev) |
 
 ## Keno
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Keno | 12 | desktop, mobile | Desktop Selection; Starting; Desktop win; Auto Advanced Displayed; Desktop loss; image 6 | partial/furniture/frame-defect | [9433-12187](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9433-12187&m=dev) |
+| Casino > Keno | 12 | desktop, mobile | Desktop Selection; Starting; Desktop win; Auto Advanced Displayed; Desktop loss; image 6 | partial/furniture | [9433-12187](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9433-12187&m=dev) |
 
 ## Fortune-wheel
 
@@ -678,7 +678,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Slide | 11 | desktop, mobile | Desktop Full Game; Extended LB; Auto; Auto Advanced; Mobile; Mobile Extended LB … | partial/done | [10030-41378](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10030-41378&m=dev) |
+| Casino > Slide | 11 | desktop, mobile | Desktop Full Game; Extended LB; Auto; Auto Advanced; Mobile; Mobile Extended LB … | partial/frame-defect | [10030-41378](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=10030-41378&m=dev) |
 
 ## Roulette
 
@@ -696,7 +696,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Hi-Lo | 5 | desktop, tablet, mobile | Loss; Desktop | frame-defect | [9061-10499](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9061-10499&m=dev) |
+| Casino > Hi-Lo | 5 | desktop, tablet, mobile | Loss; Desktop | partial | [9061-10499](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9061-10499&m=dev) |
 
 ## Bingo
 

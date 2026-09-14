@@ -228,10 +228,123 @@ two peer gate errors above cleared before the closing gate run.
 Read off the gate's own verdict line at 13:24 Denver with every lane commit, the route
 registration and the Hooked narrowing fix in the tree. No `typecheck:gate:update` was run.
 
-## 7. What is next
+## 7. Games batch (2026-09-14, 14:00 to 15:02 Denver)
 
-The games batch: five lanes (`games-instant-a`, `games-instant-b`, `games-cards`,
-`games-arcade-a`, `games-arcade-b`) from their lane JSONs in the wave 41 scratchpad,
-run five or six at a time and allowed to finish. Every game page changed on 2026-09-10,
-so a game `done` row older than that is stale and each lane re-measures all of its
-frames. Then the web-app lanes at the same size.
+Five lanes over the 21 redrawn game pages, launched after Casey's "Do it all", run on a
+second model so the orchestrator's window was not the lanes'. It made no difference:
+all five died five minutes in on the same account-wide session limit and were resumed by
+id after the reset at 14:11, with their measured numbers intact. Every lane re-measured
+every frame in its work order, `done` rows included, because a game `done` older than
+2026-09-10 was a claim about the old frame.
+
+**The number went down, and that is the batch working.**
+
+| measure | before (batch b close) | after | delta |
+|---|---:|---:|---:|
+| `done` | 605 (15.9%) | 587 (15.4%) | **-18** |
+| `done` and visually verified | 174 (4.6%) | 164 (4.3%) | -10 |
+| claimed statuses pulled down by a visual verdict | 92 | 89 | -3 |
+| frames with a status row | 3,813 | 3,813 | 0 |
+
+The 21 game pages carried `done` rows from waves 8 through 39. On 2026-09-10 every
+phone cut was rebuilt: board and bet panel both 375 wide at x=0, children inset 16
+across and 12 down on a 343 column, an 8px seam between board and panel, no radius, the
+type ramp stepped per game (crash, limbo and coinflip drop to 12/14; dice keeps 12/16 and
+14/18). The desktop side did not move: every 954 by 621 board and every 356 panel
+re-read at what the catalog recorded. So the old `done` rows were true of the old frame
+and false of the new one, and the lanes wrote what they measured. Casey asked for the
+percentage to be true; a re-measurement that only ever raises the number is not one.
+
+| lane | rows | done | partial | blocked-on-backend | not-started | frame-defect | furniture |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| games-instant-a | 66 | 0 | 64 | 0 | 0 | 1 | 1 |
+| games-instant-b | 34 | 0 | 31 | 0 | 0 | 3 | 0 |
+| games-cards | 49 | 16 | 19 | 0 | 0 | 14 | 0 |
+| games-arcade-a | 39 | 0 | 34 | 0 | 0 | 3 | 2 |
+| games-arcade-b | 40 | 4 | 15 | 9 | 0 | 12 | 0 |
+| **total** | **228** | **20** | **163** | **9** | **0** | **33** | **3** |
+
+No lane used a browser, so a screen row is `done` only where the frame matches the
+source at every width it draws, stated in numbers. Rows the seat budget did not allow a
+re-read say `NOT RE-READ` and are never `done` (arcade-a 26, instant-b 15, arcade-b 12,
+gem-style honesty carried from batch b). The 33 frame defects are named per row: mis-filed
+frames (a Home upload frame on the Dice page), cuts that carry the desktop ramp at 375,
+lattices that disagree with their own base board, template payout literals repeated
+across three games, and the five retired 347 standalone frames.
+
+### Commits by lane (all `modules/skai-gaming`, explicit pathspecs, not pushed)
+
+- **games-instant-a** — `5e053832` crash phone 12/14 and 8px seam; `5ee68675` limbo
+  phone 12/14; `e538533f` coinflip 357 floor and 16/12 panel; `0bd1e1e1` dice CTA-first
+  panel and 290 board; `ba3fcb3a` crash and limbo 16/12 insets, crash 247 board;
+  `ad2bd21f` all four page columns to 16px; `9fc48414` limbo pills and hero.
+- **games-instant-b** — `15bca5e4` mines stake chips hug their label; `0cf3dc38` hilo
+  label and value ramp steps at md; `3ab1b925` slide reel re-read at 375; `428c67ba`
+  slide panel ladders re-derived; `85532d6c` mines, plinko and slide phone panels 16/12.
+- **games-cards** — `89751b55` blackjack phone board and panel refitted from a 345 box to
+  373; `fc374924` roulette Bet panel keeps only the Your Bets total (Casey's ruling
+  090e759d); `dd3fbf45` scratchers phone board, panel and paytable strip; `e2df0b16`
+  baccarat, video poker and the scratch board on the 343 column.
+- **games-arcade-a** — `6d214e2c` chicken column; `c264a366` darts column; `18119394`
+  darts widget (210 board cap, 38px chips and track).
+- **games-arcade-b** — `9e7a9b39` towers phone panel 375/343/16 with a 12 padY;
+  `77abbc9d` bingo and rps phone panels; `6262388b` towers CTA says Cashout; `8349bb06`
+  towers and price-grid docblocks; `86728d7a` cashout card ends on the token glyph.
+- **wave 23 (skai-trading-08), same window, by agreement** — `014ec542` PlayerMark, the
+  tinted pixel pillar for players with no photo, in tile win rows and the Top bets User
+  column; `8a1454b9` the /play hub column capped at 1318. Coinflip's Game Mode row stays
+  hidden by `targetPlayable = false` (ruling 0f0df6da, no change needed).
+
+### Hand-offs the games batch converged on
+
+- **GameShell (shared, blocks every phone row).** `components/play/shared/GameShell.tsx`
+  pads 12 and rounds 16 below md where every 375 frame draws 0 and square; the 19
+  `-mt-3 md:-mt-4` cancellations in the `*PageSections.tsx` files go with it in one
+  commit. Four lanes named it independently. Same owner: the shared input toggle is
+  40.593 by 24 in every frame and 38 by 21.333 in six panels.
+- **Sections the lanes could not reach.** `PlayGameDetailSections.tsx` owns keno's and
+  fortune-wheel's columns; `FortuneWheelPro`'s `HISTORY_CHIP.mobileScale` is fitted to the
+  retired 347 cut; baccarat has no route and no PageSections, so both page cuts stay
+  unbuilt; video poker's phone panel is a rebuild, not a spacing fix.
+- **Server.** Rock-paper-scissors has only `play_rps` on the points rail: no start, round
+  or cashout, no multi-hand (9 rows blocked). Bingo's frame draws a 50-slot tray the
+  server's four ball counts do not price.
+- **Player mark.** The per-game Community wins tables still draw initials; Casey's ruling
+  wants the tinted pillar for players with no photo. A follow-up lane carries
+  `PlayerAvatar fallback="mark"` into the 21 sections files.
+
+### Decisions only Casey can make (games)
+
+1. **Price Grid desktop.** Two 1440 layouts: 10030-30838 is a 356 panel beside a 954
+   canvas (what the code builds); 10030-39086 is one 1318 by 858 canvas with the fields on
+   the chart.
+2. **Slide's field.** Six panel frames say "Auto Cashout", both page cuts say "Target
+   Multiplier"; the 08-19 ruling picked the panels and the page cuts never followed.
+3. **Coinflip Target mode.** Nine frames measured, none built; it waits on a rule and a
+   house edge.
+4. **Template payouts.** Three cash-out cards on three games print the same 2.340195
+   under different multipliers; on the bingo badge it replaced 300.50303. No lane changed
+   a figure; the frames need a designer's pass.
+
+### Gate
+
+An early pass at 14:33 over the first twelve lane commits read clean:
+
+```text
+[typecheck:gate] ✓ no new type errors. 2552 known baseline error(s); 46 fewer than baseline — run typecheck:gate:update to ratchet down.
+```
+
+The closing pass at 15:10 over all 26 commits reported two new errors, both in
+`src/pages/Launchpad.tsx` (`safeExternalUrl` and `FigmaSearchIcon` not found). That file
+is dirty in the shared tree and belongs to wave 23's running batch-7 lane (L36-pages); it
+is a peer's edit caught mid-flight, not a games commit. No error in `modules/skai-gaming`
+on either pass. Read off the gate's own verdict line both times; no
+`typecheck:gate:update` was run.
+
+## 8. What is next
+
+The player-mark follow-up over the 21 sections files, then the nine web-app lanes (home,
+trade, trade-2, predict, social, governance-account, governance-explorer, onboarding,
+play-hub), fenced by file list against wave 23's remaining lanes (18 files moved to
+report-only) and run five and four at a time. The web-app Figma files did not change on
+2026-09-10, so those lanes work their open frames rather than re-measuring everything.
