@@ -130,6 +130,15 @@ export function MobileBottomNav({
             // (Bottom-navigation-tablet). The phone cell is 46 tall and the
             // stack is icon(16) + gap-0.5(2) + label leading-4(16) = 34, which
             // centres at the frame's y=6 / y=24.
+            //
+            // Horizontally the cell is NOT centred, on either board. On
+            // Bottom-navigation-mobile (6795:30736) the bar is 375x54 with five
+            // 73.4-wide cells at x = 4, 77.4, 150.8, 224.2, 297.6, and the icon
+            // lands at x = 26.7 — a stack centre of 34.7 where a centred cell
+            // would put it at 36.7. 4 left / 8 right is what closes those 2px,
+            // and it is the same uneven inset the tablet board draws at 16/20
+            // (the consumer appends that rung as md:pl-4 md:pr-5).
+            "pl-1 pr-2",
             "flex flex-1 min-w-0 flex-col items-center justify-center gap-0.5 h-full rounded-lg md:flex-row md:gap-1.5",
             "transition-colors duration-200 motion-reduce:transition-none active:scale-95",
             active ? "text-primary" : "text-white/90 hover:text-white",
