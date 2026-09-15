@@ -34,7 +34,7 @@
   "is the loud guard `coverage.mjs` refuses to run without. This file remains the source",
   "of page NAMES, readiness and section mapping, which is what `build-registry.mjs` reads."
  ],
- "harvested": "2026-09-09",
+ "harvested": "2026-09-15",
  "method": "harvest.mjs ingest --full: page names, readiness and liveChildren synced from live/_pages.json after a complete Plugin-API sweep of every page",
  "readinessLegend": {
   "✅": "ready",
@@ -486,8 +486,8 @@
   {
    "fileKey": "M6r9FEn042UWTQD1zvy6GM",
    "pageId": "10265:2",
-   "pageName": "🚧 Safari Slots - Skai originals",
-   "readiness": "wip",
+   "pageName": "✅ Untamed - Skai originals",
+   "readiness": "ready",
    "liveChildren": 72,
    "sections": [
     "safari-slots"
@@ -497,8 +497,8 @@
   {
    "fileKey": "M6r9FEn042UWTQD1zvy6GM",
    "pageId": "10266:5",
-   "pageName": "🚧 Cosmic Slots - Skai originals",
-   "readiness": "wip",
+   "pageName": "✅ Starbound - Skai originals",
+   "readiness": "ready",
    "liveChildren": 62,
    "sections": [
     "cosmic-slots"
@@ -508,8 +508,8 @@
   {
    "fileKey": "M6r9FEn042UWTQD1zvy6GM",
    "pageId": "10266:6",
-   "pageName": "🚧 Vegas fortune - Skai originals",
-   "readiness": "wip",
+   "pageName": "✅ Vegas fortune - Skai originals",
+   "readiness": "ready",
    "liveChildren": 96,
    "sections": [
     "vegas-fortune"
@@ -519,9 +519,9 @@
   {
    "fileKey": "M6r9FEn042UWTQD1zvy6GM",
    "pageId": "10266:7",
-   "pageName": "🚧 Gem Slots - Skai originals",
-   "readiness": "wip",
-   "liveChildren": 68,
+   "pageName": "✅ Sugar Rush - Skai originals",
+   "readiness": "ready",
+   "liveChildren": 66,
    "sections": [
     "gem-slots"
    ],
@@ -539,9 +539,9 @@
   {
    "fileKey": "M6r9FEn042UWTQD1zvy6GM",
    "pageId": "11095:2603",
-   "pageName": "🚧 Fisherman Slots - Skai originals",
-   "readiness": "wip",
-   "liveChildren": 78,
+   "pageName": "✅ Hooked - Skai originals",
+   "readiness": "ready",
+   "liveChildren": 79,
    "sections": [
     "fisherman-slots"
    ]
@@ -735,9 +735,27 @@
    "wave 41 web-app batch 2 (governance-account, governance-explorer, onboarding, play-hub, plus the gaming-shared pass; 16:05-16:57): status.wave41.{governance-account,governance-explorer,onboarding,play-hub}.tsv, 630 rows; done 590 -> 590 (no browser ran, nothing claims a measured render), verified 167 -> 167, verdict pull-downs 38 -> 32; 25 whole-frame matches added to vverify.{governance,onboarding,play}.tsv. Seven governance commits and six explorer commits in the superproject, five in skai-gaming (game shell full bleed at 375, close dialog, RTP strip, game-detail bar), one in skai-landing (dashboard bento). Every wave 41 section is now stamped: 1,882 rows. Report: WAVE41-INTEGRITY.md sections 9 and 10.",
    "wave 42 (ten lanes, 17:55-19:15): executes Casey's 17:35 rulings on the wave 41 decisions. Figma is the source: Safari, Cosmic, Gem and Fisherman slots are drawn and now named Untamed, Starbound, Sugar rush and Hooked (ids unchanged); the explorer body is 1318 and its gas unit is rei; the airdrop conversion rate is an admin-settable app_config row, unavailable until set; the Bridge is one ticket; base governs over ALT; Skai University (64 frames) and the per-opportunity Earn detail routes (100 frames) exist with unavailable states where no source exists; the Performance overview mounts on /account; the creator-profile shell mounts at /:username and /post/:postId reaches thirteen built frames. status.wave42.{games-names,explorer,account,play-hub,social-profile,bridge,university,earn-detail,trade-followups,governance-handoffs}.tsv, 585 rows; done 590 -> 592, verified 167 -> 169, 50 whole-frame matches added to the vverify files. Two migrations applied (airdrop rate seed; app_config reads honour is_public). Report: WAVE42-INTEGRITY.md.",
    "wave 43 (five measure-only lanes, 22:12-22:30): re-measured the 268 frames wave 23's bug-report fixes were built against, from session 08's consolidated list. status.wave43.{home,trench-launch,play-sports,wallet-social-predict,trade}.tsv, 266 rows: 68 done, 187 partial, 3 blocked, 2 not-started, 6 frame-defect; 55 whole-frame matches added to the vverify files. done 592 -> 585 (14 class-tested wave 23 claims did not survive a live read), verified 169 -> 174. 133 rows name nodes the registry does not hold because the home, wallet and trade harvests were refused short in September; they fold in when those sections are re-harvested. Report: WAVE43-INTEGRITY.md."
+  ],
+  "2026-09-15": [
+   "harvest.mjs verify-ingest: mhF3BkzlTaGiLzJ7kvpmVc 7 page(s), 3sSzw1KewMtUbeLAv7uW0r 13 page(s), M6r9FEn042UWTQD1zvy6GM 26 page(s) hashed equal to live/ and stamped harvested; 5 changed page(s) left for ingest.",
+   "harvest.mjs ingest:",
+   "M6r9FEn042UWTQD1zvy6GM 10265:2: page renamed \"🚧 Safari Slots - Skai originals\" -> \"✅ Untamed - Skai originals\"",
+   "M6r9FEn042UWTQD1zvy6GM 10265:2 ✅ Untamed - Skai originals: readiness wip -> ready",
+   "M6r9FEn042UWTQD1zvy6GM 10266:5: page renamed \"🚧 Cosmic Slots - Skai originals\" -> \"✅ Starbound - Skai originals\"",
+   "M6r9FEn042UWTQD1zvy6GM 10266:5 ✅ Starbound - Skai originals: readiness wip -> ready",
+   "M6r9FEn042UWTQD1zvy6GM 10266:6: page renamed \"🚧 Vegas fortune - Skai originals\" -> \"✅ Vegas fortune - Skai originals\"",
+   "M6r9FEn042UWTQD1zvy6GM 10266:6 ✅ Vegas fortune - Skai originals: readiness wip -> ready",
+   "M6r9FEn042UWTQD1zvy6GM 10266:7: page renamed \"🚧 Gem Slots - Skai originals\" -> \"✅ Sugar Rush - Skai originals\"",
+   "M6r9FEn042UWTQD1zvy6GM 10266:7 ✅ Sugar Rush - Skai originals: readiness wip -> ready",
+   "M6r9FEn042UWTQD1zvy6GM 10266:7 ✅ Sugar Rush - Skai originals: 68 -> 66 top-level children (+0 / -2)",
+   "M6r9FEn042UWTQD1zvy6GM 11095:2603: page renamed \"🚧 Fisherman Slots - Skai originals\" -> \"✅ Hooked - Skai originals\"",
+   "M6r9FEn042UWTQD1zvy6GM 11095:2603 ✅ Hooked - Skai originals: readiness wip -> ready",
+   "M6r9FEn042UWTQD1zvy6GM 11095:2603 ✅ Hooked - Skai originals: 78 -> 79 top-level children (+3 / -2)",
+   "attach: the 133 wave 43 rows that named nodes outside the registry are attached. Probed live with getNodeByIdAsync on all three files: every id is alive; 130 are NESTED frames (depth 1 to 10) under live top-level frames, 3 are new top-level frames on the Hooked page (the HUD balance bars 12050:1948, 12050:1987, 12052:2027). The nested 130 were appended to their section nodes.txt and titles.tsv (title = the top frame catalog title, then the lane label, then the layer name and size) and recorded in live/_resolved.json; the 3 arrived through the page ingest. registry 4654 -> 4783 frames (+133, -4 gone: two menu-mobile cuts each on Sugar Rush and Hooked, both already reported missing by the wave 41 slots lanes). Ten sportsbook ids in the wave 43 list carried the web-app-2 key; they live on the Play page of Skai-Web-App and were attached there.",
+   "correction: WAVE43-INTEGRITY.md section 2 and the 2026-09-14 wave 43 line above blamed the September short harvests for the 133 orphan rows. That was wrong: verify-ingest today hashed every Home, Wallet and Trade page equal to live/, so the top-level lists were already current. The rows were orphans because a page-children harvest can never see a nested frame, at any depth. A row that cites a nested node needs a probe (harvest.mjs probe-ingest), not a re-harvest."
   ]
  },
- "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.\n\n2026-09-06 - PARTIAL fold-in of the wave-21 harvest: 27 of 33 sections, +519 registry frames (3776 -> 4295). The top-level `harvested` field deliberately STAYS at 2026-08-18 per the convention above - this was not a full sweep.\n\nSIX SECTIONS WERE REFUSED and still carry their 2026-08-18 ids: towers (75% of catalogued ids absent from the capture), wallet 51%, trade 49%, home 38%, keno 33%, hilo 30%. Those are SHORT HARVESTS, not deletions. `get_metadata` does not descend into every frame and says nothing about having stopped, so wave 21's `liveChildCount` was a second read of the SAME lossy instrument and agreed with its node list exactly - the completeness check passed while being entirely defeated. Wave 23 measured the gap directly: 1,914 of a towers page's 2,011 real descendants.\n\nFolding those six in would have DELETED 407 trade ids, 183 wallet, 136 home, 88 trade-2 and 54 towers, taking the hand-set implFiles/status/notes keyed to each one with them. snapshot-to-nodes.mjs now refuses any section whose capture is missing more than 25% of its catalogued ids, because a design file does not shed a quarter of a section in nineteen days - a short capture looks exactly like that and passes every count-based check.\n\nTo close the six: re-harvest via the Plugin API (use_figma), which is the only instrument that enumerates a page completely.\n\n2026-09-06 - page-list verification across all three files via figma.root.children, diffed against this file by pageId. All 50 pages match: 0 new, 0 absent. The list was already current; the 08-18 stamp was a stale LABEL on live data, and a stamp that reads nineteen days old is itself a defect because it invites a re-harvest nobody needs. WATCH OUT: children.length reads 0 for any page the session has not loaded, so a page-list pass cannot also collect live counts - Play returned 0 here and 345 when loaded. This pass certifies the page SET only.",
+ "_reharvested": "2026-08-05 — full live re-harvest of BOTH files via PageNode.loadAsync (no page switching needed, unlike the 07-29 pass). 31 pages: 16 ready-for-dev, 10 under-construction, 5 meta. No new pages since 07-29.\n\n2026-08-18 — targeted live re-harvest of 25 sections across all three files (setCurrentPageAsync per page; every returned count verified against the count seen when listing the page). Skai-Games went 22 -> 24 pages. Drift was logged BEFORE anything was overwritten: figma-todo.games.tsv and figma-todo.webapp-0818.tsv.\n\n2026-08-20 — SOCIAL PAGE ONLY (4914:113562), one page, not a sweep. 311 -> 442 top-level children, page renamed 🚧 -> ✅. Every other page in this file is still at its 2026-08-18 reading and the top-level `harvested` field still says 2026-08-18 on purpose — a one-page re-read must not advertise itself as a full harvest. Enumeration: social.live-0821.tsv. Drift: figma-todo.social-0821.tsv / figma-drift.social-0821.json.\n\n2026-09-06 - PARTIAL fold-in of the wave-21 harvest: 27 of 33 sections, +519 registry frames (3776 -> 4295). The top-level `harvested` field deliberately STAYS at 2026-08-18 per the convention above - this was not a full sweep.\n\nSIX SECTIONS WERE REFUSED and still carry their 2026-08-18 ids: towers (75% of catalogued ids absent from the capture), wallet 51%, trade 49%, home 38%, keno 33%, hilo 30%. Those are SHORT HARVESTS, not deletions. `get_metadata` does not descend into every frame and says nothing about having stopped, so wave 21's `liveChildCount` was a second read of the SAME lossy instrument and agreed with its node list exactly - the completeness check passed while being entirely defeated. Wave 23 measured the gap directly: 1,914 of a towers page's 2,011 real descendants.\n\nFolding those six in would have DELETED 407 trade ids, 183 wallet, 136 home, 88 trade-2 and 54 towers, taking the hand-set implFiles/status/notes keyed to each one with them. snapshot-to-nodes.mjs now refuses any section whose capture is missing more than 25% of its catalogued ids, because a design file does not shed a quarter of a section in nineteen days - a short capture looks exactly like that and passes every count-based check.\n\nTo close the six: re-harvest via the Plugin API (use_figma), which is the only instrument that enumerates a page completely.\n\n2026-09-06 - page-list verification across all three files via figma.root.children, diffed against this file by pageId. All 50 pages match: 0 new, 0 absent. The list was already current; the 08-18 stamp was a stale LABEL on live data, and a stamp that reads nineteen days old is itself a defect because it invites a re-harvest nobody needs. WATCH OUT: children.length reads 0 for any page the session has not loaded, so a page-list pass cannot also collect live counts - Play returned 0 here and 345 when loaded. This pass certifies the page SET only.\n\n2026-09-15 - verify pass on all three files (46 of 51 pages hash-equal to live/ and stamped); the five slots pages re-ingested after their rename to Untamed / Starbound / Vegas fortune / Sugar Rush / Hooked and their promotion to ready. The six-section refusal recorded above (2026-09-06) is CLOSED: the 09-11 and 09-15 verify passes hash every one of those pages equal to live/, so towers, wallet, trade, home, keno and hilo carry current top-level lists. What a top-level harvest still cannot see is a nested frame; 130 such ids were attached today by probe (see figmaChangeLog).",
  "outOfScope": {
   "🚧 Titles + Emblems": "Not SKAI screens. A 1,157-node REFERENCE board for a future titles/emblems system: badge tiles at 188x40 / 67x64, node names 'image 2'..'image N', and descriptions copied verbatim from Call of Duty achievements (\"Complete the 'Collateral Damage' challenge. Kill 2 or more enemies with a single sniper rifle bullet\"). Zero frames match a screen convention. This is the same 'examples of what the reporter likes' material Casey flagged 2026-08-05 — inspiration, not a spec. Re-scope only if SKAI authors its own emblem screens.",
   "Towars Draft (Disregard)": "2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready Towers page (9061:15449): 9 FRAME nodes with generic names (Desktop Full Game, Frame 10000040xx) and 42 loose nodes. Scope `excluded` in live/_pages.json. Re-scope only if the page is renamed."

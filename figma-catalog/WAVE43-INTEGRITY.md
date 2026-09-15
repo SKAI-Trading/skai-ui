@@ -54,6 +54,21 @@ were built from, or the 133 nodes must be added to those lists explicitly from t
 status rows (each row carries the node id, the frame title with its width, and the
 file key).
 
+**Closed 2026-09-15, and the cause above was wrong.** All 133 ids were probed live with
+`getNodeByIdAsync` on their file: every one is alive. 130 are nested frames (depth 1 to
+10) under top-level frames the registry already held; 3 are new top-level frames on the
+Hooked page (the HUD balance bars). A page-children harvest can never see a nested frame,
+however complete it is, and `verify-ingest` the same day hashed every Home, Wallet and
+Trade page equal to `live/`, so the September short-harvest story does not explain these
+rows. The 130 were appended to their section's `nodes.txt` and `titles.tsv` (title = the
+top frame's catalog title, then the lane's label, then the layer name and size) and
+recorded in `live/_resolved.json`; the 3 arrived through a re-ingest of the Hooked page.
+Ten sportsbook ids carried the web-app-2 key in 08's list and resolve on the Play page of
+Skai-Web-App; they were attached there. Registry 4,654 -> 4,783 frames; every wave 43 row
+now applies to a frame. The parity headline did not move (585 done of 3,813), because a
+nested frame is not in the live top-level denominator; what moved is that the 133 measured
+verdicts are now attached to frames a lane can be briefed on.
+
 ## 3. Findings that travel
 
 - **Wave 23's `done` was a class-test claim.** Six trench and launch frames, seven wallet

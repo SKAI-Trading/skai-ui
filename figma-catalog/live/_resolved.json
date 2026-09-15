@@ -1,5 +1,5 @@
 {
-  "resolvedAt": "2026-09-11",
+  "resolvedAt": "2026-09-15",
   "method": "figma.getNodeByIdAsync per candidate, per file, after loadAsync on every page; top-level ancestor found by walking parents to the PAGE",
   "candidatesChecked": 398,
   "filesChecked": [
@@ -7,7 +7,7 @@
     "mhF3BkzlTaGiLzJ7kvpmVc",
     "M6r9FEn042UWTQD1zvy6GM"
   ],
-  "foundCount": 285,
+  "foundCount": 416,
   "notFoundCount": 25,
   "foundPerFile": {
     "3sSzw1KewMtUbeLAv7uW0r": 46,
@@ -526,7 +526,8 @@
       "depth": 2,
       "topLevelId": "7717-13587",
       "pageId": "2998-19593",
-      "pageName": "✅ Wallet 1"
+      "pageName": "✅ Wallet 1",
+      "probedAt": "2026-09-15"
     },
     "13458-191869": {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -1363,7 +1364,8 @@
       "depth": 5,
       "topLevelId": "9433-12187",
       "pageId": "9390-18295",
-      "pageName": "✅ Keno - Skai originals"
+      "pageName": "✅ Keno - Skai originals",
+      "probedAt": "2026-09-15"
     },
     "9799-16719": {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -2584,6 +2586,1316 @@
       "pageId": "9061-15449",
       "pageName": "✅ Towers - Skai originals",
       "probedAt": "2026-09-11"
+    },
+    "13006-285930": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1260",
+      "depth": 1,
+      "topLevelId": "13006-285929",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "9785-161003": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1264",
+      "depth": 5,
+      "topLevelId": "9081-265572",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9785-161048": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "signals",
+      "depth": 5,
+      "topLevelId": "9081-265572",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9785-161305": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "section",
+      "depth": 3,
+      "topLevelId": "9081-266657",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "13008-122995": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "bento",
+      "depth": 2,
+      "topLevelId": "13008-122979",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-353775": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "sidebar - open",
+      "depth": 1,
+      "topLevelId": "13006-352370",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "6849-37182": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "section",
+      "depth": 4,
+      "topLevelId": "6782-25160",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "6925-67091": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "card group",
+      "depth": 3,
+      "topLevelId": "6925-67023",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "13447-186055": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "13447-186054",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2",
+      "probedAt": "2026-09-15"
+    },
+    "13449-187103": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "13449-187102",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2",
+      "probedAt": "2026-09-15"
+    },
+    "13486-49630": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Header-desktop",
+      "depth": 1,
+      "topLevelId": "13486-49591",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "13486-49723": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1137",
+      "depth": 1,
+      "topLevelId": "13486-49591",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "13008-125095": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "13008-125093",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2",
+      "probedAt": "2026-09-15"
+    },
+    "13008-125300": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "13008-125298",
+      "pageId": "13008-110718",
+      "pageName": "✅ Home 2",
+      "probedAt": "2026-09-15"
+    },
+    "5810-111091": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 221",
+      "depth": 2,
+      "topLevelId": "5810-111037",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "4437-112651": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "4437-112650",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "2737-28178": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "2737-28177",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "2760-9936": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "2760-9935",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "2769-14708": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "2769-14707",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "5902-146885": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "section",
+      "depth": 2,
+      "topLevelId": "2899-16515",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "2773-8068": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "section",
+      "depth": 2,
+      "topLevelId": "2773-7535",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "2853-9727": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "section",
+      "depth": 2,
+      "topLevelId": "2853-9675",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "5926-15470": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "5926-13672",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "9002-157083": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Nav of chart",
+      "depth": 4,
+      "topLevelId": "9002-157018",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9002-158074": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Nav of chart",
+      "depth": 4,
+      "topLevelId": "9002-157018",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9002-157105": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Row 2",
+      "depth": 4,
+      "topLevelId": "9002-157018",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9780-147207": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 300",
+      "depth": 3,
+      "topLevelId": "9002-157018",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9069-261070": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 341",
+      "depth": 3,
+      "topLevelId": "9069-259546",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9069-261103": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 342",
+      "depth": 3,
+      "topLevelId": "9069-259546",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9069-261128": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "CTA/button",
+      "depth": 2,
+      "topLevelId": "9069-259546",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9050-213899": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "dropdown-3",
+      "depth": 1,
+      "topLevelId": "9050-212503",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9050-212444": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "dropdown-3",
+      "depth": 1,
+      "topLevelId": "9050-209536",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9061-244538": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "dropdown-3",
+      "depth": 1,
+      "topLevelId": "9061-243175",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "3972-30250": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "dropdown-3",
+      "depth": 1,
+      "topLevelId": "3972-28764",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9770-133755": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 160",
+      "depth": 6,
+      "topLevelId": "9770-133659",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9780-145912": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1219",
+      "depth": 2,
+      "topLevelId": "9780-145861",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9135-85235": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1220",
+      "depth": 2,
+      "topLevelId": "9135-85233",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9135-86727": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1217",
+      "depth": 1,
+      "topLevelId": "9135-85233",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9104-77795": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "card",
+      "depth": 7,
+      "topLevelId": "9102-300724",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9104-77776": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 447",
+      "depth": 1,
+      "topLevelId": "9102-300724",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9148-80644": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "9148-80746",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9042-164219": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1220",
+      "depth": 2,
+      "topLevelId": "9042-164168",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9777-101728": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1222",
+      "depth": 3,
+      "topLevelId": "9777-101670",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9148-78693": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "9048-190933",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9148-79119": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "9148-79309",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9050-207877": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "9050-206715",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "13006-146465": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Row",
+      "depth": 4,
+      "topLevelId": "13006-146233",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-146276": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "card",
+      "depth": 6,
+      "topLevelId": "13006-146233",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-234863": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "content",
+      "depth": 8,
+      "topLevelId": "13006-233358",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-299450": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1394",
+      "depth": 5,
+      "topLevelId": "13006-299321",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-246718": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1157",
+      "depth": 3,
+      "topLevelId": "13006-246442",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-349050": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Pulse card - Intel ALT",
+      "depth": 4,
+      "topLevelId": "13006-349035",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-232413": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 301",
+      "depth": 5,
+      "topLevelId": "13006-230793",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-302848": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1340",
+      "depth": 2,
+      "topLevelId": "13006-302846",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-353852": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 1,
+      "topLevelId": "13006-353851",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-290304": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1341",
+      "depth": 1,
+      "topLevelId": "13006-290303",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-260063": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1296",
+      "depth": 2,
+      "topLevelId": "13006-260059",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-260062": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 445",
+      "depth": 1,
+      "topLevelId": "13006-260059",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-260215": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 299",
+      "depth": 3,
+      "topLevelId": "13006-260059",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-260213": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 445",
+      "depth": 1,
+      "topLevelId": "13006-260059",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-260089": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Trench scroller",
+      "depth": 1,
+      "topLevelId": "13006-260059",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-260244": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Pulse card - Intel ALT",
+      "depth": 5,
+      "topLevelId": "13006-260059",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13008-27743": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "input/primary-inputs",
+      "depth": 5,
+      "topLevelId": "13008-27689",
+      "pageId": "13008-26951",
+      "pageName": "✅ Wallet 2",
+      "probedAt": "2026-09-15"
+    },
+    "13008-43100": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "input/primary-inputs",
+      "depth": 5,
+      "topLevelId": "13008-43059",
+      "pageId": "13008-26951",
+      "pageName": "✅ Wallet 2",
+      "probedAt": "2026-09-15"
+    },
+    "13008-44161": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "input/primary-inputs",
+      "depth": 5,
+      "topLevelId": "13008-44120",
+      "pageId": "13008-26951",
+      "pageName": "✅ Wallet 2",
+      "probedAt": "2026-09-15"
+    },
+    "9002-158175": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "Bottom-navigation-tablet",
+      "depth": 1,
+      "topLevelId": "9002-157018",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "6795-30736": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "INSTANCE",
+      "name": "Bottom-navigation-mobile",
+      "depth": 1,
+      "topLevelId": "6795-30496",
+      "pageId": "2003-674",
+      "pageName": "✅ Home 1",
+      "probedAt": "2026-09-15"
+    },
+    "13008-43114": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "dropdown-3",
+      "depth": 1,
+      "topLevelId": "13008-43059",
+      "pageId": "13008-26951",
+      "pageName": "✅ Wallet 2",
+      "probedAt": "2026-09-15"
+    },
+    "7797-71630": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "7774-68417",
+      "pageId": "2998-19593",
+      "pageName": "✅ Wallet 1",
+      "probedAt": "2026-09-15"
+    },
+    "7774-71414": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "7774-69886",
+      "pageId": "2998-19593",
+      "pageName": "✅ Wallet 1",
+      "probedAt": "2026-09-15"
+    },
+    "7774-71454": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "7774-70180",
+      "pageId": "2998-19593",
+      "pageName": "✅ Wallet 1",
+      "probedAt": "2026-09-15"
+    },
+    "7774-71260": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "modal",
+      "depth": 2,
+      "topLevelId": "7774-69004",
+      "pageId": "2998-19593",
+      "pageName": "✅ Wallet 1",
+      "probedAt": "2026-09-15"
+    },
+    "7713-15130": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 337",
+      "depth": 1,
+      "topLevelId": "7713-14212",
+      "pageId": "2998-19593",
+      "pageName": "✅ Wallet 1",
+      "probedAt": "2026-09-15"
+    },
+    "7713-15656": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "dropdown-3",
+      "depth": 2,
+      "topLevelId": "7713-15272",
+      "pageId": "2998-19593",
+      "pageName": "✅ Wallet 1",
+      "probedAt": "2026-09-15"
+    },
+    "7713-16123": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 337",
+      "depth": 1,
+      "topLevelId": "7713-15682",
+      "pageId": "2998-19593",
+      "pageName": "✅ Wallet 1",
+      "probedAt": "2026-09-15"
+    },
+    "9002-163721": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1220",
+      "depth": 2,
+      "topLevelId": "9002-163670",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "7712-29439": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Order book",
+      "depth": 2,
+      "topLevelId": "3886-15237",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9002-157020": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 6",
+      "depth": 2,
+      "topLevelId": "9002-157018",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9002-161614": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 1220",
+      "depth": 2,
+      "topLevelId": "9002-161563",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9002-158102": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 444",
+      "depth": 2,
+      "topLevelId": "9002-157018",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9780-157337": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 444",
+      "depth": 2,
+      "topLevelId": "9042-164814",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "9050-213971": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Frame 337",
+      "depth": 1,
+      "topLevelId": "9050-214062",
+      "pageId": "3-3",
+      "pageName": "✅ Trade 1",
+      "probedAt": "2026-09-15"
+    },
+    "13006-136580": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Pulse card - Intel ALT",
+      "depth": 9,
+      "topLevelId": "13006-135613",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "13006-216128": {
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "type": "FRAME",
+      "name": "Instant trade",
+      "depth": 6,
+      "topLevelId": "13006-214989",
+      "pageId": "13006-134300",
+      "pageName": "✅ Trade 2",
+      "probedAt": "2026-09-15"
+    },
+    "11214-131710": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Top main",
+      "depth": 2,
+      "topLevelId": "11214-131691",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "9099-146833": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Main container",
+      "depth": 4,
+      "topLevelId": "9099-146637",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "9099-146905": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 637",
+      "depth": 7,
+      "topLevelId": "9099-146637",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11084-62383": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "nav",
+      "depth": 2,
+      "topLevelId": "11084-62278",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11064-20612": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 405",
+      "depth": 3,
+      "topLevelId": "11066-23332",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "10912-148129": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 604",
+      "depth": 3,
+      "topLevelId": "10855-53595",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11084-62326": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 1000003844",
+      "depth": 2,
+      "topLevelId": "11084-62278",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "10912-148172": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 345",
+      "depth": 3,
+      "topLevelId": "10855-53595",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11211-82936": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 345",
+      "depth": 3,
+      "topLevelId": "11211-82876",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11084-64983": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 1000003833",
+      "depth": 1,
+      "topLevelId": "11084-64943",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11084-64586": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 1000003833",
+      "depth": 1,
+      "topLevelId": "11084-63426",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11066-22993": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Main container",
+      "depth": 2,
+      "topLevelId": "11066-23332",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11066-23094": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "images/circle",
+      "depth": 6,
+      "topLevelId": "11066-23332",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "10912-148148": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "card",
+      "depth": 4,
+      "topLevelId": "10855-53595",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "10912-148158": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "card",
+      "depth": 4,
+      "topLevelId": "10855-53595",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11202-44213": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 1000003874",
+      "depth": 4,
+      "topLevelId": "11202-44169",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11202-44201": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 1000003873",
+      "depth": 4,
+      "topLevelId": "11202-44169",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11109-81868": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Main container",
+      "depth": 2,
+      "topLevelId": "11066-23332",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11109-81874": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 186",
+      "depth": 4,
+      "topLevelId": "11066-23332",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11066-24288": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 1000003844",
+      "depth": 2,
+      "topLevelId": "11066-23332",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11214-131957": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Scroll bar 4",
+      "depth": 1,
+      "topLevelId": "11066-23332",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "10657-217698": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 403",
+      "depth": 3,
+      "topLevelId": "10657-217688",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict",
+      "probedAt": "2026-09-15"
+    },
+    "10657-218029": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Header-tablet",
+      "depth": 1,
+      "topLevelId": "10657-217688",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict",
+      "probedAt": "2026-09-15"
+    },
+    "10657-217898": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 461",
+      "depth": 5,
+      "topLevelId": "10657-217688",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict",
+      "probedAt": "2026-09-15"
+    },
+    "10657-218076": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "INSTANCE",
+      "name": "Bottom-navigation-tablet",
+      "depth": 1,
+      "topLevelId": "10657-217688",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict",
+      "probedAt": "2026-09-15"
+    },
+    "5523-103268": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "dropdown-3",
+      "depth": 1,
+      "topLevelId": "5518-100072",
+      "pageId": "5210-118077",
+      "pageName": "✅ Governance and Utilities",
+      "probedAt": "2026-09-15"
+    },
+    "5534-92972": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 278",
+      "depth": 5,
+      "topLevelId": "5534-92868",
+      "pageId": "5210-118077",
+      "pageName": "✅ Governance and Utilities",
+      "probedAt": "2026-09-15"
+    },
+    "5198-50416": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 814",
+      "depth": 10,
+      "topLevelId": "5198-50314",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social",
+      "probedAt": "2026-09-15"
+    },
+    "4913-96283": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "row",
+      "depth": 5,
+      "topLevelId": "4911-92925",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "5110-187519": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 629",
+      "depth": 3,
+      "topLevelId": "5110-187509",
+      "pageId": "4914-113562",
+      "pageName": "✅ Social",
+      "probedAt": "2026-09-15"
+    },
+    "8610-164278": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "markets",
+      "depth": 3,
+      "topLevelId": "8610-163972",
+      "pageId": "3173-26018",
+      "pageName": "✅ Predict",
+      "probedAt": "2026-09-15"
+    },
+    "11107-74005": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Frame 632",
+      "depth": 3,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11107-74013": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "nav",
+      "depth": 2,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11107-74040": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Main container",
+      "depth": 3,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11107-74499": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Main container",
+      "depth": 3,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11107-74623": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Main container",
+      "depth": 3,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11109-80693": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "Main container",
+      "depth": 3,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11109-80885": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 5,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11109-80890": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "items",
+      "depth": 5,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11109-80906": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 5,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "11109-80944": {
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "type": "FRAME",
+      "name": "FAQ",
+      "depth": 4,
+      "topLevelId": "11109-81960",
+      "pageId": "4459-128102",
+      "pageName": "✅ Play",
+      "probedAt": "2026-09-15"
+    },
+    "9003-131212": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "sidebar",
+      "depth": 1,
+      "topLevelId": "9003-130613",
+      "pageId": "9003-122027",
+      "pageName": "✅ Coinflip - Skai originals",
+      "probedAt": "2026-09-15"
+    },
+    "9937-18892": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Desktop",
+      "depth": 6,
+      "topLevelId": "9907-1595",
+      "pageId": "9390-18298",
+      "pageName": "✅ Rock Paper Scissors - Skai originals",
+      "probedAt": "2026-09-15"
+    },
+    "9003-143366": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "main",
+      "depth": 6,
+      "topLevelId": "9003-142707",
+      "pageId": "9003-133221",
+      "pageName": "✅ Scratchers - Skai originals",
+      "probedAt": "2026-09-15"
+    },
+    "12050-1948": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Small balance",
+      "depth": 0,
+      "topLevelId": "12050-1948",
+      "pageId": "11095-2603",
+      "pageName": "✅ Hooked - Skai originals",
+      "probedAt": "2026-09-15"
+    },
+    "12050-1987": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Big balance",
+      "depth": 0,
+      "topLevelId": "12050-1987",
+      "pageId": "11095-2603",
+      "pageName": "✅ Hooked - Skai originals",
+      "probedAt": "2026-09-15"
+    },
+    "12052-2027": {
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "type": "FRAME",
+      "name": "Big spender",
+      "depth": 0,
+      "topLevelId": "12052-2027",
+      "pageId": "11095-2603",
+      "pageName": "✅ Hooked - Skai originals",
+      "probedAt": "2026-09-15"
     }
   },
   "notFound": {
@@ -2706,6 +4018,24 @@
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "checked": 20,
       "found": 1
+    },
+    {
+      "at": "2026-09-15",
+      "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+      "checked": 85,
+      "found": 85
+    },
+    {
+      "at": "2026-09-15",
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "checked": 41,
+      "found": 41
+    },
+    {
+      "at": "2026-09-15",
+      "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+      "checked": 7,
+      "found": 7
     }
   ]
 }

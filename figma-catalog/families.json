@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15T04:30:09.419Z",
+  "generated": "2026-09-15T05:27:57.064Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -170,7 +170,7 @@
     "home/Portfolio": {
       "section": "home",
       "family": "Portfolio",
-      "frameCount": 9,
+      "frameCount": 12,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:2737-28177",
         "mhF3BkzlTaGiLzJ7kvpmVc:2764-13970",
@@ -180,7 +180,10 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:6795-31004",
         "mhF3BkzlTaGiLzJ7kvpmVc:6795-30496",
         "mhF3BkzlTaGiLzJ7kvpmVc:6782-25160",
-        "mhF3BkzlTaGiLzJ7kvpmVc:6811-32268"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6811-32268",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6849-37182",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2737-28178",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6795-30736"
       ],
       "devices": [
         "desktop",
@@ -188,7 +191,10 @@
         "mobile"
       ],
       "variants": [
-        "invisible"
+        "invisible",
+        "Portfolio Holdings 375 [section 347x414]",
+        "portfolio holdings 1440 [main 1382x828]",
+        "Bottom-navigation-mobile (Home 1) [Bottom-navigation-mobile 375x54]"
       ],
       "citedFileCount": 9,
       "citedFiles": [
@@ -217,7 +223,7 @@
     "home/Portfolio > Vault": {
       "section": "home",
       "family": "Portfolio > Vault",
-      "frameCount": 7,
+      "frameCount": 8,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:2899-15797",
         "mhF3BkzlTaGiLzJ7kvpmVc:2760-9935",
@@ -225,7 +231,8 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:6899-54796",
         "mhF3BkzlTaGiLzJ7kvpmVc:6910-59407",
         "mhF3BkzlTaGiLzJ7kvpmVc:6918-63866",
-        "mhF3BkzlTaGiLzJ7kvpmVc:6918-64538"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6918-64538",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2760-9936"
       ],
       "devices": [
         "desktop",
@@ -233,7 +240,8 @@
         "mobile"
       ],
       "variants": [
-        "deposit"
+        "deposit",
+        "deposit - portfolio vault 1440 [main 1382x1943]"
       ],
       "citedFileCount": 1,
       "citedFiles": [
@@ -247,16 +255,19 @@
     "home/Portfolio > Defi": {
       "section": "home",
       "family": "Portfolio > Defi",
-      "frameCount": 2,
+      "frameCount": 3,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:2769-14707",
-        "mhF3BkzlTaGiLzJ7kvpmVc:6918-62834"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6918-62834",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2769-14708"
       ],
       "devices": [
         "desktop",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "portfolio defi 1440 [main 1382x828]"
+      ],
       "citedFileCount": 1,
       "citedFiles": [
         "src/components/home-redesign/portfolio/PortfolioScreen.tsx"
@@ -269,7 +280,7 @@
     "home/Portfolio > Social": {
       "section": "home",
       "family": "Portfolio > Social",
-      "frameCount": 7,
+      "frameCount": 9,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:2769-15250",
         "mhF3BkzlTaGiLzJ7kvpmVc:2899-16515",
@@ -277,7 +288,9 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:6925-68955",
         "mhF3BkzlTaGiLzJ7kvpmVc:6925-67023",
         "mhF3BkzlTaGiLzJ7kvpmVc:6934-70311",
-        "mhF3BkzlTaGiLzJ7kvpmVc:6925-67953"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6925-67953",
+        "mhF3BkzlTaGiLzJ7kvpmVc:6925-67091",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5902-146885"
       ],
       "devices": [
         "desktop",
@@ -285,7 +298,9 @@
         "mobile"
       ],
       "variants": [
-        "with vesting"
+        "with vesting",
+        "Portfolio Social tab 375 [card group 347x580]",
+        "with vesting - portfolio social 1440 [section 1144x1000]"
       ],
       "citedFileCount": 1,
       "citedFiles": [
@@ -299,21 +314,24 @@
     "home/Portfolio > Tiers": {
       "section": "home",
       "family": "Portfolio > Tiers",
-      "frameCount": 6,
+      "frameCount": 7,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:2770-16271",
         "mhF3BkzlTaGiLzJ7kvpmVc:2773-7535",
         "mhF3BkzlTaGiLzJ7kvpmVc:6937-71607",
         "mhF3BkzlTaGiLzJ7kvpmVc:6942-74270",
         "mhF3BkzlTaGiLzJ7kvpmVc:6942-72954",
-        "mhF3BkzlTaGiLzJ7kvpmVc:6942-74751"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6942-74751",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2773-8068"
       ],
       "devices": [
         "desktop",
         "tablet",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "portfolio tiers 1440 [section 1144x557]"
+      ],
       "citedFileCount": 2,
       "citedFiles": [
         "src/components/home-redesign/portfolio/PortfolioScreen.tsx",
@@ -427,18 +445,21 @@
     "home/Portfolio > Badges": {
       "section": "home",
       "family": "Portfolio > Badges",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:2853-9675",
         "mhF3BkzlTaGiLzJ7kvpmVc:6962-75733",
-        "mhF3BkzlTaGiLzJ7kvpmVc:6962-80042"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6962-80042",
+        "mhF3BkzlTaGiLzJ7kvpmVc:2853-9727"
       ],
       "devices": [
         "desktop",
         "tablet",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "portfolio badges 1440 [section 1144x946]"
+      ],
       "citedFileCount": 2,
       "citedFiles": [
         "src/components/home-redesign/SiteFooter.tsx",
@@ -453,18 +474,21 @@
     "home/Portfolio > Badges > Badge preview": {
       "section": "home",
       "family": "Portfolio > Badges > Badge preview",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:5926-13672",
         "mhF3BkzlTaGiLzJ7kvpmVc:6965-82190",
-        "mhF3BkzlTaGiLzJ7kvpmVc:6965-86368"
+        "mhF3BkzlTaGiLzJ7kvpmVc:6965-86368",
+        "mhF3BkzlTaGiLzJ7kvpmVc:5926-15470"
       ],
       "devices": [
         "desktop",
         "tablet",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "badge preview 1440 [modal 564x660]"
+      ],
       "citedFileCount": 2,
       "citedFiles": [
         "src/components/home-redesign/portfolio/BadgePreviewModal.tsx",
@@ -988,18 +1012,23 @@
     "home/with deposit": {
       "section": "home",
       "family": "with deposit",
-      "frameCount": 3,
+      "frameCount": 5,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:14129-82852",
         "mhF3BkzlTaGiLzJ7kvpmVc:14129-84086",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13486-49591"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13486-49591",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13486-49630",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13486-49723"
       ],
       "devices": [
         "tablet",
         "mobile",
         "desktop"
       ],
-      "variants": [],
+      "variants": [
+        "Home - with deposit [Header-desktop 1440x56]",
+        "Home - with deposit [Frame 1137 1441x32]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -1812,18 +1841,21 @@
     "wallet/continue on web > home > right-sidecar > Add wallet > Import existing > Keystone": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > Add wallet > Import existing > Keystone",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:7717-13147",
         "mhF3BkzlTaGiLzJ7kvpmVc:7482-144645",
-        "mhF3BkzlTaGiLzJ7kvpmVc:7774-70180"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-70180",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-71454"
       ],
       "devices": [
         "tablet",
         "desktop",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Import Keystone 375 [modal 354x440]"
+      ],
       "citedFileCount": 1,
       "citedFiles": [
         "modules/skai-wallet/src/shell/panels/AddWalletDrawer.tsx"
@@ -1836,19 +1868,22 @@
     "wallet/continue on web > home > right-sidecar > Add wallet > Connect hardware wallet": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > Add wallet > Connect hardware wallet",
-      "frameCount": 4,
+      "frameCount": 5,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:7717-13587",
         "mhF3BkzlTaGiLzJ7kvpmVc:7717-14343",
         "mhF3BkzlTaGiLzJ7kvpmVc:7482-145038",
-        "mhF3BkzlTaGiLzJ7kvpmVc:7774-70474"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-70474",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7717-14311"
       ],
       "devices": [
         "tablet",
         "desktop",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Scan QR code (Keystone/Ledger) modal 768 [modal 448x626]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -1857,18 +1892,21 @@
     "wallet/continue on web > home > right-sidecar > wallet accounts": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > wallet accounts",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:7713-14212",
         "mhF3BkzlTaGiLzJ7kvpmVc:3080-811",
-        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65029"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65029",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-15130"
       ],
       "devices": [
         "tablet",
         "desktop",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Wallet accounts sidecar 768 [Frame 337 442x1008]"
+      ],
       "citedFileCount": 2,
       "citedFiles": [
         "modules/skai-wallet/src/components/wallet/swap/SwapForm.tsx",
@@ -1883,18 +1921,21 @@
     "wallet/continue on web > home > right-sidecar > wallet multi menu": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > wallet multi menu",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:7713-15272",
         "mhF3BkzlTaGiLzJ7kvpmVc:7477-133171",
-        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65519"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65519",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-15656"
       ],
       "devices": [
         "tablet",
         "desktop",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Wallet row dropdown 768 [dropdown-3 200x184]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -1903,16 +1944,19 @@
     "wallet/continue on web > home > right-sidecar > rename wallet": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > rename wallet",
-      "frameCount": 2,
+      "frameCount": 3,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:7713-15682",
-        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65942"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-65942",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7713-16123"
       ],
       "devices": [
         "tablet",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Rename wallet sidecar 768 [Frame 337 442x1008]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -2151,17 +2195,24 @@
     "wallet/continue on web > home > right-sidecar > wallet multi menu > Remove walletl": {
       "section": "wallet",
       "family": "continue on web > home > right-sidecar > wallet multi menu > Remove walletl",
-      "frameCount": 4,
+      "frameCount": 7,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:7774-68417",
         "mhF3BkzlTaGiLzJ7kvpmVc:7774-69004",
         "mhF3BkzlTaGiLzJ7kvpmVc:7774-69592",
-        "mhF3BkzlTaGiLzJ7kvpmVc:7774-69886"
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-69886",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7797-71630",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-71414",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7774-71260"
       ],
       "devices": [
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Create Non-custodial wallet 375 [modal 354x542]",
+        "Import private key 375 [modal 354x414]",
+        "Enter recovery phrase 375 [modal 354x398]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -2170,7 +2221,7 @@
     "trade/Spot": {
       "section": "trade",
       "family": "Spot",
-      "frameCount": 99,
+      "frameCount": 116,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:7710-91527",
         "mhF3BkzlTaGiLzJ7kvpmVc:8558-139280",
@@ -2270,7 +2321,24 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:9776-96834",
         "mhF3BkzlTaGiLzJ7kvpmVc:9803-129761",
         "mhF3BkzlTaGiLzJ7kvpmVc:9803-131052",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9777-104193"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-104193",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-157083",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-158074",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-157105",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-147207",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-213899",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-212444",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9061-244538",
+        "mhF3BkzlTaGiLzJ7kvpmVc:3972-30250",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9770-133755",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9042-164219",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-158175",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-163721",
+        "mhF3BkzlTaGiLzJ7kvpmVc:7712-29439",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-157020",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-161614",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9002-158102",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-157337"
       ],
       "devices": [
         "desktop",
@@ -2308,7 +2376,24 @@
         "pro - scaled order - ALT",
         "full",
         "info",
-        "simlified chart"
+        "simlified chart",
+        "Nav of chart (top, 768) [Nav of chart 684x27]",
+        "Nav of chart (bottom, 768) [Nav of chart 684x27]",
+        "Row 2 chart body 768 [Row 2 684x450]",
+        "Frame 300 (Spot tab row, 768) [Frame 300 708x40]",
+        "timeframe dropdown - dropdown-3 timeframes 768 [dropdown-3 200x528]",
+        "indicator dropdown - dropdown-3 Indicators 768 [dropdown-3 300x450]",
+        "candles dropdown - dropdown-3 chart type 768 [dropdown-3 200x304]",
+        "indicator dropdown - dropdown-3 chart type 1440 [dropdown-3 199x340]",
+        "Frame 160 chart body 375 [Frame 160 343x343]",
+        "trades - Frame 1220 (Spot Trades tab, 768) [Frame 1220 708x660]",
+        "Bottom-navigation-tablet [Bottom-navigation-tablet 768x52]",
+        "order book - Spot order book, tablet 768 [Frame 1220 708x640]",
+        "Spot order book, desktop 1440 [Order book 277x674]",
+        "Frame 6 (Spot market header, 768) [Frame 6 708x58]",
+        "info - Frame 1220 (Spot Info tab, 768) [Frame 1220 708x585]",
+        "Spot buy/sell bar 768 [Frame 444 708x269]",
+        "full - Frame 444 (Spot positions band, 768) - catalog frame 9002-157018 via alias [Frame 444 708x269]"
       ],
       "citedFileCount": 26,
       "citedFiles": [
@@ -2364,7 +2449,7 @@
     "trade/Perpetual Futures": {
       "section": "trade",
       "family": "Perpetual Futures",
-      "frameCount": 50,
+      "frameCount": 54,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:9801-112095",
         "mhF3BkzlTaGiLzJ7kvpmVc:9803-128424",
@@ -2415,7 +2500,11 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:9804-154738",
         "mhF3BkzlTaGiLzJ7kvpmVc:9804-150628",
         "mhF3BkzlTaGiLzJ7kvpmVc:9804-141566",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9804-143394"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9804-143394",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9135-85235",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9135-86727",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9104-77795",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9104-77776"
       ],
       "devices": [
         "mobile",
@@ -2438,7 +2527,11 @@
         "Trade history",
         "Funding history",
         "Order history - collapsed",
-        "Orders - collapsed"
+        "Orders - collapsed",
+        "Frame 1220 (Perps market header bar, 768) [Frame 1220 708x58]",
+        "Perps Frame 1217 long/short bar 768 [Frame 1217 730x66]",
+        "Market long - card (Perps amount card, 768) [card 698x68]",
+        "Market long - Frame 447 (Perps Long ticket sheet, 768) [Frame 447 730x752]"
       ],
       "citedFileCount": 3,
       "citedFiles": [
@@ -2587,17 +2680,19 @@
     "trade/Spot > Limit > Search pairs > Trench": {
       "section": "trade",
       "family": "Spot > Limit > Search pairs > Trench",
-      "frameCount": 2,
+      "frameCount": 3,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:3962-35261",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9050-206715"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-206715",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-207877"
       ],
       "devices": [
         "desktop",
         "tablet"
       ],
       "variants": [
-        "search"
+        "search",
+        "search - Search pairs - Gaming/Trench 768 [modal 680x586]"
       ],
       "citedFileCount": 1,
       "citedFiles": [
@@ -2611,18 +2706,25 @@
     "trade/Spot > Chart settings": {
       "section": "trade",
       "family": "Spot > Chart settings",
-      "frameCount": 3,
+      "frameCount": 6,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:3931-88039",
         "mhF3BkzlTaGiLzJ7kvpmVc:9069-259546",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9780-143009"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-143009",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9069-261070",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9069-261103",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9069-261128"
       ],
       "devices": [
         "desktop",
         "tablet",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Spot > Adjust chart settings (768) Chart display [Frame 341 402x247]",
+        "Spot > Adjust chart settings (768) Order display [Frame 342 402x179]",
+        "Spot > Adjust chart settings (768) Save CTA [CTA/button 402x50]"
+      ],
       "citedFileCount": 2,
       "citedFiles": [
         "src/components/trade/ChartSettingsPanel.tsx",
@@ -2707,16 +2809,19 @@
     "trade/Perpetual futures > Market > Search pairs": {
       "section": "trade",
       "family": "Perpetual futures > Market > Search pairs",
-      "frameCount": 2,
+      "frameCount": 3,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:3962-32706",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9148-79309"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9148-79309",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9148-79119"
       ],
       "devices": [
         "desktop",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "Perps > Preferred pairs modal 768 [modal 680x586]"
+      ],
       "citedFileCount": 3,
       "citedFiles": [
         "src/components/trade/MarketHeader.tsx",
@@ -2900,11 +3005,12 @@
     "trade/Dashboard": {
       "section": "trade",
       "family": "Dashboard",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:4437-112650",
         "mhF3BkzlTaGiLzJ7kvpmVc:9069-263248",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9069-261150"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9069-261150",
+        "mhF3BkzlTaGiLzJ7kvpmVc:4437-112651"
       ],
       "devices": [
         "desktop",
@@ -2912,7 +3018,8 @@
         "tablet"
       ],
       "variants": [
-        "positive"
+        "positive",
+        "positive - Dashboard InsightX (1440) container width [main 1382x828]"
       ],
       "citedFileCount": 1,
       "citedFiles": [
@@ -2926,18 +3033,21 @@
     "trade/Dashboard > Whale activity": {
       "section": "trade",
       "family": "Dashboard > Whale activity",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:4451-126554",
         "mhF3BkzlTaGiLzJ7kvpmVc:9081-267988",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9081-266657"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-266657",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9785-161305"
       ],
       "devices": [
         "desktop",
         "mobile",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "section (Whale activity, 768) [section 708x630]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -2946,18 +3056,23 @@
     "trade/Dashboard > Reports": {
       "section": "trade",
       "family": "Dashboard > Reports",
-      "frameCount": 3,
+      "frameCount": 5,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:4451-126989",
         "mhF3BkzlTaGiLzJ7kvpmVc:9081-266034",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9081-265572"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9081-265572",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9785-161003",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9785-161048"
       ],
       "devices": [
         "desktop",
         "mobile",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "Frame 1264 (Reports table, 768) [Frame 1264 684x148]",
+        "signals (Reports signal card, 768) [signals 684x126]"
+      ],
       "citedFileCount": 1,
       "citedFiles": [
         "src/components/home-redesign/insightx/InsightXScreen.tsx"
@@ -2990,14 +3105,17 @@
     "trade/Spot chart tools collapsed": {
       "section": "trade",
       "family": "Spot chart tools collapsed",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "mhF3BkzlTaGiLzJ7kvpmVc:9780-145861"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-145861",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9780-145912"
       ],
       "devices": [
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "Spot chart card 768 [Frame 1219 708x584]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -3022,14 +3140,17 @@
     "trade/Perpetual Futures > Order confirmation": {
       "section": "trade",
       "family": "Perpetual Futures > Order confirmation",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "mhF3BkzlTaGiLzJ7kvpmVc:9148-80746"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9148-80746",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9148-80644"
       ],
       "devices": [
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "modal (Perps confirm order, 768) [modal 448x394]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -3160,14 +3281,17 @@
     "trade/Spot > layout settings": {
       "section": "trade",
       "family": "Spot > layout settings",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "mhF3BkzlTaGiLzJ7kvpmVc:9050-214062"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-214062",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9050-213971"
       ],
       "devices": [
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "Frame 337 (Spot Layout settings panel, 768) - catalog frame 4144-67562 via alias 9050-214062 [Frame 337 442x1008]"
+      ],
       "citedFileCount": 4,
       "citedFiles": [
         "src/components/trade/mobile/MobileTradeShell.tsx",
@@ -3201,14 +3325,17 @@
     "trade/Spot > Search pairs": {
       "section": "trade",
       "family": "Spot > Search pairs",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "mhF3BkzlTaGiLzJ7kvpmVc:9048-190933"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9048-190933",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9148-78693"
       ],
       "devices": [
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "Spot > Search pairs modal 768 [modal 680x586]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -3294,15 +3421,18 @@
     "trade/Spot > Trades": {
       "section": "trade",
       "family": "Spot > Trades",
-      "frameCount": 2,
+      "frameCount": 3,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:9777-101670",
-        "mhF3BkzlTaGiLzJ7kvpmVc:9777-102315"
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-102315",
+        "mhF3BkzlTaGiLzJ7kvpmVc:9777-101728"
       ],
       "devices": [
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Frame 1222 (Trades tab, 375) [Frame 1222 375x362]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -3401,21 +3531,30 @@
     "predict/Dashboard": {
       "section": "predict",
       "family": "Dashboard",
-      "frameCount": 6,
+      "frameCount": 10,
       "frames": [
         "3554-10890",
         "3562-40397",
         "10635-78589",
         "10657-215932",
         "10657-217688",
-        "10635-79861"
+        "10635-79861",
+        "10657-217698",
+        "10657-218029",
+        "10657-217898",
+        "10657-218076"
       ],
       "devices": [
         "desktop",
         "mobile",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "Frame 403 (768 Dashboard tab row) [Frame 403 708x20]",
+        "Header-tablet (second-row nav band) [Header-tablet 768x86]",
+        "Geo-politics section (768 Dashboard Overview) [Frame 461 708x396]",
+        "Bottom-navigation-tablet (Predict board) [Bottom-navigation-tablet 768x52]"
+      ],
       "citedFileCount": 10,
       "citedFiles": [
         "src/components/predict-redesign/dashboard/PredictDashboardScreen.tsx",
@@ -4272,6 +4411,20 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
+    "predict/markets grid (1202, 3 x 390x224) [markets 1202x1184]": {
+      "section": "predict",
+      "family": "markets grid (1202, 3 x 390x224) [markets 1202x1184]",
+      "frameCount": 1,
+      "frames": [
+        "8610-164278"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
     "play/(section root)": {
       "section": "play",
       "family": "(section root)",
@@ -4312,18 +4465,33 @@
     "play/Casino": {
       "section": "play",
       "family": "Casino",
-      "frameCount": 3,
+      "frameCount": 10,
       "frames": [
         "11066-23332",
         "11100-62081",
-        "4711-28434"
+        "4711-28434",
+        "11064-20612",
+        "11066-22993",
+        "11066-23094",
+        "11109-81868",
+        "11109-81874",
+        "11066-24288",
+        "11214-131957"
       ],
       "devices": [
         "tablet",
         "mobile",
         "desktop"
       ],
-      "variants": [],
+      "variants": [
+        "768 casino nav search box [Frame 405 140x32]",
+        "768 casino Top bets table [Main container 708x478]",
+        "Top bets row 6 player mark (Printers Gold) [images/circle 24x24]",
+        "Play > Casino 768 / Featured games (Main container) [Main container 708x644]",
+        "Play > Casino 768 / Featured header Frame 186 (renders 1x1, paints nothing) [Frame 186 380x34]",
+        "Play > Casino 768 heading + banner (3-mark carousel, one slide) [Frame 1000003844 708x288]",
+        "Scroll bar 4 (768 casino ticker, same strip as 11214:131285) [Scroll bar 4 1440x22]"
+      ],
       "citedFileCount": 2,
       "citedFiles": [
         "modules/skai-gaming/src/components/play/ui/PlayFilterBar.tsx",
@@ -4338,7 +4506,7 @@
     "play/Sportsbook": {
       "section": "play",
       "family": "Sportsbook",
-      "frameCount": 14,
+      "frameCount": 24,
       "frames": [
         "11109-81960",
         "11216-132577",
@@ -4353,7 +4521,17 @@
         "4799-60925",
         "4914-99876",
         "9191-105864",
-        "4841-72059"
+        "4841-72059",
+        "11107-74005",
+        "11107-74013",
+        "11107-74040",
+        "11107-74499",
+        "11107-74623",
+        "11109-80693",
+        "11109-80885",
+        "11109-80890",
+        "11109-80906",
+        "11109-80944"
       ],
       "devices": [
         "tablet",
@@ -4365,7 +4543,17 @@
         "Bet slip collapsed - Settings",
         "Bet slip collapsed - Color change",
         "right sidepanel / betslip",
-        "right sidepanel / betslip ALT"
+        "right sidepanel / betslip ALT",
+        "sportsbook 768 top matches band [Frame 632 708x244]",
+        "sportsbook 768 nav row [nav 708x32]",
+        "sportsbook 768 trending events [Main container 708x240]",
+        "sportsbook 768 sports rail [Main container 708x116]",
+        "sportsbook 768 popular events [Main container 708x368]",
+        "sportsbook 768 top bets [Main container 708x478]",
+        "sportsbook 768 about [main 708x198]",
+        "sportsbook 768 feature cards [items 708x214]",
+        "sportsbook 768 licences [main 708x141]",
+        "sportsbook 768 FAQ [FAQ 708x440]"
       ],
       "citedFileCount": 5,
       "citedFiles": [
@@ -4442,18 +4630,21 @@
     "play/Sportsbook > Starting soon": {
       "section": "play",
       "family": "Sportsbook > Starting soon",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "11131-161786",
         "4911-92925",
-        "11159-63607"
+        "11159-63607",
+        "4913-96283"
       ],
       "devices": [
         "tablet",
         "desktop",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Starting soon sport row (row 1318x64) on Skai > Play > Sportsbook > Starting soon [row 1318x64]"
+      ],
       "citedFileCount": 1,
       "citedFiles": [
         "modules/skai-gaming/src/components/play/sportsbook/StartingSoonBar.tsx"
@@ -4585,18 +4776,21 @@
     "play/Casino > New games": {
       "section": "play",
       "family": "Casino > New games",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "11084-63426",
         "11100-66646",
-        "4714-31722"
+        "4714-31722",
+        "11084-64586"
       ],
       "devices": [
         "tablet",
         "mobile",
         "desktop"
       ],
-      "variants": [],
+      "variants": [
+        "Play > Casino > New games 768 [Frame 1000003833 708x1709]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -4605,18 +4799,21 @@
     "play/Casino > Trending games": {
       "section": "play",
       "family": "Casino > Trending games",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "11084-64943",
         "11100-67183",
-        "4714-51085"
+        "4714-51085",
+        "11084-64983"
       ],
       "devices": [
         "tablet",
         "mobile",
         "desktop"
       ],
-      "variants": [],
+      "variants": [
+        "768 Trending games collection screen [Frame 1000003833 708x1709]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -5082,6 +5279,160 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
+    "play/Play hub Sports book rail (Main container) [Main container 1318x148]": {
+      "section": "play",
+      "family": "Play hub Sports book rail (Main container) [Main container 1318x148]",
+      "frameCount": 1,
+      "frames": [
+        "9099-146833"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/FIFA sport plate [Frame 637 64x64]": {
+      "section": "play",
+      "family": "FIFA sport plate [Frame 637 64x64]",
+      "frameCount": 1,
+      "frames": [
+        "9099-146905"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/768 casino nav chip row [nav 708x32]": {
+      "section": "play",
+      "family": "768 casino nav chip row [nav 708x32]",
+      "frameCount": 1,
+      "frames": [
+        "11084-62383"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/768 Play landing hero (Play, Win, Repeat) [Frame 604 708x244]": {
+      "section": "play",
+      "family": "768 Play landing hero (Play, Win, Repeat) [Frame 604 708x244]",
+      "frameCount": 1,
+      "frames": [
+        "10912-148129"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/768 Casino header + hero [Frame 1000003844 708x288]": {
+      "section": "play",
+      "family": "768 Casino header + hero [Frame 1000003844 708x288]",
+      "frameCount": 1,
+      "frames": [
+        "11084-62326"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/768 landing Trending games shelf [Frame 345 708x36]": {
+      "section": "play",
+      "family": "768 landing Trending games shelf [Frame 345 708x36]",
+      "frameCount": 1,
+      "frames": [
+        "10912-148172"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/375 Trending games header [Frame 345 343x36]": {
+      "section": "play",
+      "family": "375 Trending games header [Frame 345 343x36]",
+      "frameCount": 1,
+      "frames": [
+        "11211-82936"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/card (768 Casino mode card) [card 350x118]": {
+      "section": "play",
+      "family": "card (768 Casino mode card) [card 350x118]",
+      "frameCount": 1,
+      "frames": [
+        "10912-148148"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/card (768 Sports book mode card) [card 350x118]": {
+      "section": "play",
+      "family": "card (768 Sports book mode card) [card 350x118]",
+      "frameCount": 1,
+      "frames": [
+        "10912-148158"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]": {
+      "section": "play",
+      "family": "Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]",
+      "frameCount": 1,
+      "frames": [
+        "11202-44213"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/375 Casino mode card row [Frame 1000003873 343x78]": {
+      "section": "play",
+      "family": "375 Casino mode card row [Frame 1000003873 343x78]",
+      "frameCount": 1,
+      "frames": [
+        "11202-44201"
+      ],
+      "devices": [],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
     "dice/Casino > Dice": {
       "section": "dice",
       "family": "Casino > Dice",
@@ -5389,7 +5740,7 @@
     "coinflip/Casino > Coinflip": {
       "section": "coinflip",
       "family": "Casino > Coinflip",
-      "frameCount": 33,
+      "frameCount": 34,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9003-130613",
         "M6r9FEn042UWTQD1zvy6GM:9003-132031",
@@ -5423,7 +5774,8 @@
         "M6r9FEn042UWTQD1zvy6GM:10215-5032",
         "M6r9FEn042UWTQD1zvy6GM:10215-5033",
         "M6r9FEn042UWTQD1zvy6GM:10215-5078",
-        "M6r9FEn042UWTQD1zvy6GM:10215-6194"
+        "M6r9FEn042UWTQD1zvy6GM:10215-6194",
+        "M6r9FEn042UWTQD1zvy6GM:9003-131212"
       ],
       "devices": [
         "desktop",
@@ -5449,7 +5801,8 @@
         "Screenshot 2026-08-24 at 12.35.36 PM 1",
         "Screenshot 2026-08-24 at 12.35.48 PM 1",
         "Screenshot 2026-08-24 at 12.36.13 PM 1",
-        "Screenshot 2026-08-24 at 12.36.24 PM 1"
+        "Screenshot 2026-08-24 at 12.36.24 PM 1",
+        "sidebar (Coinflip 1440 collapsed play rail) [sidebar 58x844]"
       ],
       "citedFileCount": 10,
       "citedFiles": [
@@ -5473,7 +5826,7 @@
     "skratch/Casino > Scratchers": {
       "section": "skratch",
       "family": "Casino > Scratchers",
-      "frameCount": 15,
+      "frameCount": 16,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9003-139146",
         "M6r9FEn042UWTQD1zvy6GM:9003-142707",
@@ -5489,7 +5842,8 @@
         "M6r9FEn042UWTQD1zvy6GM:9220-26119",
         "M6r9FEn042UWTQD1zvy6GM:9220-26173",
         "M6r9FEn042UWTQD1zvy6GM:9220-26174",
-        "M6r9FEn042UWTQD1zvy6GM:10221-7338"
+        "M6r9FEn042UWTQD1zvy6GM:10221-7338",
+        "M6r9FEn042UWTQD1zvy6GM:9003-143366"
       ],
       "devices": [
         "desktop",
@@ -5505,7 +5859,8 @@
         "Mobile ALT",
         "modal",
         "Screenshot 2026-07-27 at 8.19.39 PM 1",
-        "Screenshot 2026-07-27 at 8.20.03 PM 1"
+        "Screenshot 2026-07-27 at 8.20.03 PM 1",
+        "Scratchers licences and partners [main 627x164]"
       ],
       "citedFileCount": 11,
       "citedFiles": [
@@ -6231,7 +6586,7 @@
     "social/Social > Discover": {
       "section": "social",
       "family": "Social > Discover",
-      "frameCount": 18,
+      "frameCount": 19,
       "frames": [
         "5110-187509",
         "5110-188367",
@@ -6250,7 +6605,8 @@
         "11461-188711",
         "11461-189346",
         "11459-185505",
-        "11461-189925"
+        "11461-189925",
+        "5110-187519"
       ],
       "devices": [
         "desktop",
@@ -6262,7 +6618,8 @@
         "search > Favourite",
         "search > Posts",
         "search > Top 20 trends",
-        "search > Creators - empty"
+        "search > Creators - empty",
+        "search - Discover header row (1440): Create token CTA now routes to /launchpad/create, dismissible card retired [Frame 629 1144x66]"
       ],
       "citedFileCount": 13,
       "citedFiles": [
@@ -7670,7 +8027,7 @@
     "social/Social > Groups": {
       "section": "social",
       "family": "Social > Groups",
-      "frameCount": 35,
+      "frameCount": 36,
       "frames": [
         "5194-270743",
         "5198-47891",
@@ -7706,7 +8063,8 @@
         "11398-86245",
         "11398-88883",
         "11398-85878",
-        "11530-304239"
+        "11530-304239",
+        "5198-50416"
       ],
       "devices": [
         "desktop",
@@ -7722,7 +8080,8 @@
         "search - empty > Create group",
         "search > Discover > View group",
         "search > Discover > View group > Adjust settings",
-        "search > Discover > View group (768 x 1024px))"
+        "search > Discover > View group (768 x 1024px))",
+        "search > Created - Groups - search > Created: Type / Criteria pills (Private + Token) [Frame 814 140x18]"
       ],
       "citedFileCount": 12,
       "citedFiles": [
@@ -8476,14 +8835,15 @@
     "governance/Rewards > My referrals": {
       "section": "governance",
       "family": "Rewards > My referrals",
-      "frameCount": 6,
+      "frameCount": 7,
       "frames": [
         "5534-92868",
         "11303-133324",
         "11872-42520",
         "11872-43820",
         "11885-99426",
-        "11885-100111"
+        "11885-100111",
+        "5534-92972"
       ],
       "devices": [
         "desktop",
@@ -8491,7 +8851,8 @@
         "mobile"
       ],
       "variants": [
-        "empty"
+        "empty",
+        "Rewards program > tier progress band [Frame 278 1318x180]"
       ],
       "citedFileCount": 0,
       "citedFiles": [],
@@ -9378,21 +9739,24 @@
     "governance/Account": {
       "section": "governance",
       "family": "Account",
-      "frameCount": 6,
+      "frameCount": 7,
       "frames": [
         "5518-101256",
         "5518-100072",
         "11875-44348",
         "11875-86552",
         "11768-349002",
-        "11768-350087"
+        "11768-350087",
+        "5523-103268"
       ],
       "devices": [
         "desktop",
         "mobile",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "dropdown-3 [dropdown-3 250x384]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -9814,7 +10178,7 @@
     "keno/Casino > Keno": {
       "section": "keno",
       "family": "Casino > Keno",
-      "frameCount": 12,
+      "frameCount": 13,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9433-12187",
         "M6r9FEn042UWTQD1zvy6GM:9433-14563",
@@ -9827,7 +10191,8 @@
         "M6r9FEn042UWTQD1zvy6GM:9690-9544",
         "M6r9FEn042UWTQD1zvy6GM:9690-9912",
         "M6r9FEn042UWTQD1zvy6GM:9690-10413",
-        "M6r9FEn042UWTQD1zvy6GM:9690-10777"
+        "M6r9FEn042UWTQD1zvy6GM:9690-10777",
+        "M6r9FEn042UWTQD1zvy6GM:9433-12193"
       ],
       "devices": [
         "desktop",
@@ -9839,7 +10204,8 @@
         "Desktop win",
         "Auto Advanced Displayed",
         "Desktop loss",
-        "image 6"
+        "image 6",
+        "Frame 345 (Keno title row, 1440) [Frame 345 1318x36]"
       ],
       "citedFileCount": 13,
       "citedFiles": [
@@ -9866,7 +10232,7 @@
     "home-2/Whales": {
       "section": "home-2",
       "family": "Whales",
-      "frameCount": 19,
+      "frameCount": 20,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-110742",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-110870",
@@ -9886,7 +10252,8 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-123282",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-123374",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-123503",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13008-123798"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-123798",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-122995"
       ],
       "devices": [
         "desktop",
@@ -9896,7 +10263,8 @@
       "variants": [
         "no data",
         "no data > Add wallet",
-        "market technicals"
+        "market technicals",
+        "(375 flow bento) [bento 347x1016]"
       ],
       "citedFileCount": 1,
       "citedFiles": [
@@ -10063,7 +10431,7 @@
     "home-2/Add > Add whale": {
       "section": "home-2",
       "family": "Add > Add whale",
-      "frameCount": 9,
+      "frameCount": 11,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-114473",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-114889",
@@ -10073,7 +10441,9 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-125494",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-125552",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-125612",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125682"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125682",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125095",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-125300"
       ],
       "devices": [
         "desktop",
@@ -10082,7 +10452,9 @@
       ],
       "variants": [
         "input > conversation 5",
-        "input"
+        "input",
+        "(768x1024) main - toggle side buttons [main 768x920]",
+        "(375x812) main - toggle side buttons [main 375x710]"
       ],
       "citedFileCount": 0,
       "citedFiles": [],
@@ -10176,7 +10548,7 @@
     "home-2/Agentic support": {
       "section": "home-2",
       "family": "Agentic support",
-      "frameCount": 40,
+      "frameCount": 42,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-117799",
         "mhF3BkzlTaGiLzJ7kvpmVc:13445-184106",
@@ -10217,7 +10589,9 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-129753",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-129897",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-130123",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13008-130217"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-130217",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13447-186055",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13449-187103"
       ],
       "devices": [
         "desktop",
@@ -10236,7 +10610,9 @@
         "Backtesting > conversation 6 > All backtests",
         "Backtesting > conversation 6 > Replicate Sample Strategy",
         "Backtesting > conversation 6 > Replicate Sample Strategy > Custom code",
-        "Backtesting > conversation 6 > Replicate Sample Strategy > Custom code > Chart sample"
+        "Backtesting > conversation 6 > Replicate Sample Strategy > Custom code > Chart sample",
+        "AI master > Create AI agent - step 2 - choose personality - Agentic support - AI master > Choose personality 1/2 [main 1382x828]",
+        "AI master > Create AI agent - step 2 - choose personality 2 - Agentic support - AI master > Choose personality 2/2 (Build Your Own) [main 1382x2853]"
       ],
       "citedFileCount": 1,
       "citedFiles": [
@@ -10424,17 +10800,26 @@
     "wallet-2/continue on web > home > account": {
       "section": "wallet-2",
       "family": "continue on web > home > account",
-      "frameCount": 3,
+      "frameCount": 7,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-27689",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-43059",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13008-44120"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-44120",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-27743",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-43100",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-44161",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-43114"
       ],
       "devices": [
         "desktop",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "input/primary-inputs (account Currency, 1440) [input/primary-inputs 648x62]",
+        "input/primary-inputs (account Currency, 768) [input/primary-inputs 556x58]",
+        "input/primary-inputs (account Currency, 375) [input/primary-inputs 322x56]",
+        "dropdown-3 (home > account 768) [dropdown-3 200x176]"
+      ],
       "citedFileCount": 4,
       "citedFiles": [
         "modules/skai-wallet/src/__tests__/shell/TopHeader.test.tsx",
@@ -11036,7 +11421,7 @@
     "trade-2/Trench": {
       "section": "trade-2",
       "family": "Trench",
-      "frameCount": 13,
+      "frameCount": 20,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-134301",
         "mhF3BkzlTaGiLzJ7kvpmVc:13935-69044",
@@ -11050,7 +11435,14 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-296673",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-297805",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-306051",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-326818"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-326818",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-260063",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-260062",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-260215",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-260213",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-260089",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-260244",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-136580"
       ],
       "devices": [
         "desktop",
@@ -11063,7 +11455,14 @@
         "actual + With left float ALT",
         "hover",
         "actual - settings collapsed",
-        "One-click trade settings - modal sell"
+        "One-click trade settings - modal sell",
+        "actual - trench 768 title row [Frame 1296 708x36]",
+        "actual - trench 768 header block [Frame 445 708x82]",
+        "actual - trench 768 column header tabs [Frame 299 708x50]",
+        "actual - trench 768 column box fixed screen [Frame 445 708x724]",
+        "actual - trench 768 scroller bottom (partial) [Trench scroller 768x22]",
+        "actual - pulse card intel ALT 768 (partial, data blocked) [Pulse card - Intel ALT 682x118]",
+        "actual - Pulse card - Intel ALT [Pulse card - Intel ALT 409x118]"
       ],
       "citedFileCount": 4,
       "citedFiles": [
@@ -11098,7 +11497,7 @@
     "trade-2/Launch": {
       "section": "trade-2",
       "family": "Launch",
-      "frameCount": 11,
+      "frameCount": 13,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-146233",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-150346",
@@ -11110,14 +11509,19 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-281378",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-281970",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-282582",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-283168"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-283168",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-146465",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-146276"
       ],
       "devices": [
         "desktop",
         "tablet",
         "mobile"
       ],
-      "variants": [],
+      "variants": [
+        "Markets Row [Row 1318x124]",
+        "Trending card [card 324x300]"
+      ],
       "citedFileCount": 1,
       "citedFiles": [
         "src/components/launchpad/launchpadChrome.figma.test.ts"
@@ -11596,18 +12000,20 @@
     "trade-2/Trench > Trade": {
       "section": "trade-2",
       "family": "Trench > Trade",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-210576",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-212781",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-214989"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-214989",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-216128"
       ],
       "devices": [
         "desktop"
       ],
       "variants": [
         "layout 2",
-        "layout 2 with instant trade"
+        "layout 2 with instant trade",
+        "layout 2 with instant trade - Trench > Instant trade (floating card) [Instant trade 333x316]"
       ],
       "citedFileCount": 1,
       "citedFiles": [
@@ -11692,14 +12098,17 @@
     "trade-2/Trench > Trade > Dev tokens": {
       "section": "trade-2",
       "family": "Trench > Trade > Dev tokens",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-230793"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-230793",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-232413"
       ],
       "devices": [
         "desktop"
       ],
-      "variants": [],
+      "variants": [
+        "Dev tokens 1440 > Token statistics (donut, Token stats, Highlights) [Frame 301 298x474]"
+      ],
       "citedFileCount": 5,
       "citedFiles": [
         "src/components/trench-redesign/trade/DevTokensPanel.test.tsx",
@@ -11716,14 +12125,17 @@
     "trade-2/Trench > Trade > Transactions": {
       "section": "trade-2",
       "family": "Trench > Trade > Transactions",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-233358"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-233358",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-234863"
       ],
       "devices": [
         "desktop"
       ],
-      "variants": [],
+      "variants": [
+        "Transactions row (1440): count Tag, overflow, Trader sliders filter [content 1015x28]"
+      ],
       "citedFileCount": 3,
       "citedFiles": [
         "src/components/trench-redesign/trade/PanelTabs.tsx",
@@ -11770,18 +12182,21 @@
     "trade-2/Launch > Sample token": {
       "section": "trade-2",
       "family": "Launch > Sample token",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-241485",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-350388",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-353851"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-353851",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-353852"
       ],
       "devices": [
         "desktop",
         "mobile",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "Token terminal 768 header (sentiment card on stat row) [main 708x873]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -11810,14 +12225,15 @@
     "trade-2/Launch > Sample token > Dashboard": {
       "section": "trade-2",
       "family": "Launch > Sample token > Dashboard",
-      "frameCount": 6,
+      "frameCount": 7,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-245903",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-246173",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-284221",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-285797",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-285929",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-286114"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-286114",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-285930"
       ],
       "devices": [
         "desktop",
@@ -11826,7 +12242,8 @@
       ],
       "variants": [
         "negative",
-        "positive"
+        "positive",
+        "negative - Frame 1260 (Dashboard - negative, 768) [Frame 1260 708x911]"
       ],
       "citedFileCount": 0,
       "citedFiles": [],
@@ -11954,7 +12371,7 @@
     "trade-2/Trench > Chart": {
       "section": "trade-2",
       "family": "Trench > Chart",
-      "frameCount": 13,
+      "frameCount": 14,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-263046",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-264486",
@@ -11968,7 +12385,8 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-290303",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-291294",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-292285",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-293274"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-293274",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-290304"
       ],
       "devices": [
         "tablet",
@@ -11982,7 +12400,8 @@
         "Market",
         "Limit",
         "Instant - sell",
-        "Instant"
+        "Instant",
+        "Instant > AI Bullish - Token terminal 375 header (sentiment card with close) [Frame 1341 375x490]"
       ],
       "citedFileCount": 1,
       "citedFiles": [
@@ -11996,7 +12415,7 @@
     "trade-2/Trench > Tables": {
       "section": "trade-2",
       "family": "Trench > Tables",
-      "frameCount": 16,
+      "frameCount": 18,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-268680",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-268978",
@@ -12013,7 +12432,9 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-302656",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-302846",
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-303093",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-303393"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-303393",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-299450",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-302848"
       ],
       "devices": [
         "tablet",
@@ -12027,7 +12448,9 @@
         "Dev tokens - full",
         "Bubble maps",
         "Dev tokens - collapsed",
-        "Positions - collapsed"
+        "Positions - collapsed",
+        "Transactions - Transactions card record 375 [Frame 1394 343x92]",
+        "Dev tokens - full - Tables - Dev tokens expanded 375 [Frame 1340 375x834]"
       ],
       "citedFileCount": 11,
       "citedFiles": [
@@ -12248,16 +12671,19 @@
     "trade-2/Nav bar": {
       "section": "trade-2",
       "family": "Nav bar",
-      "frameCount": 2,
+      "frameCount": 3,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13006-349299",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13006-352370"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-352370",
+        "mhF3BkzlTaGiLzJ7kvpmVc:13006-353775"
       ],
       "devices": [
         "mobile",
         "tablet"
       ],
-      "variants": [],
+      "variants": [
+        "(768) sidebar [sidebar - open 318x1024]"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
@@ -12436,7 +12862,7 @@
     "rock-paper-scissors/Casino > Rock Paper Scissors": {
       "section": "rock-paper-scissors",
       "family": "Casino > Rock Paper Scissors",
-      "frameCount": 15,
+      "frameCount": 16,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9907-1595",
         "M6r9FEn042UWTQD1zvy6GM:9907-2356",
@@ -12452,7 +12878,8 @@
         "M6r9FEn042UWTQD1zvy6GM:9937-21778",
         "M6r9FEn042UWTQD1zvy6GM:9937-22037",
         "M6r9FEn042UWTQD1zvy6GM:9937-22205",
-        "M6r9FEn042UWTQD1zvy6GM:9941-22220"
+        "M6r9FEn042UWTQD1zvy6GM:9941-22220",
+        "M6r9FEn042UWTQD1zvy6GM:9937-18892"
       ],
       "devices": [
         "desktop",
@@ -12463,7 +12890,8 @@
         "Rock icon 1",
         "Desktop Target",
         "Paper icon 1",
-        "Scissors icon 1"
+        "Scissors icon 1",
+        "Rock Paper Scissors game area (streak ladder) [Desktop 954x621]"
       ],
       "citedFileCount": 6,
       "citedFiles": [
@@ -12695,9 +13123,9 @@
       ],
       "proposedStatus": "likely-done"
     },
-    "safari-slots/Casino > Safari Slots": {
+    "safari-slots/Casino > Untamed": {
       "section": "safari-slots",
-      "family": "Casino > Safari Slots",
+      "family": "Casino > Untamed",
       "frameCount": 62,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:10272-3834",
@@ -12776,7 +13204,7 @@
         "Load screen > features - tablet",
         "Load screen ALT - tablet",
         "screen type 2",
-        "Skai > Play > Casino > Vegas fortune > Load screen - screen type 2 1VH",
+        "Load screen - screen type 2 1VH",
         "Load screen - desktop",
         "Load screen - desktop - normal size with sidebar -",
         "Load screen ALT - desktop",
@@ -12809,21 +13237,21 @@
         "Safari manager head 1",
         "Safari manager head 2",
         "Safari manager head 3",
-        "Safari slots - Card visual",
+        "Untamed - Card visual",
         "Mines Desktop",
-        "Safari slots - Desktop",
-        "Safari slots - Tablet",
-        "Safari slots - Mobile"
+        "Untamed - Desktop",
+        "Untamed - Tablet",
+        "Untamed - Mobile"
       ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "cosmic-slots/Casino > Cosmic Slots": {
+    "cosmic-slots/Casino > Starbound": {
       "section": "cosmic-slots",
-      "family": "Casino > Cosmic Slots",
-      "frameCount": 53,
+      "family": "Casino > Starbound",
+      "frameCount": 38,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:10359-13264",
         "M6r9FEn042UWTQD1zvy6GM:10359-13505",
@@ -12834,25 +13262,10 @@
         "M6r9FEn042UWTQD1zvy6GM:10400-5509",
         "M6r9FEn042UWTQD1zvy6GM:10395-4756",
         "M6r9FEn042UWTQD1zvy6GM:10400-4973",
-        "M6r9FEn042UWTQD1zvy6GM:10400-4972",
-        "M6r9FEn042UWTQD1zvy6GM:10397-4971",
-        "M6r9FEn042UWTQD1zvy6GM:10397-4970",
-        "M6r9FEn042UWTQD1zvy6GM:10397-4969",
-        "M6r9FEn042UWTQD1zvy6GM:10397-4968",
-        "M6r9FEn042UWTQD1zvy6GM:10397-4967",
-        "M6r9FEn042UWTQD1zvy6GM:10397-4966",
-        "M6r9FEn042UWTQD1zvy6GM:10397-4965",
-        "M6r9FEn042UWTQD1zvy6GM:10395-4860",
-        "M6r9FEn042UWTQD1zvy6GM:10395-4859",
         "M6r9FEn042UWTQD1zvy6GM:10385-2858",
         "M6r9FEn042UWTQD1zvy6GM:11930-39529",
         "M6r9FEn042UWTQD1zvy6GM:11930-39780",
         "M6r9FEn042UWTQD1zvy6GM:11930-40031",
-        "M6r9FEn042UWTQD1zvy6GM:10401-6164",
-        "M6r9FEn042UWTQD1zvy6GM:10403-6394",
-        "M6r9FEn042UWTQD1zvy6GM:10401-6365",
-        "M6r9FEn042UWTQD1zvy6GM:10401-6369",
-        "M6r9FEn042UWTQD1zvy6GM:10401-6374",
         "M6r9FEn042UWTQD1zvy6GM:10403-6465",
         "M6r9FEn042UWTQD1zvy6GM:10403-6662",
         "M6r9FEn042UWTQD1zvy6GM:10406-11233",
@@ -12891,23 +13304,9 @@
         "Load screen > home >combo > combo end frame - desktop",
         "Load screen > home >combo > combo end frame > menu - desktop",
         "Load screen > home > combo - desktop",
-        "Safari A 8",
-        "Safari A 7",
-        "Safari A 6",
-        "Safari A 5",
-        "Safari A 4",
-        "Safari A 3",
-        "Safari A 2",
-        "Safari A 1",
-        "Cosmic slots spaceship 1",
-        "Cosmic slots Astro boy 1",
         "Load screen ALT - desktop",
         "1VH",
         "2 1VH",
-        "Cosmic slots - Card visual",
-        "Cosmic slots - Desktop",
-        "Cosmic slots - Tablet",
-        "Cosmic slots - Mobile",
         "Load screen - tablet",
         "Load screen > home - tablet",
         "Load screen > home > menu - tablet",
@@ -12922,6 +13321,53 @@
         "Load screen > home > combo - tablet",
         "Load screen ALT - tablet",
         "Load screen > Start game - tablet"
+      ],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "cosmic-slots/Casino > Cosmic Slots": {
+      "section": "cosmic-slots",
+      "family": "Casino > Cosmic Slots",
+      "frameCount": 15,
+      "frames": [
+        "M6r9FEn042UWTQD1zvy6GM:10400-4972",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4971",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4970",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4969",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4968",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4967",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4966",
+        "M6r9FEn042UWTQD1zvy6GM:10397-4965",
+        "M6r9FEn042UWTQD1zvy6GM:10395-4860",
+        "M6r9FEn042UWTQD1zvy6GM:10395-4859",
+        "M6r9FEn042UWTQD1zvy6GM:10401-6164",
+        "M6r9FEn042UWTQD1zvy6GM:10403-6394",
+        "M6r9FEn042UWTQD1zvy6GM:10401-6365",
+        "M6r9FEn042UWTQD1zvy6GM:10401-6369",
+        "M6r9FEn042UWTQD1zvy6GM:10401-6374"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [
+        "Safari A 8",
+        "Safari A 7",
+        "Safari A 6",
+        "Safari A 5",
+        "Safari A 4",
+        "Safari A 3",
+        "Safari A 2",
+        "Safari A 1",
+        "Cosmic slots spaceship 1",
+        "Cosmic slots Astro boy 1",
+        "Starbound - Card visual",
+        "Starbound - Desktop",
+        "Starbound - Tablet",
+        "Starbound - Mobile"
       ],
       "citedFileCount": 0,
       "citedFiles": [],
@@ -13096,10 +13542,10 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "gem-slots/Casino > Gem Slots": {
+    "gem-slots/Casino > Sugar Rush": {
       "section": "gem-slots",
-      "family": "Casino > Gem Slots",
-      "frameCount": 59,
+      "family": "Casino > Sugar Rush",
+      "frameCount": 57,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:10285-14037",
         "M6r9FEn042UWTQD1zvy6GM:10285-14278",
@@ -13147,7 +13593,6 @@
         "M6r9FEn042UWTQD1zvy6GM:11288-12765",
         "M6r9FEn042UWTQD1zvy6GM:11299-14020",
         "M6r9FEn042UWTQD1zvy6GM:11298-13311",
-        "M6r9FEn042UWTQD1zvy6GM:11881-14886",
         "M6r9FEn042UWTQD1zvy6GM:11278-10438",
         "M6r9FEn042UWTQD1zvy6GM:11930-28659",
         "M6r9FEn042UWTQD1zvy6GM:11930-28667",
@@ -13155,7 +13600,6 @@
         "M6r9FEn042UWTQD1zvy6GM:11930-28859",
         "M6r9FEn042UWTQD1zvy6GM:11930-28980",
         "M6r9FEn042UWTQD1zvy6GM:11930-29101",
-        "M6r9FEn042UWTQD1zvy6GM:11930-29256",
         "M6r9FEn042UWTQD1zvy6GM:11930-29411",
         "M6r9FEn042UWTQD1zvy6GM:11930-28028",
         "M6r9FEn042UWTQD1zvy6GM:11930-30639",
@@ -13176,9 +13620,9 @@
         "Load screen ALT > selector > home > combo > menu - desktop",
         "Load screen ALT > selector > home - with blur ALT - desktop",
         "Mines Desktop",
-        "Gem slots - Desktop ALT",
-        "Gem slots - Tablet ALT",
-        "Gem slots - Mobile ALT",
+        "Sugar rush - Desktop ALT",
+        "Sugar rush - Tablet ALT",
+        "Sugar rush - Mobile ALT",
         "Safari A 30",
         "Safari A 31",
         "Safari A 32",
@@ -13214,10 +13658,10 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
-    "fisherman-slots/Casino > Fisherman Slots": {
+    "fisherman-slots/Casino > Hooked": {
       "section": "fisherman-slots",
-      "family": "Casino > Fisherman Slots",
-      "frameCount": 69,
+      "family": "Casino > Hooked",
+      "frameCount": 70,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:11306-15099",
         "M6r9FEn042UWTQD1zvy6GM:11381-18137",
@@ -13243,6 +13687,9 @@
         "M6r9FEn042UWTQD1zvy6GM:11591-20457",
         "M6r9FEn042UWTQD1zvy6GM:11591-20458",
         "M6r9FEn042UWTQD1zvy6GM:11592-20699",
+        "M6r9FEn042UWTQD1zvy6GM:12050-1948",
+        "M6r9FEn042UWTQD1zvy6GM:12050-1987",
+        "M6r9FEn042UWTQD1zvy6GM:12052-2027",
         "M6r9FEn042UWTQD1zvy6GM:11596-21055",
         "M6r9FEn042UWTQD1zvy6GM:11544-20337",
         "M6r9FEn042UWTQD1zvy6GM:11546-20357",
@@ -13272,7 +13719,6 @@
         "M6r9FEn042UWTQD1zvy6GM:11696-34540",
         "M6r9FEn042UWTQD1zvy6GM:11697-34737",
         "M6r9FEn042UWTQD1zvy6GM:11700-34994",
-        "M6r9FEn042UWTQD1zvy6GM:11896-15052",
         "M6r9FEn042UWTQD1zvy6GM:11668-32543",
         "M6r9FEn042UWTQD1zvy6GM:11930-23931",
         "M6r9FEn042UWTQD1zvy6GM:11930-23943",
@@ -13281,7 +13727,6 @@
         "M6r9FEn042UWTQD1zvy6GM:11930-24078",
         "M6r9FEn042UWTQD1zvy6GM:11930-24180",
         "M6r9FEn042UWTQD1zvy6GM:11930-24265",
-        "M6r9FEn042UWTQD1zvy6GM:11930-24384",
         "M6r9FEn042UWTQD1zvy6GM:11930-24503",
         "M6r9FEn042UWTQD1zvy6GM:11661-31059",
         "M6r9FEn042UWTQD1zvy6GM:11680-33511",
@@ -13317,6 +13762,9 @@
         "Safari A 15",
         "Safari A 16",
         "Load screen > features > home > combo - desktop",
+        "Small balance",
+        "Big balance",
+        "Big spender",
         "Load screen > features > home > combo > combo end frame - desktop",
         "body 2",
         "body 4",
@@ -13324,11 +13772,11 @@
         "head 2",
         "head 4",
         "head 3",
-        "Fisherman slots - Card visual",
+        "Hooked - Card visual",
         "Mines Desktop",
-        "Fisherman slots - Desktop",
-        "Fisherman slots - Tablet",
-        "Fisherman slots - Mobile",
+        "Hooked - Desktop",
+        "Hooked - Tablet",
+        "Hooked - Mobile",
         "screen type 2",
         "Load screen - screen type 2 1VH",
         "Load screen - tablet",

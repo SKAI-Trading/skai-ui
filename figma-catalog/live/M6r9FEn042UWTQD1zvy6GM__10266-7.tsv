@@ -3,9 +3,9 @@
 10285:14033	Breakpoint	FRAME	1450	164	1
 10285:14035	Breakpoint	FRAME	1450	164	1
 11930:27218	Breakpoint	FRAME	1450	164	1
-10285:14037	Skai > Play > Casino > Gem slots (768 x 1024px)	FRAME	768	1627	1
-10285:14278	Skai > Play > Casino > Gem slots (1440 x 900px)	FRAME	1440	3467	1
-10285:14928	Skai > Play > Casino > Gem slots (375 x 812px)	FRAME	375	1375	1
+10285:14037	Skai > Play > Casino > Sugar Rush (768 x 1024px)	FRAME	768	1627	1
+10285:14278	Skai > Play > Casino > Sugar Rush (1440 x 900px)	FRAME	1440	3467	1
+10285:14928	Skai > Play > Casino > Sugar rush (375 x 812px)	FRAME	375	1375	1
 10359:13249	Rectangle 155	RECTANGLE	720	720	1
 10359:13250	Rectangle 163	RECTANGLE	151	720	1
 10747:20240	Load screen - desktop	FRAME	1318	621	1
@@ -18,9 +18,9 @@
 11215:2930	Load screen ALT > selector > home > combo > menu - desktop	FRAME	1318	621	1
 11198:2649	Load screen ALT > selector > home - with blur ALT - desktop	FRAME	1318	621	1
 10758:20769	Mines Desktop	FRAME	195	277	1
-10758:20774	Gem slots - Desktop ALT	FRAME	195	277	1
-10758:20778	Gem slots - Tablet ALT	FRAME	120	170	1
-10758:20783	Gem slots - Mobile ALT	FRAME	76	108	1
+10758:20774	Sugar rush - Desktop ALT	FRAME	195	277	1
+10758:20778	Sugar rush - Tablet ALT	FRAME	120	170	1
+10758:20783	Sugar rush - Mobile ALT	FRAME	76	108	1
 10758:20788	Rectangle 34624566	RECTANGLE	32	32	1
 11146:1930	Safari A 30	RECTANGLE	57	60	1
 11146:1931	Safari A 31	RECTANGLE	57	60	1
@@ -35,8 +35,8 @@
 11146:1999	Safari A 42	RECTANGLE	57	60	1
 11146:1935	Safari A 35	RECTANGLE	57	60	1
 11146:1996	Safari A 39	RECTANGLE	57	60	1
-11219:3122	Skai > Play > Casino > Gem slots - screen type 2 (1440 x 900px)	FRAME	1440	3467	1
-11219:3786	Skai > Play > Casino > Gem slots - screen type 2 1VH (1440 x 900px)	FRAME	1440	900	1
+11219:3122	Skai > Play > Casino > Sugar rush - screen type 2 (1440 x 900px)	FRAME	1440	3467	1
+11219:3786	Skai > Play > Casino > Sugar rush - screen type 2 1VH (1440 x 900px)	FRAME	1440	900	1
 11244:7038	Load screen - tablet	FRAME	708	720	1
 11258:7465	Load screen ALT > selector - tablet	FRAME	708	720	1
 11275:8533	Load screen ALT > selector > home > combo - with blur - tablet	FRAME	708	720	1
@@ -45,15 +45,14 @@
 11234:6787	Load screen ALT > selector - tablet	FRAME	708	720	1
 11234:6902	Load screen ALT - tablet	FRAME	708	720	1
 11260:7733	Notes	WIDGET	0	0	1
-11279:11092	Skai > Play > Casino > Gem slots 1VH (375 x 812px)	FRAME	375	812	1
-11279:11470	Skai > Play > Casino > Gem slots 2 1VH (375 x 812px)	FRAME	375	812	1
+11279:11092	Skai > Play > Casino > Sugar rush 1VH (375 x 812px)	FRAME	375	812	1
+11279:11470	Skai > Play > Casino > Sugar rush 2 1VH (375 x 812px)	FRAME	375	812	1
 11282:12216	Load screen - mobile	FRAME	347	500	1
 11278:10019	Load screen ALT > selector - mobile	FRAME	347	500	1
 11287:12668	Load screen ALT > selector - mobile	FRAME	347	500	1
 11288:12765	Load screen ALT > selector > home > combo - mobile	FRAME	347	500	1
 11299:14020	Load screen ALT > selector > home > combo - with blur - mobile	FRAME	347	500	1
 11298:13311	Load screen ALT > selector > home > combo > menu - mobile	FRAME	347	500	1
-11881:14886	Load screen ALT > selector > home > combo > menu - mobile	FRAME	347	500	1
 11278:10438	Load screen ALT - mobile	FRAME	347	500	1
 11930:28659	Load screen - mobile	FRAME	375	500	1
 11930:28667	Load screen ALT > selector - mobile	FRAME	375	500	1
@@ -61,8 +60,7 @@
 11930:28859	Load screen ALT > selector > home > combo - mobile	FRAME	375	500	1
 11930:28980	Load screen ALT > selector > home > combo - with blur - mobile	FRAME	375	500	1
 11930:29101	Load screen ALT > selector > home > combo > menu - mobile	FRAME	375	500	1
-11930:29256	Load screen ALT > selector > home > combo > menu - mobile	FRAME	375	500	1
 11930:29411	Load screen ALT - mobile	FRAME	375	500	1
-11930:28028	Skai > Play > Casino > Gem slots (375 x 812px)	FRAME	375	3023	1
-11930:30639	Skai > Play > Casino > Gem slots 1VH (375 x 812px)	FRAME	375	812	1
-11930:31288	Skai > Play > Casino > Gem slots 2 1VH (375 x 812px)	FRAME	375	812	1
+11930:28028	Skai > Play > Casino > Sugar Rush (375 x 812px)	FRAME	375	2344	1
+11930:30639	Skai > Play > Casino > Sugar rush 1VH (375 x 812px)	FRAME	375	812	1
+11930:31288	Skai > Play > Casino > Sugar rush 2 1VH (375 x 812px)	FRAME	375	812	1

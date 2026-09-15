@@ -309,9 +309,15 @@ const GAME_BY_SECTION = {
   limbo: "Limbo", slide: "Slide", baccarat: "Baccarat", roulette: "Roulette",
   "price-grid": "Price Grid",
   // 2026-09-09: the slots pages, each its own game.
-  "safari-slots": "Safari Slots", "cosmic-slots": "Cosmic Slots",
-  "vegas-fortune": "Vegas Fortune", "gem-slots": "Gem Slots",
-  "fisherman-slots": "Fisherman Slots",
+  // 2026-09-15: four of the five pages were renamed in Figma and promoted to
+  // ready (Safari Slots -> Untamed, Cosmic Slots -> Starbound, Gem Slots ->
+  // Sugar Rush, Fisherman Slots -> Hooked; Casey 09-14: "figma is source so
+  // yes, game names have changed"). The section slugs stay as they were so
+  // every status row, vverify file and alias keyed on them keeps resolving;
+  // only the family name a reader sees follows the page.
+  "safari-slots": "Untamed", "cosmic-slots": "Starbound",
+  "vegas-fortune": "Vegas Fortune", "gem-slots": "Sugar Rush",
+  "fisherman-slots": "Hooked",
 };
 
 const readLines = (p) =>

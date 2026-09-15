@@ -1,12 +1,12 @@
 {
-  "generated": "2026-09-15T04:30:26.229Z",
+  "generated": "2026-09-15T05:28:19.493Z",
   "harvestedAt": "2026-09-11",
   "rollup": {
     "pages": 39,
-    "live": 4585,
+    "live": 4584,
     "furniture": 771,
-    "genuine": 3814,
-    "matched": 3813,
+    "genuine": 3813,
+    "matched": 3812,
     "done": 585,
     "verified": 174,
     "visuallyDowngraded": 35,
@@ -14,11 +14,11 @@
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 2292,
+    "partial": 2294,
     "notStarted": 267,
-    "blocked": 189,
-    "frameDefect": 128,
-    "catalogFurniture": 131,
+    "blocked": 188,
+    "frameDefect": 127,
+    "catalogFurniture": 130,
     "unknown": 219,
     "liveOnly": 1,
     "rollupOnly": 0,
@@ -29,14 +29,14 @@
   "doneRows": {
     "total": 2295,
     "withBreakpointProvenance": 885,
-    "namingANodeId": 1940,
+    "namingANodeId": 1978,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 15291,
-    "namingNoNodeId": 595,
-    "namingNoLiveNodeId": 705,
-    "unrecognisedTokens": 25466
+    "namingNoNodeId": 499,
+    "namingNoLiveNodeId": 703,
+    "unrecognisedTokens": 25260
   },
   "statusFiles": [
     {
@@ -2095,13 +2095,13 @@
       "file": "status.wave41.slots-fisherman.tsv",
       "rows": 69,
       "withLiveId": 69,
-      "ids": 69
+      "ids": 67
     },
     {
       "file": "status.wave41.slots-gem.tsv",
       "rows": 59,
-      "withLiveId": 59,
-      "ids": 60
+      "withLiveId": 58,
+      "ids": 58
     },
     {
       "file": "status.wave41.slots-safari.tsv",
@@ -2208,8 +2208,8 @@
     {
       "file": "status.wave43.play-sports.tsv",
       "rows": 47,
-      "withLiveId": 13,
-      "ids": 11
+      "withLiveId": 16,
+      "ids": 14
     },
     {
       "file": "status.wave43.trade.tsv",
@@ -2569,7 +2569,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -2600,7 +2600,7 @@
       "n": 46,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 46,
       "furniture": 1,
       "furnitureWhy": {
@@ -2941,7 +2941,7 @@
       "n": 1157,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 1157,
       "furniture": 1156,
       "furnitureWhy": {
@@ -2975,7 +2975,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -3020,7 +3020,7 @@
       "n": 151,
       "openReports": 5,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "note": "In scope from 2026-09-09 (Casey, wave 39 go: the standing exclusion is lifted so Onboarding and Authentication counts and gets built).",
       "live": 151,
       "furniture": 24,
@@ -3054,7 +3054,7 @@
       "n": 10,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 10,
       "furniture": 4,
       "furnitureWhy": {
@@ -3082,7 +3082,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 20,
       "furniture": 20,
       "furnitureWhy": {
@@ -3109,7 +3109,7 @@
       "n": 13,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 13,
       "furniture": 13,
       "furnitureWhy": {
@@ -3135,7 +3135,7 @@
       "n": 154,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 154,
       "furniture": 37,
       "furnitureWhy": {
@@ -3170,7 +3170,7 @@
       "n": 284,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 284,
       "furniture": 30,
       "furnitureWhy": {
@@ -3203,7 +3203,7 @@
       "n": 345,
       "openReports": 38,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 345,
       "furniture": 76,
       "furnitureWhy": {
@@ -3237,7 +3237,7 @@
       "n": 442,
       "openReports": 16,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 442,
       "furniture": 40,
       "furnitureWhy": {
@@ -3267,7 +3267,7 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
@@ -3305,7 +3305,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -3331,7 +3331,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 277,
@@ -3365,7 +3365,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 240,
@@ -3404,7 +3404,7 @@
       "n": 178,
       "openReports": 42,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 178,
       "furniture": 11,
@@ -3434,7 +3434,7 @@
       "n": 182,
       "openReports": 25,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 182,
       "furniture": 23,
       "furnitureWhy": {
@@ -3466,7 +3466,7 @@
       "n": 420,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 420,
       "furniture": 53,
@@ -3499,7 +3499,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 417,
@@ -3538,7 +3538,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -3569,7 +3569,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -3612,7 +3612,7 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 44,
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
@@ -3644,7 +3644,7 @@
       "n": 36,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 36,
       "furniture": 13,
       "furnitureWhy": {
@@ -3674,7 +3674,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 21,
       "furniture": 11,
       "furnitureWhy": {
@@ -3704,7 +3704,7 @@
       "n": 23,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 23,
       "furniture": 7,
       "furnitureWhy": {
@@ -3734,7 +3734,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 20,
       "furniture": 7,
       "furnitureWhy": {
@@ -3759,7 +3759,7 @@
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
       "n": 19,
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "openReports": 0,
       "scope": "in-scope",
       "live": 19,
@@ -3788,7 +3788,7 @@
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
       "n": 46,
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "openReports": 3,
       "scope": "in-scope",
       "live": 46,
@@ -3828,7 +3828,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 21,
       "furniture": 7,
       "furnitureWhy": {
@@ -3858,7 +3858,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 31,
       "furniture": 14,
       "furnitureWhy": {
@@ -3888,7 +3888,7 @@
       "n": 15,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 15,
       "furniture": 9,
       "furnitureWhy": {
@@ -3917,7 +3917,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 31,
       "furniture": 13,
       "furnitureWhy": {
@@ -3947,7 +3947,7 @@
       "n": 27,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 27,
       "furniture": 9,
       "furnitureWhy": {
@@ -3977,7 +3977,7 @@
       "n": 25,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 25,
       "furniture": 9,
       "furnitureWhy": {
@@ -4006,7 +4006,7 @@
       "n": 14,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 14,
       "furniture": 4,
       "furnitureWhy": {
@@ -4035,7 +4035,7 @@
       "n": 17,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 17,
       "furniture": 4,
       "furnitureWhy": {
@@ -4065,7 +4065,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 21,
       "furniture": 8,
       "furnitureWhy": {
@@ -4096,7 +4096,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 21,
       "furniture": 7,
       "furnitureWhy": {
@@ -4126,7 +4126,7 @@
       "n": 14,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 14,
       "furniture": 5,
       "furnitureWhy": {
@@ -4154,7 +4154,7 @@
       "n": 24,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 24,
       "furniture": 7,
       "furnitureWhy": {
@@ -4185,7 +4185,7 @@
       "n": 18,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 18,
       "furniture": 5,
       "furnitureWhy": {
@@ -4215,7 +4215,7 @@
       "n": 20,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 20,
       "furniture": 12,
       "furnitureWhy": {
@@ -4244,7 +4244,7 @@
       "n": 30,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 30,
       "furniture": 13,
       "furnitureWhy": {
@@ -4275,7 +4275,7 @@
       "n": 51,
       "openReports": 0,
       "scope": "excluded",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "note": "Excluded 2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready page (9061:15449); 9 FRAME nodes with generic names and 42 loose nodes. Re-scope only if the page is renamed.",
       "live": 51,
       "furniture": 42,
@@ -4366,7 +4366,7 @@
       "n": 0,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "live": 0,
       "furniture": 0,
       "furnitureWhy": {},
@@ -4384,10 +4384,10 @@
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10265:2",
-      "pageName": "🚧 Safari Slots - Skai originals",
-      "readiness": "wip",
+      "pageName": "✅ Untamed - Skai originals",
+      "readiness": "ready",
       "n": 72,
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Safari slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -4415,10 +4415,10 @@
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10266:5",
-      "pageName": "🚧 Cosmic Slots - Skai originals",
-      "readiness": "wip",
+      "pageName": "✅ Starbound - Skai originals",
+      "readiness": "ready",
       "n": 62,
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Cosmic is the base game of the slot program (Casey 2026-09-09); built on the slot engine, plan 2.",
@@ -4447,10 +4447,10 @@
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10266:6",
-      "pageName": "🚧 Vegas fortune - Skai originals",
-      "readiness": "wip",
+      "pageName": "✅ Vegas fortune - Skai originals",
+      "readiness": "ready",
       "n": 96,
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "openReports": 1,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Vegas fortune slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -4481,21 +4481,21 @@
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "10266:7",
-      "pageName": "🚧 Gem Slots - Skai originals",
-      "readiness": "wip",
-      "n": 68,
-      "harvestedAt": "2026-09-11",
+      "pageName": "✅ Sugar Rush - Skai originals",
+      "readiness": "ready",
+      "n": 66,
+      "harvestedAt": "2026-09-15",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Gem slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
-      "live": 68,
+      "live": 66,
       "furniture": 22,
       "furnitureWhy": {
         "canvas-chrome": 9,
         "loose-rectangle": 13
       },
-      "genuine": 46,
-      "matched": 46,
+      "genuine": 44,
+      "matched": 44,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
@@ -4504,29 +4504,29 @@
       "visuallyDowngraded": 0,
       "byStatus": {
         "partial": 17,
-        "blocked-on-backend": 27,
-        "furniture": 2
+        "blocked-on-backend": 26,
+        "furniture": 1
       },
       "liveOnly": []
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
       "pageId": "11095:2603",
-      "pageName": "🚧 Fisherman Slots - Skai originals",
-      "readiness": "wip",
-      "n": 78,
+      "pageName": "✅ Hooked - Skai originals",
+      "readiness": "ready",
+      "n": 79,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-11",
+      "harvestedAt": "2026-09-15",
       "note": "Ruled in-scope 2026-09-10: Casey listed Fisherman slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling. This page was \"Wild card - Skai originals\" until 2026-09-10; Casey's \"Wild Card Slots\" and \"Fishing Slots\" name the same page.",
-      "live": 78,
+      "live": 79,
       "furniture": 31,
       "furnitureWhy": {
         "canvas-chrome": 9,
         "loose-rectangle": 22
       },
-      "genuine": 47,
-      "matched": 47,
+      "genuine": 48,
+      "matched": 48,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
@@ -4534,10 +4534,9 @@
       "verified": 0,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 39,
+        "partial": 41,
         "blocked-on-backend": 5,
-        "furniture": 2,
-        "frame-defect": 1
+        "furniture": 2
       },
       "liveOnly": []
     }
@@ -4611,6 +4610,513 @@
       "status": "partial"
     },
     {
+      "id": "10657-217698",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 403",
+        "depth": 3,
+        "pageName": "✅ Predict"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:55"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "10657-217898",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 461",
+        "depth": 5,
+        "pageName": "✅ Predict"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:57"
+      ],
+      "status": "blocked-on-backend"
+    },
+    {
+      "id": "10657-218029",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Header-tablet",
+        "depth": 1,
+        "pageName": "✅ Predict"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:56"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "10657-218076",
+      "cls": "nested",
+      "resolved": {
+        "type": "INSTANCE",
+        "name": "Bottom-navigation-tablet",
+        "depth": 1,
+        "pageName": "✅ Predict"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:59"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "10912-148129",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 604",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:59"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "10912-148148",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "card",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:69"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "10912-148158",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "card",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:70"
+      ],
+      "status": "blocked-on-backend"
+    },
+    {
+      "id": "10912-148172",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 345",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:61"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11064-20612",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 405",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave15b.games-b.tsv:18",
+        "status.wave43.play-sports.tsv:58"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11066-22993",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Main container",
+        "depth": 2,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:65"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11066-23094",
+      "cls": "nested",
+      "resolved": {
+        "type": "INSTANCE",
+        "name": "images/circle",
+        "depth": 6,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:66"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11066-24288",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000003844",
+        "depth": 2,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:78"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11084-62326",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000003844",
+        "depth": 2,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:60"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11084-62383",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "nav",
+        "depth": 2,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:57"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11084-64586",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000003833",
+        "depth": 1,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:64"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11084-64983",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000003833",
+        "depth": 1,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:63"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11107-74005",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 632",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:86"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11107-74013",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "nav",
+        "depth": 2,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:87"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11107-74040",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Main container",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:88"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11107-74499",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Main container",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:89"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11107-74623",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Main container",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:90"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11109-80693",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Main container",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:91"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11109-80885",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 5,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:92"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11109-80890",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "items",
+        "depth": 5,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:93"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11109-80906",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 5,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:94"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11109-80944",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "FAQ",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:95"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11109-81868",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Main container",
+        "depth": 2,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:74"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11109-81874",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 186",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:75"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11202-44201",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000003873",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:72"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11202-44213",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000003874",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:71"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11211-82936",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 345",
+        "depth": 3,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave27.play-hub.tsv:57",
+        "status.wave28.play-hub.tsv:64",
+        "status.wave43.play-sports.tsv:62"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "11214-131710",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Top main",
+        "depth": 2,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.home.tsv:78"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "11214-131957",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Scroll bar 4",
+        "depth": 1,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:79"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-136580",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Pulse card - Intel ALT",
+        "depth": 9,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:70"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-146276",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "card",
+        "depth": 6,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:62"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-146465",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Row",
+        "depth": 4,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:61"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "13006-201814",
       "cls": "bug-link",
       "resolved": null,
@@ -4666,6 +5172,20 @@
       "status": "blocked-on-backend"
     },
     {
+      "id": "13006-216128",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Instant trade",
+        "depth": 6,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:91"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "13006-216679",
       "cls": "nested",
       "resolved": {
@@ -4678,6 +5198,230 @@
         "status.wave2.trench-order-types.tsv:7"
       ],
       "status": "blocked-on-backend"
+    },
+    {
+      "id": "13006-232413",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 301",
+        "depth": 5,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:107"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-234863",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "content",
+        "depth": 8,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:103"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-246718",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1157",
+        "depth": 3,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:105"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-260062",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 445",
+        "depth": 1,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:112"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-260063",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1296",
+        "depth": 2,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:111"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-260089",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Trench scroller",
+        "depth": 1,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:115"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-260213",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 445",
+        "depth": 1,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:114"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-260215",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 299",
+        "depth": 3,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:113"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-260244",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Pulse card - Intel ALT",
+        "depth": 5,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:116"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-285930",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1260",
+        "depth": 1,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.home.tsv:74"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-290304",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1341",
+        "depth": 1,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:110"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-299450",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1394",
+        "depth": 5,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:104"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "13006-302848",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1340",
+        "depth": 2,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:108"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-349050",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Pulse card - Intel ALT",
+        "depth": 4,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:106"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "13006-353775",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "sidebar - open",
+        "depth": 1,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.home.tsv:88"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-353852",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Trade 2"
+      },
+      "rows": [
+        "status.wave43.trench-launch.tsv:109"
+      ],
+      "status": "partial"
     },
     {
       "id": "13008-113503",
@@ -4708,6 +5452,160 @@
       "status": "frame-defect"
     },
     {
+      "id": "13008-122995",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "bento",
+        "depth": 2,
+        "pageName": "✅ Home 2"
+      },
+      "rows": [
+        "status.wave43.home.tsv:79"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13008-125095",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Home 2"
+      },
+      "rows": [
+        "status.wave43.home.tsv:134"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13008-125300",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Home 2"
+      },
+      "rows": [
+        "status.wave43.home.tsv:135"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "13008-27743",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "input/primary-inputs",
+        "depth": 5,
+        "pageName": "✅ Wallet 2"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:49"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "13008-43100",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "input/primary-inputs",
+        "depth": 5,
+        "pageName": "✅ Wallet 2"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:50"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "13008-43114",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "dropdown-3",
+        "depth": 1,
+        "pageName": "✅ Wallet 2"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:62"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13008-44161",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "input/primary-inputs",
+        "depth": 5,
+        "pageName": "✅ Wallet 2"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:51"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "13447-186055",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Home 2"
+      },
+      "rows": [
+        "status.wave43.home.tsv:100"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13449-187103",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Home 2"
+      },
+      "rows": [
+        "status.wave43.home.tsv:101"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13486-49630",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Header-desktop",
+        "depth": 1,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:106"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "13486-49723",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1137",
+        "depth": 1,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:107"
+      ],
+      "status": "done"
+    },
+    {
       "id": "2713-4556",
       "cls": "nested",
       "resolved": {
@@ -4736,13 +5634,88 @@
       "status": "furniture"
     },
     {
+      "id": "2737-28178",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:139"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "2760-9936",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:140"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "2769-14708",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:141"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "2773-8068",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "section",
+        "depth": 2,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:143"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "2853-9727",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "section",
+        "depth": 2,
+        "pageName": "✅ Home 1"
+      },
       "rows": [
         "status.wave43.home.tsv:144"
       ],
       "status": "partial"
+    },
+    {
+      "id": "3972-30250",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "dropdown-3",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:66"
+      ],
+      "status": "done"
     },
     {
       "id": "4144-63929",
@@ -4755,8 +5728,13 @@
     },
     {
       "id": "4437-112651",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.home.tsv:137"
       ],
@@ -4772,9 +5750,86 @@
       "status": "done"
     },
     {
+      "id": "4913-96283",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "row",
+        "depth": 5,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:81"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "5110-187519",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 629",
+        "depth": 3,
+        "pageName": "✅ Social"
+      },
+      "rows": [
+        "status.wave17.social-pages.tsv:23",
+        "status.wave24.social.tsv:31",
+        "status.wave43.wallet-social-predict.tsv:78"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "5198-50416",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 814",
+        "depth": 10,
+        "pageName": "✅ Social"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:84"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "5523-103268",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "dropdown-3",
+        "depth": 1,
+        "pageName": "✅ Governance and Utilities"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:61"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "5534-92972",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 278",
+        "depth": 5,
+        "pageName": "✅ Governance and Utilities"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:77"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "5810-111091",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 221",
+        "depth": 2,
+        "pageName": "✅ Home 1"
+      },
       "rows": [
         "status.wave43.home.tsv:136"
       ],
@@ -4790,13 +5845,130 @@
       "status": "done"
     },
     {
+      "id": "5902-146885",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "section",
+        "depth": 2,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:142"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "5926-15470",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:145"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "6795-30736",
+      "cls": "nested",
+      "resolved": {
+        "type": "INSTANCE",
+        "name": "Bottom-navigation-mobile",
+        "depth": 1,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:60"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "6849-37182",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "section",
+        "depth": 4,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:98"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "6925-67091",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "card group",
+        "depth": 3,
+        "pageName": "✅ Home 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:99"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "7712-29439",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Order book",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:83"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "7713-15130",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 337",
+        "depth": 1,
+        "pageName": "✅ Wallet 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:70"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "7713-15656",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "dropdown-3",
+        "depth": 2,
+        "pageName": "✅ Wallet 1"
+      },
       "rows": [
         "status.wave43.wallet-social-predict.tsv:71"
       ],
       "status": "done"
+    },
+    {
+      "id": "7713-16123",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 337",
+        "depth": 1,
+        "pageName": "✅ Wallet 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:72"
+      ],
+      "status": "partial"
     },
     {
       "id": "7717-14311",
@@ -4813,9 +5985,70 @@
       "status": "not-started"
     },
     {
+      "id": "7774-71260",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Wallet 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:69"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "7774-71414",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Wallet 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:67"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "7774-71454",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Wallet 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:68"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "7797-71630",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Wallet 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:66"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "8610-164278",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "markets",
+        "depth": 3,
+        "pageName": "✅ Predict"
+      },
       "rows": [
         "status.wave43.wallet-social-predict.tsv:80"
       ],
@@ -4823,8 +6056,13 @@
     },
     {
       "id": "9002-157020",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 6",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.trade.tsv:49"
       ],
@@ -4841,26 +6079,111 @@
     },
     {
       "id": "9002-157083",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Nav of chart",
+        "depth": 4,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.trade.tsv:51"
       ],
       "status": "done"
     },
     {
+      "id": "9002-157105",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Row 2",
+        "depth": 4,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:53"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "9002-158074",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Nav of chart",
+        "depth": 4,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:52"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "9002-158102",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 444",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.trade.tsv:54"
       ],
       "status": "partial"
     },
     {
+      "id": "9002-158175",
+      "cls": "nested",
+      "resolved": {
+        "type": "INSTANCE",
+        "name": "Bottom-navigation-tablet",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:58"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "9002-161614",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1220",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:50"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "9002-163721",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1220",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.wallet-social-predict.tsv:82"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "9003-131212",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "sidebar",
+        "depth": 1,
+        "pageName": "✅ Coinflip - Skai originals"
+      },
       "rows": [
         "status.wave43.home.tsv:87"
       ],
@@ -4868,8 +6191,13 @@
     },
     {
       "id": "9003-143366",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "main",
+        "depth": 6,
+        "pageName": "✅ Scratchers - Skai originals"
+      },
       "rows": [
         "status.wave43.play-sports.tsv:68"
       ],
@@ -4888,9 +6216,42 @@
       "status": "partial"
     },
     {
+      "id": "9042-164219",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1220",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:77"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9050-207877",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:83"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "9050-212444",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "dropdown-3",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.trade.tsv:64"
       ],
@@ -4898,8 +6259,13 @@
     },
     {
       "id": "9050-213899",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "dropdown-3",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.trade.tsv:63"
       ],
@@ -4907,8 +6273,13 @@
     },
     {
       "id": "9050-213971",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 337",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.trade.tsv:59"
       ],
@@ -4916,10 +6287,57 @@
     },
     {
       "id": "9061-244538",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "dropdown-3",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.trade.tsv:65"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "9069-261070",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 341",
+        "depth": 3,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:60"
+      ],
+      "status": "frame-defect"
+    },
+    {
+      "id": "9069-261103",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 342",
+        "depth": 3,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:61"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9069-261128",
+      "cls": "nested",
+      "resolved": {
+        "type": "INSTANCE",
+        "name": "CTA/button",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:62"
       ],
       "status": "done"
     },
@@ -4957,10 +6375,29 @@
     },
     {
       "id": "9099-146833",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Main container",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
       "rows": [
         "status.wave43.play-sports.tsv:55"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "9099-146905",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 637",
+        "depth": 7,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave43.play-sports.tsv:56"
       ],
       "status": "done"
     },
@@ -4975,12 +6412,101 @@
     },
     {
       "id": "9104-77776",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 447",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
       "rows": [
         "status.wave43.trade.tsv:75"
       ],
       "status": "partial"
+    },
+    {
+      "id": "9104-77795",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "card",
+        "depth": 7,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:74"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9135-85235",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1220",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:71"
+      ],
+      "status": "frame-defect"
+    },
+    {
+      "id": "9135-86727",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1217",
+        "depth": 1,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:72"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "9148-78693",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:79"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "9148-79119",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:80"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9148-80644",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "modal",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:76"
+      ],
+      "status": "done"
     },
     {
       "id": "9163-5572",
@@ -5215,9 +6741,126 @@
       "status": "done"
     },
     {
+      "id": "9770-133755",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 160",
+        "depth": 6,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:67"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9777-101728",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1222",
+        "depth": 3,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:78"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9780-145912",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1219",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:68"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9780-147207",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 300",
+        "depth": 3,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:56"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "9780-157337",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 444",
+        "depth": 2,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.trade.tsv:55"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9785-161003",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1264",
+        "depth": 5,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:75"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9785-161048",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "signals",
+        "depth": 5,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:76"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "9785-161305",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "section",
+        "depth": 3,
+        "pageName": "✅ Trade 1"
+      },
+      "rows": [
+        "status.wave43.home.tsv:77"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "9937-18892",
-      "cls": "bug-link",
-      "resolved": null,
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Desktop",
+        "depth": 6,
+        "pageName": "✅ Rock Paper Scissors - Skai originals"
+      },
       "rows": [
         "status.wave43.play-sports.tsv:67"
       ],
@@ -34847,7 +36490,7 @@
     },
     {
       "id": "10272-3834",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34855,7 +36498,7 @@
     },
     {
       "id": "10354-877",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34863,7 +36506,7 @@
     },
     {
       "id": "10354-3115",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34871,7 +36514,7 @@
     },
     {
       "id": "10354-3935",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34879,7 +36522,7 @@
     },
     {
       "id": "10354-2840",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34887,7 +36530,7 @@
     },
     {
       "id": "10354-1754",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34895,7 +36538,7 @@
     },
     {
       "id": "10354-1555",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34903,7 +36546,7 @@
     },
     {
       "id": "10272-4179",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34911,7 +36554,7 @@
     },
     {
       "id": "10359-10003",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34919,7 +36562,7 @@
     },
     {
       "id": "10359-11133",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34927,7 +36570,7 @@
     },
     {
       "id": "10285-15783",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34935,7 +36578,7 @@
     },
     {
       "id": "10295-732",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34943,7 +36586,7 @@
     },
     {
       "id": "10285-15821",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34951,7 +36594,7 @@
     },
     {
       "id": "10285-16306",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34959,7 +36602,7 @@
     },
     {
       "id": "10320-2623",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34967,7 +36610,7 @@
     },
     {
       "id": "10353-1058",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34975,7 +36618,7 @@
     },
     {
       "id": "10329-11088",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34983,7 +36626,7 @@
     },
     {
       "id": "10341-11586",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34991,7 +36634,7 @@
     },
     {
       "id": "10353-829",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -34999,7 +36642,7 @@
     },
     {
       "id": "10272-4933",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35007,7 +36650,7 @@
     },
     {
       "id": "10354-4819",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35015,7 +36658,7 @@
     },
     {
       "id": "11930-46622",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35023,7 +36666,7 @@
     },
     {
       "id": "10354-5242",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35031,7 +36674,7 @@
     },
     {
       "id": "11930-46727",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35039,7 +36682,7 @@
     },
     {
       "id": "10354-6256",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35047,7 +36690,7 @@
     },
     {
       "id": "11930-46841",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35055,7 +36698,7 @@
     },
     {
       "id": "10354-5365",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35063,7 +36706,7 @@
     },
     {
       "id": "11930-46945",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35071,7 +36714,7 @@
     },
     {
       "id": "10354-6074",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35079,7 +36722,7 @@
     },
     {
       "id": "11930-47126",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35087,7 +36730,7 @@
     },
     {
       "id": "10354-7028",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35095,7 +36738,7 @@
     },
     {
       "id": "11930-47313",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35103,7 +36746,7 @@
     },
     {
       "id": "10354-7459",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35111,7 +36754,7 @@
     },
     {
       "id": "11930-47489",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35119,7 +36762,7 @@
     },
     {
       "id": "10354-5137",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35127,7 +36770,7 @@
     },
     {
       "id": "11930-47699",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35135,7 +36778,7 @@
     },
     {
       "id": "10354-4269",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35143,7 +36786,7 @@
     },
     {
       "id": "10359-8316",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35151,7 +36794,7 @@
     },
     {
       "id": "10359-9369",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35159,7 +36802,7 @@
     },
     {
       "id": "10359-9167",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35167,7 +36810,7 @@
     },
     {
       "id": "10359-9488",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35175,7 +36818,7 @@
     },
     {
       "id": "10359-9493",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35183,7 +36826,7 @@
     },
     {
       "id": "10359-9530",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35191,7 +36834,7 @@
     },
     {
       "id": "10359-9535",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35199,7 +36842,7 @@
     },
     {
       "id": "11930-45998",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35207,7 +36850,7 @@
     },
     {
       "id": "11930-47944",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35215,7 +36858,7 @@
     },
     {
       "id": "11930-48655",
-      "page": "🚧 Safari Slots - Skai originals",
+      "page": "✅ Untamed - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35223,7 +36866,7 @@
     },
     {
       "id": "10359-13264",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35231,7 +36874,7 @@
     },
     {
       "id": "10359-13505",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35239,7 +36882,7 @@
     },
     {
       "id": "10387-4125",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35247,7 +36890,7 @@
     },
     {
       "id": "10385-3166",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35255,7 +36898,7 @@
     },
     {
       "id": "10387-4470",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35263,7 +36906,7 @@
     },
     {
       "id": "10400-5393",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35271,7 +36914,7 @@
     },
     {
       "id": "10400-5509",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35279,7 +36922,7 @@
     },
     {
       "id": "10395-4756",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35287,7 +36930,7 @@
     },
     {
       "id": "10400-4973",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35295,7 +36938,7 @@
     },
     {
       "id": "10385-2858",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35303,7 +36946,7 @@
     },
     {
       "id": "11930-39529",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35311,7 +36954,7 @@
     },
     {
       "id": "11930-39780",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35319,7 +36962,7 @@
     },
     {
       "id": "11930-40031",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35327,7 +36970,7 @@
     },
     {
       "id": "10401-6164",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
@@ -35335,7 +36978,7 @@
     },
     {
       "id": "10403-6394",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
@@ -35343,7 +36986,7 @@
     },
     {
       "id": "10401-6360",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35351,7 +36994,7 @@
     },
     {
       "id": "10401-6365",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35359,7 +37002,7 @@
     },
     {
       "id": "10401-6369",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35367,7 +37010,7 @@
     },
     {
       "id": "10401-6374",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35375,7 +37018,7 @@
     },
     {
       "id": "10403-6465",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35383,7 +37026,7 @@
     },
     {
       "id": "10403-6662",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35391,7 +37034,7 @@
     },
     {
       "id": "10406-11233",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35399,7 +37042,7 @@
     },
     {
       "id": "10407-12856",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35407,7 +37050,7 @@
     },
     {
       "id": "10407-14020",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35415,7 +37058,7 @@
     },
     {
       "id": "10407-13075",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
@@ -35423,7 +37066,7 @@
     },
     {
       "id": "10407-13179",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35431,7 +37074,7 @@
     },
     {
       "id": "10409-14696",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35439,7 +37082,7 @@
     },
     {
       "id": "10412-15598",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35447,7 +37090,7 @@
     },
     {
       "id": "10412-15700",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35455,7 +37098,7 @@
     },
     {
       "id": "10407-14031",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35463,7 +37106,7 @@
     },
     {
       "id": "10406-10540",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35471,7 +37114,7 @@
     },
     {
       "id": "10405-9861",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35479,7 +37122,7 @@
     },
     {
       "id": "10405-9965",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35487,7 +37130,7 @@
     },
     {
       "id": "11930-40198",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35495,7 +37138,7 @@
     },
     {
       "id": "11930-40210",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35503,7 +37146,7 @@
     },
     {
       "id": "11930-40220",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
@@ -35511,7 +37154,7 @@
     },
     {
       "id": "11930-40231",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35519,7 +37162,7 @@
     },
     {
       "id": "11930-40320",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35527,7 +37170,7 @@
     },
     {
       "id": "11930-40415",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35535,7 +37178,7 @@
     },
     {
       "id": "11930-40499",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35543,7 +37186,7 @@
     },
     {
       "id": "11930-40617",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35551,7 +37194,7 @@
     },
     {
       "id": "11930-41016",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35559,7 +37202,7 @@
     },
     {
       "id": "11930-42183",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35567,7 +37210,7 @@
     },
     {
       "id": "11930-42806",
-      "page": "🚧 Cosmic Slots - Skai originals",
+      "page": "✅ Starbound - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35575,7 +37218,7 @@
     },
     {
       "id": "10412-15861",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35583,7 +37226,7 @@
     },
     {
       "id": "10412-16102",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35591,7 +37234,7 @@
     },
     {
       "id": "10448-4297",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35599,7 +37242,7 @@
     },
     {
       "id": "10452-4331",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35607,7 +37250,7 @@
     },
     {
       "id": "10412-16752",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35615,7 +37258,7 @@
     },
     {
       "id": "10452-4915",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35623,7 +37266,7 @@
     },
     {
       "id": "10458-5156",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35631,7 +37274,7 @@
     },
     {
       "id": "10655-5847",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35639,7 +37282,7 @@
     },
     {
       "id": "10478-5265",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35647,7 +37290,7 @@
     },
     {
       "id": "10655-5591",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35655,7 +37298,7 @@
     },
     {
       "id": "10688-7138",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35663,7 +37306,7 @@
     },
     {
       "id": "10688-7176",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35671,7 +37314,7 @@
     },
     {
       "id": "10688-7225",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35679,7 +37322,7 @@
     },
     {
       "id": "10688-7210",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35687,7 +37330,7 @@
     },
     {
       "id": "10688-7214",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
@@ -35695,7 +37338,7 @@
     },
     {
       "id": "10688-7219",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
@@ -35703,7 +37346,7 @@
     },
     {
       "id": "10688-7196",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -35711,7 +37354,7 @@
     },
     {
       "id": "10688-7153",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "not-started",
       "claimed": "not-started",
@@ -35719,7 +37362,7 @@
     },
     {
       "id": "10688-7157",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35727,7 +37370,7 @@
     },
     {
       "id": "10688-7162",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35735,7 +37378,7 @@
     },
     {
       "id": "10688-7471",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35743,7 +37386,7 @@
     },
     {
       "id": "10688-8328",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35751,7 +37394,7 @@
     },
     {
       "id": "10698-11157",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35759,7 +37402,7 @@
     },
     {
       "id": "10737-13868",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35767,7 +37410,7 @@
     },
     {
       "id": "10737-14223",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35775,7 +37418,7 @@
     },
     {
       "id": "10737-14138",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35783,7 +37426,7 @@
     },
     {
       "id": "10738-14799",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35791,7 +37434,7 @@
     },
     {
       "id": "10738-14514",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35799,7 +37442,7 @@
     },
     {
       "id": "10737-13562",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35807,7 +37450,7 @@
     },
     {
       "id": "10736-12848",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35815,7 +37458,7 @@
     },
     {
       "id": "10738-15210",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35823,7 +37466,7 @@
     },
     {
       "id": "10738-15461",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35831,7 +37474,7 @@
     },
     {
       "id": "10738-15628",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35839,7 +37482,7 @@
     },
     {
       "id": "10741-16616",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35847,7 +37490,7 @@
     },
     {
       "id": "10743-16972",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35855,7 +37498,7 @@
     },
     {
       "id": "10744-17293",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35863,7 +37506,7 @@
     },
     {
       "id": "10745-17641",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35871,7 +37514,7 @@
     },
     {
       "id": "10745-17872",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35879,7 +37522,7 @@
     },
     {
       "id": "10741-16488",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
@@ -35887,7 +37530,7 @@
     },
     {
       "id": "11930-34757",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35895,7 +37538,7 @@
     },
     {
       "id": "11930-34769",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35903,7 +37546,7 @@
     },
     {
       "id": "11930-34792",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35911,7 +37554,7 @@
     },
     {
       "id": "11930-34878",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35919,7 +37562,7 @@
     },
     {
       "id": "11930-34974",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35927,7 +37570,7 @@
     },
     {
       "id": "11930-35064",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35935,7 +37578,7 @@
     },
     {
       "id": "11930-35188",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35943,7 +37586,7 @@
     },
     {
       "id": "11930-35200",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35951,7 +37594,7 @@
     },
     {
       "id": "11930-35959",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35959,7 +37602,7 @@
     },
     {
       "id": "11930-36583",
-      "page": "🚧 Vegas fortune - Skai originals",
+      "page": "✅ Vegas fortune - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35967,7 +37610,7 @@
     },
     {
       "id": "10285-14037",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35975,7 +37618,7 @@
     },
     {
       "id": "10285-14278",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35983,7 +37626,7 @@
     },
     {
       "id": "10285-14928",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -35991,7 +37634,7 @@
     },
     {
       "id": "10747-20240",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -35999,7 +37642,7 @@
     },
     {
       "id": "10753-20676",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36007,7 +37650,7 @@
     },
     {
       "id": "10758-20929",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36015,7 +37658,7 @@
     },
     {
       "id": "11148-2096",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36023,7 +37666,7 @@
     },
     {
       "id": "11146-1937",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36031,7 +37674,7 @@
     },
     {
       "id": "10782-24103",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36039,7 +37682,7 @@
     },
     {
       "id": "11206-2787",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36047,7 +37690,7 @@
     },
     {
       "id": "11215-2930",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36055,7 +37698,7 @@
     },
     {
       "id": "11198-2649",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36063,7 +37706,7 @@
     },
     {
       "id": "10758-20769",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -36071,7 +37714,7 @@
     },
     {
       "id": "10758-20774",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36079,7 +37722,7 @@
     },
     {
       "id": "10758-20778",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36087,7 +37730,7 @@
     },
     {
       "id": "10758-20783",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36095,7 +37738,7 @@
     },
     {
       "id": "11219-3122",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36103,7 +37746,7 @@
     },
     {
       "id": "11219-3786",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36111,7 +37754,7 @@
     },
     {
       "id": "11244-7038",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36119,7 +37762,7 @@
     },
     {
       "id": "11258-7465",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36127,7 +37770,7 @@
     },
     {
       "id": "11275-8533",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36135,7 +37778,7 @@
     },
     {
       "id": "11277-9060",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36143,7 +37786,7 @@
     },
     {
       "id": "11264-7884",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36151,7 +37794,7 @@
     },
     {
       "id": "11234-6787",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36159,7 +37802,7 @@
     },
     {
       "id": "11234-6902",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36167,7 +37810,7 @@
     },
     {
       "id": "11279-11092",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36175,7 +37818,7 @@
     },
     {
       "id": "11279-11470",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36183,7 +37826,7 @@
     },
     {
       "id": "11282-12216",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36191,7 +37834,7 @@
     },
     {
       "id": "11278-10019",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36199,7 +37842,7 @@
     },
     {
       "id": "11287-12668",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36207,7 +37850,7 @@
     },
     {
       "id": "11288-12765",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36215,7 +37858,7 @@
     },
     {
       "id": "11299-14020",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36223,15 +37866,7 @@
     },
     {
       "id": "11298-13311",
-      "page": "🚧 Gem Slots - Skai originals",
-      "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
-      "verdict": null
-    },
-    {
-      "id": "11881-14886",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36239,7 +37874,7 @@
     },
     {
       "id": "11278-10438",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36247,7 +37882,7 @@
     },
     {
       "id": "11930-28659",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36255,7 +37890,7 @@
     },
     {
       "id": "11930-28667",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36263,7 +37898,7 @@
     },
     {
       "id": "11930-28763",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36271,7 +37906,7 @@
     },
     {
       "id": "11930-28859",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36279,7 +37914,7 @@
     },
     {
       "id": "11930-28980",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36287,23 +37922,15 @@
     },
     {
       "id": "11930-29101",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
-      "id": "11930-29256",
-      "page": "🚧 Gem Slots - Skai originals",
-      "scope": "in-scope",
-      "status": "furniture",
-      "claimed": "furniture",
-      "verdict": null
-    },
-    {
       "id": "11930-29411",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36311,7 +37938,7 @@
     },
     {
       "id": "11930-28028",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36319,7 +37946,7 @@
     },
     {
       "id": "11930-30639",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36327,7 +37954,7 @@
     },
     {
       "id": "11930-31288",
-      "page": "🚧 Gem Slots - Skai originals",
+      "page": "✅ Sugar Rush - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36335,7 +37962,7 @@
     },
     {
       "id": "11306-15099",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36343,7 +37970,7 @@
     },
     {
       "id": "11381-18137",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36351,7 +37978,7 @@
     },
     {
       "id": "11416-19412",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36359,7 +37986,7 @@
     },
     {
       "id": "11416-19537",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36367,7 +37994,7 @@
     },
     {
       "id": "11521-20155",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36375,7 +38002,7 @@
     },
     {
       "id": "11598-21432",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36383,7 +38010,7 @@
     },
     {
       "id": "11527-20243",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36391,15 +38018,39 @@
     },
     {
       "id": "11592-20699",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
+      "id": "12050-1948",
+      "page": "✅ Hooked - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "12050-1987",
+      "page": "✅ Hooked - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "12052-2027",
+      "page": "✅ Hooked - Skai originals",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
       "id": "11596-21055",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36407,7 +38058,7 @@
     },
     {
       "id": "11602-21673",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -36415,7 +38066,7 @@
     },
     {
       "id": "11602-21869",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "furniture",
       "claimed": "furniture",
@@ -36423,7 +38074,7 @@
     },
     {
       "id": "11602-21874",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36431,7 +38082,7 @@
     },
     {
       "id": "11602-21878",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36439,7 +38090,7 @@
     },
     {
       "id": "11602-21883",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36447,7 +38098,7 @@
     },
     {
       "id": "11606-21938",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36455,7 +38106,7 @@
     },
     {
       "id": "11606-22795",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36463,7 +38114,7 @@
     },
     {
       "id": "11637-25043",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36471,7 +38122,7 @@
     },
     {
       "id": "11640-27341",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36479,7 +38130,7 @@
     },
     {
       "id": "11637-25690",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36487,7 +38138,7 @@
     },
     {
       "id": "11654-29146",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36495,7 +38146,7 @@
     },
     {
       "id": "11650-28479",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36503,7 +38154,7 @@
     },
     {
       "id": "11641-27685",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36511,7 +38162,7 @@
     },
     {
       "id": "11640-27236",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36519,7 +38170,7 @@
     },
     {
       "id": "11661-29629",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36527,7 +38178,7 @@
     },
     {
       "id": "11668-32530",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36535,7 +38186,7 @@
     },
     {
       "id": "11678-32864",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36543,7 +38194,7 @@
     },
     {
       "id": "11680-33011",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36551,7 +38202,7 @@
     },
     {
       "id": "11661-30294",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36559,7 +38210,7 @@
     },
     {
       "id": "11696-34540",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36567,7 +38218,7 @@
     },
     {
       "id": "11697-34737",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36575,23 +38226,15 @@
     },
     {
       "id": "11700-34994",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": null
     },
     {
-      "id": "11896-15052",
-      "page": "🚧 Fisherman Slots - Skai originals",
-      "scope": "in-scope",
-      "status": "frame-defect",
-      "claimed": "frame-defect",
-      "verdict": null
-    },
-    {
       "id": "11668-32543",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36599,7 +38242,7 @@
     },
     {
       "id": "11930-23931",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36607,7 +38250,7 @@
     },
     {
       "id": "11930-23943",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36615,7 +38258,7 @@
     },
     {
       "id": "11930-23974",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36623,7 +38266,7 @@
     },
     {
       "id": "11930-23988",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36631,7 +38274,7 @@
     },
     {
       "id": "11930-24078",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
@@ -36639,7 +38282,7 @@
     },
     {
       "id": "11930-24180",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36647,15 +38290,7 @@
     },
     {
       "id": "11930-24265",
-      "page": "🚧 Fisherman Slots - Skai originals",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
-    },
-    {
-      "id": "11930-24384",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36663,7 +38298,7 @@
     },
     {
       "id": "11930-24503",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36671,7 +38306,7 @@
     },
     {
       "id": "11661-31059",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36679,7 +38314,7 @@
     },
     {
       "id": "11680-33511",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36687,7 +38322,7 @@
     },
     {
       "id": "11930-24933",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36695,7 +38330,7 @@
     },
     {
       "id": "11930-25935",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
@@ -36703,7 +38338,7 @@
     },
     {
       "id": "11930-26565",
-      "page": "🚧 Fisherman Slots - Skai originals",
+      "page": "✅ Hooked - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
