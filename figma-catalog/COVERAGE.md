@@ -17,11 +17,11 @@ Live half harvested 2026-09-11 (harvest.mjs: one use_figma call per chunk (see `
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 592 | 15.5% |
-| `partial` | 2250 | 59.0% |
-| `not-started` | 303 | 7.9% |
-| `blocked-on-backend` | 190 | 5.0% |
-| `frame-defect` | 125 | 3.3% |
+| `done` | 585 | 15.3% |
+| `partial` | 2292 | 60.1% |
+| `not-started` | 267 | 7.0% |
+| `blocked-on-backend` | 189 | 5.0% |
+| `frame-defect` | 128 | 3.4% |
 | `furniture` (catalog says furniture, this script says genuine) | 131 | 3.4% |
 | `unknown` | 219 | 5.7% |
 
@@ -41,11 +41,11 @@ That is 16.8% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**592 of 3814 in-scope genuine frames (15.5%) are covered by a row marked `done`.**
+**585 of 3814 in-scope genuine frames (15.3%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 15.5% measured parity.
+Read the caveat section before quoting that. It is not 15.3% measured parity.
 
-**169 of those 592 (4.4% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 423 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 32 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` map to no page in pages.json and are not applied.
+**174 of those 585 (4.6% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 411 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 35 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` map to no page in pages.json and are not applied.
 
 ## Out of the roll-up
 
@@ -64,16 +64,16 @@ Read the caveat section before quoting that. It is not 15.5% measured parity.
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | ✅ Governance and Utilities | in-scope | 725 | 66 | 659 | 659 | 0 | 331 | 52 | 18 | 0 | 100.0% |
 | ✅ Social | in-scope | 442 | 40 | 402 | 402 | 63 | 249 | 39 | 37 | 0 | 100.0% |
-| ✅ Trade 2 | in-scope | 417 | 40 | 377 | 377 | 91 | 224 | 23 | 22 | 0 | 100.0% |
-| ✅ Trade 1 | in-scope | 420 | 53 | 367 | 367 | 20 | 318 | 9 | 15 | 0 | 100.0% |
-| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 49 | 142 | 54 | 1 | 0 | 100.0% |
+| ✅ Trade 2 | in-scope | 417 | 40 | 377 | 377 | 86 | 233 | 20 | 21 | 0 | 100.0% |
+| ✅ Trade 1 | in-scope | 420 | 53 | 367 | 367 | 19 | 316 | 9 | 15 | 0 | 100.0% |
+| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 48 | 144 | 54 | 1 | 0 | 100.0% |
 | ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 28 | 140 | 48 | 18 | 0 | 100.0% |
-| ✅ Home 1 | in-scope | 277 | 41 | 236 | 236 | 53 | 137 | 39 | 0 | 0 | 100.0% |
-| ✅ Home 2 | in-scope | 240 | 36 | 204 | 204 | 48 | 125 | 20 | 8 | 0 | 100.0% |
-| ✅ Wallet 1 | in-scope | 178 | 11 | 167 | 167 | 65 | 96 | 0 | 0 | 0 | 100.0% |
-| ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 125 | 22 | 0 | 7 | 0 | 100.0% |
+| ✅ Home 1 | in-scope | 277 | 41 | 236 | 236 | 60 | 160 | 9 | 0 | 0 | 100.0% |
+| ✅ Home 2 | in-scope | 240 | 36 | 204 | 204 | 51 | 125 | 17 | 8 | 0 | 100.0% |
+| ✅ Wallet 1 | in-scope | 178 | 11 | 167 | 167 | 64 | 97 | 0 | 0 | 0 | 100.0% |
+| ✅ Wallet 2 | in-scope | 182 | 23 | 159 | 159 | 117 | 30 | 0 | 7 | 0 | 100.0% |
 | ✅ Onboarding and Authentication | in-scope | 151 | 24 | 127 | 127 | 0 | 101 | 16 | 3 | 0 | 100.0% |
-| 🚧 Vegas fortune - Skai originals | in-scope | 96 | 47 | 49 | 49 | 3 | 13 | 1 | 16 | 0 | 100.0% |
+| 🚧 Vegas fortune - Skai originals | in-scope | 96 | 47 | 49 | 49 | 2 | 14 | 1 | 16 | 0 | 100.0% |
 | 🚧 Safari Slots - Skai originals | in-scope | 72 | 25 | 47 | 47 | 0 | 30 | 0 | 0 | 0 | 100.0% |
 | 🚧 Fisherman Slots - Skai originals | in-scope | 78 | 31 | 47 | 47 | 0 | 39 | 0 | 5 | 0 | 100.0% |
 | 🚧 Gem Slots - Skai originals | in-scope | 68 | 22 | 46 | 46 | 0 | 17 | 0 | 27 | 0 | 100.0% |
@@ -230,12 +230,12 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift B — catalog-only (a row pointing at a node that is not a live top-level child)
 
-46 node ids are named by a row but are not a live top-level child of any page. They are not all drift:
+65 node ids are named by a row but are not a live top-level child of any page. They are not all drift:
 
 | outcome | count | is it drift? |
 |---|---:|---|
-| `nested` — a node inside a frame that IS live | 8 | no, a deep link |
-| `bug-link` — listed in the bug node indexes | 37 | no, a deep link |
+| `nested` — a node inside a frame that IS live | 10 | no, a deep link |
+| `bug-link` — listed in the bug node indexes | 54 | no, a deep link |
 | `page-ref` — the row cites a Figma PAGE id, not a frame | 0 | no |
 | **`gone`** — not live, not nested under anything live, not a known link | **1** | **yes** |
 
@@ -286,13 +286,16 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.figma-unblock.predict.tsv` | 8 | 2 | 2 |
 | `status.wave35.social-pages.tsv` | 4 | 1 | 1 |
 | `status.trade.tsv` | 93 | 25 | 59 |
+| `status.wave43.play-sports.tsv` | 47 | 13 | 11 |
 | `status.wave25.play-casino-b.tsv` | 7 | 2 | 1 |
 | `status.wave27.social-groups.tsv` | 6 | 2 | 4 |
 | `status.wave5.discover-createtoken.tsv` | 3 | 1 | 1 |
+| `status.wave43.trade.tsv` | 40 | 15 | 14 |
 | `status.wave27.social-feed.tsv` | 8 | 3 | 6 |
 | `status.wave17.predict-detail.tsv` | 9 | 4 | 3 |
 | `status.wave17.games-instant.tsv` | 11 | 5 | 5 |
 | `status.wave17.play-hub.tsv` | 13 | 6 | 6 |
+| `status.wave43.wallet-social-predict.tsv` | 47 | 22 | 22 |
 | `status.wave17.social-groups.tsv` | 23 | 11 | 11 |
 | `status.wave2.predict.tsv` | 33 | 16 | 30 |
 | `status.wave15b.games-b.tsv` | 14 | 8 | 8 |
@@ -309,6 +312,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.wave25.social-feed.tsv` | 8 | 6 | 5 |
 | `status.wave17.trade2-spot.tsv` | 4 | 3 | 3 |
 | `status.wave35.play-pages.tsv` | 4 | 3 | 3 |
+| `status.wave43.home.tsv` | 74 | 56 | 52 |
 | `status.wave39.play-instant.tsv` | 13 | 10 | 12 |
 | `status.wave27.play-casino-a.tsv` | 9 | 7 | 8 |
 | `status.wave28.play-hub.tsv` | 9 | 7 | 9 |
@@ -319,6 +323,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 | `status.wave17.trade2-trench-b.tsv` | 5 | 4 | 4 |
 | `status.onboarding.tsv` | 21 | 17 | 34 |
 | `status.predict.tsv` | 33 | 27 | 69 |
+| `status.wave43.trench-launch.tsv` | 58 | 49 | 40 |
 | `status.wave27.trade2-trench-a.tsv` | 7 | 6 | 6 |
 | `status.wave29.g-mines.tsv` | 7 | 6 | 4 |
 | `status.wave24.trench-b.tsv` | 45 | 39 | 39 |
@@ -360,17 +365,17 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 ## What this number does NOT mean
 
-**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **2227 rows currently carry `done`**, and only **817** of them (36.7%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1410 assert completion with nothing behind them that a later auditor can re-check.
+**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **2295 rows currently carry `done`**, and only **885** of them (38.6%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1410 assert completion with nothing behind them that a later auditor can re-check.
 
 **2. `done` is silent about width.** Column 2 carries no viewport and must never be read as a desktop verdict. The width answers live in column 6 and start at `unknown`.
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 505 of 15025 status rows (3.4%) name no node id at all, and 594 (4.0%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 595 of 15291 status rows (3.9%) name no node id at all, and 705 (4.6%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 24874 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 285 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 25466 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 398 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 285 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
 **7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **117 of the 3813 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 117/117, ✅ Trade 1 117/367 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
