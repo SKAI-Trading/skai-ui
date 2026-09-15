@@ -24,6 +24,13 @@ const BID_DEPTH_FILL =
   "linear-gradient(to right, rgba(23, 249, 180, 0.04), rgba(23, 249, 180, 0.14))";
 
 /**
+ * Drawn wherever the book holds no figure. An em dash, deliberately not a zero
+ * and deliberately not the ellipsis a loading row uses: "we cannot derive this"
+ * and "this is still arriving" must never produce the same pixels.
+ */
+const UNKNOWN_FIGURE = "—";
+
+/**
  * A single price level in the order book
  * @example
  * ```tsx
@@ -68,10 +75,21 @@ export interface OrderBookData {
   bids: OrderBookLevel[];
   /** Sell orders (lowest first) */
   asks: OrderBookLevel[];
-  /** Absolute spread between best bid/ask */
-  spread: number;
-  /** Spread as percentage */
-  spreadPercent: number;
+  /**
+   * Absolute spread between best bid and best ask, or `null` when there is no
+   * spread to state.
+   *
+   * A one-sided book — real levels on one side, nothing on the other — has no
+   * spread at all, and producers that type the field `number` hand that case
+   * over as a zero. A zero-width spread is the most bullish claim an order book
+   * can make about a market's liquidity, and it was being made about markets
+   * with no offers in them. `null` is the only value that says "no spread",
+   * so the widget can draw {@link UNKNOWN_FIGURE} instead of inventing one.
+   * Deliberately no third case.
+   */
+  spread: number | null;
+  /** Spread as a percentage, or `null` on the same terms as {@link spread}. */
+  spreadPercent: number | null;
   /** Timestamp of last update */
   lastUpdate: number;
 }
@@ -408,16 +426,33 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
               .map((ask, idx) => renderLevel(ask, idx, "ask"))}
           </div>
 
-          {/* Spread */}
-          <div className="py-2 px-3 bg-card/50 border-y border-border flex items-center justify-between shrink-0">
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold text-primary font-mono">
-                {data.spread.toFixed(pricePrecision)}
-              </span>
-              <span className="text-xs text-muted-foreground">Spread</span>
-            </div>
-            <span className="text-xs text-muted-foreground font-mono">
-              {data.spreadPercent.toFixed(4)}%
+          {/* Spread row — `7712:29575` at 1440 and `9002:163859` at 768, which
+              draw the same three cells and differ only in how much slack the
+              flexible ones get: the label right-aligned in a `flex-1` cell, the
+              absolute spread centred in a box padded 24 either side (a 56-wide
+              cell around the frame's 8px sample figure), then the percentage
+              left-aligned in a second `flex-1` cell. The trio therefore reads
+              as one centred cluster rather than as two opposite edges, which is
+              what the old layout drew.
+
+              Twenty tall on both boards: a 16px line box with 2px of air above
+              and below, on the panel's own ground — the frames paint no tint
+              behind this row and rule neither side of it. All three cells are
+              12/16 at -0.48px in white, the label in Manrope and both figures in
+              Mulish, matching the ladder beneath. */}
+          <div className="flex shrink-0 items-center justify-between px-4 py-[2px] text-xs leading-4 tracking-[-0.48px] text-white">
+            <span className="min-w-px flex-1 truncate text-right font-sans">
+              Spread
+            </span>
+            <span className="shrink-0 px-6 text-center font-mulish tabular-nums">
+              {typeof data.spread === "number"
+                ? data.spread.toFixed(pricePrecision)
+                : UNKNOWN_FIGURE}
+            </span>
+            <span className="min-w-px flex-1 truncate font-mulish tabular-nums">
+              {typeof data.spreadPercent === "number"
+                ? `${data.spreadPercent.toFixed(4)}%`
+                : UNKNOWN_FIGURE}
             </span>
           </div>
 
