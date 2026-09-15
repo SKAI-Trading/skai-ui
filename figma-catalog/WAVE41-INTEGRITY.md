@@ -577,6 +577,9 @@ carried their prior verdict with `NOT RE-READ`.
 
 ## 10. What is next
 
+Executed as wave 42 the same evening (17:55 to 19:20): Casey ruled on every decision
+below at 17:35 and 17:40, and `WAVE42-INTEGRITY.md` records what each ruling became.
+
 Wave 41 has now re-measured every section it set out to: the five slot pages and Wallet
 (batch b), the 21 game pages (games batch), home, trade, trade-2, predict and social
 (batch 1), and onboarding, the play hub, the explorer and the governance and account

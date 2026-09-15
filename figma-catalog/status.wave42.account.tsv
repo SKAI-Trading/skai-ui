@@ -1,0 +1,86 @@
+# key	status	primaryFile	route	reason	bp
+# Lane account, wave 42, 2026-09-14. 38 frames: the "Skai > Account" family of page "✅ Governance and Utilities",
+# file 3sSzw1KewMtUbeLAv7uW0r — every row of status.wave41.governance-account.tsv whose title starts "Skai > Account"
+# or whose primaryFile sits under src/components/account/ or src/pages/account/.
+#
+# Owns: src/components/account/**, src/pages/account/**, src/services/user/userStatsService.ts (read paths only).
+#
+# NO BROWSER, no dev server and no build were run (wave rule), so nothing here rests on a render and NO row says
+# `done`. Every verdict is component source resolved against node data.
+#
+# FIGMA READ LIVE THIS RUN — seven calls, inside the seat's burst cap, all on the Performance overview family, which
+# the previous lane never opened: get_design_context on 5523-103993 (returned sparse metadata, the board being too
+# large), then get_metadata on 11793-351692 and 11875-87593, then get_design_context on four sub-nodes of the 1440
+# and 375 boards — 5525-11329 (title row), 5525-11349 and 11875-87094 (the stat cards at both ends of the ladder)
+# and 5525-11671 (the best/worst pair). The other 30 rows were NOT re-read and say so; they carry wave 41's verdict.
+#
+# THE MEASURED LADDER, off those reads (1440 / 768 / 375; the content column is 1202 / 708 / 343 at a 58 / 30 / 16
+# gutter, and bands are 32 / 32 / 24 apart):
+#   title       Manrope Light    32/36 → 24/28 → 20/24 at -4%   (the ladder Account.tsx already carries)
+#   band head   Manrope Regular  24/28 → 18/22 → 18/22 at -4%
+#   stat card   Green Coal 200 #122524, radius 16 / 16 / 12, padding 16 / 16 / 12, height 113 / 113 / 90,
+#               shadow 0 10 80 rgba(0,0,0,.25); grid 4-up gap 16 / 4-up gap 8 / 2-up gap 8 both ways;
+#               label Manrope Regular 14/18 → 12/16 → 12/14, figure Mulish Light 32/38 → 24/28 → 20/24,
+#               delta Mulish Regular 14/18 → 14/16 → 12/14. Label pinned top, figure block pinned bottom.
+#   best/worst  same fill, radius 8, padding 16 / 16 / 12, gap 12, label at 64% white,
+#               figure Mulish Regular 22/26 → 16/20 → 14/16, green #17F9B4 / red #FF574A.
+#
+# ★ THE SOURCE FINDING, and it is the reason this lane did not do what its brief said. The brief names
+# `userStatsService` as the data. Its trading half reads `getChainTrades`, which returns [] unconditionally while
+# `CHAIN_MIRRORS_RETIRED` is true (src/services/chain/chainMirrors.ts:33 — the chain_* Supabase mirrors were archived
+# 2026-05-01 and the SELECT grant revoked). So winRate, pnl and totalTrades are a division over an empty array for
+# EVERY wallet, and they arrive in the same shape a healthy read produces. Mounting the component on that service
+# would have printed a confident "0%" win rate and "+$0.00" PnL to every user who has ever traded — the same defect
+# class as the $0.05 SKAI floor, wearing a different coat. The build reads `getUserAnalytics` instead, through a new
+# src/components/account/overviewFigures.ts that also carries the withholding rule (a figure with no closed position
+# behind it is null, and null prints an em dash). No row on this page fabricates a number.
+#
+# COMMITS (superproject): fd3ed1e2 overviewFigures, 72c6ec71 PerformanceOverview rebuild, b8217ebc the mount,
+# 53491db7 the retargeted position test, 52bf64e1 the type-ladder test, 73c52665 the card removal,
+# fa40b2d5 the reference cleanup.
+#
+# ✅ RULED 2026-09-14 — THE CARD IS RETIRED. The My-account board's Overview card (5518:102068) and the Performance
+# overview boards printed the same six figures from the same service at two sizes, and one page cannot print them
+# twice. Casey ruled that Figma draws the band, so the band survives: src/components/account/AccountOverviewCard.tsx
+# and its test were removed in 73c52665, and the comments and the one stale vi.mock that still named it were cleared
+# in fa40b2d5. The tree was grepped first (src, modules/*/src, tests) and held no other importer.
+#
+5518-102068	furniture	src/components/account/PerformanceOverview.tsx	/account	RETIRED BY RULING, not measured. This is the My-account board's Overview card, six 210x76 tiles printing trading volume, win rate, average trading size, best trade, worst trade and profit factor. The Performance overview boards (5523-103993 and siblings) print the SAME six figures from the same service at a different size, and /account cannot draw both. Casey ruled 2026-09-14 that Figma draws the band and not the card, so src/components/account/AccountOverviewCard.tsx and its test were removed (73c52665) and the band stands in the slot the card held, between the identity card and the tier/referral pair. The frame itself was NOT opened this pass, so no width verdict is claimed for it; it is furniture superseded by 5523-103993, and that row carries the measurements.	1440=n-a 768=n-a 375=n-a @2026-09-14/wave42-account
+#
+5523-103993	partial	src/components/account/PerformanceOverview.tsx	/account	RE-READ LIVE and REBUILT. Read off 5523-103993 and its children 5525-11329 / 5525-11349 / 5525-11671. Bands 1-3 are built to the numbers in the header above: 1202 column, title row, four 288.5-wide stat cards 16 apart at 113 tall, then the 593-wide best/worst pair 16 apart at 88 tall. Band 4 (Chart, 5526-28091) draws its heading and card but NOT the plot: a net-worth series over time is portfolio history, which lives behind /portfolio in wave 23's src/components/home-redesign/portfolio/**, and nothing on this surface can read it — so the card carries an explicit unavailable line and a door to /portfolio instead of a fabricated line. Band 5 (Activity history, 5526-28092) is built and REAL, from getUserTradeHistory: S/N, pair with leverage and direction tags, size, price, fee, closed PnL, time. Three controls the board draws are deliberately absent because they have no destination, which is this repo's standing rule: the "Trade" dropdown (the retired My-account card dropped the same control on the same grounds), the 36px sky-blue icon button whose glyph is an unresolved instance swap, and the chart's 1D/1W/1M/1Y/ALL row over an empty plot. The period control IS real — getUserAnalytics takes 7d/30d/90d/all and the board's "1 month" is 30d. Not `done`: the plot, the three controls, and the row's coin-quantity and PnL-percentage sub-figures are open, each named below.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-account
+11793-351692	partial	src/components/account/PerformanceOverview.tsx	/account	RE-READ LIVE (get_metadata) and BUILT. 708 column at a 30 gutter, header 52 and bottom nav 52. Four 171-wide cards 8 apart at 113 tall, then two 350-wide best/worst cards 8 apart at 80 tall, bands 32 apart. The md rungs of the ladder in the header above are this board's. One measured difference remains: at 768 the activity rows are COLLAPSED (48 tall, the pair line and a disclosure chevron, with the size/price/fee and PnL/time groups hidden in the frame) while this build draws them expanded at every width below xl. That is a disclosure this component does not have, not a wrong figure. Same three dropped controls as the 1440 row.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+11793-352217	partial	src/components/account/PerformanceOverview.tsx	/account	SIBLING OF A RE-READ. The 768 twin was NOT opened this pass, so its own figures are unmeasured and this row claims none. The component that now fills it is the one built to 11793-351692 and nothing in the build is gated on which of the two boards a viewport matches, so it renders — but a sibling row must not say done. Open this board before promoting it.	1440=n-a 768=renders 375=n-a @2026-09-14/wave42-account
+11875-87593	partial	src/components/account/PerformanceOverview.tsx	/account	RE-READ LIVE (get_metadata, plus get_design_context on its stat row 11875-87094) and BUILT. 343 column at a 16 gutter, header 48 and bottom nav 54. The title row breaks over two lines here (32 + 8 + 32) and the stat cards go 2x2 at 167.5 wide, 8 apart both ways, 90 tall at padding 12 and radius 12 — the sm rungs in the header above are read off this board, exactly: Manrope Regular 12/14 label, Mulish Light 20/24 figure, Mulish Regular 12/14 delta at #17F9B4. Bands are 24 apart here, not 32. The period select carries `no-min-size` because index.css forces a 44px control floor under 768 and the board draws 32. Same open items as the 1440 row.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+11881-88335	partial	src/components/account/PerformanceOverview.tsx	/account	SIBLING OF A RE-READ. The 375 twin was NOT opened this pass; see 11793-352217 for why a sibling cannot be promoted on the other board's reading.	1440=n-a 768=n-a 375=renders @2026-09-14/wave42-account
+11267-123785	partial	src/components/home-redesign/portfolio/SharePortfolioModal.tsx	/account	NOT THIS LANE'S FILE — wave 23 holds src/components/home-redesign/**, so this is measured and recorded, not edited. Carried from wave 41: the route is live and SharePortfolioModal renders this surface at 1440x900, so it is implemented and the measured work remaining is the whole frame. The change it needs, when its owner takes it: this is the share sheet the Performance overview's net-worth figure opens, and that figure is unavailable on this build (see 5523-103993), so a share of it would carry an em dash.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-account
+12082-420596	partial	src/components/home-redesign/portfolio/SharePortfolioModal.tsx	/account	NOT THIS LANE'S FILE (wave 23). Carried: implemented at 375x812, whole frame open.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+12082-421041	partial	src/components/home-redesign/portfolio/SharePortfolioModal.tsx	/account	NOT THIS LANE'S FILE (wave 23). Carried: implemented at 375x960, whole frame open.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+12080-420150	partial	src/components/home-redesign/portfolio/SharePortfolioModal.tsx	/account	NOT THIS LANE'S FILE (wave 23). Carried: implemented at 768x1024, whole frame open.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+5518-100072	not-started	src/pages/account/Account.tsx	/account	NOT RE-READ THIS PASS. ROUTE CORRECTED BY RULING, not by measurement: Casey ruled 2026-09-14 17:35 that /account owns the "Skai > Account" frames and /:username stays the public profile, so this row's host file moves from src/pages/account/UserProfile.tsx to src/pages/account/Account.tsx. The board itself was not opened, so the verdict carries. What landed on the route this pass is the Performance overview band (5523-103993), which now stands between the identity card and the tier/referral pair.	1440=not-started 768=n-a 375=n-a @2026-09-14/wave42-account
+5518-101256	not-started	src/pages/account/Account.tsx	/account	NOT RE-READ THIS PASS. Same route correction by ruling as 5518-100072; the 1VH variant of that board.	1440=not-started 768=n-a 375=n-a @2026-09-14/wave42-account
+11768-349002	not-started	src/pages/account/Account.tsx	/account	NOT RE-READ THIS PASS. Same route correction by ruling as 5518-100072.	1440=n-a 768=not-started 375=n-a @2026-09-14/wave42-account
+11768-350087	not-started	src/pages/account/Account.tsx	/account	NOT RE-READ THIS PASS. Same route correction by ruling as 5518-100072.	1440=n-a 768=not-started 375=n-a @2026-09-14/wave42-account
+11875-44348	not-started	src/pages/account/Account.tsx	/account	NOT RE-READ THIS PASS. Same route correction by ruling as 5518-100072.	1440=n-a 768=n-a 375=not-started @2026-09-14/wave42-account
+11875-86552	not-started	src/pages/account/Account.tsx	/account	NOT RE-READ THIS PASS. Same route correction by ruling as 5518-100072.	1440=n-a 768=n-a 375=not-started @2026-09-14/wave42-account
+5526-47972	partial	src/components/account/SettingsTab.tsx	/account	NOT RE-READ THIS PASS — carried from wave 41, which measured this board and left it partial. Untouched by this lane: the settings block below the overview band is unchanged, and the band was inserted above it without moving the 367 + 40 + 795 row.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-account
+5529-72564	partial	src/components/account/SettingsTab.tsx	/account?tab=token	NOT RE-READ THIS PASS — carried from wave 41. Untouched by this lane.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-account
+5529-73119	partial	src/components/account/SettingsTab.tsx	/account?tab=preferences	NOT RE-READ THIS PASS — carried from wave 41. Untouched by this lane.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-account
+11881-94366	partial	src/components/account/SettingsTab.tsx	/account?tab=preferences	NOT RE-READ THIS PASS — carried from wave 41. Untouched by this lane.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+11846-355280	partial	src/components/account/SettingsTab.tsx	/account?tab=preferences	NOT RE-READ THIS PASS — carried from wave 41. Untouched by this lane.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+11881-89414	partial	src/components/social/ProfileSetupForm.tsx	/account?tab=profile	NOT RE-READ THIS PASS — carried. NOT THIS LANE'S FILE: the profile pane is Account.tsx:310-322 plus src/components/social/ProfileSetupForm.tsx, and src/components/social/** is off limits to this lane. Recorded, not edited.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+11843-353663	partial	src/components/social/ProfileSetupForm.tsx	/account?tab=profile	NOT RE-READ THIS PASS — carried. NOT THIS LANE'S FILE (src/components/social/**).	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+11881-93654	partial	src/components/social/ProfileSetupForm.tsx	/account?tab=token	NOT RE-READ THIS PASS — carried. NOT THIS LANE'S FILE (src/components/social/**, show="token").	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+11846-354965	partial	src/components/social/ProfileSetupForm.tsx	/account?tab=token	NOT RE-READ THIS PASS — carried. NOT THIS LANE'S FILE (src/components/social/**, show="token").	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+5529-49244	partial	src/components/account/SecurityTab.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried from wave 41. Untouched by this lane.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-account
+11881-89626	partial	src/components/account/SecurityTab.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried from wave 41. Untouched by this lane.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+11843-354091	partial	src/components/account/SecurityTab.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried from wave 41. Untouched by this lane.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+11271-125083	partial	src/components/account/SettingsTab.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried. The 2FA setup dialog (handleSetup2FA :451, handleVerify2FA :499) over src/services/security/twoFactorService.ts. Untouched by this lane.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-account
+12080-415107	partial	src/components/account/SettingsTab.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried. 2FA auth-app dialog, 1VH. Untouched by this lane.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+12080-415417	partial	src/components/account/SettingsTab.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried. 2FA auth-app dialog, 1VH. Untouched by this lane.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+12080-414162	partial	src/components/account/SettingsTab.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried. 2FA auth-app dialog, 1VH. Untouched by this lane.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+12080-414477	partial	src/components/account/SettingsTab.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried. 2FA auth-app dialog, 1VH. Untouched by this lane.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+11302-128586	partial	src/components/account/parts/DataPrivacySection.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried. Mounted from SettingsTab.tsx:1601. Untouched by this lane.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-account
+12080-415727	partial	src/components/account/parts/DataPrivacySection.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried. Delete-account pane, 1VH. Untouched by this lane.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+12080-414792	partial	src/components/account/parts/DataPrivacySection.tsx	/account?tab=security	NOT RE-READ THIS PASS — carried. Delete-account pane, 1VH. Untouched by this lane.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account
+11881-88859	partial	src/components/account/SettingsTab.tsx	/account	NOT RE-READ THIS PASS — carried from wave 41. The 375 settings list. Untouched by this lane.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-account
+11843-353118	partial	src/components/account/SettingsTab.tsx	/account	NOT RE-READ THIS PASS — carried from wave 41. The 768 settings list. Untouched by this lane.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-account

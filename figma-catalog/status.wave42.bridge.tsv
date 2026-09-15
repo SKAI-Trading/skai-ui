@@ -1,0 +1,108 @@
+# key	status	primaryFile	route	reason	bp
+# Lane bridge, wave 42, 2026-09-14. Fifteen frames — five Bridge screens at three widths — all on the
+# "✅ Trade 2" page of mhF3BkzlTaGiLzJ7kvpmVc, all routed to src/pages/trade/Bridge.tsx at /bridge.
+#
+# Owns: src/pages/trade/Bridge.tsx, src/pages/trade/bridgeColumn.figma.test.ts and its siblings. Nothing
+# under src/services/bridge/, bridgeService.ts, useBridgeContract, src/config/features.ts, TradeUnified.tsx,
+# native-chart/, perp-v2/ or mobile/ was opened, and no edge function was touched.
+#
+# CASEY, 2026-09-14 17:35: "Bridge on Trade: rebuild to the frame's one ticket tab now, presentation only."
+# That is what shipped. The five screens draw ONE tabbed card — Swap | Limit | Bridge over a route strip, a
+# send leg and a single CTA — where /bridge walked a six-step wizard behind a progress rail. The wizard's
+# screens are now regions of that card: direction and source chain are the strip's two chain pills and the
+# control between them, the token is a menu on the send leg's pill, the amount is its input, and review is
+# the `Bridge summary` block the frame itself only draws in its `Start bridge` state.
+#
+# THE MONEY PATH DID NOT MOVE, and this is the claim the brief asked to be stated explicitly. Read and left
+# untouched: prepareApproveIfNeeded, prepareWithdraw, readTokenBalance and parseBridgeRevertReason from
+# contracts/bridge/bridgeContract; getBridgeQuote and executeBridge from services/trading/bridgeService;
+# calculateBridgeFee from services/core/feeService; useBridgeState from hooks/bridge/useBridgeContract; the
+# relay-bridge-deposit edge invoke and its X-Wallet-Address binding; and thirdweb's useSendTransaction /
+# prepareTransaction. Every one is still called from the same handler, in the same order, at the same point
+# in the user's sequence. Specifically:
+#   - readTokenBalance still keys on [address, selectedToken] alone, so picking a token is still its trigger;
+#   - useBridgeState and calculateBridgeFee still mount WITH the summary, which still mounts only at
+#     step === "review". Rendering the summary whenever the amount parsed — which is what the frame's
+#     `Start bridge` state looks like at a glance — would have re-read platform_fee_config on every
+#     keystroke, so the commit stays and the frame's own state name agrees with it;
+#   - approve-then-deposit is still two calls behind one CTA, in that order, and the CTA still opens a
+#     confirmation before handleExecute is reached. The frame draws one button; the rail keeps both clicks,
+#     because collapsing them drops a confirmation on a money path;
+#   - the withdraw leg is still gated twice (BRIDGE_WITHDRAWALS_ENABLED at the client, the isOnSkaiChain
+#     switch prompt ahead of the signature) and the direction setter still refuses "withdraw" whatever calls
+#     it. The relay-bridge-withdraw env gate was not touched and is not reachable from here.
+# No payout, rate, fee or rail branch was changed to match a design.
+#
+# TWO BLOCKS THE FRAMES DRAW ARE DELIBERATELY NOT BUILT, each on a standing ruling rather than a judgement
+# made in this lane, and both are now grepped for by bridgeTicket.figma.test.ts so a later "finish the
+# parity" pass fails instead of shipping them:
+#   - `Other alternatives` (13006:248588 and siblings) — a list of third-party bridges, Across Protocol and
+#     Stargate, behind a rule. Casey 2026-08-19: /bridge is OUR contract bridge and bridging outside Skai
+#     belongs to the wallet; removing those link-outs was the whole point of that ruling.
+#   - `Bridge settings` (the 442x884 overlay at x=990 on 13006-249356) — a wallet-connection panel whose
+#     first row is Solana. This rail is EVM-only (thirdweb lists 92 chains, none of them Solana) and the
+#     wallet here IS the account, so the panel is not a settings surface this page can own.
+#
+# THE FRAMES DRAW A ROUTE THIS RAIL CANNOT BE. All five boards read Solana -> Base in the strip and "SOL" in
+# the send leg, while the `Start bridge` summary's Route row says "Skai Mainnet" — three chains that do not
+# make one journey. The rail is Ethereum/Base <-> SKAI Chain. The ticket's SHAPE was built; its chain and
+# token identities come from the code's own CHAINS and TOKEN_LIST. Two summary values are likewise the
+# rail's and not the picture's: Route prints the real pair, and Network cost keeps the review step's
+# "Paid on {chain} (est. <$0.10)" rather than the frame's literal $0.02, which nothing on this page can
+# source. The frame's USD equivalent under the balance renders the unavailable glyph for the same reason —
+# the authoritative USD conversion happens on chain through Pyth at execution time.
+#
+# FIGMA READ LIVE THIS RUN — seven calls, inside the seat's burst cap: get_design_context on the four 1440
+# boards 13006-248523, 13006-248696, 13006-248937 and 13006-249115, and on 13006-249356 (which came back
+# over the token ceiling and was read from its saved dump); then get_metadata on 13006-257186 at 768 and
+# 13006-254593 at 375. The remaining eight frames were not re-read: each is the same screen at a width whose
+# sibling WAS read, and every number below names the node it came from.
+#
+# NO BROWSER WAS DRIVEN and no build was run (wave rule), so no row claims a DOM-measured render. Geometry
+# is source-vs-node: the class list is resolved to a number at a stated width by two oracles, and that
+# number is compared to the node's.
+#
+# ORACLES. bridgeColumn.figma.test.ts (12 assertions) was ALREADY GREEN when this lane opened — the brief
+# expected it red, but wave 41 commits 723b21870 and 6e0353ad3 had already sized, dropped, rounded and inset
+# the column. Nothing in it was edited and it is still green. What it could not see is the ticket INSIDE the
+# card, so bridgeTicket.figma.test.ts adds 24 assertions over the tab header's inset, the pills, the two
+# runs down the card, the route strip, the send leg and its committed ring, and the CTA's two colour states.
+# Proved against three mutations (tablet run 20->24, tablet CTA 50->48, 375 strip inset 12->16), which
+# failed exactly three assertions, each naming its own board. 36 assertions green, plus 62 in the six
+# tests/unit/pages/trade/Bridge.* suites and 5 in bridgeWithdrawBalance.
+#
+# THE SWAP AND LIMIT TABS NAVIGATE; neither mounts a second form here and neither touches a service call.
+# RULED 2026-09-14. Swap goes to the wallet's swap surface through `walletSwapPath()` in
+# src/lib/navigation/walletSwap.ts, which resolves to /portfolio?wallet=swap — the same path /trade/basic
+# already redirects to through `legacySwapDeepLinkPath`, so this is the route the app has, not a new one.
+# Limit goes to /trade/perps, which is where the Limit ticket lives. NOTHING SELECTS IT BY QUERY: the perps
+# order entry has no order-type param (only symbol / side / size / leverage), and its Limit tab is
+# aria-disabled behind "Limit and Stop orders are coming soon" (PerpOrderEntry ORDER_TYPE_TABS). So the tab
+# lands on the ticket's page and stops there, and this row is where that is recorded.
+#
+# COMMITS: 343e027f1 (the ticket), 5d7c7f20a (the ticket oracle), 5746e6f08 (the Swap and Limit tab routes).
+#
+13006-248523	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge, 1440. The ticket is built and measured against this board: tab header 474x30 at (409+16), which is the 506 card less twice its 16 padding, with Swap/Limit/Bridge pills at px 12 / py 4 / radius 8 as a pixel literal (rounded-lg paints 12 in this app per TOKENS.md) and a 22 leading closing the 30-tall row; card 506 at radius 24 on #122524 with a 48 gap to the CTA (13006:248538); route strip #052d2d radius 16 padding 16/20 (13006:248541); send leg #001615 radius 16 padding 16/24/16 (13006:248565); CTA radius 16, 64 tall, idle #001615 under #123f3c type (13006:248602). PARTIAL on the barred block, not on a gap: the 24 between the send leg and the CTA is filled here by `Other alternatives` and two provider cards, which the 2026-08-19 ruling removed from this surface. The frame's Solana->Base strip and SOL leg are drawn with this rail's own chains and tokens.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-bridge
+13006-257186	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge, 768. Read live this run (get_metadata). Frame 1268 580x672 at (94,76); tab header Frame 335 556x26 at x=12 — the 580 card less twice its 12 padding — with the pills at the same 12/4/8 and an 18 leading closing the 26-tall row; Bridge screen at y=42, i.e. the column's own 16 under a 26-tall header; painted body Frame 346 580x630 padding 12; inner run 24 throughout (middle brand 96 ends at 96, card starts at 120; divider at 272 under a card ending 248; selection at 312 under a divider ending 288); route strip padding 24 across and 20 down (13006:257247 at (24,20) in a 96-tall parent); send leg padding 16 (signals at (16,16) in 556); CTA 556x50 at y=568 under a body ending 548, so the body-to-CTA gap here is 20 — the SMALLEST of the three boards while this card is the WIDEST, which is why it is read per board and not carried from 1440. PARTIAL for the same barred block as its 1440 sibling.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-bridge
+13006-254357	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge, 375. Geometry carried from the sibling 13006-254593, which WAS read live this run and is this same screen one state on. Tab header 322x24 at x=12 — the 346 card less twice its 12 padding — pills 12/4/8 with a 16 leading closing the 24-tall row, and the 44px touch floor in index.css opted out with no-min-size or the row renders 44 tall. Body 346x484 padding 12; the route strip breaks its From/To labels onto their own row 8 above the chain pills, which no other board does; CTA 322x44, and 44 is also the touch floor so the mobile rung is the one height that cannot be got wrong quietly. PARTIAL for the barred provider block.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-bridge
+13006-248696	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info, 1440. Read live this run (get_design_context) and diffed node-by-node against 13006-248523: the card is IDENTICAL but for three things — the amount reads 1.2 instead of 0, a USD equivalent $21.78 joins the balance row on the right, and the CTA arms, turning #56c7f3 under #001615 type where the idle board paints #001615 under #123f3c. All three are built: the amount is the input, the CTA's two states are constants the oracle pins, and the USD figure renders the unavailable glyph because no source on this page can price a bridged balance (the authoritative conversion is on-chain Pyth at execution time). Sky blue is #56C7F3 and is BLUE, whatever the token name suggests. PARTIAL for the barred provider block below the leg.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-bridge
+13006-257484	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info, 768. Not re-read this run — it is the 768 cut of a screen whose 1440 board was read live and diffed, and whose 768 sibling 13006-257186 was read live for geometry. The delta from the idle board is the same three: filled amount, USD equivalent on the balance row, armed CTA. Same build and the same unavailable glyph for the USD figure. PARTIAL for the barred provider block.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-bridge
+13006-254475	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info, 375. Not re-read this run; the 375 geometry comes from 13006-254593, read live, where the balance row carries "$21.78" at x=112 against the 298-wide content — the same USD equivalent this width has no source for, rendered as the unavailable glyph. PARTIAL for the barred provider block.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-bridge
+13006-248937	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge, 1440. Read live this run (get_design_context). This is the board that specifies the committed ticket and it is where the summary block comes from: the send leg gains a 2px #17f9b4 stroke (13006:248979 is 13006:248565 plus that stroke, and it is the ONLY thing separating composing from committed, so it is asserted present on the committed class and absent from the idle one); the Send row gains the destination address on its right; the `Other alternatives` rule becomes `Bridge summary` (13006:249001); and the provider cards become four hairline-separated rows on a gap of 8 — Route with an 18px chain badge, Est. time, Fee (Bridge, Swap impact), Network cost — labels Manrope 14/18 #95a09f against Mulish 14/18 white. Built, with the review step's rows re-laid to that shape and nothing else touched: same useBridgeState read, same BridgeFeeRow quote with its three glyphs (… pending, — unknown, the quote itself; never "Free" for an unread config), same paused and withdraw warnings. PARTIAL on two values that are the rail's and not the picture's — Route prints the real pair rather than "Skai Mainnet" under a Solana->Base header, and Network cost keeps "Paid on {chain} (est. <$0.10)" rather than the literal $0.02, which nothing here can source.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-bridge
+13006-257333	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge, 768. Not re-read this run; its geometry is 13006-257186's, read live, and its committed delta is 13006-248937's, read live. Same summary block, same two rail-over-frame values. PARTIAL for those two.	1440=n-a 768=partial 375=n-a @2026-09-14/wave42-bridge
+13006-254593	partial	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge, 375. READ LIVE this run (get_metadata) and the source of every 375 number in this file. Frame 1268 346x524 at (15,64); tab header 322x24 at x=12 with the gear 24x24 at x=298; Main container at y=40 = the column's 16 under a 24-tall header; body Frame 346 346x484 padding 12; Frame 355 322x222 at (12,12) holding the strip (322x86 — labels row 298x14 at y=12, pills row 298x40 at y=34, so 8 between them and 12 all round) and the send leg (322x116 at y=106, i.e. 20 below the strip, padding 12); then the divider 322x14 at y=258 and the summary Frame 40 322x108 at y=296, both 24 apart; CTA 322x44 at y=428, 24 under the summary. Summary rows are 14 tall (12px type) where 768 and 1440 draw 18 (14px), and the four rows sit at 0/34/64/94 with hairlines at 26/56/86 — a flat 8. ONE DIVERGENCE RECORDED, NOT PAPERED OVER: the inner run is 20 between the strip and the leg but 24 below Frame 355, and one flex gap cannot be both, so the divider at 375 sits 4 tight. PARTIAL for that and for the two rail-over-frame summary values.	1440=n-a 768=n-a 375=partial @2026-09-14/wave42-bridge
+13006-249115	frame-defect	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge > Post wallet interaction, 1440. READ LIVE this run and diffed against 13006-248937 with every node id and asset url normalised away: the two boards are IDENTICAL, byte for byte, apart from the frame's own name. So the board that is supposed to specify what the ticket looks like AFTER the wallet has been through specifies nothing the previous board did not — no pending state, no success state, no failure state, no explorer link. The live surface has all four (approving / signing / pending / success / error, each with its own copy and an explorer href that forks on the direction), and they are kept as they were rather than deleted to match a board that draws none of them. Filed as a frame defect because this is a missing spec, not a missing build: the screen the catalog is asking for does not exist in the file. RULED 2026-09-14: there is no drawn spec, so the shipped pending/success/failure states STAND AS THE SPEC and are left exactly as they are. No decision outstanding.	1440=frame-defect 768=n-a 375=n-a @2026-09-14/wave42-bridge
+13006-257631	frame-defect	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge > Post wallet interaction, 768. Not re-read; filed off the 1440 finding, which is that this screen is a duplicate of `Start bridge` rather than a state of its own. Same defect, and the same 2026-09-14 ruling applies: the shipped states stand as the spec and are unchanged.	1440=n-a 768=frame-defect 375=n-a @2026-09-14/wave42-bridge
+13006-254715	frame-defect	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge > Post wallet interaction, 375. Not re-read; same finding as its 1440 sibling. Same defect, and the same 2026-09-14 ruling applies: the shipped states stand as the spec and are unchanged.	1440=n-a 768=n-a 375=frame-defect @2026-09-14/wave42-bridge
+13006-249356	frame-defect	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge > Bridge settings, 1440. READ LIVE this run; the response came back over the token ceiling (66,889 chars) and was read from its saved dump. The delta from 13006-248937 is one overlay: a 442x884 panel at x=990, centred on the board, rgba(18,37,36,0.8) with a 2.5px backdrop blur, a 1px #123f3c border, 24 padding and radius 24; inside it a 24px "Bridge settings" title with a 16px close, a "Networks" section reading "Connect wallets of various networks to bridge between them.", a two-row list — Solana / "Solana compatible wallets" with a #56c7f3 Connect button, Base / "Skai wallet" with a Connected outline — and a full-width "Save settings" CTA. NOT BUILT, deliberately. Two standing rulings bar it: the rail is EVM-only (thirdweb's bridge lists 92 chains and Solana is not among them), and an external wallet here is an AUTH METHOD for the embedded wallet, never a second custody surface to connect and save. Wiring it would also be a change to what gets called, which this lane's brief forbids. RULED 2026-09-14: the panel is a FRAME DEFECT on this surface — it specifies a Solana wallet connection for an EVM-only rail — and is not built. The frame parks a 24px gear in the tab header's right slot to open it; that slot is kept at its measured size and carries the flow controls the ticket does need (back, start over) while a flow is in progress, and stands empty otherwise. NEEDS A DESIGN DECISION — see the decisions block.	1440=frame-defect 768=n-a 375=n-a @2026-09-14/wave42-bridge
+13006-257782	frame-defect	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge > Bridge settings, 768. Not re-read; ruled a frame defect with its 1440 sibling and not built. Note for whoever picks this up: wave 41 measured this board's painted body at 580x512 radius 24 padding 12 and recorded that the r12/pad0 the catalog had carried since wave 10 belongs to the UNPAINTED wrapper 13006-257237, which has no fill and nothing to round. That correction still holds and the shipped card asks for 24.	1440=n-a 768=frame-defect 375=n-a @2026-09-14/wave42-bridge
+13006-254837	frame-defect	src/pages/trade/Bridge.tsx	/bridge	Bridge - with info > Start bridge > Bridge settings, 375. Not re-read; ruled a frame defect with its 1440 sibling and not built. Note carried from wave 41 and still true: this board is the OUTLIER of the eighteen — its painted body rounds 12 where its four 375 siblings and every 768 and 1440 body round 24. The shipped card asks for 24, which is what the other seventeen draw, and the dissent is recorded rather than followed.	1440=n-a 768=n-a 375=frame-defect @2026-09-14/wave42-bridge
+#
+# DECISIONS — RULED 2026-09-14, none outstanding
+# 1. `Post wallet interaction` is byte-identical to `Start bridge` at all three widths, so there is no drawn
+#    spec for the pending, success or failure ticket. RULED: the shipped states stand as the spec; kept.
+# 2. `Bridge settings` is a Solana wallet-connect panel on an EVM-only rail. RULED: frame defect, not built.
+# 3. Swap and Limit must not stay inert. RULED: Swap navigates to the wallet swap surface, Limit to the page
+#    that hosts the Limit ticket. Built; see the block above for what each route resolves to.
+# 4. The USD equivalent and the network cost have no client-side source and render unavailable. RULED:
+#    correct as built.

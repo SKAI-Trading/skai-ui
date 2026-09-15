@@ -1,0 +1,38 @@
+# key	status	primaryFile	route	reason	bp
+# Lane games-names, wave 42, 2026-09-14. Casey's 17:35 ruling: Safari Slots is Untamed, Cosmic Slots is
+# Starbound, Gem Slots is Sugar rush, Fisherman Slots (Wild Card) is Hooked. DISPLAY NAMES ONLY — every id,
+# route, storage key, DB key, event name, config key, image file name and chain parameter is unchanged, and
+# each edit was checked against the old string before it was made.
+#
+# NO FIGMA READ THIS RUN (the brief asks for none) and no browser and no build. The five rows below are the
+# 1440 page boards of the four renamed games, carried from status.wave41.slots-{safari,cosmic,gem,fisherman};
+# each keeps its wave-41 verdict on geometry and records only what this lane changed, which is the name.
+# Column 6 is 768=n-a 375=n-a on every row because the keys are 1440 boards.
+#
+# COMMITS (modules/skai-gaming): a96bcccd, 636fda16, dad94fc6. (superproject): 73b88715a.
+#
+# LEFT AS KEYS, DELIBERATELY: src/pages/explorer/GamingPage.tsx:117 "Cosmic Slots" is a GAME_META lookup key
+# against the indexer's own game name, not a display string — renaming it would silently drop the icon to the
+# generic fallback. modules/skai-gaming/src/slots/games/safari-slots/content.ts:18 and the FRAME_FACTS files
+# quote the Figma PAGE title ("Safari Slots"), which is a catalog reference, not product copy.
+#
+# NOT THIS LANE'S (reported, not edited): src/components/home-redesign/conversation/GameCardsBlock.tsx:170,173
+# and GameCardsBlock.art.test.tsx:81,85,116 — wave 23 holds home-redesign, and the brief rules the string
+# there matches skai-bot's prose by name. src/pages/ai/AIAgent.tsx:773 label "Gem Slots" is a live display
+# string in a file no lane in this wave owns. src/pages/sports/components/{PopularCasinoGames,
+# SportsClosingBand}.tsx name games in frame-provenance comments (wave 23). modules/skai-gaming/src/
+# components/play/shared/gameDialogPadding.test.tsx:219,229,239 uses the old names as test-case labels and
+# src/test/setup.ts:5 in a comment; both sit outside this lane's owns list. src/pages/play/CosmicSlotsPage.tsx:9
+# and routedGamePaths.ts:133 carry the old name in docblocks; also outside the owns list.
+#
+# DB (read-only probe of every prose name/title/description column in public, plus the brief's named tables):
+# two rows carry a game name and were NOT updated — site_config.gaming_fisherman_slots_min_bet and
+# site_config.gaming_fisherman_slots_max_bet, whose `description` reads "Fisherman Slots minimum/maximum stake
+# per spin". Admin-facing copy; the keys themselves stay. Nothing in quests, admin_popup_config,
+# lottery_entry_config, achievements, badges, daily_challenges, weekly_missions, push_templates or
+# help_articles names any of the four games.
+Skai > Play > Casino > Safari slots (1440 x 900px) [10272-4179]	partial	modules/skai-gaming/src/pages/play/Play.tsx	/play/safari-slots	Name only. The frame's own title and its breadcrumb, h1 and wordmark read Untamed (wave 41 measured that and left the rename to a ruling); the app now prints Untamed everywhere it printed Safari Slots — the hub tile and GAME_DISPLAY_NAMES in Play.tsx, the GameDetailPage catalogue entry, GAME_RULES in GameRulesButton.tsx, GAME_METADATA in continuePlayingService.ts, SafariSlotsGame's help and autospin dialogs, SafariSlotsConfigCard, gamingConfigService/AdminGamingConfig comments and SlotTestPage. The engine already carried it (SAFARI_SLOTS.title, SAFARI_SLOTS_CONTENT.title). `safari_slots`, `safari-slots`, /play/safari-slots, safari_slots_enabled, safari_slots_max_bet and safari-slots.webp are untouched. Geometry carried from wave 41 unchanged: 1440=partial there and still partial, because nothing in this lane re-measured a box.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-games-names
+Skai > Play > Casino > Safari slots - screen type 2 (1440 x 900px) [10359-10003]	partial	modules/skai-gaming/src/pages/play/Play.tsx	/play/safari-slots	Name only, and the same strings as 10272-4179 — this cut differs from it only in column width (1200 against 1318), which no rename touches. Wave 41's 1440=partial stands; the column ruling it names is still open and is not this lane's.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-games-names
+Skai > Play > Casino > Starbound (1440 x 900px) [10359-13505]	partial	modules/skai-gaming/src/pages/play/cosmicSlotsPageContent.ts	/play/cosmic-slots	Name only, and this game needed the most: nothing had been renamed before this lane. Changed to Starbound — COSMIC_SLOTS.title and COSMIC_SLOTS_CONTENT.title (which the page h1, card title and tags read through cosmicSlotsPageContent), the description paragraph's opening sentence, the three icon-only aria labels (How to play / Add to / Remove from favourites), the "twenty-five games" FAQ answer on all seven sibling pages, the More-games shelf entry in blackjack/crash/mines/plinko/vegasFortune/playGameDetail/Dice, the hub tile and GAME_DISPLAY_NAMES, the GameDetailPage entry, GAME_RULES, GAME_METADATA, CosmicSlotsGame and CosmicSlotsPhaserGame (dialog titles, header, loading line, the Points-unsupported error and both GameExitConfirm gameNames), CosmicSlotsConfigCard and the admin comments. `cosmic_slots`, `cosmic-slots`, /play/cosmic-slots, cosmic_slots_enabled and cosmic-slots-alt.webp are untouched. cosmicSlotsPageSections.test.tsx pins the h1 against the definition title and passes (13 tests). Wave 41's geometry verdict stands.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-games-names
+Skai > Play > Casino > Gem slots (1440 x 900px) [10285-14278]	partial	modules/skai-gaming/src/pages/play/Play.tsx	/play/gem-slots	Name only. The frame draws Sugar rush on every text layer and the engine already carried it in the one constant GEM_SLOTS_TITLE; what was still Gem Slots was everything outside the routed page, and is now Sugar rush: the hub tile and GAME_DISPLAY_NAMES, the game-picker row and the FloatingMinigame list, GAME_RULES, GAME_METADATA in continuePlayingService, GAME_DISPLAY_NAMES in liveGamingService, the GameDetailPage entry, GemSlotsGame (how-to-play heading, leave-game prompt, dialog title, exit confirm), GemSlotsConfigCard, aiAgentUtils' quick action, and the gameSettlement/casinoGames docblocks. The "which name ships is Casey's ruling" notes in gemSlotsPageContent.ts and gem-slots/content.ts now record the 09-14 ruling instead of asking for it. `gem_slots`, `gem-slots`, `gemslots`, /play/gem-slots, gem_slots_enabled and gem-slots.webp / gem-slots-sugar-rush.webp are untouched. Wave 41's 1440=partial stands, including the unbuilt figure-bearing copy it names.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-games-names
+Skai > Play > Casino > Fisherman slots (1440 x 900px) [11306-15099]	partial	modules/skai-gaming/src/pages/play/GameDetailPage.tsx	/play/fisherman-slots	Name only, and this game was nearly done: the slot engine, the routed page, its sections and FishermanSlotsConfigCard already said Hooked. The two that did not are fixed — the GameDetailPage catalogue entry ('Fisherman Slots' -> 'Hooked') and the two gamingConfigService comments that named the game beside Vegas Fortune. `fisherman_slots`, `fisherman-slots`, /play/fisherman-slots and fisherman_slots_* config keys are untouched, and so is the FishermanSlots* symbol naming throughout, which is code identity rather than display. The game has no hub tile, so there was no tile string to change. Wave 41's 1440=partial stands, including the Safari-template description block it names as not matching.	1440=partial 768=n-a 375=n-a @2026-09-14/wave42-games-names
