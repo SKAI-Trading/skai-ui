@@ -190,7 +190,9 @@ rulings, not in that column.
   cleared in `c191df23c`; the re-run at 19:16 is red on 3, all session 08's (two in
   `Launchpad.tsx` carried since 17:00, one new in `topBetsRows.test.ts`), owned by 08
   before any push. The lanes' own "no type errors" claims were true of the files they
-  ran; the app-config gate is the one that counts.
+  ran; the app-config gate is the one that counts. Session 08 cleared its three in
+  `a4111a0a9` and the gate at 21:45 is **green**: no new type errors, 2,548 known
+  baseline errors, 50 fewer than the baseline.
 - Closing build: exit 0 at 19:15 into a scratchpad output directory (3,063 assets),
   started before the five type fixes; those touched imports, a dead constant and two
   type narrowings, none of which changes what vite emits.
