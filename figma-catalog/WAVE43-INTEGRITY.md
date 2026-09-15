@@ -44,9 +44,15 @@ short harvests recorded in `pages.json` (`_reharvested`): the home, wallet and t
 sections were refused because the `get_metadata` capture returned 38%, 51% and 49% of
 their catalogued ids, and the registry still carries their 2026-08-18 node lists. 08's
 lanes worked from bug reports that cite Figma nodes directly, so they reached frames the
-catalog never enumerated. The rows fold in the moment those sections are re-harvested
-through the Plugin API (`harvest.mjs plan` sizes the chunks; `snapshot-to-nodes.mjs`
-folds the capture into the registry inputs); nothing needs re-measuring.
+catalog never enumerated. The rows fold in the moment the registry holds those nodes;
+nothing needs re-measuring. Two cautions for whoever runs that harvest: `harvest.mjs
+plan --file mhF3BkzlTaGiLzJ7kvpmVc` sizes the web-app file at 7 pages, 1,715 rows and 15
+Plugin-API chunks, but its scripts capture top-level page children only, and many of
+08's nodes are nested frames (a wallet input, a header row, a control inside a board),
+so the capture must enumerate at the depth the registry's `<section>.nodes.txt` lists
+were built from, or the 133 nodes must be added to those lists explicitly from the
+status rows (each row carries the node id, the frame title with its width, and the
+file key).
 
 ## 3. Findings that travel
 
