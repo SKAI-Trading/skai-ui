@@ -121,8 +121,8 @@ verdicts are now attached to frames a lane can be briefed on.
 
 ## 6. What is next
 
-1. **Re-harvest home, wallet and trade** (and towers, keno, hilo) through the Plugin
-   API so the 133 orphan rows attach; the measurement is already done.
+1. ~~Re-harvest home, wallet and trade so the 133 orphan rows attach.~~ Done 2026-09-15
+   by probe, not by harvest; see the closing note under section 2.
 2. **A build lane per section** over the wave 43 `partial` rows: every gap is in numbers.
 3. **A browser pass** over the 55 matches queued in the vverify files and the 174
    verified frames.
