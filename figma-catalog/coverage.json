@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15T06:51:27.656Z",
+  "generated": "2026-09-15T09:30:14.325Z",
   "harvestedAt": "2026-09-15",
   "rollup": {
     "pages": 39,
@@ -7,14 +7,14 @@
     "furniture": 771,
     "genuine": 3813,
     "matched": 3812,
-    "done": 627,
-    "verified": 216,
-    "visuallyDowngraded": 35,
+    "done": 637,
+    "verified": 226,
+    "visuallyDowngraded": 36,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 2252,
+    "partial": 2242,
     "notStarted": 267,
     "blocked": 188,
     "frameDefect": 127,
@@ -27,16 +27,16 @@
     "conflicts": 3
   },
   "doneRows": {
-    "total": 2367,
-    "withBreakpointProvenance": 957,
-    "namingANodeId": 2050,
+    "total": 2390,
+    "withBreakpointProvenance": 980,
+    "namingANodeId": 2072,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 15469,
-    "namingNoNodeId": 499,
-    "namingNoLiveNodeId": 759,
-    "unrecognisedTokens": 25620
+    "total": 15550,
+    "namingNoNodeId": 503,
+    "namingNoLiveNodeId": 795,
+    "unrecognisedTokens": 25804
   },
   "statusFiles": [
     {
@@ -2272,6 +2272,36 @@
       "ids": 16
     },
     {
+      "file": "status.wave45.home-intel-whales.tsv",
+      "rows": 20,
+      "withLiveId": 16,
+      "ids": 16
+    },
+    {
+      "file": "status.wave45.home-portfolio.tsv",
+      "rows": 18,
+      "withLiveId": 7,
+      "ids": 8
+    },
+    {
+      "file": "status.wave45.play-slots.tsv",
+      "rows": 15,
+      "withLiveId": 6,
+      "ids": 7
+    },
+    {
+      "file": "status.wave45.rewards-predict-social-launch.tsv",
+      "rows": 14,
+      "withLiveId": 9,
+      "ids": 11
+    },
+    {
+      "file": "status.wave45.wallet-trade.tsv",
+      "rows": 14,
+      "withLiveId": 7,
+      "ids": 7
+    },
+    {
       "file": "status.wave5.discover-createtoken.tsv",
       "rows": 3,
       "withLiveId": 1,
@@ -3259,13 +3289,13 @@
       "defaultNamed": 6,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 5,
+      "verified": 6,
       "visuallyDowngraded": 3,
       "byStatus": {
-        "partial": 144,
+        "partial": 143,
         "furniture": 2,
         "not-started": 54,
-        "done": 48,
+        "done": 49,
         "frame-defect": 20,
         "blocked-on-backend": 1
       },
@@ -3293,12 +3323,12 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 1,
-      "verified": 0,
+      "verified": 1,
       "visuallyDowngraded": 5,
       "byStatus": {
-        "partial": 249,
+        "done": 64,
+        "partial": 248,
         "blocked-on-backend": 37,
-        "done": 63,
         "blocked-on-casey": 2,
         "not-started": 39,
         "frame-defect": 11,
@@ -3328,14 +3358,15 @@
       "defaultNamed": 46,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 0,
+      "verified": 1,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 331,
+        "partial": 330,
         "not-started": 52,
         "furniture": 51,
         "unknown": 207,
-        "blocked-on-backend": 18
+        "blocked-on-backend": 18,
+        "done": 1
       },
       "liveOnly": []
     },
@@ -3394,12 +3425,12 @@
       "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 74,
+      "verified": 77,
       "visuallyDowngraded": 1,
       "byStatus": {
-        "done": 78,
+        "done": 81,
         "furniture": 7,
-        "partial": 142,
+        "partial": 139,
         "not-started": 9
       },
       "liveOnly": []
@@ -3427,7 +3458,7 @@
       "ambiguous": 0,
       "conflicts": 0,
       "verified": 3,
-      "visuallyDowngraded": 0,
+      "visuallyDowngraded": 1,
       "byStatus": {
         "partial": 125,
         "done": 51,
@@ -3489,11 +3520,11 @@
       "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 9,
+      "verified": 11,
       "visuallyDowngraded": 1,
       "byStatus": {
-        "done": 126,
-        "partial": 21,
+        "done": 128,
+        "partial": 19,
         "blocked-on-backend": 7,
         "frame-defect": 4,
         "furniture": 1
@@ -3560,11 +3591,11 @@
       "defaultNamed": 18,
       "ambiguous": 0,
       "conflicts": 2,
-      "verified": 9,
+      "verified": 11,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 228,
-        "done": 91,
+        "partial": 226,
+        "done": 93,
         "frame-defect": 13,
         "not-started": 20,
         "furniture": 4,
@@ -4676,7 +4707,8 @@
       },
       "rows": [
         "status.wave43.wallet-social-predict.tsv:57",
-        "status.wave44.social-predict-launch.tsv:84"
+        "status.wave44.social-predict-launch.tsv:84",
+        "status.wave45.rewards-predict-social-launch.tsv:49"
       ],
       "status": "blocked-on-backend"
     },
@@ -4691,7 +4723,8 @@
       },
       "rows": [
         "status.wave43.wallet-social-predict.tsv:56",
-        "status.wave44.social-predict-launch.tsv:83"
+        "status.wave44.social-predict-launch.tsv:83",
+        "status.wave45.rewards-predict-social-launch.tsv:48"
       ],
       "status": "partial"
     },
@@ -4748,7 +4781,8 @@
       },
       "rows": [
         "status.wave43.play-sports.tsv:70",
-        "status.wave44.play-hub.tsv:43"
+        "status.wave44.play-hub.tsv:43",
+        "status.wave45.play-slots.tsv:60"
       ],
       "status": "blocked-on-backend"
     },
@@ -4822,7 +4856,8 @@
       },
       "rows": [
         "status.wave43.play-sports.tsv:78",
-        "status.wave44.play-hub.tsv:48"
+        "status.wave44.play-hub.tsv:48",
+        "status.wave45.play-slots.tsv:63"
       ],
       "status": "partial"
     },
@@ -4865,7 +4900,8 @@
       },
       "rows": [
         "status.wave43.play-sports.tsv:64",
-        "status.wave44.play-hub.tsv:49"
+        "status.wave44.play-hub.tsv:49",
+        "status.wave45.play-slots.tsv:64"
       ],
       "status": "partial"
     },
@@ -4880,7 +4916,8 @@
       },
       "rows": [
         "status.wave43.play-sports.tsv:63",
-        "status.wave44.play-hub.tsv:50"
+        "status.wave44.play-hub.tsv:50",
+        "status.wave45.play-slots.tsv:65"
       ],
       "status": "partial"
     },
@@ -5107,7 +5144,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:78",
-        "status.wave44.home-deposit-portfolio.tsv:62"
+        "status.wave44.home-deposit-portfolio.tsv:62",
+        "status.wave45.home-portfolio.tsv:51"
       ],
       "status": "partial"
     },
@@ -5122,7 +5160,8 @@
       },
       "rows": [
         "status.wave43.play-sports.tsv:79",
-        "status.wave44.play-hub.tsv:51"
+        "status.wave44.play-hub.tsv:51",
+        "status.wave45.play-slots.tsv:66"
       ],
       "status": "partial"
     },
@@ -5152,7 +5191,8 @@
       },
       "rows": [
         "status.wave43.trench-launch.tsv:62",
-        "status.wave44.social-predict-launch.tsv:75"
+        "status.wave44.social-predict-launch.tsv:75",
+        "status.wave45.rewards-predict-social-launch.tsv:42"
       ],
       "status": "partial"
     },
@@ -5531,7 +5571,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:79",
-        "status.wave44.home-whales-intel.tsv:49"
+        "status.wave44.home-whales-intel.tsv:49",
+        "status.wave45.home-intel-whales.tsv:29"
       ],
       "status": "partial"
     },
@@ -5631,7 +5672,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:100",
-        "status.wave44.home-whales-intel.tsv:63"
+        "status.wave44.home-whales-intel.tsv:63",
+        "status.wave45.home-intel-whales.tsv:43"
       ],
       "status": "partial"
     },
@@ -5646,7 +5688,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:101",
-        "status.wave44.home-whales-intel.tsv:64"
+        "status.wave44.home-whales-intel.tsv:64",
+        "status.wave45.home-intel-whales.tsv:44"
       ],
       "status": "partial"
     },
@@ -5717,7 +5760,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:139",
-        "status.wave44.home-deposit-portfolio.tsv:52"
+        "status.wave44.home-deposit-portfolio.tsv:52",
+        "status.wave45.home-portfolio.tsv:42"
       ],
       "status": "partial"
     },
@@ -5732,7 +5776,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:140",
-        "status.wave44.home-deposit-portfolio.tsv:53"
+        "status.wave44.home-deposit-portfolio.tsv:53",
+        "status.wave45.home-portfolio.tsv:43"
       ],
       "status": "partial"
     },
@@ -5747,7 +5792,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:141",
-        "status.wave44.home-deposit-portfolio.tsv:54"
+        "status.wave44.home-deposit-portfolio.tsv:54",
+        "status.wave45.home-portfolio.tsv:44"
       ],
       "status": "partial"
     },
@@ -5762,7 +5808,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:143",
-        "status.wave44.home-deposit-portfolio.tsv:56"
+        "status.wave44.home-deposit-portfolio.tsv:56",
+        "status.wave45.home-portfolio.tsv:46"
       ],
       "status": "partial"
     },
@@ -5777,7 +5824,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:144",
-        "status.wave44.home-deposit-portfolio.tsv:57"
+        "status.wave44.home-deposit-portfolio.tsv:57",
+        "status.wave45.home-portfolio.tsv:47"
       ],
       "status": "partial"
     },
@@ -5814,7 +5862,8 @@
         "pageName": "✅ Trade 1"
       },
       "rows": [
-        "status.wave43.home.tsv:137"
+        "status.wave43.home.tsv:137",
+        "status.wave45.home-intel-whales.tsv:47"
       ],
       "status": "partial"
     },
@@ -5854,7 +5903,8 @@
         "status.wave17.social-pages.tsv:23",
         "status.wave24.social.tsv:31",
         "status.wave43.wallet-social-predict.tsv:78",
-        "status.wave44.social-predict-launch.tsv:90"
+        "status.wave44.social-predict-launch.tsv:90",
+        "status.wave45.rewards-predict-social-launch.tsv:54"
       ],
       "status": "partial"
     },
@@ -5899,7 +5949,8 @@
       },
       "rows": [
         "status.wave43.wallet-social-predict.tsv:77",
-        "status.wave44.social-predict-launch.tsv:89"
+        "status.wave44.social-predict-launch.tsv:89",
+        "status.wave45.rewards-predict-social-launch.tsv:53"
       ],
       "status": "partial"
     },
@@ -5914,7 +5965,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:136",
-        "status.wave44.home-deposit-portfolio.tsv:61"
+        "status.wave44.home-deposit-portfolio.tsv:61",
+        "status.wave45.home-portfolio.tsv:50"
       ],
       "status": "partial"
     },
@@ -5938,7 +5990,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:142",
-        "status.wave44.home-deposit-portfolio.tsv:55"
+        "status.wave44.home-deposit-portfolio.tsv:55",
+        "status.wave45.home-portfolio.tsv:45"
       ],
       "status": "partial"
     },
@@ -5953,7 +6006,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:145",
-        "status.wave44.home-deposit-portfolio.tsv:58"
+        "status.wave44.home-deposit-portfolio.tsv:58",
+        "status.wave45.home-portfolio.tsv:48"
       ],
       "status": "partial"
     },
@@ -5983,7 +6037,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:98",
-        "status.wave44.home-deposit-portfolio.tsv:50"
+        "status.wave44.home-deposit-portfolio.tsv:50",
+        "status.wave45.home-portfolio.tsv:40"
       ],
       "status": "partial"
     },
@@ -5998,7 +6053,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:99",
-        "status.wave44.home-deposit-portfolio.tsv:51"
+        "status.wave44.home-deposit-portfolio.tsv:51",
+        "status.wave45.home-portfolio.tsv:41"
       ],
       "status": "partial"
     },
@@ -6013,7 +6069,8 @@
       },
       "rows": [
         "status.wave43.wallet-social-predict.tsv:83",
-        "status.wave44.social-predict-launch.tsv:94"
+        "status.wave44.social-predict-launch.tsv:94",
+        "status.wave45.wallet-trade.tsv:33"
       ],
       "status": "partial"
     },
@@ -6072,7 +6129,8 @@
       },
       "rows": [
         "status.wave43.wallet-social-predict.tsv:73",
-        "status.wave44.wallet.tsv:60"
+        "status.wave44.wallet.tsv:60",
+        "status.wave45.wallet-trade.tsv:45"
       ],
       "status": "not-started"
     },
@@ -6228,7 +6286,8 @@
       },
       "rows": [
         "status.wave43.trade.tsv:54",
-        "status.wave44.trade.tsv:72"
+        "status.wave44.trade.tsv:72",
+        "status.wave45.wallet-trade.tsv:35"
       ],
       "status": "partial"
     },
@@ -6271,7 +6330,8 @@
       },
       "rows": [
         "status.wave43.wallet-social-predict.tsv:82",
-        "status.wave44.social-predict-launch.tsv:93"
+        "status.wave44.social-predict-launch.tsv:93",
+        "status.wave45.wallet-trade.tsv:32"
       ],
       "status": "partial"
     },
@@ -6286,7 +6346,8 @@
       },
       "rows": [
         "status.wave43.home.tsv:87",
-        "status.wave44.home-deposit-portfolio.tsv:65"
+        "status.wave44.home-deposit-portfolio.tsv:65",
+        "status.wave45.home-portfolio.tsv:54"
       ],
       "status": "partial"
     },
@@ -6427,7 +6488,8 @@
       },
       "rows": [
         "status.wave43.trade.tsv:61",
-        "status.wave44.trade.tsv:76"
+        "status.wave44.trade.tsv:76",
+        "status.wave45.wallet-trade.tsv:37"
       ],
       "status": "partial"
     },
@@ -6525,7 +6587,8 @@
       },
       "rows": [
         "status.wave43.trade.tsv:75",
-        "status.wave44.trade.tsv:80"
+        "status.wave44.trade.tsv:80",
+        "status.wave45.wallet-trade.tsv:39"
       ],
       "status": "partial"
     },
@@ -6540,7 +6603,8 @@
       },
       "rows": [
         "status.wave43.trade.tsv:74",
-        "status.wave44.trade.tsv:79"
+        "status.wave44.trade.tsv:79",
+        "status.wave45.wallet-trade.tsv:38"
       ],
       "status": "partial"
     },
@@ -6917,7 +6981,8 @@
       },
       "rows": [
         "status.wave43.trade.tsv:55",
-        "status.wave44.trade.tsv:73"
+        "status.wave44.trade.tsv:73",
+        "status.wave45.wallet-trade.tsv:36"
       ],
       "status": "partial"
     },
@@ -6974,7 +7039,8 @@
       },
       "rows": [
         "status.wave43.play-sports.tsv:67",
-        "status.wave44.play-hub.tsv:41"
+        "status.wave44.play-hub.tsv:41",
+        "status.wave45.play-slots.tsv:59"
       ],
       "status": "partial"
     }
@@ -12660,9 +12726,9 @@
       "id": "4711-29339",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9146-94935",
@@ -13212,9 +13278,9 @@
       "id": "5110-187509",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10302-184748",
@@ -17180,9 +17246,9 @@
       "id": "5534-92868",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11303-133324",
@@ -22540,9 +22606,9 @@
       "id": "14136-88147",
       "page": "✅ Home 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "14355-262060",
@@ -23028,9 +23094,9 @@
       "id": "14136-88454",
       "page": "✅ Home 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "14355-262291",
@@ -23428,9 +23494,9 @@
       "id": "13490-170320",
       "page": "✅ Home 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "14321-261423",
@@ -24045,7 +24111,7 @@
       "page": "✅ Home 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -27284,9 +27350,9 @@
       "id": "13008-42620",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13008-42806",
@@ -27340,9 +27406,9 @@
       "id": "13008-43468",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13008-43688",
@@ -32524,9 +32590,9 @@
       "id": "13006-279872",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-280789",
@@ -33116,9 +33182,9 @@
       "id": "13006-321483",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-321618",

@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-15T06:51:20.208Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-15T09:30:08.579Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -10,15 +10,15 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
-| governance | ✅ | 727 | 403 | 324 | 87 | 1 | 332 | 52 | 0 | 10 |
-| social | ✅ | 444 | 276 | 168 | 50 | 40 | 164 | 28 | 0 | 201 |
-| trade | ✅ | 455 | 253 | 202 | 44 | 39 | 203 | 4 | 0 | 92 |
-| trade-2 | ✅ | 437 | 237 | 200 | 51 | 40 | 162 | 1 | 0 | 76 |
-| home | ✅ | 287 | 194 | 93 | 50 | 75 | 116 | 0 | 0 | 102 |
+| governance | ✅ | 727 | 403 | 324 | 87 | 3 | 330 | 52 | 0 | 10 |
+| social | ✅ | 444 | 276 | 168 | 50 | 42 | 162 | 28 | 0 | 201 |
+| trade | ✅ | 455 | 253 | 202 | 44 | 42 | 200 | 4 | 0 | 92 |
+| trade-2 | ✅ | 437 | 237 | 200 | 51 | 43 | 159 | 1 | 0 | 76 |
+| home | ✅ | 287 | 194 | 93 | 50 | 80 | 111 | 0 | 0 | 102 |
 | play | ✅ | 377 | 159 | 218 | 44 | 37 | 84 | 34 | 0 | 66 |
-| home-2 | ✅ | 247 | 152 | 95 | 19 | 29 | 117 | 0 | 0 | 14 |
+| home-2 | ✅ | 247 | 152 | 95 | 19 | 30 | 116 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 5 | 87 | 48 | 0 | 134 |
-| wallet-2 | ✅ | 186 | 135 | 51 | 22 | 113 | 11 | 0 | 0 | 49 |
+| wallet-2 | ✅ | 186 | 135 | 51 | 22 | 115 | 9 | 0 | 0 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 72 | 60 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 0 | 98 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 13 | 1 | 0 | 0 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4783** | **2445** | | | **479** | **1766** | **182** | **18** | **1032** |
+| **all** | | **4783** | **2445** | | | **497** | **1748** | **182** | **18** | **1032** |
 
 ### Drift against live Figma
 
@@ -93,7 +93,7 @@ Frames that exist in Figma but are not in the catalog:
 | Gauge voting | 9 | desktop, tablet, mobile | empty | partial | [5515-95455](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5515-95455&m=dev) |
 | Learn > Articles > Create article | 9 | desktop, tablet, mobile | empty | partial | [5480-20528](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5480-20528&m=dev) |
 | Earn > My positions | 9 | desktop, tablet, mobile | empty; on:hover | partial | [5248-76804](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5248-76804&m=dev) |
-| Rewards > My referrals | 7 | desktop, tablet, mobile | empty; Rewards program > tier progress band [Frame 278 1318x180] | partial | [5534-92868](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5534-92868&m=dev) |
+| Rewards > My referrals | 7 | desktop, tablet, mobile | empty; Rewards program > tier progress band [Frame 278 1318x180] | done/partial | [5534-92868](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5534-92868&m=dev) |
 | Governance > Proposals > Delegation | 7 | desktop, tablet, mobile | on chain; off chain | partial | [5383-73349](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5383-73349&m=dev) |
 | Account | 7 | desktop, mobile, tablet | dropdown-3 [dropdown-3 250x384] | not-started/done | [5518-101256](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5518-101256&m=dev) |
 | Explorer > Address > Orders | 6 | desktop, tablet, mobile | - | blocked-on-backend | [5662-120139](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5662-120139&m=dev) |
@@ -176,7 +176,7 @@ Frames that exist in Figma but are not in the catalog:
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | Social > Groups | 36 | desktop, mobile, tablet | search; search > Discover; search > Discover > Join gated group; search > Created; search - empty; search - empty > Create group … | partial/done | [5194-270743](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5194-270743&m=dev) |
-| Social > Discover | 19 | desktop, mobile, tablet | search; search > Favourite; search > Posts; search > Top 20 trends; search > Creators - empty; search - Discover header row (1440): Create token CTA now routes to /launchpad/create, dismissible card retired [Frame 629 1144x66] | partial/blocked-on-backend/not-started/frame-defect | [5110-187509](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5110-187509&m=dev) |
+| Social > Discover | 19 | desktop, mobile, tablet | search; search > Favourite; search > Posts; search > Top 20 trends; search > Creators - empty; search - Discover header row (1440): Create token CTA now routes to /launchpad/create, dismissible card retired [Frame 629 1144x66] | done/partial/blocked-on-backend/not-started/frame-defect | [5110-187509](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5110-187509&m=dev) |
 | Social | 19 | desktop, mobile, tablet | dropdown; with "tweets"; with "tweets" > comment thread; with "tweets" > comment thread ALT; single comment; show more comments | partial/done/not-started/blocked-on-backend | [5100-183573](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5100-183573&m=dev) |
 | Social > Messages | 13 | desktop, mobile, tablet | empty; Sample conversation | frame-defect/partial | [5152-203838](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5152-203838&m=dev) |
 | Social > Sample post / token | 13 | desktop, mobile, tablet | chart; chart ALT; market | partial/not-started | [5114-194778](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5114-194778&m=dev) |
@@ -293,7 +293,7 @@ Frames that exist in Figma but are not in the catalog:
 | Launch > Live | 6 | desktop, tablet, mobile | - | partial | [13006-148857](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-148857&m=dev) |
 | Trench > Trackers > Live trades | 6 | desktop, mobile, tablet | - | partial | [13006-180340](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-180340&m=dev) |
 | Trench > Alerts | 6 | desktop, mobile, tablet | toggle off; toggle on | done | [13006-185849](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-185849&m=dev) |
-| Trench > Trackers > X accounts | 6 | mobile, tablet | empty; Popular; My list | partial/blocked-on-backend | [13006-321483](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-321483&m=dev) |
+| Trench > Trackers > X accounts | 6 | mobile, tablet | empty; Popular; My list | done/blocked-on-backend/partial | [13006-321483](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-321483&m=dev) |
 | Trench > Trade | 4 | desktop | layout 2; layout 2 with instant trade; layout 2 with instant trade - Trench > Instant trade (floating card) [Instant trade 333x316] | partial/done | [13006-210576](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-210576&m=dev) |
 | Launch > Sample token | 4 | desktop, mobile, tablet | Token terminal 768 header (sentiment card on stat row) [main 708x873] | partial | [13006-241485](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-241485&m=dev) |
 | Trench > Trackers > Wallets | 4 | mobile, tablet | empty; add wallet | partial | [13006-319384](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-319384&m=dev) |
@@ -345,7 +345,7 @@ Frames that exist in Figma but are not in the catalog:
 | query | 5 | desktop, tablet, mobile | focus; focus ALT | done/partial | [2713-5014](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-5014&m=dev) |
 | with deposit | 5 | tablet, mobile, desktop | Home - with deposit [Header-desktop 1440x56]; Home - with deposit [Frame 1137 1441x32] | done/partial | [14129-82852](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14129-82852&m=dev) |
 | Portfolio > Badges | 4 | desktop, tablet, mobile | portfolio badges 1440 [section 1144x946] | done/partial | [2853-9675](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2853-9675&m=dev) |
-| Portfolio > Badges > Badge preview | 4 | desktop, tablet, mobile | badge preview 1440 [modal 564x660] | partial | [5926-13672](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=5926-13672&m=dev) |
+| Portfolio > Badges > Badge preview | 4 | desktop, tablet, mobile | badge preview 1440 [modal 564x660] | partial/done | [5926-13672](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=5926-13672&m=dev) |
 | Add > upload image > conversation 4 | 4 | desktop, tablet, mobile | - | frame-defect/done | [2736-25840](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2736-25840&m=dev) |
 | conversation | 4 | desktop, tablet, mobile | - | done | [2726-10653](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2726-10653&m=dev) |
 | AI Feed > Market intel | 4 | desktop, tablet, mobile | - | partial | [5812-123481](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=5812-123481&m=dev) |
@@ -371,7 +371,7 @@ Frames that exist in Figma but are not in the catalog:
 | with deposit > deposit modal > Buy with Fiat | 3 | tablet, mobile, desktop | - | done | [14136-85609](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14136-85609&m=dev) |
 | with deposit > deposit modal > Buy with Fiat > select currency | 3 | tablet, mobile, desktop | - | done | [14136-86305](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14136-86305&m=dev) |
 | with deposit > deposit modal > Buy with Fiat > pay with | 3 | tablet, mobile, desktop | - | done | [14136-87297](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14136-87297&m=dev) |
-| with deposit > deposit modal > Send crypto | 3 | tablet, mobile, desktop | - | partial | [14136-88147](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14136-88147&m=dev) |
+| with deposit > deposit modal > Send crypto | 3 | tablet, mobile, desktop | - | done | [14136-88147](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14136-88147&m=dev) |
 | with deposit > deposit modal > Send crypto > Deposit received | 3 | tablet, mobile, desktop | - | done | [14136-88988](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14136-88988&m=dev) |
 | ALT | 2 | desktop, mobile | - | done/partial | [2733-19908](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2733-19908&m=dev) |
 | with deposit > quick balance ALT | 2 | tablet, desktop | - | done | [14136-89564](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14136-89564&m=dev) |
@@ -514,7 +514,7 @@ Frames that exist in Figma but are not in the catalog:
 | continue on web > home > request from user | 6 | desktop, tablet, mobile | step 1; step 2 | done | [13008-37430](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-37430&m=dev) |
 | continue on web > home > account > logout | 3 | desktop, tablet | - | done | [13008-27781](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27781&m=dev) |
 | continue on web > home > account > edit | 3 | desktop, tablet | - | done | [13008-27879](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27879&m=dev) |
-| continue on web > home > streaks | 3 | desktop, tablet | - | done/partial | [13008-28453](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28453&m=dev) |
+| continue on web > home > streaks | 3 | desktop, tablet | - | done | [13008-28453](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28453&m=dev) |
 | continue on web > home > buy | 3 | desktop, tablet, mobile | - | done | [13008-28694](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28694&m=dev) |
 | continue on web > home > swap | 3 | desktop, tablet, mobile | - | done | [13008-28765](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28765&m=dev) |
 | continue on web > home > chart | 3 | desktop, tablet, mobile | - | done/frame-defect | [13008-28886](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28886&m=dev) |
