@@ -1,0 +1,32 @@
+# key	status	primaryFile	route	reason	bp
+# Lane predict-wallet, wave 47 batch 2, 2026-09-17. Three rows, one per frame this lane
+# actually built against while re-triaging 14 parked bug reports (9 predict, 5 wallet).
+# The other eleven reports name no frame this pass touched, so they carry no row here;
+# their verdicts are in backlog-dispositions-predict-wallet.tsv.
+#
+# THE HEADLINE FINDING: THREE WALLET ROWS WERE PARKED ON A FILE LOCK, NOT ON A QUESTION.
+# TokenDetailView.tsx and SwapModal.tsx both held another session's uncommitted work when
+# wave 23 triaged them. Both trees are clean at HEAD and that work is committed (3d5e32a,
+# 62ed8dd, f6cab32), so the three decisions wave 23 had already made were simply owed.
+#
+#   7804-74178  is the only board that had to be re-read to settle all three. Its 580-wide
+#               main container holds SEVEN frames and no eighth: header, Overview, Swap,
+#               TradingView, then Frame 350 with Token details / Market details / Your
+#               activity. There is no Token allocation node anywhere on it, which is the
+#               whole of report f215d62d.
+#
+#   THE CARD BOX IS NOT ONE VALUE. 7804:76669 / 76712 / 76747 are r12; 7804:75591 is r20.
+#               Reading one and generalising would have cornered the Overview card wrong.
+#               NONE of the four carries a stroke, and the build drew a Green Coal 100
+#               outline on all of them at every width plus r24 corners - twice the frame's
+#               on the three under the chart.
+#
+#   AN INLINE STYLE BEATS EVERY RUNG ABOVE IT. The key-value label's face was set in a
+#               `style` prop, so the md: class that would have moved it to the board's
+#               Manrope 12/16 could never have taken effect. A class-only fix that left
+#               the style in place would have read as done and changed nothing on screen.
+#
+# No browser ran. Every verdict below is source-against-node.
+7804-74178	done	modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx	wallet.skai.trade/token/:symbol	READ LIVE THIS PASS (get_metadata 7804:74178, then get_design_context on four card nodes) AND BUILT, reports 284547ab and f215d62d, commits dc7b92b and 3912f08. SECTION SET, CLOSED: the main container is 580 wide at x=94 in a 768 frame and holds Frame 345 (header, y=0 h=32), Frame 270 Overview (y=48 h=201), Frame 270 Swap (y=265 h=524), TradingView (y=805 h=559) and Frame 350 (y=1380 h=912) - 16 between each - with Token details / Market details / Your activity inside Frame 350 on the 8 that 3d5e32a already pinned. There is NO Token allocation node on the board, at any depth, so the eighth card the app drew between Market details and Your activity came out, along with the two props that fed it and the route memo that built its slices. THE BOX: 7804:76669, 76712 and 76747 are each #122524 on a 12 inset at r12 with the 0/10/80 black@25% shadow and NO STROKE; 7804:75591 is the same fill, shadow and no stroke at r20, which is already this file's base. The build drew rounded-3xl (24) plus a border-[var(--skai-bg-tertiary)] outline on all four at every width. Now md:rounded-[12px] on the three under the chart, md:border-0 on all four, lg: restoring what the desktop board has always had. THE KEY-VALUE RUN: 7804:76687 / 76700 / 76726 / 76735 are Manrope 12/16 at -0.48 with white carried at 64%, against 7804:76690 / 76701 / 76727 / 76736 at Mulish 14/16 -0.56 white; both shipped as Mulish 14, and the face lived in an inline style, so the whole run moved to classes in the same edit. Fill and shadow were already right; spacing and the title ramp landed in 3d5e32a / 62ed8dd. 114 component and page files / 959 tests green from inside modules/skai-wallet.	1440=not-started 768=done 375=not-started @2026-09-16/wave47b-predict-wallet
+7916-115982	done	modules/skai-wallet/src/components/SwapModal.tsx	wallet.skai.trade/token/:symbol (embedded swap slot)	READ LIVE THIS PASS AND BUILT (get_design_context 7916:116056), report 663e6a65, commit c00fe3b. The report's screenshot shows a slate-blue Swap button, and that colour is drawn nowhere: it is bg-[var(--skai-cyan)] under disabled:opacity-40 over this card's fill. The frame does not dim the live button at rest, it draws a different one - the CTA inside "Swap - no value" is a Green Coal 300 plate (#001615) carrying its glyph and label in Green Coal 100 (#123F3C), Manrope 16/22 at -0.64, r12. Now disabled:bg-[#001615] disabled:text-[#123f3c] with no opacity rule left to wash it; the glyph paints with currentColor so the ink follows. Geometry unchanged and already matching: r12, 44 tall on a phone, Manrope 16/22 at -4%. The other half of the report - the Swap summary block hidden until an amount was typed, where this frame keeps it visible with every figure a dash - landed in f6cab32 last wave. The new case asserts the button is actually disabled before it reads the rest classes, so it cannot pass against the live state. 6 swap files / 84 tests green.	1440=n-a 768=renders 375=done @2026-09-16/wave47b-predict-wallet
+3083-1328	partial	modules/skai-wallet/src/components/wallet/tokens/TokenDetailView.tsx	wallet.skai.trade/token/:symbol	NOT RE-READ THIS PASS. It is the node report 284547ab links, but the report asks for the page at 768 and the reporter's own comparison shot is this 1440 board filled with Solana data, which is most of why the two screenshots look unlike each other (wave 23 established that and it still holds). Everything built for 284547ab is therefore hinged at md: with lg: restoring what this board's cuts have always shipped, and no claim is made about 1440. What a pass that opens this node owes: whether the desktop card really carries the Green Coal 100 stroke the build draws - the 768 board's four cards carry none, and the same outline at 1440 has never been read off a node either - and whether the key-value label is Mulish 14 here or the Manrope 12 its tablet sibling uses. Until then lg: preserves the shipped values rather than asserting them. The one thing removed at every width is the Token allocation card, which no board of this page draws, this one included (its section list is the same six).	1440=partial 768=n-a 375=n-a @2026-09-16/wave47b-predict-wallet
