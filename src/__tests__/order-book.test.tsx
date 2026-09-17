@@ -101,6 +101,22 @@ describe("OrderBook", () => {
       expect(screen.queryByText("Size (USD)")).not.toBeInTheDocument();
     });
 
+    it("rules the column band on both edges, not just below it", () => {
+      // `9002:163748` and `9002:163753` are zero-height `line` vectors at the
+      // top and the foot of "Frame 442" on the tablet board. The lower one had
+      // always shipped; the upper one had not, and the app's quote row above
+      // this band gave up its own `border-b` on the strength of it belonging
+      // here — so for a wave the two rows had no rule between them at all.
+      render(
+        <OrderBook data={createMockOrderBook()} baseCurrency="BTC" quoteCurrency="USD" />,
+      );
+      const band = screen.getByText("Price").parentElement;
+      expect(band).not.toBeNull();
+      const classes = (band as HTMLElement).className.split(/\s+/);
+      expect(classes).toContain("border-y");
+      expect(classes).not.toContain("border-b");
+    });
+
     it("names the base currency in a row's accessible label", () => {
       render(
         <OrderBook

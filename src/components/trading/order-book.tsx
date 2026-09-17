@@ -400,9 +400,27 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             amount in the quote. Labelling both with the quote read "Size (USD)
             0.262338" against a price of 78,222.50, which is 0.262338 BTC
             announced as twenty-six cents. */}
+        {/* ★ THE BAND IS RULED ON BOTH EDGES, and it had only the lower one.
+            Two readings agree and neither was acted on: the tablet board
+            `9002:163721` puts a zero-height `line` at the top of "Frame 442"
+            and another at its foot (`9002:163748` / `9002:163753`), and the
+            wave-45 pass that took the quote row's own `border-b` away recorded
+            the reason in as many words — the divider the quote row appeared to
+            own belongs to this band, which draws one at each edge. Removing it
+            there without adding it here left the two rows with no rule between
+            them at all.
+
+            ⚠ The band's HEIGHT is deliberately not moved with it. The same
+            frame states it twice and disagrees: "Frame 442" declares 20, its
+            content measures 22 (4 + a 14 line box + 4), and the first ladder
+            row opens at 20 — so the lower rule overlaps that row by two. A
+            fixed-height container with overflowing content is debris, not a
+            spec, and `py-1` over `leading-4` keeps the 24 the desktop cut is
+            recorded at. The 14 wants the 1440 label height read before anyone
+            ramps it. */}
         <div
           role="row"
-          className="flex items-center justify-between px-4 py-1 font-sans text-xs font-normal leading-4 tracking-[-0.48px] text-ash border-b border-border shrink-0"
+          className="flex items-center justify-between px-4 py-1 font-sans text-xs font-normal leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
         >
           <span className="w-[89px] shrink-0 truncate text-left">Price</span>
           <span className="shrink-0 truncate text-right">
