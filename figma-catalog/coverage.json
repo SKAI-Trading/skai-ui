@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17T02:40:04.173Z",
+  "generated": "2026-09-17T06:09:17.893Z",
   "harvestedAt": "2026-09-15",
   "rollup": {
     "pages": 39,
@@ -7,14 +7,14 @@
     "furniture": 771,
     "genuine": 3813,
     "matched": 3812,
-    "done": 652,
-    "verified": 240,
+    "done": 667,
+    "verified": 252,
     "visuallyDowngraded": 36,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 2224,
+    "partial": 2209,
     "notStarted": 267,
     "blocked": 188,
     "frameDefect": 130,
@@ -27,16 +27,16 @@
     "conflicts": 3
   },
   "doneRows": {
-    "total": 2411,
-    "withBreakpointProvenance": 1001,
-    "namingANodeId": 2092,
+    "total": 2433,
+    "withBreakpointProvenance": 1023,
+    "namingANodeId": 2114,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 15706,
-    "namingNoNodeId": 507,
-    "namingNoLiveNodeId": 827,
-    "unrecognisedTokens": 26141
+    "total": 15838,
+    "namingNoNodeId": 509,
+    "namingNoLiveNodeId": 848,
+    "unrecognisedTokens": 26479
   },
   "statusFiles": [
     {
@@ -2338,6 +2338,48 @@
       "ids": 26
     },
     {
+      "file": "status.wave47.ai-chat.tsv",
+      "rows": 11,
+      "withLiveId": 11,
+      "ids": 12
+    },
+    {
+      "file": "status.wave47.home.tsv",
+      "rows": 26,
+      "withLiveId": 19,
+      "ids": 21
+    },
+    {
+      "file": "status.wave47.launch-rewards-wallet-trade.tsv",
+      "rows": 12,
+      "withLiveId": 7,
+      "ids": 9
+    },
+    {
+      "file": "status.wave47.social-messages.tsv",
+      "rows": 44,
+      "withLiveId": 44,
+      "ids": 44
+    },
+    {
+      "file": "status.wave47.trench.tsv",
+      "rows": 32,
+      "withLiveId": 26,
+      "ids": 25
+    },
+    {
+      "file": "status.wave47b.predict-wallet.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave47b.trench.tsv",
+      "rows": 4,
+      "withLiveId": 1,
+      "ids": 1
+    },
+    {
       "file": "status.wave5.discover-createtoken.tsv",
       "rows": 3,
       "withLiveId": 1,
@@ -3359,11 +3401,11 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 1,
-      "verified": 1,
+      "verified": 7,
       "visuallyDowngraded": 5,
       "byStatus": {
-        "done": 65,
-        "partial": 247,
+        "done": 74,
+        "partial": 238,
         "blocked-on-backend": 37,
         "blocked-on-casey": 2,
         "not-started": 39,
@@ -3461,12 +3503,12 @@
       "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 85,
+      "verified": 86,
       "visuallyDowngraded": 1,
       "byStatus": {
-        "done": 89,
+        "done": 90,
         "furniture": 7,
-        "partial": 130,
+        "partial": 129,
         "not-started": 10
       },
       "liveOnly": []
@@ -3493,11 +3535,11 @@
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 5,
+      "verified": 7,
       "visuallyDowngraded": 1,
       "byStatus": {
-        "partial": 122,
-        "done": 53,
+        "partial": 120,
+        "done": 55,
         "blocked-on-backend": 8,
         "not-started": 17,
         "furniture": 2,
@@ -3526,11 +3568,11 @@
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 65,
+      "verified": 66,
       "visuallyDowngraded": 2,
       "byStatus": {
-        "done": 65,
-        "partial": 96,
+        "done": 66,
+        "partial": 95,
         "furniture": 6
       },
       "liveOnly": []
@@ -3556,11 +3598,11 @@
       "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 11,
+      "verified": 12,
       "visuallyDowngraded": 1,
       "byStatus": {
-        "done": 128,
-        "partial": 19,
+        "done": 129,
+        "partial": 18,
         "blocked-on-backend": 7,
         "frame-defect": 4,
         "furniture": 1
@@ -3627,11 +3669,11 @@
       "defaultNamed": 18,
       "ambiguous": 0,
       "conflicts": 2,
-      "verified": 15,
+      "verified": 16,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 221,
-        "done": 97,
+        "partial": 220,
+        "done": 98,
         "frame-defect": 15,
         "furniture": 4,
         "not-started": 19,
@@ -4745,7 +4787,8 @@
         "status.wave43.wallet-social-predict.tsv:57",
         "status.wave44.social-predict-launch.tsv:84",
         "status.wave45.rewards-predict-social-launch.tsv:49",
-        "status.wave46.launch-rewards-wallet-trade.tsv:60"
+        "status.wave46.launch-rewards-wallet-trade.tsv:60",
+        "status.wave47.launch-rewards-wallet-trade.tsv:55"
       ],
       "status": "blocked-on-backend"
     },
@@ -4762,7 +4805,9 @@
         "status.wave43.wallet-social-predict.tsv:56",
         "status.wave44.social-predict-launch.tsv:83",
         "status.wave45.rewards-predict-social-launch.tsv:48",
-        "status.wave46.launch-rewards-wallet-trade.tsv:59"
+        "status.wave46.launch-rewards-wallet-trade.tsv:59",
+        "status.wave47.home.tsv:92",
+        "status.wave47.launch-rewards-wallet-trade.tsv:54"
       ],
       "status": "partial"
     },
@@ -5274,6 +5319,15 @@
       "status": "partial"
     },
     {
+      "id": "13006-210579",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave47b.trench.tsv:21"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "13006-212076",
       "cls": "bug-link",
       "resolved": null,
@@ -5351,7 +5405,8 @@
       "rows": [
         "status.wave43.trench-launch.tsv:107",
         "status.wave44.trench.tsv:94",
-        "status.wave46.trench.tsv:84"
+        "status.wave46.trench.tsv:84",
+        "status.wave47.trench.tsv:69"
       ],
       "status": "partial"
     },
@@ -5367,7 +5422,8 @@
       "rows": [
         "status.wave43.trench-launch.tsv:103",
         "status.wave44.trench.tsv:92",
-        "status.wave46.trench.tsv:83"
+        "status.wave46.trench.tsv:83",
+        "status.wave47.trench.tsv:68"
       ],
       "status": "partial"
     },
@@ -5428,7 +5484,8 @@
       "rows": [
         "status.wave43.trench-launch.tsv:115",
         "status.wave44.trench.tsv:102",
-        "status.wave46.trench.tsv:88"
+        "status.wave46.trench.tsv:88",
+        "status.wave47.trench.tsv:73"
       ],
       "status": "partial"
     },
@@ -5444,7 +5501,8 @@
       "rows": [
         "status.wave43.trench-launch.tsv:114",
         "status.wave44.trench.tsv:101",
-        "status.wave46.trench.tsv:87"
+        "status.wave46.trench.tsv:87",
+        "status.wave47.trench.tsv:72"
       ],
       "status": "partial"
     },
@@ -5475,7 +5533,8 @@
       "rows": [
         "status.wave43.trench-launch.tsv:116",
         "status.wave44.trench.tsv:103",
-        "status.wave46.trench.tsv:89"
+        "status.wave46.trench.tsv:89",
+        "status.wave47.trench.tsv:74"
       ],
       "status": "partial"
     },
@@ -5534,7 +5593,8 @@
       "rows": [
         "status.wave43.trench-launch.tsv:108",
         "status.wave44.trench.tsv:95",
-        "status.wave46.trench.tsv:85"
+        "status.wave46.trench.tsv:85",
+        "status.wave47.trench.tsv:70"
       ],
       "status": "partial"
     },
@@ -5579,7 +5639,8 @@
       "rows": [
         "status.wave43.trench-launch.tsv:109",
         "status.wave44.trench.tsv:96",
-        "status.wave46.trench.tsv:86"
+        "status.wave46.trench.tsv:86",
+        "status.wave47.trench.tsv:71"
       ],
       "status": "partial"
     },
@@ -5743,7 +5804,8 @@
         "status.wave43.home.tsv:101",
         "status.wave44.home-whales-intel.tsv:64",
         "status.wave45.home-intel-whales.tsv:44",
-        "status.wave46.home.tsv:56"
+        "status.wave46.home.tsv:56",
+        "status.wave47.home.tsv:81"
       ],
       "status": "partial"
     },
@@ -5832,7 +5894,8 @@
         "status.wave43.home.tsv:140",
         "status.wave44.home-deposit-portfolio.tsv:53",
         "status.wave45.home-portfolio.tsv:43",
-        "status.wave46.home.tsv:63"
+        "status.wave46.home.tsv:63",
+        "status.wave47.home.tsv:88"
       ],
       "status": "partial"
     },
@@ -5866,7 +5929,8 @@
         "status.wave43.home.tsv:143",
         "status.wave44.home-deposit-portfolio.tsv:56",
         "status.wave45.home-portfolio.tsv:46",
-        "status.wave46.home.tsv:66"
+        "status.wave46.home.tsv:66",
+        "status.wave47.home.tsv:90"
       ],
       "status": "partial"
     },
@@ -5922,7 +5986,8 @@
       "rows": [
         "status.wave43.home.tsv:137",
         "status.wave45.home-intel-whales.tsv:47",
-        "status.wave46.home.tsv:59"
+        "status.wave46.home.tsv:59",
+        "status.wave47.home.tsv:84"
       ],
       "status": "partial"
     },
@@ -6051,7 +6116,8 @@
         "status.wave43.home.tsv:142",
         "status.wave44.home-deposit-portfolio.tsv:55",
         "status.wave45.home-portfolio.tsv:45",
-        "status.wave46.home.tsv:65"
+        "status.wave46.home.tsv:65",
+        "status.wave47.home.tsv:89"
       ],
       "status": "partial"
     },
@@ -6099,7 +6165,8 @@
         "status.wave43.home.tsv:98",
         "status.wave44.home-deposit-portfolio.tsv:50",
         "status.wave45.home-portfolio.tsv:40",
-        "status.wave46.home.tsv:61"
+        "status.wave46.home.tsv:61",
+        "status.wave47.home.tsv:86"
       ],
       "status": "partial"
     },
@@ -6116,7 +6183,8 @@
         "status.wave43.home.tsv:99",
         "status.wave44.home-deposit-portfolio.tsv:51",
         "status.wave45.home-portfolio.tsv:41",
-        "status.wave46.home.tsv:62"
+        "status.wave46.home.tsv:62",
+        "status.wave47.home.tsv:87"
       ],
       "status": "partial"
     },
@@ -6193,7 +6261,8 @@
       "rows": [
         "status.wave43.wallet-social-predict.tsv:73",
         "status.wave44.wallet.tsv:60",
-        "status.wave45.wallet-trade.tsv:45"
+        "status.wave45.wallet-trade.tsv:45",
+        "status.wave47.launch-rewards-wallet-trade.tsv:64"
       ],
       "status": "not-started"
     },
@@ -6395,7 +6464,8 @@
         "status.wave43.wallet-social-predict.tsv:82",
         "status.wave44.social-predict-launch.tsv:93",
         "status.wave45.wallet-trade.tsv:32",
-        "status.wave46.launch-rewards-wallet-trade.tsv:63"
+        "status.wave46.launch-rewards-wallet-trade.tsv:63",
+        "status.wave47.launch-rewards-wallet-trade.tsv:58"
       ],
       "status": "partial"
     },
@@ -6555,7 +6625,8 @@
         "status.wave43.trade.tsv:61",
         "status.wave44.trade.tsv:76",
         "status.wave45.wallet-trade.tsv:37",
-        "status.wave46.launch-rewards-wallet-trade.tsv:66"
+        "status.wave46.launch-rewards-wallet-trade.tsv:66",
+        "status.wave47.launch-rewards-wallet-trade.tsv:60"
       ],
       "status": "partial"
     },
@@ -13681,9 +13752,9 @@
       "id": "5153-205032",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10216-138151",
@@ -13697,8 +13768,8 @@
       "id": "10215-137087",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": null
     },
     {
@@ -13803,7 +13874,7 @@
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "5165-269440",
@@ -14713,17 +14784,17 @@
       "id": "11365-22320",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11368-23343",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11530-303652",
@@ -14769,8 +14840,8 @@
       "id": "11373-22600",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": null
     },
     {
@@ -14801,9 +14872,9 @@
       "id": "11341-88224",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11398-77450",
@@ -15097,9 +15168,9 @@
       "id": "11387-29051",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11530-303909",
@@ -15145,8 +15216,8 @@
       "id": "11387-28789",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": null
     },
     {
@@ -15185,9 +15256,9 @@
       "id": "11381-26299",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11341-86906",
@@ -23347,7 +23418,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "6736-36413",
@@ -23425,8 +23496,8 @@
       "id": "6736-41729",
       "page": "✅ Home 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -24995,7 +25066,7 @@
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "14178-157280",
@@ -25083,7 +25154,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-129631",
@@ -25113,17 +25184,17 @@
       "id": "13008-130123",
       "page": "✅ Home 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13008-130217",
       "page": "✅ Home 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13389-161486",
@@ -25817,16 +25888,16 @@
       "id": "3083-1328",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
       "id": "7804-74178",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -25857,9 +25928,9 @@
       "id": "7916-115982",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "7911-115798",
@@ -27801,9 +27872,9 @@
       "id": "13008-51352",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13008-52163",
@@ -32817,9 +32888,9 @@
       "id": "13006-286595",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-286941",
@@ -32907,7 +32978,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13006-293274",
@@ -33163,7 +33234,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13006-317563",
