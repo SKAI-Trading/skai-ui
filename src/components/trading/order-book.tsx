@@ -111,6 +111,19 @@ export interface OrderBookProps {
   levels?: number;
   /** Price precision (decimal places) */
   pricePrecision?: number;
+  /**
+   * Render a cash figure in the ladder — Price and Total.
+   *
+   * Both columns are money, and the frame writes them with a currency symbol
+   * and thousands separators ("$121,723"), which `toFixed` cannot produce. The
+   * default keeps every existing caller on exactly the output they had.
+   *
+   * ⛔ Deliberately NOT applied to the Spread row: frame 9002:163859 draws that
+   * as a bare figure, so formatting it would be a regression dressed as
+   * consistency. Size is not money either — it is a quantity of the base asset
+   * and keeps `sizePrecision`.
+   */
+  formatPrice?: (value: number) => string;
   /** Size precision (decimal places) */
   sizePrecision?: number;
   /** Quote currency symbol — denominates Price and Total */
@@ -180,6 +193,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       levels = 12,
       pricePrecision = 2,
       sizePrecision = 4,
+      formatPrice,
       quoteCurrency = "USDT",
       baseCurrency = quoteCurrency,
       showDepthBars = true,
@@ -271,6 +285,11 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
     const maxBidTotal = data.bids[data.bids.length - 1]?.total || 1;
     const maxAskTotal = data.asks[data.asks.length - 1]?.total || 1;
 
+    // Price and Total are cash; Size is a quantity and is deliberately not
+    // routed through this. Default preserves the previous toFixed output.
+    const money = (v: number) =>
+      formatPrice ? formatPrice(v) : v.toFixed(pricePrecision);
+
     const renderLevel = (
       level: OrderBookLevel,
       idx: number,
@@ -343,13 +362,13 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
               isAsk ? "text-skai-red-300" : "text-alien-green-bright",
             )}
           >
-            {level.price.toFixed(pricePrecision)}
+            {money(level.price)}
           </span>
           <span className="relative z-10 w-[55px] shrink-0 text-right text-white">
             {level.size.toFixed(sizePrecision)}
           </span>
           <span className="relative z-10 w-[70px] shrink-0 text-right text-white">
-            {(level.size * level.price).toFixed(pricePrecision)}
+            {money(level.size * level.price)}
           </span>
         </div>
       );
