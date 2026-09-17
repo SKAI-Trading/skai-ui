@@ -410,14 +410,20 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             there without adding it here left the two rows with no rule between
             them at all.
 
-            ⚠ The band's HEIGHT is deliberately not moved with it. The same
-            frame states it twice and disagrees: "Frame 442" declares 20, its
-            content measures 22 (4 + a 14 line box + 4), and the first ladder
-            row opens at 20 — so the lower rule overlaps that row by two. A
-            fixed-height container with overflowing content is debris, not a
-            spec, and `py-1` over `leading-4` keeps the 24 the desktop cut is
-            recorded at. The 14 wants the 1440 label height read before anyone
-            ramps it. */}
+            ⚠ The band's HEIGHT stays at 24, and that is now a reading rather
+            than a hedge. The tablet cut states it twice and disagrees with
+            itself: "Frame 442" declares 20, its content measures 22 (4 + a 14
+            line box + 4), and the first ladder row opens at 20 — so the lower
+            rule overlaps that row by two.
+
+            The 1440 cut was read to settle it (`7712:29463`, 2026-09-16) and it
+            closes exactly. Frame 442 is 24 tall, a `line` at each edge, and
+            "Frame 283" holds the three labels at y=4 on a 16px line box: 4 + 16
+            + 4 = 24, with the next `book` row opening at 24 and nothing
+            overlapping. So 24 is the composition the design actually draws, the
+            tablet cut's 20 is the number that cannot be built, and `py-1` over
+            `leading-4` is that arithmetic. Do not ramp this to 22 on the
+            strength of a container its own content overflows. */}
         <div
           role="row"
           className="flex items-center justify-between px-4 py-1 font-sans text-xs font-normal leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
