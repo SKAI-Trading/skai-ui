@@ -126,9 +126,14 @@ const PARAGRAPH_1 =
  * The field box. The frames state its height rather than deriving it from the
  * padding — 48 / 50 / 62 — so it is written that way here; a border and the
  * ascender of a 16px line would otherwise carry it past the drawn box.
+ *
+ * The hairline is an inset ring rather than a border because the frames draw
+ * their strokes inside the box: a border would sit outside the 16 of padding
+ * and push the content in by 17. The ring also lets focus thicken it to the
+ * 1.5 the frames use without moving anything.
  */
 const FIELD_BOX =
-  "flex h-12 w-full items-center gap-2 rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 transition-colors md:h-[50px] lg:h-[62px] lg:rounded-[16px] lg:px-5";
+  "flex h-12 w-full items-center gap-2 rounded-[12px] bg-[#001615] px-4 shadow-[inset_0_0_0_1px_#123f3c] transition-shadow md:h-[50px] lg:h-[62px] lg:rounded-[16px] lg:px-5";
 
 /** The bare control inside a field box: no chrome of its own. */
 const FIELD_INPUT =
@@ -261,9 +266,10 @@ export function AuthModal({
     >
       <div
         /* 358 wide on a 20 radius at 375, 468 on 26 at 768, 448 on 32 at 1440;
-           Green Coal 200 on a Green Coal 100 hairline. The top and bottom
-           insets are not a pair — 24/24, 16/32, 24/40 across the three. */
-        className="relative flex w-full max-w-[358px] flex-col gap-5 rounded-[20px] border border-[#123f3c] bg-[#122524] px-2 pb-6 pt-6 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-6 md:rounded-[26px] md:px-4 md:pb-8 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
+           Green Coal 200 under a Green Coal 100 hairline, which is an inset
+           ring for the reason FIELD_BOX gives. The top and bottom insets are
+           not a pair — 24/24, 16/32, 24/40 across the three. */
+        className="relative flex w-full max-w-[358px] flex-col gap-5 rounded-[20px] bg-[#122524] px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-6 md:rounded-[26px] md:px-4 md:pb-8 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
       >
         {/* Title row: Super-headline 4 300 centred on the modal, with the close
             glyph at the right inset. The frame balances the glyph with an empty
@@ -314,8 +320,8 @@ export function AuthModal({
               className={cn(
                 FIELD_BOX,
                 isSignup
-                  ? "focus-within:border-[#17F9B4] focus-within:shadow-[0px_4px_12px_rgba(0,0,0,0.24)]"
-                  : "focus-within:border-[#56C7F3]",
+                  ? "focus-within:shadow-[inset_0_0_0_1.5px_#17F9B4,0px_4px_12px_rgba(0,0,0,0.24)]"
+                  : "focus-within:shadow-[inset_0_0_0_1.5px_#56C7F3]",
               )}
             >
               <input
@@ -381,7 +387,7 @@ export function AuthModal({
                     <ChevronIcon className="h-4 w-4" open />
                   </button>
                 </div>
-                <div className={cn(FIELD_BOX, "focus-within:border-[#56C7F3]")}>
+                <div className={cn(FIELD_BOX, "focus-within:shadow-[inset_0_0_0_1.5px_#56C7F3]")}>
                   <input
                     id="skai-auth-referral"
                     type="text"
