@@ -427,8 +427,15 @@ Play
   touched files: 0.
 - Lanes committed by pathspec and never pushed; the catalog fold commits all thirty status
   files, the new vverify file and this record with an explicit add.
-- Deploy: pending the gaming result; the pointer bump and `deploy_main` from the pinned
-  worktree are recorded in the follow-up commit.
+- Deploy: skai-gaming pushed (1badf455 to 32e543b7), then the pointer bump committed in
+  the detached deploy worktree on top of origin/main (a peer's d2539ee09) and pushed as
+  7ac933258 (skai-ui d23ee42, skai-gaming 32e543b7, skai-landing 3e62327, docs cb9e52f;
+  skai-wallet b314ae2 was the peer's own bump). `deploy_main.ps1` from that worktree,
+  02:23 to 02:34: exit 0, release `skai-trading@20260918-0223-7ac933258`, version.json
+  dirty:false, sourcemap guard satisfied, parity feed re-published unchanged at the 01:50
+  measurement. A peer session deployed again at 04:54 as `skai-trading@20260918-0451-f2c0bf0e2`
+  (dirty:true, built from the shared tree); that commit contains 7ac933258 and every wave
+  50 pointer or a later one, so the wave's work is in the live release either way.
 
 ## 7. What is next
 
