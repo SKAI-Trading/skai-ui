@@ -47,6 +47,8 @@
 2760:12240	Skai > Home > Portfolio (1440 x 900px)	FRAME	1440	1477	1
 2773:7535	Skai > Home > Portfolio > Tiers (1440 x 900px)	FRAME	1440	1121	1
 2853:9675	Skai > Home > Portfolio > Badges (1440 x 900px)	FRAME	1440	1592	1
+15382:181256	Badges150	INSTANCE	100	100	1
+15382:180941	Badges150	INSTANCE	100	100	1
 5926:13672	Skai > Home > Portfolio > Badges > Badge preview (1440 x 900px)	FRAME	1440	900	1
 2773:10240	Trade - empty	FRAME	1144	513	1
 2760:9935	Skai > Home > Portfolio > Vault - deposit (1440 x 900px)	FRAME	1440	1999	1
@@ -275,3 +277,4 @@
 13502:172510	Notes	WIDGET	342	331	1
 14129:83324	sidebar	FRAME	296	812	1
 14129:83460	sidebar	FRAME	318	1024	1
+15382:181210	Notes	WIDGET	342	217	1

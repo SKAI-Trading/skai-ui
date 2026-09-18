@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-17T20:40:30.917Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-18T02:05:32.945Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -12,13 +12,13 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
 | governance | ✅ | 727 | 403 | 324 | 87 | 3 | 330 | 52 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 56 | 148 | 28 | 0 | 201 |
-| trade | ✅ | 455 | 253 | 202 | 44 | 44 | 198 | 4 | 0 | 92 |
-| trade-2 | ✅ | 437 | 237 | 200 | 51 | 48 | 153 | 0 | 0 | 76 |
-| home | ✅ | 287 | 194 | 93 | 50 | 91 | 99 | 1 | 0 | 102 |
+| trade | ✅ | 456 | 253 | 203 | 44 | 44 | 198 | 4 | 0 | 92 |
+| trade-2 | ✅ | 440 | 237 | 203 | 51 | 48 | 153 | 0 | 0 | 76 |
+| home | ✅ | 290 | 194 | 96 | 50 | 91 | 99 | 1 | 0 | 102 |
 | play | ✅ | 377 | 159 | 218 | 44 | 39 | 82 | 34 | 0 | 66 |
-| home-2 | ✅ | 247 | 152 | 95 | 19 | 35 | 110 | 0 | 0 | 14 |
+| home-2 | ✅ | 249 | 152 | 97 | 19 | 35 | 110 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 5 | 87 | 48 | 0 | 134 |
-| wallet-2 | ✅ | 186 | 135 | 51 | 22 | 116 | 8 | 0 | 0 | 49 |
+| wallet-2 | ✅ | 194 | 141 | 53 | 22 | 116 | 8 | 0 | 6 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 72 | 60 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 0 | 98 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 13 | 1 | 0 | 0 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4783** | **2442** | | | **540** | **1702** | **182** | **18** | **1032** |
+| **all** | | **4800** | **2448** | | | **540** | **1702** | **182** | **24** | **1032** |
 
 ### Drift against live Figma
 
@@ -66,12 +66,12 @@ Frames that exist in Figma but are not in the catalog:
 | ✅ Play | 377 | 345 | -32 |
 | ✅ Social | 444 | 442 | -2 |
 | ✅ Governance and Utilities | 727 | 725 | -2 |
-| ✅ Home 1 | 292 | 277 | -15 |
+| ✅ Home 1 | 295 | 280 | -15 |
 | ✅ Wallet 1 | 186 | 178 | -8 |
-| ✅ Trade 1 | 455 | 420 | -35 |
-| ✅ Home 2 | 247 | 240 | -7 |
-| ✅ Wallet 2 | 186 | 182 | -4 |
-| ✅ Trade 2 | 437 | 417 | -20 |
+| ✅ Trade 1 | 456 | 421 | -35 |
+| ✅ Home 2 | 249 | 242 | -7 |
+| ✅ Wallet 2 | 194 | 190 | -4 |
+| ✅ Trade 2 | 440 | 420 | -20 |
 | ✅ Coinflip - Skai originals | 47 | 46 | -1 |
 | ✅ Scratchers - Skai originals | 22 | 21 | -1 |
 | ✅ Keno - Skai originals | 28 | 27 | -1 |
@@ -502,16 +502,16 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| continue on web > home > batch | 16 | desktop, tablet, mobile | step 1; step 2; step 2b; step 2b > input amount; step 3 | done | [13008-36677](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36677&m=dev) |
+| continue on web > home > batch | 20 | desktop, tablet, mobile | step 1; step 2; step 2b; step 2b > input amount; step 3; step 3 > in progress … | done | [13008-36677](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36677&m=dev) |
 | continue on web > home > send | 16 | desktop, tablet, mobile | step 1; step 2; step 2 > Address lookup; step 3; processing; step 1 - alternative view for steps | done | [13008-37942](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-37942&m=dev) |
 | continue on web > home > receive | 12 | desktop, tablet, mobile | step 1; set amount; step 2; set amount - step 2; set amount - step 1 | done | [13008-38053](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-38053&m=dev) |
 | continue on web > home > share | 11 | desktop, tablet, mobile | 3rd combination; Expand; 2nd combination | done/partial | [13008-30018](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-30018&m=dev) |
 | continue on web > home | 9 | desktop, tablet, mobile | - | done | [13008-26985](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-26985&m=dev) |
 | continue on web > home > notifications | 9 | desktop, tablet | settings; sample notification | done/partial | [13008-27989](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27989&m=dev) |
+| continue on web > home > request from user | 8 | desktop, tablet, mobile | step 1; step 2; step 2 > select token ALT; step 2 > select token | done | [13008-37430](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-37430&m=dev) |
 | continue on web > home > account | 7 | desktop, tablet | input/primary-inputs (account Currency, 1440) [input/primary-inputs 648x62]; input/primary-inputs (account Currency, 768) [input/primary-inputs 556x58]; input/primary-inputs (account Currency, 375) [input/primary-inputs 322x56]; dropdown-3 (home > account 768) [dropdown-3 200x176] | done | [13008-27689](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27689&m=dev) |
 | continue on web > home > bridge | 7 | desktop, tablet, mobile | - | blocked-on-backend/done | [13008-29014](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-29014&m=dev) |
 | continue on web > home > request with QR | 6 | desktop, tablet, mobile | step 1; step 2 | done | [13008-36562](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-36562&m=dev) |
-| continue on web > home > request from user | 6 | desktop, tablet, mobile | step 1; step 2 | done | [13008-37430](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-37430&m=dev) |
 | continue on web > home > account > logout | 3 | desktop, tablet | - | done | [13008-27781](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27781&m=dev) |
 | continue on web > home > account > edit | 3 | desktop, tablet | - | done | [13008-27879](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-27879&m=dev) |
 | continue on web > home > streaks | 3 | desktop, tablet | - | done | [13008-28453](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-28453&m=dev) |

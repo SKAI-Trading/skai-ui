@@ -49,7 +49,7 @@
 9801:123930	Skai > Trade > Perpetual Futures - Price Collapsed 1VH (375 x 812px)	FRAME	375	812	1
 9801:121092	Skai > Trade > Perpetual Futures - user not signed in 1VH (375 x 812px)	FRAME	375	812	1
 9780:110815	Skai > Trade > Spot - time dropdown 1VH (375 x 812px)	FRAME	375	812	1
-9777:106388	Skai > Trade > Spot -  indicator dropdown 1VH (375 x 812px)	FRAME	375	812	1
+9777:106388	Skai > Trade > Spot - indicator dropdown 1VH (375 x 812px)	FRAME	375	812	1
 9777:107863	Skai > Trade > Spot - candle dropdown 1VH (375 x 812px)	FRAME	375	812	1
 9777:109337	Skai > Trade > Spot - timeframe dropdown 1VH (375 x 812px)	FRAME	375	812	1
 9780:112196	Skai > Trade > Spot > Layout settings 1VH (375 x 812px)	FRAME	375	812	1
@@ -144,6 +144,7 @@
 9106:79115	Right menu - leverage	FRAME	359	796	1
 9106:79151	Right menu - leverage ALT	FRAME	359	796	1
 9106:79209	Right menu - leverage ALT 4	FRAME	359	796	1
+15411:182296	Right menu - leverage ALT 5	FRAME	359	796	1
 7890:98315	Trade panel - Isolated	FRAME	313	672	1
 7712:32496	Trade panel - Buy	FRAME	313	672	1
 3899:7131	Trade panel - Sell	FRAME	313	672	1

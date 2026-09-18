@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17T20:40:21.880Z",
+  "generated": "2026-09-18T02:05:26.682Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -11256,13 +11256,17 @@
     "wallet-2/continue on web > home > batch": {
       "section": "wallet-2",
       "family": "continue on web > home > batch",
-      "frameCount": 16,
+      "frameCount": 20,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-36677",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-36789",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-36985",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-37111",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-37287",
+        "mhF3BkzlTaGiLzJ7kvpmVc:15381-62967",
+        "mhF3BkzlTaGiLzJ7kvpmVc:15382-178517",
+        "mhF3BkzlTaGiLzJ7kvpmVc:15382-179595",
+        "mhF3BkzlTaGiLzJ7kvpmVc:15381-88675",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-49276",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-49375",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-49582",
@@ -11285,7 +11289,11 @@
         "step 2",
         "step 2b",
         "step 2b > input amount",
-        "step 3"
+        "step 3",
+        "step 3 > in progress",
+        "step 3 > in progress - minimised",
+        "step 3 > in progress - minimised ALT",
+        "step 3 > done"
       ],
       "citedFileCount": 2,
       "citedFiles": [
@@ -11301,10 +11309,12 @@
     "wallet-2/continue on web > home > request from user": {
       "section": "wallet-2",
       "family": "continue on web > home > request from user",
-      "frameCount": 6,
+      "frameCount": 8,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-37430",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-37621",
+        "mhF3BkzlTaGiLzJ7kvpmVc:15382-180724",
+        "mhF3BkzlTaGiLzJ7kvpmVc:15382-180505",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-45389",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-45470",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-51185",
@@ -11317,7 +11327,9 @@
       ],
       "variants": [
         "step 1",
-        "step 2"
+        "step 2",
+        "step 2 > select token ALT",
+        "step 2 > select token"
       ],
       "citedFileCount": 2,
       "citedFiles": [

@@ -64,6 +64,7 @@
 13006-184758	Skai > Trench > Trackers - empty > Add wallet 1VH (1440 x 900px)
 13006-185060	Right menu - Audit
 13006-185140	Right menu - Protocols
+15402-181831	Right menu - Socials
 13006-185256	Right menu - Metrics
 13006-185323	Right menu - Audit
 13006-185403	Right menu - Protocols
@@ -238,13 +239,13 @@
 13006-272489	Skai > Trade > Trench > Chart - Market 1VH (768x1024px)
 13006-273876	Skai > Trade > Trench > Chart - Limit 1VH (768x1024px)
 13006-275283	Skai > Trade > Trench > Chart - Instant - sell 1VH (768x1024px)
-13006-276671	Skai > Launch > Live  (768 x 1024px)
+13006-276671	Skai > Launch > Live (768 x 1024px)
 13006-277239	Live preview card - on:hover ALT
 13006-277256	Live preview card - on:hover
 13006-277275	Live preview card - normal
-13006-277276	Skai > Launch > Live  (768 x 1024px)
+13006-277276	Skai > Launch > Live (768 x 1024px)
 13006-277844	Skai > Launch > Live 1VH (375 x 812px)
-13006-278391	Skai > Launch > Live  (375 x 812px)
+13006-278391	Skai > Launch > Live (375 x 812px)
 13006-278938	Live preview card - on:hover
 13006-278954	Live preview card - normal
 13006-278955	Skai > Launch (768 x 1024px)
@@ -253,7 +254,7 @@
 13006-281378	Skai > Launch (375 x 812px)
 13006-281970	Skai > Launch (375 x 812px)
 13006-282582	Skai > Launch (375 x 812px)
-13006-283168	Skai > Launch  (768 x 1024px)
+13006-283168	Skai > Launch (768 x 1024px)
 13006-284111	Right menu - Afjust filters
 13006-284164	Right menu - Afjust filters
 13006-284217	Breakpoint
@@ -302,9 +303,9 @@
 13006-303093	Skai > Trade > Trench > Tables - Transactions 1VH (375 x 812px)
 13006-303393	Skai > Trade > Trench > Tables - Positions - collapsed 1VH (375 x 812px)
 13006-303655	One click trade settings - Init selected
-13006-303738	Skai > Trade > Trench > One-click trade settings - modal off  1VH (375 x 812px)
+13006-303738	Skai > Trade > Trench > One-click trade settings - modal off 1VH (375 x 812px)
 13006-304891	Skai > Trade > Trench > One-click trade settings - modal buy 1VH (375 x 812px)
-13006-306051	Skai >  Trade > Trench - One-click trade settings - modal sell 1VH (375 x 812px)
+13006-306051	Skai > Trade > Trench - One-click trade settings - modal sell 1VH (375 x 812px)
 13006-307267	Skai > > Trade > Trench - actual 1VH (375 x 812px)
 13006-308399	Skai > > Trade > Trench > Display settings 1VH (375 x 812px)
 13006-309673	Skai > Trade > Trench > Blacklist 1VH (375 x 812px)
@@ -342,9 +343,9 @@
 13006-323808	One click trade settings - Init selected
 13006-323891	Colour picker - on:click
 13006-323899	Colour picker - on:click
-13006-323907	Skai > Trade > Trench > One-click trade settings - modal off  1VH (768x1024px)
+13006-323907	Skai > Trade > Trench > One-click trade settings - modal off 1VH (768x1024px)
 13006-325359	Skai > Trade > Trench > One-click trade settings - modal buy 1VH (768x1024px)
-13006-326818	Skai >  Trade > Trench - One-click trade settings - modal sell 1VH (768x1024px)
+13006-326818	Skai > Trade > Trench - One-click trade settings - modal sell 1VH (768x1024px)
 13006-328333	Skai > > Trade > Trench - actual 1VH (768x1024px)
 13006-329764	Skai > > Trade > Trench > Display settings 1VH (768x1024px)
 13006-331324	Skai > Trade > Trench > Blacklist 1VH (768x1024px)
@@ -415,6 +416,8 @@
 13935-70962	Notes
 13943-71082	Notes
 13943-71081	Vector 397
+15382-178172	To fix
+15411-182436	Server regions
 13006-285930	Skai > Launch > Sample token > Dashboard - negative - Frame 1260 (Dashboard - negative, 768) [Frame 1260 708x911]
 13006-353775	Skai > Trade > Nav bar - 1VH (768) sidebar [sidebar - open 318x1024]
 13006-146465	Skai > Launch - Markets Row [Row 1318x124]

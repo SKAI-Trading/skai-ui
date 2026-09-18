@@ -64,6 +64,7 @@
 13006:184758	Skai > Trench > Trackers - empty > Add wallet 1VH (1440 x 900px)	FRAME	1440	900	1
 13006:185060	Right menu - Audit	FRAME	442	1463	1
 13006:185140	Right menu - Protocols	FRAME	442	884	1
+15402:181831	Right menu - Socials	FRAME	442	884	1
 13006:185256	Right menu - Metrics	FRAME	442	1154	1
 13006:185323	Right menu - Audit	FRAME	442	1463	1
 13006:185403	Right menu - Protocols	FRAME	442	1008	1
@@ -238,13 +239,13 @@
 13006:272489	Skai > Trade > Trench > Chart - Market 1VH (768x1024px)	FRAME	768	1024	1
 13006:273876	Skai > Trade > Trench > Chart - Limit 1VH (768x1024px)	FRAME	768	1024	1
 13006:275283	Skai > Trade > Trench > Chart - Instant - sell 1VH (768x1024px)	FRAME	768	1024	1
-13006:276671	Skai > Launch > Live  (768 x 1024px)	FRAME	768	1520	1
+13006:276671	Skai > Launch > Live (768 x 1024px)	FRAME	768	1520	1
 13006:277239	Live preview card - on:hover ALT	FRAME	320	280	1
 13006:277256	Live preview card - on:hover	FRAME	320	280	1
 13006:277275	Live preview card - normal	FRAME	320	280	1
-13006:277276	Skai > Launch > Live  (768 x 1024px)	FRAME	768	1024	1
+13006:277276	Skai > Launch > Live (768 x 1024px)	FRAME	768	1024	1
 13006:277844	Skai > Launch > Live 1VH (375 x 812px)	FRAME	375	812	1
-13006:278391	Skai > Launch > Live  (375 x 812px)	FRAME	375	1370	1
+13006:278391	Skai > Launch > Live (375 x 812px)	FRAME	375	1370	1
 13006:278938	Live preview card - on:hover	FRAME	530	298	1
 13006:278954	Live preview card - normal	FRAME	530	298	1
 13006:278955	Skai > Launch (768 x 1024px)	FRAME	768	1700	1
@@ -253,7 +254,7 @@
 13006:281378	Skai > Launch (375 x 812px)	FRAME	375	812	1
 13006:281970	Skai > Launch (375 x 812px)	FRAME	375	812	1
 13006:282582	Skai > Launch (375 x 812px)	FRAME	375	1700	1
-13006:283168	Skai > Launch  (768 x 1024px)	FRAME	768	1024	1
+13006:283168	Skai > Launch (768 x 1024px)	FRAME	768	1024	1
 13006:284111	Right menu - Afjust filters	FRAME	442	1008	1
 13006:284164	Right menu - Afjust filters	FRAME	359	796	1
 13006:284217	Breakpoint	FRAME	1450	164	1
@@ -302,9 +303,9 @@
 13006:303093	Skai > Trade > Trench > Tables - Transactions 1VH (375 x 812px)	FRAME	375	812	1
 13006:303393	Skai > Trade > Trench > Tables - Positions - collapsed 1VH (375 x 812px)	FRAME	375	812	1
 13006:303655	One click trade settings - Init selected	FRAME	354	438	1
-13006:303738	Skai > Trade > Trench > One-click trade settings - modal off  1VH (375 x 812px)	FRAME	375	812	1
+13006:303738	Skai > Trade > Trench > One-click trade settings - modal off 1VH (375 x 812px)	FRAME	375	812	1
 13006:304891	Skai > Trade > Trench > One-click trade settings - modal buy 1VH (375 x 812px)	FRAME	375	812	1
-13006:306051	Skai >  Trade > Trench - One-click trade settings - modal sell 1VH (375 x 812px)	FRAME	375	812	1
+13006:306051	Skai > Trade > Trench - One-click trade settings - modal sell 1VH (375 x 812px)	FRAME	375	812	1
 13006:307267	Skai > > Trade > Trench - actual 1VH (375 x 812px)	FRAME	375	812	1
 13006:308399	Skai > > Trade > Trench > Display settings 1VH (375 x 812px)	FRAME	375	812	1
 13006:309673	Skai > Trade > Trench > Blacklist 1VH (375 x 812px)	FRAME	375	812	1
@@ -342,9 +343,9 @@
 13006:323808	One click trade settings - Init selected	FRAME	448	448	1
 13006:323891	Colour picker - on:click	FRAME	243	243	1
 13006:323899	Colour picker - on:click	FRAME	243	243	1
-13006:323907	Skai > Trade > Trench > One-click trade settings - modal off  1VH (768x1024px)	FRAME	768	1024	1
+13006:323907	Skai > Trade > Trench > One-click trade settings - modal off 1VH (768x1024px)	FRAME	768	1024	1
 13006:325359	Skai > Trade > Trench > One-click trade settings - modal buy 1VH (768x1024px)	FRAME	768	1024	1
-13006:326818	Skai >  Trade > Trench - One-click trade settings - modal sell 1VH (768x1024px)	FRAME	768	1024	1
+13006:326818	Skai > Trade > Trench - One-click trade settings - modal sell 1VH (768x1024px)	FRAME	768	1024	1
 13006:328333	Skai > > Trade > Trench - actual 1VH (768x1024px)	FRAME	768	1024	1
 13006:329764	Skai > > Trade > Trench > Display settings 1VH (768x1024px)	FRAME	768	1024	1
 13006:331324	Skai > Trade > Trench > Blacklist 1VH (768x1024px)	FRAME	768	1024	1
@@ -415,3 +416,5 @@
 13935:70962	Notes	WIDGET	342	331	1
 13943:71082	Notes	WIDGET	342	331	1
 13943:71081	Vector 397	VECTOR	404	301	1
+15382:178172	To fix	ELLIPSE	38	38	1
+15411:182436	Server regions	FRAME	220	234	1
