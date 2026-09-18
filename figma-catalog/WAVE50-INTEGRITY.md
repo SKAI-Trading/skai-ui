@@ -416,11 +416,15 @@ Play
   59 lane commits on main: exit 0, "no new type errors. 2537 known baseline error(s); 61
   fewer than baseline". A real pass prints its baseline in the thousands; the fail-open
   tell ("0 known baseline error(s)") did not appear.
-- skai-gaming: `tsc --noEmit -p tsconfig.json` with the 8 GB heap flag was started at 01:50
-  from inside the submodule at e22e84a8 plus the later slots commits (17 commits past
-  1badf455); it is red at baseline (about 2,021 errors, most of them in the superproject
-  src its config includes) and takes about half an hour. The measure is errors in the
-  files this wave touched; the result is appended to this section by the follow-up commit.
+- skai-gaming: `tsc --noEmit -p tsconfig.json` with the 8 GB heap flag, from inside the
+  submodule at 32e543b7 (17 commits past 1badf455), 01:50 to 02:22: exit 2 with 2,019
+  errors (341 in gaming src, 1,678 in the superproject src its config includes; 2,021 at
+  the wave 49 close). The 35 files this wave touched carry 11 of them, in four files
+  (BlackjackGame.tsx 5, blackjackTabletStack.test.ts 2, ChickenGame.tsx 3, BingoGame.tsx
+  1), and all 11 are pre-existing: the wave 49 close log carries the same four files at the
+  same counts, and every one sits outside the wave's hunks (errors at lines 345 to 1372
+  and test line 76; the wave's changes start at line 2059 and test line 94). New errors in
+  touched files: 0.
 - Lanes committed by pathspec and never pushed; the catalog fold commits all thirty status
   files, the new vverify file and this record with an explicit add.
 - Deploy: pending the gaming result; the pointer bump and `deploy_main` from the pinned

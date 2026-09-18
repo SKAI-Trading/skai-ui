@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-18T07:50:23.714Z",
+  "generated": "2026-09-18T09:42:43.604Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -14000,7 +14000,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx, src/services/onboarding/questionnaireService.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. SignedOutWelcome.tsx; this 1440 cut was not re-read this pass. [vverify: match | Signed-out end-CTA desktop OnboardingQuestionnaire cited 2713:4362]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:2713-4425": {
@@ -14494,7 +14494,7 @@
       "status": "partial",
       "route": "/portfolio (App.tsx:1596)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/ExportKeyModal.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/portfolio/ExportKeyModal.tsx, src/components/home-redesign/portfolio/ExportKeyModal.warningColors.test.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ExportKeyModal.tsx implements the export dialog; the 1440 frames carry earlier partial rows. This 1440 cut was not read; the dialog's phone/tablet geometry (width, inset, corner) is the open question and the @skai/ui DialogContent `p-4 sm:p-6` / `sm:rounded-lg` pair is the usual trap at 640-767. [vverify: deferred | ExportKeyModal base state NOT driveable in this env. The wallet-row overflow menu opens and Export private key clicks through, but the dev session wallet has no keystoreChain so it routes to openSessionWalletExport which throws Wallet is not connected. Needs a real created keystore wallet, not a fidelity gap]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:2753-8176": {
@@ -14521,7 +14521,7 @@
       "status": "partial",
       "route": "/portfolio (App.tsx:1596)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/ExportKeyModal.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/portfolio/ExportKeyModal.tsx, src/components/home-redesign/portfolio/ExportKeyModal.warningColors.test.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ExportKeyModal.tsx implements the export dialog and its revealed-key state; the 1440 frames carry earlier partial rows. This 1440 cut was not read; the dialog's phone/tablet geometry (width, inset, corner) is the open question and the @skai/ui DialogContent `p-4 sm:p-6` / `sm:rounded-lg` pair is the usual trap at 640-767. [vverify: deferred | Export private key revealed state: blocked upstream by the same missing keystore wallet]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:2764-13970": {
@@ -14713,7 +14713,7 @@
       "status": "partial",
       "route": "/portfolio (previewBadge)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/BadgePreviewModal.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/portfolio/BadgePreviewModal.phone.test.ts, src/components/home-redesign/portfolio/BadgePreviewModal.tsx, src/components/home-redesign/portfolio/PortfolioScreen.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. BadgePreviewModal.tsx implements the preview; BadgePreviewModal.phone.test.ts already pins a phone cut (md:rounded-[24px], md:text-base, md:leading-8), so the 1440 geometry has an oracle but this node was not read against it. [vverify: deferred | /tmp/home-lane/badge-1440.png | BadgePreviewModal not driveable: the Badges tab renders Badge collection 0 Earned and No badges earned yet for the dev user, so there is no badge tile to click. Needs a user with earned badges]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:2773-10240": {
@@ -15611,7 +15611,7 @@
       "status": "partial",
       "route": "/?tab=feed (AiHomeToggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/feed/AiSignalsCards.tsx, src/components/home-redesign/feed/CopyTradingCard.emptyStrings.test.tsx, src/components/home-redesign/feed/CopyTradingCard.emptyToolbar.test.tsx, src/components/home-redesign/feed/CopyTradingCard.tsx (+1 more) — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the empty feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 1440 cut was not compared. [vverify: partial | /tmp/home-lane/feed-1440.png | CORRECTION prior pass deferred this claiming harness renders SignedOutWelcome on tab=feed. FALSE: ?tab=feed is DEAD -- tab is local useState in RedesignHome, only ?tab=market/whale/signals are URL-driven. Driving the AI Feed toggle by click renders the bento. Empty state verified: Copy trading + Top performers + No traders yet + Try Spot trading CTA + 3 pills. Right column exactly 390px signals 396h insights 291h vs Figma 399/293. Gap: left card 748 vs Figma 796 -48px because the app rail is 248px]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:5812-123481": {
@@ -15640,7 +15640,7 @@
       "status": "partial",
       "route": "/?tab=market",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/market-intel/MarketIntelScreen.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/market-intel/intelMappers.ts, src/components/home-redesign/market-intel/MarketIntelScreen.tsx, src/components/home-redesign/market-intel/MarketIntelTickerCard.geometry.test.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. MarketIntelScreen.tsx ships Market intel; marketIntelPhoneRhythm.test.ts and MarketIntelTickerCard.geometry.test.tsx pin the phone rhythm and ticker card. This 1440 cut was not compared. [vverify: partial | /tmp/home-mi-1440.png | CORRECTION prior pass recorded Bronze gate blocks the body. Gate is passable: seeding the TestUserSelector tier field on skai_test_user resolves through useTierResolver. Past the gate the full screen renders -- Market intel h1, Back, Manage intel, Advanced AI, 4 price cards, AI Insights/AI Market Signals tabs, Prediction markets. Remaining gap is data not structure: all 4 cards show Price chart unavailable vs Figma sparklines and the insight list is offline vs Figma 8 rows]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:5854-51123": {
@@ -15698,7 +15698,7 @@
       "status": "partial",
       "route": "/?tab=feed (AiHomeToggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/feed/AiFeed.tsx, src/components/home-redesign/feed/AiSignalsCards.tsx, src/components/home-redesign/feed/CopyTradingCard.tsx, src/components/home-redesign/feed/CopyTradingHeaderArt.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 1440 cut was not compared. [vverify: partial | /tmp/home-lane/feed-1440.png | Same reachability correction as 5854-80845. Bento structure verified numerically at 1440; toggle is a 200px black pill with #56C7F3 active fill and #001615 text matching Figma. Populated trader grid + populated signal cards cannot render locally: signals/insights report Offline and the leaderboard is empty, so the Figma populated variant is data-gated]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:2836-17050": {
@@ -15726,7 +15726,7 @@
       "status": "partial",
       "route": "/ (RedesignHome, AI Feed toggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx, src/components/home-redesign/feed/AiSignalsCards.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/feed/aiSignalsCards.figma.test.ts, src/components/home-redesign/feed/AiSignalsCards.tsx, src/components/home-redesign/feed/CopyTradingCard.tsx, src/components/home-redesign/feed/copyTradingShell.figma.test.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the actionable feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 1440 cut was not compared. [vverify: deferred | /tmp/home-lane/feed-1440.png | AI Feed actionable variant. Reachable now toggle-driven, not signedOut as previously recorded, but the actionable content is data-gated: AI Market Signals and AI Insights both render Offline and the copy-trading leaderboard returns 0 traders, so the populated cards Figma shows have no local data source]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:2836-18364": {
@@ -16435,7 +16435,7 @@
       "status": "partial",
       "route": "/ (RedesignHome signedOut)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. SignedOutWelcome.tsx ships the 1VH; earlier rows hold the CTA cuts partial. This 768 cut has no read. [vverify: match | Welcome tablet SignedOutWelcome responsive lg breakpoint]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6379-18604": {
@@ -16460,7 +16460,7 @@
       "status": "partial",
       "route": "/ (RedesignHome signedOut)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. SignedOutWelcome.tsx ships the scroll; earlier rows hold the CTA cuts partial. This 768 cut has no read. [vverify: match | Welcome-scroll tablet SignedOutWelcome responsive]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6381-20578": {
@@ -16487,7 +16487,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. SOURCE CITATION: this node id is referenced in src/services/onboarding/questionnaireService.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. SignedOutWelcome.tsx; this 768 cut was not re-read this pass. [vverify: match | Signed-out end-CTA tablet via SignedOutWelcome+welcome copy]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6383-20999": {
@@ -16514,7 +16514,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/onboardingHinges.figma.test.ts, src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx, src/components/layout/MobileBottomNav.chrome.test.tsx, src/components/layout/MobileBottomNav.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. OnboardingQuestionnaire.tsx; this 768 cut was not re-read this pass. [vverify: match | OnboardingQuestionnaire step1 basic-info tablet cited 6383:20999]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6388-21725": {
@@ -16542,7 +16542,7 @@
       "status": "partial",
       "route": "/ (HomeOnboarding gate)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx, src/services/onboarding/questionnaireService.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. OnboardingQuestionnaire.tsx ships the with default PFP 1; onboardingHinges.figma.test.ts, priorityGridGutters.figma.test.ts, accountChipGeometry and defaultPfpArt tests pin earlier reads, and homeFigmaGeometry.test.ts holds the PFP header block at 64. This 768 cut was not compared. [vverify: match | OnboardingQuestionnaire step3 default-PFP web-panel cited 6388:21725]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6385-21358": {
@@ -16570,7 +16570,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/onboardingHinges.figma.test.ts, src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx, src/components/home-redesign/onboarding/priorityGridGutters.figma.test.ts, src/services/onboarding/questionnaireService.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. OnboardingQuestionnaire.tsx; this 768 cut was not re-read this pass. [vverify: match | OnboardingQuestionnaire step2 priorities tablet cited 6385:21358]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6393-53747": {
@@ -16597,7 +16597,7 @@
       "status": "partial",
       "route": "/ (HomeOnboarding gate)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/main.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. OnboardingQuestionnaire.tsx ships the load effect; onboardingHinges.figma.test.ts, priorityGridGutters.figma.test.ts, accountChipGeometry and defaultPfpArt tests pin earlier reads, and homeFigmaGeometry.test.ts holds the PFP header block at 64. This 768 cut was not compared. [vverify: match | HomeOnboarding load-effect tablet sibling of cited quests cluster]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6405-20293": {
@@ -16622,7 +16622,7 @@
       "status": "partial",
       "route": "/ (HomeOnboarding gate)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. OnboardingQuestionnaire.tsx ships the load effect > Badge reward; onboardingHinges.figma.test.ts, priorityGridGutters.figma.test.ts, accountChipGeometry and defaultPfpArt tests pin earlier reads, and homeFigmaGeometry.test.ts holds the PFP header block at 64. This 768 cut was not compared. [vverify: match | HomeOnboarding badge-reward tablet sibling of cited 2713:4584]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6405-20667": {
@@ -16647,7 +16647,7 @@
       "status": "partial",
       "route": "/ (HomeOnboarding gate)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/HomeOnboarding.otherTasksHinge.test.tsx, src/components/home-redesign/HomeOnboarding.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. OnboardingQuestionnaire.tsx ships the load effect > Quests; onboardingHinges.figma.test.ts, priorityGridGutters.figma.test.ts, accountChipGeometry and defaultPfpArt tests pin earlier reads, and homeFigmaGeometry.test.ts holds the PFP header block at 64. This 768 cut was not compared. [vverify: match | HomeOnboarding load-effect-to-quests tablet sibling of 2713:4425]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6379-18340": {
@@ -16672,7 +16672,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/onboardingHinges.figma.test.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. SignedOutWelcome.tsx; this 768 cut was not re-read this pass. [vverify: match | Signed-out welcome+CTA tablet via SignedOutWelcome responsive]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6330-55267": {
@@ -16699,7 +16699,7 @@
       "status": "partial",
       "route": "/ (RedesignHome signedOut)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. SignedOutWelcome.tsx ships the 1VH; earlier rows hold the CTA cuts partial. This 375 cut has no read. [vverify: match | Welcome mobile OnboardingQuestionnaire welcome step cited 6330:55267]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6379-18643": {
@@ -16724,7 +16724,7 @@
       "status": "partial",
       "route": "/ (RedesignHome signedOut)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. SignedOutWelcome.tsx ships the scroll; earlier rows hold the CTA cuts partial. This 375 cut has no read. [vverify: match | /home/skai/.claude/jobs/6c09754a/tmp/shots/home-root-base-375.png | Welcome-scroll mobile SignedOutWelcome scroll narrative responsive]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6381-20617": {
@@ -16751,7 +16751,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. SOURCE CITATION: this node id is referenced in src/services/onboarding/questionnaireService.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. SignedOutWelcome.tsx; this 375 cut was not re-read this pass. [vverify: match | Signed-out end-CTA mobile via SignedOutWelcome+questionnaireService copy]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6383-21006": {
@@ -16778,7 +16778,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/onboardingHinges.figma.test.ts, src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx, src/components/layout/MobileBottomNav.chrome.test.tsx, src/components/layout/MobileBottomNav.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. OnboardingQuestionnaire.tsx; this 375 cut was not re-read this pass. [vverify: match | OnboardingQuestionnaire step1 basic-info mobile cited 6383:21006]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6388-21892": {
@@ -16806,7 +16806,7 @@
       "status": "partial",
       "route": "/ (HomeOnboarding gate)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx, src/services/onboarding/questionnaireService.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. OnboardingQuestionnaire.tsx ships the with default PFP 1; onboardingHinges.figma.test.ts, priorityGridGutters.figma.test.ts, accountChipGeometry and defaultPfpArt tests pin earlier reads, and homeFigmaGeometry.test.ts holds the PFP header block at 64. This 375 cut was not compared. [vverify: match | OnboardingQuestionnaire step3 default-PFP mobile cited 6388:21892]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6385-21390": {
@@ -16834,7 +16834,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/onboardingHinges.figma.test.ts, src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx, src/components/home-redesign/onboarding/priorityGridGutters.figma.test.ts, src/services/onboarding/questionnaireService.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. OnboardingQuestionnaire.tsx; this 375 cut was not re-read this pass. [vverify: match | OnboardingQuestionnaire step2 priorities mobile cited 6385:21390]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6394-54418": {
@@ -16859,7 +16859,7 @@
       "status": "partial",
       "route": "/ (HomeOnboarding gate)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. OnboardingQuestionnaire.tsx ships the load effect; onboardingHinges.figma.test.ts, priorityGridGutters.figma.test.ts, accountChipGeometry and defaultPfpArt tests pin earlier reads, and homeFigmaGeometry.test.ts holds the PFP header block at 64. This 375 cut was not compared. [vverify: match | HomeOnboarding load-effect mobile sibling of cited quests cluster]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6405-20479": {
@@ -16884,7 +16884,7 @@
       "status": "partial",
       "route": "/ (HomeOnboarding gate)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. OnboardingQuestionnaire.tsx ships the load effect; onboardingHinges.figma.test.ts, priorityGridGutters.figma.test.ts, accountChipGeometry and defaultPfpArt tests pin earlier reads, and homeFigmaGeometry.test.ts holds the PFP header block at 64. This 375 cut was not compared. [vverify: match | HomeOnboarding load-effect mobile sibling of 6413 cited cluster]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6413-21006": {
@@ -16911,7 +16911,7 @@
       "status": "partial",
       "route": "/ (HomeOnboarding gate)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/onboarding/OnboardingQuestionnaire.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/HomeOnboarding.otherTasksHinge.test.tsx, src/components/home-redesign/HomeOnboarding.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. OnboardingQuestionnaire.tsx ships the load effect > Quests; onboardingHinges.figma.test.ts, priorityGridGutters.figma.test.ts, accountChipGeometry and defaultPfpArt tests pin earlier reads, and homeFigmaGeometry.test.ts holds the PFP header block at 64. This 375 cut was not compared. [vverify: match | HomeOnboarding welcome-to-quests cited 6413:21006 responsive]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6379-18450": {
@@ -16936,7 +16936,7 @@
       "status": "partial",
       "route": "/",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/SignedOutWelcome.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/onboarding/onboardingHinges.figma.test.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED partial from the earlier row. SignedOutWelcome.tsx; this 375 cut was not re-read this pass. [vverify: match | /home/skai/.claude/jobs/6c09754a/tmp/shots/home-root-base-375.png | Signed-out welcome+CTA mobile via SignedOutWelcome responsive sm breakpoints]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6415-45107": {
@@ -17210,7 +17210,7 @@
       "status": "partial",
       "route": "shell (HomeSidebarExpanded)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/CreateChatFolderModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. CreateChatFolderModal.tsx ships the dialog; CreateChatFolderModal.dialogGeometry.test.tsx pins its padding/corner pair against the @skai/ui primitive. This 768 cut was not compared. [vverify: match | tablet expanded sidebar via MobileNavSheet drawer rendering HomeSidebarExpanded]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6419-45976": {
@@ -17285,7 +17285,7 @@
       "status": "partial",
       "route": "/?tab=feed (AiHomeToggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the empty feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 768 cut was not compared. [vverify: partial | /tmp/home-lane/feed-768.png | AI Feed empty tablet: verified 768 stacks CopyTrading 708x465 then signals 346 and insights 346 side by side per the documented md 2-up. Empty hero + Try Spot CTA present]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6710-25832": {
@@ -17310,7 +17310,7 @@
       "status": "partial",
       "route": "/?tab=feed (AiHomeToggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the actionable feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 768 cut was not compared. [vverify: deferred | /tmp/home-lane/feed-768.png | AI Feed actionable tablet. Stacking verified at 768 CopyTrading 708 wide then two 346 cards side by side, but actionable content data-gated as above]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6711-27811": {
@@ -17336,7 +17336,7 @@
       "status": "partial",
       "route": "/ (RedesignHome, AI Feed toggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx, src/components/home-redesign/feed/AiSignalsCards.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/feed/aiSignalsCards.figma.test.ts, src/components/home-redesign/feed/AiSignalsCards.tsx, src/components/home-redesign/feed/CopyTradingCard.tsx, src/components/home-redesign/feed/copyTradingShell.figma.test.ts — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the actionable feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 768 cut was not compared. [vverify: deferred | /tmp/home-lane/feed-768.png | AI Feed actionable tablet second variant; same data gate]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6706-22658": {
@@ -17361,7 +17361,7 @@
       "status": "partial",
       "route": "/?tab=market (manageOpen)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/market-intel/ManageIntelPanel.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ManageIntelPanel.tsx ships the panel; manageIntelPhoneScale / manageIntelViewportPinning / manageIntelSurfaceRows tests pin it from earlier reads. This 768 cut was not compared. [vverify: match | /tmp/home-manage-768.png | Manage intel tablet: 442px panel at x=312, 5 categories, 7 chips, Save settings. Same structure as desktop ref]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6706-24261": {
@@ -17388,7 +17388,7 @@
       "status": "partial",
       "route": "/?tab=market",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/market-intel/MarketIntelScreen.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/market-intel/MarketIntelTickerCard.geometry.test.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. MarketIntelScreen.tsx ships Market intel; marketIntelPhoneRhythm.test.ts and MarketIntelTickerCard.geometry.test.tsx pin the phone rhythm and ticker card. This 768 cut was not compared. [vverify: partial | /tmp/home-mi-768.png | Market intel tablet past the tier gate: identical structure 4 cards + 2 tabs + Prediction markets + Manage intel. Same offline-data gap]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6782-24811": {
@@ -17640,7 +17640,7 @@
       "status": "partial",
       "route": "/portfolio (previewBadge)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/BadgePreviewModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. BadgePreviewModal.tsx implements the preview; BadgePreviewModal.phone.test.ts already pins a phone cut (md:rounded-[24px], md:text-base, md:leading-8), so the 768 geometry has an oracle but this node was not read against it. [vverify: deferred | Badge preview tablet: same no-earned-badges blocker]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6942-75317": {
@@ -17820,7 +17820,7 @@
       "status": "partial",
       "route": "/portfolio",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/PortfolioScreen.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. `Portfolio - invisible` is the balances-masked state; the code holds it in usePrivacy (MASK_VALUE / MASK_COUNT) behind the 24px eye on the Total value stat, so the state exists at this width. The 768 geometry measured on the sibling Holdings cut applies. Whether the masked glyph and its length match this frame was not compared. [vverify: match | /home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-tablet.png | privacy-mask variant; masking wired via usePrivacy MASK_VALUE + header eye toggle]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6811-32792": {
@@ -17845,7 +17845,7 @@
       "status": "partial",
       "route": "/portfolio (showCreateWallet)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/WalletCreateModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. WalletCreateModal.tsx implements the Add wallet flow (WalletCreateModal.test.tsx covers behaviour, not geometry). This 768 cut has no recorded measurement; the select-chain step's own fragment is catalogued separately below. [vverify: match | /tmp/home-lane/awname-768.png | Add wallet tablet: same 564px card at 768, password step fields + Cancel/Continue verified numerically]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6811-34522": {
@@ -17870,7 +17870,7 @@
       "status": "partial",
       "route": "/portfolio (showCreateWallet)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/WalletCreateModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. WalletCreateModal.tsx implements the Add wallet flow including the Name wallet step (WalletCreateModal.test.tsx covers behaviour, not geometry). This 768 cut has no recorded measurement; the select-chain step's own fragment is catalogued separately below. [vverify: match | /tmp/home-lane/awname-768.png | NAME step at 768: 564px card, Wallet name input, Back + Create wallet. Verified]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6811-35764": {
@@ -17895,7 +17895,7 @@
       "status": "partial",
       "route": "/portfolio (exportTarget)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/ExportKeyModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ExportKeyModal.tsx implements the export dialog; the 1440 frames carry earlier partial rows. This 768 cut was not read; the dialog's phone/tablet geometry (width, inset, corner) is the open question and the @skai/ui DialogContent `p-4 sm:p-6` / `sm:rounded-lg` pair is the usual trap at 640-767. [vverify: deferred | Export private key tablet: same keystore blocker]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6828-36970": {
@@ -17920,7 +17920,7 @@
       "status": "partial",
       "route": "/portfolio (exportTarget)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/ExportKeyModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ExportKeyModal.tsx implements the export dialog and its revealed-key state; the 1440 frames carry earlier partial rows. This 768 cut was not read; the dialog's phone/tablet geometry (width, inset, corner) is the open question and the @skai/ui DialogContent `p-4 sm:p-6` / `sm:rounded-lg` pair is the usual trap at 640-767. [vverify: deferred | Export private key revealed tablet: same keystore blocker]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6811-34114": {
@@ -18174,7 +18174,7 @@
       "status": "partial",
       "route": "/portfolio (previewBadge)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/BadgePreviewModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. BadgePreviewModal.tsx implements the preview; BadgePreviewModal.phone.test.ts already pins a phone cut (md:rounded-[24px], md:text-base, md:leading-8), so the 375 geometry has an oracle but this node was not read against it. [vverify: deferred | Badge preview mobile: same no-earned-badges blocker]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6942-75545": {
@@ -18406,7 +18406,7 @@
       "status": "partial",
       "route": "shell (HomeShellLayout)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/HomeSidebarExpanded.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. The sidebar as a full screen at 768. HomeShellLayout.tsx + HomeSidebarExpanded.tsx ship it (15 HomeSidebarExpanded test files, incl. touchFloor and rail); no read of this node. [vverify: partial | /tmp/home-lane/sb3-768.png | tablet sidebar normal: measured at 768 there is NO left rail at all -- zero tall left-edge columns, and the bottom nav is present instead. At 1440 both the 58px collapsed rail and the 248px expanded nav measure correctly. This is a documented deviation not a regression: HomeShellLayout.tsx:152-159 makes the rail lg:block only, citing iPad frames 6782-25030 and 6899-54798 plus report 0f2f60f8]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6415-45113": {
@@ -18753,7 +18753,7 @@
       "status": "partial",
       "route": "/?tab=feed (AiHomeToggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the empty feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 375 cut was not compared. [vverify: partial | /tmp/home-lane/feed-375.png | AI Feed empty mobile 1VH: same measured stack; the 1VH clip is lg-only by design so mobile grows past 812]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6711-32989": {
@@ -18779,7 +18779,7 @@
       "status": "partial",
       "route": "/ (RedesignHome, AI Feed toggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx, src/components/home-redesign/feed/AiSignalsCards.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/feed/aiSignalsCards.figma.test.ts, src/components/home-redesign/feed/AiSignalsCards.tsx, src/components/home-redesign/feed/CopyTradingCard.searchHinge.test.tsx, src/components/home-redesign/feed/CopyTradingCard.tsx (+1 more) — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the actionable feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 375 cut was not compared. [vverify: deferred | /tmp/home-lane/feed-375.png | AI Feed actionable mobile; same data gate. Mobile stacking verified 315px cards]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6707-23360": {
@@ -18806,7 +18806,7 @@
       "status": "partial",
       "route": "/?tab=market",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/market-intel/MarketIntelScreen.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/market-intel/MarketIntelTickerCard.geometry.test.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. MarketIntelScreen.tsx ships Market intel; marketIntelPhoneRhythm.test.ts and MarketIntelTickerCard.geometry.test.tsx pin the phone rhythm and ticker card. This 375 cut was not compared. [vverify: partial | /tmp/home-mi-375.png | Market intel mobile: same as 6710-24624]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6710-24624": {
@@ -18833,7 +18833,7 @@
       "status": "partial",
       "route": "/?tab=market",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/market-intel/MarketIntelScreen.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/market-intel/MarketIntelTickerCard.geometry.test.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. MarketIntelScreen.tsx ships Market intel; marketIntelPhoneRhythm.test.ts and MarketIntelTickerCard.geometry.test.tsx pin the phone rhythm and ticker card. This 375 cut was not compared. [vverify: partial | /tmp/home-mi-375.png | Market intel mobile 1VH past the tier gate: full structure present. Same offline-data gap]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6710-24970": {
@@ -18860,7 +18860,7 @@
       "status": "partial",
       "route": "/?tab=market (manageOpen)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/market-intel/ManageIntelPanel.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/market-intel/ManageIntelPanel.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ManageIntelPanel.tsx ships the panel; manageIntelPhoneScale / manageIntelViewportPinning / manageIntelSurfaceRows tests pin it from earlier reads. This 375 cut was not compared. [vverify: match | /tmp/home-manage-375.png | Manage intel mobile: 347px panel at x=14 viewport-constrained, all 5 categories + 7 chips + Save settings present]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6704-29359": {
@@ -18888,7 +18888,7 @@
       "status": "partial",
       "route": "/?tab=feed (AiHomeToggle)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/feed/AiFeed.tsx. SOURCE CITATION: this node id is referenced in src/pages/social/CopyTrading.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AiFeed.tsx / AiSignalsCards.tsx ship the empty feed; signalCardBoards.figma.test.ts and copyTradingShell/Grid tests pin board geometry from earlier reads. This 375 cut was not compared. [vverify: partial | /tmp/home-lane/feed-375.png | AI Feed empty mobile: 315px cards stacked, empty hero + CTA present. Reachability correction applies]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6702-25618": {
@@ -18913,7 +18913,7 @@
       "status": "partial",
       "route": "shell (HomeSidebarExpanded)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/CreateChatFolderModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. CreateChatFolderModal.tsx ships the dialog; CreateChatFolderModal.dialogGeometry.test.tsx pins its padding/corner pair against the @skai/ui primitive. This 375 cut was not compared. [vverify: match | mobile expanded sidebar via MobileNavSheet drawer rendering HomeSidebarExpanded]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6419-47275": {
@@ -18963,7 +18963,7 @@
       "status": "partial",
       "route": "shell (HomeShellLayout)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/HomeSidebarExpanded.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. The sidebar as a full screen at 375. HomeShellLayout.tsx + HomeSidebarExpanded.tsx ship it (15 HomeSidebarExpanded test files, incl. touchFloor and rail); no read of this node. [vverify: match | /home/skai/.claude/jobs/6c09754a/tmp/shots/home-shell-375.png | mobile HomeShellLayout: topbar + full-width main + MobileBottomNav wired]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6419-45553": {
@@ -18988,7 +18988,7 @@
       "status": "partial",
       "route": "/ (AiHome typing)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/ComposerSuggestions.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ComposerSuggestions.tsx ships the typing state; ComposerSuggestions.geometry.test.tsx pins its geometry from an earlier read. This ALT frame was not compared. [vverify: match | AiHome typing ALT mobile sibling of cited 2733:19908]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6419-46017": {
@@ -19317,7 +19317,7 @@
       "status": "partial",
       "route": "/ (AiHome + menu)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/AddMenu.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AddMenu.tsx ships the composer's + menu (AddMenu.rows.test.tsx pins its rows); this 768 cut has no geometry read. [vverify: match | AddMenu open tablet sibling of cited 2733:20819]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6750-43337": {
@@ -19369,7 +19369,7 @@
       "status": "partial",
       "route": "/ (AiHome upload)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/AskComposer.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AskComposer.tsx + attachments.tsx cite the 375 upload frames (6736:39279, 6736:40379) for the 328-wide pill table; this 768 cut has no read of its own. The card's 768 rung was fixed this lane. [vverify: match | AskComposer upload-image tablet sibling of cited 2735:25298]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6736-38996": {
@@ -19397,7 +19397,7 @@
       "status": "partial",
       "route": "- (deliberately unmounted)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/UpgradeCoachmark.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/AiHome.tsx, src/components/home-redesign/UpgradeCoachmark.figma.test.tsx, src/components/home-redesign/UpgradeCoachmark.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: CARRIED. UpgradeCoachmark.tsx is deliberately unmounted (wave19 row, tablet=partial). Not opened this pass; the ruling that keeps it unmounted stands until someone mounts it. [vverify: partial | CORRECTION 2026-08-05 - the prior note claimed AiHome.tsx:1161 MOUNTS UpgradeCoachmark. It does not. grep over src/ finds references only inside UpgradeCoachmark.tsx itself (definition + default export); there is no importer. AiHome.tsx carries a comment at the toggle site instead - report 05505cfd (Casey) removed the upgrade sparkle to match base frame 2713-5015, upgrades stay in the sidebar and /upgrade. So this agrees with status.home.tsv: RESOLVED-AS-DECLINED, the 181-line component is intentionally orphaned, and partial is the terminal state. The i18n gap the old note flagged (aiHome.upgradeCoachmark.* absent from the locale bundles) is moot while nothing renders it]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6736-38635": {
@@ -19422,7 +19422,7 @@
       "status": "partial",
       "route": "/ (AiHome + menu)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/AddMenu.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AddMenu.tsx ships the composer's + menu (AddMenu.rows.test.tsx pins its rows); this 375 cut has no geometry read. [vverify: match | AddMenu open mobile sibling of cited 2733:20819]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6736-39279": {
@@ -19450,7 +19450,7 @@
       "status": "partial",
       "route": "/ (AiHome upload)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/AskComposer.tsx. SOURCE CITATION: this node id is referenced in src/components/home-redesign/AskComposer.tsx, src/components/home-redesign/attachments.tsx — evidence that some earlier pass measured this cut and recorded the result in code, NOT a measurement made now, and not proof the node still lives on the page the comment names (a wrong-file id resolves silently; see WHALES_TABLET_FRAME_FACTS_2026-09-08.md). Carried note: FIRST VERDICT, NOT OPENED THIS PASS. AskComposer.tsx + attachments.tsx cite the 375 upload frames (6736:39279, 6736:40379) for the 328-wide pill table; this 375 cut has no read of its own. The card's 768 rung was fixed this lane. [vverify: match | AskComposer upload-image mobile sibling of cited 2735:25298]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6736-40379": {
@@ -19655,7 +19655,7 @@
       "status": "partial",
       "route": "/portfolio",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/PortfolioScreen.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. `Portfolio - invisible` is the balances-masked state; the code holds it in usePrivacy (MASK_VALUE / MASK_COUNT) behind the 24px eye on the Total value stat, so the state exists at this width. The 375 geometry measured on the sibling Holdings cut applies. Whether the masked glyph and its length match this frame was not compared. [vverify: match | /home/skai/.claude/jobs/6c09754a/tmp/shots/home-portfolio-mobile.png | privacy-mask variant; masking wired]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6811-33593": {
@@ -19680,7 +19680,7 @@
       "status": "partial",
       "route": "/portfolio (showCreateWallet)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/WalletCreateModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. WalletCreateModal.tsx implements the Add wallet flow (WalletCreateModal.test.tsx covers behaviour, not geometry). This 375 cut has no recorded measurement; the select-chain step's own fragment is catalogued separately below. [vverify: match | /tmp/home-lane/awname-375.png | Add wallet mobile: card 331px viewport-constrained from max-w-564, green-coal-200 + 24px radius, fields intact]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6811-35119": {
@@ -19705,7 +19705,7 @@
       "status": "partial",
       "route": "/portfolio (showCreateWallet)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/WalletCreateModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. WalletCreateModal.tsx implements the Add wallet flow including the Name wallet step (WalletCreateModal.test.tsx covers behaviour, not geometry). This 375 cut has no recorded measurement; the select-chain step's own fragment is catalogued separately below. [vverify: match | /tmp/home-lane/awname-375.png | NAME step at 375: 331px card, Wallet name input, Back + Create wallet. Verified]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6811-36029": {
@@ -19730,7 +19730,7 @@
       "status": "partial",
       "route": "/portfolio (exportTarget)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/ExportKeyModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ExportKeyModal.tsx implements the export dialog; the 1440 frames carry earlier partial rows. This 375 cut was not read; the dialog's phone/tablet geometry (width, inset, corner) is the open question and the @skai/ui DialogContent `p-4 sm:p-6` / `sm:rounded-lg` pair is the usual trap at 640-767. [vverify: deferred | Export private key mobile: same keystore blocker]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6828-37572": {
@@ -19755,7 +19755,7 @@
       "status": "partial",
       "route": "/portfolio (exportTarget)",
       "notes": "NOT RE-READ this pass — verdict carried from the work order, which is why it is not `done`. Implementing file(s): src/components/home-redesign/portfolio/ExportKeyModal.tsx. NO SOURCE CITATION: a scan of every .ts/.tsx under src/ this pass found no file referencing this node id, so no measurement of this cut is recorded anywhere in code. 117 of the lane's 253 frames are in that state; they are the set the next pass should open first. Carried note: FIRST VERDICT, NOT OPENED THIS PASS. ExportKeyModal.tsx implements the export dialog and its revealed-key state; the 1440 frames carry earlier partial rows. This 375 cut was not read; the dialog's phone/tablet geometry (width, inset, corner) is the open question and the @skai/ui DialogContent `p-4 sm:p-6` / `sm:rounded-lg` pair is the usual trap at 640-767. [vverify: deferred | Export private key revealed mobile: same keystore blocker]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:6811-34411": {
@@ -47513,7 +47513,7 @@
       "status": "not-started",
       "route": "—",
       "notes": "OUT OF WAVE 41 BY THE BRIEF ('Sportsbook frames are out of this wave'), so this row is CARRIED at its prior verdict and NOT RE-READ; it is not demoted either, because writing a fresh not-started for a frame nobody opened would erase a measured verdict. The surface also sits behind the backend gate - there is no sportsbook table or function - and the two files this frame's own row names outside this lane are modules/skai-gaming/src/components/play/sportsbook/BetSlipSettings.tsx. Carried reason: BUILT (pure client prefs, no backend). Not mounted - no host owns the colour preference. NOT blocked by routing. [vverify: not-wired | sportsbook bet-slip settings view; QuickBet exposes a settings cog only, settings panel not built]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "not-started"
     },
     "4896-86341": {
@@ -47601,7 +47601,7 @@
       "status": "partial",
       "route": "/play/sportsbook",
       "notes": "OUT OF WAVE 41 BY THE BRIEF ('Sportsbook frames are out of this wave'), so this row is CARRIED at its prior verdict and NOT RE-READ; it is not demoted either, because writing a fresh not-started for a frame nobody opened would erase a measured verdict. The surface also sits behind the backend gate - there is no sportsbook table or function - and the two files this frame's own row names outside this lane are modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx + modules/skai-gaming/src/components/play/sportsbook/BetSlipSettings.tsx. Carried reason: Right side-panel / bet slip host (base and ALT). The slip components exist; the docked right-rail host does not, which is why every Bet slip state below is prop-driven with no mount site. [vverify: partial | BetSlip built (sportsbook right-panel betslip); not routed]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "9191-105864": {
@@ -47629,7 +47629,7 @@
       "status": "partial",
       "route": "/play/sportsbook",
       "notes": "OUT OF WAVE 41 BY THE BRIEF ('Sportsbook frames are out of this wave'), so this row is CARRIED at its prior verdict and NOT RE-READ; it is not demoted either, because writing a fresh not-started for a frame nobody opened would erase a measured verdict. The surface also sits behind the backend gate - there is no sportsbook table or function - and the two files this frame's own row names outside this lane are modules/skai-gaming/src/components/play/sportsbook/BetSlip.tsx + modules/skai-gaming/src/components/play/sportsbook/BetSlipSettings.tsx. Carried reason: Right side-panel / bet slip host (base and ALT). The slip components exist; the docked right-rail host does not, which is why every Bet slip state below is prop-driven with no mount site. [vverify: partial | BetSlip ALT built (sportsbook betslip ALT); not routed]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "partial"
     },
     "4911-89072": {
@@ -47910,7 +47910,7 @@
       "status": "not-started",
       "route": "—",
       "notes": "OUT OF WAVE 41 BY THE BRIEF ('Sportsbook frames are out of this wave'), so this row is CARRIED at its prior verdict and NOT RE-READ; it is not demoted either, because writing a fresh not-started for a frame nobody opened would erase a measured verdict. The surface also sits behind the backend gate - there is no sportsbook table or function - and the two files this frame's own row names outside this lane are modules/skai-gaming/src/components/play/sportsbook/MyBetsPanel.tsx. Carried reason: BUILT and prop-driven, not mounted. Maps to sportsBetHistoryService. `unavailableReason` is a SEPARATE prop from an empty list on purpose - \"could not reach the chain\" must never render as \"you have no bets\". The Claimed tab will always hold zero: the chain`s BetOutcome enum has no claim step. [vverify: not-wired | sportsbook My bets empty state; full sportsbook page not built]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "not-started"
     },
     "4911-89419": {
@@ -47939,7 +47939,7 @@
       "status": "not-started",
       "route": "—",
       "notes": "OUT OF WAVE 41 BY THE BRIEF ('Sportsbook frames are out of this wave'), so this row is CARRIED at its prior verdict and NOT RE-READ; it is not demoted either, because writing a fresh not-started for a frame nobody opened would erase a measured verdict. The surface also sits behind the backend gate - there is no sportsbook table or function - and the two files this frame's own row names outside this lane are modules/skai-gaming/src/components/play/sportsbook/MyBetsPanel.tsx. Carried reason: BUILT and prop-driven, not mounted. Maps to sportsBetHistoryService. `unavailableReason` is a SEPARATE prop from an empty list on purpose - \"could not reach the chain\" must never render as \"you have no bets\". The Claimed tab will always hold zero: the chain`s BetOutcome enum has no claim step. [vverify: not-wired | sportsbook My bets with values; full sportsbook page not built]",
-      "verifiedAt": "2026-09-18T07:50:23.714Z",
+      "verifiedAt": "2026-09-18T09:42:43.604Z",
       "bpStatus": "not-started"
     },
     "4911-92925": {
