@@ -1,0 +1,61 @@
+# key	status	primaryFile	route	reason	bp
+# Lane skai-ui-primitives, wave 50, 2026-09-18. 7 rows: the six in-context Sign
+# up boards in BRIEF-skai-ui-primitives.md, plus the standalone Signup ALT whose
+# verdict this pass changes. The four frames the brief lists as frame-defect for
+# a borrowed Phantom/Axiom pane (10734-76366, 11229-189692, 11229-190494) and
+# Login ALT (10734-74595) were NOT reached: no row, so their rows stand.
+#
+# THE HEADLINE FINDING: THE MODAL HAD ONE TYPE STEP AND ONE SPACING STEP WHERE
+# THE BOARDS GIVE THREE, AND NOBODY COULD SEE IT BECAUSE EVERY PAST PASS READ
+# THE COMPONENT, NOT THE BOARDS.
+#
+#   The docblock said the base and md: steps "follow the ratios
+#   email-verification-modal established from its own frames". They do not. The
+#   three in-context modals state their own numbers and no two agree with that
+#   guess: the column gap runs 20 / 24 / 24, the top and bottom insets are
+#   24/24, 16/32 and 24/40 (not a pair at any width), the radius is 20 / 26 / 32
+#   and the horizontal inset is 8 / 16 / 24. The type is two named ramps, not an
+#   interpolation: Paragraph 2 is 12/14, 12/16, 14/18 and Paragraph 1 is 14/16,
+#   14/18, 16/22, which alone moved the title, both labels, the OR rule, the
+#   social labels, the footer and the terms line. The file had shipped a 24px
+#   title at 375 where the board draws 20, and 28 at 768 where it draws 24.
+#
+# THE SECOND FINDING: OPENING THE REFERRAL ROW IS NOT A DISCLOSURE.
+#
+#   Every past row described the open state as "a second field r16 p20 16/22
+#   under the row", i.e. an extra control inside the hairlines. The boards show
+#   something else: the two rules are HIDDEN (10734:81028 and 10734:81029 both
+#   carry hidden="true") and the row is replaced by the email field's own
+#   input/primary-inputs group — label row, 8, field — and the label gains the
+#   word the collapsed row leaves off. Collapsed it reads "Referral code" on all
+#   three boards; open it reads "Referral code (optional)" on both boards that
+#   render the string. The file had "(optional)" in both states and rules in
+#   both states, so it was half wrong twice.
+#
+# THE THIRD FINDING: A CSS BORDER IS NOT A FIGMA STROKE, AND IT COST 2px.
+#
+#   Figma strokes the modal and every field on the INSIDE, so the drawn 16 of
+#   padding already contains the 1px rule. `border` + `p-4` puts the rule
+#   outside the padding instead: the modal's content column came out 340 where
+#   the board says 342, and field text sat 17 in where the board says 16. An
+#   inset ring puts it back and, as a bonus, lets focus thicken it to the 1.5
+#   the frames draw (border-width/w-200) with no reflow at all.
+#
+# ONE THING FOR CASEY, NOT DECIDED HERE: `src/index.css` forces
+# `input,select,textarea { font-size: 16px }` under 768 to stop iOS zooming on
+# focus, but it sits in @layer base, so any `text-[14px]` utility beats it. This
+# field carried `text-[14px]` before this pass and still does, because that is
+# what the 375 and 768 boards draw. The frame and the zoom guard disagree and
+# the frame is currently winning.
+#
+# NOT MEASURED, AND SAID SO IN THE ROWS: the 1440 in-context modal's fills and
+# radius were taken from 10734:74426, the same component at the same 448 width,
+# because the board read returned geometry only. The open referral field's
+# radius at 768 and 1440 is likewise the email field's, not a separate read.
+10734-73582	done	modules/skai-ui/src/components/overlays/auth-modal.tsx	/ (FlowStep "auth")	MEASURED AND CLOSED 2026-09-18 on the board's own modal 10734:74251, 448x652 at (496,124). Inset 24 a side (children 400 wide at x=24), 24 above the title and 40 below the terms, and ONE 24 gap between all eight rows: title 36 at y=24, email group 88 at 84, referral 50 at 196, Continue 62 at 270, OR 18 at 356, socials 112 at 398, footer 18 at 534, terms 36 at 576, 612+40=652. Inside those: the title is Manrope Light 32/36/-1.28 between two 16px slots on a 16 gap (the left slot draws nothing, so the build centres the heading instead of boxing it); the email group is label 18 + 8 + field 62, label on a 20 inset; the referral row is rule / 16 / 18 / 16 / rule = 50, text at x=20, 16px chevron at 364; Continue is 400x62, py 20, Paragraph 1; OR draws two 171.5 rules 19 clear of a 19-wide OR; the socials are TWO 196-wide buttons 8 apart at 48 tall, then 16, then four 94-wide wallet buttons at 48; the footer is one 18 line, the terms two at 314 centred at x=43. Fills, radius 32 and the type ramp for this width are the same component read on 10734:74426 (Lg/Super-headline 4 300 32/36, Lg/Paragraph 1 16/22, Lg/Paragraph 2 14/18, #122524 under a #123f3c hairline, shadow 0 10 80 rgba(0,0,0,.25)) - the board read returns geometry only, so that provenance is stated rather than claimed twice. auth-modal.tsx ships all of it as of d589754. The landing art behind the 44% scrim is skai-landing LandingWaitlist, not this file.	1440=done 768=n-a 375=n-a @2026-09-17/wave50-skai-ui-primitives
+11220-175352	done	modules/skai-ui/src/components/overlays/auth-modal.tsx	/ (FlowStep "auth")	MEASURED AND CLOSED 2026-09-18 on modal 11189:4066, 468x578 at (150,223), read with get_design_context so the fills and type are this board's own and not inherited. Inset 16 a side (children 436), 16 above the title and 32 below the terms, gap 24 throughout: title 28 at y=16, email group 74 at 68, referral 48 at 166, Continue 50 at 238, OR 16 at 312, socials 98 at 352, footer 16 at 474, terms 32 at 514, 546+32=578. Radius 26 - not the 28 the file had guessed, and not on any ramp anyone could have derived. Md/Super-headline 4 300 is 24/28/-0.96, Md/Paragraph 2 12/16/-0.48, Md/Paragraph 1 14/18/-0.56. The email field is p16 r12 on a 1.5px #17F9B4 ring with the drop shadow, 50 tall; the referral row is rule / 16 / 16 / 16 / rule = 48 with the text at x=16, chevron at 404; Continue is px24 py16 r12 = 50; OR is two 191 rules 19 clear of OR; the socials are two 214-wide buttons at 42 (16px logo, gap 10, py 12), then 16, then four 103-wide wallet buttons at 40; terms 314 wide centred at x=61. Every one of those is in the build. The file had shipped px 20, pt 20, gap 20, a 28px title, a 13px label and 20px social logos here.	1440=n-a 768=done 375=n-a @2026-09-17/wave50-skai-ui-primitives
+11225-182385	done	modules/skai-ui/src/components/overlays/auth-modal.tsx	/ (FlowStep "auth")	MEASURED AND CLOSED 2026-09-18 on modal 11225:183084, 358x526 at (9,143) - so 8 of scrim to the left and 8 to the right of a 375 board, which is the p-2 the scrim already carried. Inset 8 a side (children 342, NOT the 16 the file had), 24 above the title and 24 below the terms, gap 20 - the only width whose gap is not 24. Rows: title 24 at y=24, email group 70 at 68, referral 48 at 158, Continue 44 at 226, OR 14 at 290, socials 96 at 324, footer 14 at 440, terms 28 at 474, 502+24=526. Radius 20. Sm/Super-headline 4 300 is 20/24/-0.8 where the file drew 24/28; Sm/Paragraph 2 12/14/-0.48 where the file drew 12/16; Sm/Paragraph 1 14/16/-0.56 where the file drew 14/20. Field p16 r12 = 48; referral rule / 16 / 16 / 16 / rule = 48; Continue px16 py14 r12 = 44; OR two 144 rules 19 clear of OR; socials two 167-wide buttons at 40 (16px logo, gap 12, py 12), 16, four 79.5-wide wallet buttons at 40; terms 314 centred at x=14 with its consent checkbox 11225:183127 hidden, which is the ruling the file already followed. The 40-tall pills sit under the 44px floor index.css puts on every button below 768, so they now carry no-min-size; without it the floor was silently making them 44 and no board read could see it.	1440=n-a 768=n-a 375=done @2026-09-17/wave50-skai-ui-primitives
+11225-183314	done	modules/skai-ui/src/components/overlays/auth-modal.tsx	/ (FlowStep "auth")	MEASURED AND CLOSED 2026-09-18 on modal 11225:183983, 358x550, and on its referral group 11225:184114 read with get_design_context. The group is 342x72 and is NOT the collapsed row with a field added: there are no rules at all, and it is the email field's own shape - label row 16 (text 12/14/-0.48 white at x=16, 16px chevron at x=310, pointing up), 8, field 48. The field is #001615 on a 1px #123F3C ring, r12, p16, justify-center, placeholder 'Enter referral code' in App Ash 14/18/-0.56 - so the resting ring is 1px where the focused email field's is 1.5px, which is the same primitive at w-100 and w-200 and is now built as one inset ring that thickens on focus. The label reads 'Referral code (optional)'; the collapsed row on this same board reads plain 'Referral code'. Everything outside the group is 11225-182385 unchanged: 526 grows to 550 by exactly the 24 the group adds over the collapsed 48, gap stays 20, Continue moves 226 to 250. Built and shipped in 73b3495; the file had been drawing the rules in both states and '(optional)' in both.	1440=n-a 768=n-a 375=done @2026-09-17/wave50-skai-ui-primitives
+11220-176042	done	modules/skai-ui/src/components/overlays/auth-modal.tsx	/ (FlowStep "auth")	MEASURED AND CLOSED 2026-09-18 on modal 11191:4541, 468x604, group 11191:4665 at (16,166) 436x74: label row 16 with 'Referral code (optional)' 121 wide at x=16 and the 16px chevron at x=404, gap 8, field 50 whose content sits at (16,16) 404x18 - so p16 with an 18 line, which is the same 50 the email field measures on this board. 578 grows to 604 by the 26 the group adds over the collapsed 48. Confirms on a second board that opening the row hides both rules and swaps in the labelled group, and confirms the '(optional)' wording independently of 11225:183314. The one number not read here is the field's radius; it is built as the email field's 12, which is what 11225:184118 measures at the width below.	1440=n-a 768=done 375=n-a @2026-09-17/wave50-skai-ui-primitives
+10734-75560	done	modules/skai-ui/src/components/overlays/auth-modal.tsx	/ (FlowStep "auth")	MEASURED AND CLOSED 2026-09-18 on modal 10734:76229, 448x690, whose referral group 10734:81012 is literally a second input/primary-inputs, 400x88 - label 18 + 8 + field 62, identical to the email group 10734:76234 above it. The proof that the open state drops the rules is in this node: 10734:81028 (the rule above) and 10734:81029 (the rule below) are BOTH hidden=true, and so is the 'message' row 10734:81021. 652 grows to 690 by exactly the 38 the group adds over the collapsed 50; gap stays 24 and Continue moves 270 to 308. One frame defect worth recording rather than building: this board's label text node is named 'Email address' and its placeholder 'example@skai.com', i.e. the instance was never overridden here, so the wording for this width comes from 11191:4655 and 11225:184116 instead. The geometry is this board's own.	1440=done 768=n-a 375=n-a @2026-09-17/wave50-skai-ui-primitives
+10734-74426	frame-defect	modules/skai-ui/src/components/overlays/auth-modal.tsx	-	READ IN FULL 2026-09-18 with get_design_context and RECLASSIFIED from partial. The component is 448x708 and contradicts every one of its own in-context instances in the same way Login ALT 10734-74595 already does: it draws the socials STACKED as two full-width 'Continue with Google' / 'Continue with Apple' pills (10734:74446, py 12, px 40, r16, 24px logo, 16/22), where 10734:74264 at 1440, 11189:4086 at 768 and 11225:183104 at 375 all draw them SIDE BY SIDE as two flex-1 buttons 8 apart with the short labels 'Google' and 'Apple'. That is the whole of the 708 against the in-context 652. Base governs over ALT, so the build follows the boards and this frame cannot go done until it is redrawn. What the component IS good for, and what this pass took from it, is the 1440 type and colour the board read does not return: Lg/Super-headline 4 300 32/36/-1.28, Lg/Paragraph 1 16/22/-0.64, Lg/Paragraph 2 14/18/-0.56, #122524 on #123F3C, radius 32, px 24 / pt 24 / pb 40 / gap 24, and the focused field's 1.5px #17F9B4 ring with Input hint (dark) 0 4 12 #0000003D - all of which agree with 10734:74251 wherever the two can be compared. Hand-off: redraw 10734:74426 from its instances, or retire it.	1440=partial 768=n-a 375=n-a @2026-09-17/wave50-skai-ui-primitives
