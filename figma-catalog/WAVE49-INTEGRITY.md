@@ -1,4 +1,4 @@
-# Wave 49 integrity record (2026-09-17 20:0x to 2026-09-18 02:xx, Denver)
+# Wave 49 integrity record (2026-09-17 19:5x to 21:4x Denver; UTC 2026-09-18)
 
 Casey: "Lets update the catalog with the latest figma changes and lets do another wave."
 Wave 49 opened with a Figma refresh, then ran in two batches around a peer session's
@@ -8,7 +8,7 @@ bug reports its lanes had measured and lost before writing back; those rode with
 lane whose files they touch (`BACKLOG-RULES-0918.md` in the session scratchpad), and
 their dispositions go back to the peer for the write-back.
 
-## 0. The Figma refresh (2026-09-18 02:0x UTC)
+## 0. The Figma refresh (2026-09-17 20:0x Denver, 2026-09-18 02:0x UTC)
 
 `harvest.mjs verify-script` hashed every page of the three files in three calls: 46 pages
 equal to the last harvest, 5 changed, all in Skai-Web-App-2 (Home 1 277 to 280, Home 2
@@ -157,7 +157,7 @@ rail exists (`sendTransaction`), so the new Wallet 2 step-3 boards were built, n
 - Superproject `typecheck:gate`, main tree: first run before the trade lane's last commit
   read green (2,539 known, 59 fewer, no new); a peer's run then caught one new TS2322 on
   ConnectedOrderBook.tsx against the stale dist. The dist was rebuilt from skai-ui
-  788ee86 (one builder, 21:07) and the gate re-run at 21:09: the order-book error is
+  788ee86 (one builder, 21:07 Denver) and the gate re-run at 21:09: the order-book error is
   gone; one new error remains, TS2322 in `src/services/wallet/linkedWalletsService.ts`,
   which is the peer session's uncommitted working file for its admin linked-wallets
   work (it reports the fix in hand). No committed state carries it, and the deploy is
@@ -172,6 +172,12 @@ rail exists (`sendTransaction`), so the new Wallet 2 step-3 boards were built, n
   or it manufactures 722 TS2307s for the svg imports (peer's measurement, 09-17).
 - Lanes commit by pathspec and never push; the catalog fold commits all six status files
   with an explicit add.
+- Deployed from the detached worktree pinned to main 937196cfc (the peer session's
+  push-and-bump: skai-ui e568d1d, skai-gaming 1badf455, skai-wallet 2533766, skai-landing
+  e1c2a10): app.skai.trade , dirty:false, 13m02s;
+  the parity feed republished at 686 of 3,824. The 31 dispositions were written back to
+  bug_reports the same night (19 backlog, 4 needs_info, 6 resolved, 2 closed) and their
+  full text is kept in .
 
 ## 7. What is next
 
