@@ -116,6 +116,47 @@ describe("modes", () => {
     expect(screen.getByLabelText(/referral code/i)).toHaveValue("ALICE");
   });
 
+  /**
+   * The frames name the row twice over: collapsed it is a bare "Referral code"
+   * between two hairlines (10734:74415, 11189:4076, 11225:183094), and open it
+   * is a labelled field group whose label carries "(optional)" (11225:184116,
+   * 11191:4655). Taking either string for both loses half the frame.
+   */
+  it("names the referral row one way collapsed and another open, and closes again", () => {
+    setup({ mode: "signup", referralCode: "", onReferralCodeChange: vi.fn() });
+
+    const disclosure = screen.getByRole("button", { name: /referral code/i });
+    expect(disclosure).toHaveTextContent(/^Referral code$/);
+
+    fireEvent.click(disclosure);
+    expect(screen.getByText("Referral code (optional)")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /hide the referral field/i }));
+    expect(screen.queryByLabelText(/referral code/i)).toBeNull();
+    expect(screen.getByRole("button", { name: /referral code/i })).toHaveTextContent(/^Referral code$/);
+  });
+});
+
+describe("the ENTER hint", () => {
+  /**
+   * Every in-context field is drawn holding an address, with the return glyph
+   * and ENTER beside it in App Green. It is the key that sends the form, not a
+   * second control, so it is hidden from the accessibility tree and only shows
+   * once there is something to send.
+   */
+  it("appears beside a typed address and not before", () => {
+    setup();
+    expect(screen.queryByText("ENTER")).toBeNull();
+    typeEmail("someone@example.com");
+    expect(screen.getByText("ENTER")).toHaveAttribute("aria-hidden", "true");
+  });
+
+  it("stays away for whitespace alone", () => {
+    setup();
+    typeEmail("   ");
+    expect(screen.queryByText("ENTER")).toBeNull();
+  });
+
   it("renders nothing when closed", () => {
     const { container } = render(
       <AuthModal mode="login" isOpen={false} onClose={() => undefined} onEmailSubmit={() => undefined} />,

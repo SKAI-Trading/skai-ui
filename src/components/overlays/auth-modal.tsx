@@ -1,16 +1,25 @@
 /**
  * AuthModal — the "Login" and "Sign up" screens with the wallet row.
  *
- * Figma (Skai-Web-App 3sSzw1KewMtUbeLAv7uW0r): components Login ALT 10734:74595
- * and Signup ALT 10734:74426; in context at 1440 in 10730:80518 / 10734:73582 /
- * 10734:76366, at 768 in 11225:178320 / 11220:175352, at 375 in 11225:186385 /
- * 11225:182385. The 1440 values below are measured from those frames; the base
- * and `md:` steps follow the ratios `email-verification-modal` established from
- * its own 375/768/1440 frames, which the 375/768 in-context frames confirm.
+ * Figma (Skai-Web-App 3sSzw1KewMtUbeLAv7uW0r). Measured 2026-09-18 against the
+ * in-context modals, which govern over the standalone components: 448x652 at
+ * 1440 (10734:74251 on board 10734:73582), 468x578 at 768 (11189:4066 on
+ * 11220:175352) and 358x526 at 375 (11225:183084 on 11225:182385). The
+ * referral-open twins are 10734:76229, 11191:4541 and 11225:183983.
  *
- * The standalone Login ALT component draws a password field and stacked social
- * buttons. No in-context frame does, and the auth provider has no password
- * strategy, so the in-context layout is the one built here.
+ * The three steps are 375 / 768 / 1440 against base / md: / lg:. Nothing here
+ * uses sm: — 640 matches no board.
+ *
+ * Two things the standalone Signup ALT (10734:74426) draws that no in-context
+ * frame does: the socials stacked as "Continue with Google" / "Continue with
+ * Apple", and its own type step. Every in-context board draws them side by side
+ * with the short labels, so that is what is built. Login ALT (10734:74595)
+ * likewise draws a password field and stacked socials that no Login board and
+ * no auth strategy has.
+ *
+ * Opening the referral row is not a disclosure between the hairlines: the two
+ * rules go away and the row becomes the same labelled field group as the email
+ * one, whose label gains "(optional)" (11225:184114, 11191:4665, 10734:81012).
  *
  * Both modes share one body: email field, Continue, OR, Google | Apple, four
  * wallet buttons. Sign up adds the referral row above Continue and the terms
@@ -82,6 +91,22 @@ const ChevronIcon: React.FC<{ className?: string; open: boolean }> = ({ classNam
   </svg>
 );
 
+/** The return arrow beside ENTER in the focused email field. */
+const ReturnIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M14 3v3.5a2.5 2.5 0 01-2.5 2.5H3M5.5 6.5L3 9l2.5 2.5" />
+  </svg>
+);
+
 const SpinnerIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={cn("animate-spin", className)} viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
@@ -89,13 +114,42 @@ const SpinnerIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-/** Green Coal 300 pill, white Manrope 16/22 at lg, 12px vertical padding, radius 16. */
-const SOCIAL_BUTTON =
-  "font-manrope flex flex-1 min-w-0 items-center justify-center gap-2.5 rounded-[12px] bg-[#001615] px-4 py-3 text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:text-[15px] lg:rounded-[16px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]";
+/** Paragraph 2: 12/14 at 375, 12/16 at 768, 14/18 at 1440. */
+const PARAGRAPH_2 =
+  "font-manrope text-[12px] font-normal leading-[14px] tracking-[-0.48px] md:leading-[16px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]";
 
-/** Same pill, icon only: 24px logo + 12px vertical padding = the frame's 48px. */
+/** Paragraph 1: 14/16 at 375, 14/18 at 768, 16/22 at 1440. */
+const PARAGRAPH_1 =
+  "font-manrope text-[14px] font-normal leading-[16px] tracking-[-0.56px] md:leading-[18px] lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]";
+
+/**
+ * The field box. The frames state its height rather than deriving it from the
+ * padding — 48 / 50 / 62 — so it is written that way here; a border and the
+ * ascender of a 16px line would otherwise carry it past the drawn box.
+ */
+const FIELD_BOX =
+  "flex h-12 w-full items-center gap-2 rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 transition-colors md:h-[50px] lg:h-[62px] lg:rounded-[16px] lg:px-5";
+
+/** The bare control inside a field box: no chrome of its own. */
+const FIELD_INPUT =
+  "min-w-0 flex-1 bg-transparent text-white placeholder:text-[#95a09f] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50";
+
+/** Label rows sit on the field's own horizontal inset, not the modal's. */
+const FIELD_LABEL_ROW = "flex w-full items-center px-4 lg:px-5";
+
+/**
+ * Green Coal 300 pill. 40 tall at 375 and 42 at 768, both under the 44px touch
+ * floor `index.css` puts on every button below 768 — hence `no-min-size`, which
+ * the floor honours.
+ */
+const SOCIAL_BUTTON =
+  "no-min-size flex flex-1 min-w-0 items-center justify-center gap-3 rounded-[12px] bg-[#001615] px-4 py-3 text-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:gap-2.5 md:px-6 lg:rounded-[16px] lg:px-10";
+
+/** Same pill, icon only: 16px logo at 375 and 768, 24 at 1440. */
 const WALLET_BUTTON =
-  "flex flex-1 min-w-0 items-center justify-center rounded-[12px] bg-[#001615] py-3 transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] lg:rounded-[16px]";
+  "no-min-size flex flex-1 min-w-0 items-center justify-center rounded-[12px] bg-[#001615] px-4 py-3 transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:px-6 lg:rounded-[16px] lg:px-10";
+
+const BRAND_ICON = "h-4 w-4 shrink-0 lg:h-6 lg:w-6";
 
 const LINK = "text-[#56C7F3] underline-offset-2 hover:underline";
 
@@ -167,11 +221,11 @@ export function AuthModal({
     <>
       Already have an account?{" "}
       {onSwitchMode ? (
-        <button type="button" onClick={() => onSwitchMode("login")} disabled={blocked} className={LINK}>
+        <button type="button" onClick={() => onSwitchMode("login")} disabled={blocked} className={cn("no-min-size", LINK)}>
           Login
         </button>
       ) : (
-        <a href={loginHref} className={LINK}>
+        <a href={loginHref} className={cn("no-min-size", LINK)}>
           Login
         </a>
       )}
@@ -180,11 +234,11 @@ export function AuthModal({
     <>
       Don&rsquo;t have an account?{" "}
       {onSwitchMode ? (
-        <button type="button" onClick={() => onSwitchMode("signup")} disabled={blocked} className={LINK}>
+        <button type="button" onClick={() => onSwitchMode("signup")} disabled={blocked} className={cn("no-min-size", LINK)}>
           Sign up
         </button>
       ) : (
-        <a href={signupHref} className={LINK}>
+        <a href={signupHref} className={cn("no-min-size", LINK)}>
           Sign up
         </a>
       )}
@@ -206,15 +260,19 @@ export function AuthModal({
       className={cn("z-[10000] bg-[rgba(0,22,21,0.44)] p-2 backdrop-blur-[12px] sm:p-6", className)}
     >
       <div
-        /* 448 wide at lg, radius 32, Green Coal 200 on a Green Coal 100 hairline,
-           24 top / 40 bottom. 358 wide and radius 20 at 375. */
-        className="relative flex w-full max-w-[358px] flex-col gap-4 rounded-[20px] border border-[#123f3c] bg-[#122524] px-4 pb-6 pt-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-5 md:rounded-[28px] md:px-5 md:pb-8 md:pt-5 lg:max-w-[448px] lg:gap-6 lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
+        /* 358 wide on a 20 radius at 375, 468 on 26 at 768, 448 on 32 at 1440;
+           Green Coal 200 on a Green Coal 100 hairline. The top and bottom
+           insets are not a pair — 24/24, 16/32, 24/40 across the three. */
+        className="relative flex w-full max-w-[358px] flex-col gap-5 rounded-[20px] border border-[#123f3c] bg-[#122524] px-2 pb-6 pt-6 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-6 md:rounded-[26px] md:px-4 md:pb-8 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
       >
-        {/* Title row: centred Super-headline 4 300 with the close glyph at the right. */}
+        {/* Title row: Super-headline 4 300 centred on the modal, with the close
+            glyph at the right inset. The frame balances the glyph with an empty
+            16px slot on the left; centring the heading puts it in the same
+            place without drawing a second box. */}
         <div className="relative flex items-center justify-center">
           <h2
             id="skai-auth-title"
-            className="font-manrope text-center text-[24px] font-light leading-[28px] tracking-[-0.96px] text-white md:text-[28px] md:leading-[32px] md:tracking-[-1.12px] lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]"
+            className="font-manrope text-center text-[20px] font-light leading-[24px] tracking-[-0.8px] text-white md:text-[24px] md:leading-[28px] md:tracking-[-0.96px] lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]"
           >
             {isSignup ? "Sign up" : "Login"}
           </h2>
@@ -225,7 +283,7 @@ export function AuthModal({
           <button
             type="button"
             onClick={onClose}
-            className="absolute right-0 top-1/2 flex h-4 w-4 -translate-y-1/2 items-center justify-center text-white transition-opacity hover:opacity-70"
+            className="no-min-size absolute right-0 top-1/2 flex h-4 w-4 -translate-y-1/2 items-center justify-center text-white transition-opacity hover:opacity-70"
             aria-label="Close"
           >
             <CloseIcon className="h-4 w-4" />
@@ -241,64 +299,89 @@ export function AuthModal({
           </p>
         )}
 
-        <form onSubmit={submitEmail} noValidate className="flex flex-col gap-2">
-          <label
-            htmlFor="skai-auth-email"
-            className="font-manrope px-4 text-[12px] font-normal leading-[16px] tracking-[-0.48px] text-white md:px-5 md:text-[13px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]"
-          >
-            Email address
-          </label>
-          <input
-            ref={inputRef}
-            id="skai-auth-email"
-            type="email"
-            inputMode="email"
-            autoComplete="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-              setEmailError(null);
-            }}
-            disabled={blocked}
-            aria-invalid={emailError ? true : undefined}
-            aria-describedby={emailError ? "skai-auth-email-error" : undefined}
-            placeholder="example@provider.com"
-            /* Sign up's focused field draws a 1.5px App Green ring (10734:74431). */
-            className={cn(
-              "font-manrope w-full rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-white transition-colors placeholder:text-[#95a09f] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 md:text-[15px] md:leading-[21px] lg:rounded-[16px] lg:p-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]",
-              isSignup ? "focus:border-[#17F9B4] focus:shadow-[0px_4px_12px_rgba(0,0,0,0.24)]" : "focus:border-[#56C7F3]",
-            )}
-          />
-          {emailError && (
-            <p
-              id="skai-auth-email-error"
-              role="alert"
-              className="font-manrope px-4 text-[12px] font-normal leading-[16px] tracking-[-0.48px] text-[#FF4444] md:px-5 lg:text-[13px] lg:leading-[18px]"
+        {/* The modal is one column on a single gap, so the form carries that
+            same gap rather than a tighter one with margins on top of it. */}
+        <form onSubmit={submitEmail} noValidate className="flex flex-col gap-5 md:gap-6">
+          <div className="flex flex-col gap-2">
+            <div className={FIELD_LABEL_ROW}>
+              <label htmlFor="skai-auth-email" className={cn(PARAGRAPH_2, "text-white")}>
+                Email address
+              </label>
+            </div>
+            {/* Sign up's focused field draws an App Green ring where login's is
+                Sky Blue (10734:74431). */}
+            <div
+              className={cn(
+                FIELD_BOX,
+                isSignup
+                  ? "focus-within:border-[#17F9B4] focus-within:shadow-[0px_4px_12px_rgba(0,0,0,0.24)]"
+                  : "focus-within:border-[#56C7F3]",
+              )}
             >
-              {emailError}
-            </p>
-          )}
-
-          {showReferral && (
-            /* "Referral code" row: hairlines above and below, collapsed until pressed
-               or pre-filled (10734:73582 collapsed, 10734:76366 open). */
-            <div className="mt-2 flex flex-col border-y border-[#123f3c]">
-              <button
-                type="button"
-                onClick={() => setReferralOpen((o) => !o)}
+              <input
+                ref={inputRef}
+                id="skai-auth-email"
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setEmailError(null);
+                }}
                 disabled={blocked}
-                aria-expanded={referralOpen}
-                aria-controls="skai-auth-referral"
-                className="font-manrope flex w-full items-center justify-between px-4 py-3 text-left text-[12px] font-normal leading-[16px] tracking-[-0.48px] text-white disabled:opacity-50 md:px-5 lg:py-4 lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]"
+                aria-invalid={emailError ? true : undefined}
+                aria-describedby={emailError ? "skai-auth-email-error" : undefined}
+                placeholder="example@provider.com"
+                className={cn(FIELD_INPUT, PARAGRAPH_1)}
+              />
+              {/* The frame draws this beside a filled address: the key that
+                  sends it, not a second control. The form's own submit does
+                  the work, so it stays out of the tab order. */}
+              {email.trim() !== "" && (
+                <span
+                  aria-hidden="true"
+                  className={cn(PARAGRAPH_1, "flex shrink-0 items-center gap-2 text-[#17F9B4]")}
+                >
+                  <ReturnIcon className="h-4 w-4" />
+                  ENTER
+                </span>
+              )}
+            </div>
+            {emailError && (
+              <p
+                id="skai-auth-email-error"
+                role="alert"
+                className={cn(PARAGRAPH_2, "px-4 text-[#FF4444] lg:px-5")}
               >
-                Referral code (optional)
-                <ChevronIcon className="h-4 w-4 shrink-0 text-white" open={referralOpen} />
-              </button>
-              {referralOpen && (
-                <div className="pb-3 lg:pb-4">
-                  <label htmlFor="skai-auth-referral" className="sr-only">
-                    Referral code
+                {emailError}
+              </p>
+            )}
+          </div>
+
+          {showReferral &&
+            (referralOpen ? (
+              /* Open (11225:184114 and twins): the rules are gone and this is
+                 the email field's own group — label row, 8, field — with the
+                 word the collapsed row leaves off. */
+              <div className="flex flex-col gap-2">
+                <div className={cn(FIELD_LABEL_ROW, "justify-between")}>
+                  <label htmlFor="skai-auth-referral" className={cn(PARAGRAPH_2, "text-white")}>
+                    Referral code (optional)
                   </label>
+                  <button
+                    type="button"
+                    onClick={() => setReferralOpen(false)}
+                    disabled={blocked}
+                    aria-expanded
+                    aria-controls="skai-auth-referral"
+                    aria-label="Hide the referral field"
+                    className="no-min-size flex h-4 w-4 shrink-0 items-center justify-center text-white disabled:opacity-50"
+                  >
+                    <ChevronIcon className="h-4 w-4" open />
+                  </button>
+                </div>
+                <div className={cn(FIELD_BOX, "focus-within:border-[#56C7F3]")}>
                   <input
                     id="skai-auth-referral"
                     type="text"
@@ -309,38 +392,67 @@ export function AuthModal({
                     onChange={(e) => onReferralCodeChange?.(e.target.value)}
                     disabled={blocked}
                     placeholder="Enter referral code"
-                    className="font-manrope w-full rounded-[12px] border border-[#123f3c] bg-[#001615] px-4 py-3.5 text-[14px] font-normal leading-[20px] tracking-[-0.56px] text-white placeholder:text-[#95a09f] focus:border-[#56C7F3] focus:outline-none disabled:opacity-50 md:rounded-[14px] md:px-5 md:py-4 lg:rounded-[16px] lg:p-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
+                    className={cn(FIELD_INPUT, PARAGRAPH_1)}
                   />
                 </div>
-              )}
-            </div>
-          )}
+              </div>
+            ) : (
+              /* Collapsed (10734:74413 and twins): a hairline above and below,
+                 16 of air on each side of the row. */
+              <div className="flex flex-col border-y border-[#123f3c]">
+                <button
+                  type="button"
+                  onClick={() => setReferralOpen(true)}
+                  disabled={blocked}
+                  aria-expanded={false}
+                  aria-controls="skai-auth-referral"
+                  className={cn(
+                    PARAGRAPH_2,
+                    "flex w-full items-center justify-between px-4 py-4 text-left text-white disabled:opacity-50 lg:px-5",
+                  )}
+                >
+                  Referral code
+                  <ChevronIcon className="h-4 w-4 shrink-0 text-white" open={false} />
+                </button>
+              </div>
+            ))}
 
           <button
             type="submit"
             disabled={blocked}
-            className="font-manrope mt-2 w-full rounded-[12px] bg-[#56C7F3] px-6 py-[14px] text-center text-[14px] font-normal leading-[16px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:mt-3 md:rounded-[14px] md:px-10 md:py-4 md:text-[16px] md:leading-[22px] md:tracking-[-0.64px] lg:mt-4 lg:rounded-[16px] lg:px-10 lg:py-5"
+            className={cn(
+              PARAGRAPH_1,
+              "no-min-size w-full rounded-[12px] bg-[#56C7F3] px-4 py-[14px] text-center text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:px-6 md:py-4 lg:rounded-[16px] lg:px-10 lg:py-5",
+            )}
           >
             {loading ? "Sending code…" : "Continue"}
           </button>
         </form>
 
-        <div className="flex items-center gap-3 lg:gap-[19px]">
+        <div className="flex items-center gap-[19px]">
           <span className="h-px flex-1 bg-[#123f3c]" aria-hidden />
-          <span className="font-manrope text-[12px] font-normal leading-[16px] tracking-[-0.48px] text-[#95a09f] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
-            OR
-          </span>
+          <span className={cn(PARAGRAPH_2, "text-[#95a09f]")}>OR</span>
           <span className="h-px flex-1 bg-[#123f3c]" aria-hidden />
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           <div className="flex gap-2">
-            <button type="button" onClick={onGoogleLogin} disabled={blocked || !onGoogleLogin} className={SOCIAL_BUTTON}>
-              <GoogleBrandIcon className="h-5 w-5 shrink-0 lg:h-6 lg:w-6" />
+            <button
+              type="button"
+              onClick={onGoogleLogin}
+              disabled={blocked || !onGoogleLogin}
+              className={cn(SOCIAL_BUTTON, PARAGRAPH_1)}
+            >
+              <GoogleBrandIcon className={BRAND_ICON} />
               Google
             </button>
-            <button type="button" onClick={onAppleLogin} disabled={blocked || !onAppleLogin} className={SOCIAL_BUTTON}>
-              <AppleIcon className="h-5 w-5 shrink-0 lg:h-6 lg:w-6" />
+            <button
+              type="button"
+              onClick={onAppleLogin}
+              disabled={blocked || !onAppleLogin}
+              className={cn(SOCIAL_BUTTON, PARAGRAPH_1)}
+            >
+              <AppleIcon className={BRAND_ICON} />
               Apple
             </button>
           </div>
@@ -360,7 +472,7 @@ export function AuthModal({
                     aria-label={`Continue with ${AUTH_WALLET_LABELS[id]}`}
                     className={WALLET_BUTTON}
                   >
-                    {busy ? <SpinnerIcon className="h-6 w-6 text-[#56C7F3]" /> : <Icon className="h-6 w-6" />}
+                    {busy ? <SpinnerIcon className={cn(BRAND_ICON, "text-[#56C7F3]")} /> : <Icon className={BRAND_ICON} />}
                   </button>
                 );
               })}
@@ -368,18 +480,16 @@ export function AuthModal({
           )}
         </div>
 
-        <p className="font-manrope text-center text-[12px] font-normal leading-[16px] tracking-[-0.48px] text-[#E0E0E0] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
-          {footer}
-        </p>
+        <p className={cn(PARAGRAPH_2, "text-center text-[#E0E0E0]")}>{footer}</p>
 
         {isSignup && (
-          <p className="font-manrope mx-auto max-w-[314px] text-center text-[12px] font-normal leading-[16px] tracking-[-0.48px] text-[#E0E0E0] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
+          <p className={cn(PARAGRAPH_2, "mx-auto max-w-[314px] text-center text-[#E0E0E0]")}>
             By creating an account, you agree to Skai&rsquo;s{" "}
-            <a href={privacyHref} target="_blank" rel="noreferrer" className={LINK}>
+            <a href={privacyHref} target="_blank" rel="noreferrer" className={cn("no-min-size", LINK)}>
               Privacy Policy
             </a>{" "}
             and{" "}
-            <a href={termsHref} target="_blank" rel="noreferrer" className={LINK}>
+            <a href={termsHref} target="_blank" rel="noreferrer" className={cn("no-min-size", LINK)}>
               Terms of Service
             </a>
           </p>
