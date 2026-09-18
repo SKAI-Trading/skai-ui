@@ -174,10 +174,10 @@ rail exists (`sendTransaction`), so the new Wallet 2 step-3 boards were built, n
   with an explicit add.
 - Deployed from the detached worktree pinned to main 937196cfc (the peer session's
   push-and-bump: skai-ui e568d1d, skai-gaming 1badf455, skai-wallet 2533766, skai-landing
-  e1c2a10): app.skai.trade , dirty:false, 13m02s;
+  e1c2a10): app.skai.trade `skai-trading@20260917-2141-937196cfc`, dirty:false, 13m02s;
   the parity feed republished at 686 of 3,824. The 31 dispositions were written back to
   bug_reports the same night (19 backlog, 4 needs_info, 6 resolved, 2 closed) and their
-  full text is kept in .
+  full text is kept in `dispositions.wave49.tsv`.
 
 ## 7. What is next
 
