@@ -58,6 +58,16 @@ describe("Layout Constants", () => {
   it("exports FULL_HEIGHT_CLASS with correct calculation", () => {
     expect(FULL_HEIGHT_CLASS).toBe("h-[calc(100vh-104px)]");
   });
+
+  it("keeps the literal class in step with LAYOUT_HEIGHTS.total", () => {
+    // FULL_HEIGHT_CLASS has to be a LITERAL so Tailwind's static scanner emits
+    // a real rule for it — an interpolated name made it emit
+    // `h-[calc(100vh-${LAYOUT_HEIGHTS.total}px)]` verbatim, which browsers drop.
+    // The cost of a literal is that the 104 could drift from the constant, so
+    // this is the tie: change LAYOUT_HEIGHTS.total without changing the class
+    // and this fails.
+    expect(FULL_HEIGHT_CLASS).toBe(`h-[calc(100vh-${LAYOUT_HEIGHTS.total}px)]`);
+  });
 });
 
 // =============================================================================

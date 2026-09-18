@@ -25,7 +25,19 @@ export const LAYOUT_HEIGHTS = {
  * CSS class for full-height content (accounting for header + bottom bar)
  * Use this for trading pages and other full-viewport layouts
  */
-export const FULL_HEIGHT_CLASS = `h-[calc(100vh-${LAYOUT_HEIGHTS.total}px)]`;
+/**
+ * A LITERAL, not a template. Tailwind's scanner reads source text statically,
+ * so an interpolated class name is taken at face value: it emitted a rule for
+ * `h-[calc(100vh-${LAYOUT_HEIGHTS.total}px)]` verbatim, which every browser
+ * then drops with "Error in parsing value for height". The real 104px rule
+ * exists too — it is matched from other call sites — so nothing was visually
+ * broken, but every page logged the parse error and shipped a dead rule.
+ *
+ * The 104 is not duplicated knowledge: `layout-system.test.tsx` asserts this
+ * string equals `h-[calc(100vh-${LAYOUT_HEIGHTS.total}px)]` computed at
+ * runtime, so changing the constant without changing this line fails there.
+ */
+export const FULL_HEIGHT_CLASS = "h-[calc(100vh-104px)]";
 
 // =============================================================================
 // APP SHELL CONTEXT
