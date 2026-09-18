@@ -119,15 +119,19 @@ rail exists (`sendTransaction`), so the new Wallet 2 step-3 boards were built, n
 
 ## 5. Decisions for Casey
 
-1. 57ac81b3, Instant payouts copy: keep the settlement sentence and have design re-word
-   4714:32916 (recommended); ship the frame's sentence and promise a withdrawal both gates
-   refuse; or ship it behind BRIDGE_WITHDRAWALS_ENABLED.
-2. e774e212, Customize rows: keep the five chips and add one only when a column and a
-   source exist (recommended); draw the nineteen missing as disabled chips in the frame's
-   order; or build the nineteen columns first.
-3. 35a83a5a, alert sound names: keep Blip / Chime / Ping until design delivers audio files
-   and the full list (recommended); rename to Default sound / Carmen / Cha Ching now; or
-   ship design's audio files.
+Casey answered 1 to 3 at the close (2026-09-17 21:5x Denver); 4 to 9 ride on the lanes'
+recommendations until told otherwise.
+
+1. 57ac81b3, Instant payouts copy. **Ruled: ship the frame's sentence as written**
+   ("Withdraw your winnings instantly to your connected wallet"), over the recommended
+   settlement sentence; the copy will promise a withdrawal both gates refuse until
+   BRIDGE_WITHDRAWALS_ENABLED opens, and that is recorded here rather than re-argued.
+   Wave 50 play lane; the string lives in `play/shared/withdrawalsCopy.ts`.
+2. e774e212, Customize rows. **Ruled: build the nineteen missing columns first**, over
+   keeping five or drawing the rest disabled. Each column needs a source; one without a
+   source renders the explicit unavailable state. Wave 50 trench lane, as its own item.
+3. 35a83a5a, alert sound names. **Ruled: keep Blip / Chime / Ping** until design delivers
+   audio files and the full list (the recommended option).
 4. 7a5524ee, Signals: drop the "Market" select that has no open-state frame (recommended)
    or draw an open state; hide the sourceless perps market-cap card (recommended) or draw
    it offline.
