@@ -1,42 +1,42 @@
 {
-  "generated": "2026-09-18T02:05:34.355Z",
+  "generated": "2026-09-18T02:45:26.128Z",
   "harvestedAt": "2026-09-15",
   "rollup": {
     "pages": 39,
     "live": 4601,
     "furniture": 777,
     "genuine": 3824,
-    "matched": 3812,
-    "done": 674,
-    "verified": 259,
-    "visuallyDowngraded": 36,
+    "matched": 3823,
+    "done": 686,
+    "verified": 269,
+    "visuallyDowngraded": 37,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 2202,
+    "partial": 2196,
     "notStarted": 267,
-    "blocked": 188,
-    "frameDefect": 130,
+    "blocked": 190,
+    "frameDefect": 133,
     "catalogFurniture": 130,
     "unknown": 219,
-    "liveOnly": 12,
+    "liveOnly": 1,
     "rollupOnly": 0,
     "defaultNamed": 202,
     "ambiguous": 117,
     "conflicts": 3
   },
   "doneRows": {
-    "total": 2447,
-    "withBreakpointProvenance": 1037,
-    "namingANodeId": 2125,
+    "total": 2462,
+    "withBreakpointProvenance": 1052,
+    "namingANodeId": 2140,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 15961,
-    "namingNoNodeId": 514,
-    "namingNoLiveNodeId": 876,
-    "unrecognisedTokens": 26858
+    "total": 16072,
+    "namingNoNodeId": 516,
+    "namingNoLiveNodeId": 896,
+    "unrecognisedTokens": 27172
   },
   "statusFiles": [
     {
@@ -2410,6 +2410,42 @@
       "ids": 26
     },
     {
+      "file": "status.wave49.home-screens-portfolio.tsv",
+      "rows": 13,
+      "withLiveId": 7,
+      "ids": 9
+    },
+    {
+      "file": "status.wave49.home-whales.tsv",
+      "rows": 12,
+      "withLiveId": 11,
+      "ids": 12
+    },
+    {
+      "file": "status.wave49.play-casino.tsv",
+      "rows": 7,
+      "withLiveId": 4,
+      "ids": 3
+    },
+    {
+      "file": "status.wave49.social-messages.tsv",
+      "rows": 22,
+      "withLiveId": 22,
+      "ids": 23
+    },
+    {
+      "file": "status.wave49.trade-predict-rewards-wallet.tsv",
+      "rows": 17,
+      "withLiveId": 14,
+      "ids": 17
+    },
+    {
+      "file": "status.wave49.trench.tsv",
+      "rows": 40,
+      "withLiveId": 33,
+      "ids": 30
+    },
+    {
       "file": "status.wave5.discover-createtoken.tsv",
       "rows": 3,
       "withLiveId": 1,
@@ -3397,13 +3433,13 @@
       "defaultNamed": 6,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 6,
+      "verified": 8,
       "visuallyDowngraded": 3,
       "byStatus": {
-        "partial": 143,
+        "partial": 141,
         "furniture": 2,
+        "done": 51,
         "not-started": 54,
-        "done": 49,
         "frame-defect": 20,
         "blocked-on-backend": 1
       },
@@ -3432,14 +3468,14 @@
       "ambiguous": 0,
       "conflicts": 1,
       "verified": 11,
-      "visuallyDowngraded": 5,
+      "visuallyDowngraded": 6,
       "byStatus": {
-        "done": 78,
-        "partial": 234,
+        "done": 79,
+        "partial": 232,
         "blocked-on-backend": 37,
         "blocked-on-casey": 2,
         "not-started": 39,
-        "frame-defect": 11,
+        "frame-defect": 12,
         "unknown": 1
       },
       "liveOnly": []
@@ -3536,10 +3572,10 @@
       "verified": 86,
       "visuallyDowngraded": 1,
       "byStatus": {
-        "done": 90,
+        "done": 91,
         "furniture": 7,
         "partial": 129,
-        "not-started": 10
+        "not-started": 9
       },
       "liveOnly": []
     },
@@ -3624,78 +3660,22 @@
         "loose-instance": 1
       },
       "genuine": 167,
-      "matched": 159,
+      "matched": 167,
       "rollupOnly": 0,
       "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 12,
+      "verified": 17,
       "visuallyDowngraded": 1,
       "byStatus": {
-        "done": 129,
+        "done": 134,
         "partial": 18,
         "blocked-on-backend": 7,
-        "frame-defect": 4,
+        "frame-defect": 5,
+        "not-started": 2,
         "furniture": 1
       },
-      "liveOnly": [
-        {
-          "id": "15381-62967",
-          "name": "Skai > Wallet > continue on web > home > batch - step 3 > in progress 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "15382-178517",
-          "name": "Skai > Wallet > continue on web > home > batch - step 3 > in progress - minimised 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "15382-179595",
-          "name": "Skai > Wallet > continue on web > home > batch - step 3 > in progress - minimised ALT 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "15382-88845",
-          "name": "Sending transactions - loading",
-          "type": "FRAME",
-          "w": 680,
-          "h": 496
-        },
-        {
-          "id": "15381-88675",
-          "name": "Skai > Wallet > continue on web > home > batch - step 3 > done 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "15382-178395",
-          "name": "Details - hidden",
-          "type": "FRAME",
-          "w": 680,
-          "h": 475
-        },
-        {
-          "id": "15382-180724",
-          "name": "Skai > Wallet > continue on web > home > request from user - step 2 > select token ALT 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "15382-180505",
-          "name": "Skai > Wallet > continue on web > home > request from user - step 2 > select token 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        }
-      ]
+      "liveOnly": []
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -3717,7 +3697,7 @@
         "hidden": 2
       },
       "genuine": 368,
-      "matched": 367,
+      "matched": 368,
       "rollupOnly": 0,
       "defaultNamed": 43,
       "ambiguous": 117,
@@ -3729,19 +3709,11 @@
         "blocked-on-backend": 15,
         "done": 27,
         "furniture": 1,
-        "frame-defect": 4,
+        "frame-defect": 5,
         "unknown": 3,
         "not-started": 9
       },
-      "liveOnly": [
-        {
-          "id": "15411-182296",
-          "name": "Right menu - leverage ALT 5",
-          "type": "FRAME",
-          "w": 359,
-          "h": 796
-        }
-      ]
+      "liveOnly": []
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -3761,37 +3733,22 @@
         "loose-ellipse": 1
       },
       "genuine": 379,
-      "matched": 377,
+      "matched": 379,
       "rollupOnly": 0,
       "defaultNamed": 18,
       "ambiguous": 0,
       "conflicts": 2,
-      "verified": 16,
+      "verified": 19,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 220,
-        "done": 98,
+        "partial": 218,
+        "done": 101,
         "frame-defect": 15,
         "furniture": 4,
-        "not-started": 19,
-        "blocked-on-backend": 21
+        "not-started": 18,
+        "blocked-on-backend": 23
       },
-      "liveOnly": [
-        {
-          "id": "15402-181831",
-          "name": "Right menu - Socials",
-          "type": "FRAME",
-          "w": 442,
-          "h": 884
-        },
-        {
-          "id": "15411-182436",
-          "name": "Server regions",
-          "type": "FRAME",
-          "w": 220,
-          "h": 234
-        }
-      ]
+      "liveOnly": []
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -4902,7 +4859,8 @@
         "status.wave45.rewards-predict-social-launch.tsv:49",
         "status.wave46.launch-rewards-wallet-trade.tsv:60",
         "status.wave47.launch-rewards-wallet-trade.tsv:55",
-        "status.wave48.launch-rewards-wallet-trade.tsv:57"
+        "status.wave48.launch-rewards-wallet-trade.tsv:57",
+        "status.wave49.trade-predict-rewards-wallet.tsv:47"
       ],
       "status": "blocked-on-backend"
     },
@@ -4922,7 +4880,8 @@
         "status.wave46.launch-rewards-wallet-trade.tsv:59",
         "status.wave47.home.tsv:92",
         "status.wave47.launch-rewards-wallet-trade.tsv:54",
-        "status.wave48.home-ai.tsv:66"
+        "status.wave48.home-ai.tsv:66",
+        "status.wave49.home-screens-portfolio.tsv:51"
       ],
       "status": "partial"
     },
@@ -4982,7 +4941,8 @@
         "status.wave44.play-hub.tsv:43",
         "status.wave45.play-slots.tsv:60",
         "status.wave46.play-slots.tsv:56",
-        "status.wave48.play-slots.tsv:64"
+        "status.wave48.play-slots.tsv:64",
+        "status.wave49.play-casino.tsv:46"
       ],
       "status": "blocked-on-backend"
     },
@@ -5059,7 +5019,8 @@
         "status.wave44.play-hub.tsv:48",
         "status.wave45.play-slots.tsv:63",
         "status.wave46.play-slots.tsv:59",
-        "status.wave48.play-slots.tsv:67"
+        "status.wave48.play-slots.tsv:67",
+        "status.wave49.play-casino.tsv:49"
       ],
       "status": "partial"
     },
@@ -5443,7 +5404,8 @@
       "resolved": null,
       "rows": [
         "status.wave47b.trench.tsv:21",
-        "status.wave48.trench.tsv:78"
+        "status.wave48.trench.tsv:78",
+        "status.wave49.trench.tsv:85"
       ],
       "status": "partial"
     },
@@ -5527,7 +5489,8 @@
         "status.wave44.trench.tsv:94",
         "status.wave46.trench.tsv:84",
         "status.wave47.trench.tsv:69",
-        "status.wave48.trench.tsv:69"
+        "status.wave48.trench.tsv:69",
+        "status.wave49.trench.tsv:77"
       ],
       "status": "partial"
     },
@@ -5545,7 +5508,8 @@
         "status.wave44.trench.tsv:92",
         "status.wave46.trench.tsv:83",
         "status.wave47.trench.tsv:68",
-        "status.wave48.trench.tsv:68"
+        "status.wave48.trench.tsv:68",
+        "status.wave49.trench.tsv:76"
       ],
       "status": "partial"
     },
@@ -5608,7 +5572,8 @@
         "status.wave44.trench.tsv:102",
         "status.wave46.trench.tsv:88",
         "status.wave47.trench.tsv:73",
-        "status.wave48.trench.tsv:73"
+        "status.wave48.trench.tsv:73",
+        "status.wave49.trench.tsv:81"
       ],
       "status": "partial"
     },
@@ -5626,7 +5591,8 @@
         "status.wave44.trench.tsv:101",
         "status.wave46.trench.tsv:87",
         "status.wave47.trench.tsv:72",
-        "status.wave48.trench.tsv:72"
+        "status.wave48.trench.tsv:72",
+        "status.wave49.trench.tsv:80"
       ],
       "status": "partial"
     },
@@ -5659,7 +5625,8 @@
         "status.wave44.trench.tsv:103",
         "status.wave46.trench.tsv:89",
         "status.wave47.trench.tsv:74",
-        "status.wave48.trench.tsv:74"
+        "status.wave48.trench.tsv:74",
+        "status.wave49.trench.tsv:82"
       ],
       "status": "partial"
     },
@@ -5720,7 +5687,8 @@
         "status.wave44.trench.tsv:95",
         "status.wave46.trench.tsv:85",
         "status.wave47.trench.tsv:70",
-        "status.wave48.trench.tsv:70"
+        "status.wave48.trench.tsv:70",
+        "status.wave49.trench.tsv:78"
       ],
       "status": "partial"
     },
@@ -5767,7 +5735,8 @@
         "status.wave44.trench.tsv:96",
         "status.wave46.trench.tsv:86",
         "status.wave47.trench.tsv:71",
-        "status.wave48.trench.tsv:71"
+        "status.wave48.trench.tsv:71",
+        "status.wave49.trench.tsv:79"
       ],
       "status": "partial"
     },
@@ -5812,7 +5781,8 @@
         "status.wave43.home.tsv:79",
         "status.wave44.home-whales-intel.tsv:49",
         "status.wave45.home-intel-whales.tsv:29",
-        "status.wave46.home.tsv:69"
+        "status.wave46.home.tsv:69",
+        "status.wave49.home-whales.tsv:49"
       ],
       "status": "partial"
     },
@@ -6024,7 +5994,8 @@
         "status.wave45.home-portfolio.tsv:43",
         "status.wave46.home.tsv:63",
         "status.wave47.home.tsv:88",
-        "status.wave48.home-ai.tsv:62"
+        "status.wave48.home-ai.tsv:62",
+        "status.wave49.home-screens-portfolio.tsv:47"
       ],
       "status": "partial"
     },
@@ -6060,7 +6031,8 @@
         "status.wave45.home-portfolio.tsv:46",
         "status.wave46.home.tsv:66",
         "status.wave47.home.tsv:90",
-        "status.wave48.home-ai.tsv:64"
+        "status.wave48.home-ai.tsv:64",
+        "status.wave49.home-screens-portfolio.tsv:49"
       ],
       "status": "partial"
     },
@@ -6118,7 +6090,8 @@
         "status.wave45.home-intel-whales.tsv:47",
         "status.wave46.home.tsv:59",
         "status.wave47.home.tsv:84",
-        "status.wave48.home-ai.tsv:58"
+        "status.wave48.home-ai.tsv:58",
+        "status.wave49.trade-predict-rewards-wallet.tsv:40"
       ],
       "status": "partial"
     },
@@ -6249,7 +6222,8 @@
         "status.wave45.home-portfolio.tsv:45",
         "status.wave46.home.tsv:65",
         "status.wave47.home.tsv:89",
-        "status.wave48.home-ai.tsv:63"
+        "status.wave48.home-ai.tsv:63",
+        "status.wave49.home-screens-portfolio.tsv:48"
       ],
       "status": "partial"
     },
@@ -6299,7 +6273,8 @@
         "status.wave45.home-portfolio.tsv:40",
         "status.wave46.home.tsv:61",
         "status.wave47.home.tsv:86",
-        "status.wave48.home-ai.tsv:60"
+        "status.wave48.home-ai.tsv:60",
+        "status.wave49.home-screens-portfolio.tsv:45"
       ],
       "status": "partial"
     },
@@ -6318,7 +6293,8 @@
         "status.wave45.home-portfolio.tsv:41",
         "status.wave46.home.tsv:62",
         "status.wave47.home.tsv:87",
-        "status.wave48.home-ai.tsv:61"
+        "status.wave48.home-ai.tsv:61",
+        "status.wave49.home-screens-portfolio.tsv:46"
       ],
       "status": "partial"
     },
@@ -6762,7 +6738,8 @@
         "status.wave45.wallet-trade.tsv:37",
         "status.wave46.launch-rewards-wallet-trade.tsv:66",
         "status.wave47.launch-rewards-wallet-trade.tsv:60",
-        "status.wave48.launch-rewards-wallet-trade.tsv:53"
+        "status.wave48.launch-rewards-wallet-trade.tsv:53",
+        "status.wave49.trade-predict-rewards-wallet.tsv:43"
       ],
       "status": "partial"
     },
@@ -7315,7 +7292,8 @@
         "status.wave44.play-hub.tsv:41",
         "status.wave45.play-slots.tsv:59",
         "status.wave46.play-slots.tsv:54",
-        "status.wave48.play-slots.tsv:63"
+        "status.wave48.play-slots.tsv:63",
+        "status.wave49.play-casino.tsv:45"
       ],
       "status": "partial"
     }
@@ -11425,17 +11403,17 @@
       "id": "10912-148682",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11066-23332",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11109-81960",
@@ -14043,7 +14021,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "5160-207895",
@@ -14865,8 +14843,8 @@
       "id": "11341-85236",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
       "verdict": "partial"
     },
     {
@@ -14899,7 +14877,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "11365-21892",
@@ -14971,7 +14949,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "11373-22600",
@@ -15258,7 +15236,7 @@
       "page": "✅ Social",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -15275,14 +15253,14 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "11385-27845",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": null
     },
     {
@@ -15347,7 +15325,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "11387-28789",
@@ -23825,8 +23803,8 @@
       "id": "14108-103468",
       "page": "✅ Home 1",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "done",
+      "claimed": "done",
       "verdict": null
     },
     {
@@ -27222,6 +27200,54 @@
       "verdict": null
     },
     {
+      "id": "15381-62967",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "15382-178517",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "15382-179595",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
+      "verdict": null
+    },
+    {
+      "id": "15382-88845",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "15381-88675",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "15382-178395",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
       "id": "13008-37430",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
@@ -27243,6 +27269,22 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
+      "verdict": null
+    },
+    {
+      "id": "15382-180724",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "not-started",
+      "claimed": "not-started",
+      "verdict": null
+    },
+    {
+      "id": "15382-180505",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "not-started",
+      "claimed": "not-started",
       "verdict": null
     },
     {
@@ -29315,6 +29357,14 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
+      "verdict": null
+    },
+    {
+      "id": "15411-182296",
+      "page": "✅ Trade 1",
+      "scope": "in-scope",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
       "verdict": null
     },
     {
@@ -31539,7 +31589,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "13006-182640",
@@ -31612,6 +31662,14 @@
       "status": "done",
       "claimed": "done",
       "verdict": null
+    },
+    {
+      "id": "15402-181831",
+      "page": "✅ Trade 2",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "13006-185256",
@@ -33409,9 +33467,9 @@
       "id": "13006-319384",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-319525",
@@ -33449,9 +33507,9 @@
       "id": "13006-321307",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-321483",
@@ -33467,7 +33525,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13006-321865",
@@ -33961,8 +34019,8 @@
       "id": "13006-348660",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
@@ -34091,7 +34149,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "13006-356801",
@@ -34105,9 +34163,9 @@
       "id": "13006-356941",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-357209",
@@ -34115,6 +34173,14 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
+      "verdict": null
+    },
+    {
+      "id": "15411-182436",
+      "page": "✅ Trade 2",
+      "scope": "in-scope",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": null
     },
     {
