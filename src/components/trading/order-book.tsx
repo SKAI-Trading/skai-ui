@@ -124,6 +124,19 @@ export interface OrderBookProps {
    * and keeps `sizePrecision`.
    */
   formatPrice?: (value: number) => string;
+  /**
+   * Render the Total column, when it does not read like the Price column.
+   *
+   * They are both cash and they were given one formatter, but frame 9002:163721
+   * does not write them the same way: Price is "$121,723" and Total beside it is
+   * "2,889,871" — grouped, and with no currency mark. The column header already
+   * carries the unit ("Total (USDT)"), so repeating it on every row would say
+   * the same thing twice down the ladder.
+   *
+   * Defaults to `formatPrice`, so a caller that passes only that keeps the
+   * behaviour it has, and a caller that passes neither keeps `toFixed`.
+   */
+  formatTotal?: (value: number) => string;
   /** Size precision (decimal places) */
   sizePrecision?: number;
   /** Quote currency symbol — denominates Price and Total */
@@ -194,6 +207,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       pricePrecision = 2,
       sizePrecision = 4,
       formatPrice,
+      formatTotal,
       quoteCurrency = "USDT",
       baseCurrency = quoteCurrency,
       showDepthBars = true,
@@ -286,9 +300,15 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
     const maxAskTotal = data.asks[data.asks.length - 1]?.total || 1;
 
     // Price and Total are cash; Size is a quantity and is deliberately not
-    // routed through this. Default preserves the previous toFixed output.
+    // routed through either. Default preserves the previous toFixed output.
     const money = (v: number) =>
       formatPrice ? formatPrice(v) : v.toFixed(pricePrecision);
+
+    // Total falls back to the price formatter, so a caller that passes one gets
+    // what it got before; 9002:163721 draws the two differently and a caller
+    // that cares now says so.
+    const totalMoney = (v: number) =>
+      formatTotal ? formatTotal(v) : money(v);
 
     const renderLevel = (
       level: OrderBookLevel,
@@ -368,7 +388,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             {level.size.toFixed(sizePrecision)}
           </span>
           <span className="relative z-10 w-[70px] shrink-0 text-right text-white">
-            {money(level.size * level.price)}
+            {totalMoney(level.size * level.price)}
           </span>
         </div>
       );
