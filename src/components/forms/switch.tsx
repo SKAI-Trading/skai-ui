@@ -2,13 +2,39 @@ import * as React from "react";
 import * as SwitchPrimitives from "@radix-ui/react-switch";
 import { cn } from "../../lib/utils";
 
+/**
+ * The checked track, and why there is a choice to make.
+ *
+ * `bg-primary` is faithful to THIS package: design-tokens.css sets
+ * `--primary: 200 90% 65%`, the Sky Blue #56C7F3 the Figma component draws, so
+ * the toggle is blue in Storybook. The main app redefines the same variable —
+ * `src/index.css:502`, `--primary: 160 84% 55%`, Alien Green #2DEDAD — so the
+ * identical component renders green there. Nobody changed the switch; the token
+ * under it means something different in each surface.
+ *
+ * `sky` pins the sampled value instead of resolving a variable, so it is the
+ * same colour wherever it is mounted. Reports 4cbb5583 and 91a0a43a are the
+ * Predict settings panels, which opt in.
+ *
+ * The default stays `bg-primary` deliberately: flipping it would repaint every
+ * toggle in the app, the wallet and command in one commit. Whether the app's
+ * `--primary` should be green at all is a separate question, and a bigger one.
+ */
+const CHECKED_TRACK = {
+  primary: "data-[state=checked]:bg-primary",
+  sky: "data-[state=checked]:bg-[#56C7F3]",
+} as const;
+
+export type SwitchVariant = keyof typeof CHECKED_TRACK;
+
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & { variant?: SwitchVariant }
+>(({ className, variant = "primary", ...props }, ref) => (
   <SwitchPrimitives.Root
     className={cn(
-      "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none",
+      "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors data-[state=unchecked]:bg-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none",
+      CHECKED_TRACK[variant],
       className,
     )}
     {...props}
