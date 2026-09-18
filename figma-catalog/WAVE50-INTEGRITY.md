@@ -230,6 +230,14 @@ priority-fee market (left unbuilt).
 
 ## 5. Decisions for Casey
 
+Ruled 2026-09-18 12:2x Denver, at the close: (1) guard the RTP with the explicit
+unavailable state, never a number (wave 51 slots lane, shared engine); (2) "Build all
+features to match" — the gas tracker tiles are built to the frame with the base fee as
+the one real number and the tier deltas drawn as the explicit unavailable state, because
+the chain has no priority-fee market (wave 51 explorer lane); (3) keep the app's honest
+branch and fix the two Airdrop boards. The other 63 ride on the shipped defaults in
+brackets until Casey says otherwise.
+
 Top of the list, because a player can read them:
 
 1. Hooked Information screen prints "RTP NaN%" from uncertified sentinels
