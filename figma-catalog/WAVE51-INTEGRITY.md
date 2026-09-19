@@ -105,7 +105,83 @@ the three 375 Rewards boards had never been opened; and the slot menu drawer was
 landscape box centred on every stage. New decisions for Casey are listed in
 `scratchpad/wave51/lanes.json` reports and carried into section 3 below.
 
+## 2c. The fleet, phase 2 (14:0x to 16:5x Denver)
+
+The peer released the tree at 14:00 (origin/main 75a29ec98, its gate 0 new / 2520 known)
+and six lanes went out over the whole tree. At about 14:5x the session limit (429,
+"resets 4:20pm") killed all six mid-edit: seven commits had already landed, ten files
+were dirty across five lanes, no status file existed. After the reset every lane was
+resumed by id with its inventory (`inventory-kill.mjs`: dirty files by longest owns
+prefix, commits since dispatch per repo, status-file presence) and the two rulings Casey
+gave through the peer at 14:0x restated. Phase 2:
+
+| lane | rows | done | partial | other | commits |
+|---|---:|---:|---:|---:|---|
+| trade | 12 | 3 | 9 | 0 | b7547f127, e8ef0bb28, 73cf6bbc6 |
+| predict | 18 | 0 | 18 | 0 | 58d19e2f4, ebc5ae44a |
+| play-games | 10 | 0 | 10 | 0 | skai-gaming 5daf26f9, d8d8bb34 |
+| social | 15 | 0 | 15 | 0 | ea434c249, 9bc0dedea |
+| trench-launch | 6 | 0 | 6 | 0 | 200bdebeb, 4ac290613 |
+| governance-explorer-earn | 12 | 0 | 9 | 2 frame-defect | 7b9751fd4, 55689741d, 5505d5e07, 28746ab0e |
+| **total** | **73** | **3** | **67** | **2** | |
+
+Folded as skai-ui 6d20c95: done 756 to 759 (19.8%), visually verified 334 to 337,
+pull-downs 44 to 47. Across both phases: 140 rows, 11 done, 121 partial, 8 other; done
+749 to 759 of 3,825 (19.6% to 19.8%), verified 327 to 337.
+
+What phase 2 found: two spot rows had measured the wrong element for a year (the
+`min-h` on the row, not the section; a Market Cap cell on a header the perps route does
+not mount); the wave 50 predict hand-off would have been a regression (`breaking` is a
+sort id, `/predict/breaking` is the 404 branch) and was refused with evidence; the
+global leaderboard now draws Frame 859 at all three boards, replacing the dashboard card
+list; the "six social components have no mount site" reading came from a JSX sweep that
+cannot match a multi-line open tag; a Trench blocker had expired without the row being
+re-read (the cell that printed "1 SOL" was relabelled "Buy" the same day); three
+Governance and Earn surfaces had left a whole block of their board out because one
+figure inside it had no source (the Farmers tile, the Airdrop Price tile, the Other
+yield vaults row), and the Earn Positions tab was rendering the Opportunities component;
+the chicken bet panel's phone rung was built child for child while the page sections'
+phone gutter sat 12 inside a board at 0.
+
 ## 3. Decisions for Casey
+
+From phase 2 (shipped default in brackets):
+
+17. Leverage drawer at 1440: base 3928-85741 and ALT 3931-85816 both draw a 52-tall
+    slider; the build ships the 62-tall ALT-2 input on the 2026-09-09 ruling. (a) keep
+    the input [current], (b) switch to the slider, (c) also drop the preset bar and
+    readouts as the base does.
+18. Order-type strip 3899-7131 / 3900-7416: frame 52 vs shipped 40, from a 99x26 control
+    the frames lay out and never paint. (a) keep 40 [current], (b) build the control,
+    (c) pad to 52.
+19. 3886-15109 24h absolute move: this frame paints it white, three other nodes paint it
+    #17F9B4. (a) follow the three [current], (b) follow this one.
+20. Predict amount row's `$1.00` cell: leave unbuilt [current], print a hardcoded sUSD
+    price, or thread a real read.
+21. Predict mode tabs: bare words at gap 24 (10211:15507) or 36x22 chips (10315:19636)
+    at the same width. Which governs?
+22. ActivityPanel's "for <date>" clause would repeat the market's target date on every
+    row: split anyway, drop the clause, or thread it [one line, current].
+23. Should a sports fixture card be selectable at all? `SportsLiveBoard` mounts with no
+    `onSelect`, so the board's selected state has no source.
+24. Baccarat panels draw no Player / Tie / Banker cell. (A) build the chip rail and move
+    the side choice onto the felt, (B) restyle the three buttons into the frame's 324x42
+    housing.
+25. Chicken's phone cuts omit the Risk block; the rail settles four boards. (A) the frame
+    wins and the control is unreachable on a phone, (B) keep it and record the departure
+    [current].
+26. Chicken bet block: 9380-10283 says 86, 9380-10404 says 84, same panel, same width.
+    A designer settles it.
+27. /messages: retire its own DropdownMenu for the matching social panels? (a) wire it,
+    (b) keep both [current], (c) defer to a messages wave.
+28. Trench Adjust-filters panel (13006-155570): (a) keep "Filters" with "Adjust filters"
+    as tab 1 per the later 185xxx family [current], (b) this frame's title, drop the tab
+    rail.
+29. Its two-thumb range slider with live readout under Market cap and 24h volume:
+    (a) build it (the domains are frame literals, not feed data), (b) keep the eight bare
+    Min. / Max. pairs [current].
+30. Airdrop Frame 604 promo cards: build, keep current, or drop from the board?
+31. Frame 11667:309359 reads "Token overveiw": ship the typo, or fix Figma?
 
 From phase 1 (shipped default in brackets):
 
