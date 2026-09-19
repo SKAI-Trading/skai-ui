@@ -56,6 +56,13 @@ function genOf(stem) {
   return Number(/^wave(\d+)\./.exec(stem)?.[1] ?? 0);
 }
 
+function foldStatusReason(reason, notes) {
+  const markerPattern = /\s*\[vverify:[\s\S]*$/;
+  const base = reason.replace(markerPattern, "").trim();
+  const kept = markerPattern.exec(notes || "");
+  return kept ? `${base} ${kept[0].trim()}`.trim() : base;
+}
+
 /*
   ── `--self-test`: pin the SUPERSESSION ORDER ──────────────────────────────────
 
@@ -72,6 +79,18 @@ function genOf(stem) {
   back — WAVE9-INTEGRITY §4's "a clean-looking cutoff can be half a mechanism".
 */
 if (process.argv.includes("--self-test")) {
+  const marker = "[vverify: match | shot.png | measured]";
+  const expected = `Current status ${marker}`;
+  for (const reason of ["Current status", `Current status ${marker}`]) {
+    const folded = foldStatusReason(reason, `Previous status ${marker}`);
+    if (folded !== expected || foldStatusReason(reason, folded) !== expected) {
+      throw new Error("Status folding must preserve one visual marker without duplication");
+    }
+  }
+  if (foldStatusReason(`Current status ${marker}`, "") !== "Current status") {
+    throw new Error("Status prose must not create unsupported visual verification");
+  }
+  console.log("  PASS  visual markers remain idempotent and evidence-backed");
   const cases = [
     ["wave 10 sorts AFTER wave 9 (the 2026-09-01 inversion)", "wave9.x", "wave10.x"],
     ["wave 10 sorts AFTER wave 2", "wave2.x", "wave10.x"],
@@ -420,8 +439,7 @@ for (const [regKey, f] of Object.entries(reg.frames)) {
     // previous run. Dropping it here made the marker look new on every run, so
     // apply-verify re-stamped verifiedAt on 873 frames whose verdict had not
     // moved (2026-09-09). apply-verify strips and re-adds it idempotently.
-    const kept = /\s*\[vverify:[\s\S]*$/.exec(f.notes || "");
-    f.notes = kept ? `${s.reason} ${kept[0].trim()}` : s.reason;
+    f.notes = foldStatusReason(s.reason, f.notes);
   }
   if (s.primaryFile && s.primaryFile !== "-" && !f.implFiles.includes(s.primaryFile))
     f.implFiles.push(s.primaryFile);

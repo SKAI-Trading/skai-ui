@@ -33,6 +33,26 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import assert from "node:assert/strict";
+
+const MARKER = /\s*\[vverify:[\s\S]*$/;
+
+function shouldStampVerification(frame, marker) {
+  const previousMarker = (frame.notes || "").match(MARKER)?.[0].trim();
+  return !frame.verifiedAt || previousMarker !== marker;
+}
+
+if (process.argv.includes("--self-test")) {
+  const marker = "[vverify: match | shot.png | measured]";
+  const frame = { notes: `Updated build-status prose ${marker}`, verifiedAt: "2026-09-09" };
+  assert.equal(shouldStampVerification(frame, marker), false);
+  assert.equal(shouldStampVerification({ ...frame, notes: marker }, marker), false);
+  assert.equal(shouldStampVerification({ ...frame, verifiedAt: undefined }, marker), true);
+  assert.equal(shouldStampVerification(frame, "[vverify: partial | shot.png | measured]"), true);
+  assert.equal(shouldStampVerification({ ...frame, notes: "No verdict yet" }, marker), true);
+  console.log("apply-verify self-test: 5 verification timestamp cases passed");
+  process.exit(0);
+}
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const regPath = path.join(DIR, "registry.json");
@@ -56,7 +76,6 @@ const VALID = new Set(["match", "partial", "deferred", "not-wired"]);
 // first `[vverify:` to end-of-string. Using [^\]]* (stop at first `]`) breaks
 // when a folded note itself contains `]` — it leaves a tail that accumulates on
 // every re-run. [\s\S]*$ removes the whole marker regardless of inner brackets.
-const MARKER = /\s*\[vverify:[\s\S]*$/;
 const now = new Date().toISOString();
 
 // section/node -> {verdict, shot, note}
@@ -97,7 +116,7 @@ for (const f of Object.values(reg.frames)) {
     if (MARKER.test(f.notes || "")) f.notes = f.notes.replace(MARKER, "").trim();
     continue;
   }
-  const had = { notes: f.notes, status: f.status };
+  const had = { notes: f.notes, verifiedAt: f.verifiedAt };
   // Fold verdict + shot (+ optional note) into notes behind an idempotent marker.
   // `-` is the "no shot" placeholder (mirrors apply-status.mjs route handling).
   // Strip `]` from free-text fields so the marker stays a single bracket token
@@ -119,7 +138,7 @@ for (const f of Object.values(reg.frames)) {
   // and stops the pipeline from ever producing a clean second run. The marker
   // is the whole verdict, so it alone decides; `status` is compared against
   // what apply-status just wrote and would re-stamp every downgraded frame.
-  if (!f.verifiedAt || f.notes !== had.notes) f.verifiedAt = now;
+  if (shouldStampVerification(had, marker)) f.verifiedAt = now;
   applied++;
 }
 
