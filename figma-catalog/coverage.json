@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T17:30:41.996Z",
+  "generated": "2026-09-19T17:42:13.692Z",
   "harvestedAt": "2026-09-15",
   "rollup": {
     "pages": 39,
@@ -33,10 +33,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 16418,
+    "total": 16423,
     "namingNoNodeId": 516,
     "namingNoLiveNodeId": 899,
-    "unrecognisedTokens": 28129
+    "unrecognisedTokens": 28138
   },
   "statusFiles": [
     {
@@ -2678,6 +2678,12 @@
       "rows": 9,
       "withLiveId": 9,
       "ids": 11
+    },
+    {
+      "file": "status.wave51.solo.tsv",
+      "rows": 5,
+      "withLiveId": 5,
+      "ids": 5
     },
     {
       "file": "status.wave6.play-bookie.tsv",

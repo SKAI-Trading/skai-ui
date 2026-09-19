@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T17:30:40.680Z",
+  "generated": "2026-09-19T17:42:11.917Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -89757,7 +89757,7 @@
       ],
       "status": "partial",
       "route": "/explorer/gas (ExplorerRoutes.tsx:68)",
-      "notes": "READ LIVE 2026-09-18 and partly built (590238b09). Body 708 at x=30, y=112, 1521 tall; blocks 32 apart (54->86, 346->378, 753->785), so the page stepped space-y-6 to md:space-y-8. Header: no glyph - the frame's icons/action is hidden and Gas tracker starts at x=0, so the 40px Fuel tile came out - and the right group is 114 wide, a 54 tag then 24 then a 36-SQUARE icon-only refresh, so the timestamp and the button's label now stand down until lg. Strap wording already matches, with the live rei figure in the middle leg. FRAME DEFECT, recorded and NOT built: the four 350x126 tiles under the header are Current base fee, Standard, Fast and Super fast, and the last three each print a PRIORITY fee (Priority: 0, 0.01, 0.23). SKAI Chain has no priority-fee market - the gas price is the base fee, as this file's own docblock and calculator both state - so the ladder cannot be built without inventing a fee. Casey's call. Also partial: the board's 708x375 chart is a day-of-week by month HEAT MAP labelled Estimated heat map value (seven row labels on a 37.5 pitch, twelve month labels on a 51.9 pitch), where the page plots a base-fee line over recent blocks; a year of daily gas is not available.",
+      "notes": "BUILT the four fee tiles the board draws under the header (Frame 1000003956 at y=0 and Frame 1000003957 at y=134, each 708x126 holding two 350x126 tiles on an 8 gutter, rows 8 apart): Current base fee, Standard, Fast, Super fast. Tile 11998:249757 read live: Green Coal 200 #122524, radius 12, inset 16, shadow 0/10/80 at 25%, title Manrope 12/16 -0.48 white at the top, description pinned to the bottom with the figure in Mulish Light 24/28 -0.96 white over a Mulish 14/16 -0.56 Ash 300 line at a 4 gap; the 24H chip sits at opacity 0 and is not drawn. Casey 2026-09-18: build the features to match; the chain has no priority-fee market, so every tile prints the live base fee (the board's Standard tile itself reads Priority: 0) and the Fast and Super fast tiles print Priority: no fee market in place of the board's 0.01 and 0.23 premiums - the explicit unavailable state, never a number. The page's former single Current Base Fee card (5xl figure plus a sentence) is replaced by this grid. The rest of the board (chart, blocks table, calculator) was not re-measured this pass; the wave 50 row's readings of header and block rhythm stand.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -90630,7 +90630,7 @@
       ],
       "status": "partial",
       "route": "/explorer/gas (ExplorerRoutes.tsx:68)",
-      "notes": "TOUCHED, not re-read. The 1318 body now reaches this board: ExplorerLayout was capped at max-w-7xl (1280) and the page ALSO capped itself, so the layout fix alone would have changed nothing here. Both caps are gone; the column is main's 1382 with the board's own gutter inside it (32 at 1440 for 1318, 30 at 768 for 708, 16 at 375 for 343). Its gas labels also now read in rei off the one GAS_UNIT constant. Every other gap wave 41 recorded on this frame stands.",
+      "notes": "READ LIVE 2026-09-19 for the tile block only (Frame 631 at y=72, 344 wide): the same four tiles two-up at 168x90 and 167x90 on an 8 gutter with 8 between the rows, inset 12, title 12/14, figure 20/24 at y=24 or y=36, detail 12/14 at +28. Built as the tile's sub-md rung (h-90, p-3, text-xs/14, text-xl/24, text-xs/14). Everything else on this board was not measured this pass.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -135648,11 +135648,12 @@
       "family": "Casino > Hooked",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/slots/games/fisherman-slots/skin.ts"
+        "modules/skai-gaming/src/slots/games/fisherman-slots/skin.ts",
+        "modules/skai-gaming/src/slots/engine/scenes/MenuScene.ts"
       ],
       "status": "partial",
-      "route": "/play/fisherman-slots (host registers)",
-      "notes": "The Home with the menu open: a 167-wide #0D3D57 r12 dropdown at (408, bottom 106) holding Sound / Music / Expand / Information / Expand at 28 each with 16px icons, Manrope 12/16 at 64%, the first row on #05202E. The engine's MenuScene draws its own drawer in Cosmic's palette with its own rows (need 4/3 - palette). FRAME DEFECT NOTED: \"Expand\" appears twice.",
+      "route": "/play/fisherman-slots",
+      "notes": "COPY, not geometry. Casey 2026-09-18: guard the RTP. The menu's rules block printed RTP NaN% and NaN free spins for Hooked because its definition carries the uncertified sentinels (games/fisherman-slots/uncertified.ts). The engine now formats every rules line through engine/certification.ts: a certified game prints its config's figures as before; Hooked prints the grid line and one sentence saying its bonus rules, win cap and return are not yet certified. The paytable's corner figure does the same (Return to player not yet certified). The board's own figures are the Safari template's (wave 50 reading), so the frame and the app still disagree on that text and the row stays partial; the geometry verdict of the wave 50 row stands unchanged.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -136651,11 +136652,12 @@
       "family": "Casino > Hooked",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/slots/games/fisherman-slots/skin.ts"
+        "modules/skai-gaming/src/slots/games/fisherman-slots/skin.ts",
+        "modules/skai-gaming/src/slots/engine/scenes/MenuScene.ts"
       ],
       "status": "partial",
-      "route": "/play/fisherman-slots (host registers)",
-      "notes": "Read as metadata: the tablet Home with a 309x704 drawer at (8,8), \"Game menu\" heading, the five 28-high rows and the crumb at (16,672); also a hidden Mines panel (stray). No tablet layout and MenuScene's own drawer (needs 6, 4).",
+      "route": "/play/fisherman-slots",
+      "notes": "Same copy guard as 11598-21432 at the tablet menu: no NaN reaches the screen; the board's figures are the Safari template's, so the text still differs and the row stays partial. Geometry not re-measured.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
@@ -136926,11 +136928,12 @@
       "family": "Casino > Hooked",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/slots/games/fisherman-slots/skin.ts"
+        "modules/skai-gaming/src/slots/games/fisherman-slots/skin.ts",
+        "modules/skai-gaming/src/slots/engine/scenes/MenuScene.ts"
       ],
       "status": "partial",
-      "route": "/play/fisherman-slots (host registers)",
-      "notes": "Read as metadata: the mobile Home with a 207x484 drawer at (8,8): \"Game menu\" 22 + close, five rows of 28 on a 36 pitch (Sound / Music / Expand / Information / Expand), the crumb at (12,460). MenuScene draws its own drawer (need 4/3).",
+      "route": "/play/fisherman-slots",
+      "notes": "Same copy guard as 11598-21432 at the mobile menu: no NaN reaches the screen; the board's figures are the Safari template's, so the text still differs and the row stays partial. Geometry not re-measured.",
       "verifiedAt": null,
       "bpStatus": "partial"
     },
