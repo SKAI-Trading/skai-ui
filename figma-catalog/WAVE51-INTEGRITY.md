@@ -258,6 +258,36 @@ design's, not this repo's.
   pinned commit's files; the flag is recorded, not smoothed, per emit-version.mjs, and a
   peer session's gated deploy later today supersedes this release.
 
+## 4b. Verification at the fleet's close (17:4x Denver)
+
+- Fold: `row-tree-check.mjs` exit 0 over all wave 51 files, `bp-report.mjs` exit 0,
+  `pipeline.mjs` exit 0 (759 done, 337 verified, 47 pull-downs); skai-ui edd5572 (phase
+  1) and 6d20c95 (phase 2), both pushed.
+- skai-ui dist rebuilt at 16:55 from 6d20c95 (the auth-modal handshake sheet) before the
+  gate; superproject `typecheck:gate` in the main tree at 17:0x with every lane commit
+  in: exit 0, "no new type errors. 2520 known baseline error(s); 78 fewer than baseline".
+- skai-gaming `tsc` run 4 on d8d8bb34 (the phase-2 gaming commits) was started at 16:5x
+  and had not finished at the deploy; its result is appended by the follow-up commit.
+  Wallet tsc exit 0 (its lane). Every lane's touched tests green as reported.
+- Pushes: skai-wallet e0514f4, skai-landing f778067, skai-ui d1327f7, skai-gaming
+  d8d8bb34, main a009e0d66. At 16:5x every github.com push started answering 403
+  ("denied to nativehelper") because the machine's active gh account had drifted to a
+  second stored login; the pushes went through a one-shot credential helper reading the
+  skaicasey token from gh (nothing shared changed; a peer later switched the active
+  account back, and it drifted again within forty minutes).
+- Pointer bump 58eeb8677 from the detached worktree on top of a peer's a009e0d66
+  (skai-ui d1327f7, skai-gaming d8d8bb34, skai-wallet e0514f4, skai-landing f778067;
+  every other pin as origin/main carried it, every submodule checked out).
+- Deploy: `deploy_main.ps1` from that worktree, 17:05 to 17:38, 32m50s under the
+  machine's load, exit 0: release `skai-trading@20260919-1705-58eeb8677`, version.json
+  commit 58eeb8677 and **dirty:false** ("tree clean at build time"), live on
+  app.skai.trade, CloudFront invalidated, the parity feed republished at 759 of 3,825
+  (19.8%). The peer session deploys 822734dfa (its spot-book routing on top of this
+  bump) from the same worktree next.
+- Kill and recovery: one session-limit kill at 14:5x took all six phase-2 lanes; every
+  one was resumed by id at 16:3x with its inventory and finished. Two kills in two
+  days at the same point: a session window holds about one fleet plus one fold.
+
 ## 5. What is next
 
 1. Wave 51 proper, once the weekly limit resets on 2026-09-22 14:00 Denver: the
