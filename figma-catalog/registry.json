@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T00:32:27.911Z",
+  "generated": "2026-09-19T17:30:40.680Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -54,8 +54,8 @@
   },
   "pagesHarvested": "2026-09-15",
   "stats": {
-    "total": 4800,
-    "titled": 4800,
+    "total": 4801,
+    "titled": 4801,
     "cited": 1032,
     "bySection": {
       "home": {
@@ -87,10 +87,10 @@
         "cited": 134
       },
       "play": {
-        "frames": 377,
-        "titled": 377,
+        "frames": 378,
+        "titled": 378,
         "screens": 159,
-        "nonScreen": 218,
+        "nonScreen": 219,
         "cited": 66
       },
       "dice": {
@@ -369,14 +369,14 @@
     },
     "keyCollisions": {
       "total": 0,
-      "idsListed": 4800,
-      "rowsKept": 4800,
+      "idsListed": 4801,
+      "rowsKept": 4801,
       "reconciles": true,
       "bySectionPair": {}
     },
     "citationRefusals": [],
     "byReadiness": {
-      "ready": 4692,
+      "ready": 4693,
       "meta": 90,
       "wip": 3,
       "unknown": 15
@@ -417,9 +417,9 @@
       {
         "page": "✅ Play",
         "readiness": "ready",
-        "rows": 377,
+        "rows": 378,
         "gone": 0,
-        "live": 345,
+        "live": 346,
         "delta": -32
       },
       {
@@ -46837,6 +46837,29 @@
       "notes": "The 812-tall crop of 11211:82876; its hand-off is closed in source with it - see that row. Column exact at 16.",
       "verifiedAt": null,
       "bpStatus": "partial"
+    },
+    "13549-99145": {
+      "section": "play",
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "fileName": "Skai-Web-App",
+      "node": "13549-99145",
+      "title": "Frame 633",
+      "page": "✅ Play",
+      "readiness": "ready",
+      "screen": "Frame 633",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "non-screen",
+      "family": null,
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
     },
     "11100-63268": {
       "section": "play",

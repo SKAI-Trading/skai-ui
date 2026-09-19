@@ -8,12 +8,12 @@ Live half harvested 2026-09-15 (harvest.mjs: one use_figma call per chunk (see `
 | | |
 |---|---:|
 | In-scope pages | 39 |
-| Live top-level nodes | 4601 |
+| Live top-level nodes | 4602 |
 | — furniture (excluded from the denominator) | 777 (16.9%) |
-| **Genuine frames — the denominator** | **3824** |
-| Genuine frames with a catalog row (matched by node id) | 3823 (100.0%) |
+| **Genuine frames — the denominator** | **3825** |
+| Genuine frames with a catalog row (matched by node id) | 3823 (99.9%) |
 | — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 0 (0.0% of matched) |
-| Genuine frames with NO row — live-only drift | 1 (0.0%) |
+| Genuine frames with NO row — live-only drift | 2 (0.1%) |
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
@@ -41,11 +41,11 @@ That is 16.9% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**749 of 3824 in-scope genuine frames (19.6%) are covered by a row marked `done`.**
+**749 of 3825 in-scope genuine frames (19.6%) are covered by a row marked `done`.**
 
 Read the caveat section before quoting that. It is not 19.6% measured parity.
 
-**327 of those 749 (8.6% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 422 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 44 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` map to no page in pages.json and are not applied.
+**327 of those 749 (8.5% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 422 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 44 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` map to no page in pages.json and are not applied.
 
 ## Out of the roll-up
 
@@ -66,7 +66,7 @@ Read the caveat section before quoting that. It is not 19.6% measured parity.
 | ✅ Social | in-scope | 442 | 40 | 402 | 402 | 83 | 227 | 41 | 37 | 0 | 100.0% |
 | ✅ Trade 2 | in-scope | 420 | 41 | 379 | 379 | 101 | 218 | 18 | 23 | 0 | 100.0% |
 | ✅ Trade 1 | in-scope | 421 | 53 | 368 | 368 | 40 | 295 | 9 | 15 | 0 | 100.0% |
-| ✅ Play | in-scope | 345 | 76 | 269 | 269 | 51 | 141 | 54 | 1 | 0 | 100.0% |
+| ✅ Play | in-scope | 346 | 76 | 270 | 269 | 51 | 141 | 54 | 1 | 1 | 99.6% |
 | ✅ Predict | in-scope | 284 | 30 | 254 | 254 | 32 | 132 | 48 | 22 | 0 | 100.0% |
 | ✅ Home 1 | in-scope | 280 | 44 | 236 | 236 | 100 | 120 | 9 | 0 | 0 | 100.0% |
 | ✅ Home 2 | in-scope | 242 | 38 | 204 | 204 | 57 | 118 | 17 | 8 | 0 | 100.0% |
@@ -208,6 +208,12 @@ Ranked by count. These are the unassessed frames.
 
 ```
 10400-4	67x24442	Frame 1
+```
+
+### ✅ Play — 1 live-only of 270 genuine  _(in-scope)_
+
+```
+13549-99145	343x200	Frame 633
 ```
 
 ### Thumbnail — 1 live-only of 1 genuine  _(meta)_
@@ -411,7 +417,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 **7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **117 of the 3823 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 117/117, ✅ Trade 1 117/368 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
-**8. 202 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
+**8. 203 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
 
 **9. The live half is a snapshot.** `pages.json.liveChildren` was stale on 13 pages when this ran — Home 2 recorded 129 against a measured 168, Governance 260 against 331, Home 1 227 against 254. Re-harvest before quoting these numbers in a new week.
 
