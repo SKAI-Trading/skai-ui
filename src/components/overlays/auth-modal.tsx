@@ -17,6 +17,19 @@
  * likewise draws a password field and stacked socials that no Login board and
  * no auth strategy has.
  *
+ * Login ALT read in full 2026-09-19, and the 34 it is taller than the in-context
+ * Login accounts for both: 448x686 against 518, which is exactly the second
+ * 400x88 field group plus its 24 gap, plus the 56 the socials gain by stacking
+ * (two 400x48 on an 8 gap where the boards put two 196x48 side by side). Every
+ * other measure agrees with what is built — 24 all round, 40 at the foot, the
+ * 36 title, the 62 Continue, the OR rules at 171.5 either side of a 19 gap, the
+ * four 94x48 wallet buttons. Its consent row (10734:74618) is hidden, as the
+ * boards' are.
+ *
+ * The title row's left 16 is a balancing slot, not a control: on every board the
+ * glyph sitting there is the close mark at opacity 0, while the live close is
+ * the one at the right. Drawing nothing there is the same pixels.
+ *
  * Opening the referral row is not a disclosure between the hairlines: the two
  * rules go away and the row becomes the same labelled field group as the email
  * one, whose label gains "(optional)" (11225:184114, 11191:4665, 10734:81012).
