@@ -57,6 +57,38 @@ describe("wallet row", () => {
   });
 });
 
+describe("the handshake sheet", () => {
+  it("stays away until a wallet is actually waiting", () => {
+    setup();
+    expect(screen.queryByTestId("auth-wallet-handshake")).toBeNull();
+  });
+
+  it("names the waiting wallet and says what it is waiting for", () => {
+    setup({ busyWallet: "app.phantom" });
+    const sheet = screen.getByTestId("auth-wallet-handshake");
+    expect(sheet).toHaveTextContent("Phantom");
+    expect(sheet).toHaveTextContent("Requesting Signature");
+    expect(sheet).toHaveTextContent("Please sign in to connect.");
+  });
+
+  it("offers a way back only when the parent can take it", () => {
+    setup({ busyWallet: "app.phantom" });
+    expect(screen.queryByRole("button", { name: /stop connecting/i })).toBeNull();
+  });
+
+  it("reports the back press to the parent", () => {
+    const onWalletCancel = vi.fn();
+    setup({ busyWallet: "me.rainbow", onWalletCancel });
+    fireEvent.click(screen.getByRole("button", { name: "Stop connecting to Rainbow" }));
+    expect(onWalletCancel).toHaveBeenCalledTimes(1);
+  });
+
+  it("is not drawn when the wallet row itself is off", () => {
+    setup({ onWalletLogin: undefined, busyWallet: "io.metamask" });
+    expect(screen.queryByTestId("auth-wallet-handshake")).toBeNull();
+  });
+});
+
 describe("email and socials", () => {
   it("submits a plausible email", () => {
     const props = setup();
