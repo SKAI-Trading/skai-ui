@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T19:24:13.388Z",
+  "generated": "2026-09-19T22:46:51.255Z",
   "harvestedAt": "2026-09-15",
   "rollup": {
     "pages": 39,
@@ -7,17 +7,17 @@
     "furniture": 777,
     "genuine": 3825,
     "matched": 3823,
-    "done": 756,
-    "verified": 334,
-    "visuallyDowngraded": 44,
+    "done": 759,
+    "verified": 337,
+    "visuallyDowngraded": 47,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 2117,
-    "notStarted": 271,
+    "partial": 2109,
+    "notStarted": 274,
     "blocked": 194,
-    "frameDefect": 133,
+    "frameDefect": 135,
     "catalogFurniture": 132,
     "unknown": 219,
     "liveOnly": 2,
@@ -27,16 +27,16 @@
     "conflicts": 2
   },
   "doneRows": {
-    "total": 2558,
-    "withBreakpointProvenance": 1148,
-    "namingANodeId": 2236,
+    "total": 2561,
+    "withBreakpointProvenance": 1151,
+    "namingANodeId": 2239,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 16490,
+    "total": 16563,
     "namingNoNodeId": 516,
     "namingNoLiveNodeId": 899,
-    "unrecognisedTokens": 28343
+    "unrecognisedTokens": 28553
   },
   "statusFiles": [
     {
@@ -2680,6 +2680,12 @@
       "ids": 11
     },
     {
+      "file": "status.wave51.governance-explorer-earn.tsv",
+      "rows": 12,
+      "withLiveId": 12,
+      "ids": 15
+    },
+    {
       "file": "status.wave51.home.tsv",
       "rows": 11,
       "withLiveId": 11,
@@ -2698,6 +2704,18 @@
       "ids": 28
     },
     {
+      "file": "status.wave51.play-games.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 10
+    },
+    {
+      "file": "status.wave51.predict.tsv",
+      "rows": 18,
+      "withLiveId": 18,
+      "ids": 19
+    },
+    {
       "file": "status.wave51.skai-ui-primitives.tsv",
       "rows": 5,
       "withLiveId": 5,
@@ -2710,10 +2728,28 @@
       "ids": 10
     },
     {
+      "file": "status.wave51.social.tsv",
+      "rows": 15,
+      "withLiveId": 15,
+      "ids": 15
+    },
+    {
       "file": "status.wave51.solo.tsv",
       "rows": 5,
       "withLiveId": 5,
       "ids": 5
+    },
+    {
+      "file": "status.wave51.trade.tsv",
+      "rows": 12,
+      "withLiveId": 12,
+      "ids": 14
+    },
+    {
+      "file": "status.wave51.trench-launch.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 8
     },
     {
       "file": "status.wave51.wallet.tsv",
@@ -3699,12 +3735,12 @@
       "ambiguous": 0,
       "conflicts": 0,
       "verified": 11,
-      "visuallyDowngraded": 12,
+      "visuallyDowngraded": 15,
       "byStatus": {
         "done": 83,
-        "partial": 227,
+        "partial": 224,
         "blocked-on-backend": 37,
-        "not-started": 41,
+        "not-started": 44,
         "frame-defect": 12,
         "unknown": 1,
         "blocked-on-casey": 1
@@ -3736,12 +3772,13 @@
       "verified": 1,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 328,
+        "partial": 326,
         "not-started": 54,
         "furniture": 51,
         "unknown": 207,
         "blocked-on-backend": 18,
-        "done": 1
+        "done": 1,
+        "frame-defect": 2
       },
       "liveOnly": []
     },
@@ -3933,12 +3970,12 @@
       "defaultNamed": 43,
       "ambiguous": 117,
       "conflicts": 0,
-      "verified": 37,
+      "verified": 40,
       "visuallyDowngraded": 15,
       "byStatus": {
-        "partial": 295,
+        "partial": 292,
         "blocked-on-backend": 15,
-        "done": 40,
+        "done": 43,
         "furniture": 1,
         "frame-defect": 5,
         "unknown": 3,
@@ -14119,9 +14156,9 @@
       "id": "10213-136686",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11530-303299",
@@ -14143,9 +14180,9 @@
       "id": "10215-137653",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11530-303337",
@@ -14167,9 +14204,9 @@
       "id": "10216-182394",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11380-24252",
@@ -18449,7 +18486,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5243-75704",
@@ -20231,16 +20268,16 @@
       "id": "11667-311059",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
       "verdict": null
     },
     {
       "id": "11667-311323",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
       "verdict": null
     },
     {
@@ -20249,7 +20286,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11667-309576",
@@ -29255,8 +29292,8 @@
       "id": "3962-8774",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -29351,8 +29388,8 @@
       "id": "3886-15237",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -29455,9 +29492,9 @@
       "id": "3903-21478",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9104-77744",
@@ -31545,7 +31582,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13006-158618",
@@ -31625,7 +31662,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13006-169857",
@@ -35785,7 +35822,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "9380-10404",
@@ -36513,7 +36550,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "9799-19202",

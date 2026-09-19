@@ -74,11 +74,78 @@ section's four-up 12 gutter there. `GasTrackerPage.feeTiles.test.ts` pins the or
 the shared base fee, the two priority states and the unknown glyph before the first
 reading. 3 tests green.
 
+## 2b. The fleet, phase 1 (12:49 to 13:2x Denver)
+
+At 12:2x Casey ruled wave 51 proper a half fleet of about twelve lanes, sharing the
+account budget with a peer session's five bug-report lanes. That peer could fence its
+lanes only by path prefix, and its prefixes covered most of `src/` and skai-gaming, so
+the fleet ran in two phases: six lanes first on files outside every peer prefix, six
+more once the peer reported, gated and released the tree (14:00). Phase 1:
+
+| lane | rows | done | partial | other | commits |
+|---|---:|---:|---:|---:|---|
+| skai-ui-primitives | 5 | 3 | 0 | 2 frame-defect | skai-ui 73e64b1, 4e93bb9 |
+| wallet | 11 | 5 | 6 | 0 | skai-wallet baeaef8, e0514f4 |
+| onboarding-landing | 20 | 0 | 20 | 0 | skai-landing c0b23b2, 89ac5a6 |
+| home (AI wizard) | 11 | 0 | 8 | 2 frame-defect, 1 furniture | 77f2e03e6, 28400d2b6, 0fcdde006, 7cff35c09 |
+| learn-account | 10 | 0 | 10 | 0 | be14fb7df |
+| slots (engine) | 10 | 0 | 10 | 0 | skai-gaming e7b70e9c, 345dcabc, e825f39a |
+| **total** | **67** | **8** | **54** | **5** | |
+
+Folded as skai-ui edd5572: done 749 to 756 of 3,825 (19.6% to 19.8%), visually verified
+327 to 334; 21 vverify lines. What the lanes found: the auth modal's "borrowed Axiom
+pane" reason had been false since wave 39 (642 vectors, no image node), and the missing
+wallet handshake sheet was built at 768 and 375; the wallet's wave-41 "field 52 against
+50" deltas had added a border to a border-box box and were never real, the true gap being
+16 between field blocks where the boards draw 20; five more of the landing's wave-50 gap
+terms are the May-versus-August version question, not defects, and all three hero boards
+now draw the subhead the app retired under bug 419bd2b4; the create-agent wizard's step
+rail is two shapes, its rule a column remainder, and its 768 orb was gated behind `lg`;
+the three 375 Rewards boards had never been opened; and the slot menu drawer was the
+landscape box centred on every stage. New decisions for Casey are listed in
+`scratchpad/wave51/lanes.json` reports and carried into section 3 below.
+
 ## 3. Decisions for Casey
 
-None new. The 63 undecided items of `WAVE50-INTEGRITY.md` section 5 stand, and Casey's
-third wave 50 ruling (fix the two Airdrop not-eligible boards; the app keeps its honest
-branch) is design's, not this repo's.
+From phase 1 (shipped default in brackets):
+
+1. Wallet-connect handshake sheet titles itself after the pressed wallet's id; the
+   Phantom-named boards read "MetaMask". (a) keep the pressed id [shipped], (b) design
+   retitles.
+2. 11229:192104 overflows its sheet by 181 either side (a 768 block pasted unresized).
+   (a) design fixes it, (b) reproduce it.
+3. `onWalletCancel` is optional and unwired. (a) pass it at SkaiSignInFlow.tsx:414 and
+   LandingWaitlist.tsx:2693, (b) ship with no back control [current].
+4. Hardware wallet (7482-145038, 7713-13587): build a real BC-UR scanner, or accept the
+   keystore file import and retire the three Scan QR boards as superseded?
+5. Wallet warning-card inset: three boards draw one component three ways (16,12
+   [ships]; 14,10; 12,10). Keep, take one board's, or split by width?
+6. Import-phrase 12/24 toggle: the board hides it; removing it makes 24-word import
+   paste-only. Keep [current] or remove?
+7. Landing username and completion geometry: the May set or the August set?
+8. Landing hero subhead: the frame's "Discover the new world" or the app's "Tap into"
+   (retired under bug 419bd2b4)?
+9. Landing 375 mark clearance: 40, 32, or keep 50 [current]?
+10. Create-agent wizard shell: full-bleed dialog over the app chrome [current,
+    test-pinned] or inside the shell as all ten boards draw it? Every wizard row is
+    partial on this alone.
+11. "Configure trading style" heading: drop (14123:81330 draws none) or keep pending a
+    1440 read [current]?
+12. Mis-titled boards 14179-163655 (titled 1440, is 375) and 14179-163502 (titled "no
+    data", draws data): design renames, or the catalog carries the correction?
+13. Rewards Frame 709 range selector over a money figure: (a) disabled naming its
+    missing source, (b) unbuilt [wave 50 ruling], (c) a dated earnings read.
+14. Rewards Frame 186 "All referrals" segment: (a) disabled, (b) unbuilt [current],
+    (c) a site-wide aggregate.
+15. Create-course step 2 (FAQ, Allow comments): (a) add the columns, (b) ship disabled,
+    (c) hold [current]. Frame defect: the three empty referral boards close with vault
+    copy.
+16. Slot menu rows: the frame's five decorative rows, or four working rows plus volume
+    and rules text [current]?
+
+The 63 undecided items of `WAVE50-INTEGRITY.md` section 5 stand, and Casey's third wave
+50 ruling (fix the two Airdrop not-eligible boards; the app keeps its honest branch) is
+design's, not this repo's.
 
 ## 4. Verification at close
 
@@ -92,9 +159,10 @@ branch) is design's, not this repo's.
 - skai-gaming `tsc --noEmit` with the heap flag, three runs because the first two
   started before the fixes above: run 1 (before the import fix) 2,010 errors with four
   TS2304 in the touched files; run 2 (after the import fix, before the cleanup) 2,005
-  with three; run 3 on the committed state 80cb060 is appended by the follow-up commit.
-  The baseline is about 2,019 (wave 50 close); the count moves with the superproject
-  src the gaming config includes.
+  with three; run 3 on the committed state (80cb060 plus a peer's b128e35b), 12:2x to
+  13:4x under the fleet's load: exit 2, 2,002 errors, none in the five files the RTP
+  guard touched. The baseline is about 2,019 (wave 50 close); the count moves with the
+  superproject src the gaming config includes.
 - Peer state taken as given: origin/main was red on the gate at 81551abcc (five errors
   predating the wave, fixed by peer session 92 at e5035b47f before this pass gated);
   `.env.production` deliberately names the retired outcome-market contract while a
