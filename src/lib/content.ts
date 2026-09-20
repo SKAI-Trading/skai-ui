@@ -244,7 +244,8 @@ export const content = {
       /** ExternalWallet page */
       externalWallet: {
         title: "Link external wallet",
-        subtitle: "Connect your existing wallet to your Skai account.",
+        // 2005:13649 reads "external", the same word as the title above it.
+        subtitle: "Connect your external wallet to your Skai account.",
         skipLabel: "Skip for now",
         wallets: {
           metamask: "Metamask",
