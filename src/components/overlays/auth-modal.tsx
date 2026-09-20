@@ -442,13 +442,20 @@ export function AuthModal({
                   placeholder="example@provider.com"
                   className={cn(FIELD_INPUT, PARAGRAPH_1)}
                 />
-                {/* The frame draws this beside a filled address: the key that
-                    sends it, not a second control. The form's own submit does
-                    the work, so it stays out of the tab order. */}
+                {/* The key that sends the address, not a second control, so it
+                    stays out of the tab order and the form's own submit does
+                    the work. Frame 166 (2005:10011) is the only node that
+                    specifies it: a 16 icon/enter on an 8 gap beside the word in
+                    Manrope Regular 16/22 at -0.64, uppercase, Sky Blue 300 -
+                    not the App Green this had been drawing, which belongs to
+                    the Sign up focus ring. That node itself sits at opacity 0
+                    on its own board, the way the title row's left mark does, so
+                    it says what the affordance looks like and not that this
+                    board shows one. */}
                 {email.trim() !== "" && (
                   <span
                     aria-hidden="true"
-                    className={cn(PARAGRAPH_1, "flex shrink-0 items-center gap-2 text-[#17F9B4]")}
+                    className={cn(PARAGRAPH_1, "flex shrink-0 items-center gap-2 uppercase text-[#56C7F3]")}
                   >
                     <ReturnIcon className="h-4 w-4" />
                     ENTER
