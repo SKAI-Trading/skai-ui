@@ -275,9 +275,12 @@ design's, not this repo's.
 - skai-ui dist rebuilt at 16:55 from 6d20c95 (the auth-modal handshake sheet) before the
   gate; superproject `typecheck:gate` in the main tree at 17:0x with every lane commit
   in: exit 0, "no new type errors. 2520 known baseline error(s); 78 fewer than baseline".
-- skai-gaming `tsc` run 4 on d8d8bb34 (the phase-2 gaming commits) was started at 16:5x
-  and had not finished at the deploy; its result is appended by the follow-up commit.
-  Wallet tsc exit 0 (its lane). Every lane's touched tests green as reported.
+- skai-gaming `tsc` run 4 on d8d8bb34 (the phase-2 gaming commits), 16:5x to 18:1x under
+  the machine's load: exit 2, 2,002 errors, three of them in a touched file,
+  ChickenGame.tsx at 1369, 1406 and 1410, all TS2367 state-literal comparisons that the
+  wave 50 close recorded at 1331, 1368 and 1372 in the same file (the lane's insertions
+  moved them). New errors in touched files: 0. Wallet tsc exit 0 (its lane). Every
+  lane's touched tests green as reported.
 - Pushes: skai-wallet e0514f4, skai-landing f778067, skai-ui d1327f7, skai-gaming
   d8d8bb34, main a009e0d66. At 16:5x every github.com push started answering 403
   ("denied to nativehelper") because the machine's active gh account had drifted to a
