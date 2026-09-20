@@ -142,7 +142,7 @@ WAVE50 section 5, WAVE51 section 3 and WAVE52 section 3.
   identify the build by sha256 a496fbae…967c); four launch migrations applied to prod
   without repo files, recorded by the launch session (38c3ae80e), and an offer_sale_seasons
   content drift (applied 11,573 chars vs committed 12,729) routed to the offer session.
-- Release: the pointer bump from the clean deploy worktree and `deploy_main.ps1` follow this commit; the release stamp (`version.json`, dirty:false) is recorded by the follow-up commit that also carries Casey's rulings on section 3.
+- Release: pointer bump ec05bd92b from the clean deploy worktree (skai-ui 75def55, skai-gaming 0b50e38d, skai-wallet daafc12, skai-landing b7860ef, on the gated main 5092d81fa); `deploy_main.ps1` started 22:57 and `https://app.skai.trade/version.json` reads **skai-trading@20260919-2258-ec05bd92b dirty:false commit:ec05bd92bf9c39a4ca55314961502567a6dfcc23**. Live before it: d4b1a801b (wave 52).
 
 ## 5. Next
 
