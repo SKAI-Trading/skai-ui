@@ -136,7 +136,7 @@ WAVE50 section 5, WAVE51 section 3, WAVE52 section 3 and WAVE53 section 3.
   block-gap correction (the fleet's `predictMarketsBlockGap` test pinned 24 where the boards
   join at 16 below 1440; the fleet takes pin and tokens in one commit, crediting the
   predict-dashboard lane's measurement).
-- Release: the pointer bump from the clean deploy worktree (skai-ui, skai-gaming, skai-landing) and `deploy_main.ps1` follow this commit; the release stamp (`version.json`, dirty:false) is recorded by the follow-up commit that also carries Casey's rulings on section 3.
+- Release: pointer bump 4e111f8ed from the clean deploy worktree (skai-ui 8d3492c, skai-gaming 0311aee1, skai-landing 3ac570f, on the gated main d75c0ade8); `deploy_main.ps1` started 12:29 and `https://app.skai.trade/version.json` reads **skai-trading@20260920-1230-4e111f8ed dirty:false commit:4e111f8ed9c9615eb42275687ac40a8d563bdc3d**. Live before it: ec05bd92b (wave 53).
 
 ## 5. Next
 
