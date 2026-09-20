@@ -114,6 +114,21 @@ Rows: 359. Verdicts: partial 162, done 95, frame-defect 26, blocked-on-backend 5
 Every shipped default named in brackets above stands until Casey says otherwise, as in
 WAVE50 section 5, WAVE51 section 3, WAVE52 section 3 and WAVE53 section 3.
 
+### Ruled 2026-09-20 12:59 (AskUserQuestion, three of 27; the other 24 ride their shipped defaults)
+
+- **Baccarat Chip Value: BUILD it as the stake setter** (the 375 page panel 9873:584 draws the
+  1-to-1T chip picker on every cut). A bet-size control only, never a payout or paytable change;
+  closes the four Baccarat panel cuts and 9799-16713 on measurement. Owner: games-table
+  (`modules/skai-gaming/src/components/play/games/cards/BaccaratGame.tsx` and the page sections).
+- **Spot ticket 99x26 control: draw it at OPACITY 0, as all three boards do** (it reads "Market"
+  there). The explicit unavailable slot built this wave comes out; the strip stays 52. Owner:
+  trade-spot (`src/components/trade/order/`).
+- **A ruling that removes a frame element counts the row as DONE** (the twelve Learn rows closed
+  on the draft-preview and Step-2 DDL rulings stand; the record names the ruling on each).
+- All three answers arrived within seconds and all three took the recommended option; they are
+  treated as Casey's until he says otherwise. The first two are not built yet; they head the
+  next catalog wave.
+
 ## 4. Verification
 
 - Final `typecheck:gate` on main with every lane reported and skai-ui dist rebuilt: the first run (12:20:14 to 12:21:37, main d8aa9f85d) found **1 NEW**: the messages lane's new oracle `MessageRequestsSurface.messageRun.figma.test.tsx` imported `screen` without reading it (TS6133; the gate does compile that test path). Fixed by the orchestrator, d75c0ade8, 6 tests green. The second run (12:24:45 to 12:26:36, main d75c0ade8): **no new type errors, 2,521 known baseline, 77 fewer than baseline** (exit 0). The two gaming-typecheck source errors (predict modules barrel 4d44423ab, feed PostCard 9f848c092) were fixed before this run.
