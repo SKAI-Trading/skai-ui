@@ -1,0 +1,79 @@
+# key	status	primaryFile	route	reason	bp
+# Lane home-sidebar-layout, wave 52, 2026-09-19. Rows are frames REACHED this
+# pass; every other row stands. Column 3 is one bare path. No browser ran — each
+# verdict is the file at HEAD read against the node tree pulled live this pass.
+#
+# READS THIS PASS (get_metadata, file mhF3BkzlTaGiLzJ7kvpmVc): 6702:24782,
+# 6702:25218, 6419:47130, 14094:55845, 14094:56305, 13389:161486, 14160:133074.
+# Five of the seven had never been opened.
+#
+# THE HEADLINE FINDING: THE INTELLIGENT-SUPPORT LIST HAS A THIRD ANSWER, AND IT
+# IS THE ONE THE BUILD COULD ACTUALLY SHIP.
+# The wave 50 lane left this as "three boards say three rows, the hub boards say
+# seven, Casey's call". 13389:161486 and 14094:56305 — both read live here for
+# the first time, one at the docked 248 and one at the tablet 318, and both in
+# the home-2 page that the seven-row list was justified from — draw
+# FIVE: `internal` is 232x222 (five 42px rows on the 44 pitch, 218 + 4 of bottom
+# padding) holding Market intel, Market signals, News, Sentiment, Analysis. No
+# "Trading". That matters because "Trading" was one of the two reasons the
+# three-row cut could not be built: it has no AiHomeScreen to navigate to, so
+# shipping it means inventing a destination. Every one of these five already has
+# one in INTELLIGENT_TOOLS (market / signals / news / sentiment / insights), so
+# the five-row cut is the only one of the three that is a pure subtraction —
+# it drops Screener and InsightX and invents nothing, and it is the only one
+# with a witness at two widths. Still not a lane's call,
+# because it still deletes two entry points, but the choice Casey is being asked
+# to make is now three real options, not two impossible ones and the status quo.
+# The other two boards read this pass agree with each other and with 5810:111233
+# on three rows: 14094:55845 (318 tablet drawer) and 14160:133074 (296 phone
+# drawer) both draw `internal` 134 tall — Market intel, Trading, Analysis.
+#
+# SECOND: THE FOUR 1VH BOARDS' REMAINING GAP IS TWO 24px BUTTONS, AND IT IS NOT
+# THIS LANE'S FILE. 6415:45107 and 6415:45113 came into this wave partial with
+# "the `main` interior was not measured here". It was measured here, and it
+# matches to the pixel on both rungs — AiHome.tsx's TABLET_BOLT_TOP 410,
+# TABLET_GREETING_TOP 482, the 588x114 composer at x=90/y=750 and TABLET_NAV_GAP
+# 16 putting the four-chip row at y=880 are literally the tablet board's numbers,
+# and the AI Chat / AI Feed toggle is 200x34 at (284,24) on the tablet and 200x32
+# at (88,16) on the phone, which is what `min-w-[200px] p-1` plus the segment's
+# `leading-4 md:leading-[18px]` (4+4+16+4+4 = 32, 4+4+18+4+4 = 34) draws, centred
+# by `md:left-1/2 md:top-6`. ONE thing is drawn that no 1VH board draws: the two
+# 24px ToggleSideButtons that flank the toggle below lg (AiHome.tsx:386-387,
+# `size-6 ... lg:hidden`). They make the row 24+8+200+8+24 = 264 — which is why
+# the toggle still lands on x=284 and x=88 — but 6415:45107, 6415:45113,
+# 6419:47130, 6702:24782 and 6702:25218 all draw `Frame 186` alone. The file is
+# src/components/home-redesign/AiHome.tsx, lane home-portfolio-feed; the exact
+# change is to reconcile 13008:115052/115057 (which the docblock cites for a
+# symmetric row) against these five, and gate the side buttons on whichever wins.
+# No edit made here.
+#
+# THIRD: the drawer tree this lane owns is matched at both drawer widths and
+# nothing in it is outstanding. Measured against 6419:47130 and 6702:24782 (302
+# column) and 6702:25218 and 14160:133074 (280 column): rows 42 tall on the 44
+# pitch at 0/44/88/132/176/220, an open section opening 2px under its header
+# (`gap-[2px]`), the order New chat / Portfolio / Whales / Skai agent /
+# Intelligent support / Agentic support / Your chats, and `main bottom` 192 tall
+# as 130 + 10 + rule + 10 + 42, which is what `gap-2.5` round RULE draws. The
+# rule is 276 in both drawer columns (RULE_BOTTOM `w-[276px] lg:w-[200px]`),
+# centred, so it lands at x=13 in the 302 and x=2 in the 280 — both boards agree.
+# 13389:161486 confirms the docked rung at 200 inside 232, at x=16. The agentic
+# panel's three children on 6419:47130 (AI master, AI advisor, Backtest) are
+# AGENTIC_TOOLS in frame order. The chat rows are 26 without a kebab and 28 with
+# one on every cut, which is what a content-sized `py-1.5` row draws over an
+# 11/14 label and a 16px icon — the tablet board's all-28 panel is five rows that
+# all carry the kebab, not a leading step.
+#
+# NOT MINE, named for the hand-off: AiHome.tsx (lane home-portfolio-feed) for the
+# side buttons above; HomeTopBar.tsx (lane home-whales-screens-ai) owns the
+# drawer shell, and it already carries both boards' numbers — the 8-a-side inset,
+# the 280/302 column and the column rhythm pair (`pb-4 md:pb-5`, Frame 1053's
+# itemSpacing 16 on the phone cut and 20 on the tablet one).
+6419-47130	partial	src/components/home-redesign/HomeSidebarExpanded.tsx	shell (HomeShellLayout + HomeTopBar drawer)	READ LIVE 2026-09-19 at node level, which is what the wave 50 row asked for — it had been reached as a screenshot only and stayed partial on having no numbers. It has them now and the drawer half is closed. The board is the 768 shell with the 318 menu drawer open on Agentic support: Header-tablet 52, `main` 52..972 for 920, Bottom-navigation-tablet 52 at y=972, all three of which HomeShellLayout draws (rail `lg:block`, ticker `lg:flex`, main's `md:pb-[calc(52px+safe-area)]` against the bar's own `md:h-[calc(52px+safe-area)]`). Inside the drawer, `Frame 1053` at (8,9) is 302 wide and 606 tall: menu 0..36, `Frame 1054` at y=56 for 88 (search 40, stats 40 at y=48), `Top main` at y=164 for 442. The 20 between those blocks is the tablet rung of Frame 1053's itemSpacing pair and HomeTopBar ships it as `pb-4 md:pb-5`. `Top main` is eight 42px rows on the 44 pitch at 0/44/88/132/176/220 then `internal` at y=264 — 2px under the Agentic header's bottom edge at 262, which is the build's `gap-[2px]` — 134 tall over three rows at 0/44/88 with 4 of bottom padding, holding AI master / AI advisor / Backtest, which is AGENTIC_TOOLS exactly and in frame order. Your chats closes at y=400. `main bottom` at (8,823) is 302x192: Messages/Games/Wallet 42 apiece at 0/44/88 for 130, the rule at y=140 276 wide at x=13 (centred in 302), Upgrade to Pro 42 at y=150 — 130+10+10+42, which is `gap-2.5` round RULE_BOTTOM. Partial only for the two 24px ToggleSideButtons in `main`, AiHome.tsx:386, which this board does not draw; see the header note.	1440=n-a 768=partial 375=n-a @2026-09-19/wave52-home-sidebar-layout
+6702-24782	partial	src/components/home-redesign/HomeSidebarExpanded.tsx	shell (HomeShellLayout + HomeTopBar drawer)	FIRST OPENING — the catalog had no measurement of this cut anywhere in code. It is 6419:47130's twin in the other drawer state: the same 768 shell numbers (52 / 920 / 52 at y=972) and the same 318 drawer, but with both support sections CLOSED and Your chats OPEN. `Top main` is 474 rather than 442 because `internal` is hidden and `Frame 221` at y=264 is 210 — Your chats 42 at y=0 then `chats` at y=44 for 166. That panel is five 294-wide rows at x=4 on a 32 pitch (0/32/64/96/128), every one 28 tall because every one carries a 16px kebab at x=270, and 156 + 10 of bottom padding closes it at 166. The build draws the same: ChatRow is content-sized at `px-2 py-1.5`, so it is 26 over a bare 11/14 label and 28 once the 16px kebab is in the row, on a 4 gap with 10 below — the phone cut 6702:25218 proves it is the kebab and not a leading step, since only its second row carries one and only that row is 28 there. Same partial as 6419:47130 and for the same two buttons in AiHome.tsx.	1440=n-a 768=partial 375=n-a @2026-09-19/wave52-home-sidebar-layout
+6702-25218	partial	src/components/home-redesign/HomeSidebarExpanded.tsx	shell (HomeShellLayout + HomeTopBar drawer)	FIRST OPENING — no code cited this node id. The phone rung of 6702:24782: Header-mobile 48, `main` 48..758 for 710, Bottom-navigation-mobile 54 at y=758, which is the pair HomeShellLayout carries as `h-[calc(54px+safe-area)] md:h-[calc(52px+safe-area)]` on the bar and the same two rungs on main's reserve. The drawer is 296 with `Frame 1053` at (8,9) 280 wide on the 16 rhythm (menu 0..36, `Frame 1054` at y=52, `Top main` at y=156) — the phone rung of the same itemSpacing pair, `pb-4` before `md:pb-5`. `Top main` 280x466 runs the same eight rows on the 44 pitch, `internal` hidden, Your chats at y=264 with its `chats` panel 158 tall: 26/28/26/26/26 at 0/30/62/92/122, the 28 being the one row with a kebab. Labels are 16-leading here against the tablet's 18, which is LABEL's `leading-4 md:leading-[18px]`. `main bottom` 280x192 with the rule 276 wide at x=2 (centred in 280) and the same 130+10+10+42. The board hangs `main bottom` at y=674, i.e. 866 in an 812 drawer, so the board itself overflows and the build's bottom-anchored `shrink-0` group is the only sane reading of it. Same partial as its tablet twin.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-home-sidebar-layout
+6415-45107	partial	src/components/home-redesign/HomeShellLayout.tsx	shell (App.tsx redesignShell)	THE CARRIED GAP IS CLOSED AND A SMALLER ONE IS NAMED. Wave 50 matched the chrome (Header-tablet 52, `main` at y=52 for 920, Bottom-navigation-tablet 52 at y=972, no rail and no ticker below lg) and left the row partial because `main`'s interior had not been measured here. Measured this pass off 6702:24782, which is this board with the drawer open and draws an identical `main`: the 48px mark at y=410, the greeting at y=482 28 tall, `Frame 41` 588x114 at (90,750), the four-chip nav 419x16 at (175,880) and `Frame 186` 200x34 at (284,24) holding two 92x26 segments. AiHome.tsx holds all of them as named constants — TABLET_BOLT_TOP 410, TABLET_GREETING_TOP 482, TABLET_COMPOSER_BOTTOM_GAP 56 (920-864), TABLET_NAV_GAP 16 (880-864), the composer at `md:top-[351px] md:w-[588px]` with `md:left-[calc(50%-294px)]` = x=90, CHIPS with exactly four entries — and the toggle's 34 is `p-1` plus a segment of `py-1` over `md:leading-[18px]`. The one thing drawn that this board does not draw is the pair of 24px ToggleSideButtons flanking that toggle below lg (AiHome.tsx:386-387); they widen the row to 264 but leave the toggle on x=284, so the miss is two controls, not a displacement. File for the hand-off: src/components/home-redesign/AiHome.tsx, lane home-portfolio-feed.	1440=n-a 768=partial 375=n-a @2026-09-19/wave52-home-sidebar-layout
+6415-45113	partial	src/components/home-redesign/HomeShellLayout.tsx	shell (App.tsx redesignShell)	Same close and same residue at the phone rung, measured off 6702:25218's `main`. Chrome carried from wave 50 and re-confirmed: Header-mobile 48, `main` at y=48 for 710, Bottom-navigation-mobile 54 at y=758. The interior: the 36px mark at (170,283) — centred, (375-36)/2 = 169.5 — the greeting at y=343 24 tall, `Frame 41` 360x112 at (8,526), the nav 303x40 at (37,654) as three chips at 0/108/203 and the fourth at (105.5,24), and `Frame 186` 200x32 at (88,16) over two 92x24 segments, which is the toggle's mobile rung (4+4+16+4+4). (375-264)/2 + 32 = 87.5, so the toggle lands on the board's x=88 with the two side buttons in the row. Same two-button gap, same file, same lane.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-home-sidebar-layout
+13389-161486	partial	src/components/home-redesign/HomeSidebarExpanded.tsx	shell (HomeSidebarExpanded)	FIRST OPENING of a row that had been carried on a test citation alone. This is the 248x1188 docked column with Intelligent support OPEN, and it is the frame that gives the list a third answer — see the header note. `Top main` at (8,9) is 232x530: New chat 42 at y=0 with the pin CTA VISIBLE at x=193 (the drawer cuts hide it, and the build hides it in the drawer for the same reason), Portfolio 44, Whales 88, Skai agent 132, Intelligent support 176, `internal` at y=220 232x222, Agentic support at y=444, Your chats at y=488 with `chats` hidden. The 222 is five 42px rows at 0/44/88/132/176 plus 4 of bottom padding, against the 134 that three rows make on 5810:111233, 14094:55845 and 14160:133074 — the same panel, drawn twice with different children. `main bottom` at (8,987) 232x192 with the rule 200 wide at x=16, which is RULE_BOTTOM's `lg:w-[200px]` centred in the 232 content box. Everything geometric matches; the list is the gap and it is a ruling.	1440=partial 768=n-a 375=n-a @2026-09-19/wave52-home-sidebar-layout
+14094-55845	partial	src/components/home-redesign/HomeSidebarExpanded.tsx	shell (HomeSidebarExpanded)	FIRST OPENING — the row had never been read and carried a wave-25 note about two other nodes. It is the 318 tablet drawer with Intelligent support open: `Frame 1053` at (8,9) 302x606, menu 0..36, `Frame 1054` at y=56, `Top main` at y=164 for 442 — the same shell 6419:47130 draws, so the 20 rhythm and the 8 inset are confirmed a second time. Order: New chat, Portfolio, Whales, Skai agent, Intelligent support, `internal` at y=220 for 134, Agentic support at y=356, Your chats at y=400. The three children are Market intel, Trading, Analysis. `main bottom` at (8,823) 302x192 with the 276 rule at x=13. A second `internal` at (0,356) is hidden and holds five sport rows (Soccer, Basketball, Football, FIFA, Lawn Tennis) at the 232 width — hidden, so nothing is drawn and no glyph hand-off to the sportsbook lane falls out of it. Partial on the list only.	1440=n-a 768=partial 375=n-a @2026-09-19/wave52-home-sidebar-layout
+14160-133074	partial	src/components/home-redesign/HomeSidebarExpanded.tsx	shell (HomeSidebarExpanded)	FIRST OPENING. The 296 phone drawer of 14094:55845, and the third board to draw the three-row intelligent list. `Frame 1053` at (8,9) 280x598 on the 16 rhythm (menu 0..36, `Frame 1054` at y=52, `Top main` at y=156 for 442), the same eight rows on the 44 pitch, `internal` at y=220 for 134 over Market intel / Trading / Analysis, Agentic support at y=356, Your chats at y=400 with `chats` hidden. Every label is 16-leading against the tablet cut's 18, which LABEL's `leading-4 md:leading-[18px]` draws. `main bottom` at (8,759) 280x192 with the 276 rule at x=2 and the 130+10+10+42 stack. Geometry matched at 375; partial on the list only.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-home-sidebar-layout
+14094-56305	partial	src/components/home-redesign/HomeSidebarExpanded.tsx	shell (HomeSidebarExpanded)	FIRST OPENING, and it is the second witness for the five-row intelligent list — see the header note. The 318 tablet drawer, same shell as 14094:55845 and 6419:47130 (Frame 1053 at (8,9) 302 wide, menu 0..36, Frame 1054 at y=56 for 88, Top main at y=164, the 20 rhythm), but Top main is 530 rather than 442 because `internal` at y=220 is 222 tall: five 42px rows at 0/44/88/132/176 plus 4 of bottom padding, holding Market intel, Market signals, News, Sentiment, Analysis — the same five 13389:161486 draws at 248 and exactly INTELLIGENT_TOOLS less Screener and InsightX. Agentic support follows at y=444 and Your chats at y=488 with `chats` hidden. Its sibling 14094:55845 on the same page and the same width draws three, so the page itself carries both cuts. main bottom at (8,823) 302x192 with the 276 rule at x=13 and the 130+10+10+42 stack, matched. Partial on the list only, and the list is the ruling.	1440=n-a 768=partial 375=n-a @2026-09-19/wave52-home-sidebar-layout

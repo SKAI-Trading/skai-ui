@@ -1,0 +1,30 @@
+# key	status	primaryFile	route	reason	bp
+# Wave 52 lane `home-whales-screens-ai`, 2026-09-19. Rows are frames REACHED
+# this pass; every other row in the catalog stands. Column 3 is one bare path.
+#
+# READS. ONE node was opened this pass: 13447:185120, read live with
+# get_metadata (the create-agent name board at 1440). It settles Casey's first
+# ruling of today — the wizard is drawn INSIDE the app shell. The Predict
+# two-layer header was NOT re-read: 10657:218029's live reading by the wave 51
+# pass is quoted in HomeTopBar's own docblock and is what this pass built to.
+# No Whales node was opened, so every Whales row in the catalog stands as the
+# 2026-09-17 pass left it and none is restated here.
+#
+# COMMITS, all on main in the superproject: 82cc84139 (the wizard inside the
+# shell), 4cbfbd31c (the Predict second layer), 5f37aa7c5 (that layer swapped
+# to the predict-dashboard lane's shared PredictNavRow in its header slot) and
+# 4f2d055d1 (the interim `body:has([data-testid=dashboard-header-band])` guard
+# dropped, once their 11c3a1e71 taught the dashboard band the same slot).
+#
+# ONE-PAINT FLASH, RAISED HERE AND CLOSED THERE. Mounting the row in an effect
+# meant that on a cold load of /predict the page copy drew for a frame before
+# standing down. It turned out to be a false comment rather than a cost:
+# PredictNavRow's docblock said the header claimed the slot in a LAYOUT effect,
+# which React flushes before paint, while the code used a passive `useEffect`,
+# which runs after it. Fixed in the predict-dashboard lane's f73081c75
+# (`useLayoutEffect` at PredictNavRow.tsx:140, verified in source here). NO
+# BROWSER RAN in either lane, so both the flash and its fix are argued from
+# React's flush order, not from an observation of the screen.
+#
+13447-185120	partial	src/components/ai/AIAgentManager.tsx	/?tab=myagent (AgentAutomationsScreen, AI master)	READ LIVE 2026-09-19, and it settles the shape. The board is NOT a bare page: `Header-desktop` 1440x56 at y=0, a 58-wide `sidebar` at (0,56) 58x844, the price ticker `Frame 7` at (58,884) 1382x16, and the wizard in `main` (58,56) 1382x828. The app shipped `w-screen h-dvh` over all three. Casey ruled today that the wizard is rebuilt inside the shell, so the content is inset to main instead of the viewport — left 0 / right 0 / bottom 0 below lg, and at lg left 58 (the rail) and bottom 28 (HomeBottomTicker's h-7), with the top on the bar's own three rungs 48 (min-h-12 + safe area) / 52 (md) / 56 (min-[1160px]). The root also goes non-modal for the three page steps, which is what removes the black/80 scrim from the header and rail — Radix renders no overlay while `modal` is false — and leaves the chrome addressable; the review cut 13449:190735 keeps `modal`, its scrim and its 564 panel. Inside main the column numbers were re-checked against this read and hold: `Frame 1000003833` at (90,48) 680x74 = the well's lg:px-[90px] lg:py-12 with the title row 36 over a 16 seam over the 22 rail; `Group 14` at (90,154), i.e. 32 under the header block = mt-8; the name block 564 wide (lg:max-w-[564px]); `Technicals - Buy` 448x520 at x=844, flush to main's right content edge (1292 = 1382-90). NOT closed: `Frame 203`, the 278+8+278 CTA pair, sits at y=702 — pinned to the foot of a 610-tall group, 64 clear of main's bottom — and this pass did not measure where the footer lands in the app, so the row stays partial on that one number.	1440=partial 768=n-a 375=n-a @2026-09-19/wave52-home-whales-screens-ai
+13486-49591	partial	src/components/home-redesign/HomeTopBar.tsx	/	NOT RE-MEASURED THIS PASS — the wave 51 row's live 2026-09-17 reading of this board stands whole and nothing here touches what it measured. The edit is Casey's second ruling of 2026-09-19 and it is scoped to /predict/*: HomeTopBar now carries Predict's second layer (PredictHeaderSecondLayer, `data-testid=predict-header-second-layer`), because from 1024 the shell's 58px rail sits beside the page's scrollport and the page-built row opened at x=58 where every Predict board opens it at 0. THE ROW ITSELF IS THE PREDICT-DASHBOARD LANE'S `PredictNavRow` (src/pages/predict/components/PredictNavRow.tsx, their 662f8e3eb) mounted with slot=header — three plain sort links with no greyed arm, the 18-tall rule, then All, the nine category links and More, drawn off the taxonomy with no market list. Claiming that slot is also what stands their page copies down, so neither half had to land first and the row is never drawn twice; this lane wrote no second copy of it. What this band owns is the frame's chrome around the row (10657:218029): 12 above, the 19 gutter paid as 11 left and 15 right because the row's items carry their own px-2, with the 12 below and the closing stroke left to PredictNavRow's own `pb-3 border-b`. Tint comes from the URL alone — `parsePredictSortParam(params.get(PREDICT_SORT_PARAM))` and the /predict/<slug> segment. HAND-OFF CLOSED: the dashboard's own band at src/components/predict-redesign/dashboard/PredictDashboardScreen.tsx (`data-testid=dashboard-header-band`) is a different component drawing the Dashboard frame's own set without the All pill, so it could not be replaced by PredictNavRow — it now reads the same slot and stands down (their 11c3a1e71, gated `!navInHeader` at :831, verified in source). The interim class guard here is gone (4f2d055d1); nothing sniffs for another band's test id. Home itself is unchanged: the band is route-gated and / never renders it. ★ NOT MEASURED AND OWED: the 375 boards put the page column at y=98-100 under an 82-tall Header-mobile, and the bar grows by the row it now carries, so that y needs a live read once both halves are in.	1440=partial 768=partial 375=partial @2026-09-19/wave52-home-whales-screens-ai

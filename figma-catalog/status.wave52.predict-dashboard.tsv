@@ -1,0 +1,67 @@
+# key	status	primaryFile	route	reason	bp
+# Lane predict-dashboard, wave 52, 2026-09-19. Rows are the frames this lane
+# REACHED out of the 14 in BRIEF-predict-dashboard.md. Column 3 is one bare
+# path; a second witness file and the mount site are in the reason.
+#
+# THE PASS. Casey's ruling of 2026-09-19 was this lane's first item: the Predict
+# two-layer row moves into the GLOBAL HEADER's second layer on /predict/*,
+# Trending / Breaking / New become plain links with no greyed state, the All
+# pill stays because the header's Predict menu never links /predict/all, and the
+# merged single-row shape is confirmed correct. This lane built the PAGE half
+# and committed it at 662f8e3eb, with 9e46bb9aa pinning it. The HEADER half is
+# HomeTopBar and the home-whales-screens-ai lane LANDED it at 5f37aa7c5, so both
+# halves of the ruling are now in the tree.
+#
+# A FALSE COMMENT FOUND BY THE PEER LANE, fixed at f73081c75. PredictNavRow's
+# docblock said the header claims the slot in a LAYOUT effect, which React
+# flushes before paint; the code used a passive useEffect, which runs after it,
+# so on a cold load of /predict both rows drew for one frame. The
+# home-whales-screens-ai lane reported the transient from the outside without
+# seeing the cause. The code now matches the prose. Neither side measured the
+# flash in a browser - no browser ran this pass - and the fix is argued from
+# React's own flush order, not from an observation.
+#
+# THE FOURTH SURFACE, closed at 11c3a1e71. PredictDashboardScreen draws its own
+# band (dashboard-header-band / DashboardHeaderNav), which is NOT PredictNavRow
+# - it renders the Dashboard frame's own set and geometry, no All pill, and its
+# docblock at :274-296 gives the reasons - so the slot could not reach it and on
+# /predict the two rows would have stacked. It now reads usePredictNavSlotHeld()
+# and stands down like every other page copy; its three sort controls are links
+# on the shared predictSortHref, and its sort comes from ?sort= like the rest.
+# TWO THINGS THAT GO TO CASEY, both consequences of the ruling rather than
+# choices: a link cannot toggle, so the Dashboard's second press that used to
+# clear the sort back to feed order is gone (the way back is /predict with no
+# parameter, which nothing on the screen offers); and this band keeps its own
+# alien-green active tint, unchanged, while PredictSortTabs moved to the sky
+# blue recorded on PredictCategoryStrip as the 1440 header instance's tint - so
+# two Predict rows now mark their active item in two colours, and which one is
+# right is a measurement on the Dashboard frame nobody has made.
+#
+# WHAT THE HEADER MUST CARRY (verbatim, for the home-whales-screens-ai lane).
+# Mount <PredictNavRow slot="header" activeSlug={slug} activeSort={mode} /> from
+# src/pages/predict/components/PredictNavRow.tsx as the second layer on
+# /predict/*. It draws the whole merged line itself - three sort links, an
+# 18-tall 1px Green Coal 100 rule, then All, the nine category links and More -
+# and it needs NO market list, which is what the 2026-09-06 adjudication said a
+# top bar could never hold. activeSlug is the /predict/:slug segment or '' and
+# activeSort is parsePredictSortParam(searchParams.get('sort')) from
+# src/pages/predict/components/predictSortParam.ts; both may be omitted. The
+# page copies stand down on their own: slot="header" claims a module-level slot
+# and every slot="page" instance then returns null, so the row is never drawn
+# twice, and if the header half does not land the pages keep drawing it.
+#
+# NO FIGMA READ THIS PASS. The shared seat was not spent: the ruling is a shape
+# ruling, not a geometry one, and the frames below are the same nine boards wave
+# 36/39 measured. Every number quoted is either CARRIED with its provenance or
+# verified in source at HEAD, and is labelled as such. No row here is done, and
+# no row claims a measurement this lane did not make.
+#
+10097-220101	partial	src/pages/predict/PredictPage.tsx	/predict/all	BUILT the page half of Casey's 2026-09-19 ruling, committed 662f8e3eb. On this 1440 ALT the nav is the 22-tall single line node 8610:164252 reports (1202x22, item gap 24, a 76px fade at each end): the shape is unchanged, what changed is what the line is made of. PredictSortTabs is now three plain <Link>s with no disabled attribute and no opacity-40 - Trending and Breaking to /predict/all?sort=<mode>, New to /predict/new - and the active tint moved from alien green to text-sky-blue, which is the tone already recorded on PredictCategoryStrip's active link as the 1440 header instance's measurement, so the two halves of one line no longer tint the one active item two colours. The sort mode moved from useState to ?sort= (predictSortParam.ts) because a header cannot reach page state. PredictPage keeps its own rail rather than mounting PredictNavRow, because only the merged board draws the per-category counts and the measured scroll fades, and it stands down through usePredictNavSlotHeld() the moment the header half mounts. CARRIED, NOT RE-READ: the 1440x2842 full-scroll ALT of the consolidated grid, main at x=58 y=92 w=1382, card 361x224 at radius 24, gap 24, padding 16. Not done: those carried numbers were not re-verified and the header half is not landed.	1440=partial 768=n-a 375=n-a @2026-09-19/wave52-predict-dashboard
+10100-103339	partial	src/pages/predict/PredictPage.tsx	/predict/all	BUILT the page half of the 2026-09-19 ruling (662f8e3eb) - see 10097-220101 for what changed. VERIFIED IN SOURCE AT HEAD, not carried: PredictPage still ships px-4 py-4 for this board's 16/16 gutter and md:px-[30px] md:py-6 for the 768 board's 30/24, and the page column is still a flat gap-6 at PredictPage.tsx:605, the 24 this board draws. The ruling did not move either number: the row it takes out of the column is replaced by nothing on the page, so when the header half lands the column loses one child and keeps its 24 rhythm. CARRIED from wave 36/39 and NOT re-read: the 375 1VH cut of the consolidated grid, content column at x=16 y=100 w=343 under an 82-tall Header-mobile. THE ONE NUMBER THIS RULING OWES A MEASUREMENT: the header grows by the row it now carries, so the 100 this board draws is the header half's to re-measure, not this lane's. Not done for that reason.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-predict-dashboard
+10199-104649	partial	src/pages/predict/PredictPage.tsx	/predict/all	BUILT the page half of the 2026-09-19 ruling (662f8e3eb). This is a ROOT cut, not a detail one - Frame 1190 at x=16 y=100 w=343 running 1812 in a 1982-tall frame with the bottom nav at y=1928 - and it carries 10100-103339's findings unchanged: the 16 gutter and the flat 24 column verified in source at HEAD (PredictPage.tsx:605), the board geometry carried from wave 36 and not re-read. The wave-36 hand-off reason is retired twice over now: the file is in this lane's owns, and the ruling that was the live hand-off is built on this side. What remains is the header half in HomeTopBar and a re-measurement of the 100, which moves with the header's height. Not done.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-predict-dashboard
+10202-110892	partial	src/pages/predict/PredictPage.tsx	/predict/all	BUILT the page half of the 2026-09-19 ruling (662f8e3eb). The content column at 10202:109050 is the one PredictPage's own gutter comment cites - x=16 y=100 under an 82-tall header, the outer column at 24 - and both halves of that reading are verified in source at HEAD: px-4 py-4 and the flat gap-6 at PredictPage.tsx:605, unchanged by the ruling. CARRIED and NOT re-read: the board geometry itself, from wave 36/39. The live hand-off is no longer this lane's: it is the HomeTopBar half named in this file's header, plus the header height the 100 hangs off. Not done.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-predict-dashboard
+10202-112785	partial	src/pages/predict/PredictPage.tsx	/predict/all	BUILT the page half of the 2026-09-19 ruling (662f8e3eb). The 1VH crop of the same root board, Frame 1190 at x=16 y=100 w=343 running 1854 under an 812 viewport, carrying 10202-110892's findings unchanged - gutters and the flat 24 verified in source at HEAD, the board geometry carried from wave 36 and not re-read this pass. Nothing of this node's own was re-measured, so the row is not done; the outstanding work is the HomeTopBar half and the header-height re-measurement.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-predict-dashboard
+10509-18308	partial	src/pages/predict/PredictPage.tsx	/predict/all	BUILT the page half of the 2026-09-19 ruling (662f8e3eb). CARRIED from wave 36, measured live then on this node: the tall mobile cut, column x=16 y=98 w=343 at itemSpacing 24 over Frame 1189 1294 and Frame 1191 296. The 98 against the 100 the sibling boards give is the header height differing by two between cuts, not a second gutter - and it is exactly the number the ruling moves, because the header takes on a row it did not draw before. VERIFIED IN SOURCE AT HEAD: the 16 gutter and the flat 24 column both still ship (PredictPage.tsx:605). Not done: the board was not re-read and the header half is not landed.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-predict-dashboard
+10509-18892	partial	src/pages/predict/PredictPage.tsx	/predict/all	BUILT the page half of the 2026-09-19 ruling (662f8e3eb). The 1VH cut of 10509-18308, carrying that row's numbers and its three unmeasured blocks unchanged. What this pass adds is the build and the two source verifications, not a new reading of this node - so the row is not done. Outstanding: the HomeTopBar half named in this file's header.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-predict-dashboard
+10597-73252	partial	src/pages/predict/PredictCategoryPage.tsx	/predict/crypto	THE NINE-WAVE HAND-OFF IS SPENT ON BOTH COUNTS. This row read "off limits to this lane" from wave 23 to wave 50 because PredictCategoryPage belonged to another wave; it is in this lane's owns now and was clean at HEAD, and the live hand-off that replaced it - Casey's ruling moving the two-layer row into the header - is BUILT on this side at 662f8e3eb. The change here is the larger of the two: this page drew the two layers as TWO STACKED ROWS, a gap-2 column holding PredictSortTabs over PredictSortReasons and then PredictCategoryStrip below it. Every header instance draws ONE line and Casey confirmed that shape, so both rows are now a single PredictNavRow - the same component the global header will mount - and the column child count drops from two to one. The sort links keep this view's own path (/predict/crypto?sort=<mode>, never /predict/new) so a click cannot drop the category the reader is standing in; PredictCategoryPage no longer holds sort in state and reads ?sort= instead, with the view's own sortNewestFirst still the default when the parameter is absent. CARRIED and NOT re-read: the 375 Crypto board's own geometry from wave 36/39. Not done - no number of this node was measured this pass.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-predict-dashboard
+10597-76565	partial	src/pages/predict/PredictCategoryPage.tsx	/predict/crypto	BUILT the page half of the 2026-09-19 ruling on this container (662f8e3eb) - the two stacked header rows merged into one PredictNavRow, ?sort= deep links that keep the category, no greyed state. CARRIED from the wave 51 read of this node, NOT re-read this pass: Frame 1190 10597:76566 x=16 w=343 against px-4 and 375-32; Frame 1215 343x36 at y=0, Frame 403 343x18 at y=52 and Frame 1189 at y=86, a flat VERTICAL 16 through the column against gap-4 xl:gap-6 at PredictCategoryPage.tsx:562. THE MERGE MOVES THAT COLUMN: the 16 was measured over a column that held the sort row and the strip as separate children, and it now holds one. Which of the board's children the merged line replaces is a measurement the next pass owes on this node, so this row is not done and the 16 is not re-asserted as matching.	1440=n-a 768=n-a 375=partial @2026-09-19/wave52-predict-dashboard

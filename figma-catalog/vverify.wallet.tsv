@@ -5,7 +5,7 @@
 7727-14974	match	-	Unlock-password UnlockForm mobile
 7675-51418	match	-	Unlock-password UnlockForm tablet
 3026-16563	match	-	Create-new-wallet Google auth = thirdweb inAppWallet modal, wired via handleSignIn
-7676-51711	match	-	Create-new-wallet = thirdweb email/Google/Apple modal, wired
+7676-51711	partial	-	Create-new-wallet tablet: the board is an ACCOUNT-CREATION FORM (email block, Continue, OR rule, Google and Apple) and this screen draws two CTAs instead, because login is thirdweb-only by the 2026-07-03 ruling and the form lives one step in, in EmailAuthFlow.tsx. What matches is every number the two share at 768: the 418 column, the 48 lockup with 48 clear under it, 50-tall CTAs over 14/18, and 20 between them. Not a whole-frame match - the previous line claimed a modal this screen does not draw. Re-scoped from match, wave 52.
 7683-7930	match	-	Forgot-password ForgotPasswordFlow tablet; email input replaced by explain+handoff (deliberate security)
 7473-130910	match	-	Forgot-password ForgotPasswordFlow desktop; disconnects live session first
 7727-15699	match	-	Forgot-password ForgotPasswordFlow mobile
@@ -36,13 +36,13 @@
 7713-15272	match	-	Multi-menu WalletActionsMenu dropdown tablet
 7713-17805	match	-	Add-wallet from multi-menu tablet, AddWalletDrawer entry
 7479-136195	match	-	Export-private-key reveal WalletActionsMenu desktop
-7717-10565	match	-	Import recovery-phrase AddWalletDrawer import-phrase tablet
-7713-17399	match	-	Remove-wallet WalletActionsMenu remove modal tablet
+7717-10565	partial	-	Import recovery-phrase tablet: the 448 frame, the 12 inset, the 16-tall controls row, content at 48, the 48-tall Frame 200, the grid at y=116 and two 208 halves on an 8 gap all match, and wave 52 (909854c) closed the two that did not - the grid row gap is 12 at this width (gap-y-3, with gap-y-5 at 1440) and the Back/Continue pair is 50, not the 53 the 1.5px stroke was adding. ONE GAP LEFT and it is a held feature, not a number: the 12/24-word toggle ships and this board draws it hidden, displacing the grid by its height plus 20. Re-scoped from match, wave 52.
+7713-17399	partial	-	Remove-wallet tablet: modal 448x346 at (160,339) on a 12 inset, the controls row, Frame 200 424x48 at (12,48), the card at (12,116), the wallet row 424x52 at (12,210) on a 6 inset and the two 208 halves at (12,282) all match, and the CTA box is a stroke-free 50 since wave 50 gave CTA_RAMP the height. TWO GAPS, both frame-side: the card is (12,10) here against the shared (16,12), and this board draws a 52 CTA pair where 8488:31358, 7713:17360 and the add-wallet family draw 50. Re-scoped from match, wave 52.
 7713-16630	match	-	Export-private-key WalletActionsMenu export tablet
 7479-135318	match	-	Rename WalletActionsMenu rename view, green-bright input, desktop
 7713-15682	match	-	Rename WalletActionsMenu rename tablet
 7482-141833	match	-	Import-existing method-list AddWalletDrawer import-method desktop
-7713-16984	match	-	Export-private-key reveal WalletActionsMenu tablet
+7713-16984	partial	-	Export-private-key reveal tablet: the 448 frame on its 12 inset, the 16-tall controls row with the close at x=408, and content opening at 48 all match. THREE GAPS: Frame 200 is 50, not 48, because the board centres a 24 icons/graphical mark beside the title as one 168-wide pair (the glyph is still unread - get_design_context on 7713:17348); the warning card ships 8488:31351 inset (16,12) against this board (14,10), one class string over three disagreeing boards; and the body is a deliberate copy union plus a Hide control no frame draws, which stands the card over 138. Re-scoped from match, wave 52.
 9545-97477	match	-	Remove-wallet modal state variant
 7717-10153	match	-	Import-existing method-list from multi-menu tablet
 9545-97933	match	-	Remove-wallet modal state variant
@@ -57,7 +57,7 @@
 7482-143789	match	-	Import recovery-phrase Wallet-name; VaultFields name field, desktop
 7774-70474	match	-	Remove-wallet modal state variant
 7717-12740	match	-	Import private-key AddWalletDrawer import-privkey centred modal tablet
-7717-11907	match	-	Import recovery-phrase Wallet-name tablet
+7717-11907	partial	-	Import recovery-phrase Wallet-name tablet: wave 52 (909854c) closed the field block to 74 (16 label + 8 + a 50 field, the hairline now carried by the padding) and with it the CTA row back to y=210; the 448 frame, the 12 inset, the controls row, the 22-over-18 title pair and the 208 halves all match. ONE NUMBER LEFT, and it is this board dissenting from its own family: it draws a 52 pair where 9941:236436, 8488:31358, 7713:17360 and 7717:10565 all draw 50. Re-scoped from match, wave 52.
 7482-144645	match	-	Import keystore AddWalletDrawer import-keystore; V3 JSON+file+pwd desktop
 3082-13100	match	-	Portfolio-preview PortfolioPreviewPanel; skin picker+balance toggle
 7482-144255	match	-	Import private-key AddWalletDrawer import-privkey centred modal desktop
@@ -94,7 +94,7 @@
 7892-19704	match	-	notifications: NotificationsPanel feed
 3167-25811	match	-	account dropdown+logout desktop: TopHeader menu + LogoutConfirmModal
 7892-23952	match	-	notifications sample: NotificationsPanel rows, real events
-3123-3046	match	-	home skin3 desktop: NetWorthCard light skin
+3123-3046	partial	-	home skin3 desktop: the PAGE RHYTHM matches at 1440 - header 56, Main container 680 at (380.5,104), four children 16 apart, which is SHELL_HEADER_H / SHELL_CONTAINER / SHELL_COLUMN exactly - and skin 3 is the hidden-balance state, wired through useWalletSkin to NetWorthCard (****** and ****) with TokenListTable reading the same hook itself. NOT a whole-frame match: the card interiors (net worth 680x244 with four 156x64 CTAs at y=164, quick actions drawn in its post-Collapse state, streak 680x96, the 648 token column) are unmeasured here and are the wallet-components lane. Re-scoped from match, wave 52.
 3164-22754	match	-	notifications settings: NotificationSettings wired via feed gear
 3165-23175	match	-	notifications sample desktop: NotificationsPanel rows, real events
 7911-42851	match	-	account edit tablet: WalletAccountRoute edit drawer
@@ -312,3 +312,9 @@
 7728-59382	match	-	Forgot > OTP 375 - PROMOTED, and the earlier line here is wrong twice over: the modal is SKAI's own, not thirdweb's, and it no longer reaches the user through the sign-in page. ForgotPasswordFlow raises EmailVerificationModal at :350-363 INSIDE RecoveryLayout, so the forgot page stays mounted and is what the overlay's 2.5px blur diffuses - which is what makes 7473:132966 an Overlay node rather than a page (08c772e0). primaryFile is EmailVerificationModal.tsx. Re-checked at 375: the scrim rgba(0,22,21,0.44) over a 2.5px blur; a 358 panel on 20px corners, px8 py24, hairline and 0/10/80 black-25 shadow; controls inset 8 further; a 20 column with the line alone 8 under the title; the title 20/24 at -0.8 over a 14/18 line with the address bold; six 72-tall boxes on 12px corners 8 apart in Mulish Light 20/24; a 44 CTA on 12px corners at 14/16 with NO arrow; the resend 12/14 with its count at 10 in Sky Blue. Commit c2d47b3 (modules/skai-wallet).
 7683-33892	match	-	Forgot > OTP 768 - PROMOTED on the same closed structural hold, and likewise not thirdweb's modal. 8316:71679 re-checked at md: a 468 panel on 26px corners, px16 pt16 pb24; a 24 column with the line 16 under the title rather than the phone's 8; Back at Regular 12/16 where the phone sets it Bold 14/16; the title 24/28 at -0.96 over a 14/18 line; six 76-tall boxes in Mulish Light 24/28; a 50 CTA at 14/18, no arrow; the resend 12/16 with a 12/16 count. The page underneath is 7683-7930, promoted this pass. Commit c2d47b3 (modules/skai-wallet).
 3089-21251	match	-	Swap token picker row tag - labels/tag 3089:21212 is the chain name on App/Green 300 #17F9B4, Green Coal 300 text, Mulish 11/14 -0.44px, 41x18 at (307,17) of the 364 row. SwapModal.tsx draws px-2 py-0.5 text-[11px] leading-[14px] tracking-[-0.44px] rounded-full, fill unconditional, row inset pl-2 pr-4.
+7806-82583	match	-	Manual slippage 768 SwapModal settings sidecar; 442x1008 p20, chips 24 on a 14/16 label, headings 19
+7804-77407	match	-	Token dropdown 768 SwapModal picker; 380x270 p12, a 50 field, three 52 rows, the 43x18 chain pill
+7807-87715	match	-	Activity 768 ActivityTable; 580x338 card p12/pt24, 56 rows on a 72 pitch, the dollar line drawn as its unavailable state
+7804-77085	match	-	Swap - active 768 SwapModal embedded card; 20/24 seams off `embedded`, the title 14/19
+7804-77471	match	-	Swap - no value 768 SwapModal; 580x524, column 426, both legs rest at 0.00
+7804-77701	match	-	Swap - error 768 SwapModal; 580x622, the 78 error card at y=44 on an 18 heading line
