@@ -119,6 +119,20 @@ Rows: 269. Verdicts: done 46, partial 218, frame-defect 5.
 Every shipped default named in brackets above stands until Casey says otherwise, as in
 WAVE50 section 5, WAVE51 section 3 and WAVE52 section 3.
 
+### Ruled 2026-09-19 23:3x (AskUserQuestion, three of 30; the other 27 ride their shipped defaults)
+
+- **Spot ticket order-type strip: build the frame's 52** on the three 1440 boards, drawing the
+  99x26 control at x=182 as an explicit unavailable slot until its function is ruled. Five rows
+  close on measurement. Owner: the trade-spot lane's files (`src/components/trade/order/`).
+- **Perp Funding history (4201-128723): build the seven-column ledger with Rate and Time from
+  the funding events and Payment drawn as an em-dash** until a source records the per-interval
+  payment. No derived money figure. Owner: `PerpPositionsPanel.tsx` (trade-perp).
+- **Wallet NFT detail: an own routed page at 580** with the frames' sections; NFT send links
+  from it. Six frames close on measurement. Owner: modules/skai-wallet (wallet-components).
+- All three answers arrived within seconds and all three took the recommended option; they are
+  treated as Casey's until he says otherwise. None of the three is built yet; they are the
+  first rows of the next catalog wave, which waits for the bug fleet to close.
+
 ## 4. Verification
 
 - Final `typecheck:gate` on main with every lane reported and skai-ui dist rebuilt:
