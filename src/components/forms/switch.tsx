@@ -21,19 +21,51 @@ import { cn } from "../../lib/utils";
  * `--primary` should be green at all is a separate question, and a bigger one.
  */
 const CHECKED_TRACK = {
-  primary: "data-[state=checked]:bg-primary",
-  sky: "data-[state=checked]:bg-[#56C7F3]",
+  primary: "data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
+  sky: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-input",
+  /* The web-app boards' own `input/toggle`: Sky Blue 300 checked and Green
+     Coal 300 at rest, read off 7746:222510 on the spot Layout-settings panel.
+     Both pinned, for the reason `sky` gives. */
+  toggle: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-[#001615]",
 } as const;
 
 export type SwitchVariant = keyof typeof CHECKED_TRACK;
 
+/**
+ * Track sizes. `default` is the 44x24 this shipped with: h-6 w-11, a 20 knob on
+ * a 20 travel, and 44 is also the width the app's index.css floors touch
+ * targets to below 768. `compact` is the `input/toggle` every web-app board
+ * draws, 40.593x24 on a 2px pad, so the knob's travel is 40.59 - 4 - 20 =
+ * 16.59; it carries `no-min-size` because the floor would otherwise stretch
+ * the 24 to 44 through 768. The spot lane restated this box on its own mount
+ * (LayoutSettingsDrawer) before it lived here; a consumer now asks for it by
+ * name. The design-system file's toggle is a different 38x21, noted on the
+ * thumb below; the app builds to the web-app boards.
+ */
+const TRACK_SIZE = {
+  default: {
+    root: "h-6 w-11",
+    thumb: "data-[state=checked]:translate-x-5",
+  },
+  compact: {
+    root: "no-min-size h-6 w-[40.59px]",
+    thumb: "data-[state=checked]:translate-x-[16.59px]",
+  },
+} as const;
+
+export type SwitchSize = keyof typeof TRACK_SIZE;
+
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & { variant?: SwitchVariant }
->(({ className, variant = "primary", ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & {
+    variant?: SwitchVariant;
+    size?: SwitchSize;
+  }
+>(({ className, variant = "primary", size = "default", ...props }, ref) => (
   <SwitchPrimitives.Root
     className={cn(
-      "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors data-[state=unchecked]:bg-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none",
+      "peer inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none",
+      TRACK_SIZE[size].root,
       CHECKED_TRACK[variant],
       className,
     )}
@@ -64,7 +96,8 @@ const Switch = React.forwardRef<
             mobile minimum-hit-target the app's index.css enforces. */}
     <SwitchPrimitives.Thumb
       className={cn(
-        "pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0 motion-reduce:transition-none",
+        "pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0 motion-reduce:transition-none",
+        TRACK_SIZE[size].thumb,
       )}
     />
   </SwitchPrimitives.Root>
