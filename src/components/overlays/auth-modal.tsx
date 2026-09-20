@@ -536,9 +536,15 @@ export function AuthModal({
             </button>
           </form>
 
+          {/* Frame 168: rules either side of the word on a 19 gap, and the row
+              is as tall as the word's own line box - 16 / 16 / 18 across the
+              three (11225:187069, 11225:178226, 10730:81197). At 375 that is a
+              16 where Paragraph 2 gives 14 everywhere else on the modal, so the
+              leading is stated here rather than taken from the ramp; it was the
+              two pixels between a rendered 410 and the frame's 412. */}
           <div className="flex items-center gap-[19px]">
             <span className="h-px flex-1 bg-[#123f3c]" aria-hidden />
-            <span className={cn(PARAGRAPH_2, "text-[#95a09f]")}>OR</span>
+            <span className={cn(PARAGRAPH_2, "leading-[16px] text-[#95a09f]")}>OR</span>
             <span className="h-px flex-1 bg-[#123f3c]" aria-hidden />
           </div>
 
