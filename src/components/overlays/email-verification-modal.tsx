@@ -278,26 +278,32 @@ export function EmailVerificationModal({
     >
       {/* Modal Container */}
       <div
-        /* Figma 2005:30112 / 2005:19920 / 2005:11457 — internal padding is
-           8 / 16 / 24 horizontally. At 375 the frame keeps the vertical inset
-           at 16 (controls sit at y=16, the resend line ends 16 off the floor)
-           while the horizontal inset drops to 8, so the six OTP boxes get the
-           modal's full 342px content width. */
-        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] px-2 py-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
+        /* Horizontal inset 8 / 16 / 24, so the six OTP boxes get the modal's
+           full content width at every rung. The vertical inset is not a pair:
+           the August boards put the controls row at y=24 and end the resend
+           line 24 off the floor at 375 (11229:188072, 358x342 at x=8), and at
+           y=16 over the same 24 at 768 (11225:181606, 468x375 at 150,325). The
+           May set this file was first built from had a flat 16 at 375, and
+           Casey's ruling of 2026-09-19 takes August. */
+        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] px-2 pb-6 pt-6 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:px-4 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pt-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Back and Close Buttons — the frame's `controls` row carries its own
             8px inset at 375 (2005:30113), which is what keeps Back and close
             16px off the modal edge once the modal itself drops to 8. */}
-        <div className="mb-4 flex items-center justify-between px-2 md:mb-6 md:px-0 lg:mb-6">
+        <div className="mb-5 flex items-center justify-between px-2 md:mb-6 md:px-0">
           <button
             onClick={onBack}
             disabled={loading}
-            className="flex items-center gap-1.5 text-white transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-50 md:gap-2"
+            className="flex items-center gap-2 text-white transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Back"
           >
             <BackIcon className="h-4 w-4" />
-            <span className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px]">
+            {/* The label steps DOWN a size as the modal grows: Sm/Paragraph 1
+                300 at 375 (14/16, the 31-wide box on 11229:188076) and
+                Md/Paragraph 2 300 at 768 (12/16, 26 wide on 11225:181610).
+                Gray 100, not white — only the glyph beside it is white. */}
+            <span className="font-manrope text-[14px] font-normal leading-[16px] tracking-[-0.56px] text-[#E0E0E0] md:text-[12px] md:tracking-[-0.48px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
               Back
             </span>
           </button>
@@ -311,24 +317,28 @@ export function EmailVerificationModal({
           </button>
         </div>
 
-        {/* Title */}
-        <h2 className="font-manrope mb-3 text-center text-[24px] font-light leading-[28px] tracking-[-0.96px] text-white md:mb-4 md:text-[28px] md:leading-[32px] md:tracking-[-1.12px] lg:mb-4 lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
+        {/* Title — Super-headline 4 300: 20/24 at 375 (11229:188079) and 24/28
+            at 768 (11225:181613), over an 8 / 16 gap to the line below. */}
+        <h2 className="font-manrope mb-2 text-center text-[20px] font-light leading-[24px] tracking-[-0.8px] text-white md:mb-4 md:text-[24px] md:leading-[28px] md:tracking-[-0.96px] lg:text-[32px] lg:leading-[36px] lg:tracking-[-1.28px]">
           Email verification
         </h2>
 
-        {/* Description */}
-        <p className="font-manrope mb-5 px-0 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:text-[16px] md:leading-[22px] lg:mb-6 lg:text-[18px] lg:leading-[24px]">
+        {/* Description — Sub-headline 2 300, Manrope Regular 14 at -0.56 with
+            the address on the Bold cut. Its leading is the face's own: a flat
+            18 at 375 and Manrope's natural 18.048 at 768, which is why the
+            frame's two-line box reads 36 at one width and 37 at the other. */}
+        <p className="font-manrope mb-5 text-center text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0] md:mb-6 md:leading-[18.05px] lg:text-[18px] lg:leading-[24px]">
           Enter the verification code sent to <br />
-          <span className="font-semibold text-white">{email}</span>
+          <span className="font-bold text-white">{email}</span>
         </p>
 
         {/* Code Input */}
-        <div className="mb-6 md:mb-6 lg:mb-6">
+        <div className="mb-5 md:mb-6">
           {/* Figma 2005:20664 — the six inputs are `flex-[1_0_0]`, i.e. they
               split the modal's full content width evenly (8px gutter), not a
               narrow centred cluster of fixed 44/52/56px boxes. That fixed-width
               layout was the "pop up size do not match" report (8658d6a4). */}
-          <div className="mb-5 flex justify-center gap-2 md:mb-6 lg:mb-6">
+          <div className="mb-5 flex justify-center gap-2 md:mb-6">
             {code.map((digit, index) => (
               <div
                 key={index}
@@ -390,11 +400,13 @@ export function EmailVerificationModal({
               }
             }}
             disabled={!code.every((digit) => digit !== "") || loading}
-            /* Button/large — 342x44 (2005:30145), 436x54 (2005:19953) and
-               400x62 (2005:11490). The desktop 62 already matched; the tablet
-               and mobile steps were both rendering 62/52 because they carried
-               the desktop py. 14+16+14 and 16+22+16 land the frame heights. */
-            className="font-manrope flex w-full items-center justify-center gap-2 rounded-[12px] bg-[#56C7F3] px-6 py-[14px] text-center text-[14px] font-normal leading-[16px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:rounded-[14px] md:px-10 md:py-4 md:text-[16px] md:leading-[22px] md:tracking-[-0.64px] lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
+            /* 342x44 at 375 and 436x50 at 768 (11229:188102, 11225:181636).
+               The 768 instance is cta/button Medium Primary read off its own
+               node: Sky Blue 300, px 24, py 16, radius 12 and Md/Paragraph 1
+               300 at 14/18/-0.56, so 16+18+16 lands the 50. It had been
+               rendering 54 on a 16/22 face at radius 14, neither of which any
+               instance draws. */
+            className="font-manrope flex w-full items-center justify-center gap-2 rounded-[12px] bg-[#56C7F3] px-6 py-[14px] text-center text-[14px] font-normal leading-[16px] tracking-[-0.56px] text-[#001615] transition-all hover:bg-[#56C7F3]/90 disabled:cursor-not-allowed disabled:opacity-50 md:py-4 md:leading-[18px] lg:rounded-[16px] lg:px-10 lg:py-5 lg:text-[16px] lg:leading-[22px] lg:tracking-[-0.64px]"
           >
             {loading ? (
               <>
@@ -414,13 +426,15 @@ export function EmailVerificationModal({
               <button
                 onClick={handleResend}
                 disabled={loading}
-                className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#56C7F3] underline transition-colors hover:text-[#56C7F3]/80 disabled:cursor-not-allowed disabled:opacity-50"
+                className="font-manrope text-[12px] font-normal leading-[14px] tracking-[-0.48px] text-[#56C7F3] underline transition-colors hover:text-[#56C7F3]/80 disabled:cursor-not-allowed disabled:opacity-50 md:leading-[16px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]"
               >
                 Resend code
               </button>
             )
           ) : (
-            <p className="font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0]">
+            /* Paragraph 2 300: 12/14 at 375 (the 14-tall 11229:188103) and
+               12/16 at 768 (the 16-tall 11225:181637). */
+            <p className="font-manrope text-[12px] font-normal leading-[14px] tracking-[-0.48px] text-[#E0E0E0] md:leading-[16px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
               Resend code in{" "}
               <span className="font-medium text-[#56C7F3]">
                 {timer} seconds
