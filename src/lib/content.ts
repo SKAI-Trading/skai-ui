@@ -205,15 +205,19 @@ export const content = {
           emphasis: "AI-powered",
           suffix: " trading ecosystem",
         },
-        // Copy is verbatim from Figma 2005:4512 / 2005:9321 (Skai > Onboarding
-        // 1VH). The previous wording ("Discover the new world ... prediction
-        // markets ... a catalog of casino-style gaming") predates the approved
-        // onboarding design and was the "old skai.trade messaging" in bug
-        // 419bd2b4.
+        // Verbatim from the August 1VH boards, which Casey ruled on 2026-09-19
+        // govern over the May set: 10767:307473 at 1440, 11189:2629 at 768 and
+        // 11225:181650 at 375 all draw this line. The May wording ("Tap into
+        // our brave new world ...") came in under bug 419bd2b4, which retired
+        // this sentence as "old skai.trade messaging"; the ruling reverses that
+        // and the frames and the app have swapped sides. Do not re-retire it
+        // off the bug alone.
         subheading:
-          "Tap into our brave new world of perpetual trading, swaps, prediction, memes, launchpads, and our catalog of casino style gaming.",
+          "Discover the new world of perpetual trading, swaps, prediction markets, memes, launchpads, and a catalog of casino-style gaming",
         cta: "Get early access",
-        // Figma 2005:5169 / 2005:9978.
+        // 11189:2629 and 11225:181650 read this; the 1440 board 10767:307473
+        // reads "Traders are already winning with us" instead, and one string
+        // cannot be two. Held for Casey.
         counterSuffix: "Users are already on this list",
         defaultCount: "800",
       },
@@ -228,9 +232,11 @@ export const content = {
       completion: {
         titleWithUsername: "@{{username}} is yours!",
         titleFallback: "You're in!",
-        subtitle: "Welcome Skai Early Adopter!",
+        // 10734:79425 and every completion board below it read "Welcome to
+        // Skai!"; the gift line carries its exclamation mark (10734:80089).
+        subtitle: "Welcome to Skai!",
         rewardAmount: "+500 SKAI Points",
-        giftMessage: "We gifted you",
+        giftMessage: "We gifted you!",
         giftHighlight: "",
         giftSuffix: "",
       },
