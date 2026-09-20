@@ -145,6 +145,15 @@ phone gutter sat 12 inside a board at 0.
 
 ## 3. Decisions for Casey
 
+Ruled 2026-09-19 17:5x Denver, at the close: (10) the create-agent wizard is rebuilt
+INSIDE the app shell as all ten boards draw it, not the full-bleed dialog; (7 to 9) the
+landing's AUGUST frame set governs over May (closed username box 76/60/48, 32
+line-to-button at 1440, 24 tick at 768, 32 mark clearance at 375, the hero subhead
+"Discover the new world" restored, socials per board), and the May boards are marked
+superseded on those terms; (17) the perps leverage drawer keeps the 62-tall numeric input
+of the 2026-09-09 ruling and the two 52-tall slider boards are recorded as overridden.
+The rest ride on the shipped defaults in brackets until Casey says otherwise.
+
 From phase 2 (shipped default in brackets):
 
 17. Leverage drawer at 1440: base 3928-85741 and ALT 3931-85816 both draw a 52-tall
