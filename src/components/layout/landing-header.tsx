@@ -3,7 +3,8 @@
  *
  * Features:
  * - Terms/Privacy navigation links on the left
- * - Social icons (Discord, Instagram, X/Twitter) on the right
+ * - Social icons on the right, Discord / X / Telegram / Instagram, each drawn
+ *   only when its url is passed
  * - Optional blur effect for scrolled state
  * - Clean, minimal design with SKAI branding
  */
@@ -154,8 +155,12 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
         {...props}
       >
         {/* Left Navigation - Terms & Privacy */}
-        {/* Figma: Manrope 14px/18px, letter-spacing -0.56px (-4%), color #E0E0E0 */}
-        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+        {/* Figma: Manrope 14px/18px, letter-spacing -0.56px (-4%), color #E0E0E0.
+            The gap is 24 on the 375 boards (11225:184801 legal nav 111x16: Terms
+            40 at x=0, Privacy 47 at x=64) and 32 from 768 up (2005:15075 nav
+            117x16: Terms 33 at x=0, Privacy 37 at x=65). It had stepped
+            16 / 24 / 32 through sm, and 640 matches no board. */}
+        <div className="flex items-center gap-6 md:gap-8">
           <Link
             to={termsUrl}
             className="font-manrope text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] transition-colors hover:text-white"
@@ -176,9 +181,18 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
             conversion. Per Casey's decision the kept set is X, Discord, Telegram
             and Instagram. TikTok, Facebook, LinkedIn and YouTube are no longer
             rendered — their props remain on the interface so no caller breaks,
-            they simply have no icon slot. */}
-        {/* Mobile: only Discord + X shown; others hidden below sm breakpoint */}
-        <div className="flex items-center gap-6 sm:gap-8">
+            they simply have no icon slot.
+
+            Which of the four draw is the caller's: the onboarding boards put
+            the socials per board (Casey, 2026-09-19), and skai-landing passes
+            Telegram empty because its boards draw three. Every slot draws at
+            every width. Two used to hide below 640, which left the 375 boards
+            (11225:184801, 11225:185493: nav 117x16 at 235,25 holding discord,
+            twitter and instagram at x=5, 53 and 101) with two icons for their
+            three, and nothing a caller passed could put the third back. The
+            gap is 32 between the 16px boxes on every board, 375 included; it
+            had been 24 below sm. */}
+        <div className="flex items-center gap-8">
           {discordUrl && (
             <a
               href={discordUrl}
@@ -206,7 +220,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               href={telegramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
+              className="text-white/60 transition-colors hover:text-white"
               aria-label="Telegram"
             >
               <TelegramIcon className="h-4 w-4" />
@@ -217,7 +231,7 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-white/60 transition-colors hover:text-white"
+              className="text-white/60 transition-colors hover:text-white"
               aria-label="Instagram"
             >
               <InstagramIcon className="h-4 w-4" />
