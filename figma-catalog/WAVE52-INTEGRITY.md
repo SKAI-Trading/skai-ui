@@ -116,7 +116,7 @@ Findings worth carrying (each is in its lane's rows):
 
 ## 3. Decisions for Casey (29 lanes named one or more; three asked at the close)
 
-**Ruled 2026-09-19 21:1x (AskUserQuestion):** (1) Baccarat: re-skin the bet-type selector INTO the frame's 324x42 strip, overriding the shipped felt cells; the four panel frames close on that build. (2) Short logomark: the frame governs, 116x48; the 135x48 anti-cram width is retired. (3) Home sidebar intelligent-support list: three entries with a new Trading destination; the destination itself is not yet named, so the shipped seven stand until it is. The other 26 ride on the shipped defaults named in brackets below.
+**Ruled 2026-09-19 21:1x (AskUserQuestion):** (1) Baccarat: re-skin the bet-type selector INTO the frame's 324x42 strip, overriding the shipped felt cells; the four panel frames close on that build. (2) Short logomark: the frame governs, 116x48; the 135x48 anti-cram width is retired. (3) Home sidebar intelligent-support list: three entries with a new Trading destination, ruled as /spot in a follow-up. None of the three is built yet; they open the next wave. The other 26 ride on the shipped defaults named in brackets below.
 
 - **learn-pages**: hero subhead boards read Lean (typo) shipped Learn; apply the pending DDL or leave the panel saying it saves nothing; Step 1 fields still inside CourseCreatorModal.tsx (refactor inline next pass).
 - **streaming**: change skai-ui short logomark to 116x48 or keep and accept the narrower mark.
