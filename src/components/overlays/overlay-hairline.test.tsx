@@ -34,6 +34,26 @@ describe("overlay hairline", () => {
     expect(classes).not.toContain("border");
   });
 
+  /**
+   * 2005:31572 at 375: controls at y=16, rows ending at 258 in a 266 box, and
+   * the subtitle on Sm/Sub-headline 2 300's flat 18 (2005:31580).
+   */
+  it("wallet choice keeps the 375 board's 8 floor and 18 subtitle line", () => {
+    render(
+      <WalletChoiceModal
+        isOpen
+        onClose={vi.fn()}
+        onSelectEmailWallet={vi.fn()}
+        onSelectExternalWallet={vi.fn()}
+      />,
+    );
+    const classes = boxClasses("Choose your wallet");
+    expect(classes).toEqual(expect.arrayContaining(["pt-4", "pb-2", "md:p-4", "lg:p-6"]));
+    expect(classes).not.toContain("py-4");
+    const subtitle = screen.getByText(/store your assets/i).className.split(/\s+/);
+    expect(subtitle).toEqual(expect.arrayContaining(["leading-[18px]", "tracking-[-0.56px]", "md:leading-[18.05px]"]));
+  });
+
   it("email verification draws its box stroke inside the box", () => {
     render(
       <EmailVerificationModal
