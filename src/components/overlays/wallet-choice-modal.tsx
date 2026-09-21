@@ -135,15 +135,22 @@ export function WalletChoiceModal({
     >
       {/* Modal Container */}
       <div
-        /* Internal padding at 375 is 8 across, 16 above and 8 below: 2005:31572
-           puts the controls at y=16 and ends the second row at 258 in a 266
-           box. 16 at 768 and 24 at 1440. The mobile step gives the option rows
-           the frame's full 342px content width. The hairline is an inset ring, not a border: the
+        /* Internal padding at 375 is 8 across and 24 above and below. Two
+           boards draw this modal at 375 and they disagree: the Onboarding
+           board 2005:31572 opens the controls at 16 and closes on an 8 floor
+           (266 tall), while the Temporary landing board 2065:27090 opens at 24
+           and closes on 24 (290 tall). The second is the later edit (its
+           controls and rows were swapped to the icons/action and
+           CTA/directory-button instances) and it is the rhythm the August
+           verification step before it draws at this width (11229:188072,
+           pt 24 / pb 24), so it governs. 16 at 768 and 24 at 1440, where the
+           two sets agree. The mobile step gives the option rows the frame's
+           full 342px content width. The hairline is an inset ring, not a border: the
            boards lay the column out inside the stroke (2005:21380 is 468x317
            with its 436 column at x=16), and a 1px border took 2 off that
            column and added 2 to the height. auth-modal draws its box the
            same way. */
-        className="relative w-full max-w-[358px] rounded-[20px] bg-[#122524] px-2 pb-2 pt-4 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
+        className="relative w-full max-w-[358px] rounded-[20px] bg-[#122524] px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button — the frame's `controls` row keeps its own 8px inset at
@@ -170,7 +177,7 @@ export function WalletChoiceModal({
             the wallet list (Frame 167) from the board's y=143 to 146, moving
             everything below it. The sibling email-verification-modal draws the
             same token at the same rung. At 375 it is Sm/Sub-headline 2 300,
-            14/18 at -0.56 (2005:31580), on a flat 18. */}
+            14/18 at -0.56, on a flat 18 (2065:27098, and 2005:31580 agrees). */}
         <p className="font-manrope mb-5 px-0 text-center text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0] md:mb-6 md:leading-[18.05px] lg:mb-6 lg:text-[18px] lg:leading-[24px] lg:tracking-[-0.72px]">
           Choose how you&apos;d like to store your assets.
         </p>

@@ -35,10 +35,10 @@ describe("overlay hairline", () => {
   });
 
   /**
-   * 2005:31572 at 375: controls at y=16, rows ending at 258 in a 266 box, and
-   * the subtitle on Sm/Sub-headline 2 300's flat 18 (2005:31580).
+   * 2065:27090 at 375: controls at y=24, rows ending at 266 in a 290 box, and
+   * the subtitle on Sm/Sub-headline 2 300's flat 18 (2065:27098).
    */
-  it("wallet choice keeps the 375 board's 8 floor and 18 subtitle line", () => {
+  it("wallet choice keeps the 375 board's 24 / 24 insets and 18 subtitle line", () => {
     render(
       <WalletChoiceModal
         isOpen
@@ -48,8 +48,8 @@ describe("overlay hairline", () => {
       />,
     );
     const classes = boxClasses("Choose your wallet");
-    expect(classes).toEqual(expect.arrayContaining(["pt-4", "pb-2", "md:p-4", "lg:p-6"]));
-    expect(classes).not.toContain("py-4");
+    expect(classes).toEqual(expect.arrayContaining(["pt-6", "pb-6", "md:p-4", "lg:p-6"]));
+    expect(classes).not.toContain("pb-2");
     const subtitle = screen.getByText(/store your assets/i).className.split(/\s+/);
     expect(subtitle).toEqual(expect.arrayContaining(["leading-[18px]", "tracking-[-0.56px]", "md:leading-[18.05px]"]));
   });
