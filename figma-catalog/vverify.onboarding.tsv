@@ -131,3 +131,6 @@
 2065-16254	match	-	wave58 onboarding-landing 2026-09-21: Modal 2065:16948 read live, 468x317, identical to 2005:21380; the component sums 317 on a 436 column. SOURCE-TO-BOARD, no browser ran.
 2086-37672	match	-	wave58 onboarding-landing 2026-09-21: Modal 2086:38341 read live, 448x388; the component sums 388 on a 400 column. SOURCE-TO-BOARD, no browser ran.
 2005-30878	partial	-	wave58 onboarding-landing 2026-09-21: SUPERSEDES this lane's own earlier wave58 match line. That line counted the app against this board's 16 top and 8 floor; the governing board is the later 2065:27090 (24 / 24, 290 tall) and the app now follows it, so against THIS board the insets differ by design. Row closed by supersession. SOURCE-TO-BOARD, no browser ran.
+2065-24936	match	-	wave58 onboarding-landing 2026-09-21: Modal 2065:25630 read live, 358x342, identical to 11229:188072; the component sums 342 on a 342 column. SOURCE-TO-BOARD, no browser ran.
+2065-25666	match	-	wave58 onboarding-landing 2026-09-21: Modal 2065:26360 read live, 358x342, the filled twin of 2065:25630; the component sums 342. SOURCE-TO-BOARD, no browser ran.
+2086-32903	match	-	wave58 onboarding-landing 2026-09-21: Modal 2086:33572 read live, 448x420; the component sums 420 on a 400 column since the inset ring (1204aa6). SOURCE-TO-BOARD, no browser ran.
