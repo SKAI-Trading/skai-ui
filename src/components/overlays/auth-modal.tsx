@@ -415,8 +415,17 @@ export function AuthModal({
                   Email address
                 </label>
               </div>
-              {/* Sign up's focused field draws an App Green ring where login's is
-                  Sky Blue (10734:74431). */}
+              {/* Sign up's focused field draws an App Green ring: 1.5px #17F9B4
+                  over the resting 1px #123F3C, on both 10734:74431 and the
+                  in-context 10734:74378, with Input hint (dark) under it.
+
+                  The login half is NOT measured, and saying so is the point of
+                  this note. Every August Login board draws the field at rest -
+                  10730:81195 is a 1px #123F3C box holding the placeholder
+                  example@provider.com in #95A09F - so no frame in the governing
+                  set shows a focused or filled Login field, and the Sky Blue
+                  below is carried from the mode's own accent rather than read
+                  off a node. It is one token to change if a board turns up. */}
               <div
                 className={cn(
                   FIELD_BOX,
