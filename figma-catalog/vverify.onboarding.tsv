@@ -134,3 +134,4 @@
 2065-24936	match	-	wave58 onboarding-landing 2026-09-21: Modal 2065:25630 read live, 358x342, identical to 11229:188072; the component sums 342 on a 342 column. SOURCE-TO-BOARD, no browser ran.
 2065-25666	match	-	wave58 onboarding-landing 2026-09-21: Modal 2065:26360 read live, 358x342, the filled twin of 2065:25630; the component sums 342. SOURCE-TO-BOARD, no browser ran.
 2086-32903	match	-	wave58 onboarding-landing 2026-09-21: Modal 2086:33572 read live, 448x420; the component sums 420 on a 400 column since the inset ring (1204aa6). SOURCE-TO-BOARD, no browser ran.
+2086-36048	match	-	wave58 onboarding-landing 2026-09-21: Modal 2086:36717 read live, 448x420, the filled twin of 2086:33572; the component sums 420. SOURCE-TO-BOARD, no browser ran.
