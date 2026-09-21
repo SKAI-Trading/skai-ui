@@ -562,6 +562,33 @@ for (const s of SECTIONS) {
 }
 const citationRefusals = [];
 
+// ★ Measured node geometry, keyed by "<fileKey>:<id>". The live harvest is the only place the
+// catalog holds a frame's REAL size; everything else reads the title, which can be stale. A
+// frame's measured width, not its name, is its breakpoint.
+const measuredByKey = new Map();
+{
+  const liveDir = path.join(DIR, "live");
+  if (fs.existsSync(liveDir)) {
+    for (const f of fs.readdirSync(liveDir)) {
+      if (!f.endsWith(".tsv")) continue;
+      const fk = f.replace(/\.tsv$/, "").split("__")[0];
+      for (const line of fs.readFileSync(path.join(liveDir, f), "utf8").split(/\r?\n/)) {
+        if (!line.trim()) continue;
+        const [id, , , w, h] = line.split("\t");
+        const mw = Math.round(+w), mh = Math.round(+h);
+        if (!id || !Number.isFinite(mw) || mw <= 0) continue;
+        // ⛔ The live harvest writes node ids COLON-separated (`10385:7`); `*.nodes.txt` and this
+        // registry use the DASH form (`10385-7`). Keyed on the raw id this map never matches a
+        // single frame and the whole override silently does nothing — which is exactly what
+        // happened on the first run. Normalise to the dash form the registry actually uses.
+        measuredByKey.set(`${fk}|${String(id).replace(/:/g, "-")}`, { w: mw, h: mh });
+      }
+    }
+  }
+}
+const bandOf = (w) => (w >= 1200 ? "desktop" : w >= 700 ? "tablet" : "mobile");
+const bandMismatches = [];
+
 let stats = { total: 0, titled: 0, cited: 0, bySection: {} };
 
 for (const section of SECTIONS) {
@@ -629,6 +656,22 @@ for (const section of SECTIONS) {
             aliasNote: COMPONENT_ALIASES[id].note || undefined,
           }
         : {}),
+      // ★ The band comes from the MEASURED node. `viewport` above keeps the title's DECLARED
+      // size, so the two can be compared rather than one quietly replacing the other. A
+      // hand-classified alias device still wins: those are rulings, not guesses.
+      ...(() => {
+        const m = measuredByKey.get(`${fileKey}|${id}`);
+        if (!m) return {};
+        const alias = COMPONENT_ALIASES[id];
+        if (alias && alias.section === section && alias.device) return {};
+        const measuredBand = bandOf(m.w);
+        const out = { device: measuredBand, measuredViewport: `${m.w}x${m.h}` };
+        if (parsed.device && parsed.device !== measuredBand) {
+          out.titleBandMismatch = `${parsed.device}->${measuredBand}`;
+          bandMismatches.push({ regKey, section, title, declared: parsed.device, measured: measuredBand, node: `${m.w}x${m.h}` });
+        }
+        return out;
+      })(),
       citedByFiles: cited,
       implFiles: p.implFiles || [],
       status: p.status || "unknown",
@@ -699,6 +742,22 @@ for (const f of Object.values(frames)) {
 // somebody must say which one the code comment meant. `cited: 0` on a section is
 // only meaningful once this is empty — otherwise it may just be a refusal.
 stats.citationRefusals = citationRefusals;
+
+// Frames whose TITLE claims a different device band than the node measures. Recorded on every
+// run, not measured once and forgotten: an unreported finding becomes a stale note, and stale
+// notes are this catalog's most common defect. The band used everywhere is the MEASURED one —
+// `viewport` keeps the title's declared size so the two can be compared rather than one quietly
+// replacing the other.
+stats.bandMismatches = bandMismatches;
+if (bandMismatches.length) {
+  const dir = {};
+  for (const b of bandMismatches) dir[`${b.declared}->${b.measured}`] = (dir[`${b.declared}->${b.measured}`] || 0) + 1;
+  console.warn(
+    `\n!! ${bandMismatches.length} frame(s) carry a TITLE whose device band contradicts the measured node: ` +
+      Object.entries(dir).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v}`).join(", "),
+  );
+  console.warn("   The measured band governs. Fix the Figma titles, or accept the title as a label only.");
+}
 
 // Readiness rollup, and the coverage report that makes a missing page announce
 // itself instead of being silently absent.

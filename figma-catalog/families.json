@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21T08:43:48.721Z",
+  "generated": "2026-09-21T21:05:41.632Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -3391,7 +3391,6 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:9403-142103"
       ],
       "devices": [
-        "tablet",
         "mobile"
       ],
       "variants": [
@@ -3452,8 +3451,7 @@
       ],
       "devices": [
         "mobile",
-        "tablet",
-        "desktop"
+        "tablet"
       ],
       "variants": [
         "market",
@@ -4880,6 +4878,7 @@
         "4595-50243"
       ],
       "devices": [
+        "mobile",
         "desktop"
       ],
       "variants": [],
@@ -4896,7 +4895,7 @@
         "10932-126131"
       ],
       "devices": [
-        "desktop"
+        "mobile"
       ],
       "variants": [],
       "citedFileCount": 0,
@@ -5846,9 +5845,9 @@
         "M6r9FEn042UWTQD1zvy6GM:9003-143366"
       ],
       "devices": [
+        "mobile",
         "desktop",
-        "tablet",
-        "mobile"
+        "tablet"
       ],
       "variants": [
         "Card out",
@@ -6445,6 +6444,7 @@
       ],
       "devices": [
         "desktop",
+        "tablet",
         "mobile"
       ],
       "variants": [
@@ -6502,7 +6502,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Mobile ALT",
@@ -7155,6 +7156,7 @@
       ],
       "devices": [
         "desktop",
+        "mobile",
         "tablet"
       ],
       "variants": [],
@@ -7330,7 +7332,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [],
       "citedFileCount": 5,
@@ -10139,7 +10142,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "hf_20260802_175310_1d541834-3870-4f8d-a2d4-58053874368e 1",
@@ -10196,7 +10200,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Desktop Selection",
@@ -10812,7 +10817,8 @@
       ],
       "devices": [
         "desktop",
-        "tablet"
+        "tablet",
+        "mobile"
       ],
       "variants": [
         "input/primary-inputs (account Currency, 1440) [input/primary-inputs 648x62]",
@@ -10846,7 +10852,8 @@
       ],
       "devices": [
         "desktop",
-        "tablet"
+        "tablet",
+        "mobile"
       ],
       "variants": [],
       "citedFileCount": 1,
@@ -10869,7 +10876,8 @@
       ],
       "devices": [
         "desktop",
-        "tablet"
+        "tablet",
+        "mobile"
       ],
       "variants": [],
       "citedFileCount": 0,
@@ -10894,7 +10902,8 @@
       ],
       "devices": [
         "desktop",
-        "tablet"
+        "tablet",
+        "mobile"
       ],
       "variants": [
         "settings",
@@ -10921,7 +10930,8 @@
       ],
       "devices": [
         "desktop",
-        "tablet"
+        "tablet",
+        "mobile"
       ],
       "variants": [],
       "citedFileCount": 1,
@@ -12720,7 +12730,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Starting",
@@ -12809,7 +12820,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Selection",
@@ -12847,6 +12859,7 @@
       ],
       "devices": [
         "desktop",
+        "tablet",
         "mobile"
       ],
       "variants": [
@@ -12895,7 +12908,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Desktop",
@@ -12936,7 +12950,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Mobile",
@@ -12987,6 +13002,7 @@
       ],
       "devices": [
         "desktop",
+        "tablet",
         "mobile"
       ],
       "variants": [
@@ -13037,7 +13053,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Desktop",
@@ -13077,7 +13094,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Starting",
@@ -13114,7 +13132,8 @@
       ],
       "devices": [
         "desktop",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Skai > Play > Casino > Blackjack",
@@ -13361,9 +13380,9 @@
         "M6r9FEn042UWTQD1zvy6GM:10401-6374"
       ],
       "devices": [
+        "mobile",
         "desktop",
-        "tablet",
-        "mobile"
+        "tablet"
       ],
       "variants": [
         "Safari A 8",
@@ -13748,8 +13767,8 @@
       ],
       "devices": [
         "desktop",
-        "tablet",
-        "mobile"
+        "mobile",
+        "tablet"
       ],
       "variants": [
         "Load screen - desktop",
