@@ -284,8 +284,13 @@ export function EmailVerificationModal({
            line 24 off the floor at 375 (11229:188072, 358x342 at x=8), and at
            y=16 over the same 24 at 768 (11225:181606, 468x375 at 150,325). The
            May set this file was first built from had a flat 16 at 375, and
-           Casey's ruling of 2026-09-19 takes August. */
-        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] px-2 pb-6 pt-6 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:px-4 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pt-6"
+           Casey's ruling of 2026-09-19 takes August.
+
+           The hairline is an inset ring rather than a border, as in
+           auth-modal: the boards lay the 342 column out inside the stroke,
+           and a 1px border took 2 off it (340 across six cells) and stood the
+           box 344 where 11229:188072 draws 342. */
+        className="relative w-full max-w-[358px] rounded-[20px] bg-[#122524] px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:px-4 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pt-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Back and Close Buttons — the frame's `controls` row carries its own

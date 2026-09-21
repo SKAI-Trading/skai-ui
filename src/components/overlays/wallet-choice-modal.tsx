@@ -137,8 +137,12 @@ export function WalletChoiceModal({
       <div
         /* Internal padding 8h/16v at 375 (2005:31572), 16 at 768 and 24 at
            1440 — the mobile step gives the option rows the frame's full 342px
-           content width. */
-        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] px-2 py-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
+           content width. The hairline is an inset ring, not a border: the
+           boards lay the column out inside the stroke (2005:21380 is 468x317
+           with its 436 column at x=16), and a 1px border took 2 off that
+           column and added 2 to the height. auth-modal draws its box the
+           same way. */
+        className="relative w-full max-w-[358px] rounded-[20px] bg-[#122524] px-2 py-4 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button — the frame's `controls` row keeps its own 8px inset at
