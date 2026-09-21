@@ -9,8 +9,11 @@ a reporter's mistake.
 ## What was measured
 
 Source set: `bug_reports` with `status in ('backlog','triaged','needs_info','in_progress')`
-and a non-empty `figma_link` — **114 reports, 112 distinct `(fileKey, node)` pairs**.
-(Three links are cited twice: `3471-7254`, `4437-112714`, `9099-147294`.)
+and a non-empty `figma_link` — **115 reports, 114 distinct link strings, 112 distinct
+`(fileKey, node)` pairs**. Three nodes are cited by two reports each — `3471-7254`,
+`4437-112714`, `9099-147294` — and two of those pairs of links differ only in the `t=`
+session token, which is why the link count and the pair count are not the same number.
+Deduplicate on `(fileKey, node)`, never on the URL.
 
 Resolution order, first hit wins:
 

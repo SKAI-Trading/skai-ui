@@ -38,8 +38,9 @@ and `WAVE_PLAYBOOK.md` are for anyone measuring parity against it.
 Resolving a bug report's `figma_link`: `BUGLINK_RESOLUTION_2026-09-21.md` holds the
 lookup table for every link on an open report — page, scope ruling, owning frame and
 frame status — plus the resolution order and what each layer is good for. Read it
-before opening Figma; on 2026-09-21 all 112 distinct links resolved, none cited a
-superseded frame, and the only two that resolve to nothing are certified gone.
+before opening Figma; on 2026-09-21 all 112 distinct (fileKey, node) pairs resolved,
+none cited a superseded frame, and the only two that resolve to nothing are certified
+gone.
 
 ## Regenerate
 

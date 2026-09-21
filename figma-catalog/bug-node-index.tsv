@@ -649,10 +649,11 @@ refNode	linkFileKey	resolvedFileKey	status	section	type	name	depth	page	owningSc
 # The 2026-08-13 build above covered the reports that were open THAT DAY. Reports filed
 # since then cite nodes it never saw, and a node this file does not carry resolves to
 # nothing: the lane working the report reads "not in the catalog" and either re-asks the
-# reporter for a spec or calls the citation dead. Measured today against the 114 open
-# reports (backlog/triaged/needs_info/in_progress) carrying a figma_link -> 112 distinct
-# (fileKey, node) pairs: 50 resolved through live/, live/_resolved.json, the rows above or
-# bugref-aliases.tsv, and 62 resolved to NOTHING anywhere in the catalog.
+# reporter for a spec or calls the citation dead. Measured today against the 115 open
+# reports (backlog/triaged/needs_info/in_progress) carrying a figma_link -> 114 distinct
+# link strings and 112 distinct (fileKey, node) pairs: 50 resolved through live/,
+# live/_resolved.json, the rows above or bugref-aliases.tsv, and 62 resolved to NOTHING
+# anywhere in the catalog.
 #
 # All 62 were then resolved live, one use_figma call per file, with the layer-D method:
 # loadAsync() on every page, figma.getNodeByIdAsync(id), walk .parent to the PAGE and take
