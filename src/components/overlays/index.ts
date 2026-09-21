@@ -1,6 +1,7 @@
 // Overlay Components
 export * from "./dialog";
 export * from "./sheet";
+export * from "./settings-sheet";
 export * from "./dropdown-menu";
 export * from "./context-menu";
 export * from "./popover";
