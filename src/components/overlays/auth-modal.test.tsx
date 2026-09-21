@@ -169,6 +169,38 @@ describe("modes", () => {
   });
 });
 
+/**
+ * jsdom lays nothing out, so these pin the declarations the heights come from.
+ * Both regressions are two pixels that move everything under them, and neither
+ * shows up in a screenshot unless it is set beside the board.
+ */
+describe("row heights", () => {
+  it("draws the referral rules inside the row, so they add nothing to its height", () => {
+    setup({ mode: "signup", referralCode: "", onReferralCodeChange: vi.fn() });
+    const row = screen.getByTestId("auth-referral-row");
+    expect(row.className).not.toMatch(/\bborder(-[a-z]+)?\b/);
+    expect(row.className).toContain("shadow-[inset_0_1px_0_#123f3c,inset_0_-1px_0_#123f3c]");
+    expect(screen.getByRole("button", { name: /referral code/i }).className).toContain("py-4");
+  });
+
+  it("sets the OR on a 16 line at 375 on Login only; Sign up keeps the ramp's 14", () => {
+    setup({ mode: "login" });
+    const login = screen.getByTestId("auth-or-word").className;
+    expect(login).toContain("leading-[16px]");
+    expect(login).not.toContain("leading-[14px]");
+    expect(login).toContain("lg:leading-[18px]");
+  });
+
+  it("leaves Sign up's OR on Paragraph 2's own 14 / 16 / 18", () => {
+    setup({ mode: "signup" });
+    const signup = screen.getByTestId("auth-or-word").className;
+    expect(signup).toContain("leading-[14px]");
+    expect(signup).toContain("md:leading-[16px]");
+    expect(signup).toContain("lg:leading-[18px]");
+    expect(signup.split(/\s+/)).not.toContain("leading-[16px]");
+  });
+});
+
 describe("the ENTER hint", () => {
   /**
    * Every in-context field is drawn holding an address, with the return glyph

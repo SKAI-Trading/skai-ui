@@ -530,8 +530,16 @@ export function AuthModal({
                 </div>
               ) : (
                 /* Collapsed (10734:74413 and twins): a hairline above and below,
-                   16 of air on each side of the row. */
-                <div className="flex flex-col border-y border-[#123f3c]">
+                   16 of air on each side of the row. The frames draw both rules
+                   as zero-height vectors, so Frame 197 is 16 + line + 16 and
+                   nothing more: 48 at 375 and 768 (11225:183090, 11189:4072),
+                   50 at 1440 (10734:74425). A border-y added its own 2px on top of that and
+                   let everything below the row sit 2px low, so the rules are
+                   inset rings, drawn inside the box as FIELD_BOX draws its. */
+                <div
+                  data-testid="auth-referral-row"
+                  className="flex flex-col shadow-[inset_0_1px_0_#123f3c,inset_0_-1px_0_#123f3c]"
+                >
                   <button
                     type="button"
                     onClick={() => setReferralOpen(true)}
@@ -563,13 +571,26 @@ export function AuthModal({
 
           {/* Frame 168: rules either side of the word on a 19 gap, and the row
               is as tall as the word's own line box - 16 / 16 / 18 across the
-              three (11225:187069, 11225:178226, 10730:81197). At 375 that is a
-              16 where Paragraph 2 gives 14 everywhere else on the modal, so the
-              leading is stated here rather than taken from the ramp; it was the
-              two pixels between a rendered 410 and the frame's 412. */}
+              three on Login (11225:187069, 11225:178226, 10730:81197). At 375
+              that is a 16 where Paragraph 2 gives 14 everywhere else on the
+              modal, so Login states the leading rather than taking it from the
+              ramp; it was the two pixels between a rendered 410 and the
+              frame's 412.
+
+              Sign up does NOT share that 16. Its 375 board draws the row
+              342x14 with the word on a 14 line (11225:183099), so the override
+              is Login's alone and Sign up keeps the ramp; the referral-open
+              board draws the same 14 (11225:183998). The condition is the
+              frames disagreeing by mode, not a leftover. 768 and 1440 agree
+              across the modes. */}
           <div className="flex items-center gap-[19px]">
             <span className="h-px flex-1 bg-[#123f3c]" aria-hidden />
-            <span className={cn(PARAGRAPH_2, "leading-[16px] text-[#95a09f]")}>OR</span>
+            <span
+              data-testid="auth-or-word"
+              className={cn(PARAGRAPH_2, !isSignup && "leading-[16px]", "text-[#95a09f]")}
+            >
+              OR
+            </span>
             <span className="h-px flex-1 bg-[#123f3c]" aria-hidden />
           </div>
 
