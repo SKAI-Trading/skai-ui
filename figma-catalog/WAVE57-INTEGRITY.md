@@ -169,6 +169,13 @@ The answer to both is in this wave too: the overview-tab mount (`e7f8bf729`) is 
   that would absorb a peer's error into the baseline, and Casey ruled at the wave 56 close that
   errors are fixed first so the baseline never moves to swallow them. The gate stays red and
   stays theirs.
+  - ✅ **RESOLVED the same afternoon, and resolved the right way.** `5e0ae2120` "drop a status
+    prop the dev tokens panel never took" — the stale-prop case, not the lost-intent case, and the
+    commit says which. Re-run on current main `dc2ddf954`: **`✓ no new type errors. 2511 known
+    baseline error(s)`**. ★ The baseline is still **2511**: the error was FIXED, not absorbed.
+    Had `typecheck:gate:update` been run at deploy time it would have gone green an hour earlier
+    and permanently hidden one real error inside the number. The red gate cost an hour; the
+    re-baseline would have cost the gate.
 - Catalog self-tests 17/17 and 3/3; `bp-report.mjs` and `row-tree-check.mjs` exit 0;
   20 lane files, 195 rows, 195 distinct keys.
 
