@@ -149,6 +149,26 @@ worth repeating rather than re-deriving:
   minutes. A lane repairing a stranger's row to make its own deliverable pass would have written
   a verdict nobody measured.
 
+## 5b. Casey's rulings at this close (2026-09-20 23:3x, three of about thirty)
+
+- **Sportsbook deposit-card lock tiers: SUPPLY A REAL SOURCE**, not drop them from the frame.
+  The five figures the 768 House vault board draws are to be built against a record rather than
+  removed. The source is not yet named, and naming it is what the chosen option asks for, so the
+  card stays unbuilt and the row stays open until it is. No invented tier table.
+- **SKAI has a price, and it is the sale curve.** Casey: the sale runs a moving price, users buy
+  up to $100 each, and the price rises as they do until it reaches an open spot market. So the
+  two predict ticket cells are buildable off the current curve price and are no longer
+  rule-blocked. This supersedes the premise behind every surface that reports SKAI as
+  unavailable today, which is wider than these two cells: the canonical `number | Offline` price
+  reader, the wallet's price sentinel, the portfolio's omitted symbol and the bridge resolver
+  were all correct under the old premise and now understate. They are NOT being mass-converted:
+  the curve is a primary-market price that moves as the sale fills, and valuing a holding at it
+  is a product decision that goes back to Casey on its own.
+- **The 42 lost verdicts: apply them and make the tool warn.** Convert to `match` only the
+  `done` verdicts whose frame is also done, measured at exactly 42, and turn the silent skip
+  into a warning. The other 17 stay unapplied. The published verified figure should move 523 to
+  565 with no new building, and the wave 56 record must say so.
+
 ## 6. Next
 
 - The eleven held briefs are the next wave's first dispatch once the bug fleet's batch 2 folds and hands the surfaces back: home-sidebar-layout, onboarding-landing, trade-bridge-deposit-chart, trade-perp, trade-spot, trench-discover-shell-launch, social-groups-tokens, social-messages, help-legal-nft-tx, learn-pages, skai-ui-primitives.
