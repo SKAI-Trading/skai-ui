@@ -477,7 +477,7 @@ refNode	linkFileKey	resolvedFileKey	status	section	type	name	depth	page	owningSc
 8911-163463	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	8911-163462	Skai > Predict > Rewards 1VH (1440 x 900px)	1
 8911-163817	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	sidebar	1	✅ Predict	8911-163462	Skai > Predict > Rewards 1VH (1440 x 900px)	1
 8911-163781	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	INSTANCE	Header-desktop-two-layer	1	✅ Predict	8911-163462	Skai > Predict > Rewards 1VH (1440 x 900px)	1
-8911-161038	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	dropdown-3					1
+8911-161038	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	dropdown-3	1	✅ Predict	3558-39458	Skai > Predict > Rewards > drop downs 1VH (1440 x 900px)	1
 8909-139269	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	predict	FRAME	Overlay	0	✅ Predict	8909-139269	Sponsor market rewards - step 1 (disclosure) 1440x900	1
 8909-141201	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	screen	predict	FRAME	Overlay	0	✅ Predict	8909-141201	Sponsor market rewards - step 2 (deposit) 1440x900	1
 # 2026-08-26 REFRESH - layer D re-run against the CURRENT open backlog.
@@ -644,3 +644,90 @@ refNode	linkFileKey	resolvedFileKey	status	section	type	name	depth	page	owningSc
 7491-149454	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet	INSTANCE	icons/action	4	✅ Wallet 1	7491-148345	Skai > Wallet > continue on web > home - skin 2 > Share net worth 1VH (1440 x 900px)	1
 7752-224517	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	sidebar	1	✅ Trade 1	4451-126554	Skai > Dashboard > Whale activity 1VH (1440 x 900px)	1
 7890-132958	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	TradingView	3	✅ Trade 1	4020-47586	Skai > Trade > Perpetual futures > Orders (1440 x 900px)	1
+#
+# ===== REFRESH 2026-09-21 (wave 57, figma-catalog lane) =====
+# The 2026-08-13 build above covered the reports that were open THAT DAY. Reports filed
+# since then cite nodes it never saw, and a node this file does not carry resolves to
+# nothing: the lane working the report reads "not in the catalog" and either re-asks the
+# reporter for a spec or calls the citation dead. Measured today against the 114 open
+# reports (backlog/triaged/needs_info/in_progress) carrying a figma_link -> 112 distinct
+# (fileKey, node) pairs: 50 resolved through live/, live/_resolved.json, the rows above or
+# bugref-aliases.tsv, and 62 resolved to NOTHING anywhere in the catalog.
+#
+# All 62 were then resolved live, one use_figma call per file, with the layer-D method:
+# loadAsync() on every page, figma.getNodeByIdAsync(id), walk .parent to the PAGE and take
+# the last node before it. Result: 62 of 62 exist, every one a descendant (depth 1-9) of a
+# top-level frame the catalog ALREADY holds, on a page already ruled in-scope. Zero orphans,
+# zero superseded frames, zero placeholders. The gap was this index, not the design files.
+#
+# Cross-checks run before writing: every owning frame appears in its live/<file>__<page>.tsv
+# AND in registry.json under a section (62/62), and the page Figma reported matches the page
+# live/ files it under (62/62). No row here invents a frame.
+#
+# ! The trap worth recording: registry.json keys the PRIMARY file (3sSzw1KewMtUbeLAv7uW0r)
+#   by bare node id and the other two by "<fileKey>:<node>". Looking every frame up as
+#   "<fileKey>:<node>" reports the entire Skai-Web-App file as uncatalogued - 29 frames read
+#   as missing on the first pass here, and all 29 were present.
+#
+10012-179584	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Overlay	1	✅ Play	10012-134986	Skai > Play > unsupported region 1VH (1440 x 900px)	1
+10657-234837	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Frame 1181	1	✅ Predict	10657-234836	Skai > Predict > Rewards > Open orders 1VH (768x1024px)	1
+11214-131480	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	top	3	✅ Play	11214-131460	sidebar - open casino	1
+13006-148300	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	main	1	✅ Trade 2	13006-148299	Skai > Launch > create token (1440 x 900px)	1
+13006-148858	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	main	1	✅ Trade 2	13006-148857	Skai > Launch > Live 1VH (1440 x 900px)	1
+13006-149615	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	main	1	✅ Trade 2	13006-149613	Skai > Launch > Live (1440 x 900px)	1
+13006-152696	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	main	1	✅ Trade 2	13006-152694	Skai > Launch (1440 x 900px)	1
+13006-155544	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Right menu	1	✅ Trade 2	13006-154151	Skai > Launch > Display settings (1440 x 900px)	1
+13006-175024	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	main	1	✅ Trade 2	13006-175023	Skai > Trench > Discover > Live 1VH (1440 x 900px)	1
+13006-176934	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	modal	2	✅ Trade 2	13006-176080	Skai > Trench > Discover > Live - display settings 1VH (1440 x 900px)	1
+13006-183682	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Frame 445	4	✅ Trade 2	13006-183651	Skai > Trench > Trackers > KOLs 1VH (1440 x 900px)	1
+13006-215131	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Row 2	4	✅ Trade 2	13006-214989	Skai > Trench > Trade - layout 2 with instant trade 1VH (1440 x 900px)	1
+13006-232250	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	section	3	✅ Trade 2	13006-230793	Skai > Trench > Trade > Dev tokens 1VH (1440 x 900px)	1
+13006-234845	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Frame 283	8	✅ Trade 2	13006-233358	Skai > Trench > Trade > Transactions 1VH (1440 x 900px)	1
+13006-246174	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	main	1	✅ Trade 2	13006-246173	Skai > Launch > Sample token > Dashboard - positive 1VH (1440 x 900px)	1
+13006-289838	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Frame 1341	1	✅ Trade 2	13006-289837	Skai > Trade > Trench > Community 1VH (375 x 812px)	1
+13006-291295	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	Frame 1341	1	✅ Trade 2	13006-291294	Skai > Trade > Trench > Chart - Instant > AI Bearish 1VH (375 x 812px)	1
+13006-355257	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade-2	FRAME	main	1	✅ Trade 2	13006-355256	Skai > Launch > new token 1VH (768 x 1024px)	1
+13008-113592	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home-2	FRAME	main	1	✅ Home 2	13008-113591	Skai > Pro > checkout - send tokens - step 2 1VH (1440 x 900px)	1
+13008-28416	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Main container	1	✅ Wallet 2	13008-28402	Skai > Wallet > continue on web > home > notifications - sample notification 1VH (1440 x 900px)	1
+13008-28468	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 172	2	✅ Wallet 2	13008-28453	Skai > Wallet > continue on web > home > streaks 1VH (1440 x 900px)	1
+13008-38730	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	dropdown-3	2	✅ Wallet 2	13008-38622	Skai > Wallet > continue on web > home > send - step 2 > Address lookup 1VH (1440 x 900px)	1
+13401-171587	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home-2	FRAME	main	1	✅ Home 2	13401-171586	Skai > Home > Intelligent support - Market signals 1VH (1440 x 900px)	1
+13421-173034	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home-2	FRAME	main	1	✅ Home 2	13421-173033	Skai > Home > Intelligent support - News 1VH (1440 x 900px)	1
+13431-179337	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home-2	FRAME	main	1	✅ Home 2	13431-179336	Skai > Home > Intelligent support - Sentiment (1440 x 900px)	1
+13436-181794	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home-2	FRAME	View all topics - Sample token	2	✅ Home 2	13436-180687	Skai > Home > Intelligent support - Sentiment > Trending topics - modal 1VH (1440 x 900px)	1
+3471-7253	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	3471-7251	Skai > Predict > sports > Futures > Sample futures (1440 x 900px)	1
+3471-7254	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Main container	2	✅ Predict	3471-7251	Skai > Predict > sports > Futures > Sample futures (1440 x 900px)	2
+3471-7494	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Main container	2	✅ Predict	3471-7251	Skai > Predict > sports > Futures > Sample futures (1440 x 900px)	1
+3471-7582	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	card	4	✅ Predict	3471-7251	Skai > Predict > sports > Futures > Sample futures (1440 x 900px)	1
+3529-4316	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Frame 270	6	✅ Predict	3471-7251	Skai > Predict > sports > Futures > Sample futures (1440 x 900px)	1
+3620-47883	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	3620-47881	Skai > Predict > Dashboard > Elections (1440 x 900px)	1
+3624-51449	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	3624-51447	Skai > Predict > Dashboard > Economy (1440 x 900px)	1
+3631-56376	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	3631-56374	Skai > Predict > Dashboard > Sports (1440 x 900px)	1
+3927-59259	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	main	1	✅ Trade 1	3896-31118	Skai > Trade > Spot > Info (1440 x 900px)	1
+4437-112661	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	Frame 271	3	✅ Trade 1	4437-112650	Skai > Dashboard - positive 1VH (1440 x 900px)	1
+4437-112693	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	Frame 274	3	✅ Trade 1	4437-112650	Skai > Dashboard - positive 1VH (1440 x 900px)	1
+4437-112714	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	Frame 267	3	✅ Trade 1	4437-112650	Skai > Dashboard - positive 1VH (1440 x 900px)	2
+4459-127829	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	Frame 267	3	✅ Trade 1	4459-127765	Skai > Dashboard > News 1VH (1440 x 900px)	1
+4792-31247	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 673	4	✅ Play	4792-31202	Skai > Play > Casino > Live RTP - return to player (1440 x 900px)	1
+4798-57448	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 520	2	✅ Play	4798-57445	Skai > Play > Casino > Bookie - referral (1440 x 900px)	1
+4841-72653	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Main container	4	✅ Play	4841-72059	Skai > Play > Sportsbook (1440 x 900px)	1
+4866-79147	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	card	4	✅ Play	4799-60925	Skai > Play > Sportsbook 1VH (1440 x 900px)	1
+4998-155895	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	Frame 337	3	✅ Social	4998-155882	Skai > Social > Live 1VH (1440 x 900px)	1
+5525-11326	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	governance	FRAME	main	1	✅ Governance and Utilities	5523-103993	Skai > Account > Performance overview (1440 x 900px)	1
+5529-72567	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	governance	FRAME	Frame 927	3	✅ Governance and Utilities	5529-72564	Skai > Account > Account settings (1440 x 900px)	1
+5534-92871	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	governance	FRAME	Frame 631	2	✅ Governance and Utilities	5534-92868	Skai > Rewards > My referrals (1440 x 900px)	1
+6736-39220	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	Frame 41	2	✅ Home 1	6736-39216	Skai > Home > Add > upload image 1VH (768 x 1024px)	1
+6910-59419	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	bento	2	✅ Home 1	6910-59407	Skai > Home > Portfolio > Vault (375 x 812px)	1
+8827-137892	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	card	5	✅ Predict	3350-32943	Skai > Predict > new (1440 x 900px)	1
+8862-46507	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Frame 1145	9	✅ Predict	3471-7251	Skai > Predict > sports > Futures > Sample futures (1440 x 900px)	1
+8862-46780	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	Frame 431	3	✅ Predict	3471-7251	Skai > Predict > sports > Futures > Sample futures (1440 x 900px)	1
+8909-137293	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	internal	4	✅ Predict	3546-25568	Skai > Predict > Finance (1440 x 900px)	1
+8937-48703	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	main	1	✅ Predict	8937-48702	Skai > Predict > Rewards > Open orders 1VH (1440 x 900px)	1
+8937-49089	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	predict	FRAME	toolbar top	3	✅ Predict	8937-48702	Skai > Predict > Rewards > Open orders 1VH (1440 x 900px)	1
+9069-262546	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	Frame 266	4	✅ Trade 1	9069-261150	Skai > Dashboard - positive 1VH (768 x 1024px)	1
+9081-267660	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	section	3	✅ Trade 1	9081-267604	Skai > Dashboard > News 1VH (375 x 812px)	1
+9170-112514	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Main container	4	✅ Play	4841-72059	Skai > Play > Sportsbook (1440 x 900px)	1
+9170-114086	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	main	1	✅ Play	9170-114084	Skai > Play > Sportsbook > Soccer > AVL CHE (1440 x 900px)	1
+9170-114095	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 630	3	✅ Play	9170-114084	Skai > Play > Sportsbook > Soccer > AVL CHE (1440 x 900px)	1
+9170-114145	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 694	5	✅ Play	9170-114084	Skai > Play > Sportsbook > Soccer > AVL CHE (1440 x 900px)	1
+9907-1597	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	rock-paper-scissors	FRAME	main	1	✅ Rock Paper Scissors - Skai originals	9907-1595	Skai > Play > Casino > Rock Paper Scissors (1440 x 900px)	1

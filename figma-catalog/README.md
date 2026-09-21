@@ -11,7 +11,11 @@ surface shares; the app repos read `registry.json` and the generated Markdown.
 | Skai-Web-App-2 | `mhF3BkzlTaGiLzJ7kvpmVc` | 7 |
 | Skai-Games | `M6r9FEn042UWTQD1zvy6GM` | 31 |
 
-Last complete harvest: **2026-09-09**, 51 pages, 5,895 top-level nodes (`live/_pages.json`).
+Last complete harvest: **2026-09-21**, 51 pages, 6,052 top-level nodes (`live/_pages.json`).
+Verified the same day by the step-0 hash: all 51 pages of all three files hashed equal to
+`live/`, so the catalog and Figma agree exactly as of that check. `registry.json`'s
+`pagesHarvested` lags the manifest — it records the last date the registry was rebuilt off a
+harvest, not the last time Figma was read. `live/_pages.json` is the one to believe.
 
 ## What you edit, what is generated
 
@@ -30,6 +34,12 @@ Generated (commit them, never hand-edit): `registry.json`, `families.json`,
 
 `SCHEMA.md` documents every file; `CATALOG_DESIGN.md` is the rationale; `TRAPS.md`
 and `WAVE_PLAYBOOK.md` are for anyone measuring parity against it.
+
+Resolving a bug report's `figma_link`: `BUGLINK_RESOLUTION_2026-09-21.md` holds the
+lookup table for every link on an open report — page, scope ruling, owning frame and
+frame status — plus the resolution order and what each layer is good for. Read it
+before opening Figma; on 2026-09-21 all 112 distinct links resolved, none cited a
+superseded frame, and the only two that resolve to nothing are certified gone.
 
 ## Regenerate
 

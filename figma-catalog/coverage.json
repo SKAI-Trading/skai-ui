@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21T08:44:45.954Z",
+  "generated": "2026-09-21T11:32:40.427Z",
   "harvestedAt": "2026-09-21",
   "rollup": {
     "pages": 39,
@@ -29,14 +29,14 @@
   "doneRows": {
     "total": 2968,
     "withBreakpointProvenance": 1558,
-    "namingANodeId": 2634,
+    "namingANodeId": 2637,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 17950,
-    "namingNoNodeId": 545,
+    "namingNoNodeId": 532,
     "namingNoLiveNodeId": 954,
-    "unrecognisedTokens": 33363
+    "unrecognisedTokens": 33282
   },
   "statusFiles": [
     {
@@ -6561,6 +6561,24 @@
       "status": "partial"
     },
     {
+      "id": "13006-148858",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.trade-perps.tsv:11"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "13006-149615",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.trade-perps.tsv:12"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "13006-201814",
       "cls": "bug-link",
       "resolved": null,
@@ -7237,6 +7255,24 @@
       "status": "partial"
     },
     {
+      "id": "3471-7582",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.predict-categories-b.tsv:12"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "3529-4316",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.predict-categories-b.tsv:14"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "3538-22737",
       "cls": "bug-link",
       "resolved": null,
@@ -7322,6 +7358,24 @@
         "status.bugs-0920.insightx.tsv:6"
       ],
       "status": "done"
+    },
+    {
+      "id": "4437-112714",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.insightx.tsv:8"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "4459-127829",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.insightx.tsv:5"
+      ],
+      "status": "partial"
     },
     {
       "id": "4601-61604",
@@ -7535,6 +7589,16 @@
       "status": "partial"
     },
     {
+      "id": "6910-59419",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.portfolio.tsv:13",
+        "status.wave52.home-portfolio-feed.tsv:49"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "6925-67091",
       "cls": "nested",
       "resolved": {
@@ -7718,11 +7782,39 @@
       "status": "partial"
     },
     {
+      "id": "8862-46507",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.predict-categories-a.tsv:11"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "8862-46780",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.predict-categories-b.tsv:13"
+      ],
+      "status": "partial"
+    },
+    {
       "id": "8909-136859",
       "cls": "bug-link",
       "resolved": null,
       "rows": [
         "status.bugs-0920.predict-categories-a.tsv:13"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "8909-137293",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.bugs-0920.predict-categories-a.tsv:14",
+        "status.bugs-0920.w2-predict-categories.tsv:7"
       ],
       "status": "partial"
     },
