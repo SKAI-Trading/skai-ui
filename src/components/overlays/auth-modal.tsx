@@ -444,18 +444,27 @@ export function AuthModal({
                 />
                 {/* The key that sends the address, not a second control, so it
                     stays out of the tab order and the form's own submit does
-                    the work. Frame 166 (2005:10011) is the only node that
-                    specifies it: a 16 icon/enter on an 8 gap beside the word in
-                    Manrope Regular 16/22 at -0.64, uppercase, Sky Blue 300 -
-                    not the App Green this had been drawing, which belongs to
-                    the Sign up focus ring. That node itself sits at opacity 0
-                    on its own board, the way the title row's left mark does, so
-                    it says what the affordance looks like and not that this
-                    board shows one. */}
+                    the work.
+
+                    Read off the governing board 2026-09-21. The in-context Sign
+                    up modal (10734:74251) draws its field holding an address
+                    with a 16 icons/action and the word ENTER 8 apart at the
+                    right edge, Manrope Regular 16/22 at -0.64, uppercase, in
+                    App Green 300 #17F9B4 - the same accent as that field's
+                    1.5px ring, and opaque, so this is a state the set draws
+                    rather than one inferred from a hidden node. The May node
+                    2005:10011 describes the same affordance in Sky Blue but
+                    sits at opacity 0 on its own board; the August set governs,
+                    so the hint takes the mode's own accent, green on sign up
+                    and the login field's blue on login. */}
                 {email.trim() !== "" && (
                   <span
                     aria-hidden="true"
-                    className={cn(PARAGRAPH_1, "flex shrink-0 items-center gap-2 uppercase text-[#56C7F3]")}
+                    className={cn(
+                      PARAGRAPH_1,
+                      "flex shrink-0 items-center gap-2 uppercase",
+                      isSignup ? "text-[#17F9B4]" : "text-[#56C7F3]",
+                    )}
                   >
                     <ReturnIcon className="h-4 w-4" />
                     ENTER
