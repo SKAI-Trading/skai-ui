@@ -4,7 +4,7 @@ Casey at 16:2x: "continue." Wave 55 is the wave 54 shape (file-disjoint lanes, t
 rolling refill) run alongside another session's bug-fix fleet in the same tree, with Casey's
 three rulings of 12:59 at the top of the lanes they touch.
 
-**Result: 981 done of 3,825 (25.6%), 523 visually verified** — up from 929 (24.3%) and 473 at the wave 54 fold, on an unchanged denominator. 242 status rows across twenty lanes (74 done, 153 partial, 8 blocked-on-backend, 6 frame-defect, 1 not-started). Registry: 57 frames partial→done, 2 done→partial by their own verdict, 8 partial→blocked-on-backend, 6 partial→frame-defect, 1 partial→not-started; 4,801 frames in and 4,801 out, no title, implFiles or verifiedAt lost. Visually downgraded frames rose from 54 to 71, which is the verdict rule doing its job.
+**Result: 981 done of 3,825 (25.6%), 560 visually verified** (523 at the fold, then 37 more when Casey ruled on the dropped verdicts; section 5c) — up from 929 (24.3%) and 473 at the wave 54 fold, on an unchanged denominator. 242 status rows across twenty lanes (74 done, 153 partial, 8 blocked-on-backend, 6 frame-defect, 1 not-started). Registry: 57 frames partial→done, 2 done→partial by their own verdict, 8 partial→blocked-on-backend, 6 partial→frame-defect, 1 partial→not-started; 4,801 frames in and 4,801 out, no title, implFiles or verifiedAt lost. Visually downgraded frames rose from 54 to 71, which is the verdict rule doing its job.
 
 ## 0. Shape
 
@@ -168,6 +168,40 @@ worth repeating rather than re-deriving:
   `done` verdicts whose frame is also done, measured at exactly 42, and turn the silent skip
   into a warning. The other 17 stay unapplied. The published verified figure should move 523 to
   565 with no new building, and the wave 56 record must say so.
+
+## 5c. The lost verdicts, applied (2026-09-20 23:4x, on Casey's ruling)
+
+**The published verified figure moved 523 to 560 with no new building, and this section is why.**
+
+`apply-verify.mjs` accepted four verdict words and dropped every other with a bare `continue`:
+no marker, no count, no line in any report. 72 written verdicts across the tree reached no
+frame. Somebody had opened each of those boards, measured it, and written the verdict down.
+
+Two changes, both committed in skai-ui `01ad1bc`:
+
+1. **The skip is now loud.** An unrecognised verdict is still not guessed at, because guessing
+   would be worse, but it is collected and printed as a warning naming the file, the node and
+   the word. The pipeline now ends with `WARNING: 29 verdict(s) outside {match, partial,
+   deferred, not-wired} were NOT applied`. Comment lines and the header row are excluded, so
+   the count is measurements and nothing else.
+2. **43 `done` verdicts became `match`**, and only those whose frame's own status row was also
+   done. Each converted row carries a note saying the word changed and the measurement did not,
+   so the next reader does not mistake it for a fresh reading.
+
+The drafted number was 42 and the applied number is 43: the wave 55 fold itself closed one more
+frame that already had a verdict waiting on it, between the measurement and the ruling.
+
+**43 converted but the figure rose by 37, and the missing six are all correct:**
+
+| 4 | already verified by a second `match` row on the same node (all in `vverify.governance.tsv`) |
+| 2 | carry another `partial` verdict that outranks the match, so the frame is honestly not verified |
+| 37 | newly counted |
+
+Left alone deliberately: 12 `done` verdicts on frames that are not done, where a verdict cannot
+outrank its row, and 17 written as `frame-defect`, `n/a`, `blocked`, `no-match` or `furniture`,
+none of which asserts that the build matches the board. The registry diff over the conversion is
+identical to the fold's: 4,801 frames in and out, nothing lost, the same five status
+transitions. Only verification moved.
 
 ## 6. Next
 
