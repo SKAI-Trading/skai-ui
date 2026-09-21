@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-20T23:56:52.656Z",
+  "generated": "2026-09-21T05:37:33.458Z",
   "harvestedAt": "2026-09-20",
   "rollup": {
     "pages": 39,
@@ -8,7 +8,7 @@
     "genuine": 3825,
     "matched": 3823,
     "done": 981,
-    "verified": 523,
+    "verified": 560,
     "visuallyDowngraded": 71,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
@@ -33,10 +33,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 17723,
+    "total": 17725,
     "namingNoNodeId": 530,
     "namingNoLiveNodeId": 929,
-    "unrecognisedTokens": 32503
+    "unrecognisedTokens": 32510
   },
   "statusFiles": [
     {
@@ -131,9 +131,9 @@
     },
     {
       "file": "status.bugs-0920.w2-crypto-c.tsv",
-      "rows": 2,
-      "withLiveId": 1,
-      "ids": 1
+      "rows": 4,
+      "withLiveId": 3,
+      "ids": 3
     },
     {
       "file": "status.bugs-0920.w2-predict-categories.tsv",
@@ -4297,7 +4297,7 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 0,
+      "verified": 4,
       "visuallyDowngraded": 0,
       "byStatus": {
         "done": 6
@@ -4490,7 +4490,7 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 2,
-      "verified": 28,
+      "verified": 59,
       "visuallyDowngraded": 20,
       "byStatus": {
         "done": 127,
@@ -4625,7 +4625,7 @@
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 22,
+      "verified": 24,
       "visuallyDowngraded": 0,
       "byStatus": {
         "done": 72,
@@ -9628,7 +9628,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "2311-6560",
@@ -9636,7 +9636,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "2311-7088",
@@ -9644,7 +9644,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "2311-7680",
@@ -9660,7 +9660,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "2311-8793",
@@ -14804,7 +14804,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5100-183573",
@@ -14820,7 +14820,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "10324-107023",
@@ -15220,7 +15220,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11387-73530",
@@ -15228,7 +15228,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5164-266351",
@@ -15244,7 +15244,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5198-9151",
@@ -15276,7 +15276,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5171-270124",
@@ -15500,7 +15500,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "10136-262502",
@@ -15532,7 +15532,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "10094-250606",
@@ -15564,7 +15564,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5015-179843",
@@ -15652,7 +15652,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5000-162965",
@@ -15676,7 +15676,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5198-47891",
@@ -15764,7 +15764,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "5204-65392",
@@ -15820,7 +15820,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11530-302842",
@@ -16004,7 +16004,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "10213-16819",
@@ -16060,7 +16060,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "10302-184717",
@@ -16068,7 +16068,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11530-302910",
@@ -16228,7 +16228,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11373-22256",
@@ -16260,7 +16260,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11526-290354",
@@ -16364,7 +16364,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11398-83498",
@@ -16380,7 +16380,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11398-84195",
@@ -16420,7 +16420,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11526-288877",
@@ -16436,7 +16436,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11398-87644",
@@ -16476,7 +16476,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11530-304239",
@@ -16524,7 +16524,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11387-72046",
@@ -16540,7 +16540,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11387-29051",
@@ -16604,7 +16604,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11387-71039",
@@ -16628,7 +16628,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11381-26299",
@@ -17132,7 +17132,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11529-291953",
@@ -17148,7 +17148,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11461-195806",
@@ -17460,7 +17460,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11442-163273",
@@ -17476,7 +17476,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11455-183352",
@@ -17484,7 +17484,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11461-187585",
@@ -17636,7 +17636,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11442-167104",
@@ -25180,7 +25180,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "13008-111263",
@@ -25188,7 +25188,7 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "13008-111656",

@@ -81,14 +81,25 @@ const now = new Date().toISOString();
 // section/node -> {verdict, shot, note}
 const byKey = {};
 let loaded = 0;
+// A verdict word outside VALID used to be dropped by a bare `continue`: no
+// marker, no count, no line in any report. On 2026-09-20 that was 72 verdicts
+// across the tree — somebody had opened the board, measured it and written the
+// verdict down, and the frame still read as unverified. The skip stays, because
+// guessing what an unrecognised word meant would be worse, but it is now LOUD.
+const unknown = [];
 for (const sec of SECTIONS) {
   const p = path.join(DIR, `vverify.${sec}.tsv`);
   if (!fs.existsSync(p)) continue;
   for (const line of fs.readFileSync(p, "utf8").split("\n")) {
-    if (!line.trim()) continue;
+    if (!line.trim() || line.startsWith("#")) continue;
     const [node, verdict, shot, ...rest] = line.split("\t");
     const v = (verdict || "").trim();
-    if (!VALID.has(v)) continue;
+    // The header row names its own columns; it is not a dropped measurement.
+    if (v === "verdict" && node.trim() === "node") continue;
+    if (!VALID.has(v)) {
+      unknown.push(`vverify.${sec}.tsv ${node.trim()} -> "${v}"`);
+      continue;
+    }
     byKey[`${sec}/${node.trim()}`] = {
       verdict: v,
       shot: (shot || "").trim(),
@@ -153,4 +164,12 @@ for (const f of Object.values(reg.frames)) {
   byVerdict[v] = (byVerdict[v] || 0) + 1;
 }
 console.log(`vverify lines loaded: ${loaded}; frames stamped: ${applied}`);
+if (unknown.length) {
+  console.warn(
+    `[apply-verify] WARNING: ${unknown.length} verdict(s) outside {${[...VALID].join(", ")}} were NOT applied. ` +
+      `A measurement that reaches no frame counts as unverified; either fix the word or decide the row.`,
+  );
+  for (const u of unknown.slice(0, 20)) console.warn(`  ${u}`);
+  if (unknown.length > 20) console.warn(`  ... and ${unknown.length - 20} more`);
+}
 console.log("verified frames by verdict:", JSON.stringify(byVerdict));
