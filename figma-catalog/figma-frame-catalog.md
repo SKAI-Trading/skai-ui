@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-21T21:05:51.412Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-21T23:26:57.877Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -12,15 +12,15 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
 | governance | ✅ | 727 | 403 | 324 | 87 | 50 | 270 | 53 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 99 | 99 | 28 | 0 | 201 |
-| trade | ✅ | 456 | 253 | 203 | 44 | 56 | 176 | 4 | 0 | 92 |
-| trade-2 | ✅ | 440 | 237 | 203 | 51 | 60 | 126 | 1 | 0 | 76 |
-| home | ✅ | 290 | 194 | 96 | 50 | 97 | 94 | 0 | 0 | 102 |
+| trade | ✅ | 456 | 253 | 203 | 44 | 57 | 173 | 4 | 0 | 92 |
+| trade-2 | ✅ | 440 | 237 | 203 | 51 | 60 | 124 | 1 | 0 | 76 |
+| home | ✅ | 290 | 194 | 96 | 50 | 102 | 89 | 0 | 0 | 102 |
 | play | ✅ | 378 | 159 | 219 | 44 | 46 | 75 | 34 | 0 | 66 |
-| home-2 | ✅ | 249 | 152 | 97 | 19 | 49 | 93 | 0 | 0 | 14 |
+| home-2 | ✅ | 249 | 152 | 97 | 19 | 56 | 86 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 8 | 84 | 48 | 0 | 134 |
 | wallet-2 | ✅ | 194 | 141 | 53 | 22 | 119 | 8 | 2 | 0 | 49 |
-| wallet | ✅ | 186 | 133 | 53 | 35 | 86 | 44 | 0 | 0 | 59 |
-| onboarding | ✅ | 151 | 116 | 35 | 20 | 40 | 61 | 12 | 0 | 1 |
+| wallet | ✅ | 186 | 133 | 53 | 35 | 91 | 39 | 0 | 0 | 59 |
+| onboarding | ✅ | 151 | 116 | 35 | 20 | 54 | 47 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 13 | 1 | 0 | 0 |
 | fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 37 | 19 | 0 | 0 | 0 |
 | safari-slots | ✅ | 72 | 62 | 10 | 1 | 2 | 28 | 0 | 0 | 0 |
@@ -36,7 +36,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | crash | ✅ | 20 | 15 | 5 | 1 | 2 | 11 | 0 | 0 | 12 |
 | plinko | ✅ | 21 | 15 | 6 | 1 | 0 | 8 | 0 | 0 | 8 |
 | skai-cross |  | 15 | 15 | 0 | 1 | 0 | 0 | 0 | 15 | 0 |
-| keno | ✅ | 28 | 13 | 15 | 1 | 1 | 10 | 0 | 0 | 8 |
+| keno | ✅ | 28 | 13 | 15 | 1 | 4 | 7 | 0 | 0 | 8 |
 | mines | ✅ | 19 | 12 | 7 | 1 | 0 | 8 | 0 | 0 | 4 |
 | fortune-wheel | ✅ | 25 | 11 | 14 | 1 | 0 | 4 | 0 | 0 | 15 |
 | slide | ✅ | 18 | 11 | 7 | 1 | 0 | 10 | 0 | 0 | 11 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4801** | **2401** | | | **842** | **1356** | **185** | **18** | **1032** |
+| **all** | | **4801** | **2397** | | | **877** | **1317** | **185** | **18** | **1032** |
 
 ### Drift against live Figma
 
@@ -263,8 +263,8 @@ Frames that exist in Figma but are not in the catalog:
 | Perpetual futures > Order history | 1 | desktop | - | partial | [4191-121191](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4191-121191&m=dev) |
 | Perpetual futures > Trade history | 1 | desktop | - | partial | [4191-123643](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4191-123643&m=dev) |
 | Perpetual futures > Trade history > share PnL | 1 | desktop | - | partial | [4207-133479](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4207-133479&m=dev) |
-| Perpetual futures > Funding history | 1 | desktop | - | partial | [4201-128723](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4201-128723&m=dev) |
-| Perpetual futures > Assets | 1 | desktop | - | partial | [4020-49491](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4020-49491&m=dev) |
+| Perpetual futures > Funding history | 1 | desktop | - | blocked-on-backend | [4201-128723](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4201-128723&m=dev) |
+| Perpetual futures > Assets | 1 | desktop | - | done | [4020-49491](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4020-49491&m=dev) |
 | Perpetual futures > Positions > Edit running SL/TP | 1 | desktop | - | done | [4020-44966](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4020-44966&m=dev) |
 | Perpetual Futures > cross/isolated | 1 | tablet | - | partial | [9137-88222](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9137-88222&m=dev) |
 | Perpetual Futures > Assets | 1 | tablet | - | partial | [9152-84122](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-84122&m=dev) |
@@ -310,7 +310,7 @@ Frames that exist in Figma but are not in the catalog:
 | Trench > Display settings | 2 | desktop | colour row | frame-defect/partial | [13006-155671](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-155671&m=dev) |
 | Trench > Discover > Live | 2 | desktop | display settings | blocked-on-backend/partial | [13006-175023](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-175023&m=dev) |
 | Trench > Trackers | 2 | desktop | empty; empty > Add wallet | partial | [13006-184491](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-184491&m=dev) |
-| Trench > Trade > Holders | 2 | desktop | full screen | partial | [13006-221940](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-221940&m=dev) |
+| Trench > Trade > Holders | 2 | desktop | full screen | blocked-on-backend | [13006-221940](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-221940&m=dev) |
 | Trench > Trade > Dev tokens | 2 | desktop | Dev tokens 1440 > Token statistics (donut, Token stats, Highlights) [Frame 301 298x474] | done/partial | [13006-230793](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-230793&m=dev) |
 | Trench > Trade > Transactions | 2 | desktop | Transactions row (1440): count Tag, overflow, Trader sliders filter [content 1015x28] | partial/done | [13006-233358](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-233358&m=dev) |
 | Spot > Sidebar | 2 | tablet, mobile | - | partial/furniture | [13006-255386](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-255386&m=dev) |
@@ -351,7 +351,7 @@ Frames that exist in Figma but are not in the catalog:
 | AI Feed > Market intel | 4 | desktop, tablet, mobile | - | partial | [5812-123481](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=5812-123481&m=dev) |
 | (section root) | 3 | desktop, tablet, mobile | - | done | [2713-4800](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-4800&m=dev) |
 | Portfolio > Defi | 3 | desktop, tablet | portfolio defi 1440 [main 1382x828] | done/partial | [2769-14707](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2769-14707&m=dev) |
-| Portfolio > Add wallet | 3 | desktop, tablet, mobile | - | done/partial | [2752-4678](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2752-4678&m=dev) |
+| Portfolio > Add wallet | 3 | desktop, tablet, mobile | - | done | [2752-4678](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2752-4678&m=dev) |
 | Portfolio > Add wallet > Name wallet | 3 | desktop, tablet, mobile | - | done/partial | [2753-4954](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2753-4954&m=dev) |
 | Portfolio > Export private key | 3 | desktop, tablet, mobile | - | partial | [2752-5814](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2752-5814&m=dev) |
 | Portfolio > Export private key > private key displayed | 3 | desktop, tablet, mobile | - | partial | [2753-8176](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2753-8176&m=dev) |
@@ -363,9 +363,9 @@ Frames that exist in Figma but are not in the catalog:
 | conversation 3 > edit chat | 3 | desktop, tablet, mobile | - | done | [2733-20178](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2733-20178&m=dev) |
 | conversation extended | 3 | desktop, tablet, mobile | - | done/partial | [2733-18374](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2733-18374&m=dev) |
 | conversation 2 extended | 3 | desktop, tablet, mobile | - | done | [2733-18700](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2733-18700&m=dev) |
-| sidebar | 3 | desktop, tablet, mobile | - | done/partial | [2713-4884](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-4884&m=dev) |
+| sidebar | 3 | desktop, tablet, mobile | - | done | [2713-4884](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-4884&m=dev) |
 | sidebar normal | 3 | desktop, tablet, mobile | - | done/partial | [2720-7877](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2720-7877&m=dev) |
-| sidebar normal > Group chats > Folder name | 3 | desktop, tablet, mobile | - | done/partial | [6250-93916](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=6250-93916&m=dev) |
+| sidebar normal > Group chats > Folder name | 3 | desktop, tablet, mobile | - | done | [6250-93916](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=6250-93916&m=dev) |
 | AI Feed > Market intel > Manage intel | 3 | desktop, tablet, mobile | - | done/partial | [5854-51123](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=5854-51123&m=dev) |
 | with deposit > deposit modal | 3 | tablet, mobile, desktop | - | done | [14129-84348](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14129-84348&m=dev) |
 | with deposit > deposit modal > Buy with Fiat | 3 | tablet, mobile, desktop | - | done | [14136-85609](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14136-85609&m=dev) |
@@ -534,11 +534,11 @@ Frames that exist in Figma but are not in the catalog:
 | continue on web > home > Activity | 8 | desktop, tablet, mobile | show details; empty; empty ALT | done/partial | [3118-21935](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3118-21935&m=dev) |
 | continue on web > home > right-sidecar > wallet multi menu > Remove walletl | 7 | mobile | Create Non-custodial wallet 375 [modal 354x542]; Import private key 375 [modal 354x414]; Enter recovery phrase 375 [modal 354x398] | done/partial | [7774-68417](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7774-68417&m=dev) |
 | continue on web > unlock | 6 | desktop, tablet, mobile | password | done/partial | [2999-19674](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2999-19674&m=dev) |
-| continue on web > home > right-sidecar > wallet multi menu > Export private key | 6 | tablet, desktop, mobile | reveal | done/partial | [7713-16630](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-16630&m=dev) |
-| continue on web > home > right-sidecar > Add wallet > Connect hardware wallet | 5 | tablet, desktop, mobile | Scan QR code (Keystone/Ledger) modal 768 [modal 448x626] | done/partial/blocked-on-backend | [7717-13587](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13587&m=dev) |
+| continue on web > home > right-sidecar > wallet multi menu > Export private key | 6 | tablet, desktop, mobile | reveal | done | [7713-16630](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-16630&m=dev) |
+| continue on web > home > right-sidecar > Add wallet > Connect hardware wallet | 5 | tablet, desktop, mobile | Scan QR code (Keystone/Ledger) modal 768 [modal 448x626] | done/blocked-on-backend | [7717-13587](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13587&m=dev) |
 | continue on web > home > crypto > sample token | 5 | desktop, tablet, mobile | - | done/partial | [3083-1328](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3083-1328&m=dev) |
 | continue on web > home > NFTs > sample NFT | 5 | desktop, tablet, mobile | - | done/partial | [3089-19811](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3089-19811&m=dev) |
-| continue on web > home > right-sidecar > Add wallet > Import existing > Keystone | 4 | tablet, desktop, mobile | Import Keystone 375 [modal 354x440] | done/partial | [7717-13147](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13147&m=dev) |
+| continue on web > home > right-sidecar > Add wallet > Import existing > Keystone | 4 | tablet, desktop, mobile | Import Keystone 375 [modal 354x440] | done | [7717-13147](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13147&m=dev) |
 | continue on web > home > right-sidecar > wallet accounts | 4 | tablet, desktop, mobile | Wallet accounts sidecar 768 [Frame 337 442x1008] | done | [7713-14212](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-14212&m=dev) |
 | continue on web > home > right-sidecar > wallet multi menu | 4 | tablet, desktop, mobile | Wallet row dropdown 768 [dropdown-3 200x184] | done | [7713-15272](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-15272&m=dev) |
 | (section root) | 3 | desktop, tablet, mobile | - | done/partial | [2998-19599](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2998-19599&m=dev) |
@@ -571,8 +571,8 @@ Frames that exist in Figma but are not in the catalog:
 |--------|-------:|---------|----------|---------------|---------|
 | Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name > Congratulations | 17 | desktop, tablet, mobile | Slide 2; Slide 2 > Pre-launch dashboard; Slide 2 > Pre-launch dashboard Live; Slide 2 > Pre-launch dashboard - Tooltip; Slide 2 > Pre-launch dashboard Live - video; Slide 1 … | partial/done | [2422-2075](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2422-2075&m=dev) |
 | Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name > Congratulations | 12 | desktop, tablet, mobile | slide 2; Slide 1; Slide 2 | partial/done | [2065-2229](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2065-2229&m=dev) |
-| Temporary landing > Login > Verification | 12 | desktop, tablet, mobile | with input | partial/done | [2086-32903](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2086-32903&m=dev) |
-| Temporary landing > Login | 9 | desktop, tablet, mobile | with input | partial/done | [2086-28860](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2086-28860&m=dev) |
+| Temporary landing > Login > Verification | 12 | desktop, tablet, mobile | with input | done/partial | [2086-32903](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2086-32903&m=dev) |
+| Temporary landing > Login | 9 | desktop, tablet, mobile | with input | done | [2086-28860](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2086-28860&m=dev) |
 | Temporary landing > Sign up | 9 | desktop, tablet, mobile | referral open; referral open > with external wallet - Phantom | done | [10734-73582](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10734-73582&m=dev) |
 | Temporary landing | 6 | desktop, tablet, mobile | - | partial | [2065-110](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2065-110&m=dev) |
 | Temporary landing > Login > Verification > Choose wallet > Link wallet > Reserve name | 6 | desktop, tablet, mobile | closed off | partial/done | [2517-22923](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2517-22923&m=dev) |
@@ -588,7 +588,7 @@ Frames that exist in Figma but are not in the catalog:
 | Temporary landing > Login > Verification > Choose wallet > Link wallet | 3 | desktop, tablet, mobile | - | partial | [2086-39242](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2086-39242&m=dev) |
 | Onboarding > Get early access > Verification > Choose wallet > Link wallet > Reserve name | 3 | desktop, tablet, mobile | - | partial/done | [2005-5908](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2005-5908&m=dev) |
 | Onboarding > Get early access > Verification > Choose wallet | 3 | desktop, tablet, mobile | - | done/partial | [2005-11493](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2005-11493&m=dev) |
-| Temporary landing > Login > Verification > Choose wallet | 3 | desktop, tablet, mobile | - | partial | [2086-37672](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2086-37672&m=dev) |
+| Temporary landing > Login > Verification > Choose wallet | 3 | desktop, tablet, mobile | - | done | [2086-37672](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=2086-37672&m=dev) |
 
 ## Vegas-fortune
 
@@ -684,7 +684,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Keno | 13 | desktop, mobile, tablet | Desktop Selection; Starting; Desktop win; Auto Advanced Displayed; Desktop loss; image 6 … | partial/furniture/done | [9433-12187](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9433-12187&m=dev) |
+| Casino > Keno | 13 | desktop, mobile, tablet | Desktop Selection; Starting; Desktop win; Auto Advanced Displayed; Desktop loss; image 6 … | partial/done/furniture | [9433-12187](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9433-12187&m=dev) |
 
 ## Mines
 

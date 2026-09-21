@@ -18,13 +18,13 @@
 7473-131013	match	-	Forgot>OTP thirdweb OTP desktop, recovery re-auth wired
 7683-33892	match	-	Forgot>OTP thirdweb OTP tablet
 9685-101103	match	-	Remove-wallet WalletActionsMenu remove modal (warning+row+Cancel/Remove)
-7774-69004	match	-	Remove-wallet modal state variant
-7774-67001	match	-	Export-private-key reveal WalletActionsMenu export view revealed
+7774-69004	partial	-	Recovery-phrase import modal 7774:71260 at 375, AddWalletDrawer import-phrase step - RE-SCOPED wave 58, 2026-09-21 from "Remove-wallet modal state variant", which named the wrong screen: the board is the phrase import and the frame is partial, not matched. Chassis, 62 header, 192 block and the 44 CTA pair match; the 12/24 control (drawn hidden at Frame 186 on this cut too), the header back arrow and the grid phone row gap are open.
+7774-67001	match	-	Export-private-key revealed modal 7774:67710 at 375, WalletActionsMenu export view - re-checked wave 58, 2026-09-21: title mark drawn, card phone insets 10/16 and the 48 key box fixed; the extra caution sentence and Hide are deliberate keeps.
 7774-66509	match	-	Export-private-key WalletActionsMenu export view password gate
 7774-65029	match	-	Wallet-accounts WalletAccountsPanel mobile; grouped list+search+Add
 9685-100712	match	-	Remove-wallet modal state variant
 7479-135805	match	-	Export-private-key WalletActionsMenu export desktop centred modal
-7774-67295	match	-	Remove-wallet modal state variant
+7774-67295	partial	-	Remove-wallet modal 7774:71061 at 375, WalletActionsMenu remove view - RE-SCOPED wave 58, 2026-09-21 from a bare match: the card insets and the name/address gap were off and are fixed, and the avatar chain badge (12 at 16,4) is not drawn, so the frame is partial.
 7482-142212	match	-	Import recovery-phrase AddWalletDrawer import-phrase, 12/24 seed grid modal
 7479-137328	match	-	Add-wallet entry AddWalletDrawer; create/import/hardware cards
 9685-99496	match	-	Remove-wallet modal state variant
@@ -53,16 +53,16 @@
 7479-136955	match	-	Remove-wallet WalletActionsMenu remove modal desktop
 9685-98877	match	-	Remove-wallet modal state variant
 7713-14212	match	-	Wallet-accounts WalletAccountsPanel tablet
-7774-69886	match	-	Remove-wallet modal state variant
+7774-69886	match	-	Import-private-key modal 7774:71414 at 375, AddWalletDrawer import-privkey step - RE-SCOPED wave 58, 2026-09-21 from "Remove-wallet modal state variant", which named the wrong screen: matched at 375 (46 header, 70 name block, 134 key block on a five-row 112 box, one 330x44 CTA); the header back arrow is kept for Casey.
 7482-143789	match	-	Import recovery-phrase Wallet-name; VaultFields name field, desktop
-7774-70474	match	-	Remove-wallet modal state variant
+7774-70474	match	-	Connect-hardware at 375, routed to AddWalletDrawer import-keystore - RE-SCOPED wave 58, 2026-09-21 from "Remove-wallet modal state variant", which named the wrong screen: closed on the ruling its 768 and 1440 siblings closed on (no BC-UR decoder, hardware goes to the keystore file import), with the 354 phone gutter now built.
 7717-12740	match	-	Import private-key AddWalletDrawer import-privkey centred modal tablet
 7717-11907	partial	-	Import recovery-phrase Wallet-name tablet - READ LIVE WHOLE wave 55, 2026-09-20 (get_metadata 7717:11907). Modal 7717:12332 at (160,375) 448x274 on a 12 inset; controls 424x16 at (12,12); Frame 200 at (12,48) 424x48 as a 22 title over an 18 subtitle at y=30; input/primary-inputs at (12,116) 424x74; Frame 203 at (12,210) 424x52. Everything matches but the pair, and the pair is now a FRAME DEFECT rather than an open number: this board draws 52 where 9941:236436 - the step immediately before it, read live in the same burst - plus 8488:31358 and 7713:17360 draw 50. Three boards to two, the other 52 being 7713:17781. WalletActionsMenu.tsx:135 called 7713:17781 a LONE dissent; corrected in d0cc7e7. SECONDARY_CTA and CTA_RAMP state the box md:h-[50px], the majority, and the only form the 1.5px stroke cannot move; matching a two-board minority would reopen report 4877cd10. Re-scoped from match, wave 52; classified as the frame's defect, wave 55.
 7482-144645	match	-	Import keystore AddWalletDrawer import-keystore; V3 JSON+file+pwd desktop
 3082-13100	match	-	Portfolio-preview PortfolioPreviewPanel; skin picker+balance toggle
 7482-144255	match	-	Import private-key AddWalletDrawer import-privkey centred modal desktop
-7774-70180	match	-	Remove-wallet modal state variant
-7774-69592	match	-	Remove-wallet modal state variant
+7774-70180	match	-	Import-Keystone modal 7774:71454 at 375, AddWalletDrawer import-keystore step - RE-SCOPED wave 58, 2026-09-21 from "Remove-wallet modal state variant", which named the wrong screen: matched at 375 once the phone gutter became 10.5 (354 wide, as five 375 modals of the family draw).
+7774-69592	match	-	Finish-importing-wallet naming modal 7774:71378 at 375, AddWalletDrawer import-phrase-name step - RE-SCOPED wave 58, 2026-09-21 from "Remove-wallet modal state variant", which named the wrong screen: matched value for value at 375 after the header back arrow the board does not draw was removed; the CTA-row Back stays.
 7717-13147	match	-	Import private-key AddWalletDrawer import-privkey tablet
 8045-104041	match	-	home: NetWorthCard+QuickActionsBar+TokenListTable+StreakBanner in WalletHomeRoute
 3118-25969	match	-	home desktop: same WalletHomeRoute stack, responsive
