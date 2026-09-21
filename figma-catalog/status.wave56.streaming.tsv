@@ -1,0 +1,58 @@
+# key	status	primaryFile	route	reason	bp
+# Wave 56, 2026-09-21, lane `streaming` (src/components/streaming/, src/pages/social/Streaming.tsx,
+# src/pages/social/streaming/, src/services/streaming/, src/hooks/streaming/).
+# Rows here are the frames this pass REACHED; every other row of the slice stands on its
+# wave 55 reading. Column 3 is one bare path; a second witness file and the mount site go
+# in the reason.
+#
+# READS. Every number below came off Figma in this session, not off a memory of it:
+#   get_metadata   4998:157146    the 1440 board, whole tree -> Overlay > modal > card > chart
+#   get_design_context 5000:158216 the chart itself, which is what surfaced the six asset URLs
+#   get_metadata   11442:160938   the 768 board  -> card 424x224, chart 462x192 at (-27,16)
+#   get_metadata   11438:159797   the 375 board  -> card 330x224, chart 462x192 at (-74,16)
+# No browser ran, so nothing here claims a DOM-measured render; each verdict is the
+# component source resolved against node data.
+#
+# THE ONE THING THIS PASS EXISTED FOR. Both stream-type rows had a single remaining gap,
+# recorded in wave 55 as "the `card > chart` illustration is five IMAGE-filled ellipses plus
+# a Signal vector, absent from src/components/streaming/assets/ - an export, not a build".
+# It is exported now. The artwork is the FRAME'S OWN, pulled through get_design_context and
+# committed as bytes: stream-type-chart-{25,26,27,28,29}.png and stream-type-chart-signal.svg.
+# Nothing was drawn by hand and nothing stands in for a token, a holding or a price - the
+# five discs are decoration inside an aria-hidden card, and no code reads a value off them.
+#
+# WHAT THE THREE BOARDS AGREE ON, and why one rule covers them. `chart` is 462x192 on all
+# three; it does NOT scale with the card, it is re-laid-out inside it. Its x is 19 / -27 /
+# -74 against card widths 516 / 424 / 330, and each of those is that card's centre less 8:
+#   516/2 - 8 - 231 = 19    424/2 - 8 - 231 = -27    330/2 - 8 - 231 = -74
+# so the box ships as left-1/2 -translate-x-1/2 -ml-2 and the overhang past the card (11 at
+# 768, 58 at 375) is cut by the card's own clip, which is what the boards draw.
+#
+# THE SIX CHILDREN keep their sizes and move. Sizes, then [x,y] at 375 / 768 / 1440:
+#   Ellipse 26  57.856   115,11    98,11     67.225,5
+#   Ellipse 29  64       276,5     276,5     276,11
+#   Ellipse 25  40.159   173,108   173,108   179,127.841
+#   Ellipse 27  52.411   276,137   288,137   371.597,178.097
+#   Ellipse 28  21.100   354,69    413,63    434.683,43.797
+#   Signal      54.667   90,137    43,137    -1,135
+# Each PNG is the node's own 2x export and carries that node's blur baked in, so it is wider
+# than the ellipse - 53.772 for a 40.159 box, 71.469 for 57.856, 66.024 for 52.411, 34.714
+# for 21.100, a 6.807 bleed on all four, and 72 for the 64 box, a bleed of 4. The image is
+# hung at negative offsets inside a box sized to the ellipse, so the numbers in the source
+# stay the frame's numbers rather than the exporter's.
+#
+# TEST. StreamTypeModal.figma.test.tsx gained one case that pins the table above, the
+# centre-less-8 arithmetic, the bleed against each export's own dimensions, and that every
+# named file is on disk and non-empty. 19 of 19 pass, no type errors. A vitest run in this
+# tree also prints a `vite:dep-scan` failure over every index.html in the repo; it is
+# pre-existing, unrelated, and the suite runs through it.
+#
+# NOT MINE, FOUND IN MY DIRECTORY. src/components/streaming/GoLiveModal.tsx is dirty and
+# src/components/streaming/GoLiveModal.titleTooShort.test.tsx is untracked, neither by this
+# lane. That is the peer fleet's cross-cutting `singles` lane, which holds the /streaming bug
+# row. Left untouched, reported rather than fought, per the lane rules.
+11438-159797	done	src/components/streaming/StreamTypeModal.tsx	/streaming	Stream type modal at 375, and the last gap on it is closed. The `card > chart` illustration now ships from the frame's own exports in src/components/streaming/assets/ (89938a559); the geometry is the header table above, measured live off 11438:159797 > Overlay > modal > card (330x224) > chart (462x192 at -74,16) this pass. Card centre less 8 less half the chart width gives -74 exactly, so the one positioning rule that serves 1440 and 768 serves this board too, and the 58px overhang past the 330 card is cut by the card's own clip the way the board draws it. Everything else on this row was already closed in wave 55 and is confirmed at HEAD rather than assumed: the 16-tall `controls` row is the panel's first child (12+16+24+78+24+224+24+44+12 = 458, the modal's own height, content 78 = title 22 + 8 + body 3x16) and the close is held at the frame's 16x16 by unsetting the 44px tap floor, which wins on layer order. Mounted by src/components/streaming/LiveStreamsBrowser.tsx in front of beginStream. No browser: source-vs-node.	1440=n-a 768=n-a 375=done @2026-09-21/wave56-streaming
+11442-160938	done	src/components/streaming/StreamTypeModal.tsx	/streaming	Stream type modal at 768, same component and the same close. Measured live off 11442:160938 > Overlay > modal > card (424x224) > chart (462x192 at -27,16): 424/2 - 8 - 231 = -27, so this board is the middle term of the centre-less-8 rule and its 11px overhang is the card's clip. Four of the six children sit where the 375 board puts them and two do not (Ellipse 26 at 98 rather than 115, Ellipse 27 at 288 rather than 276, Ellipse 28 at 413,63 rather than 354,69, Signal at 43 rather than 90), which is why each step is written only where the value actually moves. The wave-55 half of this row stands: 12+16+24+84+24+224+24+50+12 = 470, the modal's 448x470, content 84 = title 22 + 8 + body 3x18, and 768 is inside the tap floor's own max-width media query so the 16x16 close box mattered here too. 89938a559. No browser: source-vs-node.	1440=n-a 768=done 375=n-a @2026-09-21/wave56-streaming
+4998-157146	partial	src/components/streaming/StreamTypeModal.tsx	/streaming	The 1440 board, reached because it is the node the illustration was exported from, and its modal is now complete: chart 462x192 at (19,16) inside the 516x224 card, which is 516/2 - 8 - 231, with Ellipse 27 spilling past the card floor (16 + 178.097 + 52.411 = 246.5 against 224) exactly as the board draws. Ellipse 13, the 259x259 radial #56C7F3 to #001514 at 0.64 under a 250 layer blur, sits UNDER the chart, which is the frame's own paint order. STAYS PARTIAL because this row is the whole board, not the overlay: the browse page beneath it (Frame 604's four rails at 1318, the 1382 main container, the sidebar and the ticker) was read in this pass's get_metadata but NOT measured against the implementation, so no claim is made about it. The overlay half is done; the page half is untouched by this lane and belongs with 4943-129014 and 4998-155882, which are not in this slice. 89938a559.	1440=partial 768=n-a 375=n-a @2026-09-21/wave56-streaming
+10094-244396	done	src/components/streaming/StreamShareModal.tsx	/streaming/:streamId	Share stream at 1440, and the last number on it is now the board's. Re-read live this pass with get_metadata on modal 10094:246446: 564x590 at (438,155), Frame 480 516x440 at (24,24) with controls 516x16 and the close at x=500, Frame 200 at y=40 516x58 (title 516x28, body 426 wide at x=45 inside a 516 row at y=36), Frame 750 a CHILD here at (0,122) 516x318, Ellipse 24 at (-62.194,175.920) 648.620 square, and file 10094:246461 at (-199.293,157) 881.916x160.889. 24+16+24+58+24+318+40+62+24 = 590, and the 40 rather than 24 above the CTA row is the component's lg:mt-4 on top of its gap-6. ONE DEFECT FOUND AND FIXED, b75ef924c: the waveform shipped at left -200.29 top 156, a pixel out on both axes; the node says -199.29296875 and 157. The tablet board is what exposed it - see the row for 11477-241691. NOTE FOR THE CATALOG: the wave-55 vverify line for this key carries the verdict word "done", which apply-verify does not accept and silently discards, so this key was still folding as the wave-41 partial; a valid match line is appended. No browser: source-vs-node.	1440=done 768=n-a 375=n-a @2026-09-21/wave56-streaming
+11477-241691	done	src/components/streaming/StreamShareModal.tsx	/streaming/:streamId	Share stream at 768, and the stated remaining reason was STALE: the row read "the same unreproduced waveform", but the vector was exported and committed on 2026-09-20 as src/components/streaming/assets/share-waveform.svg and the component has drawn it since. Re-read live this pass with get_metadata on modal 11477:228965: 448x471.302 at (160,276.349), pad 12; Frame 480 424x88 at (12,12) holding controls 424x16 with the close at x=408 and Frame 200 at y=40 424x48 (title 424x22, body 18 tall at y=30); Frame 750 a SIBLING at (12,124) 424x261.302. 12 + 88 + 24 + 261.302 + 24 + 50 + 12 = 471.302, the modal's own height, and Frame 750 ending at 385.302 puts the CTA row at 409.302 which is the 24 the modal spaces by. The card's children divide back to the 1440 artwork at 424/516: Ellipse 24 (-51.107,144.554) 532.975 -> (-62.194,175.920) 648.620 exactly, and file (-163.759,129.008) 724.675x132.203 -> (-199.293,157.000) 881.916x160.889. That second division is what caught the 1440 offset fixed in b75ef924c, and a test now pins both divisions so the tablet cut can never again be assumed to follow. No browser: source-vs-node.	1440=n-a 768=done 375=n-a @2026-09-21/wave56-streaming
