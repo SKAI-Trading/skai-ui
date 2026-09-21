@@ -215,9 +215,14 @@ export const content = {
         subheading:
           "Discover the new world of perpetual trading, swaps, prediction markets, memes, launchpads, and a catalog of casino-style gaming",
         cta: "Get early access",
-        // 11189:2629 and 11225:181650 read this; the 1440 board 10767:307473
-        // reads "Traders are already winning with us" instead, and one string
-        // cannot be two. Held for Casey.
+        // NO BOARD DRAWS THIS STRING. Read off the text nodes themselves on
+        // 2026-09-21, after two waves had recorded the opposite: 11189:3296
+        // (the 768 hero) and 11225:182317 (375) both read "Users are already
+        // winning with us", and 10767:308133 (1440) reads "Traders are already
+        // winning with us". Three readings, no two alike, and the shipped one
+        // is on none of them. One constant cannot be two boards, so the wording
+        // is Casey's; until he rules, this line stays as it is and the boards
+        // stay partial on it alone.
         counterSuffix: "Users are already on this list",
         defaultCount: "800",
       },

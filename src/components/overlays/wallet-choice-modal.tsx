@@ -158,8 +158,14 @@ export function WalletChoiceModal({
           Choose your wallet
         </h2>
 
-        {/* Subtitle */}
-        <p className="font-manrope mb-5 px-0 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:text-[16px] md:leading-[22px] lg:mb-6 lg:text-[18px] lg:leading-[24px] lg:tracking-[-0.72px]">
+        {/* Subtitle — Sub-headline 2 300 at 768: 2005:21388 is Manrope Regular
+            14 at -0.56 on Manrope's natural 18.048 leading, which is why the
+            frame's line box reads 19 and the content block 2005:21385 stands
+            63 tall. The 16/22 that shipped here made the block 66 and pushed
+            the wallet list (Frame 167) from the board's y=143 to 146, moving
+            everything below it. The sibling email-verification-modal draws the
+            same token at the same rung. */}
+        <p className="font-manrope mb-5 px-0 text-center text-[14px] font-normal leading-[20px] text-[#E0E0E0] md:mb-6 md:leading-[18.05px] md:tracking-[-0.56px] lg:mb-6 lg:text-[18px] lg:leading-[24px] lg:tracking-[-0.72px]">
           Choose how you&apos;d like to store your assets.
         </p>
 
