@@ -72,6 +72,35 @@ const UNAVAILABLE_TRACK = "border-[#95a09f]";
  * (LayoutSettingsDrawer) before it lived here; a consumer now asks for it by
  * name. The design-system file's toggle is a different 38x21, noted on the
  * thumb below; the app builds to the web-app boards.
+ *
+ * `stepped` is `compact` plus the step the boards take at 768, and it exists
+ * because the boards draw ONE control at TWO boxes.
+ *
+ * Measured on the node rather than carried: the 375 Preferences board
+ * 11881:94366 draws all twelve `input/toggle` instances at 40.592594x24
+ * (11884:94598, :94612 ... :94638), and both 11846:355537 at 768 and
+ * 5529:73628 at 1440 draw 60.888889x36 — exactly 1.5 times the first, on both
+ * axes. So this is a size step at the 768 breakpoint, not two components, and
+ * `md:` is Tailwind's default 768 with nothing overriding `screens`.
+ *
+ * The numbers follow `compact`'s own scheme, where the root's 2px ring is the
+ * knob's inset and the knob then fills what is left: 60.889 - 4 = 56.889 wide
+ * by 36 - 4 = 32, a 32 knob, and a travel of 56.889 - 32 = 24.889. That is
+ * also what the node itself reports — the instance's inner `order` frame is
+ * 56.888889x32 at (2,2) — so the ring and the knob land where the board puts
+ * them. The component's own art is finer than either rung of this (a 1.333
+ * ring under a 17.333 knob at 375, 1.5x of that at 768), and `compact`
+ * declined that detail when it shipped; declining it again here keeps one
+ * control that grows rather than two that differ in more than size.
+ *
+ * It is a THIRD size rather than a change to `compact` on purpose. Of the 241
+ * `<Switch>` call sites outside node_modules, 11 ask for `compact` today —
+ * eight in SettingsTab, one in PrivacySettingsCard, one in WalletCreateModal
+ * and one in DiceGame — and the last two already scale themselves past 768 at
+ * their own mounts. Stepping `compact` underneath them would scale those twice
+ * and move the other nine without their asking. `no-min-size` carries over
+ * unchanged: the floor runs to `max-width: 768px` inclusive and this rung is
+ * 36 tall at exactly 768, so it is still needed there.
  */
 const TRACK_SIZE = {
   default: {
@@ -81,6 +110,11 @@ const TRACK_SIZE = {
   compact: {
     root: "no-min-size h-6 w-[40.59px]",
     thumb: "data-[state=checked]:translate-x-[16.59px]",
+  },
+  stepped: {
+    root: "no-min-size h-6 w-[40.59px] md:h-9 md:w-[60.889px]",
+    thumb:
+      "data-[state=checked]:translate-x-[16.59px] md:size-8 md:data-[state=checked]:translate-x-[24.889px]",
   },
 } as const;
 
