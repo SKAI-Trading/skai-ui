@@ -1,3 +1,13 @@
+# STALE, NOT COUNTED — measured 2026-09-22.
+# coverage.mjs maps vverify.<section>.tsv to a fileKey through pages.json's section list. No section
+# is named "trench", so every line here is skipped and reported in coverage.json as visualUnmapped.
+# That costs nothing: the node ids here are from an earlier generation and are absent from live/.
+# Checked line by line — trench: 89 of 89 absent; trade-bugrefs: 19 of 22 absent, 2 of the remaining 3
+# already carry the same verdict in vverify.trade.tsv, and the last (3903-26048, partial) agrees with
+# the status the registry already holds. So the published figure is NOT inflated by this file.
+# To revive it: retarget the ids against live/ (see the RETARGET path in the figma-catalog skill) and
+# append the surviving lines to the vverify file of a section in the SAME Figma file — the key is
+# fileKey|nodeId, so the section name only has to resolve to the right file.
 4397-52198	partial	-	Discover table. FIXED headers to Figma (Pairs/Market cap/Liquidity/Volume/Transactions/Action; chart track unlabelled per Figma Pairs span x=0..411). Verified exit0 1440px + DOM. SURPLUS none in header now. MISSING: rich card row (Figma row h=78 w/ 52px art, socials cluster, MC/FDV pair, Token info col x=568 w=140) vs built flat row h=64 imgs=1 svg=1; 24 rows render.
 4400-59959	partial	-	Discover>Trending. Tab set built and correct (4 tabs: Trending/New Pairs/Graduating/Migrated, aria-selected wired). Same flat-row gap as 4397-52198.
 4397-47886	match	-	Filters panel. Sub-state opens (frame-verify-steps exit0, role=dialog). Labels verified 1:1 vs Figma: Adjust filters/Customize table, Metrics/Protocols/Socials, Dex paid, CA ends in 'pump' (curly quotes). Apply+Reset present. No SURPLUS controls.

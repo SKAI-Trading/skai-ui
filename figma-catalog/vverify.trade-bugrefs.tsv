@@ -1,3 +1,13 @@
+# STALE, NOT COUNTED — measured 2026-09-22.
+# coverage.mjs maps vverify.<section>.tsv to a fileKey through pages.json's section list. No section
+# is named "trade-bugrefs", so every line here is skipped and reported in coverage.json as visualUnmapped.
+# That costs nothing: the node ids here are from an earlier generation and are absent from live/.
+# Checked line by line — trench: 89 of 89 absent; trade-bugrefs: 19 of 22 absent, 2 of the remaining 3
+# already carry the same verdict in vverify.trade.tsv, and the last (3903-26048, partial) agrees with
+# the status the registry already holds. So the published figure is NOT inflated by this file.
+# To revive it: retarget the ids against live/ (see the RETARGET path in the figma-catalog skill) and
+# append the surviving lines to the vverify file of a section in the SAME Figma file — the key is
+# fileKey|nodeId, so the section name only has to resolve to the right file.
 4451-126554	deferred	-	Frame is the DASHBOARD whale-activity TABLE (design-context text runs: Dashboard, AI Analysis, Token pair, Skai sentiment, See why?, Bullish, Verdict, Great buy!, Bubble map, News, Whale activity with Date/Name, Balance, Activity, Pair columns), i.e. the InsightX dashboard surface - NOT the perps right-column WhaleActivityFeed. Out of this lane; belongs to whoever owns InsightXScreen.tsx
 4201-128723	deferred	-	Funding panel node not in figma-catalog registry; fixed the masked-zero defect instead (derived 0 rates now dash). Layout parity unverified against this node.
 3903-26048	partial	-	Perps order ticket empty short state, same component as 3903-26142. Amount card border-transparent until a value is entered, CTA dark until submittable, both measured
