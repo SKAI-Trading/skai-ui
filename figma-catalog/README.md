@@ -148,5 +148,24 @@ comparison rules without touching Figma.
   another file; it is expected to have no section.
 - **`status.` is a glob.** Any `status.*.tsv` is read as a frame status table by
   apply-status, bp-report and coverage. Do not use the prefix for anything else.
+- **A hand-edited title on a TOP-LEVEL board is silently reverted at the next
+  harvest.** `harvest.mjs:641` writes `<section>.titles.tsv` straight from the
+  Figma layer name (`r.name`) for every row; the "keep the catalog's title"
+  path at `:545-552` applies only to NESTED ids. So a title corrected here
+  survives until someone re-harvests the page and no further. **A wrong title
+  is fixed by renaming the layer in Figma, not in the catalog.** Two wallet
+  boards are known wrong and both say `768 x 1024px`: `7728-60058`
+  (`wallet.titles.tsv:126`) and `7774-12119` (`:168`) — reported by
+  wallet-shell-pages 2026-09-22 as actually 375x812 and 375x840. The code path
+  and the two titles are verified; the two pixel sizes are that lane's
+  measurement, not re-read here. Do not "fix" them in the TSV.
+- **A verdict can take a frame out of the DENOMINATOR.** `ruled-out` (added
+  2026-09-22) is for a frame the product decided must never be implemented:
+  nothing was built and nothing is owed, so it is neither work completed nor
+  work outstanding and it leaves the in-scope count, the way a page-level
+  `excluded` scope does. It never counts as `done`. It is applied only when the
+  reason cites a ruling **and its date**; a line that does not is reported and
+  the frame stays in scope. `COVERAGE.md` publishes the denominator both ways so
+  a shrink can never be read as frames being closed.
 - **Shared working tree.** Always commit with explicit paths from this submodule,
   then bump the pointer in Skai-Trading.

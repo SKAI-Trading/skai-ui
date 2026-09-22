@@ -71,7 +71,19 @@ const SECTIONS = (() => {
   }
   return found.size ? [...found].sort() : SECTION_FALLBACK;
 })();
-const VALID = new Set(["match", "partial", "deferred", "not-wired"]);
+// `ruled-out` (added 2026-09-22): the product decided the frame must never be
+// implemented. It is the only verdict that touches neither the numerator nor
+// the status — coverage.mjs removes the frame from the in-scope DENOMINATOR
+// instead. Here it folds its marker and stamps verifiedAt, because the frame
+// HAS been assessed, and deliberately leaves `status` alone: a ruled-out frame
+// is neither done nor partial, and pulling it to `partial` is exactly what kept
+// the five share-net-worth boards open across five waves. Applied only when the
+// reason cites a ruling AND its date; otherwise refused, so the word alone can
+// never take a frame out of the measurement.
+const VALID = new Set(["match", "partial", "deferred", "not-wired", "ruled-out"]);
+const RULING_WORD = /rul(?:ed|ing)/i;
+const RULING_DATE = /\b\d{4}-\d{2}-\d{2}\b/;
+const ruledOutUncited = [];
 // Idempotent strip: the marker is ALWAYS appended last, so anchor from the
 // first `[vverify:` to end-of-string. Using [^\]]* (stop at first `]`) breaks
 // when a folded note itself contains `]` — it leaves a tail that accumulates on
@@ -100,10 +112,15 @@ for (const sec of SECTIONS) {
       unknown.push(`vverify.${sec}.tsv ${node.trim()} -> "${v}"`);
       continue;
     }
+    const note = rest.join("\t").trim();
+    if (v === "ruled-out" && !(RULING_WORD.test(note) && RULING_DATE.test(note))) {
+      ruledOutUncited.push(`vverify.${sec}.tsv ${node.trim()}`);
+      continue;
+    }
     byKey[`${sec}/${node.trim()}`] = {
       verdict: v,
       shot: (shot || "").trim(),
-      note: rest.join("\t").trim(),
+      note,
     };
     loaded++;
   }
@@ -142,7 +159,13 @@ for (const f of Object.values(reg.frames)) {
   // any prior done/partial is wrong — force it to not-started. A plain
   // non-match (partial/deferred) only downgrades an over-optimistic `done`.
   if (rec.verdict === "not-wired") f.status = "not-started";
-  else if (rec.verdict !== "match" && f.status === "done") f.status = "partial";
+  // `ruled-out` leaves status untouched on purpose: the frame is out of the
+  // measurement entirely, so neither a promotion nor a downgrade says anything
+  // true about it. Falling through to the downgrade below is what pinned the
+  // share-net-worth boards at `partial` for five waves.
+  else if (rec.verdict === "ruled-out") {
+    /* no status change */
+  } else if (rec.verdict !== "match" && f.status === "done") f.status = "partial";
   // verifiedAt is the date the verdict LANDED, not the date this script last
   // ran. Re-stamping every frame on every run rewrote 875 dates on 2026-09-09
   // with nothing verified, which hides the frames whose verdict really moved
@@ -171,5 +194,12 @@ if (unknown.length) {
   );
   for (const u of unknown.slice(0, 20)) console.warn(`  ${u}`);
   if (unknown.length > 20) console.warn(`  ... and ${unknown.length - 20} more`);
+}
+if (ruledOutUncited.length) {
+  console.warn(
+    `[apply-verify] WARNING: ${ruledOutUncited.length} \`ruled-out\` verdict(s) do not cite a ruling AND its date in the reason, ` +
+      `and were NOT applied — the frame stays in the measurement. A verdict that shrinks the denominator has to show its warrant.`,
+  );
+  for (const u of ruledOutUncited) console.warn(`  ${u}`);
 }
 console.log("verified frames by verdict:", JSON.stringify(byVerdict));

@@ -465,7 +465,39 @@ const ambiguousIds = new Set([...filesPerId].filter(([, s]) => s.size > 1).map((
 // vverify file whose section maps to no page (trade-bugrefs, trench) is
 // reported and skipped rather than guessed at.
 // ---------------------------------------------------------------------------
-const VVERIFY_VALID = new Set(["match", "partial", "deferred", "not-wired"]);
+/*
+  ★ `ruled-out` (added 2026-09-22) IS THE ONLY VERDICT THAT MOVES THE
+  DENOMINATOR RATHER THAN THE NUMERATOR.
+
+  Until it existed, only `match` could sustain a `done` claim: `partial` and
+  `deferred` pulled it down, `not-wired` pushed it to not-started. So a frame
+  the PRODUCT has decided must never be implemented could not be closed by any
+  word in the vocabulary. Five share-net-worth frames (7491-148345, 7709-10525,
+  7713-13706, 7774-62886, 7774-63646) were opened by five waves and closed by
+  none: the 2026-09-04 ruling retires that home-skin-2 family in favour of the
+  13008 one, ShareCard.tsx draws the 13008 family, and a lane that wrote `match`
+  there would have been claiming a whole-frame match on a board nobody may
+  build. The lane refused, correctly, and the row stayed open forever.
+
+  The fix is NOT a verdict that counts a ruled-out frame as done — nothing was
+  built, and calling it done makes the numerator mean something other than
+  "this exists in the app". A frame the product decided against is not work
+  outstanding and it is not work completed; it is not in the measurement. So it
+  leaves the in-scope denominator entirely, the same treatment a page-level
+  `excluded` scope already gets, applied per frame.
+*/
+const VVERIFY_VALID = new Set(["match", "partial", "deferred", "not-wired", "ruled-out"]);
+/*
+  A verdict that shrinks the denominator has to show its warrant, or the
+  percentage becomes raisable by writing a word. `ruled-out` is applied ONLY
+  when the reason names a ruling AND carries its date. A line that does not is
+  reported and LEFT IN SCOPE — it fails closed, so a malformed or speculative
+  line can never quietly remove a frame from the measurement.
+*/
+const RULING_WORD = /rul(?:ed|ing)/i;
+const RULING_DATE = /\b\d{4}-\d{2}-\d{2}\b/;
+const ruledOutIds = new Set();
+const ruledOutUncited = [];
 const visual = new Map();
 const visualUnmapped = [];
 {
@@ -482,9 +514,19 @@ const visualUnmapped = [];
     }
     for (const line of fs.readFileSync(path.join(DIR, f), "utf8").split(/\r?\n/)) {
       if (!line.trim() || isCommentLine(line)) continue;
-      const [node, verdict] = line.split("\t");
+      const cols = line.split("\t");
+      const [node, verdict] = cols;
       const v = (verdict || "").trim();
       if (!VVERIFY_VALID.has(v)) continue;
+      if (v === "ruled-out") {
+        // Columns are node / verdict / shot / reason; the ruling lives in the reason.
+        const reason = cols.slice(3).join(" ");
+        if (!(RULING_WORD.test(reason) && RULING_DATE.test(reason))) {
+          ruledOutUncited.push(`${f} ${normId(node)}`);
+          continue;
+        }
+        ruledOutIds.add(`${fk}|${normId(node)}`);
+      }
       visual.set(`${fk}|${normId(node)}`, v);
     }
   }
@@ -501,13 +543,17 @@ const frameStatuses = [];
 for (const p of pages) {
   const furniture = [];
   const genuine = [];
+  // Frames a ruling took out of the measurement. Held separately from both
+  // furniture and genuine so the three sum back to `live` and nothing is hidden.
+  const ruledOut = [];
   const whyCounts = {};
   for (const n of p.nodes) {
     const c = classify(n);
     if (c.furniture) {
       furniture.push(n);
       whyCounts[c.why] = (whyCounts[c.why] || 0) + 1;
-    } else genuine.push(n);
+    } else if (ruledOutIds.has(`${p.fileKey}|${n.id}`)) ruledOut.push(n);
+    else genuine.push(n);
   }
   const byStatus = {};
   const liveOnly = [];
@@ -669,6 +715,8 @@ for (const p of pages) {
     live: p.nodes.length,
     furniture: furniture.length,
     furnitureWhy: whyCounts,
+    ruledOut: ruledOut.length,
+    ruledOutIds: ruledOut.map((n) => n.id),
     genuine: genuine.length,
     matched,
     rollupOnly,
@@ -723,6 +771,12 @@ const rollup = {
   live: sum(inScope, "live"),
   furniture: sum(inScope, "furniture"),
   genuine: sum(inScope, "genuine"),
+  // The denominator the other way round: what it would be if the ruled-out
+  // frames were still counted. Published so nobody has to reconstruct it, and
+  // so a shrinking denominator can never be mistaken for frames being closed.
+  ruledOut: sum(inScope, "ruledOut"),
+  genuineWithRuledOut: sum(inScope, "genuine") + sum(inScope, "ruledOut"),
+  ruledOutUncited,
   matched: sum(inScope, "matched"),
   done: statusSum(inScope, "done"),
   verified: sum(inScope, "verified"),
@@ -792,6 +846,10 @@ P(`| In-scope pages | ${rollup.pages} |`);
 P(`| Live top-level nodes | ${rollup.live} |`);
 P(`| — furniture (excluded from the denominator) | ${rollup.furniture} (${pct(rollup.furniture, rollup.live)}%) |`);
 P(`| **Genuine frames — the denominator** | **${rollup.genuine}** |`);
+P(
+  `| Ruled out of the measurement (\`ruled-out\` verdict, product decided against) | ${rollup.ruledOut} |`,
+);
+P(`| Denominator if those were still counted | ${rollup.genuineWithRuledOut} |`);
 P(`| Genuine frames with a catalog row (matched by node id) | ${rollup.matched} (${pct(rollup.matched, rollup.genuine)}%) |`);
 P(`| — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | ${rollup.rollupOnly} (${pct(rollup.rollupOnly, rollup.matched)}% of matched) |`);
 P(`| Genuine frames with NO row — live-only drift | ${rollup.liveOnly} (${pct(rollup.liveOnly, rollup.genuine)}%) |`);
@@ -835,6 +893,12 @@ P();
 P(`**${rollup.done} of ${rollup.genuine} in-scope genuine frames (${pct(rollup.done, rollup.genuine)}%) are covered by a row marked \`done\`.**`);
 P();
 P(`Read the caveat section before quoting that. It is not ${pct(rollup.done, rollup.genuine)}% measured parity.`);
+if (rollup.ruledOut) {
+  P("");
+  P(
+    `**${rollup.ruledOut} frame(s) carry a \`ruled-out\` verdict and are NOT in that denominator.** A ruled-out frame is one the product decided against: nothing was built and nothing is owed, so it is neither work completed nor work outstanding and it leaves the measurement, exactly as a page-level \`excluded\` scope does. Counted in, the denominator is ${rollup.genuineWithRuledOut} and the figure reads ${pct(rollup.done, rollup.genuineWithRuledOut)}%; counted out it is ${rollup.genuine} and reads ${pct(rollup.done, rollup.genuine)}%. **The difference is the denominator shrinking, not frames being closed** — the \`done\` count is identical either way. Each such verdict must cite its ruling by date in the reason or it is refused and the frame stays in scope.${rollup.ruledOutUncited.length ? ` ${rollup.ruledOutUncited.length} line(s) claimed \`ruled-out\` WITHOUT citing a dated ruling and were refused: ${rollup.ruledOutUncited.join(", ")}.` : ""}`,
+  );
+}
 P();
 P(`**${rollup.verified} of those ${rollup.done} (${pct(rollup.verified, rollup.genuine)}% of scope) carry a visual verdict of \`match\` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other ${rollup.done - rollup.verified} are \`done\` by a status row alone, which is a claim about code mapping, not a measurement. ${rollup.visuallyDowngraded} frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls \`done\` to \`partial\`; not-wired forces \`not-started\`). Until 2026-09-09 this tally ignored the verdicts entirely${rollup.visualUnmapped.length ? `; ${rollup.visualUnmapped.map((f) => "`" + f + "`").join(", ")} map to no page in pages.json and are not applied` : ""}.`);
 P();
@@ -1031,7 +1095,8 @@ if (FRAMES) {
 // In histogram mode stdout is a JSON document and nothing else may land on it —
 // a trailing human summary made the output unparseable.
 (HISTOGRAM ? console.error : console.log)(
-  `in-scope: ${rollup.genuine} genuine frames of ${rollup.live} live (${rollup.furniture} furniture); ` +
+  `in-scope: ${rollup.genuine} genuine frames of ${rollup.live} live (${rollup.furniture} furniture` +
+    `${rollup.ruledOut ? `, ${rollup.ruledOut} ruled out — denominator ${rollup.genuineWithRuledOut} with them, ${rollup.genuine} without` : ""}); ` +
     `${rollup.matched} have a row (${pct(rollup.matched, rollup.genuine)}%); ` +
     `${rollup.done} done (${pct(rollup.done, rollup.genuine)}%), ${rollup.verified} of them visually verified (${pct(rollup.verified, rollup.genuine)}%), ` +
     `${rollup.visuallyDowngraded} claimed statuses pulled down by a visual verdict; ` +
