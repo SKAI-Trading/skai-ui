@@ -4,9 +4,15 @@
  * `AppleIcon` is what `auth-modal.tsx` draws. `GoogleIcon` is the monochrome
  * mark from the older Sky Blue outlined buttons: the sign-in modal that used
  * it is gone and `waitlist-modal.tsx`, its last caller, is itself no longer
- * mounted by any app, so inside this repo it survives only through the
- * Storybook preview. It is exported for that and for any consumer outside this
- * repo; `auth-modal.tsx` uses `GoogleBrandIcon` below instead.
+ * mounted by any app.
+ *
+ * This block used to add that it therefore survived through the Storybook
+ * preview. It does not: there is no `waitlist-modal.stories.tsx` anywhere in
+ * this library, and the name in `.storybook/preview.tsx`'s storySort array
+ * only orders a story that does not exist. Nothing inside this repo renders
+ * either the modal or this glyph, so both survive purely as public exports of
+ * the package, for consumers outside it. `auth-modal.tsx` uses
+ * `GoogleBrandIcon` below instead.
  *
  * `GoogleIcon`'s paths are pinned to Sky Blue because the Figma sign-in frame
  * 2086:29544 composites the full-colour mark down to a single #56C7F3 via
