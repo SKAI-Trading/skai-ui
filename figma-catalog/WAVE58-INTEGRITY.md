@@ -7,11 +7,13 @@ Wave 57 closed at 1,092 / 680, so +53 done and +43 verified. Twenty lanes dispat
 - Fold: skai-ui `9c2aff7`
 - Pointer bump: `0b64cf5f6` (skai-ui `9c2aff7`, skai-gaming `e6d2eb84`, skai-wallet
   `807dcd5`, skai-landing `8f97a30`)
-- **NOT YET LIVE.** Per Casey's Ruling 6 of the same day — *"app fixes: commit and push, Casey
-  deploys"* — the wave is landed, pushed and gated, and `deploy_main.ps1` is Casey's to run. The
-  deploy target is the origin tip `6f301513e`, which carries the bump plus six peer commits that
-  landed during the repo-sync hold. See "The deploy is prepared and handed over" below for the
-  command and the guard proof.
+- **Live: `skai-trading@20260921-1805-6f301513e`, built 18:08 local — but `dirty:true`.** The
+  origin tip carries the bump plus six peer commits that landed during the repo-sync hold. Casey
+  deployed it himself per his Ruling 6 of the same day (*"app fixes: commit and push, Casey
+  deploys"*). Verified present in the deployed artefact: Ruling 13's `at current sale price` label
+  in `GaugeVoting-C1YRyNBG.js` and the sportsbook cash-out in `MyBetsPanelMount-*.js`.
+  ⚠ The `dirty:true` flag is real and is discussed under "The deploy, and what `dirty:true` cost"
+  below; it is bounded, not benign.
 
 No Figma harvest was owed this wave; wave 57's hash check found all 51 pages equal across the
 three files, and nothing re-harvested since.
@@ -271,7 +273,7 @@ which is a 2,511-error backlog rather than a regression signal.
 
 ---
 
-## The deploy is prepared and handed over
+## The deploy, and what `dirty:true` cost
 
 Casey halted the deploy mid-fold: *"before we deploy lets make sure our repo is current."* At
 that point origin/main held the whole wave (`0b64cf5f6`) but the shared tree's local main was 41
@@ -288,18 +290,59 @@ each gated, each confirming the diff touched nothing unintended under `supabase/
 current in the sense Casey asked for: **nothing of this wave, and nothing of those peers' work, is
 outstanding.**
 
-The deploy itself stops here, at Ruling 6. What is prepared, from the detached clean worktree at
-`6f301513e`:
+The deploy itself was Casey's, per Ruling 6, and it had **already happened** — at 18:08 local,
+two hours before this record was assembled. That is worth stating plainly because the orchestrator
+had spent the interval preparing to run it: proving the ancestry, re-gating, rebuilding `dist/`,
+and writing the command into this file under the heading "prepared and handed over".
 
-```powershell
-cd C:/Users/casey/Documents/GitHub/skai-deploy-clean
-.\scripts\aws\deploy_main.ps1 -AllowRollback
+★ **Ruling 6 was doing exactly what it exists for.** Its stated reason is to stop a twenty-lane
+fleet racing on one deploy. Two deploys of the same commit were an hour or so from colliding, and
+the only thing that prevented it was reading the ruling before running the command.
+
+★★ **The orchestrator asserted the live version from a carried summary instead of measuring it.**
+This record's first draft said "NOT YET LIVE", and the earlier ancestry proof was built against
+live `9d51de3f7` — a value two hours stale by then. One `curl app.skai.trade/version.json` settled
+it. **This is the wave's own headline lesson (a carried finding is a lead, not a fact) committed
+into the wave's own record**, which is the most legible possible demonstration that knowing a
+lesson and applying it are different things.
+
+### The finding: production runs `dirty:true`
+
+```text
+skai-trading@20260921-1805-6f301513e   commit 6f301513e   dirty: true
 ```
 
-`-AllowRollback` is needed and is honest, for the reason below. Afterwards `version.json` should
-read `6f301513e` with `dirty:false`, the parity feed wants publishing (`deploy_landing.ps1`), and
-the gaming/certification owner is waiting on "the client is live" before shipping the server half
-of the RTP work — client first, deliberately.
+The bundle was built in the **shared working tree**, not a clean worktree — its `dist/version.json`
+matches what production serves byte-for-byte, and the shared tree carries other sessions'
+uncommitted work at all times (23 dirty files and 11 unpushed peer commits when measured). So the
+deployed bytes are `6f301513e` PLUS an unreviewed delta, and **the version string names a commit
+that does not fully describe what is running.**
+
+Bounded, then, rather than guessed at:
+
+- **Structurally identical.** Chunk-name sets (hashes stripped) are **712 distinct on both sides,
+  zero in one and not the other**, against a clean build of `6f301513e`. No module was added or
+  removed by the dirt.
+- **Wave 58's client work is genuinely live** — Ruling 13's label and the sportsbook cash-out mount
+  both present, in the same marker counts as the clean build.
+- **The committed half is gated and built green** at exactly `6f301513e`.
+- **What remains unbounded** is in-chunk edits from the dirty files. At least one was app source
+  (`src/components/admin/AdminUserManagement.tsx`); the rest were edge functions, `supabase/config.toml`
+  and `supabase/_staging-2026-09-21/*.sql` deletions, none of which reach the browser bundle.
+
+⛔ **Do not compare asset hashes to decide whether two builds differ.** Every vendor chunk hash
+differed between the clean build and production — including `vendor-react` and `vendor-polyfills`,
+which contain no application source and therefore *cannot* differ because of dirty app files. The
+Sentry plugin injects a fresh debug id per build, so hashes move on every build from identical
+source. **Compare chunk-name sets and grep for content markers instead.** Three successive
+measurements were misread before this was noticed: two `curl`s fetched the SPA fallback (2.4 KB of
+`index.html`) and reported `0 occurrences` of a string that was present all along. ★ A failed
+instrument returns a confident-looking number; check the size and shape of what you fetched before
+reading its grep count.
+
+⇒ **The remedy is the existing discipline, not a new one**: deploy from the detached clean
+worktree, where `dirty` is structurally `false`. See
+`deploy-main-from-a-clean-worktree-2026-09-14` in the memory set.
 
 ★ **`git reset --keep` protects uncommitted files, NOT committed-but-unpushed commits.** It was
 the right tool for syncing the shared tree — it moves HEAD, keeps every local modification, and
@@ -307,34 +350,44 @@ aborts rather than clobbering — but it would still have orphaned a peer's comm
 work. The `git cherry` "no `+`" precondition is load-bearing, not a formality.
 
 ★ **The ancestry guard compares commit IDs; `git cherry` compares patch IDs.** `deploy_main`
-STEP 5.6 refused the bump because live `9d51de3f7` (wave 57's green-base side commit) is a
-SIBLING of the origin tip, not an ancestor. `git cherry origin/main 9d51de3f7` printed `-` —
-live's one unique commit is content-identical to something already on origin — so `-AllowRollback`
-was honest. It would not have been if `cherry` had printed `+`.
+STEP 5.6 refused the bump when live was `9d51de3f7` (wave 57's green-base side commit), a SIBLING
+of the origin tip rather than an ancestor. `git cherry origin/main 9d51de3f7` printed `-` — live's
+one unique commit is content-identical to something already on origin — which is what makes
+`-AllowRollback` honest in that situation. It would not be if `cherry` printed `+`. Keep the
+technique; it is the only way to tell a sibling from a regression.
+
+⚠ In this instance the whole proof was moot, and instructively so: it was built against a live
+value taken from a prior session's summary, and by then production had already moved to the origin
+tip. **Measure the live version before proving anything about it** — `curl` the surface's
+`version.json`, never inherit it.
 
 ---
 
 ## Owed at the close
 
-1. **Verify the five onboarding rows** made right by `1204aa6` rather than by verification, and
+1. ⛔ **Production runs `dirty:true`.** Bounded above (no structural difference from a clean build
+   of `6f301513e`), but the live bytes are not reproducible from the named commit. The next deploy
+   should run from the detached clean worktree so the flag clears, and until it does, "what is
+   live" cannot be answered from git alone.
+2. **Verify the five onboarding rows** made right by `1204aa6` rather than by verification, and
    correct play-hub's stale vverify `match` on `9222-26203`.
-2. **Ruling 13 on portfolio**: `PortfolioScreen.tsx:1183` and `:4929` → `saleCurvePrice.ts` with
+3. **Ruling 13 on portfolio**: `PortfolioScreen.tsx:1183` and `:4929` → `saleCurvePrice.ts` with
    `AT_SALE_PRICE_LABEL`. The standalone wallet needs the architecture call first.
-3. **Name the offending file in `bp-report` and `row-tree-check`** — two waves of fleet-wide
+4. **Name the offending file in `bp-report` and `row-tree-check`** — two waves of fleet-wide
    false red is enough.
-4. **Carry play-hub's slide Mobile** (`10296-5157`): built and tested, eight assertions in a new
+5. **Carry play-hub's slide Mobile** (`10296-5157`): built and tested, eight assertions in a new
    test, but NO ROW and left uncommitted on request.
-5. **Deferred lanes with rows safe on disk**: predict-detail 3, trade-perp 3,
+6. **Deferred lanes with rows safe on disk**: predict-detail 3, trade-perp 3,
    home-whales-screens-ai 2. **Produced nothing, start fresh**: games-instant,
    wallet-shell-pages, games-table, slots-hooked-untamed, slots-sugar-starbound-vegas.
-6. **Surface the `no-min-size` escape near the top of the lane rules.** The global 44px button
+7. **Surface the `no-min-size` escape near the top of the lane rules.** The global 44px button
    floor under 768 keeps surprising lanes; Casey already ruled the escape (2026-09-07, "match the
    frames, opt out with `no-min-size`") and `index.css:748-754` is never edited. The mechanism
    existed at line 213 of a 27KB file, which is why nobody reached it.
-7. **`RecentWinnersFeed.tsx` has no caller** — the inverse of built-but-never-mounted: a component
+8. **`RecentWinnersFeed.tsx` has no caller** — the inverse of built-but-never-mounted: a component
    that WAS mounted and no longer is. Not deleted; flagged for whoever owns rewards.
-8. **`MyBets.tsx` has no caller** since the cash-out swap — retire or keep as rollback.
-9. **Peer-owned test reds** at HEAD, named above, for their owners.
+9. **`MyBets.tsx` has no caller** since the cash-out swap — retire or keep as rollback.
+10. **Peer-owned test reds** at HEAD, named above, for their owners.
 
 ### Frame and board defects worth Casey's eye
 
@@ -349,12 +402,19 @@ was honest. It would not have been if `cherry` had printed `+`.
 
 ---
 
-**Status at the close: landed, pushed, gated green, built clean — not live.** Wave 59 should read
-the live version string off `app.skai.trade/version.json` rather than assume this wave shipped; if
-it still reads `9d51de3f7` (wave 57), everything recorded here is on main and in nobody's browser.
+**Status at the close: landed, pushed, gated green, and LIVE at
+`skai-trading@20260921-1805-6f301513e` — with `dirty:true` outstanding.** The parity feed is
+published and committed (skai-landing `b61baad`, reading 1,145 / 723 / 29.9%). This record is
+skai-ui `6ef86e1`; its superproject pointer was deliberately left un-bumped so as not to move the
+deploy target after gating, so it rides with wave 59's bump.
 
-★ **"Done" in this record means the row and the code landed on origin.** It does not mean a user
-can see it. Those were the same thing in earlier waves only because the same session pushed and
-deployed; Ruling 6 separates them, so the catalog's figure and the live figure can now diverge by
-a whole wave. The parity feed publishes the CATALOG number — which is why the feed can read ahead
-of what is deployed, and why wave 57's feed was found a wave stale for the opposite reason.
+★ **"Done" in this record means the row and the code landed on origin — not that a user can see
+it.** Those were the same thing in earlier waves only because one session both pushed and
+deployed. Ruling 6 separates them, so the catalog figure and the live figure can now diverge by a
+whole wave in either direction: the feed publishes the CATALOG number, which is why it can read
+ahead of what is deployed, and why wave 57's committed feed was found a wave BEHIND. ⇒ Wave 59
+reads the live version off `app.skai.trade/version.json` and treats main as a separate question.
+
+★ Unresolved and handed to Casey rather than assumed: whether wave 57's deploy earlier the same
+day (`9d51de3f7`, 15:39) was also run by an agent. If it was, Ruling 6 was in force and nobody
+noticed, because it worked — which is the only kind of permission breach that leaves no trace.
