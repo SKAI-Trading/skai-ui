@@ -1,42 +1,45 @@
 {
-  "generated": "2026-09-22T19:07:49.136Z",
+  "generated": "2026-09-22T20:24:34.095Z",
   "harvestedAt": "2026-09-21",
   "rollup": {
     "pages": 39,
     "live": 4602,
     "furniture": 777,
-    "genuine": 3825,
-    "matched": 3823,
-    "done": 1188,
-    "verified": 763,
-    "visuallyDowngraded": 72,
+    "genuine": 3820,
+    "ruledOut": 5,
+    "genuineWithRuledOut": 3825,
+    "ruledOutUncited": [],
+    "matched": 3818,
+    "done": 1200,
+    "verified": 775,
+    "visuallyDowngraded": 76,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 1626,
-    "notStarted": 275,
+    "partial": 1603,
+    "notStarted": 284,
     "blocked": 219,
-    "frameDefect": 184,
+    "frameDefect": 181,
     "catalogFurniture": 132,
     "unknown": 199,
     "liveOnly": 2,
     "rollupOnly": 0,
     "defaultNamed": 203,
     "ambiguous": 117,
-    "conflicts": 9
+    "conflicts": 0
   },
   "doneRows": {
-    "total": 3172,
-    "withBreakpointProvenance": 1762,
-    "namingANodeId": 2841,
+    "total": 3186,
+    "withBreakpointProvenance": 1776,
+    "namingANodeId": 2855,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 18678,
-    "namingNoNodeId": 532,
-    "namingNoLiveNodeId": 957,
-    "unrecognisedTokens": 36881
+    "total": 18746,
+    "namingNoNodeId": 533,
+    "namingNoLiveNodeId": 960,
+    "unrecognisedTokens": 37242
   },
   "statusFiles": [
     {
@@ -4294,6 +4297,96 @@
       "ids": 6
     },
     {
+      "file": "status.wave61.account-notifications-rewards.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
+      "file": "status.wave61.explorer.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave61.game-gutter-sweep.tsv",
+      "rows": 5,
+      "withLiveId": 5,
+      "ids": 5
+    },
+    {
+      "file": "status.wave61.games-instant.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 5
+    },
+    {
+      "file": "status.wave61.games-table.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
+      "file": "status.wave61.governance-dao.tsv",
+      "rows": 5,
+      "withLiveId": 5,
+      "ids": 5
+    },
+    {
+      "file": "status.wave61.play-hub.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave61.predict-dashboard.tsv",
+      "rows": 2,
+      "withLiveId": 1,
+      "ids": 3
+    },
+    {
+      "file": "status.wave61.predict-detail.tsv",
+      "rows": 5,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave61.slots-sugar-starbound-vegas.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 8
+    },
+    {
+      "file": "status.wave61.social-feed.tsv",
+      "rows": 14,
+      "withLiveId": 14,
+      "ids": 16
+    },
+    {
+      "file": "status.wave61.touch-floor-sweep.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 3
+    },
+    {
+      "file": "status.wave61.trade-bridge-deposit-chart.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave61.wallet-components.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 6
+    },
+    {
+      "file": "status.wave61.wallet-shell-pages.tsv",
+      "rows": 14,
+      "withLiveId": 14,
+      "ids": 19
+    },
+    {
       "file": "status.wave7.furniture.tsv",
       "rows": 47,
       "withLiveId": 47,
@@ -4529,6 +4622,8 @@
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 1,
       "matched": 0,
       "rollupOnly": 0,
@@ -4562,6 +4657,8 @@
       "furnitureWhy": {
         "canvas-chrome": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 45,
       "matched": 0,
       "rollupOnly": 0,
@@ -4904,6 +5001,8 @@
         "canvas-chrome": 457,
         "loose-text": 699
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 1,
       "matched": 0,
       "rollupOnly": 0,
@@ -4935,6 +5034,8 @@
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 3,
       "matched": 0,
       "rollupOnly": 0,
@@ -4985,19 +5086,21 @@
         "canvas-chrome": 18,
         "loose-text": 5
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 127,
       "matched": 127,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 2,
-      "verified": 49,
+      "conflicts": 0,
+      "verified": 51,
       "visuallyDowngraded": 9,
       "byStatus": {
-        "partial": 48,
+        "partial": 46,
         "not-started": 16,
         "blocked-on-backend": 3,
-        "done": 55,
+        "done": 57,
         "furniture": 3,
         "frame-defect": 2
       },
@@ -5017,6 +5120,8 @@
       "furnitureWhy": {
         "canvas-chrome": 4
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 6,
       "matched": 6,
       "rollupOnly": 0,
@@ -5046,6 +5151,8 @@
         "hidden": 1,
         "loose-text": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 0,
       "matched": 0,
       "rollupOnly": 0,
@@ -5072,6 +5179,8 @@
         "canvas-chrome": 12,
         "loose-text": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 0,
       "matched": 0,
       "rollupOnly": 0,
@@ -5101,6 +5210,8 @@
         "hidden": 2,
         "loose-text": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 117,
       "matched": 117,
       "rollupOnly": 0,
@@ -5134,17 +5245,19 @@
         "canvas-chrome": 29,
         "hidden": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 254,
       "matched": 254,
       "rollupOnly": 0,
       "defaultNamed": 5,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 15,
+      "verified": 18,
       "visuallyDowngraded": 2,
       "byStatus": {
-        "partial": 121,
-        "done": 42,
+        "partial": 118,
+        "done": 45,
         "blocked-on-backend": 23,
         "unknown": 8,
         "frame-defect": 12,
@@ -5168,6 +5281,8 @@
         "loose-instance": 2,
         "loose-text": 10
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 270,
       "matched": 269,
       "rollupOnly": 0,
@@ -5210,19 +5325,21 @@
         "loose-rectangle": 1,
         "loose-instance": 3
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 402,
       "matched": 402,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 2,
-      "verified": 97,
-      "visuallyDowngraded": 11,
+      "conflicts": 0,
+      "verified": 99,
+      "visuallyDowngraded": 20,
       "byStatus": {
-        "done": 165,
+        "done": 167,
         "blocked-on-backend": 49,
-        "partial": 131,
-        "not-started": 44,
+        "partial": 120,
+        "not-started": 53,
         "frame-defect": 12,
         "unknown": 1
       },
@@ -5244,6 +5361,8 @@
         "canvas-chrome": 64,
         "loose-instance": 2
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 659,
       "matched": 659,
       "rollupOnly": 0,
@@ -5275,6 +5394,8 @@
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 1,
       "matched": 0,
       "rollupOnly": 0,
@@ -5312,6 +5433,8 @@
         "loose-instance": 4,
         "hidden": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 236,
       "matched": 236,
       "rollupOnly": 0,
@@ -5346,6 +5469,8 @@
         "hidden": 3,
         "loose-text": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 204,
       "matched": 204,
       "rollupOnly": 0,
@@ -5379,18 +5504,26 @@
       "furnitureWhy": {
         "canvas-chrome": 11
       },
-      "genuine": 167,
-      "matched": 167,
+      "ruledOut": 5,
+      "ruledOutIds": [
+        "7491-148345",
+        "7709-10525",
+        "7713-13706",
+        "7774-62886",
+        "7774-63646"
+      ],
+      "genuine": 162,
+      "matched": 162,
       "rollupOnly": 0,
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 94,
-      "visuallyDowngraded": 10,
+      "verified": 95,
+      "visuallyDowngraded": 5,
       "byStatus": {
-        "done": 94,
+        "done": 95,
         "furniture": 8,
-        "partial": 63,
+        "partial": 57,
         "frame-defect": 2
       },
       "liveOnly": []
@@ -5410,6 +5543,8 @@
         "canvas-chrome": 22,
         "loose-instance": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 167,
       "matched": 167,
       "rollupOnly": 0,
@@ -5447,19 +5582,21 @@
         "loose-rectangle": 3,
         "hidden": 2
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 368,
       "matched": 368,
       "rollupOnly": 0,
       "defaultNamed": 43,
       "ambiguous": 117,
-      "conflicts": 1,
-      "verified": 68,
+      "conflicts": 0,
+      "verified": 69,
       "visuallyDowngraded": 13,
       "byStatus": {
-        "partial": 253,
+        "partial": 252,
         "frame-defect": 18,
         "blocked-on-backend": 18,
-        "done": 72,
+        "done": 73,
         "furniture": 1,
         "not-started": 6
       },
@@ -5482,18 +5619,20 @@
         "loose-instance": 1,
         "loose-ellipse": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 379,
       "matched": 379,
       "rollupOnly": 0,
       "defaultNamed": 18,
       "ambiguous": 0,
-      "conflicts": 2,
-      "verified": 36,
+      "conflicts": 0,
+      "verified": 39,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "frame-defect": 32,
-        "partial": 179,
-        "done": 116,
+        "frame-defect": 28,
+        "partial": 180,
+        "done": 119,
         "blocked-on-backend": 28,
         "not-started": 20,
         "furniture": 4
@@ -5512,6 +5651,8 @@
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 1,
       "matched": 0,
       "rollupOnly": 0,
@@ -5543,6 +5684,8 @@
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 3,
       "matched": 0,
       "rollupOnly": 0,
@@ -5592,6 +5735,8 @@
       "furnitureWhy": {
         "canvas-chrome": 2
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 42,
       "matched": 42,
       "rollupOnly": 0,
@@ -5622,6 +5767,8 @@
         "hidden": 1,
         "loose-instance": 4
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 23,
       "matched": 23,
       "rollupOnly": 0,
@@ -5652,6 +5799,8 @@
         "canvas-chrome": 8,
         "loose-ellipse": 3
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 10,
       "matched": 10,
       "rollupOnly": 0,
@@ -5682,18 +5831,20 @@
         "canvas-chrome": 6,
         "loose-rectangle": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 16,
       "matched": 16,
       "rollupOnly": 0,
       "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 11,
+      "verified": 10,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 11,
+        "done": 10,
+        "partial": 2,
         "frame-defect": 1,
-        "partial": 1,
         "furniture": 3
       },
       "liveOnly": []
@@ -5712,6 +5863,8 @@
       "furnitureWhy": {
         "canvas-chrome": 7
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 13,
       "matched": 13,
       "rollupOnly": 0,
@@ -5740,6 +5893,8 @@
       "furnitureWhy": {
         "canvas-chrome": 7
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 12,
       "matched": 12,
       "rollupOnly": 0,
@@ -5770,6 +5925,8 @@
         "canvas-chrome": 10,
         "loose-vector": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 35,
       "matched": 34,
       "rollupOnly": 0,
@@ -5807,6 +5964,8 @@
       "furnitureWhy": {
         "canvas-chrome": 7
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 14,
       "matched": 14,
       "rollupOnly": 0,
@@ -5838,18 +5997,20 @@
         "canvas-chrome": 5,
         "loose-rectangle": 9
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 17,
       "matched": 17,
       "rollupOnly": 0,
       "defaultNamed": 5,
       "ambiguous": 0,
-      "conflicts": 2,
-      "verified": 10,
+      "conflicts": 0,
+      "verified": 11,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 4,
-        "frame-defect": 1,
-        "done": 10,
+        "partial": 2,
+        "frame-defect": 2,
+        "done": 11,
         "furniture": 2
       },
       "liveOnly": []
@@ -5869,6 +6030,8 @@
         "canvas-chrome": 6,
         "loose-rectangle": 3
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 6,
       "matched": 6,
       "rollupOnly": 0,
@@ -5898,6 +6061,8 @@
         "canvas-chrome": 12,
         "loose-rectangle": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 18,
       "matched": 18,
       "rollupOnly": 0,
@@ -5928,6 +6093,8 @@
         "canvas-chrome": 8,
         "loose-rectangle": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 18,
       "matched": 18,
       "rollupOnly": 0,
@@ -5957,6 +6124,8 @@
       "furnitureWhy": {
         "canvas-chrome": 9
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 16,
       "matched": 16,
       "rollupOnly": 0,
@@ -5986,6 +6155,8 @@
       "furnitureWhy": {
         "canvas-chrome": 4
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 10,
       "matched": 10,
       "rollupOnly": 0,
@@ -6015,6 +6186,8 @@
       "furnitureWhy": {
         "canvas-chrome": 4
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 13,
       "matched": 13,
       "rollupOnly": 0,
@@ -6047,6 +6220,8 @@
         "hidden": 2,
         "loose-vector": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 13,
       "matched": 13,
       "rollupOnly": 0,
@@ -6078,6 +6253,8 @@
         "canvas-chrome": 6,
         "loose-rectangle": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 14,
       "matched": 14,
       "rollupOnly": 0,
@@ -6108,6 +6285,8 @@
         "canvas-chrome": 4,
         "loose-rectangle": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 9,
       "matched": 9,
       "rollupOnly": 0,
@@ -6136,6 +6315,8 @@
         "canvas-chrome": 4,
         "loose-rectangle": 3
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 17,
       "matched": 17,
       "rollupOnly": 0,
@@ -6166,6 +6347,8 @@
       "furnitureWhy": {
         "canvas-chrome": 5
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 13,
       "matched": 13,
       "rollupOnly": 0,
@@ -6196,6 +6379,8 @@
       "furnitureWhy": {
         "canvas-chrome": 12
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 8,
       "matched": 8,
       "rollupOnly": 0,
@@ -6226,6 +6411,8 @@
         "canvas-chrome": 12,
         "loose-rectangle": 1
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 17,
       "matched": 17,
       "rollupOnly": 0,
@@ -6258,6 +6445,8 @@
         "canvas-chrome": 40,
         "loose-rectangle": 2
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 9,
       "matched": 0,
       "rollupOnly": 0,
@@ -6345,6 +6534,8 @@
       "live": 0,
       "furniture": 0,
       "furnitureWhy": {},
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 0,
       "matched": 0,
       "rollupOnly": 0,
@@ -6372,6 +6563,8 @@
         "canvas-chrome": 10,
         "loose-rectangle": 15
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 47,
       "matched": 47,
       "rollupOnly": 0,
@@ -6404,6 +6597,8 @@
         "canvas-chrome": 8,
         "loose-rectangle": 10
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 44,
       "matched": 44,
       "rollupOnly": 0,
@@ -6436,6 +6631,8 @@
         "canvas-chrome": 13,
         "loose-rectangle": 34
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 49,
       "matched": 49,
       "rollupOnly": 0,
@@ -6470,6 +6667,8 @@
         "canvas-chrome": 9,
         "loose-rectangle": 13
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 44,
       "matched": 44,
       "rollupOnly": 0,
@@ -6501,6 +6700,8 @@
         "canvas-chrome": 9,
         "loose-rectangle": 22
       },
+      "ruledOut": 0,
+      "ruledOutIds": [],
       "genuine": 48,
       "matched": 48,
       "rollupOnly": 0,
@@ -6640,7 +6841,9 @@
         "status.wave49.home-screens-portfolio.tsv:51",
         "status.wave59.predict-dashboard.tsv:14",
         "status.wave60.home-sidebar-layout.tsv:9",
-        "status.wave60.predict-dashboard.tsv:13"
+        "status.wave60.predict-dashboard.tsv:13",
+        "status.wave61.predict-dashboard.tsv:8",
+        "status.wave61.predict-detail.tsv:12"
       ],
       "status": "partial"
     },
@@ -9257,134 +9460,7 @@
       "status": "partial"
     }
   ],
-  "conflicts": [
-    {
-      "id": "11225-178320",
-      "page": "✅ Onboarding and Authentication",
-      "name": "Skai > Temporary landing > Login 1VH (768x1024px)",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave52.onboarding-landing.tsv:54",
-        "status.wave52.skai-ui-primitives.tsv:31"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "11225-180028",
-      "page": "✅ Onboarding and Authentication",
-      "name": "Skai > Temporary landing > Login > Verification - with input 1VH (768x1024px)",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave52.onboarding-landing.tsv:55",
-        "status.wave52.skai-ui-primitives.tsv:28"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "10102-259223",
-      "page": "✅ Social",
-      "name": "Skai > Social > Live > Go live > setup stream > Skai studio > select thumbnail > starting stream 1VH (1440 x 900px)",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave53.skai-ui-primitives.tsv:25",
-        "status.wave53.streaming.tsv:11"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "11398-85189",
-      "page": "✅ Social",
-      "name": "dropdown-members",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave53.social-feed.tsv:30",
-        "status.wave53.social-groups-tokens.tsv:22"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "4020-47586",
-      "page": "✅ Trade 1",
-      "name": "Skai > Trade > Perpetual futures > Orders (1440 x 900px)",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave53.skai-ui-primitives.tsv:22",
-        "status.wave53.trade-perp.tsv:38"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "13006-233145",
-      "page": "✅ Trade 2",
-      "name": "Frame 1373",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave7.furniture.tsv:81",
-        "status.wave7.trade2-unknown.tsv:131"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "13006-233224",
-      "page": "✅ Trade 2",
-      "name": "Frame 1363",
-      "statuses": [
-        "not-started",
-        "unknown"
-      ],
-      "rows": [
-        "status.wave7.furniture.tsv:82",
-        "status.wave7.trade2-unknown.tsv:132"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "9380-10283",
-      "page": "✅ Chicken - Skai originals",
-      "name": "Frame 1000003779",
-      "statuses": [
-        "done",
-        "partial"
-      ],
-      "rows": [
-        "status.wave54.games-instant.tsv:39",
-        "status.wave54.games-table.tsv:24"
-      ],
-      "kind": "same-generation"
-    },
-    {
-      "id": "9380-10404",
-      "page": "✅ Chicken - Skai originals",
-      "name": "Frame 1000004097",
-      "statuses": [
-        "frame-defect",
-        "partial"
-      ],
-      "rows": [
-        "status.wave54.games-instant.tsv:40",
-        "status.wave54.games-table.tsv:25"
-      ],
-      "kind": "same-generation"
-    }
-  ],
+  "conflicts": [],
   "frameStatuses": [
     {
       "id": "2005-4492",
@@ -10286,16 +10362,16 @@
       "id": "11225-178320",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
       "id": "11225-180028",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -12334,9 +12410,9 @@
       "id": "10312-17987",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10516-22855",
@@ -12358,9 +12434,9 @@
       "id": "10516-23121",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10252-84286",
@@ -13246,9 +13322,9 @@
       "id": "10654-202793",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10654-199581",
@@ -15950,17 +16026,17 @@
       "id": "11530-303299",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11530-303318",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "10215-137653",
@@ -15974,9 +16050,9 @@
       "id": "11530-303337",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11530-303366",
@@ -15984,7 +16060,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "10216-182394",
@@ -16278,8 +16354,8 @@
       "id": "10102-259223",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -16504,7 +16580,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "5198-63742",
@@ -16512,7 +16588,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "5202-63932",
@@ -16566,9 +16642,9 @@
       "id": "5207-42693",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "9626-39285",
@@ -16670,25 +16746,25 @@
       "id": "9640-213620",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11530-303185",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11530-303236",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "9640-214077",
@@ -16838,8 +16914,8 @@
       "id": "11398-85189",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -16870,17 +16946,17 @@
       "id": "11530-302936",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11530-302943",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "not-wired"
     },
     {
       "id": "11341-85236",
@@ -27971,30 +28047,6 @@
       "verdict": null
     },
     {
-      "id": "7491-148345",
-      "page": "✅ Wallet 1",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "done",
-      "verdict": "partial"
-    },
-    {
-      "id": "7709-10525",
-      "page": "✅ Wallet 1",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "done",
-      "verdict": "partial"
-    },
-    {
-      "id": "7713-13706",
-      "page": "✅ Wallet 1",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "done",
-      "verdict": "partial"
-    },
-    {
       "id": "7630-110860",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
@@ -28198,8 +28250,8 @@
       "id": "7806-84981",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -28625,22 +28677,6 @@
       "status": "partial",
       "claimed": "done",
       "verdict": "partial"
-    },
-    {
-      "id": "7774-62886",
-      "page": "✅ Wallet 1",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "done",
-      "verdict": "deferred"
-    },
-    {
-      "id": "7774-63646",
-      "page": "✅ Wallet 1",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "done",
-      "verdict": "deferred"
     },
     {
       "id": "7774-66509",
@@ -31160,7 +31196,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "3927-56677",
@@ -31502,8 +31538,8 @@
       "id": "4020-47586",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
@@ -34214,9 +34250,9 @@
       "id": "13006-248871",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "frame-defect",
-      "claimed": "frame-defect",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-248937",
@@ -34550,9 +34586,9 @@
       "id": "13006-254987",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "frame-defect",
-      "claimed": "frame-defect",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-255089",
@@ -34654,9 +34690,9 @@
       "id": "13006-257961",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "frame-defect",
-      "claimed": "frame-defect",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-258057",
@@ -35078,8 +35114,8 @@
       "id": "13006-285694",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "frame-defect",
-      "claimed": "frame-defect",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -36448,7 +36484,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "10296-4240",
@@ -36838,8 +36874,8 @@
       "id": "9003-118852",
       "page": "✅ Blackjack - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
@@ -37606,16 +37642,16 @@
       "id": "9380-10283",
       "page": "✅ Chicken - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": "match"
     },
     {
       "id": "9380-10404",
       "page": "✅ Chicken - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
       "verdict": null
     },
     {

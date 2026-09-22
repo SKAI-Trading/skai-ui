@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-22T19:07:47.563Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-22T20:24:30.843Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -19,7 +19,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 58 | 84 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 13 | 79 | 48 | 0 | 134 |
 | wallet-2 | ✅ | 194 | 141 | 53 | 22 | 119 | 8 | 2 | 0 | 49 |
-| wallet | ✅ | 186 | 133 | 53 | 35 | 89 | 41 | 0 | 0 | 59 |
+| wallet | ✅ | 186 | 133 | 53 | 35 | 90 | 40 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 57 | 44 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 13 | 1 | 0 | 0 |
 | fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 37 | 19 | 0 | 0 | 0 |
@@ -29,7 +29,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | coinflip | ✅ | 47 | 34 | 13 | 1 | 19 | 8 | 0 | 0 | 27 |
 | dice | ✅ | 36 | 26 | 10 | 1 | 2 | 16 | 0 | 0 | 8 |
 | chicken | ✅ | 31 | 21 | 10 | 1 | 8 | 2 | 0 | 0 | 15 |
-| blackjack | ✅ | 23 | 17 | 6 | 1 | 11 | 1 | 0 | 0 | 14 |
+| blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 2 | 0 | 0 | 14 |
 | towers | ✅ | 31 | 17 | 14 | 1 | 4 | 5 | 0 | 0 | 7 |
 | skratch | ✅ | 22 | 16 | 6 | 1 | 4 | 9 | 0 | 0 | 11 |
 | rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 0 | 3 | 0 | 0 | 7 |
@@ -642,7 +642,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Blackjack | 17 | desktop, tablet, mobile | Mid Game button actions; Side Bet Tab; Pointer; Desktop; Desktop Start; Desktop Split … | done/frame-defect/partial/furniture | [9003-117337](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-117337&m=dev) |
+| Casino > Blackjack | 17 | desktop, tablet, mobile | Mid Game button actions; Side Bet Tab; Pointer; Desktop; Desktop Start; Desktop Split … | done/partial/frame-defect/furniture | [9003-117337](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-117337&m=dev) |
 
 ## Towers
 
