@@ -17,14 +17,21 @@
  * likewise draws a password field and stacked socials that no Login board and
  * no auth strategy has.
  *
- * Login ALT read in full 2026-09-19, and the 34 it is taller than the in-context
- * Login accounts for both: 448x686 against 518, which is exactly the second
- * 400x88 field group plus its 24 gap, plus the 56 the socials gain by stacking
- * (two 400x48 on an 8 gap where the boards put two 196x48 side by side). Every
- * other measure agrees with what is built — 24 all round, 40 at the foot, the
- * 36 title, the 62 Continue, the OR rules at 171.5 either side of a 19 gap, the
- * four 94x48 wallet buttons. Its consent row (10734:74618) is hidden, as the
- * boards' are.
+ * Login ALT read in full 2026-09-19 and re-measured 2026-09-22, and the 168 it
+ * is taller than the in-context Login accounts for both: 448x686 against 518,
+ * which is exactly the second 400x88 field group plus its 24 gap, so 112, plus
+ * the 56 the socials gain by stacking (two 400x48 on an 8 gap where the boards
+ * put two 196x48 side by side). Every other measure agrees with what is built —
+ * 24 all round, 40 at the foot, the 36 title, the 62 Continue, the OR rules at
+ * 171.5 either side of a 19 gap, the four 94x48 wallet buttons. Its consent row
+ * (10734:74618) is hidden whole, as the boards' are, so its 54 never reaches
+ * the height: the footer closes at 646 and 686 - 646 is the 40 floor.
+ *
+ * Signup ALT measures the same way on 2026-09-22: 448x708 against the in-context
+ * 652, and there the 56 is the socials alone — every other row sits on the same
+ * y as the board's, on the same 24 gaps. Its consent row differs from Login
+ * ALT's in that only the 24x24 box is hidden and the 314-wide line at x=43 is
+ * drawn, so that 36 does carry: 632 + 36 = 668, and 708 - 668 is the same 40.
  *
  * The title row's left 16 is a balancing slot, not a control: on every board the
  * glyph sitting there is the close mark at opacity 0, while the live close is
