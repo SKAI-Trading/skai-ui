@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-15T05:27:06.412Z",
+  "generated": "2026-09-22T22:35:58.384Z",
   "sections": {
     "home": {
       "status": "clean",
-      "catalogued": 274,
-      "live": 272,
+      "catalogued": 290,
+      "live": 275,
       "nestedAlive": 15,
       "added": 0,
       "removed": 0,
@@ -15,7 +15,7 @@
     },
     "wallet": {
       "status": "clean",
-      "catalogued": 178,
+      "catalogued": 186,
       "live": 178,
       "nestedAlive": 8,
       "added": 0,
@@ -27,8 +27,8 @@
     },
     "trade": {
       "status": "clean",
-      "catalogued": 420,
-      "live": 420,
+      "catalogued": 456,
+      "live": 421,
       "nestedAlive": 35,
       "added": 0,
       "removed": 0,
@@ -39,7 +39,7 @@
     },
     "predict": {
       "status": "clean",
-      "catalogued": 284,
+      "catalogued": 289,
       "live": 284,
       "nestedAlive": 5,
       "added": 0,
@@ -51,8 +51,8 @@
     },
     "play": {
       "status": "clean",
-      "catalogued": 345,
-      "live": 345,
+      "catalogued": 378,
+      "live": 346,
       "nestedAlive": 32,
       "added": 0,
       "removed": 0,
@@ -123,7 +123,7 @@
     },
     "coinflip": {
       "status": "clean",
-      "catalogued": 46,
+      "catalogued": 47,
       "live": 46,
       "nestedAlive": 1,
       "added": 0,
@@ -135,7 +135,7 @@
     },
     "skratch": {
       "status": "clean",
-      "catalogued": 21,
+      "catalogued": 22,
       "live": 21,
       "nestedAlive": 1,
       "added": 0,
@@ -231,7 +231,7 @@
     },
     "social": {
       "status": "clean",
-      "catalogued": 442,
+      "catalogued": 444,
       "live": 442,
       "nestedAlive": 2,
       "added": 0,
@@ -243,7 +243,7 @@
     },
     "governance": {
       "status": "clean",
-      "catalogued": 725,
+      "catalogued": 727,
       "live": 725,
       "nestedAlive": 2,
       "added": 0,
@@ -279,7 +279,7 @@
     },
     "keno": {
       "status": "clean",
-      "catalogued": 27,
+      "catalogued": 28,
       "live": 27,
       "nestedAlive": 1,
       "added": 0,
@@ -291,8 +291,8 @@
     },
     "home-2": {
       "status": "clean",
-      "catalogued": 242,
-      "live": 240,
+      "catalogued": 249,
+      "live": 242,
       "nestedAlive": 7,
       "added": 0,
       "removed": 0,
@@ -303,8 +303,8 @@
     },
     "wallet-2": {
       "status": "clean",
-      "catalogued": 182,
-      "live": 182,
+      "catalogued": 194,
+      "live": 190,
       "nestedAlive": 4,
       "added": 0,
       "removed": 0,
@@ -315,8 +315,8 @@
     },
     "trade-2": {
       "status": "clean",
-      "catalogued": 417,
-      "live": 417,
+      "catalogued": 440,
+      "live": 420,
       "nestedAlive": 20,
       "added": 0,
       "removed": 0,
@@ -363,7 +363,7 @@
     },
     "rock-paper-scissors": {
       "status": "clean",
-      "catalogued": 24,
+      "catalogued": 25,
       "live": 24,
       "nestedAlive": 1,
       "added": 0,
@@ -446,25 +446,25 @@
       "retargets": []
     },
     "safari-slots": {
-      "status": "drift",
+      "status": "clean",
       "catalogued": 72,
       "live": 72,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 15,
+      "retitled": 0,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "cosmic-slots": {
-      "status": "drift",
+      "status": "clean",
       "catalogued": 62,
       "live": 62,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,
-      "retitled": 13,
+      "retitled": 0,
       "removedRows": [],
       "retargeted": 0,
       "retargets": []
@@ -482,64 +482,26 @@
       "retargets": []
     },
     "gem-slots": {
-      "status": "drift",
-      "catalogued": 68,
+      "status": "clean",
+      "catalogued": 66,
       "live": 66,
       "nestedAlive": 0,
       "added": 0,
-      "removed": 2,
-      "retitled": 13,
-      "removedRows": [
-        {
-          "id": "11881-14886",
-          "title": "Load screen ALT > selector > home > combo > menu - mobile",
-          "implFiles": [
-            "modules/skai-gaming/src/slots/games/gem-slots/skin.ts"
-          ],
-          "status": "blocked-on-backend",
-          "notes": "NOT RE-READ (seat budget); an older mobile menu cut. gem_slots has no certified config, vectors or SLOT_GAMES entry yet.",
-          "verifiedAt": null
-        },
-        {
-          "id": "11930-29256",
-          "title": "Load screen ALT > selector > home > combo > menu - mobile",
-          "implFiles": [],
-          "status": "furniture",
-          "notes": "The node no longer exists in the file: get_design_context returned \"not found\" on 2026-09-14 (Figma debug 1f32391b). Deleted since the 2026-09-11 harvest; nothing to measure. The surviving mobile menu cut is 11930-29101.",
-          "verifiedAt": null
-        }
-      ],
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },
     "fisherman-slots": {
-      "status": "drift",
-      "catalogued": 78,
+      "status": "clean",
+      "catalogued": 79,
       "live": 79,
       "nestedAlive": 0,
-      "added": 3,
-      "removed": 2,
-      "retitled": 14,
-      "removedRows": [
-        {
-          "id": "11896-15052",
-          "title": "Load screen > features > home > menu - mobile",
-          "implFiles": [],
-          "status": "frame-defect",
-          "notes": "NODE NOT FOUND IN THE FILE (get_metadata, 2026-09-14): deleted after the 2026-09-10 harvest. The catalog row has nothing to point at; the surviving mobile menu frames are 11700-34994 and 11930-24265.",
-          "verifiedAt": null
-        },
-        {
-          "id": "11930-24384",
-          "title": "Load screen > features > home > menu - mobile",
-          "implFiles": [
-            "modules/skai-gaming/src/slots/games/fisherman-slots/skin.ts"
-          ],
-          "status": "partial",
-          "notes": "NOT RE-READ (seat budget). A third mobile menu frame in the full-bleed family; 11930-24265 stands in and nothing more is claimed.",
-          "verifiedAt": null
-        }
-      ],
+      "added": 0,
+      "removed": 0,
+      "retitled": 0,
+      "removedRows": [],
       "retargeted": 0,
       "retargets": []
     },

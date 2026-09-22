@@ -55,7 +55,7 @@ Read the caveat section before quoting that. It is not 31.5% measured parity.
 
 | Bucket | Pages | Live | Furniture | Genuine | Matched | `done` | Live-only |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| standing exclusion (Onboarding) | 1 | 51 | 42 | 9 | 0 | 0 | 9 |
+| standing exclusion (Onboarding) | 1 | 53 | 43 | 10 | 0 | 0 | 10 |
 | tombstone (body moved) | 3 | 187 | 70 | 117 | 117 | 6 | 0 |
 | meta | 6 | 52 | 1 | 51 | 0 | 0 | 51 |
 | wip / no section | 2 | 1160 | 1156 | 4 | 0 | 0 | 4 |
@@ -105,7 +105,7 @@ Read the caveat section before quoting that. It is not 31.5% measured parity.
 | ✅ Price Grid - Skai originals | in-scope | 20 | 12 | 8 | 8 | 2 | 5 | 0 | 0 | 0 | 100.0% |
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 6 | 0 | 0 | 0 | 0 | 100.0% |
 | ✅ Hi-Lo - Skai originals | in-scope | 15 | 9 | 6 | 6 | 0 | 5 | 0 | 0 | 0 | 100.0% |
-| Towars Draft (Disregard) | excluded | 51 | 42 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0.0% |
+| Towars Draft (Disregard) | excluded | 53 | 43 | 10 | 0 | 0 | 0 | 0 | 0 | 10 | 0.0% |
 | ✝️ Trade (moved to "Skai Web App 2") | tombstone | 154 | 37 | 117 | 117 | 6 | 85 | 6 | 8 | 0 | 100.0% |
 | ✝️ Home (moved to "Skai Web App 2") | tombstone | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | ✝️ Wallet (moved to "Skai Web App 2") | tombstone | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
@@ -172,7 +172,7 @@ Ranked by count. These are the unassessed frames.
 3440-64371	3035x469	Timeline
 ```
 
-### Towars Draft (Disregard) — 9 live-only of 9 genuine  _(excluded)_
+### Towars Draft (Disregard) — 10 live-only of 10 genuine  _(excluded)_
 
 ```
 10120-10114	2304x1856	hf_20260802_165842_f42a9cf4-60cf-420b-8bce-8e64f2274a83 1
@@ -184,6 +184,7 @@ Ranked by count. These are the unassessed frames.
 10120-10675	364x546	Frame 1000004089
 10120-10707	364x546	Frame 1000004090
 10120-10749	480x530	Frame 1000004088
+12155-33	870x522	Mask group (5) 1 [Vectorized]
 ```
 
 ### 🚧 User Flow — 3 live-only of 3 genuine  _(wip)_

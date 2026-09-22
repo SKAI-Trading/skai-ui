@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T21:26:26.662Z",
+  "generated": "2026-09-22T22:36:32.130Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -1530,7 +1530,7 @@
       },
       {
         "page": "Towars Draft (Disregard)",
-        "live": 51,
+        "live": 53,
         "reason": "2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready Towers page (9061:15449): 9 FRAME nodes with generic names (Desktop Full Game, Frame 10000040xx) and 42 loose nodes. Scope `excluded` in live/_pages.json. Re-scope only if the page is renamed."
       }
     ],
