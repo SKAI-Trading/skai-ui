@@ -1,0 +1,41 @@
+# key	status	primaryFile	route	reason	bp
+# Wave 61, 2026-09-22, lane `game-gutter-sweep` (GameShell + src/pages/play/*PageSections.tsx).
+# One cross-cutting question across 24 routed game pages: what horizontal gutter
+# do the boards draw, and where does it belong. Column 3 is one bare path; the
+# second witness file and the mount site go in the reason.
+#
+# MEASURED FIRST-HAND, four boards, Figma get_metadata 2026-09-22:
+#   crash 768     9003:96041  main 9003:96043 x=0 w=768; bento 9003:96044 x=30 w=708;
+#                             title row 9003:96778 x=30 w=708. 30 + 708 + 30 = 768.
+#   mines 768     9003:110110 main x=0 w=768; bento + Frame 337 both x=30 w=708.
+#   blackjack 768 9003:118852 main x=0 w=768; bento + Frame 337 both x=30 w=708.
+#   baccarat 1440 9799:16713  sidebar w=58; main x=58 w=1382; Frame 520 x=32 w=1318.
+#
+# ★ THE 30 AND THE 32 ARE NOT TWO GUTTERS. 32 is the centring residue of the 1318
+# cap inside main: (1382 - 1318) / 2 = 32 exactly. One rule draws both boards - a
+# 30 gutter plus max-w-[1318px]: at 768 the cap cannot bind and the gutter gives
+# the board's 708; at 1440 the gutter yields 1322, the cap takes 1318, and
+# centring puts back the board's 32.
+#
+# LANDED (skai-gaming c5e7b1a4): the shell's horizontal half is out. It was paid
+# INSIDE the page's capped 1318 column, drawing the panel at 1286 while every
+# *PageSections.tsx - a sibling carrying its own gutter and its own
+# max-w-[1318px] - drew its sections at the full 1318. All 25 wrappers are
+# self-capped, unanimously, so this aligns every routed game rather than only
+# baccarat. The vertical half and the frames' 8px seam are unchanged.
+#
+# NOT LANDED, and it is a ruling not a sweep call: the 30 itself, on
+# PLAY_PAGE_GUTTER_CLASS and each wrapper. playPageTemplate.ts:117-135 justifies
+# the present px-4 by a 15px `scrollbar-gutter: stable both-edges` reservation on
+# HomeShellLayout's <main>. The code at HomeShellLayout.tsx:319 declares
+# `[scrollbar-gutter:stable]` - ONE edge, not both - and
+# GovernanceProposals.responsive.test.tsx:250 asserts it is NOT both-edges. With a
+# one-edge reservation no symmetric padding reproduces a symmetric 30/708/30
+# board, so the template's "ONE VALUE, NO BREAKPOINT" conclusion rests on a false
+# premise and the replacement needs a decision. See the report.
+#
+9799-16713	partial	modules/skai-gaming/src/components/play/shared/GameShell.tsx	/play/baccarat	Gutter settled at this width by skai-gaming c5e7b1a4: the shell no longer spends 16 a side inside the page column, so the panel draws the board's full 1318 (Frame 520 x=32 w=1318 inside main x=58 w=1382) and the 32 falls out as the centring residue of the cap. Felt goes 922 to the frame's 954. Rest of the frame is games-table's, incl. the History drawer (ruling 17). baccaratDialogWidth.test.ts:179-184 still asserts 922 from its own SHELL_PAD=16 constant and stays GREEN while saying something the code no longer does - stale mirror, games-table's file, hand-off.	1440=partial 768=n-a 375=n-a @2026-09-22/wave61-game-gutter-sweep
+9003-96041	partial	modules/skai-gaming/src/components/play/shared/GameShell.tsx	/play/crash	Board measured live: main 9003:96043 x=0 w=768, bento 9003:96044 and title row 9003:96778 both x=30 w=708, so this board draws a 30 gutter and a 708 column. Shell's horizontal half removed in skai-gaming c5e7b1a4, which aligns the panel with its sections; the page gutter itself is still px-4 (16), so the column ships 736 against the board's 708. Blocked on the scrollbar-gutter ruling in the header above, not on measurement.	1440=n-a 768=partial 375=n-a @2026-09-22/wave61-game-gutter-sweep
+9003-98680	partial	modules/skai-gaming/src/components/play/shared/GameShell.tsx	/play/crash	Crash Alt at 768. Same shell and same page column as 9003-96041, which was measured live this pass; this ALT board was not re-read, so its row carries the base board's numbers and no independent claim. Shell change skai-gaming c5e7b1a4 applies to it identically. Gutter blocked on the same ruling.	1440=n-a 768=partial 375=n-a @2026-09-22/wave61-game-gutter-sweep
+9003-110110	partial	modules/skai-gaming/src/pages/play/MinesPageSections.tsx	/play/mines	Measured live to settle whether the 30 generalises off one board: main x=0 w=768, bento 9003:110113 and Frame 337 9003:110433 both x=30 w=708 - agrees with crash and blackjack. Also settles the frame-lane disagreement: this page's wrapper IS self-capped at max-w-[1318px], it just caps below a decorative glow div where a short read misses it, so dropping the shell's horizontal half aligns rather than misaligns it.	1440=n-a 768=partial 375=n-a @2026-09-22/wave61-game-gutter-sweep
+9003-118852	partial	modules/skai-gaming/src/pages/play/BlackjackPageSections.tsx	/play/blackjack	Third 768 board read to close the set: main 9003:118854 x=0 w=768, Frame 337 9003:119189 and bento 9003:118855 both x=30 w=708. Three tablet boards agree on 30/708/30, so the gutter is a board fact and not one board's quirk. Shell change skai-gaming c5e7b1a4; page gutter blocked on the scrollbar-gutter ruling.	1440=n-a 768=partial 375=n-a @2026-09-22/wave61-game-gutter-sweep
