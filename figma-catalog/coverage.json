@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T20:24:34.095Z",
+  "generated": "2026-09-22T21:15:43.228Z",
   "harvestedAt": "2026-09-21",
   "rollup": {
     "pages": 39,
@@ -10,14 +10,14 @@
     "genuineWithRuledOut": 3825,
     "ruledOutUncited": [],
     "matched": 3818,
-    "done": 1200,
-    "verified": 775,
+    "done": 1202,
+    "verified": 778,
     "visuallyDowngraded": 76,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 1603,
+    "partial": 1601,
     "notStarted": 284,
     "blocked": 219,
     "frameDefect": 181,
@@ -30,16 +30,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3186,
-    "withBreakpointProvenance": 1776,
-    "namingANodeId": 2855,
+    "total": 3199,
+    "withBreakpointProvenance": 1789,
+    "namingANodeId": 2868,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 18746,
+    "total": 18817,
     "namingNoNodeId": 533,
     "namingNoLiveNodeId": 960,
-    "unrecognisedTokens": 37242
+    "unrecognisedTokens": 37642
   },
   "statusFiles": [
     {
@@ -4387,6 +4387,90 @@
       "ids": 19
     },
     {
+      "file": "status.wave62.account-notifications-rewards.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 4
+    },
+    {
+      "file": "status.wave62.catalog-integrity.tsv",
+      "rows": 1,
+      "withLiveId": 1,
+      "ids": 1
+    },
+    {
+      "file": "status.wave62.explorer.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
+      "file": "status.wave62.games-instant.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
+      "file": "status.wave62.games-table.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 5
+    },
+    {
+      "file": "status.wave62.play-hub.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave62.predict-dashboard.tsv",
+      "rows": 1,
+      "withLiveId": 1,
+      "ids": 1
+    },
+    {
+      "file": "status.wave62.predict-detail.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave62.skai-ui-primitives.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 4
+    },
+    {
+      "file": "status.wave62.slots-sugar-starbound-vegas.tsv",
+      "rows": 14,
+      "withLiveId": 14,
+      "ids": 19
+    },
+    {
+      "file": "status.wave62.social-feed.tsv",
+      "rows": 14,
+      "withLiveId": 14,
+      "ids": 17
+    },
+    {
+      "file": "status.wave62.social-groups-tokens.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 6
+    },
+    {
+      "file": "status.wave62.wallet-components.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 10
+    },
+    {
+      "file": "status.wave62.wallet-shell-pages.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 13
+    },
+    {
       "file": "status.wave7.furniture.tsv",
       "rows": 47,
       "withLiveId": 47,
@@ -5333,12 +5417,12 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 99,
+      "verified": 101,
       "visuallyDowngraded": 20,
       "byStatus": {
-        "done": 167,
+        "done": 168,
         "blocked-on-backend": 49,
-        "partial": 120,
+        "partial": 119,
         "not-started": 53,
         "frame-defect": 12,
         "unknown": 1
@@ -5369,11 +5453,11 @@
       "defaultNamed": 46,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 57,
+      "verified": 58,
       "visuallyDowngraded": 3,
       "byStatus": {
-        "partial": 270,
-        "done": 64,
+        "partial": 269,
+        "done": 65,
         "not-started": 53,
         "furniture": 51,
         "unknown": 190,
@@ -5518,12 +5602,12 @@
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 95,
+      "verified": 93,
       "visuallyDowngraded": 5,
       "byStatus": {
-        "done": 95,
+        "done": 93,
         "furniture": 8,
-        "partial": 57,
+        "partial": 59,
         "frame-defect": 2
       },
       "liveOnly": []
@@ -6194,12 +6278,12 @@
       "defaultNamed": 4,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 2,
+      "verified": 3,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 2,
+        "done": 4,
         "frame-defect": 6,
-        "done": 3,
+        "partial": 1,
         "furniture": 2
       },
       "liveOnly": []
@@ -6228,12 +6312,12 @@
       "defaultNamed": 7,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 6,
+      "verified": 7,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 3,
-        "done": 6,
+        "done": 7,
         "frame-defect": 1,
+        "partial": 2,
         "furniture": 3
       },
       "liveOnly": []
@@ -11668,7 +11752,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "8656-20823",
@@ -11804,7 +11888,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "10312-16873",
@@ -12516,7 +12600,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "10199-106014",
@@ -15724,7 +15808,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "11442-169953",
@@ -16058,9 +16142,9 @@
       "id": "11530-303366",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "not-started",
       "claimed": "partial",
-      "verdict": "deferred"
+      "verdict": "not-wired"
     },
     {
       "id": "10216-182394",
@@ -16340,7 +16424,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "10094-253395",
@@ -16892,15 +16976,15 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11398-85199",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "partial",
-      "verdict": "not-wired"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10227-200411",
@@ -18244,7 +18328,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "11527-291862",
@@ -21634,9 +21718,9 @@
       "id": "11998-266062",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "12001-376676",
@@ -27076,7 +27160,7 @@
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "14123-78540",
@@ -27340,7 +27424,7 @@
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "14179-159153",
@@ -28138,8 +28222,8 @@
       "id": "7916-115982",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
@@ -28148,7 +28232,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "7916-116166",
@@ -28250,8 +28334,8 @@
       "id": "7806-84981",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
@@ -31724,7 +31808,7 @@
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "7679-71196",
@@ -38258,9 +38342,9 @@
       "id": "9691-11229",
       "page": "✅ Bingo - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9807-5523",
@@ -38362,9 +38446,9 @@
       "id": "9799-16713",
       "page": "✅ Baccarat - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9799-18183",

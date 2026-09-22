@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-22T20:24:30.843Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-22T21:15:42.148Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -10,7 +10,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
-| governance | ✅ | 727 | 403 | 324 | 87 | 54 | 266 | 53 | 0 | 10 |
+| governance | ✅ | 727 | 403 | 324 | 87 | 55 | 265 | 53 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 110 | 88 | 28 | 0 | 201 |
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 173 | 4 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 61 | 123 | 1 | 0 | 76 |
@@ -19,7 +19,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 58 | 84 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 13 | 79 | 48 | 0 | 134 |
 | wallet-2 | ✅ | 194 | 141 | 53 | 22 | 119 | 8 | 2 | 0 | 49 |
-| wallet | ✅ | 186 | 133 | 53 | 35 | 90 | 40 | 0 | 0 | 59 |
+| wallet | ✅ | 186 | 133 | 53 | 35 | 89 | 41 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 57 | 44 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 13 | 1 | 0 | 0 |
 | fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 37 | 19 | 0 | 0 | 0 |
@@ -43,10 +43,10 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | roulette | ✅ | 21 | 11 | 10 | 1 | 0 | 2 | 0 | 0 | 10 |
 | darts | ✅ | 31 | 10 | 21 | 1 | 0 | 10 | 0 | 0 | 13 |
 | hilo | ✅ | 15 | 9 | 6 | 1 | 0 | 5 | 0 | 0 | 8 |
-| bingo | ✅ | 17 | 9 | 8 | 1 | 1 | 2 | 0 | 0 | 11 |
+| bingo | ✅ | 17 | 9 | 8 | 1 | 2 | 1 | 0 | 0 | 11 |
 | video-poker | ✅ | 14 | 8 | 6 | 1 | 0 | 2 | 0 | 0 | 4 |
 | limbo | ✅ | 14 | 8 | 6 | 1 | 0 | 7 | 0 | 0 | 8 |
-| baccarat | ✅ | 21 | 7 | 14 | 1 | 4 | 1 | 0 | 0 | 5 |
+| baccarat | ✅ | 21 | 7 | 14 | 1 | 5 | 0 | 0 | 0 | 5 |
 | pwa | ✅ | 5 | 5 | 0 | 2 | 4 | 1 | 0 | 0 | 5 |
 | price-grid | ✅ | 20 | 5 | 15 | 1 | 0 | 5 | 0 | 0 | 5 |
 | legal | ✅ | 10 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 6 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4801** | **2397** | | | **913** | **1278** | **188** | **18** | **1032** |
+| **all** | | **4801** | **2397** | | | **915** | **1276** | **188** | **18** | **1032** |
 
 ### Drift against live Figma
 
@@ -132,7 +132,7 @@ Frames that exist in Figma but are not in the catalog:
 | Explorer > Gaming | 3 | desktop, tablet, mobile | - | partial/done | [5702-144185](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5702-144185&m=dev) |
 | Explorer > Governance | 3 | desktop, tablet, mobile | - | partial/done | [5707-145880](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5707-145880&m=dev) |
 | Explorer > Addresses | 3 | desktop, tablet, mobile | - | partial/frame-defect | [5720-152742](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5720-152742&m=dev) |
-| Explorer > DeFi | 3 | desktop, tablet, mobile | - | partial | [5711-150322](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-150322&m=dev) |
+| Explorer > DeFi | 3 | desktop, tablet, mobile | - | partial/done | [5711-150322](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-150322&m=dev) |
 | Explorer > Lending | 3 | desktop, tablet, mobile | - | partial/done | [5711-147902](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-147902&m=dev) |
 | Explorer > Social | 3 | desktop, tablet, mobile | - | partial | [5707-146891](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5707-146891&m=dev) |
 | Explorer > Blocks | 3 | desktop, tablet, mobile | - | partial/frame-defect | [5689-136816](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5689-136816&m=dev) |
@@ -726,7 +726,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Bingo | 9 | desktop, tablet, mobile | Starting ALT; Starting | partial/frame-defect/done | [9691-11229](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9691-11229&m=dev) |
+| Casino > Bingo | 9 | desktop, tablet, mobile | Starting ALT; Starting | done/frame-defect/partial | [9691-11229](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9691-11229&m=dev) |
 
 ## Video-poker
 
@@ -744,7 +744,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Baccarat | 7 | desktop, mobile, tablet | Desktop; Screenshot 2026-08-25 at 12.15.02 AM 1 | partial/done/frame-defect/furniture | [9799-16713](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9799-16713&m=dev) |
+| Casino > Baccarat | 7 | desktop, mobile, tablet | Desktop; Screenshot 2026-08-25 at 12.15.02 AM 1 | done/frame-defect/furniture | [9799-16713](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9799-16713&m=dev) |
 
 ## Pwa
 
