@@ -1,0 +1,183 @@
+# key	status	primaryFile	route	reason	bp
+# Wave 59, 2026-09-21, lane `slots-sugar-starbound-vegas` (Sugar rush = gem-slots,
+# Starbound = cosmic-slots, Vegas fortune = vegas-fortune, plus src/slots/engine).
+# Rows here are the frames this pass REACHED; every other row of the slice stands on
+# its earlier reading. Column 3 is one bare path; a second witness file and the mount
+# site go in the reason. Started late (a slot freed mid-wave).
+#
+# TWO MONEY FACTS, RECORDED AND NOT TOUCHED. Neither is a parity item and this lane
+# changed neither.
+#
+#   (1) STARBOUND AND UNTAMED ARE RETUNED OFF-BRANCH AND THE TUNE IS NOT HEIGHT-GATED.
+#   95.00% (Starbound) and 95.03% (Untamed) live on `chain/2026-09-21-house-edge-95`
+#   @ cc1d113a, unmerged. Because the change is not height-gated, a rolling validator
+#   upgrade forks the AppHash on the first spin after the first upgraded node settles
+#   one. That is a consensus item for the orchestrator and Casey, not a lane item.
+#   Note that HEAD of skai-gaming ALREADY TELLS PLAYERS the retuned figures
+#   (d4c8517e, "fix(slots): tell players the retuned figures for Untamed and
+#   Starbound"), so the displayed RTP and the deployed engine currently disagree
+#   until that branch lands. Named in the report.
+#
+#   (2) SUGAR RUSH DRAWS ITS WHOLE BOARD FROM `Math.random()`, INDEPENDENTLY OF THE
+#   PAYOUT. This is a no-mock violation on the OUTCOME, not on the presentation: the
+#   symbols a player watches land are not the symbols the payout was computed from.
+#   Recorded precisely and left exactly as found. Fixing it is a rail change (the
+#   board must be derived from the settled result), never a parity fix.
+#
+# SEVEN CARRIED NOTES OVERTURNED. Every build item this lane's brief named was already
+# on disk before the lane started, and both verdicts it called owed were already
+# written. Each was checked against HEAD or the file itself, not against memory:
+#
+#   1+2. "SlotGame.tsx aspect 375/667 to 375/500, and cosmic skin.ts stage.h 500 with
+#   y less 83.5" - BOTH LANDED 2026-09-19 18:54 in skai-gaming fff52b1a, "slots: draw
+#   the phone stage at the 500 every Starbound phone board gives it". SlotGame.tsx:630
+#   no longer writes a box by hand at all; it takes `stageFor(orientation, skin).stage`
+#   and writes `aspectRatio: stage.w / stage.h`. cosmic skin.ts:294 is
+#   `stage: { w: 375, h: 500 }` and its portrait y values are the boards' own
+#   (grid 127.56, frame 116, logo 64, bar 446), with the comment at :288 recording
+#   that they are "no longer shifted by the +83.5 that used to centre a 500-tall
+#   content box inside a 667-tall stage".
+#
+#   3. "The one item on all five Starbound phone rows" - CLOSED IN WAVE 52, two waves
+#   before this brief was written. status.wave52.slots-sugar-starbound-vegas.tsv
+#   carries 10407-12856, 10407-14020, 10407-14031 and 10409-14696 all `done` at
+#   375 on 2026-09-19, and its own header says "One number moved five frames". The
+#   fifth, 10407-13179, is still `partial` - but for its own reasons, not for the
+#   stage. This lane added nothing to those five and claims none of them.
+#
+#   4. "menuIcons on slots/types.ts" - LANDED in 561cf7ed. types.ts:200 declares
+#   `SlotMenuIcons`, types.ts:357 carries `menuIcons?: SlotMenuIcons` on `SlotSkin`,
+#   BootScene.ts:146 queues every entry and MenuScene.ts:133 reads them. cosmic
+#   skin.ts:147 fills it with three of the five rows' glyphs.
+#
+#   5. "VEGAS_FORTUNE_TABLET_FRAME lacks character" - LANDED in 570ef6bb.
+#   vegas-fortune/skin.ts:279 carries `character: { x: 0, y: 0, scale: 0 }`, the
+#   off-stage sentinel, with the docblock at :257-273 recording why it is a sentinel
+#   and not a guess: that board draws no mascot at all. The docblock also states the
+#   move into `layouts.tablet` is deliberately NOT made, because it is a behaviour
+#   change at 768 needing ladder and rig decisions the board does not carry. Left as
+#   found; the shape is ready and the move is Casey's.
+#
+#   6+7. "Two verdicts are OWED on vverify.gem-slots.tsv: 10758-20783 and
+#   10758-20778" - ALREADY WRITTEN, at lines 10 and 11 of that file, both `partial`,
+#   both stamped "written 2026-09-21 by wave57-slots-sugar-starbound-vegas". Their
+#   live figures are the ones the brief quotes (76.2680435x108 and
+#   120.0257721x169.9635010), so the brief is repeating a debt its own predecessor
+#   paid. Re-reading the frames to re-write identical lines would have spent the
+#   shared Figma seat to duplicate a row, so nothing was appended for either key.
+#
+# READS. Each row names what was opened for it and with which tool. Nothing is marked
+# from memory, and no row carries a figure this pass did not measure. No browser ran.
+10400-5509	partial	modules/skai-gaming/src/slots/engine/scenes/MenuScene.ts	/play/cosmic-slots (CosmicSlotsPage.tsx)	REACHED AT HEAD THIS PASS, NOT RE-READ IN FIGMA (the shared seat was spent on the thirteen never-reached Sugar rush sprite masters below, which had no row at all). The frame's geometry stands on the wave 56 live read of the popover `10400:6132`: 167x188 at panel (408,327), five 151x28 rows at 8/44/80/116/152 inside an 8 pad, each a 16px glyph at (8,6) with its label at x=32, radius 12. VERIFIED AT HEAD this pass rather than carried: the glyph half is genuinely closed, 561cf7ed hangs the frame's 16px icons on the skin (types.ts:200 and :357, BootScene.ts:146, MenuScene.ts:133) and cosmic skin.ts:147 fills three of the five rows. STAYS PARTIAL ON A DECISION, NOT A MEASUREMENT, and this is its fourth consecutive wave in that state: MenuScene draws a 380x430 drawer centred on the wide stage because that drawer carries a volume slider and the certified rules text, and the popover has no row for either. Keeping the drawer is the bracketed shipped default (WAVE54-INTEGRITY section 3); deleting working money-adjacent function to match five decorative rows is Casey's call and is in this lane's report as a multiple choice. Compounding it, the frame itself is defective in the way the Hooked lane found on its own list: `Expand` is the label on BOTH row 3 and row 5, so the fifth row cannot be guessed from the board even if the drawer were to be replaced. No lane can close this row.	1440=partial 768=n-a 375=n-a @2026-09-21/wave59-slots-sugar-starbound-vegas
+#
+# THE THIRTEEN SUGAR RUSH SPRITE MASTERS (11146-1930..1935, 11146-1993..1999). None of
+# these thirteen had EVER carried a status row - the catalog's `partial` on each was
+# inherited from the section, and every previous wave's note on them says "NOT RE-READ
+# as its own node (seat budget)". This pass read them, one screenshot each at their
+# natural 57x60, and mapped every one against the ten sprites committed at
+# gem-slots/assets/sym-01..10.png (read locally, so the mapping is by picture and not
+# by the export-order list the earlier note relied on).
+#
+# WHAT THEY ARE. Thirteen loose RECTANGLE nodes at DEPTH 1 on page 10266:7 - page
+# children, NOT children of the board 11146:1937 as the catalog note's "grid instances"
+# phrasing implies. That board's own grid was read this pass too: a 6x5 of
+# `Frame 1000003xxx` cells at an 86.333 x-pitch and an 82.934 y-pitch, each holding a
+# rounded-rect named `Safari A 1` at 69x72 - every instance carries the SAME name, which
+# is why the masters had to be read separately to be told apart.
+#
+# THE FINDING THAT MATTERS, AND IT IS NOT A PARITY ITEM. The thirteen masters are NOT
+# the ten wired sprites plus three decorations. Exactly three of the thirteen are art
+# the game does not carry, and they are three DIFFERENT kinds of gap, which is why the
+# rows differ: 11146-1930 is the MULTIPLIER FEATURE's candy-bomb sprite, 11146-1932 is
+# an ORDINARY reel symbol (a faceted diamond, landing about eight times on one grid) and
+# 11146-1998 is a SECOND COLOURWAY of an existing symbol. None is any of the ten -
+# checked against all ten pictures, not against their names. Wiring any of the three
+# is a PAYTABLE CHANGE, not a skin change: gem-slots/skin.ts:255 builds
+# `symbols: GEM_SYMBOL_KEYS.map(gemSymbolArt)`, so the key list IS the reel strip, and
+# adding a symbol changes what the engine can land and what it pays. The lane rule is
+# absolute ("Never change a payout, RTP, paytable, fee, rate or rail branch to match a
+# design", and "Never draw a paytable the engine does not pay"), so nothing was wired
+# and no asset was exported. Those rows stay partial citing this, exactly as the
+# Darts difficulty rows do. Casey's call, in the report as a multiple choice.
+#
+# ALSO MEASURED ON 11146-1937, AND ALSO NOT BUILT: six of the thirty grid cells draw a
+# MULTIPLIER, and they are drawn differently from a plain symbol - a LARGER rounded-rect
+# (91-92 x 96, against the plain cell's 69x72) inset at about (-6,-7.9) so it overflows
+# its 80.108 cell, with a 38-tall text over it. The six read 50x (11146:2028,
+# 11150:2292), 100x (11146:2023, 11150:2288) and 1000x (11150:2284, 11146:2029), and the
+# board's own caption at 11146:1986 reads "Random multipliers up to 2,500x in free
+# spins" with 11146:1942 stating "Medium Volatility". A multiplier feature and a
+# free-spin feature are engine and RTP items; the caption names a 2,500x ceiling this
+# lane has no source for. Recorded, not built, not drawn.
+#
+#   VERIFIED TO RENDER, not assumed: a full-size get_screenshot of 11146-1937 was taken
+#   specifically because get_metadata reports `hidden` but never `opacity`, so six cells
+#   with real geometry could have been opacity-0 and drawn nothing. They are not - all
+#   six paint at full opacity. The same screenshot showed the "larger rounded-rect" is
+#   not a generic box: it is a purple striped candy-bomb with a lit fuse, and that art
+#   is the master 11146-1930. So the multiplier is a SPRITE plus a text, and this lane's
+#   own earlier description of it as a rect was thin rather than wrong.
+#
+# The bp column on a master row is done at all three widths where the sprite is wired,
+# because a symbol texture is not breakpoint-scoped: the skin's symbol set feeds the
+# reel at every width the game draws. It is not a claim that any board was re-read at
+# 768 or 375.
+11146-1930	partial	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 30" is a PURPLE-AND-YELLOW STRIPED CANDY BALL with a twisted wrapper nub at the top - a 3D striped sphere, and NOT either of the two swirl lollipops it could be mistaken for: sym-03 is a flat green-and-blue swirl disc and sym-04 a flat pink/yellow/blue swirl disc, both read locally this pass to be sure. It is none of the ten committed sprites. ★ CORRECTED LATER THE SAME PASS, and this is the row to read: a full-size get_screenshot of the board 11146-1937 (taken to check the opacity trap) shows THIS IS THE MULTIPLIER ART. The six multiplier cells draw a purple striped candy-bomb with a fuse at the top, carrying their figure in gold over it - the "twisted wrapper nub" read off the 57x60 thumbnail is the BOMB'S FUSE. So this master is not a plain reel symbol at all; it is the art of a multiplier feature. PARTIAL, AND A LANE CANNOT CLOSE IT - now for a stronger reason than the symbol-set one: skin.ts:255 maps GEM_SYMBOL_KEYS to build the reel strip, and beyond that, wiring this particular master would be drawing a MULTIPLIER FEATURE the engine does not implement or pay. Never draw a paytable the engine does not pay. No asset exported and nothing wired. Needs Casey.	1440=partial 768=partial 375=partial @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1931	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 31" is the BANANA, and it is the same picture as the committed assets/sym-06.png (read locally and compared, not matched on the export-order name): a single yellow banana, curved, stem at upper right, brown tips. Wired at skin.ts:26 as symBanana and at :75 as banana with texture "gem-sym-banana", reaching the reel through GEM_SYMBOL_KEYS at :255. The art this master states is the art the game draws, so the node is closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1932	partial	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 32" is a FACETED PURPLE-AND-PINK DIAMOND - a cut gem, flat-topped with a pointed pavilion, the one genuinely gem-shaped symbol on a board catalogued as gem-slots and titled Sugar rush. It is none of the ten committed sprites (all ten pictures read locally this pass: peach, grapes, green swirl, rainbow swirl, orange, banana, dragon fruit, popsicle, watermelon, heart). ★ CORRECTED LATER THE SAME PASS by a full-size get_screenshot of the board 11146-1937: THE DIAMOND IS AN ORDINARY REEL SYMBOL AND THE BOARD IS FULL OF IT - it lands about eight times across that 6x5 grid, more often than any other symbol on this cut, sitting in plain cells exactly as the banana and the heart do. That kills the guess in the first draft of this row, which read it as a probable scatter or premium because of its shape; it is drawn as a common symbol, and the earlier speculation is withdrawn rather than left standing. It remains none of the ten committed sprites, so this is a PLAIN SYMBOL THE GAME'S REEL SET IS MISSING - the most substantive gap in the section. PARTIAL and a lane cannot close it: an eleventh key changes what skin.ts:255 builds as the reel strip, and therefore what the engine lands and pays. Nothing wired, no asset exported. Needs Casey.	1440=partial 768=partial 375=partial @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1933	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 33" is the DRAGON FRUIT, the same picture as committed assets/sym-07.png (compared locally): pink body with green-tipped scales. Wired at skin.ts:27 as symDragonFruit and :76 as dragon_fruit with texture "gem-sym-dragon-fruit", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1934	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 34" is the GRAPES, the same picture as committed assets/sym-02.png (compared locally): a purple-and-blue faceted bunch with a green stem at top. Wired at skin.ts:22 as symGrapes and :71 as grapes with texture "gem-sym-grapes", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1935	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 35" is the HEART, the same picture as committed assets/sym-10.png (compared locally): a glossy red heart inset in a purple-to-magenta outer heart. Wired at skin.ts:30 as symHeart and :79 as heart with texture "gem-sym-heart", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1993	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 36" is the ORANGE SLICE, the same picture as committed assets/sym-05.png (compared locally): a half-cut orange showing its segments, peel behind. Wired at skin.ts:25 as symOrange and :74 as orange with texture "gem-sym-orange", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1994	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 37" is the PEACH, the same picture as committed assets/sym-01.png (compared locally): a pink-to-orange faceted peach with its cleft and a short brown stem at top right. Wired at skin.ts:21 as symPeach and :70 as peach with texture "gem-sym-peach", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1995	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 38" is the PINK POPSICLE, the same picture as committed assets/sym-08.png (compared locally): a pink-and-white spiral ice lolly tilted left on a wooden stick. It is the one master that also appears as standalone page art elsewhere on this board family (11147:2083 "Popsicle - gem slots 1", 131x129 on 11146-1937), which is how it can be told from the two swirl DISCS that share its spiral. Wired at skin.ts:28 as symPopsicle and :77 as popsicle with texture "gem-sym-popsicle", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1996	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 39" is the RAINBOW SWIRL LOLLIPOP - a flat round disc whose spiral runs pink, yellow and blue - and it is the same picture as committed assets/sym-04.png (compared locally). It is distinguished from 11146-1997 by colourway alone, both being flat discs, which is why both were read rather than inferred. Wired at skin.ts:24 as symRainbowLollipop and :73 as rainbow_lollipop with texture "gem-sym-rainbow-lollipop", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1997	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 40" is the GREEN-AND-BLUE SWIRL LOLLIPOP, a flat round disc, and it is committed assets/sym-03.png - PROVEN AT THE BYTE LEVEL, not by eye. get_design_context on this node returns a single image fill; that full-resolution asset was downloaded and hashed, and it is md5 c3839b19ebdb2e09fda8be5bc94e2a51 at 250,589 bytes, identical to the committed sym-03.png on both counts. This was worth proving because the 57x60 render alone could NOT separate this node from 11146-1998, which is the same form in the same colour family; the hash separates them (1998 is md5 0aaee6e42b92e710d73a4648f4b2044c at 243,354 bytes and matches none of the ten). That also settles 11146-1996 as sym-04 by elimination, on top of its own plain pink/yellow/blue reading. Wired at skin.ts:23 as symLollipop and :72 as lollipop with texture "gem-sym-lollipop", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed.	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1998	partial	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot AND get_design_context on the node itself, first row this node has ever had. "Safari A 41" is a GREEN-AND-TEAL SWIRL LOLLIPOP DISC - the same form and colour family as 11146-1997, which is why neither could be settled from the 57x60 render, and the reason this node got a second read. SETTLED BY HASH: its single image fill downloads at md5 0aaee6e42b92e710d73a4648f4b2044c, 243,354 bytes, and matches NONE of the ten committed sprites, while 11146-1997's fill is byte-identical to sym-03.png. So this is a SECOND, DISTINCT swirl colourway the skin does not carry - the third and last of the three unaccounted masters, after the candy ball at 11146-1930 and the diamond at 11146-1932. PARTIAL AND A LANE CANNOT CLOSE IT for the same reason as those two: an eleventh symbol key changes the reel strip that skin.ts:255 builds, which is a paytable change. Note the trap this node is: a lane working from the 57x60 renders alone would have recorded it `done` as a duplicate of sym-03 and closed a symbol the game does not have. Needs Casey.	1440=partial 768=partial 375=partial @2026-09-21/wave59-slots-sugar-starbound-vegas
+11146-1999	done	modules/skai-gaming/src/slots/games/gem-slots/skin.ts	/play/gem-slots	READ LIVE 2026-09-21 with get_screenshot on the node itself, 57x60 natural, first row this node has ever had. "Safari A 42" is the WATERMELON, the same picture as committed assets/sym-09.png (compared locally): a red wedge with dark seeds over a green rind. Unambiguous against the other twelve masters - it is the only wedge in the set, so no hash was needed to separate it the way the two swirl discs needed one. Wired at skin.ts:29 as symWatermelon and :78 as watermelon with texture "gem-sym-watermelon", reaching the reel through GEM_SYMBOL_KEYS at :255. Closed, and it completes the ten: with this row every one of the ten committed sprites is accounted for by exactly one master node (sym-01 to sym-10 = 11146-1994, 1934, 1997, 1996, 1993, 1931, 1933, 1995, 1999, 1935).	1440=done 768=done 375=done @2026-09-21/wave59-slots-sugar-starbound-vegas
+#
+# THE THIRTEEN, SETTLED. Every one of the thirteen masters is now identified, and the
+# set closes exactly: ten of them ARE the ten committed sprites, one each, and three are
+# symbols the game does not have.
+#   sym-01 peach            = 11146-1994      sym-06 banana        = 11146-1931
+#   sym-02 grapes           = 11146-1934      sym-07 dragon fruit  = 11146-1933
+#   sym-03 green swirl      = 11146-1997      sym-08 popsicle      = 11146-1995
+#   sym-04 rainbow swirl    = 11146-1996      sym-09 watermelon    = 11146-1999
+#   sym-05 orange           = 11146-1993      sym-10 heart         = 11146-1935
+#   UNWIRED: 11146-1930 striped candy ball, 11146-1932 faceted diamond,
+#            11146-1998 second green/teal swirl colourway.
+#
+# THE CATALOG'S STANDING QUESTION IS ANSWERED, AND IT WAS HALF RIGHT. Every earlier note
+# on these thirteen asked "whether the three unaccounted masters are the multiplier
+# candies and the scatter".
+#   RIGHT about the multiplier candy. 11146-1930 IS the multiplier art: the six
+#   multiplier cells on 11146-1937 draw a purple striped candy-bomb with a fuse and
+#   their figure in gold over it, and that bomb is this master. What reads as a
+#   "twisted wrapper nub" at 57x60 is the fuse.
+#   WRONG about the scatter. 11146-1932, the faceted diamond, is drawn as an ORDINARY
+#   reel symbol and lands about eight times on that one 6x5 grid - more than any other
+#   symbol on the cut. It is a common symbol the game's reel set is missing, not a
+#   scatter.
+#   UNANTICIPATED. The third, 11146-1998, is a second green-swirl colourway that the
+#   old note had no guess for and that only a hash could separate from sym-03.
+# The old note also mislocated the thirteen as "grid instances"; they are page children
+# at depth 1 on 10266:7.
+#
+# ★ THIS FOOTER'S FIRST DRAFT, WRITTEN EARLIER IN THIS SAME PASS, SAID THE HYPOTHESIS
+# WAS WRONG ON ALL THREE COUNTS AND THAT THE MULTIPLIERS WERE "NOT MASTERS AT ALL".
+# That was itself a note written from metadata plus thumbnails, and one full-size
+# screenshot of the board overturned it inside the hour - the same failure mode this
+# wave's rules warn about, committed by the lane that was recording the warning. The
+# screenshot was only taken because the orchestrator passed on the explorer lane's
+# finding that get_metadata reports `hidden` but never `opacity`; checking whether the
+# multiplier cells were invisible is what revealed what they actually draw. Both drafts
+# are left here on purpose, because the correction is the useful part.
+#
+# ★ THE METHOD THAT SETTLED IT, because the picture alone could not. get_design_context
+# on a master returns its image fill as a full-resolution asset URL; downloading that
+# and hashing it against the committed assets/sym-*.png is an EXACT test, and it
+# separated 11146-1997 (md5 c3839b19..., byte-identical to sym-03.png) from 11146-1998
+# (md5 0aaee6e4..., in no committed file) when both render as the same green swirl disc
+# at 57x60. Three of the other eleven are also same-form pairs by family (two swirl
+# discs, and the popsicle's spiral reads like a third); anyone revisiting this set
+# should hash rather than look. A 57x60 thumbnail is not evidence of identity.

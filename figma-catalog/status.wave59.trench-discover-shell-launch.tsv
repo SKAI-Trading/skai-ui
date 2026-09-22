@@ -1,0 +1,51 @@
+# key	status	primaryFile	route	reason	bp
+# Wave 59, 2026-09-21, lane `trench-discover-shell-launch` (Trench Discover shell,
+# settings, filters, the scroller, the page shell and the Launchpad boards).
+# Rows here are the frames this pass REACHED; every other row of the slice stands
+# on its earlier reading. Column 3 is one bare path; a second witness file and the
+# mount site go in the reason.
+#
+# READS. Each row names what was opened for it and with which tool. Nothing is
+# marked from memory, and no row carries a figure this pass did not measure.
+# Where a row rests on an earlier pass's arithmetic it says so in those words.
+#
+# ⛔ NOT DEPLOYED. Casey's ruling 16 (2026-09-21): lanes build and commit, he
+# deploys. A `done` here means the code is on main, never that a user can see it.
+9419-151234	partial	src/components/trench-redesign/discover/MarketPulseBoard.tsx	/trench	READ LIVE 2026-09-21: get_metadata on the whole 375x812 board (it came back at 105,668 characters, over the ceiling, and was walked from the saved dump) and get_design_context on its tab band `Frame 299` 9419:151237 for the type and the auto-layout nesting. This is the first pass to open the two rows the content starts with, which wave 50 recorded at frame level only and wave 54 named as the next step. THE SHELL AND THE COLLAPSED STATE RE-CONFIRM: `Frame 2` 346x62 at (15,84) with `Frame 405` hidden, `Frame 445` 375x582 FULL BLEED at y=154, `Header-mobile` 375x48, the pasted 1382x20 band at y=48, the 375x22 band at y=736 and `Bottom-navigation-mobile` 375x54 at y=758. TWO THINGS BUILT, both off this board. (1) THE TAB BAND, `Frame 299` 9419:151237 375x36: pt 4 / px 16 / pb 0 with a 1px #123F3C bottom rule over `bottom menu` :151238 343x32 at (16,4) pt 8 / pb 6, `Frame 1` :151239 343x18 at (0,8) py 2 and `Frame 336` :151240 208x14 at (0,2), so 4+8+2+14+2+6 = 36, i.e. 14 clear above the labels and 8 below them onto the rule. Its three visible tabs are 50 / 63 / 47 at x = 0 / 74 / 161 and 50+24+63+24+47 = 208 closes `Frame 336` exactly, so the 24 is the DRAWN gap and not an itemSpacing a SPACE_BETWEEN parent would have overridden (the trap TrenchColumn's 1440 header note records); the band shipped `gap-4`. Type Manrope Regular 12/14 at -0.48 ("Sm/Paragraph 2 300"), selected #FFFFFF and #95A09F otherwise, against a shipped `skai-label-2` which is Mulish 12/16 with no tracking - wrong on family, leading and tracking at once. The 16 a side is already the content column's `px-4` so the band adds none (it shipped `px-1`, charging a further 4), and `Frame 299` / `Frame 300` / `Frame 270` stack flush at y = 0 / 36 / 84 so the band sits ON the column header with the two rules meeting (it shipped `mb-2`). ★ AND THE TABS CARRIED NO `no-min-size`: src/index.css floors button height at 44 up to 768, 44 alone exceeds the whole 36-tall band, so the floor and not the frame set this row's height and no other number here could have closed. Added at the call site per Casey 2026-09-07. (2) THE CONTENT GAP: `Frame 2` ends at 146 and `Frame 445` opens at 154, so 8. Second witness src/components/trench-redesign/discover/DiscoverScreen.tsx, whose pulse branch shipped a flat `gap-6`. (3) THE FILL AND THE BAR, which metadata does not carry: the node's own 375x38 render was fetched and DECODED, and the pixels settle both - band fill (300,8) = [18,37,36] = #122524, and the two rows under "New pairs" (20,35) / (20,36) = [255,255,255] PURE WHITE where x=75 past the 50-wide label reads [18,50,48], the #123F3C rule. So the selected bar is WHITE, as the 768 board's already was, and the phone's shipped `#2DEDAD` was the odd one out; and the band now bleeds to the full 375 with `-mx-4 px-4`, equal and opposite, so the fill and rule run edge to edge while the labels stay on the frame's 16. ⚠ That bleed is deliberately NOT the full-bleed change discoverContentRhythm's header and wave 5 both decline - those move the SHARED column's inset for every surface; this bleeds one band and leaves `px-4` untouched. Pinned by pulseColumnTabs.figma.test.tsx (six new cases) and discoverContentRhythm.figma.test.tsx; 49 tests pass across the four pulse-board files. STILL PARTIAL, three reasons and none of them this band. (a) THE SEARCH ROW `Frame 300` 9419:151248 375x48 is MEASURED AND DELIBERATELY NOT BUILT: `bottom menu` :151249 343x48 at (16,0) over `Frame 1` :151250 343x32 at (0,8) - so 8 above and 8 below a 32 row - with `search` :151253 160x32 (16 glyph at x=8, placeholder at x=34) and `Frame 513` :151256 154x24 right-packed at (189,4) holding `Frame 541` 130x24 (`Frame 304` 74 + a 2 gap + `Frame 305` 54) and a 16 glyph at x=138, i.e. 160 / 29 / 154 across the 343. Everything in that row except the FIELD WIDTH already matches TrenchColumn.tsx (glyph at 8, caret at 34, group `gap-2` = 8, halves `gap-0.5` = 2, 130 + 8 + 16 = 154); the field is `min-w-[120px] flex-1` and would draw 181. ⛔ NOT CHANGED, because the phone column header is ALREADY GOVERNED BY A DIFFERENT FRAME FAMILY: TrenchColumn.tsx's measured note has 13006:295544/:295545/:295546 nesting 4/16/0/16 > 6/0/8/0 > 2/0/2/0 = a 36-tall header over an 18-tall row, where this board draws 48 over 32. Two families disagree on the same surface and the 13006 set is what the build follows, so porting this board's numbers would regress it - the rule that a measurable frame is not authority to build it. Casey's to rule which family governs the phone column header. (b) The 15/14 gutter `Frame 2` sits on (x=15 of 346 in 375, against a symmetric `px-4`) is unruled for this frame. (c) The cards are `Pulse card - Intel ALT`, which carry their own rows.	1440=n-a 768=n-a 375=partial @2026-09-21/wave59-trench-discover-shell-launch
+9419-149915	partial	src/components/trench-redesign/discover/DiscoverScreen.tsx	/trench	REACHED THROUGH ITS TWIN, NOT RE-READ. The board itself was not opened this pass; what this row records is that the content-gap change committed against 9419-151234 also governs this frame, and the arithmetic it rests on is wave 41's carried reading stated as carried: `Frame 2` 346x106 at y=84 (with `Frame 405` 346x36 VISIBLE, which is the one difference from the collapsed twin) ends at 190 and `Frame 445` 375x538 FULL BLEED opens at 198, so 8 - the same step the twin measures live at 146 -> 154. Both are "Trench - actual" PULSE boards rather than Discover screens, which is what overturns the standing claim (in DiscoverScreen.tsx and in discoverContentRhythm.figma.test.tsx's header) that no 375 frame measured the Market-pulse board's own header-to-content gap; the pulse branch shipped a flat `gap-6` = 24 on that basis and now takes `gap-2 md:gap-6`. The 1440 pulse board is unaffected and still gives 24 (`Frame 337` ends 36, `Frame 444` at 60 on 13006:135613). PARTIAL: the expanded state's own rows were not compared, the 15/14 gutter is unruled as on the twin, and the cards carry their own rows. ⚠ A re-read of this board is the honest next step before anyone calls it done - this row is deliberately not claiming one.	1440=n-a 768=n-a 375=partial @2026-09-21/wave59-trench-discover-shell-launch
+#
+# ── 13006-158618 — DEMOTED FROM A ROW TO PROSE, 2026-09-21 ────────────────────
+# The verdict row for this frame belongs to the trench-trade lane, which rowed it
+# `done` after shipping d0d15a510 (the flat `leading-4`) - the change this lane's
+# oracle pinned and the one that turned its 43rd assertion green. Two rows on one
+# key block the fold, so this lane's row comes out and only the measurement stays.
+# It is kept because the measurement is what settled the frame, and a later wave
+# re-reading the node should find the evidence rather than repeat the read:
+#
+#   HAND-OFF RECEIVED AND VERIFIED FIRST-HAND, not taken on the note. The trench-trade lane
+#   asked for an exemption in this lane's ramp oracle so its "Text size" group label could state
+#   a flat 12/16; measured independently before applying. get_design_context on 13006:158665
+#   returns `leading-[16px] text-[12px]` Manrope Regular -0.48 bound to the NAMED style
+#   "Lg/Paragraph 3 300" (lineHeight 16), so the 16 is an explicit leading and not an auto
+#   leading rounded off a 16-tall box - the reading that would have made the shipped 12/14
+#   already correct. THE DECISIVE HALF IS INTERNAL TO THE FRAME: get_metadata on 13006:158618
+#   shows a 359-WIDE panel (a narrow-tier right menu, NOT the 442 desktop one) on a 335 content
+#   column, whose group labels are `Text size` :158665 335x16 against `Metrics` :158631 335x14
+#   and `One-click CTA` :158642 335x14 - one role, one panel, one tier, two at 14 and one at 16.
+#   AdjustTrenchSettings.tsx:1051-1058 already carried a comment recording the same nodes and
+#   naming this oracle as the blocker. ⚠ ONE CORRECTION to the hand-off's reasoning, which does
+#   not change its verdict: the style NAME "Lg/Paragraph 3 300" is not evidence of tier, because
+#   the 375 tab band on 9419:151237 binds "Sm/Paragraph 2 300" - Lg/Sm are tier names and the Lg
+#   style was applied on a narrow-tier panel. The authority is the drawn 16 plus the siblings at
+#   14. SHIPPED: the sweep skips "Text size" by name as it already skips "Protocol row colors",
+#   plus a dedicated case asserting Text size flat [12,16] at 375/767/768/1440 with `Metrics`
+#   and `One-click CTA` still at [12,14] at 375 as the control, so the exemption cannot widen
+#   into the whole ramp; `expect(seen).toContain("Text size")` untouched. CLOSED BOTH SIDES: on
+#   landing, 42 of 43 passed with one deliberately red - `Text size label at 375: expected
+#   [12,14] to equal [12,16]` - because AdjustTrenchSettings.tsx:1059 still shipped
+#   `leading-[14px] md:leading-4`; the exemption was NOT committed alone, because the moment
+#   that line moved an exemption-only oracle would have left the label's leading silently
+#   uncovered. The trench-trade lane then shipped `leading-4` in d0d15a510 and the oracle
+#   re-runs 43 of 43 green. PARTIAL for the frame, not for the label: only this one label was
+#   measured here and the panel's other nodes were not.
+#

@@ -1,0 +1,82 @@
+# key	status	primaryFile	route	reason	bp
+# Wave 59, 2026-09-21, lane `defi-earn` (src/pages/defi/, src/pages/earn/, src/components/defi/,
+# src/components/earn/, src/pages/YieldVaultDetail.tsx). Rows here are the frames this pass
+# REACHED; every other frame of the slice stands on its wave 54-57 reading and gets no row.
+# Column 3 is one bare path; a second witness file and the mount site go in the reason.
+# This lane started late, mid-wave, on a slot another lane freed.
+#
+# ── READS. Two boards were opened live this pass with `get_metadata`, both 768 ──
+#
+#   11978:168335  Skai > Earn > My positions (768 x 1024px)
+#   11978:168824  Skai > Earn > My positions - empty (768 x 1024px)
+#
+# Everything numeric below comes from one of those two dumps. No browser ran, so no row claims a
+# DOM-measured render, and no 1440 or 375 twin is claimed as read.
+#
+# ── ⛔ THE VAULT LINE WAS A PAYOUT PROMISE, AND IT IS THE FINDING OF THIS PASS ──
+#
+# Both empty blocks of 11978-168824 draw `Frame 297`, a 676x16 line reading verbatim: "Add SKAI
+# from your wallet to your vault to earn interest and play games." The fee split is 100% to vault
+# stakers and live on chain, but the staker share QUEUES rather than pays, because the vault is
+# empty until SKAI launches - so half that sentence is a promise the vault does not keep today.
+# Shipped as: the frame's second clause kept (playing games is true now), the first replaced with
+# what actually happens, in the same present tense `REWARD_STRUCTURE` already uses on the Predict
+# rewards surface - "Add SKAI from your wallet to your vault to play games. Fees route to vault
+# stakers, and that share queues until SKAI launches." One line, 125 characters, inside the
+# frame's 676 track (the frame's own 71 characters occupy 367, so 676 buys about 131). Recorded at
+# src/pages/defi/earnEmptyStates.ts with the reason on the constant. No APY, yield, accrued figure
+# or date is printed anywhere on this surface: nothing backs one.
+#
+# ── ⛔ THE ACTIVITY EMPTY COPY IS RECORDED AND NOT DRAWN ──
+#
+# `Frame 280` under Activity (11978:169330) writes "No activity history to show" over "You've not
+# made any interaction with your wallet yet, under earn." That second sentence asserts the reader
+# has done nothing, and nothing on this page can know it: THERE IS NO EARN-ACTIVITY SOURCE AT ALL.
+# Grepped src/hooks and src/services for `vault_transactions`, `earnActivity`, `useVaultHistory`,
+# `vault_history` and `stake_events` - zero hits - and `useEarnData` builds every row from the
+# vault and pool configs, carrying no event log. An empty list from a source that does not exist is
+# not an empty list, so the section draws the explicit unavailable state and names the gap. The
+# frame's words are kept as a constant so a later drift is a failing assertion, not a re-read.
+#
+# ── HAND-OFF, NOT EDITED: src/config/__tests__/contracts.liveness.test.ts:302 ──
+#
+# The case is titled "keeps the live FeeDistributor pointed at sUSD, the vault and a 50/30/20
+# split" and its BODY asserts none of that - it reads the EIP-1967 slot and checks the
+# implementation has code. The case is not red; its NAME is a stale claim about a split that no
+# longer exists (it is 100% to vault stakers). Retitle it to what it checks. Outside this lane's
+# owns, and this is the THIRD wave it has been handed over (status.wave56 and status.wave57 both
+# name it), so it needs an owner rather than another mention.
+#
+# ── OPEN CASEY CALL, carried unchanged: four pills, three pools ──
+#
+# 11978-168335's `Frame 186` is four 172x26 pills at x=4/180/356/532 - the same node shape the
+# Opportunities rail uses, whose labels read All / Staking / Lending / Vault - while the same
+# board family's table lists `Aggressive pool`, `Low risk pool` and `Conservative pool`, every one
+# a POOL, the one category the rail has no pill for. Shipped as five filters at the frame's box
+# (EarnSectionHead.tsx:28-35) so the pool rows stay reachable. Casey's to settle: drop the fifth
+# pill and let pool rows be unfilterable, or keep five at the frame's geometry.
+#
+11978-168824	done	src/pages/defi/EarnEmptyBlock.tsx	/earn?tab=positions	READ LIVE THIS PASS with get_metadata on the whole board, and every element it draws at 768 is now drawn. `Frame 280` twice, at the board's own numbers (14e77fa23): 708x225, `middle` 330x113 at x=189 - which is (708-330)/2, so it centres on the full column and not on the footer's 676 track - `description` 330x55 with the 19-tall title centred and the 214x32 sentence under it at y=23, `Frame 242` 330x34 at y=79 carrying ONE visible 160x34 CTA (the 161x34 beside it is hidden on the board), and `Frame 297` 676x16 at x=16, y=185 flush left; verticals 56 above the middle, 16 from 169 to 185, 24 below 201, which is the 225. It replaces the shared icon-led `EmptyState` the tab drew, which the frame has no icon for. The CTA carries `no-min-size`: the board's 34 is under the 44 floor index.css applies below 768. `Frame 636`, the Activity head, built in 4e8ed93ab at 708x84 - `Activity` 18/22 -4%, `Frame 711` 250 flush right (458+250=708) holding the 142x32 search on a 1px #123F3C with 16/24/8 insets, a 10 gap and `Search activity` 12/16 in Ash #95A09F at 74%, then `Recent` 100x34 at x=150 - and the 708x34 rail 32 below it with four 172x26 pills. `Frame 604`, the promo band, and `Frame 634`, the positions head, built in 1d51c2a81. TWO RECORDED DIVERGENCES, both required by a rule rather than chosen: the Activity block draws the explicit unavailable state instead of the frame's `No activity history to show` / `You've not made any interaction...` because no earn-activity source exists at all, and `Frame 297` says what the vault does instead of promising interest. Both are set out in the header of this file. Second witness src/pages/defi/EarnActivitySection.tsx; mount src/pages/defi/Earn.tsx positions tab; 21 assertions across two new oracles, plus the 203 of src/pages/defi/__tests__ all green.	1440=renders 768=done 375=renders @2026-09-21/wave59-defi-earn
+#
+# ── ⛔ MONEY-PATH HAND-OFF, found while closing the card rows: the card prints an APY nothing backs ──
+#
+# The positions card (and the Opportunities row) print `opportunity.totalApy` whenever it is not
+# null, and src/hooks/defi/useEarnData.ts - OUTSIDE this lane's owns, not edited - fills it from
+# two branches that neither read a live rate:
+#   VAULTS :500-512 - `rewardApy = vault.protocol === "ipor" ? 1.5 : 0.5`, a HARDCODED "platform
+#     bonus" ("update via config when rates change"), added to `vault.expectedApy`, a config
+#     EXPECTATION. The bonus is a payout promise the vault does not keep: the staker share queues
+#     until SKAI launches. DORMANT today - the one configured vault (src/constants/defiContracts.ts
+#     :399-407, IPOR, expectedApy 8.5) is `isActive: false` - so it prints a fabricated 10.00% the
+#     moment that flag flips.
+#   POOLS :552-571 - `Math.max(0, poolPnlPct * 4)` labelled APY, commented "Annualize quarterly
+#     returns". The P&L is real, but it is LIFETIME profit over total deposited: nothing says it
+#     covers a quarter, so the x4 is invented, and the clamp shows a losing pool as 0% rather than
+#     a loss. The label is the fabrication - the heading names a forward annual rate, the
+#     expression computes lifetime return times four. LIVE whenever a trading tier row returns.
+# THE EXACT CHANGE for the hook's owner: return `totalApy: null` from both branches (drop the
+# hardcoded `rewardApy` outright) until a rate source is named. The card already draws the dash
+# with "No rate is published for this opportunity." on null, so no display change is needed.
+#
+11978-168335	partial	src/pages/defi/EarnPositionCard.tsx	/earn?tab=positions	READ LIVE THIS PASS with get_metadata on the whole board, get_design_context on the positions head's pair (11978:168406) and on the Activity head (11978:168542). Built in 1d51c2a81, 4e8ed93ab and 70dcd1905: `Frame 604` the promo band - OVERTURNED, the source said the positions boards "carry their own bands" and so drew none here, but it is the SAME node on both 768 positions boards (11978:168363, 11978:168852) - then `Frame 634`, the section head, `My positions` on a 22 line with `Any risk` 102 and `Recent` 100 flush right (read, not inferred from their widths) and the 708x34 rail, 32 above `Frame 633`. The cards are the board's two-up 350x140 on an 8 gutter (350+8+350 = 708, pitch 148). THE STROKE, decided by arithmetic on the edge-anchored `signals`: 16 + 108 + 16 = 140 against a reported 140, EQUAL, so `Card`'s 1px border is inside the frame's box and CSS pays (16 - 1) + border - `h-[140px] p-[15px]`, landing the inner box at 140-2-30 = 108 and 350-2-30 = 318, both axes exact; the old `h-[142px] p-4` had the right inner height by coincidence and was 2 short on the width at every board. The blocks are 24 / 36 / 16 with 16 gaps; the FOOTER is the one block that steps (16 here, 18 at 1440) and it accounts for the whole 140-against-142. The head is 44 + 6 + 170 + 25 + 73 = 318, which leaves no room for a hover mark, so the affordance is drawn from lg only. The oracle src/pages/defi/__tests__/EarnPositionCard.figma.test.tsx reads both rungs, and against the pre-change component exactly its four rung cases fail and the other 16 pass. TWO ITEMS KEEP THE ROW OPEN, both missing sources, neither synthesised: (1) the Activity table - measured and recorded in src/pages/defi/EarnActivitySection.tsx (six columns on a 160/90/80/80/80/130 ladder with a uniform 11.2 gutter across the 676, a 28 head, 46-tall rows) - is NOT built because no earn-activity log exists at all, so the unavailable state stands in its place; (2) the APY on each card comes from useEarnData branches that read no live rate - see the money-path hand-off above. The sort control offers APY / TVL / Risk rather than `Recent` because `EarnOpportunity` has no timestamp (EarnSectionHead.tsx:36-40).	1440=renders 768=partial 375=renders @2026-09-21/wave59-defi-earn
+11978-170038	partial	src/pages/defi/EarnPositionCard.tsx	/earn?tab=positions	READ LIVE THIS PASS with get_metadata on the whole board, and ⛔ ITS NAME IS THE ONLY HOVER ON IT. `Skai > Earn > My positions - on:hover 1VH` draws NO hover affordance on any of its three cards: every card is 350x140 with `Frame 720` 220x24 holding the 44 mark cluster and `Frame 640`'s full 170, and no `Frame 1000003826` anywhere. Node for node it is 11978-168335 - `Frame 631` 708x1012, `Frame 719` 708x404, `Frame 633` 708x288, the cards at x=0/358 and y=0/148, `Frame 718` 708x328 at y=436 with the same four-row table - and differs only in the outer frame height (1024 against 1164) and the bottom nav at y=972 against 1112. So it is the ONE-VIEWPORT CROP of 168335, not a state of it, and a crop carries its base: everything 168335 records as built lands here unchanged, in the same commits. What this board decided on its own: the card's inline `Update position` control, carried from the 1440 hover board 11134-109360, does NOT reach 768 - 44 + 6 + 170 + 25 + 73 is exactly the 318 - so it is `hidden lg:inline-flex` (70dcd1905) and the narrow head keeps the board's own 170 name track, asserted in src/pages/defi/__tests__/EarnPositionCard.figma.test.tsx. The row stays open for its base's two missing sources, the activity log and a backed APY.	1440=renders 768=partial 375=renders @2026-09-21/wave59-defi-earn
