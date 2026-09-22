@@ -32,6 +32,37 @@ const CHECKED_TRACK = {
 export type SwitchVariant = keyof typeof CHECKED_TRACK;
 
 /**
+ * A control that cannot be used, drawn rather than left out — and why a bare
+ * `disabled` does not draw it.
+ *
+ * This is a measurement, not a preference. Two of the three variants above
+ * rest on `bg-input`, and the main app defines that token as `225 30% 15%`
+ * (#1B2132, a navy) at src/index.css:540. Faded by the root's own
+ * `disabled:opacity-50` over a dark SKAI surface — Green Coal 200 #122524,
+ * which is what the Launch panels sit on — it composites to #17232B, which is
+ * a contrast ratio of **1.00:1** against that surface. The track is not dim,
+ * it is gone. All that survives is the white thumb, so the row reads as a
+ * loose grey dot beside a label rather than as a switch at all. Reports
+ * 27e85cd0 and 0935e238 both photograph it, and the launch tool worked around
+ * the same thing by omitting the control entirely, which told its readers the
+ * product had no such feature.
+ *
+ * The root already reserves the slot with `border-2 border-transparent`, so
+ * naming a colour here draws the pill's outline and moves nothing else. Ash
+ * #95A09F is the at-rest track the Figma `input/toggle` itself draws (sampled
+ * on 9062:17780), so this is the frame's own off-state colour rather than a
+ * new one; through `disabled:opacity-50` it lands at #536261 over #122524 —
+ * 2.50:1, legible and still plainly inert.
+ *
+ * `bg-input` itself is left alone, deliberately. The fill is wrong on every
+ * dark SKAI surface and not only these rows, but this package is also the
+ * main app's, the wallet's and command's, so repainting the at-rest track
+ * would move every toggle in all of them in one commit. Hence the opt-in
+ * below: a caller that passes no reason renders exactly as it did before.
+ */
+const UNAVAILABLE_TRACK = "border-[#95a09f]";
+
+/**
  * Track sizes. `default` is the 44x24 this shipped with: h-6 w-11, a 20 knob on
  * a 20 travel, and 44 is also the width the app's index.css floors touch
  * targets to below 768. `compact` is the `input/toggle` every web-app board
@@ -60,19 +91,46 @@ const Switch = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & {
     variant?: SwitchVariant;
     size?: SwitchSize;
+    /**
+     * Why this control cannot be used. Passing it draws the switch as
+     * unavailable (see UNAVAILABLE_TRACK) and makes it inert.
+     *
+     * A sentence rather than a boolean, because a control somebody cannot
+     * work and is not told why about is the very thing this state exists to
+     * replace — so there is no way to ask for it without supplying the
+     * reason. A native disabled button is out of the tab order and `title`
+     * reaches no keyboard or touch reader, so a caller should also put this
+     * sentence on screen and point `aria-describedby` at it.
+     */
+    unavailable?: string;
   }
->(({ className, variant = "primary", size = "default", ...props }, ref) => (
-  <SwitchPrimitives.Root
-    className={cn(
-      "peer inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none",
-      TRACK_SIZE[size].root,
-      CHECKED_TRACK[variant],
-      className,
-    )}
-    {...props}
-    ref={ref}
-  >
-    {/* THUMB IS WHITE IN BOTH STATES, and that is measured, not assumed.
+>(
+  (
+    { className, variant = "primary", size = "default", unavailable, ...props },
+    ref,
+  ) => {
+    // Applied after the caller's props rather than merged into them: an
+    // unavailable switch has to be inert whatever else was passed. Both
+    // `disabled` and `aria-disabled`, because some readers skip a natively
+    // disabled button without announcing it at all.
+    const inert =
+      unavailable === undefined
+        ? {}
+        : { disabled: true, "aria-disabled": true, title: unavailable };
+    return (
+      <SwitchPrimitives.Root
+        className={cn(
+          "peer inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none",
+          TRACK_SIZE[size].root,
+          CHECKED_TRACK[variant],
+          unavailable === undefined ? undefined : UNAVAILABLE_TRACK,
+          className,
+        )}
+        {...props}
+        {...inert}
+        ref={ref}
+      >
+        {/* THUMB IS WHITE IN BOTH STATES, and that is measured, not assumed.
         Figma component `input/toggle`, sampled off two exported instances in
         file M6r9FEn042UWTQD1zvy6GM:
           9065:1464 (on)  — track #56C7F3, knob #FFFFFF
@@ -94,14 +152,16 @@ const Switch = React.forwardRef<
           - the size. Figma draws 38x21 with a ~19px knob; this is 44x24 with a
             20px knob (h-6 w-11), ~15% larger, and the 44px width is also the
             mobile minimum-hit-target the app's index.css enforces. */}
-    <SwitchPrimitives.Thumb
-      className={cn(
-        "pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0 motion-reduce:transition-none",
-        TRACK_SIZE[size].thumb,
-      )}
-    />
-  </SwitchPrimitives.Root>
-));
+        <SwitchPrimitives.Thumb
+          className={cn(
+            "pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0 motion-reduce:transition-none",
+            TRACK_SIZE[size].thumb,
+          )}
+        />
+      </SwitchPrimitives.Root>
+    );
+  },
+);
 Switch.displayName = SwitchPrimitives.Root.displayName;
 
 export { Switch };
