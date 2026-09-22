@@ -243,9 +243,17 @@ export function WaitlistModal({
         </div>
       )}
 
-      {/* Modal Container */}
+      {/* Modal Container — the hairline is an inset ring rather than a border,
+          as in auth-modal, wallet-choice-modal and email-verification-modal.
+          Figma strokes sit outside the layout box, so the boards lay each
+          column out inside the stroke; a CSS border under border-box spends
+          2px of the max-w on stroke instead. It cost 2px of column at all
+          three rungs — 448 with lg:p-6 left 398 where 2005:9995 draws a 400
+          column inside its 24 inset, 468 with p-4 left 434 against 436, and
+          358 left 324 against 326 — stood the auto-height box 2 taller and
+          put every child 1px low. */}
       <div
-        className="relative w-full max-w-[358px] rounded-[20px] border border-[#123f3c] bg-[#122524] p-4 shadow-[0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
+        className="relative w-full max-w-[358px] rounded-[20px] bg-[#122524] p-4 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:p-4 lg:max-w-[448px] lg:rounded-[32px] lg:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
