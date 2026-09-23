@@ -449,23 +449,27 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             there without adding it here left the two rows with no rule between
             them at all.
 
-            ⚠ The band's HEIGHT stays at 24, and that is now a reading rather
-            than a hedge. The tablet cut states it twice and disagrees with
-            itself: "Frame 442" declares 20, its content measures 22 (4 + a 14
-            line box + 4), and the first ladder row opens at 20 — so the lower
-            rule overlaps that row by two.
+            ⚠ THE BAND WAS 26, NOT 24, from the day it took the upper rule.
+            The 1440 cut closes on 24 (`7712:29463`, read 2026-09-16;
+            `7732:32546` and `7710:92627`, read 2026-09-21): Frame 442 is 24
+            tall with a zero-height `line` at y=0 and another at y=24, and
+            "Frame 283" holds the three labels at y=4 on a 16px line box, the
+            first `book` row opening at 24. That is 4 + 16 + 4 = 24 with both
+            rules drawn inside it and counted in neither pad. `py-1` over
+            `leading-4` is that sum only while the rules take no room;
+            `border-y` makes them real, and the box came to 1 + 4 + 16 + 4 + 1.
+            `lg:py-[3px]` pays for the rules out of the pad, so at 1440 the band
+            is 1 + 3 + 16 + 3 + 1 = 24 with the labels still at y=4.
 
-            The 1440 cut was read to settle it (`7712:29463`, 2026-09-16) and it
-            closes exactly. Frame 442 is 24 tall, a `line` at each edge, and
-            "Frame 283" holds the three labels at y=4 on a 16px line box: 4 + 16
-            + 4 = 24, with the next `book` row opening at 24 and nothing
-            overlapping. So 24 is the composition the design actually draws, the
-            tablet cut's 20 is the number that cannot be built, and `py-1` over
-            `leading-4` is that arithmetic. Do not ramp this to 22 on the
-            strength of a container its own content overflows. */}
+            Below `lg` it stays 26, unchanged on purpose. The tablet cut states
+            the band twice and disagrees with itself ("Frame 442" declares 20,
+            its content measures 22 — 4 + a 14 line box + 4 — and the first
+            ladder row opens at 20, so the lower rule overlaps that row by two),
+            and no reading of the 375 band is on record. Settle those from their
+            own boards, not from this one. */}
         <div
           role="row"
-          className="flex items-center justify-between px-4 py-1 font-sans text-xs font-normal leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
+          className="flex items-center justify-between px-4 py-1 lg:py-[3px] font-sans text-xs font-normal leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
         >
           <span className="w-[89px] shrink-0 truncate text-left">Price</span>
           <span className="shrink-0 truncate text-right">
@@ -476,13 +480,40 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
           </span>
         </div>
 
-        {/* Order Levels */}
+        {/* Order Levels.
+
+            Below `lg` the two sides are equal `flex-1` halves. The 1440 board
+            does not split them evenly. Its ladder body (`7732:32533` on
+            4144-64244, `7710:92614` on 7710-91527, both read 2026-09-21) is a
+            20 quote row, `sells` 294 — the 24 band over fifteen 18px asks —
+            the 20 Spread row at y=314, then sixteen 18px bids, 288. What the
+            band and the spread leave, 558 there, goes 270 to the asks and 288
+            to the bids: fifteen parts to sixteen, which is what
+            `lg:flex-[15_1_0%]` and `lg:flex-[16_1_0%]` say.
+
+            They are grow factors on a zero basis, and that is what keeps the
+            split away from books nobody stands to a height. Under a parent of
+            no definite height a percentage basis falls back to the content, so
+            a content-sized book still hugs its rows exactly as it did; only a
+            book handed a height (ConnectedOrderBook's `fillHeight`, which the
+            /spot desktop column passes) is split at all. A fixed 270 would
+            have grown every one of the others.
+
+            The ask half also keeps its rows as a floor (`lg:min-h-min`). The
+            ratio is exact only on the board's own 558, and /spot hands over
+            less: its panel and this root each draw a 1px border inside the 622
+            the board fills, so on the row's 672 floor the classes leave 552,
+            where fifteen asks at fifteen parts in thirty-one would get 267 and
+            scroll by three. With the floor they stay whole and the bids give
+            up the difference. A caller that asks for more levels than the half
+            holds gets every ask shown and the bids scrolling; /spot asks for
+            fifteen. */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Asks (reversed to show lowest at bottom) */}
           <div
             role="rowgroup"
             aria-label="Ask orders"
-            className="flex-1 flex flex-col-reverse overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
+            className="flex-1 lg:flex-[15_1_0%] lg:min-h-min flex flex-col-reverse overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
           >
             {data.asks
               .slice(0, levels)
@@ -523,7 +554,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
           <div
             role="rowgroup"
             aria-label="Bid orders"
-            className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
+            className="flex-1 lg:flex-[16_1_0%] overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
           >
             {data.bids
               .slice(0, levels)
