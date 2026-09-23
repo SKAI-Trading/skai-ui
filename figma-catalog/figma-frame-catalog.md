@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-23T00:17:57.630Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-23T02:48:37.322Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -12,7 +12,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
 | governance | ✅ | 727 | 403 | 324 | 87 | 63 | 257 | 53 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 113 | 85 | 28 | 0 | 201 |
-| trade | ✅ | 456 | 253 | 203 | 44 | 58 | 172 | 4 | 0 | 92 |
+| trade | ✅ | 456 | 253 | 203 | 44 | 57 | 173 | 4 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 61 | 123 | 1 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 104 | 87 | 0 | 0 | 102 |
 | play | ✅ | 378 | 159 | 219 | 44 | 48 | 73 | 34 | 0 | 66 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4801** | **2397** | | | **937** | **1254** | **188** | **18** | **1032** |
+| **all** | | **4801** | **2397** | | | **936** | **1255** | **188** | **18** | **1032** |
 
 ### Drift against live Figma
 
@@ -265,7 +265,7 @@ Frames that exist in Figma but are not in the catalog:
 | Perpetual futures > Trade history > share PnL | 1 | desktop | - | partial | [4207-133479](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4207-133479&m=dev) |
 | Perpetual futures > Funding history | 1 | desktop | - | blocked-on-backend | [4201-128723](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4201-128723&m=dev) |
 | Perpetual futures > Assets | 1 | desktop | - | done | [4020-49491](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4020-49491&m=dev) |
-| Perpetual futures > Positions > Edit running SL/TP | 1 | desktop | - | done | [4020-44966](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4020-44966&m=dev) |
+| Perpetual futures > Positions > Edit running SL/TP | 1 | desktop | - | partial | [4020-44966](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4020-44966&m=dev) |
 | Perpetual Futures > cross/isolated | 1 | tablet | - | partial | [9137-88222](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9137-88222&m=dev) |
 | Perpetual Futures > Assets | 1 | tablet | - | partial | [9152-84122](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-84122&m=dev) |
 | Perpetual Futures > Trade history | 1 | tablet | - | partial | [9152-89103](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9152-89103&m=dev) |

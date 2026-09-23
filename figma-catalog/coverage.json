@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-23T00:17:58.706Z",
+  "generated": "2026-09-23T02:48:39.296Z",
   "harvestedAt": "2026-09-22",
   "rollup": {
     "pages": 39,
@@ -10,14 +10,14 @@
     "genuineWithRuledOut": 3825,
     "ruledOutUncited": [],
     "matched": 3814,
-    "done": 1232,
-    "verified": 810,
+    "done": 1231,
+    "verified": 809,
     "visuallyDowngraded": 57,
     "visualUnmapped": [
       "vverify.trade-bugrefs.tsv",
       "vverify.trench.tsv"
     ],
-    "partial": 1570,
+    "partial": 1571,
     "notStarted": 281,
     "blocked": 219,
     "frameDefect": 181,
@@ -36,10 +36,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 18953,
+    "total": 18981,
     "namingNoNodeId": 533,
     "namingNoLiveNodeId": 960,
-    "unrecognisedTokens": 38250
+    "unrecognisedTokens": 38332
   },
   "statusFiles": [
     {
@@ -4555,6 +4555,18 @@
       "ids": 12
     },
     {
+      "file": "status.wave64.board-free-fixes.tsv",
+      "rows": 25,
+      "withLiveId": 25,
+      "ids": 28
+    },
+    {
+      "file": "status.wave64.skai-ui-primitives.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
       "file": "status.wave7.furniture.tsv",
       "rows": 47,
       "withLiveId": 47,
@@ -5763,13 +5775,13 @@
       "defaultNamed": 43,
       "ambiguous": 117,
       "conflicts": 0,
-      "verified": 78,
+      "verified": 77,
       "visuallyDowngraded": 7,
       "byStatus": {
-        "partial": 245,
+        "partial": 246,
         "frame-defect": 18,
         "blocked-on-backend": 18,
-        "done": 80,
+        "done": 79,
         "furniture": 1,
         "not-started": 6
       },
@@ -31249,7 +31261,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "3931-93237",
@@ -31815,9 +31827,9 @@
       "id": "4020-44966",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "7890-130783",
