@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-23T06:35:28.471Z",
+  "generated": "2026-09-23T08:21:25.990Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -52494,13 +52494,14 @@
         "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
       ],
       "implFiles": [
-        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx",
+        "modules/skai-gaming/src/components/play/ui/casinoHeroSlides.ts"
       ],
       "status": "frame-defect",
-      "route": "/play",
-      "notes": "FRAME DEFECT CONFIRMED, AND THE OWNER RULING BEHIND IT RE-READ FROM THE LIVE ROW RATHER THAN FROM THE CODE COMMENT THAT QUOTES IT. Play.tsx:2999-3007 cites report e52c7328 to justify leaving a built component unmounted, which is exactly the kind of citation that outlives its source. Fetched the row 2026-09-01 through PostgREST with the service-role key: bug_reports id e52c7328-96ef-4770-aebe-5216337e0a50, title \"Play Browser Invite Friends To Skai Removal\", created 2026-08-06T09:21:52Z, status RESOLVED, description verbatim \"Not sure this Invite Friends To Skai makes sense in the current user flow - lets remove it and keep to figma UI design.\" The quote in the code is accurate and the ruling is closed, so the component staying unmounted is deliberate and this frame is not a parity target. frame-defect rather than partial is right: partial would put a removed placement back on someone's build list.",
+      "route": "/play/casino",
+      "notes": "SLIDE 1 of the casino carousel, BUILT AND MEASURED at 1440; frame-defect for its copy and chips only (see header). Frame 1318x244: art card 4714:29698 659x244 = image fill (h 258.15% w 169.93% left -1.94% top -153.95%) under a #053B2E fade from the seam to 31.108% and a 185x165.862 coin cut-out centred; copy card 4714:29699 #053B2E, px 32 py 16, Title 475 wide, content to pills 24, headline 42/48 Light with 'extra' in App/Green 300, pills h 40 px 16 #032E24 r16 under inset 0 4 14 black 12%, 24px glyphs in Sky Blue 300 #56C7F3. DOM at 1440 (content 1306): section 1306x244, copy padding 16px 32px, row gap 24px, radius 24, fade 270deg to 31.108%, coins 185x166 centred, pill fill rgb(3,46,36), glyph rgb(86,199,243). Shipped art: play-hero-referral.webp = the fill's visible region at 1440 (source x 23-1229, y 687-1133) at 1318x488; play-hero-referral-coins.webp = the cut-out at 370x332 with alpha. PlayCasinoHero.tsx mounts it and PlayCasinoHero.test.tsx pins order, art, fades, pills and the copy rules.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "11084-24507": {
       "section": "play",
@@ -52520,13 +52521,14 @@
       "measuredViewport": "708x244",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx",
+        "modules/skai-gaming/src/components/play/ui/casinoHeroSlides.ts"
       ],
       "status": "frame-defect",
-      "route": "/play",
-      "notes": "FRAME DEFECT CONFIRMED, same verified owner ruling as 4714-29697. Held at frame-defect across all three widths on purpose - a partial at 768 against a frame-defect at 1440 is an invitation to finish a placement the owner removed.",
+      "route": "/play/casino",
+      "notes": "Slide 1 at 768, BUILT AND MEASURED; frame-defect for copy and chips only (see header and 4714-29697). Frame 708x244: two 354x244 cards radius 12, art card 11084:24508 with the same fill and coins, fade to 31.108%; copy 11084:24524 p 16, headline 32/40, sub-line 14/18.05, and the pills become ONE 322x36 strip 11084:24576 (#032E24 r12, 8 inset, 20px glyph 2 from a 12/16 label, 8 apart) whose items run past both ends under 36px fades, i.e. a ticker. DOM at 768 (content 696): halves 348/348, radius 12, ticker 316x36 scrolling, the lg pills display none. The ticker's track first widened the copy half to 618 and left the art 78; fixed with min-w-0 before commit.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "11100-65866": {
       "section": "play",
@@ -52546,13 +52548,14 @@
       "measuredViewport": "343x360",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx",
+        "modules/skai-gaming/src/components/play/ui/casinoHeroSlides.ts"
       ],
       "status": "frame-defect",
-      "route": "/play",
-      "notes": "FRAME DEFECT CONFIRMED, same verified owner ruling as 4714-29697. 343x360 against 708x244, which is what shows the halves stack rather than sit side by side; the component does that at md:flex-row.",
+      "route": "/play/casino",
+      "notes": "Slide 1 at 375, BUILT AND MEASURED; frame-defect for copy and chips only (see header and 4714-29697). Frame 343x360: art card 11100:65867 343x180 radius 12 at the top, fade UP from the bottom to 18.25%, coins 185x166 centred; copy card 11100:65883 343x180 p 12, headline 24/30, the same 322x36 ticker. DOM at 375: slide 331x360 = 180 + 180, radius 12, ticker 307x36, no horizontal overflow. An auto grid column first drew every slide 610 wide (the ticker's min-content); fixed with grid-cols-1.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "11084-24546": {
       "section": "play",
@@ -52572,13 +52575,14 @@
       "measuredViewport": "708x244",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx",
+        "modules/skai-gaming/src/components/play/ui/casinoHeroSlides.ts"
       ],
       "status": "frame-defect",
-      "route": "/play",
-      "notes": "FRAME DEFECT CONFIRMED, same verified owner ruling as 4714-29697.",
+      "route": "/play/casino",
+      "notes": "Slide 3 at 768, BUILT AND MEASURED; frame-defect for the RTP sub-line only (see 9112-13728). Frame 708x244: art 11084:24547 354x244 r12, fill h 100% w 142.02% left -13.17% (46.62 of the 148.75 overhang, object-position 31%), fade #572E0E to 31.108%; copy p 16, headline 32/40, CTA 50 tall hugging its label. DOM at 768: halves 348/348, radius 12, art md:object-[31%_50%], fade 270deg to 31.108%, CTA 160x50.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "9112-13728": {
       "section": "play",
@@ -52601,13 +52605,14 @@
       ],
       "implFiles": [
         "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx",
-        "modules/skai-gaming/src/components/play/ui/PlayHeroCarousel.tsx"
+        "modules/skai-gaming/src/components/play/ui/PlayHeroCarousel.tsx",
+        "modules/skai-gaming/src/components/play/ui/casinoHeroSlides.ts"
       ],
       "status": "frame-defect",
       "route": "/play/casino",
-      "notes": "NEW ROW, added because bug rows c292b299 and 9652a78d both name this slide and it had none. NOT READ LIVE THIS PASS: the node figures below are the wave-48 backlog pass's read of 2026-09-17 and are cited, not measured here; what this lane checked itself is the repo half, at HEAD e53f3a70. 9112:13728 \"Hero Banner 3 - Referral\" is 1318x244: art card 9112:13729 659x244 with no children, copy card 9112:13745 659x244 carrying headline 9112:13748 \"Coinflip RTP surges\", a sub-line 9112:13749 and a 161x50 CTA 9113:76034. TWO THINGS BLOCK IT AND NEITHER IS MARKUP. The copy is the harder one and is why this row reads frame-defect rather than blocked: 9112:13749 quotes a 158.22% RTP, a house paying out more than it takes, against the keeper's own coinflip house_edge_bps of 250, which is a 97.5% return. That sentence cannot ship on a page that takes bets at any width, and this wave forbids changing a rate to match a design. The second is the artwork FILE: modules/skai-gaming/src/assets/play holds two hero pairs at HEAD - play-hero-casino(.md).webp for the live banner and play-hero(.md).webp for the hub - and no third. CORRECTION worth keeping, because it has been quoted as the blocker for a month and is not one: an empty art card is simply how these banners are drawn in this file. The SHIPPED slide's art card 9112:13226 is equally empty and that banner is live, because the picture comes from the repo rather than from Figma. The owner ruled 2026-09-15 that the hero keeps three slides and design supplies slides 1 and 3; slide 1 has no located frame at all.",
+      "notes": "SUPERSEDES wave 49, whose reason called the art card empty (see header). SLIDE 3 of the casino carousel, BUILT AND MEASURED at 1440; frame-defect for the 158.22% RTP sub-line only. Frame 1318x244: art card 9112:13729 = the 1500x728 image fill at object-cover over #572E0E + 20% black, no fade at 1440; copy card 9112:13745 #572E0E px 32 py 16, headline 42/48, sub-line 18/24, CTA 9113:76034 'Try it now' 50 tall, px 40, r12, with icons/action Forward 16px. DOM at 1440: 1306x244, padding 16px 32px, gap 24, CTA 160x50 with ArrowRight, art object-center. Shipped headline 'Call it on Coinflip' and a sub-line with no payout figure. The CTA opens coinflip through the hub's handleGameSelect, and the slide is dropped for a visitor who cannot open coinflip. play-hero-coinflip.webp = the source at 1500x728.",
       "verifiedAt": null,
-      "bpStatus": "missing"
+      "bpStatus": "done"
     },
     "11100-65909": {
       "section": "play",
@@ -52627,13 +52632,14 @@
       "measuredViewport": "343x380",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx"
+        "modules/skai-gaming/src/components/play/ui/PlayReferralBanner.tsx",
+        "modules/skai-gaming/src/components/play/ui/casinoHeroSlides.ts"
       ],
       "status": "frame-defect",
-      "route": "/play",
-      "notes": "FRAME DEFECT CONFIRMED, same verified owner ruling as 4714-29697. 343x380, 20px taller than its features twin because the CTA adds a row.",
+      "route": "/play/casino",
+      "notes": "Slide 3 at 375, BUILT AND MEASURED; frame-defect for the RTP sub-line only (see 9112-13728). Frame 343x380: art 11100:65910 343x180, fill left -10.42% (reachable only by stretching the source, so object-left), fade up to 16.75%; copy 11100:65911 343x200 p 12, 20 taller than its siblings because of its three-line sub-line, and a CTA that HUGS its label at 44 tall where the casino slide's stretches to 319. DOM at 375: 331x360 (the shipped sub-line closes the copy card at the 180 floor), CTA 160x44 w-fit. The three slides share one grid cell, so the banner holds the tallest slide's height.",
       "verifiedAt": null,
-      "bpStatus": "unknown"
+      "bpStatus": "done"
     },
     "4714-33326": {
       "section": "play",
@@ -56802,11 +56808,12 @@
       "family": "Casino",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-gaming/src/components/play/ui/PlayHeroCarousel.tsx"
+        "modules/skai-gaming/src/components/play/ui/PlayHeroCarousel.tsx",
+        "modules/skai-gaming/src/components/play/ui/PlayCasinoHero.tsx"
       ],
       "status": "partial",
       "route": "/play/casino",
-      "notes": "RE-VERIFIED IN SOURCE AT HEAD against wave 55's live read of this node, which this lane's wave 56 direction names as already done and not to be redone. Both halves still ship the frame's numbers: PlayHeroCarousel.tsx carries DOT_SIZE 5 (:46), TRACK_WIDTH 27 (:47), BAR_MIN_WIDTH 11 (:48) and INDICATOR_TRACK #123F3C (:43) on a gap-1, against carousel 11064:20541 45x5 at (663,11.5) measuring 5 + 4 + 27 + 4 + 5 with Ellipse 1 at x=0, Frame 641 27x5 at x=9 holding an 11x6 bar and Ellipse 4 at x=40; and PlayHero.tsx:256 still cites 11064:21876 by id for the 354x244 copy card with its 322x169 Title at a 16 inset, drawn at :298 as md:basis-1/2 md:p-4 with the 16 clearance to the CTA. Frame 630 708x28 at y=0 with the Casino text 653x28 and 653 + 10 + 45 = 708; Frame 633 708x244 at y=44, a 16 gap under the title row. PARTIAL ON CONTENT AND ON ONE REASON ONLY, UNCHANGED AT HEAD: PlayHeroCarousel.tsx:154 returns null below two slides and CASINO_HERO_SLIDES at Play.tsx:265 still holds exactly one entry (headline \"Casino games\"), so three marks are drawn over one slide and the indicator correctly renders nothing. That is the \"one-slide hero\" the standing defaults list as holding; the two missing slides cannot be authored here - one has no located frame and the other quotes a 158.22% return on the page that takes bets, which the no-payout-change rule forbids outright. Nothing built. [vverify: partial | READ LIVE 2026-09-17 (wave48-play-slots), the first live read of this frame since wave 44. 768 Casino heading and banner, matched to the pixel, and nothing was built because nothing needed to be. 708x288 = heading row Frame 630 708x28 with \"Casino\" at x=0 and the carousel group 11064:20541 45x5 at x=663, y=11.5 - a 5x5 dot at 0, a 27x5 track at 9 holding an 11x6 bar flush left, a 5x5 dot at 40, closing 5 + 4 + 27 + 4 + 5 = 45 on a 4px seam and centred in the 28 row at 11.5 + 2.5 = 14. The source ships DOT_SIZE 5, TRACK_WIDTH 27, BAR_MIN_WIDTH 11, INDICATOR_TRACK #123F3C and gap-1, and the heading row's mb-4 is the frame's own 16 between the row's 28 and the banner at y=44. The bar is a PROGRESS METER, not a wide active dot: a partial fill anchored at one end is elapsed time, which is what 11 of 27 means. Banner Frame 633 708x244 at y=44, two 354x244 halves that are ONE slide, the copy half's Title 322x169 at (16,37.5) (vertically centred, 37.5 + 169 + 37.5 = 244) over content 322x103, sub-line at y=48 and CTA 214x50 at y=119 - every one of which PlayHero cites and draws. PARTIAL because CASINO_HERO_SLIDES holds one entry, so the indicator correctly draws nothing where the frame draws three marks. Refused from both ends and still refused: slide 1 has no frame located at all, and slide 3 has one but quotes a 158.22% RTP - a house paying out more than it takes - on the page that takes bets. No browser ran.]",
+      "notes": "SUPERSEDES wave 49's partial, whose only residual was CASINO_HERO_SLIDES holding one entry. 768 heading row and banner, 708x288: 'Casino' 24/28 Light, carousel 11064:20541 45x5 at the row's right end = dot 5, 4, track 27 holding an 11x6 bar flush left, 4, dot 5; banner 16 below. Now three slides (referral, casino games, coinflip) and the indicator draws three marks. DOM at 768: inks at x 679-706, 710-715, 719-724, so 4 apart and 45 in total. Two fixes on the way: the row carried gap-1 on top of each mark's 2px pad, drawing the inks 8 apart; and src/index.css floors button:not(.no-min-size) to 44x44 at 768 and below, which spread the three marks 44 apart. The marks now opt out and keep a 45-tall hit area through an after: pseudo-element. Also measured at 1440 (the casino banner back to 244 from 255 on the casino family's px 32, py 16, gap 24) and at 375 (radius 12, 180 + 180). [vverify: partial | READ LIVE 2026-09-17 (wave48-play-slots), the first live read of this frame since wave 44. 768 Casino heading and banner, matched to the pixel, and nothing was built because nothing needed to be. 708x288 = heading row Frame 630 708x28 with \"Casino\" at x=0 and the carousel group 11064:20541 45x5 at x=663, y=11.5 - a 5x5 dot at 0, a 27x5 track at 9 holding an 11x6 bar flush left, a 5x5 dot at 40, closing 5 + 4 + 27 + 4 + 5 = 45 on a 4px seam and centred in the 28 row at 11.5 + 2.5 = 14. The source ships DOT_SIZE 5, TRACK_WIDTH 27, BAR_MIN_WIDTH 11, INDICATOR_TRACK #123F3C and gap-1, and the heading row's mb-4 is the frame's own 16 between the row's 28 and the banner at y=44. The bar is a PROGRESS METER, not a wide active dot: a partial fill anchored at one end is elapsed time, which is what 11 of 27 means. Banner Frame 633 708x244 at y=44, two 354x244 halves that are ONE slide, the copy half's Title 322x169 at (16,37.5) (vertically centred, 37.5 + 169 + 37.5 = 244) over content 322x103, sub-line at y=48 and CTA 214x50 at y=119 - every one of which PlayHero cites and draws. PARTIAL because CASINO_HERO_SLIDES holds one entry, so the indicator correctly draws nothing where the frame draws three marks. Refused from both ends and still refused: slide 1 has no frame located at all, and slide 3 has one but quotes a 158.22% RTP - a house paying out more than it takes - on the page that takes bets. No browser ran.]",
       "verifiedAt": "2026-09-17T20:40:30.917Z",
       "bpStatus": "unknown"
     },

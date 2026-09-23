@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-23T06:35:30.133Z",
+  "generated": "2026-09-23T08:21:27.855Z",
   "harvestedAt": "2026-09-22",
   "rollup": {
     "pages": 39,
@@ -30,16 +30,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3240,
-    "withBreakpointProvenance": 1830,
-    "namingANodeId": 2909,
+    "total": 3241,
+    "withBreakpointProvenance": 1831,
+    "namingANodeId": 2910,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 19088,
+    "total": 19095,
     "namingNoNodeId": 533,
-    "namingNoLiveNodeId": 960,
-    "unrecognisedTokens": 38910
+    "namingNoLiveNodeId": 961,
+    "unrecognisedTokens": 38936
   },
   "statusFiles": [
     {
@@ -4645,6 +4645,12 @@
       "ids": 11
     },
     {
+      "file": "status.wave66.play-casino.tsv",
+      "rows": 7,
+      "withLiveId": 6,
+      "ids": 6
+    },
+    {
       "file": "status.wave7.furniture.tsv",
       "rows": 47,
       "withLiveId": 47,
@@ -7257,7 +7263,8 @@
         "status.wave52.play-hub.tsv:30",
         "status.wave53.play-hub.tsv:84",
         "status.wave55.play-hub.tsv:85",
-        "status.wave56.play-hub.tsv:91"
+        "status.wave56.play-hub.tsv:91",
+        "status.wave66.play-casino.tsv:41"
       ],
       "status": "partial"
     },
