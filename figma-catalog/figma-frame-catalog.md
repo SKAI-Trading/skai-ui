@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-23T02:48:37.322Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-23T08:21:25.990Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -11,10 +11,10 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
 | governance | ✅ | 727 | 403 | 324 | 87 | 63 | 257 | 53 | 0 | 10 |
-| social | ✅ | 444 | 276 | 168 | 50 | 113 | 85 | 28 | 0 | 201 |
+| social | ✅ | 444 | 276 | 168 | 50 | 113 | 83 | 28 | 0 | 201 |
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 173 | 4 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 61 | 123 | 1 | 0 | 76 |
-| home | ✅ | 290 | 194 | 96 | 50 | 104 | 87 | 0 | 0 | 102 |
+| home | ✅ | 290 | 194 | 96 | 50 | 106 | 85 | 0 | 0 | 102 |
 | play | ✅ | 378 | 159 | 219 | 44 | 48 | 73 | 34 | 0 | 66 |
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 59 | 83 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 13 | 79 | 48 | 0 | 134 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4801** | **2397** | | | **936** | **1255** | **188** | **18** | **1032** |
+| **all** | | **4801** | **2395** | | | **938** | **1251** | **188** | **18** | **1032** |
 
 ### Drift against live Figma
 
@@ -349,7 +349,7 @@ Frames that exist in Figma but are not in the catalog:
 | Add > upload image > conversation 4 | 4 | desktop, tablet, mobile | - | frame-defect/done | [2736-25840](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2736-25840&m=dev) |
 | conversation | 4 | desktop, tablet, mobile | - | done | [2726-10653](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2726-10653&m=dev) |
 | AI Feed > Market intel | 4 | desktop, tablet, mobile | - | partial | [5812-123481](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=5812-123481&m=dev) |
-| (section root) | 3 | desktop, tablet, mobile | - | done/partial | [2713-4800](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-4800&m=dev) |
+| (section root) | 3 | desktop, tablet, mobile | - | done | [2713-4800](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-4800&m=dev) |
 | Portfolio > Defi | 3 | desktop, tablet | portfolio defi 1440 [main 1382x828] | done/partial | [2769-14707](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2769-14707&m=dev) |
 | Portfolio > Add wallet | 3 | desktop, tablet, mobile | - | done | [2752-4678](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2752-4678&m=dev) |
 | Portfolio > Add wallet > Name wallet | 3 | desktop, tablet, mobile | - | done/partial | [2753-4954](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2753-4954&m=dev) |
