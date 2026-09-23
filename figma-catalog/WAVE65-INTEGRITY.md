@@ -126,6 +126,7 @@ Six things about how tests were run and recorded tonight were wrong, and all six
 The skai-ui `dist/` the app builds against is untracked, and the clean worktree's `@skai/ui` resolves to the
 SHARED tree's copy. That copy was built before wave 64's order-book fix (`2c136bf`), and the fold's gate and build
 read it as it is.
+
 - Tonight's production deploy (`2d0b23f19`) read its own worktree's skai-ui instead, which carries the fix.
 - The shared copy's rebuild is carried: it waits until no other session is building skai-ui.
 
@@ -247,14 +248,17 @@ read it as it is.
   - This record's commit puts the seven vverify tables back to LF, which changes no content.
   - It also regenerates the `implFiles` that `afcc6df4`'s rows call for on seven casino hero frames. The figure is
     unchanged.
-- **App:** peers' pushes had already carried most lane commits to origin. The last 12 were cherry-picked onto origin
-  `4929885de`, as `4ea62eb75`: nine test repairs, and three fixes (the sidebar rename, the watch player's dash, the
-  copy-trading leaderboard).
-- **Checks on that commit:**
-  - No migrations.
-  - The 14 test files they touch pass 277 of 278 cases. The one red is the points-writer oracle above.
-  - `typecheck:gate`: no new errors, with 2,511 known and 14 fewer than baseline.
+- **App:** every lane commit reached origin through peers' full pushes of the shared `main`.
+  - The last 12 landed at about 02:22: nine test repairs, and three fixes (the sidebar rename, the watch player's
+    dash, the copy-trading leaderboard). The fold was verifying them at the time, as a cherry-pick candidate
+    (`4ea62eb75` on `4929885de`).
+  - The fold itself pushed only the app repo's skai-ui pointer bumps.
+- **Checks:** run on that candidate, and again on origin's head `e40ecb41d` with the bump.
+  - No migrations in the fold's own commits.
+  - The 14 test files the 12 commits touch pass 277 of 278 cases. The one red is the points-writer oracle above.
+  - `typecheck:gate`: no new errors, with 2,509 known and 16 fewer than baseline.
   - `npm run build`: exit 0.
+- **The bump was gated again** on each base it was pushed onto: origin moved three times while the checks ran.
 - **Not deployed from the fold.** A peer session was running deploys meanwhile, which it reported as having
   Casey's go.
 
