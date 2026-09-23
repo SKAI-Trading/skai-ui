@@ -463,6 +463,12 @@ function cmdIngest(args) {
       pagesJson.harvested = stamp;
       pagesJson.method = "harvest.mjs ingest --full: page names, readiness and liveChildren synced from live/_pages.json after a complete Plugin-API sweep of every page";
     }
+  } else {
+    // The usual refresh is verify-ingest (stamps every page that hashes equal) THEN ingest (re-reads the
+    // ones that changed). verify-ingest checks this same rule before the changed pages are stamped, so
+    // on its own the pair left the top-level date a day stale with every page current - and the parity
+    // feed published a "snapshot 2 days old" caveat on 2026-09-22. Settle it here too.
+    settleTopLevel(manifest, stamp);
   }
   if (changelog.length) {
     pagesJson.figmaChangeLog = pagesJson.figmaChangeLog || {};
@@ -832,7 +838,7 @@ function cmdVerifyIngest(args) {
   }
   if (!equal.length) return;
   for (const { row } of equal) row.harvestedAt = stamp;
-  if (manifest.pages.every((p) => p.harvestedAt === stamp)) manifest.harvestedAt = stamp;
+  settleTopLevel(manifest, stamp);
   writeJson(manPath, manifest);
   const pagesPath = path.join(DIR, "pages.json");
   const pagesJson = readJson(pagesPath);
@@ -847,6 +853,16 @@ function cmdVerifyIngest(args) {
 }
 
 // ── self-test ────────────────────────────────────────────────────────────────
+/**
+ * The manifest's own harvestedAt moves only when EVERY page carries `stamp`. One rule, shared by
+ * verify-ingest and ingest, so the order they run in cannot leave a fresh catalog dated stale - and a
+ * page read on an earlier day (or across a UTC midnight) keeps the top-level date where it is.
+ */
+function settleTopLevel(manifest, stamp) {
+  if (manifest.pages.length && manifest.pages.every((p) => p.harvestedAt === stamp)) manifest.harvestedAt = stamp;
+  return manifest.harvestedAt === stamp;
+}
+
 function selfTest() {
   let pass = 0;
   const cases = [];
@@ -937,6 +953,15 @@ function selfTest() {
     check("verify: a page with no live/ file is never equal; an unlisted page is NEW", r.unknown.length === 2 && r.equal.length === 0 && r.changed.length === 0, JSON.stringify(r));
     const r2 = compareVerify([{ verify: 1, fileKey: "F", pages: [["1:1", "✅ Home renamed", 0, fnv1a("")]] }], manifest);
     check("verify: compare reads the manifest name too, so a rename alone is CHANGED once the file exists (unknown here, same reason)", r2.unknown.length === 1 && r2.equal.length === 0, JSON.stringify(r2));
+  }
+  {
+    const page = (id, d) => ({ fileKey: "F", pageId: id, pageName: id, harvestedAt: d });
+    const all = { harvestedAt: "2026-09-21", pages: [page("1:1", "2026-09-22"), page("2:2", "2026-09-22")] };
+    check("stamp: the top-level date moves once every page carries today's stamp", settleTopLevel(all, "2026-09-22") && all.harvestedAt === "2026-09-22", all.harvestedAt);
+    const one = { harvestedAt: "2026-09-21", pages: [page("1:1", "2026-09-22"), page("2:2", "2026-09-21")] };
+    check("stamp: one page still on an older date holds the top-level date where it is", !settleTopLevel(one, "2026-09-22") && one.harvestedAt === "2026-09-21", one.harvestedAt);
+    const none = { harvestedAt: "2026-09-21", pages: [] };
+    check("stamp: an empty manifest never claims a fresh harvest", !settleTopLevel(none, "2026-09-22") && none.harvestedAt === "2026-09-21", none.harvestedAt);
   }
   console.log(`\nself-test: ${pass}/${cases.length} passed.`);
   process.exit(pass === cases.length ? 0 : 1);

@@ -116,7 +116,7 @@
     "it rather than trusting it if the date matters.",
     "2026-09-11: Skai-Web-App and Skai-Web-App-2 were verified UNCHANGED page by page (FNV-1a hash over every top-level row in the harvest format, 20 of 20 pages equal to live/) and stamped harvested without re-ingesting; Skai-Games was re-ingested in full (31 pages)."
   ],
-  "harvestedAt": "2026-09-21",
+  "harvestedAt": "2026-09-22",
   "method": "harvest.mjs: one use_figma call per chunk (see `node harvest.mjs plan`); PageNode.loadAsync per page, top-level children only, full names; every chunk carries the page's own children.length and ingest refuses a page whose chunks do not reconcile to it",
   "fileAliases": {
     "_why": "Report `figma_link`s do not all carry a tracked fileKey. An untracked key resolves to no page and so to no scope, and an unscoped citation is worse than a retired one: nobody can tell whether to build it. Record the mapping here rather than letting each lane rediscover it.",
