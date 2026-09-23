@@ -30,6 +30,11 @@
       "import": "./dist/motion.js",
       "require": "./dist/motion.cjs"
     },
+    "./charts": {
+      "types": "./dist/charts.d.ts",
+      "import": "./dist/charts.js",
+      "require": "./dist/charts.cjs"
+    },
     "./styles": "./dist/styles.css"
   },
   "files": [

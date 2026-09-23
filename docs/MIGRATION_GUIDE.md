@@ -154,7 +154,6 @@ import {
   // Trading Advanced
   OrderBook,
   DepthChart,
-  CandlestickChart,
 
   // Status & Risk
   StatusIndicator,
@@ -167,6 +166,10 @@ import {
   TradeSettings,
   LeverageSlider,
 } from "@skai/ui";
+
+// Chart components have their own entry, so the main one never loads a
+// charting library for an app that draws no chart.
+import { CandlestickChart } from "@skai/ui/charts";
 ```
 
 ## Layout Components

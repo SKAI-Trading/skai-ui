@@ -32,7 +32,7 @@ function dtsCompilerOptions(): Record<string, unknown> | undefined {
 const dtsCompilerOpts = dtsCompilerOptions();
 
 export default defineConfig({
-  entry: ["src/index.ts", "src/icons.ts", "src/motion.ts"],
+  entry: ["src/index.ts", "src/icons.ts", "src/motion.ts", "src/charts.ts"],
   format: ["cjs", "esm"],
   dts: dtsCompilerOpts ? { compilerOptions: dtsCompilerOpts } : true,
   splitting: false,

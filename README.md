@@ -150,7 +150,7 @@ import "@skai/ui/styles";
 | `Table` | Data table | ✅ |
 | `Avatar` | User/token images | ✅ |
 | `Calendar` | Date calendar | ✅ |
-| `Chart` | Charts (recharts) | ✅ |
+| `Chart` | Charts (recharts), from `@skai/ui/charts` | ✅ |
 | `LazyChart` | Lazy-loaded chart | ✅ |
 | `PercentageBar` | Percentage visualization | ✅ |
 | `Countdown` | Countdown timer | ✅ |
@@ -172,7 +172,7 @@ import "@skai/ui/styles";
 | `PnLDisplay` | Profit/Loss display | ✅ |
 | `OrderBook` | Order book visualization | ✅ |
 | `DepthChart` | Market depth chart | ✅ |
-| `CandlestickChart` | Candlestick chart | ✅ |
+| `CandlestickChart` | Candlestick chart, from `@skai/ui/charts` | ✅ |
 | `SwapInput` | Token swap input | ✅ |
 | `AmountInput` | Amount input with max | ✅ |
 | `FeeDisplay` | Transaction fee display | ✅ |
