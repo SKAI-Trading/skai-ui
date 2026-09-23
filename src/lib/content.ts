@@ -215,14 +215,21 @@ export const content = {
         subheading:
           "Discover the new world of perpetual trading, swaps, prediction markets, memes, launchpads, and a catalog of casino-style gaming",
         cta: "Get early access",
-        // NO BOARD DRAWS THIS STRING. Read off the text nodes themselves on
-        // 2026-09-21, after two waves had recorded the opposite: 11189:3296
-        // (the 768 hero) and 11225:182317 (375) both read "Users are already
-        // winning with us", and 10767:308133 (1440) reads "Traders are already
-        // winning with us". Three readings, no two alike, and the shipped one
-        // is on none of them. One constant cannot be two boards, so the wording
-        // is Casey's; until he rules, this line stays as it is and the boards
-        // stay partial on it alone.
+        // The MAY heroes draw this string verbatim: 2005:4492 at 1440 and
+        // 2005:21410 at 375 (text nodes 2005:5169 and 2005:22102, read
+        // 2026-09-22). But the May set is superseded - Casey ruled on
+        // 2026-09-19 that the August boards govern, the same ruling the
+        // subheading above follows - and none of the three August heroes draws
+        // it. 10767:308133 (1440) reads "Traders are already winning with us";
+        // 11189:3296 (768) and 11225:182317 (375) read "Users are already
+        // winning with us" (read 2026-09-21 and again 2026-09-22).
+        //
+        // So the ruling alone does not settle this line. The August boards do
+        // not agree with each other, and one constant cannot be two boards;
+        // and the figure in front of the suffix is a waitlist sign-up count,
+        // which "winning with us" claims more than. The hero counter wording is
+        // Casey's call and still open. Until he makes it, this stays the May
+        // string and the three August heroes stay partial on it alone.
         counterSuffix: "Users are already on this list",
         defaultCount: "800",
       },
