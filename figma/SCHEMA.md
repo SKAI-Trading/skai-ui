@@ -27,6 +27,9 @@ figma/
   tokens/variables.json       every Figma variable the frames use, resolved
   tokens/text-styles.json     every text style the frames use, resolved
   tokens/effect-styles.json   every effect style (shadows, blurs) the frames use
+  tokens/paint-styles.json    every paint style (colours, gradients) the frames use
+  tokens/sources.json         where the tokens came from: per-file walk coverage, use counts, the library check
+  tokens/DRIFT.md             generated report: each Figma token against every token source in the code
   assets/manifest.json        exported icons and images: node -> file
   assets/icons/*.svg, assets/images/*.{png,webp}
   ledger/calls.jsonl          one line per Figma call sync made: {at, day, kind, file, calls}
@@ -136,6 +139,25 @@ not unique across collections is keyed `<collection>/<name>`.
 
 `text-styles.json`: `{ "<name>": { "ff", "fs", "fw", "lh", "ls", "tc", "td", "key", "remote" } }`.
 `effect-styles.json`: `{ "<name>": { "effects": [Effect], "key", "remote" } }`.
+
+Added by the tokens export (2026-09-24), all additive:
+
+- `variables.json` also holds `"collections": { "<name>": { "key", "remote", "modes": [...], "variables": n, "seenIn":
+  [fileKey], "library": { "file", "fileName", "proof" } } }`. `library.file` is set only when the collection's key is a
+  LOCAL collection of that file (checked by reading the library file itself); otherwise it is `null`. A variable may
+  carry `"codeSyntax": {"WEB": "..."}` when the library sets one.
+- `paint-styles.json`: `{ "<name>": { "paints": [Paint], "key", "remote" } }`. In these files every colour but
+  White and Black is a paint style, and specs cite paint styles by name, so this is what resolves a colour.
+- A text style may carry `"bv": { "<field>": "<variable name>" }` for a variable bound on the style. `fw` is the weight
+  number read from the font style (`"Regular"` is 400); an italic style is `"300 italic"`; an unknown style stays text.
+  `lh` is px or `"auto"` or `"N%"`, `ls` is px or `"N%"`, both as Figma reports them.
+- A style name shared by two styles (two keys) is keyed `<name> #<first 6 of key>`.
+- `sources.json`: `{ "v": 1, "runs": { "<fileKey>": { fileName, pages: { "<pageId>": {walked, children} }, passes,
+  coverage, complete, usesInWalkedFrames: { "<key>": n } } }, "library": { file, fileName, localCollections,
+  localCounts, keys, match } }`. A walk may sample every Nth frame, so `complete` is true only when every tracked page
+  was walked to its last top-level frame; use counts are counts in the frames walked, not in the file.
+- `DRIFT.md` is written by `figma:tokens -- diff` and changes no token source.
+- Tokens ledger lines are `kind: "tokens"` and carry the result's checksum as their `nonce`.
 
 ## ledger/calls.jsonl and the budget
 
