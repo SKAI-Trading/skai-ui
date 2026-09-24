@@ -27,11 +27,13 @@ figma/
   store/<fileKey>/<node>/<part>.json   the split-off parts of a frame over 60 KB (see Depth), named the same way
   store/index.json            every stored frame and part: page, name, size, hash, syncedAt, bytes, path (+ stale, partOf)
   store/sync-state.json       sync's working state: each frame's last live hash, transfers part-way
-  tokens/variables.json       every Figma variable the frames use, resolved, and the collections they come from
-  tokens/text-styles.json     every text style the frames use, resolved
-  tokens/effect-styles.json   every effect style (shadows, blurs) the frames use
-  tokens/paint-styles.json    every paint style (colours, gradients) the frames use
-  tokens/sources.json         where the tokens came from: per-file walk coverage, use counts, the library check
+  tokens/variables.json       every variable of the library file, plus any the frames use that it lacks, resolved,
+                              and the collections they come from
+  tokens/text-styles.json     every text style of the library file (+ any the frames use that it lacks), resolved
+  tokens/effect-styles.json   every effect style (shadows, blurs), the same way
+  tokens/paint-styles.json    every paint style (colours, gradients), the same way
+  tokens/grid-styles.json     every layout-grid style, the same way
+  tokens/sources.json         where the tokens came from: the library read, per-file walk coverage, use counts
   tokens/DRIFT.md             generated report: each Figma token against every token source in the code
   assets/manifest.json        exported icons and images: node -> file (reserved: no CLI writes assets/ yet)
   assets/icons/*.svg, assets/images/*.{png,webp}
@@ -228,6 +230,39 @@ Added by the tokens export (2026-09-24), all additive:
   records `checkedAt`, `collectionsMatched`, `keysCut` and a `note`.
 - `DRIFT.md` is written by `figma:tokens -- diff` and changes no token source.
 - Tokens ledger lines are `kind: "tokens"` and carry the result's checksum as their `nonce`.
+
+Added by the library read (2026-09-24), all additive:
+
+- The token SET comes from the library file itself (`TyX8YAtNDEIvsnSLQ3IXId`, Skai-Design): `figma:tokens --
+  library-script` / `library-ingest` (result kind `tokens-library/1`) read every local collection, variable and text,
+  paint, effect and grid style, with values, in parts under the 20 KB cut (`--from N` continues; the cursor and counts
+  are inside the checksum). The frame walk (`export-*`) adds use counts and any token the library lacks.
+- `grid-styles.json`: `{ "<name>": { "grids": [Grid], "key", "remote" } }`, Grid = `{ "pattern", "alignment",
+  "gutterSize", "count", "sectionSize", "offset", "c", "bv" }` as Figma names them, each only when Figma sets it;
+  `count` is `"auto"` for Figma's Infinity; a hidden grid is dropped. Written once any grid style is stored.
+- An entry may carry, each only when it holds: `"notInLibrary": true`, a token the frame walk found that the library
+  file does not define (set only from the library's whole key list, never from a cut one); `"hiddenFromPublishing":
+  true` (variables); `"publish": "UNPUBLISHED" | "CHANGED"`, the library's publish status when it is not CURRENT, since
+  the product files see a library token as last published. A status use_figma could not read writes no mark:
+  `getPublishStatusAsync` is not a function on styles in use_figma (measured 2026-09-24), so no style carries one.
+- `remote` is `true` for every library token, including one only the library read found: it is the product files'
+  view (they read it from the library).
+- A variable's `id` is per file. It is the id the walk saw in a product file (`VariableID:<key>/<n>`, where `<n>` is
+  that file's own number for its imported copy) or, for a variable only the library read found, the library's own
+  (`VariableID:<n>`). No id is built from a key and another file's number. Match a spec's unresolved
+  `VariableID:<key>/…` to a token by the key inside it.
+- `sources.json` `export`: `{ "method": "library-read", "source", "sourceName", "complete", "why": [...], "total",
+  "counts", "parts": [{ from, n, sum, at, pub, items, gridRead }], "got", "perCol", "added", "same", "changes": [{ kind,
+  name, field, was, now }], "publish": { read, of, complete, unread, unreadVariables, errors }, "externalAliases",
+  "bad", "provenanceCheck" }`. `complete` is true only when parts read in order from row 0 cover every row the library
+  listed, each collection's variable count is met, grid styles were read and no item failed to read; `why` says what
+  is missing otherwise. `changes` lists each field where a token the walk had stored differs from the library's
+  definition (the library's is written). `variables.json` carries `"export": { complete, source, sourceName, method,
+  at }` from it. After a complete read, `library` is rebuilt from it (`method` says so, `localCounts.grid` added, key
+  lists from the full keys) and `provenanceCheck` compares it with the previous key lists.
+- `DRIFT.md` states whether the set is complete and where it came from, marks walk-only tokens in their rows, and
+  lists computed checks on the Figma set itself (several variables claiming one code-syntax name, a line height below
+  its font size, a spacing step off the scale's own 4 x N rule, modes named only "Mode N").
 
 ## ledger/calls.jsonl and the budget
 
