@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
+import { tokenDisplaySymbol } from "../../lib/format/currency";
 
 // Common token icons mapping (can be extended)
 //
@@ -120,6 +121,11 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
     const [isLoading, setIsLoading] = React.useState(true);
 
     const pixelSize = typeof size === "number" ? size : sizeMap[size];
+    // What a person reads for this token: sUSD reads USD (Casey, 2026-08-12).
+    // The art lookup and the fallback colour keep the real symbol; the alt text
+    // a screen reader speaks and the initials drawn when there is no art use
+    // this, or the stablecoin announces itself as "sUSD icon" and draws "SU".
+    const shownSymbol = tokenDisplaySymbol(symbol);
     const iconUrl = src || TOKEN_ICONS[symbol.toUpperCase()];
 
     // Reset load/error state when the underlying image URL changes — otherwise
@@ -167,7 +173,7 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
             )}
             <img
               src={iconUrl}
-              alt={`${symbol} icon`}
+              alt={`${shownSymbol} icon`}
               className={cn(
                 "w-full h-full",
                 // Square art keeps `cover` so it fills the circle edge to edge;
@@ -188,7 +194,7 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
             className="font-semibold text-white uppercase"
             style={{ fontSize: pixelSize * 0.4 }}
           >
-            {symbol.slice(0, 2)}
+            {shownSymbol.slice(0, 2)}
           </span>
         )}
       </div>
