@@ -1,0 +1,57 @@
+# furniture-overrides.tsv — live nodes that ARE furniture though their name and type say genuine. HAND-MAINTAINED; coverage.mjs reads it.
+#
+# live/*.tsv records a node's type, size, visibility and name, never its children or text, so a 1080-wide cover poster
+# with no UI text, a vector illustration or an empty frame reads as a genuine frame. Earlier lanes READ these nodes and
+# filed them `furniture` in the status rows; each row here cites that reading, and coverage.mjs then agrees with it.
+# It moves the denominator, so it fails closed: a row without a Figma file key, a node id, a date and evidence citing
+# a file:line or a commit is refused and the node stays in; and a row applies only while the node's own newest
+# status row still says `furniture`, so re-filing the node in a status table switches its override off.
+# Deliberately NOT listed (no recorded read, only a name): 10401-6360, 10758-20769, 11602-21869 (Mines cards on other
+# games' pages), 2452-9383 and 2459-9386 (video cuts for an onboarding slot). A board whose own name rejects it
+# (11345-146431 'Truncated ALT - NOT recommended') is a rule in coverage.mjs (AUTHOR_REJECTED), not a row here.
+#
+# Added 2026-09-24 (wave 67, w67-cat-verdicts) from w67-cat-status-b's and w67-cat-status-a's furniture findings.
+# fileKey	node	date	evidence
+mhF3BkzlTaGiLzJ7kvpmVc	9490-146969	2026-09-24	status.wave39.trade.tsv:127 measured on the node: Frame 6 375x126 has no children; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10688-7196	2026-09-24	status.wave41.slots-vegas.tsv:81 read live 2026-09-14: a 195x277 'Mines Desktop' frame with no children, left from a Mines cover; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10428-2140	2026-09-24	status.wave7.verify-orphans.tsv:29 1080x1800 holding a full-bleed rectangle, an ellipse and a rect named 'efwefec 1': scratch art; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9137-12640	2026-09-24	status.wave7.furniture.tsv:20 Plinko cover poster 1080x1350, 2 children, one TEXT '1000x'; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9163-8804	2026-09-24	status.wave7.furniture.tsv:21 Mines cover 1080x1350 named 'Image for Cover', 4 children, zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9209-20539	2026-09-24	status.wave7.furniture.tsv:22 Coinflip cover poster 1080x1350, 6 children, zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9467-19674	2026-09-24	status.wave7.furniture.tsv:24 Darts cover poster 1080x1611, 11 children (4 image fills), zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9687-9363	2026-09-24	status.wave7.furniture.tsv:25 Keno cover poster 1080x1872, 10 children; its 4 TEXT nodes are ball numerals, not labels; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9733-7539	2026-09-24	status.wave7.furniture.tsv:26 Fortune Wheel cover poster 1080x1804, 2 rectangles (one image fill), zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9760-9378	2026-09-24	status.wave7.furniture.tsv:27 Video Poker cover poster 1080x1500, 7 children; 5 TEXT card ranks drawn as art (carried by status.wave39.play-cards.tsv:44); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9873-4009	2026-09-24	status.wave7.furniture.tsv:28 Baccarat cover poster 1080x1729, 10 children; 7 TEXT drawn as a staged hand (carried by status.wave39.play-cards.tsv:32); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9220-26113	2026-09-24	status.wave7.furniture.tsv:23 Scratchers key art 2748x4096, 2 children, one TEXT 'MATCH 3 TO WIN!': a print raster (carried by status.wave39.play-cards.tsv:69); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10404-2125	2026-09-24	status.wave11.games-cards.tsv:4 measured 2026-09-01: 1080x1800 promo poster, a full-bleed rectangle and two card-art frames (carried by status.wave39.play-cards.tsv:24); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10117-44566	2026-09-24	status.wave7.furniture.tsv:30 Slide cover poster 1080x1800, 4 children with 1 image fill, zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10120-8782	2026-09-24	status.wave7.games-unknown.tsv:97 1080x1800 promo composite: a render of the price-grid board in a portrait canvas, no nav and no bet panel; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10130-15152	2026-09-24	status.wave29.g-towers.tsv:12 1080x1800 artboard holding a ~4.9x blown-up copy of the board and skull art; nothing renders it; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9380-7158	2026-09-24	status.wave7.furniture.tsv:46 GROUP 322x200 with 113 GROUP children and zero text: a vector illustration; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9433-10218	2026-09-24	status.wave7.furniture.tsv:47 GROUP 142x142, two vectors and two ellipses, zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9433-10192	2026-09-24	status.wave7.games-unknown.tsv:105 FRAME 155x154, 7 children, zero text: a larger copy of the dartboard sketch 9433-10218; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9475-19850	2026-09-24	status.wave7.furniture.tsv:48 GROUP 216x299, a vector and an image-filled rectangle, zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9730-3790	2026-09-24	status.wave7.games-unknown.tsv:98 GROUP 480x480 wheel key art, 3 children, zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9733-3847	2026-09-24	status.wave7.games-unknown.tsv:99 GROUP 480x480 wheel key art, 3 children, zero text; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9733-3904	2026-09-24	status.wave7.games-unknown.tsv:100 GROUP 480x480 wheel key art, 3 children, zero text (not Price Grid's Group 316); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9733-3961	2026-09-24	status.wave7.games-unknown.tsv:101 GROUP 480x480 wheel key art, 3 children, zero text (not Price Grid's Group 317); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9900-949	2026-09-24	status.wave7.furniture.tsv:52 354x354 wheel construction art, 113 children (112 vectors), zero text; its twin 9899-8425 is the spec (carried by status.wave39.play-cards.tsv:58); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9391-19746	2026-09-24	status.wave11.games-zero-b.tsv:23 1216x776 with 165 children, every one a VECTOR, zero text: a traced raster; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9380-7138	2026-09-24	status.wave41.games-arcade-a.tsv:40 a 310x192 component master holding one 310x42 vector in its bottom band; the board draws the roadblock from the page strip; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10404-2119	2026-09-24	status.wave11.games-cards.tsv:3 measured 2026-09-01: the 195x277 cover tile through the scale tool at about 7.1x (1390x1968); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10359-9488	2026-09-24	status.wave41.slots-safari.tsv:98 metadata read: a 195x277 Mines card master filed on the Untamed page; nothing there draws it; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9680-6277	2026-09-24	status.wave41.games-arcade-a.tsv:57 a 356x621 grouping frame with no fill wrapping the same Auto and Advanced set as 9680-5236; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9798-13760	2026-09-24	status.wave7.furniture.tsv:54 28x28 with one TEXT '3': one cell of a tray already catalogued as a screen; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+3sSzw1KewMtUbeLAv7uW0r	11100-63268	2026-09-24	status.wave7.furniture.tsv:98 a 532x28 strip of 9 library instances and zero text, lifted out of a screen; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+mhF3BkzlTaGiLzJ7kvpmVc	13006-198774	2026-09-24	status.wave7.trade2-unknown.tsv:52 a 38x12 icons/action atom loose on the canvas beside the boards that use it; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+mhF3BkzlTaGiLzJ7kvpmVc	13006-294291	2026-09-24	status.wave7.trade2-unknown.tsv:53 a 16x16 icons/action atom loose on the canvas beside the boards that use it; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9903-2037	2026-09-24	status.wave4.games-uncovered.tsv:70 a 37x18 'Undo' label with a library instance, parked on the canvas; the felt's Undo is built (carried by status.wave39.play-cards.tsv:33); classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	9903-2040	2026-09-24	status.wave7.furniture.tsv:56 35x18, one instance and one TEXT 'Clear', the sibling of 9903-2037; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10359-9369	2026-09-24	status.wave41.slots-safari.tsv:93 metadata read: a 195x276 game-library card art master; the page draws the safari-slots-alt.webp export; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10359-9167	2026-09-24	status.wave41.slots-safari.tsv:94 metadata read: a 400x566 game-library card art master; the page draws the safari-slots-alt.webp export; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10688-7138	2026-09-24	status.wave41.slots-vegas.tsv:126 read live 2026-09-14: a 195x276 art source, backdrop crop behind the money-bag sprite; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10688-7176	2026-09-24	status.wave41.slots-vegas.tsv:127 read live: a 400x566 art source for the ALT cover; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	10688-7225	2026-09-24	status.wave41.slots-vegas.tsv:128 read live 2026-09-14: the 400x566 source the outlaw cover export 10688-7210 is cut from; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+M6r9FEn042UWTQD1zvy6GM	11602-21673	2026-09-24	status.wave41.slots-fisherman.tsv:65 the cover's source composition (backdrop, tint, character parts); the page draws its export fisherman-slots.webp; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
+3sSzw1KewMtUbeLAv7uW0r	10767-308179	2026-09-24	status.wave54.onboarding-landing.tsv:44 live page read: a SECTION 'Multiples' 532x454 holding only three CTA/button instances, a swatch of that component; reported by w67-cat-status-a

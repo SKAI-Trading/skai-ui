@@ -150,6 +150,60 @@ function mergeVerdicts(tables) {
 }
 
 /*
+  ★ AUTHOR-REJECTED BOARDS (applied in section 2). SCHEMA.md files as furniture
+  "one node its own author labelled 'Unrecommended edit'": the drawing says of
+  itself that it is not the spec. "Truncated ALT - NOT recommended"
+  (11345:146431, Governance) says the same in other words. A HOLD is not a
+  rejection: "Play Carousel - not to be used immediately" (11151:81849) is
+  finished work its author is holding back, and stays genuine. Measured
+  2026-09-24 across every live page: these two patterns match exactly those two
+  boards, and nothing else.
+*/
+const AUTHOR_REJECTED = [/^Unrecommended/i, /\bnot recommended\b/i];
+
+/*
+  ★ FURNITURE THE NAME AND TYPE RULE CANNOT SEE — furniture-overrides.tsv.
+
+  live/*.tsv carries a node's type, size, visibility and name, never its
+  children or text, so a 1080-wide cover poster with no UI text, a 113-part
+  vector illustration or an empty 195x277 frame all read as genuine frames.
+  Earlier lanes read those nodes and filed them `furniture` in the status rows;
+  this table lets coverage agree with them, one node per row, with the evidence
+  cited. It moves the DENOMINATOR, so it fails closed the way `ruled-out` does:
+    - a row needs a fileKey, a node id, a date, and evidence that cites a
+      checkable place — a `file:line` (the status row that recorded the node
+      read) or a commit sha. Anything else is refused and the node stays in;
+    - it applies only while that node's own newest-generation status row still
+      says `furniture`. If a later lane re-files the node, the override stops
+      applying and the run reports it, so this table can never outvote the
+      record.
+*/
+const OVERRIDE_CITES = [/\b[\w./-]+\.(?:tsv|tsx|ts|jsx|js|mjs|md|json):\d+/, /\b(?=[0-9a-f]*\d)(?=[0-9a-f]*[a-f])[0-9a-f]{7,40}\b/];
+function parseFurnitureOverrides(text) {
+  const rows = [];
+  const refused = [];
+  String(text)
+    .split(/\r?\n/)
+    .forEach((line, i) => {
+      if (!line.trim() || isCommentLine(line)) return;
+      const [fileKey = "", node = "", date = "", ...rest] = line.split("\t");
+      const evidence = rest.join(" ").trim();
+      const at = `furniture-overrides.tsv:${i + 1}`;
+      const id = normId(node);
+      let why = "";
+      if (!/^[A-Za-z0-9]{22}$/.test(fileKey.trim())) why = "column 1 is not a Figma file key";
+      else if (!/^\d+-\d+$/.test(id)) why = "column 2 is not a node id";
+      else if (!/^\d{4}-\d{2}-\d{2}$/.test(date.trim())) why = "column 3 is not a YYYY-MM-DD date";
+      else if (!OVERRIDE_CITES.some((re) => re.test(evidence))) why = "the evidence cites no file:line and no commit";
+      if (why) refused.push(`${at}: ${why}`);
+      else rows.push({ at, fileKey: fileKey.trim(), node: id, date: date.trim(), evidence });
+    });
+  return { rows, refused };
+}
+/** An override applies only while the node's own record calls it furniture. */
+const overrideApplies = (newestStatus) => newestStatus === "furniture";
+
+/*
   `--self-test` runs before any file is read, so it can never touch the tree.
   It pins the comment rule, which is the kind of one-character predicate that
   drifts silently: nothing downstream fails loudly when two readers disagree
@@ -204,7 +258,32 @@ if (process.argv.includes("--self-test")) {
     console.log(`  ${got ? "PASS" : "FAIL"}  ${label}`);
   }
   console.log(`self-test: ${pok}/${precedence.length} verdict-precedence cases.`);
-  process.exit(ok === cases.length && pok === precedence.length ? 0 : 1);
+
+  const rejected = (name) => AUTHOR_REJECTED.some((re) => re.test(name));
+  const KEY = "M6r9FEn042UWTQD1zvy6GM";
+  const parse1 = (line) => parseFurnitureOverrides(line);
+  const furniture = [
+    ["an author's own `NOT recommended` label rejects the board", rejected("Truncated ALT - NOT recommended")],
+    ["...as `Unrecommended` does, the case SCHEMA.md names", rejected("Unrecommended edit")],
+    ["a HOLD is not a rejection", !rejected("Play Carousel - not to be used immediately")],
+    ["a name that merely contains `recommended` is not one", !rejected("Recommended markets")],
+    ["an override row citing the status row that read the node is accepted", parse1(`${KEY}\t9163-8804\t2026-09-24\tstatus.wave7.furniture.tsv:21 FRAME 1080x1350, zero text`).rows.length === 1],
+    ["...and one citing a commit", parse1(`${KEY}\t9163:8804\t2026-09-24\tread in 91f834d4`).rows.length === 1],
+    ["an override that cites nothing checkable is refused", parse1(`${KEY}\t9163-8804\t2026-09-24\tclearly a poster`).refused.length === 1],
+    ["an override without a date is refused", parse1(`${KEY}\t9163-8804\t\tstatus.wave7.furniture.tsv:21`).refused.length === 1],
+    ["an override naming no node id is refused", parse1(`${KEY}\tposter\t2026-09-24\tstatus.wave7.furniture.tsv:21`).refused.length === 1],
+    ["an override without a file key is refused", parse1(`\t9163-8804\t2026-09-24\tstatus.wave7.furniture.tsv:21`).refused.length === 1],
+    ["an override applies while the node's newest status row says furniture", overrideApplies("furniture")],
+    ["...and not once a later row re-files it", !overrideApplies("partial") && !overrideApplies("done")],
+    ["...nor when no row keys the node at all", !overrideApplies(undefined)],
+  ];
+  let fok = 0;
+  for (const [label, got] of furniture) {
+    if (got) fok++;
+    console.log(`  ${got ? "PASS" : "FAIL"}  ${label}`);
+  }
+  console.log(`self-test: ${fok}/${furniture.length} furniture cases.`);
+  process.exit(ok === cases.length && pok === precedence.length && fok === furniture.length ? 0 : 1);
 }
 
 // ---------------------------------------------------------------------------
@@ -309,6 +388,12 @@ if (staleManifest.length) {
 //      denominator and raise the percentage.
 //   c) HIDDEN. The lane brief is explicit: hidden nodes are not spec. Counted
 //      as its own bucket so the rule stays visible rather than folded away.
+//   d) AUTHOR-REJECTED. The board's own name says it is not the spec
+//      (AUTHOR_REJECTED, above the self-test). Its own bucket since 2026-09-24;
+//      `Unrecommended edit` used to be counted as canvas chrome.
+//   e) OVERRIDE. A node read recorded in the status rows shows it holds no spec
+//      (furniture-overrides.tsv, above the self-test), applied in section 5
+//      while the node's own record still says `furniture`.
 //
 // Anything else is GENUINE and lands in the denominator, including the
 // component/state fragments (`Up - long`, `Bet slip - empty`, `dropdown-market`)
@@ -328,11 +413,11 @@ const FURNITURE_NAME = [
   /^Slice\b/i,
   /^Image \d+$/i,
   /^Notes$/i,
-  /^Unrecommended/i,
 ];
 
 function classify(n) {
   if (!n.visible) return { furniture: true, why: "hidden" };
+  if (AUTHOR_REJECTED.some((re) => re.test(n.name))) return { furniture: true, why: "author-rejected" };
   if (FURNITURE_NAME.some((re) => re.test(n.name))) return { furniture: true, why: "canvas-chrome" };
   if (!SPEC_TYPES.has(n.type)) return { furniture: true, why: `loose-${n.type.toLowerCase()}` };
   return { furniture: false, why: "" };
@@ -630,6 +715,35 @@ const visualRetired = [];
   }
 }
 
+/*
+  The status a frame's rows CLAIM: the newest generation first, then worst-of
+  within it. The reasoning is at its use in section 5 below; it is defined
+  once, here, because the furniture override needs the answer the tally uses.
+  A letter after the wave number (wave15b) ranks just above the run it resumes.
+*/
+const genOf = (file) => {
+  const m = /^status\.wave(\d+)([a-z]*)\./.exec(file);
+  if (!m) return 0;
+  const suffix = m[2] ? m[2].charCodeAt(0) - 96 : 0;
+  return Number(m[1]) * 100 + suffix;
+};
+function claimOf(rows) {
+  if (!rows || !rows.length) return undefined;
+  const newestGen = Math.max(...rows.map((r) => genOf(r.file)));
+  const current = rows.filter((r) => genOf(r.file) === newestGen);
+  return current.slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
+}
+
+// furniture-overrides.tsv (see its note above the self-test).
+const furnitureOverrides = (() => {
+  const p = path.join(DIR, "furniture-overrides.tsv");
+  return parseFurnitureOverrides(fs.existsSync(p) ? fs.readFileSync(p, "utf8") : "");
+})();
+const overrideByKey = new Map(furnitureOverrides.rows.map((r) => [`${r.fileKey}|${r.node}`, r]));
+const overrideSeen = new Set();
+const overrideApplied = [];
+const overrideRefusedByRecord = [];
+
 const report = [];
 const conflictList = [];
 // Frames where a later wave re-verified an earlier row. Not a conflict - the
@@ -646,7 +760,18 @@ for (const p of pages) {
   const ruledOut = [];
   const whyCounts = {};
   for (const n of p.nodes) {
-    const c = classify(n);
+    let c = classify(n);
+    const ov = overrideByKey.get(`${p.fileKey}|${n.id}`);
+    if (ov) {
+      overrideSeen.add(ov.at);
+      if (!c.furniture) {
+        const claim = claimOf(rowIndex.get(n.id));
+        if (overrideApplies(claim)) {
+          c = { furniture: true, why: "override" };
+          overrideApplied.push(ov.at);
+        } else overrideRefusedByRecord.push(`${ov.at} ${n.id} (its newest status row says ${claim || "nothing"})`);
+      }
+    }
     if (c.furniture) {
       furniture.push(n);
       whyCounts[c.why] = (whyCounts[c.why] || 0) + 1;
@@ -721,16 +846,11 @@ for (const p of pages) {
       digits sent every suffixed file to generation 0, where it lost to every
       other wave's row for the same frame; 87 measured rows across two waves were
       counted and then discarded on that character.
+
+      Both halves live in genOf / claimOf above this loop since 2026-09-24, so
+      the furniture override asks the record the same question this tally does.
     */
-    const genOf = (file) => {
-      const m = /^status\.wave(\d+)([a-z]*)\./.exec(file);
-      if (!m) return 0;
-      const suffix = m[2] ? m[2].charCodeAt(0) - 96 : 0;
-      return Number(m[1]) * 100 + suffix;
-    };
-    const newestGen = Math.max(...rows.map((r) => genOf(r.file)));
-    const current = rows.filter((r) => genOf(r.file) === newestGen);
-    const claimed = current.slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
+    const claimed = claimOf(rows);
     // The visual verdict, where one exists, is applied exactly as
     // apply-verify.mjs applies it to the registry (see 4b above). A status row
     // is a claim; a verdict is somebody having looked.
@@ -881,6 +1001,15 @@ const rollup = {
   visuallyDowngraded: sum(inScope, "visuallyDowngraded"),
   visualUnmapped,
   visualRetired,
+  // Across ALL scopes, like the table they count; the in-scope share is the
+  // `override` line of the furniture breakdown.
+  furnitureOverrides: {
+    rows: furnitureOverrides.rows.length,
+    applied: overrideApplied.length,
+    refused: furnitureOverrides.refused,
+    refusedByRecord: overrideRefusedByRecord,
+    stale: furnitureOverrides.rows.filter((r) => !overrideSeen.has(r.at)).map((r) => `${r.at} ${r.node}`),
+  },
   partial: statusSum(inScope, "partial"),
   notStarted: statusSum(inScope, "not-started"),
   blocked: statusSum(inScope, "blocked-on-backend"),
@@ -996,12 +1125,25 @@ P();
     "loose-rectangle": "a loose RECTANGLE — pasted screenshots and colour swatches",
     "loose-ellipse": "a loose ELLIPSE",
     "loose-vector": "a loose VECTOR",
+    "author-rejected": "the board's own name rejects it — `Unrecommended …`, `… NOT recommended`",
+    override:
+      "a recorded node read shows no spec (`furniture-overrides.tsv`: one row per node citing the read, applied only while the node's own newest status row says `furniture`)",
   };
   P(`| reason | nodes |`);
   P(`|---|---:|`);
   for (const [k, v] of Object.entries(agg).sort((a, b) => b[1] - a[1])) P(`| ${LABEL[k] || k} | ${v} |`);
   P();
   P(`That is ${pct(rollup.furniture, rollup.live)}% of in-scope live nodes, inside the 14–25% band SCHEMA.md predicted. Nothing is excluded on a guess about intent: default-named \`Frame N\` / \`Group N\` nodes count as GENUINE (see caveat 8), because \`Group 316\` on Price Grid is 1410x900.`);
+  const fo = rollup.furnitureOverrides;
+  if (fo.rows || fo.refused.length) {
+    P();
+    P(
+      `\`furniture-overrides.tsv\` holds ${fo.rows} row(s); ${fo.applied} applied across all scopes (${agg.override || 0} of them in scope).` +
+        (fo.refused.length ? ` ${fo.refused.length} refused as malformed or uncited, and the node stays in: ${fo.refused.join("; ")}.` : "") +
+        (fo.refusedByRecord.length ? ` ${fo.refusedByRecord.length} not applied because the node's own record no longer calls it furniture: ${fo.refusedByRecord.join("; ")}.` : "") +
+        (fo.stale.length ? ` ${fo.stale.length} name no live node in that file: ${fo.stale.join("; ")}.` : ""),
+    );
+  }
   P();
 }
 P(`### The headline number`);

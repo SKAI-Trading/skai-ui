@@ -24,9 +24,11 @@ Hand-maintained inputs:
 - `<section>.nodes.txt` / `<section>.titles.tsv` — which frames a section owns, and their names.
 - `status.<section>.tsv` — build status per frame or family. **Never regenerate one**; they are the record.
 - `vverify.<section>.tsv` — visual verification verdicts.
-- `pages.json` — page → section mapping, `outOfScope` reasons, the change log.
+- `pages.json` — page → section mapping, `retiredSections` (the file a folded section's vverify table binds to), `outOfScope` reasons, the change log.
 - `live/_pages.json` — the live page manifest. Its `scope` column is a ruling, not a measurement.
 - `bugref-aliases.tsv` — bug-report node ids → covering frame, and ids certified `gone`.
+- `implfile-retirements.tsv` — the only way an `implFiles` entry leaves `registry.json`: a deleted file or a placeholder, with the commit or reason. `pipeline.mjs` refuses any other removal, and a listed path that still exists.
+- `furniture-overrides.tsv` — live nodes a recorded node read shows are furniture though their name and type say genuine. `coverage.mjs` applies a row only while the node's own newest status row says `furniture`.
 
 Generated (commit them, never hand-edit): `registry.json`, `families.json`,
 `figma-frame-catalog.md`, `coverage.json`, `COVERAGE.md`, `WAVE10-INTEGRITY.md`,
