@@ -1,0 +1,3 @@
+# vverify.roulette.tsv: visual verdicts for the roulette section. Created 2026-09-24 by the wave 68 fold.
+# wave 68 (2026-09-24), lane play-phone-bleed: live reads.
+9799-15822	partial	-	wave 68 lane play-phone-bleed, 2026-09-24: live read 2026-09-24 w68-play-phone-bleed use_figma call 2/6: strip 11878:17058 375x54 at x=0 r0 pad 12/16/12/16, card 9799:16053 375 at x=0 r0 (tabs pad 4/16/0/16, body 12/16/20/16), 8 seams, in the bento with the board. code c4b32b87 draws both 375 at x=0, square below md, strip row 16 in; 768/1440 unchanged (playPageGutterSum tail cases; mutation N7 old layout green at 768/1024/1440). LEFT: the strip is still the 46-tall five-slot Frame 1000004041 band where the board draws the 54 four-slot Frame 1000004042 (a content redraw, not position)
