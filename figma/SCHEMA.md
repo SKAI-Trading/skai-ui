@@ -178,15 +178,16 @@ Sync's working state, written only by sync; a reader of designs never needs it.
 ```jsonc
 { "v": 1,
   "partial": { "<frame key>": { "H": "<live frame hash>", "T": 1645, "pg": "<page>", "n": "<name>", "w": 1440, "h": 900,
-                                "x": [ /* the items received so far */ ], "calls": 1, "oversize": true } },
+                                "calls": 1, "oversize": true /* and what has arrived so far, see lib/TRANSPORT.md */ } },
   "live": { "<frame key>": { "h": "<hash>", "at": "..." }, "<frame key>": { "gone": true, "at": "..." } } }
 ```
 
 `live` is the last live hash sync saw for each frame, from a hash pass or a completed extract, or `gone` when a hash
 pass found no such node. `partial` is a frame too big for one result, arriving over several calls: `H` is the live hash
-the transfer started at, `T` how many items the frame streams, `x` the items so far. The item format, and how a
-transfer continues or restarts, are in [lib/TRANSPORT.md](lib/TRANSPORT.md). A transfer projected to need more than 12
-calls is parked with `"oversize": true` and is not planned again until it is named with `--nodes`.
+the transfer started at, `T` how many items the frame's stream holds, `calls` how many results it has taken so far.
+What a transfer holds of the stream, and how it continues or restarts, are the transport's, in
+[lib/TRANSPORT.md](lib/TRANSPORT.md). A transfer projected to need more than 12 calls is parked with
+`"oversize": true` and is not planned again until it is named with `--nodes`.
 
 ## Fetching one frame
 
