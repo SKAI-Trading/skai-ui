@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-24T01:52:10.165Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-24T03:23:03.092Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -10,7 +10,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
-| governance | ✅ | 727 | 403 | 324 | 87 | 63 | 257 | 53 | 0 | 10 |
+| governance | ✅ | 727 | 403 | 324 | 87 | 63 | 266 | 53 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 113 | 83 | 28 | 0 | 201 |
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 4 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 61 | 138 | 10 | 0 | 76 |
@@ -27,7 +27,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | gem-slots | ✅ | 66 | 57 | 9 | 1 | 10 | 17 | 3 | 0 | 0 |
 | cosmic-slots | ✅ | 62 | 54 | 8 | 1 | 31 | 5 | 2 | 0 | 0 |
 | coinflip | ✅ | 47 | 34 | 13 | 1 | 21 | 8 | 0 | 0 | 27 |
-| dice | ✅ | 36 | 26 | 10 | 1 | 2 | 16 | 0 | 0 | 8 |
+| dice | ✅ | 36 | 26 | 10 | 1 | 2 | 17 | 0 | 0 | 8 |
 | chicken | ✅ | 31 | 21 | 10 | 1 | 8 | 2 | 0 | 0 | 15 |
 | blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 2 | 0 | 0 | 14 |
 | towers | ✅ | 31 | 17 | 14 | 1 | 4 | 5 | 0 | 0 | 7 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4801** | **2439** | | | **940** | **1284** | **197** | **18** | **1032** |
+| **all** | | **4801** | **2449** | | | **940** | **1294** | **197** | **18** | **1032** |
 
 ### Drift against live Figma
 
@@ -96,7 +96,7 @@ Frames that exist in Figma but are not in the catalog:
 | Rewards > My referrals | 7 | desktop, tablet, mobile | empty; Rewards program > tier progress band [Frame 278 1318x180] | done/frame-defect/partial | [5534-92868](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5534-92868&m=dev) |
 | Governance > Proposals > Delegation | 7 | desktop, tablet, mobile | on chain; off chain | partial | [5383-73349](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5383-73349&m=dev) |
 | Account | 7 | desktop, mobile, tablet | dropdown-3 [dropdown-3 250x384] | not-started/done | [5518-101256](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5518-101256&m=dev) |
-| Explorer > Address > Orders | 6 | desktop, tablet, mobile | - | blocked-on-backend | [5662-120139](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5662-120139&m=dev) |
+| Explorer > Address > Orders | 6 | desktop, tablet, mobile | - | partial | [5662-120139](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5662-120139&m=dev) |
 | Explorer > Tokens | 6 | desktop, tablet, mobile | - | partial | [5675-131659](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5675-131659&m=dev) |
 | Yield vaults | 6 | desktop, tablet, mobile | - | partial | [5492-53877](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5492-53877&m=dev) |
 | Yield vaults > Sample vault item | 6 | desktop, tablet, mobile | - | partial/done | [5515-92313](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5515-92313&m=dev) |
@@ -124,7 +124,7 @@ Frames that exist in Figma but are not in the catalog:
 | Learn > Courses | 3 | desktop, tablet, mobile | - | done | [5393-86875](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5393-86875&m=dev) |
 | Explorer > Address > Holdings | 3 | desktop, tablet, mobile | - | partial/frame-defect | [5660-114498](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5660-114498&m=dev) |
 | Explorer > Address > Lending | 3 | desktop, tablet, mobile | - | partial | [5664-127101](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5664-127101&m=dev) |
-| Explorer > Address > Perps | 3 | desktop, tablet, mobile | - | blocked-on-backend | [5661-118252](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5661-118252&m=dev) |
+| Explorer > Address > Perps | 3 | desktop, tablet, mobile | - | partial | [5661-118252](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5661-118252&m=dev) |
 | Explorer > Address > Others | 3 | desktop, tablet, mobile | - | partial | [5664-127738](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5664-127738&m=dev) |
 | Explorer > Analytics | 3 | desktop, tablet, mobile | - | partial/done | [5669-128901](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5669-128901&m=dev) |
 | Explorer > AI | 3 | desktop, tablet, mobile | - | partial/done | [5695-142802](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5695-142802&m=dev) |
