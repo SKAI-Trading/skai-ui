@@ -533,9 +533,9 @@ export async function selfTest() {
       save(p, st, AT);
       return p;
     };
-    const libRun = async (extra = {}, opts = {}) => {
+    const libRun = async (extra = {}, opts = {}, lib = lx) => {
       const src = libraryScript({ file: lx.file, ...extra });
-      const { figma, calls } = mockLibrary(lx, opts);
+      const { figma, calls } = mockLibrary(lib, opts);
       return { src, r: await runScript(src, figma), calls };
     };
     const ingestLib = (p, text) => {
@@ -622,7 +622,7 @@ export async function selfTest() {
     check("library: with the whole list the flags come back", readJ(p.variables).variables["Legacy/s-4"].notInLibrary === true);
 
     // A cap smaller than one row still moves the cursor on: every part carries at least one row.
-    const tiny = (await libRun({ cap: 200, from: 3 })).r;
+    const tiny = (await libRun({ cap: 200, from: 3, read: "0123456789ab" })).r;
     check("library: a cap below one row still carries one row and advances the cursor", tiny.d.m.n === 1 && tiny.d.m.next === 4, JSON.stringify(tiny.d.m));
 
     // The CLI path: library-ingest ledgers the call before it writes the store, and a second run counts nothing.
@@ -651,36 +651,54 @@ export async function selfTest() {
 
     // Split: a small cap spreads the read over parts that continue each other and converge on the one-part store.
     const q = await walkStore();
-    const parts = [];
-    let from = 0;
-    for (let k = 0; k < 20; k++) {
-      const x = await libRun({ cap: 1700, from });
-      parts.push(x.r);
-      if (x.r.d.m.next === null) break;
-      from = x.r.d.m.next;
-    }
+    // Every part of one read: row 0 mints the read id, each continuation is given it.
+    const readAll = async (lib = lx, opts = {}, cap = 1700) => {
+      const out = [];
+      let from = 0;
+      let read;
+      for (let k = 0; k < 20; k++) {
+        const x = await runScript(libraryScript({ file: lx.file, cap, from, read }), mockLibrary(lib, opts).figma);
+        out.push(x);
+        read = x.d.m.read;
+        if (x.d.m.next === null) break;
+        from = x.d.m.next;
+      }
+      return out;
+    };
+    const parts = await readAll();
     check("library: a small cap splits the read into several parts, each under the cap", parts.length >= 3 && parts.every((x) => JSON.stringify(x).length <= 1700), `${parts.length} parts, ${parts.map((x) => JSON.stringify(x).length).join(",")}`);
+    check("library: every part of one read carries its read id and the same stream digest", /^[0-9a-f]{12}$/.test(parts[0].d.m.read) && parts.every((x) => x.d.m.read === parts[0].d.m.read && x.d.m.digest === parts[0].d.m.digest), JSON.stringify(parts.map((x) => [x.d.m.read, x.d.m.digest])));
+    check("library: a continuation script needs the id of the read it continues", !!throws(() => libraryScript({ file: lx.file, from: 7 })));
     ingestLib(q, JSON.stringify(parts[0]));
     const ex1 = readJ(q.sources).export;
     check("library: after the first part the read is NOT complete and says where to continue", ex1.complete === false && ex1.next === parts[0].d.m.next && /continue with library-script/.test(ex1.why.join()), JSON.stringify(ex1.why));
     check("library: a partial read makes no library claim yet (no notInLibrary from it)", readJ(q.sources).library.method === undefined);
     const skip = throws(() => ingestLib(q, JSON.stringify(parts[2])));
     check("library: a part that skips one is refused", skip && /does not continue/.test(skip.message), skip && skip.message);
-    const changed = (await libRun({ cap: 1700, from: parts[0].d.m.next }, { extraVar: true })).r;
+    const changed = (await libRun({ cap: 1700, from: parts[0].d.m.next, read: parts[0].d.m.read }, { extraVar: true })).r;
     const moved = throws(() => ingestLib(q, JSON.stringify(changed)));
     check("library: a part read after the library changed is refused", moved && /does not continue/.test(moved.message), moved && moved.message);
-    // A rename between calls keeps the total and the counts, so the continuation is accepted, but it moves a row
-    // across the cursor: one token is read twice and another never. Distinct keys, not rows, decide completeness.
+    // A rename between calls keeps the total and the counts, but it moves a row across the cursor: one token would be
+    // read twice and another never. The stream digest refuses the part; distinct keys are the second line.
     {
       const rq = await walkStore();
       ingestLib(rq, JSON.stringify(parts[0]));
+      const renamed = (await libRun({ cap: 1700, from: parts[0].d.m.next, read: parts[0].d.m.read }, { renameVar: ["VariableID:7:5", "a-6"] })).r;
+      check("library: the rename leaves the total and counts as they were (only the stream shows it)", renamed.d.m.total === parts[0].d.m.total && JSON.stringify(renamed.d.m.counts) === JSON.stringify(parts[0].d.m.counts));
+      const rn = throws(() => ingestLib(rq, JSON.stringify(renamed)));
+      check("library: a part read after a rename between calls is refused by the stream digest", rn && /differs from the one the read in progress started on/.test(rn.message), rn && rn.message);
+      // Were a digest ever to match anyway (a collision, a forged copy), completeness still counts distinct keys.
+      const rq2 = await walkStore();
+      ingestLib(rq2, JSON.stringify(parts[0]));
       let at = parts[0].d.m.next;
       for (let k = 0; at !== null && k < 20; k++) {
-        const x = (await libRun({ cap: 1700, from: at }, { renameVar: ["VariableID:7:5", "a-6"] })).r;
-        ingestLib(rq, JSON.stringify(x));
+        const x = (await libRun({ cap: 1700, from: at, read: parts[0].d.m.read }, { renameVar: ["VariableID:7:5", "a-6"] })).r;
+        x.d.m.digest = parts[0].d.m.digest;
+        x.sum = fnv1a32(JSON.stringify(x.d));
+        ingestLib(rq2, JSON.stringify(x));
         at = x.d.m.next;
       }
-      const exr = readJ(rq.sources).export;
+      const exr = readJ(rq2.sources).export;
       check("library: a rename between calls that repeats one row and skips another is NOT complete", exr.complete === false && /distinct/.test(exr.why.join()), JSON.stringify(exr.why));
     }
     for (const x of parts.slice(1)) ingestLib(q, JSON.stringify(x));
@@ -692,6 +710,178 @@ export async function selfTest() {
     const refreshed = tokenFiles(p);
     for (const x of parts) ingestLib(p, JSON.stringify(x));
     check("library: re-reading an unchanged library changes no token file (re-keyed names stay re-keyed)", tokenFiles(p) === refreshed && readJ(p.sources).export.complete === true);
+
+    // An empty collection: 0 variables listed, 0 read, and that meets the count.
+    {
+      const lxE = structuredClone(lx);
+      // (Its own key: c033...c3 is the walk fixture's Legacy, and a key match reads as a rename.)
+      lxE.collections.push({ id: "VariableCollectionId:3:0", name: "Empty", key: "c0660000000000000000000000000000000000c6", modes: [["e1", "Mode 1"]] });
+      const e1 = await runScript(libraryScript({ file: lx.file }), mockLibrary(lxE).figma);
+      const row = e1.d.cols.find((c) => c[0] === "Empty");
+      check("library: an empty collection's row still carries its count, 0", row && row.length === 4 && row[3] === 0, JSON.stringify(row));
+      const pe = await walkStore();
+      ingestLib(pe, JSON.stringify(e1));
+      const exE = readJ(pe.sources).export;
+      const colE = readJ(pe.variables).collections.Empty;
+      check("library: a read with an empty collection is complete, and the collection records 0 variables", exE.complete === true && colE && colE.variables === 0 && readJ(pe.sources).library.localCollections.find((c) => c.name === "Empty").variables === 0, `${JSON.stringify(exE.why)} ${JSON.stringify(colE)}`);
+      // The first library-script dropped the 0 with a row's trailing defaults: a result it made still meets the count.
+      const old = structuredClone(e1);
+      old.d.cols = old.d.cols.map((c) => (c[0] === "Empty" ? c.slice(0, 3) : c));
+      old.sum = fnv1a32(JSON.stringify(old.d));
+      const po = await walkStore();
+      ingestLib(po, JSON.stringify(old));
+      check("library: a collection row whose 0 count was trimmed (the older script) still meets its count", readJ(po.sources).export.complete === true && readJ(po.variables).collections.Empty.variables === 0, JSON.stringify(readJ(po.sources).export.why));
+      // The library deletes the collection: only a library read recorded it, so it leaves the store too.
+      ingestLib(pe, JSON.stringify((await libRun({})).r));
+      check("library: a collection only a library read recorded, that the library deletes, is dropped and listed", !readJ(pe.variables).collections.Empty && readJ(pe.variables).collections.Legacy && readJ(pe.sources).library.removed.some((x) => x.kind === "collection" && x.name === "Empty"), JSON.stringify(readJ(pe.sources).library.removed));
+      // A walk that meets a stored library token returns only its use count (the definition is known), so its
+      // collection gains no seenIn. When the library deletes both, the variable stays (flagged) and so does its collection.
+      const lxX = structuredClone(lx);
+      lxX.collections.push({ id: "VariableCollectionId:5:0", name: "Extra", key: "c0550000000000000000000000000000000000c5", modes: [["x1", "Mode 1"]] });
+      lxX.variables.push({ id: "VariableID:7:50", key: "e5e5e5e5e5e50000000000000000000000000050", name: "x-1", col: "VariableCollectionId:5:0", type: "FLOAT", scopes: [], values: { x1: 4 } });
+      const px = await walkStore();
+      ingestLib(px, JSON.stringify((await libRun({}, {}, lxX)).r));
+      const stX = load(px);
+      Object.values(stX.sources.runs)[0].usesInWalkedFrames["e5e5e5e5e5e50000000000000000000000000050"] = 3;
+      save(px, stX, AT);
+      ingestLib(px, JSON.stringify((await libRun({})).r));
+      const VX = readJ(px.variables);
+      check("library: a deleted collection a walk-seen variable still belongs to is kept, and the variable is flagged", VX.variables["x-1"] && VX.variables["x-1"].notInLibrary === true && VX.collections.Extra && VX.collections.Extra.library.file === null && !readJ(px.sources).library.removed, `${JSON.stringify(VX.collections.Extra)} ${JSON.stringify(readJ(px.sources).library.removed)}`);
+    }
+
+    // Parts of two reads never combine. Day 1 reads the library whole; it then changes one grid gutter; day 2 reads it
+    // again and is handed day 1's saved last part by mistake.
+    {
+      const lxG = structuredClone(lx);
+      lxG.styles.find((s) => s.name === "Grid/12 col").layoutGrids[0].gutterSize = 32;
+      const day1 = await readAll();
+      const day2 = await readAll(lxG);
+      const ps = await walkStore();
+      for (const x of day1) ingestLib(ps, JSON.stringify(x));
+      for (const x of day2.slice(0, -1)) ingestLib(ps, JSON.stringify(x));
+      const splice = throws(() => ingestLib(ps, JSON.stringify(day1[day1.length - 1])));
+      check("library: a saved part of an earlier read is refused as the last part of a new read", splice && /belongs to read/.test(splice.message) && readJ(ps.sources).export.complete === false, splice && splice.message);
+      ingestLib(ps, JSON.stringify(day2[day2.length - 1]));
+      check("library: the new read's own last part completes it, with the library's current value", readJ(ps.sources).export.complete === true && readJ(ps.grid)["Grid/12 col"].grids[0].gutterSize === 32, JSON.stringify(readJ(ps.grid)["Grid/12 col"]));
+      // The same library on both days: the data would agree, but a part of another read is still refused (two
+      // sessions reading at once, or a saved file from before).
+      const day3 = await readAll();
+      const pd = await walkStore();
+      ingestLib(pd, JSON.stringify(day3[0]));
+      const other = throws(() => ingestLib(pd, JSON.stringify(day1[1])));
+      check("library: a part of another read of the same, unchanged library is refused too", day1[1].d.m.from === day3[0].d.m.next && day1[1].d.m.digest === day3[0].d.m.digest && other && /belongs to read/.test(other.message), other && other.message);
+    }
+
+    // One read, the library changed between its parts while every count stayed: a variable part 1 had already read is
+    // deleted and one that sorts after the cursor is added, in the same collection. Or one value is edited.
+    {
+      const first = (await libRun({ cap: 1700 })).r;
+      const lxS = structuredClone(lx);
+      lxS.variables = lxS.variables.filter((v) => v.name !== "Border/External");
+      lxS.variables.push({ id: "VariableID:7:99", key: "ababababab990000000000000000000000000099", name: "s-99", col: "VariableCollectionId:1:0", type: "FLOAT", scopes: [], values: { m1: 396 } });
+      const later = await runScript(libraryScript({ file: lx.file, cap: 1700, from: first.d.m.next, read: first.d.m.read }), mockLibrary(lxS).figma);
+      check("library: the swap keeps the total and the counts, and moves a row across the cursor", first.d.v.some((r) => r[1] === "Border/External") && later.d.v.some((r) => r[1] === "s-99") && later.d.m.total === first.d.m.total && JSON.stringify(later.d.m.counts) === JSON.stringify(first.d.m.counts), JSON.stringify(later.d.m.counts));
+      const sw = await walkStore();
+      ingestLib(sw, JSON.stringify(first));
+      const swapErr = throws(() => ingestLib(sw, JSON.stringify(later)));
+      check("library: a part read after a row was deleted before the cursor and one added after it is refused", swapErr && /differs from the one the read in progress started on/.test(swapErr.message) && readJ(sw.sources).export.complete === false, swapErr && swapErr.message);
+      const lxV = structuredClone(lx);
+      lxV.variables.find((v) => v.name === "s-6").values.m1 = 25;
+      const edited = await runScript(libraryScript({ file: lx.file, cap: 1700, from: first.d.m.next, read: first.d.m.read }), mockLibrary(lxV).figma);
+      const editErr = throws(() => ingestLib(sw, JSON.stringify(edited)));
+      check("library: a part read after a value was edited between the calls is refused", editErr && /differs from the one the read in progress started on/.test(editErr.message), editErr && editErr.message);
+      // A publish status that did not come back on one call is not a change to the library.
+      const hungFirst = (await libRun({ cap: 1700, pubBudget: 30 }, { hang: "VariableID:7:5" })).r;
+      const ph = await walkStore();
+      ingestLib(ph, JSON.stringify(hungFirst));
+      let at = hungFirst.d.m.next;
+      let refused = null;
+      for (let k = 0; at !== null && k < 20 && !refused; k++) {
+        const x = (await libRun({ cap: 1700, from: at, read: hungFirst.d.m.read })).r;
+        refused = throws(() => ingestLib(ph, JSON.stringify(x)));
+        at = x.d.m.next;
+      }
+      check("library: a status unread on one call and read on the next still continues the read", !refused && hungFirst.d.v.length > 0 && readJ(ph.sources).export.complete === true, refused ? refused.message : JSON.stringify(readJ(ph.sources).export.why));
+    }
+
+    // notInLibrary is a token the frame WALK found that the library lacks; a token only a library read had, which the
+    // library then deletes, leaves the set instead.
+    {
+      const { buildDrift } = await import("./tokens-drift.mjs");
+      const { p: pn } = tmpStore();
+      ingestLib(pn, JSON.stringify((await libRun({}, { extraVar: true })).r));
+      check("library: (no walk ran) the first read stores s-99", !!readJ(pn.variables).variables["s-99"] && Object.keys(readJ(pn.sources).runs || {}).length === 0);
+      ingestLib(pn, JSON.stringify((await libRun({})).r));
+      const Vn = readJ(pn.variables).variables;
+      const libN = readJ(pn.sources).library;
+      check("library: a token the library deleted and no walk found leaves the set, listed as removed, and nothing is flagged walk-found", !("s-99" in Vn) && libN.removed && libN.removed.some((x) => x.name === "s-99" && x.kind === "variable") && Object.values(Vn).every((e) => !e.notInLibrary), `${JSON.stringify(libN.removed)} ${JSON.stringify(Vn["s-99"])}`);
+      const dn = buildDrift(load(pn), [], { date: "2026-09-25" }).text;
+      check("library: DRIFT names the dropped token and never calls it walk-found", !/`s-99` \(walk only/.test(dn) && !/the frame walk found/.test(dn) && /dropped from the set: `s-99` \(variable\)/.test(dn), dn.split("\n").filter((l) => /s-99|walk/.test(l)).join(" / "));
+
+      // With a walk: a token the walk found, that the library deletes, stays and is flagged; a library-only one goes.
+      const pw = await walkStore();
+      ingestLib(pw, JSON.stringify((await libRun({})).r));
+      const lxD = structuredClone(lx);
+      lxD.variables = lxD.variables.filter((v) => v.name !== "s-4" && v.name !== "s-6");
+      ingestLib(pw, JSON.stringify((await libRun({}, {}, lxD)).r));
+      const Vw = readJ(pw.variables).variables;
+      check("library: a walk-found token the library deletes is kept and flagged; a library-only one is dropped", Vw["Primatives/s-4"] && Vw["Primatives/s-4"].notInLibrary === true && !Vw["s-6"] && readJ(pw.sources).library.removed.map((x) => x.name).join() === "s-6", `${Object.keys(Vw).join(" | ")} ${JSON.stringify(readJ(pw.sources).library.removed)}`);
+
+      // A rewalk restarts a run's counts: a walk-only token not seen again yet keeps its flag and its place.
+      const pr = await walkStore();
+      ingestLib(pr, JSON.stringify((await libRun({})).r));
+      const stR = load(pr);
+      for (const run of Object.values(stR.sources.runs)) run.usesInWalkedFrames = {};
+      save(pr, stR, AT);
+      ingestLib(pr, JSON.stringify((await libRun({})).r));
+      const Vr = readJ(pr.variables).variables;
+      check("library: after a rewalk reset its counts, a walk-only token keeps its flag and is not dropped", Vr["Legacy/s-4"] && Vr["Legacy/s-4"].notInLibrary === true && Vr["Border/Dangling"] && Vr["Border/Dangling"].notInLibrary === true && !readJ(pr.sources).library.removed, JSON.stringify(readJ(pr.sources).library.removed));
+
+      // In the middle of a read the store still holds the previous read's key list: a token the new read has just
+      // returned is not in it, and must be neither dropped nor flagged.
+      const pm = await walkStore();
+      ingestLib(pm, JSON.stringify((await libRun({})).r));
+      const grow = await readAll(lx, { extraVar: true });
+      const withNew = grow.findIndex((x) => x.d.v.some((r) => r[1] === "s-99"));
+      for (const x of grow.slice(0, withNew + 1)) ingestLib(pm, JSON.stringify(x));
+      const Vm = readJ(pm.variables).variables;
+      check("library: mid-read, a token the new read has just returned is kept and not flagged", withNew >= 0 && withNew < grow.length - 1 && Vm["s-99"] && !Vm["s-99"].notInLibrary && readJ(pm.sources).export.complete === false, `${withNew}/${grow.length} ${JSON.stringify(Vm["s-99"])}`);
+      for (const x of grow.slice(withNew + 1)) ingestLib(pm, JSON.stringify(x));
+      check("library: ...and the finished read keeps it as the library's", readJ(pm.sources).export.complete === true && readJ(pm.variables).variables["s-99"] && !readJ(pm.variables).variables["s-99"].notInLibrary && !readJ(pm.sources).library.removed);
+    }
+
+    // The CLI plans a continuation with the read's id, and refuses, before a call is spent, one ingest would refuse.
+    {
+      const { main } = await import("../tokens.mjs");
+      const cr = path.dirname(path.dirname((await walkStore()).variables));
+      const cp = paths(cr);
+      const plan = async (argv) => {
+        const [log, err] = [console.log, console.error];
+        console.log = console.error = () => {};
+        try {
+          const out = path.join(cr, "script.js");
+          if (fs.existsSync(out)) fs.unlinkSync(out);
+          await main(["library-script", ...argv, "--out", out], cr, path.join(HERE, "..", "..", "figma-catalog"));
+          return { src: fs.readFileSync(out, "utf8") };
+        } catch (e) {
+          return { err: e };
+        } finally {
+          console.log = log;
+          console.error = err;
+        }
+      };
+      const none = await plan(["--from", "3"]);
+      check("library: the CLI refuses --from with no read in progress", none.err && /no library read .* is in progress/.test(none.err.message), none.err ? none.err.message : "planned");
+      ingestLib(cp, JSON.stringify(parts[0]));
+      const cont = await plan([]);
+      const P0 = cont.src && JSON.parse(/const P = (.*);/.exec(cont.src)[1]);
+      check("library: the CLI continues the read in progress with its read id", P0 && P0.from === parts[0].d.m.next && P0.read === parts[0].d.m.read, JSON.stringify(P0));
+      const wrong = await plan(["--from", String(parts[0].d.m.next + 1)]);
+      check("library: the CLI refuses a --from other than where the read in progress continues", wrong.err && /continues at row/.test(wrong.err.message), wrong.err ? wrong.err.message : "planned");
+      const fresh = await plan(["--restart"]);
+      const P1 = fresh.src && JSON.parse(/const P = (.*);/.exec(fresh.src)[1]);
+      check("library: --restart starts a new read from row 0 with a new read id", P1 && P1.from === 0 && /^[0-9a-f]{12}$/.test(P1.read) && P1.read !== parts[0].d.m.read, JSON.stringify(P1));
+    }
 
     // Tamper: the cursor lives inside the checksum.
     const bent = JSON.stringify(parts[0]).replace(/"next":(\d+)/, (a, n) => `"next":${Number(n) + 1}`);

@@ -236,33 +236,43 @@ Added by the library read (2026-09-24), all additive:
 - The token SET comes from the library file itself (`TyX8YAtNDEIvsnSLQ3IXId`, Skai-Design): `figma:tokens --
   library-script` / `library-ingest` (result kind `tokens-library/1`) read every local collection, variable and text,
   paint, effect and grid style, with values, in parts under the 20 KB cut (`--from N` continues; the cursor and counts
-  are inside the checksum). The frame walk (`export-*`) adds use counts and any token the library lacks.
+  are inside the checksum). Each part also carries, inside the checksum, the read's id (`library-script` mints it at
+  row 0 and gives it to every continuation) and a digest of the whole stream the library gave that call (every
+  collection and every row but its publish status). A part whose read id or digest differs from the read in progress
+  is refused: a part of another read, or one read after the library changed in any row, cannot complete it. The frame
+  walk (`export-*`) adds use counts and any token the library lacks.
 - `grid-styles.json`: `{ "<name>": { "grids": [Grid], "key", "remote" } }`, Grid = `{ "pattern", "alignment",
   "gutterSize", "count", "sectionSize", "offset", "c", "bv" }` as Figma names them, each only when Figma sets it;
   `count` is `"auto"` for Figma's Infinity; a hidden grid is dropped. Written once any grid style is stored.
 - An entry may carry, each only when it holds: `"notInLibrary": true`, a token the frame walk found that the library
-  file does not define (set only from the library's whole key list, never from a cut one); `"hiddenFromPublishing":
-  true` (variables); `"publish": "UNPUBLISHED" | "CHANGED"`, the library's publish status when it is not CURRENT, since
+  file does not define (set only from the library's whole key list, never from a cut one, and only on a token a walk
+  saw: its key is in a run's `usesInWalkedFrames`, or it was flagged before); `"hiddenFromPublishing": true`
+  (variables); `"publish": "UNPUBLISHED" | "CHANGED"`, the library's publish status when it is not CURRENT, since
   the product files see a library token as last published. A status use_figma could not read writes no mark:
   `getPublishStatusAsync` is not a function on styles in use_figma (measured 2026-09-24), so no style carries one.
 - `remote` is `true` for every library token, including one only the library read found: it is the product files'
   view (they read it from the library).
+- A token only a library read had, that a later complete read no longer returns (the library deleted it) and no walk
+  saw, is dropped from `tokens/`, as is a collection only a library read recorded that the library no longer has and
+  no stored variable belongs to. `sources.json` `library.removed: [{ kind, name, key }]` names them until the next
+  complete read.
 - A variable's `id` is per file. It is the id the walk saw in a product file (`VariableID:<key>/<n>`, where `<n>` is
   that file's own number for its imported copy) or, for a variable only the library read found, the library's own
   (`VariableID:<n>`). No id is built from a key and another file's number. Match a spec's unresolved
   `VariableID:<key>/…` to a token by the key inside it.
-- `sources.json` `export`: `{ "method": "library-read", "source", "sourceName", "complete", "why": [...], "total",
-  "counts", "parts": [{ from, n, sum, at, pub, items, gridRead }], "got", "perCol", "added", "same", "changes": [{ kind,
-  name, field, was, now }], "publish": { read, of, complete, unread, unreadVariables, errors }, "externalAliases",
-  "bad", "provenanceCheck" }`. `complete` is true only when parts read in order from row 0 cover every row the library
+- `sources.json` `export`: `{ "method": "library-read", "source", "sourceName", "read", "digest", "complete", "why":
+  [...], "total", "counts", "parts": [{ from, n, sum, at, pub, items, gridRead }], "got", "perCol", "added", "same",
+  "changes": [{ kind, name, field, was, now }], "publish": { read, of, complete, unread, unreadVariables, errors },
+  "externalAliases", "bad", "provenanceCheck" }`. `complete` is true only when parts of one read (one read id, one
+  digest) read in order from row 0 cover every row the library
   listed, the distinct keys read per kind equal the library's counts (a rename between calls can repeat one row and
   skip another while the rows still add up), each collection's variable count is met, grid styles were read and no
   item failed to read; `why` says what is missing otherwise. `changes` lists each field where a token the walk had stored differs from the library's
   definition (the library's is written). `variables.json` carries `"export": { complete, source, sourceName, method,
   at }` from it. After a complete read, `library` is rebuilt from it (`method` says so, `localCounts.grid` added, key
   lists from the full keys) and `provenanceCheck` compares it with the previous key lists.
-- `DRIFT.md` states whether the set is complete and where it came from, marks walk-only tokens in their rows, and
-  lists computed checks on the Figma set itself (several variables claiming one code-syntax name, a line height below
+- `DRIFT.md` states whether the set is complete and where it came from, marks walk-only tokens in their rows, names
+  the tokens dropped as deleted from the library, and lists computed checks on the Figma set itself (several variables claiming one code-syntax name, a line height below
   its font size, a spacing step off the scale's own 4 x N rule, modes named only "Mode N").
 
 ## ledger/calls.jsonl and the budget

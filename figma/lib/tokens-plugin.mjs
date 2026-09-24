@@ -8,6 +8,8 @@
 // A result is JSON of the form {k, h, d, sum}: `d` is the payload, `sum` its fnv1a32 over
 // JSON.stringify(d), so a copy of the result that lost or changed a character is refused at ingest.
 
+import { randomBytes } from "node:crypto";
+
 export const EXPORT_KIND = "tokens-export/1";
 export const PROVENANCE_KIND = "tokens-provenance/1";
 export const LIBRARY_KIND = "tokens-library/1";
@@ -278,8 +280,8 @@ return done(KIND, { file: P.file, fileName: figma.root.name, ms: Date.now() - t0
 
 // The library read: every local collection, variable and style of the library file itself, with values. Rows stream
 // in one fixed order (variables by collection then name, then text, paint, effect and grid styles by name) and fill
-// the result up to P.cap; P.from continues a read that did not fit. The cursor, the counts and the per-list
-// checksums live inside d, so the result checksum covers them too.
+// the result up to P.cap; P.from continues a read that did not fit. The cursor, the counts, the per-list checksums,
+// the read id and the stream digest live inside d, so the result checksum covers them too.
 const LIBRARY_BODY = String.raw`
 const t0 = Date.now();
 const byName = (a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : a.key < b.key ? -1 : a.key > b.key ? 1 : 0);
@@ -341,21 +343,31 @@ const trim = (row) => { while (row.length && (row[row.length - 1] === "" || row[
 const colIx = new Map(cols.map((c, i) => [c.id, i]));
 const T = { COLOR: "C", FLOAT: "F", STRING: "S", BOOLEAN: "B" };
 const d = { m: null, cols: [], v: [], ts: [], ps: [], es: [], gs: [], ext: [], bad: [] };
-for (const c of cols) d.cols.push(trim([c.name, c.key, c.modes.map((m) => m.name), c.variableIds.length, c.hiddenFromPublishing ? 1 : 0]));
+// A collection's variable count is always sent, 0 included: only the hidden flag is optional.
+for (const c of cols) d.cols.push([c.name, c.key, c.modes.map((m) => m.name), c.variableIds.length].concat(c.hiddenFromPublishing ? [1] : []));
 const ci = (v) => (colIx.has(v.variableCollectionId) ? colIx.get(v.variableCollectionId) : -1);
+// Each row is built without its publish status, which is appended for the result. core keeps the rows without it for
+// the stream digest: a status that did not come back on one call is not a change to the library.
 const stream = [];
-const add = (kind, x, build) => { try { stream.push([kind, build(x)]); } catch (e) { noteErr(kind, e); d.bad.push([kind, x.name, x.key]); } };
+const core = [];
+const add = (kind, x, build) => {
+  try {
+    const row = build(x);
+    stream.push([kind, trim(row.concat([pc(x)]))]);
+    core.push([kind, trim(row)]);
+  } catch (e) { noteErr(kind, e); d.bad.push([kind, x.name, x.key]); }
+};
 for (const v of vars.slice().sort((a, b) => ci(a) - ci(b) || byName(a, b))) {
   add("v", v, (v) => {
     const i = ci(v);
     const modeIds = i >= 0 ? cols[i].modes.map((m) => m.modeId) : Object.keys(v.valuesByMode);
-    return trim([v.id.replace(/^VariableID:/, ""), v.name, i, T[v.resolvedType] || v.resolvedType, v.key, v.scopes, modeIds.map((m) => value(v, v.valuesByMode[m])), (v.codeSyntax && v.codeSyntax.WEB) || "", v.hiddenFromPublishing ? 1 : 0, pc(v)]);
+    return [v.id.replace(/^VariableID:/, ""), v.name, i, T[v.resolvedType] || v.resolvedType, v.key, v.scopes, modeIds.map((m) => value(v, v.valuesByMode[m])), (v.codeSyntax && v.codeSyntax.WEB) || "", v.hiddenFromPublishing ? 1 : 0];
   });
 }
-for (const s of lists.ts.slice().sort(byName)) add("ts", s, (s) => trim([s.name, s.key, s.fontName.family, s.fontName.style, r2(s.fontSize), lh(s.lineHeight), ls(s.letterSpacing), s.textCase, s.textDecoration, bvOf(s) || 0, pc(s)]));
-for (const s of lists.ps.slice().sort(byName)) add("ps", s, (s) => trim([s.name, s.key, s.paints.map(paint).filter(Boolean), pc(s)]));
-for (const s of lists.es.slice().sort(byName)) add("es", s, (s) => trim([s.name, s.key, s.effects.map(effect).filter(Boolean), pc(s)]));
-for (const s of lists.gs.slice().sort(byName)) add("gs", s, (s) => trim([s.name, s.key, s.layoutGrids.map(grid).filter(Boolean), pc(s)]));
+for (const s of lists.ts.slice().sort(byName)) add("ts", s, (s) => [s.name, s.key, s.fontName.family, s.fontName.style, r2(s.fontSize), lh(s.lineHeight), ls(s.letterSpacing), s.textCase, s.textDecoration, bvOf(s) || 0]);
+for (const s of lists.ps.slice().sort(byName)) add("ps", s, (s) => [s.name, s.key, s.paints.map(paint).filter(Boolean)]);
+for (const s of lists.es.slice().sort(byName)) add("es", s, (s) => [s.name, s.key, s.effects.map(effect).filter(Boolean)]);
+for (const s of lists.gs.slice().sort(byName)) add("gs", s, (s) => [s.name, s.key, s.layoutGrids.map(grid).filter(Boolean)]);
 for (const id of ext.keys()) {
   let v = null;
   try { v = await figma.variables.getVariableByIdAsync(id); } catch (e) { noteErr("alias target", e); }
@@ -363,7 +375,11 @@ for (const id of ext.keys()) {
 }
 
 const counts = { cols: cols.length, v: vars.length, ts: lists.ts.length, ps: lists.ps.length, es: lists.es.length, gs: lists.gs.length };
-d.m = { file: P.file, from: P.from, n: 0, next: null, total: stream.length, counts: counts, gridRead: gridRead, pub: P.pub ? pubN : -1, items: items.length, ms: 0, sums: { v: "00000000", ts: "00000000", ps: "00000000", es: "00000000", gs: "00000000" } };
+// read: the id library-script gave this read at row 0, so a part of another read cannot pass as the next part of this
+// one. digest: the whole stream the library gave THIS call, so a part read after the library changed in any row
+// (deleted, added, renamed or edited, on either side of the cursor) does not match the parts before it.
+const digest = fnv(JSON.stringify([d.cols, core]));
+d.m = { file: P.file, read: P.read, digest: digest, from: P.from, n: 0, next: null, total: stream.length, counts: counts, gridRead: gridRead, pub: P.pub ? pubN : -1, items: items.length, ms: 0, sums: { v: "00000000", ts: "00000000", ps: "00000000", es: "00000000", gs: "00000000" } };
 d.err = errs;
 let size = JSON.stringify(d).length + 300;
 let i = P.from;
@@ -416,12 +432,20 @@ export function exportScript(p) {
   return assemble(EXPORT_KIND, params, READERS, EXPORT_BODY);
 }
 
+/** A fresh library-read id: 12 hex characters, minted in Node (the plugin sandbox has no crypto). */
+export function newReadId() {
+  return randomBytes(6).toString("hex");
+}
+
 /**
  * The library read (read-only): every local collection, variable and style of `file`, with values, from row `from`.
- * @param {{file: string, from?: number, cap?: number, pub?: boolean, pubBudget?: number}} p
+ * A read from row 0 gets a new read id; a continuation must be given the id of the read it continues.
+ * @param {{file: string, from?: number, read?: string, cap?: number, pub?: boolean, pubBudget?: number}} p
  */
 export function libraryScript(p) {
-  const params = { file: p.file, from: p.from || 0, cap: p.cap || RESULT_CAP, pub: p.pub !== false, pubBudget: p.pubBudget || 8000 };
+  const from = p.from || 0;
+  if (from > 0 && !p.read) throw new Error(`a library read continued from row ${from} needs the id of the read it continues`);
+  const params = { file: p.file, read: p.read || newReadId(), from, cap: p.cap || RESULT_CAP, pub: p.pub !== false, pubBudget: p.pubBudget || 8000 };
   return assemble(LIBRARY_KIND, params, READERS, LIBRARY_BODY);
 }
 

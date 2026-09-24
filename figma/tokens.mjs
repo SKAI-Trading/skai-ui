@@ -212,11 +212,21 @@ export async function main(argv, root = HERE, catalogDir = path.join(HERE, "..",
     const b = assertBudget(p);
     const st = load(p);
     const ex = st.sources.export;
+    const open = ex && ex.method === "library-read" && ex.source === file && !ex.complete ? ex : null;
     let from = 0;
     if (opt.from !== undefined) from = Number(opt.from);
-    else if (!opt.restart && ex && ex.method === "library-read" && ex.source === file && !ex.complete && ex.next) from = ex.next;
+    else if (!opt.restart && open && open.next) from = open.next;
     if (!(Number.isInteger(from) && from >= 0)) throw new Error(`bad --from ${opt.from}`);
-    const src = libraryScript({ file, from, pub: !opt["no-publish"] });
+    // A continuation carries the id of the read it continues, and ingest refuses any other, so a script that could
+    // not be ingested is refused here instead of after the call is spent.
+    let read;
+    if (from > 0) {
+      if (!open) throw new Error(`--from ${from}: no library read of ${file} is in progress to continue; start one with --restart`);
+      if (!open.read) throw new Error(`--from ${from}: the read in progress carries no read id (an older library-script started it); start again with --restart`);
+      if (from !== open.next) throw new Error(`--from ${from}: the read in progress continues at row ${open.next}`);
+      read = open.read;
+    }
+    const src = libraryScript({ file, from, read, pub: !opt["no-publish"] });
     const bytes = Buffer.byteLength(src);
     if (bytes > SCRIPT_CAP) throw new Error(`script is ${bytes} bytes, over the ${SCRIPT_CAP} cap`);
     console.error(`library-script ${file}: rows from ${from}${from ? " (continuing the read in progress)" : ""}, ${bytes} bytes; budget ${b.used}/${b.cap}, this is call ${b.used + 1}`);
@@ -255,6 +265,7 @@ export async function main(argv, root = HERE, catalogDir = path.join(HERE, "..",
       console.log(`  COMPLETE: every local collection, variable and style of ${ex.sourceName} is in figma/tokens/.`);
       if (ex.provenanceCheck) console.log(`  against the provenance key list of ${ex.provenanceCheck.checkedAt}: ${["v", "t", "e", "p"].map((l) => `${l} ${ex.provenanceCheck[l]}`).join(", ")}`);
       for (const mm of lib.match) if (mm.notInLibrary.length) console.log(`  ${mm.kind} the walk found that ${ex.sourceName} does not define (kept, flagged notInLibrary): ${mm.notInLibrary.join(", ")}`);
+      if (lib.removed && lib.removed.length) console.log(`  deleted from ${ex.sourceName} since the last library read, and no frame walk found them (dropped from figma/tokens/): ${lib.removed.map((x) => `${x.name} (${x.kind})`).join(", ")}`);
     } else console.log(`  NOT complete: ${ex.why.join("; ")}`);
     return 0;
   }

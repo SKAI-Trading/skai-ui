@@ -520,19 +520,37 @@ export function ingestLibrary(st, r, at) {
   if (!m || m.file !== h.file) throw new Error(`library result names file ${m && m.file} inside and ${h.file} outside`);
   const rows = LIST_KINDS.reduce((n, k) => n + d[k].length, 0);
   if (rows !== m.n) throw new Error(`library part says it carries ${m.n} rows but holds ${rows}`);
+  // A collection row from the first library-script dropped a count of 0 with the other trailing defaults.
+  const colRows = d.cols.map(([name, key, modes, n, hid]) => [name, key, modes, n || 0, hid || 0]);
   const prevEx = st.sources.export;
   if (prevEx && prevEx.parts && prevEx.parts.some((x) => x.sum === r.sum)) return { already: true, ex: prevEx, rows, part: { from: m.from, n: m.n, next: m.next, total: m.total } };
   let ex;
   if (m.from === 0) {
-    ex = { method: "library-read", source: h.file, sourceName: h.file === LIBRARY_FILE ? LIBRARY_NAME : FILES[h.file] || h.file, complete: false, startedAt: at, total: m.total, counts: m.counts, next: 0, parts: [], got: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, perCol: {}, keys: { v: [], t: [], e: [], p: [], g: [] }, added: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, same: 0, changes: [], externalAliases: [], bad: [], unread: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, unreadVariables: [], publishErrors: {} };
+    ex = { method: "library-read", source: h.file, sourceName: h.file === LIBRARY_FILE ? LIBRARY_NAME : FILES[h.file] || h.file, read: m.read || null, digest: m.digest || null, complete: false, startedAt: at, total: m.total, counts: m.counts, next: 0, parts: [], got: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, perCol: {}, keys: { v: [], t: [], e: [], p: [], g: [] }, added: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, same: 0, changes: [], externalAliases: [], bad: [], unread: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, unreadVariables: [], publishErrors: {} };
   } else {
     // sources.json is written with sorted keys, so the counts compare in that form.
     const same = (a, b) => JSON.stringify(sortDeep(a)) === JSON.stringify(sortDeep(b));
-    const cont = prevEx && !prevEx.complete && prevEx.method === "library-read" && prevEx.source === h.file && prevEx.next === m.from && prevEx.total === m.total && same(prevEx.counts, m.counts);
+    const open = prevEx && !prevEx.complete && prevEx.method === "library-read" && prevEx.source === h.file;
+    const cont = open && prevEx.next === m.from && prevEx.total === m.total && same(prevEx.counts, m.counts);
     if (!cont) {
       throw new Error(
         `library part from row ${m.from} does not continue the read in progress (${prevEx ? `next ${prevEx.next}, ${prevEx.total} rows, counts ${JSON.stringify(sortDeep(prevEx.counts || {}))}, complete ${!!prevEx.complete}` : "none"}; this part: ${m.total} rows, counts ${JSON.stringify(sortDeep(m.counts))}). ` +
           `The library may have changed between calls: start again with library-script --restart.`,
+      );
+    }
+    // Next, total and counts can all line up for a part of another read (a saved part of yesterday's read, a second
+    // session's read) and for a part read after the library changed while the counts stayed (a row deleted before the
+    // cursor and one added after it). The read id ties a part to one read, the digest to one state of the library.
+    if (!m.read || m.read !== prevEx.read) {
+      throw new Error(
+        `library part from row ${m.from} belongs to ${m.read ? `read ${m.read}` : "no read (it carries no read id)"}, not to the read in progress (${prevEx.read || "which carries no read id"}): ` +
+          `a part of another read cannot complete this one. Continue with a script from library-script, or start again with --restart.`,
+      );
+    }
+    if (!m.digest || m.digest !== prevEx.digest) {
+      throw new Error(
+        `library part from row ${m.from} was read from a library that differs from the one the read in progress started on (stream digest ${m.digest || "none"}, the read began at ${prevEx.digest || "none"}): ` +
+          `a token was added, deleted, renamed or edited between the calls. Start again with library-script --restart.`,
       );
     }
     ex = prevEx;
@@ -540,7 +558,7 @@ export function ingestLibrary(st, r, at) {
   ex.updatedAt = at;
 
   // Collections: matched by key, so a renamed collection keeps what the walk recorded (seenIn).
-  for (const [name, key, modes, n, hid] of d.cols) {
+  for (const [name, key, modes, n, hid] of colRows) {
     const was = Object.keys(st.collections).find((k) => st.collections[k].key === key);
     const prev = was ? st.collections[was] : null;
     if (prev && was !== name) {
@@ -582,7 +600,7 @@ export function ingestLibrary(st, r, at) {
 
   for (const row of d.v) {
     const [lid, name, ci, T, key, scopes, vals, web, hid, pc] = row;
-    const col = d.cols[ci];
+    const col = colRows[ci];
     const modeNames = col ? col[2] : vals.map((_, i) => `Mode ${i + 1}`);
     const modes = {};
     modeNames.forEach((mn, i) => {
@@ -641,7 +659,7 @@ export function ingestLibrary(st, r, at) {
       if (distinct !== ex.counts[k]) why.push(`${k}: ${distinct} distinct tokens read of ${ex.counts[k]} (a part repeated or skipped a row: the library changed between calls; read again with library-script --restart)`);
     }
   }
-  for (const [name, , , n] of d.cols) if ((ex.perCol[name] || 0) !== n && ex.next === null) why.push(`collection ${name} lists ${n} variables, ${ex.perCol[name] || 0} read`);
+  for (const [name, , , n] of colRows) if ((ex.perCol[name] || 0) !== n && ex.next === null) why.push(`collection ${name} lists ${n} variables, ${ex.perCol[name] || 0} read`);
   if (!ex.gridRead) why.push("grid styles could not be read (getLocalGridStylesAsync)");
   if (ex.bad.length) why.push(`${ex.bad.length} item(s) failed to read: ${ex.bad.map((x) => x[1]).join(", ")}`);
   ex.why = why;
@@ -667,12 +685,13 @@ export function ingestLibrary(st, r, at) {
       note: "use_figma reports figma.root.name as 'Document'; the file is identified by the fileKey the call ran against",
       checkedAt: at,
       method: "library read: every local collection, variable and style of the file, with values",
-      localCollections: d.cols.map(([name, key, modes, n]) => ({ name, key, modes, variables: n })),
+      localCollections: colRows.map(([name, key, modes, n]) => ({ name, key, modes, variables: n })),
       localCounts: { vars: ex.counts.v, text: ex.counts.ts, effect: ex.counts.es, paint: ex.counts.ps, grid: ex.counts.gs },
       keys,
       keysCut: 0,
     };
     delete ex.keys;
+    pruneDeleted(st);
   }
   st.sources.export = ex;
   return { ex, rows, part: { from: m.from, n: m.n, next: m.next, total: m.total } };
@@ -684,22 +703,74 @@ const unpackW = (s, w) => {
   return out;
 };
 
+/** Keys of every token a frame walk saw: a run's usesInWalkedFrames holds each one it stored or counted, 0 uses included. */
+function walkSeenKeys(st) {
+  const out = new Set();
+  for (const run of Object.values(st.sources.runs || {})) for (const k of Object.keys(run.usesInWalkedFrames || {})) out.add(k);
+  return out;
+}
+
+const KIND_LABEL = { v: "variable", t: "text style", e: "effect style", p: "paint style", g: "grid style" };
+
+/** The library's key-prefix sets, and whether they are its whole lists. Grid styles have one only once a library read looked. */
+function librarySets(lib) {
+  const w = lib.keys.w || 12;
+  const sets = { v: unpackW(lib.keys.v, w), t: unpackW(lib.keys.t, w), e: unpackW(lib.keys.e, w), p: unpackW(lib.keys.p, w), g: typeof lib.keys.g === "string" ? unpackW(lib.keys.g, w) : null };
+  return { w, sets, whole: !lib.keysCut };
+}
+
+/**
+ * After a complete library read (sources.library rebuilt from it): a stored token the read did not return, that no
+ * frame walk found, is one only an earlier library read had, so the library has deleted it. It leaves the set (the
+ * set is every library token plus the ones the frames use that the library lacks) and is listed in library.removed.
+ * A collection only a library read recorded, that the library no longer has and no stored variable belongs to, too.
+ * Only here: a save in the middle of a read still judges by the previous read's list, where a token the new read
+ * has just returned is absent.
+ */
+function pruneDeleted(st) {
+  const lib = st.sources.library;
+  const { w, sets, whole } = librarySets(lib);
+  if (!whole) return [];
+  const seen = walkSeenKeys(st);
+  const removed = [];
+  for (const [l, m, set] of [["v", st.vars, sets.v], ...styleMaps(st).map(([l, m]) => [l, m, sets[l]])]) {
+    if (!set) continue;
+    const names = l === "v" ? variableNames(st) : styleNames(m);
+    // A notInLibrary flag already set came from walk evidence too, and outlives a rewalk that restarts a run's counts.
+    for (const [k, e] of [...m]) {
+      if (set.has(k.slice(0, w)) || seen.has(k) || e.notInLibrary) continue;
+      removed.push({ kind: KIND_LABEL[l], name: names.get(k), key: k });
+      m.delete(k);
+    }
+  }
+  const colKeys = new Set(lib.localCollections.map((c) => c.key));
+  for (const [name, c] of Object.entries(st.collections)) {
+    if (colKeys.has(c.key) || (c.seenIn && c.seenIn.length) || [...st.vars.values()].some((e) => e.collection === name)) continue;
+    removed.push({ kind: "collection", name, key: c.key });
+    delete st.collections[name];
+  }
+  if (removed.length) lib.removed = removed;
+  return removed;
+}
+
 /**
  * Marks every stored token and collection with whether the library file defines it, from the library's own
  * key prefixes (sources.library.keys). Runs on every save, so a token exported after the check is still judged.
+ * notInLibrary means a token a frame walk found that the library lacks: it is set only on a token a walk saw (or
+ * one already flagged), never on one only a library read had.
  */
 export function applyLibrary(st) {
   const lib = st.sources.library;
   if (!lib || !lib.keys) return null;
-  const w = lib.keys.w || 12;
-  // Grid styles have a key list only once the library read has looked for them.
-  const sets = { v: unpackW(lib.keys.v, w), t: unpackW(lib.keys.t, w), e: unpackW(lib.keys.e, w), p: unpackW(lib.keys.p, w), g: typeof lib.keys.g === "string" ? unpackW(lib.keys.g, w) : null };
+  const { w, sets, whole } = librarySets(lib);
   // notInLibrary is a claim about the library's WHOLE list, so it is made only from uncut lists; otherwise unknown.
-  const whole = !lib.keysCut;
+  const seen = walkSeenKeys(st);
   for (const [m, set] of [[st.vars, sets.v], ...styleMaps(st).map(([l, m]) => [m, sets[l]])]) {
     for (const [k, e] of m) {
-      if (whole && set && !set.has(k.slice(0, w))) e.notInLibrary = true;
-      else delete e.notInLibrary;
+      if (!whole || !set || set.has(k.slice(0, w))) delete e.notInLibrary;
+      // A flag already set is left as it is: it came from walk evidence too, and a rewalk that restarts a run's
+      // counts must not make a walk-only token look like the library's.
+      else if (seen.has(k)) e.notInLibrary = true;
     }
   }
   const colKeys = new Set(lib.localCollections.map((c) => c.key));

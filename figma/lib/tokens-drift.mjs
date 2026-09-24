@@ -827,6 +827,8 @@ export function buildDrift(st, sources, meta = {}) {
   if (complete) {
     L.push(`- ${counts}. The set is COMPLETE: every local collection, variable and style of \`${ex.source}\` (${ex.sourceName}), read from the library file itself (${ex.method}, ${ex.parts.length} checksummed call${ex.parts.length === 1 ? "" : "s"}, last ${String(ex.updatedAt).slice(0, 10)})${walkOnly.length ? `, plus ${walkOnly.length} the frame walk found that the library does not define (flagged \`notInLibrary\`, marked "walk only" below)` : ""}.`);
     L.push(`  - Of the tokens the frame walk had stored before, ${ex.same} are identical to the library's definitions field by field; ${ex.changes.length} differ${ex.changes.length ? `: ${ex.changes.slice(0, 20).map((c) => `\`${c.name}\` ${c.field}`).join(", ")}` : ""}.`);
+    const removed = (lib && lib.removed) || [];
+    if (removed.length) L.push(`  - Deleted from the library since the read before, and not found by the frame walk, so dropped from the set: ${removed.map((x) => `\`${x.name}\` (${x.kind})`).join(", ")}.`);
     const unread = Object.entries(ex.publish.unread || {}).filter(([, n]) => n);
     L.push(`  - Publish status (the product files see a library token as last published): ${ex.publish.read} of ${ex.publish.of} items read${unread.length ? `; not readable for ${unread.map(([k, n]) => `${n} ${{ v: "variables", ts: "text", ps: "paint", es: "effect", gs: "grid" }[k]}`).join(", ")}${Object.keys(ex.publish.errors || {}).length ? ` (${Object.keys(ex.publish.errors).join("; ")})` : ""}` : ""}; ${tokens.filter((t) => t.entry.publish).length ? `marked: ${tokens.filter((t) => t.entry.publish).map((t) => `\`${t.name}\` ${t.entry.publish}`).join(", ")}` : "none read is UNPUBLISHED or CHANGED"}.`);
   } else {
