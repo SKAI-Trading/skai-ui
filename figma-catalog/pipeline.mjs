@@ -69,7 +69,10 @@ const HARVEST_STALE_DAYS = 14;
 /**
  * Text with every timestamp-bearing line removed, so two runs of the same
  * inputs compare equal. Every derived file stamps when it was generated, and
- * that stamp is the one thing a regeneration is allowed to change.
+ * that stamp is the one thing a regeneration is allowed to change. Only a full
+ * ISO instant counts as a stamp: a derived file that prints a bare run DATE is
+ * a file that changes every day, and --check is right to call it stale. The
+ * self-test pins both halves (COVERAGE.md did exactly that until 2026-09-24).
  */
 export function stableText(s) {
   return String(s)
@@ -184,6 +187,29 @@ pipeline drift: read figma-todo.live.tsv (most actionable first). Then:
 A REMOVED id that a probe certified gone belongs in bugref-aliases.tsv as \`gone\` (README.md).`);
 }
 
+/**
+ * Run a catalog script with the process clock pinned to `iso`, through a
+ * data: URL preload that replaces Date. Used by the self-test to prove a
+ * derived file does not depend on the day it was generated.
+ */
+function runAt(iso, args) {
+  const clock = `const R=Date;const T=R.parse(${JSON.stringify(iso)});globalThis.Date=class extends R{constructor(...a){super(...(a.length?a:[T]))}static now(){return T}};`;
+  const r = spawnSync(process.execPath, ["--import", `data:text/javascript,${encodeURIComponent(clock)}`, ...args], {
+    cwd: DIR,
+    encoding: "utf8",
+    maxBuffer: 1 << 27,
+  });
+  return { status: r.status, out: r.stdout || "", err: r.stderr || "" };
+}
+
+const firstDifference = (a, b) => {
+  const x = a.split("\n");
+  const y = b.split("\n");
+  for (let i = 0; i < Math.max(x.length, y.length); i++)
+    if (x[i] !== y[i]) return `line ${i + 1}: ${JSON.stringify((x[i] || "").slice(0, 90))} vs ${JSON.stringify((y[i] || "").slice(0, 90))}`;
+  return "identical";
+};
+
 function selfTest() {
   let pass = 0;
   let fail = 0;
@@ -192,6 +218,38 @@ function selfTest() {
     ok ? pass++ : fail++;
   };
   check("stableText drops only timestamp-bearing lines", stableText('{\n  "generated": "2026-09-09T10:28:08.807Z",\n  "n": 3\n}') === '{\n  "n": 3\n}');
+  // The comparison must stay strict. A bare date is content, not a generation
+  // stamp: widening this filter to hide one would have made the 2026-09-24
+  // everyday-stale COVERAGE.md read clean while it still changed every day.
+  check(
+    "stableText keeps a line carrying only a date, so a run date in a derived file still reads as stale",
+    stableText("# Catalog coverage — measured 2026-09-23\nbody") === "# Catalog coverage — measured 2026-09-23\nbody",
+  );
+
+  // ★ A derived file must be byte-identical when its inputs are. COVERAGE.md
+  // used to open with `measured <today>`, so `--check` exited 1 on every new
+  // day with nothing changed and a genuinely stale file could not be told
+  // apart. Reads the catalog, writes nothing (coverage.mjs --markdown).
+  const probe = runAt("2031-01-02T03:04:05.000Z", ["-e", "process.stdout.write(new Date().toISOString() + ' ' + Date.now())"]);
+  check(
+    "positive control: the pinned clock really replaces Date in the child",
+    probe.status === 0 && probe.out === `2031-01-02T03:04:05.000Z ${Date.parse("2031-01-02T03:04:05.000Z")}`,
+    `child printed ${JSON.stringify(probe.out)} (exit ${probe.status}) ${probe.err.split("\n")[0]}`,
+  );
+  const mdEarly = runAt("2031-01-02T03:04:05.000Z", [path.join(DIR, "coverage.mjs"), "--markdown"]);
+  const mdLate = runAt("2033-06-07T20:21:22.000Z", [path.join(DIR, "coverage.mjs"), "--markdown"]);
+  check(
+    "COVERAGE.md is the same bytes under two different clocks, and neither clock's date appears in it",
+    mdEarly.status === 0 &&
+      mdLate.status === 0 &&
+      mdEarly.out.length > 0 &&
+      mdEarly.out === mdLate.out &&
+      !mdEarly.out.includes("2031-01-02") &&
+      !mdLate.out.includes("2033-06-07"),
+    mdEarly.status !== 0 || mdLate.status !== 0
+      ? `coverage.mjs --markdown exited ${mdEarly.status}/${mdLate.status}: ${(mdEarly.err || mdLate.err).split("\n")[0]}`
+      : firstDifference(mdEarly.out, mdLate.out),
+  );
   const b = { A: { implFiles: ["x.tsx"], status: "done", notes: "n", verifiedAt: "2026-09-01T00:00:00.000Z", route: "/a", bpStatus: "unknown" }, G: { implFiles: [], status: "unknown" } };
   const a = { A: { implFiles: [], status: "partial", notes: "n", verifiedAt: "2026-09-01T00:00:00.000Z", route: "/a", bpStatus: "unknown" }, N: { status: "unknown" } };
   const r = compareHandSet(b, a);
