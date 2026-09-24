@@ -1,0 +1,14 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "8570:143286",
+ "page": "✅ Trade 1",
+ "name": "Row 2",
+ "hash": "3067c2f64bee7f84",
+ "syncedAt": "2026-09-24T22:27:14.281Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:8570:143201",
+ "tree":
+  {"id":"8570:143286","t":"FRAME","n":"Row 2","b":[12,47,684,450],"l":{"g":29,"m":"H","sx":"FILL","sy":"FILL"},"c":[
+   {"ref":"8570:143287","h":"55991f88b1beac46"}
+  ]}
+}

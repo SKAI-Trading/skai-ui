@@ -1,0 +1,29 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "8570:143287",
+ "page": "✅ Trade 1",
+ "name": "Frame 160",
+ "hash": "55991f88b1beac46",
+ "syncedAt": "2026-09-24T22:27:14.281Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:8570:143201",
+ "tree":
+  {"id":"8570:143287","t":"FRAME","n":"Frame 160","b":[0,0,684,450],"l":{"g":10,"m":"V","sx":"FILL","sy":"FILL"},"c":[
+   {"ref":"8570:143288","h":"e9e29de09238dbd6"},
+   {"id":"8570:144242","t":"FRAME","n":"Date","b":[0,434,684,16],"l":{"g":40,"jc":"SPACE_BETWEEN","m":"H","p":[0,"s-6",0,"s-4"],"sx":"FILL","sy":"HUG"},"c":[
+    {"id":"8570:144243","t":"TEXT","n":"06:00","b":[16,0,30,14],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144244","t":"TEXT","n":"12:00","b":[86,0,30,14],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"12:00","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144245","t":"TEXT","n":"18:00","b":[155.5,0,30,14],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"18:00","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144246","t":"TEXT","n":"21","b":[225.5,0,30,14],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"21","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144247","t":"TEXT","n":"06:00","b":[295,0,30,14],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144248","t":"TEXT","n":"12:00","b":[365,0,30,14],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"12:00","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144249","t":"TEXT","n":"18:00","b":[434.5,0,30,14],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"18:00","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144250","t":"TEXT","n":"22","b":[504.5,0,30,14],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"22","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144251","t":"TEXT","n":"06:00","b":[574,0,30,14],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Md/Numbers 5 300","ta":"CENTER"}},
+    {"id":"8570:144252","t":"FRAME","n":"icons/action","b":[644,0,16,16],"clip":true,"c":[
+     {"id":"8570:144253","t":"POLYGON","n":"Polygon 4","b":[15,1,14,14],"s":["Core/White"],"sw":"border-width/w-100","sa":"CENTER"},
+     {"id":"8570:144254","t":"ELLIPSE","n":"Ellipse 34","b":[5,5,6,6],"s":["Core/White"],"sw":1,"sa":"CENTER"}
+    ]}
+   ]}
+  ]}
+}

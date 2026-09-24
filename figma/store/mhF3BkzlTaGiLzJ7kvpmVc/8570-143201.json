@@ -1,0 +1,13 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "8570:143201",
+ "page": "✅ Trade 1",
+ "name": "main",
+ "hash": "3ba8448257a0a19b",
+ "syncedAt": "2026-09-24T22:27:14.281Z",
+ "tree":
+  {"id":"8570:143201","t":"FRAME","n":"main","b":[0,0,942,1005],"c":[
+   {"ref":"8570:143202","h":"95951d1fcab78e05"}
+  ]}
+}
