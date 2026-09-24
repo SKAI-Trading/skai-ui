@@ -1,7 +1,7 @@
 {
   "resolvedAt": "2026-09-24",
   "method": "figma.getNodeByIdAsync per candidate, per file, after loadAsync on every page; top-level ancestor found by walking parents to the PAGE",
-  "candidatesChecked": 398,
+  "candidatesChecked": 666,
   "filesChecked": [
     "3sSzw1KewMtUbeLAv7uW0r",
     "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -10,9 +10,9 @@
   "foundCount": 616,
   "notFoundCount": 50,
   "foundPerFile": {
-    "3sSzw1KewMtUbeLAv7uW0r": 46,
-    "mhF3BkzlTaGiLzJ7kvpmVc": 34,
-    "M6r9FEn042UWTQD1zvy6GM": 200
+    "3sSzw1KewMtUbeLAv7uW0r": 202,
+    "mhF3BkzlTaGiLzJ7kvpmVc": 175,
+    "M6r9FEn042UWTQD1zvy6GM": 239
   },
   "found": {
     "11267-123776": {
