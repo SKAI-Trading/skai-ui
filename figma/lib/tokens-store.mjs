@@ -3,7 +3,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { EXPORT_KIND, PROVENANCE_KIND, fnv1a32 } from "./tokens-plugin.mjs";
+import { EXPORT_KIND, PROVENANCE_KIND, LIBRARY_KIND, fnv1a32 } from "./tokens-plugin.mjs";
 import { readLedger, callsOn, budgetFrom, assertBudget as sharedAssertBudget, nonceSeen, appendLine, utcDay } from "./ledger.mjs";
 
 export const FILES = {
@@ -24,6 +24,7 @@ export function paths(root) {
     text: path.join(t, "text-styles.json"),
     effect: path.join(t, "effect-styles.json"),
     paint: path.join(t, "paint-styles.json"),
+    grid: path.join(t, "grid-styles.json"),
     sources: path.join(t, "sources.json"),
     drift: path.join(t, "DRIFT.md"),
     ledger: path.join(root, "ledger", "calls.jsonl"),
@@ -95,8 +96,18 @@ export function load(p) {
   const vj = readJson(p.variables, { v: 1, variables: {}, collections: {} });
   const vars = new Map();
   const nameToKey = new Map();
-  for (const [name, e] of Object.entries(vj.variables || {})) {
-    vars.set(e.key, { ...e, name: e.name || name });
+  // A name two collections share was emitted as "<collection>/<name>". Recover the name itself, or the next save
+  // would count one holder of it, not two, and emit the other holder under the bare name.
+  const entries = Object.entries(vj.variables || {});
+  const bare = (k, e) => (e.collection && k.startsWith(`${e.collection}/`) ? k.slice(e.collection.length + 1) : null);
+  const bareCount = new Map();
+  for (const [k, e] of entries) {
+    const b = bare(k, e);
+    if (b !== null) bareCount.set(b, (bareCount.get(b) || 0) + 1);
+  }
+  for (const [name, e] of entries) {
+    const b = bare(name, e);
+    vars.set(e.key, { ...e, name: e.name || (b !== null && bareCount.get(b) > 1 ? b : name) });
     nameToKey.set(name, e.key);
   }
   // Stored aliases carry the emitted name; hold them by key so a later re-key cannot break them.
@@ -108,9 +119,35 @@ export function load(p) {
       }
     }
   }
+  // A style names the variables bound in it by their emitted names. Held as "$<key12>" markers instead, a style
+  // keeps pointing at the right variable when a later read re-keys that variable's name (a new collision makes
+  // "s-4" into "Spacing/s-4"); save() writes the current name back.
+  const toMarker = (s) => {
+    if (typeof s !== "string") return s;
+    const m = /^(.*?)(@[\d.]+)?$/.exec(s);
+    const k = m && nameToKey.get(m[1]);
+    return k ? `$${k.slice(0, 12)}${m[2] || ""}` : s;
+  };
+  const mapValues = (o) => {
+    const out = {};
+    for (const [f, v] of Object.entries(o)) out[f] = toMarker(v);
+    return out;
+  };
+  const refsToMarkers = (e) => {
+    if (e.bv) e.bv = mapValues(e.bv);
+    if (Array.isArray(e.paints)) e.paints = e.paints.map((x) => (typeof x === "string" ? toMarker(x) : x && Array.isArray(x.stops) ? { ...x, stops: x.stops.map(([pos, c]) => [pos, toMarker(c)]) } : x));
+    if (Array.isArray(e.effects)) e.effects = e.effects.map((x) => (x && "c" in x ? { ...x, c: toMarker(x.c) } : x));
+    if (Array.isArray(e.grids)) e.grids = e.grids.map((g) => ({ ...g, ...("c" in g ? { c: toMarker(g.c) } : {}), ...(g.bv ? { bv: mapValues(g.bv) } : {}) }));
+    return e;
+  };
+  // A style name two styles share was emitted as "<name> #<first 6 of key>"; the name itself is without it.
+  const rawStyleName = (name, key) => {
+    const suffix = ` #${String(key).slice(0, 6)}`;
+    return name.endsWith(suffix) ? name.slice(0, -suffix.length) : name;
+  };
   const styles = (f, kind) => {
     const m = new Map();
-    for (const [name, e] of Object.entries(readJson(f, {}))) m.set(e.key, { ...e, name, kind });
+    for (const [name, e] of Object.entries(readJson(f, {}))) m.set(e.key, refsToMarkers({ ...e, name: rawStyleName(name, e.key), kind }));
     return m;
   };
   return {
@@ -119,9 +156,18 @@ export function load(p) {
     text: styles(p.text, "text"),
     effect: styles(p.effect, "effect"),
     paint: styles(p.paint, "paint"),
+    grid: styles(p.grid, "grid"),
     sources: migrateSources(readJson(p.sources, { v: 1, runs: {}, library: null })),
   };
 }
+
+/** Every style map of the store, with the letter its library key list is filed under. */
+const styleMaps = (st) => [
+  ["t", st.text],
+  ["e", st.effect],
+  ["p", st.paint],
+  ["g", st.grid],
+];
 
 /** Recomputes run.complete and run.coverage from the per-page counts. */
 export function coverageOf(run) {
@@ -158,7 +204,7 @@ function migrateSources(src) {
 
 export function knownKeys(st) {
   const out = [];
-  for (const m of [st.vars, st.text, st.effect, st.paint]) for (const [k, e] of m) if (e.remote) out.push(k.slice(0, 12));
+  for (const m of [st.vars, st.text, st.effect, st.paint, st.grid]) for (const [k, e] of m) if (e.remote) out.push(k.slice(0, 12));
   return out.sort();
 }
 
@@ -210,6 +256,14 @@ function resolveMarkers(x, nameOfRef, unresolved) {
   return x;
 }
 
+// The optional marks an entry carries, each written only when set: the library's publish status when it is not
+// CURRENT, and notInLibrary for a token a product-file walk found that the library file does not define.
+function flags(out, e) {
+  if (e.publish) out.publish = e.publish;
+  if (e.notInLibrary) out.notInLibrary = true;
+  return out;
+}
+
 export function save(p, st, syncedAt) {
   applyLibrary(st);
   const nameOfRef = resolverFor(st);
@@ -231,14 +285,18 @@ export function save(p, st, syncedAt) {
     }
     const out = { id: e.id, key: k, collection: e.collection, type: e.type, modes, remote: !!e.remote, scopes: e.scopes || [] };
     if (e.codeSyntax) out.codeSyntax = e.codeSyntax;
-    variables[nameOf.get(k)] = out;
+    if (e.hiddenFromPublishing) out.hiddenFromPublishing = true;
+    variables[nameOf.get(k)] = flags(out, e);
   }
-  writeJson(p.variables, { v: 1, syncedAt, collections: st.collections, variables });
+  const vj = { v: 1, syncedAt, collections: st.collections, variables };
+  const ex = st.sources.export;
+  if (ex) vj.export = { complete: !!ex.complete, source: ex.source, sourceName: ex.sourceName, method: ex.method, at: ex.updatedAt };
+  writeJson(p.variables, vj);
 
   const emitStyles = (m, f, shape) => {
     const nameOfStyle = styleNames(m);
     const o = {};
-    for (const [k, e] of m) o[nameOfStyle.get(k)] = resolveMarkers(shape(e, k), nameOfRef, unresolved);
+    for (const [k, e] of m) o[nameOfStyle.get(k)] = flags(resolveMarkers(shape(e, k), nameOfRef, unresolved), e);
     if (m.size || fs.existsSync(f)) writeJson(f, o);
   };
   emitStyles(st.text, p.text, (e, k) => {
@@ -248,6 +306,7 @@ export function save(p, st, syncedAt) {
   });
   emitStyles(st.effect, p.effect, (e, k) => ({ effects: e.effects, key: k, remote: !!e.remote }));
   emitStyles(st.paint, p.paint, (e, k) => ({ paints: e.paints, key: k, remote: !!e.remote }));
+  emitStyles(st.grid, p.grid, (e, k) => ({ grids: e.grids, key: k, remote: !!e.remote }));
   writeJson(p.sources, st.sources);
   return { unresolved: [...unresolved].sort() };
 }
@@ -409,6 +468,208 @@ export function ingestProvenance(st, r, at) {
   return st.sources.library;
 }
 
+// ---------------------------------------------------------------- library read
+
+// A status the read could not get ("?") marks nothing on the entry; export.publish counts those per kind instead.
+const PUB = { U: "UNPUBLISHED", X: "CHANGED" };
+const LIST_KINDS = ["v", "ts", "ps", "es", "gs"];
+const KEY_LETTER = { v: "v", ts: "t", ps: "p", es: "e", gs: "g" };
+
+// A mode value in one comparable form: an alias by its target's key prefix, whichever way it is held.
+function canonValue(val) {
+  if (val && typeof val === "object") {
+    if ("aliasKey" in val) return `$${String(val.aliasKey).slice(0, 12)}`;
+    if ("alias" in val) return /^[$?]/.test(val.alias) ? val.alias : `name:${val.alias}`;
+  }
+  return val;
+}
+
+/**
+ * The fields of an entry the library read sets, in a form two reads of the same token agree on. Variable references
+ * inside styles are "$<key12>" markers on both sides (load() turns stored names back into markers).
+ */
+function comparable(kind, e) {
+  const or = (x) => (x === undefined ? null : x);
+  if (kind === "v") {
+    const modes = {};
+    for (const [m, v] of Object.entries(e.modes || {})) modes[m] = canonValue(v);
+    // No id: it is per file, not part of the definition.
+    return { name: e.name, collection: e.collection, type: e.type, modes, scopes: [...(e.scopes || [])].sort(), codeSyntax: (e.codeSyntax && e.codeSyntax.WEB) || null };
+  }
+  if (kind === "ts") return { name: e.name, ff: e.ff, fs: e.fs, fw: e.fw, lh: e.lh, ls: e.ls, tc: e.tc, td: e.td, bv: or(e.bv) };
+  if (kind === "ps") return { name: e.name, paints: or(e.paints) };
+  if (kind === "es") return { name: e.name, effects: or(e.effects) };
+  return { name: e.name, grids: or(e.grids) };
+}
+
+const short = (x) => {
+  const s = JSON.stringify(x);
+  return s === undefined ? "undefined" : s.length > 160 ? `${s.slice(0, 157)}...` : s;
+};
+
+/**
+ * Merges one part of a library read (tokens-library/1) into the store. Every token the library defines is written
+ * with the library's values; a token the store already held is compared field by field first and each difference is
+ * recorded. The read is marked complete only when the parts, read in order from row 0, cover every row the library
+ * listed, every collection's variable count is met, grid styles were read, and no item failed to read. The ledger
+ * line is written by the caller BEFORE this runs.
+ */
+export function ingestLibrary(st, r, at) {
+  const { h, d } = r;
+  const m = d.m;
+  if (!m || m.file !== h.file) throw new Error(`library result names file ${m && m.file} inside and ${h.file} outside`);
+  const rows = LIST_KINDS.reduce((n, k) => n + d[k].length, 0);
+  if (rows !== m.n) throw new Error(`library part says it carries ${m.n} rows but holds ${rows}`);
+  const prevEx = st.sources.export;
+  if (prevEx && prevEx.parts && prevEx.parts.some((x) => x.sum === r.sum)) return { already: true, ex: prevEx, rows, part: { from: m.from, n: m.n, next: m.next, total: m.total } };
+  let ex;
+  if (m.from === 0) {
+    ex = { method: "library-read", source: h.file, sourceName: h.file === LIBRARY_FILE ? LIBRARY_NAME : FILES[h.file] || h.file, complete: false, startedAt: at, total: m.total, counts: m.counts, next: 0, parts: [], got: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, perCol: {}, keys: { v: [], t: [], e: [], p: [], g: [] }, added: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, same: 0, changes: [], externalAliases: [], bad: [], unread: { v: 0, ts: 0, ps: 0, es: 0, gs: 0 }, unreadVariables: [], publishErrors: {} };
+  } else {
+    // sources.json is written with sorted keys, so the counts compare in that form.
+    const same = (a, b) => JSON.stringify(sortDeep(a)) === JSON.stringify(sortDeep(b));
+    const cont = prevEx && !prevEx.complete && prevEx.method === "library-read" && prevEx.source === h.file && prevEx.next === m.from && prevEx.total === m.total && same(prevEx.counts, m.counts);
+    if (!cont) {
+      throw new Error(
+        `library part from row ${m.from} does not continue the read in progress (${prevEx ? `next ${prevEx.next}, ${prevEx.total} rows, counts ${JSON.stringify(sortDeep(prevEx.counts || {}))}, complete ${!!prevEx.complete}` : "none"}; this part: ${m.total} rows, counts ${JSON.stringify(sortDeep(m.counts))}). ` +
+          `The library may have changed between calls: start again with library-script --restart.`,
+      );
+    }
+    ex = prevEx;
+  }
+  ex.updatedAt = at;
+
+  // Collections: matched by key, so a renamed collection keeps what the walk recorded (seenIn).
+  for (const [name, key, modes, n, hid] of d.cols) {
+    const was = Object.keys(st.collections).find((k) => st.collections[k].key === key);
+    const prev = was ? st.collections[was] : null;
+    if (prev && was !== name) {
+      ex.changes.push({ kind: "collection", name, field: "name", was, now: name });
+      delete st.collections[was];
+    }
+    if (prev && JSON.stringify(prev.modes) !== JSON.stringify(modes)) ex.changes.push({ kind: "collection", name, field: "modes", was: short(prev.modes), now: short(modes) });
+    const c = { ...(prev || {}), key, remote: true, modes, variables: n, seenIn: (prev && prev.seenIn) || [] };
+    if (hid) c.hiddenFromPublishing = true;
+    else delete c.hiddenFromPublishing;
+    st.collections[name] = c;
+  }
+
+  const status = (kind, e, pc) => {
+    if (pc === "?") {
+      ex.unread[kind]++;
+      if (kind === "v" && ex.unreadVariables.length < 100) ex.unreadVariables.push(e.name);
+    } else if (pc) e.publish = PUB[pc] || pc;
+  };
+  const upsert = (kind, map, key, e) => {
+    const prev = map.get(key);
+    if (!prev) ex.added[kind]++;
+    else {
+      // Stored entries come back with sorted keys, so fields compare key-order-free.
+      const a = sortDeep(comparable(kind, prev));
+      const b = sortDeep(comparable(kind, e));
+      let diff = false;
+      for (const f of Object.keys(b)) {
+        if (JSON.stringify(a[f]) === JSON.stringify(b[f])) continue;
+        diff = true;
+        if (ex.changes.length < 300) ex.changes.push({ kind, name: e.name, field: f, was: short(a[f]), now: short(b[f]) });
+      }
+      if (!diff) ex.same++;
+    }
+    map.set(key, e);
+    ex.got[kind]++;
+    ex.keys[KEY_LETTER[kind]].push(key.slice(0, 12));
+  };
+
+  for (const row of d.v) {
+    const [lid, name, ci, T, key, scopes, vals, web, hid, pc] = row;
+    const col = d.cols[ci];
+    const modeNames = col ? col[2] : vals.map((_, i) => `Mode ${i + 1}`);
+    const modes = {};
+    modeNames.forEach((mn, i) => {
+      const val = vals[i];
+      modes[mn] = val && typeof val === "object" && "a" in val ? { alias: val.a.startsWith("?") ? val.a : `$${val.a}` } : val === undefined ? null : val;
+    });
+    // Ids are per file: a product file numbers its imported copy itself (the walk saw VariableID:<key>/692:225 where
+    // the library's own id is VariableID:692:197). So the id is never built: the product-file id the walk saw stays,
+    // and a variable only the library read has gets the library's own id.
+    const prevVar = st.vars.get(key);
+    const e = { id: prevVar && prevVar.id ? prevVar.id : `VariableID:${lid}`, name, collection: col ? col[0] : "?", type: TYPE_OF[T] || T, modes, remote: true, scopes: scopes || [] };
+    if (web) e.codeSyntax = { WEB: web };
+    if (hid) e.hiddenFromPublishing = true;
+    status("v", e, pc);
+    if (col) ex.perCol[col[0]] = (ex.perCol[col[0]] || 0) + 1;
+    upsert("v", st.vars, key, e);
+  }
+  for (const row of d.ts) {
+    const [name, key, ff, style, size, lh, ls, tc, td, bv, pc] = row;
+    const e = { name, kind: "text", ff, fs: size, fw: weightOf(style), lh, ls, tc, td, remote: true };
+    if (bv) e.bv = bv;
+    status("ts", e, pc);
+    upsert("ts", st.text, key, e);
+  }
+  const plain = (kind, map, field, rows, k) => {
+    for (const [name, key, list, pc] of rows) {
+      const e = { name, kind: k, [field]: list, remote: true };
+      status(kind, e, pc);
+      upsert(kind, map, key, e);
+    }
+  };
+  plain("ps", st.paint, "paints", d.ps, "paint");
+  plain("es", st.effect, "effects", d.es, "effect");
+  plain("gs", st.grid, "grids", d.gs, "grid");
+
+  for (const x of d.ext) if (!ex.externalAliases.some((y) => y[0] === x[0])) ex.externalAliases.push(x);
+  for (const x of d.bad) ex.bad.push(x);
+  ex.parts.push({ from: m.from, n: m.n, sum: r.sum, at, pub: m.pub, items: m.items, gridRead: !!m.gridRead });
+  ex.next = m.next;
+  ex.gridRead = ex.parts.every((x) => x.gridRead);
+  for (const [k, n] of Object.entries(d.err || {})) if (/^publish status/.test(k)) ex.publishErrors[k] = Math.max(ex.publishErrors[k] || 0, n);
+  // Statuses are read for every item on every call; `read` is the fewest any part got. `unread` counts, per kind,
+  // the rows written without one (their entries carry no publish mark, which is NOT a claim they are CURRENT).
+  ex.publish = { read: Math.min(...ex.parts.map((x) => x.pub)), of: m.items, complete: ex.parts.every((x) => x.pub === x.items), unread: ex.unread, unreadVariables: ex.unreadVariables, errors: ex.publishErrors };
+
+  const why = [];
+  const covered = ex.parts.reduce((n, x) => n + x.n, 0);
+  if (ex.next !== null) why.push(`${covered} of ${ex.total} rows read: continue with library-script (it starts at row ${ex.next})`);
+  else if (covered !== ex.total) why.push(`the parts cover ${covered} rows, the library listed ${ex.total}`);
+  for (const k of LIST_KINDS) if (ex.got[k] !== ex.counts[k]) why.push(`${k}: ${ex.got[k]} read of ${ex.counts[k]}`);
+  for (const [name, , , n] of d.cols) if ((ex.perCol[name] || 0) !== n && ex.next === null) why.push(`collection ${name} lists ${n} variables, ${ex.perCol[name] || 0} read`);
+  if (!ex.gridRead) why.push("grid styles could not be read (getLocalGridStylesAsync)");
+  if (ex.bad.length) why.push(`${ex.bad.length} item(s) failed to read: ${ex.bad.map((x) => x[1]).join(", ")}`);
+  ex.why = why;
+  ex.complete = why.length === 0;
+
+  if (ex.complete) {
+    const prev = st.sources.library || {};
+    const pack = (a) => [...new Set(a)].sort().join("");
+    const keys = { w: 12, v: pack(ex.keys.v), t: pack(ex.keys.t), e: pack(ex.keys.e), p: pack(ex.keys.p), g: pack(ex.keys.g) };
+    // The earlier provenance call listed the same library's key prefixes: equal lists mean the library did not
+    // gain or lose a token between the two reads.
+    if (prev.keys && prev.file === h.file) {
+      ex.provenanceCheck = { checkedAt: prev.checkedAt, w: prev.keys.w || 12 };
+      for (const l of ["v", "t", "e", "p"]) {
+        const w = prev.keys.w || 12;
+        const mine = pack(ex.keys[l].map((k) => k.slice(0, w)));
+        ex.provenanceCheck[l] = mine === prev.keys[l] ? "same" : `differs (${unpackW(prev.keys[l], w).size} then, ${unpackW(mine, w).size} now)`;
+      }
+    }
+    st.sources.library = {
+      file: h.file,
+      fileName: ex.sourceName,
+      note: "use_figma reports figma.root.name as 'Document'; the file is identified by the fileKey the call ran against",
+      checkedAt: at,
+      method: "library read: every local collection, variable and style of the file, with values",
+      localCollections: d.cols.map(([name, key, modes, n]) => ({ name, key, modes, variables: n })),
+      localCounts: { vars: ex.counts.v, text: ex.counts.ts, effect: ex.counts.es, paint: ex.counts.ps, grid: ex.counts.gs },
+      keys,
+      keysCut: 0,
+    };
+    delete ex.keys;
+  }
+  st.sources.export = ex;
+  return { ex, rows, part: { from: m.from, n: m.n, next: m.next, total: m.total } };
+}
+
 const unpackW = (s, w) => {
   const out = new Set();
   for (let i = 0; i + w <= String(s || "").length; i += w) out.add(s.slice(i, i + w));
@@ -423,7 +684,16 @@ export function applyLibrary(st) {
   const lib = st.sources.library;
   if (!lib || !lib.keys) return null;
   const w = lib.keys.w || 12;
-  const sets = { v: unpackW(lib.keys.v, w), t: unpackW(lib.keys.t, w), e: unpackW(lib.keys.e, w), p: unpackW(lib.keys.p, w) };
+  // Grid styles have a key list only once the library read has looked for them.
+  const sets = { v: unpackW(lib.keys.v, w), t: unpackW(lib.keys.t, w), e: unpackW(lib.keys.e, w), p: unpackW(lib.keys.p, w), g: typeof lib.keys.g === "string" ? unpackW(lib.keys.g, w) : null };
+  // notInLibrary is a claim about the library's WHOLE list, so it is made only from uncut lists; otherwise unknown.
+  const whole = !lib.keysCut;
+  for (const [m, set] of [[st.vars, sets.v], ...styleMaps(st).map(([l, m]) => [m, sets[l]])]) {
+    for (const [k, e] of m) {
+      if (whole && set && !set.has(k.slice(0, w))) e.notInLibrary = true;
+      else delete e.notInLibrary;
+    }
+  }
   const colKeys = new Set(lib.localCollections.map((c) => c.key));
   for (const [name, c] of Object.entries(st.collections)) {
     c.library = colKeys.has(c.key)
@@ -446,6 +716,7 @@ export function applyLibrary(st) {
     tally(st.effect, sets.e, "effect styles", styleNames(st.effect)),
     tally(st.paint, sets.p, "paint styles", styleNames(st.paint)),
   ];
+  if (sets.g) lib.match.push(tally(st.grid, sets.g, "grid styles", styleNames(st.grid)));
   lib.collectionsMatched = Object.values(st.collections).filter((c) => c.library && c.library.file).length;
   return lib;
 }
@@ -463,6 +734,7 @@ export function allTokens(st) {
   add(st.text, "text-style", "TEXT");
   add(st.effect, "effect-style", "EFFECT");
   add(st.paint, "paint-style", "PAINT");
+  add(st.grid, "grid-style", "GRID");
   return out.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
 }
 

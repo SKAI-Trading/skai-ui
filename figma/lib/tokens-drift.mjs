@@ -503,6 +503,7 @@ function category(t) {
   if (t.kind === "paint-style") return "colour";
   if (t.kind === "text-style") return "type";
   if (t.kind === "effect-style") return "effect";
+  if (t.kind === "grid-style") return "grid";
   if (t.type === "COLOR") return "colour";
   if (/^border-radius\//.test(t.name)) return "radius";
   if (/^border-width\//.test(t.name)) return "border";
@@ -597,6 +598,7 @@ function figmaValue(t, cat) {
   }
   if (cat === "type") return { type: e, text: `${e.ff || "(no family)"} ${e.fs}/${e.lh} ${e.fw || "(no weight)"}${e.ls ? ` ls ${e.ls}` : ""}` };
   if (cat === "effect") return { effects: e.effects, text: e.effects.map((x) => (x.o ? `${x.t.toLowerCase()} ${x.o.join(" ")} ${x.r} ${x.c}` : `${x.t.toLowerCase()} ${x.r}`)).join(", ") };
+  if (cat === "grid") return { grids: e.grids, text: (e.grids || []).map((g) => (g.pattern === "GRID" ? `grid ${g.sectionSize}px` : `${g.count} ${g.pattern.toLowerCase()}${g.sectionSize !== undefined ? ` of ${g.sectionSize}px` : ""}, gutter ${g.gutterSize}px, ${String(g.alignment).toLowerCase()}${g.offset !== undefined ? `, offset ${g.offset}px` : ""}`)).join("; ") };
   const modes = Object.values(e.modes);
   const v = modes[0];
   const text = modes.length > 1 && modes.some((x) => x !== v) ? `${v} (${Object.entries(e.modes).map(([m, x]) => `${m} ${x}`).join(", ")})` : String(v);
@@ -745,8 +747,37 @@ const CAT_TITLES = [
   ["opacity", "Opacity"],
   ["type", "Text styles"],
   ["effect", "Effects"],
+  ["grid", "Layout grids"],
   ["other", "Other"],
 ];
+
+/**
+ * Checks on the Figma set itself, each a fact computed from the tokens: several variables claiming one code-syntax
+ * name, a text style whose line height is below its font size, and a spacing variable s-N whose value is not 4 x N
+ * when every other s-N is (the scale's own rule, measured, not assumed).
+ */
+export function figmaChecks(tokens) {
+  const out = [];
+  const bySyntax = new Map();
+  for (const t of tokens) {
+    const w = t.kind === "variable" && t.entry.codeSyntax && t.entry.codeSyntax.WEB;
+    if (w) bySyntax.set(w, [...(bySyntax.get(w) || []), t.name]);
+  }
+  for (const [w, names] of bySyntax) if (names.length > 1) out.push({ what: "code syntax", text: `${names.length} variables declare the WEB code syntax \`${w}\`: ${names.map((n) => `\`${n}\``).join(", ")}` });
+  for (const t of tokens) {
+    const e = t.entry;
+    if (t.kind === "text-style" && typeof e.lh === "number" && typeof e.fs === "number" && e.lh < e.fs) out.push({ what: "line height", text: `\`${t.name}\` sets ${e.fs}px type on a ${e.lh}px line` });
+  }
+  const steps = tokens
+    .filter((t) => t.kind === "variable" && /^s-\d+(,\d+)?$/.test(t.name))
+    .map((t) => ({ t, n: Number(t.name.slice(2).replace(",", ".")), v: Object.values(t.entry.modes || {})[0] }))
+    .filter((x) => typeof x.v === "number");
+  const on = steps.filter((x) => Math.abs(x.v - x.n * 4) < 0.01);
+  if (steps.length >= 4 && on.length >= steps.length - 2) {
+    for (const x of steps) if (!on.includes(x)) out.push({ what: "spacing scale", text: `\`${x.t.name}\` is ${x.v}px where ${on.length} of the other ${steps.length - 1} spacing steps are 4 x N (4 x ${x.n} = ${x.n * 4}px)` });
+  }
+  return out;
+}
 const cell = (s) => String(s).replace(/\|/g, "\\|");
 
 export function buildDrift(st, sources, meta = {}) {
@@ -788,16 +819,28 @@ export function buildDrift(st, sources, meta = {}) {
   L.push("## Where the Figma side comes from");
   L.push("");
   const lib = st.sources.library;
+  const ex = st.sources.export;
   const cols = Object.entries(st.collections);
-  L.push(`- ${st.vars.size} variables, ${st.text.size} text styles, ${st.effect.size} effect styles, ${st.paint.size} paint styles, read from the tracked frames of the three files.`);
-  for (const [name, c] of cols) L.push(`- Collection **${name}** (key \`${c.key}\`, modes ${c.modes.join(", ")}): ${c.library && c.library.file ? `a local collection of \`${c.library.file}\` (${c.library.fileName}), matched by key` : "NOT matched to a library file"}.`);
-  if (lib && lib.match) {
-    L.push(`- Library check against \`${lib.file}\` (${lib.fileName}), from its own local key list: ${lib.match.map((m) => `${m.kind} ${m.inLibrary}/${m.stored}`).join(", ")}.`);
-    for (const m of lib.match) if (m.notInLibrary.length) L.push(`  - ${m.kind} NOT defined in ${lib.fileName}: ${m.notInLibrary.map((n) => `\`${n}\``).join(", ")}.`);
-    L.push(`  - The library itself defines ${lib.localCounts.vars} variables, ${lib.localCounts.text} text, ${lib.localCounts.effect} effect and ${lib.localCounts.paint} paint styles; the frames walked use the counts above.`);
+  const counts = `${st.vars.size} variables, ${st.text.size} text styles, ${st.effect.size} effect styles, ${st.paint.size} paint styles${st.grid && st.grid.size ? `, ${st.grid.size} grid styles` : ""}`;
+  const walkOnly = tokens.filter((t) => t.entry.notInLibrary);
+  const complete = !!(ex && ex.complete);
+  if (complete) {
+    L.push(`- ${counts}. The set is COMPLETE: every local collection, variable and style of \`${ex.source}\` (${ex.sourceName}), read from the library file itself (${ex.method}, ${ex.parts.length} checksummed call${ex.parts.length === 1 ? "" : "s"}, last ${String(ex.updatedAt).slice(0, 10)})${walkOnly.length ? `, plus ${walkOnly.length} the frame walk found that the library does not define (flagged \`notInLibrary\`, marked "walk only" below)` : ""}.`);
+    L.push(`  - Of the tokens the frame walk had stored before, ${ex.same} are identical to the library's definitions field by field; ${ex.changes.length} differ${ex.changes.length ? `: ${ex.changes.slice(0, 20).map((c) => `\`${c.name}\` ${c.field}`).join(", ")}` : ""}.`);
+    const unread = Object.entries(ex.publish.unread || {}).filter(([, n]) => n);
+    L.push(`  - Publish status (the product files see a library token as last published): ${ex.publish.read} of ${ex.publish.of} items read${unread.length ? `; not readable for ${unread.map(([k, n]) => `${n} ${{ v: "variables", ts: "text", ps: "paint", es: "effect", gs: "grid" }[k]}`).join(", ")}${Object.keys(ex.publish.errors || {}).length ? ` (${Object.keys(ex.publish.errors).join("; ")})` : ""}` : ""}; ${tokens.filter((t) => t.entry.publish).length ? `marked: ${tokens.filter((t) => t.entry.publish).map((t) => `\`${t.name}\` ${t.entry.publish}`).join(", ")}` : "none read is UNPUBLISHED or CHANGED"}.`);
+  } else {
+    L.push(`- ${counts}, read from the tracked frames of the three files${ex ? ` and a library read that is NOT complete (${(ex.why || []).join("; ") || "no reason recorded"})` : ""}: NOT the whole set. Run \`figma:tokens -- library-script\` for the library's own list.`);
   }
-  L.push("- Colours in these files are PAINT STYLES, not variables (only `White` and `Black` are colour variables).");
-  L.push("- Coverage, per file (a sampled walk; tokens used only on frames not walked are missing from this report):");
+  for (const [name, c] of cols) L.push(`- Collection **${name}** (key \`${c.key}\`, modes ${c.modes.join(", ")}${c.variables ? `, ${c.variables} variables` : ""}): ${c.library && c.library.file ? `a local collection of \`${c.library.file}\` (${c.library.fileName}), matched by key` : "NOT matched to a library file"}.`);
+  if (lib && lib.match) {
+    L.push(`- Library check against \`${lib.file}\` (${lib.fileName}), ${lib.method ? "from the library read" : "from its own local key list"}: ${lib.match.map((m) => `${m.kind} ${m.inLibrary}/${m.stored}`).join(", ")}.`);
+    for (const m of lib.match) if (m.notInLibrary.length) L.push(`  - ${m.kind} NOT defined in ${lib.fileName}: ${m.notInLibrary.map((n) => `\`${n}\``).join(", ")}.`);
+    if (!lib.method) L.push(`  - The library itself defines ${lib.localCounts.vars} variables, ${lib.localCounts.text} text, ${lib.localCounts.effect} effect and ${lib.localCounts.paint} paint styles; the frames walked use the counts above.`);
+  }
+  const colourVars = tokens.filter((t) => t.kind === "variable" && t.type === "COLOR");
+  L.push(`- Colours are ${st.paint.size} PAINT STYLES; ${colourVars.length ? `the only colour variables are ${colourVars.map((t) => `\`${t.name}\``).join(", ")}` : "no variable holds a colour"}.`);
+  L.push(`- The \`uses\` column counts uses in a SAMPLED walk of the product files (0 means not seen in the frames walked, not unused). Coverage per file${complete ? "" : " (tokens used only on frames not walked are missing from this report)"}:`);
   for (const [k, r] of Object.entries(st.sources.runs || {})) {
     const c = r.coverage || {};
     L.push(`  - ${r.fileName} \`${k}\`: ${c.framesWalked} top-level frames walked on ${c.pagesTouched} of ${c.pagesPlanned} tracked pages${c.pagesNotReached && c.pagesNotReached.length ? `; pages not reached: ${c.pagesNotReached.map((x) => `\`${x}\``).join(", ")}` : ""}${r.complete ? "; complete" : "; NOT complete"}.`);
@@ -832,9 +875,19 @@ export function buildDrift(st, sources, meta = {}) {
     L.push("");
     L.push(`| Figma token | value | uses | ${sources.map((s) => s.id).join(" | ")} |`);
     L.push(`|---|---|---|${sources.map(() => "---").join("|")}|`);
-    for (const r of rs) L.push(`| \`${cell(r.t.name)}\` | ${cell(r.fv.text)} | ${r.uses} | ${r.cells.map((c) => cell(c.text)).join(" | ")} |`);
+    for (const r of rs) L.push(`| \`${cell(r.t.name)}\`${r.t.entry.notInLibrary ? " (walk only: NOT in the library)" : ""}${r.t.entry.publish ? ` (${r.t.entry.publish})` : ""} | ${cell(r.fv.text)} | ${r.uses} | ${r.cells.map((c) => cell(c.text)).join(" | ")} |`);
     L.push("");
   }
+  const checks = figmaChecks(tokens);
+  L.push("## Checks on the Figma set itself");
+  L.push("");
+  L.push("Facts computed from the tokens above, for the designer to confirm or fix in the library; none is a code change.");
+  L.push("");
+  if (checks.length) for (const c of checks) L.push(`- ${c.what}: ${c.text}.`);
+  else L.push("- none");
+  const unnamed = Object.entries(st.collections).filter(([, c]) => c.modes && c.modes.length > 1 && c.modes.every((m) => /^Mode \d+$/.test(m)));
+  if (unnamed.length) L.push(`- modes: ${unnamed.map(([n, c]) => `**${n}** has ${c.modes.length} modes named only ${c.modes.map((m) => `\`${m}\``).join(" / ")}`).join("; ")}, so nothing in the file says which screen or theme each is for.`);
+  L.push("");
   L.push("## Values the sources define that Figma has no token for");
   L.push("");
   L.push("Colours matched against every Figma colour (paint styles and colour variables); radii, spacings and font sizes against");
@@ -854,9 +907,9 @@ export function buildDrift(st, sources, meta = {}) {
     if (!list.length) L.push("- none");
     L.push("");
   }
-  const counts = { "=": 0, "≠": 0, "~": 0, "—": 0 };
-  for (const r of rows) for (const c of r.cells) counts[c.mark]++;
-  return { text: L.join("\n") + "\n", rows, orphans, summary: `${rows.length} Figma tokens x ${sources.length} sources: ${counts["="]} same, ${counts["≠"]} differ, ${counts["~"]} value-only, ${counts["—"]} lacking; ${orphans.reduce((n, o) => n + o.list.length, 0)} source values with no Figma token` };
+  const marks = { "=": 0, "≠": 0, "~": 0, "—": 0 };
+  for (const r of rows) for (const c of r.cells) marks[c.mark]++;
+  return { text: L.join("\n") + "\n", rows, orphans, checks, summary: `${rows.length} Figma tokens (${complete ? "complete library set" : "walk only, NOT complete"}) x ${sources.length} sources: ${marks["="]} same, ${marks["≠"]} differ, ${marks["~"]} value-only, ${marks["—"]} lacking; ${orphans.reduce((n, o) => n + o.list.length, 0)} source values with no Figma token; ${checks.length} check(s) on the Figma set` };
 }
 
 export function writeDrift(p, uiRoot, appRoot) {
@@ -937,5 +990,25 @@ export async function driftSelfTest() {
   check("a colour Figma has is not listed", !orph.includes("#123F3C"));
   check("the report states coverage and the library proof", /NOT complete/.test(out.text) && /matched by key/.test(out.text));
   check("the report is deterministic", buildDrift(st, srcs, { date: "2026-09-24" }).text === out.text);
+  check("without a complete library read the report says the set is NOT the whole set", /NOT the whole set/.test(out.text) && !/The set is COMPLETE/.test(out.text));
+
+  // A complete library read, a walk-only token, and the checks on the Figma set itself (in memory, on the fixture).
+  const st2 = load(p);
+  st2.sources.export = { complete: true, source: "TyX8YAtNDEIvsnSLQ3IXId", sourceName: "Skai-Design", method: "library-read", parts: [{}, {}], updatedAt: "2026-09-24T09:36:52.211Z", same: 5, changes: [], publish: { read: 3, of: 5, unread: { ts: 2 }, errors: { "publish status: not a function": 2 } } };
+  [...st2.paint.values()].find((e) => e.name === "Accents/Coral 300").notInLibrary = true;
+  const addVar = (key, name, collection, v, web) => st2.vars.set(key, { name, collection, type: "FLOAT", modes: { "Mode 1": v }, remote: true, scopes: [], ...(web ? { codeSyntax: { WEB: web } } : {}) });
+  addVar("a000000000000000000000000000000000000001", "s-1", "Spacing", 4);
+  addVar("a000000000000000000000000000000000000002", "s-2", "Spacing", 8);
+  addVar("a000000000000000000000000000000000000096", "s-96", "Spacing", 348);
+  addVar("a0000000000000000000000000000000000004a1", "border-radius/rounded-4xl", "Primatives", 32, "rounded-3xl");
+  addVar("a0000000000000000000000000000000000004a2", "border-radius/rounded-5xl", "Primatives", 48, "rounded-3xl");
+  st2.text.set("b000000000000000000000000000000000000004", { name: "Lg/Headline 4 300", kind: "text", ff: "Cormorant Garamond", fs: 34, fw: 300, lh: 24, ls: "-4%", tc: "ORIGINAL", td: "NONE", remote: true });
+  const out2 = buildDrift(st2, srcs, { date: "2026-09-24" });
+  check("a complete library read is stated as the source of the set", /The set is COMPLETE: every local collection, variable and style of `TyX8YAtNDEIvsnSLQ3IXId` \(Skai-Design\)/.test(out2.text), out2.text.split("\n").find((l) => /COMPLETE|NOT the whole/.test(l)));
+  check("a walk-only token is marked in its row", /`Accents\/Coral 300` \(walk only: NOT in the library\)/.test(out2.text));
+  check("a spacing step off the scale is reported with the value the scale gives", out2.checks.some((c) => c.what === "spacing scale" && /`s-96` is 348px/.test(c.text) && /384px/.test(c.text)) && !out2.checks.some((c) => /`s-4`/.test(c.text)), JSON.stringify(out2.checks));
+  check("a line height below the font size is reported", out2.checks.some((c) => c.what === "line height" && /`Lg\/Headline 4 300` sets 34px type on a 24px line/.test(c.text)) && !out2.checks.some((c) => /Paragraph 2/.test(c.text)));
+  check("variables sharing one code-syntax name are reported", out2.checks.some((c) => c.what === "code syntax" && /2 variables declare the WEB code syntax `rounded-3xl`/.test(c.text)));
+  check("modes named only 'Mode N' are reported", /\*\*Primatives\*\* has 2 modes named only `Mode 1` \/ `Mode 2`/.test(out2.text));
   return results;
 }

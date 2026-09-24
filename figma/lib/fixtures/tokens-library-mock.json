@@ -1,0 +1,52 @@
+{
+  "_comment": "A made-up library file for the library read in figma/tokens.mjs --self-test. Every key is fake. It overlaps tokens-mock.json (the product file the walk reads) on purpose: s-4, rounded-lg, Green Coal 100, Base/Coal half, two text styles and Shadow/Card are the same tokens, and rounded-lg carries an unpublished edit (10, walk saw 8). Legacy/s-4, Border/Dangling and the walk's Fill/Brand half (key ffff...) are NOT here, so they must stay flagged notInLibrary; this library has its own, different Fill/Brand half (key f4f4...), so the two must be keyed by name and key prefix. valuesByMode of Green Coal 100 lists Light before Dark, so values must be read in the collection's mode order. Local ids are numbered 7:N here while the product fixture's copies end in 1:N, as live (a product file numbers its imported copy itself), so an id must never be built from the key and the library id.",
+  "file": "TyX8YAtNDEIvsnSLQ3IXId",
+  "collections": [
+    { "id": "VariableCollectionId:2:0", "name": "Colors", "key": "c0220000000000000000000000000000000000c2", "modes": [["d", "Dark"], ["l", "Light"]] },
+    { "id": "VariableCollectionId:1:0", "name": "Primatives", "key": "c0110000000000000000000000000000000000c1", "modes": [["m1", "Mode 1"]] }
+  ],
+  "variables": [
+    { "id": "VariableID:7:1", "key": "aaaaaaaaaaaa0000000000000000000000000001", "name": "s-4", "col": "VariableCollectionId:1:0", "type": "FLOAT", "scopes": ["GAP"], "values": { "m1": 16 }, "web": "var(--s-4)" },
+    { "id": "VariableID:7:2", "key": "bbbbbbbbbbbb0000000000000000000000000002", "name": "border-radius/rounded-lg", "col": "VariableCollectionId:1:0", "type": "FLOAT", "scopes": ["CORNER_RADIUS"], "values": { "m1": 10 }, "status": "CHANGED" },
+    { "id": "VariableID:7:3", "key": "cccccccccccc0000000000000000000000000003", "name": "Primary/Green Coal 100", "col": "VariableCollectionId:2:0", "type": "COLOR", "scopes": ["ALL_FILLS"], "values": { "l": { "alias": "VariableID:7:4" }, "d": { "r": 0.07058823529411765, "g": 0.24705882352941178, "b": 0.23529411764705882, "a": 1 } } },
+    { "id": "VariableID:7:4", "key": "444444444444000000000000000000000000000d", "name": "Base/Coal half", "col": "VariableCollectionId:2:0", "type": "COLOR", "scopes": [], "values": { "d": { "r": 0.07058823529411765, "g": 0.24705882352941178, "b": 0.23529411764705882, "a": 0.5 }, "l": { "r": 1, "g": 1, "b": 1, "a": 1 } } },
+    { "id": "VariableID:7:5", "key": "555555555555000000000000000000000000000e", "name": "s-6", "col": "VariableCollectionId:1:0", "type": "FLOAT", "scopes": ["GAP"], "values": { "m1": 24 } },
+    { "id": "VariableID:7:6", "key": "6666666666660000000000000000000000000010", "name": "Brand/Accent", "col": "VariableCollectionId:2:0", "type": "COLOR", "scopes": ["ALL_FILLS"], "values": { "d": { "alias": "VariableID:7:3" }, "l": { "r": 0.09019607843137255, "g": 0.9764705882352941, "b": 0.7058823529411765, "a": 1 } } },
+    { "id": "VariableID:7:7", "key": "7777777777770000000000000000000000000011", "name": "internal/scratch", "col": "VariableCollectionId:1:0", "type": "STRING", "scopes": [], "values": { "m1": "x" }, "hidden": true, "status": "UNPUBLISHED" },
+    { "id": "VariableID:7:8", "key": "8888888888880000000000000000000000000012", "name": "flags/dense", "col": "VariableCollectionId:1:0", "type": "BOOLEAN", "scopes": [], "values": { "m1": false } },
+    { "id": "VariableID:7:9", "key": "9a9a9a9a9a9a0000000000000000000000000013", "name": "Border/External", "col": "VariableCollectionId:1:0", "type": "COLOR", "scopes": [], "values": { "m1": { "alias": "VariableID:abcdefabcdefabcdefabcdefabcdefabcdefabcd/5:5" } } }
+  ],
+  "external": [
+    { "id": "VariableID:abcdefabcdefabcdefabcdefabcdefabcdefabcd/5:5", "key": "abcdefabcdefabcdefabcdefabcdefabcdefabcd", "name": "Other/Ink" }
+  ],
+  "styles": [
+    { "id": "S:dddddddddddd0000000000000000000000000101,5:1", "key": "dddddddddddd0000000000000000000000000101", "type": "TEXT", "name": "Lg/Paragraph 2 300", "fontName": { "family": "Manrope", "style": "SemiBold" }, "fontSize": 14, "lineHeight": { "unit": "PIXELS", "value": 18 }, "letterSpacing": { "unit": "PERCENT", "value": -4 }, "textCase": "ORIGINAL", "textDecoration": "NONE" },
+    { "id": "S:d2d2d2d2d2d20000000000000000000000000104,5:4", "key": "d2d2d2d2d2d20000000000000000000000000104", "type": "TEXT", "name": "Lg/Number 1 700", "fontName": { "family": "Mulish", "style": "Bold" }, "fontSize": 20, "lineHeight": { "unit": "AUTO" }, "letterSpacing": { "unit": "PIXELS", "value": 0 }, "textCase": "UPPER", "textDecoration": "NONE", "bv": { "fontSize": "VariableID:7:1" } },
+    { "id": "S:d3d3d3d3d3d30000000000000000000000000105,5:5", "key": "d3d3d3d3d3d30000000000000000000000000105", "type": "TEXT", "name": "Lg/Label 1 300", "fontName": { "family": "Mulish", "style": "Regular" }, "fontSize": 16, "lineHeight": { "unit": "PIXELS", "value": 16 }, "letterSpacing": { "unit": "PERCENT", "value": -4 }, "textCase": "ORIGINAL", "textDecoration": "NONE" },
+    { "id": "S:eeeeeeeeeeee0000000000000000000000000102,5:2", "key": "eeeeeeeeeeee0000000000000000000000000102", "type": "EFFECT", "name": "Shadow/Card", "effects": [
+      { "type": "DROP_SHADOW", "visible": true, "color": { "r": 0, "g": 0, "b": 0, "a": 0.25 }, "offset": { "x": 0, "y": 4 }, "radius": 12, "spread": 0 },
+      { "type": "BACKGROUND_BLUR", "visible": true, "radius": 24 },
+      { "type": "INNER_SHADOW", "visible": false, "color": { "r": 1, "g": 1, "b": 1, "a": 1 }, "offset": { "x": 0, "y": 1 }, "radius": 0, "spread": 0 }
+    ] },
+    { "id": "S:e2e2e2e2e2e20000000000000000000000000106,5:6", "key": "e2e2e2e2e2e20000000000000000000000000106", "type": "EFFECT", "name": "Glow", "status": "UNPUBLISHED", "effects": [
+      { "type": "DROP_SHADOW", "visible": true, "color": { "r": 0.09019607843137255, "g": 0.9764705882352941, "b": 0.7058823529411765, "a": 1 }, "offset": { "x": 0, "y": 0 }, "radius": 16, "spread": 2, "bvColor": "VariableID:7:6" }
+    ] },
+    { "id": "S:f2f2f2f2f2f20000000000000000000000000107,5:7", "key": "f2f2f2f2f2f20000000000000000000000000107", "type": "PAINT", "name": "Brand/Gradient", "paints": [
+      { "type": "GRADIENT_LINEAR", "visible": true, "opacity": 1, "gradientTransform": [[1, 0, 0], [0, 1, 0]], "gradientStops": [
+        { "position": 0, "color": { "r": 0.33725490196078434, "g": 0.7803921568627451, "b": 0.9529411764705882, "a": 1 } },
+        { "position": 1, "color": { "r": 0.09019607843137255, "g": 0.9764705882352941, "b": 0.7058823529411765, "a": 1 } }
+      ] }
+    ] },
+    { "id": "S:f3f3f3f3f3f30000000000000000000000000108,5:8", "key": "f3f3f3f3f3f30000000000000000000000000108", "type": "PAINT", "name": "Surface/Bound", "paints": [
+      { "type": "SOLID", "visible": true, "opacity": 1, "color": { "r": 0.07058823529411765, "g": 0.24705882352941178, "b": 0.23529411764705882 }, "bvColor": "VariableID:7:3" }
+    ] },
+    { "id": "S:f4f4f4f4f4f40000000000000000000000000110,5:10", "key": "f4f4f4f4f4f40000000000000000000000000110", "type": "PAINT", "name": "Fill/Brand half", "paints": [
+      { "type": "SOLID", "visible": true, "opacity": 0.5, "color": { "r": 1, "g": 1, "b": 1 } }
+    ] },
+    { "id": "S:a1a1a1a1a1a10000000000000000000000000109,5:9", "key": "a1a1a1a1a1a10000000000000000000000000109", "type": "GRID", "name": "Grid/12 col", "layoutGrids": [
+      { "pattern": "COLUMNS", "alignment": "STRETCH", "gutterSize": 24, "count": 12, "offset": 80, "visible": true, "color": { "r": 1, "g": 0, "b": 0, "a": 0.1 } },
+      { "pattern": "ROWS", "alignment": "MIN", "gutterSize": 8, "count": "Infinity", "sectionSize": 8, "offset": 0, "visible": true },
+      { "pattern": "GRID", "sectionSize": 8, "visible": false }
+    ] }
+  ]
+}

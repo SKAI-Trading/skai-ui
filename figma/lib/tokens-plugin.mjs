@@ -1,15 +1,16 @@
 // Source of the read-only scripts that run INSIDE Figma (use_figma) for the tokens export.
 //
-// Both scripts only read. They never create, set, append, remove, rename or import anything:
+// Every script only reads. None creates, sets, appends, removes, renames or imports anything:
 // importVariableByKeyAsync / importComponentByKeyAsync would write into the file, and
 // figma.teamLibrary is not implemented in use_figma, so provenance is proved by KEY instead
-// (see provenanceScript).
+// (see provenanceScript). libraryScript reads the library file's own definitions, complete.
 //
 // A result is JSON of the form {k, h, d, sum}: `d` is the payload, `sum` its fnv1a32 over
 // JSON.stringify(d), so a copy of the result that lost or changed a character is refused at ingest.
 
 export const EXPORT_KIND = "tokens-export/1";
 export const PROVENANCE_KIND = "tokens-provenance/1";
+export const LIBRARY_KIND = "tokens-library/1";
 
 // Kept below the 20 KB cut with room for the envelope.
 export const RESULT_CAP = 16000;
@@ -45,6 +46,50 @@ const errs = {};
 function noteErr(where, e) { const k = where + ": " + String((e && e.message) || e).slice(0, 80); errs[k] = (errs[k] || 0) + 1; }
 function unpack(s) { const out = new Set(); for (let i = 0; i + 12 <= s.length; i += 12) out.add(s.slice(i, i + 12)); return out; }
 function done(kind, head, d) { const body = JSON.stringify(d); return { k: kind, h: head, d: d, sum: fnv(body) }; }
+`;
+
+// Paint, effect and text-metric readers, pasted into the export and library scripts. Each script defines
+// ref(alias): "$<key12>" for a variable it can name, "?<id>" for one it cannot.
+const READERS = String.raw`
+function paint(p) {
+  if (p.visible === false) return null;
+  if (p.type === "SOLID") {
+    const b = p.boundVariables && p.boundVariables.color;
+    const op = p.opacity === undefined ? 1 : p.opacity;
+    return b ? ref(b) + (op < 0.999 ? "@" + r2(op) : "") : atHex(p.color, op);
+  }
+  if (p.type.indexOf("GRADIENT_") === 0) {
+    const t = p.gradientTransform;
+    const stops = p.gradientStops.map((s) => [r4(s.position), (s.boundVariables && s.boundVariables.color) ? ref(s.boundVariables.color) : atHex(s.color)]);
+    const o = { grad: p.type.slice(9), stops: stops };
+    if (t) o.angle = Math.round(Math.atan2(t[1][0], t[0][0]) * 180 / Math.PI);
+    if (p.opacity !== undefined && p.opacity < 0.999) o.op = r2(p.opacity);
+    return o;
+  }
+  if (p.type === "IMAGE") return { img: p.imageHash, scale: p.scaleMode };
+  if (p.type === "VIDEO") return { video: p.videoHash };
+  return { raw: p.type };
+}
+function effect(e) {
+  if (e.visible === false) return null;
+  const b = e.boundVariables || {};
+  const o = { t: e.type };
+  if (e.type === "DROP_SHADOW" || e.type === "INNER_SHADOW") {
+    o.c = b.color ? ref(b.color) : atHex(e.color);
+    o.o = [e.offset.x, e.offset.y];
+    o.r = e.radius;
+    if (e.spread) o.sp = e.spread;
+  } else o.r = e.radius;
+  return o;
+}
+const lh = (x) => !x || x.unit === "AUTO" ? "auto" : x.unit === "PERCENT" ? r2(x.value) + "%" : r2(x.value);
+const ls = (x) => !x ? 0 : x.unit === "PERCENT" ? r2(x.value) + "%" : r2(x.value);
+function bvOf(s) {
+  const out = {};
+  if (!("boundVariables" in s) || !s.boundVariables) return null;
+  for (const f in s.boundVariables) { const a = s.boundVariables[f]; const x = Array.isArray(a) ? a[0] : a; if (x && x.id) out[f] = ref(x); }
+  return Object.keys(out).length ? out : null;
+}
 `;
 
 const EXPORT_BODY = String.raw`
@@ -148,51 +193,12 @@ const ref = (alias) => {
   const v = vars.get(alias.id);
   return v ? "$" + k12(v.key) : "?" + alias.id;
 };
-function paint(p) {
-  if (p.visible === false) return null;
-  if (p.type === "SOLID") {
-    const b = p.boundVariables && p.boundVariables.color;
-    const op = p.opacity === undefined ? 1 : p.opacity;
-    return b ? ref(b) + (op < 0.999 ? "@" + r2(op) : "") : atHex(p.color, op);
-  }
-  if (p.type.indexOf("GRADIENT_") === 0) {
-    const t = p.gradientTransform;
-    const stops = p.gradientStops.map((s) => [r4(s.position), (s.boundVariables && s.boundVariables.color) ? ref(s.boundVariables.color) : atHex(s.color)]);
-    const o = { grad: p.type.slice(9), stops: stops };
-    if (t) o.angle = Math.round(Math.atan2(t[1][0], t[0][0]) * 180 / Math.PI);
-    if (p.opacity !== undefined && p.opacity < 0.999) o.op = r2(p.opacity);
-    return o;
-  }
-  if (p.type === "IMAGE") return { img: p.imageHash, scale: p.scaleMode };
-  if (p.type === "VIDEO") return { video: p.videoHash };
-  return { raw: p.type };
-}
-function effect(e) {
-  if (e.visible === false) return null;
-  const b = e.boundVariables || {};
-  const o = { t: e.type };
-  if (e.type === "DROP_SHADOW" || e.type === "INNER_SHADOW") {
-    o.c = b.color ? ref(b.color) : atHex(e.color);
-    o.o = [e.offset.x, e.offset.y];
-    o.r = e.radius;
-    if (e.spread) o.sp = e.spread;
-  } else o.r = e.radius;
-  return o;
-}
-const lh = (x) => !x || x.unit === "AUTO" ? "auto" : x.unit === "PERCENT" ? r2(x.value) + "%" : r2(x.value);
-const ls = (x) => !x ? 0 : x.unit === "PERCENT" ? r2(x.value) + "%" : r2(x.value);
 function value(v, val) {
   if (val === undefined) return null;
   if (val && typeof val === "object" && val.type === "VARIABLE_ALIAS") return { a: ref(val).replace(/^\$/, "") };
   if (v.resolvedType === "COLOR") return hex(val);
   if (v.resolvedType === "FLOAT") return r4(val);
   return val;
-}
-function bvOf(s) {
-  const out = {};
-  if (!("boundVariables" in s) || !s.boundVariables) return null;
-  for (const f in s.boundVariables) { const a = s.boundVariables[f]; const x = Array.isArray(a) ? a[0] : a; if (x && x.id) out[f] = ref(x); }
-  return Object.keys(out).length ? out : null;
 }
 
 const colIndex = new Map();
@@ -270,6 +276,111 @@ d.err = errs;
 return done(KIND, { file: P.file, fileName: figma.root.name, ms: Date.now() - t0 }, d);
 `;
 
+// The library read: every local collection, variable and style of the library file itself, with values. Rows stream
+// in one fixed order (variables by collection then name, then text, paint, effect and grid styles by name) and fill
+// the result up to P.cap; P.from continues a read that did not fit. The cursor, the counts and the per-list
+// checksums live inside d, so the result checksum covers them too.
+const LIBRARY_BODY = String.raw`
+const t0 = Date.now();
+const byName = (a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : a.key < b.key ? -1 : a.key > b.key ? 1 : 0);
+const cols = (await figma.variables.getLocalVariableCollectionsAsync()).slice().sort(byName);
+const vars = await figma.variables.getLocalVariablesAsync();
+const lists = { ts: await figma.getLocalTextStylesAsync(), ps: await figma.getLocalPaintStylesAsync(), es: await figma.getLocalEffectStylesAsync(), gs: [] };
+let gridRead = false;
+try { lists.gs = await figma.getLocalGridStylesAsync(); gridRead = true; } catch (e) { noteErr("grid styles", e); }
+const byId = new Map();
+for (const v of vars) byId.set(v.id, v);
+const ext = new Map();
+const ref = (alias) => {
+  if (!alias || !alias.id) return null;
+  const v = byId.get(alias.id);
+  if (v) return "$" + k12(v.key);
+  ext.set(alias.id, 1);
+  return "?" + alias.id;
+};
+function value(v, x) {
+  if (x === undefined) return null;
+  if (x && typeof x === "object" && x.type === "VARIABLE_ALIAS") return { a: ref(x).replace(/^\$/, "") };
+  if (v.resolvedType === "COLOR") return hex(x);
+  if (v.resolvedType === "FLOAT") return r4(x);
+  return x;
+}
+function grid(g) {
+  if (g.visible === false) return null;
+  const o = { pattern: g.pattern };
+  if (g.pattern === "GRID") o.sectionSize = g.sectionSize;
+  else {
+    o.alignment = g.alignment;
+    o.gutterSize = g.gutterSize;
+    o.count = g.count === Infinity ? "auto" : g.count;
+    if (g.sectionSize !== undefined) o.sectionSize = g.sectionSize;
+    if (g.offset !== undefined) o.offset = g.offset;
+  }
+  if (g.color) o.c = atHex(g.color);
+  const bv = {};
+  const b = g.boundVariables || {};
+  for (const f in b) { const r = ref(b[f]); if (r) bv[f] = r; }
+  if (Object.keys(bv).length) o.bv = bv;
+  return o;
+}
+
+// Publish status: the product files see a library token as last PUBLISHED, so an unpublished edit matters.
+// Read for every item at once, raced against P.pubBudget; an item whose status did not come back is "?".
+const items = vars.concat(lists.ts, lists.ps, lists.es, lists.gs);
+const pub = new Map();
+let pubN = 0;
+if (P.pub) {
+  const work = Promise.all(items.map(async (x) => { try { pub.set(x.id, await x.getPublishStatusAsync()); pubN++; } catch (e) { noteErr("publish status", e); } }));
+  if (typeof setTimeout === "function") await Promise.race([work, new Promise((r) => setTimeout(r, P.pubBudget))]);
+  else await work;
+}
+const pc = (x) => { if (!P.pub) return ""; const s = pub.get(x.id); return s === undefined ? "?" : s === "UNPUBLISHED" ? "U" : s === "CHANGED" ? "X" : ""; };
+// Trailing defaults are dropped from a row ("" for no code syntax / no status, 0 for not hidden / no bound variables).
+const trim = (row) => { while (row.length && (row[row.length - 1] === "" || row[row.length - 1] === 0)) row.pop(); return row; };
+
+const colIx = new Map(cols.map((c, i) => [c.id, i]));
+const T = { COLOR: "C", FLOAT: "F", STRING: "S", BOOLEAN: "B" };
+const d = { m: null, cols: [], v: [], ts: [], ps: [], es: [], gs: [], ext: [], bad: [] };
+for (const c of cols) d.cols.push(trim([c.name, c.key, c.modes.map((m) => m.name), c.variableIds.length, c.hiddenFromPublishing ? 1 : 0]));
+const ci = (v) => (colIx.has(v.variableCollectionId) ? colIx.get(v.variableCollectionId) : -1);
+const stream = [];
+const add = (kind, x, build) => { try { stream.push([kind, build(x)]); } catch (e) { noteErr(kind, e); d.bad.push([kind, x.name, x.key]); } };
+for (const v of vars.slice().sort((a, b) => ci(a) - ci(b) || byName(a, b))) {
+  add("v", v, (v) => {
+    const i = ci(v);
+    const modeIds = i >= 0 ? cols[i].modes.map((m) => m.modeId) : Object.keys(v.valuesByMode);
+    return trim([v.id.replace(/^VariableID:/, ""), v.name, i, T[v.resolvedType] || v.resolvedType, v.key, v.scopes, modeIds.map((m) => value(v, v.valuesByMode[m])), (v.codeSyntax && v.codeSyntax.WEB) || "", v.hiddenFromPublishing ? 1 : 0, pc(v)]);
+  });
+}
+for (const s of lists.ts.slice().sort(byName)) add("ts", s, (s) => trim([s.name, s.key, s.fontName.family, s.fontName.style, r2(s.fontSize), lh(s.lineHeight), ls(s.letterSpacing), s.textCase, s.textDecoration, bvOf(s) || 0, pc(s)]));
+for (const s of lists.ps.slice().sort(byName)) add("ps", s, (s) => trim([s.name, s.key, s.paints.map(paint).filter(Boolean), pc(s)]));
+for (const s of lists.es.slice().sort(byName)) add("es", s, (s) => trim([s.name, s.key, s.effects.map(effect).filter(Boolean), pc(s)]));
+for (const s of lists.gs.slice().sort(byName)) add("gs", s, (s) => trim([s.name, s.key, s.layoutGrids.map(grid).filter(Boolean), pc(s)]));
+for (const id of ext.keys()) {
+  let v = null;
+  try { v = await figma.variables.getVariableByIdAsync(id); } catch (e) { noteErr("alias target", e); }
+  d.ext.push([id, v ? v.name : null, v ? v.key : null]);
+}
+
+const counts = { cols: cols.length, v: vars.length, ts: lists.ts.length, ps: lists.ps.length, es: lists.es.length, gs: lists.gs.length };
+d.m = { file: P.file, from: P.from, n: 0, next: null, total: stream.length, counts: counts, gridRead: gridRead, pub: P.pub ? pubN : -1, items: items.length, ms: 0, sums: { v: "00000000", ts: "00000000", ps: "00000000", es: "00000000", gs: "00000000" } };
+d.err = errs;
+let size = JSON.stringify(d).length + 300;
+let i = P.from;
+for (; i < stream.length; i++) {
+  const n = JSON.stringify(stream[i][1]).length + 1;
+  // A part always carries at least one row, so a read cannot stall at a cursor.
+  if (size + n > P.cap && i > P.from) break;
+  size += n;
+  d[stream[i][0]].push(stream[i][1]);
+}
+d.m.n = i - P.from;
+d.m.next = i < stream.length ? i : null;
+for (const k of ["v", "ts", "ps", "es", "gs"]) d.m.sums[k] = fnv(JSON.stringify(d[k]));
+d.m.ms = Date.now() - t0;
+return done(KIND, { file: P.file }, d);
+`;
+
 // Key prefixes travel as one string of 12-character blocks: a third smaller than a JSON array.
 function pack(keys) {
   const uniq = [...new Set(keys.map((k) => String(k).slice(0, 12)))].sort();
@@ -277,13 +388,13 @@ function pack(keys) {
   return uniq.join("");
 }
 
-function assemble(kind, params, body) {
+function assemble(kind, params, ...blocks) {
   return [
     `// ${kind} (read-only). Generated by modules/skai-ui/figma/tokens.mjs; paste as-is into use_figma.`,
     `const KIND = ${JSON.stringify(kind)};`,
     `const P = ${JSON.stringify(params)};`,
     HELPERS.trim(),
-    body.trim(),
+    ...blocks.map((b) => b.trim()),
     "",
   ].join("\n");
 }
@@ -302,7 +413,16 @@ export function exportScript(p) {
     budget: p.budget || 30000,
     cap: p.cap || RESULT_CAP,
   };
-  return assemble(EXPORT_KIND, params, EXPORT_BODY);
+  return assemble(EXPORT_KIND, params, READERS, EXPORT_BODY);
+}
+
+/**
+ * The library read (read-only): every local collection, variable and style of `file`, with values, from row `from`.
+ * @param {{file: string, from?: number, cap?: number, pub?: boolean, pubBudget?: number}} p
+ */
+export function libraryScript(p) {
+  const params = { file: p.file, from: p.from || 0, cap: p.cap || RESULT_CAP, pub: p.pub !== false, pubBudget: p.pubBudget || 8000 };
+  return assemble(LIBRARY_KIND, params, READERS, LIBRARY_BODY);
 }
 
 /**

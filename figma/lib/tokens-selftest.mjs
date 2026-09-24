@@ -6,7 +6,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { exportScript, provenanceScript, runScript, fnv1a32, SCRIPT_CAP } from "./tokens-plugin.mjs";
+import { exportScript, provenanceScript, libraryScript, runScript, fnv1a32, SCRIPT_CAP, LIBRARY_KIND } from "./tokens-plugin.mjs";
 import {
   paths,
   load,
@@ -20,6 +20,7 @@ import {
   parseResult,
   ingestExport,
   ingestProvenance,
+  ingestLibrary,
   weightOf,
   resolveValue,
   allTokens,
@@ -168,6 +169,88 @@ export function mockFigma(fx, opts = {}) {
     },
   };
   return { figma, calls };
+}
+
+/**
+ * The library file, as the library read sees it: local collections, variables and styles with values. Every object
+ * throws on a property it does not have, as use_figma does. opts: noGrid (the API lacks getLocalGridStylesAsync),
+ * hang (the id of an item whose publish status never resolves), breakStyle (a text style whose fontName read throws),
+ * extraVar (the library gained a variable), noStylePub (a style's getPublishStatusAsync is not a function, as live).
+ */
+export function mockLibrary(lx, opts = {}) {
+  const calls = [];
+  // `then` is exempt: awaiting a returned object probes it, and the real API objects are awaited all the time.
+  const strict = (obj, label) =>
+    new Proxy(obj, {
+      get(t, k) {
+        if (typeof k === "symbol" || k in t) return t[k];
+        if (k === "then") return undefined;
+        throw new TypeError(`${label}.${String(k)}: no such property '${String(k)}' on ${t.type || label}`);
+      },
+    });
+  const alias = (id) => ({ type: "VARIABLE_ALIAS", id });
+  const status = (x) => async () => {
+    calls.push(["getPublishStatusAsync", x.id]);
+    if (opts.hang === x.id) return new Promise(() => {});
+    return x.status || "CURRENT";
+  };
+  const vars = lx.variables.slice();
+  if (opts.extraVar) vars.push({ id: "VariableID:1:99", key: "ababababab990000000000000000000000000099", name: "s-99", col: "VariableCollectionId:1:0", type: "FLOAT", scopes: [], values: { m1: 396 } });
+  const cols = lx.collections.map((c) =>
+    strict({ id: c.id, name: c.name, key: c.key, remote: false, hiddenFromPublishing: false, isExtension: false, defaultModeId: c.modes[0][0], modes: c.modes.map(([modeId, name]) => ({ modeId, name })), variableIds: vars.filter((v) => v.col === c.id).map((v) => v.id) }, "collection"),
+  );
+  const V = vars.map((v) => {
+    const valuesByMode = {};
+    for (const [m, val] of Object.entries(v.values)) valuesByMode[m] = val && typeof val === "object" && val.alias ? alias(val.alias) : val;
+    return strict({ id: v.id, key: v.key, name: v.name, description: "", remote: false, hiddenFromPublishing: !!v.hidden, resolvedType: v.type, scopes: v.scopes, variableCollectionId: v.col, valuesByMode, codeSyntax: v.web ? { WEB: v.web } : {}, getPublishStatusAsync: status(v) }, "variable");
+  });
+  const withColorBinding = ({ bvColor, ...x }) => (bvColor ? { ...x, boundVariables: { color: alias(bvColor) } } : x);
+  const styleOf = (s) => {
+    const o = { id: s.id, key: s.key, name: s.name, type: s.type, remote: false, description: "", getPublishStatusAsync: opts.noStylePub ? undefined : status(s) };
+    if (s.type === "TEXT") {
+      Object.assign(o, { fontName: s.fontName, fontSize: s.fontSize, lineHeight: s.lineHeight, letterSpacing: s.letterSpacing, textCase: s.textCase, textDecoration: s.textDecoration });
+      if (s.bv) o.boundVariables = Object.fromEntries(Object.entries(s.bv).map(([f, id]) => [f, alias(id)]));
+      if (opts.breakStyle === s.name) delete o.fontName;
+    }
+    if (s.type === "EFFECT") o.effects = s.effects.map(withColorBinding);
+    if (s.type === "PAINT") o.paints = s.paints.map(withColorBinding);
+    if (s.type === "GRID") o.layoutGrids = s.layoutGrids.map((g) => (g.count === "Infinity" ? { ...g, count: Infinity } : g));
+    return strict(o, "style");
+  };
+  const byType = (t) => lx.styles.filter((s) => s.type === t).map(styleOf);
+  const g = {
+    root: { name: "Document" },
+    variables: strict(
+      {
+        async getLocalVariableCollectionsAsync() {
+          return cols;
+        },
+        async getLocalVariablesAsync() {
+          return V;
+        },
+        async getVariableByIdAsync(id) {
+          calls.push(["getVariableByIdAsync", id]);
+          const x = (lx.external || []).find((e) => e.id === id);
+          return x ? strict({ id: x.id, key: x.key, name: x.name, remote: true }, "variable") : null;
+        },
+      },
+      "figma.variables",
+    ),
+    async getLocalTextStylesAsync() {
+      return byType("TEXT");
+    },
+    async getLocalPaintStylesAsync() {
+      return byType("PAINT");
+    },
+    async getLocalEffectStylesAsync() {
+      return byType("EFFECT");
+    },
+    async getLocalGridStylesAsync() {
+      return byType("GRID");
+    },
+  };
+  if (opts.noGrid) delete g.getLocalGridStylesAsync;
+  return { figma: strict(g, "figma"), calls };
 }
 
 // ------------------------------------------------------------------ harness
@@ -436,15 +519,214 @@ export async function selfTest() {
     check("the migrated record keeps its earlier use counts and finishes", run.usesInWalkedFrames["aaaaaaaaaaaa0000000000000000000000000001"] >= 7 && run.complete === true && run.calls === 2 && !run.usesByKey, JSON.stringify(run));
   }
 
-  // 8. Read-only guard: neither script may contain a write call.
+  // 10. The library read: the library file's own definitions, complete, merged over what the walk stored.
+  {
+    const lx = readJ(path.join(FIX, "tokens-library-mock.json"));
+    const AT = "2026-09-24T01:00:00.000Z";
+    // A store as the walk and the provenance call left it.
+    const walkStore = async () => {
+      const { p } = tmpStore();
+      ingestText(p, JSON.stringify((await exportOnce(fx, p)).r));
+      const st = load(p);
+      ingestProvenance(st, parseResult(JSON.stringify(await runScript(provenanceScript({ file: lx.file }), mockFigma(fx, { library: true }).figma)), PROVENANCE_KIND), AT);
+      save(p, st, AT);
+      return p;
+    };
+    const libRun = async (extra = {}, opts = {}) => {
+      const src = libraryScript({ file: lx.file, ...extra });
+      const { figma, calls } = mockLibrary(lx, opts);
+      return { src, r: await runScript(src, figma), calls };
+    };
+    const ingestLib = (p, text) => {
+      const r = parseResult(text, LIBRARY_KIND);
+      if (!ledgerHas(p, r.sum)) appendLedger(p, { file: r.h.file, frames: 0, nonce: r.sum });
+      const st = load(p);
+      const res = ingestLibrary(st, r, AT);
+      if (!res.already) save(p, st, AT);
+      return res;
+    };
+
+    const p = await walkStore();
+    const one = await libRun();
+    check("library: the script stays under the script cap", Buffer.byteLength(one.src) < SCRIPT_CAP, `${Buffer.byteLength(one.src)} bytes`);
+    check("library: one result carries every row, with a valid checksum, under the result cap", one.r.d.m.next === null && one.r.d.m.n === one.r.d.m.total && one.r.sum === fnv1a32(JSON.stringify(one.r.d)) && JSON.stringify(one.r).length < 18000, JSON.stringify(one.r.d.m));
+    check("library: the counts are the library's own lists", JSON.stringify(one.r.d.m.counts) === JSON.stringify({ cols: 2, v: 9, ts: 3, ps: 3, es: 2, gs: 1 }), JSON.stringify(one.r.d.m.counts));
+    const callsBefore = callsToday(p);
+    const res = ingestLib(p, JSON.stringify(one.r));
+    const V = readJ(p.variables).variables;
+    const ex = readJ(p.sources).export;
+    check("library: a whole read is marked complete, with the library file as its source", ex.complete === true && ex.source === lx.file && ex.sourceName === "Skai-Design" && ex.why.length === 0, JSON.stringify(ex.why));
+    check("library: variables.json carries the export marker", readJ(p.variables).export && readJ(p.variables).export.complete === true && readJ(p.variables).export.source === lx.file);
+    check("library: the part's call is ledgered once", callsToday(p) === callsBefore + 1);
+    check("library: every library variable is stored, and the walk's own are kept", Object.keys(V).length === 11 && !!V["s-6"] && !!V["Brand/Accent"] && !!V["Legacy/s-4"], Object.keys(V).join(" | "));
+    check("library: values follow the collection's mode order, not valuesByMode's key order", V["Primary/Green Coal 100"].modes.Dark === "#123F3C" && V["Primary/Green Coal 100"].modes.Light.alias === "Base/Coal half", JSON.stringify(V["Primary/Green Coal 100"].modes));
+    check("library: an alias to a variable in another collection is written as its name", V["Brand/Accent"].modes.Dark.alias === "Primary/Green Coal 100", JSON.stringify(V["Brand/Accent"].modes));
+    const st1 = load(p);
+    check("library: an alias chain resolves to the concrete value", resolveValue(st1, [...st1.vars.values()].find((x) => x.name === "Brand/Accent"), "Dark") === "#123F3C");
+    check("library: a BOOLEAN false is kept as false", V["flags/dense"].modes["Mode 1"] === false && V["flags/dense"].type === "BOOLEAN", JSON.stringify(V["flags/dense"]));
+    check("library: a hidden, unpublished variable says so", V["internal/scratch"].hiddenFromPublishing === true && V["internal/scratch"].publish === "UNPUBLISHED" && V["internal/scratch"].modes["Mode 1"] === "x");
+    check("library: an alias to a variable outside the library stays marked, and its name is recorded", String(V["Border/External"].modes["Mode 1"].alias).startsWith("?VariableID:abcdef") && ex.externalAliases.some((x) => x[1] === "Other/Ink"), JSON.stringify(ex.externalAliases));
+    // Ids are per file. The walk's product-file id stays; a library-only variable gets the library's own id; no id
+    // is ever built from a key and another file's number (none of the 26 such ids would exist anywhere).
+    check("library: a variable the walk saw keeps its product-file id", V["Primatives/s-4"].id === "VariableID:aaaaaaaaaaaa0000000000000000000000000001/1:1" && V["border-radius/rounded-lg"].id === "VariableID:bbbbbbbbbbbb0000000000000000000000000002/1:2", V["Primatives/s-4"].id);
+    check("library: a variable only the library has gets the library's own id, not a built one", V["s-6"].id === "VariableID:7:5" && V["flags/dense"].id === "VariableID:7:8", V["s-6"].id);
+    check("library: the library's value is written over the walk's, and marked CHANGED", V["border-radius/rounded-lg"].modes["Mode 1"] === 10 && V["border-radius/rounded-lg"].publish === "CHANGED");
+    check("library: the one real difference is recorded, and nothing else (ids, markers, aliases compare equal)", ex.changes.length === 1 && ex.changes[0].name === "border-radius/rounded-lg" && ex.changes[0].field === "modes" && /8/.test(ex.changes[0].was) && /10/.test(ex.changes[0].now), JSON.stringify(ex.changes));
+    check("library: the 6 stored tokens the library holds unchanged compare identical", ex.same === 6, String(ex.same));
+    const PS = readJ(p.paint);
+    const T = readJ(p.text);
+    const E = readJ(p.effect);
+    const walkFill = PS["Fill/Brand half #ffffff"];
+    check("library: what the walk found and the library lacks is kept and flagged notInLibrary", V["Legacy/s-4"].notInLibrary === true && V["Border/Dangling"].notInLibrary === true && walkFill && walkFill.notInLibrary === true, Object.keys(PS).join(" | "));
+    check("library: a library token carries no notInLibrary", !("notInLibrary" in V["Primatives/s-4"]) && !("notInLibrary" in V["s-6"]) && !("notInLibrary" in T["Lg/Paragraph 2 300"]) && PS["Fill/Brand half #f4f4f4"] && !("notInLibrary" in PS["Fill/Brand half #f4f4f4"]));
+    check("library: a name the walk's style and a library style share keys both by name and key prefix", !PS["Fill/Brand half"] && PS["Fill/Brand half #f4f4f4"].paints[0] === "#FFFFFF@0.5", Object.keys(PS).join(" | "));
+    // load() must recover the names a collision re-keyed, or the next save emits one holder under the bare name.
+    const tf = () => ["variables", "text", "effect", "paint", "grid"].map((k) => fs.readFileSync(p[k], "utf8")).join("\n");
+    const tf0 = tf();
+    const stR = load(p);
+    save(p, stR, AT);
+    check("library: a load and save of the result writes the same token files (collision keys survive)", tf() === tf0);
+    const cols = readJ(p.variables).collections;
+    check("library: a collection's variable count is the library's, not the walk's partial count", cols.Primatives.variables === 6 && cols.Colors.variables === 3 && cols.Primatives.seenIn[0] === fx.file.key, JSON.stringify(cols.Primatives));
+    check("library: a collection the library lacks stays marked NOT in it", cols.Legacy.library && cols.Legacy.library.file === null);
+    check("library: a new text style is stored with its weight number", T["Lg/Label 1 300"] && T["Lg/Label 1 300"].fw === 400 && T["Lg/Label 1 300"].ls === "-4%", JSON.stringify(T["Lg/Label 1 300"]));
+    check("library: a variable bound on a text style resolves to its (collision-keyed) name", T["Lg/Number 1 700"].bv.fontSize === "Primatives/s-4", JSON.stringify(T["Lg/Number 1 700"]));
+    check("library: an effect colour bound to a variable is named, spread kept, unpublished marked", E.Glow && E.Glow.effects[0].c === "Brand/Accent" && E.Glow.effects[0].sp === 2 && E.Glow.publish === "UNPUBLISHED", JSON.stringify(E.Glow));
+    check("library: a gradient paint style keeps its stops and angle", PS["Brand/Gradient"] && PS["Brand/Gradient"].paints[0].grad === "LINEAR" && PS["Brand/Gradient"].paints[0].stops[1][1] === "#17F9B4" && PS["Brand/Gradient"].paints[0].angle === 0, JSON.stringify(PS["Brand/Gradient"]));
+    check("library: a paint bound to a variable is written as the variable's name", PS["Surface/Bound"] && PS["Surface/Bound"].paints[0] === "Primary/Green Coal 100", JSON.stringify(PS["Surface/Bound"]));
+    const G = fs.existsSync(p.grid) ? readJ(p.grid) : {};
+    const g0 = G["Grid/12 col"];
+    check("library: grid styles are stored, a hidden grid dropped, an Infinity count written 'auto'", g0 && g0.grids.length === 2 && g0.grids[0].pattern === "COLUMNS" && g0.grids[0].count === 12 && g0.grids[0].gutterSize === 24 && g0.grids[0].offset === 80 && g0.grids[0].c === "#FF0000@0.1" && g0.grids[1].count === "auto", JSON.stringify(g0));
+    const lib = readJ(p.sources).library;
+    const lm = Object.fromEntries(lib.match.map((x) => [x.kind, x]));
+    check("library: the match comes from the full read (variables 9/11, grid 1/1)", lm.variables.inLibrary === 9 && lm.variables.notInLibrary.join() === "Border/Dangling,Legacy/s-4" && lm["grid styles"] && lm["grid styles"].inLibrary === 1 && lib.localCounts.grid === 1, JSON.stringify(lm.variables));
+    check("library: the earlier provenance key list is compared (the fixture's had 4 variable keys)", ex.provenanceCheck && /differs \(4 then, 9 now\)/.test(ex.provenanceCheck.v), JSON.stringify(ex.provenanceCheck));
+    check("library: every publish status was read", ex.publish.complete === true && ex.publish.of === 18, JSON.stringify(ex.publish));
+    const bytes = () => ["variables", "text", "effect", "paint", "grid", "sources"].map((k) => fs.readFileSync(p[k], "utf8")).join("\n");
+    const b0 = bytes();
+    const lines0 = fs.readFileSync(p.ledger, "utf8");
+    const again = ingestLib(p, JSON.stringify(one.r));
+    check("library: re-ingesting the same part changes nothing and counts no call", again.already === true && bytes() === b0 && fs.readFileSync(p.ledger, "utf8") === lines0);
+    void res;
+
+    // notInLibrary is a claim about the library's WHOLE list: from a cut list it is not made at all.
+    const stCut = load(p);
+    stCut.sources.library.keysCut = 1;
+    save(p, stCut, AT);
+    const cutFlags = ["variables", "text", "effect", "paint", "grid"].flatMap((k) => Object.values(readJ(p[k])).filter((e) => e && e.notInLibrary));
+    check("library: with a cut key list no token is flagged notInLibrary", cutFlags.length === 0, String(cutFlags.length));
+    const stBack = load(p);
+    stBack.sources.library.keysCut = 0;
+    save(p, stBack, AT);
+    check("library: with the whole list the flags come back", readJ(p.variables).variables["Legacy/s-4"].notInLibrary === true);
+
+    // A cap smaller than one row still moves the cursor on: every part carries at least one row.
+    const tiny = (await libRun({ cap: 200, from: 3 })).r;
+    check("library: a cap below one row still carries one row and advances the cursor", tiny.d.m.n === 1 && tiny.d.m.next === 4, JSON.stringify(tiny.d.m));
+
+    // The CLI path: library-ingest ledgers the call before it writes the store, and a second run counts nothing.
+    {
+      const { main } = await import("../tokens.mjs");
+      const cliRoot = path.dirname(path.dirname((await walkStore()).variables));
+      const cp = paths(cliRoot);
+      const file = path.join(cliRoot, "part.json");
+      fs.writeFileSync(file, JSON.stringify(one.r));
+      const quiet = async (argv) => {
+        const [log, err] = [console.log, console.error];
+        console.log = console.error = () => {};
+        try {
+          return await main(argv, cliRoot, path.join(HERE, "..", "..", "figma-catalog"));
+        } finally {
+          console.log = log;
+          console.error = err;
+        }
+      };
+      const c0 = callsToday(cp);
+      const code = await quiet(["library-ingest", file]);
+      const c1 = callsToday(cp);
+      await quiet(["library-ingest", file]);
+      check("library: the CLI ingest ledgers one call and completes the store", code === 0 && c1 === c0 + 1 && callsToday(cp) === c1 && readJ(cp.sources).export.complete === true, `${c0} -> ${c1} -> ${callsToday(cp)}`);
+    }
+
+    // Split: a small cap spreads the read over parts that continue each other and converge on the one-part store.
+    const q = await walkStore();
+    const parts = [];
+    let from = 0;
+    for (let k = 0; k < 20; k++) {
+      const x = await libRun({ cap: 1700, from });
+      parts.push(x.r);
+      if (x.r.d.m.next === null) break;
+      from = x.r.d.m.next;
+    }
+    check("library: a small cap splits the read into several parts, each under the cap", parts.length >= 3 && parts.every((x) => JSON.stringify(x).length <= 1700), `${parts.length} parts, ${parts.map((x) => JSON.stringify(x).length).join(",")}`);
+    ingestLib(q, JSON.stringify(parts[0]));
+    const ex1 = readJ(q.sources).export;
+    check("library: after the first part the read is NOT complete and says where to continue", ex1.complete === false && ex1.next === parts[0].d.m.next && /continue with library-script/.test(ex1.why.join()), JSON.stringify(ex1.why));
+    check("library: a partial read makes no library claim yet (no notInLibrary from it)", readJ(q.sources).library.method === undefined);
+    const skip = throws(() => ingestLib(q, JSON.stringify(parts[2])));
+    check("library: a part that skips one is refused", skip && /does not continue/.test(skip.message), skip && skip.message);
+    const changed = (await libRun({ cap: 1700, from: parts[0].d.m.next }, { extraVar: true })).r;
+    const moved = throws(() => ingestLib(q, JSON.stringify(changed)));
+    check("library: a part read after the library changed is refused", moved && /does not continue/.test(moved.message), moved && moved.message);
+    for (const x of parts.slice(1)) ingestLib(q, JSON.stringify(x));
+    const tokenFiles = (pp) => ["variables", "text", "effect", "paint", "grid"].map((k) => fs.readFileSync(pp[k], "utf8")).join("\n");
+    check("library: the parts converge on the same token files as the one-part read", tokenFiles(q) === tokenFiles(p));
+    check("library: and only then is it complete", readJ(q.sources).export.complete === true);
+    // A refresh: the next library read (a new session from row 0) into a store that already holds the library.
+    // Names the first read re-keyed (Primatives/s-4, Fill/Brand half #...) must come back re-keyed, not bare.
+    const refreshed = tokenFiles(p);
+    for (const x of parts) ingestLib(p, JSON.stringify(x));
+    check("library: re-reading an unchanged library changes no token file (re-keyed names stay re-keyed)", tokenFiles(p) === refreshed && readJ(p.sources).export.complete === true);
+
+    // Tamper: the cursor lives inside the checksum.
+    const bent = JSON.stringify(parts[0]).replace(/"next":(\d+)/, (a, n) => `"next":${Number(n) + 1}`);
+    check("library: the tamper changed the text", bent !== JSON.stringify(parts[0]));
+    const bentErr = throws(() => parseResult(bent, LIBRARY_KIND));
+    check("library: a copy with a changed cursor is refused by the checksum", bentErr && /checksum mismatch/.test(bentErr.message), bentErr && bentErr.message);
+
+    // No grid-style API: the token set cannot be called complete.
+    const ng = await walkStore();
+    const noGrid = (await libRun({}, { noGrid: true })).r;
+    ingestLib(ng, JSON.stringify(noGrid));
+    const exg = readJ(ng.sources).export;
+    check("library: without getLocalGridStylesAsync the read is not complete, and says why", noGrid.d.m.gridRead === false && exg.complete === false && /grid styles could not be read/.test(exg.why.join()), JSON.stringify(exg.why));
+
+    // An item that fails to read is named, and the read is not complete.
+    const bs = await walkStore();
+    const broken = (await libRun({}, { breakStyle: "Lg/Label 1 300" })).r;
+    ingestLib(bs, JSON.stringify(broken));
+    const exb = readJ(bs.sources).export;
+    check("library: an item whose read throws is named and blocks completeness", broken.d.bad.length === 1 && exb.complete === false && /Lg\/Label 1 300/.test(exb.why.join()), JSON.stringify(exb.why));
+
+    // A publish status that never comes back: the script still returns, and that item's status is UNKNOWN.
+    const hs = await walkStore();
+    const hung = (await libRun({ pubBudget: 30 }, { hang: "VariableID:7:5" })).r;
+    ingestLib(hs, JSON.stringify(hung));
+    const exh = readJ(hs.sources).export;
+    const Vh = readJ(hs.variables).variables;
+    check("library: a hung publish status does not hang the read; that item is counted unread, not marked", !("publish" in Vh["s-6"]) && exh.publish.complete === false && exh.publish.read === 17 && exh.publish.unread.v === 1 && exh.publish.unreadVariables.join() === "s-6" && exh.complete === true, `${JSON.stringify(Vh["s-6"])} ${JSON.stringify(exh.publish)}`);
+
+    // As measured live 2026-09-24: getPublishStatusAsync is not a function on styles in use_figma.
+    const ns = await walkStore();
+    const noPub = (await libRun({}, { noStylePub: true })).r;
+    ingestLib(ns, JSON.stringify(noPub));
+    const exn = readJ(ns.sources).export;
+    const En = readJ(ns.effect);
+    check("library: styles whose status cannot be read carry no mark, and the export counts them with the error", !("publish" in En.Glow) && exn.publish.unread.ts === 3 && exn.publish.unread.ps === 3 && exn.publish.unread.es === 2 && exn.publish.unread.gs === 1 && exn.publish.unread.v === 0 && Object.keys(exn.publish.errors).some((k) => /not a function/.test(k)) && readJ(ns.variables).variables["internal/scratch"].publish === "UNPUBLISHED", JSON.stringify(exn.publish));
+  }
+
+  // 8. Read-only guard: no script may contain a write call.
   {
     const ex = exportScript({ file: "k", pages: ["1:1"], known: [] });
     const pv = provenanceScript({ file: "k" });
+    const lb = libraryScript({ file: "k" });
     const WRITES = /\b(create[A-Z]\w*|set[A-Z]\w*Async|setBoundVariable|setValueForMode|appendChild|insertChild|remove\(|importVariableByKeyAsync|importComponentByKeyAsync|importStyleByKeyAsync|setPluginData|setSharedPluginData|setCurrentPageAsync|\.name\s*=[^=]|\.characters\s*=[^=]|\.fills\s*=[^=]|closePlugin|notify\()/;
     const w1 = WRITES.exec(ex);
     const w2 = WRITES.exec(pv);
+    const w3 = WRITES.exec(lb);
     check("the export script has no write call", !w1, w1 && w1[0]);
     check("the provenance script has no write call", !w2, w2 && w2[0]);
+    check("the library script has no write call", !w3, w3 && w3[0]);
     // A realistic known-key list still fits.
     const many = Array.from({ length: 500 }, (_, i) => i.toString(16).padStart(12, "0"));
     check("500 known keys and 31 pages still fit under the script cap", Buffer.byteLength(exportScript({ file: "k", pages: Array.from({ length: 31 }, (_, i) => `${i}:1`), known: many })) < SCRIPT_CAP);
