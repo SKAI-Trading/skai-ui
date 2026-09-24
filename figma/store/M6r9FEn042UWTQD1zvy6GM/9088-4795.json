@@ -1,0 +1,13 @@
+{
+ "v": 1,
+ "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+ "node": "9088:4795",
+ "page": "✅ Dice - Skai originals",
+ "name": "CTA/button",
+ "hash": "7d8e7574e6e8087c",
+ "syncedAt": "2026-09-24T08:03:37.745Z",
+ "tree":
+  {"id":"9088:4795","t":"INSTANCE","n":"CTA/button","b":[0,0,324,52],"l":{"m":"H","g":"s-2,5","p":["s-5","s-10","s-5","s-10"],"ai":"CENTER","jc":"CENTER"},"r":"border-radius/rounded-2xl","f":["Primary/Sky Blue 300"],"ci":{"k":"b1742e1bf04df68d26b9c8bf98a3f3b566859249","n":"Size=Large, Type=Primary","set":"CTA/button","props":{"Has label":false,"Has left icon":false,"Has right icon":false,"Size":"Large","Text":"Stop Autobet","Type":"Primary"}},"c":[
+   {"id":"I9088:4795;780:133","t":"TEXT","n":"Button","b":[115,15,94,22],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Stop Autobet","ff":"Manrope","fw":500,"fs":16,"lh":22,"ls":"-4%","ta":"CENTER"}}
+  ]}
+}
