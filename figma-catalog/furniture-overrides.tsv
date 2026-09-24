@@ -7,7 +7,7 @@
 # a file:line or a commit is refused and the node stays in; and a row applies only while the node's own newest
 # status row still says `furniture`, so re-filing the node in a status table switches its override off.
 # Deliberately NOT listed (no recorded read, only a name): 10401-6360, 10758-20769, 11602-21869 (Mines cards on other
-# games' pages), 2452-9383 and 2459-9386 (video cuts for an onboarding slot). A board whose own name rejects it
+# games' pages). A board whose own name rejects it
 # (11345-146431 'Truncated ALT - NOT recommended') is a rule in coverage.mjs (AUTHOR_REJECTED), not a row here.
 #
 # Added 2026-09-24 (wave 67, w67-cat-verdicts) from w67-cat-status-b's and w67-cat-status-a's furniture findings.
@@ -55,3 +55,6 @@ M6r9FEn042UWTQD1zvy6GM	10688-7176	2026-09-24	status.wave41.slots-vegas.tsv:127 r
 M6r9FEn042UWTQD1zvy6GM	10688-7225	2026-09-24	status.wave41.slots-vegas.tsv:128 read live 2026-09-14: the 400x566 source the outlaw cover export 10688-7210 is cut from; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
 M6r9FEn042UWTQD1zvy6GM	11602-21673	2026-09-24	status.wave41.slots-fisherman.tsv:65 the cover's source composition (backdrop, tint, character parts); the page draws its export fisherman-slots.webp; classified by w67-cat-status-b (LOG-cat-status-b.md step 4)
 3sSzw1KewMtUbeLAv7uW0r	10767-308179	2026-09-24	status.wave54.onboarding-landing.tsv:44 live page read: a SECTION 'Multiples' 532x454 holding only three CTA/button instances, a swatch of that component; reported by w67-cat-status-a
+M6r9FEn042UWTQD1zvy6GM	9941-22637	2026-09-24	status.wave39.play-arcade.tsv:38 read live 2026-09-24: a 1080x1800 Rock Paper Scissors social poster with four RECTANGLE children carrying IMAGE fills and no text; classified by w67-cat-status-b (skai-ui 22ccf92)
+3sSzw1KewMtUbeLAv7uW0r	2452-9383	2026-09-24	status.wave39.onboarding.tsv:151 read live 2026-09-24: a 564x398 video asset frame (the source cut for the Live-video dashboard slot 2459-9389), holding only a 24px play glyph; classified by w67-cat-status-a (skai-ui f7d49d9)
+3sSzw1KewMtUbeLAv7uW0r	2459-9386	2026-09-24	status.wave39.onboarding.tsv:152 read live 2026-09-24: a 564x398 video asset frame (the alternate cut for 2459-9389), holding only a 24px play glyph; classified by w67-cat-status-a (skai-ui f7d49d9)
