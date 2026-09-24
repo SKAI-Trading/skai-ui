@@ -1,0 +1,29 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "9772:77032",
+ "page": "✅ Trade 1",
+ "name": "Frame 160",
+ "hash": "da6a98b1efd808fc",
+ "syncedAt": "2026-09-24T22:36:04.792Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:9772:76942",
+ "tree":
+  {"id":"9772:77032","t":"FRAME","n":"Frame 160","b":[0,0,343,343],"l":{"g":8,"m":"V","sx":"FILL"},"c":[
+   {"ref":"9772:77033","h":"ba19723f0d54a693"},
+   {"id":"9772:78013","t":"FRAME","n":"Date","b":[0,303,343,16],"l":{"ai":"CENTER","g":40,"jc":"SPACE_BETWEEN","m":"H","p":[0,20,0,28],"sx":"FILL","sy":"HUG"},"c":[
+    {"id":"9772:78014","t":"FRAME","n":"Frame 1338","b":[28,2,267,12],"l":{"ai":"CENTER","g":2,"jc":"SPACE_BETWEEN","m":"H","sy":"HUG"},"c":[
+     {"id":"9772:78015","t":"TEXT","n":"06:00","b":[0,0,30,12],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Sm/Numbers 5 300","ta":"CENTER"}},
+     {"id":"9772:78016","t":"TEXT","n":"18:00","b":[39.5,0,30,12],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"18:00","st":"Sm/Numbers 5 300","ta":"CENTER"}},
+     {"id":"9772:78017","t":"TEXT","n":"21","b":[79,0,30,12],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"21","st":"Sm/Numbers 5 300","ta":"CENTER"}},
+     {"id":"9772:78018","t":"TEXT","n":"06:00","b":[118.5,0,30,12],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Sm/Numbers 5 300","ta":"CENTER"}},
+     {"id":"9772:78019","t":"TEXT","n":"18:00","b":[158,0,30,12],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"18:00","st":"Sm/Numbers 5 300","ta":"CENTER"}},
+     {"id":"9772:78020","t":"TEXT","n":"22","b":[197.5,0,30,12],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"22","st":"Sm/Numbers 5 300","ta":"CENTER"}},
+     {"id":"9772:78021","t":"TEXT","n":"06:00","b":[237,0,30,12],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Sm/Numbers 5 300","ta":"CENTER"}}
+    ]},
+    {"id":"9772:78022","t":"FRAME","n":"icons/action","b":[307,0,16,16],"l":{"ai":"CENTER","g":10,"jc":"SPACE_BETWEEN","m":"H","p":[5,5,5,5],"sy":"HUG"},"clip":true,"c":[
+     {"id":"9772:78023","t":"ELLIPSE","n":"Ellipse 34","b":[5,5,6,6],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+     {"id":"9772:78024","t":"POLYGON","n":"Polygon 4","b":[15,1,14,14],"l":{"abs":true},"s":["Core/White"],"sw":"border-width/w-100","sa":"CENTER"}
+    ]}
+   ]}
+  ]}
+}

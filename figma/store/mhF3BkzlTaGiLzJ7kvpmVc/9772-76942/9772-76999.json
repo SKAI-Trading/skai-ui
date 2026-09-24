@@ -1,0 +1,42 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "9772:76999",
+ "page": "✅ Trade 1",
+ "name": "Frame 1221",
+ "hash": "4a1210ae9bcd4000",
+ "syncedAt": "2026-09-24T22:36:04.792Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:9772:76942",
+ "tree":
+  {"id":"9772:76999","t":"FRAME","n":"Frame 1221","b":[0,212,375,452],"l":{"m":"V","sx":"FILL","sy":"HUG"},"c":[
+   {"id":"9772:77000","t":"FRAME","n":"Frame 299","b":[0,0,375,36],"l":{"g":"s-0","m":"V","p":["s-1","s-4","s-0","s-4"],"sx":"FILL"},"r":["border-radius/rounded-none","border-radius/rounded-none",0,0],"f":["Primary/Green Coal 200"],"s":["Primary/Green Coal 100"],"sw":[0,0,"border-width/w-100",0],"sa":"CENTER","c":[
+    {"id":"9772:77001","t":"FRAME","n":"bottom menu","b":[16,4,343,32],"l":{"g":12,"jc":"CENTER","m":"V","p":["s-1","s-0","s-1,5","s-0"],"sx":"FILL"},"c":[
+     {"id":"9772:77002","t":"FRAME","n":"Frame 1","b":[0,4,343,22],"l":{"ai":"CENTER","g":24,"jc":"SPACE_BETWEEN","m":"H","p":["s-0",0,"s-0",0],"sx":"FILL"},"c":[
+      {"id":"9772:77003","t":"FRAME","n":"Frame 336","b":[0,4,215,14],"l":{"ai":"CENTER","g":24,"m":"H","sx":"HUG","sy":"HUG"},"c":[
+       {"id":"9772:77004","t":"INSTANCE","n":"CTA/button","b":[0,0,30,14],"l":{"ai":"CENTER","g":"s-0","jc":"CENTER","m":"H","p":["s-0","s-0","s-0","s-0"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-2xl","ci":{"k":"78379447d99f7c6479e44b91465956a8e9a4ee67","n":"Size=Massive, Type=Link","props":{"Has label":true,"Has left icon":true,"Has right icon":false,"Size":"Massive","Text":"Chart","Type":"Link"},"set":"CTA/button"},"c":[
+        {"id":"I9772:77004;801:986","t":"TEXT","n":"Button","b":[0,0,30,14],"l":{"sx":"HUG","sy":"HUG"},"f":["White"],"tx":{"c":"Chart","st":"Sm/Paragraph 2 300","ta":"CENTER"}}
+       ]},
+       {"id":"9772:77005","t":"INSTANCE","n":"CTA/button","b":[54,0,57,14],"l":{"ai":"CENTER","g":"s-0","jc":"CENTER","m":"H","p":["s-0","s-0","s-0","s-0"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-2xl","ci":{"k":"78379447d99f7c6479e44b91465956a8e9a4ee67","n":"Size=Massive, Type=Link","props":{"Has label":true,"Has left icon":true,"Has right icon":false,"Size":"Massive","Text":"Order book","Type":"Link"},"set":"CTA/button"},"c":[
+        {"id":"I9772:77005;801:986","t":"TEXT","n":"Button","b":[0,0,57,14],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Order book","st":"Sm/Paragraph 2 300","ta":"CENTER"}}
+       ]},
+       {"id":"9772:77006","t":"INSTANCE","n":"CTA/button","b":[135,0,36,14],"l":{"ai":"CENTER","g":"s-0","jc":"CENTER","m":"H","p":["s-0","s-0","s-0","s-0"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-2xl","ci":{"k":"78379447d99f7c6479e44b91465956a8e9a4ee67","n":"Size=Massive, Type=Link","props":{"Has label":true,"Has left icon":true,"Has right icon":false,"Size":"Massive","Text":"Trades","Type":"Link"},"set":"CTA/button"},"c":[
+        {"id":"I9772:77006;801:986","t":"TEXT","n":"Button","b":[0,0,36,14],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Trades","st":"Sm/Paragraph 2 300","ta":"CENTER"}}
+       ]},
+       {"id":"9772:77007","t":"INSTANCE","n":"CTA/button","b":[195,0,20,14],"l":{"ai":"CENTER","g":"s-0","jc":"CENTER","m":"H","p":["s-0","s-0","s-0","s-0"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-2xl","ci":{"k":"78379447d99f7c6479e44b91465956a8e9a4ee67","n":"Size=Massive, Type=Link","props":{"Has label":true,"Has left icon":true,"Has right icon":false,"Size":"Massive","Text":"Info","Type":"Link"},"set":"CTA/button"},"c":[
+        {"id":"I9772:77007;801:986","t":"TEXT","n":"Button","b":[0,0,20,14],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Info","st":"Sm/Paragraph 2 300","ta":"CENTER"}}
+       ]},
+       {"id":"9772:77008","t":"INSTANCE","n":"CTA/button","b":[122,0,43,18],"vis":false,"l":{"ai":"CENTER","g":"s-0","jc":"CENTER","m":"H","p":["s-0","s-0","s-0","s-0"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-2xl","ci":{"k":"78379447d99f7c6479e44b91465956a8e9a4ee67","n":"Size=Massive, Type=Link","props":{"Has label":true,"Has left icon":true,"Has right icon":false,"Size":"Massive","Text":"History","Type":"Link"},"set":"CTA/button"}},
+       {"id":"9772:77009","t":"INSTANCE","n":"CTA/button","b":[271,0,46,18],"vis":false,"l":{"abs":true,"ai":"CENTER","g":"s-0","jc":"CENTER","m":"H","p":["s-0","s-0","s-0","s-0"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-2xl","ci":{"k":"78379447d99f7c6479e44b91465956a8e9a4ee67","n":"Size=Massive, Type=Link","props":{"Has label":true,"Has left icon":true,"Has right icon":false,"Size":"Massive","Text":"Badges","Type":"Link"},"set":"CTA/button"}}
+      ]},
+      {"id":"9772:77010","t":"INSTANCE","n":"CTA/button","b":[319,-1,24,24],"op":0,"l":{"ai":"CENTER","g":8,"m":"H","p":["s-1","s-1","s-1","s-1"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-lg","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","ci":{"k":"b8f513085ae13cfe8a0e3b030d314e4239bea7b5","n":"Size=Large, Type=Secondary","props":{"Has label":false,"Has left icon":false,"Has right icon":true,"Size":"Large","Text":"Market","Type":"Secondary"},"set":"CTA/button"},"c":[
+       {"id":"I9772:77010;786:569","t":"INSTANCE","n":"icons/action","b":[4,4,16,16],"clip":true,"ci":{"k":"faf362a66d3b6bf7ce63908622de1bfd43d6410b","n":"Size=16px, Type=Tridot","props":{"Size":"16px","Type":"Tridot"},"set":"icons/action"},"c":[
+        {"id":"I9772:77010;786:569;1452:1803","t":"BOOLEAN_OPERATION","n":"icon","b":[2,7,12,2],"f":["Core/White"]}
+       ]}
+      ]}
+     ]}
+    ]},
+    {"id":"9772:77011","t":"VECTOR","n":"Vector 1","b":[16,36,30,0],"l":{"abs":true},"s":["Core/White"],"sw":3,"sa":"CENTER"}
+   ]},
+   {"ref":"9772:77012","h":"0f54e72536cd8c79"}
+  ]}
+}

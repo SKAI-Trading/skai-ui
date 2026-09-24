@@ -1,0 +1,49 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "9772:77084",
+ "page": "✅ Trade 1",
+ "name": "Details",
+ "hash": "0bff2491deefd726",
+ "syncedAt": "2026-09-24T22:36:04.792Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:9772:76942",
+ "tree":
+  {"id":"9772:77084","t":"FRAME","n":"Details","b":[0,0,265,295],"l":{"g":"s-2","m":"V","sx":"FILL","sy":"FILL"},"c":[
+   {"id":"9780:112172","t":"FRAME","n":"Coin","b":[0,0,257,34],"l":{"g":4,"jc":"CENTER","m":"V","p":["s-1,5",0,0,8],"sx":"HUG","sy":"HUG"},"c":[
+    {"id":"9780:112173","t":"FRAME","n":"Coin","b":[8,6,173,12],"l":{"ai":"CENTER","g":"s-2","m":"H","sx":"HUG","sy":"HUG"},"c":[
+     {"id":"9780:112174","t":"TEXT","n":"Bitcoin/Tether US","b":[0,0,74,12],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Bitcoin/Tether US","st":"Sm/Numbers 5 300"}},
+     {"id":"9780:112175","t":"ELLIPSE","n":"Ellipse 10","b":[82,5,2,2],"f":["Core/White"]},
+     {"id":"9780:112176","t":"TEXT","n":"30m","b":[92,0,20,12],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"30m","st":"Sm/Numbers 5 300"}},
+     {"id":"9780:112177","t":"ELLIPSE","n":"Ellipse 13","b":[120,5,2,2],"f":["Core/White"]},
+     {"id":"9780:112178","t":"TEXT","n":"Skai.trade","b":[130,0,43,12],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Skai.trade","st":"Sm/Numbers 5 300"}}
+    ]},
+    {"id":"9780:112179","t":"FRAME","n":"Volume","b":[565,11,221.5,16],"vis":false,"l":{"ai":"CENTER","g":7.5,"m":"H","sy":"HUG"},"c":[
+     {"id":"9780:112180","t":"TEXT","n":"Volume","b":[0,0,39,16],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Volume","st":"Lg/Paragraph 3 300"}},
+     {"id":"9780:112181","t":"TEXT","n":"3","b":[46.5,0,8,16],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Green 300"],"tx":{"c":"3","st":"Lg/Numbers 5 300"}}
+    ]},
+    {"id":"9780:112182","t":"FRAME","n":"Frame 152","b":[8,22,249,12],"l":{"g":8,"m":"H","sx":"HUG","sy":"HUG"},"c":[
+     {"id":"9780:112183","t":"FRAME","n":"Frame 146","b":[0,0,59,12],"l":{"ai":"CENTER","g":"s-0,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"9780:112184","t":"TEXT","n":"O","b":[0,0,8,12],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"O","st":"Sm/Paragraph 3 300"}},
+      {"id":"9780:112185","t":"TEXT","n":"121,289.11","b":[10,0,49,12],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Green 300"],"tx":{"c":"121,289.11","st":"Sm/Numbers 5 300"}}
+     ]},
+     {"id":"9780:112186","t":"FRAME","n":"Frame 147","b":[67,0,58,12],"l":{"ai":"CENTER","g":"s-0,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"9780:112187","t":"TEXT","n":"H","b":[0,0,7,12],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"H","st":"Sm/Paragraph 3 300"}},
+      {"id":"9780:112188","t":"TEXT","n":"121,308.11","b":[9,0,49,12],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Green 300"],"tx":{"c":"121,308.11","st":"Sm/Numbers 5 300"}}
+     ]},
+     {"id":"9780:112189","t":"FRAME","n":"Frame 148","b":[133,0,57,12],"l":{"ai":"CENTER","g":"s-0,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"9780:112190","t":"TEXT","n":"L","b":[0,0,6,12],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"L","st":"Sm/Paragraph 3 300"}},
+      {"id":"9780:112191","t":"TEXT","n":"121,012.12","b":[8,0,49,12],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Green 300"],"tx":{"c":"121,012.12","st":"Sm/Numbers 5 300"}}
+     ]},
+     {"id":"9780:112192","t":"FRAME","n":"Frame 149","b":[198,0,51,12],"l":{"ai":"CENTER","g":"s-0,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"9780:112193","t":"TEXT","n":"C","b":[0,0,8,12],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"C","st":"Sm/Paragraph 3 300"}},
+      {"id":"9780:112194","t":"TEXT","n":"121,144.54","b":[10,0,41,12],"l":{"sy":"HUG"},"f":["App/Green 300"],"tx":{"c":"121,144.54","st":"Sm/Numbers 5 300"}}
+     ]}
+    ]}
+   ]},
+   {"ref":"9772:77108","h":"ada78119f4341eaa"},
+   {"id":"9772:77990","t":"FRAME","n":"Coin","b":[8,239,97,12],"l":{"abs":true,"ai":"CENTER","g":"s-2","m":"H","sx":"HUG","sy":"HUG"},"c":[
+    {"id":"9772:77991","t":"TEXT","n":"Volume SMA","b":[0,0,56,12],"l":{"sx":"HUG","sy":"HUG"},"tx":{"c":"Volume SMA","seg":[{"c":"Volume ","f":["Core/White"],"st":"Sm/Numbers 5 300"},{"c":"SMA","f":["App/Ash 300"],"st":"Sm/Numbers 5 300"}]}},
+    {"id":"9772:77992","t":"TEXT","n":"1.114 K","b":[64,0,33,12],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Red 300"],"tx":{"c":"1.114 K","st":"Sm/Numbers 5 300"}}
+   ]}
+  ]}
+}

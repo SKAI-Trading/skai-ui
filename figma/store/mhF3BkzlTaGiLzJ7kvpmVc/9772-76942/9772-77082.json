@@ -1,0 +1,18 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "9772:77082",
+ "page": "✅ Trade 1",
+ "name": "image",
+ "hash": "50d518e8c8dcc13f",
+ "syncedAt": "2026-09-24T22:36:04.792Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:9772:76942",
+ "tree":
+  {"id":"9772:77082","t":"FRAME","n":"image","b":[30,0,265,295],"l":{"g":"s-2","m":"V","sx":"FILL"},"r":8,"f":["#011615",{"img":"0e7a41f60616fc6a5407a2ce2ac378ce992d916c","op":0.2,"scale":"FILL"}],"clip":true,"c":[
+   {"id":"9772:77083","t":"ELLIPSE","n":"Ellipse 13","b":[-40,263,259,259],"op":0.64,"l":{"abs":true},"f":[{"angle":-90,"grad":"RADIAL","stops":[[0,"#56C7F3"],[1,"#001514"]]}],"fx":[{"r":250,"t":"LAYER_BLUR"}]},
+   {"ref":"9772:77084","h":"0bff2491deefd726"},
+   {"id":"9772:77993","t":"FRAME","n":"logo-tradview","b":[8,263,24,24],"l":{"abs":true},"r":68.57,"f":["Core/Black"],"s":["Primary/Green Coal 100"],"sw":0.69,"sa":"INSIDE","fx":[{"r":24,"t":"BACKGROUND_BLUR"}],"clip":true,"c":[
+    {"id":"9772:77994","t":"VECTOR","n":"Vector","b":[3.5,7.5,17.5,9],"f":["Core/White"]}
+   ]}
+  ]}
+}

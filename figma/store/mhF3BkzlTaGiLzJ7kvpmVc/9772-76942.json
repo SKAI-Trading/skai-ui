@@ -1,0 +1,13 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "9772:76942",
+ "page": "✅ Trade 1",
+ "name": "Frame 1341",
+ "hash": "ee4a6965f1294d21",
+ "syncedAt": "2026-09-24T22:36:04.792Z",
+ "tree":
+  {"id":"9772:76942","t":"FRAME","n":"Frame 1341","b":[0,0,375,664],"l":{"ai":"CENTER","g":10,"m":"H","sy":"HUG"},"c":[
+   {"ref":"9772:76943","h":"8068ab9284b4681c"}
+  ]}
+}

@@ -1,0 +1,115 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "9772:77033",
+ "page": "✅ Trade 1",
+ "name": "Center",
+ "hash": "ba19723f0d54a693",
+ "syncedAt": "2026-09-24T22:36:04.792Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:9772:76942",
+ "tree":
+  {"id":"9772:77033","t":"FRAME","n":"Center","b":[0,0,343,295],"l":{"g":6,"m":"H","sx":"FILL"},"c":[
+   {"id":"9772:77034","t":"FRAME","n":"TV tools","b":[0,0,24,312],"vis":false,"l":{"g":8,"m":"V","sx":"HUG","sy":"HUG"},"c":[
+    {"id":"9772:77035","t":"INSTANCE","n":"icons/graphical","b":[0,0,24,24],"clip":true,"ci":{"k":"fce81c2a15ae0a4a3c1fb1273858ef6eb927a309","n":"Size=24px, Type=Crosshair","props":{"Size":"24px","Type":"Crosshair"},"set":"icons/graphical"}},
+    {"id":"9772:77036","t":"INSTANCE","n":"icons/graphical","b":[0,32,24,24],"clip":true,"ci":{"k":"91425f3ac34436d901a9be5a2740eea071544449","n":"Size=24px, Type=Trendline","props":{"Size":"24px","Type":"Trendline"},"set":"icons/graphical"}},
+    {"id":"9772:77037","t":"INSTANCE","n":"icons/graphical","b":[0,64,24,24],"clip":true,"ci":{"k":"723535f9959e43882a70c086326775b5f30dbb02","n":"Size=24px, Type=Fib Retracement","props":{"Size":"24px","Type":"Fib Retracement"},"set":"icons/graphical"}},
+    {"id":"9772:77038","t":"INSTANCE","n":"icons/graphical","b":[0,96,24,24],"clip":true,"ci":{"k":"ee022fb0bf52bbe6e65727ac182262789171372b","n":"Size=24px, Type=XABCD-pattern","props":{"Size":"24px","Type":"XABCD-pattern"},"set":"icons/graphical"}},
+    {"id":"9772:77039","t":"INSTANCE","n":"icons/graphical","b":[0,128,24,24],"clip":true,"ci":{"k":"42b48a34f0d2ec255a2e96afd58bb9a87aa45dce","n":"Size=24px, Type=Long position","props":{"Size":"24px","Type":"Long position"},"set":"icons/graphical"}},
+    {"id":"9772:77040","t":"INSTANCE","n":"icons/graphical","b":[0,160,24,24],"clip":true,"ci":{"k":"61b6a38d6ebf8a2a5ee544a0163a5ece481741ca","n":"Size=24px, Type=Brush","props":{"Size":"24px","Type":"Brush"},"set":"icons/graphical"}},
+    {"id":"9772:77041","t":"INSTANCE","n":"icons/graphical","b":[0,192,24,24],"clip":true,"ci":{"k":"0d0e93dfa39f3f7983eb2312bc3dd41b86dd7aec","n":"Size=24px, Type=Text","props":{"Size":"24px","Type":"Text"},"set":"icons/graphical"}},
+    {"id":"9772:77042","t":"INSTANCE","n":"icons/graphical","b":[0,224,24,24],"clip":true,"ci":{"k":"08ea9c79cddfa927a36502ce5bdd51191487721d","n":"Size=24px, Type=Magnet mode","props":{"Size":"24px","Type":"Magnet mode"},"set":"icons/graphical"}},
+    {"id":"9772:77043","t":"INSTANCE","n":"icons/graphical","b":[0,256,24,24],"clip":true,"ci":{"k":"e4fb54df3cb4ae2c5a527b7f69b831b05544707b","n":"Size=24px, Type=Measure","props":{"Size":"24px","Type":"Measure"},"set":"icons/graphical"}},
+    {"id":"9772:77044","t":"INSTANCE","n":"icons/graphical","b":[0,288,24,24],"clip":true,"ci":{"k":"79ac29183057dad525462e607200b74da85e10f5","n":"Size=24px, Type=Zoom in","props":{"Size":"24px","Type":"Zoom in"},"set":"icons/graphical"}},
+    {"id":"9772:77045","t":"FRAME","n":"Icons/Tool","b":[0,320,24,24],"vis":false,"clip":true,"c":[
+     {"id":"9772:77046","t":"GROUP","n":"Group","b":[2.5,2,18,18.5],"c":[
+      {"id":"9772:77047","t":"VECTOR","n":"Vector","b":[10.5,12.5,7.5,6],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+      {"id":"9772:77048","t":"VECTOR","n":"Vector","b":[13.5,15,1,1.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+      {"id":"9772:77049","t":"VECTOR","n":"Vector","b":[12,8,4.5,4.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+      {"id":"9772:77050","t":"GROUP","n":"Group","b":[0,0,14,14],"c":[
+       {"id":"9772:77051","t":"VECTOR","n":"Vector","b":[0,0,14,14],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+       {"id":"9772:77052","t":"VECTOR","n":"Vector","b":[1,1.5,11.5,11.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+       {"id":"9772:77053","t":"VECTOR","n":"Vector","b":[2.5,3,8.5,8.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"}
+      ]}
+     ]}
+    ]},
+    {"id":"9772:77054","t":"FRAME","n":"Icons/Tool","b":[0,759,24,24],"vis":false,"clip":true,"c":[
+     {"id":"9772:77055","t":"VECTOR","n":"Vector","b":[5,4.5,13.5,16.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77056","t":"FRAME","n":"Icons/Tool","b":[0,828,24,24],"vis":false,"clip":true,"c":[
+     {"id":"9772:77057","t":"VECTOR","n":"Vector","b":[3,2.5,19,19],"s":["#000000"],"sw":2.81,"sa":"INSIDE"}
+    ]}
+   ]},
+   {"id":"9772:77058","t":"FRAME","n":"TV tools","b":[0,0,24,312],"l":{"g":8,"m":"V","sx":"HUG","sy":"HUG"},"c":[
+    {"id":"9772:77059","t":"INSTANCE","n":"icons/graphical","b":[0,0,24,24],"clip":true,"ci":{"k":"fce81c2a15ae0a4a3c1fb1273858ef6eb927a309","n":"Size=24px, Type=Crosshair","props":{"Size":"24px","Type":"Crosshair"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77059;1088:522","t":"VECTOR","n":"icon","b":[2.5,2.5,19.5,19.5],"f":["Primary/Sky Blue 300"]}
+    ]},
+    {"id":"9772:77060","t":"INSTANCE","n":"icons/graphical","b":[0,32,24,24],"clip":true,"ci":{"k":"91425f3ac34436d901a9be5a2740eea071544449","n":"Size=24px, Type=Trendline","props":{"Size":"24px","Type":"Trendline"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77060;1088:523","t":"VECTOR","n":"icon","b":[2.5,2.5,19,19],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77061","t":"INSTANCE","n":"icons/graphical","b":[0,64,24,24],"clip":true,"ci":{"k":"723535f9959e43882a70c086326775b5f30dbb02","n":"Size=24px, Type=Fib Retracement","props":{"Size":"24px","Type":"Fib Retracement"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77061;1088:524","t":"VECTOR","n":"icon","b":[1,3.5,22.5,18],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77062","t":"INSTANCE","n":"icons/graphical","b":[0,96,24,24],"clip":true,"ci":{"k":"ee022fb0bf52bbe6e65727ac182262789171372b","n":"Size=24px, Type=XABCD-pattern","props":{"Size":"24px","Type":"XABCD-pattern"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77062;1088:525","t":"VECTOR","n":"icon","b":[2.5,2.5,19.5,19],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77063","t":"INSTANCE","n":"icons/graphical","b":[0,128,24,24],"clip":true,"ci":{"k":"42b48a34f0d2ec255a2e96afd58bb9a87aa45dce","n":"Size=24px, Type=Long position","props":{"Size":"24px","Type":"Long position"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77063;1088:526","t":"VECTOR","n":"icon","b":[1.5,3.5,19.5,18],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77064","t":"INSTANCE","n":"icons/graphical","b":[0,160,24,24],"clip":true,"ci":{"k":"61b6a38d6ebf8a2a5ee544a0163a5ece481741ca","n":"Size=24px, Type=Brush","props":{"Size":"24px","Type":"Brush"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77064;1088:527","t":"VECTOR","n":"icon","b":[1.5,5,22,14.5],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77065","t":"INSTANCE","n":"icons/graphical","b":[0,192,24,24],"clip":true,"ci":{"k":"0d0e93dfa39f3f7983eb2312bc3dd41b86dd7aec","n":"Size=24px, Type=Text","props":{"Size":"24px","Type":"Text"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77065;1088:491","t":"VECTOR","n":"icon","b":[7,4.5,11,15.5],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77066","t":"INSTANCE","n":"icons/graphical","b":[0,224,24,24],"clip":true,"ci":{"k":"08ea9c79cddfa927a36502ce5bdd51191487721d","n":"Size=24px, Type=Magnet mode","props":{"Size":"24px","Type":"Magnet mode"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77066;1088:528","t":"VECTOR","n":"icon","b":[5,3.5,13.5,16.5],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77067","t":"INSTANCE","n":"icons/graphical","b":[0,256,24,24],"clip":true,"ci":{"k":"e4fb54df3cb4ae2c5a527b7f69b831b05544707b","n":"Size=24px, Type=Measure","props":{"Size":"24px","Type":"Measure"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77067;1088:529","t":"VECTOR","n":"icon","b":[2,2,20.5,20.5],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77068","t":"INSTANCE","n":"icons/graphical","b":[0,288,24,24],"clip":true,"ci":{"k":"79ac29183057dad525462e607200b74da85e10f5","n":"Size=24px, Type=Zoom in","props":{"Size":"24px","Type":"Zoom in"},"set":"icons/graphical"},"c":[
+     {"id":"I9772:77068;1088:530","t":"VECTOR","n":"icon","b":[3.5,3.5,15.5,15.5],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77069","t":"FRAME","n":"Icons/Tool","b":[0,320,24,24],"vis":false,"clip":true,"c":[
+     {"id":"9772:77070","t":"GROUP","n":"Group","b":[2.5,2,18,18.5],"c":[
+      {"id":"9772:77071","t":"VECTOR","n":"Vector","b":[10.5,12.5,7.5,6],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+      {"id":"9772:77072","t":"VECTOR","n":"Vector","b":[13.5,15,1,1.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+      {"id":"9772:77073","t":"VECTOR","n":"Vector","b":[12,8,4.5,4.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+      {"id":"9772:77074","t":"GROUP","n":"Group","b":[0,0,14,14],"c":[
+       {"id":"9772:77075","t":"VECTOR","n":"Vector","b":[0,0,14,14],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+       {"id":"9772:77076","t":"VECTOR","n":"Vector","b":[1,1.5,11.5,11.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"},
+       {"id":"9772:77077","t":"VECTOR","n":"Vector","b":[2.5,3,8.5,8.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"}
+      ]}
+     ]}
+    ]},
+    {"id":"9772:77078","t":"FRAME","n":"Icons/Tool","b":[0,759,24,24],"vis":false,"clip":true,"c":[
+     {"id":"9772:77079","t":"VECTOR","n":"Vector","b":[5,4.5,13.5,16.5],"s":["#000000"],"sw":2.81,"sa":"INSIDE"}
+    ]},
+    {"id":"9772:77080","t":"FRAME","n":"Icons/Tool","b":[0,828,24,24],"vis":false,"clip":true,"c":[
+     {"id":"9772:77081","t":"VECTOR","n":"Vector","b":[3,2.5,19,19],"s":["#000000"],"sw":2.81,"sa":"INSIDE"}
+    ]}
+   ]},
+   {"ref":"9772:77082","h":"50d518e8c8dcc13f"},
+   {"id":"9772:77995","t":"FRAME","n":"Tool","b":[26,186,8,29],"l":{"abs":true},"r":"border-radius/rounded-lg","f":["Primary/Green Coal 300"],"clip":true,"c":[
+    {"id":"9772:77996","t":"FRAME","n":"icons/action","b":[8,22,8,14],"op":0.64,"clip":true,"c":[
+     {"id":"9772:77997","t":"BOOLEAN_OPERATION","n":"icon","b":[2.5,2.5,4,8.5],"f":["Core/White"]}
+    ]}
+   ]},
+   {"id":"9772:77999","t":"FRAME","n":"Price","b":[301,0,42,295],"l":{"g":18,"jc":"SPACE_BETWEEN","m":"V","sy":"FILL"},"c":[
+    {"id":"9772:78000","t":"TEXT","n":"120,000","b":[0,0,36,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"120,000","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78001","t":"TEXT","n":"116,000","b":[0,31.5,36,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"116,000","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78002","t":"TEXT","n":"112,000","b":[0,63,36,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"112,000","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78003","t":"TEXT","n":"108,000","b":[0,94.5,36,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"108,000","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78004","t":"TEXT","n":"104,000","b":[0,126,36,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"104,000","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78005","t":"TEXT","n":"100,000","b":[0,157,36,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"100,000","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78006","t":"TEXT","n":"96,000","b":[0,188.5,31,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"96,000","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78007","t":"TEXT","n":"92,000","b":[0,220,31,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"92,000","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78008","t":"TEXT","n":"600 K","b":[0,251.5,26,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"600 K","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78009","t":"TEXT","n":"400 K","b":[0,283,26,12],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"400 K","st":"Sm/Numbers 5 300","ta":"RIGHT"}},
+    {"id":"9772:78010","t":"FRAME","n":"Price area","b":[-4,42,44,16],"l":{"abs":true,"ai":"CENTER","g":10,"jc":"CENTER","m":"H","p":["s-0,5","s-1","s-0,5","s-1"],"sx":"HUG","sy":"HUG"},"f":["App/Green 300"],"clip":true,"c":[
+     {"id":"9772:78011","t":"TEXT","n":"115,718","b":[4,2,36,12],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"115,718","st":"Sm/Numbers 5 300","ta":"RIGHT"}}
+    ]},
+    {"id":"9772:78012","t":"VECTOR","n":"price line","b":[-271,50,273,0],"l":{"abs":true},"s":["App/Green 300"],"sw":0.5,"sa":"CENTER"}
+   ]}
+  ]}
+}
