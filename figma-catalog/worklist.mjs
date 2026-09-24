@@ -1176,7 +1176,7 @@ function main(argv) {
   console.log(
     `worklist: ${s.open} open frames in ${w.packets.length} packets; ${s.blocked} backend frames in ${w.backend.length} groups; ${s.design} design redraws.`,
   );
-  console.log(`design store: ${s.specs.stored} stored, ${s.specs.stale} stale, ${s.specs.missing} missing (${storeStamp(w)})`);
+  console.log(`design store: ${s.specs.stored} stored, ${s.specs.stale} stale, ${s.specs.missing} missing, from ${storeStamp(w)}`);
   console.log(`wrote ${path.join(outDir, "worklist.md")} and worklist.tsv`);
   console.log("\ntop packets:");
   for (const p of w.packets.slice(0, 5))
