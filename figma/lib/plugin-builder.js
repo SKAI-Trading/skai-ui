@@ -389,6 +389,8 @@ export function specBuilder(figma, lib, opt) {
 /**
  * Load the pages a job names, then each node's own page (in case the planner's
  * page list was stale). loadAsync never switches the current page.
+ * Both drivers report `ms`: [milliseconds loading the job's pages, milliseconds
+ * for everything after], so the deadline can be tuned from real calls.
  */
 export async function loadPages(figma, pageIds, loaded) {
   for (const id of pageIds || []) {
@@ -412,6 +414,7 @@ export async function hashDriver(figma, lib, B, job) {
   const t0 = Date.now();
   const loaded = new Set();
   await loadPages(figma, job.pages, loaded);
+  const t1 = Date.now();
   const out = { v: 1, kind: 'hash', file: job.file, nonce: job.nonce, frames: {}, missing: [], errors: {}, rest: [] };
   let used = 200;
   let i = 0;
@@ -435,6 +438,7 @@ export async function hashDriver(figma, lib, B, job) {
     }
   }
   out.rest = job.ids.slice(i);
+  out.ms = [t1 - t0, Date.now() - t1];
   out.sum = lib.fnv1a64(lib.canonicalJson(out));
   return out;
 }
@@ -453,6 +457,7 @@ export async function extractDriver(figma, lib, B, job) {
   const t0 = Date.now();
   const loaded = new Set();
   await loadPages(figma, job.pages, loaded);
+  const t1 = Date.now();
   const len = (x) => lib.canonicalJson(x).length + 1;
   const flat = (t, d, x) => {
     const o = {};
@@ -508,6 +513,7 @@ export async function extractDriver(figma, lib, B, job) {
     }
   }
   out.rest = job.ids.slice(i).map((e) => e[0]);
+  out.ms = [t1 - t0, Date.now() - t1];
   out.sum = lib.fnv1a64(lib.canonicalJson(out));
   return out;
 }

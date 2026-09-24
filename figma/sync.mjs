@@ -663,6 +663,7 @@ async function selfTest() {
   check("an id Figma does not have is reported missing, not hashed", hr.missing && hr.missing.includes("99:99") && !("99:99" in (hr.frames || {})), hr.missing);
   check("the frame on a page the job did not list was loaded through its own page", hr.errors && Object.keys(hr.errors).length === 0, hr.errors);
   check("the result's checksum verifies", sumOk(hr));
+  check("the result reports how long page loading and the rest took", Array.isArray(hr.ms) && hr.ms.length === 2 && hr.ms.every((x) => Number.isFinite(x) && x >= 0), hr.ms);
   const es = pack.extractScript({ file: FILE, nonce: "n-ext-1", pages: ["1:1", "2:1"], ids: [["10:1", 0, null]] });
   const er = await runScript(es, mockFigma(docRaw()).figma);
   const seg = er.segs && er.segs[0];
