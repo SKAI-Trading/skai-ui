@@ -66,7 +66,8 @@
     "catalog": "node figma-catalog/pipeline.mjs",
     "catalog:check": "node figma-catalog/pipeline.mjs --check",
     "catalog:drift": "node figma-catalog/pipeline.mjs drift",
-    "catalog:harvest": "node figma-catalog/harvest.mjs"
+    "catalog:harvest": "node figma-catalog/harvest.mjs",
+    "catalog:worklist": "node figma-catalog/worklist.mjs"
   },
   "peerDependencies": {
     "react": "^18.0.0",
