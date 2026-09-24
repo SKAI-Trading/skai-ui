@@ -443,8 +443,9 @@ export async function hashDriver(figma, lib, B, job) {
  * The extract pass. Each frame goes out as one segment: its record's parts
  * flattened to a pre-order node list (a `{_p, _h}` marker opens each part,
  * every node carries its depth as `_d`), so a frame too big for one result is
- * carried across calls by offset. A frame that does not fit whole is only sent
- * as a slice when it is first in the result; otherwise it waits in `rest`.
+ * carried across calls by offset. A frame that does not fit whole goes out as
+ * a slice, and ends the result, when it is first or when at least a quarter
+ * of the budget is still free; otherwise it waits in `rest`.
  * job.ids is [[id, offset, expectedHash]]: a continuation whose frame hash has
  * changed since the earlier slices restarts at 0.
  */
@@ -492,7 +493,7 @@ export async function extractDriver(figma, lib, B, job) {
     const head = len(seg);
     let body = 0;
     for (let k = off; k < x.length; k++) body += len(x[k]);
-    if (head + body > room && out.segs.length) break;
+    if (head + body > room && out.segs.length && room < job.budget / 4) break;
     room -= head;
     for (let k = off; k < x.length; k++) {
       const z = len(x[k]);

@@ -480,7 +480,8 @@ async function main(argv) {
         try {
           const res = loadResult(f);
           const r = cmd === "hash-ingest" ? hashIngest(ctx, res) : extractIngest(ctx, res);
-          console.log(`${f}: ${JSON.stringify(r)}`);
+          const brief = { ...r, rest: `${r.rest.length} id(s) not reached` };
+          console.log(`${f}: ${JSON.stringify(brief)}`);
           if (r.refused && r.refused.length) failed++;
         } catch (e) {
           failed++;
@@ -849,6 +850,18 @@ async function selfTest() {
   const forced8 = await planExtractScript(c8, { budget: tiny, file: FILE, nodes: ["30:1"] });
   check("a transfer that would need more than the per-frame cap is parked, not planned again", r8.partial[0] && r8.partial[0].oversize === true && next8.plan === null && status(c8).oversize.length === 1, [r8.partial, next8.plan]);
   check("a parked frame named with --nodes continues where it stopped", forced8.plan && forced8.plan.ids[0][1] === r8.partial[0].have, forced8.plan);
+
+  const r10 = await runScript(pack.extractScript({ file: FILE, nonce: "n-late", pages: ["1:1"], ids: [["20:1", 0, null], ["30:1", 0, null]], budget: 6000, ...split }), mockFigma(big).figma);
+  const s10 = r10.segs || [];
+  check("a frame too big for the room left still starts, as the last segment, when a quarter of the budget is free", s10.length === 2 && s10[0].f === "20:1" && s10[0].x.length === s10[0].T && s10[1].f === "30:1" && s10[1].x.length < s10[1].T && r10.rest.length === 0 && JSON.stringify(r10).length <= 6000 + 200, s10.map((s) => [s.f, s.x.length, s.T]));
+  const mid = JSON.parse(JSON.stringify(big));
+  mid.pages[0].children.push(bigFrame("40:1", 1, 24));
+  const m10 = mockFigma(mid);
+  const w10 = await runScript(pack.extractScript({ file: FILE, nonce: "n-late-w", pages: ["1:1"], ids: [["40:1", 0, null]], budget: 60000 }), m10.figma);
+  const s1 = JSON.stringify(w10.segs[0]).length + 2;
+  const b10 = 400 + s1 + 1300;
+  const r10b = await runScript(pack.extractScript({ file: FILE, nonce: "n-late-b", pages: ["1:1"], ids: [["40:1", 0, null], ["30:1", 0, null]], budget: b10 }), m10.figma);
+  check("with less than a quarter of the budget free it waits in rest instead", 1300 < b10 / 4 && (r10b.segs || []).length === 1 && r10b.rest[0] === "30:1", [s1, b10, (r10b.segs || []).map((s) => s.f), r10b.rest]);
 
   const c9 = mkctx("forged");
   const er9 = await runScript(pack.extractScript({ file: FILE, nonce: "n-ext-forged", pages: ["1:1"], ids: [["20:1", 0, null]] }), mockFigma(docRaw()).figma);
