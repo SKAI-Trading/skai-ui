@@ -22,7 +22,7 @@
 4723-52636	partial	-	GameDetailHeader built (node 4723-52636); game-detail orphaned, not routed
 4798-57445	partial	-	PlayReferralBanner built and wired in hub; standalone bookie-referral view not a separate route
 4792-31202	not-wired	-	Live-RTP page; per-game RTP shows on GameCard but no standalone Live-RTP view built
-4792-34490	partial	-	SUPERSEDED 2026-09-23 (report 0a1bbbe7): "bookie tiers view not built" is no longer true. Built and measured live at 1440 against this node (main 5106326c4): the tab bar and content draw the frame's one #122524 section, active-tab rule, page rhythm and the Tier tile's display name + medallion; 110 tests green. Held at partial, not match: the Pool actions body (9112:12758) and the lower page sections (Popular games rail, About Skai Play, FAQ, Licences) remain open, per status.wave41.play-hub.tsv:52.
+4792-34490	match	-	SUPERSEDED 2026-09-24 (reports 0a1bbbe7, main 5106326c4/07dd06f9f/e1a12e5d4/9dda16492): the page is now closed end to end and measured live at 1440 - tab bar/content, Pool actions body (9112:12758, two-column grid 1112x502) and the lower sections (Popular games, About Skai Play/Licences, footer via BookieClosingBand.tsx) all draw. Remaining deviations from the frame are RULED, not parity gaps: sUSD-only token row, Claim disabled pending a SKAI claim-path decision, no "N playing", stat-tile icons unbuilt by the file's standing note. See status.wave41.play-hub.tsv:52.
 4911-89419	not-wired	-	sportsbook My bets with values; full sportsbook page not built
 4911-92925	not-wired	-	sportsbook Starting-soon view; full sportsbook page not built
 4758-62997	partial	-	CloseGameDialog built (node 4758-62997); game-detail orphaned, not routed

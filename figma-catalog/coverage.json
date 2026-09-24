@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T06:05:11.379Z",
+  "generated": "2026-09-24T06:09:41.975Z",
   "harvestedAt": "2026-09-24",
   "rollup": {
     "pages": 39,
@@ -10,8 +10,8 @@
     "genuineWithRuledOut": 3778,
     "ruledOutUncited": [],
     "matched": 3769,
-    "done": 1238,
-    "verified": 814,
+    "done": 1239,
+    "verified": 815,
     "visuallyDowngraded": 51,
     "visualUnmapped": [],
     "visualRetired": [
@@ -33,7 +33,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1768,
+    "partial": 1767,
     "notStarted": 381,
     "blocked": 190,
     "frameDefect": 187,
@@ -46,16 +46,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3247,
-    "withBreakpointProvenance": 1837,
-    "namingANodeId": 3022,
+    "total": 3248,
+    "withBreakpointProvenance": 1838,
+    "namingANodeId": 3023,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 19097,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 961,
-    "unrecognisedTokens": 39126
+    "unrecognisedTokens": 39129
   },
   "statusFiles": [
     {
@@ -2342,7 +2342,7 @@
       "file": "status.wave43.play-sports.tsv",
       "rows": 47,
       "withLiveId": 16,
-      "ids": 14
+      "ids": 15
     },
     {
       "file": "status.wave43.trade.tsv",
@@ -5574,12 +5574,12 @@
       "defaultNamed": 6,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 37,
+      "verified": 38,
       "visuallyDowngraded": 3,
       "byStatus": {
-        "partial": 108,
+        "partial": 107,
         "furniture": 1,
-        "done": 80,
+        "done": 81,
         "not-started": 53,
         "frame-defect": 25,
         "blocked-on-backend": 2
@@ -17630,9 +17630,9 @@
       "id": "4792-34490",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "4798-57445",
