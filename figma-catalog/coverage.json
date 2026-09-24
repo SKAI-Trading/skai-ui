@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T03:23:04.803Z",
+  "generated": "2026-09-24T05:35:27.068Z",
   "harvestedAt": "2026-09-24",
   "rollup": {
     "pages": 39,
@@ -10,8 +10,8 @@
     "genuineWithRuledOut": 3778,
     "ruledOutUncited": [],
     "matched": 3769,
-    "done": 1238,
-    "verified": 816,
+    "done": 1236,
+    "verified": 814,
     "visuallyDowngraded": 51,
     "visualUnmapped": [],
     "visualRetired": [
@@ -33,8 +33,8 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1760,
-    "notStarted": 387,
+    "partial": 1763,
+    "notStarted": 386,
     "blocked": 191,
     "frameDefect": 188,
     "catalogFurniture": 5,
@@ -46,16 +46,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3247,
-    "withBreakpointProvenance": 1837,
-    "namingANodeId": 3022,
+    "total": 3245,
+    "withBreakpointProvenance": 1835,
+    "namingANodeId": 3020,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 19097,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 961,
-    "unrecognisedTokens": 39105
+    "unrecognisedTokens": 39112
   },
   "statusFiles": [
     {
@@ -5577,10 +5577,10 @@
       "verified": 37,
       "visuallyDowngraded": 3,
       "byStatus": {
-        "partial": 107,
+        "partial": 108,
         "furniture": 1,
         "done": 80,
-        "not-started": 54,
+        "not-started": 53,
         "frame-defect": 25,
         "blocked-on-backend": 2
       },
@@ -6493,12 +6493,12 @@
       "defaultNamed": 4,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 7,
+      "verified": 5,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 7,
+        "done": 5,
         "frame-defect": 1,
-        "partial": 2
+        "partial": 4
       },
       "liveOnly": []
     },
@@ -17630,9 +17630,9 @@
       "id": "4792-34490",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
-      "verdict": "not-wired"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "4798-57445",
@@ -30000,7 +30000,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "14106-71752",
@@ -37016,7 +37016,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13006-246442",
@@ -41110,16 +41110,16 @@
       "id": "9825-21726",
       "page": "✅ Baccarat - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {
       "id": "9825-21961",
       "page": "✅ Baccarat - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "match"
     },
     {

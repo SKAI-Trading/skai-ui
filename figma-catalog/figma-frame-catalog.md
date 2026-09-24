@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-24T03:23:03.092Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-24T05:35:22.531Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -15,11 +15,11 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 4 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 61 | 138 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 106 | 85 | 0 | 0 | 102 |
-| play | ✅ | 378 | 159 | 219 | 44 | 48 | 73 | 34 | 0 | 66 |
+| play | ✅ | 378 | 159 | 219 | 44 | 48 | 74 | 33 | 0 | 66 |
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 59 | 83 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 13 | 86 | 48 | 0 | 134 |
 | wallet-2 | ✅ | 194 | 141 | 53 | 22 | 119 | 8 | 2 | 0 | 49 |
-| wallet | ✅ | 186 | 133 | 53 | 35 | 89 | 41 | 0 | 0 | 59 |
+| wallet | ✅ | 186 | 133 | 53 | 35 | 89 | 42 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 62 | 39 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 13 | 1 | 0 | 0 |
 | fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 37 | 19 | 0 | 0 | 0 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4801** | **2449** | | | **940** | **1294** | **197** | **18** | **1032** |
+| **all** | | **4801** | **2450** | | | **940** | **1296** | **196** | **18** | **1032** |
 
 ### Drift against live Figma
 
@@ -535,7 +535,7 @@ Frames that exist in Figma but are not in the catalog:
 | continue on web > home > right-sidecar > wallet multi menu > Remove walletl | 7 | mobile | Create Non-custodial wallet 375 [modal 354x542]; Import private key 375 [modal 354x414]; Enter recovery phrase 375 [modal 354x398] | done/partial | [7774-68417](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7774-68417&m=dev) |
 | continue on web > unlock | 6 | desktop, tablet, mobile | password | done/partial | [2999-19674](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2999-19674&m=dev) |
 | continue on web > home > right-sidecar > wallet multi menu > Export private key | 6 | tablet, desktop, mobile | reveal | done | [7713-16630](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-16630&m=dev) |
-| continue on web > home > right-sidecar > Add wallet > Connect hardware wallet | 5 | tablet, desktop, mobile | Scan QR code (Keystone/Ledger) modal 768 [modal 448x626] | done/blocked-on-backend | [7717-13587](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13587&m=dev) |
+| continue on web > home > right-sidecar > Add wallet > Connect hardware wallet | 5 | tablet, desktop, mobile | Scan QR code (Keystone/Ledger) modal 768 [modal 448x626] | done/partial | [7717-13587](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13587&m=dev) |
 | continue on web > home > crypto > sample token | 5 | desktop, tablet, mobile | - | done/partial | [3083-1328](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3083-1328&m=dev) |
 | continue on web > home > NFTs > sample NFT | 5 | desktop, tablet, mobile | - | done/partial | [3089-19811](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3089-19811&m=dev) |
 | continue on web > home > right-sidecar > Add wallet > Import existing > Keystone | 4 | tablet, desktop, mobile | Import Keystone 375 [modal 354x440] | done | [7717-13147](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13147&m=dev) |
