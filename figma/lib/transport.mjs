@@ -205,6 +205,12 @@ export const ZDICT = [
 ].join(",");
 
 export const DICT_ID = fnv1a64(ZDICT).slice(0, 8);
+/**
+ * The id of the empty dictionary. A script whose dictionary does not hash to
+ * the id it was given (a copy of the script that is not exact) packs with no
+ * dictionary and says so with this id, so the slip costs ratio, not the call.
+ */
+export const DICT_NONE = fnv1a64("").slice(0, 8);
 
 /**
  * zcodec(dictText) -> { pack(text) -> bytes, b64(bytes, start, end), u8len(text), utf8(text) }
@@ -674,15 +680,17 @@ export function encode(value) {
 }
 
 /**
- * Inflate a whole z1 stream (base64 or bytes) back to its value. Refuses a
- * stream that does not inflate, whose text does not match `zh`, or whose text
- * is not the canonical JSON of what it parses to.
+ * Inflate a whole z1 stream (base64 or bytes) back to its value, with the
+ * dictionary `dz` names (DICT_ID or DICT_NONE). Refuses a stream that does not
+ * inflate, whose text does not match `zh`, or whose text is not the canonical
+ * JSON of what it parses to.
  */
-export function decode(stream, zh) {
+export function decode(stream, zh, dz = DICT_ID) {
+  if (dz !== DICT_ID && dz !== DICT_NONE) throw new TransportError(`no dictionary ${dz} in this checkout (it has ${DICT_ID})`);
   const bytes = typeof stream === "string" ? fromBase64(stream) : Buffer.from(stream);
   let raw;
   try {
-    raw = zlib.inflateRawSync(bytes, { dictionary: DICT_BYTES });
+    raw = zlib.inflateRawSync(bytes, dz === DICT_ID ? { dictionary: DICT_BYTES } : {});
   } catch (e) {
     throw new TransportError(`the stream does not inflate (${e.message})`);
   }

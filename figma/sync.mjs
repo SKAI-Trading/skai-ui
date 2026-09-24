@@ -259,7 +259,7 @@ function openIngest(ctx, result, kind) {
   const seen = ledger.nonceSeen(lines, result.nonce);
   if (seen === "ok") throw new IngestError(`result ${result.nonce} was already ingested`);
   const sum = sumOk(result);
-  const format = kind !== "extract" || (result.enc === transport.ENC && result.dz === transport.DICT_ID && (result.segs || []).every((s) => !transport.badLines(s).length));
+  const format = kind !== "extract" || (result.enc === transport.ENC && (result.dz === transport.DICT_ID || result.dz === transport.DICT_NONE) && (result.segs || []).every((s) => !transport.badLines(s).length));
   const ok = sum && format;
   const frames = kind === "hash" ? Object.keys(result.frames || {}).length : (result.segs || []).length;
   const at = ctx.now().toISOString();
@@ -272,7 +272,7 @@ function openIngest(ctx, result, kind) {
     const hint = where.length ? ` The lines that no longer match their checks: ${where.join("; ")}.` : "";
     throw new IngestError(`result ${result.nonce}: checksum does not match its content, so it was changed after Figma returned it.${hint} Copy it again exactly and re-ingest (the call is already counted).`);
   }
-  if (!format) throw new IngestError(`result ${result.nonce} was packed as ${result.enc || "plain JSON"} with dictionary ${result.dz || "none"}; this checkout reads ${transport.ENC} with dictionary ${transport.DICT_ID}. Make the script again from this checkout (the call is already counted).`);
+  if (!format) throw new IngestError(`result ${result.nonce} was packed as ${result.enc || "plain JSON"} with dictionary ${result.dz || "none"}; this checkout reads ${transport.ENC} with dictionary ${transport.DICT_ID} (or ${transport.DICT_NONE}, none). Make the script again from this checkout (the call is already counted).`);
   if (ctx.hooks.beforeWrite) ctx.hooks.beforeWrite(kind);
   return at;
 }
@@ -381,7 +381,7 @@ function storeFrame(ctx, idx, fileKey, key, p, at) {
  * One z1 segment into the transfer on record. Returns the finished transfer
  * (every byte in) or null, and says why a slice was refused.
  */
-function takeSlice(ctx, st, key, seg, out) {
+function takeSlice(ctx, st, key, seg, dz, out) {
   const refuse = (error) => {
     delete st.partial[key];
     out.refused.push({ key, error });
@@ -395,8 +395,8 @@ function takeSlice(ctx, st, key, seg, out) {
     return refuse(e.message);
   }
   let p = st.partial[key];
-  if (seg.o === 0) p = { enc: transport.ENC, H: seg.H, T: seg.T, R: seg.R, Z: seg.Z, zh: seg.zh, pg: seg.pg, n: seg.n, w: seg.w, h: seg.h, z: "", got: 0, calls: 0 };
-  else if (!pack.continuable(p) || p.H !== seg.H || p.got !== seg.o || p.Z !== seg.Z || p.zh !== seg.zh || p.T !== seg.T) {
+  if (seg.o === 0) p = { enc: transport.ENC, dz, H: seg.H, T: seg.T, R: seg.R, Z: seg.Z, zh: seg.zh, pg: seg.pg, n: seg.n, w: seg.w, h: seg.h, z: "", got: 0, calls: 0 };
+  else if (!pack.continuable(p) || p.dz !== dz || p.H !== seg.H || p.got !== seg.o || p.Z !== seg.Z || p.zh !== seg.zh || p.T !== seg.T) {
     return refuse(`slice at byte ${seg.o} does not continue the transfer on record; it restarts from 0`);
   }
   const end = seg.o + bytes.length;
@@ -422,11 +422,11 @@ export function extractIngest(ctx, result) {
   const out = { stored: [], partial: [], refused: [], missing: result.missing || [], errors: result.errors || {}, rest: result.rest || [] };
   for (const seg of result.segs || []) {
     const key = pack.frameKey(result.file, seg.f);
-    const p = takeSlice(ctx, st, key, seg, out);
+    const p = takeSlice(ctx, st, key, seg, result.dz, out);
     if (!p) continue;
     let r;
     try {
-      const { value } = transport.decode(p.z, p.zh);
+      const { value } = transport.decode(p.z, p.zh, p.dz);
       if (!Array.isArray(value) || value.length !== p.T) throw new Error(`the stream holds ${Array.isArray(value) ? value.length : "no"} items, the frame declared ${p.T}`);
       r = storeFrame(ctx, idx, result.file, key, { ...p, x: value }, at);
     } catch (e) {
@@ -1030,6 +1030,20 @@ async function selfTest() {
   const batchIds = Array.from({ length: pack.MAX_EXTRACT_FRAMES }, (_, i) => [`I${12000 + i}:${340000 + i};${5000 + i}:${60000 + i}`, 123456, "0123456789abcdef"]);
   const bigScript = pack.extractScript({ file: FILE, nonce: "000000000000", pages: ["9990:1", "9991:1", "9992:1"], ids: batchIds });
   check("an extract script for the largest batch stays under the script budget (and use_figma's 50,000)", bigScript.length < pack.SCRIPT_BUDGET, bigScript.length);
+
+  const goodScript = pack.extractScript({ file: FILE, nonce: "n-dict-ok", pages: ["1:1", "2:1"], ids: [["10:1", 0, null]] });
+  const at300 = goodScript.indexOf("Coal 300");
+  const slipScript = goodScript.slice(0, at300) + "Coal 3O0" + goodScript.slice(at300 + 8).replace('"nonce":"n-dict-ok"', '"nonce":"n-dict-slip"');
+  const okRes = await runScript(goodScript, mockFigma(docRaw()).figma);
+  const slipRes = await runScript(slipScript, mockFigma(docRaw()).figma);
+  const c16 = mkctx("dict-slip", { frames: [{ key: `${FILE}:10:1`, fileKey: FILE, node: "10:1", pageId: "1:1", order: 0 }] });
+  const r16 = extractIngest(c16, slipRes);
+  const v16 = verifyStored(c16, `${FILE}:10:1`);
+  check(
+    "a script whose dictionary was not copied exactly packs without it, says so, and still stores the frame at its live hash",
+    at300 > goodScript.indexOf("zdict:") && okRes.dz === transport.DICT_ID && slipRes.dz === transport.DICT_NONE && slipRes.segs[0].Z > okRes.segs[0].Z && r16.stored.length === 1 && v16 && v16.recomputed === okRes.segs[0].H,
+    [okRes.dz, slipRes.dz, okRes.segs[0].Z, slipRes.segs[0] && slipRes.segs[0].Z, r16],
+  );
 
   const stressDoc = docRaw();
   stressDoc.pages[0].children.push(stressFrame("60:1", 1600, 5));

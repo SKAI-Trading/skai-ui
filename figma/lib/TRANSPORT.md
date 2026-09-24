@@ -113,7 +113,13 @@ is planned again from 0 and is no longer treated as parked.
 the first live specs. It also holds a few templates for kinds those specs lack (line, group, gradient, image, shadow,
 blur, component, text case). It is part of the format: `DICT_ID` is the first 8 hex digits of its FNV-1a 64, the
 script sends it back as `dz`, and a result made with another dictionary is refused. Changing the dictionary is safe
-whenever no transfer is part-way. Held-out, a dictionary built from some specs made the other specs' streams 17 to 26%
+whenever no transfer is part-way.
+
+A script is pasted into use_figma by hand, and the dictionary is about a quarter of it. So the script first checks that
+its own copy of the dictionary hashes to the `dz` it was given. If it does not, the copy was not exact: the script
+packs with no dictionary and returns `dz` `cbf29ce4` (`DICT_NONE`, the id of the empty text), and the ingest decodes
+that just as well. A slip in the dictionary costs some ratio, not the call. A transfer keeps the dictionary it
+started with, and a slice packed with the other one is refused. Held-out, a dictionary built from some specs made the other specs' streams 17 to 26%
 smaller. It matters most for the small frames that fit in one call, and hardly at all past a stream's first 32 KB.
 
 ## Numbers

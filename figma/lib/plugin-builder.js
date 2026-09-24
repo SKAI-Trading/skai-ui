@@ -466,7 +466,11 @@ export async function extractDriver(figma, lib, B, job) {
   const loaded = new Set();
   await loadPages(figma, job.pages, loaded);
   const t1 = Date.now();
-  const zc = lib.zc;
+  // A dictionary that does not hash to the id the job names was not copied
+  // exactly: pack without one and say so, rather than send a stream the
+  // receiving side would decode with different bytes.
+  const dictOk = lib.fnv1a64(lib.zdict).slice(0, 8) === job.dz;
+  const zc = lib.zcodec(dictOk ? lib.zdict : '');
   const LINE = job.line;
   const size = (v) => zc.u8len(JSON.stringify(v));
   const flat = (t, d, x) => {
@@ -484,7 +488,7 @@ export async function extractDriver(figma, lib, B, job) {
     const k = Math.ceil(c / LINE);
     return c + 14 * k - 2;
   };
-  const out = { v: 1, kind: 'extract', file: job.file, nonce: job.nonce, enc: job.enc, dz: job.dz, segs: [], missing: [], errors: {}, rest: [] };
+  const out = { v: 1, kind: 'extract', file: job.file, nonce: job.nonce, enc: job.enc, dz: dictOk ? job.dz : lib.fnv1a64('').slice(0, 8), segs: [], missing: [], errors: {}, rest: [] };
   let used = size(out) + 60;
   const after = [0];
   for (let k = job.ids.length - 1; k >= 0; k--) after.unshift(after[0] + size(job.ids[k][0]) + 1);

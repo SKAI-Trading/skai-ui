@@ -52,8 +52,9 @@ const CORE = compact(
 );
 const HASH_LIB = `${CORE}\nconst lib = { canonicalJson, fnv1a64 };`;
 // The dictionary goes in as one JSON string literal, after compact(), so no
-// line of it can be taken for a comment.
-const EXTRACT_LIB = `${CORE}\n${compact(`const zcodec = ${zcodec.toString()};`)}\nconst lib = { canonicalJson, fnv1a64, zc: zcodec(${JSON.stringify(ZDICT)}) };`;
+// line of it can be taken for a comment. The driver checks it against the
+// job's `dz` before using it.
+const EXTRACT_LIB = `${CORE}\n${compact(`const zcodec = ${zcodec.toString()};`)}\nconst lib = { canonicalJson, fnv1a64, zcodec, zdict: ${JSON.stringify(ZDICT)} };`;
 const HASH_DRIVER = compact(`const hashDriver = ${hashDriver.toString()};`);
 const EXTRACT_DRIVER = compact(`const extractDriver = ${extractDriver.toString()};`);
 
