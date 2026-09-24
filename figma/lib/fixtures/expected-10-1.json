@@ -1,0 +1,141 @@
+{
+  "id": "10:1",
+  "t": "FRAME",
+  "n": "Skai > Test > Board (1440 x 900px)",
+  "b": [0, 0, 1440, 900],
+  "l": { "m": "V", "g": "s-4", "p": [16, 16, 16, 16], "ai": "CENTER", "sy": "HUG" },
+  "r": "rounded-xl",
+  "f": ["Primary/Green Coal 200"],
+  "clip": true,
+  "c": [
+    {
+      "id": "10:2",
+      "t": "TEXT",
+      "n": "Title",
+      "b": [16, 16, 300.5, 24.5],
+      "l": { "sx": "FILL", "sy": "HUG" },
+      "f": ["#FFFFFF@0.64"],
+      "tx": { "c": "Buy Yes", "st": "Lg/Paragraph 2 300", "tc": "UPPER", "ta": "CENTER" }
+    },
+    {
+      "id": "10:3",
+      "t": "TEXT",
+      "n": "Price",
+      "b": [16, 64, 100, 20],
+      "f": ["#052D2D"],
+      "tx": { "c": "0.52", "st": "Lg/Paragraph 2 300", "fs": 16 }
+    },
+    {
+      "id": "10:4",
+      "t": "TEXT",
+      "n": "Mixed",
+      "b": [16, 100, 200, 30],
+      "tx": {
+        "c": "Hello world",
+        "seg": [
+          { "c": "Hello ", "st": "Lg/Paragraph 2 300", "f": ["#FFFFFF"] },
+          { "c": "world", "ff": "Inter", "fw": 700, "fs": "font/size/xl", "lh": "auto", "ls": 0.5, "f": ["Primary/Green Coal 200"], "td": "UNDERLINE" }
+        ]
+      }
+    },
+    {
+      "id": "10:5",
+      "t": "GROUP",
+      "n": "Group 3",
+      "b": [100, 200, 120, 80],
+      "op": 0.8,
+      "l": { "abs": true },
+      "c": [
+        {
+          "id": "10:6",
+          "t": "RECTANGLE",
+          "n": "Bar",
+          "b": [10, 30, 50, 20],
+          "r": [4, 4, 0, 0],
+          "f": [{ "grad": "LINEAR", "stops": [[0, "#FF0000"], [1, "#0000FF@0.5"]], "angle": 0 }],
+          "s": ["#00FF00"],
+          "sw": 2,
+          "sa": "INSIDE",
+          "fx": [{ "t": "DROP_SHADOW", "c": "#000000@0.25", "o": [0, 4], "r": 8 }]
+        },
+        {
+          "id": "10:8",
+          "t": "BOOLEAN_OPERATION",
+          "n": "Icon",
+          "b": [70, 10, 24, 24],
+          "f": [{ "img": "abc123", "scale": "FILL" }]
+        }
+      ]
+    },
+    {
+      "id": "10:10",
+      "t": "INSTANCE",
+      "n": "Button",
+      "b": [16, 300, 120, 40],
+      "l": { "m": "H", "g": 8, "p": [12, 16, 12, 16], "ai": "CENTER", "jc": "CENTER", "sx": "HUG", "sy": "HUG" },
+      "r": 8,
+      "ci": { "k": "k-button-default", "n": "State=Default", "set": "Button", "props": { "Label": "Buy", "State": "Default" } }
+    },
+    {
+      "id": "10:11",
+      "t": "INSTANCE",
+      "n": "Button",
+      "b": [16, 360, 120, 40],
+      "ci": { "k": "k-remote", "n": "Chip" },
+      "c": [
+        {
+          "id": "I10:11;5:5",
+          "t": "FRAME",
+          "n": "Content",
+          "b": [0, 0, 120, 40],
+          "c": [
+            {
+              "id": "I10:11;5:6",
+              "t": "TEXT",
+              "n": "Label",
+              "b": [8, 10, 50, 20],
+              "f": ["#FFFFFF"],
+              "tx": { "c": "Sell", "ff": "Inter", "fw": 400, "fs": 12, "lh": "150%", "ls": 0 }
+            },
+            {
+              "id": "I10:11;5:7",
+              "t": "INSTANCE",
+              "n": "Badge",
+              "b": [80, 10, 20, 20],
+              "ci": { "k": "k-button-default", "n": "State=Default", "set": "Button" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10:12",
+      "t": "FRAME",
+      "n": "Hidden panel",
+      "b": [16, 420, 200, 100],
+      "vis": false,
+      "op": 0.5,
+      "s": ["VariableID:1:9"],
+      "sw": [1, 0, 0, 0],
+      "sa": "CENTER",
+      "fx": "Shadow/Card"
+    },
+    {
+      "id": "10:13",
+      "t": "FRAME",
+      "n": "Grid",
+      "b": [16, 540, 400, 200],
+      "l": { "m": "G", "g": 8, "sx": "FILL" },
+      "f": ["Surface/Card"],
+      "c": [
+        {
+          "id": "10:14",
+          "t": "RECTANGLE",
+          "n": "Cell",
+          "b": [0, 0, 100, 100],
+          "l": { "sx": "FILL" }
+        }
+      ]
+    }
+  ]
+}
