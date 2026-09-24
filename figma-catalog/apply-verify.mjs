@@ -4,9 +4,9 @@
  * verification outcomes from the figma-match-100 screenshot loop) back into
  * registry.json at the FRAME level. Mirrors apply-status.mjs.
  *
- * This is distinct from the existing _verify.<section>.tsv / VERIFY_BRIEF.md
- * scaffold, which records CODE-status verification (done/partial by reading
- * source). This records VISUAL fidelity (a screenshot was compared to Figma).
+ * This is distinct from the VERIFY_BRIEF.md scaffold, which records CODE-status
+ * verification (done/partial by reading source). This records VISUAL fidelity
+ * (a screenshot was compared to Figma).
  *
  * vverify line:  node-id <TAB> verdict <TAB> shotPath <TAB> note
  *   verdict ∈ match | partial | deferred | not-wired

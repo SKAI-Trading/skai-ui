@@ -489,7 +489,7 @@ for (const pg of PAGES.pages || []) {
 }
 
 // Node-ids deleted upstream in Figma after they were cataloged — the `gone` rows in
-// bugref-aliases.tsv, the same source audit-figma-txt.mjs reads. They keep their
+// bugref-aliases.tsv. They keep their
 // hand-set status (they WERE built) but must be excluded from page-coverage math:
 // a row whose node no longer exists cannot be compared against a live page, and
 // leaving them in is what makes a delta go NEGATIVE and read as an anomaly.

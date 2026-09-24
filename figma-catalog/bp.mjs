@@ -140,7 +140,7 @@ export function normaliseStatus(status) {
  */
 /**
  * Lane files whose name genuinely does not encode their section, so no rule can
- * derive it. Same idea as `SECTION_ALIAS` in `audit-figma-txt.mjs`.
+ * derive it.
  *
  * Everything under `wave2.trench-*` / `launch-components` / `creator-rewards-*`
  * assessed frames on the **Trade 2** Figma page; `home2-intel-hub` assessed the

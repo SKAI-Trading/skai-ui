@@ -53,17 +53,15 @@ for Swap/Margin/Bridge/Launch/Perps/Dashboard). **The `trench` and
 `trade-bugrefs` sections are therefore RETIRED** — all three described the same
 Figma page, so they are folded into `trade` rather than left overlapping. The
 one trench frame absent from the 692 (`9695-96406`) no longer resolves in Figma
-at all; it is recorded as `gone` in `bugref-aliases.tsv`, and
-`audit-figma-txt.mjs` reads those rows so a deleted-upstream id is not reported
-as a permanent gap. Per-frame `status`/`verifiedAt` survived the fold because
+at all; it is recorded as `gone` in `bugref-aliases.tsv`, so a deleted-upstream
+id is not reported as a permanent gap. Per-frame `status`/`verifiedAt` survived the fold because
 `build-registry.mjs` preserves hand-set fields by node-id (120 verdicts carried
 over, verified).
 
-Note `audit-figma-txt.mjs` also carries a `SECTION_ALIAS` map: a figma.txt
-heading does not always slugify to the catalog section key (`Trade (7/27
-update):` → `trade`). Its heading regex must stay permissive enough to match
-digits/parens/slashes — the original `[A-Za-z ]`-only pattern silently skipped
-that heading, auditing its 692 links against nothing.
+The committed copy of that link dump (`figma.txt`, retired 2026-08-05) and its
+audit (`audit-figma-txt.mjs` / `.json`) were deleted on 2026-09-24. Nothing read
+them: section node lists now change only through the live harvest
+(`harvest.mjs` → `snapshot-to-nodes.mjs --write`). Git history keeps all three.
 
 Node-ids are only unique *within* a file — the same bare id can name different
 frames in two files (e.g. `6330-54594` is home scaffolding in Skai-Web-App and a

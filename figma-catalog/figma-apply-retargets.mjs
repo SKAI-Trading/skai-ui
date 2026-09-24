@@ -28,8 +28,8 @@
  *     is deleted, so every step is reversible.
  *
  * ── Usage ────────────────────────────────────────────────────────────────────
- *   node figma-apply-retargets.mjs figma-drift.webapp.json            # dry run
- *   node figma-apply-retargets.mjs figma-drift.webapp.json --apply    # write
+ *   node figma-apply-retargets.mjs figma-drift.live.json            # dry run
+ *   node figma-apply-retargets.mjs figma-drift.live.json --apply    # write
  *
  * Dry run is the DEFAULT and prints exactly what would change. A tool that
  * rewrites a third of the catalog should never do so because someone forgot a
