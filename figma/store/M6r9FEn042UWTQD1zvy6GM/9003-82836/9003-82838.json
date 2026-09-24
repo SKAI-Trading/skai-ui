@@ -1,0 +1,56 @@
+{
+ "v": 1,
+ "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+ "node": "9003:82838",
+ "page": "✅ Plinko - Skai originals",
+ "name": "main",
+ "hash": "0dd2336b5eb4079c",
+ "syncedAt": "2026-09-24T23:06:01.259Z",
+ "partOf": "M6r9FEn042UWTQD1zvy6GM:9003:82836",
+ "tree":
+  {"id":"9003:82838","t":"FRAME","n":"main","b":[0,52,768,1788],"clip":true,"c":[
+   {"ref":"9003:82839","h":"d0105a09d235c13a"},
+   {"id":"9003:83617","t":"FRAME","n":"Frame 337","b":[30,24,708,36],"l":{"ai":"CENTER","g":"s-2","m":"H"},"c":[
+    {"id":"9003:83618","t":"FRAME","n":"Frame 450","b":[0,0,280,36],"l":{"g":8,"jc":"CENTER","m":"V","sx":"FILL","sy":"FILL"},"c":[
+     {"id":"9003:83619","t":"FRAME","n":"Frame 345","b":[0,0,280,36],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"H","sx":"FILL","sy":"FILL"},"c":[
+      {"id":"9003:83620","t":"INSTANCE","n":"icons/action","b":[0,9,18,18],"clip":true,"ci":{"k":"42b2a82e6074ce522e79df6894df976966fbb767","n":"Size=16px, Type=Left Chevron","props":{"Size":"16px","Type":"Left Chevron"},"set":"icons/action"},"c":[
+       {"id":"I9003:83620;1470:590","t":"BOOLEAN_OPERATION","n":"icon","b":[4.5,2,8,14.5],"f":["Core/White"]}
+      ]},
+      {"id":"9137:12647","t":"RECTANGLE","n":"Rectangle 34624567","b":[26,2,32,32],"r":"border-radius/rounded-md","f":[{"img":"9dd770989f335ca03874f4b00071bf823773f72f","scale":"CROP"}],"s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE"},
+      {"id":"9003:83622","t":"TEXT","n":"Plinko","b":[66,4,214,28],"l":{"sx":"FILL","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Plinko","st":"Md/Super-headline 4 300"}}
+     ]},
+     {"id":"9003:83623","t":"TEXT","n":"High volume markets in the last 24 hours.","b":[0,44,962,22],"vis":false,"f":["App/Ash 300"],"tx":{"c":"High volume markets in the last 24 hours.","st":"Lg/Paragraph 1 300"}}
+    ]},
+    {"id":"9003:83624","t":"FRAME","n":"Frame 656","b":[288,0,420,36],"l":{"ai":"CENTER","g":"s-3","jc":"MAX","m":"H","sy":"HUG"},"c":[
+     {"id":"9003:83625","t":"INSTANCE","n":"icons/action","b":[38.5,10,16,16],"clip":true,"ci":{"k":"585465af55f17ef991dd60850dd9c6c1d7685355","n":"Size=16px, Type=Information","props":{"Size":"16px","Type":"Information"},"set":"icons/action"},"c":[
+      {"id":"I9003:83625;1224:1009","t":"VECTOR","n":"icon","b":[1.5,1.5,13.5,13.5],"f":["App/Ash 300"]}
+     ]},
+     {"id":"9003:83626","t":"FRAME","n":"Frame 512","b":[66.5,2,173.5,32],"l":{"ai":"CENTER","g":"s-2","m":"H","p":["s-1","s-3","s-1","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-lg","f":["Primary/Green Coal 200"],"c":[
+      {"id":"9003:83627","t":"INSTANCE","n":"input/toggle","b":[8,4,40.5,24],"l":{"g":6.67,"m":"V","p":["s-0,5","s-0,5","s-0,5","s-0,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["Primary/Green Coal 300"],"ci":{"k":"425c79c4546aa4025144ee9bbc329b4cae0d4b16","n":"State=Off","props":{"State":"Off"},"set":"input/toggle"}},
+      {"id":"9003:83628","t":"TEXT","n":"Practice mode off","b":[56.5,7,105,18],"op":0.74,"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Practice mode off","st":"Lg/Paragraph 2 300","ta":"CENTER"}}
+     ]},
+     {"id":"9003:83629","t":"INSTANCE","n":"CTA/button","b":[252,0,36,36],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"H","p":["s-2,5","s-2,5","s-2,5","s-2,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","ci":{"k":"b1742e1bf04df68d26b9c8bf98a3f3b566859249","n":"Size=Large, Type=Primary","props":{"Has label":false,"Has left icon":false,"Has right icon":true,"Size":"Large","Text":"Connect wallet","Type":"Primary"},"set":"CTA/button"},"c":[
+      {"id":"I9003:83629;786:561","t":"INSTANCE","n":"icons/action","b":[10,10,16,16],"clip":true,"ci":{"k":"b3e7ea1395361d03984867f176d6050cac8944ce","n":"Size=16px, Type=Rerun","props":{"Size":"16px","Type":"Rerun"},"set":"icons/action"},"c":[
+       {"id":"I9003:83629;786:561;1457:1866","t":"BOOLEAN_OPERATION","n":"Union","b":[2.5,2,11,12],"f":["Core/White"]}
+      ]}
+     ]},
+     {"id":"9003:83630","t":"INSTANCE","n":"CTA/button","b":[300,0,36,36],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"H","p":["s-2,5","s-2,5","s-2,5","s-2,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","ci":{"k":"b1742e1bf04df68d26b9c8bf98a3f3b566859249","n":"Size=Large, Type=Primary","props":{"Has label":false,"Has left icon":false,"Has right icon":true,"Size":"Large","Text":"Connect wallet","Type":"Primary"},"set":"CTA/button"},"c":[
+      {"id":"I9003:83630;786:561","t":"INSTANCE","n":"icons/action","b":[10,10,16,16],"clip":true,"ci":{"k":"cd472c90fa80846676f305f6820887f479ccda90","n":"Size=16px, Type=Favorite","props":{"Size":"16px","Type":"Favorite"},"set":"icons/action"},"c":[
+       {"id":"I9003:83630;786:561;1457:1867","t":"VECTOR","n":"icon","b":[2,2,12.5,11.5],"f":["Core/White"]}
+      ]}
+     ]},
+     {"id":"9003:83631","t":"FRAME","n":"CTA/button","b":[348,0,36,36],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"H","p":["s-2,5","s-2,5","s-2,5","s-2,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","c":[
+      {"id":"9003:83632","t":"INSTANCE","n":"logos/others","b":[40,20,24,24],"vis":false,"ci":{"k":"c4fa5318c1625d9c7338520909a07d22abea1bb8","n":"Brand=Metamask, Size=24px","props":{"Brand":"Metamask","Size":"24px"},"set":"logos/others"}},
+      {"id":"9003:83633","t":"TEXT","n":"Button","b":[46,21,104,22],"vis":false,"f":["Primary/Green Coal 300"],"tx":{"c":"Connect wallet","st":"Lg/Paragraph 1 300","ta":"CENTER"}},
+      {"id":"9003:83634","t":"INSTANCE","n":"labels/tag","b":[132,23,71,18],"vis":false,"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["App/Green 300"],"ci":{"k":"8814967f2bf9467b55a063061c777f76fbbca2f3","n":"Size=Large, Type=Fill","props":{"Has left icon":true,"Has right icon":true,"Size":"Large","Text":"Label","Type":"Fill"},"set":"labels/tag"}},
+      {"id":"9003:83635","t":"INSTANCE","n":"icons/action","b":[10,10,16,16],"clip":true,"ci":{"k":"16293e2f6715163a61c5b3e153b666b1471e0ace","n":"Size=16px, Type=Alert On","props":{"Size":"16px","Type":"Alert On"},"set":"icons/action"},"c":[
+       {"id":"I9003:83635;1601:2445","t":"BOOLEAN_OPERATION","n":"icon","b":[1,3,13.5,10.5],"f":["Core/White"]}
+      ]}
+     ]},
+     {"id":"9003:83636","t":"INSTANCE","n":"icons/graphical","b":[396,6,24,24],"clip":true,"ci":{"k":"83d7dc85f237b35c43fb78e4cacee2a6025eb127","n":"Size=24px, Type=Expand","props":{"Size":"24px","Type":"Expand"},"set":"icons/graphical"},"c":[
+      {"id":"I9003:83636;1088:521","t":"VECTOR","n":"icon","b":[5,5,13.5,13.5],"s":["Core/White"],"sw":2.81,"sa":"INSIDE"}
+     ]}
+    ]}
+   ]}
+  ]}
+}

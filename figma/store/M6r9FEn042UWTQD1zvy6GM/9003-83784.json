@@ -1,0 +1,16 @@
+{
+ "v": 1,
+ "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+ "node": "9003:83784",
+ "page": "✅ Plinko - Skai originals",
+ "name": "Skai > Play > Casino > Plinko (768 x 1024px)",
+ "hash": "1210a16208099bae",
+ "syncedAt": "2026-09-24T23:06:01.259Z",
+ "tree":
+  {"id":"9003:83784","t":"FRAME","n":"Skai > Play > Casino > Plinko (768 x 1024px)","b":[0,0,768,1607],"f":["Primary/Green Coal 300"],"clip":true,"c":[
+   {"id":"9003:83785","t":"ELLIPSE","n":"shine","b":[-190,1492,1147.5,1147.5],"vis":false,"op":0.19,"f":["Primary/Alien Green 300"],"fx":[{"r":173.64,"t":"LAYER_BLUR"}]},
+   {"ref":"9003:83786","h":"05ef3aa736432a0e"},
+   {"id":"9003:84584","t":"INSTANCE","n":"Header-tablet","b":[0,0,768,52],"l":{"ai":"CENTER","g":260,"jc":"SPACE_BETWEEN","m":"H","p":["s-1,5",19,"s-1,5",19],"sy":"HUG"},"f":["Primary/Green Coal 300"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"CENTER","ci":{"k":"dd4ccbc1c20869d2ef48470c14340d122b8b6049","n":"Header-tablet"}},
+   {"id":"9003:84585","t":"INSTANCE","n":"Bottom-navigation-tablet","b":[0,1555,768,52],"l":{"ai":"CENTER","g":260,"jc":"SPACE_BETWEEN","m":"H","p":["s-2",19,"s-2",19]},"f":["#001615@0.6"],"s":["Primary/Green Coal 100"],"sw":["border-width/w-100",0,0,0],"sa":"CENTER","fx":[{"r":20,"t":"BACKGROUND_BLUR"}],"ci":{"k":"ffc7522f66a9dbe37af5429ca2c7560b86db2dbc","n":"Bottom-navigation-tablet"}}
+  ]}
+}
