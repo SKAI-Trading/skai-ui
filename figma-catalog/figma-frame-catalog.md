@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-09-24T05:35:22.531Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-09-24T05:47:35.921Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -32,7 +32,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 2 | 0 | 0 | 14 |
 | towers | ✅ | 31 | 17 | 14 | 1 | 4 | 5 | 0 | 0 | 7 |
 | skratch | ✅ | 22 | 16 | 6 | 1 | 4 | 9 | 0 | 0 | 11 |
-| rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 0 | 10 | 0 | 0 | 7 |
+| rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 0 | 11 | 0 | 0 | 7 |
 | crash | ✅ | 20 | 15 | 5 | 1 | 2 | 11 | 0 | 0 | 12 |
 | plinko | ✅ | 21 | 15 | 6 | 1 | 0 | 8 | 0 | 0 | 8 |
 | skai-cross |  | 15 | 15 | 0 | 1 | 0 | 0 | 0 | 15 | 0 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4801** | **2450** | | | **940** | **1296** | **196** | **18** | **1032** |
+| **all** | | **4801** | **2451** | | | **940** | **1297** | **196** | **18** | **1032** |
 
 ### Drift against live Figma
 
@@ -660,7 +660,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Rock Paper Scissors | 16 | desktop, mobile, tablet | Desktop; Rock icon 1; Desktop Target; Paper icon 1; Scissors icon 1; Rock Paper Scissors game area (streak ladder) [Desktop 954x621] | partial/frame-defect/furniture/blocked-on-backend | [9907-1595](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9907-1595&m=dev) |
+| Casino > Rock Paper Scissors | 16 | desktop, mobile, tablet | Desktop; Rock icon 1; Desktop Target; Paper icon 1; Scissors icon 1; Rock Paper Scissors game area (streak ladder) [Desktop 954x621] | partial/furniture/blocked-on-backend | [9907-1595](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9907-1595&m=dev) |
 
 ## Crash
 

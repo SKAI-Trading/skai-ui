@@ -22,10 +22,10 @@ This file carries no run date, so it is byte-identical whenever its inputs are. 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
 | `done` | 1236 | 32.8% |
-| `partial` | 1763 | 46.8% |
+| `partial` | 1764 | 46.8% |
 | `not-started` | 386 | 10.2% |
 | `blocked-on-backend` | 191 | 5.1% |
-| `frame-defect` | 188 | 5.0% |
+| `frame-defect` | 187 | 5.0% |
 | `furniture` (catalog says furniture, this script says genuine) | 5 | 0.1% |
 | `unknown` | 0 | 0.0% |
 
@@ -92,7 +92,7 @@ Read the caveat section before quoting that. It is not 32.8% measured parity.
 | ✅ Coinflip - Skai originals | in-scope | 46 | 12 | 34 | 34 | 26 | 8 | 0 | 0 | 0 | 100.0% |
 | ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 2 | 21 | 0 | 0 | 0 | 100.0% |
 | ✅ Keno - Skai originals | in-scope | 27 | 11 | 16 | 16 | 4 | 12 | 0 | 0 | 0 | 100.0% |
-| ✅ Rock Paper Scissors - Skai originals | in-scope | 24 | 8 | 16 | 16 | 0 | 9 | 0 | 6 | 0 | 100.0% |
+| ✅ Rock Paper Scissors - Skai originals | in-scope | 24 | 8 | 16 | 16 | 0 | 10 | 0 | 6 | 0 | 100.0% |
 | ✅ Chicken - Skai originals | in-scope | 31 | 16 | 15 | 15 | 11 | 2 | 0 | 0 | 0 | 100.0% |
 | ✅ Towers - Skai originals | in-scope | 30 | 15 | 15 | 15 | 3 | 7 | 0 | 0 | 0 | 100.0% |
 | ✅ Blackjack - Skai originals | in-scope | 23 | 9 | 14 | 14 | 10 | 2 | 0 | 0 | 0 | 100.0% |
@@ -435,7 +435,7 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 39112 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 39103 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
 **7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **116 of the 3769 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 117/117, ✅ Trade 1 116/367 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 

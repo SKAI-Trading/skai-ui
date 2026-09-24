@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T05:35:27.068Z",
+  "generated": "2026-09-24T05:47:38.561Z",
   "harvestedAt": "2026-09-24",
   "rollup": {
     "pages": 39,
@@ -33,10 +33,10 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1763,
+    "partial": 1764,
     "notStarted": 386,
     "blocked": 191,
-    "frameDefect": 188,
+    "frameDefect": 187,
     "catalogFurniture": 5,
     "unknown": 0,
     "liveOnly": 0,
@@ -55,7 +55,7 @@
     "total": 19097,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 961,
-    "unrecognisedTokens": 39112
+    "unrecognisedTokens": 39103
   },
   "statusFiles": [
     {
@@ -6591,8 +6591,7 @@
       "verified": 0,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 9,
-        "frame-defect": 1,
+        "partial": 10,
         "blocked-on-backend": 6
       },
       "liveOnly": []
@@ -41382,8 +41381,8 @@
       "id": "9937-18748",
       "page": "✅ Rock Paper Scissors - Skai originals",
       "scope": "in-scope",
-      "status": "frame-defect",
-      "claimed": "frame-defect",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
