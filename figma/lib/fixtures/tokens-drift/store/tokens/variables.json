@@ -1,0 +1,16 @@
+{
+  "collections": {
+    "Primatives": { "key": "54176305c0a9d35af00ab365c91281b87637c847", "library": { "file": "TyX8YAtNDEIvsnSLQ3IXId", "fileName": "Skai-Design", "proof": "fixture" }, "modes": ["Mode 1", "Mode 2"], "remote": true, "seenIn": ["mhF3BkzlTaGiLzJ7kvpmVc"], "variables": 19 },
+    "Spacing": { "key": "cb953a5eec4d1fdd7a6ba0ff46919684a1c21ed2", "library": { "file": "TyX8YAtNDEIvsnSLQ3IXId", "fileName": "Skai-Design", "proof": "fixture" }, "modes": ["Mode 1"], "remote": true, "seenIn": ["mhF3BkzlTaGiLzJ7kvpmVc"], "variables": 21 }
+  },
+  "syncedAt": "2026-09-24T00:00:00.000Z",
+  "v": 1,
+  "variables": {
+    "White": { "collection": "Primatives", "id": "VariableID:3ebc7330bd43737ecd63c3be01ac8b291032e24f/692:79", "key": "3ebc7330bd43737ecd63c3be01ac8b291032e24f", "modes": { "Mode 1": "#FFFFFF", "Mode 2": "#FFFFFF" }, "remote": true, "scopes": ["ALL_SCOPES"], "type": "COLOR" },
+    "border-radius/rounded-2xl": { "collection": "Primatives", "id": "VariableID:01c17e97f25513e343867037cf858a4179f1fee0/692:229", "key": "01c17e97f25513e343867037cf858a4179f1fee0", "modes": { "Mode 1": 16, "Mode 2": 16 }, "remote": true, "scopes": ["CORNER_RADIUS"], "type": "FLOAT" },
+    "border-radius/rounded-3xl": { "collection": "Primatives", "id": "VariableID:eb5aa1c6ad06c1c6774f9dbc14ccc1fb6761d9c3/692:227", "key": "eb5aa1c6ad06c1c6774f9dbc14ccc1fb6761d9c3", "modes": { "Mode 1": 24, "Mode 2": 24 }, "remote": true, "scopes": ["CORNER_RADIUS"], "type": "FLOAT" },
+    "border-radius/rounded-lg": { "collection": "Primatives", "id": "VariableID:b117d82f9ef70f47e7ff9595119acb9292ba3b0a/692:232", "key": "b117d82f9ef70f47e7ff9595119acb9292ba3b0a", "modes": { "Mode 1": 8, "Mode 2": 8 }, "remote": true, "scopes": ["CORNER_RADIUS"], "type": "FLOAT" },
+    "s-0,5": { "collection": "Spacing", "id": "VariableID:7974595612da4b182b8cc25f9569c39d36793fad/692:182", "key": "7974595612da4b182b8cc25f9569c39d36793fad", "modes": { "Mode 1": 2 }, "remote": true, "scopes": ["GAP"], "type": "FLOAT" },
+    "s-4": { "collection": "Spacing", "id": "VariableID:a7e81a7bc49f6869d9cacb6107564c060504d43c/692:189", "key": "a7e81a7bc49f6869d9cacb6107564c060504d43c", "modes": { "Mode 1": 16 }, "remote": true, "scopes": ["GAP"], "type": "FLOAT" }
+  }
+}

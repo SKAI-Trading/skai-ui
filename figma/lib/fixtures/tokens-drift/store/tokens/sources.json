@@ -1,0 +1,7 @@
+{
+  "v": 1,
+  "library": null,
+  "runs": {
+    "mhF3BkzlTaGiLzJ7kvpmVc": { "calls": 1, "fileName": "Skai-Web-App-2", "frames": 2, "ms": 1, "nodes": 10, "pages": { "1:1": { "children": 4, "walked": 2 } }, "passes": [{ "calls": 1, "frames": 2, "from": [0, 0], "next": null, "offset": 0, "stride": 2 }], "plannedPages": ["1:1"], "usesInWalkedFrames": { "f4117dab2c1b7b6581cd935dc09e711cb560045f": 5 } }
+  }
+}

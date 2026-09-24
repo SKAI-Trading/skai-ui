@@ -1,0 +1,84 @@
+{
+  "_comment": "A made-up Figma document for figma/tokens.mjs --self-test. Every key is fake. The mock in lib/tokens-selftest.mjs serves it through the same Plugin API calls the export and provenance scripts make.",
+  "file": {
+    "key": "mhF3BkzlTaGiLzJ7kvpmVc",
+    "name": "Skai-Web-App-2 (fixture)",
+    "pages": [
+      {
+        "id": "1:1",
+        "name": "Page A",
+        "children": [
+          {
+            "id": "10:1",
+            "type": "FRAME",
+            "bv": { "itemSpacing": "VariableID:aaaaaaaaaaaa0000000000000000000000000001/1:1", "fills": ["VariableID:cccccccccccc0000000000000000000000000003/1:3"] },
+            "effectStyleId": "S:eeeeeeeeeeee0000000000000000000000000102,5:2",
+            "kids": [
+              { "id": "10:2", "type": "RECTANGLE", "bv": { "topLeftRadius": "VariableID:bbbbbbbbbbbb0000000000000000000000000002/1:2" }, "fillStyleId": "S:ffffffffffff0000000000000000000000000103,5:3" },
+              { "id": "10:3", "type": "TEXT", "textStyleId": "S:dddddddddddd0000000000000000000000000101,5:1", "fillStyleId": "" },
+              {
+                "id": "10:4",
+                "type": "TEXT",
+                "textStyleId": "MIXED",
+                "fillStyleId": "MIXED",
+                "segments": [
+                  { "textStyleId": "S:dddddddddddd0000000000000000000000000101,5:1", "fillStyleId": "" },
+                  { "textStyleId": "S:d2d2d2d2d2d20000000000000000000000000104,5:4", "fillStyleId": "S:ffffffffffff0000000000000000000000000103,5:3" }
+                ]
+              }
+            ]
+          },
+          { "id": "10:5", "type": "FRAME", "bv": { "paddingLeft": "VariableID:aaaaaaaaaaaa0000000000000000000000000001/1:1" }, "kids": [{ "id": "10:6", "type": "GROUP", "effectStyleId": "S:eeeeeeeeeeee0000000000000000000000000102,5:2", "kids": [] }] },
+          { "id": "10:7", "type": "RECTANGLE", "bv": { "opacity": "VariableID:bbbbbbbbbbbb0000000000000000000000000002/1:2" } }
+        ]
+      },
+      {
+        "id": "2:1",
+        "name": "Page B",
+        "children": [
+          {
+            "id": "20:1",
+            "type": "FRAME",
+            "bv": { "paddingTop": "VariableID:999999999999000000000000000000000000000f/1:9" },
+            "kids": [{ "id": "20:2", "type": "RECTANGLE", "bv": { "strokes": ["VariableID:111111111111000000000000000000000000000c/1:7"] } }]
+          }
+        ]
+      }
+    ]
+  },
+  "collections": [
+    { "id": "VariableCollectionId:c1", "name": "Primatives", "key": "c0110000000000000000000000000000000000c1", "remote": true, "modes": [["m1", "Mode 1"]], "count": 40 },
+    { "id": "VariableCollectionId:c2", "name": "Colors", "key": "c0220000000000000000000000000000000000c2", "remote": true, "modes": [["d", "Dark"], ["l", "Light"]], "count": 12 },
+    { "id": "VariableCollectionId:c3", "name": "Legacy", "key": "c0330000000000000000000000000000000000c3", "remote": true, "modes": [["m1", "Mode 1"]], "count": 3 }
+  ],
+  "variables": [
+    { "id": "VariableID:aaaaaaaaaaaa0000000000000000000000000001/1:1", "key": "aaaaaaaaaaaa0000000000000000000000000001", "name": "s-4", "col": "VariableCollectionId:c1", "type": "FLOAT", "scopes": ["GAP"], "values": { "m1": 16 }, "web": "var(--s-4)" },
+    { "id": "VariableID:bbbbbbbbbbbb0000000000000000000000000002/1:2", "key": "bbbbbbbbbbbb0000000000000000000000000002", "name": "border-radius/rounded-lg", "col": "VariableCollectionId:c1", "type": "FLOAT", "scopes": ["CORNER_RADIUS"], "values": { "m1": 8 } },
+    { "id": "VariableID:cccccccccccc0000000000000000000000000003/1:3", "key": "cccccccccccc0000000000000000000000000003", "name": "Primary/Green Coal 100", "col": "VariableCollectionId:c2", "type": "COLOR", "scopes": ["ALL_FILLS"], "values": { "d": { "r": 0.07058823529411765, "g": 0.24705882352941178, "b": 0.23529411764705882, "a": 1 }, "l": { "alias": "VariableID:444444444444000000000000000000000000000d/1:4" } } },
+    { "id": "VariableID:444444444444000000000000000000000000000d/1:4", "key": "444444444444000000000000000000000000000d", "name": "Base/Coal half", "col": "VariableCollectionId:c2", "type": "COLOR", "scopes": [], "values": { "d": { "r": 0.07058823529411765, "g": 0.24705882352941178, "b": 0.23529411764705882, "a": 0.5 }, "l": { "r": 1, "g": 1, "b": 1, "a": 1 } } },
+    { "id": "VariableID:999999999999000000000000000000000000000f/1:9", "key": "999999999999000000000000000000000000000f", "name": "s-4", "col": "VariableCollectionId:c3", "type": "FLOAT", "scopes": ["ALL_SCOPES"], "values": { "m1": 15 } },
+    { "id": "VariableID:111111111111000000000000000000000000000c/1:7", "key": "111111111111000000000000000000000000000c", "name": "Border/Dangling", "col": "VariableCollectionId:c3", "type": "COLOR", "scopes": [], "values": { "m1": { "alias": "VariableID:dead00000000000000000000000000000000beef/9:9" } } }
+  ],
+  "styles": [
+    { "id": "S:dddddddddddd0000000000000000000000000101,5:1", "key": "dddddddddddd0000000000000000000000000101", "type": "TEXT", "name": "Lg/Paragraph 2 300", "fontName": { "family": "Manrope", "style": "SemiBold" }, "fontSize": 14, "lineHeight": { "unit": "PIXELS", "value": 18 }, "letterSpacing": { "unit": "PERCENT", "value": -4 }, "textCase": "ORIGINAL", "textDecoration": "NONE" },
+    { "id": "S:d2d2d2d2d2d20000000000000000000000000104,5:4", "key": "d2d2d2d2d2d20000000000000000000000000104", "type": "TEXT", "name": "Lg/Number 1 700", "fontName": { "family": "Mulish", "style": "Bold" }, "fontSize": 20, "lineHeight": { "unit": "AUTO" }, "letterSpacing": { "unit": "PIXELS", "value": 0 }, "textCase": "UPPER", "textDecoration": "NONE", "bv": { "fontSize": "VariableID:aaaaaaaaaaaa0000000000000000000000000001/1:1" } },
+    { "id": "S:eeeeeeeeeeee0000000000000000000000000102,5:2", "key": "eeeeeeeeeeee0000000000000000000000000102", "type": "EFFECT", "name": "Shadow/Card", "effects": [
+      { "type": "DROP_SHADOW", "visible": true, "color": { "r": 0, "g": 0, "b": 0, "a": 0.25 }, "offset": { "x": 0, "y": 4 }, "radius": 12, "spread": 0 },
+      { "type": "BACKGROUND_BLUR", "visible": true, "radius": 24 },
+      { "type": "INNER_SHADOW", "visible": false, "color": { "r": 1, "g": 1, "b": 1, "a": 1 }, "offset": { "x": 0, "y": 1 }, "radius": 0, "spread": 0 }
+    ] },
+    { "id": "S:ffffffffffff0000000000000000000000000103,5:3", "key": "ffffffffffff0000000000000000000000000103", "type": "PAINT", "name": "Fill/Brand half", "paints": [
+      { "type": "SOLID", "visible": true, "opacity": 0.5, "color": { "r": 0.07058823529411765, "g": 0.24705882352941178, "b": 0.23529411764705882 }, "bvColor": "VariableID:cccccccccccc0000000000000000000000000003/1:3" },
+      { "type": "SOLID", "visible": false, "opacity": 1, "color": { "r": 1, "g": 0, "b": 0 } }
+    ] }
+  ],
+  "library": {
+    "name": "Skai-Design (fixture)",
+    "collections": [
+      { "name": "Primatives", "key": "c0110000000000000000000000000000000000c1", "modes": ["Mode 1"], "count": 40 },
+      { "name": "Colors", "key": "c0220000000000000000000000000000000000c2", "modes": ["Dark", "Light"], "count": 12 }
+    ],
+    "variableKeys": ["aaaaaaaaaaaa0000000000000000000000000001", "bbbbbbbbbbbb0000000000000000000000000002", "cccccccccccc0000000000000000000000000003", "444444444444000000000000000000000000000d"],
+    "styleKeys": { "text": ["dddddddddddd0000000000000000000000000101", "d2d2d2d2d2d20000000000000000000000000104"], "effect": ["eeeeeeeeeeee0000000000000000000000000102"], "paint": [] }
+  }
+}
