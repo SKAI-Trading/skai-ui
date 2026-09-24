@@ -6,6 +6,29 @@
     "key": "f5fc4ffece7cd2bea5bfe6bc9b1ae2e9afe68785",
     "lh": "auto",
     "ls": "0%",
+    "notInLibrary": true,
+    "remote": true,
+    "tc": "ORIGINAL",
+    "td": "NONE"
+  },
+  "Lg/Headline 2 - Italics 300": {
+    "ff": "Cormorant Garamond",
+    "fs": 82,
+    "fw": "300 italic",
+    "key": "36cb0f5dc3363b3ef27a4781e488b82f74b0ceea",
+    "lh": 90,
+    "ls": "-4%",
+    "remote": true,
+    "tc": "ORIGINAL",
+    "td": "NONE"
+  },
+  "Lg/Headline 2 300": {
+    "ff": "Cormorant Garamond",
+    "fs": 82,
+    "fw": 300,
+    "key": "b7795931d52e69519a3e84a05b3ad633995115a2",
+    "lh": 90,
+    "ls": "-4%",
     "remote": true,
     "tc": "ORIGINAL",
     "td": "NONE"
@@ -16,6 +39,28 @@
     "fw": "300 italic",
     "key": "506d4fbd8ce4583fc36ead166a11909630189f56",
     "lh": 48,
+    "ls": "-4%",
+    "remote": true,
+    "tc": "ORIGINAL",
+    "td": "NONE"
+  },
+  "Lg/Headline 3 300": {
+    "ff": "Cormorant Garamond",
+    "fs": 54,
+    "fw": 300,
+    "key": "f6081d453840b27207cf3962573ce3a932b6e7e0",
+    "lh": 48,
+    "ls": "-4%",
+    "remote": true,
+    "tc": "ORIGINAL",
+    "td": "NONE"
+  },
+  "Lg/Headline 4 300": {
+    "ff": "Cormorant Garamond",
+    "fs": 34,
+    "fw": 300,
+    "key": "75931425f50b346b4be0af7935fd5477b48b76e0",
+    "lh": 24,
     "ls": "-4%",
     "remote": true,
     "tc": "ORIGINAL",
@@ -362,6 +407,17 @@
     "tc": "ORIGINAL",
     "td": "NONE"
   },
+  "Md/Paragraph 3 600": {
+    "ff": "Manrope",
+    "fs": 10,
+    "fw": 700,
+    "key": "0b5f09050dfc01ceb8178840dda03da2db8c1342",
+    "lh": 14,
+    "ls": "-4%",
+    "remote": true,
+    "tc": "ORIGINAL",
+    "td": "NONE"
+  },
   "Md/Sub-headline 1 300": {
     "ff": "Manrope",
     "fs": 18,
@@ -424,6 +480,7 @@
     "key": "4fadde1726bc3e20eb8acd4321dbb33ff1e8b42d",
     "lh": 28,
     "ls": "-4%",
+    "notInLibrary": true,
     "remote": true,
     "tc": "ORIGINAL",
     "td": "NONE"
@@ -565,6 +622,17 @@
     "fs": 10,
     "fw": 400,
     "key": "41a05933d8661fe0137547d35ccd94bacc6c809a",
+    "lh": 12,
+    "ls": "-4%",
+    "remote": true,
+    "tc": "ORIGINAL",
+    "td": "NONE"
+  },
+  "Sm/Paragraph 3 600": {
+    "ff": "Manrope",
+    "fs": 10,
+    "fw": 700,
+    "key": "286f3f092496d30d3f435e2d4e744fc36d018c8a",
     "lh": 12,
     "ls": "-4%",
     "remote": true,

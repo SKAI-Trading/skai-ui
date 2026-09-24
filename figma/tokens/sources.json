@@ -1,11 +1,109 @@
 {
+  "export": {
+    "added": {
+      "es": 1,
+      "gs": 3,
+      "ps": 0,
+      "ts": 6,
+      "v": 26
+    },
+    "bad": [],
+    "changes": [],
+    "complete": true,
+    "counts": {
+      "cols": 2,
+      "es": 3,
+      "gs": 3,
+      "ps": 22,
+      "ts": 61,
+      "v": 65
+    },
+    "externalAliases": [],
+    "got": {
+      "es": 3,
+      "gs": 3,
+      "ps": 22,
+      "ts": 61,
+      "v": 65
+    },
+    "gridRead": true,
+    "method": "library-read",
+    "next": null,
+    "parts": [
+      {
+        "at": "2026-09-24T09:35:21.024Z",
+        "from": 0,
+        "gridRead": true,
+        "items": 154,
+        "n": 141,
+        "pub": 65,
+        "sum": "2c63c387"
+      },
+      {
+        "at": "2026-09-24T09:36:52.211Z",
+        "from": 141,
+        "gridRead": true,
+        "items": 154,
+        "n": 13,
+        "pub": 65,
+        "sum": "72c364aa"
+      }
+    ],
+    "perCol": {
+      "Primatives": 31,
+      "Spacing": 34
+    },
+    "provenanceCheck": {
+      "checkedAt": "2026-09-24T07:55:18.000Z",
+      "e": "same",
+      "p": "same",
+      "t": "same",
+      "v": "same",
+      "w": 12
+    },
+    "publish": {
+      "complete": false,
+      "errors": {
+        "publish status: not a function": 89
+      },
+      "of": 154,
+      "read": 65,
+      "unread": {
+        "es": 3,
+        "gs": 3,
+        "ps": 22,
+        "ts": 61,
+        "v": 0
+      },
+      "unreadVariables": []
+    },
+    "publishErrors": {
+      "publish status: not a function": 89
+    },
+    "same": 118,
+    "source": "TyX8YAtNDEIvsnSLQ3IXId",
+    "sourceName": "Skai-Design",
+    "startedAt": "2026-09-24T09:35:21.024Z",
+    "total": 154,
+    "unread": {
+      "es": 3,
+      "gs": 3,
+      "ps": 22,
+      "ts": 61,
+      "v": 0
+    },
+    "unreadVariables": [],
+    "updatedAt": "2026-09-24T09:36:52.211Z",
+    "why": []
+  },
   "library": {
-    "checkedAt": "2026-09-24T07:55:18.000Z",
+    "checkedAt": "2026-09-24T09:36:52.211Z",
     "collectionsMatched": 2,
     "file": "TyX8YAtNDEIvsnSLQ3IXId",
     "fileName": "Skai-Design",
     "keys": {
       "e": "16a06c30e4ff3ae6a1450d11708bb31e9d44",
+      "g": "11c6c413a1963d5d57976024fac78a1fc53e",
       "p": "12c871fae79f1eee73a5475b358a2d25b6333de359e04e063dec250fe5795357670b28c05dceff7a5f2b5efed179b96966575637835f66dad63244cb90f952f85ea3918bf6107b5791dd27b9df53a74085fb2c49b274441c23dabd69430d3ebdc3279aca81c1c5c0b45e6492cba0d87db72aebeead95a3c5f4117dab2c1bf6c679a940e5",
       "t": "045a9d0fdb250b5f09050dfc11a18b940241129b2d8774aa182d3349b1c51f8be7bd504220487cb68ae62763374fd723286f3f0924962f25d8b31e0636cb0f5dc3363779aab791aa38f252a237043abec91d7c14415639e5a2de41a05933d866436c82584672468cbc45a7b9506d4fbd8ce4523e8c896ec056c59bfbca135abb832d32215c5e541e98195cc7adc804fe63a812f2995564fd05cc79fa6fbde0279ef375931425f50b786cbdc117e378707b77151d7c53ece3616c7cb2a1e5c3e77ccc25f1b1c08709387a23898b2d92c39f898edaf6582cc590f165bea72c9401e215702d9aafbae4b4bda1f858e37780a4567de5d9e2a4ea39d5e3efb7795931d52ebeb0687f5fcebf7167b4181fc0b2344a9beec1c3a2bcee28d3432fad5b47dbb419c48448dcbd50a5f0bedcce5825f130e71b8a16fc34ec5b44f8d7ecec797f04d67cedf84b530156f6081d453840f8ffdffb6906fa2838311d78fb5b987acc56febd05663af3ff9696eb51ee",
       "v": "01c17e97f2550507a29902310655e75e697707cebf350aea0975a824bd300991c54eee611605739a7c251eaa95144d2b2027c920b203247684d46f6b258c6f5a99ea36e9a999431c3adb99b0b9b43df41670f4873ebc7330bd43451ceaba656c46de0812a43746f488fd9c094b9164cd3bff4ee246d2113a51e4666571d25831f5a0108b5e0e89daa95d5e9e3887d02f635310ccbdf46a149e39e93a6a742f9f2e2b6ab01a76b19b6b0e747c86866e987ce0a172714531f65da6722f7c858e0076e19fb5ee3e7974595612da7a3d6d2db4d27ccddf397dfe92322744aa1692a9bb9341089e8e32cab7d1a071305d7197a099416684f7a38f63604190a625e57aa3d8a7e81a7bc49fa818d6ed1ec5b117d82f9ef7b22e29a1370fb2d6b394376ab3dd6173b98ab4bc592e89feb77bf2c2d665bf62128ff8a0bf7faa12e7e1e39d33bfe276eaf5913d9507eb5aa1c6ad06eb99a79c70e2ec5c998a0b68ee95de9a592cf105d46afd8cf33ada0be7f1f8caed3fe035fa7f37c10fd2fd36757bb640fe68ac7521e2",
@@ -14,14 +112,6 @@
     "keysCut": 0,
     "localCollections": [
       {
-        "key": "cb953a5eec4d1fdd7a6ba0ff46919684a1c21ed2",
-        "modes": [
-          "Mode 1"
-        ],
-        "name": "Spacing",
-        "variables": 34
-      },
-      {
         "key": "54176305c0a9d35af00ab365c91281b87637c847",
         "modes": [
           "Mode 1",
@@ -29,43 +119,59 @@
         ],
         "name": "Primatives",
         "variables": 31
+      },
+      {
+        "key": "cb953a5eec4d1fdd7a6ba0ff46919684a1c21ed2",
+        "modes": [
+          "Mode 1"
+        ],
+        "name": "Spacing",
+        "variables": 34
       }
     ],
     "localCounts": {
       "effect": 3,
+      "grid": 3,
       "paint": 22,
       "text": 61,
       "vars": 65
     },
     "match": [
       {
-        "inLibrary": 39,
+        "inLibrary": 65,
         "kind": "variables",
         "notInLibrary": [],
-        "stored": 39
+        "stored": 65
       },
       {
-        "inLibrary": 55,
+        "inLibrary": 61,
         "kind": "text styles",
         "notInLibrary": [
           "Default",
           "Md/Super-headline 4 300 #4fadde"
         ],
-        "stored": 57
+        "stored": 63
       },
       {
-        "inLibrary": 2,
+        "inLibrary": 3,
         "kind": "effect styles",
         "notInLibrary": [],
-        "stored": 2
+        "stored": 3
       },
       {
         "inLibrary": 22,
         "kind": "paint styles",
         "notInLibrary": [],
         "stored": 22
+      },
+      {
+        "inLibrary": 3,
+        "kind": "grid styles",
+        "notInLibrary": [],
+        "stored": 3
       }
     ],
+    "method": "library read: every local collection, variable and style of the file, with values",
     "note": "use_figma reports figma.root.name as 'Document'; the file is identified by the fileKey the call ran against"
   },
   "runs": {

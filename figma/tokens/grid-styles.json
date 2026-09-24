@@ -1,0 +1,44 @@
+{
+  "Ofiare Iron Grid 12 (Tablet)": {
+    "grids": [
+      {
+        "alignment": "CENTER",
+        "c": "#FF0000@0.1",
+        "count": 12,
+        "gutterSize": 12,
+        "pattern": "COLUMNS",
+        "sectionSize": 48
+      }
+    ],
+    "key": "3d5d57976024d4f170a928669f2ec1c4b9080a94",
+    "remote": true
+  },
+  "Ofiare Iron Grid 24": {
+    "grids": [
+      {
+        "alignment": "CENTER",
+        "c": "#FF0000@0.1",
+        "count": 24,
+        "gutterSize": 16,
+        "pattern": "COLUMNS",
+        "sectionSize": 42
+      }
+    ],
+    "key": "fac78a1fc53eed35456c3b637f4aa5f548d51f65",
+    "remote": true
+  },
+  "Ofiare Iron Grid 6 (Mobile)": {
+    "grids": [
+      {
+        "alignment": "CENTER",
+        "c": "#FF0000@0.1",
+        "count": 6,
+        "gutterSize": 8,
+        "pattern": "COLUMNS",
+        "sectionSize": 48
+      }
+    ],
+    "key": "11c6c413a1966935d04c06b8d6f1b00808c84502",
+    "remote": true
+  }
+}
