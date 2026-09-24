@@ -19,8 +19,11 @@ store says what the frame IS.
 figma/
   SCHEMA.md                   this contract
   README.md                   how to find a frame, read a spec, use tokens, run a sync
-  store/<fileKey>/<node>.json one frame spec per catalogued frame; <node> uses "-" (7710-91527.json)
+  store/<fileKey>/<node>.json one frame spec per catalogued frame; <node> uses "-" (7710-91527.json),
+                              and an instance path's ";" becomes "_"
+  store/<fileKey>/<node>/<part>.json   the split-off parts of a frame over 60 KB (see Depth)
   store/index.json            every stored frame: page, name, size, hash, syncedAt, bytes
+  store/sync-state.json       sync's working state: each frame's last live hash, transfers part-way
   tokens/variables.json       every Figma variable the frames use, resolved
   tokens/text-styles.json     every text style the frames use, resolved
   tokens/effect-styles.json   every effect style (shadows, blurs) the frames use
@@ -55,7 +58,7 @@ Everything under `store/`, `tokens/`, `assets/` and `ledger/` is written ONLY by
 | `id` | node id (`7710:91528`) | required |
 | `t` | Figma type: FRAME, GROUP, TEXT, RECTANGLE, ELLIPSE, LINE, VECTOR, BOOLEAN_OPERATION, INSTANCE, COMPONENT, COMPONENT_SET, SECTION | required |
 | `n` | layer name | required |
-| `b` | `[x, y, w, h]` relative to the parent, rounded to 0.5 | required |
+| `b` | `[x, y, w, h]` relative to the parent, rounded to 0.5; the frame's own root is `[0, 0, w, h]`, so moving a frame on the canvas does not change its hash | required |
 | `vis` | `false` when hidden | visible |
 | `op` | opacity | 1 |
 | `l` | auto-layout: `{m, g, p, ai, jc, wrap, sx, sy, abs}` | no auto-layout |
@@ -89,7 +92,9 @@ Resolve any name through `tokens/`.
 
 A string for a solid: a token name or `#RRGGBB`, with `@<opacity>` when the paint's opacity is below 1
 (`"#FFFFFF@0.64"`). An object otherwise: `{"grad": "LINEAR" | "RADIAL" | "ANGULAR" | "DIAMOND", "stops": [[pos, paint]], "angle": deg}`;
-`{"img": "<imageHash>", "scale": "FILL" | "FIT" | "CROP" | "TILE"}`; `{"video": "<hash>"}`. A hidden paint is dropped.
+`{"img": "<imageHash>", "scale": "FILL" | "FIT" | "CROP" | "TILE"}`; `{"video": "<hash>"}`. A gradient or image paint below
+full opacity adds `"op"`. A paint style is written as its style name. A hidden paint is dropped. A variable or style
+that Figma could not resolve is written as its id (`VariableID:…`, `S:…`), never as a guessed value.
 
 ### Effect
 
@@ -99,8 +104,11 @@ A string for a solid: a token name or `#RRGGBB`, with `@<opacity>` when the pain
 
 Full depth, except: VECTOR, BOOLEAN_OPERATION and STAR keep `b`, `f` and `s` but no children; an INSTANCE keeps its
 `ci` and its children only when its content differs from the main component (overrides), otherwise no children. A frame
-spec above 60 KB after that is split: over-large child subtrees become `{"ref": "<node>"}` and are stored as their own
-`store/<fileKey>/<childNode>.json` specs.
+spec above 60 KB after that is split: over-large child subtrees become `{"ref": "<node>", "h": "<part hash>"}` and are
+stored as their own specs in the frame's directory, `store/<fileKey>/<frameNode>/<childNode>.json`, indexed as
+`<fileKey>:<frameNode>/<childNode>` with `"partOf": "<frame key>"`. Not beside the frame: a cut child can itself be a
+catalogued frame, whose own spec (root `b` zeroed) differs from the part. The ref carries the part's hash, so a change
+inside a part still changes the frame hash.
 
 ## Hashing
 
@@ -116,6 +124,9 @@ and in Node (to verify a stored spec). A frame is re-extracted only when its liv
     "hash": "a1b2c3d4e5f60718", "syncedAt": "...", "bytes": 18234, "path": "store/mhF3BkzlTaGiLzJ7kvpmVc/7710-91527.json" } } }
 ```
 
+An entry gains `"stale": true` when a hash pass finds the live hash differs from the stored one; the next extract of
+that frame clears it.
+
 ## tokens/
 
 `variables.json`: `{ "v": 1, "syncedAt": "...", "variables": { "<name>": { "id", "key", "collection", "type": "COLOR" |
@@ -129,7 +140,9 @@ not unique across collections is keyed `<collection>/<name>`.
 ## ledger/calls.jsonl and the budget
 
 Every Figma call sync makes is appended BEFORE its result is ingested: `{"at": ISO, "day": "YYYY-MM-DD" (UTC),
-"kind": "hash" | "extract" | "tokens" | "assets", "file": fileKey, "calls": 1, "frames": n}`. The daily cap (default
+"kind": "hash" | "extract" | "tokens" | "assets", "file": fileKey, "calls": 1, "frames": n}`. sync's lines also carry
+the result's `"nonce"` and `"ok"` (false when the result was refused, e.g. damaged in transcription: the call still
+counts); a second ingest of a refused result writes `"calls": 0`. A line that does not parse counts as one call. The daily cap (default
 120, `FIGMA_DAILY_BUDGET`) counts every line for the UTC day; `sync` refuses to plan past it and says how many calls
 remain. The Figma account allows 200 read calls a day, 15 a minute, shared by every session.
 
