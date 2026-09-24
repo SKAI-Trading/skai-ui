@@ -877,3 +877,20 @@ M6r9FEn042UWTQD1zvy6GM:9669-2966	-	gone	0	0	-
 11142-2604	-	gone	0	0	-
 11148-2220	-	gone	0	0	-
 11148-2221	-	gone	0	0	-
+# 2026-09-24: status-row node ids that no registry frame carries (apply-status.mjs), probed by getNodeByIdAsync after
+# loadAsync on every page of all THREE files: none of these resolves in any of them (live/_resolved.json notFound).
+# Recorded gone so the rows keep their history. Successors, where one exists, are listed for the status lanes, not
+# applied here: 9212-25292 -> 11746-16484 (same layer, rebuilt parent); the four slots load-screen copies were deleted
+# beside same-title frames that already carry rows (11700-34994, 11930-24265, 11298-13311, 11930-29101).
+9142-18835	-	gone	0	0	-
+9156-3195	-	gone	0	0	-
+9163-7051	-	gone	0	0	-
+9212-25292	-	gone	0	0	-
+9100-5928	-	gone	0	0	-
+9175-9500	-	gone	0	0	-
+11896-15052	-	gone	0	0	-
+11930-24384	-	gone	0	0	-
+11881-14886	-	gone	0	0	-
+11930-29256	-	gone	0	0	-
+10030-42676	-	gone	0	0	-
+7713-13587	-	gone	0	0	-
