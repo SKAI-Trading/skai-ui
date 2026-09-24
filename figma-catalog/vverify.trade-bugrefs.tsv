@@ -1,32 +1,33 @@
-# STALE, NOT COUNTED — measured 2026-09-22.
-# coverage.mjs maps vverify.<section>.tsv to a fileKey through pages.json's section list. No section
-# is named "trade-bugrefs", so every line here is skipped and reported in coverage.json as visualUnmapped.
-# That costs nothing: the node ids here are from an earlier generation and are absent from live/.
-# Checked line by line — trench: 89 of 89 absent; trade-bugrefs: 19 of 22 absent, 2 of the remaining 3
-# already carry the same verdict in vverify.trade.tsv, and the last (3903-26048, partial) agrees with
-# the status the registry already holds. So the published figure is NOT inflated by this file.
-# To revive it: retarget the ids against live/ (see the RETARGET path in the figma-catalog skill) and
-# append the surviving lines to the vverify file of a section in the SAME Figma file — the key is
-# fileKey|nodeId, so the section name only has to resolve to the right file.
-4451-126554	deferred	-	Frame is the DASHBOARD whale-activity TABLE (design-context text runs: Dashboard, AI Analysis, Token pair, Skai sentiment, See why?, Bullish, Verdict, Great buy!, Bubble map, News, Whale activity with Date/Name, Balance, Activity, Pair columns), i.e. the InsightX dashboard surface - NOT the perps right-column WhaleActivityFeed. Out of this lane; belongs to whoever owns InsightXScreen.tsx
-4201-128723	deferred	-	Funding panel node not in figma-catalog registry; fixed the masked-zero defect instead (derived 0 rates now dash). Layout parity unverified against this node.
-3903-26048	partial	-	Perps order ticket empty short state, same component as 3903-26142. Amount card border-transparent until a value is entered, CTA dark until submittable, both measured
-9081-278869	partial	-	tablet swap 1VH: footer suppressed below lg and tab-row spacing/size matched; AI-insights + alert stack above the card column is still SURPLUS vs frame (design decision, not removed)
-4026-53896	deferred	-	desktop 1440 frame resolves live despite being absent from figma-catalog; NOT numerically diffed. One finding acted on: 4026-57128 draws a Home/Help/Terms/Privacy row, so the footer fix is scoped to below-lg instead of unconditional
-9081-278869	partial	-	swap 768 renders (exit0, root=103168); SURPLUS vs frame: footer links + AI banner + 4th Lend tab; all owned by src/pages/trade/TradeUnified.tsx not my lane
-4026-53896	deferred	-	desktop swap frame absent from figma-catalog; no node title to diff against
-4026-56768	deferred	-	desktop swap with-info frame absent from figma-catalog
-4026-57167	deferred	-	desktop swap active-1 frame absent from figma-catalog
-4026-57535	deferred	-	desktop swap active-1VH frame absent from figma-catalog
-4026-55735	deferred	-	trade dropdown 1VH frame absent from figma-catalog
-4141-58066	partial	-	swap card column cited in-code at TradeUnified.tsx:387; green-theme override documented
-4141-58475	deferred	-	margin with-info frame absent from figma-catalog
-4141-59209	deferred	-	margin/review-limit frame absent from figma-catalog
-4141-59893	deferred	-	trade bridge frame absent from figma-catalog
-4141-60314	deferred	-	bridge with-info frame absent from figma-catalog
-4141-60595	deferred	-	bridge settings frame absent from figma-catalog
-7816-51721	partial	-	limit closed-warning; collapse state cited in-code as limitNoticeOpen TradeUnified.tsx:2059
-7838-55165	deferred	-	start-bridge frame absent from figma-catalog; withdrawals flag off blocks the flow
-7838-55747	deferred	-	post-wallet-interaction bridge frame needs connected wallet; unreachable under DEV bypass
-7886-84166	deferred	-	bridge error frame absent from figma-catalog
-4414-83859	deferred	-	CORRECTED 2026-08-04: the Launch row IS built (HomeTopBar.tsx:137) — this verdict was wrong. Repo-wide grep for Launch.?Dropdown returns 0 files.
+# SETTLED 2026-09-24, line by line. NO LINE IN THIS TABLE APPLIES; each is kept as a `#-` comment.
+# `trench` and `trade-bugrefs` were folded into `trade` on 2026-07-27 (SCHEMA.md), so no page lists them and until
+# 2026-09-24 coverage.mjs skipped this table as mapping to no page. pages.json `retiredSections` now binds it to the
+# file its frames live in, at the LOWEST precedence: a verdict in a live section's table on the same (fileKey, node)
+# always wins. apply-verify.mjs binds by registry section and does not read retired tables at all.
+# 22 lines, written 2026-07-25..28 (Skai-Trading 3436a8a75 / f5df76ac1, moved here in c8582fa; line for 4414-83859
+# corrected 2026-08-05 in b0c7de8). 3 ids are live on Trade 1; the other 19 are frames Figma rebuilt under new ids
+# on Trade 2 (RETARGET in figma-todo.webapp.tsv, 2026-08-12, e5f60e7; each title checked against live/ harvested
+# 2026-09-22). Applied as written, retargeted, or at either precedence, this table moves NO figure.
+# Each `#-` line is the original line, then `=>` the live id, how it was resolved, and the newer evidence on that id
+# that supersedes it. Re-open a line only with a new reading of the live frame, and put it in that frame's own table.
+#- 4451-126554	deferred	-	Frame is the DASHBOARD whale-activity TABLE (design-context text runs: Dashboard, AI Analysis, Token pair, Skai sentiment, See why?, Bullish, Verdict, Great buy!, Bubble map, News, Whale activity with Date/Name, Balance, Activity, Pair columns), i.e. the InsightX dashboard surface - NOT the perps right-column WhaleActivityFeed. Out of this lane; belongs to whoever owns InsightXScreen.tsx	=> 4451-126554 (live on ✅ Trade 1); superseded by verdict vverify.trade.tsv:571 match (2026-09-14)
+#- 4201-128723	deferred	-	Funding panel node not in figma-catalog registry; fixed the masked-zero defect instead (derived 0 rates now dash). Layout parity unverified against this node.	=> 4201-128723 (live on ✅ Trade 1); superseded by status row status.wave58.trade-perp.tsv:26 blocked-on-backend (2026-09-19)
+#- 3903-26048	partial	-	Perps order ticket empty short state, same component as 3903-26142. Amount card border-transparent until a value is entered, CTA dark until submittable, both measured	=> 3903-26048 (live on ✅ Trade 1); superseded by status row status.wave58.trade-perp.tsv:28 partial (2026-09-21)
+#- 9081-278869	partial	-	tablet swap 1VH: footer suppressed below lg and tab-row spacing/size matched; AI-insights + alert stack above the card column is still SURPLUS vs frame (design decision, not removed)	=> 13006-258282 (RETARGET figma-todo.webapp.tsv:338, title "Skai > Trade > Swap 1VH (768 x 1024px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:241 blocked-on-backend (2026-09-07)
+#- 4026-53896	deferred	-	desktop 1440 frame resolves live despite being absent from figma-catalog; NOT numerically diffed. One finding acted on: 4026-57128 draws a Home/Help/Terms/Privacy row, so the footer fix is scoped to below-lg instead of unconditional	=> 13006-247883 (RETARGET figma-todo.webapp.tsv:251, title "Skai > Trade > Swap 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:239 blocked-on-backend (2026-09-07)
+#- 9081-278869	partial	-	swap 768 renders (exit0, root=103168); SURPLUS vs frame: footer links + AI banner + 4th Lend tab; all owned by src/pages/trade/TradeUnified.tsx not my lane	=> 13006-258282 (RETARGET figma-todo.webapp.tsv:338, title "Skai > Trade > Swap 1VH (768 x 1024px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:241 blocked-on-backend (2026-09-07)
+#- 4026-53896	deferred	-	desktop swap frame absent from figma-catalog; no node title to diff against	=> 13006-247883 (RETARGET figma-todo.webapp.tsv:251, title "Skai > Trade > Swap 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:239 blocked-on-backend (2026-09-07)
+#- 4026-56768	deferred	-	desktop swap with-info frame absent from figma-catalog	=> 13006-248078 (RETARGET figma-todo.webapp.tsv:252, title "Skai > Trade > Swap - with info 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:236 blocked-on-backend (2026-09-07)
+#- 4026-57167	deferred	-	desktop swap active-1 frame absent from figma-catalog	=> 13006-250217 (RETARGET figma-todo.webapp.tsv:264, title "Skai > Trade > Swap - active 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:230 blocked-on-backend (2026-09-07)
+#- 4026-57535	deferred	-	desktop swap active-1VH frame absent from figma-catalog	=> 13006-250040 (RETARGET figma-todo.webapp.tsv:263, title "Skai > Trade > Swap - active 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:229 blocked-on-backend (2026-09-07)
+#- 4026-55735	deferred	-	trade dropdown 1VH frame absent from figma-catalog	=> 13006-144635 (RETARGET figma-todo.webapp.tsv:133, title "Skai > Trade - dropdown 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave41.trade-2.tsv:81 partial (2026-09-14)
+#- 4141-58066	partial	-	swap card column cited in-code at TradeUnified.tsx:387; green-theme override documented	=> 13006-248255 (RETARGET figma-todo.webapp.tsv:253, title "Skai > Trade > Margin 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:224 blocked-on-backend (2026-09-07)
+#- 4141-58475	deferred	-	margin with-info frame absent from figma-catalog	=> 13006-249562 (RETARGET figma-todo.webapp.tsv:261, title "Skai > Trade > Margin - with info 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:221 blocked-on-backend (2026-09-07)
+#- 4141-59209	deferred	-	margin/review-limit frame absent from figma-catalog	=> 13006-249767 (RETARGET figma-todo.webapp.tsv:262, title "Skai > Trade > Margin - with info > review limit 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave42.trade-followups.tsv:218 blocked-on-backend (2026-09-07)
+#- 4141-59893	deferred	-	trade bridge frame absent from figma-catalog	=> 13006-248523 (RETARGET figma-todo.webapp.tsv:255, title "Skai > Trade > Bridge 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by verdict vverify.trade-2.tsv:106 partial (2026-09-21)
+#- 4141-60314	deferred	-	bridge with-info frame absent from figma-catalog	=> 13006-248696 (RETARGET figma-todo.webapp.tsv:256, title "Skai > Trade > Bridge - with info 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave59.trade-bridge-deposit-chart.tsv:50 frame-defect (2026-09-22)
+#- 4141-60595	deferred	-	bridge settings frame absent from figma-catalog	=> 13006-249356 (RETARGET figma-todo.webapp.tsv:260, title "Skai > Trade > Bridge - with info > Start bridge > Bridge settings 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by verdict vverify.trade-2.tsv:9 partial (2026-09-14)
+#- 7816-51721	partial	-	limit closed-warning; collapse state cited in-code as limitNoticeOpen TradeUnified.tsx:2059	=> 13006-253946 (RETARGET figma-todo.webapp.tsv:314, title "Swap - limit - closed warning" matches live ✅ Trade 2); superseded by status row status.wave11.trade2-order.tsv:12 not-started (2026-09-01)
+#- 7838-55165	deferred	-	start-bridge frame absent from figma-catalog; withdrawals flag off blocks the flow	=> 13006-248937 (RETARGET figma-todo.webapp.tsv:258, title "Skai > Trade > Bridge - with info > Start bridge 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by verdict vverify.trade-2.tsv:104 partial (2026-09-21)
+#- 7838-55747	deferred	-	post-wallet-interaction bridge frame needs connected wallet; unreachable under DEV bypass	=> 13006-249115 (RETARGET figma-todo.webapp.tsv:259, title "Skai > Trade > Bridge - with info > Start bridge > Post wallet interaction 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by verdict vverify.trade-2.tsv:8 partial (2026-09-14)
+#- 7886-84166	deferred	-	bridge error frame absent from figma-catalog	=> 13006-257961 (RETARGET figma-todo.webapp.tsv:336, title "Bridge screen - error" matches live ✅ Trade 2); superseded by verdict vverify.trade-2.tsv:115 match (2026-09-22)
+#- 4414-83859	deferred	-	CORRECTED 2026-08-04: the Launch row IS built (HomeTopBar.tsx:137) — this verdict was wrong. Repo-wide grep for Launch.?Dropdown returns 0 files.	=> 13006-250464 (RETARGET figma-todo.webapp.tsv:278, title "Skai > Trade - dropdown 1VH (1440 x 900px)" matches live ✅ Trade 2); superseded by status row status.wave41.trade-2.tsv:82 partial (2026-09-14)

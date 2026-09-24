@@ -122,10 +122,38 @@ const normId = (s) => String(s).trim().replace(":", "-");
 const isCommentLine = (l) => l.trimStart().startsWith("#");
 
 /*
+  ★ WHICH VERDICT A FRAME CARRIES WHEN TWO vverify TABLES NAME IT. Decided here,
+  once, instead of by the order readdirSync happens to return the files in.
+
+  `tables` is [{ file, retired, lines: [[fileKey|node, verdict], ...] }]. Live
+  sections' tables apply first, in the order given, a later line replacing an
+  earlier one exactly as before. A RETIRED section's table (pages.json
+  `retiredSections`) applies second and only FILLS: it never replaces a verdict
+  a live section's table holds. Its section was folded into another, so nothing
+  is measured into it any more and it is the oldest evidence there is. That is
+  the rule figma-apply-retargets.mjs already uses for hand-set fields: a value
+  on the live row is newer and always wins.
+
+  Until 2026-09-24 the order was readdir's. `vverify.trench.tsv` sorts after
+  `vverify.trade-2.tsv`, so a July trench line revived in place would have
+  overwritten twelve September `match` verdicts on the same Trade 2 frames.
+*/
+function mergeVerdicts(tables) {
+  const out = new Map();
+  for (const t of tables)
+    if (!t.retired) for (const [key, verdict] of t.lines) out.set(key, { verdict, file: t.file, retired: false });
+  for (const t of tables)
+    if (t.retired)
+      for (const [key, verdict] of t.lines)
+        if (!out.has(key) || out.get(key).retired) out.set(key, { verdict, file: t.file, retired: true });
+  return out;
+}
+
+/*
   `--self-test` runs before any file is read, so it can never touch the tree.
   It pins the comment rule, which is the kind of one-character predicate that
   drifts silently: nothing downstream fails loudly when two readers disagree
-  about a line, they just disagree.
+  about a line, they just disagree. It also pins the verdict precedence above.
 */
 if (process.argv.includes("--self-test")) {
   const cases = [
@@ -144,7 +172,39 @@ if (process.argv.includes("--self-test")) {
     if (got !== want) console.log(`      isCommentLine(${JSON.stringify(line)}) === ${got}, wanted ${want}`);
   }
   console.log(`\nself-test: ${ok}/${cases.length} comment-recognition cases.`);
-  process.exit(ok === cases.length ? 0 : 1);
+
+  const live = (file, lines) => ({ file, retired: false, lines });
+  const retired = (file, lines) => ({ file, retired: true, lines });
+  const winner = (tables, key) => mergeVerdicts(tables).get(key)?.verdict;
+  const precedence = [
+    [
+      "a retired table never replaces a live table's verdict on the same frame",
+      winner([live("vverify.trade-2.tsv", [["F|1-2", "match"]]), retired("vverify.trench.tsv", [["F|1-2", "deferred"]])], "F|1-2") === "match",
+    ],
+    [
+      "...whichever order the tables arrive in",
+      winner([retired("vverify.trench.tsv", [["F|1-2", "deferred"]]), live("vverify.trade-2.tsv", [["F|1-2", "match"]])], "F|1-2") === "match",
+    ],
+    [
+      "a retired table fills a frame no live table names",
+      winner([live("vverify.trade-2.tsv", [["F|1-2", "match"]]), retired("vverify.trench.tsv", [["F|3-4", "partial"]])], "F|3-4") === "partial",
+    ],
+    [
+      "between live tables the later line still wins, as it did before",
+      winner([live("vverify.a.tsv", [["F|1-2", "partial"]]), live("vverify.b.tsv", [["F|1-2", "match"]])], "F|1-2") === "match",
+    ],
+    [
+      "a verdict is keyed by file too: the same node in another file is another frame",
+      winner([live("vverify.a.tsv", [["F|1-2", "match"]]), retired("vverify.r.tsv", [["G|1-2", "deferred"]])], "G|1-2") === "deferred",
+    ],
+  ];
+  let pok = 0;
+  for (const [label, got] of precedence) {
+    if (got) pok++;
+    console.log(`  ${got ? "PASS" : "FAIL"}  ${label}`);
+  }
+  console.log(`self-test: ${pok}/${precedence.length} verdict-precedence cases.`);
+  process.exit(ok === cases.length && pok === precedence.length ? 0 : 1);
 }
 
 // ---------------------------------------------------------------------------
@@ -468,9 +528,16 @@ const ambiguousIds = new Set([...filesPerId].filter(([, s]) => s.size > 1).map((
 // said otherwise, and 427 carried none. The same rule is applied here, per
 // frame, so the registry and the published number cannot disagree on a frame,
 // and `verified` counts the done frames a verdict of match actually stands
-// behind. Keyed by (fileKey, node) through pages.json's section -> page map; a
-// vverify file whose section maps to no page (trade-bugrefs, trench) is
-// reported and skipped rather than guessed at.
+// behind. Keyed by (fileKey, node) through pages.json's section -> page map. A
+// RETIRED section (pages.json `retiredSections`: trade-bugrefs and trench, both
+// folded into trade on 2026-07-27) binds through the fileKey recorded there, at
+// the lowest precedence (see mergeVerdicts). A vverify file whose section is in
+// neither is reported and skipped rather than guessed at.
+//
+// ⚠ apply-verify.mjs binds by REGISTRY section and reads no retired table, so an
+// active line in one reaches this tally and not registry.json. Every line in
+// both is settled as a comment (2026-09-24); the run says so loudly if one is
+// ever re-opened and wins a frame.
 // ---------------------------------------------------------------------------
 /*
   ★ `ruled-out` (added 2026-09-22) IS THE ONLY VERDICT THAT MOVES THE
@@ -507,18 +574,27 @@ const ruledOutIds = new Set();
 const ruledOutUncited = [];
 const visual = new Map();
 const visualUnmapped = [];
+/** Per retired table: how many active lines it holds, and how many frames it won. */
+const visualRetired = [];
 {
   const pagesJson = JSON.parse(fs.readFileSync(path.join(DIR, "pages.json"), "utf8"));
   const sectionFile = new Map();
   for (const pg of pagesJson.pages || []) for (const s of pg.sections || []) sectionFile.set(s, pg.fileKey);
+  const retiredFile = new Map();
+  for (const [s, r] of Object.entries(pagesJson.retiredSections || {}))
+    if (!s.startsWith("_") && r && typeof r.fileKey === "string") retiredFile.set(s, r.fileKey);
+  const tables = [];
   for (const f of fs.readdirSync(DIR)) {
     const m = /^vverify\.(.+)\.tsv$/.exec(f);
     if (!m) continue;
-    const fk = sectionFile.get(m[1]);
+    // A live section wins the name: a section listed on a page is never retired.
+    const retired = !sectionFile.has(m[1]) && retiredFile.has(m[1]);
+    const fk = sectionFile.get(m[1]) || retiredFile.get(m[1]);
     if (!fk) {
       visualUnmapped.push(f);
       continue;
     }
+    const lines = [];
     for (const line of fs.readFileSync(path.join(DIR, f), "utf8").split(/\r?\n/)) {
       if (!line.trim() || isCommentLine(line)) continue;
       const cols = line.split("\t");
@@ -532,10 +608,25 @@ const visualUnmapped = [];
           ruledOutUncited.push(`${f} ${normId(node)}`);
           continue;
         }
-        ruledOutIds.add(`${fk}|${normId(node)}`);
       }
-      visual.set(`${fk}|${normId(node)}`, v);
+      lines.push([`${fk}|${normId(node)}`, v]);
     }
+    tables.push({ file: f, retired, lines });
+  }
+  const merged = mergeVerdicts(tables);
+  for (const [key, rec] of merged) {
+    visual.set(key, rec.verdict);
+    if (rec.verdict === "ruled-out") ruledOutIds.add(key);
+  }
+  for (const t of tables.filter((x) => x.retired)) {
+    const won = [...merged.values()].filter((rec) => rec.file === t.file).length;
+    visualRetired.push({ file: t.file, activeLines: t.lines.length, framesWon: won });
+    if (won)
+      console.error(
+        `coverage.mjs — ${t.file} is a RETIRED section's table and holds ${t.lines.length} active line(s) that decide ${won} frame(s). ` +
+          `They count here, but apply-verify.mjs reads no retired table, so registry.json does not carry them. ` +
+          `Move each re-opened line into the live frame's own vverify table.`,
+      );
   }
 }
 
@@ -789,6 +880,7 @@ const rollup = {
   verified: sum(inScope, "verified"),
   visuallyDowngraded: sum(inScope, "visuallyDowngraded"),
   visualUnmapped,
+  visualRetired,
   partial: statusSum(inScope, "partial"),
   notStarted: statusSum(inScope, "not-started"),
   blocked: statusSum(inScope, "blocked-on-backend"),
@@ -924,7 +1016,7 @@ if (rollup.ruledOut) {
   );
 }
 P();
-P(`**${rollup.verified} of those ${rollup.done} (${pct(rollup.verified, rollup.genuine)}% of scope) carry a visual verdict of \`match\` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other ${rollup.done - rollup.verified} are \`done\` by a status row alone, which is a claim about code mapping, not a measurement. ${rollup.visuallyDowngraded} frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls \`done\` to \`partial\`; not-wired forces \`not-started\`). Until 2026-09-09 this tally ignored the verdicts entirely${rollup.visualUnmapped.length ? `; ${rollup.visualUnmapped.map((f) => "`" + f + "`").join(", ")} map to no page in pages.json and are not applied` : ""}.`);
+P(`**${rollup.verified} of those ${rollup.done} (${pct(rollup.verified, rollup.genuine)}% of scope) carry a visual verdict of \`match\` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other ${rollup.done - rollup.verified} are \`done\` by a status row alone, which is a claim about code mapping, not a measurement. ${rollup.visuallyDowngraded} frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls \`done\` to \`partial\`; not-wired forces \`not-started\`). Until 2026-09-09 this tally ignored the verdicts entirely${rollup.visualUnmapped.length ? `; ${rollup.visualUnmapped.map((f) => "`" + f + "`").join(", ")} map to no page in pages.json and are not applied` : ""}${rollup.visualRetired.length ? `; ${rollup.visualRetired.map((r) => "`" + r.file + "`").join(", ")} belong to retired sections and bind through pages.json \`retiredSections\` at the lowest precedence — ${rollup.visualRetired.reduce((a, r) => a + r.activeLines, 0)} active line(s) between them, deciding ${rollup.visualRetired.reduce((a, r) => a + r.framesWon, 0)} frame(s)` : ""}.`);
 P();
 
 P(`## Out of the roll-up`);

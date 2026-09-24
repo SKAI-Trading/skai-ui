@@ -806,5 +806,35 @@
  },
  "unmappedSections": {
   "skai-cross": "TOMBSTONE. Figma page 9660:2 was renamed '🚧 SKAI Cross' -> '✅ Price Grid' on 2026-08-18 and its contents replaced wholesale: all 15 catalogued ids are gone and the 20 now on the page share no title with any of them. Those 20 are Price Grid designs and are catalogued under the separate `price-grid` section, because SKAI Cross and Price Grid are two SEPARATE LIVE GAMES (Play.tsx mounts SkaiCrossGame at :1610 and PriceGridGame at :1625, each with its own id, art, accent and feature flag). The 15 rows are KEPT — recorded `gone` in bugref-aliases.tsv — so nothing is deleted. ★ The consequence worth acting on: SKAI Cross is a SHIPPING game that now has NO Figma page at all."
+ },
+ "retiredSections": {
+  "_comment": [
+   "vverify.<section>.tsv tables whose section was RETIRED: folded into another section, so no entry in `pages` lists it.",
+   "coverage.mjs binds each to `fileKey` (node ids are unique only within a file, so the file is the whole binding) at the",
+   "LOWEST precedence: a verdict in a live section's table on the same (fileKey, node) always wins, the merge rule",
+   "figma-apply-retargets.mjs uses for hand-set fields. A vverify table named in neither place is reported as mapping to",
+   "no page. Nothing else reads this key: build-registry.mjs and harvest.mjs work from `pages[].sections`, and",
+   "apply-verify.mjs binds by registry section, so an ACTIVE line in a retired table reaches coverage.json but not",
+   "registry.json. Both tables are settled line by line as comments (2026-09-24); coverage.mjs warns if one is re-opened."
+  ],
+  "trade-bugrefs": {
+   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+   "retired": "2026-07-27",
+   "foldedInto": "trade",
+   "framesNowOn": [
+    "Trade 1 (3:3), section trade",
+    "Trade 2 (13006:134300), section trade-2"
+   ],
+   "note": "64 bug-report-only Trade frames folded into `trade` (SCHEMA.md). Of the table's 22 lines, 3 ids are live on Trade 1 and 19 were rebuilt by Figma under new ids on Trade 2 (RETARGET, figma-todo.webapp.tsv, 2026-08-12)."
+  },
+  "trench": {
+   "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+   "retired": "2026-07-27",
+   "foldedInto": "trade",
+   "framesNowOn": [
+    "Trade 2 (13006:134300), section trade-2"
+   ],
+   "note": "284 of the 285 trench frames folded into `trade` (SCHEMA.md); 9695-96406 is certified gone. All 89 of the table's ids were rebuilt by Figma under new ids on Trade 2 (RETARGET, figma-todo.webapp.tsv, 2026-08-12)."
+  }
  }
 }
