@@ -1,0 +1,16 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "3928:78877",
+ "page": "✅ Trade 1",
+ "name": "Skai > Trade > Spot - chart expanded 1VH (1440 x 900px)",
+ "hash": "7d16ca442dc08e8a",
+ "syncedAt": "2026-09-24T22:42:08.335Z",
+ "tree":
+  {"id":"3928:78877","t":"FRAME","n":"Skai > Trade > Spot - chart expanded 1VH (1440 x 900px)","b":[0,0,1440,900],"f":["Primary/Green Coal 300"],"clip":true,"c":[
+   {"ref":"3928:78878","h":"352146746a8a9900"},
+   {"id":"3928:81477","t":"FRAME","n":"Link","b":[1226,12,135,24],"l":{"ai":"CENTER","g":10,"jc":"CENTER","m":"H","p":["s-1","s-4","s-1","s-4"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-lg","f":["#FFFFFF@0.08"],"c":[
+    {"id":"3928:81478","t":"TEXT","n":"Exit full screen (Esc)","b":[16,4,103,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Exit full screen (Esc)","st":"Lg/Paragraph 3 300"}}
+   ]}
+  ]}
+}

@@ -28,3 +28,14 @@
 {"at":"2026-09-24T22:34:12.448Z","day":"2026-09-24","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":1,"nonce":"0fd4b9ef625c","ok":true}
 {"at":"2026-09-24T22:36:04.792Z","day":"2026-09-24","kind":"extract","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":1,"nonce":"9839c620ce03","ok":true}
 {"at":"2026-09-24T22:37:38.491Z","day":"2026-09-24","kind":"extract","file":"3sSzw1KewMtUbeLAv7uW0r","calls":1,"frames":1,"nonce":"c05e2eb0f80d","ok":true}
+{"at":"2026-09-24T22:39:29.609Z","day":"2026-09-24","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":2,"nonce":"55332f101849","ok":true}
+{"at":"2026-09-24T22:42:08.335Z","day":"2026-09-24","kind":"extract","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":1,"nonce":"72251b94e8b4","ok":true}
+{"at":"2026-09-24T22:43:16.414Z","day":"2026-09-24","kind":"extract","file":"3sSzw1KewMtUbeLAv7uW0r","calls":1,"frames":1,"nonce":"2ed5d4a24769","ok":true}
+{"at":"2026-09-24T22:43:18.896Z","day":"2026-09-24","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":5,"nonce":"ff143ac17abe","ok":true}
+{"at":"2026-09-24T22:44:32.081Z","day":"2026-09-24","kind":"inventory","file":"TyX8YAtNDEIvsnSLQ3IXId","calls":1,"frames":0,"ok":false,"note":"wave 70 components lane: inventory call 1 (nonce e818884ff1e0), every page from the first; 3 pages listed, 1 stored whole, 1 empty, 1 in rest"}
+{"at":"2026-09-24T22:46:22.007Z","day":"2026-09-24","kind":"extract","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":1,"nonce":"f999b14cb336","ok":true}
+{"at":"2026-09-24T22:46:45.203Z","day":"2026-09-24","kind":"inventory","file":"TyX8YAtNDEIvsnSLQ3IXId","calls":1,"frames":0,"ok":false,"note":"wave 70 components lane: inventory call 2 (nonce 91b3959334f4), the rest of 3:2 from byte 13086 and 1103:649 (no components)"}
+{"at":"2026-09-24T22:47:06.798Z","day":"2026-09-24","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":2,"nonce":"5830192ded8e","ok":true}
+{"at":"2026-09-24T22:48:00.022Z","day":"2026-09-24","kind":"extract","file":"3sSzw1KewMtUbeLAv7uW0r","calls":1,"frames":1,"nonce":"ffc97945ab34","ok":true}
+{"at":"2026-09-24T22:50:39.667Z","day":"2026-09-24","kind":"extract","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":1,"nonce":"00d50c976211","ok":true}
+{"at":"2026-09-24T22:50:46.502Z","day":"2026-09-24","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":2,"nonce":"6a8ad5ca48a4","ok":true}

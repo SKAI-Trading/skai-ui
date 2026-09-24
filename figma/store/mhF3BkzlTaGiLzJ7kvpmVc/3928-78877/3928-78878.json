@@ -1,0 +1,17 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "3928:78878",
+ "page": "✅ Trade 1",
+ "name": "main",
+ "hash": "352146746a8a9900",
+ "syncedAt": "2026-09-24T22:42:08.335Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:3928:78877",
+ "tree":
+  {"id":"3928:78878","t":"FRAME","n":"main","b":[0,0,1440,900],"c":[
+   {"ref":"3928:80512","h":"6b553be1e638dd02"},
+   {"id":"3931:85929","t":"FRAME","n":"Price area","b":[26,356,76,20],"l":{"ai":"CENTER","g":10,"jc":"CENTER","m":"H","p":["s-0,5","s-1","s-0,5","s-1"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-md","f":["Primary/Green Coal 300"],"s":["App/Green 300"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+    {"id":"3931:85930","t":"TEXT","n":"Current price","b":[4,2,68,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Alien Green 300"],"tx":{"c":"Current price","st":"Lg/Paragraph 3 300","ta":"RIGHT"}}
+   ]}
+  ]}
+}

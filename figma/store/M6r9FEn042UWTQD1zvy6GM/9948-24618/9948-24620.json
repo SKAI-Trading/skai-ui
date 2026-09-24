@@ -1,0 +1,43 @@
+{
+ "v": 1,
+ "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+ "node": "9948:24620",
+ "page": "✅ Limbo - Skai originals",
+ "name": "main",
+ "hash": "207c7bcf7dde64f8",
+ "syncedAt": "2026-09-24T22:47:06.798Z",
+ "partOf": "M6r9FEn042UWTQD1zvy6GM:9948:24618",
+ "tree":
+  {"id":"9948:24620","t":"FRAME","n":"main","b":[58,56,1382,3222],"c":[
+   {"ref":"9948:24621","h":"05f59b73690fd05f"},
+   {"id":"9948:25273","t":"FRAME","n":"Frame 417","b":[32,3172,1260,18],"l":{"g":928,"jc":"SPACE_BETWEEN","m":"H","sy":"HUG"},"c":[
+    {"id":"9948:25274","t":"FRAME","n":"nav","b":[0,0,225,18],"l":{"ai":"CENTER","g":32,"m":"H","sy":"HUG"},"c":[
+     {"id":"9948:25275","t":"TEXT","n":"Home","b":[0,0,37,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Accents/Gray 100"],"tx":{"c":"Home","st":"Lg/Paragraph 2 300","ta":"CENTER"}},
+     {"id":"9948:25276","t":"TEXT","n":"Help","b":[69,0,28,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Accents/Gray 100"],"tx":{"c":"Help","st":"Lg/Paragraph 2 300","ta":"CENTER"}},
+     {"id":"9948:25277","t":"TEXT","n":"Terms","b":[129,0,38,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Accents/Gray 100"],"tx":{"c":"Terms","st":"Lg/Paragraph 2 300","ta":"CENTER"}},
+     {"id":"9948:25278","t":"TEXT","n":"Privacy","b":[199,0,43,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Accents/Gray 100"],"tx":{"c":"Privacy","st":"Lg/Paragraph 2 300","ta":"CENTER"}}
+    ]},
+    {"id":"9948:25279","t":"FRAME","n":"nav","b":[1153,0,107,16],"l":{"ai":"CENTER","g":32,"jc":"MAX","m":"H","sy":"HUG"},"c":[
+     {"id":"9948:25280","t":"FRAME","n":"icon16/discord","b":[-5,0,16,16],"clip":true,"c":[
+      {"id":"9948:25281","t":"VECTOR","n":"Vector","b":[1,2.5,14,10.5],"f":["Core/White"]}
+     ]},
+     {"id":"9948:25282","t":"FRAME","n":"icon16/instagram","b":[43,0,16,16],"clip":true,"c":[
+      {"id":"9948:25283","t":"VECTOR","n":"Vector","b":[1.5,1.5,13.5,13.5],"f":["Core/White"]}
+     ]},
+     {"id":"9948:25284","t":"FRAME","n":"icon16/twitter","b":[91,0,16,16],"clip":true,"c":[
+      {"id":"9948:25285","t":"GROUP","n":"Group","b":[0,0,16,16],"c":[
+       {"id":"9948:25286","t":"GROUP","n":"Clip path group","b":[0,0,16,16],"c":[
+        {"id":"9948:25287","t":"GROUP","n":"SVGG1Ot4cAD","b":[0,0,16,16],"c":[
+         {"id":"9948:25288","t":"VECTOR","n":"Vector","b":[0,0,16,16],"f":["#000000"]}
+        ]},
+        {"id":"9948:25289","t":"GROUP","n":"Group","b":[1,1.5,14,12.5],"c":[
+         {"id":"9948:25290","t":"VECTOR","n":"Vector","b":[0,0,14,12.5],"f":["Core/White"]}
+        ]}
+       ]}
+      ]}
+     ]}
+    ]}
+   ]},
+   {"id":"9948:25291","t":"INSTANCE","n":"logos/skai-short","b":[32,3108,77,32],"l":{"g":5,"m":"V","sx":"HUG","sy":"HUG"},"ci":{"k":"0aaccc64881718eeacf689281441e6e27b7fbf36","n":"Mode=White, Size=Large","props":{"Mode":"White","Size":"Large"},"set":"logos/skai-short"}}
+  ]}
+}
