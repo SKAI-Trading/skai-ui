@@ -1,0 +1,169 @@
+{
+  "Accents/Cloud 300": {
+    "key": "3dec250fe57967ef29346a91a079aebd8c0c7fd9",
+    "paints": [
+      "#FFFFEE"
+    ],
+    "remote": true
+  },
+  "Accents/Coral 300": {
+    "key": "5efed179b969d345ad6dd468aab82a1f489d32ee",
+    "paints": [
+      "#FF7E50"
+    ],
+    "remote": true
+  },
+  "Accents/Earth 300": {
+    "key": "c3279aca81c1a2419a28b754d1746cf913bd80b0",
+    "paints": [
+      "#CAAD7E"
+    ],
+    "remote": true
+  },
+  "Accents/Gray 100": {
+    "key": "b274441c23daf39807a26839ea513457dbc6ca3e",
+    "paints": [
+      "#E0E0E0"
+    ],
+    "remote": true
+  },
+  "Accents/Gray 300": {
+    "key": "918bf6107b57b6f9018c5c60dc6dc97bbb6307be",
+    "paints": [
+      "#878787"
+    ],
+    "remote": true
+  },
+  "Accents/Gray 600": {
+    "key": "66575637835f21714c3cb71901984cff02799f81",
+    "paints": [
+      "#4C4C4C"
+    ],
+    "remote": true
+  },
+  "Accents/Sun Yellow 300": {
+    "key": "c5c0b45e64923645a4858c7ebea074ae7629f7ee",
+    "paints": [
+      "#FFFF16"
+    ],
+    "remote": true
+  },
+  "Accents/Wind 300": {
+    "key": "358a2d25b633e4a24bd30615925d2bc267766ef3",
+    "paints": [
+      "#E2F2EC"
+    ],
+    "remote": true
+  },
+  "App/Ash 300": {
+    "key": "cba0d87db72a18d8d65ed8c5feeaf9063e1599fb",
+    "paints": [
+      "#95A09F"
+    ],
+    "remote": true
+  },
+  "App/Green 300": {
+    "key": "66dad63244cb5897d59f5a1a59060b25c366509f",
+    "paints": [
+      "#17F9B4"
+    ],
+    "remote": true
+  },
+  "App/Green-O": {
+    "key": "1eee73a5475bb2b8300f8c331d5a4a507c2b850e",
+    "paints": [
+      "#17F9B4@0.24"
+    ],
+    "remote": true
+  },
+  "App/Red 300": {
+    "key": "bd69430d3ebddaa45872c51710dd6fb11eac57ae",
+    "paints": [
+      "#FF574A"
+    ],
+    "remote": true
+  },
+  "App/Red-O": {
+    "key": "5dceff7a5f2b83aa512ab73103dcc1bc9904fe0a",
+    "paints": [
+      "#FB3324@0.34"
+    ],
+    "remote": true
+  },
+  "Brand/Gradient 1": {
+    "key": "3de359e04e06ecb8fcd3f5ab53d7112bb1b96a09",
+    "paints": [
+      {
+        "angle": -34,
+        "grad": "LINEAR",
+        "stops": [
+          [
+            0,
+            "#56C7F3"
+          ],
+          [
+            1,
+            "#17F9B4"
+          ]
+        ]
+      }
+    ],
+    "remote": true
+  },
+  "Core/Black": {
+    "key": "12c871fae79f56ade0b141253ec673373661eb94",
+    "paints": [
+      "#000000"
+    ],
+    "remote": true
+  },
+  "Core/White": {
+    "key": "91dd27b9df53c5d983a1ee1e71dbc9de0be7ed5c",
+    "paints": [
+      "#FFFFFF"
+    ],
+    "remote": true
+  },
+  "Primary/Alien Green 300": {
+    "key": "ebeead95a3c5168052ad66e61e2ddd1e35ef5e3f",
+    "paints": [
+      "#17F9B4"
+    ],
+    "remote": true
+  },
+  "Primary/Green Coal 100": {
+    "key": "f4117dab2c1b7b6581cd935dc09e711cb560045f",
+    "paints": [
+      "#123F3C"
+    ],
+    "remote": true
+  },
+  "Primary/Green Coal 200": {
+    "key": "90f952f85ea341657666df102fc70e57f954a0dc",
+    "paints": [
+      "#122524"
+    ],
+    "remote": true
+  },
+  "Primary/Green Coal 300": {
+    "key": "f6c679a940e574d501833f50e95113d1bd07e48c",
+    "paints": [
+      "#001615"
+    ],
+    "remote": true
+  },
+  "Primary/Printers Gold 300": {
+    "key": "a74085fb2c494bddfd580be59f0be02157506236",
+    "paints": [
+      "#999966"
+    ],
+    "remote": true
+  },
+  "Primary/Sky Blue 300": {
+    "key": "5357670b28c031d3a7bf6a8a843a1f24c4cb5474",
+    "paints": [
+      "#56C7F3"
+    ],
+    "remote": true
+  }
+}

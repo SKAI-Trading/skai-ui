@@ -1,0 +1,606 @@
+{
+  "collections": {
+    "Primatives": {
+      "key": "54176305c0a9d35af00ab365c91281b87637c847",
+      "library": {
+        "file": "TyX8YAtNDEIvsnSLQ3IXId",
+        "fileName": "Skai-Design",
+        "proof": "this collection's key is a local collection of that file"
+      },
+      "modes": [
+        "Mode 1",
+        "Mode 2"
+      ],
+      "remote": true,
+      "seenIn": [
+        "3sSzw1KewMtUbeLAv7uW0r",
+        "mhF3BkzlTaGiLzJ7kvpmVc"
+      ],
+      "variables": 19
+    },
+    "Spacing": {
+      "key": "cb953a5eec4d1fdd7a6ba0ff46919684a1c21ed2",
+      "library": {
+        "file": "TyX8YAtNDEIvsnSLQ3IXId",
+        "fileName": "Skai-Design",
+        "proof": "this collection's key is a local collection of that file"
+      },
+      "modes": [
+        "Mode 1"
+      ],
+      "remote": true,
+      "seenIn": [
+        "mhF3BkzlTaGiLzJ7kvpmVc"
+      ],
+      "variables": 21
+    }
+  },
+  "syncedAt": "2026-09-24T08:03:31.831Z",
+  "v": 1,
+  "variables": {
+    "Black": {
+      "collection": "Primatives",
+      "id": "VariableID:b22e29a1370fc35c4fe2042238efbf249a6bdd6f/692:225",
+      "key": "b22e29a1370fc35c4fe2042238efbf249a6bdd6f",
+      "modes": {
+        "Mode 1": "#000000",
+        "Mode 2": "#000000"
+      },
+      "remote": true,
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "type": "COLOR"
+    },
+    "White": {
+      "collection": "Primatives",
+      "id": "VariableID:3ebc7330bd43737ecd63c3be01ac8b291032e24f/692:79",
+      "key": "3ebc7330bd43737ecd63c3be01ac8b291032e24f",
+      "modes": {
+        "Mode 1": "#FFFFFF",
+        "Mode 2": "#FFFFFF"
+      },
+      "remote": true,
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "type": "COLOR"
+    },
+    "border-radius/rounded": {
+      "codeSyntax": {
+        "WEB": "rounded"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:1605739a7c25e044571e2ce074f295bf4769818d/692:228",
+      "key": "1605739a7c25e044571e2ce074f295bf4769818d",
+      "modes": {
+        "Mode 1": 4,
+        "Mode 2": 4
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-2xl": {
+      "codeSyntax": {
+        "WEB": "rounded-2xl"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:01c17e97f25513e343867037cf858a4179f1fee0/692:229",
+      "key": "01c17e97f25513e343867037cf858a4179f1fee0",
+      "modes": {
+        "Mode 1": 16,
+        "Mode 2": 16
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-3xl": {
+      "codeSyntax": {
+        "WEB": "rounded-3xl"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:eb5aa1c6ad06c1c6774f9dbc14ccc1fb6761d9c3/692:227",
+      "key": "eb5aa1c6ad06c1c6774f9dbc14ccc1fb6761d9c3",
+      "modes": {
+        "Mode 1": 24,
+        "Mode 2": 24
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-5xl": {
+      "codeSyntax": {
+        "WEB": "rounded-3xl"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:9e8e32cab7d1908f51768364622ab614f71097ae/692:240",
+      "key": "9e8e32cab7d1908f51768364622ab614f71097ae",
+      "modes": {
+        "Mode 1": 48,
+        "Mode 2": 24
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-full": {
+      "codeSyntax": {
+        "WEB": "rounded-full"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:a099416684f7bb589ec0ebf6b28405575453a2bb/692:234",
+      "key": "a099416684f7bb589ec0ebf6b28405575453a2bb",
+      "modes": {
+        "Mode 1": 9999,
+        "Mode 2": 9999
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-lg": {
+      "codeSyntax": {
+        "WEB": "rounded-lg"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:b117d82f9ef70f47e7ff9595119acb9292ba3b0a/692:232",
+      "key": "b117d82f9ef70f47e7ff9595119acb9292ba3b0a",
+      "modes": {
+        "Mode 1": 8,
+        "Mode 2": 8
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-md": {
+      "codeSyntax": {
+        "WEB": "rounded-md"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:f33ada0be7f11e9ce21f96192717da9430bd423a/692:230",
+      "key": "f33ada0be7f11e9ce21f96192717da9430bd423a",
+      "modes": {
+        "Mode 1": 6,
+        "Mode 2": 6
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-none": {
+      "codeSyntax": {
+        "WEB": "rounded-none"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:722f7c858e0064f14863f73efcfd2570cd547cf3/692:233",
+      "key": "722f7c858e0064f14863f73efcfd2570cd547cf3",
+      "modes": {
+        "Mode 1": 0,
+        "Mode 2": 0
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-sm": {
+      "codeSyntax": {
+        "WEB": "rounded-sm"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:451ceaba656c780648c11a67b18cdb121eba6d2f/692:231",
+      "key": "451ceaba656c780648c11a67b18cdb121eba6d2f",
+      "modes": {
+        "Mode 1": 2,
+        "Mode 2": 2
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-radius/rounded-xl": {
+      "codeSyntax": {
+        "WEB": "rounded-xl"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:0991c54eee6122844ee90bf41cb00d247104f4e6/692:226",
+      "key": "0991c54eee6122844ee90bf41cb00d247104f4e6",
+      "modes": {
+        "Mode 1": 12,
+        "Mode 2": 12
+      },
+      "remote": true,
+      "scopes": [
+        "CORNER_RADIUS"
+      ],
+      "type": "FLOAT"
+    },
+    "border-width/w-100": {
+      "collection": "Primatives",
+      "id": "VariableID:a818d6ed1ec51194310591334c056e972935c3ba/692:177",
+      "key": "a818d6ed1ec51194310591334c056e972935c3ba",
+      "modes": {
+        "Mode 1": 1,
+        "Mode 2": 1
+      },
+      "remote": true,
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "type": "FLOAT"
+    },
+    "border-width/w-200": {
+      "collection": "Primatives",
+      "id": "VariableID:eb99a79c70e2ae41aca975f8273beb847c6a461c/692:180",
+      "key": "eb99a79c70e2ae41aca975f8273beb847c6a461c",
+      "modes": {
+        "Mode 1": 1.5,
+        "Mode 2": 1.33
+      },
+      "remote": true,
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "type": "FLOAT"
+    },
+    "border-width/w-300": {
+      "collection": "Primatives",
+      "id": "VariableID:635310ccbdf40871970f1138ed3d66d964f465e4/692:179",
+      "key": "635310ccbdf40871970f1138ed3d66d964f465e4",
+      "modes": {
+        "Mode 1": 2,
+        "Mode 2": 2
+      },
+      "remote": true,
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "type": "FLOAT"
+    },
+    "border-width/w-50": {
+      "collection": "Primatives",
+      "id": "VariableID:4ee246d2113a64ef30fe688f9b8611ceefc9cc83/692:176",
+      "key": "4ee246d2113a64ef30fe688f9b8611ceefc9cc83",
+      "modes": {
+        "Mode 1": 0.5,
+        "Mode 2": 0.5
+      },
+      "remote": true,
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "type": "FLOAT"
+    },
+    "opacity/opacity-100": {
+      "codeSyntax": {
+        "WEB": "opacity-100"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:6a149e39e93a83336028daf77396f9e0643ea216/692:153",
+      "key": "6a149e39e93a83336028daf77396f9e0643ea216",
+      "modes": {
+        "Mode 1": 100,
+        "Mode 2": 100
+      },
+      "remote": true,
+      "scopes": [
+        "OPACITY"
+      ],
+      "type": "FLOAT"
+    },
+    "opacity/opacity-60": {
+      "codeSyntax": {
+        "WEB": "opacity-60"
+      },
+      "collection": "Primatives",
+      "id": "VariableID:6a742f9f2e2b82706ec6deb339c5dad15a6b58ad/692:155",
+      "key": "6a742f9f2e2b82706ec6deb339c5dad15a6b58ad",
+      "modes": {
+        "Mode 1": 60,
+        "Mode 2": 60
+      },
+      "remote": true,
+      "scopes": [
+        "OPACITY"
+      ],
+      "type": "FLOAT"
+    },
+    "s-0": {
+      "codeSyntax": {
+        "WEB": "p-0"
+      },
+      "collection": "Spacing",
+      "id": "VariableID:5e9e3887d02f96b5a11f7b95a61b11321c2b69f9/692:181",
+      "key": "5e9e3887d02f96b5a11f7b95a61b11321c2b69f9",
+      "modes": {
+        "Mode 1": 0
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-0,5": {
+      "collection": "Spacing",
+      "id": "VariableID:7974595612da4b182b8cc25f9569c39d36793fad/692:182",
+      "key": "7974595612da4b182b8cc25f9569c39d36793fad",
+      "modes": {
+        "Mode 1": 2
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-1": {
+      "collection": "Spacing",
+      "id": "VariableID:a38f63604190ffc28147fd92898eee1fe37da2c4/692:183",
+      "key": "a38f63604190ffc28147fd92898eee1fe37da2c4",
+      "modes": {
+        "Mode 1": 4
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-1,5": {
+      "collection": "Spacing",
+      "id": "VariableID:6b0e747c8686874042d6874dd65e645932c56659/692:184",
+      "key": "6b0e747c8686874042d6874dd65e645932c56659",
+      "modes": {
+        "Mode 1": 6
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-10": {
+      "collection": "Spacing",
+      "id": "VariableID:7a3d6d2db4d268713c7532dc5bb0853dc61973d8/692:195",
+      "key": "7a3d6d2db4d268713c7532dc5bb0853dc61973d8",
+      "modes": {
+        "Mode 1": 40
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-11": {
+      "collection": "Spacing",
+      "id": "VariableID:258c6f5a99ea514ada92c7143ddb11d0f5b003af/692:196",
+      "key": "258c6f5a99ea514ada92c7143ddb11d0f5b003af",
+      "modes": {
+        "Mode 1": 44
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-12": {
+      "collection": "Spacing",
+      "id": "VariableID:7ccddf397dfedf21225ea560e32f3ab1c5b106b5/692:197",
+      "key": "7ccddf397dfedf21225ea560e32f3ab1c5b106b5",
+      "modes": {
+        "Mode 1": 48
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-14": {
+      "collection": "Spacing",
+      "id": "VariableID:07cebf350aea3d3f0ae7d3f4b0c3e62b3232a848/692:198",
+      "key": "07cebf350aea3d3f0ae7d3f4b0c3e62b3232a848",
+      "modes": {
+        "Mode 1": 56
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-16": {
+      "collection": "Spacing",
+      "id": "VariableID:b3dd6173b98aca25a277df509c8fa7b64731fc68/692:199",
+      "key": "b3dd6173b98aca25a277df509c8fa7b64731fc68",
+      "modes": {
+        "Mode 1": 64
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-2": {
+      "collection": "Spacing",
+      "id": "VariableID:0975a824bd30f09cae17f88902c3b0dde44e3901/692:185",
+      "key": "0975a824bd30f09cae17f88902c3b0dde44e3901",
+      "modes": {
+        "Mode 1": 8
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-2,5": {
+      "collection": "Spacing",
+      "id": "VariableID:2027c920b20377f05870cefb0470fc32de6c1710/692:186",
+      "key": "2027c920b20377f05870cefb0470fc32de6c1710",
+      "modes": {
+        "Mode 1": 10
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-20": {
+      "collection": "Spacing",
+      "id": "VariableID:714531f65da6805fe7f8cda54fe308fc99f6309f/692:200",
+      "key": "714531f65da6805fe7f8cda54fe308fc99f6309f",
+      "modes": {
+        "Mode 1": 80
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-24": {
+      "collection": "Spacing",
+      "id": "VariableID:5831f5a0108bdd77718400adff2df709638254a7/692:201",
+      "key": "5831f5a0108bdd77718400adff2df709638254a7",
+      "modes": {
+        "Mode 1": 96
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-3": {
+      "collection": "Spacing",
+      "id": "VariableID:a625e57aa3d814e2a7cf17228a0509ab13ffff72/692:187",
+      "key": "a625e57aa3d814e2a7cf17228a0509ab13ffff72",
+      "modes": {
+        "Mode 1": 12
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-3,5": {
+      "collection": "Spacing",
+      "id": "VariableID:46f488fd9c09fb742d43ee2c3b52011d1d7cc049/692:188",
+      "key": "46f488fd9c09fb742d43ee2c3b52011d1d7cc049",
+      "modes": {
+        "Mode 1": 14
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-4": {
+      "collection": "Spacing",
+      "id": "VariableID:a7e81a7bc49f6869d9cacb6107564c060504d43c/692:189",
+      "key": "a7e81a7bc49f6869d9cacb6107564c060504d43c",
+      "modes": {
+        "Mode 1": 16
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-5": {
+      "collection": "Spacing",
+      "id": "VariableID:b77bf2c2d6655e27856f1c00d84be8c714706c6d/692:190",
+      "key": "b77bf2c2d6655e27856f1c00d84be8c714706c6d",
+      "modes": {
+        "Mode 1": 20
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-6": {
+      "collection": "Spacing",
+      "id": "VariableID:6ab01a76b19bf3d2189649f9b3a96cab6454d3e3/692:191",
+      "key": "6ab01a76b19bf3d2189649f9b3a96cab6454d3e3",
+      "modes": {
+        "Mode 1": 24
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-7": {
+      "collection": "Spacing",
+      "id": "VariableID:ee95de9a592c5c0e305235d1b61e4e9acb2ecb55/692:192",
+      "key": "ee95de9a592c5c0e305235d1b61e4e9acb2ecb55",
+      "modes": {
+        "Mode 1": 28
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-8": {
+      "collection": "Spacing",
+      "id": "VariableID:46de0812a43779e87cef2a96fdc00f5814ef48b9/692:193",
+      "key": "46de0812a43779e87cef2a96fdc00f5814ef48b9",
+      "modes": {
+        "Mode 1": 32
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    },
+    "s-9": {
+      "collection": "Spacing",
+      "id": "VariableID:247684d46f6bf0bd7f0b205c44ae62d3aae177dd/692:194",
+      "key": "247684d46f6bf0bd7f0b205c44ae62d3aae177dd",
+      "modes": {
+        "Mode 1": 36
+      },
+      "remote": true,
+      "scopes": [
+        "GAP"
+      ],
+      "type": "FLOAT"
+    }
+  }
+}

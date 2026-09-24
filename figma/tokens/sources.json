@@ -1,0 +1,711 @@
+{
+  "library": {
+    "checkedAt": "2026-09-24T07:55:18.000Z",
+    "collectionsMatched": 2,
+    "file": "TyX8YAtNDEIvsnSLQ3IXId",
+    "fileName": "Skai-Design",
+    "keys": {
+      "e": "16a06c30e4ff3ae6a1450d11708bb31e9d44",
+      "p": "12c871fae79f1eee73a5475b358a2d25b6333de359e04e063dec250fe5795357670b28c05dceff7a5f2b5efed179b96966575637835f66dad63244cb90f952f85ea3918bf6107b5791dd27b9df53a74085fb2c49b274441c23dabd69430d3ebdc3279aca81c1c5c0b45e6492cba0d87db72aebeead95a3c5f4117dab2c1bf6c679a940e5",
+      "t": "045a9d0fdb250b5f09050dfc11a18b940241129b2d8774aa182d3349b1c51f8be7bd504220487cb68ae62763374fd723286f3f0924962f25d8b31e0636cb0f5dc3363779aab791aa38f252a237043abec91d7c14415639e5a2de41a05933d866436c82584672468cbc45a7b9506d4fbd8ce4523e8c896ec056c59bfbca135abb832d32215c5e541e98195cc7adc804fe63a812f2995564fd05cc79fa6fbde0279ef375931425f50b786cbdc117e378707b77151d7c53ece3616c7cb2a1e5c3e77ccc25f1b1c08709387a23898b2d92c39f898edaf6582cc590f165bea72c9401e215702d9aafbae4b4bda1f858e37780a4567de5d9e2a4ea39d5e3efb7795931d52ebeb0687f5fcebf7167b4181fc0b2344a9beec1c3a2bcee28d3432fad5b47dbb419c48448dcbd50a5f0bedcce5825f130e71b8a16fc34ec5b44f8d7ecec797f04d67cedf84b530156f6081d453840f8ffdffb6906fa2838311d78fb5b987acc56febd05663af3ff9696eb51ee",
+      "v": "01c17e97f2550507a29902310655e75e697707cebf350aea0975a824bd300991c54eee611605739a7c251eaa95144d2b2027c920b203247684d46f6b258c6f5a99ea36e9a999431c3adb99b0b9b43df41670f4873ebc7330bd43451ceaba656c46de0812a43746f488fd9c094b9164cd3bff4ee246d2113a51e4666571d25831f5a0108b5e0e89daa95d5e9e3887d02f635310ccbdf46a149e39e93a6a742f9f2e2b6ab01a76b19b6b0e747c86866e987ce0a172714531f65da6722f7c858e0076e19fb5ee3e7974595612da7a3d6d2db4d27ccddf397dfe92322744aa1692a9bb9341089e8e32cab7d1a071305d7197a099416684f7a38f63604190a625e57aa3d8a7e81a7bc49fa818d6ed1ec5b117d82f9ef7b22e29a1370fb2d6b394376ab3dd6173b98ab4bc592e89feb77bf2c2d665bf62128ff8a0bf7faa12e7e1e39d33bfe276eaf5913d9507eb5aa1c6ad06eb99a79c70e2ec5c998a0b68ee95de9a592cf105d46afd8cf33ada0be7f1f8caed3fe035fa7f37c10fd2fd36757bb640fe68ac7521e2",
+      "w": 12
+    },
+    "keysCut": 0,
+    "localCollections": [
+      {
+        "key": "cb953a5eec4d1fdd7a6ba0ff46919684a1c21ed2",
+        "modes": [
+          "Mode 1"
+        ],
+        "name": "Spacing",
+        "variables": 34
+      },
+      {
+        "key": "54176305c0a9d35af00ab365c91281b87637c847",
+        "modes": [
+          "Mode 1",
+          "Mode 2"
+        ],
+        "name": "Primatives",
+        "variables": 31
+      }
+    ],
+    "localCounts": {
+      "effect": 3,
+      "paint": 22,
+      "text": 61,
+      "vars": 65
+    },
+    "match": [
+      {
+        "inLibrary": 39,
+        "kind": "variables",
+        "notInLibrary": [],
+        "stored": 39
+      },
+      {
+        "inLibrary": 55,
+        "kind": "text styles",
+        "notInLibrary": [
+          "Default",
+          "Md/Super-headline 4 300 #4fadde"
+        ],
+        "stored": 57
+      },
+      {
+        "inLibrary": 2,
+        "kind": "effect styles",
+        "notInLibrary": [],
+        "stored": 2
+      },
+      {
+        "inLibrary": 22,
+        "kind": "paint styles",
+        "notInLibrary": [],
+        "stored": 22
+      }
+    ],
+    "note": "use_figma reports figma.root.name as 'Document'; the file is identified by the fileKey the call ran against"
+  },
+  "runs": {
+    "3sSzw1KewMtUbeLAv7uW0r": {
+      "calls": 1,
+      "complete": false,
+      "coverage": {
+        "framesOnReachedPages": 1279,
+        "framesWalked": 170,
+        "pagesNotReached": [
+          "5210:118077",
+          "10438:15679"
+        ],
+        "pagesPlanned": 8,
+        "pagesTouched": 5
+      },
+      "fileName": "Skai-Web-App",
+      "frames": 170,
+      "ms": 83359,
+      "nodes": 64251,
+      "pages": {
+        "2311:5967": {
+          "children": 10,
+          "walked": 2
+        },
+        "3173:26018": {
+          "children": 284,
+          "walked": 57
+        },
+        "3422:20110": {
+          "children": 46,
+          "walked": 10
+        },
+        "3:2": {
+          "children": 151,
+          "walked": 31
+        },
+        "4459:128102": {
+          "children": 346,
+          "walked": 70
+        },
+        "4914:113562": {
+          "children": 442,
+          "walked": 0
+        }
+      },
+      "passes": [
+        {
+          "calls": 1,
+          "frames": 170,
+          "from": [
+            0,
+            0
+          ],
+          "next": [
+            5,
+            0
+          ],
+          "offset": 0,
+          "stride": 5
+        }
+      ],
+      "plannedPages": [
+        "3422:20110",
+        "3:2",
+        "2311:5967",
+        "3173:26018",
+        "4459:128102",
+        "4914:113562",
+        "5210:118077",
+        "10438:15679"
+      ],
+      "startedAt": "2026-09-24T07:58:31.454Z",
+      "truncated": 0,
+      "updatedAt": "2026-09-24T07:58:31.454Z",
+      "usesInWalkedFrames": {
+        "01c17e97f25513e343867037cf858a4179f1fee0": 5824,
+        "045a9d0fdb259eb7d96492b52ec0f7934c8c4c7a": 141,
+        "0975a824bd30f09cae17f88902c3b0dde44e3901": 9299,
+        "0991c54eee6122844ee90bf41cb00d247104f4e6": 6224,
+        "11a18b940241375bdd8179b0910fd5b8a92aab75": 347,
+        "129b2d8774aa7b01a9b5c77f080295e4e99278e3": 154,
+        "12c871fae79f56ade0b141253ec673373661eb94": 10,
+        "1605739a7c25e044571e2ce074f295bf4769818d": 1816,
+        "16a06c30e4ff11ee8c358337327386a980226d5e": 3,
+        "182d3349b1c5b3ed5677345ef061dceb0e9df00a": 6,
+        "1eee73a5475bb2b8300f8c331d5a4a507c2b850e": 70,
+        "1f8be7bd5042bdb72fe484b82fe3e0a768bfa5c0": 123,
+        "2027c920b20377f05870cefb0470fc32de6c1710": 2939,
+        "20487cb68ae6652556cdfd5e3d394f415a85613f": 24,
+        "2763374fd723748ffcb5948f3ea8501034b5d216": 34,
+        "2f25d8b31e06bf04e91ecb7f2d39cb5e59742228": 133,
+        "358a2d25b633e4a24bd30615925d2bc267766ef3": 1,
+        "3779aab791aa3551966886e08af4a4d5ac5c332a": 5,
+        "38f252a237042facdd73d372c9d9f72cfe459151": 45,
+        "3abec91d7c140c3481e8462e247cff18b41867a8": 5,
+        "3ae6a1450d11d9d7706821017dea4224da07cb14": 61,
+        "3de359e04e06ecb8fcd3f5ab53d7112bb1b96a09": 1,
+        "3dec250fe57967ef29346a91a079aebd8c0c7fd9": 1,
+        "3ebc7330bd43737ecd63c3be01ac8b291032e24f": 2,
+        "415639e5a2de3d431288462d02c663883fcac852": 259,
+        "41a05933d8661fe0137547d35ccd94bacc6c809a": 10,
+        "436c825846723134dd9f1e84d1e8f81f8436f9cb": 13,
+        "451ceaba656c780648c11a67b18cdb121eba6d2f": 112,
+        "468cbc45a7b972815027de5b096f545f323fd3c9": 58,
+        "46de0812a43779e87cef2a96fdc00f5814ef48b9": 385,
+        "46f488fd9c09fb742d43ee2c3b52011d1d7cc049": 735,
+        "4ee246d2113a64ef30fe688f9b8611ceefc9cc83": 32,
+        "4fadde1726bc3e20eb8acd4321dbb33ff1e8b42d": 4,
+        "506d4fbd8ce4583fc36ead166a11909630189f56": 6,
+        "523e8c896ec01e6216968aca3c12ed16bcd6a53c": 335,
+        "5357670b28c031d3a7bf6a8a843a1f24c4cb5474": 1114,
+        "56c59bfbca13c8cd36eed7f00579e4a7a53bf806": 17,
+        "5abb832d3221a0df8e62ef864bcbb307140c59c3": 14,
+        "5c5e541e9819c393db22d37c4342d3271779cd28": 7,
+        "5cc7adc804fe09bb43f2f74c2880c1941273ecb7": 356,
+        "5dceff7a5f2b83aa512ab73103dcc1bc9904fe0a": 28,
+        "5e9e3887d02f96b5a11f7b95a61b11321c2b69f9": 6242,
+        "5efed179b969d345ad6dd468aab82a1f489d32ee": 292,
+        "635310ccbdf40871970f1138ed3d66d964f465e4": 306,
+        "63a812f29955e426d79de2c8beed563bcb07e149": 316,
+        "64fd05cc79fa1f860c65a0f43d435f2d2156578b": 12,
+        "66575637835f21714c3cb71901984cff02799f81": 52,
+        "66dad63244cb5897d59f5a1a59060b25c366509f": 1187,
+        "6a742f9f2e2b82706ec6deb339c5dad15a6b58ad": 3,
+        "6ab01a76b19bf3d2189649f9b3a96cab6454d3e3": 1533,
+        "6b0e747c8686874042d6874dd65e645932c56659": 2415,
+        "6fbde0279ef30f837956140a6ec0a12ba87e34f5": 1290,
+        "722f7c858e0064f14863f73efcfd2570cd547cf3": 464,
+        "786cbdc117e33cab7a38fc2788870aa5dd76d932": 426,
+        "78707b77151d2291dbece6447dd14af298c87bd0": 118,
+        "7974595612da4b182b8cc25f9569c39d36793fad": 3444,
+        "7a3d6d2db4d268713c7532dc5bb0853dc61973d8": 1243,
+        "7c53ece3616c35d758ff47508d3c70b4f7cf5178": 693,
+        "7cb2a1e5c3e70d627d1a13c19534d3fcd5ee97cc": 445,
+        "7ccc25f1b1c0021ec82bf7a501e5435d37ebb6f1": 22,
+        "7ccddf397dfedf21225ea560e32f3ab1c5b106b5": 38,
+        "8709387a2389b3629c5c2f4be43ba79c3040173b": 97,
+        "8b2d92c39f897ff9c8214096d4ccfca770e5cdf0": 2,
+        "8edaf6582cc52e4f4d5f4c58c1ebfd25c224fc52": 324,
+        "90f165bea72c654913638b6a999dae1d614412ad": 2,
+        "90f952f85ea341657666df102fc70e57f954a0dc": 1149,
+        "918bf6107b57b6f9018c5c60dc6dc97bbb6307be": 1,
+        "91dd27b9df53c5d983a1ee1e71dbc9de0be7ed5c": 30223,
+        "9401e215702d6bee687141e5dbe90b8f85d6999b": 860,
+        "9aafbae4b4bdadd4502286c081c9a250401f54cb": 1681,
+        "9e8e32cab7d1908f51768364622ab614f71097ae": 4,
+        "a099416684f7bb589ec0ebf6b28405575453a2bb": 5804,
+        "a1f858e377808fa7c1dae48a3d5b3acd97afe6e7": 18,
+        "a38f63604190ffc28147fd92898eee1fe37da2c4": 3483,
+        "a4567de5d9e244f026145639eaf9410f86dcd24d": 36,
+        "a4ea39d5e3ef409a04cfd761c822f33f176c7f9e": 72,
+        "a625e57aa3d814e2a7cf17228a0509ab13ffff72": 3559,
+        "a7e81a7bc49f6869d9cacb6107564c060504d43c": 3768,
+        "a818d6ed1ec51194310591334c056e972935c3ba": 9699,
+        "b117d82f9ef70f47e7ff9595119acb9292ba3b0a": 6096,
+        "b274441c23daf39807a26839ea513457dbc6ca3e": 635,
+        "b3dd6173b98aca25a277df509c8fa7b64731fc68": 7,
+        "b77bf2c2d6655e27856f1c00d84be8c714706c6d": 1385,
+        "bd69430d3ebddaa45872c51710dd6fb11eac57ae": 610,
+        "beb0687f5fce9134b3e86113fddde934202fc53d": 211,
+        "bf7167b4181f4bd1b8f50c67d8c5df9e0693de57": 43,
+        "c0b2344a9bee19f92049781fa24aa696a3aae79b": 54,
+        "c1c3a2bcee2878fb97abfab2ddf675c641582c4b": 79,
+        "c3279aca81c1a2419a28b754d1746cf913bd80b0": 7,
+        "c5c0b45e64923645a4858c7ebea074ae7629f7ee": 65,
+        "cba0d87db72a18d8d65ed8c5feeaf9063e1599fb": 2601,
+        "d3432fad5b47e708f4e13dd7ec51cde032f55942": 743,
+        "dbb419c48448b69487cc118b5937a380ad07bbc6": 148,
+        "dcbd50a5f0befd1132ee92a2b0bc67f86ad007d5": 11,
+        "e71b8a16fc34c393c1d2c82ac5e915e7540d8ccf": 147,
+        "eb5aa1c6ad06c1c6774f9dbc14ccc1fb6761d9c3": 848,
+        "eb99a79c70e2ae41aca975f8273beb847c6a461c": 5921,
+        "ebeead95a3c5168052ad66e61e2ddd1e35ef5e3f": 138,
+        "ec5b44f8d7ec63e6164ff0069a954661a947f0a6": 692,
+        "ec797f04d67c00d3a3641511fe7189f6a452d5ff": 72,
+        "edf84b530156cbb7697c96bfeeb0956e658147c1": 173,
+        "ee95de9a592c5c0e305235d1b61e4e9acb2ecb55": 26,
+        "f33ada0be7f11e9ce21f96192717da9430bd423a": 332,
+        "f4117dab2c1b7b6581cd935dc09e711cb560045f": 2175,
+        "f5fc4ffece7cd2bea5bfe6bc9b1ae2e9afe68785": 3,
+        "f6c679a940e574d501833f50e95113d1bd07e48c": 1089,
+        "f8ffdffb690686cb39c18ee1970cee7f22432834": 259,
+        "fa2838311d78ab16c5f4a2014da23b1aeeac7799": 1,
+        "fb5b987acc56d480ffe6092ce11942afa1598e6f": 182,
+        "febd05663af360f557dd39f45e4434b0f94afc48": 19,
+        "ff9696eb51ee4abb71086fef98e48a9f1a90cf05": 46
+      }
+    },
+    "M6r9FEn042UWTQD1zvy6GM": {
+      "calls": 1,
+      "complete": false,
+      "coverage": {
+        "framesOnReachedPages": 913,
+        "framesWalked": 238,
+        "pagesNotReached": [],
+        "pagesPlanned": 27,
+        "pagesTouched": 27
+      },
+      "fileName": "Skai-Games",
+      "frames": 238,
+      "ms": 10621,
+      "nodes": 29793,
+      "pages": {
+        "10265:2": {
+          "children": 72,
+          "walked": 18
+        },
+        "10266:5": {
+          "children": 62,
+          "walked": 16
+        },
+        "10266:6": {
+          "children": 96,
+          "walked": 24
+        },
+        "10266:7": {
+          "children": 66,
+          "walked": 17
+        },
+        "11095:2603": {
+          "children": 79,
+          "walked": 20
+        },
+        "2003:674": {
+          "children": 36,
+          "walked": 9
+        },
+        "9003:102080": {
+          "children": 19,
+          "walked": 5
+        },
+        "9003:112414": {
+          "children": 23,
+          "walked": 6
+        },
+        "9003:122027": {
+          "children": 46,
+          "walked": 12
+        },
+        "9003:133221": {
+          "children": 21,
+          "walked": 6
+        },
+        "9003:72411": {
+          "children": 21,
+          "walked": 6
+        },
+        "9003:85754": {
+          "children": 20,
+          "walked": 5
+        },
+        "9058:1819": {
+          "children": 15,
+          "walked": 4
+        },
+        "9061:15449": {
+          "children": 30,
+          "walked": 8
+        },
+        "9061:15464": {
+          "children": 31,
+          "walked": 8
+        },
+        "9220:26175": {
+          "children": 44,
+          "walked": 11
+        },
+        "9390:18294": {
+          "children": 31,
+          "walked": 8
+        },
+        "9390:18295": {
+          "children": 27,
+          "walked": 7
+        },
+        "9390:18296": {
+          "children": 17,
+          "walked": 5
+        },
+        "9390:18297": {
+          "children": 25,
+          "walked": 7
+        },
+        "9390:18298": {
+          "children": 24,
+          "walked": 6
+        },
+        "9660:2": {
+          "children": 20,
+          "walked": 5
+        },
+        "9737:13085": {
+          "children": 21,
+          "walked": 6
+        },
+        "9737:13087": {
+          "children": 14,
+          "walked": 4
+        },
+        "9737:13088": {
+          "children": 21,
+          "walked": 6
+        },
+        "9929:16390": {
+          "children": 14,
+          "walked": 4
+        },
+        "9929:16391": {
+          "children": 18,
+          "walked": 5
+        }
+      },
+      "passes": [
+        {
+          "calls": 1,
+          "frames": 238,
+          "from": [
+            0,
+            0
+          ],
+          "next": null,
+          "offset": 0,
+          "stride": 4
+        }
+      ],
+      "plannedPages": [
+        "9220:26175",
+        "2003:674",
+        "9003:72411",
+        "9003:85754",
+        "9003:102080",
+        "9003:112414",
+        "9003:122027",
+        "9003:133221",
+        "9061:15464",
+        "9058:1819",
+        "9390:18294",
+        "9390:18295",
+        "9061:15449",
+        "9390:18297",
+        "9660:2",
+        "9929:16390",
+        "9929:16391",
+        "9737:13087",
+        "9390:18296",
+        "9390:18298",
+        "9737:13085",
+        "9737:13088",
+        "10265:2",
+        "10266:5",
+        "10266:6",
+        "10266:7",
+        "11095:2603"
+      ],
+      "startedAt": "2026-09-24T08:00:47.556Z",
+      "truncated": 0,
+      "updatedAt": "2026-09-24T08:00:47.556Z",
+      "usesInWalkedFrames": {
+        "01c17e97f25513e343867037cf858a4179f1fee0": 2736,
+        "045a9d0fdb259eb7d96492b52ec0f7934c8c4c7a": 35,
+        "0975a824bd30f09cae17f88902c3b0dde44e3901": 4148,
+        "0991c54eee6122844ee90bf41cb00d247104f4e6": 1980,
+        "11a18b940241375bdd8179b0910fd5b8a92aab75": 199,
+        "12c871fae79f56ade0b141253ec673373661eb94": 1,
+        "1605739a7c25e044571e2ce074f295bf4769818d": 508,
+        "1eee73a5475bb2b8300f8c331d5a4a507c2b850e": 25,
+        "1f8be7bd5042bdb72fe484b82fe3e0a768bfa5c0": 112,
+        "2027c920b20377f05870cefb0470fc32de6c1710": 1498,
+        "20487cb68ae6652556cdfd5e3d394f415a85613f": 3,
+        "2763374fd723748ffcb5948f3ea8501034b5d216": 8,
+        "2f25d8b31e06bf04e91ecb7f2d39cb5e59742228": 4,
+        "3ae6a1450d11d9d7706821017dea4224da07cb14": 6,
+        "415639e5a2de3d431288462d02c663883fcac852": 112,
+        "41a05933d8661fe0137547d35ccd94bacc6c809a": 75,
+        "451ceaba656c780648c11a67b18cdb121eba6d2f": 1104,
+        "468cbc45a7b972815027de5b096f545f323fd3c9": 7,
+        "46de0812a43779e87cef2a96fdc00f5814ef48b9": 305,
+        "46f488fd9c09fb742d43ee2c3b52011d1d7cc049": 485,
+        "4ee246d2113a64ef30fe688f9b8611ceefc9cc83": 30,
+        "523e8c896ec01e6216968aca3c12ed16bcd6a53c": 21,
+        "5357670b28c031d3a7bf6a8a843a1f24c4cb5474": 471,
+        "56c59bfbca13c8cd36eed7f00579e4a7a53bf806": 24,
+        "5cc7adc804fe09bb43f2f74c2880c1941273ecb7": 238,
+        "5e9e3887d02f96b5a11f7b95a61b11321c2b69f9": 1403,
+        "5efed179b969d345ad6dd468aab82a1f489d32ee": 42,
+        "635310ccbdf40871970f1138ed3d66d964f465e4": 60,
+        "63a812f29955e426d79de2c8beed563bcb07e149": 33,
+        "64fd05cc79fa1f860c65a0f43d435f2d2156578b": 3,
+        "66dad63244cb5897d59f5a1a59060b25c366509f": 460,
+        "6ab01a76b19bf3d2189649f9b3a96cab6454d3e3": 548,
+        "6b0e747c8686874042d6874dd65e645932c56659": 816,
+        "6fbde0279ef30f837956140a6ec0a12ba87e34f5": 1213,
+        "722f7c858e0064f14863f73efcfd2570cd547cf3": 254,
+        "786cbdc117e33cab7a38fc2788870aa5dd76d932": 58,
+        "78707b77151d2291dbece6447dd14af298c87bd0": 3,
+        "7974595612da4b182b8cc25f9569c39d36793fad": 2160,
+        "7a3d6d2db4d268713c7532dc5bb0853dc61973d8": 696,
+        "7c53ece3616c35d758ff47508d3c70b4f7cf5178": 40,
+        "7cb2a1e5c3e70d627d1a13c19534d3fcd5ee97cc": 467,
+        "7ccc25f1b1c0021ec82bf7a501e5435d37ebb6f1": 8,
+        "8709387a2389b3629c5c2f4be43ba79c3040173b": 46,
+        "8edaf6582cc52e4f4d5f4c58c1ebfd25c224fc52": 181,
+        "90f165bea72c654913638b6a999dae1d614412ad": 14,
+        "90f952f85ea341657666df102fc70e57f954a0dc": 468,
+        "91dd27b9df53c5d983a1ee1e71dbc9de0be7ed5c": 3746,
+        "9401e215702d6bee687141e5dbe90b8f85d6999b": 545,
+        "9aafbae4b4bdadd4502286c081c9a250401f54cb": 427,
+        "a099416684f7bb589ec0ebf6b28405575453a2bb": 2440,
+        "a38f63604190ffc28147fd92898eee1fe37da2c4": 1150,
+        "a4567de5d9e244f026145639eaf9410f86dcd24d": 28,
+        "a4ea39d5e3ef409a04cfd761c822f33f176c7f9e": 45,
+        "a625e57aa3d814e2a7cf17228a0509ab13ffff72": 1434,
+        "a7e81a7bc49f6869d9cacb6107564c060504d43c": 1671,
+        "a818d6ed1ec51194310591334c056e972935c3ba": 3299,
+        "b117d82f9ef70f47e7ff9595119acb9292ba3b0a": 1484,
+        "b274441c23daf39807a26839ea513457dbc6ca3e": 56,
+        "b3dd6173b98aca25a277df509c8fa7b64731fc68": 14,
+        "b77bf2c2d6655e27856f1c00d84be8c714706c6d": 653,
+        "bd69430d3ebddaa45872c51710dd6fb11eac57ae": 42,
+        "c0b2344a9bee19f92049781fa24aa696a3aae79b": 84,
+        "c1c3a2bcee2878fb97abfab2ddf675c641582c4b": 4,
+        "c5c0b45e64923645a4858c7ebea074ae7629f7ee": 30,
+        "cba0d87db72a18d8d65ed8c5feeaf9063e1599fb": 611,
+        "dbb419c48448b69487cc118b5937a380ad07bbc6": 56,
+        "dcbd50a5f0befd1132ee92a2b0bc67f86ad007d5": 3,
+        "dcce5825f130f223b61ef574c94cffadf5bf5316": 7,
+        "e71b8a16fc34c393c1d2c82ac5e915e7540d8ccf": 7,
+        "eb5aa1c6ad06c1c6774f9dbc14ccc1fb6761d9c3": 324,
+        "eb99a79c70e2ae41aca975f8273beb847c6a461c": 1656,
+        "ebeead95a3c5168052ad66e61e2ddd1e35ef5e3f": 79,
+        "ec5b44f8d7ec63e6164ff0069a954661a947f0a6": 214,
+        "edf84b530156cbb7697c96bfeeb0956e658147c1": 42,
+        "ee95de9a592c5c0e305235d1b61e4e9acb2ecb55": 14,
+        "f33ada0be7f11e9ce21f96192717da9430bd423a": 263,
+        "f4117dab2c1b7b6581cd935dc09e711cb560045f": 768,
+        "f6c679a940e574d501833f50e95113d1bd07e48c": 757,
+        "ff9696eb51ee4abb71086fef98e48a9f1a90cf05": 6
+      }
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc": {
+      "calls": 2,
+      "complete": false,
+      "coverage": {
+        "framesOnReachedPages": 1731,
+        "framesWalked": 673,
+        "pagesNotReached": [],
+        "pagesPlanned": 6,
+        "pagesTouched": 5
+      },
+      "fileName": "Skai-Web-App-2",
+      "frames": 673,
+      "ms": 131254,
+      "nodes": 170910,
+      "pages": {
+        "13006:134300": {
+          "children": 420,
+          "walked": 0
+        },
+        "13008:110718": {
+          "children": 242,
+          "walked": 61
+        },
+        "13008:26951": {
+          "children": 190,
+          "walked": 48
+        },
+        "2003:674": {
+          "children": 280,
+          "walked": 280
+        },
+        "2998:19593": {
+          "children": 178,
+          "walked": 178
+        },
+        "3:3": {
+          "children": 421,
+          "walked": 106
+        }
+      },
+      "passes": [
+        {
+          "calls": 1,
+          "frames": 458,
+          "from": [
+            0,
+            0
+          ],
+          "next": [
+            2,
+            0
+          ],
+          "offset": 0,
+          "stride": 1
+        },
+        {
+          "calls": 1,
+          "frames": 215,
+          "from": [
+            2,
+            0
+          ],
+          "next": [
+            5,
+            0
+          ],
+          "offset": 0,
+          "stride": 4
+        }
+      ],
+      "plannedPages": [
+        "2003:674",
+        "2998:19593",
+        "3:3",
+        "13008:110718",
+        "13008:26951",
+        "13006:134300"
+      ],
+      "startedAt": "2026-09-24T07:47:52.494Z",
+      "truncated": 0,
+      "updatedAt": "2026-09-24T08:03:31.831Z",
+      "usesInWalkedFrames": {
+        "01c17e97f25513e343867037cf858a4179f1fee0": 13648,
+        "045a9d0fdb259eb7d96492b52ec0f7934c8c4c7a": 842,
+        "07cebf350aea3d3f0ae7d3f4b0c3e62b3232a848": 10,
+        "0975a824bd30f09cae17f88902c3b0dde44e3901": 18797,
+        "0991c54eee6122844ee90bf41cb00d247104f4e6": 11494,
+        "11a18b940241375bdd8179b0910fd5b8a92aab75": 3140,
+        "129b2d8774aa7b01a9b5c77f080295e4e99278e3": 105,
+        "12c871fae79f56ade0b141253ec673373661eb94": 352,
+        "1605739a7c25e044571e2ce074f295bf4769818d": 6556,
+        "16a06c30e4ff11ee8c358337327386a980226d5e": 3,
+        "182d3349b1c5b3ed5677345ef061dceb0e9df00a": 1,
+        "1eee73a5475bb2b8300f8c331d5a4a507c2b850e": 365,
+        "1f8be7bd5042bdb72fe484b82fe3e0a768bfa5c0": 799,
+        "2027c920b20377f05870cefb0470fc32de6c1710": 6892,
+        "20487cb68ae6652556cdfd5e3d394f415a85613f": 71,
+        "247684d46f6bf0bd7f0b205c44ae62d3aae177dd": 6,
+        "258c6f5a99ea514ada92c7143ddb11d0f5b003af": 1,
+        "2763374fd723748ffcb5948f3ea8501034b5d216": 82,
+        "2f25d8b31e06bf04e91ecb7f2d39cb5e59742228": 69,
+        "358a2d25b633e4a24bd30615925d2bc267766ef3": 3,
+        "3779aab791aa3551966886e08af4a4d5ac5c332a": 62,
+        "38f252a237042facdd73d372c9d9f72cfe459151": 189,
+        "3abec91d7c140c3481e8462e247cff18b41867a8": 1,
+        "3ae6a1450d11d9d7706821017dea4224da07cb14": 298,
+        "3de359e04e06ecb8fcd3f5ab53d7112bb1b96a09": 5,
+        "3ebc7330bd43737ecd63c3be01ac8b291032e24f": 75,
+        "415639e5a2de3d431288462d02c663883fcac852": 374,
+        "41a05933d8661fe0137547d35ccd94bacc6c809a": 561,
+        "436c825846723134dd9f1e84d1e8f81f8436f9cb": 11,
+        "451ceaba656c780648c11a67b18cdb121eba6d2f": 332,
+        "468cbc45a7b972815027de5b096f545f323fd3c9": 211,
+        "46de0812a43779e87cef2a96fdc00f5814ef48b9": 660,
+        "46f488fd9c09fb742d43ee2c3b52011d1d7cc049": 1786,
+        "4ee246d2113a64ef30fe688f9b8611ceefc9cc83": 352,
+        "4fadde1726bc3e20eb8acd4321dbb33ff1e8b42d": 2,
+        "506d4fbd8ce4583fc36ead166a11909630189f56": 2,
+        "523e8c896ec01e6216968aca3c12ed16bcd6a53c": 625,
+        "5357670b28c031d3a7bf6a8a843a1f24c4cb5474": 3215,
+        "56c59bfbca13c8cd36eed7f00579e4a7a53bf806": 570,
+        "5831f5a0108bdd77718400adff2df709638254a7": 9,
+        "5abb832d3221a0df8e62ef864bcbb307140c59c3": 146,
+        "5c5e541e9819c393db22d37c4342d3271779cd28": 10,
+        "5cc7adc804fe09bb43f2f74c2880c1941273ecb7": 2367,
+        "5dceff7a5f2b83aa512ab73103dcc1bc9904fe0a": 103,
+        "5e9e3887d02f96b5a11f7b95a61b11321c2b69f9": 13858,
+        "5efed179b969d345ad6dd468aab82a1f489d32ee": 411,
+        "635310ccbdf40871970f1138ed3d66d964f465e4": 2036,
+        "63a812f29955e426d79de2c8beed563bcb07e149": 1187,
+        "64fd05cc79fa1f860c65a0f43d435f2d2156578b": 89,
+        "66575637835f21714c3cb71901984cff02799f81": 314,
+        "66dad63244cb5897d59f5a1a59060b25c366509f": 14728,
+        "6a149e39e93a83336028daf77396f9e0643ea216": 4,
+        "6a742f9f2e2b82706ec6deb339c5dad15a6b58ad": 165,
+        "6ab01a76b19bf3d2189649f9b3a96cab6454d3e3": 3253,
+        "6b0e747c8686874042d6874dd65e645932c56659": 6486,
+        "6fbde0279ef30f837956140a6ec0a12ba87e34f5": 1127,
+        "714531f65da6805fe7f8cda54fe308fc99f6309f": 18,
+        "722f7c858e0064f14863f73efcfd2570cd547cf3": 1584,
+        "786cbdc117e33cab7a38fc2788870aa5dd76d932": 453,
+        "78707b77151d2291dbece6447dd14af298c87bd0": 591,
+        "7974595612da4b182b8cc25f9569c39d36793fad": 6831,
+        "7a3d6d2db4d268713c7532dc5bb0853dc61973d8": 2309,
+        "7c53ece3616c35d758ff47508d3c70b4f7cf5178": 1478,
+        "7cb2a1e5c3e70d627d1a13c19534d3fcd5ee97cc": 1979,
+        "7ccc25f1b1c0021ec82bf7a501e5435d37ebb6f1": 56,
+        "7ccddf397dfedf21225ea560e32f3ab1c5b106b5": 66,
+        "8709387a2389b3629c5c2f4be43ba79c3040173b": 92,
+        "8edaf6582cc52e4f4d5f4c58c1ebfd25c224fc52": 1205,
+        "90f165bea72c654913638b6a999dae1d614412ad": 87,
+        "90f952f85ea341657666df102fc70e57f954a0dc": 3608,
+        "918bf6107b57b6f9018c5c60dc6dc97bbb6307be": 146,
+        "91dd27b9df53c5d983a1ee1e71dbc9de0be7ed5c": 36801,
+        "9401e215702d6bee687141e5dbe90b8f85d6999b": 2035,
+        "9aafbae4b4bdadd4502286c081c9a250401f54cb": 1563,
+        "9e8e32cab7d1908f51768364622ab614f71097ae": 5,
+        "a099416684f7bb589ec0ebf6b28405575453a2bb": 11108,
+        "a1f858e377808fa7c1dae48a3d5b3acd97afe6e7": 17,
+        "a38f63604190ffc28147fd92898eee1fe37da2c4": 10456,
+        "a4567de5d9e244f026145639eaf9410f86dcd24d": 81,
+        "a4ea39d5e3ef409a04cfd761c822f33f176c7f9e": 175,
+        "a625e57aa3d814e2a7cf17228a0509ab13ffff72": 7905,
+        "a74085fb2c494bddfd580be59f0be02157506236": 42,
+        "a7e81a7bc49f6869d9cacb6107564c060504d43c": 7466,
+        "a818d6ed1ec51194310591334c056e972935c3ba": 16066,
+        "b117d82f9ef70f47e7ff9595119acb9292ba3b0a": 11650,
+        "b22e29a1370fc35c4fe2042238efbf249a6bdd6f": 1,
+        "b274441c23daf39807a26839ea513457dbc6ca3e": 957,
+        "b3dd6173b98aca25a277df509c8fa7b64731fc68": 12,
+        "b77bf2c2d6655e27856f1c00d84be8c714706c6d": 2469,
+        "bd69430d3ebddaa45872c51710dd6fb11eac57ae": 12848,
+        "beb0687f5fce9134b3e86113fddde934202fc53d": 444,
+        "bf7167b4181f4bd1b8f50c67d8c5df9e0693de57": 50,
+        "c0b2344a9bee19f92049781fa24aa696a3aae79b": 155,
+        "c1c3a2bcee2878fb97abfab2ddf675c641582c4b": 90,
+        "c5c0b45e64923645a4858c7ebea074ae7629f7ee": 76,
+        "cba0d87db72a18d8d65ed8c5feeaf9063e1599fb": 8590,
+        "d3432fad5b47e708f4e13dd7ec51cde032f55942": 1147,
+        "dbb419c48448b69487cc118b5937a380ad07bbc6": 188,
+        "dcbd50a5f0befd1132ee92a2b0bc67f86ad007d5": 71,
+        "dcce5825f130f223b61ef574c94cffadf5bf5316": 1002,
+        "e71b8a16fc34c393c1d2c82ac5e915e7540d8ccf": 290,
+        "eb5aa1c6ad06c1c6774f9dbc14ccc1fb6761d9c3": 2082,
+        "eb99a79c70e2ae41aca975f8273beb847c6a461c": 12184,
+        "ebeead95a3c5168052ad66e61e2ddd1e35ef5e3f": 581,
+        "ec5b44f8d7ec63e6164ff0069a954661a947f0a6": 1772,
+        "ec797f04d67c00d3a3641511fe7189f6a452d5ff": 169,
+        "edf84b530156cbb7697c96bfeeb0956e658147c1": 137,
+        "ee95de9a592c5c0e305235d1b61e4e9acb2ecb55": 107,
+        "f33ada0be7f11e9ce21f96192717da9430bd423a": 4600,
+        "f4117dab2c1b7b6581cd935dc09e711cb560045f": 6428,
+        "f6c679a940e574d501833f50e95113d1bd07e48c": 6131,
+        "f8ffdffb690686cb39c18ee1970cee7f22432834": 451,
+        "fa2838311d78ab16c5f4a2014da23b1aeeac7799": 6,
+        "fb5b987acc56d480ffe6092ce11942afa1598e6f": 442,
+        "febd05663af360f557dd39f45e4434b0f94afc48": 13,
+        "ff9696eb51ee4abb71086fef98e48a9f1a90cf05": 61
+      }
+    }
+  },
+  "v": 1
+}
