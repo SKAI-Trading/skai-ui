@@ -17,6 +17,9 @@
  *                          carrying hand-set fields forward from the prior file
  *   families.mjs           registry.json -> families.json
  *   apply-status.mjs       status.<section>.tsv -> per-frame status/route/notes
+ *   (retire implFiles)     in-process: drop the entries implfile-retirements.tsv
+ *                          lists. Straight after apply-status, which appends
+ *                          column 3 and would put a retired entry back.
  *   apply-verify.mjs       vverify.<section>.tsv -> visual verdicts. MUST run
  *                          after apply-status: it downgrades an over-optimistic
  *                          `done`, and apply-status would put the `done` back.
@@ -30,8 +33,9 @@
  *                          WAVE10-INTEGRITY.md
  *
  * What it proves afterwards: no frame that survived the rebuild lost its
- * implFiles or its verifiedAt. status and notes legitimately move when a TSV
- * changed, so those are reported, not enforced.
+ * verifiedAt, or any implFiles entry implfile-retirements.tsv does not list.
+ * status and notes legitimately move when a TSV changed, so those are
+ * reported, not enforced.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -94,12 +98,18 @@ export function handSet(reg) {
 }
 
 /**
- * Compare hand-set fields on frames present in both. Losing implFiles or
- * verifiedAt is a broken invariant — build-registry is supposed to carry both
- * forward. Anything else that moved is reported so a reader can see the
- * pipeline did work, and which work.
+ * Compare hand-set fields on frames present in both. Losing verifiedAt, or any
+ * implFiles entry that implfile-retirements.tsv does not list, is a broken
+ * invariant — build-registry is supposed to carry both forward. Anything else
+ * that moved is reported so a reader can see the pipeline did work, and which
+ * work.
+ *
+ * Until 2026-09-24 only an implFiles list going from non-empty to EMPTY was
+ * refused, so one entry of several could vanish unnoticed, and there was no
+ * way at all to drop an entry naming a deleted file: nothing removes one, and
+ * the guard stopped anything that tried. Now every entry is accounted for.
  */
-export function compareHandSet(before, after) {
+export function compareHandSet(before, after, retirements = []) {
   const gone = Object.keys(before).filter((k) => !(k in after));
   const added = Object.keys(after).filter((k) => !(k in before));
   const changed = {};
@@ -111,10 +121,138 @@ export function compareHandSet(before, after) {
       const a = after[k][h];
       if (JSON.stringify(b) === JSON.stringify(a)) continue;
       changed[h] = (changed[h] || 0) + 1;
-      if ((h === "implFiles" || h === "verifiedAt") && has(b) && !has(a)) lost.push(`${k} lost ${h}`);
+      if (h === "implFiles") {
+        const kept = new Set((Array.isArray(a) ? a : []).map((e) => String(e).trim()));
+        for (const e of Array.isArray(b) ? b : [])
+          if (!kept.has(String(e).trim()) && !retiredFor(retirements, k, e))
+            lost.push(`${k} lost implFiles entry ${JSON.stringify(e)}, which implfile-retirements.tsv does not list`);
+      } else if (h === "verifiedAt" && has(b) && !has(a)) lost.push(`${k} lost ${h}`);
     }
   }
   return { gone, added, changed, lost };
+}
+
+// ── implFiles retirement ─────────────────────────────────────────────────────
+/*
+  ★ THE ONE REVIEWED WAY AN implFiles ENTRY LEAVES registry.json.
+
+  implFiles only ever grows: build-registry carries the prior list forward and
+  apply-status appends each status row's column 3. So a file deleted from the
+  repo stays named as a frame's implementation forever, and so does every
+  placeholder a row wrote in column 3 ("—", "no", "NONE - there is none").
+  Measured 2026-09-24: 7 paths that do not exist on 57 frames, and 8
+  placeholder strings on 327 more.
+
+  implfile-retirements.tsv lists them: frame key (or `*` for every frame that
+  carries the entry), the exact entry, the date, and the reason — which names
+  the commit that deleted the file, or says the path never existed. The retire
+  step runs right after apply-status, because apply-status would re-append a
+  status row's column 3 if it ran later. A listed entry any of whose paths
+  still exists is refused before anything runs: this table retires files that
+  are gone, never a live file somebody would rather not see.
+*/
+export const RETIREMENTS_FILE = "implfile-retirements.tsv";
+
+/** Parse the table. Malformed rows are errors, never skipped. */
+export function parseRetirements(text) {
+  const rows = [];
+  const errors = [];
+  String(text)
+    .split(/\r?\n/)
+    .forEach((line, i) => {
+      if (!line.trim() || line.trimStart().startsWith("#")) return;
+      const [frame = "", entry = "", date = "", ...rest] = line.split("\t");
+      const reason = rest.join(" ").trim();
+      const at = `${RETIREMENTS_FILE}:${i + 1}`;
+      if (!frame.trim() || !entry.trim()) errors.push(`${at}: needs a frame key (or *) and the exact implFiles entry`);
+      else if (!/^\d{4}-\d{2}-\d{2}$/.test(date.trim())) errors.push(`${at}: the date must be YYYY-MM-DD, got ${JSON.stringify(date)}`);
+      else if (!reason) errors.push(`${at}: needs a reason naming the commit that removed the file, or saying it never existed`);
+      else rows.push({ at, frame: frame.trim(), entry: entry.trim(), date: date.trim(), reason });
+    });
+  return { rows, errors };
+}
+
+/** The path-like parts of an entry. A placeholder ("—", "no") has none. */
+export function entryPaths(entry) {
+  return String(entry)
+    .split(/\s+\+\s+|,\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.includes("/") || /\.[A-Za-z]{1,5}$/.test(s));
+}
+
+export const retiredFor = (rows, key, entry) =>
+  rows.some((r) => (r.frame === "*" || r.frame === key) && r.entry === String(entry).trim());
+
+/** Rows naming a path that exists, per `exists`. Each one is a refusal. */
+export function refusedRetirements(rows, exists) {
+  const out = [];
+  for (const r of rows)
+    for (const p of entryPaths(r.entry)) if (exists(p)) out.push(`${r.at}: ${p} still exists — retire only an entry naming no file that exists`);
+  return out;
+}
+
+/** Drop every listed entry from the registry in place. */
+export function applyRetirements(reg, rows) {
+  const removed = [];
+  const used = new Set();
+  for (const [k, f] of Object.entries(reg.frames || {})) {
+    if (!Array.isArray(f.implFiles) || !f.implFiles.length) continue;
+    const keep = [];
+    for (const e of f.implFiles) {
+      const r = rows.find((x) => (x.frame === "*" || x.frame === k) && x.entry === String(e).trim());
+      if (r) {
+        removed.push(`${k}\t${e}`);
+        used.add(r.at);
+      } else keep.push(e);
+    }
+    f.implFiles = keep;
+  }
+  return { removed, unused: rows.filter((r) => !used.has(r.at)).map((r) => r.at) };
+}
+
+/**
+ * implFiles paths are relative to the Skai-Trading checkout this submodule sits
+ * in (SCHEMA.md). Outside one — a scratch export — they cannot be checked, and
+ * the run says so rather than passing the check vacuously.
+ */
+function checkoutRoot() {
+  const root = path.resolve(DIR, "..", "..", "..");
+  const here = path.join(root, "modules", "skai-ui", "figma-catalog");
+  try {
+    return fs.realpathSync(here) === fs.realpathSync(DIR) ? root : null;
+  } catch {
+    return null;
+  }
+}
+
+function loadRetirements() {
+  const p = path.join(DIR, RETIREMENTS_FILE);
+  const { rows, errors } = parseRetirements(readIf(p));
+  if (errors.length) {
+    console.error(`pipeline: ${RETIREMENTS_FILE} is malformed — nothing was run:\n  ${errors.join("\n  ")}`);
+    process.exit(1);
+  }
+  const root = checkoutRoot();
+  if (!root) {
+    const n = rows.filter((r) => entryPaths(r.entry).length).length;
+    console.log(`pipeline: not inside a Skai-Trading checkout, so ${n} retired path(s) in ${RETIREMENTS_FILE} were NOT checked for still existing.`);
+  } else {
+    const refused = refusedRetirements(rows, (p2) => fs.existsSync(path.join(root, p2)));
+    if (refused.length) {
+      console.error(`pipeline: ${RETIREMENTS_FILE} retires ${refused.length} path(s) that still exist — nothing was run:\n  ${refused.join("\n  ")}`);
+      process.exit(1);
+    }
+  }
+  return rows;
+}
+
+function retireStep(rows) {
+  console.log(`\n── retire implFiles (${RETIREMENTS_FILE}) ${"─".repeat(37)}`);
+  const reg = readJson(REGISTRY);
+  const { removed, unused } = applyRetirements(reg, rows);
+  fs.writeFileSync(REGISTRY, JSON.stringify(reg, null, 2));
+  console.log(`${rows.length} row(s); ${removed.length} entr${removed.length === 1 ? "y" : "ies"} removed this run.`);
+  if (unused.length) console.log(`  rows matching no frame this run (already retired, or a typo): ${unused.join(", ")}`);
 }
 
 // ── running ──────────────────────────────────────────────────────────────────
@@ -145,13 +283,20 @@ function regenerate({ check }) {
   else if (age > HARVEST_STALE_DAYS) console.log(`pipeline: live harvest is ${age} days old (> ${HARVEST_STALE_DAYS}). Figma may have moved; see README.md, "Keeping it in step with Figma".`);
   else console.log(`pipeline: live harvest is ${age} day(s) old.`);
 
+  const retirements = loadRetirements();
   const before = fs.existsSync(REGISTRY) ? handSet(readJson(REGISTRY)) : {};
   const priorText = Object.fromEntries(DERIVED.map((f) => [f, stableText(readIf(path.join(DIR, f)))]));
 
-  for (const [script, args] of STEPS) run(script, args);
+  for (const [script, args] of STEPS) {
+    run(script, args);
+    // Right after apply-status, which appends column 3 and would otherwise put
+    // a retired entry straight back; before apply-verify, catalog-view and
+    // coverage, which all read the list.
+    if (script === "apply-status.mjs") retireStep(retirements);
+  }
 
   const after = handSet(readJson(REGISTRY));
-  const cmp = compareHandSet(before, after);
+  const cmp = compareHandSet(before, after, retirements);
   console.log(`\n── hand-set fields ${"─".repeat(52)}`);
   console.log(`frames ${Object.keys(before).length} -> ${Object.keys(after).length}  (gone ${cmp.gone.length}, new ${cmp.added.length})`);
   for (const k of cmp.gone.slice(0, 12)) console.log(`  gone  ${k}`);
@@ -159,7 +304,7 @@ function regenerate({ check }) {
   const moved = Object.entries(cmp.changed);
   console.log(moved.length ? `changed on surviving frames: ${moved.map(([h, n]) => `${h} ${n}`).join(", ")}` : "changed on surviving frames: none");
   if (cmp.lost.length) {
-    console.error(`\npipeline: INVARIANT BROKEN — ${cmp.lost.length} frame(s) lost a field build-registry must carry forward:`);
+    console.error(`\npipeline: INVARIANT BROKEN — ${cmp.lost.length} hand-set value(s) lost that build-registry must carry forward (an implFiles entry leaves only through ${RETIREMENTS_FILE}):`);
     for (const l of cmp.lost.slice(0, 20)) console.error(`  ${l}`);
     process.exit(2);
   }
@@ -256,12 +401,84 @@ function selfTest() {
   check("compareHandSet: a surviving frame that lost implFiles breaks the invariant; a status move is only reported", r.lost.length === 1 && /A lost implFiles/.test(r.lost[0]) && r.changed.status === 1 && r.gone.join() === "G" && r.added.join() === "N", JSON.stringify(r));
   const r2 = compareHandSet({ A: { status: "done" } }, { A: { status: "done", verifiedAt: "2026-09-09T00:00:00.000Z" } });
   check("compareHandSet: gaining a field is not a loss", r2.lost.length === 0 && r2.changed.verifiedAt === 1);
+
+  // ── implFiles retirement ──
+  const one = compareHandSet({ A: { implFiles: ["src/a.tsx", "src/b.tsx"] } }, { A: { implFiles: ["src/a.tsx"] } });
+  check(
+    "compareHandSet refuses ONE unlisted implFiles entry leaving, even while others remain",
+    one.lost.length === 1 && /src\/b\.tsx/.test(one.lost[0]),
+    JSON.stringify(one.lost),
+  );
+  const listed = compareHandSet({ A: { implFiles: ["src/a.tsx", "src/b.tsx"] } }, { A: { implFiles: [] } }, [
+    { frame: "*", entry: "src/a.tsx" },
+    { frame: "A", entry: "src/b.tsx" },
+  ]);
+  check("compareHandSet accepts removals the table lists, down to an empty list", listed.lost.length === 0, JSON.stringify(listed.lost));
+  const elsewhere = compareHandSet({ B: { implFiles: ["src/b.tsx"] } }, { B: { implFiles: [] } }, [{ frame: "A", entry: "src/b.tsx" }]);
+  check("a row keyed to one frame does not license the same entry leaving another", elsewhere.lost.length === 1, JSON.stringify(elsewhere.lost));
+  const parsed = parseRetirements(
+    [
+      "# frame\tentry\tdate\treason",
+      "*\tsrc/gone.tsx\t2026-09-24\tdeleted in abc1234",
+      "F1\tsrc/only-f1.tsx\t2026-09-24\tdeleted in abc1234",
+      "*\tsrc/undated.tsx\t\tdeleted in abc1234",
+      "*\tsrc/unreasoned.tsx\t2026-09-24\t",
+      "\tsrc/no-frame.tsx\t2026-09-24\tdeleted in abc1234",
+    ].join("\n"),
+  );
+  check(
+    "parseRetirements keeps well-formed rows and refuses one missing its date, its reason or its frame",
+    parsed.rows.length === 2 && parsed.errors.length === 3,
+    JSON.stringify(parsed),
+  );
+  check(
+    "entryPaths finds each path in a compound entry and none in a placeholder",
+    entryPaths("src/a/b.tsx + c.tsx").length === 2 &&
+      entryPaths("modules/x/src/dir/").length === 1 &&
+      entryPaths("—").length === 0 &&
+      entryPaths("NONE - there is none").length === 0,
+  );
+  check(
+    "a listed path that still exists is refused; a gone path and a placeholder are not",
+    refusedRetirements(
+      [
+        { at: "t:1", entry: "src/live.tsx" },
+        { at: "t:2", entry: "src/gone.tsx" },
+        { at: "t:3", entry: "—" },
+        { at: "t:4", entry: "src/gone.tsx + src/live.tsx" },
+      ],
+      (p) => p === "src/live.tsx",
+    ).length === 2,
+  );
+  const reg = { frames: { F1: { implFiles: ["src/gone.tsx", "src/keep.tsx", "src/only-f1.tsx"] }, F2: { implFiles: ["src/only-f1.tsx", "src/gone.tsx"] } } };
+  const applied = applyRetirements(reg, parsed.rows);
+  check(
+    "applyRetirements drops a `*` entry everywhere and a frame-keyed entry on that frame only",
+    JSON.stringify(reg.frames.F1.implFiles) === '["src/keep.tsx"]' && JSON.stringify(reg.frames.F2.implFiles) === '["src/only-f1.tsx"]' && applied.removed.length === 3,
+    JSON.stringify(reg),
+  );
+  const reapplied = applyRetirements(reg, parsed.rows);
+  check("...and a second run removes nothing and reports the rows as unused", reapplied.removed.length === 0 && reapplied.unused.length === 2);
+  // The committed table itself. Reads the tree, writes nothing.
+  const committed = parseRetirements(readIf(path.join(DIR, RETIREMENTS_FILE)));
+  const root = checkoutRoot();
+  if (committed.errors.length) check(`the committed ${RETIREMENTS_FILE} parses`, false, committed.errors.join("; "));
+  else if (!root) console.log(`  SKIP  the committed ${RETIREMENTS_FILE}'s paths: not inside a Skai-Trading checkout, so they cannot be checked here`);
+  else {
+    const live = refusedRetirements(committed.rows, (p) => fs.existsSync(path.join(root, p)));
+    check(`the committed ${RETIREMENTS_FILE} parses and retires no path that exists (${committed.rows.length} rows)`, live.length === 0, live.join("; "));
+  }
   console.log(`\nself-test: ${pass}/${pass + fail} passed.`);
   process.exit(fail ? 1 : 0);
 }
 
+// Only when run as a script. The helpers above are exported, and importing this
+// file used to run a whole regeneration off the importer's argv.
+const IS_MAIN = Boolean(process.argv[1]) && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 const argv = process.argv.slice(2);
-if (argv.includes("--self-test")) selfTest();
+if (!IS_MAIN) {
+  /* imported for its helpers */
+} else if (argv.includes("--self-test")) selfTest();
 else if (argv[0] === "drift") drift();
 else if (!argv.length || argv[0] === "--check") regenerate({ check: argv[0] === "--check" });
 else {

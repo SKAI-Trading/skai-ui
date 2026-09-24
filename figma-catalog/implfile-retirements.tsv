@@ -1,0 +1,32 @@
+# implfile-retirements.tsv — implFiles entries that leave registry.json on purpose. HAND-MAINTAINED; pipeline.mjs reads it.
+#
+# implFiles only grows: build-registry.mjs carries the prior list forward and apply-status.mjs appends each status row's
+# column 3. A deleted file therefore stays named as a frame's implementation forever, and so does every placeholder a
+# row wrote in column 3. pipeline.mjs drops each entry listed here right after apply-status, and refuses any OTHER
+# implFiles entry leaving a surviving frame (exit 2). Before anything runs it refuses the whole table (exit 1) if a
+# row is malformed or if any path in a listed entry still exists under the Skai-Trading checkout: this table retires
+# files that are gone, never a live file. Outside a checkout (a scratch export) it says the paths were not checked.
+#
+# frame   a registry frame key, or * for every frame that carries the entry
+# entry   the implFiles entry exactly as registry.json stores it
+# date    YYYY-MM-DD the row was written
+# reason  the commit that removed the file, or why the entry names no file; who found it
+#
+# Added 2026-09-24 (wave 67, w67-cat-verdicts) from the stale entries w67-cat-status-a and w67-cat-status-b reported;
+# frame counts are at skai-ui f438e6f.
+# frame	entry	date	reason
+*	modules/skai-landing/src/components/WaitlistModal.tsx	2026-09-24	deleted in skai-landing 83c28cd (2026-09-08) when the waitlist moved into src/LandingWaitlist.tsx; 15 frames; reported by w67-cat-status-a
+*	src/components/launchpad/create/TokenProfileRow.tsx	2026-09-24	deleted in 5e621ce83 (2026-08-11), its FullScreenPreview moved into TokenPreviewPanel.tsx (WAVE_PLAYBOOK.md); 2 frames; reported by w67-cat-status-b
+*	src/components/trench-redesign/trade/KOLsPanel.tsx	2026-09-24	deleted in 61d885d58 (2026-09-14), which takes the KOLs table off the token page; 8 frames; reported by w67-cat-status-b
+*	src/pages/trade/TradeUnified.tsx	2026-09-24	deleted in d793f2955 (2026-08-12, retire dead surfaces); 22 frames
+*	src/components/messages/MessageDialogs.tsx	2026-09-24	never existed at this path (no commit on any branch adds it); the file is src/pages/social/messages/MessageDialogs.tsx; 1 frame; reported by w67-cat-status-a
+*	src/components/trench/DiscoverTabs.tsx	2026-09-24	never existed at this path (no commit on any branch adds it); the file is src/components/trench-redesign/discover/DiscoverTabs.tsx; 2 frames
+*	src/components/predict/futures/	2026-09-24	never existed (no commit on any branch touches the directory); 5 frames
+*	—	2026-09-24	not a path: the em dash rows write in column 3 for no file; apply-status.mjs skips only the ASCII -, so it was appended as if it were one; 213 frames; reported by w67-cat-status-a
+*	NONE - there is none	2026-09-24	not a path: column-3 prose for no implementing file; 62 frames; reported by w67-cat-status-a
+*	NONE - there is no Slide anywhere in the codebase, at any layer	2026-09-24	not a path: column-3 prose for no implementing file; 10 frames
+*	NONE - neither the Activity table nor the details drawer is built	2026-09-24	not a path: column-3 prose for no implementing file; 2 frames
+*	no	2026-09-24	not a path: a one-word column-3 answer; 31 frames; reported by w67-cat-status-a
+*	none	2026-09-24	not a path: a one-word column-3 answer; 4 frames
+*	nearest	2026-09-24	not a path: a one-word column-3 answer; 3 frames
+*	neither	2026-09-24	not a path: a one-word column-3 answer; 2 frames
