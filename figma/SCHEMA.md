@@ -2,7 +2,9 @@
 
 `modules/skai-ui/figma/` holds SKAI's design as data, read from the three Figma files so that a designer or a developer
 needs only this package to build to the design. Figma stays the place designs are drawn; this store is the place
-code reads them. Every read here costs zero Figma calls. Only `figma:sync` talks to Figma, under a daily call budget.
+code reads them. Every read here costs zero Figma calls. Only `figma:sync` and the `figma:tokens` export plan Figma
+calls (they print read-only scripts for `use_figma` and ingest what comes back), under a daily call budget.
+[README.md](README.md) is the guide to using the store; this file is what the scripts promise.
 
 | File | Key | What it is |
 |---|---|---|
@@ -10,30 +12,34 @@ code reads them. Every read here costs zero Figma calls. Only `figma:sync` talks
 | Skai-Web-App-2 | `mhF3BkzlTaGiLzJ7kvpmVc` | web app continuation, 7 pages |
 | Skai-Games | `M6r9FEn042UWTQD1zvy6GM` | games, 31 pages |
 
-The frames tracked are the catalog's (`figma-catalog/registry.json`). The catalog says whether a frame is built; this
-store says what the frame IS.
+The frames tracked are the catalog's (`figma-catalog/registry.json`): every registry frame that is not `gone`, has a
+page, and whose page is not ruled out of scope in `figma-catalog/pages.json`. The catalog says whether a frame is
+built; this store says what the frame IS.
 
 ## Layout
 
 ```
 figma/
   SCHEMA.md                   this contract
-  README.md                   how to find a frame, read a spec, use tokens, run a sync
+  README.md                   the guide: find a frame, read a spec, use tokens, run a sync
   store/<fileKey>/<node>.json one frame spec per catalogued frame; <node> uses "-" (7710-91527.json),
                               and an instance path's ";" becomes "_"
-  store/<fileKey>/<node>/<part>.json   the split-off parts of a frame over 60 KB (see Depth)
-  store/index.json            every stored frame: page, name, size, hash, syncedAt, bytes
+  store/<fileKey>/<node>/<part>.json   the split-off parts of a frame over 60 KB (see Depth), named the same way
+  store/index.json            every stored frame and part: page, name, size, hash, syncedAt, bytes, path (+ stale, partOf)
   store/sync-state.json       sync's working state: each frame's last live hash, transfers part-way
-  tokens/variables.json       every Figma variable the frames use, resolved
+  tokens/variables.json       every Figma variable the frames use, resolved, and the collections they come from
   tokens/text-styles.json     every text style the frames use, resolved
   tokens/effect-styles.json   every effect style (shadows, blurs) the frames use
   tokens/paint-styles.json    every paint style (colours, gradients) the frames use
   tokens/sources.json         where the tokens came from: per-file walk coverage, use counts, the library check
   tokens/DRIFT.md             generated report: each Figma token against every token source in the code
-  assets/manifest.json        exported icons and images: node -> file
+  assets/manifest.json        exported icons and images: node -> file (reserved: no CLI writes assets/ yet)
   assets/icons/*.svg, assets/images/*.{png,webp}
-  ledger/calls.jsonl          one line per Figma call sync made: {at, day, kind, file, calls}
-  lib/                        shared code (the in-plugin spec builder, hashing, packing)
+  ledger/calls.jsonl          one line per Figma call the CLIs made, sync and tokens alike (see the budget)
+  lib/                        shared code: canonical.mjs (canonical JSON, FNV-1a 64), plugin-builder.js (the spec
+                              builder and drivers that run inside Figma), pack.mjs (tracked set, planning, scripts),
+                              ledger.mjs, render.mjs (figma:spec output), tokens-*.mjs; fixtures/ for the self-tests
+  lib/TRANSPORT.md            how a script and its result travel through use_figma, and the 20 KB result cut
   sync.mjs  read.mjs  tokens.mjs   the three CLIs (npm run figma:sync | figma:spec | figma:find | figma:tokens)
 ```
 
@@ -54,6 +60,11 @@ Everything under `store/`, `tokens/`, `assets/` and `ledger/` is written ONLY by
 }
 ```
 
+A split part's spec (see Depth) has the same header, its `name` is the part's layer name, and it adds
+`"partOf": "<frame key>"`. The file is written a header field per line, then the tree one node per line, each child
+one space deeper than its parent, with LF line endings, so a sync's diff reads node by node. Parse it as JSON; do
+not depend on that layout.
+
 ### Node (compact keys; a key is OMITTED when it holds its default)
 
 | key | meaning | default |
@@ -61,7 +72,7 @@ Everything under `store/`, `tokens/`, `assets/` and `ledger/` is written ONLY by
 | `id` | node id (`7710:91528`) | required |
 | `t` | Figma type: FRAME, GROUP, TEXT, RECTANGLE, ELLIPSE, LINE, VECTOR, BOOLEAN_OPERATION, INSTANCE, COMPONENT, COMPONENT_SET, SECTION | required |
 | `n` | layer name | required |
-| `b` | `[x, y, w, h]` relative to the parent, rounded to 0.5; the frame's own root is `[0, 0, w, h]`, so moving a frame on the canvas does not change its hash | required |
+| `b` | `[x, y, w, h]` relative to the parent, rounded to 0.5; the frame's own root is `[0, 0, w, h]`, so moving a frame on the canvas does not change its hash. A child of a GROUP is placed relative to the group, not to the frame Figma measures it in | required |
 | `vis` | `false` when hidden | visible |
 | `op` | opacity | 1 |
 | `l` | auto-layout: `{m, g, p, ai, jc, wrap, sx, sy, abs}` | no auto-layout |
@@ -73,6 +84,7 @@ Everything under `store/`, `tokens/`, `assets/` and `ledger/` is written ONLY by
 | `tx` | text: `{c, st, ff, fs, fw, lh, ls, ta, tc, td}` | not text |
 | `ci` | instance: `{k, n, set, props}` (component key, name, set name, variant props) | not an instance |
 | `c` | children `[Node]` | none |
+| `ref`, `h` | in place of a whole node: a split-off subtree, `{"ref": "<node>", "h": "<part hash>"}` and no other key (see Depth) | not split |
 
 `l` in full: `m` layout mode `H` | `V` | `G` (grid); `g` item spacing; `p` padding `[t, r, b, l]`; `ai` counter-axis
 align (`MIN` `CENTER` `MAX` `BASELINE`); `jc` primary-axis align (`MIN` `CENTER` `MAX` `SPACE_BETWEEN`); `wrap` true
@@ -105,30 +117,86 @@ that Figma could not resolve is written as its id (`VariableID:…`, `S:…`), n
 
 ### Depth
 
-Full depth, except: VECTOR, BOOLEAN_OPERATION and STAR keep `b`, `f` and `s` but no children; an INSTANCE keeps its
-`ci` and its children only when its content differs from the main component (overrides), otherwise no children. A frame
-spec above 60 KB after that is split: over-large child subtrees become `{"ref": "<node>", "h": "<part hash>"}` and are
-stored as their own specs in the frame's directory, `store/<fileKey>/<frameNode>/<childNode>.json`, indexed as
-`<fileKey>:<frameNode>/<childNode>` with `"partOf": "<frame key>"`. Not beside the frame: a cut child can itself be a
-catalogued frame, whose own spec (root `b` zeroed) differs from the part. The ref carries the part's hash, so a change
-inside a part still changes the frame hash.
+Full depth down to 80 levels below the frame (anything deeper is dropped), except: VECTOR, BOOLEAN_OPERATION and STAR
+keep `b`, `f` and `s` but no children; an INSTANCE keeps its `ci` and its children only when its content differs from
+the main component (overrides), otherwise no children.
+
+A frame spec whose canonical JSON is over 60,000 characters after that is split. Its largest child subtrees, largest
+first and never one under 4,000 characters, become `{"ref": "<node>", "h": "<part hash>"}` until the frame fits; a cut
+subtree still over the size is split the same way, so a part can hold refs of its own. Every part of a frame, at any
+level, is stored in the frame's directory, `store/<fileKey>/<frameNode>/<childNode>.json`, indexed as
+`<fileKey>:<frameNode>/<childNode>` with `"partOf": "<frame key>"` (the frame, never the part holding the ref). Not
+beside the frame: a cut child can itself be a catalogued frame, whose own spec (root `b` zeroed) differs from the part,
+which keeps its `b` relative to its parent. The ref carries the part's hash, so a change inside a part still changes
+the frame hash. When a frame is extracted again, a part its new cut no longer has is deleted, file and index entry.
 
 ## Hashing
 
-`hash` = FNV-1a 64-bit (hex) of the canonical JSON of `tree`: keys sorted, no whitespace, `syncedAt` excluded. The SAME
-builder runs inside Figma (the sync's hash pass returns only `{node: hash}`, so change detection costs no extraction)
-and in Node (to verify a stored spec). A frame is re-extracted only when its live hash differs from `store/index.json`.
+`hash` = FNV-1a 64-bit (hex) of the canonical JSON of `tree`: keys sorted, no whitespace, `syncedAt` excluded at any
+depth. For a split frame that is the tree with its refs in place; each part's hash is the hash of its own tree. The
+SAME builder runs inside Figma (the sync's hash pass returns only `{node: hash}`, so change detection costs no
+extraction) and in Node (to verify a stored spec: `npm run figma:sync -- verify <frame key>` prints the index hash, the
+file's hash and the hash recomputed from the file). A frame is extracted only when it is missing from
+`store/index.json` or its entry is stale.
 
 ## store/index.json
 
 ```jsonc
 { "v": 1, "syncedAt": "...", "frames": {
   "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527": { "page": "✅ Trade 1", "name": "...", "w": 1440, "h": 900,
-    "hash": "a1b2c3d4e5f60718", "syncedAt": "...", "bytes": 18234, "path": "store/mhF3BkzlTaGiLzJ7kvpmVc/7710-91527.json" } } }
+    "hash": "a1b2c3d4e5f60718", "syncedAt": "...", "bytes": 18234, "path": "store/mhF3BkzlTaGiLzJ7kvpmVc/7710-91527.json" },
+  "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527/7710:91600": { "page": "✅ Trade 1", "name": "Order book", "w": 1064, "h": 836,
+    "hash": "...", "syncedAt": "...", "bytes": 9120, "path": "store/mhF3BkzlTaGiLzJ7kvpmVc/7710-91527/7710-91600.json",
+    "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527" } } }
 ```
 
-An entry gains `"stale": true` when a hash pass finds the live hash differs from the stored one; the next extract of
-that frame clears it.
+Keyed `<fileKey>:<node>` in colon form; a part is `<frame key>/<part node>`. `bytes` is the spec file's size, `path` is
+relative to `figma/`, `w`/`h` are the frame's size (a part's are its own `b`). The top `syncedAt` is the last extract
+that stored a frame. The file is written one entry per line, keys sorted.
+
+### Stored, stale, missing
+
+These are the three states of a tracked frame, and every reader means the same thing by them:
+
+- **stored**: the frame has an index entry (a part entry never counts as a frame). A reader that opens the spec also
+  checks the file is there; an entry whose file is gone reads as not stored.
+- **stale**: the entry holds `"stale": true`. A hash pass (`hash-ingest`) sets it when the frame's live hash differs
+  from the entry's `hash`, and when the pass reports the node missing from Figma (then `sync-state.json` records it
+  `gone`). A later hash pass whose live hash equals the stored one again removes the flag, and extracting the frame
+  rewrites the entry without it. A stale spec is still the last design sync read, so readers print it with a warning.
+- **missing**: no index entry.
+
+`npm run figma:sync -- status` counts all three per file, plus split part files, stored frames the catalog no longer
+tracks, transfers part-way, and today's calls.
+
+## store/sync-state.json
+
+Sync's working state, written only by sync; a reader of designs never needs it.
+
+```jsonc
+{ "v": 1,
+  "partial": { "<frame key>": { "H": "<live frame hash>", "T": 1645, "pg": "<page>", "n": "<name>", "w": 1440, "h": 900,
+                                "x": [ /* the items received so far */ ], "calls": 1, "oversize": true } },
+  "live": { "<frame key>": { "h": "<hash>", "at": "..." }, "<frame key>": { "gone": true, "at": "..." } } }
+```
+
+`live` is the last live hash sync saw for each frame, from a hash pass or a completed extract, or `gone` when a hash
+pass found no such node. `partial` is a frame too big for one result, arriving over several calls: `H` is the live hash
+the transfer started at, `T` how many items the frame streams, `x` the items so far. The item format, and how a
+transfer continues or restarts, are in [lib/TRANSPORT.md](lib/TRANSPORT.md). A transfer projected to need more than 12
+calls is parked with `"oversize": true` and is not planned again until it is named with `--nodes`.
+
+## Fetching one frame
+
+```
+npm run figma:sync -- extract-script --file <fileKey> --nodes <node>
+```
+
+plans a script for exactly that frame (a parked transfer named this way continues where it stopped). Run the printed
+script with `use_figma` on that file, save the result exactly as returned, then
+`npm run figma:sync -- extract-ingest <result.json>`. `figma:spec` prints these steps for a frame that is not stored or
+is stale. Without `--nodes`, `extract-script` takes the next stale or missing frames, the catalog worklist's packets
+first. [lib/TRANSPORT.md](lib/TRANSPORT.md) says how the script and its result travel.
 
 ## tokens/
 
@@ -155,21 +223,43 @@ Added by the tokens export (2026-09-24), all additive:
 - `sources.json`: `{ "v": 1, "runs": { "<fileKey>": { fileName, pages: { "<pageId>": {walked, children} }, passes,
   coverage, complete, usesInWalkedFrames: { "<key>": n } } }, "library": { file, fileName, localCollections,
   localCounts, keys, match } }`. A walk may sample every Nth frame, so `complete` is true only when every tracked page
-  was walked to its last top-level frame; use counts are counts in the frames walked, not in the file.
+  was walked to its last top-level frame; use counts are counts in the frames walked, not in the file. A run also
+  records `calls`, `frames`, `nodes`, `ms`, `plannedPages`, `startedAt`, `updatedAt` and `truncated`; `library` also
+  records `checkedAt`, `collectionsMatched`, `keysCut` and a `note`.
 - `DRIFT.md` is written by `figma:tokens -- diff` and changes no token source.
 - Tokens ledger lines are `kind: "tokens"` and carry the result's checksum as their `nonce`.
 
 ## ledger/calls.jsonl and the budget
 
-Every Figma call sync makes is appended BEFORE its result is ingested: `{"at": ISO, "day": "YYYY-MM-DD" (UTC),
-"kind": "hash" | "extract" | "tokens" | "assets", "file": fileKey, "calls": 1, "frames": n}`. sync's lines also carry
-the result's `"nonce"` and `"ok"` (false when the result was refused, e.g. damaged in transcription: the call still
-counts); a second ingest of a refused result writes `"calls": 0`. A line that does not parse counts as one call. The daily cap (default
-120, `FIGMA_DAILY_BUDGET`) counts every line for the UTC day; `sync` refuses to plan past it and says how many calls
-remain. The Figma account allows 200 read calls a day, 15 a minute, shared by every session.
+Every Figma call is appended BEFORE its result is ingested, one JSON object per line:
+
+```jsonc
+{"at": "2026-09-24T08:17:42.289Z", "day": "2026-09-24", "kind": "extract", "file": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "calls": 1, "frames": 1, "nonce": "4333afed9740", "ok": true}
+```
+
+- `day` is the UTC day. `kind` is `"hash"` | `"extract"` (sync), `"tokens"` (the tokens export and its library check),
+  or `"assets"` (reserved). `frames` is how many frames the result carried.
+- `nonce` is the one the script was given (sync) or the result's checksum (tokens). `ok` is false when the result was
+  refused, e.g. damaged in transcription: the call still counts. A second ingest of a refused result writes
+  `"calls": 0`; a result already ingested is never counted twice.
+- A call that returned nothing to ingest (an error, a result cut at 20 KB) is counted by hand with
+  `npm run figma:sync -- record-call --kind <kind> --file <fileKey> [--note <text>]` (or
+  `npm run figma:tokens -- ledger-failed --file <fileKey> [--note <text>]`), which writes `"calls": 1, "frames": 0,
+  "ok": false` and the note.
+- Lines written before the ledger was shared may carry `sum` instead of `nonce`, or `failed: true`; readers take a
+  `sum` as the nonce.
+
+A line that does not parse counts as one call, against every day. The daily cap (default 120, `FIGMA_DAILY_BUDGET`, a
+whole number) sums `calls` over the UTC day's lines; every command that plans a call refuses to plan past it (sync
+exits 3) and says how many calls remain. The Figma account allows 200 read calls a day, 15 a minute, shared by every
+session.
 
 ## What reads this, and what never does
 
 - Lanes, developers and designers read specs, tokens and assets from here. A lane never calls Figma to learn a design.
-- The catalog (`figma-catalog/`) links a frame to its spec by the same `<fileKey>:<node>` key.
+- The catalog (`figma-catalog/`) links a frame to its spec by the same `<fileKey>:<node>` key. `figma-catalog/worklist.mjs`
+  reads `store/index.json` to give each worklist row its spec path and its stored / stale / missing state.
+- `sync.mjs extract-script` reads the worklist's packet order to choose what to fetch first; nothing in `figma/` writes to
+  `figma-catalog/`.
 - Nothing in `src/` imports `figma/`: it is design data, not shipped code, and is not in the package's `files`.
