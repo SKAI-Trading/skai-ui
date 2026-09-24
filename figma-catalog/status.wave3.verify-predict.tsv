@@ -106,7 +106,7 @@
 3640-59051	furniture	-	-	[Notes] 342x268. FigJam WIDGET "Notes" sticky - author annotation, zero children.
 3640-59005	furniture	-	-	[Notes] 342x249. FigJam WIDGET "Notes" sticky - author annotation, zero children.
 3650-63719	furniture	-	-	[Notes] 342x363. FigJam WIDGET "Notes" sticky - author annotation, zero children.
-8577-82064	unknown	-	-	[dropdown-more] 200x122. Overflow "More" dropdown cut-out. Registry already records this as superseded.
+8577-82064	frame-defect	-	-	[dropdown-more] 200x122. Overflow "More" dropdown cut-out. Registry already records this as superseded. ASSESSED (wave67 cat-status-a, 2026-09-24; code at Skai-Trading fa36d2b9b, no Figma read: the connector was not connected), unknown -> frame-defect: superseded by ruling. Casey's 2026-08-13 ruling makes 8909-137997 the canonical More menu and this node the superseded one (src/pages/predict/components/PredictCategoryStrip.tsx:46-47, pinned in src/pages/predict/PredictCategoryPage.test.tsx:163 and :196); building its split would contradict the ruling, and the menu the ruling names is built. It belongs under a vverify ruled-out verdict (ruling and date cited here) so it leaves the denominator; that table is not this lane's.
 10312-16920	unknown	src/components/predict/ticket/PredictTicket.tsx	-	[dropdown-market] 200x122. Order-type dropdown cut-out ("dropdown-market"), 130-200 wide. Enumerated; not opened.
 8623-55287	furniture	-	-	[Notes] 342x230. FigJam WIDGET "Notes" sticky - author annotation, zero children.
 8659-115866	unknown	src/components/predict/modules/	-	[dropdown-positions - status] 200x122. Positions module filter dropdown cut-out. Enumerated; not opened.
