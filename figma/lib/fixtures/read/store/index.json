@@ -1,0 +1,36 @@
+{
+  "v": 1,
+  "syncedAt": "2026-09-24T08:00:00Z",
+  "frames": {
+    "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527": {
+      "page": "✅ Trade 1", "name": "Skai > Trade > Spot 1VH (1440 x 900px)", "w": 1440, "h": 900,
+      "hash": "a1b2c3d4e5f60718", "syncedAt": "2026-09-24T08:00:00Z", "bytes": 4000,
+      "path": "store/mhF3BkzlTaGiLzJ7kvpmVc/7710-91527.json"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527/7710:91600": {
+      "page": "✅ Trade 1", "name": "Order book", "w": 1064, "h": 836,
+      "hash": "0000000000000001", "syncedAt": "2026-09-24T08:00:00Z", "bytes": 700,
+      "path": "store/mhF3BkzlTaGiLzJ7kvpmVc/7710-91527/7710-91600.json", "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527/7710:91602": {
+      "page": "✅ Trade 1", "name": "Depth rows", "w": 1064, "h": 700,
+      "hash": "0000000000000003", "syncedAt": "2026-09-24T08:00:00Z", "bytes": 300,
+      "path": "store/mhF3BkzlTaGiLzJ7kvpmVc/7710-91527/7710-91602.json", "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:2713:4556": {
+      "page": "✅ Home 1", "name": "Skai > Home > welcome pop-up 1VH (1440 x 900px)", "w": 1440, "h": 900,
+      "hash": "1111111111111111", "liveHash": "2222222222222222", "syncedAt": "2026-09-20T08:00:00Z", "bytes": 500,
+      "path": "store/3sSzw1KewMtUbeLAv7uW0r/2713-4556.json"
+    },
+    "M6r9FEn042UWTQD1zvy6GM:9003:1": {
+      "page": "✅ Blackjack - Skai originals", "name": "Skai > Play > Casino > Blackjack (1440 x 900px)", "w": 1440, "h": 900,
+      "hash": "3333333333333333", "stale": true, "syncedAt": "2026-09-22T08:00:00Z", "bytes": 300,
+      "path": "store/M6r9FEn042UWTQD1zvy6GM/9003-1.json"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7710:92000": {
+      "page": "✅ Trade 1", "name": "Skai > Trade > Spot - sell 1VH (1440 x 900px)", "w": 1440, "h": 900,
+      "hash": "4444444444444444", "syncedAt": "2026-09-24T08:00:00Z", "bytes": 100,
+      "path": "store/mhF3BkzlTaGiLzJ7kvpmVc/7710-92000.json"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "generated": "2026-09-24T00:00:00Z",
+  "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+  "fileKeys": {
+    "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
+    "mhF3BkzlTaGiLzJ7kvpmVc": "Skai-Web-App-2",
+    "M6r9FEn042UWTQD1zvy6GM": "Skai-Games"
+  },
+  "frames": {
+    "mhF3BkzlTaGiLzJ7kvpmVc:7710-91527": {
+      "section": "trade", "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc", "fileName": "Skai-Web-App-2", "node": "7710-91527",
+      "title": "Skai > Trade > Spot 1VH (1440 x 900px)", "page": "✅ Trade 1", "viewport": "1440x900",
+      "measuredViewport": "1440x900", "kind": "screen", "status": "partial", "route": "/trade/spot",
+      "implFiles": ["src/pages/trade/Spot.tsx"], "citedByFiles": [], "notes": "", "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7710-91999": {
+      "section": "trade", "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc", "fileName": "Skai-Web-App-2", "node": "7710-91999",
+      "title": "Skai > Trade > Spot 1VH (375 x 812px)", "page": "✅ Trade 1", "viewport": "375x812",
+      "measuredViewport": "375x812", "kind": "screen", "status": "not-started", "route": "/trade/spot",
+      "implFiles": ["src/pages/trade/Spot.tsx", "src/components/trade/SpotMobile.tsx"], "citedByFiles": [], "notes": "",
+      "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7710-92000": {
+      "section": "trade", "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc", "fileName": "Skai-Web-App-2", "node": "7710-92000",
+      "title": "Skai > Trade > Spot - sell 1VH (1440 x 900px)", "page": "✅ Trade 1", "viewport": "1440x900",
+      "measuredViewport": "1440x900", "kind": "screen", "status": "partial", "route": "/trade/spot?side=sell",
+      "implFiles": ["src/pages/trade/Spot.tsx"], "citedByFiles": [], "notes": "", "verifiedAt": null
+    },
+    "2713-4556": {
+      "section": "home", "fileKey": "3sSzw1KewMtUbeLAv7uW0r", "fileName": "Skai-Web-App", "node": "2713-4556",
+      "title": "Skai > Home > welcome pop-up 1VH (1440 x 900px)", "page": "✅ Home 1", "viewport": "1440x900",
+      "measuredViewport": "1440x900", "kind": "screen", "status": "done", "route": "/",
+      "implFiles": ["src/components/home-redesign/WelcomePopup.tsx"], "citedByFiles": [], "notes": "", "verifiedAt": null
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:2713-3937": {
+      "section": "home", "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc", "fileName": "Skai-Web-App-2", "node": "2713-3937",
+      "title": "Breakpoint", "page": "✅ Home 1", "viewport": null, "kind": "non-screen", "status": "furniture",
+      "route": null, "implFiles": [], "citedByFiles": [], "notes": "", "verifiedAt": null
+    },
+    "M6r9FEn042UWTQD1zvy6GM:2713-3937": {
+      "section": "dice", "fileKey": "M6r9FEn042UWTQD1zvy6GM", "fileName": "Skai-Games", "node": "2713-3937",
+      "title": "Skai > Play > Casino > Dice (375 x 812px)", "page": "✅ Dice - Skai originals", "viewport": "375x812",
+      "kind": "screen", "status": "partial", "route": "/play/dice", "implFiles": [], "citedByFiles": [], "notes": "",
+      "verifiedAt": null
+    },
+    "M6r9FEn042UWTQD1zvy6GM:9660-3": {
+      "section": "skai-cross", "fileKey": "M6r9FEn042UWTQD1zvy6GM", "fileName": "Skai-Games", "node": "9660-3",
+      "title": "SKAI Cross", "page": null, "gone": true, "viewport": null, "kind": "screen", "status": "unknown",
+      "route": null, "implFiles": [], "citedByFiles": [], "notes": "", "verifiedAt": null
+    }
+  }
+}

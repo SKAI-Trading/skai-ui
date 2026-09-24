@@ -1,0 +1,27 @@
+{
+  "v": 1,
+  "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "node": "7710:91600",
+  "page": "✅ Trade 1",
+  "name": "Order book",
+  "hash": "0000000000000001",
+  "syncedAt": "2026-09-24T08:00:00Z",
+  "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527",
+  "tree": {
+    "id": "7710:91600",
+    "t": "FRAME",
+    "n": "Order book",
+    "b": [0, 64, 1064, 836],
+    "f": ["Surface/Card"],
+    "c": [
+      {
+        "id": "7710:91601",
+        "t": "TEXT",
+        "n": "Heading",
+        "b": [16, 16, 200, 20],
+        "tx": { "c": "Order book", "ff": "font/family/display", "fs": "font/size/lg", "fw": 600, "lh": "auto" }
+      },
+      { "ref": "7710:91602", "h": "0000000000000003" }
+    ]
+  }
+}

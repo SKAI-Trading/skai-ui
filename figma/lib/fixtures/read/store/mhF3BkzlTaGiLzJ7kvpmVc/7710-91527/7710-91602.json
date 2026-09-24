@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "node": "7710:91602",
+  "page": "✅ Trade 1",
+  "name": "Depth rows",
+  "hash": "0000000000000003",
+  "syncedAt": "2026-09-24T08:00:00Z",
+  "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527",
+  "tree": { "id": "7710:91602", "t": "FRAME", "n": "Depth rows", "b": [0, 40, 1064, 700] }
+}

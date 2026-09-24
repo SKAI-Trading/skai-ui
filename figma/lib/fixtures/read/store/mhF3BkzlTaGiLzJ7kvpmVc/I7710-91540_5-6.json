@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "node": "I7710:91540;5:6",
+  "page": "✅ Trade 1",
+  "name": "Nested ref",
+  "hash": "0000000000000002",
+  "syncedAt": "2026-09-24T08:00:00Z",
+  "tree": { "id": "I7710:91540;5:6", "t": "FRAME", "n": "Nested ref", "b": [0, 0, 2, 2] }
+}

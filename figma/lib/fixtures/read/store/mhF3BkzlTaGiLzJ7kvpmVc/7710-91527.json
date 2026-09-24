@@ -1,0 +1,145 @@
+{
+  "v": 1,
+  "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+  "node": "7710:91527",
+  "page": "✅ Trade 1",
+  "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
+  "hash": "a1b2c3d4e5f60718",
+  "syncedAt": "2026-09-24T08:00:00Z",
+  "tree": {
+    "id": "7710:91527",
+    "t": "FRAME",
+    "n": "Skai > Trade > Spot 1VH (1440 x 900px)",
+    "b": [0, 0, 1440, 900],
+    "f": ["Surface/Page"],
+    "clip": true,
+    "c": [
+      { "ref": "7710:91600" },
+      {
+        "id": "7710:91528",
+        "t": "FRAME",
+        "n": "Order panel",
+        "b": [1080, 64, 344, 520],
+        "l": { "m": "V", "g": "s-6", "p": ["s-4", "s-4", "s-4", "s-4"], "ai": "CENTER" },
+        "r": "rounded-xl",
+        "f": ["#052D2D"],
+        "s": ["Primary/Green Coal 200@0.5"],
+        "sw": 1,
+        "sa": "INSIDE",
+        "fx": "Shadow/Card",
+        "c": [
+          {
+            "id": "7710:91529",
+            "t": "INSTANCE",
+            "n": "Buy button",
+            "b": [16, 16, 312, 48],
+            "ci": { "k": "c0ffee", "n": "Size=Lg, State=Default", "set": "Button", "props": { "Size": "Lg", "State": "Default" } },
+            "c": [
+              {
+                "id": "I7710:91529;1:2",
+                "t": "TEXT",
+                "n": "Label",
+                "b": [120, 15, 72, 18],
+                "tx": { "c": "Buy Yes", "st": "Lg/Paragraph 2 300" },
+                "f": ["Primary/Green Coal 200"]
+              }
+            ]
+          },
+          {
+            "id": "7710:91530",
+            "t": "TEXT",
+            "n": "Hint",
+            "b": [16, 80, 200, 16],
+            "vis": false,
+            "tx": { "c": "Market closed", "ff": "Inter", "fs": 12, "fw": 500, "lh": 16 },
+            "f": ["#FFFFFF@0.64"]
+          },
+          {
+            "id": "7710:91531",
+            "t": "FRAME",
+            "n": "Price row",
+            "b": [16, 112, 312, 40],
+            "l": { "m": "H", "g": 12, "p": [0, 16, 0, 16], "jc": "SPACE_BETWEEN", "sx": "FILL" },
+            "r": [8, 8, 0, 0],
+            "c": [
+              {
+                "id": "7710:91532",
+                "t": "TEXT",
+                "n": "Price",
+                "b": [16, 11, 120, 18],
+                "tx": {
+                  "c": "$0.52 USD",
+                  "st": "Lg/Paragraph 2 300",
+                  "fs": 16,
+                  "seg": [
+                    { "c": "$0.52 ", "st": "Lg/Paragraph 2 300", "f": ["Primary/Green Coal 200"] },
+                    { "c": "USD", "ff": "Manrope", "fs": 12, "fw": 400, "f": ["Unknown/Token"] }
+                  ]
+                }
+              },
+              {
+                "id": "7710:91533",
+                "t": "INSTANCE",
+                "n": "Chevron",
+                "b": [280, 8, 24, 24],
+                "ci": { "k": "beef01", "n": "Chevron" }
+              }
+            ]
+          },
+          {
+            "id": "7710:91534",
+            "t": "INSTANCE",
+            "n": "Tab",
+            "b": [16, 170, 100, 32],
+            "ci": { "k": "ab12cd", "n": "State=Active", "set": "Tabs/Item" }
+          }
+        ]
+      },
+      {
+        "id": "7710:91540",
+        "t": "FRAME",
+        "n": "Gap probe",
+        "b": [0, 0, 10, 10],
+        "l": { "m": "H", "g": "Spacing/s-2" },
+        "c": [
+          { "id": "7710:91541", "t": "FRAME", "n": "Web gap", "b": [0, 0, 4, 4], "l": { "m": "V", "g": "Web/Spacing/s-2" } },
+          { "ref": "I7710:91540;5:6" }
+        ]
+      },
+      {
+        "id": "7710:91550",
+        "t": "RECTANGLE",
+        "n": "Glow",
+        "b": [0, 0, 1440, 200],
+        "op": 0.5,
+        "f": [{ "grad": "LINEAR", "stops": [[0, "#FFFFFF"], [1, "Primary/Green Coal 200"]], "angle": 90 }],
+        "fx": [{ "t": "DROP_SHADOW", "c": "#000000@0.25", "o": [0, 2], "r": 8 }]
+      },
+      {
+        "id": "7710:91551",
+        "t": "RECTANGLE",
+        "n": "Hero image",
+        "b": [0, 200, 400, 300],
+        "f": [{ "img": "9f86d081884c7d65", "scale": "FILL" }]
+      },
+      {
+        "id": "7710:91552",
+        "t": "VECTOR",
+        "n": "Icon",
+        "b": [0, 0, 16, 16],
+        "f": ["Brand/Sky"],
+        "s": ["Surface/Card"],
+        "sw": 1.5,
+        "sa": "CENTER"
+      },
+      { "ref": "7710:99999" },
+      {
+        "id": "7710:91553",
+        "t": "TEXT",
+        "n": "Badge",
+        "b": [0, 0, 50, 10],
+        "tx": { "c": "LIVE", "st": "Lg/Heading 5", "tc": "UPPER" }
+      }
+    ]
+  }
+}

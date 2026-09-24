@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "syncedAt": "2026-09-24T08:00:00Z",
+  "collections": {},
+  "variables": {
+    "s-4": { "id": "VariableID:1:4", "key": "k-s-4", "collection": "Spacing", "type": "FLOAT", "modes": { "Value": 16 }, "remote": true, "scopes": ["GAP"] },
+    "s-6": { "id": "VariableID:1:6", "key": "k-s-6", "collection": "Spacing", "type": "FLOAT", "modes": { "Value": 24 }, "remote": true, "scopes": ["GAP"] },
+    "rounded-xl": { "id": "VariableID:2:1", "key": "k-rounded-xl", "collection": "Radius", "type": "FLOAT", "modes": { "Value": 12 }, "remote": true, "scopes": ["CORNER_RADIUS"] },
+    "Primary/Green Coal 200": { "id": "VariableID:3:2", "key": "k-gc200", "collection": "Colors", "type": "COLOR", "modes": { "Dark": "#1A3A3A" }, "remote": true, "scopes": ["ALL_FILLS"] },
+    "Primary/Green Coal 900": { "id": "VariableID:3:9", "key": "k-gc900", "collection": "Colors", "type": "COLOR", "modes": { "Dark": "#0A1A1A" }, "remote": true, "scopes": ["ALL_FILLS"] },
+    "Surface/Card": { "id": "VariableID:4:1", "key": "k-card", "collection": "Colors", "type": "COLOR", "modes": { "Dark": { "alias": "Primary/Green Coal 900" } }, "remote": true, "scopes": ["ALL_FILLS"] },
+    "Surface/Page": { "id": "VariableID:4:2", "key": "k-page", "collection": "Colors", "type": "COLOR", "modes": { "Dark": "#000000", "Light": "#FFFFFF" }, "remote": true, "scopes": ["ALL_FILLS"] },
+    "Web/Spacing/s-2": { "id": "VariableID:5:1", "key": "k-web-s2", "collection": "Web", "type": "FLOAT", "modes": { "Value": 8 }, "remote": true, "scopes": ["GAP"] },
+    "Games/Spacing/s-2": { "id": "VariableID:5:2", "key": "k-games-s2", "collection": "Games", "type": "FLOAT", "modes": { "Value": 10 }, "remote": true, "scopes": ["GAP"] },
+    "font/size/lg": { "id": "VariableID:6:1", "key": "k-fs-lg", "collection": "Type", "type": "FLOAT", "modes": { "Value": 18 }, "remote": true, "scopes": ["FONT_SIZE"] },
+    "font/family/display": { "id": "VariableID:6:2", "key": "k-ff-display", "collection": "Type", "type": "STRING", "modes": { "Value": "Manrope" }, "remote": true, "scopes": ["FONT_FAMILY"] }
+  }
+}
