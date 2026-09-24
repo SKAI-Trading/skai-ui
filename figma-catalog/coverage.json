@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T05:47:38.561Z",
+  "generated": "2026-09-24T06:05:11.379Z",
   "harvestedAt": "2026-09-24",
   "rollup": {
     "pages": 39,
@@ -10,7 +10,7 @@
     "genuineWithRuledOut": 3778,
     "ruledOutUncited": [],
     "matched": 3769,
-    "done": 1236,
+    "done": 1238,
     "verified": 814,
     "visuallyDowngraded": 51,
     "visualUnmapped": [],
@@ -33,9 +33,9 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1764,
-    "notStarted": 386,
-    "blocked": 191,
+    "partial": 1768,
+    "notStarted": 381,
+    "blocked": 190,
     "frameDefect": 187,
     "catalogFurniture": 5,
     "unknown": 0,
@@ -46,16 +46,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3245,
-    "withBreakpointProvenance": 1835,
-    "namingANodeId": 3020,
+    "total": 3247,
+    "withBreakpointProvenance": 1837,
+    "namingANodeId": 3022,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 19097,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 961,
-    "unrecognisedTokens": 39103
+    "unrecognisedTokens": 39126
   },
   "statusFiles": [
     {
@@ -5904,10 +5904,10 @@
       "visuallyDowngraded": 0,
       "byStatus": {
         "frame-defect": 28,
-        "partial": 198,
+        "partial": 204,
         "done": 118,
-        "not-started": 29,
-        "blocked-on-backend": 4
+        "not-started": 24,
+        "blocked-on-backend": 3
       },
       "liveOnly": []
     },
@@ -6400,8 +6400,9 @@
       "verified": 0,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 9,
-        "frame-defect": 2
+        "partial": 7,
+        "frame-defect": 2,
+        "done": 2
       },
       "liveOnly": []
     },
@@ -37229,8 +37230,8 @@
       "id": "13006-252301",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -37245,8 +37246,8 @@
       "id": "13006-252468",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -38829,16 +38830,16 @@
       "id": "13006-347620",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
       "id": "13006-347742",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -38941,8 +38942,8 @@
       "id": "13006-348493",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -38957,8 +38958,8 @@
       "id": "13006-348660",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -40551,7 +40552,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "10249-9938",
@@ -40559,7 +40560,7 @@
       "scope": "in-scope",
       "status": "frame-defect",
       "claimed": "frame-defect",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "9392-1798",
@@ -40829,8 +40830,8 @@
       "id": "9733-5405",
       "page": "✅ Fortune Wheel - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": null
     },
     {
@@ -40845,8 +40846,8 @@
       "id": "9733-6654",
       "page": "✅ Fortune Wheel - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "status": "done",
+      "claimed": "done",
       "verdict": null
     },
     {
