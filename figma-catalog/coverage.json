@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T06:09:41.975Z",
+  "generated": "2026-09-24T06:15:16.046Z",
   "harvestedAt": "2026-09-24",
   "rollup": {
     "pages": 39,
@@ -41112,7 +41112,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "9825-21961",
@@ -41120,7 +41120,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "9873-2611",
