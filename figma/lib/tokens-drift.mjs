@@ -387,21 +387,45 @@ export function makeVarResolver(cssEntries) {
     if (!defs.has(name)) defs.set(name, []);
     defs.get(name).push(e);
   }
-  const pick = (name) => {
+  // A theme-level definition: :root (or html/body), inside @layer but not inside @media.
+  const base = (x) => /(^|,\s*)(:root|html|body)\b/.test(x.ctx) && !/@media/.test(x.media || "");
+  // The file's own definition first (a file's var() names its own tokens), then the input order, which the caller
+  // sets to the stylesheet that side actually ships.
+  const pick = (name, fromFile) => {
     const d = defs.get(name);
     if (!d) return null;
-    return (d.find((x) => x.ctx === ":root" && !x.media) || d.find((x) => !x.media) || d[0]).raw;
+    const own = d.filter((x) => x.file === fromFile);
+    const pool = own.length ? own : d;
+    return (pool.find(base) || pool.find((x) => !/@media/.test(x.media || "")) || pool[0]).raw;
   };
-  const resolve = (raw, depth = 0) => {
+  // A var whose theme-level definitions disagree across the scanned CSS: which one paints depends on load order.
+  const conflicts = new Map();
+  for (const [name, d] of defs) {
+    const vals = [...new Set(d.filter(base).map((x) => String(x.raw).replace(/\s+/g, " ").trim()))];
+    if (vals.length > 1) conflicts.set(name, d.filter(base).map((x) => `${x.raw} in ${x.file}`));
+  }
+  const resolve = (raw, fromFile, used, depth = 0) => {
     if (depth > 6) return raw;
     return String(raw).replace(/var\((--[\w-]+)(?:\s*,\s*([^)]+))?\)/g, (all, name, fb) => {
-      const v = pick(name);
-      if (v !== null) return resolve(v, depth + 1);
-      return fb !== undefined ? resolve(fb, depth + 1) : all;
+      const v = pick(name, fromFile);
+      if (v !== null) {
+        if (used && conflicts.has(name)) used.add(name);
+        return resolve(v, fromFile, used, depth + 1);
+      }
+      return fb !== undefined ? resolve(fb, fromFile, used, depth + 1) : all;
     });
   };
   const hslVar = (raw) => String(raw).replace(/hsla?\(\s*([-\d.]+(?:deg)?\s+[\d.]+%\s+[\d.]+%)\s*(?:\/\s*([\d.]+%?))?\s*\)/g, (all, trip, a) => (a ? `hsl(${trip} / ${a})` : `hsl(${trip})`));
-  return { resolve: (raw) => hslVar(resolve(raw)), defs };
+  return {
+    resolve: (raw, fromFile) => hslVar(resolve(raw, fromFile)),
+    resolveTracked: (raw, fromFile) => {
+      const used = new Set();
+      const value = hslVar(resolve(raw, fromFile, used));
+      return { value, conflicted: [...used] };
+    },
+    conflicts,
+    defs,
+  };
 }
 
 // ------------------------------------------------------------------ reading the sources
@@ -449,11 +473,16 @@ export function readSources(uiRoot, appRoot, list = SOURCES) {
     for (const s of read.filter((x) => x.side === side)) s.entries = [...settle(s.entries.filter((e) => e.kind === "ts"), tsPool), ...s.entries.filter((e) => e.kind !== "ts")];
   }
   // var() resolves against the CSS of the same side, then the other side (the app consumes skai-ui's CSS too).
-  const cssOf = (side) => read.filter((s) => s.side === side).flatMap((s) => s.entries.filter((e) => e.kind === "css"));
-  const resolvers = { ui: makeVarResolver([...cssOf("ui"), ...cssOf("app")]), app: makeVarResolver([...cssOf("app"), ...cssOf("ui")]) };
+  // Resolution order = what each side ships: skai-ui's stylesheet is src/styles/* (build:css), the app's is
+  // src/index.css; the loose token CSS files come after.
+  const cssOf = (ids) => ids.flatMap((id) => read.filter((s) => s.id === id).flatMap((s) => s.entries.filter((e) => e.kind === "css")));
+  const allCss = read.filter((s) => s.entries.some((e) => e.kind === "css")).map((s) => s.id);
+  const order = (first) => [...first, ...allCss.filter((id) => !first.includes(id))];
+  const resolvers = { ui: makeVarResolver(cssOf(order(["ST"]))), app: makeVarResolver(cssOf(order(["AI", "ST"]))) };
   for (const s of read) {
     for (const e of s.entries) {
-      const v = resolvers[s.side].resolve(e.raw);
+      const { value: v, conflicted } = resolvers[s.side].resolveTracked(e.raw, e.file);
+      if (conflicted.length) e.conflicted = conflicted.map((n) => ({ name: n, defs: resolvers[s.side].conflicts.get(n) }));
       e.value = v;
       e.color = parseColor(v);
       e.px = parsePx(v);
@@ -552,7 +581,9 @@ function segNorms(e) {
   }
   return out;
 }
-const pathText = (e) => (e.kind === "css" ? (e.path[1].startsWith("--") ? e.path[1] : `${e.path[0]} ${e.path[1]}`) : e.path.join("."));
+const pathText = (e) =>
+  (e.kind === "css" ? (e.path[1].startsWith("--") ? e.path[1] : `${e.path[0]} ${e.path[1]}`) : e.path.join(".")) +
+  (e.conflicted && e.conflicted.length ? ` [${e.conflicted.map((c) => `${c.name} is ${c.defs.join(" / ")}`).join("; ")}]` : "");
 
 function figmaValue(t, cat) {
   const e = t.entry;
@@ -859,6 +890,18 @@ export async function driftSelfTest() {
   const { resolve } = makeVarResolver(css);
   check("var() resolves to the :root definition", resolve("hsl(var(--primary))") === "hsl(160 84% 55%)", resolve("hsl(var(--primary))"));
   check("calc() over a var resolves to pixels", parsePx(resolve("calc(var(--radius) - 2px)")) === 10);
+  // Two stylesheets disagree on --radius: a file's own definition wins, the input order decides for others, and
+  // the disagreement is reported instead of being resolved silently.
+  const two = [
+    ...extractCss("@layer base {\n  :root { --radius: 0.75rem; }\n}\n").map((e) => ({ ...e, file: "src/styles/base.css" })),
+    ...extractCss(":root { --radius: 0.5rem; }\n").map((e) => ({ ...e, file: "src/design-tokens.css" })),
+  ];
+  const rv = makeVarResolver(two);
+  const fromOther = rv.resolveTracked("var(--radius)", "src/lib/tailwind-preset.ts");
+  const fromOwn = rv.resolveTracked("var(--radius)", "src/design-tokens.css");
+  check("a var defined inside @layer base still counts as the theme value, in input order", fromOther.value === "0.75rem", fromOther.value);
+  check("a file's own definition of a var wins for that file", fromOwn.value === "0.5rem", fromOwn.value);
+  check("a var whose theme-level definitions disagree is reported as conflicted", fromOther.conflicted.join() === "--radius" && rv.conflicts.get("--radius").length === 2, JSON.stringify(fromOther));
 
   check("hex, rgba and hsl parse to the same colour", sameColor(parseColor("#17F9B4"), parseColor("rgb(23, 249, 180)")) && sameColor(parseColor("rgba(23,249,180,0.24)"), figmaColor("#17F9B4@0.24")));
   check("an HSL triplet parses", sameColor(parseColor("197 87% 65%"), parseColor("#56C7F3")), colorText(parseColor("197 87% 65%")));
