@@ -136,12 +136,18 @@ Real specs, packed bytes against the plain canonical JSON:
 Those four were in the dictionary's sample, so they flatter it. Without a dictionary, zlib -9 gets 1.7x, 3.7x, 7.8x
 and 6.2x on the same four, and this encoder is within 0.5% of zlib -9 on each.
 
-At 18,000 bytes a result carries about 17,400 base64 characters, or 13,000 stream bytes. At the 8x to 12x above, a
-frame of up to roughly 100 to 150 KB of plain spec fits in one call. On the store's frames so far that is about 500 to
-700 nodes. Before, a result held about 16 KB of plain spec, or 75 nodes.
+The whole Spot screen, live (2026-09-24, three calls): 1,645 nodes, 227,788 bytes of plain spec, 22,960 packed (9.9x),
+sent as 13,098 bytes in the first result and 9,862 in the second (17,984 and 13,648 bytes of returned JSON). Each call
+took about 12 s to load the page, 29 to 30 s to build the frame, and under 0.6 s to pack it. It is stored as its spec
+and 11 split parts, and its hash equals the live hash a separate hash-only call returned.
+
+That is about 138 bytes of plain spec and 14 packed bytes a node, so one result carries about 940 nodes. Before, a
+result held about 16 KB of plain spec, or 73 nodes. A board of up to about 900 nodes now takes one call, and the Spot
+screen takes two instead of 23. Many small frames still share a result, but a call spends about 30 s building 1,600
+nodes cold, so the build time now limits a call about as much as the cut does.
 
 Speed: a 357 KB spec packs in about 50 ms in V8 and 560 ms in V8 with the JIT off (`--jitless`, a stand-in for an
-interpreter sandbox). Building that frame in Figma took about 30 s.
+interpreter sandbox). In Figma it took 0.6 s for the Spot screen.
 
 ## Self-tests
 
