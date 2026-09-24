@@ -15,6 +15,12 @@
  * rule in this directory has drifted from the original within a wave.
  * registry.json supplies title, measured size, implFiles, route and notes.
  *
+ * The design store's index (../figma/store/index.json) is read for one thing:
+ * each row's spec path and whether that spec is stored, stale or missing, in
+ * the sense figma/SCHEMA.md gives those words. It never changes which packet a
+ * frame lands in, and sync.mjs, which reads the packets to order its fetches,
+ * builds the worklist without it.
+ *
  * Before writing anything the in-scope tallies are checked against
  * coverage.json's own rollup, and every open frame must join exactly one
  * registry frame. Either failure exits 2 and writes nothing: a worklist that is
@@ -48,11 +54,13 @@
  * commit it.
  */
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { BP_KEYS } from "./bp.mjs";
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
+const FIGMA_DIR = path.join(DIR, "..", "figma");
 
 export const PACKET_MAX = 25;
 export const PACKET_MIN = 10;
@@ -229,6 +237,57 @@ export function gapSentence(notes, maxLen = 220) {
   return { gap: pick.length > maxLen ? pick.slice(0, maxLen - 1).trimEnd() + "…" : pick, found: Boolean(hit) };
 }
 
+// ── the design store ─────────────────────────────────────────────────────────
+
+export const SPEC_STATES = ["stored", "stale", "missing"];
+
+/** Where store/index.json would put a frame's spec when its entry names no path (read.mjs does the same). */
+const specRelOf = (fileKey, node) => `store/${fileKey}/${String(node).replace(/:/g, "-").replace(/;/g, "_")}.json`;
+
+/**
+ * A frame's spec in the design store. `store.index` is figma/store/index.json
+ * parsed; `store.has(rel)` says whether a path relative to figma/ is on disk.
+ * Stored and stale carry the spec's path relative to the skai-ui package
+ * root. Missing carries none: no entry, a split part's entry (a part is never
+ * a frame), or an entry whose file is gone, because a path to a file that is
+ * not there is not a spec.
+ */
+export function specOf(store, fileKey, node) {
+  const colonNode = String(node).replace(/-/g, ":");
+  const e = store.index?.frames?.[`${fileKey}:${colonNode}`];
+  if (!e || e.partOf) return { state: "missing", path: "" };
+  const rel = typeof e.path === "string" ? e.path : specRelOf(fileKey, colonNode);
+  if (!store.has(rel)) return { state: "missing", path: "" };
+  return { state: e.stale === true ? "stale" : "stored", path: `figma/${rel}` };
+}
+
+/**
+ * figma/store/index.json as a `store` for buildWorklist. No index is an empty
+ * store, so every frame reads missing and the note says why; an index that does
+ * not parse is an error, because a worklist that calls every frame missing off
+ * a broken file is the quiet kind of wrong.
+ */
+export function readStore(figmaDir) {
+  const file = path.join(figmaDir, "store", "index.json");
+  const has = (rel) => fs.existsSync(path.join(figmaDir, rel));
+  if (!fs.existsSync(file)) return { index: { frames: {} }, has, note: `${file} not found, so every frame reads missing` };
+  let index;
+  try {
+    index = JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch (e) {
+    throw new Error(`${file} is not valid JSON (${e.message}). Only figma/sync.mjs writes it: take it back from git, never mend it by hand.`);
+  }
+  if (!index || typeof index.frames !== "object" || index.frames === null) throw new Error(`${file} has no "frames" map`);
+  return { index, has, note: null };
+}
+
+/** Tally of spec states over some rows, in SPEC_STATES order. */
+function specMix(rows) {
+  const n = { stored: 0, stale: 0, missing: 0 };
+  for (const r of rows) if (r.specState) n[r.specState]++;
+  return n;
+}
+
 // ── the build ────────────────────────────────────────────────────────────────
 
 function majority(values) {
@@ -245,9 +304,11 @@ function statusMix(rows) {
 
 /**
  * The whole worklist, pure. Returns `{ problems }` when the inputs cannot be
- * trusted, else `{ packets, backend, design, wave1, stats, stamps }`.
+ * trusted, else `{ packets, backend, design, wave1, stats, stamps }`. With a
+ * `store` ({ index, has }, see specOf) every row also carries `specState` and
+ * `spec`; without one both stay "" and render as unread.
  */
-export function buildWorklist({ registry, coverage, lanes = LANES, max = PACKET_MAX, min = PACKET_MIN }) {
+export function buildWorklist({ registry, coverage, store = null, lanes = LANES, max = PACKET_MAX, min = PACKET_MIN }) {
   const problems = [];
   const all = coverage.frameStatuses || [];
   const inScope = all.filter((f) => f.scope === "in-scope");
@@ -305,11 +366,19 @@ export function buildWorklist({ registry, coverage, lanes = LANES, max = PACKET_
       hints,
       route: fr.route || null,
       notes: fr.notes || "",
+      specState: "",
+      spec: "",
     });
   }
   if (problems.length) return { problems };
   rows.sort(frameCmp);
   for (const r of rows) r.cls = classify(r);
+  if (store)
+    for (const r of rows) {
+      const s = specOf(store, r.fileKey, r.node);
+      r.specState = s.state;
+      r.spec = s.path;
+    }
 
   const open = rows.filter((r) => PACKET_STATUSES.has(r.status));
   const cite = new Map();
@@ -505,6 +574,7 @@ export function buildWorklist({ registry, coverage, lanes = LANES, max = PACKET_
       liveOnly: coverage.rollup?.liveOnly || 0,
       outOfScope,
       sizes: packets.map((p) => p.frames.length),
+      specs: store ? specMix(rows) : null,
       lanes,
       max,
       min,
@@ -513,6 +583,7 @@ export function buildWorklist({ registry, coverage, lanes = LANES, max = PACKET_
       registry: registry.generated || "",
       coverage: coverage.generated || "",
       harvest: coverage.harvestedAt || "",
+      store: store ? store.index?.syncedAt || "never synced" : null,
     },
   };
 }
@@ -524,11 +595,22 @@ const md = (v) => cell(v).replace(/\|/g, "\\|");
 const dash = (v) => (v === null || v === undefined || v === "" ? "—" : v);
 const figmaLink = (r) => `[${r.node}](https://www.figma.com/design/${r.fileKey}/?node-id=${r.node})`;
 const listSome = (xs, n) => (xs.length <= n ? xs.join(", ") : `${xs.slice(0, n).join(", ")} and ${xs.length - n} more`);
+// worklist.md sits in figma-catalog/, and a spec path runs from the package root.
+const specCell = (r) => (!r.specState ? "—" : r.spec ? `[${r.specState}](../${r.spec})` : r.specState);
+const specLine = (rows) => {
+  const n = specMix(rows);
+  return SPEC_STATES.map((k) => `${k} ${n[k]}`).join(", ");
+};
 
 export const TSV_COLUMNS = [
   "packet", "class", "series", "owner", "fileKey", "node", "page", "section", "title",
   "width", "band", "bandFrom", "status", "verdict", "implFiles", "route", "gap",
+  "specState", "spec",
 ];
+
+/** Where the design store's index came from, for the headers. */
+const storeStamp = (w) =>
+  w.stamps.store === null ? "the design store was not read" : `figma/store/index.json (synced ${w.stamps.store})`;
 
 export function renderTsv(w) {
   const line = (r, p) =>
@@ -536,11 +618,13 @@ export function renderTsv(w) {
       r.packet, CLASSES[r.cls], p?.series || "", r.owner || "", r.fileKey, r.node, r.page, r.section, r.title,
       dash(r.width), dash(r.band), r.bandFrom, r.status, dash(r.verdict),
       [...r.paths, ...r.hints.map((h) => `~${h}`)].join(" ") || "—", dash(r.route), r.gap || "",
+      dash(r.specState), dash(r.spec),
     ].map(cell).join("\t");
   const out = [
-    `# worklist.tsv — derived by worklist.mjs from registry.json (${w.stamps.registry}) and coverage.json (${w.stamps.coverage}, harvest ${w.stamps.harvest}). Do not edit.`,
+    `# worklist.tsv — derived by worklist.mjs from registry.json (${w.stamps.registry}), coverage.json (${w.stamps.coverage}, harvest ${w.stamps.harvest}) and ${storeStamp(w)}. Do not edit.`,
     `# packet: P = a lane packet, B = backend work (blocked-on-backend), D = design redraw (frame-defect). implFiles: paths cited by the row; a ~ path is the nearest code a NONE row names, not an owner.`,
     `# width: the measured frame width, — when the node was never measured. band from measured or declared (title).`,
+    `# specState: the frame's spec in the design store, stored | stale (Figma changed after it was stored) | missing (figma/SCHEMA.md). spec: its path from the skai-ui package root, — when missing. Both — when the store was not read.`,
     TSV_COLUMNS.join("\t"),
   ];
   for (const p of w.packets) for (const r of p.frames) out.push(line(r, p));
@@ -556,7 +640,7 @@ export function renderMd(w) {
   const offScope = Object.entries(s.outOfScope).sort((a, b) => cmp(a[0], b[0])).map(([k, n]) => `${k} ${n}`).join(", ") || "none";
   o.push("# Figma catalog worklist", "");
   o.push(
-    `Derived by \`worklist.mjs\` (\`npm run catalog:worklist\`) from \`registry.json\` (${w.stamps.registry}) and \`coverage.json\` (${w.stamps.coverage}, live harvest ${w.stamps.harvest}). Do not edit; regenerate. Machine copy: \`worklist.tsv\`.`,
+    `Derived by \`worklist.mjs\` (\`npm run catalog:worklist\`) from \`registry.json\` (${w.stamps.registry}), \`coverage.json\` (${w.stamps.coverage}, live harvest ${w.stamps.harvest}) and ${w.stamps.store === null ? "no design store (not read)" : `the design store's \`figma/store/index.json\` (synced ${w.stamps.store})`}. Do not edit; regenerate. Machine copy: \`worklist.tsv\`.`,
     "",
   );
   o.push("## Totals", "");
@@ -566,6 +650,9 @@ export function renderMd(w) {
     `- **Design redraws:** ${s.design} frame-defect frames in ${w.design.length} sections. The frame is wrong and the code is right, so there is nothing for a code lane to change.`,
     `- **Left out:** done ${s.done}, furniture ${s.furniture}, ruled-out ${s.ruledOut}, live frames no row covers ${s.liveOnly}; not-done frames on pages outside in-scope: ${offScope}.`,
     `- **Checked:** the in-scope tallies reproduce coverage.json's rollup, and every frame here joins exactly one registry frame.`,
+    s.specs
+      ? `- **Design store:** of the ${s.specs.stored + s.specs.stale + s.specs.missing} frames listed here, ${s.specs.stored + s.specs.stale} ${s.specs.stored + s.specs.stale === 1 ? "has" : "have"} a spec in \`figma/store/\` (${s.specs.stale} of them stale) and ${s.specs.missing} ${s.specs.missing === 1 ? "has" : "have"} none. Read one with \`npm run figma:spec -- <fileKey>:<node>\`; \`npm run figma:sync -- extract-script\` fetches missing and stale frames, worklist packets first (see \`../figma/README.md\`).`
+      : "- **Design store:** not read, so no row carries a spec.",
     "",
   );
   o.push("## How packets are cut", "");
@@ -592,10 +679,12 @@ export function renderMd(w) {
     o.push(`- Files: ${p.files.length ? p.files.map((x) => `\`${md(x)}\``).join(", ") : "none cited"}`);
     if (p.hints.length) o.push(`- Nearest code named by NONE rows: ${p.hints.map((x) => `\`${md(x)}\``).join(", ")}`);
     if (p.routes.length) o.push(`- Routes: ${p.routes.map((x) => `\`${md(x)}\``).join(", ")}`);
-    o.push(`- Conflicts: ${p.conflicts.length ? listSome(p.conflicts, 12) : "none"}`, "");
-    o.push("| node | page | title | width | status | verdict |", "|---|---|---|---|---|---|");
+    o.push(`- Conflicts: ${p.conflicts.length ? listSome(p.conflicts, 12) : "none"}`);
+    if (s.specs) o.push(`- Specs: ${specLine(p.frames)}`);
+    o.push("");
+    o.push("| node | page | title | width | status | verdict | spec |", "|---|---|---|---|---|---|---|");
     for (const r of p.frames)
-      o.push(`| ${figmaLink(r)} | ${md(r.page)} | ${md(r.title)} | ${r.width ?? `— (${r.band ?? "no band"}, declared)`} | ${r.status} | ${dash(r.verdict)} |`);
+      o.push(`| ${figmaLink(r)} | ${md(r.page)} | ${md(r.title)} | ${r.width ?? `— (${r.band ?? "no band"}, declared)`} | ${r.status} | ${dash(r.verdict)} | ${specCell(r)} |`);
     o.push("");
   }
   o.push("## Backend work (blocked-on-backend)", "");
@@ -604,12 +693,14 @@ export function renderMd(w) {
     o.push(`### ${g.id} · ${g.className} · ${g.section} · ${g.frames.length} frame${g.frames.length === 1 ? "" : "s"}`, "");
     o.push(`> ${md(g.gap || "(the row carries no reason)")}${g.gapFound ? "" : " *(read the row)*"}`, "");
     o.push(`Frames: ${g.frames.map(figmaLink).join(", ")}`, "");
+    if (s.specs) o.push(`Specs: ${specLine(g.frames)}`, "");
   }
   o.push("## Design redraws (frame-defect)", "");
   o.push("Each of these frames draws something the product must not ship (SCHEMA.md, Status semantics). The redraw belongs to design; the code stays as it is.", "");
   for (const g of w.design) {
     o.push(`### ${g.id} · ${g.className} · ${g.section} · ${g.frames.length} frame${g.frames.length === 1 ? "" : "s"}`, "");
     o.push(`Frames: ${g.frames.map(figmaLink).join(", ")}`, "");
+    if (s.specs) o.push(`Specs: ${specLine(g.frames)}`, "");
   }
   return o.join("\n");
 }
@@ -937,6 +1028,115 @@ function selfTest() {
       got,
     );
   }
+  {
+    // The design store: every row's spec path and state come off store/index.json
+    // by <fileKey>:<node in colon form>, and nothing else about the row changes.
+    const OTHER = "GAMESFILEKEY0000000000";
+    const specs = [
+      ...["30-1", "30-2", "30-3", "30-4", "30-5", "30-8", "30-9"].map((id) => ({ id, status: "partial", impl: ["src/s/S.tsx"] })),
+      { id: "30-6", status: "blocked-on-backend", notes: "No table backs it.", impl: ["src/s/S.tsx"] },
+      { id: "30-1", status: "partial", fileKey: OTHER, page: "G", fileName: "Skai-Games", impl: ["src/s/S.tsx"] },
+    ];
+    const at = (n) => `store/${PRIMARY}/${n}.json`;
+    const frames = {
+      [`${PRIMARY}:30:1`]: { hash: "a1", path: at("30-1") },
+      [`${PRIMARY}:30:2`]: { hash: "a2", path: at("30-2"), stale: true },
+      [`${PRIMARY}:30:4`]: { hash: "a4", path: at("30-4") },
+      [`${PRIMARY}:30:1/30:5`]: { hash: "p5", path: `store/${PRIMARY}/30-1/30-5.json`, partOf: `${PRIMARY}:30:1` },
+      [`${PRIMARY}:30:6`]: { hash: "a6", path: at("30-6") },
+      [`${PRIMARY}:30:8`]: { hash: "a8", path: at("30-8"), partOf: `${PRIMARY}:30:1` },
+      [`${PRIMARY}:30:9`]: { hash: "a9" },
+    };
+    const onDisk = new Set([at("30-1"), at("30-2"), `store/${PRIMARY}/30-1/30-5.json`, at("30-6"), at("30-8"), at("30-9")]);
+    const store = { index: { v: 1, syncedAt: "2026-09-24T08:00:00.000Z", frames }, has: (rel) => onDisk.has(rel) };
+    const f = fixture(specs);
+    const w = buildWorklist({ ...f, store });
+    const rowsOf = (x) => [...x.packets.flatMap((p) => p.frames), ...x.backend.flatMap((g) => g.frames), ...x.design.flatMap((g) => g.frames)];
+    const got = rowsOf(w).map((r) => `${r.fileKey === PRIMARY ? "" : "other:"}${r.node}=${r.specState}${r.spec ? ` ${r.spec}` : ""}`).sort().join(" | ");
+    const want = [
+      `30-1=stored figma/store/${PRIMARY}/30-1.json`,
+      `30-2=stale figma/store/${PRIMARY}/30-2.json`,
+      "30-3=missing",
+      "30-4=missing",
+      "30-5=missing",
+      `30-6=stored figma/store/${PRIMARY}/30-6.json`,
+      "30-8=missing",
+      `30-9=stored figma/store/${PRIMARY}/30-9.json`,
+      "other:30-1=missing",
+    ].join(" | ");
+    check(
+      "store: stored and stale carry the spec path; no entry, a gone file, a split part or another file's entry read missing",
+      !w.problems && got === want,
+      `got  ${got}\n        want ${want}`,
+    );
+    const tsv = renderTsv(w);
+    const tsvRow = (node, fk = PRIMARY) => tsv.split("\n").find((l) => l.split("\t")[4] === fk && l.split("\t")[5] === node) || "";
+    const header = tsv.split("\n").find((l) => l.startsWith("packet\t"));
+    check(
+      "store: worklist.tsv ends each row with specState and spec, a dash for a missing path",
+      header === TSV_COLUMNS.join("\t") &&
+        TSV_COLUMNS.slice(-2).join() === "specState,spec" &&
+        tsvRow("30-2").endsWith(`\tstale\tfigma/store/${PRIMARY}/30-2.json`) &&
+        tsvRow("30-4").endsWith("\tmissing\t—") &&
+        tsvRow("30-1", OTHER).endsWith("\tmissing\t—") &&
+        tsv.split("\n").filter((l) => l && !l.startsWith("#")).every((l) => l.split("\t").length === TSV_COLUMNS.length) &&
+        /figma\/store\/index\.json \(synced 2026-09-24T08:00:00\.000Z\)/.test(tsv.split("\n")[0]),
+      [header, tsvRow("30-2"), tsvRow("30-4")].join("\n        "),
+    );
+    const mdText = renderMd(w);
+    const mdRow = (node, fk = PRIMARY) => mdText.split("\n").find((l) => l.startsWith(`| [${node}](https://www.figma.com/design/${fk}/`)) || "";
+    check(
+      "store: worklist.md links a stored or stale spec from its packet table and counts every group",
+      mdRow("30-2").endsWith(` | [stale](../figma/store/${PRIMARY}/30-2.json) |`) &&
+        mdRow("30-1").endsWith(` | [stored](../figma/store/${PRIMARY}/30-1.json) |`) &&
+        mdRow("30-1", OTHER).endsWith(" | missing |") &&
+        mdRow("30-3").endsWith(" | missing |") &&
+        mdText.includes("- Specs: stored 2, stale 1, missing 5") &&
+        mdText.includes("Specs: stored 1, stale 0, missing 0") &&
+        mdText.includes("of the 9 frames listed here, 4 have a spec in `figma/store/` (1 of them stale) and 5 have none."),
+      [mdRow("30-2"), mdRow("30-3")].join("\n        "),
+    );
+    const bare = buildWorklist(f);
+    const shape = (x) => x.packets.map((p) => `${p.id}:${p.frames.map((r) => r.node).join(",")}`).join(" ") + ` B${x.backend.length} D${x.design.length}`;
+    check(
+      "store: reading the store changes no packet, and without it every row renders unread",
+      !bare.problems && shape(bare) === shape(w) && rowsOf(bare).every((r) => r.specState === "" && r.spec === "") &&
+        renderTsv(bare).split("\n").filter((l) => l && !l.startsWith("#") && !l.startsWith("packet\t")).every((l) => l.endsWith("\t—\t—")) &&
+        renderMd(bare).includes("- **Design store:** not read") && /the design store was not read/.test(renderTsv(bare)),
+      shape(bare),
+    );
+    const flipped = {
+      registry: { ...f.registry, frames: Object.fromEntries(Object.entries(f.registry.frames).reverse()) },
+      coverage: { ...f.coverage, frameStatuses: f.coverage.frameStatuses.slice().reverse(), pages: f.coverage.pages.slice().reverse() },
+      store: { index: { ...store.index, frames: Object.fromEntries(Object.entries(frames).reverse()) }, has: store.has },
+    };
+    const w2 = buildWorklist(flipped);
+    check("store: reversed index and input order render byte-identical md and tsv", renderMd(w2) === mdText && renderTsv(w2) === tsv, "outputs differ");
+  }
+  {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "worklist-store-"));
+    const none = readStore(tmp);
+    fs.mkdirSync(path.join(tmp, "store", "K"), { recursive: true });
+    fs.writeFileSync(path.join(tmp, "store", "K", "1-2.json"), "{}");
+    fs.writeFileSync(path.join(tmp, "store", "index.json"), JSON.stringify({ v: 1, syncedAt: "x", frames: { "K:1:2": { path: "store/K/1-2.json" }, "K:1:3": { path: "store/K/1-3.json" } } }));
+    const real = readStore(tmp);
+    const onFile = [specOf(real, "K", "1-2"), specOf(real, "K", "1-3")];
+    fs.writeFileSync(path.join(tmp, "store", "index.json"), '{"v":1,"frames":{');
+    let broken = null;
+    try {
+      readStore(tmp);
+    } catch (e) {
+      broken = e.message;
+    }
+    fs.rmSync(tmp, { recursive: true, force: true });
+    check(
+      "readStore: no index is an empty store with a note; the file check is on disk; an index that does not parse is refused",
+      Object.keys(none.index.frames).length === 0 && /not found/.test(none.note || "") &&
+        onFile[0].state === "stored" && onFile[0].path === "figma/store/K/1-2.json" && onFile[1].state === "missing" && real.note === null &&
+        /not valid JSON/.test(broken || ""),
+      JSON.stringify([none.note, onFile, broken]),
+    );
+  }
   console.log(`\nself-test: ${pass}/${pass + fail} passed.`);
   process.exit(fail ? 1 : 0);
 }
@@ -953,7 +1153,15 @@ function main(argv) {
     process.exit(1);
   }
   const read = (f) => JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8"));
-  const w = buildWorklist({ registry: read("registry.json"), coverage: read("coverage.json"), lanes });
+  let store;
+  try {
+    store = readStore(FIGMA_DIR);
+  } catch (e) {
+    console.error(`worklist: REFUSED, nothing written. ${e.message}`);
+    process.exit(2);
+  }
+  if (store.note) console.error(`note: ${store.note}`);
+  const w = buildWorklist({ registry: read("registry.json"), coverage: read("coverage.json"), store, lanes });
   if (w.problems) {
     console.error(`worklist: REFUSED, nothing written. ${w.problems.length} problem(s) with the inputs:`);
     for (const p of w.problems.slice(0, 20)) console.error(`  ${p}`);
@@ -968,6 +1176,7 @@ function main(argv) {
   console.log(
     `worklist: ${s.open} open frames in ${w.packets.length} packets; ${s.blocked} backend frames in ${w.backend.length} groups; ${s.design} design redraws.`,
   );
+  console.log(`design store: ${s.specs.stored} stored, ${s.specs.stale} stale, ${s.specs.missing} missing (${storeStamp(w)})`);
   console.log(`wrote ${path.join(outDir, "worklist.md")} and worklist.tsv`);
   console.log("\ntop packets:");
   for (const p of w.packets.slice(0, 5))
