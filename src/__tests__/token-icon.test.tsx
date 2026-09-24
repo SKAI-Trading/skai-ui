@@ -209,7 +209,11 @@ describe("TokenIcon — non-square brand art is fitted, not cropped", () => {
     const { rerender } = render(<TokenIcon symbol="SKAI" />);
     expect(screen.getByRole("img")).toHaveClass("object-contain");
 
+    // sUSD draws its own square coin, which fills the circle like any other
+    // coin image; it is not SKAI's bolt.
     rerender(<TokenIcon symbol="sUSD" />);
-    expect(screen.getByRole("img")).toHaveClass("object-contain");
+    const susd = screen.getByRole("img");
+    expect(susd).toHaveAttribute("src", "/icons/tokens/susd.png");
+    expect(susd).toHaveClass("object-cover");
   });
 });

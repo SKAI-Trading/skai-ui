@@ -53,10 +53,12 @@ const TOKEN_ICONS: Record<string, string> = {
   // path 404s (no such asset is bundled) so SKAI tokens fell back to "SK"
   // initials, leaving SKAI logos inconsistent across surfaces.
   SKAI: "/skai-logo-mark.svg",
-  // sUSD is SKAI's native stablecoin (not a bridged asset) — brand it with the
-  // same SKAI mark instead of falling back to "SU" initials. Keyed uppercase
-  // because lookups normalize via `symbol.toUpperCase()` (so "sUSD" → "SUSD").
-  SUSD: "/skai-logo-mark.svg",
+  // sUSD is SKAI's native stablecoin (not a bridged asset) and has its own
+  // coin: the one skai-wallet ships (330bb1d) and the app serves at this path.
+  // A consumer that does not serve it falls back to "SU" initials, never to
+  // SKAI's bolt. Keyed uppercase because lookups normalize via
+  // `symbol.toUpperCase()` (so "sUSD" → "SUSD").
+  SUSD: "/icons/tokens/susd.png",
 };
 
 export interface TokenIconProps extends React.HTMLAttributes<HTMLDivElement> {
