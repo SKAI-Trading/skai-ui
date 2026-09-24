@@ -13,6 +13,7 @@
 - [Available Components](#-available-components)
 - [Usage Examples](#-usage-examples)
 - [Storybook](#-storybook)
+- [Designs from Figma](#designs-from-figma-the-design-store)
 - [Adding New Components](#-adding-new-components-from-figma)
 - [Design Tokens](#-design-tokens)
 - [Development Workflow](#-development-workflow)
@@ -246,13 +247,25 @@ Open http://localhost:6006 to view the component library.
 - **Alert** - Success, warning, error, network status
 - **Progress** - Swap progress, volume tiers, quests
 
+## Designs from Figma: the design store
+
+The designs this library builds to are kept as data in [`figma/`](figma/README.md), so you can read any stored frame
+without a Figma account and without spending a Figma call. Start with [figma/README.md](figma/README.md):
+
+- `npm run figma:find -- <title words>`, or `--file <the file you are editing>`, finds the frame.
+- `npm run figma:spec -- <fileKey>:<node>` prints its layers, sizes, auto-layout and the tokens it uses.
+- `npm run figma:tokens -- get <name>` gives a token's value from the Skai-Design library.
+
+Figma is where designs are drawn; `figma/` is what code reads. Only `npm run figma:sync` writes it, under a daily
+Figma call budget, and nothing in it is edited by hand. [figma/SCHEMA.md](figma/SCHEMA.md) is the data contract.
+
 ## 🎨 Adding New Components from Figma
 
-### Step 1: Export from Figma
+### Step 1: Read the design
 
-1. Select the component in Figma
-2. Use Figma's "Dev Mode" or inspect panel
-3. Note the design tokens (colors, spacing, typography)
+1. Find the frame in the design store: `npm run figma:find -- <title words>` (see [Designs from Figma](#designs-from-figma-the-design-store))
+2. Print its spec: `npm run figma:spec -- <fileKey>:<node>`
+3. Note the design tokens it names (colors, spacing, typography); `npm run figma:tokens -- get <name>` gives each value
 
 ### Step 2: Create Component File
 
