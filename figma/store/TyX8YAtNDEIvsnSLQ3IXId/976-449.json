@@ -1,0 +1,13 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "976:449",
+ "page": "🧩 Design System",
+ "name": "Divider",
+ "hash": "aa72b3cf95b9e1d6",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"976:449","t":"COMPONENT","n":"Divider","b":[0,0,2941,8],"c":[
+   {"id":"976:447","t":"RECTANGLE","n":"Divider","b":[0,0,2941,8],"f":["Accents/Gray 100"]}
+  ]}
+}

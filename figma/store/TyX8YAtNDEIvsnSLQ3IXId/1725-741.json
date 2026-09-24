@@ -1,0 +1,42 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1725:741",
+ "page": "🧩 Design System",
+ "name": "Bottom-navigation-mobile",
+ "hash": "d564528d37a7484d",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"1725:741","t":"COMPONENT","n":"Bottom-navigation-mobile","b":[0,0,375,54],"l":{"ai":"CENTER","g":260,"jc":"SPACE_BETWEEN","m":"H","p":["s-1","s-1","s-1","s-1"],"sy":"HUG"},"f":["#001615@0.6"],"s":["Primary/Green Coal 100"],"sw":["border-width/w-100",0,0,0],"sa":"CENTER","fx":[{"r":20,"t":"BACKGROUND_BLUR"}],"c":[
+   {"id":"1724:2578","t":"FRAME","n":"list","b":[4,4,73.5,46],"l":{"ai":"CENTER","g":"s-0,5","jc":"CENTER","m":"V","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2579","t":"INSTANCE","n":"icons/action","b":[26.5,6,16,16],"clip":true,"ci":{"k":"c18323fa881574bffed47ccaa120c0e683145b13","n":"Size=16px, Type=Chart","props":{"Size":"16px","Type":"Chart"},"set":"icons/action"},"c":[
+     {"id":"I1724:2579;1440:1843","t":"BOOLEAN_OPERATION","n":"icon","b":[2.5,1,11,14],"f":["Core/White"]}
+    ]},
+    {"id":"1724:2580","t":"TEXT","n":"Trade","b":[19.5,24,30,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Trade","st":"Sm/Label 1 300"}}
+   ]},
+   {"id":"1724:2581","t":"FRAME","n":"list","b":[77.5,4,73.5,46],"l":{"ai":"CENTER","g":"s-0,5","jc":"CENTER","m":"V","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2582","t":"INSTANCE","n":"icons/graphical","b":[26.5,6,16,16],"clip":true,"ci":{"k":"58a78a9e44efa678d83300e1735a0344f61085e2","n":"Size=24px, Type=Predict","props":{"Size":"24px","Type":"Predict"},"set":"icons/graphical"},"c":[
+     {"id":"I1724:2582;1709:662","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1,13,13.5],"f":["Core/White"]}
+    ]},
+    {"id":"1724:2583","t":"TEXT","n":"Predict","b":[16.5,24,36,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Predict","st":"Sm/Label 1 300"}}
+   ]},
+   {"id":"1724:2584","t":"FRAME","n":"list","b":[151,4,73.5,46],"l":{"ai":"CENTER","g":"s-0,5","jc":"CENTER","m":"V","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2585","t":"INSTANCE","n":"icons/action","b":[26.5,6,16,16],"clip":true,"ci":{"k":"cd63daabb246586160b553be1ec08598e84ef61a","n":"Size=16px, Type=Sports","props":{"Size":"16px","Type":"Sports"},"set":"icons/action"},"c":[
+     {"id":"I1724:2585;1628:1636","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Core/White"]}
+    ]},
+    {"id":"1724:2586","t":"TEXT","n":"Play","b":[23,24,23,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Play","st":"Sm/Label 1 300"}}
+   ]},
+   {"id":"1724:2587","t":"FRAME","n":"list","b":[224,4,73.5,46],"l":{"ai":"CENTER","g":"s-0,5","jc":"CENTER","m":"V","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2588","t":"INSTANCE","n":"icons/action","b":[26.5,6,16,16],"clip":true,"ci":{"k":"7f6053715fb248c617e4a46f912fe32a9230c132","n":"Size=16px, Type=User","props":{"Size":"16px","Type":"User"},"set":"icons/action"},"c":[
+     {"id":"I1724:2588;1680:1179","t":"BOOLEAN_OPERATION","n":"icon","b":[2,2,12,12],"s":["Core/White"],"sw":"border-width/w-100","sa":"CENTER"}
+    ]},
+    {"id":"1724:2589","t":"TEXT","n":"Social","b":[19,24,31,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Social","st":"Sm/Label 1 300"}}
+   ]},
+   {"id":"1724:2590","t":"FRAME","n":"list","b":[297.5,4,73.5,46],"l":{"ai":"CENTER","g":"s-0,5","jc":"CENTER","m":"V","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2591","t":"INSTANCE","n":"icons/action","b":[26.5,6,16,16],"clip":true,"ci":{"k":"5a225d26315c680e527f985bbf9fc5e35172bcc4","n":"Size=16px, Type=More","props":{"Size":"16px","Type":"More"},"set":"icons/action"},"c":[
+     {"id":"I1724:2591;1448:586","t":"BOOLEAN_OPERATION","n":"icon","b":[3,3,10,10],"f":["Core/White"]}
+    ]},
+    {"id":"1724:2592","t":"TEXT","n":"More","b":[21,24,27,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"More","st":"Sm/Label 1 300"}}
+   ]}
+  ]}
+}

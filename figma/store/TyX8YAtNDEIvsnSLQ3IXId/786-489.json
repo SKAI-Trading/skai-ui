@@ -1,0 +1,42 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "786:489",
+ "page": "🧩 Design System",
+ "name": "CTA/directory-button",
+ "hash": "e38b70e2e8223e0a",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"786:489","t":"COMPONENT_SET","n":"CTA/directory-button","b":[0,0,346,306],"r":"border-radius/rounded-4xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"786:488","t":"COMPONENT","n":"Size=Large","b":[20,20,306,88],"l":{"g":"s-2","jc":"CENTER","m":"V","p":["s-5","s-6","s-5","s-6"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-2xl","f":["Primary/Green Coal 300"],"s":["Primary/Sky Blue 300"],"sw":1.5,"sa":"INSIDE","c":[
+    {"id":"780:140","t":"FRAME","n":"content","b":[24,20,258,48],"l":{"ai":"CENTER","g":16,"m":"H","sx":"FILL","sy":"HUG"},"c":[
+     {"id":"786:494","t":"INSTANCE","n":"logos/drawn","b":[0,0,48,48],"r":999,"f":["Primary/Sky Blue 300"],"ci":{"k":"be439c71b9b3ee9fca8264541da0f3595a10ad8c","n":"Type=In-built","props":{"Type":"In-built"},"set":"logos/drawn"}},
+     {"id":"780:145","t":"VECTOR","n":"divider","b":[64,4,0,40],"s":["Primary/Sky Blue 300"],"sw":"border-width/w-50","sa":"CENTER"},
+     {"id":"780:146","t":"FRAME","n":"text","b":[80,0,178,48],"l":{"g":"s-2","jc":"CENTER","m":"V","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"780:147","t":"TEXT","n":"Use built in email wallet","b":[0,0,178,22],"l":{"sx":"FILL","sy":"HUG"},"f":["Primary/Sky Blue 300"],"tx":{"c":"Use built in email wallet","st":"Lg/Paragraph 1 300"}},
+      {"id":"780:148","t":"TEXT","n":"Secure wallet provided by Skai","b":[0,30,178,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Sky Blue 300"],"tx":{"c":"Secure wallet provided by Skai","st":"Lg/Paragraph 2 300"}}
+     ]}
+    ]}
+   ]},
+   {"id":"786:487","t":"COMPONENT","n":"Size=Medium","b":[20,132,249,70],"l":{"g":"s-2","jc":"CENTER","m":"V","p":["s-4","s-4","s-4","s-4"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-xl","f":["Primary/Green Coal 300"],"s":["Primary/Sky Blue 300"],"sw":1.5,"sa":"INSIDE","c":[
+    {"id":"780:170","t":"FRAME","n":"content","b":[16,16,217,38],"l":{"ai":"CENTER","g":16,"m":"H","sx":"FILL","sy":"HUG"},"c":[
+     {"id":"786:499","t":"INSTANCE","n":"logos/drawn","b":[0,3,32,32],"r":666,"f":["Primary/Sky Blue 300"],"ci":{"k":"be439c71b9b3ee9fca8264541da0f3595a10ad8c","n":"Type=In-built","props":{"Type":"In-built"},"set":"logos/drawn"}},
+     {"id":"780:175","t":"VECTOR","n":"divider","b":[48,3,0,32],"s":["Primary/Sky Blue 300"],"sw":"border-width/w-50","sa":"CENTER"},
+     {"id":"780:176","t":"FRAME","n":"text","b":[64,0,153,38],"l":{"g":"s-1","jc":"CENTER","m":"V","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"780:177","t":"TEXT","n":"Use built in email wallet","b":[0,0,153,18],"l":{"sx":"FILL","sy":"HUG"},"f":["Primary/Sky Blue 300"],"tx":{"c":"Use built in email wallet","st":"Md/Paragraph 1 300"}},
+      {"id":"780:178","t":"TEXT","n":"Secure wallet provided by Skai","b":[0,22,153,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Sky Blue 300"],"tx":{"c":"Secure wallet provided by Skai","st":"Md/Paragraph 2 300"}}
+     ]}
+    ]}
+   ]},
+   {"id":"786:486","t":"COMPONENT","n":"Size=Small","b":[20,226,225,60],"l":{"g":"s-2","jc":"CENTER","m":"V","p":["s-3,5","s-3,5","s-3,5","s-3,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-xl","f":["Primary/Green Coal 300"],"s":["Primary/Sky Blue 300"],"sw":1,"sa":"INSIDE","c":[
+    {"id":"780:199","t":"FRAME","n":"content","b":[14,14,197,32],"l":{"ai":"CENTER","g":10,"m":"H","sx":"FILL","sy":"HUG"},"c":[
+     {"id":"786:504","t":"INSTANCE","n":"logos/drawn","b":[0,4,24,24],"r":499.5,"f":["Primary/Sky Blue 300"],"ci":{"k":"be439c71b9b3ee9fca8264541da0f3595a10ad8c","n":"Type=In-built","props":{"Type":"In-built"},"set":"logos/drawn"}},
+     {"id":"780:204","t":"VECTOR","n":"divider","b":[34,4,0,24],"s":["Primary/Sky Blue 300"],"sw":"border-width/w-50","sa":"CENTER"},
+     {"id":"780:205","t":"FRAME","n":"text","b":[44,0,153,32],"l":{"g":"s-0,5","jc":"CENTER","m":"V","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"780:206","t":"TEXT","n":"Use built in email wallet","b":[0,0,153,16],"l":{"sx":"FILL","sy":"HUG"},"f":["Primary/Sky Blue 300"],"tx":{"c":"Use built in email wallet","st":"Sm/Paragraph 1 300"}},
+      {"id":"780:207","t":"TEXT","n":"Secure wallet provided by Skai","b":[0,18,153,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Sky Blue 300"],"tx":{"c":"Secure wallet provided by Skai","st":"Sm/Paragraph 2 300"}}
+     ]}
+    ]}
+   ]}
+  ]}
+}

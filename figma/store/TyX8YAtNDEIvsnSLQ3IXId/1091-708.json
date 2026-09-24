@@ -1,0 +1,63 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1091:708",
+ "page": "🧩 Design System",
+ "name": "Footer",
+ "hash": "42668614f8a28989",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"1091:708","t":"COMPONENT","n":"Footer","b":[0,0,1440,30],"l":{"ai":"CENTER","g":24,"jc":"SPACE_BETWEEN","m":"H","p":["s-1,5",16,"s-1,5",16],"sy":"HUG"},"f":["Primary/Green Coal 300"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"CENTER","c":[
+   {"id":"1091:665","t":"FRAME","n":"content","b":[16,6,1408,18],"l":{"ai":"CENTER","g":35,"jc":"SPACE_BETWEEN","m":"H","sx":"FILL","sy":"HUG"},"c":[
+    {"id":"1091:666","t":"FRAME","n":"social","b":[0,1,117,16],"l":{"ai":"CENTER","g":32,"jc":"MAX","m":"H","sy":"HUG"},"c":[
+     {"id":"1091:667","t":"INSTANCE","n":"logos/social","b":[5,0,16,16],"clip":true,"ci":{"k":"d0f532cc386dc44be3900c795da5c05dd178ed28","n":"Type=Discord","props":{"Type":"Discord"},"set":"logos/social"},"c":[
+      {"id":"I1091:667;778:202","t":"VECTOR","n":"icon","b":[1,2.5,14,10.5],"f":["Core/White"]}
+     ]},
+     {"id":"1091:668","t":"INSTANCE","n":"logos/social","b":[53,0,16,16],"clip":true,"ci":{"k":"076040ddbe96372b771c3eb32f3778d7ac90f2fc","n":"Type=Instagram","props":{"Type":"Instagram"},"set":"logos/social"},"c":[
+      {"id":"I1091:668;778:204","t":"VECTOR","n":"icon","b":[1.5,1.5,13.5,13.5],"f":["Core/White"]}
+     ]},
+     {"id":"1091:669","t":"INSTANCE","n":"logos/social","b":[101,0,16,16],"clip":true,"ci":{"k":"16fdef4ffd2c08674abff631edc774f44e65e77e","n":"Type=X","props":{"Type":"X"},"set":"logos/social"},"c":[
+      {"id":"I1091:669;778:211","t":"VECTOR","n":"icon","b":[1,1.5,14,12.5],"f":["Core/White"]}
+     ]}
+    ]},
+    {"id":"1091:670","t":"FRAME","n":"nav","b":[343,1,288,16],"l":{"ai":"CENTER","g":"s-6","jc":"MAX","m":"H","sx":"HUG","sy":"HUG"},"c":[
+     {"id":"1091:671","t":"FRAME","n":"list","b":[0,0,32,16],"l":{"ai":"CENTER","g":"s-1,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"1091:672","t":"INSTANCE","n":"icons/platform","b":[0,0,16,16],"clip":true,"ci":{"k":"c76c40ccf69ab5aa286ce3075f922c03b5551b01","n":"Size=16px, Type=Skai AI","props":{"Size":"16px","Type":"Skai AI"},"set":"icons/platform"},"c":[
+       {"id":"I1091:672;1091:529","t":"BOOLEAN_OPERATION","n":"icon","b":[3,2,13,12],"f":["Core/White"]}
+      ]},
+      {"id":"1091:673","t":"TEXT","n":"AI","b":[22,0,10,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"AI","st":"Lg/Paragraph 3 300"}}
+     ]},
+     {"id":"1091:674","t":"FRAME","n":"list","b":[56,0,48,16],"l":{"ai":"CENTER","g":"s-1,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"1091:675","t":"INSTANCE","n":"icons/platform","b":[0,0,16,16],"clip":true,"ci":{"k":"00ca78ed5fe4cf96c355b1383cfb37103dd965ef","n":"Size=16px, Type=Chat","props":{"Size":"16px","Type":"Chat"},"set":"icons/platform"},"c":[
+       {"id":"I1091:675;1090:513","t":"BOOLEAN_OPERATION","n":"icon","b":[2,2,12.5,12.5],"f":["Core/White"]}
+      ]},
+      {"id":"1091:676","t":"TEXT","n":"Chat","b":[22,0,26,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Chat","st":"Lg/Paragraph 3 300"}}
+     ]},
+     {"id":"1091:677","t":"FRAME","n":"list","b":[128,0,81,16],"l":{"ai":"CENTER","g":"s-1,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"1091:678","t":"INSTANCE","n":"icons/platform","b":[0,0,16,16],"clip":true,"ci":{"k":"b39d8348d13dc4d6c6d79fe713265b2910b9f1d4","n":"Size=16px, Type=Games","props":{"Size":"16px","Type":"Games"},"set":"icons/platform"},"c":[
+       {"id":"I1091:678;1090:520","t":"VECTOR","n":"icon","b":[2,2,12,12],"f":["Core/White"]}
+      ]},
+      {"id":"1091:679","t":"TEXT","n":"Mini games","b":[22,0,59,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Mini games","st":"Lg/Paragraph 3 300"}}
+     ]},
+     {"id":"1091:680","t":"FRAME","n":"list","b":[233,0,55,16],"l":{"ai":"CENTER","g":"s-1,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"1091:681","t":"INSTANCE","n":"icons/platform","b":[0,0,16,16],"clip":true,"ci":{"k":"7da5169c44a254f282502c4a4ce8eec24342375c","n":"Size=16px, Type=Wallet","props":{"Size":"16px","Type":"Wallet"},"set":"icons/platform"},"c":[
+       {"id":"I1091:681;1090:504","t":"VECTOR","n":"icon","b":[2,2,12,12],"f":["Core/White"]}
+      ]},
+      {"id":"1091:682","t":"TEXT","n":"Wallet","b":[22,0,33,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Wallet","st":"Lg/Paragraph 3 300"}}
+     ]}
+    ]},
+    {"id":"1091:683","t":"INSTANCE","n":"labels/tag","b":[857,0,124,18],"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["App/Green-O"],"ci":{"k":"8814967f2bf9467b55a063061c777f76fbbca2f3","n":"Size=Large, Type=Fill","props":{"Has left icon":true,"Has right icon":false,"Size":"Large","Text":"Connection is stable","Type":"Fill"},"set":"labels/tag"},"c":[
+     {"id":"I1091:683;786:204","t":"INSTANCE","n":"icons/action","b":[8,4,10,10],"clip":true,"ci":{"k":"ddda4a3d6c7f3d47a6e6ef4f85f782c7c3c27f09","n":"Size=16px, Type=Dot","props":{"Size":"16px","Type":"Dot"},"set":"icons/action"},"c":[
+      {"id":"I1091:683;786:204;786:188","t":"ELLIPSE","n":"dot","b":[3,3,4,4],"f":["App/Green 300"]}
+     ]},
+     {"id":"I1091:683;786:171","t":"TEXT","n":"Label","b":[22,2,94,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Connection is stable","st":"Lg/Label 2 300"}}
+    ]},
+    {"id":"1091:684","t":"FRAME","n":"nav","b":[1207,1,201,16],"l":{"g":24,"m":"H","sx":"HUG","sy":"HUG"},"c":[
+     {"id":"1091:685","t":"TEXT","n":"Home","b":[0,0,32,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Home","st":"Lg/Paragraph 3 300"}},
+     {"id":"1091:686","t":"TEXT","n":"Docs","b":[56,0,27,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Docs","st":"Lg/Paragraph 3 300"}},
+     {"id":"1091:688","t":"TEXT","n":"Terms","b":[107,0,33,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Terms","st":"Lg/Paragraph 3 300"}},
+     {"id":"1091:687","t":"TEXT","n":"Privacy","b":[164,0,37,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Privacy","st":"Lg/Paragraph 3 300"}}
+    ]}
+   ]}
+  ]}
+}

@@ -1,0 +1,42 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1725:740",
+ "page": "🧩 Design System",
+ "name": "Bottom-navigation-tablet",
+ "hash": "c8b0350296b01a2c",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"1725:740","t":"COMPONENT","n":"Bottom-navigation-tablet","b":[0,0,768,52],"l":{"ai":"CENTER","g":260,"jc":"SPACE_BETWEEN","m":"H","p":["s-2",19,"s-2",19]},"f":["#001615@0.6"],"s":["Primary/Green Coal 100"],"sw":["border-width/w-100",0,0,0],"sa":"CENTER","fx":[{"r":20,"t":"BACKGROUND_BLUR"}],"c":[
+   {"id":"1724:2498","t":"FRAME","n":"list","b":[19,8,146,36],"l":{"ai":"CENTER","g":"s-1,5","jc":"CENTER","m":"H","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2499","t":"INSTANCE","n":"icons/action","b":[42.5,10,16,16],"clip":true,"ci":{"k":"c18323fa881574bffed47ccaa120c0e683145b13","n":"Size=16px, Type=Chart","props":{"Size":"16px","Type":"Chart"},"set":"icons/action"},"c":[
+     {"id":"I1724:2499;1440:1843","t":"BOOLEAN_OPERATION","n":"icon","b":[2.5,1,11,14],"f":["Core/White"]}
+    ]},
+    {"id":"1724:2500","t":"TEXT","n":"Trade","b":[64.5,10,35,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Trade","st":"Md/Label 1 300"}}
+   ]},
+   {"id":"1724:2501","t":"FRAME","n":"list","b":[165,8,146,36],"l":{"ai":"CENTER","g":"s-1,5","jc":"CENTER","m":"H","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2502","t":"INSTANCE","n":"icons/graphical","b":[39,10,16,16],"clip":true,"ci":{"k":"58a78a9e44efa678d83300e1735a0344f61085e2","n":"Size=24px, Type=Predict","props":{"Size":"24px","Type":"Predict"},"set":"icons/graphical"},"c":[
+     {"id":"I1724:2502;1709:662","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1,13,13.5],"f":["Core/White"]}
+    ]},
+    {"id":"1724:2503","t":"TEXT","n":"Predict","b":[61,10,42,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Predict","st":"Md/Label 1 300"}}
+   ]},
+   {"id":"1724:2504","t":"FRAME","n":"list","b":[311,8,146,36],"l":{"ai":"CENTER","g":"s-1,5","jc":"CENTER","m":"H","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2505","t":"INSTANCE","n":"icons/action","b":[46.5,10,16,16],"clip":true,"ci":{"k":"cd63daabb246586160b553be1ec08598e84ef61a","n":"Size=16px, Type=Sports","props":{"Size":"16px","Type":"Sports"},"set":"icons/action"},"c":[
+     {"id":"I1724:2505;1628:1636","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Core/White"]}
+    ]},
+    {"id":"1724:2506","t":"TEXT","n":"Play","b":[68.5,10,27,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Play","st":"Md/Label 1 300"}}
+   ]},
+   {"id":"1724:2507","t":"FRAME","n":"list","b":[457,8,146,36],"l":{"ai":"CENTER","g":"s-1,5","jc":"CENTER","m":"H","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2508","t":"INSTANCE","n":"icons/action","b":[42,10,16,16],"clip":true,"ci":{"k":"7f6053715fb248c617e4a46f912fe32a9230c132","n":"Size=16px, Type=User","props":{"Size":"16px","Type":"User"},"set":"icons/action"},"c":[
+     {"id":"I1724:2508;1680:1179","t":"BOOLEAN_OPERATION","n":"icon","b":[2,2,12,12],"s":["Core/White"],"sw":"border-width/w-100","sa":"CENTER"}
+    ]},
+    {"id":"1724:2509","t":"TEXT","n":"Social","b":[64,10,36,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Social","st":"Md/Label 1 300"}}
+   ]},
+   {"id":"1724:2510","t":"FRAME","n":"list","b":[603,8,146,36],"l":{"ai":"CENTER","g":"s-1,5","jc":"CENTER","m":"H","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-lg","c":[
+    {"id":"1724:2511","t":"INSTANCE","n":"icons/action","b":[44.5,10,16,16],"clip":true,"ci":{"k":"5a225d26315c680e527f985bbf9fc5e35172bcc4","n":"Size=16px, Type=More","props":{"Size":"16px","Type":"More"},"set":"icons/action"},"c":[
+     {"id":"I1724:2511;1448:586","t":"BOOLEAN_OPERATION","n":"icon","b":[3,3,10,10],"f":["Core/White"]}
+    ]},
+    {"id":"1724:2512","t":"TEXT","n":"More","b":[66.5,10,31,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"More","st":"Md/Label 1 300"}}
+   ]}
+  ]}
+}

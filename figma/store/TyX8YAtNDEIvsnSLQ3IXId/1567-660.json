@@ -1,0 +1,59 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1567:660",
+ "page": "🧩 Design System",
+ "name": "icons/games",
+ "hash": "358d1ee13b252d63",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"1567:660","t":"COMPONENT_SET","n":"icons/games","b":[0,0,736,64],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"1567:659","t":"COMPONENT","n":"Size=24px, Type=Soccer","b":[20,20,24,24],"c":[
+    {"id":"1567:630","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,22,22],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1567:658","t":"COMPONENT","n":"Size=24px, Type=Rugby","b":[68,20,24,24],"c":[
+    {"id":"1567:636","t":"BOOLEAN_OPERATION","n":"icon","b":[2,2,20,20],"f":["#B09F4C"]}
+   ]},
+   {"id":"1567:657","t":"COMPONENT","n":"Size=24px, Type=Basketball","b":[116,20,24,24],"c":[
+    {"id":"1567:645","t":"VECTOR","n":"icon","b":[1,1,22,22],"f":["Accents/Coral 300"]}
+   ]},
+   {"id":"1567:656","t":"COMPONENT","n":"Size=24px, Type=UCL","b":[164,20,24,24],"c":[
+    {"id":"1567:649","t":"VECTOR","n":"icon","b":[1.5,1.5,21,21],"f":["#50A2FF"]}
+   ]},
+   {"id":"1567:655","t":"COMPONENT","n":"Size=24px, Type=eSports","b":[212,20,24,24],"c":[
+    {"id":"1567:653","t":"VECTOR","n":"Vector","b":[1,4,22,16],"f":["#B650FF"]}
+   ]},
+   {"id":"1623:1119","t":"COMPONENT","n":"Size=24px, Type=New","b":[260,20,24,24],"c":[
+    {"id":"1623:1137","t":"BOOLEAN_OPERATION","n":"icon","b":[1,7,22,10],"f":["Primary/Sky Blue 300"]},
+    {"id":"1623:1139","t":"VECTOR","n":"text","b":[3.5,9,17,6],"f":["Core/White"]}
+   ]},
+   {"id":"1623:1499","t":"COMPONENT","n":"Size=24px, Type=FIFA","b":[308,20,24,24],"c":[
+    {"id":"1623:1515","t":"BOOLEAN_OPERATION","n":"icon","b":[1,2.5,22,19],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1623:1503","t":"COMPONENT","n":"Size=24px, Type=Tennis","b":[356,20,24,24],"c":[
+    {"id":"1623:1519","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1.5,21,21],"f":["#60DF39"]}
+   ]},
+   {"id":"1623:1507","t":"COMPONENT","n":"Size=24px, Type=Hockey","b":[404,20,24,24],"c":[
+    {"id":"1623:1540","t":"VECTOR","n":"icon","b":[1,3.5,21.5,17.5],"f":["#5090FF"]}
+   ]},
+   {"id":"1623:1520","t":"COMPONENT","n":"Size=24px, Type=MMA","b":[452,20,24,24],"c":[
+    {"id":"1623:1551","t":"BOOLEAN_OPERATION","n":"icon","b":[3,1.5,18,21],"f":["#FF507C"]}
+   ]},
+   {"id":"1623:1524","t":"COMPONENT","n":"Size=24px, Type=Skai Originals","b":[500,20,24,24],"c":[
+    {"id":"1624:1565","t":"VECTOR","n":"icon","b":[3,2,18,20],"f":["Primary/Sky Blue 300"]},
+    {"id":"1624:1566","t":"VECTOR","n":"icon","b":[14,2.5,6.5,5.5],"r":0.5,"f":["Accents/Coral 300"]}
+   ]},
+   {"id":"1623:1555","t":"COMPONENT","n":"Size=24px, Type=Slots","b":[548,20,24,24],"c":[
+    {"id":"1624:1577","t":"BOOLEAN_OPERATION","n":"icon","b":[2,3,22,18],"f":["#EAAB00"]}
+   ]},
+   {"id":"1624:1568","t":"COMPONENT","n":"Size=24px, Type=Ace","b":[596,20,24,24],"c":[
+    {"id":"1624:1583","t":"VECTOR","n":"icon","b":[4,2,16,20],"f":["#FF6505"]}
+   ]},
+   {"id":"1649:567","t":"COMPONENT","n":"Size=24px, Type=Slip","b":[644,20,24,24],"c":[
+    {"id":"1649:584","t":"VECTOR","n":"icon","b":[2,2.5,20,19],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1650:586","t":"COMPONENT","n":"Size=24px, Type=Whistle","b":[692,20,24,24],"c":[
+    {"id":"1650:592","t":"VECTOR","n":"icon","b":[2,2,20,20],"f":["Primary/Printers Gold 300"]}
+   ]}
+  ]}
+}

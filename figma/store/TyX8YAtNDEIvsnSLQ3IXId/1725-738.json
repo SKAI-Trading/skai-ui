@@ -1,0 +1,65 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1725:738",
+ "page": "🧩 Design System",
+ "name": "Header-tablet",
+ "hash": "b5d62a07487abe29",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"1725:738","t":"COMPONENT","n":"Header-tablet","b":[0,0,768,52],"l":{"ai":"CENTER","g":260,"jc":"SPACE_BETWEEN","m":"H","p":["s-1,5",19,"s-1,5",19],"sy":"HUG"},"f":["Primary/Green Coal 300"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"CENTER","c":[
+   {"id":"1724:2514","t":"FRAME","n":"menu","b":[19,8,129,36],"l":{"ai":"CENTER","g":"s-4","m":"H","sx":"HUG","sy":"HUG"},"c":[
+    {"id":"1724:2515","t":"INSTANCE","n":"CTA/button","b":[0,0,36,36],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"H","p":["s-2,5","s-2,5","s-2,5","s-2,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","ci":{"k":"b1742e1bf04df68d26b9c8bf98a3f3b566859249","n":"Size=Large, Type=Primary","props":{"Has label":false,"Has left icon":false,"Has right icon":true,"Size":"Large","Text":"Connect wallet","Type":"Primary"},"set":"CTA/button"},"c":[
+     {"id":"I1724:2515;786:561","t":"INSTANCE","n":"icons/action","b":[10,10,16,16],"clip":true,"ci":{"k":"fe905c293a2834d4140c7a2fc281b4d62203a1a5","n":"Size=16px, Type=Hamburger","props":{"Size":"16px","Type":"Hamburger"},"set":"icons/action"},"c":[
+      {"id":"I1724:2515;786:561;1723:1729","t":"BOOLEAN_OPERATION","n":"icon","b":[1,3.5,14,9],"f":["Core/White"]}
+     ]}
+    ]},
+    {"id":"1724:2516","t":"INSTANCE","n":"logos/skai-short","b":[52,2,77,32],"l":{"g":5,"m":"V","sy":"HUG"},"ci":{"k":"0aaccc64881718eeacf689281441e6e27b7fbf36","n":"Mode=White, Size=Large","props":{"Mode":"White","Size":"Large"},"set":"logos/skai-short"}}
+   ]},
+   {"id":"1724:2517","t":"FRAME","n":"Frame 1048","b":[198,6,551,40],"l":{"ai":"CENTER","g":"s-2","m":"H","sx":"HUG","sy":"HUG"},"c":[
+    {"id":"1724:2518","t":"FRAME","n":"fields","b":[0,0,341,40],"l":{"ai":"CENTER","g":8,"m":"H","sx":"HUG","sy":"FILL"},"c":[
+     {"id":"1724:2519","t":"FRAME","n":"search","b":[0,0,236,40],"l":{"ai":"CENTER","g":10,"m":"H","p":["s-2","s-6","s-2","s-4"],"sy":"FILL"},"r":8,"f":["Primary/Green Coal 300"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","c":[
+      {"id":"1724:2520","t":"INSTANCE","n":"icons/action","b":[16,12,16,16],"clip":true,"ci":{"k":"5b6bc478c0bc16e5dfa2ab450837c3db5bbb78da","n":"Size=16px, Type=Search","props":{"Size":"16px","Type":"Search"},"set":"icons/action"},"c":[
+       {"id":"I1724:2520;1083:406","t":"VECTOR","n":"icon","b":[2,2,12,12],"f":["Core/White"]}
+      ]},
+      {"id":"1724:2521","t":"TEXT","n":"Search anything...","b":[42,12,92,16],"op":0.74,"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Search anything...","st":"Md/Paragraph 2 300","ta":"CENTER"}}
+     ]},
+     {"id":"1724:2522","t":"FRAME","n":"nav","b":[244,0,97,40],"l":{"ai":"CENTER","g":"s-4","jc":"MAX","m":"H","sx":"HUG","sy":"FILL"},"c":[
+      {"id":"1724:2523","t":"FRAME","n":"list","b":[0,0,65,28],"vis":false,"l":{"ai":"CENTER","g":"s-1,5","m":"H","p":["s-1,5","s-3","s-1,5","s-1,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-lg","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","c":[
+       {"id":"1724:2524","t":"INSTANCE","n":"icons/platform","b":[6,6,16,16],"clip":true,"ci":{"k":"93d732eb5542af230a5fa0da8b474f3c3b6c7157","n":"Size=16px, Type=SKAI","props":{"Size":"16px","Type":"SKAI"},"set":"icons/platform"}},
+       {"id":"1724:2525","t":"TEXT","n":"800","b":[28,6,25,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"800","st":"Md/Label 1 300"}}
+      ]},
+      {"id":"1724:2526","t":"FRAME","n":"list","b":[81,0,74,28],"vis":false,"l":{"ai":"CENTER","g":"s-1,5","m":"H","p":["s-1,5","s-3","s-1,5","s-1,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-lg","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","c":[
+       {"id":"1724:2527","t":"INSTANCE","n":"icons/platform","b":[6,6,16,16],"clip":true,"ci":{"k":"a57e9ca801b8e681374e9e46457094a89938c06e","n":"Size=16px, Type=Vault","props":{"Size":"16px","Type":"Vault"},"set":"icons/platform"}},
+       {"id":"1724:2528","t":"TEXT","n":"11.2k","b":[28,6,34,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"11.2k","st":"Md/Label 1 300"}}
+      ]},
+      {"id":"1724:2529","t":"FRAME","n":"list","b":[0,0,97,40],"l":{"ai":"CENTER","g":"s-0,5","m":"H","p":["s-1,5","s-5","s-1,5","s-4"],"sx":"HUG","sy":"FILL"},"r":"border-radius/rounded-lg","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","c":[
+       {"id":"1724:2530","t":"INSTANCE","n":"icons/platform","b":[16,12,16,16],"clip":true,"ci":{"k":"550bfb210dd538f000b04e1f0b1ea8761f4fd078","n":"Size=16px, Type=USD","props":{"Size":"16px","Type":"USD"},"set":"icons/platform"},"c":[
+        {"id":"I1724:2530;1695:1220","t":"VECTOR","n":"icon","b":[4,1,7.5,13],"f":["Primary/Sky Blue 300"]}
+       ]},
+       {"id":"1724:2531","t":"TEXT","n":"419.12","b":[34,12,43,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"419.12","st":"Md/Label 1 300"}}
+      ]},
+      {"id":"1724:2532","t":"FRAME","n":"list","b":[233,0,55,16],"vis":false,"l":{"ai":"CENTER","g":"s-1,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+       {"id":"1724:2533","t":"INSTANCE","n":"icons/platform","b":[0,0,16,16],"clip":true,"ci":{"k":"7da5169c44a254f282502c4a4ce8eec24342375c","n":"Size=16px, Type=Wallet","props":{"Size":"16px","Type":"Wallet"},"set":"icons/platform"}},
+       {"id":"1724:2534","t":"TEXT","n":"Wallet","b":[22,0,33,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Wallet","st":"Lg/Paragraph 3 300"}}
+      ]}
+     ]}
+    ]},
+    {"id":"1724:2535","t":"FRAME","n":"CTAs","b":[349,0,202,40],"l":{"ai":"CENTER","g":"s-2","m":"H","sx":"HUG","sy":"HUG"},"c":[
+     {"id":"1724:2536","t":"INSTANCE","n":"CTA/button","b":[0,2,36,36],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"H","p":["s-2,5","s-2,5","s-2,5","s-2,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","ci":{"k":"b1742e1bf04df68d26b9c8bf98a3f3b566859249","n":"Size=Large, Type=Primary","props":{"Has label":false,"Has left icon":false,"Has right icon":true,"Size":"Large","Text":"Connect wallet","Type":"Primary"},"set":"CTA/button"},"c":[
+      {"id":"I1724:2536;786:561","t":"INSTANCE","n":"icons/action","b":[10,10,16,16],"clip":true,"ci":{"k":"c648acff78986e0911b92d253de4b8abac35f56a","n":"Size=16px, Type=Notification","props":{"Size":"16px","Type":"Notification"},"set":"icons/action"},"c":[
+       {"id":"I1724:2536;786:561;1084:406","t":"VECTOR","n":"icon","b":[2,0,12,15.5],"f":["Core/White"]}
+      ]}
+     ]},
+     {"id":"1724:2537","t":"FRAME","n":"CTA/button","b":[44,0,158,40],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"H","p":["s-2","s-4","s-2","s-4"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-lg","f":["Primary/Green Coal 300"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE","c":[
+      {"id":"1724:2538","t":"INSTANCE","n":"images/circle","b":[16,8,24,24],"ci":{"k":"f1d76a26e4517625636f2a72b8940aa12177c085","n":"Size=Small","props":{"Size":"Small"},"set":"images/circle"}},
+      {"id":"1724:2539","t":"TEXT","n":"vassimo125","b":[48,11,70,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"vassimo125","st":"Md/Paragraph 1 300","ta":"CENTER"}},
+      {"id":"1724:2540","t":"INSTANCE","n":"labels/tag","b":[132,23,71,18],"vis":false,"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["Primary/Green Coal 200"],"ci":{"k":"8814967f2bf9467b55a063061c777f76fbbca2f3","n":"Size=Large, Type=Fill","props":{"Has left icon":true,"Has right icon":true,"Size":"Large","Text":"Label","Type":"Fill"},"set":"labels/tag"}},
+      {"id":"1724:2541","t":"INSTANCE","n":"icons/action","b":[126,12,16,16],"clip":true,"ci":{"k":"adbb67c08fb046d5a043a5e28b80083588a1cf0e","n":"Size=16px, Type=Arrow-down","props":{"Size":"16px","Type":"Arrow-down"},"set":"icons/action"},"c":[
+       {"id":"I1724:2541;1081:406","t":"VECTOR","n":"icon","b":[4,6,8,4],"f":["Core/White"]}
+      ]}
+     ]}
+    ]}
+   ]}
+  ]}
+}

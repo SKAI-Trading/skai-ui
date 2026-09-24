@@ -1,0 +1,24 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1339:2575",
+ "page": "🧩 Design System",
+ "name": "icons/warnings",
+ "hash": "01814fc998230056",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"1339:2575","t":"COMPONENT_SET","n":"icons/warnings","b":[0,0,176,56],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"1339:2574","t":"COMPONENT","n":"Size=16px, Type=Info","b":[140,20,16,16],"clip":true,"c":[
+    {"id":"1339:2554","t":"BOOLEAN_OPERATION","n":"icon","b":[0,0,16,16],"f":["Primary/Sky Blue 300"]}
+   ]},
+   {"id":"1339:2573","t":"COMPONENT","n":"Size=16px, Type=Warning","b":[100,20,16,16],"clip":true,"c":[
+    {"id":"1339:2558","t":"BOOLEAN_OPERATION","n":"icon","b":[0,0,16,15],"f":["#FFBD16"]}
+   ]},
+   {"id":"1339:2572","t":"COMPONENT","n":"Size=16px, Type=Success","b":[60,20,16,16],"clip":true,"c":[
+    {"id":"1339:2562","t":"BOOLEAN_OPERATION","n":"icon","b":[0,0,16,16],"f":["App/Green 300"]}
+   ]},
+   {"id":"1339:2571","t":"COMPONENT","n":"Size=16px, Type=Error","b":[20,20,16,16],"clip":true,"c":[
+    {"id":"1339:2566","t":"BOOLEAN_OPERATION","n":"icon","b":[0,0,16,16],"f":["App/Red 300"]}
+   ]}
+  ]}
+}

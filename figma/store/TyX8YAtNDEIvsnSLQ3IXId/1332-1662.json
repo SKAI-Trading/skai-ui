@@ -1,0 +1,42 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1332:1662",
+ "page": "🧩 Design System",
+ "name": "icons/tiers",
+ "hash": "46d0e060aa67e190",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"1332:1662","t":"COMPONENT_SET","n":"icons/tiers","b":[0,0,520,88],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"1332:1661","t":"COMPONENT","n":"Size=48px, Type=Free","b":[20,20,48,48],"c":[
+    {"id":"1331:1633","t":"VECTOR","n":"icon","b":[6,6,36,36],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1332:1659","t":"COMPONENT","n":"Size=48px, Type=Gold","b":[92,20,48,48],"c":[
+    {"id":"1331:1635","t":"ELLIPSE","n":"enclosure","b":[6,6,36,36],"f":["#FFD258"],"s":["#C18D00"],"sw":1.5,"sa":"INSIDE"},
+    {"id":"1331:1636","t":"STAR","n":"icon","b":[13,13,22,22],"r":1,"f":["#C18D00"]}
+   ]},
+   {"id":"1332:1657","t":"COMPONENT","n":"Size=48px, Type=Silver","b":[164,20,48,48],"c":[
+    {"id":"1331:1638","t":"ELLIPSE","n":"enclosure","b":[6,6,36,36],"f":["#E2E2E2"],"s":["#9C9C9C"],"sw":1.5,"sa":"INSIDE"},
+    {"id":"1331:1639","t":"STAR","n":"icon","b":[13,13,22,22],"r":1,"f":["#9C9C9C"],"s":["#9C9C9C"],"sw":1,"sa":"INSIDE"}
+   ]},
+   {"id":"1332:1656","t":"COMPONENT","n":"Size=48px, Type=Bronze","b":[236,20,48,48],"c":[
+    {"id":"1331:1641","t":"ELLIPSE","n":"enclosure","b":[6,6,36,36],"f":["#E7AA8A"],"s":["#A56B4D"],"sw":1.5,"sa":"INSIDE"},
+    {"id":"1331:1642","t":"STAR","n":"icon","b":[13,13,22,22],"r":1,"f":["#A56B4D"]}
+   ]},
+   {"id":"1332:1660","t":"COMPONENT","n":"Size=48px, Type=Platinum","b":[308,20,48,48],"c":[
+    {"id":"1331:1644","t":"ELLIPSE","n":"enclosure","b":[6,6,36,36],"f":["#C7D4DC"],"s":["#75838B"],"sw":1.5,"sa":"INSIDE"},
+    {"id":"1331:1645","t":"STAR","n":"icon","b":[13,13,22,22],"r":1,"f":["#75838B"]}
+   ]},
+   {"id":"1332:1658","t":"COMPONENT","n":"Size=48px, Type=Diamond","b":[380,20,48,48],"c":[
+    {"id":"1331:1647","t":"ELLIPSE","n":"enclosure","b":[6,6,36,36],"f":["#BDEDFF"],"s":["#3AAFDD"],"sw":1.5,"sa":"INSIDE"},
+    {"id":"1331:1648","t":"BOOLEAN_OPERATION","n":"icon","b":[14,16,19.5,18],"r":1,"f":["#3AAFDD"]}
+   ]},
+   {"id":"1706:1407","t":"COMPONENT","n":"Size=48px, Type=Legend","b":[452,20,48,48],"c":[
+    {"id":"1706:1453","t":"ELLIPSE","n":"enclosure","b":[6,6,36,36],"f":["#F8E1D8"],"s":["Accents/Coral 300"],"sw":1.5,"sa":"INSIDE"},
+    {"id":"1706:1454","t":"GROUP","n":"icon","b":[8,8,32,32],"c":[
+     {"id":"1706:1455","t":"ELLIPSE","n":"enclosure","b":[0,0,32,32],"f":["#BDEDFF"]},
+     {"id":"1706:1456","t":"VECTOR","n":"Union","b":[8,2,16,51],"f":["Accents/Coral 300"]}
+    ]}
+   ]}
+  ]}
+}

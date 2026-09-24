@@ -1,0 +1,20 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "772:564",
+ "page": "🧩 Design System",
+ "name": "footer-system",
+ "hash": "fdeddc39a16be2b9",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"772:564","t":"COMPONENT","n":"footer-system","b":[0,0,2941,192],"l":{"ai":"CENTER","g":1207,"jc":"SPACE_BETWEEN","m":"H","p":["s-20","s-20","s-20","s-20"],"sy":"HUG"},"f":["Accents/Cloud 300"],"clip":true,"c":[
+   {"id":"695:473","t":"TEXT","n":"Skai copyright © 2026","b":[80,84,171,24],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Skai copyright ©  2026","st":"Lg/Sub-headline 2 300"}},
+   {"id":"695:474","t":"FRAME","n":"Frame 2","b":[2699,80,162,32],"l":{"ai":"CENTER","g":"s-4","m":"H","sx":"HUG","sy":"HUG"},"c":[
+    {"id":"695:475","t":"GROUP","n":"Group","b":[0,0,29,32],"c":[
+     {"id":"695:476","t":"VECTOR","n":"Vector","b":[0,0,23,21],"f":["Primary/Green Coal 300"]},
+     {"id":"695:477","t":"VECTOR","n":"Vector","b":[5.5,11,23,21],"f":["Primary/Green Coal 300"]}
+    ]},
+    {"id":"695:478","t":"TEXT","n":"www.skai.trade","b":[45,4,117,24],"l":{"sx":"HUG","sy":"HUG"},"f":["Accents/Gray 600"],"tx":{"c":"www.skai.trade","st":"Lg/Sub-headline 2 300","ta":"RIGHT","td":"UNDERLINE"}}
+   ]}
+  ]}
+}

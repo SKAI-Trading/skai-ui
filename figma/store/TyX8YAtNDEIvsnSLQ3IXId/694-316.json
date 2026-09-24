@@ -1,0 +1,14 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "694:316",
+ "page": "🧩 Design System",
+ "name": "component-info",
+ "hash": "c508f71b5ddfb78e",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"694:316","t":"COMPONENT","n":"component-info","b":[0,0,265,98],"l":{"g":14,"m":"V","sy":"HUG"},"c":[
+   {"id":"694:313","t":"TEXT","n":"Core","b":[0,0,265,36],"l":{"sx":"FILL","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Core","st":"Lg/Super-headline 4 300"}},
+   {"id":"694:314","t":"TEXT","n":"Main group of colours that are also available in tokens.","b":[0,50,265,48],"l":{"sx":"FILL","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Main group of colours that are also available in tokens.","st":"Lg/Sub-headline 2 300"}}
+  ]}
+}

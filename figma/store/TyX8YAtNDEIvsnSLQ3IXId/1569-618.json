@@ -1,0 +1,18 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1569:618",
+ "page": "🧩 Design System",
+ "name": "icons/metals",
+ "hash": "cf71b357bff67248",
+ "syncedAt": "2026-09-24T22:59:39.353Z",
+ "tree":
+  {"id":"1569:618","t":"COMPONENT_SET","n":"icons/metals","b":[0,0,112,64],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"1569:617","t":"COMPONENT","n":"Size=24px, Type=Gold","b":[20,20,24,24],"c":[
+    {"id":"1569:610","t":"VECTOR","n":"icon","b":[1.5,4,21,16],"f":["#FFC31F"]}
+   ]},
+   {"id":"1569:616","t":"COMPONENT","n":"Size=24px, Type=Silver","b":[68,20,24,24],"c":[
+    {"id":"1569:613","t":"VECTOR","n":"icon","b":[1.5,4,21,16],"f":["#D8D8D8"]}
+   ]}
+  ]}
+}
