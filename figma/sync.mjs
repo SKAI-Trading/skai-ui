@@ -245,7 +245,7 @@ export async function planExtractScript(ctx, opts = {}) {
   const plan = pack.planExtract({ frames, index: loadIndex(ctx), state: loadState(ctx), rank, file, nodes, limit, budget });
   if (!plan) return { plan: null, why, left };
   const nonce = pack.newNonce();
-  const text = pack.extractScript({ file: plan.file, nonce, pages: plan.pages, ids: plan.ids, budget, ms: ctx.ms, split: ctx.split, minCut: ctx.minCut });
+  const text = pack.extractScript({ file: plan.file, nonce, pages: plan.pages, ids: plan.ids, dz: plan.dz, budget, ms: ctx.ms, split: ctx.split, minCut: ctx.minCut });
   return { plan, nonce, text, why, left };
 }
 
@@ -1027,7 +1027,7 @@ async function selfTest() {
   const pasted = new Function(`${pack.compact(`const zcodec = ${transport.zcodec.toString()};`)}\nreturn zcodec;`)()(transport.ZDICT);
   const probe = [docRaw(), expected, bigFrame("50:1", 2, 30), transport.HARD_TEXT].map((v) => canonicalJson(v));
   check("the codec as pasted into a script packs the same bytes as the module's", probe.every((t) => Buffer.compare(Buffer.from(pasted.pack(t)), Buffer.from(transport.codec.pack(t))) === 0));
-  const batchIds = Array.from({ length: pack.MAX_EXTRACT_FRAMES }, (_, i) => [`I${12000 + i}:${340000 + i};${5000 + i}:${60000 + i}`, 123456, "0123456789abcdef"]);
+  const batchIds = Array.from({ length: pack.MAX_EXTRACT_FRAMES }, (_, i) => [`I${12000 + i}:${340000 + i};${5000 + i}:${60000 + i}`, 123456, "0123456789abcdef", transport.DICT_ID]);
   const bigScript = pack.extractScript({ file: FILE, nonce: "000000000000", pages: ["9990:1", "9991:1", "9992:1"], ids: batchIds });
   check("an extract script for the largest batch stays under the script budget (and use_figma's 50,000)", bigScript.length < pack.SCRIPT_BUDGET, bigScript.length);
 
@@ -1043,6 +1043,60 @@ async function selfTest() {
     "a script whose dictionary was not copied exactly packs without it, says so, and still stores the frame at its live hash",
     at300 > goodScript.indexOf("zdict:") && okRes.dz === transport.DICT_ID && slipRes.dz === transport.DICT_NONE && slipRes.segs[0].Z > okRes.segs[0].Z && r16.stored.length === 1 && v16 && v16.recomputed === okRes.segs[0].H,
     [okRes.dz, slipRes.dz, okRes.segs[0].Z, slipRes.segs[0] && slipRes.segs[0].Z, r16],
+  );
+
+  // The same slip inside a transfer that takes several calls, in the first
+  // script or in a continuation. Each call is planned from the state the last
+  // one left; only the slipped call's script differs from what was planned.
+  const slipped = (text) => {
+    const at = text.indexOf("Coal 300");
+    return text.slice(0, at) + "Coal 3O0" + text.slice(at + 8);
+  };
+  const slipTransfer = async (name, slipAt) => {
+    const c = mkctx(name, { frames: [{ key: `${FILE}:30:1`, fileKey: FILE, node: "30:1", pageId: "1:1", order: 0 }] });
+    Object.assign(c, { split: split.split, minCut: split.minCut, maxCalls: 40 });
+    const m = mockFigma(big);
+    const log = [];
+    for (let n = 0; n < 30; n++) {
+      const plan = await planExtractScript(c, { budget: tiny });
+      if (!plan.plan) break;
+      const res = await runScript(n === slipAt ? slipped(plan.text) : plan.text, m.figma);
+      const got = extractIngest(c, res);
+      const s = (res.segs || [])[0] || {};
+      log.push({ job: plan.plan.dz, id: plan.plan.ids[0] || [], dz: res.dz, o: s.o, refused: got.refused.length, have: got.partial[0] ? got.partial[0].have : null, stored: got.stored.length });
+    }
+    const v = verifyStored(c, `${FILE}:30:1`);
+    return { log, stored: !!v && v.index === v.recomputed && v.recomputed === hb2.frames["30:1"] };
+  };
+  const D1 = transport.DICT_ID;
+  const D0 = transport.DICT_NONE;
+  const t17 = await slipTransfer("dict-slip-first", 0);
+  const [a17, b17] = t17.log;
+  check(
+    "a slip in the first script of a multi-call transfer: the next call goes on without the dictionary from where it stopped, no slice is refused, and the frame is stored at its live hash",
+    t17.log.length > 2 && a17.dz === D0 && a17.have > 0 && b17.job === D0 && b17.id[1] === a17.have && b17.id[3] === D0 && b17.dz === D0 && b17.o === a17.have && t17.log.every((l) => l.refused === 0 && l.dz === D0) && t17.stored,
+    t17,
+  );
+  const t18 = await slipTransfer("dict-slip-continuation", 1);
+  const [a18, b18, c18] = t18.log;
+  check(
+    "a slip in a continuation of a transfer made with the dictionary: that call starts the frame over without it, the ingest takes that as a new transfer, no slice is refused, and the frame is stored at its live hash",
+    t18.log.length > 2 && a18.dz === D1 && a18.have > 0 && b18.job === D1 && b18.id[1] === a18.have && b18.id[3] === D1 && b18.dz === D0 && b18.o === 0 && b18.have > 0 && c18.job === D0 && c18.o === b18.have && t18.log.every((l) => l.refused === 0) && t18.stored,
+    t18,
+  );
+  const held = (dz, got) => ({ enc: transport.ENC, dz, H: "0123456789abcdef", T: 9, R: 900, Z: 400, zh: "fedcba9876543210", pg: "✅ Test", n: "x", w: 1, h: 1, z: "", got, calls: 1 });
+  const frames19 = ["81:1", "82:1", "83:1"].map((node, order) => ({ key: `${FILE}:${node}`, fileKey: FILE, node, pageId: "1:1", order }));
+  const plan19 = pack.planExtract({ frames: frames19, index: { frames: {} }, state: { partial: { [`${FILE}:81:1`]: held(D0, 120), [`${FILE}:82:1`]: held(D1, 150) } }, rank: pack.rankOf([]) });
+  check(
+    "a batch packs with the dictionary of the first transfer it continues, names it in that id, and leaves a transfer under the other dictionary for a later call",
+    plan19.dz === D0 && canonicalJson(plan19.ids) === canonicalJson([["81:1", 120, "0123456789abcdef", D0], ["83:1", 0, null, null]]),
+    plan19,
+  );
+  const foreign19 = ["00000000", undefined].map((dz) => pack.planExtract({ frames: frames19.slice(0, 1), index: { frames: {} }, state: { partial: { [`${FILE}:81:1`]: held(dz, 120) } }, rank: pack.rankOf([]) }));
+  check(
+    "a transfer made with a dictionary this checkout cannot pack with, or that names none, is planned again from 0 with this checkout's",
+    foreign19.every((p) => p && p.dz === D1 && canonicalJson(p.ids) === canonicalJson([["81:1", 0, null, null]])),
+    foreign19,
   );
 
   const stressDoc = docRaw();

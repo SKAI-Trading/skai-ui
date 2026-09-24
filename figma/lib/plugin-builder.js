@@ -457,19 +457,22 @@ export async function hashDriver(figma, lib, B, job) {
  * end up in `rest` are reserved before each frame. A frame that does not fit
  * whole goes out as a slice, and ends the result, when it is first or when at
  * least a quarter of the budget is still free; otherwise it waits in `rest`.
- * job.ids is [[id, byteOffset, expectedHash]]: a continuation whose frame hash
- * has changed since the earlier slices restarts at 0. `ms` is [page loading,
- * the rest, packing].
+ * job.ids is [[id, byteOffset, expectedHash, transferDictionary]]: a
+ * continuation restarts at 0 when its frame hash has changed since the earlier
+ * slices, or when this call does not pack with the dictionary its transfer
+ * started with. `ms` is [page loading, the rest, packing].
  */
 export async function extractDriver(figma, lib, B, job) {
   const t0 = Date.now();
   const loaded = new Set();
   await loadPages(figma, job.pages, loaded);
   const t1 = Date.now();
-  // A dictionary that does not hash to the id the job names was not copied
-  // exactly: pack without one and say so, rather than send a stream the
-  // receiving side would decode with different bytes.
+  // The job names the dictionary to pack with. This copy is used only when it
+  // hashes to that id; otherwise (the copy was not pasted exactly, or the job
+  // names none) the call packs without one and says so, rather than send a
+  // stream the receiving side would decode with different bytes.
   const dictOk = lib.fnv1a64(lib.zdict).slice(0, 8) === job.dz;
+  const dz = dictOk ? job.dz : lib.fnv1a64('').slice(0, 8);
   const zc = lib.zcodec(dictOk ? lib.zdict : '');
   const LINE = job.line;
   const size = (v) => zc.u8len(JSON.stringify(v));
@@ -488,7 +491,7 @@ export async function extractDriver(figma, lib, B, job) {
     const k = Math.ceil(c / LINE);
     return c + 14 * k - 2;
   };
-  const out = { v: 1, kind: 'extract', file: job.file, nonce: job.nonce, enc: job.enc, dz: dictOk ? job.dz : lib.fnv1a64('').slice(0, 8), segs: [], missing: [], errors: {}, rest: [] };
+  const out = { v: 1, kind: 'extract', file: job.file, nonce: job.nonce, enc: job.enc, dz, segs: [], missing: [], errors: {}, rest: [] };
   let used = size(out) + 60;
   const after = [0];
   for (let k = job.ids.length - 1; k >= 0; k--) after.unshift(after[0] + size(job.ids[k][0]) + 1);
@@ -499,6 +502,10 @@ export async function extractDriver(figma, lib, B, job) {
     const id = job.ids[i][0];
     let off = job.ids[i][1] || 0;
     const want = job.ids[i][2] || null;
+    // Bytes of this call's stream cannot continue a stream packed with another
+    // dictionary, so the frame starts over, and the ingest takes it as a new
+    // transfer instead of refusing the slice.
+    if (off && job.ids[i][3] !== dz) off = 0;
     let rec;
     try {
       const n = await figma.getNodeByIdAsync(id);

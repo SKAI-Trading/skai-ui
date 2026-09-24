@@ -94,33 +94,51 @@ The call is already counted, so a second ingest of the same nonce writes `calls:
 In the z1 format a frame part-way through a transfer is recorded as:
 
 ```jsonc
-"partial": { "<frame key>": { "enc": "z1", "H": "<frame hash>", "T": 1645, "R": 347000, "Z": 36000, "zh": "<...>",
-                              "pg": "...", "n": "...", "w": 1440, "h": 900,
+"partial": { "<frame key>": { "enc": "z1", "dz": "<DICT_ID or DICT_NONE>", "H": "<frame hash>", "T": 1645, "R": 347000,
+                              "Z": 36000, "zh": "<...>", "pg": "...", "n": "...", "w": 1440, "h": 900,
                               "z": "<the base64 received so far>", "got": 13002, "calls": 1, "oversize": false } }
 ```
 
-`got` is the next byte offset to ask for. The next `extract-script` continues the transfer first. When the live frame
-has changed, its hash no longer matches `H`: the script restarts at byte 0 in the same call, and the ingest replaces
-the transfer. A transfer projected to need more than 12 calls is parked as `oversize` and planned again only when
-named with `--nodes`. That projection is exact after the first slice, because `Z` is known.
+`got` is the next byte offset to ask for, and `dz` the dictionary the stream was packed with. The next `extract-script`
+continues the transfer first; its id in the job is `[node, got, H, dz]`. When the live frame has changed, its hash no
+longer matches `H`: the script restarts at byte 0 in the same call, and the ingest replaces the transfer. The same
+happens when the call cannot pack with the transfer's dictionary (see The dictionary). A transfer projected to need
+more than 12 calls is parked as `oversize` and planned again only when named with `--nodes`. That projection is exact
+after the first slice, because `Z` is known.
 
-A partial left in the older plain format (`x`, an item list, no `enc`) cannot be joined to a packed stream. Its frame
-is planned again from 0 and is no longer treated as parked.
+A partial left in the older plain format (`x`, an item list, no `enc`) cannot be joined to a packed stream, and one
+packed with a dictionary this checkout does not have cannot be continued by a script made here. Either one's frame is
+planned again from 0 and is no longer treated as parked.
 
 ## The dictionary
 
 `ZDICT` (10,156 bytes) holds the token names in `tokens/` and one real item of each common node shape, taken from
 the first live specs. It also holds a few templates for kinds those specs lack (line, group, gradient, image, shadow,
 blur, component, text case). It is part of the format: `DICT_ID` is the first 8 hex digits of its FNV-1a 64, the
-script sends it back as `dz`, and a result made with another dictionary is refused. Changing the dictionary is safe
-whenever no transfer is part-way.
+script sends it back as `dz`, and a result made with another dictionary is refused. Changing the dictionary costs only
+the transfers part-way at the time: each is planned again from 0.
 
 A script is pasted into use_figma by hand, and the dictionary is about a quarter of it. So the script first checks that
 its own copy of the dictionary hashes to the `dz` it was given. If it does not, the copy was not exact: the script
 packs with no dictionary and returns `dz` `cbf29ce4` (`DICT_NONE`, the id of the empty text), and the ingest decodes
-that just as well. A slip in the dictionary costs some ratio, not the call. A transfer keeps the dictionary it
-started with, and a slice packed with the other one is refused. Held-out, a dictionary built from some specs made the other specs' streams 17 to 26%
-smaller. It matters most for the small frames that fit in one call, and hardly at all past a stream's first 32 KB.
+that just as well.
+
+A transfer keeps the dictionary it started with, because a slice of one stream cannot continue another; the ingest
+refuses a slice whose `dz` is not its transfer's. A call packs with one dictionary: the job's `dz` is that of the first
+transfer the batch continues, or this checkout's when it continues none. A continuation under the other dictionary
+waits for a later call. What a slip costs:
+
+- In a frame that fits in one call: some ratio.
+- In the first script of a transfer that takes several calls: the transfer starts without the dictionary, and the
+  scripts after it are made with `dz` `DICT_NONE`, so they pack without it too. Some ratio.
+- In a continuation of a transfer that has the dictionary: the call cannot continue it, so the driver starts that frame
+  over from byte 0 in the same call, and the ingest takes the slice as a new transfer without the dictionary. The call
+  carries its full share, but the bytes the transfer already held are lost, which is the calls it had already taken.
+  Keeping them and skipping the frame instead would waste the call, and would stall the transfer for as long as the
+  slip repeated.
+
+Held-out, a dictionary built from some specs made the other specs' streams 17 to 26% smaller. It matters most for the
+small frames that fit in one call, and hardly at all past a stream's first 32 KB.
 
 ## Numbers
 
@@ -163,6 +181,9 @@ checks too, then the whole path through the mocked Figma:
 - A 1,600-node board with CJK and emoji names, long text and a 70-deep chain arrives over several calls, every result
   at most 18,000 bytes, and is stored at its live hash.
 - An old plain partial restarts, and a foreign dictionary, a mismatched continuation and a ragged slice are refused.
+- A dictionary slip in the first script of a transfer over several calls, and one in a continuation, each end with the
+  frame stored at its live hash and no slice refused. A batch continues transfers of one dictionary only, and a
+  transfer under a dictionary this checkout lacks is planned from 0.
 
 The mutations that were planted and killed are listed in the lane log. Worth trying if you want to break it:
 

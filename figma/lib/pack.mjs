@@ -19,7 +19,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { canonicalJson, fnv1a64 } from "./canonical.mjs";
 import { specBuilder, loadPages, hashDriver, extractDriver } from "./plugin-builder.js";
-import { zcodec, ZDICT, DICT_ID, ENC, LINE } from "./transport.mjs";
+import { zcodec, ZDICT, DICT_ID, DICT_NONE, ENC, LINE } from "./transport.mjs";
 
 export const RESULT_BUDGET = 16000;
 /** Bytes an extract result may take: 2,480 under the cut, for a margin. */
@@ -67,7 +67,11 @@ export function hashScript(job) {
   return `${HASH_LIB}\n${HASH_DRIVER}\nreturn await hashDriver(figma, lib, specBuilder(figma, lib, ${builderOpt(job)}), ${JSON.stringify(j)});`;
 }
 
-/** An extract script. job.budget is the returned JSON's byte limit (default ZRESULT_BUDGET). */
+/**
+ * An extract script. job.budget is the returned JSON's byte limit (default
+ * ZRESULT_BUDGET). job.dz is the dictionary the call packs with: DICT_ID, or
+ * DICT_NONE to go on with a transfer that started without it.
+ */
 export function extractScript(job) {
   const j = {
     file: job.file,
@@ -77,7 +81,7 @@ export function extractScript(job) {
     budget: job.budget || ZRESULT_BUDGET,
     ms: job.ms || EXTRACT_MS,
     enc: ENC,
-    dz: DICT_ID,
+    dz: job.dz || DICT_ID,
     line: job.line || LINE,
   };
   return `${EXTRACT_LIB}\n${EXTRACT_DRIVER}\nreturn await extractDriver(figma, lib, specBuilder(figma, lib, ${builderOpt(job)}), ${JSON.stringify(j)});`;
@@ -178,11 +182,13 @@ export function planHashGroups(frames, { resultBudget = RESULT_BUDGET, scriptBud
 export const estimateBytes = (entry) => Math.ceil((entry && entry.bytes ? entry.bytes : DEFAULT_FRAME_EST) * PACKED_EST);
 
 /**
- * A transfer this checkout can continue: one made in the current transport.
- * A partial from an older format (the plain item slices before z1) cannot be
- * joined to a packed stream, so its frame is planned again from 0.
+ * A transfer this checkout can continue: one made in the current transport,
+ * with a dictionary a script from here can pack with (this checkout's, or
+ * none). A partial from an older format (the plain item slices before z1) or
+ * an older dictionary cannot be joined to a stream packed now, so its frame
+ * is planned again from 0.
  */
-export const continuable = (p) => !!p && p.enc === ENC;
+export const continuable = (p) => !!p && p.enc === ENC && (p.dz === DICT_ID || p.dz === DICT_NONE);
 
 /**
  * Choose the next extract batch for ONE file (a use_figma call reads one file).
@@ -190,6 +196,11 @@ export const continuable = (p) => !!p && p.enc === ENC;
  * (worklist packets first), then registry order. The batch is overfilled to
  * about twice the result budget, because the driver packs exactly and returns
  * whatever does not fit in `rest`.
+ *
+ * A call packs with one dictionary, `dz`: that of the first transfer the batch
+ * continues, else this checkout's. A transfer keeps the dictionary it started
+ * with, so a continuation under the other one waits for a later call, and each
+ * continuation names its dictionary in its id for the driver to check.
  */
 export function planExtract({ frames, index, state, rank, file = null, nodes = null, limit = MAX_EXTRACT_FRAMES, budget = ZRESULT_BUDGET }) {
   const idx = index?.frames || {};
@@ -214,13 +225,16 @@ export function planExtract({ frames, index, state, rank, file = null, nodes = n
   const fileKey = file || pool[0].fileKey;
   const pick = [];
   let est = 0;
+  let dz = null;
   for (const f of pool) {
     if (f.fileKey !== fileKey) continue;
     if (pick.length >= limit || (pick.length && est >= budget * 2)) break;
     const p = continuable(partial[f.key]) ? partial[f.key] : null;
-    pick.push({ f, off: p ? p.got : 0, want: p ? p.H : null });
+    if (!pick.length) dz = p ? p.dz : DICT_ID;
+    if (p && p.dz !== dz) continue;
+    pick.push({ f, off: p ? p.got : 0, want: p ? p.H : null, dz: p ? p.dz : null });
     est += p ? Math.min(budget, p.Z - p.got + 400) : estimateBytes(idx[f.key]);
   }
   const pages = [...new Set(pick.map((p) => p.f.pageId).filter(Boolean))];
-  return { file: fileKey, pages, ids: pick.map((p) => [p.f.node, p.off, p.want]), keys: pick.map((p) => p.f.key) };
+  return { file: fileKey, pages, dz, ids: pick.map((p) => [p.f.node, p.off, p.want, p.dz]), keys: pick.map((p) => p.f.key) };
 }
