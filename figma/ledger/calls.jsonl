@@ -15,3 +15,4 @@
 {"at":"2026-09-24T19:29:58.203Z","day":"2026-09-24","kind":"extract","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":1,"nonce":"1aa1db0fff22","ok":true}
 {"at":"2026-09-24T19:34:42.732Z","day":"2026-09-24","kind":"extract","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":1,"nonce":"102ad67e46c4","ok":true}
 {"at":"2026-09-24T19:37:37.830Z","day":"2026-09-24","kind":"hash","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":1,"nonce":"03fa4c0405ca","ok":true}
+{"at":"2026-09-24T21:49:04.958Z","day":"2026-09-24","kind":"probe","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":0,"ok":false,"note":"runtime probe: clientStorage.getAsync unsupported under use_figma; AsyncFunction and eval work"}
