@@ -1,0 +1,102 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1580:796",
+ "page": "🧩 Design System",
+ "name": "logos/skai-short",
+ "hash": "9e4aa89010f57a87",
+ "syncedAt": "2026-09-24T22:55:08.671Z",
+ "tree":
+  {"id":"1580:796","t":"COMPONENT_SET","n":"logos/skai-short","b":[0,0,420,256],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"1580:795","t":"COMPONENT","n":"Mode=White, Size=Small","b":[241,212,58,24],"l":{"g":10,"m":"V","sy":"HUG"},"c":[
+    {"id":"1580:774","t":"GROUP","n":"logo","b":[0,0,57.5,24],"c":[
+     {"id":"1580:775","t":"GROUP","n":"icon","b":[0,0,21.5,24],"c":[
+      {"id":"1580:776","t":"VECTOR","n":"Vector","b":[0,0,17.5,15.5],"f":["Primary/Sky Blue 300"]},
+      {"id":"1580:777","t":"VECTOR","n":"Vector","b":[4.5,8.5,17.5,15.5],"f":["Primary/Sky Blue 300"]}
+     ]},
+     {"id":"1580:778","t":"GROUP","n":"logo-text","b":[27,4.5,31,12.5],"c":[
+      {"id":"1580:785","t":"VECTOR","n":"Vector","b":[0,0,10,12.5],"f":["Core/White"]},
+      {"id":"1580:786","t":"VECTOR","n":"Vector","b":[11,0,8.5,12],"f":["Core/White"]},
+      {"id":"1580:787","t":"VECTOR","n":"Vector","b":[19.5,3,8,9.5],"f":["Core/White"]},
+      {"id":"1580:788","t":"VECTOR","n":"Vector","b":[28.5,3.5,2,9],"f":["Core/White"]},
+      {"id":"1580:789","t":"VECTOR","n":"Vector","b":[28.5,0,2,2],"f":["Core/White"]}
+     ]}
+    ]}
+   ]},
+   {"id":"1580:794","t":"COMPONENT","n":"Mode=Black, Size=Small","b":[20,212,58,24],"l":{"g":10,"m":"V","sy":"HUG"},"c":[
+    {"id":"1580:723","t":"GROUP","n":"logo","b":[0,0,57.5,24],"c":[
+     {"id":"1580:724","t":"GROUP","n":"icon","b":[0,0,21.5,24],"c":[
+      {"id":"1580:725","t":"VECTOR","n":"Vector","b":[0,0,17.5,15.5],"f":["Primary/Sky Blue 300"]},
+      {"id":"1580:726","t":"VECTOR","n":"Vector","b":[4.5,8.5,17.5,15.5],"f":["Primary/Sky Blue 300"]}
+     ]},
+     {"id":"1580:727","t":"GROUP","n":"logo-text","b":[27,4.5,31,12.5],"c":[
+      {"id":"1580:734","t":"VECTOR","n":"Vector","b":[0,0,10,12.5],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:735","t":"VECTOR","n":"Vector","b":[11,0,8.5,12],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:736","t":"VECTOR","n":"Vector","b":[19.5,3,8,9.5],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:737","t":"VECTOR","n":"Vector","b":[28.5,3.5,2,9],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:738","t":"VECTOR","n":"Vector","b":[28.5,0,2,2],"f":["Primary/Green Coal 300"]}
+     ]}
+    ]}
+   ]},
+   {"id":"1580:793","t":"COMPONENT","n":"Mode=White, Size=Medium","b":[241,124,116,48],"l":{"g":10,"m":"V","sy":"HUG"},"c":[
+    {"id":"1580:757","t":"GROUP","n":"Skai logo - white","b":[0,0,115,48],"c":[
+     {"id":"1580:758","t":"GROUP","n":"icon","b":[0,0,43.5,48],"c":[
+      {"id":"1580:759","t":"VECTOR","n":"Vector","b":[0,0,35,31],"f":["Primary/Sky Blue 300"]},
+      {"id":"1580:760","t":"VECTOR","n":"Vector","b":[8.5,17,35,31],"f":["Primary/Sky Blue 300"]}
+     ]},
+     {"id":"1580:761","t":"GROUP","n":"logo-text","b":[53.5,9.5,61.5,25.5],"c":[
+      {"id":"1580:768","t":"VECTOR","n":"Vector","b":[0,0,19.5,25.5],"f":["Core/White"]},
+      {"id":"1580:769","t":"VECTOR","n":"Vector","b":[22,0.5,16.5,24.5],"f":["Core/White"]},
+      {"id":"1580:770","t":"VECTOR","n":"Vector","b":[38.5,6,16,19.5],"f":["Core/White"]},
+      {"id":"1580:771","t":"VECTOR","n":"Vector","b":[57.5,6.5,4,18.5],"f":["Core/White"]},
+      {"id":"1580:772","t":"VECTOR","n":"Vector","b":[57.5,0,4,4],"f":["Core/White"]}
+     ]}
+    ]}
+   ]},
+   {"id":"1580:791","t":"COMPONENT","n":"Mode=Black, Size=Medium","b":[20,124,116,48],"l":{"g":10,"m":"V","sy":"HUG"},"c":[
+    {"id":"1580:706","t":"GROUP","n":"Skai logo - white","b":[0,0,115,48],"c":[
+     {"id":"1580:707","t":"GROUP","n":"icon","b":[0,0,43.5,48],"c":[
+      {"id":"1580:708","t":"VECTOR","n":"Vector","b":[0,0,35,31],"f":["Primary/Sky Blue 300"]},
+      {"id":"1580:709","t":"VECTOR","n":"Vector","b":[8.5,17,35,31],"f":["Primary/Sky Blue 300"]}
+     ]},
+     {"id":"1580:710","t":"GROUP","n":"logo-text","b":[53.5,9.5,61.5,25.5],"c":[
+      {"id":"1580:717","t":"VECTOR","n":"Vector","b":[0,0,19.5,25.5],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:718","t":"VECTOR","n":"Vector","b":[22,0.5,16.5,24.5],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:719","t":"VECTOR","n":"Vector","b":[38.5,6,16,19.5],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:720","t":"VECTOR","n":"Vector","b":[57.5,6.5,4,18.5],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:721","t":"VECTOR","n":"Vector","b":[57.5,0,4,4],"f":["Primary/Green Coal 300"]}
+     ]}
+    ]}
+   ]},
+   {"id":"1580:792","t":"COMPONENT","n":"Mode=White, Size=Large","b":[241,20,154,64],"l":{"g":10,"m":"V","sy":"HUG"},"c":[
+    {"id":"1580:740","t":"GROUP","n":"Skai logo - white","b":[0,0,153.5,64],"c":[
+     {"id":"1580:741","t":"GROUP","n":"icon","b":[0,0,58,64],"c":[
+      {"id":"1580:742","t":"VECTOR","n":"Vector","b":[0,0,46.5,41.5],"f":["Primary/Sky Blue 300"]},
+      {"id":"1580:743","t":"VECTOR","n":"Vector","b":[11.5,22.5,46.5,41.5],"f":["Primary/Sky Blue 300"]}
+     ]},
+     {"id":"1580:744","t":"GROUP","n":"logo-text","b":[71.5,12.5,82,34],"c":[
+      {"id":"1580:751","t":"VECTOR","n":"Vector","b":[0,0,26.5,34],"f":["Core/White"]},
+      {"id":"1580:752","t":"VECTOR","n":"Vector","b":[29.5,0.5,22,32.5],"f":["Core/White"]},
+      {"id":"1580:753","t":"VECTOR","n":"Vector","b":[51.5,8,21.5,26],"f":["Core/White"]},
+      {"id":"1580:754","t":"VECTOR","n":"Vector","b":[76.5,9,5.5,24.5],"f":["Core/White"]},
+      {"id":"1580:755","t":"VECTOR","n":"Vector","b":[76.5,0,5.5,5],"f":["Core/White"]}
+     ]}
+    ]}
+   ]},
+   {"id":"1580:790","t":"COMPONENT","n":"Mode=Black, Size=Large","b":[20,20,154,64],"l":{"g":10,"m":"V","sy":"HUG"},"c":[
+    {"id":"1580:689","t":"GROUP","n":"Skai logo - white","b":[0,0,153.5,64],"c":[
+     {"id":"1580:690","t":"GROUP","n":"icon","b":[0,0,58,64],"c":[
+      {"id":"1580:691","t":"VECTOR","n":"Vector","b":[0,0,46.5,41.5],"f":["Primary/Sky Blue 300"]},
+      {"id":"1580:692","t":"VECTOR","n":"Vector","b":[11.5,22.5,46.5,41.5],"f":["Primary/Sky Blue 300"]}
+     ]},
+     {"id":"1580:693","t":"GROUP","n":"logo-text","b":[71.5,12.5,82,34],"c":[
+      {"id":"1580:700","t":"VECTOR","n":"Vector","b":[0,0,26.5,34],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:701","t":"VECTOR","n":"Vector","b":[29.5,0.5,22,32.5],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:702","t":"VECTOR","n":"Vector","b":[51.5,8,21.5,26],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:703","t":"VECTOR","n":"Vector","b":[76.5,9,5.5,24.5],"f":["Primary/Green Coal 300"]},
+      {"id":"1580:704","t":"VECTOR","n":"Vector","b":[76.5,0,5.5,5],"f":["Primary/Green Coal 300"]}
+     ]}
+    ]}
+   ]}
+  ]}
+}

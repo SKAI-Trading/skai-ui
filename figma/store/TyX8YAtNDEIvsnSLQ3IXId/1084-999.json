@@ -1,0 +1,21 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "1084:999",
+ "page": "🧩 Design System",
+ "name": "images/circle",
+ "hash": "3cf51620fdb66650",
+ "syncedAt": "2026-09-24T22:55:08.671Z",
+ "tree":
+  {"id":"1084:999","t":"COMPONENT_SET","n":"images/circle","b":[0,0,174,78],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"1084:998","t":"COMPONENT","n":"Size=Large","b":[21,21,36,36],"c":[
+    {"id":"1084:991","t":"ELLIPSE","n":"circle","b":[0,0,36,36],"f":[{"img":"abc6d31a1b53f5442e415481ec1e732770717722","scale":"FILL"}],"s":["Primary/Green Coal 100"],"sw":"border-width/w-100","sa":"CENTER"}
+   ]},
+   {"id":"1084:997","t":"COMPONENT","n":"Size=Medium","b":[81,21,24,24],"c":[
+    {"id":"1084:994","t":"ELLIPSE","n":"circle","b":[0,0,24,24],"f":[{"img":"abc6d31a1b53f5442e415481ec1e732770717722","scale":"FILL"}],"s":["Primary/Green Coal 100"],"sw":"border-width/w-100","sa":"CENTER"}
+   ]},
+   {"id":"1084:996","t":"COMPONENT","n":"Size=Small","b":[129,21,24,24],"c":[
+    {"id":"1084:995","t":"ELLIPSE","n":"circle","b":[0,0,24,24],"f":[{"img":"abc6d31a1b53f5442e415481ec1e732770717722","scale":"FILL"}],"s":["Primary/Green Coal 100"],"sw":"border-width/w-100","sa":"CENTER"}
+   ]}
+  ]}
+}

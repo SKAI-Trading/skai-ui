@@ -1,0 +1,17 @@
+{
+ "v": 1,
+ "fileKey": "M6r9FEn042UWTQD1zvy6GM",
+ "node": "9948:25380",
+ "page": "✅ Limbo - Skai originals",
+ "name": "Skai > Play > Casino > Limbo (375 x 812px)",
+ "hash": "c735a9ac25dca970",
+ "syncedAt": "2026-09-24T22:55:28.895Z",
+ "tree":
+  {"id":"9948:25380","t":"FRAME","n":"Skai > Play > Casino > Limbo (375 x 812px)","b":[0,0,375,3137],"f":["Primary/Green Coal 300"],"clip":true,"c":[
+   {"id":"9948:25381","t":"ELLIPSE","n":"shine","b":[-387,3015,1147.5,1147.5],"vis":false,"op":0.19,"f":["Primary/Alien Green 300"],"fx":[{"r":173.64,"t":"LAYER_BLUR"}]},
+   {"id":"9948:25382","t":"ELLIPSE","n":"shine","b":[-387,3039,1147.5,1147.5],"vis":false,"op":0.19,"f":["Primary/Alien Green 300"],"fx":[{"r":173.64,"t":"LAYER_BLUR"}]},
+   {"ref":"11841:13232","h":"c5d42454fe5abe84"},
+   {"id":"9948:25739","t":"INSTANCE","n":"Header-mobile","b":[0,0,375,48],"l":{"ai":"CENTER","g":260,"jc":"SPACE_BETWEEN","m":"H","p":["s-1,5",19,"s-1,5",19],"sy":"HUG"},"f":["Primary/Green Coal 300"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"CENTER","ci":{"k":"ce60135346b120c535f0b8fb75b01b09cca03f9d","n":"Header-mobile"}},
+   {"id":"9948:25740","t":"INSTANCE","n":"Bottom-navigation-mobile","b":[0,3083,375,54],"l":{"ai":"CENTER","g":260,"jc":"SPACE_BETWEEN","m":"H","p":["s-1","s-1","s-1","s-1"],"sy":"HUG"},"f":["#001615@0.6"],"s":["Primary/Green Coal 100"],"sw":["border-width/w-100",0,0,0],"sa":"CENTER","fx":[{"r":20,"t":"BACKGROUND_BLUR"}],"ci":{"k":"14d913e5365b7429f3a0fb89e7b61e782fadfd1b","n":"Bottom-navigation-mobile"}}
+  ]}
+}

@@ -1,0 +1,21 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "778:216",
+ "page": "🧩 Design System",
+ "name": "logos/social",
+ "hash": "5f0b6b58c4cb06b3",
+ "syncedAt": "2026-09-24T22:55:08.671Z",
+ "tree":
+  {"id":"778:216","t":"COMPONENT_SET","n":"logos/social","b":[0,0,136,56],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"778:215","t":"COMPONENT","n":"Type=Discord","b":[20,20,16,16],"clip":true,"c":[
+    {"id":"778:202","t":"VECTOR","n":"icon","b":[1,2.5,14,10.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"778:214","t":"COMPONENT","n":"Type=Instagram","b":[60,20,16,16],"clip":true,"c":[
+    {"id":"778:204","t":"VECTOR","n":"icon","b":[1.5,1.5,13.5,13.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"778:213","t":"COMPONENT","n":"Type=X","b":[100,20,16,16],"clip":true,"c":[
+    {"id":"778:211","t":"VECTOR","n":"icon","b":[1,1.5,14,12.5],"f":["Primary/Green Coal 300"]}
+   ]}
+  ]}
+}

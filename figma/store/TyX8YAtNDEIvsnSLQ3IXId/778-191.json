@@ -1,0 +1,269 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "778:191",
+ "page": "🧩 Design System",
+ "name": "icons/action",
+ "hash": "cbca789d5075be8a",
+ "syncedAt": "2026-09-24T22:55:08.671Z",
+ "tree":
+  {"id":"778:191","t":"COMPONENT_SET","n":"icons/action","b":[0,0,976,168],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"778:190","t":"COMPONENT","n":"Size=16px, Type=Close","b":[20,20,16,16],"clip":true,"c":[
+    {"id":"778:199","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1.5,12.5,12.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"778:188","t":"COMPONENT","n":"Size=16px, Type=Hot","b":[60,20,16,16],"clip":true,"c":[
+    {"id":"778:163","t":"VECTOR","n":"icon","b":[2.5,1,11,14],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"778:187","t":"COMPONENT","n":"Size=16px, Type=Enter","b":[100,20,16,16],"clip":true,"c":[
+    {"id":"778:167","t":"VECTOR","n":"icon","b":[1.5,2.5,13.5,10.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"778:186","t":"COMPONENT","n":"Size=16px, Type=Back","b":[140,20,16,16],"clip":true,"c":[
+    {"id":"1696:1273","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,1.5,14.5,12.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"778:185","t":"COMPONENT","n":"Size=16px, Type=Forward","b":[196,20,16,16],"clip":true,"c":[
+    {"id":"1696:1294","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1.5,14.5,12.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"778:189","t":"COMPONENT","n":"Size=16px, Type=Check-enclosed","b":[260,20,16,16],"clip":true,"c":[
+    {"id":"778:177","t":"GROUP","n":"Group","b":[0,0,16,16],"c":[
+     {"id":"778:178","t":"VECTOR","n":"frame","b":[0,0,16,16],"f":["Primary/Green Coal 300"]},
+     {"id":"778:179","t":"VECTOR","n":"icon","b":[4.5,5.5,7,5.5],"s":["Core/White"],"sw":0.89,"sa":"CENTER"}
+    ]}
+   ]},
+   {"id":"778:184","t":"COMPONENT","n":"Size=16px, Type=Copy","b":[220,20,16,16],"clip":true,"c":[
+    {"id":"976:1137","t":"VECTOR","n":"icon","b":[1.5,1.5,13,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"786:183","t":"COMPONENT","n":"Size=16px, Type=Dot","b":[300,20,16,16],"clip":true,"c":[
+    {"id":"786:188","t":"ELLIPSE","n":"dot","b":[5,5,6,6],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"801:1260","t":"COMPONENT","n":"Size=16px, Type=Loading","b":[340,20,16,16],"clip":true,"c":[
+    {"id":"801:1275","t":"VECTOR","n":"icon","b":[2,2,12,12],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1081:402","t":"COMPONENT","n":"Size=16px, Type=Arrow-down","b":[380,20,16,16],"clip":true,"c":[
+    {"id":"1081:406","t":"VECTOR","n":"icon","b":[4,6,8,4],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1083:402","t":"COMPONENT","n":"Size=16px, Type=Search","b":[420,20,16,16],"clip":true,"c":[
+    {"id":"1083:406","t":"VECTOR","n":"icon","b":[2,2,12,12],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1084:398","t":"COMPONENT","n":"Size=16px, Type=Notification","b":[460,20,16,16],"clip":true,"c":[
+    {"id":"1084:406","t":"VECTOR","n":"icon","b":[2,0,12,15.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1224:1005","t":"COMPONENT","n":"Size=16px, Type=Information","b":[500,20,16,16],"clip":true,"c":[
+    {"id":"1224:1009","t":"VECTOR","n":"icon","b":[1.5,1.5,13.5,13.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1345:4085","t":"COMPONENT","n":"Size=16px, Type=Download","b":[540,20,16,16],"clip":true,"c":[
+    {"id":"1345:4097","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1,13,13.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1362:1786","t":"COMPONENT","n":"Size=16px, Type=Arrow-up","b":[580,20,16,16],"clip":true,"c":[
+    {"id":"1362:1797","t":"VECTOR","n":"icon","b":[4,10,8,4],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1439:1814","t":"COMPONENT","n":"Size=16px, Type=Compose","b":[620,20,16,16],"clip":true,"c":[
+    {"id":"1440:1830","t":"VECTOR","n":"icon","b":[2,2,12,12],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1439:1818","t":"COMPONENT","n":"Size=16px, Type=Whale","b":[660,20,16,16],"clip":true,"c":[
+    {"id":"1440:1836","t":"BOOLEAN_OPERATION","n":"icon","b":[1,3,13,11],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1439:1822","t":"COMPONENT","n":"Size=16px, Type=Agent","b":[700,20,16,16],"clip":true,"c":[
+    {"id":"1440:1844","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,14,14],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1439:1826","t":"COMPONENT","n":"Size=16px, Type=Chart","b":[740,20,16,16],"clip":true,"c":[
+    {"id":"1440:1843","t":"BOOLEAN_OPERATION","n":"icon","b":[2.5,0.5,11,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1442:1845","t":"COMPONENT","n":"Size=16px, Type=Add","b":[780,20,16,16],"clip":true,"c":[
+    {"id":"1442:1846","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,14,14],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1442:1849","t":"COMPONENT","n":"Size=16px, Type=Voice","b":[820,20,16,16],"clip":true,"c":[
+    {"id":"1442:1850","t":"BOOLEAN_OPERATION","n":"icon","b":[2.5,0.5,11,14.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1448:585","t":"COMPONENT","n":"Size=16px, Type=More","b":[860,20,16,16],"clip":true,"c":[
+    {"id":"1448:586","t":"BOOLEAN_OPERATION","n":"icon","b":[3,3,10,10],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1452:1802","t":"COMPONENT","n":"Size=16px, Type=Tridot","b":[900,20,16,16],"clip":true,"c":[
+    {"id":"1452:1803","t":"BOOLEAN_OPERATION","n":"icon","b":[2,7,12,2],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1457:1820","t":"COMPONENT","n":"Size=16px, Type=Share","b":[940,20,16,16],"clip":true,"c":[
+    {"id":"1457:1836","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,0.5,13,14],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1457:1840","t":"COMPONENT","n":"Size=16px, Type=Like","b":[20,60,16,16],"clip":true,"c":[
+    {"id":"1457:1844","t":"VECTOR","n":"icon","b":[2,2.5,12,11.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1457:1846","t":"COMPONENT","n":"Size=16px, Type=Dislike","b":[60,60,16,16],"clip":true,"c":[
+    {"id":"1457:1850","t":"VECTOR","n":"icon","b":[2,3,12,11.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1457:1852","t":"COMPONENT","n":"Size=16px, Type=Rerun","b":[100,60,16,16],"clip":true,"c":[
+    {"id":"1457:1866","t":"BOOLEAN_OPERATION","n":"Union","b":[2.5,1.5,11,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1457:1856","t":"COMPONENT","n":"Size=16px, Type=Favorite","b":[140,60,16,16],"clip":true,"c":[
+    {"id":"1457:1867","t":"VECTOR","n":"icon","b":[2,2,12.5,11.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1457:1860","t":"COMPONENT","n":"Size=16px, Type=Link out","b":[180,60,16,16],"clip":true,"c":[
+    {"id":"1457:1871","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1.5,13,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1458:1872","t":"COMPONENT","n":"Size=16px, Type=Attachment","b":[220,60,16,16],"clip":true,"c":[
+    {"id":"1458:1873","t":"BOOLEAN_OPERATION","n":"icon","b":[4.5,1.5,7.5,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1470:585","t":"COMPONENT","n":"Size=16px, Type=Delete","b":[260,60,16,16],"clip":true,"c":[
+    {"id":"1470:586","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1,13,14.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1470:589","t":"COMPONENT","n":"Size=16px, Type=Left Chevron","b":[300,60,16,16],"clip":true,"c":[
+    {"id":"1470:590","t":"BOOLEAN_OPERATION","n":"icon","b":[4,1.5,7,12.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1470:593","t":"COMPONENT","n":"Size=16px, Type=Right Chevron","b":[340,60,16,16],"clip":true,"c":[
+    {"id":"1471:1169","t":"BOOLEAN_OPERATION","n":"icon","b":[4.5,1.5,7,12.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1471:1172","t":"COMPONENT","n":"Size=16px, Type=Edit","b":[380,60,16,16],"clip":true,"c":[
+    {"id":"1471:1173","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1.5,13,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1472:1180","t":"COMPONENT","n":"Size=16px, Type=Portfolio","b":[420,60,16,16],"clip":true,"c":[
+    {"id":"1472:1181","t":"BOOLEAN_OPERATION","n":"icon","b":[1,2,14,12],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1559:973","t":"COMPONENT","n":"Size=16px, Type=Gift","b":[460,60,16,16],"clip":true,"c":[
+    {"id":"1559:1562","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,14,14],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1559:977","t":"COMPONENT","n":"Size=16px, Type=Dashboard","b":[500,60,16,16],"clip":true,"c":[
+    {"id":"1559:1565","t":"BOOLEAN_OPERATION","n":"icon","b":[2,2,12,12],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1559:981","t":"COMPONENT","n":"Size=16px, Type=Activity","b":[540,60,16,16],"clip":true,"c":[
+    {"id":"1559:1568","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,1.5,15,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1559:1569","t":"COMPONENT","n":"Size=16px, Type=Trend","b":[580,60,16,16],"clip":true,"c":[
+    {"id":"1559:1578","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,3.5,15,9],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1574:1827","t":"COMPONENT","n":"Size=16px, Type=Now","b":[620,60,16,16],"clip":true,"c":[
+    {"id":"1574:1833","t":"VECTOR","n":"Signal","b":[2.5,2.5,10.5,10.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1594:2367","t":"COMPONENT","n":"Size=16px, Type=Drag","b":[660,60,16,16],"clip":true,"c":[
+    {"id":"1595:2372","t":"BOOLEAN_OPERATION","n":"icon","b":[5,3.5,5.5,9],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1600:2381","t":"COMPONENT","n":"Size=16px, Type=Filter","b":[700,60,16,16],"clip":true,"c":[
+    {"id":"1600:2412","t":"BOOLEAN_OPERATION","n":"icon","b":[2,1.5,12.5,12.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1600:2385","t":"COMPONENT","n":"Size=16px, Type=Alert On","b":[740,60,16,16],"clip":true,"c":[
+    {"id":"1601:2445","t":"BOOLEAN_OPERATION","n":"icon","b":[1,3,13.5,10.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1600:2389","t":"COMPONENT","n":"Size=16px, Type=Alert Off","b":[780,60,16,16],"clip":true,"c":[
+    {"id":"1601:2450","t":"BOOLEAN_OPERATION","n":"icon","b":[1,3,14,10],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1600:2401","t":"COMPONENT","n":"Size=16px, Type=Sniper","b":[820,60,16,16],"clip":true,"c":[
+    {"id":"1603:2464","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1601:2455","t":"COMPONENT","n":"Size=16px, Type=Sell","b":[860,60,16,16],"clip":true,"c":[
+    {"id":"1603:2469","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1603:2484","t":"COMPONENT","n":"Size=16px, Type=Hotkeys","b":[900,60,16,16],"clip":true,"c":[
+    {"id":"1603:2496","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1.5,13.5,13.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1623:567","t":"COMPONENT","n":"Size=16px, Type=Resume","b":[940,60,16,16],"clip":true,"c":[
+    {"id":"1623:583","t":"BOOLEAN_OPERATION","n":"icon","b":[2,1,12.5,14],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1628:1587","t":"COMPONENT","n":"Size=16px, Type=Chips","b":[20,96,16,16],"clip":true,"c":[
+    {"id":"1628:1609","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1628:1621","t":"COMPONENT","n":"Size=16px, Type=Sports","b":[60,96,16,16],"clip":true,"c":[
+    {"id":"1628:1636","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1631:1641","t":"COMPONENT","n":"Size=16px, Type=Percentage","b":[100,96,16,16],"clip":true,"c":[
+    {"id":"1631:1655","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1631:1645","t":"COMPONENT","n":"Size=16px, Type=Bookie","b":[140,96,16,16],"clip":true,"c":[
+    {"id":"1631:1666","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,1.5,15,13.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1667:1739","t":"COMPONENT","n":"Size=16px, Type=Smiley","b":[180,96,16,16],"clip":true,"c":[
+    {"id":"1667:1745","t":"VECTOR","n":"icon","b":[1,1,14,14],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1670:569","t":"COMPONENT","n":"Size=16px, Type=Home","b":[220,96,16,16],"clip":true,"c":[
+    {"id":"1670:1114","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1.5,13,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1679:637","t":"COMPONENT","n":"Size=16px, Type=User","b":[260,96,16,16],"clip":true,"c":[
+    {"id":"1680:1179","t":"BOOLEAN_OPERATION","n":"icon","b":[2,2,12,12],"s":["Primary/Green Coal 300"],"sw":"border-width/w-100","sa":"CENTER"}
+   ]},
+   {"id":"1688:1182","t":"COMPONENT","n":"Size=16px, Type=Alarm","b":[300,96,16,16],"clip":true,"c":[
+    {"id":"1688:1207","t":"VECTOR","n":"icon","b":[2,2,12.5,12],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1696:1266","t":"COMPONENT","n":"Size=16px, Type=Up","b":[340,96,16,16],"clip":true,"c":[
+    {"id":"1696:1272","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,0.5,12.5,14.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1698:1154","t":"COMPONENT","n":"Size=16px, Type=Pin","b":[380,96,16,16],"clip":true,"c":[
+    {"id":"1698:1162","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1,13.5,13.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1700:1163","t":"COMPONENT","n":"Size=16px, Type=Recent","b":[420,96,16,16],"clip":true,"c":[
+    {"id":"1701:1179","t":"VECTOR","n":"icon","b":[1,1,14,14],"s":["Primary/Green Coal 300"],"sw":"border-width/w-100","sa":"CENTER"},
+    {"id":"1701:1181","t":"VECTOR","n":"Vector 384","b":[4,4,4,5],"s":["Primary/Green Coal 300"],"sw":1,"sa":"CENTER"}
+   ]},
+   {"id":"1700:1167","t":"COMPONENT","n":"Size=16px, Type=Dock","b":[460,96,16,16],"clip":true,"c":[
+    {"id":"1701:1187","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,2.5,15,11],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1700:1171","t":"COMPONENT","n":"Size=16px, Type=Brain","b":[500,96,16,16],"clip":true,"c":[
+    {"id":"1701:1204","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,14.5,14.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1700:1175","t":"COMPONENT","n":"Size=16px, Type=Agentic","b":[540,96,16,16],"clip":true,"c":[
+    {"id":"1701:1215","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1.5,13,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1702:1216","t":"COMPONENT","n":"Size=16px, Type=Lock","b":[580,96,16,16],"clip":true,"c":[
+    {"id":"1702:1243","t":"BOOLEAN_OPERATION","n":"icon","b":[3,1.5,10.5,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1702:1220","t":"COMPONENT","n":"Size=16px, Type=Analysis","b":[620,96,16,16],"clip":true,"c":[
+    {"id":"1702:1246","t":"RECTANGLE","n":"icon","b":[2,2,12,12],"r":1.5,"s":["Primary/Green Coal 300"],"sw":"border-width/w-100","sa":"CENTER"},
+    {"id":"1702:1248","t":"VECTOR","n":"Vector 386","b":[2,4,12,8],"s":["Primary/Green Coal 300"],"sw":"border-width/w-100","sa":"CENTER"}
+   ]},
+   {"id":"1702:1224","t":"COMPONENT","n":"Size=16px, Type=Intel","b":[660,96,16,16],"clip":true,"c":[
+    {"id":"1702:1283","t":"BOOLEAN_OPERATION","n":"icon","b":[1.5,1,13.5,13.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1702:1228","t":"COMPONENT","n":"Size=16px, Type=Backtest","b":[700,96,16,16],"clip":true,"c":[
+    {"id":"1702:1284","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,1,14.5,14],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1702:1290","t":"COMPONENT","n":"Size=16px, Type=Master","b":[740,96,16,16],"clip":true,"c":[
+    {"id":"1702:1308","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,2.5,15,11],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1702:1294","t":"COMPONENT","n":"Size=16px, Type=Advisor","b":[780,96,16,16],"clip":true,"c":[
+    {"id":"1702:1324","t":"BOOLEAN_OPERATION","n":"icon","b":[2.5,1,12.5,14.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1705:1373","t":"COMPONENT","n":"Size=16px, Type=Visible","b":[820,96,16,16],"clip":true,"c":[
+    {"id":"1705:1385","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,3,15,10],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1705:1377","t":"COMPONENT","n":"Size=16px, Type=Invisible alternate","b":[860,96,16,16],"clip":true,"c":[
+    {"id":"1705:1389","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15.5,14.5],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1710:663","t":"COMPONENT","n":"Size=16px, Type=Archive","b":[900,96,16,16],"clip":true,"c":[
+    {"id":"1710:1235","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1.5,14.5,13],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1723:1728","t":"COMPONENT","n":"Size=16px, Type=Hamburger","b":[940,96,16,16],"clip":true,"c":[
+    {"id":"1723:1729","t":"BOOLEAN_OPERATION","n":"icon","b":[1,3.5,14,9],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1788:2004","t":"COMPONENT","n":"Size=16px, Type=Perps","b":[20,132,16,16],"clip":true,"c":[
+    {"id":"1788:2024","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1788:2008","t":"COMPONENT","n":"Size=16px, Type=Spot","b":[60,132,16,16],"clip":true,"c":[
+    {"id":"1788:2028","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1788:2012","t":"COMPONENT","n":"Size=16px, Type=Swaps","b":[100,132,16,16],"clip":true,"c":[
+    {"id":"1788:2033","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1788:2016","t":"COMPONENT","n":"Size=16px, Type=Trench","b":[140,132,16,16],"clip":true,"c":[
+    {"id":"1788:2037","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1788:2020","t":"COMPONENT","n":"Size=16px, Type=Launch","b":[180,132,16,16],"clip":true,"c":[
+    {"id":"1788:2041","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1943:1921","t":"COMPONENT","n":"Size=16px, Type=Infinity","b":[220,132,16,16],"clip":true,"c":[
+    {"id":"1943:1949","t":"BOOLEAN_OPERATION","n":"icon","b":[0,4.5,16,7],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1994:2210","t":"COMPONENT","n":"Size=16px, Type=Earn","b":[260,132,16,16],"clip":true,"c":[
+    {"id":"1994:2239","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1994:2214","t":"COMPONENT","n":"Size=16px, Type=Gauge voting","b":[300,132,16,16],"clip":true,"c":[
+    {"id":"1994:2244","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1994:2218","t":"COMPONENT","n":"Size=16px, Type=Yield vaults","b":[340,132,16,16],"clip":true,"c":[
+    {"id":"1994:2250","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1994:2222","t":"COMPONENT","n":"Size=16px, Type=Airdrop","b":[380,132,16,16],"clip":true,"c":[
+    {"id":"1994:2259","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1994:2226","t":"COMPONENT","n":"Size=16px, Type=DAO","b":[420,132,16,16],"clip":true,"c":[
+    {"id":"1994:2265","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]},
+   {"id":"1994:2230","t":"COMPONENT","n":"Size=16px, Type=Skaiscan","b":[460,132,16,16],"clip":true,"c":[
+    {"id":"1994:2273","t":"BOOLEAN_OPERATION","n":"icon","b":[0.5,0.5,15,15],"f":["Primary/Green Coal 300"]}
+   ]}
+  ]}
+}

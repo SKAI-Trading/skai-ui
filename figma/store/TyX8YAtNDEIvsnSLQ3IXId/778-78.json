@@ -1,0 +1,124 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "778:78",
+ "page": "🧩 Design System",
+ "name": "logos/others",
+ "hash": "04859584d2bab3d8",
+ "syncedAt": "2026-09-24T22:55:08.671Z",
+ "tree":
+  {"id":"778:78","t":"COMPONENT_SET","n":"logos/others","b":[0,0,184,176],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"778:77","t":"COMPONENT","n":"Brand=Metamask, Size=24px","b":[20,20,24,24],"c":[
+    {"id":"778:55","t":"RECTANGLE","n":"icon","b":[2.5,3,19,18],"f":[{"img":"44d4a37fad29d3e1025741f14fcb9eab7cec5d1e","scale":"CROP"}]}
+   ]},
+   {"id":"778:76","t":"COMPONENT","n":"Brand=Coinbase, Size=24px","b":[60,20,24,24],"c":[
+    {"id":"778:58","t":"GROUP","n":"icon","b":[1.5,2,20,20],"c":[
+     {"id":"778:59","t":"VECTOR","n":"Vector","b":[0,0,20,20],"f":["#0052FF"]},
+     {"id":"778:60","t":"VECTOR","n":"Vector","b":[5,5,10,10],"f":["Core/White"]}
+    ]}
+   ]},
+   {"id":"778:75","t":"COMPONENT","n":"Brand=WalletConnect, Size=24px","b":[100,20,24,24],"c":[
+    {"id":"778:63","t":"RECTANGLE","n":"icon","b":[2,2,20,20],"f":[{"img":"0eed94e6f313ff71711a6852b68c24af94927a95","scale":"FILL"}]}
+   ]},
+   {"id":"778:74","t":"COMPONENT","n":"Brand=Phantom, Size=24px","b":[140,20,24,24],"c":[
+    {"id":"778:66","t":"FRAME","n":"icon","b":[1.5,2,20,20],"r":200,"clip":true,"c":[
+     {"id":"778:67","t":"GROUP","n":"Clip path group","b":[0,0,20,20],"c":[
+      {"id":"778:68","t":"GROUP","n":"clip0_2800_140397","b":[0,0,20,20],"c":[
+       {"id":"778:69","t":"VECTOR","n":"Vector","b":[0,0,20,20],"f":["#000000"]}
+      ]},
+      {"id":"778:70","t":"GROUP","n":"Group","b":[0,0,20,20],"c":[
+       {"id":"778:71","t":"VECTOR","n":"Vector","b":[0,0,20,20],"f":["#9886E5"]},
+       {"id":"778:72","t":"VECTOR","n":"Vector","b":[4,5,12,10],"f":["#FFFDF8"]}
+      ]}
+     ]}
+    ]}
+   ]},
+   {"id":"778:111","t":"COMPONENT","n":"Brand=Google, Size=24px","b":[20,60,24,24],"c":[
+    {"id":"778:113","t":"RECTANGLE","n":"icon","b":[3,3,18.5,19],"f":[{"img":"6f3dd57164c246b1afe3ba08d61511ce29cd3ebe","scale":"FILL"}]}
+   ]},
+   {"id":"778:121","t":"COMPONENT","n":"Brand=Apple, Size=24px","b":[60,60,24,24],"c":[
+    {"id":"778:129","t":"VECTOR","n":"icon","b":[3.5,2,16,20],"f":["Core/Black"]}
+   ]},
+   {"id":"786:601","t":"COMPONENT","n":"Brand=Metamask, Size=16px","b":[20,108,16,16],"c":[
+    {"id":"786:602","t":"RECTANGLE","n":"icon","b":[1.5,2,12.5,12],"f":[{"img":"44d4a37fad29d3e1025741f14fcb9eab7cec5d1e","scale":"CROP"}]}
+   ]},
+   {"id":"786:627","t":"COMPONENT","n":"Brand=Coinbase, Size=16px","b":[52,108,16,16],"c":[
+    {"id":"786:628","t":"GROUP","n":"icon","b":[1,1.5,13.5,13.5],"c":[
+     {"id":"786:629","t":"VECTOR","n":"Vector","b":[0,0,13.5,13.5],"f":["#0052FF"]},
+     {"id":"786:630","t":"VECTOR","n":"Vector","b":[3.5,3.5,6.5,6.5],"f":["Core/White"]}
+    ]}
+   ]},
+   {"id":"786:634","t":"COMPONENT","n":"Brand=WalletConnect, Size=16px","b":[84,108,16,16],"c":[
+    {"id":"786:635","t":"RECTANGLE","n":"icon","b":[1,1.5,13.5,13.5],"f":[{"img":"0eed94e6f313ff71711a6852b68c24af94927a95","scale":"FILL"}]}
+   ]},
+   {"id":"786:645","t":"COMPONENT","n":"Brand=Phantom, Size=16px","b":[116,108,16,16],"c":[
+    {"id":"786:646","t":"FRAME","n":"icon","b":[1,1.5,13.5,13.5],"r":133.33,"clip":true,"c":[
+     {"id":"786:647","t":"GROUP","n":"Clip path group","b":[0,0,13.5,13.5],"c":[
+      {"id":"786:648","t":"GROUP","n":"clip0_2800_140397","b":[0,0,13.5,13.5],"c":[
+       {"id":"786:649","t":"VECTOR","n":"Vector","b":[0,0,13.5,13.5],"f":["#000000"]}
+      ]},
+      {"id":"786:650","t":"GROUP","n":"Group","b":[0,0,13.5,13.5],"c":[
+       {"id":"786:651","t":"VECTOR","n":"Vector","b":[0,0,13.5,13.5],"f":["#9886E5"]},
+       {"id":"786:652","t":"VECTOR","n":"Vector","b":[3,3,8,6.5],"f":["#FFFDF8"]}
+      ]}
+     ]}
+    ]}
+   ]},
+   {"id":"786:656","t":"COMPONENT","n":"Brand=Google, Size=16px","b":[20,140,16,16],"c":[
+    {"id":"786:657","t":"RECTANGLE","n":"icon","b":[2,2,12.5,12.5],"f":[{"img":"6f3dd57164c246b1afe3ba08d61511ce29cd3ebe","scale":"FILL"}]}
+   ]},
+   {"id":"786:661","t":"COMPONENT","n":"Brand=Apple, Size=16px","b":[52,139,16,16],"c":[
+    {"id":"786:662","t":"VECTOR","n":"icon","b":[2.5,1.5,11,13.5],"f":["Core/Black"]}
+   ]},
+   {"id":"1330:1168","t":"COMPONENT","n":"Brand=Rainbow, Size=24px","b":[100,60,24,24],"c":[
+    {"id":"1330:1228","t":"GROUP","n":"icon-official","b":[2,2,20,20],"c":[
+     {"id":"1330:1211","t":"GROUP","n":"Background","b":[0,0,20,20],"c":[
+      {"id":"1330:1212","t":"ELLIPSE","n":"Mask","b":[0,0,20,20],"f":["#D9D9D9"]},
+      {"id":"1330:1213","t":"RECTANGLE","n":"Background","b":[0,0,20,20],"f":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#174299"],[1,"#001E59"]]}]}
+     ]},
+     {"id":"1330:1214","t":"GROUP","n":"Logo","b":[4.5,4.5,11,11],"c":[
+      {"id":"1330:1215","t":"GROUP","n":"outer","b":[0,0,11,11],"c":[
+       {"id":"1330:1216","t":"VECTOR","n":"outer","b":[0,0,11,11],"f":[{"angle":90,"grad":"RADIAL","stops":[[0.77,"#FF4000"],[1,"#8754C9"]]}]},
+       {"id":"1330:1217","t":"VECTOR","n":"right cap","b":[9,10.5,2,1],"f":[{"angle":0,"grad":"LINEAR","stops":[[0,"#FF4000"],[1,"#8754C9"]]}]},
+       {"id":"1330:1218","t":"VECTOR","n":"left cap","b":[0,0,1,2],"f":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#8754C9"],[1,"#FF4000"]]}]}
+      ]},
+      {"id":"1330:1219","t":"GROUP","n":"middle","b":[0,2,9,9],"c":[
+       {"id":"1330:1220","t":"VECTOR","n":"middle","b":[0,0,9,9],"f":[{"angle":90,"grad":"RADIAL","stops":[[0.724,"#FFF700"],[1,"#FF9901"]]}]},
+       {"id":"1330:1221","t":"VECTOR","n":"right cap","b":[6.5,8,2,1],"f":[{"angle":0,"grad":"LINEAR","stops":[[0,"#FFF700"],[1,"#FF9901"]]}]},
+       {"id":"1330:1222","t":"VECTOR","n":"left cap","b":[0,0,1,2],"f":[{"angle":90,"grad":"LINEAR","stops":[[0,"#FFF700"],[1,"#FF9901"]]}]}
+      ]},
+      {"id":"1330:1223","t":"GROUP","n":"inner","b":[0,4.5,6.5,6.5],"c":[
+       {"id":"1330:1224","t":"VECTOR","n":"inner","b":[0,0,6.5,6.5],"f":[{"angle":90,"grad":"RADIAL","stops":[[0.595,"#00AAFF"],[1,"#01DA40"]]}]},
+       {"id":"1330:1225","t":"VECTOR","n":"right cap","b":[4.5,6,2,1],"f":[{"angle":0,"grad":"RADIAL","stops":[[0,"#00AAFF"],[1,"#01DA40"]]}]},
+       {"id":"1330:1226","t":"VECTOR","n":"left cap","b":[0,0,1,2],"f":[{"angle":90,"grad":"RADIAL","stops":[[0,"#00AAFF"],[1,"#01DA40"]]}]}
+      ]}
+     ]}
+    ]}
+   ]},
+   {"id":"1330:1170","t":"COMPONENT","n":"Brand=Rainbow, Size=16px","b":[84,139,16,16],"c":[
+    {"id":"1330:1229","t":"GROUP","n":"icon-official","b":[1.5,1.5,13.5,13.5],"c":[
+     {"id":"1330:1230","t":"GROUP","n":"Background","b":[0,0,13.5,13.5],"c":[
+      {"id":"1330:1231","t":"ELLIPSE","n":"Mask","b":[0,0,13.5,13.5],"f":["#D9D9D9"]},
+      {"id":"1330:1232","t":"RECTANGLE","n":"Background","b":[0,0,13.5,13.5],"f":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#174299"],[1,"#001E59"]]}]}
+     ]},
+     {"id":"1330:1233","t":"GROUP","n":"Logo","b":[3,3,7.5,7.5],"c":[
+      {"id":"1330:1234","t":"GROUP","n":"outer","b":[0,0,7.5,7.5],"c":[
+       {"id":"1330:1235","t":"VECTOR","n":"outer","b":[0,0,7.5,7.5],"f":[{"angle":90,"grad":"RADIAL","stops":[[0.77,"#FF4000"],[1,"#8754C9"]]}]},
+       {"id":"1330:1236","t":"VECTOR","n":"right cap","b":[6,7,1.5,0.5],"f":[{"angle":0,"grad":"LINEAR","stops":[[0,"#FF4000"],[1,"#8754C9"]]}]},
+       {"id":"1330:1237","t":"VECTOR","n":"left cap","b":[0,0,0.5,1.5],"f":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#8754C9"],[1,"#FF4000"]]}]}
+      ]},
+      {"id":"1330:1238","t":"GROUP","n":"middle","b":[0,1.5,6,6],"c":[
+       {"id":"1330:1239","t":"VECTOR","n":"middle","b":[0,0,6,6],"f":[{"angle":90,"grad":"RADIAL","stops":[[0.724,"#FFF700"],[1,"#FF9901"]]}]},
+       {"id":"1330:1240","t":"VECTOR","n":"right cap","b":[4.5,5.5,1.5,0.5],"f":[{"angle":0,"grad":"LINEAR","stops":[[0,"#FFF700"],[1,"#FF9901"]]}]},
+       {"id":"1330:1241","t":"VECTOR","n":"left cap","b":[0,0,0.5,1.5],"f":[{"angle":90,"grad":"LINEAR","stops":[[0,"#FFF700"],[1,"#FF9901"]]}]}
+      ]},
+      {"id":"1330:1242","t":"GROUP","n":"inner","b":[0,3,4.5,4.5],"c":[
+       {"id":"1330:1243","t":"VECTOR","n":"inner","b":[0,0,4.5,4.5],"f":[{"angle":90,"grad":"RADIAL","stops":[[0.595,"#00AAFF"],[1,"#01DA40"]]}]},
+       {"id":"1330:1244","t":"VECTOR","n":"right cap","b":[3,4,1.5,0.5],"f":[{"angle":0,"grad":"RADIAL","stops":[[0,"#00AAFF"],[1,"#01DA40"]]}]},
+       {"id":"1330:1245","t":"VECTOR","n":"left cap","b":[0,0,0.5,1.5],"f":[{"angle":90,"grad":"RADIAL","stops":[[0,"#00AAFF"],[1,"#01DA40"]]}]}
+      ]}
+     ]}
+    ]}
+   ]}
+  ]}
+}

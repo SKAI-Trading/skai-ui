@@ -1,0 +1,75 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "786:333",
+ "page": "🧩 Design System",
+ "name": "labels/tag",
+ "hash": "baa42c6036d879ea",
+ "syncedAt": "2026-09-24T22:55:08.671Z",
+ "tree":
+  {"id":"786:333","t":"COMPONENT_SET","n":"labels/tag","b":[0,0,307,134],"r":"border-radius/rounded-2xl","s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"786:330","t":"COMPONENT","n":"Size=Small, Type=Fill","b":[235,20,56,18],"l":{"ai":"CENTER","g":"s-0,5","jc":"CENTER","m":"H","p":["s-0,5","s-1","s-0,5","s-1"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["App/Green 300"],"c":[
+    {"id":"786:264","t":"INSTANCE","n":"icons/action","b":[4,4,10,10],"clip":true,"ci":{"k":"ddda4a3d6c7f3d47a6e6ef4f85f782c7c3c27f09","n":"Size=16px, Type=Dot","props":{"Size":"16px","Type":"Dot"},"set":"icons/action"}},
+    {"id":"786:162","t":"TEXT","n":"Label","b":[16,2,24,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Sm/Label 2 300"}},
+    {"id":"786:265","t":"FRAME","n":"icons/action","b":[42,4,10,10],"clip":true,"c":[
+     {"id":"786:266","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]},
+   {"id":"786:332","t":"COMPONENT","n":"Size=Small, Type=Stroke","b":[235,58,56,18],"l":{"ai":"CENTER","g":"s-0,5","jc":"CENTER","m":"H","p":["s-0,5","s-1","s-0,5","s-1"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 300"],"sw":1,"sa":"INSIDE","c":[
+    {"id":"786:271","t":"INSTANCE","n":"icons/action","b":[4,4,10,10],"clip":true,"ci":{"k":"ddda4a3d6c7f3d47a6e6ef4f85f782c7c3c27f09","n":"Size=16px, Type=Dot","props":{"Size":"16px","Type":"Dot"},"set":"icons/action"}},
+    {"id":"786:195","t":"TEXT","n":"Label","b":[16,2,24,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Sm/Label 2 300"}},
+    {"id":"786:272","t":"FRAME","n":"icons/action","b":[42,4,10,10],"clip":true,"c":[
+     {"id":"786:273","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]},
+   {"id":"786:331","t":"COMPONENT","n":"Size=Small, Type=Flag","b":[234,96,60,18],"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-1","s-0,5","s-1"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 300"],"sw":1,"sa":"INSIDE","c":[
+    {"id":"786:321","t":"INSTANCE","n":"logos/flag","b":[4,4,10,10],"ci":{"k":"47f933b6665e5061b14ca4f670358de0b08f7e27","n":"Size=10px, Country=USA","props":{"Country":"USA","Size":"10px"},"set":"logos/flag"}},
+    {"id":"786:315","t":"TEXT","n":"Label","b":[18,2,24,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Sm/Label 2 300"}},
+    {"id":"786:316","t":"FRAME","n":"icons/action","b":[46,4,10,10],"clip":true,"c":[
+     {"id":"786:317","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]},
+   {"id":"786:327","t":"COMPONENT","n":"Size=Large, Type=Fill","b":[20,20,71,18],"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["App/Green 300"],"c":[
+    {"id":"786:204","t":"INSTANCE","n":"icons/action","b":[8,4,10,10],"clip":true,"ci":{"k":"ddda4a3d6c7f3d47a6e6ef4f85f782c7c3c27f09","n":"Size=16px, Type=Dot","props":{"Size":"16px","Type":"Dot"},"set":"icons/action"}},
+    {"id":"786:171","t":"TEXT","n":"Label","b":[22,2,27,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Lg/Label 2 300"}},
+    {"id":"786:238","t":"FRAME","n":"icons/action","b":[53,4,10,10],"clip":true,"c":[
+     {"id":"786:239","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]},
+   {"id":"786:329","t":"COMPONENT","n":"Size=Large, Type=Stroke","b":[20,58,71,18],"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 300"],"sw":1,"sa":"INSIDE","c":[
+    {"id":"786:242","t":"INSTANCE","n":"icons/action","b":[8,4,10,10],"clip":true,"ci":{"k":"ddda4a3d6c7f3d47a6e6ef4f85f782c7c3c27f09","n":"Size=16px, Type=Dot","props":{"Size":"16px","Type":"Dot"},"set":"icons/action"}},
+    {"id":"786:243","t":"TEXT","n":"Label","b":[22,2,27,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Lg/Label 2 300"}},
+    {"id":"786:244","t":"FRAME","n":"icons/action","b":[53,4,10,10],"clip":true,"c":[
+     {"id":"786:245","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]},
+   {"id":"786:326","t":"COMPONENT","n":"Size=Large, Type=Flag","b":[22,96,67,18],"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-1"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-2xl","s":["Primary/Green Coal 300"],"sw":1,"sa":"INSIDE","c":[
+    {"id":"786:431","t":"INSTANCE","n":"logos/flag","b":[4,4,10,10],"ci":{"k":"47f933b6665e5061b14ca4f670358de0b08f7e27","n":"Size=10px, Country=USA","props":{"Country":"USA","Size":"10px"},"set":"logos/flag"}},
+    {"id":"786:293","t":"TEXT","n":"Label","b":[18,2,27,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Lg/Label 2 300"}},
+    {"id":"786:294","t":"FRAME","n":"icons/action","b":[49,4,10,10],"clip":true,"c":[
+     {"id":"786:295","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]},
+   {"id":"786:328","t":"COMPONENT","n":"Size=Medium, Type=Fill","b":[131,20,73,18],"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["App/Green 300"],"c":[
+    {"id":"786:250","t":"INSTANCE","n":"icons/action","b":[8,4,10,10],"clip":true,"ci":{"k":"ddda4a3d6c7f3d47a6e6ef4f85f782c7c3c27f09","n":"Size=16px, Type=Dot","props":{"Size":"16px","Type":"Dot"},"set":"icons/action"}},
+    {"id":"786:178","t":"TEXT","n":"Label","b":[22,2,29,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Md/Numbers 5 300"}},
+    {"id":"786:251","t":"FRAME","n":"icons/action","b":[55,4,10,10],"clip":true,"c":[
+     {"id":"786:252","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]},
+   {"id":"786:325","t":"COMPONENT","n":"Size=Medium, Type=Stroke","b":[131,58,73,18],"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 300"],"sw":1,"sa":"INSIDE","c":[
+    {"id":"786:257","t":"INSTANCE","n":"icons/action","b":[8,4,10,10],"clip":true,"ci":{"k":"ddda4a3d6c7f3d47a6e6ef4f85f782c7c3c27f09","n":"Size=16px, Type=Dot","props":{"Size":"16px","Type":"Dot"},"set":"icons/action"}},
+    {"id":"786:193","t":"TEXT","n":"Label","b":[22,2,29,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Md/Numbers 5 300"}},
+    {"id":"786:258","t":"FRAME","n":"icons/action","b":[55,4,10,10],"clip":true,"c":[
+     {"id":"786:259","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]},
+   {"id":"786:324","t":"COMPONENT","n":"Size=Medium, Type=Flag","b":[134,96,69,18],"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-1"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Green Coal 300"],"sw":1,"sa":"INSIDE","c":[
+    {"id":"786:310","t":"INSTANCE","n":"logos/flag","b":[4,4,10,10],"ci":{"k":"47f933b6665e5061b14ca4f670358de0b08f7e27","n":"Size=10px, Country=USA","props":{"Country":"USA","Size":"10px"},"set":"logos/flag"}},
+    {"id":"786:304","t":"TEXT","n":"Label","b":[18,2,29,14],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 300"],"tx":{"c":"Label","st":"Md/Numbers 5 300"}},
+    {"id":"786:305","t":"FRAME","n":"icons/action","b":[51,4,10,10],"clip":true,"c":[
+     {"id":"786:306","t":"BOOLEAN_OPERATION","n":"icon","b":[1,1,8,8],"f":["Primary/Green Coal 300"]}
+    ]}
+   ]}
+  ]}
+}

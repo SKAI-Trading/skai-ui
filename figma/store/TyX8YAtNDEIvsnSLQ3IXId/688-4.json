@@ -1,0 +1,68 @@
+{
+ "v": 1,
+ "fileKey": "TyX8YAtNDEIvsnSLQ3IXId",
+ "node": "688:4",
+ "page": "🧩 Design System",
+ "name": "Badges150",
+ "hash": "0dfd96e3325db06e",
+ "syncedAt": "2026-09-24T22:55:08.671Z",
+ "tree":
+  {"id":"688:4","t":"COMPONENT_SET","n":"Badges150","b":[0,0,400,190],"r":5,"s":["#9747FF"],"sw":1,"sa":"INSIDE","clip":true,"c":[
+   {"id":"688:2","t":"COMPONENT","n":"Type=Pioneer","b":[20,20,150,150],"c":[
+    {"id":"253:3","t":"POLYGON","n":"Polygon 1","b":[0,0,150,150],"r":24,"f":["Primary/Green Coal 300"]},
+    {"id":"253:4","t":"POLYGON","n":"Polygon 2","b":[7,7,136,136],"r":18,"f":["Primary/Sky Blue 300"],"fx":[{"c":"#FFFFFF@0.26","o":[0,8],"r":24,"t":"INNER_SHADOW"}]},
+    {"id":"253:5","t":"POLYGON","n":"Polygon 3","b":[12,12,126,126],"r":18,"f":[{"angle":-90,"grad":"LINEAR","stops":[[0.212,"#ABE8FF"],[0.365,"#56C7F3"]]}],"s":["Core/White"],"sw":1,"sa":"INSIDE","fx":[{"c":"#FFFFFF@0.8","o":[0,3],"r":12,"t":"INNER_SHADOW"},{"c":"#000000@0.44","o":[0,1],"r":2,"t":"DROP_SHADOW"}]},
+    {"id":"253:6","t":"GROUP","n":"Mask group","b":[12,12,126,126],"c":[
+     {"id":"253:7","t":"POLYGON","n":"Polygon 4","b":[0,0,126,126],"r":18,"f":["Primary/Sky Blue 300"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE"},
+     {"id":"253:8","t":"GROUP","n":"Group 3","b":[34,8,58,109.5],"c":[
+      {"id":"253:9","t":"VECTOR","n":"Vector 365","b":[9,34.5,0,18],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:10","t":"VECTOR","n":"Vector 373","b":[9,12.5,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:11","t":"VECTOR","n":"Vector 375","b":[40,44,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:12","t":"VECTOR","n":"Vector 377","b":[40,83.5,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:13","t":"VECTOR","n":"Vector 376","b":[40,4,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:14","t":"VECTOR","n":"Vector 374","b":[9,57,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:15","t":"VECTOR","n":"Vector 378","b":[9,91.5,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:16","t":"VECTOR","n":"Vector 371","b":[51,37,0,13.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:17","t":"VECTOR","n":"Vector 367","b":[9,87.5,0,8.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:18","t":"VECTOR","n":"Vector 369","b":[9,8.5,0,8.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:19","t":"VECTOR","n":"Vector 366","b":[18,43.5,0,18],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:20","t":"VECTOR","n":"Vector 372","b":[58,44,0,13.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:21","t":"VECTOR","n":"Vector 368","b":[13,83.5,0,8.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:22","t":"VECTOR","n":"Vector 370","b":[13,4,0,8.5],"s":["Core/White"],"sw":1,"sa":"CENTER"}
+     ]}
+    ]},
+    {"id":"253:23","t":"BOOLEAN_OPERATION","n":"pioneer","b":[34,48,82,62],"f":["Primary/Green Coal 200"]}
+   ]},
+   {"id":"688:3","t":"COMPONENT","n":"Type=Early Adopter","b":[230,20,150,150],"c":[
+    {"id":"253:33","t":"POLYGON","n":"Polygon 1","b":[0,0,150,150],"r":24,"f":["Primary/Green Coal 300"]},
+    {"id":"253:34","t":"POLYGON","n":"Polygon 2","b":[7,7,136,136],"r":18,"f":["Accents/Coral 300"],"fx":[{"c":"#FFFFFF@0.26","o":[0,8],"r":24,"t":"INNER_SHADOW"}]},
+    {"id":"253:35","t":"POLYGON","n":"Polygon 3","b":[12,12,126,126],"r":18,"f":[{"angle":-90,"grad":"LINEAR","stops":[[0.212,"#FFBAA2"],[0.365,"#FF7E50"]]}],"s":["Core/White"],"sw":1,"sa":"INSIDE","fx":[{"c":"#FFFFFF@0.8","o":[0,3],"r":12,"t":"INNER_SHADOW"},{"c":"#000000@0.44","o":[0,1],"r":2,"t":"DROP_SHADOW"}]},
+    {"id":"253:36","t":"GROUP","n":"Mask group","b":[12,12,126,126],"c":[
+     {"id":"253:37","t":"POLYGON","n":"Polygon 4","b":[0,0,126,126],"r":18,"f":["Primary/Sky Blue 300"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"INSIDE"},
+     {"id":"253:38","t":"GROUP","n":"Group 3","b":[118,34,58,109.5],"c":[
+      {"id":"253:39","t":"VECTOR","n":"Vector 365","b":[-34.5,9,0,18],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:40","t":"VECTOR","n":"Vector 373","b":[-12.5,9,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:41","t":"VECTOR","n":"Vector 375","b":[-44,40,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:42","t":"VECTOR","n":"Vector 377","b":[-83.5,40,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:43","t":"VECTOR","n":"Vector 376","b":[-4,40,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:44","t":"VECTOR","n":"Vector 374","b":[-57,9,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:45","t":"VECTOR","n":"Vector 378","b":[-91.5,9,0,18],"s":["Core/White"],"sw":0.5,"sa":"CENTER"},
+      {"id":"253:46","t":"VECTOR","n":"Vector 371","b":[-37,51,0,13.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:47","t":"VECTOR","n":"Vector 367","b":[-87.5,9,0,8.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:48","t":"VECTOR","n":"Vector 369","b":[-8.5,9,0,8.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:49","t":"VECTOR","n":"Vector 366","b":[-43.5,18,0,18],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:50","t":"VECTOR","n":"Vector 372","b":[-44,58,0,13.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:51","t":"VECTOR","n":"Vector 368","b":[-83.5,13,0,8.5],"s":["Core/White"],"sw":1,"sa":"CENTER"},
+      {"id":"253:52","t":"VECTOR","n":"Vector 370","b":[-4,13,0,8.5],"s":["Core/White"],"sw":1,"sa":"CENTER"}
+     ]}
+    ]},
+    {"id":"253:71","t":"GROUP","n":"Group 6","b":[53,39,44,75],"c":[
+     {"id":"253:68","t":"GROUP","n":"Group 5","b":[0,47.5,44,27],"c":[
+      {"id":"253:66","t":"VECTOR","n":"Vector 379","b":[32.5,0,11.5,27],"f":["Primary/Green Coal 200"]},
+      {"id":"253:67","t":"VECTOR","n":"Vector 380","b":[11.5,0,11.5,27],"f":["Primary/Green Coal 200"]}
+     ]},
+     {"id":"253:70","t":"BOOLEAN_OPERATION","n":"Subtract","b":[7,0,30,63],"f":["Primary/Green Coal 200"]}
+    ]}
+   ]}
+  ]}
+}
