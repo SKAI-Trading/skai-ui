@@ -1,0 +1,29 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "7710:91603",
+ "page": "✅ Trade 1",
+ "name": "Frame 160",
+ "hash": "e848d28542a66fde",
+ "syncedAt": "2026-09-24T19:34:42.732Z",
+ "partOf": "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527",
+ "tree":
+  {"id":"7710:91603","t":"FRAME","n":"Frame 160","b":[0,0,740,450],"l":{"g":10,"m":"V","sx":"FILL","sy":"FILL"},"c":[
+   {"ref":"7710:91604","h":"e945a1d615bce5a4"},
+   {"id":"7710:92558","t":"FRAME","n":"Date","b":[0,434,740,16],"l":{"g":40,"jc":"SPACE_BETWEEN","m":"H","p":[0,"s-6",0,"s-4"],"sx":"FILL","sy":"HUG"},"c":[
+    {"id":"7710:92559","t":"TEXT","n":"06:00","b":[16,0,30,16],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92560","t":"TEXT","n":"12:00","b":[92,0,30,16],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"12:00","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92561","t":"TEXT","n":"18:00","b":[168,0,30,16],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"18:00","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92562","t":"TEXT","n":"21","b":[244,0,30,16],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"21","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92563","t":"TEXT","n":"06:00","b":[320,0,30,16],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92564","t":"TEXT","n":"12:00","b":[396,0,30,16],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"12:00","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92565","t":"TEXT","n":"18:00","b":[472,0,30,16],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"18:00","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92566","t":"TEXT","n":"22","b":[548,0,30,16],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"22","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92567","t":"TEXT","n":"06:00","b":[624,0,30,16],"op":0.64,"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"06:00","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+    {"id":"7710:92568","t":"FRAME","n":"icons/action","b":[700,0,16,16],"clip":true,"c":[
+     {"id":"7710:92569","t":"POLYGON","n":"Polygon 4","b":[15,1,14,14],"s":["Core/White"],"sw":"border-width/w-100","sa":"CENTER"},
+     {"id":"7710:92570","t":"ELLIPSE","n":"Ellipse 34","b":[5,5,6,6],"s":["Core/White"],"sw":1,"sa":"CENTER"}
+    ]}
+   ]}
+  ]}
+}
