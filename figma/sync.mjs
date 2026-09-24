@@ -24,6 +24,12 @@
  * checksum over its own content: a result copied wrongly is refused (the call
  * is still counted), and the same result is never ingested twice.
  *
+ * Extract results carry each frame packed (lib/transport.mjs, format z1; see
+ * lib/TRANSPORT.md): base64 lines, each with a check, so a copying mistake is
+ * named by line. A frame too big for one result arrives over several calls as
+ * byte ranges of one stream and is decoded, checked and stored when the last
+ * range is in.
+ *
  * Tracked frames are figma-catalog/registry.json's frames that are not `gone`,
  * have a page, and whose page is not out of scope in figma-catalog/pages.json.
  * Nothing here writes to figma-catalog/.
@@ -35,6 +41,7 @@ import { fileURLToPath } from "node:url";
 import { canonicalJson, fnv1a64, treeHash } from "./lib/canonical.mjs";
 import * as pack from "./lib/pack.mjs";
 import * as ledger from "./lib/ledger.mjs";
+import * as transport from "./lib/transport.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 
@@ -251,11 +258,21 @@ function openIngest(ctx, result, kind) {
   const lines = ledger.readLedger(ctx.ledgerFile);
   const seen = ledger.nonceSeen(lines, result.nonce);
   if (seen === "ok") throw new IngestError(`result ${result.nonce} was already ingested`);
-  const ok = sumOk(result);
+  const sum = sumOk(result);
+  const format = kind !== "extract" || (result.enc === transport.ENC && result.dz === transport.DICT_ID && (result.segs || []).every((s) => !transport.badLines(s).length));
+  const ok = sum && format;
   const frames = kind === "hash" ? Object.keys(result.frames || {}).length : (result.segs || []).length;
   const at = ctx.now().toISOString();
   ledger.appendLine(ctx.ledgerFile, { at, day: at.slice(0, 10), kind, file: result.file, calls: seen ? 0 : 1, frames, nonce: result.nonce, ok });
-  if (!ok) throw new IngestError(`result ${result.nonce}: checksum does not match its content, so it was changed after Figma returned it. Copy it again exactly and re-ingest (the call is already counted).`);
+  if (!sum) {
+    const where = (result.segs || [])
+      .map((s, i) => [i, s, transport.badLines(s)])
+      .filter(([, , bad]) => bad.length)
+      .map(([i, s, bad]) => `segment ${i} (${s && s.f}) line${bad.length > 1 ? "s" : ""} ${bad.join(", ")} of ${(s.z || []).length}`);
+    const hint = where.length ? ` The lines that no longer match their checks: ${where.join("; ")}.` : "";
+    throw new IngestError(`result ${result.nonce}: checksum does not match its content, so it was changed after Figma returned it.${hint} Copy it again exactly and re-ingest (the call is already counted).`);
+  }
+  if (!format) throw new IngestError(`result ${result.nonce} was packed as ${result.enc || "plain JSON"} with dictionary ${result.dz || "none"}; this checkout reads ${transport.ENC} with dictionary ${transport.DICT_ID}. Make the script again from this checkout (the call is already counted).`);
   if (ctx.hooks.beforeWrite) ctx.hooks.beforeWrite(kind);
   return at;
 }
@@ -360,6 +377,44 @@ function storeFrame(ctx, idx, fileKey, key, p, at) {
   return { key, parts: parts.length, hash: p.H };
 }
 
+/**
+ * One z1 segment into the transfer on record. Returns the finished transfer
+ * (every byte in) or null, and says why a slice was refused.
+ */
+function takeSlice(ctx, st, key, seg, out) {
+  const refuse = (error) => {
+    delete st.partial[key];
+    out.refused.push({ key, error });
+    return null;
+  };
+  let bytes;
+  try {
+    if (!Array.isArray(seg.z)) throw new Error("the segment carries no packed stream");
+    bytes = transport.fromBase64(seg.z.join(""));
+  } catch (e) {
+    return refuse(e.message);
+  }
+  let p = st.partial[key];
+  if (seg.o === 0) p = { enc: transport.ENC, H: seg.H, T: seg.T, R: seg.R, Z: seg.Z, zh: seg.zh, pg: seg.pg, n: seg.n, w: seg.w, h: seg.h, z: "", got: 0, calls: 0 };
+  else if (!pack.continuable(p) || p.H !== seg.H || p.got !== seg.o || p.Z !== seg.Z || p.zh !== seg.zh || p.T !== seg.T) {
+    return refuse(`slice at byte ${seg.o} does not continue the transfer on record; it restarts from 0`);
+  }
+  const end = seg.o + bytes.length;
+  if (end > p.Z) return refuse(`slice ends at byte ${end}, past the stream's ${p.Z}`);
+  if (end < p.Z && bytes.length % 3) return refuse("a slice that is not the last must be a whole number of base64 groups");
+  p.z += seg.z.join("");
+  p.got = end;
+  p.calls += 1;
+  if (p.got < p.Z) {
+    if (Math.ceil(p.Z / (p.got / p.calls)) > (ctx.maxCalls || MAX_CALLS_PER_FRAME)) p.oversize = true;
+    st.partial[key] = p;
+    out.partial.push({ key, have: p.got, of: p.Z, oversize: !!p.oversize });
+    return null;
+  }
+  delete st.partial[key];
+  return p;
+}
+
 export function extractIngest(ctx, result) {
   const at = openIngest(ctx, result, "extract");
   const idx = loadIndex(ctx);
@@ -367,37 +422,20 @@ export function extractIngest(ctx, result) {
   const out = { stored: [], partial: [], refused: [], missing: result.missing || [], errors: result.errors || {}, rest: result.rest || [] };
   for (const seg of result.segs || []) {
     const key = pack.frameKey(result.file, seg.f);
-    let p = st.partial[key];
-    if (seg.o === 0) p = { H: seg.H, T: seg.T, pg: seg.pg, n: seg.n, w: seg.w, h: seg.h, x: [], calls: 0 };
-    else if (!p || p.H !== seg.H || p.x.length !== seg.o || p.T !== seg.T) {
-      delete st.partial[key];
-      out.refused.push({ key, error: `slice at ${seg.o} does not continue the transfer on record; it restarts from 0` });
-      continue;
-    }
-    p.x.push(...seg.x);
-    p.calls = (p.calls || 0) + 1;
-    if (p.x.length < p.T) {
-      const perCall = p.x.length / p.calls;
-      if (Math.ceil(p.T / Math.max(1, perCall)) > (ctx.maxCalls || MAX_CALLS_PER_FRAME)) p.oversize = true;
-      st.partial[key] = p;
-      out.partial.push({ key, have: p.x.length, of: p.T, oversize: !!p.oversize });
-      continue;
-    }
-    delete st.partial[key];
-    if (p.x.length !== p.T) {
-      out.refused.push({ key, error: `stream holds ${p.x.length} items, the frame declared ${p.T}` });
-      continue;
-    }
+    const p = takeSlice(ctx, st, key, seg, out);
+    if (!p) continue;
     let r;
     try {
-      r = storeFrame(ctx, idx, result.file, key, p, at);
+      const { value } = transport.decode(p.z, p.zh);
+      if (!Array.isArray(value) || value.length !== p.T) throw new Error(`the stream holds ${Array.isArray(value) ? value.length : "no"} items, the frame declared ${p.T}`);
+      r = storeFrame(ctx, idx, result.file, key, { ...p, x: value }, at);
     } catch (e) {
       r = { key, error: e.message };
     }
     if (r.error) out.refused.push(r);
     else {
       st.live[key] = { h: p.H, at };
-      out.stored.push(r);
+      out.stored.push({ ...r, raw: p.R, packed: p.Z, calls: p.calls });
     }
   }
   if (out.stored.length) idx.syncedAt = at;
@@ -469,7 +507,7 @@ async function main(argv) {
       if (!r.plan) return console.log("nothing to extract: every tracked frame is stored and none is stale");
       if (print) return process.stdout.write(r.text + "\n");
       const p = writeScript(outDir, `extract-${r.plan.file}-${r.nonce}.js`, r.text);
-      console.log(`extract batch for ${r.plan.file}: ${r.plan.ids.length} frame(s), first ${r.plan.keys[0]}${r.plan.ids[0][1] ? ` (continuing at item ${r.plan.ids[0][1]})` : ""}`);
+      console.log(`extract batch for ${r.plan.file}: ${r.plan.ids.length} frame(s), first ${r.plan.keys[0]}${r.plan.ids[0][1] ? ` (continuing at byte ${r.plan.ids[0][1]} of its packed stream)` : ""}`);
       console.log(`  ${p}  (script ${r.text.length} chars; ${r.left} call(s) left today after this one)`);
       return;
     }
@@ -594,6 +632,22 @@ export async function runScript(text, figma) {
   return JSON.parse(JSON.stringify(out));
 }
 
+/** The item list a segment holding a whole stream carries. */
+const segItems = (seg) => transport.decode(seg.z.join(""), seg.zh).value;
+
+/** A segment re-packed around other items, with every transport check made to agree. */
+function repack(seg, items) {
+  const e = transport.encode(items);
+  const { z, zc } = transport.toLines(e.b64);
+  return { ...seg, T: items.length, R: Buffer.byteLength(e.text), Z: e.bytes.length, zh: e.zh, o: 0, z, zc };
+}
+const resum = (r) => {
+  delete r.sum;
+  r.sum = fnv1a64(canonicalJson(r));
+  return r;
+};
+const resultBytes = (r) => Buffer.byteLength(JSON.stringify(r));
+
 function bigFrame(id, groups, perGroup) {
   const kids = [];
   for (let g = 0; g < groups; g++) {
@@ -604,6 +658,46 @@ function bigFrame(id, groups, perGroup) {
     kids.push({ id: `${id.split(":")[0]}:${900 + g}`, type: "FRAME", name: `Group ${g}`, x: 0, y: g * 1000, width: 300, height: 1000, layoutMode: "VERTICAL", itemSpacing: 0, children: inner });
   }
   return { id, type: "FRAME", name: "Big board", x: 0, y: 0, width: 400, height: 3000, children: kids };
+}
+
+/**
+ * A board of about `count` nodes built to be awkward to carry: names drawn
+ * from hard text (every escape, CJK, emoji, lone surrogates), text longer than
+ * the 500-character cut, a chain nested 70 deep, and a frame name that is
+ * mostly 3- and 4-byte characters, so a character count would under-measure
+ * every result.
+ */
+function stressFrame(id, count, seed) {
+  const r = transport.rng(seed);
+  const pre = id.split(":")[0];
+  let next = 1;
+  const nid = () => `${pre}:${10000 + next++}`;
+  const hard = (n) => Array.from({ length: n }, () => r.pick(transport.HARD_TEXT)).join("");
+  const names = Array.from({ length: 60 }, () => hard(4 + r.int(14)));
+  const solid = () => ({ type: "SOLID", color: { r: r.int(256) / 255, g: r.int(256) / 255, b: r.int(256) / 255 }, opacity: r.pick([1, 1, 0.5, 0.64]) });
+  const leaf = () => {
+    const k = r.int(3);
+    const base = { id: nid(), name: r.pick(names), x: r.int(2880) / 2, y: r.int(1800) / 2, width: 1 + r.int(600), height: 1 + r.int(80) };
+    if (k === 0) return { ...base, type: "TEXT", characters: hard(r.pick([3, 12, 40, 700])), fontName: { family: "Inter", style: "Regular" }, fontSize: r.pick([12, 14, 16]), fontWeight: 400, lineHeight: { unit: "AUTO" }, letterSpacing: { unit: "PIXELS", value: 0 }, textStyleId: "", fills: [solid()] };
+    return { ...base, type: k === 1 ? "RECTANGLE" : "ELLIPSE", fills: [solid()], cornerRadius: r.int(3) * 4 };
+  };
+  const frame = (depth) => ({ id: nid(), type: "FRAME", name: r.pick(names), x: r.int(1440), y: r.int(900), width: 1 + r.int(1440), height: 1 + r.int(900), layoutMode: r.pick(["NONE", "HORIZONTAL", "VERTICAL"]), itemSpacing: r.int(5) * 4, children: [] });
+  const root = { id, type: "FRAME", name: "交易 🎰 盘口 ".repeat(30) + "Spot", x: 0, y: 0, width: 1440, height: 900, children: [] };
+  let chain = root;
+  for (let d = 0; d < 70; d++) {
+    const f = frame(d);
+    chain.children.push(f);
+    chain = f;
+  }
+  chain.children.push(leaf());
+  const groups = [];
+  while (next < count) {
+    const g = frame(1);
+    for (let i = 0, n = 5 + r.int(30); i < n && next < count; i++) g.children.push(r.next() < 0.15 ? { ...frame(2), children: [leaf(), leaf()] } : leaf());
+    groups.push(g);
+  }
+  root.children.push(...groups);
+  return root;
 }
 
 async function selfTest() {
@@ -667,12 +761,14 @@ async function selfTest() {
   const es = pack.extractScript({ file: FILE, nonce: "n-ext-1", pages: ["1:1", "2:1"], ids: [["10:1", 0, null]] });
   const er = await runScript(es, mockFigma(docRaw()).figma);
   const seg = er.segs && er.segs[0];
-  const parts = seg ? assemble(seg.x) : [];
+  const parts = seg ? assemble(segItems(seg)) : [];
   const tree = parts[0] && parts[0].tree;
   const diff = tree ? firstDiff(expected, tree) : "no tree";
   check("the spec tree equals the hand-checked fixture spec", diff === null, diff);
   check("the extract script's frame hash equals the hash script's for the same frame", seg && seg.H === hr.frames["10:1"], [seg && seg.H, hr.frames && hr.frames["10:1"]]);
   check("the frame hash is the FNV-1a of the canonical tree", tree && treeHash(tree) === seg.H);
+  const again = seg ? transport.encode(segItems(seg)) : null;
+  check("the script packs a frame to exactly the bytes the module does, dictionary and all", again && again.b64 === seg.z.join("") && again.bytes.length === seg.Z && again.zh === seg.zh && Buffer.byteLength(again.text) === seg.R, seg && [seg.Z, again && again.bytes.length]);
 
   console.log("ingest writes the spec, and the stored bytes hash to the live hash");
   const c1 = mkctx("ingest", { frames: [{ key: `${FILE}:10:1`, fileKey: FILE, node: "10:1", pageId: "1:1", order: 0 }] });
@@ -773,7 +869,8 @@ async function selfTest() {
   const c4 = mkctx("damaged");
   const er4 = await runScript(pack.extractScript({ file: FILE, nonce: "n-ext-dmg", pages: ["1:1"], ids: [["10:1", 0, null]] }), mockFigma(docRaw()).figma);
   const damaged = JSON.parse(JSON.stringify(er4));
-  damaged.segs[0].x[1].n = damaged.segs[0].x[1].n + "x";
+  const z0 = damaged.segs[0].z[0];
+  damaged.segs[0].z[0] = z0.slice(0, 9) + (z0[9] === "A" ? "B" : "A") + z0.slice(10);
   let dmg = null;
   try {
     extractIngest(c4, damaged);
@@ -782,6 +879,7 @@ async function selfTest() {
   }
   const l4 = ledger.readLedger(c4.ledgerFile);
   check("a result changed after Figma returned it is refused, and the call is counted", /checksum/.test(dmg || "") && l4.length === 1 && l4[0].ok === false && l4[0].calls === 1 && !fs.existsSync(c4.indexFile), [dmg, l4]);
+  check("the refusal names the line that was mis-copied", /segment 0 \(10:1\) line 0 of 1/.test(dmg || ""), dmg);
   const fixed = extractIngest(c4, er4);
   const l4b = ledger.readLedger(c4.ledgerFile);
   check("the exact copy then ingests without counting the call twice", fixed.stored.length === 1 && l4b.length === 2 && l4b[1].calls === 0 && l4b[1].ok === true, l4b);
@@ -793,7 +891,7 @@ async function selfTest() {
   const split = { split: 4000, minCut: 500 };
   const hb = await runScript(pack.hashScript({ file: FILE, nonce: "n-hb", pages: ["1:1"], ids: ["30:1"], ...split }), mb.figma);
   const eb = await runScript(pack.extractScript({ file: FILE, nonce: "n-eb", pages: ["1:1"], ids: [["30:1", 0, null]], budget: 60000, ...split }), mb.figma);
-  const bparts = assemble(eb.segs[0].x);
+  const bparts = assemble(segItems(eb.segs[0]));
   const refs = bparts[0].tree.c.filter((k) => k.ref);
   check("a frame over the split size is cut into ref parts", bparts.length === 4 && refs.length === 3, bparts.map((p) => p.node));
   check("each ref carries its part's hash", refs.every((r) => bparts.some((p) => p.node === r.ref && p.hash === r.h)));
@@ -808,7 +906,8 @@ async function selfTest() {
 
   const c6 = mkctx("transfer", { frames: [{ key: `${FILE}:30:1`, fileKey: FILE, node: "30:1", pageId: "1:1", order: 0 }] });
   c6.maxCalls = 40;
-  const tiny = 3500;
+  // Packed, this frame is about a kilobyte, so a result this small needs several calls for it.
+  const tiny = 760;
   let calls = 0;
   let last = null;
   let biggest = 0;
@@ -817,13 +916,13 @@ async function selfTest() {
     const plan = await planExtractScript(Object.assign(c6, { split: split.split, minCut: split.minCut }), { budget: tiny });
     if (!plan.plan) break;
     const res = await runScript(plan.text, mt.figma);
-    biggest = Math.max(biggest, JSON.stringify(res).length);
+    biggest = Math.max(biggest, resultBytes(res));
     last = extractIngest(c6, res);
     calls++;
   }
   const v6 = verifyStored(c6, `${FILE}:30:1`);
   check("a frame bigger than one result arrives over several calls and is stored whole", calls > 3 && v6 && v6.recomputed === hb2.frames["30:1"] && v6.index === v6.recomputed, { calls, v6, last });
-  check("no result in that transfer passed its budget", biggest <= tiny + 200, biggest);
+  check("no result in that transfer passed its budget, in UTF-8 bytes", biggest <= tiny, biggest);
   const c7 = mkctx("restart", { frames: [{ key: `${FILE}:30:1`, fileKey: FILE, node: "30:1", pageId: "1:1", order: 0 }] });
   Object.assign(c7, { split: split.split, minCut: split.minCut, maxCalls: 40 });
   const p1 = await planExtractScript(c7, { budget: tiny });
@@ -852,25 +951,56 @@ async function selfTest() {
   check("a transfer that would need more than the per-frame cap is parked, not planned again", r8.partial[0] && r8.partial[0].oversize === true && next8.plan === null && status(c8).oversize.length === 1, [r8.partial, next8.plan]);
   check("a parked frame named with --nodes continues where it stopped", forced8.plan && forced8.plan.ids[0][1] === r8.partial[0].have, forced8.plan);
 
-  const r10 = await runScript(pack.extractScript({ file: FILE, nonce: "n-late", pages: ["1:1"], ids: [["20:1", 0, null], ["30:1", 0, null]], budget: 6000, ...split }), mockFigma(big).figma);
+  // Budgets from measured packed sizes: `alone` is a result holding only the
+  // first frame, `whole` the second frame's segment when it is sent whole.
+  const sliceBytes = (s) => Buffer.from(s.z.join(""), "base64").length;
+  const one = async (ids, budget, m) => runScript(pack.extractScript({ file: FILE, nonce: "n-size", pages: ["1:1"], ids, budget, ...split }), m.figma);
+  const mb10 = mockFigma(big);
+  const alone20 = resultBytes(await one([["20:1", 0, null]], 60000, mb10));
+  const whole30 = resultBytes((await one([["30:1", 0, null]], 60000, mb10)).segs[0]);
+  const room10 = Math.floor(whole30 * 0.6);
+  const b10a = alone20 + room10;
+  const r10 = await runScript(pack.extractScript({ file: FILE, nonce: "n-late", pages: ["1:1"], ids: [["20:1", 0, null], ["30:1", 0, null]], budget: b10a, ...split }), mockFigma(big).figma);
   const s10 = r10.segs || [];
-  check("a frame too big for the room left still starts, as the last segment, when a quarter of the budget is free", s10.length === 2 && s10[0].f === "20:1" && s10[0].x.length === s10[0].T && s10[1].f === "30:1" && s10[1].x.length < s10[1].T && r10.rest.length === 0 && JSON.stringify(r10).length <= 6000 + 200, s10.map((s) => [s.f, s.x.length, s.T]));
+  check(
+    "a frame too big for the room left still starts, as the last segment, when a quarter of the budget is free",
+    room10 >= b10a / 4 && room10 < whole30 && s10.length === 2 && s10[0].f === "20:1" && sliceBytes(s10[0]) === s10[0].Z && s10[1].f === "30:1" && s10[1].o === 0 && sliceBytes(s10[1]) < s10[1].Z && r10.rest.length === 0 && resultBytes(r10) <= b10a,
+    [room10, b10a, whole30, s10.map((s) => [s.f, sliceBytes(s), s.Z]), resultBytes(r10)],
+  );
   const mid = JSON.parse(JSON.stringify(big));
-  mid.pages[0].children.push(bigFrame("40:1", 1, 24));
+  mid.pages[0].children.push(bigFrame("40:1", 6, 24));
   const m10 = mockFigma(mid);
-  const w10 = await runScript(pack.extractScript({ file: FILE, nonce: "n-late-w", pages: ["1:1"], ids: [["40:1", 0, null]], budget: 60000 }), m10.figma);
-  const s1 = JSON.stringify(w10.segs[0]).length + 2;
-  const b10 = 400 + s1 + 1300;
-  const r10b = await runScript(pack.extractScript({ file: FILE, nonce: "n-late-b", pages: ["1:1"], ids: [["40:1", 0, null], ["30:1", 0, null]], budget: b10 }), m10.figma);
-  check("with less than a quarter of the budget free it waits in rest instead", 1300 < b10 / 4 && (r10b.segs || []).length === 1 && r10b.rest[0] === "30:1", [s1, b10, (r10b.segs || []).map((s) => s.f), r10b.rest]);
+  const alone40 = resultBytes(await one([["40:1", 0, null]], 60000, m10));
+  const room10b = Math.floor(alone40 / 3) - 20;
+  const b10 = alone40 + room10b;
+  const r10b = await runScript(pack.extractScript({ file: FILE, nonce: "n-late-b", pages: ["1:1"], ids: [["40:1", 0, null], ["30:1", 0, null]], budget: b10, ...split }), m10.figma);
+  check(
+    "with less than a quarter of the budget free it waits in rest instead (and not for want of the minimum room)",
+    room10b < b10 / 4 && room10b >= 450 && room10b < whole30 && (r10b.segs || []).length === 1 && r10b.segs[0].f === "40:1" && r10b.rest[0] === "30:1" && resultBytes(r10b) <= b10,
+    [alone40, room10b, b10, (r10b.segs || []).map((s) => s.f), r10b.rest],
+  );
+
+  const waiting = Array.from({ length: 20 }, (_, k) => [`${7000 + k}:${80000 + k}`, 0, null]);
+  const r10c = await runScript(pack.extractScript({ file: FILE, nonce: "n-rest", pages: ["1:1"], ids: [["30:1", 0, null], ...waiting], budget: 1400, ...split }), mockFigma(big).figma);
+  check(
+    "a slice that fills the result still leaves room for every id sent back in rest",
+    (r10c.segs || []).length === 1 && r10c.segs[0].f === "30:1" && sliceBytes(r10c.segs[0]) < r10c.segs[0].Z && r10c.rest.length === 20 && resultBytes(r10c) <= 1400 && resultBytes(r10c) > 1300,
+    [(r10c.segs || []).map((s) => [s.f, sliceBytes(s)]), r10c.rest.length, resultBytes(r10c)],
+  );
 
   const c9 = mkctx("forged");
   const er9 = await runScript(pack.extractScript({ file: FILE, nonce: "n-ext-forged", pages: ["1:1"], ids: [["20:1", 0, null]] }), mockFigma(docRaw()).figma);
-  er9.segs[0].x[2].n = "not what Figma drew";
-  delete er9.sum;
-  er9.sum = fnv1a64(canonicalJson(er9));
+  const forged = segItems(er9.segs[0]);
+  forged[2].n = "not what Figma drew";
+  er9.segs[0] = repack(er9.segs[0], forged);
+  resum(er9);
   const r9 = extractIngest(c9, er9);
   check("a stream whose content does not hash to its part hash is refused, not stored", r9.stored.length === 0 && r9.refused.length === 1 && /hash does not match/.test(r9.refused[0].error) && !fs.existsSync(path.join(c9.storeDir, FILE, "20-1.json")), r9);
+  const c9b = mkctx("miscounted");
+  const er9b = await runScript(pack.extractScript({ file: FILE, nonce: "n-ext-count", pages: ["1:1"], ids: [["20:1", 0, null]] }), mockFigma(docRaw()).figma);
+  er9b.segs[0].T -= 1;
+  const r9b = extractIngest(c9b, resum(er9b));
+  check("a stream holding a different number of items than the frame declared is refused", r9b.stored.length === 0 && r9b.refused.length === 1 && /declared/.test(r9b.refused[0].error), r9b);
 
   console.log("planning");
   const frames8 = [
@@ -891,6 +1021,88 @@ async function selfTest() {
   const reg = { frames: { a: { fileKey: FILE, node: "1-2", page: "✅ Test" }, b: { fileKey: FILE, node: "1-3", page: null, gone: true }, c: { fileKey: FILE, node: "1-4", page: "Towars Draft (Disregard)" }, d: { fileKey: FILE, node: "1-5", page: "✅ Test", gone: true } } };
   const tf = pack.trackedFrames(reg, { pages: [{ fileKey: FILE, pageName: "✅ Test", pageId: "1:1" }], outOfScope: { "Towars Draft (Disregard)": "x" } });
   check("tracked = not gone, has a page, page in scope; node ids in colon form", tf.length === 1 && tf[0].node === "1:2" && tf[0].pageId === "1:1" && tf[0].key === `${FILE}:1:2`, tf);
+
+  console.log("the packed transport (lib/transport.mjs)");
+  transport.selfTest(check, transport.jsonFilesUnder([FIXTURES, path.join(HERE, "store")]));
+  const pasted = new Function(`${pack.compact(`const zcodec = ${transport.zcodec.toString()};`)}\nreturn zcodec;`)()(transport.ZDICT);
+  const probe = [docRaw(), expected, bigFrame("50:1", 2, 30), transport.HARD_TEXT].map((v) => canonicalJson(v));
+  check("the codec as pasted into a script packs the same bytes as the module's", probe.every((t) => Buffer.compare(Buffer.from(pasted.pack(t)), Buffer.from(transport.codec.pack(t))) === 0));
+  const batchIds = Array.from({ length: pack.MAX_EXTRACT_FRAMES }, (_, i) => [`I${12000 + i}:${340000 + i};${5000 + i}:${60000 + i}`, 123456, "0123456789abcdef"]);
+  const bigScript = pack.extractScript({ file: FILE, nonce: "000000000000", pages: ["9990:1", "9991:1", "9992:1"], ids: batchIds });
+  check("an extract script for the largest batch stays under the script budget (and use_figma's 50,000)", bigScript.length < pack.SCRIPT_BUDGET, bigScript.length);
+
+  const stressDoc = docRaw();
+  stressDoc.pages[0].children.push(stressFrame("60:1", 1600, 5));
+  const ms = mockFigma(stressDoc);
+  const hs60 = await runScript(pack.hashScript({ file: FILE, nonce: "n-h60", pages: ["1:1"], ids: ["60:1"] }), ms.figma);
+  const c11 = mkctx("stress", { frames: [{ key: `${FILE}:60:1`, fileKey: FILE, node: "60:1", pageId: "1:1", order: 0 }] });
+  c11.maxCalls = 40;
+  let n11 = 0;
+  let worst11 = 0;
+  let packed11 = null;
+  while (n11 < 40) {
+    const plan = await planExtractScript(c11, {});
+    if (!plan.plan) break;
+    const res = await runScript(plan.text, ms.figma);
+    worst11 = Math.max(worst11, resultBytes(res));
+    const got = extractIngest(c11, res);
+    if (got.stored.length) packed11 = got.stored[0];
+    n11++;
+  }
+  const v11 = verifyStored(c11, `${FILE}:60:1`);
+  check(
+    "a 1,600-node board with CJK and emoji names, long text and 70-deep nesting arrives over several calls and is stored whole",
+    n11 > 1 && v11 && v11.index === v11.spec && v11.spec === v11.recomputed && v11.recomputed === hs60.frames["60:1"],
+    { n11, v11, live: hs60.frames["60:1"], packed11 },
+  );
+  check(`every result of that transfer is at most ${pack.ZRESULT_BUDGET} UTF-8 bytes`, worst11 > pack.ZRESULT_BUDGET * 0.9 && worst11 <= pack.ZRESULT_BUDGET, worst11);
+
+  const c12 = mkctx("old-partial", { frames: [{ key: `${FILE}:30:1`, fileKey: FILE, node: "30:1", pageId: "1:1", order: 0 }] });
+  writeState(c12, { live: {}, partial: { [`${FILE}:30:1`]: { H: "7e29b21f4eee250f", T: 99, pg: "✅ Test", n: "Big board", w: 400, h: 3000, x: [{ _p: "30:1", _h: "7e29b21f4eee250f" }], calls: 1, oversize: true } } });
+  const p12 = await planExtractScript(Object.assign(c12, { split: split.split, minCut: split.minCut }), {});
+  const r12 = p12.plan ? extractIngest(c12, await runScript(p12.text, mockFigma(big).figma)) : null;
+  check(
+    "a transfer parked in the plain format before z1 is planned again from 0, and the frame is stored",
+    p12.plan && p12.plan.ids[0][1] === 0 && p12.plan.ids[0][2] === null && r12 && r12.stored.length === 1 && !loadState(c12).partial[`${FILE}:30:1`],
+    [p12.plan && p12.plan.ids, r12],
+  );
+
+  const c13 = mkctx("foreign");
+  const er13 = await runScript(pack.extractScript({ file: FILE, nonce: "n-foreign", pages: ["1:1"], ids: [["10:1", 0, null]] }), mockFigma(docRaw()).figma);
+  let f13 = null;
+  try {
+    extractIngest(c13, resum({ ...er13, dz: "00000000" }));
+  } catch (e) {
+    f13 = e.message;
+  }
+  let g13 = null;
+  try {
+    extractIngest(c13, resum({ ...er13, nonce: "n-plain", enc: undefined }));
+  } catch (e) {
+    g13 = e.message;
+  }
+  const l13 = ledger.readLedger(c13.ledgerFile);
+  check("a result packed with another dictionary, or not packed, is refused, still counted, and writes nothing", /dictionary 00000000/.test(f13 || "") && /plain JSON/.test(g13 || "") && l13.length === 2 && l13.every((l) => l.ok === false && l.calls === 1) && !fs.existsSync(c13.indexFile), [f13, g13, l13]);
+
+  const c14 = mkctx("wrong-continuation", { frames: [{ key: `${FILE}:30:1`, fileKey: FILE, node: "30:1", pageId: "1:1", order: 0 }] });
+  Object.assign(c14, { split: split.split, minCut: split.minCut, maxCalls: 40 });
+  const p14 = await planExtractScript(c14, { budget: tiny });
+  const first14 = extractIngest(c14, await runScript(p14.text, mockFigma(big).figma));
+  const next14 = await planExtractScript(c14, { budget: tiny });
+  const res14 = await runScript(next14.text, mockFigma(big).figma);
+  const other = resum(JSON.parse(JSON.stringify({ ...res14, nonce: "n-other" })));
+  other.segs[0].H = "ffffffffffffffff";
+  resum(other);
+  const r14 = extractIngest(c14, other);
+  check("a slice that does not continue the transfer on record is refused and the transfer starts over", first14.partial.length === 1 && next14.plan.ids[0][1] === first14.partial[0].have && r14.refused.length === 1 && /does not continue/.test(r14.refused[0].error) && !loadState(c14).partial[`${FILE}:30:1`], [first14.partial, r14]);
+  const c15 = mkctx("ragged", { frames: [{ key: `${FILE}:30:1`, fileKey: FILE, node: "30:1", pageId: "1:1", order: 0 }] });
+  Object.assign(c15, { split: split.split, minCut: split.minCut, maxCalls: 40 });
+  const res15 = await runScript((await planExtractScript(c15, { budget: tiny })).text, mockFigma(big).figma);
+  const s15 = res15.segs[0];
+  const cut15 = Buffer.from(s15.z.join(""), "base64").subarray(0, 100);
+  Object.assign(s15, transport.toLines(cut15.toString("base64")));
+  const r15 = extractIngest(c15, resum(res15));
+  check("a first slice that is not a whole number of base64 groups is refused", cut15.length % 3 !== 0 && r15.refused.length === 1 && /whole number of base64 groups/.test(r15.refused[0].error), r15);
 
   console.log("the mock refuses writes");
   const guardCheck = await runScript("try { figma.createRectangle(); return 'wrote'; } catch (e) { return String(e.message); }", mockFigma(docRaw()).figma);

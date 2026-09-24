@@ -444,21 +444,31 @@ export async function hashDriver(figma, lib, B, job) {
 }
 
 /**
- * The extract pass. Each frame goes out as one segment: its record's parts
- * flattened to a pre-order node list (a `{_p, _h}` marker opens each part,
- * every node carries its depth as `_d`), so a frame too big for one result is
- * carried across calls by offset. A frame that does not fit whole goes out as
- * a slice, and ends the result, when it is first or when at least a quarter
- * of the budget is still free; otherwise it waits in `rest`.
- * job.ids is [[id, offset, expectedHash]]: a continuation whose frame hash has
- * changed since the earlier slices restarts at 0.
+ * The extract pass. Each frame's record is flattened to a pre-order item list
+ * (a `{_p, _h}` marker opens each part, every node carries its depth as `_d`)
+ * and the list's canonical JSON is packed into one z1 stream (transport.mjs).
+ * A segment carries a byte range of that stream as base64 lines: the whole
+ * stream for a frame that fits, and the first part of it for one that does
+ * not, continued by byte offset in later calls. The same frame always packs
+ * to the same bytes, so the slices of one transfer join up.
+ *
+ * The budget is the UTF-8 byte length of the returned JSON, because that is
+ * what use_figma cuts; it is measured, not estimated, and the ids that could
+ * end up in `rest` are reserved before each frame. A frame that does not fit
+ * whole goes out as a slice, and ends the result, when it is first or when at
+ * least a quarter of the budget is still free; otherwise it waits in `rest`.
+ * job.ids is [[id, byteOffset, expectedHash]]: a continuation whose frame hash
+ * has changed since the earlier slices restarts at 0. `ms` is [page loading,
+ * the rest, packing].
  */
 export async function extractDriver(figma, lib, B, job) {
   const t0 = Date.now();
   const loaded = new Set();
   await loadPages(figma, job.pages, loaded);
   const t1 = Date.now();
-  const len = (x) => lib.canonicalJson(x).length + 1;
+  const zc = lib.zc;
+  const LINE = job.line;
+  const size = (v) => zc.u8len(JSON.stringify(v));
   const flat = (t, d, x) => {
     const o = {};
     for (const k of Object.keys(t)) if (k !== 'c') o[k] = t[k];
@@ -466,11 +476,22 @@ export async function extractDriver(figma, lib, B, job) {
     x.push(o);
     if (t.c) for (const ch of t.c) flat(ch, d + 1, x);
   };
-  const out = { v: 1, kind: 'extract', file: job.file, nonce: job.nonce, segs: [], missing: [], errors: {}, rest: [] };
-  let room = job.budget - 400;
+  // Bytes a slice of L stream bytes adds: its base64, the quotes and commas of
+  // its lines, and one 8-digit check per line.
+  const cost = (L) => {
+    if (L <= 0) return 0;
+    const c = 4 * Math.ceil(L / 3);
+    const k = Math.ceil(c / LINE);
+    return c + 14 * k - 2;
+  };
+  const out = { v: 1, kind: 'extract', file: job.file, nonce: job.nonce, enc: job.enc, dz: job.dz, segs: [], missing: [], errors: {}, rest: [] };
+  let used = size(out) + 60;
+  const after = [0];
+  for (let k = job.ids.length - 1; k >= 0; k--) after.unshift(after[0] + size(job.ids[k][0]) + 1);
+  let tz = 0;
   let i = 0;
   for (; i < job.ids.length; i++) {
-    if (Date.now() - t0 > job.ms || room < 1200) break;
+    if (Date.now() - t0 > job.ms || job.budget - used - after[i] < 400) break;
     const id = job.ids[i][0];
     let off = job.ids[i][1] || 0;
     const want = job.ids[i][2] || null;
@@ -479,6 +500,7 @@ export async function extractDriver(figma, lib, B, job) {
       const n = await figma.getNodeByIdAsync(id);
       if (!n) {
         out.missing.push(id);
+        used += size(id) + 1;
         continue;
       }
       const pg = B.pageOf(n);
@@ -486,6 +508,7 @@ export async function extractDriver(figma, lib, B, job) {
       rec = await B.record(n);
     } catch (e) {
       out.errors[id] = String((e && e.message) || e).slice(0, 160);
+      used += size(id) + size(out.errors[id]) + 2;
       continue;
     }
     if (want && want !== rec.hash) off = 0;
@@ -494,26 +517,44 @@ export async function extractDriver(figma, lib, B, job) {
       x.push({ _p: p.node, _h: p.hash });
       flat(p.tree, 0, x);
     }
-    const seg = { f: id, H: rec.hash, pg: rec.page, n: rec.name, w: rec.w, h: rec.h, T: x.length, o: off, x: [] };
-    const head = len(seg);
-    let body = 0;
-    for (let k = off; k < x.length; k++) body += len(x[k]);
-    if (head + body > room && out.segs.length && room < job.budget / 4) break;
-    room -= head;
-    for (let k = off; k < x.length; k++) {
-      const z = len(x[k]);
-      if (z > room && seg.x.length) break;
-      seg.x.push(x[k]);
-      room -= z;
+    const text = lib.canonicalJson(x);
+    const tz0 = Date.now();
+    const bytes = zc.pack(text);
+    tz += Date.now() - tz0;
+    if (off >= bytes.length) off = 0;
+    const seg = { f: id, H: rec.hash, pg: rec.page, n: rec.name, w: rec.w, h: rec.h, T: x.length, R: zc.u8len(text), Z: bytes.length, zh: lib.fnv1a64(text), o: off, z: [], zc: [] };
+    const head = size(seg) + 1;
+    const avail = job.budget - used - after[i + 1] - head;
+    const need = bytes.length - off;
+    let L = need;
+    if (cost(L) > avail) {
+      L = Math.floor((avail * 3) / 4 / 3) * 3;
+      while (L > 0 && cost(L) > avail) L -= 3;
     }
+    if (L < need && out.segs.length && avail + head < job.budget / 4) break;
+    if (L <= 0) {
+      if (!out.segs.length) {
+        out.errors[id] = 'the result budget leaves no room for any of this frame';
+        i++;
+      }
+      break;
+    }
+    const s64 = zc.b64(bytes, off, off + L);
+    for (let k = 0; k < s64.length; k += LINE) {
+      const line = s64.slice(k, k + LINE);
+      seg.z.push(line);
+      seg.zc.push(lib.fnv1a64(line).slice(8));
+    }
+    used += head + cost(L);
     out.segs.push(seg);
-    if (off + seg.x.length < x.length) {
+    if (off + L < bytes.length) {
       i++;
       break;
     }
   }
   out.rest = job.ids.slice(i).map((e) => e[0]);
-  out.ms = [t1 - t0, Date.now() - t1];
+  out.ms = [t1 - t0, Date.now() - t1, tz];
+  while (out.segs.length && size(out) + 26 > job.budget) out.rest.unshift(out.segs.pop().f);
   out.sum = lib.fnv1a64(lib.canonicalJson(out));
   return out;
 }

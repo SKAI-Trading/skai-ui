@@ -7,8 +7,10 @@
  * then one line that runs a driver on a JSON job. The job carries the ids, the
  * pages to load, a nonce the result must echo, and the result budget.
  *
- * Sizes: use_figma cuts a result at 20 KB mid-JSON, so a result is planned to
- * stay under RESULT_BUDGET characters and both drivers enforce it as they go.
+ * Sizes: use_figma keeps the first 20,480 UTF-8 bytes of a result and cuts
+ * the rest. A hash result is plain JSON planned under RESULT_BUDGET. An
+ * extract result carries its frames packed (transport.mjs, TRANSPORT.md) and
+ * the driver holds the returned JSON under ZRESULT_BUDGET bytes, measured.
  * The script itself goes in use_figma's `code` field, which takes 50,000
  * characters; SCRIPT_BUDGET keeps a margin under that.
  */
@@ -17,13 +19,18 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { canonicalJson, fnv1a64 } from "./canonical.mjs";
 import { specBuilder, loadPages, hashDriver, extractDriver } from "./plugin-builder.js";
+import { zcodec, ZDICT, DICT_ID, ENC, LINE } from "./transport.mjs";
 
 export const RESULT_BUDGET = 16000;
+/** Bytes an extract result may take: 2,480 under the cut, for a margin. */
+export const ZRESULT_BUDGET = 18000;
 export const SCRIPT_BUDGET = 45000;
 export const HASH_MS = 25000;
 export const EXTRACT_MS = 25000;
 /** Bytes a frame is assumed to need when it has never been stored. */
 export const DEFAULT_FRAME_EST = 5000;
+/** Packed bytes per stored byte, for planning only (measured 0.07 to 0.12 on real specs). */
+export const PACKED_EST = 0.12;
 export const MAX_EXTRACT_FRAMES = 40;
 
 /** Drop indentation, blank lines and whole-line comments. */
@@ -35,15 +42,18 @@ export function compact(src) {
     .join("\n");
 }
 
-const LIB = compact(
+const CORE = compact(
   [
     `const canonicalJson = ${canonicalJson.toString()};`,
     `const fnv1a64 = ${fnv1a64.toString()};`,
     `const specBuilder = ${specBuilder.toString()};`,
     `const loadPages = ${loadPages.toString()};`,
-    `const lib = { canonicalJson, fnv1a64 };`,
   ].join("\n"),
 );
+const HASH_LIB = `${CORE}\nconst lib = { canonicalJson, fnv1a64 };`;
+// The dictionary goes in as one JSON string literal, after compact(), so no
+// line of it can be taken for a comment.
+const EXTRACT_LIB = `${CORE}\n${compact(`const zcodec = ${zcodec.toString()};`)}\nconst lib = { canonicalJson, fnv1a64, zc: zcodec(${JSON.stringify(ZDICT)}) };`;
 const HASH_DRIVER = compact(`const hashDriver = ${hashDriver.toString()};`);
 const EXTRACT_DRIVER = compact(`const extractDriver = ${extractDriver.toString()};`);
 
@@ -53,19 +63,23 @@ const builderOpt = (job) => JSON.stringify(job.split ? { split: job.split, minCu
 
 export function hashScript(job) {
   const j = { file: job.file, nonce: job.nonce, pages: job.pages || [], ids: job.ids, budget: job.budget || RESULT_BUDGET, ms: job.ms || HASH_MS };
-  return `${LIB}\n${HASH_DRIVER}\nreturn await hashDriver(figma, lib, specBuilder(figma, lib, ${builderOpt(job)}), ${JSON.stringify(j)});`;
+  return `${HASH_LIB}\n${HASH_DRIVER}\nreturn await hashDriver(figma, lib, specBuilder(figma, lib, ${builderOpt(job)}), ${JSON.stringify(j)});`;
 }
 
+/** An extract script. job.budget is the returned JSON's byte limit (default ZRESULT_BUDGET). */
 export function extractScript(job) {
   const j = {
     file: job.file,
     nonce: job.nonce,
     pages: job.pages || [],
     ids: job.ids,
-    budget: job.budget || RESULT_BUDGET,
+    budget: job.budget || ZRESULT_BUDGET,
     ms: job.ms || EXTRACT_MS,
+    enc: ENC,
+    dz: DICT_ID,
+    line: job.line || LINE,
   };
-  return `${LIB}\n${EXTRACT_DRIVER}\nreturn await extractDriver(figma, lib, specBuilder(figma, lib, ${builderOpt(job)}), ${JSON.stringify(j)});`;
+  return `${EXTRACT_LIB}\n${EXTRACT_DRIVER}\nreturn await extractDriver(figma, lib, specBuilder(figma, lib, ${builderOpt(job)}), ${JSON.stringify(j)});`;
 }
 
 /** Size of a hash script with no ids, so a group can be sized before it is built. */
@@ -159,8 +173,15 @@ export function planHashGroups(frames, { resultBudget = RESULT_BUDGET, scriptBud
   return groups;
 }
 
-/** Bytes a frame's transfer is expected to take: its last stored size, else the default. */
-export const estimateBytes = (entry) => (entry && entry.bytes ? Math.ceil(entry.bytes * 0.9) : DEFAULT_FRAME_EST);
+/** Bytes a frame's transfer is expected to take packed: its last stored size, else the default, times PACKED_EST. */
+export const estimateBytes = (entry) => Math.ceil((entry && entry.bytes ? entry.bytes : DEFAULT_FRAME_EST) * PACKED_EST);
+
+/**
+ * A transfer this checkout can continue: one made in the current transport.
+ * A partial from an older format (the plain item slices before z1) cannot be
+ * joined to a packed stream, so its frame is planned again from 0.
+ */
+export const continuable = (p) => !!p && p.enc === ENC;
 
 /**
  * Choose the next extract batch for ONE file (a use_figma call reads one file).
@@ -169,7 +190,7 @@ export const estimateBytes = (entry) => (entry && entry.bytes ? Math.ceil(entry.
  * about twice the result budget, because the driver packs exactly and returns
  * whatever does not fit in `rest`.
  */
-export function planExtract({ frames, index, state, rank, file = null, nodes = null, limit = MAX_EXTRACT_FRAMES, budget = RESULT_BUDGET }) {
+export function planExtract({ frames, index, state, rank, file = null, nodes = null, limit = MAX_EXTRACT_FRAMES, budget = ZRESULT_BUDGET }) {
   const idx = index?.frames || {};
   const partial = state?.partial || {};
   const byKey = new Map(frames.map((f) => [f.key, f]));
@@ -180,11 +201,11 @@ export function planExtract({ frames, index, state, rank, file = null, nodes = n
   } else {
     const need = frames.filter((f) => !idx[f.key] || idx[f.key].stale);
     const inTransfer = Object.keys(partial)
-      .filter((k) => !partial[k].oversize)
+      .filter((k) => continuable(partial[k]) && !partial[k].oversize)
       .map((k) => byKey.get(k))
       .filter(Boolean);
     const rest = need
-      .filter((f) => !partial[f.key])
+      .filter((f) => !continuable(partial[f.key]))
       .sort((a, b) => rank(a.key) - rank(b.key) || a.order - b.order);
     pool = inTransfer.concat(rest);
   }
@@ -195,10 +216,9 @@ export function planExtract({ frames, index, state, rank, file = null, nodes = n
   for (const f of pool) {
     if (f.fileKey !== fileKey) continue;
     if (pick.length >= limit || (pick.length && est >= budget * 2)) break;
-    const p = partial[f.key];
-    pick.push({ f, off: p ? p.x.length : 0, want: p ? p.H : null });
-    est += p ? budget : estimateBytes(idx[f.key]);
-    if (p) break;
+    const p = continuable(partial[f.key]) ? partial[f.key] : null;
+    pick.push({ f, off: p ? p.got : 0, want: p ? p.H : null });
+    est += p ? Math.min(budget, p.Z - p.got + 400) : estimateBytes(idx[f.key]);
   }
   const pages = [...new Set(pick.map((p) => p.f.pageId).filter(Boolean))];
   return { file: fileKey, pages, ids: pick.map((p) => [p.f.node, p.off, p.want]), keys: pick.map((p) => p.f.key) };
