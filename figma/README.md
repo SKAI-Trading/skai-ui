@@ -22,7 +22,7 @@ It is:
 It is not:
 
 - **Not complete yet.** Only the frames a sync has fetched are stored. `npm run figma:sync -- status` gives the count
-  (when this was written: 3 stored of 4,786 tracked). A frame that is not stored says so, and prints the command
+  (when this was written: 4 stored of 4,786 tracked). A frame that is not stored says so, and prints the command
   that fetches it.
 - **Not a place to design.** A design change is made in Figma and reaches the store through a sync. Nothing under
   `store/`, `tokens/` or `ledger/` is edited by hand.
@@ -75,9 +75,11 @@ In Git Bash on Windows, an argument that starts with `/` is rewritten into a Win
 so `--route /trade/perps` finds nothing there. Leave the slash off (`--route trade/perps` matches the same frames) or
 set `MSYS_NO_PATHCONV=1`. PowerShell and other shells pass it through unchanged.
 
-The catalog's worklist carries the same state for every frame it lists: `npm run catalog:worklist -- --out <dir>`
+The catalog's worklist carries a spec state for every frame it lists: `npm run catalog:worklist -- --out <dir>`
 writes `worklist.md` and `worklist.tsv` there, and each row names its spec (`stored`, `stale` or `missing`) and the
-spec's path. Write them outside the repo, or do not commit them: they are derived.
+spec's path. Write them outside the repo, or do not commit them: they are derived. After a sync that stopped part-way
+the two can differ, since `figma:find` goes by the spec file and the worklist by the index entry and its file;
+[SCHEMA.md](SCHEMA.md#stored-stale-missing) says which reads what.
 
 ## Read a spec
 
@@ -147,11 +149,11 @@ name one by its key) and 3 when the frame is not stored. A frame that is not sto
 command that fetches it:
 
 ```text
-$ npm run figma:spec -- 7710:91527
+$ npm run figma:spec -- 3928:78877
 ...
-NOT STORED: there is no spec at store/mhF3BkzlTaGiLzJ7kvpmVc/7710-91527.json yet.
+NOT STORED: there is no spec at store/mhF3BkzlTaGiLzJ7kvpmVc/3928-78877.json yet.
 read.mjs never calls Figma. To fetch this frame (Figma calls, counted against the daily budget):
-  npm run figma:sync -- extract-script --file mhF3BkzlTaGiLzJ7kvpmVc --nodes 7710:91527
+  npm run figma:sync -- extract-script --file mhF3BkzlTaGiLzJ7kvpmVc --nodes 3928:78877
   (run the printed script with use_figma, save its result as JSON, then)
   npm run figma:sync -- extract-ingest <result.json>
 ```
@@ -242,13 +244,13 @@ save what comes back exactly as given, and hand it to the matching `*-ingest` co
 ```text
 $ npm run figma:sync -- status
 tracked   4786  (mhF3 1820 · 3sSz 2048 · M6r9 918)
-stored    3  stale 0  missing 4783  (+0 split part files, 0 stored frames no longer tracked)
-  mhF3BkzlTaGiLzJ7kvpmVc  stored 1/1820  stale 0  missing 1819
+stored    4  stale 0  missing 4782  (+11 split part files, 0 stored frames no longer tracked)
+  mhF3BkzlTaGiLzJ7kvpmVc  stored 2/1820  stale 0  missing 1818
   3sSzw1KewMtUbeLAv7uW0r  stored 0/2048  stale 0  missing 2048
   M6r9FEn042UWTQD1zvy6GM  stored 2/918  stale 0  missing 916
-transfer  1 frame(s) part-way, parked as oversize: mhF3BkzlTaGiLzJ7kvpmVc:7710:91527
-live      107 frame(s) with a live hash on record
-calls     14 of 120 spent on 2026-09-24 (UTC), 106 left
+transfer  0 frame(s) part-way
+live      108 frame(s) with a live hash on record
+calls     17 of 120 spent on 2026-09-24 (UTC), 103 left
 ```
 
 ### Fetch one frame

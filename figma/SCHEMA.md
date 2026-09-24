@@ -158,15 +158,37 @@ that stored a frame. The file is written one entry per line, keys sorted.
 
 ### Stored, stale, missing
 
-These are the three states of a tracked frame, and every reader means the same thing by them:
+Sync records a frame as stored by writing its index entry (a part entry never counts as a frame), and as stale by
+setting `"stale": true` on that entry. A hash pass (`hash-ingest`) sets the flag when the frame's live hash differs
+from the entry's `hash`, and when the pass reports the node missing from Figma (then `sync-state.json` records it
+`gone`). A later hash pass whose live hash equals the stored one again removes the flag, and extracting the frame
+rewrites the entry without it. A stale spec is still the last design sync read, so readers print it with a warning.
 
-- **stored**: the frame has an index entry (a part entry never counts as a frame). A reader that opens the spec also
-  checks the file is there; an entry whose file is gone reads as not stored.
-- **stale**: the entry holds `"stale": true`. A hash pass (`hash-ingest`) sets it when the frame's live hash differs
-  from the entry's `hash`, and when the pass reports the node missing from Figma (then `sync-state.json` records it
-  `gone`). A later hash pass whose live hash equals the stored one again removes the flag, and extracting the frame
-  rewrites the entry without it. A stale spec is still the last design sync read, so readers print it with a warning.
-- **missing**: no index entry.
+The readers do not all go by that record. Each one's rule:
+
+- `figma:find` and `figma:spec` (`read.mjs`) go by the FILE: stored when the spec file is on disk, at the entry's
+  `path` or else `store/<fileKey>/<node>.json`, whether or not there is an entry. Stale when it is stored and the entry
+  holds `"stale": true` or a `liveHash` that differs from its `hash`. They list every catalog frame, tracked or not,
+  and every frame the index holds that the catalog lacks.
+- `figma-catalog/worklist.mjs` (`specState`) goes by the entry AND the file: stored when the frame has an entry and
+  that file is on disk; stale when it is stored and the entry holds `"stale": true`; missing otherwise.
+- `npm run figma:sync -- status` goes by the ENTRY: stored when there is one, whether or not its file is there; stale
+  when it holds `"stale": true` (counted inside stored); missing when there is none.
+- `extract-script` without `--nodes` plans a tracked frame that has no entry or whose entry is stale.
+
+They agree while every entry has its file, every spec file has its entry and no entry holds a `liveHash`, which is
+what a completed sync leaves. They disagree on what an interrupted run or a lost file leaves (`extract-ingest` writes the spec files before the index,
+so an ingest that dies between the two leaves files with no entry). Measured on one frame each:
+
+| the store holds | find / spec | worklist | status | planned |
+|---|---|---|---|---|
+| a spec file, no entry | stored | missing | missing | yes |
+| an entry whose file is gone | not stored | missing | stored | no |
+| the same, flagged stale | not stored | missing | stale | yes |
+| an entry and its file, `liveHash` unlike `hash`, no flag | stale | stored | stored | no |
+
+`liveHash` is not an index field in this contract and no writer sets one; only `read.mjs` looks at it. An entry whose
+file is gone is fetched again only by name: `extract-script --file <fileKey> --nodes <node>`.
 
 `npm run figma:sync -- status` counts all three per file, plus split part files, stored frames the catalog no longer
 tracks, transfers part-way, and today's calls.

@@ -16,10 +16,13 @@
  * registry.json supplies title, measured size, implFiles, route and notes.
  *
  * The design store's index (../figma/store/index.json) is read for one thing:
- * each row's spec path and whether that spec is stored, stale or missing, in
- * the sense figma/SCHEMA.md gives those words. It never changes which packet a
- * frame lands in, and sync.mjs, which reads the packets to order its fetches,
- * builds the worklist without it.
+ * each row's spec path and whether that spec is stored, stale or missing, by
+ * the worklist's rule in figma/SCHEMA.md ("Stored, stale, missing"): an index
+ * entry whose file is on disk. figma:find goes by the file alone and sync
+ * status by the entry alone, so after an ingest that stopped part-way the
+ * three can differ. It never changes which packet a frame lands in, and
+ * sync.mjs, which reads the packets to order its fetches, builds the worklist
+ * without it.
  *
  * Before writing anything the in-scope tallies are checked against
  * coverage.json's own rollup, and every open frame must join exactly one
@@ -250,7 +253,11 @@ const specRelOf = (fileKey, node) => `store/${fileKey}/${String(node).replace(/:
  * Stored and stale carry the spec's path relative to the skai-ui package
  * root. Missing carries none: no entry, a split part's entry (a part is never
  * a frame), or an entry whose file is gone, because a path to a file that is
- * not there is not a spec.
+ * not there is not a spec. A spec file with no entry is missing too: sync
+ * writes the files before the index, so that is what an ingest that did not
+ * finish leaves, and sync plans the frame again. Stale is the entry's flag only; an
+ * index field the contract does not define (read.mjs also reads `liveHash`)
+ * changes nothing here.
  */
 export function specOf(store, fileKey, node) {
   const colonNode = String(node).replace(/-/g, ":");
@@ -624,7 +631,7 @@ export function renderTsv(w) {
     `# worklist.tsv — derived by worklist.mjs from registry.json (${w.stamps.registry}), coverage.json (${w.stamps.coverage}, harvest ${w.stamps.harvest}) and ${storeStamp(w)}. Do not edit.`,
     `# packet: P = a lane packet, B = backend work (blocked-on-backend), D = design redraw (frame-defect). implFiles: paths cited by the row; a ~ path is the nearest code a NONE row names, not an owner.`,
     `# width: the measured frame width, — when the node was never measured. band from measured or declared (title).`,
-    `# specState: the frame's spec in the design store, stored | stale (Figma changed after it was stored) | missing (figma/SCHEMA.md). spec: its path from the skai-ui package root, — when missing. Both — when the store was not read.`,
+    `# specState: the frame's spec in the design store, stored (an index entry and its file) | stale (Figma changed after it was stored) | missing (no entry, or its file is gone), the worklist's rule in figma/SCHEMA.md. spec: its path from the skai-ui package root, — when missing. Both — when the store was not read.`,
     TSV_COLUMNS.join("\t"),
   ];
   for (const p of w.packets) for (const r of p.frames) out.push(line(r, p));
@@ -651,7 +658,7 @@ export function renderMd(w) {
     `- **Left out:** done ${s.done}, furniture ${s.furniture}, ruled-out ${s.ruledOut}, live frames no row covers ${s.liveOnly}; not-done frames on pages outside in-scope: ${offScope}.`,
     `- **Checked:** the in-scope tallies reproduce coverage.json's rollup, and every frame here joins exactly one registry frame.`,
     s.specs
-      ? `- **Design store:** of the ${s.specs.stored + s.specs.stale + s.specs.missing} frames listed here, ${s.specs.stored + s.specs.stale} ${s.specs.stored + s.specs.stale === 1 ? "has" : "have"} a spec in \`figma/store/\` (${s.specs.stale} of them stale) and ${s.specs.missing} ${s.specs.missing === 1 ? "has" : "have"} none. Read one with \`npm run figma:spec -- <fileKey>:<node>\`; \`npm run figma:sync -- extract-script\` fetches missing and stale frames, worklist packets first (see \`../figma/README.md\`).`
+      ? `- **Design store:** of the ${s.specs.stored + s.specs.stale + s.specs.missing} frames listed here, ${s.specs.stored + s.specs.stale} ${s.specs.stored + s.specs.stale === 1 ? "has" : "have"} a spec in \`figma/store/\` (${s.specs.stale} of them stale) and ${s.specs.missing} ${s.specs.missing === 1 ? "has" : "have"} none. Read one with \`npm run figma:spec -- <fileKey>:<node>\`; \`npm run figma:sync -- extract-script\` fetches stale frames and those with no index entry, worklist packets first, and a frame whose entry has lost its file only when named with \`--file <fileKey> --nodes <node>\` (see \`../figma/README.md\`).`
       : "- **Design store:** not read, so no row carries a spec.",
     "",
   );
@@ -1135,6 +1142,70 @@ function selfTest() {
         onFile[0].state === "stored" && onFile[0].path === "figma/store/K/1-2.json" && onFile[1].state === "missing" && real.note === null &&
         /not valid JSON/.test(broken || ""),
       JSON.stringify([none.note, onFile, broken]),
+    );
+  }
+  {
+    // On real files, the states the readers do not agree on: a spec file with no entry (what an ingest leaves when
+    // it stops between writing the files and the index), a liveHash, which the contract does not define, and a
+    // stale entry whose file is gone.
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "worklist-split-"));
+    fs.mkdirSync(path.join(tmp, "store", "K"), { recursive: true });
+    for (const n of ["1-4", "1-5"]) fs.writeFileSync(path.join(tmp, "store", "K", `${n}.json`), "{}");
+    const frames = {
+      "K:1:5": { hash: "a", liveHash: "b", path: "store/K/1-5.json" },
+      "K:1:6": { hash: "a", path: "store/K/1-6.json", stale: true },
+    };
+    fs.writeFileSync(path.join(tmp, "store", "index.json"), JSON.stringify({ v: 1, syncedAt: "x", frames }));
+    const s = readStore(tmp);
+    const got = ["1-4", "1-5", "1-6"].map((n) => {
+      const r = specOf(s, "K", n);
+      return `${n}=${r.state}${r.path ? ` ${r.path}` : ""}`;
+    }).join(" | ");
+    fs.rmSync(tmp, { recursive: true, force: true });
+    const want = "1-4=missing | 1-5=stored figma/store/K/1-5.json | 1-6=missing";
+    check(
+      "specOf: a spec file with no entry is missing, a liveHash without the flag is stored, a stale entry whose file is gone is missing",
+      got === want,
+      `got  ${got}\n        want ${want}`,
+    );
+  }
+  {
+    // figma/SCHEMA.md's "Stored, stale, missing" table says what the worklist calls each state the readers
+    // disagree on. Build each one and hold specOf to the table's worklist column, so the two cannot drift apart.
+    const REL = "store/K/1-2.json";
+    const STATES = {
+      "a spec file, no entry": { frames: {}, disk: [REL] },
+      "an entry whose file is gone": { frames: { "K:1:2": { hash: "a", path: REL } }, disk: [] },
+      "the same, flagged stale": { frames: { "K:1:2": { hash: "a", path: REL, stale: true } }, disk: [] },
+      "an entry and its file, `liveHash` unlike `hash`, no flag": { frames: { "K:1:2": { hash: "a", liveHash: "b", path: REL } }, disk: [REL] },
+    };
+    let text = "";
+    try {
+      text = fs.readFileSync(path.join(FIGMA_DIR, "SCHEMA.md"), "utf8").replace(/\r\n/g, "\n");
+    } catch {
+      // no contract to read: the check below fails on the empty section
+    }
+    const section = /\n### Stored, stale, missing\n([\s\S]*?)(?=\n#{2,3} )/.exec(text)?.[1] ?? "";
+    const table = section.split("\n").filter((l) => l.startsWith("|")).map((l) => l.replace(/^\||\|$/g, "").split("|").map((c) => c.trim()));
+    const head = table[0] ?? [];
+    const col = head.indexOf("worklist");
+    const bad = [];
+    const seen = new Set();
+    for (const row of table.slice(2)) {
+      const st = STATES[row[0]];
+      if (!st) {
+        bad.push(`a row this check does not know: "${row[0]}"`);
+        continue;
+      }
+      seen.add(row[0]);
+      const got = specOf({ index: { frames: st.frames }, has: (rel) => st.disk.includes(rel) }, "K", "1-2").state;
+      if (got !== row[col]) bad.push(`"${row[0]}": SCHEMA.md says ${row[col]}, specOf says ${got}`);
+    }
+    for (const k of Object.keys(STATES)) if (!seen.has(k)) bad.push(`no row "${k}"`);
+    check(
+      "SCHEMA.md's Stored, stale, missing table gives the state specOf gives, row by row",
+      head[0] === "the store holds" && col > 0 && !bad.length,
+      bad.join("; ") || `table header: ${head.join(" | ") || "none found"}`,
     );
   }
   console.log(`\nself-test: ${pass}/${pass + fail} passed.`);
