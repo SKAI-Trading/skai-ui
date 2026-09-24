@@ -255,8 +255,9 @@ Added by the library read (2026-09-24), all additive:
   "counts", "parts": [{ from, n, sum, at, pub, items, gridRead }], "got", "perCol", "added", "same", "changes": [{ kind,
   name, field, was, now }], "publish": { read, of, complete, unread, unreadVariables, errors }, "externalAliases",
   "bad", "provenanceCheck" }`. `complete` is true only when parts read in order from row 0 cover every row the library
-  listed, each collection's variable count is met, grid styles were read and no item failed to read; `why` says what
-  is missing otherwise. `changes` lists each field where a token the walk had stored differs from the library's
+  listed, the distinct keys read per kind equal the library's counts (a rename between calls can repeat one row and
+  skip another while the rows still add up), each collection's variable count is met, grid styles were read and no
+  item failed to read; `why` says what is missing otherwise. `changes` lists each field where a token the walk had stored differs from the library's
   definition (the library's is written). `variables.json` carries `"export": { complete, source, sourceName, method,
   at }` from it. After a complete read, `library` is rebuilt from it (`method` says so, `localCounts.grid` added, key
   lists from the full keys) and `provenanceCheck` compares it with the previous key lists.

@@ -194,7 +194,8 @@ export function mockLibrary(lx, opts = {}) {
     if (opts.hang === x.id) return new Promise(() => {});
     return x.status || "CURRENT";
   };
-  const vars = lx.variables.slice();
+  // renameVar: [id, newName], the library renamed a variable (a rename keeps its key).
+  const vars = lx.variables.map((v) => (opts.renameVar && v.id === opts.renameVar[0] ? { ...v, name: opts.renameVar[1] } : v));
   if (opts.extraVar) vars.push({ id: "VariableID:1:99", key: "ababababab990000000000000000000000000099", name: "s-99", col: "VariableCollectionId:1:0", type: "FLOAT", scopes: [], values: { m1: 396 } });
   const cols = lx.collections.map((c) =>
     strict({ id: c.id, name: c.name, key: c.key, remote: false, hiddenFromPublishing: false, isExtension: false, defaultModeId: c.modes[0][0], modes: c.modes.map(([modeId, name]) => ({ modeId, name })), variableIds: vars.filter((v) => v.col === c.id).map((v) => v.id) }, "collection"),
@@ -668,6 +669,20 @@ export async function selfTest() {
     const changed = (await libRun({ cap: 1700, from: parts[0].d.m.next }, { extraVar: true })).r;
     const moved = throws(() => ingestLib(q, JSON.stringify(changed)));
     check("library: a part read after the library changed is refused", moved && /does not continue/.test(moved.message), moved && moved.message);
+    // A rename between calls keeps the total and the counts, so the continuation is accepted, but it moves a row
+    // across the cursor: one token is read twice and another never. Distinct keys, not rows, decide completeness.
+    {
+      const rq = await walkStore();
+      ingestLib(rq, JSON.stringify(parts[0]));
+      let at = parts[0].d.m.next;
+      for (let k = 0; at !== null && k < 20; k++) {
+        const x = (await libRun({ cap: 1700, from: at }, { renameVar: ["VariableID:7:5", "a-6"] })).r;
+        ingestLib(rq, JSON.stringify(x));
+        at = x.d.m.next;
+      }
+      const exr = readJ(rq.sources).export;
+      check("library: a rename between calls that repeats one row and skips another is NOT complete", exr.complete === false && /distinct/.test(exr.why.join()), JSON.stringify(exr.why));
+    }
     for (const x of parts.slice(1)) ingestLib(q, JSON.stringify(x));
     const tokenFiles = (pp) => ["variables", "text", "effect", "paint", "grid"].map((k) => fs.readFileSync(pp[k], "utf8")).join("\n");
     check("library: the parts converge on the same token files as the one-part read", tokenFiles(q) === tokenFiles(p));

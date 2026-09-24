@@ -633,6 +633,14 @@ export function ingestLibrary(st, r, at) {
   if (ex.next !== null) why.push(`${covered} of ${ex.total} rows read: continue with library-script (it starts at row ${ex.next})`);
   else if (covered !== ex.total) why.push(`the parts cover ${covered} rows, the library listed ${ex.total}`);
   for (const k of LIST_KINDS) if (ex.got[k] !== ex.counts[k]) why.push(`${k}: ${ex.got[k]} read of ${ex.counts[k]}`);
+  // Rows can add up while tokens do not: a rename between calls keeps the counts but moves a row across the cursor,
+  // so one token is read twice and another never. Distinct keys decide.
+  if (ex.next === null) {
+    for (const k of LIST_KINDS) {
+      const distinct = new Set(ex.keys[KEY_LETTER[k]]).size;
+      if (distinct !== ex.counts[k]) why.push(`${k}: ${distinct} distinct tokens read of ${ex.counts[k]} (a part repeated or skipped a row: the library changed between calls; read again with library-script --restart)`);
+    }
+  }
   for (const [name, , , n] of d.cols) if ((ex.perCol[name] || 0) !== n && ex.next === null) why.push(`collection ${name} lists ${n} variables, ${ex.perCol[name] || 0} read`);
   if (!ex.gridRead) why.push("grid styles could not be read (getLocalGridStylesAsync)");
   if (ex.bad.length) why.push(`${ex.bad.length} item(s) failed to read: ${ex.bad.map((x) => x[1]).join(", ")}`);
