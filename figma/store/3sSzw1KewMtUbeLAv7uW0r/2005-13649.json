@@ -1,0 +1,110 @@
+{
+ "v": 1,
+ "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+ "node": "2005:13649",
+ "page": "✅ Onboarding and Authentication",
+ "name": "Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet 1VH (768 x 1024px)",
+ "hash": "31a282f0e8e32e66",
+ "syncedAt": "2026-09-25T01:27:05.468Z",
+ "tree":
+  {"id":"2005:13649","t":"FRAME","n":"Skai > Onboarding > Get early access > Verification > Choose wallet > Link wallet 1VH (768 x 1024px)","b":[0,0,768,1024],"f":["Primary/Green Coal 300"],"clip":true,"c":[
+   {"id":"2005:13650","t":"ELLIPSE","n":"Ellipse 24","b":[-190,820,1147.5,1147.5],"op":0.19,"f":["Primary/Alien Green 300"],"fx":[{"r":173.64,"t":"LAYER_BLUR"}]},
+   {"id":"2005:13651","t":"BOOLEAN_OPERATION","n":"file","b":[-396,724,1560.5,441.5],"op":0.08,"f":["Primary/Sky Blue 300"]},
+   {"id":"2005:13974","t":"BOOLEAN_OPERATION","n":"file","b":[1165,865,1560.5,160.5],"op":0.34,"f":["Primary/Sky Blue 300"]},
+   {"id":"2005:14297","t":"FRAME","n":"nav","b":[30,30,117,16],"l":{"ai":"CENTER","g":32,"m":"H","sy":"HUG"},"c":[
+    {"id":"2005:14298","t":"TEXT","n":"Terms","b":[0,0,33,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Accents/Gray 100"],"tx":{"c":"Terms","st":"Md/Paragraph 2 300","ta":"CENTER"}},
+    {"id":"2005:14299","t":"TEXT","n":"Privacy","b":[65,0,37,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Accents/Gray 100"],"tx":{"c":"Privacy","st":"Md/Paragraph 2 300","ta":"CENTER"}}
+   ]},
+   {"id":"2445:9292","t":"FRAME","n":"nav","b":[621,30,117,16],"l":{"ai":"CENTER","g":32,"jc":"MAX","m":"H","sy":"HUG"},"c":[
+    {"id":"2445:9293","t":"FRAME","n":"icon16/discord","b":[5,0,16,16],"clip":true,"c":[
+     {"id":"2445:9294","t":"VECTOR","n":"Vector","b":[1,2.5,14,10.5],"f":["Core/White"]}
+    ]},
+    {"id":"2445:9295","t":"FRAME","n":"icon16/twitter","b":[53,0,16,16],"clip":true,"c":[
+     {"id":"2445:9296","t":"GROUP","n":"Group","b":[0,0,16,16],"c":[
+      {"id":"2445:9297","t":"GROUP","n":"Clip path group","b":[0,0,16,16],"c":[
+       {"id":"2445:9298","t":"GROUP","n":"SVGG1Ot4cAD","b":[0,0,16,16],"c":[
+        {"id":"2445:9299","t":"VECTOR","n":"Vector","b":[0,0,16,16],"f":["#000000"]}
+       ]},
+       {"id":"2445:9300","t":"GROUP","n":"Group","b":[1,1.5,14,12.5],"c":[
+        {"id":"2445:9301","t":"VECTOR","n":"Vector","b":[0,0,14,12.5],"f":["Core/White"]}
+       ]}
+      ]}
+     ]}
+    ]},
+    {"id":"2445:9302","t":"FRAME","n":"icon16/instagram","b":[101,0,16,16],"clip":true,"c":[
+     {"id":"2445:9303","t":"VECTOR","n":"Vector","b":[1.5,1.5,13.5,13.5],"f":["Core/White"]}
+    ]}
+   ]},
+   {"id":"3879:46069","t":"INSTANCE","n":"logos/skai-short","b":[326,249,116,48],"l":{"g":10,"m":"V","sy":"HUG"},"ci":{"k":"44d4da399020d86893e204390dcc7215c3a46d50","n":"Mode=White, Size=Medium","props":{"Mode":"White","Size":"Medium"},"set":"logos/skai-short"}},
+   {"id":"2005:14328","t":"FRAME","n":"content","b":[149,345,469,75],"l":{"ai":"CENTER","g":16,"m":"V","sy":"HUG"},"c":[
+    {"id":"2005:14329","t":"TEXT","n":"Link external wallet","b":[27,0,415,40],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"Link external wallet","st":"Md/Super-headline 3 300","ta":"CENTER"}},
+    {"id":"2005:14330","t":"FRAME","n":"content","b":[0,56,469,19],"l":{"g":20.3,"m":"V","sx":"FILL","sy":"HUG"},"c":[
+     {"id":"2005:14331","t":"TEXT","n":"Connect your external wallet to your Skai account.","b":[0,0,469,19],"l":{"sx":"FILL","sy":"HUG"},"f":["Accents/Gray 100"],"tx":{"c":"Connect your external wallet to your Skai account.","st":"Md/Sub-headline 2 300","ta":"CENTER"}},
+     {"id":"2005:14332","t":"TEXT","n":"We would direct our identity in this manner: 75units on the premium look and feel, 50units on creating excitement with colour and design for gaming and 25units on the performance of the platform, assuming all of these are rated over 100.","b":[0,146.5,284.5,83],"vis":false,"f":["Accents/Gray 600"],"tx":{"c":"We would direct our identity in this manner: \r\n75units on the premium look and feel, 50units on creating excitement with colour and design for gaming and 25units on the performance of the platform, assuming all of these are rated over 100.","ff":"Manrope","fs":12.03,"fw":400,"lh":16.54,"ls":"-4%"}}
+    ]}
+   ]},
+   {"id":"2005:14333","t":"FRAME","n":"CTA","b":[200,442,368,304],"l":{"ai":"CENTER","g":24,"m":"V","sy":"HUG"},"c":[
+    {"id":"2005:14334","t":"FRAME","n":"Multiple inputs","b":[0,0,368,264],"l":{"g":16,"m":"V","sx":"FILL","sy":"HUG"},"c":[
+     {"id":"2005:14335","t":"FRAME","n":"input","b":[0,0,368,54],"l":{"g":8,"jc":"CENTER","m":"V","p":[18,18,18,18],"sx":"FILL","sy":"HUG"},"r":12,"f":["Primary/Green Coal 300"],"s":["Primary/Sky Blue 300"],"sw":1,"sa":"INSIDE","c":[
+      {"id":"2005:14336","t":"FRAME","n":"content","b":[18,18,332,18],"l":{"ai":"CENTER","g":8,"jc":"CENTER","m":"H","sx":"FILL","sy":"HUG"},"c":[
+       {"id":"2005:14337","t":"FRAME","n":"Logo18/Metamask","b":[121,0,17.5,18],"c":[
+        {"id":"2005:14338","t":"RECTANGLE","n":"Rectangle","b":[1.5,2.5,14,13.5],"f":[{"img":"44d4a37fad29d3e1025741f14fcb9eab7cec5d1e","scale":"CROP"}]}
+       ]},
+       {"id":"2005:14339","t":"TEXT","n":"Metamask","b":[147,0,64,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Metamask","st":"Md/Paragraph 1 300"}}
+      ]}
+     ]},
+     {"id":"2005:14340","t":"FRAME","n":"input","b":[0,70,368,54],"l":{"g":8,"jc":"CENTER","m":"V","p":[18,18,18,18],"sx":"FILL","sy":"HUG"},"r":12,"f":["Primary/Green Coal 300"],"s":["Primary/Sky Blue 300"],"sw":1,"sa":"INSIDE","c":[
+      {"id":"2005:14341","t":"FRAME","n":"content","b":[18,18,332,18],"l":{"ai":"CENTER","g":8,"jc":"CENTER","m":"H","sx":"FILL","sy":"HUG"},"c":[
+       {"id":"2005:14342","t":"FRAME","n":"Logo18/Coinbase","b":[105.5,0,17.5,18],"c":[
+        {"id":"2005:14343","t":"GROUP","n":"cb","b":[1,1.5,15,15],"c":[
+         {"id":"2005:14344","t":"VECTOR","n":"Vector","b":[0,0,15,15],"f":["#0052FF"]},
+         {"id":"2005:14345","t":"VECTOR","n":"Vector","b":[4,4,7.5,7.5],"f":["#FFFFFF"]}
+        ]}
+       ]},
+       {"id":"2005:14346","t":"TEXT","n":"Coinbase wallet","b":[131.5,0,95,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Coinbase wallet","st":"Md/Paragraph 1 300"}}
+      ]}
+     ]},
+     {"id":"2005:14347","t":"FRAME","n":"input","b":[0,140,368,54],"l":{"g":8,"jc":"CENTER","m":"V","p":[18,18,18,18],"sx":"FILL","sy":"HUG"},"r":12,"f":["Primary/Green Coal 300"],"s":["Primary/Sky Blue 300"],"sw":1,"sa":"INSIDE","c":[
+      {"id":"2005:14348","t":"FRAME","n":"content","b":[18,18,332,18],"l":{"ai":"CENTER","g":8,"jc":"CENTER","m":"H","sx":"FILL","sy":"HUG"},"c":[
+       {"id":"2005:14349","t":"FRAME","n":"Logo18/WalletConnect","b":[107.5,0,17.5,18],"c":[
+        {"id":"2005:14350","t":"RECTANGLE","n":"Walletconnect-logo 1","b":[1.5,1.5,15,15],"f":[{"img":"0eed94e6f313ff71711a6852b68c24af94927a95","scale":"FILL"}]}
+       ]},
+       {"id":"2005:14351","t":"TEXT","n":"WalletConnect","b":[133.5,0,91,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"WalletConnect","st":"Md/Paragraph 1 300"}}
+      ]}
+     ]},
+     {"id":"2005:14352","t":"FRAME","n":"input","b":[0,210,368,54],"l":{"g":8,"jc":"CENTER","m":"V","p":[18,18,18,18],"sx":"FILL","sy":"HUG"},"r":12,"f":["Primary/Green Coal 300"],"s":["Primary/Sky Blue 300"],"sw":1,"sa":"INSIDE","c":[
+      {"id":"2005:14353","t":"FRAME","n":"content","b":[18,18,332,18],"l":{"ai":"CENTER","g":8,"jc":"CENTER","m":"H","sx":"FILL","sy":"HUG"},"c":[
+       {"id":"2005:14354","t":"FRAME","n":"Logo24/Google","b":[125.5,0,17.5,18],"c":[
+        {"id":"2005:14355","t":"FRAME","n":"Phantom 1","b":[1,1.5,15,15],"r":150,"clip":true,"c":[
+         {"id":"2005:14356","t":"GROUP","n":"Clip path group","b":[0,0,15,15],"c":[
+          {"id":"2005:14357","t":"GROUP","n":"clip0_2800_140397","b":[0,0,15,15],"c":[
+           {"id":"2005:14358","t":"VECTOR","n":"Vector","b":[0,0,15,15],"f":["#000000"]}
+          ]},
+          {"id":"2005:14359","t":"GROUP","n":"Group","b":[0,0,15,15],"c":[
+           {"id":"2005:14360","t":"VECTOR","n":"Vector","b":[0,0,15,15],"f":["#9886E5"]},
+           {"id":"2005:14361","t":"VECTOR","n":"Vector","b":[3,3.5,9,7.5],"f":["#FFFDF8"]}
+          ]}
+         ]}
+        ]}
+       ]},
+       {"id":"2005:14362","t":"TEXT","n":"Phantom","b":[151.5,0,55,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Phantom","st":"Md/Paragraph 1 300"}}
+      ]}
+     ]}
+    ]},
+    {"id":"2005:14363","t":"FRAME","n":"CRO","b":[141,288,86,16],"l":{"ai":"CENTER","g":6,"m":"H","sx":"HUG","sy":"HUG"},"c":[
+     {"id":"2005:14364","t":"FRAME","n":"line","b":[0,0,86,16],"l":{"ai":"CENTER","g":2,"m":"H","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"2005:14365","t":"FRAME","n":"ant-design:fire-filled","b":[0,1,16,16],"vis":false,"clip":true,"c":[
+       {"id":"2005:14366","t":"VECTOR","n":"Vector","b":[2.5,1,11,14],"f":["Primary/Sky Blue 300"]}
+      ]},
+      {"id":"2005:14367","t":"FRAME","n":"Frame 169","b":[0,0,86,16],"l":{"ai":"CENTER","g":8,"m":"H","sx":"HUG","sy":"HUG"},"c":[
+       {"id":"2005:14368","t":"TEXT","n":"Skip for now","b":[0,0,62,16],"l":{"sx":"HUG","sy":"HUG"},"f":["Accents/Gray 100"],"tx":{"c":"Skip for now","st":"Md/Paragraph 2 300","ta":"CENTER"}},
+       {"id":"2005:14369","t":"FRAME","n":"icon16/forward","b":[86,0,16,16],"clip":true,"c":[
+        {"id":"2005:14370","t":"VECTOR","n":"back","b":[15,2,12,14],"s":["Core/White"],"sw":1,"sa":"CENTER"}
+       ]}
+      ]}
+     ]},
+     {"id":"2005:14371","t":"TEXT","n":"Users are already on this list","b":[78,0,165,18],"vis":false,"f":["Accents/Gray 100"],"tx":{"c":"Users are already on this list","st":"Lg/Paragraph 2 300","ta":"CENTER"}}
+    ]}
+   ]}
+  ]}
+}
