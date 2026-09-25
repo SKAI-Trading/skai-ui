@@ -1,0 +1,51 @@
+{
+ "v": 1,
+ "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
+ "node": "13006:233331",
+ "page": "✅ Trade 2",
+ "name": "Percentage bigger",
+ "hash": "0ee8f45b79847ad6",
+ "syncedAt": "2026-09-25T01:09:33.001Z",
+ "tree":
+  {"id":"13006:233331","t":"FRAME","n":"Percentage bigger","b":[0,0,298,474],"l":{"g":16,"jc":"SPACE_BETWEEN","m":"V","p":["s-4","s-4","s-4","s-4"]},"r":["border-radius/rounded-none","border-radius/rounded-none","border-radius/rounded-2xl","border-radius/rounded-none"],"f":["Primary/Green Coal 200"],"s":["Primary/Green Coal 100"],"sw":[1,0,0,0],"sa":"CENTER","clip":true,"c":[
+   {"id":"13006:233332","t":"FRAME","n":"Frame 285","b":[16,16,266,240],"l":{"g":"s-4","m":"V","sx":"FILL","sy":"HUG"},"c":[
+    {"id":"13006:233333","t":"FRAME","n":"Frame 390","b":[0,0,266,240],"l":{"ai":"CENTER","g":"s-4","m":"V","sx":"FILL","sy":"HUG"},"c":[
+     {"id":"13006:233334","t":"FRAME","n":"Frame 286","b":[4.5,0,257,240],"l":{"g":"s-2","m":"V","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"13006:233335","t":"FRAME","n":"Frame 383","b":[0,0,257,240],"c":[
+       {"id":"13006:233336","t":"ELLIPSE","n":"Ellipse 35","b":[28.5,20,200,200],"f":["App/Red 300"]},
+       {"id":"13006:233337","t":"FRAME","n":"Frame 347","b":[63,85,133,60],"l":{"ai":"CENTER","g":4,"jc":"MAX","m":"V","sy":"HUG"},"c":[
+        {"id":"13006:233338","t":"FRAME","n":"Frame 289","b":[35,0,63,38],"l":{"ai":"CENTER","g":"s-1,5","jc":"CENTER","m":"H","sx":"HUG","sy":"HUG"},"c":[
+         {"id":"13006:233339","t":"TEXT","n":"25%","b":[0,0,63,38],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"25%","st":"Lg/Numbers 2 300","ta":"CENTER"}}
+        ]},
+        {"id":"13006:233340","t":"TEXT","n":"Migrated","b":[39.5,42,54,18],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Migrated","st":"Lg/Numbers 4 300","ta":"CENTER"}}
+       ]},
+       {"id":"13006:233341","t":"ELLIPSE","n":"Ellipse 36","b":[28.5,20,200,200],"f":["App/Green 300"]}
+      ]}
+     ]}
+    ]}
+   ]},
+   {"id":"13006:233342","t":"FRAME","n":"Frame 1176","b":[16,294,266,164],"l":{"g":"s-2","m":"V","sx":"FILL","sy":"HUG"},"c":[
+    {"id":"13006:233343","t":"FRAME","n":"Frame 1174","b":[0,0,266,84],"l":{"g":10,"m":"V","p":["s-2","s-2","s-2","s-2"],"sx":"FILL","sy":"HUG"},"r":"border-radius/rounded-lg","f":["Primary/Green Coal 300"],"c":[
+     {"id":"13006:233344","t":"FRAME","n":"Frame 387","b":[8,8,202,68],"l":{"g":8,"m":"V","sx":"HUG","sy":"HUG"},"c":[
+      {"id":"13006:233345","t":"TEXT","n":"Token stats","b":[0,0,60,16],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Token stats","st":"Lg/Paragraph 3 300"}},
+      {"id":"13006:233346","t":"FRAME","n":"Frame 347","b":[0,24,202,18],"l":{"ai":"CENTER","g":"s-2","m":"H","p":[0,"s-1",0,"s-1"],"sx":"FILL","sy":"HUG"},"r":"border-radius/rounded","c":[
+       {"id":"13006:233347","t":"ELLIPSE","n":"Ellipse 37","b":[4,4,10,10],"f":["App/Green 300"]},
+       {"id":"13006:233348","t":"TEXT","n":"Migrated:","b":[22,0,57,18],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Migrated:","st":"Lg/Numbers 4 300"}},
+       {"id":"13006:233349","t":"TEXT","n":"1","b":[87,1,80,16],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"1","st":"Lg/Label 1 300"}}
+      ]},
+      {"id":"13006:233350","t":"FRAME","n":"Frame 348","b":[0,50,202,18],"l":{"ai":"CENTER","g":"s-2","m":"H","p":[0,"s-1",0,"s-1"],"sx":"FILL","sy":"HUG"},"r":"border-radius/rounded","c":[
+       {"id":"13006:233351","t":"ELLIPSE","n":"Ellipse 37","b":[4,4,10,10],"f":["App/Red 300"]},
+       {"id":"13006:233352","t":"TEXT","n":"Non-migrated:","b":[22,0,88,18],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Non-migrated:","st":"Lg/Numbers 4 300"}},
+       {"id":"13006:233353","t":"TEXT","n":"3","b":[118,1,80,16],"l":{"sy":"HUG"},"f":["Core/White"],"tx":{"c":"3","st":"Lg/Label 1 300"}}
+      ]}
+     ]}
+    ]},
+    {"id":"13006:233354","t":"FRAME","n":"Frame 1175","b":[0,92,266,72],"l":{"g":10,"m":"V","p":["s-2","s-2","s-2","s-2"],"sx":"FILL","sy":"HUG"},"r":"border-radius/rounded-lg","f":["Primary/Green Coal 300"],"c":[
+     {"id":"13006:233355","t":"FRAME","n":"Frame 387","b":[8,8,250,56],"l":{"g":8,"m":"V","sx":"FILL","sy":"HUG"},"c":[
+      {"id":"13006:233356","t":"TEXT","n":"Highlights","b":[0,0,52,16],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Highlights","st":"Lg/Paragraph 3 300"}},
+      {"id":"13006:233357","t":"TEXT","n":"Top Mkt. Cap: Kyuin ($2.37K) Last token launched: 2m ago","b":[0,24,250,32],"l":{"sx":"FILL","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Top Mkt. Cap: Kyuin ($2.37K)\nLast token launched: 2m ago","st":"Lg/Numbers 5 300"}}
+     ]}
+    ]}
+   ]}
+  ]}
+}
