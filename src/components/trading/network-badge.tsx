@@ -13,7 +13,7 @@ const networkBadgeVariants = cva(
         lg: "px-3 py-1.5 text-base",
       },
       variant: {
-        default: "bg-muted text-muted-foreground",
+        default: "bg-muted text-foreground",
         colored: "", // Colors applied via network config
       },
     },

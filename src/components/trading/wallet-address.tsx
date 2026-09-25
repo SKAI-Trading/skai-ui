@@ -72,7 +72,7 @@ const WalletAddress = React.forwardRef<HTMLDivElement, WalletAddressProps>(
     const variantStyles = {
       default: "inline-flex items-center gap-1",
       badge:
-        "inline-flex items-center gap-1 px-2 py-1 rounded-md bg-muted text-muted-foreground text-sm",
+        "inline-flex items-center gap-1 px-2 py-1 rounded-md bg-muted text-foreground text-sm",
       inline: "inline",
     };
 

@@ -477,7 +477,7 @@ function DefaultChatPanel({
                     message.role === 'user'
                       ? 'bg-primary text-primary-foreground'
                       : message.role === 'system'
-                      ? 'bg-muted text-muted-foreground italic'
+                      ? 'bg-muted text-foreground italic'
                       : 'bg-card border border-border'
                   }`}
                 >

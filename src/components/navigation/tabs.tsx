@@ -10,8 +10,12 @@ const TabsList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.List
     ref={ref}
+    // The strip is `bg-card`, not `bg-muted`: the idle triggers letter in
+    // `text-muted-foreground` (Ash 300), which reads 5.9:1 on Green Coal 200
+    // and only 4.3:1 on `--muted` (Green Coal 100) since the 2026-09-24 token
+    // switch. The frames draw a tab row on the card with no strip of its own.
     className={cn(
-      "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
+      "inline-flex h-10 items-center justify-center rounded-md bg-card p-1 text-muted-foreground",
       className,
     )}
     {...props}
