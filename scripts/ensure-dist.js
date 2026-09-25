@@ -12,11 +12,12 @@
  * implicit-any errors on handler params. Nothing about the consumer's own code
  * is wrong — the sibling package simply was never built.
  *
- * npm runs `prepare` for `file:` linked dependencies (verified on npm 11 for
- * both `npm install` and `npm ci`), in this package's own directory, after the
- * dependency tree is on disk. So this is the hook that turns
- * "clone + install" into a typecheckable consumer with no manual out-of-band
- * `npm run build` in this submodule.
+ * npm runs `prepare` for `file:` linked dependencies (verified on npm 11, and
+ * on npm 10.8.2 for both a nested `file:modules/skai-ui` and a sibling
+ * `file:../skai-ui` link, for both `npm install` and `npm ci`), in this
+ * package's own directory, after the dependency tree is on disk. So this is
+ * the hook that turns "clone + install" into a typecheckable consumer with no
+ * manual out-of-band `npm run build` in this submodule.
  *
  * BEHAVIOUR
  *   - dist already present and newer than every build input -> skip (fast, and
@@ -32,10 +33,18 @@
  */
 
 import { spawnSync } from "child_process";
-import { existsSync, readdirSync, renameSync, rmSync, statSync } from "fs";
+import {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  renameSync,
+  rmSync,
+  statSync,
+} from "fs";
 import { createRequire } from "module";
 import path from "path";
 import { fileURLToPath } from "url";
+import { distArtifacts } from "./dist-artifacts.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const pkgRoot = path.join(__dirname, "..");
@@ -52,19 +61,14 @@ const c = {
 const log = (msg) => console.log(`  ${c.cyan}[ui]${c.reset} ${msg}`);
 const warn = (msg) => console.warn(`  ${c.yellow}[ui]${c.reset} ${msg}`);
 
-/** Artifacts every consumer entry point resolves to. Missing any -> rebuild. */
-const REQUIRED = [
-  "index.js",
-  "index.cjs",
-  "index.d.ts",
-  "icons.js",
-  "icons.cjs",
-  "icons.d.ts",
-  "motion.js",
-  "motion.cjs",
-  "motion.d.ts",
-  "styles.css",
-];
+/**
+ * Artifacts every consumer entry point resolves to. Missing any -> rebuild.
+ * Taken from package.json so a new entry cannot be left off (see
+ * dist-artifacts.js for the one that was).
+ */
+const REQUIRED = distArtifacts(
+  JSON.parse(readFileSync(path.join(pkgRoot, "package.json"), "utf8"))
+);
 
 /** Files/dirs whose mtime invalidates dist. */
 const INPUTS = [
