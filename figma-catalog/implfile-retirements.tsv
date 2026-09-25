@@ -30,3 +30,4 @@
 *	none	2026-09-24	not a path: a one-word column-3 answer; 4 frames
 *	nearest	2026-09-24	not a path: a one-word column-3 answer; 3 frames
 *	neither	2026-09-24	not a path: a one-word column-3 answer; 2 frames
+*	src/components/home-redesign/screens/ScreenerScreen.tsx	2026-09-25	deleted in skai-trading 8b8331528 (2026-09-25), which retires /?tab=research and redirects it to /launchpad on Casey's ruling for report 55a91864; 12 frames (13006:146233, 150346, 151520, 152694, 154151, 278955, 279872, 280789, 281378, 281970, 282582, 283168), all also carry src/pages/Launchpad.tsx; w8-launchpad

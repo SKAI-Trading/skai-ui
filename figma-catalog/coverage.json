@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T06:31:03.723Z",
+  "generated": "2026-09-25T23:13:19.178Z",
   "harvestedAt": "2026-09-24",
   "rollup": {
     "pages": 39,
@@ -52,10 +52,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 19358,
+    "total": 19360,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 961,
-    "unrecognisedTokens": 39866
+    "unrecognisedTokens": 39871
   },
   "statusFiles": [
     {
@@ -4665,6 +4665,12 @@
       "rows": 7,
       "withLiveId": 6,
       "ids": 6
+    },
+    {
+      "file": "status.wave68.launch-screener-retired.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
     },
     {
       "file": "status.wave68.p001.tsv",

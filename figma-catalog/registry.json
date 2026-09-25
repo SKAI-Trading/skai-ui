@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T06:31:02.103Z",
+  "generated": "2026-09-25T23:13:16.266Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -115164,7 +115164,6 @@
         "src/components/launchpad/launchpadChrome.figma.test.ts"
       ],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -115408,7 +115407,6 @@
       "measuredViewport": "1440x2226",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -115435,7 +115433,6 @@
       "measuredViewport": "1440x2226",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -115462,7 +115459,6 @@
       "measuredViewport": "1440x2226",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -115489,12 +115485,11 @@
       "measuredViewport": "1440x900",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "frame-defect",
       "route": "/launchpad",
-      "notes": "CARRIED frame-defect. src/components/home-redesign/screens/ScreenerScreen.tsx is this lane's file; src/pages/Launchpad.tsx is another program's this pass (wave 23), so the frame cannot be closed from here either way. NOT RE-READ live this pass (the seat's burst cap was spent on the frames named in the file header), so the reading below is the standing node-by-node measurement carried forward with its node ids, not a new read.",
+      "notes": "CARRIED frame-defect from status.wave41.trade-2.tsv:62, NOT RE-READ. The file that row named, ScreenerScreen.tsx, was deleted in skai-trading 8b8331528 when /?tab=research was retired to /launchpad (report 55a91864, Casey ruling); the Display settings panel this frame draws is Launchpad.tsx's right sheet (LAUNCH_RIGHT_MENU_CLASS, which cites 13006:154151). Verdict and breakpoints carried unchanged.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "unknown"
     },
@@ -121608,7 +121603,6 @@
       "measuredViewport": "768x1700",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -121635,7 +121629,6 @@
       "measuredViewport": "768x1024",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -121662,7 +121655,6 @@
       "measuredViewport": "375x812",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -121689,7 +121681,6 @@
       "measuredViewport": "375x812",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -121716,12 +121707,11 @@
       "measuredViewport": "375x812",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "frame-defect",
       "route": "/launchpad",
-      "notes": "CARRIED frame-defect. src/components/home-redesign/screens/ScreenerScreen.tsx is this lane's file; src/pages/Launchpad.tsx is another program's this pass (wave 23), so the frame cannot be closed from here either way. NOT RE-READ live this pass (the seat's burst cap was spent on the frames named in the file header), so the reading below is the standing node-by-node measurement carried forward with its node ids, not a new read.",
+      "notes": "CARRIED frame-defect from status.wave41.trade-2.tsv:53, NOT RE-READ. The file that row named, ScreenerScreen.tsx, was deleted in skai-trading 8b8331528 when /?tab=research was retired to /launchpad (report 55a91864, Casey ruling); the Launch right menu this frame draws is Launchpad.tsx's (LAUNCH_RIGHT_MENU_CLASS, which cites 13006:281970). Verdict and breakpoints carried unchanged.",
       "verifiedAt": "2026-08-12T01:37:49.548Z",
       "bpStatus": "unknown"
     },
@@ -121743,7 +121733,6 @@
       "measuredViewport": "375x1700",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "done",
@@ -121770,7 +121759,6 @@
       "measuredViewport": "768x1024",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/home-redesign/screens/ScreenerScreen.tsx",
         "src/pages/Launchpad.tsx"
       ],
       "status": "frame-defect",

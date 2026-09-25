@@ -1,0 +1,10 @@
+# key	status	primaryFile	route	reason	bp
+# 2026-09-25, lane w8-launchpad, report 55a91864. Not a re-measure. Casey ruled the second Launch page at
+# /?tab=research (ScreenerScreen.tsx) retired: skai-trading 8b8331528 deletes it and redirects that URL to a bare
+# /launchpad. Two frames' newest rows (status.wave41.trade-2.tsv:53 and :62) still named ScreenerScreen.tsx as the
+# file, so their notes kept saying a deleted file was the implementation. These rows restate the SAME verdicts
+# against src/pages/Launchpad.tsx, which cites both nodes (Launchpad.tsx:558-559). Filed under wave 68, the newest
+# folded wave, so they supersede wave 41 and any later wave that re-reads these frames supersedes them.
+# The implFiles entry itself leaves through implfile-retirements.tsv, not through these rows.
+13006-281970	frame-defect	src/pages/Launchpad.tsx	/launchpad	CARRIED frame-defect from status.wave41.trade-2.tsv:53, NOT RE-READ. The file that row named, ScreenerScreen.tsx, was deleted in skai-trading 8b8331528 when /?tab=research was retired to /launchpad (report 55a91864, Casey ruling); the Launch right menu this frame draws is Launchpad.tsx's (LAUNCH_RIGHT_MENU_CLASS, which cites 13006:281970). Verdict and breakpoints carried unchanged.	1440=n-a 768=n-a 375=unknown @2026-09-25/wave68-launch-screener-retired
+13006-154151	frame-defect	src/pages/Launchpad.tsx	/launchpad	CARRIED frame-defect from status.wave41.trade-2.tsv:62, NOT RE-READ. The file that row named, ScreenerScreen.tsx, was deleted in skai-trading 8b8331528 when /?tab=research was retired to /launchpad (report 55a91864, Casey ruling); the Display settings panel this frame draws is Launchpad.tsx's right sheet (LAUNCH_RIGHT_MENU_CLASS, which cites 13006:154151). Verdict and breakpoints carried unchanged.	1440=unknown 768=n-a 375=n-a @2026-09-25/wave68-launch-screener-retired
