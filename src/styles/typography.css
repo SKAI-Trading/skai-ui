@@ -1,18 +1,22 @@
 /**
  * SKAI UI Typography Styles
  * ==========================
- * 
+ *
  * Typography system based on Figma Design System.
  * Import this file for access to all typography classes.
- * 
+ *
  * @import '@skai/ui/styles/typography.css';
- * 
- * FONTS:
+ *
+ * FONTS (Figma text styles, Skai-Design TyX8YAtNDEIvsnSLQ3IXId):
  * - Cormorant Garamond: Headlines (elegant serif)
- * - Manrope: Sub-headlines, UI text (modern sans)
- * - Mulish: Body text, numbers (readable sans)
+ * - Manrope: Super-headlines, sub-headlines, paragraphs
+ * - Mulish: Numbers, labels
  * - JetBrains Mono: Code, monospace
- * 
+ *
+ * Every Figma text style tracks at -4% (letter-spacing -0.04em). The values
+ * below are the Lg (desktop) styles unless a media query says otherwise; the
+ * Md / Sm styles are the -tablet / -mobile keys of skaiFontSizes.
+ *
  * @package @skai/ui
  */
 
@@ -49,7 +53,7 @@
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 82px;
   line-height: 90px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   font-weight: 300;
 }
 
@@ -57,7 +61,7 @@
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 82px;
   line-height: 90px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   font-weight: 300;
   font-style: italic;
 }
@@ -67,7 +71,7 @@
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 54px;
   line-height: 48px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   font-weight: 300;
 }
 
@@ -85,12 +89,12 @@
   }
 }
 
-/* Headline 4 - 40px / 30px / 26px */
+/* Headline 4 - 34px / 30px / 26px */
 .skai-headline-4 {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 40px;
-  line-height: 40px;
-  letter-spacing: -0.02em;
+  font-size: 34px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
   font-weight: 300;
 }
 
@@ -185,13 +189,13 @@
  * SUB-HEADLINE STYLES (Manrope)
  * ============================================================================= */
 
-/* Sub-headline 1 - 20px / 18px / 16px */
+/* Sub-headline 1 - 24px / 18px / 18px */
 .skai-sub-1 {
   font-family: "Manrope", system-ui, sans-serif;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 24px;
+  line-height: 28px;
   letter-spacing: -0.04em;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 @media (max-width: 1023px) {
@@ -201,33 +205,19 @@
   }
 }
 
-@media (max-width: 767px) {
-  .skai-sub-1 {
-    font-size: 16px;
-    line-height: 20px;
-  }
-}
-
-/* Sub-headline 2 - 18px / 17px / 15px */
+/* Sub-headline 2 - 18px / 14px / 14px */
 .skai-sub-2 {
   font-family: "Manrope", system-ui, sans-serif;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: -0.04em;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 @media (max-width: 1023px) {
   .skai-sub-2 {
-    font-size: 17px;
-    line-height: 22px;
-  }
-}
-
-@media (max-width: 767px) {
-  .skai-sub-2 {
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 
@@ -257,7 +247,7 @@
 .skai-para-1 {
   font-family: "Manrope", system-ui, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 22px;
   letter-spacing: -0.04em;
   font-weight: 400;
 }
@@ -266,7 +256,7 @@
 .skai-para-2 {
   font-family: "Manrope", system-ui, sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 18px;
   letter-spacing: -0.04em;
   font-weight: 400;
 }
@@ -282,6 +272,12 @@
 
 /* =============================================================================
  * NUMBER STYLES (Mulish)
+ *
+ * NOT Figma's Numbers ramp. These are a bold ramp one to two steps below it
+ * (Figma Numbers 1-5 are 42 / 32 / 22 / 14 / 12, Light or Regular); they were
+ * left as they were at the 2026-09-24 token switch because switching them by
+ * name would double numbers set with them and nothing else. For Figma's
+ * Numbers styles use the text-number-* classes.
  * ============================================================================= */
 
 /* Number 1 - 20px */
@@ -333,19 +329,21 @@
  * LABEL STYLES (Mulish)
  * ============================================================================= */
 
-/* Label 1 - 14px */
+/* Label 1 - 16px */
 .skai-label-1 {
   font-family: "Mulish", system-ui, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.04em;
   font-weight: 400;
 }
 
-/* Label 2 - 12px */
+/* Label 2 - 11px */
 .skai-label-2 {
   font-family: "Mulish", system-ui, sans-serif;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: -0.04em;
   font-weight: 400;
 }
 
@@ -369,8 +367,13 @@
  * TYPOGRAPHY ALIASES (Valid CSS)
  * =============================================================================
  *
- * Short class name aliases that duplicate the main typography styles.
- * Users can use either .skai-* or .text-* classes interchangeably.
+ * The text-* classes share their names with skaiFontSizes in the Tailwind
+ * preset. Where the preset has the key, Tailwind's utility comes later in the
+ * app's stylesheet and sets font-size, line-height, letter-spacing and
+ * font-weight; Tailwind's fontSize utility cannot set a family, so the family
+ * (and italic, tabular figures) comes from here. Where the preset has no key
+ * (text-number-5, text-para-3, text-label-3/4 ...) this rule is the whole
+ * style.
  */
 
 /* Headline aliases */
@@ -378,7 +381,7 @@
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 82px;
   line-height: 90px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   font-weight: 300;
 }
 
@@ -386,15 +389,15 @@
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 54px;
   line-height: 48px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   font-weight: 300;
 }
 
 .text-headline-4 {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 40px;
-  line-height: 40px;
-  letter-spacing: -0.02em;
+  font-size: 34px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
   font-weight: 300;
 }
 
@@ -426,18 +429,18 @@
 /* Sub-headline aliases */
 .text-sub-1 {
   font-family: "Manrope", system-ui, sans-serif;
-  font-size: 22px;
-  line-height: 32px;
-  letter-spacing: -0.03em;
-  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
 }
 
 .text-sub-2 {
   font-family: "Manrope", system-ui, sans-serif;
   font-size: 18px;
-  line-height: 26px;
-  letter-spacing: -0.03em;
-  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
 }
 
 .text-sub-3 {
@@ -458,79 +461,92 @@
 
 /* Paragraph aliases */
 .text-para-1 {
-  font-family: "Mulish", system-ui, sans-serif;
+  font-family: "Manrope", system-ui, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
   font-weight: 400;
 }
 
 .text-para-2 {
-  font-family: "Mulish", system-ui, sans-serif;
+  font-family: "Manrope", system-ui, sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
   font-weight: 400;
 }
 
 .text-para-3 {
-  font-family: "Mulish", system-ui, sans-serif;
+  font-family: "Manrope", system-ui, sans-serif;
   font-size: 12px;
   line-height: 16px;
+  letter-spacing: -0.04em;
   font-weight: 400;
 }
 
 /* Number aliases */
 .text-number-1 {
   font-family: "Mulish", system-ui, sans-serif;
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: 600;
+  font-size: 42px;
+  line-height: 48px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
 }
 
 .text-number-2 {
   font-family: "Mulish", system-ui, sans-serif;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
 }
 
 .text-number-3 {
   font-family: "Mulish", system-ui, sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
 }
 
 .text-number-4 {
   font-family: "Mulish", system-ui, sans-serif;
   font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
 }
 
 .text-number-5 {
   font-family: "Mulish", system-ui, sans-serif;
   font-size: 12px;
   line-height: 16px;
-  font-weight: 600;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Label aliases */
 .text-label-1 {
   font-family: "Mulish", system-ui, sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.04em;
 }
 
 .text-label-2 {
   font-family: "Mulish", system-ui, sans-serif;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.04em;
 }
 
 .text-label-3 {
@@ -549,4 +565,60 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+/* Families for the skaiFontSizes keys that have no alias above. */
+.text-headline-2-italic,
+.text-headline-3-italic {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+}
+
+.text-headline-3-tablet,
+.text-headline-3-mobile,
+.text-page-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.text-super-3,
+.text-super-3-tablet,
+.text-super-3-mobile,
+.text-super-4,
+.text-super-4-tablet,
+.text-super-4-mobile,
+.text-sub-1-tablet,
+.text-sub-1-mobile,
+.text-sub-2-semibold,
+.text-sub-2-tablet,
+.text-sub-2-mobile,
+.text-para-1-semibold,
+.text-para-1-tablet,
+.text-para-1-mobile,
+.text-para-2-semibold,
+.text-para-2-tablet,
+.text-para-2-mobile,
+.text-section-title,
+.text-card-title,
+.text-body,
+.text-small {
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+.text-number-1-tablet,
+.text-number-1-mobile,
+.text-number-2-tablet,
+.text-number-2-mobile,
+.text-number-3-tablet,
+.text-number-3-mobile,
+.text-number-4-tablet,
+.text-number-4-mobile,
+.text-price {
+  font-family: "Mulish", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.text-label-2-tablet,
+.text-label-2-mobile,
+.text-caption {
+  font-family: "Mulish", system-ui, sans-serif;
 }

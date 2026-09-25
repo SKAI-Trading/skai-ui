@@ -67,10 +67,13 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      // Figma's radius scale, the same literals the preset carries
+      // (skaiBorderRadius). Was lg var(--radius), md and sm 2px and 4px less,
+      // which with --radius at 0.75rem painted 12 / 10 / 8.
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "8px",
+        md: "6px",
+        sm: "2px",
       },
       keyframes: {
         "accordion-down": {

@@ -44,14 +44,14 @@
         "description": "Placeholder text, muted content"
       },
       "green": {
-        "300": "#2DEDAD",
+        "300": "#17F9B4",
         "bright": "#17F9B4",
-        "DEFAULT": "#2DEDAD",
-        "description": "Success states, profit, long positions (Figma primary: #2DEDAD, bright: #17F9B4)"
+        "DEFAULT": "#17F9B4",
+        "description": "Success states, profit, long positions (Figma App/Green 300: #17F9B4)"
       },
       "red": {
         "300": "#FF574A",
-        "o": "#FB3324",
+        "o": "rgba(251, 51, 36, 0.34)",
         "DEFAULT": "#FF574A",
         "description": "Error states, loss, short positions"
       }
@@ -61,11 +61,11 @@
       "description": "Secondary text, descriptions"
     },
     "semantic": {
-      "success": "#2DEDAD",
+      "success": "#17F9B4",
       "warning": "#FFFF16",
       "error": "#FF574A",
       "info": "#56C7F3",
-      "profit": "#2DEDAD",
+      "profit": "#17F9B4",
       "loss": "#FF574A"
     },
     "legacy": {

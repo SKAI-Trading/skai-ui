@@ -39,24 +39,24 @@
   --skai-ash: #95a09f;
   --skai-ash-300: #95a09f;
 
-  --skai-app-green: #2dedad;
-  --skai-app-green-300: #2dedad;
+  --skai-app-green: #17f9b4;
+  --skai-app-green-300: #17f9b4;
   --skai-app-green-bright: #17f9b4;
 
   --skai-app-red: #ff574a;
   --skai-app-red-300: #ff574a;
-  --skai-app-red-o: #fb3324;
+  --skai-app-red-o: rgba(251, 51, 36, 0.34); /* App/Red-O: #FB3324 at 34% */
 
   --skai-gray-100: #e0e0e0;
 
   /* ========================================
    * Semantic Colors (Trading)
    * ======================================== */
-  --skai-success: #2dedad;
+  --skai-success: #17f9b4;
   --skai-warning: #ffff16;
   --skai-error: #ff574a;
   --skai-info: #56c7f3;
-  --skai-profit: #2dedad;
+  --skai-profit: #17f9b4;
   --skai-loss: #ff574a;
 
   /* ========================================
@@ -91,10 +91,10 @@
 
   --skai-gray-50: #f9fafb;
   --skai-gray-200: #e5e7eb;
-  --skai-gray-300: #d1d5db;
+  --skai-gray-300: #878787; /* Accents/Gray 300, as skai-gray-300 in the preset */
   --skai-gray-400: #9ca3af;
   --skai-gray-500: #6b7280;
-  --skai-gray-600: #4b5563;
+  --skai-gray-600: #4c4c4c; /* Accents/Gray 600, as skai-gray-600 in the preset */
   --skai-gray-700: #374151;
   --skai-gray-800: #1f2937;
   --skai-gray-900: #111827;

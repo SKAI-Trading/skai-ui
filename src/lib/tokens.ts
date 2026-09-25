@@ -57,15 +57,16 @@ export const colors = {
     ash: "#95A09F",
     ash300: "#95A09F",
 
-    /** Success/profit/long - #2DEDAD (Figma primary), bright variant #17F9B4 */
-    green: "#2DEDAD",
-    green300: "#2DEDAD",
+    /** Success/profit/long - App/Green 300 #17F9B4 */
+    green: "#17F9B4",
+    green300: "#17F9B4",
     greenBright: "#17F9B4",
 
     /** Error/loss/short - #FF574A */
     red: "#FF574A",
     red300: "#FF574A",
-    redO: "#FB3324",
+    /** App/Red-O: #FB3324 at 34% */
+    redO: "rgba(251, 51, 36, 0.34)",
 
     /** Secondary text - #E0E0E0 */
     gray100: "#E0E0E0",
@@ -73,11 +74,11 @@ export const colors = {
 
   /** Semantic color aliases */
   semantic: {
-    success: "#2DEDAD",
+    success: "#17F9B4",
     warning: "#FFFF16",
     error: "#FF574A",
     info: "#56C7F3",
-    profit: "#2DEDAD",
+    profit: "#17F9B4",
     loss: "#FF574A",
   },
 } as const;

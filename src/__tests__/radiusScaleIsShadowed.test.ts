@@ -1,24 +1,24 @@
 /**
- * `skaiBorderRadius` is not what the app paints, and nothing used to say so.
+ * `skaiBorderRadius` is what the app paints, and nothing shadows it.
  *
- * WHY THIS IS AN ORACLE AND NOT A SNAPSHOT. The preset spreads the constant and
- * then overrides three of its keys off `--radius`, so `sm` and `md` resolve to
- * values the declaration never mentions:
+ * Until the 2026-09-24 token switch it was not. The preset spread the constant
+ * and then overrode three of its keys off `--radius`, so `sm` and `md` resolved
+ * to values the declaration never mentioned:
  *
  *   design-tokens.ts   sm: "4px"                       declared
- *   tailwind-preset.ts sm: calc(var(--radius) - 4px)   overrides it
- *   base.css           --radius: 0.75rem = 12px        resolves it to 8px
+ *   tailwind-preset.ts sm: calc(var(--radius) - 4px)   overrode it
+ *   base.css           --radius: 0.75rem = 12px        resolved it to 8px
  *
- * A lane told "our sm is 4px" measures a 4px corner in Figma, writes
- * `rounded-sm`, and paints 8px. Reading Figma's 8px it writes `rounded-md` and
- * paints 10px. Neither throws and both look deliberate — figma-catalog/TOKENS.md
- * records this as the cause of every radius defect in the 2026-08-11 sweep.
+ * A lane told "our sm is 4px" measured a 4px corner in Figma, wrote
+ * `rounded-sm`, and painted 8px — figma-catalog/TOKENS.md records this as the
+ * cause of every radius defect in the 2026-08-11 sweep. The switch made the
+ * constant Figma's scale (sm 2 / md 6 / lg 8 / xl 12 / 2xl 16, the
+ * `border-radius/rounded-*` variables) and dropped the override, in the preset
+ * and in this package's own tailwind.config.ts, which builds dist/styles.css.
  *
- * So the assertions are arithmetic on the RESOLVED value. They fail if the
- * override is dropped, if `--radius` moves, or if someone "corrects" the
- * constant to the painted numbers — which would silently shift every
- * `rounded-sm` in the tree by 4px, because the override subtracts from
- * `--radius` rather than from the constant.
+ * So the assertions still read the authored override blocks: they fail if an
+ * override off `--radius` comes back in either file, which would put a class
+ * name back on a scale of whatever host sets `--radius`.
  */
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
@@ -30,19 +30,19 @@ const ROOT = path.resolve(__dirname, "..", "..");
 const PRESET_SRC = readFileSync(
   path.join(ROOT, "src/lib/tailwind-preset.ts"),
   "utf8",
-);
-const BASE_CSS = readFileSync(
-  path.join(ROOT, "src/styles/base.css"),
+).replace(/\r\n/g, "\n");
+const CONFIG_SRC = readFileSync(
+  path.join(ROOT, "tailwind.config.ts"),
   "utf8",
-);
+).replace(/\r\n/g, "\n");
 
 /**
- * The `borderRadius` block's own overrides, as authored. Keys spread in from
- * the constant are deliberately not returned — this is the shadowing set.
+ * The `borderRadius` block's own keys, as authored. Keys spread in from the
+ * constant are deliberately not returned — this is the shadowing set.
  */
 function presetOverrides(src: string): Record<string, string> {
   const block = src.match(/borderRadius:\s*\{([\s\S]*?)\n\s*\},/);
-  if (!block) throw new Error("tailwind-preset.ts: no borderRadius block");
+  if (!block) throw new Error("no borderRadius block");
   const out: Record<string, string> = {};
   for (const line of block[1].split("\n")) {
     const m = /^\s*"?([\w-]+)"?:\s*"([^"]+)",/.exec(line);
@@ -51,73 +51,55 @@ function presetOverrides(src: string): Record<string, string> {
   return out;
 }
 
-/** `--radius` in px, as declared for the default theme. */
-function radiusPx(css: string): number {
-  const m = css.match(/--radius:\s*([\d.]+)rem;/);
-  if (!m) throw new Error("base.css: no --radius declaration");
-  return Number(m[1]) * 16;
-}
+const px = (value: string) => {
+  const m = /^(\d+)px$/.exec(value);
+  if (!m) throw new Error(`not a pixel literal: ${value}`);
+  return Number(m[1]);
+};
 
-/** Resolve `var(--radius)` / `calc(var(--radius) - Npx)` to a pixel number. */
-function resolve(expr: string, radius: number): number {
-  if (expr === "var(--radius)") return radius;
-  const m = /^calc\(var\(--radius\)\s*-\s*(\d+)px\)$/.exec(expr);
-  if (m) return radius - Number(m[1]);
-  const px = /^(\d+)px$/.exec(expr);
-  if (px) return Number(px[1]);
-  throw new Error(`unrecognised radius expression: ${expr}`);
-}
-
-const OVERRIDES = presetOverrides(PRESET_SRC);
-const RADIUS = radiusPx(BASE_CSS);
-
-describe("border radius — the constant is shadowed by the preset", () => {
-  it("declares --radius as 12px, which every override is measured from", () => {
-    expect(RADIUS).toBe(12);
+describe("border radius — the constant is what the preset paints", () => {
+  it("the preset's borderRadius block authors no key of its own", () => {
+    expect(presetOverrides(PRESET_SRC)).toEqual({});
   });
 
-  it("shadows exactly sm, md and lg", () => {
-    expect(Object.keys(OVERRIDES).sort()).toEqual(["lg", "md", "sm"]);
+  it("the constant is Figma's scale: sm 2 / md 6 / lg 8 / xl 12 / 2xl 16 / 3xl 24", () => {
+    expect(px(skaiBorderRadius.sm)).toBe(2);
+    expect(px(skaiBorderRadius.md)).toBe(6);
+    expect(px(skaiBorderRadius.lg)).toBe(8);
+    expect(px(skaiBorderRadius.xl)).toBe(12);
+    expect(px(skaiBorderRadius["2xl"])).toBe(16);
+    expect(px(skaiBorderRadius["3xl"])).toBe(24);
+    expect(skaiBorderRadius.none).toBe("0px");
+    expect(skaiBorderRadius.full).toBe("9999px");
   });
 
-  it("paints sm 8 / md 10 / lg 12, not the declared 4 / 8 / 12", () => {
-    expect(resolve(OVERRIDES.sm, RADIUS)).toBe(8);
-    expect(resolve(OVERRIDES.md, RADIUS)).toBe(10);
-    expect(resolve(OVERRIDES.lg, RADIUS)).toBe(12);
-  });
-
-  it("keeps sm and md diverged from the declaration, which is the trap", () => {
-    // If these ever agree, the hazard is gone and the docblock on
-    // skaiBorderRadius should say so rather than warning about nothing.
-    expect(resolve(OVERRIDES.sm, RADIUS)).not.toBe(
-      Number(skaiBorderRadius.sm.replace("px", "")),
-    );
-    expect(resolve(OVERRIDES.md, RADIUS)).not.toBe(
-      Number(skaiBorderRadius.md.replace("px", "")),
-    );
-    // lg is the one key that survives the override unchanged.
-    expect(resolve(OVERRIDES.lg, RADIUS)).toBe(
-      Number(skaiBorderRadius.lg.replace("px", "")),
-    );
-  });
-
-  it("passes xl, 2xl, none and full through untouched", () => {
-    for (const key of ["xl", "2xl", "none", "full"]) {
-      expect(OVERRIDES[key]).toBeUndefined();
+  it("this package's tailwind.config.ts (dist/styles.css) paints lg / md / sm as the constant", () => {
+    const own = presetOverrides(CONFIG_SRC);
+    expect(Object.keys(own).sort()).toEqual(["lg", "md", "sm"]);
+    for (const key of ["lg", "md", "sm"] as const) {
+      expect(own[key], key).toBe(skaiBorderRadius[key]);
     }
-    expect(skaiBorderRadius.xl).toBe("16px");
-    expect(skaiBorderRadius["2xl"]).toBe("24px");
   });
 
-  it("goes red if the override is dropped, so the guard is live", () => {
-    // Negative control against a fixture rather than the real file: a preset
-    // that only spreads the constant shadows nothing, and the check above that
-    // pins the shadowing set has to notice.
-    const withoutOverride = `
+  it("no radius in either file derives from --radius", () => {
+    for (const [file, src] of [["tailwind-preset.ts", PRESET_SRC], ["tailwind.config.ts", CONFIG_SRC]]) {
+      for (const [key, value] of Object.entries(presetOverrides(src))) {
+        expect(value, `${file} ${key}`).not.toMatch(/--radius/);
+      }
+    }
+  });
+
+  it("goes red if an override comes back, so the guard is live", () => {
+    // Negative control against a fixture rather than the real file: the old
+    // preset block, which the first case above has to notice.
+    const withOverride = `
       borderRadius: {
         ...skaiBorderRadius,
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     `;
-    expect(Object.keys(presetOverrides(withoutOverride))).toEqual([]);
+    expect(Object.keys(presetOverrides(withOverride)).sort()).toEqual(["lg", "md", "sm"]);
   });
 });

@@ -388,12 +388,12 @@ const skaiPreset: Partial<Config> = {
         Array.from({ length: 101 }, (_, n) => [String(n), String(n / 100)]),
       ),
 
-      // Border radius
+      // Border radius: Figma's scale, as literals. sm / md / lg used to be
+      // derived from --radius (0.75rem), which painted 8 / 10 / 12 where the
+      // frames' variables of the same names are 2 / 6 / 8, and left any app
+      // that sets its own --radius on a scale of its own.
       borderRadius: {
         ...skaiBorderRadius,
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
       },
 
       // Shadows
