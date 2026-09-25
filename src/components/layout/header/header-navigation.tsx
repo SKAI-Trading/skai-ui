@@ -437,9 +437,10 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
         // paint square top corners until a repaint (a hover) rounded them (bug
         // 7cbf1d5f). The rich-dropdown rows have transparent backgrounds, so
         // nothing needs the overflow clip — the radius still rounds the panel.
-        // rounded-lg is 12px here (--radius), which is what the header frames
-        // draw for this panel; rounded-xl was 16.
-        className="w-[300px] overflow-visible bg-[#122524] border-[#123f3c] rounded-lg shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
+        // The header frames draw this panel at 12px, Figma's rounded-xl
+        // (Spot - trade dropdown, 3963:41383). Before the 2026-09-24 token
+        // switch rounded-lg painted 12 here; it is now Figma's 8.
+        className="w-[300px] overflow-visible bg-[#122524] border-[#123f3c] rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onCloseAutoFocus={(e) => e.preventDefault()}
