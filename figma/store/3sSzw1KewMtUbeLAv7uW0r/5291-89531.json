@@ -1,0 +1,37 @@
+{
+ "v": 1,
+ "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+ "node": "5291:89531",
+ "page": "✅ Governance and Utilities",
+ "name": "Lottery other values",
+ "hash": "3386c0dd462827f1",
+ "syncedAt": "2026-09-25T00:52:29.962Z",
+ "tree":
+  {"id":"5291:89531","t":"FRAME","n":"Lottery other values","b":[0,0,954,327],"l":{"ai":"CENTER","g":8,"jc":"SPACE_BETWEEN","m":"V","p":["s-10","s-4","s-10","s-4"]},"r":"border-radius/rounded-md","f":[{"angle":-90,"grad":"RADIAL","stops":[[0,"#2E3533"],[1,"#081B0C"]]},{"img":"6157bd4668962ce67791b4d00197e89432a676ca","op":0.28,"scale":"FILL"}],"fx":[{"c":"#000000@0.32","o":[0,4],"r":80,"t":"INNER_SHADOW"},{"c":"#000000@0.94","o":[0,1],"r":4,"t":"INNER_SHADOW"}],"clip":true,"c":[
+   {"id":"5291:89532","t":"FRAME","n":"Frame 844","b":[402,40,150,38],"l":{"ai":"CENTER","g":10,"m":"H","sx":"HUG","sy":"HUG"},"c":[
+    {"id":"5291:89533","t":"TEXT","n":"Daily lottery","b":[0,5,124,28],"vis":false,"f":["Core/White"],"tx":{"c":"Daily lottery","st":"Lg/Sub-headline 1 300","ta":"RIGHT"}},
+    {"id":"5291:89534","t":"FRAME","n":"Frame 842","b":[0,0,150,38],"l":{"ai":"CENTER","g":10,"jc":"CENTER","m":"H","p":["s-1,5","s-4","s-1,5","s-4"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-lg","f":["#13361F@0.64"],"s":["Primary/Alien Green 300"],"sw":0.5,"sa":"INSIDE","c":[
+     {"id":"5291:89535","t":"TEXT","n":"13,550 SKAI","b":[16,6,118,26],"l":{"sx":"HUG","sy":"HUG"},"f":["Primary/Alien Green 300"],"tx":{"c":"13,550 SKAI","st":"Lg/Numbers 3 300"}}
+    ]},
+    {"id":"5291:89536","t":"TEXT","n":"to be won!","b":[160,5,124,28],"vis":false,"f":["Core/White"],"tx":{"c":"to be won!","st":"Lg/Sub-headline 1 300"}}
+   ]},
+   {"id":"5291:89537","t":"FRAME","n":"Frame 840","b":[302,108.5,350,104],"l":{"ai":"CENTER","g":10,"m":"H","sx":"HUG"},"c":[
+    {"id":"5291:89538","t":"FRAME","n":"Blackjack cards","b":[0,0,80,104],"l":{"ai":"CENTER","g":10,"jc":"SPACE_BETWEEN","m":"H","p":[6,6,6,6],"sy":"FILL"},"r":14,"f":["#216037",{"img":"6157bd4668962ce67791b4d00197e89432a676ca","scale":"FILL"}],"s":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#17F9B4"],[1,"#0B6D4F"]]}],"sw":2,"sa":"INSIDE","fx":[{"c":"#444444@0.28","o":[0,4],"r":4,"t":"INNER_SHADOW"},{"c":"#000000@0.58","o":[0,15],"r":12.3,"t":"INNER_SHADOW"}],"clip":true,"c":[
+     {"id":"5291:89539","t":"TEXT","n":"8","b":[16,12,48,80],"l":{"sx":"HUG","sy":"HUG"},"f":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#E59664"],[1,"#F1B90A"]]}],"s":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#F7E19C"],[1,"#E59664"]]}],"sw":1,"sa":"OUTSIDE","fx":[{"c":"#000000@0.61","o":[0,1],"r":0,"t":"DROP_SHADOW"}],"tx":{"c":"8","ff":"Mulish","fs":80,"fw":900,"lh":80,"ls":"-4%","ta":"CENTER"}}
+    ]},
+    {"id":"5291:89540","t":"FRAME","n":"Blackjack cards","b":[90,0,80,104],"l":{"ai":"CENTER","g":10,"jc":"SPACE_BETWEEN","m":"H","p":[6,6,6,6],"sy":"FILL"},"r":14,"f":["#216037",{"img":"6157bd4668962ce67791b4d00197e89432a676ca","scale":"FILL"}],"s":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#17F9B4"],[1,"#0B6D4F"]]}],"sw":2,"sa":"INSIDE","fx":[{"c":"#444444@0.28","o":[0,4],"r":4,"t":"INNER_SHADOW"},{"c":"#000000@0.58","o":[0,15],"r":12.3,"t":"INNER_SHADOW"}],"clip":true,"c":[
+     {"id":"5291:89541","t":"TEXT","n":"1","b":[16,12,48,80],"l":{"sx":"HUG","sy":"HUG"},"f":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#E59664"],[1,"#F1B90A"]]}],"s":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#F7E19C"],[1,"#E59664"]]}],"sw":1,"sa":"OUTSIDE","fx":[{"c":"#000000@0.61","o":[0,1],"r":0,"t":"DROP_SHADOW"}],"tx":{"c":"1","ff":"Mulish","fs":80,"fw":900,"lh":80,"ls":"-4%","ta":"CENTER"}}
+    ]},
+    {"id":"5291:89542","t":"FRAME","n":"Blackjack cards","b":[180,0,80,104],"l":{"ai":"CENTER","g":10,"jc":"CENTER","m":"H","p":[19,6,80,6],"sy":"FILL"},"r":14,"f":["#216037",{"img":"6157bd4668962ce67791b4d00197e89432a676ca","scale":"FILL"}],"s":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#17F9B4"],[1,"#0B6D4F"]]}],"sw":2,"sa":"INSIDE","fx":[{"c":"#444444@0.28","o":[0,4],"r":4,"t":"INNER_SHADOW"},{"c":"#000000@0.58","o":[0,15],"r":12.3,"t":"INNER_SHADOW"}],"clip":true,"c":[
+     {"id":"5291:89543","t":"TEXT","n":"2","b":[15.5,-18.5,49,80],"l":{"sx":"HUG","sy":"HUG"},"f":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#E59664"],[1,"#F1B90A"]]}],"s":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#F7E19C"],[1,"#E59664"]]}],"sw":1,"sa":"OUTSIDE","fx":[{"c":"#000000@0.61","o":[0,1],"r":0,"t":"DROP_SHADOW"}],"tx":{"c":"2","ff":"Mulish","fs":80,"fw":900,"lh":80,"ls":"-4%","ta":"CENTER"}}
+    ]},
+    {"id":"5291:89544","t":"FRAME","n":"Blackjack cards","b":[270,0,80,104],"l":{"ai":"CENTER","g":10,"jc":"SPACE_BETWEEN","m":"H","p":[6,6,6,6],"sy":"FILL"},"r":14,"f":["#216037",{"img":"6157bd4668962ce67791b4d00197e89432a676ca","scale":"FILL"}],"s":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#17F9B4"],[1,"#0B6D4F"]]}],"sw":2,"sa":"INSIDE","fx":[{"c":"#444444@0.28","o":[0,4],"r":4,"t":"INNER_SHADOW"},{"c":"#000000@0.58","o":[0,15],"r":12.3,"t":"INNER_SHADOW"}],"clip":true,"c":[
+     {"id":"5291:89545","t":"TEXT","n":"9","b":[16,12,48,80],"l":{"sx":"HUG","sy":"HUG"},"f":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#E59664"],[1,"#F1B90A"]]}],"s":[{"angle":-90,"grad":"LINEAR","stops":[[0,"#F7E19C"],[1,"#E59664"]]}],"sw":1,"sa":"OUTSIDE","fx":[{"c":"#000000@0.61","o":[0,1],"r":0,"t":"DROP_SHADOW"}],"tx":{"c":"9","ff":"Mulish","fs":80,"fw":900,"lh":80,"ls":"-4%","ta":"CENTER"}}
+    ]}
+   ]},
+   {"id":"5291:89546","t":"FRAME","n":"Frame 841","b":[421,243,112,44],"l":{"ai":"CENTER","g":"s-1","m":"V","sx":"HUG","sy":"HUG"},"c":[
+    {"id":"5291:89547","t":"TEXT","n":"+0.5 Common","b":[3.5,0,105,24],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Green 300"],"tx":{"c":"+0.5 Common","seg":[{"c":"+0.5","f":["App/Green 300"],"st":"Lg/Numbers 4 300"},{"c":" Common","f":["App/Green 300"],"st":"Lg/Sub-headline 2 600"}]}},
+    {"id":"5291:89548","t":"TEXT","n":"19 : 22 : 44 to roll again","b":[0,28,112,16],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"19 : 22 : 44 to roll again","st":"Lg/Paragraph 3 300","ta":"CENTER"}}
+   ]}
+  ]}
+}

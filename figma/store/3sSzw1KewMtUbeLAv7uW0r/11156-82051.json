@@ -1,0 +1,94 @@
+{
+ "v": 1,
+ "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+ "node": "11156:82051",
+ "page": "✅ Governance and Utilities",
+ "name": "Lottery - rolls finished",
+ "hash": "db8da20e4dce111f",
+ "syncedAt": "2026-09-25T00:52:29.962Z",
+ "tree":
+  {"id":"11156:82051","t":"FRAME","n":"Lottery - rolls finished","b":[0,0,316,327],"l":{"g":"s-6","m":"V","sx":"HUG"},"r":"border-radius/rounded-sm","c":[
+   {"id":"11156:82052","t":"FRAME","n":"Frame 429","b":[0,0,316,327],"l":{"g":"s-0","m":"V","sy":"FILL"},"c":[
+    {"id":"11156:82053","t":"FRAME","n":"Frame 270","b":[0,0,316,327],"l":{"g":32,"jc":"SPACE_BETWEEN","m":"V","p":["s-4","s-4","s-4","s-4"],"sx":"FILL","sy":"FILL"},"r":"border-radius/rounded-md","f":["Primary/Green Coal 200"],"s":["Primary/Green Coal 100"],"sw":1,"sa":"CENTER","fx":[{"c":"#000000@0.25","o":[0,10],"r":80,"t":"DROP_SHADOW"}],"clip":true,"c":[
+     {"id":"11156:82054","t":"FRAME","n":"Frame 659","b":[16,16,284,124],"l":{"g":"s-2","m":"V","sx":"FILL","sy":"HUG"},"c":[
+      {"id":"11156:82055","t":"FRAME","n":"Frame 285","b":[0,0,284,70],"l":{"g":"s-2","m":"H","sx":"FILL","sy":"HUG"},"c":[
+       {"id":"11156:82056","t":"FRAME","n":"CTA/button","b":[0,0,138,70],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"V","p":["s-2,5","s-4","s-2,5","s-4"],"sx":"FILL","sy":"HUG"},"r":"border-radius/rounded-lg","f":["#001615@0.8"],"fx":[{"r":20,"t":"BACKGROUND_BLUR"}],"c":[
+        {"id":"11156:82057","t":"TEXT","n":"6","b":[62,10,14,26],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"6","st":"Lg/Numbers 3 300"}},
+        {"id":"11156:82058","t":"TEXT","n":"Rolls","b":[56.5,44,25,16],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Rolls","st":"Lg/Paragraph 3 300","ta":"CENTER"}},
+        {"id":"11156:82059","t":"INSTANCE","n":"labels/tag","b":[132,23,71,18],"vis":false,"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["Primary/Green Coal 200"],"ci":{"k":"8814967f2bf9467b55a063061c777f76fbbca2f3","n":"Size=Large, Type=Fill","props":{"Has left icon":true,"Has right icon":true,"Size":"Large","Text":"Label","Type":"Fill"},"set":"labels/tag"}},
+        {"id":"11156:82060","t":"INSTANCE","n":"icons/action","b":[213,24,16,16],"vis":false,"clip":true,"ci":{"k":"9bf6f7fbb8d674513e65a25ff0b83e12d2db0c83","n":"Size=16px, Type=Forward","props":{"Size":"16px","Type":"Forward"},"set":"icons/action"}}
+       ]},
+       {"id":"11156:82061","t":"FRAME","n":"CTA/button","b":[146,0,138,70],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"V","p":["s-2,5","s-4","s-2,5","s-4"],"sx":"FILL","sy":"HUG"},"r":"border-radius/rounded-lg","f":["#001615@0.8"],"fx":[{"r":20,"t":"BACKGROUND_BLUR"}],"c":[
+        {"id":"11156:82062","t":"FRAME","n":"Frame 839","b":[53,10,32,26],"l":{"ai":"CENTER","g":"s-0,5","jc":"CENTER","m":"H","sx":"HUG","sy":"HUG"},"c":[
+         {"id":"11156:82063","t":"INSTANCE","n":"icons/action","b":[0,5,16,16],"clip":true,"ci":{"k":"1cc9913e362cd79a3f9974835e55d73691a7db2b","n":"Size=16px, Type=Hot","props":{"Size":"16px","Type":"Hot"},"set":"icons/action"},"c":[
+          {"id":"I11156:82063;778:163","t":"VECTOR","n":"icon","b":[2.5,1,11,14],"f":["Accents/Coral 300"]}
+         ]},
+         {"id":"11156:82064","t":"TEXT","n":"1","b":[18,0,14,26],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"1","st":"Lg/Numbers 3 300"}}
+        ]},
+        {"id":"11156:82065","t":"TEXT","n":"Streak","b":[52,44,34,16],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"Streak","st":"Lg/Paragraph 3 300","ta":"CENTER"}},
+        {"id":"11156:82066","t":"INSTANCE","n":"labels/tag","b":[132,23,71,18],"vis":false,"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["Primary/Green Coal 200"],"ci":{"k":"8814967f2bf9467b55a063061c777f76fbbca2f3","n":"Size=Large, Type=Fill","props":{"Has left icon":true,"Has right icon":true,"Size":"Large","Text":"Label","Type":"Fill"},"set":"labels/tag"}},
+        {"id":"11156:82067","t":"INSTANCE","n":"icons/action","b":[213,24,16,16],"vis":false,"clip":true,"ci":{"k":"9bf6f7fbb8d674513e65a25ff0b83e12d2db0c83","n":"Size=16px, Type=Forward","props":{"Size":"16px","Type":"Forward"},"set":"icons/action"}}
+       ]}
+      ]},
+      {"id":"11156:82068","t":"FRAME","n":"CTA/button","b":[0,78,284,46],"l":{"ai":"CENTER","g":"s-2","jc":"CENTER","m":"H","p":["s-2,5","s-4","s-2,5","s-4"],"sx":"FILL","sy":"HUG"},"r":"border-radius/rounded-lg","f":["#001615@0.8"],"fx":[{"r":20,"t":"BACKGROUND_BLUR"}],"c":[
+       {"id":"11156:82069","t":"TEXT","n":"122","b":[88,10,38,26],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"122","st":"Lg/Numbers 3 300"}},
+       {"id":"11156:82070","t":"TEXT","n":"SKAI earned","b":[134,15,62,16],"l":{"sx":"HUG","sy":"HUG"},"f":["App/Ash 300"],"tx":{"c":"SKAI earned","st":"Lg/Paragraph 3 300","ta":"CENTER"}},
+       {"id":"11156:82071","t":"INSTANCE","n":"labels/tag","b":[132,23,71,18],"vis":false,"l":{"ai":"CENTER","g":"s-1","jc":"CENTER","m":"H","p":["s-0,5","s-2","s-0,5","s-2"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","f":["Primary/Green Coal 200"],"ci":{"k":"8814967f2bf9467b55a063061c777f76fbbca2f3","n":"Size=Large, Type=Fill","props":{"Has left icon":true,"Has right icon":true,"Size":"Large","Text":"Label","Type":"Fill"},"set":"labels/tag"}},
+       {"id":"11156:82072","t":"INSTANCE","n":"icons/action","b":[213,24,16,16],"vis":false,"clip":true,"ci":{"k":"9bf6f7fbb8d674513e65a25ff0b83e12d2db0c83","n":"Size=16px, Type=Forward","props":{"Size":"16px","Type":"Forward"},"set":"icons/action"}}
+      ]}
+     ]},
+     {"id":"11156:82073","t":"FRAME","n":"Frame 356","b":[16,172,284,98],"vis":false,"l":{"ai":"CENTER","g":"s-4","m":"V","sy":"HUG"},"c":[
+      {"id":"11156:82074","t":"FRAME","n":"Frame 464","b":[0,0,284,66],"l":{"g":"s-2","m":"V","sx":"FILL","sy":"HUG"},"c":[
+       {"id":"11156:82075","t":"TEXT","n":"Bet amount:","b":[0,0,64,16],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Bet amount:","st":"Lg/Paragraph 3 300","ta":"CENTER"}},
+       {"id":"11156:82076","t":"FRAME","n":"card","b":[0,24,284,42],"l":{"ai":"MAX","g":"s-6","m":"V","p":["s-3","s-3","s-3","s-3"],"sx":"FILL","sy":"HUG"},"r":"border-radius/rounded-xl","f":["Primary/Green Coal 300"],"clip":true,"c":[
+        {"id":"11156:82077","t":"FRAME","n":"signals","b":[12,12,260,18],"l":{"g":"s-2","m":"V","sx":"FILL","sy":"HUG"},"c":[
+         {"id":"11156:82078","t":"FRAME","n":"Frame 277","b":[0,0,260,18],"l":{"g":"s-2","m":"V","sx":"FILL","sy":"HUG"},"c":[
+          {"id":"11156:82079","t":"FRAME","n":"Sell","b":[0,0,260,18],"l":{"g":"s-2","m":"V","sx":"FILL","sy":"HUG"},"c":[
+           {"id":"11156:82080","t":"FRAME","n":"swap","b":[0,0,260,18],"l":{"ai":"CENTER","g":16,"jc":"SPACE_BETWEEN","m":"H","sx":"FILL","sy":"HUG"},"c":[
+            {"id":"11156:82081","t":"FRAME","n":"Frame 667","b":[0,0,122,18],"l":{"ai":"CENTER","g":"s-1","m":"H","sy":"HUG"},"c":[
+             {"id":"11156:82082","t":"INSTANCE","n":"images/circle","b":[0,1,16,16],"ci":{"k":"f1d76a26e4517625636f2a72b8940aa12177c085","n":"Size=Small","props":{"Size":"Small"},"set":"images/circle"}},
+             {"id":"11156:82083","t":"TEXT","n":"0.01 SKAI","b":[20,0,59,18],"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"0.01 SKAI","st":"Lg/Numbers 4 300","ta":"CENTER"}}
+            ]},
+            {"id":"11156:82084","t":"FRAME","n":"Frame 354","b":[169,0,91,18],"l":{"ai":"CENTER","g":"s-2","m":"H","sx":"HUG","sy":"HUG"},"c":[
+             {"id":"11156:82085","t":"TEXT","n":"0.01 SKAI","b":[0,0,59,18],"vis":false,"f":["Core/White"],"tx":{"c":"0.01 SKAI","st":"Lg/Numbers 4 300","ta":"CENTER"}},
+             {"id":"11156:82086","t":"FRAME","n":"Frame 359","b":[0,0,91,18],"l":{"ai":"CENTER","g":"s-0,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+              {"id":"11156:82087","t":"FRAME","n":"Frame 357","b":[0,0,28,18],"l":{"ai":"CENTER","g":10,"jc":"CENTER","m":"H","p":["s-0,5","s-1,5","s-0,5","s-1,5"],"sx":"HUG","sy":"HUG"},"r":["border-radius/rounded-lg",0,0,"border-radius/rounded-lg"],"f":["Primary/Green Coal 100"],"c":[
+               {"id":"11156:82088","t":"TEXT","n":"1/2","b":[6,2,16,14],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"1/2","st":"Lg/Label 2 300"}}
+              ]},
+              {"id":"11156:82089","t":"FRAME","n":"Frame 358","b":[30,0,26,18],"l":{"ai":"CENTER","g":10,"jc":"CENTER","m":"H","p":["s-0,5","s-1,5","s-0,5","s-1,5"],"sx":"HUG","sy":"HUG"},"f":["Primary/Green Coal 100"],"c":[
+               {"id":"11156:82090","t":"TEXT","n":"2X","b":[6,2,14,14],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"2X","st":"Lg/Label 2 300"}}
+              ]},
+              {"id":"11156:82091","t":"FRAME","n":"Frame 360","b":[58,0,33,18],"l":{"ai":"CENTER","g":10,"jc":"CENTER","m":"H","p":["s-0,5","s-1,5","s-0,5","s-1,5"],"sx":"HUG","sy":"HUG"},"r":[0,"border-radius/rounded-lg","border-radius/rounded-lg",0],"f":["Primary/Green Coal 100"],"c":[
+               {"id":"11156:82092","t":"TEXT","n":"Max","b":[6,2,21,14],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Max","st":"Lg/Label 2 300"}}
+              ]}
+             ]}
+            ]}
+           ]}
+          ]}
+         ]}
+        ]}
+       ]}
+      ]},
+      {"id":"11156:82093","t":"FRAME","n":"Frame 275","b":[0,82,284,16],"l":{"g":4,"jc":"SPACE_BETWEEN","m":"H","sx":"FILL","sy":"HUG"},"c":[
+       {"id":"11156:82094","t":"FRAME","n":"Frame 354","b":[0,0,136,16],"l":{"ai":"CENTER","g":"s-2","m":"H","sx":"HUG","sy":"HUG"},"c":[
+        {"id":"11156:82095","t":"TEXT","n":"Balance:","b":[0,0,45,16],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Balance:","st":"Lg/Paragraph 3 300","ta":"CENTER"}},
+        {"id":"11156:82096","t":"FRAME","n":"balance","b":[53,0,83,16],"l":{"ai":"CENTER","g":"s-1,5","m":"H","sx":"HUG","sy":"HUG"},"c":[
+         {"id":"11156:82097","t":"TEXT","n":"100.11 SKAI","b":[0,0,64,16],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"100.11 SKAI","st":"Lg/Numbers 5 300","ta":"CENTER"}},
+         {"id":"11156:82098","t":"FRAME","n":"icons/action","b":[70,1.5,13,13],"l":{"ai":"CENTER","g":10,"m":"H","p":["s-0,5","s-0,5","s-0,5","s-0,5"],"sx":"HUG","sy":"HUG"},"r":"border-radius/rounded-full","s":["Primary/Sky Blue 300"],"sw":1,"sa":"CENTER","clip":true,"c":[
+          {"id":"11156:82099","t":"BOOLEAN_OPERATION","n":"icon","b":[2,2,9,9],"f":["Primary/Sky Blue 300"]}
+         ]}
+        ]}
+       ]},
+       {"id":"11156:82102","t":"FRAME","n":"Frame 355","b":[247,0,37,16],"l":{"ai":"CENTER","g":"s-2","m":"H","sx":"HUG","sy":"HUG"},"c":[
+        {"id":"11156:82103","t":"TEXT","n":"$21.00","b":[0,0,37,16],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"$21.00","st":"Lg/Numbers 5 300","ta":"CENTER"}}
+       ]}
+      ]}
+     ]},
+     {"id":"11156:82104","t":"INSTANCE","n":"CTA/button","b":[16,184.5,284,64],"l":{"ai":"CENTER","g":"s-2,5","jc":"CENTER","m":"H","p":["s-5","s-10","s-5","s-10"],"sx":"FILL"},"r":"border-radius/rounded-2xl","f":["Primary/Green Coal 300"],"s":["Primary/Sky Blue 300"],"sw":1.5,"sa":"INSIDE","ci":{"k":"b8f513085ae13cfe8a0e3b030d314e4239bea7b5","n":"Size=Large, Type=Secondary","props":{"Has label":false,"Has left icon":false,"Has right icon":false,"Size":"Large","Text":"19 : 22 : 44 to roll again","Type":"Secondary"},"set":"CTA/button"},"c":[
+      {"id":"I11156:82104;786:568","t":"TEXT","n":"Button","b":[63,24,158,16],"op":0.64,"l":{"sx":"HUG","sy":"HUG"},"f":["Core/White"],"tx":{"c":"19 : 22 : 44 to roll again","st":"Lg/Label 1 300","ta":"CENTER"}}
+     ]},
+     {"id":"11156:82105","t":"TEXT","n":"Skai daily raffle","b":[16,293,284,18],"op":0.64,"l":{"sx":"FILL","sy":"HUG"},"f":["Core/White"],"tx":{"c":"Skai daily raffle","st":"Lg/Paragraph 2 300","ta":"CENTER"}}
+    ]}
+   ]}
+  ]}
+}
