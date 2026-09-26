@@ -112,7 +112,9 @@ const SonnerToaster = ({ className, ...props }: ToasterProps) => {
         classNames: {
           toast:
             "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
-          description: "group-[.toast]:text-inherit",
+          // Important: Sonner's own description colour lands after ours in the
+          // production CSS and paints grey on the red and dark toasts.
+          description: "group-[.toast]:!text-inherit",
           actionButton:
             "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
           cancelButton:
