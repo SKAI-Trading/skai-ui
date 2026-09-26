@@ -56,9 +56,53 @@ describe("OrderBook", () => {
 
     it("should display spread information", () => {
       render(<OrderBook data={createMockOrderBook()} />);
-      // Spread value should be displayed
-      expect(screen.getByText("Spread")).toBeInTheDocument();
+      // "Spread:" with its colon, as 7710:92742 (1440) and 8846:63667 (768)
+      // letter it.
+      expect(screen.getByText("Spread:")).toBeInTheDocument();
+      expect(screen.queryByText("Spread")).not.toBeInTheDocument();
       expect(screen.getByText("0.0020%")).toBeInTheDocument();
+    });
+
+    it("cuts each side to its own count when the two are given apart", () => {
+      const side = (prefix: string, from: number, step: number) =>
+        Array.from({ length: 20 }, (_, i) =>
+          createMockLevel(`${prefix}${i}`, from + i * step, 1, i + 1),
+        );
+      const data: OrderBookData = {
+        ...createMockOrderBook(),
+        asks: side("a", 50001, 1),
+        bids: side("b", 50000, -1),
+      };
+      const { container } = render(
+        <OrderBook data={data} levels={15} bidLevels={16} />,
+      );
+      const count = (label: string) =>
+        container.querySelectorAll(`[aria-label="${label}"] > [role="row"]`)
+          .length;
+      // The /spot 1440 boards: fifteen asks over sixteen bids.
+      expect(count("Ask orders")).toBe(15);
+      expect(count("Bid orders")).toBe(16);
+    });
+
+    it("cuts the asks on their own count too, and both sides on `levels` otherwise", () => {
+      const side = (prefix: string, from: number, step: number) =>
+        Array.from({ length: 20 }, (_, i) =>
+          createMockLevel(`${prefix}${i}`, from + i * step, 1, i + 1),
+        );
+      const data: OrderBookData = {
+        ...createMockOrderBook(),
+        asks: side("a", 50001, 1),
+        bids: side("b", 50000, -1),
+      };
+      const count = (root: HTMLElement, label: string) =>
+        root.querySelectorAll(`[aria-label="${label}"] > [role="row"]`).length;
+      const one = render(<OrderBook data={data} levels={9} askLevels={4} />);
+      expect(count(one.container, "Ask orders")).toBe(4);
+      expect(count(one.container, "Bid orders")).toBe(9);
+      one.unmount();
+      const both = render(<OrderBook data={data} levels={9} />);
+      expect(count(both.container, "Ask orders")).toBe(9);
+      expect(count(both.container, "Bid orders")).toBe(9);
     });
 
     it("should render with custom precision", () => {

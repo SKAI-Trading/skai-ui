@@ -40,6 +40,12 @@ const BOARD = {
 /** What the band drew at every width before the 1440 cut was built. */
 const BAND_BEFORE = { box: 26, labelTop: 5 } as const;
 
+/**
+ * The tablet band, `8846:63552` on 8837-63445 (read live 2026-09-24): rules at
+ * y=0 and y=20, "Frame 283" padded 4/16, labels on a 12 line at y=4.
+ */
+const TABLET_BAND = { box: 20, labelTop: 4 } as const;
+
 // ─── the resolver ──────────────────────────────────────────────────────────
 
 type Screen = "sm" | "md" | "lg" | "xl" | "2xl";
@@ -445,8 +451,12 @@ function book(asks: number, bids: number): OrderBookData {
   };
 }
 
-function mount(data: OrderBookData, levels?: number) {
-  const { container } = render(<OrderBook data={data} levels={levels} />);
+function mount(
+  data: OrderBookData,
+  levels?: number,
+  sides: { askLevels?: number; bidLevels?: number } = {},
+) {
+  const { container } = render(<OrderBook data={data} levels={levels} {...sides} />);
   const groups = Array.from(container.querySelectorAll('[role="rowgroup"]'));
   const labels = groups.map((g) => g.getAttribute("aria-label")).sort();
   // The population, not a count: a third group, or a renamed one, fails here.
@@ -482,17 +492,26 @@ describe("OrderBook heading band — 4144-64244 / 7710-91527 / 8558-134024", () 
   it("starts at lg, the band the /spot desktop column is drawn in", () => {
     const { band } = mount(book(1, 1));
     expect(lineBox(band, 1024).box).toBe(BOARD.band);
-    expect(lineBox(band, 1023).box).toBe(BAND_BEFORE.box);
+    // Below it the mobile shell owns the page, and it is the tablet board's.
+    expect(lineBox(band, 1023).box).toBe(TABLET_BAND.box);
   });
 
-  it("draws what it drew before at 375 and 768", () => {
+  it("closes on the tablet board's 20 from 768, with the labels at y=4", () => {
     const { band } = mount(book(1, 1));
-    for (const width of [375, 768]) {
+    for (const width of [768, 1023]) {
       expect(lineBox(band, width)).toEqual({
-        box: BAND_BEFORE.box,
-        contentTop: BAND_BEFORE.labelTop,
+        box: TABLET_BAND.box,
+        contentTop: TABLET_BAND.labelTop,
       });
     }
+  });
+
+  it("draws what it drew before at 375, whose label type is not yet read", () => {
+    const { band } = mount(book(1, 1));
+    expect(lineBox(band, 375)).toEqual({
+      box: BAND_BEFORE.box,
+      contentTop: BAND_BEFORE.labelTop,
+    });
   });
 
   it("keeps its rule on both edges at every width", () => {
@@ -534,6 +553,18 @@ describe("OrderBook ladder halves — the 270 / 288 split", () => {
     const tight = distribute(levelsBox, 1440, BOARD_LEVELS - 6);
     const asks = groups.find((g) => g.getAttribute("aria-label") === "Ask orders")!;
     expect(tight.get(asks)).toBe(BOARD.asks);
+  });
+
+  it("fills both halves to the row with fifteen asks over sixteen bids, the board's own count", () => {
+    // /spot asks for exactly this (Spot.tsx). With one count for both sides
+    // the bid half held sixteen slots and drew fifteen, leaving 18px of
+    // ground under the last bid that no board draws.
+    const { asks, bids, levelsBox } = mount(book(20, 20), 15, { bidLevels: 16 });
+    const sizes = distribute(levelsBox, 1440, BOARD_LEVELS);
+    expect(rowsHeight(asks, 1440)).toBe(BOARD.asks);
+    expect(rowsHeight(bids, 1440)).toBe(BOARD.bids);
+    expect(sizes.get(asks)).toBeCloseTo(rowsHeight(asks, 1440), 9);
+    expect(sizes.get(bids)).toBeCloseTo(rowsHeight(bids, 1440), 9);
   });
 
   it("holds the spread under fifteen ask slots when the book is thin", () => {

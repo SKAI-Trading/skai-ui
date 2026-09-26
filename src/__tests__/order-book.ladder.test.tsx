@@ -224,3 +224,110 @@ describe("OrderBook column header — report 1ec7f3d4", () => {
     expect(cls.has("py-1")).toBe(true);
   });
 });
+
+/**
+ * The tablet band, `8846:63552` on 8837-63445 (read live 2026-09-24), 708 wide:
+ * "Frame 283" padded 4/16, labels in Manrope 10/12 at y=4 (Figma's
+ * Sm/Paragraph 3 300). Price opens at x=16; Size is right-aligned and ends at
+ * x=382; Total is right-aligned and ends at x=692. The ladder rows under it
+ * (70 / 55 / 70, SPACE_BETWEEN across 676) put the Size cell's right edge at
+ * 381.5 and the Total cell's at 692, so the labels stand on the ladder's own
+ * columns. The 1440 band draws its own cell model (89 / hug / fill) and keeps it.
+ */
+const SCREEN_AT = { md: 768, lg: 1024 } as const;
+
+/** The token of one family that wins at `width`, unprefixed < md < lg. */
+function winning(el: Element, family: RegExp, width: number): string | null {
+  let win: string | null = null;
+  let rank = -1;
+  for (const token of tokens(el)) {
+    const m = /^(?:(md|lg):)?(.+)$/.exec(token)!;
+    const at = m[1] ? SCREEN_AT[m[1] as "md" | "lg"] : 0;
+    if (at > width || !family.test(m[2])) continue;
+    const r = m[1] === "lg" ? 2 : m[1] === "md" ? 1 : 0;
+    if (r >= rank) {
+      win = m[2];
+      rank = r;
+    }
+  }
+  return win;
+}
+
+const FONT_PX: Record<string, number> = { "text-xs": 12, "text-[10px]": 10 };
+const LINE_PX: Record<string, number> = { "leading-3": 12, "leading-4": 16 };
+const WIDTH = /^w-/;
+const GROW = /^flex-(1|none|auto|initial)$/;
+
+/** A cell's width at `width` in px, or "hug" / "fill" when the flex line decides it. */
+function cellWidth(cell: Element, width: number): number | "hug" | "fill" {
+  const w = winning(cell, WIDTH, width);
+  const grow = winning(cell, GROW, width);
+  if (grow === "flex-1") return "fill";
+  if (w === null || w === "w-auto") return "hug";
+  const px = /^w-\[(\d+)px\]$/.exec(w);
+  if (!px) throw new Error(`cannot read ${w}`);
+  return Number(px[1]);
+}
+
+describe("OrderBook column header at 768 — 8846:63552", () => {
+  it("sets the labels 10/12 from md, and back at 12/16 from lg", () => {
+    const { header } = ladder();
+    const type = (width: number) => ({
+      size: FONT_PX[winning(header, /^text-(xs|\[10px\])$/, width)!],
+      line: LINE_PX[winning(header, /^leading-/, width)!],
+    });
+    expect(type(768)).toEqual({ size: 10, line: 12 });
+    expect(type(1023)).toEqual({ size: 10, line: 12 });
+    expect(type(1440)).toEqual({ size: 12, line: 16 });
+    // 375 has no reading of its own yet and draws what it drew before.
+    expect(type(375)).toEqual({ size: 12, line: 16 });
+    expect(tokens(header).has("font-sans")).toBe(true);
+  });
+
+  it("stands the three labels on the ladder's own cells from md", () => {
+    const l = ladder();
+    const labels = Array.from(l.header.children);
+    const cells = l.cells(l.ask);
+    expect(labels.map((c) => c.textContent)).toEqual([
+      "Price",
+      "Size (USDT)",
+      "Total (USDT)",
+    ]);
+    for (const width of [768, 1023]) {
+      expect(labels.map((c) => cellWidth(c, width))).toEqual(
+        cells.map((c) => cellWidth(c, width)),
+      );
+    }
+    expect(cells.map((c) => cellWidth(c, 768))).toEqual([70, 55, 70]);
+    // Both rows spread their cells across the same 16px inset.
+    for (const row of [l.header, l.ask]) {
+      expect(tokens(row).has("justify-between")).toBe(true);
+      expect(tokens(row).has("px-4")).toBe(true);
+    }
+  });
+
+  it("lands Size and Total where the tablet board ends them, on its 708 panel", () => {
+    const { header } = ladder();
+    const [price, size, total] = Array.from(header.children).map((c) => cellWidth(c, 768));
+    const inner = 708 - 16 - 16;
+    const gap = (inner - (price as number) - (size as number) - (total as number)) / 2;
+    const sizeRight = 16 + (price as number) + gap + (size as number);
+    const totalRight = 16 + inner;
+    expect(Math.abs(sizeRight - 382)).toBeLessThanOrEqual(0.5);
+    expect(totalRight).toBe(692);
+    for (const cell of Array.from(header.children).slice(1)) {
+      expect(tokens(cell).has("text-right")).toBe(true);
+    }
+  });
+
+  it("keeps the 1440 band's own 89 / hug / fill", () => {
+    const { header } = ladder();
+    for (const width of [375, 1024, 1440]) {
+      expect(Array.from(header.children).map((c) => cellWidth(c, width))).toEqual([
+        89,
+        "hug",
+        "fill",
+      ]);
+    }
+  });
+});

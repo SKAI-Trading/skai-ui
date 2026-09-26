@@ -109,6 +109,17 @@ export interface OrderBookProps {
   onRowDoubleClick?: (price: number, size: number, side: "bid" | "ask") => void;
   /** Number of levels to show per side */
   levels?: number;
+  /**
+   * Levels on the ask side alone, when the two sides are not drawn alike.
+   * Defaults to `levels`.
+   */
+  askLevels?: number;
+  /**
+   * Levels on the bid side alone. Defaults to `levels`. The /spot 1440 boards
+   * draw fifteen asks over sixteen bids (7710:92603, 8558:135100,
+   * 8687:100787), which one count for both sides cannot say.
+   */
+  bidLevels?: number;
   /** Price precision (decimal places) */
   pricePrecision?: number;
   /**
@@ -204,6 +215,8 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       onPriceClick,
       onRowDoubleClick,
       levels = 12,
+      askLevels = levels,
+      bidLevels = levels,
       pricePrecision = 2,
       sizePrecision = 4,
       formatPrice,
@@ -458,24 +471,33 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             rules drawn inside it and counted in neither pad. `py-1` over
             `leading-4` is that sum only while the rules take no room;
             `border-y` makes them real, and the box came to 1 + 4 + 16 + 4 + 1.
-            `lg:py-[3px]` pays for the rules out of the pad, so at 1440 the band
+            `py-[3px]` pays for the rules out of the pad, so at 1440 the band
             is 1 + 3 + 16 + 3 + 1 = 24 with the labels still at y=4.
 
-            Below `lg` it stays 26, unchanged on purpose. The tablet cut states
-            the band twice and disagrees with itself ("Frame 442" declares 20,
-            its content measures 22 — 4 + a 14 line box + 4 — and the first
-            ladder row opens at 20, so the lower rule overlaps that row by two),
-            and no reading of the 375 band is on record. Settle those from their
-            own boards, not from this one. */}
+            THE TABLET BAND IS 20 (8846:63552 on 8837-63445, read live
+            2026-09-24): rules at y=0 and y=20, "Frame 283" padded 4/16 with
+            the labels in Manrope 10/12 (Sm/Paragraph 3) at y=4. Same pad, a
+            12 line: 1 + 3 + 12 + 3 + 1. And its labels sit on the ladder's
+            columns rather than hugging each other: Price opens at x=16, Size
+            ends at 382 and Total at 692, which is where 70 / 55 / 70 spread
+            across the 676 row put the right edges of the Size and Total
+            cells. So from `md` the three label cells ARE the ladder's cells,
+            and from `lg` they go back to the 1440 board's 89 / hug / fill.
+
+            The 375 band (9777:101098) measures 20 as well, but its label type
+            has not been read, so the unprefixed classes are what it drew
+            before: 26, with 12/16 labels. */}
         <div
           role="row"
-          className="flex items-center justify-between px-4 py-1 lg:py-[3px] font-sans text-xs font-normal leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
+          className="flex items-center justify-between px-4 py-1 md:py-[3px] font-sans text-xs md:text-[10px] lg:text-xs font-normal leading-4 md:leading-3 lg:leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
         >
-          <span className="w-[89px] shrink-0 truncate text-left">Price</span>
-          <span className="shrink-0 truncate text-right">
+          <span className="w-[89px] md:w-[70px] lg:w-[89px] shrink-0 truncate text-left">
+            Price
+          </span>
+          <span className="shrink-0 truncate text-right md:w-[55px] lg:w-auto">
             Size ({baseCurrency})
           </span>
-          <span className="min-w-px flex-1 truncate text-right">
+          <span className="min-w-px flex-1 truncate text-right md:w-[70px] md:flex-none lg:w-auto lg:flex-1">
             Total ({quoteCurrency})
           </span>
         </div>
@@ -507,7 +529,8 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             scroll by three. With the floor they stay whole and the bids give
             up the difference. A caller that asks for more levels than the half
             holds gets every ask shown and the bids scrolling; /spot asks for
-            fifteen. */}
+            fifteen asks and sixteen bids, which is what the halves hold on the
+            board's 622. */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Asks (reversed to show lowest at bottom) */}
           <div
@@ -516,7 +539,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             className="flex-1 lg:flex-[15_1_0%] lg:min-h-min flex flex-col-reverse overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
           >
             {data.asks
-              .slice(0, levels)
+              .slice(0, askLevels)
               .map((ask, idx) => renderLevel(ask, idx, "ask"))}
           </div>
 
@@ -533,10 +556,14 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
               and below, on the panel's own ground — the frames paint no tint
               behind this row and rule neither side of it. All three cells are
               12/16 at -0.48px in white, the label in Manrope and both figures in
-              Mulish, matching the ladder beneath. */}
+              Mulish, matching the ladder beneath.
+
+              The label carries a colon on every board that draws it:
+              7710:92742 and 8558/8687 at 1440, 7742:56892 on the dropdown
+              cut, 8846:63667 at 768. */}
           <div className="flex shrink-0 items-center justify-between px-4 py-[2px] text-xs leading-4 tracking-[-0.48px] text-white">
             <span className="min-w-px flex-1 truncate text-right font-sans">
-              Spread
+              Spread:
             </span>
             <span className="shrink-0 px-6 text-center font-mulish tabular-nums">
               {typeof data.spread === "number"
@@ -557,7 +584,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             className="flex-1 lg:flex-[16_1_0%] overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
           >
             {data.bids
-              .slice(0, levels)
+              .slice(0, bidLevels)
               .map((bid, idx) => renderLevel(bid, idx, "bid"))}
           </div>
         </div>
