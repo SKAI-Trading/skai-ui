@@ -233,6 +233,11 @@ describe("OrderBook column header — report 1ec7f3d4", () => {
  * (70 / 55 / 70, SPACE_BETWEEN across 676) put the Size cell's right edge at
  * 381.5 and the Total cell's at 692, so the labels stand on the ladder's own
  * columns. The 1440 band draws its own cell model (89 / hug / fill) and keeps it.
+ *
+ * The 10/12 type is the one thing here the code does not draw: no token carries
+ * Sm/Paragraph 3 300 (figma/tokens/DRIFT.md), and 10 against 12 is visible, so
+ * the labels stay on `text-xs` and the missing token is reported instead of a
+ * raw size being written into the widget.
  */
 const SCREEN_AT = { md: 768, lg: 1024 } as const;
 
@@ -270,18 +275,63 @@ function cellWidth(cell: Element, width: number): number | "hug" | "fill" {
 }
 
 describe("OrderBook column header at 768 — 8846:63552", () => {
-  it("sets the labels 10/12 from md, and back at 12/16 from lg", () => {
+  it("sets the labels on the text-xs token at every width, on a 12 line from md", () => {
     const { header } = ladder();
     const type = (width: number) => ({
-      size: FONT_PX[winning(header, /^text-(xs|\[10px\])$/, width)!],
+      size: FONT_PX[winning(header, /^text-(xs|\[[^\]]+\])$/, width)!],
       line: LINE_PX[winning(header, /^leading-/, width)!],
     });
-    expect(type(768)).toEqual({ size: 10, line: 12 });
-    expect(type(1023)).toEqual({ size: 10, line: 12 });
+    // The 12 line is what closes the band on the board's 20.
+    expect(type(768)).toEqual({ size: 12, line: 12 });
+    expect(type(1023)).toEqual({ size: 12, line: 12 });
     expect(type(1440)).toEqual({ size: 12, line: 16 });
     // 375 has no reading of its own yet and draws what it drew before.
     expect(type(375)).toEqual({ size: 12, line: 16 });
     expect(tokens(header).has("font-sans")).toBe(true);
+  });
+
+  it("writes no raw font size on the band or its labels, at any width", () => {
+    // Wave 71 rule C: a value no token names is reported, not hard-coded.
+    const { header } = ladder();
+    for (const el of [header, ...Array.from(header.children)]) {
+      const raw = Array.from(tokens(el)).filter((t) =>
+        /^(?:(?:sm|md|lg|xl|2xl):)?text-\[\d/.test(t),
+      );
+      expect(raw, el.textContent ?? "").toEqual([]);
+    }
+  });
+
+  it("ends the Size label on its cell's edge from md, however long the symbol", () => {
+    // 55 is the ladder's Size cell and its right edge (381.5) is where the
+    // board ends the label. Measured in Manrope 400 at 12px, -0.48px:
+    // "Size (BTC)" 53.1 fits, this widget's default "Size (USDT)" is 60.9 and
+    // does not. Truncated it would read "Size (US…"; right-aligned and left to
+    // overflow it would start at the cell's left edge and end past 381.5.
+    // Packed to its end, the label stays whole and ends on the edge.
+    const { header } = ladder();
+    const size = header.children[1];
+    const at = (width: number) => ({
+      display: winning(size, /^(flex|block|inline|inline-block|inline-flex)$/, width),
+      justify: winning(size, /^justify-/, width),
+      overflow: winning(size, /^(truncate|overflow-(hidden|visible|clip))$/, width),
+    });
+    expect(size.textContent).toBe("Size (USDT)");
+    expect(at(768)).toEqual({
+      display: "flex",
+      justify: "justify-end",
+      overflow: "overflow-visible",
+    });
+    expect(at(1023)).toEqual(at(768));
+    // One line at every width: `truncate` carries the nowrap, and nothing
+    // lets the label wrap under the band's 12 line.
+    expect(tokens(size).has("truncate")).toBe(true);
+    expect(Array.from(tokens(size)).some((t) => /whitespace-(normal|pre-wrap|pre-line)$/.test(t))).toBe(false);
+    // 1440 hugs its label, so packing it to the end moves nothing, and it
+    // clips again; 375 has not been re-read and keeps the plain truncating
+    // cell it drew before.
+    expect(cellWidth(size, 1440)).toBe("hug");
+    expect(at(1440).overflow).toBe("overflow-hidden");
+    expect(at(375)).toEqual({ display: null, justify: null, overflow: "truncate" });
   });
 
   it("stands the three labels on the ladder's own cells from md", () => {

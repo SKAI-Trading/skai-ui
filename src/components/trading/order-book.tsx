@@ -476,25 +476,41 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
 
             THE TABLET BAND IS 20 (8846:63552 on 8837-63445, read live
             2026-09-24): rules at y=0 and y=20, "Frame 283" padded 4/16 with
-            the labels in Manrope 10/12 (Sm/Paragraph 3) at y=4. Same pad, a
-            12 line: 1 + 3 + 12 + 3 + 1. And its labels sit on the ladder's
-            columns rather than hugging each other: Price opens at x=16, Size
-            ends at 382 and Total at 692, which is where 70 / 55 / 70 spread
-            across the 676 row put the right edges of the Size and Total
-            cells. So from `md` the three label cells ARE the ladder's cells,
-            and from `lg` they go back to the 1440 board's 89 / hug / fill.
+            the labels on a 12 line at y=4. Same pad, a 12 line:
+            1 + 3 + 12 + 3 + 1, and the 12 line is `leading-3`. The board
+            sets the labels in Manrope 10/12 (Sm/Paragraph 3 300), which no
+            token carries yet (figma/tokens/DRIFT.md lists it with none), so
+            they stay on `text-xs` until one does rather than on a raw 10px.
+
+            Its labels sit on the ladder's columns rather than hugging each
+            other: Price opens at x=16, Size ends at 382 and Total at 692,
+            which is where 70 / 55 / 70 spread across the 676 row put the
+            right edges of the Size and Total cells. So from `md` the three
+            label cells ARE the ladder's cells, and from `lg` they go back to
+            the 1440 board's 89 / hug / fill.
+
+            The Size cell is packed to its end from `md` instead of
+            truncated. In Manrope 400 at 12px and -0.48px, "Size (BTC)" and
+            "Size (ETH)" are 53 wide and fit the 55, but "Size (USDT)", this
+            widget's default, is 61: a clipped cell would read "Size (US…",
+            and a plain right-aligned one that overflows starts at its left
+            edge and so ends past 382. Packed to the end the label stays whole,
+            still ends on the cell's edge, and runs its excess left into the
+            empty band between Price and Size. From `lg` the cell hugs its
+            label again, so the packing moves nothing there, and it clips as
+            it did.
 
             The 375 band (9777:101098) measures 20 as well, but its label type
             has not been read, so the unprefixed classes are what it drew
             before: 26, with 12/16 labels. */}
         <div
           role="row"
-          className="flex items-center justify-between px-4 py-1 md:py-[3px] font-sans text-xs md:text-[10px] lg:text-xs font-normal leading-4 md:leading-3 lg:leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
+          className="flex items-center justify-between px-4 py-1 md:py-[3px] font-sans text-xs font-normal leading-4 md:leading-3 lg:leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
         >
           <span className="w-[89px] md:w-[70px] lg:w-[89px] shrink-0 truncate text-left">
             Price
           </span>
-          <span className="shrink-0 truncate text-right md:w-[55px] lg:w-auto">
+          <span className="shrink-0 truncate text-right md:flex md:w-[55px] md:justify-end md:overflow-visible lg:w-auto lg:overflow-hidden">
             Size ({baseCurrency})
           </span>
           <span className="min-w-px flex-1 truncate text-right md:w-[70px] md:flex-none lg:w-auto lg:flex-1">
