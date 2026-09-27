@@ -96,24 +96,29 @@ const SimpleCalendar = ({
     <div className={cn("p-3", className)}>
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
+        {/* Icon-only, so each one is named for where it goes. */}
         <Button
+          type="button"
           variant="ghost"
           size="sm"
           onClick={prevMonth}
+          aria-label="Previous month"
           className="h-7 w-7 p-0"
         >
-          <ChevronLeft className="h-4 w-4" />
+          <ChevronLeft className="h-4 w-4" aria-hidden="true" />
         </Button>
-        <span className="text-sm font-medium">
+        <span className="text-sm font-medium" aria-live="polite">
           {monthNames[viewDate.getMonth()]} {viewDate.getFullYear()}
         </span>
         <Button
+          type="button"
           variant="ghost"
           size="sm"
           onClick={nextMonth}
+          aria-label="Next month"
           className="h-7 w-7 p-0"
         >
-          <ChevronRight className="h-4 w-4" />
+          <ChevronRight className="h-4 w-4" aria-hidden="true" />
         </Button>
       </div>
 

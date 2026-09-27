@@ -231,5 +231,19 @@ describe("DatePicker", () => {
         ),
       ).toBeInTheDocument();
     });
+
+    // The arrows hold only an icon, so without a label a screen reader reads
+    // each as "button" and nothing says which way it goes.
+    it("names the month buttons and moves one month each way", () => {
+      render(<DatePicker value={new Date(2026, 0, 15)} clearable={false} />);
+      fireEvent.click(screen.getByRole("button", { name: /January 15, 2026/ }));
+
+      fireEvent.click(screen.getByRole("button", { name: "Previous month" }));
+      expect(screen.getByText("December 2025")).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole("button", { name: "Next month" }));
+      fireEvent.click(screen.getByRole("button", { name: "Next month" }));
+      expect(screen.getByText("February 2026")).toBeInTheDocument();
+    });
   });
 });
