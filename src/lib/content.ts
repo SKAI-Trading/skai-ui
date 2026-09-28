@@ -211,9 +211,14 @@ export const content = {
         // our brave new world ...") came in under bug 419bd2b4, which retired
         // this sentence as "old skai.trade messaging"; the ruling reverses that
         // and the frames and the app have swapped sides. Do not re-retire it
-        // off the bug alone.
+        // off the bug alone. The sentence ends in a full stop on all six
+        // Temporary landing boards, August and May (text 10767:307478, read
+        // in full 2026-09-27).
         subheading:
-          "Discover the new world of perpetual trading, swaps, prediction markets, memes, launchpads, and a catalog of casino-style gaming",
+          "Discover the new world of perpetual trading, swaps, prediction markets, memes, launchpads, and a catalog of casino-style gaming.",
+        // Held for Casey, like the suffix below: the August boards label this
+        // button "Start trading" and the May ones "Log in or Sign up", while
+        // skai.trade is still the waitlist.
         cta: "Get early access",
         // The MAY heroes draw this string verbatim: 2005:4492 at 1440 and
         // 2005:21410 at 375 (text nodes 2005:5169 and 2005:22102, read
@@ -229,9 +234,12 @@ export const content = {
         // and the figure in front of the suffix is a waitlist sign-up count,
         // which "winning with us" claims more than. The hero counter wording is
         // Casey's call and still open. Until he makes it, this stays the May
-        // string and the three August heroes stay partial on it alone.
+        // string and the three August heroes stay partial on it and the CTA
+        // label above.
+        //
+        // There is no stand-in count here. The hero shows the live sign-up
+        // count, an ellipsis while it loads and a dash when it failed.
         counterSuffix: "Users are already on this list",
-        defaultCount: "800",
       },
 
       /** OnboardingPage-specific */

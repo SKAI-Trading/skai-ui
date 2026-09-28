@@ -155,21 +155,28 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
         {...props}
       >
         {/* Left Navigation - Terms & Privacy */}
-        {/* Figma: Manrope 14px/18px, letter-spacing -0.56px (-4%), color #E0E0E0.
-            The gap is 24 on the 375 boards (11225:184801 legal nav 111x16: Terms
-            40 at x=0, Privacy 47 at x=64) and 32 from 768 up (2005:15075 nav
-            117x16: Terms 33 at x=0, Privacy 37 at x=65). It had stepped
-            16 / 24 / 32 through sm, and 640 matches no board. */}
+        {/* Figma, Gray 100 at -4% on every board, but the type steps per
+            width: Manrope Bold 14/16 at 375 (Sm/Paragraph 1 600; 11225:181650
+            and 11225:184801 draw the nav 111x16 with Terms 40 wide), Regular
+            12/16 at 768 (Md/Paragraph 2 300; 11189:2629 and 2005:15075 draw it
+            117x16 with Terms 33 wide) and Regular 14/18 at 1440 (Lg/Paragraph
+            2 300; 117x18 on 10767:307473). A flat 14/18 stood the row 18 tall
+            and Terms 38 wide on the two smaller boards.
+            The gap is 24 on the 375 boards (Terms at x=0, Privacy at x=64)
+            and 32 from 768 up (Privacy at x=65). It had stepped 16 / 24 / 32
+            through sm, and 640 matches no board.
+            The colour stays a literal: skai-landing, the one consumer,
+            compiles this file with `skai-gray-100` mapped to Ash. */}
         <div className="flex items-center gap-6 md:gap-8">
           <Link
             to={termsUrl}
-            className="font-manrope text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] transition-colors hover:text-white"
+            className="font-manrope text-para-1-mobile font-bold text-[#E0E0E0] transition-colors hover:text-white md:text-para-2-tablet md:font-normal lg:text-para-2"
           >
             Terms
           </Link>
           <Link
             to={privacyUrl}
-            className="font-manrope text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] transition-colors hover:text-white"
+            className="font-manrope text-para-1-mobile font-bold text-[#E0E0E0] transition-colors hover:text-white md:text-para-2-tablet md:font-normal lg:text-para-2"
           >
             Privacy
           </Link>
