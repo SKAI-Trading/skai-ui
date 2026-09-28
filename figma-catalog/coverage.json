@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28T07:00:44.417Z",
+  "generated": "2026-09-28T11:29:01.545Z",
   "harvestedAt": "2026-09-24",
   "rollup": {
     "pages": 39,
@@ -52,10 +52,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 20194,
+    "total": 20196,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 961,
-    "unrecognisedTokens": 43141
+    "unrecognisedTokens": 43157
   },
   "statusFiles": [
     {
@@ -5145,6 +5145,12 @@
       "rows": 5,
       "withLiveId": 5,
       "ids": 5
+    },
+    {
+      "file": "status.wave73.sweep-25e3495d.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
     },
     {
       "file": "status.wave8.games-a.tsv",
