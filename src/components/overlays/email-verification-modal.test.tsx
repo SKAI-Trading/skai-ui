@@ -37,6 +37,8 @@ describe("email verification modal, Temporary landing boards", () => {
     const box = classesOf(screen.getByRole("heading", { name: "Email verification" }).parentElement);
     expect(box).toEqual(expect.arrayContaining(["rounded-[20px]", "md:rounded-[26px]", "lg:rounded-[32px]"]));
     expect(box).not.toContain("md:rounded-[28px]");
+    // 448 at 1440 is the theme's max-w-md (28rem).
+    expect(box).toEqual(expect.arrayContaining(["max-w-[358px]", "md:max-w-[468px]", "lg:max-w-md", "bg-green-coal-200"]));
   });
 
   it("sets the address Bold in the line's Gray 100, not white", () => {

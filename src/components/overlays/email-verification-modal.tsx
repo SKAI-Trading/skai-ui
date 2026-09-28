@@ -294,7 +294,7 @@ export function EmailVerificationModal({
            Corners are 20 / 26 / 32. The 768 boxes 2598:3052 and 2598:4532
            round at 26, the radius auth-modal already draws for the same
            family; 28 matched no board. */
-        className="relative w-full max-w-[358px] rounded-[20px] bg-green-coal-200 px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[26px] md:px-4 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pt-6"
+        className="relative w-full max-w-[358px] rounded-[20px] bg-green-coal-200 px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[26px] md:px-4 md:pt-4 lg:max-w-md lg:rounded-[32px] lg:px-6 lg:pt-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Back and Close Buttons — the frame's `controls` row carries its own
