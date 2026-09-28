@@ -289,8 +289,12 @@ export function EmailVerificationModal({
            The hairline is an inset ring rather than a border, as in
            auth-modal: the boards lay the 342 column out inside the stroke,
            and a 1px border took 2 off it (340 across six cells) and stood the
-           box 344 where 11229:188072 draws 342. */
-        className="relative w-full max-w-[358px] rounded-[20px] bg-[#122524] px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[28px] md:px-4 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pt-6"
+           box 344 where 11229:188072 draws 342.
+
+           Corners are 20 / 26 / 32. The 768 boxes 2598:3052 and 2598:4532
+           round at 26, the radius auth-modal already draws for the same
+           family; 28 matched no board. */
+        className="relative w-full max-w-[358px] rounded-[20px] bg-green-coal-200 px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:rounded-[26px] md:px-4 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pt-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Back and Close Buttons — the frame's `controls` row carries its own
@@ -304,11 +308,14 @@ export function EmailVerificationModal({
             aria-label="Back"
           >
             <BackIcon className="h-4 w-4" />
-            {/* The label steps DOWN a size as the modal grows: Sm/Paragraph 1
-                300 at 375 (14/16, the 31-wide box on 11229:188076) and
-                Md/Paragraph 2 300 at 768 (12/16, 26 wide on 11225:181610).
-                Gray 100, not white — only the glyph beside it is white. */}
-            <span className="font-manrope text-[14px] font-normal leading-[16px] tracking-[-0.56px] text-[#E0E0E0] md:text-[12px] md:tracking-[-0.48px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
+            {/* The label steps DOWN a size as the modal grows: 14/16 on the
+                Bold cut at 375 (11229:188039 and 11229:188072 set it in
+                Manrope Bold), Md/Paragraph 2 300 at 768 (12/16 Regular, 26
+                wide on 11225:181610 and 2598:3052) and 14/18 Regular at 1440
+                (10734:78604). Gray 100, not white; only the glyph beside it
+                is white. The colour stays a literal: skai-landing, which
+                compiles this file, maps `skai-gray-100` to Ash. */}
+            <span className="font-manrope text-para-1-mobile font-bold text-[#E0E0E0] md:text-para-2-tablet md:font-normal lg:text-para-2">
               Back
             </span>
           </button>
@@ -331,10 +338,12 @@ export function EmailVerificationModal({
         {/* Description — Sub-headline 2 300, Manrope Regular 14 at -0.56 with
             the address on the Bold cut. Its leading is the face's own: a flat
             18 at 375 and Manrope's natural 18.048 at 768, which is why the
-            frame's two-line box reads 36 at one width and 37 at the other. */}
+            frame's two-line box reads 36 at one width and 37 at the other.
+            The address keeps the line's Gray 100: every board sets it Bold
+            but not white (2598:3052, 11229:188039, 10734:78604). */}
         <p className="font-manrope mb-5 text-center text-[14px] font-normal leading-[18px] tracking-[-0.56px] text-[#E0E0E0] md:mb-6 md:leading-[18.05px] lg:text-[18px] lg:leading-[24px]">
           Enter the verification code sent to <br />
-          <span className="font-bold text-white">{email}</span>
+          <span className="font-bold">{email}</span>
         </p>
 
         {/* Code Input */}
@@ -354,14 +363,18 @@ export function EmailVerificationModal({
                    48/56/60 heights ran 18-24px short at every width while the
                    x-grid already matched. Radius is 12/12/16 per those nodes.
                    The `px-1` that used to sit on this row is gone — the frame
-                   gives the six inputs the modal's full content width. */
+                   gives the six inputs the modal's full content width.
+
+                   The stroke does not change when a digit lands. On
+                   2598:4532, 11225:180028 and 11229:188907 the five filled
+                   cells keep Green Coal 100 and only the focused sixth one
+                   turns App/Green 300. Filled cells used to go #2DEDAD, the
+                   retired Alien Green that no board draws. */
                 className={cn(
-                  "flex h-[72px] flex-1 min-w-0 items-center justify-center rounded-[12px] border bg-[#001615] transition-colors md:h-[76px] md:rounded-[12px] lg:h-[78px] lg:rounded-[16px]",
+                  "flex h-[72px] flex-1 min-w-0 items-center justify-center rounded-xl border bg-green-coal transition-colors md:h-[76px] lg:h-[78px] lg:rounded-2xl",
                   localError
                     ? "border-[#FF4444]"
-                    : digit
-                      ? "border-[#2DEDAD]"
-                      : "border-[#123f3c] focus-within:border-[#2DEDAD]"
+                    : "border-green-coal-100 focus-within:border-skai-green"
                 )}
               >
                 <input
@@ -376,13 +389,17 @@ export function EmailVerificationModal({
                   onKeyDown={(e) => handleKeyDown(index, e)}
                   onPaste={index === 0 ? handlePaste : undefined}
                   disabled={loading}
+                  /* An empty cell shows a "0" in Ash on the same Mulish Light
+                     face (2598:3052 at 768, 11229:188072 at 375). It is the
+                     input's placeholder, so it never counts as a digit. */
+                  placeholder="0"
                   /* Figma 2005:20667 — the OTP digits are the "Numbers" ramp
                      (Mulish Light), not Manrope. Manrope rendered the code in
                      the body face, which was the "text font do not match"
                      half of report 8658d6a4. Sizes are 20 / 24 / 32 at -4%
                      tracking (2005:30129, 2005:19937, 2005:11474); the desktop
                      step was rendering 28. */
-                  className="font-mulish h-full w-full border-none bg-transparent text-center text-[20px] font-light leading-none tracking-[-0.8px] text-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-[24px] md:tracking-[-0.96px] lg:text-[32px] lg:tracking-[-1.28px]"
+                  className="font-mulish h-full w-full border-none bg-transparent text-center text-[20px] font-light leading-none tracking-[-0.8px] text-white placeholder:text-ash focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-[24px] md:tracking-[-0.96px] lg:text-[32px] lg:tracking-[-1.28px]"
                   aria-label={`Digit ${index + 1}`}
                 />
               </div>
@@ -437,13 +454,18 @@ export function EmailVerificationModal({
               </button>
             )
           ) : (
-            /* Paragraph 2 300: 12/14 at 375 (the 14-tall 11229:188103) and
-               12/16 at 768 (the 16-tall 11225:181637). */
-            <p className="font-manrope text-[12px] font-normal leading-[14px] tracking-[-0.48px] text-[#E0E0E0] md:leading-[16px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
+            /* Paragraph 2 300: 12/14 at 375 (the 14-tall 11229:188103), 12/16
+               at 768 (the 16-tall 11225:181637) and 14/18 at 1440. Only the
+               count is Sky Blue, and it is set in Mulish, the numbers face:
+               10/14 at 375, 12/16 at 768 and 14/18 at 1440 (2598:3052,
+               11229:188039, 10734:78604). " seconds" stays in the line's
+               Gray 100 Manrope. The 768 step has no token (Mulish 12/16). */
+            <p className="font-manrope text-para-2-mobile text-[#E0E0E0] md:text-para-2-tablet lg:text-para-2">
               Resend code in{" "}
-              <span className="font-medium text-[#56C7F3]">
-                {timer} seconds
-              </span>
+              <span className="font-mulish text-label-2-mobile text-sky-blue md:text-[12px] md:leading-[16px] lg:text-number-4">
+                {timer}
+              </span>{" "}
+              seconds
             </p>
           )}
         </div>
