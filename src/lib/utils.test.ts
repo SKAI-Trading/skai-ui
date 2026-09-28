@@ -62,6 +62,7 @@ describe("cn: preset font sizes are sizes, not colours", () => {
     expect(cn("text-para-2", "md:text-para-2-tablet")).toBe("text-para-2 md:text-para-2-tablet");
     expect(cn("md:text-para-2-tablet", "md:text-number-4")).toBe("md:text-number-4");
     expect(cn("md:text-para-2-tablet", "text-white")).toBe("md:text-para-2-tablet text-white");
+    expect(cn("md:text-para-2-tablet", "md:text-white")).toBe("md:text-para-2-tablet md:text-white");
   });
 
   it("applies tailwind-merge's usual size-over-leading rule, as it does for text-sm", () => {
