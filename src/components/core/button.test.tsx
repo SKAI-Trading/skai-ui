@@ -28,6 +28,105 @@ describe("Button", () => {
     expect(screen.getByRole("button")).toHaveClass("underline-offset-4");
   });
 
+  describe("hover label on outline and ghost", () => {
+    it("darkens the label over the accent hover fill", () => {
+      const { rerender } = render(<Button variant="ghost">Ghost</Button>);
+      expect(screen.getByRole("button")).toHaveClass(
+        "hover:bg-accent",
+        "hover:text-accent-foreground",
+      );
+
+      rerender(<Button variant="outline">Outline</Button>);
+      expect(screen.getByRole("button")).toHaveClass(
+        "hover:bg-accent",
+        "hover:text-accent-foreground",
+      );
+    });
+
+    it("keeps the resting label when the caller brings its own hover fill", () => {
+      const { rerender } = render(
+        <Button
+          variant="ghost"
+          className="bg-green-coal-300 text-white hover:bg-green-coal-300/80"
+        >
+          Enter house vault
+        </Button>,
+      );
+      let btn = screen.getByRole("button");
+      expect(btn).toHaveClass("text-white", "hover:bg-green-coal-300/80");
+      expect(btn).not.toHaveClass("hover:text-accent-foreground");
+
+      rerender(
+        <Button
+          variant="outline"
+          className="border-skai-red/50 text-skai-red hover:bg-skai-red/10"
+        >
+          Retry
+        </Button>,
+      );
+      btn = screen.getByRole("button");
+      expect(btn).toHaveClass("text-skai-red");
+      expect(btn).not.toHaveClass("hover:text-accent-foreground");
+
+      rerender(
+        <Button variant="ghost" className="p-0 hover:bg-transparent">
+          Close
+        </Button>,
+      );
+      expect(screen.getByRole("button")).not.toHaveClass(
+        "hover:text-accent-foreground",
+      );
+    });
+
+    it("does the same for a Button rendered through asChild", () => {
+      render(
+        <Button
+          asChild
+          variant="ghost"
+          className="text-white hover:bg-green-coal-300/80"
+        >
+          <a href="/earn/trading-vault">Enter trading vault</a>
+        </Button>,
+      );
+      const link = screen.getByRole("link");
+      expect(link).toHaveClass("text-white", "hover:bg-green-coal-300/80");
+      expect(link).not.toHaveClass("hover:text-accent-foreground");
+    });
+
+    it("leaves a caller's own hover label alone", () => {
+      const { rerender } = render(
+        <Button variant="ghost" className="hover:bg-white/10 hover:text-white">
+          Mute
+        </Button>,
+      );
+      expect(screen.getByRole("button")).toHaveClass("hover:text-white");
+
+      rerender(
+        <Button
+          variant="ghost"
+          className="hover:bg-muted hover:text-accent-foreground"
+        >
+          Row
+        </Button>,
+      );
+      expect(screen.getByRole("button")).toHaveClass(
+        "hover:text-accent-foreground",
+      );
+    });
+
+    it("keeps the accent label when the caller names the accent fill itself", () => {
+      render(
+        <Button variant="ghost" className="flex items-center gap-2 hover:bg-accent">
+          Language
+        </Button>,
+      );
+      expect(screen.getByRole("button")).toHaveClass(
+        "hover:bg-accent",
+        "hover:text-accent-foreground",
+      );
+    });
+  });
+
   it("renders with different sizes", () => {
     const { rerender } = render(<Button size="default">Default</Button>);
     expect(screen.getByRole("button")).toHaveClass("h-10");

@@ -37,6 +37,26 @@ const buttonVariants = cva(
   },
 );
 
+/**
+ * outline and ghost turn their label to accent-foreground on hover because
+ * their hover fill is the accent. A caller that brings its own hover fill (a
+ * tint, a surface, transparent) replaces that fill, and the label colour chosen
+ * for it has nothing under it any more: on a dark page it goes near-black and
+ * the label disappears. So the accent label only stays while the accent fill
+ * does, and otherwise the label keeps the colour it has at rest.
+ */
+function pairAccentHoverText(classes: string, className?: string): string {
+  const list = classes.split(" ");
+  if (
+    list.includes("hover:bg-accent") ||
+    !list.includes("hover:text-accent-foreground") ||
+    className?.split(/\s+/).includes("hover:text-accent-foreground")
+  ) {
+    return classes;
+  }
+  return list.filter((c) => c !== "hover:text-accent-foreground").join(" ");
+}
+
 export interface ButtonProps
   extends
     React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -71,7 +91,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     if (asChild) {
       return (
         <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
+          className={pairAccentHoverText(
+            cn(buttonVariants({ variant, size, className })),
+            className,
+          )}
           ref={ref}
           {...props}
         >
@@ -82,9 +105,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const isDisabled = disabled || loading;
     return (
       <Comp
-        className={cn(
-          buttonVariants({ variant, size, className }),
-          loading && "cursor-wait",
+        className={pairAccentHoverText(
+          cn(buttonVariants({ variant, size, className }), loading && "cursor-wait"),
+          className,
         )}
         ref={ref}
         disabled={isDisabled}
