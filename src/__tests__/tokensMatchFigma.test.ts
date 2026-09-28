@@ -6,6 +6,11 @@
  * library file TyX8YAtNDEIvsnSLQ3IXId), never a constant of this package, so
  * a token moved away from the design fails here by its Figma name.
  *
+ * Shadows are the exception. The library has only three effect styles, and
+ * the modal's 0 10 80 at 25% is not one of them: every frame draws it as a
+ * raw effect. So `shadow-modal` is checked against a stored frame node
+ * (figma/store), which is still the design and not this package.
+ *
  * radiusScaleIsShadowed.test.ts used to pin the old arrangement, where the
  * preset overrode sm / md / lg off `--radius` and the app painted sm 8 /
  * md 10 / lg 12 / xl 16 / 2xl 24 against Figma's 2 / 6 / 8 / 12 / 16. It now
@@ -22,8 +27,9 @@ import {
   semanticColors,
   skaiBorderRadius,
   skaiFontSizes,
+  skaiInput,
 } from "../lib/design-tokens";
-import { colors as tkColors } from "../lib/tokens";
+import { colors as tkColors, shadows as tkShadows } from "../lib/tokens";
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const readJson = (p: string) => JSON.parse(readFileSync(path.join(ROOT, p), "utf8"));
@@ -38,6 +44,7 @@ const texts: Record<string, FigmaText> = readJson("figma/tokens/text-styles.json
 const theme = resolveConfig({ content: [], presets: [skaiPreset] }).theme as unknown as {
   borderRadius: Record<string, string>;
   fontSize: Record<string, [string, Record<string, string>]>;
+  boxShadow: Record<string, string>;
 };
 
 /** "8px" / "0.5rem" / "0" to pixels. */
@@ -207,4 +214,71 @@ describe("type: typography.css classes named for a Figma text style carry its Lg
       expect(r["letter-spacing"], "tracking").toBe(`${parseFloat(t.ls) / 100}em`);
     });
   }
+});
+
+describe("shadows: each boxShadow key with a Figma source casts that shadow", () => {
+  type Effect = { t: string; c?: string; o?: [number, number]; r?: number; sp?: number };
+  type StoreNode = { id?: string; n?: string; fx?: Effect[] | string; c?: StoreNode[] };
+  const effectStyles: Record<string, { effects: Effect[] }> = readJson("figma/tokens/effect-styles.json");
+
+  /** One CSS shadow layer as "x y blur spread #RRGGBB@alpha". */
+  function cssShadow(value: string): string {
+    const v = value.trim();
+    const at = v.search(/rgba\(|#/);
+    if (at < 0) throw new Error(`no colour in ${value}`);
+    const lengths = v.slice(0, at).trim().split(/\s+/).map(px);
+    if (lengths.length < 3 || lengths.length > 4) throw new Error(`not one shadow: ${value}`);
+    const [x, y, blur, spread = 0] = lengths;
+    return `${x} ${y} ${blur} ${spread} ${colour(v.slice(at))}`;
+  }
+
+  /** A Figma drop shadow in the same form (the store writes spread as `sp`, absent when 0). */
+  function figmaShadow(e: Effect): string {
+    if (e.t !== "DROP_SHADOW" || !e.o || e.r === undefined || !e.c) {
+      throw new Error(`not a drop shadow: ${JSON.stringify(e)}`);
+    }
+    const c = e.c.toUpperCase().replace(/@([\d.]+)$/, (_, a: string) => `@${Number(a)}`);
+    return `${e.o[0]} ${e.o[1]} ${e.r} ${e.sp ?? 0} ${c}`;
+  }
+
+  function only(effects: Effect[] | string | undefined, what: string): Effect {
+    expect(Array.isArray(effects), `${what} casts raw effects`).toBe(true);
+    expect(effects, what).toHaveLength(1);
+    return (effects as Effect[])[0];
+  }
+
+  function findNode(n: StoreNode, id: string): StoreNode | null {
+    if (n.id === id) return n;
+    for (const child of n.c ?? []) {
+      const hit = findNode(child, id);
+      if (hit) return hit;
+    }
+    return null;
+  }
+
+  it("shadow-inputHint and the input's focus ring are the effect style Input hint (dark)", () => {
+    const e = only(effectStyles["Input hint (dark)"]?.effects, "Input hint (dark)");
+    expect(cssShadow(theme.boxShadow.inputHint), "shadow-inputHint").toBe(figmaShadow(e));
+    expect(cssShadow(skaiInput.states.focus.boxShadow), "skaiInput focus").toBe(figmaShadow(e));
+  });
+
+  it("shadow-modal is the drop shadow on the frames' modal card (3sSz 12261:470939)", () => {
+    // The Faucet board at 768 (12261:474854): the node named `modal`, 448
+    // wide, Green Coal 200 over the Overlay. On 2026-09-28 the same shadow
+    // was on 136 nodes in 87 of the 212 stored frames, and 0 16 48 on none.
+    const board = readJson("figma/store/3sSzw1KewMtUbeLAv7uW0r/12261-474854.json");
+    const node = findNode(board.tree, "12261:470939");
+    expect(node?.n).toBe("modal");
+    const e = only(node?.fx, "12261:470939");
+    expect(cssShadow(theme.boxShadow.modal)).toBe(figmaShadow(e));
+  });
+
+  it("design-tokens.ts, tokens.ts and --shadow-modal spell the modal shadow alike", () => {
+    const css = readFileSync(path.join(ROOT, "src/lib/design-tokens.css"), "utf8").replace(/\r\n/g, "\n");
+    const decl = /--shadow-modal:\s*([^;]+);/.exec(css);
+    expect(decl, "--shadow-modal is declared").not.toBeNull();
+    const preset = cssShadow(theme.boxShadow.modal);
+    expect(cssShadow(tkShadows.modal), "tokens.ts shadows.modal").toBe(preset);
+    expect(cssShadow(decl![1]), "design-tokens.css --shadow-modal").toBe(preset);
+  });
 });

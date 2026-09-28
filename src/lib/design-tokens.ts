@@ -1273,12 +1273,24 @@ export const skaiIcons = {
 } as const;
 
 /**
- * Box shadow presets from Figma
+ * Box shadows (tailwind's `shadow-*`).
+ *
+ * - inputHint: the effect style "Input hint (dark)", 0 4 12 black at 24%.
+ * - modal: the drop shadow the frames draw under a modal card, 0 10 80 black
+ *   at 25% (Faucet 768, node 12261:470939 `modal`, and most other frames). It
+ *   is a raw effect in Figma, not a style. tokens.ts `shadows.modal` and
+ *   `--shadow-modal` carry the same value; this one read 0 16 48 at 24% until
+ *   2026-09-28.
+ * - card, button: no Figma style or frame draws these; kept as they were.
+ *
+ * Figma values with no key here: the style "Blue hint" (0 16 24 #56C7F3 at
+ * 12%), the style "Input hint (light)" (0 4 12 black at 14%), and the upward
+ * lift under the bottom sheets (0 -10 80 black at 25%).
  */
 export const skaiShadows = {
   inputHint: "0px 4px 12px rgba(0, 0, 0, 0.24)",
   card: "0px 8px 24px rgba(0, 0, 0, 0.16)",
-  modal: "0px 16px 48px rgba(0, 0, 0, 0.24)",
+  modal: "0px 10px 80px 0px rgba(0, 0, 0, 0.25)",
   button: "0px 4px 8px rgba(0, 0, 0, 0.12)",
 } as const;
 
