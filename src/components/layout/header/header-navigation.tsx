@@ -215,7 +215,7 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
       <DropdownMenuContent
         align="start"
         sideOffset={2}
-        className="w-[200px] bg-[#122524] border-[#123f3c] rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] p-4 gap-4 flex flex-col"
+        className="w-[200px] bg-green-coal-200 border-green-coal-100 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] p-4 gap-4 flex flex-col"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onCloseAutoFocus={(e) => e.preventDefault()}
@@ -284,7 +284,7 @@ export interface HeaderNavRichDropdownProps {
 
 /**
  * HeaderNavRichDropdown - Dropdown with icon + title + description items
- * Matches Figma Trade dropdown: bg-[#122524], w-[300px], rounded-xl
+ * Matches Figma Trade dropdown: Green Coal 200, w-[300px], rounded-xl (12px)
  */
 const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
   label,
@@ -365,8 +365,8 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
               }}
               className={cn(
                 "px-0 py-2 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1 cursor-pointer",
-                "hover:text-[#56C7F3]",
-                open || triggerActive ? "text-[#56C7F3]" : "text-white [.light_&]:text-green-coal-300"
+                "hover:text-sky-blue",
+                open || triggerActive ? "text-sky-blue" : "text-white [.light_&]:text-green-coal-300"
               )}
               style={{ letterSpacing: "-0.64px" }}
             >
@@ -388,18 +388,19 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
             // NOTE: when `triggerTo` is set the branch above renders an <a> instead
             // of this button — keep the two class lists in sync.
             // Figma Header-desktop 7710:92977 paints the hovered / open nav trigger
-            // and its caret Sky Blue 300 #56C7F3 — the same literal the menu rows
-            // below already use. This was `text-primary`, and in the main app
-            // `--primary` is 160 84% 55% = #2DEDAD Alien Green (src/index.css:386),
-            // so Trade / Predict / Play / Social / More lit up GREEN on hover while
-            // the menu they opened lit up blue. Do NOT reach for the `sky-blue`
-            // token to fix this — in this codebase that one ALSO resolves to green
-            // #2DEDAD. The caret follows via its `fill="currentColor"`, matching the
-            // frame where the active caret is #56C7F3 as well.
+            // and its caret Sky Blue 300 #56C7F3, the colour the menu rows below
+            // use too. This was `text-primary`, and in the main app `--primary` is
+            // Alien Green, so Trade / Predict / Play / Social / More lit up GREEN
+            // on hover while the menu they opened lit up blue. The `sky-blue`
+            // token has held #56C7F3 since 2026-08-12 (accentColors.skyBlue in
+            // design-tokens.ts); it resolved to green before that, which is why
+            // this file used to carry the hex. The caret follows via its
+            // `fill="currentColor"`, matching the frame where the active caret is
+            // #56C7F3 as well.
             className={cn(
               "px-0 py-2 text-base font-normal transition-colors rounded-md flex items-center whitespace-nowrap gap-1",
-              "hover:text-[#56C7F3]",
-              open ? "text-[#56C7F3]" : "text-white [.light_&]:text-green-coal-300"
+              "hover:text-sky-blue",
+              open ? "text-sky-blue" : "text-white [.light_&]:text-green-coal-300"
             )}
             style={{ letterSpacing: "-0.64px" }}
           >
@@ -440,7 +441,11 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
         // The header frames draw this panel at 12px, Figma's rounded-xl
         // (Spot - trade dropdown, 3963:41383). Before the 2026-09-24 token
         // switch rounded-lg painted 12 here; it is now Figma's 8.
-        className="w-[300px] overflow-visible bg-[#122524] border-[#123f3c] rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
+        // The shadow is the same 0 4 12 @0.24 as `shadow-inputHint`, but it stays
+        // written out: tailwind-merge 2.6 reads `shadow-inputHint` as a shadow
+        // COLOUR and keeps the content's base `shadow-md` beside it, so which one
+        // paints would come down to stylesheet order.
+        className="w-[300px] overflow-visible bg-green-coal-200 border-green-coal-100 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onCloseAutoFocus={(e) => e.preventDefault()}
@@ -459,11 +464,11 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
             {iconName && (
               <SkaiIcon
                 name={iconName as SkaiIconName}
-                className="w-6 h-6 text-[#56C7F3] shrink-0"
+                className="w-6 h-6 text-sky-blue shrink-0"
               />
             )}
             <div className="flex flex-col gap-0.5 min-w-0">
-              <span className="font-manrope text-base leading-[22px] tracking-[-0.64px] text-white group-hover:text-[#56C7F3] group-focus:text-[#56C7F3] group-data-[highlighted]:text-[#56C7F3] transition-colors">
+              <span className="font-manrope text-base leading-[22px] tracking-[-0.64px] text-white group-hover:text-sky-blue group-focus:text-sky-blue group-data-[highlighted]:text-sky-blue transition-colors">
                 {itemLabel}
               </span>
               {description && (
