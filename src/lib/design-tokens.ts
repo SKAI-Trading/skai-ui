@@ -1277,10 +1277,10 @@ export const skaiIcons = {
  *
  * - inputHint: the effect style "Input hint (dark)", 0 4 12 black at 24%.
  * - modal: the drop shadow the frames draw under a modal card, 0 10 80 black
- *   at 25% (Faucet 768, node 12261:470939 `modal`, and most other frames). It
- *   is a raw effect in Figma, not a style. tokens.ts `shadows.modal` and
- *   `--shadow-modal` carry the same value; this one read 0 16 48 at 24% until
- *   2026-09-28.
+ *   at 25% (Faucet 768, node 12261:470939 `modal`). 58 of the 117 stored
+ *   boards draw it on at least one node. It is a raw effect in Figma, not a
+ *   style. tokens.ts `shadows.modal` and `--shadow-modal` carry the same
+ *   value; this one read 0 16 48 at 24% until 2026-09-28.
  * - card, button: no Figma style or frame draws these; kept as they were.
  *
  * Figma values with no key here: the style "Blue hint" (0 16 24 #56C7F3 at

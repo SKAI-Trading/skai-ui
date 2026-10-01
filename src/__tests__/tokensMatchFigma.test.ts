@@ -265,7 +265,8 @@ describe("shadows: each boxShadow key with a Figma source casts that shadow", ()
   it("shadow-modal is the drop shadow on the frames' modal card (3sSz 12261:470939)", () => {
     // The Faucet board at 768 (12261:474854): the node named `modal`, 448
     // wide, Green Coal 200 over the Overlay. On 2026-09-28 the same shadow
-    // was on 136 nodes in 87 of the 212 stored frames, and 0 16 48 on none.
+    // was on 136 nodes in 58 of the 117 stored boards (87 of the store's 212
+    // entries, which split some boards into parts), and 0 16 48 on none.
     const board = readJson("figma/store/3sSzw1KewMtUbeLAv7uW0r/12261-474854.json");
     const node = findNode(board.tree, "12261:470939");
     expect(node?.n).toBe("modal");
