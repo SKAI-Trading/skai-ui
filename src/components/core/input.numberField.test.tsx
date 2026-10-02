@@ -17,6 +17,7 @@ import {
   numberFieldRefusesKey,
   numberFieldRefusesText,
   numberFieldTakesNegative,
+  numberFieldProps,
   numberFromPastedText,
   useNumberFieldGuard,
 } from "./number-field-guard";
@@ -289,6 +290,43 @@ describe("useNumberFieldGuard on a raw input", () => {
     expect(composed(box, "e")).toBe(false);
     expect(pasted(box, "\u20ac 2,50")).toBe(false);
     expect(inserted).toEqual(["2.50"]);
+  });
+});
+
+describe("numberFieldProps on raw inputs in a list", () => {
+  it("guards each row, keeps the caller's ref and handlers, and attaches one listener per field", () => {
+    const refs: Array<HTMLInputElement | null> = [];
+    const onKeyDown = vi.fn();
+    const added = vi.spyOn(HTMLInputElement.prototype, "addEventListener");
+    function Rows({ n }: { n: number }) {
+      return (
+        <>
+          {Array.from({ length: n }, (_, i) => (
+            <input
+              key={i}
+              type="number"
+              min={0}
+              data-testid={`stake-${i}`}
+              {...numberFieldProps({ min: 0, onKeyDown, ref: (el) => { refs[i] = el; } })}
+            />
+          ))}
+        </>
+      );
+    }
+    const { rerender } = render(<Rows n={2} />);
+    rerender(<Rows n={2} />);
+    const beforeinputs = added.mock.calls.filter(([type]) => type === "beforeinput").length;
+    added.mockRestore();
+    expect(beforeinputs).toBe(2);
+    expect(refs[1]).toBe(screen.getByTestId("stake-1"));
+    for (const id of ["stake-0", "stake-1"]) {
+      const box = screen.getByTestId(id);
+      expect(typed(box, "e")).toBe(false);
+      expect(typed(box, "-")).toBe(false);
+      expect(composed(box, "E")).toBe(false);
+      expect(typed(box, "9")).toBe(true);
+    }
+    expect(onKeyDown).toHaveBeenCalledTimes(6);
   });
 });
 

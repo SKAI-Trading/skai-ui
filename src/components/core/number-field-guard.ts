@@ -17,7 +17,8 @@ import * as React from "react";
  * a number first and inserted only when it reads one way.
  *
  * `Input` and `SkaiInput` apply this to every `type="number"` field. A raw
- * `<input type="number">` takes the same guard through `useNumberFieldGuard`.
+ * `<input type="number">` takes the same guard by spreading
+ * `numberFieldProps(...)` (inside a list) or `useNumberFieldGuard(...)`.
  */
 
 type InputMin = React.InputHTMLAttributes<HTMLInputElement>["min"];
@@ -161,19 +162,70 @@ function assignRef<T>(ref: React.Ref<T> | undefined, value: T | null): void {
   else if (ref) (ref as React.MutableRefObject<T | null>).current = value;
 }
 
+/** What the guard keeps for one field between events. */
+interface FieldState {
+  negative: boolean;
+  /** The last key typed into the field was a decimal point (see commaRefused). */
+  pointPending: boolean;
+}
+
+const fieldStates = new WeakMap<HTMLInputElement, FieldState>();
+
 /**
- * The handlers and ref a number field spreads onto its `<input>`:
+ * The input-method half of the guard, a native listener: Android keyboards
+ * report keys as `Unidentified`, and an input method inserts with no keydown
+ * at all, so only `beforeinput` sees what they type.
+ */
+function onFieldBeforeInput(event: Event): void {
+  const el = event.currentTarget as HTMLInputElement;
+  const state = fieldStates.get(el);
+  const e = event as InputEvent;
+  if (!state || el.type !== "number" || !e.cancelable || !e.inputType?.startsWith("insert")) return;
+  const data = e.data ?? e.dataTransfer?.getData("text") ?? "";
+  if (data === "") return;
+  if (data === ",") {
+    if (commaRefused(el, state.pointPending)) {
+      e.preventDefault();
+    } else if (canInsertAtCaret()) {
+      e.preventDefault();
+      // Entered just after the event: an engine may refuse to edit inside it.
+      queueMicrotask(() => {
+        if (insertAtCaret(".")) state.pointPending = true;
+      });
+    }
+    return;
+  }
+  if (numberFieldRefusesText(data, state.negative)) {
+    e.preventDefault();
+    return;
+  }
+  state.pointPending = data.endsWith(".");
+}
+
+/** The field's state, attaching the listener the first time the field is seen. */
+function guardField(el: HTMLInputElement, negative: boolean): FieldState {
+  let state = fieldStates.get(el);
+  if (!state) {
+    state = { negative, pointPending: false };
+    fieldStates.set(el, state);
+    el.addEventListener("beforeinput", onFieldBeforeInput);
+  }
+  state.negative = negative;
+  return state;
+}
+
+/**
+ * The handlers and ref a raw number field spreads onto its `<input>`. Not a
+ * hook, so it works inside a list:
  *
- *   const guard = useNumberFieldGuard({ min: 0 });
- *   <input type="number" min={0} {...guard} … />
+ *   <input type="number" min={0} {...numberFieldProps({ min: 0 })} … />
  *
  * Key, paste and drop run after the caller's own handlers (pass them in), and a
  * caller that already called `preventDefault` has decided. Shortcuts held with
- * Ctrl, Cmd or Alt pass. A native `beforeinput` listener covers what arrives
- * with no usable keydown: Android keyboards report `Unidentified`, and input
- * methods insert without one.
+ * Ctrl, Cmd or Alt pass. The ref attaches the `beforeinput` listener once per
+ * element and fills the caller's ref too.
  */
-export function useNumberFieldGuard({
+export function numberFieldProps({
   min,
   enabled = true,
   ref,
@@ -182,64 +234,25 @@ export function useNumberFieldGuard({
   onDrop,
 }: NumberFieldGuardOptions = {}): NumberFieldGuard {
   const negative = numberFieldTakesNegative(min);
-  const live = React.useRef({ enabled, negative });
-  live.current = { enabled, negative };
-
-  const attached = React.useRef<HTMLInputElement | null>(null);
-  /** The last key typed into the field was a decimal point (see commaRefused). */
-  const pointPending = React.useRef(false);
-  const onBeforeInput = React.useRef((event: Event) => {
-    const { enabled: on, negative: neg } = live.current;
-    const e = event as InputEvent;
-    if (!on || !e.cancelable || !e.inputType?.startsWith("insert")) return;
-    const el = e.target as HTMLInputElement;
-    const data = e.data ?? e.dataTransfer?.getData("text") ?? "";
-    if (data === "") return;
-    if (data === ",") {
-      if (commaRefused(el, pointPending.current)) {
-        e.preventDefault();
-      } else if (canInsertAtCaret()) {
-        e.preventDefault();
-        // Entered just after the event: an engine may refuse to edit inside it.
-        queueMicrotask(() => {
-          if (insertAtCaret(".")) pointPending.current = true;
-        });
-      }
-      return;
-    }
-    if (numberFieldRefusesText(data, neg)) {
-      e.preventDefault();
-      return;
-    }
-    pointPending.current = data.endsWith(".");
-  }).current;
-
-  const refCallback = React.useCallback(
-    (el: HTMLInputElement | null) => {
-      if (attached.current && attached.current !== el) {
-        attached.current.removeEventListener("beforeinput", onBeforeInput);
-      }
-      if (el && attached.current !== el) el.addEventListener("beforeinput", onBeforeInput);
-      attached.current = el;
-      assignRef(ref, el);
-    },
-    [ref, onBeforeInput],
-  );
-
-  if (!enabled) return { ref: refCallback, onKeyDown, onPaste, onDrop };
+  const fieldRef = (el: HTMLInputElement | null) => {
+    if (el && enabled) guardField(el, negative);
+    assignRef(ref, el);
+  };
+  if (!enabled) return { ref: fieldRef, onKeyDown, onPaste, onDrop };
   return {
-    ref: refCallback,
+    ref: fieldRef,
     onKeyDown: (e) => {
       onKeyDown?.(e);
       if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+      const state = guardField(e.currentTarget, negative);
       if (e.key === ",") {
         // Refused, or entered as the point. An engine that cannot type for us
         // is left to handle the comma itself rather than lose it.
-        if (commaRefused(e.currentTarget, pointPending.current)) {
+        if (commaRefused(e.currentTarget, state.pointPending)) {
           e.preventDefault();
         } else if (insertAtCaret(".")) {
           e.preventDefault();
-          pointPending.current = true;
+          state.pointPending = true;
         }
         return;
       }
@@ -248,7 +261,7 @@ export function useNumberFieldGuard({
         return;
       }
       // Any other key that types or moves the caret ends a pending point.
-      pointPending.current = e.key === ".";
+      state.pointPending = e.key === ".";
     },
     onPaste: (e) => {
       onPaste?.(e);
@@ -258,7 +271,7 @@ export function useNumberFieldGuard({
       e.preventDefault();
       const number = numberFromPastedText(e.clipboardData?.getData("text") ?? "", negative);
       if (number === null) return;
-      pointPending.current = false;
+      guardField(e.currentTarget, negative).pointPending = false;
       if (!insertAtCaret(number)) replaceValue(e.currentTarget, number);
     },
     onDrop: (e) => {
@@ -270,4 +283,34 @@ export function useNumberFieldGuard({
       if (numberFieldRefusesText(text, negative)) e.preventDefault();
     },
   };
+}
+
+/**
+ * `numberFieldProps` with a ref that keeps its identity across renders, for a
+ * component that owns one field (Input and SkaiInput use it):
+ *
+ *   const guard = useNumberFieldGuard({ min: 0 });
+ *   <input type="number" min={0} {...guard} … />
+ */
+export function useNumberFieldGuard(options: NumberFieldGuardOptions = {}): NumberFieldGuard {
+  const { enabled = true, min, ref: forwarded } = options;
+  const props = numberFieldProps(options);
+  const negative = numberFieldTakesNegative(min);
+  const live = React.useRef({ enabled, negative });
+  live.current = { enabled, negative };
+  const element = React.useRef<HTMLInputElement | null>(null);
+  // A field that becomes a number field, or whose minimum moves, after it
+  // mounted is guarded on the new terms before the next event.
+  React.useLayoutEffect(() => {
+    if (element.current && enabled) guardField(element.current, negative);
+  });
+  const ref = React.useCallback(
+    (el: HTMLInputElement | null) => {
+      element.current = el;
+      if (el && live.current.enabled) guardField(el, live.current.negative);
+      assignRef(forwarded, el);
+    },
+    [forwarded],
+  );
+  return { ...props, ref };
 }
