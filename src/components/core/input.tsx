@@ -1,5 +1,6 @@
 ﻿import * as React from "react";
 import { cn } from "../../lib/utils";
+import { useNumberFieldGuard } from "./number-field-guard";
 
 /**
  * Props for the Input component
@@ -14,83 +15,6 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   description?: string;
   /** ID for the description element (auto-generated if not provided) */
   descriptionId?: string;
-}
-
-/**
- * What a `type="number"` field will take from the keyboard, a paste or a drop.
- *
- * Browsers let a number field hold `e`, `E`, `+` and `-` because they spell an
- * exponent ("1e5"), and Firefox lets it hold any letter at all. A controlled
- * `value` cannot keep them out: while the box reads "e" its value is the empty
- * string, so no change event fires and the letter stays on screen (report
- * 664eb181, an "e" in the spot ticket's Amount box). Every amount, price and
- * count field in the apps is one of these, so the field refuses them itself:
- * digits, the decimal point (and the comma some locales type for it), and a
- * minus sign only where the field can hold a value below zero.
- */
-const NUMBER_FIELD_CHAR = /[0-9.,]/;
-
-type InputMin = React.InputHTMLAttributes<HTMLInputElement>["min"];
-
-/** A field whose `min` is zero or more has no use for a minus sign. */
-export function numberFieldTakesNegative(min: InputMin): boolean {
-  if (min === undefined || min === null || min === "") return true;
-  const floor = Number(min);
-  return !(Number.isFinite(floor) && floor >= 0);
-}
-
-/**
- * True when a keystroke must not reach a number field. Keys that do not type
- * a character (Backspace, the arrows, Tab, Enter) always pass.
- */
-export function numberFieldRefusesKey(key: string, negative: boolean): boolean {
-  if (key.length !== 1) return false;
-  if (NUMBER_FIELD_CHAR.test(key)) return false;
-  return !(key === "-" && negative);
-}
-
-/** True when pasted or dropped text carries anything a number field refuses. */
-export function numberFieldRefusesText(text: string, negative: boolean): boolean {
-  return (negative ? /[^0-9.,\s-]/ : /[^0-9.,\s]/).test(text);
-}
-
-type GuardedHandlers = Pick<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  "onKeyDown" | "onPaste" | "onDrop"
->;
-
-/**
- * The key, paste and drop handlers a number field runs, each after the
- * caller's own. A caller that already called `preventDefault` has decided, and
- * a shortcut held with Ctrl, Cmd or Alt (copy, select all) passes. Any other
- * type gets the caller's handlers back untouched.
- */
-function numberFieldGuards(
-  type: string | undefined,
-  min: InputMin,
-  { onKeyDown, onPaste, onDrop }: GuardedHandlers,
-): GuardedHandlers {
-  if (type !== "number") return { onKeyDown, onPaste, onDrop };
-  const negative = numberFieldTakesNegative(min);
-  return {
-    onKeyDown: (e) => {
-      onKeyDown?.(e);
-      if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
-      if (numberFieldRefusesKey(e.key, negative)) e.preventDefault();
-    },
-    onPaste: (e) => {
-      onPaste?.(e);
-      if (e.defaultPrevented) return;
-      const text = e.clipboardData?.getData("text") ?? "";
-      if (numberFieldRefusesText(text, negative)) e.preventDefault();
-    },
-    onDrop: (e) => {
-      onDrop?.(e);
-      if (e.defaultPrevented) return;
-      const text = e.dataTransfer?.getData("text") ?? "";
-      if (numberFieldRefusesText(text, negative)) e.preventDefault();
-    },
-  };
 }
 
 /**
@@ -127,7 +51,16 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ) => {
     const generatedErrorId = React.useId();
     const generatedDescriptionId = React.useId();
-    const guards = numberFieldGuards(type, props.min, { onKeyDown, onPaste, onDrop });
+    // A number field refuses what cannot be part of a plain decimal and reads
+    // a typed or pasted comma — see number-field-guard.
+    const guard = useNumberFieldGuard({
+      enabled: type === "number",
+      min: props.min,
+      ref,
+      onKeyDown,
+      onPaste,
+      onDrop,
+    });
 
     const effectiveErrorId = errorId || generatedErrorId;
     const effectiveDescriptionId = descriptionId || generatedDescriptionId;
@@ -151,11 +84,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             hasError && "border-destructive focus-visible:ring-destructive",
             className,
           )}
-          ref={ref}
           aria-invalid={hasError}
           aria-describedby={finalDescribedBy}
           {...props}
-          {...guards}
+          {...guard}
         />
         {description && !hasError && (
           <p
@@ -250,7 +182,10 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
     ref,
   ) => {
     const [isFocused, setIsFocused] = React.useState(false);
-    const guards = numberFieldGuards(props.type, props.min, {
+    const guard = useNumberFieldGuard({
+      enabled: props.type === "number",
+      min: props.min,
+      ref,
       onKeyDown,
       onPaste,
       onDrop,
@@ -343,7 +278,6 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
 
         {/* Input */}
         <input
-          ref={ref}
           id={inputId}
           aria-invalid={!!error}
           aria-describedby={ariaDescribedBy}
@@ -360,7 +294,7 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
             onBlur?.(e);
           }}
           {...props}
-          {...guards}
+          {...guard}
         />
 
         {/* Footer: Secondary Value or Error */}
