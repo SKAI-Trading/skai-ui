@@ -43,6 +43,7 @@
 11144:199166	Skai > Play > Sportsbook > Quick bet OFF - high number of bets 1VH (375 x 812px)	FRAME	375	812	1
 11131:161786	Skai > Play > Sportsbook > Starting soon (768 x 1024px)	FRAME	768	3998	1
 11132:173793	Skai > Play > Sportsbook > Side panel - Lawn tennis (768 x 1024px)	FRAME	768	2616	1
+13717:79097	Skai > Play > Sportsbook > Side panel - Lawn tennis (768 x 1024px)	FRAME	768	2750	1
 11131:119167	Skai > Play > Sportsbook > My bets - with values (768 x 1024px)	FRAME	768	3682	1
 11130:119146	content	FRAME	340	78	1
 11130:119104	content	FRAME	340	78	1
@@ -65,13 +66,13 @@
 11154:45247	Skai > Play > Sportsbook > Soccer > AVL CHE - Game view expanded (375 x 812px)	FRAME	375	3882	1
 11154:51780	Skai > Play > Sportsbook > Soccer > AVL CHE > Player props (375 x 812px)	FRAME	375	4134	1
 11154:59823	Skai > Play > Sportsbook > Side panel - Lawn tennis (375 x 812px)	FRAME	375	2463	1
+13717:79931	Skai > Play > Sportsbook > Side panel - Lawn tennis (375 x 812px)	FRAME	375	2685	1
 11154:47551	Skai > Play > Sportsbook > Soccer > AVL CHE 1VH (375 x 812px)	FRAME	375	812	1
 11220:166694	Skai > Play > Sportsbook > Soccer > AVL CHE 1VH - Search expanded (375 x 812px)	FRAME	375	812	1
 11154:46329	Skai > Play > Sportsbook > Soccer > AVL CHE - Game view collapsed (375 x 812px)	FRAME	375	3523	1
 11154:49315	Skai > Play > Sportsbook > Soccer > AVL CHE - Game view expanded - Pinned 1VH (375 x 812px)	FRAME	375	812	1
 11154:50310	Skai > Play > Sportsbook > Soccer > AVL CHE - Game view collapsed - Pinned 1VH (375 x 812px)	FRAME	375	812	1
 11100:64759	Skai > Play 1VH (375 x 812px)	FRAME	375	812	1
-13549:99145	Frame 633	FRAME	343	200	1
 11100:63268	Frame 691	FRAME	532	28	1
 11084:63426	Skai > Play > Casino > New games (768 x 1024px)	FRAME	768	1883	1
 11084:64943	Skai > Play > Casino > Trending games (768 x 1024px)	FRAME	768	1883	1
@@ -197,10 +198,10 @@
 4714:51085	Skai > Play > Casino > Trending games (1440 x 900px)	FRAME	1440	3599	1
 4714:29697	Hero Banner 2 - Referral	FRAME	1318	244	1
 11084:24507	Hero Banner 2 - Referral	FRAME	708	244	1
-11100:65866	Hero Banner 2 - Referral	FRAME	343	360	1
+11100:65866	Hero Banner 2 - Referral	FRAME	343	250	1
 11084:24546	Hero Banner 3 - Referral	FRAME	708	244	1
 9112:13728	Hero Banner 3 - Referral	FRAME	1318	244	1
-11100:65909	Hero Banner 3 - Referral	FRAME	343	380	1
+11100:65909	Hero Banner 3 - Referral	FRAME	343	250	1
 4714:33326	Notes	WIDGET	342	326	1
 4714:51038	Notes	WIDGET	342	306	1
 4725:55238	Notes	WIDGET	342	269	1
@@ -344,3 +345,87 @@
 11214:131460	sidebar - open casino	FRAME	296	1014	1
 11214:131691	sidebar - open casino	FRAME	318	1024	1
 11220:152557	Skai > Play > Sportsbook > Bet notification 1VH (768 x 1024px)	FRAME	768	1024	1
+13752:218121	Dice - Desktop 1440px	FRAME	195	277	1
+13752:218647	Dice - Desktop 1440px	FRAME	317	409	1
+13752:218332	Dice - Mobile 375px	FRAME	130	184	1
+13752:218131	Plinko - Desktop 1440px	FRAME	195	277	1
+13752:218652	Plinko - Desktop 1440px	FRAME	317	409	1
+13752:218542	Dice - Tablet 768px	FRAME	160	227	1
+13753:218694	Plinko - Desktop 1440px	FRAME	230	297	1
+13753:218725	Plinko - Desktop 1440px	FRAME	167	216	1
+13752:218337	Plinko - Mobile 375px	FRAME	130	184	1
+13752:218547	Plinko - Tablet 768px	FRAME	160	227	1
+13752:218141	Crash - Desktop 1440px	FRAME	195	277	1
+13752:218151	Mines - Desktop 1440px	FRAME	195	277	1
+13752:218657	Mines - Desktop 1440px	FRAME	317	409	1
+13752:218342	Crash - Mobile 375px	FRAME	130	184	1
+13753:218699	Mines - Desktop 1440px	FRAME	230	297	1
+13752:218552	Crash - Mobile 375px	FRAME	160	227	1
+13753:218730	Mines - Desktop 1440px	FRAME	167	216	1
+13752:218347	Mines - Mobile 375px	FRAME	130	184	1
+13752:218557	Mines - Mobile 375px	FRAME	160	227	1
+13752:218352	Blackjack - Mobile 375px	FRAME	130	184	1
+13752:218562	Blackjack - Mobile 375px	FRAME	160	227	1
+13752:218176	Scratchers - Desktop 1440px	FRAME	195	277	1
+13752:218662	Scratchers - Desktop 1440px	FRAME	317	409	1
+13752:218166	Coinflip - Desktop 1440px	FRAME	195	277	1
+13752:218357	Coinflip - Mobile 375px	FRAME	130	184	1
+13752:218567	Coinflip - Tablet 768px	FRAME	160	227	1
+13752:218362	Scratchers - Mobile 375px	FRAME	130	184	1
+13752:218572	Scratchers - Mobile 375px	FRAME	160	227	1
+13752:218186	Hi Lo - Desktop 1440px	FRAME	195	277	1
+13752:218367	Hi Lo - Mobile 375px	FRAME	130	184	1
+13752:218206	Darts - Desktop 1440px	FRAME	195	277	1
+13752:218667	Darts - Desktop 1440px	FRAME	317	409	1
+13752:218577	Hi Lo - Mobile 375px	FRAME	160	227	1
+13752:218196	Chicken - Desktop 1440px	FRAME	195	277	1
+13753:218710	Darts - Desktop 1440px	FRAME	230	297	1
+13752:218372	Chicken - Mobile 375px	FRAME	130	184	1
+13752:218582	Chicken - Mobile 375px	FRAME	160	227	1
+13753:218736	Darts - Desktop 1440px	FRAME	167	216	1
+13752:218377	Darts - Mobile 375px	FRAME	130	184	1
+13752:218587	Darts - Mobile 375px	FRAME	160	227	1
+13752:218216	Fortune Wheel - Desktop 1440px	FRAME	195	277	1
+13752:218382	Fortune Wheel - Mobile 375px	FRAME	130	184	1
+13752:218592	Fortune Wheel - Mobile 375px	FRAME	160	227	1
+13752:218387	Video Poker - Mobile 375px	FRAME	130	184	1
+13752:218597	Video Poker - Tablet 768px	FRAME	160	227	1
+13752:218246	Roulette - Desktop 1440px	FRAME	195	277	1
+13752:218672	Roulette - Desktop 1440px	FRAME	317	409	1
+13752:218392	Bingo - Mobile 375px	FRAME	130	184	1
+13752:218602	Bingo - Mobile 375px	FRAME	160	227	1
+13753:218715	Roulette - Desktop 1440px	FRAME	230	297	1
+13752:218236	Baccarat - Desktop 1440px	FRAME	195	277	1
+13752:218397	Baccarat - Mobile 375px	FRAME	130	184	1
+13752:218607	Baccarat - Mobile 375px	FRAME	160	227	1
+13752:218251	Video Poker - Desktop 1440px	FRAME	195	277	1
+13752:218402	Roulette - Mobile 375px	FRAME	130	184	1
+13752:218612	Roulette - Mobile 375px	FRAME	160	227	1
+13752:218261	Limbo - Desktop 1440px	FRAME	195	277	1
+13752:218407	Limbo - Mobile 375px	FRAME	130	184	1
+13752:218617	Limbo - Tablet 768px	FRAME	160	227	1
+13752:218271	Rock Paper Scissors - Desktop 1440px	FRAME	195	277	1
+13752:218412	Rock Paper Scissors - Mobile 375px	FRAME	130	184	1
+13752:218622	Rock Paper Scissors - Tablet 768px	FRAME	160	227	1
+13752:218301	Towers - Desktop 1440px	FRAME	195	277	1
+13752:218677	Towers - Desktop 1440px	FRAME	317	409	1
+13752:218281	Slide - Desktop 1440px	FRAME	195	277	1
+13752:218417	Slide - Mobile 375px	FRAME	130	184	1
+13753:218720	Towers - Desktop 1440px	FRAME	230	297	1
+13752:218627	Slide - Mobile 375px	FRAME	160	227	1
+13752:218422	Price Grid - Mobile 375px	FRAME	130	184	1
+13752:218632	Price Grid - Mobile 375px	FRAME	160	227	1
+13752:218296	Price Grid - Desktop 1440px	FRAME	195	277	1
+13752:218427	Towers - Mobile 375px	FRAME	130	184	1
+13752:218637	Towers - Tablet 768px	FRAME	160	227	1
+13752:218311	Blackjack - Desktop 1440px	FRAME	195	277	1
+13752:218316	Keno - Desktop 1440px	FRAME	195	277	1
+13752:218432	Keno - Mobile 375px	FRAME	130	184	1
+13752:218642	Keno - Mobile 375px	FRAME	160	227	1
+13752:218326	Bingo - Desktop 1440px	FRAME	195	277	1
+13754:219114	Skai > Play > Casino (768 x 1024px)	FRAME	768	4297	1
+13754:219978	Skai > Play > Casino (375 x 812px)	FRAME	375	4003	1
+13754:220768	Skai > Play > Favourites (768 x 1024px)	FRAME	768	2185	1
+13754:221000	Skai > Play > Favourites 1VH (375 x 812px)	FRAME	375	2653	1
+13754:221194	Skai > Play > Favorite games 1VH (1440 x 900px)	FRAME	1440	2195	1
+13754:221576	Skai > Play > Casino (1440 x 900px)	FRAME	1440	4960	1

@@ -43,6 +43,7 @@
 11144-199166	Skai > Play > Sportsbook > Quick bet OFF - high number of bets 1VH (375 x 812px)
 11131-161786	Skai > Play > Sportsbook > Starting soon (768 x 1024px)
 11132-173793	Skai > Play > Sportsbook > Side panel - Lawn tennis (768 x 1024px)
+13717-79097	Skai > Play > Sportsbook > Side panel - Lawn tennis (768 x 1024px)
 11131-119167	Skai > Play > Sportsbook > My bets - with values (768 x 1024px)
 11130-119146	content
 11130-119104	content
@@ -65,13 +66,13 @@
 11154-45247	Skai > Play > Sportsbook > Soccer > AVL CHE - Game view expanded (375 x 812px)
 11154-51780	Skai > Play > Sportsbook > Soccer > AVL CHE > Player props (375 x 812px)
 11154-59823	Skai > Play > Sportsbook > Side panel - Lawn tennis (375 x 812px)
+13717-79931	Skai > Play > Sportsbook > Side panel - Lawn tennis (375 x 812px)
 11154-47551	Skai > Play > Sportsbook > Soccer > AVL CHE 1VH (375 x 812px)
 11220-166694	Skai > Play > Sportsbook > Soccer > AVL CHE 1VH - Search expanded (375 x 812px)
 11154-46329	Skai > Play > Sportsbook > Soccer > AVL CHE - Game view collapsed (375 x 812px)
 11154-49315	Skai > Play > Sportsbook > Soccer > AVL CHE - Game view expanded - Pinned 1VH (375 x 812px)
 11154-50310	Skai > Play > Sportsbook > Soccer > AVL CHE - Game view collapsed - Pinned 1VH (375 x 812px)
 11100-64759	Skai > Play 1VH (375 x 812px)
-13549-99145	Frame 633
 11100-63268	Frame 691
 11084-63426	Skai > Play > Casino > New games (768 x 1024px)
 11084-64943	Skai > Play > Casino > Trending games (768 x 1024px)
@@ -344,6 +345,90 @@
 11214-131460	sidebar - open casino
 11214-131691	sidebar - open casino
 11220-152557	Skai > Play > Sportsbook > Bet notification 1VH (768 x 1024px)
+13752-218121	Dice - Desktop 1440px
+13752-218647	Dice - Desktop 1440px
+13752-218332	Dice - Mobile 375px
+13752-218131	Plinko - Desktop 1440px
+13752-218652	Plinko - Desktop 1440px
+13752-218542	Dice - Tablet 768px
+13753-218694	Plinko - Desktop 1440px
+13753-218725	Plinko - Desktop 1440px
+13752-218337	Plinko - Mobile 375px
+13752-218547	Plinko - Tablet 768px
+13752-218141	Crash - Desktop 1440px
+13752-218151	Mines - Desktop 1440px
+13752-218657	Mines - Desktop 1440px
+13752-218342	Crash - Mobile 375px
+13753-218699	Mines - Desktop 1440px
+13752-218552	Crash - Mobile 375px
+13753-218730	Mines - Desktop 1440px
+13752-218347	Mines - Mobile 375px
+13752-218557	Mines - Mobile 375px
+13752-218352	Blackjack - Mobile 375px
+13752-218562	Blackjack - Mobile 375px
+13752-218176	Scratchers - Desktop 1440px
+13752-218662	Scratchers - Desktop 1440px
+13752-218166	Coinflip - Desktop 1440px
+13752-218357	Coinflip - Mobile 375px
+13752-218567	Coinflip - Tablet 768px
+13752-218362	Scratchers - Mobile 375px
+13752-218572	Scratchers - Mobile 375px
+13752-218186	Hi Lo - Desktop 1440px
+13752-218367	Hi Lo - Mobile 375px
+13752-218206	Darts - Desktop 1440px
+13752-218667	Darts - Desktop 1440px
+13752-218577	Hi Lo - Mobile 375px
+13752-218196	Chicken - Desktop 1440px
+13753-218710	Darts - Desktop 1440px
+13752-218372	Chicken - Mobile 375px
+13752-218582	Chicken - Mobile 375px
+13753-218736	Darts - Desktop 1440px
+13752-218377	Darts - Mobile 375px
+13752-218587	Darts - Mobile 375px
+13752-218216	Fortune Wheel - Desktop 1440px
+13752-218382	Fortune Wheel - Mobile 375px
+13752-218592	Fortune Wheel - Mobile 375px
+13752-218387	Video Poker - Mobile 375px
+13752-218597	Video Poker - Tablet 768px
+13752-218246	Roulette - Desktop 1440px
+13752-218672	Roulette - Desktop 1440px
+13752-218392	Bingo - Mobile 375px
+13752-218602	Bingo - Mobile 375px
+13753-218715	Roulette - Desktop 1440px
+13752-218236	Baccarat - Desktop 1440px
+13752-218397	Baccarat - Mobile 375px
+13752-218607	Baccarat - Mobile 375px
+13752-218251	Video Poker - Desktop 1440px
+13752-218402	Roulette - Mobile 375px
+13752-218612	Roulette - Mobile 375px
+13752-218261	Limbo - Desktop 1440px
+13752-218407	Limbo - Mobile 375px
+13752-218617	Limbo - Tablet 768px
+13752-218271	Rock Paper Scissors - Desktop 1440px
+13752-218412	Rock Paper Scissors - Mobile 375px
+13752-218622	Rock Paper Scissors - Tablet 768px
+13752-218301	Towers - Desktop 1440px
+13752-218677	Towers - Desktop 1440px
+13752-218281	Slide - Desktop 1440px
+13752-218417	Slide - Mobile 375px
+13753-218720	Towers - Desktop 1440px
+13752-218627	Slide - Mobile 375px
+13752-218422	Price Grid - Mobile 375px
+13752-218632	Price Grid - Mobile 375px
+13752-218296	Price Grid - Desktop 1440px
+13752-218427	Towers - Mobile 375px
+13752-218637	Towers - Tablet 768px
+13752-218311	Blackjack - Desktop 1440px
+13752-218316	Keno - Desktop 1440px
+13752-218432	Keno - Mobile 375px
+13752-218642	Keno - Mobile 375px
+13752-218326	Bingo - Desktop 1440px
+13754-219114	Skai > Play > Casino (768 x 1024px)
+13754-219978	Skai > Play > Casino (375 x 812px)
+13754-220768	Skai > Play > Favourites (768 x 1024px)
+13754-221000	Skai > Play > Favourites 1VH (375 x 812px)
+13754-221194	Skai > Play > Favorite games 1VH (1440 x 900px)
+13754-221576	Skai > Play > Casino (1440 x 900px)
 11214-131710	sidebar - open casino - 768 Play side menu [Top main 302x548]
 9099-146833	Skai > Play - Play hub Sports book rail (Main container) [Main container 1318x148]
 9099-146905	Skai > Play - FIFA sport plate [Frame 637 64x64]

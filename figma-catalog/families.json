@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02T20:58:07.516Z",
+  "generated": "2026-10-04T18:29:55.469Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -4463,11 +4463,14 @@
     "play/Casino": {
       "section": "play",
       "family": "Casino",
-      "frameCount": 10,
+      "frameCount": 13,
       "frames": [
         "11066-23332",
         "11100-62081",
         "4711-28434",
+        "13754-219114",
+        "13754-219978",
+        "13754-221576",
         "11064-20612",
         "11066-22993",
         "11066-23094",
@@ -4655,10 +4658,12 @@
     "play/Sportsbook > Side panel": {
       "section": "play",
       "family": "Sportsbook > Side panel",
-      "frameCount": 3,
+      "frameCount": 5,
       "frames": [
         "11132-173793",
+        "13717-79097",
         "11154-59823",
+        "13717-79931",
         "4913-97944"
       ],
       "devices": [
@@ -4853,10 +4858,12 @@
     "play/Favourites": {
       "section": "play",
       "family": "Favourites",
-      "frameCount": 2,
+      "frameCount": 4,
       "frames": [
         "10949-219911",
-        "10949-220217"
+        "10949-220217",
+        "13754-220768",
+        "13754-221000"
       ],
       "devices": [
         "tablet",
@@ -4997,9 +5004,10 @@
     "play/Favorite games": {
       "section": "play",
       "family": "Favorite games",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "4689-45587"
+        "4689-45587",
+        "13754-221194"
       ],
       "devices": [
         "desktop"
@@ -11177,11 +11185,12 @@
     "wallet-2/continue on web > home > spending": {
       "section": "wallet-2",
       "family": "continue on web > home > spending",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-36166",
         "mhF3BkzlTaGiLzJ7kvpmVc:13008-45006",
-        "mhF3BkzlTaGiLzJ7kvpmVc:13008-50806"
+        "mhF3BkzlTaGiLzJ7kvpmVc:13008-50806",
+        "mhF3BkzlTaGiLzJ7kvpmVc:15695-62179"
       ],
       "devices": [
         "desktop",

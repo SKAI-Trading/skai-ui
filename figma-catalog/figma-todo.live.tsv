@@ -1,1 +1,89 @@
 section	nodeId	change	title	why	implFiles
+play	13549-99145	REMOVED-WITH-WORK	Frame 633	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	modules/skai-gaming/src/components/play/ui/casinoHeroSlides.ts
+play	13717-79097	ADDED	Skai > Play > Sportsbook > Side panel - Lawn tennis (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13717-79931	ADDED	Skai > Play > Sportsbook > Side panel - Lawn tennis (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218121	ADDED	Dice - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218647	ADDED	Dice - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218332	ADDED	Dice - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218131	ADDED	Plinko - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218652	ADDED	Plinko - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218542	ADDED	Dice - Tablet 768px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13753-218694	ADDED	Plinko - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13753-218725	ADDED	Plinko - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218337	ADDED	Plinko - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218547	ADDED	Plinko - Tablet 768px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218141	ADDED	Crash - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218151	ADDED	Mines - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218657	ADDED	Mines - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218342	ADDED	Crash - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13753-218699	ADDED	Mines - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218552	ADDED	Crash - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13753-218730	ADDED	Mines - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218347	ADDED	Mines - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218557	ADDED	Mines - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218352	ADDED	Blackjack - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218562	ADDED	Blackjack - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218176	ADDED	Scratchers - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218662	ADDED	Scratchers - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218166	ADDED	Coinflip - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218357	ADDED	Coinflip - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218567	ADDED	Coinflip - Tablet 768px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218362	ADDED	Scratchers - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218572	ADDED	Scratchers - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218186	ADDED	Hi Lo - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218367	ADDED	Hi Lo - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218206	ADDED	Darts - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218667	ADDED	Darts - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218577	ADDED	Hi Lo - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218196	ADDED	Chicken - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13753-218710	ADDED	Darts - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218372	ADDED	Chicken - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218582	ADDED	Chicken - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13753-218736	ADDED	Darts - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218377	ADDED	Darts - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218587	ADDED	Darts - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218216	ADDED	Fortune Wheel - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218382	ADDED	Fortune Wheel - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218592	ADDED	Fortune Wheel - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218387	ADDED	Video Poker - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218597	ADDED	Video Poker - Tablet 768px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218246	ADDED	Roulette - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218672	ADDED	Roulette - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218392	ADDED	Bingo - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218602	ADDED	Bingo - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13753-218715	ADDED	Roulette - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218236	ADDED	Baccarat - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218397	ADDED	Baccarat - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218607	ADDED	Baccarat - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218251	ADDED	Video Poker - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218402	ADDED	Roulette - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218612	ADDED	Roulette - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218261	ADDED	Limbo - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218407	ADDED	Limbo - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218617	ADDED	Limbo - Tablet 768px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218271	ADDED	Rock Paper Scissors - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218412	ADDED	Rock Paper Scissors - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218622	ADDED	Rock Paper Scissors - Tablet 768px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218301	ADDED	Towers - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218677	ADDED	Towers - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218281	ADDED	Slide - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218417	ADDED	Slide - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13753-218720	ADDED	Towers - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218627	ADDED	Slide - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218422	ADDED	Price Grid - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218632	ADDED	Price Grid - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218296	ADDED	Price Grid - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218427	ADDED	Towers - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218637	ADDED	Towers - Tablet 768px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218311	ADDED	Blackjack - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218316	ADDED	Keno - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218432	ADDED	Keno - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218642	ADDED	Keno - Mobile 375px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13752-218326	ADDED	Bingo - Desktop 1440px	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13754-219114	ADDED	Skai > Play > Casino (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13754-219978	ADDED	Skai > Play > Casino (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13754-220768	ADDED	Skai > Play > Favourites (768 x 1024px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13754-221000	ADDED	Skai > Play > Favourites 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13754-221194	ADDED	Skai > Play > Favorite games 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+play	13754-221576	ADDED	Skai > Play > Casino (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+wallet-2	15695-62179	ADDED	Skai > Wallet > continue on web > home > spending 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	

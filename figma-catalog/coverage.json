@@ -1,15 +1,15 @@
 {
-  "generated": "2026-10-02T20:58:57.622Z",
-  "harvestedAt": "2026-09-24",
+  "generated": "2026-10-04T18:30:22.198Z",
+  "harvestedAt": "2026-10-04",
   "rollup": {
     "pages": 39,
-    "live": 4602,
+    "live": 4688,
     "furniture": 824,
-    "genuine": 3765,
+    "genuine": 3851,
     "ruledOut": 13,
-    "genuineWithRuledOut": 3778,
+    "genuineWithRuledOut": 3864,
     "ruledOutUncited": [],
-    "matched": 3765,
+    "matched": 3764,
     "done": 1364,
     "verified": 940,
     "visuallyDowngraded": 48,
@@ -33,15 +33,15 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1689,
+    "partial": 1688,
     "notStarted": 260,
     "blocked": 248,
     "frameDefect": 199,
     "catalogFurniture": 5,
     "unknown": 0,
-    "liveOnly": 0,
+    "liveOnly": 87,
     "rollupOnly": 6,
-    "defaultNamed": 177,
+    "defaultNamed": 176,
     "ambiguous": 116,
     "conflicts": 0
   },
@@ -54,7 +54,7 @@
   "rows": {
     "total": 20634,
     "namingNoNodeId": 339,
-    "namingNoLiveNodeId": 961,
+    "namingNoLiveNodeId": 963,
     "unrecognisedTokens": 45120
   },
   "statusFiles": [
@@ -4435,8 +4435,8 @@
     {
       "file": "status.wave62.play-hub.tsv",
       "rows": 4,
-      "withLiveId": 4,
-      "ids": 4
+      "withLiveId": 3,
+      "ids": 3
     },
     {
       "file": "status.wave62.predict-dashboard.tsv",
@@ -5059,8 +5059,8 @@
     {
       "file": "status.wave73.P075.tsv",
       "rows": 11,
-      "withLiveId": 11,
-      "ids": 13
+      "withLiveId": 10,
+      "ids": 12
     },
     {
       "file": "status.wave73.P076.tsv",
@@ -5480,7 +5480,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -5513,7 +5513,7 @@
       "n": 46,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 46,
       "furniture": 1,
       "furnitureWhy": {
@@ -5856,7 +5856,7 @@
       "n": 1157,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 1157,
       "furniture": 1156,
       "furnitureWhy": {
@@ -5892,7 +5892,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -5939,7 +5939,7 @@
       "n": 151,
       "openReports": 5,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "note": "In scope from 2026-09-09 (Casey, wave 39 go: the standing exclusion is lifted so Onboarding and Authentication counts and gets built).",
       "live": 151,
       "furniture": 27,
@@ -5982,7 +5982,7 @@
       "n": 10,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 10,
       "furniture": 4,
       "furnitureWhy": {
@@ -6011,7 +6011,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 20,
       "furniture": 20,
       "furnitureWhy": {
@@ -6040,7 +6040,7 @@
       "n": 13,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 13,
       "furniture": 13,
       "furnitureWhy": {
@@ -6068,7 +6068,7 @@
       "n": 154,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 154,
       "furniture": 37,
       "furnitureWhy": {
@@ -6106,7 +6106,7 @@
       "n": 284,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 284,
       "furniture": 30,
       "furnitureWhy": {
@@ -6137,11 +6137,11 @@
       "pageId": "4459:128102",
       "pageName": "✅ Play",
       "readiness": "ready",
-      "n": 346,
+      "n": 431,
       "openReports": 38,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
-      "live": 346,
+      "harvestedAt": "2026-10-04",
+      "live": 431,
       "furniture": 77,
       "furnitureWhy": {
         "canvas-chrome": 64,
@@ -6151,23 +6151,626 @@
       },
       "ruledOut": 0,
       "ruledOutIds": [],
-      "genuine": 269,
-      "matched": 269,
+      "genuine": 354,
+      "matched": 268,
       "rollupOnly": 0,
-      "defaultNamed": 6,
+      "defaultNamed": 5,
       "ambiguous": 0,
       "conflicts": 0,
       "verified": 38,
       "visuallyDowngraded": 2,
       "byStatus": {
-        "partial": 131,
+        "partial": 130,
         "furniture": 1,
         "done": 81,
         "not-started": 27,
         "frame-defect": 25,
         "blocked-on-backend": 4
       },
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "13717-79097",
+          "name": "Skai > Play > Sportsbook > Side panel - Lawn tennis (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 2750
+        },
+        {
+          "id": "13717-79931",
+          "name": "Skai > Play > Sportsbook > Side panel - Lawn tennis (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2685
+        },
+        {
+          "id": "13752-218121",
+          "name": "Dice - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218647",
+          "name": "Dice - Desktop 1440px",
+          "type": "FRAME",
+          "w": 317,
+          "h": 409
+        },
+        {
+          "id": "13752-218332",
+          "name": "Dice - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218131",
+          "name": "Plinko - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218652",
+          "name": "Plinko - Desktop 1440px",
+          "type": "FRAME",
+          "w": 317,
+          "h": 409
+        },
+        {
+          "id": "13752-218542",
+          "name": "Dice - Tablet 768px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13753-218694",
+          "name": "Plinko - Desktop 1440px",
+          "type": "FRAME",
+          "w": 230,
+          "h": 297
+        },
+        {
+          "id": "13753-218725",
+          "name": "Plinko - Desktop 1440px",
+          "type": "FRAME",
+          "w": 167,
+          "h": 216
+        },
+        {
+          "id": "13752-218337",
+          "name": "Plinko - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218547",
+          "name": "Plinko - Tablet 768px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218141",
+          "name": "Crash - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218151",
+          "name": "Mines - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218657",
+          "name": "Mines - Desktop 1440px",
+          "type": "FRAME",
+          "w": 317,
+          "h": 409
+        },
+        {
+          "id": "13752-218342",
+          "name": "Crash - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13753-218699",
+          "name": "Mines - Desktop 1440px",
+          "type": "FRAME",
+          "w": 230,
+          "h": 297
+        },
+        {
+          "id": "13752-218552",
+          "name": "Crash - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13753-218730",
+          "name": "Mines - Desktop 1440px",
+          "type": "FRAME",
+          "w": 167,
+          "h": 216
+        },
+        {
+          "id": "13752-218347",
+          "name": "Mines - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218557",
+          "name": "Mines - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218352",
+          "name": "Blackjack - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218562",
+          "name": "Blackjack - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218176",
+          "name": "Scratchers - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218662",
+          "name": "Scratchers - Desktop 1440px",
+          "type": "FRAME",
+          "w": 317,
+          "h": 409
+        },
+        {
+          "id": "13752-218166",
+          "name": "Coinflip - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218357",
+          "name": "Coinflip - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218567",
+          "name": "Coinflip - Tablet 768px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218362",
+          "name": "Scratchers - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218572",
+          "name": "Scratchers - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218186",
+          "name": "Hi Lo - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218367",
+          "name": "Hi Lo - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218206",
+          "name": "Darts - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218667",
+          "name": "Darts - Desktop 1440px",
+          "type": "FRAME",
+          "w": 317,
+          "h": 409
+        },
+        {
+          "id": "13752-218577",
+          "name": "Hi Lo - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218196",
+          "name": "Chicken - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13753-218710",
+          "name": "Darts - Desktop 1440px",
+          "type": "FRAME",
+          "w": 230,
+          "h": 297
+        },
+        {
+          "id": "13752-218372",
+          "name": "Chicken - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218582",
+          "name": "Chicken - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13753-218736",
+          "name": "Darts - Desktop 1440px",
+          "type": "FRAME",
+          "w": 167,
+          "h": 216
+        },
+        {
+          "id": "13752-218377",
+          "name": "Darts - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218587",
+          "name": "Darts - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218216",
+          "name": "Fortune Wheel - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218382",
+          "name": "Fortune Wheel - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218592",
+          "name": "Fortune Wheel - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218387",
+          "name": "Video Poker - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218597",
+          "name": "Video Poker - Tablet 768px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218246",
+          "name": "Roulette - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218672",
+          "name": "Roulette - Desktop 1440px",
+          "type": "FRAME",
+          "w": 317,
+          "h": 409
+        },
+        {
+          "id": "13752-218392",
+          "name": "Bingo - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218602",
+          "name": "Bingo - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13753-218715",
+          "name": "Roulette - Desktop 1440px",
+          "type": "FRAME",
+          "w": 230,
+          "h": 297
+        },
+        {
+          "id": "13752-218236",
+          "name": "Baccarat - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218397",
+          "name": "Baccarat - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218607",
+          "name": "Baccarat - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218251",
+          "name": "Video Poker - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218402",
+          "name": "Roulette - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218612",
+          "name": "Roulette - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218261",
+          "name": "Limbo - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218407",
+          "name": "Limbo - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218617",
+          "name": "Limbo - Tablet 768px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218271",
+          "name": "Rock Paper Scissors - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218412",
+          "name": "Rock Paper Scissors - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218622",
+          "name": "Rock Paper Scissors - Tablet 768px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218301",
+          "name": "Towers - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218677",
+          "name": "Towers - Desktop 1440px",
+          "type": "FRAME",
+          "w": 317,
+          "h": 409
+        },
+        {
+          "id": "13752-218281",
+          "name": "Slide - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218417",
+          "name": "Slide - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13753-218720",
+          "name": "Towers - Desktop 1440px",
+          "type": "FRAME",
+          "w": 230,
+          "h": 297
+        },
+        {
+          "id": "13752-218627",
+          "name": "Slide - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218422",
+          "name": "Price Grid - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218632",
+          "name": "Price Grid - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218296",
+          "name": "Price Grid - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218427",
+          "name": "Towers - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218637",
+          "name": "Towers - Tablet 768px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218311",
+          "name": "Blackjack - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218316",
+          "name": "Keno - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13752-218432",
+          "name": "Keno - Mobile 375px",
+          "type": "FRAME",
+          "w": 130,
+          "h": 184
+        },
+        {
+          "id": "13752-218642",
+          "name": "Keno - Mobile 375px",
+          "type": "FRAME",
+          "w": 160,
+          "h": 227
+        },
+        {
+          "id": "13752-218326",
+          "name": "Bingo - Desktop 1440px",
+          "type": "FRAME",
+          "w": 195,
+          "h": 277
+        },
+        {
+          "id": "13754-219114",
+          "name": "Skai > Play > Casino (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 4297
+        },
+        {
+          "id": "13754-219978",
+          "name": "Skai > Play > Casino (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 4003
+        },
+        {
+          "id": "13754-220768",
+          "name": "Skai > Play > Favourites (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 2185
+        },
+        {
+          "id": "13754-221000",
+          "name": "Skai > Play > Favourites 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 2653
+        },
+        {
+          "id": "13754-221194",
+          "name": "Skai > Play > Favorite games 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 2195
+        },
+        {
+          "id": "13754-221576",
+          "name": "Skai > Play > Casino (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 4960
+        }
+      ]
     },
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
@@ -6177,7 +6780,7 @@
       "n": 442,
       "openReports": 16,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 442,
       "furniture": 40,
       "furnitureWhy": {
@@ -6207,7 +6810,7 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
@@ -6250,7 +6853,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -6278,7 +6881,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 280,
@@ -6314,7 +6917,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "pageName": "✅ Home 2",
       "readiness": "ready",
       "n": 242,
@@ -6355,7 +6958,7 @@
       "n": 178,
       "openReports": 42,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 178,
       "furniture": 11,
@@ -6391,11 +6994,11 @@
       "pageId": "13008:26951",
       "pageName": "✅ Wallet 2",
       "readiness": "ready",
-      "n": 190,
+      "n": 191,
       "openReports": 25,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
-      "live": 190,
+      "harvestedAt": "2026-10-04",
+      "live": 191,
       "furniture": 23,
       "furnitureWhy": {
         "canvas-chrome": 22,
@@ -6403,7 +7006,7 @@
       },
       "ruledOut": 0,
       "ruledOutIds": [],
-      "genuine": 167,
+      "genuine": 168,
       "matched": 167,
       "rollupOnly": 0,
       "defaultNamed": 1,
@@ -6417,7 +7020,15 @@
         "partial": 5,
         "frame-defect": 10
       },
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "15695-62179",
+          "name": "Skai > Wallet > continue on web > home > spending 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        }
+      ]
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -6427,7 +7038,7 @@
       "n": 421,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 421,
       "furniture": 54,
@@ -6461,7 +7072,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 420,
@@ -6506,7 +7117,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -6539,7 +7150,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -6584,7 +7195,7 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 44,
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
@@ -6618,7 +7229,7 @@
       "n": 36,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 36,
       "furniture": 13,
       "furnitureWhy": {
@@ -6650,7 +7261,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 21,
       "furniture": 12,
       "furnitureWhy": {
@@ -6683,7 +7294,7 @@
       "n": 23,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 23,
       "furniture": 9,
       "furnitureWhy": {
@@ -6717,7 +7328,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 20,
       "furniture": 7,
       "furnitureWhy": {
@@ -6745,7 +7356,7 @@
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
       "n": 19,
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "openReports": 0,
       "scope": "in-scope",
       "live": 19,
@@ -6776,7 +7387,7 @@
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
       "n": 46,
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "openReports": 3,
       "scope": "in-scope",
       "live": 46,
@@ -6810,7 +7421,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 21,
       "furniture": 8,
       "furnitureWhy": {
@@ -6842,7 +7453,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 31,
       "furniture": 16,
       "furnitureWhy": {
@@ -6875,7 +7486,7 @@
       "n": 15,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 15,
       "furniture": 9,
       "furnitureWhy": {
@@ -6906,7 +7517,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 31,
       "furniture": 17,
       "furnitureWhy": {
@@ -6938,7 +7549,7 @@
       "n": 27,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 27,
       "furniture": 11,
       "furnitureWhy": {
@@ -6970,7 +7581,7 @@
       "n": 25,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 25,
       "furniture": 14,
       "furnitureWhy": {
@@ -7002,7 +7613,7 @@
       "n": 14,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 14,
       "furniture": 5,
       "furnitureWhy": {
@@ -7033,7 +7644,7 @@
       "n": 17,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 17,
       "furniture": 6,
       "furnitureWhy": {
@@ -7065,7 +7676,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 21,
       "furniture": 11,
       "furnitureWhy": {
@@ -7099,7 +7710,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 21,
       "furniture": 8,
       "furnitureWhy": {
@@ -7132,7 +7743,7 @@
       "n": 14,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 14,
       "furniture": 5,
       "furnitureWhy": {
@@ -7163,7 +7774,7 @@
       "n": 24,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 24,
       "furniture": 8,
       "furnitureWhy": {
@@ -7195,7 +7806,7 @@
       "n": 18,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 18,
       "furniture": 6,
       "furnitureWhy": {
@@ -7227,7 +7838,7 @@
       "n": 20,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 20,
       "furniture": 13,
       "furnitureWhy": {
@@ -7258,7 +7869,7 @@
       "n": 30,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 30,
       "furniture": 15,
       "furnitureWhy": {
@@ -7291,7 +7902,7 @@
       "n": 53,
       "openReports": 0,
       "scope": "excluded",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "note": "Excluded 2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready page (9061:15449); 9 FRAME nodes with generic names and 42 loose nodes. Re-scope only if the page is renamed.",
       "live": 53,
       "furniture": 43,
@@ -7392,7 +8003,7 @@
       "n": 0,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "live": 0,
       "furniture": 0,
       "furnitureWhy": {},
@@ -7415,7 +8026,7 @@
       "pageName": "✅ Untamed - Skai originals",
       "readiness": "ready",
       "n": 72,
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Safari slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -7449,7 +8060,7 @@
       "pageName": "✅ Starbound - Skai originals",
       "readiness": "ready",
       "n": 62,
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Cosmic is the base game of the slot program (Casey 2026-09-09); built on the slot engine, plan 2.",
@@ -7483,7 +8094,7 @@
       "pageName": "✅ Vegas fortune - Skai originals",
       "readiness": "ready",
       "n": 96,
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "openReports": 1,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Vegas fortune slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -7519,7 +8130,7 @@
       "pageName": "✅ Sugar Rush - Skai originals",
       "readiness": "ready",
       "n": 66,
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Gem slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -7554,7 +8165,7 @@
       "n": 79,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-09-24",
+      "harvestedAt": "2026-10-04",
       "note": "Ruled in-scope 2026-09-10: Casey listed Fisherman slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling. This page was \"Wild card - Skai originals\" until 2026-09-10; Casey's \"Wild Card Slots\" and \"Fishing Slots\" name the same page.",
       "live": 79,
       "furniture": 32,
@@ -10325,6 +10936,16 @@
         "status.wave43.home.tsv:107"
       ],
       "status": "done"
+    },
+    {
+      "id": "13549-99145",
+      "cls": "bug-link",
+      "resolved": null,
+      "rows": [
+        "status.wave62.play-hub.tsv:13",
+        "status.wave73.P075.tsv:15"
+      ],
+      "status": "partial"
     },
     {
       "id": "15411-182392",
@@ -17399,14 +18020,6 @@
       "status": "partial",
       "claimed": "partial",
       "verdict": null
-    },
-    {
-      "id": "13549-99145",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
     },
     {
       "id": "11084-63426",

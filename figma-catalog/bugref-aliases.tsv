@@ -894,3 +894,7 @@ M6r9FEn042UWTQD1zvy6GM:9669-2966	-	gone	0	0	-
 11930-29256	-	gone	0	0	-
 10030-42676	-	gone	0	0	-
 7713-13587	-	gone	0	0	-
+# 2026-10-04: dropped by the wave 75 re-harvest of the Play page (346 -> 431). A probe
+# (getNodeByIdAsync) found it deleted, not nested. It was the casino-games hero slide card at 375
+# (status.wave62.play-hub.tsv, partial); the slide itself keeps its other frames, 9112:13225 and its cuts.
+13549-99145	-	gone	0	0	-

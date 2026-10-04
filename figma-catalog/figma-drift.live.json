@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T22:35:58.384Z",
+  "generated": "2026-10-04T18:21:37.992Z",
   "sections": {
     "home": {
       "status": "clean",
@@ -50,14 +50,25 @@
       "retargets": []
     },
     "play": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 378,
-      "live": 346,
+      "live": 431,
       "nestedAlive": 32,
-      "added": 0,
-      "removed": 0,
+      "added": 86,
+      "removed": 1,
       "retitled": 0,
-      "removedRows": [],
+      "removedRows": [
+        {
+          "id": "13549-99145",
+          "title": "Frame 633",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/ui/casinoHeroSlides.ts"
+          ],
+          "status": "partial",
+          "notes": "wave 73 lane P075, 2026-09-27..28 (was partial): w73 P075. Read live with use_figma read1/read2: Frame 633 13549:99145 is a LOOSE top-level frame on the Play page at (15061,2909), inside no board. Its card 13549:99146 343x200 r[12,12,0,0] carries the same fill (image 9f032b5604 + #862213 fade) as 11100:64785, the artwork half of the placed 343x360 stack 11100:64784 in board 11100:64768, and lays the copy over it (Casino games, Manrope Light 24/30; subline 14/18 at 0.64; Small Primary CTA 311x44 Play random game + Rerun). The code (casinoHeroSlides.ts copy; PlayHero.tsx CASINO_FAMILY, 180 art over 180 copy) matches the placed board. Needs Casey's ruling on whether the loose draft replaces the placed stack; no code.",
+          "verifiedAt": null
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },
@@ -302,11 +313,11 @@
       "retargets": []
     },
     "wallet-2": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 194,
-      "live": 190,
+      "live": 191,
       "nestedAlive": 4,
-      "added": 0,
+      "added": 1,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
