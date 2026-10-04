@@ -116,6 +116,16 @@ describe("LandingHeader socials", () => {
     }
   });
 
+  it("tops the row with the legal nav at 1440, a pixel under it at 375, level at 768", () => {
+    // 2086:39242 draws both navs at y=32 (legal 18 tall, socials 16);
+    // 2065:17671 the legal nav at 24 and the socials at 25; 2065:9242 both at 30.
+    renderSocials();
+    const row = screen.getByRole("link", { name: "Discord" }).parentElement;
+    const classes = classesOf(row);
+    expect(classes).toEqual(expect.arrayContaining(["translate-y-px", "md:translate-y-0", "lg:self-start", "gap-8"]));
+    expect(classes.filter((c) => /^lg:translate-y-/.test(c))).toEqual([]);
+  });
+
   it("lands each glyph where the boards draw it inside the 16 box", () => {
     renderSocials();
     for (const { name, sum, bounds, board } of GLYPHS) {

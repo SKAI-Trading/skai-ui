@@ -210,8 +210,14 @@ export const LandingHeader = React.forwardRef<HTMLElement, LandingHeaderProps>(
             draws the row (2086:39907-09, 2598:4794-96, 2600:10960-62). They
             used to rest at white/60, a carry-over from the code that predates
             the boards. No board draws a hover, so it dims the way the Sign up
-            / Login pair does. */}
-        <div className="flex items-center gap-8">
+            / Login pair does.
+
+            Height: the 1440 board tops both navs at y=32, so the 16-tall row
+            sits at the top of the 18-tall legal line rather than centred a
+            pixel below it. The 375 boards put it at y=25 under a legal nav at
+            24 (2065:17671 here, 2065:16978 and the completion frames too), and
+            768 has both at 30. */}
+        <div className="flex translate-y-px items-center gap-8 md:translate-y-0 lg:self-start">
           {discordUrl && (
             <a
               href={discordUrl}
