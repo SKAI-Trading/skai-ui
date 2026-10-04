@@ -59,11 +59,18 @@ const GROUP_SPACES = /[\s\u00a0\u202f']/g;
  * unless it is followed by exactly three digits, where "1,234" could be either
  * and is refused; a lone point is the decimal, as the field itself reads it;
  * repeated marks are grouping and must sit every three digits. An exponent,
- * letters inside the figure, or two figures are refused rather than guessed at.
+ * letters inside the figure, or two figures are refused rather than guessed at,
+ * and so are the signs a ledger writes around or after a figure: "(100)" and
+ * "100-" both mean minus a hundred, and stripping them would enter plus one.
+ *
+ * "1,000" and "$1,000" stay refused. A dollar sign does not settle it, since
+ * several peso currencies write their thousands "$1.000" and their decimals
+ * with a comma, so the paste still reads as either 1000 or 1.
  */
 export function numberFromPastedText(text: string, negative: boolean): string | null {
   let s = text.replace(/[\u2212\u2012\u2013]/g, "-").trim();
   if (/\d\s*[eE]\s*[+-]?\s*\d/.test(s)) return null;
+  if (/[()]/.test(s) || /\d[^+-]*[+-]/.test(s)) return null;
   // Strip what stands before the sign or the first digit, and after the last digit.
   s = s.replace(/^[^\d.,+-]+/, "").replace(/[^\d]+$/, "");
   let sign = "";
@@ -118,6 +125,15 @@ function insertAtCaret(text: string): boolean {
   }
 }
 
+/**
+ * A field the user cannot edit right now. Its paste, drop and comma are left to
+ * the browser, which ignores them: a read-only amount on a review step must
+ * never be rewritten by the guard, and the value fallback below would do it.
+ */
+function locked(el: HTMLInputElement): boolean {
+  return el.readOnly || el.disabled;
+}
+
 /** Replace the whole value and tell React, for an engine with no `insertText`. */
 function replaceValue(el: HTMLInputElement, text: string): void {
   const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set;
@@ -131,11 +147,14 @@ function replaceValue(el: HTMLInputElement, text: string): void {
  * point: the field already has one, or its text cannot be read at all.
  *
  * The value can only show a point that has digits after it: "1." reads "1" in
- * Chromium and in an en-US WebKit, and "" in a de-DE one. So `pointPending`
- * carries what the value cannot, that the last thing typed was a point.
+ * Chromium and in an en-US WebKit, and "" in a de-DE one. So `pointValue` is
+ * the reading the field had just after a point was typed into it, and the
+ * point still counts only while the field reads the same. A value set from
+ * outside since (a Max button, a preset), a focus or any other edit ends it.
  */
-function commaRefused(el: HTMLInputElement, pointPending: boolean): boolean {
-  if (pointPending || el.value.includes(".")) return true;
+function commaRefused(el: HTMLInputElement, pointValue: string | null): boolean {
+  if (el.value.includes(".")) return true;
+  if (pointValue !== null && el.value === pointValue) return true;
   return el.value === "" && Boolean(el.validity?.badInput);
 }
 
@@ -165,8 +184,10 @@ function assignRef<T>(ref: React.Ref<T> | undefined, value: T | null): void {
 /** What the guard keeps for one field between events. */
 interface FieldState {
   negative: boolean;
-  /** The last key typed into the field was a decimal point (see commaRefused). */
-  pointPending: boolean;
+  /** A point is being typed; the next input event records `pointValue`. */
+  pointKeyed: boolean;
+  /** The field's reading just after a point was typed (see commaRefused). */
+  pointValue: string | null;
 }
 
 const fieldStates = new WeakMap<HTMLInputElement, FieldState>();
@@ -180,17 +201,19 @@ function onFieldBeforeInput(event: Event): void {
   const el = event.currentTarget as HTMLInputElement;
   const state = fieldStates.get(el);
   const e = event as InputEvent;
-  if (!state || el.type !== "number" || !e.cancelable || !e.inputType?.startsWith("insert")) return;
+  if (!state || el.type !== "number" || locked(el)) return;
+  if (!e.cancelable || !e.inputType?.startsWith("insert")) return;
   const data = e.data ?? e.dataTransfer?.getData("text") ?? "";
   if (data === "") return;
   if (data === ",") {
-    if (commaRefused(el, state.pointPending)) {
+    if (commaRefused(el, state.pointValue)) {
       e.preventDefault();
     } else if (canInsertAtCaret()) {
       e.preventDefault();
       // Entered just after the event: an engine may refuse to edit inside it.
       queueMicrotask(() => {
-        if (insertAtCaret(".")) state.pointPending = true;
+        state.pointKeyed = true;
+        if (!insertAtCaret(".")) state.pointKeyed = false;
       });
     }
     return;
@@ -199,16 +222,35 @@ function onFieldBeforeInput(event: Event): void {
     e.preventDefault();
     return;
   }
-  state.pointPending = data.endsWith(".");
+  state.pointKeyed = data.endsWith(".");
+}
+
+/** Every edit that lands either records the point just typed or ends it. */
+function onFieldInput(event: Event): void {
+  const el = event.currentTarget as HTMLInputElement;
+  const state = fieldStates.get(el);
+  if (!state) return;
+  state.pointValue = state.pointKeyed ? el.value : null;
+  state.pointKeyed = false;
+}
+
+/** A field taken up again starts with no point pending. */
+function onFieldFocus(event: Event): void {
+  const state = fieldStates.get(event.currentTarget as HTMLInputElement);
+  if (!state) return;
+  state.pointKeyed = false;
+  state.pointValue = null;
 }
 
 /** The field's state, attaching the listener the first time the field is seen. */
 function guardField(el: HTMLInputElement, negative: boolean): FieldState {
   let state = fieldStates.get(el);
   if (!state) {
-    state = { negative, pointPending: false };
+    state = { negative, pointKeyed: false, pointValue: null };
     fieldStates.set(el, state);
     el.addEventListener("beforeinput", onFieldBeforeInput);
+    el.addEventListener("input", onFieldInput);
+    el.addEventListener("focus", onFieldFocus);
   }
   state.negative = negative;
   return state;
@@ -244,39 +286,42 @@ export function numberFieldProps({
     onKeyDown: (e) => {
       onKeyDown?.(e);
       if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (locked(e.currentTarget)) return;
       const state = guardField(e.currentTarget, negative);
       if (e.key === ",") {
         // Refused, or entered as the point. An engine that cannot type for us
         // is left to handle the comma itself rather than lose it.
-        if (commaRefused(e.currentTarget, state.pointPending)) {
+        if (commaRefused(e.currentTarget, state.pointValue)) {
           e.preventDefault();
-        } else if (insertAtCaret(".")) {
-          e.preventDefault();
-          state.pointPending = true;
+          return;
         }
+        state.pointKeyed = true;
+        if (insertAtCaret(".")) e.preventDefault();
+        else state.pointKeyed = false;
         return;
       }
       if (numberFieldRefusesKey(e.key, negative)) {
         e.preventDefault();
         return;
       }
-      // Any other key that types or moves the caret ends a pending point.
-      state.pointPending = e.key === ".";
+      // A point records itself on the input event that follows it; any other
+      // character typed or caret moved ends a pending one.
+      state.pointKeyed = e.key === ".";
+      if (e.key !== ".") state.pointValue = null;
     },
     onPaste: (e) => {
       onPaste?.(e);
-      if (e.defaultPrevented) return;
+      if (e.defaultPrevented || locked(e.currentTarget)) return;
       // The field takes over every paste: the browser would drop a comma or a
       // currency sign without saying so.
       e.preventDefault();
       const number = numberFromPastedText(e.clipboardData?.getData("text") ?? "", negative);
       if (number === null) return;
-      guardField(e.currentTarget, negative).pointPending = false;
       if (!insertAtCaret(number)) replaceValue(e.currentTarget, number);
     },
     onDrop: (e) => {
       onDrop?.(e);
-      if (e.defaultPrevented) return;
+      if (e.defaultPrevented || locked(e.currentTarget)) return;
       const text = (e.dataTransfer?.getData("text") ?? "").trim();
       // A drop lands where the pointer is, so only a figure that needs no
       // reading is let through as it is.

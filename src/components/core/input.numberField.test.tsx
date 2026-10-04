@@ -132,10 +132,40 @@ describe("Input type=number: the comma (en-US 1.5 and de-DE 1,5 must mean the sa
     render(<Input type="number" min="0" data-testid="amount" defaultValue="1" />);
     const box = screen.getByTestId("amount");
     expect(typed(box, ".")).toBe(true);
+    fireEvent.input(box); // the browser's input event for the point
     expect(typed(box, ",")).toBe(false);
     expect(inserted).toEqual([]);
     // A digit after the point ends it; the value then shows the point itself.
     expect(typed(box, "5")).toBe(true);
+  });
+
+  it("forgets the point once the value is set from outside, or the field is focused again", () => {
+    // "1." then Max writes 25: a comma after that is the decimal point of 25,
+    // not a second point after "1." (which turned ",5" into 255).
+    render(<Input type="number" min="0" data-testid="amount" defaultValue="1" />);
+    const box = screen.getByTestId("amount") as HTMLInputElement;
+    typed(box, ".");
+    fireEvent.input(box);
+    box.value = "25";
+    expect(typed(box, ",")).toBe(false);
+    expect(inserted).toEqual(["."]);
+
+    inserted = [];
+    box.value = "3";
+    typed(box, ".");
+    fireEvent.input(box);
+    fireEvent.focus(box);
+    expect(typed(box, ",")).toBe(false);
+    expect(inserted).toEqual(["."]);
+    // An edit with no key of its own (a cut, an undo) ends the point too.
+    inserted = [];
+    box.value = "4";
+    typed(box, ".");
+    fireEvent.input(box);
+    typed(box, "x", { ctrlKey: true });
+    fireEvent.input(box);
+    expect(typed(box, ",")).toBe(false);
+    expect(inserted).toEqual(["."]);
   });
 
   it("does the same for a comma an input method inserts with no keydown", async () => {
@@ -147,6 +177,28 @@ describe("Input type=number: the comma (en-US 1.5 and de-DE 1,5 must mean the sa
     });
     expect(inserted).toEqual(["."]);
   });
+});
+
+describe("Input type=number: a field the user cannot edit", () => {
+  for (const [name, props] of [
+    ["read-only", { readOnly: true }],
+    ["disabled", { disabled: true }],
+  ] as const) {
+    it(`leaves a ${name} field's paste, drop and comma to the browser and never writes it`, () => {
+      document.execCommand = vi.fn(() => false) as typeof document.execCommand;
+      const onChange = vi.fn();
+      render(
+        <Input type="number" min="0" data-testid="locked" value="5" onChange={onChange} {...props} />,
+      );
+      const box = screen.getByTestId("locked") as HTMLInputElement;
+      expect(pasted(box, "999")).toBe(true);
+      expect(dropped(box, "999")).toBe(true);
+      expect(typed(box, ",")).toBe(true);
+      expect(document.execCommand).not.toHaveBeenCalled();
+      expect(onChange).not.toHaveBeenCalled();
+      expect(box.value).toBe("5");
+    });
+  }
 });
 
 describe("Input type=number: input methods", () => {
@@ -185,7 +237,7 @@ describe("Input type=number: paste", () => {
   });
 
   it("refuses what reads more than one way, with no change to the field", () => {
-    for (const text of ["1,234", "1e-7", "-2", "12abc34", "1,2,3", "two"]) {
+    for (const text of ["1,234", "1e-7", "-2", "12abc34", "1,2,3", "two", "(100)", "100-"]) {
       expect(pasteInto(text), text).toEqual({ handledByBrowser: false, inserted: [] });
     }
   });
@@ -375,6 +427,18 @@ describe("number field rules", () => {
     expect(read("2,50 \u20ac")).toBe("2.50");
     expect(read("1 234,5")).toBe("1234.5");
     expect(read("1.234,56,7")).toBeNull();
+  });
+
+  it("refuses a ledger's minus written around or after the figure, and the bare thousands", () => {
+    expect(numberFromPastedText("(100)", true)).toBeNull();
+    expect(numberFromPastedText("($1,234.56)", true)).toBeNull();
+    expect(numberFromPastedText("100-", true)).toBeNull();
+    expect(numberFromPastedText("1,234.56 -", true)).toBeNull();
+    expect(numberFromPastedText("12+", true)).toBeNull();
+    // A grouped figure with only a comma still reads two ways.
+    expect(numberFromPastedText("1,000", false)).toBeNull();
+    expect(numberFromPastedText("$1,000", false)).toBeNull();
+    expect(numberFromPastedText("$1,000.00", false)).toBe("1000.00");
   });
 
   it("refuses an exponent, a stray letter, a sign the field cannot hold, or no figure", () => {
