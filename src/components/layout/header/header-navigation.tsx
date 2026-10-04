@@ -472,7 +472,9 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
                 {itemLabel}
               </span>
               {description && (
-                <span className="font-manrope text-xs leading-4 tracking-[-0.48px] text-white/64 group-hover:text-white/80 group-focus:text-white/80 group-data-[highlighted]:text-white/80 transition-colors">
+                // The sub follows its title at 0.64: white at rest, Sky Blue
+                // on the lit row (4765:65197 and 4768:67040, #56C7F3 at 0.64).
+                <span className="font-manrope text-xs leading-4 tracking-[-0.48px] text-white/64 group-hover:text-sky-blue/64 group-focus:text-sky-blue/64 group-data-[highlighted]:text-sky-blue/64 transition-colors">
                   {description}
                 </span>
               )}

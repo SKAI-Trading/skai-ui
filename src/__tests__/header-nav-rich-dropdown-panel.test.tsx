@@ -6,7 +6,7 @@
  * 4765:65172 / 4768:67035 (read 2026-09-27): 300x136, pad [16,32,16,16], gap
  * 24, radius 12, fill #122524 (Green Coal 200), 1px #123F3C (Green Coal 100)
  * inside, drop shadow 0 4 12 #000 at 0.24. The lit row's glyph, title and sub
- * are #56C7F3 (Sky Blue 300).
+ * are #56C7F3 (Sky Blue 300), the sub at 0.64 as every sub is.
  *
  * Until 2026-09-27 the file wrote those as hex literals. The triggers' hex came
  * in e8fb20f (2026-07-22), when `sky-blue` still resolved to green; the token
@@ -98,6 +98,32 @@ describe("HeaderNavRichDropdown panel (4765:65172 / 4768:67035)", () => {
         expect(classesOf(el).filter((c) => HEX.test(c)), `${label}: no hex`).toEqual([]);
       }
     }
+  });
+
+  it("lights each row's sub with its title: white at 0.64 at rest, Sky Blue at 0.64 when lit", async () => {
+    // 4765:65172 lights "Sports book" and 4768:67035 lights "Casino": the lit
+    // row's sub (4765:65197, 4768:67040) is #56C7F3 at 0.64, the other row's
+    // is #FFFFFF at 0.64. Until 2026-10-04 the lit sub turned white at 0.80
+    // (16da373), which no row in either panel draws.
+    await openRich();
+    for (const description of ITEMS.map((item) => item.description)) {
+      const sub = screen.getByText(description);
+      const cls = classesOf(sub);
+      expect(cls, "at rest").toContain("text-white/64");
+      for (const lit of ["group-hover", "group-focus", "group-data-[highlighted]"]) {
+        const lightsAs = cls.filter((c) => c.startsWith(`${lit}:text-`));
+        expect(lightsAs, `${description}: ${lit}`).toEqual([`${lit}:text-sky-blue/64`]);
+      }
+      expect(cls.filter((c) => HEX.test(c)), `${description}: no hex`).toEqual([]);
+    }
+    // And the names carry the frame's values: sky-blue is #56C7F3 and the
+    // opacity scale's 64 is 0.64 (an off-scale step emits no rule at all).
+    const theme = skaiPreset.theme?.extend as {
+      colors: Record<string, string | Record<string, string>>;
+      opacity: Record<string, string>;
+    };
+    expect(String(theme.colors["sky-blue"]).toUpperCase()).toBe("#56C7F3");
+    expect(theme.opacity["64"]).toBe("0.64");
   });
 
   it("lights the open or active trigger Sky Blue by name", async () => {
