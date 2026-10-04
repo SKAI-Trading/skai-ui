@@ -83,15 +83,20 @@ const UNAVAILABLE_TRACK = "border-[#95a09f]";
  * axes. So this is a size step at the 768 breakpoint, not two components, and
  * `md:` is Tailwind's default 768 with nothing overriding `screens`.
  *
- * The numbers follow `compact`'s own scheme, where the root's 2px ring is the
- * knob's inset and the knob then fills what is left: 60.889 - 4 = 56.889 wide
- * by 36 - 4 = 32, a 32 knob, and a travel of 56.889 - 32 = 24.889. That is
- * also what the node itself reports — the instance's inner `order` frame is
- * 56.888889x32 at (2,2) — so the ring and the knob land where the board puts
- * them. The component's own art is finer than either rung of this (a 1.333
- * ring under a 17.333 knob at 375, 1.5x of that at 768), and `compact`
- * declined that detail when it shipped; declining it again here keeps one
- * control that grows rather than two that differ in more than size.
+ * Inside that box the component draws a ring, a track and a knob smaller than
+ * the track. The first cut of this size kept `compact`'s 2px ring and read the
+ * knob off the padding (a 32 at 768), but the ellipse on the node is 26, a 6px
+ * miss you can see. Re-read 2026-10-04 on 11884:94598 / 11884:94612 (375) and
+ * 11846:355537 / 11846:355570 (768; 5529:73628 / 5529:73723 at 1440 agree):
+ *
+ *            ring    track            knob    off x   on x   (inside the track)
+ *   375      1.333   37.93 x 21.33    17.33   2.33    19
+ *   768+     2       56.89 x 32       26      3       28
+ *
+ * The root's border is the ring, so the content box is the track and
+ * `items-center` sets the knob 2 / 3 from its top, as drawn. Neither knob
+ * carries an effect, so there is no shadow. The launch boards draw the same
+ * component (11461:192414 at 375, 11461:193024 at 768).
  *
  * It is a THIRD size rather than a change to `compact` on purpose. Of the 241
  * `<Switch>` call sites outside node_modules, 11 ask for `compact` today —
@@ -112,11 +117,26 @@ const TRACK_SIZE = {
     thumb: "data-[state=checked]:translate-x-[16.59px]",
   },
   stepped: {
-    root: "no-min-size h-6 w-[40.59px] md:h-9 md:w-[60.889px]",
+    root: "no-min-size h-6 w-[40.59px] border-[1.333px] md:h-9 md:w-[60.889px] md:border-2",
     thumb:
-      "data-[state=checked]:translate-x-[16.59px] md:size-8 md:data-[state=checked]:translate-x-[24.889px]",
+      "size-[17.33px] shadow-none data-[state=unchecked]:translate-x-[2.33px] data-[state=checked]:translate-x-[19px] md:size-[26px] md:data-[state=unchecked]:translate-x-[3px] md:data-[state=checked]:translate-x-7",
   },
 } as const;
+
+/**
+ * The ring's colour and the at-rest track, for `stepped` with `toggle` only.
+ * The node's root is Green Coal 300, so on the Green Coal 300 cards the ring
+ * disappears and the pill you see is the track: Sky Blue on, Ash off (the
+ * 768 Off instance 11846:355570, photographed 2026-10-04). `toggle` alone
+ * rests on Green Coal 300, which on those cards leaves a white dot and no
+ * pill.
+ *
+ * Scoped to the pair because `toggle` at `compact` and `default` belongs to
+ * other surfaces, whose own tests pin `data-[state=unchecked]:bg-[#001615]`.
+ * Applied before UNAVAILABLE_TRACK, so an unavailable switch keeps its Ash
+ * edge.
+ */
+const STEPPED_TOGGLE = "border-green-coal-300 data-[state=unchecked]:bg-ash";
 
 export type SwitchSize = keyof typeof TRACK_SIZE;
 
@@ -157,6 +177,7 @@ const Switch = React.forwardRef<
           "peer inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none",
           TRACK_SIZE[size].root,
           CHECKED_TRACK[variant],
+          size === "stepped" && variant === "toggle" ? STEPPED_TOGGLE : undefined,
           unavailable === undefined ? undefined : UNAVAILABLE_TRACK,
           className,
         )}

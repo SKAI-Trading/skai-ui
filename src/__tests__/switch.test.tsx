@@ -127,17 +127,43 @@ describe("Switch track sizes", () => {
     expect(track).toHaveClass("md:h-9", "md:w-[60.889px]");
   });
 
-  it("moves the knob the width the stepped track leaves it at each rung", () => {
-    // The travel is not a taste choice, it is what is left over: the root's
-    // 2px ring insets the knob, so at 375 that is 40.59 - 4 - 20 = 16.59 and
-    // from 768 it is 60.889 - 4 - 32 = 24.889. A knob that kept the smaller
-    // travel on the larger track would stop short of the end and read as a
-    // half-thrown switch, which no size assertion on the track would catch.
+  it("draws the node's knob, ring and stops at each rung, not ones read off the padding", () => {
+    // Read 2026-10-04 on the ellipse itself: 17.33 at 375 (11884:94598 on at
+    // x=19, 11884:94612 off at x=2.33) and 26 at 768 (11846:355537 on at 28,
+    // 11846:355570 off at 3), inside a track the root's 1.333 / 2 ring leaves.
+    // The first cut inferred a 32 knob from the 2px pad; a 6px-oversized knob
+    // still passes every track-size assertion, so the knob is pinned itself.
     render(<Switch aria-label="t" size="stepped" />);
     const knob = knobOf();
-    expect(knob).toHaveClass("data-[state=checked]:translate-x-[16.59px]");
-    expect(knob).toHaveClass("md:size-8");
-    expect(knob).toHaveClass("md:data-[state=checked]:translate-x-[24.889px]");
+    expect(knob).toHaveClass(
+      "size-[17.33px]",
+      "data-[state=unchecked]:translate-x-[2.33px]",
+      "data-[state=checked]:translate-x-[19px]",
+      "md:size-[26px]",
+      "md:data-[state=unchecked]:translate-x-[3px]",
+      "md:data-[state=checked]:translate-x-7",
+    );
+    expect(trackOf()).toHaveClass("border-[1.333px]", "md:border-2");
+  });
+
+  it("lets the stepped knob replace the base knob rather than sit beside it", () => {
+    // The base thumb is h-5 w-5 with a shadow-lg and rests at translate-x-0.
+    // If tailwind-merge kept any of those next to the stepped classes, the
+    // stylesheet's order would decide the knob instead of the size asked for.
+    render(<Switch aria-label="t" size="stepped" />);
+    const knob = knobOf().className.split(/\s+/);
+    for (const stale of [
+      "h-5",
+      "w-5",
+      "md:size-8",
+      "shadow-lg",
+      "data-[state=unchecked]:translate-x-0",
+      "data-[state=checked]:translate-x-[16.59px]",
+    ]) {
+      expect(knob).not.toContain(stale);
+    }
+    expect(knob).toContain("shadow-none");
+    expect(trackOf().className.split(/\s+/)).not.toContain("border-2");
   });
 
   it("leaves the default and compact sizes exactly where they were", () => {
@@ -158,6 +184,19 @@ describe("Switch track sizes", () => {
     expect(knobOf().className).not.toMatch(/\bmd:/);
   });
 
+  it("keeps the 2px ring, the 20 knob and its shadow on default and compact", () => {
+    // The stepped rung now draws the node's finer ring and knob. Neither of the
+    // other two sizes asked for that, so their box inside the ring is pinned.
+    for (const size of ["default", "compact"] as const) {
+      const { unmount } = render(<Switch aria-label={size} size={size} />);
+      expect(trackOf()).toHaveClass("border-2");
+      expect(trackOf()).not.toHaveClass("border-[1.333px]");
+      expect(knobOf()).toHaveClass("h-5", "w-5", "shadow-lg", "data-[state=unchecked]:translate-x-0");
+      expect(knobOf()).not.toHaveClass("size-[17.33px]");
+      unmount();
+    }
+  });
+
   it("keeps the touch-floor opt-out on the stepped size, which is 36 tall at 768", () => {
     // index.css floors controls at 44 up to `max-width: 768px` INCLUSIVE, and
     // `md:` starts at 768, so at exactly that width this rung is a 36-tall
@@ -165,5 +204,48 @@ describe("Switch track sizes", () => {
     // that the larger rung clears the floor would square it to 44 there.
     render(<Switch aria-label="t" size="stepped" />);
     expect(trackOf()).toHaveClass("no-min-size");
+  });
+});
+
+describe("Switch: the stepped toggle's ring and at-rest track", () => {
+  const trackOf = (): HTMLElement => screen.getByRole("switch");
+  const classes = () => trackOf().className.split(/\s+/);
+
+  it("rests on Ash inside a Green Coal 300 ring, as the boards' Off instance does", () => {
+    // 11846:355570 (768, Off) photographed 2026-10-04: an Ash pill inside a
+    // Green Coal 300 ring. The variant's own Green Coal 300 at rest is the
+    // card's colour, so an Off toggle read as a white dot with no pill.
+    render(<Switch aria-label="t" size="stepped" variant="toggle" />);
+    expect(classes()).toContain("border-green-coal-300");
+    expect(classes()).toContain("data-[state=unchecked]:bg-ash");
+    expect(classes()).not.toContain("data-[state=unchecked]:bg-[#001615]");
+    expect(classes()).not.toContain("border-transparent");
+    // On stays the Sky Blue the variant pins.
+    expect(classes()).toContain("data-[state=checked]:bg-[#56C7F3]");
+  });
+
+  it("leaves toggle at compact and default, and stepped at primary, as they were", () => {
+    // Other surfaces draw `toggle` at the two smaller sizes and pin its Green
+    // Coal at rest; the launch page draws `stepped` with the primary track.
+    for (const size of ["compact", "default"] as const) {
+      const { unmount } = render(<Switch aria-label={size} size={size} variant="toggle" />);
+      expect(classes()).toContain("data-[state=unchecked]:bg-[#001615]");
+      expect(classes()).toContain("border-transparent");
+      expect(classes()).not.toContain("data-[state=unchecked]:bg-ash");
+      expect(classes()).not.toContain("border-green-coal-300");
+      unmount();
+    }
+    render(<Switch aria-label="p" size="stepped" />);
+    expect(classes()).toContain("data-[state=unchecked]:bg-input");
+    expect(classes()).toContain("border-transparent");
+    expect(classes()).not.toContain("border-green-coal-300");
+  });
+
+  it("still draws the unavailable edge over the ring", () => {
+    render(
+      <Switch aria-label="t" size="stepped" variant="toggle" unavailable="Not offered here." />,
+    );
+    expect(classes()).toContain("border-[#95a09f]");
+    expect(classes()).not.toContain("border-green-coal-300");
   });
 });
