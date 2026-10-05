@@ -1,17 +1,17 @@
 {
-  "generated": "2026-10-05T00:47:03.628Z",
+  "generated": "2026-10-05T05:25:34.902Z",
   "harvestedAt": "2026-10-04",
   "rollup": {
     "pages": 39,
     "live": 4688,
     "furniture": 824,
-    "genuine": 3831,
-    "ruledOut": 33,
+    "genuine": 3829,
+    "ruledOut": 35,
     "genuineWithRuledOut": 3864,
     "ruledOutUncited": [],
     "matched": 3748,
-    "done": 1360,
-    "verified": 938,
+    "done": 1357,
+    "verified": 935,
     "visuallyDowngraded": 51,
     "visualUnmapped": [],
     "visualRetired": [
@@ -33,29 +33,29 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1693,
+    "partial": 1695,
     "notStarted": 235,
-    "blocked": 252,
+    "blocked": 253,
     "frameDefect": 203,
     "catalogFurniture": 5,
     "unknown": 0,
-    "liveOnly": 83,
+    "liveOnly": 81,
     "rollupOnly": 6,
     "defaultNamed": 176,
     "ambiguous": 116,
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3464,
+    "total": 3461,
     "withBreakpointProvenance": 1838,
-    "namingANodeId": 3239,
+    "namingANodeId": 3236,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 21228,
+    "total": 21237,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 963,
-    "unrecognisedTokens": 47955
+    "unrecognisedTokens": 47976
   },
   "statusFiles": [
     {
@@ -5309,12 +5309,6 @@
       "ids": 48
     },
     {
-      "file": "status.wave75.FOLD.tsv",
-      "rows": 11,
-      "withLiveId": 11,
-      "ids": 15
-    },
-    {
       "file": "status.wave75.P002.tsv",
       "rows": 25,
       "withLiveId": 25,
@@ -5469,6 +5463,12 @@
       "rows": 3,
       "withLiveId": 3,
       "ids": 4
+    },
+    {
+      "file": "status.wave75.ZFOLD.tsv",
+      "rows": 20,
+      "withLiveId": 20,
+      "ids": 26
     },
     {
       "file": "status.wave8.games-a.tsv",
@@ -6322,7 +6322,7 @@
       "ruledOut": 0,
       "ruledOutIds": [],
       "genuine": 354,
-      "matched": 272,
+      "matched": 274,
       "rollupOnly": 0,
       "defaultNamed": 5,
       "ambiguous": 0,
@@ -6330,28 +6330,14 @@
       "verified": 38,
       "visuallyDowngraded": 2,
       "byStatus": {
-        "partial": 137,
+        "partial": 141,
         "furniture": 1,
         "done": 81,
         "not-started": 24,
-        "frame-defect": 25,
+        "frame-defect": 23,
         "blocked-on-backend": 4
       },
       "liveOnly": [
-        {
-          "id": "13717-79097",
-          "name": "Skai > Play > Sportsbook > Side panel - Lawn tennis (768 x 1024px)",
-          "type": "FRAME",
-          "w": 768,
-          "h": 2750
-        },
-        {
-          "id": "13717-79931",
-          "name": "Skai > Play > Sportsbook > Side panel - Lawn tennis (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 2685
-        },
         {
           "id": "13752-218121",
           "name": "Dice - Desktop 1440px",
@@ -7082,13 +7068,13 @@
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 47,
+      "verified": 46,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 95,
+        "done": 94,
         "frame-defect": 8,
         "partial": 71,
-        "blocked-on-backend": 17,
+        "blocked-on-backend": 18,
         "not-started": 13
       },
       "liveOnly": []
@@ -7193,21 +7179,24 @@
         "loose-rectangle": 3,
         "hidden": 2
       },
-      "ruledOut": 0,
-      "ruledOutIds": [],
-      "genuine": 367,
-      "matched": 367,
+      "ruledOut": 2,
+      "ruledOutIds": [
+        "9045-186284",
+        "9045-187547"
+      ],
+      "genuine": 365,
+      "matched": 365,
       "rollupOnly": 6,
       "defaultNamed": 42,
       "ambiguous": 116,
       "conflicts": 0,
-      "verified": 88,
+      "verified": 86,
       "visuallyDowngraded": 7,
       "byStatus": {
-        "partial": 234,
-        "frame-defect": 20,
+        "partial": 232,
+        "frame-defect": 22,
         "blocked-on-backend": 16,
-        "done": 90,
+        "done": 88,
         "not-started": 7
       },
       "liveOnly": []
@@ -17897,6 +17886,14 @@
       "verdict": "partial"
     },
     {
+      "id": "13717-79097",
+      "page": "✅ Play",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
+    },
+    {
       "id": "11131-119167",
       "page": "✅ Play",
       "scope": "in-scope",
@@ -18071,6 +18068,14 @@
       "status": "partial",
       "claimed": "partial",
       "verdict": "partial"
+    },
+    {
+      "id": "13717-79931",
+      "page": "✅ Play",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": null
     },
     {
       "id": "11154-47551",
@@ -19092,8 +19097,8 @@
       "id": "11100-65866",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "frame-defect",
-      "claimed": "frame-defect",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -19116,8 +19121,8 @@
       "id": "11100-65909",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "frame-defect",
-      "claimed": "frame-defect",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -30668,8 +30673,8 @@
       "id": "13432-179891",
       "page": "✅ Home 2",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": "match"
     },
     {
@@ -36577,22 +36582,6 @@
       "verdict": "partial"
     },
     {
-      "id": "9045-186284",
-      "page": "✅ Trade 1",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "9045-187547",
-      "page": "✅ Trade 1",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
       "id": "9045-188835",
       "page": "✅ Trade 1",
       "scope": "in-scope",
@@ -36644,8 +36633,8 @@
       "id": "9002-162080",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
       "verdict": "match"
     },
     {
@@ -37228,8 +37217,8 @@
       "id": "9776-98249",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
+      "status": "frame-defect",
+      "claimed": "frame-defect",
       "verdict": "match"
     },
     {
