@@ -284,6 +284,63 @@ export const WithSubmenu: Story = {
   ),
 };
 
+/**
+ * The vote row menu, 11314:138124 (3sSzw1KewMtUbeLAv7uW0r): two action rows
+ * with icons and a rule between them. The fill follows focus, so hover a row
+ * to see the frame's filled "Verify vote on Skaiscan".
+ */
+export const FrameActionMenu: Story = {
+  render: () => (
+    <DropdownMenu defaultOpen>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="icon">
+          <MoreHorizontal className="h-4 w-4" />
+          <span className="sr-only">More actions</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="w-[250px]">
+        <DropdownMenuItem>
+          <User className="h-4 w-4" />
+          View voter
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <ExternalLink className="h-4 w-4" />
+          Verify vote on Skaiscan
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+};
+
+/**
+ * The Rewards period menu, 11303:134267: a value menu, the current value
+ * filled, no dot.
+ */
+export const FrameValueMenu: Story = {
+  render: function FrameValueMenuStory() {
+    const [range, setRange] = useState("all");
+    return (
+      <DropdownMenu defaultOpen>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline">
+            Period
+            <ChevronDown className="ml-2 h-4 w-4" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-[163px]">
+          <DropdownMenuRadioGroup value={range} onValueChange={setRange}>
+            <DropdownMenuRadioItem value="all">All time</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="today">Today</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="1m">1 month</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="6m">6 months</DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    );
+  },
+};
+
 export const IconButtonDropdown: Story = {
   render: () => (
     <DropdownMenu>

@@ -232,6 +232,30 @@ export const TimeframeSelect: Story = {
   ),
 };
 
+/**
+ * The Gauge filter, 11260:123547 (3sSzw1KewMtUbeLAv7uW0r), opened: the current
+ * value is filled and focused, with no check column. "Epoch #3" is disabled to
+ * show that state, which no frame draws and which is unchanged.
+ */
+export const FrameValueSelect: Story = {
+  render: () => (
+    <Select defaultValue="all" defaultOpen>
+      <SelectTrigger className="w-[163px]">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="all">All gauges</SelectItem>
+        <SelectItem value="e0">Epoch #0</SelectItem>
+        <SelectItem value="e1">Epoch #1</SelectItem>
+        <SelectItem value="e2">Epoch #2</SelectItem>
+        <SelectItem value="e3" disabled>
+          Epoch #3
+        </SelectItem>
+      </SelectContent>
+    </Select>
+  ),
+};
+
 export const CurrencySelect: Story = {
   render: () => (
     <Select defaultValue="usd">
