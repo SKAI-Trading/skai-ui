@@ -12,20 +12,22 @@ This file carries no run date, so it is byte-identical whenever its inputs are. 
 | In-scope pages | 39 |
 | Live top-level nodes | 4688 |
 | — furniture (excluded from the denominator) | 824 (17.6%) |
-| **Genuine frames — the denominator** | **3829** |
+| **Genuine frames — the denominator** | **3626** |
 | Ruled out of the measurement (`ruled-out` verdict, product decided against) | 35 |
-| Denominator if those were still counted | 3864 |
-| Genuine frames with a catalog row (matched by node id) | 3748 (97.9%) |
+| Denominator if those were still counted | 3661 |
+| Frame defects out of the measurement (`frame-defect`, design owns the redraw) | 203 |
+| Denominator if those were still counted | 3829 |
+| Genuine frames with a catalog row (matched by node id) | 3545 (97.8%) |
 | — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 6 (0.2% of matched) |
-| Genuine frames with NO row — live-only drift | 81 (2.1%) |
+| Genuine frames with NO row — live-only drift | 81 (2.2%) |
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 1357 | 35.4% |
-| `partial` | 1695 | 44.3% |
-| `not-started` | 235 | 6.1% |
-| `blocked-on-backend` | 253 | 6.6% |
-| `frame-defect` | 203 | 5.3% |
+| `done` | 1357 | 37.4% |
+| `partial` | 1695 | 46.7% |
+| `not-started` | 235 | 6.5% |
+| `blocked-on-backend` | 253 | 7.0% |
+| `frame-defect` | 0 | 0.0% |
 | `furniture` (catalog says furniture, this script says genuine) | 5 | 0.1% |
 | `unknown` | 0 | 0.0% |
 
@@ -49,20 +51,22 @@ That is 17.6% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**1357 of 3829 in-scope genuine frames (35.4%) are covered by a row marked `done`.**
+**1357 of 3626 in-scope genuine frames (37.4%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 35.4% measured parity.
+Read the caveat section before quoting that. It is not 37.4% measured parity.
 
-**35 frame(s) carry a `ruled-out` verdict and are NOT in that denominator.** A ruled-out frame is one the product decided against: nothing was built and nothing is owed, so it is neither work completed nor work outstanding and it leaves the measurement, exactly as a page-level `excluded` scope does. Counted in, the denominator is 3864 and the figure reads 35.1%; counted out it is 3829 and reads 35.4%. **The difference is the denominator shrinking, not frames being closed** — the `done` count is identical either way. Each such verdict must cite its ruling by date in the reason or it is refused and the frame stays in scope.
+**35 frame(s) carry a `ruled-out` verdict and are NOT in that denominator.** A ruled-out frame is one the product decided against: nothing was built and nothing is owed, so it is neither work completed nor work outstanding and it leaves the measurement, exactly as a page-level `excluded` scope does. Counted in, the denominator is 3661 and the figure reads 37.1%; counted out it is 3626 and reads 37.4%. **The difference is the denominator shrinking, not frames being closed** — the `done` count is identical either way. Each such verdict must cite its ruling by date in the reason or it is refused and the frame stays in scope.
 
-**935 of those 1357 (24.4% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 422 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 51 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` belong to retired sections and bind through pages.json `retiredSections` at the lowest precedence — 0 active line(s) between them, deciding 0 frame(s).
+**203 frame(s) are frame defects and are NOT in that denominator either (Casey 2026-10-05 #2).** The frame is wrong and the code is right, so design owns the redraw and nothing is owed in code. Counted in, the denominator is 3829 and the figure reads 35.4%. A frame leaves only when every row of its newest generation says `frame-defect` and one of them states the defect in its reason (40 characters or more); a split generation, or a visual verdict that resolves it elsewhere, keeps it in.
+
+**935 of those 1357 (25.8% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 422 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 51 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` belong to retired sections and bind through pages.json `retiredSections` at the lowest precedence — 0 active line(s) between them, deciding 0 frame(s).
 
 ## Out of the roll-up
 
 | Bucket | Pages | Live | Furniture | Genuine | Matched | `done` | Live-only |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | standing exclusion (Onboarding) | 1 | 53 | 43 | 10 | 0 | 0 | 10 |
-| tombstone (body moved) | 3 | 187 | 70 | 117 | 117 | 6 | 0 |
+| tombstone (body moved) | 3 | 187 | 70 | 106 | 106 | 6 | 0 |
 | meta | 6 | 52 | 1 | 51 | 0 | 0 | 51 |
 | wip / no section | 2 | 1160 | 1156 | 4 | 0 | 0 | 4 |
 
@@ -72,47 +76,47 @@ Read the caveat section before quoting that. It is not 35.4% measured parity.
 
 | Page | Scope | Live | furn | gen | row | `done` | `part` | `n/s` | `blk` | only | cov |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ✅ Governance and Utilities | in-scope | 725 | 67 | 656 | 656 | 99 | 382 | 106 | 51 | 0 | 100.0% |
-| ✅ Social | in-scope | 442 | 40 | 402 | 402 | 178 | 117 | 32 | 63 | 0 | 100.0% |
-| ✅ Trade 1 | in-scope | 421 | 54 | 365 | 365 | 88 | 232 | 7 | 16 | 0 | 100.0% |
-| ✅ Trade 2 | in-scope | 420 | 43 | 364 | 364 | 131 | 170 | 12 | 23 | 0 | 100.0% |
-| ✅ Play | in-scope | 431 | 77 | 354 | 274 | 81 | 141 | 24 | 4 | 80 | 77.4% |
-| ✅ Predict | in-scope | 284 | 30 | 251 | 251 | 53 | 156 | 17 | 12 | 0 | 100.0% |
-| ✅ Home 1 | in-scope | 280 | 44 | 236 | 236 | 146 | 80 | 9 | 0 | 0 | 100.0% |
-| ✅ Home 2 | in-scope | 242 | 38 | 204 | 204 | 94 | 71 | 13 | 18 | 0 | 100.0% |
-| ✅ Wallet 2 | in-scope | 191 | 23 | 168 | 167 | 139 | 8 | 0 | 10 | 1 | 99.4% |
-| ✅ Wallet 1 | in-scope | 178 | 11 | 161 | 161 | 100 | 55 | 0 | 0 | 0 | 100.0% |
-| ✅ Onboarding and Authentication | in-scope | 151 | 27 | 115 | 115 | 63 | 35 | 12 | 3 | 0 | 100.0% |
+| ✅ Governance and Utilities | in-scope | 725 | 67 | 638 | 638 | 99 | 382 | 106 | 51 | 0 | 100.0% |
+| ✅ Social | in-scope | 442 | 40 | 390 | 390 | 178 | 117 | 32 | 63 | 0 | 100.0% |
+| ✅ Trade 1 | in-scope | 421 | 54 | 343 | 343 | 88 | 232 | 7 | 16 | 0 | 100.0% |
+| ✅ Trade 2 | in-scope | 420 | 43 | 336 | 336 | 131 | 170 | 12 | 23 | 0 | 100.0% |
+| ✅ Play | in-scope | 431 | 77 | 331 | 251 | 81 | 141 | 24 | 4 | 80 | 75.8% |
+| ✅ Predict | in-scope | 284 | 30 | 238 | 238 | 53 | 156 | 17 | 12 | 0 | 100.0% |
+| ✅ Home 1 | in-scope | 280 | 44 | 235 | 235 | 146 | 80 | 9 | 0 | 0 | 100.0% |
+| ✅ Home 2 | in-scope | 242 | 38 | 196 | 196 | 94 | 71 | 13 | 18 | 0 | 100.0% |
+| ✅ Wallet 2 | in-scope | 191 | 23 | 158 | 157 | 139 | 8 | 0 | 10 | 1 | 99.4% |
+| ✅ Wallet 1 | in-scope | 178 | 11 | 155 | 155 | 100 | 55 | 0 | 0 | 0 | 100.0% |
+| ✅ Onboarding and Authentication | in-scope | 151 | 27 | 113 | 113 | 63 | 35 | 12 | 3 | 0 | 100.0% |
 | ✅ Hooked - Skai originals | in-scope | 79 | 32 | 47 | 47 | 22 | 19 | 0 | 5 | 0 | 100.0% |
-| ✅ Vegas fortune - Skai originals | in-scope | 96 | 51 | 45 | 45 | 3 | 13 | 1 | 16 | 0 | 100.0% |
-| ✅ Untamed - Skai originals | in-scope | 72 | 28 | 44 | 44 | 3 | 30 | 0 | 0 | 0 | 100.0% |
 | ✅ Starbound - Skai originals | in-scope | 62 | 18 | 44 | 44 | 36 | 5 | 2 | 0 | 0 | 100.0% |
 | ✅ Sugar Rush - Skai originals | in-scope | 66 | 22 | 44 | 44 | 0 | 17 | 0 | 26 | 0 | 100.0% |
 | 🌎 Cover Images - Skai Originals | in-scope | 44 | 2 | 42 | 42 | 26 | 16 | 0 | 0 | 0 | 100.0% |
 | ✅ Coinflip - Skai originals | in-scope | 46 | 12 | 34 | 34 | 26 | 8 | 0 | 0 | 0 | 100.0% |
+| ✅ Untamed - Skai originals | in-scope | 72 | 28 | 33 | 33 | 3 | 30 | 0 | 0 | 0 | 100.0% |
+| ✅ Vegas fortune - Skai originals | in-scope | 96 | 51 | 33 | 33 | 3 | 13 | 1 | 16 | 0 | 100.0% |
 | ✅ Dice - Skai originals | in-scope | 36 | 13 | 23 | 23 | 2 | 21 | 0 | 0 | 0 | 100.0% |
 | ✅ Keno - Skai originals | in-scope | 27 | 11 | 16 | 16 | 4 | 12 | 0 | 0 | 0 | 100.0% |
 | ✅ Rock Paper Scissors - Skai originals | in-scope | 24 | 8 | 16 | 16 | 0 | 10 | 0 | 6 | 0 | 100.0% |
-| ✅ Chicken - Skai originals | in-scope | 31 | 16 | 15 | 15 | 11 | 2 | 0 | 0 | 0 | 100.0% |
-| ✅ Towers - Skai originals | in-scope | 30 | 15 | 15 | 15 | 3 | 7 | 0 | 0 | 0 | 100.0% |
-| ✅ Blackjack - Skai originals | in-scope | 23 | 9 | 14 | 14 | 10 | 2 | 0 | 0 | 0 | 100.0% |
 | ✅ Darts - Skai originals | in-scope | 31 | 17 | 14 | 14 | 2 | 12 | 0 | 0 | 0 | 100.0% |
+| ✅ Blackjack - Skai originals | in-scope | 23 | 9 | 13 | 13 | 10 | 2 | 0 | 0 | 0 | 100.0% |
 | ✅ Crash - Skai originals | in-scope | 20 | 7 | 13 | 13 | 2 | 11 | 0 | 0 | 0 | 100.0% |
-| ✅ Scratchers - Skai originals | in-scope | 21 | 8 | 13 | 13 | 5 | 7 | 0 | 0 | 0 | 100.0% |
-| ✅ Roulette - Skai originals | in-scope | 21 | 8 | 13 | 13 | 1 | 4 | 0 | 0 | 0 | 100.0% |
-| ✅ Slide - Skai originals | in-scope | 18 | 6 | 12 | 12 | 1 | 10 | 0 | 0 | 0 | 100.0% |
-| ✅ Mines - Skai originals | in-scope | 19 | 8 | 11 | 11 | 0 | 10 | 0 | 0 | 0 | 100.0% |
-| ✅ Fortune Wheel - Skai originals | in-scope | 25 | 14 | 11 | 11 | 2 | 7 | 0 | 0 | 0 | 100.0% |
-| ✅ Bingo - Skai originals | in-scope | 17 | 6 | 11 | 11 | 4 | 1 | 0 | 0 | 0 | 100.0% |
-| ✅ Baccarat - Skai originals | in-scope | 21 | 11 | 10 | 10 | 4 | 5 | 0 | 0 | 0 | 100.0% |
-| ✅ Plinko - Skai originals | in-scope | 21 | 12 | 9 | 9 | 4 | 4 | 0 | 0 | 0 | 100.0% |
-| ✅ Video Poker - Skai originals | in-scope | 14 | 5 | 9 | 9 | 0 | 2 | 0 | 0 | 0 | 100.0% |
+| ✅ Chicken - Skai originals | in-scope | 31 | 16 | 13 | 13 | 11 | 2 | 0 | 0 | 0 | 100.0% |
+| ✅ Scratchers - Skai originals | in-scope | 21 | 8 | 12 | 12 | 5 | 7 | 0 | 0 | 0 | 100.0% |
+| ✅ Slide - Skai originals | in-scope | 18 | 6 | 11 | 11 | 1 | 10 | 0 | 0 | 0 | 100.0% |
+| ✅ Mines - Skai originals | in-scope | 19 | 8 | 10 | 10 | 0 | 10 | 0 | 0 | 0 | 100.0% |
+| ✅ Towers - Skai originals | in-scope | 30 | 15 | 10 | 10 | 3 | 7 | 0 | 0 | 0 | 100.0% |
+| ✅ Fortune Wheel - Skai originals | in-scope | 25 | 14 | 9 | 9 | 2 | 7 | 0 | 0 | 0 | 100.0% |
+| ✅ Baccarat - Skai originals | in-scope | 21 | 11 | 9 | 9 | 4 | 5 | 0 | 0 | 0 | 100.0% |
 | ✅ Limbo - Skai originals | in-scope | 14 | 5 | 9 | 9 | 6 | 3 | 0 | 0 | 0 | 100.0% |
+| ✅ Plinko - Skai originals | in-scope | 21 | 12 | 8 | 8 | 4 | 4 | 0 | 0 | 0 | 100.0% |
 | ✅ Price Grid - Skai originals | in-scope | 20 | 13 | 7 | 7 | 2 | 5 | 0 | 0 | 0 | 100.0% |
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 6 | 0 | 0 | 0 | 0 | 100.0% |
-| ✅ Hi-Lo - Skai originals | in-scope | 15 | 9 | 6 | 6 | 0 | 5 | 0 | 0 | 0 | 100.0% |
+| ✅ Hi-Lo - Skai originals | in-scope | 15 | 9 | 5 | 5 | 0 | 5 | 0 | 0 | 0 | 100.0% |
+| ✅ Bingo - Skai originals | in-scope | 17 | 6 | 5 | 5 | 4 | 1 | 0 | 0 | 0 | 100.0% |
+| ✅ Roulette - Skai originals | in-scope | 21 | 8 | 5 | 5 | 1 | 4 | 0 | 0 | 0 | 100.0% |
+| ✅ Video Poker - Skai originals | in-scope | 14 | 5 | 2 | 2 | 0 | 2 | 0 | 0 | 0 | 100.0% |
 | Towars Draft (Disregard) | excluded | 53 | 43 | 10 | 0 | 0 | 0 | 0 | 0 | 10 | 0.0% |
-| ✝️ Trade (moved to "Skai Web App 2") | tombstone | 154 | 37 | 117 | 117 | 6 | 86 | 7 | 6 | 0 | 100.0% |
+| ✝️ Trade (moved to "Skai Web App 2") | tombstone | 154 | 37 | 106 | 106 | 6 | 86 | 7 | 6 | 0 | 100.0% |
 | ✝️ Home (moved to "Skai Web App 2") | tombstone | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | ✝️ Wallet (moved to "Skai Web App 2") | tombstone | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | 🚧 User Flow | wip | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0.0% |
@@ -128,7 +132,7 @@ Read the caveat section before quoting that. It is not 35.4% measured parity.
 
 Ranked by count. These are the unassessed frames.
 
-### ✅ Play — 80 live-only of 354 genuine  _(in-scope)_
+### ✅ Play — 80 live-only of 331 genuine  _(in-scope)_
 
 ```
 13752-218121	195x277	Dice - Desktop 1440px
@@ -312,7 +316,7 @@ Ranked by count. These are the unassessed frames.
 2002-8	1600x960	Thumbnail - Web App
 ```
 
-### ✅ Wallet 2 — 1 live-only of 168 genuine  _(in-scope)_
+### ✅ Wallet 2 — 1 live-only of 158 genuine  _(in-scope)_
 
 ```
 15695-62179	375x812	Skai > Wallet > continue on web > home > spending 1VH (375 x 812px)
@@ -344,7 +348,7 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift D — one frame, two lanes, two different verdicts
 
-**0 of the 3748 in-scope matched frames (0.0%) are named by two or more rows that DISAGREE on status** — 0 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
+**0 of the 3545 in-scope matched frames (0.0%) are named by two or more rows that DISAGREE on status** — 0 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
 
 | the disagreement | frames |
 |---|---:|
@@ -530,9 +534,9 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 **6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 47976 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
-**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **116 of the 3748 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 117/117, ✅ Trade 1 116/365 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
+**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **105 of the 3545 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 106/106, ✅ Trade 1 105/343 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
-**8. 176 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
+**8. 164 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
 
 **9. The live half is a snapshot.** `pages.json.liveChildren` was stale on 13 pages when this ran — Home 2 recorded 129 against a measured 168, Governance 260 against 331, Home 1 227 against 254. Re-harvest before quoting these numbers in a new week.
 

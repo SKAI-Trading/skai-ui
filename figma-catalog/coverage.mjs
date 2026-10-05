@@ -203,6 +203,44 @@ function parseFurnitureOverrides(text) {
 /** An override applies only while the node's own record calls it furniture. */
 const overrideApplies = (newestStatus) => newestStatus === "furniture";
 
+/** The claim as the tally counts it: a visual verdict corrects it, as apply-verify.mjs does. */
+function resolveStatus(claimed, verdict) {
+  if (verdict === "not-wired") return "not-started";
+  if (verdict && verdict !== "match" && claimed === "done") return "partial";
+  return claimed;
+}
+
+/*
+  ★ A `frame-defect` FRAME LEAVES THE DENOMINATOR (Casey 2026-10-05 #2), the
+  same way a `ruled-out` one does, and is published as its own count.
+
+  A frame-defect row says the FRAME is wrong and the code is right: matching it
+  would ship the bug. Engineering is finished and design owns the redraw, so the
+  frame is neither work completed nor work outstanding. Counted in, 203 such
+  frames sat in the denominator as permanent misses (measured 2026-10-05).
+
+  It fails closed, like `ruled-out`, because a word that shrinks the
+  denominator raises the percentage:
+    - every row of the frame's newest generation must say frame-defect. A split
+      generation stays in, and is still reported as a conflict below;
+    - one of those rows must state the defect in its reason. The key column
+      already says which node; the reason says what the frame prints and what
+      is right. A reason under FRAME_DEFECT_MIN_REASON characters ("frame is
+      wrong") is reported and the frame stays in. Measured 2026-10-05, the
+      shortest of the 203 is 71 characters ("same 60x / 22x paytable"), so the
+      bar refuses an excuse and no real defect. Requiring a node id in the
+      reason was tried first and wrongly kept 58 of them in;
+    - a visual verdict that resolves the frame to anything else keeps it in.
+  `newestRows` is the frame's newest generation (newestRowsOf, section 4b).
+*/
+const FRAME_DEFECT_MIN_REASON = 40;
+function frameDefectWarrant(newestRows, verdict) {
+  if (!newestRows || !newestRows.length) return "none";
+  if (newestRows.some((r) => r.status !== "frame-defect")) return "none";
+  if (resolveStatus("frame-defect", verdict) !== "frame-defect") return "none";
+  return newestRows.some((r) => r.reason.trim().length >= FRAME_DEFECT_MIN_REASON) ? "cited" : "uncited";
+}
+
 /*
   `--self-test` runs before any file is read, so it can never touch the tree.
   It pins the comment rule, which is the kind of one-character predicate that
@@ -283,7 +321,29 @@ if (process.argv.includes("--self-test")) {
     console.log(`  ${got ? "PASS" : "FAIL"}  ${label}`);
   }
   console.log(`self-test: ${fok}/${furniture.length} furniture cases.`);
-  process.exit(ok === cases.length && pok === precedence.length && fok === furniture.length ? 0 : 1);
+
+  const fd = (status, reason, file = "status.wave76.P1.tsv") => ({ file, status, reason });
+  const STATED = "RE-READ LIVE: 954x621, unchanged, same 60x / 22x paytable. Same ruling.";
+  const warrant = (rows, verdict = null) => frameDefectWarrant(rows, verdict);
+  const defects = [
+    ["a frame-defect row stating its defect leaves the denominator", warrant([fd("frame-defect", STATED)]) === "cited"],
+    ["...one stated row is enough when its twin is terse", warrant([fd("frame-defect", "same"), fd("frame-defect", STATED)]) === "cited"],
+    ["a bare excuse stays in", warrant([fd("frame-defect", "the frame is wrong")]) === "uncited"],
+    ["an empty reason stays in", warrant([fd("frame-defect", "   ")]) === "uncited"],
+    ["a newest generation split with partial stays in", warrant([fd("frame-defect", STATED), fd("partial", STATED)]) === "none"],
+    ["...and split with done", warrant([fd("frame-defect", STATED), fd("done", "")]) === "none"],
+    ["a not-wired verdict keeps the frame in", warrant([fd("frame-defect", STATED)], "not-wired") === "none"],
+    ["a frame with no rows is not a frame defect", warrant([]) === "none"],
+    ["resolveStatus pulls a done claim to partial on a partial verdict", resolveStatus("done", "partial") === "partial"],
+    ["...and leaves it on match", resolveStatus("done", "match") === "done"],
+  ];
+  let dok = 0;
+  for (const [label, got] of defects) {
+    if (got) dok++;
+    console.log(`  ${got ? "PASS" : "FAIL"}  ${label}`);
+  }
+  console.log(`self-test: ${dok}/${defects.length} frame-defect cases.`);
+  process.exit(ok === cases.length && pok === precedence.length && fok === furniture.length && dok === defects.length ? 0 : 1);
 }
 
 // ---------------------------------------------------------------------------
@@ -727,11 +787,13 @@ const genOf = (file) => {
   const suffix = m[2] ? m[2].charCodeAt(0) - 96 : 0;
   return Number(m[1]) * 100 + suffix;
 };
+function newestRowsOf(rows) {
+  const newestGen = Math.max(...rows.map((r) => genOf(r.file)));
+  return rows.filter((r) => genOf(r.file) === newestGen);
+}
 function claimOf(rows) {
   if (!rows || !rows.length) return undefined;
-  const newestGen = Math.max(...rows.map((r) => genOf(r.file)));
-  const current = rows.filter((r) => genOf(r.file) === newestGen);
-  return current.slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
+  return newestRowsOf(rows).slice().sort((a, b) => sev(a.status) - sev(b.status))[0].status || "unknown";
 }
 
 // furniture-overrides.tsv (see its note above the self-test).
@@ -743,6 +805,8 @@ const overrideByKey = new Map(furnitureOverrides.rows.map((r) => [`${r.fileKey}|
 const overrideSeen = new Set();
 const overrideApplied = [];
 const overrideRefusedByRecord = [];
+/** In-scope frames whose rows agree on frame-defect but state no defect: they stay in. */
+const frameDefectUncited = [];
 
 const report = [];
 const conflictList = [];
@@ -756,8 +820,9 @@ for (const p of pages) {
   const furniture = [];
   const genuine = [];
   // Frames a ruling took out of the measurement. Held separately from both
-  // furniture and genuine so the three sum back to `live` and nothing is hidden.
+  // furniture and genuine so the four sum back to `live` and nothing is hidden.
   const ruledOut = [];
+  const frameDefects = [];
   const whyCounts = {};
   for (const n of p.nodes) {
     let c = classify(n);
@@ -776,7 +841,16 @@ for (const p of pages) {
       furniture.push(n);
       whyCounts[c.why] = (whyCounts[c.why] || 0) + 1;
     } else if (ruledOutIds.has(`${p.fileKey}|${n.id}`)) ruledOut.push(n);
-    else genuine.push(n);
+    else {
+      const rows = rowIndex.get(n.id);
+      const verdict = visual.get(`${p.fileKey}|${n.id}`) || null;
+      const warrant = frameDefectWarrant(rows && rows.length ? newestRowsOf(rows) : [], verdict);
+      if (warrant === "cited") frameDefects.push(n);
+      else {
+        if (warrant === "uncited" && p.scope === "in-scope") frameDefectUncited.push(`${p.pageName} ${n.id}`);
+        genuine.push(n);
+      }
+    }
   }
   const byStatus = {};
   const liveOnly = [];
@@ -855,9 +929,7 @@ for (const p of pages) {
     // apply-verify.mjs applies it to the registry (see 4b above). A status row
     // is a claim; a verdict is somebody having looked.
     const verdict = visual.get(`${p.fileKey}|${n.id}`) || null;
-    let worst = claimed;
-    if (verdict === "not-wired") worst = "not-started";
-    else if (verdict && verdict !== "match" && claimed === "done") worst = "partial";
+    const worst = resolveStatus(claimed, verdict);
     if (worst !== claimed) visuallyDowngraded++;
     if (worst === "done" && verdict === "match") verified++;
     byStatus[worst] = (byStatus[worst] || 0) + 1;
@@ -935,6 +1007,8 @@ for (const p of pages) {
     furnitureWhy: whyCounts,
     ruledOut: ruledOut.length,
     ruledOutIds: ruledOut.map((n) => n.id),
+    frameDefects: frameDefects.length,
+    frameDefectIds: frameDefects.map((n) => n.id),
     genuine: genuine.length,
     matched,
     rollupOnly,
@@ -995,6 +1069,11 @@ const rollup = {
   ruledOut: sum(inScope, "ruledOut"),
   genuineWithRuledOut: sum(inScope, "genuine") + sum(inScope, "ruledOut"),
   ruledOutUncited,
+  // Out of the denominator since Casey 2026-10-05 #2, and published on their
+  // own so they can never read as done.
+  frameDefectsOut: sum(inScope, "frameDefects"),
+  genuineWithFrameDefects: sum(inScope, "genuine") + sum(inScope, "frameDefects"),
+  frameDefectUncited,
   matched: sum(inScope, "matched"),
   done: statusSum(inScope, "done"),
   verified: sum(inScope, "verified"),
@@ -1095,6 +1174,8 @@ P(
   `| Ruled out of the measurement (\`ruled-out\` verdict, product decided against) | ${rollup.ruledOut} |`,
 );
 P(`| Denominator if those were still counted | ${rollup.genuineWithRuledOut} |`);
+P(`| Frame defects out of the measurement (\`frame-defect\`, design owns the redraw) | ${rollup.frameDefectsOut} |`);
+P(`| Denominator if those were still counted | ${rollup.genuineWithFrameDefects} |`);
 P(`| Genuine frames with a catalog row (matched by node id) | ${rollup.matched} (${pct(rollup.matched, rollup.genuine)}%) |`);
 P(`| — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | ${rollup.rollupOnly} (${pct(rollup.rollupOnly, rollup.matched)}% of matched) |`);
 P(`| Genuine frames with NO row — live-only drift | ${rollup.liveOnly} (${pct(rollup.liveOnly, rollup.genuine)}%) |`);
@@ -1155,6 +1236,12 @@ if (rollup.ruledOut) {
   P("");
   P(
     `**${rollup.ruledOut} frame(s) carry a \`ruled-out\` verdict and are NOT in that denominator.** A ruled-out frame is one the product decided against: nothing was built and nothing is owed, so it is neither work completed nor work outstanding and it leaves the measurement, exactly as a page-level \`excluded\` scope does. Counted in, the denominator is ${rollup.genuineWithRuledOut} and the figure reads ${pct(rollup.done, rollup.genuineWithRuledOut)}%; counted out it is ${rollup.genuine} and reads ${pct(rollup.done, rollup.genuine)}%. **The difference is the denominator shrinking, not frames being closed** — the \`done\` count is identical either way. Each such verdict must cite its ruling by date in the reason or it is refused and the frame stays in scope.${rollup.ruledOutUncited.length ? ` ${rollup.ruledOutUncited.length} line(s) claimed \`ruled-out\` WITHOUT citing a dated ruling and were refused: ${rollup.ruledOutUncited.join(", ")}.` : ""}`,
+  );
+}
+if (rollup.frameDefectsOut || rollup.frameDefectUncited.length) {
+  P("");
+  P(
+    `**${rollup.frameDefectsOut} frame(s) are frame defects and are NOT in that denominator either (Casey 2026-10-05 #2).** The frame is wrong and the code is right, so design owns the redraw and nothing is owed in code. Counted in, the denominator is ${rollup.genuineWithFrameDefects} and the figure reads ${pct(rollup.done, rollup.genuineWithFrameDefects)}%. A frame leaves only when every row of its newest generation says \`frame-defect\` and one of them states the defect in its reason (${FRAME_DEFECT_MIN_REASON} characters or more); a split generation, or a visual verdict that resolves it elsewhere, keeps it in.${rollup.frameDefectUncited.length ? ` ${rollup.frameDefectUncited.length} frame(s) agree on \`frame-defect\` but state no defect, and stay in: ${rollup.frameDefectUncited.join(", ")}.` : ""}`,
   );
 }
 P();
@@ -1334,6 +1421,7 @@ if (FRAMES) {
             page: r.pageName,
             genuine: r.genuine,
             furniture: r.furniture,
+            frameDefects: r.frameDefects,
             matched: r.matched,
             liveOnly: r.liveOnly.length,
             byStatus: r.byStatus,
@@ -1357,7 +1445,8 @@ if (FRAMES) {
 // a trailing human summary made the output unparseable. Same for --markdown.
 (HISTOGRAM || MARKDOWN ? console.error : console.log)(
   `in-scope: ${rollup.genuine} genuine frames of ${rollup.live} live (${rollup.furniture} furniture` +
-    `${rollup.ruledOut ? `, ${rollup.ruledOut} ruled out — denominator ${rollup.genuineWithRuledOut} with them, ${rollup.genuine} without` : ""}); ` +
+    `${rollup.ruledOut ? `, ${rollup.ruledOut} ruled out — denominator ${rollup.genuineWithRuledOut} with them, ${rollup.genuine} without` : ""}` +
+    `${rollup.frameDefectsOut ? `, ${rollup.frameDefectsOut} frame defects out — ${rollup.genuineWithFrameDefects} with them` : ""}); ` +
     `${rollup.matched} have a row (${pct(rollup.matched, rollup.genuine)}%); ` +
     `${rollup.done} done (${pct(rollup.done, rollup.genuine)}%), ${rollup.verified} of them visually verified (${pct(rollup.verified, rollup.genuine)}%), ` +
     `${rollup.visuallyDowngraded} claimed statuses pulled down by a visual verdict; ` +
