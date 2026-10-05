@@ -1,36 +1,75 @@
 /**
- * Item highlight is Sky Blue #56C7F3 as a LITERAL, not `bg-accent`.
+ * Panel and row states as the dropdown frames draw them: the Governance and
+ * Utilities boards (3sSzw1KewMtUbeLAv7uW0r, e.g. 11303:134267, 11314:138124)
+ * and Trade 2's dropdown-add (13006:252891), which names the variables.
  *
- * Report feeca90f: "Menu items and other options still hover green on main
- * dashboard. Match all UI to new Skai blue UI to match Figma." Every item here
- * highlighted with `focus:bg-accent`, and the consuming app overrides `--accent`
- * to the retired alien-green #2DEDAD (skai-interface src/index.css:414, comment
- * "matches --primary") — so all 32 files using DropdownMenuItem highlighted green.
+ * - Panel: Green Coal 200, a 1px Green Coal 100 edge, radius 12, padding 8,
+ *   8 between rows, and the "Input hint (dark)" shadow.
+ * - Row: radius 4, padding 6 / 8, 8 between an icon and its text, Paragraph 2
+ *   type (see menu-row-type.ts).
+ * - One row is filled, Green Coal 100: the focused row in an action menu, the
+ *   current value in a value menu. No frame draws a check or a radio dot.
  *
- * A literal is used because there is no correct token to restore: this library
- * defines `--accent` as coral #FF7E50, so `bg-accent` is wrong here either way.
- * The `/10` wash + white text is the blue-hover treatment already established
- * elsewhere in the app (e.g. the bug-report modal's Cancel button), so menus now
- * match rather than introducing a third convention.
+ * The colours are semantic tokens, so the Light theme and the other apps keep
+ * their own surfaces. In the app's dark theme `bg-popover` is #122524 and
+ * `border` is #123F3C. The fill is `bg-border` rather than `bg-muted`: the
+ * frames bind the row fill and the panel edge to the same variable, and
+ * skai-launch and skai-command set `--muted` to their popover colour, where a
+ * muted fill would hide keyboard focus.
  *
- * Keep this literal. Swapping back to `bg-accent` reintroduces the green.
+ * This replaces the Sky Blue wash from bb0b07f. Report feeca90f asked for menus
+ * to match Figma, and the frames fill green coal. `bg-accent` must not come
+ * back either: the app's `--accent` is Alien Green.
  */
 import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { Check, ChevronRight, Circle } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { cn } from "../../lib/utils";
+import { menuRowType } from "./menu-row-type";
+
+/** Content and SubContent. `flex-col gap-2` is the frames' 8 between rows. */
+const panelClass =
+  "z-50 flex min-w-[8rem] flex-col gap-2 overflow-hidden rounded-xl border border-border bg-popover p-2 text-popover-foreground shadow-inputHint data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2";
+
+/**
+ * Every row. `shrink-0` keeps a row whole when the panel is height-capped and
+ * scrolls. `[&>svg]:mr-0` stops an icon's own `mr-2` adding to the gap.
+ */
+const rowClass =
+  "relative flex shrink-0 cursor-default select-none items-center gap-2 rounded px-2 py-1.5 outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-border focus:text-popover-foreground [&>svg]:mr-0 [&>svg]:shrink-0";
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
-const DropdownMenuGroup = DropdownMenuPrimitive.Group;
+const DropdownMenuGroup = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Group>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Group>
+>(({ className, ...props }, ref) => (
+  <DropdownMenuPrimitive.Group
+    ref={ref}
+    className={cn("flex flex-col gap-2", className)}
+    {...props}
+  />
+));
+DropdownMenuGroup.displayName = DropdownMenuPrimitive.Group.displayName;
 
 const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
 
 const DropdownMenuSub = DropdownMenuPrimitive.Sub;
 
-const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
+const DropdownMenuRadioGroup = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.RadioGroup>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioGroup>
+>(({ className, ...props }, ref) => (
+  <DropdownMenuPrimitive.RadioGroup
+    ref={ref}
+    className={cn("flex flex-col gap-2", className)}
+    {...props}
+  />
+));
+DropdownMenuRadioGroup.displayName =
+  DropdownMenuPrimitive.RadioGroup.displayName;
 
 const DropdownMenuSubTrigger = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,
@@ -41,7 +80,9 @@ const DropdownMenuSubTrigger = React.forwardRef<
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[state=open]:bg-[#56C7F3]/10 focus:bg-[#56C7F3]/10 focus:text-white",
+      rowClass,
+      "data-[state=open]:bg-border",
+      menuRowType(className),
       inset && "pl-8",
       className,
     )}
@@ -60,10 +101,7 @@ const DropdownMenuSubContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.SubContent
     ref={ref}
-    className={cn(
-      "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-      className,
-    )}
+    className={cn(panelClass, className)}
     {...props}
   />
 ));
@@ -79,10 +117,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       collisionPadding={collisionPadding}
-      className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-        className,
-      )}
+      className={cn(panelClass, className)}
       {...props}
     />
   </DropdownMenuPrimitive.Portal>
@@ -97,26 +132,20 @@ const DropdownMenuItem = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-[#56C7F3]/10 focus:text-white",
-      inset && "pl-8",
-      className,
-    )}
+    className={cn(rowClass, menuRowType(className), inset && "pl-8", className)}
     {...props}
   />
 ));
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
+/** Keeps its check: no frame draws a multi-select, and the mark is its meaning. */
 const DropdownMenuCheckboxItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem>
 >(({ className, children, checked, ...props }, ref) => (
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-[#56C7F3]/10 focus:text-white",
-      className,
-    )}
+    className={cn(rowClass, "pl-8", menuRowType(className), className)}
     checked={checked}
     {...props}
   >
@@ -131,6 +160,11 @@ const DropdownMenuCheckboxItem = React.forwardRef<
 DropdownMenuCheckboxItem.displayName =
   DropdownMenuPrimitive.CheckboxItem.displayName;
 
+/**
+ * The current value is filled, not dotted. The empty first span stays because
+ * callers hid the old dot with `[&>span:first-child]:hidden`; without it that
+ * selector would hide their own first span instead.
+ */
 const DropdownMenuRadioItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem>
@@ -138,16 +172,14 @@ const DropdownMenuRadioItem = React.forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-[#56C7F3]/10 focus:text-white",
+      rowClass,
+      "data-[state=checked]:bg-border",
+      menuRowType(className),
       className,
     )}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <DropdownMenuPrimitive.ItemIndicator>
-        <Circle className="h-2 w-2 fill-current" aria-hidden="true" />
-      </DropdownMenuPrimitive.ItemIndicator>
-    </span>
+    <span className="hidden" aria-hidden="true" />
     {children}
   </DropdownMenuPrimitive.RadioItem>
 ));
@@ -162,7 +194,7 @@ const DropdownMenuLabel = React.forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cn(
-      "px-2 py-1.5 text-sm font-semibold",
+      "shrink-0 px-2 py-1.5 text-sm font-semibold",
       inset && "pl-8",
       className,
     )}
@@ -171,13 +203,14 @@ const DropdownMenuLabel = React.forwardRef<
 ));
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
 
+/** Inside the padding, spaced by the panel's own 8 above and below. */
 const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    className={cn("h-px shrink-0 bg-border", className)}
     {...props}
   />
 ));
