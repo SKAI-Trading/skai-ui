@@ -207,7 +207,13 @@ and nothing made it false when the frames changed.
   for a drawing error. Live examples: a paytable printing 60x/22x where the rail
   pays 50x/25x; a ladder labelling total-return as "Profit" (133% RTP if built);
   a legend advertising 500x against an 8x rail; GCB/GambleAware marks that are
-  absent by design; fabricated winners sharing one bet amount.
+  absent by design; fabricated winners sharing one bet amount. **Excluded from
+  the parity denominator since Casey 2026-10-05 #2** and published as its own
+  count: nothing is owed in code, so it is neither done nor open. `coverage.mjs`
+  takes a frame out only when every row of its newest generation says
+  `frame-defect` and one states the defect (40+ characters); a split generation
+  or a visual verdict that resolves it elsewhere keeps it in. State the defect
+  precisely (which node, what it prints, what is right), or the frame stays in.
 - `furniture` — not spec at all: Directory banners, Breakpoint rulers, loose
   rectangles, FigJam stickies, one node its own author labelled "Unrecommended
   edit". Recorded so nobody re-discovers them, and **excluded from the parity

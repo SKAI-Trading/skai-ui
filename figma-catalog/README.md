@@ -169,5 +169,9 @@ comparison rules without touching Figma.
   reason cites a ruling **and its date**; a line that does not is reported and
   the frame stays in scope. `COVERAGE.md` publishes the denominator both ways so
   a shrink can never be read as frames being closed.
+- **A `frame-defect` status also leaves the denominator** (Casey 2026-10-05 #2):
+  the frame is wrong, the build is right, and design owns the redraw. The rule
+  and its fail-closed conditions are under `frame-defect` in `SCHEMA.md`; the
+  count ships as `frameDefects` in `figma-parity.json` and prints on /status.
 - **Shared working tree.** Always commit with explicit paths from this submodule,
   then bump the pointer in Skai-Trading.

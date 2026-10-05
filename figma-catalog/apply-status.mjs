@@ -237,7 +237,9 @@ const SECTIONS = fs
 //   frame-defect       THE FRAME IS WRONG and the code is right. Matching it
 //                      would ship the bug — e.g. a paytable printing 60x where
 //                      the rail pays 50x. Design owns the redraw; engineering
-//                      is finished. Distinct from `done` so it stays visible.
+//                      is finished. Distinct from `done` so it stays visible;
+//                      out of the parity denominator since Casey 2026-10-05 #2
+//                      (coverage.mjs frameDefectWarrant).
 //   furniture          not spec at all: Directory banners, Breakpoint rulers,
 //                      loose rectangles, FigJam stickies. Recorded so nobody
 //                      re-discovers them, EXCLUDED from the parity denominator.
