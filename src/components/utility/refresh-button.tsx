@@ -22,6 +22,7 @@
  * the 16px Rerun icon. The portfolio boards draw it at 36 (`size="md"`).
  */
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { FigmaCheckIcon, FigmaRegenerateIcon, FigmaWarningIcon } from "../../figma-icons";
 import { cn } from "../../lib/utils";
 
@@ -217,6 +218,13 @@ export const RefreshButton = React.forwardRef<HTMLButtonElement, RefreshButtonPr
     const Icon =
       status === "succeeded" ? FigmaCheckIcon : status === "failed" ? FigmaWarningIcon : FigmaRegenerateIcon;
 
+    // The live region sits at the end of <body>, not in the button: a button's
+    // children are presentational, so a status inside one is not reliably read.
+    // Not beside it either, where it would become one more child of every
+    // header row and toolbar the button is placed in.
+    const [liveHost, setLiveHost] = React.useState<HTMLElement | null>(null);
+    React.useEffect(() => setLiveHost(document.body), []);
+
     return (
       <>
         <button
@@ -250,11 +258,14 @@ export const RefreshButton = React.forwardRef<HTMLButtonElement, RefreshButtonPr
           />
           {children}
         </button>
-        {/* Beside the button, not in it: a button's children are
-            presentational, so a live region inside one is not reliably read. */}
-        <span role="status" aria-live="polite" className="sr-only">
-          {announcement}
-        </span>
+        {liveHost
+          ? createPortal(
+              <span role="status" aria-live="polite" className="sr-only">
+                {announcement}
+              </span>,
+              liveHost,
+            )
+          : null}
       </>
     );
   },

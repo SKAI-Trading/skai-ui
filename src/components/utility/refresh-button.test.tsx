@@ -157,6 +157,19 @@ describe("RefreshButton", () => {
     expect(button()).not.toHaveClass("border-[1.5px]");
   });
 
+  it("adds nothing beside itself in the row it sits in", () => {
+    const { container } = render(
+      <div data-testid="row">
+        <RefreshButton onRefresh={() => undefined} />
+        <span>next</span>
+      </div>,
+    );
+    const row = container.querySelector("[data-testid=row]")!;
+    expect(Array.from(row.children).map((el) => el.tagName.toLowerCase())).toEqual(["button", "span"]);
+    expect(row.querySelector("[role=status]")).toBeNull();
+    expect(status().parentElement).toBe(document.body);
+  });
+
   it("does not trip over a read that settles after it unmounts", async () => {
     const read = deferred();
     const { unmount } = render(<RefreshButton onRefresh={() => read.promise} />);
