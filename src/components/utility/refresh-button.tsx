@@ -19,7 +19,7 @@
  *
  * The outlined look is the Figma CTA/button, Type=Secondary, Size=Large with
  * no label (10252:84144): a 32 square, 1.5 Sky Blue stroke inside, radius 8,
- * the 16px Rerun icon. Screens that draw it at 36 pass their own size.
+ * the 16px Rerun icon. The portfolio boards draw it at 36 (`size="md"`).
  */
 import * as React from "react";
 import { FigmaCheckIcon, FigmaRegenerateIcon, FigmaWarningIcon } from "../../figma-icons";
@@ -133,7 +133,7 @@ export interface RefreshButtonMessages {
 
 const DEFAULT_MESSAGES: RefreshButtonMessages = {
   refreshing: "Refreshing…",
-  succeeded: "Up to date",
+  succeeded: "Refreshed",
   failed: "Couldn't refresh. What you see is from the last read that worked.",
   updatedAt: (time) => `Updated ${time}`,
 };
@@ -144,6 +144,12 @@ export interface RefreshButtonProps
   onRefresh: () => unknown;
   /** `outline` is the boxed CTA; `ghost` is the bare glyph used inline beside text. */
   variant?: "outline" | "ghost";
+  /**
+   * The outlined box: `sm` is the 32 square of the design-system CTA, `md` the
+   * 36 the portfolio boards draw. `none` leaves the size to `className`, for a
+   * button that stretches with a label on the phone boards.
+   */
+  size?: "sm" | "md" | "none";
   /** Accessible name, and the tooltip before anything has been read. */
   label?: string;
   /** A visible label beside the icon (the phone boards draw one). */
@@ -158,16 +164,18 @@ export interface RefreshButtonProps
 }
 
 const VARIANTS = {
-  outline:
-    "size-8 gap-2 rounded-lg border-[1.5px] border-[#56C7F3] bg-[#052D2D] text-foreground hover:bg-[#56C7F3]/10",
+  outline: "gap-2 rounded-lg border-[1.5px] border-[#56C7F3] bg-[#052D2D] text-foreground hover:bg-[#56C7F3]/10",
   ghost: "text-[#56C7F3] hover:opacity-85",
 } as const;
+
+const SIZES = { sm: "size-8", md: "size-9", none: "" } as const;
 
 export const RefreshButton = React.forwardRef<HTMLButtonElement, RefreshButtonProps>(
   (
     {
       onRefresh,
       variant = "outline",
+      size = "sm",
       label = "Refresh",
       children,
       updatedAt,
@@ -223,6 +231,7 @@ export const RefreshButton = React.forwardRef<HTMLButtonElement, RefreshButtonPr
           className={cn(
             "inline-flex shrink-0 items-center justify-center transition-[background-color,opacity,transform] active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#56C7F3] focus-visible:ring-offset-2 focus-visible:ring-offset-background",
             VARIANTS[variant],
+            variant === "outline" && SIZES[size],
             refreshing ? "cursor-progress" : "disabled:cursor-not-allowed disabled:opacity-50",
             className,
           )}

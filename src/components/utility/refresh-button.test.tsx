@@ -69,7 +69,7 @@ describe("RefreshButton", () => {
     });
     expect(button()).toHaveAttribute("data-status", "succeeded");
     expect(icon()).toHaveAttribute("data-icon", "succeeded");
-    expect(status()).toHaveTextContent("Up to date");
+    expect(status()).toHaveTextContent("Refreshed");
     expect(button().getAttribute("title")).toMatch(/^Updated /);
 
     await act(async () => {
@@ -142,6 +142,19 @@ describe("RefreshButton", () => {
     const at = new Date(2026, 9, 6, 15, 4);
     render(<RefreshButton onRefresh={() => undefined} updatedAt={at} messages={{ updatedAt: (t) => `Read ${t}` }} />);
     expect(button().getAttribute("title")).toBe(`Read ${at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`);
+  });
+
+  it("draws the design-system square unless told otherwise", () => {
+    const { rerender } = render(<RefreshButton onRefresh={() => undefined} />);
+    expect(button()).toHaveClass("size-8", "rounded-lg", "border-[1.5px]", "border-[#56C7F3]");
+    rerender(<RefreshButton onRefresh={() => undefined} size="md" />);
+    expect(button()).toHaveClass("size-9");
+    rerender(<RefreshButton onRefresh={() => undefined} size="none" className="h-9 flex-1" />);
+    expect(button()).not.toHaveClass("size-8");
+    expect(button()).toHaveClass("h-9", "flex-1");
+    rerender(<RefreshButton onRefresh={() => undefined} variant="ghost" />);
+    expect(button()).not.toHaveClass("size-8");
+    expect(button()).not.toHaveClass("border-[1.5px]");
   });
 
   it("does not trip over a read that settles after it unmounts", async () => {
