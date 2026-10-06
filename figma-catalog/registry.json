@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-06T00:55:16.100Z",
+  "generated": "2026-10-06T05:11:06.271Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -90943,11 +90943,12 @@
       "measuredViewport": "163x160",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-1\", 163x160: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-1\" 163x160, text: Any risk | Low | Medium | High; beside 5243:73398 Earn - Liquidity only (1440). -> partial: the open risk filter (Any risk / Low / Medium / High); built as the risk Select in src/pages/defi/EarnSectionHead.tsx:105-110 (labels Low Risk / Medium Risk / High Risk). Menu not measured.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the risk Select (EarnSectionHead.tsx:229-244, no class) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): labels read Low Risk / Medium Risk / High Risk where the frame says Low / Medium / High (EarnSectionHead.tsx:205-207); the panel takes the trigger's width (140 against the frame's 163).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -90969,11 +90970,12 @@
       "measuredViewport": "163x160",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-2\", 163x160: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-2\" 163x160, text: Recent | APY - Annual Yield | TVL - Transaction Vol. | Risk; beside 5243:73398 Earn - Liquidity only (1440). -> partial: the open sort menu (Recent / APY / TVL / Risk); built as the sort Select in src/pages/defi/EarnSectionHead.tsx:111-115 with APY, TVL and Risk; Recent is omitted on purpose because EarnOpportunity carries no timestamp (EarnSectionHead.tsx:36-40).",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the sort Select (EarnSectionHead.tsx:246-261, no class) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): \"Recent\" is omitted on purpose (EarnOpportunity has no timestamp, EarnSectionHead.tsx:68-72); \"APY\" / \"TVL\" where the frame says \"APY - Annual Yield\" / \"TVL - Transaction Vol.\" (:209-213); width follows the trigger (1440).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -90995,11 +90997,12 @@
       "measuredViewport": "150x152",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-1\", 150x152: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-1\" 150x152, text: Any risk | Low | Medium | High; beside 11973:153636 Earn - Liquidity only 1VH (768). -> partial: the open risk filter (Any risk / Low / Medium / High); built as the risk Select in src/pages/defi/EarnSectionHead.tsx:105-110 (labels Low Risk / Medium Risk / High Risk). Menu not measured.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the risk Select (EarnSectionHead.tsx:229-244, no class) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): labels read Low Risk / Medium Risk / High Risk where the frame says Low / Medium / High (EarnSectionHead.tsx:205-207); the panel takes the trigger's width (102 against 150).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91021,11 +91024,12 @@
       "measuredViewport": "150x144",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-1\", 150x144: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-1\" 150x144, text: Any risk | Low | Medium | High; beside 12003:384627 Earn - Liquidity only 1VH (375). -> partial: the open risk filter (Any risk / Low / Medium / High); built as the risk Select in src/pages/defi/EarnSectionHead.tsx:105-110 (labels Low Risk / Medium Risk / High Risk). Menu not measured.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the risk Select (EarnSectionHead.tsx:229-244, no class) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): labels read Low Risk / Medium Risk / High Risk where the frame says Low / Medium / High (EarnSectionHead.tsx:205-207); the panel takes the trigger's width (the phone half-row against 150).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91047,11 +91051,12 @@
       "measuredViewport": "150x152",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-2\", 150x152: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-2\" 150x152, text: Recent | APY - Annual Yield | TVL - Transaction Vol. | Risk; beside 11973:153636 Earn - Liquidity only 1VH (768). -> partial: the open sort menu (Recent / APY / TVL / Risk); built as the sort Select in src/pages/defi/EarnSectionHead.tsx:111-115 with APY, TVL and Risk; Recent is omitted on purpose because EarnOpportunity carries no timestamp (EarnSectionHead.tsx:36-40).",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the sort Select (EarnSectionHead.tsx:246-261, no class) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): \"Recent\" is omitted on purpose (EarnOpportunity has no timestamp, EarnSectionHead.tsx:68-72); \"APY\" / \"TVL\" where the frame says \"APY - Annual Yield\" / \"TVL - Transaction Vol.\" (:209-213); width follows the trigger (768).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91073,11 +91078,12 @@
       "measuredViewport": "150x144",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-2\", 150x144: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-2\" 150x144, text: Recent | APY - Annual Yield | TVL - Transaction Vol. | Risk; beside 12003:384627 Earn - Liquidity only 1VH (375). -> partial: the open sort menu (Recent / APY / TVL / Risk); built as the sort Select in src/pages/defi/EarnSectionHead.tsx:111-115 with APY, TVL and Risk; Recent is omitted on purpose because EarnOpportunity carries no timestamp (EarnSectionHead.tsx:36-40).",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the sort Select (EarnSectionHead.tsx:246-261, no class) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): \"Recent\" is omitted on purpose (EarnOpportunity has no timestamp, EarnSectionHead.tsx:68-72); \"APY\" / \"TVL\" where the frame says \"APY - Annual Yield\" / \"TVL - Transaction Vol.\" (:209-213); width follows the trigger (375).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91177,11 +91183,12 @@
       "measuredViewport": "163x122",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 163x122: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-proposals\" 163x122, text: Relevant | All proposals | Temp checks; beside 5370:61920 Governance 1VH (1440). -> partial: the open proposals scope menu (Relevant / All proposals / Temp checks [/ My proposals only]); built as the scope selector (src/components/governance/GovernanceProposals.tsx:386, labels pinned in proposalListState.test.ts:265); Temp checks is omitted on purpose, SKAIGovernor has no temperature-check concept.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91203,11 +91210,12 @@
       "measuredViewport": "150x116",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 150x116: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-proposals\" 150x116, text: Relevant | All proposals | Temp checks; beside 11900:108870 Governance 1VH (768). -> partial: the open proposals scope menu (Relevant / All proposals / Temp checks [/ My proposals only]); built as the scope selector (src/components/governance/GovernanceProposals.tsx:386, labels pinned in proposalListState.test.ts:265); Temp checks is omitted on purpose, SKAIGovernor has no temperature-check concept.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91229,11 +91237,12 @@
       "measuredViewport": "120x110",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 120x110: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-proposals\" 120x110, text: Relevant | All proposals | Temp checks; beside 11900:109506 Governance 1VH (375). -> partial: the open proposals scope menu (Relevant / All proposals / Temp checks [/ My proposals only]); built as the scope selector (src/components/governance/GovernanceProposals.tsx:386, labels pinned in proposalListState.test.ts:265); Temp checks is omitted on purpose, SKAIGovernor has no temperature-check concept.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91259,11 +91268,12 @@
         "src/components/governance/proposalListState.ts"
       ],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 163x160: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. ASSESSED (wave67 cat-status-a, 2026-09-24; code at Skai-Trading fa36d2b9b, no Figma read: the connector was not connected), unknown -> partial: implemented. The proposals scope selector in src/components/governance/GovernanceProposals.tsx (:386) is built to this node, with its labels transcribed by hand in proposalListState.test.ts (:5, :265): Relevant, All proposals, My proposals only. The frame's fourth option, Temp checks, is omitted on purpose because SKAIGovernor has no temperature-check concept. Not measured this pass.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the 4th row, My proposals only, is built; the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91285,11 +91295,12 @@
       "measuredViewport": "150x152",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 150x152: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-proposals\" 150x152, text: Relevant | All proposals | Temp checks | My proposals only; beside 11900:111292 Governance > Proposals 1VH (768). -> partial: the open proposals scope menu (Relevant / All proposals / Temp checks [/ My proposals only]); built as the scope selector (src/components/governance/GovernanceProposals.tsx:386, labels pinned in proposalListState.test.ts:265); Temp checks is omitted on purpose, SKAIGovernor has no temperature-check concept.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the 4th row, My proposals only, is built; the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91311,11 +91322,12 @@
       "measuredViewport": "150x116",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 150x116: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-proposals\" 150x116, text: Relevant | All proposals | Temp checks; beside 11900:112324 Governance > Proposals (768). -> partial: the open proposals scope menu (Relevant / All proposals / Temp checks [/ My proposals only]); built as the scope selector (src/components/governance/GovernanceProposals.tsx:386, labels pinned in proposalListState.test.ts:265); Temp checks is omitted on purpose, SKAIGovernor has no temperature-check concept.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91337,11 +91349,12 @@
       "measuredViewport": "130x144",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 130x144: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-proposals\" 130x144, text: Relevant | All proposals | Temp checks | My proposals only; beside 11902:127189 Governance > Proposals 1VH (375). -> partial: the open proposals scope menu (Relevant / All proposals / Temp checks [/ My proposals only]); built as the scope selector (src/components/governance/GovernanceProposals.tsx:386, labels pinned in proposalListState.test.ts:265); Temp checks is omitted on purpose, SKAIGovernor has no temperature-check concept.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the 4th row, My proposals only, is built; the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91363,11 +91376,12 @@
       "measuredViewport": "130x110",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 130x110: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-proposals\" 130x110, text: Relevant | All proposals | Temp checks; beside 11902:127752 Governance > Proposals (375). -> partial: the open proposals scope menu (Relevant / All proposals / Temp checks [/ My proposals only]); built as the scope selector (src/components/governance/GovernanceProposals.tsx:386, labels pinned in proposalListState.test.ts:265); Temp checks is omitted on purpose, SKAIGovernor has no temperature-check concept.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -91389,11 +91403,12 @@
       "measuredViewport": "163x122",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-proposals\", 163x122: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-proposals\" 163x122, text: Relevant | All proposals | Temp checks; beside 5371:64317 Governance > Proposals (1440). -> partial: the open proposals scope menu (Relevant / All proposals / Temp checks [/ My proposals only]); built as the scope selector (src/components/governance/GovernanceProposals.tsx:386, labels pinned in proposalListState.test.ts:265); Temp checks is omitted on purpose, SKAIGovernor has no temperature-check concept.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the proposals scope Select (GovernanceProposals.tsx:469-485) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). The Content's `glass-panel` edge (white/8, @layer components) now loses to the primitive's border-border utility, and its background to bg-popover (#122524). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the frame's \"Temp checks\" row is not offered (SKAIGovernor has no temp checks; labels in proposalListState.ts); the panel takes the trigger's width (w-[113px] / md:w-[109px] / lg:w-[140px], :471) against the frame's.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -92923,11 +92938,12 @@
       "measuredViewport": "163x198",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-yield vaults\", 163x198: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-yield vaults\" 163x198, text: All gauges | Epoch #0 | Epoch #1 | Epoch #2 | Epoch #3; beside 5515:96095 Gauge voting 1VH (1440). -> not-started: the open epoch filter (All gauges / Epoch #0 ... #3) on Gauge voting; not drawn (src/pages/GaugeVoting.tsx:312-329: GaugeWeightsTable filters to active gauges itself). Past-epoch totals are readable (getGaugeVotes, src/hooks/defi/useBribeClaims.ts:74-75), so this is buildable.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was not-started): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the gauge filter Select (GaugeVoting.tsx:368-385; the catalog's \"not drawn\" was stale) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the options: the code offers All gauges / Voted (GAUGE_SCOPE_LABELS) where the frame lists All gauges / Epoch #0 / #1 / #2 / #3; width follows the trigger.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93027,11 +93043,12 @@
       "measuredViewport": "163x274",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-tiers\", 163x274: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-tiers\" 163x274, text: All tiers | Legend | Platinum | Gold | Silver | Bronze | Free; beside 5531:76408 Leaderboard (1440). -> partial: the open tier filter (All tiers / Legend / Platinum / Gold / Silver / Bronze / Free); built as the tier Select in src/components/leaderboard/GlobalLeaderboard.tsx:610-630. Menu not measured.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the tier filter Select (GlobalLeaderboard.tsx:614-637, no class on Content or rows) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the option set and order: the code lists All tiers, Free, Bronze, Silver, Gold, Platinum, Diamond, Legend (TIER_GLYPHS :126-136) where the frame lists All tiers, Legend, Platinum, Gold, Silver, Bronze, Free (descending, no Diamond); the panel takes the trigger's width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93053,11 +93070,12 @@
       "measuredViewport": "150x260",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-tiers\", 150x260: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-tiers\" 150x260, text: All tiers | Legend | Platinum | Gold | Silver | Bronze | Free; beside 11847:357151 Leaderboard (768). -> partial: the open tier filter (All tiers / Legend / Platinum / Gold / Silver / Bronze / Free); built as the tier Select in src/components/leaderboard/GlobalLeaderboard.tsx:610-630. Menu not measured.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the tier filter Select (GlobalLeaderboard.tsx:614-637, no class on Content or rows) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the option set and order: the code lists All tiers, Free, Bronze, Silver, Gold, Platinum, Diamond, Legend (TIER_GLYPHS :126-136) where the frame lists All tiers, Legend, Platinum, Gold, Silver, Bronze, Free (descending, no Diamond); the panel takes the trigger's width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93105,11 +93123,12 @@
       "measuredViewport": "120x246",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
       "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-tiers\", 120x246: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-tiers\" 120x246, text: All tiers | Legend | Platinum | Gold | Silver | Bronze | Free; beside 11884:96408 Leaderboard (375). -> partial: the open tier filter (All tiers / Legend / Platinum / Gold / Silver / Bronze / Free); built as the tier Select in src/components/leaderboard/GlobalLeaderboard.tsx:610-630. Menu not measured.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was partial): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the tier filter Select (GlobalLeaderboard.tsx:614-637, no class on Content or rows) the open panel now draws radius 12, a 1px border-border edge (#123F3C), shadow-inputHint (Input hint (dark), 0 4 12 at 24%) and 8 of inset with 8 between rows, the inset on the Viewport inside its trigger-width minimum so the panel stays the trigger's width plus its 2px edge (skai-ui eec3e3f \"fix(menus): Select's 8 of inset moves onto the Viewport, inside its trigger-width minimum, ...\", bumped by app 0119927f7 \"chore(submodules): bump skai-ui to 7f22264 (...)\"); rows are radius 4, 6 / 8 padding, Paragraph 2 type (12/14 at 375, 12/16 at 768, 14/18 at 1440, -4%), and the current value is filled Green Coal 100 with no check column (was rounded-md 6, shadow-md, 4 inset, abutting 14/20 rows with a 32 check gutter and an Alien Green focus fill). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the option set and order: the code lists All tiers, Free, Bronze, Silver, Gold, Platinum, Diamond, Legend (TIER_GLYPHS :126-136) where the frame lists All tiers, Legend, Platinum, Gold, Silver, Bronze, Free (descending, no Diamond); the panel takes the trigger's width.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93183,11 +93202,12 @@
       "measuredViewport": "163x160",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-period\", 163x160: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-period\" 163x160, text: All time | Today | 1 month | 6 months; beside 5531:77640 Rewards (1440). -> not-started: the open period menu (All time / Today / 1 month / 6 months) on Rewards; ReferralsSection draws no period control.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was not-started): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the period menu (ReferralsSection.tsx:390-452, a DropdownMenu radio group; the catalog's \"not-started\" was stale) the open panel now draws radius 12, shadow-inputHint and 8 of inset with 8 between rows (was rounded-md 6, shadow-md, 4 inset, abutting rows); rows are radius 4 with 8 from an icon to its text and the focused row filled Green Coal 100 through bg-border (was rounded-sm 2 and a Sky Blue/10 wash). The radio group now spaces its rows 8 like the panel, the radio dot and its 32 gutter are gone (text at 8), and the current value is filled Green Coal 100 (data-[state=checked]:bg-border), as the frame fills \"All time\". Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the ranges: All time / 30 days / 7 days / 24 hours (referralRange.ts:32-35) where the frame says All time / Today / 1 month / 6 months; the row's own `text-sm` (:443) keeps 14/20 where the frame draws 12/16 at 768 and 14/18 at 1440.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93209,11 +93229,12 @@
       "measuredViewport": "150x152",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-period\", 150x152: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-period\" 150x152, text: All time | Today | 1 month | 6 months; beside 11872:41908 Rewards (768). -> not-started: the open period menu (All time / Today / 1 month / 6 months) on Rewards; ReferralsSection draws no period control.",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was not-started): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the period menu (ReferralsSection.tsx:390-452, a DropdownMenu radio group; the catalog's \"not-started\" was stale) the open panel now draws radius 12, shadow-inputHint and 8 of inset with 8 between rows (was rounded-md 6, shadow-md, 4 inset, abutting rows); rows are radius 4 with 8 from an icon to its text and the focused row filled Green Coal 100 through bg-border (was rounded-sm 2 and a Sky Blue/10 wash). The radio group now spaces its rows 8 like the panel, the radio dot and its 32 gutter are gone (text at 8), and the current value is filled Green Coal 100 (data-[state=checked]:bg-border), as the frame fills \"All time\". Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the ranges: All time / 30 days / 7 days / 24 hours (referralRange.ts:32-35) where the frame says All time / Today / 1 month / 6 months; the row's own `text-sm` (:443) keeps 14/20 where the frame draws 12/16 at 768 and 14/18 at 1440.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93472,11 +93493,12 @@
       "measuredViewport": "200x44",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-multiselect\", 200x44: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-multiselect\" 200x44, text: View on Skaiscan; beside 11872:41908 Rewards (768). -> not-started: a Rewards leaderboard row menu (View on Skaiscan / Follow); the rows carry a Follow button and a glyph but no menu (src/components/rewards/ReferralsSection.tsx:1839-1866, :1989-1993).",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was not-started): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the row menu (ReferralsSection.tsx:541-595; the catalog's \"not-started\" was stale) the open panel now draws radius 12, shadow-inputHint and 8 of inset with 8 between rows (was rounded-md 6, shadow-md, 4 inset, abutting rows); rows are radius 4 with 8 from an icon to its text and the focused row filled Green Coal 100 through bg-border (was rounded-sm 2 and a Sky Blue/10 wash). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the items: View profile / Copy profile link / Copy wallet address where the frame draws one row, View on Skaiscan; the row class's `text-sm` (:556) keeps 14/20 where the frame draws 14/18 (1440) and 12/16 (768).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93524,11 +93546,12 @@
       "measuredViewport": "250x46",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-multiselect\", 250x46: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-multiselect\" 250x46, text: View on Skaiscan; beside 5531:77640 Rewards (1440). -> not-started: a Rewards leaderboard row menu (View on Skaiscan / Follow); the rows carry a Follow button and a glyph but no menu (src/components/rewards/ReferralsSection.tsx:1839-1866, :1989-1993).",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was not-started): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the row menu (ReferralsSection.tsx:541-595; the catalog's \"not-started\" was stale) the open panel now draws radius 12, shadow-inputHint and 8 of inset with 8 between rows (was rounded-md 6, shadow-md, 4 inset, abutting rows); rows are radius 4 with 8 from an icon to its text and the focused row filled Green Coal 100 through bg-border (was rounded-sm 2 and a Sky Blue/10 wash). Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the items: View profile / Copy profile link / Copy wallet address where the frame draws one row, View on Skaiscan; the row class's `text-sm` (:556) keeps 14/20 where the frame draws 14/18 (1440) and 12/16 (768).",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93732,11 +93755,12 @@
       "measuredViewport": "250x92",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-multiselect\", 250x92: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-multiselect\" 250x92, text: View voter | Verify vote on Skaiscan; beside 5392:82015 Sample proposal - view (1440). -> not-started: a vote row menu (View voter / Verify vote on Skaiscan); the proposal's votes list carries no menu (src/components/governance/ProposalDetail.tsx).",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was not-started): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the vote row menu (VoteRowMenu, ProposalDetail.tsx:2232-2265, no class; the catalog's \"not-started\" was stale) the open panel now draws radius 12, shadow-inputHint and 8 of inset with 8 between rows (was rounded-md 6, shadow-md, 4 inset, abutting rows); rows are radius 4 with 8 from an icon to its text and the focused row filled Green Coal 100 through bg-border (was rounded-sm 2 and a Sky Blue/10 wash). The rows take the frames' Paragraph 2 type (12/14, 12/16, 14/18) in place of 14/20. Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the rule between View voter and Verify vote on Skaiscan is not drawn; the User and Link-out icons are not drawn; rows without a voter or a block height render disabled, which no frame draws. P126 owns the file and is not live in wave 76.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93758,11 +93782,12 @@
       "measuredViewport": "200x88",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-multiselect\", 200x88: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-multiselect\" 200x88, text: View voter | Verify vote on Skaiscan; beside 11900:116258 Sample proposal - view (768). -> not-started: a vote row menu (View voter / Verify vote on Skaiscan); the proposal's votes list carries no menu (src/components/governance/ProposalDetail.tsx).",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was not-started): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the vote row menu (VoteRowMenu, ProposalDetail.tsx:2232-2265, no class; the catalog's \"not-started\" was stale) the open panel now draws radius 12, shadow-inputHint and 8 of inset with 8 between rows (was rounded-md 6, shadow-md, 4 inset, abutting rows); rows are radius 4 with 8 from an icon to its text and the focused row filled Green Coal 100 through bg-border (was rounded-sm 2 and a Sky Blue/10 wash). The rows take the frames' Paragraph 2 type (12/14, 12/16, 14/18) in place of 14/20. Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the rule between View voter and Verify vote on Skaiscan is not drawn; the User and Link-out icons are not drawn; rows without a voter or a block height render disabled, which no frame draws. P126 owns the file and is not live in wave 76.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
@@ -93784,11 +93809,12 @@
       "measuredViewport": "180x84",
       "citedByFiles": [],
       "implFiles": [
-        "modules/skai-ui/src (DropdownMenu / Select)"
+        "modules/skai-ui/src (DropdownMenu / Select)",
+        "modules/skai-ui/src/components/overlays/dropdown-menu.tsx"
       ],
-      "status": "not-started",
+      "status": "partial",
       "route": null,
-      "notes": "Component fragment \"dropdown-multiselect\", 180x84: a state of the shared dropdown primitive; not this lane's file to edit. FIRST PASS, NOT OPENED THIS WAVE; classified from its name and harvested size only. READ LIVE 2026-09-24 (wave67 cat-status-a; use_figma getNodeByIdAsync, read-only; code at Skai-Trading fa36d2b9b): \"dropdown-multiselect\" 180x84, text: View voter | Verify vote on Skaiscan; beside 11904:130419 Sample proposal - view 1VH (375). -> not-started: a vote row menu (View voter / Verify vote on Skaiscan); the proposal's votes list carries no menu (src/components/governance/ProposalDetail.tsx).",
+      "notes": "wave 76 lane Y5, 2026-10-05 (was not-started): Read live 2026-10-05, use_figma read-only on 3sSz (lane Y5 read 1: structure and style dictionary; read 2: full labels and the filled row), with Trade 2 dropdown-add mhF3BkzlTaGiLzJ7kvpmVc:13006:252891 from the store naming the bound variables. skai-ui 3699d1b \"fix(menus): DropdownMenu and Select open on the dropdown frames' panel and rows (3sSz 11303:134267, 11314:138124, 11304:134283; Trade 2 13006:252891)\", reaching the app through f96853c86 \"chore(submodules): bump skai-ui to 84e8f9e (...)\": the vote row menu (VoteRowMenu, ProposalDetail.tsx:2232-2265, no class; the catalog's \"not-started\" was stale) the open panel now draws radius 12, shadow-inputHint and 8 of inset with 8 between rows (was rounded-md 6, shadow-md, 4 inset, abutting rows); rows are radius 4 with 8 from an icon to its text and the focused row filled Green Coal 100 through bg-border (was rounded-sm 2 and a Sky Blue/10 wash). The rows take the frames' Paragraph 2 type (12/14, 12/16, 14/18) in place of 14/20. Pinned by modules/skai-ui/src/__tests__/menu-states.test.tsx (25 cases; 14 of the build's 22 fail on the pre-Y5 primitives and 4 of the fix pass's on the build's; 38 mutations killed). Left (consumer, not Y5's file): the rule between View voter and Verify vote on Skaiscan is not drawn; the asChild <a> rows are floored to 44 tall at phone by the global touch floor where the frame draws 26 (consumer's no-min-size call, not the primitive's). P126 owns the file and is not live in wave 76.",
       "verifiedAt": null,
       "bpStatus": "unknown"
     },
