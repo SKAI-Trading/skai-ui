@@ -476,6 +476,8 @@ describe("menuRowType", () => {
     expect(menuRowTypeFor("text-white", true, <a className="text-[12px]">x</a>)).toBeUndefined();
     expect(menuRowTypeFor(undefined, true, <a className="text-white">x</a>)).toBe(RAMP);
     expect(menuRowTypeFor(undefined, true, <a>x</a>)).toBe(RAMP);
+    // The row's own size still counts when the child brings only a colour.
+    expect(menuRowTypeFor("text-xs", true, <a className="text-white">x</a>)).toBeUndefined();
     // Not asChild: the child's classes stay on the child, so the row keeps the ramp.
     expect(menuRowTypeFor(undefined, false, <a className="text-sm">x</a>)).toBe(RAMP);
     expect(menuRowTypeFor("text-xs", false, "x")).toBeUndefined();
