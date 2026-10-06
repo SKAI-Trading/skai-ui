@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-06T05:11:09.703Z",
+  "generated": "2026-10-06T09:15:50.320Z",
   "harvestedAt": "2026-10-04",
   "rollup": {
     "pages": 39,
@@ -55,10 +55,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 21795,
+    "total": 21800,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 50988
+    "unrecognisedTokens": 51008
   },
   "statusFiles": [
     {
@@ -5646,6 +5646,12 @@
       "rows": 7,
       "withLiveId": 7,
       "ids": 7
+    },
+    {
+      "file": "status.wave76.x2-darts.tsv",
+      "rows": 5,
+      "withLiveId": 5,
+      "ids": 5
     },
     {
       "file": "status.wave8.games-a.tsv",
