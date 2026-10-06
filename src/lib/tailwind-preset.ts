@@ -22,6 +22,9 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 import {
+  coreColors,
+  greenCoalColors,
+  neutralColors,
   skaiColors,
   skaiFonts,
   skaiFontSizes,
@@ -295,6 +298,70 @@ export const skaiSemanticColors = {
 } as const;
 
 // =============================================================================
+// GREEN COAL THAT CAN FOLLOW THE THEME
+// =============================================================================
+
+/**
+ * The Figma shell paints its chrome in Green Coal 300 / 200 / 100 and writes on
+ * it in White and Ash. Those are fixed colours with no light value, so in the
+ * light theme the rail, the account menu, the notification panel and the
+ * header's quick-balance popover stayed dark (reports 24dbeb11, a480fd88,
+ * 3a9349ca, 773f8a9d).
+ *
+ * The utilities that paint those roles read a custom property instead, and the
+ * fallback is the exact colour they painted before. Nothing sets the
+ * properties by default, so every consumer of this preset renders what it
+ * always did. An app that wants a subtree to follow its light theme sets them
+ * under its own `.light` rule; the main app does it for `.coal-themed` in
+ * src/index.css.
+ *
+ *   --coal-base       bg / border / ring / gradient   green-coal-300
+ *   --coal-raised     bg / border / ring / gradient   green-coal-200
+ *   --coal-fill       bg / gradient                   green-coal-100 (hover, selected, chips)
+ *   --coal-line       border / divide / outline / ring green-coal-100 (dividers, outlines)
+ *   --coal-ink        text                            white
+ *   --coal-ink-muted  text                            ash
+ *
+ * Green Coal 100 is both a fill and a line in the frames, which is why it
+ * splits: a light theme wants a pale fill but a visible line.
+ *
+ * Two things stay fixed on purpose. `text-green-coal-*` is the dark ink on Sky
+ * Blue and Alien Green buttons, which read the same in either theme. And
+ * `theme("colors")` still holds the hex, for anything that reads the palette as
+ * data.
+ */
+function themedCoal(property: string, hex: string): string {
+  const n = parseInt(hex.slice(1), 16);
+  const rgb = `${(n >> 16) & 255} ${(n >> 8) & 255} ${n & 255}`;
+  return `rgb(var(--${property}, ${rgb}) / <alpha-value>)`;
+}
+
+const coalSurface = {
+  DEFAULT: themedCoal("coal-base", greenCoalColors[300]),
+  300: themedCoal("coal-base", greenCoalColors[300]),
+  200: themedCoal("coal-raised", greenCoalColors[200]),
+  100: themedCoal("coal-fill", greenCoalColors[100]),
+};
+
+const coalLine = {
+  ...coalSurface,
+  100: themedCoal("coal-line", greenCoalColors[100]),
+};
+
+export const skaiThemedCoal = {
+  backgroundColor: { "green-coal": coalSurface },
+  gradientColorStops: { "green-coal": coalSurface },
+  borderColor: { "green-coal": coalLine },
+  divideColor: { "green-coal": coalLine },
+  outlineColor: { "green-coal": coalLine },
+  ringColor: { "green-coal": coalLine },
+  textColor: {
+    white: themedCoal("coal-ink", coreColors.white),
+    ash: themedCoal("coal-ink-muted", neutralColors.ash),
+  },
+} as const;
+
+// =============================================================================
 // GRID SYSTEM (From Figma)
 // =============================================================================
 
@@ -351,6 +418,10 @@ const skaiPreset: Partial<Config> = {
         ...skaiColors,
         ...skaiSemanticColors,
       },
+
+      // Green Coal / White / Ash per utility, so a subtree can re-colour them
+      // for the light theme (see skaiThemedCoal above).
+      ...skaiThemedCoal,
 
       // Spacing (extends Tailwind defaults)
       spacing: skaiSpacing,
