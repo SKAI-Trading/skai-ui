@@ -14,7 +14,7 @@
  * to count.
  */
 import { describe, it, expect, vi, beforeAll } from "vitest";
-import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, within, cleanup } from "@testing-library/react";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -39,7 +39,7 @@ import {
   SelectLabel,
   SelectSeparator,
 } from "../components/forms/select";
-import { menuRowType } from "../components/overlays/menu-row-type";
+import { menuRowType, menuRowTypeFor } from "../components/overlays/menu-row-type";
 import { skaiFontSizes, skaiBorderRadius, skaiShadows } from "../lib/design-tokens";
 
 beforeAll(() => {
@@ -183,6 +183,30 @@ describe("DropdownMenu rows", () => {
     expectFramesRowType(colour);
   });
 
+  it("an asChild row whose child names its own size keeps it at every width", () => {
+    // Radix's Slot joins the row's and the child's classes as strings, without
+    // tailwind-merge, so the ramp's md: / lg: steps would beat the child's size.
+    openDropdown(
+      <>
+        <DropdownMenuItem asChild>
+          <a href="#wallet" data-testid="sized" className="text-sm leading-[18px]">
+            Open wallet
+          </a>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <a href="#explorer" data-testid="bare">
+            View on Skaiscan
+          </a>
+        </DropdownMenuItem>
+      </>,
+    );
+    const sized = members(screen.getByTestId("sized"));
+    expect(sized).toEqual(expect.arrayContaining(["text-sm", "leading-[18px]"]));
+    expect(sized.filter((c) => /^(md:|lg:)?text-para-/.test(c))).toEqual([]);
+    // A child with no size of its own still takes the frames' type.
+    expectFramesRowType(members(screen.getByTestId("bare")));
+  });
+
   it("disabled stays as it was: dimmed and inert", () => {
     openDropdown(<DropdownMenuItem data-testid="off" disabled>Follow</DropdownMenuItem>);
     const row = screen.getByTestId("off");
@@ -289,20 +313,42 @@ function openSelect(contentClass?: string, value = "voted") {
   return { panel, viewport: panel.querySelector("[data-radix-select-viewport]") };
 }
 
+/** Padding utilities that land on the element itself (no arbitrary-selector variant). */
+const ownPadding = (cls: string[]) =>
+  cls.filter((c) => !c.includes("&") && /^(?:[\w-]+:)*!?p[xytrblse]?-/.test(c));
+
 describe("Select panel", () => {
-  it("is the frames' panel, with 8 of inset split 4 / 4 and 8 between rows", () => {
+  it("is the frames' panel: 8 of inset on the Viewport, inside the trigger-width minimum, and 8 between rows", () => {
     const { panel, viewport } = openSelect();
     const cls = members(panel);
     expectFramesPanel(cls);
-    expect(cls).toContain("p-1");
+    // Padding on Content would sit outside the Viewport's min-w and widen the
+    // panel to the trigger plus 10; inside it the panel stays trigger plus 2.
+    expect(ownPadding(cls)).toEqual([]);
     const vp = members(viewport);
-    expect(vp).toEqual(expect.arrayContaining(["flex", "flex-col", "gap-2", "p-1"]));
+    expect(vp).toEqual(
+      expect.arrayContaining(["flex", "flex-col", "gap-2", "p-2", "min-w-[var(--radix-select-trigger-width)]"]),
+    );
+    expect(ownPadding(vp)).toEqual(["p-2"]);
   });
 
-  it("a caller's p-1 replaces Content's half, so its inset stays 8 rather than 12", () => {
-    const { panel, viewport } = openSelect("p-1 rounded-xl border-green-coal-100 bg-green-coal-200");
-    expect(members(panel).filter((c) => /^p-/.test(c))).toEqual(["p-1"]);
-    expect(members(viewport).filter((c) => /^p-/.test(c))).toEqual(["p-1"]);
+  it("a caller that pads Content keeps today's 4 on the Viewport, so its inset does not move", () => {
+    for (const pad of ["p-1", "md:px-2", "!pt-0"]) {
+      const { panel, viewport } = openSelect(`${pad} rounded-xl border-green-coal-100 bg-green-coal-200`);
+      expect(ownPadding(members(panel))).toEqual([pad]);
+      expect(ownPadding(members(viewport))).toEqual(["p-1"]);
+      cleanup();
+    }
+  });
+
+  it("a caller that pads the Viewport by selector gets nothing added on Content (MemberList, TradingGroups)", () => {
+    const selector = "[&_[data-radix-select-viewport]]:p-2";
+    const { panel, viewport } = openSelect(`w-[200px] ${selector} bg-[#122524]`);
+    const cls = members(panel);
+    expect(cls).toContain(selector);
+    // Only the selector's 8 reaches the rows: no Content padding beside it.
+    expect(ownPadding(cls)).toEqual([]);
+    expect(ownPadding(members(viewport))).toEqual(["p-2"]);
   });
 });
 
@@ -422,5 +468,16 @@ describe("menuRowType", () => {
     for (const c of ["text-sm", "text-xs", "text-[12px]", "text-para-2", "font-manrope text-sm text-white"]) {
       expect(menuRowType(c)).toBeUndefined();
     }
+  });
+
+  it("reads an asChild child's size too, and only when the row is asChild", () => {
+    const RAMP = "text-para-2-mobile md:text-para-2-tablet lg:text-para-2";
+    expect(menuRowTypeFor(undefined, true, <a className="text-sm">x</a>)).toBeUndefined();
+    expect(menuRowTypeFor("text-white", true, <a className="text-[12px]">x</a>)).toBeUndefined();
+    expect(menuRowTypeFor(undefined, true, <a className="text-white">x</a>)).toBe(RAMP);
+    expect(menuRowTypeFor(undefined, true, <a>x</a>)).toBe(RAMP);
+    // Not asChild: the child's classes stay on the child, so the row keeps the ramp.
+    expect(menuRowTypeFor(undefined, false, <a className="text-sm">x</a>)).toBe(RAMP);
+    expect(menuRowTypeFor("text-xs", false, "x")).toBeUndefined();
   });
 });

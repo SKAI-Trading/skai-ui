@@ -4,10 +4,16 @@
  * the "Input hint (dark)" shadow, 8 of inset and 8 between rows, Paragraph 2
  * rows at radius 4, and the current value filled instead of checked.
  *
- * The 8 of inset is split 4 / 4 between Content and Viewport because a caller's
- * class lands on Content and cannot reach the Viewport. A caller that sets its
- * own `p-*` therefore keeps the inset it has today; only an unstyled Select
- * moves from 4 to the frame's 8.
+ * The 8 of inset sits on the Viewport, not on Content. The Viewport carries the
+ * popper's `min-w` of the trigger width, so padding inside it keeps the panel
+ * the trigger's width plus its edge; padding on Content would widen every
+ * panel by 8. It also leaves callers that pad the Viewport through
+ * `[&_[data-radix-select-viewport]]:p-2` (MemberList, TradingGroups) at their
+ * own 8 instead of adding to it.
+ *
+ * A caller that pads Content itself (`p-1` on TradingVault and every Play
+ * Select) keeps today's arrangement: its padding plus the Viewport's 4. Its
+ * inset therefore does not move; only an unpadded Select moves from 4 to 8.
  *
  * Radix focuses the selected item when the panel opens, so the highlight lands
  * on the current value first and then follows the pointer.
@@ -89,6 +95,19 @@ const SelectScrollDownButton = React.forwardRef<
 SelectScrollDownButton.displayName =
   SelectPrimitive.ScrollDownButton.displayName;
 
+/**
+ * True when a class list pads the element it lands on (`p-1`, `md:px-2`,
+ * `!pt-0`). A class behind an arbitrary selector (`[&_[data-radix-select-viewport]]:p-2`)
+ * pads a descendant, not Content, so it does not count.
+ */
+function padsItself(className?: string): boolean {
+  return (className ?? "").split(/\s+/).some((c) => {
+    const at = c.lastIndexOf(":");
+    if (at >= 0 && c.slice(0, at).includes("&")) return false;
+    return /^!?p[xytrblse]?-/.test(c.slice(at + 1));
+  });
+}
+
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
@@ -97,7 +116,7 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-xl border border-border bg-popover p-1 text-popover-foreground shadow-inputHint data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-inputHint data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
         position === "popper" &&
           "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
         className,
@@ -108,7 +127,8 @@ const SelectContent = React.forwardRef<
       <SelectScrollUpButton />
       <SelectPrimitive.Viewport
         className={cn(
-          "flex flex-col gap-2 p-1",
+          "flex flex-col gap-2",
+          padsItself(className) ? "p-1" : "p-2",
           position === "popper" &&
             "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
         )}

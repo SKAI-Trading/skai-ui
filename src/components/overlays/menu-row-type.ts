@@ -1,3 +1,4 @@
+import * as React from "react";
 import { cn } from "../../lib/utils";
 
 /**
@@ -18,4 +19,21 @@ export const MENU_ROW_TYPE =
 export function menuRowType(className?: string): string | undefined {
   const merged = cn("text-para-2-mobile", className).split(" ");
   return merged.includes("text-para-2-mobile") ? MENU_ROW_TYPE : undefined;
+}
+
+/**
+ * The same for a row that may render `asChild`. Radix's Slot joins the row's
+ * classes and its child's as plain strings, without tailwind-merge, so a size
+ * the child names (`<a className="text-sm">`) never displaces the ramp, and the
+ * ramp's `md:` / `lg:` steps would win over it at those widths. Read the
+ * child's classes too.
+ */
+export function menuRowTypeFor(
+  className: string | undefined,
+  asChild: boolean | undefined,
+  children: React.ReactNode,
+): string | undefined {
+  if (!asChild || !React.isValidElement(children)) return menuRowType(className);
+  const own = (children.props as { className?: unknown }).className;
+  return menuRowType(typeof own === "string" ? cn(className, own) : className);
 }

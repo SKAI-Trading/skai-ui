@@ -25,7 +25,7 @@ import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Check, ChevronRight } from "lucide-react";
 import { cn } from "../../lib/utils";
-import { menuRowType } from "./menu-row-type";
+import { menuRowType, menuRowTypeFor } from "./menu-row-type";
 
 /** Content and SubContent. `flex-col gap-2` is the frames' 8 between rows. */
 const panelClass =
@@ -132,7 +132,12 @@ const DropdownMenuItem = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
-    className={cn(rowClass, menuRowType(className), inset && "pl-8", className)}
+    className={cn(
+      rowClass,
+      menuRowTypeFor(className, props.asChild, props.children),
+      inset && "pl-8",
+      className,
+    )}
     {...props}
   />
 ));
