@@ -22,9 +22,13 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 import {
+  accentColors,
   coreColors,
+  earthColors,
+  extendedAccentColors,
   greenCoalColors,
   neutralColors,
+  semanticColors,
   skaiColors,
   skaiFonts,
   skaiFontSizes,
@@ -311,9 +315,10 @@ export const skaiSemanticColors = {
  * The utilities that paint those roles read a custom property instead, and the
  * fallback is the exact colour they painted before. Nothing sets the
  * properties by default, so every consumer of this preset renders what it
- * always did. An app that wants a subtree to follow its light theme sets them
- * under its own `.light` rule; the main app does it for `.coal-themed` in
- * src/index.css.
+ * always did. An app that wants to follow its light theme sets them under its
+ * own `.light` rule. The main app sets them on `.light` itself (src/index.css),
+ * so they reach every route, host and portal, and a casino board opts back out
+ * with `coal-dark`, which resets each one to `initial` and so to the fallback.
  *
  *   --coal-base       bg / border / ring / gradient   green-coal-300
  *   --coal-raised     bg / border / ring / gradient   green-coal-200
@@ -348,16 +353,74 @@ const coalLine = {
   100: themedCoal("coal-line", greenCoalColors[100]),
 };
 
+/**
+ * White at low alpha is a wash: the frames lay `bg-white/5`, `border-white/10`
+ * and `divide-white/10` over Green Coal to lift a row or draw a hairline. On a
+ * light surface white over white is invisible, so a wash reads `--coal-wash`,
+ * which the light theme sets to its ink, and the hairline comes back as a
+ * faint dark one. Solid white and anything above 40% is a real white fill (a
+ * pill, a light card, a knob) and stays white in both themes.
+ *
+ * Tailwind passes the opacity as a string: `var(--tw-bg-opacity, 1)` for the
+ * bare utility, `0.1` for `/10`, `0.04` for `/[0.04]`. With the property unset
+ * the output is byte for byte what the hex produced.
+ */
+function whiteWash({ opacityValue }: { opacityValue?: string }): string {
+  if (opacityValue === undefined) return coreColors.white;
+  const alpha = Number(opacityValue);
+  if (Number.isFinite(alpha) && alpha <= 0.4) {
+    return `rgb(var(--coal-wash, 255 255 255) / ${opacityValue})`;
+  }
+  return `rgb(255 255 255 / ${opacityValue})`;
+}
+
+// Tailwind takes a function as a colour (it is how it applies an opacity
+// modifier), but its theme types only list strings.
+const whiteWashColor = whiteWash as unknown as string;
+
+/**
+ * Accent text keeps its hue and takes a darker cut of it in the light theme:
+ * Sky Blue, Alien Green, Red 300 and Sun Yellow are drawn for a dark ground and
+ * measure 1.1:1 to 3.1:1 on white. Fills (`bg-sky-blue`, ...) stay as they
+ * are, since the dark ink on them reads in either theme.
+ *
+ *   --coal-accent-sky     text-sky-blue
+ *   --coal-accent-green   text-alien-green, text-alien-green-bright, text-skai-green
+ *   --coal-accent-red     text-skai-red
+ *   --coal-accent-yellow  text-sun-yellow
+ */
+const coalAccentText = {
+  "sky-blue": themedCoal("coal-accent-sky", accentColors.skyBlue),
+  "alien-green": themedCoal("coal-accent-green", accentColors.alienGreen),
+  "alien-green-bright": themedCoal(
+    "coal-accent-green",
+    extendedAccentColors.alienGreenBright,
+  ),
+  "skai-green": {
+    DEFAULT: themedCoal("coal-accent-green", semanticColors.green[300]),
+    300: themedCoal("coal-accent-green", semanticColors.green[300]),
+  },
+  "skai-red": {
+    DEFAULT: themedCoal("coal-accent-red", semanticColors.red[300]),
+    300: themedCoal("coal-accent-red", semanticColors.red[300]),
+  },
+  "sun-yellow": themedCoal("coal-accent-yellow", earthColors.sunYellow),
+};
+
 export const skaiThemedCoal = {
-  backgroundColor: { "green-coal": coalSurface },
+  backgroundColor: { "green-coal": coalSurface, white: whiteWashColor },
   gradientColorStops: { "green-coal": coalSurface },
-  borderColor: { "green-coal": coalLine },
-  divideColor: { "green-coal": coalLine },
+  borderColor: { "green-coal": coalLine, white: whiteWashColor },
+  divideColor: { "green-coal": coalLine, white: whiteWashColor },
   outlineColor: { "green-coal": coalLine },
   ringColor: { "green-coal": coalLine },
   textColor: {
     white: themedCoal("coal-ink", coreColors.white),
     ash: themedCoal("coal-ink-muted", neutralColors.ash),
+    // White that stays white in both themes: text on a fill that was made to
+    // carry white (a destructive or primary button, a blue badge) or on media.
+    "white-fixed": coreColors.white,
+    ...coalAccentText,
   },
 } as const;
 
