@@ -1,6 +1,43 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
+import postcss from "postcss";
+import tailwindcss from "tailwindcss";
+import skaiPreset from "../lib/tailwind-preset";
 import { Switch } from "../components/forms/switch";
+
+const BACKSLASH = String.fromCharCode(92);
+/** How Tailwind writes the `data-[state=unchecked]:` variant's qualifier. */
+const UNCHECKED = /\[data-state="?unchecked"?\]$/;
+
+/**
+ * The background colours the compiled CSS gives `el` at rest, as "r g b" when
+ * the value is an rgb() and as written otherwise: every rule Tailwind emits
+ * through this package's preset for the classes on `el` whose selector is one
+ * of those classes qualified by `[data-state=unchecked]`.
+ */
+async function restingTrack(el: Element): Promise<string[]> {
+  const config = {
+    presets: [skaiPreset],
+    content: [{ raw: el.getAttribute("class") ?? "", extension: "txt" }],
+    corePlugins: { preflight: false },
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { css } = await postcss([tailwindcss(config as any)]).process("@tailwind utilities;", { from: undefined });
+  const out: string[] = [];
+  postcss.parse(css).walkRules((rule) => {
+    for (const selector of rule.selectors) {
+      const qualifier = UNCHECKED.exec(selector);
+      if (!selector.startsWith(".") || !qualifier) continue;
+      const utility = selector.slice(1, qualifier.index).split(BACKSLASH).join("");
+      if (!el.classList.contains(utility)) continue;
+      rule.walkDecls("background-color", (decl) => {
+        const rgb = /rgb\((\d+ \d+ \d+)/.exec(decl.value);
+        out.push(rgb ? rgb[1] : decl.value);
+      });
+    }
+  });
+  return out;
+}
 
 describe("Switch", () => {
   it("renders as a switch role", () => {
@@ -224,14 +261,17 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     expect(classes()).toContain("data-[state=checked]:bg-[#56C7F3]");
   });
 
-  it("leaves toggle at compact and default, and stepped at primary, as they were", () => {
-    // Other surfaces draw `toggle` at the two smaller sizes and pin its Green
-    // Coal at rest; the launch page draws `stepped` with the primary track.
+  it("rests toggle on Ash at compact and default too, and draws the ring only at stepped", () => {
+    // Casey 2026-10-05 #70. The Off instances of 11881:94366 (11884:94612 ...
+    // :94615) and 11846:355570 draw an Ash track inside the Green Coal 300
+    // ring, read 2026-10-07. The smaller sizes used to rest on #001615, the
+    // ring's colour, which is the card's colour too. Only `stepped` has the
+    // node's ring-and-knob box, so the smaller two keep their transparent rim.
     for (const size of ["compact", "default"] as const) {
       const { unmount } = render(<Switch aria-label={size} size={size} variant="toggle" />);
-      expect(classes()).toContain("data-[state=unchecked]:bg-[#001615]");
+      expect(classes()).toContain("data-[state=unchecked]:bg-ash");
+      expect(classes()).not.toContain("data-[state=unchecked]:bg-[#001615]");
       expect(classes()).toContain("border-transparent");
-      expect(classes()).not.toContain("data-[state=unchecked]:bg-ash");
       expect(classes()).not.toContain("border-green-coal-300");
       unmount();
     }
@@ -239,6 +279,34 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     expect(classes()).toContain("data-[state=unchecked]:bg-input");
     expect(classes()).toContain("border-transparent");
     expect(classes()).not.toContain("border-green-coal-300");
+  });
+
+  it("rests sky on Ash and leaves primary on bg-input", () => {
+    // `sky`'s only callers are the Predict futures settings panels, whose
+    // frames draw the same `input/toggle`. `primary` is not that component.
+    const { unmount } = render(<Switch aria-label="s" variant="sky" />);
+    expect(classes()).toContain("data-[state=unchecked]:bg-ash");
+    expect(classes()).not.toContain("data-[state=unchecked]:bg-input");
+    expect(classes()).toContain("data-[state=checked]:bg-[#56C7F3]");
+    unmount();
+    render(<Switch aria-label="p" />);
+    expect(classes()).toContain("data-[state=unchecked]:bg-input");
+    expect(classes()).not.toContain("data-[state=unchecked]:bg-ash");
+  });
+
+  it("resolves the Off track to the frame's #95A09F through the preset", async () => {
+    // Compiled, so a renamed or repointed token cannot pass on its class name.
+    for (const [variant, size] of [
+      ["toggle", "compact"],
+      ["toggle", "default"],
+      ["toggle", "stepped"],
+      ["sky", "default"],
+    ] as const) {
+      const { unmount } = render(<Switch aria-label="t" variant={variant} size={size} />);
+      expect(trackOf()).toHaveAttribute("data-state", "unchecked");
+      expect(await restingTrack(trackOf()), `${variant}/${size}`).toEqual(["149 160 159"]);
+      unmount();
+    }
   });
 
   it("still draws the unavailable edge over the ring", () => {

@@ -19,14 +19,28 @@ import { cn } from "../../lib/utils";
  * The default stays `bg-primary` deliberately: flipping it would repaint every
  * toggle in the app, the wallet and command in one commit. Whether the app's
  * `--primary` should be green at all is a separate question, and a bigger one.
+ *
+ * At rest, `toggle` and `sky` sit on Ash, the `ash` token (#95A09F). That is
+ * the Off track of the web-app boards' `input/toggle` (main component
+ * 3156:18274), read on 2026-10-07 off the twelve instances of the 375
+ * Preferences board 11881:94366 (Off: 11884:94612, :94613, :94614, :94615)
+ * and the 768 Off instance 11846:355570: a Green Coal 300 ring, an Ash track,
+ * a white knob at the left. Earlier lanes read the ring (the node's root
+ * fill) as the track and rested `toggle` on Green Coal 300, which on the
+ * Green Coal 300 cards these toggles sit on left a white dot and no pill
+ * (Casey 2026-10-05 #70). `sky`'s only callers are the two Predict futures
+ * panels, whose frames draw the same component.
+ *
+ * `bg-ash` goes through the preset's colour map, so it is the same Ash in
+ * both themes; only `text-ash` follows `--coal-ink-muted`. `primary` keeps
+ * `bg-input`: it is not the boards' component and it has ~230 callers.
  */
 const CHECKED_TRACK = {
   primary: "data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
-  sky: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-input",
-  /* The web-app boards' own `input/toggle`: Sky Blue 300 checked and Green
-     Coal 300 at rest, read off 7746:222510 on the spot Layout-settings panel.
-     Both pinned, for the reason `sky` gives. */
-  toggle: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-[#001615]",
+  sky: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-ash",
+  /* The web-app boards' own `input/toggle`: Sky Blue 300 checked, Ash at
+     rest. The checked colour is pinned for the reason `sky` gives. */
+  toggle: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-ash",
 } as const;
 
 export type SwitchVariant = keyof typeof CHECKED_TRACK;
@@ -35,9 +49,11 @@ export type SwitchVariant = keyof typeof CHECKED_TRACK;
  * A control that cannot be used, drawn rather than left out — and why a bare
  * `disabled` does not draw it.
  *
- * This is a measurement, not a preference. Two of the three variants above
- * rest on `bg-input`, and the main app defines that token as `225 30% 15%`
- * (#1B2132, a navy) at src/index.css:540. Faded by the root's own
+ * This is a measurement, not a preference, taken when two of the three
+ * variants above rested on `bg-input` and the main app defined that token as
+ * `225 30% 15%` (#1B2132, a navy). Today only `primary` does, on Green Coal
+ * 100 (#123F3C, `176 55.6% 15.9%`), which fades to #123230 over #122524,
+ * 1.16:1, so the finding still holds. Faded by the root's own
  * `disabled:opacity-50` over a dark SKAI surface — Green Coal 200 #122524,
  * which is what the Launch panels sit on — it composites to #17232B, which is
  * a contrast ratio of **1.00:1** against that surface. The track is not dim,
@@ -124,19 +140,17 @@ const TRACK_SIZE = {
 } as const;
 
 /**
- * The ring's colour and the at-rest track, for `stepped` with `toggle` only.
- * The node's root is Green Coal 300, so on the Green Coal 300 cards the ring
- * disappears and the pill you see is the track: Sky Blue on, Ash off (the
- * 768 Off instance 11846:355570, photographed 2026-10-04). `toggle` alone
- * rests on Green Coal 300, which on those cards leaves a white dot and no
- * pill.
+ * The ring's colour, for `stepped` with `toggle` only. The node's root is
+ * Green Coal 300, so on the Green Coal 300 cards the ring disappears and the
+ * pill you see is the track: Sky Blue on, Ash off (the variant's own colours).
  *
- * Scoped to the pair because `toggle` at `compact` and `default` belongs to
- * other surfaces, whose own tests pin `data-[state=unchecked]:bg-[#001615]`.
- * Applied before UNAVAILABLE_TRACK, so an unavailable switch keeps its Ash
- * edge.
+ * Only `stepped` draws the ring, because only `stepped` has the node's box: a
+ * 1.333 / 2 ring around a 17.33 / 26 knob. `compact` and `default` keep a 2px
+ * transparent border around a 20 knob, so a coloured ring there would leave
+ * the knob touching a track the frame draws 2px wider than it. Applied before
+ * UNAVAILABLE_TRACK, so an unavailable switch keeps its Ash edge.
  */
-const STEPPED_TOGGLE = "border-green-coal-300 data-[state=unchecked]:bg-ash";
+const STEPPED_TOGGLE = "border-green-coal-300";
 
 export type SwitchSize = keyof typeof TRACK_SIZE;
 
@@ -198,15 +212,14 @@ const Switch = React.forwardRef<
         theme-invariant the way the frame is — in the light theme it moves the
         knob #FFFFEE -> #FFFFFF, which is imperceptible.
 
-        NOT changed here, deliberately, because the frame disagrees with the
-        code in two more ways that no report covers and that would move ~171
-        consuming files at once:
-          - the UNCHECKED track. Figma #95A09F, which is exactly this package's
-            `ash` token (neutralColors.ash); the code uses `bg-input`, a dark
-            teal. `bg-ash` is a one-word fix when someone owns that change.
-          - the size. Figma draws 38x21 with a ~19px knob; this is 44x24 with a
-            20px knob (h-6 w-11), ~15% larger, and the 44px width is also the
-            mobile minimum-hit-target the app's index.css enforces. */}
+        The UNCHECKED track is Figma's #95A09F, this package's `ash` token, on
+        the `toggle` and `sky` variants (see CHECKED_TRACK). `primary` keeps
+        `bg-input` and its ~230 callers keep their look.
+
+        NOT changed here: the default size. Figma draws 38x21 with a ~19px
+        knob; this is 44x24 with a 20px knob (h-6 w-11), ~15% larger, and the
+        44px width is also the mobile minimum-hit-target the app's index.css
+        enforces. `compact` and `stepped` are the boards' boxes. */}
         <SwitchPrimitives.Thumb
           className={cn(
             "pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0 motion-reduce:transition-none",
