@@ -206,6 +206,23 @@ describe("PasswordInput", () => {
       expect(screen.getByPlaceholderText("Enter password")).toBeInTheDocument();
     });
   });
+
+  describe("Text size (Casey 2026-10-05 #10 and #105)", () => {
+    // The field's own size classes; `file:text-sm` belongs to the file button.
+    const FIELD_SIZE = /^(?:(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
+    const sizes = () =>
+      (document.querySelector("input")?.className ?? "").split(/\s+/).filter((c) => FIELD_SIZE.test(c));
+
+    it("draws the frames' 14px at every width, with no phone size beside it", () => {
+      render(<PasswordInput />);
+      expect(sizes()).toEqual(["text-sm"]);
+    });
+
+    it("lets a caller's own size win at every width, not only below 768", () => {
+      render(<PasswordInput className="text-xs" />);
+      expect(sizes()).toEqual(["text-xs"]);
+    });
+  });
 });
 
 describe("calculateStrength", () => {

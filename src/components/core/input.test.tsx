@@ -108,3 +108,24 @@ describe("Input", () => {
     expect(screen.getByTestId("input")).toHaveAttribute("step", "0.01");
   });
 });
+
+describe("Input text size (Casey 2026-10-05 #10 and #105)", () => {
+  // The field's own size classes, bare or at a breakpoint. `file:text-sm` is
+  // the file-picker button's, not the field's, so it is left out.
+  const FIELD_SIZE = /^(?:(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
+  const sizes = () =>
+    screen.getByTestId("input").className.split(/\s+/).filter((c) => FIELD_SIZE.test(c));
+
+  it("draws the frames' 14px at every width, with no phone size beside it", () => {
+    render(<Input data-testid="input" />);
+    expect(sizes()).toEqual(["text-sm"]);
+  });
+
+  it("lets a caller's own size win at every width, not only below 768", () => {
+    const { unmount } = render(<Input data-testid="input" className="text-xs" />);
+    expect(sizes()).toEqual(["text-xs"]);
+    unmount();
+    render(<Input data-testid="input" className="text-[22px]" />);
+    expect(sizes()).toEqual(["text-[22px]"]);
+  });
+});

@@ -80,7 +80,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(
-            "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+            // 14px at every width, the frames' field text (Casey 2026-10-05
+            // #10 and #105; iOS zooms on focus under 16 and that is known).
+            // One unprefixed size, so a caller's own size class replaces it
+            // at every width too; `text-base md:text-sm` kept `md:text-sm`
+            // beside a caller's size from 768 up.
+            "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
             hasError && "border-destructive focus-visible:ring-destructive",
             className,
           )}

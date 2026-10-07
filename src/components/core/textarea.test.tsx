@@ -109,3 +109,19 @@ describe("Textarea", () => {
     expect(textarea).toHaveClass("border");
   });
 });
+
+describe("Textarea text size (Casey 2026-10-05 #10 and #105)", () => {
+  const FIELD_SIZE = /^(?:(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
+  const sizes = () =>
+    screen.getByTestId("textarea").className.split(/\s+/).filter((c) => FIELD_SIZE.test(c));
+
+  it("draws the frames' 14px at every width, with no phone size beside it", () => {
+    render(<Textarea data-testid="textarea" />);
+    expect(sizes()).toEqual(["text-sm"]);
+  });
+
+  it("lets a caller's own size win at every width, not only below 768", () => {
+    render(<Textarea data-testid="textarea" className="text-xs" />);
+    expect(sizes()).toEqual(["text-xs"]);
+  });
+});
