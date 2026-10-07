@@ -9,6 +9,10 @@
  *   type (see menu-row-type.ts).
  * - One row is filled, Green Coal 100: the focused row in an action menu, the
  *   current value in a value menu. No frame draws a check or a radio dot.
+ * - In a value menu (RadioItem, CheckboxItem) a hovered or focused row that is
+ *   not the current value takes a Sky Blue/10 wash instead, so only the current
+ *   value reads as chosen (Casey 2026-10-06 Q10). Item keeps the frames'
+ *   Green Coal 100 pointer row: an action menu has no current value.
  *
  * The colours are semantic tokens, so the Light theme and the other apps keep
  * their own surfaces. In the app's dark theme `bg-popover` is #122524 and
@@ -17,9 +21,10 @@
  * skai-launch and skai-command set `--muted` to their popover colour, where a
  * muted fill would hide keyboard focus.
  *
- * This replaces the Sky Blue wash from bb0b07f. Report feeca90f asked for menus
- * to match Figma, and the frames fill green coal. `bg-accent` must not come
- * back either: the app's `--accent` is Alien Green.
+ * The Green Coal fill replaced the Sky Blue wash bb0b07f put on every focused
+ * row. Report feeca90f asked for menus to match Figma, and the frames fill
+ * green coal; the wash is back only on value rows that are not chosen, under
+ * Q10. `bg-accent` must not come back: the app's `--accent` is Alien Green.
  */
 import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
@@ -143,14 +148,17 @@ const DropdownMenuItem = React.forwardRef<
 ));
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
-/** Keeps its check: no frame draws a multi-select, and the mark is its meaning. */
+/**
+ * Keeps its check: no frame draws a multi-select, and the mark is its meaning.
+ * Focus takes the value rows' wash, not the action rows' fill (Q10).
+ */
 const DropdownMenuCheckboxItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem>
 >(({ className, children, checked, ...props }, ref) => (
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
-    className={cn(rowClass, "pl-8", menuRowType(className), className)}
+    className={cn(rowClass, "focus:bg-sky-blue/10 pl-8", menuRowType(className), className)}
     checked={checked}
     {...props}
   >
@@ -166,9 +174,11 @@ DropdownMenuCheckboxItem.displayName =
   DropdownMenuPrimitive.CheckboxItem.displayName;
 
 /**
- * The current value is filled, not dotted. The empty first span stays because
- * callers hid the old dot with `[&>span:first-child]:hidden`; without it that
- * selector would hide their own first span instead.
+ * The current value is filled, not dotted, and a hovered or focused row that is
+ * not it takes the Sky Blue/10 wash (Q10); the checked fill is emitted after
+ * the wash, so the current value stays filled while focused. The empty first
+ * span stays because callers hid the old dot with `[&>span:first-child]:hidden`;
+ * without it that selector would hide their own first span instead.
  */
 const DropdownMenuRadioItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
@@ -178,7 +188,7 @@ const DropdownMenuRadioItem = React.forwardRef<
     ref={ref}
     className={cn(
       rowClass,
-      "data-[state=checked]:bg-border",
+      "focus:bg-sky-blue/10 data-[state=checked]:bg-border",
       menuRowType(className),
       className,
     )}

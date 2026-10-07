@@ -10,11 +10,21 @@
  * from an icon to its text, Paragraph 2 (12/14, 12/16, 14/18). One filled row,
  * Green Coal 100. No check or dot column; the text starts 8 from the row edge.
  *
+ * Which row is filled (Casey 2026-10-06 Q10): in an action menu (Item,
+ * SubTrigger) the row under the pointer or the keyboard, as the frames draw
+ * it; in a value menu (SelectItem, RadioItem, CheckboxItem) only the current
+ * value, and a hovered or focused row that is not it takes a Sky Blue/10 wash,
+ * so one row reads as chosen.
+ *
  * Everything is read off the rendered DOM, so a class has to reach the element
  * to count.
  */
 import { describe, it, expect, vi, beforeAll } from "vitest";
-import { render, screen, fireEvent, waitFor, within, cleanup } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, within, cleanup, act } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import postcss from "postcss";
+import tailwindcss from "tailwindcss";
+import skaiPreset from "../lib/tailwind-preset";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -85,16 +95,83 @@ function expectFramesPanel(cls: string[]) {
   for (const old of ["rounded-md", "shadow-md", "shadow-lg"]) expect(cls).not.toContain(old);
 }
 
-function expectFramesRow(cls: string[]) {
+/** The one focus fill a row may carry: the frames' Green Coal 100, or Q10's wash. */
+const FOCUS_FILL = { action: "focus:bg-border", value: "focus:bg-sky-blue/10" } as const;
+
+function expectFramesRow(cls: string[], kind: keyof typeof FOCUS_FILL) {
   expect(cls).toContain("rounded");
   expect(cls).toEqual(expect.arrayContaining(["px-2", "py-1.5", "shrink-0"]));
   expect(cls).not.toContain("rounded-sm");
   expect(cls).not.toContain("pl-8");
-  // Green Coal 100 on focus; never the Sky Blue wash or the app's Alien Green accent.
-  expect(cls).toContain("focus:bg-border");
-  expect(cls.filter((c) => /^focus:bg-/.test(c))).toEqual(["focus:bg-border"]);
+  // Exactly one focus fill, and never a literal Sky Blue or the app's Alien Green accent.
+  expect(cls.filter((c) => /^focus:bg-/.test(c))).toEqual([FOCUS_FILL[kind]]);
   expect(cls.join(" ")).not.toMatch(/56C7F3|bg-accent/);
 }
+
+const BACKSLASH = String.fromCharCode(92);
+
+interface BackgroundRule {
+  utility: string;
+  qualifier: string;
+  specificity: number;
+  order: number;
+  value: string;
+}
+
+/** Every background-color rule Tailwind emits, through this preset, for the classes on the page. */
+async function backgroundRules(): Promise<BackgroundRule[]> {
+  const config = {
+    presets: [skaiPreset],
+    // The class attributes themselves: outerHTML would escape the `&` in an
+    // arbitrary variant.
+    content: [{ raw: [...document.querySelectorAll("[class]")].map((el) => el.getAttribute("class")).join(" "), extension: "txt" }],
+    corePlugins: { preflight: false },
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { css } = await postcss([tailwindcss(config as any)]).process("@tailwind utilities;", { from: undefined });
+  const out: BackgroundRule[] = [];
+  postcss.parse(css).walkRules((rule) => {
+    if (rule.parent?.type !== "root") return;
+    rule.walkDecls("background-color", (decl) => {
+      for (const selector of rule.selectors) {
+        if (!selector.startsWith(".")) continue;
+        // Read the escaped class name up to its first unescaped `:` or `[`.
+        let utility = "";
+        let i = 1;
+        for (; i < selector.length; i++) {
+          const ch = selector[i];
+          if (ch === BACKSLASH) utility += selector[++i];
+          else if (ch === ":" || ch === "[" || ch === " " || ch === ">" || ch === ".") break;
+          else utility += ch;
+        }
+        const qualifier = selector.slice(i);
+        if (/[\s>+~]|::/.test(qualifier)) continue;
+        const specificity = 1 + (qualifier.match(/:|\[/g)?.length ?? 0);
+        out.push({ utility, qualifier, specificity, order: out.length, value: decl.value });
+      }
+    });
+  });
+  return out;
+}
+
+/**
+ * The background the cascade gives `row` now: of the rules whose class is on
+ * the row and whose state holds (`:focus` is the document's focused element,
+ * an attribute is read off the row), the most specific, then the last.
+ */
+function backgroundOf(row: Element, rules: BackgroundRule[]): string | undefined {
+  const holds = (q: string) =>
+    q === "" ||
+    (q === ":focus" ? document.activeElement === row : !q.includes(":") && row.matches(`*${q}`));
+  const hits = rules
+    .filter((r) => row.classList.contains(r.utility) && holds(r.qualifier))
+    .sort((a, b) => a.specificity - b.specificity || a.order - b.order);
+  return hits.at(-1)?.value;
+}
+
+/** The two values Q10 asks for, as this preset compiles them. */
+const WASH = "rgb(86 199 243 / 0.1)";
+const FILL = "hsl(var(--border))";
 
 function openDropdown(children: React.ReactNode, contentClass?: string) {
   render(
@@ -134,7 +211,7 @@ describe("DropdownMenu panel", () => {
     expectFramesPanel(panel);
     expect(panel).toEqual(expect.arrayContaining(["flex", "flex-col", "gap-2", "p-2"]));
     const trigger = members(screen.getByTestId("sub-trigger"));
-    expectFramesRow(trigger);
+    expectFramesRow(trigger, "action");
     expectFramesRowType(trigger);
     expect(trigger).toContain("data-[state=open]:bg-border");
   });
@@ -157,7 +234,7 @@ describe("DropdownMenu rows", () => {
       </DropdownMenuItem>,
     );
     const cls = members(screen.getByTestId("row"));
-    expectFramesRow(cls);
+    expectFramesRow(cls, "action");
     expectFramesRowType(cls);
     // The gap is the 8; an icon's own mr-2 is cancelled so it is not 16.
     expect(cls).toEqual(expect.arrayContaining(["gap-2", "[&>svg]:mr-0", "[&>svg]:shrink-0"]));
@@ -244,11 +321,45 @@ describe("DropdownMenu rows", () => {
     expect(current).toHaveAttribute("data-state", "checked");
     for (const r of rows) {
       const cls = members(r);
-      expectFramesRow(cls);
+      expectFramesRow(cls, "value");
       expectFramesRowType(cls);
       expect(cls).toContain("data-[state=checked]:bg-border");
       expect(r.querySelector("svg")).toBeNull();
     }
+  });
+
+  it("a value menu washes the focused row that is not the current value, so one row reads as chosen (Q10)", async () => {
+    openDropdown(
+      <DropdownMenuRadioGroup value="30d">
+        <DropdownMenuRadioItem value="all">All time</DropdownMenuRadioItem>
+        <DropdownMenuRadioItem value="30d">1 month</DropdownMenuRadioItem>
+      </DropdownMenuRadioGroup>,
+    );
+    const other = screen.getByRole("menuitemradio", { name: "All time" });
+    const current = screen.getByRole("menuitemradio", { name: "1 month" });
+    act(() => other.focus());
+    expect(document.activeElement).toBe(other);
+    const rules = await backgroundRules();
+    expect(backgroundOf(other, rules)).toBe(WASH);
+    expect(backgroundOf(current, rules)).toBe(FILL);
+    // And the current value stays filled while it has focus itself.
+    act(() => current.focus());
+    expect(backgroundOf(current, rules)).toBe(FILL);
+    expect(backgroundOf(other, rules)).toBeUndefined();
+  });
+
+  it("an action menu still fills the focused row the frames' Green Coal 100", async () => {
+    openDropdown(
+      <>
+        <DropdownMenuItem>Share</DropdownMenuItem>
+        <DropdownMenuItem>Follow</DropdownMenuItem>
+      </>,
+    );
+    const share = screen.getByRole("menuitem", { name: "Share" });
+    act(() => share.focus());
+    const rules = await backgroundRules();
+    expect(backgroundOf(share, rules)).toBe(FILL);
+    expect(backgroundOf(screen.getByRole("menuitem", { name: "Follow" }), rules)).toBeUndefined();
   });
 
   it("keeps an empty first span so a caller's [&>span:first-child]:hidden still misses the label", () => {
@@ -289,7 +400,8 @@ describe("DropdownMenu rows", () => {
     expect(box.querySelector("svg")).not.toBeNull();
     const cls = members(box);
     expect(cls).toContain("pl-8");
-    expect(cls).toContain("focus:bg-border");
+    // A value row: focus takes the wash, and the check, not a fill, marks it (Q10).
+    expect(cls.filter((c) => /^focus:bg-/.test(c))).toEqual([FOCUS_FILL.value]);
     expectFramesRowType(cls);
   });
 });
@@ -359,7 +471,7 @@ describe("Select rows", () => {
     expect(options).toHaveLength(3);
     for (const o of options) {
       const cls = members(o);
-      expectFramesRow(cls);
+      expectFramesRow(cls, "value");
       expectFramesRowType(cls);
       expect(o.querySelector("svg")).toBeNull();
     }
@@ -372,6 +484,23 @@ describe("Select rows", () => {
     expect(current).toHaveAttribute("aria-selected", "true");
     expect(members(current)).toContain("data-[state=checked]:bg-border");
     expect(current.querySelector("svg")).toBeNull();
+  });
+
+  it("hovering a row that is not the current value washes it, and only the current value stays filled (Q10)", async () => {
+    openSelect();
+    const current = await screen.findByRole("option", { name: "Voted" });
+    const other = screen.getByRole("option", { name: "All gauges" });
+    // Radix moves focus to the row under the pointer, as the keyboard does.
+    await userEvent.setup().hover(other);
+    expect(document.activeElement).toBe(other);
+    const rules = await backgroundRules();
+    expect(backgroundOf(other, rules)).toBe(WASH);
+    expect(backgroundOf(current, rules)).toBe(FILL);
+    expect(WASH).not.toBe(FILL);
+    // The current value keeps its fill while it has focus itself.
+    act(() => current.focus());
+    expect(backgroundOf(current, rules)).toBe(FILL);
+    expect(backgroundOf(other, rules)).toBeUndefined();
   });
 
   it("keeps an empty first span ahead of the label", async () => {

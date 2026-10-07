@@ -10,7 +10,9 @@
  * The dropdown frames' rows (wave 76 lane Y5) fill a focused row with
  * `bg-border` and write on it in `text-popover-foreground`, two semantic
  * tokens that move together: white ink on Green Coal 100 in the dark theme,
- * the dark ink on the pale border grey in the light one. That holds on every
+ * the dark ink on the pale border grey in the light one. A value row that has
+ * focus takes a 10% Sky Blue wash instead (Q10), which the popover's own ink
+ * reads on in either theme. That holds on every
  * surface a caller gives the menu, a card or Green Coal included, because the
  * fill under the row comes from the same theme as its ink. So no white focus
  * ink may reach a row in the light theme. The rule is read off the compiled
@@ -116,14 +118,27 @@ afterEach(() => {
   document.documentElement.className = "";
 });
 
+/**
+ * The focus fill each row carries. The action rows (Item, SubTrigger) fill
+ * Green Coal 100 as the frames draw them; the value rows (Checkbox, Radio)
+ * take the Sky Blue/10 wash, so only the current value reads as chosen
+ * (Casey 2026-10-06 Q10). Either way the ink is the popover's.
+ */
+const FOCUS_FILL: Record<string, string> = {
+  Item: "focus:bg-border",
+  Checkbox: "focus:bg-sky-blue/10",
+  Radio: "focus:bg-sky-blue/10",
+  Sub: "focus:bg-border",
+};
+
 describe("dropdown rows under focus in the light theme (773f8a9d)", () => {
-  /** A focused row's ink is the popover's, on the border fill, and never white. */
+  /** A focused row's ink is the popover's, on its focus fill, and never white. */
   function expectThemedFocus(name: string, rules: ColourRule[]) {
     const row = rowOf(name);
     const inks = focusInks(row, rules);
     expect(inks.some((v) => v.includes("--popover-foreground")), name).toBe(true);
     expect(inks.filter((v) => /255 255 255|#fff\b|white/i.test(v)), name).toEqual([]);
-    expect((row.getAttribute("class") ?? "").split(/\s+/), name).toContain("focus:bg-border");
+    expect((row.getAttribute("class") ?? "").split(/\s+/), name).toContain(FOCUS_FILL[name]);
   }
 
   it("a menu on the popover surface gives a focused row the popover ink on the border fill", async () => {

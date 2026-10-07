@@ -17,6 +17,11 @@
  *
  * Radix focuses the selected item when the panel opens, so the highlight lands
  * on the current value first and then follows the pointer.
+ *
+ * Only the current value is filled (Casey 2026-10-06 Q10). A hovered or
+ * keyboard-focused row that is not it takes the lighter Sky Blue/10 wash, so
+ * one row reads as chosen. The checked fill is emitted after the focus wash,
+ * so the current value keeps its fill while it has focus too.
  */
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
@@ -160,7 +165,7 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full shrink-0 cursor-default select-none items-center rounded px-2 py-1.5 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-border focus:text-popover-foreground data-[state=checked]:bg-border",
+      "relative flex w-full shrink-0 cursor-default select-none items-center rounded px-2 py-1.5 outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-sky-blue/10 focus:text-popover-foreground data-[state=checked]:bg-border",
       menuRowType(className),
       className,
     )}
