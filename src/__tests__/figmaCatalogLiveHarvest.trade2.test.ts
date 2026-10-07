@@ -23,6 +23,12 @@ import { fileURLToPath } from "node:url";
  * then `page.children.length`, and `setCurrentPageAsync` then a unique-id count
  * over `figma.currentPage.children`. The ten ids below are the top-level
  * children the 2026-08-26 snapshot did not hold.
+ *
+ * 420 since the 2026-09-18 harvest of the five changed Web App 2 pages
+ * (d0abbca), which added three top-level children: 15402:181831 "Right menu -
+ * Socials" (FRAME 442x884), 15382:178172 "To fix" (ELLIPSE 38x38) and
+ * 15411:182436 "Server regions" (FRAME 220x234). The 2026-10-04 page-hash pass
+ * (af5728e) found the page unchanged and stamped it fresh at 420.
  */
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -31,8 +37,8 @@ const FILE_KEY = "mhF3BkzlTaGiLzJ7kvpmVc";
 const PAGE_ID = "13006:134300";
 const TSV = path.join(LIVE, `${FILE_KEY}__${PAGE_ID.replace(":", "-")}.tsv`);
 
-/** Live children measured on the page 2026-09-07, both routes agreeing. */
-const LIVE_CHILD_COUNT = 417;
+/** Live children: 417 measured 2026-09-07, 420 harvested 2026-09-18 and re-hashed 2026-10-04. */
+const LIVE_CHILD_COUNT = 420;
 
 /** `coverage.mjs` keys on the hyphen form; the TSV writes the colon form. */
 const normId = (s: string) => s.trim().replace(":", "-");
