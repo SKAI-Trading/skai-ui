@@ -6,6 +6,7 @@ import {
   SKAI_BOLT_PATH_1,
   SKAI_BOLT_PATH_2,
 } from "../branding/skai-bolt-paths";
+import { useResolvedTheme } from "../utility/coal-dark";
 
 // =============================================================================
 // SKAI LOADER
@@ -13,6 +14,10 @@ import {
 // Branded loading screen matching Figma "load effect" (nodes 2713:4119 desktop,
 // 6393:53747 mobile): the solid Sky Blue Skai bolt pulses and shimmers over the
 // dark green-coal base with a soft green glow rising from the bottom.
+//
+// In the main app's light theme the base follows the theme (its bg-[#001615]
+// reads --coal-base) and the glow is left out, since on white it is a mint haze
+// rather than a shine. Under a board's CoalDarkScope it stays the dark loader.
 //
 // Animation lives in a component-scoped <style> block (precedent:
 // MinimalPageSkeleton) so it never depends on Tailwind content-scanning, which
@@ -94,6 +99,7 @@ const SkaiLoader = React.forwardRef<HTMLDivElement, SkaiLoaderProps>(
     { className, fullScreen, background, message, size = "lg", label = "Loading", ...props },
     ref,
   ) => {
+    const theme = useResolvedTheme();
     return (
       <div
         ref={ref}
@@ -149,7 +155,7 @@ const SkaiLoader = React.forwardRef<HTMLDivElement, SkaiLoaderProps>(
           }
         `}</style>
 
-        {background !== "transparent" && (
+        {background !== "transparent" && theme === "dark" && (
           <div
             aria-hidden="true"
             className="skai-loader__shine pointer-events-none absolute left-1/2 top-[70%] h-[180vw] max-h-[1800px] w-[180vw] max-w-[1800px] -translate-x-1/2 -translate-y-1/2 rounded-full"

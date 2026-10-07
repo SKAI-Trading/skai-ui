@@ -3,6 +3,7 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 
 import { cn } from "../../lib/utils";
 import { buttonVariants } from "../core/button";
+import { useCoalDarkClass } from "../utility/coal-dark";
 
 const AlertDialog = AlertDialogPrimitive.Root;
 
@@ -49,24 +50,28 @@ interface AlertDialogContentProps
 const AlertDialogContent = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Content>,
   AlertDialogContentProps
->(({ className, overlayClassName, ...props }, ref) => (
-  <AlertDialogPortal>
-    <AlertDialogOverlay className={overlayClassName} />
-    <AlertDialogPrimitive.Content
-      ref={ref}
-      className={cn(
-        // The radius is unprefixed so it applies at every width. Stated only at
-        // `sm:` it would leave every phone on the browser default of 0, and a
-        // caller's own unprefixed radius could not evict an `sm:` class anyway —
-        // tailwind-merge treats the two as separate variant groups, so the `sm:`
-        // one survives and wins by cascade above 640.
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-lg",
-        className,
-      )}
-      {...props}
-    />
-  </AlertDialogPortal>
-));
+>(({ className, overlayClassName, ...props }, ref) => {
+  const coalDark = useCoalDarkClass();
+  return (
+    <AlertDialogPortal>
+      <AlertDialogOverlay className={overlayClassName} />
+      <AlertDialogPrimitive.Content
+        ref={ref}
+        className={cn(
+          // The radius is unprefixed so it applies at every width. Stated only at
+          // `sm:` it would leave every phone on the browser default of 0, and a
+          // caller's own unprefixed radius could not evict an `sm:` class anyway —
+          // tailwind-merge treats the two as separate variant groups, so the `sm:`
+          // one survives and wins by cascade above 640.
+          "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-lg",
+          coalDark,
+          className,
+        )}
+        {...props}
+      />
+    </AlertDialogPortal>
+  );
+});
 AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName;
 
 const AlertDialogHeader = ({

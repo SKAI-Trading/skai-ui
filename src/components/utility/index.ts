@@ -18,3 +18,6 @@ export * from "./terminal-chat";
 
 // Permission Utilities
 export * from "./permission-gate";
+
+// Dark surfaces inside a light app (casino boards and their portals)
+export * from "./coal-dark";
