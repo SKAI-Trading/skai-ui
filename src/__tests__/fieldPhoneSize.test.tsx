@@ -15,7 +15,7 @@
  * model throws instead of guessing.
  */
 import * as React from "react";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import postcss from "postcss";
 import tailwindcss from "tailwindcss";
@@ -29,6 +29,7 @@ import { SearchInput } from "../components/forms/search-input";
 import { DatePicker } from "../components/forms/date-picker";
 import { TagInput } from "../components/forms/tag-input";
 import { Command, CommandInput } from "../components/overlays/command";
+import { AuthModal } from "../components/overlays/auth-modal";
 import { AmountInput } from "../components/trading/amount-input";
 
 afterEach(cleanup);
@@ -167,6 +168,24 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
     // The Dice bet inputs set 14 with 12 below md themselves.
     render(<Input data-testid="field" className="text-[14px] max-md:text-[12px]" />);
     expect(await sizes(field())).toEqual([12, 12, 14, 14]);
+  });
+
+  it("draws the sign-in email and referral fields at 16 below md, 14 at md and Paragraph 1's 16 from lg", async () => {
+    // AuthModal's fields are raw inputs in Paragraph 1 (14 / 14 / 16); the
+    // app's sign-in flow mounts it.
+    render(
+      <AuthModal
+        mode="signup"
+        isOpen
+        onClose={() => undefined}
+        onEmailSubmit={() => undefined}
+        referralCode=""
+        onReferralCodeChange={() => undefined}
+      />,
+    );
+    expect(await sizes(screen.getByPlaceholderText("example@provider.com"))).toEqual([16, 16, 14, 16]);
+    fireEvent.click(screen.getByRole("button", { name: /referral code/i }));
+    expect(await sizes(screen.getByPlaceholderText("Enter referral code"))).toEqual([16, 16, 14, 16]);
   });
 
   it("keeps AmountInput at the 18 / 14 it has always drawn, with no frame to follow", async () => {

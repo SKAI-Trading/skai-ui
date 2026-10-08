@@ -57,6 +57,7 @@
 
 import * as React from "react";
 import { cn } from "../../lib/utils";
+import { fieldTextSize } from "../core/input";
 import { AppleIcon, GoogleBrandIcon } from "./auth-provider-icons";
 import {
   AUTH_WALLET_ICONS,
@@ -179,6 +180,12 @@ const FIELD_BOX =
 /** The bare control inside a field box: no chrome of its own. */
 const FIELD_INPUT =
   "min-w-0 flex-1 bg-transparent text-white placeholder:text-[#95a09f] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50";
+
+/**
+ * What is typed into a field: Paragraph 1, but 16 below md, where iOS Safari
+ * zooms the page into a focused field under 16px (Casey 2026-10-08 Q29).
+ */
+const FIELD_TEXT = cn(PARAGRAPH_1, fieldTextSize(PARAGRAPH_1));
 
 /** Label rows sit on the field's own horizontal inset, not the modal's. */
 const FIELD_LABEL_ROW = "flex w-full items-center px-4 lg:px-5";
@@ -456,7 +463,7 @@ export function AuthModal({
                   aria-invalid={emailError ? true : undefined}
                   aria-describedby={emailError ? "skai-auth-email-error" : undefined}
                   placeholder="example@provider.com"
-                  className={cn(FIELD_INPUT, PARAGRAPH_1)}
+                  className={cn(FIELD_INPUT, FIELD_TEXT)}
                 />
                 {/* The key that sends the address, not a second control, so it
                     stays out of the tab order and the form's own submit does
@@ -531,7 +538,7 @@ export function AuthModal({
                       onChange={(e) => onReferralCodeChange?.(e.target.value)}
                       disabled={blocked}
                       placeholder="Enter referral code"
-                      className={cn(FIELD_INPUT, PARAGRAPH_1)}
+                      className={cn(FIELD_INPUT, FIELD_TEXT)}
                     />
                   </div>
                 </div>
