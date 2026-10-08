@@ -1153,11 +1153,12 @@ const PredictionMarketCard = React.forwardRef<
           </p>
         )}
 
-        {/* Zero balance. Sharing on X is paid by a server writer (x-share).
-            Depositing sUSD is not offered as a way to earn: no writer pays
-            points per deposit, and the one deposit credit there is (the 500
-            onboarding points on a first deposit, Casey 2026-09-22) waits on a
-            bridge that is not deployed. */}
+        {/* Zero balance. Sharing on X is paid by x-share. A deposit is not
+            offered as a way to earn because nothing pays for one today:
+            verify-wallet-deposit has no caller, relay-bridge-deposit refuses
+            every claim while BRIDGE_VAULT is null, and the first-deposit
+            reward Casey ruled on 2026-10-08 is not built yet. Name the
+            deposit here once one of them pays. */}
         {canPlay && skaiPoints <= 0 && phase === "idle" && (
           <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] leading-[16px] text-center mt-[8px]">
             You need SKAI Points to predict. Earn points by sharing.

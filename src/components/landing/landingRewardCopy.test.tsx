@@ -14,6 +14,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { ReferralCard } from "./referral-card";
 import { PredictionMarketCard } from "./prediction-market-card";
+import { PortfolioCard } from "./portfolio-card";
 import { content } from "../../lib/content";
 
 const RULE = /for each friend who makes their first deposit or trade/;
@@ -56,5 +57,23 @@ describe("landing reward copy", () => {
     const line = screen.getByText(/You need SKAI Points to predict/);
     expect(line.textContent).toMatch(/Earn points by sharing\.$/);
     expect(line.textContent).not.toMatch(/deposit/i);
+  });
+
+  // The landing's Deposit card (DashboardPage) promised "1 SKAI Point for
+  // every sUSD on your first deposit" and "Deposit sUSD on Base to earn 1 SKAI
+  // Point per sUSD". Nothing pays a deposit today, and hasClaimedDeposit is
+  // never true on the landing, so every user on Base saw both.
+  it("the deposit card promises no points for a deposit, on either chain", () => {
+    for (const hasClaimedDeposit of [false, true]) {
+      const { container, unmount } = render(
+        <PortfolioCard walletAddress="0x1111111111111111111111111111111111111111" hasClaimedDeposit={hasClaimedDeposit} />,
+      );
+      expect(container.textContent).not.toMatch(/SKAI Point|1:1|one-time reward/i);
+      screen.getByText("Ethereum").click();
+      expect(container.textContent).not.toMatch(/SKAI Point/i);
+      // The card still does its job: the address and what it accepts.
+      expect(container.textContent).toContain("Accepted: ETH & sUSD");
+      unmount();
+    }
   });
 });
