@@ -254,7 +254,7 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     // card's colour, so an Off toggle read as a white dot with no pill.
     render(<Switch aria-label="t" size="stepped" variant="toggle" />);
     expect(classes()).toContain("border-green-coal-300");
-    expect(classes()).toContain("data-[state=unchecked]:bg-ash");
+    expect(classes()).toContain("data-[state=unchecked]:bg-muted-foreground");
     expect(classes()).not.toContain("data-[state=unchecked]:bg-[#001615]");
     expect(classes()).not.toContain("border-transparent");
     // On stays the Sky Blue the variant pins.
@@ -269,7 +269,7 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     // node's ring-and-knob box, so the smaller two keep their transparent rim.
     for (const size of ["compact", "default"] as const) {
       const { unmount } = render(<Switch aria-label={size} size={size} variant="toggle" />);
-      expect(classes()).toContain("data-[state=unchecked]:bg-ash");
+      expect(classes()).toContain("data-[state=unchecked]:bg-muted-foreground");
       expect(classes()).not.toContain("data-[state=unchecked]:bg-[#001615]");
       expect(classes()).toContain("border-transparent");
       expect(classes()).not.toContain("border-green-coal-300");
@@ -285,17 +285,20 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     // `sky`'s only callers are the Predict futures settings panels, whose
     // frames draw the same `input/toggle`. `primary` is not that component.
     const { unmount } = render(<Switch aria-label="s" variant="sky" />);
-    expect(classes()).toContain("data-[state=unchecked]:bg-ash");
+    expect(classes()).toContain("data-[state=unchecked]:bg-muted-foreground");
     expect(classes()).not.toContain("data-[state=unchecked]:bg-input");
     expect(classes()).toContain("data-[state=checked]:bg-[#56C7F3]");
     unmount();
     render(<Switch aria-label="p" />);
     expect(classes()).toContain("data-[state=unchecked]:bg-input");
-    expect(classes()).not.toContain("data-[state=unchecked]:bg-ash");
+    expect(classes()).not.toContain("data-[state=unchecked]:bg-muted-foreground");
   });
 
-  it("resolves the Off track to the frame's #95A09F through the preset", async () => {
+  it("paints the Off track from the theme's --muted-foreground, never a fixed colour", async () => {
     // Compiled, so a renamed or repointed token cannot pass on its class name.
+    // `bg-ash` compiled to the fixed rgb(149 160 159) in both themes; the
+    // variable is Ash (#95A09F) in the app's dark theme and its light grey in
+    // the light one (resolved against the app's index.css in its own tests).
     for (const [variant, size] of [
       ["toggle", "compact"],
       ["toggle", "default"],
@@ -304,7 +307,7 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     ] as const) {
       const { unmount } = render(<Switch aria-label="t" variant={variant} size={size} />);
       expect(trackOf()).toHaveAttribute("data-state", "unchecked");
-      expect(await restingTrack(trackOf()), `${variant}/${size}`).toEqual(["149 160 159"]);
+      expect(await restingTrack(trackOf()), `${variant}/${size}`).toEqual(["hsl(var(--muted-foreground))"]);
       unmount();
     }
   });

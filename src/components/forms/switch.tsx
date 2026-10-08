@@ -20,7 +20,7 @@ import { cn } from "../../lib/utils";
  * toggle in the app, the wallet and command in one commit. Whether the app's
  * `--primary` should be green at all is a separate question, and a bigger one.
  *
- * At rest, `toggle` and `sky` sit on Ash, the `ash` token (#95A09F). That is
+ * At rest, `toggle` and `sky` sit on Ash (#95A09F). That is
  * the Off track of the web-app boards' `input/toggle` (main component
  * 3156:18274), read on 2026-10-07 off the twelve instances of the 375
  * Preferences board 11881:94366 (Off: 11884:94612, :94613, :94614, :94615)
@@ -31,16 +31,22 @@ import { cn } from "../../lib/utils";
  * (Casey 2026-10-05 #70). `sky`'s only callers are the two Predict futures
  * panels, whose frames draw the same component.
  *
- * `bg-ash` goes through the preset's colour map, so it is the same Ash in
- * both themes; only `text-ash` follows `--coal-ink-muted`. `primary` keeps
- * `bg-input`: it is not the boards' component and it has ~230 callers.
+ * The track reads Ash through `--muted-foreground`, the token the app's theme
+ * gives Ash: `174.5 5.5% 60.6%` in the dark theme, which is #95A09F exactly,
+ * and `220 9% 38%` in the light one, the same grey the light theme gives Ash
+ * text inside `coal-themed`. `bg-ash` was the fixed #95A09F in both themes
+ * (the preset routes only `text-ash` through a variable), about 2.7:1 on a
+ * white card, under the 3:1 a control needs; the light grey is 6.5:1. `primary` keeps
+ * `bg-input`: it is not the boards' component, and it is most of the 179
+ * production call sites across the app, skai-gaming, the wallet, command and
+ * launch (16 are `toggle` or `sky`; counted 2026-10-08).
  */
 const CHECKED_TRACK = {
   primary: "data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
-  sky: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-ash",
+  sky: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-muted-foreground",
   /* The web-app boards' own `input/toggle`: Sky Blue 300 checked, Ash at
      rest. The checked colour is pinned for the reason `sky` gives. */
-  toggle: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-ash",
+  toggle: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-muted-foreground",
 } as const;
 
 export type SwitchVariant = keyof typeof CHECKED_TRACK;
@@ -212,9 +218,10 @@ const Switch = React.forwardRef<
         theme-invariant the way the frame is — in the light theme it moves the
         knob #FFFFEE -> #FFFFFF, which is imperceptible.
 
-        The UNCHECKED track is Figma's #95A09F, this package's `ash` token, on
-        the `toggle` and `sky` variants (see CHECKED_TRACK). `primary` keeps
-        `bg-input` and its ~230 callers keep their look.
+        The UNCHECKED track is Figma's #95A09F, through the theme's
+        `--muted-foreground`, on the `toggle` and `sky` variants (see
+        CHECKED_TRACK). `primary` keeps `bg-input` and its callers keep their
+        look.
 
         NOT changed here: the default size. Figma draws 38x21 with a ~19px
         knob; this is 44x24 with a 20px knob (h-6 w-11), ~15% larger, and the
