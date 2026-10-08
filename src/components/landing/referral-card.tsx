@@ -75,7 +75,10 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           {title}
         </h3>
         <p className="font-manrope font-normal text-[#E0E0E0] text-[10px] leading-[20px] md:text-[12px] md:leading-[16px] lg:text-[14px] lg:leading-[18px] mb-6">
-          Earn {referralPoints} SKAI Points for each friend that joins.
+          {/* Not "for each friend that joins": Casey ruled on 2026-09-22 that a
+              sign-up earns nothing, and the referral pays on the friend's first
+              deposit or trade (qualify_referral). */}
+          Earn {referralPoints} SKAI Points for each friend who makes their first deposit or trade.
           {typeof referralCount === "number" && referralCount > 0 && (
             <span className="text-[#2DEDAD]"> You've referred {referralCount} friend{referralCount !== 1 ? "s" : ""}!</span>
           )}

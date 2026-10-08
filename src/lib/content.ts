@@ -345,9 +345,12 @@ export const content = {
             "Skai is one app where you can trade, predict outcomes, and play casino-style games without jumping between platforms. Instead of guessing, you can ask SKAI to show what's happening and recommend what to do next based on risk. Everything works together in a single account",
         },
 
+        // Casey 2026-09-22: a sign-up earns nothing. The referral and the
+        // 500 onboarding points are paid on the first deposit or trade, so
+        // neither line below promises them for joining.
         referral: {
           title: "Invite friends and earn rewards",
-          subtitle: "Earn 100 SKAI Points for each friend that joins.",
+          subtitle: "Earn 100 SKAI Points for each friend who makes their first deposit or trade.",
           linkLabel: "Referral link",
           shareLabel: "Connect to share referral link",
           copyButton: "COPY",
@@ -356,7 +359,7 @@ export const content = {
           instagramCopied: "Link Copied! Paste on Instagram",
           joinDiscord: "Join Skai Community",
           shareText:
-            'Trade. Predict. Play. 📊🎯🎰\n\nJoin the @SkaiTrade waitlist to claim 500 SKAI Points: https://skai.trade/ref/{{username}}',
+            'Trade. Predict. Play. 📊🎯🎰\n\nJoin the @SkaiTrade waitlist. Your first deposit or trade earns 500 SKAI Points: https://skai.trade/ref/{{username}}',
         },
 
         imageFailed: "Image failed to load",
@@ -1069,7 +1072,7 @@ export const content = {
 
     referral: {
       title: "Invite Friends",
-      description: "Earn 100 SKAI Points for each friend that joins",
+      description: "Earn 100 SKAI Points for each friend who makes their first deposit or trade",
       linkLabel: "Referral Link",
       copyLink: "Copy Link",
       linkCopied: "Referral link copied to clipboard",
