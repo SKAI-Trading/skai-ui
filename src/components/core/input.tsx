@@ -40,37 +40,58 @@ function textClassPx(sizeClass: string): number | undefined {
 }
 
 /**
+ * The last size class `className` names under `variant` ("" for none, or
+ * "sm:"), without the variant and with its `!` kept; the last one is the one
+ * that wins.
+ */
+function ownSize(className: string | undefined, variant: "" | "sm:"): string | undefined {
+  return (className ?? "")
+    .split(/\s+/)
+    .filter((c) => c.startsWith(variant))
+    .map((c) => c.slice(variant.length))
+    .filter((c) => {
+      const bare = c.replace(/^!/, "");
+      return bare !== "" && cn("text-base", bare) === bare;
+    })
+    .pop();
+}
+
+/** Whether a size class is under 16px, or cannot be read here (a CSS variable, an `em`). */
+function under16(sizeClass: string): boolean {
+  const px = textClassPx(sizeClass.replace(/^!/, ""));
+  return px === undefined || px < 16;
+}
+
+/**
  * The text size classes a field adds under its caller's, so that it is never
  * under 16px below md, where iOS Safari zooms the page into a focused field
  * that is, and draws the frames' 14px from md up (Casey 2026-10-08 Q29, which
  * takes back the phone half of 2026-10-05 #10; zoom is never locked).
  *
  * - The caller names no size: `text-base md:text-sm`.
- * - The caller names a size under 16, or one that cannot be read here (a
- *   CSS variable, an `em`): `max-md:text-base`, so its size holds
+ * - The caller names a size under 16: `max-md:text-base`, so its size holds
  *   from md up (#105) and the phone gets 16. When the caller's size is
- *   marked important (`!text-xs`), so is the 16. A caller that sets its own
- *   `max-md:` size replaces this one, and is choosing the zoom.
+ *   marked important (`!text-xs`), so is the 16.
+ * - The caller names an `sm:` size under 16: `sm:max-md:text-base` too.
+ *   Tailwind writes `max-md:` before `sm:`, so without it the caller's `sm:`
+ *   size would win from 640 to 767.
  * - The caller names 16 or more: nothing; its size holds at every width.
  *
- * Input, Textarea and PasswordInput apply it, and so does every field built
- * on them. A field on a raw element takes the same rule with
+ * A caller that sets its own `max-md:` size replaces the 16, and is choosing
+ * the zoom. Input, Textarea and PasswordInput apply this, and so does every
+ * field built on them. A field on a raw element takes the same rule with
  * `cn(fieldTextSize(className), className)`.
  */
 export function fieldTextSize(className?: string): string | undefined {
-  // The caller's own bare size class, the last one when it names several.
-  const own = (className ?? "")
-    .split(/\s+/)
-    .filter((c) => {
-      const bare = c.replace(/^!/, "");
-      return bare !== "" && cn("text-base", bare) === bare;
-    })
-    .pop();
-  if (own === undefined) return "text-base md:text-sm";
-  const important = own.startsWith("!");
-  const px = textClassPx(important ? own.slice(1) : own);
-  if (px !== undefined && px >= 16) return undefined;
-  return important ? "max-md:!text-base" : "max-md:text-base";
+  const own = ownSize(className, "");
+  const ownSm = ownSize(className, "sm:");
+  const classes: string[] = [];
+  if (own === undefined) classes.push("text-base md:text-sm");
+  else if (under16(own)) classes.push(own.startsWith("!") ? "max-md:!text-base" : "max-md:text-base");
+  if (ownSm !== undefined && under16(ownSm)) {
+    classes.push(ownSm.startsWith("!") ? "sm:max-md:!text-base" : "sm:max-md:text-base");
+  }
+  return classes.length > 0 ? classes.join(" ") : undefined;
 }
 
 /**

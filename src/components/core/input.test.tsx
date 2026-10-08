@@ -173,4 +173,11 @@ describe("fieldTextSize", () => {
     expect(fieldTextSize("!text-number-4-mobile md:!text-number-4-tablet")).toBe("max-md:!text-base");
     expect(fieldTextSize("!text-lg")).toBeUndefined();
   });
+
+  it("holds 16 from 640 to 767 under a caller's sm: size below 16", () => {
+    // The perps TP / SL fields step 12 -> 14 at sm.
+    expect(fieldTextSize("text-[12px] sm:text-[14px] md:text-[14px]")).toBe("max-md:text-base sm:max-md:text-base");
+    expect(fieldTextSize("sm:text-xs")).toBe("text-base md:text-sm sm:max-md:text-base");
+    expect(fieldTextSize("text-lg sm:text-xl")).toBeUndefined();
+  });
 });

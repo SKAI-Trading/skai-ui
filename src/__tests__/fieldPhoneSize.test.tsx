@@ -40,7 +40,8 @@ afterEach(cleanup);
 /** 375 and 767 are below md, 768 is md itself, 1440 a desktop. */
 const WIDTHS = [375, 767, 768, 1440] as const;
 
-type SizeRule = { selectors: string[]; px: number; important: boolean; media?: string };
+/** `media` holds every @media around the rule, outermost first; all must apply. */
+type SizeRule = { selectors: string[]; px: number; important: boolean; media: string[] };
 
 function lengthPx(value: string): number {
   const m = /^(\d*\.?\d+)(px|rem)$/.exec(value.trim());
@@ -48,12 +49,13 @@ function lengthPx(value: string): number {
   return Number(m[1]) * (m[2] === "rem" ? 16 : 1);
 }
 
-function mediaApplies(params: string | undefined, width: number): boolean {
-  if (params === undefined) return true;
-  const m = /^(not all and )?\(min-width:\s*(\d+)px\)$/.exec(params.trim());
-  if (!m) throw new Error(`@media ${params} is not modelled`);
-  const atLeast = width >= Number(m[2]);
-  return m[1] ? !atLeast : atLeast;
+function mediaApplies(media: string[], width: number): boolean {
+  return media.every((params) => {
+    const m = /^(not all and )?\(min-width:\s*(\d+)px\)$/.exec(params.trim());
+    if (!m) throw new Error(`@media ${params} is not modelled`);
+    const atLeast = width >= Number(m[2]);
+    return m[1] ? !atLeast : atLeast;
+  });
 }
 
 /** Every class on `el` and its ancestors, compiled through the preset; the font-size rules in source order. */
@@ -70,11 +72,11 @@ async function sizeRules(el: Element): Promise<SizeRule[]> {
   const rules: SizeRule[] = [];
   postcss.parse(css).walkDecls("font-size", (decl) => {
     const rule = decl.parent as postcss.Rule;
-    const outer = rule.parent as postcss.AtRule | postcss.Root;
-    let media: string | undefined;
-    if (outer.type === "atrule") {
-      if (outer.name !== "media" || outer.parent?.type !== "root") throw new Error(`@${outer.name} ${outer.params} is not modelled`);
-      media = outer.params;
+    const media: string[] = [];
+    for (let p = rule.parent; p && p.type !== "root"; p = p.parent) {
+      const at = p as postcss.AtRule;
+      if (at.type !== "atrule" || at.name !== "media") throw new Error(`${at.type} ${at.name ?? ""} around a size is not modelled`);
+      media.unshift(at.params);
     }
     // A pseudo-element rule (placeholder:, file:) sizes a part, not the field's text.
     const selectors = rule.selectors.filter((s) => !s.includes("::"));
@@ -155,6 +157,12 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
     second.unmount();
     render(<SkaiInput data-testid="field" skaiSize="large" />);
     expect(await sizes(field())).toEqual([16, 16, 16, 16]);
+  });
+
+  it("holds 16 up to 767 under a caller's sm: step, which Tailwind writes after max-md:", async () => {
+    // The perps TP / SL fields: 12, 14 from sm, 14 from md.
+    render(<Input data-testid="field" className="text-[12px] leading-[14px] sm:text-[14px] md:text-[14px]" />);
+    expect(await sizes(field())).toEqual([16, 16, 14, 14]);
   });
 
   it("lifts an important caller size under 16 too", async () => {
