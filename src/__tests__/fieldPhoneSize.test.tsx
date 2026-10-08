@@ -14,7 +14,6 @@
  * from the parent when no rule sets it. A selector or media query it does not
  * model throws instead of guessing.
  */
-import * as React from "react";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
