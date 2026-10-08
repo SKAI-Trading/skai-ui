@@ -87,8 +87,8 @@ function under16(sizeClass: string): boolean {
  * locked). A caller's own size holds from md up (#105).
  *
  * - No caller size: FIELD_TEXT_SIZE.unsized.
- * - A caller size under 16: FIELD_TEXT_SIZE.phone, or phoneImportant under an
- *   important one (`!text-xs`).
+ * - A caller size under 16: FIELD_TEXT_SIZE.phone, or phoneImportant when the
+ *   caller marks its size important with a leading `!`.
  * - A caller `sm:` size under 16: smBand (or smBandImportant) as well.
  * - A caller size of 16 or more: nothing.
  *
