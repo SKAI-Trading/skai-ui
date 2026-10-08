@@ -503,6 +503,29 @@ describe("Select rows", () => {
     expect(backgroundOf(other, rules)).toBeUndefined();
   });
 
+  it("lets a row that names its own focus fill keep it, the way a consumer opts out of the wash", async () => {
+    // launch.skai.trade builds on this Select. A row that passes
+    // `focus:bg-border` paints the old shared fill on hover again.
+    render(
+      <Select defaultValue="voted" open>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all" className="focus:bg-border">
+            All gauges
+          </SelectItem>
+          <SelectItem value="voted">Voted</SelectItem>
+        </SelectContent>
+      </Select>,
+    );
+    const other = await screen.findByRole("option", { name: "All gauges" });
+    expect(members(other)).toContain("focus:bg-border");
+    expect(members(other)).not.toContain("focus:bg-sky-blue/10");
+    await userEvent.setup().hover(other);
+    expect(backgroundOf(other, await backgroundRules())).toBe(FILL);
+  });
+
   it("keeps an empty first span ahead of the label", async () => {
     openSelect();
     const o = await screen.findByRole("option", { name: "All gauges" });
