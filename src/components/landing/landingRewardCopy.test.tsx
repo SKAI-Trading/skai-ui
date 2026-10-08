@@ -10,8 +10,10 @@
  * sent a player with no points to "depositing sUSD", which no writer pays
  * points for.
  */
+import { readdirSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { ReferralCard } from "./referral-card";
 import { PredictionMarketCard } from "./prediction-market-card";
 import { PortfolioCard } from "./portfolio-card";
@@ -60,20 +62,33 @@ describe("landing reward copy", () => {
   });
 
   // The landing's Deposit card (DashboardPage) promised "1 SKAI Point for
-  // every sUSD on your first deposit" and "Deposit sUSD on Base to earn 1 SKAI
-  // Point per sUSD". Nothing pays a deposit today, and hasClaimedDeposit is
-  // never true on the landing, so every user on Base saw both.
-  it("the deposit card promises no points for a deposit, on either chain", () => {
+  // every sUSD on your first deposit", which nothing paid. Casey ruled on
+  // 2026-10-08 that the first deposit of $10 or more earns 500 SKAI Points
+  // plus 1 per $1 of it, once, after 24 hours in the wallet. first-trade-watch
+  // reads Ethereum, Arbitrum, Optimism and Polygon; Base waits on a readable
+  // indexer, so the card draws the rule on the Ethereum tab only.
+  it("the deposit card draws the first-deposit rule on Ethereum, nothing on Base, and nothing once claimed", () => {
+    const RULE_LINE =
+      "Your first deposit of $10 or more in ETH, USDC, USDT or WBTC earns 500 SKAI Points plus 1 point per $1 of it, once it has stayed in your wallet for 24 hours.";
     for (const hasClaimedDeposit of [false, true]) {
       const { container, unmount } = render(
         <PortfolioCard walletAddress="0x1111111111111111111111111111111111111111" hasClaimedDeposit={hasClaimedDeposit} />,
       );
       expect(container.textContent).not.toMatch(/SKAI Point|1:1|one-time reward/i);
-      screen.getByText("Ethereum").click();
-      expect(container.textContent).not.toMatch(/SKAI Point/i);
+      act(() => screen.getByText("Ethereum").click());
+      if (hasClaimedDeposit) expect(container.textContent).not.toMatch(/SKAI Point/i);
+      else expect(container.textContent).toContain(RULE_LINE);
       // The card still does its job: the address and what it accepts.
       expect(container.textContent).toContain("Accepted: ETH & sUSD");
       unmount();
+    }
+  });
+
+  it("no landing card promises points on every deposit, or 1 per sUSD without the first-deposit rule", () => {
+    const dir = resolve(__dirname);
+    for (const file of readdirSync(dir).filter((f) => f.endsWith(".tsx") && !f.includes(".test."))) {
+      const text = readFileSync(resolve(dir, file), "utf8").replace(/\s+/g, " ");
+      expect(text, file).not.toMatch(/1 SKAI Point (per|for every) (\$1 )?sUSD|1 SKAI Point per sUSD/);
     }
   });
 });

@@ -47,7 +47,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
           Fund Your Wallet
         </h3>
         <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px] mb-[12px]">
-          Deposit sUSD to earn 1 SKAI Point per sUSD
+          Your first deposit of $10 or more earns 500 SKAI Points plus 1 per $1, once
         </p>
 
         {/* Chain toggle */}
@@ -91,7 +91,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
                 {usdc.label} · {usdc.decimals} decimals
               </span>
               <span className="font-manrope font-normal text-[#2DEDAD] text-[11px] md:text-[12px] leading-[16px]">
-                1 SKAI Point per $1 sUSD
+                First deposit: 500 SKAI Points plus 1 per $1, once
               </span>
             </div>
           </>
@@ -101,7 +101,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
               Loading your wallet address...
             </span>
             <span className="font-manrope font-normal text-[#56C7F3] text-[11px] md:text-[12px] leading-[16px]">
-              {usdc.label} · 1 SKAI Point per $1 sUSD
+              {usdc.label} · first deposit: 500 SKAI Points plus 1 per $1, once
             </span>
           </div>
         )}

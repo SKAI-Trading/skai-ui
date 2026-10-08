@@ -188,7 +188,7 @@ function DepositBubble({
       <p className="text-[13px] leading-[18px] text-[#E0E0E0] mb-[8px]">
         {hasClaimedDeposit
           ? "Deposit sUSD to fund your wallet and start trading with AI."
-          : "Welcome! Deposit sUSD to earn 1 SKAI Point per sUSD and start trading with AI."}
+          : "Welcome! Your first deposit of $10 or more earns 500 SKAI Points plus 1 per $1. Deposit to start trading with AI."}
       </p>
 
       {/* One-time reward badge — only shown if not yet claimed */}
@@ -196,7 +196,7 @@ function DepositBubble({
         <div className="flex items-center gap-[6px] mb-[8px] px-[8px] py-[6px] rounded-md bg-[#0D3D3A]/60 border border-[#2DEDAD]/15">
           <span className="text-[#2DEDAD] font-bold text-[14px]">1:1</span>
           <span className="text-[#8B9E9D] text-[11px] leading-[14px]">
-            1 SKAI Point per sUSD on your first deposit (one-time reward)
+            500 SKAI Points plus 1 per $1 on your first deposit (once, after 24 hours)
           </span>
         </div>
       )}

@@ -72,10 +72,10 @@ const DepositIncentiveCard = React.forwardRef<HTMLDivElement, DepositIncentiveCa
             <span className="font-manrope font-bold text-[#2DEDAD] text-[18px]">1:1</span>
             <div className="flex flex-col gap-[1px]">
               <span className="font-manrope font-medium text-[#E0E0E0] text-[12px] leading-[16px]">
-                1 SKAI Point for every sUSD on your first deposit
+                500 SKAI Points plus 1 per $1 of your first deposit
               </span>
               <span className="font-manrope font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
-                One-time reward &middot; sUSD on Base only
+                Once per account &middot; $10 minimum &middot; paid after 24 hours in your wallet
               </span>
             </div>
           </div>

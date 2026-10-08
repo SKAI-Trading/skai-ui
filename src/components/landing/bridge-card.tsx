@@ -186,7 +186,7 @@ const BridgeCard = React.forwardRef<HTMLDivElement, BridgeCardProps>(
           <div className="flex items-start gap-[8px] bg-[#001615]/40 rounded-lg px-[12px] py-[10px]">
             <SkaiIcon name="info" size="xs" className="text-[#2DEDAD] flex-shrink-0 mt-0.5" />
             <p className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[16px] text-[#95A09F]">
-              Deposit {selectedToken} to start bridging across chains. Earn <span className="text-[#2DEDAD] font-medium">1 SKAI Point per $1 sUSD</span> deposited.
+              Deposit {selectedToken} to start bridging across chains. Your first deposit of $10 or more earns <span className="text-[#2DEDAD] font-medium">500 SKAI Points plus 1 per $1</span>, once.
             </p>
           </div>
         )}
