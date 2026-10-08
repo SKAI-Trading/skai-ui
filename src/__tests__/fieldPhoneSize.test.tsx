@@ -191,6 +191,13 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
     expect(await leadings(field())).toEqual(["14px", "16px", "16px", "16px"]);
   });
 
+  it("keeps the line height a preset size carries under the phone 16", async () => {
+    // The Earn referral link field: Paragraph 1 mobile, 14 on a 16 line.
+    render(<Input data-testid="field" className="h-auto p-0 text-para-1-mobile md:text-para-1-tablet md:leading-[18px]" />);
+    expect(await sizes(field())).toEqual([16, 16, 14, 14]);
+    expect(await leadings(field())).toEqual(["1rem", "1rem", "18px", "18px"]);
+  });
+
   it("keeps a caller's line height under the phone 16, from a leading or the size's own", async () => {
     // The feed composer's body: 14/18 to 1023, 18/24 from lg.
     render(<Textarea data-testid="field" className="text-sm/[18px] md:text-sm/[18px] lg:text-lg/[24px]" />);

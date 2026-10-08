@@ -209,7 +209,7 @@ describe("PasswordInput", () => {
 
   describe("Text size (Casey 2026-10-08 Q29, and #105)", () => {
     // The field's own size classes; `file:text-sm` belongs to the file button.
-    const FIELD_SIZE = /^(?:(?:max-)?(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
+    const FIELD_SIZE = /^(?:(?:max-)?(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])(?:\/\S+)?$/;
     const sizes = () =>
       (document.querySelector("input")?.className ?? "").split(/\s+/).filter((c) => FIELD_SIZE.test(c));
 
@@ -220,7 +220,7 @@ describe("PasswordInput", () => {
 
     it("keeps a caller's size under 16 from md up and lifts the phone to 16", () => {
       render(<PasswordInput className="text-xs" />);
-      expect(sizes()).toEqual(["max-md:text-base", "text-xs"]);
+      expect(sizes()).toEqual(["max-md:text-base/[1rem]", "text-xs"]);
     });
   });
 });

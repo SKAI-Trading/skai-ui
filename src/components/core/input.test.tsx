@@ -112,7 +112,7 @@ describe("Input", () => {
 describe("Input text size (Casey 2026-10-08 Q29, and #105)", () => {
   // The field's own size classes, bare or at a breakpoint. `file:text-sm` is
   // the file-picker button's, not the field's, so it is left out.
-  const FIELD_SIZE = /^(?:(?:max-)?(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
+  const FIELD_SIZE = /^(?:(?:max-)?(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])(?:\/\S+)?$/;
   const sizes = () =>
     screen.getByTestId("input").className.split(/\s+/).filter((c) => FIELD_SIZE.test(c));
 
@@ -124,9 +124,9 @@ describe("Input text size (Casey 2026-10-08 Q29, and #105)", () => {
     expect(sizes()).toEqual(["text-base", "md:text-sm"]);
   });
 
-  it("keeps a caller's size under 16 from md up and lifts the phone to 16", () => {
+  it("keeps a caller's size under 16 from md up and lifts the phone to 16 on its line height", () => {
     render(<Input data-testid="input" className="text-xs" />);
-    expect(sizes()).toEqual(["max-md:text-base", "text-xs"]);
+    expect(sizes()).toEqual(["max-md:text-base/[1rem]", "text-xs"]);
   });
 
   it("leaves a caller's size of 16 or more alone at every width", () => {
@@ -147,9 +147,16 @@ describe("fieldTextSize", () => {
     expect(fieldTextSize("lg:text-base rounded-xl px-4")).toBe("text-base md:text-sm");
   });
 
-  it("lifts a phone to 16 under a size below 16, a preset or arbitrary one included", () => {
-    for (const own of ["text-xs", "text-sm", "text-[14px]", "text-[0.75rem]", "text-para-2-mobile"]) {
-      expect(fieldTextSize(`h-11 ${own}`), own).toBe("max-md:text-base");
+  it("lifts a phone to 16 under a size below 16, on the line height that size carries", () => {
+    for (const [own, phone] of [
+      ["text-xs", "max-md:text-base/[1rem]"],
+      ["text-sm", "max-md:text-base/[1.25rem]"],
+      ["text-para-2-mobile", "max-md:text-base/[0.875rem]"],
+      // An arbitrary size carries no line height of its own.
+      ["text-[14px]", "max-md:text-base"],
+      ["text-[0.75rem]", "max-md:text-base"],
+    ]) {
+      expect(fieldTextSize(`h-11 ${own}`), own).toBe(phone);
     }
   });
 
@@ -164,20 +171,20 @@ describe("fieldTextSize", () => {
   });
 
   it("reads the last of several sizes, the one that wins", () => {
-    expect(fieldTextSize("text-lg text-xs")).toBe("max-md:text-base");
+    expect(fieldTextSize("text-lg text-xs")).toBe("max-md:text-base/[1rem]");
     expect(fieldTextSize("text-xs text-lg")).toBeUndefined();
   });
 
   it("marks the phone 16 important under an important size, which a plain one would lose to", () => {
     // The bet slip's hex field sets `!text-number-4-mobile` (12).
-    expect(fieldTextSize("!text-number-4-mobile md:!text-number-4-tablet")).toBe("max-md:!text-base");
+    expect(fieldTextSize("!text-number-4-mobile md:!text-number-4-tablet")).toBe("max-md:!text-base/[0.875rem]");
     expect(fieldTextSize("!text-lg")).toBeUndefined();
   });
 
   it("holds 16 from 640 to 767 under a caller's sm: size below 16", () => {
     // The perps TP / SL fields step 12 -> 14 at sm.
     expect(fieldTextSize("text-[12px] sm:text-[14px] md:text-[14px]")).toBe("max-md:text-base sm:max-md:text-base");
-    expect(fieldTextSize("sm:text-xs")).toBe("text-base md:text-sm sm:max-md:text-base");
+    expect(fieldTextSize("sm:text-xs")).toBe("text-base md:text-sm sm:max-md:text-base/[1rem]");
     expect(fieldTextSize("text-lg sm:text-xl")).toBeUndefined();
   });
 

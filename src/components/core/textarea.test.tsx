@@ -111,7 +111,7 @@ describe("Textarea", () => {
 });
 
 describe("Textarea text size (Casey 2026-10-08 Q29, and #105)", () => {
-  const FIELD_SIZE = /^(?:(?:max-)?(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
+  const FIELD_SIZE = /^(?:(?:max-)?(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])(?:\/\S+)?$/;
   const sizes = () =>
     screen.getByTestId("textarea").className.split(/\s+/).filter((c) => FIELD_SIZE.test(c));
 
@@ -122,7 +122,7 @@ describe("Textarea text size (Casey 2026-10-08 Q29, and #105)", () => {
 
   it("keeps a caller's size under 16 from md up and lifts the phone to 16", () => {
     render(<Textarea data-testid="textarea" className="text-xs" />);
-    expect(sizes()).toEqual(["max-md:text-base", "text-xs"]);
+    expect(sizes()).toEqual(["max-md:text-base/[1rem]", "text-xs"]);
   });
 
   it("leaves a caller's size of 16 or more alone at every width", () => {

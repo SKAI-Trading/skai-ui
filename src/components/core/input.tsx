@@ -65,9 +65,23 @@ function lastOwn(
     .pop();
 }
 
-/** A size class's own line height, `text-sm/[18px]` -> `[18px]`. */
+/** Tailwind's own line heights for its two sizes under 16. */
+const TAILWIND_TEXT_LEADING: Record<string, string> = { xs: "1rem", sm: "1.25rem" };
+
+/**
+ * The line height a size class carries: its `/` value (`text-sm/[18px]` ->
+ * `[18px]`), else the token's own (`text-para-1-mobile` -> `[1rem]`). An
+ * arbitrary `text-[14px]` carries none.
+ */
 function sizeLeading(sizeClass: string): string | undefined {
-  return /^!?text-(?:\[[^\]]+\]|[^/\s]+)\/(.+)$/.exec(sizeClass)?.[1];
+  const m = /^!?text-(\[[^\]]+\]|[^/\s]+)(?:\/(.+))?$/.exec(sizeClass);
+  if (!m) return undefined;
+  if (m[2]) return m[2];
+  if (m[1].startsWith("[")) return undefined;
+  const token = (skaiFontSizes as Record<string, unknown>)[m[1]];
+  const tokenLeading = Array.isArray(token) ? (token[1] as { lineHeight?: string } | undefined)?.lineHeight : undefined;
+  const leading = TAILWIND_TEXT_LEADING[m[1]] ?? tokenLeading;
+  return leading ? `[${leading}]` : undefined;
 }
 
 /** Whether a size class is under 16px, or cannot be read here (a CSS variable, an `em`). */
@@ -95,8 +109,10 @@ function sixteen(variant: string, size: string, leading: string | undefined): st
  * - The caller names no size: `text-base md:text-sm`.
  * - The caller names a size under 16: `max-md:text-base`, so its size holds
  *   from md up (#105) and the phone gets 16 on the caller's own line height
- *   (`max-md:text-base/[18px]` under `text-sm/[18px]` or `leading-[18px]`).
- *   When the caller's size is marked important (`!text-xs`), so is the 16.
+ *   (`max-md:text-base/[18px]` under `leading-[18px]` or `text-sm/[18px]`,
+ *   `max-md:text-base/[1.25rem]` under a bare `text-sm`), so the field's box
+ *   keeps its height. When the caller's size is marked important
+ *   (`!text-xs`), so is the 16.
  * - The caller names an `sm:` size under 16: `sm:max-md:text-base` too.
  *   Tailwind writes `max-md:` before `sm:`, so without it the caller's `sm:`
  *   size would win from 640 to 767.
