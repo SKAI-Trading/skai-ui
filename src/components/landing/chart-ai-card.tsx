@@ -792,7 +792,8 @@ const ChartAICard = React.forwardRef<HTMLDivElement, ChartAICardProps>(
                 }
               }}
               placeholder="Ask a follow-up question..."
-              className="flex-1 bg-[#001615]/60 border border-[#95A09F]/20 rounded-lg px-2.5 py-2 md:px-3 md:py-2.5 font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] tracking-[-0.56px] text-[#E0E0E0] placeholder:text-[#95A09F] outline-none focus:border-[#56C7F3]/50 transition-colors"
+              /* 16 below md, where iOS Safari zooms into a focused field under 16px (Casey 2026-10-08 Q29). */
+              className="flex-1 bg-[#001615]/60 border border-[#95A09F]/20 rounded-lg px-2.5 py-2 md:px-3 md:py-2.5 font-['Manrope',sans-serif] font-normal text-[14px] leading-[18px] max-md:text-base tracking-[-0.56px] text-[#E0E0E0] placeholder:text-[#95A09F] outline-none focus:border-[#56C7F3]/50 transition-colors"
               disabled={isSending}
             />
             <button

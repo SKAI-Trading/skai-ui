@@ -15,6 +15,8 @@
  * model throws instead of guessing.
  */
 import * as React from "react";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import postcss from "postcss";
@@ -30,6 +32,7 @@ import { DatePicker } from "../components/forms/date-picker";
 import { TagInput } from "../components/forms/tag-input";
 import { Command, CommandInput } from "../components/overlays/command";
 import { AuthModal } from "../components/overlays/auth-modal";
+import { XShareModal } from "../components/overlays/x-share-modal";
 import { AmountInput } from "../components/trading/amount-input";
 
 afterEach(cleanup);
@@ -186,6 +189,30 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
     expect(await sizes(screen.getByPlaceholderText("example@provider.com"))).toEqual([16, 16, 14, 16]);
     fireEvent.click(screen.getByRole("button", { name: /referral code/i }));
     expect(await sizes(screen.getByPlaceholderText("Enter referral code"))).toEqual([16, 16, 14, 16]);
+  });
+
+  it("draws the X share post editor at 16 below md and its 13 from md up", async () => {
+    // skai.trade's dashboard mounts it.
+    render(
+      <XShareModal
+        isOpen
+        onClose={() => undefined}
+        images={[{ label: "Card", src: "card.png" }]}
+        referralLink="https://skai.trade/r/abc"
+        shareText="gm"
+      />,
+    );
+    expect(await sizes(screen.getByPlaceholderText("Write your post..."))).toEqual([16, 16, 13, 13]);
+  });
+
+  it("draws the chart card's follow-up field at 16 below md and its 14 from md up", async () => {
+    // The field shows only after an analysis comes back, so its class list is
+    // read off the source and drawn on a bare input.
+    const src = readFileSync(resolve(__dirname, "../components/landing/chart-ai-card.tsx"), "utf8").replace(/\r\n/g, "\n");
+    const m = /placeholder="Ask a follow-up question\.\.\."[\s\S]*?className="([^"]+)"/.exec(src);
+    expect(m, "the follow-up field's class list").not.toBeNull();
+    render(<input data-testid="field" className={(m as RegExpExecArray)[1]} />);
+    expect(await sizes(field())).toEqual([16, 16, 14, 14]);
   });
 
   it("keeps AmountInput at the 18 / 14 it has always drawn, with no frame to follow", async () => {

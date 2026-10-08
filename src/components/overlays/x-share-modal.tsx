@@ -305,7 +305,8 @@ const XShareModal = React.forwardRef<HTMLDivElement, XShareModalProps>(
               onChange={(e) => setEditableText(e.target.value)}
               maxLength={280}
               rows={3}
-              className="w-full rounded-xl bg-[#0a1a19] border border-[#123F3C] focus:border-[#56C7F3] outline-none px-4 py-3 font-manrope text-[13px] leading-[18px] tracking-[-0.52px] text-white resize-none transition-colors placeholder:text-white/30"
+              /* 16 below md, where iOS Safari zooms into a focused field under 16px (Casey 2026-10-08 Q29). */
+              className="w-full rounded-xl bg-[#0a1a19] border border-[#123F3C] focus:border-[#56C7F3] outline-none px-4 py-3 font-manrope text-[13px] leading-[18px] max-md:text-base tracking-[-0.52px] text-white resize-none transition-colors placeholder:text-white/30"
               placeholder="Write your post..."
             />
             <div className="flex justify-end mt-1">
