@@ -12,18 +12,18 @@ This file carries no run date, so it is byte-identical whenever its inputs are. 
 | In-scope pages | 39 |
 | Live top-level nodes | 4688 |
 | — furniture (excluded from the denominator) | 824 (17.6%) |
-| **Genuine frames — the denominator** | **3538** |
+| **Genuine frames — the denominator** | **3537** |
 | Ruled out of the measurement (`ruled-out` verdict, product decided against) | 79 |
-| Denominator if those were still counted | 3617 |
-| Frame defects out of the measurement (`frame-defect`, design owns the redraw) | 247 |
+| Denominator if those were still counted | 3616 |
+| Frame defects out of the measurement (`frame-defect`, design owns the redraw) | 248 |
 | Denominator if those were still counted | 3785 |
-| Genuine frames with a catalog row (matched by node id) | 3537 (100.0%) |
+| Genuine frames with a catalog row (matched by node id) | 3536 (100.0%) |
 | — of those, covered ONLY by a rollup row (a row naming ≥8 ids) | 14 (0.4% of matched) |
 | Genuine frames with NO row — live-only drift | 1 (0.0%) |
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 1482 | 41.9% |
+| `done` | 1481 | 41.9% |
 | `partial` | 1614 | 45.6% |
 | `not-started` | 146 | 4.1% |
 | `blocked-on-backend` | 290 | 8.2% |
@@ -51,15 +51,15 @@ That is 17.6% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**1482 of 3538 in-scope genuine frames (41.9%) are covered by a row marked `done`.**
+**1481 of 3537 in-scope genuine frames (41.9%) are covered by a row marked `done`.**
 
 Read the caveat section before quoting that. It is not 41.9% measured parity.
 
-**79 frame(s) carry a `ruled-out` verdict and are NOT in that denominator.** A ruled-out frame is one the product decided against: nothing was built and nothing is owed, so it is neither work completed nor work outstanding and it leaves the measurement, exactly as a page-level `excluded` scope does. Counted in, the denominator is 3617 and the figure reads 41.0%; counted out it is 3538 and reads 41.9%. **The difference is the denominator shrinking, not frames being closed** — the `done` count is identical either way. Each such verdict must cite its ruling by date in the reason or it is refused and the frame stays in scope. 6 line(s) claimed `ruled-out` WITHOUT citing a dated ruling and were refused: vverify.fisherman-slots.tsv 11680-33011, vverify.home.tsv 5854-80845, vverify.predict.tsv 10211-15507, vverify.predict.tsv 3269-17599, vverify.predict.tsv 10097-220101, vverify.vegas-fortune.tsv 10448-4297.
+**79 frame(s) carry a `ruled-out` verdict and are NOT in that denominator.** A ruled-out frame is one the product decided against: nothing was built and nothing is owed, so it is neither work completed nor work outstanding and it leaves the measurement, exactly as a page-level `excluded` scope does. Counted in, the denominator is 3616 and the figure reads 41.0%; counted out it is 3537 and reads 41.9%. **The difference is the denominator shrinking, not frames being closed** — the `done` count is identical either way. Each such verdict must cite its ruling by date in the reason or it is refused and the frame stays in scope. 6 line(s) claimed `ruled-out` WITHOUT citing a dated ruling and were refused: vverify.fisherman-slots.tsv 11680-33011, vverify.home.tsv 5854-80845, vverify.predict.tsv 10211-15507, vverify.predict.tsv 3269-17599, vverify.predict.tsv 10097-220101, vverify.vegas-fortune.tsv 10448-4297.
 
-**247 frame(s) are frame defects and are NOT in that denominator either (Casey 2026-10-05 #2).** The frame is wrong and the code is right, so design owns the redraw and nothing is owed in code. Counted in, the denominator is 3785 and the figure reads 39.2%. A frame leaves only when every row of its newest generation says `frame-defect` and one of them states the defect in its reason (40 characters or more); a split generation, or a visual verdict that resolves it elsewhere, keeps it in.
+**248 frame(s) are frame defects and are NOT in that denominator either (Casey 2026-10-05 #2).** The frame is wrong and the code is right, so design owns the redraw and nothing is owed in code. Counted in, the denominator is 3785 and the figure reads 39.1%. A frame leaves only when every row of its newest generation says `frame-defect` and one of them states the defect in its reason (40 characters or more); a split generation, or a visual verdict that resolves it elsewhere, keeps it in.
 
-**1067 of those 1482 (30.2% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 415 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 46 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` belong to retired sections and bind through pages.json `retiredSections` at the lowest precedence — 0 active line(s) between them, deciding 0 frame(s).
+**1066 of those 1481 (30.1% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 415 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 46 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` belong to retired sections and bind through pages.json `retiredSections` at the lowest precedence — 0 active line(s) between them, deciding 0 frame(s).
 
 ## Out of the roll-up
 
@@ -103,11 +103,11 @@ Read the caveat section before quoting that. It is not 41.9% measured parity.
 | ✅ Chicken - Skai originals | in-scope | 31 | 16 | 13 | 13 | 11 | 2 | 0 | 0 | 0 | 100.0% |
 | ✅ Scratchers - Skai originals | in-scope | 21 | 8 | 12 | 12 | 5 | 7 | 0 | 0 | 0 | 100.0% |
 | ✅ Slide - Skai originals | in-scope | 18 | 6 | 11 | 11 | 1 | 10 | 0 | 0 | 0 | 100.0% |
-| ✅ Towers - Skai originals | in-scope | 30 | 15 | 10 | 10 | 3 | 7 | 0 | 0 | 0 | 100.0% |
 | ✅ Mines - Skai originals | in-scope | 19 | 8 | 9 | 9 | 6 | 3 | 0 | 0 | 0 | 100.0% |
 | ✅ Fortune Wheel - Skai originals | in-scope | 25 | 14 | 9 | 9 | 2 | 7 | 0 | 0 | 0 | 100.0% |
-| ✅ Baccarat - Skai originals | in-scope | 21 | 11 | 9 | 9 | 4 | 5 | 0 | 0 | 0 | 100.0% |
+| ✅ Baccarat - Skai originals | in-scope | 21 | 11 | 9 | 9 | 3 | 6 | 0 | 0 | 0 | 100.0% |
 | ✅ Limbo - Skai originals | in-scope | 14 | 5 | 9 | 9 | 6 | 3 | 0 | 0 | 0 | 100.0% |
+| ✅ Towers - Skai originals | in-scope | 30 | 15 | 9 | 9 | 3 | 6 | 0 | 0 | 0 | 100.0% |
 | ✅ Plinko - Skai originals | in-scope | 21 | 12 | 8 | 8 | 4 | 4 | 0 | 0 | 0 | 100.0% |
 | ✅ Price Grid - Skai originals | in-scope | 20 | 13 | 7 | 7 | 2 | 5 | 0 | 0 | 0 | 100.0% |
 | ✅ Privacy and Terms | in-scope | 10 | 4 | 6 | 6 | 6 | 0 | 0 | 0 | 0 | 100.0% |
@@ -263,7 +263,7 @@ Ranked by count. These are the unassessed frames.
 
 ## Drift D — one frame, two lanes, two different verdicts
 
-**0 of the 3537 in-scope matched frames (0.0%) are named by two or more rows that DISAGREE on status** — 0 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
+**0 of the 3536 in-scope matched frames (0.0%) are named by two or more rows that DISAGREE on status** — 0 across all scopes. The tables above resolve each one to its worst verdict so no number can flatter, but a resolution is not an agreement: a `done`/`not-started` pair on a single frame means one of the two lanes is wrong, and nothing in the catalog currently says which.
 
 | the disagreement | frames |
 |---|---:|
@@ -438,19 +438,19 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 ## What this number does NOT mean
 
-**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **3631 rows currently carry `done`**, and only **1838** of them (50.6%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1793 assert completion with nothing behind them that a later auditor can re-check.
+**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **3633 rows currently carry `done`**, and only **1838** of them (50.6%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1795 assert completion with nothing behind them that a later auditor can re-check.
 
 **2. `done` is silent about width.** Column 2 carries no viewport and must never be read as a desktop verdict. The width answers live in column 6 and start at `unknown`.
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 339 of 22149 status rows (1.5%) name no node id at all, and 964 (4.4%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 339 of 22165 status rows (1.5%) name no node id at all, and 964 (4.3%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 53878 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 54052 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
-**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **105 of the 3537 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 106/106, ✅ Trade 1 105/343 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
+**7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **105 of the 3536 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 106/106, ✅ Trade 1 105/343 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
 **8. 157 in-scope genuine frames still carry a default `Frame N` / `Group N` name.** They cannot be identified from their name at all, by a person or a script — which is its own reason not to trust title matching, and the reason they are counted as genuine rather than assumed empty.
 
