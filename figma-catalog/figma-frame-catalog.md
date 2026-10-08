@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-08T09:18:04.790Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-08T21:42:12.818Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -30,7 +30,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | dice | ✅ | 36 | 26 | 10 | 1 | 14 | 4 | 0 | 0 | 8 |
 | chicken | ✅ | 31 | 21 | 10 | 1 | 8 | 2 | 0 | 0 | 15 |
 | blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 2 | 0 | 0 | 14 |
-| towers | ✅ | 31 | 17 | 14 | 1 | 4 | 5 | 0 | 0 | 7 |
+| towers | ✅ | 31 | 17 | 14 | 1 | 4 | 4 | 0 | 0 | 7 |
 | skratch | ✅ | 22 | 16 | 6 | 1 | 6 | 7 | 0 | 0 | 11 |
 | rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 7 | 3 | 0 | 0 | 7 |
 | crash | ✅ | 20 | 15 | 5 | 1 | 2 | 11 | 0 | 0 | 12 |
@@ -46,7 +46,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | bingo | ✅ | 17 | 9 | 8 | 1 | 2 | 1 | 0 | 0 | 11 |
 | video-poker | ✅ | 14 | 8 | 6 | 1 | 0 | 2 | 0 | 0 | 4 |
 | limbo | ✅ | 14 | 8 | 6 | 1 | 4 | 3 | 0 | 0 | 8 |
-| baccarat | ✅ | 21 | 7 | 14 | 1 | 4 | 1 | 0 | 0 | 5 |
+| baccarat | ✅ | 21 | 7 | 14 | 1 | 3 | 2 | 0 | 0 | 5 |
 | pwa | ✅ | 5 | 5 | 0 | 2 | 5 | 0 | 0 | 0 | 5 |
 | price-grid | ✅ | 20 | 5 | 15 | 1 | 0 | 5 | 0 | 0 | 5 |
 | legal | ✅ | 10 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 6 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2371** | | | **1079** | **1195** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2370** | | | **1078** | **1195** | **78** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -744,7 +744,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Baccarat | 7 | desktop, mobile, tablet | Desktop; Screenshot 2026-08-25 at 12.15.02 AM 1 | done/partial/frame-defect/furniture | [9799-16713](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9799-16713&m=dev) |
+| Casino > Baccarat | 7 | desktop, mobile, tablet | Desktop; Screenshot 2026-08-25 at 12.15.02 AM 1 | partial/done/frame-defect/furniture | [9799-16713](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9799-16713&m=dev) |
 
 ## Pwa
 
