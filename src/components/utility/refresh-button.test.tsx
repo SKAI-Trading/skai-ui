@@ -43,6 +43,25 @@ describe("RefreshButton", () => {
     expect(icon()).not.toHaveClass("animate-spin");
   });
 
+  it("leaves the cursor alone while the read runs; the glyph is what spins", async () => {
+    // Report 243f796f: pressing the vault's refresh turned the pointer into the
+    // system's busy cursor, which covered the spinning glyph underneath it.
+    const read = deferred();
+    render(<RefreshButton variant="ghost" onRefresh={() => read.promise} />);
+
+    fireEvent.click(button());
+    expect(icon()).toHaveClass("animate-spin");
+    const classes = button().className.split(/\s+/);
+    expect(classes.filter((c) => /cursor-(progress|wait)$/.test(c))).toEqual([]);
+    expect(classes).toContain("cursor-pointer");
+    // Disabled for the read, but not drawn as a dead control.
+    expect(classes).not.toContain("disabled:opacity-50");
+
+    await act(async () => {
+      read.resolve(undefined);
+    });
+  });
+
   it("starts one read however many times it is pressed while that read runs", async () => {
     const read = deferred();
     const onRefresh = vi.fn(() => read.promise);

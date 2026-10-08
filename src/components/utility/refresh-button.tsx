@@ -240,7 +240,10 @@ export const RefreshButton = React.forwardRef<HTMLButtonElement, RefreshButtonPr
             "inline-flex shrink-0 items-center justify-center transition-[background-color,opacity,transform] active:scale-[0.97] motion-reduce:transition-none motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#56C7F3] focus-visible:ring-offset-2 focus-visible:ring-offset-background",
             VARIANTS[variant],
             variant === "outline" && SIZES[size],
-            refreshing ? "cursor-progress" : "disabled:cursor-not-allowed disabled:opacity-50",
+            // The spinning glyph is the progress signal. A busy cursor sat right on
+            // top of a 16px icon, hid the spin, and read as the page hanging
+            // (report 243f796f), so the pointer stays as it was while the read runs.
+            refreshing ? "cursor-pointer" : "disabled:cursor-not-allowed disabled:opacity-50",
             className,
           )}
           {...props}
