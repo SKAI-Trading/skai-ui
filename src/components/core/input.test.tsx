@@ -190,5 +190,9 @@ describe("fieldTextSize", () => {
       "max-md:text-base/[14px] sm:max-md:text-base/[16px]",
     );
     expect(fieldTextSize("!text-xs !leading-4")).toBe("max-md:!text-base/4");
+    // With no sm: line height of its own, 640-767 runs on the bare one.
+    expect(fieldTextSize("text-[12px] leading-[14px] sm:text-[14px]")).toBe(
+      "max-md:text-base/[14px] sm:max-md:text-base/[14px]",
+    );
   });
 });
