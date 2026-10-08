@@ -9,7 +9,11 @@ type Chain = "base" | "ethereum";
 export interface PortfolioCardProps extends React.HTMLAttributes<HTMLDivElement> {
   walletAddress?: string | null;
   usdcBalance?: number | null;
-  /** Whether the user has already claimed the one-time first-deposit reward */
+  /**
+   * Whether the user has already been paid the one-time first-deposit reward.
+   * Unused while no reward is drawn (see the note in the body); kept so the
+   * landing's call site stands until the first-deposit writer exists.
+   */
   hasClaimedDeposit?: boolean;
   onBack?: () => void;
   /** Render prop for embedding a Thirdweb PayEmbed or similar widget */
@@ -21,7 +25,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
     {
       walletAddress,
       usdcBalance,
-      hasClaimedDeposit,
+      hasClaimedDeposit: _hasClaimedDeposit,
       onBack,
       renderPayWidget: _renderPayWidget,
       className,
@@ -103,20 +107,12 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
           </div>
         )}
 
-        {/* One-time SKAI Points reward banner — sUSD on Base only */}
-        {!hasClaimedDeposit && (
-          <div className="flex items-center gap-[8px] px-[12px] py-[10px] rounded-lg bg-[#0D3D3A]/60 border border-[#2DEDAD]/15">
-            <span className="font-['Manrope',sans-serif] font-bold text-[#2DEDAD] text-[18px]">1:1</span>
-            <div className="flex flex-col gap-[1px]">
-              <span className="font-['Manrope',sans-serif] font-medium text-[#E0E0E0] text-[12px] leading-[16px]">
-                1 SKAI Point for every sUSD on your first deposit
-              </span>
-              <span className="font-['Manrope',sans-serif] font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
-                One-time reward &middot; sUSD on Base only
-              </span>
-            </div>
-          </div>
-        )}
+        {/* No deposit reward is drawn. This card promised "1 SKAI Point for
+            every sUSD on your first deposit" and nothing pays it:
+            verify-wallet-deposit has no caller and points_history holds no
+            deposit reward (2026-10-08). Casey ruled on 2026-10-08 that a
+            first deposit into the wallet earns points; when that writer is
+            live, draw what it actually pays here. */}
 
         {/* Chain toggle */}
         <div className="flex gap-2">
@@ -173,11 +169,6 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
               <span className="font-['Manrope',sans-serif] font-normal text-[#8B9E9D] text-[10px] leading-[14px]">
                 Accepted: ETH &amp; sUSD on {selectedChain === "base" ? "Base" : "Ethereum Mainnet"}
               </span>
-              {selectedChain === "base" && !hasClaimedDeposit && (
-                <span className="font-['Manrope',sans-serif] font-normal text-[#2DEDAD] text-[10px] leading-[14px]">
-                  Deposit sUSD on Base to earn 1 SKAI Point per sUSD
-                </span>
-              )}
             </div>
           </div>
         ) : (
