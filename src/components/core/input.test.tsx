@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import { Input, fieldTextSize } from "../core/input";
+import { FIELD_TEXT_SIZE, Input, fieldTextSize } from "../core/input";
 
 describe("Input", () => {
   it("renders correctly", () => {
@@ -124,9 +124,9 @@ describe("Input text size (Casey 2026-10-08 Q29, and #105)", () => {
     expect(sizes()).toEqual(["text-base", "md:text-sm"]);
   });
 
-  it("keeps a caller's size under 16 from md up and lifts the phone to 16 on its line height", () => {
+  it("keeps a caller's size under 16 from md up and lifts the phone to 16", () => {
     render(<Input data-testid="input" className="text-xs" />);
-    expect(sizes()).toEqual(["max-md:text-base/[1rem]", "text-xs"]);
+    expect(sizes()).toEqual([FIELD_TEXT_SIZE.phone, "text-xs"]);
   });
 
   it("leaves a caller's size of 16 or more alone at every width", () => {
@@ -147,21 +147,14 @@ describe("fieldTextSize", () => {
     expect(fieldTextSize("lg:text-base rounded-xl px-4")).toBe("text-base md:text-sm");
   });
 
-  it("lifts a phone to 16 under a size below 16, on the line height that size carries", () => {
-    for (const [own, phone] of [
-      ["text-xs", "max-md:text-base/[1rem]"],
-      ["text-sm", "max-md:text-base/[1.25rem]"],
-      ["text-para-2-mobile", "max-md:text-base/[0.875rem]"],
-      // An arbitrary size carries no line height of its own.
-      ["text-[14px]", "max-md:text-base"],
-      ["text-[0.75rem]", "max-md:text-base"],
-    ]) {
-      expect(fieldTextSize(`h-11 ${own}`), own).toBe(phone);
+  it("lifts a phone to 16 under a size below 16, a preset or arbitrary one included", () => {
+    for (const own of ["text-xs", "text-sm", "text-para-2-mobile", "text-[14px]", "text-[0.75rem]", "text-sm/[18px]"]) {
+      expect(fieldTextSize(`h-11 ${own}`), own).toBe(FIELD_TEXT_SIZE.phone);
     }
   });
 
   it("lifts it under a size it cannot read too", () => {
-    expect(fieldTextSize("text-[length:var(--bet-size)]")).toBe("max-md:text-base");
+    expect(fieldTextSize("text-[length:var(--bet-size)]")).toBe(FIELD_TEXT_SIZE.phone);
   });
 
   it("gives nothing under a size of 16 or more", () => {
@@ -171,35 +164,56 @@ describe("fieldTextSize", () => {
   });
 
   it("reads the last of several sizes, the one that wins", () => {
-    expect(fieldTextSize("text-lg text-xs")).toBe("max-md:text-base/[1rem]");
+    expect(fieldTextSize("text-lg text-xs")).toBe(FIELD_TEXT_SIZE.phone);
     expect(fieldTextSize("text-xs text-lg")).toBeUndefined();
   });
 
   it("marks the phone 16 important under an important size, which a plain one would lose to", () => {
     // The bet slip's hex field sets `!text-number-4-mobile` (12).
-    expect(fieldTextSize("!text-number-4-mobile md:!text-number-4-tablet")).toBe("max-md:!text-base/[0.875rem]");
+    expect(fieldTextSize("!text-number-4-mobile md:!text-number-4-tablet")).toBe(FIELD_TEXT_SIZE.phoneImportant);
     expect(fieldTextSize("!text-lg")).toBeUndefined();
   });
 
   it("holds 16 from 640 to 767 under a caller's sm: size below 16", () => {
     // The perps TP / SL fields step 12 -> 14 at sm.
-    expect(fieldTextSize("text-[12px] sm:text-[14px] md:text-[14px]")).toBe("max-md:text-base sm:max-md:text-base");
-    expect(fieldTextSize("sm:text-xs")).toBe("text-base md:text-sm sm:max-md:text-base/[1rem]");
+    expect(fieldTextSize("text-[12px] sm:text-[14px] md:text-[14px]")).toBe(
+      `${FIELD_TEXT_SIZE.phone} ${FIELD_TEXT_SIZE.smBand}`,
+    );
+    expect(fieldTextSize("sm:text-xs")).toBe(`${FIELD_TEXT_SIZE.unsized} ${FIELD_TEXT_SIZE.smBand}`);
+    expect(fieldTextSize("text-lg sm:!text-xs")).toBe(FIELD_TEXT_SIZE.smBandImportant);
     expect(fieldTextSize("text-lg sm:text-xl")).toBeUndefined();
   });
 
-  it("carries the caller's own line height on the phone 16", () => {
-    expect(fieldTextSize("text-sm/[18px]")).toBe("max-md:text-base/[18px]");
-    expect(fieldTextSize("text-xs leading-4")).toBe("max-md:text-base/4");
-    // A leading outranks the size's own; an sm: one carries into 640-767.
-    expect(fieldTextSize("text-sm/[18px] leading-[14px]")).toBe("max-md:text-base/[14px]");
-    expect(fieldTextSize("text-[12px] leading-[14px] sm:text-[14px] sm:leading-[16px]")).toBe(
-      "max-md:text-base/[14px] sm:max-md:text-base/[16px]",
-    );
-    expect(fieldTextSize("!text-xs !leading-4")).toBe("max-md:!text-base/4");
-    // With no sm: line height of its own, 640-767 runs on the bare one.
-    expect(fieldTextSize("text-[12px] leading-[14px] sm:text-[14px]")).toBe(
-      "max-md:text-base/[14px] sm:max-md:text-base/[14px]",
-    );
+  it("sets no line height of its own, so the caller's stays in force", () => {
+    // The 16 is a size alone: a `text-base` would bring 24px with it and
+    // grow every field that names its own line height.
+    for (const c of [FIELD_TEXT_SIZE.phone, FIELD_TEXT_SIZE.phoneImportant, FIELD_TEXT_SIZE.smBand, FIELD_TEXT_SIZE.smBandImportant]) {
+      expect(c, c).toMatch(/^(?:sm:)?max-md:!?text-\[16px\]$/);
+    }
+    expect(fieldTextSize("text-sm/[18px] leading-[14px]")).toBe(FIELD_TEXT_SIZE.phone);
+    expect(fieldTextSize("!text-xs !leading-4")).toBe(FIELD_TEXT_SIZE.phoneImportant);
+  });
+
+  it("returns only classes FIELD_TEXT_SIZE spells out, whatever the caller writes", () => {
+    // Tailwind builds a class only when a scanned file spells it out, so a
+    // class put together from the caller's line height would be in no
+    // stylesheet. Every shape of caller below must map onto the fixed set.
+    const spelled = new Set(Object.values(FIELD_TEXT_SIZE).flatMap((c) => c.split(" ")));
+    const sizes = ["", "text-xs", "text-sm", "text-base", "text-lg", "text-[12px]", "text-[13px]", "text-[0.8rem]",
+      "text-para-1-mobile", "text-para-2", "text-number-4-mobile", "text-sm/[18px]", "text-xs/4", "text-[14px]/[17px]",
+      "text-[length:var(--x)]", "!text-xs", "!text-number-4-mobile"];
+    const leadings = ["", "leading-[18px]", "leading-4", "leading-tight", "leading-[1.3]", "!leading-5", "leading-[17px]"];
+    const smSizes = ["", "sm:text-[14px]", "sm:text-xs", "sm:!text-xs", "sm:text-lg", "sm:text-sm/[19px]"];
+    const smLeadings = ["", "sm:leading-[16px]", "sm:leading-[13px]"];
+    let seen = 0;
+    for (const s of sizes) for (const l of leadings) for (const ss of smSizes) for (const sl of smLeadings) {
+      const caller = [s, l, ss, sl, "md:text-[14px] md:leading-[16px]"].filter(Boolean).join(" ");
+      const got = fieldTextSize(caller);
+      for (const c of got?.split(" ") ?? []) {
+        expect(spelled.has(c), `${caller} -> ${got}`).toBe(true);
+        seen++;
+      }
+    }
+    expect(seen).toBeGreaterThan(1000);
   });
 });

@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { PasswordInput, calculateStrength } from "../components/forms/password-input";
+import { FIELD_TEXT_SIZE } from "../components/core/input";
 
 describe("PasswordInput", () => {
   describe("Rendering", () => {
@@ -220,7 +221,7 @@ describe("PasswordInput", () => {
 
     it("keeps a caller's size under 16 from md up and lifts the phone to 16", () => {
       render(<PasswordInput className="text-xs" />);
-      expect(sizes()).toEqual(["max-md:text-base/[1rem]", "text-xs"]);
+      expect(sizes()).toEqual([FIELD_TEXT_SIZE.phone, "text-xs"]);
     });
   });
 });

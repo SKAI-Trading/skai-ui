@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { Textarea } from "../core/textarea";
+import { FIELD_TEXT_SIZE } from "../core/input";
 
 describe("Textarea", () => {
   it("renders correctly", () => {
@@ -122,7 +123,7 @@ describe("Textarea text size (Casey 2026-10-08 Q29, and #105)", () => {
 
   it("keeps a caller's size under 16 from md up and lifts the phone to 16", () => {
     render(<Textarea data-testid="textarea" className="text-xs" />);
-    expect(sizes()).toEqual(["max-md:text-base/[1rem]", "text-xs"]);
+    expect(sizes()).toEqual([FIELD_TEXT_SIZE.phone, "text-xs"]);
   });
 
   it("leaves a caller's size of 16 or more alone at every width", () => {

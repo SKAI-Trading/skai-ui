@@ -7,21 +7,25 @@
  * has to be on the field. A caller's own size still holds from md up (#105);
  * a caller that sets its own `max-md:` size is choosing the zoom and keeps it.
  *
- * jsdom applies no stylesheet, so each case compiles the class lists on the
- * field and its ancestors through this package's preset, the way the app,
- * launch and the wallet build them, and resolves the field's font-size at a
- * width: rules whose media applies, the later one winning, and inheritance
- * from the parent when no rule sets it. A selector or media query it does not
- * model throws instead of guessing.
+ * jsdom applies no stylesheet, so the cases resolve the field's font-size
+ * against a stylesheet compiled the way a consumer's build compiles it: this
+ * package's preset over skai-ui's own source (tests left out, as the app
+ * leaves them out) and the consumer's file that names the caller's classes,
+ * which is this one. Tailwind emits a class only when a scanned file spells it
+ * out, so a class a field puts together at runtime is missing here exactly as
+ * it is missing from the app's, launch's or skai.trade's CSS. Rules whose
+ * media applies win, the later one first, and a field with no rule takes its
+ * parent's size. A selector or media query it does not model throws instead
+ * of guessing.
  */
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { readdirSync, readFileSync } from "node:fs";
+import { join, resolve } from "node:path";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import postcss from "postcss";
 import tailwindcss from "tailwindcss";
 import skaiPreset from "../lib/tailwind-preset";
-import { Input, SkaiInput } from "../components/core/input";
+import { FIELD_TEXT_SIZE, Input, SkaiInput } from "../components/core/input";
 import { Textarea } from "../components/core/textarea";
 import { PasswordInput } from "../components/forms/password-input";
 import { NumberInput } from "../components/forms/number-input";
@@ -39,13 +43,17 @@ afterEach(cleanup);
 /** 375 and 767 are below md, 768 is md itself, 1440 a desktop. */
 const WIDTHS = [375, 767, 768, 1440] as const;
 
-/** `media` holds every @media around the rule, outermost first; all must apply. */
+/**
+ * `media` holds every @media around the rule, outermost first; all must apply.
+ * `around` names any other at-rule around it, which the resolver does not model.
+ */
 type SizeRule = {
   prop: "font-size" | "line-height";
   value: string;
   selectors: string[];
   important: boolean;
   media: string[];
+  around?: string;
 };
 
 function lengthPx(value: string): number {
@@ -63,43 +71,98 @@ function mediaApplies(media: string[], width: number): boolean {
   });
 }
 
-/** Every class on `el` and its ancestors, compiled through the preset; the font-size and line-height rules in source order. */
-async function sizeRules(el: Element): Promise<SizeRule[]> {
-  const classes: string[] = [];
-  for (let e: Element | null = el; e; e = e.parentElement) classes.push(e.getAttribute("class") ?? "");
-  const config = {
-    presets: [skaiPreset],
-    content: [{ raw: classes.join(" "), extension: "html" }],
-    corePlugins: { preflight: false },
-  };
+/** skai-ui's source as a consumer scans it: every .ts / .tsx under src, tests left out. */
+function sourceFiles(dir = resolve(__dirname, "..")): string[] {
+  const out: string[] = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name !== "__tests__") out.push(...sourceFiles(path));
+    } else if (/\.tsx?$/.test(entry.name) && !/\.(test|spec)\.tsx?$/.test(entry.name)) {
+      out.push(path);
+    }
+  }
+  return out;
+}
+
+/** This file: the consumer's own source, which is where the callers' classes are written. */
+const THIS_FILE = readFileSync(resolve(__dirname, "fieldPhoneSize.test.tsx"), "utf8");
+
+/** The classes FIELD_TEXT_SIZE spells out, one by one. */
+const FIELD_CLASSES = [...new Set(Object.values(FIELD_TEXT_SIZE ?? {}).flatMap((c) => c.split(" ")))];
+
+async function compile(content: { raw: string; extension: string }[]): Promise<string> {
+  const config = { presets: [skaiPreset], content, corePlugins: { preflight: false } };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { css } = await postcss([tailwindcss(config as any)]).process("@tailwind utilities;", { from: undefined });
+  return css;
+}
+
+/** The font-size and line-height rules of a stylesheet, in source order. */
+function sizeRulesOf(css: string): SizeRule[] {
   const rules: SizeRule[] = [];
   postcss.parse(css).walkDecls(/^(font-size|line-height)$/, (decl) => {
     const rule = decl.parent as postcss.Rule;
+    if (rule.type !== "rule") return;
     const media: string[] = [];
+    let around: string | undefined;
     for (let p = rule.parent; p && p.type !== "root"; p = p.parent) {
       const at = p as postcss.AtRule;
-      if (at.type !== "atrule" || at.name !== "media") throw new Error(`${at.type} ${at.name ?? ""} around a size is not modelled`);
-      media.unshift(at.params);
+      if (at.type === "atrule" && at.name === "media") media.unshift(at.params);
+      else around = `${at.type} ${at.name ?? ""} ${at.params ?? ""}`;
     }
     // A pseudo-element rule (placeholder:, file:) sizes a part, not the field's text.
     const selectors = rule.selectors.filter((s) => !s.includes("::"));
-    for (const s of selectors) {
-      if (!/^\.(?:\\.|[\w-])+$/.test(s)) throw new Error(`selector "${s}" is not modelled`);
-    }
     const prop = decl.prop as SizeRule["prop"];
-    rules.push({ prop, value: decl.value.trim(), selectors, important: Boolean(decl.important), media });
+    rules.push({ prop, value: decl.value.trim(), selectors, important: Boolean(decl.important), media, around });
   });
   return rules;
 }
 
-/** Every rule here is one class, so an important one wins, then the later one. */
+let consumerSheet: Promise<SizeRule[]> | undefined;
+
+/**
+ * The size rules a consumer's build has: the preset over skai-ui's source and
+ * this file, compiled once. Never the rendered class list, which would compile
+ * classes no build ever finds.
+ */
+function consumerRules(): Promise<SizeRule[]> {
+  consumerSheet ??= compile(
+    [...sourceFiles(), resolve(__dirname, "fieldPhoneSize.test.tsx")].map((f) => ({
+      raw: readFileSync(f, "utf8"),
+      extension: "tsx",
+    })),
+  ).then(sizeRulesOf);
+  return consumerSheet;
+}
+
+const ONE_CLASS = /^\.(?:\\.|[\w-])+$/;
+
+function reaches(el: Element, selector: string): boolean {
+  try {
+    return el.matches(selector);
+  } catch (e) {
+    // Engine-prefixed states (`:-moz-focusring`, `:-webkit-autofill`) jsdom cannot parse.
+    if (/:-(moz|webkit|ms)-/.test(selector)) return false;
+    throw e;
+  }
+}
+
+/**
+ * Every rule that reaches the field here is one class, so an important one
+ * wins, then the later one. A rule that reaches it any other way (a
+ * descendant selector, an at-rule other than @media) throws.
+ */
 function winner(el: Element, rules: SizeRule[], prop: SizeRule["prop"], width: number): SizeRule | undefined {
   let best: SizeRule | undefined;
   for (const rule of rules) {
     if (rule.prop !== prop) continue;
-    if (!mediaApplies(rule.media, width) || !rule.selectors.some((s) => el.matches(s))) continue;
+    const hits = rule.selectors.filter((s) => reaches(el, s));
+    if (hits.length === 0) continue;
+    const unmodelled = hits.find((s) => !ONE_CLASS.test(s));
+    if (unmodelled) throw new Error(`selector "${unmodelled}" reaches the field and is not modelled`);
+    if (rule.around) throw new Error(`${rule.around} around a size on the field is not modelled`);
+    if (!mediaApplies(rule.media, width)) continue;
     if (!best || rule.important || !best.important) best = rule;
   }
   return best;
@@ -113,16 +176,43 @@ function fontSizeAt(el: Element | null, rules: SizeRule[], width: number): numbe
 
 /** The line height a rule on the field itself sets, as written ("normal" when none does). */
 async function leadings(el: Element): Promise<string[]> {
-  const rules = await sizeRules(el);
+  const rules = await consumerRules();
   return WIDTHS.map((w) => winner(el, rules, "line-height", w)?.value ?? "normal");
 }
 
 async function sizes(el: Element): Promise<number[]> {
-  const rules = await sizeRules(el);
+  const rules = await consumerRules();
   return WIDTHS.map((w) => fontSizeAt(el, rules, w));
 }
 
 const field = () => screen.getByTestId("field");
+
+// The sheet scans 370-odd files; build it once, before the first case.
+beforeAll(() => consumerRules(), 120_000);
+
+describe("the classes a field adds are in every consumer's stylesheet", () => {
+  it("spells every class fieldTextSize can return in the code of its own module", async () => {
+    // A build that scans field-text-size.ts and nothing else of skai-ui (the
+    // standalone wallet's) has all of them, and comments are not what put
+    // them there.
+    const src = readFileSync(resolve(__dirname, "../components/core/field-text-size.ts"), "utf8");
+    const code = src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+    const css = await compile([{ raw: code, extension: "ts" }]);
+    const selectors = new Set<string>();
+    postcss.parse(css).walkRules((r) => r.selectors.forEach((s) => selectors.add(s)));
+    for (const c of FIELD_CLASSES) {
+      const escaped = "." + c.replace(/[^a-zA-Z0-9_-]/g, (m) => `\\${m}`);
+      expect(selectors.has(escaped), `${c} is built from field-text-size.ts`).toBe(true);
+    }
+    expect(FIELD_CLASSES.length).toBeGreaterThanOrEqual(6);
+  });
+
+  it("does not spell the phone 16 in this file, so this file cannot be what puts it in the sheet", () => {
+    for (const c of FIELD_CLASSES.filter((c) => c.startsWith("max-md:") || c.startsWith("sm:max-md:"))) {
+      expect(THIS_FILE.includes(c), c).toBe(false);
+    }
+  });
+});
 
 describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
   it.each([
@@ -204,6 +294,19 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
     expect(await leadings(field())).toEqual(["18px", "18px", "18px", "24px"]);
   });
 
+  it("keeps any line height a caller names under the phone 16, not only ones a table could list", async () => {
+    render(<Textarea data-testid="field" className="text-[13px] leading-[17px]" />);
+    expect(await sizes(field())).toEqual([16, 16, 13, 13]);
+    expect(await leadings(field())).toEqual(["17px", "17px", "17px", "17px"]);
+  });
+
+  it("brings no line height of its own when the caller's size names none", async () => {
+    // The field keeps the line height it inherits, as it did at 14.
+    render(<Input data-testid="field" className="text-[12px]" />);
+    expect(await sizes(field())).toEqual([16, 16, 12, 12]);
+    expect(await leadings(field())).toEqual(["normal", "normal", "normal", "normal"]);
+  });
+
   it("lifts an important caller size under 16 too", async () => {
     render(<Input data-testid="field" className="!text-number-4-mobile md:!text-number-4-tablet lg:!text-number-4" />);
     expect(await sizes(field())).toEqual([16, 16, 14, 14]);
@@ -250,6 +353,8 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
       />,
     );
     expect(await sizes(screen.getByPlaceholderText("Write your post..."))).toEqual([16, 16, 13, 13]);
+    // On its own 18 line at every width, so the three-row box keeps its height.
+    expect(await leadings(screen.getByPlaceholderText("Write your post..."))).toEqual(["18px", "18px", "18px", "18px"]);
   });
 
   it("draws the chart card's follow-up field at 16 below md and its 14 from md up", async () => {
@@ -260,6 +365,7 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
     expect(m, "the follow-up field's class list").not.toBeNull();
     render(<input data-testid="field" className={(m as RegExpExecArray)[1]} />);
     expect(await sizes(field())).toEqual([16, 16, 14, 14]);
+    expect(await leadings(field())).toEqual(["18px", "18px", "18px", "18px"]);
   });
 
   it("keeps AmountInput at the 18 / 14 it has always drawn, with no frame to follow", async () => {
