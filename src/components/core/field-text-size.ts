@@ -10,13 +10,16 @@ import { skaiFontSizes } from "../../lib/design-tokens";
  * standalone wallet scans this file alone. Keep every class here a plain
  * string literal.
  *
- * The phone 16 is an arbitrary size rather than `text-base` because an
- * arbitrary size sets the font size and nothing else. Whatever line height
- * the caller's classes put in force (a `leading-*`, a size's `/` value or a
+ * The phone 16 is an arbitrary size rather than Tailwind's base size because
+ * an arbitrary size sets the font size and nothing else. Whatever line height
+ * the caller's classes put in force (a leading class, a size's `/` value or a
  * preset size's own, or the one the field inherits) still holds, so the box
- * keeps its height; `text-base` would replace it with 24px. The 16 itself is
- * iOS Safari's threshold: it zooms the page into a focused field whose text
- * is smaller.
+ * keeps its height; the base size would replace it with 24px. The 16 itself
+ * is iOS Safari's threshold: it zooms the page into a focused field whose
+ * text is smaller.
+ *
+ * The comments in this file name no class, so a build that scans it adds
+ * these and nothing else.
  */
 export const FIELD_TEXT_SIZE = {
   /** The caller names no size: 16 below md, the frames' 14 from md up. */
@@ -45,7 +48,7 @@ function lengthPx(value: unknown): number | undefined {
   return Number(m[1]) * (m[2] === "rem" ? 16 : 1);
 }
 
-/** The px a bare size class such as `text-xs`, `text-[22px]` or `text-para-2` sets, when it can be read. */
+/** The px a bare size class sets (Tailwind's scale, an arbitrary px or rem, a preset size), when it can be read. */
 function textClassPx(sizeClass: string): number | undefined {
   const key = sizeClass.slice("text-".length);
   if (key.startsWith("[")) return lengthPx(key.slice(1, -1));
@@ -62,15 +65,14 @@ const isSize = (c: string) => cn("text-base", c) === c;
  * that wins.
  */
 function lastSize(className: string | undefined, variant: "" | "sm:"): string | undefined {
-  return (className ?? "")
-    .split(/\s+/)
-    .filter((c) => c.startsWith(variant))
-    .map((c) => c.slice(variant.length))
-    .filter((c) => {
-      const bare = c.replace(/^!/, "");
-      return bare !== "" && isSize(bare);
-    })
-    .pop();
+  let last: string | undefined;
+  for (const c of (className ?? "").split(/\s+/)) {
+    if (!c.startsWith(variant)) continue;
+    const own = c.slice(variant.length);
+    const bare = own.replace(/^!/, "");
+    if (bare !== "" && isSize(bare)) last = own;
+  }
+  return last;
 }
 
 /** Whether a size class is under 16px, or cannot be read here (a CSS variable, an `em`). */

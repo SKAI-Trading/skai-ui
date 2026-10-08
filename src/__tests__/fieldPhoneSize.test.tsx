@@ -197,14 +197,21 @@ describe("the classes a field adds are in every consumer's stylesheet", () => {
     // them there.
     const src = readFileSync(resolve(__dirname, "../components/core/field-text-size.ts"), "utf8");
     const code = src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
-    const css = await compile([{ raw: code, extension: "ts" }]);
-    const selectors = new Set<string>();
-    postcss.parse(css).walkRules((r) => r.selectors.forEach((s) => selectors.add(s)));
-    for (const c of FIELD_CLASSES) {
-      const escaped = "." + c.replace(/[^a-zA-Z0-9_-]/g, (m) => `\\${m}`);
-      expect(selectors.has(escaped), `${c} is built from field-text-size.ts`).toBe(true);
-    }
+    const selectorsOf = async (raw: string) => {
+      const selectors = new Set<string>();
+      postcss.parse(await compile([{ raw, extension: "ts" }])).walkRules((r) => {
+        // The preset's keyframes are in every build, whatever it scans.
+        if ((r.parent as postcss.AtRule | undefined)?.name?.endsWith("keyframes")) return;
+        r.selectors.forEach((s) => selectors.add(s));
+      });
+      return [...selectors].sort();
+    };
+    const expected = FIELD_CLASSES.map((c) => "." + c.replace(/[^a-zA-Z0-9_-]/g, (m) => `\\${m}`)).sort();
     expect(FIELD_CLASSES.length).toBeGreaterThanOrEqual(6);
+    expect(await selectorsOf(code)).toEqual(expected);
+    // Its comments name no class either, so that build gains these and
+    // nothing else.
+    expect(await selectorsOf(src)).toEqual(expected);
   });
 
   it("does not spell the phone 16 in this file, so this file cannot be what puts it in the sheet", () => {
