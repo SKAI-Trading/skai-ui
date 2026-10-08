@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-08T09:18:06.659Z",
+  "generated": "2026-10-08T21:42:14.499Z",
   "harvestedAt": "2026-10-08",
   "rollup": {
     "pages": 39,
     "live": 4688,
     "furniture": 824,
-    "genuine": 3538,
+    "genuine": 3537,
     "ruledOut": 79,
-    "genuineWithRuledOut": 3617,
+    "genuineWithRuledOut": 3616,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
       "vverify.home.tsv 5854-80845",
@@ -16,12 +16,12 @@
       "vverify.predict.tsv 10097-220101",
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
-    "frameDefectsOut": 247,
+    "frameDefectsOut": 248,
     "genuineWithFrameDefects": 3785,
     "frameDefectUncited": [],
-    "matched": 3537,
-    "done": 1482,
-    "verified": 1067,
+    "matched": 3536,
+    "done": 1481,
+    "verified": 1066,
     "visuallyDowngraded": 46,
     "visualUnmapped": [],
     "visualRetired": [
@@ -56,16 +56,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3631,
+    "total": 3633,
     "withBreakpointProvenance": 1838,
-    "namingANodeId": 3406,
+    "namingANodeId": 3408,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22149,
+    "total": 22165,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 53878
+    "unrecognisedTokens": 54052
   },
   "statusFiles": [
     {
@@ -5673,6 +5673,12 @@
       "ids": 11
     },
     {
+      "file": "status.wave77.P087.tsv",
+      "rows": 16,
+      "withLiveId": 16,
+      "ids": 21
+    },
+    {
       "file": "status.wave77.P088.tsv",
       "rows": 6,
       "withLiveId": 6,
@@ -7947,11 +7953,11 @@
       "defaultNamed": 4,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 4,
+      "verified": 3,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 4,
-        "partial": 5
+        "partial": 6,
+        "done": 3
       },
       "liveOnly": []
     },
@@ -8154,16 +8160,17 @@
       },
       "ruledOut": 0,
       "ruledOutIds": [],
-      "frameDefects": 5,
+      "frameDefects": 6,
       "frameDefectIds": [
         "10120-10815",
         "10120-13193",
         "10120-10859",
         "10120-13227",
+        "10130-13627",
         "10130-13859"
       ],
-      "genuine": 10,
-      "matched": 10,
+      "genuine": 9,
+      "matched": 9,
       "rollupOnly": 0,
       "defaultNamed": 2,
       "ambiguous": 0,
@@ -8171,7 +8178,7 @@
       "verified": 3,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 7,
+        "partial": 6,
         "done": 3
       },
       "liveOnly": []
@@ -41074,9 +41081,9 @@
       "id": "9799-16713",
       "page": "✅ Baccarat - Skai originals",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9799-18183",
@@ -41116,7 +41123,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "9825-21726",
@@ -41124,7 +41131,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "9825-21961",
@@ -41132,7 +41139,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "9873-2611",
@@ -41140,7 +41147,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "9799-15067",
@@ -41524,7 +41531,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "10120-11748",
@@ -41543,7 +41550,7 @@
       "verdict": "match"
     },
     {
-      "id": "10130-13627",
+      "id": "10130-13720",
       "page": "✅ Towers - Skai originals",
       "scope": "in-scope",
       "status": "partial",
@@ -41551,20 +41558,12 @@
       "verdict": "partial"
     },
     {
-      "id": "10130-13720",
-      "page": "✅ Towers - Skai originals",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
-    },
-    {
       "id": "10130-14013",
       "page": "✅ Towers - Skai originals",
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "10130-14171",
@@ -41580,7 +41579,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "10130-14946",
