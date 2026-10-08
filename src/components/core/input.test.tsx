@@ -180,4 +180,15 @@ describe("fieldTextSize", () => {
     expect(fieldTextSize("sm:text-xs")).toBe("text-base md:text-sm sm:max-md:text-base");
     expect(fieldTextSize("text-lg sm:text-xl")).toBeUndefined();
   });
+
+  it("carries the caller's own line height on the phone 16", () => {
+    expect(fieldTextSize("text-sm/[18px]")).toBe("max-md:text-base/[18px]");
+    expect(fieldTextSize("text-xs leading-4")).toBe("max-md:text-base/4");
+    // A leading outranks the size's own; an sm: one carries into 640-767.
+    expect(fieldTextSize("text-sm/[18px] leading-[14px]")).toBe("max-md:text-base/[14px]");
+    expect(fieldTextSize("text-[12px] leading-[14px] sm:text-[14px] sm:leading-[16px]")).toBe(
+      "max-md:text-base/[14px] sm:max-md:text-base/[16px]",
+    );
+    expect(fieldTextSize("!text-xs !leading-4")).toBe("max-md:!text-base/4");
+  });
 });

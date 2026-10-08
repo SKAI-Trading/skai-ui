@@ -39,27 +39,51 @@ function textClassPx(sizeClass: string): number | undefined {
   return lengthPx(Array.isArray(token) ? token[0] : token);
 }
 
+const isSize = (c: string) => cn("text-base", c) === c;
+// tailwind-merge files a size under line height too (a size sets one), so a
+// size is ruled out before a class is read as a line height.
+const isLeading = (c: string) => !isSize(c) && cn("leading-none", c) === c;
+
 /**
- * The last size class `className` names under `variant` ("" for none, or
- * "sm:"), without the variant and with its `!` kept; the last one is the one
- * that wins.
+ * The last class `className` names under `variant` ("" for none, or "sm:")
+ * that passes `test`, without the variant and with its `!` kept. The last one
+ * is the one that wins.
  */
-function ownSize(className: string | undefined, variant: "" | "sm:"): string | undefined {
+function lastOwn(
+  className: string | undefined,
+  variant: "" | "sm:",
+  test: (c: string) => boolean,
+): string | undefined {
   return (className ?? "")
     .split(/\s+/)
     .filter((c) => c.startsWith(variant))
     .map((c) => c.slice(variant.length))
     .filter((c) => {
       const bare = c.replace(/^!/, "");
-      return bare !== "" && cn("text-base", bare) === bare;
+      return bare !== "" && test(bare);
     })
     .pop();
 }
 
+/** A size class's own line height, `text-sm/[18px]` -> `[18px]`. */
+function sizeLeading(sizeClass: string): string | undefined {
+  return /^!?text-(?:\[[^\]]+\]|[^/\s]+)\/(.+)$/.exec(sizeClass)?.[1];
+}
+
 /** Whether a size class is under 16px, or cannot be read here (a CSS variable, an `em`). */
 function under16(sizeClass: string): boolean {
-  const px = textClassPx(sizeClass.replace(/^!/, ""));
+  const size = sizeClass.replace(/^!/, "").replace(/^(text-(?:\[[^\]]+\]|[^/\s]+))\/.+$/, "$1");
+  const px = textClassPx(size);
   return px === undefined || px < 16;
+}
+
+/**
+ * `text-base` under `variant`, important when the caller's size is, and
+ * carrying the caller's own line height for that band, because a `text-*`
+ * under a breakpoint would otherwise replace it with its own 24px.
+ */
+function sixteen(variant: string, size: string, leading: string | undefined): string {
+  return `${variant}${size.startsWith("!") ? "!" : ""}text-base${leading ? `/${leading}` : ""}`;
 }
 
 /**
@@ -70,8 +94,9 @@ function under16(sizeClass: string): boolean {
  *
  * - The caller names no size: `text-base md:text-sm`.
  * - The caller names a size under 16: `max-md:text-base`, so its size holds
- *   from md up (#105) and the phone gets 16. When the caller's size is
- *   marked important (`!text-xs`), so is the 16.
+ *   from md up (#105) and the phone gets 16 on the caller's own line height
+ *   (`max-md:text-base/[18px]` under `text-sm/[18px]` or `leading-[18px]`).
+ *   When the caller's size is marked important (`!text-xs`), so is the 16.
  * - The caller names an `sm:` size under 16: `sm:max-md:text-base` too.
  *   Tailwind writes `max-md:` before `sm:`, so without it the caller's `sm:`
  *   size would win from 640 to 767.
@@ -83,14 +108,17 @@ function under16(sizeClass: string): boolean {
  * `cn(fieldTextSize(className), className)`.
  */
 export function fieldTextSize(className?: string): string | undefined {
-  const own = ownSize(className, "");
-  const ownSm = ownSize(className, "sm:");
+  const own = lastOwn(className, "", isSize);
+  const ownSm = lastOwn(className, "sm:", isSize);
+  // The line height in force on a phone, and from 640 to 767: a `leading-*`
+  // outranks the size's own `/` value, and an `sm:` one the bare one.
+  const leading = (c: string | undefined) => c?.replace(/^!/, "").slice("leading-".length);
+  const phoneLeading = leading(lastOwn(className, "", isLeading)) ?? (own && sizeLeading(own));
+  const smLeading = leading(lastOwn(className, "sm:", isLeading)) ?? (ownSm && sizeLeading(ownSm)) ?? phoneLeading;
   const classes: string[] = [];
   if (own === undefined) classes.push("text-base md:text-sm");
-  else if (under16(own)) classes.push(own.startsWith("!") ? "max-md:!text-base" : "max-md:text-base");
-  if (ownSm !== undefined && under16(ownSm)) {
-    classes.push(ownSm.startsWith("!") ? "sm:max-md:!text-base" : "sm:max-md:text-base");
-  }
+  else if (under16(own)) classes.push(sixteen("max-md:", own, phoneLeading));
+  if (ownSm !== undefined && under16(ownSm)) classes.push(sixteen("sm:max-md:", ownSm, smLeading));
   return classes.length > 0 ? classes.join(" ") : undefined;
 }
 

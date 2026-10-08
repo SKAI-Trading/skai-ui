@@ -41,7 +41,13 @@ afterEach(cleanup);
 const WIDTHS = [375, 767, 768, 1440] as const;
 
 /** `media` holds every @media around the rule, outermost first; all must apply. */
-type SizeRule = { selectors: string[]; px: number; important: boolean; media: string[] };
+type SizeRule = {
+  prop: "font-size" | "line-height";
+  value: string;
+  selectors: string[];
+  important: boolean;
+  media: string[];
+};
 
 function lengthPx(value: string): number {
   const m = /^(\d*\.?\d+)(px|rem)$/.exec(value.trim());
@@ -58,7 +64,7 @@ function mediaApplies(media: string[], width: number): boolean {
   });
 }
 
-/** Every class on `el` and its ancestors, compiled through the preset; the font-size rules in source order. */
+/** Every class on `el` and its ancestors, compiled through the preset; the font-size and line-height rules in source order. */
 async function sizeRules(el: Element): Promise<SizeRule[]> {
   const classes: string[] = [];
   for (let e: Element | null = el; e; e = e.parentElement) classes.push(e.getAttribute("class") ?? "");
@@ -70,7 +76,7 @@ async function sizeRules(el: Element): Promise<SizeRule[]> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { css } = await postcss([tailwindcss(config as any)]).process("@tailwind utilities;", { from: undefined });
   const rules: SizeRule[] = [];
-  postcss.parse(css).walkDecls("font-size", (decl) => {
+  postcss.parse(css).walkDecls(/^(font-size|line-height)$/, (decl) => {
     const rule = decl.parent as postcss.Rule;
     const media: string[] = [];
     for (let p = rule.parent; p && p.type !== "root"; p = p.parent) {
@@ -83,20 +89,33 @@ async function sizeRules(el: Element): Promise<SizeRule[]> {
     for (const s of selectors) {
       if (!/^\.(?:\\.|[\w-])+$/.test(s)) throw new Error(`selector "${s}" is not modelled`);
     }
-    rules.push({ selectors, px: lengthPx(decl.value), important: decl.important, media });
+    const prop = decl.prop as SizeRule["prop"];
+    rules.push({ prop, value: decl.value.trim(), selectors, important: Boolean(decl.important), media });
   });
   return rules;
 }
 
 /** Every rule here is one class, so an important one wins, then the later one. */
-function fontSizeAt(el: Element | null, rules: SizeRule[], width: number): number {
-  if (!el) return 16;
+function winner(el: Element, rules: SizeRule[], prop: SizeRule["prop"], width: number): SizeRule | undefined {
   let best: SizeRule | undefined;
   for (const rule of rules) {
+    if (rule.prop !== prop) continue;
     if (!mediaApplies(rule.media, width) || !rule.selectors.some((s) => el.matches(s))) continue;
     if (!best || rule.important || !best.important) best = rule;
   }
-  return best ? best.px : fontSizeAt(el.parentElement, rules, width);
+  return best;
+}
+
+function fontSizeAt(el: Element | null, rules: SizeRule[], width: number): number {
+  if (!el) return 16;
+  const best = winner(el, rules, "font-size", width);
+  return best ? lengthPx(best.value) : fontSizeAt(el.parentElement, rules, width);
+}
+
+/** The line height a rule on the field itself sets, as written ("normal" when none does). */
+async function leadings(el: Element): Promise<string[]> {
+  const rules = await sizeRules(el);
+  return WIDTHS.map((w) => winner(el, rules, "line-height", w)?.value ?? "normal");
 }
 
 async function sizes(el: Element): Promise<number[]> {
@@ -160,9 +179,23 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
   });
 
   it("holds 16 up to 767 under a caller's sm: step, which Tailwind writes after max-md:", async () => {
-    // The perps TP / SL fields: 12, 14 from sm, 14 from md.
-    render(<Input data-testid="field" className="text-[12px] leading-[14px] sm:text-[14px] md:text-[14px]" />);
+    // The perps TP / SL fields: 12 on 14, 14 on 16 from sm, 14 from md.
+    render(
+      <Input
+        data-testid="field"
+        className="text-[12px] leading-[14px] sm:text-[14px] sm:leading-[16px] md:text-[14px] md:leading-[16px]"
+      />,
+    );
     expect(await sizes(field())).toEqual([16, 16, 14, 14]);
+    // The 16 keeps the caller's own line height in each band.
+    expect(await leadings(field())).toEqual(["14px", "16px", "16px", "16px"]);
+  });
+
+  it("keeps a caller's line height under the phone 16, from a leading or the size's own", async () => {
+    // The feed composer's body: 14/18 to 1023, 18/24 from lg.
+    render(<Textarea data-testid="field" className="text-sm/[18px] md:text-sm/[18px] lg:text-lg/[24px]" />);
+    expect(await sizes(field())).toEqual([16, 16, 14, 18]);
+    expect(await leadings(field())).toEqual(["18px", "18px", "18px", "24px"]);
   });
 
   it("lifts an important caller size under 16 too", async () => {
