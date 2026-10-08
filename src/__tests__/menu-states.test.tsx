@@ -166,7 +166,7 @@ function backgroundOf(row: Element, rules: BackgroundRule[]): string | undefined
   const hits = rules
     .filter((r) => row.classList.contains(r.utility) && holds(r.qualifier))
     .sort((a, b) => a.specificity - b.specificity || a.order - b.order);
-  return hits.at(-1)?.value;
+  return hits[hits.length - 1]?.value;
 }
 
 /** The two values Q10 asks for, as this preset compiles them. */
