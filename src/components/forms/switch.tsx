@@ -31,23 +31,35 @@ import { cn } from "../../lib/utils";
  * (Casey 2026-10-05 #70). `sky`'s only callers are the two Predict futures
  * panels, whose frames draw the same component.
  *
- * The track reads Ash through `--muted-foreground`, the token the app's theme
- * gives Ash: `174.5 5.5% 60.6%` in the dark theme, which is #95A09F exactly,
- * and `220 9% 38%` in the light one, the same grey the light theme gives Ash
- * text inside `coal-themed`. `bg-ash` was the fixed #95A09F in both themes
- * (the preset routes only `text-ash` through a variable), about 2.7:1 on a
- * white card, under the 3:1 a control needs; the light grey is 6.5:1. `primary` keeps
- * `bg-input`: it is not the boards' component, and it is most of the 179
- * production call sites across the app, skai-gaming, the wallet, command and
- * launch (16 are `toggle` or `sky`; counted 2026-10-08).
+ * On a dark surface the track is the `ash` token itself, the fixed #95A09F,
+ * so no theme variable can repoint it. It used to read `--muted-foreground`,
+ * which is Ash at the app's dark :root but which skai-gaming's
+ * DARK_THEME_VARS pins to an older `225 20% 75%` (#B3B9CC, a blue-grey) for
+ * every game surface, the /play hub's live-RTP toggle among them.
+ *
+ * Under `.light` (OFF_TRACK_LIGHT) it takes the light theme's own grey,
+ * `--muted-foreground` there (`220 9% 38%` in the app, the grey the light
+ * theme gives Ash text inside `coal-themed`): a fixed Ash is about 2.7:1 on a
+ * white card, under the 3:1 a control needs, and the grey is 6.5:1. That rule
+ * outranks a caller's own Off fill, so it is left off when the caller names
+ * one. `primary` keeps `bg-input`: it is not the boards' component, and it is
+ * most of the 179 production call sites across the app, skai-gaming, the
+ * wallet, command and launch (16 are `toggle` or `sky`; counted 2026-10-08).
  */
 const CHECKED_TRACK = {
   primary: "data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
-  sky: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-muted-foreground",
+  sky: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-ash",
   /* The web-app boards' own `input/toggle`: Sky Blue 300 checked, Ash at
      rest. The checked colour is pinned for the reason `sky` gives. */
-  toggle: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-muted-foreground",
+  toggle: "data-[state=checked]:bg-[#56C7F3] data-[state=unchecked]:bg-ash",
 } as const;
+
+/** The light theme's Off track for `toggle` and `sky` (see CHECKED_TRACK). */
+const OFF_TRACK_LIGHT = "[.light_&]:data-[state=unchecked]:bg-muted-foreground";
+
+/** Whether `className` names its own Off fill, which then holds in both themes. */
+const namesOffFill = (className?: string) =>
+  (className ?? "").split(/\s+/).some((c) => c !== "" && cn("data-[state=unchecked]:bg-ash", c) === c);
 
 export type SwitchVariant = keyof typeof CHECKED_TRACK;
 
@@ -197,6 +209,7 @@ const Switch = React.forwardRef<
           "peer inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none",
           TRACK_SIZE[size].root,
           CHECKED_TRACK[variant],
+          variant !== "primary" && !namesOffFill(className) ? OFF_TRACK_LIGHT : undefined,
           size === "stepped" && variant === "toggle" ? STEPPED_TOGGLE : undefined,
           unavailable === undefined ? undefined : UNAVAILABLE_TRACK,
           className,
@@ -218,10 +231,10 @@ const Switch = React.forwardRef<
         theme-invariant the way the frame is — in the light theme it moves the
         knob #FFFFEE -> #FFFFFF, which is imperceptible.
 
-        The UNCHECKED track is Figma's #95A09F, through the theme's
-        `--muted-foreground`, on the `toggle` and `sky` variants (see
-        CHECKED_TRACK). `primary` keeps `bg-input` and its callers keep their
-        look.
+        The UNCHECKED track is Figma's #95A09F, the `ash` token, on the
+        `toggle` and `sky` variants, and the light theme's grey under `.light`
+        (see CHECKED_TRACK). `primary` keeps `bg-input` and its callers keep
+        their look.
 
         NOT changed here: the default size. Figma draws 38x21 with a ~19px
         knob; this is 44x24 with a 20px knob (h-6 w-11), ~15% larger, and the

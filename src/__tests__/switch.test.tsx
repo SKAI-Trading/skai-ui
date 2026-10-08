@@ -1,43 +1,128 @@
+import { readdirSync, readFileSync } from "node:fs";
+import { join, resolve } from "node:path";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { beforeAll, describe, it, expect, vi } from "vitest";
 import postcss from "postcss";
+import selectorParser from "postcss-selector-parser";
 import tailwindcss from "tailwindcss";
 import skaiPreset from "../lib/tailwind-preset";
 import { Switch } from "../components/forms/switch";
 
-const BACKSLASH = String.fromCharCode(92);
-/** How Tailwind writes the `data-[state=unchecked]:` variant's qualifier. */
-const UNCHECKED = /\[data-state="?unchecked"?\]$/;
+/** Ash #95A09F as Tailwind writes a fixed colour, with no variable a theme could repoint. */
+const ASH = "149 160 159";
 
-/**
- * The background colours the compiled CSS gives `el` at rest, as "r g b" when
- * the value is an rgb() and as written otherwise: every rule Tailwind emits
- * through this package's preset for the classes on `el` whose selector is one
- * of those classes qualified by `[data-state=unchecked]`.
- */
-async function restingTrack(el: Element): Promise<string[]> {
-  const config = {
-    presets: [skaiPreset],
-    content: [{ raw: el.getAttribute("class") ?? "", extension: "txt" }],
-    corePlugins: { preflight: false },
-  };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { css } = await postcss([tailwindcss(config as any)]).process("@tailwind utilities;", { from: undefined });
+/** skai-ui's source as a consumer scans it: every .ts / .tsx under src, tests left out. */
+function sourceFiles(dir = resolve(__dirname, "..")): string[] {
   const out: string[] = [];
-  postcss.parse(css).walkRules((rule) => {
-    for (const selector of rule.selectors) {
-      const qualifier = UNCHECKED.exec(selector);
-      if (!selector.startsWith(".") || !qualifier) continue;
-      const utility = selector.slice(1, qualifier.index).split(BACKSLASH).join("");
-      if (!el.classList.contains(utility)) continue;
-      rule.walkDecls("background-color", (decl) => {
-        const rgb = /rgb\((\d+ \d+ \d+)/.exec(decl.value);
-        out.push(rgb ? rgb[1] : decl.value);
-      });
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name !== "__tests__") out.push(...sourceFiles(path));
+    } else if (/\.tsx?$/.test(entry.name) && !/\.(test|spec)\.tsx?$/.test(entry.name)) {
+      out.push(path);
     }
-  });
+  }
   return out;
 }
+
+type BgRule = { selector: string; value: string; specificity: number; order: number };
+let sheet: Promise<BgRule[]> | undefined;
+
+/**
+ * Every background-color rule of the stylesheet a consumer builds from
+ * skai-ui's source and its own file (this one): the preset over both.
+ */
+function backgroundRules(): Promise<BgRule[]> {
+  sheet ??= (async () => {
+    const content = [...sourceFiles(), resolve(__dirname, "switch.test.tsx")].map((f) => ({
+      raw: readFileSync(f, "utf8"),
+      extension: "tsx",
+    }));
+    const config = { presets: [skaiPreset], content, corePlugins: { preflight: false } };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { css } = await postcss([tailwindcss(config as any)]).process("@tailwind utilities;", { from: undefined });
+    const rules: BgRule[] = [];
+    let order = 0;
+    postcss.parse(css).walkDecls("background-color", (decl) => {
+      const rule = decl.parent as postcss.Rule;
+      if (rule.type !== "rule" || rule.parent?.type !== "root") return;
+      for (const selector of rule.selectors) {
+        // Classes and attribute selectors, not escaped characters inside a class name.
+        const specificity = [...selector.matchAll(/\\.|[.[]/g)].filter((m) => m[0] === "." || m[0] === "[").length;
+        rules.push({ selector, value: decl.value.trim(), specificity, order: order++ });
+      }
+    });
+    return rules;
+  })();
+  return sheet;
+}
+
+/**
+ * Whether `el` matches `selector`. jsdom never matches a class whose name
+ * holds an escaped `.` or `&`, such as `[.light_&]:...`, so classes and
+ * attributes are compared here, unescaped; a pseudo-class is asked of jsdom on
+ * its own. Only the descendant and child combinators are modelled, and only
+ * once the part to their right has matched.
+ */
+function reaches(el: Element, selector: string): boolean {
+  const compounds: selectorParser.Node[][] = [[]];
+  const joins: string[] = [];
+  for (const node of selectorParser().astSync(selector).nodes[0].nodes) {
+    if (node.type === "combinator") {
+      joins.push(node.value.trim() || " ");
+      compounds.push([]);
+    } else compounds[compounds.length - 1].push(node);
+  }
+  const fits = (e: Element, parts: selectorParser.Node[]) =>
+    parts.every((p) => {
+      if (p.type === "class") return e.classList.contains(p.value);
+      if (p.type === "attribute") return p.value === undefined ? e.hasAttribute(p.attribute) : e.getAttribute(p.attribute) === p.value;
+      if (p.type === "tag") return e.tagName.toLowerCase() === p.value.toLowerCase();
+      if (p.type === "universal") return true;
+      if (p.type === "pseudo") return e.matches(String(p).trim());
+      throw new Error(`${p.type} in "${selector}" is not modelled`);
+    });
+  const match = (e: Element | null, i: number): boolean => {
+    if (!e || !fits(e, compounds[i])) return false;
+    if (i === 0) return true;
+    const join = joins[i - 1];
+    if (join === ">") return match(e.parentElement, i - 1);
+    if (join !== " ") throw new Error(`combinator "${join}" in "${selector}" is not modelled`);
+    for (let a = e.parentElement; a; a = a.parentElement) if (match(a, i - 1)) return true;
+    return false;
+  };
+  return match(el, compounds.length - 1);
+}
+
+/**
+ * The background the cascade gives `el`: the matching rule with the highest
+ * specificity, then the later one. A fixed colour reads "r g b"; anything else
+ * as written.
+ */
+async function offTrack(el: Element): Promise<string> {
+  let best: BgRule | undefined;
+  for (const rule of await backgroundRules()) {
+    // A pseudo-element rule paints a part (placeholder, scrollbar), never the track.
+    if (rule.selector.includes("::")) continue;
+    let hit: boolean;
+    try {
+      hit = reaches(el, rule.selector);
+    } catch (e) {
+      // Engine-prefixed states (`:-moz-focusring`, `:-webkit-autofill`) jsdom cannot parse.
+      if (/:-(moz|webkit|ms)-/.test(rule.selector)) continue;
+      throw e;
+    }
+    if (!hit) continue;
+    if (!best || rule.specificity > best.specificity || (rule.specificity === best.specificity && rule.order > best.order)) {
+      best = rule;
+    }
+  }
+  if (!best) return "none";
+  const rgb = /^rgb\((\d+ \d+ \d+) \/ var\(--tw-bg-opacity(?:, ?1)?\)\)$/.exec(best.value);
+  return rgb ? rgb[1] : best.value;
+}
+
+beforeAll(() => backgroundRules().then(() => undefined), 120_000);
 
 describe("Switch", () => {
   it("renders as a switch role", () => {
@@ -254,7 +339,7 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     // card's colour, so an Off toggle read as a white dot with no pill.
     render(<Switch aria-label="t" size="stepped" variant="toggle" />);
     expect(classes()).toContain("border-green-coal-300");
-    expect(classes()).toContain("data-[state=unchecked]:bg-muted-foreground");
+    expect(classes()).toContain("data-[state=unchecked]:bg-ash");
     expect(classes()).not.toContain("data-[state=unchecked]:bg-[#001615]");
     expect(classes()).not.toContain("border-transparent");
     // On stays the Sky Blue the variant pins.
@@ -269,7 +354,7 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     // node's ring-and-knob box, so the smaller two keep their transparent rim.
     for (const size of ["compact", "default"] as const) {
       const { unmount } = render(<Switch aria-label={size} size={size} variant="toggle" />);
-      expect(classes()).toContain("data-[state=unchecked]:bg-muted-foreground");
+      expect(classes()).toContain("data-[state=unchecked]:bg-ash");
       expect(classes()).not.toContain("data-[state=unchecked]:bg-[#001615]");
       expect(classes()).toContain("border-transparent");
       expect(classes()).not.toContain("border-green-coal-300");
@@ -285,29 +370,79 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     // `sky`'s only callers are the Predict futures settings panels, whose
     // frames draw the same `input/toggle`. `primary` is not that component.
     const { unmount } = render(<Switch aria-label="s" variant="sky" />);
-    expect(classes()).toContain("data-[state=unchecked]:bg-muted-foreground");
+    expect(classes()).toContain("data-[state=unchecked]:bg-ash");
     expect(classes()).not.toContain("data-[state=unchecked]:bg-input");
     expect(classes()).toContain("data-[state=checked]:bg-[#56C7F3]");
     unmount();
     render(<Switch aria-label="p" />);
     expect(classes()).toContain("data-[state=unchecked]:bg-input");
-    expect(classes()).not.toContain("data-[state=unchecked]:bg-muted-foreground");
+    expect(classes()).not.toContain("data-[state=unchecked]:bg-ash");
   });
 
-  it("paints the Off track from the theme's --muted-foreground, never a fixed colour", async () => {
-    // Compiled, so a renamed or repointed token cannot pass on its class name.
-    // `bg-ash` compiled to the fixed rgb(149 160 159) in both themes; the
-    // variable is Ash (#95A09F) in the app's dark theme and its light grey in
-    // the light one (resolved against the app's index.css in its own tests).
+  it("rests on Ash on a dark surface, whatever the surface's --muted-foreground holds", async () => {
+    // Casey 2026-10-05 #70: Off is Ash #95A09F in the dark theme. The /play
+    // hub wraps its live-RTP toggle in DARK_THEME_VARS, which pins
+    // --muted-foreground to 225 20% 75% (#B3B9CC), so a track that read that
+    // variable drew a blue-grey there. Resolved against the stylesheet a
+    // consumer builds from skai-ui's source.
     for (const [variant, size] of [
       ["toggle", "compact"],
       ["toggle", "default"],
       ["toggle", "stepped"],
       ["sky", "default"],
     ] as const) {
-      const { unmount } = render(<Switch aria-label="t" variant={variant} size={size} />);
-      expect(trackOf()).toHaveAttribute("data-state", "unchecked");
-      expect(await restingTrack(trackOf()), `${variant}/${size}`).toEqual(["hsl(var(--muted-foreground))"]);
+      for (const style of [undefined, { ["--muted-foreground" as string]: "225 20% 75%" }]) {
+        const { unmount } = render(
+          <div style={style}>
+            <Switch aria-label="t" variant={variant} size={size} />
+          </div>,
+        );
+        expect(trackOf()).toHaveAttribute("data-state", "unchecked");
+        expect(await offTrack(trackOf()), `${variant}/${size} ${style ? "under a pinned --muted-foreground" : ""}`).toBe(ASH);
+        unmount();
+      }
+    }
+  });
+
+  it("rests on the light theme's own grey under .light, through --muted-foreground", async () => {
+    // A fixed Ash is about 2.7:1 on a white card; the light theme's
+    // --muted-foreground (220 9% 38% in the app) is 6.5:1.
+    for (const [variant, size] of [
+      ["toggle", "compact"],
+      ["toggle", "stepped"],
+      ["sky", "default"],
+    ] as const) {
+      const { unmount } = render(
+        <div className="light">
+          <Switch aria-label="t" variant={variant} size={size} />
+        </div>,
+      );
+      expect(await offTrack(trackOf()), `${variant}/${size}`).toBe("hsl(var(--muted-foreground))");
+      unmount();
+    }
+  });
+
+  it("lets a caller's own Off fill hold in both themes", async () => {
+    // The sports bet slip's quick-bet toggle names Ash itself.
+    for (const wrapper of ["", "light"]) {
+      const { unmount } = render(
+        <div className={wrapper}>
+          <Switch aria-label="t" variant="toggle" size="compact" className="data-[state=unchecked]:bg-ash" />
+        </div>,
+      );
+      expect(await offTrack(trackOf()), wrapper || "dark").toBe(ASH);
+      unmount();
+    }
+  });
+
+  it("leaves primary on bg-input in both themes", async () => {
+    for (const wrapper of ["", "light"]) {
+      const { unmount } = render(
+        <div className={wrapper}>
+          <Switch aria-label="p" />
+        </div>,
+      );
+      expect(await offTrack(trackOf()), wrapper || "dark").toBe("hsl(var(--input))");
       unmount();
     }
   });
