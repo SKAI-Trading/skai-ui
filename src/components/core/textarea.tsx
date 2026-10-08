@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
+import { fieldTextSize } from "./input";
 
 /**
  * Props for the Textarea component
@@ -57,13 +58,11 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       <div className={description || hasError ? "space-y-1" : undefined}>
         <textarea
           className={cn(
-            // 14px at every width, the frames' field text, as the Input primitive
-            // (Casey 2026-10-05 #10 and #105). This was `text-base md:text-sm`,
-            // 16 on phones, because iOS Safari zooms the viewport onto a focused
-            // field under 16px and does not zoom back out when the field unmounts
-            // while focused (the bug-report form's success swap, report f08095a9).
-            // Casey ruled for the frames' 14 knowing that.
-            "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            // 16px on phones, 14 from md up (Casey 2026-10-08 Q29). iOS Safari
+            // also stays zoomed when a focused field under 16px unmounts, as
+            // the bug-report form's success swap does (report f08095a9).
+            fieldTextSize(className),
             hasError && "border-destructive focus-visible:ring-destructive",
             className,
           )}

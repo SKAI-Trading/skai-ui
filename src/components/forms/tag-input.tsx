@@ -2,6 +2,7 @@ import * as React from "react";
 import { X } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { Badge } from "../core/badge";
+import { fieldTextSize } from "../core/input";
 
 export interface TagInputProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -187,6 +188,8 @@ const TagInput = React.forwardRef<HTMLInputElement, TagInputProps>(
           className={cn(
             "flex-1 bg-transparent outline-none placeholder:text-muted-foreground",
             "min-w-[120px]",
+            // The field takes the box's size, 14, and goes to 16 below md (Casey 2026-10-08 Q29).
+            fieldTextSize(cn("text-sm", className)),
             disabled && "cursor-not-allowed",
           )}
           aria-label="Add new tag"

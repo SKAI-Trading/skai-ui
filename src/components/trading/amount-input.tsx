@@ -165,7 +165,10 @@ const AmountInput = React.forwardRef<HTMLInputElement, AmountInputProps>(
             disabled={disabled}
             aria-invalid={hasError || undefined}
             aria-label={props["aria-label"] ?? (label || token || "Amount")}
-            className="border-0 bg-transparent p-0 text-lg font-mono focus-visible:ring-0 focus-visible:ring-offset-0"
+            // 18 on phones and 14 from md up, the size this field has always
+            // drawn: it took `md:text-sm` from Input until Input let a caller's
+            // size hold at every width (#105). No frame draws it.
+            className="border-0 bg-transparent p-0 text-lg md:text-sm font-mono focus-visible:ring-0 focus-visible:ring-offset-0"
             {...props}
           />
 

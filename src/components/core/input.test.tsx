@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import { Input } from "../core/input";
+import { Input, fieldTextSize } from "../core/input";
 
 describe("Input", () => {
   it("renders correctly", () => {
@@ -109,23 +109,62 @@ describe("Input", () => {
   });
 });
 
-describe("Input text size (Casey 2026-10-05 #10 and #105)", () => {
+describe("Input text size (Casey 2026-10-08 Q29, and #105)", () => {
   // The field's own size classes, bare or at a breakpoint. `file:text-sm` is
   // the file-picker button's, not the field's, so it is left out.
-  const FIELD_SIZE = /^(?:(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
+  const FIELD_SIZE = /^(?:(?:max-)?(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
   const sizes = () =>
     screen.getByTestId("input").className.split(/\s+/).filter((c) => FIELD_SIZE.test(c));
 
-  it("draws the frames' 14px at every width, with no phone size beside it", () => {
-    render(<Input data-testid="input" />);
-    expect(sizes()).toEqual(["text-sm"]);
+  it("draws 16 below md and the frames' 14 from md up when the caller names no size", () => {
+    const { unmount } = render(<Input data-testid="input" />);
+    expect(sizes()).toEqual(["text-base", "md:text-sm"]);
+    unmount();
+    render(<Input data-testid="input" className="h-11 bg-card text-white" />);
+    expect(sizes()).toEqual(["text-base", "md:text-sm"]);
   });
 
-  it("lets a caller's own size win at every width, not only below 768", () => {
-    const { unmount } = render(<Input data-testid="input" className="text-xs" />);
-    expect(sizes()).toEqual(["text-xs"]);
-    unmount();
+  it("keeps a caller's size under 16 from md up and lifts the phone to 16", () => {
+    render(<Input data-testid="input" className="text-xs" />);
+    expect(sizes()).toEqual(["max-md:text-base", "text-xs"]);
+  });
+
+  it("leaves a caller's size of 16 or more alone at every width", () => {
     render(<Input data-testid="input" className="text-[22px]" />);
     expect(sizes()).toEqual(["text-[22px]"]);
+  });
+
+  it("keeps the phone 16 under a caller's size that starts at md", () => {
+    render(<Input data-testid="input" className="md:text-lg" />);
+    expect(sizes()).toEqual(["text-base", "md:text-lg"]);
+  });
+});
+
+describe("fieldTextSize", () => {
+  it("gives a field that names no size 16 below md and 14 from md up", () => {
+    expect(fieldTextSize()).toBe("text-base md:text-sm");
+    expect(fieldTextSize("h-11 text-white text-muted-foreground")).toBe("text-base md:text-sm");
+    expect(fieldTextSize("lg:text-base rounded-xl px-4")).toBe("text-base md:text-sm");
+  });
+
+  it("lifts a phone to 16 under a size below 16, a preset or arbitrary one included", () => {
+    for (const own of ["text-xs", "text-sm", "text-[14px]", "text-[0.75rem]", "text-para-2-mobile"]) {
+      expect(fieldTextSize(`h-11 ${own}`), own).toBe("max-md:text-base");
+    }
+  });
+
+  it("lifts it under a size it cannot read too", () => {
+    expect(fieldTextSize("text-[length:var(--bet-size)]")).toBe("max-md:text-base");
+  });
+
+  it("gives nothing under a size of 16 or more", () => {
+    for (const own of ["text-base", "text-lg", "text-[22px]", "text-[1.125rem]", "text-para-1", "text-number-2-mobile"]) {
+      expect(fieldTextSize(`h-11 ${own}`), own).toBeUndefined();
+    }
+  });
+
+  it("reads the last of several sizes, the one that wins", () => {
+    expect(fieldTextSize("text-lg text-xs")).toBe("max-md:text-base");
+    expect(fieldTextSize("text-xs text-lg")).toBeUndefined();
   });
 });

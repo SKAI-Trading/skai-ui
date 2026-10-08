@@ -1,5 +1,6 @@
 ﻿import * as React from "react";
 import { cn } from "../../lib/utils";
+import { skaiFontSizes } from "../../lib/design-tokens";
 import { useNumberFieldGuard } from "./number-field-guard";
 
 /**
@@ -15,6 +16,55 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   description?: string;
   /** ID for the description element (auto-generated if not provided) */
   descriptionId?: string;
+}
+
+/** Tailwind's own size scale in px. The preset's named sizes come from skaiFontSizes. */
+const TAILWIND_TEXT_PX: Record<string, number> = {
+  xs: 12, sm: 14, base: 16, lg: 18, xl: 20, "2xl": 24, "3xl": 30,
+  "4xl": 36, "5xl": 48, "6xl": 60, "7xl": 72, "8xl": 96, "9xl": 128,
+};
+
+function lengthPx(value: unknown): number | undefined {
+  const m = /^(\d*\.?\d+)(px|rem)$/.exec(String(value ?? ""));
+  if (!m) return undefined;
+  return Number(m[1]) * (m[2] === "rem" ? 16 : 1);
+}
+
+/** The px a bare size class such as `text-xs`, `text-[22px]` or `text-para-2` sets, when it can be read. */
+function textClassPx(sizeClass: string): number | undefined {
+  const key = sizeClass.slice("text-".length);
+  if (key.startsWith("[")) return lengthPx(key.slice(1, -1));
+  if (key in TAILWIND_TEXT_PX) return TAILWIND_TEXT_PX[key];
+  const token = (skaiFontSizes as Record<string, unknown>)[key];
+  return lengthPx(Array.isArray(token) ? token[0] : token);
+}
+
+/**
+ * The text size classes a field adds under its caller's, so that it is never
+ * under 16px below md, where iOS Safari zooms the page into a focused field
+ * that is, and draws the frames' 14px from md up (Casey 2026-10-08 Q29, which
+ * takes back the phone half of 2026-10-05 #10; zoom is never locked).
+ *
+ * - The caller names no size: `text-base md:text-sm`.
+ * - The caller names a size under 16, or one that cannot be read here (a
+ *   CSS variable, an `em`): `max-md:text-base`, so its size holds
+ *   from md up (#105) and the phone gets 16. A caller that sets its own
+ *   `max-md:` size replaces this one, and is choosing the zoom.
+ * - The caller names 16 or more: nothing; its size holds at every width.
+ *
+ * Input, Textarea and PasswordInput apply it, and so does every field built
+ * on them. A field on a raw element takes the same rule with
+ * `cn(fieldTextSize(className), className)`.
+ */
+export function fieldTextSize(className?: string): string | undefined {
+  // The caller's own bare size class, the last one when it names several.
+  const own = (className ?? "")
+    .split(/\s+/)
+    .filter((c) => c !== "" && cn("text-base", c) === c)
+    .pop();
+  if (own === undefined) return "text-base md:text-sm";
+  const px = textClassPx(own);
+  return px !== undefined && px >= 16 ? undefined : "max-md:text-base";
 }
 
 /**
@@ -80,12 +130,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(
-            // 14px at every width, the frames' field text (Casey 2026-10-05
-            // #10 and #105; iOS zooms on focus under 16 and that is known).
-            // One unprefixed size, so a caller's own size class replaces it
-            // at every width too; `text-base md:text-sm` kept `md:text-sm`
-            // beside a caller's size from 768 up.
-            "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            fieldTextSize(className),
             hasError && "border-destructive focus-visible:ring-destructive",
             className,
           )}
@@ -289,6 +335,9 @@ const SkaiInput = React.forwardRef<HTMLInputElement, SkaiInputProps>(
           className={cn(
             "bg-transparent outline-none font-['Manrope'] tracking-[-0.04em] w-full",
             "placeholder:opacity-60",
+            // It takes its size from the box; medium and small are 14, so the
+            // field itself goes to 16 below md (Q29).
+            fieldTextSize(cn(sizeClasses[skaiSize], className)),
           )}
           onFocus={(e) => {
             setIsFocused(true);

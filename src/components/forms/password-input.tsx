@@ -2,6 +2,7 @@ import * as React from "react";
 import { cn } from "../../lib/utils";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { Button } from "../core/button";
+import { fieldTextSize } from "../core/input";
 
 /**
  * Props for the PasswordInput component
@@ -141,8 +142,9 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
             id={inputId}
             type={showPassword ? "text" : "password"}
             className={cn(
-              // 14px at every width, as the Input primitive (Casey 2026-10-05 #105).
-              "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 pr-10 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+              "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 pr-10 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+              // As the Input primitive: 16px on phones, 14 from md up (Casey 2026-10-08 Q29).
+              fieldTextSize(className),
               hasError && "border-destructive focus-visible:ring-destructive",
               className,
             )}

@@ -207,20 +207,20 @@ describe("PasswordInput", () => {
     });
   });
 
-  describe("Text size (Casey 2026-10-05 #10 and #105)", () => {
+  describe("Text size (Casey 2026-10-08 Q29, and #105)", () => {
     // The field's own size classes; `file:text-sm` belongs to the file button.
-    const FIELD_SIZE = /^(?:(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
+    const FIELD_SIZE = /^(?:(?:max-)?(?:sm|md|lg|xl|2xl):)?text-(?:xs|sm|base|lg|xl|\dxl|\[[^\]]+\])$/;
     const sizes = () =>
       (document.querySelector("input")?.className ?? "").split(/\s+/).filter((c) => FIELD_SIZE.test(c));
 
-    it("draws the frames' 14px at every width, with no phone size beside it", () => {
+    it("draws 16 below md and the frames' 14 from md up when the caller names no size", () => {
       render(<PasswordInput />);
-      expect(sizes()).toEqual(["text-sm"]);
+      expect(sizes()).toEqual(["text-base", "md:text-sm"]);
     });
 
-    it("lets a caller's own size win at every width, not only below 768", () => {
+    it("keeps a caller's size under 16 from md up and lifts the phone to 16", () => {
       render(<PasswordInput className="text-xs" />);
-      expect(sizes()).toEqual(["text-xs"]);
+      expect(sizes()).toEqual(["max-md:text-base", "text-xs"]);
     });
   });
 });

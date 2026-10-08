@@ -4,6 +4,7 @@ import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
 
 import { cn } from "../../lib/utils";
+import { fieldTextSize } from "../core/input";
 import { Dialog, DialogContent } from "../overlays/dialog";
 
 const Command = React.forwardRef<
@@ -47,7 +48,9 @@ const CommandInput = React.forwardRef<
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-11 w-full rounded-md bg-transparent py-3 outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        // 16 below md, 14 from md up, as the Input primitive (Casey 2026-10-08 Q29).
+        fieldTextSize(className),
         className,
       )}
       {...props}
