@@ -48,7 +48,8 @@ function textClassPx(sizeClass: string): number | undefined {
  * - The caller names no size: `text-base md:text-sm`.
  * - The caller names a size under 16, or one that cannot be read here (a
  *   CSS variable, an `em`): `max-md:text-base`, so its size holds
- *   from md up (#105) and the phone gets 16. A caller that sets its own
+ *   from md up (#105) and the phone gets 16. When the caller's size is
+ *   marked important (`!text-xs`), so is the 16. A caller that sets its own
  *   `max-md:` size replaces this one, and is choosing the zoom.
  * - The caller names 16 or more: nothing; its size holds at every width.
  *
@@ -60,11 +61,16 @@ export function fieldTextSize(className?: string): string | undefined {
   // The caller's own bare size class, the last one when it names several.
   const own = (className ?? "")
     .split(/\s+/)
-    .filter((c) => c !== "" && cn("text-base", c) === c)
+    .filter((c) => {
+      const bare = c.replace(/^!/, "");
+      return bare !== "" && cn("text-base", bare) === bare;
+    })
     .pop();
   if (own === undefined) return "text-base md:text-sm";
-  const px = textClassPx(own);
-  return px !== undefined && px >= 16 ? undefined : "max-md:text-base";
+  const important = own.startsWith("!");
+  const px = textClassPx(important ? own.slice(1) : own);
+  if (px !== undefined && px >= 16) return undefined;
+  return important ? "max-md:!text-base" : "max-md:text-base";
 }
 
 /**

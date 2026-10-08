@@ -36,7 +36,7 @@ afterEach(cleanup);
 /** 375 and 767 are below md, 768 is md itself, 1440 a desktop. */
 const WIDTHS = [375, 767, 768, 1440] as const;
 
-type SizeRule = { selectors: string[]; px: number; media?: string };
+type SizeRule = { selectors: string[]; px: number; important: boolean; media?: string };
 
 function lengthPx(value: string): number {
   const m = /^(\d*\.?\d+)(px|rem)$/.exec(value.trim());
@@ -77,18 +77,20 @@ async function sizeRules(el: Element): Promise<SizeRule[]> {
     for (const s of selectors) {
       if (!/^\.(?:\\.|[\w-])+$/.test(s)) throw new Error(`selector "${s}" is not modelled`);
     }
-    rules.push({ selectors, px: lengthPx(decl.value), media });
+    rules.push({ selectors, px: lengthPx(decl.value), important: decl.important, media });
   });
   return rules;
 }
 
+/** Every rule here is one class, so an important one wins, then the later one. */
 function fontSizeAt(el: Element | null, rules: SizeRule[], width: number): number {
   if (!el) return 16;
-  let px: number | undefined;
+  let best: SizeRule | undefined;
   for (const rule of rules) {
-    if (mediaApplies(rule.media, width) && rule.selectors.some((s) => el.matches(s))) px = rule.px;
+    if (!mediaApplies(rule.media, width) || !rule.selectors.some((s) => el.matches(s))) continue;
+    if (!best || rule.important || !best.important) best = rule;
   }
-  return px ?? fontSizeAt(el.parentElement, rules, width);
+  return best ? best.px : fontSizeAt(el.parentElement, rules, width);
 }
 
 async function sizes(el: Element): Promise<number[]> {
@@ -151,6 +153,11 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
     expect(await sizes(field())).toEqual([16, 16, 16, 16]);
   });
 
+  it("lifts an important caller size under 16 too", async () => {
+    render(<Input data-testid="field" className="!text-number-4-mobile md:!text-number-4-tablet lg:!text-number-4" />);
+    expect(await sizes(field())).toEqual([16, 16, 14, 14]);
+  });
+
   it("keeps 16 below md under a caller's size that starts at md", async () => {
     render(<Input data-testid="field" className="md:text-lg" />);
     expect(await sizes(field())).toEqual([16, 16, 18, 18]);
@@ -169,11 +176,14 @@ describe("the @skai/ui text fields on a phone and from md up (Q29)", () => {
 
   it("would read a 14px field as 14 on a phone, so the cases above are not the resolver's default", async () => {
     // A control on the instrument: a raw input with the old `text-sm` and
-    // nothing else must come back 14 everywhere, and one with no size class
-    // must take its parent's.
+    // nothing else must come back 14 everywhere, an important size must beat
+    // a later plain one, and a field with no size class must take its parent's.
     const { unmount } = render(<input data-testid="field" className="text-sm" />);
     expect(await sizes(field())).toEqual([14, 14, 14, 14]);
     unmount();
+    const second = render(<input data-testid="field" className="!text-xs max-md:text-base" />);
+    expect(await sizes(field())).toEqual([12, 12, 12, 12]);
+    second.unmount();
     render(
       <div className="text-xs">
         <input data-testid="field" />

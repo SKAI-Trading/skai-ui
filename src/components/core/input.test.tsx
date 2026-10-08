@@ -167,4 +167,10 @@ describe("fieldTextSize", () => {
     expect(fieldTextSize("text-lg text-xs")).toBe("max-md:text-base");
     expect(fieldTextSize("text-xs text-lg")).toBeUndefined();
   });
+
+  it("marks the phone 16 important under an important size, which a plain one would lose to", () => {
+    // The bet slip's hex field sets `!text-number-4-mobile` (12).
+    expect(fieldTextSize("!text-number-4-mobile md:!text-number-4-tablet")).toBe("max-md:!text-base");
+    expect(fieldTextSize("!text-lg")).toBeUndefined();
+  });
 });
