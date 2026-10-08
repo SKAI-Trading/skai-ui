@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-08T06:08:19.272Z",
+  "generated": "2026-10-08T09:18:06.659Z",
   "harvestedAt": "2026-10-08",
   "rollup": {
     "pages": 39,
@@ -20,8 +20,8 @@
     "genuineWithFrameDefects": 3785,
     "frameDefectUncited": [],
     "matched": 3537,
-    "done": 1461,
-    "verified": 1046,
+    "done": 1482,
+    "verified": 1067,
     "visuallyDowngraded": 46,
     "visualUnmapped": [],
     "visualRetired": [
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1635,
+    "partial": 1614,
     "notStarted": 146,
     "blocked": 290,
     "frameDefect": 0,
@@ -51,21 +51,21 @@
     "unknown": 0,
     "liveOnly": 1,
     "rollupOnly": 14,
-    "defaultNamed": 156,
+    "defaultNamed": 157,
     "ambiguous": 105,
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3610,
+    "total": 3631,
     "withBreakpointProvenance": 1838,
-    "namingANodeId": 3385,
+    "namingANodeId": 3406,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22103,
+    "total": 22149,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 53490
+    "unrecognisedTokens": 53878
   },
   "statusFiles": [
     {
@@ -5661,10 +5661,22 @@
       "ids": 5
     },
     {
+      "file": "status.wave77.P075.tsv",
+      "rows": 22,
+      "withLiveId": 22,
+      "ids": 25
+    },
+    {
       "file": "status.wave77.P080.tsv",
       "rows": 10,
       "withLiveId": 10,
       "ids": 11
+    },
+    {
+      "file": "status.wave77.P088.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 6
     },
     {
       "file": "status.wave77.Z1.tsv",
@@ -5791,6 +5803,12 @@
       "rows": 9,
       "withLiveId": 9,
       "ids": 10
+    },
+    {
+      "file": "status.wave77.Z9.tsv",
+      "rows": 18,
+      "withLiveId": 18,
+      "ids": 18
     },
     {
       "file": "status.wave8.games-a.tsv",
@@ -6759,12 +6777,12 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 54,
+      "verified": 61,
       "visuallyDowngraded": 2,
       "byStatus": {
-        "partial": 185,
+        "partial": 178,
         "furniture": 1,
-        "done": 99,
+        "done": 106,
         "not-started": 16,
         "blocked-on-backend": 4
       },
@@ -7700,20 +7718,19 @@
       },
       "ruledOut": 0,
       "ruledOutIds": [],
-      "frameDefects": 1,
-      "frameDefectIds": [
-        "10249-9938"
-      ],
-      "genuine": 5,
-      "matched": 5,
+      "frameDefects": 0,
+      "frameDefectIds": [],
+      "genuine": 6,
+      "matched": 6,
       "rollupOnly": 0,
-      "defaultNamed": 0,
+      "defaultNamed": 1,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 0,
+      "verified": 1,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 5
+        "partial": 5,
+        "done": 1
       },
       "liveOnly": []
     },
@@ -7777,11 +7794,11 @@
       "defaultNamed": 6,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 3,
+      "verified": 9,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 12,
-        "done": 4
+        "partial": 6,
+        "done": 10
       },
       "liveOnly": []
     },
@@ -8032,18 +8049,21 @@
       },
       "ruledOut": 0,
       "ruledOutIds": [],
-      "frameDefects": 0,
-      "frameDefectIds": [],
-      "genuine": 16,
-      "matched": 16,
+      "frameDefects": 1,
+      "frameDefectIds": [
+        "9929-16698"
+      ],
+      "genuine": 15,
+      "matched": 15,
       "rollupOnly": 0,
       "defaultNamed": 4,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 0,
+      "verified": 7,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 10,
+        "partial": 2,
+        "done": 7,
         "blocked-on-backend": 6
       },
       "liveOnly": []
@@ -17622,17 +17642,17 @@
       "id": "11217-151964",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11220-151987",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11216-143952",
@@ -17686,41 +17706,41 @@
       "id": "11220-159672",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11220-166265",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11220-166285",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11220-164090",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11220-161923",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11144-199166",
@@ -40670,6 +40690,14 @@
       "id": "10248-9763",
       "page": "✅ Hi-Lo - Skai originals",
       "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "10249-9938",
+      "page": "✅ Hi-Lo - Skai originals",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": "partial"
@@ -40792,7 +40820,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "9433-14563",
@@ -40808,7 +40836,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "9433-15057",
@@ -40816,7 +40844,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "9481-20645",
@@ -40854,9 +40882,9 @@
       "id": "9680-3956",
       "page": "✅ Keno - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9680-5126",
@@ -40864,7 +40892,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "9680-5236",
@@ -40872,47 +40900,47 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "9683-8908",
       "page": "✅ Keno - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9690-9544",
       "page": "✅ Keno - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9690-9912",
       "page": "✅ Keno - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9690-10413",
       "page": "✅ Keno - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9690-10777",
       "page": "✅ Keno - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9691-12630",
@@ -41246,65 +41274,57 @@
       "id": "9907-10355",
       "page": "✅ Rock Paper Scissors - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
-    },
-    {
-      "id": "9929-16698",
-      "page": "✅ Rock Paper Scissors - Skai originals",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9929-16830",
       "page": "✅ Rock Paper Scissors - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9935-17641",
       "page": "✅ Rock Paper Scissors - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9935-17766",
       "page": "✅ Rock Paper Scissors - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9935-17987",
       "page": "✅ Rock Paper Scissors - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9935-18096",
       "page": "✅ Rock Paper Scissors - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9937-18748",
       "page": "✅ Rock Paper Scissors - Skai originals",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9937-19990",

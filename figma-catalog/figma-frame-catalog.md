@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-08T06:08:15.772Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-08T09:18:04.790Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -15,7 +15,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 3 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 68 | 126 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 112 | 78 | 0 | 0 | 102 |
-| play | ✅ | 463 | 167 | 296 | 44 | 54 | 100 | 9 | 0 | 66 |
+| play | ✅ | 463 | 167 | 296 | 44 | 57 | 97 | 9 | 0 | 66 |
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 66 | 58 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 20 | 102 | 19 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
@@ -32,17 +32,17 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 2 | 0 | 0 | 14 |
 | towers | ✅ | 31 | 17 | 14 | 1 | 4 | 5 | 0 | 0 | 7 |
 | skratch | ✅ | 22 | 16 | 6 | 1 | 6 | 7 | 0 | 0 | 11 |
-| rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 0 | 11 | 0 | 0 | 7 |
+| rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 7 | 3 | 0 | 0 | 7 |
 | crash | ✅ | 20 | 15 | 5 | 1 | 2 | 11 | 0 | 0 | 12 |
 | plinko | ✅ | 21 | 15 | 6 | 1 | 4 | 4 | 0 | 0 | 8 |
 | skai-cross |  | 15 | 15 | 0 | 1 | 0 | 0 | 0 | 15 | 0 |
-| keno | ✅ | 28 | 13 | 15 | 1 | 4 | 7 | 0 | 0 | 8 |
+| keno | ✅ | 28 | 13 | 15 | 1 | 9 | 2 | 0 | 0 | 8 |
 | mines | ✅ | 19 | 12 | 7 | 1 | 4 | 3 | 0 | 0 | 4 |
 | fortune-wheel | ✅ | 25 | 11 | 14 | 1 | 0 | 4 | 0 | 0 | 15 |
 | slide | ✅ | 18 | 11 | 7 | 1 | 0 | 10 | 0 | 0 | 11 |
 | roulette | ✅ | 21 | 11 | 10 | 1 | 0 | 2 | 0 | 0 | 10 |
 | darts | ✅ | 31 | 10 | 21 | 1 | 0 | 10 | 0 | 0 | 13 |
-| hilo | ✅ | 15 | 9 | 6 | 1 | 0 | 5 | 0 | 0 | 8 |
+| hilo | ✅ | 15 | 9 | 6 | 1 | 1 | 4 | 0 | 0 | 8 |
 | bingo | ✅ | 17 | 9 | 8 | 1 | 2 | 1 | 0 | 0 | 11 |
 | video-poker | ✅ | 14 | 8 | 6 | 1 | 0 | 2 | 0 | 0 | 4 |
 | limbo | ✅ | 14 | 8 | 6 | 1 | 4 | 3 | 0 | 0 | 8 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2372** | | | **1063** | **1212** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2371** | | | **1079** | **1195** | **78** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -660,7 +660,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Rock Paper Scissors | 16 | desktop, mobile, tablet | Desktop; Rock icon 1; Desktop Target; Paper icon 1; Scissors icon 1; Rock Paper Scissors game area (streak ladder) [Desktop 954x621] | partial/furniture/blocked-on-backend | [9907-1595](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9907-1595&m=dev) |
+| Casino > Rock Paper Scissors | 16 | desktop, mobile, tablet | Desktop; Rock icon 1; Desktop Target; Paper icon 1; Scissors icon 1; Rock Paper Scissors game area (streak ladder) [Desktop 954x621] | partial/done/frame-defect/furniture/blocked-on-backend | [9907-1595](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9907-1595&m=dev) |
 
 ## Crash
 
@@ -720,7 +720,7 @@ Frames that exist in Figma but are not in the catalog:
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Hi-Lo | 5 | desktop, tablet, mobile | Loss; Desktop | partial | [9061-10499](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9061-10499&m=dev) |
+| Casino > Hi-Lo | 5 | desktop, tablet, mobile | Loss; Desktop | partial/done | [9061-10499](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9061-10499&m=dev) |
 
 ## Bingo
 
