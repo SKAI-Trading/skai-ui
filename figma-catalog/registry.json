@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09T03:02:04.930Z",
+  "generated": "2026-10-09T03:24:09.093Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -1521,7 +1521,12 @@
         "delta": 0
       }
     ],
-    "uncoveredPages": [],
+    "uncoveredPages": [
+      {
+        "page": "🎧 Sounds - Skai Originals",
+        "live": 0
+      }
+    ],
     "outOfScopePages": [
       {
         "page": "🚧 Titles + Emblems",

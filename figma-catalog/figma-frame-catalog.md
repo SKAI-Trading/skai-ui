@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-09T03:02:04.930Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-09T03:24:09.093Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -77,6 +77,14 @@ Frames that exist in Figma but are not in the catalog:
 | ✅ Keno - Skai originals | 28 | 27 | -1 |
 | ✅ Towers - Skai originals | 31 | 30 | -1 |
 | ✅ Rock Paper Scissors - Skai originals | 25 | 24 | -1 |
+
+### Pages with no section
+
+Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
+
+| Page | Top-level nodes |
+|------|----------------:|
+| 🎧 Sounds - Skai Originals | 0 |
 
 
 ## Governance
