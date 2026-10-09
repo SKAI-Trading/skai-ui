@@ -18,6 +18,12 @@ const USDC_INFO: Record<Chain, { address: string; label: string; decimals: numbe
   },
 };
 
+// First-deposit points are read on Ethereum, not on Base yet.
+const FIRST_DEPOSIT_LINE: Record<Chain, string> = {
+  base: "First-deposit points on Base: coming soon",
+  ethereum: "First deposit: 1 point per $1, up to 10,000",
+};
+
 export interface FundWalletCardProps extends React.HTMLAttributes<HTMLDivElement> {
   walletAddress?: string | null;
   onChainChange?: (chain: Chain) => void;
@@ -47,7 +53,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
           Fund Your Wallet
         </h3>
         <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px] mb-[12px]">
-          Your first deposit of $10 or more earns 500 SKAI Points plus 1 per $1, once
+          1 point per $1 of your first deposit, up to 10,000, once it has stayed in your wallet 24 hours
         </p>
 
         {/* Chain toggle */}
@@ -91,7 +97,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
                 {usdc.label} · {usdc.decimals} decimals
               </span>
               <span className="font-manrope font-normal text-[#2DEDAD] text-[11px] md:text-[12px] leading-[16px]">
-                First deposit: 500 SKAI Points plus 1 per $1, once
+                {FIRST_DEPOSIT_LINE[selectedChain]}
               </span>
             </div>
           </>
@@ -101,7 +107,7 @@ const FundWalletCard = React.forwardRef<HTMLDivElement, FundWalletCardProps>(
               Loading your wallet address...
             </span>
             <span className="font-manrope font-normal text-[#56C7F3] text-[11px] md:text-[12px] leading-[16px]">
-              {usdc.label} · first deposit: 500 SKAI Points plus 1 per $1, once
+              {usdc.label} · {FIRST_DEPOSIT_LINE[selectedChain]}
             </span>
           </div>
         )}

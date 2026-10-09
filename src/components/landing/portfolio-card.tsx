@@ -158,14 +158,14 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
               </span>
             </button>
 
-            {/* What the first-deposit writer pays (Casey 2026-10-08):
-                first-trade-watch reads the wallet on Ethereum, Arbitrum,
-                Optimism and Polygon; Base waits on a readable indexer, so the
+            {/* What the first-deposit writer pays. It reads the wallet on
+                Ethereum, Arbitrum, Optimism and Polygon, not Base yet, so the
                 line is drawn on the Ethereum tab only. */}
             {!hasClaimedDeposit && selectedChain === "ethereum" && (
               <p className="font-['Manrope',sans-serif] font-normal text-[11px] leading-[14px] text-[#95A09F] text-center">
-                Your first deposit of $10 or more in ETH, USDC, USDT or WBTC earns 500 SKAI Points plus 1
-                point per $1 of it, once it has stayed in your wallet for 24 hours.
+                1 point per $1 of your first deposit in ETH, USDC, USDT or WBTC, up to 10,000, once it has
+                stayed in your wallet for 24 hours ($10 minimum). Plus 500 SKAI Points if your first trade
+                hasn't already earned them.
               </p>
             )}
 

@@ -17,6 +17,7 @@ import { act, render, screen } from "@testing-library/react";
 import { ReferralCard } from "./referral-card";
 import { PredictionMarketCard } from "./prediction-market-card";
 import { PortfolioCard } from "./portfolio-card";
+import { FundWalletCard } from "./fund-wallet-card";
 import { content } from "../../lib/content";
 
 const RULE = /for each friend who makes their first deposit or trade/;
@@ -61,15 +62,11 @@ describe("landing reward copy", () => {
     expect(line.textContent).not.toMatch(/deposit/i);
   });
 
-  // The landing's Deposit card (DashboardPage) promised "1 SKAI Point for
-  // every sUSD on your first deposit", which nothing paid. Casey ruled on
-  // 2026-10-08 that the first deposit of $10 or more earns 500 SKAI Points
-  // plus 1 per $1 of it, once, after 24 hours in the wallet. first-trade-watch
-  // reads Ethereum, Arbitrum, Optimism and Polygon; Base waits on a readable
-  // indexer, so the card draws the rule on the Ethereum tab only.
-  it("the deposit card draws the first-deposit rule on Ethereum, nothing on Base, and nothing once claimed", () => {
+  // The first deposit is read on Ethereum, Arbitrum, Optimism and Polygon,
+  // not Base, so the deposit cards draw the rule on the Ethereum tab only.
+  it("portfolio card: the rule on Ethereum only, and not once claimed", () => {
     const RULE_LINE =
-      "Your first deposit of $10 or more in ETH, USDC, USDT or WBTC earns 500 SKAI Points plus 1 point per $1 of it, once it has stayed in your wallet for 24 hours.";
+      "1 point per $1 of your first deposit in ETH, USDC, USDT or WBTC, up to 10,000, once it has stayed in your wallet for 24 hours ($10 minimum). Plus 500 SKAI Points if your first trade hasn't already earned them.";
     for (const hasClaimedDeposit of [false, true]) {
       const { container, unmount } = render(
         <PortfolioCard walletAddress="0x1111111111111111111111111111111111111111" hasClaimedDeposit={hasClaimedDeposit} />,
@@ -81,6 +78,23 @@ describe("landing reward copy", () => {
       // The card still does its job: the address and what it accepts.
       expect(container.textContent).toContain("Accepted: ETH & sUSD");
       unmount();
+    }
+  });
+
+  it("fund card: Base is coming soon", () => {
+    const { container } = render(<FundWalletCard walletAddress="0x1111111111111111111111111111111111111111" />);
+    expect(container.textContent).toContain("First-deposit points on Base: coming soon");
+    expect(container.textContent).not.toContain("First deposit: 1 point per $1");
+    act(() => screen.getByText("Ethereum").click());
+    expect(container.textContent).toContain("First deposit: 1 point per $1, up to 10,000");
+  });
+
+  it("every card that states the rule states the cap", () => {
+    const dir = resolve(__dirname);
+    for (const file of readdirSync(dir).filter((f) => f.endsWith(".tsx") && !f.includes(".test."))) {
+      const text = readFileSync(resolve(dir, file), "utf8").replace(/\s+/g, " ");
+      if (/1 point per \$1/.test(text)) expect(text, file).toContain("up to 10,000");
+      expect(text, file).not.toMatch(/500 SKAI Points plus 1 per \$1/);
     }
   });
 
