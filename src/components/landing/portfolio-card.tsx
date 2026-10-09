@@ -25,7 +25,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
     {
       walletAddress,
       usdcBalance,
-      hasClaimedDeposit: _hasClaimedDeposit,
+      hasClaimedDeposit,
       onBack,
       renderPayWidget: _renderPayWidget,
       className,
@@ -107,12 +107,6 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
           </div>
         )}
 
-        {/* No deposit reward is drawn. This card promised "1 SKAI Point for
-            every sUSD on your first deposit" and nothing pays it:
-            verify-wallet-deposit has no caller and points_history holds no
-            deposit reward (2026-10-08). Casey ruled on 2026-10-08 that a
-            first deposit into the wallet earns points; when that writer is
-            live, draw what it actually pays here. */}
 
         {/* Chain toggle */}
         <div className="flex gap-2">
@@ -163,6 +157,17 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
                 {copied ? "Copied!" : "Copy"}
               </span>
             </button>
+
+            {/* What the first-deposit writer pays. It reads the wallet on
+                Ethereum, Arbitrum, Optimism and Polygon, not Base yet, so the
+                line is drawn on the Ethereum tab only. */}
+            {!hasClaimedDeposit && selectedChain === "ethereum" && (
+              <p className="font-['Manrope',sans-serif] font-normal text-[11px] leading-[14px] text-[#95A09F] text-center">
+                1 point per $1 of your first deposit in ETH, USDC, USDT or WBTC, up to 10,000, once it has
+                stayed in your wallet for 24 hours ($10 minimum). Plus 500 SKAI Points if your first trade
+                hasn't already earned them.
+              </p>
+            )}
 
             {/* Accepted assets info */}
             <div className="w-full flex flex-col gap-[4px] px-[4px]">
