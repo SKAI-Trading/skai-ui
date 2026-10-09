@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-08T21:42:14.499Z",
+  "generated": "2026-10-09T03:02:08.536Z",
   "harvestedAt": "2026-10-08",
   "rollup": {
     "pages": 39,
@@ -56,16 +56,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3633,
+    "total": 3634,
     "withBreakpointProvenance": 1838,
-    "namingANodeId": 3408,
+    "namingANodeId": 3409,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22165,
+    "total": 22180,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 54052
+    "unrecognisedTokens": 54217
   },
   "statusFiles": [
     {
@@ -5707,6 +5707,18 @@
       "rows": 12,
       "withLiveId": 12,
       "ids": 12
+    },
+    {
+      "file": "status.wave77.Z15.tsv",
+      "rows": 5,
+      "withLiveId": 5,
+      "ids": 7
+    },
+    {
+      "file": "status.wave77.Z16.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 16
     },
     {
       "file": "status.wave77.Z17.tsv",
@@ -21531,7 +21543,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "11398-81312",
