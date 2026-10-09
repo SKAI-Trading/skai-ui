@@ -98,6 +98,16 @@ describe("landing reward copy", () => {
     }
   });
 
+  // Bridged and sUSD deposits earn no first-deposit points yet.
+  it("bridge, swap and chat cards promise no deposit points", () => {
+    const dir = resolve(__dirname);
+    for (const file of ["bridge-card.tsx", "swap-card.tsx", "trade-chat-card.tsx", "deposit-incentive-card.tsx"]) {
+      const text = readFileSync(resolve(dir, file), "utf8").replace(/\s+/g, " ");
+      if (file !== "deposit-incentive-card.tsx") expect(text, file).not.toMatch(/point per \$1|SKAI Points? per/);
+      expect(text, file).not.toMatch(/Deposit sUSD to earn/);
+    }
+  });
+
   it("no landing card promises points on every deposit, or 1 per sUSD without the first-deposit rule", () => {
     const dir = resolve(__dirname);
     for (const file of readdirSync(dir).filter((f) => f.endsWith(".tsx") && !f.includes(".test."))) {

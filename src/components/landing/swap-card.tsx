@@ -92,7 +92,7 @@ const SwapCard = React.forwardRef<HTMLDivElement, SwapCardProps>(
           <div className="flex items-start gap-[8px] bg-[#001615]/40 rounded-lg px-[12px] py-[10px]">
             <SkaiIcon name="info" size="xs" className="text-[#2DEDAD] flex-shrink-0 mt-0.5" />
             <p className="font-['Manrope',sans-serif] font-normal text-[12px] leading-[16px] text-[#95A09F]">
-              Deposit sUSD to start swapping. Earn <span className="text-[#2DEDAD] font-medium">1 point per $1 of your first deposit, up to 10,000</span>, once it has stayed in your wallet 24 hours.
+              Deposit sUSD to start swapping.
             </p>
           </div>
         )}

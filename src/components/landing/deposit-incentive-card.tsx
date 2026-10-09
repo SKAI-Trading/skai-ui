@@ -63,7 +63,7 @@ const DepositIncentiveCard = React.forwardRef<HTMLDivElement, DepositIncentiveCa
         <p className="font-manrope font-normal text-[#8B9E9D] text-[11px] md:text-[12px] lg:text-[13px] leading-[16px] mb-[12px]">
           {hasClaimedDeposit
             ? "Deposit sUSD to fund your wallet and unlock AI trading tools"
-            : "Deposit sUSD to earn SKAI Points and unlock AI trading tools"}
+            : "Fund your wallet to unlock AI trading tools"}
         </p>
 
         {/* One-time deposit reward banner — only if not yet claimed */}

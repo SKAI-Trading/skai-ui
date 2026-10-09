@@ -188,18 +188,8 @@ function DepositBubble({
       <p className="text-[13px] leading-[18px] text-[#E0E0E0] mb-[8px]">
         {hasClaimedDeposit
           ? "Deposit sUSD to fund your wallet and start trading with AI."
-          : "Welcome! Earn 1 point per $1 of your first deposit, up to 10,000. Deposit to start trading with AI."}
+          : "Welcome! Deposit to start trading with AI."}
       </p>
-
-      {/* One-time reward badge — only shown if not yet claimed */}
-      {!hasClaimedDeposit && (
-        <div className="flex items-center gap-[6px] mb-[8px] px-[8px] py-[6px] rounded-md bg-[#0D3D3A]/60 border border-[#2DEDAD]/15">
-          <span className="text-[#2DEDAD] font-bold text-[14px]">1:1</span>
-          <span className="text-[#8B9E9D] text-[11px] leading-[14px]">
-            1 point per $1 of your first deposit, up to 10,000 (once, after 24 hours)
-          </span>
-        </div>
-      )}
 
       {/* Chain toggle */}
       <div className="flex gap-[4px] mb-[8px]">
