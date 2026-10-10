@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-10T10:30:42.493Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-10T10:42:55.272Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -11,7 +11,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
 | governance | ✅ | 727 | 403 | 324 | 87 | 89 | 259 | 13 | 0 | 10 |
-| social | ✅ | 444 | 276 | 168 | 50 | 123 | 81 | 6 | 0 | 201 |
+| social | ✅ | 444 | 276 | 168 | 50 | 106 | 95 | 9 | 0 | 201 |
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 3 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 68 | 126 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 112 | 78 | 0 | 0 | 102 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2370** | | | **1078** | **1195** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2370** | | | **1061** | **1209** | **81** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -184,8 +184,8 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | Social > Groups | 36 | desktop, mobile, tablet | search; search > Discover; search > Discover > Join gated group; search > Created; search - empty; search - empty > Create group … | done/partial/blocked-on-backend/frame-defect | [5194-270743](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5194-270743&m=dev) |
-| Social > Discover | 19 | desktop, mobile, tablet | search; search > Favourite; search > Posts; search > Top 20 trends; search > Creators - empty; search - Discover header row (1440): Create token CTA now routes to /launchpad/create, dismissible card retired [Frame 629 1144x66] | done/partial/blocked-on-backend/frame-defect | [5110-187509](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5110-187509&m=dev) |
-| Social | 19 | desktop, mobile, tablet | dropdown; with "tweets"; with "tweets" > comment thread; with "tweets" > comment thread ALT; single comment; show more comments | done/not-started/blocked-on-backend | [5100-183573](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5100-183573&m=dev) |
+| Social > Discover | 19 | desktop, mobile, tablet | search; search > Favourite; search > Posts; search > Top 20 trends; search > Creators - empty; search - Discover header row (1440): Create token CTA now routes to /launchpad/create, dismissible card retired [Frame 629 1144x66] | partial/blocked-on-backend/frame-defect/done | [5110-187509](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5110-187509&m=dev) |
+| Social | 19 | desktop, mobile, tablet | dropdown; with "tweets"; with "tweets" > comment thread; with "tweets" > comment thread ALT; single comment; show more comments | partial/done/not-started/blocked-on-backend | [5100-183573](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5100-183573&m=dev) |
 | Social > Messages | 13 | desktop, mobile, tablet | empty; Sample conversation | frame-defect/done | [5152-203838](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5152-203838&m=dev) |
 | Social > Sample post / token | 13 | desktop, mobile, tablet | chart; chart ALT; market | partial/not-started/blocked-on-backend | [5114-194778](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5114-194778&m=dev) |
 | Social > Live > Stream type modal > Sample stream | 11 | desktop, tablet, mobile | - | partial | [5000-158255](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5000-158255&m=dev) |
@@ -205,7 +205,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Social > create story > prepare story | 3 | desktop, mobile, tablet | - | blocked-on-backend | [10324-107730](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10324-107730&m=dev) |
 | Social > share post | 3 | desktop, mobile, tablet | - | done | [10256-150766](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10256-150766&m=dev) |
 | Social > Sample creator profile > Following | 3 | desktop, mobile, tablet | modal | done | [5118-200749](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5118-200749&m=dev) |
-| Social > Sample creator profile > Holders | 3 | desktop, mobile, tablet | modal | partial | [9640-214177](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9640-214177&m=dev) |
+| Social > Sample creator profile > Holders | 3 | desktop, mobile, tablet | modal | not-started | [9640-214177](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=9640-214177&m=dev) |
 | Social > Sample creator profile > Followers | 3 | desktop, mobile, tablet | modal | done | [5120-201706](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5120-201706&m=dev) |
 | Social > Sample creator profile > Tokens | 3 | desktop, mobile, tablet | - | partial | [4966-147666](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4966-147666&m=dev) |
 | Social > Sample creator profile > Creator overview | 3 | desktop, mobile, tablet | - | blocked-on-backend | [4972-150250](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4972-150250&m=dev) |
