@@ -598,7 +598,7 @@ export function buildWorklist({ registry, coverage, store = null, lanes = LANES,
 // ── rendering ────────────────────────────────────────────────────────────────
 
 const cell = (v) => String(v ?? "").replace(/[\t\r\n]+/g, " ").trim();
-const md = (v) => cell(v).replace(/\|/g, "\\|");
+const md = (v) => cell(v).replace(/[\\|]/g, "\\$&");
 const dash = (v) => (v === null || v === undefined || v === "" ? "—" : v);
 const figmaLink = (r) => `[${r.node}](https://www.figma.com/design/${r.fileKey}/?node-id=${r.node})`;
 const listSome = (xs, n) => (xs.length <= n ? xs.join(", ") : `${xs.slice(0, n).join(", ")} and ${xs.length - n} more`);

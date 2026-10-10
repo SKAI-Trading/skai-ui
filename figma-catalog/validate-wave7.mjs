@@ -843,7 +843,8 @@ const wavesOnDisk = [
   ),
 ].sort((a, b) => a - b);
 const WAVE = waveArg ?? (wavesOnDisk.length ? String(wavesOnDisk[wavesOnDisk.length - 1]) : "7");
-const waveRe = new RegExp(`^status\\.wave${WAVE}\\..+\\.tsv$`);
+const waveLiteral = WAVE.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const waveRe = new RegExp(`^status\\.wave${waveLiteral}\\..+\\.tsv$`);
 if (!ALL) console.log(`(checking wave ${WAVE}; waves on disk: ${wavesOnDisk.join(", ") || "none"})`);
 const files = fs
   .readdirSync(DIR)
