@@ -48,6 +48,13 @@ export function numberFieldRefusesText(text: string, negative: boolean): boolean
 
 const GROUP_SPACES = /[\s\u00a0\u202f']/g;
 
+/** The index just past the last digit in `s`, or 0 when it has none. */
+function endOfLastDigit(s: string): number {
+  let end = s.length;
+  while (end > 0 && !/[0-9]/.test(s[end - 1])) end--;
+  return end;
+}
+
 /**
  * Pasted text as the number it states, in the field's own spelling (digits, at
  * most one decimal point, a leading minus where the field takes one), or null
@@ -69,10 +76,11 @@ const GROUP_SPACES = /[\s\u00a0\u202f']/g;
  */
 export function numberFromPastedText(text: string, negative: boolean): string | null {
   let s = text.replace(/[\u2212\u2012\u2013]/g, "-").trim();
-  if (/\d\s*[eE]\s*[+-]?\s*\d/.test(s)) return null;
-  if (/[()]/.test(s) || /\d[^+-]*[+-]/.test(s)) return null;
+  if (/\d\s*[eE]\s*(?:[+-]\s*)?\d/.test(s)) return null;
+  if (/[()]/.test(s) || /^\D*\d[^+-]*[+-]/.test(s)) return null;
   // Strip what stands before the sign or the first digit, and after the last digit.
-  s = s.replace(/^[^\d.,+-]+/, "").replace(/[^\d]+$/, "");
+  s = s.replace(/^[^\d.,+-]+/, "");
+  s = s.slice(0, endOfLastDigit(s));
   let sign = "";
   if (/^[+-]/.test(s)) {
     sign = s[0] === "-" ? "-" : "";
