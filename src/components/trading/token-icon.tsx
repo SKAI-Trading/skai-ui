@@ -100,9 +100,16 @@ const sizeMap = {
  *
  * Matched on the resolved URL rather than on the symbol, because consumers pass
  * the same bolt through `src` under different filenames — skai-wallet bundles
- * it via Vite as a content-hashed `skai-mark-<hash>.svg`.
+ * it via Vite as a content-hashed `skai-mark-<hash>.svg`. Only the last path
+ * segment is read, and the mark must end the name or be followed by `.` or `-`.
  */
-const PORTRAIT_ART = /skai(?:-logo)?-mark(?:[.-][^/]*)?\.svg$/i;
+const PORTRAIT_ART_NAME = /skai(?:-logo)?-mark(?=[.-]|$)/i;
+
+function isPortraitArt(url: string): boolean {
+  const file = url.slice(url.lastIndexOf("/") + 1);
+  if (!/\.svg$/i.test(file)) return false;
+  return PORTRAIT_ART_NAME.test(file.slice(0, -4));
+}
 
 const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
   (
@@ -178,8 +185,8 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
                 "w-full h-full",
                 // Square art keeps `cover` so it fills the circle edge to edge;
                 // portrait art must be `contain` or it is cropped (see
-                // PORTRAIT_ART).
-                PORTRAIT_ART.test(iconUrl) ? "object-contain" : "object-cover",
+                // isPortraitArt).
+                isPortraitArt(iconUrl) ? "object-contain" : "object-cover",
                 isLoading && "opacity-0",
               )}
               onLoad={() => setIsLoading(false)}
