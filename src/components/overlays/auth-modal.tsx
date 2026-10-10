@@ -323,7 +323,7 @@ export function AuthModal({
       inputRef.current?.focus();
       return;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)) {
+    if (!/^[^\s@]+@[^\s@][^\s@.]*\.[^\s@]+$/.test(address)) {
       setEmailError("That does not look like an email address.");
       inputRef.current?.focus();
       return;

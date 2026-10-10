@@ -146,7 +146,7 @@ export function WaitlistModal({
 
   // Simple email format validation
   const isValidEmail = (value: string): boolean => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    return /^[^\s@]+@[^\s@][^\s@.]*\.[^\s@]+$/.test(value);
   };
 
   // Clear local validation error when backend error arrives
