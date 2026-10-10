@@ -221,7 +221,8 @@ const wavesOnDisk = [
   ),
 ].sort((a, b) => a - b);
 const WAVE = wi !== -1 ? process.argv[wi + 1] : String(wavesOnDisk[wavesOnDisk.length - 1] ?? 7);
-const re = ALL ? /^status\..+\.tsv$/ : new RegExp(`^status\\.wave${WAVE}\\..+\\.tsv$`);
+const waveLiteral = String(WAVE).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const re = ALL ? /^status\..+\.tsv$/ : new RegExp(`^status\\.wave${waveLiteral}\\..+\\.tsv$`);
 const files = fs.readdirSync(DIR).filter((f) => re.test(f)).sort();
 
 if (!files.length) {

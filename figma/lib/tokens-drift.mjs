@@ -778,7 +778,7 @@ export function figmaChecks(tokens) {
   }
   return out;
 }
-const cell = (s) => String(s).replace(/\|/g, "\\|");
+const cell = (s) => String(s).replace(/[\\|]/g, "\\$&");
 
 export function buildDrift(st, sources, meta = {}) {
   const tokens = allTokens(st);
