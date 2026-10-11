@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11T09:28:09.141Z",
+  "generated": "2026-10-11T21:25:27.452Z",
   "harvestedAt": "2026-10-11",
   "rollup": {
     "pages": 39,
@@ -20,8 +20,8 @@
     "genuineWithFrameDefects": 3756,
     "frameDefectUncited": [],
     "matched": 3477,
-    "done": 1478,
-    "verified": 1073,
+    "done": 1471,
+    "verified": 1066,
     "visuallyDowngraded": 67,
     "visualUnmapped": [],
     "visualRetired": [
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1567,
+    "partial": 1574,
     "notStarted": 141,
     "blocked": 286,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3717,
+    "total": 3720,
     "withBreakpointProvenance": 1838,
-    "namingANodeId": 3492,
+    "namingANodeId": 3495,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22506,
+    "total": 22523,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 55253
+    "unrecognisedTokens": 55311
   },
   "statusFiles": [
     {
@@ -5925,6 +5925,12 @@
       "ids": 22
     },
     {
+      "file": "status.wave79.W5b.tsv",
+      "rows": 17,
+      "withLiveId": 17,
+      "ids": 19
+    },
+    {
       "file": "status.wave8.games-a.tsv",
       "rows": 28,
       "withLiveId": 28,
@@ -6753,10 +6759,10 @@
       "verified": 0,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 86,
+        "partial": 88,
         "blocked-on-backend": 6,
         "furniture": 1,
-        "done": 6,
+        "done": 4,
         "not-started": 7
       },
       "liveOnly": []
@@ -7375,12 +7381,12 @@
       "defaultNamed": 40,
       "ambiguous": 105,
       "conflicts": 0,
-      "verified": 88,
+      "verified": 81,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 230,
+        "partial": 237,
         "blocked-on-backend": 16,
-        "done": 90,
+        "done": 83,
         "not-started": 7
       },
       "liveOnly": []
@@ -15868,16 +15874,16 @@
       "id": "9432-159649",
       "page": "✝️ Trade (moved to \"Skai Web App 2\")",
       "scope": "tombstone",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
       "id": "9432-158544",
       "page": "✝️ Trade (moved to \"Skai Web App 2\")",
       "scope": "tombstone",
-      "status": "done",
-      "claimed": "done",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -35812,9 +35818,9 @@
       "id": "9050-210827",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9002-158964",
@@ -35916,9 +35922,9 @@
       "id": "9050-210996",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9050-211139",
@@ -36220,17 +36226,17 @@
       "id": "9432-159649",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9432-158544",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9264-91009",
@@ -36396,25 +36402,25 @@
       "id": "9777-105690",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9777-105846",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9777-105532",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "9780-143009",
