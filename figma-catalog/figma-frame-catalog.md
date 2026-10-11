@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-11T06:22:14.571Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-11T07:44:59.117Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -19,7 +19,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 66 | 58 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 20 | 102 | 19 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
-| wallet | ✅ | 186 | 133 | 53 | 35 | 91 | 39 | 0 | 0 | 59 |
+| wallet | ✅ | 186 | 133 | 53 | 35 | 93 | 37 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 74 | 27 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 12 | 1 | 0 | 0 |
 | fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 43 | 12 | 0 | 0 | 0 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2367** | | | **1067** | **1203** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2367** | | | **1069** | **1201** | **78** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -540,7 +540,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | continue on web > home | 21 | desktop, tablet, mobile | skin 2; skin 3; skin 2 > Share net worth; skin2; skin3 | done/partial | [3026-16493](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3026-16493&m=dev) |
 | continue on web > home > NFTs | 13 | desktop, tablet, mobile | empty; empty ALT; empty > Import NFT | done/partial | [3082-13515](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3082-13515&m=dev) |
 | continue on web > home > Activity | 8 | desktop, tablet, mobile | show details; empty; empty ALT | done/partial | [3118-21935](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3118-21935&m=dev) |
-| continue on web > home > right-sidecar > wallet multi menu > Remove walletl | 7 | mobile | Create Non-custodial wallet 375 [modal 354x542]; Import private key 375 [modal 354x414]; Enter recovery phrase 375 [modal 354x398] | done/partial | [7774-68417](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7774-68417&m=dev) |
+| continue on web > home > right-sidecar > wallet multi menu > Remove walletl | 7 | mobile | Create Non-custodial wallet 375 [modal 354x542]; Import private key 375 [modal 354x414]; Enter recovery phrase 375 [modal 354x398] | done | [7774-68417](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7774-68417&m=dev) |
 | continue on web > unlock | 6 | desktop, tablet, mobile | password | done/partial/frame-defect | [2999-19674](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2999-19674&m=dev) |
 | continue on web > home > right-sidecar > wallet multi menu > Export private key | 6 | tablet, desktop, mobile | reveal | done | [7713-16630](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-16630&m=dev) |
 | continue on web > home > right-sidecar > Add wallet > Connect hardware wallet | 5 | tablet, desktop, mobile | Scan QR code (Keystone/Ledger) modal 768 [modal 448x626] | done/partial | [7717-13587](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7717-13587&m=dev) |
@@ -551,7 +551,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | continue on web > home > right-sidecar > wallet multi menu | 4 | tablet, desktop, mobile | Wallet row dropdown 768 [dropdown-3 200x184] | done | [7713-15272](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7713-15272&m=dev) |
 | (section root) | 3 | desktop, tablet, mobile | - | done | [2998-19599](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2998-19599&m=dev) |
 | continue on web > unlock > Forgot password | 3 | desktop, tablet, mobile | - | done | [7473-130910](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7473-130910&m=dev) |
-| continue on web > unlock > Forgot password > OTP > Set new password | 3 | desktop, tablet, mobile | - | done/partial | [7473-133033](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7473-133033&m=dev) |
+| continue on web > unlock > Forgot password > OTP > Set new password | 3 | desktop, tablet, mobile | - | done | [7473-133033](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7473-133033&m=dev) |
 | continue on web > unlock > Forgot password > OTP | 3 | desktop, tablet, mobile | - | done | [7473-131013](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7473-131013&m=dev) |
 | get the app > new user > create new wallet | 3 | desktop, tablet, mobile | - | done | [3023-11938](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3023-11938&m=dev) |
 | get the app > new user | 3 | desktop, tablet, mobile | - | done/partial | [3012-15897](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3012-15897&m=dev) |

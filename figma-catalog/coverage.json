@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11T06:22:18.221Z",
+  "generated": "2026-10-11T07:45:00.749Z",
   "harvestedAt": "2026-10-11",
   "rollup": {
     "pages": 39,
@@ -20,8 +20,8 @@
     "genuineWithFrameDefects": 3756,
     "frameDefectUncited": [],
     "matched": 3477,
-    "done": 1459,
-    "verified": 1054,
+    "done": 1475,
+    "verified": 1070,
     "visuallyDowngraded": 75,
     "visualUnmapped": [],
     "visualRetired": [
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1586,
+    "partial": 1570,
     "notStarted": 141,
     "blocked": 286,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3699,
+    "total": 3715,
     "withBreakpointProvenance": 1838,
-    "namingANodeId": 3474,
+    "namingANodeId": 3490,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22472,
+    "total": 22488,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 55068
+    "unrecognisedTokens": 55162
   },
   "statusFiles": [
     {
@@ -5913,6 +5913,12 @@
       "ids": 85
     },
     {
+      "file": "status.wave79.W4.tsv",
+      "rows": 16,
+      "withLiveId": 16,
+      "ids": 16
+    },
+    {
       "file": "status.wave8.games-a.tsv",
       "rows": 28,
       "withLiveId": 28,
@@ -7246,11 +7252,11 @@
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 100,
+      "verified": 116,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 100,
-        "partial": 55
+        "done": 116,
+        "partial": 39
       },
       "liveOnly": []
     },
@@ -32248,121 +32254,121 @@
       "id": "7774-69004",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9940-233940",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9940-234006",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9940-233959",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9940-234067",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9940-234128",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9940-234315",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9940-234772",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9941-235776",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9941-235994",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9940-234852",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9941-236456",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9941-236536",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9941-237786",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9941-237075",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "7774-69592",
@@ -32456,9 +32462,9 @@
       "id": "7728-59766",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "8540-29692",
