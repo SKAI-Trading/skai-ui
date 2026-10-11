@@ -32,7 +32,7 @@ import {
  *  match the root itself, so an <svg> passed in must be added explicitly. */
 function collect(root: Element) {
   const svgs = Array.from(root.querySelectorAll("svg"));
-  if (root.tagName.toLowerCase() === "svg") svgs.unshift(root);
+  if (root.tagName.toLowerCase() === "svg") svgs.unshift(root as SVGSVGElement);
   const refs: string[] = [];
   const ids: string[] = [];
   for (const svg of svgs) {
@@ -54,7 +54,7 @@ const CASES = [
   ["FigmaSocialBubbleIcon", FigmaSocialBubbleIcon],
 ] as const;
 
-describe.each(CASES)("%s — paint-server ids are per instance", (name, Icon) => {
+describe.each(CASES)("%s — paint-server ids are per instance", (_name, Icon) => {
   it("gives two mounted copies different ids", () => {
     const { container } = render(
       <>
