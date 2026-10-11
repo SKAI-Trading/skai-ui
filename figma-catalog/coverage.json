@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-11T01:08:52.469Z",
+  "generated": "2026-10-11T06:09:46.993Z",
   "harvestedAt": "2026-10-10",
   "rollup": {
     "pages": 39,
     "live": 4688,
     "furniture": 824,
-    "genuine": 3508,
+    "genuine": 3478,
     "ruledOut": 108,
-    "genuineWithRuledOut": 3616,
+    "genuineWithRuledOut": 3586,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
       "vverify.home.tsv 5854-80845",
@@ -16,13 +16,13 @@
       "vverify.predict.tsv 10097-220101",
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
-    "frameDefectsOut": 248,
+    "frameDefectsOut": 278,
     "genuineWithFrameDefects": 3756,
     "frameDefectUncited": [],
-    "matched": 3507,
-    "done": 1445,
-    "verified": 1034,
-    "visuallyDowngraded": 44,
+    "matched": 3477,
+    "done": 1459,
+    "verified": 1054,
+    "visuallyDowngraded": 75,
     "visualUnmapped": [],
     "visualRetired": [
       {
@@ -43,29 +43,29 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1629,
-    "notStarted": 145,
-    "blocked": 283,
+    "partial": 1586,
+    "notStarted": 141,
+    "blocked": 286,
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
     "liveOnly": 1,
-    "rollupOnly": 14,
+    "rollupOnly": 8,
     "defaultNamed": 157,
     "ambiguous": 105,
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3646,
+    "total": 3699,
     "withBreakpointProvenance": 1838,
-    "namingANodeId": 3421,
+    "namingANodeId": 3474,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22275,
+    "total": 22472,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 54443
+    "unrecognisedTokens": 55068
   },
   "statusFiles": [
     {
@@ -5865,6 +5865,54 @@
       "ids": 19
     },
     {
+      "file": "status.wave79.B11b.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 6
+    },
+    {
+      "file": "status.wave79.B11c.tsv",
+      "rows": 17,
+      "withLiveId": 17,
+      "ids": 17
+    },
+    {
+      "file": "status.wave79.B4a.tsv",
+      "rows": 18,
+      "withLiveId": 18,
+      "ids": 18
+    },
+    {
+      "file": "status.wave79.B6b.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 9
+    },
+    {
+      "file": "status.wave79.B9a.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 4
+    },
+    {
+      "file": "status.wave79.W1.tsv",
+      "rows": 44,
+      "withLiveId": 44,
+      "ids": 50
+    },
+    {
+      "file": "status.wave79.W2.tsv",
+      "rows": 17,
+      "withLiveId": 17,
+      "ids": 17
+    },
+    {
+      "file": "status.wave79.W3.tsv",
+      "rows": 82,
+      "withLiveId": 82,
+      "ids": 85
+    },
+    {
       "file": "status.wave8.games-a.tsv",
       "rows": 28,
       "withLiveId": 28,
@@ -6773,7 +6821,7 @@
       },
       "ruledOut": 0,
       "ruledOutIds": [],
-      "frameDefects": 49,
+      "frameDefects": 79,
       "frameDefectIds": [
         "11121-90497",
         "11122-92823",
@@ -6800,41 +6848,71 @@
         "11017-63711",
         "11017-64382",
         "13752-218647",
+        "13752-218332",
         "13752-218652",
+        "13752-218542",
+        "13753-218694",
+        "13753-218725",
         "13752-218337",
         "13752-218547",
         "13752-218657",
+        "13752-218342",
+        "13753-218699",
+        "13752-218552",
+        "13753-218730",
         "13752-218347",
         "13752-218557",
         "13752-218352",
         "13752-218562",
         "13752-218662",
+        "13752-218166",
+        "13752-218357",
+        "13752-218567",
+        "13752-218362",
+        "13752-218572",
         "13752-218367",
+        "13752-218667",
         "13752-218577",
+        "13753-218710",
+        "13752-218372",
+        "13752-218582",
+        "13753-218736",
         "13752-218377",
         "13752-218587",
+        "13752-218382",
+        "13752-218592",
+        "13752-218387",
+        "13752-218597",
+        "13752-218672",
+        "13752-218392",
+        "13752-218602",
+        "13753-218715",
         "13752-218397",
         "13752-218607",
         "13752-218407",
         "13752-218617",
         "13752-218412",
         "13752-218622",
+        "13752-218677",
         "13752-218417",
+        "13753-218720",
         "13752-218627",
         "13752-218422",
         "13752-218632",
-        "13752-218311"
+        "13752-218311",
+        "13752-218432",
+        "13752-218642"
       ],
-      "genuine": 305,
-      "matched": 305,
-      "rollupOnly": 8,
+      "genuine": 275,
+      "matched": 275,
+      "rollupOnly": 2,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
       "verified": 61,
-      "visuallyDowngraded": 2,
+      "visuallyDowngraded": 12,
       "byStatus": {
-        "partial": 178,
+        "partial": 148,
         "furniture": 1,
         "done": 106,
         "not-started": 16,
@@ -6914,13 +6992,13 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 82,
+      "verified": 87,
       "visuallyDowngraded": 18,
       "byStatus": {
-        "partial": 125,
-        "done": 145,
-        "blocked-on-backend": 62,
-        "not-started": 26
+        "partial": 126,
+        "done": 144,
+        "blocked-on-backend": 65,
+        "not-started": 23
       },
       "liveOnly": []
     },
@@ -6990,13 +7068,13 @@
       "defaultNamed": 41,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 105,
-      "visuallyDowngraded": 0,
+      "verified": 116,
+      "visuallyDowngraded": 11,
       "byStatus": {
-        "partial": 394,
-        "done": 112,
+        "partial": 384,
+        "done": 123,
         "blocked-on-backend": 50,
-        "not-started": 65
+        "not-started": 64
       },
       "liveOnly": []
     },
@@ -7370,11 +7448,11 @@
       "defaultNamed": 18,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 53,
-      "visuallyDowngraded": 0,
+      "verified": 57,
+      "visuallyDowngraded": 10,
       "byStatus": {
-        "partial": 155,
-        "done": 131,
+        "partial": 151,
+        "done": 135,
         "blocked-on-backend": 35,
         "not-started": 12
       },
@@ -19647,14 +19725,6 @@
       "verdict": "match"
     },
     {
-      "id": "13752-218332",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
       "id": "13752-218131",
       "page": "✅ Play",
       "scope": "in-scope",
@@ -19663,35 +19733,11 @@
       "verdict": "match"
     },
     {
-      "id": "13752-218542",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13753-218694",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13753-218725",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
       "id": "13752-218141",
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -19703,83 +19749,11 @@
       "verdict": "match"
     },
     {
-      "id": "13752-218342",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13753-218699",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218552",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13753-218730",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
       "id": "13752-218176",
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218166",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218357",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218567",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218362",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218572",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -19795,15 +19769,7 @@
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218667",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -19811,39 +19777,7 @@
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13753-218710",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218372",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218582",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13753-218736",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -19851,39 +19785,7 @@
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218382",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218592",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218387",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218597",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -19891,39 +19793,7 @@
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218672",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218392",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218602",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13753-218715",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -19939,7 +19809,7 @@
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -19979,15 +19849,7 @@
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218677",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -19997,14 +19859,6 @@
       "status": "done",
       "claimed": "done",
       "verdict": "match"
-    },
-    {
-      "id": "13753-218720",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
     },
     {
       "id": "13752-218296",
@@ -20035,23 +19889,7 @@
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218432",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13752-218642",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -20059,7 +19897,7 @@
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "partial"
     },
     {
@@ -20172,15 +20010,15 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "10335-233638",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": null
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "10335-234351",
@@ -20188,7 +20026,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11442-169953",
@@ -20306,8 +20144,8 @@
       "id": "9640-214177",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": "deferred"
     },
     {
@@ -20332,7 +20170,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "4972-150250",
@@ -20636,7 +20474,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "4948-142325",
@@ -21178,17 +21016,17 @@
       "id": "10108-262300",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10213-16819",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10219-182490",
@@ -22332,7 +22170,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11474-220999",
@@ -22394,8 +22232,8 @@
       "id": "11474-219363",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": "deferred"
     },
     {
@@ -22412,7 +22250,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11442-174134",
@@ -22444,15 +22282,15 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11442-176349",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": null
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "11442-177647",
@@ -22460,7 +22298,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11527-291862",
@@ -22612,15 +22450,15 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "11442-169153",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": null
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "11442-170034",
@@ -22628,7 +22466,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11442-170567",
@@ -22820,7 +22658,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11474-220336",
@@ -22882,8 +22720,8 @@
       "id": "11474-217233",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
+      "status": "blocked-on-backend",
+      "claimed": "blocked-on-backend",
       "verdict": "deferred"
     },
     {
@@ -22900,7 +22738,7 @@
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11474-208090",
@@ -23028,7 +22866,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "5638-112382",
@@ -23036,23 +22874,23 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11989-231980",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "11998-339138",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11349-147772",
@@ -23060,7 +22898,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "5660-114498",
@@ -23068,23 +22906,23 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11991-233583",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "11998-340705",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "11998-342147",
@@ -23108,7 +22946,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11992-238265",
@@ -23132,7 +22970,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "5661-118252",
@@ -23170,17 +23008,17 @@
       "id": "11991-236624",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11998-344467",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "5662-124365",
@@ -23188,7 +23026,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11992-238112",
@@ -23228,7 +23066,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "5669-128901",
@@ -23236,7 +23074,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "5675-131659",
@@ -23268,7 +23106,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11998-251804",
@@ -23290,9 +23128,9 @@
       "id": "5695-142802",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "5702-143785",
@@ -23308,7 +23146,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11998-254229",
@@ -23330,17 +23168,17 @@
       "id": "5702-144185",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "5707-145880",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11998-258706",
@@ -23355,7 +23193,7 @@
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "deferred"
     },
     {
@@ -23372,7 +23210,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "12001-371853",
@@ -23442,32 +23280,32 @@
       "id": "5707-146891",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "5689-136816",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11998-245136",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "11998-352184",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "deferred"
     },
     {
@@ -23483,8 +23321,8 @@
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "5689-136235",
@@ -23492,14 +23330,14 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "11998-352404",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "deferred"
     },
     {
@@ -23548,7 +23386,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11987-227622",
@@ -25250,9 +25088,9 @@
       "id": "11345-146410",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "not-started",
-      "claimed": "not-started",
-      "verdict": null
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11349-148487",
@@ -25444,7 +25282,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11986-223183",
@@ -25460,7 +25298,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11991-234861",
@@ -25492,7 +25330,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11992-238830",
@@ -25500,7 +25338,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11998-347370",
@@ -25516,7 +25354,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11997-242875",
@@ -25546,16 +25384,16 @@
       "id": "11998-256391",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": "match"
+      "verdict": "deferred"
     },
     {
       "id": "12001-366177",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
+      "claimed": "done",
       "verdict": "deferred"
     },
     {
@@ -25812,7 +25650,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11998-337508",
@@ -25820,7 +25658,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11998-341045",
@@ -25828,7 +25666,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11998-342710",
@@ -25860,7 +25698,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11998-346919",
@@ -25868,7 +25706,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11998-347934",
@@ -25876,7 +25714,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "deferred"
     },
     {
       "id": "11998-348921",
@@ -25884,7 +25722,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11998-350745",
@@ -25892,15 +25730,15 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "11998-351710",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "12000-357207",
@@ -25908,7 +25746,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "12000-359408",
@@ -25916,7 +25754,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "12001-362424",
@@ -25932,23 +25770,23 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "12001-365886",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "12001-368183",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "12001-370309",
@@ -25956,7 +25794,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "12001-371015",
@@ -25964,7 +25802,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "12001-371549",
@@ -25980,7 +25818,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "12001-376043",
@@ -26011,8 +25849,8 @@
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "11998-348680",
@@ -36755,48 +36593,48 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-169068",
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-169857",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-170646",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-171435",
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-172224",
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-172747",
@@ -36804,15 +36642,15 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
+      "verdict": "deferred"
     },
     {
       "id": "13006-173270",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-175023",
@@ -37148,7 +36986,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13006-195199",
@@ -37156,7 +36994,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13006-195423",
@@ -38483,24 +38321,24 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-317563",
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-318775",
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-319056",
@@ -38795,32 +38633,32 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-341272",
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-342238",
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "claimed": "done",
+      "verdict": "deferred"
     },
     {
       "id": "13006-342940",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "13006-343527",
