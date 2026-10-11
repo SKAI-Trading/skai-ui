@@ -1,5 +1,5 @@
 # key	status	primaryFile	route	reason	bp
-# Wave 79, 2026-10-10..11, lane `W4`, folded onto app origin/main 9fcf4a039 (skai-ui 23bae42).
+# Wave 79, 2026-10-10..11, lane `W4`, folded onto app origin/main ebfb09a69 (skai-ui 98738ae).
 # Each row names its own source: a live use_figma read (the lane's ledger line in figma/ledger/calls.jsonl), or a
 # catalog record with no Figma call, where the implementation moved, was deleted, or a Casey ruling decided the frame.
 # Commit hashes are main's. Folded from the lane's catalog-rows file.

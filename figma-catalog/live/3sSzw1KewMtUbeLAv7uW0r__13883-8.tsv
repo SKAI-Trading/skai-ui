@@ -1,1 +1,9 @@
 13883:9	DRAFT 1 - SOC-16 profile preview card: signed in, signed out, message requested	FRAME	1852	724	1
+13899:106	DRAFT 2 - Composer: closed Post with its reason, and the sponsored allowance line	FRAME	2456	580	1
+13900:158	DRAFT 3 - SOC-15 report dialog, report sent, hidden post and tombstone	FRAME	2340	696	1
+13901:199	DRAFT 4 - Explore People rows with Follow	FRAME	1280	562	1
+13903:239	DRAFT 5 - Explore type tabs: People, Communities, Posts, Live	FRAME	1607	438	1
+13904:380	DRAFT 6 - Profile token gate: invitation, not open yet, checking, couldn't check, create in progress	FRAME	3060	612	1
+13905:503	DRAFT 7 - Live studio (/social/live/studio): checking, and unavailable with Retry	FRAME	1640	512	1
+13906:447	DRAFT 9 - Profile coin: the Buy sheet, and the closed Buy cell with its reason	FRAME	2017	662	1
+13907:459	DRAFT 10 - A held write: Check again in place of Buy, and Stop waiting	FRAME	2456	786	1

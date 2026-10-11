@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11T07:45:00.749Z",
+  "generated": "2026-10-11T09:28:09.141Z",
   "harvestedAt": "2026-10-11",
   "rollup": {
     "pages": 39,
@@ -20,9 +20,9 @@
     "genuineWithFrameDefects": 3756,
     "frameDefectUncited": [],
     "matched": 3477,
-    "done": 1475,
-    "verified": 1070,
-    "visuallyDowngraded": 75,
+    "done": 1478,
+    "verified": 1073,
+    "visuallyDowngraded": 67,
     "visualUnmapped": [],
     "visualRetired": [
       {
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1570,
+    "partial": 1567,
     "notStarted": 141,
     "blocked": 286,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3715,
+    "total": 3717,
     "withBreakpointProvenance": 1838,
-    "namingANodeId": 3490,
+    "namingANodeId": 3492,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22488,
+    "total": 22506,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 55162
+    "unrecognisedTokens": 55253
   },
   "statusFiles": [
     {
@@ -5919,6 +5919,12 @@
       "ids": 16
     },
     {
+      "file": "status.wave79.W5.tsv",
+      "rows": 18,
+      "withLiveId": 18,
+      "ids": 22
+    },
+    {
       "file": "status.wave8.games-a.tsv",
       "rows": 28,
       "withLiveId": 28,
@@ -6915,12 +6921,12 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 61,
-      "visuallyDowngraded": 12,
+      "verified": 62,
+      "visuallyDowngraded": 11,
       "byStatus": {
-        "partial": 148,
+        "partial": 147,
         "furniture": 1,
-        "done": 106,
+        "done": 107,
         "not-started": 16,
         "blocked-on-backend": 4
       },
@@ -7369,12 +7375,12 @@
       "defaultNamed": 40,
       "ambiguous": 105,
       "conflicts": 0,
-      "verified": 86,
-      "visuallyDowngraded": 7,
+      "verified": 88,
+      "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 232,
+        "partial": 230,
         "blocked-on-backend": 16,
-        "done": 88,
+        "done": 90,
         "not-started": 7
       },
       "liveOnly": []
@@ -8728,19 +8734,19 @@
       "pageId": "13883:8",
       "pageName": "Review: Social beta gaps (draft, not approved)",
       "readiness": "unknown",
-      "n": 1,
+      "n": 9,
       "openReports": 0,
       "scope": "wip",
       "harvestedAt": "2026-10-11",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
-      "live": 1,
+      "live": 9,
       "furniture": 0,
       "furnitureWhy": {},
       "ruledOut": 0,
       "ruledOutIds": [],
       "frameDefects": 0,
       "frameDefectIds": [],
-      "genuine": 1,
+      "genuine": 9,
       "matched": 0,
       "rollupOnly": 0,
       "defaultNamed": 0,
@@ -8756,6 +8762,62 @@
           "type": "FRAME",
           "w": 1852,
           "h": 724
+        },
+        {
+          "id": "13899-106",
+          "name": "DRAFT 2 - Composer: closed Post with its reason, and the sponsored allowance line",
+          "type": "FRAME",
+          "w": 2456,
+          "h": 580
+        },
+        {
+          "id": "13900-158",
+          "name": "DRAFT 3 - SOC-15 report dialog, report sent, hidden post and tombstone",
+          "type": "FRAME",
+          "w": 2340,
+          "h": 696
+        },
+        {
+          "id": "13901-199",
+          "name": "DRAFT 4 - Explore People rows with Follow",
+          "type": "FRAME",
+          "w": 1280,
+          "h": 562
+        },
+        {
+          "id": "13903-239",
+          "name": "DRAFT 5 - Explore type tabs: People, Communities, Posts, Live",
+          "type": "FRAME",
+          "w": 1607,
+          "h": 438
+        },
+        {
+          "id": "13904-380",
+          "name": "DRAFT 6 - Profile token gate: invitation, not open yet, checking, couldn't check, create in progress",
+          "type": "FRAME",
+          "w": 3060,
+          "h": 612
+        },
+        {
+          "id": "13905-503",
+          "name": "DRAFT 7 - Live studio (/social/live/studio): checking, and unavailable with Retry",
+          "type": "FRAME",
+          "w": 1640,
+          "h": 512
+        },
+        {
+          "id": "13906-447",
+          "name": "DRAFT 9 - Profile coin: the Buy sheet, and the closed Buy cell with its reason",
+          "type": "FRAME",
+          "w": 2017,
+          "h": 662
+        },
+        {
+          "id": "13907-459",
+          "name": "DRAFT 10 - A held write: Check again in place of Buy, and Stop waiting",
+          "type": "FRAME",
+          "w": 2456,
+          "h": 786
         }
       ]
     },
@@ -19814,9 +19876,9 @@
       "id": "13752-218141",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13752-218151",
@@ -22960,7 +23022,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11998-339138",
@@ -22992,7 +23054,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11998-340705",
@@ -23000,7 +23062,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11998-342147",
@@ -23272,7 +23334,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "5711-148542",
@@ -23376,7 +23438,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11998-352184",
@@ -23384,7 +23446,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "12000-357680",
@@ -23400,7 +23462,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "5689-136235",
@@ -23416,7 +23478,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "5691-138387",
@@ -25464,7 +25526,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "12001-366177",
@@ -25472,7 +25534,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11998-266062",
@@ -25928,7 +25990,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "11998-348680",
@@ -34520,7 +34582,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "3962-34721",
@@ -34583,8 +34645,8 @@
       "page": "✅ Trade 1",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
-      "verdict": "deferred"
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "3886-15237",
@@ -34639,31 +34701,31 @@
       "page": "✅ Trade 1",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
-      "verdict": "deferred"
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "7746-212008",
       "page": "✅ Trade 1",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
-      "verdict": "deferred"
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "7746-212704",
       "page": "✅ Trade 1",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
-      "verdict": "deferred"
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "3972-25561",
       "page": "✅ Trade 1",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -34847,7 +34909,7 @@
       "page": "✅ Trade 1",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -35062,9 +35124,9 @@
       "id": "7679-71196",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "match"
     },
     {
       "id": "7746-180909",
@@ -35808,15 +35870,15 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "9059-238601",
       "page": "✅ Trade 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9050-206715",
@@ -35824,7 +35886,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "9048-192225",
@@ -35888,7 +35950,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "9061-240254",
@@ -35896,7 +35958,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "match"
+      "verdict": "partial"
     },
     {
       "id": "9777-109249",
@@ -36672,7 +36734,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-169068",
@@ -36680,7 +36742,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-169857",
@@ -36704,7 +36766,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-172224",
@@ -36712,7 +36774,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-172747",
@@ -38400,7 +38462,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-317563",
@@ -38408,7 +38470,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-318775",
@@ -38416,7 +38478,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-319056",
@@ -38712,7 +38774,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-341272",
@@ -38720,7 +38782,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-342238",
@@ -38728,7 +38790,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "done",
-      "verdict": "deferred"
+      "verdict": "partial"
     },
     {
       "id": "13006-342940",

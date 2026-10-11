@@ -23,8 +23,8 @@ This file carries no run date, so it is byte-identical whenever its inputs are. 
 
 | Status of the matched frames | count | % of genuine |
 |---|---:|---:|
-| `done` | 1475 | 42.4% |
-| `partial` | 1570 | 45.1% |
+| `done` | 1478 | 42.5% |
+| `partial` | 1567 | 45.1% |
 | `not-started` | 141 | 4.1% |
 | `blocked-on-backend` | 286 | 8.2% |
 | `frame-defect` | 0 | 0.0% |
@@ -51,15 +51,15 @@ That is 17.6% of in-scope live nodes, inside the 14–25% band SCHEMA.md predict
 
 ### The headline number
 
-**1475 of 3478 in-scope genuine frames (42.4%) are covered by a row marked `done`.**
+**1478 of 3478 in-scope genuine frames (42.5%) are covered by a row marked `done`.**
 
-Read the caveat section before quoting that. It is not 42.4% measured parity.
+Read the caveat section before quoting that. It is not 42.5% measured parity.
 
-**108 frame(s) carry a `ruled-out` verdict and are NOT in that denominator.** A ruled-out frame is one the product decided against: nothing was built and nothing is owed, so it is neither work completed nor work outstanding and it leaves the measurement, exactly as a page-level `excluded` scope does. Counted in, the denominator is 3586 and the figure reads 41.1%; counted out it is 3478 and reads 42.4%. **The difference is the denominator shrinking, not frames being closed** — the `done` count is identical either way. Each such verdict must cite its ruling by date in the reason or it is refused and the frame stays in scope. 6 line(s) claimed `ruled-out` WITHOUT citing a dated ruling and were refused: vverify.fisherman-slots.tsv 11680-33011, vverify.home.tsv 5854-80845, vverify.predict.tsv 10211-15507, vverify.predict.tsv 3269-17599, vverify.predict.tsv 10097-220101, vverify.vegas-fortune.tsv 10448-4297.
+**108 frame(s) carry a `ruled-out` verdict and are NOT in that denominator.** A ruled-out frame is one the product decided against: nothing was built and nothing is owed, so it is neither work completed nor work outstanding and it leaves the measurement, exactly as a page-level `excluded` scope does. Counted in, the denominator is 3586 and the figure reads 41.2%; counted out it is 3478 and reads 42.5%. **The difference is the denominator shrinking, not frames being closed** — the `done` count is identical either way. Each such verdict must cite its ruling by date in the reason or it is refused and the frame stays in scope. 6 line(s) claimed `ruled-out` WITHOUT citing a dated ruling and were refused: vverify.fisherman-slots.tsv 11680-33011, vverify.home.tsv 5854-80845, vverify.predict.tsv 10211-15507, vverify.predict.tsv 3269-17599, vverify.predict.tsv 10097-220101, vverify.vegas-fortune.tsv 10448-4297.
 
-**278 frame(s) are frame defects and are NOT in that denominator either (Casey 2026-10-05 #2).** The frame is wrong and the code is right, so design owns the redraw and nothing is owed in code. Counted in, the denominator is 3756 and the figure reads 39.3%. A frame leaves only when every row of its newest generation says `frame-defect` and one of them states the defect in its reason (40 characters or more); a split generation, or a visual verdict that resolves it elsewhere, keeps it in.
+**278 frame(s) are frame defects and are NOT in that denominator either (Casey 2026-10-05 #2).** The frame is wrong and the code is right, so design owns the redraw and nothing is owed in code. Counted in, the denominator is 3756 and the figure reads 39.4%. A frame leaves only when every row of its newest generation says `frame-defect` and one of them states the defect in its reason (40 characters or more); a split generation, or a visual verdict that resolves it elsewhere, keeps it in.
 
-**1070 of those 1475 (30.8% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 405 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 75 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` belong to retired sections and bind through pages.json `retiredSections` at the lowest precedence — 0 active line(s) between them, deciding 0 frame(s).
+**1073 of those 1478 (30.9% of scope) carry a visual verdict of `match` from a vverify.<section>.tsv row — somebody compared the build to the Figma frame.** The other 405 are `done` by a status row alone, which is a claim about code mapping, not a measurement. 67 frames whose status rows claimed more than their visual verdict supports are counted at the verdict, the same rule apply-verify.mjs applies to registry.json (partial/deferred pulls `done` to `partial`; not-wired forces `not-started`). Until 2026-09-09 this tally ignored the verdicts entirely; `vverify.trade-bugrefs.tsv`, `vverify.trench.tsv` belong to retired sections and bind through pages.json `retiredSections` at the lowest precedence — 0 active line(s) between them, deciding 0 frame(s).
 
 ## Out of the roll-up
 
@@ -68,7 +68,7 @@ Read the caveat section before quoting that. It is not 42.4% measured parity.
 | standing exclusion (Onboarding) | 1 | 53 | 43 | 10 | 0 | 0 | 10 |
 | tombstone (body moved) | 3 | 187 | 70 | 106 | 106 | 6 | 0 |
 | meta | 6 | 52 | 1 | 51 | 0 | 0 | 51 |
-| wip / no section | 5 | 1162 | 1156 | 6 | 0 | 0 | 6 |
+| wip / no section | 5 | 1170 | 1156 | 14 | 0 | 0 | 14 |
 
 ## Per page
 
@@ -78,9 +78,9 @@ Read the caveat section before quoting that. It is not 42.4% measured parity.
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | ✅ Governance and Utilities | in-scope | 725 | 67 | 621 | 621 | 123 | 384 | 64 | 50 | 0 | 100.0% |
 | ✅ Social | in-scope | 442 | 40 | 358 | 358 | 144 | 126 | 23 | 65 | 0 | 100.0% |
-| ✅ Trade 1 | in-scope | 421 | 54 | 343 | 343 | 88 | 232 | 7 | 16 | 0 | 100.0% |
+| ✅ Trade 1 | in-scope | 421 | 54 | 343 | 343 | 90 | 230 | 7 | 16 | 0 | 100.0% |
 | ✅ Trade 2 | in-scope | 420 | 43 | 333 | 333 | 135 | 151 | 12 | 35 | 0 | 100.0% |
-| ✅ Play | in-scope | 431 | 77 | 275 | 275 | 106 | 148 | 16 | 4 | 0 | 100.0% |
+| ✅ Play | in-scope | 431 | 77 | 275 | 275 | 107 | 147 | 16 | 4 | 0 | 100.0% |
 | ✅ Predict | in-scope | 284 | 30 | 238 | 238 | 59 | 151 | 16 | 12 | 0 | 100.0% |
 | ✅ Home 1 | in-scope | 280 | 44 | 228 | 228 | 149 | 79 | 0 | 0 | 0 | 100.0% |
 | ✅ Home 2 | in-scope | 242 | 38 | 195 | 195 | 109 | 58 | 1 | 27 | 0 | 100.0% |
@@ -119,9 +119,9 @@ Read the caveat section before quoting that. It is not 42.4% measured parity.
 | ✝️ Trade (moved to "Skai Web App 2") | tombstone | 154 | 37 | 106 | 106 | 6 | 86 | 7 | 6 | 0 | 100.0% |
 | ✝️ Home (moved to "Skai Web App 2") | tombstone | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | ✝️ Wallet (moved to "Skai Web App 2") | tombstone | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
+| Review: Social beta gaps (draft, not approved) | wip | 9 | 0 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0.0% |
 | 🚧 User Flow | wip | 3 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0.0% |
 | 🚧 Titles + Emblems | wip | 1157 | 1156 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0.0% |
-| Review: Social beta gaps (draft, not approved) | wip | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0.0% |
 | Draft: X mentions (cf95f650) | wip | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0.0% |
 | 🎧 Sounds - Skai Originals | wip | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
 | 📍 Master sheet | meta | 46 | 1 | 45 | 0 | 0 | 0 | 0 | 0 | 45 | 0.0% |
@@ -200,6 +200,20 @@ Ranked by count. These are the unassessed frames.
 12155-33	870x522	Mask group (5) 1 [Vectorized]
 ```
 
+### Review: Social beta gaps (draft, not approved) — 9 live-only of 9 genuine  _(wip)_
+
+```
+13883-9	1852x724	DRAFT 1 - SOC-16 profile preview card: signed in, signed out, message requested
+13899-106	2456x580	DRAFT 2 - Composer: closed Post with its reason, and the sponsored allowance line
+13900-158	2340x696	DRAFT 3 - SOC-15 report dialog, report sent, hidden post and tombstone
+13901-199	1280x562	DRAFT 4 - Explore People rows with Follow
+13903-239	1607x438	DRAFT 5 - Explore type tabs: People, Communities, Posts, Live
+13904-380	3060x612	DRAFT 6 - Profile token gate: invitation, not open yet, checking, couldn't check, create in progress
+13905-503	1640x512	DRAFT 7 - Live studio (/social/live/studio): checking, and unavailable with Retry
+13906-447	2017x662	DRAFT 9 - Profile coin: the Buy sheet, and the closed Buy cell with its reason
+13907-459	2456x786	DRAFT 10 - A held write: Check again in place of Buy, and Stop waiting
+```
+
 ### 🚧 User Flow — 3 live-only of 3 genuine  _(wip)_
 
 ```
@@ -244,12 +258,6 @@ Ranked by count. These are the unassessed frames.
 
 ```
 2002-8	1600x960	Thumbnail - Web App
-```
-
-### Review: Social beta gaps (draft, not approved) — 1 live-only of 1 genuine  _(wip)_
-
-```
-13883-9	1852x724	DRAFT 1 - SOC-16 profile preview card: signed in, signed out, message requested
 ```
 
 ### Draft: X mentions (cf95f650) — 1 live-only of 1 genuine  _(wip)_
@@ -453,17 +461,17 @@ Not drift in the frame sense: these rows may describe real, finished work. But t
 
 ## What this number does NOT mean
 
-**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **3715 rows currently carry `done`**, and only **1838** of them (49.5%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1877 assert completion with nothing behind them that a later auditor can re-check.
+**1. A `done` row is not measured parity.** SCHEMA.md tightened `done` on 2026-08-26 to mean geometry, type ramp and colour tokens read off node data and compared against the rendered DOM, with the numbers written down. Every row that predates that ruling was written under the old reading — "nobody spotted a difference". **3717 rows currently carry `done`**, and only **1838** of them (49.4%) carry any provenance-tagged measurement at all (a column-6 breakpoint cell with an `@date/sweep-slug`). The other 1879 assert completion with nothing behind them that a later auditor can re-check.
 
 **2. `done` is silent about width.** Column 2 carries no viewport and must never be read as a desktop verdict. The width answers live in column 6 and start at `unknown`.
 
 **3. Coverage is not correctness.** "A row names this node id" is all the matched column claims. It does not mean anyone opened the frame.
 
-**4. Coverage is understated wherever rows carry no node id.** 339 of 22488 status rows (1.5%) name no node id at all, and 964 (4.3%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
+**4. Coverage is understated wherever rows carry no node id.** 339 of 22506 status rows (1.5%) name no node id at all, and 964 (4.3%) name none that is a live top-level child — so they cannot be attributed to a frame and contribute nothing to the matched counts above. `apply-status.mjs` folds those rows onto frames by TITLE instead, which is why the registry looks better covered than this report does. Titles are not identities in this library, so the fix is to put node ids in the rows, not to trust the title match. Drift C lists every file, worst first.
 
 **5. 27 `done` rows say FURNITURE in their own reason.** They are Directory strips and Breakpoint rulers filed as finished work because the vocabulary had no better slot at the time. They should be re-filed as `furniture`, which SCHEMA.md now excludes from the parity denominator. This script already excludes them on the live side, so they inflate no percentage here — but they do inflate any count taken from the rows.
 
-**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 55162 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
+**6. Node-id tokens are filtered, and the filter is measured rather than guessed.** 55253 id-shaped token occurrences across the status files matched no node id and were discarded. Most are source-code line ranges — `points-game/index.ts:5542-5545` yields `5542-5545`, which is indistinguishable by shape from a real node id — plus dates (`2026-08`) and file:line refs (`3:2`). Sample: `2201-2202`, `2026-08`, `3:2`, `2846-2847`, `2:1`, `5:1`, `269-270`, `681-682`. The 666 plausible-shaped unknowns were put to Figma directly (`getNodeByIdAsync` in each of the three files); 616 resolved to a real node and are now classified in Drift B, and the rest are confirmed noise.
 
 **7. A node id is unique only within a Figma file, and status rows do not record one.** 164 live ids exist in more than one of the three files — Skai-Web-App-2 began as a copy of Skai-Web-App, so a whole block of ids is duplicated, and SCHEMA.md already records `6330-54594` as home scaffolding in one file and a dice Breakpoint in another. **105 of the 3477 in-scope matches are on such an id**, so the headline number is unaffected. Every ambiguous match lands outside the roll-up: ✝️ Trade (moved to "Skai Web App 2") 106/106, ✅ Trade 1 105/343 — the same ids on both, i.e. the tombstone page is being credited with the v1 page's rows. The fix is a fileKey column on the row; guessing one here would be worse than naming the doubt.
 
