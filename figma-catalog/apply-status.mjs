@@ -45,15 +45,24 @@ const DIR = path.dirname(fileURLToPath(import.meta.url));
 const DRY_RUN = process.argv.includes("--dry-run");
 
 /**
- * The wave a status stem belongs to; 0 for the un-numbered legacy files, which
- * are the oldest. Deliberately the same rule `coverage.mjs` uses, so the writer
- * and the tally agree about which row supersedes which.
+ * The generation a status stem belongs to; 0 for the un-numbered legacy files,
+ * which are the oldest. Deliberately the same rule `coverage.mjs` uses, so the
+ * writer and the tally agree about which row supersedes which.
+ *
+ * A letter after the wave number marks a run that resumes that wave, and it is
+ * newer than the run it resumes: wave15 is 1500, wave15b 1502, wave16 1600. The
+ * letter is not optional to parse. Requiring a dot straight after the digits
+ * sends every lettered file to generation 0, where every numbered wave's row
+ * for the same frame overwrites it, and the registry then disagrees with the
+ * tally about exactly the frames a resumed run re-measured.
  *
  * A function declaration, not a `const` arrow: the self-test below runs before
  * the module body and would hit the temporal dead zone otherwise.
  */
 function genOf(stem) {
-  return Number(/^wave(\d+)\./.exec(stem)?.[1] ?? 0);
+  const m = /^wave(\d+)([a-z]*)\./.exec(stem);
+  if (!m) return 0;
+  return Number(m[1]) * 100 + (m[2] ? m[2].charCodeAt(0) - 96 : 0);
 }
 
 function foldStatusReason(reason, notes) {
@@ -98,6 +107,10 @@ if (process.argv.includes("--self-test")) {
     ["wave 9 still sorts after wave 8", "wave8.x", "wave9.x"],
     ["a legacy un-numbered file sorts BEFORE any wave", "wallet-2.b", "wave2.x"],
     ["two files of one wave stay in stem order", "wave10.a", "wave10.b"],
+    ["a lettered run sorts AFTER the wave it resumes", "wave15.x", "wave15b.a"],
+    ["a lettered run sorts BEFORE the next wave", "wave15b.x", "wave16.a"],
+    ["a lettered run is not generation 0: it sorts after an older wave", "wave9.x", "wave15b.a"],
+    ["a later letter sorts after an earlier one", "wave79b.x", "wave79c.a"],
   ];
   let ok = 0;
   for (const [label, earlier, later] of cases) {
