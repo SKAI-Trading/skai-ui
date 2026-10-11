@@ -55,6 +55,19 @@ describe("wallet row", () => {
     expect(props.onGoogleLogin).not.toHaveBeenCalled();
     expect(screen.getByRole("button", { name: "Continue with MetaMask" })).toHaveAttribute("aria-busy", "true");
   });
+
+  // 16 square below lg and 24 square from it, on every mark. At 1440 the pill
+  // is 94 wide on 40 of side padding, a 14px content box, so a mark that can be
+  // capped at its container's width draws 14x24 (report 24b031c0).
+  it("gives all four marks one square box, and no mark a width cap", () => {
+    setup();
+    for (const n of ["MetaMask", "Phantom", "Rainbow", "WalletConnect"]) {
+      const mark = screen.getByRole("button", { name: `Continue with ${n}` }).firstElementChild!;
+      const classes = (mark.getAttribute("class") ?? "").split(/\s+/);
+      expect(classes, n).toEqual(expect.arrayContaining(["h-4", "w-4", "shrink-0", "lg:h-6", "lg:w-6"]));
+      if (mark.tagName === "IMG") expect(classes, n).toContain("max-w-none");
+    }
+  });
 });
 
 describe("the handshake sheet", () => {

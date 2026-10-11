@@ -11,6 +11,7 @@
  */
 
 import * as React from "react";
+import { cn } from "../../lib/utils";
 
 export const AUTH_WALLET_IDS = ["io.metamask", "app.phantom", "me.rainbow", "walletConnect"] as const;
 export type AuthWalletId = (typeof AUTH_WALLET_IDS)[number];
@@ -30,6 +31,22 @@ const METAMASK_PNG =
 const WALLETCONNECT_PNG =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAADAFBMVEVMaXE6i/kHcv0Jc/0JdP4Sd/0Ecf8egv8mf/wARO4Fcf0kgfs0iPhVmfY9jPhRmPcWefwEcP0Odv0AaP8Gc/4MdP0vh/kGcv04jfpCkPgOd/4Dcv9Jk/cReP03kP4Ze/wagP9NlfYIdf0bfPwqg/oWfv9BjPcxifsKdf0yivo2jf0HeP8DdP8Kd/8Acfovh/oFdP8Icv0Fcf81iftClP1Gkvc9j/hAkvxHlPtFlPsviPtGkvgAbP8bffsBcv9Ilvsrh/odfvwBcP1Ll/tZnPcqhfwqhPoZfPwAbP8Rev8XevwBcP4Vev0RePxNmvwAdv5Ym/YBcf8Bb/0Acv8BcP9VmvhQm/5VmvtQlvVUm/kjgf4ngvwhgPwmhPslgfopiP8fgPwFc/8Fc/o8jfkui/88kPxPmftPmfkmg/obff3///8Mdf4KdP4ziPoWev0Ye/0Hc/9FkfgTef4rhPsPd/4shfwkgfv8/f8gf/wOdv41ifodffwigP0Vef0afP0ngvwmgvwReP0jgPs+jflHkvhDkPkvhvoxh/scff04i/lQl/dAj/k7jPkTeP0uhvsog/sefvw8jfpBj/opg/sbfP03ivkRd/0qhPwFcv8yiPoffvw6jPkOdv1LlPhPlvgwhvo3ivtJk/n+/v8Ye/wjgPwHcv77/P8Ecf9VmfgEd/8shfpNlfdSmPhZm/dMlfj5/P/2+v8bff1CkPgff/zv9v9KlPg4i/oRfv8gfvsxh/kDdf8uhfkSd/z6/P8ffv0Bb/8ngfq92f261/0UePxFk/vF3v7t9P80j/8Kef8Gef89k/9Jmv8ae/wXfv8Ygf9Wn/8liP8+j/yEt/zM4f6cxvxKlfuYw/3h7f5fofoNdP1Omf06jvzy9//B2/2x0v2Nvf1Zof9npvpTnP3q8/5cn/nn8f4Nff85kP9Dlf8wjv+Vwf2Ku/whgf9YnftQnf9Qm/8sjP8jhf+nzP0yiPu11P7Y6P17svve7P6tz/xZnflzrPmiyPt/tPx5sv1hpP3R5PyQMY0hAAAAanRSTlMA/v7+/fv7AgMB/fv+/v77/v79C4H8+3Rz/fLv/Zgi/R3+eN/+KArPzzPzJMvzNoHyW1xby/s18vCB8ygo/peXmPT17vTx+/QhZPvfwcl3Kd/Gl2TBwSmW/WRkyZd3/P7BMzNcC1zGxph3laop9QAAAAlwSFlzAAAOwwAADsMBx2+oZAAABNFJREFUSMellgdQG0cYhU8QOLAxrrjF3djpvVenOonTe3d6MrMgFEVYIjrL6pqAsBFRiSUQCmqATBFgC8mCWDS54ULv2LQUp7vbqbt3arQYJjdzMxrdfvvev/fv28OwkAvH4b3mjbfeXf0g0fDY6qeWPrEGp/4d94rGo7EVb785/ejR33/6hiBKDx0+fCji6VUryAfjXHCiZQ88+ts7/I0bp4ucOuK+5cs3bPisomLx0mvGFcGxtTfc/cOm9es9HgHbbE7REUQDI2lWRISwYvG8udgYIgq76oq92vluG4uVwfcRKkjwtlZGzPn2yvfhgFHjb7l673yXQSbzEynlCkJlQoRmTty+624aSeDYwu8cMVy61uUj2CK/KR5Po/k8Lm7fglBXUdjCAzS1mhskBIhQ+ExpsiGxf0FQIwr74EAsLTU1SChJUzpFQCIh/LKCm/0Ejt1+R2NsZnqWn7AhgpIoNTF4SCIhMfzTG6+nXEVja2/9PlYsFvsJg2wbZQrVTXmCEonhBdfOxaJJQ3cdXCSXBwm4VjZf3eRCIQBKWCL3z0OmcOyeO+sWlUkRQhHQlJs0hRaqFEkIEZAYtv3ye+FwHFt38DYmk1lGEjREcOkypYfN5vNJCQaSSE5AEgX3oyqWPdy6RBIgUh0Obrwz/uvM7lPO2gZzCpLgbRWiIixQ4nFYwzO/LNmVK5EgQizOTE+3GTpamtu93vb6tgEVL4WgPEEg0TKtYBWs4ZNfV+opQook3P3NRuC7jPUDlSqCXCcK2P08jr0yM2fljmJ9Likhp6n/4ABOCYkYS+DPE6akLeTLRkVMy4t8Fnv9yGtpOTuKSY0yubQacKqMYGdzTU2zFxirOKDPTC5sMirCMnv3i9irx2emQUK/C5mKaQNw2vamOpvT6Wk8ew6Kgb/CVbBqCogseAF7+ciMwrQ00pSEKc4/A0Bfpsem5Z5iiUyskwBUf2XawqCqRgovYc/9PCO/EEnomTQ5U5175mQ83cHVskWwP0S1Lb3ltQpNmIZHAXnbn8QeKUIAlCgrPD+klqSK1WoHlytq+pOA7SGCW8Lc2d22OUxIAXkPYUVFRflIIjf/H9B+QS1Nh+9O7TkGQFODUiAyl5uzu8+B+s2dPmBPAGDWAzsYHoqRp9McnhOAwwE/mvgiM7uycRg+OG1J9gM+SznMJjuoAoNDLnFqfBscj4hZAkFl3TAoAfa/w5L9lvxFF8eetQMrGOxwu1vQ/Og+ZqpsHYTT2I/vEQaKDiyrnnYRaXg74Hgr6K0GVkh0edH4gdlJwWUNvrhc9cUewAF2q9EK6g0sSBhLkGjPgIUR8uJ8rYGaSRLTDwkj9NLrYimVNVDDyAE9XWGM0NYINB9sJWlM/07kp9plk23js08DqxV4u1BrhDQf/jFsb71vQ0hdHV4Aagw2FwwntrMPAG9r5xcj23vkBpK7L3hrZDItioEMEXHeW5etGLWBgluU3D+Zhi/pBi0VNAKdblOtwjRqiwZCQErFhkNLp6NkIqNMp9KNCQFfzJQFY4aOsk+ZgcIyRTc2ZiYIMuWEQTapqESLGohKfxhnZY2I74nDGJn6aEpxP/UD5T+OLFPIkRX1fw7FSx67740ej1x9SB3s8ZM72Ed/OpRf8tNh6h8nk/z8+Rd9RcwOLlqK1wAAAABJRU5ErkJggg==";
 
+/**
+ * What the two PNG marks need to behave like the two vector ones.
+ *
+ * Preflight caps every <img> at `max-width: 100%`, and an <img> stretches to
+ * whatever box it is left with. The sign-in pill at 1440 is 94 wide on 40 of
+ * side padding, so its content box is 14: the cap cut both PNGs to 14 while the
+ * caller's height held them at 24, and they drew 14x24 beside a 24x24 Phantom
+ * and Rainbow (report 24b031c0). An <svg> has no cap and scales inside its
+ * viewBox, which is why those two were never squeezed.
+ *
+ * So the PNGs drop the cap and keep the size their caller sets, and fit by
+ * `contain`, so a box that is not square letterboxes the mark and cannot
+ * stretch it.
+ */
+const RASTER_MARK = "max-w-none object-contain";
+
 export const MetaMaskWalletIcon: React.FC<IconProps> = ({ className }) => (
   <img
     src={METAMASK_PNG}
@@ -38,7 +55,7 @@ export const MetaMaskWalletIcon: React.FC<IconProps> = ({ className }) => (
     width={24}
     height={24}
     draggable={false}
-    className={className}
+    className={cn(RASTER_MARK, className)}
   />
 );
 
@@ -50,7 +67,7 @@ export const WalletConnectWalletIcon: React.FC<IconProps> = ({ className }) => (
     width={24}
     height={24}
     draggable={false}
-    className={className}
+    className={cn(RASTER_MARK, className)}
   />
 );
 
