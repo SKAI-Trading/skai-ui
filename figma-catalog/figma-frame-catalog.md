@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-12T07:26:47.275Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-12T18:06:29.559Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -13,7 +13,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | governance | ✅ | 727 | 403 | 324 | 87 | 98 | 250 | 13 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 103 | 98 | 6 | 0 | 201 |
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 3 | 0 | 92 |
-| trade-2 | ✅ | 440 | 237 | 203 | 51 | 70 | 124 | 10 | 0 | 76 |
+| trade-2 | ✅ | 440 | 237 | 203 | 51 | 70 | 117 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 112 | 78 | 0 | 0 | 102 |
 | play | ✅ | 463 | 167 | 296 | 44 | 57 | 97 | 9 | 0 | 66 |
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 65 | 59 | 0 | 0 | 14 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2367** | | | **1070** | **1200** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2360** | | | **1070** | **1193** | **78** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -288,7 +288,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | Trench | 20 | desktop, tablet, mobile | actual; actual + With left float scrollable; actual + With left float ALT; hover; actual - settings collapsed; One-click trade settings - modal sell … | frame-defect/partial/done | [13006-134301](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-134301&m=dev) |
-| Trench > Tables | 18 | tablet, mobile | Positions; Transactions; Holders; Top holders; Dev tokens - full; Bubble maps … | partial/done | [13006-268680](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-268680&m=dev) |
+| Trench > Tables | 18 | tablet, mobile | Positions; Transactions; Holders; Top holders; Dev tokens - full; Bubble maps … | partial/blocked-on-backend/done | [13006-268680](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-268680&m=dev) |
 | Bridge | 15 | desktop, mobile, tablet | with info; with info > Start bridge; with info > Start bridge > Post wallet interaction; with info > Start bridge > Bridge settings | frame-defect | [13006-248523](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-248523&m=dev) |
 | Trench > Chart | 14 | tablet, mobile | Instant trade settings; Instant > AI Bearish; Instant > AI Bullish; Instant - buy; Market; Limit … | partial/blocked-on-backend/done | [13006-263046](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-263046&m=dev) |
 | Launch | 13 | desktop, tablet, mobile | Markets Row [Row 1318x124]; Trending card [card 324x300] | done/frame-defect | [13006-146233](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-146233&m=dev) |
@@ -320,7 +320,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Trench > Trackers | 2 | desktop | empty; empty > Add wallet | partial/done | [13006-184491](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-184491&m=dev) |
 | Trench > Trade > Holders | 2 | desktop | full screen | partial | [13006-221940](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-221940&m=dev) |
 | Trench > Trade > Dev tokens | 2 | desktop | Dev tokens 1440 > Token statistics (donut, Token stats, Highlights) [Frame 301 298x474] | done/partial | [13006-230793](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-230793&m=dev) |
-| Trench > Trade > Transactions | 2 | desktop | Transactions row (1440): count Tag, overflow, Trader sliders filter [content 1015x28] | partial/done | [13006-233358](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-233358&m=dev) |
+| Trench > Trade > Transactions | 2 | desktop | Transactions row (1440): count Tag, overflow, Trader sliders filter [content 1015x28] | blocked-on-backend/done | [13006-233358](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-233358&m=dev) |
 | Spot > Sidebar | 2 | tablet, mobile | - | partial | [13006-255386](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-255386&m=dev) |
 | Trench > Token info | 2 | tablet, mobile | - | blocked-on-backend | [13006-271691](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-271691&m=dev) |
 | Trench > Community | 2 | tablet, mobile | - | partial | [13006-271971](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-271971&m=dev) |
