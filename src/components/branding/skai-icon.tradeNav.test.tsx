@@ -107,6 +107,22 @@ describe("SkaiIcon trade-nav glyphs (report 3cb4cd3b)", () => {
     expect(new Set(drawn).size).toBe(5);
   });
 
+  it("trade-collectables is drawn in the same family: ringed, centred, coloured by the caller, its own art", () => {
+    // Not on the Trade frame (Casey added the row 2026-10-08), so there is no
+    // export to compare with. What it must share with the five is the family.
+    const { container } = render(<SkaiIcon name="trade-collectables" size="md" />);
+    const paths = Array.from(container.querySelectorAll("path"));
+    expect(paths).toHaveLength(1);
+    const d = paths[0].getAttribute("d") ?? "";
+    expect(d.startsWith(RING_PREFIX)).toBe(true);
+    expect(container.querySelector("g")?.getAttribute("transform")).toBe("translate(1.5, 1.5)");
+    expect(paths[0].getAttribute("fill")).toBe("currentColor");
+    // The slab: its outline, and the bar under its label.
+    expect(d).toContain("M7.5 3.5H13.5");
+    expect(d).toContain("M7.5 7H13.5V8H7.5V7Z");
+    for (const name of Object.keys(FIGMA_D)) expect(d).not.toBe(FIGMA_D[name].d);
+  });
+
   it("the superseded bare glyphs do NOT draw the ring", () => {
     // Without this the ring assertion above would be vacuous — it proves the
     // property actually discriminates, and pins the defect the report named.
