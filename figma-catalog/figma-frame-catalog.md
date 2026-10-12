@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-12T03:13:48.064Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-12T03:25:24.235Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -16,7 +16,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 70 | 124 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 112 | 78 | 0 | 0 | 102 |
 | play | ✅ | 463 | 167 | 296 | 44 | 57 | 97 | 9 | 0 | 66 |
-| home-2 | ✅ | 249 | 152 | 97 | 19 | 66 | 58 | 0 | 0 | 14 |
+| home-2 | ✅ | 249 | 152 | 97 | 19 | 65 | 59 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 20 | 102 | 19 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 93 | 37 | 0 | 0 | 59 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2367** | | | **1071** | **1199** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2367** | | | **1070** | **1200** | **78** | **19** | **1032** |
 
 ### Drift against live Figma
 
