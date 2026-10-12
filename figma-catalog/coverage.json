@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12T00:25:55.838Z",
+  "generated": "2026-10-12T03:13:49.852Z",
   "harvestedAt": "2026-10-11",
   "rollup": {
     "pages": 39,
@@ -20,9 +20,9 @@
     "genuineWithFrameDefects": 3756,
     "frameDefectUncited": [],
     "matched": 3477,
-    "done": 1480,
-    "verified": 1076,
-    "visuallyDowngraded": 65,
+    "done": 1491,
+    "verified": 1087,
+    "visuallyDowngraded": 54,
     "visualUnmapped": [],
     "visualRetired": [
       {
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1565,
+    "partial": 1554,
     "notStarted": 141,
     "blocked": 286,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3738,
+    "total": 3749,
     "withBreakpointProvenance": 1839,
-    "namingANodeId": 3513,
+    "namingANodeId": 3524,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22547,
+    "total": 22558,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 55471
+    "unrecognisedTokens": 55523
   },
   "statusFiles": [
     {
@@ -5919,6 +5919,12 @@
       "ids": 85
     },
     {
+      "file": "status.wave79.W3b.tsv",
+      "rows": 11,
+      "withLiveId": 11,
+      "ids": 11
+    },
+    {
       "file": "status.wave79.W4.tsv",
       "rows": 16,
       "withLiveId": 16,
@@ -7098,11 +7104,11 @@
       "defaultNamed": 41,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 116,
-      "visuallyDowngraded": 11,
+      "verified": 127,
+      "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 384,
-        "done": 123,
+        "partial": 373,
+        "done": 134,
         "blocked-on-backend": 50,
         "not-started": 64
       },
@@ -23038,9 +23044,9 @@
       "id": "11989-231980",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "11998-339138",
@@ -23070,17 +23076,17 @@
       "id": "11991-233583",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "11998-340705",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "11998-342147",
@@ -23350,9 +23356,9 @@
       "id": "12001-367469",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "5711-148542",
@@ -23454,17 +23460,17 @@
       "id": "11998-245136",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "11998-352184",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "12000-357680",
@@ -23478,9 +23484,9 @@
       "id": "11998-246935",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "5689-136235",
@@ -23494,9 +23500,9 @@
       "id": "11998-352404",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "5691-138387",
@@ -25542,17 +25548,17 @@
       "id": "11998-256391",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "12001-366177",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "11998-266062",
@@ -26006,9 +26012,9 @@
       "id": "11998-354592",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "11998-348680",
