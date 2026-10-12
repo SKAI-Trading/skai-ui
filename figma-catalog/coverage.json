@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12T18:06:32.347Z",
+  "generated": "2026-10-12T23:28:12.890Z",
   "harvestedAt": "2026-10-11",
   "rollup": {
     "pages": 39,
@@ -20,9 +20,9 @@
     "genuineWithFrameDefects": 3756,
     "frameDefectUncited": [],
     "matched": 3477,
-    "done": 1490,
-    "verified": 1086,
-    "visuallyDowngraded": 47,
+    "done": 1491,
+    "verified": 1087,
+    "visuallyDowngraded": 37,
     "visualUnmapped": [],
     "visualRetired": [
       {
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1547,
+    "partial": 1546,
     "notStarted": 141,
     "blocked": 294,
     "frameDefect": 0,
@@ -53,19 +53,19 @@
     "rollupOnly": 8,
     "defaultNamed": 157,
     "ambiguous": 105,
-    "conflicts": 0
+    "conflicts": 9
   },
   "doneRows": {
-    "total": 3756,
+    "total": 3757,
     "withBreakpointProvenance": 1839,
-    "namingANodeId": 3531,
+    "namingANodeId": 3532,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22588,
+    "total": 22598,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 55725
+    "unrecognisedTokens": 55791
   },
   "statusFiles": [
     {
@@ -5925,6 +5925,12 @@
       "ids": 17
     },
     {
+      "file": "status.wave79.W2b.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 10
+    },
+    {
       "file": "status.wave79.W3.tsv",
       "rows": 82,
       "withLiveId": 82,
@@ -7501,12 +7507,12 @@
       "rollupOnly": 0,
       "defaultNamed": 18,
       "ambiguous": 0,
-      "conflicts": 0,
-      "verified": 57,
-      "visuallyDowngraded": 10,
+      "conflicts": 9,
+      "verified": 58,
+      "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 143,
-        "done": 135,
+        "partial": 142,
+        "done": 136,
         "blocked-on-backend": 43,
         "not-started": 12
       },
@@ -14328,7 +14334,134 @@
       "status": "done"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    {
+      "id": "13006-168043",
+      "page": "✅ Trade 2",
+      "name": "Skai > Trench > Discover 1VH (1440 x 900px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:6",
+        "status.wave79.W2b.tsv:6"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "13006-169068",
+      "page": "✅ Trade 2",
+      "name": "Frame 1358",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:7",
+        "status.wave79.W2b.tsv:7"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "13006-171435",
+      "page": "✅ Trade 2",
+      "name": "Frame 1371",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:10",
+        "status.wave79.W2b.tsv:8"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "13006-172224",
+      "page": "✅ Trade 2",
+      "name": "Frame 1368",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:11",
+        "status.wave79.W2b.tsv:9"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "13006-316862",
+      "page": "✅ Trade 2",
+      "name": "Skai > Trade > Trench > Discover - Top 1VH (375 x 812px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:14",
+        "status.wave79.W2b.tsv:10"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "13006-317563",
+      "page": "✅ Trade 2",
+      "name": "Skai > Trade > Trench > Discover - Trending 1VH (375 x 812px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:15",
+        "status.wave79.W2b.tsv:11"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "13006-340306",
+      "page": "✅ Trade 2",
+      "name": "Skai > Trade > Trench > Discover - Top 1VH (768x1024px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:17",
+        "status.wave79.W2b.tsv:13"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "13006-341272",
+      "page": "✅ Trade 2",
+      "name": "Skai > Trade > Trench > Discover - Trending 1VH (768x1024px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:18",
+        "status.wave79.W2b.tsv:14"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "13006-342238",
+      "page": "✅ Trade 2",
+      "name": "Skai > Trade > Trench > Discover - DEX Scanner 1VH (768x1024px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave79.W2.tsv:19",
+        "status.wave79.W2b.tsv:15"
+      ],
+      "kind": "same-generation"
+    }
+  ],
   "frameStatuses": [
     {
       "id": "2005-4492",
@@ -36775,7 +36908,7 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -36783,7 +36916,7 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -36807,7 +36940,7 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -36815,7 +36948,7 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -38503,7 +38636,7 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -38511,16 +38644,16 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
       "id": "13006-318775",
       "page": "✅ Trade 2",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13006-319056",
@@ -38815,7 +38948,7 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -38823,7 +38956,7 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -38831,7 +38964,7 @@
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "partial",
-      "claimed": "done",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
