@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12T03:25:26.526Z",
+  "generated": "2026-10-12T07:26:50.803Z",
   "harvestedAt": "2026-10-11",
   "rollup": {
     "pages": 39,
@@ -20,9 +20,9 @@
     "genuineWithFrameDefects": 3756,
     "frameDefectUncited": [],
     "matched": 3477,
-    "done": 1483,
-    "verified": 1079,
-    "visuallyDowngraded": 54,
+    "done": 1490,
+    "verified": 1086,
+    "visuallyDowngraded": 47,
     "visualUnmapped": [],
     "visualRetired": [
       {
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1562,
+    "partial": 1555,
     "notStarted": 141,
     "blocked": 286,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 0
   },
   "doneRows": {
-    "total": 3749,
+    "total": 3756,
     "withBreakpointProvenance": 1839,
-    "namingANodeId": 3524,
+    "namingANodeId": 3531,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22566,
+    "total": 22575,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 55547
+    "unrecognisedTokens": 55574
   },
   "statusFiles": [
     {
@@ -5907,6 +5907,12 @@
       "ids": 15
     },
     {
+      "file": "status.wave79.W1c.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 25
+    },
+    {
       "file": "status.wave79.W2.tsv",
       "rows": 17,
       "withLiveId": 17,
@@ -6951,12 +6957,12 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 64,
-      "visuallyDowngraded": 9,
+      "verified": 71,
+      "visuallyDowngraded": 2,
       "byStatus": {
-        "partial": 145,
+        "partial": 138,
         "furniture": 1,
-        "done": 109,
+        "done": 116,
         "not-started": 16,
         "blocked-on-backend": 4
       },
@@ -19914,9 +19920,9 @@
       "id": "13752-218151",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13752-218176",
@@ -19930,9 +19936,9 @@
       "id": "13752-218186",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13752-218206",
@@ -19970,9 +19976,9 @@
       "id": "13752-218236",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13752-218251",
@@ -20002,17 +20008,17 @@
       "id": "13752-218261",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13752-218271",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13752-218301",
@@ -20026,17 +20032,17 @@
       "id": "13752-218281",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13752-218296",
       "page": "✅ Play",
       "scope": "in-scope",
-      "status": "partial",
+      "status": "done",
       "claimed": "done",
-      "verdict": "partial"
+      "verdict": "match"
     },
     {
       "id": "13752-218427",
