@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-12T23:28:07.383Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-13T04:10:00.546Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -13,7 +13,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | governance | ✅ | 727 | 403 | 324 | 87 | 98 | 250 | 13 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 103 | 98 | 6 | 0 | 201 |
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 3 | 0 | 92 |
-| trade-2 | ✅ | 440 | 237 | 203 | 51 | 71 | 116 | 10 | 0 | 76 |
+| trade-2 | ✅ | 440 | 237 | 203 | 51 | 71 | 114 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 112 | 78 | 0 | 0 | 102 |
 | play | ✅ | 463 | 167 | 296 | 44 | 57 | 97 | 9 | 0 | 66 |
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 65 | 59 | 0 | 0 | 14 |
@@ -26,12 +26,12 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | safari-slots | ✅ | 72 | 62 | 10 | 1 | 6 | 27 | 0 | 0 | 0 |
 | gem-slots | ✅ | 66 | 57 | 9 | 1 | 13 | 4 | 3 | 0 | 0 |
 | cosmic-slots | ✅ | 62 | 54 | 8 | 1 | 31 | 5 | 2 | 0 | 0 |
-| coinflip | ✅ | 47 | 34 | 13 | 1 | 21 | 8 | 0 | 0 | 27 |
+| coinflip | ✅ | 47 | 34 | 13 | 1 | 21 | 5 | 0 | 0 | 27 |
 | dice | ✅ | 36 | 26 | 10 | 1 | 14 | 4 | 0 | 0 | 8 |
 | chicken | ✅ | 31 | 21 | 10 | 1 | 8 | 2 | 0 | 0 | 15 |
 | blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 2 | 0 | 0 | 14 |
 | towers | ✅ | 31 | 17 | 14 | 1 | 4 | 4 | 0 | 0 | 7 |
-| skratch | ✅ | 22 | 16 | 6 | 1 | 6 | 7 | 0 | 0 | 11 |
+| skratch | ✅ | 22 | 16 | 6 | 1 | 6 | 6 | 0 | 0 | 11 |
 | rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 7 | 3 | 0 | 0 | 7 |
 | crash | ✅ | 20 | 15 | 5 | 1 | 2 | 11 | 0 | 0 | 12 |
 | plinko | ✅ | 21 | 15 | 6 | 1 | 4 | 4 | 0 | 0 | 8 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2360** | | | **1071** | **1192** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2354** | | | **1071** | **1186** | **78** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -305,7 +305,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Trench > Trade | 4 | desktop | layout 2; layout 2 with instant trade; layout 2 with instant trade - Trench > Instant trade (floating card) [Instant trade 333x316] | partial/done | [13006-210576](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-210576&m=dev) |
 | Launch > Sample token | 4 | desktop, mobile, tablet | Token terminal 768 header (sentiment card on stat row) [main 708x873] | partial | [13006-241485](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-241485&m=dev) |
 | Trench > Trackers > Wallets | 4 | mobile, tablet | empty; add wallet | done/partial | [13006-319384](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-319384&m=dev) |
-| Trench > Trackers > Wallets Manager | 4 | mobile, tablet | import wallet | partial/done | [13006-319525](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-319525&m=dev) |
+| Trench > Trackers > Wallets Manager | 4 | mobile, tablet | import wallet | partial/frame-defect/done | [13006-319525](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-319525&m=dev) |
 | Launch > create token > buy test | 3 | desktop, mobile, tablet | - | frame-defect/done | [13006-147876](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-147876&m=dev) |
 | Trench > Hotkeys | 3 | desktop, mobile, tablet | - | frame-defect/done | [13006-162230](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-162230&m=dev) |
 | Trench > Snipe settings | 3 | desktop, mobile, tablet | - | done | [13006-165152](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-165152&m=dev) |
@@ -336,7 +336,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Trench > Trade > Instant trade settings | 1 | desktop | - | done | [13006-217349](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-217349&m=dev) |
 | Trench > Trade > Positions | 1 | desktop | - | done | [13006-219610](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-219610&m=dev) |
 | Trench > Trade > KOLs | 1 | desktop | - | not-started | [13006-227835](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-227835&m=dev) |
-| Trench > Trade > Transactions > Adjust maker filter | 1 | desktop | - | partial | [13006-236560](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-236560&m=dev) |
+| Trench > Trade > Transactions > Adjust maker filter | 1 | desktop | - | frame-defect | [13006-236560](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-236560&m=dev) |
 | Trench > Trade > Bubblemaps | 1 | desktop | - | partial | [13006-239242](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13006-239242&m=dev) |
 
 ## Home
@@ -632,7 +632,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Coinflip | 34 | desktop, tablet, mobile | Desktop; Continuous Tab; Desktop Continuous; Target Tab; Target Tab Auto; Desktop Target … | done/partial/furniture | [9003-130613](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-130613&m=dev) |
+| Casino > Coinflip | 34 | desktop, tablet, mobile | Desktop; Continuous Tab; Desktop Continuous; Target Tab; Target Tab Auto; Desktop Target … | done/partial/frame-defect/furniture | [9003-130613](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-130613&m=dev) |
 
 ## Dice
 

@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-12T23:28:12.890Z",
+  "generated": "2026-10-13T04:10:03.737Z",
   "harvestedAt": "2026-10-11",
   "rollup": {
     "pages": 39,
     "live": 4688,
     "furniture": 824,
-    "genuine": 3478,
-    "ruledOut": 108,
-    "genuineWithRuledOut": 3586,
+    "genuine": 3466,
+    "ruledOut": 114,
+    "genuineWithRuledOut": 3580,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
       "vverify.home.tsv 5854-80845",
@@ -16,10 +16,10 @@
       "vverify.predict.tsv 10097-220101",
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
-    "frameDefectsOut": 278,
-    "genuineWithFrameDefects": 3756,
+    "frameDefectsOut": 284,
+    "genuineWithFrameDefects": 3750,
     "frameDefectUncited": [],
-    "matched": 3477,
+    "matched": 3465,
     "done": 1491,
     "verified": 1087,
     "visuallyDowngraded": 37,
@@ -43,9 +43,9 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 1546,
+    "partial": 1538,
     "notStarted": 141,
-    "blocked": 294,
+    "blocked": 290,
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
@@ -62,10 +62,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22598,
+    "total": 22610,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 964,
-    "unrecognisedTokens": 55791
+    "unrecognisedTokens": 55902
   },
   "statusFiles": [
     {
@@ -5925,6 +5925,12 @@
       "ids": 17
     },
     {
+      "file": "status.wave79.W23.tsv",
+      "rows": 12,
+      "withLiveId": 12,
+      "ids": 20
+    },
+    {
       "file": "status.wave79.W2b.tsv",
       "rows": 10,
       "withLiveId": 10,
@@ -7452,23 +7458,29 @@
         "author-rejected": 1,
         "loose-ellipse": 1
       },
-      "ruledOut": 13,
+      "ruledOut": 19,
       "ruledOutIds": [
+        "13006-141502",
         "13006-198241",
+        "13006-198638",
         "13006-227835",
+        "13006-233331",
         "13006-247883",
         "13006-248078",
         "13006-250040",
         "13006-250217",
+        "13006-252891",
         "13006-253670",
         "13006-253745",
         "13006-253855",
         "13006-254042",
         "13006-256623",
         "13006-258282",
-        "13006-258402"
+        "13006-258402",
+        "13006-347281",
+        "13006-356801"
       ],
-      "frameDefects": 31,
+      "frameDefects": 33,
       "frameDefectIds": [
         "13006-134301",
         "13006-147876",
@@ -7478,6 +7490,7 @@
         "13006-155671",
         "13006-162230",
         "13006-174265",
+        "13006-236560",
         "13006-248523",
         "13006-248696",
         "13006-248937",
@@ -7500,10 +7513,11 @@
         "13006-283168",
         "13006-284111",
         "13006-284164",
-        "13006-318264"
+        "13006-318264",
+        "13006-344538"
       ],
-      "genuine": 333,
-      "matched": 333,
+      "genuine": 325,
+      "matched": 325,
       "rollupOnly": 0,
       "defaultNamed": 18,
       "ambiguous": 0,
@@ -7511,9 +7525,9 @@
       "verified": 58,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "partial": 142,
+        "partial": 138,
         "done": 136,
-        "blocked-on-backend": 43,
+        "blocked-on-backend": 39,
         "not-started": 12
       },
       "liveOnly": []
@@ -7834,10 +7848,14 @@
       },
       "ruledOut": 0,
       "ruledOutIds": [],
-      "frameDefects": 0,
-      "frameDefectIds": [],
-      "genuine": 34,
-      "matched": 34,
+      "frameDefects": 3,
+      "frameDefectIds": [
+        "9204-17308",
+        "9206-19903",
+        "9207-20110"
+      ],
+      "genuine": 31,
+      "matched": 31,
       "rollupOnly": 0,
       "defaultNamed": 6,
       "ambiguous": 0,
@@ -7846,7 +7864,7 @@
       "visuallyDowngraded": 0,
       "byStatus": {
         "done": 26,
-        "partial": 8
+        "partial": 5
       },
       "liveOnly": []
     },
@@ -7867,12 +7885,13 @@
       },
       "ruledOut": 0,
       "ruledOutIds": [],
-      "frameDefects": 1,
+      "frameDefects": 2,
       "frameDefectIds": [
-        "9621-1282"
+        "9621-1282",
+        "9220-26119"
       ],
-      "genuine": 12,
-      "matched": 12,
+      "genuine": 11,
+      "matched": 11,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
@@ -7881,7 +7900,7 @@
       "visuallyDowngraded": 0,
       "byStatus": {
         "done": 5,
-        "partial": 7
+        "partial": 6
       },
       "liveOnly": []
     },
@@ -36752,14 +36771,6 @@
       "verdict": "partial"
     },
     {
-      "id": "13006-141502",
-      "page": "✅ Trade 2",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
       "id": "13006-144635",
       "page": "✅ Trade 2",
       "scope": "in-scope",
@@ -37336,14 +37347,6 @@
       "verdict": "partial"
     },
     {
-      "id": "13006-198638",
-      "page": "✅ Trade 2",
-      "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
-      "verdict": null
-    },
-    {
       "id": "13006-198778",
       "page": "✅ Trade 2",
       "scope": "in-scope",
@@ -37488,27 +37491,11 @@
       "verdict": "partial"
     },
     {
-      "id": "13006-233331",
-      "page": "✅ Trade 2",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
       "id": "13006-233358",
       "page": "✅ Trade 2",
       "scope": "in-scope",
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
-      "verdict": "partial"
-    },
-    {
-      "id": "13006-236560",
-      "page": "✅ Trade 2",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -37774,14 +37761,6 @@
       "status": "done",
       "claimed": "done",
       "verdict": null
-    },
-    {
-      "id": "13006-252891",
-      "page": "✅ Trade 2",
-      "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
-      "verdict": "deferred"
     },
     {
       "id": "13006-252907",
@@ -39000,14 +38979,6 @@
       "verdict": "partial"
     },
     {
-      "id": "13006-344538",
-      "page": "✅ Trade 2",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
       "id": "13006-344822",
       "page": "✅ Trade 2",
       "scope": "in-scope",
@@ -39053,14 +39024,6 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13006-347281",
-      "page": "✅ Trade 2",
-      "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
       "verdict": "partial"
     },
     {
@@ -39349,14 +39312,6 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "13006-356801",
-      "page": "✅ Trade 2",
-      "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
       "verdict": "partial"
     },
     {
@@ -40344,14 +40299,6 @@
       "verdict": "partial"
     },
     {
-      "id": "9204-17308",
-      "page": "✅ Coinflip - Skai originals",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
       "id": "9204-17690",
       "page": "✅ Coinflip - Skai originals",
       "scope": "in-scope",
@@ -40406,22 +40353,6 @@
       "status": "done",
       "claimed": "done",
       "verdict": "match"
-    },
-    {
-      "id": "9206-19903",
-      "page": "✅ Coinflip - Skai originals",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
-    },
-    {
-      "id": "9207-20110",
-      "page": "✅ Coinflip - Skai originals",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
     },
     {
       "id": "9208-20333",
@@ -40566,14 +40497,6 @@
       "status": "partial",
       "claimed": "partial",
       "verdict": "partial"
-    },
-    {
-      "id": "9220-26119",
-      "page": "✅ Scratchers - Skai originals",
-      "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
     },
     {
       "id": "10221-7338",
