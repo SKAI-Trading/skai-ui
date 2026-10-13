@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-13T04:10:00.546Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-13T05:16:19.897Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -10,13 +10,13 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
-| governance | ✅ | 727 | 403 | 324 | 87 | 98 | 250 | 13 | 0 | 10 |
+| governance | ✅ | 727 | 403 | 324 | 87 | 106 | 242 | 13 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 103 | 98 | 6 | 0 | 201 |
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 3 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 71 | 114 | 10 | 0 | 76 |
-| home | ✅ | 290 | 194 | 96 | 50 | 112 | 78 | 0 | 0 | 102 |
+| home | ✅ | 290 | 194 | 96 | 50 | 130 | 57 | 0 | 0 | 102 |
 | play | ✅ | 463 | 167 | 296 | 44 | 57 | 97 | 9 | 0 | 66 |
-| home-2 | ✅ | 249 | 152 | 97 | 19 | 65 | 59 | 0 | 0 | 14 |
+| home-2 | ✅ | 249 | 152 | 97 | 19 | 64 | 58 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 20 | 102 | 19 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 93 | 37 | 0 | 0 | 59 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2354** | | | **1071** | **1186** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2349** | | | **1096** | **1156** | **78** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -109,7 +109,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Yield vaults | 6 | desktop, tablet, mobile | - | done | [5492-53877](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5492-53877&m=dev) |
 | Yield vaults > Sample vault item | 6 | desktop, tablet, mobile | - | partial/done | [5515-92313](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5515-92313&m=dev) |
 | Learn > Skai university > Sample course > Purchased | 6 | desktop, tablet, mobile | - | partial | [5443-69253](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5443-69253&m=dev) |
-| Learn > Skai university > Sample course > Purchased > Sample video | 6 | desktop, tablet, mobile | show transcript | partial | [5446-83004](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5446-83004&m=dev) |
+| Learn > Skai university > Sample course > Purchased > Sample video | 6 | desktop, tablet, mobile | show transcript | done | [5446-83004](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5446-83004&m=dev) |
 | Governance > Proposals | 6 | desktop, tablet, mobile | - | partial/done | [5371-63275](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5371-63275&m=dev) |
 | Governance > Proposals > Financials | 6 | desktop, tablet, mobile | - | frame-defect/partial | [5387-76925](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5387-76925&m=dev) |
 | Governance > Proposals > Staking | 6 | desktop, tablet, mobile | - | partial | [5376-71276](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5376-71276&m=dev) |
@@ -167,7 +167,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Learn > Skai university > Articles | 3 | desktop, tablet, mobile | - | partial | [5480-22549](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5480-22549&m=dev) |
 | Account > Account settings > Security | 3 | desktop, mobile, tablet | - | partial | [5529-49244](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5529-49244&m=dev) |
 | Account > Account settings > Preferences | 3 | desktop, mobile, tablet | - | done | [5529-73119](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5529-73119&m=dev) |
-| Account > Account settings > Security > Delete account | 3 | desktop, mobile, tablet | - | done/partial | [11302-128586](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11302-128586&m=dev) |
+| Account > Account settings > Security > Delete account | 3 | desktop, mobile, tablet | - | done | [11302-128586](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11302-128586&m=dev) |
 | Governance > Proposals > New proposal | 3 | desktop, tablet, mobile | - | blocked-on-backend/partial | [11309-136994](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11309-136994&m=dev) |
 | Explorer > Address > Staking | 2 | desktop, tablet | - | partial | [5662-124997](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5662-124997&m=dev) |
 | Governance > Proposals > Delegation > Delegate modal | 2 | desktop, tablet | - | not-started | [5385-75416](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5385-75416&m=dev) |
@@ -343,8 +343,8 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| welcome > onboarding Qs | 19 | desktop, tablet, mobile | 2; 2 ALT; 1; with default PFP 1; load effect; load effect > Quests … | done/partial | [2713-3947](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-3947&m=dev) |
-| welcome | 13 | desktop, tablet, mobile | with CTA; scroll; end CTA | partial/done | [2713-4179](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-4179&m=dev) |
+| welcome > onboarding Qs | 19 | desktop, tablet, mobile | 2; 2 ALT; 1; with default PFP 1; load effect; load effect > Quests … | done/frame-defect/partial | [2713-3947](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-3947&m=dev) |
+| welcome | 13 | desktop, tablet, mobile | with CTA; scroll; end CTA | done/partial | [2713-4179](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2713-4179&m=dev) |
 | Portfolio | 12 | desktop, tablet, mobile | invisible; Portfolio Holdings 375 [section 347x414]; portfolio holdings 1440 [main 1382x828]; Bottom-navigation-mobile (Home 1) [Bottom-navigation-mobile 375x54] | done/partial | [2737-28177](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2737-28177&m=dev) |
 | Portfolio > Social | 9 | desktop, tablet, mobile | with vesting; Portfolio Social tab 375 [card group 347x580]; with vesting - portfolio social 1440 [section 1144x1000] | done/partial | [2769-15250](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2769-15250&m=dev) |
 | AI Feed | 9 | desktop, tablet, mobile | empty; actionable | partial | [5854-80845](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=5854-80845&m=dev) |
