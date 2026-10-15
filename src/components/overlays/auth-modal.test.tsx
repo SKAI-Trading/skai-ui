@@ -102,6 +102,22 @@ describe("the handshake sheet", () => {
   });
 });
 
+// Report 6dbf34d9, the short-window half: centred in a scrim that could not
+// scroll, a modal taller than the window lost its title off the top for good.
+// jsdom has no layout, so this pins the two classes that make it scroll from
+// the title (measured in Chromium at 1498x560: the panel opens at the scrim's
+// 24 and scrolls to its last line; at 900 it is centred as before).
+describe("a window shorter than the modal", () => {
+  it("scrolls the scrim, and the panel's auto margins give way to its top edge", () => {
+    setup({ mode: "signup" });
+    const scrim = screen.getByTestId("auth-modal-backdrop");
+    const panel = screen.getByTestId("auth-modal-panel");
+    expect(scrim.className.split(/\s+/)).toContain("overflow-y-auto");
+    expect(panel.className.split(/\s+/)).toContain("my-auto");
+    expect(panel.parentElement).toBe(scrim);
+  });
+});
+
 describe("email and socials", () => {
   it("submits a plausible email", () => {
     const props = setup();

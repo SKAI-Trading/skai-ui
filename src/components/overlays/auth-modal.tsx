@@ -370,21 +370,29 @@ export function AuthModal({
 
      The sheet sits OUTSIDE the scrim on purpose: the scrim is a padded flex row
      with a backdrop filter, so a child of it can neither sit flush against the
-     bottom edge nor escape that padding without cancelling it twice. */
+     bottom edge nor escape that padding without cancelling it twice.
+
+     A window shorter than the modal scrolls it. Centred in a scrim that could
+     not scroll, a 650-tall Sign up in a 560-tall window lost its title and its
+     terms line off both edges with no way to reach either (report 6dbf34d9's
+     cut top, the short-window half). The panel's auto margins centre it while
+     it fits and give way to the top edge when it does not, so the scrim's
+     scroll starts at the title. */
   return (
     <>
       <ModalScrim
         onClose={onClose}
         label={isSignup ? "Sign up" : "Login"}
         testId="auth-modal-backdrop"
-        className={cn("z-[10000] bg-[rgba(0,22,21,0.44)] p-2 backdrop-blur-[12px] sm:p-6", className)}
+        className={cn("z-[10000] overflow-y-auto bg-[rgba(0,22,21,0.44)] p-2 backdrop-blur-[12px] sm:p-6", className)}
       >
         <div
           /* 358 wide on a 20 radius at 375, 468 on 26 at 768, 448 on 32 at 1440;
              Green Coal 200 under a Green Coal 100 hairline, which is an inset
              ring for the reason FIELD_BOX gives. The top and bottom insets are
              not a pair — 24/24, 16/32, 24/40 across the three. */
-          className="relative flex w-full max-w-[358px] flex-col gap-5 rounded-[20px] bg-[#122524] px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-6 md:rounded-[26px] md:px-4 md:pb-8 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
+          data-testid="auth-modal-panel"
+          className="relative my-auto flex w-full max-w-[358px] flex-col gap-5 rounded-[20px] bg-[#122524] px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-6 md:rounded-[26px] md:px-4 md:pb-8 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
         >
           {/* Title row: Super-headline 4 300 centred on the modal, with the close
               glyph at the right inset. The frame balances the glyph with an empty
