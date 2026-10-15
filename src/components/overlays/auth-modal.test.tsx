@@ -110,6 +110,36 @@ describe("email and socials", () => {
     expect(props.onEmailSubmit).toHaveBeenCalledWith("someone@example.com");
   });
 
+  // Report 10dae49d: the ENTER beside a typed address was a drawing, so a
+  // click on it did nothing. It sends, through the same checks as Continue,
+  // and stays out of the tab order.
+  it("sends the address when ENTER in the field is clicked", () => {
+    const props = setup({ mode: "signup" });
+    typeEmail("someone@example.com");
+    const enter = screen.getByTestId("auth-email-enter");
+    expect(enter).toHaveTextContent("ENTER");
+    expect(enter).toHaveAttribute("tabindex", "-1");
+    fireEvent.click(enter);
+    expect(props.onEmailSubmit).toHaveBeenCalledWith("someone@example.com");
+  });
+
+  it("checks the address on an ENTER click as Continue does", () => {
+    const props = setup({ mode: "signup" });
+    typeEmail("someone@");
+    fireEvent.click(screen.getByTestId("auth-email-enter"));
+    expect(props.onEmailSubmit).not.toHaveBeenCalled();
+    expect(screen.getByRole("alert")).toHaveTextContent("That does not look like an email address.");
+  });
+
+  it("does not send from ENTER while a code is on its way", () => {
+    const props = setup({ mode: "signup", loading: true });
+    typeEmail("someone@example.com");
+    const enter = screen.getByTestId("auth-email-enter");
+    expect(enter).toBeDisabled();
+    fireEvent.click(enter);
+    expect(props.onEmailSubmit).not.toHaveBeenCalled();
+  });
+
   it("names a malformed address instead of swallowing the press", () => {
     const props = setup();
     typeEmail("someone@");

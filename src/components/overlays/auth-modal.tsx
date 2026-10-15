@@ -465,9 +465,14 @@ export function AuthModal({
                   placeholder="example@provider.com"
                   className={cn(FIELD_INPUT, FIELD_TEXT)}
                 />
-                {/* The key that sends the address, not a second control, so it
-                    stays out of the tab order and the form's own submit does
-                    the work.
+                {/* The key that sends the address. It reads as a key to press,
+                    so a click on it sends too (report 10dae49d: clicking ENTER
+                    did nothing, because it was a drawing). It is a submit
+                    button for the same form, so the click runs submitEmail and
+                    the checks in it, and it is disabled whenever Continue is.
+                    It stays out of the tab order and out of the accessibility
+                    tree: Continue is the control a keyboard or a screen reader
+                    reaches, and Enter in the field already sends.
 
                     Read off the governing board 2026-09-21. The in-context Sign
                     up modal (10734:74251) draws its field holding an address
@@ -481,17 +486,21 @@ export function AuthModal({
                     so the hint takes the mode's own accent, green on sign up
                     and the login field's blue on login. */}
                 {email.trim() !== "" && (
-                  <span
+                  <button
+                    type="submit"
+                    tabIndex={-1}
                     aria-hidden="true"
+                    disabled={blocked}
+                    data-testid="auth-email-enter"
                     className={cn(
                       PARAGRAPH_1,
-                      "flex shrink-0 items-center gap-2 uppercase",
+                      "no-min-size flex shrink-0 items-center gap-2 uppercase transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50",
                       isSignup ? "text-[#17F9B4]" : "text-[#56C7F3]",
                     )}
                   >
                     <ReturnIcon className="h-4 w-4" />
                     ENTER
-                  </span>
+                  </button>
                 )}
               </div>
               {emailError && (
