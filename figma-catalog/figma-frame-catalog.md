@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-13T05:16:19.897Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-15T10:47:54.388Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -15,7 +15,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 3 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 71 | 114 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 130 | 57 | 0 | 0 | 102 |
-| play | ✅ | 463 | 167 | 296 | 44 | 57 | 97 | 9 | 0 | 66 |
+| play | ✅ | 463 | 167 | 296 | 44 | 63 | 91 | 9 | 0 | 66 |
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 64 | 58 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 20 | 102 | 19 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2349** | | | **1096** | **1156** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2349** | | | **1102** | **1150** | **78** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -402,14 +402,14 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Casino > Sample game | 15 | desktop, tablet, mobile | - | partial | [4723-52636](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4723-52636&m=dev) |
 | Casino | 13 | tablet, mobile, desktop | 768 casino nav search box [Frame 405 140x32]; 768 casino Top bets table [Main container 708x478]; Top bets row 6 player mark (Printers Gold) [images/circle 24x24]; Play > Casino 768 / Featured games (Main container) [Main container 708x644]; Play > Casino 768 / Featured header Frame 186 (renders 1x1, paints nothing) [Frame 186 380x34]; Play > Casino 768 heading + banner (3-mark carousel, one slide) [Frame 1000003844 708x288] … | done/partial | [11066-23332](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11066-23332&m=dev) |
 | Sportsbook > Soccer > AVL CHE | 12 | tablet, mobile, desktop | Game view expanded; Game view expanded - Pinned; Game view collapsed - Pinned; Game view collapsed; Search expanded | partial/not-started | [11127-106812](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11127-106812&m=dev) |
-| (section root) | 9 | desktop, tablet, mobile | - | partial/done | [4595-49807](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4595-49807&m=dev) |
+| (section root) | 9 | desktop, tablet, mobile | - | done/partial | [4595-49807](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4595-49807&m=dev) |
 | Resume play | 7 | tablet, mobile, desktop | Search bar expanded | partial/done | [10940-216537](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10940-216537&m=dev) |
 | Casino > Bookie | 6 | tablet, mobile, desktop | referral; tiers | partial/done | [11017-157523](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11017-157523&m=dev) |
 | Sportsbook > Side panel | 5 | tablet, mobile, desktop | Lawn tennis | partial/not-started | [11132-173793](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11132-173793&m=dev) |
 | Sportsbook > Starting soon | 4 | tablet, desktop, mobile | Starting soon sport row (row 1318x64) on Skai > Play > Sportsbook > Starting soon [row 1318x64] | not-started/done | [11131-161786](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11131-161786&m=dev) |
 | Sportsbook > My bets | 4 | tablet, desktop, mobile | with values; empty | done/partial | [11131-119167](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11131-119167&m=dev) |
-| Casino > New games | 4 | tablet, mobile, desktop | Play > Casino > New games 768 [Frame 1000003833 708x1709] | partial/done | [11084-63426](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-63426&m=dev) |
-| Casino > Trending games | 4 | tablet, mobile, desktop | 768 Trending games collection screen [Frame 1000003833 708x1709] | partial/done | [11084-64943](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-64943&m=dev) |
+| Casino > New games | 4 | tablet, mobile, desktop | Play > Casino > New games 768 [Frame 1000003833 708x1709] | done/partial | [11084-63426](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-63426&m=dev) |
+| Casino > Trending games | 4 | tablet, mobile, desktop | 768 Trending games collection screen [Frame 1000003833 708x1709] | done/partial | [11084-64943](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-64943&m=dev) |
 | Favourites | 4 | tablet, mobile | - | partial/done | [10949-219911](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10949-219911&m=dev) |
 | Casino > Live RTP | 4 | desktop, tablet, mobile | return to player; return to player - dropdown collapsed | partial | [4792-31202](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4792-31202&m=dev) |
 | Casino > Sample game ALT | 4 | tablet | - | done | [11086-66338](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11086-66338&m=dev) |
