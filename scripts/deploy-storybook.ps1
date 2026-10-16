@@ -33,8 +33,11 @@ if (-not $SkipBuild) {
     Write-Host "📦 Building Storybook..." -ForegroundColor Yellow
     Push-Location $SKAI_UI_DIR
     try {
-        npm run build:storybook 2>&1 | Out-Null
+        # Keep the build's output: when it fails, its tail is the only explanation,
+        # and in the deploy pipeline nobody can rerun it by hand to see.
+        $buildLog = npm run build:storybook 2>&1
         if ($LASTEXITCODE -ne 0) {
+            $buildLog | Select-Object -Last 60 | ForEach-Object { Write-Host $_ }
             throw "Storybook build failed"
         }
         Write-Host "   ✓ Storybook built successfully" -ForegroundColor Green
