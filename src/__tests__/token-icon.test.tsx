@@ -233,6 +233,20 @@ describe("TokenIcon — art the browser already holds is drawn, not left on its 
     fireEvent.load(img);
     expectDrawn(container);
   });
+
+  it("does not draw the new art on a late load of the old one", () => {
+    const { container, rerender } = render(
+      <TokenIcon symbol="ETH" src="https://example.com/a.png" />,
+    );
+    const previous = screen.getByRole("img");
+
+    rerender(<TokenIcon symbol="ETH" src="https://example.com/b.png" />);
+    fireEvent.load(previous);
+    const img = screen.getByRole("img");
+    expect(img).toHaveAttribute("src", "https://example.com/b.png");
+    expect(img).toHaveClass("opacity-0");
+    expect(container.querySelector(".animate-pulse")).not.toBeNull();
+  });
 });
 
 /**
