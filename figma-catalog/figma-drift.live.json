@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12T07:26:52.397Z",
+  "generated": "2026-10-16T04:39:47.390Z",
   "sections": {
     "home": {
       "status": "clean",
@@ -183,8 +183,8 @@
     },
     "plinko": {
       "status": "clean",
-      "catalogued": 21,
-      "live": 21,
+      "catalogued": 28,
+      "live": 28,
       "nestedAlive": 0,
       "added": 0,
       "removed": 0,

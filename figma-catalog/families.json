@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-16T04:16:08.813Z",
+  "generated": "2026-10-16T04:40:00.899Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -6380,7 +6380,7 @@
     "plinko/Casino > Plinko": {
       "section": "plinko",
       "family": "Casino > Plinko",
-      "frameCount": 15,
+      "frameCount": 22,
       "frames": [
         "M6r9FEn042UWTQD1zvy6GM:9003-79079",
         "M6r9FEn042UWTQD1zvy6GM:9003-82836",
@@ -6396,7 +6396,14 @@
         "M6r9FEn042UWTQD1zvy6GM:9137-10219",
         "M6r9FEn042UWTQD1zvy6GM:10120-1679",
         "M6r9FEn042UWTQD1zvy6GM:10120-1680",
-        "M6r9FEn042UWTQD1zvy6GM:10120-1681"
+        "M6r9FEn042UWTQD1zvy6GM:10120-1681",
+        "M6r9FEn042UWTQD1zvy6GM:12437-7251",
+        "M6r9FEn042UWTQD1zvy6GM:12437-8191",
+        "M6r9FEn042UWTQD1zvy6GM:12437-8190",
+        "M6r9FEn042UWTQD1zvy6GM:12437-7249",
+        "M6r9FEn042UWTQD1zvy6GM:12437-8593",
+        "M6r9FEn042UWTQD1zvy6GM:12437-8624",
+        "M6r9FEn042UWTQD1zvy6GM:12437-8623"
       ],
       "devices": [
         "desktop",
@@ -6414,7 +6421,14 @@
         "Auto",
         "Screenshot 2026-08-18 at 11.12.43 PM 1",
         "Screenshot 2026-08-18 at 11.13.20 PM 1",
-        "Screenshot 2026-08-18 at 11.13.42 PM 1"
+        "Screenshot 2026-08-18 at 11.13.42 PM 1",
+        "image 1 [Vectorized]",
+        "spray-painted-graffiti-x-sprayed-isolated-with-white-background-graffiti-font-x-with-spray-black-white-vector-illustration_607987-1501 1 [Vectorized]",
+        "spray-painted-graffiti-x-sprayed-isolated-with-white-background-graffiti-font-x-with-spray-black-white-vector-illustration_607987-1501 1",
+        "image 1",
+        "Safebound logo white 2",
+        "with safebound 1 [Vectorized]",
+        "with safebound 1"
       ],
       "citedFileCount": 9,
       "citedFiles": [

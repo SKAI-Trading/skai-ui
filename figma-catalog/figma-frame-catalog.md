@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-16T04:16:27.177Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-16T04:40:12.194Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -28,13 +28,13 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | cosmic-slots | ✅ | 62 | 54 | 8 | 1 | 27 | 10 | 1 | 0 | 0 |
 | coinflip | ✅ | 47 | 34 | 13 | 1 | 21 | 5 | 0 | 0 | 27 |
 | dice | ✅ | 36 | 26 | 10 | 1 | 14 | 4 | 0 | 0 | 8 |
+| plinko | ✅ | 28 | 22 | 6 | 1 | 4 | 11 | 0 | 0 | 8 |
 | chicken | ✅ | 31 | 21 | 10 | 1 | 8 | 2 | 0 | 0 | 15 |
 | blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 2 | 0 | 0 | 14 |
 | towers | ✅ | 31 | 17 | 14 | 1 | 5 | 3 | 0 | 0 | 7 |
 | skratch | ✅ | 22 | 16 | 6 | 1 | 8 | 4 | 0 | 0 | 11 |
 | rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 8 | 2 | 0 | 0 | 7 |
 | crash | ✅ | 20 | 15 | 5 | 1 | 2 | 11 | 0 | 0 | 12 |
-| plinko | ✅ | 21 | 15 | 6 | 1 | 4 | 4 | 0 | 0 | 8 |
 | skai-cross |  | 15 | 15 | 0 | 1 | 0 | 0 | 0 | 15 | 0 |
 | keno | ✅ | 28 | 13 | 15 | 1 | 10 | 1 | 0 | 0 | 8 |
 | mines | ✅ | 19 | 12 | 7 | 1 | 4 | 3 | 0 | 0 | 4 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2349** | | | **1125** | **1128** | **77** | **19** | **1032** |
+| **all** | | **4894** | **2356** | | | **1125** | **1135** | **77** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -640,6 +640,12 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 |--------|-------:|---------|----------|---------------|---------|
 | Casino > Dice | 26 | desktop, tablet, mobile | Skai > Home > Add > upload image > conversation 4 1VH; Tablet; Tablet Alt; Auto Advanced Extended; Auto; Auto No Infinity … | frame-defect/partial/done/furniture | [2736-25840](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=2736-25840&m=dev) |
 
+## Plinko
+
+| Family | Frames | Devices | Variants | Impl / status | Example |
+|--------|-------:|---------|----------|---------------|---------|
+| Casino > Plinko | 22 | desktop, tablet, mobile | Plinko Easy Mode; Plinko Ball Easy; Plinko Hard Mode; Plinko Medium Mode; Plinko Panel Auto; Plinko Ball Medium … | partial/done/furniture/frame-defect | [9003-79079](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-79079&m=dev) |
+
 ## Chicken
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
@@ -675,12 +681,6 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
 | Casino > Crash | 15 | desktop, tablet, mobile | Alt; Extended LB; Auto; Auto Advanced; Desktop; LB With Header … | done/partial/furniture | [9003-94116](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-94116&m=dev) |
-
-## Plinko
-
-| Family | Frames | Devices | Variants | Impl / status | Example |
-|--------|-------:|---------|----------|---------------|---------|
-| Casino > Plinko | 15 | desktop, tablet, mobile | Plinko Easy Mode; Plinko Ball Easy; Plinko Hard Mode; Plinko Medium Mode; Plinko Panel Auto; Plinko Ball Medium … | partial/done/furniture/frame-defect | [9003-79079](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9003-79079&m=dev) |
 
 ## Skai-cross
 
