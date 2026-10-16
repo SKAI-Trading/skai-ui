@@ -156,6 +156,43 @@ describe("email and socials", () => {
     expect(props.onEmailSubmit).not.toHaveBeenCalled();
   });
 
+  it("does not send from ENTER while a wallet handshake is pending", () => {
+    const props = setup({ mode: "signup", busyWallet: "walletConnect" });
+    typeEmail("someone@example.com");
+    const enter = screen.getByTestId("auth-email-enter");
+    expect(enter).toBeDisabled();
+    fireEvent.click(enter);
+    expect(props.onEmailSubmit).not.toHaveBeenCalled();
+  });
+
+  // ENTER is the form's first submit, so it is also the button Enter in the
+  // field presses; it has to be shut whenever Continue is, or one of the two
+  // would send while the other refuses.
+  it.each([
+    ["at rest", {}, false],
+    ["while a code is on its way", { loading: true }, true],
+    ["while a wallet handshake is pending", { busyWallet: "walletConnect" as const }, true],
+  ] as const)("disables ENTER exactly when Continue is disabled, %s", (_state, overrides, disabled) => {
+    setup({ mode: "signup", ...overrides });
+    typeEmail("someone@example.com");
+    const enter = screen.getByTestId("auth-email-enter") as HTMLButtonElement;
+    const cont = screen.getByRole("button", { name: /^(continue|sending code…)$/i }) as HTMLButtonElement;
+    expect([enter.disabled, cont.disabled]).toEqual([disabled, disabled]);
+    expect(enter.form?.querySelector('button[type="submit"]')).toBe(enter);
+  });
+
+  // The check inside submitEmail is the one a submit that comes through
+  // neither button meets, such as a script's form.requestSubmit().
+  it.each([
+    ["while a code is on its way", { loading: true }],
+    ["while a wallet handshake is pending", { busyWallet: "walletConnect" as const }],
+  ] as const)("sends nothing when the form itself is submitted %s", (_state, overrides) => {
+    const props = setup({ mode: "signup", ...overrides });
+    typeEmail("someone@example.com");
+    fireEvent.submit(screen.getByTestId("auth-email-enter").closest("form")!);
+    expect(props.onEmailSubmit).not.toHaveBeenCalled();
+  });
+
   it("names a malformed address instead of swallowing the press", () => {
     const props = setup();
     typeEmail("someone@");
