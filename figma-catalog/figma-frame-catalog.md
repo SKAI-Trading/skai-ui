@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-15T10:47:54.388Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-16T04:16:27.177Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -14,31 +14,31 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | social | ✅ | 444 | 276 | 168 | 50 | 103 | 98 | 6 | 0 | 201 |
 | trade | ✅ | 456 | 253 | 203 | 44 | 57 | 174 | 3 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 71 | 114 | 10 | 0 | 76 |
-| home | ✅ | 290 | 194 | 96 | 50 | 130 | 57 | 0 | 0 | 102 |
+| home | ✅ | 290 | 194 | 96 | 50 | 131 | 56 | 0 | 0 | 102 |
 | play | ✅ | 463 | 167 | 296 | 44 | 63 | 91 | 9 | 0 | 66 |
-| home-2 | ✅ | 249 | 152 | 97 | 19 | 64 | 58 | 0 | 0 | 14 |
+| home-2 | ✅ | 249 | 152 | 97 | 19 | 73 | 49 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 20 | 102 | 19 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 93 | 37 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 74 | 27 | 12 | 0 | 1 |
 | vegas-fortune | ✅ | 96 | 83 | 13 | 1 | 3 | 12 | 1 | 0 | 0 |
-| fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 43 | 12 | 0 | 0 | 0 |
-| safari-slots | ✅ | 72 | 62 | 10 | 1 | 6 | 27 | 0 | 0 | 0 |
+| fisherman-slots | ✅ | 79 | 70 | 9 | 1 | 45 | 10 | 0 | 0 | 0 |
+| safari-slots | ✅ | 72 | 62 | 10 | 1 | 13 | 20 | 0 | 0 | 0 |
 | gem-slots | ✅ | 66 | 57 | 9 | 1 | 13 | 4 | 3 | 0 | 0 |
-| cosmic-slots | ✅ | 62 | 54 | 8 | 1 | 31 | 5 | 2 | 0 | 0 |
+| cosmic-slots | ✅ | 62 | 54 | 8 | 1 | 27 | 10 | 1 | 0 | 0 |
 | coinflip | ✅ | 47 | 34 | 13 | 1 | 21 | 5 | 0 | 0 | 27 |
 | dice | ✅ | 36 | 26 | 10 | 1 | 14 | 4 | 0 | 0 | 8 |
 | chicken | ✅ | 31 | 21 | 10 | 1 | 8 | 2 | 0 | 0 | 15 |
 | blackjack | ✅ | 23 | 17 | 6 | 1 | 10 | 2 | 0 | 0 | 14 |
-| towers | ✅ | 31 | 17 | 14 | 1 | 4 | 4 | 0 | 0 | 7 |
-| skratch | ✅ | 22 | 16 | 6 | 1 | 6 | 6 | 0 | 0 | 11 |
-| rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 7 | 3 | 0 | 0 | 7 |
+| towers | ✅ | 31 | 17 | 14 | 1 | 5 | 3 | 0 | 0 | 7 |
+| skratch | ✅ | 22 | 16 | 6 | 1 | 8 | 4 | 0 | 0 | 11 |
+| rock-paper-scissors | ✅ | 25 | 16 | 9 | 1 | 8 | 2 | 0 | 0 | 7 |
 | crash | ✅ | 20 | 15 | 5 | 1 | 2 | 11 | 0 | 0 | 12 |
 | plinko | ✅ | 21 | 15 | 6 | 1 | 4 | 4 | 0 | 0 | 8 |
 | skai-cross |  | 15 | 15 | 0 | 1 | 0 | 0 | 0 | 15 | 0 |
-| keno | ✅ | 28 | 13 | 15 | 1 | 9 | 2 | 0 | 0 | 8 |
+| keno | ✅ | 28 | 13 | 15 | 1 | 10 | 1 | 0 | 0 | 8 |
 | mines | ✅ | 19 | 12 | 7 | 1 | 4 | 3 | 0 | 0 | 4 |
-| fortune-wheel | ✅ | 25 | 11 | 14 | 1 | 0 | 4 | 0 | 0 | 15 |
+| fortune-wheel | ✅ | 25 | 11 | 14 | 1 | 2 | 2 | 0 | 0 | 15 |
 | slide | ✅ | 18 | 11 | 7 | 1 | 0 | 10 | 0 | 0 | 11 |
 | roulette | ✅ | 21 | 11 | 10 | 1 | 0 | 2 | 0 | 0 | 10 |
 | darts | ✅ | 31 | 10 | 21 | 1 | 0 | 10 | 0 | 0 | 13 |
@@ -46,7 +46,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | bingo | ✅ | 17 | 9 | 8 | 1 | 2 | 1 | 0 | 0 | 11 |
 | video-poker | ✅ | 14 | 8 | 6 | 1 | 0 | 2 | 0 | 0 | 4 |
 | limbo | ✅ | 14 | 8 | 6 | 1 | 4 | 3 | 0 | 0 | 8 |
-| baccarat | ✅ | 21 | 7 | 14 | 1 | 3 | 2 | 0 | 0 | 5 |
+| baccarat | ✅ | 21 | 7 | 14 | 1 | 4 | 1 | 0 | 0 | 5 |
 | pwa | ✅ | 5 | 5 | 0 | 2 | 5 | 0 | 0 | 0 | 5 |
 | price-grid | ✅ | 20 | 5 | 15 | 1 | 0 | 5 | 0 | 0 | 5 |
 | legal | ✅ | 10 | 0 | 10 | 0 | 0 | 0 | 0 | 0 | 6 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4887** | **2349** | | | **1102** | **1150** | **78** | **19** | **1032** |
+| **all** | | **4887** | **2349** | | | **1125** | **1128** | **77** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -363,7 +363,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Portfolio > Add wallet > Name wallet | 3 | desktop, tablet, mobile | - | done/partial | [2753-4954](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2753-4954&m=dev) |
 | Portfolio > Export private key | 3 | desktop, tablet, mobile | - | done | [2752-5814](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2752-5814&m=dev) |
 | Portfolio > Export private key > private key displayed | 3 | desktop, tablet, mobile | - | partial | [2753-8176](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2753-8176&m=dev) |
-| ads > Add | 3 | desktop, tablet, mobile | - | done/partial | [2733-20819](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2733-20819&m=dev) |
+| ads > Add | 3 | desktop, tablet, mobile | - | done | [2733-20819](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2733-20819&m=dev) |
 | Voice prompt | 3 | desktop, tablet, mobile | - | done | [2736-26122](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2736-26122&m=dev) |
 | Voice prompt > chat history | 3 | desktop, tablet, mobile | - | done | [2737-27044](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2737-27044&m=dev) |
 | Add > upload image | 3 | desktop, tablet, mobile | - | partial/done | [2735-25298](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=2735-25298&m=dev) |
@@ -656,7 +656,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Towers | 17 | desktop, mobile, tablet | hf_20260802_175310_1d541834-3870-4f8d-a2d4-58053874368e 1; Screenshot 2026-08-02 at 1.45.27 PM 1; Medium; Expert; Hard; Selection mid game - hover … | partial/furniture/frame-defect/done | [9079-2001](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9079-2001&m=dev) |
+| Casino > Towers | 17 | desktop, mobile, tablet | hf_20260802_175310_1d541834-3870-4f8d-a2d4-58053874368e 1; Screenshot 2026-08-02 at 1.45.27 PM 1; Medium; Expert; Hard; Selection mid game - hover … | done/furniture/frame-defect/partial | [9079-2001](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9079-2001&m=dev) |
 
 ## Skratch
 
@@ -668,7 +668,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Rock Paper Scissors | 16 | desktop, mobile, tablet | Desktop; Rock icon 1; Desktop Target; Paper icon 1; Scissors icon 1; Rock Paper Scissors game area (streak ladder) [Desktop 954x621] | partial/done/frame-defect/furniture/blocked-on-backend | [9907-1595](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9907-1595&m=dev) |
+| Casino > Rock Paper Scissors | 16 | desktop, mobile, tablet | Desktop; Rock icon 1; Desktop Target; Paper icon 1; Scissors icon 1; Rock Paper Scissors game area (streak ladder) [Desktop 954x621] | done/partial/frame-defect/furniture/blocked-on-backend | [9907-1595](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9907-1595&m=dev) |
 
 ## Crash
 
@@ -692,7 +692,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Keno | 13 | desktop, mobile, tablet | Desktop Selection; Starting; Desktop win; Auto Advanced Displayed; Desktop loss; image 6 … | partial/done/furniture | [9433-12187](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9433-12187&m=dev) |
+| Casino > Keno | 13 | desktop, mobile, tablet | Desktop Selection; Starting; Desktop win; Auto Advanced Displayed; Desktop loss; image 6 … | done/partial/furniture | [9433-12187](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9433-12187&m=dev) |
 
 ## Mines
 
@@ -704,7 +704,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Fortune Wheel | 11 | desktop, mobile, tablet | Starting; Screenshot 2026-08-10 at 11.44.07 AM 1; Screenshot 2026-08-10 at 11.44.19 AM 1; Screenshot 2026-08-10 at 11.44.41 AM 1; Screenshot 2026-08-10 at 11.45.18 AM 1; Screenshot 2026-08-10 at 11.45.00 AM 1 … | partial/frame-defect/furniture | [9691-12630](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9691-12630&m=dev) |
+| Casino > Fortune Wheel | 11 | desktop, mobile, tablet | Starting; Screenshot 2026-08-10 at 11.44.07 AM 1; Screenshot 2026-08-10 at 11.44.19 AM 1; Screenshot 2026-08-10 at 11.44.41 AM 1; Screenshot 2026-08-10 at 11.45.18 AM 1; Screenshot 2026-08-10 at 11.45.00 AM 1 … | done/partial/frame-defect/furniture | [9691-12630](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9691-12630&m=dev) |
 
 ## Slide
 
@@ -752,7 +752,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Casino > Baccarat | 7 | desktop, mobile, tablet | Desktop; Screenshot 2026-08-25 at 12.15.02 AM 1 | partial/done/frame-defect/furniture | [9799-16713](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9799-16713&m=dev) |
+| Casino > Baccarat | 7 | desktop, mobile, tablet | Desktop; Screenshot 2026-08-25 at 12.15.02 AM 1 | done/partial/frame-defect/furniture | [9799-16713](https://www.figma.com/design/M6r9FEn042UWTQD1zvy6GM/Skai-Games?node-id=9799-16713&m=dev) |
 
 ## Pwa
 
