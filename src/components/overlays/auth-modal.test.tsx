@@ -300,9 +300,10 @@ describe("row heights", () => {
 describe("the ENTER hint", () => {
   /**
    * Every in-context field is drawn holding an address, with the return glyph
-   * and ENTER beside it in App Green. It is the key that sends the form, not a
-   * second control, so it is hidden from the accessibility tree and only shows
-   * once there is something to send.
+   * and ENTER beside it in App Green. A click on it sends the form (report
+   * 10dae49d), but Continue is the control a keyboard or a screen reader
+   * reaches, so ENTER is hidden from the accessibility tree and kept out of the
+   * tab order, and it only shows once there is something to send.
    */
   it("appears beside a typed address and not before", () => {
     setup();
