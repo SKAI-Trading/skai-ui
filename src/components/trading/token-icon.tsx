@@ -124,9 +124,6 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
     },
     ref,
   ) => {
-    const [hasError, setHasError] = React.useState(false);
-    const [isLoading, setIsLoading] = React.useState(true);
-
     const pixelSize = typeof size === "number" ? size : sizeMap[size];
     // What a person reads for this token: sUSD reads USD (Casey, 2026-08-12).
     // The art lookup and the fallback colour keep the real symbol; the alt text
@@ -135,13 +132,34 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
     const shownSymbol = tokenDisplaySymbol(symbol);
     const iconUrl = src || TOKEN_ICONS[symbol.toUpperCase()];
 
-    // Reset load/error state when the underlying image URL changes — otherwise
-    // a TokenIcon that errored for one token keeps showing the fallback
-    // initials after the consumer swaps in a different (valid) token.
-    React.useEffect(() => {
-      setHasError(false);
-      setIsLoading(true);
-    }, [iconUrl]);
+    // How the art turned out, and for which URL. An outcome only counts for
+    // the URL it was read from, so a new URL starts out loading with nothing
+    // to reset, and a token whose art errored does not keep its initials once
+    // the consumer swaps in a valid one. This replaces an effect that reset
+    // both flags on every URL change, mount included. It ran after the commit,
+    // and the load of art the browser already holds lands before it: the
+    // reset hid the mark again and no second load came, so every reopen of
+    // the wallet's Send sheet left its marks on blank placeholder discs.
+    const [outcome, setOutcome] = React.useState<{
+      url: string;
+      loaded: boolean;
+    } | null>(null);
+    const settled = outcome !== null && outcome.url === iconUrl ? outcome : null;
+    const hasError = settled !== null && !settled.loaded;
+    const isLoading = settled === null;
+
+    // Held art is complete as soon as the element has its src, so it is read
+    // at commit and drawn in the first paint. Anything complete without a
+    // natural size (a broken image, or an SVG that sets none) waits for its
+    // own load or error event instead.
+    const readHeldArt = React.useCallback(
+      (img: HTMLImageElement | null) => {
+        if (img && img.complete && img.naturalWidth > 0) {
+          setOutcome({ url: iconUrl, loaded: true });
+        }
+      },
+      [iconUrl],
+    );
 
     // Generate consistent color from symbol for fallback
     const generateColor = (str: string) => {
@@ -178,7 +196,11 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
                 style={{ backgroundColor: bgColor }}
               />
             )}
+            {/* A new URL gets a new element, so nothing the previous image
+                reported (its complete flag, a late event) is read for it. */}
             <img
+              key={iconUrl}
+              ref={readHeldArt}
               src={iconUrl}
               alt={`${shownSymbol} icon`}
               className={cn(
@@ -189,11 +211,8 @@ const TokenIcon = React.forwardRef<HTMLDivElement, TokenIconProps>(
                 isPortraitArt(iconUrl) ? "object-contain" : "object-cover",
                 isLoading && "opacity-0",
               )}
-              onLoad={() => setIsLoading(false)}
-              onError={() => {
-                setHasError(true);
-                setIsLoading(false);
-              }}
+              onLoad={() => setOutcome({ url: iconUrl, loaded: true })}
+              onError={() => setOutcome({ url: iconUrl, loaded: false })}
             />
           </>
         ) : (
