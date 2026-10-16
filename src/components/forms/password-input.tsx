@@ -162,10 +162,15 @@ const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>(
             aria-label={showPassword ? "Hide password" : "Show password"}
             tabIndex={-1}
           >
+            {/* The mark shows the field's STATE, as the frames draw it: a
+                crossed-out eye while the password is hidden, an open eye while
+                it is shown (the wallet's Import Keystone and Export key boards,
+                report a269aa1f, and the app's own ExportKeyModal toggle). The
+                accessible name stays the action the press takes. */}
             {showPassword ? (
-              <EyeOffIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
-            ) : (
               <EyeIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            ) : (
+              <EyeOffIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             )}
           </Button>
         </div>
