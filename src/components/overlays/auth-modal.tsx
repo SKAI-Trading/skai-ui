@@ -370,29 +370,21 @@ export function AuthModal({
 
      The sheet sits OUTSIDE the scrim on purpose: the scrim is a padded flex row
      with a backdrop filter, so a child of it can neither sit flush against the
-     bottom edge nor escape that padding without cancelling it twice.
-
-     A window shorter than the modal scrolls it. Centred in a scrim that could
-     not scroll, a 650-tall Sign up in a 560-tall window lost its title and its
-     terms line off both edges with no way to reach either (report 6dbf34d9's
-     cut top, the short-window half). The panel's auto margins centre it while
-     it fits and give way to the top edge when it does not, so the scrim's
-     scroll starts at the title. */
+     bottom edge nor escape that padding without cancelling it twice. */
   return (
     <>
       <ModalScrim
         onClose={onClose}
         label={isSignup ? "Sign up" : "Login"}
         testId="auth-modal-backdrop"
-        className={cn("z-[10000] overflow-y-auto bg-[rgba(0,22,21,0.44)] p-2 backdrop-blur-[12px] sm:p-6", className)}
+        className={cn("z-[10000] bg-[rgba(0,22,21,0.44)] p-2 backdrop-blur-[12px] sm:p-6", className)}
       >
         <div
           /* 358 wide on a 20 radius at 375, 468 on 26 at 768, 448 on 32 at 1440;
              Green Coal 200 under a Green Coal 100 hairline, which is an inset
              ring for the reason FIELD_BOX gives. The top and bottom insets are
              not a pair — 24/24, 16/32, 24/40 across the three. */
-          data-testid="auth-modal-panel"
-          className="relative my-auto flex w-full max-w-[358px] flex-col gap-5 rounded-[20px] bg-[#122524] px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-6 md:rounded-[26px] md:px-4 md:pb-8 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
+          className="relative flex w-full max-w-[358px] flex-col gap-5 rounded-[20px] bg-[#122524] px-2 pb-6 pt-6 shadow-[inset_0_0_0_1px_#123f3c,0px_10px_80px_0px_rgba(0,0,0,0.25)] md:max-w-[468px] md:gap-6 md:rounded-[26px] md:px-4 md:pb-8 md:pt-4 lg:max-w-[448px] lg:rounded-[32px] lg:px-6 lg:pb-10 lg:pt-6"
         >
           {/* Title row: Super-headline 4 300 centred on the modal, with the close
               glyph at the right inset. The frame balances the glyph with an empty
@@ -473,14 +465,9 @@ export function AuthModal({
                   placeholder="example@provider.com"
                   className={cn(FIELD_INPUT, FIELD_TEXT)}
                 />
-                {/* The key that sends the address. It reads as a key to press,
-                    so a click on it sends too (report 10dae49d: clicking ENTER
-                    did nothing, because it was a drawing). It is a submit
-                    button for the same form, so the click runs submitEmail and
-                    the checks in it, and it is disabled whenever Continue is.
-                    It stays out of the tab order and out of the accessibility
-                    tree: Continue is the control a keyboard or a screen reader
-                    reaches, and Enter in the field already sends.
+                {/* The key that sends the address, not a second control, so it
+                    stays out of the tab order and the form's own submit does
+                    the work.
 
                     Read off the governing board 2026-09-21. The in-context Sign
                     up modal (10734:74251) draws its field holding an address
@@ -494,21 +481,17 @@ export function AuthModal({
                     so the hint takes the mode's own accent, green on sign up
                     and the login field's blue on login. */}
                 {email.trim() !== "" && (
-                  <button
-                    type="submit"
-                    tabIndex={-1}
+                  <span
                     aria-hidden="true"
-                    disabled={blocked}
-                    data-testid="auth-email-enter"
                     className={cn(
                       PARAGRAPH_1,
-                      "no-min-size flex shrink-0 items-center gap-2 uppercase transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50",
+                      "flex shrink-0 items-center gap-2 uppercase",
                       isSignup ? "text-[#17F9B4]" : "text-[#56C7F3]",
                     )}
                   >
                     <ReturnIcon className="h-4 w-4" />
                     ENTER
-                  </button>
+                  </span>
                 )}
               </div>
               {emailError && (

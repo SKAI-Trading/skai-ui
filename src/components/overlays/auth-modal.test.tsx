@@ -102,95 +102,12 @@ describe("the handshake sheet", () => {
   });
 });
 
-// Report 6dbf34d9, the short-window half: centred in a scrim that could not
-// scroll, a modal taller than the window lost its title off the top for good.
-// jsdom has no layout, so this pins the two classes that make it scroll from
-// the title (measured in Chromium at 1498x560: the panel opens at the scrim's
-// 24 and scrolls to its last line; at 900 it is centred as before).
-describe("a window shorter than the modal", () => {
-  it("scrolls the scrim, and the panel's auto margins give way to its top edge", () => {
-    setup({ mode: "signup" });
-    const scrim = screen.getByTestId("auth-modal-backdrop");
-    const panel = screen.getByTestId("auth-modal-panel");
-    expect(scrim.className.split(/\s+/)).toContain("overflow-y-auto");
-    expect(panel.className.split(/\s+/)).toContain("my-auto");
-    expect(panel.parentElement).toBe(scrim);
-  });
-});
-
 describe("email and socials", () => {
   it("submits a plausible email", () => {
     const props = setup();
     typeEmail("someone@example.com");
     fireEvent.click(screen.getByRole("button", { name: /^continue$/i }));
     expect(props.onEmailSubmit).toHaveBeenCalledWith("someone@example.com");
-  });
-
-  // Report 10dae49d: the ENTER beside a typed address was a drawing, so a
-  // click on it did nothing. It sends, through the same checks as Continue,
-  // and stays out of the tab order.
-  it("sends the address when ENTER in the field is clicked", () => {
-    const props = setup({ mode: "signup" });
-    typeEmail("someone@example.com");
-    const enter = screen.getByTestId("auth-email-enter");
-    expect(enter).toHaveTextContent("ENTER");
-    expect(enter).toHaveAttribute("tabindex", "-1");
-    fireEvent.click(enter);
-    expect(props.onEmailSubmit).toHaveBeenCalledWith("someone@example.com");
-  });
-
-  it("checks the address on an ENTER click as Continue does", () => {
-    const props = setup({ mode: "signup" });
-    typeEmail("someone@");
-    fireEvent.click(screen.getByTestId("auth-email-enter"));
-    expect(props.onEmailSubmit).not.toHaveBeenCalled();
-    expect(screen.getByRole("alert")).toHaveTextContent("That does not look like an email address.");
-  });
-
-  it("does not send from ENTER while a code is on its way", () => {
-    const props = setup({ mode: "signup", loading: true });
-    typeEmail("someone@example.com");
-    const enter = screen.getByTestId("auth-email-enter");
-    expect(enter).toBeDisabled();
-    fireEvent.click(enter);
-    expect(props.onEmailSubmit).not.toHaveBeenCalled();
-  });
-
-  it("does not send from ENTER while a wallet handshake is pending", () => {
-    const props = setup({ mode: "signup", busyWallet: "walletConnect" });
-    typeEmail("someone@example.com");
-    const enter = screen.getByTestId("auth-email-enter");
-    expect(enter).toBeDisabled();
-    fireEvent.click(enter);
-    expect(props.onEmailSubmit).not.toHaveBeenCalled();
-  });
-
-  // ENTER is the form's first submit, so it is also the button Enter in the
-  // field presses; it has to be shut whenever Continue is, or one of the two
-  // would send while the other refuses.
-  it.each([
-    ["at rest", {}, false],
-    ["while a code is on its way", { loading: true }, true],
-    ["while a wallet handshake is pending", { busyWallet: "walletConnect" as const }, true],
-  ] as const)("disables ENTER exactly when Continue is disabled, %s", (_state, overrides, disabled) => {
-    setup({ mode: "signup", ...overrides });
-    typeEmail("someone@example.com");
-    const enter = screen.getByTestId("auth-email-enter") as HTMLButtonElement;
-    const cont = screen.getByRole("button", { name: /^(continue|sending code…)$/i }) as HTMLButtonElement;
-    expect([enter.disabled, cont.disabled]).toEqual([disabled, disabled]);
-    expect(enter.form?.querySelector('button[type="submit"]')).toBe(enter);
-  });
-
-  // The check inside submitEmail is the one a submit that comes through
-  // neither button meets, such as a script's form.requestSubmit().
-  it.each([
-    ["while a code is on its way", { loading: true }],
-    ["while a wallet handshake is pending", { busyWallet: "walletConnect" as const }],
-  ] as const)("sends nothing when the form itself is submitted %s", (_state, overrides) => {
-    const props = setup({ mode: "signup", ...overrides });
-    typeEmail("someone@example.com");
-    fireEvent.submit(screen.getByTestId("auth-email-enter").closest("form")!);
-    expect(props.onEmailSubmit).not.toHaveBeenCalled();
   });
 
   it("names a malformed address instead of swallowing the press", () => {
@@ -300,10 +217,9 @@ describe("row heights", () => {
 describe("the ENTER hint", () => {
   /**
    * Every in-context field is drawn holding an address, with the return glyph
-   * and ENTER beside it in App Green. A click on it sends the form (report
-   * 10dae49d), but Continue is the control a keyboard or a screen reader
-   * reaches, so ENTER is hidden from the accessibility tree and kept out of the
-   * tab order, and it only shows once there is something to send.
+   * and ENTER beside it in App Green. It is the key that sends the form, not a
+   * second control, so it is hidden from the accessibility tree and only shows
+   * once there is something to send.
    */
   it("appears beside a typed address and not before", () => {
     setup();

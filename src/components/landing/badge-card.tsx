@@ -97,25 +97,17 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
       };
     }, [coachOpen]);
 
-    // At 1440 the card is 448 wide (2422:3968) and draws the badge 16 in, the
-    // text 8 after it and 32 clear of the right edge: 16 + 150 + 8 + 242 + 32.
-    // The 242 is what "+500 SKAI points" (163) and the Credited pill (64, 10
-    // after it) need side by side. With 32 on both sides and 16 between, the
-    // column was 218 and the pill ran out through the card's right edge
-    // (report a4444746). The leaderboard keeps 32 on both sides. Where the
-    // column is narrower still (a 1024 window gives the card 425), the pill
-    // drops under the points rather than leave the card.
     return (
       <div
         ref={ref}
         className={cn(
-          "flex flex-col gap-3 md:gap-4 px-4 md:px-8 lg:pl-4 py-4 md:py-[33px] rounded-[24px] border border-[#123F3C] bg-[#0D3331] relative",
+          "flex flex-col gap-3 md:gap-4 px-4 md:px-8 py-4 md:py-[33px] rounded-[24px] border border-[#123F3C] bg-[#0D3331] relative",
           className,
         )}
         {...props}
       >
         {/* Badge Info Row */}
-        <div data-testid="badge-card-row" className="flex flex-row items-center gap-3 md:gap-4 lg:gap-2">
+        <div className="flex flex-row items-center gap-3 md:gap-4">
           {/* Badge Icon */}
           <div className="flex-shrink-0">
             <img
@@ -126,7 +118,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
             />
           </div>
 
-          <div className="flex md:flex-col justify-between lg:gap-4 gap-2 w-full min-w-0">
+          <div className="flex md:flex-col justify-between lg:gap-4 gap-2 w-full">
             {/* Text */}
             <div className="flex flex-col flex-1 justify-center min-w-0">
               <h3 className="font-manrope font-light text-white text-[16px] leading-[18px] md:text-[18px] md:leading-[22px] lg:text-[24px] lg:leading-[28px] tracking-[-0.72px] md:tracking-[-0.8px] lg:tracking-[-0.96px] mb-[4px]">
@@ -199,15 +191,12 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
               </div>
             </div>
 
-            {/* Reward and Status. At 1440 the board sets the points in Lg/Numbers
-                3 (Mulish 22/26 at -4%) and the pill's word in Lg/Label 2 (Mulish
-                11/14 at -4%) on a 2 / 12 pad, which is what puts the pair in 237
-                of the column's 242 (2422:3975, 2422:3976). */}
-            <div data-testid="badge-card-reward" className="flex flex-col md:flex-row md:flex-wrap items-end gap-[6px] md:gap-[10px] flex-shrink-0">
-              <span className="font-manrope lg:font-numbers font-normal text-[#2DEDAD] text-[14px] md:text-[16px] lg:text-[22px] leading-[18px] md:leading-[20px] lg:leading-[26px] lg:tracking-[-0.88px] whitespace-nowrap">
+            {/* Reward and Status */}
+            <div className="flex flex-col md:flex-row items-end gap-[6px] md:gap-[10px] flex-shrink-0">
+              <span className="font-manrope font-normal text-[#2DEDAD] text-[14px] md:text-[16px] lg:text-[22px] leading-[18px] md:leading-[20px] lg:leading-[26px] whitespace-nowrap">
                 +{badgePoints} SKAI Points
               </span>
-              <span className="font-manrope lg:font-numbers text-[10px] md:text-[8px] lg:text-[11px] leading-[12px] md:leading-[10px] lg:leading-[14px] lg:tracking-[-0.44px] px-[8px] md:px-[8px] lg:px-[12px] py-[3px] md:py-[2px] rounded-[8px] bg-[#2DEDAD] text-[#001615] whitespace-nowrap">
+              <span className="font-manrope text-[10px] md:text-[8px] lg:text-[11px] leading-[12px] md:leading-[10px] lg:leading-[14px] px-[8px] md:px-[8px] lg:px-[12px] py-[3px] md:py-[2px] lg:py-[4px] rounded-[8px] bg-[#2DEDAD] text-[#001615] whitespace-nowrap">
                 {statusLabel}
               </span>
             </div>
@@ -216,7 +205,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
 
         {/* Mini Leaderboard */}
         {topUsers && topUsers.length > 0 && (
-          <div data-testid="badge-card-leaderboard" className="flex flex-col gap-[6px] mt-1 pt-3 border-t border-[#1a3a37] lg:ml-4">
+          <div className="flex flex-col gap-[6px] mt-1 pt-3 border-t border-[#1a3a37]">
             <div className="flex items-center justify-between mb-[2px]">
               <span className="font-manrope font-medium text-[#8B9E9D] text-[11px] md:text-[12px] uppercase tracking-[0.5px]">
                 Leaderboard

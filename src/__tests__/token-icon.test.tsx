@@ -1,5 +1,6 @@
-import { describe, it, expect } from "vitest";
+import { afterEach, describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
+import { useLayoutEffect, useRef, type ReactNode } from "react";
 import { TokenIcon } from "../components/trading/token-icon";
 
 describe("TokenIcon", () => {
@@ -82,6 +83,169 @@ describe("TokenIcon", () => {
     );
     const img = screen.getByRole("img");
     expect(img).toHaveAttribute("src", "https://example.com/working.png");
+  });
+});
+
+/**
+ * Every reopen of the wallet's Send sheet left its seven token marks on their
+ * placeholder discs, on wallet.skai.trade and in the app's mini wallet. The
+ * first open drew all of them.
+ *
+ * Art the browser already holds is complete as soon as the <img> gets its src,
+ * and its load event is queued at once, so it reaches the element right after
+ * the commit and ahead of the passive effects. The component used to reset its
+ * loading flag from such an effect whenever the URL changed, mount included:
+ * the reset landed after the load, and no second load ever came.
+ *
+ * jsdom loads no images, so two things stand in for the browser: `holdArt`
+ * makes every <img> report what art already in memory reports, and
+ * `DeliverAtCommit` dispatches an event at its images from a layout effect,
+ * which runs where the browser's queued load lands.
+ */
+function holdArt(naturalWidth: number) {
+  vi.spyOn(HTMLImageElement.prototype, "complete", "get").mockReturnValue(true);
+  vi.spyOn(HTMLImageElement.prototype, "naturalWidth", "get").mockReturnValue(
+    naturalWidth,
+  );
+}
+
+function DeliverAtCommit({
+  type,
+  children,
+}: {
+  type: "load" | "error";
+  children: ReactNode;
+}) {
+  const box = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    box.current
+      ?.querySelectorAll("img")
+      .forEach((img) => img.dispatchEvent(new Event(type)));
+  }, [type]);
+  return <div ref={box}>{children}</div>;
+}
+
+function expectDrawn(container: HTMLElement) {
+  const marks = container.querySelectorAll("img");
+  expect(marks.length).toBeGreaterThan(0);
+  marks.forEach((img) => expect(img).not.toHaveClass("opacity-0"));
+  expect(container.querySelector(".animate-pulse")).toBeNull();
+}
+
+// The Send sheet's marks: four chain chips, then three token rows, all bundled
+// files the browser keeps once the first open has fetched them.
+const SEND_SHEET_MARKS: Array<[string, string]> = [
+  ["SKAI", "/icons/tokens/skai.png"],
+  ["BASE", "/icons/tokens/base.png"],
+  ["ETH", "/icons/tokens/eth.png"],
+  ["POL", "/icons/tokens/polygon.png"],
+  ["ETH", "/icons/tokens/eth.png"],
+  ["ETH", "/icons/tokens/eth.png"],
+  ["POL", "/icons/tokens/polygon.png"],
+];
+
+function SendSheet({ open, held }: { open: boolean; held: boolean }) {
+  if (!open) return null;
+  const marks = SEND_SHEET_MARKS.map(([symbol, src], i) => (
+    <TokenIcon key={i} symbol={symbol} src={src} />
+  ));
+  return held ? (
+    <DeliverAtCommit type="load">{marks}</DeliverAtCommit>
+  ) : (
+    <div>{marks}</div>
+  );
+}
+
+describe("TokenIcon — art the browser already holds is drawn, not left on its placeholder", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("draws a mark whose art is complete before any load event", () => {
+    holdArt(250);
+    const { container } = render(<TokenIcon symbol="ETH" />);
+    expectDrawn(container);
+  });
+
+  it("keeps a load that lands before the effects run", () => {
+    const { container } = render(
+      <DeliverAtCommit type="load">
+        <TokenIcon symbol="ETH" />
+      </DeliverAtCommit>,
+    );
+    expectDrawn(container);
+  });
+
+  it("draws all seven Send sheet marks again when the sheet is reopened", () => {
+    const { container, rerender } = render(<SendSheet open held={false} />);
+    // First open: the art comes off the network, after the effects.
+    container.querySelectorAll("img").forEach((img) => fireEvent.load(img));
+    expect(container.querySelectorAll("img")).toHaveLength(7);
+    expectDrawn(container);
+
+    rerender(<SendSheet open={false} held={false} />);
+    expect(container.querySelector("img")).toBeNull();
+
+    // Reopen: every file is already held.
+    holdArt(64);
+    rerender(<SendSheet open held />);
+    expect(container.querySelectorAll("img")).toHaveLength(7);
+    expectDrawn(container);
+  });
+
+  it("never draws a broken image as loaded", () => {
+    // A broken image is complete too, but it has no natural size.
+    holdArt(0);
+    const { container } = render(<TokenIcon symbol="ETH" />);
+    const img = screen.getByRole("img");
+    expect(img).toHaveClass("opacity-0");
+    expect(container.querySelector(".animate-pulse")).not.toBeNull();
+
+    fireEvent.error(img);
+    expect(screen.queryByRole("img")).toBeNull();
+    expect(screen.getByText("ET")).toBeInTheDocument();
+  });
+
+  it("keeps an error that lands before the effects run", () => {
+    const { container } = render(
+      <DeliverAtCommit type="error">
+        <TokenIcon symbol="ETH" />
+      </DeliverAtCommit>,
+    );
+    expect(screen.queryByRole("img")).toBeNull();
+    expect(screen.getByText("ET")).toBeInTheDocument();
+    expect(container.querySelector(".animate-pulse")).toBeNull();
+  });
+
+  it("waits for the new art after the URL changes", () => {
+    const { container, rerender } = render(
+      <TokenIcon symbol="ETH" src="https://example.com/a.png" />,
+    );
+    fireEvent.load(screen.getByRole("img"));
+    expectDrawn(container);
+
+    rerender(<TokenIcon symbol="ETH" src="https://example.com/b.png" />);
+    const img = screen.getByRole("img");
+    expect(img).toHaveAttribute("src", "https://example.com/b.png");
+    expect(img).toHaveClass("opacity-0");
+    expect(container.querySelector(".animate-pulse")).not.toBeNull();
+
+    fireEvent.load(img);
+    expectDrawn(container);
+  });
+
+  it("does not draw the new art on a late load of the old one", () => {
+    const { container, rerender } = render(
+      <TokenIcon symbol="ETH" src="https://example.com/a.png" />,
+    );
+    const previous = screen.getByRole("img");
+
+    rerender(<TokenIcon symbol="ETH" src="https://example.com/b.png" />);
+    fireEvent.load(previous);
+    const img = screen.getByRole("img");
+    expect(img).toHaveAttribute("src", "https://example.com/b.png");
+    expect(img).toHaveClass("opacity-0");
+    expect(container.querySelector(".animate-pulse")).not.toBeNull();
   });
 });
 
