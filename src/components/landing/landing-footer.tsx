@@ -10,20 +10,21 @@ const footer = content.landing.footer;
 
 /**
  * The same Terms / Privacy and social pair the landing header draws, moved to
- * the foot of the dashboard. The 768 board (2005:16658) puts the legal nav
- * 117x16 at 30,978 and the socials 117x16 at 621,978 in a 1024-tall frame, so
- * the inset is 30 all round there, and both rows sit on a 32 gap: Terms 33 at
- * x=0 then Privacy at x=65, and the three 16px icons at x=5, 53 and 101. No
- * dashboard board exists at 375 or 1440, so those widths take the insets the
- * header's own boards measure for this pair, 24 and 32, and the same gaps the
- * header draws (24 for the legal pair below 768, 32 for the icons throughout).
+ * the foot of the dashboard. Both rows sit on a 32 gap, the legal pair on 24
+ * below 768, and the three 16px icons at x=5, 53 and 101 of a 117 nav. Per
+ * width the dashboard boards draw:
+ *   375 (2005:26526)  inset 24, Terms and Privacy in Manrope Bold 14/16
+ *   768 (2005:16658, 2424:4081)  inset 30 all round, Paragraph 2 at 12/16:
+ *        the legal nav 117x16 at 30,978, Terms 33 at x=0, Privacy at x=65
+ *   1440 (2422:2943)  32 at the sides and 24 under the navs (y=858, 18 tall,
+ *        in a 900 frame), Paragraph 2 at 14/18
  */
 const LandingFooter = React.forwardRef<HTMLElement, LandingFooterProps>(
   ({ className, ...props }, ref) => (
     <footer
       ref={ref}
       className={cn(
-        "relative z-[100] w-full flex justify-between items-center p-6 md:p-[30px] lg:p-8 mt-auto",
+        "relative z-[100] w-full flex justify-between items-center p-6 md:p-[30px] lg:px-8 lg:pt-8 lg:pb-6 mt-auto",
         className,
       )}
       {...props}
@@ -32,13 +33,13 @@ const LandingFooter = React.forwardRef<HTMLElement, LandingFooterProps>(
       <div className="flex gap-6 md:gap-8 items-center">
         <a
           href={urls.legal.terms}
-          className="text-[#E0E0E0] no-underline font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] transition-colors duration-200 hover:text-white"
+          className="text-skai-gray-100 no-underline font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-colors duration-200 hover:text-white"
         >
           {footer.links.terms}
         </a>
         <a
           href={urls.legal.privacy}
-          className="text-[#E0E0E0] no-underline font-manrope text-[14px] font-normal leading-[18px] tracking-[-0.56px] transition-colors duration-200 hover:text-white"
+          className="text-skai-gray-100 no-underline font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-colors duration-200 hover:text-white"
         >
           {footer.links.privacy}
         </a>

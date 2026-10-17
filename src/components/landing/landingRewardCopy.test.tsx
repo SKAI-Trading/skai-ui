@@ -27,7 +27,10 @@ describe("landing reward copy", () => {
     render(
       <ReferralCard referralLink="https://skai.trade/ref/casey" referralPoints={100} shareTweetPoints={0} />,
     );
-    expect(screen.getByText(/Earn 100 SKAI Points/).textContent).toMatch(RULE);
+    // The points sit in their own span (the boards set them in Alien Green), so
+    // the line is found by its whole text, not by one text node.
+    const line = screen.getByText((_, el) => el?.tagName === "P" && /^Earn 100 SKAI Points/.test(el.textContent ?? ""));
+    expect(line.textContent).toMatch(RULE);
     expect(screen.queryByText(/that joins/)).toBeNull();
   });
 

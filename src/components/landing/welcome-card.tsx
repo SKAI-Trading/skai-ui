@@ -225,18 +225,25 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
 
     const avatarInitial = username ? username[0].toUpperCase() : "?";
 
+    // The dashboard boards draw the card in Green Coal 200 on a Green Coal 100
+    // line, with their shadow: r20 / r18 / r24 and padding 8 / 24 / 32 at 375
+    // (2424:7715), 768 (2424:4081) and 1440 (2422:2943). At 375 the text sits
+    // a further 8 in and the full-width control does not. The title is Super-
+    // headline 4 with the name in Sky Blue, the line under it Paragraph 2, 8
+    // below the title row.
     return (
       <div
         ref={ref}
         className={cn(
-          "relative overflow-hidden flex flex-col justify-center px-8 py-[33px] rounded-2xl border border-[#123F3C] bg-[#0D3331]",
+          "relative overflow-hidden flex flex-col justify-center rounded-[20px] md:rounded-[18px] lg:rounded-3xl ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.3)] p-2 md:p-6 lg:p-8",
           className,
         )}
         {...props}
       >
         <div className="relative z-10 flex flex-col justify-center">
+        <div data-testid="welcome-card-content" className="px-2 pt-2 md:p-0">
         {/* Avatar + Welcome */}
-        <div className="flex items-center gap-[12px] md:gap-[16px] mb-[12px]">
+        <div className="flex items-center gap-[12px] md:gap-[16px] mb-2">
           {/* Avatar */}
           <div
             className={cn(
@@ -283,9 +290,9 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
           )}
 
           <div className="flex flex-col min-w-0">
-            <h2 className="font-manrope font-light text-white text-[20px] md:text-[24px] lg:text-[32px] leading-[24px] md:leading-[28px] lg:leading-[36px] tracking-[-0.8px] md:tracking-[-0.96px] lg:tracking-[-1.28px]">
+            <h2 className="font-manrope text-white text-super-4-mobile md:text-super-4-tablet lg:text-super-4">
               Welcome,{" "}
-              <span className="text-[#56C7F3]">
+              <span className="text-sky-blue">
                 {isLoading ? "..." : username}
               </span>
               !
@@ -302,7 +309,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
             )}
           </div>
         </div>
-        <p className="font-manrope font-normal text-[#E0E0E0] text-[10px] md:text-[12px] lg:text-[14px] leading-[14px] md:leading-[16px] lg:leading-[18px] tracking-[-0.4px] md:tracking-[-0.48px] lg:tracking-[-0.56px] mb-[6px]">
+        <p className="font-manrope text-skai-gray-100 text-para-2-mobile md:text-para-2-tablet lg:text-para-2 mb-[6px]">
           {subtitle}
         </p>
 
@@ -392,6 +399,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
         {showTier && (
           <TierRoadmap currentTierKey={tierKey} currentPoints={skaiPoints ?? 0} />
         )}
+        </div>
 
         <div className="flex w-full gap-2">
           {(["trade", "predict", "play"] as const).map((tab) => (

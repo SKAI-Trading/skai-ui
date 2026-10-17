@@ -11,6 +11,7 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { BadgeCard } from "./badge-card";
+import { paintedAt } from "../../test/tailwindAt";
 
 const classesOf = (el: Element) => (el.getAttribute("class") ?? "").split(/\s+/);
 
@@ -32,23 +33,22 @@ function renderCard() {
 describe("the badge card's row at 1440 (2422:3968, report a4444746)", () => {
   it("insets the badge 16 and the text 8 after it, keeping 32 on the right", () => {
     renderCard();
-    const card = classesOf(screen.getByTestId("badge-card"));
-    expect(card).toEqual(expect.arrayContaining(["md:px-8", "lg:pl-4"]));
-    expect(classesOf(screen.getByTestId("badge-card-row"))).toContain("lg:gap-2");
+    const card = paintedAt(screen.getByTestId("badge-card"), 1440);
+    expect([card.pl, card.pr]).toEqual([16, 32]);
+    expect(paintedAt(screen.getByTestId("badge-card-row"), 1440).gap).toBe(8);
   });
 
   it("sets the points and the pill in the board's type, so the pair fits the 242 side by side", () => {
     renderCard();
     const [points, pill] = Array.from(screen.getByTestId("badge-card-reward").children);
     // Lg/Numbers 3: Mulish 22/26 at -4% (2422:3975).
-    expect(classesOf(points)).toEqual(
-      expect.arrayContaining(["lg:font-numbers", "lg:text-[22px]", "lg:leading-[26px]", "lg:tracking-[-0.88px]"]),
-    );
+    expect(classesOf(points)).toContain("font-numbers");
+    const p = paintedAt(points, 1440);
+    expect([p.fontSize, p.lineHeight, p.letterSpacing]).toEqual([22, 26, "-0.04em"]);
     // Lg/Label 2: Mulish 11/14 at -4%, on a 2 / 12 pad (2422:3976).
-    expect(classesOf(pill)).toEqual(
-      expect.arrayContaining(["lg:font-numbers", "lg:text-[11px]", "lg:leading-[14px]", "lg:tracking-[-0.44px]", "lg:px-[12px]", "md:py-[2px]"]),
-    );
-    expect(classesOf(pill)).not.toContain("lg:py-[4px]");
+    expect(classesOf(pill)).toContain("font-numbers");
+    const l = paintedAt(pill, 1440);
+    expect([l.fontSize, l.lineHeight, l.letterSpacing, l.pt, l.pr, l.pb, l.pl]).toEqual([11, 14, "-0.04em", 2, 12, 2, 12]);
   });
 
   it("lets the Credited pill drop under the points instead of leaving the card", () => {

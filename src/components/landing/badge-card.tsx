@@ -97,19 +97,21 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
       };
     }, [coachOpen]);
 
-    // At 1440 the card is 448 wide (2422:3968) and draws the badge 16 in, the
-    // text 8 after it and 32 clear of the right edge: 16 + 150 + 8 + 242 + 32.
-    // The 242 is what "+500 SKAI points" (163) and the Credited pill (64, 10
-    // after it) need side by side. With 32 on both sides and 16 between, the
-    // column was 218 and the pill ran out through the card's right edge
-    // (report a4444746). The leaderboard keeps 32 on both sides. Where the
-    // column is narrower still (a 1024 window gives the card 425), the pill
-    // drops under the points rather than leave the card.
+    // The dashboard boards draw the card in Green Coal 200 on a Green Coal 100
+    // line, with their shadow, and per width this corner and padding:
+    //   375 (2424:7715)   343x80,  r20, 8 / 16 / 8 / 12, badge 48, gap 12
+    //   768 (2424:4081)   352x112, r18, 16 all round,    badge 80, gap 16
+    //   1440 (2422:2943)  448x216, r24, 32 / 32 / 32 / 16, badge 150, gap 8
+    // At 1440 that is 16 + 150 + 8 + 242 + 32: the 242 is what "+500 SKAI
+    // points" (163) and the Credited pill (64, 10 after it) need side by side
+    // (report a4444746). The leaderboard keeps 32 on both sides there. Where
+    // the column is narrower still (a 1024 window gives the card 425), the
+    // pill drops under the points rather than leave the card.
     return (
       <div
         ref={ref}
         className={cn(
-          "flex flex-col gap-3 md:gap-4 px-4 md:px-8 lg:pl-4 py-4 md:py-[33px] rounded-[24px] border border-[#123F3C] bg-[#0D3331] relative",
+          "relative flex flex-col gap-3 md:gap-4 rounded-[20px] md:rounded-[18px] lg:rounded-3xl ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.3)] py-2 pl-3 pr-4 md:p-4 lg:py-8 lg:pl-4 lg:pr-8",
           className,
         )}
         {...props}
@@ -129,7 +131,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
           <div className="flex md:flex-col justify-between lg:gap-4 gap-2 w-full min-w-0">
             {/* Text */}
             <div className="flex flex-col flex-1 justify-center min-w-0">
-              <h3 className="font-manrope font-light text-white text-[16px] leading-[18px] md:text-[18px] md:leading-[22px] lg:text-[24px] lg:leading-[28px] tracking-[-0.72px] md:tracking-[-0.8px] lg:tracking-[-0.96px] mb-[4px]">
+              <h3 className="font-manrope text-white text-sub-1-mobile md:text-sub-1-tablet lg:text-sub-1 mb-1">
                 {badgeName}
               </h3>
               {/* Subtitle line — Figma 2481:12507 (1440) / 2481:17253 (375)
@@ -137,7 +139,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                   the "- Tooltip" frames (2481:11481, 2481:14785, 2481:15918)
                   are the state where pressing it opens the coachmark. */}
               <div className="flex flex-row items-center gap-1">
-                <p className="font-manrope font-normal text-[#E0E0E0] text-[12px] md:text-[14px] leading-[16px] md:leading-[20px]">
+                <p className="font-manrope text-skai-gray-100 text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
                   {badgeSubtitle}
                 </p>
                 {helpBody ? (
@@ -154,29 +156,37 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                     </button>
 
                     {coachOpen && (
-                      /* 2481:14734 is 250x218 at 1440 — a 16px connector
-                         column plus a 234px bubble, sitting 4px right of the
-                         icon and centred on it. 2481:17333 is the 375 variant:
-                         same 250 width, connector on top, bubble full-width at
-                         12px padding and 12/14 type. rounded-lg is 8px in the
-                         frame, which is NOT this codebase's rounded-lg (12px),
-                         so the radius is written in pixels. */
+                      /* The tool-tip component's three positions, one per
+                         width, all 250 wide with an r8 bubble:
+                         375 (2481:15918, Top): connector on top, the bubble
+                           under it at 12 padding and 12/14 type.
+                         768 (2481:14785, Bottom): the bubble ABOVE the icon at
+                           16 padding and 12/16 type, the connector under it
+                           pointing down. The arrow sits 16 in from the right
+                           end, centred on the icon (bubble right edge = icon
+                           centre + 34), and the whole 200 ends 2 above it.
+                         1440 (2481:11481, Left): a 16 connector column then a
+                           234 bubble, 4 right of the icon and centred on it,
+                           at 16 padding and 14/18 type. */
                       <div
                         data-probe="badge-coachmark"
                         role="tooltip"
-                        /* Below lg the bubble hangs under the icon and is
-                           CENTRED on it (2481:17333 sits the icon ~56% across
-                           its 250px width). Right-anchoring it ran the left
-                           edge 33px off a 375 viewport once the badge card was
-                           narrow enough. */
-                        className="absolute left-1/2 top-[calc(100%+4px)] z-30 flex w-[250px] max-w-[calc(100vw-32px)] -translate-x-1/2 flex-col items-center lg:left-[calc(100%+4px)] lg:top-1/2 lg:translate-x-0 lg:-translate-y-1/2 lg:flex-row"
+                        /* At 375 the bubble is CENTRED on the icon rather than
+                           placed as drawn (the board sits the icon ~60% across
+                           its 250): right-anchoring it ran the left edge 33px
+                           off a 375 viewport once the badge card was narrow
+                           enough. */
+                        className="absolute left-1/2 top-[calc(100%+4px)] z-30 flex w-[250px] max-w-[calc(100vw-32px)] -translate-x-1/2 flex-col items-center md:left-auto md:top-auto md:-right-[26px] md:bottom-[calc(100%+2px)] md:translate-x-0 md:flex-col-reverse md:items-end lg:right-auto lg:bottom-auto lg:left-[calc(100%+4px)] lg:top-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center"
                       >
-                        <span className="flex h-4 w-[35.01px] shrink-0 items-center justify-center lg:h-[35.01px] lg:w-4">
-                          <CoachArrowIcon className="h-4 w-[35.01px] shrink-0 rotate-180 lg:rotate-90" />
+                        <span
+                          data-probe="badge-coachmark-connector"
+                          className="flex h-4 w-[35.01px] shrink-0 items-center justify-center md:mr-4 lg:mr-0 lg:h-[35.01px] lg:w-4"
+                        >
+                          <CoachArrowIcon className="h-4 w-[35.01px] shrink-0 rotate-180 md:rotate-0 lg:rotate-90" />
                         </span>
                         <div
                           data-probe="badge-coachmark-bubble"
-                          className="w-full rounded-[8px] bg-[#123F3C] p-3 lg:w-[234px] lg:p-4"
+                          className="w-full rounded-lg bg-green-coal-100 p-3 md:p-4 lg:w-[234px]"
                         >
                           <div className="flex justify-end">
                             <button
@@ -188,7 +198,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                               <CoachCloseIcon className="h-[12.71px] w-[12.71px]" />
                             </button>
                           </div>
-                          <p className="font-manrope mt-2 text-left font-normal text-[#E0E0E0] text-[12px] leading-[14px] tracking-[-0.48px] lg:text-[14px] lg:leading-[18px] lg:tracking-[-0.56px]">
+                          <p className="font-manrope mt-2 text-left text-skai-gray-100 text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
                             {helpBody}
                           </p>
                         </div>
@@ -199,15 +209,17 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
               </div>
             </div>
 
-            {/* Reward and Status. At 1440 the board sets the points in Lg/Numbers
-                3 (Mulish 22/26 at -4%) and the pill's word in Lg/Label 2 (Mulish
-                11/14 at -4%) on a 2 / 12 pad, which is what puts the pair in 237
-                of the column's 242 (2422:3975, 2422:3976). */}
-            <div data-testid="badge-card-reward" className="flex flex-col md:flex-row md:flex-wrap items-end gap-[6px] md:gap-[10px] flex-shrink-0">
-              <span className="font-manrope lg:font-numbers font-normal text-[#2DEDAD] text-[14px] md:text-[16px] lg:text-[22px] leading-[18px] md:leading-[20px] lg:leading-[26px] lg:tracking-[-0.88px] whitespace-nowrap">
+            {/* Reward and Status, in Alien Green 300. The boards set the points
+                in Numbers 3 (Mulish 14/16, 16/20, 22/26) and the pill's word in
+                Label 2 (Mulish 10/14, 10/14, 11/14) on a 2 / 8 pad, 2 / 12 at
+                1440, which is what puts the pair in 237 of the 1440 column's 242
+                (2422:3975, 2422:3976). At 375 the two stack 4 apart against the
+                card's right edge; from 768 they sit in a row 10 apart. */}
+            <div data-testid="badge-card-reward" className="flex flex-col md:flex-row md:flex-wrap items-end md:items-center gap-1 md:gap-2.5 flex-shrink-0">
+              <span className="font-numbers text-alien-green-bright text-number-3-mobile md:text-number-3-tablet lg:text-number-3 whitespace-nowrap">
                 +{badgePoints} SKAI Points
               </span>
-              <span className="font-manrope lg:font-numbers text-[10px] md:text-[8px] lg:text-[11px] leading-[12px] md:leading-[10px] lg:leading-[14px] lg:tracking-[-0.44px] px-[8px] md:px-[8px] lg:px-[12px] py-[3px] md:py-[2px] rounded-[8px] bg-[#2DEDAD] text-[#001615] whitespace-nowrap">
+              <span className="font-numbers text-label-2-mobile md:text-label-2-tablet lg:text-label-2 px-2 lg:px-3 py-0.5 rounded-lg bg-alien-green-bright text-green-coal-300 whitespace-nowrap">
                 {statusLabel}
               </span>
             </div>
