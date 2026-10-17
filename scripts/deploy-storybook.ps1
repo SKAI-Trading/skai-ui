@@ -148,6 +148,15 @@ if ($LASTEXITCODE -ne 0) {
     Write-Host "   ✗ S3 sync failed" -ForegroundColor Red
     exit 1
 }
+# sync skips a file that is the same size and no newer than the bucket's copy,
+# and the auth wrapper rarely changes, so two overlapping deploys left it
+# unwritten. The deploy pipeline proves a deploy by ui/index.html's write
+# time, so it is always uploaded, and with no-cache, as the entry page.
+aws s3 cp (Join-Path $DEPLOY_DIR "index.html") "s3://$S3_BUCKET/$S3_PATH/index.html" --cache-control "no-cache"
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "   ✗ index.html upload failed" -ForegroundColor Red
+    exit 1
+}
 Write-Host "   ✓ Files uploaded to S3 ($S3_BUCKET/$S3_PATH/)" -ForegroundColor Green
 
 # Step 10: Invalidate CloudFront cache

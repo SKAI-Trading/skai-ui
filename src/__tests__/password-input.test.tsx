@@ -54,19 +54,27 @@ describe("PasswordInput", () => {
       expect(input.type).toBe("password");
     });
 
-    it("shows different icons for show/hide states", async () => {
+    /**
+     * The mark draws the field's state, the way the frames do (report a269aa1f,
+     * the wallet's Import Keystone board; the app's ExportKeyModal toggle draws
+     * the same): a crossed-out eye while the password is hidden, an open eye
+     * once it is shown. The accessible name stays the action the press takes.
+     * This used to assert only that some svg existed, so the mapping it names
+     * could flip either way and stay green.
+     */
+    it("draws a crossed-out eye while hidden and an open eye while shown", async () => {
       const user = userEvent.setup();
-      const { container } = render(<PasswordInput />);
+      render(<PasswordInput />);
 
-      const toggleButton = screen.getByRole("button");
+      const hidden = screen.getByRole("button", { name: "Show password" });
+      expect(hidden.querySelector("svg")).toHaveClass("lucide-eye-off");
+      expect(hidden.querySelector("svg.lucide-eye:not(.lucide-eye-off)")).toBeNull();
 
-      // Initially shows eye icon (show password)
-      expect(container.querySelector("svg")).toBeInTheDocument();
+      await user.click(hidden);
 
-      await user.click(toggleButton);
-
-      // After click shows eye-off icon (hide password)
-      expect(container.querySelector("svg")).toBeInTheDocument();
+      const shown = screen.getByRole("button", { name: "Hide password" });
+      expect(shown.querySelector("svg")).toHaveClass("lucide-eye");
+      expect(shown.querySelector("svg")).not.toHaveClass("lucide-eye-off");
     });
   });
 
