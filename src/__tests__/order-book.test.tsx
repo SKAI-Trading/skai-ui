@@ -184,7 +184,29 @@ describe("OrderBook", () => {
       );
 
       fireEvent.click(screen.getByText("50000.00"));
-      expect(onPriceClick).toHaveBeenCalledWith(50000);
+      expect(onPriceClick).toHaveBeenCalledWith(50000, "bid");
+    });
+
+    // A price can stand on both sides at once: the chain rests one trader's
+    // own crossing order instead of matching it. Only the row knows which of
+    // the two was meant.
+    it("says which side the clicked row is on when both sides hold its price", () => {
+      const onPriceClick = vi.fn();
+      const locked: OrderBookData = {
+        bids: [createMockLevel("bid-1", 83218, 0.003976, 0.003976)],
+        asks: [createMockLevel("ask-1", 83218, 0.003976, 0.003976)],
+        spread: 0,
+        spreadPercent: 0,
+        lastUpdate: Date.now(),
+      };
+      render(<OrderBook data={locked} onPriceClick={onPriceClick} />);
+
+      fireEvent.click(screen.getByRole("row", { name: /^Ask 83218/ }));
+      expect(onPriceClick).toHaveBeenLastCalledWith(83218, "ask");
+      fireEvent.click(screen.getByRole("row", { name: /^Bid 83218/ }));
+      expect(onPriceClick).toHaveBeenLastCalledWith(83218, "bid");
+      fireEvent.keyDown(screen.getByRole("row", { name: /^Ask 83218/ }), { key: "Enter" });
+      expect(onPriceClick).toHaveBeenLastCalledWith(83218, "ask");
     });
 
     it("should call onRowDoubleClick when row is double-clicked", () => {

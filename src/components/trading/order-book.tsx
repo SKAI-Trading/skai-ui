@@ -103,8 +103,12 @@ export interface OrderBookProps {
   isLive?: boolean;
   /** Callback when live toggle is clicked */
   onLiveToggle?: () => void;
-  /** Callback when a price row is clicked */
-  onPriceClick?: (price: number) => void;
+  /**
+   * Callback when a price row is clicked, with the side the row is on. The
+   * side is what tells the two rows apart when one price stands on both
+   * sides, which the chain allows for a single trader's crossing orders.
+   */
+  onPriceClick?: (price: number, side: "bid" | "ask") => void;
   /** Callback when a row is double-clicked */
   onRowDoubleClick?: (price: number, size: number, side: "bid" | "ask") => void;
   /** Number of levels to show per side */
@@ -348,7 +352,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
                 )}, size ${level.size.toFixed(sizePrecision)} ${baseCurrency}`
               : undefined
           }
-          onClick={() => onPriceClick?.(level.price)}
+          onClick={() => onPriceClick?.(level.price, side)}
           onDoubleClick={() =>
             onRowDoubleClick?.(level.price, level.size, side)
           }
@@ -357,7 +361,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
               ? (e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    onPriceClick?.(level.price);
+                    onPriceClick?.(level.price, side);
                   }
                 }
               : undefined
