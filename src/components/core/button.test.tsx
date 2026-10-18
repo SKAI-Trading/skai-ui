@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import { Button } from "../core/button";
+import { Button, SkaiButton } from "../core/button";
+import { hoverColors, skaiButton } from "../../lib/design-tokens";
 
 describe("Button", () => {
   it("renders with default variant", () => {
@@ -22,28 +23,30 @@ describe("Button", () => {
     expect(screen.getByRole("button")).toHaveClass("bg-secondary");
 
     rerender(<Button variant="ghost">Ghost</Button>);
-    expect(screen.getByRole("button")).toHaveClass("hover:bg-accent");
+    expect(screen.getByRole("button")).toHaveClass("hover:bg-sky-blue/10");
 
     rerender(<Button variant="link">Link</Button>);
     expect(screen.getByRole("button")).toHaveClass("underline-offset-4");
   });
 
-  describe("hover label on outline and ghost", () => {
-    it("darkens the label over the accent hover fill", () => {
-      const { rerender } = render(<Button variant="ghost">Ghost</Button>);
-      expect(screen.getByRole("button")).toHaveClass(
-        "hover:bg-accent",
-        "hover:text-accent-foreground",
-      );
-
-      rerender(<Button variant="outline">Outline</Button>);
-      expect(screen.getByRole("button")).toHaveClass(
-        "hover:bg-accent",
-        "hover:text-accent-foreground",
-      );
+  // The design's hover is a Sky Blue wash (the CTA set's secondary, the
+  // RefreshButton, and Casey's 2026-10-06 ruling for a hovered row). These
+  // two used the `accent` fill, which is Coral in this package's theme and
+  // Alien Green in the app, so a ghost or outline button lit green there
+  // (report 6fb5fa86). A wash leaves the label on the colour it was drawn on.
+  describe("hover on outline and ghost", () => {
+    it("washes Sky Blue/10 under the pointer and keeps the label", () => {
+      for (const variant of ["ghost", "outline"] as const) {
+        const { unmount } = render(<Button variant={variant}>{variant}</Button>);
+        const btn = screen.getByRole("button");
+        expect(btn).toHaveClass("hover:bg-sky-blue/10");
+        expect(btn).not.toHaveClass("hover:bg-accent");
+        expect(btn).not.toHaveClass("hover:text-accent-foreground");
+        unmount();
+      }
     });
 
-    it("keeps the resting label when the caller brings its own hover fill", () => {
+    it("gives way to a caller's own hover fill", () => {
       const { rerender } = render(
         <Button
           variant="ghost"
@@ -54,7 +57,7 @@ describe("Button", () => {
       );
       let btn = screen.getByRole("button");
       expect(btn).toHaveClass("text-white", "hover:bg-green-coal-300/80");
-      expect(btn).not.toHaveClass("hover:text-accent-foreground");
+      expect(btn).not.toHaveClass("hover:bg-sky-blue/10");
 
       rerender(
         <Button
@@ -65,17 +68,16 @@ describe("Button", () => {
         </Button>,
       );
       btn = screen.getByRole("button");
-      expect(btn).toHaveClass("text-skai-red");
-      expect(btn).not.toHaveClass("hover:text-accent-foreground");
+      expect(btn).toHaveClass("text-skai-red", "hover:bg-skai-red/10");
+      expect(btn).not.toHaveClass("hover:bg-sky-blue/10");
 
       rerender(
         <Button variant="ghost" className="p-0 hover:bg-transparent">
           Close
         </Button>,
       );
-      expect(screen.getByRole("button")).not.toHaveClass(
-        "hover:text-accent-foreground",
-      );
+      expect(screen.getByRole("button")).toHaveClass("hover:bg-transparent");
+      expect(screen.getByRole("button")).not.toHaveClass("hover:bg-sky-blue/10");
     });
 
     it("does the same for a Button rendered through asChild", () => {
@@ -90,41 +92,29 @@ describe("Button", () => {
       );
       const link = screen.getByRole("link");
       expect(link).toHaveClass("text-white", "hover:bg-green-coal-300/80");
-      expect(link).not.toHaveClass("hover:text-accent-foreground");
+      expect(link).not.toHaveClass("hover:bg-sky-blue/10");
     });
 
     it("leaves a caller's own hover label alone", () => {
-      const { rerender } = render(
+      render(
         <Button variant="ghost" className="hover:bg-white/10 hover:text-white">
           Mute
         </Button>,
       );
-      expect(screen.getByRole("button")).toHaveClass("hover:text-white");
-
-      rerender(
-        <Button
-          variant="ghost"
-          className="hover:bg-muted hover:text-accent-foreground"
-        >
-          Row
-        </Button>,
-      );
-      expect(screen.getByRole("button")).toHaveClass(
-        "hover:text-accent-foreground",
-      );
+      expect(screen.getByRole("button")).toHaveClass("hover:bg-white/10", "hover:text-white");
     });
+  });
 
-    it("keeps the accent label when the caller names the accent fill itself", () => {
-      render(
-        <Button variant="ghost" className="flex items-center gap-2 hover:bg-accent">
-          Language
-        </Button>,
-      );
-      expect(screen.getByRole("button")).toHaveClass(
-        "hover:bg-accent",
-        "hover:text-accent-foreground",
-      );
-    });
+  // The Sky Blue CTA hovers in its own colour family. It turned Alien Green,
+  // a blue box going green under the pointer (report 6fb5fa86); the token is
+  // the one design-tokens keeps for exactly this control.
+  it("hovers the primary SkaiButton a darker Sky Blue, not Alien Green", () => {
+    render(<SkaiButton skaiType="primary">Deposit</SkaiButton>);
+    const btn = screen.getByRole("button");
+    expect(btn).toHaveClass("bg-[#56C7F3]", "hover:bg-sky-blue-hover");
+    expect(btn.className).not.toMatch(/hover:bg-\[#2DEDAD\]/i);
+    expect(hoverColors.skyBlueHover).toBe("#46A3C7");
+    expect(skaiButton.types.primary.hoverBackground).toBe(hoverColors.skyBlueHover);
   });
 
   it("renders with different sizes", () => {

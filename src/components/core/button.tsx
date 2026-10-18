@@ -16,11 +16,16 @@ const buttonVariants = cva(
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        // outline and ghost hover with the design's Sky Blue wash: the CTA set's
+        // secondary, RefreshButton, and the hovered row Casey ruled 2026-10-06.
+        // The `accent` fill they used is Alien Green in the app and lit every
+        // ghost and outline button green there (report 6fb5fa86). A wash keeps
+        // the label on the colour it was drawn on; a caller's own hover fill
+        // still replaces it through tailwind-merge.
+        outline: "border border-input bg-background hover:bg-sky-blue/10",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost: "hover:bg-sky-blue/10",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
@@ -36,26 +41,6 @@ const buttonVariants = cva(
     },
   },
 );
-
-/**
- * outline and ghost turn their label to accent-foreground on hover because
- * their hover fill is the accent. A caller that brings its own hover fill (a
- * tint, a surface, transparent) replaces that fill, and the label colour chosen
- * for it has nothing under it any more: on a dark page it goes near-black and
- * the label disappears. So the accent label only stays while the accent fill
- * does, and otherwise the label keeps the colour it has at rest.
- */
-function pairAccentHoverText(classes: string, className?: string): string {
-  const list = classes.split(" ");
-  if (
-    list.includes("hover:bg-accent") ||
-    !list.includes("hover:text-accent-foreground") ||
-    className?.split(/\s+/).includes("hover:text-accent-foreground")
-  ) {
-    return classes;
-  }
-  return list.filter((c) => c !== "hover:text-accent-foreground").join(" ");
-}
 
 export interface ButtonProps
   extends
@@ -91,10 +76,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     if (asChild) {
       return (
         <Comp
-          className={pairAccentHoverText(
-            cn(buttonVariants({ variant, size, className })),
-            className,
-          )}
+          className={cn(buttonVariants({ variant, size, className }))}
           ref={ref}
           {...props}
         >
@@ -105,10 +87,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const isDisabled = disabled || loading;
     return (
       <Comp
-        className={pairAccentHoverText(
-          cn(buttonVariants({ variant, size, className }), loading && "cursor-wait"),
-          className,
-        )}
+        className={cn(buttonVariants({ variant, size, className }), loading && "cursor-wait")}
         ref={ref}
         disabled={isDisabled}
         aria-busy={loading || undefined}
@@ -143,9 +122,12 @@ const skaiButtonVariants = cva(
     variants: {
       // SKAI Button Types (from Figma CTA section)
       skaiType: {
-        // Primary: Sky Blue bg, Green Coal text, hover → Alien Green
+        // Primary: Sky Blue bg, Green Coal text, hover a darker Sky Blue. It
+        // went Alien Green, a blue button turning green under the pointer
+        // (report 6fb5fa86); the CTA set (801:1062) draws no hover state, and
+        // sky-blue-hover is the token kept for exactly this control.
         primary:
-          "bg-[#56C7F3] text-[#001615] hover:bg-[#2DEDAD] focus-visible:ring-[#2DEDAD]",
+          "bg-[#56C7F3] text-[#001615] hover:bg-sky-blue-hover focus-visible:ring-[#2DEDAD]",
         // Secondary: Transparent bg, Sky Blue border/text
         secondary:
           "bg-transparent border border-[#56C7F3] text-[#56C7F3] hover:bg-[#56C7F3]/10 focus-visible:ring-[#56C7F3]",

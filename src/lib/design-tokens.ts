@@ -1086,7 +1086,8 @@ export const skaiButton = {
     primary: {
       background: accentColors.skyBlue,
       text: greenCoalColors[300],
-      hoverBackground: accentColors.alienGreen,
+      // A darker Sky Blue, as SkaiButton draws it; not Alien Green (report 6fb5fa86).
+      hoverBackground: hoverColors.skyBlueHover,
       focusRing: accentColors.alienGreen,
     },
     secondary: {
