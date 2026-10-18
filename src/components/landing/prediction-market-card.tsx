@@ -90,6 +90,25 @@ const COINGECKO_API = "https://api.coingecko.com/api/v3";
 
 /* ─── Helpers ────────────────────────────────────────────────────────── */
 
+/**
+ * What the server answers a bet from a restricted region, or from one it
+ * could not verify (its 451, keyed by code). A caller that passes on only the
+ * message hands over these exact words, so they are matched too. Shown as
+ * sent: "Something went wrong. Please try again." would invite a retry that
+ * can only be refused again.
+ */
+const REGION_REFUSALS: Record<string, string> = {
+  GEO_RESTRICTED: "This region is not supported",
+  GEO_UNVERIFIED: "We could not verify your region",
+};
+
+function regionRefusal(err: unknown): string | null {
+  const code = (err as { code?: unknown } | null)?.code;
+  if (typeof code === "string" && REGION_REFUSALS[code]) return REGION_REFUSALS[code];
+  const message = err instanceof Error ? err.message.trim() : "";
+  return Object.values(REGION_REFUSALS).find((text) => message === text) ?? null;
+}
+
 const BET_STORAGE_KEY = (uid: string) => `skai_pred_active_${uid}`;
 
 const saveBet = (uid: string, bet: StoredBet) => {
@@ -733,7 +752,7 @@ const PredictionMarketCard = React.forwardRef<
           if (userId) clearBet(userId);
           setBetError(isStuckBet
             ? "Previous bet still settling — please wait a moment and try again"
-            : "Something went wrong. Please try again.");
+            : regionRefusal(err) ?? "Something went wrong. Please try again.");
           setTimeout(() => setBetError(null), 6000);
         } finally {
           isBettingRef.current = false;
