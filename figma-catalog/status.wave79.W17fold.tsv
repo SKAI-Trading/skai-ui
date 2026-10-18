@@ -1,0 +1,6 @@
+# key	status	primaryFile	route	reason	bp
+# Wave 79, 2026-10-10..11, lane `W17fold`, folded onto skai-ui 8cc6dc4 (fold of W20 and W17).
+# Each row names its own source: a live use_figma read (the lane's ledger line in figma/ledger/calls.jsonl), or a
+# catalog record with no Figma call, where the implementation moved, was deleted, or a Casey ruling decided the frame.
+# Commit hashes are main's. Folded from the lane's catalog-rows file.
+9002-158102	partial	src/components/trade/PortfolioTabs.tsx	/spot	wave 79 lane W17fold, 2026-10-10..11 (was done): wave 79 fold of W17, 2026-10-17 (was done): Fold correction from the fold review. Like its later cut 9780-157337, this earlier cut of Frame 444 draws no stroke over the positions band, while main's MobileTradeShell.tsx:553 draws border-t border-white/5 above the band at 768. Casey's 2026-09-15 ruling covers this cut's headline only, so it stays cited for the headline. Left: the band's top line (lane W14 removes it; not on main yet).

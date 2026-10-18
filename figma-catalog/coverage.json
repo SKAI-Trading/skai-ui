@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-18T02:40:00.752Z",
+  "generated": "2026-10-18T05:49:01.654Z",
   "harvestedAt": "2026-10-16",
   "rollup": {
     "pages": 39,
@@ -62,10 +62,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 22861,
+    "total": 22862,
     "namingNoNodeId": 339,
-    "namingNoLiveNodeId": 966,
-    "unrecognisedTokens": 57571
+    "namingNoLiveNodeId": 967,
+    "unrecognisedTokens": 57574
   },
   "statusFiles": [
     {
@@ -5935,6 +5935,12 @@
       "rows": 41,
       "withLiveId": 39,
       "ids": 40
+    },
+    {
+      "file": "status.wave79.W17fold.tsv",
+      "rows": 1,
+      "withLiveId": 0,
+      "ids": 0
     },
     {
       "file": "status.wave79.W1b.tsv",
@@ -13290,7 +13296,8 @@
       "rows": [
         "status.wave43.trade.tsv:54",
         "status.wave44.trade.tsv:72",
-        "status.wave45.wallet-trade.tsv:35"
+        "status.wave45.wallet-trade.tsv:35",
+        "status.wave79.W17fold.tsv:6"
       ],
       "status": "partial"
     },

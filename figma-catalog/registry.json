@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-18T02:39:50.147Z",
+  "generated": "2026-10-18T05:48:48.632Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -39163,12 +39163,13 @@
       "family": "Spot",
       "citedByFiles": [],
       "implFiles": [
-        "src/components/trade/PositionsTable.tsx"
+        "src/components/trade/PositionsTable.tsx",
+        "src/components/trade/PortfolioTabs.tsx"
       ],
-      "status": "done",
+      "status": "partial",
       "route": "/spot",
-      "notes": "CLOSED BY RULING, not by a measurement, and the build already stood on the right side of it. Casey ruled 2026-09-15 that Frame 444's LATER cut (9780-157337) ships and that this earlier cut is superseded on the headline alone. The shipped empty state is md:max-lg:text-sm md:max-lg:leading-[18px] at PositionsTable.tsx:193 - 14/18, the later cut's value - so no pixel moved. What changed is that the ambiguity is no longer written as open: the block comment at :182-193 and the oracle's docblock in figmaGeometry.test.tsx both recorded that the earlier cut still carried the 18/24 of 1440, with no resolution, which reads as an invitation to flip it back. Both now name the ruling and its date and say not to re-derive it from the earlier cut. Everything else in this cut was already agreeing with its sibling and is re-confirmed at HEAD: the 40-tall tab row and its five tabs (PortfolioTabs.tsx:157-170), the p16 body around a 197-tall Green Coal 300 well at 0.24 on a 12 radius (:190), the 4px description gap inside a 24 to the CTA, and the CTA 32 tall (:136). The 32 tests in figmaGeometry.test.tsx pass unchanged. [vverify: match | Spot positions band at 768, earlier cut of Frame 444. Closed by Casey's 2026-09-15 ruling rather than by a measurement: the LATER cut (9780-157337) ships, so the headline is 14/18 and this cut's 18/24 is superseded on that point alone. No pixel moved - PositionsTable.tsx:193 already shipped `md:max-lg:text-sm md:max-lg:leading-[18px)`. What moved is the record: the block comment and figmaGeometry.test.tsx's docblock both described the two cuts disagreeing with no resolution, which reads as standing permission to flip it back, and both now cite the ruling and say not to re-derive it. The rest of the cut re-confirmed at HEAD: 40-tall tab row and five tabs, p16 around a 197 well in Green Coal 300 at 0.24 on a 12 radius, 4px description gap inside a 24 to the CTA, CTA 32 tall. 32 tests green. No browser: source-vs-node.]",
-      "verifiedAt": "2026-09-15T09:30:08.579Z",
+      "notes": "wave 79 lane W17fold, 2026-10-10..11 (was done): wave 79 fold of W17, 2026-10-17 (was done): Fold correction from the fold review. Like its later cut 9780-157337, this earlier cut of Frame 444 draws no stroke over the positions band, while main's MobileTradeShell.tsx:553 draws border-t border-white/5 above the band at 768. Casey's 2026-09-15 ruling covers this cut's headline only, so it stays cited for the headline. Left: the band's top line (lane W14 removes it; not on main yet). [vverify: partial | wave 79 lane W17fold, 2026-10-10..11: wave 79 fold of W17, 2026-10-17 (was done): Fold correction from the fold review. Like its later cut 9780-157337, this earlier cut of Frame 444 draws no stroke over the positions band, while main's MobileTradeShell.tsx:553 draws border-t border-white/5 above the band at 768. Casey's 2026-09-15 ruling covers this cut's headline only, so it stays cited for the headline. Left: the band's top line (lane W14 removes it; not on main yet).]",
+      "verifiedAt": "2026-10-18T05:47:43.306Z",
       "bpStatus": "unknown"
     },
     "mhF3BkzlTaGiLzJ7kvpmVc:9780-157337": {
