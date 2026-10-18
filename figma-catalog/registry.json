@@ -27374,7 +27374,6 @@
       "citedByFiles": [],
       "implFiles": [
         "src/pages/trade/Spot.tsx",
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/components/trade/spot/OrderbookEmpty.tsx",
         "src/components/trade/MarketHeader.tsx"
       ],
