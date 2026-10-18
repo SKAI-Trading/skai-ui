@@ -229,8 +229,10 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
     // line, with their shadow: r20 / r18 / r24 and padding 8 / 24 / 32 at 375
     // (2424:7715), 768 (2424:4081) and 1440 (2422:2943). At 375 the text sits
     // a further 8 in and the full-width control does not. The title is Super-
-    // headline 4 with the name in Sky Blue, the line under it Paragraph 2, 8
-    // below the title row.
+    // headline 4 with the name in Sky Blue, the line under it Paragraph 2 in
+    // Gray 100, 8 below the title row. Gray 100 is written as its hex:
+    // skai.trade's Tailwind theme keeps a legacy `skai.gray-100` (Ash, #95A09F)
+    // that takes the `skai-gray-100` name there.
     return (
       <div
         ref={ref}
@@ -309,7 +311,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
             )}
           </div>
         </div>
-        <p className="font-manrope text-skai-gray-100 text-para-2-mobile md:text-para-2-tablet lg:text-para-2 mb-[6px]">
+        <p className="font-manrope text-[#E0E0E0] text-para-2-mobile md:text-para-2-tablet lg:text-para-2 mb-[6px]">
           {subtitle}
         </p>
 

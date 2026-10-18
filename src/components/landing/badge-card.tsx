@@ -137,9 +137,12 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
               {/* Subtitle line — Figma 2481:12507 (1440) / 2481:17253 (375)
                   put a 16px icons/action "?" 4px after the subtitle text, and
                   the "- Tooltip" frames (2481:11481, 2481:14785, 2481:15918)
-                  are the state where pressing it opens the coachmark. */}
+                  are the state where pressing it opens the coachmark. Gray 100
+                  is written as its hex here and in the coachmark: skai.trade's
+                  Tailwind theme keeps a legacy `skai.gray-100` (Ash, #95A09F)
+                  that takes the `skai-gray-100` name there. */}
               <div className="flex flex-row items-center gap-1">
-                <p className="font-manrope text-skai-gray-100 text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
+                <p className="font-manrope text-[#E0E0E0] text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
                   {badgeSubtitle}
                 </p>
                 {helpBody ? (
@@ -198,7 +201,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                               <CoachCloseIcon className="h-[12.71px] w-[12.71px]" />
                             </button>
                           </div>
-                          <p className="font-manrope mt-2 text-left text-skai-gray-100 text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
+                          <p className="font-manrope mt-2 text-left text-[#E0E0E0] text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
                             {helpBody}
                           </p>
                         </div>

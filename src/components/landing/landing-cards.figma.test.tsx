@@ -111,9 +111,9 @@ describe("ReferralCard", () => {
     return screen.getByTestId("referral");
   };
   const BOARD = {
-    375: { pad: 8, gap: 16, radius: 20, inset: [8, 8, 0, 8], title: [18, 22, 400], sub: [12, 14, 400], label: [12, 16, 400], link: [14, 16, 700], linkBox: 44, linkRadius: 12, copy: [14, 16, 700], share: 40, discord: 44, buttonRadius: 12 },
-    768: { pad: 16, gap: 22, radius: 18, inset: [0, 0, 0, 0], title: [18, 22, 400], sub: [12, 16, 400], label: [12, 16, 400], link: [14, 18, 400], linkBox: 50, linkRadius: 12, copy: [12, 16, 400], share: 40, discord: 54, buttonRadius: 12 },
-    1440: { pad: 24, gap: 24, radius: 32, inset: [0, 0, 0, 0], title: [24, 28, 400], sub: [14, 18, 400], label: [14, 18, 400], link: [16, 22, 400], linkBox: 54, linkRadius: 16, copy: [16, 22, 400], share: 50, discord: 64, buttonRadius: 16 },
+    375: { pad: 8, gap: 16, radius: 20, inset: [8, 8, 0, 8], contentGap: 4, title: [18, 22, 400], sub: [12, 14, 400], label: [12, 16, 400], link: [14, 16, 700], linkBox: 44, linkRadius: 12, copy: [14, 16, 700], share: 40, sharePad: [12, 12, 12, 12], shareType: [14, 16, 700], discord: 44, discordPad: [14, 24, 14, 24], discordType: [14, 16, 700], buttonRadius: 12 },
+    768: { pad: 16, gap: 22, radius: 18, inset: [0, 0, 0, 0], contentGap: 4, title: [18, 22, 400], sub: [12, 16, 400], label: [12, 16, 400], link: [14, 18, 400], linkBox: 50, linkRadius: 12, copy: [12, 16, 400], share: 40, sharePad: [12, 12, 12, 12], shareType: [12, 16, 400], discord: 54, discordPad: [18, 24, 18, 24], discordType: [14, 18, 400], buttonRadius: 12 },
+    1440: { pad: 24, gap: 24, radius: 32, inset: [0, 0, 0, 0], contentGap: 8, title: [24, 28, 400], sub: [14, 18, 400], label: [14, 18, 400], link: [16, 22, 400], linkBox: 54, linkRadius: 16, copy: [16, 22, 400], share: 50, sharePad: [16, 22, 16, 22], shareType: [14, 18, 400], discord: 64, discordPad: [20, 40, 20, 40], discordType: [16, 22, 400], buttonRadius: 16 },
   } as const;
   // A box's height on the board: its padding plus its tallest line (the Discord icon is 16, 16, 24).
   const tall = (el: Element, w: W, line: number) => {
@@ -128,6 +128,8 @@ describe("ReferralCard", () => {
     expect(paintedAt(root, w).gap).toBe(b.gap);
     expect(paintedAt(root, w).radius).toBe(b.radius);
     expect(pad(screen.getByTestId("referral-card-content"), w)).toEqual(b.inset);
+    // The title sits 4 / 4 / 8 above its line (the content frame's gap).
+    expect(paintedAt(screen.getByTestId("referral-card-content"), w).gap).toBe(b.contentGap);
     expect(type(screen.getByRole("heading"), w)).toEqual(b.title);
     expect(type(screen.getByText(/for each friend who makes their first deposit or trade/), w)).toEqual(b.sub);
     expect(type(screen.getByText("Referral link"), w)).toEqual(b.label);
@@ -142,10 +144,14 @@ describe("ReferralCard", () => {
 
     const share = screen.getByRole("button", { name: /Share With Friends/ });
     expect(tall(share, w, 16)).toBe(b.share);
+    expect(pad(share, w)).toEqual(b.sharePad);
+    expect(type(share, w)).toEqual(b.shareType);
     expect(paintedAt(share, w).radius).toBe(b.buttonRadius);
     const discord = screen.getByRole("button", { name: /Join Skai Community/ });
     const icon = w === 1440 ? 24 : 16;
     expect(tall(discord, w, icon)).toBe(b.discord);
+    expect(pad(discord, w)).toEqual(b.discordPad);
+    expect(type(discord, w)).toEqual(b.discordType);
     expect(paintedAt(discord, w).radius).toBe(b.buttonRadius);
   });
 
@@ -190,6 +196,32 @@ describe("WelcomeCard", () => {
     render(<WelcomeCard username="artofofiare" />);
     const content = screen.getByTestId("welcome-card-content");
     expect(content.contains(screen.getByRole("button", { name: "AI" }))).toBe(false);
+  });
+});
+
+describe("the Gray 100 runs", () => {
+  // skai.trade's own Tailwind theme gives the `skai-gray-100` name to a legacy Ash
+  // (#95A09F), so the runs the boards set in Gray 100 carry its hex, and nothing in
+  // these four components uses that name. skai-landing's dashboardCards.landingTheme
+  // test reads what the landing compiles.
+  it("sets the six runs in #E0E0E0, never through the skai-gray-100 name", () => {
+    render(<WelcomeCard username="a" />);
+    render(<BadgeCard badgeName="Pioneer badge" badgeSubtitle="Congrats, you're early to Skai." badgePoints={500} />);
+    fireEvent.click(screen.getByRole("button", { name: "What is Skai?" }));
+    render(<ReferralCard referralLink="skai.trade/ref/a" referralPoints={100} shareTweetPoints={0} />);
+    const { container } = render(<LandingFooter />);
+    const runs = [
+      screen.getByText("Check email for launch updates."),
+      screen.getByText("Congrats, you're early to Skai."),
+      screen.getByRole("tooltip").querySelector("p")!,
+      screen.getByText(/for each friend who makes their first deposit or trade/),
+      screen.getByRole("link", { name: "Terms" }),
+      screen.getByRole("link", { name: "Privacy" }),
+    ];
+    for (const el of runs) expect(classesOf(el), el.textContent ?? "").toContain("text-[#E0E0E0]");
+    const everyClass = Array.from(document.body.querySelectorAll("[class]")).flatMap(classesOf);
+    expect(everyClass.filter((c) => c.includes("skai-gray-100"))).toEqual([]);
+    expect(container.querySelector("footer")).not.toBeNull();
   });
 });
 

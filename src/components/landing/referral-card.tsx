@@ -70,7 +70,9 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
     //   1440 (2422:2943)  448x394, r32, padding 24, groups 24 apart
     // The link box is Green Coal 300 on a Green Coal 100 line (54 / 50 / 44
     // tall), the share box the same on Sky Blue, and the Discord button
-    // Button/large in Sky Blue (64 / 54 / 44).
+    // Button/large in Sky Blue (64 / 54 / 44). The line under the title is
+    // Gray 100, written as its hex: skai.trade's Tailwind theme keeps a legacy
+    // `skai.gray-100` (Ash, #95A09F) that takes the `skai-gray-100` name there.
     return (
       <div
         ref={ref}
@@ -84,7 +86,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           <h3 className="font-manrope text-white text-sub-1-mobile md:text-sub-1-tablet lg:text-sub-1">
             {title}
           </h3>
-          <p className="font-manrope text-skai-gray-100 text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
+          <p className="font-manrope text-[#E0E0E0] text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
             {/* Not "for each friend that joins": Casey ruled on 2026-09-22 that a
                 sign-up earns nothing, and the referral pays on the friend's first
                 deposit or trade (qualify_referral). */}

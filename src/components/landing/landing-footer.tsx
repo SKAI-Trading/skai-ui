@@ -18,6 +18,8 @@ const footer = content.landing.footer;
  *        the legal nav 117x16 at 30,978, Terms 33 at x=0, Privacy at x=65
  *   1440 (2422:2943)  32 at the sides and 24 under the navs (y=858, 18 tall,
  *        in a 900 frame), Paragraph 2 at 14/18
+ * The pair is Gray 100, written as its hex: skai.trade's Tailwind theme keeps a
+ * legacy `skai.gray-100` (Ash, #95A09F) that takes the `skai-gray-100` name there.
  */
 const LandingFooter = React.forwardRef<HTMLElement, LandingFooterProps>(
   ({ className, ...props }, ref) => (
@@ -33,13 +35,13 @@ const LandingFooter = React.forwardRef<HTMLElement, LandingFooterProps>(
       <div className="flex gap-6 md:gap-8 items-center">
         <a
           href={urls.legal.terms}
-          className="text-skai-gray-100 no-underline font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-colors duration-200 hover:text-white"
+          className="text-[#E0E0E0] no-underline font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-colors duration-200 hover:text-white"
         >
           {footer.links.terms}
         </a>
         <a
           href={urls.legal.privacy}
-          className="text-skai-gray-100 no-underline font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-colors duration-200 hover:text-white"
+          className="text-[#E0E0E0] no-underline font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-colors duration-200 hover:text-white"
         >
           {footer.links.privacy}
         </a>
