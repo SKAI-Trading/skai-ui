@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-18T05:48:48.632Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-19T05:42:58.862Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -12,10 +12,10 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
 | governance | ✅ | 727 | 403 | 324 | 87 | 106 | 242 | 13 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 103 | 98 | 6 | 0 | 201 |
-| trade | ✅ | 456 | 253 | 203 | 44 | 51 | 180 | 3 | 0 | 92 |
+| trade | ✅ | 456 | 253 | 203 | 44 | 64 | 167 | 3 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 71 | 114 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 131 | 56 | 0 | 0 | 102 |
-| play | ✅ | 463 | 167 | 296 | 44 | 63 | 91 | 9 | 0 | 66 |
+| play | ✅ | 463 | 167 | 296 | 44 | 63 | 95 | 5 | 0 | 66 |
 | home-2 | ✅ | 249 | 152 | 97 | 19 | 73 | 49 | 0 | 0 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 20 | 102 | 19 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4894** | **2356** | | | **1119** | **1141** | **77** | **19** | **1032** |
+| **all** | | **4894** | **2356** | | | **1132** | **1132** | **73** | **19** | **1032** |
 
 ### Drift against live Figma
 
@@ -238,7 +238,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| Spot | 116 | desktop, tablet, mobile | order book; trades; modal; chart tools collapsed; time dropdown; indicator dropdown … | partial/frame-defect/done/blocked-on-backend | [7710-91527](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7710-91527&m=dev) |
+| Spot | 116 | desktop, tablet, mobile | order book; trades; modal; chart tools collapsed; time dropdown; indicator dropdown … | done/frame-defect/partial/blocked-on-backend | [7710-91527](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=7710-91527&m=dev) |
 | Perpetual Futures | 54 | mobile, tablet | full; Price Collapsed; user not signed in; Market long; Market long - user not signed in; Market long ALT … | partial/done/not-started/blocked-on-backend/frame-defect | [9801-112095](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9801-112095&m=dev) |
 | Spot > Chart settings | 6 | desktop, tablet, mobile | Spot > Adjust chart settings (768) Chart display [Frame 341 402x247]; Spot > Adjust chart settings (768) Order display [Frame 342 402x179]; Spot > Adjust chart settings (768) Save CTA [CTA/button 402x50] | partial/frame-defect/done | [3931-88039](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3931-88039&m=dev) |
 | Trench | 6 | mobile | actual | frame-defect/partial | [9264-85987](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9264-85987&m=dev) |
@@ -405,8 +405,8 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | (section root) | 9 | desktop, tablet, mobile | - | done/partial | [4595-49807](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4595-49807&m=dev) |
 | Resume play | 7 | tablet, mobile, desktop | Search bar expanded | partial/done | [10940-216537](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10940-216537&m=dev) |
 | Casino > Bookie | 6 | tablet, mobile, desktop | referral; tiers | partial/done | [11017-157523](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11017-157523&m=dev) |
-| Sportsbook > Side panel | 5 | tablet, mobile, desktop | Lawn tennis | partial/not-started | [11132-173793](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11132-173793&m=dev) |
-| Sportsbook > Starting soon | 4 | tablet, desktop, mobile | Starting soon sport row (row 1318x64) on Skai > Play > Sportsbook > Starting soon [row 1318x64] | not-started/done | [11131-161786](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11131-161786&m=dev) |
+| Sportsbook > Side panel | 5 | tablet, mobile, desktop | Lawn tennis | partial | [11132-173793](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11132-173793&m=dev) |
+| Sportsbook > Starting soon | 4 | tablet, desktop, mobile | Starting soon sport row (row 1318x64) on Skai > Play > Sportsbook > Starting soon [row 1318x64] | partial/done | [11131-161786](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11131-161786&m=dev) |
 | Sportsbook > My bets | 4 | tablet, desktop, mobile | with values; empty | done/partial | [11131-119167](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11131-119167&m=dev) |
 | Casino > New games | 4 | tablet, mobile, desktop | Play > Casino > New games 768 [Frame 1000003833 708x1709] | done/partial | [11084-63426](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-63426&m=dev) |
 | Casino > Trending games | 4 | tablet, mobile, desktop | 768 Trending games collection screen [Frame 1000003833 708x1709] | done/partial | [11084-64943](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11084-64943&m=dev) |
