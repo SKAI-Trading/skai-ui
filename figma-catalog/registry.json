@@ -27428,8 +27428,7 @@
       "measuredViewport": "768x1024",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx",
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/"
+        "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
       "route": "/spot",
@@ -28458,9 +28457,8 @@
         "src/pages/trade/Spot.tsx"
       ],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
-        "src/components/trade/spot/LayoutGrip.tsx",
-        "src/pages/trade/Spot.tsx"
+        "src/pages/trade/Spot.tsx",
+        "src/components/trade/spot/LayoutGrip.tsx"
       ],
       "status": "partial",
       "route": "/spot",
@@ -29207,7 +29205,7 @@
       "measuredViewport": "375x1260",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/"
+        "src/pages/trade/Spot.tsx"
       ],
       "status": "done",
       "route": "/spot",
@@ -29233,7 +29231,6 @@
       "measuredViewport": "375x1290",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -29287,7 +29284,6 @@
       "measuredViewport": "375x1270",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -29987,8 +29983,7 @@
       "measuredViewport": "1440x900",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx",
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/"
+        "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
       "route": "/spot",
@@ -33638,7 +33633,6 @@
       "measuredViewport": "768x1024",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -34914,7 +34908,7 @@
         "src/pages/trade/Spot.tsx"
       ],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
+        "src/pages/trade/Spot.tsx",
         "src/components/trade/spot/LayoutGrip.tsx"
       ],
       "status": "partial",
@@ -35457,7 +35451,6 @@
       "measuredViewport": "768x1024",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -35615,7 +35608,6 @@
       "measuredViewport": "768x1024",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -35909,7 +35901,6 @@
       "measuredViewport": "375x812",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -35936,7 +35927,6 @@
       "measuredViewport": "375x812",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -37619,7 +37609,6 @@
       "measuredViewport": "375x812",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -37646,7 +37635,7 @@
       "measuredViewport": "375x812",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/"
+        "src/pages/trade/Spot.tsx"
       ],
       "status": "done",
       "route": "/spot",
@@ -37672,7 +37661,6 @@
       "measuredViewport": "375x1230",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
         "src/pages/trade/Spot.tsx"
       ],
       "status": "partial",
@@ -123233,9 +123221,8 @@
       "measuredViewport": "768x1024",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
-        "src/components/layout/LeftSidebar.tsx",
         "src/pages/trade/Spot.tsx",
+        "src/components/layout/LeftSidebar.tsx",
         "src/components/home-redesign/HomeSidebarExpanded.tsx",
         "src/components/trade/mobile/MobileTradeShell.tsx"
       ],
@@ -125561,9 +125548,8 @@
       "measuredViewport": "375x812",
       "citedByFiles": [],
       "implFiles": [
-        "src/pages/trade/Spot.tsx + src/components/trade/mobile/",
-        "src/components/layout/LeftSidebar.tsx",
         "src/pages/trade/Spot.tsx",
+        "src/components/layout/LeftSidebar.tsx",
         "src/components/trade/mobile/MobileTradeShell.tsx",
         "src/components/trade/spot/LayoutGrip.tsx"
       ],
