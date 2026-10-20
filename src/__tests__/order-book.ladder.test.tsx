@@ -248,6 +248,54 @@ describe("OrderBook ladder rows — report 1ec7f3d4", () => {
   });
 });
 
+/*
+  Report d97f0616, the other half of Hyperliquid's bar: its Total column is the
+  running total from the spread (81,453 0.23469 / 0.23469, then 81,456 1.29908
+  / 1.53377), and each bar is that figure over the deepest one drawn. A Total
+  that was each row's own notional beside a bar that runs cumulative put two
+  different readings of depth side by side, and a click on a row fills the
+  whole stack down to it, which only a running total names.
+*/
+describe("OrderBook Total column — report d97f0616", () => {
+  const totals = (view: ReturnType<typeof render>, label: string) =>
+    Array.from(
+      view.container
+        .querySelector(`[aria-label="${label}"]`)!
+        .querySelectorAll<HTMLElement>('[role="row"]'),
+    ).map((row) => row.querySelectorAll("span")[2].textContent);
+  const fixed = (v: number) => v.toFixed(2);
+
+  it("runs the notional from the spread outwards on each side", () => {
+    const view = render(<OrderBook data={deepBook} formatTotal={fixed} />);
+    expect(totals(view, "Bid orders")).toEqual([
+      "121723.00",
+      "243445.00",
+      "486887.00",
+      "973767.00",
+    ]);
+    expect(totals(view, "Ask orders")).toEqual([
+      "121788.00",
+      "243577.00",
+      "487157.00",
+      "974321.00",
+    ]);
+  });
+
+  it("draws a dash from the first level it cannot price, not a total that skips it", () => {
+    const view = render(
+      <OrderBook
+        data={{
+          ...deepBook,
+          bids: deepBook.bids.map((l, i) => (i === 1 ? { ...l, size: NaN } : l)),
+        }}
+        formatTotal={fixed}
+      />,
+    );
+    expect(totals(view, "Bid orders")).toEqual(["121723.00", "—", "—", "—"]);
+    expect(totals(view, "Ask orders")[3]).toBe("974321.00");
+  });
+});
+
 describe("OrderBook column header — report 1ec7f3d4", () => {
   it("carries the quote on the two columns denominated in it", () => {
     const { getByText, queryByText } = render(

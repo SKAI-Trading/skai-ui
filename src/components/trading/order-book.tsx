@@ -99,6 +99,18 @@ function depthScale(...sides: OrderBookLevel[][]): number {
 }
 
 /**
+ * The Total column: each row's notional added to every row between it and the
+ * spread, as Hyperliquid's book writes it. It is what a click on the row fills
+ * (the whole stack down to it), and it runs the way the depth bar beside it
+ * does. A level whose notional is not a number makes that row and every row
+ * past it NaN: a total that stepped over it would understate the stack.
+ */
+function runningTotals(shown: OrderBookLevel[]): number[] {
+  let sum = 0;
+  return shown.map((level) => (sum += level.size * level.price));
+}
+
+/**
  * Drawn wherever the book holds no figure. An em dash, deliberately not a zero
  * and deliberately not the ellipsis a loading row uses: "we cannot derive this"
  * and "this is still arriving" must never produce the same pixels.
@@ -408,6 +420,8 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
     // `total` is cumulative, so each bar grows away from the spread; both sides
     // are drawn against the one figure `depthScale` takes from the rows shown.
     const scale = depthScale(shownAsks, shownBids);
+    const askTotals = runningTotals(shownAsks);
+    const bidTotals = runningTotals(shownBids);
 
     // Price and Total are cash; Size is a quantity and is deliberately not
     // routed through either. Default preserves the previous toFixed output.
@@ -420,7 +434,11 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
     const totalMoney = (v: number) =>
       formatTotal ? formatTotal(v) : money(v);
 
-    const renderLevel = (level: OrderBookLevel, side: "bid" | "ask") => {
+    const renderLevel = (
+      level: OrderBookLevel,
+      side: "bid" | "ask",
+      runningTotal: number,
+    ) => {
       const flashId = flashing.get(flashKey(side, level.price));
       const isAsk = side === "ask";
       const depthPercent =
@@ -505,7 +523,9 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             {level.size.toFixed(sizePrecision)}
           </span>
           <span className="relative z-10 w-[70px] shrink-0 text-right text-white">
-            {totalMoney(level.size * level.price)}
+            {Number.isFinite(runningTotal)
+              ? totalMoney(runningTotal)
+              : UNKNOWN_FIGURE}
           </span>
         </div>
       );
@@ -552,8 +572,9 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             than the 55px column it names, and forcing it into that column would
             clip it. Price carries no suffix. Size and Total take DIFFERENT
             suffixes because they hold different units — Size is `level.size`,
-            a quantity of the base asset, while Total is `size * price`, a cash
-            amount in the quote. Labelling both with the quote read "Size (USD)
+            a quantity of the base asset, while Total is `size * price` run
+            from the spread (`runningTotals`), a cash amount in the quote.
+            Labelling both with the quote read "Size (USD)
             0.262338" against a price of 78,222.50, which is 0.262338 BTC
             announced as twenty-six cents. */}
         {/* ★ THE BAND IS RULED ON BOTH EDGES, and it had only the lower one.
@@ -658,7 +679,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             aria-label="Ask orders"
             className="flex-1 lg:flex-[15_1_0%] lg:min-h-min flex flex-col-reverse overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
           >
-            {shownAsks.map((ask) => renderLevel(ask, "ask"))}
+            {shownAsks.map((ask, i) => renderLevel(ask, "ask", askTotals[i]))}
           </div>
 
           {/* Spread row — `7712:29575` at 1440 and `9002:163859` at 768, which
@@ -701,7 +722,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             aria-label="Bid orders"
             className="flex-1 lg:flex-[16_1_0%] overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
           >
-            {shownBids.map((bid) => renderLevel(bid, "bid"))}
+            {shownBids.map((bid, i) => renderLevel(bid, "bid", bidTotals[i]))}
           </div>
         </div>
 
