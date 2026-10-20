@@ -127,7 +127,54 @@ describe("OrderBook depth bar — report ee0af2a5", () => {
 
   it("still sizes the bar by cumulative depth", () => {
     const l = ladder();
-    expect(l.bar(l.ask).style.width).toBe("100%");
+    // One scale for both sides (report d97f0616): the bid's 0.5 is the
+    // deepest row drawn, so it is the full width and the ask's 0.25 half.
+    expect(l.bar(l.bid).style.width).toBe("100%");
+    expect(l.bar(l.ask).style.width).toBe("50%");
+  });
+
+  /*
+    Report d97f0616 asks for the bars Hyperliquid draws. Read off its book
+    2026-10-20: every bar is the row's cumulative total over ONE figure, the
+    larger of the two sides' deepest cumulative totals among the rows on
+    screen (13.53703 against 77.00921 drew 17.5785%). So a thin side reads as
+    thin next to a deep one, and depth below the last row drawn shortens
+    nothing. The /spot frame agrees on the first half: 7712:29439's bars peak
+    at 228 on the asks and 171 on the bids of the same 277, which two sides
+    each stretched to their own full width cannot draw.
+  */
+  it("draws both sides on one scale, so a thin side reads as thin", () => {
+    const view = render(
+      <OrderBook
+        data={{ ...deepBook, asks: deepBook.asks.slice(0, 2) }}
+      />,
+    );
+    const widths = (label: string) =>
+      Array.from(
+        view.container
+          .querySelector(`[aria-label="${label}"]`)!
+          .querySelectorAll<HTMLElement>('[aria-hidden="true"]'),
+      ).map((bar) => bar.style.width);
+    expect(widths("Bid orders")).toEqual(["12.5%", "25%", "50%", "100%"]);
+    expect(widths("Ask orders")).toEqual(["12.5%", "25%"]);
+  });
+
+  it("scales to the rows it draws, not to depth handed over below them", () => {
+    const view = render(<OrderBook data={deepBook} levels={2} />);
+    const widths = (label: string) =>
+      Array.from(
+        view.container
+          .querySelector(`[aria-label="${label}"]`)!
+          .querySelectorAll<HTMLElement>('[aria-hidden="true"]'),
+      ).map((bar) => bar.style.width);
+    for (const label of ["Ask orders", "Bid orders"]) {
+      expect(widths(label)).toEqual(["50%", "100%"]);
+    }
+  });
+
+  it("stops the bar's width easing for a reader who asked for reduced motion", () => {
+    const l = ladder();
+    expect(tokens(l.bar(l.ask)).has("motion-reduce:transition-none")).toBe(true);
   });
 
   it("spreads the ramp across the ladder instead of filling every row", () => {
