@@ -1,3 +1,11 @@
+/**
+ * Row states follow DropdownMenu's (see overlays/dropdown-menu.tsx), which is
+ * what Social's "dropdown - right click" frame (3sSzw1KewMtUbeLAv7uW0r
+ * 10216:182394) draws: the action row under the pointer or the keyboard is
+ * filled Green Coal 100, and a value row that is not the current value washes
+ * Sky Blue/10 while the current one is filled (Casey 2026-10-06 Q10).
+ * `bg-accent` lit every focused row Alien Green in the app (report 6fb5fa86).
+ */
 import * as React from "react";
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
 import { Check, ChevronRight, Circle } from "lucide-react";
@@ -25,7 +33,7 @@ const ContextMenuSubTrigger = React.forwardRef<
   <ContextMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[state=open]:bg-accent data-[state=open]:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-border focus:text-popover-foreground data-[state=open]:bg-border",
       inset && "pl-8",
       className,
     )}
@@ -78,7 +86,7 @@ const ContextMenuItem = React.forwardRef<
   <ContextMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground",
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-border focus:text-popover-foreground",
       inset && "pl-8",
       className,
     )}
@@ -94,7 +102,7 @@ const ContextMenuCheckboxItem = React.forwardRef<
   <ContextMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-sky-blue/10 focus:text-popover-foreground",
       className,
     )}
     checked={checked}
@@ -118,7 +126,7 @@ const ContextMenuRadioItem = React.forwardRef<
   <ContextMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-sky-blue/10 focus:text-popover-foreground data-[state=checked]:bg-border",
       className,
     )}
     {...props}
