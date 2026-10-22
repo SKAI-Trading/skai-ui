@@ -9,8 +9,9 @@ const toggleVariants = cva(
     variants: {
       variant: {
         default: "bg-transparent",
-        outline:
-          "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
+        // The outline Button's wash. `hover:bg-accent` filled it Alien Green
+        // in the app (report 6fb5fa86); a pressed toggle keeps its fill.
+        outline: "border border-input bg-transparent hover:bg-sky-blue/10",
       },
       size: {
         default: "h-10 px-3",
