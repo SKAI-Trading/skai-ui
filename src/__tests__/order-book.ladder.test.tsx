@@ -127,7 +127,54 @@ describe("OrderBook depth bar — report ee0af2a5", () => {
 
   it("still sizes the bar by cumulative depth", () => {
     const l = ladder();
-    expect(l.bar(l.ask).style.width).toBe("100%");
+    // One scale for both sides (report d97f0616): the bid's 0.5 is the
+    // deepest row drawn, so it is the full width and the ask's 0.25 half.
+    expect(l.bar(l.bid).style.width).toBe("100%");
+    expect(l.bar(l.ask).style.width).toBe("50%");
+  });
+
+  /*
+    Report d97f0616 asks for the bars Hyperliquid draws. Read off its book
+    2026-10-20: every bar is the row's cumulative total over ONE figure, the
+    larger of the two sides' deepest cumulative totals among the rows on
+    screen (13.53703 against 77.00921 drew 17.5785%). So a thin side reads as
+    thin next to a deep one, and depth below the last row drawn shortens
+    nothing. The /spot frame agrees on the first half: 7712:29439's bars peak
+    at 228 on the asks and 171 on the bids of the same 277, which two sides
+    each stretched to their own full width cannot draw.
+  */
+  it("draws both sides on one scale, so a thin side reads as thin", () => {
+    const view = render(
+      <OrderBook
+        data={{ ...deepBook, asks: deepBook.asks.slice(0, 2) }}
+      />,
+    );
+    const widths = (label: string) =>
+      Array.from(
+        view.container
+          .querySelector(`[aria-label="${label}"]`)!
+          .querySelectorAll<HTMLElement>('[aria-hidden="true"]'),
+      ).map((bar) => bar.style.width);
+    expect(widths("Bid orders")).toEqual(["12.5%", "25%", "50%", "100%"]);
+    expect(widths("Ask orders")).toEqual(["12.5%", "25%"]);
+  });
+
+  it("scales to the rows it draws, not to depth handed over below them", () => {
+    const view = render(<OrderBook data={deepBook} levels={2} />);
+    const widths = (label: string) =>
+      Array.from(
+        view.container
+          .querySelector(`[aria-label="${label}"]`)!
+          .querySelectorAll<HTMLElement>('[aria-hidden="true"]'),
+      ).map((bar) => bar.style.width);
+    for (const label of ["Ask orders", "Bid orders"]) {
+      expect(widths(label)).toEqual(["50%", "100%"]);
+    }
+  });
+
+  it("stops the bar's width easing for a reader who asked for reduced motion", () => {
+    const l = ladder();
+    expect(tokens(l.bar(l.ask)).has("motion-reduce:transition-none")).toBe(true);
   });
 
   it("spreads the ramp across the ladder instead of filling every row", () => {
@@ -198,6 +245,54 @@ describe("OrderBook ladder rows — report 1ec7f3d4", () => {
     // The generic semantic pair is a different red and a different green.
     expect(tokens(askPrice).has("text-destructive")).toBe(false);
     expect(tokens(bidPrice).has("text-primary")).toBe(false);
+  });
+});
+
+/*
+  Report d97f0616, the other half of Hyperliquid's bar: its Total column is the
+  running total from the spread (81,453 0.23469 / 0.23469, then 81,456 1.29908
+  / 1.53377), and each bar is that figure over the deepest one drawn. A Total
+  that was each row's own notional beside a bar that runs cumulative put two
+  different readings of depth side by side, and a click on a row fills the
+  whole stack down to it, which only a running total names.
+*/
+describe("OrderBook Total column — report d97f0616", () => {
+  const totals = (view: ReturnType<typeof render>, label: string) =>
+    Array.from(
+      view.container
+        .querySelector(`[aria-label="${label}"]`)!
+        .querySelectorAll<HTMLElement>('[role="row"]'),
+    ).map((row) => row.querySelectorAll("span")[2].textContent);
+  const fixed = (v: number) => v.toFixed(2);
+
+  it("runs the notional from the spread outwards on each side", () => {
+    const view = render(<OrderBook data={deepBook} formatTotal={fixed} />);
+    expect(totals(view, "Bid orders")).toEqual([
+      "121723.00",
+      "243445.00",
+      "486887.00",
+      "973767.00",
+    ]);
+    expect(totals(view, "Ask orders")).toEqual([
+      "121788.00",
+      "243577.00",
+      "487157.00",
+      "974321.00",
+    ]);
+  });
+
+  it("draws a dash from the first level it cannot price, not a total that skips it", () => {
+    const view = render(
+      <OrderBook
+        data={{
+          ...deepBook,
+          bids: deepBook.bids.map((l, i) => (i === 1 ? { ...l, size: NaN } : l)),
+        }}
+        formatTotal={fixed}
+      />,
+    );
+    expect(totals(view, "Bid orders")).toEqual(["121723.00", "—", "—", "—"]);
+    expect(totals(view, "Ask orders")[3]).toBe("974321.00");
   });
 });
 
