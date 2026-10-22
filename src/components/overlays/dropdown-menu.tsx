@@ -3,8 +3,9 @@
  * Utilities boards (3sSzw1KewMtUbeLAv7uW0r, e.g. 11303:134267, 11314:138124)
  * and Trade 2's dropdown-add (13006:252891), which names the variables.
  *
- * - Panel: Green Coal 200, a 1px Green Coal 100 edge, radius 12, padding 8,
- *   8 between rows, and the "Input hint (dark)" shadow.
+ * - Panel: Green Coal 200, a 1px Green Coal 100 edge drawn inside the box
+ *   (menu-panel-edge.ts), radius 12, padding 8, 8 between rows, and the
+ *   "Input hint (dark)" shadow.
  * - Row: radius 4, padding 6 / 8, 8 between an icon and its text, Paragraph 2
  *   type (see menu-row-type.ts).
  * - One row is filled, Green Coal 100: the focused row in an action menu, the
@@ -31,10 +32,14 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Check, ChevronRight } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { menuRowType, menuRowTypeFor } from "./menu-row-type";
+import { panelEdge } from "./menu-panel-edge";
 
-/** Content and SubContent. `flex-col gap-2` is the frames' 8 between rows. */
+/**
+ * Content and SubContent. `flex-col gap-2` is the frames' 8 between rows. The
+ * edge comes from `panelEdge`, so the panel closes at 8 + rows + 8.
+ */
 const panelClass =
-  "z-50 flex min-w-[8rem] flex-col gap-2 overflow-hidden rounded-xl border border-border bg-popover p-2 text-popover-foreground shadow-inputHint data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2";
+  "z-50 flex min-w-[8rem] flex-col gap-2 overflow-hidden rounded-xl bg-popover p-2 text-popover-foreground shadow-inputHint data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2";
 
 /**
  * Every row. `shrink-0` keeps a row whole when the panel is height-capped and
@@ -106,7 +111,7 @@ const DropdownMenuSubContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.SubContent
     ref={ref}
-    className={cn(panelClass, className)}
+    className={cn(panelClass, panelEdge(className), className)}
     {...props}
   />
 ));
@@ -122,7 +127,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       collisionPadding={collisionPadding}
-      className={cn(panelClass, className)}
+      className={cn(panelClass, panelEdge(className), className)}
       {...props}
     />
   </DropdownMenuPrimitive.Portal>
@@ -218,14 +223,18 @@ const DropdownMenuLabel = React.forwardRef<
 ));
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
 
-/** Inside the padding, spaced by the panel's own 8 above and below. */
+/**
+ * Inside the padding, spaced by the panel's own 8 above and below. The frames
+ * draw a zero-height line with a 1px centre stroke, so the rule takes no room:
+ * 1 tall, half a pixel out above and below.
+ */
 const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
-    className={cn("h-px shrink-0 bg-border", className)}
+    className={cn("-my-[0.5px] h-px shrink-0 bg-border", className)}
     {...props}
   />
 ));

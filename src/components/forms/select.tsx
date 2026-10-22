@@ -1,13 +1,14 @@
 /**
  * The open panel follows the same dropdown frames as DropdownMenu (see the note
- * at the top of overlays/dropdown-menu.tsx): radius 12, a Green Coal 100 edge,
- * the "Input hint (dark)" shadow, 8 of inset and 8 between rows, Paragraph 2
- * rows at radius 4, and the current value filled instead of checked.
+ * at the top of overlays/dropdown-menu.tsx): radius 12, a Green Coal 100 edge
+ * drawn inside the box (overlays/menu-panel-edge.ts), the "Input hint (dark)"
+ * shadow, 8 of inset and 8 between rows, Paragraph 2 rows at radius 4, and the
+ * current value filled instead of checked.
  *
  * The 8 of inset sits on the Viewport, not on Content. The Viewport carries the
  * popper's `min-w` of the trigger width, so padding inside it keeps the panel
- * the trigger's width plus its edge; padding on Content would widen every
- * panel by 8. It also leaves callers that pad the Viewport through
+ * the trigger's width (the edge takes no room); padding on Content would widen
+ * every panel by 8. It also leaves callers that pad the Viewport through
  * `[&_[data-radix-select-viewport]]:p-2` (MemberList, TradingGroups) at their
  * own 8 instead of adding to it.
  *
@@ -28,6 +29,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { menuRowType } from "../overlays/menu-row-type";
+import { panelEdge } from "../overlays/menu-panel-edge";
 
 const Select = SelectPrimitive.Root;
 
@@ -121,7 +123,8 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-inputHint data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-xl bg-popover text-popover-foreground shadow-inputHint data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        panelEdge(className),
         position === "popper" &&
           "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
         className,
@@ -186,7 +189,7 @@ const SelectSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Separator
     ref={ref}
-    className={cn("h-px shrink-0 bg-border", className)}
+    className={cn("-my-[0.5px] h-px shrink-0 bg-border", className)}
     {...props}
   />
 ));

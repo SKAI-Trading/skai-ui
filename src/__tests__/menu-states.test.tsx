@@ -6,7 +6,8 @@
  * (mhF3BkzlTaGiLzJ7kvpmVc 13006:252891), which names the bound variables.
  *
  * Panel: radius 12, padding 8, 8 between children, Green Coal 200 fill, 1px
- * Green Coal 100 edge, "Input hint (dark)". Row: radius 4, padding 6 / 8, 8
+ * Green Coal 100 edge drawn INSIDE the box (it takes no room, so the panel is
+ * 8 + rows + 8), "Input hint (dark)". Row: radius 4, padding 6 / 8, 8
  * from an icon to its text, Paragraph 2 (12/14, 12/16, 14/18). One filled row,
  * Green Coal 100. No check or dot column; the text starts 8 from the row edge.
  *
@@ -89,7 +90,10 @@ function expectFramesRowType(cls: string[]) {
 function expectFramesPanel(cls: string[]) {
   expect(cls).toContain("rounded-xl");
   expect(skaiBorderRadius.xl).toBe("12px");
-  expect(cls).toEqual(expect.arrayContaining(["border", "border-border", "bg-popover"]));
+  // The edge is an inset ring, not a CSS border: a border is laid out inside
+  // the box and stood the panel 2 taller and 2 wider, its rows 9 in.
+  expect(cls).toEqual(expect.arrayContaining(["border-0", "ring-1", "ring-inset", "ring-border", "bg-popover"]));
+  for (const edge of ["border", "border-border"]) expect(cls).not.toContain(edge);
   expect(cls).toContain("shadow-inputHint");
   expect(skaiShadows.inputHint).toBe("0px 4px 12px rgba(0, 0, 0, 0.24)");
   for (const old of ["rounded-md", "shadow-md", "shadow-lg"]) expect(cls).not.toContain(old);
@@ -169,6 +173,111 @@ function backgroundOf(row: Element, rules: BackgroundRule[]): string | undefined
   return hits[hits.length - 1]?.value;
 }
 
+interface Edge {
+  /** The border width the box lays out, or undefined when no class sets one. */
+  borderWidth: string | undefined;
+  /** The ring's inset flag, width and colour, and whether the final box-shadow paints the ring at all. */
+  ringInset: string | undefined;
+  ringShadow: string | undefined;
+  ringColor: string | undefined;
+  paintsRing: boolean;
+  paintsShadow: boolean;
+}
+
+/**
+ * The panel's edge as this preset compiles the classes on it: each plain
+ * `.class` rule applied in the order Tailwind emits them, the last one winning.
+ */
+async function edgeOf(el: Element): Promise<Edge> {
+  const own = (el.getAttribute("class") ?? "").split(/\s+/).filter(Boolean);
+  const config = {
+    presets: [skaiPreset],
+    content: [{ raw: own.join(" "), extension: "txt" }],
+    corePlugins: { preflight: false },
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { css } = await postcss([tailwindcss(config as any)]).process("@tailwind utilities;", { from: undefined });
+  const decls = new Map<string, string>();
+  postcss.parse(css).walkRules((rule) => {
+    if (rule.parent?.type !== "root") return;
+    const plain = rule.selectors.some((sel) => {
+      if (!sel.startsWith(".")) return false;
+      let name = "";
+      for (let i = 1; i < sel.length; i++) {
+        const ch = sel[i];
+        if (ch === BACKSLASH) name += sel[++i];
+        else if (ch === ":" || ch === "[" || ch === " " || ch === ">" || ch === ".") return false;
+        else name += ch;
+      }
+      return own.includes(name);
+    });
+    if (!plain) return;
+    rule.walkDecls((decl) => {
+      decls.set(decl.prop, decl.value.trim());
+    });
+  });
+  const shadow = decls.get("box-shadow") ?? "";
+  return {
+    borderWidth: decls.get("border-width"),
+    ringInset: decls.get("--tw-ring-inset"),
+    ringShadow: decls.get("--tw-ring-shadow"),
+    ringColor: decls.get("--tw-ring-color"),
+    paintsRing: shadow.includes("var(--tw-ring-shadow"),
+    paintsShadow: shadow.includes("var(--tw-shadow"),
+  };
+}
+
+/**
+ * What a rule costs the column it sits in: its height plus its top and bottom
+ * margins, as this preset compiles the classes on it.
+ */
+async function blockCost(el: Element): Promise<{ height: number; net: number }> {
+  const own = (el.getAttribute("class") ?? "").split(/\s+/).filter(Boolean);
+  const config = {
+    presets: [skaiPreset],
+    content: [{ raw: own.join(" "), extension: "txt" }],
+    corePlugins: { preflight: false },
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { css } = await postcss([tailwindcss(config as any)]).process("@tailwind utilities;", { from: undefined });
+  const decls = new Map<string, string>();
+  postcss.parse(css).walkRules((rule) => {
+    if (rule.parent?.type !== "root" || rule.selector.includes(":")) return;
+    rule.walkDecls((decl) => {
+      decls.set(decl.prop, decl.value.trim());
+    });
+  });
+  const len = (v: string | undefined) => {
+    if (!v) return 0;
+    const m = v.match(/^(-?[0-9.]+)(px|rem)$/);
+    if (!m) throw new Error(`Unresolvable length: ${v}`);
+    return m[2] === "rem" ? parseFloat(m[1]) * 16 : parseFloat(m[1]);
+  };
+  const height = len(decls.get("height"));
+  return { height, net: height + len(decls.get("margin-top")) + len(decls.get("margin-bottom")) };
+}
+
+/** The frames' rule: a zero-height line with a 1px centre stroke, so it adds nothing between the 8s. */
+async function expectCentreStroke(el: Element) {
+  expect(members(el)).toEqual(expect.arrayContaining(["h-px", "shrink-0", "bg-border"]));
+  const cost = await blockCost(el);
+  expect(cost.height).toBe(1);
+  expect(cost.net).toBe(0);
+  // Never the old bleed into the padding.
+  expect(members(el).filter((c) => /^-?mx-/.test(c))).toEqual([]);
+}
+
+/** The frames' edge: no laid-out border, a 1px inset ring in the border colour, under the drop shadow. */
+async function expectInsideStroke(el: Element) {
+  const edge = await edgeOf(el);
+  expect(edge.borderWidth).toBe("0px");
+  expect(edge.ringInset).toBe("inset");
+  expect(edge.ringShadow).toMatch(/calc\(1px \+ var\(--tw-ring-offset-width\)\)/);
+  expect(edge.ringColor).toBe("hsl(var(--border))");
+  expect(edge.paintsRing).toBe(true);
+  expect(edge.paintsShadow).toBe(true);
+}
+
 /** The two values Q10 asks for, as this preset compiles them. */
 const WASH = "rgb(86 199 243 / 0.1)";
 const FILL = "hsl(var(--border))";
@@ -222,6 +331,59 @@ describe("DropdownMenu panel", () => {
     );
     expect(cls).toEqual(expect.arrayContaining(["p-0", "rounded-[8px]", "border-green-coal-100"]));
     for (const lost of ["p-2", "rounded-xl", "border-border"]) expect(cls).not.toContain(lost);
+  });
+
+  it("draws its edge inside the box, so the panel is 8 + rows + 8 as the frames close it", async () => {
+    const panel = openDropdown(<DropdownMenuItem>Share</DropdownMenuItem>);
+    await expectInsideStroke(panel);
+    expect(members(panel)).toContain("p-2");
+  });
+
+  it("a submenu draws the same inside edge", async () => {
+    render(
+      <DropdownMenu defaultOpen>
+        <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuSub open>
+            <DropdownMenuSubTrigger>More</DropdownMenuSubTrigger>
+            <DropdownMenuSubContent data-testid="sub-panel">
+              <DropdownMenuItem>Inner</DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+        </DropdownMenuContent>
+      </DropdownMenu>,
+    );
+    await expectInsideStroke(screen.getByTestId("sub-panel"));
+  });
+
+  it("a caller that styles the edge itself keeps its CSS border and gets no ring over it", async () => {
+    // A colour of its own: the border it names, 1px, in that colour.
+    const coloured = openDropdown(<DropdownMenuItem>Share</DropdownMenuItem>, "border-white/10");
+    expect(members(coloured)).toEqual(expect.arrayContaining(["border", "border-white/10"]));
+    const own = await edgeOf(coloured);
+    expect(own.borderWidth).toBe("1px");
+    expect(own.ringShadow).toBeUndefined();
+    cleanup();
+    // No edge at all: border-0, and no ring added back.
+    const bare = openDropdown(<DropdownMenuItem>Share</DropdownMenuItem>, "border-0 shadow-none");
+    const none = await edgeOf(bare);
+    expect(none.borderWidth).toBe("0px");
+    expect(none.ringShadow).toBeUndefined();
+    cleanup();
+    // A ring of its own, on border-0: its colour, not the default's.
+    const ringed = openDropdown(
+      <DropdownMenuItem>Share</DropdownMenuItem>,
+      "border-0 ring-1 ring-inset ring-green-coal-100",
+    );
+    const theirs = await edgeOf(ringed);
+    expect(theirs.borderWidth).toBe("0px");
+    expect(theirs.ringInset).toBe("inset");
+    expect(theirs.ringColor).not.toBe("hsl(var(--border))");
+  });
+
+  it("a border on a descendant, behind an arbitrary selector, is not the panel's edge", async () => {
+    const panel = openDropdown(<DropdownMenuItem>Share</DropdownMenuItem>, "[&>div]:border-b");
+    await expectInsideStroke(panel);
   });
 });
 
@@ -293,7 +455,9 @@ describe("DropdownMenu rows", () => {
     );
   });
 
-  it("the separator sits inside the padding, spaced by the panel's own 8", () => {
+  it("the separator sits inside the padding, spaced by the panel's own 8, and takes no height", async () => {
+    // The frames' line is a zero-height vector with a 1px centre stroke, so
+    // 11314:138124 closes at 8 + 30 + 8 + 0 + 8 + 30 + 8 = 92.
     openDropdown(
       <>
         <DropdownMenuItem>View on Skaiscan</DropdownMenuItem>
@@ -301,9 +465,7 @@ describe("DropdownMenu rows", () => {
         <DropdownMenuItem>Follow</DropdownMenuItem>
       </>,
     );
-    const cls = members(screen.getByTestId("rule"));
-    expect(cls).toEqual(expect.arrayContaining(["h-px", "shrink-0", "bg-border"]));
-    expect(cls.filter((c) => /^-?m[xytb]?-/.test(c))).toEqual([]);
+    await expectCentreStroke(screen.getByTestId("rule"));
   });
 
   it("a value menu fills the current value and draws no dot", () => {
@@ -444,6 +606,19 @@ describe("Select panel", () => {
     expect(ownPadding(vp)).toEqual(["p-2"]);
   });
 
+  it("draws its edge inside the box, so the panel is the trigger's width, not the trigger plus 2", async () => {
+    const { panel } = openSelect();
+    await expectInsideStroke(panel);
+  });
+
+  it("a caller that styles the edge itself keeps its CSS border", async () => {
+    const { panel } = openSelect("border-green-coal-100 shadow-md");
+    expect(members(panel)).toContain("border");
+    const edge = await edgeOf(panel);
+    expect(edge.borderWidth).toBe("1px");
+    expect(edge.ringShadow).toBeUndefined();
+  });
+
   it("a caller that pads Content keeps today's 4 on the Viewport, so its inset does not move", () => {
     for (const pad of ["p-1", "md:px-2", "!pt-0"]) {
       const { panel, viewport } = openSelect(`${pad} rounded-xl border-green-coal-100 bg-green-coal-200`);
@@ -562,7 +737,7 @@ describe("Select rows", () => {
     expect(cls.filter((c) => /^(md:|lg:)?text-para-/.test(c))).toEqual([]);
   });
 
-  it("sections: a group spaces like the panel, its label lines up with the rows, the rule has no margin", async () => {
+  it("sections: a group spaces like the panel, its label lines up with the rows, the rule takes no height", async () => {
     render(
       <Select defaultValue="a" open>
         <SelectTrigger>
@@ -585,9 +760,7 @@ describe("Select rows", () => {
     const label = members(screen.getByTestId("label"));
     expect(label).toContain("px-2");
     expect(label).not.toContain("pl-8");
-    const rule = members(screen.getByTestId("rule"));
-    expect(rule).toEqual(expect.arrayContaining(["h-px", "shrink-0", "bg-border"]));
-    expect(rule.filter((c) => /^-?m[xytb]?-/.test(c))).toEqual([]);
+    await expectCentreStroke(screen.getByTestId("rule"));
   });
 
   it("opening by the trigger still selects (no behaviour moved)", async () => {
