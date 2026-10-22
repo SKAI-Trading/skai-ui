@@ -1,5 +1,7 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
+import { semanticColors } from "../../lib/design-tokens";
+import { durations, easings, easingToCss } from "../../lib/motion-tokens";
 import { Activity } from "lucide-react";
 
 /**
@@ -22,6 +24,91 @@ const ASK_DEPTH_FILL =
   "linear-gradient(to right, rgba(251, 51, 36, 0.04), rgba(251, 51, 36, 0.24))";
 const BID_DEPTH_FILL =
   "linear-gradient(to right, rgba(23, 249, 180, 0.04), rgba(23, 249, 180, 0.14))";
+
+/**
+ * The highlight a level takes when the book changes AT ITS PRICE (report
+ * d97f0616): a fill took some of it, a maker added to it, or it is a price
+ * that was not on that side before. No frame draws one, so the behaviour is
+ * Hyperliquid's, read off app.hyperliquid.xyz on 2026-10-20, in our paints:
+ *
+ * - an overlay over the whole row, between the depth bar and the figures;
+ * - opacity 0, up to full a fifth of the way in, back to 0 at 800 ms;
+ * - its start held back by a fixed offset per row, counted from the spread,
+ *   so a sweep through several levels ripples instead of blinking in step;
+ * - a row already lit is not restarted by a second change inside its 800.
+ *
+ * The paints are the side's `-O` overlay styles, App/Red-O (#FB3324 at 34%)
+ * and App/Green-O (#17F9B4 at 24%), the same reds and greens the depth ramp
+ * runs to, at the weight the design system gives an overlay. 800 ms is the
+ * `slowest` motion token.
+ *
+ * The keyframes run on the element (`Element.animate`) for the same reason the
+ * depth fills are inline: a class would only survive a consuming app whose
+ * Tailwind build happens to reach this bundle. The overlay sits at opacity 0,
+ * so wherever the animation cannot run nothing is drawn rather than a tint
+ * that never fades.
+ */
+const FLASH_FILL = {
+  ask: semanticColors.red.opacity34,
+  bid: semanticColors.green.opacity24,
+} as const;
+const FLASH_MS = durations.slowest;
+const FLASH_FRAMES: Keyframe[] = [
+  { opacity: 0 },
+  { opacity: 1, offset: 0.2 },
+  { opacity: 0 },
+];
+const FLASH_TIMING: KeyframeAnimationOptions = {
+  duration: FLASH_MS,
+  easing: easingToCss(easings.standard),
+  fill: "forwards",
+};
+/** Start offsets in 50 ms steps, by row from the spread, ten rows a cycle. */
+const FLASH_STAGGER = [0, 8, 4, 3, 2, 5, 7, 1, 9, 6] as const;
+const FLASH_STAGGER_MS = 50;
+
+const flashKey = (side: "bid" | "ask", price: number) => `${side}:${price}`;
+
+function startFlash(el: HTMLDivElement | null) {
+  el?.animate?.(FLASH_FRAMES, FLASH_TIMING);
+}
+
+function prefersReducedMotion(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+}
+
+/**
+ * The figure every depth bar is drawn against: the larger of the two sides'
+ * deepest cumulative totals among the rows on screen, as Hyperliquid scales
+ * its book. One scale for both sides, so a thin side reads as thin beside a
+ * deep one, and depth below the last row drawn does not shorten the rows that
+ * are. 0 when no drawn row has a positive total.
+ */
+function depthScale(...sides: OrderBookLevel[][]): number {
+  let max = 0;
+  for (const side of sides) {
+    for (const level of side) {
+      if (Number.isFinite(level.total) && level.total > max) max = level.total;
+    }
+  }
+  return max;
+}
+
+/**
+ * The Total column: each row's notional added to every row between it and the
+ * spread, as Hyperliquid's book writes it. It is what a click on the row fills
+ * (the whole stack down to it), and it runs the way the depth bar beside it
+ * does. A level whose notional is not a number makes that row and every row
+ * past it NaN: a total that stepped over it would understate the stack.
+ */
+function runningTotals(shown: OrderBookLevel[]): number[] {
+  let sum = 0;
+  return shown.map((level) => (sum += level.size * level.price));
+}
 
 /**
  * Drawn wherever the book holds no figure. An em dash, deliberately not a zero
@@ -162,11 +249,17 @@ export interface OrderBookProps {
    * before the split keep their old labels.
    */
   baseCurrency?: string;
-  /** Show cumulative depth bars */
+  /** Show cumulative depth bars, both sides on one scale (see `depthScale`). */
   showDepthBars?: boolean;
   /** Custom className */
   className?: string;
-  /** Highlight changes with animation */
+  /**
+   * Light a level for a moment when the book changes at its price: its size
+   * moved, or it was not on that side before. Never on the first book a mount
+   * is given, never for reduced motion. A caller that switches market or tick
+   * keys the widget on it, so the new ladder starts dark instead of lighting
+   * every row.
+   */
   highlightChanges?: boolean;
 }
 
@@ -233,13 +326,19 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
     },
     ref,
   ) => {
-    const [priceChanges, setPriceChanges] = React.useState<
-      Record<string, "up" | "down" | null>
-    >({});
-    const prevPricesRef = React.useRef<Map<string, number>>(new Map());
-    // Track every flash-clear timer so we can cancel them on unmount. A live
-    // order book fires these continuously; without cleanup each unmount leaks
-    // a pending setTimeout that calls setState on an unmounted component.
+    // Levels lit right now: flashKey -> the time that highlight ends, which is
+    // also its identity (the overlay's key, and what its end timer checks).
+    const [flashing, setFlashing] = React.useState<ReadonlyMap<string, number>>(
+      () => new Map(),
+    );
+    // Size at every price of the last book, per side. null until the first
+    // book, which is never compared with anything.
+    const prevSizesRef = React.useRef<Map<string, number> | null>(null);
+    // When each level's current highlight ends, so a second change inside it
+    // does not restart it.
+    const flashEndsRef = React.useRef<Map<string, number>>(new Map());
+    // Every pending start and end, cancelled on unmount: a live book schedules
+    // these continuously, and a leaked one sets state on an unmounted widget.
     const flashTimersRef = React.useRef<Set<ReturnType<typeof setTimeout>>>(
       new Set(),
     );
@@ -252,44 +351,52 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       };
     }, []);
 
-    // Track price changes for animation
+    // The book is compared by price, not by row. The widget used to key this
+    // on row position and compare prices, which lit every row below a level
+    // that came or went (each now held its neighbour's price) and never lit
+    // the level a fill actually changed, whose price had not moved.
     React.useEffect(() => {
-      if (!data || !highlightChanges) return;
+      if (!data) return;
+      const sizes = new Map<string, number>();
+      for (const level of data.asks) sizes.set(flashKey("ask", level.price), level.size);
+      for (const level of data.bids) sizes.set(flashKey("bid", level.price), level.size);
+      const prev = prevSizesRef.current;
+      prevSizesRef.current = sizes;
+      if (!prev || !highlightChanges || prefersReducedMotion()) return;
 
-      const newChanges: Record<string, "up" | "down" | null> = {};
-
-      const scheduleClear = (key: string) => {
+      const now = Date.now();
+      const later = (ms: number, run: () => void) => {
         const timer = setTimeout(() => {
           flashTimersRef.current.delete(timer);
-          setPriceChanges((prev) => ({ ...prev, [key]: null }));
-        }, 300);
+          run();
+        }, ms);
         flashTimersRef.current.add(timer);
       };
-
-      data.bids.forEach((bid, idx) => {
-        const key = `bid-${idx}`;
-        const prevPrice = prevPricesRef.current.get(key);
-        if (prevPrice !== undefined && prevPrice !== bid.price) {
-          newChanges[key] = bid.price > prevPrice ? "up" : "down";
-          scheduleClear(key);
-        }
-        prevPricesRef.current.set(key, bid.price);
-      });
-
-      data.asks.forEach((ask, idx) => {
-        const key = `ask-${idx}`;
-        const prevPrice = prevPricesRef.current.get(key);
-        if (prevPrice !== undefined && prevPrice !== ask.price) {
-          newChanges[key] = ask.price > prevPrice ? "up" : "down";
-          scheduleClear(key);
-        }
-        prevPricesRef.current.set(key, ask.price);
-      });
-
-      if (Object.keys(newChanges).length > 0) {
-        setPriceChanges((prev) => ({ ...prev, ...newChanges }));
-      }
-    }, [data, highlightChanges]);
+      const light = (side: "bid" | "ask", shown: OrderBookLevel[]) => {
+        shown.forEach((level, idx) => {
+          const key = flashKey(side, level.price);
+          // Object.is, so a size that reads NaN on both books is no change.
+          if (prev.has(key) && Object.is(prev.get(key), level.size)) return;
+          if ((flashEndsRef.current.get(key) ?? 0) > now) return;
+          const delay = FLASH_STAGGER[idx % FLASH_STAGGER.length] * FLASH_STAGGER_MS;
+          const end = now + delay + FLASH_MS;
+          flashEndsRef.current.set(key, end);
+          later(delay, () => setFlashing((on) => new Map(on).set(key, end)));
+          // Clears only its own highlight: a timer that fires late must not
+          // put out the next one on the same level.
+          later(delay + FLASH_MS, () =>
+            setFlashing((on) => {
+              if (on.get(key) !== end) return on;
+              const next = new Map(on);
+              next.delete(key);
+              return next;
+            }),
+          );
+        });
+      };
+      light("ask", data.asks.slice(0, askLevels));
+      light("bid", data.bids.slice(0, bidLevels));
+    }, [data, highlightChanges, askLevels, bidLevels]);
 
     if (loading || !data) {
       return (
@@ -308,13 +415,13 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
       );
     }
 
-    // `total` is cumulative, so the deepest level of a side is its last one and
-    // that level is the bar's denominator. Note the denominator is drawn from
-    // everything the caller supplied, while only `levels` rows are rendered: a
-    // caller that hands over more depth than it asks to show shortens every
-    // visible bar by the ratio between the two.
-    const maxBidTotal = data.bids[data.bids.length - 1]?.total || 1;
-    const maxAskTotal = data.asks[data.asks.length - 1]?.total || 1;
+    const shownAsks = data.asks.slice(0, askLevels);
+    const shownBids = data.bids.slice(0, bidLevels);
+    // `total` is cumulative, so each bar grows away from the spread; both sides
+    // are drawn against the one figure `depthScale` takes from the rows shown.
+    const scale = depthScale(shownAsks, shownBids);
+    const askTotals = runningTotals(shownAsks);
+    const bidTotals = runningTotals(shownBids);
 
     // Price and Total are cash; Size is a quantity and is deliberately not
     // routed through either. Default preserves the previous toFixed output.
@@ -329,14 +436,15 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
 
     const renderLevel = (
       level: OrderBookLevel,
-      idx: number,
       side: "bid" | "ask",
+      runningTotal: number,
     ) => {
-      const key = `${side}-${idx}`;
-      const change = priceChanges[key];
+      const flashId = flashing.get(flashKey(side, level.price));
       const isAsk = side === "ask";
-      const maxTotal = isAsk ? maxAskTotal : maxBidTotal;
-      const depthPercent = showDepthBars ? (level.total / maxTotal) * 100 : 0;
+      const depthPercent =
+        showDepthBars && scale > 0 && Number.isFinite(level.total)
+          ? Math.min(100, Math.max(0, (level.total / scale) * 100))
+          : 0;
 
       const isInteractive = !!onPriceClick || !!onRowDoubleClick;
 
@@ -373,21 +481,31 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             // stops the digits shifting sideways as the ladder reprices.
             "relative flex items-center justify-between px-4 py-px",
             "font-mulish text-xs leading-4 tracking-[-0.48px] tabular-nums",
-            "transition-all duration-200 cursor-pointer select-none",
+            "transition-all duration-200 motion-reduce:transition-none cursor-pointer select-none",
             isAsk
               ? "hover:bg-skai-red-300/10"
               : "hover:bg-alien-green-bright/10",
-            change === "up" && "bg-alien-green-bright/20",
-            change === "down" && "bg-skai-red-300/20",
           )}
         >
           {showDepthBars && (
             <div
-              className="absolute left-0 top-1/2 h-4 -translate-y-1/2 transition-all duration-300"
+              className="absolute left-0 top-1/2 h-4 -translate-y-1/2 transition-all duration-300 motion-reduce:transition-none"
               style={{
                 width: `${depthPercent}%`,
                 backgroundImage: isAsk ? ASK_DEPTH_FILL : BID_DEPTH_FILL,
               }}
+              aria-hidden="true"
+            />
+          )}
+          {/* After the bar, so it paints over it; the figures' z-10 keeps them
+              on top. See FLASH_FILL. */}
+          {flashId !== undefined && (
+            <div
+              key={flashId}
+              ref={startFlash}
+              data-book-flash={side}
+              className="pointer-events-none absolute inset-0"
+              style={{ backgroundColor: FLASH_FILL[side], opacity: 0 }}
               aria-hidden="true"
             />
           )}
@@ -405,7 +523,9 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             {level.size.toFixed(sizePrecision)}
           </span>
           <span className="relative z-10 w-[70px] shrink-0 text-right text-white">
-            {totalMoney(level.size * level.price)}
+            {Number.isFinite(runningTotal)
+              ? totalMoney(runningTotal)
+              : UNKNOWN_FIGURE}
           </span>
         </div>
       );
@@ -452,8 +572,9 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             than the 55px column it names, and forcing it into that column would
             clip it. Price carries no suffix. Size and Total take DIFFERENT
             suffixes because they hold different units — Size is `level.size`,
-            a quantity of the base asset, while Total is `size * price`, a cash
-            amount in the quote. Labelling both with the quote read "Size (USD)
+            a quantity of the base asset, while Total is `size * price` run
+            from the spread (`runningTotals`), a cash amount in the quote.
+            Labelling both with the quote read "Size (USD)
             0.262338" against a price of 78,222.50, which is 0.262338 BTC
             announced as twenty-six cents. */}
         {/* ★ THE BAND IS RULED ON BOTH EDGES, and it had only the lower one.
@@ -558,9 +679,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             aria-label="Ask orders"
             className="flex-1 lg:flex-[15_1_0%] lg:min-h-min flex flex-col-reverse overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
           >
-            {data.asks
-              .slice(0, askLevels)
-              .map((ask, idx) => renderLevel(ask, idx, "ask"))}
+            {shownAsks.map((ask, i) => renderLevel(ask, "ask", askTotals[i]))}
           </div>
 
           {/* Spread row — `7712:29575` at 1440 and `9002:163859` at 768, which
@@ -603,9 +722,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             aria-label="Bid orders"
             className="flex-1 lg:flex-[16_1_0%] overflow-y-auto scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent"
           >
-            {data.bids
-              .slice(0, bidLevels)
-              .map((bid, idx) => renderLevel(bid, idx, "bid"))}
+            {shownBids.map((bid, i) => renderLevel(bid, "bid", bidTotals[i]))}
           </div>
         </div>
 

@@ -114,6 +114,13 @@ const CommandSeparator = React.forwardRef<
 ));
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
+/**
+ * The highlighted row is an action row, filled Green Coal 100 as a dropdown's
+ * pointer row is (see overlays/dropdown-menu.tsx). It is the only mark of the
+ * row Enter runs, since focus stays in the input, and this fill reads in both
+ * themes where a Sky Blue/10 wash all but vanishes on a white popover.
+ * `bg-accent` lit it Alien Green in the app (report 6fb5fa86).
+ */
 const CommandItem = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
@@ -121,7 +128,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50",
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected=true]:bg-border data-[selected=true]:text-popover-foreground data-[disabled=true]:opacity-50",
       className,
     )}
     {...props}
