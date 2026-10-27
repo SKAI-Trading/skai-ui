@@ -694,6 +694,31 @@ function cmdProbeScript(args) {
   process.stdout.write(probeScript(fileKey, cands.map((c) => c.id)) + "\n");
 }
 
+// Fold one probe payload into `resolved` (mutated); returns [alive, gone].
+export function mergeProbe(resolved, doc, stamp, log = () => {}) {
+  let alive = 0;
+  let gone = 0;
+  for (const r of doc.results) {
+    const id = hyphen(r[0]);
+    if (r[1] === 1) {
+      const [, , type, name, depth, topId, pageId, pageName] = r;
+      resolved.found[id] = { fileKey: doc.fileKey, type, name, depth, topLevelId: hyphen(topId), pageId: pageId ? hyphen(pageId) : null, pageName, probedAt: stamp };
+      delete resolved.notFound[id];
+      alive++;
+      log(`  alive   ${id}\t${type}\tdepth ${depth}\tunder ${hyphen(topId)}\t${pageName}\t${name}`);
+    } else {
+      resolved.notFound[id] = { fileKey: doc.fileKey, probedAt: stamp };
+      // An older probe's "alive" answer for the same file must go too: to-snapshot reads only `found`,
+      // so leaving it keeps a deleted id in the snapshot as nested-alive and drift never reports it.
+      if (resolved.found[id]?.fileKey === doc.fileKey) delete resolved.found[id];
+      gone++;
+      log(`  GONE    ${id}\t(getNodeByIdAsync returned null after loading every page of ${doc.fileKey})`);
+    }
+  }
+  resolved.probes.push({ at: stamp, fileKey: doc.fileKey, checked: doc.results.length, found: alive });
+  return [alive, gone];
+}
+
 function cmdProbeIngest(args) {
   const write = args.includes("--write");
   const files = args.filter((a) => !a.startsWith("--"));
@@ -709,21 +734,9 @@ function cmdProbeIngest(args) {
   for (const file of files) {
     const doc = readJson(file);
     if (doc.probe !== 1 || !doc.fileKey || !Array.isArray(doc.results)) die(`${file}: not a probe payload`);
-    for (const r of doc.results) {
-      const id = hyphen(r[0]);
-      if (r[1] === 1) {
-        const [, , type, name, depth, topId, pageId, pageName] = r;
-        resolved.found[id] = { fileKey: doc.fileKey, type, name, depth, topLevelId: hyphen(topId), pageId: pageId ? hyphen(pageId) : null, pageName, probedAt: stamp };
-        delete resolved.notFound[id];
-        found++;
-        console.log(`  alive   ${id}\t${type}\tdepth ${depth}\tunder ${hyphen(topId)}\t${pageName}\t${name}`);
-      } else {
-        resolved.notFound[id] = { fileKey: doc.fileKey, probedAt: stamp };
-        missing++;
-        console.log(`  GONE    ${id}\t(getNodeByIdAsync returned null after loading every page of ${doc.fileKey})`);
-      }
-    }
-    resolved.probes.push({ at: stamp, fileKey: doc.fileKey, checked: doc.results.length, found: doc.results.filter((r) => r[1] === 1).length });
+    const [a, g] = mergeProbe(resolved, doc, stamp, (line) => console.log(line));
+    found += a;
+    missing += g;
   }
   resolved.resolvedAt = stamp;
   resolved.foundCount = Object.keys(resolved.found).length;
@@ -953,6 +966,15 @@ function selfTest() {
     check("verify: a page with no live/ file is never equal; an unlisted page is NEW", r.unknown.length === 2 && r.equal.length === 0 && r.changed.length === 0, JSON.stringify(r));
     const r2 = compareVerify([{ verify: 1, fileKey: "F", pages: [["1:1", "✅ Home renamed", 0, fnv1a("")]] }], manifest);
     check("verify: compare reads the manifest name too, so a rename alone is CHANGED once the file exists (unknown here, same reason)", r2.unknown.length === 1 && r2.equal.length === 0, JSON.stringify(r2));
+  }
+  {
+    const res = { found: { "5-5": { fileKey: "F" }, "6-6": { fileKey: "G" } }, notFound: { "7-7": { fileKey: "F" } }, probes: [] };
+    const [alive, gone] = mergeProbe(res, { probe: 1, fileKey: "F", results: [["5:5", 0], ["6:6", 0], ["7:7", 1, "FRAME", "x", 1, "1:1", "0:1", "P"]] }, "d");
+    check(
+      "probe-ingest: an id alive at the last probe and gone now leaves `found`, so to-snapshot stops keeping it; the same id in another file stays; an id alive again leaves `notFound`",
+      alive === 1 && gone === 2 && !res.found["5-5"] && res.notFound["5-5"] && res.found["6-6"]?.fileKey === "G" && res.found["7-7"] && !res.notFound["7-7"] && res.probes.length === 1 && res.probes[0].found === 1,
+      JSON.stringify(res),
+    );
   }
   {
     const page = (id, d) => ({ fileKey: "F", pageId: id, pageName: id, harvestedAt: d });
