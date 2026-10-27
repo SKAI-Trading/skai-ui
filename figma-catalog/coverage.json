@@ -1,12 +1,12 @@
 {
-  "generated": "2026-10-26T20:55:39.048Z",
+  "generated": "2026-10-27T00:36:06.169Z",
   "harvestedAt": "2026-10-23",
   "rollup": {
     "pages": 39,
     "live": 4695,
     "furniture": 829,
-    "genuine": 3399,
-    "ruledOut": 170,
+    "genuine": 3398,
+    "ruledOut": 171,
     "genuineWithRuledOut": 3569,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
@@ -17,11 +17,11 @@
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
     "frameDefectsOut": 297,
-    "genuineWithFrameDefects": 3696,
+    "genuineWithFrameDefects": 3695,
     "frameDefectUncited": [],
-    "matched": 3395,
-    "done": 1696,
-    "verified": 1300,
+    "matched": 3394,
+    "done": 1695,
+    "verified": 1299,
     "visuallyDowngraded": 23,
     "visualUnmapped": [],
     "visualRetired": [
@@ -56,16 +56,16 @@
     "conflicts": 9
   },
   "doneRows": {
-    "total": 4023,
+    "total": 4022,
     "withBreakpointProvenance": 2012,
-    "namingANodeId": 3798,
+    "namingANodeId": 3797,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 23797,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 969,
-    "unrecognisedTokens": 65786
+    "unrecognisedTokens": 65787
   },
   "statusFiles": [
     {
@@ -7452,7 +7452,7 @@
         "author-rejected": 1,
         "loose-instance": 2
       },
-      "ruledOut": 19,
+      "ruledOut": 20,
       "ruledOutIds": [
         "11987-228392",
         "11987-228045",
@@ -7462,6 +7462,7 @@
         "11307-134317",
         "5373-68430",
         "10517-38187",
+        "11198-97038",
         "11267-125024",
         "11267-125066",
         "11301-127843",
@@ -7509,17 +7510,17 @@
         "11885-100111",
         "12097-428192"
       ],
-      "genuine": 607,
-      "matched": 607,
+      "genuine": 606,
+      "matched": 606,
       "rollupOnly": 0,
       "defaultNamed": 40,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 194,
+      "verified": 193,
       "visuallyDowngraded": 0,
       "byStatus": {
         "partial": 273,
-        "done": 201,
+        "done": 200,
         "blocked-on-backend": 100,
         "not-started": 33
       },
@@ -24650,14 +24651,6 @@
       "status": "blocked-on-backend",
       "claimed": "blocked-on-backend",
       "verdict": "partial"
-    },
-    {
-      "id": "11198-97038",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
     },
     {
       "id": "5370-47867",
