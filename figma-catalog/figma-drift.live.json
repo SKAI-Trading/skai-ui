@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-16T04:39:47.390Z",
+  "generated": "2026-10-27T18:19:51.010Z",
   "sections": {
     "home": {
       "status": "clean",
@@ -50,14 +50,35 @@
       "retargets": []
     },
     "play": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 463,
-      "live": 431,
-      "nestedAlive": 32,
-      "added": 0,
-      "removed": 0,
+      "live": 435,
+      "nestedAlive": 30,
+      "added": 4,
+      "removed": 2,
       "retitled": 0,
-      "removedRows": [],
+      "removedRows": [
+        {
+          "id": "11202-44213",
+          "title": "Skai > Play - Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/ui/PlayModeCards.tsx"
+          ],
+          "status": "done",
+          "notes": "★ READ LIVE AND IT IS THE MIRROR, WHICH IS THE ONE THING ABOUT THIS CARD THAT IS EASY TO GET BACKWARDS. \"Frame 1000003874\" 344x78 at y=86 (8 under the Casino row, which is `gap-2`): the COPY card is 172x78 at x=0 and the ART card 172x78 at x=172 — copy left, art right, the opposite of every wider board. Source: sports `direction: \"flex-row-reverse md:flex-row\"`, so the DOM keeps art first (tab order and copy block unchanged) and only the phone reverses the row. Copy: Frame 463 at (12,12) 147x54 ⇒ `p-3`, \"Sports book\" 93x22 ⇒ 18/22, body at y=26 ⇒ a 4 seam (`gap-1`), 147x28 over two 14px lines; the count row 11202:44218 is hidden AND its height is missing from the card's own 78 (12+22+4+28+12), which is what makes `hidden … md:inline-flex` a board difference rather than a state one. `basis-[50%]` is 172/344 exactly — and the card is 344 here against Casino's 343, which the file already records. Wave 23 had done+verified; re-verified live. [vverify: match | 375 Sports book row 344x78 at y=86 (8 under the Casino row): COPY card 172x78 at x=0 and ART card at x=172 — the mirror, which source draws as flex-row-reverse md:flex-row so the DOM keeps art first. Copy (12,12) 147x54 = p-3; \"Sports book\" 93x22 (18/22); body at y=26 (4 seam, gap-1) 147x28. The count row is hidden AND its height is absent from the card's 78 (12+22+4+28+12), which makes hidden…md:inline-flex a board difference not a state one. basis-[50%) = 172/344.]",
+          "verifiedAt": "2026-09-15T05:28:14.444Z"
+        },
+        {
+          "id": "11202-44201",
+          "title": "Skai > Play - 375 Casino mode card row [Frame 1000003873 343x78]",
+          "implFiles": [
+            "modules/skai-gaming/src/components/play/ui/PlayModeCards.tsx"
+          ],
+          "status": "done",
+          "notes": "★ READ LIVE. \"Frame 1000003873\" 343x78: art card 172x78 at x=0, copy card 171x78 at x=172 — art LEFT here, against the mirrored Sports row above it. Copy Frame 463 at (12,12) 147x54, \"Casino\" 55x22 ⇒ 18/22, body \"Exciting games to win you money\" 147x28 at y=26 ⇒ a 4 seam, count row hidden with its height absent from the 78. Source `basis-[50.1458%] min-w-[50.1458%]` = 171.99 of 343, `h-[78px]`, `p-0`/`gap-0` on the card with `p-3` on the copy half alone, `gap-1`, `text-lg leading-[22px]` over `text-xs leading-[14px]`. The subcopy string matches the node verbatim. Wave 23 said done but left it unverified; it is verified now. [vverify: match | 375 Casino row 343x78: art 172x78 at x=0, copy 171x78 at x=172 (art left, against the mirrored Sports row). Copy (12,12) 147x54; \"Casino\" 55x22 (18/22); \"Exciting games to win you money\" 147x28 at y=26 (4 seam) — string matches the node verbatim. Source basis-[50.1458%) = 171.99 of 343, h-[78px), p-0/gap-0 on the card with p-3 on the copy half alone.]",
+          "verifiedAt": "2026-09-15T05:28:14.444Z"
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },

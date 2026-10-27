@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T00:35:56.913Z",
+  "generated": "2026-10-27T21:31:16.072Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -54,8 +54,8 @@
   },
   "pagesHarvested": "2026-09-15",
   "stats": {
-    "total": 4894,
-    "titled": 4894,
+    "total": 4898,
+    "titled": 4898,
     "cited": 1032,
     "bySection": {
       "home": {
@@ -87,10 +87,10 @@
         "cited": 134
       },
       "play": {
-        "frames": 463,
-        "titled": 463,
-        "screens": 167,
-        "nonScreen": 296,
+        "frames": 467,
+        "titled": 467,
+        "screens": 169,
+        "nonScreen": 298,
         "cited": 66
       },
       "dice": {
@@ -369,8 +369,8 @@
     },
     "keyCollisions": {
       "total": 0,
-      "idsListed": 4894,
-      "rowsKept": 4894,
+      "idsListed": 4898,
+      "rowsKept": 4898,
       "reconciles": true,
       "bySectionPair": {}
     },
@@ -1186,7 +1186,7 @@
       }
     ],
     "byReadiness": {
-      "ready": 4786,
+      "ready": 4790,
       "meta": 90,
       "wip": 3,
       "unknown": 15
@@ -1227,9 +1227,9 @@
       {
         "page": "✅ Play",
         "readiness": "ready",
-        "rows": 463,
+        "rows": 467,
         "gone": 0,
-        "live": 431,
+        "live": 435,
         "delta": -32
       },
       {
@@ -58823,6 +58823,102 @@
       "route": "/play/casino",
       "notes": "wave 79 lane W8b, 2026-10-10..11 (was partial): The copy of 4711:28434 (w76 Y6). Its column 4711:28436 read live 2026-10-13 (w79 W8 read4): 24 under the header, the 36 heading at its top, the banner at 68, the nav at 344, the shelves at 410; drawn since 691884e2 (playHubTopSeams.test.ts). Its banner 9112:13225 drops 0 4 12 black 24% (read-b2, 2026-10-15), drawn in a32bb49a7. LEFT: the shelves and everything below them not compared with Play.tsx this wave. [vverify: partial | wave 79 lane W8b, 2026-10-10..11: The copy of 4711:28434 (w76 Y6). Its column 4711:28436 read live 2026-10-13 (w79 W8 read4): 24 under the header, the 36 heading at its top, the banner at 68, the nav at 344, the shelves at 410; drawn since 691884e2 (playHubTopSeams.test.ts). Its banner 9112:13225 drops 0 4 12 black 24% (read-b2, 2026-10-15), drawn in a32bb49a7. LEFT: the shelves and everything below them not compared with Play.tsx this wave.]",
       "verifiedAt": "2026-10-15T10:46:59.157Z",
+      "bpStatus": "unknown"
+    },
+    "14072-43159": {
+      "section": "play",
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "fileName": "Skai-Web-App",
+      "node": "14072-43159",
+      "title": "Skai > Play > Casino > Mines (1440 x 900px)",
+      "page": "✅ Play",
+      "readiness": "ready",
+      "screen": "Casino > Mines",
+      "variant": null,
+      "viewport": "1440x900",
+      "device": "desktop",
+      "vh": null,
+      "kind": "screen",
+      "family": "Casino > Mines",
+      "measuredViewport": "1440x3294",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
+    "14074-45577": {
+      "section": "play",
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "fileName": "Skai-Web-App",
+      "node": "14074-45577",
+      "title": "Skai > Play > Casino > Mines - picture-in-picture 1VH (1440 x 900px)",
+      "page": "✅ Play",
+      "readiness": "ready",
+      "screen": "Casino > Mines - picture-in-picture",
+      "variant": "picture-in-picture",
+      "viewport": "1440x900",
+      "device": "desktop",
+      "vh": 1,
+      "kind": "screen",
+      "family": "Casino > Mines",
+      "measuredViewport": "1440x900",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
+    "14074-45422": {
+      "section": "play",
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "fileName": "Skai-Web-App",
+      "node": "14074-45422",
+      "title": "Multi-panel - live chat",
+      "page": "✅ Play",
+      "readiness": "ready",
+      "screen": "Multi-panel - live chat",
+      "variant": null,
+      "viewport": null,
+      "device": "mobile",
+      "vh": null,
+      "kind": "non-screen",
+      "family": null,
+      "measuredViewport": "313x662",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
+      "bpStatus": "unknown"
+    },
+    "14075-47091": {
+      "section": "play",
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "fileName": "Skai-Web-App",
+      "node": "14075-47091",
+      "title": "Notes",
+      "page": "✅ Play",
+      "readiness": "ready",
+      "screen": "Notes",
+      "variant": null,
+      "viewport": null,
+      "device": "mobile",
+      "vh": null,
+      "kind": "non-screen",
+      "family": null,
+      "measuredViewport": "342x293",
+      "citedByFiles": [],
+      "implFiles": [],
+      "status": "unknown",
+      "route": null,
+      "notes": "",
+      "verifiedAt": null,
       "bpStatus": "unknown"
     },
     "11214-131710": {

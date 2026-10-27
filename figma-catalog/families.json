@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T00:35:32.300Z",
+  "generated": "2026-10-27T21:31:08.071Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -5281,6 +5281,25 @@
         "mobile"
       ],
       "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "play/Casino > Mines": {
+      "section": "play",
+      "family": "Casino > Mines",
+      "frameCount": 2,
+      "frames": [
+        "14072-43159",
+        "14074-45577"
+      ],
+      "devices": [
+        "desktop"
+      ],
+      "variants": [
+        "picture-in-picture"
+      ],
       "citedFileCount": 0,
       "citedFiles": [],
       "dirs": [],
