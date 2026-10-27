@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T21:31:20.833Z",
+  "generated": "2026-10-27T22:40:57.932Z",
   "harvestedAt": "2026-10-27",
   "rollup": {
     "pages": 39,
@@ -56,16 +56,16 @@
     "conflicts": 9
   },
   "doneRows": {
-    "total": 4022,
-    "withBreakpointProvenance": 2012,
-    "namingANodeId": 3797,
+    "total": 4024,
+    "withBreakpointProvenance": 2014,
+    "namingANodeId": 3799,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 23797,
+    "total": 23799,
     "namingNoNodeId": 339,
-    "namingNoLiveNodeId": 969,
-    "unrecognisedTokens": 65787
+    "namingNoLiveNodeId": 971,
+    "unrecognisedTokens": 65795
   },
   "statusFiles": [
     {
@@ -6447,6 +6447,12 @@
       "ids": 14
     },
     {
+      "file": "status.wave82.HARV.tsv",
+      "rows": 2,
+      "withLiveId": 0,
+      "ids": 0
+    },
+    {
       "file": "status.wave9.games-zero-a.tsv",
       "rows": 22,
       "withLiveId": 20,
@@ -10583,7 +10589,7 @@
     },
     {
       "id": "11202-44201",
-      "cls": "gone",
+      "cls": "bug-link",
       "resolved": null,
       "rows": [
         "status.wave43.play-sports.tsv:72"
@@ -10592,7 +10598,7 @@
     },
     {
       "id": "11202-44213",
-      "cls": "gone",
+      "cls": "bug-link",
       "resolved": null,
       "rows": [
         "status.wave43.play-sports.tsv:71"
@@ -12135,6 +12141,34 @@
         "status.wave73.P075.tsv:15"
       ],
       "status": "partial"
+    },
+    {
+      "id": "14069-218457",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000003873",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave82.HARV.tsv:6"
+      ],
+      "status": "done"
+    },
+    {
+      "id": "14069-218469",
+      "cls": "nested",
+      "resolved": {
+        "type": "FRAME",
+        "name": "Frame 1000003874",
+        "depth": 4,
+        "pageName": "✅ Play"
+      },
+      "rows": [
+        "status.wave82.HARV.tsv:5"
+      ],
+      "status": "done"
     },
     {
       "id": "15411-182392",

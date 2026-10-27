@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T21:31:08.071Z",
+  "generated": "2026-10-27T22:40:29.453Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -5434,9 +5434,10 @@
     "play/Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]": {
       "section": "play",
       "family": "Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "11202-44213"
+        "11202-44213",
+        "14069-218469"
       ],
       "devices": [],
       "variants": [],
@@ -5448,9 +5449,10 @@
     "play/375 Casino mode card row [Frame 1000003873 343x78]": {
       "section": "play",
       "family": "375 Casino mode card row [Frame 1000003873 343x78]",
-      "frameCount": 1,
+      "frameCount": 2,
       "frames": [
-        "11202-44201"
+        "11202-44201",
+        "14069-218457"
       ],
       "devices": [],
       "variants": [],

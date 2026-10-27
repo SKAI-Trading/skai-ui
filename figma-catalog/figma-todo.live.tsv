@@ -1,7 +1,1 @@
 section	nodeId	change	title	why	implFiles
-play	11202-44213	REMOVED-WITH-WORK	Skai > Play - Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	modules/skai-gaming/src/components/play/ui/PlayModeCards.tsx
-play	11202-44201	REMOVED-WITH-WORK	Skai > Play - 375 Casino mode card row [Frame 1000003873 343x78]	Frame gone from Figma with NO same-title replacement, but the catalog recorded implementing code -- check the code is not now orphaned before removing the row	modules/skai-gaming/src/components/play/ui/PlayModeCards.tsx
-play	14072-43159	ADDED	Skai > Play > Casino > Mines (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-play	14074-45577	ADDED	Skai > Play > Casino > Mines - picture-in-picture 1VH (1440 x 900px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-play	14074-45422	ADDED	Multi-panel - live chat	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
-play	14075-47091	ADDED	Notes	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	

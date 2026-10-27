@@ -898,3 +898,9 @@ M6r9FEn042UWTQD1zvy6GM:9669-2966	-	gone	0	0	-
 # (getNodeByIdAsync) found it deleted, not nested. It was the casino-games hero slide card at 375
 # (status.wave62.play-hub.tsv, partial); the slide itself keeps its other frames, 9112:13225 and its cuts.
 13549-99145	-	gone	0	0	-
+# 2026-10-27: the 375 Play mode-card rows inside 11202:44169 were rebuilt under new ids. A probe (getNodeByIdAsync)
+# found both old ids deleted, not nested; a read of the board found the same two rows, same layer names and geometry,
+# under the new wrapper 14069:218456. Their work moved to the new ids (status.wave82.HARV.tsv, vverify.play.tsv):
+# 11202-44213 (Sports book row) -> 14069-218469, 11202-44201 (Casino row) -> 14069-218457.
+11202-44213	-	gone	0	0	-
+11202-44201	-	gone	0	0	-

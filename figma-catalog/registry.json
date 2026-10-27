@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T21:31:16.072Z",
+  "generated": "2026-10-27T22:40:46.790Z",
   "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
   "fileKeys": {
     "3sSzw1KewMtUbeLAv7uW0r": "Skai-Web-App",
@@ -54,8 +54,8 @@
   },
   "pagesHarvested": "2026-09-15",
   "stats": {
-    "total": 4898,
-    "titled": 4898,
+    "total": 4900,
+    "titled": 4900,
     "cited": 1032,
     "bySection": {
       "home": {
@@ -87,9 +87,9 @@
         "cited": 134
       },
       "play": {
-        "frames": 467,
-        "titled": 467,
-        "screens": 169,
+        "frames": 469,
+        "titled": 469,
+        "screens": 171,
         "nonScreen": 298,
         "cited": 66
       },
@@ -369,8 +369,8 @@
     },
     "keyCollisions": {
       "total": 0,
-      "idsListed": 4898,
-      "rowsKept": 4898,
+      "idsListed": 4900,
+      "rowsKept": 4900,
       "reconciles": true,
       "bySectionPair": {}
     },
@@ -1186,7 +1186,7 @@
       }
     ],
     "byReadiness": {
-      "ready": 4790,
+      "ready": 4792,
       "meta": 90,
       "wip": 3,
       "unknown": 15
@@ -1228,7 +1228,7 @@
         "page": "✅ Play",
         "readiness": "ready",
         "rows": 467,
-        "gone": 0,
+        "gone": 2,
         "live": 435,
         "delta": -32
       },
@@ -59304,6 +59304,7 @@
       "title": "Skai > Play - Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]",
       "page": "✅ Play",
       "readiness": "ready",
+      "gone": true,
       "screen": "Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]",
       "variant": null,
       "viewport": null,
@@ -59329,6 +59330,7 @@
       "title": "Skai > Play - 375 Casino mode card row [Frame 1000003873 343x78]",
       "page": "✅ Play",
       "readiness": "ready",
+      "gone": true,
       "screen": "375 Casino mode card row [Frame 1000003873 343x78]",
       "variant": null,
       "viewport": null,
@@ -59344,6 +59346,56 @@
       "route": "/play",
       "notes": "★ READ LIVE. \"Frame 1000003873\" 343x78: art card 172x78 at x=0, copy card 171x78 at x=172 — art LEFT here, against the mirrored Sports row above it. Copy Frame 463 at (12,12) 147x54, \"Casino\" 55x22 ⇒ 18/22, body \"Exciting games to win you money\" 147x28 at y=26 ⇒ a 4 seam, count row hidden with its height absent from the 78. Source `basis-[50.1458%] min-w-[50.1458%]` = 171.99 of 343, `h-[78px]`, `p-0`/`gap-0` on the card with `p-3` on the copy half alone, `gap-1`, `text-lg leading-[22px]` over `text-xs leading-[14px]`. The subcopy string matches the node verbatim. Wave 23 said done but left it unverified; it is verified now. [vverify: match | 375 Casino row 343x78: art 172x78 at x=0, copy 171x78 at x=172 (art left, against the mirrored Sports row). Copy (12,12) 147x54; \"Casino\" 55x22 (18/22); \"Exciting games to win you money\" 147x28 at y=26 (4 seam) — string matches the node verbatim. Source basis-[50.1458%) = 171.99 of 343, h-[78px), p-0/gap-0 on the card with p-3 on the copy half alone.]",
       "verifiedAt": "2026-09-15T05:28:14.444Z",
+      "bpStatus": "unknown"
+    },
+    "14069-218469": {
+      "section": "play",
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "fileName": "Skai-Web-App",
+      "node": "14069-218469",
+      "title": "Skai > Play - Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]",
+      "page": "✅ Play",
+      "readiness": "ready",
+      "screen": "Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78]",
+      "citedByFiles": [],
+      "implFiles": [
+        "modules/skai-gaming/src/components/play/ui/PlayModeCards.tsx"
+      ],
+      "status": "done",
+      "route": "/play",
+      "notes": "Retargeted from 11202-44213 (wave 43 done, verified 2026-09-15): the 375 Sports book row, rebuilt in place as \"Frame 1000003874\" 344x78 under 14069:218456. Re-read live 2026-10-27 and every number the wave 43 row measured holds: copy card 172 left, art card 172 right, copy Frame 463 at (12,12) 147x54 on a 4 gap, title 93x22 at 18/22, body 147x28 at y=26, count row hidden. The only difference is copy, frame-side: the subcopy reads \"you favorite team\" where PlayModeCards.tsx:420 has \"your\". [vverify: match | Retargeted 2026-10-27 from 11202-44213 (deleted when the designer rebuilt the 375 mode pair under wrapper 14069:218456 inside 11202:44169); the wave 43 verdict carried, its geometry re-read live (w82 HARV follow-up reads 1 and 2). 375 Sports book row \"Frame 1000003874\" 344x78 at board (16,416), 8 under the Casino row: COPY card 14069:218470 172x78 at x=0, ART card 14069:218479 172x78 at x=172 (the mirror; source flex-row-reverse md:flex-row). Copy Frame 463 at (12,12) 147x54, vertical gap 4; \"Sports book\" 93x22 at 18/22; body 147x28 at y=26 in 12/14; the count row Frame 606 (14069:218474) hidden. basis-[50%) = 172/344. The frame subcopy reads \"Win along with you favorite team\"; source has \"your\".]",
+      "verifiedAt": "2026-10-27T22:32:20.248Z",
+      "bpStatus": "unknown"
+    },
+    "14069-218457": {
+      "section": "play",
+      "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
+      "fileName": "Skai-Web-App",
+      "node": "14069-218457",
+      "title": "Skai > Play - 375 Casino mode card row [Frame 1000003873 343x78]",
+      "page": "✅ Play",
+      "readiness": "ready",
+      "screen": "375 Casino mode card row [Frame 1000003873 343x78]",
+      "variant": null,
+      "viewport": null,
+      "device": null,
+      "vh": null,
+      "kind": "screen",
+      "family": "375 Casino mode card row [Frame 1000003873 343x78]",
+      "citedByFiles": [],
+      "implFiles": [
+        "modules/skai-gaming/src/components/play/ui/PlayModeCards.tsx"
+      ],
+      "status": "done",
+      "route": "/play",
+      "notes": "Retargeted from 11202-44201 (wave 43 done, verified 2026-09-15): the 375 Casino row, rebuilt in place as \"Frame 1000003873\" 343x78 under 14069:218456. Re-read live 2026-10-27 and every number the wave 43 row measured holds: art card 172 left, copy card 171 right, copy Frame 463 at (12,12) 147x54 on a 4 gap, \"Casino\" 55x22 at 18/22, \"Exciting games to win you money\" 147x28 at y=26 (verbatim the PlayModeCards.tsx:412 string), count row hidden. [vverify: match | Retargeted 2026-10-27 from 11202-44201 (deleted in the same rebuild); the wave 43 verdict carried, its geometry re-read live (w82 HARV follow-up reads 1 and 2). 375 Casino row \"Frame 1000003873\" 343x78 at board (16,330): ART card 14069:218458 172x78 at x=0, COPY card 14069:218460 171x78 at x=172 (art left). Copy Frame 463 at (12,12) 147x54, vertical gap 4; \"Casino\" 55x22 at 18/22; \"Exciting games to win you money\" 147x28 at y=26 in 12/14, matching the source string verbatim; the count row Frame 606 (14069:218464) hidden. Source basis-[50.1458%) = 171.99 of 343, h-[78px), p-3 on the copy half alone.]",
+      "verifiedAt": "2026-10-27T22:32:20.248Z",
       "bpStatus": "unknown"
     },
     "11109-81868": {
