@@ -159,6 +159,28 @@ return { fingerprint: 1, mode: FULL ? "full" : "shallow", fileKey: FILE_KEY, ms:
 }
 
 /**
+ * The store check alone: each listed design-store frame found by id and walked under the store's rules. It
+ * needs no page walk, so it costs one call per file; a frame getNodeByIdAsync cannot find once every page is
+ * loaded is reported missing.
+ */
+export function storeCheckScript(fileKey, ids) {
+  return `${FP_LIB}
+const FILE_KEY = ${JSON.stringify(fileKey)};
+const IDS = ${JSON.stringify(ids)};
+const t0 = Date.now();
+for (const p of figma.root.children) await p.loadAsync();
+const kv = {};
+const missing = [];
+const errs = {};
+for (const id of IDS) {
+  const n = await figma.getNodeByIdAsync(id);
+  if (!n) { missing.push(id); continue; }
+  try { kv[id] = fpWalk(n, false).join(" "); } catch (e) { errs[id] = String((e && e.message) || e).slice(0, 120); }
+}
+return { fingerprint: 1, mode: "store", fileKey: FILE_KEY, ms: Date.now() - t0, want: IDS, kv, missing, errs, chunks: [] };`;
+}
+
+/**
  * Fold fingerprint payloads into per-page baselines. A page is accepted only
  * when its chunks tile [0, childCount) exactly, every id matches the page's
  * live/ harvest at the same index, and no board errored; anything else is
@@ -169,12 +191,18 @@ export function reconcileFingerprints(docs, liveIdsOf) {
   const refused = [];
   const kv = {};
   const want = new Map();
+  // Frames a store check looked up by id: settled whether or not their page was walked.
+  const direct = new Map();
   for (const { source, doc } of docs) {
     if (!doc || doc.fingerprint !== 1 || !doc.fileKey || !Array.isArray(doc.chunks)) {
       refused.push({ page: source, why: "not a fingerprint payload" });
       continue;
     }
     for (const id of doc.want || []) want.set(`${doc.fileKey}:${id}`, doc.fileKey);
+    if (doc.mode === "store") {
+      const errs = doc.errs || {};
+      for (const id of doc.want || []) direct.set(`${doc.fileKey}:${id}`, errs[id] ? "error" : (doc.missing || []).includes(id) ? "missing" : "found");
+    }
     for (const [id, v] of Object.entries(doc.kv || {})) kv[`${doc.fileKey}:${id}`] = v;
     for (const [pid, name, count, from, end, rows] of doc.chunks) {
       const key = `${doc.fileKey}|${pid}`;
@@ -211,7 +239,7 @@ export function reconcileFingerprints(docs, liveIdsOf) {
     if (why) refused.push({ page: `${pg.pageName || "?"} (${pg.pageId})`, fileKey: pg.fileKey, why });
     else ok.push(pg);
   }
-  return { pages: ok, refused, kv, want };
+  return { pages: ok, refused, kv, want, direct };
 }
 
 /** What moved against an earlier baseline for the same page: changed, added, removed. */

@@ -1,0 +1,440 @@
+{
+  "v": 1,
+  "pages": {},
+  "store": {
+    "3sSzw1KewMtUbeLAv7uW0r:10211:14686": {
+      "page": "✅ Predict",
+      "name": "Skai > Predict - ALT 1VH (375 x 812px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "1a9161af 563",
+      "spec": "1a9161af 563",
+      "specSyncedAt": "2026-09-24T22:28:13.833Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:10240:16029": {
+      "page": "✅ Predict",
+      "name": "Skai > Predict - ALT 1VH (375 x 812px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "c4bec8a2 523",
+      "spec": "c4bec8a2 523",
+      "specSyncedAt": "2026-09-24T22:37:38.491Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:10252:79268": {
+      "page": "✅ Predict",
+      "name": "Skai > Predict - ALT 1VH (375 x 812px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "998140a4 641",
+      "spec": "998140a4 641",
+      "specSyncedAt": "2026-09-24T22:48:00.022Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:10252:79831": {
+      "page": "✅ Predict",
+      "name": "Skai > Predict - ALT 1VH (375 x 812px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "002768ab 576",
+      "spec": "002768ab 576",
+      "specSyncedAt": "2026-09-24T22:56:53.967Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:10653:189871": {
+      "page": "✅ Predict",
+      "name": "Up - long",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "9ad71234 66",
+      "spec": "9ad71234 66",
+      "specSyncedAt": "2026-09-25T00:42:50.567Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:11156:82051": {
+      "page": "✅ Governance and Utilities",
+      "name": "Lottery - rolls finished",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "a15416e1 53",
+      "spec": "a15416e1 53",
+      "specSyncedAt": "2026-09-25T00:52:29.962Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:11161:82180": {
+      "page": "✅ Governance and Utilities",
+      "name": "With winners",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "24810129 122",
+      "spec": "24810129 122",
+      "specSyncedAt": "2026-09-25T00:52:29.962Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:12225:458073": {
+      "page": "✅ Governance and Utilities",
+      "name": "Lottery other values",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "e997e0dd 18",
+      "spec": "e997e0dd 18",
+      "specSyncedAt": "2026-09-25T00:52:29.962Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:12225:458091": {
+      "page": "✅ Governance and Utilities",
+      "name": "Lottery other values",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "e81cae97 18",
+      "spec": "e81cae97 18",
+      "specSyncedAt": "2026-09-25T00:52:29.962Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:12261:474854": {
+      "page": "✅ Governance and Utilities",
+      "name": "Skai > Earn > Faucet 1VH (768 x 1024px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "bc0b5383 480",
+      "spec": "bc0b5383 480",
+      "specSyncedAt": "2026-09-25T00:52:29.962Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:5280:87638": {
+      "page": "✅ Governance and Utilities",
+      "name": "Skai > Earn > Faucet (1440 x 900px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "3a273e57 478",
+      "spec": "3a273e57 478",
+      "specSyncedAt": "2026-09-25T00:46:16.291Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:5291:89531": {
+      "page": "✅ Governance and Utilities",
+      "name": "Lottery other values",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "8a79514c 18",
+      "spec": "8a79514c 18",
+      "specSyncedAt": "2026-09-25T00:52:29.962Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:5313:92097": {
+      "page": "✅ Governance and Utilities",
+      "name": "Blackjack cards",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "7354b66f 4",
+      "spec": "7354b66f 4",
+      "specSyncedAt": "2026-09-25T00:52:29.962Z"
+    },
+    "3sSzw1KewMtUbeLAv7uW0r:5370:46501": {
+      "page": "✅ Governance and Utilities",
+      "name": "Tickets - empty",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "d080ffeb 90",
+      "spec": "d080ffeb 90",
+      "specSyncedAt": "2026-09-25T00:57:03.143Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:233145": {
+      "page": "✅ Trade 2",
+      "name": "Frame 1373",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "92351b92 77",
+      "spec": "92351b92 77",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:233224": {
+      "page": "✅ Trade 2",
+      "name": "Frame 1363",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "7d3befc4 105",
+      "spec": "7d3befc4 105",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:233331": {
+      "page": "✅ Trade 2",
+      "name": "Percentage bigger",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "0ed6dd92 27",
+      "spec": "0ed6dd92 27",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:250456": {
+      "page": "✅ Trade 2",
+      "name": "Colour picker - on:click",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "ff8c2d74 8",
+      "spec": "ff8c2d74 8",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:252089": {
+      "page": "✅ Trade 2",
+      "name": "Colour picker - on:click",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "6e198dbf 8",
+      "spec": "6e198dbf 8",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:252423": {
+      "page": "✅ Trade 2",
+      "name": "Token preview",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "57111098 45",
+      "spec": "57111098 45",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:252664": {
+      "page": "✅ Trade 2",
+      "name": "Boost status ALT",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "cd8ccbdb 23",
+      "spec": "cd8ccbdb 23",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:252687": {
+      "page": "✅ Trade 2",
+      "name": "Boost status",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "908186be 23",
+      "spec": "908186be 23",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:252710": {
+      "page": "✅ Trade 2",
+      "name": "Boost status 50%",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "e6f402a1 25",
+      "spec": "e6f402a1 25",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:252735": {
+      "page": "✅ Trade 2",
+      "name": "Boost status - more info.",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "2709bcba 42",
+      "spec": "2709bcba 42",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:252891": {
+      "page": "✅ Trade 2",
+      "name": "dropdown-add",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "52b0818f 16",
+      "spec": "52b0818f 16",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:323899": {
+      "page": "✅ Trade 2",
+      "name": "Colour picker - on:click",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "f9378554 8",
+      "spec": "f9378554 8",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:347864": {
+      "page": "✅ Trade 2",
+      "name": "Token preview",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "9d122535 45",
+      "spec": "9d122535 45",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:347983": {
+      "page": "✅ Trade 2",
+      "name": "Boost status ALT",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "a6ac4f0e 23",
+      "spec": "a6ac4f0e 23",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:348006": {
+      "page": "✅ Trade 2",
+      "name": "Boost status",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "008b906b 23",
+      "spec": "008b906b 23",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:348029": {
+      "page": "✅ Trade 2",
+      "name": "Boost status 50%",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "7e90b344 25",
+      "spec": "7e90b344 25",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:348054": {
+      "page": "✅ Trade 2",
+      "name": "Boost status - more info.",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "ab4806cc 42",
+      "spec": "ab4806cc 42",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:348615": {
+      "page": "✅ Trade 2",
+      "name": "Token preview",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "5e310d16 45",
+      "spec": "5e310d16 45",
+      "specSyncedAt": "2026-09-25T01:09:33.001Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:348856": {
+      "page": "✅ Trade 2",
+      "name": "Boost status ALT",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "26aeda14 23",
+      "spec": "26aeda14 23",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:348879": {
+      "page": "✅ Trade 2",
+      "name": "Boost status",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "0b90f641 23",
+      "spec": "0b90f641 23",
+      "specSyncedAt": "2026-09-25T01:09:51.997Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:348902": {
+      "page": "✅ Trade 2",
+      "name": "Boost status 50%",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "9d38b188 25",
+      "spec": "9d38b188 25",
+      "specSyncedAt": "2026-09-25T01:14:21.865Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:13006:348927": {
+      "page": "✅ Trade 2",
+      "name": "Boost status - more info.",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "60f9266d 42",
+      "spec": "60f9266d 42",
+      "specSyncedAt": "2026-09-25T01:21:04.296Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:3903:25954": {
+      "page": "✅ Trade 1",
+      "name": "Trade panel - Long",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "d9bb38f5 104",
+      "spec": "d9bb38f5 104",
+      "specSyncedAt": "2026-09-25T01:15:02.960Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:3903:26048": {
+      "page": "✅ Trade 1",
+      "name": "Trade panel - Short",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "714eed50 104",
+      "spec": "714eed50 104",
+      "specSyncedAt": "2026-09-25T01:15:02.960Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:3903:26142": {
+      "page": "✅ Trade 1",
+      "name": "Trade panel - Short with value",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "12f9c025 104",
+      "spec": "12f9c025 104",
+      "specSyncedAt": "2026-09-25T01:15:02.960Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:3928:78877": {
+      "page": "✅ Trade 1",
+      "name": "Skai > Trade > Spot - chart expanded 1VH (1440 x 900px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "c62d2065 1029",
+      "spec": "c62d2065 1029",
+      "specSyncedAt": "2026-09-24T22:42:08.335Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:3963:39739": {
+      "page": "✅ Trade 1",
+      "name": "Skai > Trade > Spot - trade dropdown 1VH (1440 x 900px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "afc99f26 669",
+      "spec": "afc99f26 669",
+      "specSyncedAt": "2026-09-24T22:50:39.667Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:3969:43609": {
+      "page": "✅ Trade 1",
+      "name": "Skai > Trade > Spot - indicator dropdown 1VH (1440 x 900px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "d0a87d49 1643",
+      "spec": "d0a87d49 1643",
+      "specSyncedAt": "2026-09-24T23:01:22.489Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:4297:47855": {
+      "page": "✅ Trade 1",
+      "name": "PnL post - up with profit ALT",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "b1bddcda 43",
+      "spec": "b1bddcda 43",
+      "specSyncedAt": "2026-09-25T01:17:14.615Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7710:91527": {
+      "page": "✅ Trade 1",
+      "name": "Skai > Trade > Spot 1VH (1440 x 900px)",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "9d01bcb6 1533",
+      "spec": "9d01bcb6 1533",
+      "specSyncedAt": "2026-09-24T19:34:42.732Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:7890:98315": {
+      "page": "✅ Trade 1",
+      "name": "Trade panel - Isolated",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "b3b187ee 104",
+      "spec": "b3b187ee 104",
+      "specSyncedAt": "2026-09-25T01:15:02.960Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:8570:143201": {
+      "page": "✅ Trade 1",
+      "name": "main",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "d0644970 1113",
+      "spec": "d0644970 1113",
+      "specSyncedAt": "2026-09-24T22:27:14.281Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:9105:77432": {
+      "page": "✅ Trade 1",
+      "name": "Trade panel - Short with value",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "18059369 107",
+      "spec": "18059369 107",
+      "specSyncedAt": "2026-09-25T01:24:18.698Z"
+    },
+    "mhF3BkzlTaGiLzJ7kvpmVc:9772:76942": {
+      "page": "✅ Trade 1",
+      "name": "Frame 1341",
+      "at": "2026-10-29",
+      "state": "same",
+      "live": "48262997 1100",
+      "spec": "48262997 1100",
+      "specSyncedAt": "2026-09-24T22:36:04.792Z"
+    }
+  },
+  "_comment": "Per-board structural fingerprints (fingerprint.mjs): fp[id] = 's n', s an FNV-1a 32 over every node's id|type|bounds|visible|text in the board, n the node count. store[] compares the design store's specs with the live structure under the store's own pruning.",
+  "updatedAt": "2026-10-29"
+}

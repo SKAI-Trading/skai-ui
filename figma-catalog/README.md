@@ -134,7 +134,10 @@ structure still matches the spec. Ingest refuses a page whose chunks do not tile
 measured 2026-10-29 on Play: the full walk (into instances) covered 43 of 441 boards,
 33,592 nodes, in its 20 s budget, so a full baseline of the busy pages runs to dozens of
 calls; `--shallow` treats instances as leaves, the store's own rule, and misses an override
-inside an instance.
+inside an instance. `fingerprint-script --store --pages <id,...>` checks only the frames the
+design store holds, found by id, in one call per file: on 2026-10-29 all 48 on Predict,
+Governance and Utilities, Trade 1 and Trade 2 matched their specs (read 09-24/25), in 42 and
+45 s a call, most of it loading every page.
 
 ## What the tooling refuses, on purpose
 

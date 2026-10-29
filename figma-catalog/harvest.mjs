@@ -49,6 +49,7 @@
  *   node harvest.mjs section --file <fileKey> --page <pageId> --name <slug>
  *   node harvest.mjs fingerprint-script --file <fileKey> --pages <pageId,...> --out <dir> [--shallow]
  *   node harvest.mjs fingerprint-script --file <fileKey> --chunk '[["4459:128102",0,441]]'
+ *   node harvest.mjs fingerprint-script --file <fileKey> --store --pages <pageId,...>
  *   node harvest.mjs fingerprint-ingest <fp.json> [...] [--write]
  *   node harvest.mjs --self-test
  *
@@ -78,7 +79,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { compareBaseline, fingerprintChunks, fingerprintScript, fpLib, reconcileFingerprints, specFingerprint, storeFingerprint } from "./fingerprint.mjs";
+import { compareBaseline, fingerprintChunks, fingerprintScript, fpLib, reconcileFingerprints, specFingerprint, storeCheckScript, storeFingerprint } from "./fingerprint.mjs";
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const LIVE = path.join(DIR, "live");
@@ -824,6 +825,15 @@ function cmdFingerprintScript(args) {
   const manifest = readJson(path.join(LIVE, "_pages.json"));
   const pageOf = (pid) => manifest.pages.find((p) => p.fileKey === fileKey && colon(p.pageId) === colon(pid));
   const shallow = args.includes("--shallow");
+  if (args.includes("--store")) {
+    // One script for every design-store frame on the pages named, looked up by id.
+    const pids = (arg(args, "--pages") || "").split(",").map((s) => s.trim()).filter(Boolean);
+    if (!pids.length) die("fingerprint-script --store: --pages <pageId,...> is required");
+    const ids = [...new Set(pids.flatMap((pid) => storeIdsOn(fileKey, pageOf(pid)?.pageName)))];
+    console.error(`fingerprint-script --store: ${ids.length} design-store frame(s) on ${pids.length} page(s)`);
+    process.stdout.write(storeCheckScript(fileKey, ids) + "\n");
+    return;
+  }
   const chunkArg = arg(args, "--chunk");
   if (chunkArg) {
     const chunk = JSON.parse(chunkArg);
@@ -860,7 +870,7 @@ function cmdFingerprintIngest(args) {
     }
   });
   const liveIdsOf = (fk, pid) => readLines(tsvPath(fk, pid)).map((l) => parseLiveRow(l).id);
-  const { pages, refused, kv, want } = reconcileFingerprints(docs, liveIdsOf);
+  const { pages, refused, kv, want, direct } = reconcileFingerprints(docs, liveIdsOf);
   const base = fs.existsSync(FP_PATH) ? readJson(FP_PATH) : { v: 1, pages: {}, store: {} };
   base.pages = base.pages || {};
   base.store = base.store || {};
@@ -890,7 +900,8 @@ function cmdFingerprintIngest(args) {
   for (const [frameKey, fk] of want) {
     const node = frameKey.slice(fk.length + 1);
     const spec = storeFingerprint(FIGMA_DIR, frameKey);
-    if (!spec || !donePages.has(`${fk}|${colon(manifestPageId(fk, spec.page) || "")}`)) continue;
+    const looked = direct.get(frameKey);
+    if (!spec || looked === "error" || (!looked && !donePages.has(`${fk}|${colon(manifestPageId(fk, spec.page) || "")}`))) continue;
     const live = kv[frameKey];
     const state = !live ? "not-found" : live.split(" ")[0] === spec.k ? "same" : "moved";
     store.push({ frameKey, node, state, live, spec, page: spec.page, name: spec.name });
@@ -1165,7 +1176,18 @@ function selfTest() {
     const js = fingerprintScript("F", [["9:9", 0, 2]], ["1:3"]);
     const jsShallow = fingerprintScript("F", [["9:9", 0, 2]], [], { shallow: true });
     check("fingerprint: emitted code is read-only (loadAsync, no page switch, no writes)", /loadAsync/.test(js) && !/setCurrentPageAsync/.test(js) && !/\.(remove|appendChild|createFrame|setPluginData)\(/.test(js));
-    Promise.all([new AsyncFn("figma", js)(figma), new AsyncFn("figma", jsShallow)(figma)]).then(([doc, shallowDoc]) => {
+    const byId = new Map();
+    const index = (n) => { byId.set(n.id, n); for (const k of n.children || []) index(k); };
+    page.children.forEach(index);
+    const storeFigma = { root: { children: [page] }, getNodeByIdAsync: async (id) => byId.get(id) || null };
+    const jsStore = storeCheckScript("F", ["1:3", "8:8"]);
+    Promise.all([new AsyncFn("figma", js)(figma), new AsyncFn("figma", jsShallow)(figma), new AsyncFn("figma", jsStore)(storeFigma)]).then(([doc, shallowDoc, storeDoc]) => {
+      const rs = reconcileFingerprints([{ source: "s", doc: storeDoc }], () => []);
+      check(
+        "fingerprint: the store check finds a frame by id and returns its store-rule hash, names one Figma cannot find, and marks both settled without a page walk",
+        storeDoc.kv["1:3"] === fpLib.fpWalk(board().children[1], false).join(" ") && storeDoc.missing.join() === "8:8" && rs.direct.get("F:1:3") === "found" && rs.direct.get("F:8:8") === "missing" && rs.pages.length === 0 && rs.refused.length === 0,
+        JSON.stringify({ storeDoc, direct: [...rs.direct] }),
+      );
       const live = () => ["1:1", "2:1"];
       const r = reconcileFingerprints([{ source: "t", doc }], live);
       const pg = r.pages[0];
