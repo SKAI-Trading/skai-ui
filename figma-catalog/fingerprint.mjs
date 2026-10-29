@@ -120,7 +120,8 @@ export function fingerprintChunks(pageId, childCount, budget = FP_BUDGET) {
 
 // shallow: instances and vector-like nodes are leaves (the store's rules), so a board costs a fraction of the
 // walk; an override inside an instance no longer moves s.
-export function fingerprintScript(fileKey, chunk, storeIds = [], { ms = FP_MS, shallow = false } = {}) {
+export function fingerprintScript(fileKey, chunk, storeIds = [], { ms, shallow = false } = {}) {
+  if (!ms) ms = FP_MS;
   return `${FP_LIB}
 const FULL = ${shallow ? "false" : "true"};
 const FILE_KEY = ${JSON.stringify(fileKey)};
@@ -153,7 +154,10 @@ for (const [pid, from, to] of PLAN) {
       errs[n.id] = String((e && e.message) || e).slice(0, 120);
     }
   }
-  out.push([pid, p.name, kids.length, from, i, rows.join(",")]);
+  const text = rows.join(",");
+  const sum = fpAcc();
+  sum.add(text);
+  out.push([pid, p.name, kids.length, from, i, text, sum.hex()]);
 }
 return { fingerprint: 1, mode: FULL ? "full" : "shallow", fileKey: FILE_KEY, ms: Date.now() - t0, nodes, want: [...K], kv, errs, chunks: out };`;
 }
@@ -204,13 +208,19 @@ export function reconcileFingerprints(docs, liveIdsOf) {
       for (const id of doc.want || []) direct.set(`${doc.fileKey}:${id}`, errs[id] ? "error" : (doc.missing || []).includes(id) ? "missing" : "found");
     }
     for (const [id, v] of Object.entries(doc.kv || {})) kv[`${doc.fileKey}:${id}`] = v;
-    for (const [pid, name, count, from, end, rows] of doc.chunks) {
+    for (const [pid, name, count, from, end, rows, sum] of doc.chunks) {
       const key = `${doc.fileKey}|${pid}`;
       const mode = doc.mode || "full";
       if (!pages.has(key)) pages.set(key, { fileKey: doc.fileKey, pageId: pid, pageName: name, count, mode, spans: [], rows: new Map(), errs: {}, ms: 0, nodes: 0 });
       const pg = pages.get(key);
       if (pg.mode !== mode) pg.bad = `chunks mix a ${pg.mode} and a ${mode} walk`;
       if (pg.count !== count) pg.bad = `chunks disagree on the child count (${pg.count} vs ${count})`;
+      // A result is copied out of use_figma by hand; its checksum is the only proof the copy is exact.
+      if (sum !== undefined) {
+        const a = fpLib.fpAcc();
+        a.add(rows || "");
+        if (a.hex() !== sum) pg.bad = `chunk [${from},${end}) fails its checksum: the result was copied wrongly`;
+      } else pg.unchecked = true;
       pg.spans.push([from, end]);
       const list = rows ? rows.split(",") : [];
       if (list.length !== end - from) pg.bad = `chunk [${from},${end}) carries ${list.length} rows`;

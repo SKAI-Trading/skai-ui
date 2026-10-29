@@ -47,7 +47,7 @@
  *   node harvest.mjs probe-script --file <fileKey>
  *   node harvest.mjs probe-ingest <probe.json> [...] [--write]
  *   node harvest.mjs section --file <fileKey> --page <pageId> --name <slug>
- *   node harvest.mjs fingerprint-script --file <fileKey> --pages <pageId,...> --out <dir> [--shallow]
+ *   node harvest.mjs fingerprint-script --file <fileKey> --pages <pageId,...> --out <dir> [--shallow] [--ms 38000]
  *   node harvest.mjs fingerprint-script --file <fileKey> --chunk '[["4459:128102",0,441]]'
  *   node harvest.mjs fingerprint-script --file <fileKey> --store --pages <pageId,...>
  *   node harvest.mjs fingerprint-ingest <fp.json> [...] [--write]
@@ -825,6 +825,8 @@ function cmdFingerprintScript(args) {
   const manifest = readJson(path.join(LIVE, "_pages.json"));
   const pageOf = (pid) => manifest.pages.find((p) => p.fileKey === fileKey && colon(p.pageId) === colon(pid));
   const shallow = args.includes("--shallow");
+  // --ms: how long a call may keep starting boards. use_figma has run 45 s calls; the default leaves headroom.
+  const ms = arg(args, "--ms") ? Math.max(1000, +arg(args, "--ms")) : undefined;
   if (args.includes("--store")) {
     // One script for every design-store frame on the pages named, looked up by id.
     const pids = (arg(args, "--pages") || "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -838,7 +840,7 @@ function cmdFingerprintScript(args) {
   if (chunkArg) {
     const chunk = JSON.parse(chunkArg);
     const ids = [...new Set(chunk.flatMap(([pid]) => storeIdsOn(fileKey, pageOf(pid)?.pageName)))];
-    process.stdout.write(fingerprintScript(fileKey, chunk, ids, { shallow }) + "\n");
+    process.stdout.write(fingerprintScript(fileKey, chunk, ids, { shallow, ms }) + "\n");
     return;
   }
   const pages = (arg(args, "--pages") || "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -852,7 +854,7 @@ function cmdFingerprintScript(args) {
     const ids = storeIdsOn(fileKey, pg.pageName);
     fingerprintChunks(colon(pid), count).forEach((c, i) => {
       const f = path.join(out, `fp-${fileKey.slice(0, 4)}-${hyphen(pid)}-${i + 1}.js`);
-      fs.writeFileSync(f, fingerprintScript(fileKey, [c], ids, { shallow }) + "\n");
+      fs.writeFileSync(f, fingerprintScript(fileKey, [c], ids, { shallow, ms }) + "\n");
       console.log(`${f}\t${pg.pageName} [${c[1]},${c[2]}) of ${count}\t${ids.length} store frame(s)`);
     });
   }
@@ -893,7 +895,12 @@ function cmdFingerprintIngest(args) {
       for (const a of cmp.added) console.log(`      ADDED   ${a}`);
       for (const r of cmp.removed) console.log(`      REMOVED ${r}`);
     }
-    base.pages[key] = { fileKey: pg.fileKey, pageId: pg.pageId, pageName: pg.pageName, mode: pg.mode, at: stamp, boards: rows.length, nodes: pg.nodes, ms: pg.ms, fp: Object.fromEntries(rows.map((r) => [r.id, `${r.h} ${r.n}`])) };
+    base.pages[key] = {
+      fileKey: pg.fileKey, pageId: pg.pageId, pageName: pg.pageName, mode: pg.mode, at: stamp, boards: rows.length, nodes: pg.nodes, ms: pg.ms,
+      // A chunk copied from a result that carried no checksum: its ids were checked against live/, its hashes could not be.
+      ...(pg.unchecked ? { unchecked: "part of this page was copied from a result with no checksum; a CHANGED board here is re-read before it is believed" } : {}),
+      fp: Object.fromEntries(rows.map((r) => [r.id, `${r.h} ${r.n}`])),
+    };
   }
   // Design-store frames on the pages read: does the live structure still match the stored spec?
   const store = [];
@@ -1194,10 +1201,12 @@ function selfTest() {
       const short = { ...doc, chunks: [["9:9", "✅ P", 2, 0, 1, doc.chunks[0][5].split(",")[0]]] };
       const r2 = reconcileFingerprints([{ source: "t", doc: short }], live);
       const r3 = reconcileFingerprints([{ source: "t", doc }], () => ["1:1", "3:3"]);
+      const bent = { ...doc, chunks: [[...doc.chunks[0].slice(0, 5), doc.chunks[0][5].replace(/^(\S+ )(.)/, (m, id, c) => id + (c === "0" ? "1" : "0")), doc.chunks[0][6]]] };
+      const r4 = reconcileFingerprints([{ source: "t", doc: bent }], live);
       const grp = fpLib.fpWalk(board().children[1], false)[0];
       check(
-        "fingerprint: a page whose chunks tile it is accepted with both boards and the store frame's k; a page cut short is refused as INCOMPLETE; ids unlike live/ are refused",
-        r.pages.length === 1 && pg.rows.size === 2 && pg.rows.get(0).h === s0 && r.kv["F:1:3"] === `${grp} 2` && r2.pages.length === 0 && /INCOMPLETE/.test(r2.refused[0].why) && r3.pages.length === 0 && /harvest the page first/.test(r3.refused[0].why),
+        "fingerprint: a page whose chunks tile it is accepted with both boards and the store frame's k; a page cut short is refused as INCOMPLETE; ids unlike live/ are refused; a row copied wrongly fails the checksum",
+        r.pages.length === 1 && pg.rows.size === 2 && pg.rows.get(0).h === s0 && r.kv["F:1:3"] === `${grp} 2` && r2.pages.length === 0 && /INCOMPLETE/.test(r2.refused[0].why) && r3.pages.length === 0 && /harvest the page first/.test(r3.refused[0].why) && bent.chunks[0][5] !== doc.chunks[0][5] && r4.pages.length === 0 && /checksum/.test(r4.refused[0].why),
         JSON.stringify({ r, r2: r2.refused, r3: r3.refused }),
       );
       const cmp = compareBaseline({ "1:1": `${s0} 7`, "2:1": "00000000 1", "4:4": "aaaaaaaa 3" }, [...pg.rows.values()]);
