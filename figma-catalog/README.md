@@ -123,6 +123,19 @@ The loop, per Figma file:
 `harvest.mjs --self-test` and `pipeline.mjs --self-test` cover the reconciliation and
 comparison rules without touching Figma.
 
+**Edits inside a board.** Step 0 hashes each page's top-level rows only, so a row rebuilt
+inside an existing board changes nothing it sees (the 375 Play mode cards, 2026-10-27).
+`harvest fingerprint-script --file <key> --pages <id,...> --out <dir> [--shallow]` prints
+scripts that hash every board's whole subtree (ids, types, bounds as the design store
+writes them, visibility, text; not fills or styles), and `fingerprint-ingest <files> --write`
+keeps one hash per board in `live/_fingerprints.json` and lists the boards that moved since
+the last baseline. For frames `figma/store` holds a spec for, it also says whether the live
+structure still matches the spec. Ingest refuses a page whose chunks do not tile it. Cost,
+measured 2026-10-29 on Play: the full walk (into instances) covered 43 of 441 boards,
+33,592 nodes, in its 20 s budget, so a full baseline of the busy pages runs to dozens of
+calls; `--shallow` treats instances as leaves, the store's own rule, and misses an override
+inside an instance.
+
 ## What the tooling refuses, on purpose
 
 - A page whose chunks leave a gap, overlap, repeat an id, or disagree on the page's

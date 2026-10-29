@@ -47,7 +47,16 @@
  *   node harvest.mjs probe-script --file <fileKey>
  *   node harvest.mjs probe-ingest <probe.json> [...] [--write]
  *   node harvest.mjs section --file <fileKey> --page <pageId> --name <slug>
+ *   node harvest.mjs fingerprint-script --file <fileKey> --pages <pageId,...> --out <dir> [--shallow]
+ *   node harvest.mjs fingerprint-script --file <fileKey> --chunk '[["4459:128102",0,441]]'
+ *   node harvest.mjs fingerprint-ingest <fp.json> [...] [--write]
  *   node harvest.mjs --self-test
+ *
+ * `fingerprint-*` hash each top-level board's whole subtree (fingerprint.mjs),
+ * which the page hash cannot see into, and keep the baseline per board in
+ * live/_fingerprints.json. Ingest prints the boards whose structure moved
+ * since the last baseline, and, for frames the design store holds a spec for,
+ * whether the live structure still matches the spec.
  *
  * `section` scaffolds a NEW section for a harvested page that has none:
  * <slug>.nodes.txt, <slug>.titles.tsv and the page's `sections` entry in
@@ -69,6 +78,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { compareBaseline, fingerprintChunks, fingerprintScript, fpLib, reconcileFingerprints, specFingerprint, storeFingerprint } from "./fingerprint.mjs";
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const LIVE = path.join(DIR, "live");
@@ -792,6 +802,124 @@ for (const p of figma.root.children) {
 return { verify: 1, fileKey: FILE_KEY, file: figma.root.name, pages: out };`;
 }
 
+// ── fingerprint (structure inside each board) ────────────────────────────────
+const FIGMA_DIR = path.join(DIR, "..", "figma");
+const FP_PATH = path.join(LIVE, "_fingerprints.json");
+
+/** Design-store frames (not parts) on one page, colon ids, so the walk can return their k. */
+function storeIdsOn(fileKey, pageName) {
+  const p = path.join(FIGMA_DIR, "store", "index.json");
+  if (!fs.existsSync(p)) return [];
+  const out = [];
+  for (const [key, e] of Object.entries(readJson(p).frames || {})) {
+    if (e.partOf || !key.startsWith(`${fileKey}:`) || e.page !== pageName) continue;
+    out.push(key.slice(fileKey.length + 1));
+  }
+  return out.sort();
+}
+
+function cmdFingerprintScript(args) {
+  const fileKey = arg(args, "--file");
+  if (!fileKey) die("fingerprint-script: --file <fileKey> is required");
+  const manifest = readJson(path.join(LIVE, "_pages.json"));
+  const pageOf = (pid) => manifest.pages.find((p) => p.fileKey === fileKey && colon(p.pageId) === colon(pid));
+  const shallow = args.includes("--shallow");
+  const chunkArg = arg(args, "--chunk");
+  if (chunkArg) {
+    const chunk = JSON.parse(chunkArg);
+    const ids = [...new Set(chunk.flatMap(([pid]) => storeIdsOn(fileKey, pageOf(pid)?.pageName)))];
+    process.stdout.write(fingerprintScript(fileKey, chunk, ids, { shallow }) + "\n");
+    return;
+  }
+  const pages = (arg(args, "--pages") || "").split(",").map((s) => s.trim()).filter(Boolean);
+  const out = arg(args, "--out");
+  if (!pages.length || !out) die("fingerprint-script: --pages <pageId,...> and --out <dir> are required (or --chunk '<json>')");
+  fs.mkdirSync(out, { recursive: true });
+  for (const pid of pages) {
+    const pg = pageOf(pid);
+    if (!pg) die(`fingerprint-script: page ${pid} is not in live/_pages.json for ${fileKey}`);
+    const count = pg.liveChildren ?? pg.n ?? readLines(tsvPath(fileKey, pid)).length;
+    const ids = storeIdsOn(fileKey, pg.pageName);
+    fingerprintChunks(colon(pid), count).forEach((c, i) => {
+      const f = path.join(out, `fp-${fileKey.slice(0, 4)}-${hyphen(pid)}-${i + 1}.js`);
+      fs.writeFileSync(f, fingerprintScript(fileKey, [c], ids, { shallow }) + "\n");
+      console.log(`${f}\t${pg.pageName} [${c[1]},${c[2]}) of ${count}\t${ids.length} store frame(s)`);
+    });
+  }
+}
+
+function cmdFingerprintIngest(args) {
+  const write = args.includes("--write");
+  const files = args.filter((a) => !a.startsWith("--"));
+  if (!files.length) die("fingerprint-ingest: at least one fingerprint.json is required");
+  const docs = files.map((f) => {
+    try {
+      return { source: f, doc: readJson(f) };
+    } catch (e) {
+      return { source: f, doc: null };
+    }
+  });
+  const liveIdsOf = (fk, pid) => readLines(tsvPath(fk, pid)).map((l) => parseLiveRow(l).id);
+  const { pages, refused, kv, want } = reconcileFingerprints(docs, liveIdsOf);
+  const base = fs.existsSync(FP_PATH) ? readJson(FP_PATH) : { v: 1, pages: {}, store: {} };
+  base.pages = base.pages || {};
+  base.store = base.store || {};
+  const stamp = today();
+  console.log(`fingerprint-ingest: ${pages.length} page(s) complete, ${refused.length} refused.`);
+  for (const r of refused) console.log(`  REFUSED  ${r.page}: ${r.why}`);
+  const donePages = new Set();
+  for (const pg of pages) {
+    const key = `${pg.fileKey}|${pg.pageId}`;
+    donePages.add(key);
+    const rows = [...pg.rows.keys()].sort((a, b) => a - b).map((i) => pg.rows.get(i));
+    const prev = base.pages[key];
+    // A full and a shallow hash of the same board differ by construction, so only like is compared with like.
+    const cmp = prev && (prev.mode || "full") === pg.mode ? compareBaseline(prev.fp, rows) : null;
+    console.log(`\n  ${pg.pageName} (${pg.pageId})  ${rows.length} boards, ${pg.nodes} nodes walked, ${pg.ms} ms in Figma`);
+    if (!cmp) console.log(`      first baseline for this page`);
+    else {
+      console.log(`      against the ${prev.at} baseline: ${cmp.changed.length} changed, ${cmp.added.length} added, ${cmp.removed.length} removed`);
+      for (const c of cmp.changed) console.log(`      CHANGED ${c.id}\t${c.was} -> ${c.now}`);
+      for (const a of cmp.added) console.log(`      ADDED   ${a}`);
+      for (const r of cmp.removed) console.log(`      REMOVED ${r}`);
+    }
+    base.pages[key] = { fileKey: pg.fileKey, pageId: pg.pageId, pageName: pg.pageName, mode: pg.mode, at: stamp, boards: rows.length, nodes: pg.nodes, ms: pg.ms, fp: Object.fromEntries(rows.map((r) => [r.id, `${r.h} ${r.n}`])) };
+  }
+  // Design-store frames on the pages read: does the live structure still match the stored spec?
+  const store = [];
+  for (const [frameKey, fk] of want) {
+    const node = frameKey.slice(fk.length + 1);
+    const spec = storeFingerprint(FIGMA_DIR, frameKey);
+    if (!spec || !donePages.has(`${fk}|${colon(manifestPageId(fk, spec.page) || "")}`)) continue;
+    const live = kv[frameKey];
+    const state = !live ? "not-found" : live.split(" ")[0] === spec.k ? "same" : "moved";
+    store.push({ frameKey, node, state, live, spec, page: spec.page, name: spec.name });
+    base.store[frameKey] = { page: spec.page, name: spec.name, at: stamp, state, live: live || null, spec: `${spec.k} ${spec.n}`, specSyncedAt: spec.syncedAt, ...(spec.missing.length ? { partsMissing: spec.missing } : {}) };
+  }
+  if (store.length) {
+    const by = (s) => store.filter((x) => x.state === s);
+    console.log(`\n  design store: ${store.length} stored frame(s) on these pages: ${by("same").length} same, ${by("moved").length} moved, ${by("not-found").length} not found`);
+    for (const x of store.filter((y) => y.state !== "same")) console.log(`      ${x.state.toUpperCase()}\t${x.node}\t${x.page}\t${x.name}\tspec ${x.spec.k} ${x.spec.n} (${String(x.spec.syncedAt).slice(0, 10)})\tlive ${x.live || "-"}`);
+  }
+  if (!write) {
+    console.log("\n  DRY RUN — live/_fingerprints.json untouched. Re-run with --write.");
+    return;
+  }
+  base.v = 1;
+  base._comment =
+    "Per-board structural fingerprints (fingerprint.mjs): fp[id] = 's n', s an FNV-1a 32 over every node's id|type|bounds|visible|text in the board, n the node count. store[] compares the design store's specs with the live structure under the store's own pruning.";
+  base.updatedAt = stamp;
+  base.pages = Object.fromEntries(Object.entries(base.pages).sort(([a], [b]) => a.localeCompare(b)));
+  base.store = Object.fromEntries(Object.entries(base.store).sort(([a], [b]) => a.localeCompare(b)));
+  writeJson(FP_PATH, base);
+  console.log(`\n  wrote live/_fingerprints.json (${Object.keys(base.pages).length} page(s), ${Object.keys(base.store).length} store frame(s)).`);
+}
+
+function manifestPageId(fileKey, pageName) {
+  const m = readJson(path.join(LIVE, "_pages.json")).pages.find((p) => p.fileKey === fileKey && p.pageName === pageName);
+  return m ? m.pageId : null;
+}
+
 function cmdVerifyScript(args) {
   const fileKey = arg(args, "--file");
   if (!fileKey) die("verify-script: --file <fileKey> is required");
@@ -985,6 +1113,85 @@ function selfTest() {
     const none = { harvestedAt: "2026-09-21", pages: [] };
     check("stamp: an empty manifest never claims a fresh harvest", !settleTopLevel(none, "2026-09-22") && none.harvestedAt === "2026-09-21", none.harvestedAt);
   }
+  {
+    // A live board shaped the way the Plugin API reports it, and the spec the design store's builder writes for it,
+    // written out by hand from SCHEMA.md: bounds relative to the parent, a GROUP child placed against the group,
+    // the root at [0, 0, w, h], an instance with no overrides kept as a leaf, a vector's children dropped.
+    const long = "x".repeat(520);
+    const board = (o = {}) => ({
+      id: "1:1", type: "FRAME", x: o.bx ?? 4000, y: o.by ?? 200, width: 375, height: 812, visible: true,
+      children: [
+        { id: "1:2", type: "TEXT", x: 16, y: 12, width: 93, height: 22, visible: true, characters: o.title ?? "Sports book" },
+        { id: "1:3", type: "GROUP", x: 40, y: 100, width: 200, height: 50, visible: true, children: [
+          { id: "1:4", type: "RECTANGLE", x: 50.3, y: 110, width: 20, height: 20, visible: o.hide ? false : true },
+        ] },
+        { id: "1:5", type: "INSTANCE", x: 0, y: 758, width: 375, height: o.navH ?? 54, visible: true, children: [
+          { id: "I1:5;9:1", type: "TEXT", x: 10, y: 10, width: 40, height: 14, visible: true, characters: o.navLabel ?? "Home" },
+        ] },
+        { id: "1:6", type: "VECTOR", x: 1, y: 1, width: 2, height: 2, visible: true },
+        { id: "1:7", type: "TEXT", x: 0, y: 300, width: 300, height: 40, visible: true, characters: long },
+      ],
+    });
+    const spec = {
+      id: "1:1", t: "FRAME", n: "b", b: [0, 0, 375, 812], c: [
+        { id: "1:2", t: "TEXT", n: "t", b: [16, 12, 93, 22], tx: { c: "Sports book" } },
+        { id: "1:3", t: "GROUP", n: "g", b: [40, 100, 200, 50], c: [{ id: "1:4", t: "RECTANGLE", n: "r", b: [10.5, 10, 20, 20] }] },
+        { id: "1:5", t: "INSTANCE", n: "nav", b: [0, 758, 375, 54], ci: { k: "abc" } },
+        { id: "1:6", t: "VECTOR", n: "v", b: [1, 1, 2, 2] },
+        { id: "1:7", t: "TEXT", n: "l", b: [0, 300, 300, 40], tx: { c: "x".repeat(500) + "…" } },
+      ],
+    };
+    const [s0, n0] = fpLib.fpWalk(board(), true);
+    const [k0, nk0] = fpLib.fpWalk(board(), false);
+    const fromSpec = specFingerprint(spec);
+    check("fingerprint: the store-rule walk of a live board equals the same walk over the spec the store writes for it", k0 === fromSpec.k && nk0 === fromSpec.n && nk0 === 7 && n0 === 8, JSON.stringify({ k0, nk0, fromSpec, n0 }));
+    // Each mutation is checked against the control above, so a walk that ignored the field would fail here.
+    const moved = fpLib.fpWalk(board({ bx: 9000, by: -40 }), true)[0];
+    const retitled = fpLib.fpWalk(board({ title: "Casino" }), true)[0];
+    const hidden = fpLib.fpWalk(board({ hide: true }), true)[0];
+    const navText = board({ navLabel: "Play" });
+    const resized = board({ navH: 60 });
+    check(
+      "fingerprint: moving the board on the canvas changes nothing; a text, a hidden layer or a resized child changes s; an edit inside an instance changes s but not the store-rule k",
+      moved === s0 && retitled !== s0 && hidden !== s0 &&
+        fpLib.fpWalk(navText, true)[0] !== s0 && fpLib.fpWalk(navText, false)[0] === k0 &&
+        fpLib.fpWalk(resized, true)[0] !== s0 && fpLib.fpWalk(resized, false)[0] !== k0,
+      JSON.stringify({ s0, moved, retitled, hidden }),
+    );
+    // The emitted script run end to end against a mock file, then reconciled the way ingest does.
+    const page = { id: "9:9", name: "✅ P", children: [board(), { ...board(), id: "2:1", children: [] }], loadAsync: async () => {} };
+    const figma = { root: { children: [page] } };
+    const AsyncFn = Object.getPrototypeOf(async () => {}).constructor;
+    const js = fingerprintScript("F", [["9:9", 0, 2]], ["1:3"]);
+    const jsShallow = fingerprintScript("F", [["9:9", 0, 2]], [], { shallow: true });
+    check("fingerprint: emitted code is read-only (loadAsync, no page switch, no writes)", /loadAsync/.test(js) && !/setCurrentPageAsync/.test(js) && !/\.(remove|appendChild|createFrame|setPluginData)\(/.test(js));
+    Promise.all([new AsyncFn("figma", js)(figma), new AsyncFn("figma", jsShallow)(figma)]).then(([doc, shallowDoc]) => {
+      const live = () => ["1:1", "2:1"];
+      const r = reconcileFingerprints([{ source: "t", doc }], live);
+      const pg = r.pages[0];
+      const short = { ...doc, chunks: [["9:9", "✅ P", 2, 0, 1, doc.chunks[0][5].split(",")[0]]] };
+      const r2 = reconcileFingerprints([{ source: "t", doc: short }], live);
+      const r3 = reconcileFingerprints([{ source: "t", doc }], () => ["1:1", "3:3"]);
+      const grp = fpLib.fpWalk(board().children[1], false)[0];
+      check(
+        "fingerprint: a page whose chunks tile it is accepted with both boards and the store frame's k; a page cut short is refused as INCOMPLETE; ids unlike live/ are refused",
+        r.pages.length === 1 && pg.rows.size === 2 && pg.rows.get(0).h === s0 && r.kv["F:1:3"] === `${grp} 2` && r2.pages.length === 0 && /INCOMPLETE/.test(r2.refused[0].why) && r3.pages.length === 0 && /harvest the page first/.test(r3.refused[0].why),
+        JSON.stringify({ r, r2: r2.refused, r3: r3.refused }),
+      );
+      const cmp = compareBaseline({ "1:1": `${s0} 7`, "2:1": "00000000 1", "4:4": "aaaaaaaa 3" }, [...pg.rows.values()]);
+      const half = (d, from, i) => ({ ...d, chunks: [["9:9", "✅ P", 2, from, from + 1, d.chunks[0][5].split(",")[i]]] });
+      const mixed = reconcileFingerprints([{ source: "a", doc: half(doc, 0, 0) }, { source: "b", doc: half(shallowDoc, 1, 1) }], live);
+      check(
+        "fingerprint: a shallow walk hashes each board under the store's rules (its row equals k), and chunks of two modes are refused together",
+        shallowDoc.mode === "shallow" && doc.mode === "full" && shallowDoc.chunks[0][5].split(",")[0] === `1:1 ${k0} ${nk0}` && mixed.pages.length === 0 && /mix/.test(mixed.refused[0].why),
+        JSON.stringify({ shallow: shallowDoc.chunks, mixed: mixed.refused }),
+      );
+      check("fingerprint: against a baseline, a moved hash is CHANGED, a new id ADDED and a vanished one REMOVED", cmp.changed.length === 1 && cmp.changed[0].id === "2:1" && cmp.added.length === 0 && cmp.removed.join() === "4:4", JSON.stringify(cmp));
+      console.log(`\nself-test: ${pass}/${cases.length} passed.`);
+      process.exit(pass === cases.length ? 0 : 1);
+    });
+    return;
+  }
   console.log(`\nself-test: ${pass}/${cases.length} passed.`);
   process.exit(pass === cases.length ? 0 : 1);
 }
@@ -1015,5 +1222,7 @@ if (IS_MAIN) {
   else if (cmd === "verify-script") cmdVerifyScript(rest);
   else if (cmd === "verify-ingest") cmdVerifyIngest(rest);
   else if (cmd === "section") cmdSection(rest);
+  else if (cmd === "fingerprint-script") cmdFingerprintScript(rest);
+  else if (cmd === "fingerprint-ingest") cmdFingerprintIngest(rest);
   else die(`unknown subcommand ${cmd}; run with --help`);
 }
