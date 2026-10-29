@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-28T02:45:29.379Z",
-  "harvestedAt": "2026-10-27",
+  "generated": "2026-10-29T04:46:06.285Z",
+  "harvestedAt": "2026-10-29",
   "rollup": {
     "pages": 39,
-    "live": 4699,
-    "furniture": 830,
-    "genuine": 3391,
+    "live": 4718,
+    "furniture": 837,
+    "genuine": 3403,
     "ruledOut": 181,
-    "genuineWithRuledOut": 3572,
+    "genuineWithRuledOut": 3584,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
       "vverify.home.tsv 5854-80845",
@@ -17,7 +17,7 @@
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
     "frameDefectsOut": 297,
-    "genuineWithFrameDefects": 3688,
+    "genuineWithFrameDefects": 3700,
     "frameDefectUncited": [],
     "matched": 3384,
     "done": 1748,
@@ -49,7 +49,7 @@
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
-    "liveOnly": 7,
+    "liveOnly": 19,
     "rollupOnly": 8,
     "defaultNamed": 156,
     "ambiguous": 105,
@@ -6582,7 +6582,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -6617,7 +6617,7 @@
       "n": 46,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 46,
       "furniture": 1,
       "furnitureWhy": {
@@ -6962,7 +6962,7 @@
       "n": 1157,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 1157,
       "furniture": 1156,
       "furnitureWhy": {
@@ -7000,7 +7000,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -7049,7 +7049,7 @@
       "n": 151,
       "openReports": 5,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "note": "In scope from 2026-09-09 (Casey, wave 39 go: the standing exclusion is lifted so Onboarding and Authentication counts and gets built).",
       "live": 151,
       "furniture": 27,
@@ -7118,7 +7118,7 @@
       "n": 10,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 10,
       "furniture": 4,
       "furnitureWhy": {
@@ -7149,7 +7149,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 20,
       "furniture": 20,
       "furnitureWhy": {
@@ -7180,7 +7180,7 @@
       "n": 13,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 13,
       "furniture": 13,
       "furnitureWhy": {
@@ -7210,7 +7210,7 @@
       "n": 154,
       "openReports": 0,
       "scope": "tombstone",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 154,
       "furniture": 37,
       "furnitureWhy": {
@@ -7261,7 +7261,7 @@
       "n": 284,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 284,
       "furniture": 30,
       "furnitureWhy": {
@@ -7326,11 +7326,11 @@
       "pageId": "4459:128102",
       "pageName": "✅ Play",
       "readiness": "ready",
-      "n": 435,
+      "n": 441,
       "openReports": 38,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
-      "live": 435,
+      "harvestedAt": "2026-10-29",
+      "live": 441,
       "furniture": 78,
       "furnitureWhy": {
         "canvas-chrome": 65,
@@ -7428,7 +7428,7 @@
         "13752-218432",
         "13752-218642"
       ],
-      "genuine": 273,
+      "genuine": 279,
       "matched": 270,
       "rollupOnly": 2,
       "defaultNamed": 0,
@@ -7459,11 +7459,53 @@
           "h": 900
         },
         {
+          "id": "14099-47130",
+          "name": "Skai > Play > Casino > Mines - picture-in-picture > live chat icon position 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
           "id": "14074-45422",
           "name": "Multi-panel - live chat",
           "type": "FRAME",
           "w": 313,
           "h": 662
+        },
+        {
+          "id": "14099-48337",
+          "name": "CTA/button",
+          "type": "FRAME",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": "14099-48409",
+          "name": "Skai > Play > Casino > Mines (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1627
+        },
+        {
+          "id": "14099-49646",
+          "name": "Skai > Play > Casino > Mines - modal version / live chat icon position 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "14099-50907",
+          "name": "Skai > Play > Casino > Mines - modal version / live chat icon position 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "14099-51713",
+          "name": "Skai > Play > Casino > Mines - modal version / live chat icon position (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 3368
         }
       ]
     },
@@ -7475,7 +7517,7 @@
       "n": 442,
       "openReports": 16,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 442,
       "furniture": 41,
       "furnitureWhy": {
@@ -7555,7 +7597,7 @@
     {
       "fileKey": "3sSzw1KewMtUbeLAv7uW0r",
       "pageId": "5210:118077",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "pageName": "✅ Governance and Utilities",
       "readiness": "ready",
       "n": 725,
@@ -7651,7 +7693,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -7681,7 +7723,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 280,
@@ -7736,17 +7778,17 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13008:110718",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "pageName": "✅ Home 2",
       "readiness": "ready",
-      "n": 242,
+      "n": 255,
       "nVerifiedAt": "2026-09-08",
       "openReports": 36,
       "scope": "in-scope",
-      "live": 242,
-      "furniture": 38,
+      "live": 255,
+      "furniture": 45,
       "furnitureWhy": {
-        "canvas-chrome": 34,
+        "canvas-chrome": 41,
         "hidden": 3,
         "loose-text": 1
       },
@@ -7767,7 +7809,7 @@
         "14179-163655",
         "13008-129897"
       ],
-      "genuine": 193,
+      "genuine": 199,
       "matched": 193,
       "rollupOnly": 0,
       "defaultNamed": 2,
@@ -7780,7 +7822,50 @@
         "partial": 37,
         "blocked-on-backend": 35
       },
-      "liveOnly": []
+      "liveOnly": [
+        {
+          "id": "16057-162715",
+          "name": "Skai > Home > Notification pop-up 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "16058-164798",
+          "name": "Skai > Home > Notification pop-up > show all notifications 1VH (1440 x 900px)",
+          "type": "FRAME",
+          "w": 1440,
+          "h": 900
+        },
+        {
+          "id": "16058-164188",
+          "name": "Skai > Home > Notification pop-up 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "16059-165635",
+          "name": "Skai > Home > Notification pop-up > show all notifications 1VH (768 x 1024px)",
+          "type": "FRAME",
+          "w": 768,
+          "h": 1024
+        },
+        {
+          "id": "16058-164251",
+          "name": "Skai > Home > Notification pop-up 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        },
+        {
+          "id": "16059-167047",
+          "name": "Skai > Home > Notification pop-up > show all notifications 1VH (375 x 812px)",
+          "type": "FRAME",
+          "w": 375,
+          "h": 812
+        }
+      ]
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -7790,7 +7875,7 @@
       "n": 178,
       "openReports": 42,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 178,
       "furniture": 11,
@@ -7837,7 +7922,7 @@
       "n": 191,
       "openReports": 25,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 191,
       "furniture": 23,
       "furnitureWhy": {
@@ -7890,7 +7975,7 @@
       "n": 421,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 421,
       "furniture": 54,
@@ -7951,7 +8036,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 420,
@@ -8066,7 +8151,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -8101,7 +8186,7 @@
       "n": 3,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 3,
       "furniture": 0,
       "furnitureWhy": {},
@@ -8148,7 +8233,7 @@
       "pageName": "🌎 Cover Images - Skai Originals",
       "readiness": "meta",
       "n": 44,
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "openReports": 0,
       "scope": "in-scope",
       "scopeRuling": "Casey, 2026-09-08: BUILD the covers - the meta tag is wrong. Put to him directly after the meta legend was used to block ~10 <Game> Cover Photo rows, which contradicted his 2026-08-19 ruling that the Skai-Games cover section IS the source for cover art. readiness stays meta ON PURPOSE: it tracks the page's own 🌎 marker (pages.json readinessLegend maps 🌎 and 📍 to meta mechanically), i.e. what the Figma file says about itself. scope is the ruling. The two differing is the normal shape here - Governance is readiness ready / scope held, Home 1 is ready / v1-superseded.",
@@ -8183,7 +8268,7 @@
       "n": 36,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 36,
       "furniture": 13,
       "furnitureWhy": {
@@ -8222,7 +8307,7 @@
       "n": 28,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 28,
       "furniture": 16,
       "furnitureWhy": {
@@ -8285,7 +8370,7 @@
       "n": 23,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 23,
       "furniture": 9,
       "furnitureWhy": {
@@ -8322,7 +8407,7 @@
       "n": 20,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 20,
       "furniture": 7,
       "furnitureWhy": {
@@ -8352,7 +8437,7 @@
       "pageName": "✅ Mines - Skai originals",
       "readiness": "ready",
       "n": 19,
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "openReports": 0,
       "scope": "in-scope",
       "live": 19,
@@ -8388,7 +8473,7 @@
       "pageName": "✅ Coinflip - Skai originals",
       "readiness": "ready",
       "n": 46,
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "openReports": 3,
       "scope": "in-scope",
       "live": 46,
@@ -8428,7 +8513,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 21,
       "furniture": 8,
       "furnitureWhy": {
@@ -8466,7 +8551,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 31,
       "furniture": 16,
       "furnitureWhy": {
@@ -8503,7 +8588,7 @@
       "n": 15,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 15,
       "furniture": 9,
       "furnitureWhy": {
@@ -8536,7 +8621,7 @@
       "n": 31,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 31,
       "furniture": 17,
       "furnitureWhy": {
@@ -8570,7 +8655,7 @@
       "n": 27,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 27,
       "furniture": 11,
       "furnitureWhy": {
@@ -8604,7 +8689,7 @@
       "n": 25,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 25,
       "furniture": 14,
       "furnitureWhy": {
@@ -8640,7 +8725,7 @@
       "n": 14,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 14,
       "furniture": 5,
       "furnitureWhy": {
@@ -8680,7 +8765,7 @@
       "n": 17,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 17,
       "furniture": 6,
       "furnitureWhy": {
@@ -8720,7 +8805,7 @@
       "n": 21,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 21,
       "furniture": 11,
       "furnitureWhy": {
@@ -8757,7 +8842,7 @@
       "n": 21,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 21,
       "furniture": 8,
       "furnitureWhy": {
@@ -8800,7 +8885,7 @@
       "n": 14,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 14,
       "furniture": 5,
       "furnitureWhy": {
@@ -8833,7 +8918,7 @@
       "n": 24,
       "openReports": 1,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 24,
       "furniture": 8,
       "furnitureWhy": {
@@ -8870,7 +8955,7 @@
       "n": 18,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 18,
       "furniture": 6,
       "furnitureWhy": {
@@ -8905,7 +8990,7 @@
       "n": 20,
       "openReports": 2,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 20,
       "furniture": 13,
       "furnitureWhy": {
@@ -8941,7 +9026,7 @@
       "n": 30,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 30,
       "furniture": 15,
       "furnitureWhy": {
@@ -8982,7 +9067,7 @@
       "n": 53,
       "openReports": 0,
       "scope": "excluded",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "note": "Excluded 2026-09-09: the page name says Disregard. A working draft of the Towers game superseded by the ready page (9061:15449); 9 FRAME nodes with generic names and 42 loose nodes. Re-scope only if the page is renamed.",
       "live": 53,
       "furniture": 43,
@@ -9085,7 +9170,7 @@
       "n": 0,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "live": 0,
       "furniture": 0,
       "furnitureWhy": {},
@@ -9110,7 +9195,7 @@
       "pageName": "✅ Untamed - Skai originals",
       "readiness": "ready",
       "n": 72,
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Safari slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -9157,7 +9242,7 @@
       "pageName": "✅ Starbound - Skai originals",
       "readiness": "ready",
       "n": 62,
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Cosmic is the base game of the slot program (Casey 2026-09-09); built on the slot engine, plan 2.",
@@ -9194,7 +9279,7 @@
       "pageName": "✅ Vegas fortune - Skai originals",
       "readiness": "ready",
       "n": 96,
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "openReports": 1,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Vegas fortune slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -9248,7 +9333,7 @@
       "pageName": "✅ Sugar Rush - Skai originals",
       "readiness": "ready",
       "n": 66,
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "openReports": 0,
       "scope": "in-scope",
       "note": "Ruled in-scope 2026-09-10: Casey listed Gem slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling.",
@@ -9290,7 +9375,7 @@
       "n": 79,
       "openReports": 0,
       "scope": "in-scope",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "note": "Ruled in-scope 2026-09-10: Casey listed Fisherman slots as missing from the status board and said the mobile UI is done for all five slot games. Readiness stays wip from the page name; scope is the ruling. This page was \"Wild card - Skai originals\" until 2026-09-10; Casey's \"Wild Card Slots\" and \"Fishing Slots\" name the same page.",
       "live": 79,
       "furniture": 32,
@@ -9336,7 +9421,7 @@
       "n": 0,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "note": "Added by harvest.mjs ingest 2026-10-09. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
       "live": 0,
       "furniture": 0,
@@ -9364,7 +9449,7 @@
       "n": 9,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
       "live": 9,
       "furniture": 0,
@@ -9456,7 +9541,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-10-27",
+      "harvestedAt": "2026-10-29",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
       "live": 1,
       "furniture": 0,

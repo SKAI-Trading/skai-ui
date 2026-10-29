@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-10-28T02:45:19.578Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-10-29T04:45:50.598Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -15,8 +15,8 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | trade | ✅ | 456 | 253 | 203 | 44 | 74 | 154 | 3 | 0 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 79 | 96 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 149 | 38 | 0 | 0 | 102 |
-| play | ✅ | 469 | 171 | 298 | 45 | 68 | 93 | 4 | 2 | 66 |
-| home-2 | ✅ | 249 | 152 | 97 | 19 | 76 | 38 | 0 | 0 | 14 |
+| play | ✅ | 475 | 176 | 299 | 45 | 68 | 93 | 4 | 7 | 66 |
+| home-2 | ✅ | 262 | 158 | 104 | 21 | 76 | 38 | 0 | 6 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 23 | 76 | 19 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 93 | 37 | 0 | 0 | 59 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4900** | **2280** | | | **1229** | **963** | **67** | **21** | **1032** |
+| **all** | | **4919** | **2291** | | | **1229** | **963** | **67** | **32** | **1032** |
 
 ### Drift against live Figma
 
@@ -63,13 +63,13 @@ Frames that exist in Figma but are not in the catalog:
 | Page | Catalogued | Live | Delta |
 |------|-----------:|-----:|------:|
 | ✅ Predict | 289 | 284 | -5 |
-| ✅ Play | 467 | 435 | -32 |
+| ✅ Play | 473 | 441 | -32 |
 | ✅ Social | 444 | 442 | -2 |
 | ✅ Governance and Utilities | 727 | 725 | -2 |
 | ✅ Home 1 | 295 | 280 | -15 |
 | ✅ Wallet 1 | 186 | 178 | -8 |
 | ✅ Trade 1 | 456 | 421 | -35 |
-| ✅ Home 2 | 249 | 242 | -7 |
+| ✅ Home 2 | 262 | 255 | -7 |
 | ✅ Wallet 2 | 195 | 191 | -4 |
 | ✅ Trade 2 | 440 | 420 | -20 |
 | ✅ Coinflip - Skai originals | 47 | 46 | -1 |
@@ -404,6 +404,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Sportsbook > Soccer > AVL CHE | 12 | tablet, mobile, desktop | Game view expanded; Game view expanded - Pinned; Game view collapsed - Pinned; Game view collapsed; Search expanded | partial | [11127-106812](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11127-106812&m=dev) |
 | (section root) | 9 | desktop, tablet, mobile | - | done/partial | [4595-49807](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4595-49807&m=dev) |
 | Resume play | 7 | tablet, mobile, desktop | Search bar expanded | partial/done | [10940-216537](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10940-216537&m=dev) |
+| Casino > Mines | 7 | desktop, tablet, mobile | picture-in-picture; picture-in-picture > live chat icon position; modal version / live chat icon position | unknown | [14072-43159](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=14072-43159&m=dev) |
 | Casino > Bookie | 6 | tablet, mobile, desktop | referral; tiers | partial/done | [11017-157523](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11017-157523&m=dev) |
 | Sportsbook > Side panel | 5 | tablet, mobile, desktop | Lawn tennis | partial | [11132-173793](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11132-173793&m=dev) |
 | Sportsbook > Starting soon | 4 | tablet, desktop, mobile | Starting soon sport row (row 1318x64) on Skai > Play > Sportsbook > Starting soon [row 1318x64] | partial/done | [11131-161786](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11131-161786&m=dev) |
@@ -426,7 +427,6 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Favorite games | 2 | desktop | - | done/partial | [4689-45587](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=4689-45587&m=dev) |
 | Casino > Sample game > More info | 2 | tablet, mobile | - | partial | [11097-109504](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11097-109504&m=dev) |
 | Casino > Sample game > My stats | 2 | tablet, mobile | - | partial | [11092-73531](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11092-73531&m=dev) |
-| Casino > Mines | 2 | desktop | picture-in-picture | unknown | [14072-43159](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=14072-43159&m=dev) |
 | Frame 1000003874 (375 Sports book row) [Frame 1000003874 344x78] | 2 | - | - | done | [11202-44213](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11202-44213&m=dev) |
 | 375 Casino mode card row [Frame 1000003873 343x78] | 2 | - | - | done | [11202-44201](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=11202-44201&m=dev) |
 | ALT 2 | 1 | mobile | - | not-started | [10932-126131](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10932-126131&m=dev) |
@@ -460,6 +460,8 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Whales > KOLs | 3 | desktop, tablet, mobile | - | done | [13008-116049](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-116049&m=dev) |
 | Add > Add whale > Select whale | 3 | desktop, tablet, mobile | - | partial/done | [13008-116983](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-116983&m=dev) |
 | Intelligent support ALT | 3 | desktop, tablet, mobile | - | frame-defect | [13458-193331](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13458-193331&m=dev) |
+| Notification pop-up | 3 | desktop, tablet, mobile | - | unknown | [16057-162715](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16057-162715&m=dev) |
+| Notification pop-up > show all notifications | 3 | desktop, tablet, mobile | - | unknown | [16058-164798](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16058-164798&m=dev) |
 | Whales > filter | 1 | desktop | custom input | done | [13008-111656](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-111656&m=dev) |
 | Pro ALT | 1 | desktop | - | partial | [13008-112676](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-112676&m=dev) |
 | Pro ALT stretched | 1 | desktop | - | partial | [13008-112937](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-112937&m=dev) |

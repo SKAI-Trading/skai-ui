@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28T02:44:58.313Z",
+  "generated": "2026-10-29T04:45:29.199Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -5289,16 +5289,25 @@
     "play/Casino > Mines": {
       "section": "play",
       "family": "Casino > Mines",
-      "frameCount": 2,
+      "frameCount": 7,
       "frames": [
         "14072-43159",
-        "14074-45577"
+        "14074-45577",
+        "14099-47130",
+        "14099-48409",
+        "14099-49646",
+        "14099-50907",
+        "14099-51713"
       ],
       "devices": [
-        "desktop"
+        "desktop",
+        "tablet",
+        "mobile"
       ],
       "variants": [
-        "picture-in-picture"
+        "picture-in-picture",
+        "picture-in-picture > live chat icon position",
+        "modal version / live chat icon position"
       ],
       "citedFileCount": 0,
       "citedFiles": [],
@@ -10768,6 +10777,46 @@
         "mhF3BkzlTaGiLzJ7kvpmVc:14316-248325"
       ],
       "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Notification pop-up": {
+      "section": "home-2",
+      "family": "Notification pop-up",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16057-162715",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16058-164188",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16058-164251"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Notification pop-up > show all notifications": {
+      "section": "home-2",
+      "family": "Notification pop-up > show all notifications",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16058-164798",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16059-165635",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16059-167047"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
         "mobile"
       ],
       "variants": [],

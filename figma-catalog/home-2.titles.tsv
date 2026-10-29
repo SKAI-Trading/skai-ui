@@ -1,6 +1,7 @@
 13008-110719	Directory
 13008-110725	Directory
 13008-110731	Directory
+16053-162706	Directory
 13346-161181	Directory
 13008-110738	Breakpoint
 13008-110740	Breakpoint
@@ -34,10 +35,12 @@
 13008-114883	Rectangle 158
 13008-114884	Rectangle 161
 13008-114885	Rectangle 160
+16053-162713	Rectangle 164
 13388-150266	Rectangle 163
 13008-114886	Rectangle 150
 13008-114887	Rectangle 153
 13008-114888	Rectangle 154
+16053-162714	Rectangle 165
 13346-161188	Rectangle 162
 13008-114889	Skai > Home > Add > Add whale - input 1VH (1440 x 900px)
 13008-115013	Skai > Home > Add > Add whale 1VH (1440 x 900px)
@@ -95,8 +98,11 @@
 13008-119984	Breakpoint
 13008-119986	Breakpoint
 14059-49694	Breakpoint
+16057-163004	Breakpoint
 14059-49696	Breakpoint
+16057-163006	Breakpoint
 14059-49698	Breakpoint
+16057-163008	Breakpoint
 13008-119988	Skai > Home > Whales - no data 1VH (768 x 1024px)
 13008-120075	Skai > Pro (768 x 1024px)
 13008-120275	Skai > Home > Whales (768 x 1024px)
@@ -240,6 +246,13 @@
 14268-166912	Notes
 15406-182098	Vector 386
 15406-182099	One-view height ends here
+16057-162715	Skai > Home > Notification pop-up 1VH (1440 x 900px)
+16058-164798	Skai > Home > Notification pop-up > show all notifications 1VH (1440 x 900px)
+16058-164188	Skai > Home > Notification pop-up 1VH (768 x 1024px)
+16059-165635	Skai > Home > Notification pop-up > show all notifications 1VH (768 x 1024px)
+16058-164251	Skai > Home > Notification pop-up 1VH (375 x 812px)
+16059-167047	Skai > Home > Notification pop-up > show all notifications 1VH (375 x 812px)
+16058-165436	Notes
 13008-113503	Skai > Home > upgrade checkout > payment-method row (3 children in one justify-between: icon+symbol, source-chain tag, 120px balance column)
 13008-115807	Skai > Home > whales > import wallets > Base badge — ⚠️ BROKEN EXPORT: #0052FF disc with a straight rectangular slot, not the Base brandmark. Do NOT copy; app ships the official mark deliberately
 13008-122995	Skai > Home > Whales - (375 flow bento) [bento 347x1016]

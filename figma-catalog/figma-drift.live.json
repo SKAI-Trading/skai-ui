@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27T22:39:50.139Z",
+  "generated": "2026-10-29T04:45:03.031Z",
   "sections": {
     "home": {
       "status": "clean",
@@ -51,8 +51,8 @@
     },
     "play": {
       "status": "clean",
-      "catalogued": 467,
-      "live": 435,
+      "catalogued": 473,
+      "live": 441,
       "nestedAlive": 32,
       "added": 0,
       "removed": 0,
@@ -291,8 +291,8 @@
     },
     "home-2": {
       "status": "clean",
-      "catalogued": 249,
-      "live": 242,
+      "catalogued": 262,
+      "live": 255,
       "nestedAlive": 7,
       "added": 0,
       "removed": 0,
