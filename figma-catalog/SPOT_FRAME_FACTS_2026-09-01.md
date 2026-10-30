@@ -173,3 +173,27 @@ times, and every Total but three is "655,000".
 So the frame settles the bar's **colour, left anchor, 16px height and 18px
 slot**, and settles nothing about how depth maps to width. Do not derive a
 normalisation from these widths.
+
+## The volume legend reads `Volume` (ruled 2026-10-29, for the designer)
+
+Casey ruled 2026-10-29 that design changes the label to `Volume` and the app
+follows. The boards' volume-pane legend reads `Volume SMA` (`Volume ` in
+Core/White, `SMA` in App/Ash 300, Numbers 5 300), but the value beside it is
+the latest bar's volume and no average is drawn: the expanded chart's pane
+holds bars alone (`3928:81173`) with its two MA lines hidden (`3928:80566`),
+and the app's grey SMA line went with report 0e130f68. The app's legend reads
+`Volume <value>` at every width.
+
+The text nodes to relabel, all on Trade 1 of `mhF3BkzlTaGiLzJ7kvpmVc`, as the
+store holds them:
+
+| Node | Board | Width | Style |
+|---|---|---|---|
+| `7710:92538` | Spot 1VH `7710:91527` | 1440 | Lg/Numbers 5 300 |
+| `7746:207107` | Spot - indicator dropdown 1VH `3969:43609` | 1440 | Lg/Numbers 5 300 |
+| `8570:144222` | `main` `8570:143201` | 942 | Md/Numbers 5 300 |
+| `9772:77991` | `Frame 1341` `9772:76942` | 375 | Sm/Numbers 5 300 |
+
+The store holds only the frames a sync has fetched, so a board it lacks may
+carry the label too. Until the boards change, the app's `Volume` against a
+board's `Volume SMA` is this ruling, not a defect.
