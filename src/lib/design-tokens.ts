@@ -801,6 +801,19 @@ export const skaiFontSizes = {
     },
   ],
 
+  // Paragraph 3, Sm only: Figma's Sm/Paragraph 3 300, Manrope 10/12. The
+  // boards set small column labels in it, the tablet order book's band among
+  // them (8846:63552). Lg and Md Paragraph 3 have no key here yet.
+  "para-3-mobile": [
+    "0.625rem", // 10px
+    {
+      lineHeight: "0.75rem", // 12px
+      letterSpacing: "-0.04em",
+      fontWeight: "400",
+      fontFamily: '"Manrope", system-ui, sans-serif'
+    },
+  ],
+
   // =============================================================================
   // LABELS (Mulish) - UI labels and captions
   // =============================================================================
