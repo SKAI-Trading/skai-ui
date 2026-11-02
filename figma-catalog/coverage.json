@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-02T11:18:05.860Z",
+  "generated": "2026-11-02T18:46:22.876Z",
   "harvestedAt": "2026-10-29",
   "rollup": {
     "pages": 39,
     "live": 4718,
     "furniture": 837,
-    "genuine": 3355,
-    "ruledOut": 228,
+    "genuine": 3346,
+    "ruledOut": 237,
     "genuineWithRuledOut": 3583,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
@@ -17,11 +17,11 @@
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
     "frameDefectsOut": 298,
-    "genuineWithFrameDefects": 3653,
+    "genuineWithFrameDefects": 3644,
     "frameDefectUncited": [],
-    "matched": 3336,
-    "done": 1992,
-    "verified": 1608,
+    "matched": 3327,
+    "done": 1983,
+    "verified": 1599,
     "visuallyDowngraded": 17,
     "visualUnmapped": [],
     "visualRetired": [
@@ -8019,7 +8019,7 @@
         "author-rejected": 1,
         "loose-instance": 2
       },
-      "ruledOut": 21,
+      "ruledOut": 30,
       "ruledOutIds": [
         "11345-145018",
         "11987-228392",
@@ -8027,6 +8027,8 @@
         "11998-332332",
         "11998-332560",
         "11998-332847",
+        "5515-95455",
+        "5515-96095",
         "11307-134317",
         "5373-68430",
         "10517-38187",
@@ -8035,6 +8037,13 @@
         "11267-125066",
         "11301-127843",
         "12166-456521",
+        "11705-319211",
+        "11705-320003",
+        "11705-321084",
+        "11707-323740",
+        "11707-324180",
+        "11708-324886",
+        "11708-325099",
         "11972-151493",
         "12016-75585",
         "12003-383100",
@@ -8078,16 +8087,16 @@
         "11885-100111",
         "12097-428192"
       ],
-      "genuine": 605,
-      "matched": 605,
+      "genuine": 596,
+      "matched": 596,
       "rollupOnly": 0,
       "defaultNamed": 40,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 243,
+      "verified": 234,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 250,
+        "done": 241,
         "blocked-on-backend": 140,
         "partial": 203,
         "not-started": 12
@@ -24337,22 +24346,6 @@
       "verdict": "partial"
     },
     {
-      "id": "5515-95455",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
-      "id": "5515-96095",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
       "id": "5515-93883",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
@@ -26321,30 +26314,6 @@
       "verdict": "match"
     },
     {
-      "id": "11705-319211",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
-      "id": "11705-320003",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
-      "id": "11705-321084",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
       "id": "11704-318227",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
@@ -26391,38 +26360,6 @@
       "status": "partial",
       "claimed": "partial",
       "verdict": "partial"
-    },
-    {
-      "id": "11707-323740",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
-      "id": "11707-324180",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
-      "id": "11708-324886",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
-      "id": "11708-325099",
-      "page": "✅ Governance and Utilities",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
     },
     {
       "id": "11707-323144",
