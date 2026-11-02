@@ -140,6 +140,14 @@ const UNAVAILABLE_TRACK = "border-[#95a09f]";
  * and move the other nine without their asking. `no-min-size` carries over
  * unchanged: the floor runs to `max-width: 768px` inclusive and this rung is
  * 36 tall at exactly 768, so it is still needed there.
+ *
+ * `stepped-fixed` is `stepped`'s 375 rung held at every width: 40.59x24, the
+ * 1.333 ring and the 17.33 knob at 2.33 / 19, with no `md:` step. Some boards
+ * draw `input/toggle` at that box at 768 and 1440 too: the 1440 sportsbook bar
+ * (4892:82761, its toggle 40.59x24 with a 1.33 ring and a 17.33 knob) and the
+ * Trench trackers' settings sheet (13006:180340 at 1440 and 13006:345358 at
+ * 768, read as 40.5x24, a 1.5 pad and a 17.5 knob at 19). A fourth size rather
+ * than a prop on `stepped`, so no caller of the other three moves.
  */
 const TRACK_SIZE = {
   default: {
@@ -155,15 +163,23 @@ const TRACK_SIZE = {
     thumb:
       "size-[17.33px] shadow-none data-[state=unchecked]:translate-x-[2.33px] data-[state=checked]:translate-x-[19px] md:size-[26px] md:data-[state=unchecked]:translate-x-[3px] md:data-[state=checked]:translate-x-7",
   },
+  "stepped-fixed": {
+    root: "no-min-size h-6 w-[40.59px] border-[1.333px]",
+    thumb:
+      "size-[17.33px] shadow-none data-[state=unchecked]:translate-x-[2.33px] data-[state=checked]:translate-x-[19px]",
+  },
 } as const;
+
+/** The sizes that draw the node's ring and knob rather than a 2px rim and a 20 knob. */
+const DRAWS_NODE_RING: ReadonlySet<string> = new Set(["stepped", "stepped-fixed"]);
 
 /**
  * The ring's colour, for `stepped` with `toggle` only. The node's root is
  * Green Coal 300, so on the Green Coal 300 cards the ring disappears and the
  * pill you see is the track: Sky Blue on, Ash off (the variant's own colours).
  *
- * Only `stepped` draws the ring, because only `stepped` has the node's box: a
- * 1.333 / 2 ring around a 17.33 / 26 knob. `compact` and `default` keep a 2px
+ * Only `stepped` and `stepped-fixed` draw the ring, because only they have the
+ * node's box: a 1.333 / 2 ring around a 17.33 / 26 knob. `compact` and `default` keep a 2px
  * transparent border around a 20 knob, so a coloured ring there would leave
  * the knob touching a track the frame draws 2px wider than it. Applied before
  * UNAVAILABLE_TRACK, so an unavailable switch keeps its Ash edge.
@@ -210,7 +226,7 @@ const Switch = React.forwardRef<
           TRACK_SIZE[size].root,
           CHECKED_TRACK[variant],
           variant !== "primary" && !namesOffFill(className) ? OFF_TRACK_LIGHT : undefined,
-          size === "stepped" && variant === "toggle" ? STEPPED_TOGGLE : undefined,
+          DRAWS_NODE_RING.has(size) && variant === "toggle" ? STEPPED_TOGGLE : undefined,
           unavailable === undefined ? undefined : UNAVAILABLE_TRACK,
           className,
         )}

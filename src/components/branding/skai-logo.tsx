@@ -23,6 +23,16 @@ const BOLT_SKY_BLUE = "#56C7F3";
  * - "short" → "Skai" + solid sky-blue lightning icon, with Figma overlap (logos/skai-short)
  */
 export type SkaiLogoWordmark = "full" | "short";
+/**
+ * The gradient the full form's bolt draws (the short form's bolt is solid):
+ * - "brand"  → both vectors Sky Blue → Alien Green #17F9B4, each on a line of
+ *   its own (logos/skai). The default.
+ * - "token"  → the SKAI token chip's bolt (5786:48045 on the onboarding quests
+ *   card, 6405:20853 at 768, 6413:21179 at 375, read 2026-10-30): one line
+ *   across the whole mark, the upper vector Sky Blue → #00FFCC and the lower
+ *   Sky Blue → #17F9B4.
+ */
+export type SkaiLogoBoltGradient = "brand" | "token";
 
 export interface SkaiLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Size preset: small (24px), compact (32px), medium (48px), large (64px) */
@@ -49,6 +59,13 @@ export interface SkaiLogoProps extends React.HTMLAttributes<HTMLDivElement> {
    * ships.
    */
   monochrome?: boolean;
+  /**
+   * Which gradient the full form's bolt draws, iconOnly or beside the
+   * wordmark (see SkaiLogoBoltGradient). "brand" unless named. It changes
+   * nothing where the bolt is not a gradient: the short form, `variant`
+   * "black" and `monochrome`.
+   */
+  boltGradient?: SkaiLogoBoltGradient;
 }
 
 // Size dimensions — match Figma logo bounding boxes (Small 101x24, Medium 201x48, Large 267x64)
@@ -68,18 +85,37 @@ const sizeConfig: Record<
 // Two interlocking lightning bolt paths with Sky Blue → Alien Green gradient
 // =============================================================================
 
+/**
+ * The "token" bolt's two gradient lines in this icon's 57.1 x 64 space: the
+ * chip's lines (6405:20853, 48 board) taken back through the bolt's own scale
+ * and origin there (scale 2.2482, origin 11.201, 9.829). The 54 board
+ * (5786:48044) lands within 0.02 of the same points.
+ */
+const TOKEN_BOLT_GRADIENTS = [
+  { x1: 17.61, y1: 1.47, x2: 37.89, y2: 56.4, to: "#00FFCC" },
+  { x1: 17.67, y1: 1.45, x2: 37.94, y2: 56.38, to: "#17F9B4" },
+] as const;
+
 const SkaiLogoIcon: React.FC<{
   width: number;
   height: number;
   fill: string;
   variant: SkaiLogoVariant;
   monochrome?: boolean;
-}> = ({ width, height, fill, variant, monochrome = false }) => {
+  boltGradient?: SkaiLogoBoltGradient;
+}> = ({ width, height, fill, variant, monochrome = false, boltGradient = "brand" }) => {
+  // The token gradients take an id of their own on every mount: a fixed id
+  // resolves to the first copy in the document, and WebKit draws nothing when
+  // that copy sits in a hidden subtree (see FigmaPointsIcon). The brand ids
+  // stay as they always were.
+  const tokenId = `skai-token-bolt-${React.useId()}`;
   // Use gradient for white variant (on dark bg), solid fill for black variant.
   // `monochrome` collapses both to the wordmark's own fill.
   const useGradient = variant === "white" && !monochrome;
-  const fillValue = useGradient ? "url(#skai-icon-grad-0)" : fill;
-  const fillValue2 = useGradient ? "url(#skai-icon-grad-1)" : fill;
+  const token = useGradient && boltGradient === "token";
+  const gradientIds = token ? [`${tokenId}-0`, `${tokenId}-1`] : ["skai-icon-grad-0", "skai-icon-grad-1"];
+  const fillValue = useGradient ? `url(#${gradientIds[0]})` : fill;
+  const fillValue2 = useGradient ? `url(#${gradientIds[1]})` : fill;
 
   return (
     <svg
@@ -98,7 +134,25 @@ const SkaiLogoIcon: React.FC<{
         d="M57.0988 30.2738L50.8553 24.0302C49.8349 23.0098 48.4555 22.4371 47.0156 22.4371H35.4966C35.0085 22.4371 34.5366 22.6307 34.1898 22.9776L28.0713 29.096C27.5913 29.576 27.9301 30.4028 28.6118 30.4028H35.6176C36.8719 30.4028 37.5576 31.8669 36.7509 32.8309L11.6599 62.7416C11.2404 63.2377 11.5954 64 12.2447 64H24.4656C26.1353 64 27.7325 63.3345 28.9102 62.1528L57.1028 33.7908C58.0668 32.8188 58.0668 31.2498 57.0988 30.2818V30.2738Z"
         fill={fillValue2}
       />
-      {useGradient && (
+      {token && (
+        <defs>
+          {TOKEN_BOLT_GRADIENTS.map((g, i) => (
+            <linearGradient
+              key={gradientIds[i]}
+              id={gradientIds[i]}
+              x1={g.x1}
+              y1={g.y1}
+              x2={g.x2}
+              y2={g.y2}
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#56C7F3" />
+              <stop offset="1" stopColor={g.to} />
+            </linearGradient>
+          ))}
+        </defs>
+      )}
+      {useGradient && !token && (
         <defs>
           <linearGradient id="skai-icon-grad-0" x1="0" y1="0" x2="46" y2="64" gradientUnits="userSpaceOnUse">
             <stop stopColor="#56C7F3" />
@@ -312,6 +366,9 @@ const shortSizeConfig: Record<SkaiLogoSize, { height: number }> = {
  * // Flat one-colour watermark (Figma logos/skai on a card) — bolt takes the
  * // wordmark's colour instead of brand Sky Blue
  * <SkaiLogo size="small" variant="white" wordmark="short" monochrome />
+ *
+ * // The SKAI token chip's bolt (onboarding quests card, 5786:48045)
+ * <SkaiLogo iconOnly size="compact" variant="white" boltGradient="token" />
  */
 const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
   (
@@ -321,6 +378,7 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
       iconOnly = false,
       wordmark = "full",
       monochrome = false,
+      boltGradient = "brand",
       className,
       ...props
     },
@@ -350,6 +408,7 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
               fill={fill}
               variant={variant}
               monochrome={monochrome}
+              boltGradient={boltGradient}
             />
           )}
         </div>
@@ -393,6 +452,7 @@ const SkaiLogo = React.forwardRef<HTMLDivElement, SkaiLogoProps>(
           fill={fill}
           variant={variant}
           monochrome={monochrome}
+          boltGradient={boltGradient}
         />
         <SkaiLogoText width={config.textWidth} height={config.textHeight} fill={fill} />
       </div>

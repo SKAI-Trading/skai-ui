@@ -23,6 +23,7 @@ import {
   OrderBook,
   type OrderBookData,
 } from "../components/trading/order-book";
+import { skaiFontSizes } from "../lib/design-tokens";
 
 /** One level a side, so "the first bar" is unambiguous. */
 const book: OrderBookData = {
@@ -329,10 +330,8 @@ describe("OrderBook column header — report 1ec7f3d4", () => {
  * 381.5 and the Total cell's at 692, so the labels stand on the ladder's own
  * columns. The 1440 band draws its own cell model (89 / hug / fill) and keeps it.
  *
- * The 10/12 type is the one thing here the code does not draw: no token carries
- * Sm/Paragraph 3 300 (figma/tokens/DRIFT.md), and 10 against 12 is visible, so
- * the labels stay on `text-xs` and the missing token is reported instead of a
- * raw size being written into the widget.
+ * The 10/12 type is Sm/Paragraph 3 300, the `para-3-mobile` token, from `md`
+ * until `lg` returns the labels to the 1440 band's `text-xs`.
  */
 const SCREEN_AT = { md: 768, lg: 1024 } as const;
 
@@ -353,8 +352,20 @@ function winning(el: Element, family: RegExp, width: number): string | null {
   return win;
 }
 
-const FONT_PX: Record<string, number> = { "text-xs": 12, "text-[10px]": 10 };
+/** Each size token's px, the named one read off the token itself. */
+const PARA_3_MOBILE = skaiFontSizes["para-3-mobile"] as unknown as [string, Record<string, string>];
+const FONT_PX: Record<string, number> = {
+  "text-xs": 12,
+  "text-[10px]": 10,
+  "text-para-3-mobile": rem(PARA_3_MOBILE[0]),
+};
 const LINE_PX: Record<string, number> = { "leading-3": 12, "leading-4": 16 };
+
+function rem(value: string): number {
+  const m = /^([\d.]+)rem$/.exec(value);
+  if (!m) throw new Error(`not a rem: ${value}`);
+  return Number(m[1]) * 16;
+}
 const WIDTH = /^w-/;
 const GROW = /^flex-(1|none|auto|initial)$/;
 
@@ -370,19 +381,30 @@ function cellWidth(cell: Element, width: number): number | "hug" | "fill" {
 }
 
 describe("OrderBook column header at 768 — 8846:63552", () => {
-  it("sets the labels on the text-xs token at every width, on a 12 line from md", () => {
+  it("sets the labels in Manrope 10/12 from md to lg, on text-xs elsewhere", () => {
     const { header } = ladder();
     const type = (width: number) => ({
-      size: FONT_PX[winning(header, /^text-(xs|\[[^\]]+\])$/, width)!],
+      size: FONT_PX[winning(header, /^text-(xs|para-3-mobile|\[[^\]]+\])$/, width)!],
       line: LINE_PX[winning(header, /^leading-/, width)!],
     });
     // The 12 line is what closes the band on the board's 20.
-    expect(type(768)).toEqual({ size: 12, line: 12 });
-    expect(type(1023)).toEqual({ size: 12, line: 12 });
+    expect(type(768)).toEqual({ size: 10, line: 12 });
+    expect(type(1023)).toEqual({ size: 10, line: 12 });
     expect(type(1440)).toEqual({ size: 12, line: 16 });
     // 375 has no reading of its own yet and draws what it drew before.
     expect(type(375)).toEqual({ size: 12, line: 16 });
     expect(tokens(header).has("font-sans")).toBe(true);
+  });
+
+  it("names Sm/Paragraph 3 300 by its token: Manrope 10/12, 400, -4%", () => {
+    const [size, opts] = PARA_3_MOBILE;
+    expect(rem(size)).toBe(10);
+    expect(rem(opts.lineHeight)).toBe(12);
+    expect(opts.fontWeight).toBe("400");
+    expect(opts.letterSpacing).toBe("-0.04em");
+    expect(opts.fontFamily).toContain('"Manrope"');
+    // The token's own 12 line agrees with the leading the band writes at md.
+    expect(LINE_PX[winning(ladder().header, /^leading-/, 768)!]).toBe(rem(opts.lineHeight));
   });
 
   it("writes no raw font size on the band or its labels, at any width", () => {

@@ -603,9 +603,11 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             2026-09-24): rules at y=0 and y=20, "Frame 283" padded 4/16 with
             the labels on a 12 line at y=4. Same pad, a 12 line:
             1 + 3 + 12 + 3 + 1, and the 12 line is `leading-3`. The board
-            sets the labels in Manrope 10/12 (Sm/Paragraph 3 300), which no
-            token carries yet (figma/tokens/DRIFT.md lists it with none), so
-            they stay on `text-xs` until one does rather than on a raw 10px.
+            sets the labels in Manrope 10/12 (Sm/Paragraph 3 300), which is
+            `text-para-3-mobile` from `md` until `lg` hands them back to the
+            1440 band's `text-xs`. The token carries Figma's -4% as -0.04em,
+            and from `md` it outranks the -0.48px written for 12: -0.4px at
+            10, and -0.48px again once `lg` is back at 12.
 
             Its labels sit on the ladder's columns rather than hugging each
             other: Price opens at x=16, Size ends at 382 and Total at 692,
@@ -615,9 +617,10 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             the 1440 board's 89 / hug / fill.
 
             The Size cell is packed to its end from `md` instead of
-            truncated. In Manrope 400 at 12px and -0.48px, "Size (BTC)" and
-            "Size (ETH)" are 53 wide and fit the 55, but "Size (USDT)", this
-            widget's default, is 61: a clipped cell would read "Size (US…",
+            truncated. At 10px every label fits its 55, but the packing holds
+            for a longer symbol: in Manrope 400 at 12px and -0.48px, "Size
+            (BTC)" and "Size (ETH)" are 53 wide and fit the 55, but "Size
+            (USDT)", this widget's default, is 61: a clipped cell would read "Size (US…",
             and a plain right-aligned one that overflows starts at its left
             edge and so ends past 382. Packed to the end the label stays whole,
             still ends on the cell's edge, and runs its excess left into the
@@ -630,7 +633,7 @@ export const OrderBook = React.forwardRef<HTMLDivElement, OrderBookProps>(
             before: 26, with 12/16 labels. */}
         <div
           role="row"
-          className="flex items-center justify-between px-4 py-1 md:py-[3px] font-sans text-xs font-normal leading-4 md:leading-3 lg:leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
+          className="flex items-center justify-between px-4 py-1 md:py-[3px] font-sans text-xs md:text-para-3-mobile lg:text-xs font-normal leading-4 md:leading-3 lg:leading-4 tracking-[-0.48px] text-ash border-y border-border shrink-0"
         >
           <span className="w-[89px] md:w-[70px] lg:w-[89px] shrink-0 truncate text-left">
             Price

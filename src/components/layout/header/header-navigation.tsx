@@ -215,7 +215,9 @@ const HeaderNavDropdown: React.FC<HeaderNavDropdownProps> = ({
       <DropdownMenuContent
         align="start"
         sideOffset={2}
-        className="w-[200px] bg-green-coal-200 border-green-coal-100 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] p-4 gap-4 flex flex-col"
+        // The edge is the content's inset ring, in Green Coal 100 by name so it
+        // holds under every theme; see the rich dropdown below.
+        className="w-[200px] bg-green-coal-200 ring-green-coal-100 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] p-4 gap-4 flex flex-col"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onCloseAutoFocus={(e) => e.preventDefault()}
@@ -445,7 +447,14 @@ const HeaderNavRichDropdown: React.FC<HeaderNavRichDropdownProps> = ({
         // written out: tailwind-merge 2.6 reads `shadow-inputHint` as a shadow
         // COLOUR and keeps the content's base `shadow-md` beside it, so which one
         // paints would come down to stylesheet order.
-        className="w-[300px] overflow-visible bg-green-coal-200 border-green-coal-100 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
+        // The edge: the frames draw a 1px Green Coal 100 stroke INSIDE the
+        // 300x344 panel (13006:144635, 13006:250464), which takes no room. A
+        // `border-*` class here made panelEdge keep a laid-out CSS border, so
+        // the panel stood 346 and its rows 17 in. Naming the ring's colour
+        // instead leaves the content its inset ring (menu-panel-edge.ts) and
+        // keeps Green Coal 100 under every theme, where `ring-border` alone
+        // would follow the theme's --border.
+        className="w-[300px] overflow-visible bg-green-coal-200 ring-green-coal-100 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.24)] pl-4 pr-8 py-4 gap-6 flex flex-col"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onCloseAutoFocus={(e) => e.preventDefault()}

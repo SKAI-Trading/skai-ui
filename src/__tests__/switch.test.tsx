@@ -319,6 +319,41 @@ describe("Switch track sizes", () => {
     }
   });
 
+  it("holds stepped-fixed at the 375 rung's box, ring and knob at every width", () => {
+    // 4892:82761 (the 1440 sportsbook bar) draws input/toggle at 40.59x24 with
+    // a 1.33 ring and a 17.33 knob; 13006:180340 (1440) and 13006:345358 (768)
+    // draw the same box. Same rung as `stepped` at 375, and no md: class at all.
+    render(<Switch aria-label="t" size="stepped-fixed" />);
+    const track = trackOf();
+    const knob = knobOf();
+    expect(track).toHaveClass("no-min-size", "h-6", "w-[40.59px]", "border-[1.333px]");
+    expect(knob).toHaveClass(
+      "size-[17.33px]",
+      "shadow-none",
+      "data-[state=unchecked]:translate-x-[2.33px]",
+      "data-[state=checked]:translate-x-[19px]",
+    );
+    expect(track.className).not.toMatch(/\bmd:/);
+    expect(knob.className).not.toMatch(/\bmd:/);
+    // The base rim and knob are merged away, not left beside the node's.
+    expect(track.className.split(/\s+/)).not.toContain("border-2");
+    for (const stale of ["h-5", "w-5", "shadow-lg", "data-[state=unchecked]:translate-x-0"]) {
+      expect(knob.className.split(/\s+/)).not.toContain(stale);
+    }
+  });
+
+  it("draws stepped-fixed's knob where the 375 rung of stepped draws it", () => {
+    // The two sizes share one rung; only `stepped` steps past it at md.
+    const unprefixed = (cls: string) => cls.split(/\s+/).filter((c) => c && !c.startsWith("md:")).sort();
+    const { unmount } = render(<Switch aria-label="s" size="stepped" />);
+    const steppedTrack = unprefixed(trackOf().className);
+    const steppedKnob = unprefixed(knobOf().className);
+    unmount();
+    render(<Switch aria-label="f" size="stepped-fixed" />);
+    expect(unprefixed(trackOf().className)).toEqual(steppedTrack);
+    expect(unprefixed(knobOf().className)).toEqual(steppedKnob);
+  });
+
   it("keeps the touch-floor opt-out on the stepped size, which is 36 tall at 768", () => {
     // index.css floors controls at 44 up to `max-width: 768px` INCLUSIVE, and
     // `md:` starts at 768, so at exactly that width this rung is a 36-tall
@@ -364,6 +399,35 @@ describe("Switch: the stepped toggle's ring and at-rest track", () => {
     expect(classes()).toContain("data-[state=unchecked]:bg-input");
     expect(classes()).toContain("border-transparent");
     expect(classes()).not.toContain("border-green-coal-300");
+  });
+
+  it("draws the same ring and Ash rest on stepped-fixed with toggle, and no ring without it", () => {
+    const { unmount } = render(<Switch aria-label="t" size="stepped-fixed" variant="toggle" />);
+    expect(classes()).toContain("border-green-coal-300");
+    expect(classes()).not.toContain("border-transparent");
+    expect(classes()).toContain("data-[state=unchecked]:bg-ash");
+    expect(classes()).toContain("data-[state=checked]:bg-[#56C7F3]");
+    unmount();
+    render(<Switch aria-label="p" size="stepped-fixed" />);
+    expect(classes()).toContain("border-transparent");
+    expect(classes()).not.toContain("border-green-coal-300");
+  });
+
+  it("lets a caller recolour stepped-fixed's ring and track, as the sportsbook bar draws them", () => {
+    // 4892:82761: a white 1.33 ring around a #001615 track, on a Sky Blue bar.
+    render(
+      <Switch
+        aria-label="q"
+        size="stepped-fixed"
+        variant="toggle"
+        className="border-white data-[state=checked]:bg-[#001615]"
+      />,
+    );
+    expect(classes()).toContain("border-white");
+    expect(classes()).not.toContain("border-green-coal-300");
+    expect(classes()).toContain("data-[state=checked]:bg-[#001615]");
+    expect(classes()).not.toContain("data-[state=checked]:bg-[#56C7F3]");
+    expect(classes()).toContain("border-[1.333px]");
   });
 
   it("rests sky on Ash and leaves primary on bg-input", () => {
