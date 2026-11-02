@@ -5,7 +5,8 @@
  * Figma "Skai > Play - dropdown 1VH" 4765:64029 / 4768:66183, panel
  * 4765:65172 / 4768:67035 (read 2026-09-27): 300x136, pad [16,32,16,16], gap
  * 24, radius 12, fill #122524 (Green Coal 200), 1px #123F3C (Green Coal 100)
- * inside, drop shadow 0 4 12 #000 at 0.24. The lit row's glyph, title and sub
+ * inside, drop shadow 0 4 12 #000 at 0.24. The Trade 2 dropdown boards
+ * 13006:144635 / 13006:250464 draw the same panel at 300x344. The lit row's glyph, title and sub
  * are #56C7F3 (Sky Blue 300), the sub at 0.64 as every sub is.
  *
  * Until 2026-09-27 the file wrote those as hex literals. The triggers' hex came
@@ -63,13 +64,27 @@ describe("HeaderNavRichDropdown panel (4765:65172 / 4768:67035)", () => {
   it("fills the panel Green Coal 200 on a Green Coal 100 hairline, by name", async () => {
     const menu = await openRich();
     const cls = classesOf(menu);
-    for (const c of ["w-[300px]", "bg-green-coal-200", "border", "border-green-coal-100", "rounded-xl", "pl-4", "pr-8", "py-4", "gap-6"]) {
+    for (const c of ["w-[300px]", "bg-green-coal-200", "ring-1", "ring-inset", "ring-green-coal-100", "rounded-xl", "pl-4", "pr-8", "py-4", "gap-6"]) {
       expect(cls, c).toContain(c);
     }
     // The content primitive's own fill and corner are merged away, not stacked.
     expect(cls).not.toContain("bg-popover");
     expect(cls).not.toContain("rounded-md");
     expect(cls.filter((c) => HEX.test(c)), "no hex left in the panel's classes").toEqual([]);
+  });
+
+  it("draws the hairline inside the 300x344 box, as 13006:144635 and 13006:250464 do", async () => {
+    // The frames' 1px #123F3C stroke is INSIDE the panel and takes no room. A
+    // laid-out CSS border stood the panel 346 and set its rows 17 in, so no
+    // border width or colour may reach the panel: the edge is the inset ring,
+    // in Green Coal 100 by name rather than the theme's --border.
+    const menu = await openRich();
+    const cls = classesOf(menu);
+    expect(cls).toContain("border-0");
+    for (const laidOut of ["border", "border-border", "border-green-coal-100", "ring-border"]) {
+      expect(cls, laidOut).not.toContain(laidOut);
+    }
+    expect(cls.filter((c) => /^ring-/.test(c)).sort()).toEqual(["ring-1", "ring-green-coal-100", "ring-inset"]);
   });
 
   it("keeps the 0 4 12 @0.24 shadow written out, and that alone paints", async () => {
@@ -156,7 +171,11 @@ describe("HeaderNavDropdown panel", () => {
     const menu = await screen.findByRole("menu");
     const cls = classesOf(menu);
     expect(cls).toContain("bg-green-coal-200");
-    expect(cls).toContain("border-green-coal-100");
+    expect(cls).toContain("ring-green-coal-100");
+    expect(cls).toContain("ring-inset");
+    expect(cls).toContain("border-0");
+    expect(cls).not.toContain("border-green-coal-100");
+    expect(cls).not.toContain("ring-border");
     expect(cls).not.toContain("bg-popover");
     expect(cls.filter((c) => HEX.test(c))).toEqual([]);
   });
