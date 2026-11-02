@@ -1035,3 +1035,5 @@
 {"at":"2026-10-30T12:03:42.085Z","day":"2026-10-30","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":2,"nonce":"f0acf3f8fef5","ok":true}
 {"at":"2026-10-30T12:15:25.480Z","day":"2026-10-30","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":1,"nonce":"3fcaa28945e5","ok":true}
 {"at":"2026-10-30T12:22:04.323Z","day":"2026-10-30","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":1,"nonce":"e9f68685af74","ok":true}
+{"at":"2026-11-02T04:42:19.652Z","day":"2026-11-02","kind":"read","file":"3sSzw1KewMtUbeLAv7uW0r","calls":1,"frames":0,"ok":false,"note":"w99-predict-market: comments send, sort, order book, filter carets, related nav"}
+{"at":"2026-11-02T04:42:20.337Z","day":"2026-11-02","kind":"read","file":"3sSzw1KewMtUbeLAv7uW0r","calls":1,"frames":0,"ok":false,"note":"w99-predict-market: CTA Primary master, Send icon master, Arrow-up/down masters"}
