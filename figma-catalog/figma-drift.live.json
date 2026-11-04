@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-29T04:45:03.031Z",
+  "generated": "2026-11-03T22:48:22.567Z",
   "sections": {
     "home": {
       "status": "clean",
@@ -290,11 +290,11 @@
       "retargets": []
     },
     "home-2": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 262,
-      "live": 255,
+      "live": 263,
       "nestedAlive": 7,
-      "added": 0,
+      "added": 8,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],

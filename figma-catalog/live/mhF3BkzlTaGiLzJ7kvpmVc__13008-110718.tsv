@@ -247,9 +247,17 @@
 15406:182098	Vector 386	VECTOR	458	0	1
 15406:182099	One-view height ends here	TEXT	275	28	1
 16057:162715	Skai > Home > Notification pop-up 1VH (1440 x 900px)	FRAME	1440	900	1
+16083:168102	Skai > Home > AI pop-up 1VH (1440 x 900px)	FRAME	1440	900	1
 16058:164798	Skai > Home > Notification pop-up > show all notifications 1VH (1440 x 900px)	FRAME	1440	900	1
 16058:164188	Skai > Home > Notification pop-up 1VH (768 x 1024px)	FRAME	768	1024	1
 16059:165635	Skai > Home > Notification pop-up > show all notifications 1VH (768 x 1024px)	FRAME	768	1024	1
+16135:26440	Skai > Home > Notification pop-up > show all notifications 1VH (768 x 1024px)	FRAME	768	1024	1
+16137:102748	Ask Skai - typing - tablet	FRAME	468	614	1
 16058:164251	Skai > Home > Notification pop-up 1VH (375 x 812px)	FRAME	375	812	1
+16137:102267	Skai > Home > AI pop-up 1VH (375 x 812px)	FRAME	375	812	1
+16137:102919	Ask Skai - typing - mobile	FRAME	358	594	1
 16059:167047	Skai > Home > Notification pop-up > show all notifications 1VH (375 x 812px)	FRAME	375	812	1
 16058:165436	Notes	WIDGET	342	255	1
+16106:168730	Ask Skai - typing	FRAME	432	664	1
+16136:101296	Notes	WIDGET	342	313	1
+16183:103104	Notes	WIDGET	342	369	1

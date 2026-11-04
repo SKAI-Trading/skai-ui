@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02T18:45:32.181Z",
+  "generated": "2026-11-04T02:01:23.061Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -10805,13 +10805,32 @@
       "dirs": [],
       "proposedStatus": "not-started"
     },
+    "home-2/AI pop-up": {
+      "section": "home-2",
+      "family": "AI pop-up",
+      "frameCount": 2,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16083-168102",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16137-102267"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
     "home-2/Notification pop-up > show all notifications": {
       "section": "home-2",
       "family": "Notification pop-up > show all notifications",
-      "frameCount": 3,
+      "frameCount": 4,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:16058-164798",
         "mhF3BkzlTaGiLzJ7kvpmVc:16059-165635",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16135-26440",
         "mhF3BkzlTaGiLzJ7kvpmVc:16059-167047"
       ],
       "devices": [
