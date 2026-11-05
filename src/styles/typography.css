@@ -372,8 +372,7 @@
  * app's stylesheet and sets font-size, line-height, letter-spacing and
  * font-weight; Tailwind's fontSize utility cannot set a family, so the family
  * (and italic, tabular figures) comes from here. Where the preset has no key
- * (text-number-5, text-para-3, text-label-3/4 ...) this rule is the whole
- * style.
+ * (text-para-3, text-label-3/4 ...) this rule is the whole style.
  */
 
 /* Headline aliases */
@@ -612,11 +611,15 @@
 .text-number-3-mobile,
 .text-number-4-tablet,
 .text-number-4-mobile,
+.text-number-5-tablet,
+.text-number-5-mobile,
 .text-price {
   font-family: "Mulish", system-ui, sans-serif;
   font-variant-numeric: tabular-nums;
 }
 
+.text-label-1-tablet,
+.text-label-1-mobile,
 .text-label-2-tablet,
 .text-label-2-mobile,
 .text-caption {

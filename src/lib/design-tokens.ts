@@ -133,6 +133,12 @@ export const surfaceColors = {
   nightBlue: "#1A1A2E", // Night blue surface
   surfaceDark: "#1F1F1F", // Dark surface/card
   surfaceMedium: "#2A2A2A", // Medium dark surface
+  // The wallet's dark teal. The boards fill wallet rows, the profile's meta
+  // half and several cards with #052D2D as a raw colour, since no Figma
+  // variable holds it (Casey, round 47 #17: a token for it that also handles
+  // light mode). `bg-wallet` follows the light theme the way Green Coal does
+  // (see skaiThemedCoal in tailwind-preset.ts).
+  wallet: "#052D2D",
 } as const;
 
 /**
@@ -288,6 +294,7 @@ export const skaiColors = {
   "night-blue": surfaceColors.nightBlue,
   "surface-dark": surfaceColors.surfaceDark,
   "surface-medium": surfaceColors.surfaceMedium,
+  wallet: surfaceColors.wallet,
 
   // Third-party brands
   discord: brandColors.discord,
@@ -721,6 +728,40 @@ export const skaiFontSizes = {
     },
   ],
 
+  // Number 5: 12/16 / 12/14 / 10/12 - The smallest figures (Lg, Md and Sm
+  // Numbers 5 300). Tailwind's fontSize cannot set the family or tabular
+  // figures; typography.css carries those for the three classes.
+  "number-5": [
+    "0.75rem", // 12px desktop
+    {
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em",
+      fontWeight: "400",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: '"Mulish", system-ui, sans-serif'
+    },
+  ],
+  "number-5-tablet": [
+    "0.75rem", // 12px tablet
+    {
+      lineHeight: "0.875rem", // 14px
+      letterSpacing: "-0.04em",
+      fontWeight: "400",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: '"Mulish", system-ui, sans-serif'
+    },
+  ],
+  "number-5-mobile": [
+    "0.625rem", // 10px mobile
+    {
+      lineHeight: "0.75rem", // 12px
+      letterSpacing: "-0.04em",
+      fontWeight: "400",
+      fontVariantNumeric: "tabular-nums",
+      fontFamily: '"Mulish", system-ui, sans-serif'
+    },
+  ],
+
   // =============================================================================
   // PARAGRAPHS (Manrope) - Body text for readability
   // =============================================================================
@@ -818,9 +859,28 @@ export const skaiFontSizes = {
   // LABELS (Mulish) - UI labels and captions
   // =============================================================================
   
-  // Label 1: 16px (all breakpoints) - Form labels
+  // Label 1: 16px / 14px / 12px, each on a 16px line (Lg, Md and Sm Label 1
+  // 300) - Form labels and the figures the boards set in it
   "label-1": [
     "1rem", // 16px
+    {
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em",
+      fontWeight: "400",
+      fontFamily: '"Mulish", system-ui, sans-serif'
+    },
+  ],
+  "label-1-tablet": [
+    "0.875rem", // 14px tablet
+    {
+      lineHeight: "1rem", // 16px
+      letterSpacing: "-0.04em",
+      fontWeight: "400",
+      fontFamily: '"Mulish", system-ui, sans-serif'
+    },
+  ],
+  "label-1-mobile": [
+    "0.75rem", // 12px mobile
     {
       lineHeight: "1rem", // 16px
       letterSpacing: "-0.04em",

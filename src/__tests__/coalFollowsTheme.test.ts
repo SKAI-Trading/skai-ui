@@ -21,7 +21,7 @@ import postcss from "postcss";
 import tailwindcss from "tailwindcss";
 import resolveConfig from "tailwindcss/resolveConfig";
 import skaiPreset from "../lib/tailwind-preset";
-import { coreColors, greenCoalColors, neutralColors } from "../lib/design-tokens";
+import { coreColors, greenCoalColors, neutralColors, skaiColors, surfaceColors } from "../lib/design-tokens";
 
 const CLASSES = [
   "bg-green-coal-300",
@@ -38,6 +38,10 @@ const CLASSES = [
   "text-white/70",
   "text-ash",
   "text-green-coal-300",
+  "bg-wallet",
+  "bg-wallet/50",
+  "border-wallet",
+  "from-wallet",
 ];
 
 async function compile(): Promise<string> {
@@ -107,5 +111,37 @@ describe("Green Coal follows the theme only where asked (24dbeb11, a480fd88, 3a9
     expect((theme.colors["green-coal"] as Record<string, string>)[300]).toBe(greenCoalColors[300]);
     expect(theme.colors.white).toBe(coreColors.white);
     expect(theme.colors.ash).toBe(neutralColors.ash);
+  });
+});
+
+/**
+ * The wallet's #052D2D (Casey, round 47 #17: a wallet colour token that also
+ * handles light mode). The boards fill it raw; no Figma variable holds it.
+ */
+describe("the wallet colour follows the theme the same way", () => {
+  it("is #052D2D in the palette", () => {
+    expect(surfaceColors.wallet).toBe("#052D2D");
+    expect(skaiColors.wallet).toBe("#052D2D");
+  });
+
+  it.each([
+    [".bg-wallet", "background-color"],
+    [".border-wallet", "border-color"],
+    [".from-wallet", "--tw-gradient-from"],
+  ])("%s paints %s from --coal-wallet, falling back to #052D2D", async (selector, prop) => {
+    const css = await compile();
+    expect(rule(css, selector)[prop]).toContain(`var(--coal-wallet, ${triplet("#052D2D")})`);
+  });
+
+  it("keeps an opacity modifier on the same property", async () => {
+    const css = await compile();
+    expect(rule(css, ".bg-wallet\\/50")["background-color"]).toBe(`rgb(var(--coal-wallet, ${triplet("#052D2D")}) / 0.5)`);
+  });
+
+  it("leaves the palette entry as hex", () => {
+    const theme = resolveConfig({ content: [], presets: [skaiPreset] } as never).theme as unknown as {
+      colors: Record<string, Record<string, string> | string>;
+    };
+    expect(theme.colors.wallet).toBe("#052D2D");
   });
 });
