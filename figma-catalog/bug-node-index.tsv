@@ -732,3 +732,66 @@ refNode	linkFileKey	resolvedFileKey	status	section	type	name	depth	page	owningSc
 9170-114095	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 630	3	✅ Play	9170-114084	Skai > Play > Sportsbook > Soccer > AVL CHE (1440 x 900px)	1
 9170-114145	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 694	5	✅ Play	9170-114084	Skai > Play > Sportsbook > Soccer > AVL CHE (1440 x 900px)	1
 9907-1597	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	rock-paper-scissors	FRAME	main	1	✅ Rock Paper Scissors - Skai originals	9907-1595	Skai > Play > Casino > Rock Paper Scissors (1440 x 900px)	1
+#
+# ===== REFRESH 2026-11-11 (wave 109, figma-catalog lane, HQ-95) =====
+# 66 open reports carry a figma_link: 65 distinct links, 61 distinct (fileKey, node) pairs.
+# 21 reports (20 pairs) resolved through live/, live/_resolved.json or the rows above. The other 45 cite
+# 41 node ids that no layer held, and the design store holds a spec for only one of them
+# (9079-2060, the Towers panel itself).
+#
+# Resolved live with one use_figma call per file: every page loadAsync()'d, then
+# figma.getNodeByIdAsync(id) and a walk up .parent to the PAGE. The same call hashed every
+# page against live/: Skai-Web-App 14 of 14 and Skai-Games 32 of 32 equal; Skai-Web-App-2
+# 7 of 8, Home 2 (13008:110718) moved from 263 to 270 top-level rows since 11-10.
+# All 41 are alive, nested 1 to 16 levels under a frame the catalog already holds, on an
+# in-scope page. None is alive in either sibling file. Each owning frame below is a live/
+# row on the page Figma named and carries a registry section. The probe also re-walked the
+# 21 catalog answers and agreed with every one.
+#
+# ! 2733-21079 already has a bugref-aliases.tsv row, keyed bare. A bare key means the
+#   primary file, and the id does not exist there: it lives in Skai-Web-App-2, Home 1,
+#   under 2733-20819. The row below carries the right file key. The same pattern runs
+#   through that file: 187 bare-keyed alias rows name a covering frame that is top-level
+#   only in Skai-Web-App-2. Left as they are; re-keying them is its own job.
+#
+5152-203839	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5152-203838	Skai > Social > Messages - empty 1VH (1440 x 900px)	1
+5154-206941	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	middle	2	✅ Social	5154-206768	Skai > Social > Messages - Sample conversation (1440 x 900px)	1
+5162-266083	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	Input	2	✅ Social	5162-265801	Skai > Social > Messages > Sample Conversation > Dropdown options 1VH (1440 x 900px)	1
+5164-266352	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5164-266351	Skai > Social > Messages > Sample Conversation > Unread messages 1VH (1440 x 900px)	1
+5164-267631	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5164-267630	Skai > Social > Messages > Sample Conversation > Message requests 1VH (1440 x 900px)	1
+5171-270125	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	social	FRAME	main	1	✅ Social	5171-270124	Skai > Social > Messages > Sample Conversation > Message requests > Sample message 1VH (1440 x 900px)	1
+14069-218456	3sSzw1KewMtUbeLAv7uW0r	3sSzw1KewMtUbeLAv7uW0r	child	play	FRAME	Frame 1000003829	3	✅ Play	11202-44169	Skai > Play 1VH (375 x 812px)	2
+9003-130621	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	INSTANCE	icons/action	6	✅ Coinflip - Skai originals	9003-130613	Skai > Play > Casino > Coinflip (1440 x 900px)	1
+9003-130622	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	RECTANGLE	Rectangle 34624566	6	✅ Coinflip - Skai originals	9003-130613	Skai > Play > Casino > Coinflip (1440 x 900px)	1
+9003-130762	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	coinflip	FRAME	card	8	✅ Coinflip - Skai originals	9003-130613	Skai > Play > Casino > Coinflip (1440 x 900px)	2
+9003-142774	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	skratch	FRAME	Frame 658	5	✅ Scratchers - Skai originals	9003-142707	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9003-142824	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	skratch	FRAME	Frame 1000004044	7	✅ Scratchers - Skai originals	9003-142707	Skai > Play > Casino > Scratchers (1440 x 900px)	1
+9079-2060	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	towers	FRAME	Frame 270	6	✅ Towers - Skai originals	9079-2001	Skai > Play > Casino > Towers (1440 x 900px)	1
+9363-2021	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	chicken	FRAME	Frame 658	5	✅ Chicken - Skai originals	9363-1963	Skai > Play > Casino > Chicken (1440 x 900px)	1
+9442-16825	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	darts	FRAME	Easy Desktop Full Game	6	✅ Darts - Skai originals	9392-1798	Skai > Play > Casino > Darts (1440 x 900px)	1
+9691-11284	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	bingo	FRAME	Frame 1000004044	6	✅ Bingo - Skai originals	9691-11229	Skai > Play > Casino > Bingo (1440 x 900px)	1
+9798-13101	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	bingo	FRAME	Starting	6	✅ Bingo - Skai originals	9691-11229	Skai > Play > Casino > Bingo (1440 x 900px)	2
+9799-15121	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 658	5	✅ Roulette - Skai originals	9799-15067	Skai > Play > Casino > Roulette (1440 x 900px)	1
+9799-16767	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	baccarat	FRAME	Frame 658	5	✅ Baccarat - Skai originals	9799-16713	Skai > Play > Casino > Baccarat (1440 x 900px)	2
+9825-20952	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	baccarat	FRAME	Desktop	6	✅ Baccarat - Skai originals	9799-16713	Skai > Play > Casino > Baccarat (1440 x 900px)	1
+9903-2270	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	roulette	FRAME	Frame 270	6	✅ Roulette - Skai originals	9799-15067	Skai > Play > Casino > Roulette (1440 x 900px)	1
+10120-6760	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	mines	FRAME	Frame 1000004110	1	✅ Mines - Skai originals	10120-4313	Mines win	1
+10249-11727	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	hilo	ELLIPSE	circle	16	✅ Hi-Lo - Skai originals	9061-10499	Skai > Play > Casino > Hi-Lo (1440 x 900px)	1
+10412-16105	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	vegas-fortune	FRAME	Frame 520	2	✅ Vegas fortune - Skai originals	10412-16102	Skai > Play > Casino > Vegas fortune (1440 x 900px)	1
+11076-8555	M6r9FEn042UWTQD1zvy6GM	M6r9FEn042UWTQD1zvy6GM	child	dice	FRAME	Skai sUSD	16	✅ Dice - Skai originals	9003-43516	Skai > Play > Casino > Dice (1440 x 900px)	1
+2713-5018	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	Frame 41	2	✅ Home 1	2713-5014	Skai > Home 1VH - query 1VH (1440 x 900px)	1
+2733-21079	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	dropdown-3	1	✅ Home 1	2733-20819	Skai > Home - ads > Add 1VH (1440 x 900px)	1
+2736-26140	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	FRAME	Frame 199	5	✅ Home 1	2736-26122	Skai > Home > Voice prompt 1VH (1440 x 900px)	1
+3083-1639	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet	FRAME	Frame 270	2	✅ Wallet 1	3083-1328	Skai > Wallet > continue on web > home > crypto > sample token (1440 x 900px)	1
+3085-16033	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet	FRAME	TradingView	2	✅ Wallet 1	3083-1328	Skai > Wallet > continue on web > home > crypto > sample token (1440 x 900px)	1
+3118-25659	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet	FRAME	Frame 337	1	✅ Wallet 1	3118-25371	Skai > Wallet > continue on web > home > Activity - show details 1VH (1440 x 900px)	1
+7886-84370	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	trade	FRAME	TradingView	3	✅ Trade 1	3903-21478	Skai > Trade > Perpetual futures 1VH (1440 x 900px)	1
+13008-27102	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	content	6	✅ Wallet 2	13008-26985	Skai > Wallet > continue on web > home 1VH (1440 x 900px)	1
+13008-29028	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Main container	1	✅ Wallet 2	13008-29014	Skai > Wallet > continue on web > home > bridge 1VH (1440 x 900px)	1
+13008-29462	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Overlay	1	✅ Wallet 2	13008-29347	Skai > Wallet > continue on web > home > bridge > Start bridge > Post wallet interaction 1VH (1440 x 900px)	1
+13008-31652	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	INSTANCE	icons/graphical	3	✅ Wallet 2	13008-30834	Skai > Wallet > continue on web > home > share - 3rd combination 1VH (1440 x 900px)	1
+13008-36188	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 271	3	✅ Wallet 2	13008-36166	Skai > Wallet > continue on web > home > spending 1VH (1440 x 900px)	1
+13008-37347	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 285	6	✅ Wallet 2	13008-37287	Skai > Wallet > continue on web > home > batch - step 3 1VH (1440 x 900px)	1
+13008-38198	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 363	5	✅ Wallet 2	13008-38161	Skai > Wallet > continue on web > home > receive - set amount 1VH (1440 x 900px)	1
+13008-38419	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	card	5	✅ Wallet 2	13008-38381	Skai > Wallet > continue on web > home > receive - set amount - step 2 1VH (1440 x 900px)	1
+14108-103605	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	INSTANCE	icons/action	3	✅ Home 1	14108-103468	Skai > Home - with deposit ALT 1VH (1440 x 900px)	1
