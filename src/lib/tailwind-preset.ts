@@ -351,10 +351,9 @@ const coalLine = {
 };
 
 /**
- * The wallet's #052D2D sits a step above Green Coal 300 in the dark theme, and
- * the light themes put it on their raised surface (the wallet shell maps it to
- * its secondary background, the home rail to `muted`), so it reads its own
- * property beside the coal ones.
+ * The wallet's #052D2D sits a step above Green Coal 300 in the dark theme. It
+ * reads its own property beside the coal ones, so an app can give it a light
+ * value of its own; the main app sets it to its raised surface (`--muted`).
  */
 const walletSurface = themedCoal("coal-wallet", surfaceColors.wallet);
 
