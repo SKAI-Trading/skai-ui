@@ -1,3 +1,4 @@
+16266:108396	Rectangle 34624588	RECTANGLE	545	1179	1
 7710:91527	Skai > Trade > Spot 1VH (1440 x 900px)	FRAME	1440	900	1
 8558:139280	Skai > Trade > Spot 1VH (1440 x 900px)	FRAME	768	1024	1
 8650:44853	Skai > Trade > Spot 1VH (768 x 1024px)	FRAME	768	1024	1
@@ -167,6 +168,11 @@
 4191:121191	Skai > Trade > Perpetual futures > Order history (1440 x 900px)	FRAME	1440	1443	1
 4191:123643	Skai > Trade > Perpetual futures > Trade history (1440 x 900px)	FRAME	1440	1443	1
 4207:133479	Skai > Trade > Perpetual futures > Trade history > share PnL (1440 x 900px)	FRAME	1440	900	1
+16225:103138	Skai > Trade > share trade 1VH (1440 x 900px)	FRAME	1440	900	1
+16240:158229	Skai > Trade > share trade > share PnL 1VH (1440 x 900px)	FRAME	1440	900	1
+16265:107610	Price perp gain - 4:3	FRAME	506	675	1
+16265:106039	Percentage spot gain ALT	FRAME	506	506	1
+16240:160342	Skai > Trade > share trade ALT 1VH (1440 x 900px)	FRAME	1440	900	1
 3931:86058	Notes	WIDGET	342	268	1
 3931:92020	Notes	WIDGET	342	268	1
 3972:25537	Notes	WIDGET	342	230	1
@@ -345,9 +351,18 @@
 9154:124727	Update position modal - on:hover	FRAME	354	560	1
 9154:124786	Update position modal - on:hover - additional position	FRAME	354	620	1
 9153:80772	Skai > Trade > Perpetual Futures 1VH (768 x 1024px)	FRAME	768	1024	1
+16240:164471	Skai > Trade > share trade 1VH (768 x 1024px)	FRAME	768	1024	1
+16240:173718	Skai > Trade > share trade ALT 1VH (768 x 1024px)	FRAME	768	1024	1
+16240:168870	Skai > Trade > share trade > share PnL 1VH (768 x 1024px)	FRAME	768	1024	1
+16240:177337	Percentage gain - tablet - ALT	FRAME	448	448	1
 9154:119745	modal	FRAME	558	556	1
 9154:128095	Skai > Trade > Perpetual Futures 1VH (375 x 812px)	FRAME	375	812	1
 9156:140326	Skai > Trade > Perpetual Futures 1VH (375 x 812px)	FRAME	375	812	1
+16241:178789	Skai > Trade > share trade 1VH (375 x 812px)	FRAME	375	812	1
+16241:184964	Skai > Trade > share trade > share PnL 1VH (375 x 812px)	FRAME	375	812	1
+16241:189287	Percentage gain - mobile - ALT	FRAME	354	354	1
+16241:181967	Skai > Trade > share trade ALT 1VH (375 x 812px)	FRAME	375	812	1
+16268:114816	Skai > Trade > share trade ALT 1VH (375 x 812px)	FRAME	375	812	1
 9156:141722	Skai > Trade > Perpetual Futures 1VH (375 x 812px)	FRAME	375	960	1
 9264:85987	Skai > Trench - actual 1VH (768 x 1024px)	FRAME	375	812	1
 9403:133956	Skai > Trench - actual 1VH (768 x 1024px)	FRAME	375	812	1
@@ -419,3 +434,8 @@
 10706:128843	Frame 267	FRAME	745	226	1
 10706:128950	Frame 1356	FRAME	1047	450	1
 10706:129546	Frame 1357	FRAME	1047	450	1
+16240:164267	Notes	WIDGET	342	331	1
+16265:105313	photo_2026-11-10 16.00.20 1	RECTANGLE	506	593	1
+16265:105315	image 2	RECTANGLE	506	506	1
+16265:105317	Rectangle 34624586	RECTANGLE	64	64	1
+16266:108400	Notes	WIDGET	342	407	1

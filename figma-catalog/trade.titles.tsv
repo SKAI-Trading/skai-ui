@@ -1,3 +1,4 @@
+16266-108396	Rectangle 34624588
 7710-91527	Skai > Trade > Spot 1VH (1440 x 900px)
 8558-139280	Skai > Trade > Spot 1VH (1440 x 900px)
 8650-44853	Skai > Trade > Spot 1VH (768 x 1024px)
@@ -167,6 +168,11 @@
 4191-121191	Skai > Trade > Perpetual futures > Order history (1440 x 900px)
 4191-123643	Skai > Trade > Perpetual futures > Trade history (1440 x 900px)
 4207-133479	Skai > Trade > Perpetual futures > Trade history > share PnL (1440 x 900px)
+16225-103138	Skai > Trade > share trade 1VH (1440 x 900px)
+16240-158229	Skai > Trade > share trade > share PnL 1VH (1440 x 900px)
+16265-107610	Price perp gain - 4:3
+16265-106039	Percentage spot gain ALT
+16240-160342	Skai > Trade > share trade ALT 1VH (1440 x 900px)
 3931-86058	Notes
 3931-92020	Notes
 3972-25537	Notes
@@ -345,9 +351,18 @@
 9154-124727	Update position modal - on:hover
 9154-124786	Update position modal - on:hover - additional position
 9153-80772	Skai > Trade > Perpetual Futures 1VH (768 x 1024px)
+16240-164471	Skai > Trade > share trade 1VH (768 x 1024px)
+16240-173718	Skai > Trade > share trade ALT 1VH (768 x 1024px)
+16240-168870	Skai > Trade > share trade > share PnL 1VH (768 x 1024px)
+16240-177337	Percentage gain - tablet - ALT
 9154-119745	modal
 9154-128095	Skai > Trade > Perpetual Futures 1VH (375 x 812px)
 9156-140326	Skai > Trade > Perpetual Futures 1VH (375 x 812px)
+16241-178789	Skai > Trade > share trade 1VH (375 x 812px)
+16241-184964	Skai > Trade > share trade > share PnL 1VH (375 x 812px)
+16241-189287	Percentage gain - mobile - ALT
+16241-181967	Skai > Trade > share trade ALT 1VH (375 x 812px)
+16268-114816	Skai > Trade > share trade ALT 1VH (375 x 812px)
 9156-141722	Skai > Trade > Perpetual Futures 1VH (375 x 812px)
 9264-85987	Skai > Trench - actual 1VH (768 x 1024px)
 9403-133956	Skai > Trench - actual 1VH (768 x 1024px)
@@ -419,6 +434,11 @@
 10706-128843	Frame 267
 10706-128950	Frame 1356
 10706-129546	Frame 1357
+16240-164267	Notes
+16265-105313	photo_2026-11-10 16.00.20 1
+16265-105315	image 2
+16265-105317	Rectangle 34624586
+16266-108400	Notes
 9785-161003	Skai > Dashboard > Reports - Frame 1264 (Reports table, 768) [Frame 1264 684x148]
 9785-161048	Skai > Dashboard > Reports - signals (Reports signal card, 768) [signals 684x126]
 9785-161305	Skai > Dashboard > Whale activity - section (Whale activity, 768) [section 708x630]

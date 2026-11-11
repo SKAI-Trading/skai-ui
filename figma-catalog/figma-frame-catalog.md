@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-11-05T05:18:41.286Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-11-11T05:01:30.253Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -12,7 +12,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
 | governance | ✅ | 727 | 403 | 324 | 87 | 145 | 160 | 3 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 136 | 56 | 3 | 0 | 201 |
-| trade | ✅ | 456 | 253 | 203 | 44 | 119 | 107 | 3 | 0 | 92 |
+| trade | ✅ | 476 | 263 | 213 | 47 | 119 | 107 | 3 | 10 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 90 | 83 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 160 | 27 | 0 | 0 | 102 |
 | play | ✅ | 475 | 176 | 299 | 45 | 99 | 66 | 0 | 7 | 66 |
@@ -53,8 +53,8 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | user-flow | 🚧 | 3 | 3 | 0 | 2 | 0 | 0 | 0 | 3 | 0 |
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
-| cover-images | 📍 | 44 | 0 | 44 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4927** | **2231** | | | **1418** | **746** | **39** | **28** | **1032** |
+| cover-images | 📍 | 48 | 0 | 48 | 0 | 0 | 0 | 0 | 0 | 6 |
+| **all** | | **4951** | **2241** | | | **1418** | **746** | **39** | **38** | **1032** |
 
 ### Drift against live Figma
 
@@ -68,7 +68,7 @@ Frames that exist in Figma but are not in the catalog:
 | ✅ Governance and Utilities | 727 | 725 | -2 |
 | ✅ Home 1 | 295 | 280 | -15 |
 | ✅ Wallet 1 | 186 | 178 | -8 |
-| ✅ Trade 1 | 456 | 421 | -35 |
+| ✅ Trade 1 | 476 | 441 | -35 |
 | ✅ Home 2 | 270 | 263 | -7 |
 | ✅ Wallet 2 | 195 | 191 | -4 |
 | ✅ Trade 2 | 440 | 420 | -20 |
@@ -244,11 +244,14 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Trench | 6 | mobile | actual | frame-defect/partial | [9264-85987](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9264-85987&m=dev) |
 | Dashboard > Reports | 5 | desktop, mobile, tablet | Frame 1264 (Reports table, 768) [Frame 1264 684x148]; signals (Reports signal card, 768) [signals 684x126] | done/partial | [4451-126989](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4451-126989&m=dev) |
 | Perpetual futures | 4 | desktop | user not signed | done/partial | [3903-21478](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3903-21478&m=dev) |
+| share trade ALT | 4 | desktop, tablet, mobile | - | unknown | [16240-160342](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16240-160342&m=dev) |
 | Dashboard | 4 | desktop, mobile, tablet | positive; positive - Dashboard InsightX (1440) container width [main 1382x828] | blocked-on-backend/partial/done | [4437-112650](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4437-112650&m=dev) |
 | Dashboard > Whale activity | 4 | desktop, mobile, tablet | section (Whale activity, 768) [section 708x630] | done/partial | [4451-126554](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4451-126554&m=dev) |
 | Spot ALT | 3 | mobile | - | done/partial | [8845-36223](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=8845-36223&m=dev) |
 | Spot > Limit > Search pairs > Trench | 3 | desktop, tablet | search; search - Search pairs - Gaming/Trench 768 [modal 680x586] | partial/done | [3962-35261](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3962-35261&m=dev) |
 | Perpetual futures > Market > Search pairs | 3 | desktop, tablet | Perps > Preferred pairs modal 768 [modal 680x586] | done | [3962-32706](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=3962-32706&m=dev) |
+| share trade | 3 | desktop, tablet, mobile | - | unknown | [16225-103138](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16225-103138&m=dev) |
+| share trade > share PnL | 3 | desktop, tablet, mobile | - | unknown | [16240-158229](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16240-158229&m=dev) |
 | Dashboard > News | 3 | desktop, mobile, tablet | - | done/partial | [4459-127765](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4459-127765&m=dev) |
 | Spot > Trades | 3 | mobile | Frame 1222 (Trades tab, 375) [Frame 1222 375x362] | done/partial | [9777-101670](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=9777-101670&m=dev) |
 | Spot > Layout adjustment | 2 | desktop | sidecar | done | [4144-65909](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=4144-65909&m=dev) |

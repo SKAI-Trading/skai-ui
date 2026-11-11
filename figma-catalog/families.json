@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-05T05:18:20.398Z",
+  "generated": "2026-11-11T05:01:19.877Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -2945,6 +2945,67 @@
         "src/components/trade/perp-v2"
       ],
       "proposedStatus": "partial"
+    },
+    "trade/share trade": {
+      "section": "trade",
+      "family": "share trade",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16225-103138",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16240-164471",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16241-178789"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/share trade > share PnL": {
+      "section": "trade",
+      "family": "share trade > share PnL",
+      "frameCount": 3,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16240-158229",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16240-168870",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16241-184964"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "trade/share trade ALT": {
+      "section": "trade",
+      "family": "share trade ALT",
+      "frameCount": 4,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16240-160342",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16240-173718",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16241-181967",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16268-114816"
+      ],
+      "devices": [
+        "desktop",
+        "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
     },
     "trade/Perpetual futures > Funding history": {
       "section": "trade",

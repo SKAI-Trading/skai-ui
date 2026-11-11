@@ -904,3 +904,15 @@ M6r9FEn042UWTQD1zvy6GM:9669-2966	-	gone	0	0	-
 # 11202-44213 (Sports book row) -> 14069-218469, 11202-44201 (Casino row) -> 14069-218457.
 11202-44213	-	gone	0	0	-
 11202-44201	-	gone	0	0	-
+# 2026-11-11 (refresh of Casey's 11-10 changes, HQ-26): the Hi-Lo and Baccarat covers on Cover Images (M6r9 9220:26175)
+# were redrawn under new ids. A probe (getNodeByIdAsync after loading every page) found the four old ids deleted, not
+# nested. The four new boards are all named "Cards ALT - Chicken", but their text reads HI-LO / Baccarat and they sit
+# where the old ones sat (Baccarat desktop at (587,553), mobile at (3347,215)), so drift calls them ADDED and the old
+# rows REMOVED-WITH-WORK. Successors, for a human to confirm and move the work (not applied here; the old rows were
+# done and matched): 9351-3407 (Hi Lo Desktop) -> 12790-3923, 9351-3413 (Hi Lo Mobile) -> 12790-3929,
+# 10296-3772 (Baccarat Desktop) -> 12790-3946, 10296-3777 (Baccarat Mobile) -> 12790-3952. The layer names want a
+# rename in Figma; a catalog title edit would be reverted at the next harvest.
+9351-3407	-	gone	0	0	-
+9351-3413	-	gone	0	0	-
+10296-3772	-	gone	0	0	-
+10296-3777	-	gone	0	0	-

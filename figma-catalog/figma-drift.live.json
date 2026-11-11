@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-03T22:48:22.567Z",
+  "generated": "2026-11-11T03:10:38.096Z",
   "sections": {
     "home": {
       "status": "clean",
@@ -26,11 +26,11 @@
       "retargets": []
     },
     "trade": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 456,
-      "live": 421,
+      "live": 441,
       "nestedAlive": 35,
-      "added": 0,
+      "added": 20,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
@@ -290,11 +290,11 @@
       "retargets": []
     },
     "home-2": {
-      "status": "drift",
-      "catalogued": 262,
+      "status": "clean",
+      "catalogued": 270,
       "live": 263,
       "nestedAlive": 7,
-      "added": 8,
+      "added": 0,
       "removed": 0,
       "retitled": 0,
       "removedRows": [],
@@ -374,14 +374,57 @@
       "retargets": []
     },
     "cover-images": {
-      "status": "clean",
+      "status": "drift",
       "catalogued": 44,
       "live": 44,
       "nestedAlive": 0,
-      "added": 0,
-      "removed": 0,
+      "added": 4,
+      "removed": 4,
       "retitled": 0,
-      "removedRows": [],
+      "removedRows": [
+        {
+          "id": "9351-3407",
+          "title": "Hi Lo - Desktop 1440px",
+          "implFiles": [
+            "modules/skai-gaming/src/assets/games/figma/",
+            "modules/skai-gaming/src/pages/play/playGameArt.ts"
+          ],
+          "status": "done",
+          "notes": "wave 76 lane P071, 2026-10-05 (was done): use_figma read-only script 2026-10-05, lane call 1/4 (figma-read-1-M6r9.json, page 9220:26175): fill 39b97621 at w 113.56% h 99.92% left -0.06% top 0, anchored LEFT (claimed done on asset fidelity, never crop-checked). Built hilo artPosition \"0% 50%\" in skai-gaming 13263235 \"fix(play): the Hi-Lo, Scratchers, Dice and Coinflip tiles crop their cover art where the boards do: ...\" (app gitlink d01f8ffee \"chore(submodules): bump skai-gaming to 1326323 (the Hi-Lo, Scratchers, Dice and Coinflip tiles crop their cover art where the boards do)\"). lg rail tile vs this board: worst edge 1.06pp (was left 6.67pp centred); the featured tile holds its left edge (0.89pp) and shows extra picture on the right that the 195 board leaves off. edge errors in pp of the raster with object-cover + position + the tile's own rest scale (1.02 shared, or the entry's zoom), rasters measured on disk; after-crops.out.txt. Pinned by playGameArtCoverCrops.test.tsx.",
+          "verifiedAt": null
+        },
+        {
+          "id": "9351-3413",
+          "title": "Hi Lo - Mobile 375px",
+          "implFiles": [
+            "modules/skai-gaming/src/assets/games/figma/",
+            "modules/skai-gaming/src/pages/play/playGameArt.ts"
+          ],
+          "status": "done",
+          "notes": "wave 76 lane P071, 2026-10-05 (was partial): use_figma read-only script 2026-10-05, lane call 1/4 (figma-read-1-M6r9.json, page 9220:26175): fill 39b97621 1080x1350 at w 114.10% h 100.37% left -0.32% top 0, a cover fit anchored LEFT; hub copies read in lane call 2/4 (figma-read-2-3sSz.json, 3sSz page 4459:128102): 13752:218367 / 13752:218577 identical. Built hilo artPosition \"0% 50%\" in skai-gaming 13263235 \"fix(play): the Hi-Lo, Scratchers, Dice and Coinflip tiles crop their cover art where the boards do: ...\" (app gitlink d01f8ffee \"chore(submodules): bump skai-gaming to 1326323 (the Hi-Lo, Scratchers, Dice and Coinflip tiles crop their cover art where the boards do)\"). Below-lg rail tile vs this board: worst edge 0.98pp (was left 6.45pp centred); edge errors in pp of the raster with object-cover + position + the tile's own rest scale (1.02 shared, or the entry's zoom), rasters measured on disk; after-crops.out.txt. Accent #123F3C and the 41.8/78.7 stops are the card's own. Caption HI-LO / Skai Originals as drawn. Pinned by playGameArtCoverCrops.test.tsx \"hilo\" cases; fails on the old entry (mutations M0, M1).",
+          "verifiedAt": null
+        },
+        {
+          "id": "10296-3772",
+          "title": "Baccarat - Desktop 1440px",
+          "implFiles": [
+            "modules/skai-gaming/src/pages/play/playGameArt.ts"
+          ],
+          "status": "done",
+          "notes": "READ LIVE THIS PASS, first measurement in any wave; the row was `unknown` with empty notes. 195x277 at (587,553). Same cover shell as every Desktop card on the page - #001615 ground, radius var(--rounded-2xl,16px), shadow 0/1/4 rgba(0,0,0,0.75), inset highlight 0/1.091/27.285 rgba(255,255,255,0.14), caption 132 wide at (31,213) on an 8 gap, Manrope ExtraBold 24/24 uppercase at -0.96px over Mulish Regular 11/14 at -0.44px opacity 64, title \"Baccarat\" and \"Skai Originals\" as separate text layers (10296:3775 / 10296:3776), i.e. a title-free fill. MATCHES WHAT SHIPS, FIELD FOR FIELD: gradient `from-[rgba(149,36,51,0)] from-[41.823%] to-[#952433] to-[78.7%]` against the map's accent \"#952433\", and fill `h-[145.29%] left-0 top-[-1.92%] w-full` against the map's artPosition \"50% 4%\" - which is the SAME declaration, character for character, that this file solved 4% from on the game page 9873:4052. Render is the shipped baccarat.webp (1080x2229): Q-hearts and 9-clubs with a 100 chip at left, Ace-spades and the teal SKAI card at right, crimson ground. Nothing built and nothing needed to be; the value of the reading is that Casey's 2026-08-19 ruling makes the cover section GOVERN, so a disagreement here would have superseded the 2026-08-20 game-page graduation.",
+          "verifiedAt": null
+        },
+        {
+          "id": "10296-3777",
+          "title": "Baccarat - Mobile 375px",
+          "implFiles": [
+            "modules/skai-gaming/src/pages/play/playGameArt.ts"
+          ],
+          "status": "done",
+          "notes": "READ LIVE THIS PASS, first measurement. The Mobile twin of 10296-3772 at 76.268x108 and the second proof of the pair rule: get_design_context names its fill `1a11b.png`, byte-for-byte the name its Desktop partner returns, so one raster serves both breakpoints and one map entry closes both. Its numbers are the Desktop's at 0.391 - radius 6.254, shadow 0/0.391/1.564, caption 51.506 at (12.1,83.11) on a 3.122 gap, Manrope ExtraBold 9.365/9.365 over Mulish Regular 4.292/5.463 - and the same `to-[#952433] to-[78.7%]` stop. Fill `h-[147.22%] left-[-0.04%] top-[-2.78%] w-[101.01%]`: hidden-above 1.89% against the Desktop's 1.32%, the difference being the 1.01% width overscan this cut adds, and both resolve to the same 4% anchor the map ships. Nothing built.",
+          "verifiedAt": null
+        }
+      ],
       "retargeted": 0,
       "retargets": []
     },
