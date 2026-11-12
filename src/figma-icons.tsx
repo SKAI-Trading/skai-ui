@@ -1854,6 +1854,21 @@ export const FigmaWarningsErrorIcon: React.FC<IconProps> = (props) => (
   </svg>
 );
 
+/** icons/warnings Type=Error as the boards instance it at 24 (the creator
+ *  rail's Block, 5122:202620 and 11474:213519). There is no 24 component:
+ *  the 16 one is scaled, its ring keeps a 1px stroke at the new size and its
+ *  x keeps the 16 component's 6 by 6, centred (the two strokes are pinned to
+ *  the centre). Scaling the 16 export instead draws the ring 1.5 thick and
+ *  the x half again too big. 24. */
+export const FigmaWarningsError24Icon: React.FC<IconProps> = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM15.3535 9.35352L12.707 12L15.3535 14.6465L14.6465 15.3535L12 12.707L9.35352 15.3535L8.64648 14.6465L11.293 12L8.64648 9.35352L9.35352 8.64648L12 11.293L14.6465 8.64648L15.3535 9.35352Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 /** icons/warnings Type=Success (1339:2572): a tick inside a 1px ring, one
  *  filled shape, unlike Check-enclosed's solid disc. The component paints it
  *  App Green 300 #17F9B4. 16. */

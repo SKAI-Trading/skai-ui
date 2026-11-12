@@ -45,6 +45,7 @@ import {
   FigmaWalletChartIcon,
   FigmaWalletChatIcon,
   FigmaWalletSpendingIcon,
+  FigmaWarningsError24Icon,
   FigmaWarningsErrorIcon,
   FigmaWarningsSuccessIcon,
 } from "../figma-icons";
@@ -370,5 +371,70 @@ describe("Skai-Design icons/tiers medallions", () => {
       expect(svg.querySelector("g")?.getAttribute("mask")).toBe(`url(#${ids[i]})`);
       expect(svg.querySelector("mask")?.getAttribute("style")).toContain("mask-type: alpha");
     });
+  });
+});
+
+/**
+ * The creator rail's Block draws icons/warnings Error (16) at 24, and no 24
+ * component exists to export. Read on the boards (5122:202620, 11474:213519,
+ * 2026-10-23): the ring is the "frame" vector with a 1px INSIDE stroke and a
+ * SCALE constraint, so it grows to 24 and stays 1 thick; the x is two 8.49
+ * strokes, 1 wide, pinned to the centre, so it keeps the 16 component's 6 by 6.
+ * The oracle is the 16 component's own export above, moved and measured, not
+ * the 24 path itself.
+ */
+describe("icons/warnings Error at 24", () => {
+  type Pt = [number, number];
+  /** Each subpath's anchor points (M, L and the end of each C). */
+  function anchors(d: string): Pt[][] {
+    const out: Pt[][] = [];
+    for (const sub of d.split(/(?=M)/)) {
+      const pts: Pt[] = [];
+      for (const [, cmd, args] of sub.matchAll(/([MLCZ])([^MLCZ]*)/g)) {
+        const n = args.trim().split(/[\s,]+/).filter(Boolean).map(Number);
+        if (cmd === "C") pts.push([n[4], n[5]]);
+        else if (cmd !== "Z") pts.push([n[0], n[1]]);
+      }
+      out.push(pts);
+    }
+    return out;
+  }
+  const radius = (pts: Pt[], c: number) => pts.map(([x, y]) => Math.hypot(x - c, y - c));
+  const sixteen = anchors(exported("1339:2571").paths[0].d ?? "");
+  const got = drawn(FigmaWarningsError24Icon);
+  const twentyFour = anchors(got.paths[0].d ?? "");
+
+  it("draws one currentColor path in a 24 box", () => {
+    expect(got.viewBox).toBe("0 0 24 24");
+    expect(got.paths).toHaveLength(1);
+    const { container } = render(<FigmaWarningsError24Icon />);
+    expect(container.querySelector("path")?.getAttribute("fill")).toBe("currentColor");
+    expect(container.querySelectorAll("[id]")).toHaveLength(0);
+  });
+
+  it("keeps the 16 component's three parts: the ring's two edges and the x", () => {
+    expect(sixteen).toHaveLength(3);
+    expect(twentyFour).toHaveLength(3);
+  });
+
+  it("scales the ring to 24 and keeps it 1 thick, as the 16 one is", () => {
+    for (const r of radius(sixteen[0], 8)) expect(r).toBeCloseTo(8, 3);
+    for (const r of radius(sixteen[1], 8)) expect(r).toBeCloseTo(7, 3);
+    for (const r of radius(twentyFour[0], 12)) expect(r).toBeCloseTo(12, 3);
+    for (const r of radius(twentyFour[1], 12)) expect(r).toBeCloseTo(11, 3);
+  });
+
+  it("draws the 16 component's x at its own size, moved to the 24 box's centre", () => {
+    const moved = sixteen[2].map(([x, y]) => [x + 4, y + 4]);
+    expect(twentyFour[2]).toHaveLength(moved.length);
+    twentyFour[2].forEach(([x, y], i) => {
+      expect(x).toBeCloseTo(moved[i][0], 3);
+      expect(y).toBeCloseTo(moved[i][1], 3);
+    });
+  });
+
+  it("is not the 16 export scaled up, which draws the x half again too big", () => {
+    const xs = twentyFour[2].map(([x]) => x);
+    expect(Math.max(...xs) - Math.min(...xs)).toBeCloseTo(6.707, 2);
   });
 });

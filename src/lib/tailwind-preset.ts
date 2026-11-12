@@ -31,6 +31,7 @@ import {
   skaiSpacing,
   skaiBorderRadius,
   skaiShadows,
+  surfaceColors,
 } from "./design-tokens";
 import { breakpoints, zIndex } from "./tokens";
 import { durations, easings, easingToCss } from "./motion-tokens";
@@ -321,6 +322,7 @@ export const skaiSemanticColors = {
  *   --coal-line       border / divide / outline / ring green-coal-100 (dividers, outlines)
  *   --coal-ink        text                            white
  *   --coal-ink-muted  text                            ash
+ *   --coal-wallet     bg / border / gradient          wallet (#052D2D)
  *
  * Green Coal 100 is both a fill and a line in the frames, which is why it
  * splits: a light theme wants a pale fill but a visible line.
@@ -348,10 +350,17 @@ const coalLine = {
   100: themedCoal("coal-line", greenCoalColors[100]),
 };
 
+/**
+ * The wallet's #052D2D sits a step above Green Coal 300 in the dark theme. It
+ * reads its own property beside the coal ones, so an app can give it a light
+ * value of its own; the main app sets it to its raised surface (`--muted`).
+ */
+const walletSurface = themedCoal("coal-wallet", surfaceColors.wallet);
+
 export const skaiThemedCoal = {
-  backgroundColor: { "green-coal": coalSurface },
-  gradientColorStops: { "green-coal": coalSurface },
-  borderColor: { "green-coal": coalLine },
+  backgroundColor: { "green-coal": coalSurface, wallet: walletSurface },
+  gradientColorStops: { "green-coal": coalSurface, wallet: walletSurface },
+  borderColor: { "green-coal": coalLine, wallet: walletSurface },
   divideColor: { "green-coal": coalLine },
   outlineColor: { "green-coal": coalLine },
   ringColor: { "green-coal": coalLine },
