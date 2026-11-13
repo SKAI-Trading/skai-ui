@@ -265,7 +265,7 @@ const SwapPageTemplate: React.FC<SwapPageTemplateProps> = ({
           className={cn(
             "w-full h-16 px-10 py-5 text-base font-['Manrope'] font-normal tracking-[-0.04em] rounded-[16px] transition-all duration-200",
             "bg-[#56C7F3] text-[#001615] hover:bg-[#2DEDAD]",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2DEDAD] focus-visible:ring-offset-2 focus-visible:ring-offset-[#122524]",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#56C7F3] focus-visible:ring-offset-2 focus-visible:ring-offset-[#122524]",
             "disabled:opacity-50 disabled:pointer-events-none"
           )}
         >
