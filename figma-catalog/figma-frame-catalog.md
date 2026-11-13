@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-11-11T23:58:09.349Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-11-13T06:09:13.528Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -10,14 +10,14 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
-| governance | ✅ | 727 | 403 | 324 | 87 | 146 | 159 | 3 | 0 | 10 |
+| governance | ✅ | 727 | 403 | 324 | 87 | 146 | 161 | 3 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 136 | 56 | 3 | 0 | 201 |
 | trade | ✅ | 476 | 263 | 213 | 47 | 119 | 107 | 3 | 10 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 90 | 83 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 160 | 27 | 0 | 0 | 102 |
 | play | ✅ | 475 | 176 | 299 | 45 | 99 | 66 | 0 | 7 | 66 |
-| home-2 | ✅ | 270 | 161 | 109 | 22 | 82 | 29 | 0 | 2 | 14 |
-| predict | ✅ | 289 | 149 | 140 | 34 | 32 | 80 | 3 | 0 | 134 |
+| home-2 | ✅ | 270 | 161 | 109 | 22 | 88 | 26 | 0 | 0 | 14 |
+| predict | ✅ | 289 | 149 | 140 | 34 | 50 | 62 | 3 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 116 | 14 | 0 | 0 | 59 |
 | onboarding | ✅ | 151 | 116 | 35 | 20 | 77 | 24 | 12 | 0 | 1 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 48 | 0 | 48 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4951** | **2241** | | | **1418** | **746** | **39** | **38** | **1032** |
+| **all** | | **4951** | **2244** | | | **1442** | **727** | **39** | **36** | **1032** |
 
 ### Drift against live Figma
 
@@ -141,7 +141,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Explorer > Governance | 3 | desktop, tablet, mobile | - | done | [5707-145880](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5707-145880&m=dev) |
 | Explorer > Addresses | 3 | desktop, tablet, mobile | - | partial/frame-defect | [5720-152742](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5720-152742&m=dev) |
 | Explorer > DeFi | 3 | desktop, tablet, mobile | - | blocked-on-backend/done | [5711-150322](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-150322&m=dev) |
-| Explorer > Lending | 3 | desktop, tablet, mobile | - | blocked-on-backend/done | [5711-147902](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-147902&m=dev) |
+| Explorer > Lending | 3 | desktop, tablet, mobile | - | partial/done | [5711-147902](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5711-147902&m=dev) |
 | Explorer > Social | 3 | desktop, tablet, mobile | - | done | [5707-146891](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5707-146891&m=dev) |
 | Explorer > Blocks | 3 | desktop, tablet, mobile | - | done/frame-defect | [5689-136816](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5689-136816&m=dev) |
 | Explorer > Transactions | 3 | desktop, tablet, mobile | - | done/frame-defect | [5689-136235](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5689-136235&m=dev) |
@@ -457,15 +457,15 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Add > Add whale | 11 | desktop, tablet, mobile | input > conversation 5; input; (768x1024) main - toggle side buttons [main 768x920]; (375x812) main - toggle side buttons [main 375x710] | partial/done | [13008-114473](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-114473&m=dev) |
 | Pro > checkout | 9 | desktop, tablet, mobile | send tokens - step 1; send tokens - step 2; send tokens - step 3 | blocked-on-backend/partial | [13008-113481](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-113481&m=dev) |
 | Pro | 4 | desktop, tablet, mobile | expanded | done | [13008-112491](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-112491&m=dev) |
-| Notification pop-up > show all notifications | 4 | desktop, tablet, mobile | - | partial/frame-defect | [16058-164798](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16058-164798&m=dev) |
+| Notification pop-up > show all notifications | 4 | desktop, tablet, mobile | - | done/partial | [16058-164798](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16058-164798&m=dev) |
 | Pro > checkout > welcome to gold | 3 | desktop, tablet, mobile | - | blocked-on-backend | [13008-113803](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-113803&m=dev) |
 | Whales > Wallet manager > Import wallet | 3 | desktop, tablet, mobile | - | done | [13008-115463](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-115463&m=dev) |
 | Whales > Live trades | 3 | desktop, tablet, mobile | - | done | [13008-115820](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-115820&m=dev) |
 | Whales > KOLs | 3 | desktop, tablet, mobile | - | done | [13008-116049](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-116049&m=dev) |
 | Add > Add whale > Select whale | 3 | desktop, tablet, mobile | - | done | [13008-116983](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-116983&m=dev) |
 | Intelligent support ALT | 3 | desktop, tablet, mobile | - | frame-defect | [13458-193331](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13458-193331&m=dev) |
-| Notification pop-up | 3 | desktop, tablet, mobile | - | partial | [16057-162715](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16057-162715&m=dev) |
-| AI pop-up | 2 | desktop, mobile | - | unknown | [16083-168102](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16083-168102&m=dev) |
+| Notification pop-up | 3 | desktop, tablet, mobile | - | done | [16057-162715](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16057-162715&m=dev) |
+| AI pop-up | 2 | desktop, mobile | - | partial | [16083-168102](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16083-168102&m=dev) |
 | Whales > filter | 1 | desktop | custom input | done | [13008-111656](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-111656&m=dev) |
 | Pro ALT | 1 | desktop | - | partial | [13008-112676](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-112676&m=dev) |
 | Pro ALT stretched | 1 | desktop | - | partial | [13008-112937](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-112937&m=dev) |
@@ -478,7 +478,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 
 | Family | Frames | Devices | Variants | Impl / status | Example |
 |--------|-------:|---------|----------|---------------|---------|
-| sample market | 32 | desktop, mobile, tablet | dollar only; all expanded; all expanded > Add rewards; line chart; candle chart; full … | partial/not-started | [3288-23300](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3288-23300&m=dev) |
+| sample market | 32 | desktop, mobile, tablet | dollar only; all expanded; all expanded > Add rewards; line chart; candle chart; full … | done/partial/not-started | [3288-23300](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3288-23300&m=dev) |
 | ALT | 18 | mobile | - | partial | [10199-104649](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=10199-104649&m=dev) |
 | Dashboard | 10 | desktop, mobile, tablet | Frame 403 (768 Dashboard tab row) [Frame 403 708x20]; Header-tablet (second-row nav band) [Header-tablet 768x86]; Geo-politics section (768 Dashboard Overview) [Frame 461 708x396]; Bottom-navigation-tablet (Predict board) [Bottom-navigation-tablet 768x52] | blocked-on-backend/done/partial | [3554-10890](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3554-10890&m=dev) |
 | Dashboard > Elections | 7 | desktop, mobile, tablet | - | blocked-on-backend | [3620-47881](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=3620-47881&m=dev) |

@@ -1,13 +1,13 @@
 {
-  "generated": "2026-11-11T23:58:23.819Z",
+  "generated": "2026-11-13T06:09:18.286Z",
   "harvestedAt": "2026-11-11",
   "rollup": {
     "pages": 39,
     "live": 4746,
     "furniture": 845,
-    "genuine": 3358,
+    "genuine": 3357,
     "ruledOut": 243,
-    "genuineWithRuledOut": 3601,
+    "genuineWithRuledOut": 3600,
     "ruledOutUncited": [
       "vverify.fisherman-slots.tsv 11680-33011",
       "vverify.home.tsv 5854-80845",
@@ -16,12 +16,12 @@
       "vverify.predict.tsv 10097-220101",
       "vverify.vegas-fortune.tsv 10448-4297"
     ],
-    "frameDefectsOut": 300,
+    "frameDefectsOut": 301,
     "genuineWithFrameDefects": 3658,
     "frameDefectUncited": [],
-    "matched": 3322,
-    "done": 2046,
-    "verified": 1664,
+    "matched": 3330,
+    "done": 2075,
+    "verified": 1693,
     "visuallyDowngraded": 16,
     "visualUnmapped": [],
     "visualRetired": [
@@ -43,29 +43,29 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 731,
+    "partial": 712,
     "notStarted": 34,
-    "blocked": 506,
+    "blocked": 504,
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
-    "liveOnly": 36,
+    "liveOnly": 27,
     "rollupOnly": 7,
     "defaultNamed": 155,
     "ambiguous": 105,
-    "conflicts": 9
+    "conflicts": 20
   },
   "doneRows": {
-    "total": 4524,
-    "withBreakpointProvenance": 2414,
-    "namingANodeId": 4299,
+    "total": 4560,
+    "withBreakpointProvenance": 2449,
+    "namingANodeId": 4335,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 25286,
+    "total": 25359,
     "namingNoNodeId": 339,
-    "namingNoLiveNodeId": 979,
-    "unrecognisedTokens": 80040
+    "namingNoLiveNodeId": 980,
+    "unrecognisedTokens": 81131
   },
   "statusFiles": [
     {
@@ -7029,6 +7029,54 @@
       "ids": 4
     },
     {
+      "file": "status.wave80o.L131.tsv",
+      "rows": 24,
+      "withLiveId": 24,
+      "ids": 24
+    },
+    {
+      "file": "status.wave80o.L133.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 4
+    },
+    {
+      "file": "status.wave80o.L134.tsv",
+      "rows": 8,
+      "withLiveId": 7,
+      "ids": 7
+    },
+    {
+      "file": "status.wave80o.L138.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 4
+    },
+    {
+      "file": "status.wave80o.L140.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 6
+    },
+    {
+      "file": "status.wave80o.L142.tsv",
+      "rows": 19,
+      "withLiveId": 19,
+      "ids": 20
+    },
+    {
+      "file": "status.wave80o.L145.tsv",
+      "rows": 6,
+      "withLiveId": 6,
+      "ids": 9
+    },
+    {
+      "file": "status.wave80p.L146.tsv",
+      "rows": 4,
+      "withLiveId": 4,
+      "ids": 4
+    },
+    {
       "file": "status.wave82.HARV.tsv",
       "rows": 2,
       "withLiveId": 0,
@@ -7842,11 +7890,11 @@
       "defaultNamed": 5,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 62,
+      "verified": 80,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 81,
-        "partial": 71,
+        "done": 99,
+        "partial": 53,
         "blocked-on-backend": 44
       },
       "liveOnly": []
@@ -7882,7 +7930,7 @@
         "8976-140995",
         "8976-141101"
       ],
-      "frameDefects": 80,
+      "frameDefects": 82,
       "frameDefectIds": [
         "11121-90497",
         "11122-92823",
@@ -7930,6 +7978,7 @@
         "13752-218567",
         "13752-218362",
         "13752-218572",
+        "13752-218186",
         "13752-218367",
         "13752-218667",
         "13752-218577",
@@ -7947,6 +7996,7 @@
         "13752-218392",
         "13752-218602",
         "13753-218715",
+        "13752-218236",
         "13752-218397",
         "13752-218607",
         "13752-218402",
@@ -7965,16 +8015,16 @@
         "13752-218432",
         "13752-218642"
       ],
-      "genuine": 272,
-      "matched": 263,
+      "genuine": 270,
+      "matched": 261,
       "rollupOnly": 1,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 140,
+      "verified": 138,
       "visuallyDowngraded": 3,
       "byStatus": {
-        "done": 177,
+        "done": 175,
         "furniture": 1,
         "partial": 78,
         "blocked-on-backend": 4,
@@ -8124,12 +8174,12 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 145,
+      "verified": 148,
       "visuallyDowngraded": 13,
       "byStatus": {
-        "done": 195,
+        "done": 198,
         "blocked-on-backend": 87,
-        "partial": 57,
+        "partial": 54,
         "not-started": 13
       },
       "liveOnly": []
@@ -8233,8 +8283,8 @@
       "visuallyDowngraded": 0,
       "byStatus": {
         "done": 249,
-        "blocked-on-backend": 144,
-        "partial": 187,
+        "blocked-on-backend": 142,
+        "partial": 189,
         "not-started": 12
       },
       "liveOnly": []
@@ -8354,7 +8404,7 @@
         "13008-114000",
         "14316-248325"
       ],
-      "frameDefects": 11,
+      "frameDefects": 10,
       "frameDefectIds": [
         "13008-112079",
         "13458-193331",
@@ -8365,59 +8415,22 @@
         "14178-152219",
         "14178-143359",
         "14179-163655",
-        "13008-129897",
-        "16135-26440"
+        "13008-129897"
       ],
-      "genuine": 200,
-      "matched": 195,
+      "genuine": 201,
+      "matched": 201,
       "rollupOnly": 0,
       "defaultNamed": 2,
       "ambiguous": 0,
-      "conflicts": 0,
-      "verified": 81,
+      "conflicts": 7,
+      "verified": 87,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 127,
+        "done": 133,
         "blocked-on-backend": 44,
         "partial": 24
       },
-      "liveOnly": [
-        {
-          "id": "16083-168102",
-          "name": "Skai > Home > AI pop-up 1VH (1440 x 900px)",
-          "type": "FRAME",
-          "w": 1440,
-          "h": 900
-        },
-        {
-          "id": "16137-102748",
-          "name": "Ask Skai - typing - tablet",
-          "type": "FRAME",
-          "w": 468,
-          "h": 614
-        },
-        {
-          "id": "16137-102267",
-          "name": "Skai > Home > AI pop-up 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        },
-        {
-          "id": "16137-102919",
-          "name": "Ask Skai - typing - mobile",
-          "type": "FRAME",
-          "w": 358,
-          "h": 594
-        },
-        {
-          "id": "16106-168730",
-          "name": "Ask Skai - typing",
-          "type": "FRAME",
-          "w": 432,
-          "h": 664
-        }
-      ]
+      "liveOnly": []
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -8905,46 +8918,17 @@
       "frameDefects": 0,
       "frameDefectIds": [],
       "genuine": 42,
-      "matched": 38,
+      "matched": 42,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
-      "conflicts": 0,
-      "verified": 31,
+      "conflicts": 4,
+      "verified": 35,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 38
+        "done": 42
       },
-      "liveOnly": [
-        {
-          "id": "12790-3923",
-          "name": "Cards ALT - Chicken",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "12790-3929",
-          "name": "Cards ALT - Chicken",
-          "type": "FRAME",
-          "w": 76,
-          "h": 108
-        },
-        {
-          "id": "12790-3946",
-          "name": "Cards ALT - Chicken",
-          "type": "FRAME",
-          "w": 195,
-          "h": 277
-        },
-        {
-          "id": "12790-3952",
-          "name": "Cards ALT - Chicken",
-          "type": "FRAME",
-          "w": 76,
-          "h": 108
-        }
-      ]
+      "liveOnly": []
     },
     {
       "fileKey": "M6r9FEn042UWTQD1zvy6GM",
@@ -13874,7 +13858,8 @@
         "status.wave43.wallet-social-predict.tsv:77",
         "status.wave44.social-predict-launch.tsv:96",
         "status.wave45.rewards-predict-social-launch.tsv:53",
-        "status.wave80l.L100.tsv:10"
+        "status.wave80l.L100.tsv:10",
+        "status.wave80o.L134.tsv:14"
       ],
       "status": "partial"
     },
@@ -15757,6 +15742,104 @@
   ],
   "conflicts": [
     {
+      "id": "16057-162715",
+      "page": "✅ Home 2",
+      "name": "Skai > Home > Notification pop-up 1VH (1440 x 900px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80m.L129.tsv:7",
+        "status.wave80o.L131.tsv:7"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "16058-164798",
+      "page": "✅ Home 2",
+      "name": "Skai > Home > Notification pop-up > show all notifications 1VH (1440 x 900px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80m.L129.tsv:10",
+        "status.wave80o.L131.tsv:10"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "16058-164188",
+      "page": "✅ Home 2",
+      "name": "Skai > Home > Notification pop-up 1VH (768 x 1024px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80m.L129.tsv:8",
+        "status.wave80o.L131.tsv:8"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "16059-165635",
+      "page": "✅ Home 2",
+      "name": "Skai > Home > Notification pop-up > show all notifications 1VH (768 x 1024px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80m.L129.tsv:11",
+        "status.wave80o.L131.tsv:11"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "16135-26440",
+      "page": "✅ Home 2",
+      "name": "Skai > Home > Notification pop-up > show all notifications 1VH (768 x 1024px)",
+      "statuses": [
+        "frame-defect",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80m.L129.tsv:13",
+        "status.wave80o.L140.tsv:12"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "16058-164251",
+      "page": "✅ Home 2",
+      "name": "Skai > Home > Notification pop-up 1VH (375 x 812px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80m.L129.tsv:9",
+        "status.wave80o.L131.tsv:9"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "16059-167047",
+      "page": "✅ Home 2",
+      "name": "Skai > Home > Notification pop-up > show all notifications 1VH (375 x 812px)",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80m.L129.tsv:12",
+        "status.wave80o.L131.tsv:12"
+      ],
+      "kind": "same-generation"
+    },
+    {
       "id": "13006-168043",
       "page": "✅ Trade 2",
       "name": "Skai > Trench > Discover 1VH (1440 x 900px)",
@@ -15879,6 +15962,62 @@
       "rows": [
         "status.wave79.W2.tsv:19",
         "status.wave79.W2b.tsv:15"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "12790-3923",
+      "page": "🌎 Cover Images - Skai Originals",
+      "name": "Cards ALT - Chicken",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80o.L145.tsv:7",
+        "status.wave80p.L146.tsv:7"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "12790-3929",
+      "page": "🌎 Cover Images - Skai Originals",
+      "name": "Cards ALT - Chicken",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80o.L145.tsv:8",
+        "status.wave80p.L146.tsv:8"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "12790-3946",
+      "page": "🌎 Cover Images - Skai Originals",
+      "name": "Cards ALT - Chicken",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80o.L145.tsv:9",
+        "status.wave80p.L146.tsv:9"
+      ],
+      "kind": "same-generation"
+    },
+    {
+      "id": "12790-3952",
+      "page": "🌎 Cover Images - Skai Originals",
+      "name": "Cards ALT - Chicken",
+      "statuses": [
+        "done",
+        "partial"
+      ],
+      "rows": [
+        "status.wave80o.L145.tsv:10",
+        "status.wave80p.L146.tsv:10"
       ],
       "kind": "same-generation"
     }
@@ -17664,9 +17803,9 @@
       "id": "3288-23300",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "8623-56597",
@@ -17712,9 +17851,9 @@
       "id": "3325-19591",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "3322-5991",
@@ -18256,17 +18395,17 @@
       "id": "10516-20372",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10516-20920",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10315-19636",
@@ -18640,9 +18779,9 @@
       "id": "10509-19476",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10518-24565",
@@ -18664,9 +18803,9 @@
       "id": "10518-23341",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10539-46305",
@@ -18704,33 +18843,33 @@
       "id": "10654-194997",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10654-196060",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10710-141600",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10710-133855",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10654-196035",
@@ -18752,41 +18891,41 @@
       "id": "10651-188965",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10654-190511",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10654-192089",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10647-187992",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10594-49361",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10594-50221",
@@ -18808,9 +18947,9 @@
       "id": "10594-48510",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10594-57852",
@@ -19016,9 +19155,9 @@
       "id": "10509-20117",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10594-48478",
@@ -19056,9 +19195,9 @@
       "id": "10594-53620",
       "page": "✅ Predict",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10594-57642",
@@ -21029,14 +21168,6 @@
       "verdict": "match"
     },
     {
-      "id": "13752-218186",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
       "id": "13752-218206",
       "page": "✅ Play",
       "scope": "in-scope",
@@ -21062,14 +21193,6 @@
     },
     {
       "id": "13752-218246",
-      "page": "✅ Play",
-      "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
-    },
-    {
-      "id": "13752-218236",
       "page": "✅ Play",
       "scope": "in-scope",
       "status": "done",
@@ -22144,25 +22267,25 @@
       "id": "9640-213620",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11530-303185",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "11530-303236",
       "page": "✅ Social",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "deferred"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "9640-214077",
@@ -24472,8 +24595,8 @@
       "id": "5711-147902",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -26832,8 +26955,8 @@
       "id": "12001-371015",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -32024,6 +32147,14 @@
       "id": "16057-162715",
       "page": "✅ Home 2",
       "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "16083-168102",
+      "page": "✅ Home 2",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": "partial"
@@ -32032,12 +32163,28 @@
       "id": "16058-164798",
       "page": "✅ Home 2",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "16058-164188",
+      "page": "✅ Home 2",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "16059-165635",
+      "page": "✅ Home 2",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "16135-26440",
       "page": "✅ Home 2",
       "scope": "in-scope",
       "status": "partial",
@@ -32045,7 +32192,7 @@
       "verdict": "partial"
     },
     {
-      "id": "16059-165635",
+      "id": "16137-102748",
       "page": "✅ Home 2",
       "scope": "in-scope",
       "status": "partial",
@@ -32056,12 +32203,36 @@
       "id": "16058-164251",
       "page": "✅ Home 2",
       "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "16137-102267",
+      "page": "✅ Home 2",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
+    },
+    {
+      "id": "16137-102919",
+      "page": "✅ Home 2",
+      "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
       "verdict": "partial"
     },
     {
       "id": "16059-167047",
+      "page": "✅ Home 2",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "16106-168730",
       "page": "✅ Home 2",
       "scope": "in-scope",
       "status": "partial",
@@ -39821,6 +39992,22 @@
       "verdict": "match"
     },
     {
+      "id": "12790-3923",
+      "page": "🌎 Cover Images - Skai Originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "12790-3929",
+      "page": "🌎 Cover Images - Skai Originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
       "id": "10428-2601",
       "page": "🌎 Cover Images - Skai Originals",
       "scope": "in-scope",
@@ -39883,6 +40070,22 @@
       "status": "done",
       "claimed": "done",
       "verdict": null
+    },
+    {
+      "id": "12790-3946",
+      "page": "🌎 Cover Images - Skai Originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
+    },
+    {
+      "id": "12790-3952",
+      "page": "🌎 Cover Images - Skai Originals",
+      "scope": "in-scope",
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "10296-3783",
