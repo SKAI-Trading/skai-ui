@@ -220,7 +220,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                 card's right edge; from 768 they sit in a row 10 apart. */}
             <div data-testid="badge-card-reward" className="flex flex-col md:flex-row md:flex-wrap items-end md:items-center gap-1 md:gap-2.5 flex-shrink-0">
               <span className="font-numbers text-alien-green-bright text-number-3-mobile md:text-number-3-tablet lg:text-number-3 whitespace-nowrap">
-                +{badgePoints} SKAI Points
+                +{badgePoints} SKAI points
               </span>
               <span className="font-numbers text-label-2-mobile md:text-label-2-tablet lg:text-label-2 px-2 lg:px-3 py-0.5 rounded-lg bg-alien-green-bright text-green-coal-300 whitespace-nowrap">
                 {statusLabel}

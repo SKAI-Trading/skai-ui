@@ -2,10 +2,51 @@
 import { useState, useRef } from "react";
 import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
+import { backHeights, frontHeights } from "../backgrounds/bar-ticker-background";
 
 const d = content.landing.waitlist.dashboard;
 
 export type DashboardTab = "trade" | "play" | "predict";
+
+export type LaunchStage = "pre-launch" | "live";
+
+/**
+ * One of the page's two Sky Blue bar unions as a still shape, on the 2446-wide union the 1440
+ * boards draw: 160 bars a half, 3.06 wide, the halves 1225.38 apart and the right one the left
+ * one mirrored, the tallest bar the union's full height. The SVG stretches it to its box.
+ */
+const UNION = { width: 2446, half: 1220.62, rightAt: 1225.38, bar: 3.06 };
+
+function unionPath(heights: number[], height: number): string {
+  const slot = (UNION.half - UNION.bar) / (heights.length - 1);
+  const tallest = Math.max(...heights);
+  const r = (n: number) => Math.round(n * 100) / 100;
+  let path = "";
+  heights.forEach((h, i) => {
+    const up = r((h / tallest) * height);
+    for (const x of [i * slot, UNION.rightAt + UNION.half - UNION.bar - i * slot]) {
+      path += `M${r(x)} ${height}h${UNION.bar}v-${up}h-${UNION.bar}z`;
+    }
+  });
+  return path;
+}
+
+// The back union is 446.2 tall on the page, the front one 161.9.
+const BACK_UNION = { height: 446.2, path: unionPath(backHeights, 446.2) };
+const FRONT_UNION = { height: 161.9, path: unionPath(frontHeights, 161.9) };
+
+function BarUnion({ union, className }: { union: { height: number; path: string }; className: string }) {
+  return (
+    <svg
+      viewBox={`0 0 ${UNION.width} ${union.height}`}
+      preserveAspectRatio="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d={union.path} fill="currentColor" />
+    </svg>
+  );
+}
 
 /** Tier-specific gradient and text colors. The canonical tier ladder lives
  *  in main-repo `src/services/chain/chainTierService.ts` (POINTS_THRESHOLDS)
@@ -80,6 +121,14 @@ export interface WelcomeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   isUploadingAvatar?: boolean;
   /** Callback when user selects a file to upload as avatar. Costs 50 pts. */
   onAvatarUpload?: (file: File) => void;
+  /**
+   * Which dashboard board the card's Button/large follows. The pre-launch boards draw "Launch
+   * app", disabled under its "Coming soon" tag; the Live boards "Skai agent", which takes the
+   * viewer to the agent chat and carries no tag. Left out, the card has no button.
+   */
+  launchStage?: LaunchStage;
+  /** What "Skai agent" does. Without it the Live button is not drawn. */
+  onSkaiAgent?: () => void;
 }
 
 const TAB_LABELS: Record<DashboardTab, string> = {
@@ -203,11 +252,15 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
       avatarUrl,
       isUploadingAvatar = false,
       onAvatarUpload,
+      launchStage,
+      onSkaiAgent,
       className,
       ...props
     },
     ref,
   ) => {
+    const live = launchStage === "live" && onSkaiAgent != null;
+    const preLaunch = launchStage === "pre-launch";
     const tierKey = currentTierName?.toLowerCase() ?? "standard";
     const tierColor = TIER_COLORS[tierKey] ?? DEFAULT_TIER_COLOR;
     const progressPct = tierProgress != null ? Math.min(Math.max(tierProgress * 100, 0), 100) : 0;
@@ -242,6 +295,30 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
         )}
         {...props}
       >
+        {/* Group 2, behind the content at 44%: Ellipse 25 in Alien Green 300 at 19% (layer blur
+            97.4 at 375 and 131 from 768, so CSS blur 48.7 and 65.5), and the page's two bar
+            unions at 0.358 and 0.481 scale, the back at 8% and the front at 34%. Each layer
+            stands where 2424:8385 (375, a 343x132 card), 2424:4443 (768, 348x178) and 2422:3301
+            (1440, 564x212) draw it, held to the card's foot and left edge, so the bars still rise
+            under the button when the card runs taller than the board's. */}
+        <div
+          data-testid="welcome-card-backdrop"
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[.44]"
+        >
+          <div
+            data-testid="welcome-card-backdrop-glow"
+            className="absolute rounded-full bg-alien-green-bright opacity-[.19] w-[644.1px] h-[644.1px] blur-[48.7px] left-[-232.7px] bottom-[-567.7px] md:w-[865.9px] md:h-[865.9px] md:blur-[65.5px] md:left-[-258.9px] md:bottom-[-759.9px] lg:left-[-210.9px] lg:bottom-[-776.9px]"
+          />
+          <BarUnion
+            union={BACK_UNION}
+            className="absolute text-sky-blue opacity-[.08] w-[875.8px] h-[159.8px] left-[-86.8px] bottom-[-64.8px] md:w-[1177.3px] md:h-[214.8px] md:left-[-64.8px] md:bottom-[-83.8px] lg:left-[-124.8px] lg:bottom-[-100.8px]"
+          />
+          <BarUnion
+            union={FRONT_UNION}
+            className="absolute text-sky-blue opacity-[.34] w-[875.8px] h-[58px] left-[-447px] bottom-[-14px] md:w-[1177.3px] md:h-[77.9px] md:left-[-549px] md:bottom-[-15.4px] lg:left-[-609px] lg:bottom-[-32.4px]"
+          />
+        </div>
         <div className="relative z-10 flex flex-col justify-center">
         <div data-testid="welcome-card-content" className="px-2 pt-2 md:p-0">
         {/* Avatar + Welcome */}
@@ -420,6 +497,37 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
             </button>
           ))}
         </div>
+
+        {/* Button/large, the card's last row on every board, 24 / 24 / 16 under what sits above
+            it: 327x46 r12 p14 at 375, 300x54 r12 p18 at 768, 500x62 r16 p20/40 at 1440, its
+            label Paragraph 1 (Bold 14/16, 14/18, 16/22) in a row 18 / 18 / 22 tall. Pre-launch
+            it is drawn disabled, Green Coal 100 on Green Coal 300, with the Coming soon tag:
+            Label 2 in Sky Blue on Green Coal 200, r8, 2 / 8 (2 / 12 at 1440), 8 after the
+            label. Live it is the enabled Button/large, Green Coal 300 on Sky Blue, as the
+            referral card's Discord button, without the tag (Casey 2026-11-13, round 58 #1). */}
+        {(preLaunch || live) && (
+          <button
+            type="button"
+            data-testid="welcome-card-action"
+            disabled={preLaunch}
+            onClick={live ? onSkaiAgent : undefined}
+            className={cn(
+              "mt-4 md:mt-6 flex w-full items-center justify-center rounded-xl lg:rounded-2xl p-[14px] md:p-[18px] lg:px-10 lg:py-5 font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-1-tablet lg:text-para-1 transition-colors",
+              live
+                ? "bg-sky-blue text-green-coal-300 hover:bg-sky-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-blue"
+                : "bg-green-coal-300 text-green-coal-100 cursor-not-allowed",
+            )}
+          >
+            <span data-testid="welcome-card-action-row" className="flex h-[18px] lg:h-[22px] items-center gap-2">
+              {live ? d.skaiAgent : d.launchApp}
+              {preLaunch && (
+                <span className="rounded-lg bg-green-coal-200 px-2 lg:px-3 py-0.5 font-numbers font-normal text-label-2-mobile md:text-label-2-tablet lg:text-label-2 text-sky-blue whitespace-nowrap">
+                  {d.comingSoon}
+                </span>
+              )}
+            </span>
+          </button>
+        )}
         </div>
       </div>
     );

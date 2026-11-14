@@ -329,6 +329,7 @@ export const content = {
         welcomeFallback: "Welcome, ...!",
         checkEmail: "Check email for launch updates.",
         launchApp: "Launch app",
+        skaiAgent: "Skai agent",
         comingSoon: "Coming soon",
         daysToLaunch: "Days to launch",
 

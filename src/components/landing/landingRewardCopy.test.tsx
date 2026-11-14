@@ -29,7 +29,7 @@ describe("landing reward copy", () => {
     );
     // The points sit in their own span (the boards set them in Alien Green), so
     // the line is found by its whole text, not by one text node.
-    const line = screen.getByText((_, el) => el?.tagName === "P" && /^Earn 100 SKAI Points/.test(el.textContent ?? ""));
+    const line = screen.getByText((_, el) => el?.tagName === "P" && /^Earn 100 SKAI points/.test(el.textContent ?? ""));
     expect(line.textContent).toMatch(RULE);
     expect(screen.queryByText(/that joins/)).toBeNull();
   });

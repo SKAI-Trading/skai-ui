@@ -91,7 +91,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
                 sign-up earns nothing, and the referral pays on the friend's first
                 deposit or trade (qualify_referral). */}
             Earn{" "}
-            <span className="text-alien-green-bright lg:font-numbers">{referralPoints} SKAI Points</span>{" "}
+            <span className="text-alien-green-bright lg:font-numbers">{referralPoints} SKAI points</span>{" "}
             for each friend who makes their first deposit or trade.
             {typeof referralCount === "number" && referralCount > 0 && (
               <span className="text-[#2DEDAD]"> You've referred {referralCount} friend{referralCount !== 1 ? "s" : ""}!</span>
@@ -141,7 +141,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           {/* Points incentive */}
           {!hasClaimedToday && shareTweetPoints > 0 && !twitterHandle && (
             <p className="font-manrope text-white text-para-2-tablet lg:text-para-2 px-2 md:px-0">
-              Claim <span className="text-alien-green-bright">{shareTweetPoints} SKAI Points</span>
+              Claim <span className="text-alien-green-bright">+{shareTweetPoints} SKAI points</span>
             </p>
           )}
 
@@ -164,7 +164,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           {/* Discord points incentive */}
           {discordConnectPoints > 0 && !discordHandle && (
             <p className="font-manrope text-white text-para-2-tablet lg:text-para-2 px-2 md:px-0">
-              Claim <span className="text-alien-green-bright">{discordConnectPoints} SKAI Points</span>
+              Claim <span className="text-alien-green-bright">+{discordConnectPoints} SKAI points</span>
             </p>
           )}
 

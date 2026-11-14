@@ -8,13 +8,13 @@
  * Tailwind preset at the board width (src/test/tailwindAt.ts) and compares the numbers the board
  * draws: padding, gap, corner, type size, leading and weight.
  */
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { BadgeCard } from "./badge-card";
 import { ReferralCard } from "./referral-card";
 import { WelcomeCard } from "./welcome-card";
 import { LandingFooter } from "./landing-footer";
-import { paintedAt, themeColors } from "../../test/tailwindAt";
+import { paintedAt, placedAt, themeColors } from "../../test/tailwindAt";
 
 const classesOf = (el: Element) => (el.getAttribute("class") ?? "").split(/\s+/);
 const WIDTHS = [375, 768, 1440] as const;
@@ -166,9 +166,18 @@ describe("ReferralCard", () => {
 
   it("sets the points in the subtitle in Alien Green 300, with the copy rule unchanged", () => {
     card();
-    const points = screen.getByText("100 SKAI Points");
+    const points = screen.getByText("100 SKAI points");
     expect(classesOf(points)).toEqual(expect.arrayContaining(["text-alien-green-bright", "lg:font-numbers"]));
-    expect(points.parentElement!.textContent).toBe("Earn 100 SKAI Points for each friend who makes their first deposit or trade.");
+    expect(points.parentElement!.textContent).toBe("Earn 100 SKAI points for each friend who makes their first deposit or trade.");
+  });
+
+  // Every dashboard board writes "SKAI points" and "Claim +50 SKAI points" (2422:3982, 2422:3996,
+  // 2424:5138, 2424:9073).
+  it("writes the share claim as the boards do, the amount signed", () => {
+    card();
+    const amount = screen.getByText("+50 SKAI points");
+    expect(classesOf(amount)).toContain("text-alien-green-bright");
+    expect(amount.parentElement!.textContent).toBe("Claim +50 SKAI points");
   });
 });
 
@@ -196,6 +205,137 @@ describe("WelcomeCard", () => {
     render(<WelcomeCard username="artofofiare" />);
     const content = screen.getByTestId("welcome-card-content");
     expect(content.contains(screen.getByRole("button", { name: "AI" }))).toBe(false);
+  });
+});
+
+// The card's Button/large and its Group 2 backdrop, read live 2026-11-13 off 2005:7840 (1440
+// pre-launch), 2422:3301 (1440 Live), 2424:4443 (768 Live), 2424:8385 (375 Live) and 2005:25782
+// (375 pre-launch). Casey 2026-11-13 (round 58 #1): "Launch app" shows disabled with its Coming
+// soon tag; "Skai agent" takes the viewer to the agent chat, with no tag.
+describe("WelcomeCard's Button/large", () => {
+  const BOARD = {
+    375: { pad: [14, 14, 14, 14], radius: 12, label: [14, 16, 700], row: 18, above: 16, tag: [10, 14, 400], tagPad: [2, 8, 2, 8], gap: 8 },
+    768: { pad: [18, 18, 18, 18], radius: 12, label: [14, 18, 400], row: 18, above: 24, tag: [10, 14, 400], tagPad: [2, 8, 2, 8], gap: 8 },
+    1440: { pad: [20, 40, 20, 40], radius: 16, label: [16, 22, 400], row: 22, above: 24, tag: [11, 14, 400], tagPad: [2, 12, 2, 12], gap: 8 },
+  } as const;
+  const HEIGHT = { 375: 46, 768: 54, 1440: 62 } as const;
+
+  it.each(WIDTHS)("at %i draws the pre-launch button the board draws: its box, label, tag and gap", (w) => {
+    const b = BOARD[w];
+    render(<WelcomeCard username="artofofiare" launchStage="pre-launch" />);
+    const button = screen.getByTestId("welcome-card-action");
+    const row = screen.getByTestId("welcome-card-action-row");
+    expect(pad(button, w)).toEqual(b.pad);
+    expect(paintedAt(button, w).radius).toBe(b.radius);
+    expect(type(button, w)).toEqual(b.label);
+    expect(placedAt(row, w).h).toBe(b.row);
+    expect(b.pad[0] + placedAt(row, w).h! + b.pad[2]).toBe(HEIGHT[w]);
+    expect(placedAt(button, w).mt).toBe(b.above);
+    expect(paintedAt(row, w).gap).toBe(b.gap);
+    const tag = screen.getByText("Coming soon");
+    expect(type(tag, w)).toEqual(b.tag);
+    expect(pad(tag, w)).toEqual(b.tagPad);
+    expect(paintedAt(tag, w).radius).toBe(8);
+  });
+
+  it("pre-launch reads Launch app, disabled, Green Coal 100 on Green Coal 300, the tag Sky Blue on Green Coal 200", () => {
+    render(<WelcomeCard username="artofofiare" launchStage="pre-launch" onSkaiAgent={() => {}} />);
+    const button = screen.getByRole("button", { name: /Launch app/ });
+    expect(button).toBeDisabled();
+    expect(button).toHaveTextContent("Launch appComing soon");
+    expect(classesOf(button)).toEqual(expect.arrayContaining(["bg-green-coal-300", "text-green-coal-100", "w-full"]));
+    expect(classesOf(screen.getByText("Coming soon"))).toEqual(expect.arrayContaining(["bg-green-coal-200", "text-sky-blue", "font-numbers", "font-normal"]));
+    expect(screen.queryByText("Skai agent")).toBeNull();
+  });
+
+  it("Live reads Skai agent with no tag, enabled on Sky Blue, and hands the press to onSkaiAgent", () => {
+    const onSkaiAgent = vi.fn();
+    render(<WelcomeCard username="artofofiare" launchStage="live" onSkaiAgent={onSkaiAgent} />);
+    const button = screen.getByRole("button", { name: "Skai agent" });
+    expect(button).toBeEnabled();
+    expect(screen.queryByText("Coming soon")).toBeNull();
+    expect(screen.queryByText("Launch app")).toBeNull();
+    expect(classesOf(button)).toEqual(expect.arrayContaining(["bg-sky-blue", "text-green-coal-300"]));
+    fireEvent.click(button);
+    expect(onSkaiAgent).toHaveBeenCalledTimes(1);
+  });
+
+  it("draws no button without a stage, or Live without somewhere to go", () => {
+    const { unmount } = render(<WelcomeCard username="a" />);
+    expect(screen.queryByTestId("welcome-card-action")).toBeNull();
+    unmount();
+    render(<WelcomeCard username="a" launchStage="live" />);
+    expect(screen.queryByTestId("welcome-card-action")).toBeNull();
+  });
+
+  it("sits after the tabs, the card's last row", () => {
+    render(<WelcomeCard username="a" launchStage="pre-launch" />);
+    const button = screen.getByTestId("welcome-card-action");
+    expect(button.previousElementSibling!.contains(screen.getByRole("button", { name: "AI" }))).toBe(true);
+    expect(button.nextElementSibling).toBeNull();
+  });
+});
+
+describe("WelcomeCard's Group 2 backdrop", () => {
+  // Card-relative, held to the card's left edge and foot: left, bottom = card height - top - height.
+  const BOARD = {
+    375: { glow: { left: -232.7, bottom: -567.7, d: 644.1, blur: 48.7 }, back: { left: -86.8, bottom: -64.8, w: 875.8, h: 159.8 }, front: { left: -447, bottom: -14, w: 875.8, h: 58 } },
+    768: { glow: { left: -258.9, bottom: -759.9, d: 865.9, blur: 65.5 }, back: { left: -64.8, bottom: -83.8, w: 1177.3, h: 214.8 }, front: { left: -549, bottom: -15.4, w: 1177.3, h: 77.9 } },
+    1440: { glow: { left: -210.9, bottom: -776.9, d: 865.9, blur: 65.5 }, back: { left: -124.8, bottom: -100.8, w: 1177.3, h: 214.8 }, front: { left: -609, bottom: -32.4, w: 1177.3, h: 77.9 } },
+  } as const;
+  // The boards' card heights and each layer's top, to check the foot-relative numbers above.
+  const TOPS = {
+    375: { card: 132, glow: 55.6, back: 37, front: 88 },
+    768: { card: 178, glow: 72, back: 47, front: 115.5 },
+    1440: { card: 212, glow: 123, back: 98, front: 166.5 },
+  } as const;
+
+  const layers = () => {
+    render(<WelcomeCard username="artofofiare" />);
+    const group = screen.getByTestId("welcome-card-backdrop");
+    const [glow, back, front] = Array.from(group.children);
+    return { group, glow, back, front };
+  };
+
+  it("is one group at 44% behind the content, out of the reader's way", () => {
+    const { group, glow, back, front } = layers();
+    expect(classesOf(group)).toEqual(expect.arrayContaining(["absolute", "inset-0", "pointer-events-none"]));
+    expect(placedAt(group, 1440).opacity).toBe(0.44);
+    expect(group).toHaveAttribute("aria-hidden", "true");
+    expect(group.compareDocumentPosition(screen.getByTestId("welcome-card-content")) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(classesOf(glow)).toEqual(expect.arrayContaining(["bg-alien-green-bright", "rounded-full"]));
+    for (const bars of [back, front]) expect(classesOf(bars as Element)).toContain("text-sky-blue");
+  });
+
+  it.each(WIDTHS)("at %i stands Ellipse 25 and the two unions where the board does", (w) => {
+    const b = BOARD[w];
+    const t = TOPS[w];
+    const { glow, back, front } = layers();
+    expect(placedAt(glow, w)).toEqual({ left: b.glow.left, bottom: b.glow.bottom, w: b.glow.d, h: b.glow.d, opacity: 0.19, blur: b.glow.blur });
+    expect(placedAt(back, w)).toEqual({ left: b.back.left, bottom: b.back.bottom, w: b.back.w, h: b.back.h, opacity: 0.08 });
+    expect(placedAt(front, w)).toEqual({ left: b.front.left, bottom: b.front.bottom, w: b.front.w, h: b.front.h, opacity: 0.34 });
+    expect(b.glow.bottom).toBeCloseTo(t.card - t.glow - b.glow.d, 5);
+    expect(b.back.bottom).toBeCloseTo(t.card - t.back - b.back.h, 5);
+    expect(b.front.bottom).toBeCloseTo(t.card - t.front - b.front.h, 5);
+  });
+
+  it("draws each union as the page's: 320 bars, the halves mirrored, the tallest the union's full height", () => {
+    const { back, front } = layers();
+    for (const [svg, height] of [[back, 446.2], [front, 161.9]] as const) {
+      expect(svg.getAttribute("viewBox")).toBe(`0 0 2446 ${height}`);
+      expect(svg.getAttribute("preserveAspectRatio")).toBe("none");
+      const bars = Array.from(svg.querySelector("path")!.getAttribute("d")!.matchAll(/M([\d.]+) [\d.]+h3\.06v-([\d.]+)h-3\.06z/g)).map((m) => [Number(m[1]), Number(m[2])]);
+      expect(bars).toHaveLength(320);
+      expect(Math.max(...bars.map(([, h]) => h))).toBeCloseTo(height, 2);
+      const left = bars.filter((_, i) => i % 2 === 0);
+      const right = bars.filter((_, i) => i % 2 === 1);
+      expect(left[0][0]).toBe(0);
+      expect(right[0][0]).toBeCloseTo(2446 - 3.06, 2);
+      for (let i = 0; i < 160; i++) {
+        expect(right[i][1]).toBe(left[i][1]);
+        expect(left[i][0] + right[i][0]).toBeCloseTo(2446 - 3.06, 1);
+      }
+    }
   });
 });
 
