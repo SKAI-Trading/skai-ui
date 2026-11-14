@@ -795,3 +795,15 @@ refNode	linkFileKey	resolvedFileKey	status	section	type	name	depth	page	owningSc
 13008-38198	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 363	5	✅ Wallet 2	13008-38161	Skai > Wallet > continue on web > home > receive - set amount 1VH (1440 x 900px)	1
 13008-38419	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	card	5	✅ Wallet 2	13008-38381	Skai > Wallet > continue on web > home > receive - set amount - step 2 1VH (1440 x 900px)	1
 14108-103605	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	home	INSTANCE	icons/action	3	✅ Home 1	14108-103468	Skai > Home - with deposit ALT 1VH (1440 x 900px)	1
+#
+# ===== 2026-11-14 (wave 118, lane w118-wallet-account, HQ-95) =====
+# Three wallet reports cite nested nodes no layer held. Resolved with one read-only use_figma call
+# (getNodeByIdAsync and the parent walk to the PAGE): all three alive on ✅ Wallet 2 (13008:26951, in-scope),
+# under frames the catalog already holds; none needed a sibling-file check.
+#   c495efe8 -> 13008-28503, the streaks board's reward footer ("Next reward:", "3 days", "( 55 SKAI )").
+#   e41a2e29 -> 15382-181579, a wrapper inside sidecar 13008:28390, which Casey ruled stale on 2026-09-16
+#              (0b973783): its Quick settings / Sound effects / Vibration block is not to be built.
+#   ccd01c9b -> 13008-27757, dropdown-3; Report a bug and Join our Discord are ruled in (b9f6a09e).
+13008-28503	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	left	7	✅ Wallet 2	13008-28453	Skai > Wallet > continue on web > home > streaks 1VH (1440 x 900px)	1
+15382-181579	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	Frame 1000003836	3	✅ Wallet 2	13008-28216	Skai > Wallet > continue on web > home > notifications - settings 1VH (1440 x 900px)	1
+13008-27757	mhF3BkzlTaGiLzJ7kvpmVc	mhF3BkzlTaGiLzJ7kvpmVc	child	wallet-2	FRAME	dropdown-3	1	✅ Wallet 2	13008-27689	Skai > Wallet > continue on web > home > account 1VH (1440 x 900px)	1
