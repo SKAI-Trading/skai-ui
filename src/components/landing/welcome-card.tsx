@@ -1,7 +1,7 @@
 ﻿import * as React from "react";
 import { useState, useRef } from "react";
 import { cn } from "../../lib/utils";
-import { content } from "../../lib/content";
+import { content, interpolate } from "../../lib/content";
 import { backHeights, frontHeights } from "../backgrounds/bar-ticker-background";
 
 const d = content.landing.waitlist.dashboard;
@@ -91,6 +91,13 @@ const ALL_TIERS = [
   { key: "diamond",  name: "Diamond",  min: 100_000, rewards: ["35% fee discount", "1.8× points", "Real-time price updates"] },
   { key: "legend",   name: "Legend",   min: 500_000, rewards: ["50% fee discount", "2.0× points", "VIP support + max airdrops"] },
 ] as const;
+
+/** "artofofiare@yahoo.com" reads "artof....@yahoo.com", as the 1440 Live boards write it. */
+function maskEmail(email: string): string | null {
+  const at = email.lastIndexOf("@");
+  if (at <= 0 || at === email.length - 1) return null;
+  return `${email.slice(0, Math.min(5, at))}....${email.slice(at)}`;
+}
 
 function formatPts(n: number): string {
   if (n === 0) return "0";
@@ -261,6 +268,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
   ) => {
     const live = launchStage === "live" && onSkaiAgent != null;
     const preLaunch = launchStage === "pre-launch";
+    const maskedEmail = launchStage === "live" && email ? maskEmail(email) : null;
     const tierKey = currentTierName?.toLowerCase() ?? "standard";
     const tierColor = TIER_COLORS[tierKey] ?? DEFAULT_TIER_COLOR;
     const progressPct = tierProgress != null ? Math.min(Math.max(tierProgress * 100, 0), 100) : 0;
@@ -389,7 +397,17 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
           </div>
         </div>
         <p className="font-manrope text-[#E0E0E0] text-para-2-mobile md:text-para-2-tablet lg:text-para-2 mb-[6px]">
-          {subtitle}
+          {/* The 1440 Live boards (2422:3953) put the viewer's address in the line, masked;
+              the 768 and 375 Live boards (2424:5095, 2424:9037) and every pre-launch board
+              leave it out. */}
+          {maskedEmail && subtitle === d.checkEmail ? (
+            <>
+              <span className="lg:hidden">{subtitle}</span>
+              <span className="hidden lg:inline">{interpolate(d.checkEmailAt, { email: maskedEmail })}</span>
+            </>
+          ) : (
+            subtitle
+          )}
         </p>
 
         {/* Connected accounts & stats row */}

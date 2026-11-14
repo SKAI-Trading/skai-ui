@@ -328,6 +328,7 @@ export const content = {
         welcome: "Welcome, {{username}}!",
         welcomeFallback: "Welcome, ...!",
         checkEmail: "Check email for launch updates.",
+        checkEmailAt: "Check email ({{email}}) for launch updates.",
         launchApp: "Launch app",
         skaiAgent: "Skai agent",
         comingSoon: "Coming soon",

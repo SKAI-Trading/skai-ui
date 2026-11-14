@@ -276,6 +276,44 @@ describe("WelcomeCard's Button/large", () => {
   });
 });
 
+describe("WelcomeCard's line under the title", () => {
+  // 2422:3953 (1440 Live): "Check email (artof....@yahoo.com) for launch updates."; 2424:5095 (768
+  // Live), 2424:9037 (375 Live) and the pre-launch boards: "Check email for launch updates."
+  it("carries the masked address from 1024 up on the Live board, and the plain line below it", () => {
+    render(<WelcomeCard username="artofofiare" email="artofofiare@yahoo.com" launchStage="live" onSkaiAgent={() => {}} />);
+    const wide = screen.getByText("Check email (artof....@yahoo.com) for launch updates.");
+    const narrow = screen.getByText("Check email for launch updates.");
+    expect(classesOf(wide)).toEqual(expect.arrayContaining(["hidden", "lg:inline"]));
+    expect(classesOf(narrow)).toContain("lg:hidden");
+    expect(wide.parentElement).toBe(narrow.parentElement);
+  });
+
+  it("keeps the plain line on the pre-launch board, without an address, and with no stage", () => {
+    const { unmount } = render(<WelcomeCard username="a" email="artofofiare@yahoo.com" launchStage="pre-launch" />);
+    expect(screen.queryByText(/artof\.\.\.\./)).toBeNull();
+    expect(screen.getByText("Check email for launch updates.").tagName).toBe("P");
+    unmount();
+    const second = render(<WelcomeCard username="a" email="artofofiare@yahoo.com" />);
+    expect(screen.queryByText(/artof\.\.\.\./)).toBeNull();
+    second.unmount();
+    render(<WelcomeCard username="a" launchStage="live" onSkaiAgent={() => {}} />);
+    expect(screen.getByText("Check email for launch updates.").tagName).toBe("P");
+  });
+
+  it("masks after the fifth character of the name, and leaves a short or broken address alone", () => {
+    const line = (email: string) => {
+      const { container, unmount } = render(<WelcomeCard username="a" email={email} launchStage="live" onSkaiAgent={() => {}} />);
+      const text = container.querySelector("p")!.textContent;
+      unmount();
+      return text;
+    };
+    expect(line("vernando44@gmail.com")).toContain("(verna....@gmail.com)");
+    expect(line("bob@x.co")).toContain("(bob....@x.co)");
+    expect(line("not-an-address")).toBe("Check email for launch updates.");
+    expect(line("@x.co")).toBe("Check email for launch updates.");
+  });
+});
+
 describe("WelcomeCard's Group 2 backdrop", () => {
   // Card-relative, held to the card's left edge and foot: left, bottom = card height - top - height.
   const BOARD = {
