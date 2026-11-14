@@ -91,6 +91,8 @@ frames with plain design-state names like `Desktop Full Game - Roll Over`).
 | `TOKENS.md` | **layer E (started)** — Figma's radius scale vs the class we ship, with the conversion table | bound-variable read off 473 nodes | yes |
 | `bp.mjs` | **the breakpoint dimension** — width constants, the verdict vocabulary, the column-6 parser, and the derived design-coverage helper. Imported by `apply-status.mjs` and `bp-report.mjs`; not runnable on its own | — | no |
 | `bp-report.mjs` | breakpoint coverage report **and** the column-6 validator. Exits 1 on a malformed cell. `--gaps` lists every actionable row, `--hygiene` lists orphan and duplicate rows | reads `status.*.tsv` + `registry.json` | no |
+| `gaps.tsv` | **the public gap line** per open frame, shown under its page on skai.trade/status — see "gaps.tsv" below | hand/agent-authored; `gaps.mjs fold` writes it | no |
+| `gaps.mjs` | checks `gaps.tsv` against the open frames `coverage.json` counts (a pipeline step), folds a writing pass's lines in, and exports the open-frame list `scripts/figma/emit-parity-json.mjs` publishes | reads `coverage.json` + `registry.json` + `gaps.tsv` | no |
 
 ## registry.json — per-frame record
 
@@ -467,6 +469,57 @@ COVERAGE: 116/595 rows (19%) carry a verdict at ≥1 width.
 
 Compare, do not memorise — the denominator grows as sections are added. **The
 number that must never fall is the count of rows carrying a verdict.**
+
+## gaps.tsv — the public gap line per open frame (added 2026-11-13)
+
+skai.trade/status lists, under each page, the frames still open on it, each with
+one or two plain sentences on what differs from its board, so a tester can tell a
+known gap from a new bug (Casey, 2026-11-13: public, plain UI gaps only; every
+page, games first; a short line written from the notes and kept in the catalog).
+
+| Column | Content |
+|--------|---------|
+| `fileKey` | the frame's Figma file |
+| `node` | the frame's node id, dash form |
+| `kind` | `ui` (the build differs from the board), `backend` (blocked on backend work), `not-built` (nothing built yet), `unchecked` (a live frame no status row covers) |
+| `gap` | the public line: 1 to 240 characters. A `backend` line reads exactly `Waiting on backend work.` and nothing else may |
+| `notesSha` | the first 12 hex of sha1 over the frame's `registry.json` `notes` when the line was written |
+| `writtenAt` | `YYYY-MM-DD` |
+
+**A line is plain** (`lineProblems` in `gaps.mjs`): no path (`src/`, `modules/`, a
+`/` followed by a file extension, a code file name), no link, no hex run of 7 or more, no
+node id (`\d+[:-]\d+`), none of the catalog's process words as a whole word
+(`HQ-`, round, wave, lane, ruling, nonce, `use_figma`, commit, or an id like `w80`
+or `L93`), and no name from the team list. Whole words, so background, rounded
+and waveform pass. A line that fails is refused, never trimmed.
+
+**What fails `catalog:check`**: a malformed row, a line that is not plain, a second
+line for one frame, a line for a frame the catalog does not hold. **What is only
+counted**, as warnings the writing pass works down: open frames with no line,
+stale lines (`notesSha` differs from the frame's notes now, so the line was written
+from notes that have since moved), and lines for frames that are no longer open.
+
+**Open** means what `figma-parity.json` counts as `open`, genuine minus done:
+every in-scope `coverage.json` `frameStatuses` entry not `done`, plus every
+`liveOnly` frame. `openFramesByPage` refuses a page whose list does not come to
+that number, and the emitter imports it, so the catalog and the feed cannot
+disagree on which frames are open. A frame with no line still ships, as
+`gap: null` with the kind its status implies (`partial` → `ui`,
+`blocked-on-backend` → `backend`, `not-started` → `not-built`, anything else,
+and every live-only frame, → `unchecked`); the page shows only frames with a line.
+
+**Every fold rewrites the lines of the frames it touches.** A writing pass hands
+over JSON items `{fileKey, node, kind, gap, notesSha}`:
+
+```sh
+node figma-catalog/gaps.mjs fold <lines.json>...                     # dry run: new, replacing, refused (with why)
+node figma-catalog/gaps.mjs fold <lines.json>... --write --at 2026-11-13
+npm run catalog:check
+```
+
+A refused item is listed with its reasons and left out; an accepted one replaces
+the frame's existing line. Never name this table `status.*.tsv`: three scripts
+read every file with that prefix as frame status rows.
 
 ## Rebuild
 

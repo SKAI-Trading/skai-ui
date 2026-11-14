@@ -1,0 +1,7 @@
+# gaps.tsv: the public line each open frame shows under its page on skai.trade/status. HAND-MAINTAINED; gaps.mjs checks it.
+#
+# kind: ui (differs from its board), backend (blocked on backend work), not-built (nothing built yet), unchecked (a live frame no status row covers).
+# gap: one or two plain sentences, 1 to 240 characters, naming no path, id, hash or person. A backend line reads exactly "Waiting on backend work."
+# notesSha: the first 12 hex of sha1 over the frame's registry.json notes when the line was written. When the notes move, the line is due a rewrite.
+# A fold rewrites the lines of the frames it touches: node figma-catalog/gaps.mjs fold <lines.json> --write
+fileKey	node	kind	gap	notesSha	writtenAt
