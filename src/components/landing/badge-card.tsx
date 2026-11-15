@@ -2,6 +2,7 @@
 import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
 import { assets } from "../../lib/assets";
+import type { LaunchStage } from "./welcome-card";
 
 const d = content.landing.waitlist.dashboard;
 
@@ -20,6 +21,12 @@ export interface BadgeCardProps extends React.HTMLAttributes<HTMLDivElement> {
   topUsers?: LeaderboardUser[];
   /** Body copy for the "?" coachmark on the subtitle line. Pass "" to drop the icon. */
   helpBody?: string;
+  /**
+   * Which dashboard board the card follows. The pre-launch boards (2005:8507, 2005:26442) set
+   * "Early adopter status" under the badge name and draw no "?" after it; the Live boards set
+   * the badge's own line with the coachmark. Left out, the Live card.
+   */
+  launchStage?: LaunchStage;
 }
 
 /**
@@ -69,11 +76,15 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
       statusLabel = d.badge.status,
       topUsers,
       helpBody = d.badge.helpBody,
+      launchStage,
       className,
       ...props
     },
     ref,
   ) => {
+    const preLaunch = launchStage === "pre-launch";
+    const subtitle = preLaunch ? d.badge.subtitle : badgeSubtitle;
+    const help = preLaunch ? "" : helpBody;
     const [coachOpen, setCoachOpen] = React.useState(false);
     const coachRef = React.useRef<HTMLDivElement>(null);
 
@@ -143,9 +154,9 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                   that takes the `skai-gray-100` name there. */}
               <div className="flex flex-row items-center gap-1">
                 <p className="font-manrope text-[#E0E0E0] text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
-                  {badgeSubtitle}
+                  {subtitle}
                 </p>
-                {helpBody ? (
+                {help ? (
                   <div ref={coachRef} className="relative flex-shrink-0">
                     <button
                       type="button"
@@ -202,7 +213,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                             </button>
                           </div>
                           <p className="font-manrope mt-2 text-left text-[#E0E0E0] text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
-                            {helpBody}
+                            {help}
                           </p>
                         </div>
                       </div>
@@ -220,7 +231,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                 card's right edge; from 768 they sit in a row 10 apart. */}
             <div data-testid="badge-card-reward" className="flex flex-col md:flex-row md:flex-wrap items-end md:items-center gap-1 md:gap-2.5 flex-shrink-0">
               <span className="font-numbers text-alien-green-bright text-number-3-mobile md:text-number-3-tablet lg:text-number-3 whitespace-nowrap">
-                +{badgePoints} SKAI Points
+                +{badgePoints} SKAI points
               </span>
               <span className="font-numbers text-label-2-mobile md:text-label-2-tablet lg:text-label-2 px-2 lg:px-3 py-0.5 rounded-lg bg-alien-green-bright text-green-coal-300 whitespace-nowrap">
                 {statusLabel}
