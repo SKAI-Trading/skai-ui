@@ -171,7 +171,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	9103-162842	not-built	Not built yet: the pool balance menu with explorer, deposit, withdraw and wallet activity options.	88d4984351b5	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9103-162908	not-built	Not built yet: the scoreboard time filter with All time, Last year, Last month and Last week.	3fcffb0ae6c2	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9103-181483	backend	Waiting on backend work.	f2df90d9a88b	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	9132-76649	ui	On Dice, Fisherman Slots, Gem Slots, Vegas Fortune and the general game page the community wins filter keeps the old three time ranges; elsewhere All time, Last year and Last month are listed but cannot be picked yet.	00e6feb4d14c	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	9132-76649	ui	On Dice, Hooked, Sugar Rush, Vegas Fortune and the general game page the community wins filter keeps the old three time ranges; elsewhere All time, Last year and Last month are listed but cannot be picked yet.	00e6feb4d14c	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9170-81771	ui	At 1440, behind the open settings drawer, the bet slip header underline runs the full width of the title, where the design draws it shorter than the title.	64de3ec94f73	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9170-113296	ui	The parlay card this help tooltip sits on is not built to this design yet.	64754d366c40	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9185-15853	ui	This version of the tip card, with its blue glow, is not shown on any page yet; the match page shows its own Expert tips card instead.	e7439f2fdcb0	2026-11-14
