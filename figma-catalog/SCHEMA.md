@@ -91,6 +91,8 @@ frames with plain design-state names like `Desktop Full Game - Roll Over`).
 | `TOKENS.md` | **layer E (started)** — Figma's radius scale vs the class we ship, with the conversion table | bound-variable read off 473 nodes | yes |
 | `bp.mjs` | **the breakpoint dimension** — width constants, the verdict vocabulary, the column-6 parser, and the derived design-coverage helper. Imported by `apply-status.mjs` and `bp-report.mjs`; not runnable on its own | — | no |
 | `bp-report.mjs` | breakpoint coverage report **and** the column-6 validator. Exits 1 on a malformed cell. `--gaps` lists every actionable row, `--hygiene` lists orphan and duplicate rows | reads `status.*.tsv` + `registry.json` | no |
+| `gaps.tsv` | **the public gap line** per open frame, shown under its page on skai.trade/status — see "gaps.tsv" below | hand/agent-authored; `gaps.mjs fold` writes it | no |
+| `gaps.mjs` | checks `gaps.tsv` against the open frames `coverage.json` counts (a pipeline step), folds a writing pass's lines in, and exports the open-frame list `scripts/figma/emit-parity-json.mjs` publishes | reads `coverage.json` + `registry.json` + `gaps.tsv` | no |
 
 ## registry.json — per-frame record
 
@@ -467,6 +469,106 @@ COVERAGE: 116/595 rows (19%) carry a verdict at ≥1 width.
 
 Compare, do not memorise — the denominator grows as sections are added. **The
 number that must never fall is the count of rows carrying a verdict.**
+
+## gaps.tsv — the public gap line per open frame (added 2026-11-13)
+
+skai.trade/status lists, under each page, the frames still open on it, each with
+one or two plain sentences on what differs from its board, so a tester can tell a
+known gap from a new bug (Casey, 2026-11-13: public, plain UI gaps only; every
+page, games first; a short line written from the notes and kept in the catalog).
+
+| Column | Content |
+|--------|---------|
+| `fileKey` | the frame's Figma file |
+| `node` | the frame's node id, dash form |
+| `kind` | exactly the one the frame's status implies (`kindOfStatus`): `ui` for `partial` (the build differs from the board, or has not been compared with it yet), `backend` for `blocked-on-backend`, `not-built` for `not-started`, `unchecked` for a live frame no status row covers or any other status |
+| `gap` | the public line: 1 to 240 characters. A `backend` line reads exactly `Waiting on backend work.`, and no other line opens with "Waiting on backend" |
+| `notesSha` | the first 12 hex of sha1 over the frame's `registry.json` `notes` when the line was written |
+| `writtenAt` | `YYYY-MM-DD` |
+
+The kind follows the status so a fold that moves a frame's status has to move its
+line too: a `partial` frame's line labelled `unchecked` is refused. (The first
+writing pass labelled 88 partial frames never compared with the board
+`unchecked`; they went in relabelled `ui`, which covers "not yet compared".)
+
+**A line is plain** (`lineProblems` in `gaps.mjs`). It holds none of:
+
+- an invisible character (zero-width, soft hyphen, direction marks);
+- a path or file: `src/`, `modules/`, `supabase/`, `scripts/`, any `word/word/word`,
+  a `/` followed by a file extension, or a code file name (`.ts`, `.tsx`, `.mjs`,
+  `.json`, `.sql`, `.go`, `.sol`, `.svg`, `.yaml` and the rest of the list);
+- a link or an address (`http://`, `www.`, `figma.com`, `name@host`);
+- a hex run: `0x` and three or more hex digits, so an address cut short
+  (`0x5B41...0002`) counts, while the `0x184` inside a size like `130x184` does
+  not; or seven or more hex digits anywhere, glued to a word or not, that mix
+  digits and letters (so `sha3423cec` is refused, and "defaced", "feedback" and
+  the figure 1000000 pass);
+- a node id: an optional `I` or `i` (an instance id), four or more digits
+  (every node id in the three files starts at 2005 or above), a colon, dash or
+  en dash (spaces allowed), digits; four or more digits on both sides of a
+  slash; or three or more digits on both sides of a colon (a sub-node id like
+  `976:357`). ISO dates and year ranges (`2024-2026`, two years from 19xx or
+  20xx) are set aside first. `pays 3:2`, `16:9`, `35:1`, `100:1`, `0:30`,
+  `1-10`, a score of `2-1`, `100-500 SKAI` and the board size `1440/900` pass;
+- a code identifier: a word with a lower-case letter right before a capital
+  (`MinesBetPanel`, `useBetCurrency`) or a `snake_case` word, unless it is on the
+  allow-list of names the app prints (`sUSD`, `PnL`, `DeFi`, `TVL`, `NFT`,
+  `Skaiscan`, `USD`, `USDC`, `BTC`, `ETH`, `MoonPay`, `DexScreener`, `CoinGecko`,
+  `SkaiPay`, `OpenSea`, `TikTok`, `iPhone`, ...). The game names need no entry:
+  none has a capital inside a word;
+- a reference into the catalog's process: `HQ-` or `HQ` with a number, `wave`
+  with any number, `round` with a number unless it reads "round N of M" with an M
+  of one or two digits standing alone (so "round 27 of 2026-10-27" counts), `lane`
+  with a number of two digits or more, a `w80` or `L149` id in either case,
+  `P067` or `Q18`, an issue or report number of two digits or more (`#77`),
+  `ruling` in any form, `commit`. A game word passes: a Crash round, Round 1 of 3,
+  Rounds played, Plinko lanes, lane 3, a wave animation, a Nonce field, a #1
+  rank;
+- on any kind but `backend`, a backend part by name: relay, keeper, edge
+  function, RLS, hot key, endpoint, contract address, smart contract, RPC,
+  indexer, cron. "Contract" alone is a perps word (Hot contracts) and passes;
+- a name from the team list, or a capitalised name followed by asked, said,
+  wants, ruled, reported and the like.
+
+A line that fails is refused, never trimmed.
+
+**What fails `catalog:check`**: a malformed row, a line that is not plain, a kind
+the frame's status does not imply, a second line for one frame, a line for a
+frame the catalog does not hold. **What is only counted**, as warnings the
+writing pass works down: open frames with no line, stale lines (`notesSha`
+differs from the frame's notes now, so the line was written from notes that have
+since moved), and lines for frames that are no longer open.
+
+**Open** means what `figma-parity.json` counts as `open`, genuine minus done:
+every in-scope `coverage.json` `frameStatuses` entry not `done`, plus every
+`liveOnly` frame. `openFramesByPage` refuses a page whose list does not come to
+that number, and the emitter imports it, so the catalog and the feed cannot
+disagree on which frames are open.
+
+**What ships.** Each page's `openFrames` in `figma-parity.json` holds only the open
+frames with a line to show: the line `gaps.tsv` holds, or, for a frame blocked on
+backend work with none, `Waiting on backend work.` (`autoLine`). The page's whole
+open list is counted against its `open` first. A frame with neither ships
+nothing; the page's `open` figure still counts it. Anything wrong with the gap
+lines (a refused line, a count that does not agree, a catalog without
+`gaps.mjs`) ships the feed without `openFrames` and a warning: the parity figure
+never waits on the gap lines.
+
+**Every fold rewrites the lines of the frames it touches.** A writing pass hands
+over JSON items `{fileKey, node, kind, gap, notesSha, closedOnMain?}`:
+
+```sh
+node figma-catalog/gaps.mjs fold <lines.json>...                     # dry run: new, replacing, refused (with why)
+node figma-catalog/gaps.mjs fold <lines.json>... --write --at 2026-11-13
+npm run catalog:check
+```
+
+A refused item is listed with its reasons and left out; an accepted one replaces
+the frame's existing line. An item with a non-empty `closedOnMain` is refused:
+its writer found the residual already closed on main, so the frame wants a
+re-check in the next catalog fold, not a public gap. Never name this table
+`status.*.tsv`: three scripts read every file with that prefix as frame status
+rows.
 
 ## Rebuild
 
