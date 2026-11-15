@@ -15,23 +15,33 @@
  *
  * gaps.tsv holds one row per frame: fileKey, node, kind, gap, notesSha, writtenAt.
  *
- *   kind      ui         the build differs from the board
- *             backend    blocked on backend work; the line is exactly BACKEND_LINE
- *             not-built  nothing is built yet
- *             unchecked  a live frame no status row covers
+ *   kind      exactly the one the frame's status implies (kindOfStatus):
+ *             ui         partial: the build differs from the board, or has not
+ *                        been compared with it yet
+ *             backend    blocked-on-backend; the line is exactly BACKEND_LINE
+ *             not-built  not-started
+ *             unchecked  a live frame no status row covers, or any other status
  *   notesSha  the first 12 hex of sha1 over the frame's registry.json notes when
  *             the line was written. When the notes move, the line is due a rewrite.
  *
  * What fails the check: a malformed row, a line that is not plain (lineProblems),
- * a second line for one frame, and a line for a frame the catalog does not hold.
- * What it only counts: open frames with no line yet, lines whose notes have moved
- * since, and lines for frames that are no longer open. The writing pass fills
- * those over time, and the emitter ships a line only for a frame that is open.
+ * a kind the frame's status does not imply, a second line for one frame, and a
+ * line for a frame the catalog does not hold. What it only counts: open frames
+ * with no line yet, lines whose notes have moved since, and lines for frames
+ * that are no longer open. The writing pass fills those over time, and the
+ * emitter ships a line only for a frame that is open.
  *
  * The open frames are the ones figma-parity.json counts as `open` (genuine minus
  * done), read off coverage.json: every in-scope frameStatuses entry not done, and
- * every live-only frame. The emitter imports openFramesByPage from here, so the
- * two can never disagree on which frames those are.
+ * every live-only frame.
+ *
+ * Read by: pipeline.mjs (the self-test and the check, after coverage.mjs);
+ * src/__tests__/figmaCatalogGaps.test.ts (both, for the tier-1 gate); and, in
+ * the Skai-Trading checkout, scripts/figma/parity-open-frames.mjs, which
+ * emit-parity-json.mjs loads to build each page's openFrames (openFramesByPage,
+ * checkGaps, frameIndex, kindOfStatus, autoLine), and its test
+ * tests/build/parityOpenFrames.test.ts. A change to an export's shape is a
+ * change to skai.trade's feed.
  */
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -49,18 +59,73 @@ export const MAX_CHARS = 240;
 /** The team. A public line names nobody. */
 export const NAMES = ["Casey", "Adam", "Ty", "Miami"];
 
-const NAME_RE = new RegExp(`\\b(?:${NAMES.join("|")})\\b`, "i");
-
-// The words the catalog's own notes are written in. Each is a whole word, so
-// "background", "rounded" and "waveform" pass.
-const PROCESS_RE = [
-  /\bHQ-/i,
-  /\b(?:rounds?|waves?|lanes?|rulings?|nonces?|commits?|committed)\b/i,
-  /\buse_figma\b/i,
-  /\b(?:w\d{2,3}|L\d{2,3})\b/,
+/**
+ * Words with a capital inside them that a line may still use: token, product
+ * and market names the app itself prints. Anything else shaped like that
+ * (MinesBetPanel, useBetCurrency) is a code identifier. The game names need no
+ * entry: as the app writes them (Hi-Lo, Price Grid, Sugar Rush) none has a
+ * capital inside a word. Acronyms are listed for the reader; all capitals never
+ * trip the rule.
+ */
+export const ALLOWED_MIXED_CASE = [
+  "sUSD", "SKAI", "PnL", "DeFi", "TVL", "NFT", "NFTs", "Skaiscan", "USD", "USDC", "USDT", "BTC", "ETH",
+  "MoonPay", "TradingView", "WalletConnect", "MetaMask", "YouTube", "iOS",
 ];
 
-const CODE_FILE = /\b[\w-]+\.(?:tsx?|jsx?|mjs|cjs|json|tsv|md|css|sql|ps1|sh|py)\b/i;
+const NAME_RE = new RegExp(`\\b(?:${NAMES.join("|")})\\b`, "i");
+// "Jordan asked for", "Kim wants": a request credited to a person, named or not on the list.
+const ASKED_RE = /\b[A-Z][a-z]+\s+(?:asked|asks|said|says|wants|wanted|ruled|reported|requested|prefers|flagged)\b/;
+
+// References into the catalog's own process. A bare game word passes: a Crash
+// round, a Plinko lane, a wave animation, the Nonce field of a fairness panel.
+const PROCESS_RE = [
+  /\bHQ\s?-?\s?\d/i,
+  /\bHQ-/i,
+  /\b(?:round|wave|lane)s?\s*#?\d+/i,
+  /\b[wl]\d{2,3}\b/i,
+  /\b[PQ]\d{2,3}\b/,
+  /#\d+/,
+  /\brulings?\b/i,
+  /\b(?:commits?|committed)\b/i,
+];
+
+// Backend parts by name. A frame blocked on them reads BACKEND_LINE and nothing more.
+const BACKEND_RE =
+  /\b(?:relays?|keepers?|edge\s+functions?|RLS|hot\s+keys?|endpoints?|contracts?|RPCs?|indexers?|cron(?:\s+jobs?)?)\b/i;
+
+const CODE_FILE = /\b[\w-]+\.(?:tsx?|jsx?|mjs|cjs|json|tsv|md|css|scss|html|sql|ps1|sh|py|go|rs|sol|svg|ya?ml|toml)\b/i;
+
+// Characters a reader cannot see, which can split a name or a word past every rule here.
+// Written as code points so no raw invisible character sits in this source.
+const cp = (code) => String.fromCharCode(code);
+const INVISIBLE = new RegExp(`[${cp(0xad)}${cp(0x200b)}-${cp(0x200f)}${cp(0x202a)}-${cp(0x202e)}${cp(0x2060)}-${cp(0x2064)}${cp(0xfeff)}]`);
+// Hyphen to horizontal bar (U+2010..U+2015) besides the ASCII dash.
+const NODE_ID_RE = new RegExp(`\\b\\d{3,}\\s?[:\\-${cp(0x2010)}-${cp(0x2015)}/]\\s?\\d+\\b`);
+
+/** Hex runs a line must not hold: 0x anything, or 7+ hex digits mixing digits and letters. */
+function holdsHex(s) {
+  // An address or a hash written 0x..., not the "0x184" inside a size like 130x184.
+  if (/\b0x[0-9a-f]{6,}/i.test(s)) return true;
+  // Maximal runs, wherever they sit: glued to a word (sha3423cec) or an
+  // underscore (3423cec_final) still counts. A run needs a digit and a letter,
+  // so "defaced", "feedback" and the figure 1000000 pass.
+  for (const run of s.match(/[0-9a-f]{7,}/gi) || []) if (/\d/.test(run) && /[a-f]/i.test(run)) return true;
+  return false;
+}
+
+/** Node ids in any of the shapes a note writes them, dates aside: 9825-21726, 9825:21726, 9825/21726, or with an en dash. */
+function holdsNodeId(s) {
+  return NODE_ID_RE.test(s.replace(/\b\d{4}-\d{2}-\d{2}\b/g, " "));
+}
+
+/** A word with a lower-case letter right before a capital, or a snake_case word, that the allow-list does not hold. */
+function holdsIdentifier(s) {
+  for (const word of s.match(/[A-Za-z0-9_]+/g) || []) {
+    if (ALLOWED_MIXED_CASE.includes(word)) continue;
+    if (/[a-z][A-Z]/.test(word) || /[A-Za-z]_[A-Za-z]/.test(word)) return true;
+  }
+  return false;
+}
 
 /** Every reason a line is not fit for the public page; empty when it is. */
 export function lineProblems(kind, gap) {
@@ -71,25 +136,45 @@ export function lineProblems(kind, gap) {
   if (chars < 1 || chars > MAX_CHARS) out.push(`the line is ${chars} characters; it must be 1 to ${MAX_CHARS}`);
   if (/[\t\r\n]/.test(s)) out.push("the line holds a tab or a line break");
   else if (s !== s.trim()) out.push("the line starts or ends with a space");
+  if (INVISIBLE.test(s)) out.push("the line holds an invisible character");
   if (kind === "backend" && s !== BACKEND_LINE) out.push(`a backend line reads exactly ${JSON.stringify(BACKEND_LINE)}`);
-  if (kind !== "backend" && s === BACKEND_LINE) out.push(`${JSON.stringify(BACKEND_LINE)} is the backend line; this one is kind ${kind}`);
-  if (/(?:^|[^\w])(?:src|modules)\//i.test(s) || /\/[^\s/]*\.[a-z][a-z0-9]{0,4}\b/i.test(s) || CODE_FILE.test(s)) out.push("it names a path or a file");
-  if (/https?:\/\/|\bwww\.|figma\.com/i.test(s)) out.push("it holds a link");
-  if (/\b[0-9a-f]{7,}\b/i.test(s)) out.push("it holds a hex run of 7 or more");
-  if (/\d+[:-]\d+/.test(s)) out.push("it holds a node id (digits, a colon or dash, digits)");
-  if (PROCESS_RE.some((re) => re.test(s))) out.push("it uses a word from the catalog's process (HQ-, round, wave, lane, ruling, nonce, use_figma, commit)");
-  if (NAME_RE.test(s)) out.push("it names a person");
+  // A ui line may say one part waits on backend work; only a backend line opens with it.
+  if (kind !== "backend" && /^\W*waiting on backend/i.test(s)) out.push("only a backend line reads as waiting on backend work");
+  if (/(?:^|[^\w])(?:src|modules|supabase|scripts)\//i.test(s) || /[\w.-]+\/[\w.-]+\/[\w.-]+/.test(s) || /\/[^\s/]*\.[a-z][a-z0-9]{0,4}\b/i.test(s) || CODE_FILE.test(s)) {
+    out.push("it names a path or a file");
+  }
+  if (/https?:\/\/|\bwww\.|figma\.com|[\w.+-]+@[\w-]+\.[a-z]/i.test(s)) out.push("it holds a link or an address");
+  if (holdsHex(s)) out.push("it holds a hex run (0x, or 7 or more hex digits mixing digits and letters)");
+  if (holdsNodeId(s)) out.push("it holds a node id (3 or more digits, a colon, dash or slash, digits)");
+  if (holdsIdentifier(s)) out.push("it holds a code identifier (camelCase, PascalCase or snake_case)");
+  if (PROCESS_RE.some((re) => re.test(s))) out.push("it refers into the catalog's process (HQ-, round 12, wave 80, w80, L93, P067, Q18, #77, ruling, commit)");
+  if (kind !== "backend" && BACKEND_RE.test(s)) out.push("it names a backend part (relay, keeper, edge function, RLS, hot key, endpoint, contract, RPC, indexer, cron)");
+  if (NAME_RE.test(s) || ASKED_RE.test(s)) out.push("it names a person");
   return out;
 }
 
 export const notesSha = (notes) => crypto.createHash("sha1").update(String(notes ?? ""), "utf8").digest("hex").slice(0, 12);
 
-/** The kind a frame with no line ships, from the status coverage resolved for it. */
+/**
+ * The one kind an open frame's line may carry, from the status coverage
+ * resolved for it. A line whose kind disagrees is refused: when a fold moves a
+ * frame's status, the line has to move with it.
+ */
 export function kindOfStatus(status) {
   if (status === "partial") return "ui";
   if (status === "blocked-on-backend") return "backend";
   if (status === "not-started") return "not-built";
   return "unchecked";
+}
+
+/**
+ * The line a frame with none written still ships: a frame blocked on backend
+ * work reads BACKEND_LINE, and nothing else is filled in. Null when there is
+ * none to give.
+ */
+export function autoLine(status) {
+  if (kindOfStatus(status) !== "backend") return null;
+  return lineProblems("backend", BACKEND_LINE).length ? null : { kind: "backend", gap: BACKEND_LINE };
 }
 
 /** registry.json frames by `${fileKey}|${node}`, whichever key form the registry used. */
@@ -136,7 +221,7 @@ export function openFramesByPage(coverage) {
 const HEADER = [
   "# gaps.tsv: the public line each open frame shows under its page on skai.trade/status. HAND-MAINTAINED; gaps.mjs checks it.",
   "#",
-  "# kind: ui (differs from its board), backend (blocked on backend work), not-built (nothing built yet), unchecked (a live frame no status row covers).",
+  "# kind: the one the frame's status implies: ui (partial), backend (blocked-on-backend), not-built (not-started), unchecked (a live frame no status row covers).",
   `# gap: one or two plain sentences, 1 to ${MAX_CHARS} characters, naming no path, id, hash or person. A backend line reads exactly "${BACKEND_LINE}"`,
   "# notesSha: the first 12 hex of sha1 over the frame's registry.json notes when the line was written. When the notes move, the line is due a rewrite.",
   "# A fold rewrites the lines of the frames it touches: node figma-catalog/gaps.mjs fold <lines.json> --write",
@@ -210,6 +295,11 @@ export function checkGaps({ coverage, registry, text }) {
       else notOpen.push(`${r.at} ${r.node} (${frame.gone ? "gone" : frame.status})`);
       continue;
     }
+    const want = kindOfStatus(open.get(key).status);
+    if (r.kind !== want) {
+      errors.push(`${r.at}: ${r.node} is kind ${r.kind}, but its status ${open.get(key).status ?? "(live only)"} makes it ${want}; rewrite the line`);
+      continue;
+    }
     if (r.notesSha !== notesSha(frame?.notes)) stale.push(`${r.at} ${r.node}`);
   }
   const missing = [...open.keys()].filter((k) => !seen.has(k));
@@ -218,13 +308,16 @@ export function checkGaps({ coverage, registry, text }) {
 
 /**
  * Lines from a writing pass into the table: each item is { fileKey, node,
- * kind, gap, notesSha }. A line that fails lineProblems, names a frame that is
- * not open, or repeats a frame earlier in the batch is refused and listed. An
- * accepted line replaces the frame's existing one.
+ * kind, gap, notesSha, closedOnMain? }. A line that fails lineProblems, names a
+ * frame that is not open, carries a kind its frame's status does not imply,
+ * repeats a frame earlier in the batch, or comes with a non-empty closedOnMain
+ * (its writer found the residual already closed on main, so the frame wants a
+ * re-check in the next catalog fold, not a public gap) is refused and listed.
+ * An accepted line replaces the frame's existing one.
  */
 export function foldLines(existing, items, { coverage, at }) {
-  const open = new Set();
-  for (const list of openFramesByPage(coverage).values()) for (const f of list) open.add(`${f.fileKey}|${f.node}`);
+  const open = new Map();
+  for (const list of openFramesByPage(coverage).values()) for (const f of list) open.set(`${f.fileKey}|${f.node}`, f);
   const rows = new Map(existing.map((r) => [`${r.fileKey}|${r.node}`, r]));
   const taken = new Set();
   const refused = [];
@@ -235,6 +328,10 @@ export function foldLines(existing, items, { coverage, at }) {
     const why = lineProblems(item?.kind, item?.gap);
     if (!/^[0-9a-f]{12}$/.test(item?.notesSha ?? "")) why.push("notesSha is not 12 lowercase hex");
     if (!open.has(key)) why.push("not an open in-scope frame");
+    else if (KINDS.includes(item?.kind) && item.kind !== kindOfStatus(open.get(key).status)) {
+      why.push(`kind ${item.kind}, but the frame's status ${open.get(key).status ?? "(live only)"} makes it ${kindOfStatus(open.get(key).status)}`);
+    }
+    if (String(item?.closedOnMain ?? "").trim()) why.push("its writer found it closed on main: re-check the frame in the next catalog fold");
     if (taken.has(key)) why.push("a second line for this frame in the same batch");
     if (why.length) {
       refused.push({ fileKey: item?.fileKey, node: item?.node, gap: item?.gap, why });
@@ -310,16 +407,39 @@ function selfTest() {
   };
   const plain = (kind, gap) => lineProblems(kind, gap).length === 0;
 
-  t("a plain ui line passes", plain("ui", "The bet panel is 24px narrower than the board, and the Auto tab is missing."), lineProblems("ui", "The bet panel is 24px narrower than the board, and the Auto tab is missing."));
-  t("a plain not-built line passes", plain("not-built", "This screen is not built yet."));
-  t("an unchecked line passes", plain("unchecked", "Not yet compared with the build."));
-  t("the backend line passes as backend", plain("backend", BACKEND_LINE));
-  t("game words that contain a process word pass (background, rounded, waveform)", plain("ui", "The background is lighter and the rounded corners are smaller; the waveform is static."));
-  t("a route with no file extension passes, and so does a ratio of words", plain("ui", "The /play/mines header is taller; Win/Loss sits on one line."));
+  // Lines a tester can read and should: game words, figures and ratios that
+  // share a shape with something the rules refuse.
+  const honest = [
+    ["a plain ui line", "ui", "The bet panel is 24px narrower than the board, and the Auto tab is missing."],
+    ["a plain not-built line", "not-built", "This screen is not built yet."],
+    ["an unchecked line", "unchecked", "Not yet compared with the build."],
+    ["the backend line, as backend", "backend", BACKEND_LINE],
+    ["words that hold a process word (background, rounded, waveform)", "ui", "The background is lighter and the rounded corners are smaller; the waveform is static."],
+    ["a route with no file extension, and a pair of words", "ui", "The /play/mines header is taller; Win/Loss sits on one line."],
+    ["a game round", "ui", "Each round's result is missing from the history strip."],
+    ["Rounds played", "ui", "The Rounds played figure shows a dash."],
+    ["a Nonce field", "ui", "The provably fair panel has no Nonce field."],
+    ["a payout ratio (pays 3:2)", "ui", "The table reads Blackjack pays 3:2 in a smaller font than the design."],
+    ["odds (35:1)", "ui", "The straight bet label shows 35:1 where the design shows 36x."],
+    ["an aspect ratio (16:9)", "ui", "The share card is drawn 16:9 where the design draws 4:3."],
+    ["a range (1-10)", "ui", "The 1-10 multiplier ladder is missing."],
+    ["a time", "ui", "The countdown reads 0:30 where the design shows 00:30."],
+    ["a score", "ui", "The live score 2-1 sits left of the team crest."],
+    ["Plinko lanes", "ui", "The ball lanes are narrower than the design."],
+    ["a wave animation", "ui", "The wave animation behind the reels is missing."],
+    ["a date", "ui", "The snapshot date reads 2026-03-31 where the design writes March 31."],
+    ["a seven-digit figure", "ui", "The jackpot shows 1000000 without separators."],
+    ["a word made of hex letters", "ui", "The defaced badge art and the feedback toast are missing."],
+    ["a size whose digits read 0x (130x184)", "ui", "The tiles are drawn 195x277 against 130x184."],
+    ["one part waiting on backend work, inside a ui line", "ui", "The chart counts only your newest 10,000 trades; older history is waiting on backend work."],
+    ["names the app prints (sUSD, PnL, DeFi, MoonPay)", "ui", "The sUSD balance, Closed PnL and DeFi tabs differ, and MoonPay is not offered."],
+  ];
+  for (const [what, kind, gap] of honest) t(`passes ${what}`, plain(kind, gap), `${JSON.stringify(gap)}: ${lineProblems(kind, gap).join("; ")}`);
   // "Ab " repeated: no hex run, so only the length rule can decide these two.
   const sized = (n) => `${"Ab ".repeat(n).slice(0, n - 1)}.`;
   t(`${MAX_CHARS} characters pass`, plain("ui", sized(MAX_CHARS)), lineProblems("ui", sized(MAX_CHARS)));
 
+  // Each case trips one rule where it can, so a rule that stops working fails here.
   const refused = [
     ["an empty line", "ui", ""],
     [`${MAX_CHARS + 1} characters`, "ui", sized(MAX_CHARS + 1)],
@@ -327,29 +447,65 @@ function selfTest() {
     ["a line break", "ui", "The header\nis taller."],
     ["a leading space", "ui", " The header is taller."],
     ["an unknown kind", "visual", "The header is taller."],
-    ["a backend line in other words", "backend", "Waiting on the bets endpoint."],
+    ["a backend line in other words", "backend", "Waiting on the bets feed."],
     ["the backend sentence on a ui line", "ui", BACKEND_LINE],
-    ["a src path", "ui", "Built in src/pages/Mines but the header is taller."],
+    ["the backend sentence, unstopped, on a ui line", "ui", "Waiting on backend work"],
+    ["the backend sentence plus a reason, on a ui line", "ui", "Waiting on backend work. The bets endpoint is down."],
+    ["a src path", "ui", "Built in src/pages but the header is taller."],
     ["a modules path", "ui", "See modules/skai-gaming for the panel."],
+    ["a word/word/word path", "ui", "Built in components/play/games/crash only."],
+    ["an edge function path", "ui", "supabase/functions/relay-bridge-withdraw returns 503."],
     ["a slash with a file extension", "ui", "The art at covers/mines.png is cropped."],
     ["a bare code file", "ui", "MinesGame.tsx draws the old header."],
+    ["a yaml file", "ui", "The theme.yaml colors differ."],
+    ["an svg file", "ui", "The icon-edit-16.svg glyph is missing."],
+    ["a go file", "ui", "market.go skips the tab."],
+    ["a solidity file", "ui", "outcome.sol holds the funds."],
     ["a link", "ui", "Compare the header with figma.com first."],
+    ["an email address", "ui", "Write to ops@skai.trade for the tab."],
+    ["a contract address", "ui", "Deposits go to 0x5B41000000000000000000000000000000000002 and fail."],
+    ["a tx hash written 0x", "ui", "The claim tx 0x9f3c2a7be41d reverted."],
+    ["a 0x run of letters alone", "ui", "Sent to 0xdeadbeef and lost."],
     ["a short commit hash", "ui", "Fixed on main in 3423cec but the tab is missing."],
+    ["a hash glued to a word", "ui", "Fixed by sha3423cec on main."],
+    ["a hash before an underscore", "ui", "See build 3423cec_final."],
+    ["a PascalCase component", "ui", "MinesBetPanel draws the old header."],
+    ["a camelCase hook", "ui", "useBetCurrency returns POINTS here."],
+    ["a snake_case word", "ui", "Needs one use_figma read."],
     ["a node id with a dash", "ui", "The Auto ladder of 9825-21726 is missing."],
     ["a node id with a colon", "ui", "Matches 9825:21726 except the tab."],
+    ["a node id with an en dash", "ui", `The Auto ladder of 9825${cp(0x2013)}21726 is missing.`],
+    ["a node id with a slash", "ui", "Matches 9825/21726 except the tab."],
+    ["a node id spaced", "ui", "Matches 9825 : 21726 except the tab."],
     ["HQ-", "ui", "Tracked as HQ-26."],
-    ["round", "ui", "Ruled in round 57."],
-    ["wave", "ui", "Closed in a later wave."],
-    ["lane", "ui", "The lane that read it ran out of time."],
-    ["ruling", "ui", "A ruling keeps the old chip."],
-    ["nonce", "ui", "The read nonce was lost."],
-    ["use_figma", "ui", "Needs one use_figma read."],
-    ["commit", "ui", "A later commit moves the tab."],
-    ["a lane id", "ui", "Read by L93 only."],
+    ["HQ without a dash", "ui", "Tracked as HQ26."],
+    ["HQ- with no number", "ui", "Filed on the HQ-board."],
+    ["round with its number", "ui", "Ruled in round 57."],
+    ["round glued to its number", "ui", "Ruled in Round57."],
+    ["wave with its number", "ui", "Closed in wave 80."],
+    ["lane with its number", "ui", "Read by lane 12 only."],
+    ["a wave id, upper case", "ui", "Read in W80 only."],
     ["a wave id", "ui", "Read in w83 only."],
+    ["a lane id", "ui", "Read by L93 only."],
+    ["a lane id, lower case", "ui", "Read by l149 only."],
+    ["a packet id", "ui", "As P067 recorded, the tab is missing."],
+    ["a question id", "ui", "Kept by Q18 for now."],
+    ["an issue number", "ui", "Tracked in #77 for now."],
+    ["ruling", "ui", "A ruling keeps the old chip."],
+    ["commit", "ui", "A later commit moves the tab."],
+    ["a backend reason in a ui line", "ui", "The relay refuses the bet while the keeper is down."],
+    ["the hot key", "ui", "The hot key owns the pool, so deposits are held."],
+    ["an edge function and RLS", "ui", "Top holders waits on the holder index edge function and RLS."],
+    ["an endpoint", "ui", "The table waits on the history endpoint."],
+    ["a contract", "ui", "The vault contract is not live."],
+    ["an RPC", "ui", "The chart reads from the RPC instead."],
+    ["an indexer", "ui", "Top holders waits on the indexer."],
+    ["a cron", "ui", "The board refreshes on a cron."],
     ["Casey", "ui", "Casey asked for the old tab."],
     ["Adam, case folded", "ui", "As adam reported, the tab is missing."],
     ["Ty", "ui", "Ty saw the header move."],
+    ["a person not on the list, asking", "ui", "Jordan asked for the old tab."],
+    ["a name split by an invisible character", "ui", `Ca${cp(0x200b)}sey asked for the old tab.`],
   ];
   for (const [what, kind, gap] of refused) t(`refuses ${what}`, !plain(kind, gap), `passed: ${JSON.stringify(gap)}`);
 
@@ -412,6 +568,20 @@ function selfTest() {
   t("checkGaps refuses a line for a frame the catalog does not hold", g.errors.length === 1 && /1-7 is no frame/.test(g.errors[0]), JSON.stringify(g.errors));
   const twice = checkGaps({ coverage: cov(), registry, text: [row("1-2", "ui", "One."), row("1-2", "ui", "Two.")].join("\n") });
   t("checkGaps refuses a second line for one frame", twice.errors.length === 1 && /second line/.test(twice.errors[0]), JSON.stringify(twice.errors));
+  const kinds = checkGaps({
+    coverage: cov(),
+    registry,
+    text: [row("1-2", "unchecked", "Not yet compared with the build.", notesSha("tab missing")), row("1-9", "ui", "The header is taller.", notesSha(""))].join("\n"),
+  });
+  t(
+    "checkGaps refuses a kind the frame's status does not imply: unchecked on a partial frame, ui on a live-only one",
+    kinds.errors.length === 2 && /1-2 is kind unchecked, but its status partial makes it ui/.test(kinds.errors[0]) && /1-9 is kind ui, but its status \(live only\) makes it unchecked/.test(kinds.errors[1]),
+    JSON.stringify(kinds.errors),
+  );
+  t(
+    "autoLine fills BACKEND_LINE for a frame blocked on backend work and nothing else",
+    JSON.stringify(autoLine("blocked-on-backend")) === JSON.stringify({ kind: "backend", gap: BACKEND_LINE }) && autoLine("partial") === null && autoLine("not-started") === null && autoLine(null) === null,
+  );
 
   const f = foldLines(
     [{ fileKey: K, node: "1-2", kind: "ui", gap: "Old.", notesSha: "0123456789ab", writtenAt: "2026-11-01" }],
@@ -439,6 +609,25 @@ function selfTest() {
       /^1-9 a second line for this frame in the same batch$/.test(reasons[2]) &&
       /^1-1 not an open in-scope frame$/.test(reasons[3]),
     JSON.stringify(reasons),
+  );
+  const strict = foldLines(
+    [],
+    [
+      { fileKey: K, node: "1-2", kind: "unchecked", gap: "Not yet compared with the build.", notesSha: notesSha("tab missing") },
+      { fileKey: K, node: "1-3", kind: "backend", gap: BACKEND_LINE, notesSha: notesSha("no feed"), closedOnMain: "the feed is live on main" },
+      { fileKey: K, node: "1-9", kind: "unchecked", gap: "Not yet compared with the build.", notesSha: notesSha(""), closedOnMain: "" },
+    ],
+    { coverage: cov(), at: "2026-11-13" },
+  );
+  const strictWhy = strict.refused.map((x) => `${x.node} ${x.why.join("; ")}`);
+  t(
+    "foldLines refuses a kind the status does not imply, and a line its writer found closed on main; an empty closedOnMain goes in",
+    strict.added === 1 &&
+      strict.rows[0]?.node === "1-9" &&
+      strictWhy.length === 2 &&
+      /^1-2 kind unchecked, but the frame's status partial makes it ui$/.test(strictWhy[0]) &&
+      /^1-3 its writer found it closed on main/.test(strictWhy[1]),
+    JSON.stringify(strictWhy),
   );
   const round = parseGaps(formatGaps(f.rows));
   t("formatGaps writes a table parseGaps reads back whole", round.errors.length === 0 && round.rows.length === 2, JSON.stringify(round));

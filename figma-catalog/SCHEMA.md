@@ -481,35 +481,69 @@ page, games first; a short line written from the notes and kept in the catalog).
 |--------|---------|
 | `fileKey` | the frame's Figma file |
 | `node` | the frame's node id, dash form |
-| `kind` | `ui` (the build differs from the board), `backend` (blocked on backend work), `not-built` (nothing built yet), `unchecked` (a live frame no status row covers) |
-| `gap` | the public line: 1 to 240 characters. A `backend` line reads exactly `Waiting on backend work.` and nothing else may |
+| `kind` | exactly the one the frame's status implies (`kindOfStatus`): `ui` for `partial` (the build differs from the board, or has not been compared with it yet), `backend` for `blocked-on-backend`, `not-built` for `not-started`, `unchecked` for a live frame no status row covers or any other status |
+| `gap` | the public line: 1 to 240 characters. A `backend` line reads exactly `Waiting on backend work.`, and no other line opens with "Waiting on backend" |
 | `notesSha` | the first 12 hex of sha1 over the frame's `registry.json` `notes` when the line was written |
 | `writtenAt` | `YYYY-MM-DD` |
 
-**A line is plain** (`lineProblems` in `gaps.mjs`): no path (`src/`, `modules/`, a
-`/` followed by a file extension, a code file name), no link, no hex run of 7 or more, no
-node id (`\d+[:-]\d+`), none of the catalog's process words as a whole word
-(`HQ-`, round, wave, lane, ruling, nonce, `use_figma`, commit, or an id like `w80`
-or `L93`), and no name from the team list. Whole words, so background, rounded
-and waveform pass. A line that fails is refused, never trimmed.
+The kind follows the status so a fold that moves a frame's status has to move its
+line too: a `partial` frame's line labelled `unchecked` is refused. (The first
+writing pass labelled 88 partial frames never compared with the board
+`unchecked`; they went in relabelled `ui`, which covers "not yet compared".)
 
-**What fails `catalog:check`**: a malformed row, a line that is not plain, a second
-line for one frame, a line for a frame the catalog does not hold. **What is only
-counted**, as warnings the writing pass works down: open frames with no line,
-stale lines (`notesSha` differs from the frame's notes now, so the line was written
-from notes that have since moved), and lines for frames that are no longer open.
+**A line is plain** (`lineProblems` in `gaps.mjs`). It holds none of:
+
+- an invisible character (zero-width, soft hyphen, direction marks);
+- a path or file: `src/`, `modules/`, `supabase/`, `scripts/`, any `word/word/word`,
+  a `/` followed by a file extension, or a code file name (`.ts`, `.tsx`, `.mjs`,
+  `.json`, `.sql`, `.go`, `.sol`, `.svg`, `.yaml` and the rest of the list);
+- a link or an address (`http://`, `www.`, `figma.com`, `name@host`);
+- a hex run: `0x` and six or more hex digits, or seven or more hex digits anywhere,
+  glued to a word or not, that mix digits and letters (so `sha3423cec` is refused,
+  and "defaced", "feedback" and the figure 1000000 pass);
+- a node id: three or more digits, a colon, dash, en dash or slash (spaces
+  allowed), digits. ISO dates are set aside first. `pays 3:2`, `16:9`, `35:1`,
+  `0:30`, `1-10` and a score of `2-1` pass;
+- a code identifier: a word with a lower-case letter right before a capital
+  (`MinesBetPanel`, `useBetCurrency`) or a `snake_case` word, unless it is on the
+  allow-list of names the app prints (`sUSD`, `PnL`, `DeFi`, `TVL`, `NFT`,
+  `Skaiscan`, `USD`, `USDC`, `BTC`, `ETH`, `MoonPay`, ...). The game names need no
+  entry: none has a capital inside a word;
+- a reference into the catalog's process: `HQ-` or `HQ` with a number, `round`,
+  `wave` or `lane` followed by a number, a `w80` or `L93` id in either case,
+  `P067` or `Q18`, `#77`, `ruling`, `commit`. A bare game word passes: a Crash
+  round, Rounds played, Plinko lanes, a wave animation, a Nonce field;
+- on any kind but `backend`, a backend part by name: relay, keeper, edge
+  function, RLS, hot key, endpoint, contract, RPC, indexer, cron;
+- a name from the team list, or a capitalised name followed by asked, said,
+  wants, ruled, reported and the like.
+
+A line that fails is refused, never trimmed.
+
+**What fails `catalog:check`**: a malformed row, a line that is not plain, a kind
+the frame's status does not imply, a second line for one frame, a line for a
+frame the catalog does not hold. **What is only counted**, as warnings the
+writing pass works down: open frames with no line, stale lines (`notesSha`
+differs from the frame's notes now, so the line was written from notes that have
+since moved), and lines for frames that are no longer open.
 
 **Open** means what `figma-parity.json` counts as `open`, genuine minus done:
 every in-scope `coverage.json` `frameStatuses` entry not `done`, plus every
 `liveOnly` frame. `openFramesByPage` refuses a page whose list does not come to
 that number, and the emitter imports it, so the catalog and the feed cannot
-disagree on which frames are open. A frame with no line still ships, as
-`gap: null` with the kind its status implies (`partial` → `ui`,
-`blocked-on-backend` → `backend`, `not-started` → `not-built`, anything else,
-and every live-only frame, → `unchecked`); the page shows only frames with a line.
+disagree on which frames are open.
+
+**What ships.** Each page's `openFrames` in `figma-parity.json` holds only the open
+frames with a line to show: the line `gaps.tsv` holds, or, for a frame blocked on
+backend work with none, `Waiting on backend work.` (`autoLine`). The page's whole
+open list is counted against its `open` first. A frame with neither ships
+nothing; the page's `open` figure still counts it. Anything wrong with the gap
+lines (a refused line, a count that does not agree, a catalog without
+`gaps.mjs`) ships the feed without `openFrames` and a warning: the parity figure
+never waits on the gap lines.
 
 **Every fold rewrites the lines of the frames it touches.** A writing pass hands
-over JSON items `{fileKey, node, kind, gap, notesSha}`:
+over JSON items `{fileKey, node, kind, gap, notesSha, closedOnMain?}`:
 
 ```sh
 node figma-catalog/gaps.mjs fold <lines.json>...                     # dry run: new, replacing, refused (with why)
@@ -518,8 +552,11 @@ npm run catalog:check
 ```
 
 A refused item is listed with its reasons and left out; an accepted one replaces
-the frame's existing line. Never name this table `status.*.tsv`: three scripts
-read every file with that prefix as frame status rows.
+the frame's existing line. An item with a non-empty `closedOnMain` is refused:
+its writer found the residual already closed on main, so the frame wants a
+re-check in the next catalog fold, not a public gap. Never name this table
+`status.*.tsv`: three scripts read every file with that prefix as frame status
+rows.
 
 ## Rebuild
 
