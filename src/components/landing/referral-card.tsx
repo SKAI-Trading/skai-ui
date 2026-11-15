@@ -4,6 +4,7 @@ import { cn } from "../../lib/utils";
 import { content } from "../../lib/content";
 import { urls } from "../../lib/constants";
 import { SkaiIcon } from "../branding/skai-icon";
+import type { LaunchStage } from "./welcome-card";
 
 const d = content.landing.waitlist.dashboard;
 
@@ -21,7 +22,19 @@ export interface ReferralCardProps extends React.HTMLAttributes<HTMLDivElement> 
   onDiscordConnect?: () => void;
   discordHandle?: string | null;
   twitterHandle?: string | null;
+  /**
+   * Which dashboard board the card follows. The pre-launch boards (2005:8542, 2005:26477) put
+   * "Connect to share referral link" over a Share to X / Share to Instagram pair where the Live
+   * boards draw the claim line and one share box, and label the Discord button "Join Skai on
+   * Discord". Left out, the Live card.
+   */
+  launchStage?: LaunchStage;
+  /** What the pre-launch "Share to Instagram" does. Without it the button is drawn disabled, its reason on hover. */
+  onShareToInstagram?: () => void;
 }
+
+const SHARE_BOX =
+  "flex w-full min-w-0 flex-1 items-center justify-center gap-1 lg:gap-2 whitespace-nowrap rounded-xl lg:rounded-2xl p-3 lg:px-[22px] lg:py-4 bg-green-coal-300 hover:bg-[#0d3538] ring-1 ring-inset ring-sky-blue lg:ring-[1.5px] text-sky-blue font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-all";
 
 const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
   (
@@ -45,12 +58,16 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
       onDiscordConnect,
       discordHandle,
       twitterHandle,
+      launchStage,
+      onShareToInstagram,
       className,
       ...props
     },
     ref,
   ) => {
     const [copied, setCopied] = useState(false);
+    const preLaunch = launchStage === "pre-launch";
+    const instagramReasonId = React.useId();
 
     const handleCopy = async () => {
       try {
@@ -137,32 +154,72 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          {/* Points incentive */}
-          {!hasClaimedToday && shareTweetPoints > 0 && !twitterHandle && (
+        {preLaunch ? (
+          /* The pre-launch share group: its label (Paragraph 2, white, as "Referral link") over two
+             boxes 8 apart, each Green Coal 300 on a Sky Blue line drawn inside (1.5 at 1440), its
+             icon and label 4 / 8 apart in Sky Blue: 159.5x40 at 375 (r12, p12, icon 16, Bold
+             14/16) and 196x56 at 1440 (r16, p16/22, icon 24, Paragraph 2 14/18). 768 has no
+             pre-launch board, so it takes the Live share box there (p12, 12/16, icon 16). */
+          <div data-testid="referral-card-share" className="flex flex-col gap-2">
             <p className="font-manrope text-white text-para-2-tablet lg:text-para-2 px-2 md:px-0">
-              Claim <span className="text-alien-green-bright">+{shareTweetPoints} SKAI points</span>
+              {d.referral.shareLabel}
             </p>
-          )}
-
-          <button
-            type="button"
-            onClick={onShareToX}
-            className={cn(
-              "w-full flex items-center justify-center gap-2 rounded-xl lg:rounded-2xl p-3 lg:px-[22px] lg:py-4 font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-all",
-              twitterHandle
-                ? "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/30"
-                : "bg-green-coal-300 hover:bg-[#0d3538] ring-1 ring-inset ring-sky-blue lg:ring-[1.5px] text-sky-blue",
+            <div className="flex gap-2">
+              <button type="button" onClick={onShareToX} className={SHARE_BOX}>
+                <SkaiIcon name="x" size="sm" className="h-4 w-4 lg:h-6 lg:w-6" />
+                <span>{d.referral.shareToX}</span>
+              </button>
+              {/* Instagram takes no link from a web page, so the button hands the referral to
+                  the device's share menu, where a phone lists Instagram. Where the browser has
+                  no share menu the button is drawn disabled, its reason on hover and to screen
+                  readers. */}
+              <span className="flex min-w-0 flex-1" title={onShareToInstagram ? undefined : d.referral.instagramUnavailable}>
+                <button
+                  type="button"
+                  onClick={onShareToInstagram}
+                  disabled={!onShareToInstagram}
+                  aria-describedby={onShareToInstagram ? undefined : instagramReasonId}
+                  className={cn(SHARE_BOX, "disabled:cursor-not-allowed disabled:opacity-50")}
+                >
+                  <SkaiIcon name="instagram" size="sm" className="h-4 w-4 lg:h-6 lg:w-6" />
+                  <span>{d.referral.shareToInstagram}</span>
+                </button>
+                {!onShareToInstagram && (
+                  <span id={instagramReasonId} className="sr-only">
+                    {d.referral.instagramUnavailable}
+                  </span>
+                )}
+              </span>
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-2">
+            {/* Points incentive */}
+            {!hasClaimedToday && shareTweetPoints > 0 && !twitterHandle && (
+              <p className="font-manrope text-white text-para-2-tablet lg:text-para-2 px-2 md:px-0">
+                Claim <span className="text-alien-green-bright">+{shareTweetPoints} SKAI points</span>
+              </p>
             )}
-          >
-            <SkaiIcon name="x" size="sm" />
-            <span>{twitterHandle ? `@${twitterHandle} connected` : "Share With Friends"}</span>
-          </button>
-        </div>
+
+            <button
+              type="button"
+              onClick={onShareToX}
+              className={cn(
+                "w-full flex items-center justify-center gap-2 rounded-xl lg:rounded-2xl p-3 lg:px-[22px] lg:py-4 font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-2 transition-all",
+                twitterHandle
+                  ? "bg-[#0D3D3A] text-[#2DEDAD] border border-[#2DEDAD]/30"
+                  : "bg-green-coal-300 hover:bg-[#0d3538] ring-1 ring-inset ring-sky-blue lg:ring-[1.5px] text-sky-blue",
+              )}
+            >
+              <SkaiIcon name="x" size="sm" />
+              <span>{twitterHandle ? `@${twitterHandle} connected` : "Share With Friends"}</span>
+            </button>
+          </div>
+        )}
 
         <div className="flex flex-col gap-2">
           {/* Discord points incentive */}
-          {discordConnectPoints > 0 && !discordHandle && (
+          {!preLaunch && discordConnectPoints > 0 && !discordHandle && (
             <p className="font-manrope text-white text-para-2-tablet lg:text-para-2 px-2 md:px-0">
               Claim <span className="text-alien-green-bright">+{discordConnectPoints} SKAI points</span>
             </p>
@@ -179,7 +236,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
             )}
           >
             <SkaiIcon name="discord" size="sm" className="w-4 h-4 lg:w-6 lg:h-6" />
-            {discordHandle ? `${discordHandle} connected` : "Join Skai Community"}
+            {discordHandle ? `${discordHandle} connected` : preLaunch ? d.referral.joinOnDiscord : "Join Skai Community"}
           </button>
         </div>
       </div>

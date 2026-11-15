@@ -181,6 +181,106 @@ describe("ReferralCard", () => {
   });
 });
 
+// The pre-launch boards, read live 2026-11-14: the referral card 2005:8542 (1440) and 2005:26477
+// (375), the badge card 2005:8507 (1440) and 2005:26442 (375). Casey 2026-11-14 (round 62 #8): while
+// the countdown runs the cards show these boards' content. 768 has no pre-launch board read, so the
+// pair takes the Live share box's 768 values.
+describe("ReferralCard on the pre-launch boards", () => {
+  const BOARD = {
+    375: { label: [12, 16, 400], pad: [12, 12, 12, 12], radius: 12, type: [14, 16, 700], gap: 4, icon: 16, height: 40 },
+    768: { label: [12, 16, 400], pad: [12, 12, 12, 12], radius: 12, type: [12, 16, 400], gap: 4, icon: 16, height: 40 },
+    1440: { label: [14, 18, 400], pad: [16, 22, 16, 22], radius: 16, type: [14, 18, 400], gap: 8, icon: 24, height: 56 },
+  } as const;
+  const card = (onShareToInstagram?: () => void, onShareToX?: () => void) =>
+    render(
+      <ReferralCard
+        referralLink="skai.trade/ref/artofofiare"
+        referralPoints={100}
+        shareTweetPoints={50}
+        launchStage="pre-launch"
+        onShareToInstagram={onShareToInstagram}
+        onShareToX={onShareToX}
+      />,
+    );
+
+  it.each(WIDTHS)("at %i puts Connect to share referral link over the Share to X / Share to Instagram pair", (w) => {
+    const b = BOARD[w];
+    card(() => {});
+    const group = screen.getByTestId("referral-card-share");
+    const [label, pair] = Array.from(group.children);
+    expect(label.textContent).toBe("Connect to share referral link");
+    expect(type(label, w)).toEqual(b.label);
+    expect(paintedAt(group, w).gap).toBe(8);
+    expect(paintedAt(pair, w).gap).toBe(8);
+    for (const name of ["Share to X", "Share to Instagram"]) {
+      const box = screen.getByRole("button", { name });
+      expect(pad(box, w), name).toEqual(b.pad);
+      expect(paintedAt(box, w).radius, name).toBe(b.radius);
+      expect(type(box, w), name).toEqual(b.type);
+      expect(paintedAt(box, w).gap, name).toBe(b.gap);
+      const icon = box.querySelector("svg")!;
+      expect(placedAt(icon, w).h, name).toBe(b.icon);
+      expect(placedAt(icon, w).w, name).toBe(b.icon);
+      expect(b.pad[0] + Math.max(b.icon, b.type[1]) + b.pad[2]).toBe(b.height);
+      expect(classesOf(box), name).toEqual(expect.arrayContaining(["bg-green-coal-300", "ring-1", "ring-inset", "ring-sky-blue", "lg:ring-[1.5px]", "text-sky-blue", "flex-1"]));
+    }
+  });
+
+  it("labels the Discord button Join Skai on Discord and draws neither the claim line nor the Live share box", () => {
+    card(() => {});
+    expect(screen.getByRole("button", { name: "Join Skai on Discord" })).toBeInTheDocument();
+    expect(screen.queryByText(/Claim/)).toBeNull();
+    expect(screen.queryByRole("button", { name: /Share With Friends/ })).toBeNull();
+  });
+
+  it("hands each share button its own handler", () => {
+    const toX = vi.fn();
+    const toInstagram = vi.fn();
+    card(toInstagram, toX);
+    fireEvent.click(screen.getByRole("button", { name: "Share to X" }));
+    expect(toX).toHaveBeenCalledTimes(1);
+    expect(toInstagram).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", { name: "Share to Instagram" }));
+    expect(toInstagram).toHaveBeenCalledTimes(1);
+  });
+
+  it("without a way to share to Instagram draws that button disabled, its reason on hover and to screen readers only", () => {
+    card(undefined);
+    const button = screen.getByRole("button", { name: "Share to Instagram" });
+    expect(button).toBeDisabled();
+    const reason = document.getElementById(button.getAttribute("aria-describedby")!)!;
+    expect(reason.textContent).toMatch(/share menu/);
+    expect(classesOf(reason)).toContain("sr-only");
+    expect(button.parentElement).toHaveAttribute("title", reason.textContent!);
+  });
+
+  it("keeps the Live card when the stage is Live or left out", () => {
+    for (const stage of ["live", undefined] as const) {
+      const { unmount } = render(<ReferralCard referralLink="r" referralPoints={100} shareTweetPoints={50} launchStage={stage} onShareToInstagram={() => {}} />);
+      expect(screen.getByRole("button", { name: /Share With Friends/ })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /Join Skai Community/ })).toBeInTheDocument();
+      expect(screen.getByText("+50 SKAI points")).toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: "Share to Instagram" })).toBeNull();
+      unmount();
+    }
+  });
+});
+
+describe("BadgeCard on the pre-launch boards", () => {
+  it("sets Early adopter status under the name and draws no help icon", () => {
+    render(<BadgeCard badgeName="Pioneer badge" badgeSubtitle="Congrats, you're early to Skai." badgePoints={500} launchStage="pre-launch" />);
+    expect(screen.getByText("Early adopter status")).toBeInTheDocument();
+    expect(screen.queryByText("Congrats, you're early to Skai.")).toBeNull();
+    expect(screen.queryByRole("button", { name: "What is Skai?" })).toBeNull();
+  });
+
+  it("keeps the badge's own line and its coachmark on the Live board", () => {
+    render(<BadgeCard badgeName="Pioneer badge" badgeSubtitle="Congrats, you're early to Skai." badgePoints={500} launchStage="live" />);
+    expect(screen.getByText("Congrats, you're early to Skai.")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "What is Skai?" })).toBeInTheDocument();
+  });
+});
+
 describe("WelcomeCard", () => {
   const BOARD = {
     375: { pad: 8, radius: 20, inset: [8, 8, 0, 8], title: [20, 24, 300], sub: [12, 14, 400] },
