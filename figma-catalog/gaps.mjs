@@ -79,17 +79,20 @@ const ASKED_RE = /\b[A-Z][a-z]+\s+(?:asked|asks|said|says|wants|wanted|ruled|rep
 
 // References into the catalog's own process. A bare game word passes: a Crash
 // round, Round 1 of 3, a Plinko lane, lane 3, a wave animation, the Nonce field
-// of a fairness panel. The catalog's rounds, waves and lanes run to two digits
-// and more (round 57, wave 80, lane 12), and so do its issue and report numbers
-// (#77); a rank like #1 passes.
+// of a fairness panel. A wave with any number is the catalog's (wave 7, wave
+// 80), and so is a round with one unless it reads "round N of M"; the catalog's
+// lanes and its issue and report numbers run to two digits (lane 12, #77), so
+// lane 3 and a #1 rank pass.
 const PROCESS_RE = [
   /\bHQ\s?-?\s?\d/i,
   /\bHQ-/i,
-  /\b(?:round|wave|lane)s?\s*#?\d{2,}/i,
+  /\bwaves?\s*#?\d/i,
+  /\brounds?\s*#?\d+(?!\d)(?!\s*of\s+\d)/i,
+  /\blanes?\s*#?\d{2,}/i,
   /\b[wl]\d{2,3}\b/i,
   /\b[PQ]\d{2,3}\b/,
   /#\d{2,}/,
-  /\brulings?\b/i,
+  /\bruling/i,
   /\b(?:commits?|committed)\b/i,
 ];
 
@@ -452,6 +455,7 @@ function selfTest() {
     ["Hot contracts", "ui", "The Hot contracts list is missing."],
     ["contracts on perps", "ui", "The perps contracts are listed in a different order."],
     ["Round 1 of 3", "ui", "The Round 1 of 3 label shows a dash."],
+    ["Round 12 of 30", "ui", "The Round 12 of 30 counter is missing."],
     ["lane 3", "ui", "The ball in lane 3 lands short of the design."],
     ["a board size (1440/900)", "ui", "At 1440/900 the header is taller than the design."],
     ["an amount range (100-500 SKAI)", "ui", "The 100-500 SKAI bracket is missing."],
@@ -514,6 +518,12 @@ function selfTest() {
     ["a wave id", "ui", "Read in w83 only."],
     ["a lane id", "ui", "Read by L93 only."],
     ["a lane id, lower case", "ui", "Read by l149 only."],
+    ["a lane id, upper case", "ui", "Read by L149 only."],
+    ["a single-digit wave", "ui", "Closed in wave 7."],
+    ["a single-digit round", "ui", "Ruled in round 9."],
+    ["a round in the middle of a sentence", "ui", "The tab moved per round 4 of the review."],
+    ["a ruling with its number", "ui", "Kept by ruling 60."],
+    ["a ruling glued to its number", "ui", "Kept by ruling60."],
     ["a packet id", "ui", "As P067 recorded, the tab is missing."],
     ["a question id", "ui", "Kept by Q18 for now."],
     ["an issue number", "ui", "Tracked in #77 for now."],

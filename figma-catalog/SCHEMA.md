@@ -514,11 +514,12 @@ writing pass labelled 88 partial frames never compared with the board
   `Skaiscan`, `USD`, `USDC`, `BTC`, `ETH`, `MoonPay`, `DexScreener`, `CoinGecko`,
   `SkaiPay`, `OpenSea`, `TikTok`, `iPhone`, ...). The game names need no entry:
   none has a capital inside a word;
-- a reference into the catalog's process: `HQ-` or `HQ` with a number, `round`,
-  `wave` or `lane` followed by a number of two digits or more, a `w80` or `L93` id
-  in either case, `P067` or `Q18`, an issue or report number of two digits or
-  more (`#77`), `ruling`, `commit`. A game word passes: a Crash round, Round 1 of
-  3, Rounds played, Plinko lanes, lane 3, a wave animation, a Nonce field, a #1
+- a reference into the catalog's process: `HQ-` or `HQ` with a number, `wave`
+  with any number, `round` with a number unless it reads "round N of M", `lane`
+  with a number of two digits or more, a `w80` or `L149` id in either case,
+  `P067` or `Q18`, an issue or report number of two digits or more (`#77`),
+  `ruling` in any form, `commit`. A game word passes: a Crash round, Round 1 of 3,
+  Rounds played, Plinko lanes, lane 3, a wave animation, a Nonce field, a #1
   rank;
 - on any kind but `backend`, a backend part by name: relay, keeper, edge
   function, RLS, hot key, endpoint, contract address, smart contract, RPC,
