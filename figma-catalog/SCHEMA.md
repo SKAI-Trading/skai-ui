@@ -498,23 +498,31 @@ writing pass labelled 88 partial frames never compared with the board
   a `/` followed by a file extension, or a code file name (`.ts`, `.tsx`, `.mjs`,
   `.json`, `.sql`, `.go`, `.sol`, `.svg`, `.yaml` and the rest of the list);
 - a link or an address (`http://`, `www.`, `figma.com`, `name@host`);
-- a hex run: `0x` and six or more hex digits, or seven or more hex digits anywhere,
-  glued to a word or not, that mix digits and letters (so `sha3423cec` is refused,
-  and "defaced", "feedback" and the figure 1000000 pass);
-- a node id: three or more digits, a colon, dash, en dash or slash (spaces
-  allowed), digits. ISO dates are set aside first. `pays 3:2`, `16:9`, `35:1`,
-  `0:30`, `1-10` and a score of `2-1` pass;
+- a hex run: `0x` and three or more hex digits, so an address cut short
+  (`0x5B41...0002`) counts, while the `0x184` inside a size like `130x184` does
+  not; or seven or more hex digits anywhere, glued to a word or not, that mix
+  digits and letters (so `sha3423cec` is refused, and "defaced", "feedback" and
+  the figure 1000000 pass);
+- a node id: an optional `I` (an instance id), four or more digits (every node
+  id in the three files starts at 2005 or above), a colon, dash or en dash
+  (spaces allowed), digits; or four or more digits on both sides of a slash. ISO
+  dates are set aside first. `pays 3:2`, `16:9`, `35:1`, `0:30`, `1-10`, a score
+  of `2-1`, `100-500 SKAI` and the board size `1440/900` pass;
 - a code identifier: a word with a lower-case letter right before a capital
   (`MinesBetPanel`, `useBetCurrency`) or a `snake_case` word, unless it is on the
   allow-list of names the app prints (`sUSD`, `PnL`, `DeFi`, `TVL`, `NFT`,
-  `Skaiscan`, `USD`, `USDC`, `BTC`, `ETH`, `MoonPay`, ...). The game names need no
-  entry: none has a capital inside a word;
+  `Skaiscan`, `USD`, `USDC`, `BTC`, `ETH`, `MoonPay`, `DexScreener`, `CoinGecko`,
+  `SkaiPay`, `OpenSea`, `TikTok`, `iPhone`, ...). The game names need no entry:
+  none has a capital inside a word;
 - a reference into the catalog's process: `HQ-` or `HQ` with a number, `round`,
-  `wave` or `lane` followed by a number, a `w80` or `L93` id in either case,
-  `P067` or `Q18`, `#77`, `ruling`, `commit`. A bare game word passes: a Crash
-  round, Rounds played, Plinko lanes, a wave animation, a Nonce field;
+  `wave` or `lane` followed by a number of two digits or more, a `w80` or `L93` id
+  in either case, `P067` or `Q18`, an issue or report number of two digits or
+  more (`#77`), `ruling`, `commit`. A game word passes: a Crash round, Round 1 of
+  3, Rounds played, Plinko lanes, lane 3, a wave animation, a Nonce field, a #1
+  rank;
 - on any kind but `backend`, a backend part by name: relay, keeper, edge
-  function, RLS, hot key, endpoint, contract, RPC, indexer, cron;
+  function, RLS, hot key, endpoint, contract address, smart contract, RPC,
+  indexer, cron. "Contract" alone is a perps word (Hot contracts) and passes;
 - a name from the team list, or a capitalised name followed by asked, said,
   wants, ruled, reported and the like.
 

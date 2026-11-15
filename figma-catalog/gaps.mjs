@@ -69,7 +69,8 @@ export const NAMES = ["Casey", "Adam", "Ty", "Miami"];
  */
 export const ALLOWED_MIXED_CASE = [
   "sUSD", "SKAI", "PnL", "DeFi", "TVL", "NFT", "NFTs", "Skaiscan", "USD", "USDC", "USDT", "BTC", "ETH",
-  "MoonPay", "TradingView", "WalletConnect", "MetaMask", "YouTube", "iOS",
+  "MoonPay", "TradingView", "WalletConnect", "MetaMask", "YouTube", "TikTok", "iOS", "iPhone",
+  "DexScreener", "CoinGecko", "OpenSea", "SkaiPay",
 ];
 
 const NAME_RE = new RegExp(`\\b(?:${NAMES.join("|")})\\b`, "i");
@@ -77,21 +78,26 @@ const NAME_RE = new RegExp(`\\b(?:${NAMES.join("|")})\\b`, "i");
 const ASKED_RE = /\b[A-Z][a-z]+\s+(?:asked|asks|said|says|wants|wanted|ruled|reported|requested|prefers|flagged)\b/;
 
 // References into the catalog's own process. A bare game word passes: a Crash
-// round, a Plinko lane, a wave animation, the Nonce field of a fairness panel.
+// round, Round 1 of 3, a Plinko lane, lane 3, a wave animation, the Nonce field
+// of a fairness panel. The catalog's rounds, waves and lanes run to two digits
+// and more (round 57, wave 80, lane 12), and so do its issue and report numbers
+// (#77); a rank like #1 passes.
 const PROCESS_RE = [
   /\bHQ\s?-?\s?\d/i,
   /\bHQ-/i,
-  /\b(?:round|wave|lane)s?\s*#?\d+/i,
+  /\b(?:round|wave|lane)s?\s*#?\d{2,}/i,
   /\b[wl]\d{2,3}\b/i,
   /\b[PQ]\d{2,3}\b/,
-  /#\d+/,
+  /#\d{2,}/,
   /\brulings?\b/i,
   /\b(?:commits?|committed)\b/i,
 ];
 
-// Backend parts by name. A frame blocked on them reads BACKEND_LINE and nothing more.
+// Backend parts by name. A frame blocked on them reads BACKEND_LINE and nothing
+// more. "Contract" alone is a perps word (Hot contracts), so only a contract
+// address or a smart contract counts.
 const BACKEND_RE =
-  /\b(?:relays?|keepers?|edge\s+functions?|RLS|hot\s+keys?|endpoints?|contracts?|RPCs?|indexers?|cron(?:\s+jobs?)?)\b/i;
+  /\b(?:relays?|keepers?|edge\s+functions?|RLS|hot\s+keys?|endpoints?|contract\s+address(?:es)?|smart\s+contracts?|RPCs?|indexers?|cron(?:\s+jobs?)?)\b/i;
 
 const CODE_FILE = /\b[\w-]+\.(?:tsx?|jsx?|mjs|cjs|json|tsv|md|css|scss|html|sql|ps1|sh|py|go|rs|sol|svg|ya?ml|toml)\b/i;
 
@@ -99,13 +105,19 @@ const CODE_FILE = /\b[\w-]+\.(?:tsx?|jsx?|mjs|cjs|json|tsv|md|css|scss|html|sql|
 // Written as code points so no raw invisible character sits in this source.
 const cp = (code) => String.fromCharCode(code);
 const INVISIBLE = new RegExp(`[${cp(0xad)}${cp(0x200b)}-${cp(0x200f)}${cp(0x202a)}-${cp(0x202e)}${cp(0x2060)}-${cp(0x2064)}${cp(0xfeff)}]`);
-// Hyphen to horizontal bar (U+2010..U+2015) besides the ASCII dash.
-const NODE_ID_RE = new RegExp(`\\b\\d{3,}\\s?[:\\-${cp(0x2010)}-${cp(0x2015)}/]\\s?\\d+\\b`);
+// Every node id in the three files opens with four or more digits (2005 is the
+// lowest), and an instance id carries an I before them (I9825:21726). A colon,
+// a dash or one of the dashes from hyphen to horizontal bar (U+2010..U+2015)
+// joins the two halves, so an amount range like 100-500 passes. Joined by a
+// slash, both halves need four digits, so a board size like 1440/900 passes.
+const NODE_ID_RE = new RegExp(`\\bI?\\d{4,}\\s?[:\\-${cp(0x2010)}-${cp(0x2015)}]\\s?\\d+\\b`);
+const NODE_ID_SLASH_RE = /\bI?\d{4,}\s?\/\s?\d{4,}\b/;
 
 /** Hex runs a line must not hold: 0x anything, or 7+ hex digits mixing digits and letters. */
 function holdsHex(s) {
-  // An address or a hash written 0x..., not the "0x184" inside a size like 130x184.
-  if (/\b0x[0-9a-f]{6,}/i.test(s)) return true;
+  // An address or a hash written 0x..., cut short (0x5B41...0002) or not, but
+  // not the "0x184" inside a size like 130x184.
+  if (/\b0x[0-9a-f]{3,}/i.test(s)) return true;
   // Maximal runs, wherever they sit: glued to a word (sha3423cec) or an
   // underscore (3423cec_final) still counts. A run needs a digit and a letter,
   // so "defaced", "feedback" and the figure 1000000 pass.
@@ -113,9 +125,10 @@ function holdsHex(s) {
   return false;
 }
 
-/** Node ids in any of the shapes a note writes them, dates aside: 9825-21726, 9825:21726, 9825/21726, or with an en dash. */
+/** Node ids in any of the shapes a note writes them, dates aside: 9825-21726, 9825:21726, 9825/21726, I9825:21726, or with an en dash. */
 function holdsNodeId(s) {
-  return NODE_ID_RE.test(s.replace(/\b\d{4}-\d{2}-\d{2}\b/g, " "));
+  const undated = s.replace(/\b\d{4}-\d{2}-\d{2}\b/g, " ");
+  return NODE_ID_RE.test(undated) || NODE_ID_SLASH_RE.test(undated);
 }
 
 /** A word with a lower-case letter right before a capital, or a snake_case word, that the allow-list does not hold. */
@@ -145,10 +158,10 @@ export function lineProblems(kind, gap) {
   }
   if (/https?:\/\/|\bwww\.|figma\.com|[\w.+-]+@[\w-]+\.[a-z]/i.test(s)) out.push("it holds a link or an address");
   if (holdsHex(s)) out.push("it holds a hex run (0x, or 7 or more hex digits mixing digits and letters)");
-  if (holdsNodeId(s)) out.push("it holds a node id (3 or more digits, a colon, dash or slash, digits)");
+  if (holdsNodeId(s)) out.push("it holds a node id (an optional I, 4 or more digits, a colon or dash, digits; or 4+ digits on both sides of a slash)");
   if (holdsIdentifier(s)) out.push("it holds a code identifier (camelCase, PascalCase or snake_case)");
   if (PROCESS_RE.some((re) => re.test(s))) out.push("it refers into the catalog's process (HQ-, round 12, wave 80, w80, L93, P067, Q18, #77, ruling, commit)");
-  if (kind !== "backend" && BACKEND_RE.test(s)) out.push("it names a backend part (relay, keeper, edge function, RLS, hot key, endpoint, contract, RPC, indexer, cron)");
+  if (kind !== "backend" && BACKEND_RE.test(s)) out.push("it names a backend part (relay, keeper, edge function, RLS, hot key, endpoint, contract address, smart contract, RPC, indexer, cron)");
   if (NAME_RE.test(s) || ASKED_RE.test(s)) out.push("it names a person");
   return out;
 }
@@ -433,6 +446,15 @@ function selfTest() {
     ["a size whose digits read 0x (130x184)", "ui", "The tiles are drawn 195x277 against 130x184."],
     ["one part waiting on backend work, inside a ui line", "ui", "The chart counts only your newest 10,000 trades; older history is waiting on backend work."],
     ["names the app prints (sUSD, PnL, DeFi, MoonPay)", "ui", "The sUSD balance, Closed PnL and DeFi tabs differ, and MoonPay is not offered."],
+    ["market and product names (DexScreener, CoinGecko, SkaiPay, OpenSea)", "ui", "The DexScreener, CoinGecko, SkaiPay and OpenSea links are missing."],
+    ["TikTok and iPhone", "ui", "The TikTok share and the iPhone install banner are missing."],
+    ["a rank (#1)", "ui", "The #1 trader's badge is missing."],
+    ["Hot contracts", "ui", "The Hot contracts list is missing."],
+    ["contracts on perps", "ui", "The perps contracts are listed in a different order."],
+    ["Round 1 of 3", "ui", "The Round 1 of 3 label shows a dash."],
+    ["lane 3", "ui", "The ball in lane 3 lands short of the design."],
+    ["a board size (1440/900)", "ui", "At 1440/900 the header is taller than the design."],
+    ["an amount range (100-500 SKAI)", "ui", "The 100-500 SKAI bracket is missing."],
   ];
   for (const [what, kind, gap] of honest) t(`passes ${what}`, plain(kind, gap), `${JSON.stringify(gap)}: ${lineProblems(kind, gap).join("; ")}`);
   // "Ab " repeated: no hex run, so only the length rule can decide these two.
@@ -466,6 +488,9 @@ function selfTest() {
     ["a contract address", "ui", "Deposits go to 0x5B41000000000000000000000000000000000002 and fail."],
     ["a tx hash written 0x", "ui", "The claim tx 0x9f3c2a7be41d reverted."],
     ["a 0x run of letters alone", "ui", "Sent to 0xdeadbeef and lost."],
+    ["an address cut short with an ellipsis", "ui", `Deposits go to 0x5B41${cp(0x2026)}0002 and fail.`],
+    ["an address cut short, lower case", "ui", `The pool owner 0xe2bd${cp(0x2026)}1ef7 holds it.`],
+    ["an address cut short with three dots", "ui", "Sent from 0x39a4...4efa and lost."],
     ["a short commit hash", "ui", "Fixed on main in 3423cec but the tab is missing."],
     ["a hash glued to a word", "ui", "Fixed by sha3423cec on main."],
     ["a hash before an underscore", "ui", "See build 3423cec_final."],
@@ -477,6 +502,7 @@ function selfTest() {
     ["a node id with an en dash", "ui", `The Auto ladder of 9825${cp(0x2013)}21726 is missing.`],
     ["a node id with a slash", "ui", "Matches 9825/21726 except the tab."],
     ["a node id spaced", "ui", "Matches 9825 : 21726 except the tab."],
+    ["an instance node id", "ui", "Matches I9825:21726 except the tab."],
     ["HQ-", "ui", "Tracked as HQ-26."],
     ["HQ without a dash", "ui", "Tracked as HQ26."],
     ["HQ- with no number", "ui", "Filed on the HQ-board."],
@@ -497,7 +523,8 @@ function selfTest() {
     ["the hot key", "ui", "The hot key owns the pool, so deposits are held."],
     ["an edge function and RLS", "ui", "Top holders waits on the holder index edge function and RLS."],
     ["an endpoint", "ui", "The table waits on the history endpoint."],
-    ["a contract", "ui", "The vault contract is not live."],
+    ["a contract address", "ui", "The vault contract address is not shown."],
+    ["a smart contract", "ui", "The smart contract is not live."],
     ["an RPC", "ui", "The chart reads from the RPC instead."],
     ["an indexer", "ui", "Top holders waits on the indexer."],
     ["a cron", "ui", "The board refreshes on a cron."],
