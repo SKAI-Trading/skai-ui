@@ -87,7 +87,9 @@ const PROCESS_RE = [
   /\bHQ\s?-?\s?\d/i,
   /\bHQ-/i,
   /\bwaves?\s*#?\d/i,
-  /\brounds?\s*#?\d+(?!\d)(?!\s*of\s+\d)/i,
+  // "of M" exempts a round only for an M of one or two digits standing alone:
+  // the notes cite rulings as "round 27 of 2026-10-27".
+  /\brounds?\s*#?\d+(?!\d)(?!\s*of\s+\d{1,2}(?![\d-]))/i,
   /\blanes?\s*#?\d{2,}/i,
   /\b[wl]\d{2,3}\b/i,
   /\b[PQ]\d{2,3}\b/,
@@ -113,8 +115,11 @@ const INVISIBLE = new RegExp(`[${cp(0xad)}${cp(0x200b)}-${cp(0x200f)}${cp(0x202a
 // a dash or one of the dashes from hyphen to horizontal bar (U+2010..U+2015)
 // joins the two halves, so an amount range like 100-500 passes. Joined by a
 // slash, both halves need four digits, so a board size like 1440/900 passes.
-const NODE_ID_RE = new RegExp(`\\bI?\\d{4,}\\s?[:\\-${cp(0x2010)}-${cp(0x2015)}]\\s?\\d+\\b`);
-const NODE_ID_SLASH_RE = /\bI?\d{4,}\s?\/\s?\d{4,}\b/;
+// A sub-node id can open with three digits (976:357); joined by a colon with
+// three or more digits on both sides it counts, while 3:2, 35:1 and 0:30 do not.
+const NODE_ID_RE = new RegExp(`\\b[Ii]?\\d{4,}\\s?[:\\-${cp(0x2010)}-${cp(0x2015)}]\\s?\\d+\\b`);
+const NODE_ID_SLASH_RE = /\b[Ii]?\d{4,}\s?\/\s?\d{4,}\b/;
+const NODE_ID_COLON_RE = /\b[Ii]?\d{3,}\s?:\s?\d{3,}\b/;
 
 /** Hex runs a line must not hold: 0x anything, or 7+ hex digits mixing digits and letters. */
 function holdsHex(s) {
@@ -130,8 +135,9 @@ function holdsHex(s) {
 
 /** Node ids in any of the shapes a note writes them, dates aside: 9825-21726, 9825:21726, 9825/21726, I9825:21726, or with an en dash. */
 function holdsNodeId(s) {
-  const undated = s.replace(/\b\d{4}-\d{2}-\d{2}\b/g, " ");
-  return NODE_ID_RE.test(undated) || NODE_ID_SLASH_RE.test(undated);
+  // Dates and year ranges (2024-2026: two years from 19xx or 20xx) are set aside first.
+  const undated = s.replace(/\b\d{4}-\d{2}-\d{2}\b/g, " ").replace(/\b(?:19|20)\d{2}-(?:19|20)\d{2}\b/g, " ");
+  return NODE_ID_RE.test(undated) || NODE_ID_SLASH_RE.test(undated) || NODE_ID_COLON_RE.test(undated);
 }
 
 /** A word with a lower-case letter right before a capital, or a snake_case word, that the allow-list does not hold. */
@@ -456,6 +462,8 @@ function selfTest() {
     ["contracts on perps", "ui", "The perps contracts are listed in a different order."],
     ["Round 1 of 3", "ui", "The Round 1 of 3 label shows a dash."],
     ["Round 12 of 30", "ui", "The Round 12 of 30 counter is missing."],
+    ["a year range", "ui", "The 2024-2026 season table is missing."],
+    ["long odds (100:1)", "ui", "The odds read 100:1 where the design shows 101x."],
     ["lane 3", "ui", "The ball in lane 3 lands short of the design."],
     ["a board size (1440/900)", "ui", "At 1440/900 the header is taller than the design."],
     ["an amount range (100-500 SKAI)", "ui", "The 100-500 SKAI bracket is missing."],
@@ -507,6 +515,12 @@ function selfTest() {
     ["a node id with a slash", "ui", "Matches 9825/21726 except the tab."],
     ["a node id spaced", "ui", "Matches 9825 : 21726 except the tab."],
     ["an instance node id", "ui", "Matches I9825:21726 except the tab."],
+    ["an instance node id, lower case", "ui", "Matches i6711:32702 except the tab."],
+    ["an instance node id, lower case, with a dash", "ui", "Matches i6711-32702 except the tab."],
+    ["an instance sub-node id, lower case", "ui", "Matches i976:357 except the tab."],
+    ["a sub-node id of three digits", "ui", "Matches 976:357 except the tab."],
+    ["another sub-node id", "ui", "The strip of 974:301 is missing."],
+    ["a node id of four digits each side, not a year range", "ui", "Matches 9825-2172 except the tab."],
     ["HQ-", "ui", "Tracked as HQ-26."],
     ["HQ without a dash", "ui", "Tracked as HQ26."],
     ["HQ- with no number", "ui", "Filed on the HQ-board."],
@@ -522,6 +536,8 @@ function selfTest() {
     ["a single-digit wave", "ui", "Closed in wave 7."],
     ["a single-digit round", "ui", "Ruled in round 9."],
     ["a round in the middle of a sentence", "ui", "The tab moved per round 4 of the review."],
+    ["a round cited with its date", "ui", "Kept since round 27 of 2026-10-27."],
+    ["a round cited with a month and day", "ui", "Kept since round 27 of 10-27."],
     ["a ruling with its number", "ui", "Kept by ruling 60."],
     ["a ruling glued to its number", "ui", "Kept by ruling60."],
     ["a packet id", "ui", "As P067 recorded, the tab is missing."],

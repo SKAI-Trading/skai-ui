@@ -503,11 +503,13 @@ writing pass labelled 88 partial frames never compared with the board
   not; or seven or more hex digits anywhere, glued to a word or not, that mix
   digits and letters (so `sha3423cec` is refused, and "defaced", "feedback" and
   the figure 1000000 pass);
-- a node id: an optional `I` (an instance id), four or more digits (every node
-  id in the three files starts at 2005 or above), a colon, dash or en dash
-  (spaces allowed), digits; or four or more digits on both sides of a slash. ISO
-  dates are set aside first. `pays 3:2`, `16:9`, `35:1`, `0:30`, `1-10`, a score
-  of `2-1`, `100-500 SKAI` and the board size `1440/900` pass;
+- a node id: an optional `I` or `i` (an instance id), four or more digits
+  (every node id in the three files starts at 2005 or above), a colon, dash or
+  en dash (spaces allowed), digits; four or more digits on both sides of a
+  slash; or three or more digits on both sides of a colon (a sub-node id like
+  `976:357`). ISO dates and year ranges (`2024-2026`, two years from 19xx or
+  20xx) are set aside first. `pays 3:2`, `16:9`, `35:1`, `100:1`, `0:30`,
+  `1-10`, a score of `2-1`, `100-500 SKAI` and the board size `1440/900` pass;
 - a code identifier: a word with a lower-case letter right before a capital
   (`MinesBetPanel`, `useBetCurrency`) or a `snake_case` word, unless it is on the
   allow-list of names the app prints (`sUSD`, `PnL`, `DeFi`, `TVL`, `NFT`,
@@ -515,7 +517,8 @@ writing pass labelled 88 partial frames never compared with the board
   `SkaiPay`, `OpenSea`, `TikTok`, `iPhone`, ...). The game names need no entry:
   none has a capital inside a word;
 - a reference into the catalog's process: `HQ-` or `HQ` with a number, `wave`
-  with any number, `round` with a number unless it reads "round N of M", `lane`
+  with any number, `round` with a number unless it reads "round N of M" with an M
+  of one or two digits standing alone (so "round 27 of 2026-10-27" counts), `lane`
   with a number of two digits or more, a `w80` or `L149` id in either case,
   `P067` or `Q18`, an issue or report number of two digits or more (`#77`),
   `ruling` in any form, `commit`. A game word passes: a Crash round, Round 1 of 3,
