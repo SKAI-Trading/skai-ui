@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-13T06:09:18.286Z",
+  "generated": "2026-11-16T06:07:20.430Z",
   "harvestedAt": "2026-11-11",
   "rollup": {
     "pages": 39,
@@ -19,10 +19,10 @@
     "frameDefectsOut": 301,
     "genuineWithFrameDefects": 3658,
     "frameDefectUncited": [],
-    "matched": 3330,
-    "done": 2075,
-    "verified": 1693,
-    "visuallyDowngraded": 16,
+    "matched": 3331,
+    "done": 1965,
+    "verified": 1696,
+    "visuallyDowngraded": 126,
     "visualUnmapped": [],
     "visualRetired": [
       {
@@ -43,13 +43,13 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 712,
+    "partial": 823,
     "notStarted": 34,
     "blocked": 504,
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
-    "liveOnly": 27,
+    "liveOnly": 26,
     "rollupOnly": 7,
     "defaultNamed": 155,
     "ambiguous": 105,
@@ -62,10 +62,10 @@
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 25359,
+    "total": 25360,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 980,
-    "unrecognisedTokens": 81131
+    "unrecognisedTokens": 81133
   },
   "statusFiles": [
     {
@@ -2095,6 +2095,12 @@
       "rows": 123,
       "withLiveId": 123,
       "ids": 132
+    },
+    {
+      "file": "status.wave3f.wallet2.tsv",
+      "rows": 1,
+      "withLiveId": 1,
+      "ids": 1
     },
     {
       "file": "status.wave4.games-radius.tsv",
@@ -8297,7 +8303,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "live": 1,
       "furniture": 0,
       "furnitureWhy": {},
@@ -8327,7 +8333,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 280,
@@ -8440,7 +8446,7 @@
       "n": 178,
       "openReports": 42,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 178,
       "furniture": 11,
@@ -8491,7 +8497,7 @@
       "n": 191,
       "openReports": 25,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "live": 191,
       "furniture": 23,
       "furnitureWhy": {
@@ -8517,26 +8523,19 @@
         "13008-55685"
       ],
       "genuine": 156,
-      "matched": 155,
+      "matched": 156,
       "rollupOnly": 0,
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 32,
-      "visuallyDowngraded": 0,
+      "verified": 35,
+      "visuallyDowngraded": 110,
       "byStatus": {
-        "done": 145,
+        "partial": 111,
+        "done": 35,
         "blocked-on-backend": 10
       },
-      "liveOnly": [
-        {
-          "id": "15695-62179",
-          "name": "Skai > Wallet > continue on web > home > spending 1VH (375 x 812px)",
-          "type": "FRAME",
-          "w": 375,
-          "h": 812
-        }
-      ]
+      "liveOnly": []
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -8546,7 +8545,7 @@
       "n": 441,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md.",
       "live": 441,
       "furniture": 60,
@@ -8706,7 +8705,7 @@
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 420,
@@ -10215,7 +10214,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it.",
       "live": 1,
       "furniture": 0,
@@ -33451,49 +33450,49 @@
       "id": "13008-26985",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-27159",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-27250",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-27341",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-27515",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-27689",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-27781",
@@ -33501,23 +33500,23 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "13008-27879",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-27989",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-28216",
@@ -33547,9 +33546,9 @@
       "id": "13008-28694",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-28765",
@@ -33611,25 +33610,25 @@
       "id": "13008-29589",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-29693",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-29837",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-30018",
@@ -33643,17 +33642,17 @@
       "id": "13008-30834",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-31653",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-32486",
@@ -33691,81 +33690,81 @@
       "id": "13008-35350",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-36166",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-36367",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-36562",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-36677",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-36789",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-36913",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-36985",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-37111",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-37287",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "15381-62967",
@@ -33811,25 +33810,25 @@
       "id": "13008-37430",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-37523",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-37621",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "15382-180505",
@@ -33843,17 +33842,17 @@
       "id": "13008-37719",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-37778",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-37821",
@@ -33875,9 +33874,9 @@
       "id": "13008-37942",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-38053",
@@ -33891,73 +33890,73 @@
       "id": "13008-38161",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-38248",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-38381",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-38514",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-38622",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-38846",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-38964",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-39066",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-39188",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-39237",
@@ -33979,17 +33978,17 @@
       "id": "13008-39537",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-39596",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-39705",
@@ -33997,87 +33996,87 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "13008-39805",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-39901",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-39950",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-40163",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-40253",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-40363",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-40459",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-40580",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-40655",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-40776",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-40894",
@@ -34091,9 +34090,9 @@
       "id": "13008-41058",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-41128",
@@ -34107,9 +34106,9 @@
       "id": "13008-41149",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-41206",
@@ -34123,65 +34122,65 @@
       "id": "13008-41316",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-41418",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-41510",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-41606",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-41655",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-41886",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-42013",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-42103",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-42213",
@@ -34195,25 +34194,25 @@
       "id": "13008-42309",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-42427",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-42502",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-42620",
@@ -34227,9 +34226,9 @@
       "id": "13008-42806",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-43020",
@@ -34243,33 +34242,33 @@
       "id": "13008-43059",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-43139",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-43223",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-43295",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-43468",
@@ -34283,9 +34282,9 @@
       "id": "13008-43688",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-43905",
@@ -34307,25 +34306,25 @@
       "id": "13008-44120",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-44200",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-44284",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-44305",
@@ -34333,79 +34332,79 @@
       "scope": "in-scope",
       "status": "done",
       "claimed": "done",
-      "verdict": null
+      "verdict": "match"
     },
     {
       "id": "13008-44377",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-44538",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-44719",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-44835",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-45006",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-45196",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-45303",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-45389",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-45470",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-45556",
@@ -34419,9 +34418,9 @@
       "id": "13008-47971",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-48792",
@@ -34443,121 +34442,129 @@
       "id": "13008-49184",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-49276",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-49375",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-49487",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-49582",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-49696",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-49869",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-50167",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-50331",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-50631",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-50806",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
+    },
+    {
+      "id": "15695-62179",
+      "page": "✅ Wallet 2",
+      "scope": "in-scope",
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "13008-50999",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-51102",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-51185",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-51266",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-51352",
@@ -34595,97 +34602,97 @@
       "id": "13008-54086",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54216",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54309",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54402",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54502",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54602",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54715",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54783",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54898",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-55063",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-55360",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-55521",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "done",
+      "status": "partial",
       "claimed": "done",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "7710-91527",

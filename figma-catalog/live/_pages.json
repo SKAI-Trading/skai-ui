@@ -305,12 +305,12 @@
       "n": 1,
       "openReports": 0,
       "scope": "meta",
-      "harvestedAt": "2026-11-11"
+      "harvestedAt": "2026-11-15"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "2003:674",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "pageName": "✅ Home 1",
       "readiness": "ready",
       "n": 280,
@@ -338,7 +338,7 @@
       "n": 178,
       "openReports": 42,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
@@ -349,7 +349,7 @@
       "n": 191,
       "openReports": 25,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-11"
+      "harvestedAt": "2026-11-15"
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
@@ -359,13 +359,13 @@
       "n": 441,
       "openReports": 64,
       "scope": "in-scope",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "note": "Scope in-scope, ruled 2026-09-09 (Casey: the Figma design is how the system is meant to be). Was v1-superseded, a label that described a FILE duplication (3sSz -> mhF3), not a retirement: casey-rulings-2026-08-26-parity s4 says Home 1 IS the moved page and 191 surfaces / 490 frames on these three pages have no v2 counterpart (Portfolio: Home 1 50, Home 2 0; Perps: Trade 1 78, Trade 2 0). Home 2 / Wallet 2 / Trade 2 are continuation pages that share ZERO top-level ids with these, so nothing here is superseded. 33 reports closed on the old label were reopened 2026-09-08. See _pages.SCOPE-WARNING.md."
     },
     {
       "fileKey": "mhF3BkzlTaGiLzJ7kvpmVc",
       "pageId": "13006:134300",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "pageName": "✅ Trade 2",
       "readiness": "ready",
       "n": 420,
@@ -721,7 +721,7 @@
       "n": 1,
       "openReports": 0,
       "scope": "wip",
-      "harvestedAt": "2026-11-11",
+      "harvestedAt": "2026-11-15",
       "note": "Added by harvest.mjs ingest 2026-10-11. Scope is PROVISIONAL until ruled on; coverage.mjs reports it and does not count it."
     }
   ]
