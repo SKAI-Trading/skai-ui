@@ -254,10 +254,17 @@
 16135:26440	Skai > Home > Notification pop-up > show all notifications 1VH (768 x 1024px)	FRAME	768	1024	1
 16137:102748	Ask Skai - typing - tablet	FRAME	468	614	1
 16058:164251	Skai > Home > Notification pop-up 1VH (375 x 812px)	FRAME	375	812	1
-16137:102267	Skai > Home > AI pop-up 1VH (375 x 812px)	FRAME	375	812	1
+16137:102267	Skai > Home > AI pop-up ALT 1VH (375 x 812px)	FRAME	375	812	1
+16327:202234	Skai > Home > AI pop-up 1VH (375 x 812px)	FRAME	375	812	1
+16332:203659	Skai > Home > AI pop-up 1VH (375 x 812px)	FRAME	375	812	1
+16326:194586	Skai > Trade > Spot 1VH with AI pop-up 1VH (375 x 812px)	FRAME	375	812	1
+16326:198902	Skai > Trade > Spot 1VH with AI pop-up 2 1VH (375 x 812px)	FRAME	375	812	1
+16326:200191	Skai > Trade > Spot 1VH with AI pop-up 3 1VH (375 x 812px)	FRAME	375	812	1
 16137:102919	Ask Skai - typing - mobile	FRAME	358	594	1
 16059:167047	Skai > Home > Notification pop-up > show all notifications 1VH (375 x 812px)	FRAME	375	812	1
 16058:165436	Notes	WIDGET	342	255	1
 16106:168730	Ask Skai - typing	FRAME	432	664	1
 16136:101296	Notes	WIDGET	342	313	1
 16183:103104	Notes	WIDGET	342	369	1
+16326:201480	Notes	WIDGET	342	388	1
+16332:208455	AI assistant toggle show/hide	SECTION	957	1885	1

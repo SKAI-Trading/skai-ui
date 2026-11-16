@@ -1,1 +1,9 @@
 section	nodeId	change	title	why	implFiles
+home-2	16327-202234	ADDED	Skai > Home > AI pop-up 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	16332-203659	ADDED	Skai > Home > AI pop-up 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	16326-194586	ADDED	Skai > Trade > Spot 1VH with AI pop-up 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	16326-198902	ADDED	Skai > Trade > Spot 1VH with AI pop-up 2 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	16326-200191	ADDED	Skai > Trade > Spot 1VH with AI pop-up 3 1VH (375 x 812px)	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	16326-201480	ADDED	Notes	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	16332-208455	ADDED	AI assistant toggle show/hide	New frame in Figma with no catalog row -- needs implementation or an explicit out-of-scope note	
+home-2	16137-102267	RETITLED	Skai > Home > AI pop-up ALT 1VH (375 x 812px)	was: Skai > Home > AI pop-up 1VH (375 x 812px)	src/components/dashboard/AICopilotBubble.tsx
