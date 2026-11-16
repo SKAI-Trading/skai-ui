@@ -55,7 +55,7 @@ describe("the badge card's row at 1440 (2422:3968, report a4444746)", () => {
     renderCard();
     const reward = screen.getByTestId("badge-card-reward");
     expect(classesOf(reward)).toEqual(expect.arrayContaining(["md:flex-row", "md:flex-wrap"]));
-    expect(reward).toHaveTextContent("+500 SKAI Points");
+    expect(reward).toHaveTextContent("+500 SKAI points");
     // The text column may shrink below its widest child, so the wrap can happen.
     expect(classesOf(reward.parentElement!)).toContain("min-w-0");
   });

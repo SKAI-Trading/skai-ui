@@ -110,3 +110,43 @@ export function paintedAt(el: Element, width: number): Painted {
   for (const layer of layers) for (const u of [...layer].sort((a, b) => order(a) - order(b))) apply(u, out);
   return out;
 }
+
+export interface Placed {
+  mt?: number;
+  w?: number;
+  h?: number;
+  left?: number;
+  bottom?: number;
+  opacity?: number;
+  blur?: number;
+}
+
+/**
+ * Where an element's classes put it at `width`: top margin, size, left and bottom offsets,
+ * opacity and blur, from spacing keys or arbitrary px (and arbitrary opacity) values. Like
+ * paintedAt, only the md and lg variants apply, md before lg.
+ */
+export function placedAt(el: Element, width: number): Placed {
+  const out: Placed = {};
+  const layers: string[][] = [[], [], []];
+  for (const c of (el.getAttribute("class") ?? "").split(/\s+/).filter(Boolean)) {
+    const m = c.match(/^(?:(md|lg):)?([^:]+)$/);
+    if (!m) continue;
+    const layer = m[1] === "md" ? 1 : m[1] === "lg" ? 2 : 0;
+    if (layer > 0 && width < SCREENS[m[1]]) continue;
+    layers[layer].push(m[2]);
+  }
+  for (const layer of layers) {
+    for (const u of layer) {
+      const op = u.match(/^opacity-\[([\d.]+)\]$/);
+      if (op) { out.opacity = Number(op[1]); continue; }
+      const blur = u.match(/^blur-\[([\d.]+)px\]$/);
+      if (blur) { out.blur = Number(blur[1]); continue; }
+      const m = u.match(/^(mt|w|h|left|bottom)-(.+)$/);
+      if (!m) continue;
+      const v = scaled(theme.spacing, m[2]);
+      if (v !== undefined) out[m[1] as keyof Placed] = v;
+    }
+  }
+  return out;
+}

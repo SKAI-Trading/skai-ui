@@ -328,13 +328,15 @@ export const content = {
         welcome: "Welcome, {{username}}!",
         welcomeFallback: "Welcome, ...!",
         checkEmail: "Check email for launch updates.",
+        checkEmailAt: "Check email ({{email}}) for launch updates.",
         launchApp: "Launch app",
+        skaiAgent: "Skai agent",
         comingSoon: "Coming soon",
         daysToLaunch: "Days to launch",
 
         badge: {
           title: "Badge",
-          subtitle: "Early adopter status.",
+          subtitle: "Early adopter status",
           reward: "+500 SKAI Points",
           status: "Credited",
           // Coachmark opened by the "?" on the badge subtitle line — Figma
@@ -354,10 +356,12 @@ export const content = {
           linkLabel: "Referral link",
           shareLabel: "Connect to share referral link",
           copyButton: "COPY",
-          shareToX: "Share",
+          shareToX: "Share to X",
           shareToInstagram: "Share to Instagram",
           instagramCopied: "Link Copied! Paste on Instagram",
           joinDiscord: "Join Skai Community",
+          joinOnDiscord: "Join Skai on Discord",
+          instagramUnavailable: "This browser has no share menu to hand the link to Instagram. Open the dashboard on your phone to share it there.",
           shareText:
             'Trade. Predict. Play. 📊🎯🎰\n\nJoin the @SkaiTrade waitlist. Your first deposit or trade earns 500 SKAI Points: https://skai.trade/ref/{{username}}',
         },
