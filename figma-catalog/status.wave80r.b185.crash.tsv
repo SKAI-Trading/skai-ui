@@ -1,0 +1,6 @@
+# HQ-185 fold, 2026-11-17: the frames this section held as blocked-on-backend, re-filed from the HQ-185 triage (eight groups) and the
+# fourteen fix lanes that landed on app main 360c3d8c6..fc6d3f09a (fix-forward 1c27ce69f), with Casey's rulings of 2026-11-16 (#1-#46).
+# Generation wave80r so these rows supersede the wave rows they correct; a later fold takes wave80s. No Figma call, no visual verdict.
+# Column 6 carries each frame's width verdicts forward verbatim from the row this one supersedes; nothing was re-measured.
+Extended LB [9137-13564]	partial	-	-	HQ-185 fold, 2026-11-17 (was blocked-on-backend): games-feeds lane, landed (app main 1f4cd928a, 1fc6242e7, 093c59e44; skai-gaming main acfd1a69, 281cdd3c): Each live-bets stake cell draws the bet's own rail as the 16px RailDisc before the figure (8 gap), none when the row recorded no currency. Waits on deploy of game-settlement (crash_get_state currency) and 20261116100100 (the broadcast carries it); then done.	1440=partial 768=n-a 375=n-a @2026-10-25/w82-L61
+LB With Header [9142-19454]	partial	-	-	HQ-185 fold, 2026-11-17 (was blocked-on-backend): games-feeds lane, landed (app main 1f4cd928a, 1fc6242e7, 093c59e44; skai-gaming main acfd1a69, 281cdd3c): As 9137-13564 (LB With Header). Waits on the same two deploys; then done.	1440=partial 768=n-a 375=n-a @2026-10-25/w82-L61
