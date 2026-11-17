@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-11-16T02:22:44.958Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-11-16T08:55:16.822Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -16,7 +16,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 91 | 82 | 10 | 0 | 76 |
 | home | ✅ | 290 | 194 | 96 | 50 | 160 | 27 | 0 | 0 | 102 |
 | play | ✅ | 475 | 176 | 299 | 45 | 99 | 66 | 0 | 7 | 66 |
-| home-2 | ✅ | 270 | 161 | 109 | 22 | 89 | 25 | 0 | 0 | 14 |
+| home-2 | ✅ | 277 | 166 | 111 | 26 | 89 | 25 | 0 | 5 | 14 |
 | predict | ✅ | 289 | 149 | 140 | 34 | 50 | 62 | 3 | 0 | 134 |
 | wallet-2 | ✅ | 195 | 142 | 53 | 22 | 121 | 1 | 0 | 1 | 49 |
 | wallet | ✅ | 186 | 133 | 53 | 35 | 120 | 10 | 0 | 0 | 59 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 48 | 0 | 48 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4951** | **2244** | | | **1522** | **653** | **36** | **33** | **1032** |
+| **all** | | **4958** | **2249** | | | **1522** | **653** | **36** | **38** | **1032** |
 
 ### Drift against live Figma
 
@@ -69,7 +69,7 @@ Frames that exist in Figma but are not in the catalog:
 | ✅ Home 1 | 295 | 280 | -15 |
 | ✅ Wallet 1 | 186 | 178 | -8 |
 | ✅ Trade 1 | 476 | 441 | -35 |
-| ✅ Home 2 | 270 | 263 | -7 |
+| ✅ Home 2 | 277 | 270 | -7 |
 | ✅ Wallet 2 | 195 | 191 | -4 |
 | ✅ Trade 2 | 440 | 420 | -20 |
 | ✅ Coinflip - Skai originals | 47 | 46 | -1 |
@@ -465,12 +465,16 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Add > Add whale > Select whale | 3 | desktop, tablet, mobile | - | done | [13008-116983](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-116983&m=dev) |
 | Intelligent support ALT | 3 | desktop, tablet, mobile | - | frame-defect | [13458-193331](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13458-193331&m=dev) |
 | Notification pop-up | 3 | desktop, tablet, mobile | - | done | [16057-162715](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16057-162715&m=dev) |
-| AI pop-up | 2 | desktop, mobile | - | partial | [16083-168102](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16083-168102&m=dev) |
+| AI pop-up | 3 | desktop, mobile | - | partial | [16083-168102](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16083-168102&m=dev) |
 | Whales > filter | 1 | desktop | custom input | done | [13008-111656](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-111656&m=dev) |
 | Pro ALT | 1 | desktop | - | partial | [13008-112676](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-112676&m=dev) |
 | Pro ALT stretched | 1 | desktop | - | partial | [13008-112937](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-112937&m=dev) |
 | Pro > checkout ALT | 1 | desktop | - | partial | [13008-114000](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-114000&m=dev) |
 | Intelligent support ALT 2 | 1 | mobile | - | partial | [14316-248325](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=14316-248325&m=dev) |
+| AI pop-up ALT | 1 | mobile | - | partial | [16137-102267](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16137-102267&m=dev) |
+| Spot with AI pop-up | 1 | mobile | - | unknown | [16326-194586](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16326-194586&m=dev) |
+| Spot with AI pop-up 2 | 1 | mobile | - | unknown | [16326-198902](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16326-198902&m=dev) |
+| Spot with AI pop-up 3 | 1 | mobile | - | unknown | [16326-200191](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=16326-200191&m=dev) |
 | upgrade checkout > payment-method row | 1 | - | - | furniture | [13008-113503](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-113503&m=dev) |
 | whales > import wallets > Base badge — ⚠️ BROKEN EXPORT: #0052FF disc with a straight rectangular slot, not the Base brandmark. Do NOT copy; app ships the official mark deliberately | 1 | - | - | frame-defect | [13008-115807](https://www.figma.com/design/mhF3BkzlTaGiLzJ7kvpmVc/Skai-Web-App-2?node-id=13008-115807&m=dev) |
 
