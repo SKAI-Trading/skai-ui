@@ -1,0 +1,5 @@
+# Flows the product ships that no Figma board draws: asks for a designer, not frames the catalog can count.
+# Casey, 2026-11-17: an undrawn flow is listed here, beside the frame catalog, not in status.* (which only rates drawn frames) or gaps.tsv (which only takes a catalogued open frame).
+# A row closes when its boards exist and are harvested; then the flow is rated through the frame catalog like any other.
+# request	surface	flow	states	nearestBoards	builtIn	status	requested	source
+sol-create-backup	app	Portfolio > Add wallet > Solana: back up the new wallet, then confirm it	backup password; backup key shown; confirm wallet; backup failed	Export private key 2752:5814, 6811:35764, 6811:36029 (password entry) and 2753:8176, 6828:36970, 6828:37572 (key shown); Add wallet 2752:4678 (its modal 2752:5211) and Name wallet 2753:4954	src/components/wallet/ConfirmSolanaWallet.tsx with RevealGateFields.tsx, styled on the nearest boards in app 0f789ca82	open	2026-11-17	report ae47b7b0; Casey 2026-11-16 (restyle on the nearest boards and list the flow for drawing); Casey 2026-11-17 (no copy button on the backup key, although the export board draws one)

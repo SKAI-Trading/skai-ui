@@ -93,6 +93,7 @@ frames with plain design-state names like `Desktop Full Game - Roll Over`).
 | `bp-report.mjs` | breakpoint coverage report **and** the column-6 validator. Exits 1 on a malformed cell. `--gaps` lists every actionable row, `--hygiene` lists orphan and duplicate rows | reads `status.*.tsv` + `registry.json` | no |
 | `gaps.tsv` | **the public gap line** per open frame, shown under its page on skai.trade/status — see "gaps.tsv" below | hand/agent-authored; `gaps.mjs fold` writes it | no |
 | `gaps.mjs` | checks `gaps.tsv` against the open frames `coverage.json` counts (a pipeline step), folds a writing pass's lines in, and exports the open-frame list `scripts/figma/emit-parity-json.mjs` publishes | reads `coverage.json` + `registry.json` + `gaps.tsv` | no |
+| `design-requests.tsv` | flows that ship with **no board at all**, one row per flow: its states, the nearest boards it was styled on, where it is built, and the ruling that listed it (Casey, 2026-11-17). No script reads it; a row closes once its boards are drawn and harvested | hand-authored | no |
 
 ## registry.json — per-frame record
 
