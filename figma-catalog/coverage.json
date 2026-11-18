@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-18T01:08:03.529Z",
+  "generated": "2026-11-18T03:06:04.862Z",
   "harvestedAt": "2026-11-16",
   "rollup": {
     "pages": 39,
@@ -20,8 +20,8 @@
     "genuineWithFrameDefects": 3573,
     "frameDefectUncited": [],
     "matched": 3241,
-    "done": 2079,
-    "verified": 1810,
+    "done": 2080,
+    "verified": 1811,
     "visuallyDowngraded": 140,
     "visualUnmapped": [],
     "visualRetired": [
@@ -43,9 +43,9 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 948,
+    "partial": 950,
     "notStarted": 21,
-    "blocked": 188,
+    "blocked": 185,
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
@@ -56,16 +56,16 @@
     "conflicts": 20
   },
   "doneRows": {
-    "total": 4710,
+    "total": 4715,
     "withBreakpointProvenance": 2542,
-    "namingANodeId": 4485,
+    "namingANodeId": 4490,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 26088,
+    "total": 26103,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 982,
-    "unrecognisedTokens": 84613
+    "unrecognisedTokens": 84689
   },
   "statusFiles": [
     {
@@ -7245,16 +7245,40 @@
       "ids": 10
     },
     {
+      "file": "status.wave80s.w3f-bridge.tsv",
+      "rows": 7,
+      "withLiveId": 7,
+      "ids": 7
+    },
+    {
+      "file": "status.wave80s.w3f-catalog.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave80s.w3f-nft.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 5
+    },
+    {
+      "file": "status.wave80s.w3f-notif.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave80s.w3f-remove.tsv",
+      "rows": 2,
+      "withLiveId": 2,
+      "ids": 2
+    },
+    {
       "file": "status.wave82.HARV.tsv",
       "rows": 2,
       "withLiveId": 0,
       "ids": 0
-    },
-    {
-      "file": "status.wave88.w3f-catalog.tsv",
-      "rows": 3,
-      "withLiveId": 3,
-      "ids": 3
     },
     {
       "file": "status.wave9.games-zero-a.tsv",
@@ -8740,11 +8764,10 @@
       "defaultNamed": 2,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 150,
+      "verified": 151,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 150,
-        "partial": 1
+        "done": 151
       },
       "liveOnly": []
     },
@@ -8790,9 +8813,8 @@
       "verified": 32,
       "visuallyDowngraded": 111,
       "byStatus": {
-        "partial": 121,
-        "done": 32,
-        "blocked-on-backend": 3
+        "partial": 124,
+        "done": 32
       },
       "liveOnly": []
     },
@@ -32685,9 +32707,9 @@
       "id": "7807-86527",
       "page": "✅ Wallet 1",
       "scope": "in-scope",
-      "status": "partial",
-      "claimed": "partial",
-      "verdict": "partial"
+      "status": "done",
+      "claimed": "done",
+      "verdict": "match"
     },
     {
       "id": "7807-86028",
@@ -33413,9 +33435,9 @@
       "id": "13008-28402",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
-      "verdict": "partial"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "match"
     },
     {
       "id": "13008-28453",
@@ -33455,7 +33477,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-29130",
@@ -33471,7 +33493,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-29347",
@@ -33479,7 +33501,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-29525",
@@ -34117,9 +34139,9 @@
       "id": "13008-43020",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
-      "verdict": "partial"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "match"
     },
     {
       "id": "13008-43059",
@@ -34181,9 +34203,9 @@
       "id": "13008-44081",
       "page": "✅ Wallet 2",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
-      "verdict": "partial"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "match"
     },
     {
       "id": "13008-44120",
@@ -34311,7 +34333,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-48896",
@@ -34319,7 +34341,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-49184",
@@ -34463,7 +34485,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-53868",
@@ -34479,7 +34501,7 @@
       "scope": "in-scope",
       "status": "partial",
       "claimed": "partial",
-      "verdict": null
+      "verdict": "partial"
     },
     {
       "id": "13008-54086",

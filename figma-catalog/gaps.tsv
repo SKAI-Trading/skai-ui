@@ -788,7 +788,6 @@ mhF3BkzlTaGiLzJ7kvpmVc	6715-35126	ui	On phones, in a longer conversation, turns 
 mhF3BkzlTaGiLzJ7kvpmVc	6925-68955	ui	On tablet the vesting card's Claim all now button is shown but cannot be pressed yet; the design draws it as an active button.	6bafcfebd9e4	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	6934-70311	ui	On phones the vesting card's Claim all now button is shown but cannot be pressed yet; the design draws it as an active button.	6bafcfebd9e4	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	7712-38425	ui	In the trades list the small icon the design shows after each trade's time is missing, so the time sits at the right edge instead.	5e508d8bdd84	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	7807-86527	ui	On tablet the design gives the NFT send card's recipient field a dropdown arrow for choosing a recipient; the page has a plain address field with no picker yet.	2132fa3acde1	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	7890-121544	ui	For a perps position with take-profit or stop-loss set, the TP/SL column does not yet match the design, which shows both price levels in white.	d0a1802f3c87	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	7890-130857	backend	Waiting on backend work.	ec2c2631aa02	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	8650-94501	ui	On phone the Net profit chart counts only your newest 10,000 trades; older trade history is waiting on backend work.	53d67baa3863	2026-11-14
@@ -969,16 +968,16 @@ mhF3BkzlTaGiLzJ7kvpmVc	13006-351379	ui	At 375 the trade sheet shows a dash for y
 mhF3BkzlTaGiLzJ7kvpmVc	13006-353851	ui	At 768 the heights inside the token header are not yet compared value by value with the design. The chart, tabs and trade panel are tracked separately.	ef68a343e1eb	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-355256	ui	At 768 the trade panel shows a dash for your wallet balance and holdings, the wallet chip has no picker, and AI Audit shows as unavailable. The AI Audit card's position is not yet compared with the design.	db2b6f7dd520	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-356662	ui	KOL caller avatars are built and stay a dash with the reason on hover until after launch.	6f8d1f9c0529	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-28402	backend	Waiting on backend work.	3d198e8997de	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-29014	ui	Bridging runs inside the app instead of handing off to an outside provider as drawn; the layout needs a fresh check, and bridging into SKAI Chain is not open yet.	ea51f294b376	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-29226	ui	Bridging runs inside the app instead of handing off to an outside provider as drawn; the layout needs a fresh check, and bridging into SKAI Chain is not open yet.	ea51f294b376	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-29347	ui	Bridging runs inside the app instead of handing off to an outside provider as drawn; the layout needs a fresh check, and bridging into SKAI Chain is not open yet.	ea51f294b376	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-43020	backend	Waiting on backend work.	b26a58f57941	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-44081	backend	Waiting on backend work.	a9abcc7578e0	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-48792	ui	Bridging runs inside the app instead of handing off to an outside provider as drawn; the layout needs a fresh check, and bridging into SKAI Chain is not open yet.	ea51f294b376	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-48896	ui	Bridging runs inside the app instead of handing off to an outside provider as drawn; the layout needs a fresh check, and bridging into SKAI Chain is not open yet.	ea51f294b376	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-53758	ui	Bridging runs inside the app instead of handing off to an outside provider as drawn; the layout needs a fresh check, and bridging into SKAI Chain is not open yet.	ea51f294b376	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-53976	ui	Bridging runs inside the app instead of handing off to an outside provider as drawn; the layout needs a fresh check, and bridging into SKAI Chain is not open yet.	ea51f294b376	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-28402	ui	The large picture at the top of a notification is new and has not been checked against the design yet.	517c666c802c	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-29014	ui	Bridging runs in the app between Ethereum, Polygon and Base instead of listing outside providers as drawn; bridging into SKAI Chain is not open yet, and the amount card is slightly taller than drawn.	2f82348db5ac	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-29226	ui	The bridge summary and button are built, but bridging into SKAI Chain is not open yet, and the amount card is a few pixels taller than drawn.	38a78eaa7f7c	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-29347	ui	The bridge details window is built, but bridging into SKAI Chain is not open yet, and the amount card under it is a few pixels taller than drawn.	01d373b48c74	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-43020	ui	The large picture at the top of a notification is new and has not been checked against the design yet.	e18620d9c775	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-44081	ui	The large picture at the top of a notification is new and has not been checked against the design yet.	7514ce04b2fc	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-48792	ui	Bridging runs in the app between Ethereum, Polygon and Base instead of listing outside providers as drawn; bridging into SKAI Chain is not open yet, and the amount card is slightly taller than drawn.	e68ef29ae489	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-48896	ui	The bridge summary is shown here as on the newer desktop design, which this board predates; bridging into SKAI Chain is not open yet, and the amount card is a few pixels taller than drawn.	95801dfdf65f	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-53758	ui	Bridging runs in the app between Ethereum, Polygon and Base instead of listing outside providers as drawn; bridging into SKAI Chain is not open yet, and the amount card is slightly taller than drawn.	cd100c4403b8	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	13008-53976	ui	The bridge summary is shown here as on the newer desktop design, which this board predates; bridging into SKAI Chain is not open yet, and the amount card is a few pixels taller than drawn.	f677ce976055	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13008-113481	ui	Paying with tokens is built and awaits a live test purchase before it is confirmed working.	1d113a44e5e2	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13008-113591	ui	Paying with tokens is built and awaits a live test purchase before it is confirmed working.	e924b27c773c	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13008-113728	ui	Paying with tokens is built and awaits a live test purchase before it is confirmed working.	1dab75c4328b	2026-11-17
