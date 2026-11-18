@@ -1037,6 +1037,8 @@
 {"at":"2026-10-30T12:22:04.323Z","day":"2026-10-30","kind":"extract","file":"M6r9FEn042UWTQD1zvy6GM","calls":1,"frames":1,"nonce":"e9f68685af74","ok":true}
 {"at":"2026-11-02T04:42:19.652Z","day":"2026-11-02","kind":"read","file":"3sSzw1KewMtUbeLAv7uW0r","calls":1,"frames":0,"ok":false,"note":"w99-predict-market: comments send, sort, order book, filter carets, related nav"}
 {"at":"2026-11-02T04:42:20.337Z","day":"2026-11-02","kind":"read","file":"3sSzw1KewMtUbeLAv7uW0r","calls":1,"frames":0,"ok":false,"note":"w99-predict-market: CTA Primary master, Send icon master, Arrow-up/down masters"}
+{"at":"2026-11-16T08:14:02.816Z","day":"2026-11-16","kind":"extract","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":1,"nonce":"48a0b759cd6c","ok":true}
+{"at":"2026-11-16T08:31:00.915Z","day":"2026-11-16","kind":"extract","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":2,"nonce":"84b766413521","ok":true}
 {"at":"2026-11-15T04:39:09.198Z","day":"2026-11-15","kind":"verify","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":0,"ok":false,"note":"w3f-catalog: harvest verify-script, page hashes (Wallet 1 and Wallet 2 equal to live; Home 2 changed)"}
 {"at":"2026-11-15T05:48:20.885Z","day":"2026-11-15","kind":"read","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":0,"ok":false,"note":"w3f-catalog: screenshots home 13008:26985 27341 27515 44377 55360 (375 pair not returned, 5-image cap)"}
 {"at":"2026-11-15T06:57:51.768Z","day":"2026-11-15","kind":"read","file":"mhF3BkzlTaGiLzJ7kvpmVc","calls":1,"frames":0,"ok":false,"note":"w3f-catalog: screenshots 13008:50167 55521 27689 43059 44120"}

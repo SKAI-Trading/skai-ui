@@ -12,6 +12,11 @@ export interface BarTickerBackgroundProps {
    */
   className?: string;
   /**
+   * Additional className for the front layer's container (`className` reaches only the back
+   * layer's), so a page can place or hide the front bars on their own.
+   */
+  frontClassName?: string;
+  /**
    * Show the shimmer sweep effect (disabled by default to prevent flicker)
    * @default false
    */
@@ -158,12 +163,14 @@ function extendPattern(fullHeights: number[], minBars: number): number[] {
   return [...padding, ...fullHeights];
 }
 
-const backHeights = expandPattern(BACK_PATTERN);
-const frontHeights = expandPattern(FRONT_PATTERN);
+/** Each layer's 160 bar heights for one half, outer edge first, as fractions of the tallest. */
+export const backHeights = expandPattern(BACK_PATTERN);
+export const frontHeights = expandPattern(FRONT_PATTERN);
 
 export function BarTickerBackground({
   isBlurred = false,
   className,
+  frontClassName,
   showShimmer = false,
   showDepthBlur = true,
   contained = false,
@@ -243,7 +250,8 @@ export function BarTickerBackground({
         className={cn(
           "ticker-bars-wrapper ticker-bars-front transition-all duration-300",
           containedStyle,
-          isBlurred && "blur-md"
+          isBlurred && "blur-md",
+          frontClassName
         )}
         aria-hidden="true"
       >

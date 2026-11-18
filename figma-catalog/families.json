@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-17T06:48:14.169Z",
+  "generated": "2026-11-18T01:07:44.240Z",
   "families": {
     "home/welcome > onboarding Qs": {
       "section": "home",
@@ -10869,10 +10869,11 @@
     "home-2/AI pop-up": {
       "section": "home-2",
       "family": "AI pop-up",
-      "frameCount": 2,
+      "frameCount": 3,
       "frames": [
         "mhF3BkzlTaGiLzJ7kvpmVc:16083-168102",
-        "mhF3BkzlTaGiLzJ7kvpmVc:16137-102267"
+        "mhF3BkzlTaGiLzJ7kvpmVc:16327-202234",
+        "mhF3BkzlTaGiLzJ7kvpmVc:16332-203659"
       ],
       "devices": [
         "desktop",
@@ -10897,6 +10898,70 @@
       "devices": [
         "desktop",
         "tablet",
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/AI pop-up ALT": {
+      "section": "home-2",
+      "family": "AI pop-up ALT",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16137-102267"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Spot with AI pop-up": {
+      "section": "home-2",
+      "family": "Spot with AI pop-up",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16326-194586"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Spot with AI pop-up 2": {
+      "section": "home-2",
+      "family": "Spot with AI pop-up 2",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16326-198902"
+      ],
+      "devices": [
+        "mobile"
+      ],
+      "variants": [],
+      "citedFileCount": 0,
+      "citedFiles": [],
+      "dirs": [],
+      "proposedStatus": "not-started"
+    },
+    "home-2/Spot with AI pop-up 3": {
+      "section": "home-2",
+      "family": "Spot with AI pop-up 3",
+      "frameCount": 1,
+      "frames": [
+        "mhF3BkzlTaGiLzJ7kvpmVc:16326-200191"
+      ],
+      "devices": [
         "mobile"
       ],
       "variants": [],

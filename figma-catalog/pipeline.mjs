@@ -31,6 +31,11 @@
  *   bp-report.mjs          breakpoint coverage; exits 1 on a malformed column 6
  *   coverage.mjs           live vs catalog -> coverage.json, COVERAGE.md,
  *                          WAVE10-INTEGRITY.md
+ *   gaps.mjs --self-test   the rules that keep a public gap line plain
+ *   gaps.mjs               gaps.tsv against the open frames coverage.json just
+ *                          counted; exits 1 on a line that is not plain, a
+ *                          second line for a frame, or a frame the catalog lacks.
+ *                          Writes nothing.
  *
  * What it proves afterwards: no frame that survived the rebuild lost its
  * verifiedAt, or any implFiles entry implfile-retirements.tsv does not list.
@@ -54,6 +59,8 @@ const STEPS = [
   ["catalog-view.mjs", ["figma-frame-catalog.md"]],
   ["bp-report.mjs", []],
   ["coverage.mjs", []],
+  ["gaps.mjs", ["--self-test"]],
+  ["gaps.mjs", []],
 ];
 
 const DERIVED = [
