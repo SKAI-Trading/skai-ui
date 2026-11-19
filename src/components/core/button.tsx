@@ -127,13 +127,13 @@ const skaiButtonVariants = cva(
         // (report 6fb5fa86); the CTA set (801:1062) draws no hover state, and
         // sky-blue-hover is the token kept for exactly this control.
         primary:
-          "bg-[#56C7F3] text-[#001615] hover:bg-sky-blue-hover focus-visible:ring-[#2DEDAD]",
+          "bg-[#56C7F3] text-[#001615] hover:bg-sky-blue-hover focus-visible:ring-[#56C7F3]",
         // Secondary: Transparent bg, Sky Blue border/text
         secondary:
           "bg-transparent border border-[#56C7F3] text-[#56C7F3] hover:bg-[#56C7F3]/10 focus-visible:ring-[#56C7F3]",
         // Tertiary: Transparent bg, White text, hover → Alien Green
         tertiary:
-          "bg-transparent text-white hover:text-[#2DEDAD] focus-visible:ring-[#2DEDAD]",
+          "bg-transparent text-white hover:text-[#2DEDAD] focus-visible:ring-[#56C7F3]",
         // Link: Alien Green text, underlined
         link: "bg-transparent text-[#2DEDAD] hover:text-[#56C7F3] underline underline-offset-4",
       },

@@ -134,7 +134,7 @@ const HeaderStatusPill = React.forwardRef<HTMLButtonElement, HeaderStatusPillPro
         aria-label={label}
         className={cn(
           "group relative flex items-center gap-1.5 transition-all",
-          "focus:outline-none focus:ring-2 focus:ring-primary/50",
+          "focus:outline-none focus:ring-2 focus:ring-ring/50",
           isMinimal
             ? "px-1.5 pr-3 py-1.5 rounded-lg border border-[#123f3c] bg-[#001615] hover:border-[#1a5c58]"
             : cn(
