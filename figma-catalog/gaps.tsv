@@ -5,6 +5,10 @@
 # notesSha: the first 12 hex of sha1 over the frame's registry.json notes when the line was written. When the notes move, the line is due a rewrite.
 # A fold rewrites the lines of the frames it touches: node figma-catalog/gaps.mjs fold <lines.json> --write
 fileKey	node	kind	gap	notesSha	writtenAt
+3sSzw1KewMtUbeLAv7uW0r	2005-25112	ui	On phone the bars behind the page have not yet been compared with this design.	b6e4ea4874c7	2026-11-18
+3sSzw1KewMtUbeLAv7uW0r	2005-26526	ui	On phone the bars behind the page have not yet been compared with this design.	3ca9763b7216	2026-11-18
+3sSzw1KewMtUbeLAv7uW0r	2424-7715	ui	On phone the badge card's subtitle wraps to a second line where the design lets it run under the reward.	c46fd743843a	2026-11-18
+3sSzw1KewMtUbeLAv7uW0r	2481-15918	ui	On phone the help tooltip is centred on its icon rather than set off to one side as drawn, and the bars behind the page have not yet been compared with this design.	20402b3677db	2026-11-18
 3sSzw1KewMtUbeLAv7uW0r	2665-8843	backend	Waiting on backend work.	6b7f4f6dfb36	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	2665-9536	backend	Waiting on backend work.	6b7f4f6dfb36	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	2665-10229	backend	Waiting on backend work.	6b7f4f6dfb36	2026-11-17

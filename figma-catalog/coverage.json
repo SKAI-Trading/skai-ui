@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-18T09:09:09.840Z",
+  "generated": "2026-11-19T00:23:25.503Z",
   "harvestedAt": "2026-11-16",
   "rollup": {
     "pages": 39,
@@ -20,8 +20,8 @@
     "genuineWithFrameDefects": 3572,
     "frameDefectUncited": [],
     "matched": 3240,
-    "done": 2120,
-    "verified": 1851,
+    "done": 2116,
+    "verified": 1847,
     "visuallyDowngraded": 140,
     "visualUnmapped": [],
     "visualRetired": [
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 908,
+    "partial": 912,
     "notStarted": 21,
     "blocked": 186,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 20
   },
   "doneRows": {
-    "total": 4763,
-    "withBreakpointProvenance": 2580,
-    "namingANodeId": 4538,
+    "total": 4759,
+    "withBreakpointProvenance": 2576,
+    "namingANodeId": 4534,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 26197,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 982,
-    "unrecognisedTokens": 85756
+    "unrecognisedTokens": 85768
   },
   "statusFiles": [
     {
@@ -7911,11 +7911,12 @@
       "defaultNamed": 0,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 85,
+      "verified": 81,
       "visuallyDowngraded": 0,
       "byStatus": {
-        "done": 91,
-        "blocked-on-backend": 3
+        "done": 87,
+        "blocked-on-backend": 3,
+        "partial": 4
       },
       "liveOnly": []
     },
@@ -16887,33 +16888,33 @@
       "id": "2005-25112",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "2424-7715",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "2481-15918",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "2005-26526",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "2065-23474",
