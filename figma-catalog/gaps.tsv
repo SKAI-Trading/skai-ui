@@ -9,9 +9,9 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	2005-26526	ui	On phone the bars behind the page have not yet been compared with this design.	3ca9763b7216	2026-11-18
 3sSzw1KewMtUbeLAv7uW0r	2424-7715	ui	On phone the badge card's subtitle wraps to a second line where the design lets it run under the reward.	c46fd743843a	2026-11-18
 3sSzw1KewMtUbeLAv7uW0r	2481-15918	ui	On phone the help tooltip is centred on its icon rather than set off to one side as drawn, and the bars behind the page have not yet been compared with this design.	20402b3677db	2026-11-18
-3sSzw1KewMtUbeLAv7uW0r	2665-8843	backend	Waiting on backend work.	6b7f4f6dfb36	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	2665-9536	backend	Waiting on backend work.	6b7f4f6dfb36	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	2665-10229	backend	Waiting on backend work.	6b7f4f6dfb36	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	2665-8843	ui	The new signups count and the Just joined list are not shown on this page yet; the switch to appear in it is in privacy settings.	f558fe2a2d4f	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	2665-9536	ui	The new signups count and the Just joined list are not shown on this page yet; the switch to appear in it is in privacy settings.	32f13544fb50	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	2665-10229	ui	The new signups count and the Just joined list are not shown on this page yet; the switch to appear in it is in privacy settings.	b400f140b8d3	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	3317-6133	ui	The card's footer (volume, Share, Embed, Save and the SKAI logo) is left out because the page header already shows each of them, and the buy markers on the chart are not shown.	183b446b7e92	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	3322-6065	ui	The unit mark is built to show the market's own artwork, which appears once market artwork goes live; until then it shows the token mark.	44427ef633ba	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	3322-6501	ui	At 1440, when a market page is loading, offline or not found, it can run about 118 pixels taller than the window and push the footer just out of view. This has not been re-measured.	9e5088b0aa47	2026-11-14
@@ -28,7 +28,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	3620-47881	ui	Race cards with candidate badges are built and show once the events data goes live; the election map and its overlay are not built yet.	50f16597187b	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	3631-56374	ui	League cards with club crests are built and show once the events data goes live; the rows no longer print the club name.	3c0f6531dfaa	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	3640-58287	ui	The Oscars banner, bucket cards and nominee photos are built; they show once the events data goes live and the pictures are uploaded.	126d31ac6bdc	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	4676-39553	ui	At 1440 the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	c00cf84e96c2	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	4676-39553	ui	At 1440 the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	a23fd10bf89c	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	4714-31722	ui	At 1440 the New games tiles show a player count line under each cover that the design hides; the licence marks and the About and FAQ block below are not yet compared.	393e1ee39eef	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	4758-59299	ui	At 1440 the design puts the game mark and a jackpot tag in a bar inside the game card; the page follows the newer game design instead, with the title above the card and no jackpot tag.	1288bb4f79e2	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	4758-60305	ui	At 1440 on My Stats, Win rate, Current streak, Biggest win and Biggest loss can show a dash instead of a figure for players with more than 25 bets, until a pending update goes live.	99dac2c368f5	2026-11-14
@@ -83,8 +83,8 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	5376-70869	ui	The side panel for creating a proposal is built; its mode for updating an existing proposal is not built yet.	7222976f8a7b	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5376-71276	ui	On desktop How staking works shows as a plain notice with five points instead of the drawn band; the page header, Wallet tile and rewards chip are not yet compared element by element with the design.	87b963b10ebc	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5383-72757	ui	On desktop How staking works shows as a plain notice with five points instead of the drawn band; the page header, Wallet tile and rewards chip are not yet compared element by element with the design.	87b963b10ebc	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	5383-73349	ui	On desktop How delegation works leaves out the board's lines on partial delegation and on voting while delegated, the delegates list waits on backend work, the illustrations are missing, and the delegated figures are not yet compared.	06172f9ee8e4	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	5385-74400	ui	On desktop the delegates list waits on backend work, the vote total shows a SKAI amount instead of a vote count, the illustrations are missing, and How delegation works leaves out two lines from the board.	6fddf687dd5b	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	5383-73349	ui	On desktop How delegation works leaves out the board's lines on partial delegation and on voting while delegated, the delegates list waits on backend work, Delegated to you shows a dash for now, and the illustrations are missing.	27cef0b3c366	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	5385-74400	ui	On desktop the delegates list waits on backend work, Delegated to you shows a dash until delegation history loads, the vote total shows a SKAI amount, the illustrations are missing, and two board lines are left out.	5e61f83719b6	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	5385-75416	not-built	Not built yet: the board shows a delegate form with an address, a share slider and an expiry in days.	24478fb81798	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5387-77602	ui	On desktop the All delegates filter above each list stays disabled while it waits on backend work; the Overview card's fill and the four tiles' label icons are not yet re-checked against the design.	168046473747	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5390-80080	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	e3ff60206643	2026-11-17
@@ -225,9 +225,9 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	10841-118147	ui	The Activity menu is built and filters rows once the vault activity history goes live.	2186029636b1	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	10841-138986	ui	Share price, one-asset composition, TVL change and fee are built; TVL change fills a day after value tracking goes live, and volume waits on the vault activity history.	35132600b783	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	10852-361479	ui	At 1440 the price chart is empty, an icon in the bottom navigation and the clock are missing, and some pool form items and selected states differ from the design.	3bf50a92af64	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	10940-216537	ui	On tablet the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	c00cf84e96c2	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	10949-219911	ui	On tablet the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	73ae4f532e8a	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	10953-220899	ui	On phone the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	c00cf84e96c2	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	10940-216537	ui	On tablet the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	99831f6c7dd0	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	10949-219911	ui	On tablet the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	1f1030c462ea	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	10953-220899	ui	On phone the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	eb38b1f7903f	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11017-21566	ui	On tablet the top banner has no FAQ button under its text, and the return-to-player figures show a dash until live figures are available.	75b0a4172c8a	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11017-157523	ui	On tablet the earnings band has no All time control, the chart total lacks its link icon and the chart line has no glow. Amounts show in SKAI rather than dollars, and Claim is shown disabled.	dcd3e853c1e9	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11021-198296	ui	On mobile the earnings band has no All time control, the chart total lacks its link icon, the chart line has no glow, and the Claim button is shown disabled.	84e362087b2b	2026-11-14
@@ -240,8 +240,8 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11097-108591	ui	From tablet width the streams header sits beside the cards where the design stacks it, and the phone spacing differs.	2f908dfdfb56	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11100-62081	ui	On mobile the game shelves, featured games, bets table and About section below the category bar have been checked for position only, not yet element by element against the design.	d00cf0cde53a	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11100-64759	ui	On phone the Casino heading is 24px tall, as the full Casino page design draws it, where this design draws it 28px tall. The navigation and first shelf have not yet been compared with the design.	60edbbf1bbc8	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11100-66646	ui	On phone the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	002f73aa2bbb	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11100-67183	ui	On phone the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	c774d66c3e06	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	11100-66646	ui	On phone the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	b240f88e547b	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	11100-67183	ui	On phone the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	e7ed1bd25a2e	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11100-67616	ui	Each game now opens its own page, which has not yet been compared element by element with this design at 375. The practice-mode chip the design shows is left off on purpose.	f93ccfd8ada3	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11100-67984	ui	The wallet panel under a six-tab strip that this design shows is not built, and each game now opens its own page, not yet compared with this design at 375. The practice-mode chip is left off on purpose.	d68c59bcba74	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11100-68399	ui	The wallet panel under a six-tab strip that this design shows is not built, and each game now opens its own page, not yet compared with this design at 375. The practice-mode chip is left off on purpose.	d68c59bcba74	2026-11-14
@@ -259,13 +259,13 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11144-199166	ui	On phone the open bet slip is a sheet with curved top corners and a drag handle over a dimmed page, where this design draws a flat panel docked at the bottom; it is also inset 12px from the sides, not 16.	869429567156	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11151-18953	ui	The 24H, 7D and 30D PnL tiles are built and show a dash until the vault has shares; the 12-month PnL chart is not built.	44ff97393f98	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11151-80178	ui	The PnL chart is built and fills once value tracking goes live; its sizes have not been compared with the design yet.	9ef52f07dc3c	2026-11-19
-3sSzw1KewMtUbeLAv7uW0r	11177-69719	ui	On phone the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	c00cf84e96c2	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	11177-69719	ui	On phone the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	99dccbddcc90	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11193-90739	ui	At 1440 the Search winners window cannot be opened yet, and its winner handles and Follow buttons are not shown.	fb9981da8e20	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11198-91923	ui	The Share outcome option does not appear on your own win when another player won the same tier in the same draw.	e0250c6ca922	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11198-97007	ui	The View on Skaiscan item uses a slightly different link icon from the design, and it stays greyed out for now.	9b2f83e8b4fd	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11198-97230	ui	The outcome list stops at the newest 50 draws until the paging update goes live.	1919aa9f0fb2	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11206-98479	ui	At 1440 the not-eligible tiles are not filled in, the wallet list has no avatars, wallet names or balances for inactive wallets, and each wallet's three-dot button opens nothing yet.	78116055d0ef	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11211-85296	ui	On tablet the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	c00cf84e96c2	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	11211-85296	ui	On tablet the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	90a0129248ea	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11211-86080	ui	On phone the bets table, the FAQ block and the page layout outside the Live RTP panel have not yet been compared element by element with the design.	e3716c63d26f	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11211-86973	ui	On phone the bets table, the FAQ block and the page layout outside the Live RTP panel have not yet been compared element by element with the design.	d4a7ec303427	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11212-20103	ui	Each snapshot row's View on Skaiscan is built; rows appear once a test snapshot is published.	05e4581f4742	2026-11-17
@@ -300,7 +300,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11314-139131	ui	The delegate row menu is built; rows appear once the new delegate data goes live.	cfa00722b4c2	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11314-139153	ui	The delegate list, its Top rated scope and the row menu are built; they fill once the new delegate data goes live.	6c6338a60a49	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11322-142230	ui	The video filter is built; it needs courses with videos, and it opens only for a purchased course.	7029fa411a09	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11343-142585	backend	Waiting on backend work.	f0965c337181	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	11343-142585	ui	Add to group now picks the course's category; course videos, the paid course toggle and its price are not available yet, and the button under an uploaded file is not drawn.	56ff31781ca4	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11344-143602	not-built	Not built yet: the design shows a menu on each article with Follow author, See more on this topic and Report author.	da9559435fed	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11345-144081	ui	Behind the customise panel, some dashboard figures (the SKAI price in BTC and its 24h change, the market cap, the 14-day chart and the small trend lines) show no data yet where the design shows values.	65786f135eb5	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11349-147772	ui	The transaction list's pager does not show the total count ('of N') the design shows, and its arrows and range text have not been compared with the design yet.	6be65301494d	2026-11-14
@@ -430,7 +430,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11900-116258	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	575e832901fb	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11902-119713	ui	On tablet the How staking works section is a plain notice with five bullets, not matched to the design's band yet; the page header, wallet tile and rewards chip have not been compared.	87b963b10ebc	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11902-120450	ui	Not yet compared element by element with the design at 768: the How staking works section, the page header and tabs, the Wallet tile and the rewards chip.	87b963b10ebc	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11902-121921	ui	On tablet How delegation works leaves out the design's lines on partial or expiring delegation and reduced voting power. The Overview shows a SKAI figure and a delegator count, not votes and users, and no delegates or artwork appear.	1c575fb412af	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11902-121921	ui	On tablet How delegation works leaves out the lines on partial or expiring delegation and reduced voting power. Delegated to you shows a dash until delegation history loads, and no delegates or artwork appear.	e728c40e5f48	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11902-122611	ui	On tablet How delegation works leaves out the design's lines on partial or expiring delegation and reduced voting power. The Overview shows a SKAI figure and a delegator count, not votes and users, and no delegates or artwork appear.	cd3e939f9d66	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11902-123338	not-built	Not built yet: the board shows a pop-up for delegating a share of your votes to another wallet for a set number of days.	3a1a8a66b9a0	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11902-123792	ui	On tablet the All delegates filter is switched off, and the Overview card's fill and tile icons are not yet compared with the design.	99ceb3e6aa15	2026-11-14
@@ -438,9 +438,9 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11904-130419	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	062ba69eaa78	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11906-133540	ui	Not yet compared element by element with the design at 375: the How staking works section, the page header and tabs, the Wallet tile and the rewards chip.	87b963b10ebc	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11907-134647	ui	Not yet compared element by element with the design at 375: the How staking works section, the page header and tabs, the Wallet tile and the rewards chip.	87b963b10ebc	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11907-136716	ui	On phones How delegation works has no artwork and omits the design's lines on partial or expiring delegation and reduced voting power. The Overview shows a SKAI figure and a delegator count, not votes and users, and no delegates appear.	c3fec134af2a	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11907-137387	ui	On phones How delegation works leaves out the design's lines on partial or expiring delegation and reduced voting power. The Overview shows a SKAI figure and a delegator count, not votes and users, and no delegates appear.	dd42cb39f6c9	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11907-137821	ui	On phones the Off-chain view offers no partial or expiring delegation, and the Overview tiles show SKAI amounts and a delegator count instead of the design's vote and user counts.	b77c955c3c8c	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11907-136716	ui	On phones How delegation works has no artwork and omits the lines on partial or expiring delegation and reduced voting power. Delegated to you shows a dash until delegation history loads, and no delegates appear.	a63be3bb0311	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	11907-137387	ui	On phones How delegation works leaves out the lines on partial or expiring delegation and reduced voting power. Delegated to you shows a dash until delegation history loads, and no delegates appear.	e3ab2c8e8d08	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	11907-137821	ui	On phones the Off-chain view offers no partial or expiring delegation, the vote total shows a SKAI amount, and Delegated to you shows a dash until delegation history loads.	059606bc2c6b	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11907-138358	not-built	Not built yet: the board shows a pop-up for delegating a share of your votes to another wallet for a set number of days.	34c598474d35	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11915-139136	ui	On phones the All delegates filter is switched off, and the Overview card's fill and tile icons are not yet compared with the design.	67b4e8998e61	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11917-139866	ui	On phones the All delegates filter is switched off, and the Overview card's fill and tile icons are not yet compared with the design.	4babeb0f5539	2026-11-14
@@ -596,13 +596,13 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	12225-462758	ui	Share outcome is not offered on your own win in the Winners list when another winner took the same prize tier in that draw.	1d72a80ce517	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12261-469767	ui	Volume and fee lines are built; the fee shows now for the risk pool, and volume waits on the vault activity history.	22cd4e8dae74	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12261-470424	ui	Volume and fee lines are built; the fee shows now for the risk pool, and volume waits on the vault activity history.	44b7843a0dcf	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12261-474854	backend	Waiting on backend work.	d936c723747f	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12261-475335	backend	Waiting on backend work.	ad27e35fa9f2	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	12261-474854	ui	The Search winners overlay is built, with winners' handles and Follow; it has not been compared with the design since.	5b1ed59d2c7c	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	12261-475335	ui	The Search winners overlay is built, with winners' handles and Follow; its phone layout has not been compared with the phone design.	7f1ed36ee70f	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	13752-218427	ui	On phone the Towers tile shows the desktop cover art, where the design uses a mirrored version of the picture.	cfb1d50ae97a	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	13752-218637	ui	On tablet the Towers tile shows the desktop cover art, where the design uses a mirrored version of the picture.	b9ce36a16f25	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	13754-219978	ui	On phone the casino page's sections below the menu (game shelves, featured games, bets table and About) sit where the design places them but are not yet compared element by element.	c764cd088dc3	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	13754-220768	ui	On tablet the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	4e08b46273f3	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	13754-221194	ui	At 1440 the flame before a trending game's play count does not show yet: the trending pick still has to count sUSD rounds on their own.	40a130d384f9	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	13754-220768	ui	On tablet the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	f20778c3708b	2026-11-19
+3sSzw1KewMtUbeLAv7uW0r	13754-221194	ui	At 1440 the flame before a trending game's play count now counts sUSD rounds on their own; it shows once that update reaches the page.	fbe2c2bb8ef3	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	13754-221576	ui	At 1440 the casino page's game shelves and everything below them are not yet compared element by element with the design.	d16cb35a2172	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9003-43516	ui	On desktop the sections below the game still use an older layout than the design: the tabs, info card, Community wins table, More games cards, Bets header, About text and footer all differ.	839c2b60d651	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9003-44223	ui	On tablet the sections below the game still use an older layout than the design, from the tabs and info card down to the footer, and the Multiplier label ends with a colon the design leaves out.	034ba9f24117	2026-11-17

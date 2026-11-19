@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-19T07:32:39.175Z",
+  "generated": "2026-11-19T22:48:25.582Z",
   "harvestedAt": "2026-11-16",
   "rollup": {
     "pages": 39,
@@ -22,7 +22,7 @@
     "matched": 3240,
     "done": 2117,
     "verified": 1847,
-    "visuallyDowngraded": 148,
+    "visuallyDowngraded": 149,
     "visualUnmapped": [],
     "visualRetired": [
       {
@@ -43,9 +43,9 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 958,
+    "partial": 964,
     "notStarted": 21,
-    "blocked": 139,
+    "blocked": 133,
     "frameDefect": 0,
     "catalogFurniture": 5,
     "unknown": 0,
@@ -56,16 +56,16 @@
     "conflicts": 20
   },
   "doneRows": {
-    "total": 4769,
+    "total": 4770,
     "withBreakpointProvenance": 2578,
-    "namingANodeId": 4544,
+    "namingANodeId": 4545,
     "sayingFurniture": 27
   },
   "rows": {
-    "total": 26293,
+    "total": 26315,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 982,
-    "unrecognisedTokens": 85972
+    "unrecognisedTokens": 86260
   },
   "statusFiles": [
     {
@@ -7365,6 +7365,24 @@
       "ids": 2
     },
     {
+      "file": "status.wave80v.b185.governance.tsv",
+      "rows": 9,
+      "withLiveId": 9,
+      "ids": 9
+    },
+    {
+      "file": "status.wave80v.b185.onboarding.tsv",
+      "rows": 3,
+      "withLiveId": 3,
+      "ids": 3
+    },
+    {
+      "file": "status.wave80v.b185.play.tsv",
+      "rows": 10,
+      "withLiveId": 10,
+      "ids": 10
+    },
+    {
       "file": "status.wave82.HARV.tsv",
       "rows": 2,
       "withLiveId": 0,
@@ -7945,8 +7963,7 @@
       "visuallyDowngraded": 0,
       "byStatus": {
         "done": 87,
-        "blocked-on-backend": 3,
-        "partial": 4
+        "partial": 7
       },
       "liveOnly": []
     },
@@ -8615,11 +8632,11 @@
       "ambiguous": 0,
       "conflicts": 0,
       "verified": 262,
-      "visuallyDowngraded": 12,
+      "visuallyDowngraded": 13,
       "byStatus": {
         "done": 269,
-        "partial": 281,
-        "blocked-on-backend": 21,
+        "partial": 284,
+        "blocked-on-backend": 18,
         "not-started": 12
       },
       "liveOnly": []
@@ -16422,8 +16439,8 @@
       "id": "2665-8843",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -16670,8 +16687,8 @@
       "id": "2665-9536",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -16854,8 +16871,8 @@
       "id": "2665-10229",
       "page": "✅ Onboarding and Authentication",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": null
     },
     {
@@ -24966,8 +24983,8 @@
       "id": "11343-142585",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "partial"
     },
     {
@@ -27278,8 +27295,8 @@
       "id": "12261-474854",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "done",
       "verdict": "deferred"
     },
     {
@@ -28086,8 +28103,8 @@
       "id": "12261-475335",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "blocked-on-backend",
-      "claimed": "blocked-on-backend",
+      "status": "partial",
+      "claimed": "partial",
       "verdict": "deferred"
     },
     {
