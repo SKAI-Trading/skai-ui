@@ -287,7 +287,8 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
     const avatarInitial = username ? username[0].toUpperCase() : "?";
 
     // The dashboard boards draw the card in Green Coal 200 on a Green Coal 100
-    // line, with their shadow: r20 / r18 / r24 and padding 8 / 24 / 32 at 375
+    // line, with their shadow (0 10 80 black, 25% on the 375 boards and 30%
+    // from 768): r20 / r18 / r24 and padding 8 / 24 / 32 at 375
     // (2424:7715), 768 (2424:4081) and 1440 (2422:2943). At 375 the text sits
     // a further 8 in and the full-width control does not. The title is Super-
     // headline 4 with the name in Sky Blue, the line under it Paragraph 2 in
@@ -298,7 +299,7 @@ const WelcomeCard = React.forwardRef<HTMLDivElement, WelcomeCardProps>(
       <div
         ref={ref}
         className={cn(
-          "relative overflow-hidden flex flex-col justify-center rounded-[20px] md:rounded-[18px] lg:rounded-3xl ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.3)] p-2 md:p-6 lg:p-8",
+          "relative overflow-hidden flex flex-col justify-center rounded-[20px] md:rounded-[18px] lg:rounded-3xl ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.25)] md:shadow-[0_10px_80px_rgba(0,0,0,0.3)] p-2 md:p-6 lg:p-8",
           className,
         )}
         {...props}

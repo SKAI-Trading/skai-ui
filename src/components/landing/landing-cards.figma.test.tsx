@@ -38,7 +38,10 @@ describe("the card surface", () => {
     for (const id of ["badge", "referral", "welcome"]) {
       const c = classesOf(screen.getByTestId(id));
       // The boards' stroke is INSIDE, so it is an inset ring, which adds nothing to the box.
-      expect(c, id).toEqual(expect.arrayContaining(["bg-green-coal-200", "ring-1", "ring-inset", "ring-green-coal-100", "shadow-[0_10px_80px_rgba(0,0,0,0.3)]"]));
+      expect(c, id).toEqual(expect.arrayContaining(["bg-green-coal-200", "ring-1", "ring-inset", "ring-green-coal-100"]));
+      // 0 10 80 black: 25% on the 375 boards (2424:7715, 2481:15918, 2005:25112, 2005:26526, read
+      // 2026-11-19), 30% from 768. Only those two shadow utilities, so no other width paints another.
+      expect(c.filter((k) => /(^|:)shadow-/.test(k)), id).toEqual(["shadow-[0_10px_80px_rgba(0,0,0,0.25)]", "md:shadow-[0_10px_80px_rgba(0,0,0,0.3)]"]);
       expect(c.filter((k) => /^border/.test(k)), id).toEqual([]);
     }
   });

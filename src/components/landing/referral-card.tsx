@@ -80,7 +80,8 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
     };
 
     // The dashboard boards draw the card as four stacked groups in Green Coal
-    // 200 on a Green Coal 100 line, with their shadow. Per width:
+    // 200 on a Green Coal 100 line, with their shadow (0 10 80 black, 25% on
+    // the 375 boards and 30% from 768). Per width:
     //   375 (2424:7715)   343x288, r20, padding 8, groups 16 apart; the text
     //                     lines sit a further 8 in, the boxes and button do not
     //   768 (2424:4081)   352x332, r18, padding 16, groups 22 apart
@@ -94,7 +95,7 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex flex-col gap-4 md:gap-[22px] lg:gap-6 rounded-[20px] md:rounded-[18px] lg:rounded-[32px] ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.3)] p-2 md:p-4 lg:p-6",
+          "flex flex-col gap-4 md:gap-[22px] lg:gap-6 rounded-[20px] md:rounded-[18px] lg:rounded-[32px] ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.25)] md:shadow-[0_10px_80px_rgba(0,0,0,0.3)] p-2 md:p-4 lg:p-6",
           className,
         )}
         {...props}

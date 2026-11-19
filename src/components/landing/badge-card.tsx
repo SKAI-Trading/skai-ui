@@ -130,7 +130,8 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
     }, [coachOpen]);
 
     // The dashboard boards draw the card in Green Coal 200 on a Green Coal 100
-    // line, with their shadow, and per width this corner and padding:
+    // line, with their shadow (0 10 80 black, 25% on the 375 boards and 30%
+    // from 768), and per width this corner and padding:
     //   375 (2424:7715)   343x80,  r20, 8 / 16 / 8 / 12, badge 48, gap 12
     //   768 (2424:4081)   352x112, r18, 16 all round,    badge 80, gap 16
     //   1440 (2422:2943)  448x216, r24, 32 / 32 / 32 / 16, badge 150, gap 8
@@ -145,7 +146,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
       <div
         ref={ref}
         className={cn(
-          "relative flex flex-col gap-3 md:gap-4 rounded-[20px] md:rounded-[18px] lg:rounded-3xl ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.3)] py-2 pl-3 pr-4 md:p-4 lg:py-8 lg:pl-4 lg:pr-8",
+          "relative flex flex-col gap-3 md:gap-4 rounded-[20px] md:rounded-[18px] lg:rounded-3xl ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.25)] md:shadow-[0_10px_80px_rgba(0,0,0,0.3)] py-2 pl-3 pr-4 md:p-4 lg:py-8 lg:pl-4 lg:pr-8",
           className,
         )}
         {...props}
