@@ -132,6 +132,15 @@ const defaultActions: Record<
   reload: { primary: reload, secondary: null },
 };
 
+/**
+ * The Swap error plate (7804:77701), shared by ErrorScreen and ErrorNotice so a
+ * section's error and a page's error are drawn from one set of classes.
+ */
+const PLATE_CLASS = "rounded-[16px] bg-[#ff574a]/[0.16]";
+const GLYPH_CLASS = "size-4 shrink-0 text-[#ff574a]";
+const HEADING_CLASS = "font-['Manrope'] text-[16px] font-bold leading-[22px] text-white";
+const LINE_CLASS = "font-['Mulish'] text-[14px] leading-[18px] text-[#E0E0E0]";
+
 /** The loader's glow (SkaiLoader), held still: an error screen does not pulse. */
 const GLOW_BACKGROUND =
   "radial-gradient(closest-side, rgba(23,249,180,0.18), rgba(23,249,180,0.06) 45%, transparent 70%)";
@@ -221,23 +230,17 @@ const ErrorScreen = React.forwardRef<HTMLDivElement, ErrorScreenProps>(
         data-error-card=""
       >
         <div
-          className="rounded-[16px] bg-[#ff574a]/[0.16] py-3 pl-4 pr-5"
+          className={cn(PLATE_CLASS, "py-3 pl-4 pr-5")}
           title={detail || undefined}
           data-error-plate=""
         >
           <div className="flex items-center gap-1.5">
-            <Glyph className="size-4 shrink-0 text-[#ff574a]" aria-hidden="true" />
-            <Heading
-              id={titleId}
-              className="font-['Manrope'] text-[16px] font-bold leading-[22px] text-white"
-            >
+            <Glyph className={GLYPH_CLASS} aria-hidden="true" />
+            <Heading id={titleId} className={HEADING_CLASS}>
               {title ?? copy.title}
             </Heading>
           </div>
-          <p
-            id={lineId}
-            className="mt-1 font-['Mulish'] text-[14px] leading-[18px] text-[#E0E0E0]"
-          >
+          <p id={lineId} className={cn(LINE_CLASS, "mt-1")}>
             {description ?? copy.description}
           </p>
         </div>
@@ -298,4 +301,95 @@ const ErrorScreen = React.forwardRef<HTMLDivElement, ErrorScreenProps>(
 );
 ErrorScreen.displayName = "ErrorScreen";
 
-export { ErrorScreen };
+// =============================================================================
+// ERROR NOTICE
+// =============================================================================
+// The same plate for an error that keeps its place inside a page: one section
+// of a screen failing while the rest stays up. It fills its slot, takes one
+// action, and in its compact form is a single row for tight layouts (an order
+// book, a ticker).
+// =============================================================================
+
+export interface ErrorNoticeProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
+  /** Picks the glyph: offline draws the no-signal mark, reload the arrows. */
+  variant?: ErrorScreenVariant;
+  title: string;
+  description?: string;
+  /** A longer reason, such as the error message. Shown in a hover tooltip only. */
+  detail?: string;
+  /** One action, such as Retry. */
+  action?: ErrorScreenAction;
+  /** Accessible name for the action when its label alone is ambiguous. */
+  actionLabel?: string;
+  /** A single row: glyph, title and the action. */
+  compact?: boolean;
+}
+
+const ErrorNotice = React.forwardRef<HTMLDivElement, ErrorNoticeProps>(
+  (
+    { variant = "crash", title, description, detail, action, actionLabel, compact = false, className, ...props },
+    ref,
+  ) => {
+    const Glyph = variantGlyph[variant] ?? XCircle;
+
+    if (compact) {
+      return (
+        <div
+          ref={ref}
+          role="alert"
+          title={detail || undefined}
+          className={cn(PLATE_CLASS, "flex items-center justify-center gap-1.5 px-3 py-2", className)}
+          {...props}
+        >
+          <Glyph className={GLYPH_CLASS} aria-hidden="true" />
+          <span className={cn(HEADING_CLASS, "truncate text-[14px] leading-[18px]")}>{title}</span>
+          {action && (
+            <SkaiButton
+              type="button"
+              skaiType="tertiary"
+              skaiSize="pill"
+              className="h-6 shrink-0 px-2 text-[12px] leading-4"
+              onClick={action.onClick}
+              aria-label={actionLabel}
+            >
+              {action.label}
+            </SkaiButton>
+          )}
+        </div>
+      );
+    }
+
+    return (
+      <div
+        ref={ref}
+        role="alert"
+        className={cn(PLATE_CLASS, "flex h-full flex-col justify-center gap-3 py-3 pl-4 pr-5", className)}
+        {...props}
+      >
+        <div title={detail || undefined}>
+          <div className="flex items-center gap-1.5">
+            <Glyph className={GLYPH_CLASS} aria-hidden="true" />
+            <p className={HEADING_CLASS}>{title}</p>
+          </div>
+          {description && <p className={cn(LINE_CLASS, "mt-1")}>{description}</p>}
+        </div>
+        {action && (
+          <div>
+            <SkaiButton
+              type="button"
+              skaiType="secondary"
+              skaiSize="pill"
+              onClick={action.onClick}
+              aria-label={actionLabel}
+            >
+              {action.label}
+            </SkaiButton>
+          </div>
+        )}
+      </div>
+    );
+  },
+);
+ErrorNotice.displayName = "ErrorNotice";
+
+export { ErrorScreen, ErrorNotice };

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ErrorScreen } from "./error-screen";
+import { ErrorNotice, ErrorScreen } from "./error-screen";
 
 const meta: Meta<typeof ErrorScreen> = {
   title: "Feedback/ErrorScreen",
@@ -34,6 +34,21 @@ export const Inline: Story = {
   render: (args) => (
     <div style={{ background: "#001615", minHeight: 640 }}>
       <ErrorScreen {...args} layout="inline" />
+    </div>
+  ),
+};
+
+// A section that failed inside a page that did not: the same plate, in place.
+export const SectionNotice: Story = {
+  render: () => (
+    <div style={{ background: "#001615", padding: 24, display: "grid", gap: 16, maxWidth: 420 }}>
+      <ErrorNotice
+        title="Order Book -- Error"
+        description="This section encountered an unexpected error."
+        detail="WebSocket disconnected"
+        action={{ label: "Try again" }}
+      />
+      <ErrorNotice compact title="Ticker -- Network Error" action={{ label: "Retry" }} />
     </div>
   ),
 };

@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { ErrorScreen, errorScreenCopy, type ErrorScreenVariant } from "./error-screen";
+import { ErrorNotice, ErrorScreen, errorScreenCopy, type ErrorScreenVariant } from "./error-screen";
 
 const tok = (el: Element) => (el.getAttribute("class") || "").split(/\s+/).filter(Boolean);
 
@@ -127,5 +127,43 @@ describe("ErrorScreen", () => {
     expect(imports.sort()).toEqual(["../../lib/utils", "../branding/skai-logo", "../core/button", "lucide-react", "react"]);
     expect(src).not.toMatch(/\bimport\(/);
     expect(src).not.toMatch(/useContext|React\.lazy|\blazy\(/);
+  });
+});
+
+describe("ErrorNotice", () => {
+  it("draws the same plate as the screen, in the section's slot", () => {
+    const { container } = render(<ErrorScreen />);
+    const pagePlate = tok(container.querySelector("[data-error-plate]")!);
+    const { getByRole } = render(<ErrorNotice title="Order Book -- Error" description="This section failed." />);
+    const notice = tok(getByRole("alert", { name: "" }));
+    for (const cls of ["rounded-[16px]", "bg-[#ff574a]/[0.16]"]) {
+      expect(pagePlate).toContain(cls);
+      expect(notice).toContain(cls);
+    }
+    expect(notice).not.toContain("fixed");
+  });
+
+  it("keeps the reason in the tooltip and runs its one action", () => {
+    const retry = vi.fn();
+    render(
+      <ErrorNotice
+        title="Trading Chart -- Error"
+        detail="WebSocket disconnected"
+        action={{ label: "Retry", onClick: retry }}
+        actionLabel="Retry Trading Chart"
+      />,
+    );
+    expect(screen.queryByText("WebSocket disconnected")).toBeNull();
+    expect(screen.getByTitle("WebSocket disconnected")).toHaveTextContent("Trading Chart -- Error");
+    fireEvent.click(screen.getByRole("button", { name: "Retry Trading Chart" }));
+    expect(retry).toHaveBeenCalledTimes(1);
+  });
+
+  it("is one row in compact form", () => {
+    render(<ErrorNotice compact title="Ticker -- Error" action={{ label: "Retry" }} />);
+    const row = screen.getByRole("alert");
+    expect(tok(row)).toContain("flex");
+    expect(tok(row)).toContain("items-center");
+    expect(row.querySelectorAll("p")).toHaveLength(0);
   });
 });
