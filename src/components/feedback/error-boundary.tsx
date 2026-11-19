@@ -1,35 +1,5 @@
 import * as React from "react";
-import { cn } from "../../lib/utils";
-import { AlertTriangleIcon, RefreshCwIcon } from "lucide-react";
-import { Button } from "../core/button";
-
-/**
- * Cross-runtime "is development" check. The skai-ui bundle does not have
- * `process.env.NODE_ENV` statically replaced (see tsup.config.ts), and some
- * consumers may run where `process` is undefined. Falling back via try/catch
- * keeps the boundary itself from throwing inside `render()`.
- */
-function isDevelopmentEnv(): boolean {
-  try {
-    // Access `process` via globalThis so this lib needs no @types/node in its
-    // dts build (it ships to browsers; the runtime guard handles undefined).
-    const proc = (globalThis as { process?: { env?: { NODE_ENV?: string } } })
-      .process;
-    if (proc?.env?.NODE_ENV === "development") {
-      return true;
-    }
-  } catch {
-    /* sandboxed environments may throw on process access */
-  }
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- import.meta typing varies
-    const meta: any = (import.meta as any) ?? {};
-    if (meta?.env?.DEV === true) return true;
-  } catch {
-    /* CJS or unavailable */
-  }
-  return false;
-}
+import { ErrorScreen } from "./error-screen";
 
 export interface ErrorBoundaryProps {
   /** Child components to render */
@@ -107,54 +77,21 @@ class ErrorBoundary extends React.Component<
 }
 
 /**
- * Default error fallback UI
+ * Default error fallback: the shared ErrorScreen, filling the boundary's slot.
+ * The error's message is the plate's hover tooltip, not page copy.
  */
 const DefaultErrorFallback: React.FC<FallbackProps> = ({
   error,
   resetErrorBoundary,
-}) => {
-  return (
-    <div
-      role="alert"
-      className={cn(
-        "flex flex-col items-center justify-center gap-4 p-8 text-center",
-        "rounded-lg border border-destructive/20 bg-destructive/5",
-      )}
-    >
-      <div aria-hidden="true" className="rounded-full bg-destructive/10 p-3">
-        <AlertTriangleIcon className="h-8 w-8 text-destructive" />
-      </div>
-      <div className="space-y-1">
-        <h2 className="text-lg font-semibold text-destructive">
-          Something went wrong
-        </h2>
-        <p className="text-sm text-muted-foreground max-w-md">
-          {error.message || "An unexpected error occurred"}
-        </p>
-      </div>
-      <Button
-        variant="outline"
-        size="sm"
-        type="button"
-        onClick={resetErrorBoundary}
-        className="gap-2"
-      >
-        <RefreshCwIcon className="h-4 w-4" aria-hidden="true" />
-        Try again
-      </Button>
-      {isDevelopmentEnv() && (
-        <details className="mt-4 w-full max-w-md text-left">
-          <summary className="cursor-pointer text-xs text-muted-foreground hover:text-foreground">
-            Error details
-          </summary>
-          <pre className="mt-2 overflow-auto rounded bg-muted p-2 text-xs">
-            {error.stack}
-          </pre>
-        </details>
-      )}
-    </div>
-  );
-};
+}) => (
+  <ErrorScreen
+    variant="crash"
+    layout="inline"
+    detail={error.message || undefined}
+    primaryAction={{ label: "Try again", onClick: resetErrorBoundary }}
+    secondaryAction={null}
+  />
+);
 
 DefaultErrorFallback.displayName = "DefaultErrorFallback";
 

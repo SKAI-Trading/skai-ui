@@ -189,13 +189,15 @@ describe("ErrorBoundary", () => {
 });
 
 describe("DefaultErrorFallback", () => {
-  it("should render error message", () => {
+  it("keeps the error message off the page and in the hover tooltip", () => {
     const error = new Error("Something broke");
     const resetFn = vi.fn();
 
     render(<DefaultErrorFallback error={error} resetErrorBoundary={resetFn} />);
 
-    expect(screen.getByText("Something broke")).toBeInTheDocument();
+    expect(screen.getByRole("alert")).toHaveTextContent("Something went wrong");
+    expect(screen.queryByText("Something broke")).toBeNull();
+    expect(screen.getByTitle("Something broke")).toBeInTheDocument();
   });
 
   it("should call resetErrorBoundary on button click", () => {

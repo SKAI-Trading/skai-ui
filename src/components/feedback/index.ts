@@ -11,6 +11,7 @@ export * from "./spinner";
 export * from "./skai-loader";
 export * from "./empty-state";
 export * from "./error-boundary";
+export * from "./error-screen";
 export * from "./notification";
 export * from "./bouncing-dots";
 export * from "./circular-progress";
