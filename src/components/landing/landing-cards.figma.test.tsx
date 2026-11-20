@@ -38,7 +38,10 @@ describe("the card surface", () => {
     for (const id of ["badge", "referral", "welcome"]) {
       const c = classesOf(screen.getByTestId(id));
       // The boards' stroke is INSIDE, so it is an inset ring, which adds nothing to the box.
-      expect(c, id).toEqual(expect.arrayContaining(["bg-green-coal-200", "ring-1", "ring-inset", "ring-green-coal-100", "shadow-[0_10px_80px_rgba(0,0,0,0.3)]"]));
+      expect(c, id).toEqual(expect.arrayContaining(["bg-green-coal-200", "ring-1", "ring-inset", "ring-green-coal-100"]));
+      // 0 10 80 black: 25% on the 375 boards (2424:7715, 2481:15918, 2005:25112, 2005:26526, read
+      // 2026-11-19), 30% from 768. Only those two shadow utilities, so no other width paints another.
+      expect(c.filter((k) => /(^|:)shadow-/.test(k)), id).toEqual(["shadow-[0_10px_80px_rgba(0,0,0,0.25)]", "md:shadow-[0_10px_80px_rgba(0,0,0,0.3)]"]);
       expect(c.filter((k) => /^border/.test(k)), id).toEqual([]);
     }
   });
@@ -50,7 +53,7 @@ describe("BadgeCard", () => {
     return screen.getByTestId("badge");
   };
   const BOARD = {
-    375: { pad: [8, 16, 8, 12], radius: 20, rowGap: 12, name: [18, 22, 400], sub: [12, 14, 400], points: [14, 16, 400], pill: [10, 14, 400], pillPad: [2, 8, 2, 8], rewardGap: 4 },
+    375: { pad: [8, 16, 8, 12], radius: 20, rowGap: 12, name: [18, 22, 400], sub: [12, 14, 400], points: [14, 16, 400], pill: [10, 14, 400], pillPad: [2, 8, 2, 8], rewardGap: null },
     768: { pad: [16, 16, 16, 16], radius: 18, rowGap: 16, name: [18, 22, 400], sub: [12, 16, 400], points: [16, 20, 400], pill: [10, 14, 400], pillPad: [2, 8, 2, 8], rewardGap: 10 },
     1440: { pad: [32, 32, 32, 16], radius: 24, rowGap: 8, name: [24, 28, 400], sub: [14, 18, 400], points: [22, 26, 400], pill: [11, 14, 400], pillPad: [2, 12, 2, 12], rewardGap: 10 },
   } as const;
@@ -68,7 +71,8 @@ describe("BadgeCard", () => {
     expect(type(points, w)).toEqual(b.points);
     expect(type(pill, w)).toEqual(b.pill);
     expect(pad(pill, w)).toEqual(b.pillPad);
-    expect(paintedAt(reward, w).gap).toBe(b.rewardGap);
+    // At 375 the points and the pill end two different lines (badge-card.test.tsx), not one box.
+    if (b.rewardGap !== null) expect(paintedAt(reward, w).gap).toBe(b.rewardGap);
   });
 
   it("sets the points and the pill in Mulish, in Alien Green 300", () => {
@@ -84,7 +88,7 @@ describe("BadgeCard", () => {
     fireEvent.click(screen.getByRole("button", { name: "What is Skai?" }));
     const tip = screen.getByRole("tooltip");
     expect(classesOf(tip)).toEqual(
-      expect.arrayContaining(["md:bottom-[calc(100%+2px)]", "md:top-auto", "md:-right-[26px]", "md:left-auto", "md:translate-x-0", "md:flex-col-reverse", "md:items-end"]),
+      expect.arrayContaining(["md:bottom-[calc(100%+2px)]", "md:top-auto", "md:-right-[26px]", "md:left-auto", "md:flex-col-reverse", "md:items-end"]),
     );
     // 1440 keeps the bubble to the right of the icon.
     expect(classesOf(tip)).toEqual(expect.arrayContaining(["lg:left-[calc(100%+4px)]", "lg:top-1/2", "lg:bottom-auto", "lg:right-auto", "lg:flex-row"]));

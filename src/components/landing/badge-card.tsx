@@ -86,7 +86,28 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
     const subtitle = preLaunch ? d.badge.subtitle : badgeSubtitle;
     const help = preLaunch ? "" : helpBody;
     const [coachOpen, setCoachOpen] = React.useState(false);
+    const [coachLeft, setCoachLeft] = React.useState<number | null>(null);
     const coachRef = React.useRef<HTMLDivElement>(null);
+
+    // Below md the coachmark hangs 141 left of the icon, where 2481:15918
+    // draws it. A subtitle much shorter or longer than the board's would carry
+    // it past a screen edge, so there it is held 16 inside both. From md the
+    // breakpoint classes place it and this offset is not read.
+    React.useLayoutEffect(() => {
+      if (!coachOpen) return;
+      const place = () => {
+        const icon = coachRef.current;
+        const vw = document.documentElement.clientWidth;
+        if (!icon || !vw) return;
+        const width = Math.min(250, vw - 32);
+        const left = icon.getBoundingClientRect().left - 141;
+        const held = Math.min(Math.max(left, 16), vw - 16 - width);
+        setCoachLeft(held === left ? null : held - left - 141);
+      };
+      place();
+      window.addEventListener("resize", place);
+      return () => window.removeEventListener("resize", place);
+    }, [coachOpen]);
 
     // Escape and outside-click close the coachmark. It is a popover, not a
     // modal, so there is no scrim to hang an onClick on.
@@ -109,7 +130,8 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
     }, [coachOpen]);
 
     // The dashboard boards draw the card in Green Coal 200 on a Green Coal 100
-    // line, with their shadow, and per width this corner and padding:
+    // line, with their shadow (0 10 80 black, 25% on the 375 boards and 30%
+    // from 768), and per width this corner and padding:
     //   375 (2424:7715)   343x80,  r20, 8 / 16 / 8 / 12, badge 48, gap 12
     //   768 (2424:4081)   352x112, r18, 16 all round,    badge 80, gap 16
     //   1440 (2422:2943)  448x216, r24, 32 / 32 / 32 / 16, badge 150, gap 8
@@ -117,18 +139,20 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
     // points" (163) and the Credited pill (64, 10 after it) need side by side
     // (report a4444746). The leaderboard keeps 32 on both sides there. Where
     // the column is narrower still (a 1024 window gives the card 425), the
-    // pill drops under the points rather than leave the card.
+    // pill drops under the points rather than leave the card. At 375 the
+    // board's 80 is taller than the 48 badge needs: the row is held to 64, so
+    // the badge and the text sit centred in it as drawn.
     return (
       <div
         ref={ref}
         className={cn(
-          "relative flex flex-col gap-3 md:gap-4 rounded-[20px] md:rounded-[18px] lg:rounded-3xl ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.3)] py-2 pl-3 pr-4 md:p-4 lg:py-8 lg:pl-4 lg:pr-8",
+          "relative flex flex-col gap-3 md:gap-4 rounded-[20px] md:rounded-[18px] lg:rounded-3xl ring-1 ring-inset ring-green-coal-100 bg-green-coal-200 shadow-[0_10px_80px_rgba(0,0,0,0.25)] md:shadow-[0_10px_80px_rgba(0,0,0,0.3)] py-2 pl-3 pr-4 md:p-4 lg:py-8 lg:pl-4 lg:pr-8",
           className,
         )}
         {...props}
       >
         {/* Badge Info Row */}
-        <div data-testid="badge-card-row" className="flex flex-row items-center gap-3 md:gap-4 lg:gap-2">
+        <div data-testid="badge-card-row" className="flex flex-row items-center gap-3 md:gap-4 lg:gap-2 min-h-16 md:min-h-0">
           {/* Badge Icon */}
           <div className="flex-shrink-0">
             <img
@@ -139,10 +163,18 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
             />
           </div>
 
-          <div className="flex md:flex-col justify-between lg:gap-4 gap-2 w-full min-w-0">
+          {/* Below md the board (2424:7715) runs the subtitle line on under
+              the points: name and points share the first line, then the
+              subtitle line and the pill share the second, the subtitle
+              ending 8 short of the pill (72..241 against the pill at 274).
+              So there the text and reward columns give up their boxes
+              (contents) and their four children flow as two lines, the
+              break between them forcing the wrap. From md they are columns
+              again. */}
+          <div className="flex flex-wrap items-start justify-between gap-x-2 w-full min-w-0 md:flex-col md:flex-nowrap md:items-stretch md:gap-2 lg:gap-4">
             {/* Text */}
-            <div className="flex flex-col flex-1 justify-center min-w-0">
-              <h3 className="font-manrope text-white text-sub-1-mobile md:text-sub-1-tablet lg:text-sub-1 mb-1">
+            <div data-testid="badge-card-text" className="contents md:flex md:flex-col md:flex-1 md:justify-center md:min-w-0">
+              <h3 className="order-1 flex-1 min-w-0 md:flex-initial md:mb-1 font-manrope text-white text-sub-1-mobile md:text-sub-1-tablet lg:text-sub-1">
                 {badgeName}
               </h3>
               {/* Subtitle line — Figma 2481:12507 (1440) / 2481:17253 (375)
@@ -152,7 +184,7 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                   is written as its hex here and in the coachmark: skai.trade's
                   Tailwind theme keeps a legacy `skai.gray-100` (Ash, #95A09F)
                   that takes the `skai-gray-100` name there. */}
-              <div className="flex flex-row items-center gap-1">
+              <div data-testid="badge-card-subtitle" className="order-4 flex flex-1 min-w-0 min-h-4 self-end flex-row items-center gap-1 md:flex-initial md:min-h-0 md:self-auto">
                 <p className="font-manrope text-[#E0E0E0] text-para-2-mobile md:text-para-2-tablet lg:text-para-2">
                   {subtitle}
                 </p>
@@ -172,8 +204,12 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                     {coachOpen && (
                       /* The tool-tip component's three positions, one per
                          width, all 250 wide with an r8 bubble:
-                         375 (2481:15918, Top): connector on top, the bubble
-                           under it at 12 padding and 12/14 type.
+                         375 (2481:15918, Top): connector on top, its arrow
+                           centred in the 250, the bubble under it at 12
+                           padding and 12/14 type. The board sets the box at
+                           100,277 with the icon at 241,264, so it hangs 141
+                           left of the icon and starts 13 below the icon's
+                           top; the arrow lands 24 left of the icon's centre.
                          768 (2481:14785, Bottom): the bubble ABOVE the icon at
                            16 padding and 12/16 type, the connector under it
                            pointing down. The arrow sits 16 in from the right
@@ -185,12 +221,8 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
                       <div
                         data-probe="badge-coachmark"
                         role="tooltip"
-                        /* At 375 the bubble is CENTRED on the icon rather than
-                           placed as drawn (the board sits the icon ~60% across
-                           its 250): right-anchoring it ran the left edge 33px
-                           off a 375 viewport once the badge card was narrow
-                           enough. */
-                        className="absolute left-1/2 top-[calc(100%+4px)] z-30 flex w-[250px] max-w-[calc(100vw-32px)] -translate-x-1/2 flex-col items-center md:left-auto md:top-auto md:-right-[26px] md:bottom-[calc(100%+2px)] md:translate-x-0 md:flex-col-reverse md:items-end lg:right-auto lg:bottom-auto lg:left-[calc(100%+4px)] lg:top-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center"
+                        style={coachLeft === null ? undefined : ({ "--coach-left": `${coachLeft}px` } as React.CSSProperties)}
+                        className="absolute left-[var(--coach-left,-141px)] top-[13px] z-30 flex w-[250px] max-w-[calc(100vw-32px)] flex-col items-center md:left-auto md:top-auto md:-right-[26px] md:bottom-[calc(100%+2px)] md:flex-col-reverse md:items-end lg:right-auto lg:bottom-auto lg:left-[calc(100%+4px)] lg:top-1/2 lg:-translate-y-1/2 lg:flex-row lg:items-center"
                       >
                         <span
                           data-probe="badge-coachmark-connector"
@@ -223,17 +255,21 @@ const BadgeCard = React.forwardRef<HTMLDivElement, BadgeCardProps>(
               </div>
             </div>
 
+            <div aria-hidden="true" className="order-3 basis-full h-0 md:hidden" />
+
             {/* Reward and Status, in Alien Green 300. The boards set the points
                 in Numbers 3 (Mulish 14/16, 16/20, 22/26) and the pill's word in
                 Label 2 (Mulish 10/14, 10/14, 11/14) on a 2 / 8 pad, 2 / 12 at
                 1440, which is what puts the pair in 237 of the 1440 column's 242
-                (2422:3975, 2422:3976). At 375 the two stack 4 apart against the
-                card's right edge; from 768 they sit in a row 10 apart. */}
-            <div data-testid="badge-card-reward" className="flex flex-col md:flex-row md:flex-wrap items-end md:items-center gap-1 md:gap-2.5 flex-shrink-0">
-              <span className="font-numbers text-alien-green-bright text-number-3-mobile md:text-number-3-tablet lg:text-number-3 whitespace-nowrap">
+                (2422:3975, 2422:3976). At 375 the points end the name's line and
+                the pill the subtitle's, both against the card's right edge, the
+                pill's top 8 under the points' foot; from 768 they sit in a row
+                10 apart. */}
+            <div data-testid="badge-card-reward" className="contents md:flex md:flex-row md:flex-wrap md:items-center md:gap-2.5 md:flex-shrink-0">
+              <span className="order-2 shrink-0 md:shrink font-numbers text-alien-green-bright text-number-3-mobile md:text-number-3-tablet lg:text-number-3 whitespace-nowrap">
                 +{badgePoints} SKAI points
               </span>
-              <span className="font-numbers text-label-2-mobile md:text-label-2-tablet lg:text-label-2 px-2 lg:px-3 py-0.5 rounded-lg bg-alien-green-bright text-green-coal-300 whitespace-nowrap">
+              <span className="order-5 shrink-0 self-end mt-0.5 md:shrink md:self-auto md:mt-0 font-numbers text-label-2-mobile md:text-label-2-tablet lg:text-label-2 px-2 lg:px-3 py-0.5 rounded-lg bg-alien-green-bright text-green-coal-300 whitespace-nowrap">
                 {statusLabel}
               </span>
             </div>
