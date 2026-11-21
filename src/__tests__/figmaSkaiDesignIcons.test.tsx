@@ -23,7 +23,9 @@ import {
   FigmaActionCheckEnclosedIcon,
   FigmaActionDownloadIcon,
   FigmaActionFilterIcon,
+  FigmaActionHomeIcon,
   FigmaActionHotIcon,
+  FigmaActionLinkOutIcon,
   FigmaActionMasterIcon,
   FigmaActionNowIcon,
   FigmaActionSellIcon,
@@ -339,6 +341,125 @@ describe("Skai-Design icon components", () => {
     expect(tick.getAttribute("class")).toBe("stroke-green-coal-300");
     expect(disc.getAttribute("class")).toBeNull();
     expect(toned.querySelector("svg")?.getAttribute("tickClassName")).toBeNull();
+  });
+});
+
+/**
+ * The proposal row menu's Home and Link out (dropdown-multiselect 11307:135079,
+ * Skai-Web-App 3sSzw1KewMtUbeLAv7uW0r). No component export was kept for
+ * either, so the oracles are what was:
+ *
+ *   Home      the instance's shape and fill geometry, pasted as the 2026-11-19
+ *             read printed them: position and size, then the path with a
+ *             space before every command;
+ *   Link out  the instance export the app drew its Home (with deposit) glyph
+ *             from (mhF3BkzlTaGiLzJ7kvpmVc, 2026-09-14), and the same read's
+ *             box for the shape on the 1440 menu.
+ */
+describe("the proposal row menu's Home and Link out", () => {
+  const HOME_READ = `11307:135085 <icons/action:Size=16px, Type=Home> 16x16
+ BOOLEAN_OPERATION icon at 1.5,1.59 13x12.81 #ffffff /  sw0
+  fill NONZERO M6.50098 0 C6.77117 0.000175745 7.03481 0.0878742 7.25098 0.25 L12.501 4.1875 C12.6561 4.30388 12.7824 4.45547 12.8691 4.62891 C12.9559 4.80238 13.0009 4.99453 13.001 5.18848 L13.001 11.5635 C13.001 11.8948 12.8689 12.2129 12.6348 12.4473 C12.4004 12.6816 12.0823 12.8133 11.751 12.8135 L8.75098 12.8135 C8.41946 12.8135 8.10162 12.6817 7.86719 12.4473 C7.6328 12.2128 7.50098 11.895 7.50098 11.5635 L7.50098 9.31348 C7.50088 9.24737 7.47443 9.18351 7.42773 9.13672 C7.38101 9.08999 7.31704 9.06367 7.25098 9.06348 L5.75098 9.06348 C5.68494 9.06348 5.62106 9.09021 5.57422 9.13672 C5.52741 9.18353 5.50107 9.24728 5.50098 9.31348 L5.50098 11.5635 C5.50098 11.8946 5.36869 12.2129 5.13477 12.4473 C4.90044 12.6816 4.58137 12.8133 4.25 12.8135 L1.25 12.8135 C0.918517 12.8135 0.600622 12.6816 0.366211 12.4473 C0.13187 12.2128 0 11.8949 0 11.5635 L0 5.18848 C5.66618e-05 4.99454 0.0451056 4.80237 0.131836 4.62891 C0.218618 4.45553 0.34489 4.30383 0.5 4.1875 L5.75098 0.25 C5.96722 0.0880641 6.2308 0 6.50098 0 Z M6.50098 1 C6.44711 1 6.39377 1.01762 6.35059 1.0498 L1.09961 4.98828 C1.06889 5.01142 1.04364 5.04181 1.02637 5.07617 C1.00906 5.11078 1.00006 5.14978 1 5.18848 L1 11.5635 C1 11.6297 1.02644 11.6933 1.07324 11.7402 C1.12012 11.7871 1.18373 11.8135 1.25 11.8135 L4.25 11.8135 C4.31611 11.8133 4.37998 11.787 4.42676 11.7402 C4.4734 11.6934 4.50098 11.6296 4.50098 11.5635 L4.50098 9.31348 C4.50107 8.9822 4.63205 8.66401 4.86621 8.42969 C5.10061 8.19552 5.41964 8.06348 5.75098 8.06348 L7.25098 8.06348 C7.58225 8.06367 7.9005 8.19542 8.13477 8.42969 C8.36899 8.66402 8.50088 8.98216 8.50098 9.31348 L8.50098 11.5635 C8.50098 11.6298 8.52736 11.6933 8.57422 11.7402 C8.62111 11.7871 8.68468 11.8135 8.75098 11.8135 L11.751 11.8135 C11.8171 11.8133 11.881 11.787 11.9277 11.7402 C11.9744 11.6934 12.001 11.6296 12.001 11.5635 L12.001 5.18848 C12.0009 5.14978 11.9919 5.11079 11.9746 5.07617 C11.9573 5.04167 11.9322 5.01149 11.9014 4.98828 L6.65039 1.0498 C6.60738 1.01764 6.55468 1.00017 6.50098 1 Z`;
+
+  const LINK_OUT_EXPORT =
+    "M6.66699 2.5H3.33301C3.11211 2.50009 2.90034 2.58794 2.74414 2.74414C2.58794 2.90034 2.50009 3.11211 2.5 3.33301V12.667C2.50009 12.8879 2.58794 13.0997 2.74414 13.2559C2.90034 13.4121 3.11211 13.4999 3.33301 13.5H12.667C12.8879 13.4999 13.0997 13.4121 13.2559 13.2559C13.4121 13.0997 13.4999 12.8879 13.5 12.667V9.33301H14.5V12.667C14.4999 13.1531 14.3066 13.6191 13.9629 13.9629C13.6191 14.3066 13.1531 14.4999 12.667 14.5H3.33301C2.8469 14.4999 2.38085 14.3066 2.03711 13.9629C1.69337 13.6192 1.50009 13.1531 1.5 12.667V3.33301C1.50009 2.84689 1.69337 2.38085 2.03711 2.03711C2.38085 1.69337 2.84689 1.50009 3.33301 1.5H6.66699V2.5ZM14 1.5C14.2761 1.5 14.5 1.72386 14.5 2V6.33301H13.5V3.20703L7.02051 9.68652L6.31348 8.97949L12.793 2.5H9.66699V1.5H14Z";
+
+  const LINK_OUT_READ = `11307:135088 icons/action [16,99] INST 16x16 clip <icons/action:Size=16px, Type=Link out>
+I11307:135088;1457:1871 icon [17.5,100.5] BOOL 13x13 f#ffffff fs:Core/White`;
+
+  type Box = { x0: number; y0: number; x1: number; y1: number };
+  /** The box round a path's on-curve points (M, L, H, V and each C's end). */
+  function anchorBox(d: string): Box {
+    let x = 0;
+    let y = 0;
+    const xs: number[] = [];
+    const ys: number[] = [];
+    for (const [, cmd, args] of d.matchAll(/([MLHVCZ])([^MLHVCZ]*)/g)) {
+      const n = args.trim().split(/[\s,]+/).filter(Boolean).map(Number);
+      if (cmd === "H") x = n[0];
+      else if (cmd === "V") y = n[0];
+      else if (cmd === "C") [x, y] = [n[4], n[5]];
+      else if (cmd !== "Z") [x, y] = [n[0], n[1]];
+      if (cmd !== "Z") {
+        xs.push(x);
+        ys.push(y);
+      }
+    }
+    return { x0: Math.min(...xs), y0: Math.min(...ys), x1: Math.max(...xs), y1: Math.max(...ys) };
+  }
+
+  /** The read prints a space before each command; the svg does not. */
+  const compact = (d: string) => d.replace(/ ([MLHVCZ])/g, "$1");
+
+  function readHome() {
+    const [, x, y, w, h] = HOME_READ.match(/ at ([\d.]+),([\d.]+) ([\d.]+)x([\d.]+) /)!.map(Number);
+    const d = HOME_READ.match(/fill NONZERO (M.*Z)$/m)![1];
+    return { x, y, w, h, d };
+  }
+
+  function rendered(Icon: React.FC<React.SVGProps<SVGSVGElement>>) {
+    const { container } = render(<Icon />);
+    const svg = container.querySelector("svg")!;
+    return { svg, path: svg.querySelector("path")!, paths: svg.querySelectorAll("path") };
+  }
+
+  it("Home draws the read's geometry in the 16 box", () => {
+    const { svg, path, paths } = rendered(FigmaActionHomeIcon);
+    expect(svg.getAttribute("viewBox")).toBe("0 0 16 16");
+    expect(paths).toHaveLength(1);
+    expect(path.getAttribute("d")).toBe(compact(readHome().d));
+  });
+
+  it("Home sits where the read places its shape: 1.5, 1.59, centred down the box", () => {
+    const read = readHome();
+    const { path } = rendered(FigmaActionHomeIcon);
+    const [, tx, ty] = path.getAttribute("transform")!.match(/^translate\(([\d.]+) ([\d.]+)\)$/)!.map(Number);
+    expect(tx).toBe(read.x);
+    expect(ty).toBeCloseTo(read.y, 2);
+    const box = anchorBox(path.getAttribute("d")!);
+    expect(box.x0).toBe(0);
+    expect(box.y0).toBe(0);
+    expect(box.x1).toBeCloseTo(read.w, 2);
+    expect(box.y1).toBeCloseTo(read.h, 2);
+    expect(ty + box.y1 / 2).toBeCloseTo(8, 3);
+  });
+
+  it("Link out draws the instance export in the 16 box", () => {
+    const { svg, path, paths } = rendered(FigmaActionLinkOutIcon);
+    expect(svg.getAttribute("viewBox")).toBe("0 0 16 16");
+    expect(paths).toHaveLength(1);
+    expect(path.getAttribute("d")).toBe(LINK_OUT_EXPORT);
+    expect(path.getAttribute("transform")).toBeNull();
+  });
+
+  it("Link out fills the box the read gives its shape: 13 x 13 at 1.5, 1.5", () => {
+    const [, ix, iy] = LINK_OUT_READ.match(/\[([\d.]+),([\d.]+)\] INST 16x16/)!.map(Number);
+    const [, sx, sy, w, h] = LINK_OUT_READ.match(/\[([\d.]+),([\d.]+)\] BOOL ([\d.]+)x([\d.]+)/)!.map(Number);
+    const box = anchorBox(rendered(FigmaActionLinkOutIcon).path.getAttribute("d")!);
+    expect(box.x0).toBeCloseTo(sx - ix, 3);
+    expect(box.y0).toBeCloseTo(sy - iy, 3);
+    expect(box.x1 - box.x0).toBeCloseTo(w, 3);
+    expect(box.y1 - box.y0).toBeCloseTo(h, 3);
+  });
+
+  it.each([
+    ["Home", FigmaActionHomeIcon],
+    ["Link out", FigmaActionLinkOutIcon],
+  ] as const)("%s paints from currentColor, carries no ids and takes the caller's props", (_label, Icon) => {
+    const { container } = render(
+      <>
+        <Icon className="size-4" data-testid="glyph" />
+        <Icon />
+      </>,
+    );
+    const fills = Array.from(container.querySelectorAll("path")).map((p) => p.getAttribute("fill"));
+    expect(new Set(fills)).toEqual(new Set(["currentColor"]));
+    expect(container.querySelectorAll("[id]")).toHaveLength(0);
+    expect(container.innerHTML).not.toContain("url(#");
+    const first = container.querySelector("svg")!;
+    expect(first.getAttribute("class")).toBe("size-4");
+    expect(first.getAttribute("data-testid")).toBe("glyph");
+    expect(first.getAttribute("aria-hidden")).toBe("true");
   });
 });
 
