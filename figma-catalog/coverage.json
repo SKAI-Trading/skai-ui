@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-21T05:41:06.350Z",
+  "generated": "2026-11-21T06:06:46.680Z",
   "harvestedAt": "2026-11-16",
   "rollup": {
     "pages": 39,
@@ -20,8 +20,8 @@
     "genuineWithFrameDefects": 3561,
     "frameDefectUncited": [],
     "matched": 3235,
-    "done": 2204,
-    "verified": 1934,
+    "done": 2202,
+    "verified": 1932,
     "visuallyDowngraded": 131,
     "visualUnmapped": [],
     "visualRetired": [
@@ -43,7 +43,7 @@
       "refusedByRecord": [],
       "stale": []
     },
-    "partial": 879,
+    "partial": 881,
     "notStarted": 9,
     "blocked": 138,
     "frameDefect": 0,
@@ -56,16 +56,16 @@
     "conflicts": 22
   },
   "doneRows": {
-    "total": 4857,
-    "withBreakpointProvenance": 2653,
-    "namingANodeId": 4632,
+    "total": 4855,
+    "withBreakpointProvenance": 2651,
+    "namingANodeId": 4630,
     "sayingFurniture": 27
   },
   "rows": {
     "total": 26491,
     "namingNoNodeId": 339,
     "namingNoLiveNodeId": 982,
-    "unrecognisedTokens": 87580
+    "unrecognisedTokens": 87586
   },
   "statusFiles": [
     {
@@ -8708,11 +8708,11 @@
       "defaultNamed": 39,
       "ambiguous": 0,
       "conflicts": 0,
-      "verified": 293,
+      "verified": 291,
       "visuallyDowngraded": 4,
       "byStatus": {
-        "done": 300,
-        "partial": 256,
+        "done": 298,
+        "partial": 258,
         "blocked-on-backend": 23
       },
       "liveOnly": []
@@ -25118,9 +25118,9 @@
       "id": "5468-92781",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "5442-48059",
@@ -27910,9 +27910,9 @@
       "id": "12141-450956",
       "page": "✅ Governance and Utilities",
       "scope": "in-scope",
-      "status": "done",
-      "claimed": "done",
-      "verdict": "match"
+      "status": "partial",
+      "claimed": "partial",
+      "verdict": "partial"
     },
     {
       "id": "11943-143981",

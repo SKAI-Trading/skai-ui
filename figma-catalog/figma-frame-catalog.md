@@ -1,6 +1,6 @@
 # Figma Frame Catalog — SKAI redesign
 
-_Generated 2026-11-21T05:41:01.546Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
+_Generated 2026-11-21T06:06:44.842Z from `figma-catalog/registry.json`. Files: Skai-Web-App `3sSzw1KewMtUbeLAv7uW0r`, Skai-Web-App-2 `mhF3BkzlTaGiLzJ7kvpmVc`, Skai-Games `M6r9FEn042UWTQD1zvy6GM`._
 
 Rebuild: `node figma-catalog/build-registry.mjs && node figma-catalog/catalog-view.mjs > figma-frame-catalog.md`
 
@@ -10,7 +10,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 
 | Section | Rdy | Frames | Screens | Scaffold | Families | Done | Partial | Not started | Untriaged | Cited |
 |---------|:---:|-------:|--------:|---------:|---------:|-----:|--------:|------------:|----------:|------:|
-| governance | ✅ | 727 | 403 | 324 | 87 | 175 | 194 | 3 | 0 | 10 |
+| governance | ✅ | 727 | 403 | 324 | 87 | 173 | 196 | 3 | 0 | 10 |
 | social | ✅ | 444 | 276 | 168 | 50 | 138 | 69 | 31 | 0 | 201 |
 | trade | ✅ | 476 | 263 | 213 | 47 | 175 | 60 | 0 | 7 | 92 |
 | trade-2 | ✅ | 440 | 237 | 203 | 51 | 93 | 102 | 10 | 0 | 76 |
@@ -54,7 +54,7 @@ Readiness is the marker on the Figma page itself (`✅` ready-for-dev, `🚧` un
 | missing-play-images | 📍 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | master-sheet | 📍 | 46 | 0 | 46 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cover-images | 📍 | 48 | 0 | 48 | 0 | 0 | 0 | 0 | 0 | 6 |
-| **all** | | **4958** | **2481** | | | **1503** | **882** | **64** | **32** | **1032** |
+| **all** | | **4958** | **2481** | | | **1501** | **884** | **64** | **32** | **1032** |
 
 ### Drift against live Figma
 
@@ -149,7 +149,7 @@ Recorded as out of scope in `pages.json` (`outOfScope` carries the reason):
 | Explorer > Dashboard | 3 | desktop, tablet, mobile | transactions | partial | [5570-102478](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5570-102478&m=dev) |
 | Learn > Skai university > Purchase modal | 3 | desktop, tablet, mobile | - | done | [5443-69711](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5443-69711&m=dev) |
 | Learn > Getting started with crypto | 3 | desktop, tablet, mobile | - | partial/done | [5467-91593](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5467-91593&m=dev) |
-| Learn > Articles | 3 | desktop, tablet, mobile | - | done | [5468-92781](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5468-92781&m=dev) |
+| Learn > Articles | 3 | desktop, tablet, mobile | - | partial/done | [5468-92781](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5468-92781&m=dev) |
 | Learn | 3 | desktop, tablet, mobile | - | done | [5410-112561](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5410-112561&m=dev) |
 | Governance > Proposals > About | 3 | desktop, tablet, mobile | - | done | [5389-78508](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5389-78508&m=dev) |
 | Learn > Articles > Sample article | 3 | desktop, tablet, mobile | - | partial | [5477-97603](https://www.figma.com/design/3sSzw1KewMtUbeLAv7uW0r/Skai-Web-App?node-id=5477-97603&m=dev) |

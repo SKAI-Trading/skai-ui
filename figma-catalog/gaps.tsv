@@ -75,6 +75,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	5442-39147	ui	The university profile shows a dash for its wallet, handle, description, follows, views, viewers and video count, Join and Block are disabled, the About cover is blank, and Manifesto and Goals show a dash.	330f5b8b0de7	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5442-48059	ui	On the course details card, Price shows a dash where the design draws a token amount and a Buy course tag, Follows shows no follower avatars, and the details list sits 4px taller than the design.	b0c0fccaadca	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5467-91593	ui	At 1440 Popular orders the shelf by course completions, because enrolments are not recorded yet.	51d07dfbebfd	2026-11-15
+3sSzw1KewMtUbeLAv7uW0r	5468-92781	ui	At 1440 the LIVE tag and topic chips above the list have not yet been compared with this design.	8587580b040b	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	5477-97603	ui	At 1440 Summarize article does nothing yet, comments have no Reply button, and the heart on each comment does nothing yet.	a2e7b5beb636	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	5480-21885	ui	Publish stays disabled, so an article cannot be submitted yet, and a draft is not kept when you leave the page. Not yet compared element by element with this design at 1440.	2c19c6340132	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5480-22549	ui	The university profile shows a dash for its wallet, handle, follows, views, viewers and video count, Top comments is empty, and Join and Block are disabled.	c8c8938ffc7f	2026-11-14
@@ -523,6 +524,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	12136-432155	ui	The delegate list, its Top rated scope and the row menu are built; they fill once the new delegate data goes live.	7cc2835ddc2f	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12136-435253	ui	On phone the DeFi overview lacks the design's venue tabs. The SKAI price's BTC and 24h figures, market cap, 14-day chart and ecosystem sparklines are waiting on backend work.	81be92eeab2b	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12136-438810	backend	Waiting on backend work.	b49b24c36e3a	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	12141-450956	ui	On phone the LIVE tag and topic chips above the list have not yet been compared with this design.	a54e90e7527f	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	12141-453076	ui	On phone Summarize article does nothing yet, comments have no Reply button, and the heart on each comment does nothing yet.	aa62117b4164	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	12141-454982	ui	Publish is disabled, so an article cannot be posted yet. The phone layout has not been compared element by element with the design.	2c19c6340132	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12141-455088	ui	On phone the university profile shows a dash for wallet, handle, follows, views, description, top viewers and total videos, Top comments is empty, and Join and Block are disabled.	67cdf00f582e	2026-11-14
