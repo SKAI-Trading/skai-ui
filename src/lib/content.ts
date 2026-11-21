@@ -240,6 +240,25 @@ export const content = {
         // There is no stand-in count here. The hero shows the live sign-up
         // count, an ellipsis while it loads and a dash when it failed.
         counterSuffix: "Users are already on this list",
+        // The signups line under the counter (round 92 Q1, session pick), as
+        // the Onboarding i5 boards draw it (3sSzw1KewMtUbeLAv7uW0r, read
+        // 2026-11-21): 2665:8843 at 1440 sets it in two runs, the count and
+        // "new" in Mulish (Lg/Numbers 4), the rest in Manrope (Lg/Paragraph 2),
+        // text 2665:10925; 768 and 375 set the whole line in Mulish. Put the
+        // two parts side by side for one line. The count is the live figure
+        // for today, and there is no stand-in for it.
+        signupsToday: {
+          count: "{{count}} new",
+          suffix: " signups today!",
+        },
+        // The age after the handle in a new signup's pill: "just joined" under
+        // a minute, otherwise "joined 1m ago", "joined 3h ago", "joined 2d ago"
+        // (round 92 Q4, session pick). Text 2667:10964 and 2667:10973 at 1440,
+        // Mulish Regular, white.
+        justJoined: {
+          now: "just joined",
+          ago: "joined {{age}} ago",
+        },
       },
 
       /** OnboardingPage-specific */
