@@ -97,7 +97,7 @@ const CopyButton = React.forwardRef<HTMLButtonElement, CopyButtonProps>(
         variant={variant}
         size={showLabel ? "sm" : size}
         onClick={handleCopy}
-        className={cn("transition-all", copied && "text-green-500", className)}
+        className={cn("transition-all", className)}
         aria-label={copied ? labels.copied : labels.copy}
         aria-live="polite"
         {...props}

@@ -33,14 +33,48 @@ describe("CopyButton", () => {
 
   it("shows check icon after successful copy", async () => {
     render(<CopyButton value="test value" />);
+    const button = screen.getByRole("button");
+    expect(button.querySelector("svg.lucide-copy")).not.toBeNull();
+
+    fireEvent.click(button);
+
+    await screen.findByRole("button", { name: "Copied!" });
+    expect(button.querySelector("svg.lucide-check")).not.toBeNull();
+    expect(button.querySelector("svg.lucide-copy")).toBeNull();
+  });
+
+  // Report a56400fe: the check takes the ink of the copy mark it replaces,
+  // the same white check the AI chat draws, never a green.
+  it("draws the copied check in the button's ink, not green", async () => {
+    render(<CopyButton value="test value" />);
+    const button = screen.getByRole("button");
+    const before = button.className;
+
+    fireEvent.click(button);
+    await screen.findByRole("button", { name: "Copied!" });
+
+    expect(button.className).toBe(before);
+    expect(button.className).not.toMatch(/green/);
+    const check = button.querySelector("svg.lucide-check");
+    expect(check?.getAttribute("class") ?? "").not.toMatch(/green|text-/);
+  });
+
+  it("keeps a caller's ink on the copied state", async () => {
+    render(<CopyButton value="test value" className="text-white" />);
+    fireEvent.click(screen.getByRole("button"));
+
+    expect(await screen.findByRole("button", { name: "Copied!" })).toHaveClass(
+      "text-white",
+    );
+  });
+
+  it("keeps its labels on the copied state", async () => {
+    render(<CopyButton value="test value" showLabel />);
+    expect(screen.getByText("Copy")).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button"));
 
-    // Wait for state to update - the component should show check icon briefly
-    await waitFor(() => {
-      // The copied state shows Check icon
-      expect(mockClipboard.writeText).toHaveBeenCalled();
-    });
+    expect(await screen.findByText("Copied!")).toBeInTheDocument();
   });
 
   it("calls onCopySuccess callback on successful copy", async () => {

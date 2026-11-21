@@ -850,7 +850,7 @@ const ProfilePageTemplate: React.FC<ProfilePageTemplateProps> = ({
                   >
                     {shortenAddress(user.walletAddress)}
                     {isCopied ? (
-                      <Icons.Check className="h-3 w-3 text-green-500" />
+                      <Icons.Check className="h-3 w-3 text-muted-foreground" />
                     ) : (
                       <Icons.Copy className="h-3 w-3 text-muted-foreground" />
                     )}
