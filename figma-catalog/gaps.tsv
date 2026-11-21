@@ -5,10 +5,6 @@
 # notesSha: the first 12 hex of sha1 over the frame's registry.json notes when the line was written. When the notes move, the line is due a rewrite.
 # A fold rewrites the lines of the frames it touches: node figma-catalog/gaps.mjs fold <lines.json> --write
 fileKey	node	kind	gap	notesSha	writtenAt
-3sSzw1KewMtUbeLAv7uW0r	2005-25112	ui	On phone the bars behind the page have not yet been compared with this design.	b6e4ea4874c7	2026-11-18
-3sSzw1KewMtUbeLAv7uW0r	2005-26526	ui	On phone the bars behind the page have not yet been compared with this design.	3ca9763b7216	2026-11-18
-3sSzw1KewMtUbeLAv7uW0r	2424-7715	ui	On phone the badge card's subtitle wraps to a second line where the design lets it run under the reward.	c46fd743843a	2026-11-18
-3sSzw1KewMtUbeLAv7uW0r	2481-15918	ui	On phone the help tooltip is centred on its icon rather than set off to one side as drawn, and the bars behind the page have not yet been compared with this design.	20402b3677db	2026-11-18
 3sSzw1KewMtUbeLAv7uW0r	2665-8843	ui	The new signups count and the Just joined list are not shown on this page yet; the switch to appear in it is in privacy settings.	f558fe2a2d4f	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	2665-9536	ui	The new signups count and the Just joined list are not shown on this page yet; the switch to appear in it is in privacy settings.	32f13544fb50	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	2665-10229	ui	The new signups count and the Just joined list are not shown on this page yet; the switch to appear in it is in privacy settings.	b400f140b8d3	2026-11-19
@@ -39,17 +35,9 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	4798-57445	ui	At 1440 the referral chart's line has no glow, the link icon beside the total and the All time control are missing, amounts show in SKAI rather than dollars, and "Claim now" is shown disabled.	e63d1f11d42e	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	4799-60925	ui	At 1440 the bottom ticker is 28px tall where the design draws 22px, so the bet slip bar sits 6px higher than designed.	cf8b2fa2215e	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	4841-72059	ui	At 1440 the Trending league tag's abbreviation and the first match card's hover state are not yet matched to the design.	5d73765303c7	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	4851-78844	ui	On the empty bet slip the white line under Bet slip follows the label's width, which has not yet been measured against the design.	3776c2990b0a	2026-11-15
-3sSzw1KewMtUbeLAv7uW0r	4865-79010	ui	On desktop the bet slip with a bet entered has no known difference from the design; its other states and its tablet and phone versions are not yet compared.	da825089c605	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	4891-82125	ui	On desktop the long combined bet slip is not yet compared element by element with the design.	45eb85a2fb5b	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	4891-82254	ui	In the bet slip's row of quick stake amounts every amount stays faded, where the design shows the chosen amount in full white.	bf9e310efea1	2026-11-15
-3sSzw1KewMtUbeLAv7uW0r	4892-82479	ui	In a settled winning slip, the result icon sits 4px from the WON label where the design spaces it 6px.	ec18bf44887c	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	4892-82838	ui	In a settled losing bet slip, the result icon sits 4px from the LOST label where the design spaces it 6px.	020cc5c7fb1c	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	4896-83198	ui	In the system bet slip, each selection sizes to its content, where the design gives the name and the price fixed-width columns.	efd447fb1499	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	4911-89112	ui	Placing a system bet shows the Single bet confirmation; the System bet confirmation card in the design does not appear yet.	0785e05d667d	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	4896-83198	ui	In the system bet slip the head shows a plain disc and the bet count in a different font where the design draws the platform mark and a lighter count, and the head's close button is not built.	ff8863a9d024	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	4911-89419	ui	At 1440 bet legs lack the per-sport icons the design shows, and amounts carry a plain blue dot where the design draws a coin.	2884ea8ab226	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	4911-92925	ui	At 1440 the casino games shelf on this page has not yet been fully compared with the design, so a tag on one of its tiles may differ.	d0398ac424fa	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	4914-99876	ui	At 1440 the event list behind the open bet slip has not yet been compared with the design.	be439b712833	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	4914-99876	ui	At 1440 the events column behind the open bet slip is not yet compared with the main sportsbook page.	06d23be26213	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	4943-129014	ui	On desktop the stream spotlight has no market cap pill or price sparkline, the Highest market cap section is not shown, and a search, sort and tabs bar sits between the spotlight and the stream lists.	39471fe709d2	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	4948-143477	ui	On desktop Top holders shows a dash instead of the holder list, and the Buy button on the creator's token is turned off.	8a65c34efee1	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	4954-147061	ui	On desktop Top holders shows a dash instead of the holder list, and the Buy button on the creator's token is turned off.	8a65c34efee1	2026-11-14
@@ -69,9 +57,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	5162-265801	ui	In the conversation filter menu at 1440 the panel's border takes up room, so the panel is 2px taller and its options 2px narrower than the design.	88c5c5731681	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5198-51022	backend	Waiting on backend work.	30dd1036d318	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	5202-63932	ui	Total volume and active traders are built and show once their data goes live; win rate has no figure yet, and the combined market cap shows a dash for now.	f08a75d28bf9	2026-11-19
-3sSzw1KewMtUbeLAv7uW0r	5203-64550	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	397192ec2529	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	5222-11708	ui	Image uploads are ready to go live, but the upload dialog this design draws is not rebuilt yet.	78c02b464131	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	5248-76770	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	f7adea8c7268	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	5248-76804	ui	The Activity table, its search and menu, and each card's open date are built; they fill once the vault activity history goes live. The cards' end date has no figure yet.	4cb101087741	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	5258-78625	ui	The activity table and its details drawer are built and fill once the vault activity history goes live; the drawer's layout has not been compared with the design yet.	a7e3eb08d5e3	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	5278-80860	ui	The empty Activity state is built and shows once the vault activity history goes live.	d69cf59c6558	2026-11-17
@@ -80,20 +66,15 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	5315-92101	ui	On desktop the Roll ticket button beside each ticket stays disabled, the ticket menu and slip icons are close but not exact matches, and the board's +2.2% change figure is not shown.	5d912a059676	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5370-46501	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	13c742607423	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	5370-46761	ui	The Winners list stops at the newest 50 draws until the paging update goes live.	51b6094e724c	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	5376-70869	ui	The side panel for creating a proposal is built; its mode for updating an existing proposal is not built yet.	7222976f8a7b	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	5376-71276	ui	On desktop How staking works shows as a plain notice with five points instead of the drawn band; the page header, Wallet tile and rewards chip are not yet compared element by element with the design.	87b963b10ebc	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	5383-72757	ui	On desktop How staking works shows as a plain notice with five points instead of the drawn band; the page header, Wallet tile and rewards chip are not yet compared element by element with the design.	87b963b10ebc	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	5383-72757	ui	On desktop the How staking works band is built; the grey tone and crop of its picture are not yet compared with the design.	9d239ed3c95a	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	5383-73349	ui	On desktop How delegation works leaves out the board's lines on partial delegation and on voting while delegated, the delegates list waits on backend work, Delegated to you shows a dash for now, and the illustrations are missing.	27cef0b3c366	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	5385-74400	ui	On desktop the delegates list waits on backend work, Delegated to you shows a dash until delegation history loads, the vote total shows a SKAI amount, the illustrations are missing, and two board lines are left out.	5e61f83719b6	2026-11-19
-3sSzw1KewMtUbeLAv7uW0r	5385-75416	not-built	Not built yet: the board shows a delegate form with an address, a share slider and an expiry in days.	24478fb81798	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	5387-77602	ui	On desktop the All delegates filter above each list stays disabled while it waits on backend work; the Overview card's fill and the four tiles' label icons are not yet re-checked against the design.	168046473747	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	5390-80080	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	e3ff60206643	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	5392-82015	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	6d79776d74fa	2026-11-17
+3sSzw1KewMtUbeLAv7uW0r	5385-75416	ui	On desktop the delegate pop-up is built for whole delegation, with the share and expiry shown fixed; its own sizes, type and colours are not yet compared with the design.	96e4db3f4d2f	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	5387-77602	backend	Waiting on backend work.	8fac7cb79a84	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	5411-117451	ui	The university profile shows a dash for its wallet, handle, description, follows, views, viewers and video count, Top comments is empty, Join and Block are disabled, and courses show no price or cover image.	2254369dc1c0	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5442-39147	ui	The university profile shows a dash for its wallet, handle, description, follows, views, viewers and video count, Join and Block are disabled, the About cover is blank, and Manifesto and Goals show a dash.	330f5b8b0de7	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5442-48059	ui	On the course details card, Price shows a dash where the design draws a token amount and a Buy course tag, Follows shows no follower avatars, and the details list sits 4px taller than the design.	b0c0fccaadca	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5467-91593	ui	At 1440 Popular orders the shelf by course completions, because enrolments are not recorded yet.	51d07dfbebfd	2026-11-15
-3sSzw1KewMtUbeLAv7uW0r	5468-92781	ui	At 1440 no article carries the LIVE tag the design shows, because none is marked live yet.	709dd5c06572	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	5477-97603	ui	At 1440 Summarize article does nothing yet, comments have no Reply button, and the heart on each comment does nothing yet.	a2e7b5beb636	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	5480-21885	ui	Publish stays disabled, so an article cannot be submitted yet, and a draft is not kept when you leave the page. Not yet compared element by element with this design at 1440.	2c19c6340132	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5480-22549	ui	The university profile shows a dash for its wallet, handle, follows, views, viewers and video count, Top comments is empty, and Join and Block are disabled.	c8c8938ffc7f	2026-11-14
@@ -105,9 +86,8 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	5515-93883	ui	Holdings analysis, Potential yield and Fees are not shown, the coin on Estimated shares and the Lockup info icon are missing, Other yield vaults has no second card, and deposits are not open yet.	674ebb4638ab	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5518-100072	ui	Net worth leaves out Solana and Ethereum holdings, which the design includes. The Courses and Articles tabs have no design to compare against yet.	345c76aae291	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5518-101256	ui	Net worth leaves out Solana and Ethereum holdings, which the design includes. The Courses and Articles tabs have no design to compare against yet.	345c76aae291	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	5526-47972	ui	At 1440 the icon on the avatar badge and the colours of the email check, copy and writing-helper icons have not yet been checked against the design.	03da542b6601	2026-11-15
+3sSzw1KewMtUbeLAv7uW0r	5526-47972	ui	At 1440 the colours of the email check and address copy icons have not yet been checked against the design.	fa75174d7365	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	5529-49244	ui	The passkey line does not name its points reward yet, linked wallets show no chain badge or Imported tag, and two extra panels between and below the groups are not styled to match the design.	1b828b7cbfff	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	5529-72564	ui	At 1440 the My tokens list under the create block uses different heading, spacing and card text styles from the design and shows no token image.	c468e015f61c	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	5531-77640	ui	Not yet compared element by element with the design at 1440.	b646ae544b49	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5539-93683	ui	The SKAI price's BTC and 24h figures, market cap, 14-day chart and ecosystem sparklines have no data yet, and the DeFi overview's venue tabs are not built. Searching a plain number under Tokens, Games or Markets opens a block.	81be92eeab2b	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	5570-102478	ui	The Stablecoin supply, Markets and Latest blocks panels stand in for panels the design draws, and the supply card's 24h change shows a dash. Not yet compared element by element at 1440.	2de1ebb69517	2026-11-14
@@ -140,8 +120,8 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	8583-131053	ui	The filter bar's 24H volume figure is not shown, and range-bucket market cards (such as Fed 50+ / 25+ bps or the Elon post-count ranges) are not shown yet.	5efe04ae937e	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	8610-162260	ui	On the up/down card, where the design shows comments the site shows the current status and your bet, as comments are not available there yet. The bet ticket and Collect button are not in the design.	b59ff1fa7254	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	8610-163972	ui	Range-bucket market cards (such as Fed 50+ / 25+ bps or the Elon post-count ranges) are not shown yet, and the featured scoreboard at the top has not been rechecked against the design.	644194fda2e1	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	8623-56597	ui	The chart's line, grid and axis labels are styled differently from the design, it shows time-window pills instead of the Past times picker with clock times, and the asset mark between the chart-type icons is not shown.	703ad35f1970	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	8627-56772	ui	The chart's grid and axis labels are styled differently from the design, it shows time-window pills instead of the Past times picker, and its first figure shows the chance where the design shows Price to beat.	5bf4de1c9ab4	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	8623-56597	ui	On tablet the glow under the chart card has not yet been compared with this design, and the chart's rules are drawn 1px wide where the design draws half a pixel.	5cd96c1fd599	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	8627-56772	ui	On tablet the live price tag's colour on the candle chart is not yet checked against this design, and the chart's rules are drawn 1px wide where the design draws half a pixel.	0f607cb7876e	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	8657-53763	ui	Comments have no Reply, like count, overflow menu or Holders filter yet, the small icon inside the comment box is not drawn, and at 1440 the module has a border the design does not draw.	bd4996df0653	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	8687-54504	ui	The newsletter sign-up card and the live news feed are not shown yet, and the top story uses a colour gradient in place of the design's photo.	fd91fb18e623	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	8827-139435	backend	Waiting on backend work.	42ca7f7a50f7	2026-11-17
@@ -154,13 +134,11 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	9103-162908	not-built	Not built yet: the scoreboard time filter with All time, Last year, Last month and Last week.	3fcffb0ae6c2	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9103-181483	ui	The claimed state is not wired yet: nothing claims rewards or totals what was claimed.	35741205eacb	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	9132-76649	ui	On Dice, Hooked, Sugar Rush, Vegas Fortune and the general game page the community wins filter keeps the old three time ranges; elsewhere All time, Last year and Last month are listed but cannot be picked yet.	00e6feb4d14c	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	9170-81771	ui	At 1440, behind the open settings drawer, the bet slip header underline runs the full width of the title, where the design draws it shorter than the title.	64de3ec94f73	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9170-113296	ui	The parlay card this help tooltip sits on is not built to this design yet.	64754d366c40	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9185-15853	ui	This version of the tip card, with its blue glow, is not shown on any page yet; the match page shows its own Expert tips card instead.	e7439f2fdcb0	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	9185-15873	ui	On the trending bet card the league tag shows the full league name where the design shows a short code such as UCL.	a9601b88b2bf	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	9191-105864	ui	At 1440 the bet slip follows the main design, inset 8px from the top of the screen, rather than this alternate one, which starts lower and runs down to the ticker with a square bottom.	71933940ba20	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	9191-105864	ui	At 1440 this alternate bet slip matches its base design; the events column behind it is not yet compared with the main sportsbook page.	b6317dbe07d2	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	9626-39285	ui	Report user is built and turns on once the reports update goes live and reports are switched on.	0d1106f630b1	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	9626-208767	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	dad7ab74d520	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	9640-214177	backend	Waiting on backend work.	6a033aa74744	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	9646-214871	ui	Oldest stays off until the follow lists can sort by follow time.	95737a134af3	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	9653-215184	backend	Waiting on backend work.	017ff3abb2c8	2026-11-17
@@ -173,13 +151,11 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	10201-106360	ui	On phone the sports card has no selected look (blue outline, darker fill), shows the volume at the top, not the bottom, has no chance percentage beside each team, and puts small price chips under each team in place of three taller buttons.	148de58a0a43	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	10201-106723	ui	The three-way match card is built; its traded volume shows once volume tracking goes live, and some club codes differ from the design.	8fc4f8fe7a63	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	10202-110892	ui	Three-way match cards are built and appear when the next soccer round lists; their traded volume shows once volume tracking goes live.	34c01d020b6d	2026-11-19
-3sSzw1KewMtUbeLAv7uW0r	10211-15507	ui	On phone the trade ticket follows a newer version of this design, so differences from this older layout are expected.	0917c9f069f3	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	10213-136686	not-built	Not built yet; the design shows a menu with Create a group, Go live and Open my profile.	5d98b03956f7	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	10215-137653	not-built	Not built yet; the design shows a message menu with Reply, Forward, Copy text and two delete options.	7a628f788168	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	10216-182394	not-built	Not built yet. The design's right-click menu on a conversation offers Open in a new tab, Mark as unread, Mute, Pin and Delete.	0ce78c00e55b	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	10230-15664	ui	The pinned tile draws the market's own artwork once the artwork data goes live and a picture is uploaded; until then it shows the token mark.	03b9d5992c1d	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	10232-201644	backend	Waiting on backend work.	42752fb00cc9	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	10302-184763	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	0c535f987d15	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	10312-16746	ui	The unit mark is built to show the market's own artwork, which appears once market artwork goes live; until then it shows the token mark.	03fc3c4fa029	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	10335-233638	backend	Waiting on backend work.	da7e0dc1f4d1	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	10335-234351	ui	Image attach is built and turns on once image uploads go live; posting itself is still closed.	4735bf1a021b	2026-11-17
@@ -250,10 +226,10 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11100-70524	ui	Win rate, current streak, biggest win and biggest loss show a dash once you have more than 25 USD bets, until pending backend work goes live. The Blackjacks tile and the dollar line under each total are left off on purpose.	dddfce9668ed	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11100-72080	ui	On some game pages the tabs above the live chat have not yet been brought in line with the design's tab strip.	15f11bceced8	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11100-72252	ui	From tablet width the streams header sits beside the cards where the design stacks it, and the phone spacing differs.	2f908dfdfb56	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11109-81960	ui	On tablet the popular casino games shelf on the sportsbook page has not yet been compared element by element with the design.	af1bf174b8f5	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11109-81960	ui	On tablet the popular games shelf on the sportsbook page is not yet compared with the design, and its title reads Popular casino games where the design says Popular games.	bf8224fcdbdd	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11116-85719	backend	Waiting on backend work.	08746cf56341	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11128-107161	ui	At 1440 Confirm order on the review does not add liquidity yet.	5902148b2977	2026-11-15
-3sSzw1KewMtUbeLAv7uW0r	11132-176323	ui	On phone the Top bets list and the content and FAQ block below it are checked only for spacing, not yet element by element against the design.	77b4ae7e5669	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11128-107161	ui	At 1440 Confirm order adds liquidity; the review is a little taller than the design and its rows are not yet measured one by one, and the note under the button gives the fee, not the design's limit order text.	d1c1b62588ea	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	11132-176323	ui	On phone the open question card in the FAQ has 12px corners where the newer design draws 16, and the Top bets list is not yet compared element by element.	b3cf86f25052	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11132-184965	ui	On phone the system bet slip's header shows the bet count, leg count and size picker where the design shows a date, the leg count and a Close button, and the odds column is not the design's fixed right-aligned width.	67319e8579b5	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11135-77182	ui	At 1440 the Activity list shows an unavailable note instead of entries, My position shows the held amount instead of the gain and percent, and Volume 24H and Fee have no figures yet.	7390cb917c47	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11144-199166	ui	On phone the open bet slip is a sheet with curved top corners and a drag handle over a dimmed page, where this design draws a flat panel docked at the bottom; it is also inset 12px from the sides, not 16.	869429567156	2026-11-14
@@ -270,8 +246,8 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11211-86973	ui	On phone the bets table, the FAQ block and the page layout outside the Live RTP panel have not yet been compared element by element with the design.	d4a7ec303427	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11212-20103	ui	Each snapshot row's View on Skaiscan is built; rows appear once a test snapshot is published.	05e4581f4742	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11212-20117	ui	The sort menu is built; it has rows to sort once a test snapshot is published.	895a330b9aea	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11216-132577	ui	On tablet the popular casino games shelf on the sportsbook page has not yet been compared element by element with the design.	6c0e3b8ec3f9	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11216-134868	ui	On phone the Top bets list and the content and FAQ block are checked only for spacing, and one card in that block is drawn with 12px corners where this design draws 16.	e3f9ae069c61	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11216-132577	ui	On tablet the popular games shelf on the sportsbook page is not yet compared with the design, and its title reads Popular casino games where the design says Popular games.	1a8a8d42ea75	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	11216-134868	ui	On phone the open question card in the FAQ has 12px corners where the newer design draws 16, and the Top bets list is not yet compared element by element.	f1b693d15ea1	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11216-137015	ui	On tablet the price ticker above the bottom navigation is not shown, so the collapsed bet slip bar sits directly on the navigation instead of on the ticker as the design draws.	40cc5d633269	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11216-139328	ui	On tablet the price ticker above the bottom navigation is not shown, so the collapsed bet slip bar sits directly on the navigation instead of on the ticker as the design draws.	40cc5d633269	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11216-143952	ui	On tablet the price ticker above the bottom navigation is not shown, so the collapsed bet slip bar sits directly on the navigation instead of on the ticker as the design draws.	40cc5d633269	2026-11-14
@@ -287,21 +263,15 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11304-134283	ui	Temp checks is built in this menu and lists polls once the temp check data goes live; this copy of the menu leaves out My proposals only, which the build keeps.	768e3be22c50	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11306-134305	ui	Temp checks is built in this menu and lists polls once the temp check data goes live.	926fff9c8fe4	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11307-135045	ui	Temp checks is built in this menu and lists polls once the temp check data goes live; this copy of the menu leaves out My proposals only, which the build keeps.	3d46dae1a842	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11307-135079	not-built	Not built yet: the design shows a menu on each proposal with View creator, View DAO and View proposal on Skaiscan.	a729929eb12b	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11307-135103	not-built	Not built yet: the design shows a menu on each proposal with View creator, View DAO and View proposal on Skaiscan.	a729929eb12b	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11307-135124	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	606f44ee6b62	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11309-136820	ui	The Update proposal version of this panel is not built; only creating a new proposal is available.	e4766c77f9db	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11309-136994	backend	Waiting on backend work.	d3ff054b338d	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11314-138141	backend	Waiting on backend work.	3e94159d8a35	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11314-138456	ui	After you claim, the card reads All rewards claimed instead of showing the amount you claimed, as the design does.	2492cad42cf4	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11314-138830	ui	On desktop the Vault actions card has no outer border where the design draws one, and the rewards chip's text sizes at 1440 have not been compared with the design yet.	e37a460b5ad4	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11314-139095	backend	Waiting on backend work.	83326174e620	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11314-139110	ui	The delegate list, its Top rated scope and the row menu are built; they fill once the new delegate data goes live.	b4090f058296	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11314-139131	ui	The delegate row menu is built; rows appear once the new delegate data goes live.	cfa00722b4c2	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11314-139153	ui	The delegate list, its Top rated scope and the row menu are built; they fill once the new delegate data goes live.	6c6338a60a49	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11322-142230	ui	The video filter is built; it needs courses with videos, and it opens only for a purchased course.	7029fa411a09	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11343-142585	ui	Add to group now picks the course's category; course videos, the paid course toggle and its price are not available yet, and the button under an uploaded file is not drawn.	56ff31781ca4	2026-11-19
-3sSzw1KewMtUbeLAv7uW0r	11344-143602	not-built	Not built yet: the design shows a menu on each article with Follow author, See more on this topic and Report author.	da9559435fed	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11344-143602	ui	On desktop the article menu is built, but See more on this topic stays greyed out on the Learn feed for now.	c9e547b3c9ea	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11345-144081	ui	Behind the customise panel, some dashboard figures (the SKAI price in BTC and its 24h change, the market cap, the 14-day chart and the small trend lines) show no data yet where the design shows values.	65786f135eb5	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11349-147772	ui	The transaction list's pager does not show the total count ('of N') the design shows, and its arrows and range text have not been compared with the design yet.	6be65301494d	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11364-149679	ui	The House card's Since line shows a dash where the design shows the date of your first deposit.	e3d009456528	2026-11-15
@@ -384,8 +354,6 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11529-293522	ui	On phone the Gift streamer panel shows the streamer's initial instead of a photo, with no handle or chain badge, no Gift tier link, no coin image and no goal card glow. Sending is off until donations are live.	fc3083070dc3	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11530-303043	ui	Report user is built and turns on once the reports update goes live and reports are switched on.	c351eb773d9f	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11530-303066	ui	Report user is built and turns on once the reports update goes live and reports are switched on.	aa6522df48c0	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11530-303089	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	3770d1c5af9b	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11530-303116	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	ed6e799e95da	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11530-303299	not-built	Not built yet; the board shows a three-dot menu in Messages.	94c907ba6d1f	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11530-303318	not-built	Not built yet; the board shows a three-dot menu in Messages.	57fabdedeba7	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11530-303337	not-built	Not built yet; the board shows the three-dot menu on a message in a conversation.	d8d4142f79da	2026-11-14
@@ -406,44 +374,36 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11720-330741	ui	On tablet the university profile shows a dash for its wallet, handle, follows, views, description, top viewers and video count, and Join and Block are disabled. Top comments, the About cover, Manifesto and Goals have no content yet.	f0a3955d51ab	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11730-332229	ui	On tablet the university profile shows a dash for its wallet, handle, follows, views, description, top viewers and video count, and Join and Block are disabled. Each course shows a dash for its price and an empty cover.	be747c5f94a7	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11730-332652	ui	On tablet the university profile shows a dash for its wallet, handle, follows, views, description, top viewers and video count, and Join and Block are disabled. Each course shows a dash for its price and an empty cover.	63fb707563e8	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11761-344888	ui	On tablet no article carries the LIVE tag the design shows, because none is marked live yet.	84b9b19929ad	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	11764-345696	ui	On tablet Summarize article does nothing yet, comments have no Reply button, and the heart on each comment does nothing yet.	8a3e2a212be4	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	11764-348558	ui	On tablet the university profile shows a dash for its wallet, handle, follows, views, description, top viewers and video count, Join and Block are disabled, and Top comments is empty.	7b043ee352a6	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11768-349002	ui	On tablet Net worth does not yet count balances on Solana or Ethereum, which the design includes. The sizes of the Balances figures have not been compared with the design yet.	345c76aae291	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11768-350087	ui	On tablet, Net worth does not include Solana or Ethereum balances, which the design counts. The figure sizes in the Balances list at 768 have not been compared with the design yet.	345c76aae291	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11843-353663	ui	On tablet the icon on the avatar badge and the colours of the email check, copy and writing-helper icons have not yet been checked against the design.	5b63fb419b07	2026-11-15
+3sSzw1KewMtUbeLAv7uW0r	11843-353663	ui	On tablet the colours of the email check and address copy icons have not yet been checked against the design.	98059be1fb8d	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11843-354091	ui	On tablet the passkey line says its points are coming soon instead of the design's amount, linked wallets have no chain badge, and extra status panels sit between and below the groups.	73d339ebc3d4	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11846-354965	ui	On tablet the My tokens list under the create block uses different heading, spacing and card text styles from the design and shows no token image.	fb00ed2e5e5d	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	11872-42520	ui	On tablet the referrals table has a Status column the design does not draw.	1a1edcbaa07b	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11875-44348	ui	On phones, Net worth does not include Solana or Ethereum balances, which the design counts. The figure sizes in the Balances list at 375 have not been compared with the design yet.	345c76aae291	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11875-86552	ui	On phones, Net worth does not include Solana or Ethereum balances, which the design counts. The figure sizes in the Balances list at 375 have not been compared with the design yet.	345c76aae291	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11881-89414	ui	On phone the icon on the avatar badge and the colours of the email check, copy and writing-helper icons have not yet been checked against the design.	96704545c4fd	2026-11-15
+3sSzw1KewMtUbeLAv7uW0r	11881-89414	ui	On phone the colours of the email check and address copy icons have not yet been checked against the design.	949708c5ce6c	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11881-89626	ui	On phones the passkey line says its points are coming soon instead of the design's amount, linked wallets have no chain badge, and extra status panels sit between and below the groups.	a35abded33a0	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11881-93654	ui	On phone the My tokens list under the create block uses different heading, spacing and card text styles from the design and shows no token image.	ba3e7d8946e2	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	11885-98503	ui	On phones the referral list ends in a Status column where the design draws an action icon, and the earnings figure shows a dash where the design has a change-for-today line.	9ab1cf2a9ce6	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11885-98886	ui	On phones the referral list ends in Status instead of the design's action icon, the earnings figure shows a dash for its change-for-today line, and the Earned, Referrals and To Gold figures this design hides are always shown.	232c7841a770	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11894-102948	ui	On phones the university profile shows dashes for its wallet, handle, counts, description, Manifesto and Goals, Join and Block are disabled, and the About text and Top comments are empty.	2487134da699	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11894-103839	ui	On phones the university profile shows dashes for its wallet, handle, counts and description, Join and Block are disabled, and courses show a dash for price and an empty cover.	66fc58fc5fb1	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11894-104173	ui	On phones the university profile shows dashes for its wallet, handle, counts, description, Manifesto and Goals, Join and Block are disabled, and the About text and Top comments are empty.	ed2dee31dbb9	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11894-104346	ui	On phones the university profile shows dashes for its wallet, handle, counts and description, Join and Block are disabled, and courses show a dash for price and an empty cover.	0db6f2b3f11a	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11900-115524	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	59be00b19243	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11900-116258	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	575e832901fb	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11902-119713	ui	On tablet the How staking works section is a plain notice with five bullets, not matched to the design's band yet; the page header, wallet tile and rewards chip have not been compared.	87b963b10ebc	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11902-120450	ui	Not yet compared element by element with the design at 768: the How staking works section, the page header and tabs, the Wallet tile and the rewards chip.	87b963b10ebc	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11902-120450	ui	On tablet the How staking works band is built; the grey tone and crop of its picture are not yet compared with the design.	7dd24ff5ca2a	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11902-121921	ui	On tablet How delegation works leaves out the lines on partial or expiring delegation and reduced voting power. Delegated to you shows a dash until delegation history loads, and no delegates or artwork appear.	e728c40e5f48	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11902-122611	ui	On tablet How delegation works leaves out the design's lines on partial or expiring delegation and reduced voting power. The Overview shows a SKAI figure and a delegator count, not votes and users, and no delegates or artwork appear.	cd3e939f9d66	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11902-123338	not-built	Not built yet: the board shows a pop-up for delegating a share of your votes to another wallet for a set number of days.	3a1a8a66b9a0	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11902-123792	ui	On tablet the All delegates filter is switched off, and the Overview card's fill and tile icons are not yet compared with the design.	99ceb3e6aa15	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11902-124420	ui	On tablet the All delegates filter is switched off. The Overview card's fill, its tile icons and the page's side margin are not yet compared with the design.	e2d8c5af68da	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11904-130419	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	062ba69eaa78	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11906-133540	ui	Not yet compared element by element with the design at 375: the How staking works section, the page header and tabs, the Wallet tile and the rewards chip.	87b963b10ebc	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11907-134647	ui	Not yet compared element by element with the design at 375: the How staking works section, the page header and tabs, the Wallet tile and the rewards chip.	87b963b10ebc	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11902-123338	ui	On tablet the delegate pop-up is built for whole delegation, with the share and expiry shown fixed; its own sizes, type and colours are not yet compared with the design.	838a2e89e353	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	11902-123792	backend	Waiting on backend work.	c07d9656bbdc	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	11902-124420	backend	Waiting on backend work.	dfcb1e1c0f3b	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	11906-133540	ui	On phone the How staking works band is built; the grey tone and crop of its picture, and the fade over it, are not yet compared with the design.	2189868e6e89	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11907-136716	ui	On phones How delegation works has no artwork and omits the lines on partial or expiring delegation and reduced voting power. Delegated to you shows a dash until delegation history loads, and no delegates appear.	a63be3bb0311	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11907-137387	ui	On phones How delegation works leaves out the lines on partial or expiring delegation and reduced voting power. Delegated to you shows a dash until delegation history loads, and no delegates appear.	e3ab2c8e8d08	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	11907-137821	ui	On phones the Off-chain view offers no partial or expiring delegation, the vote total shows a SKAI amount, and Delegated to you shows a dash until delegation history loads.	059606bc2c6b	2026-11-19
-3sSzw1KewMtUbeLAv7uW0r	11907-138358	not-built	Not built yet: the board shows a pop-up for delegating a share of your votes to another wallet for a set number of days.	34c598474d35	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11915-139136	ui	On phones the All delegates filter is switched off, and the Overview card's fill and tile icons are not yet compared with the design.	67b4e8998e61	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	11917-139866	ui	On phones the All delegates filter is switched off, and the Overview card's fill and tile icons are not yet compared with the design.	4babeb0f5539	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	11907-138358	ui	On phone the delegate pop-up is built for whole delegation, with the share and expiry shown fixed; its own sizes, type and colours are not yet compared with the design.	4841caec74b0	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	11915-139136	backend	Waiting on backend work.	d28f1e08ba3e	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	11917-139866	backend	Waiting on backend work.	97292c3c7e9c	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11973-155655	ui	Share price, one-asset composition, TVL change and fee are built; TVL change fills a day after value tracking goes live, and volume waits on the vault activity history.	3755463f9454	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11973-158164	ui	Share price, one-asset composition, TVL change and fee are built; TVL change fills a day after value tracking goes live, and volume waits on the vault activity history.	2135e0b243e9	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11973-158665	ui	Share price, one-asset composition, TVL change and fee are built; TVL change fills a day after value tracking goes live, and volume waits on the vault activity history.	ccb09d27ddd4	2026-11-17
@@ -451,7 +411,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	11973-160234	ui	On tablet the price chart is empty, with no clock, date rail or chosen interval and range. The price bounds, fee tier, balances, token amounts and slippage show dashes.	d5642da0ec95	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11973-161769	backend	Waiting on backend work.	3d8eae81f2d8	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11973-161912	backend	Waiting on backend work.	3d8eae81f2d8	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	11974-165410	ui	On tablet Confirm order on the review does not add liquidity yet, and the note under the button gives the fee where the design's note describes a limit order.	53a5bb7d32b1	2026-11-15
+3sSzw1KewMtUbeLAv7uW0r	11974-165410	ui	On tablet Confirm order adds liquidity; the review is a little shorter than the design and its rows are not yet measured one by one, and the note under the button gives the fee, not the design's limit order text.	a42d5e25cfef	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	11974-166788	ui	The add-liquidity form takes a USD amount where the design shows SKAI; the available balance, fee, both tokens' amounts and dollar values and the 0.5% slippage show a dash, and the speed tiers cannot be picked.	6aa8e8daa0ee	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	11978-168335	ui	The Activity table, its search and menu, and each card's open date are built; they fill once the vault activity history goes live. The cards' end date has no figure yet.	1d1c3d60b092	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	11978-169460	ui	The activity table and its details drawer are built and fill once the vault activity history goes live; the drawer's layout has not been compared with the design yet.	aa8d3320300b	2026-11-17
@@ -515,7 +475,6 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	12001-376676	ui	This part of the design shows a staking pool entry where the page lists validators, so the phone validator list waits on a design update.	4fbddce2af5a	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12001-377814	ui	Amount and Value now show for each swap; Hash and Block stay a dash until each trade records its transaction.	2272a8caa452	2026-11-19
 3sSzw1KewMtUbeLAv7uW0r	12001-379226	ui	Swaps show now; 24H protocol fees fill once the daily chain figures are recorded, and Total users, Hash and Block stay a dash.	1ce7a2bc89fe	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12003-384544	ui	On phone the stake amount figure in the review has not yet been compared with the design.	ce4b5197c917	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12003-386268	ui	The Activity table, its search and menu, and each card's open date are built; they fill once the vault activity history goes live. The cards' end date has no figure yet.	4b5cfd3625d3	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12003-386958	ui	The empty Activity state is built and shows once the vault activity history goes live.	46b19f02b65c	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12003-387432	ui	The activity table and its details drawer are built and fill once the vault activity history goes live; the drawer's layout has not been compared with the design yet.	ee8432d7dae2	2026-11-17
@@ -531,7 +490,7 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	12004-398296	ui	Share price, one-asset composition, TVL change and fee are built; TVL change fills a day after value tracking goes live, and volume waits on the vault activity history.	00e3946fc7ac	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12004-399859	ui	Share price, one-asset composition, TVL change and fee are built; TVL change fills a day after value tracking goes live, and volume waits on the vault activity history.	9cb880247299	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12004-402326	ui	On phone the chart's clock and the icon before Date range are missing, 30m and Auto are not highlighted as chosen, and the price range and form figures show dashes.	9c60fdb3bb6d	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	12004-405136	ui	On phone Confirm order on the review does not add liquidity yet, and the note under the button gives the fee where the design's note describes a limit order.	5c30a46cc9c3	2026-11-15
+3sSzw1KewMtUbeLAv7uW0r	12004-405136	ui	On phone Confirm order adds liquidity; the review is a little shorter than the design and its rows are not yet measured one by one, and the note under the button gives the fee, not the design's limit order text.	26e11e957117	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	12004-406527	ui	On phone the price range dropdown (0.1%, 0.5%, 1%, Full range, Custom) never opens; the chart's clock and the icon before Date range are missing and the range figures show dashes.	ff101a0c7c5d	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12004-408480	ui	On phone the lottery card has no back chevron, Alert On button or Expand icon beside Rerun, and the left banner card is missing one of its pictures.	65bd7d16f3fa	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12004-409355	ui	On phone Roll ticket stays disabled, the three-dot and ticket icons on each ticket differ from the design's, and the +2.2% change the design shows on the won total is missing.	5d912a059676	2026-11-14
@@ -549,19 +508,11 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	12097-428912	ui	Temp checks is built in this menu and lists polls once the temp check data goes live; this copy of the menu leaves out My proposals only, which the build keeps.	1e5d58a60f27	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12097-428919	ui	Temp checks is built in this menu and lists polls once the temp check data goes live; this copy of the menu leaves out My proposals only, which the build keeps.	bfdc6fc54919	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12097-428926	ui	Temp checks is built in this menu and lists polls once the temp check data goes live.	d60c163005a4	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12097-428935	not-built	Not built yet: the board shows a three-dot menu on each listed proposal with View creator, View DAO and View proposal on Skaiscan.	a729929eb12b	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12097-428952	ui	Temp checks is built in this menu and lists polls once the temp check data goes live.	a97f24dc4b52	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12097-428961	not-built	Not built yet: the board shows a three-dot menu on each listed proposal with Abstain, View creator, View DAO and View proposal on Skaiscan.	105305d3c0dd	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12097-428981	ui	Temp checks is built in this menu and lists polls once the temp check data goes live; this copy of the menu leaves out My proposals only, which the build keeps.	5b010038640d	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12097-428990	not-built	Not built yet: the board shows a three-dot menu on each listed proposal with View creator, View DAO and View proposal on Skaiscan.	a729929eb12b	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12097-429007	ui	Temp checks is built in this menu and lists polls once the temp check data goes live; this copy of the menu leaves out My proposals only, which the build keeps.	f849e9b11b02	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12097-429016	not-built	Not built yet: the board shows a three-dot menu on each listed proposal with Abstain, View creator, View DAO and View proposal on Skaiscan.	105305d3c0dd	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12097-429324	backend	Waiting on backend work.	5a23a3ce4e83	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12097-431217	ui	On phone the 'DAO boost required' heading is semibold where the design sets it bold, and the executable-action fields are 56px tall where the design draws them 52px.	7aafca00e452	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	12097-431652	ui	On tablet the vault actions card has no outer border, where the design gives it a dark green one.	20673a7c5c56	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	12097-431847	ui	On tablet, after a claim the balance card reads 'All rewards claimed' where the design shows the amount just claimed ('+amount claimed').	2492cad42cf4	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	12136-431948	ui	On phone, after a claim the balance card reads 'All rewards claimed' where the design shows the amount just claimed ('+amount claimed').	2492cad42cf4	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	12136-431955	ui	On phone the deposit form sits inside the vault actions card instead of in its own card below, the card has no outer border, and the Claim button is 44px tall where the design draws 32px.	f7d6d19d1675	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12136-432067	backend	Waiting on backend work.	29c64c6f158b	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12136-432080	ui	The delegate list, its Top rated scope and the row menu are built; they fill once the new delegate data goes live.	599393ade5a1	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12136-432085	ui	The delegate row menu is built; rows appear once the new delegate data goes live.	636d29b1771d	2026-11-17
@@ -572,18 +523,13 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	12136-432155	ui	The delegate list, its Top rated scope and the row menu are built; they fill once the new delegate data goes live.	7cc2835ddc2f	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12136-435253	ui	On phone the DeFi overview lacks the design's venue tabs. The SKAI price's BTC and 24h figures, market cap, 14-day chart and ecosystem sparklines are waiting on backend work.	81be92eeab2b	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12136-438810	backend	Waiting on backend work.	b49b24c36e3a	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12141-450956	ui	On phone no article carries the LIVE tag the design shows, because none is marked live yet.	d067997f62b3	2026-11-15
-3sSzw1KewMtUbeLAv7uW0r	12141-451869	ui	On tablet the proposal side panel opens only for a new proposal; the Update proposal version the design shows is not built yet.	b39dc7ccc49c	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	12141-452042	ui	On phone the proposal side panel opens only for a new proposal; the Update proposal version the design shows is not built yet.	6a2c7a1ff17d	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12141-453076	ui	On phone Summarize article does nothing yet, comments have no Reply button, and the heart on each comment does nothing yet.	aa62117b4164	2026-11-15
 3sSzw1KewMtUbeLAv7uW0r	12141-454982	ui	Publish is disabled, so an article cannot be posted yet. The phone layout has not been compared element by element with the design.	2c19c6340132	2026-11-14
 3sSzw1KewMtUbeLAv7uW0r	12141-455088	ui	On phone the university profile shows a dash for wallet, handle, follows, views, description, top viewers and total videos, Top comments is empty, and Join and Block are disabled.	67cdf00f582e	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	12166-455569	not-built	Not built yet: the tablet menu on each listed article, with Follow author, See more on this topic and Report author.	66610ee2483f	2026-11-14
-3sSzw1KewMtUbeLAv7uW0r	12166-455585	not-built	Not built yet: the phone menu on each listed article, with Follow author, See more on this topic and Report author.	56db884e340f	2026-11-14
+3sSzw1KewMtUbeLAv7uW0r	12166-455569	ui	On tablet the article menu is built, but See more on this topic stays greyed out on the Learn feed for now.	30093b41b1df	2026-11-20
+3sSzw1KewMtUbeLAv7uW0r	12166-455585	ui	On phone the article menu is built, but See more on this topic stays greyed out on the Learn feed for now.	9a7e5839f5c1	2026-11-20
 3sSzw1KewMtUbeLAv7uW0r	12166-455671	ui	The video filter is built; it needs courses with videos, and it opens only for a purchased course.	49a1a9d9dfe9	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12166-455702	ui	The video filter is built; it needs courses with videos, and it opens only for a purchased course.	72305ccde05b	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12215-457089	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	f7adea8c7268	2026-11-17
-3sSzw1KewMtUbeLAv7uW0r	12215-457125	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	f7adea8c7268	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12215-457134	ui	The Activity menu is built and filters rows once the vault activity history goes live.	bb1d67c6ef62	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12215-457147	ui	The Activity menu is built and filters rows once the vault activity history goes live.	c18ba207f4fd	2026-11-17
 3sSzw1KewMtUbeLAv7uW0r	12215-457534	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	b9a4ea663f2c	2026-11-17
@@ -606,30 +552,20 @@ fileKey	node	kind	gap	notesSha	writtenAt
 3sSzw1KewMtUbeLAv7uW0r	13754-221576	ui	At 1440 the casino page's game shelves and everything below them are not yet compared element by element with the design.	d16cb35a2172	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9003-43516	ui	On desktop the sections below the game still use an older layout than the design: the tabs, info card, Community wins table, More games cards, Bets header, About text and footer all differ.	839c2b60d651	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9003-44223	ui	On tablet the sections below the game still use an older layout than the design, from the tabs and info card down to the footer, and the Multiplier label ends with a colon the design leaves out.	034ba9f24117	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	9003-79079	ui	On desktop the bet panel's controls are not yet compared element by element with the design.	3f2f55d72121	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9003-96041	ui	At 768 the bet panel below the game board has not yet been compared element by element with the design.	24e446be64a3	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9003-111181	ui	On tablet the game info card has not yet been compared element by element with the design, including the gap between the two paragraphs on its right.	3e816def02b0	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	9003-118852	ui	At 768 the game info card (cover, title, tags and description) has not yet been compared element by element with the design.	fdef87d73339	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9003-119858	ui	On phone the provably fair strip's info icon and circular buttons are larger than the design: they keep a 44px touch size where the design draws 16px and 30px.	be6327c237d4	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9003-132438	ui	At 768 the tabs on the game info card use larger text and a wider underline than the design (84px where it draws 72px); the card's body is not yet compared.	9c84b2f055fb	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9003-142707	ui	On desktop the Manual bet panel has not yet been compared element by element with the design.	f14c56cc6db1	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9003-148466	ui	On tablet the game card has not yet been compared element by element with the design. The Coinflip bet panel and Practice toggle drawn on this board are a design error and are not built.	8ec12601ead1	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	9058-4372	ui	On tablet the controls at the right of the title, the strip under the game and the game info card are not yet compared element by element with the design.	5060455569f8	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9061-9472	ui	On desktop each Community wins entry shows that game's own art where the design draws the coral games icon, and About opens with a star mark in place of the design's AI mark.	b1e5ffd7c354	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9061-10499	ui	On desktop each Community wins entry shows that game's own art where the design draws the coral games icon, and About opens with a star mark in place of the design's AI mark.	b1e5ffd7c354	2026-11-14
+M6r9FEn042UWTQD1zvy6GM	9003-79079	ui	On desktop the bet panel below the balance row, with the difficulty, rows and Bet button, is not yet compared with the design.	19d341cec83f	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	9003-96041	ui	At 768 the bet panel below the game board has not yet been compared element by element with the design.	e79ddd90a4e2	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	9058-4372	ui	On tablet the round controls sit as circles in the strip under the game, where this design places them on the title row; that part is not yet compared with the design.	75b5b0ac5f10	2026-11-20
 M6r9FEn042UWTQD1zvy6GM	9137-13564	ui	Each live bet's currency mark is built and shows once the crash feed update goes live.	061c37ff89a6	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9142-15687	ui	On phone the latest-win line on the More games cards differs from the design on three of the seven cards, and that section ends 4px shorter than drawn; the Game details text is not yet re-checked.	fc945fcb5f50	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9142-18315	ui	On desktop the multiplier scale's height and position beside the flight path have not yet been measured against the design on a live page.	c88312ceb18b	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9142-19197	ui	In the desktop Auto panel the Advanced section (On Win, On Loss, Stop on Win, Stop on Loss), the Bet button and Potential Profit are not yet compared with the design.	7ac463868200	2026-11-14
+M6r9FEn042UWTQD1zvy6GM	9142-19197	ui	In the Auto panel the Advanced section (On Win, On Loss, Stop on Win, Stop on Loss), the Bet button and Potential Profit are not yet compared with the design.	65e00d698718	2026-11-20
 M6r9FEn042UWTQD1zvy6GM	9142-19454	ui	Each live bet's currency mark is built and shows once the crash feed update goes live.	f054f556d5a1	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9156-1198	ui	On phone the opened live-bets list is 200px tall where the design draws 186px, and each stake is missing its small currency icon, which waits on backend work.	e56cea3b2464	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9351-4708	ui	On phone the More games cards are drawn at desktop size where the design uses smaller cards, and the info button and circle buttons under the game are larger than drawn.	44c6823f4c83	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9363-1963	ui	At 1440 the text in the game's title bar, the bet panel and the provably fair strip under the game has not yet been compared with the design for size and weight.	ecac97865b21	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9392-1798	backend	Waiting on backend work.	44a19fcd6432	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9411-7933	backend	Waiting on backend work.	5b862f33c34a	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9411-7955	backend	Waiting on backend work.	5d7bac220338	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9411-7977	backend	Waiting on backend work.	7f03eccc2277	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	9433-14563	ui	On phone the fairness strip under the game still shows a full-screen button that the design hides at this size, so it has five controls where the design has four.	e9f12178e1c3	2026-11-15
 M6r9FEn042UWTQD1zvy6GM	9433-14989	ui	On phone the bet amount block is sized differently from the design.	668d4e08e2df	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9433-15057	ui	On phone the bet amount block is sized differently from the design.	668d4e08e2df	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9433-16420	ui	On desktop every difficulty shows the same board and multiplier ladder, where the design draws one for each; the darts scattered across the board in play are not yet compared with the design.	564df18c109d	2026-11-14
@@ -639,10 +575,9 @@ M6r9FEn042UWTQD1zvy6GM	9455-19263	ui	On phone the Stop on Win and Stop on Loss a
 M6r9FEn042UWTQD1zvy6GM	9467-19582	ui	On phone Hard shows the same board and multiplier ladder as the other difficulties, where the design draws its own, and the board's thin outline is not yet checked against the design.	e5e1e8b9738a	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9738-13101	ui	At 1440 the paytable is narrower than the design and its columns are sized differently, and the five cards are drawn smaller and set closer together than the board shows.	7de4b987b5d9	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9738-13811	ui	At 375 the paytable keeps the desktop panel's wider padding and rounder corners instead of the design's tighter phone panel, and the sections below the game are not yet compared with the design.	7c5794b445d8	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9799-15067	ui	On desktop the sections below the game (the game details card, More games, Bets, About, FAQ and the footer) have not yet been compared with the design.	4f2f30775e72	2026-11-15
-M6r9FEn042UWTQD1zvy6GM	9799-15822	ui	On phones the provably fair bar is 46px tall where the design draws 54px, and its info and circle buttons render at 44px instead of 16px and 30px. It also shows session stats and fullscreen buttons the design does not draw.	9f4793007d37	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9825-21494	ui	On desktop, the insides of the Auto panel's On Win, On Loss, Stop on Win and Stop on Loss settings (the Reset / Increase By choice and the stop fields) are not yet compared with the design.	c54fc8162918	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	9825-21726	ui	On desktop the Auto bet panel (Chip Value, Bet amount, Number of Bets, Advanced, Bet button) is built but not yet compared element by element with the design.	e5e48e034b3f	2026-11-14
+M6r9FEn042UWTQD1zvy6GM	9799-15067	ui	On desktop the sections below the game follow a shared layout that has not yet been compared with this design.	7273c86c927b	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	9825-21494	ui	On desktop the Auto panel's On Win, On Loss, Stop on Win and Stop on Loss settings are not yet compared with the design.	7f76c34e1343	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	9825-21726	ui	On desktop the Auto bet panel's On Win, On Loss, Stop on Win and Stop on Loss rows are not yet compared with the design.	a65eb074d0a5	2026-11-20
 M6r9FEn042UWTQD1zvy6GM	9825-21961	ui	On phone the Auto panel's Number of Bets box is 42px tall where the design draws 38px; its value text is set larger and its caption line is taller than drawn.	978d7bc143ef	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9873-2611	ui	On phone the Auto panel's On Win, On Loss, Stop on Win, Stop on Loss and Number of Bets fields are a little taller than the design, with taller caption lines and larger value text and Reset / Increase By labels.	c724991f172c	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	9907-8770	ui	On phone the pair, balance and bet amount cards are not on the chart as the design shows, and a bet panel still sits under it; the sections below the game are not built yet.	e36d48ab2400	2026-11-14
@@ -652,7 +587,6 @@ M6r9FEn042UWTQD1zvy6GM	9937-22037	backend	Waiting on backend work.	5911d79fd544	
 M6r9FEn042UWTQD1zvy6GM	9941-22458	backend	Waiting on backend work.	5911d79fd544	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9948-24339	backend	Waiting on backend work.	5911d79fd544	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	9948-24437	backend	Waiting on backend work.	5911d79fd544	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	9948-25380	ui	On phone the More games cards are full size where the design shows smaller cards, and the fairness bar's info icon and circles are larger than the design to meet the minimum touch size.	5fad49bb2e99	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	10030-39086	ui	On desktop a bet panel sits beside the grid where the design runs the chart full width with the pair, balance and bet amount cards on it; the sections below the game are not built yet.	adacf9bf7bb4	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	10030-40751	ui	On desktop a bet panel sits beside the grid where the design runs the chart full width, with the pair card at top left and the balance and bet amount cards along the bottom.	7065afbee58b	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	10030-41378	ui	On desktop the currency picker sits above the bet amount instead of inside its card, Balance and Potential Profit show no USD value, and the player count and the countdown under the reel show dashes.	a9383a5ea93c	2026-11-14
@@ -664,8 +598,8 @@ M6r9FEn042UWTQD1zvy6GM	10117-44627	ui	On phones the bet panel sits above the gam
 M6r9FEn042UWTQD1zvy6GM	10117-45018	ui	On phones the game board has a border on all four sides where the design's border differs by side, and the participant count and the countdown under the reel show dashes.	0469bdba4836	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	10117-46093	ui	On phones the players leaderboard is not shown yet, the bet panel text is larger than the phone design, the currency picker sits above the bet amount instead of inside its card, and Balance has no USD value.	2aa3cb97e7dd	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	10117-46223	ui	On phones the Bet amount block, captions and input cards are larger than the design, the players bar shows no count or pot, the currency picker sits outside the bet card, and Balance has no USD value.	23186755f687	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	10285-14037	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	63c70d93ff2b	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	10285-14278	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	d842f64d7175	2026-11-17
+M6r9FEn042UWTQD1zvy6GM	10285-14037	ui	On tablet the game now draws its own stage; its home screen still lacks the candy cane frame and other decoration.	fa952a3ceb3e	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	10285-14278	ui	At 1440 the load and start screens match the design; the game's home screen inside the page still lacks the candy cane frame and other decoration.	ec9bc1899c56	2026-11-20
 M6r9FEn042UWTQD1zvy6GM	10285-16306	ui	On desktop the features start screen shows a crest, strapline and green pill instead of the design's three scrolls with their own art, icons and cream-on-brown text.	e26de710577a	2026-11-15
 M6r9FEn042UWTQD1zvy6GM	10295-732	ui	At 954 wide (desktop with the sidebar open) the load screen is scaled down to about 954x450, where the design keeps the artwork full size on a 954x621 board.	c5f7de34b8e0	2026-11-15
 M6r9FEn042UWTQD1zvy6GM	10354-1754	ui	On tablet the features start screen shows a crest, strapline and green pill instead of the design's three scrolls with their own art, icons and cream-on-brown text.	6068921517be	2026-11-15
@@ -687,30 +621,22 @@ M6r9FEn042UWTQD1zvy6GM	10737-14138	backend	Waiting on backend work.	06c150401f87
 M6r9FEn042UWTQD1zvy6GM	10737-14223	backend	Waiting on backend work.	06c150401f87	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	10738-14514	backend	Waiting on backend work.	06c150401f87	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	10738-14799	backend	Waiting on backend work.	06c150401f87	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	10747-20240	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	10753-20676	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8a5d1c7ed93	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	10758-20929	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	10782-24103	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11146-1937	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11148-2096	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11198-2649	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11206-2787	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11215-2930	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11219-3122	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	0aad14798859	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11219-3786	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	8d0898756dfb	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11234-6787	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11234-6902	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	3a34fe96b112	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11244-7038	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11258-7465	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11264-7884	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11275-8533	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11277-9060	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11278-10019	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11282-12216	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11287-12668	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11288-12765	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11298-13311	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11299-14020	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
+M6r9FEn042UWTQD1zvy6GM	10758-20929	ui	On desktop the start screen's frosted panels are drawn without their background blur, a few soft shadows are drawn hard, and the volatility band shows a dash.	1beacecdff6c	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	10782-24103	ui	On desktop the home screen still lacks the candy cane frame, topping, dividers, buy and pay panels and caption, and the spin button sits inside the bar.	8d90575cc040	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11146-1937	ui	On desktop this start screen shows filled reels, multiplier tiers and a candy bomb picture that the game does not draw yet.	ed3dbb9d8a4a	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11148-2096	ui	This alternate start screen follows the main design, which still lacks the filled reels, multiplier tiers and candy bomb picture.	f391b10e06f1	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11198-2649	ui	This frosted version of the desktop home screen follows the main one, which still lacks the candy cane frame and other decoration.	2df65f107187	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11206-2787	ui	On desktop the game screen still lacks the candy cane frame and topping, the spin button sits inside the bar, and a win in a cell shows as a multiple rather than an amount.	2667330eb8dd	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11215-2930	ui	On desktop the game menu is drawn without its background blur.	179bb5608f29	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11219-3122	ui	This wider desktop layout has not been compared with the design, and the game screen inside it still lacks the candy cane frame and other decoration.	d9232aa8c656	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11219-3786	ui	On desktop the game box in this wider layout is not yet compared with the design.	b803168c0681	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11234-6787	ui	On tablet this start screen has not yet been compared with the design.	cd417ec2a3c2	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11234-6902	ui	On tablet this alternate load screen follows the main one, whose text shadow, logo shadow and loading bar colours are not yet compared with the design.	19b159b2ddee	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11244-7038	ui	On tablet the load screen is built on its own stage; its text shadow, logo shadow and loading bar colours are not yet compared with this design.	476a3535c0a9	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11258-7465	ui	On tablet the start screen's frosted panels are drawn without their background blur, and the start button column is not yet compared with the design.	45e278ddce2d	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11264-7884	ui	On tablet the game screen still lacks the candy cane frame, topping, reel panel, buy and pay panels and caption, and the spin button sits inside the bar.	31c0b873c4ee	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11275-8533	ui	This frosted version of the tablet game screen follows the main one, which still lacks the candy cane frame and other decoration.	fa93ff839dd6	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11277-9060	ui	On tablet the game menu is drawn without its background blur, and its colours are taken from the phone and desktop designs.	d7cfb4334dce	2026-11-20
 M6r9FEn042UWTQD1zvy6GM	11571-2186	ui	On phone the sections below the game still use an older layout than the design, from the tabs and info card down to the Bets header and the footer.	bcb92266a182	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	11592-20699	backend	Waiting on backend work.	1081d7db4c15	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	11596-21055	backend	Waiting on backend work.	1081d7db4c15	2026-11-17
@@ -720,16 +646,13 @@ M6r9FEn042UWTQD1zvy6GM	11841-10805	backend	Waiting on backend work.	53deb596ae91
 M6r9FEn042UWTQD1zvy6GM	11930-23931	ui	On phone the load screen's "Skai Gaming Presents" and "Loading..." text is missing the thin black outline the design draws around it.	190f09d35b65	2026-11-14
 M6r9FEn042UWTQD1zvy6GM	11930-24078	backend	Waiting on backend work.	1081d7db4c15	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	11930-24933	ui	On phone the game info does not show the payout figures the design draws.	b441d4e02f5e	2026-11-14
-M6r9FEn042UWTQD1zvy6GM	11930-28028	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b2224d7df031	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-28659	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-28667	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-28763	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-28859	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-28980	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	b8ac83632990	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-29101	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	9bd7af61c066	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-29411	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	74199809b776	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-30639	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	c32d3d0e3838	2026-11-17
-M6r9FEn042UWTQD1zvy6GM	11930-31288	ui	Sugar Rush plays on Points; the tablet layout, home menu, multiplier tiers, the win amount in the cell and the teal variant still differ from the design.	17460c162a0b	2026-11-17
+M6r9FEn042UWTQD1zvy6GM	11930-28028	ui	On phone the game's main screen inside the page still lacks the candy cane frame and other decoration.	b0624dc55358	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11930-28667	ui	On phone this start screen shows filled reels and a multiplier cell that the game does not draw here, and its frosted panels lack their background blur.	72518a3da32f	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11930-28763	ui	On phone the start screen's frosted panels are drawn without their background blur, and the volatility pill's shadow is drawn hard.	d221e9a9101f	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11930-28859	ui	On phone the game screen still lacks the candy cane frame, topping, dividers, frosted reel panel and caption, and a win in a cell shows as a multiple rather than an amount.	25661ce8f08f	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11930-28980	ui	This frosted version of the phone game screen follows the main one, which still lacks the candy cane frame and other decoration.	c39adea53233	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11930-29101	ui	On phone the game menu is drawn without its background blur.	8f2aa6b1b842	2026-11-20
+M6r9FEn042UWTQD1zvy6GM	11930-30639	ui	On phone the game screen in this view still lacks the candy cane frame and other decoration.	256be1bdd4e7	2026-11-20
 M6r9FEn042UWTQD1zvy6GM	11930-34757	backend	Waiting on backend work.	759d042f04ab	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	11930-34769	backend	Waiting on backend work.	06c150401f87	2026-11-17
 M6r9FEn042UWTQD1zvy6GM	11930-34792	backend	Waiting on backend work.	06c150401f87	2026-11-17
@@ -752,7 +675,6 @@ mhF3BkzlTaGiLzJ7kvpmVc	4201-128723	backend	Waiting on backend work.	d8c193320731
 mhF3BkzlTaGiLzJ7kvpmVc	4207-133479	backend	Waiting on backend work.	0ed4bf65e7c9	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	4437-112650	ui	The 1 hour ago view is built and works once holder snapshots go live; All related waits on a wallet-graph data provider.	6bdb22e17eb0	2026-11-19
 mhF3BkzlTaGiLzJ7kvpmVc	5854-80845	ui	At 1440 the AI Chat / AI Feed toggle sits about 29px right of the design's centre.	f2e369388aef	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	6715-35126	ui	On phones, in a longer conversation, turns sit 24px apart where the design spaces them 32px apart.	777f8bf3a0c0	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	6925-68955	ui	On tablet the vesting card's Claim all now button is shown but cannot be pressed yet; the design draws it as an active button.	6bafcfebd9e4	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	6934-70311	ui	On phones the vesting card's Claim all now button is shown but cannot be pressed yet; the design draws it as an active button.	6bafcfebd9e4	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	7712-38425	ui	In the trades list the small icon the design shows after each trade's time is missing, so the time sits at the right edge instead.	5e508d8bdd84	2026-11-14
@@ -762,7 +684,7 @@ mhF3BkzlTaGiLzJ7kvpmVc	8650-94501	ui	On phone the Net profit chart counts only y
 mhF3BkzlTaGiLzJ7kvpmVc	8650-94724	ui	On phone the Net profit chart counts only your newest 10,000 trades; older trade history is waiting on backend work.	c48099f096a3	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	8650-94950	ui	On phone the Net profit chart counts only your newest 10,000 trades; older trade history is waiting on backend work.	6ee98d6dd57b	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	8666-109490	ui	On phone the Net profit chart counts only your newest 10,000 trades; older trade history is waiting on backend work.	c48099f096a3	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	8684-162456	ui	At 375 several trade panel details still differ: card shadows, the pair and stats cards, the order field cards, slider marks and Maker/Taker fees, and the tab strip labels sit 4px lower than drawn.	546b6308fd3b	2026-11-14
+mhF3BkzlTaGiLzJ7kvpmVc	8684-162456	ui	At 375 several trade panel details still differ: card shadows, the pair and stats cards, the order field cards, slider marks and Maker/Taker fees, and the tab strip labels sit 4px lower than drawn.	a3d0dad63365	2026-11-20
 mhF3BkzlTaGiLzJ7kvpmVc	8684-166194	ui	On phone the Net profit chart counts only your newest 10,000 trades; older trade history is waiting on backend work.	53d67baa3863	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	8684-166395	ui	On phone the Net profit chart counts only your newest 10,000 trades; older trade history is waiting on backend work.	c48099f096a3	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	8684-166596	ui	On phone the Net profit chart counts only your newest 10,000 trades; older trade history is waiting on backend work.	70e191aa6e83	2026-11-14
@@ -773,37 +695,29 @@ mhF3BkzlTaGiLzJ7kvpmVc	8994-78891	ui	At 768 the scaled order ticket's Amount fie
 mhF3BkzlTaGiLzJ7kvpmVc	9002-158964	ui	At 768 the open sidebar has no Swaps row, which the latest design lights on this page, and the positions panel at the foot of the page has not yet been compared with the design.	dd34df17e32d	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9045-174360	ui	At 768 the scaled order ticket's Amount field has no unit dropdown yet, and the underline under the Scaled order tab also runs under its arrow, where the design underlines only the label.	f77ae83ac320	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9045-188835	ui	At 768 the scaled order ticket has no take-profit trigger field yet (waiting on backend work), and its Amount field has no unit dropdown.	9574128a2b66	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	9048-190933	ui	At 768 only the AI confidence strip has been compared with this design; the pair search and the rest of the screen are not yet compared element by element.	9c7cdaa9a90d	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	9050-214062	ui	At 768 the layout settings drawer's text sizes and spacing are not yet matched to the design.	a62e8433896a	2026-11-14
+mhF3BkzlTaGiLzJ7kvpmVc	9048-190933	ui	At 768 the pair search matches the design for the spot tab, the fifth column header and the hot mark; the lower rows of the list are not yet compared.	5be7c0e3cdc0	2026-11-20
 mhF3BkzlTaGiLzJ7kvpmVc	9058-225926	ui	On phones the scaled order ticket's Amount field has no unit dropdown yet, and the underline under the Scaled order tab also runs under its arrow, where the design underlines only the label.	6643d65d046a	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9059-238612	ui	The NEW tag is built and shows on markets listed after listing times go live.	0f7c47d9b5a1	2026-11-19
 mhF3BkzlTaGiLzJ7kvpmVc	9059-238855	ui	On phones the positions panel under the chart and the pair search sheet over the page are not yet fully matched to the design.	c218e8b88456	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9061-240109	backend	Waiting on backend work.	f7d27205c99b	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9061-240412	ui	On phones the positions panel under the chart and the pair search sheet over the page are not yet fully matched to the design.	7f9091bc3825	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	9069-259546	ui	At 768 the chart settings drawer's corners are rounder than the design (24 against 12) and its edge sits outside the box, and the positions panel behind it has not been compared yet.	35eed6fbb2f0	2026-11-15
 mhF3BkzlTaGiLzJ7kvpmVc	9069-263248	ui	On phones the holder filters (1 hour ago, All related) show greyed out and do not work yet, and keyboard focus visits the token details before the filters drawn above them.	9d3c2689a7be	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	9081-267604	ui	On phone the tab strip and the height of each news row have not yet been checked against the design.	2e15e51965ee	2026-11-15
-mhF3BkzlTaGiLzJ7kvpmVc	9081-267988	ui	On phone the tab strip under the page header has not yet been checked against the design.	35b9ba1043fa	2026-11-15
+mhF3BkzlTaGiLzJ7kvpmVc	9081-267604	ui	On phone the tab strip and the height of each news row have not yet been checked against the design.	6be8f2296944	2026-11-20
+mhF3BkzlTaGiLzJ7kvpmVc	9081-267988	ui	On phone the tab strip under the page header has not yet been checked against the design.	86d82efbe6a1	2026-11-20
 mhF3BkzlTaGiLzJ7kvpmVc	9135-80712	ui	On tablet the signed-out perps page and its signed-out header do not appear: the app asks you to log in before it shows perps.	6efc08b111b8	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9152-81278	backend	Waiting on backend work.	ec2c2631aa02	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	9152-81364	ui	On tablet the market header at the top of this board has not yet been compared with the design.	072bdc8f3459	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9152-82793	ui	In the Orders table, Cancel all is a plain heading rather than the design's blue link, Direction reads Buy or Sell rather than Close Long, Reduce only shows a dash, and orders lack the Market and Limit buttons.	79132e5fff64	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9152-89103	backend	Waiting on backend work.	40f5424826f9	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9152-90527	backend	Waiting on backend work.	0f4e680b1bbc	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9152-91623	backend	Waiting on backend work.	aba186810250	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9152-92016	ui	In the trade history table the Closed PnL column shows a dash instead of a figure, and the column widths at this width are not yet matched to the design.	5f9d4a8a42ec	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9154-124786	backend	Waiting on backend work.	ec2c2631aa02	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	9156-140326	ui	On phone the Share trade sheet keeps its tablet controls: View full screen instead of a Preview button, four theme cells instead of one dropdown, and labels, toggles and buttons sized differently.	5cb8b02185a6	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	9156-141722	ui	On phone the Share trade sheet keeps its tablet controls instead of the compact ones drawn here: four theme cells instead of one dropdown, and labels, toggles and buttons sized differently.	c2bd50a7a550	2026-11-15
 mhF3BkzlTaGiLzJ7kvpmVc	9419-149915	ui	On phone, the token list's scrollbar is wider than the design's thin bar, the tab bar's divider sits on the opposite edge, and the column's shadow differs. Some card figures show dashes and caller pictures may be missing.	1da2b3d48a52	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9419-151234	ui	On phone, the token list's scrollbar is wider than the design's thin bar, the tab bar's divider sits on the opposite edge, and the column's shadow differs. Some card figures show dashes and caller pictures may be missing.	1da2b3d48a52	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	9775-95209	ui	On the phone the Scaled order sheet, the pair header and the positions panel at the bottom of the page are not yet confirmed to match the design.	120245e7c8bb	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	9780-112196	ui	On phone the Reset to default button in the Layout settings drawer sets its label and icon 10 apart where the design draws 12.	9817f1729e60	2026-11-15
-mhF3BkzlTaGiLzJ7kvpmVc	9780-143009	ui	On phone the chart settings drawer's corners are rounder than the design (24 against 12), its button is a different size, and its edge sits outside the box.	e3e1ec6aa63e	2026-11-15
-mhF3BkzlTaGiLzJ7kvpmVc	9780-145861	ui	On tablet with the spot chart tools collapsed, the AI confidence band matches the design; the rest of the page has not been rechecked against it element by element.	74fd0486db04	2026-11-14
+mhF3BkzlTaGiLzJ7kvpmVc	9775-95209	ui	On phone the Scaled order sheet has no take profit trigger card yet, and the amount's unit picker is not built.	7bcef82f8682	2026-11-20
 mhF3BkzlTaGiLzJ7kvpmVc	9801-121092	ui	On phone the app asks you to sign in before it shows perps, so the signed-out page this design draws is not shown.	e607b46bdd7c	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	9801-122252	ui	On phone the app asks you to sign in before it shows perps, so the signed-out Market long order sheet this design draws is not shown.	71ad55ed2c4e	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	9804-136992	ui	On phone the menu that opens from a position card's three-dot button has not yet been checked in a browser against the design.	53c917425f52	2026-11-14
+mhF3BkzlTaGiLzJ7kvpmVc	9804-136992	ui	On phone the Delete row in a position card's menu is greyed out where the design shows it in full red, since a position cannot be closed from this menu yet.	d365aa25970e	2026-11-20
 mhF3BkzlTaGiLzJ7kvpmVc	9804-139692	ui	On phone the Orders list has no page control under it as the design draws, and the chart area is not yet compared with the design.	4bf8fad78ef5	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9804-141566	ui	On phone the collapsed Orders list has no page control under it as the design draws.	8eec81dcb844	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	9804-149370	backend	Waiting on backend work.	63674051a17e	2026-11-17
@@ -908,17 +822,15 @@ mhF3BkzlTaGiLzJ7kvpmVc	13006-303093	ui	Market cap at each trade now shows; the f
 mhF3BkzlTaGiLzJ7kvpmVc	13006-303393	ui	On phone each position card has a Manage button where the design has a red Sell button and a three-dot menu, and Bought and Sold show a dash instead of amounts.	f02a8bf31607	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-306051	ui	On phone the token cards behind the one-click trade settings modal are not yet confirmed to match the design.	a63a6c4da047	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-307267	ui	On phone the panels of the Trench screen have not yet been compared element by element with the design.	9e0269f68dc0	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	13006-308399	ui	On phone the Display settings sheet has not yet been compared element by element with the design.	1bd1fc4832ee	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	13006-319056	ui	On phone the close X of the Live display settings dialog has not yet been checked against the design; the design's thin white X is matched on desktop only.	b75da39e8f00	2026-11-14
+mhF3BkzlTaGiLzJ7kvpmVc	13006-319056	ui	On phone the close X of the Live display settings dialog is the small grey one, and the selected row is slightly taller and unfilled where the design fills it.	10bfff14877b	2026-11-20
 mhF3BkzlTaGiLzJ7kvpmVc	13006-319762	ui	Each trade's token age is built and shows once the live trades feed carries token addresses.	fc01ecb75a4b	2026-11-19
 mhF3BkzlTaGiLzJ7kvpmVc	13006-320262	ui	On phone the KOLs list draws a thin line under its search bar that this design may not have; this is not yet confirmed.	a0dc04dcc396	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-320736	ui	On phone the tracker settings sheet shown on this design is not yet confirmed to match.	a3b70fc8b7fb	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-321618	backend	Waiting on backend work.	efad3d229b1c	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13006-326818	ui	On tablet the token cards behind the one-click trade settings modal are not yet confirmed to match the design.	ac686e618b85	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-328333	ui	On tablet the content below the Trench title and tabs has not yet been compared element by element with the design.	3c64b1affc42	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	13006-329764	ui	On tablet the Display settings sheet has not yet been compared element by element with the design.	1bd1fc4832ee	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13006-338795	ui	Nine audit ranges now filter; Recent visitors has no figure yet.	39035898f2d7	2026-11-19
-mhF3BkzlTaGiLzJ7kvpmVc	13006-343527	ui	On tablet the close X of the Live display settings dialog has not yet been checked against the design; the design's thin white X is matched on desktop only.	21d91a712c60	2026-11-14
+mhF3BkzlTaGiLzJ7kvpmVc	13006-343527	ui	On tablet the close X of the Live display settings dialog is the small grey one where the design draws a thin white X.	762e0c8063b6	2026-11-20
 mhF3BkzlTaGiLzJ7kvpmVc	13006-344822	ui	Each trade's token age is built and shows once the live trades feed carries token addresses.	ecb3b5bdee30	2026-11-19
 mhF3BkzlTaGiLzJ7kvpmVc	13006-345358	ui	Each trade's token age is built and shows once the live trades feed carries token addresses.	b5b5d5fec44e	2026-11-19
 mhF3BkzlTaGiLzJ7kvpmVc	13006-347417	ui	KOL caller avatars are built and stay a dash with the reason on hover until after launch.	6f8d1f9c0529	2026-11-17
@@ -1062,9 +974,8 @@ mhF3BkzlTaGiLzJ7kvpmVc	13008-114889	ui	At 1440 with the side rail collapsed, the
 mhF3BkzlTaGiLzJ7kvpmVc	13008-115013	ui	At 1440 with the side rail collapsed, the home hero is not centred as the design draws it, and the Complete quests and Upgrade to Pro buttons are not yet compared with the design.	c33d3123d6ab	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13008-119845	ui	The paid receipt and its download are built; receipts start being issued once the receipt schedule is switched on.	e269906e95ca	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13008-119888	ui	The paid receipt and its download are built; receipts start being issued once the receipt schedule is switched on.	e269906e95ca	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	13008-125093	ui	On tablet the Add menu and the composer match; the home hero above them is not yet compared element by element with the design.	a15d0fb6bcb0	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	13008-125298	ui	On phones the Add menu and the composer match; the home hero above them is not yet compared element by element with the design.	f4ff90faebb1	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	13008-125552	ui	On phones the composer spacing around a staged whale matches; the two lines of text inside the whale chip are not yet compared with the design.	382f4aa84bfb	2026-11-14
+mhF3BkzlTaGiLzJ7kvpmVc	13008-125093	ui	On tablet the two small icons the design draws beside the AI Chat and AI Feed toggle are not built yet.	b30849c6e6da	2026-11-20
+mhF3BkzlTaGiLzJ7kvpmVc	13008-125298	ui	On phone the two small icons the design draws beside the AI Chat and AI Feed toggle are not built yet.	1b333474e685	2026-11-20
 mhF3BkzlTaGiLzJ7kvpmVc	13008-125612	ui	On tablet the whale chip in the sent message matches; the transcript, its composer, the footnote, the header and the bottom navigation bar are not yet matched to the design.	ea6eec6f459f	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13008-125682	ui	On phones the whale chip in the sent message matches; the transcript, its composer, the footnote, the header and the bottom navigation bar are not yet matched to the design.	021593ced689	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	13008-125755	ui	On tablet the layout matches the design, but the Send tokens payment tab may still show as unavailable where the design draws it open.	d4ca9041f770	2026-11-14
@@ -1088,7 +999,6 @@ mhF3BkzlTaGiLzJ7kvpmVc	13432-179891	backend	Waiting on backend work.	efd39a181a2
 mhF3BkzlTaGiLzJ7kvpmVc	13434-179959	backend	Waiting on backend work.	d555c8bde8d2	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13436-180687	backend	Waiting on backend work.	addc4405fd10	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13486-49591	ui	At 1440 the top bar's search box sits about 1px right of the design. The composer, welcome band, side rail and ticker have not been re-measured against this design yet.	0958afca74e1	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	13669-141257	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	8fcffcd2d96d	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	13935-69044	ui	At 1440 the main token area is 764px tall, matching the other Trench designs, where this design draws it 734px tall.	c94ed33b032c	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	14062-50444	backend	Waiting on backend work.	efdbeb18d093	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	14094-54390	backend	Waiting on backend work.	d5681efc3187	2026-11-17
@@ -1111,20 +1021,12 @@ mhF3BkzlTaGiLzJ7kvpmVc	14178-142962	backend	Waiting on backend work.	16fe665ec6e
 mhF3BkzlTaGiLzJ7kvpmVc	14178-151580	ui	On phone the small previews inside the Market intel, Market signals, News and Sentiment cards use their phone layouts, where the design shows the desktop versions scaled down.	50d320519ec0	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	14178-155931	ui	On phone the AI Insights preview in the Market intel card uses its phone styling, with tighter header padding and tab lines and smaller list text, where the design shows the desktop version scaled down.	65b1920f1694	2026-11-14
 mhF3BkzlTaGiLzJ7kvpmVc	14178-157280	backend	Waiting on backend work.	d555c8bde8d2	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	14191-164713	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	8fcffcd2d96d	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	14191-164730	ui	Built; the figure this view waited on is now wired, and the view has not been checked against its design again since.	8fcffcd2d96d	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	14315-246829	backend	Waiting on backend work.	a171d196452a	2026-11-17
 mhF3BkzlTaGiLzJ7kvpmVc	15402-181831	ui	At least one social and Pump live now filter; Original socials, Original avatar and Alpha group mentions have no figure yet.	72b2126be6d4	2026-11-19
 mhF3BkzlTaGiLzJ7kvpmVc	15695-62179	ui	On phones the spending table shows three columns, so Balance sits off screen until you scroll sideways, where this design shows Wallet and Balance only; the headline and chips are larger than drawn.	a5c6faeabaa5	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	16083-168102	ui	On desktop the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the Skai orb is drawn with gradients instead of the design's sphere image.	f8a2ceb16d62	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	16106-168730	ui	On desktop the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the Skai orb is drawn with gradients instead of the design's sphere image.	9cebf67462ec	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	16135-26440	ui	On tablet the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the Skai orb is drawn with gradients instead of the design's sphere image.	6ad96c3bd4ef	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	16137-102267	ui	On phone the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the Skai orb is drawn with gradients instead of the design's sphere image.	f7b0a48de300	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	16137-102748	ui	On tablet the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the Skai orb is drawn with gradients instead of the design's sphere image.	1668aa54a18c	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	16137-102919	ui	On phone the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the Skai orb is drawn with gradients instead of the design's sphere image.	028667601444	2026-11-14
-mhF3BkzlTaGiLzJ7kvpmVc	16326-194586	unchecked	On phone the assistant pop-up over the spot screen follows a newer design that is not built yet.	da39a3ee5e6b	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	16326-198902	unchecked	On phone the assistant pop-up over the spot screen follows a newer design that is not built yet.	da39a3ee5e6b	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	16326-200191	unchecked	On phone the assistant pop-up over the spot screen follows a newer design that is not built yet.	da39a3ee5e6b	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	16327-202234	unchecked	On phone this newer design of the assistant pop-up is not built yet.	da39a3ee5e6b	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	16332-203659	unchecked	On phone this newer design of the assistant pop-up is not built yet.	da39a3ee5e6b	2026-11-17
-mhF3BkzlTaGiLzJ7kvpmVc	16332-208455	unchecked	This newer design of the assistant's show and hide toggle is not built yet.	da39a3ee5e6b	2026-11-17
+mhF3BkzlTaGiLzJ7kvpmVc	16083-168102	ui	On desktop the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the orbs beside answers are drawn in a different style from the one in the header.	40e06c892282	2026-11-20
+mhF3BkzlTaGiLzJ7kvpmVc	16106-168730	ui	On desktop the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the orbs beside answers are drawn in a different style from the one in the header.	f3908f6f7f30	2026-11-20
+mhF3BkzlTaGiLzJ7kvpmVc	16135-26440	ui	On tablet the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the orbs beside answers are drawn in a different style from the one in the header.	1b3b2ee4a575	2026-11-20
+mhF3BkzlTaGiLzJ7kvpmVc	16137-102748	ui	On tablet the Ask Skai panel's scrollbar is a 10px bar where the design draws a thin 4px thumb, and the orbs beside answers are drawn in a different style from the one in the header.	4159b20970f3	2026-11-20
+mhF3BkzlTaGiLzJ7kvpmVc	16327-202234	ui	On phone the assistant's answers show without the orb and bubble the design draws, the scrollbar is wider than its thin thumb, and the hint text in the field is larger than drawn.	1af522d5eb44	2026-11-20
+mhF3BkzlTaGiLzJ7kvpmVc	16332-203659	ui	On phone the open chat's scrollbar is wider than the design's thin thumb, and the hint text in the field is larger than drawn.	7e663f2c3a4a	2026-11-20
