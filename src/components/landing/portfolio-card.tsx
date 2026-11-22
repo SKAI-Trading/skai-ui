@@ -152,7 +152,7 @@ const PortfolioCard = React.forwardRef<HTMLDivElement, PortfolioCardProps>(
               </span>
               <span className={cn(
                 "flex-shrink-0 font-['Manrope',sans-serif] font-medium text-[11px] leading-[14px] transition-colors",
-                copied ? "text-[#2DEDAD]" : "text-[#56C7F3] group-hover:text-[#2DEDAD]",
+                copied ? "text-[#56C7F3]" : "text-[#56C7F3] group-hover:text-[#2DEDAD]",
               )}>
                 {copied ? "Copied!" : "Copy"}
               </span>

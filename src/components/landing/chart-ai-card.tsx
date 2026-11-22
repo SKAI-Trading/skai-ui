@@ -219,7 +219,7 @@ function AnalysisSummary({
         >
           {copied ? (
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-              <path d="M20 6L9 17l-5-5" stroke="#2DEDAD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           ) : (
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none">

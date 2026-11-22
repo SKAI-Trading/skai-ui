@@ -135,14 +135,11 @@ const ReferralCard = React.forwardRef<HTMLDivElement, ReferralCardProps>(
               type="button"
               onClick={handleCopy}
               disabled={isLoadingUser}
-              className={cn(
-                "-my-[14px] -mr-[14px] py-[14px] pr-[14px] md:-my-4 md:-mr-4 md:py-4 md:pr-4 lg:-mr-[22px] lg:pr-[22px] flex shrink-0 items-center gap-1 lg:gap-2 whitespace-nowrap border-none bg-transparent font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed",
-                copied ? "text-[#2DEDAD]" : "text-sky-blue",
-              )}
+              className="-my-[14px] -mr-[14px] py-[14px] pr-[14px] md:-my-4 md:-mr-4 md:py-4 md:pr-4 lg:-mr-[22px] lg:pr-[22px] flex shrink-0 items-center gap-1 lg:gap-2 whitespace-nowrap border-none bg-transparent font-manrope text-para-1-mobile font-bold md:font-normal md:text-para-2-tablet lg:text-para-1 text-sky-blue transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {copied ? (
                 <>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5" /></svg>
+                  <svg className="w-3 h-3 lg:w-4 lg:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
                   {content.global.actions.copied}
                 </>
               ) : (
